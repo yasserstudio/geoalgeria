@@ -77,13 +77,12 @@ test("duplicate id is an error", () => {
   assert.match(errors[0], /duplicate id/);
 });
 
-test("commune_code must be a numeric string; prefix mismatch warns", () => {
+test("commune_code must be a numeric string; later wilaya assignments may retain an older prefix", () => {
   assert.equal(validateRecords([rec({ commune_code: 1601 })]).errors.length, 1); // integer rejected
   assert.equal(validateRecords([rec({ commune_code: null })]).errors.length, 0); // null ok
   const { errors, warnings } = validateRecords([rec({ commune_code: "3101" })]); // wilaya 16
   assert.equal(errors.length, 0);
-  assert.equal(warnings.length, 1);
-  assert.match(warnings[0], /does not start with wilaya_code/);
+  assert.equal(warnings.length, 0);
 });
 
 test("coordinate sanity guard catches lat/lng swap and sign flip (no polygons needed)", () => {
@@ -412,7 +411,7 @@ test("buildManifest + buildDcat shape", () => {
   // to its canonical URL, and an open dataset carries no conditionsOfAccess prose.
   assert.equal(dcat.license, "https://opensource.org/licenses/MIT");
   assert.equal("conditionsOfAccess" in dcat, false);
-  assert.deepEqual(dcat.citation, ["Ministry of Health — official"]);
+  assert.deepEqual(dcat.citation, ["Ministry of Health, official"]);
 
   // A non-open prose licence is never fabricated into a URL: the `license` slot
   // is omitted and the prose moves to conditionsOfAccess.
@@ -425,6 +424,13 @@ test("buildManifest + buildDcat shape", () => {
     "https://opendatacommons.org/licenses/odbl/1-0/",
   );
   assert.equal("conditionsOfAccess" in buildDcat({ ...meta, license: "CC0-1.0 AND ODbL-1.0" }), false);
+  assert.deepEqual(
+    buildDcat({ ...meta, license: "CC-BY-SA-4.0 AND ODbL-1.0" }).license,
+    [
+      "https://creativecommons.org/licenses/by-sa/4.0/",
+      "https://opendatacommons.org/licenses/odbl/1-0/",
+    ],
+  );
   // Fail-safe routing: an AND-expression that mixes open SPDX terms with an unknown
   // (prose) term is NOT all-open, so the whole expression is carried as prose — the
   // `license` slot is omitted rather than fabricating a URL from the open terms alone.

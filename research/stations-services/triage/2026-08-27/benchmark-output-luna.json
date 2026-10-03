@@ -1,0 +1,1273 @@
+{
+  "schema_version": 1,
+  "batch_id": "stations-benchmark-2026-08-27-43-19-18",
+  "results": [
+    {
+      "candidate_id": "osm-node-1770113295",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "9664",
+        "13359"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-node-1816904658",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [
+        "osm-node-3843299060"
+      ],
+      "duplicate_source_ids": [
+        "9038"
+      ],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "osm-node-3285665250",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [
+        "osm-way-387881155"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "osm-node-3843299060",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [
+        "osm-node-1816904658"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "osm-node-4109759918",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "7433",
+        "9260"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-node-4382563392",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "7594",
+        "7793"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-way-387881155",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [
+        "osm-node-3285665250"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "osm-way-438296270",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "6315",
+        "13916"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "tariki-12992",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "12992"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-13340",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "13340"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-13347",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "13347"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-13358",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "13358"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-13885",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "13885"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-4634",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4634"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-6494",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "6494"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-6497",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "6497"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-7434",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "7434"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-7440",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "7440"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-7588",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "7588"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-7615",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "7615"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-7681",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "7681"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-7795",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "7795"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-8560",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8560"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-8621",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8621"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-9339",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "9339"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-9345",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "9345"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-9661",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "9661"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-9669",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "9669"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "osm-node-10916149219",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "6360"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-node-1765757938",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "7191"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-node-1917587128",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "6664",
+        "12332"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-node-2983038600",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "177",
+        "13811"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-node-6539439250",
+      "triage": "ambiguous",
+      "normalized_name_fr": "Nafatl",
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "3540",
+        "10174"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-node-663879968",
+      "triage": "ambiguous",
+      "normalized_name_fr": "Zitouni",
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "10811",
+        "10835"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-way-299712749",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "9273",
+        "10847"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-way-375375816",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5802",
+        "9495"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-way-477000677",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "500",
+        "6456"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "tariki-12066",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "12066"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-12070",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "12070"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-12240",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "12240"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-132",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "132"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-1345",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "1345"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-14285",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "14285"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-166",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "166"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-262",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "262"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-270",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "270"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-279",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "279"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-2832",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "2832"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-2933",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "2933"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-3605",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "3605"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-3617",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "3617"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-3643",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "3643"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-3815",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "3815"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-4079",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4079"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-4147",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4147"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-4172",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4172"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-4567",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4567"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-504",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "504"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-505",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "505"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-576",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "576"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "osm-way-1310589072",
+      "triage": "ambiguous",
+      "normalized_name_fr": "Naftal",
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "6242",
+        "8381"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-way-1424102439",
+      "triage": "ambiguous",
+      "normalized_name_fr": "Station-service Bouamouchasha",
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8467",
+        "13532"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-way-404741402",
+      "triage": "ambiguous",
+      "normalized_name_fr": "Station-service El Ahmadi",
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "433",
+        "13533"
+      ],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "tariki-594",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "594"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-7931",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "7931"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-8129",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8129"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-8351",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8351"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-862",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "862"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-9191",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "9191"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "tariki-9197",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "9197"
+      ],
+      "confidence": 0.25,
+      "escalation": "field_check",
+      "reason": "Tariki-only evidence has no corresponding OSM record in the input; field check is required."
+    },
+    {
+      "candidate_id": "osm-node-1895364994",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8298"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-node-5044186222",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "11738"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-1211273664",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "14699"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-1226150857",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "865"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-1420684819",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "9369"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-1422508718",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8265"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-1422510154",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8289"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-1422511295",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8295"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-1424081884",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "1006"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-1424086017",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "388"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-1424086982",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "نفطال",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "427"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-1424099246",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8126"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-1424102193",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8369"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-249387415",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "6243"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-way-473021494",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8250"
+      ],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-node-13097283667",
+      "triage": "normalization",
+      "normalized_name_fr": "Station Benzaid",
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.55,
+      "escalation": "source_review",
+      "reason": "OSM-only evidence provides a name but no Tariki corroboration in the input; source review is needed."
+    },
+    {
+      "candidate_id": "osm-way-1343895922",
+      "triage": "normalization",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.55,
+      "escalation": "source_review",
+      "reason": "OSM-only evidence provides a name but no Tariki corroboration in the input; source review is needed."
+    },
+    {
+      "candidate_id": "osm-way-1346340851",
+      "triage": "normalization",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.55,
+      "escalation": "source_review",
+      "reason": "OSM-only evidence provides a name but no Tariki corroboration in the input; source review is needed."
+    },
+    {
+      "candidate_id": "osm-way-1424084857",
+      "triage": "normalization",
+      "normalized_name_fr": "Station-service Merimech",
+      "normalized_name_ar": null,
+      "proposed_brand": "نفطال",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.55,
+      "escalation": "source_review",
+      "reason": "OSM-only evidence provides a name but no Tariki corroboration in the input; source review is needed."
+    },
+    {
+      "candidate_id": "osm-way-1424088139",
+      "triage": "normalization",
+      "normalized_name_fr": "Petrom",
+      "normalized_name_ar": null,
+      "proposed_brand": "Petrom",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.55,
+      "escalation": "source_review",
+      "reason": "OSM-only evidence provides a name but no Tariki corroboration in the input; source review is needed."
+    }
+  ]
+}
+

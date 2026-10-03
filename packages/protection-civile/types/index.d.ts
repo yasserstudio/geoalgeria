@@ -14,8 +14,12 @@
  *  units the DGPC publishes at a coincident (shared) coordinate. */
 export type GeoPrecision = "exact" | "approximate";
 
-/** How the point was obtained — always the DGPC's published coordinate. */
-export type GeoMethod = "dgpc_map";
+/** How the point was obtained. Reviewed OSM methods refine a coarse DGPC point
+ *  without changing the DGPC's authority for the unit identity. */
+export type GeoMethod = "dgpc_map" | "osm_node_review" | "osm_centroid_review";
+
+/** A human-reviewed correction applied through the guarded evidence ledger. */
+export type ReviewStatus = "corrected";
 
 /** The DGPC status tier of a unit (verbatim from the source `statut`). */
 export type Statut =
@@ -43,28 +47,28 @@ export interface Refs {
 export interface ProtectionCivileUnit {
   /** Stable id, `{wilaya_code}-{seq}` (e.g. "16-001"). Unique within this file. */
   id: string;
-  /** Display name (Arabic — the source carries no French name). */
+  /** Display name (Arabic; the source carries no French name). */
   name: string;
   /** Arabic name (nom_ar). */
   name_ar: string;
-  /** Wilaya code, zero-padded 2-digit string ("01".."69") — re-derived by
+  /** Wilaya code, zero-padded 2-digit string ("01".."69"): re-derived by
    *  point-in-polygon against the 69 post-2026-reform boundaries. */
   wilaya_code: string;
   /** Commune (ONS) code as a string, or null where the name match found none. */
   commune_code: string | null;
   /** Commune name (French), or null. */
   commune: string | null;
-  /** Latitude (WGS84) — every unit is geocoded. */
+  /** Latitude (WGS84): every unit is geocoded. */
   lat: number;
-  /** Longitude (WGS84) — every unit is geocoded. */
+  /** Longitude (WGS84): every unit is geocoded. */
   lng: number;
   /** Coordinate provenance. */
   geo_precision: GeoPrecision;
   /** How the point was obtained. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "dgpc". */
+  /** Provenance key into `metadata.sources[]`: always "dgpc". */
   source: "dgpc";
-  /** External ids — `{ dgpc: "1", dgpc_wilaya: "27" }`. */
+  /** External ids: `{ dgpc: "1", dgpc_wilaya: "27" }`. */
   refs: Refs;
   /** DGPC status tier. */
   statut: Statut;
@@ -74,6 +78,14 @@ export interface ProtectionCivileUnit {
   tel: string | null;
   /** Fax number, or null. */
   fax: string | null;
+  /** Present only when a reviewed correction was applied. */
+  review_status?: ReviewStatus;
+  /** ISO date of the reviewed correction. */
+  reviewed_at?: string;
+  /** Reviewer recorded by the correction ledger. */
+  reviewed_by?: string;
+  /** Public evidence URLs supporting the correction. */
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */
@@ -86,7 +98,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus unit enrichment stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus unit enrichment stats. */
 export interface Metadata {
   package: "@geoalgeria/protection-civile";
   schema_version: string;
@@ -94,7 +106,7 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — every unit. */
+  /** Records with coordinates: every unit. */
   geocoded_count: number;
   geocoded_pct: number;
   /** Count by `geo_precision`. */

@@ -1,4 +1,4 @@
-// @geoalgeria/pharmacies — lightweight loaders for Algeria's pharmacies (OpenStreetMap).
+// @geoalgeria/pharmacies: lightweight loaders for Algeria's pharmacies (OpenStreetMap).
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

@@ -1,0 +1,2704 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-34",
+    "wilaya_code": 34,
+    "name": "Bordj Bou Arreridj",
+    "name_ar": "برج بوعريريج",
+    "center": [
+      4.633,
+      36.096000000000004
+    ],
+    "bounds": [
+      4.069,
+      35.761,
+      5.197,
+      36.431
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 69,
+    "osm_records": 51,
+    "tariki_records": 47,
+    "cross_source": 24,
+    "multiple_tariki": 2,
+    "osm_only": 25,
+    "tariki_only": 18,
+    "nearby_osm_pairs": 1,
+    "conflicts": 22
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3845503249",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-228997198",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-386902935",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-853710527",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-11918",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-11923",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12002",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12004",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12040",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12056",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12242",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12797",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12798",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12966",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2294",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2488",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2495",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2662",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2673",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4022",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4029",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9677",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10268635467",
+      "coordinates": [
+        4.7830009,
+        36.1142731
+      ],
+      "osm": {
+        "id": "node/10268635467",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.7830009,
+          36.1142731
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-10268635480",
+      "coordinates": [
+        4.7962886,
+        36.1601504
+      ],
+      "osm": {
+        "id": "node/10268635480",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.7962886,
+          36.1601504
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-10268661121",
+      "coordinates": [
+        4.8248863,
+        36.2447577
+      ],
+      "osm": {
+        "id": "node/10268661121",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.8248863,
+          36.2447577
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-14008702886",
+      "coordinates": [
+        5.0294584,
+        36.1886113
+      ],
+      "osm": {
+        "id": "node/14008702886",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0294584,
+          36.1886113
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11999",
+          "route_id": "16454",
+          "name_fr": "cle de terminal services zeidani",
+          "name_ar": "محطة خدمات زيداني",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.029,
+            36.188
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 79
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "cle de terminal services zeidani",
+      "display_name_ar": "محطة خدمات زيداني"
+    },
+    {
+      "id": "osm-node-2425990233",
+      "coordinates": [
+        4.6334923,
+        36.0637804
+      ],
+      "osm": {
+        "id": "node/2425990233",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.6334923,
+          36.0637804
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10027",
+          "route_id": "4943",
+          "name_fr": "STATION ESSENCE BEN BOURAHLA",
+          "name_ar": "محطة بنزين بن بورحلة",
+          "services": [
+            "fuel",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.6336,
+            36.0638
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بنزين بن بورحلة"
+    },
+    {
+      "id": "osm-node-3845503249",
+      "coordinates": [
+        5.0985716,
+        36.1202715
+      ],
+      "osm": {
+        "id": "node/3845503249",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0985716,
+          36.1202715
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-853710527",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4431681095",
+      "coordinates": [
+        4.7252693,
+        36.0053297
+      ],
+      "osm": {
+        "id": "node/4431681095",
+        "name": "Bouaissi",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.7252693,
+          36.0053297
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12001",
+          "route_id": "5049",
+          "name_fr": "STATION DE SERVICES BOEISI",
+          "name_ar": "محطة الأنوار بوعيسي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.725,
+            36.005
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 44
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الأنوار بوعيسي"
+    },
+    {
+      "id": "osm-node-4431734692",
+      "coordinates": [
+        4.7146255,
+        35.9827409
+      ],
+      "osm": {
+        "id": "node/4431734692",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.7146255,
+          35.9827409
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12003",
+          "route_id": "5049",
+          "name_fr": "STATION DE SERVICES BOBEAYA",
+          "name_ar": "محطة بوبعاية",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            4.715,
+            35.982
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 89
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بوبعاية"
+    },
+    {
+      "id": "osm-node-4605079201",
+      "coordinates": [
+        4.7395649,
+        36.0694184
+      ],
+      "osm": {
+        "id": "node/4605079201",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.7395649,
+          36.0694184
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4705283979",
+      "coordinates": [
+        4.8946023,
+        35.9079049
+      ],
+      "osm": {
+        "id": "node/4705283979",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.8946023,
+          35.9079049
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2331",
+          "route_id": "5611",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.895,
+            35.908
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 37
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-5793458259",
+      "coordinates": [
+        4.789193,
+        36.0668298
+      ],
+      "osm": {
+        "id": "node/5793458259",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.789193,
+          36.0668298
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6563033485",
+      "coordinates": [
+        4.3967675,
+        36.1995343
+      ],
+      "osm": {
+        "id": "node/6563033485",
+        "name": "Station Service Biban NAFTAL محطة الوقود البيبان نفطال",
+        "name_ar": "Station Service Biban NAFTAL محطة الوقود البيبان نفطال",
+        "name_fr": "Nafatl",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.3967675,
+          36.1995343
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Nafatl",
+      "display_name_ar": "Station Service Biban NAFTAL محطة الوقود البيبان نفطال"
+    },
+    {
+      "id": "osm-node-6564331452",
+      "coordinates": [
+        4.3998903,
+        36.2023692
+      ],
+      "osm": {
+        "id": "node/6564331452",
+        "name": "Station Service Biban NAFTAL محطة الوقود البيبان نفطال",
+        "name_ar": "Station Service Biban NAFTAL محطة الوقود البيبان نفطال",
+        "name_fr": "Nafatl",
+        "brand": "E.Leclerc",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.3998903,
+          36.2023692
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Nafatl",
+      "display_name_ar": "Station Service Biban NAFTAL محطة الوقود البيبان نفطال"
+    },
+    {
+      "id": "osm-node-6564482714",
+      "coordinates": [
+        4.8337753,
+        36.0648984
+      ],
+      "osm": {
+        "id": "node/6564482714",
+        "name": "Station Service Babor NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.8337753,
+          36.0648984
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11992",
+          "route_id": "16448",
+          "name_fr": "station de service air ouest ain zada vert setif",
+          "name_ar": "محطة الخدمات بحيرة عين زادة الجنوبية ( اتجاه سطيف )",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            4.8339,
+            36.0645
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 46
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Babor NAFTAL",
+      "display_name_ar": "محطة الخدمات بحيرة عين زادة الجنوبية ( اتجاه سطيف )"
+    },
+    {
+      "id": "osm-node-6564494204",
+      "coordinates": [
+        4.8383322,
+        36.0637487
+      ],
+      "osm": {
+        "id": "node/6564494204",
+        "name": "Station Service Babor NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.8383322,
+          36.0637487
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11990",
+          "route_id": "16448",
+          "name_fr": "sation de services air ain zada est vert alger )",
+          "name_ar": "محطة متعددة الخدمات بحيرة عين زادة الشمالية ( اتجاه الجزائر )",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            4.8384,
+            36.0642
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 51
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Babor NAFTAL",
+      "display_name_ar": "محطة متعددة الخدمات بحيرة عين زادة الشمالية ( اتجاه الجزائر )"
+    },
+    {
+      "id": "osm-node-6905201567",
+      "coordinates": [
+        5.0824899,
+        36.1271547
+      ],
+      "osm": {
+        "id": "node/6905201567",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0824899,
+          36.1271547
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7118172676",
+      "coordinates": [
+        4.9373412,
+        36.1066489
+      ],
+      "osm": {
+        "id": "node/7118172676",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.9373412,
+          36.1066489
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1733",
+          "route_id": "4726",
+          "name_fr": "Station de services Kirouani",
+          "name_ar": "محطة قيرواني",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.937,
+            36.107
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 50
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Kirouani",
+      "display_name_ar": "محطة قيرواني"
+    },
+    {
+      "id": "osm-node-8563074617",
+      "coordinates": [
+        4.4362257,
+        36.0887218
+      ],
+      "osm": {
+        "id": "node/8563074617",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.4362257,
+          36.0887218
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12800",
+          "route_id": "17581",
+          "name_fr": "//",
+          "name_ar": "محطة المنصورة ميهوبي",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.4369,
+            36.0887
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "//",
+      "display_name_ar": "محطة المنصورة ميهوبي"
+    },
+    {
+      "id": "osm-node-8707753484",
+      "coordinates": [
+        4.7259235,
+        36.0130876
+      ],
+      "osm": {
+        "id": "node/8707753484",
+        "name": "محطة بوخاري",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.7259235,
+          36.0130876
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة بوخاري",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9239083904",
+      "coordinates": [
+        4.7889385,
+        36.1331242
+      ],
+      "osm": {
+        "id": "node/9239083904",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.7889385,
+          36.1331242
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9967962219",
+      "coordinates": [
+        4.8564873,
+        36.0828177
+      ],
+      "osm": {
+        "id": "node/9967962219",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.8564873,
+          36.0828177
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1093262815",
+      "coordinates": [
+        4.642092399999999,
+        36.02088905
+      ],
+      "osm": {
+        "id": "way/1093262815",
+        "name": "El haddad",
+        "name_ar": "الحداد",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.642092399999999,
+          36.02088905
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "El haddad",
+      "display_name_ar": "الحداد"
+    },
+    {
+      "id": "osm-way-1197142089",
+      "coordinates": [
+        4.73169845,
+        36.01879855
+      ],
+      "osm": {
+        "id": "way/1197142089",
+        "name": "محطة بوسري",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.73169845,
+          36.01879855
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13256",
+          "route_id": "5049",
+          "name_fr": "STATION DE SERVICES bousri houcine",
+          "name_ar": "محطة الخدمات بوسري حسين",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            4.732,
+            36.019
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 35
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة بوسري",
+      "display_name_ar": "محطة الخدمات بوسري حسين"
+    },
+    {
+      "id": "osm-way-1505633648",
+      "coordinates": [
+        5.0748117,
+        36.0741699
+      ],
+      "osm": {
+        "id": "way/1505633648",
+        "name": "BELHADAD",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0748117,
+          36.0741699
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "BELHADAD",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1505633649",
+      "coordinates": [
+        5.0746057,
+        36.10586375
+      ],
+      "osm": {
+        "id": "way/1505633649",
+        "name": "EL JAWHARA",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0746057,
+          36.10586375
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "EL JAWHARA",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1552284010",
+      "coordinates": [
+        4.6743393,
+        36.0670588
+      ],
+      "osm": {
+        "id": "way/1552284010",
+        "name": "Station service tabbi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.6743393,
+          36.0670588
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service tabbi",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-228684138",
+      "coordinates": [
+        4.7973506,
+        36.04745585
+      ],
+      "osm": {
+        "id": "way/228684138",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.7973506,
+          36.04745585
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2464",
+          "route_id": "5875",
+          "name_fr": "Station de services Naftal Elhadj sghir",
+          "name_ar": "محطة الخدمات نفطال الحاج الصغير",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.797,
+            36.047
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 60
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة الخدمات نفطال الحاج الصغير"
+    },
+    {
+      "id": "osm-way-228710555",
+      "coordinates": [
+        4.79467575,
+        36.05079255
+      ],
+      "osm": {
+        "id": "way/228710555",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.79467575,
+          36.05079255
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11898",
+          "route_id": "5875",
+          "name_fr": "Station de services Boukerma",
+          "name_ar": "محطة نفطال بوكرمة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.795,
+            36.051
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 37
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Boukerma",
+      "display_name_ar": "محطة نفطال بوكرمة"
+    },
+    {
+      "id": "osm-way-228997198",
+      "coordinates": [
+        4.799057149999999,
+        36.0681131
+      ],
+      "osm": {
+        "id": "way/228997198",
+        "name": "Station Service Malek",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.799057149999999,
+          36.0681131
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1540",
+          "route_id": "4358",
+          "name_fr": "Station de services Melek",
+          "name_ar": "محطة خدمات مالك",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.799,
+            36.068
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 14
+        },
+        {
+          "id": "12076",
+          "route_id": "16508",
+          "name_fr": "station de service malek makhlouf",
+          "name_ar": "محطة الخدمات مالك مخلوف",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            4.799,
+            36.0682
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Service Malek",
+      "display_name_ar": "محطة خدمات مالك"
+    },
+    {
+      "id": "osm-way-228997199",
+      "coordinates": [
+        4.805443199999999,
+        36.069022649999994
+      ],
+      "osm": {
+        "id": "way/228997199",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.805443199999999,
+          36.069022649999994
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-229010873",
+      "coordinates": [
+        4.677777750000001,
+        36.13241875
+      ],
+      "osm": {
+        "id": "way/229010873",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.677777750000001,
+          36.13241875
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2475",
+          "route_id": "5881",
+          "name_fr": "Station de services AMANI",
+          "name_ar": "محطة أماني للخدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.6778,
+            36.1323
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services AMANI",
+      "display_name_ar": "محطة أماني للخدمات"
+    },
+    {
+      "id": "osm-way-229172469",
+      "coordinates": [
+        4.77110335,
+        36.077040100000005
+      ],
+      "osm": {
+        "id": "way/229172469",
+        "name": "Station Service Mounia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.77110335,
+          36.077040100000005
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Mounia",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-229224481",
+      "coordinates": [
+        4.76675625,
+        36.090088800000004
+      ],
+      "osm": {
+        "id": "way/229224481",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.76675625,
+          36.090088800000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9613",
+          "route_id": "4358",
+          "name_fr": "Station de services Chemlal",
+          "name_ar": "محطة شملال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.767,
+            36.09
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Chemlal",
+      "display_name_ar": "محطة شملال"
+    },
+    {
+      "id": "osm-way-297497959",
+      "coordinates": [
+        4.38393885,
+        36.1247323
+      ],
+      "osm": {
+        "id": "way/297497959",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.38393885,
+          36.1247323
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9932",
+          "route_id": "14766",
+          "name_fr": "station de services chiban",
+          "name_ar": "محطة الخدمات شيبان",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.384,
+            36.1249
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de services chiban",
+      "display_name_ar": "محطة الخدمات شيبان"
+    },
+    {
+      "id": "osm-way-343700318",
+      "coordinates": [
+        5.0376996,
+        35.95701375
+      ],
+      "osm": {
+        "id": "way/343700318",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0376996,
+          35.95701375
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2333",
+          "route_id": "5650",
+          "name_fr": "station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.038,
+            35.957
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-343710103",
+      "coordinates": [
+        5.0413787,
+        35.942000699999994
+      ],
+      "osm": {
+        "id": "way/343710103",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0413787,
+          35.942000699999994
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2980",
+          "route_id": "6594",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات بن حمادي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.042,
+            35.942
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 56
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة خدمات بن حمادي"
+    },
+    {
+      "id": "osm-way-343711284",
+      "coordinates": [
+        5.033397750000001,
+        35.9276281
+      ],
+      "osm": {
+        "id": "way/343711284",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.033397750000001,
+          35.9276281
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3029",
+          "route_id": "6679",
+          "name_fr": "Station de services",
+          "name_ar": null,
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.033,
+            35.928
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-345794744",
+      "coordinates": [
+        4.3974218,
+        36.1952217
+      ],
+      "osm": {
+        "id": "way/345794744",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.3974218,
+          36.1952217
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1836",
+          "route_id": "4898",
+          "name_fr": "Station de services hamam el biban",
+          "name_ar": "محطة خدمات حمام البيبان",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.398,
+            36.195
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 57
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services hamam el biban",
+      "display_name_ar": "محطة خدمات حمام البيبان"
+    },
+    {
+      "id": "osm-way-386640032",
+      "coordinates": [
+        4.71825245,
+        36.0678919
+      ],
+      "osm": {
+        "id": "way/386640032",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.71825245,
+          36.0678919
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-386756163",
+      "coordinates": [
+        4.6917266,
+        36.0676815
+      ],
+      "osm": {
+        "id": "way/386756163",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.6917266,
+          36.0676815
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-386756165",
+      "coordinates": [
+        4.6815887499999995,
+        36.066412299999996
+      ],
+      "osm": {
+        "id": "way/386756165",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.6815887499999995,
+          36.066412299999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10028",
+          "route_id": "4943",
+          "name_fr": "STATION ESSENCE BADOUIA",
+          "name_ar": "محطة بنزين بدوية",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            4.6816,
+            36.0664
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 2
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION ESSENCE BADOUIA",
+      "display_name_ar": "محطة بنزين بدوية"
+    },
+    {
+      "id": "osm-way-386756166",
+      "coordinates": [
+        4.60278075,
+        36.070011550000004
+      ],
+      "osm": {
+        "id": "way/386756166",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.60278075,
+          36.070011550000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10026",
+          "route_id": "4943",
+          "name_fr": "STATION ESSENCE MANSOURI",
+          "name_ar": "محطة بنزين منصوري",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.6028,
+            36.0699
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة بنزين منصوري"
+    },
+    {
+      "id": "osm-way-386902935",
+      "coordinates": [
+        4.7304683,
+        36.093705099999994
+      ],
+      "osm": {
+        "id": "way/386902935",
+        "name": "Station Service BENCHIKHE",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.7304683,
+          36.093705099999994
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2466",
+          "route_id": "5881",
+          "name_fr": "Station de servicesfrères Ben Chikh",
+          "name_ar": "محطة الخدمات الإخوة بن شيخ",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.7304,
+            36.0936
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 13
+        },
+        {
+          "id": "11995",
+          "route_id": "5915",
+          "name_fr": "station d ecense de FENDI",
+          "name_ar": "محطة البنزين فندي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.73,
+            36.094
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 53
+        },
+        {
+          "id": "12062",
+          "route_id": "5915",
+          "name_fr": "station services de BEN CHIKHE",
+          "name_ar": "محطة بنزين بن شيخ",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.73,
+            36.094
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 53
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Service BENCHIKHE",
+      "display_name_ar": "محطة الخدمات الإخوة بن شيخ"
+    },
+    {
+      "id": "osm-way-386902946",
+      "coordinates": [
+        4.760376,
+        36.07081875
+      ],
+      "osm": {
+        "id": "way/386902946",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.760376,
+          36.07081875
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9628",
+          "route_id": "4358",
+          "name_fr": "Station de services Zraibi",
+          "name_ar": "محطة زرايبي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.76,
+            36.071
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Zraibi",
+      "display_name_ar": "محطة زرايبي"
+    },
+    {
+      "id": "osm-way-386902947",
+      "coordinates": [
+        4.7562576,
+        36.07084545
+      ],
+      "osm": {
+        "id": "way/386902947",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.7562576,
+          36.07084545
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-386902948",
+      "coordinates": [
+        4.75502965,
+        36.070522049999994
+      ],
+      "osm": {
+        "id": "way/386902948",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.75502965,
+          36.070522049999994
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-419951083",
+      "coordinates": [
+        4.751863950000001,
+        36.05087965
+      ],
+      "osm": {
+        "id": "way/419951083",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.751863950000001,
+          36.05087965
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9623",
+          "route_id": "4358",
+          "name_fr": "Station de services Belahmar",
+          "name_ar": "محطة الحواس بلحمر",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.752,
+            36.051
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 18
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Belahmar",
+      "display_name_ar": "محطة الحواس بلحمر"
+    },
+    {
+      "id": "osm-way-420033320",
+      "coordinates": [
+        4.5816891,
+        35.87761785
+      ],
+      "osm": {
+        "id": "way/420033320",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.5816891,
+          35.87761785
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-445355336",
+      "coordinates": [
+        4.8977059,
+        36.102890200000004
+      ],
+      "osm": {
+        "id": "way/445355336",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          4.8977059,
+          36.102890200000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1732",
+          "route_id": "4726",
+          "name_fr": "Station de services Benziouche",
+          "name_ar": "بن زيوش",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.898,
+            36.103
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-554741358",
+      "coordinates": [
+        4.5945436,
+        35.88505165
+      ],
+      "osm": {
+        "id": "way/554741358",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.5945436,
+          35.88505165
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-853710527",
+      "coordinates": [
+        5.09849185,
+        36.12023015
+      ],
+      "osm": {
+        "id": "way/853710527",
+        "name": "Station Zahraoui",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.09849185,
+          36.12023015
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3845503249",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station Zahraoui",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-11918",
+      "coordinates": [
+        5.0846,
+        36.0478
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "11918",
+          "route_id": "16423",
+          "name_fr": "STATION SERVISES",
+          "name_ar": "محطة الخدمات الاخوة مجيلي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.0846,
+            36.0478
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVISES",
+      "display_name_ar": "محطة الخدمات الاخوة مجيلي"
+    },
+    {
+      "id": "tariki-11923",
+      "coordinates": [
+        4.8256,
+        36.2457
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "11923",
+          "route_id": "16426",
+          "name_fr": "station service",
+          "name_ar": "محطة متعددة الخدمات",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            4.8256,
+            36.2457
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station service",
+      "display_name_ar": "محطة متعددة الخدمات"
+    },
+    {
+      "id": "tariki-12002",
+      "coordinates": [
+        4.727,
+        36.014
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12002",
+          "route_id": "5049",
+          "name_fr": "STATION DE SERVICES BOUKHARI",
+          "name_ar": "محطة بوخاري",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            4.727,
+            36.014
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES BOUKHARI",
+      "display_name_ar": "محطة بوخاري"
+    },
+    {
+      "id": "tariki-12004",
+      "coordinates": [
+        4.9691,
+        36.0602
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12004",
+          "route_id": "4753",
+          "name_fr": "STATION DE SERVICES MAKSOUD",
+          "name_ar": "محطة خدمات مقصود",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.9691,
+            36.0602
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES MAKSOUD",
+      "display_name_ar": "محطة خدمات مقصود"
+    },
+    {
+      "id": "tariki-12040",
+      "coordinates": [
+        4.3912,
+        36.2302
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12040",
+          "route_id": "14766",
+          "name_fr": "STATION SERVICE MANSOURI",
+          "name_ar": "محطة منصوري وزهار بيبان الحديد",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.3912,
+            36.2302
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVICE MANSOURI",
+      "display_name_ar": "محطة منصوري وزهار بيبان الحديد"
+    },
+    {
+      "id": "tariki-12056",
+      "coordinates": [
+        4.836,
+        36.064
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12056",
+          "route_id": "14995",
+          "name_fr": "stastion ain zada",
+          "name_ar": "محطة عين زادة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.836,
+            36.064
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "stastion ain zada",
+      "display_name_ar": "محطة عين زادة"
+    },
+    {
+      "id": "tariki-12242",
+      "coordinates": [
+        5.0845,
+        36.0476
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12242",
+          "route_id": "4634",
+          "name_fr": "STATION SERVIS",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.0845,
+            36.0476
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVIS",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "tariki-12797",
+      "coordinates": [
+        4.3979,
+        36.2011
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12797",
+          "route_id": "17579",
+          "name_fr": "//",
+          "name_ar": "محطة 01 إتجاه الجزائر",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            4.3979,
+            36.2011
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "محطة 01 إتجاه الجزائر"
+    },
+    {
+      "id": "tariki-12798",
+      "coordinates": [
+        4.3962,
+        36.2018
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12798",
+          "route_id": "17579",
+          "name_fr": "//",
+          "name_ar": "محطة 02 إتجاه قسنطينة",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            4.3962,
+            36.2018
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "محطة 02 إتجاه قسنطينة"
+    },
+    {
+      "id": "tariki-12966",
+      "coordinates": [
+        4.997,
+        36.186
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12966",
+          "route_id": "10367",
+          "name_fr": "BEN JEBAL",
+          "name_ar": "محطة الخدمات بن جبل",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.997,
+            36.186
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "BEN JEBAL",
+      "display_name_ar": "محطة الخدمات بن جبل"
+    },
+    {
+      "id": "tariki-2294",
+      "coordinates": [
+        5.075,
+        36.132
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2294",
+          "route_id": "5587",
+          "name_fr": "Station de services Ain Taghrout",
+          "name_ar": "مدينة عين تاغروت",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.075,
+            36.132
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Ain Taghrout",
+      "display_name_ar": "مدينة عين تاغروت"
+    },
+    {
+      "id": "tariki-2488",
+      "coordinates": [
+        4.585,
+        36.204
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2488",
+          "route_id": "5915",
+          "name_fr": "Societé Solidarité Frere belhoumari",
+          "name_ar": "شركة التضامن الإخوة بلهوماري",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.585,
+            36.204
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Societé Solidarité Frere belhoumari",
+      "display_name_ar": "شركة التضامن الإخوة بلهوماري"
+    },
+    {
+      "id": "tariki-2495",
+      "coordinates": [
+        4.7282,
+        36.0951
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2495",
+          "route_id": "5881",
+          "name_fr": "station de services Fendi",
+          "name_ar": "محطة الخدمات فندي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.7282,
+            36.0951
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Fendi",
+      "display_name_ar": "محطة الخدمات فندي"
+    },
+    {
+      "id": "tariki-2662",
+      "coordinates": [
+        4.643,
+        36.009
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2662",
+          "route_id": "6081",
+          "name_fr": "Station de services ELHADDAD",
+          "name_ar": "محطة الحداد",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.643,
+            36.009
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ELHADDAD",
+      "display_name_ar": "محطة الحداد"
+    },
+    {
+      "id": "tariki-2673",
+      "coordinates": [
+        4.792,
+        36.139
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2673",
+          "route_id": "6120",
+          "name_fr": "Station de services Meguelati",
+          "name_ar": "محطة وقود ملك للمسمى مقلاتي",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            4.792,
+            36.139
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Meguelati",
+      "display_name_ar": "محطة وقود ملك للمسمى مقلاتي"
+    },
+    {
+      "id": "tariki-4022",
+      "coordinates": [
+        4.595,
+        35.884
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4022",
+          "route_id": "8052",
+          "name_fr": "Station de services Yousra",
+          "name_ar": "محطة يسرى",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            4.595,
+            35.884
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Yousra",
+      "display_name_ar": "محطة يسرى"
+    },
+    {
+      "id": "tariki-4029",
+      "coordinates": [
+        4.5748,
+        35.8752
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4029",
+          "route_id": "8052",
+          "name_fr": "Station de services Serdrati",
+          "name_ar": "محطة صدراتي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.5748,
+            35.8752
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Serdrati",
+      "display_name_ar": "محطة صدراتي"
+    },
+    {
+      "id": "tariki-9677",
+      "coordinates": [
+        4.73,
+        36.069
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9677",
+          "route_id": "4358",
+          "name_fr": "Station de services Naftal cite 05 juillet",
+          "name_ar": "محطة نافطال بحي 05 جويلية",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.73,
+            36.069
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 34,
+          "wilaya_fr": "Bordj Bou Arreridj",
+          "wilaya_ar": "برج بوعريريج",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal cite 05 juillet",
+      "display_name_ar": "محطة نافطال بحي 05 جويلية"
+    }
+  ]
+}

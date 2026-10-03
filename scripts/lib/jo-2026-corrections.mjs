@@ -1,0 +1,299 @@
+// Name and coordinate corrections for the flagship dataset, each carrying the
+// text that establishes it.
+//
+// NAMES. Law 26-06 (JORA n° 25, 5 April 2026) re-states the commune list of ten
+// existing wilayas and creates eleven more, in French (F2026025.pdf) and in the
+// authoritative Arabic edition (A2026025.pdf). Presidential decree 26-206
+// (JORA n° 40, 3 June 2026, p. 5) fixes the names and chef-lieux of wilayas
+// 59-69. Every entry below names its article, its item number in that list and
+// the printed page it is on.
+//
+// What is deliberately NOT taken from the JORA:
+//   - the typographic apostrophe (U+2019). The dataset writes an ASCII one, so
+//     "M’Sila" lands as "M'Sila". That is presentation, not spelling.
+//   - an Arabic form that DROPS orthography the dataset carries: a final yaa
+//     written as alef maqsura, or a missing hamza on an otherwise identical
+//     name. The Arabic edition does both inconsistently, so those readings are
+//     typesetting. They are listed in UNVERIFIED below and left alone.
+//
+// COORDINATES. Six communes shipped one of two placeholder points, each shared
+// by two communes. Replaced with the centroid of the OpenStreetMap admin_level=8
+// relation whose `ref` tag is that commune's own ONS code (© OpenStreetMap
+// contributors, ODbL 1.0).
+
+/** A wilaya-level name correction.
+ *
+ *  Wilaya 58 is deliberately absent. The JORA n° 25 wilaya table (p. 16) and
+ *  law 19-12 (JORA n° 78 of 2019, art. 52 bis 9) both write "El Meniaâ" where
+ *  the dataset writes "El Meniaa", but that table also prints "Bordi Bou
+ *  Arréridj" and drops the diaeresis from "Saïda", and the 2019 article names
+ *  the commune rather than the wilaya. Renaming the wilaya without auditing the
+ *  2019 law's commune lists would leave the wilaya and its chef-lieu disagreeing,
+ *  so it waits for that audit. Wilaya 11 ("Tamanrasset" here, "Tamenghasset" in
+ *  the same table) and wilaya 57 ("El M'Ghair" here, "El Meghaier" there and
+ *  "El Megaier" in 2019) are left alone for the same reason. */
+export const wilayaNameCorrections = [
+  { code: 65, field: "name_fr", from: "Aïn Oussera", former_names: ["Aïn Oussara"], to: "Aïn Ouessara", source: "JORA n° 40 (2026), decree 26-206 art. 1, item 65, p. 5" },
+  { code: 28, field: "name_fr", from: "M'sila", to: "M'Sila", source: "JORA n° 25 (2026), law 26-06 art. 32, item 1, p. 7; wilaya table p. 16" },
+];
+
+/** A commune-level name correction, keyed by the stable ONS commune code.
+ *
+ *  `former_names` lists Former names beyond `from`: other published readings
+ *  the correction also replaces. The GeoAlgeria web app keeps its own copy of
+ *  this data and wrote wilaya 65 "Aïn Oussara" (as the dataset README did until
+ *  2026-09-24) and its seat "Ain Oussera". Each is accepted as an old value
+ *  wherever the correction is applied and is kept in name-history.json. */
+export const communeNameCorrections = [
+  { code_commune: 306, wilaya_code: 3, field: "name_fr", from: "Hassi R'mel", to: "Hassi R'Mel", source: "JORA n° 25 (2026), law 26-06 art. 7, item 6, p. 4" },
+  { code_commune: 307, wilaya_code: 3, field: "name_fr", from: "Ain Madhi", to: "Aïn Madhi", source: "JORA n° 25 (2026), law 26-06 art. 7, item 7, p. 4" },
+  { code_commune: 323, wilaya_code: 3, field: "name_fr", from: "El Haouaita", to: "El Haouita", source: "JORA n° 25 (2026), law 26-06 art. 7, item 12, p. 4" },
+  { code_commune: 507, wilaya_code: 5, field: "name_fr", from: "El Madher", to: "Elmadher", source: "JORA n° 25 (2026), law 26-06 art. 9, item 7, p. 4" },
+  { code_commune: 509, wilaya_code: 5, field: "name_fr", from: "N Gaous", to: "N'Gaous", source: "JORA n° 25 (2026), law 26-06 art. 9, item 9, p. 4" },
+  { code_commune: 511, wilaya_code: 5, field: "name_fr", from: "Inoughissen", to: "Inoughissene", source: "JORA n° 25 (2026), law 26-06 art. 9, item 11, p. 4" },
+  { code_commune: 516, wilaya_code: 5, field: "name_ar", from: "أريس", to: "آريس", source: "JORA n° 25 (2026), law 26-06 art. 9, item 14, p. 4" },
+  { code_commune: 521, wilaya_code: 5, field: "name_fr", from: "Tigharghar", to: "Tigherghar", source: "JORA n° 25 (2026), law 26-06 art. 9, item 18, p. 4" },
+  { code_commune: 521, wilaya_code: 5, field: "name_ar", from: "تغرغار", to: "تيغرغار", source: "JORA n° 25 (2026), law 26-06 art. 9, item 18, p. 4" },
+  { code_commune: 527, wilaya_code: 5, field: "name_fr", from: "Lemcene", to: "Lemsane", source: "JORA n° 25 (2026), law 26-06 art. 9, item 24, p. 4" },
+  { code_commune: 528, wilaya_code: 5, field: "name_fr", from: "Ksar Bellezma", to: "Ksar Belezma", source: "JORA n° 25 (2026), law 26-06 art. 9, item 25, p. 4" },
+  { code_commune: 530, wilaya_code: 5, field: "name_fr", from: "Ichemoul", to: "Ichmoul", source: "JORA n° 25 (2026), law 26-06 art. 9, item 26, p. 4" },
+  { code_commune: 530, wilaya_code: 5, field: "name_ar", from: "إشمول", to: "إيشمول", source: "JORA n° 25 (2026), law 26-06 art. 9, item 26, p. 5" },
+  { code_commune: 532, wilaya_code: 5, field: "name_fr", from: "Beni Foudhala El Hakania", to: "Béni Fedhala El Hakania", source: "JORA n° 25 (2026), law 26-06 art. 9, item 28, p. 4" },
+  { code_commune: 544, wilaya_code: 5, field: "name_fr", from: "T Kout", to: "T'Kout", source: "JORA n° 25 (2026), law 26-06 art. 9, item 38, p. 5" },
+  { code_commune: 545, wilaya_code: 5, field: "name_fr", from: "Ain Touta", to: "Aïn Touta", source: "JORA n° 25 (2026), law 26-06 art. 9, item 39, p. 5" },
+  { code_commune: 551, wilaya_code: 5, field: "name_fr", from: "Ras El Aioun", to: "Ras El Aïoun", source: "JORA n° 25 (2026), law 26-06 art. 9, item 45, p. 5" },
+  { code_commune: 554, wilaya_code: 5, field: "name_fr", from: "Zanet El Beida", to: "Zana El Beïda", source: "JORA n° 25 (2026), law 26-06 art. 9, item 48, p. 5" },
+  { code_commune: 712, wilaya_code: 7, field: "name_fr", from: "M'chouneche", to: "M'Chounèche", source: "JORA n° 25 (2026), law 26-06 art. 11, item 5, p. 5" },
+  { code_commune: 714, wilaya_code: 7, field: "name_fr", from: "Ain Naga", to: "Aïn Naga", source: "JORA n° 25 (2026), law 26-06 art. 11, item 7, p. 5" },
+  { code_commune: 716, wilaya_code: 7, field: "name_fr", from: "El Feidh", to: "El Feïdh", source: "JORA n° 25 (2026), law 26-06 art. 11, item 9, p. 5" },
+  { code_commune: 725, wilaya_code: 7, field: "name_fr", from: "M'lili", to: "M'Lili", source: "JORA n° 25 (2026), law 26-06 art. 11, item 14, p. 5" },
+  { code_commune: 725, wilaya_code: 7, field: "name_ar", from: "مليلي", to: "أمليلي", source: "JORA n° 25 (2026), law 26-06 art. 11, item 14, p. 5" },
+  { code_commune: 729, wilaya_code: 7, field: "name_fr", from: "Bouchakroun", to: "Bouchagroun", source: "JORA n° 25 (2026), law 26-06 art. 11, item 18, p. 5" },
+  { code_commune: 730, wilaya_code: 7, field: "name_ar", from: "مخادمة", to: "أمخادمة", source: "JORA n° 25 (2026), law 26-06 art. 11, item 19, p. 5" },
+  { code_commune: 732, wilaya_code: 7, field: "name_fr", from: "El Hadjab", to: "El Hadjeb", source: "JORA n° 25 (2026), law 26-06 art. 11, item 21, p. 5" },
+  { code_commune: 733, wilaya_code: 7, field: "name_fr", from: "Khenguet Sidi Nadji", to: "Khangat Sidi Nadji", source: "JORA n° 25 (2026), law 26-06 art. 11, item 22, p. 5" },
+  { code_commune: 1201, wilaya_code: 12, field: "name_fr", from: "Tebessa", to: "Tébessa", source: "JORA n° 25 (2026), law 26-06 art. 16, item 1, p. 5" },
+  { code_commune: 1204, wilaya_code: 12, field: "name_ar", from: "سطح قنطيس", to: "السطح قنتيس", source: "JORA n° 25 (2026), law 26-06 art. 16, item 3, p. 5" },
+  { code_commune: 1205, wilaya_code: 12, field: "name_fr", from: "El-Aouinet", to: "El Aouinet", source: "JORA n° 25 (2026), law 26-06 art. 16, item 4, p. 5" },
+  { code_commune: 1206, wilaya_code: 12, field: "name_fr", from: "El-Houidjbet", to: "Lahouidjbet", source: "JORA n° 25 (2026), law 26-06 art. 16, item 5, p. 5" },
+  { code_commune: 1207, wilaya_code: 12, field: "name_fr", from: "Saf Saf El Ouesra", to: "Safsaf El Ouesra", source: "JORA n° 25 (2026), law 26-06 art. 16, item 6, p. 5" },
+  { code_commune: 1216, wilaya_code: 12, field: "name_fr", from: "Guorriguer", to: "Gourrigueur", source: "JORA n° 25 (2026), law 26-06 art. 16, item 13, p. 5" },
+  { code_commune: 1220, wilaya_code: 12, field: "name_fr", from: "El Malabiod", to: "El Ma Labiod", source: "JORA n° 25 (2026), law 26-06 art. 16, item 17, p. 5" },
+  { code_commune: 1220, wilaya_code: 12, field: "name_ar", from: "الماء الابيض", to: "الماء الأبيض", source: "JORA n° 25 (2026), law 26-06 art. 16, item 17, p. 6" },
+  { code_commune: 1222, wilaya_code: 12, field: "name_fr", from: "Telidjen", to: "Thlidjene", source: "JORA n° 25 (2026), law 26-06 art. 16, item 19, p. 5" },
+  { code_commune: 1302, wilaya_code: 13, field: "name_fr", from: "Beni Mester", to: "Béni Mester", source: "JORA n° 25 (2026), law 26-06 art. 17, item 2, p. 5" },
+  { code_commune: 1303, wilaya_code: 13, field: "name_fr", from: "Ain Tellout", to: "Aïn Tallout", source: "JORA n° 25 (2026), law 26-06 art. 17, item 3, p. 5" },
+  { code_commune: 1311, wilaya_code: 13, field: "name_ar", from: "وادي الخضر", to: "وادي الأخضر", source: "JORA n° 25 (2026), law 26-06 art. 17, item 10, p. 6" },
+  { code_commune: 1317, wilaya_code: 13, field: "name_fr", from: "Beni Snous", to: "Béni Snous", source: "JORA n° 25 (2026), law 26-06 art. 17, item 16, p. 6" },
+  { code_commune: 1319, wilaya_code: 13, field: "name_fr", from: "Dar Yaghmoracen", to: "Dar Yaghmouracène", source: "JORA n° 25 (2026), law 26-06 art. 17, item 18, p. 6" },
+  { code_commune: 1320, wilaya_code: 13, field: "name_fr", from: "Fellaoucene", to: "Fellaoucène", source: "JORA n° 25 (2026), law 26-06 art. 17, item 19, p. 6" },
+  { code_commune: 1321, wilaya_code: 13, field: "name_fr", from: "Azail", to: "Azaïls", source: "JORA n° 25 (2026), law 26-06 art. 17, item 20, p. 6" },
+  { code_commune: 1321, wilaya_code: 13, field: "name_ar", from: "العزايل", to: "لعزايل", source: "JORA n° 25 (2026), law 26-06 art. 17, item 20, p. 6" },
+  { code_commune: 1322, wilaya_code: 13, field: "name_fr", from: "Sebbaa Chioukh", to: "Sebaa Chioukh", source: "JORA n° 25 (2026), law 26-06 art. 17, item 21, p. 6" },
+  { code_commune: 1322, wilaya_code: 13, field: "name_ar", from: "سبعة شيوخ", to: "السبعة شيوخ", source: "JORA n° 25 (2026), law 26-06 art. 17, item 21, p. 6" },
+  { code_commune: 1323, wilaya_code: 13, field: "name_fr", from: "Terny Beni Hediel", to: "Tirni Béni Hediel", source: "JORA n° 25 (2026), law 26-06 art. 17, item 22, p. 6" },
+  { code_commune: 1330, wilaya_code: 13, field: "name_fr", from: "M'sirda Fouaga", to: "Msirda Fouaga", source: "JORA n° 25 (2026), law 26-06 art. 17, item 29, p. 6" },
+  { code_commune: 1331, wilaya_code: 13, field: "name_fr", from: "Ain Fetah", to: "Aïn Fetah", source: "JORA n° 25 (2026), law 26-06 art. 17, item 30, p. 6" },
+  { code_commune: 1333, wilaya_code: 13, field: "name_fr", from: "Souk Tleta", to: "Souk Thlata", source: "JORA n° 25 (2026), law 26-06 art. 17, item 31, p. 6" },
+  { code_commune: 1336, wilaya_code: 13, field: "name_fr", from: "Beni Ouarsous", to: "Béni Ouarsous", source: "JORA n° 25 (2026), law 26-06 art. 17, item 34, p. 6" },
+  { code_commune: 1336, wilaya_code: 13, field: "name_ar", from: "بني وارسوس", to: "بني ورسوس", source: "JORA n° 25 (2026), law 26-06 art. 17, item 34, p. 6" },
+  { code_commune: 1338, wilaya_code: 13, field: "name_fr", from: "Beni Boussaid", to: "Béni Boussaïd", source: "JORA n° 25 (2026), law 26-06 art. 17, item 36, p. 6" },
+  { code_commune: 1339, wilaya_code: 13, field: "name_fr", from: "Marsa Ben M'hidi", to: "Marsa Ben M'Hidi", source: "JORA n° 25 (2026), law 26-06 art. 17, item 37, p. 6" },
+  { code_commune: 1340, wilaya_code: 13, field: "name_fr", from: "Nedroma", to: "Nédroma", source: "JORA n° 25 (2026), law 26-06 art. 17, item 38, p. 6" },
+  { code_commune: 1342, wilaya_code: 13, field: "name_fr", from: "Beni Bahdel", to: "Béni Bahdel", source: "JORA n° 25 (2026), law 26-06 art. 17, item 39, p. 6" },
+  { code_commune: 1342, wilaya_code: 13, field: "name_ar", from: "بني بهدل", to: "بني بحدل", source: "JORA n° 25 (2026), law 26-06 art. 17, item 39, p. 6" },
+  { code_commune: 1344, wilaya_code: 13, field: "name_fr", from: "Honnaine", to: "Honaïne", source: "JORA n° 25 (2026), law 26-06 art. 17, item 40, p. 6" },
+  { code_commune: 1344, wilaya_code: 13, field: "name_ar", from: "هنين", to: "حنين", source: "JORA n° 25 (2026), law 26-06 art. 17, item 40, p. 6" },
+  { code_commune: 1348, wilaya_code: 13, field: "name_fr", from: "Beni Khellad", to: "Béni Khellad", source: "JORA n° 25 (2026), law 26-06 art. 17, item 44, p. 6" },
+  { code_commune: 1349, wilaya_code: 13, field: "name_fr", from: "Ain Ghoraba", to: "Aïn Ghoraba", source: "JORA n° 25 (2026), law 26-06 art. 17, item 45, p. 6" },
+  { code_commune: 1349, wilaya_code: 13, field: "name_ar", from: "عين غرابة", to: "عين الغرابة", source: "JORA n° 25 (2026), law 26-06 art. 17, item 45, p. 6" },
+  { code_commune: 1351, wilaya_code: 13, field: "name_ar", from: "منصورة", to: "المنصورة", source: "JORA n° 25 (2026), law 26-06 art. 17, item 47, p. 6" },
+  { code_commune: 1352, wilaya_code: 13, field: "name_fr", from: "Beni Smiel", to: "Béni Semiel", source: "JORA n° 25 (2026), law 26-06 art. 17, item 48, p. 6" },
+  { code_commune: 1353, wilaya_code: 13, field: "name_ar", from: "عين الكبيرة", to: "العين الكبيرة", source: "JORA n° 25 (2026), law 26-06 art. 17, item 49, p. 6" },
+  { code_commune: 1403, wilaya_code: 14, field: "name_fr", from: "Ain Bouchekif", to: "Aïn Bouchekif", source: "JORA n° 25 (2026), law 26-06 art. 18, item 3, p. 6" },
+  { code_commune: 1405, wilaya_code: 14, field: "name_fr", from: "Ain Dzarit", to: "Aïn Dzarit", source: "JORA n° 25 (2026), law 26-06 art. 18, item 5, p. 6" },
+  { code_commune: 1406, wilaya_code: 14, field: "name_fr", from: "Ain Deheb", to: "Aïn Deheb", source: "JORA n° 25 (2026), law 26-06 art. 18, item 6, p. 6" },
+  { code_commune: 1408, wilaya_code: 14, field: "name_fr", from: "Medrissa", to: "Médrissa", source: "JORA n° 25 (2026), law 26-06 art. 18, item 8, p. 6" },
+  { code_commune: 1413, wilaya_code: 14, field: "name_ar", from: "دحموني", to: "الدحموني", source: "JORA n° 25 (2026), law 26-06 art. 18, item 12, p. 7" },
+  { code_commune: 1417, wilaya_code: 14, field: "name_fr", from: "Si Abdelghani", to: "Sidi Abdelghani", source: "JORA n° 25 (2026), law 26-06 art. 18, item 16, p. 6" },
+  { code_commune: 1417, wilaya_code: 14, field: "name_ar", from: "سي عبد الغني", to: "سيدي عبد الغني", source: "JORA n° 25 (2026), law 26-06 art. 18, item 16, p. 7" },
+  { code_commune: 1418, wilaya_code: 14, field: "name_fr", from: "Ain El Hadid", to: "Aïn El Hadid", source: "JORA n° 25 (2026), law 26-06 art. 18, item 17, p. 6" },
+  { code_commune: 1419, wilaya_code: 14, field: "name_ar", from: "جبيلات الرصفاء", to: "جبيلة الرصفاء", source: "JORA n° 25 (2026), law 26-06 art. 18, item 18, p. 7" },
+  { code_commune: 1420, wilaya_code: 14, field: "name_fr", from: "Naima", to: "Naïma", source: "JORA n° 25 (2026), law 26-06 art. 18, item 19, p. 6" },
+  { code_commune: 1424, wilaya_code: 14, field: "name_fr", from: "Djillali Ben Amar", to: "Djileli Ben Amar", source: "JORA n° 25 (2026), law 26-06 art. 18, item 23, p. 6" },
+  { code_commune: 1425, wilaya_code: 14, field: "name_fr", from: "Sebaine", to: "Sebaïne", source: "JORA n° 25 (2026), law 26-06 art. 18, item 24, p. 6" },
+  { code_commune: 1425, wilaya_code: 14, field: "name_ar", from: "السبعين", to: "سبعين", source: "JORA n° 25 (2026), law 26-06 art. 18, item 24, p. 7" },
+  { code_commune: 1428, wilaya_code: 14, field: "name_fr", from: "Ain Kermes", to: "Aïn Kermes", source: "JORA n° 25 (2026), law 26-06 art. 18, item 27, p. 6" },
+  { code_commune: 1432, wilaya_code: 14, field: "name_fr", from: "Tagdempt", to: "Tagdemt", source: "JORA n° 25 (2026), law 26-06 art. 18, item 29, p. 6" },
+  { code_commune: 1433, wilaya_code: 14, field: "name_fr", from: "Oued Lilli", to: "Oued Lili", source: "JORA n° 25 (2026), law 26-06 art. 18, item 30, p. 6" },
+  { code_commune: 1434, wilaya_code: 14, field: "name_fr", from: "Mechraa Safa", to: "Mechraa Sfa", source: "JORA n° 25 (2026), law 26-06 art. 18, item 31, p. 6" },
+  { code_commune: 1436, wilaya_code: 14, field: "name_fr", from: "Chehaima", to: "Chehaïma", source: "JORA n° 25 (2026), law 26-06 art. 18, item 32, p. 6" },
+  { code_commune: 1437, wilaya_code: 14, field: "name_ar", from: "تخمرت", to: "تخمارت", source: "JORA n° 25 (2026), law 26-06 art. 18, item 33, p. 7" },
+  { code_commune: 1438, wilaya_code: 14, field: "name_ar", from: "سيدي عبد الرحمن", to: "سيدي عبد الرحمان", source: "JORA n° 25 (2026), law 26-06 art. 18, item 34, p. 7" },
+  { code_commune: 1441, wilaya_code: 14, field: "name_fr", from: "Faidja", to: "Faïdja", source: "JORA n° 25 (2026), law 26-06 art. 18, item 35, p. 6" },
+  { code_commune: 1702, wilaya_code: 17, field: "name_fr", from: "Moudjebara", to: "Moudjbara", source: "JORA n° 25 (2026), law 26-06 art. 21, item 2, p. 6" },
+  { code_commune: 1702, wilaya_code: 17, field: "name_ar", from: "مجبارة", to: "المجبارة", source: "JORA n° 25 (2026), law 26-06 art. 21, item 2, p. 7" },
+  { code_commune: 1703, wilaya_code: 17, field: "name_fr", from: "El Guedid", to: "El Gueddid", source: "JORA n° 25 (2026), law 26-06 art. 21, item 3, p. 6" },
+  { code_commune: 1705, wilaya_code: 17, field: "name_fr", from: "Ain Maabed", to: "Aïn Maabed", source: "JORA n° 25 (2026), law 26-06 art. 21, item 5, p. 6" },
+  { code_commune: 1712, wilaya_code: 17, field: "name_fr", from: "Sidi Baizid", to: "Sidi Baïzid", source: "JORA n° 25 (2026), law 26-06 art. 21, item 7, p. 6" },
+  { code_commune: 1713, wilaya_code: 17, field: "name_fr", from: "M'liliha", to: "M'Liliha", source: "JORA n° 25 (2026), law 26-06 art. 21, item 8, p. 6" },
+  { code_commune: 1713, wilaya_code: 17, field: "name_ar", from: "مليليحة", to: "المليليحة", source: "JORA n° 25 (2026), law 26-06 art. 21, item 8, p. 7" },
+  { code_commune: 1714, wilaya_code: 17, field: "name_ar", from: "الادريسية", to: "الإدريسية", source: "JORA n° 25 (2026), law 26-06 art. 21, item 9, p. 7" },
+  { code_commune: 1715, wilaya_code: 17, field: "name_ar", from: "دويس", to: "الدويس", source: "JORA n° 25 (2026), law 26-06 art. 21, item 10, p. 7" },
+  { code_commune: 1723, wilaya_code: 17, field: "name_fr", from: "Ain Chouhada", to: "Aïn Chouhada", source: "JORA n° 25 (2026), law 26-06 art. 21, item 12, p. 7" },
+  { code_commune: 1727, wilaya_code: 17, field: "name_fr", from: "Benyagoub", to: "Ben Yaagoub", source: "JORA n° 25 (2026), law 26-06 art. 21, item 15, p. 7" },
+  { code_commune: 1730, wilaya_code: 17, field: "name_fr", from: "Ain El Ibel", to: "Aïn El Ibel", source: "JORA n° 25 (2026), law 26-06 art. 21, item 17, p. 7" },
+  { code_commune: 1736, wilaya_code: 17, field: "name_fr", from: "Taadmit", to: "Tadmit", source: "JORA n° 25 (2026), law 26-06 art. 21, item 18, p. 7" },
+  { code_commune: 2601, wilaya_code: 26, field: "name_fr", from: "Medea", to: "Médéa", source: "JORA n° 25 (2026), law 26-06 art. 30, item 1, p. 7" },
+  { code_commune: 2605, wilaya_code: 26, field: "name_fr", from: "Aissaouia", to: "Aïssaouia", source: "JORA n° 25 (2026), law 26-06 art. 30, item 3, p. 7" },
+  { code_commune: 2606, wilaya_code: 26, field: "name_fr", from: "Ouled Deid", to: "Ouled Deïde", source: "JORA n° 25 (2026), law 26-06 art. 30, item 4, p. 7" },
+  { code_commune: 2606, wilaya_code: 26, field: "name_ar", from: "أولاد دايد", to: "أولاد ذايد", source: "JORA n° 25 (2026), law 26-06 art. 30, item 4, p. 7" },
+  { code_commune: 2609, wilaya_code: 26, field: "name_fr", from: "El Guelbelkebir", to: "El Guelb El Kebir", source: "JORA n° 25 (2026), law 26-06 art. 30, item 6, p. 7" },
+  { code_commune: 2611, wilaya_code: 26, field: "name_fr", from: "Mezerana", to: "Mezghenna", source: "JORA n° 25 (2026), law 26-06 art. 30, item 7, p. 7" },
+  { code_commune: 2615, wilaya_code: 26, field: "name_fr", from: "Tamesguida", to: "Tamezguida", source: "JORA n° 25 (2026), law 26-06 art. 30, item 11, p. 7" },
+  { code_commune: 2615, wilaya_code: 26, field: "name_ar", from: "تمسقيدة", to: "تمزقيدة", source: "JORA n° 25 (2026), law 26-06 art. 30, item 11, p. 8" },
+  { code_commune: 2619, wilaya_code: 26, field: "name_fr", from: "Bouskene", to: "Bouskène", source: "JORA n° 25 (2026), law 26-06 art. 30, item 13, p. 7" },
+  { code_commune: 2620, wilaya_code: 26, field: "name_fr", from: "Rebaia", to: "Rebaïa", source: "JORA n° 25 (2026), law 26-06 art. 30, item 14, p. 7" },
+  { code_commune: 2630, wilaya_code: 26, field: "name_fr", from: "Ben Chicao", to: "Benchicao", source: "JORA n° 25 (2026), law 26-06 art. 30, item 21, p. 7" },
+  { code_commune: 2636, wilaya_code: 26, field: "name_fr", from: "El Azizia", to: "Al Azizia", source: "JORA n° 25 (2026), law 26-06 art. 30, item 24, p. 7" },
+  { code_commune: 2639, wilaya_code: 26, field: "name_fr", from: "Maghraoua", to: "Meghraoua", source: "JORA n° 25 (2026), law 26-06 art. 30, item 26, p. 7" },
+  { code_commune: 2643, wilaya_code: 26, field: "name_ar", from: "عوامري", to: "وامري", source: "JORA n° 25 (2026), law 26-06 art. 30, item 27, p. 8" },
+  { code_commune: 2645, wilaya_code: 26, field: "name_fr", from: "Tletat Ed Douair", to: "Eddouair", source: "JORA n° 25 (2026), law 26-06 art. 30, item 29, p. 7" },
+  { code_commune: 2645, wilaya_code: 26, field: "name_ar", from: "ثلاث دوائر", to: "الدواير", source: "JORA n° 25 (2026), law 26-06 art. 30, item 29, p. 8" },
+  { code_commune: 2646, wilaya_code: 26, field: "name_fr", from: "Beni Slimane", to: "Béni Slimane", source: "JORA n° 25 (2026), law 26-06 art. 30, item 30, p. 7" },
+  { code_commune: 2653, wilaya_code: 26, field: "name_fr", from: "El Haoudane", to: "Deux Bassins", source: "JORA n° 25 (2026), law 26-06 art. 30, item 35, p. 7" },
+  { code_commune: 2654, wilaya_code: 26, field: "name_fr", from: "Draa Esmar", to: "Draa Essamar", source: "JORA n° 25 (2026), law 26-06 art. 30, item 36, p. 7" },
+  { code_commune: 2655, wilaya_code: 26, field: "name_fr", from: "Sidi Rabie", to: "Sidi Errabie", source: "JORA n° 25 (2026), law 26-06 art. 30, item 37, p. 7" },
+  { code_commune: 2656, wilaya_code: 26, field: "name_fr", from: "Bir Ben Laabed", to: "Bir Ben Abed", source: "JORA n° 25 (2026), law 26-06 art. 30, item 38, p. 7" },
+  { code_commune: 2659, wilaya_code: 26, field: "name_fr", from: "Bouaichoune", to: "Bouaïchoune", source: "JORA n° 25 (2026), law 26-06 art. 30, item 39, p. 7" },
+  { code_commune: 2661, wilaya_code: 26, field: "name_fr", from: "Sedraya", to: "Sedraïa", source: "JORA n° 25 (2026), law 26-06 art. 30, item 41, p. 7" },
+  { code_commune: 2663, wilaya_code: 26, field: "name_fr", from: "Khams Djouamaa", to: "Khamsa Djoumaa", source: "JORA n° 25 (2026), law 26-06 art. 30, item 43, p. 7" },
+  { code_commune: 2801, wilaya_code: 28, field: "name_fr", from: "M'sila", to: "M'Sila", source: "JORA n° 25 (2026), law 26-06 art. 32, item 1, p. 7" },
+  { code_commune: 2803, wilaya_code: 28, field: "name_fr", from: "Hammam Dalaa", to: "Hammam Dhalaa", source: "JORA n° 25 (2026), law 26-06 art. 32, item 3, p. 7" },
+  { code_commune: 2806, wilaya_code: 28, field: "name_fr", from: "M'tarfa", to: "M'Tarfa", source: "JORA n° 25 (2026), law 26-06 art. 32, item 6, p. 7" },
+  { code_commune: 2809, wilaya_code: 28, field: "name_ar", from: "شلال", to: "الشلال", source: "JORA n° 25 (2026), law 26-06 art. 32, item 7, p. 8" },
+  { code_commune: 2813, wilaya_code: 28, field: "name_fr", from: "Ain Khadra", to: "Aïn Khadra", source: "JORA n° 25 (2026), law 26-06 art. 32, item 11, p. 7" },
+  { code_commune: 2814, wilaya_code: 28, field: "name_ar", from: "أولاد عدي لقبالة", to: "أولاد عدي القبالة", source: "JORA n° 25 (2026), law 26-06 art. 32, item 12, p. 8" },
+  { code_commune: 2815, wilaya_code: 28, field: "name_fr", from: "Belaiba", to: "Belaïba", source: "JORA n° 25 (2026), law 26-06 art. 32, item 13, p. 7" },
+  { code_commune: 2816, wilaya_code: 28, field: "name_fr", from: "Sidi Aissa", to: "Sidi Aïssa", source: "JORA n° 25 (2026), law 26-06 art. 32, item 14, p. 7" },
+  { code_commune: 2817, wilaya_code: 28, field: "name_fr", from: "Ain El Hadjel", to: "Aïn El Hadjel", source: "JORA n° 25 (2026), law 26-06 art. 32, item 15, p. 7" },
+  { code_commune: 2829, wilaya_code: 28, field: "name_ar", from: "معاريف", to: "المعاريف", source: "JORA n° 25 (2026), law 26-06 art. 32, item 19, p. 8" },
+  { code_commune: 2830, wilaya_code: 28, field: "name_ar", from: "دهاهنة", to: "الدهاهنة", source: "JORA n° 25 (2026), law 26-06 art. 32, item 20, p. 9" },
+  { code_commune: 2831, wilaya_code: 28, field: "name_fr", from: "Bouti Sayeh", to: "Bouti Sayah", source: "JORA n° 25 (2026), law 26-06 art. 32, item 21, p. 7" },
+  { code_commune: 2832, wilaya_code: 28, field: "name_fr", from: "Khettouti Sed-El-Jir", to: "Khetouti Sed El Djir", source: "JORA n° 25 (2026), law 26-06 art. 32, item 22, p. 7" },
+  { code_commune: 2845, wilaya_code: 28, field: "name_fr", from: "Beni Ilmane", to: "Béni Ilmane", source: "JORA n° 25 (2026), law 26-06 art. 32, item 24, p. 7" },
+  { code_commune: 3202, wilaya_code: 32, field: "name_ar", from: "رقاصة", to: "روقاصة", source: "JORA n° 25 (2026), law 26-06 art. 36, item 2, p. 9" },
+  { code_commune: 3203, wilaya_code: 32, field: "name_ar", from: "ستيتن", to: "استيتن", source: "JORA n° 25 (2026), law 26-06 art. 36, item 3, p. 9" },
+  { code_commune: 3204, wilaya_code: 32, field: "name_fr", from: "Brezina", to: "Brézina", source: "JORA n° 25 (2026), law 26-06 art. 36, item 4, p. 7" },
+  { code_commune: 3210, wilaya_code: 32, field: "name_fr", from: "Bougtoub", to: "Bougtob", source: "JORA n° 25 (2026), law 26-06 art. 36, item 7, p. 8" },
+  { code_commune: 3211, wilaya_code: 32, field: "name_fr", from: "El Kheiter", to: "El Kheïther", source: "JORA n° 25 (2026), law 26-06 art. 36, item 8, p. 8" },
+  { code_commune: 3218, wilaya_code: 32, field: "name_fr", from: "Sidi Ameur", to: "Sidi Amar", source: "JORA n° 25 (2026), law 26-06 art. 36, item 12, p. 8" },
+  { code_commune: 3218, wilaya_code: 32, field: "name_ar", from: "سيدي عامر", to: "سيدي عمر", source: "JORA n° 25 (2026), law 26-06 art. 36, item 12, p. 9" },
+  { code_commune: 3222, wilaya_code: 32, field: "name_fr", from: "Sidi Tiffour", to: "Sidi Tifour", source: "JORA n° 25 (2026), law 26-06 art. 36, item 15, p. 8" },
+  { code_commune: 319, wilaya_code: 59, field: "name_ar", from: "أفلو", to: "آفلو", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 10, item 1, p. 9" },
+  { code_commune: 311, wilaya_code: 59, field: "name_fr", from: "Ain Sidi Ali", to: "Aïn Sidi Ali", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 10, item 3, p. 8" },
+  { code_commune: 312, wilaya_code: 59, field: "name_fr", from: "El Beidha", to: "El Beïdha", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 10, item 4, p. 8" },
+  { code_commune: 315, wilaya_code: 59, field: "name_ar", from: "الحاج مشري", to: "الحاج المشري", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 10, item 7, p. 9" },
+  { code_commune: 322, wilaya_code: 59, field: "name_fr", from: "Oued M'zi", to: "Oued M'Zi", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 10, item 11, p. 8" },
+  { code_commune: 515, wilaya_code: 60, field: "name_fr", from: "Azil Abedelkader", to: "Abdelkader Azil", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 11, item 3, p. 8" },
+  { code_commune: 515, wilaya_code: 60, field: "name_ar", from: "عزيل عبد القادر", to: "عبد القادر عزيل", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 11, item 3, p. 9" },
+  { code_commune: 555, wilaya_code: 60, field: "name_fr", from: "M Doukal", to: "M'Doukal", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 11, item 7, p. 8" },
+  { code_commune: 555, wilaya_code: 60, field: "name_ar", from: "إمدوكل", to: "امدوكال", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 11, item 7, p. 9" },
+  { code_commune: 718, wilaya_code: 61, field: "name_fr", from: "Ain Zaatout", to: "Aïn Zaatout", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 12, item 2, p. 8" },
+  { code_commune: 703, wilaya_code: 61, field: "name_ar", from: "برانيس", to: "البرانيس", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 12, item 3, p. 9" },
+  { code_commune: 720, wilaya_code: 61, field: "name_fr", from: "Djemorah", to: "Djemourah", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 12, item 5, p. 8" },
+  { code_commune: 1202, wilaya_code: 62, field: "name_fr", from: "Bir-El-Ater", to: "Bir El Ater", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 13, item 1, p. 8" },
+  { code_commune: 1215, wilaya_code: 62, field: "name_fr", from: "El Ogla El Malha", to: "El Ogla El Melha", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 13, item 3, p. 8" },
+  { code_commune: 1343, wilaya_code: 63, field: "name_fr", from: "Bouihi", to: "El Bouihi", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 14, item 4, p. 8" },
+  { code_commune: 1409, wilaya_code: 64, field: "name_fr", from: "Zmalet El Emir Abdelkade", to: "Zmalet El Emir Abdelkader", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 15, item 2, p. 8" },
+  { code_commune: 1439, wilaya_code: 64, field: "name_fr", from: "Serghine", to: "Serguine", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 15, item 5, p. 8" },
+  { code_commune: 1439, wilaya_code: 64, field: "name_ar", from: "سرغين", to: "سرقين", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 15, item 5, p. 10" },
+  { code_commune: 1731, wilaya_code: 65, field: "name_fr", from: "Aïn Oussera", former_names: ["Ain Oussera"], to: "Aïn Ouessara", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 16, item 1, p. 8" },
+  { code_commune: 1708, wilaya_code: 65, field: "name_ar", from: "بيرين", to: "البيرين", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 16, item 2, p. 10" },
+  { code_commune: 1709, wilaya_code: 65, field: "name_ar", from: "بويرة الأحداب", to: "بويرة الأحدب", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 16, item 3, p. 10" },
+  { code_commune: 1719, wilaya_code: 65, field: "name_fr", from: "Sidi Laadjel", to: "Sidi Ladjel", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 16, item 5, p. 8" },
+  { code_commune: 1735, wilaya_code: 65, field: "name_fr", from: "Ain Fekka", to: "Aïn Fekka", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 16, item 10, p. 8" },
+  { code_commune: 1735, wilaya_code: 65, field: "name_ar", from: "عين فقه", to: "عين فقة", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 16, item 10, p. 10" },
+  { code_commune: 1706, wilaya_code: 66, field: "name_ar", from: "سد الرحال", to: "سد رحال", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 17, item 2, p. 10" },
+  { code_commune: 1707, wilaya_code: 66, field: "name_fr", from: "Faidh El Botma", to: "Faïdh El Botma", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 17, item 3, p. 8" },
+  { code_commune: 2603, wilaya_code: 67, field: "name_fr", from: "Ouled Emaaraf", to: "Ouled Maaref", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 2, p. 9" },
+  { code_commune: 2603, wilaya_code: 67, field: "name_ar", from: "أولاد امعرف", to: "أولاد معرف", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 2, p. 10" },
+  { code_commune: 2604, wilaya_code: 67, field: "name_fr", from: "Ain Boucif", to: "Aïn Boucif", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 3, p. 9" },
+  { code_commune: 2610, wilaya_code: 67, field: "name_ar", from: "بوعيش", to: "البواعيش", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 5, p. 10" },
+  { code_commune: 2617, wilaya_code: 67, field: "name_ar", from: "الكاف الاخضر", to: "الكاف الأخضر", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 6, p. 10" },
+  { code_commune: 2623, wilaya_code: 67, field: "name_ar", from: "تفراوت", to: "تافراوت", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 9, p. 10" },
+  { code_commune: 2631, wilaya_code: 67, field: "name_fr", from: "Sidi Demed", to: "Sidi Damed", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 11, p. 9" },
+  { code_commune: 2631, wilaya_code: 67, field: "name_ar", from: "سيدي دامد", to: "سيدي دمد", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 11, p. 10" },
+  { code_commune: 2638, wilaya_code: 67, field: "name_fr", from: "Chabounia", to: "Chahbounia", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 13, p. 9" },
+  { code_commune: 2641, wilaya_code: 67, field: "name_fr", from: "Ain Ouksir", to: "Aïn Ouksir", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 15, p. 9" },
+  { code_commune: 2641, wilaya_code: 67, field: "name_ar", from: "عين اقصير", to: "عين القصير", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 15, p. 10" },
+  { code_commune: 2642, wilaya_code: 67, field: "name_fr", from: "Oum El Djellil", to: "Oum El Djallil", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 16, p. 9" },
+  { code_commune: 2649, wilaya_code: 67, field: "name_fr", from: "M'fatha", to: "M'Fatha", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 17, p. 9" },
+  { code_commune: 2649, wilaya_code: 67, field: "name_ar", from: "مفاتحة", to: "المفاتحة", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 17, p. 10" },
+  { code_commune: 2651, wilaya_code: 67, field: "name_fr", from: "Boughzoul", to: "Boughezoul", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 18, item 18, p. 9" },
+  { code_commune: 2807, wilaya_code: 68, field: "name_ar", from: "خبانة", to: "الخبانة", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 2, p. 10" },
+  { code_commune: 2808, wilaya_code: 68, field: "name_fr", from: "M'cif", to: "M'Cif", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 3, p. 9" },
+  { code_commune: 2808, wilaya_code: 68, field: "name_ar", from: "مسيف", to: "امسيف", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 3, p. 11" },
+  { code_commune: 2821, wilaya_code: 68, field: "name_ar", from: "أولاد سيدي ابراهيم", to: "أولاد سيدي إبراهيم", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 4, p. 11" },
+  { code_commune: 2833, wilaya_code: 68, field: "name_ar", from: "زرزور", to: "الزرزور", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 11, p. 11" },
+  { code_commune: 2834, wilaya_code: 68, field: "name_fr", from: "Mohamed Boudiaf", to: "Mouhamed Boudiaf", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 12, p. 9" },
+  { code_commune: 2835, wilaya_code: 68, field: "name_ar", from: "بن زوه", to: "بنزوه", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 13, p. 11" },
+  { code_commune: 2836, wilaya_code: 68, field: "name_ar", from: "بئر فضة", to: "بئر الفضة", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 14, p. 11" },
+  { code_commune: 2837, wilaya_code: 68, field: "name_fr", from: "Ain Fares", to: "Aïn Farès", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 15, p. 9" },
+  { code_commune: 2838, wilaya_code: 68, field: "name_fr", from: "Sidi M'hamed", to: "Sidi M'Hamed", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 16, p. 9" },
+  { code_commune: 2838, wilaya_code: 68, field: "name_ar", from: "سيدي محمد", to: "سيدي امحمد", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 16, p. 11" },
+  { code_commune: 2839, wilaya_code: 68, field: "name_fr", from: "Menaa", to: "Menaâ", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 17, p. 9" },
+  { code_commune: 2841, wilaya_code: 68, field: "name_fr", from: "Ain El Melh", to: "Aïn El Meleh", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 18, p. 9" },
+  { code_commune: 2844, wilaya_code: 68, field: "name_fr", from: "Ain Rich", to: "Aïn Errich", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 21, p. 9" },
+  { code_commune: 2846, wilaya_code: 68, field: "name_fr", from: "Oulteme", to: "Oultem", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 19, item 22, p. 9" },
+  { code_commune: 3207, wilaya_code: 69, field: "name_fr", from: "Labiodh Sidi Cheikh", to: "El Abiodh Sidi Cheikh", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 20, item 1, p. 9" },
+  { code_commune: 3208, wilaya_code: 69, field: "name_fr", from: "Ain El Orak", to: "Aïn El Orak", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 20, item 2, p. 9" },
+  { code_commune: 3209, wilaya_code: 69, field: "name_ar", from: "اربوات", to: "أربوات", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 20, item 3, p. 11" },
+  { code_commune: 3214, wilaya_code: 69, field: "name_ar", from: "شلالة", to: "الشلالة", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 20, item 5, p. 10" },
+  { code_commune: 3219, wilaya_code: 69, field: "name_fr", from: "El Mehara", to: "El Meharra", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 20, item 7, p. 9" },
+];
+
+/** Readings the Arabic edition gives that the dataset deliberately keeps its own
+ *  form for, with the reason. Listed so the decision is reviewable, not hidden. */
+export const unverified = [
+  { code_commune: 1334, wilaya_code: 13, field: "name_ar", kept: "سيدي العبدلي", jora: "سيد عبد اللى", reason: "JO writes a final yaa as alef maqsura, inconsistently", source: "JORA n° 25 (2026), law 26-06 art. 17, item 32, p. 6" },
+  { code_commune: 1337, wilaya_code: 13, field: "name_ar", kept: "سيدي مجاهد", jora: "سيدى مجاهد", reason: "JO writes a final yaa as alef maqsura, inconsistently", source: "JORA n° 25 (2026), law 26-06 art. 17, item 35, p. 6" },
+  { code_commune: 1339, wilaya_code: 13, field: "name_ar", kept: "مرسى بن مهيدي", jora: "مرسى بن مهيدى", reason: "JO writes a final yaa as alef maqsura, inconsistently", source: "JORA n° 25 (2026), law 26-06 art. 17, item 37, p. 6" },
+  { code_commune: 1352, wilaya_code: 13, field: "name_ar", kept: "بني صميل", jora: "بنى صميل", reason: "JO writes a final yaa as alef maqsura, inconsistently", source: "JORA n° 25 (2026), law 26-06 art. 17, item 48, p. 6" },
+  { code_commune: 1407, wilaya_code: 14, field: "name_ar", kept: "سيدي بختي", jora: "سيدى بختي", reason: "JO writes a final yaa as alef maqsura, inconsistently", source: "JORA n° 25 (2026), law 26-06 art. 18, item 7, p. 7" },
+  { code_commune: 1433, wilaya_code: 14, field: "name_ar", kept: "وادي ليلي", jora: "وادى ليلي", reason: "JO writes a final yaa as alef maqsura, inconsistently", source: "JORA n° 25 (2026), law 26-06 art. 18, item 30, p. 7" },
+  { code_commune: 2612, wilaya_code: 26, field: "name_ar", kept: "أولاد إبراهيم", jora: "أولاد ابراهيم", reason: "JO drops a hamza we carry", source: "JORA n° 25 (2026), law 26-06 art. 30, item 8, p. 8" },
+  { code_commune: 3212, wilaya_code: 32, field: "name_ar", kept: "الكاف الأحمر", jora: "الكاف الاحمر", reason: "JO drops a hamza we carry", source: "JORA n° 25 (2026), law 26-06 art. 36, item 9, p. 9" },
+];
+
+/** Placeholder coordinates replaced with an OpenStreetMap commune centroid. */
+export const coordinateCorrections = [
+  { code_commune: 2242, wilaya_code: 22, label: "Belarbi", from: [35.15, 0.15], to: [35.130032, -0.44907], osm: "relation/6661976" },
+  { code_commune: 2915, wilaya_code: 29, label: "Makhda", from: [35.15, 0.15], to: [35.188899, 0.270928], osm: "relation/6668178" },
+  { code_commune: 2616, wilaya_code: 26, label: "El Hamdania", from: [36.3369617, 2.8776638], to: [36.362082, 2.767105], osm: "relation/2571726" },
+  { code_commune: 2653, wilaya_code: 26, label: "El Haoudane", from: [36.3369617, 2.8776638], to: [36.46947, 3.299409], osm: "relation/2962878" },
+  { code_commune: 2627, wilaya_code: 26, label: "Ouled Bouachra", from: [36.160382, 2.722206], to: [36.101909, 2.712187], osm: "relation/2540223" },
+  { code_commune: 3427, wilaya_code: 34, label: "El Euch", from: [36.06386, 4.6167], to: [35.899032, 4.598431], osm: "relation/4475450" },
+];
+
+/** A commune moved to the daira that contains it. Deux Bassins (2653) was
+ *  filed under Ouzera; its point lies inside the OpenStreetMap daira boundary
+ *  of Tablat, confirmed by an Overpass is_in lookup on 2026-09-25, and the
+ *  Owner chose Tablat on reading the corrections. The JORA lists communes by
+ *  wilaya only, so it does not settle dairas either way.
+ *
+ *  El Alia (5513) was filed under a daira called "Ouargla" inside wilaya 55.
+ *  That is the name of the wilaya 55 was carved out of in 2019, not of any daira
+ *  it has, and 5513 was the only commune holding it. Wilaya 55 has five dairas,
+ *  Touggourt, Temacine, Megarine, El Hadjira and Taibet, and El Alia belongs to
+ *  El Hadjira, whose seat commune is El-Hadjira (5507). Three independent
+ *  readings agree: the daira's own commune list, the ministry rosters in
+ *  @geoalgeria/jeunesse and @geoalgeria/sports (which between them file every
+ *  wilaya-55 record under exactly those five dairas and none under an "Ouargla"
+ *  one), and data/wilayas.csv, which already carried dairas_count 5 for wilaya 55
+ *  while data/wilayas.json said 6. Dropping the phantom daira makes the two
+ *  agree. Private tracker #171, the same report as the wilaya 55 outline. */
+export const communeDairaCorrections = [
+  { code_commune: 2653, wilaya_code: 26, from: "Ouzera", to: "Tablat", osm: "relation/4461829", source: "OpenStreetMap daira boundary (relation 4461829, Daïra Tablat), Owner decision 2026-09-25" },
+  { code_commune: 5513, wilaya_code: 55, from: "Ouargla", to: "El Hadjira", osm: "relation/6542936", source: "Daira El Hadjira of wilaya 55 holds El-Hadjira (5507) and El Alia (5513); corroborated by the wilaya-55 daira rosters of @geoalgeria/jeunesse and @geoalgeria/sports, and by data/wilayas.csv dairas_count 5. Private tracker #171" },
+];

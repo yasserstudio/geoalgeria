@@ -1,0 +1,669 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-33",
+    "wilaya_code": 33,
+    "name": "Illizi",
+    "name_ar": "إليزي",
+    "center": [
+      7.837,
+      27.853
+    ],
+    "bounds": [
+      5.638,
+      25.147,
+      10.036,
+      30.559
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 16,
+    "osm_records": 11,
+    "tariki_records": 11,
+    "cross_source": 3,
+    "multiple_tariki": 1,
+    "osm_only": 7,
+    "tariki_only": 5,
+    "nearby_osm_pairs": 1,
+    "conflicts": 8
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-1158920872",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-7132962407",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-842501843",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5551",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8377",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8394",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8863",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9676",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-1158920872",
+      "coordinates": [
+        8.4803127,
+        26.5188605
+      ],
+      "osm": {
+        "id": "node/1158920872",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal Illizi",
+        "opening_hours": null,
+        "coordinates": [
+          8.4803127,
+          26.5188605
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5426",
+          "route_id": "8383",
+          "name_fr": "Station de services Rimel",
+          "name_ar": "محطة خدمات الرمال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.48,
+            26.519
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 33,
+          "wilaya_fr": "Illizi",
+          "wilaya_ar": "إليزي",
+          "offset_m": 35
+        },
+        {
+          "id": "8311",
+          "route_id": "13182",
+          "name_fr": "STATION D'ESSENCE",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.48,
+            26.519
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 33,
+          "wilaya_fr": "Illizi",
+          "wilaya_ar": "إليزي",
+          "offset_m": 35
+        },
+        {
+          "id": "14420",
+          "route_id": "21851",
+          "name_fr": null,
+          "name_ar": "محطة توزيع الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.48,
+            26.519
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 33,
+          "wilaya_fr": "Illizi",
+          "wilaya_ar": "إليزي",
+          "offset_m": 35
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات الرمال"
+    },
+    {
+      "id": "osm-node-2482469626",
+      "coordinates": [
+        9.4191323,
+        29.9644048
+      ],
+      "osm": {
+        "id": "node/2482469626",
+        "name": "مضخة الوقود غاز إويل الدبداب",
+        "name_ar": "مضخة الوقود غاز إويل الدبداب",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          9.4191323,
+          29.9644048
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5843",
+          "route_id": "10144",
+          "name_fr": "Station de services Debdab",
+          "name_ar": "محطة البنزين بالدبداب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            9.4191,
+            29.9644
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 33,
+          "wilaya_fr": "Illizi",
+          "wilaya_ar": "إليزي",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "مضخة الوقود غاز إويل الدبداب",
+      "display_name_ar": "مضخة الوقود غاز إويل الدبداب"
+    },
+    {
+      "id": "osm-node-3196584859",
+      "coordinates": [
+        8.4791592,
+        26.4663646
+      ],
+      "osm": {
+        "id": "node/3196584859",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.4791592,
+          26.4663646
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3775584259",
+      "coordinates": [
+        7.3816055,
+        28.4257453
+      ],
+      "osm": {
+        "id": "node/3775584259",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.3816055,
+          28.4257453
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4502432089",
+      "coordinates": [
+        7.5446004,
+        28.6238969
+      ],
+      "osm": {
+        "id": "node/4502432089",
+        "name": "UTG( atelier mécanique instrumentation )",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.5446004,
+          28.6238969
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "UTG( atelier mécanique instrumentation )",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-452451987",
+      "coordinates": [
+        6.5047323,
+        28.6895893
+      ],
+      "osm": {
+        "id": "node/452451987",
+        "name": "نفطال حاسي بلقبور",
+        "name_ar": "نفطال حاسي بلقبور",
+        "name_fr": null,
+        "brand": "Naftal نفطال",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          6.5047323,
+          28.6895893
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "نفطال حاسي بلقبور",
+      "display_name_ar": "نفطال حاسي بلقبور"
+    },
+    {
+      "id": "osm-node-5407140822",
+      "coordinates": [
+        8.4848517,
+        26.4420825
+      ],
+      "osm": {
+        "id": "node/5407140822",
+        "name": "Naftal محطة خدمات",
+        "name_ar": "محطة خدمات",
+        "name_fr": "Station Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.4848517,
+          26.4420825
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14419",
+          "route_id": "21851",
+          "name_fr": null,
+          "name_ar": "محطة متعددة  الخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            8.485,
+            26.442
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 33,
+          "wilaya_fr": "Illizi",
+          "wilaya_ar": "إليزي",
+          "offset_m": 17
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-5585460925",
+      "coordinates": [
+        7.5240931,
+        28.5901895
+      ],
+      "osm": {
+        "id": "node/5585460925",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "la centrale électrique TFT",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.5240931,
+          28.5901895
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "la centrale électrique TFT",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7036423186",
+      "coordinates": [
+        9.564551,
+        28.037733
+      ],
+      "osm": {
+        "id": "node/7036423186",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          9.564551,
+          28.037733
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8210",
+          "route_id": "10878",
+          "name_fr": "naftal in amenas",
+          "name_ar": "نفطال إن أمناس",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            9.565,
+            28.038
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 33,
+          "wilaya_fr": "Illizi",
+          "wilaya_ar": "إليزي",
+          "offset_m": 53
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "naftal in amenas",
+      "display_name_ar": "نفطال إن أمناس"
+    },
+    {
+      "id": "osm-node-7132962407",
+      "coordinates": [
+        8.8935828,
+        28.6848524
+      ],
+      "osm": {
+        "id": "node/7132962407",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.8935828,
+          28.6848524
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-842501843",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-842501843",
+      "coordinates": [
+        8.8935976,
+        28.68492055
+      ],
+      "osm": {
+        "id": "way/842501843",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.8935976,
+          28.68492055
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-7132962407",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-5551",
+      "coordinates": [
+        7.384,
+        28.424
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5551",
+          "route_id": "8383",
+          "name_fr": "station de services TABENKORT",
+          "name_ar": "محطة تبنكورة للخدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.384,
+            28.424
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 33,
+          "wilaya_fr": "Illizi",
+          "wilaya_ar": "إليزي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services TABENKORT",
+      "display_name_ar": "محطة تبنكورة للخدمات"
+    },
+    {
+      "id": "tariki-8377",
+      "coordinates": [
+        8.475,
+        26.496
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8377",
+          "route_id": "13182",
+          "name_fr": "STATION D'ESSENCE",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.475,
+            26.496
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 33,
+          "wilaya_fr": "Illizi",
+          "wilaya_ar": "إليزي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION D'ESSENCE",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "tariki-8394",
+      "coordinates": [
+        8.476,
+        26.493
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8394",
+          "route_id": "13360",
+          "name_fr": "STATION D'ESSENCE",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.476,
+            26.493
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 33,
+          "wilaya_fr": "Illizi",
+          "wilaya_ar": "إليزي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION D'ESSENCE",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "tariki-8863",
+      "coordinates": [
+        9.421,
+        29.967
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8863",
+          "route_id": "13746",
+          "name_fr": "Station de services  Algerie Télécom",
+          "name_ar": "إتصالات الجزائر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            9.421,
+            29.967
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 33,
+          "wilaya_fr": "Illizi",
+          "wilaya_ar": "إليزي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  Algerie Télécom",
+      "display_name_ar": "إتصالات الجزائر"
+    },
+    {
+      "id": "tariki-9676",
+      "coordinates": [
+        8.948,
+        28.698
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9676",
+          "route_id": "10878",
+          "name_fr": "Station de services Naftal OHANET",
+          "name_ar": "نفطال أوهانت",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            8.948,
+            28.698
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 33,
+          "wilaya_fr": "Illizi",
+          "wilaya_ar": "إليزي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal OHANET",
+      "display_name_ar": "نفطال أوهانت"
+    }
+  ]
+}

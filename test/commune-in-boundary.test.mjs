@@ -39,13 +39,14 @@ import {
   pointInGeometry,
   wilayaNeighbours,
 } from "../packages/schema/index.js";
+// The seven carriers and their readers are shared with the OSM-seat guard, so the
+// two standards are held over the same set of files by construction.
+import { COMMUNE_COUNT, COPIES } from "./lib/commune-carriers.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
 const readText = (...p) => readFileSync(join(DATA, ...p), "utf-8");
 const readJson = (...p) => JSON.parse(readText(...p));
-
-const COMMUNE_COUNT = 1541;
 
 // Commune rows whose point cannot be asked about, pinned per file so a second one
 // cannot appear unnoticed. Stidia (w27) carries longitude 0 in every JSON/CSV/
@@ -59,71 +60,6 @@ const boundaryFc = readJson("geojson", "wilaya-boundaries.geojson");
 const BOUNDARIES = loadBoundaries(boundaryFc);
 const NEIGHBOURS = wilayaNeighbours(boundaryFc);
 
-/** Every file in packages/dataset that carries a commune point.
- *  [label, () => {name, wilaya_code, lat, lng}[]] */
-const COPIES = [
-  [
-    "data/communes_w*.json",
-    () =>
-      ["communes_w1_w23", "communes_w24_w48", "communes_w49_w69"]
-        .flatMap((f) => readJson(`${f}.json`))
-        .map((c) => ({ name: c.name_fr, w: c.wilaya_code, lat: c.latitude, lng: c.longitude })),
-  ],
-  [
-    "data/algeria.json",
-    () =>
-      readJson("algeria.json").flatMap((wil) =>
-        (wil.communes || []).map((c) => ({
-          name: c.name_fr,
-          w: c.wilaya_code,
-          lat: c.latitude,
-          lng: c.longitude,
-        })),
-      ),
-  ],
-  [
-    "data/geojson/communes.geojson",
-    () =>
-      readJson("geojson", "communes.geojson").features.map((f) => ({
-        name: f.properties.name_fr,
-        w: f.properties.wilaya_code,
-        lat: f.geometry.coordinates[1],
-        lng: f.geometry.coordinates[0],
-      })),
-  ],
-  [
-    // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
-    "data/csv/communes.csv",
-    () =>
-      readText("csv", "communes.csv")
-        .trim()
-        .split(/\r?\n/)
-        .slice(1)
-        .map((line) => line.split(","))
-        .filter((c) => c.length === 8)
-        .map((c) => ({ name: c[0], w: Number(c[2]), lat: Number(c[5]), lng: Number(c[6]) })),
-  ],
-  [
-    // …, wilaya_code, 'daira', 'postal', latitude, longitude, code_commune)
-    // Anchored at the end of the row: commune names carry SQL-escaped apostrophes
-    // (M''fatha), so a left-anchored quoted-field pattern drops them silently.
-    // postal_code matches NULL as well as a quoted value: five of the 13 communes
-    // added in the 1,541 completion have no citable postal code, and a pattern that
-    // only accepted '\d+' would drop exactly those rows instead of checking them.
-    "data/sql/full.sql",
-    () => {
-      const re =
-        /^ {2}\(\d+, '((?:[^']|'')*)', '(?:[^']|'')*', (\d+), '(?:[^']|'')*', (?:'\d+'|NULL), (-?[\d.]+|NULL), (-?[\d.]+|NULL), (?:\d+|NULL)\)[,;]$/;
-      const num = (s) => (s === "NULL" ? NaN : Number(s));
-      const out = [];
-      for (const line of readText("sql", "full.sql").split("\n")) {
-        const m = line.match(re);
-        if (m) out.push({ name: m[1].replace(/''/g, "'"), w: Number(m[2]), lat: num(m[3]), lng: num(m[4]) });
-      }
-      return out;
-    },
-  ],
-];
 
 for (const [label, load] of COPIES) {
   test(`${label}: every commune centroid sits in its own wilaya or a neighbour`, () => {
@@ -163,6 +99,130 @@ for (const [label, load] of COPIES) {
     );
   });
 }
+
+// ---------------------------------------------------------------------------
+// How far outside, not just which wilaya.
+//
+// The adjacency rule above is scale-free and stays as the hard failure, but it
+// cannot see the two defects reported in September 2026. Alger Centre shipped in
+// the sea east of the port: inside NO wilaya polygon, which the rule above skips
+// on purpose ("just off the national outline, unprovable here"). Bethioua shipped
+// inside the Arzew LNG complex, which is inside its own wilaya, so nothing about
+// containment was wrong. Sweeping the 1,541 centres turned up 68 outside their own
+// wilaya polygon, of which 55 were outside their own commune's unsimplified OSM
+// boundary too, i.e. real errors that this file passed.
+//
+// So a second, quantitative rule rides on the same loop: how far outside its own
+// wilaya polygon a centre is allowed to sit.
+//
+// TOLERANCE_M is set by the defect it has to catch, not by headroom over the
+// artefacts, because the two distributions overlap and no threshold separates
+// them. After the 2026-09-27 repair (research/_commune-centres/) the ten centres
+// that are legitimately outside the simplified outline measure
+//   10 · 29 · 83 · 92 · 134 · 139 · 210 · 231 · 426 · 479 m,
+// each verified to be inside its own commune per OSM, while the repaired defects
+// ran from 132 m to 188 km with Alger Centre at 997 m. 500 m is therefore the
+// loosest line that still fails an Alger Centre, and the tightest that does not
+// fail Tigzirt at 479 m.
+//
+// This is a net, not a classifier: crossing it means a human has to decide error
+// or artefact, the way those 68 were decided, against the commune's own OSM
+// boundary rather than against these display-grade outlines. Nothing under it is
+// certified correct, and a centre wrong by hundreds of metres inside the right
+// commune (Bethioua's own class) stays invisible here.
+const TOLERANCE_M = 500;
+
+// Centres known to sit further out than that, pinned with what was checked, so
+// they neither fail the build nor hide a new one.
+//
+// Empty since the wilaya-membership correction of private tracker #171. The three
+// rows that used to be pinned here, El Alia (w55) at 53,201 m, El-Hadjira (w55)
+// at 51,107 m and Mansoura (w47) at 5,233 m, were never point errors: each
+// commune's own OSM chef-lieu node was outside the shipped wilaya outline too,
+// which made the outline the suspect. It was. Touggourt (55) and El Meniaa (58)
+// were carved out of Ouargla (30) and Ghardaia (47) in 2019 and OpenStreetMap
+// never re-cut the admin_level=4 relations, so the three communes' territory
+// stayed with the mother wilaya. scripts/fix-wilaya-membership.mjs moved it and
+// test/wilaya-membership.test.mjs holds that correction in place.
+const OUTSIDE_WILAYA = {};
+
+/** Metres from (lng,lat) to the nearest edge of a Polygon/MultiPolygon.
+ *  Equirectangular around the point: at these distances the projection error is
+ *  far under the 3.4 km vertex gap of the geometry being measured against. */
+function metresOutside(lng, lat, geom) {
+  const kx = 111320 * Math.cos((lat * Math.PI) / 180);
+  const ky = 110540;
+  const px = lng * kx;
+  const py = lat * ky;
+  const polys = geom.type === "Polygon" ? [geom.coordinates] : geom.coordinates;
+  let best = Infinity;
+  for (const poly of polys) {
+    for (const ring of poly) {
+      for (let i = 1; i < ring.length; i++) {
+        const ax = ring[i - 1][0] * kx;
+        const ay = ring[i - 1][1] * ky;
+        const dx = ring[i][0] * kx - ax;
+        const dy = ring[i][1] * ky - ay;
+        const len = dx * dx + dy * dy;
+        let t = len === 0 ? 0 : ((px - ax) * dx + (py - ay) * dy) / len;
+        t = t < 0 ? 0 : t > 1 ? 1 : t;
+        const d = Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+        if (d < best) best = d;
+      }
+    }
+  }
+  return best;
+}
+
+for (const [label, load] of COPIES) {
+  test(`${label}: no commune centroid is more than ${TOLERANCE_M} m outside its own wilaya`, () => {
+    const rows = load();
+    assert.equal(rows.length, COMMUNE_COUNT, `${label}: parsed ${rows.length} communes`);
+
+    const tooFar = {};
+    for (const r of rows) {
+      const w = String(r.w).padStart(2, "0");
+      if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue; // UNCHECKABLE above
+      if (pointInWilaya(r.lng, r.lat, w, BOUNDARIES)) continue;
+      const d = metresOutside(r.lng, r.lat, BOUNDARIES.get(w));
+      if (d <= TOLERANCE_M) continue;
+      tooFar[`${r.name} (w${w})`] = Math.round(d);
+    }
+
+    // Exact set AND exact distances: a pinned row that drifts further out is a
+    // new fact about the data, and the pin must not absorb it silently.
+    assert.deepEqual(
+      tooFar,
+      OUTSIDE_WILAYA,
+      `${label}: commune centroid(s) more than ${TOLERANCE_M} m outside their own wilaya polygon ` +
+        `and not among the pinned, reviewed cases. Decide each one against the commune's own OSM ` +
+        `admin_level=8 boundary (see research/_commune-centres/README.md), then fix it or pin it ` +
+        `with what was checked.`,
+    );
+  });
+}
+
+test("a commune centroid dropped in the sea is reported", () => {
+  // The distance rule must be able to fail, and on the exact value that prompted
+  // it: Alger Centre's [3.0909, 36.76846] is inside no wilaya at all, so the
+  // adjacency rule above skips it, while this one measures it at ~1 km out.
+  const alger = readJson("communes_w1_w23.json").find(
+    (c) => c.wilaya_code === 16 && c.name_fr === "Alger Centre",
+  );
+  assert.ok(alger, "Alger Centre (w16) is missing from the commune table");
+  assert.equal(pointInWilaya(alger.longitude, alger.latitude, "16", BOUNDARIES), true);
+  assert.ok(
+    metresOutside(alger.longitude, alger.latitude, BOUNDARIES.get("16")) > 0,
+    "a point inside the polygon still has a distance to its edge",
+  );
+
+  const before = { lng: 3.0909, lat: 36.76846 }; // the value that shipped, in the sea
+  assert.equal(pointInWilaya(before.lng, before.lat, "16", BOUNDARIES), false);
+  const inside = [...BOUNDARIES].filter(([, g]) => pointInGeometry(before.lng, before.lat, g)).map(([c]) => c);
+  assert.deepEqual(inside, [], "the shipped value was inside no wilaya, which is what hid it");
+  const d = metresOutside(before.lng, before.lat, BOUNDARIES.get("16"));
+  assert.ok(d > TOLERANCE_M, `the shipped value measured ${Math.round(d)} m out, not over ${TOLERANCE_M}`);
+});
 
 test("a commune centroid stamped with a non-adjacent wilaya is reported", () => {
   // The check must be able to fail. Souama (Tizi Ouzou, w15) is the row that

@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "title": "Algeria Administrative Divisions — 69 Wilayas",
+    "title": "Algeria Administrative Divisions: 69 Wilayas",
     "total_wilayas": 69,
     "total_communes": 1541,
-    "total_dairas": 556,
+    "total_dairas": 551,
     "reforms": [
       {
         "year": 1984,
@@ -17,7 +17,7 @@
         "description": "10 southern delegated wilayas promoted to full wilayas (49-58)"
       },
       {
-        "year": 2025,
+        "year": 2026,
         "law": "Law 26-06, April 4, 2026",
         "journal_officiel": "JO No. 25, April 5, 2026",
         "announced": "2025-11-16",
@@ -27,22 +27,24 @@
       }
     ],
     "sources": [
+      "Office National des Statistiques: Code Géographique National 2021",
       "Journal Officiel No. 25, April 5, 2026 (Law 26-06)",
       "Journal Officiel No. 78, December 18, 2019 (Law 19-12)",
-      "Ministry of Interior — interieur.gov.dz",
-      "APS (Algérie Presse Service) — aps.dz",
-      "Echorouk Online — echoroukonline.com",
-      "Awras — awras.com (draft law commune lists)",
-      "Djelfa Info — djelfa.info (Presidential Decree 19-328)",
-      "Aures News — elauresnews.dz",
-      "El Moudjahid — elmoudjahid.dz",
+      "Ministry of Interior: interieur.gov.dz",
+      "APS (Algérie Presse Service): aps.dz",
+      "Echorouk Online: echoroukonline.com",
+      "Awras: awras.com (draft law commune lists)",
+      "Djelfa Info: djelfa.info (Presidential Decree 19-328)",
+      "Aures News: elauresnews.dz",
+      "El Moudjahid: elmoudjahid.dz",
       "France 24 Arabic",
-      "Wikipedia FR/AR (cross-referenced)"
+      "Wikipedia FR/AR (cross-referenced)",
+      "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe"
     ],
-    "last_updated": "2026-05-05",
+    "last_updated": "2026-08-21",
     "notes": [
       "Wilaya numbering 59-69 follows mother wilaya code order (traditional Algerian method)",
-      "Post-reform daïra counts for new wilayas are partially confirmed — full implementing decrees expected before 2027-01-01",
+      "Post-reform daïra counts for new wilayas are partially confirmed; full implementing decrees expected before 2027-01-01",
       "Some mother wilaya websites still show pre-reform data during transition period"
     ]
   },
@@ -53,8 +55,11 @@
       "name_fr": "Adrar",
       "name_en": "Adrar",
       "created": 1984,
+      "capital_commune_code": 101,
       "dairas_count": 6,
-      "communes_count": 16
+      "communes_count": 16,
+      "osm_relation_id": 1258650,
+      "wikidata": "Q188166"
     },
     {
       "code": 2,
@@ -62,8 +67,11 @@
       "name_fr": "Chlef",
       "name_en": "Chlef",
       "created": 1984,
+      "capital_commune_code": 201,
       "dairas_count": 13,
-      "communes_count": 35
+      "communes_count": 35,
+      "osm_relation_id": 1283740,
+      "wikidata": "Q231752"
     },
     {
       "code": 3,
@@ -71,8 +79,11 @@
       "name_fr": "Laghouat",
       "name_en": "Laghouat",
       "created": 1984,
+      "capital_commune_code": 301,
       "dairas_count": 5,
-      "communes_count": 12
+      "communes_count": 12,
+      "osm_relation_id": 1280081,
+      "wikidata": "Q231748"
     },
     {
       "code": 4,
@@ -80,8 +91,11 @@
       "name_fr": "Oum El Bouaghi",
       "name_en": "Oum El Bouaghi",
       "created": 1984,
+      "capital_commune_code": 401,
       "dairas_count": 12,
-      "communes_count": 29
+      "communes_count": 29,
+      "osm_relation_id": 1278749,
+      "wikidata": "Q235705"
     },
     {
       "code": 5,
@@ -89,8 +103,11 @@
       "name_fr": "Batna",
       "name_en": "Batna",
       "created": 1984,
+      "capital_commune_code": 501,
       "dairas_count": 18,
-      "communes_count": 53
+      "communes_count": 53,
+      "osm_relation_id": 1278748,
+      "wikidata": "Q215452"
     },
     {
       "code": 6,
@@ -98,8 +115,11 @@
       "name_fr": "Béjaïa",
       "name_en": "Béjaïa",
       "created": 1984,
+      "capital_commune_code": 601,
       "dairas_count": 19,
-      "communes_count": 52
+      "communes_count": 52,
+      "osm_relation_id": 1278765,
+      "wikidata": "Q233665"
     },
     {
       "code": 7,
@@ -107,8 +127,11 @@
       "name_fr": "Biskra",
       "name_en": "Biskra",
       "created": 1984,
+      "capital_commune_code": 701,
       "dairas_count": 7,
-      "communes_count": 22
+      "communes_count": 22,
+      "osm_relation_id": 1280072,
+      "wikidata": "Q458402"
     },
     {
       "code": 8,
@@ -116,8 +139,11 @@
       "name_fr": "Béchar",
       "name_en": "Béchar",
       "created": 1984,
-      "dairas_count": 7,
-      "communes_count": 12
+      "capital_commune_code": 801,
+      "dairas_count": 6,
+      "communes_count": 11,
+      "osm_relation_id": 1258647,
+      "wikidata": "Q215467"
     },
     {
       "code": 9,
@@ -125,8 +151,11 @@
       "name_fr": "Blida",
       "name_en": "Blida",
       "created": 1984,
+      "capital_commune_code": 901,
       "dairas_count": 10,
-      "communes_count": 25
+      "communes_count": 25,
+      "osm_relation_id": 1283683,
+      "wikidata": "Q233637"
     },
     {
       "code": 10,
@@ -134,8 +163,11 @@
       "name_fr": "Bouira",
       "name_en": "Bouira",
       "created": 1984,
+      "capital_commune_code": 1001,
       "dairas_count": 12,
-      "communes_count": 45
+      "communes_count": 45,
+      "osm_relation_id": 1283093,
+      "wikidata": "Q233655"
     },
     {
       "code": 11,
@@ -143,8 +175,11 @@
       "name_fr": "Tamanrasset",
       "name_en": "Tamanrasset",
       "created": 1984,
+      "capital_commune_code": 1101,
       "dairas_count": 3,
-      "communes_count": 5
+      "communes_count": 5,
+      "osm_relation_id": 1279667,
+      "wikidata": "Q229467"
     },
     {
       "code": 12,
@@ -152,8 +187,11 @@
       "name_fr": "Tébessa",
       "name_en": "Tébessa",
       "created": 1984,
+      "capital_commune_code": 1201,
       "dairas_count": 10,
-      "communes_count": 24
+      "communes_count": 24,
+      "osm_relation_id": 1280465,
+      "wikidata": "Q267224"
     },
     {
       "code": 13,
@@ -161,8 +199,11 @@
       "name_fr": "Tlemcen",
       "name_en": "Tlemcen",
       "created": 1984,
+      "capital_commune_code": 1301,
       "dairas_count": 19,
-      "communes_count": 49
+      "communes_count": 49,
+      "osm_relation_id": 1280702,
+      "wikidata": "Q233632"
     },
     {
       "code": 14,
@@ -170,8 +211,11 @@
       "name_fr": "Tiaret",
       "name_en": "Tiaret",
       "created": 1984,
+      "capital_commune_code": 1401,
       "dairas_count": 12,
-      "communes_count": 36
+      "communes_count": 36,
+      "osm_relation_id": 1281404,
+      "wikidata": "Q233258"
     },
     {
       "code": 15,
@@ -179,8 +223,11 @@
       "name_fr": "Tizi Ouzou",
       "name_en": "Tizi Ouzou",
       "created": 1984,
+      "capital_commune_code": 1501,
       "dairas_count": 21,
-      "communes_count": 67
+      "communes_count": 67,
+      "osm_relation_id": 1283601,
+      "wikidata": "Q233645"
     },
     {
       "code": 16,
@@ -188,8 +235,11 @@
       "name_fr": "Alger",
       "name_en": "Algiers",
       "created": 1984,
+      "capital_commune_code": 1601,
       "dairas_count": 13,
-      "communes_count": 57
+      "communes_count": 57,
+      "osm_relation_id": 157062,
+      "wikidata": "Q141026"
     },
     {
       "code": 17,
@@ -197,8 +247,11 @@
       "name_fr": "Djelfa",
       "name_en": "Djelfa",
       "created": 1984,
+      "capital_commune_code": 1701,
       "dairas_count": 6,
-      "communes_count": 18
+      "communes_count": 18,
+      "osm_relation_id": 1280073,
+      "wikidata": "Q233233"
     },
     {
       "code": 18,
@@ -206,8 +259,11 @@
       "name_fr": "Jijel",
       "name_en": "Jijel",
       "created": 1984,
+      "capital_commune_code": 1801,
       "dairas_count": 11,
-      "communes_count": 28
+      "communes_count": 28,
+      "osm_relation_id": 1278746,
+      "wikidata": "Q235718"
     },
     {
       "code": 19,
@@ -215,8 +271,11 @@
       "name_fr": "Sétif",
       "name_en": "Sétif",
       "created": 1984,
+      "capital_commune_code": 1901,
       "dairas_count": 20,
-      "communes_count": 60
+      "communes_count": 60,
+      "osm_relation_id": 1278747,
+      "wikidata": "Q237164"
     },
     {
       "code": 20,
@@ -224,8 +283,11 @@
       "name_fr": "Saïda",
       "name_en": "Saïda",
       "created": 1984,
+      "capital_commune_code": 2001,
       "dairas_count": 6,
-      "communes_count": 16
+      "communes_count": 16,
+      "osm_relation_id": 1281260,
+      "wikidata": "Q233640"
     },
     {
       "code": 21,
@@ -233,8 +295,11 @@
       "name_fr": "Skikda",
       "name_en": "Skikda",
       "created": 1984,
+      "capital_commune_code": 2101,
       "dairas_count": 13,
-      "communes_count": 38
+      "communes_count": 38,
+      "osm_relation_id": 1273552,
+      "wikidata": "Q234227"
     },
     {
       "code": 22,
@@ -242,8 +307,11 @@
       "name_fr": "Sidi Bel Abbès",
       "name_en": "Sidi Bel Abbès",
       "created": 1984,
+      "capital_commune_code": 2201,
       "dairas_count": 15,
-      "communes_count": 52
+      "communes_count": 52,
+      "osm_relation_id": 1259189,
+      "wikidata": "Q235714"
     },
     {
       "code": 23,
@@ -251,8 +319,11 @@
       "name_fr": "Annaba",
       "name_en": "Annaba",
       "created": 1984,
+      "capital_commune_code": 2301,
       "dairas_count": 6,
-      "communes_count": 12
+      "communes_count": 12,
+      "osm_relation_id": 1455599,
+      "wikidata": "Q213944"
     },
     {
       "code": 24,
@@ -260,8 +331,11 @@
       "name_fr": "Guelma",
       "name_en": "Guelma",
       "created": 1984,
+      "capital_commune_code": 2401,
       "dairas_count": 10,
-      "communes_count": 34
+      "communes_count": 34,
+      "osm_relation_id": 1273369,
+      "wikidata": "Q235727"
     },
     {
       "code": 25,
@@ -269,8 +343,11 @@
       "name_fr": "Constantine",
       "name_en": "Constantine",
       "created": 1984,
+      "capital_commune_code": 2501,
       "dairas_count": 7,
-      "communes_count": 12
+      "communes_count": 12,
+      "osm_relation_id": 1273368,
+      "wikidata": "Q232043"
     },
     {
       "code": 26,
@@ -278,8 +355,11 @@
       "name_fr": "Médéa",
       "name_en": "Médéa",
       "created": 1984,
+      "capital_commune_code": 2601,
       "dairas_count": 13,
-      "communes_count": 43
+      "communes_count": 43,
+      "osm_relation_id": 1282111,
+      "wikidata": "Q235810"
     },
     {
       "code": 27,
@@ -287,17 +367,23 @@
       "name_fr": "Mostaganem",
       "name_en": "Mostaganem",
       "created": 1984,
+      "capital_commune_code": 2701,
       "dairas_count": 10,
-      "communes_count": 32
+      "communes_count": 32,
+      "osm_relation_id": 1259191,
+      "wikidata": "Q221445"
     },
     {
       "code": 28,
       "name_ar": "المسيلة",
-      "name_fr": "M'sila",
-      "name_en": "M'sila",
+      "name_fr": "M'Sila",
+      "name_en": "M'Sila",
       "created": 1984,
+      "capital_commune_code": 2801,
       "dairas_count": 7,
-      "communes_count": 24
+      "communes_count": 24,
+      "osm_relation_id": 1278767,
+      "wikidata": "Q240870"
     },
     {
       "code": 29,
@@ -305,8 +391,11 @@
       "name_fr": "Mascara",
       "name_en": "Mascara",
       "created": 1984,
+      "capital_commune_code": 2901,
       "dairas_count": 16,
-      "communes_count": 47
+      "communes_count": 47,
+      "osm_relation_id": 1259190,
+      "wikidata": "Q236776"
     },
     {
       "code": 30,
@@ -314,8 +403,11 @@
       "name_fr": "Ouargla",
       "name_en": "Ouargla",
       "created": 1984,
+      "capital_commune_code": 3001,
       "dairas_count": 5,
-      "communes_count": 8
+      "communes_count": 8,
+      "osm_relation_id": 1279811,
+      "wikidata": "Q235709"
     },
     {
       "code": 31,
@@ -323,8 +415,11 @@
       "name_fr": "Oran",
       "name_en": "Oran",
       "created": 1984,
+      "capital_commune_code": 3101,
       "dairas_count": 9,
-      "communes_count": 26
+      "communes_count": 26,
+      "osm_relation_id": 1259187,
+      "wikidata": "Q231331"
     },
     {
       "code": 32,
@@ -332,8 +427,11 @@
       "name_fr": "El Bayadh",
       "name_en": "El Bayadh",
       "created": 1984,
+      "capital_commune_code": 3201,
       "dairas_count": 5,
-      "communes_count": 15
+      "communes_count": 15,
+      "osm_relation_id": 1258649,
+      "wikidata": "Q235703"
     },
     {
       "code": 33,
@@ -341,8 +439,11 @@
       "name_fr": "Illizi",
       "name_en": "Illizi",
       "created": 1984,
+      "capital_commune_code": 3301,
       "dairas_count": 4,
-      "communes_count": 4
+      "communes_count": 4,
+      "osm_relation_id": 1279816,
+      "wikidata": "Q233659"
     },
     {
       "code": 34,
@@ -350,8 +451,11 @@
       "name_fr": "Bordj Bou Arreridj",
       "name_en": "Bordj Bou Arreridj",
       "created": 1984,
+      "capital_commune_code": 3401,
       "dairas_count": 10,
-      "communes_count": 34
+      "communes_count": 34,
+      "osm_relation_id": 1278766,
+      "wikidata": "Q266411"
     },
     {
       "code": 35,
@@ -359,8 +463,11 @@
       "name_fr": "Boumerdès",
       "name_en": "Boumerdès",
       "created": 1984,
+      "capital_commune_code": 3501,
       "dairas_count": 9,
-      "communes_count": 32
+      "communes_count": 32,
+      "osm_relation_id": 1283608,
+      "wikidata": "Q236752"
     },
     {
       "code": 36,
@@ -368,8 +475,11 @@
       "name_fr": "El Tarf",
       "name_en": "El Tarf",
       "created": 1984,
+      "capital_commune_code": 3601,
       "dairas_count": 7,
-      "communes_count": 24
+      "communes_count": 24,
+      "osm_relation_id": 1455600,
+      "wikidata": "Q236788"
     },
     {
       "code": 37,
@@ -377,8 +487,11 @@
       "name_fr": "Tindouf",
       "name_en": "Tindouf",
       "created": 1984,
+      "capital_commune_code": 3701,
       "dairas_count": 1,
-      "communes_count": 2
+      "communes_count": 2,
+      "osm_relation_id": 1258651,
+      "wikidata": "Q231151"
     },
     {
       "code": 38,
@@ -386,8 +499,11 @@
       "name_fr": "Tissemsilt",
       "name_en": "Tissemsilt",
       "created": 1984,
+      "capital_commune_code": 3801,
       "dairas_count": 8,
-      "communes_count": 22
+      "communes_count": 22,
+      "osm_relation_id": 1282090,
+      "wikidata": "Q235805"
     },
     {
       "code": 39,
@@ -395,8 +511,11 @@
       "name_fr": "El Oued",
       "name_en": "El Oued",
       "created": 1984,
+      "capital_commune_code": 3901,
       "dairas_count": 10,
-      "communes_count": 22
+      "communes_count": 22,
+      "osm_relation_id": 1280071,
+      "wikidata": "Q233651"
     },
     {
       "code": 40,
@@ -404,8 +523,11 @@
       "name_fr": "Khenchela",
       "name_en": "Khenchela",
       "created": 1984,
+      "capital_commune_code": 4001,
       "dairas_count": 8,
-      "communes_count": 21
+      "communes_count": 21,
+      "osm_relation_id": 1280466,
+      "wikidata": "Q213950"
     },
     {
       "code": 41,
@@ -413,8 +535,11 @@
       "name_fr": "Souk Ahras",
       "name_en": "Souk Ahras",
       "created": 1984,
+      "capital_commune_code": 4101,
       "dairas_count": 10,
-      "communes_count": 26
+      "communes_count": 26,
+      "osm_relation_id": 1283457,
+      "wikidata": "Q236772"
     },
     {
       "code": 42,
@@ -422,8 +547,11 @@
       "name_fr": "Tipaza",
       "name_en": "Tipaza",
       "created": 1984,
+      "capital_commune_code": 4201,
       "dairas_count": 10,
-      "communes_count": 28
+      "communes_count": 28,
+      "osm_relation_id": 1286213,
+      "wikidata": "Q235814"
     },
     {
       "code": 43,
@@ -431,8 +559,11 @@
       "name_fr": "Mila",
       "name_en": "Mila",
       "created": 1984,
+      "capital_commune_code": 4301,
       "dairas_count": 13,
-      "communes_count": 32
+      "communes_count": 32,
+      "osm_relation_id": 1273544,
+      "wikidata": "Q235723"
     },
     {
       "code": 44,
@@ -440,8 +571,11 @@
       "name_fr": "Aïn Defla",
       "name_en": "Aïn Defla",
       "created": 1984,
+      "capital_commune_code": 4401,
       "dairas_count": 14,
-      "communes_count": 36
+      "communes_count": 36,
+      "osm_relation_id": 1283678,
+      "wikidata": "Q168953"
     },
     {
       "code": 45,
@@ -449,8 +583,11 @@
       "name_fr": "Naâma",
       "name_en": "Naâma",
       "created": 1984,
+      "capital_commune_code": 4501,
       "dairas_count": 7,
-      "communes_count": 12
+      "communes_count": 12,
+      "osm_relation_id": 1258648,
+      "wikidata": "Q233675"
     },
     {
       "code": 46,
@@ -458,8 +595,11 @@
       "name_fr": "Aïn Témouchent",
       "name_en": "Aïn Témouchent",
       "created": 1984,
+      "capital_commune_code": 4601,
       "dairas_count": 8,
-      "communes_count": 28
+      "communes_count": 28,
+      "osm_relation_id": 1259188,
+      "wikidata": "Q233670"
     },
     {
       "code": 47,
@@ -467,9 +607,12 @@
       "name_fr": "Ghardaïa",
       "name_en": "Ghardaïa",
       "created": 1984,
+      "capital_commune_code": 4701,
       "dairas_count": 8,
       "communes_count": 10,
-      "note": "Daïra count disputed: FR Wikipedia says 8, University of Ghardaïa says 9. Commune count: FR says 10, AR says 9, University says 13 (may be pre-2019)"
+      "note": "Daïra count disputed: FR Wikipedia says 8, University of Ghardaïa says 9. Commune count: FR says 10, AR says 9, University says 13 (may be pre-2019)",
+      "osm_relation_id": 1279666,
+      "wikidata": "Q17601"
     },
     {
       "code": 48,
@@ -477,8 +620,11 @@
       "name_fr": "Relizane",
       "name_en": "Relizane",
       "created": 1984,
+      "capital_commune_code": 4801,
       "dairas_count": 13,
-      "communes_count": 38
+      "communes_count": 38,
+      "osm_relation_id": 1282091,
+      "wikidata": "Q236758"
     },
     {
       "code": 49,
@@ -486,10 +632,13 @@
       "name_fr": "Timimoun",
       "name_en": "Timimoun",
       "created": 2019,
+      "capital_commune_code": 4901,
       "law": "Law 19-12",
       "mother_wilaya_code": 1,
       "dairas_count": 4,
-      "communes_count": 10
+      "communes_count": 10,
+      "osm_relation_id": 6528164,
+      "wikidata": "Q21606903"
     },
     {
       "code": 50,
@@ -497,10 +646,13 @@
       "name_fr": "Bordj Badji Mokhtar",
       "name_en": "Bordj Badji Mokhtar",
       "created": 2019,
+      "capital_commune_code": 5001,
       "law": "Law 19-12",
       "mother_wilaya_code": 1,
       "dairas_count": 1,
-      "communes_count": 2
+      "communes_count": 2,
+      "osm_relation_id": 6528163,
+      "wikidata": "Q76592938"
     },
     {
       "code": 51,
@@ -508,10 +660,13 @@
       "name_fr": "Ouled Djellal",
       "name_en": "Ouled Djellal",
       "created": 2019,
+      "capital_commune_code": 5101,
       "law": "Law 19-12",
       "mother_wilaya_code": 7,
       "dairas_count": 2,
-      "communes_count": 6
+      "communes_count": 6,
+      "osm_relation_id": 10489092,
+      "wikidata": "Q77105251"
     },
     {
       "code": 52,
@@ -519,10 +674,13 @@
       "name_fr": "Béni Abbès",
       "name_en": "Béni Abbès",
       "created": 2019,
+      "capital_commune_code": 5201,
       "law": "Law 19-12",
       "mother_wilaya_code": 8,
-      "dairas_count": 5,
-      "communes_count": 9
+      "dairas_count": 6,
+      "communes_count": 10,
+      "osm_relation_id": 6824843,
+      "wikidata": "Q21606902"
     },
     {
       "code": 53,
@@ -530,10 +688,13 @@
       "name_fr": "In Salah",
       "name_en": "In Salah",
       "created": 2019,
+      "capital_commune_code": 5301,
       "law": "Law 19-12",
       "mother_wilaya_code": 11,
       "dairas_count": 2,
-      "communes_count": 3
+      "communes_count": 3,
+      "osm_relation_id": 6824900,
+      "wikidata": "Q76593022"
     },
     {
       "code": 54,
@@ -541,10 +702,13 @@
       "name_fr": "In Guezzam",
       "name_en": "In Guezzam",
       "created": 2019,
+      "capital_commune_code": 5401,
       "law": "Law 19-12",
       "mother_wilaya_code": 11,
       "dairas_count": 2,
-      "communes_count": 2
+      "communes_count": 2,
+      "osm_relation_id": 6825881,
+      "wikidata": "Q77102475"
     },
     {
       "code": 55,
@@ -552,10 +716,13 @@
       "name_fr": "Touggourt",
       "name_en": "Touggourt",
       "created": 2019,
+      "capital_commune_code": 5501,
       "law": "Law 19-12",
       "mother_wilaya_code": 30,
-      "dairas_count": 6,
-      "communes_count": 13
+      "dairas_count": 5,
+      "communes_count": 13,
+      "osm_relation_id": 6822397,
+      "wikidata": "Q77103880"
     },
     {
       "code": 56,
@@ -563,10 +730,13 @@
       "name_fr": "Djanet",
       "name_en": "Djanet",
       "created": 2019,
+      "capital_commune_code": 5601,
       "law": "Law 19-12",
       "mother_wilaya_code": 33,
       "dairas_count": 1,
-      "communes_count": 2
+      "communes_count": 2,
+      "osm_relation_id": 6825876,
+      "wikidata": "Q77101547"
     },
     {
       "code": 57,
@@ -574,10 +744,13 @@
       "name_fr": "El M'Ghair",
       "name_en": "El M'Ghair",
       "created": 2019,
+      "capital_commune_code": 5701,
       "law": "Law 19-12",
       "mother_wilaya_code": 39,
       "dairas_count": 2,
-      "communes_count": 8
+      "communes_count": 8,
+      "osm_relation_id": 6825874,
+      "wikidata": "Q77103173"
     },
     {
       "code": 58,
@@ -585,21 +758,26 @@
       "name_fr": "El Meniaa",
       "name_en": "El Meniaa",
       "created": 2019,
+      "capital_commune_code": 5801,
       "law": "Law 19-12",
       "mother_wilaya_code": 47,
       "dairas_count": 1,
-      "communes_count": 3
+      "communes_count": 3,
+      "osm_relation_id": 6825901,
+      "wikidata": "Q76520264"
     },
     {
       "code": 59,
       "name_ar": "آفلو",
       "name_fr": "Aflou",
       "name_en": "Aflou",
-      "created": 2025,
+      "created": 2026,
+      "capital_commune_code": 319,
       "law": "Law 26-06",
       "mother_wilaya_code": 3,
       "communes_count": 12,
       "dairas_count": 5,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "آفلو",
@@ -643,25 +821,28 @@
         },
         {
           "name_ar": "وادي مزي",
-          "name_fr": "Oued M'zi"
+          "name_fr": "Oued M'Zi"
         },
         {
           "name_ar": "سيدي بوزيد",
           "name_fr": "Sidi Bouzid"
         }
-      ]
+      ],
+      "osm_relation_id": 20442307,
+      "wikidata": "Q136956694"
     },
     {
       "code": 60,
       "name_ar": "بريكة",
       "name_fr": "Barika",
       "name_en": "Barika",
-      "created": 2025,
+      "created": 2026,
+      "capital_commune_code": 542,
       "law": "Law 26-06",
       "mother_wilaya_code": 5,
       "communes_count": 8,
-      "dairas_count": 4,
-      "dairas_source": "Aures News — confirmed by wali of Batna",
+      "dairas_count": 3,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "بريكة",
@@ -695,18 +876,22 @@
           "name_ar": "أولاد عمار",
           "name_fr": "Ouled Ammar"
         }
-      ]
+      ],
+      "osm_relation_id": 20419608,
+      "wikidata": "Q131588587"
     },
     {
       "code": 61,
       "name_ar": "القنطرة",
       "name_fr": "El Kantara",
       "name_en": "El Kantara",
-      "created": 2025,
+      "created": 2026,
+      "capital_commune_code": 717,
       "law": "Law 26-06",
       "mother_wilaya_code": 7,
       "communes_count": 5,
       "dairas_count": 3,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "القنطرة",
@@ -726,20 +911,24 @@
         },
         {
           "name_ar": "جمورة",
-          "name_fr": "Djemorah"
+          "name_fr": "Djemourah"
         }
-      ]
+      ],
+      "osm_relation_id": 20420206,
+      "wikidata": "Q136956697"
     },
     {
       "code": 62,
       "name_ar": "بئر العاتر",
       "name_fr": "Bir El Ater",
       "name_en": "Bir El Ater",
-      "created": 2025,
+      "created": 2026,
+      "capital_commune_code": 1202,
       "law": "Law 26-06",
       "mother_wilaya_code": 12,
       "communes_count": 4,
       "dairas_count": 2,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "بئر العاتر",
@@ -751,24 +940,28 @@
         },
         {
           "name_ar": "العقلة المالحة",
-          "name_fr": "El Ogla El Malha"
+          "name_fr": "El Ogla El Melha"
         },
         {
           "name_ar": "فركان",
           "name_fr": "Ferkane"
         }
-      ]
+      ],
+      "osm_relation_id": 20421910,
+      "wikidata": "Q136956698"
     },
     {
       "code": 63,
       "name_ar": "العريشة",
       "name_fr": "El Aricha",
       "name_en": "El Aricha",
-      "created": 2025,
+      "created": 2026,
+      "capital_commune_code": 1332,
       "law": "Law 26-06",
       "mother_wilaya_code": 13,
       "communes_count": 4,
       "dairas_count": 2,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "العريشة",
@@ -786,18 +979,22 @@
           "name_ar": "البويهي",
           "name_fr": "El Bouihi"
         }
-      ]
+      ],
+      "osm_relation_id": 20815946,
+      "wikidata": "Q139936248"
     },
     {
       "code": 64,
       "name_ar": "قصر الشلالة",
       "name_fr": "Ksar Chellala",
       "name_en": "Ksar Chellala",
-      "created": 2025,
+      "created": 2026,
+      "capital_commune_code": 1429,
       "law": "Law 26-06",
       "mother_wilaya_code": 14,
       "communes_count": 6,
-      "dairas_count": 3,
+      "dairas_count": 2,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "قصر الشلالة",
@@ -816,30 +1013,33 @@
           "name_fr": "Hamadia"
         },
         {
-          "name_ar": "سرغين",
-          "name_fr": "Serghine"
+          "name_ar": "سرقين",
+          "name_fr": "Serguine"
         },
         {
           "name_ar": "بوقرة",
           "name_fr": "Bougara"
         }
-      ]
+      ],
+      "osm_relation_id": 20442362,
+      "wikidata": "Q136956695"
     },
     {
       "code": 65,
       "name_ar": "عين وسارة",
-      "name_fr": "Aïn Oussera",
-      "name_en": "Aïn Oussera",
-      "created": 2025,
+      "name_fr": "Aïn Ouessara",
+      "name_en": "Aïn Ouessara",
+      "created": 2026,
+      "capital_commune_code": 1731,
       "law": "Law 26-06",
       "mother_wilaya_code": 17,
       "communes_count": 10,
       "dairas_count": 4,
-      "dairas_source": "Djelfa Info — Presidential Decree 19-328",
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "dairas": [
         {
           "name_ar": "عين وسارة",
-          "name_fr": "Aïn Oussera",
+          "name_fr": "Aïn Ouessara",
           "communes": [
             "عين وسارة",
             "قرنيني"
@@ -849,8 +1049,17 @@
           "name_ar": "البيرين",
           "name_fr": "Birine",
           "communes": [
-            "بيرين",
+            "البيرين",
             "بنهار"
+          ]
+        },
+        {
+          "name_ar": "حد الصحاري",
+          "name_fr": "Had Sahary",
+          "communes": [
+            "حد الصحاري",
+            "عين فقة",
+            "بويرة الأحدب"
           ]
         },
         {
@@ -861,24 +1070,15 @@
             "الخميس",
             "حاسي فدول"
           ]
-        },
-        {
-          "name_ar": "حد الصحاري",
-          "name_fr": "Had Sahary",
-          "communes": [
-            "حد الصحاري",
-            "عين فكة",
-            "بويرة الأحدب"
-          ]
         }
       ],
       "communes": [
         {
           "name_ar": "عين وسارة",
-          "name_fr": "Aïn Oussera"
+          "name_fr": "Aïn Ouessara"
         },
         {
-          "name_ar": "بيرين",
+          "name_ar": "البيرين",
           "name_fr": "Birine"
         },
         {
@@ -913,34 +1113,37 @@
           "name_ar": "عين فكة",
           "name_fr": "Aïn Fekka"
         }
-      ]
+      ],
+      "osm_relation_id": 20442406,
+      "wikidata": "Q136806466"
     },
     {
       "code": 66,
       "name_ar": "مسعد",
       "name_fr": "Messaad",
       "name_en": "Messaad",
-      "created": 2025,
+      "created": 2026,
+      "capital_commune_code": 1717,
       "law": "Law 26-06",
       "mother_wilaya_code": 17,
       "communes_count": 8,
-      "dairas_count": 4,
-      "dairas_source": "Djelfa Info — Presidential Decree 19-328",
+      "dairas_count": 2,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "dairas": [
         {
           "name_ar": "مسعد",
           "name_fr": "Messaad",
           "communes": [
             "مسعد",
+            "سد رحال",
+            "قطارة",
             "سلمانة",
-            "سد الرحال",
-            "دلدول",
-            "القطارة"
+            "دلدول"
           ]
         },
         {
           "name_ar": "فيض البطمة",
-          "name_fr": "Feidh El Botma",
+          "name_fr": "Faïdh El Botma",
           "communes": [
             "فيض البطمة",
             "أم العظام",
@@ -954,7 +1157,7 @@
           "name_fr": "Messaad"
         },
         {
-          "name_ar": "سد الرحال",
+          "name_ar": "سد رحال",
           "name_fr": "Sed Rahal"
         },
         {
@@ -981,18 +1184,22 @@
           "name_ar": "عمورة",
           "name_fr": "Amourah"
         }
-      ]
+      ],
+      "osm_relation_id": 20812604,
+      "wikidata": "Q131588980"
     },
     {
       "code": 67,
       "name_ar": "قصر البخاري",
       "name_fr": "Ksar El Boukhari",
       "name_en": "Ksar El Boukhari",
-      "created": 2025,
+      "created": 2026,
+      "capital_commune_code": 2635,
       "law": "Law 26-06",
       "mother_wilaya_code": 26,
       "communes_count": 21,
       "dairas_count": 6,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "قصر البخاري",
@@ -1011,7 +1218,7 @@
           "name_fr": "Draa"
         },
         {
-          "name_ar": "بوعيش",
+          "name_ar": "البواعيش",
           "name_fr": "Bouaiche"
         },
         {
@@ -1027,7 +1234,7 @@
           "name_fr": "Ouled Hellal"
         },
         {
-          "name_ar": "تفراوت",
+          "name_ar": "تافراوت",
           "name_fr": "Tafraout"
         },
         {
@@ -1035,7 +1242,7 @@
           "name_fr": "Boughar"
         },
         {
-          "name_ar": "سيدي دامد",
+          "name_ar": "سيدي دمد",
           "name_fr": "Sidi Damed"
         },
         {
@@ -1056,7 +1263,7 @@
         },
         {
           "name_ar": "أم الجليل",
-          "name_fr": "Oum El Djellil"
+          "name_fr": "Oum El Djallil"
         },
         {
           "name_ar": "مفتاحة",
@@ -1064,7 +1271,7 @@
         },
         {
           "name_ar": "بوغزول",
-          "name_fr": "Boughzoul"
+          "name_fr": "Boughezoul"
         },
         {
           "name_ar": "العوينات",
@@ -1078,64 +1285,38 @@
           "name_ar": "السانق",
           "name_fr": "Es-Sanaag"
         }
-      ]
+      ],
+      "osm_relation_id": 20953792,
+      "wikidata": "Q136956696"
     },
     {
       "code": 68,
       "name_ar": "بوسعادة",
       "name_fr": "Bou Saâda",
       "name_en": "Bou Saâda",
-      "created": 2025,
+      "created": 2026,
+      "capital_commune_code": 2820,
       "law": "Law 26-06",
       "mother_wilaya_code": 28,
       "communes_count": 23,
       "dairas_count": 8,
-      "dairas_source": "Arabic Wikipedia — Wilaya Bou Saâda",
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "dairas": [
         {
           "name_ar": "بوسعادة",
-          "name_fr": "Bou Saâda",
+          "name_fr": "Bou Saada",
           "communes": [
             "بوسعادة",
             "الهامل",
-            "ولتان"
+            "ولتام"
           ]
         },
         {
-          "name_ar": "مجدل",
-          "name_fr": "Medjedel",
-          "communes": [
-            "مجدل",
-            "سليم"
-          ]
-        },
-        {
-          "name_ar": "جبل أمساعد",
+          "name_ar": "جبل مساعد",
           "name_fr": "Djebel Messaad",
           "communes": [
-            "جبل مسعد",
-            "عين الريش"
-          ]
-        },
-        {
-          "name_ar": "عين الملح",
-          "name_fr": "Aïn El Melh",
-          "communes": [
-            "عين الملح",
-            "بئر الفضة",
-            "عين فارس",
-            "سيدي محمد",
-            "مناعة"
-          ]
-        },
-        {
-          "name_ar": "بن سرور",
-          "name_fr": "Ben Srour",
-          "communes": [
-            "بن سرور",
-            "أولاد سليمان",
-            "الزرزور",
-            "محمد بوضياف"
+            "جبل مساعد",
+            "سليم"
           ]
         },
         {
@@ -1143,8 +1324,24 @@
           "name_fr": "Khoubana",
           "communes": [
             "الخبانة",
-            "مصيف",
+            "امسيف",
             "الحوامد"
+          ]
+        },
+        {
+          "name_ar": "امجدل",
+          "name_fr": "Medjedel",
+          "communes": [
+            "امجدل",
+            "مناعة"
+          ]
+        },
+        {
+          "name_ar": "أولاد سيدي إبراهيم",
+          "name_fr": "Ouled Sidi Brahim",
+          "communes": [
+            "أولاد سيدي إبراهيم",
+            "بنزوه"
           ]
         },
         {
@@ -1156,11 +1353,24 @@
           ]
         },
         {
-          "name_ar": "أولاد سيدي إبراهيم",
-          "name_fr": "Ouled Sidi Brahim",
+          "name_ar": "عين الملح",
+          "name_fr": "Aïn El Meleh",
           "communes": [
-            "أولاد سيدي إبراهيم",
-            "بن زوح"
+            "عين الملح",
+            "بئر الفضة",
+            "عين فارس",
+            "سيدي امحمد",
+            "عين الريش"
+          ]
+        },
+        {
+          "name_ar": "بن سرور",
+          "name_fr": "Ben Srour",
+          "communes": [
+            "بن سرور",
+            "أولاد سليمان",
+            "الزرزور",
+            "محمد بوضياف"
           ]
         }
       ],
@@ -1175,7 +1385,7 @@
         },
         {
           "name_ar": "مصيف",
-          "name_fr": "M'cif"
+          "name_fr": "M'Cif"
         },
         {
           "name_ar": "أولاد سيدي إبراهيم",
@@ -1211,7 +1421,7 @@
         },
         {
           "name_ar": "محمد بوضياف",
-          "name_fr": "Mohamed Boudiaf"
+          "name_fr": "Mouhamed Boudiaf"
         },
         {
           "name_ar": "بن زوح",
@@ -1226,8 +1436,8 @@
           "name_fr": "Aïn Fares"
         },
         {
-          "name_ar": "سيدي محمد",
-          "name_fr": "Sidi M'hamed"
+          "name_ar": "سيدي امحمد",
+          "name_fr": "Sidi M'Hamed"
         },
         {
           "name_ar": "مناعة",
@@ -1251,25 +1461,29 @@
         },
         {
           "name_ar": "ولتان",
-          "name_fr": "Oulteme"
+          "name_fr": "Oultem"
         },
         {
           "name_ar": "جبل مسعد",
           "name_fr": "Djebel Messaad"
         }
       ],
-      "note": "Some sources count 24 communes (adding El Aligue/العليق); AR Wikipedia and Marefa both confirm 23"
+      "note": "Some sources count 24 communes (adding El Aligue/العليق); AR Wikipedia and Marefa both confirm 23",
+      "osm_relation_id": 20819318,
+      "wikidata": "Q131925452"
     },
     {
       "code": 69,
       "name_ar": "الأبيض سيدي الشيخ",
       "name_fr": "El Abiodh Sidi Cheikh",
       "name_en": "El Abiodh Sidi Cheikh",
-      "created": 2025,
+      "created": 2026,
+      "capital_commune_code": 3207,
       "law": "Law 26-06",
       "mother_wilaya_code": 32,
       "communes_count": 7,
       "dairas_count": 3,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "الأبيض سيدي الشيخ",
@@ -1288,7 +1502,7 @@
           "name_fr": "Bou Semghoun"
         },
         {
-          "name_ar": "شلالة",
+          "name_ar": "الشلالة",
           "name_fr": "Chellala"
         },
         {
@@ -1297,9 +1511,11 @@
         },
         {
           "name_ar": "المهارة",
-          "name_fr": "El Mehara"
+          "name_fr": "El Meharra"
         }
-      ]
+      ],
+      "osm_relation_id": 20816671,
+      "wikidata": "Q136956700"
     }
   ]
 }

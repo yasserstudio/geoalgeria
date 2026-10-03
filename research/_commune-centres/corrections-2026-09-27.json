@@ -1,0 +1,1746 @@
+{
+  "generated": "2026-09-27",
+  "source": "OpenStreetMap admin_level=8 commune relations and their admin_centre nodes, via Overpass",
+  "timestamp_osm_base": "2026-09-27T11:03:52Z",
+  "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
+  "method": "For every commune centre the sweep found outside its own wilaya polygon, the commune's OSM relation was fetched with full geometry and the stored point tested against it. A stored point outside the commune's own OSM boundary, whose admin_centre node is inside that boundary and inside the declared wilaya, is a coordinate error; `to` is that admin_centre node rounded to 6 decimals. Bethioua (3107) is the one entry admitted on other evidence: issue #167 placed it inside the Arzew industrial complex, its stored latitude is byte-identical to the admin_centre node, and only the longitude is displaced.",
+  "count": 56,
+  "corrections": [
+    {
+      "code_commune": 226,
+      "wilaya_code": 2,
+      "name_fr": "Moussadek",
+      "name_ar": "مصدق",
+      "from": [
+        0.7303,
+        36.3333333
+      ],
+      "outside_own_wilaya_m": 817,
+      "osm": {
+        "relation": 4832928,
+        "admin_centre_node": 1026233690,
+        "name": "Moussadek ⵎⵓⵚⴰⴷⴻⵇ مصدق",
+        "ref:ONS": "0226",
+        "point": [
+          1.008437,
+          36.353615
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 21131,
+      "move_m": 25013,
+      "to": [
+        1.008437,
+        36.353615
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 234,
+      "wilaya_code": 2,
+      "name_fr": "Breira",
+      "name_ar": "بريرة",
+      "from": [
+        1.6482,
+        36.4488017
+      ],
+      "outside_own_wilaya_m": 1062,
+      "osm": {
+        "relation": 5130868,
+        "admin_centre_node": 3513761772,
+        "name": "Breira",
+        "ref:ONS": "0234",
+        "point": [
+          1.615034,
+          36.448802
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 975,
+      "move_m": 2966,
+      "to": [
+        1.615034,
+        36.448802
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 415,
+      "wilaya_code": 4,
+      "name_fr": "Ain Diss",
+      "name_ar": "عين الديس",
+      "from": [
+        7.8,
+        36.03
+      ],
+      "outside_own_wilaya_m": 16510,
+      "osm": {
+        "relation": 3671772,
+        "admin_centre_node": 1545411031,
+        "name": "Aïn Diss ⵄⵉⵏ ⴷⴷⵉⵙ عين الديس",
+        "ref:ONS": "0415",
+        "point": [
+          7.002552,
+          36.033574
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 62867,
+      "move_m": 71709,
+      "to": [
+        7.002552,
+        36.033574
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 423,
+      "wilaya_code": 4,
+      "name_fr": "Oued Nini",
+      "name_ar": "وادي نيني",
+      "from": [
+        7.298855,
+        35.5722
+      ],
+      "outside_own_wilaya_m": 1228,
+      "osm": {
+        "relation": 4491789,
+        "admin_centre_node": 1544610109,
+        "name": "Oued Nini ⵡⴰⴷ ⵏⵉⵏⵉ وادي نيني",
+        "ref:ONS": "0423",
+        "point": [
+          7.349015,
+          35.572127
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 1203,
+      "move_m": 4537,
+      "to": [
+        7.349015,
+        35.572127
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 518,
+      "wilaya_code": 60,
+      "name_fr": "Tilatou",
+      "name_ar": "تيلاطو",
+      "from": [
+        5.8667,
+        35.329167
+      ],
+      "outside_own_wilaya_m": 3343,
+      "osm": {
+        "relation": 5180262,
+        "admin_centre_node": 1514758128,
+        "name": "Tilatou ⵜⵉⵍⴰⵜⵓ تيلاطو",
+        "ref:ONS": "0518",
+        "point": [
+          5.793124,
+          35.329216
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 2745,
+      "move_m": 6675,
+      "to": [
+        5.793124,
+        35.329216
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 611,
+      "wilaya_code": 6,
+      "name_fr": "Tichy",
+      "name_ar": "تيشي",
+      "from": [
+        5.1550882,
+        36.6961
+      ],
+      "outside_own_wilaya_m": 2099,
+      "osm": {
+        "relation": 4112952,
+        "admin_centre_node": 425061188,
+        "name": "Tichy",
+        "ref:ONS": "0611",
+        "point": [
+          5.157488,
+          36.668951
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 2419,
+      "move_m": 3026,
+      "to": [
+        5.157488,
+        36.668951
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 641,
+      "wilaya_code": 6,
+      "name_fr": "Melbou",
+      "name_ar": "مالبو",
+      "from": [
+        5.360759,
+        36.671389
+      ],
+      "outside_own_wilaya_m": 2689,
+      "osm": {
+        "relation": 4112877,
+        "admin_centre_node": 425064156,
+        "name": "Melbou",
+        "ref:ONS": "0641",
+        "point": [
+          5.362637,
+          36.640328
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 2852,
+      "move_m": 3458,
+      "to": [
+        5.362637,
+        36.640328
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1214,
+      "wilaya_code": 12,
+      "name_fr": "Bir Dheheb",
+      "name_ar": "بئر الذهب",
+      "from": [
+        7.938333,
+        34.908056
+      ],
+      "outside_own_wilaya_m": 472,
+      "osm": {
+        "relation": 6618829,
+        "admin_centre_node": 1553219667,
+        "name": "Bir Dheb ⴱⵉⵔ ⴷⵀⴻⴱ بٔير الذھب",
+        "ref:ONS": "1214",
+        "point": [
+          7.939505,
+          35.524577
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 62935,
+      "move_m": 68554,
+      "to": [
+        7.939505,
+        35.524577
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1339,
+      "wilaya_code": 13,
+      "name_fr": "Marsa Ben M'Hidi",
+      "name_ar": "مرسى بن مهيدي",
+      "from": [
+        -2.19771,
+        35.08669
+      ],
+      "outside_own_wilaya_m": 132,
+      "osm": {
+        "relation": 4586232,
+        "admin_centre_node": 490570861,
+        "name": "Marsa Ben M'Hidi ⵎⴻⵔⵙⴰ ⴱⴻⵏ ⵎⵀⵉⴷⵉ مرسى بن مھيدي",
+        "ref:ONS": "1339",
+        "point": [
+          -2.204397,
+          35.081799
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 47,
+      "move_m": 816,
+      "to": [
+        -2.204397,
+        35.081799
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1426,
+      "wilaya_code": 14,
+      "name_fr": "Tousnina",
+      "name_ar": "توسنينة",
+      "from": [
+        1.276389,
+        34.02
+      ],
+      "outside_own_wilaya_m": 7973,
+      "osm": {
+        "relation": 6545452,
+        "admin_centre_node": 463254750,
+        "name": "Tousnina ⵜⵓⵙⵏⵉⵢⴰ توسنينة",
+        "ref:ONS": "1426",
+        "point": [
+          1.27627,
+          35.11219
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 108520,
+      "move_m": 121446,
+      "to": [
+        1.27627,
+        35.11219
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1437,
+      "wilaya_code": 14,
+      "name_fr": "Takhemaret",
+      "name_ar": "تخمارت",
+      "from": [
+        0.683333333,
+        35.035
+      ],
+      "outside_own_wilaya_m": 3063,
+      "osm": {
+        "relation": 6545449,
+        "admin_centre_node": 442973081,
+        "name": "Takhemaret ⵜⴰⵅⵎⴻⵔⵜ تاخمرت",
+        "ref:ONS": "1437",
+        "point": [
+          0.683357,
+          35.107293
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 3267,
+      "move_m": 8039,
+      "to": [
+        0.683357,
+        35.107293
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1519,
+      "wilaya_code": 15,
+      "name_fr": "Illoula Oumalou",
+      "name_ar": "إيلولة أومـــالو",
+      "from": [
+        4.59611,
+        36.5667
+      ],
+      "outside_own_wilaya_m": 4271,
+      "osm": {
+        "relation": 2170761,
+        "admin_centre_node": 1583392179,
+        "name": "Iloula Oumalou",
+        "ref:ONS": "1519",
+        "point": [
+          4.442737,
+          36.578954
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 9632,
+      "move_m": 13764,
+      "to": [
+        4.442737,
+        36.578954
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1562,
+      "wilaya_code": 15,
+      "name_fr": "Mizrana",
+      "name_ar": "ميزرانـــة",
+      "from": [
+        4.096111,
+        36.89623
+      ],
+      "outside_own_wilaya_m": 492,
+      "osm": {
+        "relation": 4285550,
+        "admin_centre_node": 1356819140,
+        "name": "Mizrana",
+        "ref:ONS": "1562",
+        "point": [
+          4.096259,
+          36.844716
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 1492,
+      "move_m": 5728,
+      "to": [
+        4.096259,
+        36.844716
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1601,
+      "wilaya_code": 16,
+      "name_fr": "Alger Centre",
+      "name_ar": "الجزائر الوسطى",
+      "from": [
+        3.0909,
+        36.76846
+      ],
+      "outside_own_wilaya_m": 997,
+      "osm": {
+        "relation": 157183,
+        "admin_centre_node": 1657151225,
+        "name": "Alger-Centre",
+        "ref:ONS": "1601",
+        "point": [
+          3.058211,
+          36.776335
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 973,
+      "move_m": 3040,
+      "to": [
+        3.058211,
+        36.776335
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1613,
+      "wilaya_code": 16,
+      "name_fr": "El Harrach",
+      "name_ar": "الحراش",
+      "from": [
+        3.715,
+        36.7164
+      ],
+      "outside_own_wilaya_m": 29912,
+      "osm": {
+        "relation": 542583,
+        "admin_centre_node": 288399489,
+        "name": "El Harrach ⵍⵃⴻⵔⵔⴰⵛ الحراش",
+        "ref:ONS": "1613",
+        "point": [
+          3.137389,
+          36.720797
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 49230,
+      "move_m": 51486,
+      "to": [
+        3.137389,
+        36.720797
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1625,
+      "wilaya_code": 16,
+      "name_fr": "Rais Hamidou",
+      "name_ar": "الرايس حميدو",
+      "from": [
+        3.18,
+        36.81784
+      ],
+      "outside_own_wilaya_m": 3886,
+      "osm": {
+        "relation": 548025,
+        "admin_centre_node": 330434836,
+        "name": "ⵔⴰⵢⵙ ⵃⴰⵎⵉⴷⵓ الرئيس حميدو",
+        "ref:ONS": "1625",
+        "point": [
+          3.01147,
+          36.817413
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 13614,
+      "move_m": 15002,
+      "to": [
+        3.01147,
+        36.817413
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1639,
+      "wilaya_code": 16,
+      "name_fr": "Bordj El Bahri",
+      "name_ar": "برج البحري",
+      "from": [
+        3.22248,
+        36.779133
+      ],
+      "outside_own_wilaya_m": 553,
+      "osm": {
+        "relation": 157478,
+        "admin_centre_node": 317353676,
+        "name": "Bordj El Bahri ⴱⴻⵔⴵ ⵍⴱⴻⵃⵔⵉ برج البحري",
+        "ref:ONS": "1639",
+        "point": [
+          3.250161,
+          36.790624
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 572,
+      "move_m": 2777,
+      "to": [
+        3.250161,
+        36.790624
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1709,
+      "wilaya_code": 65,
+      "name_fr": "Bouira Lahdab",
+      "name_ar": "بويرة الأحدب",
+      "from": [
+        3.75,
+        35.243889
+      ],
+      "outside_own_wilaya_m": 10960,
+      "osm": {
+        "relation": 6533506,
+        "admin_centre_node": 1074409233,
+        "name": "Bouirat El Hedab ⴱⵡⵉⵔⴰⵜ ⵍⵃⴻⴷⴷⴰⴱ بويرة الأحداب",
+        "ref:ONS": "1709",
+        "point": [
+          3.143974,
+          35.243751
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 46111,
+      "move_m": 55035,
+      "to": [
+        3.143974,
+        35.243751
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1711,
+      "wilaya_code": 65,
+      "name_fr": "El Khemis",
+      "name_ar": "الخميس",
+      "from": [
+        2.515833,
+        35.5397
+      ],
+      "outside_own_wilaya_m": 2179,
+      "osm": {
+        "relation": 6533514,
+        "admin_centre_node": 1435006341,
+        "name": "El Khemis ⵍⴻⵅⵎⵉⵙ الخميس",
+        "ref:ONS": "1711",
+        "point": [
+          2.595609,
+          35.288929
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 12783,
+      "move_m": 28806,
+      "to": [
+        2.595609,
+        35.288929
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1822,
+      "wilaya_code": 18,
+      "name_fr": "Boudria Beniyadjis",
+      "name_ar": "بودريعة بني ياجيس",
+      "from": [
+        4.9739,
+        36.599166
+      ],
+      "outside_own_wilaya_m": 40189,
+      "osm": {
+        "relation": 5802582,
+        "admin_centre_node": 1391142228,
+        "name": "Boudria Ben Yadjis ⴱⵓⴷⵔⵉⵢⴰ ⴱⴻⵏ ⵢⴰⴵⵉⵙ بودريعة بن ياجيس",
+        "ref:ONS": "1822",
+        "point": [
+          5.807134,
+          36.599535
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 62898,
+      "move_m": 74383,
+      "to": [
+        5.807134,
+        36.599535
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1827,
+      "wilaya_code": 18,
+      "name_fr": "Ouled Rabah",
+      "name_ar": "أولاد رابح",
+      "from": [
+        6.1677,
+        36.568
+      ],
+      "outside_own_wilaya_m": 1836,
+      "osm": {
+        "relation": 6669728,
+        "admin_centre_node": 1390806617,
+        "name": "Ouled Rabah ⵡⵍⴰⴷ ⵔⴰⴱⴻⵃ أولاد رابح",
+        "ref:ONS": "1827",
+        "point": [
+          6.167735,
+          36.59926
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 1539,
+      "move_m": 3476,
+      "to": [
+        6.167735,
+        36.59926
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 1938,
+      "wilaya_code": 19,
+      "name_fr": "Tizi N'bechar",
+      "name_ar": "تيزي نبشار",
+      "from": [
+        5.36,
+        36.529
+      ],
+      "outside_own_wilaya_m": 1845,
+      "osm": {
+        "relation": 1620847,
+        "admin_centre_node": 443160394,
+        "name": "Tizi N'Bechar",
+        "ref:ONS": "1938",
+        "point": [
+          5.359898,
+          36.431488
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 6334,
+      "move_m": 10843,
+      "to": [
+        5.359898,
+        36.431488
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2108,
+      "wilaya_code": 21,
+      "name_fr": "Ben Azzouz",
+      "name_ar": "بن عزوز",
+      "from": [
+        7.057,
+        36.46
+      ],
+      "outside_own_wilaya_m": 3381,
+      "osm": {
+        "relation": 5170972,
+        "admin_centre_node": 1240473695,
+        "name": "Ben Azouz ⴱⴻⵏ ⵄⴻⵣⵣⵓⵣ بن عزوز",
+        "ref:ONS": "2108",
+        "point": [
+          7.291754,
+          36.860002
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 40177,
+      "move_m": 49161,
+      "to": [
+        7.291754,
+        36.860002
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2136,
+      "wilaya_code": 21,
+      "name_fr": "Khenag Maoune",
+      "name_ar": "خناق مايو",
+      "from": [
+        6.1386,
+        36.7802778
+      ],
+      "outside_own_wilaya_m": 15086,
+      "osm": {
+        "relation": 6543292,
+        "admin_centre_node": 1332420589,
+        "name": "Kheneg Mayoum ⵅⴻⵏⵇ ⵎⴰⵢⵓⵎ خنق مايوم",
+        "ref:ONS": "2136",
+        "point": [
+          6.284479,
+          37.009042
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 21074,
+      "move_m": 28554,
+      "to": [
+        6.284479,
+        37.009042
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2211,
+      "wilaya_code": 22,
+      "name_fr": "Tefessour",
+      "name_ar": "تفسور",
+      "from": [
+        -0.1,
+        35.035
+      ],
+      "outside_own_wilaya_m": 11043,
+      "osm": {
+        "relation": 6662012,
+        "admin_centre_node": 1370646785,
+        "name": "Tafissour ⵜⴰⴼⵉⵙⵓⵔ تفسور",
+        "ref:ONS": "2211",
+        "point": [
+          -0.200929,
+          34.693084
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 29123,
+      "move_m": 39119,
+      "to": [
+        -0.200929,
+        34.693084
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2226,
+      "wilaya_code": 22,
+      "name_fr": "M'cid",
+      "name_ar": "مسيد",
+      "from": [
+        0.15,
+        35.1165888
+      ],
+      "outside_own_wilaya_m": 29504,
+      "osm": {
+        "relation": 6661988,
+        "admin_centre_node": 497155691,
+        "name": "M'Cid ⵎⵙⵉⴷ مسيد",
+        "ref:ONS": "2226",
+        "point": [
+          -0.246085,
+          35.138889
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 29247,
+      "move_m": 36106,
+      "to": [
+        -0.246085,
+        35.138889
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2243,
+      "wilaya_code": 22,
+      "name_fr": "Oued Sefioun",
+      "name_ar": "وادي سفيون",
+      "from": [
+        -0.0933333,
+        34.996111
+      ],
+      "outside_own_wilaya_m": 12230,
+      "osm": {
+        "relation": 6661996,
+        "admin_centre_node": 497155692,
+        "name": "Oued Sefioun ⵡⴰⴷ ⵙⴻⴼⵢⵓⵏ وادى سفيون",
+        "ref:ONS": "2243",
+        "point": [
+          -0.35741,
+          35.06672
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 12237,
+      "move_m": 25294,
+      "to": [
+        -0.35741,
+        35.06672
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2310,
+      "wilaya_code": 23,
+      "name_fr": "Chetaibi",
+      "name_ar": "شطايبي",
+      "from": [
+        7.38028,
+        36.805556
+      ],
+      "outside_own_wilaya_m": 780,
+      "osm": {
+        "relation": 1616147,
+        "admin_centre_node": 1213307637,
+        "name": "Chetaibi ⵛⵟⴰⵢⴱⵉ شطايبي",
+        "ref:ONS": "2310",
+        "point": [
+          7.379979,
+          37.065039
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 14951,
+      "move_m": 28853,
+      "to": [
+        7.379979,
+        37.065039
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2606,
+      "wilaya_code": 26,
+      "name_fr": "Ouled Deïde",
+      "name_ar": "أولاد ذايد",
+      "from": [
+        3.5167,
+        36.112778
+      ],
+      "outside_own_wilaya_m": 1042,
+      "osm": {
+        "relation": 2594929,
+        "admin_centre_node": 1067038207,
+        "name": "Ouled Deide ⵡⵍⴰⴷ ⴷⴰⵢⴻⴷ أولاد دايد",
+        "ref:ONS": "2606",
+        "point": [
+          3.014279,
+          36.112135
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 35478,
+      "move_m": 45133,
+      "to": [
+        3.014279,
+        36.112135
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2610,
+      "wilaya_code": 67,
+      "name_fr": "Bouaiche",
+      "name_ar": "البواعيش",
+      "from": [
+        2.1731,
+        35.552778
+      ],
+      "outside_own_wilaya_m": 7328,
+      "osm": {
+        "relation": 2433345,
+        "admin_centre_node": 951662811,
+        "name": "Bouaiche ⴱⵓⵄⵉⵛ بوعيش",
+        "ref:ONS": "2610",
+        "point": [
+          2.358512,
+          35.553813
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 7363,
+      "move_m": 16774,
+      "to": [
+        2.358512,
+        35.553813
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2623,
+      "wilaya_code": 67,
+      "name_fr": "Tafraout",
+      "name_ar": "تافراوت",
+      "from": [
+        3.4308,
+        36.0877
+      ],
+      "outside_own_wilaya_m": 5366,
+      "osm": {
+        "relation": 2897135,
+        "admin_centre_node": 497170606,
+        "name": "Tafraout ⵜⴰⴼⵔⴰⵡⵜ تافراوت",
+        "ref:ONS": "2623",
+        "point": [
+          3.352787,
+          35.972118
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 5382,
+      "move_m": 14642,
+      "to": [
+        3.352787,
+        35.972118
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2645,
+      "wilaya_code": 26,
+      "name_fr": "Eddouair",
+      "name_ar": "الدواير",
+      "from": [
+        2.963,
+        35.9154
+      ],
+      "outside_own_wilaya_m": 1393,
+      "osm": {
+        "relation": 2908041,
+        "admin_centre_node": 453662330,
+        "name": "Tlatet Eddouair ⵜⵍⴰⵜⴰ ⴷⵡⴰⵢⴻⵔ ثلاثة الدوائر",
+        "ref:ONS": "2645",
+        "point": [
+          2.963741,
+          35.98059
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 1405,
+      "move_m": 7249,
+      "to": [
+        2.963741,
+        35.98059
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2655,
+      "wilaya_code": 26,
+      "name_fr": "Sidi Errabie",
+      "name_ar": "سيدي الربيع",
+      "from": [
+        3.75,
+        36.14766
+      ],
+      "outside_own_wilaya_m": 18757,
+      "osm": {
+        "relation": 2957917,
+        "admin_centre_node": 1068750377,
+        "name": "Sidi Errabia ⵙⵉⴷⵉ ⵔⵔⴰⴱⵉⵄ سيدي الربيع",
+        "ref:ONS": "2655",
+        "point": [
+          3.306938,
+          36.275357
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 35513,
+      "move_m": 42210,
+      "to": [
+        3.306938,
+        36.275357
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2656,
+      "wilaya_code": 26,
+      "name_fr": "Bir Ben Abed",
+      "name_ar": "بئر بن عابد",
+      "from": [
+        3.394722,
+        36.0003
+      ],
+      "outside_own_wilaya_m": 3706,
+      "osm": {
+        "relation": 2920923,
+        "admin_centre_node": 1068358100,
+        "name": "Bir Ben Abed ⴱⵉⵔ ⴱⴻⵏ ⵄⴰⴱⴻⴷ بئر بن عابد",
+        "ref:ONS": "2656",
+        "point": [
+          3.419752,
+          36.192512
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 17129,
+      "move_m": 21491,
+      "to": [
+        3.419752,
+        36.192512
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2657,
+      "wilaya_code": 67,
+      "name_fr": "El Ouinet",
+      "name_ar": "العوينات",
+      "from": [
+        3.035556,
+        35.3344
+      ],
+      "outside_own_wilaya_m": 33166,
+      "osm": {
+        "relation": 2907855,
+        "admin_centre_node": 1068586294,
+        "name": "El Aouinet ⵍⴻⵄⵡⵉⵏⴰⵜ العوينات",
+        "ref:ONS": "2657",
+        "point": [
+          3.035866,
+          35.893293
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 52554,
+      "move_m": 62146,
+      "to": [
+        3.035866,
+        35.893293
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2660,
+      "wilaya_code": 26,
+      "name_fr": "Hannacha",
+      "name_ar": "حناشة",
+      "from": [
+        3.52556,
+        36.19112
+      ],
+      "outside_own_wilaya_m": 935,
+      "osm": {
+        "relation": 2561252,
+        "admin_centre_node": 453647169,
+        "name": "Hannacha ⵃⴻⵏⵏⴰⵛⴰ حناشة",
+        "ref:ONS": "2660",
+        "point": [
+          2.566608,
+          36.18952
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 77122,
+      "move_m": 86057,
+      "to": [
+        2.566608,
+        36.18952
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2662,
+      "wilaya_code": 26,
+      "name_fr": "Medjebar",
+      "name_ar": "مجبر",
+      "from": [
+        3.46166,
+        35.950556
+      ],
+      "outside_own_wilaya_m": 11652,
+      "osm": {
+        "relation": 2525423,
+        "admin_centre_node": 288420807,
+        "name": "Moudjbar ⵎⵓⴵⴱⴻⵔ مجبر",
+        "ref:ONS": "2662",
+        "point": [
+          2.82221,
+          35.951996
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 50379,
+      "move_m": 57560,
+      "to": [
+        2.82221,
+        35.951996
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2727,
+      "wilaya_code": 27,
+      "name_fr": "Mazagran",
+      "name_ar": "مزغران",
+      "from": [
+        0.726944,
+        35.901944
+      ],
+      "outside_own_wilaya_m": 12591,
+      "osm": {
+        "relation": 5752723,
+        "admin_centre_node": 869746777,
+        "name": "Mazagran ⵎⴰⵣⴰⵖⵔⴰⵏ مزغران",
+        "ref:ONS": "2727",
+        "point": [
+          0.072953,
+          35.896479
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 57124,
+      "move_m": 58910,
+      "to": [
+        0.072953,
+        35.896479
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2812,
+      "wilaya_code": 28,
+      "name_fr": "Berhoum",
+      "name_ar": "برهوم",
+      "from": [
+        5.328,
+        35.654979
+      ],
+      "outside_own_wilaya_m": 2184,
+      "osm": {
+        "relation": 6547234,
+        "admin_centre_node": 439857152,
+        "name": "Berhoum ⴱⴻⵔⵀⵓⵎ برهوم",
+        "ref:ONS": "2812",
+        "point": [
+          5.034444,
+          35.654979
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 23054,
+      "move_m": 26523,
+      "to": [
+        5.034444,
+        35.654979
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2819,
+      "wilaya_code": 28,
+      "name_fr": "Ouanougha",
+      "name_ar": "ونوغة",
+      "from": [
+        3.883,
+        35.980833
+      ],
+      "outside_own_wilaya_m": 9818,
+      "osm": {
+        "relation": 6547252,
+        "admin_centre_node": 1078380110,
+        "name": "Ouanougha ⵡⴰⵏⵓⵖⴰ ونوغة",
+        "ref:ONS": "2819",
+        "point": [
+          4.159929,
+          35.968226
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 20938,
+      "move_m": 24960,
+      "to": [
+        4.159929,
+        35.968226
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2830,
+      "wilaya_code": 28,
+      "name_fr": "Dehahna",
+      "name_ar": "الدهاهنة",
+      "from": [
+        5.00884,
+        35.916667
+      ],
+      "outside_own_wilaya_m": 12447,
+      "osm": {
+        "relation": 6547238,
+        "admin_centre_node": 1349282526,
+        "name": "Dehahna ⴷⴻⵀⴰⵀⵏⴰ دھاھنة",
+        "ref:ONS": "2830",
+        "point": [
+          5.01093,
+          35.732491
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 14744,
+      "move_m": 20480,
+      "to": [
+        5.01093,
+        35.732491
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2835,
+      "wilaya_code": 68,
+      "name_fr": "Benzouh",
+      "name_ar": "بنزوه",
+      "from": [
+        4.383333,
+        35.438055
+      ],
+      "outside_own_wilaya_m": 3489,
+      "osm": {
+        "relation": 6547233,
+        "admin_centre_node": 1561459298,
+        "name": "Benzouh ⴱⴻⵏⵣⵓⵀ بنزوه",
+        "ref:ONS": "2835",
+        "point": [
+          4.02629,
+          35.424033
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 12570,
+      "move_m": 32387,
+      "to": [
+        4.02629,
+        35.424033
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 2846,
+      "wilaya_code": 68,
+      "name_fr": "Oultem",
+      "name_ar": "ولتام",
+      "from": [
+        5.3360215,
+        35.0350816
+      ],
+      "outside_own_wilaya_m": 29759,
+      "osm": {
+        "relation": 6547258,
+        "admin_centre_node": 1940100018,
+        "name": "Oultem ⵡⴻⵍⵜⴰⵎ ولتام",
+        "ref:ONS": "2846",
+        "point": [
+          4.374357,
+          35.118646
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 86269,
+      "move_m": 88003,
+      "to": [
+        4.374357,
+        35.118646
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 3107,
+      "wilaya_code": 31,
+      "name_fr": "Bethioua",
+      "name_ar": "بطيوة",
+      "from": [
+        -0.2596,
+        35.805837
+      ],
+      "outside_own_wilaya_m": 1172,
+      "osm": {
+        "relation": 3170952,
+        "admin_centre_node": 429683749,
+        "name": "Bethioua ⴱⴻⵟⵟⵉⵡⴰ بطيوة",
+        "ref:ONS": "3107",
+        "point": [
+          -0.267936,
+          35.805837
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 752,
+      "to": [
+        -0.267936,
+        35.805837
+      ],
+      "verdict": "error",
+      "why": "stored point is inside the commune but inside the Arzew industrial complex, not the town; the stored latitude is byte-identical to the admin_centre node and only the longitude is displaced (issue #167)"
+    },
+    {
+      "code_commune": 3110,
+      "wilaya_code": 31,
+      "name_fr": "El Ancor",
+      "name_ar": "العنصر",
+      "from": [
+        -0.866667,
+        35.7408
+      ],
+      "outside_own_wilaya_m": 2230,
+      "osm": {
+        "relation": 4267290,
+        "admin_centre_node": 810939811,
+        "name": "El Ançor ⵍⵄⵓⵏⵚⵓⵔ العنصر",
+        "ref:ONS": "3110",
+        "point": [
+          -0.869958,
+          35.684852
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 2796,
+      "move_m": 6228,
+      "to": [
+        -0.869958,
+        35.684852
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 3416,
+      "wilaya_code": 34,
+      "name_fr": "El Main",
+      "name_ar": "الماين",
+      "from": [
+        4.716667,
+        36.425556
+      ],
+      "outside_own_wilaya_m": 818,
+      "osm": {
+        "relation": 4421437,
+        "admin_centre_node": 1350849505,
+        "name": "El Main ⵉⵍⵎⴰⵢⴻⵏ الماين",
+        "ref:ONS": "3416",
+        "point": [
+          4.737398,
+          36.371834
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 1036,
+      "move_m": 6255,
+      "to": [
+        4.737398,
+        36.371834
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 3424,
+      "wilaya_code": 34,
+      "name_fr": "Tefreg",
+      "name_ar": "تفرق",
+      "from": [
+        4.713889,
+        36.425556
+      ],
+      "outside_own_wilaya_m": 1058,
+      "osm": {
+        "relation": 4421860,
+        "admin_centre_node": 1350982311,
+        "name": "Tafreg ⵜⴰⴼⵔⴻⴳ تفرڨ",
+        "ref:ONS": "3424",
+        "point": [
+          4.720578,
+          36.300938
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 9928,
+      "move_m": 13870,
+      "to": [
+        4.720578,
+        36.300938
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 3902,
+      "wilaya_code": 39,
+      "name_fr": "Robbah",
+      "name_ar": "الرباح",
+      "from": [
+        6.4166705,
+        33.281111
+      ],
+      "outside_own_wilaya_m": 4259,
+      "osm": {
+        "relation": 5139596,
+        "admin_centre_node": 1566167646,
+        "name": "Robbah ⵔⵔⵓⴱⴰⵃ الرباح",
+        "ref:ONS": "3902",
+        "point": [
+          6.904013,
+          33.289434
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 40220,
+      "move_m": 45309,
+      "to": [
+        6.904013,
+        33.289434
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 4007,
+      "wilaya_code": 40,
+      "name_fr": "Taouzianat",
+      "name_ar": "تاوزيانت",
+      "from": [
+        6.3551522,
+        35.511111
+      ],
+      "outside_own_wilaya_m": 21445,
+      "osm": {
+        "relation": 6561891,
+        "admin_centre_node": 462508976,
+        "name": "Taouzient ⵜⴰⵡⴻⵣⵢⴰⵏⵜ تاوزيانت",
+        "ref:ONS": "4007",
+        "point": [
+          6.808711,
+          35.51076
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 25210,
+      "move_m": 41053,
+      "to": [
+        6.808711,
+        35.51076
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 4303,
+      "wilaya_code": 43,
+      "name_fr": "Chelghoum Laid",
+      "name_ar": "شلغوم العيد",
+      "from": [
+        6.616667,
+        36.1629822
+      ],
+      "outside_own_wilaya_m": 6842,
+      "osm": {
+        "relation": 2195009,
+        "admin_centre_node": 447593737,
+        "name": "Chelghoum Laïd ⵛⴻⵍⵖⵓⵎ ⵍⵄⵉⴷ شلغوم العيد",
+        "ref:ONS": "4303",
+        "point": [
+          6.167329,
+          36.160563
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 26516,
+      "move_m": 40340,
+      "to": [
+        6.167329,
+        36.160563
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 4325,
+      "wilaya_code": 43,
+      "name_fr": "Ain Tine",
+      "name_ar": "عين التين",
+      "from": [
+        6.4678234,
+        36.438056
+      ],
+      "outside_own_wilaya_m": 6654,
+      "osm": {
+        "relation": 2205276,
+        "admin_centre_node": 461906195,
+        "name": "Aïn Tinn ⵄⵉⵏ ⵜⵜⵉⵏ عين التين",
+        "ref:ONS": "4325",
+        "point": [
+          6.324087,
+          36.397851
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 10149,
+      "move_m": 13616,
+      "to": [
+        6.324087,
+        36.397851
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 4331,
+      "wilaya_code": 43,
+      "name_fr": "Yahia Beniguecha",
+      "name_ar": "يحي بني قشة",
+      "from": [
+        5.592778,
+        36.235278
+      ],
+      "outside_own_wilaya_m": 23382,
+      "osm": {
+        "relation": 2261946,
+        "admin_centre_node": 1339089980,
+        "name": "Yahia Beni Guecha ⵢⴻⵃⵢⴰ ⴱⴻⵏ ⵇⴻⵛⵛⴰ يحيى بنى قشة",
+        "ref:ONS": "4331",
+        "point": [
+          5.994009,
+          36.390717
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 35903,
+      "move_m": 39889,
+      "to": [
+        5.994009,
+        36.390717
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 4435,
+      "wilaya_code": 44,
+      "name_fr": "Tiberkanine",
+      "name_ar": "تبركانين",
+      "from": [
+        1.627222,
+        36.216667
+      ],
+      "outside_own_wilaya_m": 225,
+      "osm": {
+        "relation": 2743654,
+        "admin_centre_node": 2143402880,
+        "name": "Tiberkanine",
+        "ref:ONS": "4435",
+        "point": [
+          1.62742,
+          36.174608
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 1512,
+      "move_m": 4677,
+      "to": [
+        1.62742,
+        36.174608
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 5209,
+      "wilaya_code": 52,
+      "name_fr": "Ksabi",
+      "name_ar": "القصابي",
+      "from": [
+        1.2267,
+        28.85
+      ],
+      "outside_own_wilaya_m": 187992,
+      "osm": {
+        "relation": 6530996,
+        "admin_centre_node": 1573488049,
+        "name": "Ksabi ⴽⵙⴰⴱⵉ القصابي",
+        "ref:ONS": "0819",
+        "point": [
+          -0.98566,
+          29.12703
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 187977,
+      "move_m": 217373,
+      "to": [
+        -0.98566,
+        29.12703
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 5703,
+      "wilaya_code": 57,
+      "name_fr": "M'rara",
+      "name_ar": "المرارة",
+      "from": [
+        6.2725,
+        33.476667
+      ],
+      "outside_own_wilaya_m": 18149,
+      "osm": {
+        "relation": 4521831,
+        "admin_centre_node": 3312690768,
+        "name": "M'Rara ⵎⵔⴰⵔⴰ مرارة",
+        "ref:ONS": "3922",
+        "point": [
+          5.660677,
+          33.476232
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 49985,
+      "move_m": 56746,
+      "to": [
+        5.660677,
+        33.476232
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    },
+    {
+      "code_commune": 5706,
+      "wilaya_code": 57,
+      "name_fr": "Djamaa",
+      "name_ar": "جامعة",
+      "from": [
+        6.0667,
+        33.53388
+      ],
+      "outside_own_wilaya_m": 1131,
+      "osm": {
+        "relation": 4521856,
+        "admin_centre_node": 3040428142,
+        "name": "Djamaa ⴵⴻⵎⵄⴰ جامعة",
+        "ref:ONS": "3928",
+        "point": [
+          5.989239,
+          33.530433
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": false,
+      "stored_outside_own_commune_m": 1058,
+      "move_m": 7190,
+      "to": [
+        5.989239,
+        33.530433
+      ],
+      "verdict": "error",
+      "why": "stored point is outside the commune's own OSM boundary; the admin_centre node is inside it and inside the declared wilaya"
+    }
+  ]
+}

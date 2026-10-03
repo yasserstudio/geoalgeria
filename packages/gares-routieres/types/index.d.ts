@@ -1,5 +1,5 @@
 // Type definitions for @geoalgeria/gares-routieres (schema v2).
-// Algeria's intercity bus Stations (gares routières), managed by SOGRAL —
+// Algeria's intercity bus Stations (gares routières), managed by SOGRAL:
 // locations and surface areas from the SOGRAL live API.
 
 /** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
@@ -42,9 +42,9 @@ export interface Station {
   geo_precision: GeoPrecision;
   /** How `lat`/`lng` were obtained. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "sogral". */
+  /** Provenance key into `metadata.sources[]`: always "sogral". */
   source: "sogral";
-  /** External identifiers — the SOGRAL location code. */
+  /** External identifiers: the SOGRAL location code. */
   refs: Refs;
   /** Official gare name as published by SOGRAL. */
   official_name: string;
@@ -66,7 +66,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus gare stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus gare stats. */
 export interface Metadata {
   package: "@geoalgeria/gares-routieres";
   schema_version: string;
@@ -74,7 +74,7 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — all of them. */
+  /** Records with coordinates: all of them. */
   geocoded_count: number;
   geocoded_pct: number;
   /** Count by `geo_precision`. */
@@ -98,7 +98,7 @@ export interface Metadata {
 export function stations(): Station[];
 /** One Station by id, or null. */
 export function stationById(id: string): Station | null;
-/** Stations in a wilaya — accepts "16", 16, or "01". */
+/** Stations in a wilaya: accepts "16", 16, or "01". */
 export function stationsByWilaya(code: string | number): Station[];
 /** Dataset metadata. */
 export function metadata(): Metadata;

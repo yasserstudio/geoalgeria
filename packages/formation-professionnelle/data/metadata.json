@@ -5,16 +5,16 @@
   "title_ar": "مؤسسات التكوين المهني الجزائرية",
   "title_en": "Algeria vocational-training establishments",
   "record_count": 1932,
-  "geocoded_count": 1920,
+  "geocoded_count": 1921,
   "geocoded_pct": 99.4,
   "precision": {
     "exact": 1363,
-    "approximate": 557
+    "approximate": 558
   },
   "estimated_universe": null,
   "coverage_pct": null,
   "coverage_note": "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1920 of 1932 are geocoded: 1375 on the portal's own point, 510 on their commune's centroid and 35 on their wilaya's, the portal having left those coordinates empty.",
-  "wilayas_covered": 58,
+  "wilayas_covered": 69,
   "bbox": [
     -8.136773,
     19.570418,
@@ -24,7 +24,7 @@
   "sources": [
     {
       "key": "mfep",
-      "name": "Ministry of Vocational Training and Education (MFEP) — takwin.dz",
+      "name": "Ministry of Vocational Training and Education (MFEP): takwin.dz",
       "url": "https://takwin.dz",
       "license": "Factual public listing (MFEP)",
       "retrieved": "2026-06-22",

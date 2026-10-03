@@ -2,7 +2,7 @@
 /**
  * Build Algeria's Protection Civile (civil protection / fire & rescue) units
  * dataset from the DGPC's own published GeoJSON and emit JSON, CSV, and GeoJSON
- * to ../data. The raw source pull is cached under research/protection-civile/.
+ * to ../data. The raw source pull is committed under sources/protection-civile/.
  *
  * Source (official-primary): the Direction Générale de la Protection Civile
  * publishes its national unit network as a point GeoJSON at
@@ -24,10 +24,11 @@
  * French name, so name_fr is left unset — nothing is machine-translated.
  *
  * Usage: node scripts/fetch.mjs            # live pull from dgpc.dz
- *        node scripts/fetch.mjs --cache    # rebuild from research/protection-civile/dgpc-unite-raw.geojson
+ *        node scripts/fetch.mjs --if-changed # live pull, rebuild only on a new source hash
+ *        node scripts/fetch.mjs --cache    # rebuild from sources/protection-civile/dgpc-units.json
  */
 
-import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
@@ -38,15 +39,25 @@ import {
   resolveDates,
   carryOverIds,
   readCommitted,
-  readCacheFile,
+  readRetiredIds,
+  dialableContact,
 } from "../../../scripts/lib/v2-transforms.mjs";
+import {
+  assertSafeProtectionCivileRefresh,
+  protectionCivileCarryKey,
+} from "../../../scripts/lib/protection-civile-refresh-guard.mjs";
+import {
+  captureMeta,
+  captureSha256,
+  readCapture,
+  writeCapture,
+} from "../../../scripts/lib/source-store.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
 const REPO_ROOT = join(__dirname, "..", "..", "..");
-const RESEARCH_DIR = join(REPO_ROOT, "research", "protection-civile");
 const SRC_URL = "https://dgpc.dz/dgpc2/unite.geojson";
-const RAW_FILE = "dgpc-unite-raw.geojson";
+const CAPTURE_NAME = "dgpc-units";
 // Sanity floor: a truncated response parses fine and would otherwise be accepted
 // as the whole network. The published set is 880 units — reject anything well below.
 const MIN_FEATURES = 700;
@@ -103,7 +114,7 @@ function httpRequest(url, { method = "GET", headers = {}, depth = 0 } = {}) {
   });
 }
 
-async function fetchDGPC() {
+async function fetchDGPC({ onlyIfChanged = false } = {}) {
   console.log(`Fetching DGPC units: ${SRC_URL} …`);
   const { status, body } = await httpRequest(SRC_URL, {
     headers: { "User-Agent": BROWSER_UA, Accept: "application/geo+json,application/json,*/*" },
@@ -112,17 +123,33 @@ async function fetchDGPC() {
   const json = JSON.parse(body);
   if (!Array.isArray(json.features) || json.features.length < MIN_FEATURES)
     throw new Error(`DGPC returned ${json.features?.length ?? 0} features (< ${MIN_FEATURES}); treating as partial`);
-  mkdirSync(RESEARCH_DIR, { recursive: true });
-  writeFileSync(join(RESEARCH_DIR, RAW_FILE), JSON.stringify(json) + "\n");
-  console.log(`  ${json.features.length} unit features`);
-  return json.features;
+  // ArcGIS feature order is not part of the dataset contract. Canonicalize the
+  // unordered set by its stable publisher id before hashing or capturing so a
+  // server-side reorder remains a true no-op.
+  const canonical = {
+    ...json,
+    features: [...json.features].sort(
+      (a, b) => Number(a.properties?.objectid) - Number(b.properties?.objectid),
+    ),
+  };
+  const previous = captureMeta("protection-civile", CAPTURE_NAME);
+  if (onlyIfChanged && previous?.sha256 === captureSha256(canonical)) {
+    console.log("  DGPC source is unchanged; keeping the current snapshot.");
+    return { changed: false, features: canonical.features };
+  }
+  writeCapture("protection-civile", CAPTURE_NAME, canonical, {
+    url: SRC_URL,
+    records: canonical.features.length,
+  });
+  console.log(`  ${canonical.features.length} unit features`);
+  return { changed: true, features: canonical.features };
 }
 
 function readCache() {
-  const json = JSON.parse(readCacheFile(RESEARCH_DIR, RAW_FILE, "protection-civile"));
+  const json = readCapture("protection-civile", CAPTURE_NAME);
   if (!Array.isArray(json.features) || json.features.length < MIN_FEATURES)
-    throw new Error(`cache ${RAW_FILE} missing or too small — run without --cache to refetch`);
-  console.log(`Using cached DGPC pull: ${json.features.length} unit features`);
+    throw new Error(`capture ${CAPTURE_NAME} missing or too small — run without --cache to refetch`);
+  console.log(`Using stored DGPC capture: ${json.features.length} unit features`);
   return json.features;
 }
 
@@ -142,7 +169,8 @@ const cleanAddress = (v) => {
 // Phone/fax: drop internal whitespace and stray separators, keep digits/+().-.
 const cleanTel = (v) => {
   const s = str(v);
-  return s ? s.replace(/\s+/g, "") : null;
+  if (!s) return null;
+  return dialableContact(s.replace(/\s+/g, ""));
 };
 // Arabic name folding for commune matching (strip diacritics/tatweel, fold
 // alef/ya/ta-marbuta variants) — same recipe as the sante generator.
@@ -311,7 +339,15 @@ function assignIds(rows) {
 // --- main ------------------------------------------------------------------
 async function main() {
   const OFFLINE = process.argv.includes("--cache");
-  const features = OFFLINE ? readCache() : await fetchDGPC();
+  const ONLY_IF_CHANGED = process.argv.includes("--if-changed");
+  if (OFFLINE && ONLY_IF_CHANGED) {
+    throw new Error("--cache and --if-changed cannot be used together");
+  }
+  const fetched = OFFLINE
+    ? { changed: true, features: readCache() }
+    : await fetchDGPC({ onlyIfChanged: ONLY_IF_CHANGED });
+  if (ONLY_IF_CHANGED && !fetched.changed) return;
+  const features = fetched.features;
 
   const boundaries = loadBoundaryIndex();
   const communes = loadCommunes();
@@ -348,10 +384,18 @@ async function main() {
   // carry-hit count logged below is the tripwire — a sharp drop from ~880 means
   // diff the ids against the committed data before committing.
   const committed = readCommitted(OUT_DIR, "protection-civile.json");
-  const carryKey = (r) => (r.refs?.dgpc ? `dgpc:${r.refs.dgpc}` : null);
+  const carryKey = protectionCivileCarryKey;
   const committedKeys = new Set(committed.map(carryKey).filter(Boolean));
   const carryHits = v2.filter((r) => committedKeys.has(carryKey(r))).length;
-  carryOverIds(v2, committed, carryKey, "protection-civile");
+  if (ONLY_IF_CHANGED && committed.length) {
+    const safety = assertSafeProtectionCivileRefresh(committed, v2);
+    console.log(
+      `  automated safety gate: ${safety.carryHits}/${committed.length} ids retained, ` +
+        `${safety.materialChanges} materially changed unit(s)`,
+    );
+  }
+  const retiredIds = readRetiredIds(OUT_DIR);
+  carryOverIds(v2, committed, carryKey, "protection-civile", retiredIds);
   if (committed.length)
     console.log(`  id carry-over: ${carryHits}/${v2.length} units matched a committed id by dgpc objectid`);
   const { records: out, metadata } = writePackageV2({
@@ -361,6 +405,7 @@ async function main() {
     meta: cfg.meta,
     updated,
     retrieved,
+    retiredIds,
   });
   console.log(
     `Wrote ${out.length} units → v2 (${metadata.wilayas_covered} wilayas, ` +

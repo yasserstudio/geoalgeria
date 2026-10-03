@@ -1,0 +1,616 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-60",
+    "wilaya_code": 60,
+    "name": "Barika",
+    "name_ar": "بريكة",
+    "center": [
+      5.297,
+      35.316500000000005
+    ],
+    "bounds": [
+      4.741,
+      35.002,
+      5.853,
+      35.631
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 14,
+    "osm_records": 10,
+    "tariki_records": 11,
+    "cross_source": 7,
+    "multiple_tariki": 0,
+    "osm_only": 3,
+    "tariki_only": 4,
+    "nearby_osm_pairs": 0,
+    "conflicts": 4
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-2077",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4619",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7546",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7547",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10313557457",
+      "coordinates": [
+        5.3847857,
+        35.3801331
+      ],
+      "osm": {
+        "id": "node/10313557457",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3847857,
+          35.3801331
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8926",
+          "route_id": "3841",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "مجطة الوقود نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.3848,
+            35.3801
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 60,
+          "wilaya_fr": "Barika",
+          "wilaya_ar": "بريكة",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "مجطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-12511899243",
+      "coordinates": [
+        5.2207173,
+        35.4865514
+      ],
+      "osm": {
+        "id": "node/12511899243",
+        "name": "محطة بنزين",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.2207173,
+          35.4865514
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة بنزين",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4462348089",
+      "coordinates": [
+        5.7799064,
+        35.3492667
+      ],
+      "osm": {
+        "id": "node/4462348089",
+        "name": "Station de Service",
+        "name_ar": null,
+        "name_fr": "Station de Service",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7799064,
+          35.3492667
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station de Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4695551296",
+      "coordinates": [
+        5.1779979,
+        35.1498106
+      ],
+      "osm": {
+        "id": "node/4695551296",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.1779979,
+          35.1498106
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5419911857",
+      "coordinates": [
+        5.3173909,
+        35.4280262
+      ],
+      "osm": {
+        "id": "node/5419911857",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3173909,
+          35.4280262
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8917",
+          "route_id": "3832",
+          "name_fr": "station de services Aissani",
+          "name_ar": "محطة الخدمات عيساني",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.3174,
+            35.4279
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 60,
+          "wilaya_fr": "Barika",
+          "wilaya_ar": "بريكة",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de services Aissani",
+      "display_name_ar": "محطة الخدمات عيساني"
+    },
+    {
+      "id": "osm-way-358450525",
+      "coordinates": [
+        5.37122575,
+        35.38841165
+      ],
+      "osm": {
+        "id": "way/358450525",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.37122575,
+          35.38841165
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8922",
+          "route_id": "3834",
+          "name_fr": "Station de services Kheyati",
+          "name_ar": "محطة الخدمات خياطي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.3712,
+            35.3884
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 60,
+          "wilaya_fr": "Barika",
+          "wilaya_ar": "بريكة",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Kheyati",
+      "display_name_ar": "محطة الخدمات خياطي"
+    },
+    {
+      "id": "osm-way-370291801",
+      "coordinates": [
+        5.4000526,
+        35.40835815
+      ],
+      "osm": {
+        "id": "way/370291801",
+        "name": "Station Missaoui",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4000526,
+          35.40835815
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8921",
+          "route_id": "3833",
+          "name_fr": "Station de services Messaoui",
+          "name_ar": "محطة الخدمات ميساوي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.4001,
+            35.4084
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 60,
+          "wilaya_fr": "Barika",
+          "wilaya_ar": "بريكة",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Missaoui",
+      "display_name_ar": "محطة الخدمات ميساوي"
+    },
+    {
+      "id": "osm-way-370291803",
+      "coordinates": [
+        5.36288545,
+        35.36919895
+      ],
+      "osm": {
+        "id": "way/370291803",
+        "name": "Ben Yahiya",
+        "name_ar": "ابن يحيى",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.36288545,
+          35.36919895
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8927",
+          "route_id": "3844",
+          "name_fr": "station de services Ben Yahya",
+          "name_ar": "محطة الخدمات بن يحي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.3631,
+            35.3692
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 60,
+          "wilaya_fr": "Barika",
+          "wilaya_ar": "بريكة",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Ben Yahiya",
+      "display_name_ar": "ابن يحيى"
+    },
+    {
+      "id": "osm-way-370291805",
+      "coordinates": [
+        5.3569139,
+        35.394164700000005
+      ],
+      "osm": {
+        "id": "way/370291805",
+        "name": "Ben Aoune",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3569139,
+          35.394164700000005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8919",
+          "route_id": "3832",
+          "name_fr": "Station de services  les frères Hima",
+          "name_ar": "محطة البنزين الاخوة هيمة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.3569,
+            35.3941
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 60,
+          "wilaya_fr": "Barika",
+          "wilaya_ar": "بريكة",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Ben Aoune",
+      "display_name_ar": "محطة البنزين الاخوة هيمة"
+    },
+    {
+      "id": "osm-way-803510048",
+      "coordinates": [
+        5.58718995,
+        35.3672751
+      ],
+      "osm": {
+        "id": "way/803510048",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.58718995,
+          35.3672751
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7182",
+          "route_id": "251",
+          "name_fr": "STATION DE SERVICES SEGGANA",
+          "name_ar": "محطة توزيع الوقود بسقانة",
+          "services": [
+            "fuel",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.5881,
+            35.3669
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 60,
+          "wilaya_fr": "Barika",
+          "wilaya_ar": "بريكة",
+          "offset_m": 92
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "tariki-2077",
+      "coordinates": [
+        5.769,
+        35.352
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2077",
+          "route_id": "5206",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.769,
+            35.352
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 60,
+          "wilaya_fr": "Barika",
+          "wilaya_ar": "بريكة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "tariki-4619",
+      "coordinates": [
+        5.296,
+        35.392
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4619",
+          "route_id": "9256",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.296,
+            35.392
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 60,
+          "wilaya_fr": "Barika",
+          "wilaya_ar": "بريكة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "tariki-7546",
+      "coordinates": [
+        5.238,
+        35.477
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7546",
+          "route_id": "6269",
+          "name_fr": "STATION SI ABDELAH",
+          "name_ar": "محطة سي عبد الله",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.238,
+            35.477
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 60,
+          "wilaya_fr": "Barika",
+          "wilaya_ar": "بريكة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SI ABDELAH",
+      "display_name_ar": "محطة سي عبد الله"
+    },
+    {
+      "id": "tariki-7547",
+      "coordinates": [
+        5.215,
+        35.49
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7547",
+          "route_id": "6269",
+          "name_fr": "STATION SAAIDI",
+          "name_ar": "محطة سعيدي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.215,
+            35.49
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 60,
+          "wilaya_fr": "Barika",
+          "wilaya_ar": "بريكة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SAAIDI",
+      "display_name_ar": "محطة سعيدي"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "RUE DE DJANET,  ILLIZI",
+        "code_wilaya": "33",
+        "commune": "ILLIZI",
+        "date": "2024-10-30 15:09:40",
+        "id": "257",
+        "latitude": " 26.497847",
+        "longitude": "  8.474539\r",
+        "type": "Agence Commerciale",
+        "wilaya": "ILLIZI"
+      },
+      {
+        "adresse": "CENTRE VILLE IN AMENAS",
+        "code_wilaya": "33",
+        "commune": "IN AMENAS",
+        "date": "2024-10-30 15:09:40",
+        "id": "258",
+        "latitude": " 28.047436",
+        "longitude": "  9.578139\r",
+        "type": "Agence Commerciale",
+        "wilaya": "ILLIZI"
+      },
+      {
+        "adresse": "CENTRE VILLE OMAR DRISS",
+        "code_wilaya": "33",
+        "commune": "BORDJ OMAR DRISS",
+        "date": "2024-10-30 15:09:40",
+        "id": "259",
+        "latitude": " 28.121944",
+        "longitude": "  6.820417\r",
+        "type": "Point de présence",
+        "wilaya": "ILLIZI"
+      },
+      {
+        "adresse": "CENTRE VILLE DEB-DEB",
+        "code_wilaya": "33",
+        "commune": "DEB DEB",
+        "date": "2024-10-30 15:09:40",
+        "id": "260",
+        "latitude": " 29.967167",
+        "longitude": "  9.421111\r",
+        "type": "Point de présence",
+        "wilaya": "ILLIZI"
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    ILLIZI</b> ",
+    "resultat": "ok",
+    "wilaya": "ILLIZI"
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 33
+}

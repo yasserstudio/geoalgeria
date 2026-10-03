@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/tourisme)](https://www.npmjs.com/package/@geoalgeria/tourisme)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/tourisme)](https://www.npmjs.com/package/@geoalgeria/tourisme)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -116,7 +116,9 @@ data/
 `source` is a short key resolved in `metadata.sources[]`, and external ids live in `refs`
 (`refs.osm` is the OSM id as a string; `refs.wikidata` a QID; `refs.wikipedia` a
 `"<lang>:<title>"` sitelink). The four OSM layers carry no commune linkage, so
-`commune_code` and `commune` are null throughout.
+`commune_code` and `commune` are null throughout, except on the four sites a reviewed
+correction moved into the wilaya a reform gave their commune (quality/overrides/tourisme.json),
+which carry the `commune_code` the correction was derived from.
 
 Optional contact and classification fields are present where the source publishes them, and
 absent otherwise, never null. On lodging: `address` (209 records), `phone` (204, several
@@ -155,7 +157,8 @@ Wikidata QID and 100 a Wikipedia sitelink.
 `type` is one of `hammam`, `ain`, `source`, `forage`. Physical properties (`temperature_c`,
 `debit_l_s`, `altitude_m`, `minerality`) come directly from the ASAL dataset; `minerality`
 is the only optional one. This is the one layer that names a commune, as `commune`, a name
-rather than an ONS `commune_code`, which stays null.
+rather than an ONS `commune_code`, which stays null except on the one spring a reviewed
+correction moved into its current wilaya.
 
 `wilaya_code` is zero-padded to two digits across all layers and joins GeoAlgeria's wilayas.
 
@@ -165,6 +168,15 @@ If you also need wilayas, dairas, and communes to join against, use the main
 **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it ships the full
 69-wilaya division dataset that `wilaya_code` here links to. Use `@geoalgeria/tourisme`
 when you *only* need tourism data.
+
+## Quality floor
+
+The repository test suite guards this snapshot against silent regressions:
+bilingual French + Arabic naming must stay at or above 28.8%, every geocoded
+record must keep `geo_precision` and `geo_method`, the currently sourced lodging
+contact/detail fields cannot shrink, and cross-category OpenStreetMap references
+stay explicitly bounded. These are regression floors, not completeness claims;
+a larger verified refresh may raise them.
 
 ## Source
 

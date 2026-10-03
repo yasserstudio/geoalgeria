@@ -1,8 +1,8 @@
 # Triage Labels
 
-The skills speak in terms of five canonical triage roles. This file maps those roles to the actual label strings used in this repo's issue tracker.
-
-Because issues live as local markdown (`.scratch/`), the "label" is the string written on the `Status:` line near the top of each issue file.
+The skills speak in terms of five canonical triage roles. Internal issues live in
+the private `yasserstudio/geoalgeria.com` repository, where these are GitHub
+labels.
 
 | Label in mattpocock/skills | Label in our tracker | Meaning                                  |
 | -------------------------- | -------------------- | ---------------------------------------- |
@@ -12,6 +12,5 @@ Because issues live as local markdown (`.scratch/`), the "label" is the string w
 | `ready-for-human`          | `ready-for-human`    | Requires human implementation            |
 | `wontfix`                  | `wontfix`            | Will not be actioned                     |
 
-When a skill mentions a role (e.g. "apply the AFK-ready triage label"), use the corresponding label string from this table.
-
-Edit the right-hand column to match whatever vocabulary you actually use.
+When a skill mentions a role (for example, "apply the AFK-ready triage label"),
+apply the corresponding GitHub label from this table to the private issue.

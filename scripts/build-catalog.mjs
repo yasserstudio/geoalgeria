@@ -58,14 +58,20 @@ const V1_HOLDOUTS = {
       geocoded_pct: 100,
       wilayas_covered: a.length,
       bbox: null,
-      license: d.license,
+      // Its data is split three ways (the MIT compilation, two ODbL parts, and
+      // Algérie Poste's terms over the data/poste mirror), so the descriptor
+      // states prose in `conditionsOfAccess` instead of a licence URL in
+      // `license`, the XOR the Dataset JSON-LD rule requires. The catalog
+      // publishes whichever of the two the descriptor carries, or this entry
+      // would state no terms at all.
+      license: d.license ?? d.conditionsOfAccess,
       updated: d.dateModified,
     };
   },
 };
 
 const NOTE =
-  "Every figure is copied from the package's own metadata.json — nothing is computed here. " +
+  "Every figure is copied from the package's own metadata.json; nothing is computed here. " +
   "`coverage` appears only where the package states an estimated universe, and always carries " +
   "the note saying which universe it divides by. Entries with schema_version null predate the " +
   "v2 data contract (see each package's README).";
@@ -89,7 +95,9 @@ function distributions(pkg, meta) {
 
 /** Single-entity packages don't list `entities` — take the one data/*.json file. */
 const defaultEntityFiles = (dir) =>
-  readdirSync(dir).filter((f) => f.endsWith(".json") && f !== "metadata.json");
+  readdirSync(dir).filter(
+    (f) => f.endsWith(".json") && f !== "metadata.json" && f !== "retired-ids.json",
+  );
 
 /** Every package directory that ships data, split into v2 and declared holdouts. */
 function collect() {

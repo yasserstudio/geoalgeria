@@ -1,0 +1,35 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "CITE HASSI GHAMBOU",
+        "code_wilaya": "49",
+        "commune": "TIMIMOUN/OULED SAID/TINERKOUK/ KSAR KADDOUR /CHAROUINE/TALMINE/OULED AISSA",
+        "date": "2024-10-30 15:09:40",
+        "id": "471",
+        "latitude": "29.262941",
+        "longitude": "0.236359\r",
+        "type": "Agence Commerciale",
+        "wilaya": "TIMIMOUNE"
+      },
+      {
+        "adresse": "TIBERGHAMINE",
+        "code_wilaya": "49",
+        "commune": "AOUGROUT/ METARFA/ DELDOUL",
+        "date": "2024-10-30 15:09:40",
+        "id": "472",
+        "latitude": "28.70508",
+        "longitude": "0.34543\r",
+        "type": "Point de présence",
+        "wilaya": "TIMIMOUNE"
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    TIMIMOUNE</b> ",
+    "resultat": "ok",
+    "wilaya": "TIMIMOUNE"
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 49
+}

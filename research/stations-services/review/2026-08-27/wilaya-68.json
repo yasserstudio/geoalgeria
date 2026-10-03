@@ -1,0 +1,1343 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-68",
+    "wilaya_code": 68,
+    "name": "Bou Saâda",
+    "name_ar": "بوسعادة",
+    "center": [
+      4.2444999999999995,
+      34.909499999999994
+    ],
+    "bounds": [
+      3.461,
+      34.217,
+      5.028,
+      35.602
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 30,
+    "osm_records": 24,
+    "tariki_records": 26,
+    "cross_source": 12,
+    "multiple_tariki": 4,
+    "osm_only": 8,
+    "tariki_only": 6,
+    "nearby_osm_pairs": 0,
+    "conflicts": 10
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3222034627",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3742854788",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3863881766",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3896795535",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10053",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10154",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-11411",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13103",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13690",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5665",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-11005882687",
+      "coordinates": [
+        4.104445,
+        35.4847461
+      ],
+      "osm": {
+        "id": "node/11005882687",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.104445,
+          35.4847461
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2415646818",
+      "coordinates": [
+        3.6671924,
+        35.1495467
+      ],
+      "osm": {
+        "id": "node/2415646818",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6671924,
+          35.1495467
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3222034627",
+      "coordinates": [
+        4.1892254,
+        35.3206545
+      ],
+      "osm": {
+        "id": "node/3222034627",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1892254,
+          35.3206545
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4600",
+          "route_id": "9236",
+          "name_fr": "Station de services",
+          "name_ar": "محطة",
+          "services": [
+            "fuel",
+            "restaurant"
+          ],
+          "coordinates": [
+            4.1892,
+            35.3205
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 17
+        },
+        {
+          "id": "6911",
+          "route_id": "11153",
+          "name_fr": "Station de services OULED SIDI IBRAHIM",
+          "name_ar": "محطة أولاد سيدي ابراهيم",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            4.1889,
+            35.3204
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 41
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة"
+    },
+    {
+      "id": "osm-node-3396480711",
+      "coordinates": [
+        4.1757079,
+        35.2183917
+      ],
+      "osm": {
+        "id": "node/3396480711",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1757079,
+          35.2183917
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9833",
+          "route_id": "9236",
+          "name_fr": "Station de services Bousaada",
+          "name_ar": "محطة مدخل بوسعادة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.1757,
+            35.2184
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 1
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة مدخل بوسعادة"
+    },
+    {
+      "id": "osm-node-3396480721",
+      "coordinates": [
+        4.2074901,
+        35.2238377
+      ],
+      "osm": {
+        "id": "node/3396480721",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2074901,
+          35.2238377
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4605",
+          "route_id": "9240",
+          "name_fr": "Station de services Elziguem",
+          "name_ar": "محطة الزيقم",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.2075,
+            35.2238
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الزيقم"
+    },
+    {
+      "id": "osm-node-3396480738",
+      "coordinates": [
+        4.165596,
+        35.2373586
+      ],
+      "osm": {
+        "id": "node/3396480738",
+        "name": "Station Service El Baten 1",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.165596,
+          35.2373586
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4601",
+          "route_id": "9236",
+          "name_fr": "Station de services Benchenouf",
+          "name_ar": "محطة بن شنوف",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.1656,
+            35.2373
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service El Baten 1",
+      "display_name_ar": "محطة بن شنوف"
+    },
+    {
+      "id": "osm-node-3742854788",
+      "coordinates": [
+        3.7311935,
+        34.895837
+      ],
+      "osm": {
+        "id": "node/3742854788",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7311935,
+          34.895837
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9512",
+          "route_id": "14336",
+          "name_fr": "Station de services  SLIM  GDR 2825",
+          "name_ar": "محطة نفطال سليم رمز GDR 2825",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.7312,
+            34.8958
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 4
+        },
+        {
+          "id": "10623",
+          "route_id": "15342",
+          "name_fr": "STATION DE SERVICES",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.7312,
+            34.8958
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال سليم رمز GDR 2825"
+    },
+    {
+      "id": "osm-node-3760882997",
+      "coordinates": [
+        4.4409319,
+        34.9082734
+      ],
+      "osm": {
+        "id": "node/3760882997",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.4409319,
+          34.9082734
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10106",
+          "route_id": "9193",
+          "name_fr": "STATION DE SERVICES OULED KHALED",
+          "name_ar": "محطة الخدمات أولاد خالد",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.441,
+            34.908
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات أولاد خالد"
+    },
+    {
+      "id": "osm-node-3772988828",
+      "coordinates": [
+        4.5567408,
+        35.047907
+      ],
+      "osm": {
+        "id": "node/3772988828",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.5567408,
+          35.047907
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3774393183",
+      "coordinates": [
+        4.5795586,
+        35.029325
+      ],
+      "osm": {
+        "id": "node/3774393183",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.5795586,
+          35.029325
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4482",
+          "route_id": "9119",
+          "name_fr": "Station de services Laichi AbdElkader",
+          "name_ar": "محطة لعيشي عبد القادر",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.58,
+            35.029
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 54
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة لعيشي عبد القادر"
+    },
+    {
+      "id": "osm-node-3863881766",
+      "coordinates": [
+        4.1832727,
+        35.3631329
+      ],
+      "osm": {
+        "id": "node/3863881766",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1832727,
+          35.3631329
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6332",
+          "route_id": "11153",
+          "name_fr": "station de services BOUABAT   EL SAHRA",
+          "name_ar": "محطة خدمات بوابة الصحراء",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            4.1838,
+            35.3632
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 48
+        },
+        {
+          "id": "7761",
+          "route_id": "9236",
+          "name_fr": "STATION AMER",
+          "name_ar": "محطة عامر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.1833,
+            35.3631
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات بوابة الصحراء"
+    },
+    {
+      "id": "osm-node-3896795535",
+      "coordinates": [
+        4.1641875,
+        35.2343521
+      ],
+      "osm": {
+        "id": "node/3896795535",
+        "name": "Station Service El Baten 2",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1641875,
+          35.2343521
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4603",
+          "route_id": "9236",
+          "name_fr": "Station de services Benkadda",
+          "name_ar": "محطة بن قادة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.1642,
+            35.2343
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 6
+        },
+        {
+          "id": "11024",
+          "route_id": "15355",
+          "name_fr": "STATION DE SERVICES BEN KADA",
+          "name_ar": "محطة الوقود بن قادة",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.164,
+            35.234
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 43
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Service El Baten 2",
+      "display_name_ar": "محطة بن قادة"
+    },
+    {
+      "id": "osm-node-4357631207",
+      "coordinates": [
+        4.1011544,
+        35.1585598
+      ],
+      "osm": {
+        "id": "node/4357631207",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1011544,
+          35.1585598
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11757",
+          "route_id": "16154",
+          "name_fr": "STATION DE SERVICES",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.1004,
+            35.1577
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 118
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-node-4934219009",
+      "coordinates": [
+        3.9150408,
+        35.3813264
+      ],
+      "osm": {
+        "id": "node/4934219009",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.9150408,
+          35.3813264
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10420",
+          "route_id": "14621",
+          "name_fr": "STATION DE SERVICES GASSRI",
+          "name_ar": "محطة وقود قصري",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            3.915,
+            35.381
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 36
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION DE SERVICES GASSRI",
+      "display_name_ar": "محطة وقود قصري"
+    },
+    {
+      "id": "osm-node-5200865954",
+      "coordinates": [
+        4.363213,
+        35.1185452
+      ],
+      "osm": {
+        "id": "node/5200865954",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          4.363213,
+          35.1185452
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4186",
+          "route_id": "8611",
+          "name_fr": "Station de services privé",
+          "name_ar": "محطة خدمات خاصة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            4.363,
+            35.119
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 54
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-6056127499",
+      "coordinates": [
+        4.5505956,
+        35.0562712
+      ],
+      "osm": {
+        "id": "node/6056127499",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.5505956,
+          35.0562712
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6447271295",
+      "coordinates": [
+        4.2901021,
+        34.8711597
+      ],
+      "osm": {
+        "id": "node/6447271295",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2901021,
+          34.8711597
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6654120903",
+      "coordinates": [
+        4.107478,
+        35.4846413
+      ],
+      "osm": {
+        "id": "node/6654120903",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.107478,
+          35.4846413
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6953621647",
+      "coordinates": [
+        3.7082532,
+        35.1551198
+      ],
+      "osm": {
+        "id": "node/6953621647",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7082532,
+          35.1551198
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11740",
+          "route_id": "15123",
+          "name_fr": "STATION DE SERVICES EN CONSTRUCTION",
+          "name_ar": "محطة بنزين في طور الإنجاز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.708,
+            35.155
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION DE SERVICES EN CONSTRUCTION",
+      "display_name_ar": "محطة بنزين في طور الإنجاز"
+    },
+    {
+      "id": "osm-node-7140767824",
+      "coordinates": [
+        4.1829747,
+        34.851363
+      ],
+      "osm": {
+        "id": "node/7140767824",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1829747,
+          34.851363
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1392316301",
+      "coordinates": [
+        4.0861483,
+        34.678978799999996
+      ],
+      "osm": {
+        "id": "way/1392316301",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0861483,
+          34.678978799999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14242",
+          "route_id": "9525",
+          "name_fr": "PETRO JAL",
+          "name_ar": "محطة وقود بيترو جال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.086,
+            34.679
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "PETRO JAL",
+      "display_name_ar": "محطة وقود بيترو جال"
+    },
+    {
+      "id": "osm-way-263504037",
+      "coordinates": [
+        4.28441955,
+        35.2003533
+      ],
+      "osm": {
+        "id": "way/263504037",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.28441955,
+          35.2003533
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4606",
+          "route_id": "9240",
+          "name_fr": "Station de services Kouchima",
+          "name_ar": "محطة كوشيمة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.2844,
+            35.2005
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 16
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة كوشيمة"
+    },
+    {
+      "id": "osm-way-378815978",
+      "coordinates": [
+        4.1571967999999995,
+        35.198776699999996
+      ],
+      "osm": {
+        "id": "way/378815978",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1571967999999995,
+          35.198776699999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9835",
+          "route_id": "9240",
+          "name_fr": "Station de services cite Naftal Bousaada",
+          "name_ar": "محطة بنزين حي نفطال بوسعادة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.1572,
+            35.1988
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة بنزين حي نفطال بوسعادة"
+    },
+    {
+      "id": "osm-way-491818618",
+      "coordinates": [
+        4.1562412,
+        34.8568311
+      ],
+      "osm": {
+        "id": "way/491818618",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1562412,
+          34.8568311
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-10053",
+      "coordinates": [
+        4.1623,
+        34.8464
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10053",
+          "route_id": "14906",
+          "name_fr": "STATION NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.1623,
+            34.8464
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION NAFTAL",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "tariki-10154",
+      "coordinates": [
+        4.2908,
+        35.1979
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10154",
+          "route_id": "14997",
+          "name_fr": "STATION DE SERVICES BOUKRAA",
+          "name_ar": "محطة وقود بوكراع",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            4.2908,
+            35.1979
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES BOUKRAA",
+      "display_name_ar": "محطة وقود بوكراع"
+    },
+    {
+      "id": "tariki-11411",
+      "coordinates": [
+        4.783,
+        35.332
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "11411",
+          "route_id": "15924",
+          "name_fr": "STATION DE SERVICES BARAKA",
+          "name_ar": "محطة الوقود البركة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.783,
+            35.332
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES BARAKA",
+      "display_name_ar": "محطة الوقود البركة"
+    },
+    {
+      "id": "tariki-13103",
+      "coordinates": [
+        5,
+        35
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13103",
+          "route_id": "432",
+          "name_fr": "station d'essence",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            5,
+            35
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station d'essence",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "tariki-13690",
+      "coordinates": [
+        3.921,
+        35.377
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13690",
+          "route_id": "14621",
+          "name_fr": "STATION DE SERVICES",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.921,
+            35.377
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "tariki-5665",
+      "coordinates": [
+        4.082,
+        34.543
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5665",
+          "route_id": "9525",
+          "name_fr": "papc",
+          "name_ar": "مقر بلدية عين الريش",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.082,
+            34.543
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 68,
+          "wilaya_fr": "Bou Saâda",
+          "wilaya_ar": "بوسعادة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "papc",
+      "display_name_ar": "مقر بلدية عين الريش"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "provider": "zr_express",
   "provider_name": "ZR Express",
   "last_updated": null,
-  "notes": "Template — zones need to be filled by community contributors",
+  "notes": "Template: zones need to be filled by community contributors",
   "zones": [
     {
       "wilaya_code": 1,
@@ -46,7 +46,7 @@
     },
     {
       "wilaya_code": 6,
-      "wilaya_name_fr": "Bejaia",
+      "wilaya_name_fr": "Béjaïa",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -62,7 +62,7 @@
     },
     {
       "wilaya_code": 8,
-      "wilaya_name_fr": "Bechar",
+      "wilaya_name_fr": "Béchar",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -94,7 +94,7 @@
     },
     {
       "wilaya_code": 12,
-      "wilaya_name_fr": "Tebessa",
+      "wilaya_name_fr": "Tébessa",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -150,7 +150,7 @@
     },
     {
       "wilaya_code": 19,
-      "wilaya_name_fr": "Setif",
+      "wilaya_name_fr": "Sétif",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -158,7 +158,7 @@
     },
     {
       "wilaya_code": 20,
-      "wilaya_name_fr": "Saida",
+      "wilaya_name_fr": "Saïda",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -174,7 +174,7 @@
     },
     {
       "wilaya_code": 22,
-      "wilaya_name_fr": "Sidi Bel Abbes",
+      "wilaya_name_fr": "Sidi Bel Abbès",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -206,7 +206,7 @@
     },
     {
       "wilaya_code": 26,
-      "wilaya_name_fr": "Medea",
+      "wilaya_name_fr": "Médéa",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -278,7 +278,7 @@
     },
     {
       "wilaya_code": 35,
-      "wilaya_name_fr": "Boumerdes",
+      "wilaya_name_fr": "Boumerdès",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -350,7 +350,7 @@
     },
     {
       "wilaya_code": 44,
-      "wilaya_name_fr": "Ain Defla",
+      "wilaya_name_fr": "Aïn Defla",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -358,7 +358,7 @@
     },
     {
       "wilaya_code": 45,
-      "wilaya_name_fr": "Naama",
+      "wilaya_name_fr": "Naâma",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -366,7 +366,7 @@
     },
     {
       "wilaya_code": 46,
-      "wilaya_name_fr": "Ain Temouchent",
+      "wilaya_name_fr": "Aïn Témouchent",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -374,7 +374,7 @@
     },
     {
       "wilaya_code": 47,
-      "wilaya_name_fr": "Ghardaia",
+      "wilaya_name_fr": "Ghardaïa",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -414,7 +414,7 @@
     },
     {
       "wilaya_code": 52,
-      "wilaya_name_fr": "Beni Abbes",
+      "wilaya_name_fr": "Béni Abbès",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -478,7 +478,7 @@
     },
     {
       "wilaya_code": 60,
-      "wilaya_name_fr": "Aïn Oussera",
+      "wilaya_name_fr": "Barika",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -486,7 +486,7 @@
     },
     {
       "wilaya_code": 61,
-      "wilaya_name_fr": "Barika",
+      "wilaya_name_fr": "El Kantara",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,
@@ -502,22 +502,6 @@
     },
     {
       "wilaya_code": 63,
-      "wilaya_name_fr": "Bou Saada",
-      "zone": null,
-      "home_delivery": null,
-      "desk_delivery": null,
-      "estimated_days": null
-    },
-    {
-      "wilaya_code": 64,
-      "wilaya_name_fr": "El Abiodh Sidi Cheikh",
-      "zone": null,
-      "home_delivery": null,
-      "desk_delivery": null,
-      "estimated_days": null
-    },
-    {
-      "wilaya_code": 65,
       "wilaya_name_fr": "El Aricha",
       "zone": null,
       "home_delivery": null,
@@ -525,15 +509,7 @@
       "estimated_days": null
     },
     {
-      "wilaya_code": 66,
-      "wilaya_name_fr": "El Kantara",
-      "zone": null,
-      "home_delivery": null,
-      "desk_delivery": null,
-      "estimated_days": null
-    },
-    {
-      "wilaya_code": 67,
+      "wilaya_code": 64,
       "wilaya_name_fr": "Ksar Chellala",
       "zone": null,
       "home_delivery": null,
@@ -541,7 +517,23 @@
       "estimated_days": null
     },
     {
-      "wilaya_code": 68,
+      "wilaya_code": 65,
+      "wilaya_name_fr": "Aïn Ouessara",
+      "zone": null,
+      "home_delivery": null,
+      "desk_delivery": null,
+      "estimated_days": null
+    },
+    {
+      "wilaya_code": 66,
+      "wilaya_name_fr": "Messaad",
+      "zone": null,
+      "home_delivery": null,
+      "desk_delivery": null,
+      "estimated_days": null
+    },
+    {
+      "wilaya_code": 67,
       "wilaya_name_fr": "Ksar El Boukhari",
       "zone": null,
       "home_delivery": null,
@@ -549,8 +541,16 @@
       "estimated_days": null
     },
     {
+      "wilaya_code": 68,
+      "wilaya_name_fr": "Bou Saâda",
+      "zone": null,
+      "home_delivery": null,
+      "desk_delivery": null,
+      "estimated_days": null
+    },
+    {
       "wilaya_code": 69,
-      "wilaya_name_fr": "Messaad",
+      "wilaya_name_fr": "El Abiodh Sidi Cheikh",
       "zone": null,
       "home_delivery": null,
       "desk_delivery": null,

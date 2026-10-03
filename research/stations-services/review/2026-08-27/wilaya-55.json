@@ -1,0 +1,1263 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-55",
+    "wilaya_code": 55,
+    "name": "Touggourt",
+    "name_ar": "توقرت",
+    "center": [
+      6.477,
+      32.9815
+    ],
+    "bounds": [
+      5.718,
+      32.003,
+      7.236,
+      33.96
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 31,
+    "osm_records": 24,
+    "tariki_records": 21,
+    "cross_source": 12,
+    "multiple_tariki": 1,
+    "osm_only": 11,
+    "tariki_only": 7,
+    "nearby_osm_pairs": 2,
+    "conflicts": 12
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-5362449867",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6641301014",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6641412821",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-268684344",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-288907900",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12673",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14432",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3318",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4129",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7329",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7720",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9152",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-3682702063",
+      "coordinates": [
+        6.0702953,
+        33.1109226
+      ],
+      "osm": {
+        "id": "node/3682702063",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0702953,
+          33.1109226
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7910",
+          "route_id": "1224",
+          "name_fr": "STATION DE SERVICES obiadi med lamine",
+          "name_ar": "محطة خدمات عبيدي محمد لمين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.07,
+            33.111
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات عبيدي محمد لمين"
+    },
+    {
+      "id": "osm-node-4121092558",
+      "coordinates": [
+        6.4128261,
+        33.1005834
+      ],
+      "osm": {
+        "id": "node/4121092558",
+        "name": "Station Service Taibet",
+        "name_ar": "محطة وقود الطيبات",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.4128261,
+          33.1005834
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4707",
+          "route_id": "1532",
+          "name_fr": "Station de services Bachi Youcef",
+          "name_ar": "محطة خدمات الطيبات باشي يوسف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.413,
+            33.101
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود الطيبات"
+    },
+    {
+      "id": "osm-node-5173162371",
+      "coordinates": [
+        6.3748362,
+        33.1158049
+      ],
+      "osm": {
+        "id": "node/5173162371",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3748362,
+          33.1158049
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4697",
+          "route_id": "1532",
+          "name_fr": "Station de services Messoudi Lakhdar",
+          "name_ar": "محطة خدمات مسعودي لخضر",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.375,
+            33.116
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات مسعودي لخضر"
+    },
+    {
+      "id": "osm-node-5173162372",
+      "coordinates": [
+        6.3730928,
+        33.1153241
+      ],
+      "osm": {
+        "id": "node/5173162372",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3730928,
+          33.1153241
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10585",
+          "route_id": "1532",
+          "name_fr": "STATION DE SERVICES SOCIETE TRICHE ET GOHMOSS",
+          "name_ar": "محطة خدمات شركة تريش و قحمص",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.373,
+            33.116
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 76
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات شركة تريش و قحمص"
+    },
+    {
+      "id": "osm-node-5362449207",
+      "coordinates": [
+        6.0649882,
+        33.1299646
+      ],
+      "osm": {
+        "id": "node/5362449207",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0649882,
+          33.1299646
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5362449376",
+      "coordinates": [
+        6.0671688,
+        33.2077092
+      ],
+      "osm": {
+        "id": "node/5362449376",
+        "name": "محطة مقدم للخدمات",
+        "name_ar": "محطة مقدم للخدمات",
+        "name_fr": "Station du fournisseur de services",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0671688,
+          33.2077092
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4242",
+          "route_id": "8686",
+          "name_fr": "Station de services Lt colonel khelifa",
+          "name_ar": "محطة الخدمات المقدم خليفة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.067,
+            33.208
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 36
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station du fournisseur de services",
+      "display_name_ar": "محطة مقدم للخدمات"
+    },
+    {
+      "id": "osm-node-5362449867",
+      "coordinates": [
+        6.062288,
+        33.1910059
+      ],
+      "osm": {
+        "id": "node/5362449867",
+        "name": "Petro Baraka",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.062288,
+          33.1910059
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12488",
+          "route_id": "8686",
+          "name_fr": "station de servies yaoube",
+          "name_ar": "محطة الخدمات يعقوب",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.062,
+            33.191
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 27
+        },
+        {
+          "id": "14431",
+          "route_id": "21944",
+          "name_fr": "STATION SERVICE  YAEGOUB",
+          "name_ar": "محطة يعقوب للخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.062,
+            33.191
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Petro Baraka",
+      "display_name_ar": "محطة الخدمات يعقوب"
+    },
+    {
+      "id": "osm-node-5362449868",
+      "coordinates": [
+        6.4685685,
+        33.1134957
+      ],
+      "osm": {
+        "id": "node/5362449868",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.4685685,
+          33.1134957
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6363002086",
+      "coordinates": [
+        5.9394284,
+        32.9799483
+      ],
+      "osm": {
+        "id": "node/6363002086",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9394284,
+          32.9799483
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6641301014",
+      "coordinates": [
+        6.0469497,
+        33.2623298
+      ],
+      "osm": {
+        "id": "node/6641301014",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0469497,
+          33.2623298
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-288907900",
+          "offset_m": 19
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6641301024",
+      "coordinates": [
+        6.0286327,
+        33.3010186
+      ],
+      "osm": {
+        "id": "node/6641301024",
+        "name": "بيتروبركة",
+        "name_ar": "بيتروبركة",
+        "name_fr": "Pétrobaraka",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0286327,
+          33.3010186
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Pétrobaraka",
+      "display_name_ar": "بيتروبركة"
+    },
+    {
+      "id": "osm-node-6641301025",
+      "coordinates": [
+        6.0348284,
+        33.295348
+      ],
+      "osm": {
+        "id": "node/6641301025",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0348284,
+          33.295348
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6641412821",
+      "coordinates": [
+        6.0422988,
+        33.0816408
+      ],
+      "osm": {
+        "id": "node/6641412821",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0422988,
+          33.0816408
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9153",
+          "route_id": "1224",
+          "name_fr": "Station de services  Chouaib",
+          "name_ar": "محطة خدمات شعيب",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.043,
+            33.082
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 77
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-268684344",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de services  Chouaib",
+      "display_name_ar": "محطة خدمات شعيب"
+    },
+    {
+      "id": "osm-node-6641412823",
+      "coordinates": [
+        6.0288294,
+        33.0648098
+      ],
+      "osm": {
+        "id": "node/6641412823",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0288294,
+          33.0648098
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12574",
+          "route_id": "1224",
+          "name_fr": "Station de services bougofa houcine",
+          "name_ar": "محطة خدمات بوقفة حسين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.028,
+            33.065
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 80
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services bougofa houcine",
+      "display_name_ar": "محطة خدمات بوقفة حسين"
+    },
+    {
+      "id": "osm-node-6698413189",
+      "coordinates": [
+        6.0666762,
+        33.1614346
+      ],
+      "osm": {
+        "id": "node/6698413189",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0666762,
+          33.1614346
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9934476484",
+      "coordinates": [
+        6.1390526,
+        33.1091237
+      ],
+      "osm": {
+        "id": "node/9934476484",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1390526,
+          33.1091237
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9934476485",
+      "coordinates": [
+        6.1489241,
+        33.108425
+      ],
+      "osm": {
+        "id": "node/9934476485",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1489241,
+          33.108425
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-268684344",
+      "coordinates": [
+        6.04229265,
+        33.08162765
+      ],
+      "osm": {
+        "id": "way/268684344",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.04229265,
+          33.08162765
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6641412821",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-268684359",
+      "coordinates": [
+        6.07120135,
+        33.093634050000006
+      ],
+      "osm": {
+        "id": "way/268684359",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.07120135,
+          33.093634050000006
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9154",
+          "route_id": "12275",
+          "name_fr": "Station de services BETAIAB",
+          "name_ar": "محطة خدمات بطيب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.0711,
+            33.0936
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services BETAIAB",
+      "display_name_ar": "محطة خدمات بطيب"
+    },
+    {
+      "id": "osm-way-288907900",
+      "coordinates": [
+        6.04708345,
+        33.26245675
+      ],
+      "osm": {
+        "id": "way/288907900",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.04708345,
+          33.26245675
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3009",
+          "route_id": "6648",
+          "name_fr": "Station de services BOULIFA YOUCEF",
+          "name_ar": "محطة متعددة الخدمات بوليفة يوسف",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.0473,
+            33.2624
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 21
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6641301014",
+          "offset_m": 19
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de services BOULIFA YOUCEF",
+      "display_name_ar": "محطة متعددة الخدمات بوليفة يوسف"
+    },
+    {
+      "id": "osm-way-289100361",
+      "coordinates": [
+        6.085332149999999,
+        33.10750835
+      ],
+      "osm": {
+        "id": "way/289100361",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.085332149999999,
+          33.10750835
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8550",
+          "route_id": "2406",
+          "name_fr": "Station de services Belhani",
+          "name_ar": "محطة خدمات بلهاني",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.0853,
+            33.1075
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Belhani",
+      "display_name_ar": "محطة خدمات بلهاني"
+    },
+    {
+      "id": "osm-way-289234534",
+      "coordinates": [
+        6.02929615,
+        33.06353625
+      ],
+      "osm": {
+        "id": "way/289234534",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.02929615,
+          33.06353625
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7332",
+          "route_id": "8446",
+          "name_fr": "STATION DE SERVICES choaib ahmed",
+          "name_ar": "محطة خدمات شعيب محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.029,
+            33.064
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 58
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION DE SERVICES choaib ahmed",
+      "display_name_ar": "محطة خدمات شعيب محمد"
+    },
+    {
+      "id": "osm-way-289248400",
+      "coordinates": [
+        5.9909064999999995,
+        33.0322529
+      ],
+      "osm": {
+        "id": "way/289248400",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9909064999999995,
+          33.0322529
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1537",
+          "route_id": "4389",
+          "name_fr": "station de services Bougueffa LHADJ",
+          "name_ar": "محطة بوقفة الحاج",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.991,
+            33.032
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de services Bougueffa LHADJ",
+      "display_name_ar": "محطة بوقفة الحاج"
+    },
+    {
+      "id": "osm-way-435933813",
+      "coordinates": [
+        6.08379405,
+        33.1436676
+      ],
+      "osm": {
+        "id": "way/435933813",
+        "name": "Station BETTAYEB Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.08379405,
+          33.1436676
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station BETTAYEB Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-12673",
+      "coordinates": [
+        6.485,
+        33.113
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12673",
+          "route_id": "1532",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات معمري",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.485,
+            33.113
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات معمري"
+    },
+    {
+      "id": "tariki-14432",
+      "coordinates": [
+        6.067,
+        33.202
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14432",
+          "route_id": "21945",
+          "name_fr": "STATION SERVICE ALMUGADAM",
+          "name_ar": "محطة الخدمات المقدم",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.067,
+            33.202
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVICE ALMUGADAM",
+      "display_name_ar": "محطة الخدمات المقدم"
+    },
+    {
+      "id": "tariki-3318",
+      "coordinates": [
+        5.951,
+        32.993
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3318",
+          "route_id": "4389",
+          "name_fr": "Station de services Eldjoghel Hocine",
+          "name_ar": "محطة الجغل حسين",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.951,
+            32.993
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Eldjoghel Hocine",
+      "display_name_ar": "محطة الجغل حسين"
+    },
+    {
+      "id": "tariki-4129",
+      "coordinates": [
+        6.069,
+        33.146
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4129",
+          "route_id": "8446",
+          "name_fr": "Station de services Ben Hedda AbdElmalek",
+          "name_ar": "محطة خدمات بن حدة عبد المالك",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.069,
+            33.146
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Ben Hedda AbdElmalek",
+      "display_name_ar": "محطة خدمات بن حدة عبد المالك"
+    },
+    {
+      "id": "tariki-7329",
+      "coordinates": [
+        6.085,
+        33.143
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7329",
+          "route_id": "8446",
+          "name_fr": "STATION DE SERVICES bettayb abdellatif",
+          "name_ar": "محطة خدمات بطيب عبد اللطيف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.085,
+            33.143
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES bettayb abdellatif",
+      "display_name_ar": "محطة خدمات بطيب عبد اللطيف"
+    },
+    {
+      "id": "tariki-7720",
+      "coordinates": [
+        6.063,
+        33.102
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7720",
+          "route_id": "1224",
+          "name_fr": "Station de services hamrouni bachir",
+          "name_ar": "محطة خدمات حمراوي بشير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.063,
+            33.102
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services hamrouni bachir",
+      "display_name_ar": "محطة خدمات حمراوي بشير"
+    },
+    {
+      "id": "tariki-9152",
+      "coordinates": [
+        6.0739,
+        33.1093
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9152",
+          "route_id": "14001",
+          "name_fr": "Station de services Hamrouni Bachir",
+          "name_ar": "محطة خدمات حمروني بشير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.0739,
+            33.1093
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 55,
+          "wilaya_fr": "Touggourt",
+          "wilaya_ar": "توقرت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Hamrouni Bachir",
+      "display_name_ar": "محطة خدمات حمروني بشير"
+    }
+  ]
+}

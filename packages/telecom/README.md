@@ -8,13 +8,13 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/telecom)](https://www.npmjs.com/package/@geoalgeria/telecom)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/telecom)](https://www.npmjs.com/package/@geoalgeria/telecom)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
-**3,096 5G coverage points** across Algeria, published by the operators' own
-coverage maps, **Djezzy (1,001)**, **Mobilis (1,919)**, and **Ooredoo (176)**,
-each with coordinates and wilaya/commune linkage. Shipped as JSON, CSV, GeoJSON,
+**3,598 5G coverage records** across Algeria, published by the operators' own
+coverage maps, **Djezzy (1,001)**, **Mobilis (2,421)**, and **Ooredoo (176)**,
+with 3,580 publishable coordinates and wilaya/commune linkage. Shipped as JSON, CSV, GeoJSON,
 and TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -24,9 +24,9 @@ npm install @geoalgeria/telecom
 ```js
 import telecom from "@geoalgeria/telecom";
 
-const sites = telecom.coverage();                       // all 3,096 points
+const sites = telecom.coverage();                       // all 3,598 points
 const djezzy = telecom.coverageByOperator("djezzy");    // 1,001
-const mobilis = telecom.coverageByOperator("mobilis");  // 1,919
+const mobilis = telecom.coverageByOperator("mobilis");  // 2,421
 const ooredoo = telecom.coverageByOperator("ooredoo");  // 176
 
 // 5G coverage in a wilaya (joins GeoAlgeria's wilaya_code)
@@ -51,11 +51,11 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 | Operator | Points | Granularity | Source map |
 | --- | --- | --- | --- |
 | Djezzy | **1,001** | cell site | djezzy5g.dz |
-| Mobilis | **1,919** | cell site | mobilis.dz/map/5g |
+| Mobilis | **2,421** | cell site | mobilis.dz/map/5g |
 | Ooredoo | **176** | covered commune | ooredoo.dz |
 
-Covering **58 wilayas** (including new wilayas like Timimoun, In Salah,
-Touggourt).
+Covering **66 current wilayas**. The operator maps still use the 58-wilaya
+scheme; 31 Mobilis points are safely reassigned to eight daughter wilayas.
 
 > **What a point is:** each record is a point published on the operator's own 5G
 > coverage map. Djezzy and Mobilis publish **cell-site** locations; Ooredoo
@@ -63,6 +63,11 @@ Touggourt).
 > carry several). The circles those maps draw are a fixed display radius, **not
 > measured RF coverage**, treat these as 5G *presence* points, not coverage
 > polygons.
+
+Eighteen Djezzy records remain in the dataset without coordinates because the
+operator's wilaya and site labels contradict its published points. Their review
+receipts are included, while the false points are withheld from JSON map fields
+and GeoJSON until replacement coordinates can be verified.
 
 ## Organization (future-proof)
 
@@ -108,7 +113,9 @@ coverage-specific fields:
 ```
 
 `id` is a deterministic `{operator}-{coordinate-hash}` key, stable across
-re-fetches. `wilaya_code` joins to GeoAlgeria's `wilaya_code`. Fields a given
+re-fetches. `wilaya_code` joins to GeoAlgeria's current `wilaya_code`. For 31
+Mobilis records, `source_wilaya_code` preserves the operator's mother wilaya and
+`commune_code` records the corroborating canonical commune. Fields a given
 operator doesn't provide are `null` (Djezzy has no commune; Mobilis has commune
 FR/AR but no street address; Ooredoo has the commune name only). For Ooredoo,
 `name` is the covered commune and points are `approximate`
@@ -128,7 +135,9 @@ JSON endpoint, and reads Ooredoo's covered-communes endpoint from a real browser
 session (the Ooredoo site authenticates itself; this step needs the
 [`agent-browser`](https://www.npmjs.com/package/agent-browser) CLI on `PATH`).
 Everything is normalized into one schema with `wilaya_code` resolved to GeoAlgeria
-codes. Operators file under the 58-wilaya scheme. Writes are all-or-nothing, so a
+codes. Operators file under the 58-wilaya scheme; Mobilis points are moved to a
+current daughter wilaya only when an exact current or official ONS 2021 French or Arabic commune match and polygon containment
+agree. Writes are all-or-nothing, so a
 failed operator never overwrites good committed data with a partial set.
 
 ## License & attribution

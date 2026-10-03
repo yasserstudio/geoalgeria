@@ -8,11 +8,11 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/ecoles)](https://www.npmjs.com/package/@geoalgeria/ecoles)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/ecoles)](https://www.npmjs.com/package/@geoalgeria/ecoles)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
 
 </div>
 
-**11 855 écoles géolocalisées** dans les **69 wilayas** d'Algérie – chacune avec
+**11 858 écoles géolocalisées** dans les **69 wilayas** d'Algérie – chacune avec
 ses coordonnées, classée par **cycle** (primaire · moyen/CEM · secondaire/lycée ·
 préscolaire), la plupart avec un nom en arabe et/ou en français, et un
 rattachement commune/wilaya. Extraites d'**OpenStreetMap** et présentées
@@ -28,7 +28,7 @@ npm install @geoalgeria/ecoles
 ```js
 import ecoles from "@geoalgeria/ecoles";
 
-const all = ecoles.ecoles();   // 11 855 écoles géolocalisées
+const all = ecoles.ecoles();   // 11 858 écoles géolocalisées
 
 // Lycées d'une wilaya (jointure sur wilaya_code de GeoAlgeria)
 const lyceesSetif = all.filter((e) => e.wilaya_code === "19" && e.cycle === "secondaire");
@@ -39,7 +39,7 @@ const named = all.filter((e) => e.name_fr);
 
 ## Ce que vous pouvez construire
 
-- **Cartes & annuaires d'écoles** – coordonnées sur les 11 855 enregistrements,
+- **Cartes & annuaires d'écoles** – coordonnées sur les 11 858 enregistrements,
   prêtes pour une carte ou un tri par école la plus proche.
 - **Répartitions par cycle** – filtrez primaire / moyen / secondaire /
   préscolaire, ou classez la densité scolaire par commune/wilaya.
@@ -49,7 +49,7 @@ const named = all.filter((e) => e.name_fr);
 
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
-| Écoles | **11 855** | ✅ toutes | 8 635 nommées, 69 wilayas |
+| Écoles | **11 858** | ✅ toutes | 8 635 nommées, 69 wilayas |
 
 **Par cycle**
 
@@ -62,7 +62,7 @@ const named = all.filter((e) => e.name_fr);
 | `autre` | 3 614 | école de cycle indéterminé (non nommée, ou nom sans mot de cycle) |
 
 > **Il s'agit d'un extrait OpenStreetMap, pas d'un registre officiel.** La
-> couverture est partielle et inégale selon les wilayas – 11 855 écoles
+> couverture est partielle et inégale selon les wilayas – 11 858 écoles
 > cartographiées face aux 29 702 établissements d'enseignement que le Ministère
 > de l'Éducation Nationale publie sur
 > [education.gov.dz](https://www.education.gov.dz) pour l'année scolaire
@@ -122,7 +122,7 @@ inclus dans chaque
 
 ```
 data/
-  ecoles.json              # 11 855 écoles (tableau)
+  ecoles.json              # 11 858 écoles (tableau)
   metadata.json            # sources, décomptes, couverture, updated
   csv/ecoles.csv           # dépôt + bundle Release (pas dans le tarball npm)
   geojson/ecoles.geojson   # entités Point
@@ -172,11 +172,12 @@ bâtiment – `geo_method` précise lequel (`osm_node`/`osm_centroid`).
 
 > **Le rattachement commune/wilaya est déduit, pas issu de la source.**
 > OpenStreetMap ne porte pas les codes administratifs algériens. GeoAlgeria
-> attache `wilaya_code`, `commune_code` et `commune` par une **jointure au
-> centroïde le plus proche** contre le jeu de communes
-> [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). La wilaya est
-> quasi exacte ; la commune est au mieux (proximité de centroïde, pas
-> d'inclusion polygonale).
+> attache `wilaya_code`, `commune_code` et `commune` en localisant d'abord le
+> polygone de wilaya contenant le point, puis le centroïde de commune le plus
+> proche **dans cette wilaya**, depuis le jeu de communes
+> [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). La wilaya est issue
+> de l'inclusion polygonale ; la commune reste une proximité de centroïde au
+> sein de cette limite.
 
 ## Besoin aussi des divisions administratives ?
 
@@ -193,7 +194,8 @@ Lancez `npm run fetch` pour régénérer toutes les sorties. Le script :
    `amenity=kindergarten` en Algérie ;
 2. **classe le cycle** à partir d'`isced:level` et du nom français/arabe ;
 3. déduplique la même école cartographiée à la fois comme nœud et comme bâtiment ;
-4. attache commune/wilaya par centroïde de commune le plus proche.
+4. localise le polygone de wilaya contenant le point, puis attache le centroïde
+   de commune le plus proche dans cette wilaya.
 
 L'extraction brute est conservée sous
 [`sources/ecoles/`](https://github.com/yasserstudio/geoalgeria/tree/main/sources/ecoles).

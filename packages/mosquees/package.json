@@ -1,8 +1,8 @@
 {
   "name": "@geoalgeria/mosquees",
-  "version": "2.0.0",
+  "version": "2.0.4",
   "type": "module",
-  "description": "Mosques of Algeria — 20,000+ geocoded mosques compiled from Wikidata and OpenStreetMap, with Arabic & French names, denomination, commune/wilaya linkage and GPS coordinates. JSON, CSV, GeoJSON, TypeScript.",
+  "description": "Mosques of Algeria: 20,000+ geocoded mosques compiled from Wikidata and OpenStreetMap, with Arabic & French names, denomination, commune/wilaya linkage and GPS coordinates. JSON, CSV, GeoJSON, TypeScript.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {
@@ -38,7 +38,7 @@
     "dz"
   ],
   "author": "Yasser's Studio (https://yasser.studio)",
-  "license": "MIT",
+  "license": "MIT AND ODbL-1.0",
   "publishConfig": {
     "access": "public"
   },

@@ -24,12 +24,6 @@
   "distribution": [
     {
       "@type": "DataDownload",
-      "name": "retired-ids (JSON)",
-      "encodingFormat": "application/json",
-      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/gares-routieres/data/retired-ids.json"
-    },
-    {
-      "@type": "DataDownload",
       "name": "stations (JSON)",
       "encodingFormat": "application/json",
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/gares-routieres/data/stations.json"
@@ -51,6 +45,6 @@
   "url": "https://geoalgeria.com",
   "sameAs": "https://github.com/yasserstudio/geoalgeria",
   "citation": [
-    "SOGRAL — Société de Gestion des Gares Routières d'Algérie — Data © SOGRAL; redistributed for reference"
+    "SOGRAL: Société de Gestion des Gares Routières d'Algérie, Data © SOGRAL; redistributed for reference"
   ]
 }

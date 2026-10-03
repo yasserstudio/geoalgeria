@@ -1,0 +1,68 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "CMPLEXE PTT TISSEMSILT",
+        "code_wilaya": "38",
+        "commune": "TISSEMSILT/AMMARI/MAACEM/OULED BESSEM/SIDI ABED",
+        "date": "2024-10-30 15:09:40",
+        "id": "485",
+        "latitude": "35,604533",
+        "longitude": "1,807817\r",
+        "type": "Agence Commerciale",
+        "wilaya": "TISSEMSILT"
+      },
+      {
+        "adresse": "REU HOUARI BOUMEDIENE",
+        "code_wilaya": "38",
+        "commune": "BORDJ BOUNAAMA/LAZHARIA/BOUCAID/SIDI SLIMANE/LARBAA/BENI CHAIB/BENI LAHCEN",
+        "date": "2024-10-30 15:09:40",
+        "id": "486",
+        "latitude": "35,85061",
+        "longitude": "1,618478\r",
+        "type": "Point de présence",
+        "wilaya": "TISSEMSILT"
+      },
+      {
+        "adresse": "CENTRE VILLE LARDJEM",
+        "code_wilaya": "38",
+        "commune": "LARDJEM/MELAAB/TAMELAHET/SIDI LANTRI",
+        "date": "2024-10-30 15:09:40",
+        "id": "487",
+        "latitude": "35.750264",
+        "longitude": "1.545509\r",
+        "type": "Point de présence",
+        "wilaya": "TISSEMSILT"
+      },
+      {
+        "adresse": "ROUTE NATIONAL Nø14 KHEMISTI",
+        "code_wilaya": "38",
+        "commune": "KHEMISTI/LAAYOUNE",
+        "date": "2024-10-30 15:09:40",
+        "id": "488",
+        "latitude": "35,663057",
+        "longitude": "1,963624\r",
+        "type": "Point de présence",
+        "wilaya": "TISSEMSILT"
+      },
+      {
+        "adresse": "BOULVARD INDEPENDANCE ",
+        "code_wilaya": "38",
+        "commune": "THENIET EL HAD/BORDJ EMIR AEK/YOUSSOUFIA/SIDI BOUTOUCHENT",
+        "date": "2024-10-30 15:09:40",
+        "id": "489",
+        "latitude": "35,86711",
+        "longitude": "2,02587\r",
+        "type": "Agence Commerciale",
+        "wilaya": "TISSEMSILT"
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    TISSEMSILT</b> ",
+    "resultat": "ok",
+    "wilaya": "TISSEMSILT"
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 38
+}

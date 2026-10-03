@@ -1,0 +1,2442 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-27",
+    "wilaya_code": 27,
+    "name": "Mostaganem",
+    "name_ar": "مستغانم",
+    "center": [
+      0.312,
+      36.003
+    ],
+    "bounds": [
+      -0.116,
+      35.672,
+      0.74,
+      36.334
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 67,
+    "osm_records": 50,
+    "tariki_records": 40,
+    "cross_source": 21,
+    "multiple_tariki": 1,
+    "osm_only": 28,
+    "tariki_only": 17,
+    "nearby_osm_pairs": 0,
+    "conflicts": 18
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-4429542789",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10036",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1654",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1981",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2018",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2055",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2179",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2254",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2265",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2882",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2883",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-435",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5486",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7888",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8133",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8134",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8136",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8790",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-12068950970",
+      "coordinates": [
+        0.2534936,
+        35.8965133
+      ],
+      "osm": {
+        "id": "node/12068950970",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2534936,
+          35.8965133
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-12372760445",
+      "coordinates": [
+        0.1161592,
+        35.9391284
+      ],
+      "osm": {
+        "id": "node/12372760445",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1161592,
+          35.9391284
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1316558988",
+      "coordinates": [
+        0.065057,
+        35.9034275
+      ],
+      "osm": {
+        "id": "node/1316558988",
+        "name": "Station service Al Aachaachi",
+        "name_ar": null,
+        "name_fr": "Station service Al Aachaachi",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.065057,
+          35.9034275
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Al Aachaachi",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1316558991",
+      "coordinates": [
+        0.0391849,
+        35.8700022
+      ],
+      "osm": {
+        "id": "node/1316558991",
+        "name": "Station service Oureah",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          0.0391849,
+          35.8700022
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Oureah",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1327084511",
+      "coordinates": [
+        0.262575,
+        35.7489827
+      ],
+      "osm": {
+        "id": "node/1327084511",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          0.262575,
+          35.7489827
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3179777226",
+      "coordinates": [
+        0.1890828,
+        35.9053018
+      ],
+      "osm": {
+        "id": "node/3179777226",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1890828,
+          35.9053018
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3179784625",
+      "coordinates": [
+        0.3724231,
+        35.9322699
+      ],
+      "osm": {
+        "id": "node/3179784625",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.3724231,
+          35.9322699
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1600",
+          "route_id": "4568",
+          "name_fr": "Station de services Sidi Laadjal",
+          "name_ar": "محطة الخدمات سيدي العجال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            0.373,
+            35.932
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 60
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات سيدي العجال"
+    },
+    {
+      "id": "osm-node-3184836466",
+      "coordinates": [
+        0.1079055,
+        35.9779849
+      ],
+      "osm": {
+        "id": "node/3184836466",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1079055,
+          35.9779849
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8140",
+          "route_id": "4795",
+          "name_fr": "STATION HAMA ABDALLAH 600 LOGEMENTS",
+          "name_ar": "محطة حمى عبد الله ( 600 مسكن )",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.108,
+            35.978
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة حمى عبد الله ( 600 مسكن )"
+    },
+    {
+      "id": "osm-node-3191241741",
+      "coordinates": [
+        0.1090405,
+        35.9153338
+      ],
+      "osm": {
+        "id": "node/3191241741",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          0.1090405,
+          35.9153338
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3192056471",
+      "coordinates": [
+        0.0972835,
+        35.915007
+      ],
+      "osm": {
+        "id": "node/3192056471",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0972835,
+          35.915007
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8135",
+          "route_id": "4795",
+          "name_fr": "STATION FRERES BEN CHANI",
+          "name_ar": "محطة الاخوة بن شني",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.097,
+            35.915
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 26
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الاخوة بن شني"
+    },
+    {
+      "id": "osm-node-3201665716",
+      "coordinates": [
+        0.2763197,
+        35.8952583
+      ],
+      "osm": {
+        "id": "node/3201665716",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2763197,
+          35.8952583
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3203343080",
+      "coordinates": [
+        0.1503821,
+        35.9117919
+      ],
+      "osm": {
+        "id": "node/3203343080",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1503821,
+          35.9117919
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3237987338",
+      "coordinates": [
+        0.0849671,
+        35.9326429
+      ],
+      "osm": {
+        "id": "node/3237987338",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0849671,
+          35.9326429
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8130",
+          "route_id": "4795",
+          "name_fr": "STATION BELKADOUR Mohamed",
+          "name_ar": "محطة بلقدور محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.085,
+            35.933
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 40
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بلقدور محمد"
+    },
+    {
+      "id": "osm-node-3692425933",
+      "coordinates": [
+        0.4163336,
+        36.0982032
+      ],
+      "osm": {
+        "id": "node/3692425933",
+        "name": "Station Zeboudji",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.4163336,
+          36.0982032
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7958",
+          "route_id": "4864",
+          "name_fr": "Station de services ZEBOUDJI",
+          "name_ar": "محطة زبوجي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.416,
+            36.098
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Zeboudji",
+      "display_name_ar": "محطة زبوجي"
+    },
+    {
+      "id": "osm-node-3718761185",
+      "coordinates": [
+        0.2042279,
+        35.8130042
+      ],
+      "osm": {
+        "id": "node/3718761185",
+        "name": "Station service Bikri",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Sans plamb, Gazoil, essanse....",
+        "opening_hours": "05:00-22:00",
+        "coordinates": [
+          0.2042279,
+          35.8130042
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2262",
+          "route_id": "5505",
+          "name_fr": "Station de services Bekri",
+          "name_ar": "محطة بكري",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.2041,
+            35.8126
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 46
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Bikri",
+      "display_name_ar": "محطة بكري"
+    },
+    {
+      "id": "osm-node-3718761194",
+      "coordinates": [
+        0.207122,
+        35.811697
+      ],
+      "osm": {
+        "id": "node/3718761194",
+        "name": "Station Service Benattia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Gazoil",
+        "opening_hours": "06:00-20:00",
+        "coordinates": [
+          0.207122,
+          35.811697
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7884",
+          "route_id": "5505",
+          "name_fr": "station adda ben atia",
+          "name_ar": "محطة عدة بن عطية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.2071,
+            35.8119
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 23
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Benattia",
+      "display_name_ar": "محطة عدة بن عطية"
+    },
+    {
+      "id": "osm-node-3788638319",
+      "coordinates": [
+        0.1914965,
+        35.7783706
+      ],
+      "osm": {
+        "id": "node/3788638319",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1914965,
+          35.7783706
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2251",
+          "route_id": "5479",
+          "name_fr": "Station de services KHELIFA",
+          "name_ar": "خليفة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.1915,
+            35.7784
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "خليفة"
+    },
+    {
+      "id": "osm-node-3788640666",
+      "coordinates": [
+        0.2513978,
+        35.7519667
+      ],
+      "osm": {
+        "id": "node/3788640666",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2513978,
+          35.7519667
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3788640780",
+      "coordinates": [
+        0.1675439,
+        35.8343815
+      ],
+      "osm": {
+        "id": "node/3788640780",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1675439,
+          35.8343815
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2021",
+          "route_id": "4972",
+          "name_fr": "Station de services MGHALET",
+          "name_ar": "مغالط",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.168,
+            35.834
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 59
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "مغالط"
+    },
+    {
+      "id": "osm-node-4235355894",
+      "coordinates": [
+        0.4326579,
+        36.0979325
+      ],
+      "osm": {
+        "id": "node/4235355894",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.4326579,
+          36.0979325
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8539",
+          "route_id": "4833",
+          "name_fr": "Station de services BELAID",
+          "name_ar": "محطة بلعيد",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.4324,
+            36.0979
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 23
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة بنزين",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-4235356694",
+      "coordinates": [
+        0.4061024,
+        36.0979022
+      ],
+      "osm": {
+        "id": "node/4235356694",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.4061024,
+          36.0979022
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8461",
+          "route_id": "4864",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.407,
+            36.098
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 81
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-4429542789",
+      "coordinates": [
+        0.6776008,
+        36.3238272
+      ],
+      "osm": {
+        "id": "node/4429542789",
+        "name": "محطة خدمات الوافي",
+        "name_ar": "محطة خدمات الوافي",
+        "name_fr": "Station service El Ouafi",
+        "brand": "Naftal",
+        "operator": "Pétrole",
+        "opening_hours": "24/7",
+        "coordinates": [
+          0.6776008,
+          36.3238272
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2003",
+          "route_id": "4919",
+          "name_fr": "Station de services Louefi",
+          "name_ar": "محطة الوقود لوافي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.678,
+            36.324
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 41
+        },
+        {
+          "id": "14092",
+          "route_id": "20838",
+          "name_fr": "STATION MULTI-SERVICES LOUAFI",
+          "name_ar": "محطة متعددة الخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.678,
+            36.324
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 41
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station service El Ouafi",
+      "display_name_ar": "محطة خدمات الوافي"
+    },
+    {
+      "id": "osm-node-4439522602",
+      "coordinates": [
+        0.3192573,
+        36.0957805
+      ],
+      "osm": {
+        "id": "node/4439522602",
+        "name": "محطة بنزين نفطال",
+        "name_ar": "محطة بنزين نفطال",
+        "name_fr": "Pompe à essence Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          0.3192573,
+          36.0957805
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1589",
+          "route_id": "4535",
+          "name_fr": "station de services HADJAJD CENTRE",
+          "name_ar": "محطة حجاج مركز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.32,
+            36.096
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 71
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Pompe à essence Naftal",
+      "display_name_ar": "محطة بنزين نفطال"
+    },
+    {
+      "id": "osm-node-4475707293",
+      "coordinates": [
+        0.374896,
+        35.9524721
+      ],
+      "osm": {
+        "id": "node/4475707293",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.374896,
+          35.9524721
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1914",
+          "route_id": "4590",
+          "name_fr": "Station de services Probal",
+          "name_ar": "محطة بروبال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.375,
+            35.952
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 53
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة بنزين",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-4512360692",
+      "coordinates": [
+        0.1628933,
+        35.9792969
+      ],
+      "osm": {
+        "id": "node/4512360692",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1628933,
+          35.9792969
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4579125191",
+      "coordinates": [
+        0.2925576,
+        35.9914529
+      ],
+      "osm": {
+        "id": "node/4579125191",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2925576,
+          35.9914529
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4597188689",
+      "coordinates": [
+        0.0722293,
+        35.8544205
+      ],
+      "osm": {
+        "id": "node/4597188689",
+        "name": "Station service",
+        "name_ar": "Station service",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0722293,
+          35.8544205
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service",
+      "display_name_ar": "Station service"
+    },
+    {
+      "id": "osm-node-4622205790",
+      "coordinates": [
+        0.0863963,
+        35.9269051
+      ],
+      "osm": {
+        "id": "node/4622205790",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0863963,
+          35.9269051
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8132",
+          "route_id": "4795",
+          "name_fr": "STATION NAFTAL RUE MED KHAMISTI",
+          "name_ar": "محطة نفطال بشارع محمد خميستي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.086,
+            35.927
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 37
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION NAFTAL RUE MED KHAMISTI",
+      "display_name_ar": "محطة نفطال بشارع محمد خميستي"
+    },
+    {
+      "id": "osm-node-4683189795",
+      "coordinates": [
+        0.2704122,
+        35.9730346
+      ],
+      "osm": {
+        "id": "node/4683189795",
+        "name": "Boudouhiou controle technique lourd/léger",
+        "name_ar": "CONTRÔLE TECHNIQUE (lourd/léger) BOUDOUHIOU",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2704122,
+          35.9730346
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Boudouhiou controle technique lourd/léger",
+      "display_name_ar": "CONTRÔLE TECHNIQUE (lourd/léger) BOUDOUHIOU"
+    },
+    {
+      "id": "osm-node-4848038471",
+      "coordinates": [
+        0.3060642,
+        36.1075389
+      ],
+      "osm": {
+        "id": "node/4848038471",
+        "name": "محطة الوقود نفطال",
+        "name_ar": "محطة الوقود نفطال",
+        "name_fr": null,
+        "brand": "Station Service NAFTAL",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.3060642,
+          36.1075389
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة الوقود نفطال",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-4848117077",
+      "coordinates": [
+        0.3779981,
+        36.1430624
+      ],
+      "osm": {
+        "id": "node/4848117077",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Station Service NAFTAL محطة الوقود نفطال",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.3779981,
+          36.1430624
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1585",
+          "route_id": "4508",
+          "name_fr": "station de services Achaachi",
+          "name_ar": "محطة عشعاشي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            0.378,
+            36.143
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service NAFTAL محطة الوقود نفطال",
+      "display_name_ar": "محطة عشعاشي"
+    },
+    {
+      "id": "osm-node-4848159632",
+      "coordinates": [
+        0.4363767,
+        36.162586
+      ],
+      "osm": {
+        "id": "node/4848159632",
+        "name": "Station-service NAFTAL",
+        "name_ar": "محطة نفطال للوقود",
+        "name_fr": "Station-Service NAFTAL",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.4363767,
+          36.162586
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-Service NAFTAL",
+      "display_name_ar": "محطة نفطال للوقود"
+    },
+    {
+      "id": "osm-node-4849388317",
+      "coordinates": [
+        0.2856286,
+        36.1018232
+      ],
+      "osm": {
+        "id": "node/4849388317",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Station Service NAFTAL محطة الوقود نفطال",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2856286,
+          36.1018232
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2133",
+          "route_id": "5318",
+          "name_fr": "Station de services BEN ABDELMALEK RAMDAN",
+          "name_ar": "محطة الوقود بن عبد المالك رمضان",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.285,
+            36.102
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 60
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service NAFTAL محطة الوقود نفطال",
+      "display_name_ar": "محطة الوقود بن عبد المالك رمضان"
+    },
+    {
+      "id": "osm-node-4852251597",
+      "coordinates": [
+        0.6348679,
+        36.2739446
+      ],
+      "osm": {
+        "id": "node/4852251597",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Station Service NAFTAL محطة الوقود نفطال",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.6348679,
+          36.2739446
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4479",
+          "route_id": "5478",
+          "name_fr": "Station de services Sbaai",
+          "name_ar": "محطة سباعي",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            0.6347,
+            36.2742
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service NAFTAL محطة الوقود نفطال",
+      "display_name_ar": "محطة سباعي"
+    },
+    {
+      "id": "osm-node-4977741427",
+      "coordinates": [
+        0.10641,
+        35.9692965
+      ],
+      "osm": {
+        "id": "node/4977741427",
+        "name": "محطة خدمات",
+        "name_ar": "محطة خدمات",
+        "name_fr": "Station-Service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": "Mo-Su 06:00-22:00",
+        "coordinates": [
+          0.10641,
+          35.9692965
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8138",
+          "route_id": "4795",
+          "name_fr": "STATION BEN KARA LOTFI EL MANFALOTI",
+          "name_ar": "محطة بن قارة لطفي المنفلوطي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.106,
+            35.969
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-Service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-5016842827",
+      "coordinates": [
+        0.4753397,
+        36.1926501
+      ],
+      "osm": {
+        "id": "node/5016842827",
+        "name": "Station Service NAFTAL محطة الوقود نفطال",
+        "name_ar": "Station Service NAFTAL محطة الوقود نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          0.4753397,
+          36.1926501
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service NAFTAL محطة الوقود نفطال",
+      "display_name_ar": "Station Service NAFTAL محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-5016842828",
+      "coordinates": [
+        0.5702779,
+        36.2534744
+      ],
+      "osm": {
+        "id": "node/5016842828",
+        "name": "Station Service",
+        "name_ar": "محطة الوقود نفطال",
+        "name_fr": null,
+        "brand": "E.Leclerc",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          0.5702779,
+          36.2534744
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2191",
+          "route_id": "5009",
+          "name_fr": "Station de services MILOUDI",
+          "name_ar": "محطة الوقود ميلودي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.57,
+            36.254
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 64
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-5016842829",
+      "coordinates": [
+        0.6145611,
+        36.2630092
+      ],
+      "osm": {
+        "id": "node/5016842829",
+        "name": "Station Service NAFTAL محطة الوقود نفطال",
+        "name_ar": "Station Service NAFTAL محطة الوقود نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.6145611,
+          36.2630092
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service NAFTAL محطة الوقود نفطال",
+      "display_name_ar": "Station Service NAFTAL محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-5076278959",
+      "coordinates": [
+        -0.0211219,
+        35.7434563
+      ],
+      "osm": {
+        "id": "node/5076278959",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.0211219,
+          35.7434563
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5090626464",
+      "coordinates": [
+        0.2311826,
+        35.8400301
+      ],
+      "osm": {
+        "id": "node/5090626464",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2311826,
+          35.8400301
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1999",
+          "route_id": "5031",
+          "name_fr": "Station de services GOUAICH",
+          "name_ar": "محطة توزيع البنزين قوعيش",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.2312,
+            35.8399
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 15
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services GOUAICH",
+      "display_name_ar": "محطة توزيع البنزين قوعيش"
+    },
+    {
+      "id": "osm-node-5101322722",
+      "coordinates": [
+        0.1823248,
+        35.9491338
+      ],
+      "osm": {
+        "id": "node/5101322722",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Station service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1823248,
+          35.9491338
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5515212863",
+      "coordinates": [
+        0.1621583,
+        35.85862
+      ],
+      "osm": {
+        "id": "node/5515212863",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1621583,
+          35.85862
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5515212876",
+      "coordinates": [
+        0.2611104,
+        35.8971876
+      ],
+      "osm": {
+        "id": "node/5515212876",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2611104,
+          35.8971876
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5662025527",
+      "coordinates": [
+        0.2133614,
+        35.7606809
+      ],
+      "osm": {
+        "id": "node/5662025527",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2133614,
+          35.7606809
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5714116721",
+      "coordinates": [
+        -0.0462887,
+        35.7381857
+      ],
+      "osm": {
+        "id": "node/5714116721",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.0462887,
+          35.7381857
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5932882288",
+      "coordinates": [
+        0.0818887,
+        35.9280141
+      ],
+      "osm": {
+        "id": "node/5932882288",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0818887,
+          35.9280141
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8128",
+          "route_id": "4795",
+          "name_fr": "STATION FRERES DAHOU",
+          "name_ar": "محطة الاخوة دحو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.082,
+            35.928
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION FRERES DAHOU",
+      "display_name_ar": "محطة الاخوة دحو"
+    },
+    {
+      "id": "osm-node-6300352398",
+      "coordinates": [
+        0.2717478,
+        35.788648
+      ],
+      "osm": {
+        "id": "node/6300352398",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2717478,
+          35.788648
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-189533176",
+      "coordinates": [
+        0.0451855,
+        35.79992505
+      ],
+      "osm": {
+        "id": "way/189533176",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0451855,
+          35.79992505
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-375506443",
+      "coordinates": [
+        0.2003829,
+        35.772011500000005
+      ],
+      "osm": {
+        "id": "way/375506443",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2003829,
+          35.772011500000005
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-375506454",
+      "coordinates": [
+        0.27126364999999997,
+        35.748395599999995
+      ],
+      "osm": {
+        "id": "way/375506454",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.27126364999999997,
+          35.748395599999995
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-10036",
+      "coordinates": [
+        0.1511,
+        35.7449
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10036",
+          "route_id": "5492",
+          "name_fr": "les frerre belkelai",
+          "name_ar": "الاخوة بلقلعي",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            0.1511,
+            35.7449
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "les frerre belkelai",
+      "display_name_ar": "الاخوة بلقلعي"
+    },
+    {
+      "id": "tariki-1654",
+      "coordinates": [
+        0.254,
+        35.99
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1654",
+          "route_id": "4649",
+          "name_fr": "Station de services Chikh Mostapha",
+          "name_ar": "محطة خدمات شيخ مصطفى",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.254,
+            35.99
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Chikh Mostapha",
+      "display_name_ar": "محطة خدمات شيخ مصطفى"
+    },
+    {
+      "id": "tariki-1981",
+      "coordinates": [
+        0.2251,
+        35.8714
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1981",
+          "route_id": "5056",
+          "name_fr": "Station de services Chikh ben Dehiba",
+          "name_ar": "محطة توزيع الوقود الشيخ بن دهيبة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.2251,
+            35.8714
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Chikh ben Dehiba",
+      "display_name_ar": "محطة توزيع الوقود الشيخ بن دهيبة"
+    },
+    {
+      "id": "tariki-2018",
+      "coordinates": [
+        0.38,
+        36.143
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2018",
+          "route_id": "4508",
+          "name_fr": "Station de services Elwali",
+          "name_ar": "محطة الوالي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.38,
+            36.143
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Elwali",
+      "display_name_ar": "محطة الوالي"
+    },
+    {
+      "id": "tariki-2055",
+      "coordinates": [
+        0.127,
+        35.834
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2055",
+          "route_id": "5181",
+          "name_fr": "Station de services AIN SIDI CHRIF",
+          "name_ar": "عين سيدي الشريف",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.127,
+            35.834
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AIN SIDI CHRIF",
+      "display_name_ar": "عين سيدي الشريف"
+    },
+    {
+      "id": "tariki-2179",
+      "coordinates": [
+        0.135,
+        36.027
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2179",
+          "route_id": "4795",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            0.135,
+            36.027
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "tariki-2254",
+      "coordinates": [
+        0.212,
+        35.76
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2254",
+          "route_id": "5492",
+          "name_fr": "Station de services benhdida",
+          "name_ar": "بن حديدة",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.212,
+            35.76
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services benhdida",
+      "display_name_ar": "بن حديدة"
+    },
+    {
+      "id": "tariki-2265",
+      "coordinates": [
+        0.16,
+        35.774
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2265",
+          "route_id": "5509",
+          "name_fr": "Station de services Boutaiba ben klaouze Mohamed",
+          "name_ar": "بوطيبة بن قلاوز محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.16,
+            35.774
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Boutaiba ben klaouze Mohamed",
+      "display_name_ar": "بوطيبة بن قلاوز محمد"
+    },
+    {
+      "id": "tariki-2882",
+      "coordinates": [
+        0.475,
+        36.184
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2882",
+          "route_id": "6487",
+          "name_fr": "Station de services zkakra",
+          "name_ar": "محطة الزكاكرة ( سداوي)",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.475,
+            36.184
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services zkakra",
+      "display_name_ar": "محطة الزكاكرة ( سداوي)"
+    },
+    {
+      "id": "tariki-2883",
+      "coordinates": [
+        0.438,
+        36.163
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2883",
+          "route_id": "6487",
+          "name_fr": "Station de services sidi lakhder centre",
+          "name_ar": "محطة سيدي لخضر مركز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.438,
+            36.163
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services sidi lakhder centre",
+      "display_name_ar": "محطة سيدي لخضر مركز"
+    },
+    {
+      "id": "tariki-435",
+      "coordinates": [
+        0.184,
+        35.9485
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "435",
+          "route_id": "1429",
+          "name_fr": "Station de services Naftal Ouled Hammou",
+          "name_ar": "محطة خدمات نفطال بأولاد حمو",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.184,
+            35.9485
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal Ouled Hammou",
+      "display_name_ar": "محطة خدمات نفطال بأولاد حمو"
+    },
+    {
+      "id": "tariki-5486",
+      "coordinates": [
+        0.1576,
+        35.9095
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5486",
+          "route_id": "1433",
+          "name_fr": "Station de services NAFTAL DAHRA",
+          "name_ar": "محطة خدمات نفطال الظهرة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.1576,
+            35.9095
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NAFTAL DAHRA",
+      "display_name_ar": "محطة خدمات نفطال الظهرة"
+    },
+    {
+      "id": "tariki-7888",
+      "coordinates": [
+        0.1682,
+        35.8382
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7888",
+          "route_id": "5491",
+          "name_fr": "STATION DE SERVICES  yahia tenfir khaira",
+          "name_ar": "محطة الخدمات يحي تنفير خيرة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.1682,
+            35.8382
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES  yahia tenfir khaira",
+      "display_name_ar": "محطة الخدمات يحي تنفير خيرة"
+    },
+    {
+      "id": "tariki-8133",
+      "coordinates": [
+        0.094,
+        35.931
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8133",
+          "route_id": "4795",
+          "name_fr": "STATION CHAHIDA MED AMINE",
+          "name_ar": "محطة شهيدة محمد امين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.094,
+            35.931
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION CHAHIDA MED AMINE",
+      "display_name_ar": "محطة شهيدة محمد امين"
+    },
+    {
+      "id": "tariki-8134",
+      "coordinates": [
+        0.1,
+        35.929
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8134",
+          "route_id": "4795",
+          "name_fr": "STATION  BAY ABD EL KADER",
+          "name_ar": "محطة باي عبد القادر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.1,
+            35.929
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION  BAY ABD EL KADER",
+      "display_name_ar": "محطة باي عبد القادر"
+    },
+    {
+      "id": "tariki-8136",
+      "coordinates": [
+        0.098,
+        35.926
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8136",
+          "route_id": "4795",
+          "name_fr": "STATION BOUKARROUCHA (Hors SARVICE)",
+          "name_ar": "محطة بوكروشة ( مغلقة )",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.098,
+            35.926
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION BOUKARROUCHA (Hors SARVICE)",
+      "display_name_ar": "محطة بوكروشة ( مغلقة )"
+    },
+    {
+      "id": "tariki-8790",
+      "coordinates": [
+        0.6226,
+        36.1903
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8790",
+          "route_id": "5125",
+          "name_fr": "Station de services  HAMOUDI",
+          "name_ar": "محطة الوقود حمودي",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.6226,
+            36.1903
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 27,
+          "wilaya_fr": "Mostaganem",
+          "wilaya_ar": "مستغانم",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  HAMOUDI",
+      "display_name_ar": "محطة الوقود حمودي"
+    }
+  ]
+}

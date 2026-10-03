@@ -14,7 +14,7 @@
   "estimated_universe": null,
   "coverage_pct": null,
   "coverage_note": "Rail and urban-transit stations (SNTF, metro, tram) compiled from Wikidata + OpenStreetMap.",
-  "wilayas_covered": 50,
+  "wilayas_covered": 52,
   "bbox": [
     -8.1016,
     26.8176,
@@ -24,7 +24,7 @@
   "sources": [
     {
       "key": "wikidata",
-      "name": "Wikidata — rail & urban transit stations in Algeria",
+      "name": "Wikidata: rail & urban transit stations in Algeria",
       "url": "https://www.wikidata.org",
       "license": "CC0-1.0",
       "retrieved": "2026-07-01",
@@ -32,14 +32,14 @@
     },
     {
       "key": "osm",
-      "name": "OpenStreetMap — rail & urban transit stations in Algeria",
+      "name": "OpenStreetMap: rail & urban transit stations in Algeria",
       "url": "https://www.openstreetmap.org",
       "license": "ODbL 1.0 (© OpenStreetMap contributors)",
       "retrieved": "2026-07-01",
       "evidence_type": "crowdsourced"
     }
   ],
-  "license": "CC0-1.0 AND ODbL-1.0",
+  "license": "MIT AND ODbL-1.0",
   "updated": "2026-07-01",
   "by_type": {
     "rail": 427,

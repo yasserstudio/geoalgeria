@@ -1,6 +1,6 @@
 // Type definitions for @geoalgeria/ferroviaire (schema v2).
-// Algeria's rail & urban-transit Stations — trains, trams, the Algiers metro,
-// and aerial tramways/gondolas — compiled from Wikidata (CC0) and
+// Algeria's rail & urban-transit Stations: trains, trams, the Algiers metro,
+// and aerial tramways/gondolas: compiled from Wikidata (CC0) and
 // OpenStreetMap (ODbL).
 
 /** Station kind. Station is the mode-neutral term (see CONTEXT.md) for a
@@ -28,7 +28,7 @@ export type StationSource = "osm" | "wikidata" | "wikidata+osm";
  *  `null` when the record has no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How the coordinate was obtained — every Station in this dataset carries a
+/** How the coordinate was obtained: every Station in this dataset carries a
  *  real Wikidata or OSM point. */
 export type GeoMethod = "osm_node" | "osm_way" | "wikidata";
 
@@ -89,7 +89,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus rail/transit stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus rail/transit stats. */
 export interface Metadata {
   package: "@geoalgeria/ferroviaire";
   schema_version: string;
@@ -97,7 +97,7 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — all of them. */
+  /** Records with coordinates: all of them. */
   geocoded_count: number;
   geocoded_pct: number;
   /** Count by `geo_precision`. */
@@ -125,7 +125,7 @@ export function stations(): Station[];
 export function stationById(id: string): Station | null;
 /** Stations of a given kind ("rail" | "tram" | "metro" | …). */
 export function stationsByType(type: StationType | string): Station[];
-/** Stations in a wilaya — accepts "16", 16, or "01". */
+/** Stations in a wilaya: accepts "16", 16, or "01". */
 export function stationsByWilaya(code: string | number): Station[];
 /** Dataset metadata. */
 export function metadata(): Metadata;

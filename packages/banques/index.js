@@ -1,4 +1,4 @@
-// @geoalgeria/banques — loaders for Algeria's licensed banks & financial institutions.
+// @geoalgeria/banques: loaders for Algeria's licensed banks & financial institutions.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

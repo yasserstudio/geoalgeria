@@ -1,0 +1,2154 @@
+{
+  "evidence": {
+    "live_recheck": "HTTP 404 on 2026-09-02",
+    "mode": "operator_html_supplied_by_project_owner",
+    "network_url": "https://etus22.dz/Reseau.php",
+    "supplied_at": "2026-09-02",
+    "timetable_url": "https://etus22.dz/Horaires.php",
+    "tracker_recheck": "Connection timed out on 2026-09-02",
+    "tracker_url": "https://gps.etus22.dz:8082/"
+  },
+  "lines": [
+    {
+      "departure_schedules": [
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:25"
+            },
+            {
+              "note": null,
+              "time": "07:55"
+            },
+            {
+              "note": null,
+              "time": "08:20"
+            },
+            {
+              "note": null,
+              "time": "08:50"
+            },
+            {
+              "note": null,
+              "time": "09:20"
+            },
+            {
+              "note": null,
+              "time": "09:45"
+            },
+            {
+              "note": null,
+              "time": "10:15"
+            },
+            {
+              "note": null,
+              "time": "10:45"
+            },
+            {
+              "note": null,
+              "time": "11:15"
+            },
+            {
+              "note": null,
+              "time": "11:45"
+            },
+            {
+              "note": null,
+              "time": "12:15"
+            },
+            {
+              "note": null,
+              "time": "12:45"
+            },
+            {
+              "note": null,
+              "time": "13:15"
+            },
+            {
+              "note": null,
+              "time": "13:45"
+            },
+            {
+              "note": null,
+              "time": "14:15"
+            },
+            {
+              "note": null,
+              "time": "14:45"
+            },
+            {
+              "note": null,
+              "time": "15:15"
+            },
+            {
+              "note": null,
+              "time": "15:45"
+            },
+            {
+              "note": null,
+              "time": "16:15"
+            },
+            {
+              "note": null,
+              "time": "16:45"
+            },
+            {
+              "note": null,
+              "time": "17:15"
+            },
+            {
+              "note": null,
+              "time": "17:45"
+            },
+            {
+              "note": null,
+              "time": "18:15"
+            },
+            {
+              "note": null,
+              "time": "18:45"
+            },
+            {
+              "note": null,
+              "time": "19:20"
+            }
+          ],
+          "direction_from": "المحطة رقم 17",
+          "direction_to": "حي 800 مسكن (طريق تسالة)"
+        },
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:25"
+            },
+            {
+              "note": null,
+              "time": "07:50"
+            },
+            {
+              "note": null,
+              "time": "08:25"
+            },
+            {
+              "note": null,
+              "time": "08:50"
+            },
+            {
+              "note": null,
+              "time": "09:20"
+            },
+            {
+              "note": null,
+              "time": "09:50"
+            },
+            {
+              "note": null,
+              "time": "10:15"
+            },
+            {
+              "note": null,
+              "time": "10:45"
+            },
+            {
+              "note": null,
+              "time": "11:15"
+            },
+            {
+              "note": null,
+              "time": "11:45"
+            },
+            {
+              "note": null,
+              "time": "12:15"
+            },
+            {
+              "note": null,
+              "time": "12:45"
+            },
+            {
+              "note": null,
+              "time": "13:15"
+            },
+            {
+              "note": null,
+              "time": "13:45"
+            },
+            {
+              "note": null,
+              "time": "14:15"
+            },
+            {
+              "note": null,
+              "time": "14:45"
+            },
+            {
+              "note": null,
+              "time": "15:15"
+            },
+            {
+              "note": null,
+              "time": "15:45"
+            },
+            {
+              "note": null,
+              "time": "16:15"
+            },
+            {
+              "note": null,
+              "time": "16:45"
+            },
+            {
+              "note": null,
+              "time": "17:15"
+            },
+            {
+              "note": null,
+              "time": "17:45"
+            },
+            {
+              "note": null,
+              "time": "18:15"
+            },
+            {
+              "note": null,
+              "time": "18:45"
+            },
+            {
+              "note": null,
+              "time": "19:15"
+            }
+          ],
+          "direction_from": "حي 800 مسكن (طريق تسالة)",
+          "direction_to": "المحطة رقم 17"
+        }
+      ],
+      "ref": "3B",
+      "route_diagram_url": "https://etus22.dz/assets/image/3.jpg",
+      "source_ref": "03B",
+      "terminus1": "المحطة رقم 17",
+      "terminus2": "حي 800 مسكن (طريق تسالة)"
+    },
+    {
+      "departure_schedules": [
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:55"
+            },
+            {
+              "note": null,
+              "time": "08:20"
+            },
+            {
+              "note": null,
+              "time": "08:45"
+            },
+            {
+              "note": null,
+              "time": "09:05"
+            },
+            {
+              "note": null,
+              "time": "09:30"
+            },
+            {
+              "note": null,
+              "time": "09:55"
+            },
+            {
+              "note": null,
+              "time": "10:20"
+            },
+            {
+              "note": null,
+              "time": "10:45"
+            },
+            {
+              "note": null,
+              "time": "11:10"
+            },
+            {
+              "note": null,
+              "time": "11:35"
+            },
+            {
+              "note": null,
+              "time": "12:00"
+            },
+            {
+              "note": null,
+              "time": "12:25"
+            },
+            {
+              "note": null,
+              "time": "12:50"
+            },
+            {
+              "note": null,
+              "time": "13:15"
+            },
+            {
+              "note": null,
+              "time": "13:40"
+            },
+            {
+              "note": null,
+              "time": "14:05"
+            },
+            {
+              "note": null,
+              "time": "14:30"
+            },
+            {
+              "note": null,
+              "time": "14:55"
+            },
+            {
+              "note": null,
+              "time": "15:25"
+            },
+            {
+              "note": null,
+              "time": "16:05"
+            },
+            {
+              "note": null,
+              "time": "16:35"
+            },
+            {
+              "note": null,
+              "time": "17:00"
+            },
+            {
+              "note": null,
+              "time": "17:25"
+            },
+            {
+              "note": null,
+              "time": "17:45"
+            },
+            {
+              "note": null,
+              "time": "18:15"
+            },
+            {
+              "note": null,
+              "time": "18:40"
+            },
+            {
+              "note": null,
+              "time": "19:00"
+            },
+            {
+              "note": null,
+              "time": "19:20"
+            }
+          ],
+          "direction_from": "المحطة رقم 17",
+          "direction_to": "حي الإخوة عدنان (الصخرة)"
+        },
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:25"
+            },
+            {
+              "note": null,
+              "time": "07:45"
+            },
+            {
+              "note": null,
+              "time": "08:15"
+            },
+            {
+              "note": null,
+              "time": "08:30"
+            },
+            {
+              "note": null,
+              "time": "08:55"
+            },
+            {
+              "note": null,
+              "time": "09:15"
+            },
+            {
+              "note": null,
+              "time": "09:40"
+            },
+            {
+              "note": null,
+              "time": "10:05"
+            },
+            {
+              "note": null,
+              "time": "10:30"
+            },
+            {
+              "note": null,
+              "time": "10:55"
+            },
+            {
+              "note": null,
+              "time": "11:20"
+            },
+            {
+              "note": null,
+              "time": "11:45"
+            },
+            {
+              "note": null,
+              "time": "12:10"
+            },
+            {
+              "note": null,
+              "time": "12:35"
+            },
+            {
+              "note": null,
+              "time": "13:00"
+            },
+            {
+              "note": null,
+              "time": "13:25"
+            },
+            {
+              "note": null,
+              "time": "13:50"
+            },
+            {
+              "note": null,
+              "time": "14:15"
+            },
+            {
+              "note": null,
+              "time": "14:40"
+            },
+            {
+              "note": null,
+              "time": "15:05"
+            },
+            {
+              "note": null,
+              "time": "15:30"
+            },
+            {
+              "note": null,
+              "time": "15:55"
+            },
+            {
+              "note": null,
+              "time": "16:45"
+            },
+            {
+              "note": null,
+              "time": "17:10"
+            },
+            {
+              "note": null,
+              "time": "17:35"
+            },
+            {
+              "note": null,
+              "time": "18:00"
+            },
+            {
+              "note": null,
+              "time": "18:20"
+            },
+            {
+              "note": null,
+              "time": "18:45"
+            },
+            {
+              "note": null,
+              "time": "19:15"
+            },
+            {
+              "note": null,
+              "time": "19:30"
+            }
+          ],
+          "direction_from": "حي الإخوة عدنان (الصخرة)",
+          "direction_to": "المحطة رقم 17"
+        }
+      ],
+      "ref": "09",
+      "route_diagram_url": "https://etus22.dz/assets/image/9.jpg",
+      "terminus1": "المحطة رقم 17",
+      "terminus2": "حي الإخوة عدنان (الصخرة)"
+    },
+    {
+      "departure_schedules": [
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "08:00"
+            },
+            {
+              "note": null,
+              "time": "08:20"
+            },
+            {
+              "note": null,
+              "time": "08:45"
+            },
+            {
+              "note": null,
+              "time": "09:00"
+            },
+            {
+              "note": null,
+              "time": "09:20"
+            },
+            {
+              "note": null,
+              "time": "09:40"
+            },
+            {
+              "note": null,
+              "time": "10:00"
+            },
+            {
+              "note": null,
+              "time": "10:20"
+            },
+            {
+              "note": null,
+              "time": "10:40"
+            },
+            {
+              "note": null,
+              "time": "11:00"
+            },
+            {
+              "note": null,
+              "time": "11:20"
+            },
+            {
+              "note": null,
+              "time": "11:40"
+            },
+            {
+              "note": null,
+              "time": "11:55"
+            },
+            {
+              "note": null,
+              "time": "12:15"
+            },
+            {
+              "note": null,
+              "time": "12:35"
+            },
+            {
+              "note": null,
+              "time": "12:55"
+            },
+            {
+              "note": null,
+              "time": "13:10"
+            },
+            {
+              "note": null,
+              "time": "13:30"
+            },
+            {
+              "note": null,
+              "time": "13:50"
+            },
+            {
+              "note": null,
+              "time": "14:10"
+            },
+            {
+              "note": null,
+              "time": "14:25"
+            },
+            {
+              "note": null,
+              "time": "14:45"
+            },
+            {
+              "note": null,
+              "time": "15:05"
+            },
+            {
+              "note": null,
+              "time": "15:25"
+            },
+            {
+              "note": null,
+              "time": "16:00"
+            },
+            {
+              "note": null,
+              "time": "16:40"
+            },
+            {
+              "note": null,
+              "time": "16:55"
+            },
+            {
+              "note": null,
+              "time": "17:15"
+            },
+            {
+              "note": null,
+              "time": "17:35"
+            },
+            {
+              "note": null,
+              "time": "17:55"
+            },
+            {
+              "note": null,
+              "time": "18:10"
+            },
+            {
+              "note": null,
+              "time": "18:30"
+            },
+            {
+              "note": null,
+              "time": "18:50"
+            },
+            {
+              "note": null,
+              "time": "19:05"
+            },
+            {
+              "note": null,
+              "time": "19:20"
+            }
+          ],
+          "direction_from": "المحطة رقم 17",
+          "direction_to": "حي بن حمودة"
+        },
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:25"
+            },
+            {
+              "note": null,
+              "time": "07:45"
+            },
+            {
+              "note": null,
+              "time": "08:25"
+            },
+            {
+              "note": null,
+              "time": "08:40"
+            },
+            {
+              "note": null,
+              "time": "09:00"
+            },
+            {
+              "note": null,
+              "time": "09:20"
+            },
+            {
+              "note": null,
+              "time": "09:40"
+            },
+            {
+              "note": null,
+              "time": "10:00"
+            },
+            {
+              "note": null,
+              "time": "10:20"
+            },
+            {
+              "note": null,
+              "time": "10:40"
+            },
+            {
+              "note": null,
+              "time": "11:00"
+            },
+            {
+              "note": null,
+              "time": "11:15"
+            },
+            {
+              "note": null,
+              "time": "11:35"
+            },
+            {
+              "note": null,
+              "time": "11:55"
+            },
+            {
+              "note": null,
+              "time": "12:15"
+            },
+            {
+              "note": null,
+              "time": "12:30"
+            },
+            {
+              "note": null,
+              "time": "12:50"
+            },
+            {
+              "note": null,
+              "time": "13:10"
+            },
+            {
+              "note": null,
+              "time": "13:30"
+            },
+            {
+              "note": null,
+              "time": "13:45"
+            },
+            {
+              "note": null,
+              "time": "14:05"
+            },
+            {
+              "note": null,
+              "time": "14:25"
+            },
+            {
+              "note": null,
+              "time": "14:45"
+            },
+            {
+              "note": null,
+              "time": "15:00"
+            },
+            {
+              "note": null,
+              "time": "15:20"
+            },
+            {
+              "note": null,
+              "time": "16:00"
+            },
+            {
+              "note": null,
+              "time": "16:35"
+            },
+            {
+              "note": null,
+              "time": "16:55"
+            },
+            {
+              "note": null,
+              "time": "17:15"
+            },
+            {
+              "note": null,
+              "time": "17:30"
+            },
+            {
+              "note": null,
+              "time": "17:50"
+            },
+            {
+              "note": null,
+              "time": "18:10"
+            },
+            {
+              "note": null,
+              "time": "18:30"
+            },
+            {
+              "note": null,
+              "time": "18:45"
+            },
+            {
+              "note": null,
+              "time": "19:05"
+            },
+            {
+              "note": null,
+              "time": "19:20"
+            }
+          ],
+          "direction_from": "حي بن حمودة",
+          "direction_to": "المحطة رقم 17"
+        }
+      ],
+      "ref": "16",
+      "route_diagram_url": "https://etus22.dz/assets/image/16i.jpg",
+      "terminus1": "المحطة رقم 17",
+      "terminus2": "حي بن حمودة"
+    },
+    {
+      "departure_schedules": [
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:25"
+            },
+            {
+              "note": null,
+              "time": "08:05"
+            },
+            {
+              "note": null,
+              "time": "08:25"
+            },
+            {
+              "note": null,
+              "time": "08:45"
+            },
+            {
+              "note": null,
+              "time": "09:05"
+            },
+            {
+              "note": null,
+              "time": "09:30"
+            },
+            {
+              "note": null,
+              "time": "09:50"
+            },
+            {
+              "note": null,
+              "time": "10:10"
+            },
+            {
+              "note": null,
+              "time": "10:35"
+            },
+            {
+              "note": null,
+              "time": "11:00"
+            },
+            {
+              "note": null,
+              "time": "11:20"
+            },
+            {
+              "note": null,
+              "time": "11:40"
+            },
+            {
+              "note": null,
+              "time": "12:05"
+            },
+            {
+              "note": null,
+              "time": "12:30"
+            },
+            {
+              "note": null,
+              "time": "12:50"
+            },
+            {
+              "note": null,
+              "time": "13:10"
+            },
+            {
+              "note": null,
+              "time": "13:35"
+            },
+            {
+              "note": null,
+              "time": "14:00"
+            },
+            {
+              "note": null,
+              "time": "14:20"
+            },
+            {
+              "note": null,
+              "time": "14:40"
+            },
+            {
+              "note": null,
+              "time": "15:00"
+            },
+            {
+              "note": null,
+              "time": "15:45"
+            },
+            {
+              "note": null,
+              "time": "16:05"
+            },
+            {
+              "note": null,
+              "time": "16:25"
+            },
+            {
+              "note": null,
+              "time": "16:50"
+            },
+            {
+              "note": null,
+              "time": "17:10"
+            },
+            {
+              "note": null,
+              "time": "17:30"
+            },
+            {
+              "note": null,
+              "time": "17:50"
+            },
+            {
+              "note": null,
+              "time": "18:15"
+            },
+            {
+              "note": null,
+              "time": "18:35"
+            },
+            {
+              "note": null,
+              "time": "18:55"
+            },
+            {
+              "note": null,
+              "time": "19:20"
+            }
+          ],
+          "direction_from": "محطة الأمير عبد القادر",
+          "direction_to": "سيدي لحسن"
+        },
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:25"
+            },
+            {
+              "note": null,
+              "time": "07:40"
+            },
+            {
+              "note": null,
+              "time": "08:05"
+            },
+            {
+              "note": null,
+              "time": "08:25"
+            },
+            {
+              "note": null,
+              "time": "08:45"
+            },
+            {
+              "note": null,
+              "time": "09:05"
+            },
+            {
+              "note": null,
+              "time": "09:25"
+            },
+            {
+              "note": null,
+              "time": "09:45"
+            },
+            {
+              "note": null,
+              "time": "10:10"
+            },
+            {
+              "note": null,
+              "time": "10:30"
+            },
+            {
+              "note": null,
+              "time": "10:50"
+            },
+            {
+              "note": null,
+              "time": "11:15"
+            },
+            {
+              "note": null,
+              "time": "11:40"
+            },
+            {
+              "note": null,
+              "time": "12:00"
+            },
+            {
+              "note": null,
+              "time": "12:20"
+            },
+            {
+              "note": null,
+              "time": "12:45"
+            },
+            {
+              "note": null,
+              "time": "13:10"
+            },
+            {
+              "note": null,
+              "time": "13:30"
+            },
+            {
+              "note": null,
+              "time": "13:50"
+            },
+            {
+              "note": null,
+              "time": "14:15"
+            },
+            {
+              "note": null,
+              "time": "14:40"
+            },
+            {
+              "note": null,
+              "time": "15:00"
+            },
+            {
+              "note": null,
+              "time": "15:20"
+            },
+            {
+              "note": null,
+              "time": "15:40"
+            },
+            {
+              "note": null,
+              "time": "16:25"
+            },
+            {
+              "note": null,
+              "time": "16:45"
+            },
+            {
+              "note": null,
+              "time": "17:05"
+            },
+            {
+              "note": null,
+              "time": "17:30"
+            },
+            {
+              "note": null,
+              "time": "17:50"
+            },
+            {
+              "note": null,
+              "time": "18:10"
+            },
+            {
+              "note": null,
+              "time": "18:30"
+            },
+            {
+              "note": null,
+              "time": "18:55"
+            },
+            {
+              "note": null,
+              "time": "19:10"
+            },
+            {
+              "note": null,
+              "time": "19:30"
+            }
+          ],
+          "direction_from": "سيدي لحسن",
+          "direction_to": "محطة الأمير عبد القادر"
+        }
+      ],
+      "ref": "11",
+      "route_diagram_url": "https://etus22.dz/assets/image/11i.jpg",
+      "terminus1": "محطة الأمير عبد القادر",
+      "terminus2": "سيدي لحسن"
+    },
+    {
+      "departure_schedules": [
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:25"
+            },
+            {
+              "note": null,
+              "time": "08:00"
+            },
+            {
+              "note": null,
+              "time": "08:15"
+            },
+            {
+              "note": null,
+              "time": "08:30"
+            },
+            {
+              "note": null,
+              "time": "08:45"
+            },
+            {
+              "note": null,
+              "time": "09:00"
+            },
+            {
+              "note": null,
+              "time": "09:15"
+            },
+            {
+              "note": null,
+              "time": "09:30"
+            },
+            {
+              "note": null,
+              "time": "09:45"
+            },
+            {
+              "note": null,
+              "time": "10:00"
+            },
+            {
+              "note": null,
+              "time": "10:15"
+            },
+            {
+              "note": null,
+              "time": "10:35"
+            },
+            {
+              "note": null,
+              "time": "10:50"
+            },
+            {
+              "note": null,
+              "time": "11:05"
+            },
+            {
+              "note": null,
+              "time": "11:20"
+            },
+            {
+              "note": null,
+              "time": "11:35"
+            },
+            {
+              "note": null,
+              "time": "11:55"
+            },
+            {
+              "note": null,
+              "time": "12:10"
+            },
+            {
+              "note": null,
+              "time": "12:25"
+            },
+            {
+              "note": null,
+              "time": "12:40"
+            },
+            {
+              "note": null,
+              "time": "12:55"
+            },
+            {
+              "note": null,
+              "time": "13:15"
+            },
+            {
+              "note": null,
+              "time": "13:30"
+            },
+            {
+              "note": null,
+              "time": "13:45"
+            },
+            {
+              "note": null,
+              "time": "14:00"
+            },
+            {
+              "note": null,
+              "time": "14:15"
+            },
+            {
+              "note": null,
+              "time": "14:35"
+            },
+            {
+              "note": null,
+              "time": "14:50"
+            },
+            {
+              "note": null,
+              "time": "15:10"
+            },
+            {
+              "note": null,
+              "time": "15:35"
+            },
+            {
+              "note": null,
+              "time": "16:10"
+            },
+            {
+              "note": null,
+              "time": "16:25"
+            },
+            {
+              "note": null,
+              "time": "16:40"
+            },
+            {
+              "note": null,
+              "time": "16:55"
+            },
+            {
+              "note": null,
+              "time": "17:15"
+            },
+            {
+              "note": null,
+              "time": "17:30"
+            },
+            {
+              "note": null,
+              "time": "17:45"
+            },
+            {
+              "note": null,
+              "time": "18:00"
+            },
+            {
+              "note": null,
+              "time": "18:15"
+            },
+            {
+              "note": null,
+              "time": "18:35"
+            },
+            {
+              "note": null,
+              "time": "18:50"
+            },
+            {
+              "note": null,
+              "time": "19:05"
+            },
+            {
+              "note": null,
+              "time": "19:20"
+            }
+          ],
+          "direction_from": "محطة الأمير عبد القادر",
+          "direction_to": "تلموني الجديدة"
+        },
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:20"
+            },
+            {
+              "note": "تلموني القديمة",
+              "time": "07:20"
+            },
+            {
+              "note": null,
+              "time": "07:35"
+            },
+            {
+              "note": null,
+              "time": "07:50"
+            },
+            {
+              "note": null,
+              "time": "08:05"
+            },
+            {
+              "note": null,
+              "time": "08:20"
+            },
+            {
+              "note": null,
+              "time": "08:35"
+            },
+            {
+              "note": null,
+              "time": "08:50"
+            },
+            {
+              "note": null,
+              "time": "09:05"
+            },
+            {
+              "note": null,
+              "time": "09:20"
+            },
+            {
+              "note": null,
+              "time": "09:35"
+            },
+            {
+              "note": null,
+              "time": "09:50"
+            },
+            {
+              "note": null,
+              "time": "10:05"
+            },
+            {
+              "note": null,
+              "time": "10:20"
+            },
+            {
+              "note": null,
+              "time": "10:35"
+            },
+            {
+              "note": null,
+              "time": "10:50"
+            },
+            {
+              "note": null,
+              "time": "11:10"
+            },
+            {
+              "note": null,
+              "time": "11:25"
+            },
+            {
+              "note": null,
+              "time": "11:40"
+            },
+            {
+              "note": null,
+              "time": "11:55"
+            },
+            {
+              "note": null,
+              "time": "12:10"
+            },
+            {
+              "note": null,
+              "time": "12:30"
+            },
+            {
+              "note": null,
+              "time": "12:45"
+            },
+            {
+              "note": null,
+              "time": "13:00"
+            },
+            {
+              "note": null,
+              "time": "13:15"
+            },
+            {
+              "note": null,
+              "time": "13:30"
+            },
+            {
+              "note": null,
+              "time": "13:50"
+            },
+            {
+              "note": null,
+              "time": "14:05"
+            },
+            {
+              "note": null,
+              "time": "14:20"
+            },
+            {
+              "note": null,
+              "time": "14:35"
+            },
+            {
+              "note": null,
+              "time": "14:50"
+            },
+            {
+              "note": null,
+              "time": "15:25"
+            },
+            {
+              "note": null,
+              "time": "15:45"
+            },
+            {
+              "note": null,
+              "time": "16:10"
+            },
+            {
+              "note": null,
+              "time": "16:30"
+            },
+            {
+              "note": null,
+              "time": "16:45"
+            },
+            {
+              "note": null,
+              "time": "17:00"
+            },
+            {
+              "note": null,
+              "time": "17:15"
+            },
+            {
+              "note": null,
+              "time": "17:30"
+            },
+            {
+              "note": null,
+              "time": "17:50"
+            },
+            {
+              "note": null,
+              "time": "18:05"
+            },
+            {
+              "note": null,
+              "time": "18:20"
+            },
+            {
+              "note": null,
+              "time": "18:35"
+            },
+            {
+              "note": null,
+              "time": "18:50"
+            },
+            {
+              "note": null,
+              "time": "19:10"
+            },
+            {
+              "note": null,
+              "time": "19:25"
+            }
+          ],
+          "direction_from": "تلموني الجديدة",
+          "direction_to": "محطة الأمير عبد القادر"
+        }
+      ],
+      "ref": "25",
+      "route_diagram_url": "https://etus22.dz/assets/image/25i.jpg",
+      "terminus1": "محطة الأمير عبد القادر",
+      "terminus2": "تلموني الجديدة"
+    },
+    {
+      "departure_schedules": [
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:20"
+            },
+            {
+              "note": null,
+              "time": "08:20"
+            },
+            {
+              "note": null,
+              "time": "08:55"
+            },
+            {
+              "note": null,
+              "time": "09:35"
+            },
+            {
+              "note": null,
+              "time": "10:15"
+            },
+            {
+              "note": null,
+              "time": "10:50"
+            },
+            {
+              "note": null,
+              "time": "11:30"
+            },
+            {
+              "note": null,
+              "time": "12:10"
+            },
+            {
+              "note": null,
+              "time": "12:45"
+            },
+            {
+              "note": null,
+              "time": "13:25"
+            },
+            {
+              "note": null,
+              "time": "14:05"
+            },
+            {
+              "note": null,
+              "time": "14:40"
+            },
+            {
+              "note": null,
+              "time": "15:20"
+            },
+            {
+              "note": null,
+              "time": "16:00"
+            },
+            {
+              "note": null,
+              "time": "16:35"
+            },
+            {
+              "note": null,
+              "time": "17:15"
+            },
+            {
+              "note": null,
+              "time": "17:55"
+            },
+            {
+              "note": null,
+              "time": "18:30"
+            },
+            {
+              "note": null,
+              "time": "19:00"
+            }
+          ],
+          "direction_from": "محطة الأمير عبد القادر",
+          "direction_to": "قايد بلعربي"
+        },
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:25"
+            },
+            {
+              "note": null,
+              "time": "08:05"
+            },
+            {
+              "note": null,
+              "time": "08:40"
+            },
+            {
+              "note": null,
+              "time": "09:15"
+            },
+            {
+              "note": null,
+              "time": "09:50"
+            },
+            {
+              "note": null,
+              "time": "10:30"
+            },
+            {
+              "note": null,
+              "time": "11:10"
+            },
+            {
+              "note": null,
+              "time": "11:45"
+            },
+            {
+              "note": null,
+              "time": "12:25"
+            },
+            {
+              "note": null,
+              "time": "13:05"
+            },
+            {
+              "note": null,
+              "time": "13:40"
+            },
+            {
+              "note": null,
+              "time": "14:20"
+            },
+            {
+              "note": null,
+              "time": "15:00"
+            },
+            {
+              "note": null,
+              "time": "15:35"
+            },
+            {
+              "note": null,
+              "time": "16:15"
+            },
+            {
+              "note": null,
+              "time": "16:55"
+            },
+            {
+              "note": null,
+              "time": "17:30"
+            },
+            {
+              "note": null,
+              "time": "18:05"
+            },
+            {
+              "note": null,
+              "time": "18:50"
+            },
+            {
+              "note": null,
+              "time": "19:15"
+            }
+          ],
+          "direction_from": "قايد بلعربي",
+          "direction_to": "محطة الأمير عبد القادر"
+        }
+      ],
+      "ref": "26",
+      "route_diagram_url": "https://etus22.dz/assets/image/26i.jpg",
+      "terminus1": "محطة الأمير عبد القادر",
+      "terminus2": "قايد بلعربي"
+    },
+    {
+      "departure_schedules": [
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:20"
+            },
+            {
+              "note": null,
+              "time": "08:00"
+            },
+            {
+              "note": null,
+              "time": "08:25"
+            },
+            {
+              "note": null,
+              "time": "08:55"
+            },
+            {
+              "note": null,
+              "time": "09:20"
+            },
+            {
+              "note": null,
+              "time": "09:45"
+            },
+            {
+              "note": null,
+              "time": "10:15"
+            },
+            {
+              "note": null,
+              "time": "10:45"
+            },
+            {
+              "note": null,
+              "time": "11:10"
+            },
+            {
+              "note": null,
+              "time": "11:40"
+            },
+            {
+              "note": null,
+              "time": "12:10"
+            },
+            {
+              "note": null,
+              "time": "12:35"
+            },
+            {
+              "note": null,
+              "time": "13:05"
+            },
+            {
+              "note": null,
+              "time": "13:35"
+            },
+            {
+              "note": null,
+              "time": "14:00"
+            },
+            {
+              "note": null,
+              "time": "14:30"
+            },
+            {
+              "note": null,
+              "time": "15:00"
+            },
+            {
+              "note": null,
+              "time": "15:55"
+            },
+            {
+              "note": null,
+              "time": "16:25"
+            },
+            {
+              "note": null,
+              "time": "16:50"
+            },
+            {
+              "note": null,
+              "time": "17:20"
+            },
+            {
+              "note": null,
+              "time": "17:50"
+            },
+            {
+              "note": null,
+              "time": "18:15"
+            },
+            {
+              "note": null,
+              "time": "18:45"
+            },
+            {
+              "note": null,
+              "time": "19:20"
+            }
+          ],
+          "direction_from": "محطة الأمير عبد القادر",
+          "direction_to": "البواعيش"
+        },
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:20"
+            },
+            {
+              "note": null,
+              "time": "07:45"
+            },
+            {
+              "note": null,
+              "time": "08:15"
+            },
+            {
+              "note": null,
+              "time": "08:40"
+            },
+            {
+              "note": null,
+              "time": "09:05"
+            },
+            {
+              "note": null,
+              "time": "09:35"
+            },
+            {
+              "note": null,
+              "time": "10:00"
+            },
+            {
+              "note": null,
+              "time": "10:25"
+            },
+            {
+              "note": null,
+              "time": "10:55"
+            },
+            {
+              "note": null,
+              "time": "11:20"
+            },
+            {
+              "note": null,
+              "time": "11:50"
+            },
+            {
+              "note": null,
+              "time": "12:20"
+            },
+            {
+              "note": null,
+              "time": "12:50"
+            },
+            {
+              "note": null,
+              "time": "13:15"
+            },
+            {
+              "note": null,
+              "time": "13:45"
+            },
+            {
+              "note": null,
+              "time": "14:15"
+            },
+            {
+              "note": null,
+              "time": "14:40"
+            },
+            {
+              "note": null,
+              "time": "15:10"
+            },
+            {
+              "note": null,
+              "time": "15:40"
+            },
+            {
+              "note": null,
+              "time": "16:35"
+            },
+            {
+              "note": null,
+              "time": "17:05"
+            },
+            {
+              "note": null,
+              "time": "17:30"
+            },
+            {
+              "note": null,
+              "time": "18:00"
+            },
+            {
+              "note": null,
+              "time": "18:30"
+            },
+            {
+              "note": null,
+              "time": "18:55"
+            },
+            {
+              "note": null,
+              "time": "19:20"
+            }
+          ],
+          "direction_from": "البواعيش",
+          "direction_to": "محطة الأمير عبد القادر"
+        }
+      ],
+      "ref": "27",
+      "route_diagram_url": "https://etus22.dz/assets/image/27i.jpg",
+      "terminus1": "محطة الأمير عبد القادر",
+      "terminus2": "البواعيش"
+    },
+    {
+      "departure_schedules": [
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": "محطة الغالمي",
+              "time": "07:20"
+            },
+            {
+              "note": null,
+              "time": "08:10"
+            },
+            {
+              "note": null,
+              "time": "08:30"
+            },
+            {
+              "note": null,
+              "time": "08:50"
+            },
+            {
+              "note": null,
+              "time": "09:10"
+            },
+            {
+              "note": null,
+              "time": "09:35"
+            },
+            {
+              "note": null,
+              "time": "09:55"
+            },
+            {
+              "note": null,
+              "time": "10:15"
+            },
+            {
+              "note": null,
+              "time": "10:40"
+            },
+            {
+              "note": null,
+              "time": "11:05"
+            },
+            {
+              "note": null,
+              "time": "11:25"
+            },
+            {
+              "note": null,
+              "time": "11:45"
+            },
+            {
+              "note": null,
+              "time": "12:10"
+            },
+            {
+              "note": null,
+              "time": "12:35"
+            },
+            {
+              "note": null,
+              "time": "12:55"
+            },
+            {
+              "note": null,
+              "time": "13:15"
+            },
+            {
+              "note": null,
+              "time": "13:40"
+            },
+            {
+              "note": null,
+              "time": "14:05"
+            },
+            {
+              "note": null,
+              "time": "14:25"
+            },
+            {
+              "note": null,
+              "time": "14:45"
+            },
+            {
+              "note": null,
+              "time": "15:10"
+            },
+            {
+              "note": null,
+              "time": "15:55"
+            },
+            {
+              "note": null,
+              "time": "16:15"
+            },
+            {
+              "note": null,
+              "time": "16:40"
+            },
+            {
+              "note": null,
+              "time": "17:05"
+            },
+            {
+              "note": null,
+              "time": "17:25"
+            },
+            {
+              "note": null,
+              "time": "17:45"
+            },
+            {
+              "note": null,
+              "time": "18:10"
+            },
+            {
+              "note": null,
+              "time": "18:35"
+            },
+            {
+              "note": null,
+              "time": "18:55"
+            },
+            {
+              "note": "سيدي براهيم",
+              "time": "19:20"
+            }
+          ],
+          "direction_from": "محطة الأمير عبد القادر",
+          "direction_to": "سيدي حمادوش"
+        },
+        {
+          "days": null,
+          "days_note": "Service days are not stated on the supplied timetable page",
+          "departures": [
+            {
+              "note": null,
+              "time": "07:20"
+            },
+            {
+              "note": null,
+              "time": "07:40"
+            },
+            {
+              "note": null,
+              "time": "08:00"
+            },
+            {
+              "note": null,
+              "time": "08:20"
+            },
+            {
+              "note": null,
+              "time": "08:50"
+            },
+            {
+              "note": null,
+              "time": "09:10"
+            },
+            {
+              "note": null,
+              "time": "09:30"
+            },
+            {
+              "note": null,
+              "time": "09:55"
+            },
+            {
+              "note": null,
+              "time": "10:15"
+            },
+            {
+              "note": null,
+              "time": "10:35"
+            },
+            {
+              "note": null,
+              "time": "10:55"
+            },
+            {
+              "note": null,
+              "time": "11:20"
+            },
+            {
+              "note": null,
+              "time": "11:45"
+            },
+            {
+              "note": null,
+              "time": "12:05"
+            },
+            {
+              "note": null,
+              "time": "12:25"
+            },
+            {
+              "note": null,
+              "time": "12:50"
+            },
+            {
+              "note": null,
+              "time": "13:15"
+            },
+            {
+              "note": null,
+              "time": "13:35"
+            },
+            {
+              "note": null,
+              "time": "13:55"
+            },
+            {
+              "note": null,
+              "time": "14:20"
+            },
+            {
+              "note": null,
+              "time": "14:45"
+            },
+            {
+              "note": null,
+              "time": "15:05"
+            },
+            {
+              "note": null,
+              "time": "15:25"
+            },
+            {
+              "note": null,
+              "time": "15:50"
+            },
+            {
+              "note": null,
+              "time": "16:35"
+            },
+            {
+              "note": null,
+              "time": "17:20"
+            },
+            {
+              "note": null,
+              "time": "17:45"
+            },
+            {
+              "note": null,
+              "time": "18:05"
+            },
+            {
+              "note": null,
+              "time": "18:25"
+            },
+            {
+              "note": null,
+              "time": "18:50"
+            },
+            {
+              "note": null,
+              "time": "19:10"
+            },
+            {
+              "note": null,
+              "time": "19:25"
+            }
+          ],
+          "direction_from": "سيدي حمادوش",
+          "direction_to": "محطة الأمير عبد القادر"
+        }
+      ],
+      "ref": "28",
+      "route_diagram_url": "https://etus22.dz/assets/image/28i.jpg",
+      "terminus1": "محطة الأمير عبد القادر",
+      "terminus2": "سيدي حمادوش"
+    }
+  ]
+}

@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/emploi)](https://www.npmjs.com/package/@geoalgeria/emploi)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/emploi)](https://www.npmjs.com/package/@geoalgeria/emploi)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -131,8 +131,11 @@ portal (<https://www.anem.dz/#/portail-carto>). There is no public API, the
 agencies are embedded in the portal's JavaScript bundle. Run `npm run fetch` to
 regenerate every output: it rediscovers the current bundle, extracts both
 datasets, fixes the source's `X`=lat / `Y`=lng inversion, and normalizes wilaya
-codes. ANEM files agencies under the **58-wilaya scheme**, so new wilayas 59–69
-currently appear under their mother wilaya.
+codes. ANEM files agencies under the **58-wilaya scheme**. Where an agency's own address
+and coordinate both place it in a commune the 2026 reform moved, a reviewed correction in
+`quality/overrides/emploi.json` publishes the current wilaya (59-69) and the commune it was
+derived from; the regeneration reapplies it, and stops if ANEM's own value has moved. 17 ALEM
+agencies are corrected this way; the rest still appear under their mother wilaya.
 
 ## License & attribution
 

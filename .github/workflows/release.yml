@@ -3,6 +3,7 @@ name: Release
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -40,9 +41,16 @@ jobs:
       - name: Validate all packages before any publish
         run: pnpm validate
 
+      # A smoke test that every package packs. It does NOT prove a manifest is
+      # installable: `npm publish --dry-run` uploads nothing, so it never resolves
+      # a `workspace:` spec, and the transport and pharma umbrellas (whose runtime
+      # deps are all `workspace:`) pack clean here with the literal spec inside.
+      # What proves them is scripts/lib/workspace-deps.mjs on the staged path,
+      # which fails closed, plus test/workspace-deps.test.mjs walking the real
+      # workspace.
       - name: Dry-run publish
         run: |
-          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/djezzy packages/mosquees packages/sante packages/cliniques packages/culture packages/agriculture packages/ecoles packages/gares-routieres packages/ferroviaire packages/buses packages/industrie-pharmaceutique packages/pharmacies packages/ooredoo packages/protection-civile; do
+          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/djezzy packages/mosquees packages/sante packages/cliniques packages/culture packages/agriculture packages/ecoles packages/gares-routieres packages/ferroviaire packages/buses packages/industrie-pharmaceutique packages/pharmacies packages/ooredoo packages/protection-civile packages/normalize packages/transport packages/pharma; do
             PKG_NAME=$(node -p "require('./$pkg/package.json').name")
             PKG_VER=$(node -p "require('./$pkg/package.json').version")
             REGISTRY_VER=$(npm view "$PKG_NAME" version 2>/dev/null || echo "")
@@ -65,23 +73,37 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Name every publishable package whose version will NOT reach npm on this
+      # run: a package npm has never seen, or a dir missing from the two loops in
+      # this file. Both were silent until the check existed (@geoalgeria/normalize
+      # was advertised on npm while never published there). The third case, an
+      # umbrella the staged path skipped, is gone: transport and pharma stage with
+      # everything else since 2026-09-30.
+      # Reads versions at $GITHUB_SHA, not the working tree, which the changesets
+      # step above leaves bumped. Reports only; never fails the release.
+      - name: Release gap check
+        if: always()
+        run: node scripts/release-gap.mjs "$GITHUB_SHA"
+
       # Cut a per-package GitHub Release (geoalgeria@x.y.z) with the raw data
-      # bundle attached — CSV/GeoJSON/SQL never ship to npm, so this is their
-      # only download channel. Guarded by tag existence: fires once per new
-      # version, independent of npm's staged-approval timing.
+      # bundle attached: the download channel for people who do not use npm. The
+      # tarballs carry JSON/CSV/GeoJSON/SQL themselves since the v2 correctness
+      # pass, so this is a second channel, not the only one. Guarded by tag
+      # existence: fires once per new version, independent of npm's
+      # staged-approval timing.
       - name: GitHub Releases + data bundles
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          # The @geoalgeria/transport and @geoalgeria/pharma umbrellas are
-          # excluded — they have no data/ bundle and are published manually via
-          # pnpm (workspace: deps). (djezzy, mosquees and
-          # sante originally shipped in the combined v1.4.0/v1.5.0 project
-          # releases; their per-package releases were backfilled 2026-07-05, so
-          # future bumps flow through here normally — the tag-existence guard
-          # below skips the already-released 1.0.0 tags.)
-          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/djezzy packages/mosquees packages/sante packages/cliniques packages/culture packages/agriculture packages/ecoles packages/gares-routieres packages/ferroviaire packages/buses packages/industrie-pharmaceutique packages/pharmacies packages/ooredoo packages/protection-civile; do
+          # The @geoalgeria/transport and @geoalgeria/pharma umbrellas are in the
+          # list too, last. They carry no data/, so they get a Release with no
+          # bundle attached, which the BUNDLE="" branch below already handles.
+          # (djezzy, mosquees and sante originally shipped in the combined
+          # v1.4.0/v1.5.0 project releases; their per-package releases were
+          # backfilled 2026-07-05, so future bumps flow through here normally:
+          # the tag-existence guard below skips the already-released 1.0.0 tags.)
+          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/djezzy packages/mosquees packages/sante packages/cliniques packages/culture packages/agriculture packages/ecoles packages/gares-routieres packages/ferroviaire packages/buses packages/industrie-pharmaceutique packages/pharmacies packages/ooredoo packages/protection-civile packages/normalize packages/transport packages/pharma; do
             NAME=$(node -p "require('./$pkg/package.json').name")
             VER=$(node -p "require('./$pkg/package.json').version")
             TAG="$NAME@$VER"
@@ -89,13 +111,49 @@ jobs:
               echo "skip: $TAG already released"
               continue
             fi
+
+            # NAME/VER above come from the working tree, which the changesets
+            # step leaves BUMPED whenever it (re)builds the Version PR: it
+            # checks out changeset-release/main in this same workspace, runs
+            # `changeset version` there and never switches back. Releasing from
+            # that tree cut geoalgeria@2.1.0 on 2026-09-26 and seven tags on
+            # 2026-09-13 on pushes that released nothing, each pointing at the
+            # pre-bump commit with the bot's raw notes, and the tag-existence
+            # guard above then blocked the real release for good. So gate every
+            # release on what $GITHUB_SHA actually carries: the version must be
+            # committed there AND have a CHANGELOG section. Fail closed.
+            #
+            # Exit 3 is the routine skip: the version is not on main yet, so npm
+            # published nothing either. Exit 4 is not routine: the version IS
+            # committed, so it stages and goes live on npm, but no Release can be
+            # cut for it. That used to share code 3 and pass unnoticed.
+            set +e
+            GUARD_OUT=$(node scripts/release-guard.mjs "$pkg" "$VER" "$TAG" "$GITHUB_SHA" 2>&1)
+            GUARD=$?
+            set -e
+            echo "$GUARD_OUT"
+            if [ "$GUARD" -eq 3 ]; then
+              continue
+            elif [ "$GUARD" -eq 4 ]; then
+              echo "::warning title=Release missing for a published version::$GUARD_OUT"
+              continue
+            elif [ "$GUARD" -ne 0 ]; then
+              echo "::error::release guard errored (exit $GUARD) for $TAG"
+              exit 1
+            fi
+
             echo "releasing: $TAG"
 
+            # A code-only package (no data/) still gets a Release, just no
+            # bundle: BUNDLE stays empty and drops out of the gh calls below.
             BUNDLE="$RUNNER_TEMP/geoalgeria-$(basename "$pkg")-$VER.zip"
             if [ "$pkg" = "packages/dataset" ]; then
               (cd "$pkg" && zip -qr "$BUNDLE" data algeria.geojson dataset-metadata.json)
-            else
+            elif [ -d "$pkg/data" ]; then
               (cd "$pkg" && zip -qr "$BUNDLE" data)
+            else
+              echo "no data/ in $pkg, releasing without a data bundle"
+              BUNDLE=""
             fi
 
             # Title + body + patch-flag come from scripts/release-notes.mjs (see
@@ -115,13 +173,20 @@ jobs:
             NOTES="$RUNNER_TEMP/$(basename "$NAME")-notes.md"  # basename: scoped names contain '/'
             $RN body > "$NOTES" || true
 
-            if [ -s "$NOTES" ]; then
-              TITLE=$($RN title)
-              gh release create "$TAG" --title "$TITLE" --target "$GITHUB_SHA" --notes-file "$NOTES" "$BUNDLE"
-            else
-              echo "::warning::No CHANGELOG section found for $TAG; using auto-generated notes"
-              gh release create "$TAG" --title "$TAG" --target "$GITHUB_SHA" --generate-notes "$BUNDLE"
+            # No auto-generated-notes fallback any more. The guard above already
+            # proved this version has a non-empty CHANGELOG section at
+            # $GITHUB_SHA, and declines with exit 4 when it does not, so an empty
+            # body here means release-notes.mjs disagrees with the guard. That is a
+            # bug, not a case to paper over with GitHub's commit-list notes on a
+            # public release.
+            if [ ! -s "$NOTES" ]; then
+              echo "::error::release-notes.mjs produced an empty body for $TAG although the guard found a CHANGELOG section at $GITHUB_SHA. Refusing to cut a Release with auto-generated notes."
+              exit 1
             fi
+            TITLE=$($RN title)
+            # shellcheck disable=SC2086 -- ${BUNDLE:+"$BUNDLE"} is one quoted
+            # argument when set, and no argument at all when empty.
+            gh release create "$TAG" --title "$TITLE" --target "$GITHUB_SHA" --notes-file "$NOTES" ${BUNDLE:+"$BUNDLE"}
 
             # Announce this release. The release: published event won't fire (this
             # release was created with GITHUB_TOKEN, which GitHub suppresses to avoid

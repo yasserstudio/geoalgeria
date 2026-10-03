@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/sports)](https://www.npmjs.com/package/@geoalgeria/sports)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/sports)](https://www.npmjs.com/package/@geoalgeria/sports)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -72,7 +72,7 @@ const piscines = sports.facilitiesByType("P25");     // toutes les piscines 25 m
 | Grand stade | `GS` | 1 |
 | **Total** | | **5 141** |
 
-Couvrant **58 wilayas**, chaque infrastructure géolocalisée – 5 008 sur un point
+Couvrant **69 wilayas**, chaque infrastructure géolocalisée – 5 008 sur un point
 `exact`, les 133 restantes `approximate`. `wilaya_code` est relié au modèle de
 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 

@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+// Preserve a rights-safe factual projection from the official ETUS Tlemcen
+// (E.T.U.S.T) Eid al-Adha 2026 service program, supplied by the project owner
+// from the Operator's Facebook page. The artwork is validation evidence only
+// and is not redistributed. Ten Lines, each printed with its ref and termini.
+import { writeCapture } from "../../scripts/lib/source-store.mjs";
+
+const sourceUrl = "https://www.facebook.com/etustlemcen13/";
+const CV_AR = "وسط المدينة", CV_FR = "Centre-ville";
+const lines = [
+  { ref: "2A", terminus1_ar: "يغمراسن بن زيان (أوجليدة)", terminus1_fr: "Yaghmoracen Ben Ziane (Oudjlida)", terminus2_ar: CV_AR, terminus2_fr: CV_FR },
+  { ref: "2B", terminus1_ar: "الرستميين (الكدية)", terminus1_fr: "Les Rostomides (El Koudia)", terminus2_ar: CV_AR, terminus2_fr: CV_FR },
+  { ref: "2C", terminus1_ar: "عبد المومن بن علي (بوجليدة)", terminus1_fr: "Abdelmoumen Ben Ali (Boudjlida)", terminus2_ar: CV_AR, terminus2_fr: CV_FR },
+  { ref: "03", terminus1_ar: "بوهناق", terminus1_fr: "Bouhennak", terminus2_ar: CV_AR, terminus2_fr: CV_FR },
+  { ref: "4B", terminus1_ar: "أوزيدان", terminus1_fr: "Ouzidane", terminus2_ar: CV_AR, terminus2_fr: CV_FR },
+  { ref: "4C", terminus1_ar: "عين الحوت", terminus1_fr: "Aïn El Hout", terminus2_ar: CV_AR, terminus2_fr: CV_FR },
+  { ref: "4E", terminus1_ar: "الحمري 1000 مسكن", terminus1_fr: "El Hamri (Cité 1000 Logements)", terminus2_ar: CV_AR, terminus2_fr: CV_FR },
+  { ref: "11", terminus1_ar: "لالا ستي", terminus1_fr: "Lalla Setti", terminus2_ar: CV_AR, terminus2_fr: CV_FR },
+  { ref: "44", terminus1_ar: "بوهناق 400", terminus1_fr: "Bouhennak (Cité 400 Logements)", terminus2_ar: CV_AR, terminus2_fr: CV_FR },
+  { ref: "H", terminus1_ar: "إيمامة منصورة", terminus1_fr: "Imama Mansourah", terminus2_ar: "محطة البرية", terminus2_fr: "Gare routière" },
+];
+
+writeCapture("buses", "etus-tlemcen-lines", {
+  lines,
+  evidence: {
+    announcement_url: sourceUrl,
+    announcement_note: "Eid al-Adha 2026 service program published by the Operator: ten Lines with termini; day 1 service 12:30-19:00, days 2 and 3 06:45-19:00. Read by the project owner on the Operator page and supplied as an image.",
+    supplied_at: "2026-09-03",
+    mode: "operator_artwork_supplied_by_project_owner",
+    supplied_images: [{ role: "eid_2026_program", sha256: "6c4dfdf53d1ea17e64bf0e93f29c780bade402bffe3306dfbf56b26bcaeb2d1e", width: 1280, height: 2276 }],
+    eid_2026_hours: { day1: "12:30-19:00", days2_3: "06:45-19:00", note: "Holiday hours, not regular service; evidence only." },
+    corroboration: [
+      "La Voie d'Algérie 2025-11-26: urban line 44 reinforced (matches ref 44).",
+      "L'Express DZ 2026-08-26: nine public urban lines serving El Koudia, Boudjlida, Oudjlida, Bouhenak/AADL, Ouzidane (all appear as termini here).",
+      "The lettered refs (2A/2B/2C/4B/4C/4E/H) match the third-party dz.etu.bus bundle and the lemagvoyage list previously judged unsourced; both are now corroborated on refs only, not on geometry.",
+    ],
+    geometry_validations: [],
+    unmatched_osm: [
+      { note: "OSM 7848044 (A42) and 7848086 (B42) are the private Oujlida corridor pair, not ETUS 2A/2C; 7876088/89/90 and 7848106 are university shuttles. No relation carries an ETUS Tlemcen ref." },
+    ],
+  },
+}, {
+  url: sourceUrl,
+  retrieved: "2026-09-03",
+  records: lines.length,
+  note: "Rights-safe bilingual Line identities transcribed from ETUS Tlemcen's Eid al-Adha 2026 service program supplied by the project owner from the Operator's page. French endpoint labels are transliterations of the Arabic. Artwork is validation-only and is not redistributed. No geometry.",
+});

@@ -1,4 +1,4 @@
-// @geoalgeria/emploi — lightweight loaders for the ANEM employment-agency data.
+// @geoalgeria/emploi: lightweight loaders for the ANEM employment-agency data.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

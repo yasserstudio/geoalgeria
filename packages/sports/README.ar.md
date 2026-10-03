@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/sports)](https://www.npmjs.com/package/@geoalgeria/sports)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/sports)](https://www.npmjs.com/package/@geoalgeria/sports)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -72,7 +72,7 @@ const المسابح = sports.facilitiesByType("P25");      // كل مسابح 2
 | ملعب كبير | `GS` | 1 |
 | **المجموع** | | **5,141** |
 
-تغطية **58 ولاية**، كل منشأة بإحداثيات جغرافية – 5,008 منها بنقطة `exact`، و133
+تغطية **69 ولاية**، كل منشأة بإحداثيات جغرافية – 5,008 منها بنقطة `exact`، و133
 المتبقية `approximate`. `wilaya_code` مرتبط بنموذج الولايات في
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 

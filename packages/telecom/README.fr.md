@@ -8,13 +8,13 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/telecom)](https://www.npmjs.com/package/@geoalgeria/telecom)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/telecom)](https://www.npmjs.com/package/@geoalgeria/telecom)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
-**3 096 points de couverture 5G** à travers l'Algérie, publiés à partir des
-cartes de couverture des opérateurs – **Djezzy (1 001)**, **Mobilis (1 919)** et
-**Ooredoo (176)** – chacun avec ses coordonnées et son rattachement
+**3 598 enregistrements de couverture 5G** à travers l'Algérie, publiés à partir des
+cartes de couverture des opérateurs – **Djezzy (1 001)**, **Mobilis (2 421)** et
+**Ooredoo (176)** – avec 3 580 coordonnées publiables et leur rattachement
 wilaya/commune. Distribué en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -25,9 +25,9 @@ npm install @geoalgeria/telecom
 ```js
 import telecom from "@geoalgeria/telecom";
 
-const sites = telecom.coverage();                       // les 3 096 points
+const sites = telecom.coverage();                       // les 3 598 points
 const djezzy = telecom.coverageByOperator("djezzy");    // 1 001
-const mobilis = telecom.coverageByOperator("mobilis");  // 1 919
+const mobilis = telecom.coverageByOperator("mobilis");  // 2 421
 const ooredoo = telecom.coverageByOperator("ooredoo");  // 176
 
 // Couverture 5G dans une wilaya (jointure sur wilaya_code de GeoAlgeria)
@@ -52,11 +52,12 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 | Opérateur | Points | Granularité | Carte source |
 | --- | --- | --- | --- |
 | Djezzy | **1 001** | site cellulaire | djezzy5g.dz |
-| Mobilis | **1 919** | site cellulaire | mobilis.dz/map/5g |
+| Mobilis | **2 421** | site cellulaire | mobilis.dz/map/5g |
 | Ooredoo | **176** | commune couverte | ooredoo.dz |
 
-Couvrant **58 wilayas** (y compris les nouvelles wilayas comme Timimoun, In Salah,
-Touggourt).
+Couvrant **66 wilayas actuelles**. Les cartes des opérateurs utilisent encore le
+découpage à 58 wilayas ; 31 points Mobilis sont réaffectés de façon sûre à huit
+nouvelles wilayas.
 
 > **Ce qu'est un point :** chaque enregistrement est un point publié sur la
 > carte de couverture 5G de l'opérateur. Djezzy et Mobilis publient des
@@ -65,6 +66,11 @@ Touggourt).
 > plusieurs). Les cercles affichés sur ces cartes ont un rayon fixe d'affichage,
 > **pas une mesure de couverture RF** – considérez-les comme des points de
 > *présence* 5G, et non comme des polygones de couverture.
+
+Dix-huit enregistrements Djezzy restent sans coordonnées : la wilaya et le nom
+du site publiés par l'opérateur contredisent le point affiché. Les justificatifs
+de revue sont conservés, tandis que ces faux points sont retirés des champs
+cartographiques et du GeoJSON jusqu'à vérification de coordonnées de remplacement.
 
 ## Organisation (évolutive)
 
@@ -110,8 +116,10 @@ propres à la couverture :
 ```
 
 `id` est une clé déterministe `{operator}-{coordinate-hash}`, stable d'une
-extraction à l'autre. `wilaya_code` permet la jointure avec le `wilaya_code` de
-GeoAlgeria. Les champs qu'un opérateur donné ne fournit pas sont `null` (Djezzy
+extraction à l'autre. `wilaya_code` permet la jointure avec le `wilaya_code`
+actuel de GeoAlgeria. Pour 31 enregistrements Mobilis, `source_wilaya_code`
+conserve la wilaya mère publiée et `commune_code` identifie la commune canonique
+qui confirme la correction. Les champs qu'un opérateur donné ne fournit pas sont `null` (Djezzy
 n'a pas de commune ; Mobilis a la commune FR/AR mais pas d'adresse ; Ooredoo n'a
 que le nom de la commune). Pour Ooredoo, `name` est la commune couverte et les
 points sont `approximate` (`operator_commune_point`) : un point par commune
@@ -133,7 +141,9 @@ session navigateur réelle (le site d'Ooredoo s'authentifie lui-même ; cette
 étape nécessite le CLI
 [`agent-browser`](https://www.npmjs.com/package/agent-browser) dans le `PATH`).
 Tout est normalisé en un schéma unique avec `wilaya_code` résolu vers les codes
-GeoAlgeria. Les opérateurs utilisent le schéma à 58 wilayas. Les écritures sont
+GeoAlgeria. Les opérateurs utilisent le schéma à 58 wilayas ; un point Mobilis
+n'est affecté à une nouvelle wilaya que si une correspondance française ou arabe exacte, actuelle ou issue du registre ONS 2021
+et le polygone concordent. Les écritures sont
 tout-ou-rien : un opérateur en échec n'écrase jamais des données valides
 commitées avec un jeu partiel.
 

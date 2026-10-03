@@ -1,0 +1,2683 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-48",
+    "wilaya_code": 48,
+    "name": "Relizane",
+    "name_ar": "غليزان",
+    "center": [
+      0.8275,
+      35.835499999999996
+    ],
+    "bounds": [
+      0.227,
+      35.445,
+      1.428,
+      36.226
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 66,
+    "osm_records": 48,
+    "tariki_records": 52,
+    "cross_source": 32,
+    "multiple_tariki": 1,
+    "osm_only": 15,
+    "tariki_only": 18,
+    "nearby_osm_pairs": 1,
+    "conflicts": 21
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3207022654",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5484413895",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-570456073",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13823",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13968",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13981",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14104",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2165",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2927",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2953",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3263",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3424",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-343",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-344",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-413",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7918",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7927",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7942",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7944",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8006",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8008",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10990522381",
+      "coordinates": [
+        0.6650465,
+        36.0006332
+      ],
+      "osm": {
+        "id": "node/10990522381",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.6650465,
+          36.0006332
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-11771713093",
+      "coordinates": [
+        0.7600578,
+        35.7302466
+      ],
+      "osm": {
+        "id": "node/11771713093",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.7600578,
+          35.7302466
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-13261473790",
+      "coordinates": [
+        0.9824584,
+        35.8910475
+      ],
+      "osm": {
+        "id": "node/13261473790",
+        "name": "Cherifi Bouabdellah",
+        "name_ar": "شريفي بوعبدالله",
+        "name_fr": null,
+        "brand": "NAFTAL",
+        "operator": "NAFTAL",
+        "opening_hours": "24/7",
+        "coordinates": [
+          0.9824584,
+          35.8910475
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Cherifi Bouabdellah",
+      "display_name_ar": "شريفي بوعبدالله"
+    },
+    {
+      "id": "osm-node-1327093278",
+      "coordinates": [
+        0.659793,
+        35.8949686
+      ],
+      "osm": {
+        "id": "node/1327093278",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          0.659793,
+          35.8949686
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2859",
+          "route_id": "6442",
+          "name_fr": "Station de services village El HOMRE",
+          "name_ar": "محطة دوار الحمر بلدية وادي الجمعة",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            0.66,
+            35.895
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة دوار الحمر بلدية وادي الجمعة"
+    },
+    {
+      "id": "osm-node-2362941864",
+      "coordinates": [
+        0.4070603,
+        35.7907978
+      ],
+      "osm": {
+        "id": "node/2362941864",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": "24/7",
+        "coordinates": [
+          0.4070603,
+          35.7907978
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14172",
+          "route_id": "21240",
+          "name_fr": "yellel",
+          "name_ar": "محطة الخدمات يلل إتجاه وهران",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.407,
+            35.791
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 23
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات يلل إتجاه وهران"
+    },
+    {
+      "id": "osm-node-2405497576",
+      "coordinates": [
+        0.568192,
+        35.7290981
+      ],
+      "osm": {
+        "id": "node/2405497576",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.568192,
+          35.7290981
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8001",
+          "route_id": "12963",
+          "name_fr": "Station BETTACHE",
+          "name_ar": "محطة بطاش للخدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.568,
+            35.729
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 20
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بطاش للخدمات"
+    },
+    {
+      "id": "osm-node-2405499790",
+      "coordinates": [
+        0.5481988,
+        35.7290284
+      ],
+      "osm": {
+        "id": "node/2405499790",
+        "name": "Station Dahra Relizane",
+        "name_ar": "Station Dahra Relizane",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.5481988,
+          35.7290284
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8003",
+          "route_id": "12964",
+          "name_fr": "Station DAHRA",
+          "name_ar": "محطة الظهرة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.548,
+            35.729
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 18
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Dahra Relizane",
+      "display_name_ar": "Station Dahra Relizane"
+    },
+    {
+      "id": "osm-node-2702353550",
+      "coordinates": [
+        0.4102998,
+        35.7865535
+      ],
+      "osm": {
+        "id": "node/2702353550",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": "24/7",
+        "coordinates": [
+          0.4102998,
+          35.7865535
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14171",
+          "route_id": "21240",
+          "name_fr": "yellel",
+          "name_ar": "محطة الخدمات يلل إتجاه الجزائر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.41,
+            35.787
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 57
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات يلل إتجاه الجزائر"
+    },
+    {
+      "id": "osm-node-3129725123",
+      "coordinates": [
+        0.9180632,
+        35.9617281
+      ],
+      "osm": {
+        "id": "node/3129725123",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9180632,
+          35.9617281
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3248",
+          "route_id": "1852",
+          "name_fr": "Station de services TEBBAL TAZGHAT",
+          "name_ar": "محطة طبال تازغات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.918,
+            35.962
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة طبال تازغات"
+    },
+    {
+      "id": "osm-node-3129725124",
+      "coordinates": [
+        0.9126886,
+        35.9595937
+      ],
+      "osm": {
+        "id": "node/3129725124",
+        "name": "محطة خدمة عبد الصدق",
+        "name_ar": "محطة خدمة عبد الصدق",
+        "name_fr": "Station-Service Abdessadouk",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          0.9126886,
+          35.9595937
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3207",
+          "route_id": "1852",
+          "name_fr": "Station de services ABDESSADOUK LAKHDAR",
+          "name_ar": "محطة عبد الصادوق لخضر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.913,
+            35.959
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 72
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-Service Abdessadouk",
+      "display_name_ar": "محطة خدمة عبد الصدق"
+    },
+    {
+      "id": "osm-node-3129725619",
+      "coordinates": [
+        0.9211831,
+        35.96347
+      ],
+      "osm": {
+        "id": "node/3129725619",
+        "name": "Station-Service Barodi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9211831,
+          35.96347
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3246",
+          "route_id": "1852",
+          "name_fr": "Station de services BAROUDI ABED",
+          "name_ar": "محطة بارودي عابد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.921,
+            35.964
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-Service Barodi",
+      "display_name_ar": "محطة بارودي عابد"
+    },
+    {
+      "id": "osm-node-3175088974",
+      "coordinates": [
+        0.836194,
+        35.9291822
+      ],
+      "osm": {
+        "id": "node/3175088974",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          0.836194,
+          35.9291822
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1582",
+          "route_id": "3983",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.836,
+            35.929
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3179785585",
+      "coordinates": [
+        0.5283347,
+        35.9006675
+      ],
+      "osm": {
+        "id": "node/3179785585",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.5283347,
+          35.9006675
+        ]
+      },
+      "tariki": [
+        {
+          "id": "544",
+          "route_id": "1553",
+          "name_fr": "Station de services Fidah Ismail",
+          "name_ar": "محطة خدمات فيداح إسماعيل",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.528,
+            35.901
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات فيداح إسماعيل"
+    },
+    {
+      "id": "osm-node-3179799686",
+      "coordinates": [
+        0.8245464,
+        35.9297356
+      ],
+      "osm": {
+        "id": "node/3179799686",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "08:30-22:00",
+        "coordinates": [
+          0.8245464,
+          35.9297356
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1580",
+          "route_id": "3983",
+          "name_fr": "Station de services Hassnaoui Missoum",
+          "name_ar": "محطة خدمات حسناوي ميسوم",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.825,
+            35.93
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 50
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3184924405",
+      "coordinates": [
+        0.7661067,
+        35.9207148
+      ],
+      "osm": {
+        "id": "node/3184924405",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          0.7661067,
+          35.9207148
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14174",
+          "route_id": "21240",
+          "name_fr": "hmadna",
+          "name_ar": "محطة الخدمات الحمادنة إتجاه وهران",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.766,
+            35.921
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات الحمادنة إتجاه وهران"
+    },
+    {
+      "id": "osm-node-3184924406",
+      "coordinates": [
+        0.763578,
+        35.9171057
+      ],
+      "osm": {
+        "id": "node/3184924406",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          0.763578,
+          35.9171057
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14173",
+          "route_id": "21240",
+          "name_fr": "hmadna",
+          "name_ar": "محطة الخدمات الحمادنة إتجاه الجزائر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.764,
+            35.917
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 40
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات الحمادنة إتجاه الجزائر"
+    },
+    {
+      "id": "osm-node-3197919806",
+      "coordinates": [
+        0.8590249,
+        35.648017
+      ],
+      "osm": {
+        "id": "node/3197919806",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.8590249,
+          35.648017
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4449",
+          "route_id": "1293",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.859,
+            35.648
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-node-3197997725",
+      "coordinates": [
+        0.552168,
+        35.7464742
+      ],
+      "osm": {
+        "id": "node/3197997725",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.552168,
+          35.7464742
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3207022654",
+      "coordinates": [
+        0.8835146,
+        36.0363823
+      ],
+      "osm": {
+        "id": "node/3207022654",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.8835146,
+          36.0363823
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4647",
+          "route_id": "9277",
+          "name_fr": "Station de services FERREGHE ABED",
+          "name_ar": "محطة فراغ عابد",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.884,
+            36.036
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 61
+        },
+        {
+          "id": "13969",
+          "route_id": "9156",
+          "name_fr": "STATION ESSENCE",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.884,
+            36.036
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة فراغ عابد"
+    },
+    {
+      "id": "osm-node-3220895482",
+      "coordinates": [
+        0.3016946,
+        35.734826
+      ],
+      "osm": {
+        "id": "node/3220895482",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          0.3016946,
+          35.734826
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3949686915",
+      "coordinates": [
+        0.3433301,
+        35.6830819
+      ],
+      "osm": {
+        "id": "node/3949686915",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.3433301,
+          35.6830819
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14272",
+          "route_id": "21418",
+          "name_fr": "محطة الوقود بودية",
+          "name_ar": "محطة الوقود بودية",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            0.343,
+            35.683
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود بودية"
+    },
+    {
+      "id": "osm-node-4308943094",
+      "coordinates": [
+        0.853718,
+        36.1108758
+      ],
+      "osm": {
+        "id": "node/4308943094",
+        "name": "محطة البنزين - نفطال",
+        "name_ar": "محطة البنزين - نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.853718,
+          36.1108758
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14107",
+          "route_id": "1983",
+          "name_fr": "station owlad meziane",
+          "name_ar": "محطة خدمات أولاد مزيان",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.854,
+            36.11
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 101
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة البنزين - نفطال",
+      "display_name_ar": "محطة البنزين - نفطال"
+    },
+    {
+      "id": "osm-node-4465616902",
+      "coordinates": [
+        0.7531377,
+        35.718782
+      ],
+      "osm": {
+        "id": "node/4465616902",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.7531377,
+          35.718782
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4465616903",
+      "coordinates": [
+        0.7567389,
+        35.7177838
+      ],
+      "osm": {
+        "id": "node/4465616903",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.7567389,
+          35.7177838
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4465616904",
+      "coordinates": [
+        0.7184549,
+        35.7336705
+      ],
+      "osm": {
+        "id": "node/4465616904",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.7184549,
+          35.7336705
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3421",
+          "route_id": "1375",
+          "name_fr": "Station de services ELKANTOUNI",
+          "name_ar": "الكانطوني",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.718,
+            35.734
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "الكانطوني"
+    },
+    {
+      "id": "osm-node-4519437822",
+      "coordinates": [
+        0.561513,
+        35.745421
+      ],
+      "osm": {
+        "id": "node/4519437822",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.561513,
+          35.745421
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8007",
+          "route_id": "12971",
+          "name_fr": "Station de services  SOUSSI Fatima Zahra",
+          "name_ar": "سوسي فاطمة زهراء",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.562,
+            35.745
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 64
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "سوسي فاطمة زهراء"
+    },
+    {
+      "id": "osm-node-4536091690",
+      "coordinates": [
+        0.4511484,
+        35.7332913
+      ],
+      "osm": {
+        "id": "node/4536091690",
+        "name": "Station service",
+        "name_ar": null,
+        "name_fr": "Station service.",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.4511484,
+          35.7332913
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service.",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4536091692",
+      "coordinates": [
+        0.6382401,
+        35.766094
+      ],
+      "osm": {
+        "id": "node/4536091692",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.6382401,
+          35.766094
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7916",
+          "route_id": "6413",
+          "name_fr": "STAION D'essence naftal",
+          "name_ar": "محطة الوقود نافطال النقطة الثامنة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.638,
+            35.766
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STAION D'essence naftal",
+      "display_name_ar": "محطة الوقود نافطال النقطة الثامنة"
+    },
+    {
+      "id": "osm-node-4540864991",
+      "coordinates": [
+        0.5482437,
+        35.7394522
+      ],
+      "osm": {
+        "id": "node/4540864991",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.5482437,
+          35.7394522
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8005",
+          "route_id": "12971",
+          "name_fr": "Station de services BENM'HAMED MOHAMED",
+          "name_ar": "بن محمد محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.548,
+            35.739
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services BENM'HAMED MOHAMED",
+      "display_name_ar": "بن محمد محمد"
+    },
+    {
+      "id": "osm-node-5430877312",
+      "coordinates": [
+        0.7414521,
+        36.1273622
+      ],
+      "osm": {
+        "id": "node/5430877312",
+        "name": "Station Services hamadache",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.7414521,
+          36.1273622
+        ]
+      },
+      "tariki": [
+        {
+          "id": "761",
+          "route_id": "2353",
+          "name_fr": "Station de services Hamedache",
+          "name_ar": "محطة خدمات حمداش",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.741,
+            36.128
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 82
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Services hamadache",
+      "display_name_ar": "محطة خدمات حمداش"
+    },
+    {
+      "id": "osm-node-5431395621",
+      "coordinates": [
+        0.8311448,
+        36.1460254
+      ],
+      "osm": {
+        "id": "node/5431395621",
+        "name": "station service Benhatchi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.8311448,
+          36.1460254
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4393",
+          "route_id": "8986",
+          "name_fr": "Station de services BEN HATCHI",
+          "name_ar": "محطة بن حتشي",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.832,
+            36.146
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 77
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station service Benhatchi",
+      "display_name_ar": "محطة بن حتشي"
+    },
+    {
+      "id": "osm-node-5431405731",
+      "coordinates": [
+        0.8559418,
+        36.139854
+      ],
+      "osm": {
+        "id": "node/5431405731",
+        "name": "Station Service taibi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.8559418,
+          36.139854
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4398",
+          "route_id": "8996",
+          "name_fr": "Station de services TAIBI",
+          "name_ar": "محطة طايبي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.856,
+            36.14
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 17
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service taibi",
+      "display_name_ar": "محطة طايبي"
+    },
+    {
+      "id": "osm-node-5431424058",
+      "coordinates": [
+        0.8731019,
+        36.1322705
+      ],
+      "osm": {
+        "id": "node/5431424058",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.8731019,
+          36.1322705
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5437761315",
+      "coordinates": [
+        0.8435533,
+        36.1432175
+      ],
+      "osm": {
+        "id": "node/5437761315",
+        "name": "sation service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.8435533,
+          36.1432175
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4396",
+          "route_id": "8986",
+          "name_fr": "Station de services BEN HATCHI",
+          "name_ar": "محطة بن حتشي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.844,
+            36.144
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 96
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "sation service",
+      "display_name_ar": "محطة بن حتشي"
+    },
+    {
+      "id": "osm-node-5484413895",
+      "coordinates": [
+        0.8663457,
+        36.0948224
+      ],
+      "osm": {
+        "id": "node/5484413895",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.8663457,
+          36.0948224
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-570456073",
+          "offset_m": 49
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9900536572",
+      "coordinates": [
+        0.6959693,
+        35.7459456
+      ],
+      "osm": {
+        "id": "node/9900536572",
+        "name": "Station Derradji Lakhdar",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.6959693,
+          35.7459456
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Derradji Lakhdar",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9945239872",
+      "coordinates": [
+        0.9350236,
+        35.5739807
+      ],
+      "osm": {
+        "id": "node/9945239872",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9350236,
+          35.5739807
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4385",
+          "route_id": "8967",
+          "name_fr": "Station services  d'essence BAYOUD MOHAMED",
+          "name_ar": "محطة خدمات البنزين  بيوض محمد",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.935,
+            35.573
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 109
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station services  d'essence BAYOUD MOHAMED",
+      "display_name_ar": "محطة خدمات البنزين  بيوض محمد"
+    },
+    {
+      "id": "osm-node-9951030464",
+      "coordinates": [
+        0.9716231,
+        35.9863481
+      ],
+      "osm": {
+        "id": "node/9951030464",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9716231,
+          35.9863481
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9982148718",
+      "coordinates": [
+        0.4014339,
+        35.6065498
+      ],
+      "osm": {
+        "id": "node/9982148718",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "station d'essence",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.4014339,
+          35.6065498
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station d'essence",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1511463173",
+      "coordinates": [
+        0.36129049999999996,
+        35.559995349999994
+      ],
+      "osm": {
+        "id": "way/1511463173",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.36129049999999996,
+          35.559995349999994
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3251",
+          "route_id": "1822",
+          "name_fr": "Station de services LAMSARAT",
+          "name_ar": "محطة الخدمات بالمصارات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.361,
+            35.56
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 26
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services LAMSARAT",
+      "display_name_ar": "محطة الخدمات بالمصارات"
+    },
+    {
+      "id": "osm-way-294171671",
+      "coordinates": [
+        0.9912817,
+        35.99348005
+      ],
+      "osm": {
+        "id": "way/294171671",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9912817,
+          35.99348005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2838",
+          "route_id": "2281",
+          "name_fr": "Station de services frères krifare",
+          "name_ar": "محطة الوقود بدوار الحاج أحمد ( الإخوة كريفار )",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.991,
+            35.994
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 63
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services frères krifare",
+      "display_name_ar": "محطة الوقود بدوار الحاج أحمد ( الإخوة كريفار )"
+    },
+    {
+      "id": "osm-way-294223099",
+      "coordinates": [
+        0.5166331,
+        35.72113655
+      ],
+      "osm": {
+        "id": "way/294223099",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.5166331,
+          35.72113655
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5471",
+          "route_id": "10254",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة الوقود نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.517,
+            35.721
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 36
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-way-564039047",
+      "coordinates": [
+        0.7910942999999999,
+        36.13603745
+      ],
+      "osm": {
+        "id": "way/564039047",
+        "name": "Station Service BELARBI",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.7910942999999999,
+          36.13603745
+        ]
+      },
+      "tariki": [
+        {
+          "id": "752",
+          "route_id": "2353",
+          "name_fr": "Station de services a Elarbi Temdjet Commune Mediouna",
+          "name_ar": "محطة خدمات بالعربي تامجت بلدية مديونة",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.791,
+            36.136
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service BELARBI",
+      "display_name_ar": "محطة خدمات بالعربي تامجت بلدية مديونة"
+    },
+    {
+      "id": "osm-way-570456073",
+      "coordinates": [
+        0.8664556999999999,
+        36.09438675
+      ],
+      "osm": {
+        "id": "way/570456073",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.8664556999999999,
+          36.09438675
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5484413895",
+          "offset_m": 49
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-783743240",
+      "coordinates": [
+        0.95611,
+        35.826515900000004
+      ],
+      "osm": {
+        "id": "way/783743240",
+        "name": "نفطال أولاد يعيش",
+        "name_ar": "نفطال أولاد يعيش",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          0.95611,
+          35.826515900000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3757",
+          "route_id": "1163",
+          "name_fr": "Station de services ouled yaiche",
+          "name_ar": "محطة أولاد يعيش",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.956,
+            35.826
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 58
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "نفطال أولاد يعيش",
+      "display_name_ar": "نفطال أولاد يعيش"
+    },
+    {
+      "id": "osm-way-784936083",
+      "coordinates": [
+        0.78083825,
+        35.91042215
+      ],
+      "osm": {
+        "id": "way/784936083",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          0.78083825,
+          35.91042215
+        ]
+      },
+      "tariki": [
+        {
+          "id": "456",
+          "route_id": "1488",
+          "name_fr": "Station de services Abed Mohamed",
+          "name_ar": "محطة خدمات عابد محمد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.781,
+            35.91
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-798176199",
+      "coordinates": [
+        1.1083904,
+        35.878493
+      ],
+      "osm": {
+        "id": "way/798176199",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.1083904,
+          35.878493
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-798176200",
+      "coordinates": [
+        1.1070820000000001,
+        35.874680850000004
+      ],
+      "osm": {
+        "id": "way/798176200",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          1.1070820000000001,
+          35.874680850000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14157",
+          "route_id": "7868",
+          "name_fr": "STATION SERVICES NAFTAL",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.107,
+            35.874
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": 76
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "tariki-13823",
+      "coordinates": [
+        0.983,
+        35.981
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13823",
+          "route_id": "4251",
+          "name_fr": null,
+          "name_ar": "محطة التزود بالوقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.983,
+            35.981
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة التزود بالوقود",
+      "display_name_ar": "محطة التزود بالوقود"
+    },
+    {
+      "id": "tariki-13968",
+      "coordinates": [
+        0.97,
+        35.987
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13968",
+          "route_id": "2281",
+          "name_fr": "Station de services frères abed",
+          "name_ar": "محطة الوقود بدوار السلاطنة  (  الاخوة  عابد )",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.97,
+            35.987
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services frères abed",
+      "display_name_ar": "محطة الوقود بدوار السلاطنة  (  الاخوة  عابد )"
+    },
+    {
+      "id": "tariki-13981",
+      "coordinates": [
+        0.451,
+        35.737
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13981",
+          "route_id": "1377",
+          "name_fr": "EL  OUELDJA",
+          "name_ar": "الولجة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            0.451,
+            35.737
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "EL  OUELDJA",
+      "display_name_ar": "الولجة"
+    },
+    {
+      "id": "tariki-14104",
+      "coordinates": [
+        0.813,
+        36.085
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14104",
+          "route_id": "350",
+          "name_fr": "station Bekrantchir",
+          "name_ar": "محطة خدمات بكرنتشير",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            0.813,
+            36.085
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station Bekrantchir",
+      "display_name_ar": "محطة خدمات بكرنتشير"
+    },
+    {
+      "id": "tariki-2165",
+      "coordinates": [
+        0.36,
+        35.637
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2165",
+          "route_id": "1808",
+          "name_fr": "Station de services KHELOUF",
+          "name_ar": "محطة متعددة الخدمات خلوف",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.36,
+            35.637
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services KHELOUF",
+      "display_name_ar": "محطة متعددة الخدمات خلوف"
+    },
+    {
+      "id": "tariki-2927",
+      "coordinates": [
+        0.883,
+        36.137
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2927",
+          "route_id": "1993",
+          "name_fr": "Station de services h'sasna",
+          "name_ar": "محطة الوقود حساسنة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.883,
+            36.137
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services h'sasna",
+      "display_name_ar": "محطة الوقود حساسنة"
+    },
+    {
+      "id": "tariki-2953",
+      "coordinates": [
+        1.137,
+        35.776
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2953",
+          "route_id": "2205",
+          "name_fr": "Station de services Djillali et son partenaire",
+          "name_ar": "محطة الجيلالي وشركاؤه",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.137,
+            35.776
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Djillali et son partenaire",
+      "display_name_ar": "محطة الجيلالي وشركاؤه"
+    },
+    {
+      "id": "tariki-3263",
+      "coordinates": [
+        0.377,
+        35.625
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3263",
+          "route_id": "1808",
+          "name_fr": "Station de services IBN ROCHD",
+          "name_ar": "محطة الخدمات ( ابن رشد) بالسمار",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.377,
+            35.625
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services IBN ROCHD",
+      "display_name_ar": "محطة الخدمات ( ابن رشد) بالسمار"
+    },
+    {
+      "id": "tariki-3424",
+      "coordinates": [
+        0.703,
+        35.742
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3424",
+          "route_id": "1375",
+          "name_fr": "OULED ZIAN",
+          "name_ar": "أولاد زيان",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.703,
+            35.742
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "OULED ZIAN",
+      "display_name_ar": "أولاد زيان"
+    },
+    {
+      "id": "tariki-343",
+      "coordinates": [
+        0.405,
+        35.791
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "343",
+          "route_id": "1171",
+          "name_fr": "Station de services Nord vers Oran",
+          "name_ar": "محطة الخدمات شمال إتجاه وهران",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.405,
+            35.791
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Nord vers Oran",
+      "display_name_ar": "محطة الخدمات شمال إتجاه وهران"
+    },
+    {
+      "id": "tariki-344",
+      "coordinates": [
+        0.408,
+        35.787
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "344",
+          "route_id": "1171",
+          "name_fr": "Station de services sud vers Alger",
+          "name_ar": "محطة الخدمات جنوب إتجاه الجزائر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.408,
+            35.787
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services sud vers Alger",
+      "display_name_ar": "محطة الخدمات جنوب إتجاه الجزائر"
+    },
+    {
+      "id": "tariki-413",
+      "coordinates": [
+        0.658,
+        36.002
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "413",
+          "route_id": "1368",
+          "name_fr": "Station de services ELNAKHIL",
+          "name_ar": "محطة خدمات النخيل",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.658,
+            36.002
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ELNAKHIL",
+      "display_name_ar": "محطة خدمات النخيل"
+    },
+    {
+      "id": "tariki-7918",
+      "coordinates": [
+        0.709,
+        35.827
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7918",
+          "route_id": "11828",
+          "name_fr": "station d'essence azzawia",
+          "name_ar": "محطة الوقود الزاوية",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.709,
+            35.827
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station d'essence azzawia",
+      "display_name_ar": "محطة الوقود الزاوية"
+    },
+    {
+      "id": "tariki-7927",
+      "coordinates": [
+        0.844,
+        36.145
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7927",
+          "route_id": "8986",
+          "name_fr": "STATION AL ANDALOUSSI",
+          "name_ar": "محطة الاندلوسي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.844,
+            36.145
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION AL ANDALOUSSI",
+      "display_name_ar": "محطة الاندلوسي"
+    },
+    {
+      "id": "tariki-7942",
+      "coordinates": [
+        0.3525,
+        35.723
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7942",
+          "route_id": "1166",
+          "name_fr": "STATION D'ESSENCE YELLEL CENTRE",
+          "name_ar": "محطة وقود يلل مركز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.3525,
+            35.723
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION D'ESSENCE YELLEL CENTRE",
+      "display_name_ar": "محطة وقود يلل مركز"
+    },
+    {
+      "id": "tariki-7944",
+      "coordinates": [
+        0.751,
+        35.728
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7944",
+          "route_id": "1413",
+          "name_fr": "BELBAARI",
+          "name_ar": "بلبعري",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.751,
+            35.728
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "BELBAARI",
+      "display_name_ar": "بلبعري"
+    },
+    {
+      "id": "tariki-8006",
+      "coordinates": [
+        0.554,
+        35.743
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8006",
+          "route_id": "12971",
+          "name_fr": "Station de services MOKRAB BELAID",
+          "name_ar": "بلعيد مقراب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.554,
+            35.743
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services MOKRAB BELAID",
+      "display_name_ar": "بلعيد مقراب"
+    },
+    {
+      "id": "tariki-8008",
+      "coordinates": [
+        0.553,
+        35.742
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8008",
+          "route_id": "12971",
+          "name_fr": "Station de services FOUATIH MOHAMED",
+          "name_ar": "فواتيح محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.553,
+            35.742
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 48,
+          "wilaya_fr": "Relizane",
+          "wilaya_ar": "غليزان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services FOUATIH MOHAMED",
+      "display_name_ar": "فواتيح محمد"
+    }
+  ]
+}

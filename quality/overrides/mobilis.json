@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "dataset": "mobilis",
+  "reviewer": "geoalgeria-maintainers",
+  "reviewed_at": "2026-08-31",
+  "decisions": [
+    {
+      "file": "agences.json",
+      "record_id": "ag-25-009",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "66",
+        "lat": 34.125447565116126,
+        "lng": 3.46426436415428,
+        "commune_code": null,
+        "commune": null,
+        "geo_precision": "exact",
+        "geo_method": "mobilis"
+      },
+      "patch": {
+        "wilaya_code": "25",
+        "commune_code": "2506",
+        "commune": "El Khroub",
+        "lat": 36.26333,
+        "lng": 6.69361,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/mapagence?type_agence=Mobilis+Agency",
+          "checked_at": "2026-08-31"
+        },
+        {
+          "url": "https://univ-constantine3.dz/pdfs/formulaire%20%20de%20%20reservationvisiofinal-converti.pdf",
+          "checked_at": "2026-08-31"
+        },
+        {
+          "url": "https://whed.net/institutions/IAU-024027",
+          "checked_at": "2026-08-31"
+        }
+      ]
+    }
+  ]
+}

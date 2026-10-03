@@ -26,7 +26,8 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2, committedDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, committedDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
+import { resolveCommune } from "../../../scripts/lib/build-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -86,22 +87,21 @@ function loadCommunes() {
   if (!all.length) throw new Error("no commune centroids loaded — check packages/dataset/data");
   return { byWilaya, all };
 }
-// Nearest commune centroid (equirectangular squared distance) over the WHOLE
-// flagship commune set. The matched commune carries the CURRENT wilaya_code, so
-// a place the portal tags "01- Adrar" but that sits in Timimoun is rescoped to
-// wilaya 49, and one it tags "26- Médéa" sitting in Ksar El Boukhari to wilaya 67
-// — without a hardcoded split map, auto-tracking the flagship scheme as it moves
-// (2019 + Law 26-06). Source points are exact, so cross-border leakage is rare.
-// Mirrors the nearest-commune join used by sibling packages (djezzy, mosquees).
-function nearestCommune(lat, lng, communes) {
-  const cosLat = Math.cos(lat * DEG);
-  let best = null, bestD = Infinity;
-  for (const e of communes.all) {
-    const dx = (e.lng - lng) * cosLat, dy = e.lat - lat;
-    const d = dx * dx + dy * dy;
-    if (d < bestD) { bestD = d; best = e; }
-  }
-  return best;
+// The shared administrative-linkage rule, scripts/lib/build-utils.mjs
+// resolveCommune(): the commune whose OpenStreetMap outline contains the point wins
+// outright, searched over the whole country, with the wilaya taken from the commune
+// registry; only where no outline holds the point does distance decide, inside the
+// wilaya whose shipped polygon does. The matched commune
+// carries the CURRENT wilaya_code, so a place the portal tags "01- Adrar" but that
+// sits in Timimoun is rescoped to wilaya 49, and one it tags "26- Médéa" sitting in
+// Ksar El Boukhari to wilaya 67, without a hardcoded split map, auto-tracking the
+// flagship scheme as it moves (2019 + Law 26-06).
+//
+// It replaces an unrestricted nearest-centroid search over the whole flagship set,
+// which put one site (19-bcp-09, inside the wilaya 19 polygon) into wilaya 5 when
+// the 2026-09-29 batch moved 245 commune centres.
+function nearestCommune(lat, lng, communes, publishedWilayaCode = null) {
+  return resolveCommune(lat, lng, communes.all, publishedWilayaCode).commune;
 }
 
 // Deep-desert protected sites where nearest-commune lands the point in Tabelbala
@@ -116,7 +116,7 @@ const DESERT_FIX = { 1535: 1, 1365: 37, 1539: 37, 1538: 37 };
 const desertFixMatched = new Set(); // guard: every key must hit ≥1 record (see main)
 
 // --- build -----------------------------------------------------------------
-function build(curated, wilByCode, communes, stats) {
+function build(curated, wilByCode, communes, stats, published) {
   const rows = [];
   for (const r of curated) {
     const t = TYPES[r.layer];
@@ -126,7 +126,10 @@ function build(curated, wilByCode, communes, stats) {
     const legacyCode = parseInt(r.wilaya_code, 10);
     const fixW = DESERT_FIX[Number(r.nid_ar)];
     if (fixW !== undefined) desertFixMatched.add(Number(r.nid_ar));
-    const nc = nearestCommune(lat, lng, communes);
+    // The wilaya the record shipped in, keyed on the patrimoine node id exactly as
+    // carryOverIds keys ids. It is what the linkage keeps for a point no wilaya
+    // polygon contains (11 of these sites are outside the simplified outline).
+    const nc = nearestCommune(lat, lng, communes, published.get(`p:${r.nid_ar ?? r.nid_fr}`) ?? null);
     const code = fixW ?? (nc ? nc.wilaya_code : legacyCode); // current wilaya scheme (from the matched commune)
     const w = wilByCode.get(code);
     if (!w) { stats.unknown_wilaya++; continue; }
@@ -206,7 +209,11 @@ function main() {
   const communes = loadCommunes();
 
   const stats = { unknown_type: 0, unknown_wilaya: 0, no_coords: 0, dropped_dup: 0, rescoped: 0 };
-  let rows = build(curated, wilByCode, communes, stats);
+  const published = new Map();
+  for (const r of readCommitted(OUT_DIR, "culture.json") ?? []) {
+    if (r.refs?.patrimoine && r.wilaya_code) published.set(`p:${r.refs.patrimoine}`, r);
+  }
+  let rows = build(curated, wilByCode, communes, stats, published);
   // Every DESERT_FIX key must have hit a record; an unmatched key means the
   // patrimoine node id was renamed/retired upstream and the pin silently reverted.
   const unmatched = Object.keys(DESERT_FIX).filter((k) => !desertFixMatched.has(Number(k)));
@@ -219,7 +226,8 @@ function main() {
   // Carry ids over by the stable portal node id so the root commune fix shows up as
   // corrected wilaya/commune, not as a re-sequencing of every id in those wilayas.
   const v2 = rows.map(cfg.map);
-  carryOverIds(v2, readCommitted(OUT_DIR, "culture.json"), (r) => (r.refs?.patrimoine ? `p:${r.refs.patrimoine}` : null), "culture");
+  const retiredIds = readRetiredIds(OUT_DIR);
+  carryOverIds(v2, readCommitted(OUT_DIR, "culture.json"), (r) => (r.refs?.patrimoine ? `p:${r.refs.patrimoine}` : null), "culture", retiredIds);
   const { records, metadata } = writePackageV2({
     pkg: "culture",
     dir: OUT_DIR,
@@ -227,6 +235,7 @@ function main() {
     meta: cfg.meta,
     updated,
     retrieved,
+    retiredIds,
   });
   console.log(
     `Wrote ${records.length} cultural places → v2 (${metadata.wilayas_covered} wilayas); ` +

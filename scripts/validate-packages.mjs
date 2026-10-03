@@ -43,7 +43,21 @@ import {
 // Each package's own stats() lives here, beside its provenance config. The
 // validator re-runs it so the published stats block is checked against the
 // shipped records rather than trusted.
-import { MIGRATIONS } from "./lib/v2-transforms.mjs";
+import { MIGRATIONS, migrationErrors } from "./lib/v2-transforms.mjs";
+import {
+  canonicalCommuneCodes,
+  canonicalCommuneForCode,
+  canonicalCommuneForCurrentLabel,
+  canonicalCommunes,
+} from "./lib/commune-index.mjs";
+import { descriptorTermsErrors, licenceTermsErrors, publishedMetadataPaths } from "./lib/licence-terms.mjs";
+// The review gate over @geoalgeria/normalize's Rule table: a Rule cannot enter
+// without a reviewer and a corpus case, and a case cannot claim a Rule that does
+// not exist. The table and the corpus are read from the package as data.
+import { normalizeRuleErrors } from "./lib/normalize-rules.mjs";
+import { emDashErrors } from "./lib/no-em-dash.mjs";
+import { rules as normalizeRules } from "../packages/normalize/index.js";
+import { corpus as normalizeCorpus } from "../packages/normalize/fixtures/corpus.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const errors = [];
@@ -221,18 +235,10 @@ function tallyBoundaries(pkg, label, rows) {
 // failed the wrong package.
 const MISLINK_CEILING_PCT = 1.0;
 
-// Mislinks that already shipped, pinned to the exact count measured on 2026-07-20.
-// This is a ratchet, not an exemption: the number may not move in either direction
-// without editing this line, so a 38th mislink fails the build exactly like a first
-// one would in any other package. formation-professionnelle is over the ceiling on
-// real defects — 37 records whose coordinate sits in a wilaya that does not touch
-// the one they declare, up to 1,290 km away, all geo_method "takwin". Correcting
-// them is a data decision (which of the two fields is wrong?), not a validator one,
-// so the debt is recorded here and left visible rather than rounded away by picking
-// a ceiling that clears it.
-// The 5 relinked packages are pinned at 0: any non-adjacent mislink that reappears
+// Previously shipped mislinks are a ratchet, not an exemption: each relinked
+// package is now pinned at 0, so any non-adjacent mislink that reappears
 // fails the build hard (== check below), rather than warning under the 1% ceiling.
-const KNOWN_MISLINKS = { "formation-professionnelle": 37, culture: 0, ferroviaire: 0, emploi: 0, banques: 0, tourisme: 0 };
+const KNOWN_MISLINKS = { "formation-professionnelle": 0, culture: 0, ferroviaire: 0, emploi: 0, banques: 0, tourisme: 0 };
 
 function reportBoundaries(full) {
   const rows = [...GEO_TALLY].filter(([, t]) => t.checked > 0).sort((a, b) => b[1].mislinked.length - a[1].mislinked.length);
@@ -294,6 +300,146 @@ function reportBoundaries(full) {
     `  ${checked} geocoded records checked against 69 polygons — ${outside} outside their declared wilaya ` +
       `(${((100 * outside) / checked).toFixed(2)}%, warnings: the outlines are display-grade), ${mislinked} mislinked`,
   );
+}
+
+// --- commune-centroid coordinates track the flagship centres ------------------
+// A record with no point of its own borrows its commune's centre and says so in
+// `geo_method`. That borrowed value is a copy, so it goes stale silently the
+// moment the flagship corrects the centre: the 56 centres corrected on 2026-09-27
+// left 45 published records pointing at a repudiated value, sante's EPH El Harrach
+// 51.5 km away and inside another wilaya (research/_commune-centres/README.md).
+// Nothing caught it, because every one of those coordinates is a real Algerian
+// point inside the national outline and inside the right wilaya polygon.
+//
+// So the claim is checked against the flagship instead of against geography: a
+// record that says "this is my commune's centre" must carry the centre that
+// commune has NOW. The bound (package, geo_method) pairs are listed rather than
+// inferred, because `geo_method` is per-package vocabulary and three of its
+// commune-flavoured values are NOT a flagship centre at all:
+//
+//   telecom `operator_commune_point`      the operator's own per-commune point
+//   industrie-pharmaceutique              the mean of the wilaya's commune points,
+//   + enseignement-superieur `wilaya*`    not any one commune's centre
+//   formation-professionnelle `wilaya`    the takwin wilaya seat
+//
+// Anchors:
+//   code    the record names its commune by code, and that commune is the anchor.
+//   name    it names it in prose only (`commune`, no code), so the anchor is what
+//           that label resolves to inside the declared wilaya. A label that does
+//           not resolve is counted, not failed: the takwin source concatenates
+//           words ("برجالبحري"), and inventing a match is worse than no check.
+//   wilaya  no anchor per record (agriculture's `wilaya_centroid` rows carry
+//           commune: null by design, the value being the wilaya chief town's
+//           centre), but the coordinate must still be SOME current centre of the
+//           declared wilaya, which is what a repudiated one stops being.
+const CENTROID_ANCHORS = {
+  agriculture: { commune_centroid: "code", wilaya_centroid: "wilaya" },
+  "enseignement-superieur": { commune: "name" },
+  "formation-professionnelle": { commune: "name" },
+  "industrie-pharmaceutique": { commune_centroid: "code" },
+  mobilis: { commune_centroid: "code" },
+  ooredoo: { commune_centroid: "code" },
+  sante: { commune_centroid: "code" },
+};
+
+// 6 decimals is the repository's coordinate resolution (~0.1 m) and a few flagship
+// centres are stored at 7, so the comparison is made on the rounded value a
+// published record can actually carry, not with a distance tolerance, which would
+// let a slow drift through one metre at a time.
+//
+// Both roundings in use here are accepted, because they genuinely disagree on an
+// exact half at the 7th decimal and the difference is 1e-6 degrees, ~0.1 m:
+// Cheria's 7.7471025 is 7.747102 under toFixed(6) (every generator but one) and
+// 7.747103 under Math.round(n*1e6)/1e6 (formation-professionnelle). Failing nine
+// correct records over 0.1 m would teach the next reader to disable the check.
+const round6 = (n) => Number(n.toFixed(6));
+const round6Half = (n) => Math.round(n * 1e6) / 1e6;
+const pointKeys = (lat, lng) => [
+  `${round6(lat)},${round6(lng)}`,
+  `${round6Half(lat)},${round6Half(lng)}`,
+];
+const CENTRES_BY_WILAYA = new Map();
+for (const c of canonicalCommunes) {
+  if (!Number.isFinite(c.latitude) || !Number.isFinite(c.longitude)) continue;
+  const w = String(c.wilaya_code).padStart(2, "0");
+  if (!CENTRES_BY_WILAYA.has(w)) CENTRES_BY_WILAYA.set(w, new Set());
+  for (const k of pointKeys(c.latitude, c.longitude)) CENTRES_BY_WILAYA.get(w).add(k);
+}
+
+const CENTROID_TALLY = new Map();
+
+function tallyCentroidAnchors(pkg, label, rows) {
+  const anchors = CENTROID_ANCHORS[pkg];
+  if (!anchors) return;
+  const t = CENTROID_TALLY.get(pkg) || { checked: 0, unresolved: 0, stale: [] };
+  for (const r of rows) {
+    const anchor = anchors[r.geo_method];
+    if (!anchor) continue;
+    if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue;
+    const point = `${round6(r.lat)},${round6(r.lng)}`;
+
+    if (anchor === "wilaya") {
+      const centres = CENTRES_BY_WILAYA.get(r.wilaya_code);
+      if (!centres) {
+        t.unresolved++;
+        continue;
+      }
+      t.checked++;
+      if (centres.has(point)) continue;
+      t.stale.push({ label, id: r.id, method: r.geo_method, want: `any current centre of w${r.wilaya_code}`, got: point });
+      continue;
+    }
+
+    const commune =
+      anchor === "code"
+        ? r.commune_code == null
+          ? null
+          : canonicalCommuneForCode(r.commune_code)
+        : canonicalCommuneForCurrentLabel(r.wilaya_code, r.commune, r.commune_ar ?? r.commune);
+    if (!commune) {
+      t.unresolved++;
+      continue;
+    }
+    t.checked++;
+    const want = pointKeys(commune.latitude, commune.longitude);
+    if (want.includes(point)) continue;
+    t.stale.push({ label, id: r.id, method: r.geo_method, want: `${commune.name_fr} ${want[0]}`, got: point });
+  }
+  CENTROID_TALLY.set(pkg, t);
+}
+
+function reportCentroidAnchors(full) {
+  let checked = 0;
+  let stale = 0;
+  for (const [pkg, t] of [...CENTROID_TALLY].sort()) {
+    checked += t.checked;
+    stale += t.stale.length;
+    const line =
+      `${pkg}: ${t.checked} centroid-declared record(s) checked` +
+      (t.unresolved ? `, ${t.unresolved} with no resolvable commune anchor (skipped)` : "");
+    if (!t.stale.length) {
+      console.log(`  OK: ${line}`);
+      continue;
+    }
+    fail(
+      `${line}: ${t.stale.length} no longer sit on the commune centre they claim. ` +
+        `Re-run the package generator (or node scripts/sync-commune-centroid-dependents.mjs --write) ` +
+        `so the borrowed coordinate follows the flagship.`,
+    );
+    for (const s of t.stale.slice(0, 5))
+      console.log(`      ${s.label} id=${s.id} geo_method=${s.method} has ${s.got}, expected ${s.want}`);
+    if (t.stale.length > 5) console.log(`      … ${t.stale.length - 5} more`);
+  }
+  // A bound package that was never visited means the pair was renamed out from
+  // under the table, and the check went quiet rather than failing.
+  if (full)
+    for (const pkg of Object.keys(CENTROID_ANCHORS))
+      if (!CENTROID_TALLY.has(pkg))
+        fail(
+          `CENTROID_ANCHORS binds "${pkg}", but no record of it was checked: the package or its ` +
+            `geo_method vocabulary changed. Update the table deliberately; do not leave a silent check.`,
+        );
+  console.log(`  ${checked} borrowed commune-centre coordinate(s) checked against the flagship, ${stale} stale`);
 }
 
 // data/<dataset>.json + its metadata key, csv mirror, optional geojson mirror.
@@ -627,6 +773,13 @@ const PACKAGES = {
       geojson: null,
       required: ["id", "name", "operator", "wilaya_code"],
     },
+    {
+      json: "stations.json",
+      metaKey: "stations",
+      csv: "csv/stations.csv",
+      geojson: "geojson/stations.geojson",
+      required: ["id", "wilaya_code", "lat", "lng"],
+    },
   ],
 };
 
@@ -689,6 +842,57 @@ function validateMergedIds(pkgs) {
   }
 }
 
+// One external identifier, one record. A Wikidata item or an OpenStreetMap
+// element is a single real place, so two records in the same package citing the
+// same one are the same place published twice: a wrong match, or a merge that was
+// never finished. Neither fails the schema, and the id checks above only look at
+// the package's own ids.
+//
+// Asserted per package rather than everywhere at once, because `tourisme` ships
+// 120 items cited twice across its five files (an attraction that is also a
+// historic site, and Wikidata items that OpenStreetMap tags on two elements).
+// Whether those are duplicates or two legitimate facets of one place is its own
+// question, on its own data; a package not listed here is reported and not failed.
+const REF_UNIQUE_PACKAGES = new Set(["sante"]);
+function validateRefUniqueness(pkgs) {
+  for (const pkg of pkgs) {
+    const dataDir = join(ROOT, "packages", pkg, "data");
+    if (!existsSync(dataDir)) continue;
+    const owner = new Map(); // "wikidata:Q1" -> "file.json#id"
+    const clashes = [];
+    let cited = 0;
+    for (const file of readdirSync(dataDir)) {
+      if (!file.endsWith(".json") || file === "metadata.json" || file === "retired-ids.json") continue;
+      let arr;
+      try {
+        arr = readJson(join(dataDir, file));
+      } catch {
+        continue; // the dataset validator reports malformed JSON with context
+      }
+      if (!Array.isArray(arr)) continue;
+      for (const r of arr)
+        for (const key of ["wikidata", "osm"]) {
+          const value = r?.refs?.[key];
+          if (typeof value !== "string" || !value) continue;
+          cited++;
+          const ref = `${key}:${value}`;
+          const where = `${file}#${r.id}`;
+          if (owner.has(ref)) clashes.push(`${ref} on ${owner.get(ref)} and ${where}`);
+          else owner.set(ref, where);
+        }
+    }
+    if (clashes.length) {
+      const detail =
+        `${pkg}: ${clashes.length} external id(s) cited by more than one record: ` +
+        clashes.slice(0, 5).join("; ");
+      if (REF_UNIQUE_PACKAGES.has(pkg)) fail(detail);
+      else console.log(`  NOTE: ${detail}`);
+    } else if (cited) {
+      console.log(`  OK: ${pkg}: ${cited} external ref(s), none cited twice`);
+    }
+  }
+}
+
 // Count CSV data records (excluding the header), honouring RFC-4180 quoted
 // fields: newlines inside double-quoted values do not start a new record, and
 // blank lines (including trailing ones) are ignored. A naive split("\n") would
@@ -727,6 +931,43 @@ function validateDataset(pkg, spec) {
   }
   if (!Array.isArray(arr) || arr.length === 0) {
     return fail(`${label}: expected a non-empty array`);
+  }
+
+  // Every populated commune_code is a foreign key into the flagship commune
+  // table. Format-only validation allowed thousands of stale-but-well-formed
+  // values to survive an ONS crosswalk repair, breaking code-keyed joins while
+  // every individual package still passed.
+  const orphaned = arr.filter(
+    (record) => record?.commune_code != null && !canonicalCommuneCodes.has(record.commune_code),
+  );
+  if (orphaned.length) {
+    const sample = orphaned
+      .slice(0, 5)
+      .map((record) => `${record.id}:${JSON.stringify(record.commune_code)}`)
+      .join(", ");
+    fail(
+      `${label}: ${orphaned.length} commune_code foreign key(s) are absent from the canonical commune set` +
+        (sample ? ` (sample ${sample})` : ""),
+    );
+  }
+
+  const mismatchedCommuneWilayas = arr.filter((record) => {
+    if (record?.commune_code == null) return false;
+    const commune = canonicalCommuneForCode(record.commune_code);
+    return commune && String(commune.wilaya_code).padStart(2, "0") !== record.wilaya_code;
+  });
+  if (mismatchedCommuneWilayas.length) {
+    const sample = mismatchedCommuneWilayas
+      .slice(0, 5)
+      .map((record) => {
+        const current = canonicalCommuneForCode(record.commune_code);
+        return `${record.id}:${record.wilaya_code}->${String(current.wilaya_code).padStart(2, "0")}`;
+      })
+      .join(", ");
+    fail(
+      `${label}: ${mismatchedCommuneWilayas.length} commune_code/wilaya_code relationship(s) disagree with the canonical commune table` +
+        (sample ? ` (sample ${sample})` : ""),
+    );
   }
 
   // count vs metadata
@@ -779,6 +1020,7 @@ function validateDataset(pkg, spec) {
     });
     for (const m of v2errs) fail(`${label} [v2]: ${m}`);
     tallyBoundaries(pkg, label, arr);
+    tallyCentroidAnchors(pkg, label, arr);
     const metaRes = validateV2Metadata(meta);
     for (const m of metaRes.errors) fail(`${pkg}/metadata.json [v2]: ${m}`);
     const warnCount = v2warn.length + metaRes.warnings.length;
@@ -1067,6 +1309,74 @@ function validatePackageFiles(pkgs) {
   }
 }
 
+function validateRetiredIds(pkgs) {
+  for (const pkg of pkgs) {
+    const dataDir = join(ROOT, "packages", pkg, "data");
+    const ledgerPath = join(dataDir, "retired-ids.json");
+    if (!existsSync(ledgerPath)) continue;
+    let document;
+    try {
+      document = readJson(ledgerPath);
+    } catch (error) {
+      fail(`${pkg}/retired-ids.json: cannot read — ${error.message}`);
+      continue;
+    }
+    const ids = document?.ids;
+    if (!Array.isArray(ids) || ids.some((id) => typeof id !== "string" || !id)) {
+      fail(`${pkg}/retired-ids.json: ids must be an array of non-empty strings`);
+      continue;
+    }
+    if (new Set(ids).size !== ids.length) {
+      fail(`${pkg}/retired-ids.json: duplicate id(s)`);
+    }
+    if (JSON.stringify(ids) !== JSON.stringify([...ids].sort())) {
+      fail(`${pkg}/retired-ids.json: ids must be sorted`);
+    }
+
+    const live = new Set();
+    for (const file of readdirSync(dataDir)) {
+      if (!file.endsWith(".json") || file === "metadata.json" || file === "retired-ids.json") continue;
+      let value;
+      try {
+        value = readJson(join(dataDir, file));
+      } catch {
+        continue; // the dataset validator reports malformed JSON with context
+      }
+      if (Array.isArray(value)) {
+        for (const record of value) if (record?.id != null) live.add(String(record.id));
+      }
+    }
+    const reused = ids.filter((id) => live.has(id));
+    if (reused.length) {
+      fail(
+        `${pkg}/retired-ids.json: retired id(s) are live again: ${reused.slice(0, 5).join(", ")}`,
+      );
+    }
+
+    // `migrations` says where a retired id's data went, for an id whose record
+    // was folded into another one rather than removed. It is a public forwarding
+    // table, so a consumer must be able to follow it: a key has to be an id this
+    // ledger actually reserves, and the target has to be a record that still
+    // ships and is not itself retired, or the forward is a dead end.
+    const migrations = document.migrations;
+    if (migrations != null) {
+      const errors = migrationErrors(migrations, new Set(ids));
+      // the shape is shared with the generator; whether the target still ships
+      // is only knowable here, against the package's live records
+      if (!errors.length && typeof migrations === "object")
+        for (const [id, entry] of Object.entries(migrations))
+          if (!live.has(entry.merged_into))
+            errors.push(`migrations[${JSON.stringify(id)}].merged_into ${entry.merged_into} is not a record this package ships`);
+      for (const error of errors) fail(`${pkg}/retired-ids.json: ${error}`);
+      if (!errors.length)
+        console.log(`  OK: ${pkg}: ${Object.keys(migrations).length} retired id(s) forward to a live record`);
+    }
+    if (!reused.length) {
+      console.log(`  OK: ${pkg} — ${ids.length} retired ids remain reserved`);
+    }
+  }
+}
+
 // types/index.d.ts ↔ shipped JSON.
 //
 // Every data package publishes `types/` in files[], so its .d.ts IS the public
@@ -1100,7 +1410,7 @@ const TYPED = {
   agriculture: { "agriculture.json": "AgricultureInstitution" },
   aviation: { "airports.json": "Airport", "routes.json": "Route" },
   banques: { "banks.json": "Institution", "institutions.json": "Institution", "branches.json": "Branch" },
-  buses: { "lines.json": "BusLine" },
+  buses: { "lines.json": "BusLine", "stations.json": "BusStation" },
   cliniques: { "cliniques.json": "Clinique" },
   culture: { "culture.json": "CulturalSite" },
   djezzy: { "boutiques.json": "Boutique" },
@@ -1278,6 +1588,9 @@ function validateTypes(pkgs) {
       }
     };
 
+    // A shared interface describes the union of its entity files. Optional
+    // review fields may occur in one operator's records but not the others.
+    const byInterface = new Map();
     for (const [file, iname] of Object.entries(files)) {
       let rows;
       try {
@@ -1287,8 +1600,12 @@ function validateTypes(pkgs) {
         fail(`${pkg}/${file}: cannot read for the types check — ${e.message}`);
         continue;
       }
-      check(file, iname, rows);
+      const group = byInterface.get(iname) ?? { files: [], rows: [] };
+      group.files.push(file);
+      group.rows.push(...rows);
+      byInterface.set(iname, group);
     }
+    for (const [iname, group] of byInterface) check(group.files.join(" + "), iname, group.rows);
     try {
       check("metadata.json", "Metadata", [readJson(join(dataDir, "metadata.json"))]);
     } catch (e) {
@@ -1298,6 +1615,125 @@ function validateTypes(pkgs) {
     if (!problems)
       console.log(`  OK: ${pkg} types match the shipped data (${Object.keys(files).length + 1} files)`);
   }
+}
+
+// The manifest `license` field, the LICENSE file and the data terms in
+// dataset-metadata.json are three statements of the same fact, and until ticket
+// #120 nothing compared them: every manifest said "MIT" while most packages
+// redistribute data that is not MIT. The class table and the rule live in
+// scripts/lib/licence-terms.mjs; a new licence needs an entry there.
+function validateLicenceTerms(pkgs) {
+  for (const pkg of pkgs) {
+    const dir = join(ROOT, "packages", pkg);
+    const manifestPath = join(dir, "package.json");
+    const licencePath = join(dir, "LICENSE");
+    // A mixed MIT/ODbL package carries its per-part attribution in NOTICE, which
+    // the licence rule treats as part of the terms; absent for every other class.
+    const noticePath = join(dir, "NOTICE");
+    if (!existsSync(manifestPath)) continue;
+    if (!existsSync(licencePath)) {
+      fail(`${pkg}: has no LICENSE file, so its data terms are unstated`);
+      continue;
+    }
+    let manifest;
+    try {
+      manifest = readJson(manifestPath);
+    } catch (e) {
+      fail(`${pkg}/package.json: cannot read for the licence check, ${e.message}`);
+      continue;
+    }
+    const metadataPath = join(dir, "dataset-metadata.json");
+    let metadata = null;
+    if (existsSync(metadataPath)) {
+      try {
+        metadata = readJson(metadataPath);
+      } catch (e) {
+        fail(`${pkg}/dataset-metadata.json: cannot read for the licence check, ${e.message}`);
+        continue;
+      }
+    }
+    const licenceText = readFileSync(licencePath, "utf-8");
+    const problems = licenceTermsErrors({
+      name: pkg,
+      manifest,
+      metadata,
+      licenceText,
+      noticeText: existsSync(noticePath) ? readFileSync(noticePath, "utf-8") : null,
+      members: Object.keys(manifest.dependencies ?? {}).filter((d) => d.startsWith("@geoalgeria/")),
+    });
+
+    // The descriptors a package publishes under data/ carry a `license` of their own,
+    // and nothing read them against the package class: geoalgeria moved to
+    // SEE LICENSE IN LICENSE and data/geojson/communes.metadata.json kept the SPDX
+    // expression the manifest used before the move.
+    const descriptors = [];
+    for (const rel of publishedMetadataPaths(dir)) {
+      try {
+        descriptors.push({ path: rel, json: readJson(join(dir, rel)) });
+      } catch (e) {
+        fail(`${pkg}/${rel}: cannot read for the licence check, ${e.message}`);
+      }
+    }
+    problems.push(...descriptorTermsErrors({ name: pkg, manifest, licenceText, descriptors }));
+
+    for (const problem of problems) fail(problem);
+    if (!problems.length)
+      console.log(
+        `  OK: ${pkg} declares ${JSON.stringify(manifest.license)}, its LICENSE says so, and its ${descriptors.length} data descriptor(s) state the same terms`,
+      );
+  }
+}
+
+// No em dash (U+2014) in the metadata GeoAlgeria publishes. Every separator that
+// used to be one lives in a generator (scripts/lib/v2-transforms.mjs source names,
+// @geoalgeria/schema's citation join, each coverage note), so a single hand-fixed
+// sweep would come back on the next rebuild. The rule and the message live in
+// scripts/lib/no-em-dash.mjs; record values are out of scope on purpose.
+function validateNoEmDash(pkgs) {
+  const files = [];
+  for (const pkg of pkgs) {
+    const dir = join(ROOT, "packages", pkg);
+    for (const rel of ["dataset-metadata.json", join("data", "metadata.json")]) {
+      const path = join(dir, rel);
+      if (!existsSync(path)) continue;
+      try {
+        files.push({ label: `${pkg}/${rel}`, json: readJson(path) });
+      } catch (e) {
+        fail(`${pkg}/${rel}: cannot read for the em-dash check, ${e.message}`);
+      }
+    }
+    // Every published *.metadata.json, not only the GeoJSON sidecars: the wilaya-capital
+    // sidecar of #228 is the same kind of hand-written published prose and was not walked.
+    for (const sub of [["data"], ["data", "geojson"]]) {
+      const subDir = join(dir, ...sub);
+      if (!existsSync(subDir)) continue;
+      for (const name of readdirSync(subDir).filter((f) => f.endsWith(".metadata.json")).sort()) {
+        const label = `${pkg}/${[...sub, name].join("/")}`;
+        try {
+          files.push({ label, json: readJson(join(subDir, name)) });
+        } catch (e) {
+          fail(`${label}: cannot read for the em-dash check, ${e.message}`);
+        }
+      }
+    }
+  }
+  const problems = emDashErrors(files);
+  for (const problem of problems) fail(problem);
+  if (!problems.length) console.log(`  OK: ${files.length} metadata file(s) carry no em dash`);
+}
+
+// @geoalgeria/normalize publishes the orthographic equivalences GeoAlgeria asserts
+// about Algerian names as a reviewed table, so that someone who reads the language
+// and not the code can open a pull request against one of them. That only holds if
+// review is a rule rather than a habit: a Rule needs a reviewer and a corpus case
+// proving it, a case cannot claim a Rule that does not exist, an id names one Rule,
+// and the table order is the one that was reviewed. The rule itself lives in
+// scripts/lib/normalize-rules.mjs, with the committed order it checks against.
+function validateNormalizeRules() {
+  const problems = normalizeRuleErrors({ rules: normalizeRules, corpus: normalizeCorpus });
+  for (const problem of problems) fail(problem);
+  if (!problems.length)
+    console.log(`  OK: ${normalizeRules.length} Rules, each reviewed and proved by one of ${normalizeCorpus.length} corpus cases`);
 }
 
 // livraison has three datasets of different shapes: only `stopdesks` is geocoded and
@@ -1460,8 +1896,17 @@ for (const pkg of targets) {
 console.log(`\n[geo: every point inside its declared wilaya]`);
 reportBoundaries(!only);
 
+console.log(`\n[commune-centroid coordinates track the flagship commune centres]`);
+reportCentroidAnchors(!only);
+
 console.log(`\n[cross-file id uniqueness (merged export surfaces)]`);
 validateMergedIds(only ? [only] : Object.keys(MERGED_ID_NAMESPACES));
+
+console.log(`\n[one external identifier, one record]`);
+validateRefUniqueness(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
+
+console.log(`\n[retired ids never become live again]`);
+validateRetiredIds(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 console.log(`\n[package files[] ↔ derived data]`);
 validatePackageFiles(
@@ -1470,6 +1915,17 @@ validatePackageFiles(
 
 console.log(`\n[types/index.d.ts ↔ shipped data]`);
 validateTypes(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
+
+console.log(`\n[licence terms: manifest ↔ LICENSE ↔ metadata]`);
+validateLicenceTerms(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
+
+console.log(`\n[no em dash in published metadata]`);
+validateNoEmDash(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
+
+// Not gated on `only`: the Rule table is one table for the whole repository, like
+// the licence check above, and it is cheap.
+console.log(`\n[normalize: every Rule reviewed and proved]`);
+validateNormalizeRules();
 
 // the mirror is poste-specific — only run it when validating poste (or all)
 if (!only || only === "poste") {

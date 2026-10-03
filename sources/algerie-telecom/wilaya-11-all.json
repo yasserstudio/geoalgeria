@@ -1,0 +1,68 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "CENTRE VILLE TAMANRASSET",
+        "code_wilaya": "11",
+        "commune": "TAMANRASSET",
+        "date": "2024-10-30 15:09:40",
+        "id": "442",
+        "latitude": "22,78888333",
+        "longitude": "5,524833333\r",
+        "type": "Agence Commerciale",
+        "wilaya": "TAMANRASSET"
+      },
+      {
+        "adresse": "CENTRE VILLE ABALESSA",
+        "code_wilaya": "11",
+        "commune": "ABALESSA",
+        "date": "2024-10-30 15:09:40",
+        "id": "443",
+        "latitude": "22,88968333",
+        "longitude": "4,847163889\r",
+        "type": "Point de présence",
+        "wilaya": "TAMANRASSET"
+      },
+      {
+        "adresse": "CENTRE VILLE IN AMGUEL",
+        "code_wilaya": "11",
+        "commune": "AIN AMGUEL",
+        "date": "2024-10-30 15:09:40",
+        "id": "444",
+        "latitude": "23,69124722",
+        "longitude": "5,150891667\r",
+        "type": "Point de présence",
+        "wilaya": "TAMANRASSET"
+      },
+      {
+        "adresse": "CENTRE VILLE TAZROUK",
+        "code_wilaya": "11",
+        "commune": "TAZROUK/ IDELESS",
+        "date": "2024-10-30 15:09:40",
+        "id": "445",
+        "latitude": "23,2408252",
+        "longitude": "6.154799999\r",
+        "type": "Point de présence",
+        "wilaya": "TAMANRASSET"
+      },
+      {
+        "adresse": "HAIE TADAMOUNE IDELESS",
+        "code_wilaya": "11",
+        "commune": "NON OPERATIONNEL ",
+        "date": "2024-10-30 15:09:40",
+        "id": "446",
+        "latitude": "23,820425",
+        "longitude": "5,935394444\r",
+        "type": "Point de présence",
+        "wilaya": "TAMANRASSET"
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    TAMANRASSET</b> ",
+    "resultat": "ok",
+    "wilaya": "TAMANRASSET"
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 11
+}

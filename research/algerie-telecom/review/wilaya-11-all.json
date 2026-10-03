@@ -1,0 +1,131 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 11,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "b1465335a67a947ace6cf9fb2ec427c94b24ea7b133be7007ec9aef2f189c0ab",
+  "count": 5,
+  "flagged": 1,
+  "candidates": [
+    {
+      "candidate_id": "b1465335a67a947ace6cf9fb2ec427c94b24ea7b133be7007ec9aef2f189c0ab:0",
+      "source_id": "442",
+      "raw": {
+        "adresse": "CENTRE VILLE TAMANRASSET",
+        "code_wilaya": "11",
+        "commune": "TAMANRASSET",
+        "date": "2024-10-30 15:09:40",
+        "id": "442",
+        "latitude": "22,78888333",
+        "longitude": "5,524833333\r",
+        "type": "Agence Commerciale",
+        "wilaya": "TAMANRASSET"
+      },
+      "lat": 22.78888333,
+      "lng": 5.524833333,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "11"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "b1465335a67a947ace6cf9fb2ec427c94b24ea7b133be7007ec9aef2f189c0ab:1",
+      "source_id": "443",
+      "raw": {
+        "adresse": "CENTRE VILLE ABALESSA",
+        "code_wilaya": "11",
+        "commune": "ABALESSA",
+        "date": "2024-10-30 15:09:40",
+        "id": "443",
+        "latitude": "22,88968333",
+        "longitude": "4,847163889\r",
+        "type": "Point de présence",
+        "wilaya": "TAMANRASSET"
+      },
+      "lat": 22.88968333,
+      "lng": 4.847163889,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "11"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "b1465335a67a947ace6cf9fb2ec427c94b24ea7b133be7007ec9aef2f189c0ab:2",
+      "source_id": "444",
+      "raw": {
+        "adresse": "CENTRE VILLE IN AMGUEL",
+        "code_wilaya": "11",
+        "commune": "AIN AMGUEL",
+        "date": "2024-10-30 15:09:40",
+        "id": "444",
+        "latitude": "23,69124722",
+        "longitude": "5,150891667\r",
+        "type": "Point de présence",
+        "wilaya": "TAMANRASSET"
+      },
+      "lat": 23.69124722,
+      "lng": 5.150891667,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "11"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "b1465335a67a947ace6cf9fb2ec427c94b24ea7b133be7007ec9aef2f189c0ab:3",
+      "source_id": "445",
+      "raw": {
+        "adresse": "CENTRE VILLE TAZROUK",
+        "code_wilaya": "11",
+        "commune": "TAZROUK/ IDELESS",
+        "date": "2024-10-30 15:09:40",
+        "id": "445",
+        "latitude": "23,2408252",
+        "longitude": "6.154799999\r",
+        "type": "Point de présence",
+        "wilaya": "TAMANRASSET"
+      },
+      "lat": 23.2408252,
+      "lng": 6.154799999,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "11"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "b1465335a67a947ace6cf9fb2ec427c94b24ea7b133be7007ec9aef2f189c0ab:4",
+      "source_id": "446",
+      "raw": {
+        "adresse": "HAIE TADAMOUNE IDELESS",
+        "code_wilaya": "11",
+        "commune": "NON OPERATIONNEL ",
+        "date": "2024-10-30 15:09:40",
+        "id": "446",
+        "latitude": "23,820425",
+        "longitude": "5,935394444\r",
+        "type": "Point de présence",
+        "wilaya": "TAMANRASSET"
+      },
+      "lat": 23.820425,
+      "lng": 5.935394444,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "11"
+      ],
+      "reasons": [
+        "non_operational"
+      ]
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

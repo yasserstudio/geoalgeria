@@ -1,0 +1,954 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-08",
+    "wilaya_code": 8,
+    "name": "Béchar",
+    "name_ar": "بشار",
+    "center": [
+      -1.7035,
+      31.3855
+    ],
+    "bounds": [
+      -3.791,
+      30.356,
+      0.384,
+      32.415
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 24,
+    "osm_records": 21,
+    "tariki_records": 16,
+    "cross_source": 13,
+    "multiple_tariki": 0,
+    "osm_only": 8,
+    "tariki_only": 3,
+    "nearby_osm_pairs": 0,
+    "conflicts": 3
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-12025",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8061",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9204",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-2672390988",
+      "coordinates": [
+        -2.247878,
+        31.5967792
+      ],
+      "osm": {
+        "id": "node/2672390988",
+        "name": "Station Benmdjidi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.247878,
+          31.5967792
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9315",
+          "route_id": "13144",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -2.2479,
+            31.5967
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Benmdjidi",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-2672420344",
+      "coordinates": [
+        -2.2638954,
+        31.5887388
+      ],
+      "osm": {
+        "id": "node/2672420344",
+        "name": "محطة مبخوتي",
+        "name_ar": "محطة مبخوتي",
+        "name_fr": "Station mebkhouti",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -2.2638954,
+          31.5887388
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9563",
+          "route_id": "14367",
+          "name_fr": "Station de services Mabkhouti",
+          "name_ar": "محطة الخدمات مبخوتي",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            -2.2639,
+            31.5887
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station mebkhouti",
+      "display_name_ar": "محطة مبخوتي"
+    },
+    {
+      "id": "osm-node-2677014718",
+      "coordinates": [
+        -2.2145475,
+        31.6196934
+      ],
+      "osm": {
+        "id": "node/2677014718",
+        "name": "Naftal",
+        "name_ar": "نفطال",
+        "name_fr": "NAFTAL",
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          -2.2145475,
+          31.6196934
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12525",
+          "route_id": "11798",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.2145,
+            31.6196
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "NAFTAL",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-2783071448",
+      "coordinates": [
+        -2.2035731,
+        31.6203619
+      ],
+      "osm": {
+        "id": "node/2783071448",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.2035731,
+          31.6203619
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12527",
+          "route_id": "11798",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.2036,
+            31.6203
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-2786647085",
+      "coordinates": [
+        -2.2469684,
+        31.5457128
+      ],
+      "osm": {
+        "id": "node/2786647085",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.2469684,
+          31.5457128
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9218",
+          "route_id": "14072",
+          "name_fr": "Station de services BECHAR EL-DJADID",
+          "name_ar": "محطة الخدمات بشار الجديد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.247,
+            31.5457
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات بشار الجديد"
+    },
+    {
+      "id": "osm-node-3251504631",
+      "coordinates": [
+        -1.2543366,
+        32.0529087
+      ],
+      "osm": {
+        "id": "node/3251504631",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          -1.2543366,
+          32.0529087
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3277393162",
+      "coordinates": [
+        -2.2021317,
+        31.5843341
+      ],
+      "osm": {
+        "id": "node/3277393162",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -2.2021317,
+          31.5843341
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9567",
+          "route_id": "14370",
+          "name_fr": "Station de services Ain Gharassa",
+          "name_ar": "محطة عين غراسة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.2031,
+            31.5842
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 93
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة عين غراسة"
+    },
+    {
+      "id": "osm-node-3947284580",
+      "coordinates": [
+        -2.0376463,
+        30.9206039
+      ],
+      "osm": {
+        "id": "node/3947284580",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.0376463,
+          30.9206039
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7304",
+          "route_id": "12145",
+          "name_fr": "station naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.038,
+            30.921
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-5830443754",
+      "coordinates": [
+        -2.2442955,
+        31.5804197
+      ],
+      "osm": {
+        "id": "node/5830443754",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.2442955,
+          31.5804197
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5830644253",
+      "coordinates": [
+        -2.2213346,
+        31.6338337
+      ],
+      "osm": {
+        "id": "node/5830644253",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.2213346,
+          31.6338337
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5830685060",
+      "coordinates": [
+        -2.2256279,
+        31.586205
+      ],
+      "osm": {
+        "id": "node/5830685060",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.2256279,
+          31.586205
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12528",
+          "route_id": "11798",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.2257,
+            31.5862
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-6875989894",
+      "coordinates": [
+        -2.1541595,
+        31.675398
+      ],
+      "osm": {
+        "id": "node/6875989894",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.1541595,
+          31.675398
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9730850610",
+      "coordinates": [
+        -1.5275799,
+        32.0155485
+      ],
+      "osm": {
+        "id": "node/9730850610",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.5275799,
+          32.0155485
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1059044946",
+      "coordinates": [
+        -1.1797521,
+        32.0541773
+      ],
+      "osm": {
+        "id": "way/1059044946",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1797521,
+          32.0541773
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-257157381",
+      "coordinates": [
+        -2.7140813,
+        31.0233818
+      ],
+      "osm": {
+        "id": "way/257157381",
+        "name": "محطة نفطال",
+        "name_ar": "محطة نفطال",
+        "name_fr": "Station NAFTAL",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -2.7140813,
+          31.0233818
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9166",
+          "route_id": "9258",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.714,
+            31.023
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 43
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station NAFTAL",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-way-263387716",
+      "coordinates": [
+        -2.31746645,
+        31.40746625
+      ],
+      "osm": {
+        "id": "way/263387716",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -2.31746645,
+          31.40746625
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9501",
+          "route_id": "12218",
+          "name_fr": "Station de services Gherassa",
+          "name_ar": "محطة الخدمات غراسة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            -2.3175,
+            31.4075
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-272971079",
+      "coordinates": [
+        -2.2243231999999997,
+        31.62101595
+      ],
+      "osm": {
+        "id": "way/272971079",
+        "name": "NAFTAL District GPL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.2243231999999997,
+          31.62101595
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "NAFTAL District GPL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-274024447",
+      "coordinates": [
+        -2.2517621,
+        31.652232650000002
+      ],
+      "osm": {
+        "id": "way/274024447",
+        "name": "NAFTAL AVM",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          -2.2517621,
+          31.652232650000002
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "NAFTAL AVM",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-274034284",
+      "coordinates": [
+        -2.21497265,
+        31.62167975
+      ],
+      "osm": {
+        "id": "way/274034284",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.21497265,
+          31.62167975
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12526",
+          "route_id": "11798",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.215,
+            31.6216
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-way-327738549",
+      "coordinates": [
+        -2.40600445,
+        31.55427075
+      ],
+      "osm": {
+        "id": "way/327738549",
+        "name": "Station-Service Merbouti",
+        "name_ar": "محطة-خدمات مربوطي",
+        "name_fr": null,
+        "brand": null,
+        "operator": "Merbouti",
+        "opening_hours": "24/7",
+        "coordinates": [
+          -2.40600445,
+          31.55427075
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2806",
+          "route_id": "6349",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            -2.406,
+            31.554
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 30
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-Service Merbouti",
+      "display_name_ar": "محطة-خدمات مربوطي"
+    },
+    {
+      "id": "osm-way-381309989",
+      "coordinates": [
+        -1.233028,
+        32.0422683
+      ],
+      "osm": {
+        "id": "way/381309989",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.233028,
+          32.0422683
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1379",
+          "route_id": "1525",
+          "name_fr": "Station de services perle du sud",
+          "name_ar": "لؤلؤة الجنوب",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            -1.233,
+            32.0422
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services perle du sud",
+      "display_name_ar": "لؤلؤة الجنوب"
+    },
+    {
+      "id": "tariki-12025",
+      "coordinates": [
+        -2.2043,
+        31.6316
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12025",
+          "route_id": "11798",
+          "name_fr": "Station de service",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.2043,
+            31.6316
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de service",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "tariki-8061",
+      "coordinates": [
+        -2.7415,
+        31.0057
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8061",
+          "route_id": "13026",
+          "name_fr": "STETION D'ESSENCE",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            -2.7415,
+            31.0057
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STETION D'ESSENCE",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "tariki-9204",
+      "coordinates": [
+        -2.7256,
+        30.9523
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9204",
+          "route_id": "11839",
+          "name_fr": "Station de services el-Abadla",
+          "name_ar": "محطة الوقود العبادلة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.7256,
+            30.9523
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 8,
+          "wilaya_fr": "Béchar",
+          "wilaya_ar": "بشار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services el-Abadla",
+      "display_name_ar": "محطة الوقود العبادلة"
+    }
+  ]
+}

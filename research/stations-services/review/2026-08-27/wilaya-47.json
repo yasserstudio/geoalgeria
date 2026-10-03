@@ -1,0 +1,1151 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-47",
+    "wilaya_code": 47,
+    "name": "Ghardaïa",
+    "name_ar": "غرداية",
+    "center": [
+      3.6325000000000003,
+      32.4345
+    ],
+    "bounds": [
+      2.24,
+      31.798,
+      5.025,
+      33.071
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 28,
+    "osm_records": 23,
+    "tariki_records": 20,
+    "cross_source": 11,
+    "multiple_tariki": 2,
+    "osm_only": 10,
+    "tariki_only": 5,
+    "nearby_osm_pairs": 0,
+    "conflicts": 7
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3641694014",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4977067855",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1082",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12958",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13842",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3458",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7622",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10003159929",
+      "coordinates": [
+        3.7782401,
+        32.3423666
+      ],
+      "osm": {
+        "id": "node/10003159929",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7782401,
+          32.3423666
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-10087368969",
+      "coordinates": [
+        4.512979,
+        32.8262284
+      ],
+      "osm": {
+        "id": "node/10087368969",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.512979,
+          32.8262284
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-10093218722",
+      "coordinates": [
+        4.6631236,
+        32.7320395
+      ],
+      "osm": {
+        "id": "node/10093218722",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.6631236,
+          32.7320395
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-10921253241",
+      "coordinates": [
+        3.7373208,
+        32.7329386
+      ],
+      "osm": {
+        "id": "node/10921253241",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7373208,
+          32.7329386
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-11610409142",
+      "coordinates": [
+        3.6686293,
+        32.9688297
+      ],
+      "osm": {
+        "id": "node/11610409142",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6686293,
+          32.9688297
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-11650974831",
+      "coordinates": [
+        3.8211609,
+        32.3216868
+      ],
+      "osm": {
+        "id": "node/11650974831",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.8211609,
+          32.3216868
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2561914735",
+      "coordinates": [
+        3.671283,
+        32.5315434
+      ],
+      "osm": {
+        "id": "node/2561914735",
+        "name": "Station Ziadi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.671283,
+          32.5315434
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1363",
+          "route_id": "3050",
+          "name_fr": "Station de services Ziadi",
+          "name_ar": "محطة خدمات الزيادي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.671,
+            32.532
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 57
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Ziadi",
+      "display_name_ar": "محطة خدمات الزيادي"
+    },
+    {
+      "id": "osm-node-2706245519",
+      "coordinates": [
+        3.6084623,
+        32.5318551
+      ],
+      "osm": {
+        "id": "node/2706245519",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.6084623,
+          32.5318551
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1392",
+          "route_id": "810",
+          "name_fr": "station de services Laiourat Ali",
+          "name_ar": "محطة وقود خاصة العيورات علي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.608,
+            32.532
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 46
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود خاصة العيورات علي"
+    },
+    {
+      "id": "osm-node-3148980840",
+      "coordinates": [
+        3.6255728,
+        32.2576696
+      ],
+      "osm": {
+        "id": "node/3148980840",
+        "name": "Station Service NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.6255728,
+          32.2576696
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service NAFTAL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3506988051",
+      "coordinates": [
+        4.1790196,
+        32.3689281
+      ],
+      "osm": {
+        "id": "node/3506988051",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          4.1790196,
+          32.3689281
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5133",
+          "route_id": "2963",
+          "name_fr": "Station de services Assel",
+          "name_ar": "محطة عسال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            4.179,
+            32.369
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة عسال"
+    },
+    {
+      "id": "osm-node-3570117389",
+      "coordinates": [
+        4.2253709,
+        32.3913915
+      ],
+      "osm": {
+        "id": "node/3570117389",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          4.2253709,
+          32.3913915
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5134",
+          "route_id": "2963",
+          "name_fr": "Station de services Zelfana centre",
+          "name_ar": "محطة الوقود زلفانة وسط",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.225,
+            32.391
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 56
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود زلفانة وسط"
+    },
+    {
+      "id": "osm-node-3641694014",
+      "coordinates": [
+        4.4773485,
+        32.781669
+      ],
+      "osm": {
+        "id": "node/3641694014",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.4773485,
+          32.781669
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5137",
+          "route_id": "4831",
+          "name_fr": "Station de services  NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.477,
+            32.782
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 49
+        },
+        {
+          "id": "13951",
+          "route_id": "20355",
+          "name_fr": "Station de services  NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.477,
+            32.782
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3643096560",
+      "coordinates": [
+        3.7637754,
+        32.8254729
+      ],
+      "osm": {
+        "id": "node/3643096560",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.7637754,
+          32.8254729
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7303",
+          "route_id": "12154",
+          "name_fr": "STATION DE SERVICES NAFTAL",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.764,
+            32.825
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 57
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-4977067855",
+      "coordinates": [
+        4.4890934,
+        32.7900447
+      ],
+      "osm": {
+        "id": "node/4977067855",
+        "name": "Naftal",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          4.4890934,
+          32.7900447
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5146",
+          "route_id": "4831",
+          "name_fr": "Station de services BEN AISSA",
+          "name_ar": "محطة بن عيسى",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.489,
+            32.79
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 10
+        },
+        {
+          "id": "13950",
+          "route_id": "20355",
+          "name_fr": "Station de services BEN AISSA",
+          "name_ar": "محطة بن عيسى",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.489,
+            32.79
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-6144747388",
+      "coordinates": [
+        3.7238068,
+        32.4214398
+      ],
+      "osm": {
+        "id": "node/6144747388",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7238068,
+          32.4214398
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-7924919691",
+      "coordinates": [
+        3.54614,
+        32.2765404
+      ],
+      "osm": {
+        "id": "node/7924919691",
+        "name": "لحوار",
+        "name_ar": "لحوار",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.54614,
+          32.2765404
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "لحوار"
+    },
+    {
+      "id": "osm-way-1225545318",
+      "coordinates": [
+        3.7073441,
+        32.919068949999996
+      ],
+      "osm": {
+        "id": "way/1225545318",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7073441,
+          32.919068949999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-250471300",
+      "coordinates": [
+        3.6962274500000003,
+        32.48804645
+      ],
+      "osm": {
+        "id": "way/250471300",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6962274500000003,
+          32.48804645
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7619",
+          "route_id": "3323",
+          "name_fr": "STATION DE SERVICES SIDI AABAZ",
+          "name_ar": "محطة سيدي اعباز لتوزيع الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.696,
+            32.488
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION DE SERVICES SIDI AABAZ",
+      "display_name_ar": "محطة سيدي اعباز لتوزيع الوقود"
+    },
+    {
+      "id": "osm-way-266786867",
+      "coordinates": [
+        3.6815429,
+        32.5098459
+      ],
+      "osm": {
+        "id": "way/266786867",
+        "name": "Station Service Ouyaba",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6815429,
+          32.5098459
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4887",
+          "route_id": "3050",
+          "name_fr": "Station de services Ouyaba Nacer",
+          "name_ar": "محطة الوقود  اويابة الناصر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.681,
+            32.51
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 54
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Ouyaba",
+      "display_name_ar": "محطة الوقود  اويابة الناصر"
+    },
+    {
+      "id": "osm-way-287882398",
+      "coordinates": [
+        3.7478527,
+        32.8434059
+      ],
+      "osm": {
+        "id": "way/287882398",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.7478527,
+          32.8434059
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7307",
+          "route_id": "12154",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.748,
+            32.843
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 47
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-way-323672232",
+      "coordinates": [
+        3.65310245,
+        32.305420850000004
+      ],
+      "osm": {
+        "id": "way/323672232",
+        "name": "محطة الوقود الشلقي",
+        "name_ar": "محطة الوقود الشلقي",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.65310245,
+          32.305420850000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13838",
+          "route_id": "20064",
+          "name_fr": "//",
+          "name_ar": "محطة الخدمات شلقي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.653,
+            32.305
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود الشلقي"
+    },
+    {
+      "id": "osm-way-419592814",
+      "coordinates": [
+        3.724781,
+        32.42406025
+      ],
+      "osm": {
+        "id": "way/419592814",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Privé",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.724781,
+          32.42406025
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13549",
+          "route_id": "18583",
+          "name_fr": "STATION DES SEVICES OULED BRAHIM",
+          "name_ar": "محطة الخدمات أولاد إبراهيم",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.725,
+            32.424
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Privé",
+      "display_name_ar": "محطة الخدمات أولاد إبراهيم"
+    },
+    {
+      "id": "osm-way-422643324",
+      "coordinates": [
+        3.79319375,
+        32.371881099999996
+      ],
+      "osm": {
+        "id": "way/422643324",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.79319375,
+          32.371881099999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7946",
+          "route_id": "3323",
+          "name_fr": "Station de services",
+          "name_ar": "محطة توزيع الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.794,
+            32.372
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": 77
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة توزيع الوقود"
+    },
+    {
+      "id": "tariki-1082",
+      "coordinates": [
+        3.794,
+        32.369
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1082",
+          "route_id": "3323",
+          "name_fr": "Station de service TRN",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.794,
+            32.369
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de service TRN",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "tariki-12958",
+      "coordinates": [
+        3.632,
+        32.511
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12958",
+          "route_id": "3056",
+          "name_fr": "STATION DE SERVICE KOLIBIRSON",
+          "name_ar": "محطة الخدمات كولبرسون",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.632,
+            32.511
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICE KOLIBIRSON",
+      "display_name_ar": "محطة الخدمات كولبرسون"
+    },
+    {
+      "id": "tariki-13842",
+      "coordinates": [
+        4.18,
+        32.368
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13842",
+          "route_id": "20073",
+          "name_fr": "station de service assel",
+          "name_ar": "محطة عسال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            4.18,
+            32.368
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de service assel",
+      "display_name_ar": "محطة عسال"
+    },
+    {
+      "id": "tariki-3458",
+      "coordinates": [
+        3.683,
+        32.495
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3458",
+          "route_id": "7442",
+          "name_fr": "Station de services DJABBARI MUSTAPHA",
+          "name_ar": "محطة الوقود جباري مصطفى",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.683,
+            32.495
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services DJABBARI MUSTAPHA",
+      "display_name_ar": "محطة الوقود جباري مصطفى"
+    },
+    {
+      "id": "tariki-7622",
+      "coordinates": [
+        3.714,
+        32.436
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7622",
+          "route_id": "3323",
+          "name_fr": "STATION DE SERVICES EL ATF",
+          "name_ar": "محطة توزيع الوقود العطف",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.714,
+            32.436
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 47,
+          "wilaya_fr": "Ghardaïa",
+          "wilaya_ar": "غرداية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES EL ATF",
+      "display_name_ar": "محطة توزيع الوقود العطف"
+    }
+  ]
+}

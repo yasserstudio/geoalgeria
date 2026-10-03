@@ -1,0 +1,1843 @@
+{
+  "schema_version": 1,
+  "batch_id": "stations-full-2026-08-27-13",
+  "results": [
+    {
+      "candidate_id": "tariki-13128",
+      "triage": "normalization",
+      "normalized_name_fr": "station de services Bengrine",
+      "normalized_name_ar": "محطة الوقود بنقرين الخرجة الجنوبية",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-3297",
+      "triage": "normalization",
+      "normalized_name_fr": "station de services Bengrine",
+      "normalized_name_ar": "محطة الوقود بنقرين",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-6490",
+      "triage": "normalization",
+      "normalized_name_fr": "station de services ogla melha",
+      "normalized_name_ar": "محطة خدمات العقلة المالحة",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-6685",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services GUEBLA SADEK",
+      "normalized_name_ar": "محطة  الخدمات قبلة الصادق وشركائه",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-66851",
+      "triage": "normalization",
+      "normalized_name_fr": "station de services gubla sadek",
+      "normalized_name_ar": "محطة الخدمات قبلة الصادق وشركائه",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-6747",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services RABEH MOUHSSEN",
+      "normalized_name_ar": "محطة الوقود رابح محسن",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-6820",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Tebib Beakla Ahmed",
+      "normalized_name_ar": "محطة خدمات طبيب بعقلة احمد",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-6841",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services  TOUATI",
+      "normalized_name_ar": "محطة تواتي",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-6842",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services  naftal",
+      "normalized_name_ar": "محطة نفطال",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-7188",
+      "triage": "normalization",
+      "normalized_name_fr": "station des frères ABID",
+      "normalized_name_ar": "محطة الإخوة عبيد",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-7190",
+      "triage": "normalization",
+      "normalized_name_fr": "STATION DE SERVICES GAARI",
+      "normalized_name_ar": "محطة الخدمات قعري",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "osm-node-4547125789",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-6539157883",
+      "triage": "no_change",
+      "normalized_name_fr": "محطة خدمات خالد أحمد",
+      "normalized_name_ar": "محطة خدمات خالد أحمد",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-6539183190",
+      "triage": "no_change",
+      "normalized_name_fr": "المحطة نفطال",
+      "normalized_name_ar": "المحطة نفطال",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-6764678402",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-7085807224",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-7085807237",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-way-695916289",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-4705693415",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [
+        "osm-way-914107965"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "osm-way-914107965",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [
+        "osm-node-4705693415"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "tariki-4132",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Naftal",
+      "normalized_name_ar": "محطة الوقود نفطال",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-6176",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services  Belhadji Boussif",
+      "normalized_name_ar": "محطة وقود بلحاجي بوسيف",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-9095",
+      "triage": "ambiguous",
+      "normalized_name_fr": "station de services",
+      "normalized_name_ar": "محطة خدمات",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.3,
+      "escalation": "field_check",
+      "reason": "Tariki lead is generic or placeholder-only; identity cannot be resolved from supplied fields."
+    },
+    {
+      "candidate_id": "osm-way-565869729",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.35,
+      "escalation": "human_review",
+      "reason": "Cross-source evidence is present, but the available names are insufficient to establish a canonical semantic match."
+    },
+    {
+      "candidate_id": "osm-node-6420841941",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-8416019994",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "tariki-13028",
+      "triage": "normalization",
+      "normalized_name_fr": "STATION  LABAID",
+      "normalized_name_ar": "محطة خدمات لبيض",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-2862",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Mahmoudi Masseouad centre",
+      "normalized_name_ar": "محطة بنزين وسط بلدية حمادية ملك للمسمى محمودي مسعود",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-3040",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Kadari aiachi",
+      "normalized_name_ar": "محطة توزيع البنزين",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-3347",
+      "triage": "ambiguous",
+      "normalized_name_fr": "Station de services",
+      "normalized_name_ar": "محطة بنزين",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.3,
+      "escalation": "field_check",
+      "reason": "Tariki lead is generic or placeholder-only; identity cannot be resolved from supplied fields."
+    },
+    {
+      "candidate_id": "tariki-3791",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services ZEKRI AHMED",
+      "normalized_name_ar": "محطة البنزين زكري أحمد",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-3794",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services CHERGUI MOHAMED",
+      "normalized_name_ar": "محطة الوقود  شرقي محمد",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-8568",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Mouissi",
+      "normalized_name_ar": "محطةالخدمات مويسي",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "osm-node-2978182661",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services el-Rtimi",
+      "normalized_name_ar": "محطة الخدمات الرتيمي",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "8567"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-2978708277",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Naftal",
+      "normalized_name_ar": "محطة الخدمات نفطال",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "1454"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-3242005668",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Cheallal Djelloul",
+      "normalized_name_ar": "محطة الخدمات شعلال جلول",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "1573"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-4758845851",
+      "triage": "normalization",
+      "normalized_name_fr": "Station service de Makrani",
+      "normalized_name_ar": "محطة المقراني",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "1455"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-5312472523",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Hadji Saadia",
+      "normalized_name_ar": "محظة توزيع البنزين",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "3038"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-252835479",
+      "triage": "normalization",
+      "normalized_name_fr": "Station Service E. Leclerc",
+      "normalized_name_ar": "محطة خدمات",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "2856"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-254524018",
+      "triage": "normalization",
+      "normalized_name_fr": "Station Service",
+      "normalized_name_ar": "محطة خدمات",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "2845"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-5246512112",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-5969316658",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-3983208817",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-node-4200209927",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [
+        "osm-way-388214578"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "osm-way-388214578",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [
+        "osm-node-4200209927"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "tariki-12518",
+      "triage": "normalization",
+      "normalized_name_fr": "STASIONT EL HBILL",
+      "normalized_name_ar": "محطة الخدمات الحبيل",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-13063",
+      "triage": "normalization",
+      "normalized_name_fr": "STATION DJEGHBOUBE",
+      "normalized_name_ar": "محطة خدمات جغبوب",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-13404",
+      "triage": "normalization",
+      "normalized_name_fr": "STATION SERVICE MANSOURI",
+      "normalized_name_ar": "محطة الخمات منصوري",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-13405",
+      "triage": "normalization",
+      "normalized_name_fr": "STASIN AOUDJ",
+      "normalized_name_ar": "محطة عوج للخدمات",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-13409",
+      "triage": "normalization",
+      "normalized_name_fr": null,
+      "normalized_name_ar": "محطة عيسو",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-4870",
+      "triage": "normalization",
+      "normalized_name_fr": "Station des services Ouekel Messoued",
+      "normalized_name_ar": "محطة وكال المسعود بالخرجة الشرقية لبلدية عين افقه",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "osm-node-3421288315",
+      "triage": "normalization",
+      "normalized_name_fr": "Djackboub",
+      "normalized_name_ar": "جكبوب",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5259"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-3421290073",
+      "triage": "normalization",
+      "normalized_name_fr": "station de services TAIBA",
+      "normalized_name_ar": "محطة  طيبة",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5213"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-256465266",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Belhocine",
+      "normalized_name_ar": "بلحسين",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5885"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-256465268",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Naftal",
+      "normalized_name_ar": "جلال",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5886"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-274188275",
+      "triage": "normalization",
+      "normalized_name_fr": "Station Service RAHOU",
+      "normalized_name_ar": "محطة نفطال",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5897"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-363114125",
+      "triage": "normalization",
+      "normalized_name_fr": "Station Aoudj",
+      "normalized_name_ar": "قاسمي",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5923"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-496778089",
+      "triage": "normalization",
+      "normalized_name_fr": "Station Service GHERBI",
+      "normalized_name_ar": "محطة  رحو",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5327"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-10205215410",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-2428667288",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-2614042111",
+      "triage": "no_change",
+      "normalized_name_fr": "Naftal",
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-3937600866",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-5152379258",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-9927459451",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-way-1546755598",
+      "triage": "no_change",
+      "normalized_name_fr": "محطة وقود المرحوم عبيدات عامر",
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-way-256465293",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "tariki-14027",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": "محطة بنزين",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.3,
+      "escalation": "field_check",
+      "reason": "Tariki lead is generic or placeholder-only; identity cannot be resolved from supplied fields."
+    },
+    {
+      "candidate_id": "tariki-4927",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Hamdi Lakhdar",
+      "normalized_name_ar": "حامدي لخضر",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-5884",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Guelila Elarbi",
+      "normalized_name_ar": "محطة الخدمات قليلة العربي",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "osm-node-2145317375",
+      "triage": "normalization",
+      "normalized_name_fr": "Naftal",
+      "normalized_name_ar": "محطة بنزين العايب",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5898"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-2176224573",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Derkouche",
+      "normalized_name_ar": "دركوش",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5891"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-2182262183",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Meknez",
+      "normalized_name_ar": "مكناز",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5888"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-2437356059",
+      "triage": "normalization",
+      "normalized_name_fr": "Naftal",
+      "normalized_name_ar": "محطة وقود سير غاز",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5887"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-4319364768",
+      "triage": "normalization",
+      "normalized_name_fr": "فيض البطمة",
+      "normalized_name_ar": "فيض البطمة",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5905"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-10912492859",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-12010373887",
+      "triage": "no_change",
+      "normalized_name_fr": "Naftal",
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-2145970909",
+      "triage": "no_change",
+      "normalized_name_fr": "Naftal",
+      "normalized_name_ar": "محطة بنزين",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-6122497535",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-6390414762",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-way-1373090107",
+      "triage": "no_change",
+      "normalized_name_fr": "Naftal",
+      "normalized_name_ar": "محطة بنزين وسط المدينة",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-way-791591468",
+      "triage": "no_change",
+      "normalized_name_fr": "Naftal",
+      "normalized_name_ar": "محطة وقود نفطال",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-way-791591469",
+      "triage": "no_change",
+      "normalized_name_fr": "Naftal",
+      "normalized_name_ar": "محطة الوقود رماضنية",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-4513361356",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [
+        "osm-way-526821010",
+        "osm-way-526821011"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "osm-way-526821010",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [
+        "osm-node-4513361356",
+        "osm-way-526821011"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "osm-way-526821011",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [
+        "osm-node-4513361356",
+        "osm-way-526821010"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "tariki-4370",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Laamouri",
+      "normalized_name_ar": "محطة خدمات لعموري الشهبونية",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "osm-node-1953140956",
+      "triage": "normalization",
+      "normalized_name_fr": "Maskri",
+      "normalized_name_ar": "محطة خدمات رومبو حي خميستي",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4366"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-4170335690",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services TAHAR MISSOUM",
+      "normalized_name_ar": "محطة خدمات طاهر ميسوم قصر البخاري",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4359"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-4251823206",
+      "triage": "normalization",
+      "normalized_name_fr": "Station Naftal",
+      "normalized_name_ar": "محطة خدمات دروش عين بوسيف",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4427"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-5121790521",
+      "triage": "normalization",
+      "normalized_name_fr": "Mazouz",
+      "normalized_name_ar": "محطة خدمات حي بلخيرات",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4364"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-5494262543",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services cité CHOHADA",
+      "normalized_name_ar": "محطة خدمات حي الشهداء الشلالة",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4425"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-256480501",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services SAKHRI HAFSI",
+      "normalized_name_ar": "محطة صخري حفصي",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "6949"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-256480508",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services SONAH",
+      "normalized_name_ar": "محطة صوناح",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "6948"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-652466616",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services TAHAR MISSOUM Kasr Boukhari",
+      "normalized_name_ar": "محطة خدمات طاهر ميسوم قصر البخاري",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "6930"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-12518286874",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-1953140405",
+      "triage": "no_change",
+      "normalized_name_fr": "Mazouz",
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-2428851202",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-4330915388",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-4378091189",
+      "triage": "no_change",
+      "normalized_name_fr": "Station service Hamza",
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-4383719596",
+      "triage": "no_change",
+      "normalized_name_fr": "station tahar sud",
+      "normalized_name_ar": "محطة طهار بالمخرج.الجنوبي",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-5051712612",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-way-256480488",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-way-416220629",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-3222034627",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-node-3742854788",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-node-3863881766",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-node-3896795535",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "tariki-10053",
+      "triage": "normalization",
+      "normalized_name_fr": "STATION NAFTAL",
+      "normalized_name_ar": "محطة نفطال",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-10154",
+      "triage": "normalization",
+      "normalized_name_fr": "STATION DE SERVICES BOUKRAA",
+      "normalized_name_ar": "محطة وقود بوكراع",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-11411",
+      "triage": "normalization",
+      "normalized_name_fr": "STATION DE SERVICES BARAKA",
+      "normalized_name_ar": "محطة الوقود البركة",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-13103",
+      "triage": "normalization",
+      "normalized_name_fr": "station d'essence",
+      "normalized_name_ar": "محطة الوقود",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-13690",
+      "triage": "ambiguous",
+      "normalized_name_fr": "STATION DE SERVICES",
+      "normalized_name_ar": "محطة وقود",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.3,
+      "escalation": "field_check",
+      "reason": "Tariki lead is generic or placeholder-only; identity cannot be resolved from supplied fields."
+    },
+    {
+      "candidate_id": "tariki-5665",
+      "triage": "normalization",
+      "normalized_name_fr": "papc",
+      "normalized_name_ar": "مقر بلدية عين الريش",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "osm-node-3396480711",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Bousaada",
+      "normalized_name_ar": "محطة مدخل بوسعادة",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "9833"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-3396480721",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Elziguem",
+      "normalized_name_ar": "محطة الزيقم",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4605"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-3396480738",
+      "triage": "normalization",
+      "normalized_name_fr": "Station Service El Baten 1",
+      "normalized_name_ar": "محطة بن شنوف",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4601"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-3760882997",
+      "triage": "normalization",
+      "normalized_name_fr": "STATION DE SERVICES OULED KHALED",
+      "normalized_name_ar": "محطة الخدمات أولاد خالد",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "10106"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-3774393183",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Laichi AbdElkader",
+      "normalized_name_ar": "محطة لعيشي عبد القادر",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4482"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-4357631207",
+      "triage": "normalization",
+      "normalized_name_fr": "STATION DE SERVICES",
+      "normalized_name_ar": "محطة الوقود",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "11757"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-4934219009",
+      "triage": "normalization",
+      "normalized_name_fr": "STATION DE SERVICES GASSRI",
+      "normalized_name_ar": "محطة وقود قصري",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "10420"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-5200865954",
+      "triage": "normalization",
+      "normalized_name_fr": "Naftal",
+      "normalized_name_ar": "نفطال",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4186"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-6953621647",
+      "triage": "normalization",
+      "normalized_name_fr": "STATION DE SERVICES EN CONSTRUCTION",
+      "normalized_name_ar": "محطة بنزين في طور الإنجاز",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "11740"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-1392316301",
+      "triage": "normalization",
+      "normalized_name_fr": "PETRO JAL",
+      "normalized_name_ar": "محطة وقود بيترو جال",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "14242"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-263504037",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Kouchima",
+      "normalized_name_ar": "محطة كوشيمة",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "4606"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-way-378815978",
+      "triage": "normalization",
+      "normalized_name_fr": "Station Service",
+      "normalized_name_ar": "محطة بنزين حي نفطال بوسعادة",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "9835"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-11005882687",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-2415646818",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-3772988828",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-6056127499",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-6447271295",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-6654120903",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-7140767824",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-way-491818618",
+      "triage": "no_change",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.86,
+      "escalation": "none",
+      "reason": "Named OSM feature has no supplied conflicting evidence."
+    },
+    {
+      "candidate_id": "osm-node-8851417336",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [
+        "osm-way-341498191"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "osm-way-240978989",
+      "triage": "ambiguous",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.2,
+      "escalation": "duplicate_review",
+      "reason": "Multiple Tariki leads are associated with this candidate and do not establish a single canonical name."
+    },
+    {
+      "candidate_id": "osm-way-341498191",
+      "triage": "possible_duplicate",
+      "normalized_name_fr": null,
+      "normalized_name_ar": null,
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [
+        "osm-node-8851417336"
+      ],
+      "duplicate_source_ids": [],
+      "confidence": 0.65,
+      "escalation": "duplicate_review",
+      "reason": "The input flags a suspected duplicate candidate; review is needed to distinguish records."
+    },
+    {
+      "candidate_id": "tariki-13671",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services BOURNAN",
+      "normalized_name_ar": "محطة بورنان",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-2575",
+      "triage": "normalization",
+      "normalized_name_fr": "station de services Karzazi Mohamed",
+      "normalized_name_ar": "محطة متعددة الخدمات النفطية كرزازي محمد",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "tariki-2897",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services Touifza",
+      "normalized_name_ar": "محطة الوقود التويفزة",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [],
+      "confidence": 0.78,
+      "escalation": "field_check",
+      "reason": "Specific Tariki station name is suitable for conservative normalization; no OSM corroboration supplied."
+    },
+    {
+      "candidate_id": "osm-node-2486619099",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services berzoug",
+      "normalized_name_ar": "محطة برزوق",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "6253"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-3905477488",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services BAKI FOUAD",
+      "normalized_name_ar": "محطة الخدمات باقي فؤاد",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "5844"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-3921213251",
+      "triage": "normalization",
+      "normalized_name_fr": "Station Service",
+      "normalized_name_ar": "محطة خدمات",
+      "proposed_brand": "Naftal",
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "13933"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-5027287465",
+      "triage": "normalization",
+      "normalized_name_fr": "Station de services CARREFOUR",
+      "normalized_name_ar": "محطة مفترق الطرق",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "13672"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    },
+    {
+      "candidate_id": "osm-node-6813299149",
+      "triage": "normalization",
+      "normalized_name_fr": "محطة خدمات أولاد جميلة",
+      "normalized_name_ar": "محطة خدمات أولاد جميلة",
+      "proposed_brand": null,
+      "duplicate_candidate_ids": [],
+      "duplicate_source_ids": [
+        "13947"
+      ],
+      "confidence": 0.8,
+      "escalation": "none",
+      "reason": "Cross-source names share a distinctive token, supporting conservative normalization."
+    }
+  ]
+}

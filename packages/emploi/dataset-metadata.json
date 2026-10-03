@@ -4,7 +4,7 @@
   "name": "Algeria employment agencies",
   "alternateName": "Agences pour l'emploi d'Algérie",
   "identifier": "@geoalgeria/emploi",
-  "description": "Employment agencies — regional (AWEM) and local (ALEM) offices of the National Employment Agency (ANEM).",
+  "description": "Employment agencies: regional (AWEM) and local (ALEM) offices of the National Employment Agency (ANEM).",
   "conditionsOfAccess": "Factual public listing (ANEM)",
   "isAccessibleForFree": true,
   "creator": {
@@ -20,7 +20,7 @@
       "box": "19.56506 -8.13476 37.00118 9.57562"
     }
   },
-  "variableMeasured": "331 records, 58 wilayas",
+  "variableMeasured": "331 records, 68 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",
@@ -59,10 +59,10 @@
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/emploi/data/geojson/alem.geojson"
     }
   ],
-  "dateModified": "2026-06-10",
+  "dateModified": "2026-08-31",
   "url": "https://geoalgeria.com",
   "sameAs": "https://github.com/yasserstudio/geoalgeria",
   "citation": [
-    "ANEM — National Employment Agency (anem.dz) — Factual public listing (ANEM)"
+    "ANEM: National Employment Agency (anem.dz), Factual public listing (ANEM)"
   ]
 }

@@ -1,0 +1,1111 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "snapshot_date": "2026-08-27",
+  "wilayas": [
+    {
+      "wilaya_code": 1,
+      "name": "Adrar",
+      "name_ar": "أدرار",
+      "metrics": {
+        "candidates": 32,
+        "osm_records": 20,
+        "tariki_records": 22,
+        "cross_source": 10,
+        "multiple_tariki": 0,
+        "osm_only": 10,
+        "tariki_only": 12,
+        "nearby_osm_pairs": 2,
+        "conflicts": 16
+      }
+    },
+    {
+      "wilaya_code": 2,
+      "name": "Chlef",
+      "name_ar": "الشلف",
+      "metrics": {
+        "candidates": 50,
+        "osm_records": 38,
+        "tariki_records": 37,
+        "cross_source": 22,
+        "multiple_tariki": 1,
+        "osm_only": 15,
+        "tariki_only": 12,
+        "nearby_osm_pairs": 0,
+        "conflicts": 13
+      }
+    },
+    {
+      "wilaya_code": 3,
+      "name": "Laghouat",
+      "name_ar": "الأغواط",
+      "metrics": {
+        "candidates": 35,
+        "osm_records": 27,
+        "tariki_records": 23,
+        "cross_source": 6,
+        "multiple_tariki": 4,
+        "osm_only": 17,
+        "tariki_only": 8,
+        "nearby_osm_pairs": 1,
+        "conflicts": 13
+      }
+    },
+    {
+      "wilaya_code": 4,
+      "name": "Oum El Bouaghi",
+      "name_ar": "أم البواقي",
+      "metrics": {
+        "candidates": 90,
+        "osm_records": 49,
+        "tariki_records": 74,
+        "cross_source": 25,
+        "multiple_tariki": 4,
+        "osm_only": 20,
+        "tariki_only": 41,
+        "nearby_osm_pairs": 1,
+        "conflicts": 47
+      }
+    },
+    {
+      "wilaya_code": 5,
+      "name": "Batna",
+      "name_ar": "باتنة",
+      "metrics": {
+        "candidates": 75,
+        "osm_records": 56,
+        "tariki_records": 50,
+        "cross_source": 26,
+        "multiple_tariki": 2,
+        "osm_only": 28,
+        "tariki_only": 19,
+        "nearby_osm_pairs": 1,
+        "conflicts": 23
+      }
+    },
+    {
+      "wilaya_code": 6,
+      "name": "Béjaïa",
+      "name_ar": "بجاية",
+      "metrics": {
+        "candidates": 90,
+        "osm_records": 67,
+        "tariki_records": 64,
+        "cross_source": 30,
+        "multiple_tariki": 5,
+        "osm_only": 32,
+        "tariki_only": 23,
+        "nearby_osm_pairs": 1,
+        "conflicts": 30
+      }
+    },
+    {
+      "wilaya_code": 7,
+      "name": "Biskra",
+      "name_ar": "بسكرة",
+      "metrics": {
+        "candidates": 51,
+        "osm_records": 44,
+        "tariki_records": 22,
+        "cross_source": 13,
+        "multiple_tariki": 1,
+        "osm_only": 30,
+        "tariki_only": 7,
+        "nearby_osm_pairs": 2,
+        "conflicts": 12
+      }
+    },
+    {
+      "wilaya_code": 8,
+      "name": "Béchar",
+      "name_ar": "بشار",
+      "metrics": {
+        "candidates": 24,
+        "osm_records": 21,
+        "tariki_records": 16,
+        "cross_source": 13,
+        "multiple_tariki": 0,
+        "osm_only": 8,
+        "tariki_only": 3,
+        "nearby_osm_pairs": 0,
+        "conflicts": 3
+      }
+    },
+    {
+      "wilaya_code": 9,
+      "name": "Blida",
+      "name_ar": "البليدة",
+      "metrics": {
+        "candidates": 62,
+        "osm_records": 43,
+        "tariki_records": 38,
+        "cross_source": 17,
+        "multiple_tariki": 1,
+        "osm_only": 25,
+        "tariki_only": 19,
+        "nearby_osm_pairs": 1,
+        "conflicts": 22
+      }
+    },
+    {
+      "wilaya_code": 10,
+      "name": "Bouira",
+      "name_ar": "البويرة",
+      "metrics": {
+        "candidates": 69,
+        "osm_records": 41,
+        "tariki_records": 46,
+        "cross_source": 18,
+        "multiple_tariki": 0,
+        "osm_only": 23,
+        "tariki_only": 28,
+        "nearby_osm_pairs": 4,
+        "conflicts": 35
+      }
+    },
+    {
+      "wilaya_code": 11,
+      "name": "Tamanrasset",
+      "name_ar": "تمنراست",
+      "metrics": {
+        "candidates": 19,
+        "osm_records": 12,
+        "tariki_records": 13,
+        "cross_source": 6,
+        "multiple_tariki": 0,
+        "osm_only": 6,
+        "tariki_only": 7,
+        "nearby_osm_pairs": 0,
+        "conflicts": 7
+      }
+    },
+    {
+      "wilaya_code": 12,
+      "name": "Tébessa",
+      "name_ar": "تبسة",
+      "metrics": {
+        "candidates": 66,
+        "osm_records": 30,
+        "tariki_records": 51,
+        "cross_source": 11,
+        "multiple_tariki": 2,
+        "osm_only": 17,
+        "tariki_only": 36,
+        "nearby_osm_pairs": 1,
+        "conflicts": 40
+      }
+    },
+    {
+      "wilaya_code": 13,
+      "name": "Tlemcen",
+      "name_ar": "تلمسان",
+      "metrics": {
+        "candidates": 73,
+        "osm_records": 59,
+        "tariki_records": 46,
+        "cross_source": 27,
+        "multiple_tariki": 2,
+        "osm_only": 30,
+        "tariki_only": 14,
+        "nearby_osm_pairs": 2,
+        "conflicts": 20
+      }
+    },
+    {
+      "wilaya_code": 14,
+      "name": "Tiaret",
+      "name_ar": "تيارت",
+      "metrics": {
+        "candidates": 84,
+        "osm_records": 53,
+        "tariki_records": 66,
+        "cross_source": 31,
+        "multiple_tariki": 2,
+        "osm_only": 20,
+        "tariki_only": 31,
+        "nearby_osm_pairs": 7,
+        "conflicts": 41
+      }
+    },
+    {
+      "wilaya_code": 15,
+      "name": "Tizi Ouzou",
+      "name_ar": "تيزي وزو",
+      "metrics": {
+        "candidates": 86,
+        "osm_records": 69,
+        "tariki_records": 36,
+        "cross_source": 15,
+        "multiple_tariki": 2,
+        "osm_only": 52,
+        "tariki_only": 17,
+        "nearby_osm_pairs": 3,
+        "conflicts": 25
+      }
+    },
+    {
+      "wilaya_code": 16,
+      "name": "Alger",
+      "name_ar": "الجزائر",
+      "metrics": {
+        "candidates": 141,
+        "osm_records": 130,
+        "tariki_records": 91,
+        "cross_source": 64,
+        "multiple_tariki": 7,
+        "osm_only": 59,
+        "tariki_only": 11,
+        "nearby_osm_pairs": 11,
+        "conflicts": 38
+      }
+    },
+    {
+      "wilaya_code": 17,
+      "name": "Djelfa",
+      "name_ar": "الجلفة",
+      "metrics": {
+        "candidates": 43,
+        "osm_records": 33,
+        "tariki_records": 35,
+        "cross_source": 16,
+        "multiple_tariki": 4,
+        "osm_only": 13,
+        "tariki_only": 10,
+        "nearby_osm_pairs": 4,
+        "conflicts": 21
+      }
+    },
+    {
+      "wilaya_code": 18,
+      "name": "Jijel",
+      "name_ar": "جيجل",
+      "metrics": {
+        "candidates": 32,
+        "osm_records": 25,
+        "tariki_records": 28,
+        "cross_source": 15,
+        "multiple_tariki": 3,
+        "osm_only": 7,
+        "tariki_only": 7,
+        "nearby_osm_pairs": 0,
+        "conflicts": 10
+      }
+    },
+    {
+      "wilaya_code": 19,
+      "name": "Sétif",
+      "name_ar": "سطيف",
+      "metrics": {
+        "candidates": 106,
+        "osm_records": 78,
+        "tariki_records": 74,
+        "cross_source": 32,
+        "multiple_tariki": 7,
+        "osm_only": 39,
+        "tariki_only": 28,
+        "nearby_osm_pairs": 0,
+        "conflicts": 35
+      }
+    },
+    {
+      "wilaya_code": 20,
+      "name": "Saïda",
+      "name_ar": "سعيدة",
+      "metrics": {
+        "candidates": 23,
+        "osm_records": 13,
+        "tariki_records": 14,
+        "cross_source": 4,
+        "multiple_tariki": 0,
+        "osm_only": 9,
+        "tariki_only": 10,
+        "nearby_osm_pairs": 0,
+        "conflicts": 10
+      }
+    },
+    {
+      "wilaya_code": 21,
+      "name": "Skikda",
+      "name_ar": "سكيكدة",
+      "metrics": {
+        "candidates": 56,
+        "osm_records": 39,
+        "tariki_records": 42,
+        "cross_source": 21,
+        "multiple_tariki": 2,
+        "osm_only": 16,
+        "tariki_only": 17,
+        "nearby_osm_pairs": 3,
+        "conflicts": 24
+      }
+    },
+    {
+      "wilaya_code": 22,
+      "name": "Sidi Bel Abbès",
+      "name_ar": "سيدي بلعباس",
+      "metrics": {
+        "candidates": 63,
+        "osm_records": 44,
+        "tariki_records": 47,
+        "cross_source": 28,
+        "multiple_tariki": 0,
+        "osm_only": 16,
+        "tariki_only": 19,
+        "nearby_osm_pairs": 3,
+        "conflicts": 25
+      }
+    },
+    {
+      "wilaya_code": 23,
+      "name": "Annaba",
+      "name_ar": "عنابة",
+      "metrics": {
+        "candidates": 51,
+        "osm_records": 43,
+        "tariki_records": 35,
+        "cross_source": 23,
+        "multiple_tariki": 2,
+        "osm_only": 18,
+        "tariki_only": 8,
+        "nearby_osm_pairs": 0,
+        "conflicts": 10
+      }
+    },
+    {
+      "wilaya_code": 24,
+      "name": "Guelma",
+      "name_ar": "قالمة",
+      "metrics": {
+        "candidates": 47,
+        "osm_records": 30,
+        "tariki_records": 38,
+        "cross_source": 17,
+        "multiple_tariki": 2,
+        "osm_only": 11,
+        "tariki_only": 17,
+        "nearby_osm_pairs": 2,
+        "conflicts": 23
+      }
+    },
+    {
+      "wilaya_code": 25,
+      "name": "Constantine",
+      "name_ar": "قسنطينة",
+      "metrics": {
+        "candidates": 44,
+        "osm_records": 35,
+        "tariki_records": 34,
+        "cross_source": 19,
+        "multiple_tariki": 3,
+        "osm_only": 13,
+        "tariki_only": 9,
+        "nearby_osm_pairs": 2,
+        "conflicts": 16
+      }
+    },
+    {
+      "wilaya_code": 26,
+      "name": "Médéa",
+      "name_ar": "المدية",
+      "metrics": {
+        "candidates": 38,
+        "osm_records": 27,
+        "tariki_records": 30,
+        "cross_source": 15,
+        "multiple_tariki": 2,
+        "osm_only": 10,
+        "tariki_only": 11,
+        "nearby_osm_pairs": 1,
+        "conflicts": 15
+      }
+    },
+    {
+      "wilaya_code": 27,
+      "name": "Mostaganem",
+      "name_ar": "مستغانم",
+      "metrics": {
+        "candidates": 67,
+        "osm_records": 50,
+        "tariki_records": 40,
+        "cross_source": 21,
+        "multiple_tariki": 1,
+        "osm_only": 28,
+        "tariki_only": 17,
+        "nearby_osm_pairs": 0,
+        "conflicts": 18
+      }
+    },
+    {
+      "wilaya_code": 28,
+      "name": "M'sila",
+      "name_ar": "المسيلة",
+      "metrics": {
+        "candidates": 83,
+        "osm_records": 49,
+        "tariki_records": 62,
+        "cross_source": 21,
+        "multiple_tariki": 3,
+        "osm_only": 25,
+        "tariki_only": 34,
+        "nearby_osm_pairs": 0,
+        "conflicts": 37
+      }
+    },
+    {
+      "wilaya_code": 29,
+      "name": "Mascara",
+      "name_ar": "معسكر",
+      "metrics": {
+        "candidates": 76,
+        "osm_records": 46,
+        "tariki_records": 65,
+        "cross_source": 31,
+        "multiple_tariki": 2,
+        "osm_only": 13,
+        "tariki_only": 30,
+        "nearby_osm_pairs": 2,
+        "conflicts": 36
+      }
+    },
+    {
+      "wilaya_code": 30,
+      "name": "Ouargla",
+      "name_ar": "ورقلة",
+      "metrics": {
+        "candidates": 63,
+        "osm_records": 59,
+        "tariki_records": 27,
+        "cross_source": 19,
+        "multiple_tariki": 2,
+        "osm_only": 38,
+        "tariki_only": 4,
+        "nearby_osm_pairs": 10,
+        "conflicts": 22
+      }
+    },
+    {
+      "wilaya_code": 31,
+      "name": "Oran",
+      "name_ar": "وهران",
+      "metrics": {
+        "candidates": 96,
+        "osm_records": 76,
+        "tariki_records": 72,
+        "cross_source": 48,
+        "multiple_tariki": 2,
+        "osm_only": 26,
+        "tariki_only": 20,
+        "nearby_osm_pairs": 2,
+        "conflicts": 26
+      }
+    },
+    {
+      "wilaya_code": 32,
+      "name": "El Bayadh",
+      "name_ar": "البيض",
+      "metrics": {
+        "candidates": 17,
+        "osm_records": 9,
+        "tariki_records": 15,
+        "cross_source": 7,
+        "multiple_tariki": 0,
+        "osm_only": 2,
+        "tariki_only": 8,
+        "nearby_osm_pairs": 0,
+        "conflicts": 8
+      }
+    },
+    {
+      "wilaya_code": 33,
+      "name": "Illizi",
+      "name_ar": "إليزي",
+      "metrics": {
+        "candidates": 16,
+        "osm_records": 11,
+        "tariki_records": 11,
+        "cross_source": 3,
+        "multiple_tariki": 1,
+        "osm_only": 7,
+        "tariki_only": 5,
+        "nearby_osm_pairs": 1,
+        "conflicts": 8
+      }
+    },
+    {
+      "wilaya_code": 34,
+      "name": "Bordj Bou Arreridj",
+      "name_ar": "برج بوعريريج",
+      "metrics": {
+        "candidates": 69,
+        "osm_records": 51,
+        "tariki_records": 47,
+        "cross_source": 24,
+        "multiple_tariki": 2,
+        "osm_only": 25,
+        "tariki_only": 18,
+        "nearby_osm_pairs": 1,
+        "conflicts": 22
+      }
+    },
+    {
+      "wilaya_code": 35,
+      "name": "Boumerdès",
+      "name_ar": "بومرداس",
+      "metrics": {
+        "candidates": 52,
+        "osm_records": 45,
+        "tariki_records": 39,
+        "cross_source": 26,
+        "multiple_tariki": 3,
+        "osm_only": 16,
+        "tariki_only": 7,
+        "nearby_osm_pairs": 1,
+        "conflicts": 12
+      }
+    },
+    {
+      "wilaya_code": 36,
+      "name": "El Tarf",
+      "name_ar": "الطارف",
+      "metrics": {
+        "candidates": 36,
+        "osm_records": 21,
+        "tariki_records": 34,
+        "cross_source": 17,
+        "multiple_tariki": 1,
+        "osm_only": 3,
+        "tariki_only": 15,
+        "nearby_osm_pairs": 0,
+        "conflicts": 16
+      }
+    },
+    {
+      "wilaya_code": 37,
+      "name": "Tindouf",
+      "name_ar": "تندوف",
+      "metrics": {
+        "candidates": 11,
+        "osm_records": 9,
+        "tariki_records": 8,
+        "cross_source": 6,
+        "multiple_tariki": 0,
+        "osm_only": 3,
+        "tariki_only": 2,
+        "nearby_osm_pairs": 0,
+        "conflicts": 2
+      }
+    },
+    {
+      "wilaya_code": 38,
+      "name": "Tissemsilt",
+      "name_ar": "تيسمسيلت",
+      "metrics": {
+        "candidates": 23,
+        "osm_records": 18,
+        "tariki_records": 22,
+        "cross_source": 10,
+        "multiple_tariki": 3,
+        "osm_only": 5,
+        "tariki_only": 5,
+        "nearby_osm_pairs": 2,
+        "conflicts": 11
+      }
+    },
+    {
+      "wilaya_code": 39,
+      "name": "El Oued",
+      "name_ar": "الوادي",
+      "metrics": {
+        "candidates": 54,
+        "osm_records": 38,
+        "tariki_records": 30,
+        "cross_source": 12,
+        "multiple_tariki": 1,
+        "osm_only": 25,
+        "tariki_only": 16,
+        "nearby_osm_pairs": 4,
+        "conflicts": 25
+      }
+    },
+    {
+      "wilaya_code": 40,
+      "name": "Khenchela",
+      "name_ar": "خنشلة",
+      "metrics": {
+        "candidates": 58,
+        "osm_records": 39,
+        "tariki_records": 40,
+        "cross_source": 17,
+        "multiple_tariki": 2,
+        "osm_only": 20,
+        "tariki_only": 19,
+        "nearby_osm_pairs": 4,
+        "conflicts": 29
+      }
+    },
+    {
+      "wilaya_code": 41,
+      "name": "Souk Ahras",
+      "name_ar": "سوق أهراس",
+      "metrics": {
+        "candidates": 35,
+        "osm_records": 21,
+        "tariki_records": 30,
+        "cross_source": 14,
+        "multiple_tariki": 1,
+        "osm_only": 6,
+        "tariki_only": 14,
+        "nearby_osm_pairs": 0,
+        "conflicts": 15
+      }
+    },
+    {
+      "wilaya_code": 42,
+      "name": "Tipaza",
+      "name_ar": "تيبازة",
+      "metrics": {
+        "candidates": 35,
+        "osm_records": 30,
+        "tariki_records": 24,
+        "cross_source": 17,
+        "multiple_tariki": 1,
+        "osm_only": 12,
+        "tariki_only": 5,
+        "nearby_osm_pairs": 1,
+        "conflicts": 8
+      }
+    },
+    {
+      "wilaya_code": 43,
+      "name": "Mila",
+      "name_ar": "ميلة",
+      "metrics": {
+        "candidates": 71,
+        "osm_records": 51,
+        "tariki_records": 53,
+        "cross_source": 25,
+        "multiple_tariki": 4,
+        "osm_only": 22,
+        "tariki_only": 20,
+        "nearby_osm_pairs": 2,
+        "conflicts": 28
+      }
+    },
+    {
+      "wilaya_code": 44,
+      "name": "Aïn Defla",
+      "name_ar": "عين الدفلى",
+      "metrics": {
+        "candidates": 55,
+        "osm_records": 39,
+        "tariki_records": 51,
+        "cross_source": 19,
+        "multiple_tariki": 8,
+        "osm_only": 12,
+        "tariki_only": 16,
+        "nearby_osm_pairs": 2,
+        "conflicts": 28
+      }
+    },
+    {
+      "wilaya_code": 45,
+      "name": "Naâma",
+      "name_ar": "النعامة",
+      "metrics": {
+        "candidates": 25,
+        "osm_records": 20,
+        "tariki_records": 12,
+        "cross_source": 5,
+        "multiple_tariki": 1,
+        "osm_only": 14,
+        "tariki_only": 5,
+        "nearby_osm_pairs": 0,
+        "conflicts": 6
+      }
+    },
+    {
+      "wilaya_code": 46,
+      "name": "Aïn Témouchent",
+      "name_ar": "عين تموشنت",
+      "metrics": {
+        "candidates": 59,
+        "osm_records": 47,
+        "tariki_records": 42,
+        "cross_source": 22,
+        "multiple_tariki": 4,
+        "osm_only": 21,
+        "tariki_only": 12,
+        "nearby_osm_pairs": 5,
+        "conflicts": 25
+      }
+    },
+    {
+      "wilaya_code": 47,
+      "name": "Ghardaïa",
+      "name_ar": "غرداية",
+      "metrics": {
+        "candidates": 28,
+        "osm_records": 23,
+        "tariki_records": 20,
+        "cross_source": 11,
+        "multiple_tariki": 2,
+        "osm_only": 10,
+        "tariki_only": 5,
+        "nearby_osm_pairs": 0,
+        "conflicts": 7
+      }
+    },
+    {
+      "wilaya_code": 48,
+      "name": "Relizane",
+      "name_ar": "غليزان",
+      "metrics": {
+        "candidates": 66,
+        "osm_records": 48,
+        "tariki_records": 52,
+        "cross_source": 32,
+        "multiple_tariki": 1,
+        "osm_only": 15,
+        "tariki_only": 18,
+        "nearby_osm_pairs": 1,
+        "conflicts": 21
+      }
+    },
+    {
+      "wilaya_code": 49,
+      "name": "Timimoun",
+      "name_ar": "تيميمون",
+      "metrics": {
+        "candidates": 14,
+        "osm_records": 4,
+        "tariki_records": 12,
+        "cross_source": 2,
+        "multiple_tariki": 0,
+        "osm_only": 2,
+        "tariki_only": 10,
+        "nearby_osm_pairs": 0,
+        "conflicts": 10
+      }
+    },
+    {
+      "wilaya_code": 50,
+      "name": "Bordj Badji Mokhtar",
+      "name_ar": "برج باجي مختار",
+      "metrics": {
+        "candidates": 15,
+        "osm_records": 7,
+        "tariki_records": 8,
+        "cross_source": 0,
+        "multiple_tariki": 0,
+        "osm_only": 7,
+        "tariki_only": 8,
+        "nearby_osm_pairs": 0,
+        "conflicts": 8
+      }
+    },
+    {
+      "wilaya_code": 51,
+      "name": "Ouled Djellal",
+      "name_ar": "أولاد جلال",
+      "metrics": {
+        "candidates": 16,
+        "osm_records": 15,
+        "tariki_records": 8,
+        "cross_source": 5,
+        "multiple_tariki": 1,
+        "osm_only": 9,
+        "tariki_only": 1,
+        "nearby_osm_pairs": 0,
+        "conflicts": 2
+      }
+    },
+    {
+      "wilaya_code": 52,
+      "name": "Béni Abbès",
+      "name_ar": "بني عباس",
+      "metrics": {
+        "candidates": 9,
+        "osm_records": 8,
+        "tariki_records": 5,
+        "cross_source": 4,
+        "multiple_tariki": 0,
+        "osm_only": 4,
+        "tariki_only": 1,
+        "nearby_osm_pairs": 1,
+        "conflicts": 3
+      }
+    },
+    {
+      "wilaya_code": 53,
+      "name": "In Salah",
+      "name_ar": "عين صالح",
+      "metrics": {
+        "candidates": 9,
+        "osm_records": 9,
+        "tariki_records": 2,
+        "cross_source": 2,
+        "multiple_tariki": 0,
+        "osm_only": 7,
+        "tariki_only": 0,
+        "nearby_osm_pairs": 1,
+        "conflicts": 2
+      }
+    },
+    {
+      "wilaya_code": 54,
+      "name": "In Guezzam",
+      "name_ar": "عين قزام",
+      "metrics": {
+        "candidates": 7,
+        "osm_records": 2,
+        "tariki_records": 5,
+        "cross_source": 0,
+        "multiple_tariki": 0,
+        "osm_only": 2,
+        "tariki_only": 5,
+        "nearby_osm_pairs": 0,
+        "conflicts": 5
+      }
+    },
+    {
+      "wilaya_code": 55,
+      "name": "Touggourt",
+      "name_ar": "توقرت",
+      "metrics": {
+        "candidates": 31,
+        "osm_records": 24,
+        "tariki_records": 21,
+        "cross_source": 12,
+        "multiple_tariki": 1,
+        "osm_only": 11,
+        "tariki_only": 7,
+        "nearby_osm_pairs": 2,
+        "conflicts": 12
+      }
+    },
+    {
+      "wilaya_code": 56,
+      "name": "Djanet",
+      "name_ar": "جانت",
+      "metrics": {
+        "candidates": 8,
+        "osm_records": 6,
+        "tariki_records": 5,
+        "cross_source": 3,
+        "multiple_tariki": 0,
+        "osm_only": 3,
+        "tariki_only": 2,
+        "nearby_osm_pairs": 0,
+        "conflicts": 2
+      }
+    },
+    {
+      "wilaya_code": 57,
+      "name": "El M'Ghair",
+      "name_ar": "المغير",
+      "metrics": {
+        "candidates": 14,
+        "osm_records": 9,
+        "tariki_records": 11,
+        "cross_source": 6,
+        "multiple_tariki": 0,
+        "osm_only": 3,
+        "tariki_only": 5,
+        "nearby_osm_pairs": 0,
+        "conflicts": 5
+      }
+    },
+    {
+      "wilaya_code": 58,
+      "name": "El Meniaa",
+      "name_ar": "المنيعة",
+      "metrics": {
+        "candidates": 19,
+        "osm_records": 12,
+        "tariki_records": 17,
+        "cross_source": 6,
+        "multiple_tariki": 2,
+        "osm_only": 4,
+        "tariki_only": 7,
+        "nearby_osm_pairs": 2,
+        "conflicts": 12
+      }
+    },
+    {
+      "wilaya_code": 59,
+      "name": "Aflou",
+      "name_ar": "آفلو",
+      "metrics": {
+        "candidates": 17,
+        "osm_records": 14,
+        "tariki_records": 9,
+        "cross_source": 6,
+        "multiple_tariki": 0,
+        "osm_only": 8,
+        "tariki_only": 3,
+        "nearby_osm_pairs": 0,
+        "conflicts": 3
+      }
+    },
+    {
+      "wilaya_code": 60,
+      "name": "Barika",
+      "name_ar": "بريكة",
+      "metrics": {
+        "candidates": 14,
+        "osm_records": 10,
+        "tariki_records": 11,
+        "cross_source": 7,
+        "multiple_tariki": 0,
+        "osm_only": 3,
+        "tariki_only": 4,
+        "nearby_osm_pairs": 0,
+        "conflicts": 4
+      }
+    },
+    {
+      "wilaya_code": 61,
+      "name": "El Kantara",
+      "name_ar": "القنطرة",
+      "metrics": {
+        "candidates": 15,
+        "osm_records": 13,
+        "tariki_records": 13,
+        "cross_source": 5,
+        "multiple_tariki": 3,
+        "osm_only": 5,
+        "tariki_only": 2,
+        "nearby_osm_pairs": 2,
+        "conflicts": 8
+      }
+    },
+    {
+      "wilaya_code": 62,
+      "name": "Bir El Ater",
+      "name_ar": "بئر العاتر",
+      "metrics": {
+        "candidates": 18,
+        "osm_records": 7,
+        "tariki_records": 11,
+        "cross_source": 0,
+        "multiple_tariki": 0,
+        "osm_only": 7,
+        "tariki_only": 11,
+        "nearby_osm_pairs": 0,
+        "conflicts": 11
+      }
+    },
+    {
+      "wilaya_code": 63,
+      "name": "El Aricha",
+      "name_ar": "العريشة",
+      "metrics": {
+        "candidates": 8,
+        "osm_records": 5,
+        "tariki_records": 5,
+        "cross_source": 2,
+        "multiple_tariki": 0,
+        "osm_only": 3,
+        "tariki_only": 3,
+        "nearby_osm_pairs": 1,
+        "conflicts": 5
+      }
+    },
+    {
+      "wilaya_code": 64,
+      "name": "Ksar Chellala",
+      "name_ar": "قصر الشلالة",
+      "metrics": {
+        "candidates": 16,
+        "osm_records": 9,
+        "tariki_records": 14,
+        "cross_source": 7,
+        "multiple_tariki": 0,
+        "osm_only": 2,
+        "tariki_only": 7,
+        "nearby_osm_pairs": 0,
+        "conflicts": 7
+      }
+    },
+    {
+      "wilaya_code": 65,
+      "name": "Aïn Oussara",
+      "name_ar": "عين وسارة",
+      "metrics": {
+        "candidates": 24,
+        "osm_records": 18,
+        "tariki_records": 18,
+        "cross_source": 7,
+        "multiple_tariki": 2,
+        "osm_only": 9,
+        "tariki_only": 6,
+        "nearby_osm_pairs": 1,
+        "conflicts": 9
+      }
+    },
+    {
+      "wilaya_code": 66,
+      "name": "Messaad",
+      "name_ar": "مسعد",
+      "metrics": {
+        "candidates": 16,
+        "osm_records": 13,
+        "tariki_records": 8,
+        "cross_source": 5,
+        "multiple_tariki": 0,
+        "osm_only": 8,
+        "tariki_only": 3,
+        "nearby_osm_pairs": 0,
+        "conflicts": 3
+      }
+    },
+    {
+      "wilaya_code": 67,
+      "name": "Ksar El Boukhari",
+      "name_ar": "قصر البخاري",
+      "metrics": {
+        "candidates": 21,
+        "osm_records": 20,
+        "tariki_records": 9,
+        "cross_source": 8,
+        "multiple_tariki": 0,
+        "osm_only": 12,
+        "tariki_only": 1,
+        "nearby_osm_pairs": 3,
+        "conflicts": 4
+      }
+    },
+    {
+      "wilaya_code": 68,
+      "name": "Bou Saâda",
+      "name_ar": "بوسعادة",
+      "metrics": {
+        "candidates": 30,
+        "osm_records": 24,
+        "tariki_records": 26,
+        "cross_source": 12,
+        "multiple_tariki": 4,
+        "osm_only": 8,
+        "tariki_only": 6,
+        "nearby_osm_pairs": 0,
+        "conflicts": 10
+      }
+    },
+    {
+      "wilaya_code": 69,
+      "name": "El Abiodh Sidi Cheikh",
+      "name_ar": "الأبيض سيدي الشيخ",
+      "metrics": {
+        "candidates": 11,
+        "osm_records": 8,
+        "tariki_records": 10,
+        "cross_source": 5,
+        "multiple_tariki": 1,
+        "osm_only": 2,
+        "tariki_only": 3,
+        "nearby_osm_pairs": 1,
+        "conflicts": 6
+      }
+    }
+  ]
+}

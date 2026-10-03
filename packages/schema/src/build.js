@@ -1,5 +1,5 @@
 // Builders for the canonical metadata.json, the repo catalog (index.json), and a
-// schema.org/DCAT Dataset descriptor per package. Pure — the caller stamps dates.
+// schema.org/DCAT Dataset descriptor per package. Pure: the caller stamps dates.
 
 import { SCHEMA_VERSION, LIFECYCLE } from "./constants.js";
 import { bbox } from "./emit.js";
@@ -59,7 +59,7 @@ export function buildMetadata(input) {
     if (Object.prototype.hasOwnProperty.call(precision, r.geo_precision)) precision[r.geo_precision]++;
   const wilayas = new Set(records.map((r) => r.wilaya_code).filter(Boolean));
 
-  // Lifecycle rollup — only emitted when at least one record declares a lifecycle.
+  // Lifecycle rollup: only emitted when at least one record declares a lifecycle.
   const lifecycle = Object.fromEntries(LIFECYCLE.map((k) => [k, 0]));
   let anyLifecycle = false;
   for (const r of records)
@@ -103,7 +103,7 @@ export function buildMetadata(input) {
  *
  * A ratio over 100% is not coverage and does not travel under that name.
  * `@geoalgeria/mosquees` is why: 20,759 OSM/Wikidata places of worship against
- * the MARW's 18,449 built mosques is 112.5%, which its note explains at length —
+ * the MARW's 18,449 built mosques is 112.5%, which its note explains at length,
  * but a Public API or an answer engine rendering `coverage.pct` drops the
  * sentence and prints "112.5% coverage", a claim the data cannot support. Above
  * 100 the same three fields are emitted as `ratio` instead, so a consumer
@@ -121,12 +121,12 @@ export function buildManifest(metadatas, opts = {}) {
     datasets: metadatas.map((m) => {
       if (m.estimated_universe && !m.coverage_note)
         throw new Error(
-          `${m.package}: estimated_universe ${m.estimated_universe} without a coverage_note — ` +
+          `${m.package}: estimated_universe ${m.estimated_universe} without a coverage_note: ` +
             `a coverage percentage that cannot say what it divides by must not be published`,
         );
       return {
         package: m.package,
-        // null for the packages that predate the v2 contract — see the catalog note.
+        // null for the packages that predate the v2 contract: see the catalog note.
         schema_version: m.schema_version ?? null,
         ...(m.title_en || m.title_fr ? { title: m.title_en || m.title_fr } : {}),
         record_count: m.record_count,
@@ -163,9 +163,9 @@ const LICENSE_URLS = {
  * Resolve a dataset licence string for the discovery descriptor.
  *  - a raw URL → itself.
  *  - an SPDX id, or an ` AND `-joined expression whose every term is a known
- *    open SPDX id → the canonical URL of its governing term (the share-alike one,
- *    ODbL/CC-BY-SA, since redistributing a database that incorporates it binds
- *    the whole DB to it; else the first term).
+ *    open SPDX id → the canonical URL of its governing term. When both ODbL and
+ *    CC-BY-SA govern distinct parts, both URLs are returned rather than hiding
+ *    either attribution/share-alike regime.
  *  - anything else is prose describing operator-© / factual-listing terms with
  *    NO open licence → carried as `prose`, never fabricated into a licence URL.
  * @param {string} license
@@ -176,6 +176,9 @@ function licenseInfo(license) {
   if (/^https?:\/\//.test(license)) return { url: license };
   const terms = license.split(" AND ").map((t) => t.trim());
   if (terms.every((t) => LICENSE_URLS[t])) {
+    if (terms.includes("ODbL-1.0") && terms.includes("CC-BY-SA-4.0")) {
+      return { url: [LICENSE_URLS["CC-BY-SA-4.0"], LICENSE_URLS["ODbL-1.0"]] };
+    }
     const governing =
       terms.find((t) => t === "ODbL-1.0") || terms.find((t) => t === "CC-BY-SA-4.0") || terms[0];
     return { url: LICENSE_URLS[governing] };
@@ -218,7 +221,7 @@ export function buildDcat(meta, opts = {}) {
   // redistributed dataset. Source terms travel per-source in `citation`.
   // An open licence becomes its canonical URL; an operator-© / factual-listing
   // dataset has no open licence, so its prose moves to `conditionsOfAccess` and
-  // the `license` slot is omitted — a wrong licence URL is worse than none.
+  // the `license` slot is omitted: a wrong licence URL is worse than none.
   const lic = licenseInfo(meta.license);
 
   return {
@@ -244,7 +247,7 @@ export function buildDcat(meta, opts = {}) {
     url: homepage,
     ...(opts.repo ? { sameAs: opts.repo } : {}),
     ...(meta.sources
-      ? { citation: meta.sources.map((s) => (s.license ? `${s.name} — ${s.license}` : s.name)) }
+      ? { citation: meta.sources.map((s) => (s.license ? `${s.name}, ${s.license}` : s.name)) }
       : {}),
   };
 }

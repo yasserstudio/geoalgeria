@@ -164,8 +164,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "RN06 PK200, REGGANE",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "01-009",
@@ -185,8 +185,8 @@
     },
     "statut": "UNITE PRINCIPALE",
     "address": "ADRAR",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "02-001",
@@ -782,7 +782,7 @@
     "name_ar": "الوحدة الثانوية حاسي الرمل",
     "wilaya_code": "03",
     "commune_code": "0306",
-    "commune": "Hassi R'mel",
+    "commune": "Hassi R'Mel",
     "lat": 32.9347,
     "lng": 3.27306,
     "geo_precision": "exact",
@@ -803,11 +803,11 @@
     "name_ar": "الوحدة الثانوية عين ماضي",
     "wilaya_code": "03",
     "commune_code": "0307",
-    "commune": "Ain Madhi",
-    "lat": 33.803799,
-    "lng": 2.31,
-    "geo_precision": "approximate",
-    "geo_method": "dgpc_map",
+    "commune": "Aïn Madhi",
+    "lat": 33.803864,
+    "lng": 2.30995,
+    "geo_precision": "exact",
+    "geo_method": "osm_node_review",
     "source": "dgpc",
     "refs": {
       "dgpc": "424",
@@ -816,7 +816,14 @@
     "statut": "UNITE SECONDAIRE",
     "address": "CW231 ENTREE VILLE AIN MADHI, AIN MADHI",
     "tel": "029130802",
-    "fax": "029130801"
+    "fax": "029130801",
+    "review_status": "corrected",
+    "reviewed_at": "2026-08-30",
+    "reviewed_by": "GeoAlgeria data review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/node/4271529989",
+      "https://dgpc.dz/dgpc2/unite.geojson"
+    ]
   },
   {
     "id": "03-005",
@@ -887,7 +894,7 @@
     "name_ar": "المركز المتقدم بليل_حاسي الرمل",
     "wilaya_code": "03",
     "commune_code": "0306",
-    "commune": "Hassi R'mel",
+    "commune": "Hassi R'Mel",
     "lat": 33.276699,
     "lng": 3.19247,
     "geo_precision": "exact",
@@ -1152,7 +1159,7 @@
     "statut": "UNITE SECONDAIRE",
     "address": "DOUAR OULED SAOUD RN10, SIGUS",
     "tel": "0470002192",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "04-011",
@@ -1257,7 +1264,7 @@
     "statut": "POSTE AVANCE",
     "address": "RN100, OULED HAMLA",
     "tel": "0470002349",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "04-016",
@@ -1277,8 +1284,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "BIR CHOUHADA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "05-001",
@@ -1349,7 +1356,7 @@
     "name_ar": "الوحدة الثانوية رأس العيون",
     "wilaya_code": "05",
     "commune_code": "0551",
-    "commune": "Ras El Aioun",
+    "commune": "Ras El Aïoun",
     "lat": 35.6768,
     "lng": 5.64729,
     "geo_precision": "exact",
@@ -1370,7 +1377,7 @@
     "name_ar": "الوحدة الثانوية نقاوس",
     "wilaya_code": "05",
     "commune_code": "0509",
-    "commune": "N Gaous",
+    "commune": "N'Gaous",
     "lat": 35.5723,
     "lng": 5.6176,
     "geo_precision": "exact",
@@ -1391,7 +1398,7 @@
     "name_ar": "الوحدة الثانوية عين التوتة",
     "wilaya_code": "05",
     "commune_code": "0545",
-    "commune": "Ain Touta",
+    "commune": "Aïn Touta",
     "lat": 35.368,
     "lng": 5.90102,
     "geo_precision": "exact",
@@ -1412,7 +1419,7 @@
     "name_ar": "الوحدة الثانوية تكوت",
     "wilaya_code": "05",
     "commune_code": "0544",
-    "commune": "T Kout",
+    "commune": "T'Kout",
     "lat": 35.1315,
     "lng": 6.28664,
     "geo_precision": "exact",
@@ -1509,7 +1516,7 @@
     "statut": "UNITE SECONDAIRE",
     "address": "RN87 CITE KARAAH EL OUAZ, CHEMORA",
     "tel": "033326578",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "05-012",
@@ -1517,7 +1524,7 @@
     "name_ar": "الوحدة الثانوية المعذر",
     "wilaya_code": "05",
     "commune_code": "0507",
-    "commune": "El Madher",
+    "commune": "Elmadher",
     "lat": 35.626499,
     "lng": 6.37158,
     "geo_precision": "exact",
@@ -1676,8 +1683,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "RUE KHLIF MOHAMED ROUTE BATNA-THENIET EL ABED, THENIET EL ABED",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "06-001",
@@ -2104,7 +2111,7 @@
     "name": "الوحدة الثانوية بني معوش",
     "name_ar": "الوحدة الثانوية بني معوش",
     "wilaya_code": "06",
-    "commune_code": null,
+    "commune_code": "0650",
     "commune": "Benimaouche",
     "lat": 36.507,
     "lng": 4.75846,
@@ -2336,7 +2343,7 @@
     "name_ar": "الوحدة الثانوية مشونش(تفتح قريبا)",
     "wilaya_code": "07",
     "commune_code": "0712",
-    "commune": "M'chouneche",
+    "commune": "M'Chounèche",
     "lat": 34.940899,
     "lng": 5.99213,
     "geo_precision": "exact",
@@ -2348,8 +2355,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "CITE MEYOURI, M'CHOUNECHE",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "08-001",
@@ -2566,7 +2573,7 @@
     "name": "الوحدة الثانوية مفتاح",
     "name_ar": "الوحدة الثانوية مفتاح",
     "wilaya_code": "09",
-    "commune_code": "0914",
+    "commune_code": "0918",
     "commune": "Meftah",
     "lat": 36.625301,
     "lng": 3.21986,
@@ -2587,7 +2594,7 @@
     "name": "الوحدة الثانوية الأربعاء",
     "name_ar": "الوحدة الثانوية الأربعاء",
     "wilaya_code": "09",
-    "commune_code": "0917",
+    "commune_code": "0921",
     "commune": "Larbaa",
     "lat": 36.566898,
     "lng": 3.14685,
@@ -2608,7 +2615,7 @@
     "name": "الوحدة الثانوية بوقرة",
     "name_ar": "الوحدة الثانوية بوقرة",
     "wilaya_code": "09",
-    "commune_code": "0922",
+    "commune_code": "0926",
     "commune": "Bougara",
     "lat": 36.547901,
     "lng": 3.08412,
@@ -2650,7 +2657,7 @@
     "name": "الوحدة الثانوية بوفاريك",
     "name_ar": "الوحدة الثانوية بوفاريك",
     "wilaya_code": "09",
-    "commune_code": "0916",
+    "commune_code": "0920",
     "commune": "Boufarik",
     "lat": 36.5742,
     "lng": 2.92033,
@@ -2692,7 +2699,7 @@
     "name": "وحدة القطاع الشفة",
     "name_ar": "وحدة القطاع الشفة",
     "wilaya_code": "09",
-    "commune_code": "0908",
+    "commune_code": "0911",
     "commune": "Chiffa",
     "lat": 36.461601,
     "lng": 2.74768,
@@ -2713,7 +2720,7 @@
     "name": "الوحدة الثانوية العفرون",
     "name_ar": "الوحدة الثانوية العفرون",
     "wilaya_code": "09",
-    "commune_code": "0907",
+    "commune_code": "0910",
     "commune": "El-Affroun",
     "lat": 36.469399,
     "lng": 2.63231,
@@ -2734,7 +2741,7 @@
     "name": "وحدة القطاع بني مراد",
     "name_ar": "وحدة القطاع بني مراد",
     "wilaya_code": "09",
-    "commune_code": "0921",
+    "commune_code": "0925",
     "commune": "Beni Mered",
     "lat": 36.516701,
     "lng": 2.84683,
@@ -2755,7 +2762,7 @@
     "name": "الوحدة الثانوية أولاد يعيش",
     "name_ar": "الوحدة الثانوية أولاد يعيش",
     "wilaya_code": "09",
-    "commune_code": "0905",
+    "commune_code": "0907",
     "commune": "Ouled Yaich",
     "lat": 36.4898,
     "lng": 2.85421,
@@ -2797,7 +2804,7 @@
     "name": "الوحدة الثانوية موزاية",
     "name_ar": "الوحدة الثانوية موزاية",
     "wilaya_code": "09",
-    "commune_code": "0912",
+    "commune_code": "0916",
     "commune": "Mouzaia",
     "lat": 36.466801,
     "lng": 2.68121,
@@ -2839,7 +2846,7 @@
     "name": "وحدة القطاع بوعرفة",
     "name_ar": "وحدة القطاع بوعرفة",
     "wilaya_code": "09",
-    "commune_code": "0920",
+    "commune_code": "0924",
     "commune": "Bouarfa",
     "lat": 36.456799,
     "lng": 2.77715,
@@ -2860,7 +2867,7 @@
     "name": "وحدة القطاع وادي جر",
     "name_ar": "وحدة القطاع وادي جر",
     "wilaya_code": "09",
-    "commune_code": "0918",
+    "commune_code": "0922",
     "commune": "Oued Djer",
     "lat": 36.420898,
     "lng": 2.56839,
@@ -2881,7 +2888,7 @@
     "name": "وحدة القطاع صوحان",
     "name_ar": "وحدة القطاع صوحان",
     "wilaya_code": "09",
-    "commune_code": "0913",
+    "commune_code": "0917",
     "commune": "Souhane",
     "lat": 36.506599,
     "lng": 3.23834,
@@ -2902,7 +2909,7 @@
     "name": "وحدة القطاع الصومعة",
     "name_ar": "وحدة القطاع الصومعة",
     "wilaya_code": "09",
-    "commune_code": "0911",
+    "commune_code": "0914",
     "commune": "Soumaa",
     "lat": 36.521301,
     "lng": 2.91233,
@@ -2944,7 +2951,7 @@
     "name": "وحدة القطاع حمام ملوان",
     "name_ar": "وحدة القطاع حمام ملوان",
     "wilaya_code": "09",
-    "commune_code": "0909",
+    "commune_code": "0912",
     "commune": "Hammam Elouane",
     "lat": 36.4641,
     "lng": 3.01398,
@@ -2986,7 +2993,7 @@
     "name": "وحدة القطاع الشريعة",
     "name_ar": "وحدة القطاع الشريعة",
     "wilaya_code": "09",
-    "commune_code": "0906",
+    "commune_code": "0908",
     "commune": "Chrea",
     "lat": 36.4286,
     "lng": 2.88554,
@@ -3189,7 +3196,7 @@
     "statut": "POSTE AVANCE",
     "address": "CITE TOUM RN08, SOUR EL GHOZLANE",
     "tel": "0470002202",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "10-010",
@@ -3399,7 +3406,7 @@
     "statut": "POSTE AVANCE",
     "address": "ZONE TIKJDA, EL ASNAM",
     "tel": "026844952",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "10-020",
@@ -3462,7 +3469,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "DOUKLANE, AGHBALOU",
     "tel": "0470002341",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "10-023",
@@ -3545,8 +3552,8 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "EN FACE LYCEE AHNIF, AHNIF",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "10-027",
@@ -3566,8 +3573,8 @@
     },
     "statut": "UNITE PRINCIPALE",
     "address": "EL ASNAM",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "11-001",
@@ -3679,7 +3686,7 @@
     "name": "الوحدة الثانوية سيلت",
     "name_ar": "الوحدة الثانوية سيلت",
     "wilaya_code": "11",
-    "commune_code": null,
+    "commune_code": "1102",
     "commune": "Abelsa",
     "lat": 22.656799,
     "lng": 4.57067,
@@ -3722,7 +3729,7 @@
     "name_ar": "الوحدة الثانوية الماء الابيض",
     "wilaya_code": "12",
     "commune_code": "1220",
-    "commune": "El Malabiod",
+    "commune": "El Ma Labiod",
     "lat": 35.208302,
     "lng": 8.17019,
     "geo_precision": "exact",
@@ -3743,7 +3750,7 @@
     "name_ar": "الوحدة الرئيسية تبسة",
     "wilaya_code": "12",
     "commune_code": "1201",
-    "commune": "Tebessa",
+    "commune": "Tébessa",
     "lat": 35.412899,
     "lng": 8.09478,
     "geo_precision": "exact",
@@ -3764,7 +3771,7 @@
     "name_ar": "مديرية الحماية المدنية تبسة",
     "wilaya_code": "12",
     "commune_code": "1201",
-    "commune": "Tebessa",
+    "commune": "Tébessa",
     "lat": 35.413101,
     "lng": 8.09551,
     "geo_precision": "exact",
@@ -3806,7 +3813,7 @@
     "name_ar": "الوحدة الثانوية العوينات",
     "wilaya_code": "12",
     "commune_code": "1205",
-    "commune": "El-Aouinet",
+    "commune": "El Aouinet",
     "lat": 35.861099,
     "lng": 7.89282,
     "geo_precision": "exact",
@@ -3924,7 +3931,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "RN10, BEKKARIA",
     "tel": "0470002262",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "12-011",
@@ -3953,7 +3960,7 @@
     "name_ar": "وحدة القطاع باب زياتين_تبسة",
     "wilaya_code": "12",
     "commune_code": "1201",
-    "commune": "Tebessa",
+    "commune": "Tébessa",
     "lat": 35.406502,
     "lng": 8.1282,
     "geo_precision": "exact",
@@ -4028,8 +4035,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "OUM ALI",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "12-016",
@@ -4100,7 +4107,7 @@
     "name_ar": "الوحدة الثانوية ندرومة",
     "wilaya_code": "13",
     "commune_code": "1340",
-    "commune": "Nedroma",
+    "commune": "Nédroma",
     "lat": 35.0219,
     "lng": -1.7613,
     "geo_precision": "exact",
@@ -4184,7 +4191,7 @@
     "name_ar": "الوحدة الثانوية بني سنوس",
     "wilaya_code": "13",
     "commune_code": "1317",
-    "commune": "Beni Snous",
+    "commune": "Béni Snous",
     "lat": 34.6674,
     "lng": -1.53303,
     "geo_precision": "exact",
@@ -4310,7 +4317,7 @@
     "name_ar": "المركز المتقدم بوكانون_مسيردة الفواقة",
     "wilaya_code": "13",
     "commune_code": "1330",
-    "commune": "M'sirda Fouaga",
+    "commune": "Msirda Fouaga",
     "lat": 34.966702,
     "lng": -2.09859,
     "geo_precision": "exact",
@@ -4374,10 +4381,10 @@
     "wilaya_code": "13",
     "commune_code": "1304",
     "commune": "Remchi",
-    "lat": 35.061001,
-    "lng": -1.43,
-    "geo_precision": "approximate",
-    "geo_method": "dgpc_map",
+    "lat": 35.061129,
+    "lng": -1.430106,
+    "geo_precision": "exact",
+    "geo_method": "osm_node_review",
     "source": "dgpc",
     "refs": {
       "dgpc": "574",
@@ -4386,7 +4393,14 @@
     "statut": "POSTE AVANCE",
     "address": "RUE COLONEL LOTFI CENTRE VILLE REMCHI, REMCHI",
     "tel": "043438005",
-    "fax": "043438007"
+    "fax": "043438007",
+    "review_status": "corrected",
+    "reviewed_at": "2026-08-30",
+    "reviewed_by": "GeoAlgeria data review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/node/1712552456",
+      "https://dgpc.dz/dgpc2/unite.geojson"
+    ]
   },
   {
     "id": "13-017",
@@ -4406,8 +4420,8 @@
     },
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "ROND-POINT RN35 ET RN98 , REMCHI",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "13-018",
@@ -4457,7 +4471,7 @@
     "name_ar": "المركز المتقدم مرسى بن مهيدي",
     "wilaya_code": "13",
     "commune_code": "1339",
-    "commune": "Marsa Ben M'hidi",
+    "commune": "Marsa Ben M'Hidi",
     "lat": 35.073002,
     "lng": -2.21155,
     "geo_precision": "exact",
@@ -4490,8 +4504,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "SIDI AMER, GHAZAOUAT",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "13-022",
@@ -4499,7 +4513,7 @@
     "name_ar": "المركز المتقدم هنين",
     "wilaya_code": "13",
     "commune_code": "1344",
-    "commune": "Honnaine",
+    "commune": "Honaïne",
     "lat": 35.194801,
     "lng": -1.63136,
     "geo_precision": "exact",
@@ -4511,8 +4525,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "ROUTE DE LA PLAGE AGLA VILLAGE OULED YOUCEF, HONAINE",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "13-023",
@@ -4520,7 +4534,7 @@
     "name_ar": "المركز المتقدم عين تالوت",
     "wilaya_code": "13",
     "commune_code": "1303",
-    "commune": "Ain Tellout",
+    "commune": "Aïn Tallout",
     "lat": 34.920799,
     "lng": -0.953333,
     "geo_precision": "exact",
@@ -4532,8 +4546,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "CITE EL CHAHID BEN MILOUD MOHAMED, AIN TALLOUT",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "14-001",
@@ -4562,7 +4576,7 @@
     "name_ar": "الوحدة الثانوية رحوية",
     "wilaya_code": "14",
     "commune_code": "1434",
-    "commune": "Mechraa Safa",
+    "commune": "Mechraa Sfa",
     "lat": 35.536598,
     "lng": 1.02563,
     "geo_precision": "exact",
@@ -4583,7 +4597,7 @@
     "name_ar": "الوحدة الثانوية مشرع الصفاء",
     "wilaya_code": "14",
     "commune_code": "1434",
-    "commune": "Mechraa Safa",
+    "commune": "Mechraa Sfa",
     "lat": 35.384899,
     "lng": 1.05554,
     "geo_precision": "exact",
@@ -4625,7 +4639,7 @@
     "name_ar": "الوحدة الثانوية عين الذهب",
     "wilaya_code": "14",
     "commune_code": "1406",
-    "commune": "Ain Deheb",
+    "commune": "Aïn Deheb",
     "lat": 34.852402,
     "lng": 1.54299,
     "geo_precision": "exact",
@@ -4646,7 +4660,7 @@
     "name_ar": "الوحدة الثانوية عين كرمس",
     "wilaya_code": "14",
     "commune_code": "1428",
-    "commune": "Ain Kermes",
+    "commune": "Aïn Kermes",
     "lat": 34.903198,
     "lng": 1.10402,
     "geo_precision": "exact",
@@ -4751,7 +4765,7 @@
     "name_ar": "الوحدة الثانوية وادي ليلي",
     "wilaya_code": "14",
     "commune_code": "1433",
-    "commune": "Oued Lilli",
+    "commune": "Oued Lili",
     "lat": 35.5182,
     "lng": 1.2693,
     "geo_precision": "exact",
@@ -5225,8 +5239,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "OUAGUENOUN",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-001",
@@ -5275,7 +5289,7 @@
     "name": "الوحدة الثانوية الرويبة",
     "name_ar": "الوحدة الثانوية الرويبة",
     "wilaya_code": "16",
-    "commune_code": "1638",
+    "commune_code": "1642",
     "commune": "Rouiba",
     "lat": 36.739899,
     "lng": 3.27725,
@@ -5296,7 +5310,7 @@
     "name": "وحدة القطاع الرغاية",
     "name_ar": "وحدة القطاع الرغاية",
     "wilaya_code": "16",
-    "commune_code": "1640",
+    "commune_code": "1643",
     "commune": "Reghaia",
     "lat": 36.7267,
     "lng": 3.33219,
@@ -5331,7 +5345,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "11 RUE SAID TOUATI, BAB EL OUED",
     "tel": "023159772",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-006",
@@ -5393,8 +5407,8 @@
     },
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "ROUTE DE L'ALN, HUSSEIN DEY",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-009",
@@ -5415,14 +5429,14 @@
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "A PROXIMITE DE L'HOPITAL MILITAIRE AIN NAADJA, KOUBA",
     "tel": "021561203",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-010",
     "name": "وحدة القطاع عين البنيان",
     "name_ar": "وحدة القطاع عين البنيان",
     "wilaya_code": "16",
-    "commune_code": "1657",
+    "commune_code": "1644",
     "commune": "Ain Benian",
     "lat": 36.800301,
     "lng": 2.90726,
@@ -5436,7 +5450,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "RN11, AIN BENIAN",
     "tel": "023398383",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-011",
@@ -5456,8 +5470,8 @@
     },
     "statut": "UNITE MARINE",
     "address": "PORT SIDI FREDJ, STAOUELI",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-012",
@@ -5485,7 +5499,7 @@
     "name": "وحدة القطاع محمد بلوزداد",
     "name_ar": "وحدة القطاع محمد بلوزداد",
     "wilaya_code": "16",
-    "commune_code": null,
+    "commune_code": "1604",
     "commune": "Mohamed Belouzdad",
     "lat": 36.754299,
     "lng": 3.06442,
@@ -5498,15 +5512,15 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "04 RUE BOUDOUA, MOHAMMED BELOUIZDAD 04 rue Boudoua",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-014",
     "name": "الوحدة الثانوية بئر توتة",
     "name_ar": "الوحدة الثانوية بئر توتة",
     "wilaya_code": "16",
-    "commune_code": "1636",
+    "commune_code": "1634",
     "commune": "Bir Touta",
     "lat": 36.642502,
     "lng": 3.00083,
@@ -5541,7 +5555,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "06 RUE TABOUNT BELKACEM, EL HARRACH",
     "tel": "023720349/023720797",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-016",
@@ -5583,14 +5597,14 @@
     "statut": "UNITE DE SECTEUR",
     "address": "LA PRESIDENCE, EL MOURADIA",
     "tel": "021686145",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-018",
     "name": "وحدة القطاع عين طاية",
     "name_ar": "وحدة القطاع عين طاية",
     "wilaya_code": "16",
-    "commune_code": "1641",
+    "commune_code": "1638",
     "commune": "Ain Taya",
     "lat": 36.774799,
     "lng": 3.28676,
@@ -5604,14 +5618,14 @@
     "statut": "UNITE DE SECTEUR",
     "address": "HOUCH R'MEL ROUTE AIN TAYA, AIN TAYA",
     "tel": "0470002950",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-019",
     "name": "الوحدة الثانوية الشراقة",
     "name_ar": "الوحدة الثانوية الشراقة",
     "wilaya_code": "16",
-    "commune_code": "1652",
+    "commune_code": "1650",
     "commune": "Cheraga",
     "lat": 36.7673,
     "lng": 2.94536,
@@ -5645,8 +5659,8 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "RN11 LA BRIDJA, STAOUELI",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-021",
@@ -5688,14 +5702,14 @@
     "statut": "UNITE DE SECTEUR",
     "address": "RN24 QUATRE CHEMINS SORECAL, BORDJ EL KIFFAN",
     "tel": "021201414/021510634",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-023",
     "name": "وحدة القطاع الدرارية",
     "name_ar": "وحدة القطاع الدرارية",
     "wilaya_code": "16",
-    "commune_code": "1649",
+    "commune_code": "1653",
     "commune": "Draria",
     "lat": 36.715599,
     "lng": 2.9992,
@@ -5730,7 +5744,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "RN11 ROUTE BAINEM, HAMMAMAT",
     "tel": "023060098",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-025",
@@ -5750,8 +5764,8 @@
     },
     "statut": "UNITE MARINE",
     "address": "PORT D'ALGER, ALGER CENTRE",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-026",
@@ -5772,14 +5786,14 @@
     "statut": "UNITE DE SECTEUR",
     "address": "ROND POINT QUATRE CHEMINS LES EUCALYPTUS, LES EUCALYPTUS",
     "tel": "021501811",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-027",
     "name": "وحدة القطاع الدويرة",
     "name_ar": "وحدة القطاع الدويرة",
     "wilaya_code": "16",
-    "commune_code": "1648",
+    "commune_code": "1654",
     "commune": "Douira",
     "lat": 36.6703,
     "lng": 2.94946,
@@ -5821,7 +5835,7 @@
     "name": "المركز المتقدم نادي الصنوبر_الشراقة",
     "name_ar": "المركز المتقدم نادي الصنوبر_الشراقة",
     "wilaya_code": "16",
-    "commune_code": "1652",
+    "commune_code": "1650",
     "commune": "Cheraga",
     "lat": 36.770599,
     "lng": 2.88279,
@@ -5919,14 +5933,14 @@
     "statut": "UNITE DE SECTEUR",
     "address": "ZONE D'ACTIVITE, BARAKI",
     "tel": "023914678",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-034",
     "name": "الوحدة الثانوية بولوغين ابن زيري",
     "name_ar": "الوحدة الثانوية بولوغين ابن زيري",
     "wilaya_code": "16",
-    "commune_code": null,
+    "commune_code": "1606",
     "commune": "Bologhine Ibnou Ziri",
     "lat": 36.809101,
     "lng": 3.0349,
@@ -5989,7 +6003,7 @@
     "name": "وحدة القطاع البرج البحري",
     "name_ar": "وحدة القطاع البرج البحري",
     "wilaya_code": "16",
-    "commune_code": "1642",
+    "commune_code": "1639",
     "commune": "Bordj El Bahri",
     "lat": 36.780201,
     "lng": 3.23131,
@@ -6002,8 +6016,8 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "COUCOU PLAGE, BORDJ EL BAHRI",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-038",
@@ -6044,15 +6058,15 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "CENTRE VILLE BENTALHA, BARAKI",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-040",
     "name": "وحدة القطاع السباعات_الرويبة",
     "name_ar": "وحدة القطاع السباعات_الرويبة",
     "wilaya_code": "16",
-    "commune_code": "1638",
+    "commune_code": "1642",
     "commune": "Rouiba",
     "lat": 36.7089,
     "lng": 3.28292,
@@ -6066,14 +6080,14 @@
     "statut": "UNITE DE SECTEUR",
     "address": "SBAAT, ROUIBA",
     "tel": "023868640",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-041",
     "name": "الوحدة الثانوية سبالة_الدرارية",
     "name_ar": "الوحدة الثانوية سبالة_الدرارية",
     "wilaya_code": "16",
-    "commune_code": "1649",
+    "commune_code": "1653",
     "commune": "Draria",
     "lat": 36.731998,
     "lng": 2.9988,
@@ -6094,7 +6108,7 @@
     "name": "وحدة القطاع عين الكحلة_هراوة",
     "name_ar": "وحدة القطاع عين الكحلة_هراوة",
     "wilaya_code": "16",
-    "commune_code": "1639",
+    "commune_code": "1641",
     "commune": "Herraoua",
     "lat": 36.766899,
     "lng": 3.32336,
@@ -6108,7 +6122,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "AIN EL KAHLA, HARAOUA",
     "tel": "023958214",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-043",
@@ -6129,7 +6143,7 @@
     "statut": "POSTE AVANCE",
     "address": "RESIDENCE D'ETAT, ZERALDA",
     "tel": "021328470",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-044",
@@ -6213,7 +6227,7 @@
     "statut": "UNITE SECONDAIRE",
     "address": "SIDI ABEDELLAH, MAHELMA",
     "tel": "044137210",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "16-048",
@@ -6233,8 +6247,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "PARC ZOOLOGIQUE, BEN AKNOUN",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-049",
@@ -6254,8 +6268,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "GRANDE MOSQUEE, MOHAMMADIA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-050",
@@ -6275,15 +6289,15 @@
     },
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "LES GRANDS VENTS RN05, DELY BRAHIM",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-051",
     "name": "(UNII)الوحدة البحرية تامنفوست_المرسى",
     "name_ar": "(UNII)الوحدة البحرية تامنفوست_المرسى",
     "wilaya_code": "16",
-    "commune_code": "1643",
+    "commune_code": "1640",
     "commune": "El Marsa",
     "lat": 36.806702,
     "lng": 3.2314,
@@ -6296,8 +6310,8 @@
     },
     "statut": "UNITE MARINE",
     "address": "RUE DE LA PLAGE, EL MARSA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "16-052",
@@ -6317,8 +6331,8 @@
     },
     "statut": "CELLULE DE SECURITE",
     "address": "SABLETTE, HUSSEIN DEY",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "17-001",
@@ -6432,10 +6446,10 @@
     "wilaya_code": "17",
     "commune_code": "1714",
     "commune": "El Idrissia",
-    "lat": 34.4575,
-    "lng": 2.53,
+    "lat": 34.457602,
+    "lng": 2.530282,
     "geo_precision": "approximate",
-    "geo_method": "dgpc_map",
+    "geo_method": "osm_centroid_review",
     "source": "dgpc",
     "refs": {
       "dgpc": "268",
@@ -6444,7 +6458,14 @@
     "statut": "UNITE SECONDAIRE",
     "address": "CITE FATH, EL IDRISSIA",
     "tel": "027889288",
-    "fax": "027889287"
+    "fax": "027889287",
+    "review_status": "corrected",
+    "reviewed_at": "2026-08-30",
+    "reviewed_by": "GeoAlgeria data review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/way/382398957",
+      "https://dgpc.dz/dgpc2/unite.geojson"
+    ]
   },
   {
     "id": "17-007",
@@ -6473,7 +6494,7 @@
     "name_ar": "الوحدة الثانوية عين الابل",
     "wilaya_code": "17",
     "commune_code": "1730",
-    "commune": "Ain El Ibel",
+    "commune": "Aïn El Ibel",
     "lat": 34.464901,
     "lng": 3.23456,
     "geo_precision": "exact",
@@ -6494,7 +6515,7 @@
     "name_ar": "المركز المتقدم وادي الصدر_عين الابل",
     "wilaya_code": "17",
     "commune_code": "1730",
-    "commune": "Ain El Ibel",
+    "commune": "Aïn El Ibel",
     "lat": 34.4659,
     "lng": 3.23316,
     "geo_precision": "exact",
@@ -6506,8 +6527,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "RN01 ZONE OUED EL SADR, AIN EL IBEL",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "17-010",
@@ -6527,8 +6548,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "RN01 SORTIE SUD HASSI BAHBAH, HASSI BAHBAH",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "17-011",
@@ -6549,7 +6570,7 @@
     "statut": "POSTE AVANCE",
     "address": "ROUTE MODJBARA, DJELFA",
     "tel": "0470001865",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "18-001",
@@ -7262,8 +7283,8 @@
     },
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "ROND-POINT VERS AUTOROUTE EST-OUEST ET AIN SFIHA-SETIF, SETIF",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "19-018",
@@ -7284,7 +7305,7 @@
     "statut": "UNITE SECONDAIRE",
     "address": "CITE EL FARD, DJEMILA",
     "tel": "036465473",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "19-019",
@@ -7367,8 +7388,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "RN28 ENTREE NORD SALAH BEY, SALAH BEY",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "19-023",
@@ -7388,8 +7409,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "ROUTE DE MAOUKLANE, MAOUKLANE",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "19-024",
@@ -7409,8 +7430,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "SERDJ EL GHOUL",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "20-001",
@@ -7501,7 +7522,7 @@
     "name": "الوحدة الثانوية أولاد ابراهيم",
     "name_ar": "الوحدة الثانوية أولاد ابراهيم",
     "wilaya_code": "20",
-    "commune_code": "2612",
+    "commune_code": "2014",
     "commune": "Ouled Brahim",
     "lat": 34.9902,
     "lng": 0.484456,
@@ -7976,8 +7997,8 @@
     },
     "statut": "UNITE PRINCIPALE",
     "address": "EL HADAIEK",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "21-016",
@@ -8018,8 +8039,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "SIDI MEZGHICHE",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "21-018",
@@ -8039,8 +8060,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "ZITOUNA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "21-019",
@@ -8417,8 +8438,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "CITE CH-TIRIS LAHCEN, MOSTEFA BEN BRAHIM",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "22-018",
@@ -8438,8 +8459,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "CITE 80LOGEMENTS, TENIRA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "23-001",
@@ -8572,8 +8593,8 @@
     "name": "وحدة القطاع العلمة",
     "name_ar": "وحدة القطاع العلمة",
     "wilaya_code": "23",
-    "commune_code": "2307",
-    "commune": "Cheurfa",
+    "commune_code": "2304",
+    "commune": "El Eulma",
     "lat": 36.737801,
     "lng": 7.46396,
     "geo_precision": "exact",
@@ -8775,7 +8796,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "CITE DU 05 JUILLET CENTRE VILLE OUED ANEB, OUED ANEB",
     "tel": "0470002316",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "23-017",
@@ -8796,7 +8817,7 @@
     "statut": "POSTE AVANCE",
     "address": "RN44 CITE EL SATHA OUED ZIAD, OUED ANEB",
     "tel": "0470002318",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "23-018",
@@ -8880,7 +8901,7 @@
     "statut": "POSTE AVANCE",
     "address": "CITE EL BACHIR EL IBRAHIMI 200LOGEMENTS, SIDI AMAR",
     "tel": "0471252691",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "24-001",
@@ -9468,7 +9489,7 @@
     "statut": "POSTE AVANCE",
     "address": "CITE DJEBEL EL OUAHCH, CONSTANTINE",
     "tel": "031789829",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "26-001",
@@ -9476,7 +9497,7 @@
     "name_ar": "مديرية الحماية المدنية المدية",
     "wilaya_code": "26",
     "commune_code": "2601",
-    "commune": "Medea",
+    "commune": "Médéa",
     "lat": 36.259201,
     "lng": 2.76574,
     "geo_precision": "exact",
@@ -9518,7 +9539,7 @@
     "name_ar": "الوحدة الرئيسية المدية",
     "wilaya_code": "26",
     "commune_code": "2601",
-    "commune": "Medea",
+    "commune": "Médéa",
     "lat": 36.266201,
     "lng": 2.78324,
     "geo_precision": "exact",
@@ -9539,7 +9560,7 @@
     "name_ar": "الوحدة الثانوية بني سليمان",
     "wilaya_code": "26",
     "commune_code": "2646",
-    "commune": "Beni Slimane",
+    "commune": "Béni Slimane",
     "lat": 36.231499,
     "lng": 3.30031,
     "geo_precision": "exact",
@@ -9581,7 +9602,7 @@
     "name_ar": "الوحدة الثانوية العزيزية",
     "wilaya_code": "26",
     "commune_code": "2636",
-    "commune": "El Azizia",
+    "commune": "Al Azizia",
     "lat": 36.284901,
     "lng": 3.49652,
     "geo_precision": "exact",
@@ -9665,7 +9686,7 @@
     "name_ar": "وحدة القطاع بن شكاو",
     "wilaya_code": "26",
     "commune_code": "2630",
-    "commune": "Ben Chicao",
+    "commune": "Benchicao",
     "lat": 36.202801,
     "lng": 2.88278,
     "geo_precision": "exact",
@@ -9728,7 +9749,7 @@
     "name_ar": "المركز المتقدم بزيوش_المدية",
     "wilaya_code": "26",
     "commune_code": "2601",
-    "commune": "Medea",
+    "commune": "Médéa",
     "lat": 36.270802,
     "lng": 2.76119,
     "geo_precision": "exact",
@@ -9769,8 +9790,8 @@
     "name": "وحدة القطاع فج الحوضان",
     "name_ar": "وحدة القطاع فج الحوضان",
     "wilaya_code": "26",
-    "commune_code": "2652",
-    "commune": "Tablat",
+    "commune_code": "2653",
+    "commune": "Deux Bassins",
     "lat": 36.4697,
     "lng": 3.29956,
     "geo_precision": "exact",
@@ -9812,7 +9833,7 @@
     "name_ar": "الوحدة الرئيسية المدية(تفتح قريبا)",
     "wilaya_code": "26",
     "commune_code": "2601",
-    "commune": "Medea",
+    "commune": "Médéa",
     "lat": 36.275799,
     "lng": 2.80435,
     "geo_precision": "exact",
@@ -9824,8 +9845,8 @@
     },
     "statut": "UNITE PRINCIPALE",
     "address": "HAOUCHE BAYAZID, MEDEA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "27-001",
@@ -9855,10 +9876,10 @@
     "wilaya_code": "27",
     "commune_code": "2716",
     "commune": "Sidi-Lakhdar",
-    "lat": 36.16,
-    "lng": 0.436667,
-    "geo_precision": "approximate",
-    "geo_method": "dgpc_map",
+    "lat": 36.159824,
+    "lng": 0.43684,
+    "geo_precision": "exact",
+    "geo_method": "osm_node_review",
     "source": "dgpc",
     "refs": {
       "dgpc": "2",
@@ -9867,7 +9888,14 @@
     "statut": "UNITE SECONDAIRE",
     "address": "CENTRE VILLE SIDI LAKHDAR, SIDI LAKHDAR",
     "tel": "045447092",
-    "fax": "045447092"
+    "fax": "045447092",
+    "review_status": "corrected",
+    "reviewed_at": "2026-08-30",
+    "reviewed_by": "GeoAlgeria data review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/node/4493416489",
+      "https://dgpc.dz/dgpc2/unite.geojson"
+    ]
   },
   {
     "id": "27-003",
@@ -10055,8 +10083,8 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "VILLAGE EL MAGTAA, FERNAKA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "27-012",
@@ -10140,7 +10168,7 @@
     "statut": "UNITE MARINE",
     "address": "SALAMANDRE, MOSTAGANEM",
     "tel": "045357056",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "27-016",
@@ -10160,8 +10188,8 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "RN90A DOUAR SIDI DAHMANE, OUED EL KHEIR",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "28-001",
@@ -10169,7 +10197,7 @@
     "name_ar": "الوحدة الرئيسية المسيلة",
     "wilaya_code": "28",
     "commune_code": "2801",
-    "commune": "M'sila",
+    "commune": "M'Sila",
     "lat": 35.689098,
     "lng": 4.53415,
     "geo_precision": "exact",
@@ -10190,7 +10218,7 @@
     "name_ar": "الوحدة الثانوية سيدي عيسى",
     "wilaya_code": "28",
     "commune_code": "2816",
-    "commune": "Sidi Aissa",
+    "commune": "Sidi Aïssa",
     "lat": 35.884899,
     "lng": 3.77603,
     "geo_precision": "exact",
@@ -10211,7 +10239,7 @@
     "name_ar": "مديرية الحماية المدنية المسيلة",
     "wilaya_code": "28",
     "commune_code": "2801",
-    "commune": "M'sila",
+    "commune": "M'Sila",
     "lat": 35.689098,
     "lng": 4.53357,
     "geo_precision": "exact",
@@ -10232,7 +10260,7 @@
     "name_ar": "الوحدة الثانوية حمام الضلعة",
     "wilaya_code": "28",
     "commune_code": "2803",
-    "commune": "Hammam Dalaa",
+    "commune": "Hammam Dhalaa",
     "lat": 35.9356,
     "lng": 4.3984,
     "geo_precision": "exact",
@@ -10274,7 +10302,7 @@
     "name_ar": "الوحدة الثانوية عين الحجل",
     "wilaya_code": "28",
     "commune_code": "2817",
-    "commune": "Ain El Hadjel",
+    "commune": "Aïn El Hadjel",
     "lat": 35.6623,
     "lng": 3.89699,
     "geo_precision": "exact",
@@ -10349,8 +10377,8 @@
     },
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "CENTRE VILLE LOUKMANE, OULED MENSOUR",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "28-010",
@@ -10358,7 +10386,7 @@
     "name_ar": "الوحدة الثانوية المسيلة",
     "wilaya_code": "28",
     "commune_code": "2801",
-    "commune": "M'sila",
+    "commune": "M'Sila",
     "lat": 35.714298,
     "lng": 4.53469,
     "geo_precision": "exact",
@@ -10400,7 +10428,7 @@
     "name_ar": "الوحدة الثانوية سيدي عيسى",
     "wilaya_code": "28",
     "commune_code": "2816",
-    "commune": "Sidi Aissa",
+    "commune": "Sidi Aïssa",
     "lat": 35.8666,
     "lng": 3.78884,
     "geo_precision": "exact",
@@ -10421,7 +10449,7 @@
     "name_ar": "الوحدة الثانوية المسيلة(تفتح قريبا)",
     "wilaya_code": "28",
     "commune_code": "2801",
-    "commune": "M'sila",
+    "commune": "M'Sila",
     "lat": 35.739101,
     "lng": 4.53034,
     "geo_precision": "exact",
@@ -10433,8 +10461,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "POLE URBAIN M'SILA, M'SILA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "29-001",
@@ -10749,7 +10777,7 @@
     "statut": "POSTE AVANCE",
     "address": "ROND-POINT RN06 ET RN17, HACINE",
     "tel": "045700035",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "29-016",
@@ -11295,7 +11323,7 @@
     "statut": "UNITE SECONDAIRE",
     "address": "CW24 ROUTE DE L'AEROPORT AHMED BEN BELLA, ES SENIA",
     "tel": "0470002159",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "31-010",
@@ -11358,7 +11386,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "CW46 ENTREE ZONE INDUSTRIELLE HASSI AMER, HASSI BOUNIF",
     "tel": "0470002155",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "31-013",
@@ -11379,7 +11407,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "CW35 ENTREE EST TAFRAOUI, TAFRAOUI",
     "tel": "0470002158",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "31-014",
@@ -11400,7 +11428,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "FERME RAHMOUNI, MERS EL HADJADJ",
     "tel": "0470003097",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "31-015",
@@ -11421,7 +11449,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "RUE MOUDJAHID BELAHCENE MILOUD CITE OUADIT, BOUSFER",
     "tel": "0470002156",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "31-016",
@@ -11568,7 +11596,7 @@
     "statut": "POSTE AVANCE",
     "address": "AEROPORT INTERNATIONAL AHMED BEN BELLA, EL KARMA",
     "tel": "041591032",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "31-023",
@@ -11588,8 +11616,8 @@
     },
     "statut": "UNITE MARINE",
     "address": "QUAI D'ALGER POISSONNERIE D'ORAN, ORAN",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "31-024",
@@ -11609,8 +11637,8 @@
     },
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "ROUTE DE LA CORNICHE-RN02 SAINTE CLOTILDE ELTANF OUAHRANI, MERS EL KEBIR",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "31-025",
@@ -11630,8 +11658,8 @@
     },
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "RN02 VIEUX ROCHET ELTANF OUAHRANI, MERS EL KEBIR",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "31-026",
@@ -11651,8 +11679,8 @@
     },
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "CW84 PLAGE LES ANDALOUSES, EL ANCOR",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "31-027",
@@ -11701,8 +11729,8 @@
     "name": "وحدة القطاع عين الكرمة(ليست في الخدمة)",
     "name_ar": "وحدة القطاع عين الكرمة(ليست في الخدمة)",
     "wilaya_code": "31",
-    "commune_code": "3110",
-    "commune": "El Ancor",
+    "commune_code": "3125",
+    "commune": "Ain Kerma",
     "lat": 35.6464,
     "lng": -0.979944,
     "geo_precision": "exact",
@@ -11714,8 +11742,8 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "CW20, AIN EL KERMA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "31-030",
@@ -11736,7 +11764,7 @@
     "statut": "UNITE DE SECTEUR",
     "address": "RN4 VERS AUTOROUTE EST-OUEST CITE EL AMEL ES SENIA-EL KARMA, EL KARMA",
     "tel": "0470002154",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "31-031",
@@ -11756,8 +11784,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "RUE SIDI EL CHAHMI CITE FLAOUSSEN, ORAN",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "32-001",
@@ -11765,7 +11793,7 @@
     "name_ar": "وحدة القطاع الخيثر",
     "wilaya_code": "32",
     "commune_code": "3211",
-    "commune": "El Kheiter",
+    "commune": "El Kheïther",
     "lat": 34.146702,
     "lng": 0.066072,
     "geo_precision": "exact",
@@ -11786,7 +11814,7 @@
     "name_ar": "الوحدة الثانوية بوقطب",
     "wilaya_code": "32",
     "commune_code": "3210",
-    "commune": "Bougtoub",
+    "commune": "Bougtob",
     "lat": 34.026501,
     "lng": 0.097486,
     "geo_precision": "exact",
@@ -11891,7 +11919,7 @@
     "name_ar": "الوحدة الثانوية بريزينة",
     "wilaya_code": "32",
     "commune_code": "3204",
-    "commune": "Brezina",
+    "commune": "Brézina",
     "lat": 33.104099,
     "lng": 1.26999,
     "geo_precision": "exact",
@@ -12081,10 +12109,10 @@
     "wilaya_code": "33",
     "commune_code": "3301",
     "commune": "Illizi",
-    "lat": 26.51,
-    "lng": 8.47046,
+    "lat": 26.510006,
+    "lng": 8.470251,
     "geo_precision": "approximate",
-    "geo_method": "dgpc_map",
+    "geo_method": "osm_centroid_review",
     "source": "dgpc",
     "refs": {
       "dgpc": "389",
@@ -12093,7 +12121,14 @@
     "statut": "UNITE PRINCIPALE",
     "address": "ZONE D'ACTIVITES INDUSTRIELLE, ILLIZI",
     "tel": "029404115/22/25",
-    "fax": "029404137"
+    "fax": "029404137",
+    "review_status": "corrected",
+    "reviewed_at": "2026-08-30",
+    "reviewed_by": "GeoAlgeria data review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/way/313553549",
+      "https://dgpc.dz/dgpc2/unite.geojson"
+    ]
   },
   {
     "id": "33-006",
@@ -12197,8 +12232,8 @@
     },
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "AUTOROUTE EST-OUEST ENTREE EST BORDJ BOU ARRERIDJ, BORDJ BOU ARRERIDJ",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "34-004",
@@ -12428,8 +12463,8 @@
     },
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "ENTREE OUEST EL YACHIR, EL YACHIR",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "34-015",
@@ -12457,7 +12492,7 @@
     "name": "الوحدة الثانوية برج منايل",
     "name_ar": "الوحدة الثانوية برج منايل",
     "wilaya_code": "35",
-    "commune_code": "3504",
+    "commune_code": "3505",
     "commune": "Bordj Menaiel",
     "lat": 36.752602,
     "lng": 3.72031,
@@ -12478,7 +12513,7 @@
     "name": "الوحدة الثانوية يسر",
     "name_ar": "الوحدة الثانوية يسر",
     "wilaya_code": "35",
-    "commune_code": "3509",
+    "commune_code": "3510",
     "commune": "Isser",
     "lat": 36.722698,
     "lng": 3.67463,
@@ -12499,7 +12534,7 @@
     "name": "الوحدة الثانوية الثنية",
     "name_ar": "الوحدة الثانوية الثنية",
     "wilaya_code": "35",
-    "commune_code": "3514",
+    "commune_code": "3515",
     "commune": "Thenia",
     "lat": 36.725101,
     "lng": 3.55875,
@@ -12583,7 +12618,7 @@
     "name": "الوحدة الثانوية خميس الخشنة",
     "name_ar": "الوحدة الثانوية خميس الخشنة",
     "wilaya_code": "35",
-    "commune_code": "3531",
+    "commune_code": "3537",
     "commune": "Khemis El Khechna",
     "lat": 36.660702,
     "lng": 3.33165,
@@ -12604,7 +12639,7 @@
     "name": "وحدة القطاع زموري",
     "name_ar": "وحدة القطاع زموري",
     "wilaya_code": "35",
-    "commune_code": "3510",
+    "commune_code": "3511",
     "commune": "Zemmouri",
     "lat": 36.786301,
     "lng": 3.60547,
@@ -12625,7 +12660,7 @@
     "name": "الوحدة الثانوية دلس",
     "name_ar": "الوحدة الثانوية دلس",
     "wilaya_code": "35",
-    "commune_code": "3523",
+    "commune_code": "3528",
     "commune": "Dellys",
     "lat": 36.912899,
     "lng": 3.91104,
@@ -12646,7 +12681,7 @@
     "name": "وحدة القطاع بني عمران",
     "name_ar": "وحدة القطاع بني عمران",
     "wilaya_code": "35",
-    "commune_code": "3525",
+    "commune_code": "3530",
     "commune": "Beni Amrane",
     "lat": 36.6763,
     "lng": 3.59782,
@@ -12667,7 +12702,7 @@
     "name": "الوحدة البحرية زموري",
     "name_ar": "الوحدة البحرية زموري",
     "wilaya_code": "35",
-    "commune_code": "3510",
+    "commune_code": "3511",
     "commune": "Zemmouri",
     "lat": 36.801498,
     "lng": 3.56163,
@@ -12688,7 +12723,7 @@
     "name": "الوحدة الثانوية بغلية",
     "name_ar": "الوحدة الثانوية بغلية",
     "wilaya_code": "35",
-    "commune_code": "3505",
+    "commune_code": "3506",
     "commune": "Baghlia",
     "lat": 36.819199,
     "lng": 3.86245,
@@ -12709,7 +12744,7 @@
     "name": "الوحدة الثانوية الناصرية(تفتح قريبا)",
     "name_ar": "الوحدة الثانوية الناصرية(تفتح قريبا)",
     "wilaya_code": "35",
-    "commune_code": "3507",
+    "commune_code": "3508",
     "commune": "Naciria",
     "lat": 36.752701,
     "lng": 3.83579,
@@ -12722,15 +12757,15 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "RN12, BORDJ MENAIEL",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "35-014",
     "name": "وحدة القطاع تيجلابين(تفتح قريبا)",
     "name_ar": "وحدة القطاع تيجلابين(تفتح قريبا)",
     "wilaya_code": "35",
-    "commune_code": "3512",
+    "commune_code": "3513",
     "commune": "Tidjelabine",
     "lat": 36.723499,
     "lng": 3.49243,
@@ -12743,8 +12778,8 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "CITE LATRACHE, TIDJELABINE",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "36-001",
@@ -12869,8 +12904,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "AVENUE DES MARTYRS , BEN MHIDI",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "36-007",
@@ -12975,7 +13010,7 @@
     "statut": "POSTE AVANCE",
     "address": "RUE HADJ EL MORDJANE, KALA",
     "tel": "038360007",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "36-012",
@@ -13017,7 +13052,7 @@
     "statut": "UNITE PRINCIPALE",
     "address": "EL TARF",
     "tel": "038301021",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "36-014",
@@ -13037,8 +13072,8 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "SOUAREKH",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "37-001",
@@ -13822,8 +13857,8 @@
     "name": "وحدة القطاع تاوزيانات",
     "name_ar": "وحدة القطاع تاوزيانات",
     "wilaya_code": "40",
-    "commune_code": "4010",
-    "commune": "Remila",
+    "commune_code": "4007",
+    "commune": "Taouzianat",
     "lat": 35.514999,
     "lng": 6.79611,
     "geo_precision": "exact",
@@ -13961,8 +13996,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "CITE EL NAKHIL, EL OUELDJA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "40-014",
@@ -13982,8 +14017,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "ZONE LABRAG EL MAITA, BABAR",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "41-001",
@@ -14116,7 +14151,7 @@
     "name": "وحدة القطاع سيدي فرج",
     "name_ar": "وحدة القطاع سيدي فرج",
     "wilaya_code": "41",
-    "commune_code": "4118",
+    "commune_code": "4120",
     "commune": "Sidi Fredj",
     "lat": 36.152199,
     "lng": 8.1989,
@@ -14297,8 +14332,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "RN16B CITE NOUVELLE VILLE TAOURA, TAOURA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "42-001",
@@ -14347,7 +14382,7 @@
     "name": "وحدة القطاع عين تاقوريت",
     "name_ar": "وحدة القطاع عين تاقوريت",
     "wilaya_code": "42",
-    "commune_code": "4209",
+    "commune_code": "4230",
     "commune": "Bou Haroun",
     "lat": 36.607399,
     "lng": 2.62087,
@@ -14536,7 +14571,7 @@
     "name": "الوحدة الثانوية قوراية",
     "name_ar": "الوحدة الثانوية قوراية",
     "wilaya_code": "42",
-    "commune_code": "4202",
+    "commune_code": "4214",
     "commune": "Gouraya",
     "lat": 36.5737,
     "lng": 1.91194,
@@ -14622,10 +14657,10 @@
     "wilaya_code": "42",
     "commune_code": "4236",
     "commune": "Attatba",
-    "lat": 36.57,
-    "lng": 2.66892,
-    "geo_precision": "approximate",
-    "geo_method": "dgpc_map",
+    "lat": 36.570152,
+    "lng": 2.668771,
+    "geo_precision": "exact",
+    "geo_method": "osm_node_review",
     "source": "dgpc",
     "refs": {
       "dgpc": "397",
@@ -14634,7 +14669,14 @@
     "statut": "UNITE DE SECTEUR",
     "address": "RN67 ENTREE OUEST HATTATBA, HATTATBA",
     "tel": "024386666",
-    "fax": "024386666"
+    "fax": "024386666",
+    "review_status": "corrected",
+    "reviewed_at": "2026-08-30",
+    "reviewed_by": "GeoAlgeria data review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/node/3953934387",
+      "https://dgpc.dz/dgpc2/unite.geojson"
+    ]
   },
   {
     "id": "42-017",
@@ -15012,7 +15054,7 @@
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "ECHANGEUR AUTOROUTE EST-OUEST VERS CHELGHOUM EL AID-TADJNANET, TADJNANET",
     "tel": "0470002199",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "43-013",
@@ -15138,7 +15180,7 @@
     "statut": "POSTE AVANCE",
     "address": "HAMMAM BENI HAROUN, HAMALA",
     "tel": "0470002209",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "44-001",
@@ -15334,7 +15376,7 @@
     "name": "الوحدة الثانوية جندل",
     "name_ar": "الوحدة الثانوية جندل",
     "wilaya_code": "44",
-    "commune_code": "4405",
+    "commune_code": "4412",
     "commune": "Djendel",
     "lat": 36.2164,
     "lng": 2.40736,
@@ -15502,7 +15544,7 @@
     "name": "الوحدة الثانوية عسلة",
     "name_ar": "الوحدة الثانوية عسلة",
     "wilaya_code": "45",
-    "commune_code": "4504",
+    "commune_code": "4507",
     "commune": "Asla",
     "lat": 32.997398,
     "lng": -0.069623,
@@ -15649,7 +15691,7 @@
     "name": "وحدة القطاع جنين بورزق",
     "name_ar": "وحدة القطاع جنين بورزق",
     "wilaya_code": "45",
-    "commune_code": "4504",
+    "commune_code": "4508",
     "commune": "Djenienne Bourezg",
     "lat": 32.3694,
     "lng": -0.806653,
@@ -15670,7 +15712,7 @@
     "name": "الوحدة الثانوية صفيصيفة",
     "name_ar": "الوحدة الثانوية صفيصيفة",
     "wilaya_code": "45",
-    "commune_code": "4503",
+    "commune_code": "4505",
     "commune": "Sfissifa",
     "lat": 32.7192,
     "lng": -0.855992,
@@ -15704,8 +15746,8 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "AIN BEN KHELIL",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "46-001",
@@ -15733,7 +15775,7 @@
     "name": "الوحدة الثانوية المالح",
     "name_ar": "الوحدة الثانوية المالح",
     "wilaya_code": "46",
-    "commune_code": "4607",
+    "commune_code": "4614",
     "commune": "El Maleh",
     "lat": 35.381599,
     "lng": -1.09391,
@@ -16006,7 +16048,7 @@
     "name": "الوحدة الثانوية العامرية",
     "name_ar": "الوحدة الثانوية العامرية",
     "wilaya_code": "46",
-    "commune_code": "4606",
+    "commune_code": "4619",
     "commune": "El Amria",
     "lat": 35.522499,
     "lng": -1.026,
@@ -16111,7 +16153,7 @@
     "name": "الوحدة الثانوية القرارة",
     "name_ar": "الوحدة الثانوية القرارة",
     "wilaya_code": "47",
-    "commune_code": "4702",
+    "commune_code": "4706",
     "commune": "El Guerrara",
     "lat": 32.784401,
     "lng": 4.48056,
@@ -16174,7 +16216,7 @@
     "name": "الوحدة الثانوية ضاية بن ضحوة",
     "name_ar": "الوحدة الثانوية ضاية بن ضحوة",
     "wilaya_code": "47",
-    "commune_code": "4707",
+    "commune_code": "4703",
     "commune": "Dhayet Bendhahoua",
     "lat": 32.5299,
     "lng": 3.60877,
@@ -16216,7 +16258,7 @@
     "name": "المركز المتقدم العطف",
     "name_ar": "المركز المتقدم العطف",
     "wilaya_code": "47",
-    "commune_code": "4712",
+    "commune_code": "4707",
     "commune": "El Atteuf",
     "lat": 32.476398,
     "lng": 3.73722,
@@ -16524,7 +16566,7 @@
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "ROUTE RELIZANE-ECHANGEUR AUTOROUTE EST-OUEST, YELLEL",
     "tel": "0470002201",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "48-012",
@@ -16573,7 +16615,7 @@
     "name": "الوحدة الرئيسية تيميمون",
     "name_ar": "الوحدة الرئيسية تيميمون",
     "wilaya_code": "49",
-    "commune_code": "0109",
+    "commune_code": "4901",
     "commune": "Timimoun",
     "lat": 29.2752,
     "lng": 0.24019,
@@ -16594,7 +16636,7 @@
     "name": "الوحدة الثانوية أوقروت",
     "name_ar": "الوحدة الثانوية أوقروت",
     "wilaya_code": "49",
-    "commune_code": "0123",
+    "commune_code": "4908",
     "commune": "Aougrout",
     "lat": 28.697,
     "lng": 0.344086,
@@ -16615,7 +16657,7 @@
     "name": "الوحدة الثانوية تنيركوك",
     "name_ar": "الوحدة الثانوية تنيركوك",
     "wilaya_code": "49",
-    "commune_code": "0107",
+    "commune_code": "4903",
     "commune": "Ksar Kaddour",
     "lat": 29.6961,
     "lng": 0.698181,
@@ -16636,7 +16678,7 @@
     "name": "الوحدة الثانوية شروين",
     "name_ar": "الوحدة الثانوية شروين",
     "wilaya_code": "49",
-    "commune_code": "0103",
+    "commune_code": "4902",
     "commune": "Charouine",
     "lat": 29.0215,
     "lng": -0.252281,
@@ -16657,7 +16699,7 @@
     "name": "مديرية الحماية المدنية تيميمون",
     "name_ar": "مديرية الحماية المدنية تيميمون",
     "wilaya_code": "49",
-    "commune_code": "0109",
+    "commune_code": "4901",
     "commune": "Timimoun",
     "lat": 29.2752,
     "lng": 0.24019,
@@ -16678,7 +16720,7 @@
     "name": "المركز المتقدم تيميمون",
     "name_ar": "المركز المتقدم تيميمون",
     "wilaya_code": "49",
-    "commune_code": "0109",
+    "commune_code": "4901",
     "commune": "Timimoun",
     "lat": 29.5191,
     "lng": 1.55183,
@@ -16699,7 +16741,7 @@
     "name": "الوحدة الرئيسية برج باجي مختار",
     "name_ar": "الوحدة الرئيسية برج باجي مختار",
     "wilaya_code": "50",
-    "commune_code": "0125",
+    "commune_code": "5001",
     "commune": "Bordj Badji Mokhtar",
     "lat": 21.3335,
     "lng": 0.958699,
@@ -16720,7 +16762,7 @@
     "name": "(PK400)المركز المتقدم برج باجي مختار",
     "name_ar": "(PK400)المركز المتقدم برج باجي مختار",
     "wilaya_code": "50",
-    "commune_code": "0125",
+    "commune_code": "5001",
     "commune": "Bordj Badji Mokhtar",
     "lat": 23.389,
     "lng": 1.00025,
@@ -16733,15 +16775,15 @@
     },
     "statut": "POSTE AVANCE",
     "address": "RN06 PK400, BORDJ BADJI MOKHTAR",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "50-003",
     "name": "مديرية الحماية المدنية برج باجي مختار",
     "name_ar": "مديرية الحماية المدنية برج باجي مختار",
     "wilaya_code": "50",
-    "commune_code": "0125",
+    "commune_code": "5001",
     "commune": "Bordj Badji Mokhtar",
     "lat": 21.3335,
     "lng": 0.958699,
@@ -16762,7 +16804,7 @@
     "name": "الوحدة الرئيسية أولاد جلال",
     "name_ar": "الوحدة الرئيسية أولاد جلال",
     "wilaya_code": "51",
-    "commune_code": "0705",
+    "commune_code": "5101",
     "commune": "Ouled Djellal",
     "lat": 34.436001,
     "lng": 5.06884,
@@ -16783,7 +16825,7 @@
     "name": "الوحدة الثانوية سيدي خالد",
     "name_ar": "الوحدة الثانوية سيدي خالد",
     "wilaya_code": "51",
-    "commune_code": "0708",
+    "commune_code": "5104",
     "commune": "Sidi Khaled",
     "lat": 34.407799,
     "lng": 5.00583,
@@ -16804,7 +16846,7 @@
     "name": "مديرية الحماية المدنية أولاد جلال",
     "name_ar": "مديرية الحماية المدنية أولاد جلال",
     "wilaya_code": "51",
-    "commune_code": "0705",
+    "commune_code": "5101",
     "commune": "Ouled Djellal",
     "lat": 34.436001,
     "lng": 5.06884,
@@ -16825,7 +16867,7 @@
     "name": "الوحدة الرئيسية بني عباس",
     "name_ar": "الوحدة الرئيسية بني عباس",
     "wilaya_code": "52",
-    "commune_code": "0807",
+    "commune_code": "5201",
     "commune": "Beni-Abbes",
     "lat": 30.129299,
     "lng": -2.15437,
@@ -16846,7 +16888,7 @@
     "name": "الوحدة الثانوية كرزاز",
     "name_ar": "الوحدة الثانوية كرزاز",
     "wilaya_code": "52",
-    "commune_code": "0818",
+    "commune_code": "5208",
     "commune": "Kerzaz",
     "lat": 29.4498,
     "lng": -1.44164,
@@ -16867,8 +16909,8 @@
     "name": "الوحدة الثانوية تبلبلة",
     "name_ar": "الوحدة الثانوية تبلبلة",
     "wilaya_code": "52",
-    "commune_code": "0807",
-    "commune": "Beni-Abbes",
+    "commune_code": "5206",
+    "commune": "Tabelbala",
     "lat": 29.408199,
     "lng": -3.25514,
     "geo_precision": "exact",
@@ -16888,8 +16930,8 @@
     "name": "المركز المتقدم تبلبلة",
     "name_ar": "المركز المتقدم تبلبلة",
     "wilaya_code": "52",
-    "commune_code": "0811",
-    "commune": "Igli",
+    "commune_code": "5206",
+    "commune": "Tabelbala",
     "lat": 29.774401,
     "lng": -4.00917,
     "geo_precision": "exact",
@@ -16909,7 +16951,7 @@
     "name": "الوحدة الثانوية الواتة",
     "name_ar": "الوحدة الثانوية الواتة",
     "wilaya_code": "52",
-    "commune_code": "0814",
+    "commune_code": "5207",
     "commune": "El Ouata",
     "lat": 29.8589,
     "lng": -1.85639,
@@ -16930,7 +16972,7 @@
     "name": "الوحدة الثانوية أولاد خضير",
     "name_ar": "الوحدة الثانوية أولاد خضير",
     "wilaya_code": "52",
-    "commune_code": "0803",
+    "commune_code": "5202",
     "commune": "Ouled-Khodeir",
     "lat": 29.2491,
     "lng": -1.07343,
@@ -16951,7 +16993,7 @@
     "name": "الوحدة الثانوية إقلي",
     "name_ar": "الوحدة الثانوية إقلي",
     "wilaya_code": "52",
-    "commune_code": "0811",
+    "commune_code": "5205",
     "commune": "Igli",
     "lat": 30.454201,
     "lng": -2.29111,
@@ -16972,7 +17014,7 @@
     "name": "مديرية الحماية المدنية بني عباس",
     "name_ar": "مديرية الحماية المدنية بني عباس",
     "wilaya_code": "52",
-    "commune_code": "0807",
+    "commune_code": "5201",
     "commune": "Beni-Abbes",
     "lat": 30.129299,
     "lng": -2.15437,
@@ -16993,7 +17035,7 @@
     "name": "المركز المتقدم تيقنتور_إن صالح",
     "name_ar": "المركز المتقدم تيقنتور_إن صالح",
     "wilaya_code": "53",
-    "commune_code": "1110",
+    "commune_code": "5303",
     "commune": "Foggaret Ezzoua",
     "lat": 28.469801,
     "lng": 2.54076,
@@ -17014,7 +17056,7 @@
     "name": "الوحدة الرئيسية إن صالح",
     "name_ar": "الوحدة الرئيسية إن صالح",
     "wilaya_code": "53",
-    "commune_code": "1108",
+    "commune_code": "5301",
     "commune": "Ain Salah",
     "lat": 27.200001,
     "lng": 2.48974,
@@ -17035,7 +17077,7 @@
     "name": "الوحدة الثانوية إن غار",
     "name_ar": "الوحدة الثانوية إن غار",
     "wilaya_code": "53",
-    "commune_code": "1108",
+    "commune_code": "5301",
     "commune": "Ain Salah",
     "lat": 27.1106,
     "lng": 1.90681,
@@ -17056,7 +17098,7 @@
     "name": "مديرية الحماية المدنية إن صالح",
     "name_ar": "مديرية الحماية المدنية إن صالح",
     "wilaya_code": "53",
-    "commune_code": "1108",
+    "commune_code": "5301",
     "commune": "Ain Salah",
     "lat": 27.200001,
     "lng": 2.48974,
@@ -17077,7 +17119,7 @@
     "name": "الوحدة الرئيسية إن قزام",
     "name_ar": "الوحدة الرئيسية إن قزام",
     "wilaya_code": "54",
-    "commune_code": "1104",
+    "commune_code": "5401",
     "commune": "Ain Guezzam",
     "lat": 19.570499,
     "lng": 5.7723,
@@ -17098,7 +17140,7 @@
     "name": "الوحدة الثانوية تين زواتين",
     "name_ar": "الوحدة الثانوية تين زواتين",
     "wilaya_code": "54",
-    "commune_code": "1107",
+    "commune_code": "5402",
     "commune": "Tin Zouatine",
     "lat": 19.9648,
     "lng": 2.978,
@@ -17119,7 +17161,7 @@
     "name": "مديرية الحماية المدنية إن قزام",
     "name_ar": "مديرية الحماية المدنية إن قزام",
     "wilaya_code": "54",
-    "commune_code": "1104",
+    "commune_code": "5401",
     "commune": "Ain Guezzam",
     "lat": 19.570499,
     "lng": 5.7723,
@@ -17140,7 +17182,7 @@
     "name": "الوحدة الثانوية الطيبات",
     "name_ar": "الوحدة الثانوية الطيبات",
     "wilaya_code": "55",
-    "commune_code": "3015",
+    "commune_code": "5508",
     "commune": "Taibet",
     "lat": 33.100498,
     "lng": 6.41363,
@@ -17161,7 +17203,7 @@
     "name": "الوحدة الثانوية توقرت",
     "name_ar": "الوحدة الثانوية توقرت",
     "wilaya_code": "55",
-    "commune_code": "3013",
+    "commune_code": "5501",
     "commune": "Touggourt",
     "lat": 33.105999,
     "lng": 6.0634,
@@ -17182,7 +17224,7 @@
     "name": "الوحدة الثانوية المقارين",
     "name_ar": "الوحدة الثانوية المقارين",
     "wilaya_code": "55",
-    "commune_code": "3019",
+    "commune_code": "5512",
     "commune": "Megarine",
     "lat": 33.190601,
     "lng": 6.07917,
@@ -17203,7 +17245,7 @@
     "name": "الوحدة الثانوية تماسين",
     "name_ar": "الوحدة الثانوية تماسين",
     "wilaya_code": "55",
-    "commune_code": "3016",
+    "commune_code": "5509",
     "commune": "Temacine",
     "lat": 33.028599,
     "lng": 5.99746,
@@ -17217,14 +17259,14 @@
     "statut": "UNITE SECONDAIRE",
     "address": "TEMACINE",
     "tel": "029635521",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "55-005",
     "name": "مديرية الحماية المدنية توقرت",
     "name_ar": "مديرية الحماية المدنية توقرت",
     "wilaya_code": "55",
-    "commune_code": "3008",
+    "commune_code": "5504",
     "commune": "Nezla",
     "lat": 33.110298,
     "lng": 6.04069,
@@ -17245,7 +17287,7 @@
     "name": "الوحدة الرئيسية توقرت",
     "name_ar": "الوحدة الرئيسية توقرت",
     "wilaya_code": "55",
-    "commune_code": "3008",
+    "commune_code": "5504",
     "commune": "Nezla",
     "lat": 33.122398,
     "lng": 6.04435,
@@ -17266,7 +17308,7 @@
     "name": "مركز إسعاف الطرقات حاسي معمر_الحجيرة",
     "name_ar": "مركز إسعاف الطرقات حاسي معمر_الحجيرة",
     "wilaya_code": "55",
-    "commune_code": "3014",
+    "commune_code": "5507",
     "commune": "El-Hadjira",
     "lat": 32.597698,
     "lng": 5.84566,
@@ -17280,14 +17322,14 @@
     "statut": "POSTE DE SECOURS ROUTIER",
     "address": "RN03 HASSI MAAMAR, EL HADJIRA",
     "tel": "0470002135",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "55-008",
     "name": "الوحدة الثانوية الحجيرة",
     "name_ar": "الوحدة الثانوية الحجيرة",
     "wilaya_code": "55",
-    "commune_code": "3014",
+    "commune_code": "5507",
     "commune": "El-Hadjira",
     "lat": 32.602699,
     "lng": 5.52382,
@@ -17308,7 +17350,7 @@
     "name": "الوحدة الرئيسية جانت",
     "name_ar": "الوحدة الرئيسية جانت",
     "wilaya_code": "56",
-    "commune_code": "3302",
+    "commune_code": "5601",
     "commune": "Djanet",
     "lat": 24.476801,
     "lng": 9.51415,
@@ -17329,7 +17371,7 @@
     "name": "المركز المتقدم برج الحواس",
     "name_ar": "المركز المتقدم برج الحواس",
     "wilaya_code": "56",
-    "commune_code": "5601",
+    "commune_code": "5602",
     "commune": "Bordj El Haouass",
     "lat": 25.3916,
     "lng": 8.40702,
@@ -17350,7 +17392,7 @@
     "name": "المركز المتقدم معركة تغرغرت1958_جانت",
     "name_ar": "المركز المتقدم معركة تغرغرت1958_جانت",
     "wilaya_code": "56",
-    "commune_code": "3302",
+    "commune_code": "5601",
     "commune": "Djanet",
     "lat": 24.5555,
     "lng": 9.48939,
@@ -17371,7 +17413,7 @@
     "name": "مديرية الحماية المدنية جانت",
     "name_ar": "مديرية الحماية المدنية جانت",
     "wilaya_code": "56",
-    "commune_code": "3302",
+    "commune_code": "5601",
     "commune": "Djanet",
     "lat": 24.476801,
     "lng": 9.51415,
@@ -17392,7 +17434,7 @@
     "name": "الوحدة الرئيسية المغير",
     "name_ar": "الوحدة الرئيسية المغير",
     "wilaya_code": "57",
-    "commune_code": "3927",
+    "commune_code": "5701",
     "commune": "El-M'ghaier",
     "lat": 33.9505,
     "lng": 5.92483,
@@ -17413,7 +17455,7 @@
     "name": "وحدة القطاع سطيل",
     "name_ar": "وحدة القطاع سطيل",
     "wilaya_code": "57",
-    "commune_code": "3921",
+    "commune_code": "5702",
     "commune": "Still",
     "lat": 34.2579,
     "lng": 5.91888,
@@ -17434,7 +17476,7 @@
     "name": "الوحدة الثانوية جامعة",
     "name_ar": "الوحدة الثانوية جامعة",
     "wilaya_code": "57",
-    "commune_code": "3928",
+    "commune_code": "5706",
     "commune": "Djamaa",
     "lat": 33.535801,
     "lng": 5.98611,
@@ -17455,8 +17497,8 @@
     "name": "وحدة القطاع مرارة(ليست في الخدمة)",
     "name_ar": "وحدة القطاع مرارة(ليست في الخدمة)",
     "wilaya_code": "57",
-    "commune_code": "3930",
-    "commune": "Sidi Amrane",
+    "commune_code": "5703",
+    "commune": "M'rara",
     "lat": 33.4744,
     "lng": 5.6625,
     "geo_precision": "exact",
@@ -17468,15 +17510,15 @@
     },
     "statut": "UNITE DE SECTEUR",
     "address": "MRARA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "57-005",
     "name": "وحدة القطاع أم الطيور",
     "name_ar": "وحدة القطاع أم الطيور",
     "wilaya_code": "57",
-    "commune_code": "3929",
+    "commune_code": "5707",
     "commune": "Oum Touyour",
     "lat": 34.152802,
     "lng": 5.81556,
@@ -17497,7 +17539,7 @@
     "name": "مديرية الحماية المدنية المغير",
     "name_ar": "مديرية الحماية المدنية المغير",
     "wilaya_code": "57",
-    "commune_code": "3927",
+    "commune_code": "5701",
     "commune": "El-M'ghaier",
     "lat": 33.9505,
     "lng": 5.92483,
@@ -17573,8 +17615,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "CITE NOUVEAU POLE HASSI EL GARAA, HASSI EL GARAA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "58-005",
@@ -17770,7 +17812,7 @@
     "name": "الوحدة الثانوية الوطاية(تفتح قريبا)",
     "name_ar": "الوحدة الثانوية الوطاية(تفتح قريبا)",
     "wilaya_code": "61",
-    "commune_code": "0716",
+    "commune_code": "0719",
     "commune": "El Outaya",
     "lat": 35.028702,
     "lng": 5.59385,
@@ -17783,8 +17825,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "RN03, EL OUTAYA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "62-001",
@@ -17792,7 +17834,7 @@
     "name_ar": "الوحدة الثانوية بئر العاتر",
     "wilaya_code": "62",
     "commune_code": "1202",
-    "commune": "Bir-El-Ater",
+    "commune": "Bir El Ater",
     "lat": 34.762501,
     "lng": 8.04778,
     "geo_precision": "exact",
@@ -17876,7 +17918,7 @@
     "name_ar": "وحدة القطاع زمالة الأميرعبد القادر",
     "wilaya_code": "64",
     "commune_code": "1409",
-    "commune": "Zmalet El Emir Abdelkade",
+    "commune": "Zmalet El Emir Abdelkader",
     "lat": 34.908298,
     "lng": 2.30775,
     "geo_precision": "exact",
@@ -17897,7 +17939,7 @@
     "name_ar": "الوحدة الثانوية عين وسارة",
     "wilaya_code": "65",
     "commune_code": "1731",
-    "commune": "Aïn Oussera",
+    "commune": "Aïn Ouessara",
     "lat": 35.436401,
     "lng": 2.91339,
     "geo_precision": "exact",
@@ -17960,7 +18002,7 @@
     "name_ar": "الوحدة الثانوية سيدي لعجال",
     "wilaya_code": "65",
     "commune_code": "1719",
-    "commune": "Sidi Laadjel",
+    "commune": "Sidi Ladjel",
     "lat": 35.443298,
     "lng": 2.5225,
     "geo_precision": "exact",
@@ -17994,7 +18036,7 @@
     "statut": "POSTE AVANCE",
     "address": "ZONE SGUIAA, BOUIRA LAHDAB",
     "tel": "0471860917",
-    "fax": "/"
+    "fax": null
   },
   {
     "id": "66-001",
@@ -18023,7 +18065,7 @@
     "name_ar": "الوحدة الثانوية فيض البطمة",
     "wilaya_code": "66",
     "commune_code": "1707",
-    "commune": "Faidh El Botma",
+    "commune": "Faïdh El Botma",
     "lat": 34.534,
     "lng": 3.77331,
     "geo_precision": "exact",
@@ -18128,7 +18170,7 @@
     "name_ar": "الوحدة الثانوية الشهبونية",
     "wilaya_code": "67",
     "commune_code": "2638",
-    "commune": "Chabounia",
+    "commune": "Chahbounia",
     "lat": 35.5452,
     "lng": 2.61079,
     "geo_precision": "exact",
@@ -18170,7 +18212,7 @@
     "name_ar": "الوحدة الثانوية عين بوسيف",
     "wilaya_code": "67",
     "commune_code": "2604",
-    "commune": "Ain Boucif",
+    "commune": "Aïn Boucif",
     "lat": 35.890099,
     "lng": 3.13949,
     "geo_precision": "exact",
@@ -18212,7 +18254,7 @@
     "name_ar": "وحدة القطاع بوغزول",
     "wilaya_code": "67",
     "commune_code": "2651",
-    "commune": "Boughzoul",
+    "commune": "Boughezoul",
     "lat": 35.692699,
     "lng": 2.85388,
     "geo_precision": "exact",
@@ -18232,8 +18274,8 @@
     "name": "الوحدة الثانوية مجدل",
     "name_ar": "الوحدة الثانوية مجدل",
     "wilaya_code": "68",
-    "commune_code": "2842",
-    "commune": "Medjedel",
+    "commune_code": "2839",
+    "commune": "Menaâ",
     "lat": 35.143398,
     "lng": 3.68326,
     "geo_precision": "exact",
@@ -18275,7 +18317,7 @@
     "name_ar": "الوحدة الثانوية عين الملح",
     "wilaya_code": "68",
     "commune_code": "2841",
-    "commune": "Ain El Melh",
+    "commune": "Aïn El Meleh",
     "lat": 34.849701,
     "lng": 4.17585,
     "geo_precision": "exact",
@@ -18316,8 +18358,8 @@
     "name": "الوحدة الثانوية سيدي عامر",
     "name_ar": "الوحدة الثانوية سيدي عامر",
     "wilaya_code": "68",
-    "commune_code": "2823",
-    "commune": "Tamsa",
+    "commune_code": "2822",
+    "commune": "Sidi Ameur",
     "lat": 35.372898,
     "lng": 3.89902,
     "geo_precision": "exact",
@@ -18350,8 +18392,8 @@
     },
     "statut": "UNITE SECONDAIRE",
     "address": "NOUVELLE VILLE ROUTE ALGER, BOUSAADA",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "68-007",
@@ -18371,8 +18413,8 @@
     },
     "statut": "POSTE AVANCE",
     "address": "CENTRE VILLE SLIM, SLIM",
-    "tel": "/",
-    "fax": "/"
+    "tel": null,
+    "fax": null
   },
   {
     "id": "69-001",
@@ -18401,7 +18443,7 @@
     "name_ar": "الوحدة الثانوية الابيض سيدي الشيخ",
     "wilaya_code": "69",
     "commune_code": "3207",
-    "commune": "Labiodh Sidi Cheikh",
+    "commune": "El Abiodh Sidi Cheikh",
     "lat": 32.898399,
     "lng": 0.542336,
     "geo_precision": "exact",
@@ -18422,7 +18464,7 @@
     "name_ar": "المركز المتقدم المهارة",
     "wilaya_code": "69",
     "commune_code": "3219",
-    "commune": "El Mehara",
+    "commune": "El Meharra",
     "lat": 33.318699,
     "lng": 0.36902,
     "geo_precision": "exact",

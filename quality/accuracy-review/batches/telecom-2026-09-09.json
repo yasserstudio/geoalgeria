@@ -1,0 +1,846 @@
+{
+  "reviewed_at": "2026-09-09",
+  "source_manifest": {
+    "djezzy-5g": {
+      "bytes": 325872,
+      "records": 1001,
+      "retrieved": "2026-09-08",
+      "sha256": "9164e51a2292c80f59a072833df5a6ed14a3ba987d06b1d4be94c4f88fbbe395",
+      "url": "https://www.djezzy5g.dz/map.html"
+    },
+    "mobilis-5g": {
+      "bytes": 712085,
+      "records": 2428,
+      "retrieved": "2026-09-08",
+      "sha256": "9bf5b1eba9e2ea78754828d3134fb33a69fd7d52e259e57be62db5550292a8f2",
+      "url": "https://mobilis.dz/map/5g/data"
+    },
+    "ooredoo-5g": {
+      "bytes": 166332,
+      "records": 176,
+      "retrieved": "2026-09-08",
+      "sha256": "480b7625bc1d5b607d880d1296b83f2709a79d5cad136d30a1778b06755f6b38",
+      "url": "https://www.ooredoo.dz/fr/particuliers/internet/5g"
+    }
+  },
+  "scope": "Nonadjacent-wilaya findings; administrative evidence review, not field verification",
+  "decisions": [
+    {
+      "record": {
+        "id": "djezzy-058a7dbf76",
+        "name": " Extension ouest_El Eulma",
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 34.366117,
+        "lng": 5.906546,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "EL EULMA"
+      },
+      "boundary": {
+        "declared_wilaya": "19",
+        "containing_wilayas": [
+          "57"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-14f1270e00",
+        "name": "Cite Merdj Edib",
+        "wilaya_code": "21",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 35.807083,
+        "lng": 6.92093,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Skikda"
+      },
+      "boundary": {
+        "declared_wilaya": "21",
+        "containing_wilayas": [
+          "04"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-2f51e05229",
+        "name": "Setif NORD OUEST",
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 34.6301,
+        "lng": 5.4001,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Setif"
+      },
+      "boundary": {
+        "declared_wilaya": "19",
+        "containing_wilayas": [
+          "07"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-3139da873e",
+        "name": "JEANNE D'ARC 2",
+        "wilaya_code": "21",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 35.01963889,
+        "lng": 6.9966,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Skikda"
+      },
+      "boundary": {
+        "declared_wilaya": "21",
+        "containing_wilayas": [
+          "40"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-56ad53b60f",
+        "name": "EL MOUNCHAR_T",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 35.702,
+        "lng": 6.594831,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Constantine"
+      },
+      "boundary": {
+        "declared_wilaya": "25",
+        "containing_wilayas": [
+          "05"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-5af603a579",
+        "name": "logements covalente",
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 34.838415,
+        "lng": 5.67121,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "EL EULMA"
+      },
+      "boundary": {
+        "declared_wilaya": "19",
+        "containing_wilayas": [
+          "07"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-651e362949",
+        "name": "Zouagui 2",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 35.45503,
+        "lng": 6.63028,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Constantine"
+      },
+      "boundary": {
+        "declared_wilaya": "25",
+        "containing_wilayas": [
+          "40"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-6eb33244ce",
+        "name": "El Hadhaba",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 35.42816,
+        "lng": 6.59822,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Constantine"
+      },
+      "boundary": {
+        "declared_wilaya": "25",
+        "containing_wilayas": [
+          "40"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-73ebe7a070",
+        "name": "Bouabaz 2",
+        "wilaya_code": "21",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 34.8948,
+        "lng": 6.92142,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Skikda"
+      },
+      "boundary": {
+        "declared_wilaya": "21",
+        "containing_wilayas": [
+          "40"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-76db3e1993",
+        "name": "Cite DALAS",
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 34.89463889,
+        "lng": 5.43322,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Setif"
+      },
+      "boundary": {
+        "declared_wilaya": "19",
+        "containing_wilayas": [
+          "07"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-8297e72d8e",
+        "name": "Cite des Martyres",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 32.47098,
+        "lng": 6.60194,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Constantine"
+      },
+      "boundary": {
+        "declared_wilaya": "25",
+        "containing_wilayas": [
+          "55"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-9de1425077",
+        "name": "Freres Arafa",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 35.102019,
+        "lng": 6.59267,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Constantine"
+      },
+      "boundary": {
+        "declared_wilaya": "25",
+        "containing_wilayas": [
+          "40"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-b751f2a9bb",
+        "name": "Cite Belhadj site 2",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 34.65177,
+        "lng": 6.6082,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Constantine"
+      },
+      "boundary": {
+        "declared_wilaya": "25",
+        "containing_wilayas": [
+          "07"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-b8b84c6410",
+        "name": "Terrain Bouzehzeh _El Guemas",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 34.69094,
+        "lng": 6.660547,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Constantine"
+      },
+      "boundary": {
+        "declared_wilaya": "25",
+        "containing_wilayas": [
+          "07"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-c0318533b6",
+        "name": "cite meziane saou",
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 34.89729,
+        "lng": 5.6729663,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "EL EULMA"
+      },
+      "boundary": {
+        "declared_wilaya": "19",
+        "containing_wilayas": [
+          "07"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-d0378fc7e7",
+        "name": "BP EL-EULMA RP CE",
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 34.8507,
+        "lng": 5.69196,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "EL EULMA"
+      },
+      "boundary": {
+        "declared_wilaya": "19",
+        "containing_wilayas": [
+          "07"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-e652571c78",
+        "name": "Sarkina",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 34.65177,
+        "lng": 6.651979,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "Constantine"
+      },
+      "boundary": {
+        "declared_wilaya": "25",
+        "containing_wilayas": [
+          "07"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "djezzy-fd646f7e44",
+        "name": "NOUVELLE VILLE Souamaa",
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "commune_ar": null,
+        "lat": 35.234597,
+        "lng": 5.65559,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "djezzy",
+        "operator": "djezzy",
+        "technology": "5G",
+        "address": "EL EULMA"
+      },
+      "boundary": {
+        "declared_wilaya": "19",
+        "containing_wilayas": [
+          "61"
+        ]
+      },
+      "disposition": "quarantined_unverified_coordinate",
+      "publish_action": "patch",
+      "note": "The official Djezzy grouping and label contradict the published point. The unverified coordinate is withheld so consumers do not display a known false location; the coverage record remains available.",
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "mobilis-713f5213c0",
+        "name": "TAKHMARET",
+        "wilaya_code": "22",
+        "commune_code": null,
+        "commune": "TAKHMARET",
+        "commune_ar": "تخمرت",
+        "lat": 35.198791,
+        "lng": 0.61084,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "mobilis",
+        "operator": "mobilis",
+        "technology": "5G",
+        "address": null
+      },
+      "boundary": {
+        "declared_wilaya": "22",
+        "containing_wilayas": [
+          "14"
+        ]
+      },
+      "disposition": "correct_wilaya",
+      "publish_action": "patch",
+      "note": "Operator commune name, canonical commune register and containing wilaya agree; retain original coordinates.",
+      "patch": {
+        "wilaya_code": "14"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-09-09"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2008/F2008051.PDF",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "mobilis-ff1371b891",
+        "name": "TAOURA",
+        "wilaya_code": "42",
+        "commune_code": null,
+        "commune": "TAOURA",
+        "commune_ar": "تاورة",
+        "lat": 36.151971,
+        "lng": 8.00535,
+        "geo_precision": "exact",
+        "geo_method": "operator_map",
+        "source": "mobilis",
+        "operator": "mobilis",
+        "technology": "5G",
+        "address": null
+      },
+      "boundary": {
+        "declared_wilaya": "42",
+        "containing_wilayas": [
+          "41"
+        ]
+      },
+      "disposition": "correct_wilaya",
+      "publish_action": "patch",
+      "note": "Operator commune name, canonical commune register and containing wilaya agree; retain original coordinates.",
+      "patch": {
+        "wilaya_code": "41"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-09-09"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2024/F2024054.pdf",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    }
+  ],
+  "mobilis_live_check": {
+    "url": "https://mobilis.dz/map/5g/data",
+    "checked_at": "2026-09-09",
+    "response_sha256": "f71581775e582893f18e5eae862952ca2d3291429f4fd87936514663c80ea424",
+    "affected_source_rows": [
+      {
+        "id": 32386,
+        "coordonnes": "36.151971,8.00535",
+        "wilaya_id": 42,
+        "commune": "TAOURA",
+        "commune_ar": "تاورة",
+        "type": "5G",
+        "wilaya": {
+          "id": 42,
+          "name": "Tipaza",
+          "name_ar": "تيبازة",
+          "name_en": "Tipaza"
+        }
+      },
+      {
+        "id": 34079,
+        "coordonnes": "35.198791,0.61084",
+        "wilaya_id": 22,
+        "commune": "TAKHMARET",
+        "commune_ar": "تخمرت",
+        "type": "5G",
+        "wilaya": {
+          "id": 22,
+          "name": "Sidi Bel Abbès",
+          "name_ar": "سيدي بلعباس",
+          "name_en": "Sidi Bel Abbès"
+        }
+      }
+    ]
+  }
+}

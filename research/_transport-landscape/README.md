@@ -1,8 +1,10 @@
 # Transport sector — landscape & sources (Algeria)
 
-Recon + staging notes for the GeoAlgeria **Transport** sector. Assembled
-2026-07-01 from operator sites the user surfaced + the parent ministry. Nothing
-built yet — this indexes the `research/` data staged for future packages.
+Historical recon and staging notes for the GeoAlgeria **Transport** sector,
+assembled on 2026-07-01 from operator sites and the parent ministry. The
+packages discussed here have since shipped; use their package READMEs and the
+root roadmap for current status. This file preserves what was known at capture
+time.
 
 ## Parent authority — Ministère des Transports (`mt.gov.dz`)
 
@@ -35,7 +37,7 @@ The institutional anchor for the whole sector (oversees every operator below).
 
 | Folder | Operator / scope | Mode | Data staged | Reachable? |
 | --- | --- | --- | --- | --- |
-| `gares-routieres/` | **SOGRAL** — Sté de gestion des gares routières | intercity **bus stations** | 74 stations **cleaned** (coords 71/74, live API) + AR/FR names | ✅ live JSON API |
+| `gares-routieres/` | **SOGRAL** — Sté de gestion des gares routières | intercity **bus stations** | 74 stations **cleaned** (coords 71/74 in the raw capture) + AR/FR names | ⚠️ archived JSON registry; current traveller surface is MAHATATI |
 | `ferroviaire/` | **SNTF** (rail) · **SEMA/EMA** (metro) · **SETRAM** (tram) | rail · metro · tram **nodes** | WD 695 nodes · SETRAM 172 tram stations ×7 nets · SEMA 19 metro · SNTF status map | ✅ WD/OSM/setram.dz/metro-eldjazair.dz |
 | `buses/` | **ETUSA** — transport urbain d'Alger *(first of many operators)* | urban **bus lines** + téléphériques | 50 lines parsed (termini, stops, communes) + company facts | ⚠️ via fr.wikipedia (no official feed) |
 

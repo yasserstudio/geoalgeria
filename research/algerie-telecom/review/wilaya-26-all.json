@@ -1,0 +1,365 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 26,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2",
+  "count": 15,
+  "flagged": 3,
+  "candidates": [
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:0",
+      "source_id": "306",
+      "raw": {
+        "id": "306",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "KSAR EL BOUKHARI/AZIZ/DERRAG/OUM EL DJELLIL/BOUAICHE/BOUGHZOUL/CHABOUNIA/M'FATHA/SANEG/BOGHAR/OULED ANTAR/OULED HELLAL",
+        "adresse": "RUE ZOUAOUCHA HAMED, KSAR EL BOUKHARI CENTRE",
+        "type": "Agence Commerciale",
+        "latitude": "35,88621667",
+        "longitude": "2,748711111\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.88621667,
+      "lng": 2.748711111,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "67"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:1",
+      "source_id": "307",
+      "raw": {
+        "id": "307",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "AIN BOUCIF/EL OUINET/KEF LAKHDAR/OULED EMAARAF/SIDI DEMED",
+        "adresse": "CENTRE VILLE AIN BOUCIF",
+        "type": "Point de présence",
+        "latitude": "35,890075",
+        "longitude": "3,152847222\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.890075,
+      "lng": 3.152847222,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "67"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:2",
+      "source_id": "308",
+      "raw": {
+        "id": "308",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "CHELLALAT EL ADHAOURA/AIN OUKSIR/CHENIGUEL/TAFRAOUT",
+        "adresse": "CENTRE VILLE CHELLALET EL EDHAOURA",
+        "type": "Point de présence",
+        "latitude": "35,93970278",
+        "longitude": "3,416513889\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.93970278,
+      "lng": 3.416513889,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "67"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:3",
+      "source_id": "309",
+      "raw": {
+        "id": "309",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "SEGHOUANE/MEDJEBAR/TLETAT ED DOUAIR",
+        "adresse": "CENTRE VILLE SEGHOUANE",
+        "type": "Point de présence",
+        "latitude": "36,001403",
+        "longitude": "2,902138\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.001403,
+      "lng": 2.902138,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:4",
+      "source_id": "310",
+      "raw": {
+        "id": "310",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "MEDEA/DRAA ESMAR",
+        "adresse": "BD DE L'ALN, CENTRE VILLE MEDEA",
+        "type": "Agence Commerciale",
+        "latitude": " 36.263097",
+        "longitude": "  2.763417\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.263097,
+      "lng": 2.763417,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:5",
+      "source_id": "311",
+      "raw": {
+        "id": "311",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "OULED BRAHIM/OUZERA/BEN CHICAO",
+        "adresse": "NOUVEAU POLE URBAIN MEDEA",
+        "type": "Point de présence",
+        "latitude": "36,26611667",
+        "longitude": "2,797963889\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.26611667,
+      "lng": 2.797963889,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:6",
+      "source_id": "312",
+      "raw": {
+        "id": "312",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "OUAMRI/HANNACHA/OUED HARBIL",
+        "adresse": "ILOT 17 RUE ABERKANE RABAH, VILLAGE OUAMRI",
+        "type": "Point de présence",
+        "latitude": "36,23161389",
+        "longitude": "2,562427778\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.23161389,
+      "lng": 2.562427778,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:7",
+      "source_id": "313",
+      "raw": {
+        "id": "313",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "TAMESGUIDA/EL HAMDANIA",
+        "adresse": "QUARTIER BEZIOUECHE MEDEA",
+        "type": "Point de présence",
+        "latitude": "36,273629",
+        "longitude": "2,762722\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.273629,
+      "lng": 2.762722,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:8",
+      "source_id": "314",
+      "raw": {
+        "id": "314",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "SI MAHDJOUB/TIZI MAHDI/BOUAICHOUNE/OULED BOUACHRA",
+        "adresse": "CENTRE  VILLE  SI EL MAHDJOUB",
+        "type": "Point de présence",
+        "latitude": "36,16060556",
+        "longitude": "2,721913889\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.16060556,
+      "lng": 2.721913889,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:9",
+      "source_id": "315",
+      "raw": {
+        "id": "315",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "BERROUAGHIA/OULED DEID/REBAIA/ZOUBIRIA",
+        "adresse": "COMPLEXE PTT CITE CHERIET AHMED BERROUAGHIA",
+        "type": "Agence Commerciale",
+        "latitude": "36,13198889",
+        "longitude": "2,909763889\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.13198889,
+      "lng": 2.909763889,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:10",
+      "source_id": "316",
+      "raw": {
+        "id": "316",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "EL OMARIA/SIDI NAAMANE/BAATA/BOUCHRAHIL/KHAMS DJOUAMAA/",
+        "adresse": "RUE DIAFI AMAR Nø 43",
+        "type": "Point de présence",
+        "latitude": "36,26415",
+        "longitude": "3,032472222\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.26415,
+      "lng": 3.032472222,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:11",
+      "source_id": "317",
+      "raw": {
+        "id": "317",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "BENI SLIMANE/BOUSKENE/SIDI RABIE",
+        "adresse": "CITE 120 LOGTS   BENI SLIMANE",
+        "type": "Agence Commerciale",
+        "latitude": "36,22559167",
+        "longitude": "3,306322222\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.22559167,
+      "lng": 3.306322222,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:12",
+      "source_id": "318",
+      "raw": {
+        "id": "318",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "SOUAGHI/DJOUAB/SIDI ZAHAR/SIDI ZIANE",
+        "adresse": "CENTRE VILLE    SOUAGUI",
+        "type": "Point de présence",
+        "latitude": "36,1253",
+        "longitude": "3,264508333\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.1253,
+      "lng": 3.264508333,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:13",
+      "source_id": "319",
+      "raw": {
+        "id": "319",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "GUELB EL KEBIR/EL AZIZIA/BIR BEN LAABED/SEDRAYA",
+        "adresse": "CENTRE  VILLE  GUELB KEBIR",
+        "type": "Point de présence",
+        "latitude": "36,25569444",
+        "longitude": "3,416630556\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.25569444,
+      "lng": 3.416630556,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "05627a89af07ec2c06583c5459d8240ceb4e90f97872d3154f3f0475c05070a2:14",
+      "source_id": "320",
+      "raw": {
+        "id": "320",
+        "code_wilaya": "26",
+        "wilaya": "MEDEA",
+        "commune": "TABLAT/MAGHRAOUA/MIHOUB/AISSAOUIA/EL HAOUDANE/MEZERANA",
+        "adresse": "CENTRE  VILLE  TABLAT",
+        "type": "Point de présence",
+        "latitude": "36,41210833",
+        "longitude": "3,310613889\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.41210833,
+      "lng": 3.310613889,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "26"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

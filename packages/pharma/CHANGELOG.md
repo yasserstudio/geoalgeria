@@ -1,5 +1,47 @@
 # @geoalgeria/pharma
 
+## 2.0.3
+
+### Patch Changes
+
+- e693ea4: Republish the transport and pharma umbrellas on a fresh version number after an aborted staged publish reserved the previous one.
+
+  transport 2.0.4 and pharma 2.0.2 were staged on npm on 2026-09-27 and the staged uploads were dropped before approval; npm never reuses a version it has seen, so those numbers can no longer be published. This release carries exactly the same content: transport depends on aviation ^2.6.0, buses ^2.2.0, gares-routieres ^2.2.5 and ferroviaire ^2.0.3; pharma depends on industrie-pharmaceutique ^2.0.3 and pharmacies ^2.2.2.
+
+## 2.0.2
+
+### Patch Changes
+
+- 4deabd3: Replace em dashes in source names and citations with plain separators.
+
+  - Every source `name` reads `Operator: descriptor`, where it used to carry a
+    U+2014 em dash, in `data/metadata.json` and in the `dataset-metadata.json`
+    descriptor built from it.
+  - The schema.org/DCAT `citation` entries join a source name and its licence with
+    a comma: `OpenStreetMap: schools & kindergartens in Algeria, ODbL 1.0 (© OpenStreetMap contributors)`.
+  - Coverage notes, package `description`s, the `types/index.d.ts` documentation and
+    the `index.js` headers carry a colon, comma or semicolon in place of the dash.
+
+  No count, coordinate, licence or date changes. Consumers that match a source name
+  or a citation string literally need to update the separator; anything keyed on
+  `sources[].key` is unaffected. `pnpm validate` now fails on an em dash in
+  published metadata, so it cannot come back through a generator.
+
+- Updated dependencies [0df7cb4]
+- Updated dependencies [4deabd3]
+  - @geoalgeria/industrie-pharmaceutique@2.0.3
+  - @geoalgeria/pharmacies@2.2.2
+
+## 2.0.1
+
+### Patch Changes
+
+- 76dfd0d: Declare the exact per-package licence terms in the manifest and the LICENSE file.
+- Updated dependencies [76dfd0d]
+- Updated dependencies [76dfd0d]
+  - @geoalgeria/industrie-pharmaceutique@2.0.2
+  - @geoalgeria/pharmacies@2.2.1
+
 ## 2.0.0
 
 ### Major Changes

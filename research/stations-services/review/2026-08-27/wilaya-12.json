@@ -1,0 +1,2527 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-12",
+    "wilaya_code": 12,
+    "name": "Tébessa",
+    "name_ar": "تبسة",
+    "center": [
+      7.8525,
+      35.2325
+    ],
+    "bounds": [
+      7.228,
+      34.462,
+      8.477,
+      36.003
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 66,
+    "osm_records": 30,
+    "tariki_records": 51,
+    "cross_source": 11,
+    "multiple_tariki": 2,
+    "osm_only": 17,
+    "tariki_only": 36,
+    "nearby_osm_pairs": 1,
+    "conflicts": 40
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-4449443789",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6051544665",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1409180505",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-255422487",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1043",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1048",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1208",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12899",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1290",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1302",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13024",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14078",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1412",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2225",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2226",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2413",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2415",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2533",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3306",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6697",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6700",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6715",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6718",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6745",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6748",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6767",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6779",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6780",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6796",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6816",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6818",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6819",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6828",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6936",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7013",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7015",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7017",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7035",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7130",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7144",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-2199950365",
+      "coordinates": [
+        7.7645494,
+        35.288905
+      ],
+      "osm": {
+        "id": "node/2199950365",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          7.7645494,
+          35.288905
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1286",
+          "route_id": "3646",
+          "name_fr": "Station de services Mbarkia Mohamed Salah",
+          "name_ar": "مباركية محمد الصالح",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.765,
+            35.289
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 42
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "مباركية محمد الصالح"
+    },
+    {
+      "id": "osm-node-2611049504",
+      "coordinates": [
+        8.1207835,
+        35.4060414
+      ],
+      "osm": {
+        "id": "node/2611049504",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.1207835,
+          35.4060414
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7142",
+          "route_id": "11943",
+          "name_fr": "Station de services Naftal moto cycle Commune Tebessa",
+          "name_ar": "محطة نفطال للدراجات النارية بلدية تبسة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.1208,
+            35.406
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال للدراجات النارية بلدية تبسة"
+    },
+    {
+      "id": "osm-node-3937972169",
+      "coordinates": [
+        8.0079683,
+        35.3304358
+      ],
+      "osm": {
+        "id": "node/3937972169",
+        "name": "مركز البث دكان",
+        "name_ar": "مركز البث دكان",
+        "name_fr": "site TDA doukan",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.0079683,
+          35.3304358
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "site TDA doukan",
+      "display_name_ar": "مركز البث دكان"
+    },
+    {
+      "id": "osm-node-4247651916",
+      "coordinates": [
+        7.7456851,
+        35.2807403
+      ],
+      "osm": {
+        "id": "node/4247651916",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.7456851,
+          35.2807403
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1311",
+          "route_id": "3899",
+          "name_fr": "Station de services Elouefi Mohamed",
+          "name_ar": "الوافي محمد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.7462,
+            35.2804
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 60
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "الوافي محمد"
+    },
+    {
+      "id": "osm-node-4309008034",
+      "coordinates": [
+        8.0762025,
+        35.479468
+      ],
+      "osm": {
+        "id": "node/4309008034",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.0762025,
+          35.479468
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4449443789",
+      "coordinates": [
+        7.8792707,
+        35.8687776
+      ],
+      "osm": {
+        "id": "node/4449443789",
+        "name": "محطة الوقود غول",
+        "name_ar": "محطة الوقود غول",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8792707,
+          35.8687776
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14068",
+          "route_id": "11498",
+          "name_fr": "station ghoul comune el-aouinet",
+          "name_ar": "محطة غول بلدية العوينات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.879,
+            35.868
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 90
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1409180505",
+          "offset_m": 43
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "محطة الوقود غول",
+      "display_name_ar": "محطة الوقود غول"
+    },
+    {
+      "id": "osm-node-4769467547",
+      "coordinates": [
+        7.7591539,
+        35.2803169
+      ],
+      "osm": {
+        "id": "node/4769467547",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.7591539,
+          35.2803169
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1284",
+          "route_id": "3646",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.759,
+            35.28
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-5124328552",
+      "coordinates": [
+        8.3168715,
+        35.4879845
+      ],
+      "osm": {
+        "id": "node/5124328552",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.3168715,
+          35.4879845
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5197846127",
+      "coordinates": [
+        7.8876282,
+        35.8661642
+      ],
+      "osm": {
+        "id": "node/5197846127",
+        "name": "محطة وقود دبز",
+        "name_ar": "محطة وقود دبز",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8876282,
+          35.8661642
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة وقود دبز",
+      "display_name_ar": "محطة وقود دبز"
+    },
+    {
+      "id": "osm-node-5506581623",
+      "coordinates": [
+        7.761471,
+        35.2583948
+      ],
+      "osm": {
+        "id": "node/5506581623",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.761471,
+          35.2583948
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6051544665",
+      "coordinates": [
+        8.1598438,
+        35.4343444
+      ],
+      "osm": {
+        "id": "node/6051544665",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.1598438,
+          35.4343444
+        ]
+      },
+      "tariki": [
+        {
+          "id": "20",
+          "route_id": "44",
+          "name_fr": "Station de services Youcefi Foudil",
+          "name_ar": "محطة خدمات يوسفي فوضيل",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.16,
+            35.434
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 41
+        },
+        {
+          "id": "13117",
+          "route_id": "46",
+          "name_fr": "Station de services fodhil",
+          "name_ar": "محطة خدمات فوضيل",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            8.16,
+            35.434
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 41
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services Youcefi Foudil",
+      "display_name_ar": "محطة خدمات يوسفي فوضيل"
+    },
+    {
+      "id": "osm-node-6354576972",
+      "coordinates": [
+        7.8325416,
+        35.540736
+      ],
+      "osm": {
+        "id": "node/6354576972",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8325416,
+          35.540736
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6764399519",
+      "coordinates": [
+        8.0924824,
+        34.8839292
+      ],
+      "osm": {
+        "id": "node/6764399519",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.0924824,
+          34.8839292
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7494680063",
+      "coordinates": [
+        8.241246,
+        35.3711883
+      ],
+      "osm": {
+        "id": "node/7494680063",
+        "name": "محطة خدمة نفطال",
+        "name_ar": "محطة خدمة نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.241246,
+          35.3711883
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمة نفطال",
+      "display_name_ar": "محطة خدمة نفطال"
+    },
+    {
+      "id": "osm-node-7494680064",
+      "coordinates": [
+        8.2420339,
+        35.3737375
+      ],
+      "osm": {
+        "id": "node/7494680064",
+        "name": "محطة الوقود صياد سي امحمد",
+        "name_ar": "محطة الوقود صياد سي امحمد",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.2420339,
+          35.3737375
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة الوقود صياد سي امحمد",
+      "display_name_ar": "محطة الوقود صياد سي امحمد"
+    },
+    {
+      "id": "osm-way-1409180505",
+      "coordinates": [
+        7.878800099999999,
+        35.8688614
+      ],
+      "osm": {
+        "id": "way/1409180505",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.878800099999999,
+          35.8688614
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4449443789",
+          "offset_m": 43
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1409424531",
+      "coordinates": [
+        8.01610215,
+        35.66392985
+      ],
+      "osm": {
+        "id": "way/1409424531",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.01610215,
+          35.66392985
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-255422487",
+      "coordinates": [
+        8.06438035,
+        35.4268644
+      ],
+      "osm": {
+        "id": "way/255422487",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.06438035,
+          35.4268644
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7132",
+          "route_id": "11938",
+          "name_fr": "Station de services Ali Mhenni Commune Tebessa",
+          "name_ar": "محطة علي مهني بلدية تبسة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.064,
+            35.427
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 38
+        },
+        {
+          "id": "7140",
+          "route_id": "11943",
+          "name_fr": "Station de services  Ali Mhenni Commune Tebessa",
+          "name_ar": "محطة علي مهني بلدية تبسة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.0644,
+            35.4268
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-255451870",
+      "coordinates": [
+        8.106242850000001,
+        35.41027195
+      ],
+      "osm": {
+        "id": "way/255451870",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.106242850000001,
+          35.41027195
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-258071950",
+      "coordinates": [
+        8.1764373,
+        35.3898535
+      ],
+      "osm": {
+        "id": "way/258071950",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.1764373,
+          35.3898535
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7134",
+          "route_id": "11938",
+          "name_fr": "Station de services mesaoud ouadi meloul Commune Tebessa",
+          "name_ar": "محطة مسعود بوادي ملول بلدية تبسة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            8.176,
+            35.39
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 43
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services mesaoud ouadi meloul Commune Tebessa",
+      "display_name_ar": "محطة مسعود بوادي ملول بلدية تبسة"
+    },
+    {
+      "id": "osm-way-258153718",
+      "coordinates": [
+        7.97594315,
+        35.46634865
+      ],
+      "osm": {
+        "id": "way/258153718",
+        "name": "محطة الحمامات الحمامات",
+        "name_ar": "محطة الحمامات الحمامات",
+        "name_fr": "Aire de Service d'El Hammamet",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          7.97594315,
+          35.46634865
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Aire de Service d'El Hammamet",
+      "display_name_ar": "محطة الحمامات الحمامات"
+    },
+    {
+      "id": "osm-way-288012621",
+      "coordinates": [
+        8.1009876,
+        35.43930965
+      ],
+      "osm": {
+        "id": "way/288012621",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.1009876,
+          35.43930965
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-288012641",
+      "coordinates": [
+        8.07080505,
+        35.4878701
+      ],
+      "osm": {
+        "id": "way/288012641",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.07080505,
+          35.4878701
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6755",
+          "route_id": "11516",
+          "name_fr": "Station de services  boulhaf dir",
+          "name_ar": "محطة نفطال بولحاف الدير",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.0699,
+            35.4882
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 90
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services  boulhaf dir",
+      "display_name_ar": "محطة نفطال بولحاف الدير"
+    },
+    {
+      "id": "osm-way-288276321",
+      "coordinates": [
+        8.137536449999999,
+        35.41669995
+      ],
+      "osm": {
+        "id": "way/288276321",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.137536449999999,
+          35.41669995
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7135",
+          "route_id": "11938",
+          "name_fr": "Station de services  bouzeghaia Commune Tebessa",
+          "name_ar": "محطة بوزغاية بلدية تبسة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.137,
+            35.417
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 59
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-288276332",
+      "coordinates": [
+        8.14180695,
+        35.41359535
+      ],
+      "osm": {
+        "id": "way/288276332",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.14180695,
+          35.41359535
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7133",
+          "route_id": "11938",
+          "name_fr": "Station de services  el-merdja Commune Tebessa",
+          "name_ar": "محطة المرجة بلدية تبسة",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            8.142,
+            35.414
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة المرجة بلدية تبسة"
+    },
+    {
+      "id": "osm-way-288341778",
+      "coordinates": [
+        8.090281099999999,
+        35.41539765
+      ],
+      "osm": {
+        "id": "way/288341778",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.090281099999999,
+          35.41539765
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7139",
+          "route_id": "11943",
+          "name_fr": "Station de services el-wiam Commune Tebessa",
+          "name_ar": "محطة الوئام بلدية تبسة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.0903,
+            35.4153
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-319831403",
+      "coordinates": [
+        8.11435345,
+        35.4177561
+      ],
+      "osm": {
+        "id": "way/319831403",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          8.11435345,
+          35.4177561
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7131",
+          "route_id": "11938",
+          "name_fr": "Station de services Naftal route Annaba",
+          "name_ar": "محطة نفطال طريق عنابة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.115,
+            35.417
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": 102
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Naftal route Annaba",
+      "display_name_ar": "محطة نفطال طريق عنابة"
+    },
+    {
+      "id": "osm-way-564009212",
+      "coordinates": [
+        8.228228999999999,
+        35.371864
+      ],
+      "osm": {
+        "id": "way/564009212",
+        "name": "نفطال بكارية الشرقية",
+        "name_ar": "نفطال بكارية الشرقية",
+        "name_fr": "Naftal Bekkaria Est",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.228228999999999,
+          35.371864
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal Bekkaria Est",
+      "display_name_ar": "نفطال بكارية الشرقية"
+    },
+    {
+      "id": "osm-way-564009213",
+      "coordinates": [
+        8.2340533,
+        35.367242149999996
+      ],
+      "osm": {
+        "id": "way/564009213",
+        "name": "نفطال بكارية الغربية",
+        "name_ar": "نفطال بكارية الغربية",
+        "name_fr": "Naftal Bekkaria Ouest",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.2340533,
+          35.367242149999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal Bekkaria Ouest",
+      "display_name_ar": "نفطال بكارية الغربية"
+    },
+    {
+      "id": "osm-way-669497776",
+      "coordinates": [
+        7.485880999999999,
+        35.26362995
+      ],
+      "osm": {
+        "id": "way/669497776",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.485880999999999,
+          35.26362995
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-1043",
+      "coordinates": [
+        7.767,
+        35.119
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1043",
+          "route_id": "3153",
+          "name_fr": "Station de services Feth Allah",
+          "name_ar": "محطة فتح الله",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.767,
+            35.119
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Feth Allah",
+      "display_name_ar": "محطة فتح الله"
+    },
+    {
+      "id": "tariki-1048",
+      "coordinates": [
+        7.602,
+        35.419
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1048",
+          "route_id": "2653",
+          "name_fr": "station de services Eldjorf",
+          "name_ar": "محطة الخدمات الجرف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.602,
+            35.419
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Eldjorf",
+      "display_name_ar": "محطة الخدمات الجرف"
+    },
+    {
+      "id": "tariki-1208",
+      "coordinates": [
+        7.729,
+        35.271
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1208",
+          "route_id": "3646",
+          "name_fr": "Station de services Esselam",
+          "name_ar": "محطة خدمات السلام",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.729,
+            35.271
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Esselam",
+      "display_name_ar": "محطة خدمات السلام"
+    },
+    {
+      "id": "tariki-12899",
+      "coordinates": [
+        8.033,
+        35.744
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12899",
+          "route_id": "11630",
+          "name_fr": "station laoure",
+          "name_ar": "محطة الخدمات لعور",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.033,
+            35.744
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station laoure",
+      "display_name_ar": "محطة الخدمات لعور"
+    },
+    {
+      "id": "tariki-1290",
+      "coordinates": [
+        7.7518,
+        35.2583
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1290",
+          "route_id": "3867",
+          "name_fr": "Station de services Elouafi Haroun",
+          "name_ar": "محطة خدمات الوافي هارون",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.7518,
+            35.2583
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Elouafi Haroun",
+      "display_name_ar": "محطة خدمات الوافي هارون"
+    },
+    {
+      "id": "tariki-1302",
+      "coordinates": [
+        7.7506,
+        35.2562
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1302",
+          "route_id": "3884",
+          "name_fr": "Station de services Elouafi Lakhdar",
+          "name_ar": "محطة خدمات الوافي لخضر",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.7506,
+            35.2562
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Elouafi Lakhdar",
+      "display_name_ar": "محطة خدمات الوافي لخضر"
+    },
+    {
+      "id": "tariki-13024",
+      "coordinates": [
+        8.034,
+        35.75
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13024",
+          "route_id": "11630",
+          "name_fr": "station ganez",
+          "name_ar": "محطة الخدمات قنز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.034,
+            35.75
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station ganez",
+      "display_name_ar": "محطة الخدمات قنز"
+    },
+    {
+      "id": "tariki-14078",
+      "coordinates": [
+        8.034,
+        35.895
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14078",
+          "route_id": "20781",
+          "name_fr": "station ain chania gar",
+          "name_ar": "محطة عين الشانية محطة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.034,
+            35.895
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station ain chania gar",
+      "display_name_ar": "محطة عين الشانية محطة"
+    },
+    {
+      "id": "tariki-1412",
+      "coordinates": [
+        7.473,
+        35.218
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1412",
+          "route_id": "2997",
+          "name_fr": "Station de services Kosses",
+          "name_ar": "محطة خدمات قساس",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.473,
+            35.218
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Kosses",
+      "display_name_ar": "محطة خدمات قساس"
+    },
+    {
+      "id": "tariki-2225",
+      "coordinates": [
+        8.295,
+        35.517
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2225",
+          "route_id": "46",
+          "name_fr": "station de services Naftal Ras Eloyoun",
+          "name_ar": "محطة الخدمات نفطال راس العيون",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.295,
+            35.517
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Naftal Ras Eloyoun",
+      "display_name_ar": "محطة الخدمات نفطال راس العيون"
+    },
+    {
+      "id": "tariki-2226",
+      "coordinates": [
+        8.319,
+        35.493
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2226",
+          "route_id": "46",
+          "name_fr": "Station de services Mensel AbdAlghani",
+          "name_ar": "محطة خدمات منسل عبد الغاني",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.319,
+            35.493
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Mensel AbdAlghani",
+      "display_name_ar": "محطة خدمات منسل عبد الغاني"
+    },
+    {
+      "id": "tariki-2413",
+      "coordinates": [
+        7.866,
+        35.523
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2413",
+          "route_id": "3266",
+          "name_fr": "Station de services en cours de construction",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.866,
+            35.523
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services en cours de construction",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "tariki-2415",
+      "coordinates": [
+        7.487,
+        35.263
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2415",
+          "route_id": "3003",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.487,
+            35.263
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "tariki-2533",
+      "coordinates": [
+        7.955,
+        35.606
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2533",
+          "route_id": "5794",
+          "name_fr": "cafee",
+          "name_ar": "مقهى",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.955,
+            35.606
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "cafee",
+      "display_name_ar": "مقهى"
+    },
+    {
+      "id": "tariki-3306",
+      "coordinates": [
+        7.674,
+        34.547
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3306",
+          "route_id": "1050",
+          "name_fr": "Station de services Boumoussa",
+          "name_ar": "محطة الوقود بوموسى",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.674,
+            34.547
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Boumoussa",
+      "display_name_ar": "محطة الوقود بوموسى"
+    },
+    {
+      "id": "tariki-6697",
+      "coordinates": [
+        8.1504,
+        35.9317
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6697",
+          "route_id": "9869",
+          "name_fr": "Station de services boukefa",
+          "name_ar": "محطة الخدمات بوقفة",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.1504,
+            35.9317
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services boukefa",
+      "display_name_ar": "محطة الخدمات بوقفة"
+    },
+    {
+      "id": "tariki-6700",
+      "coordinates": [
+        7.8167,
+        35.3676
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6700",
+          "route_id": "11513",
+          "name_fr": "Station de services  CHABOU",
+          "name_ar": "محطة شابو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.8167,
+            35.3676
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  CHABOU",
+      "display_name_ar": "محطة شابو"
+    },
+    {
+      "id": "tariki-6715",
+      "coordinates": [
+        8.1446,
+        35.9314
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6715",
+          "route_id": "9869",
+          "name_fr": "station de services Sassi",
+          "name_ar": "محطة الخدمات  الساسي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.1446,
+            35.9314
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Sassi",
+      "display_name_ar": "محطة الخدمات  الساسي"
+    },
+    {
+      "id": "tariki-6718",
+      "coordinates": [
+        8.1372,
+        35.9449
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6718",
+          "route_id": "9869",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات  نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.1372,
+            35.9449
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "محطة الخدمات  نفطال"
+    },
+    {
+      "id": "tariki-6745",
+      "coordinates": [
+        7.594,
+        35.269
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6745",
+          "route_id": "3343",
+          "name_fr": "Station de services BOUZIDA",
+          "name_ar": "محطة الاخوة بوزيدة للخدمات",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.594,
+            35.269
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOUZIDA",
+      "display_name_ar": "محطة الاخوة بوزيدة للخدمات"
+    },
+    {
+      "id": "tariki-6748",
+      "coordinates": [
+        8.415,
+        35.175
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6748",
+          "route_id": "11572",
+          "name_fr": "Station de services el-Kanari",
+          "name_ar": "محطة الخدمات الكناري",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.415,
+            35.175
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services el-Kanari",
+      "display_name_ar": "محطة الخدمات الكناري"
+    },
+    {
+      "id": "tariki-6767",
+      "coordinates": [
+        8.0148,
+        35.6659
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6767",
+          "route_id": "11494",
+          "name_fr": "Station de services Bekai Lazhar",
+          "name_ar": "محطة بكاي لزهر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.0148,
+            35.6659
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Bekai Lazhar",
+      "display_name_ar": "محطة بكاي لزهر"
+    },
+    {
+      "id": "tariki-6779",
+      "coordinates": [
+        8.238,
+        35.788
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6779",
+          "route_id": "11609",
+          "name_fr": "Station de services Boughrara Mohamed",
+          "name_ar": "محطة خدمات بيع الوقود بوغرارة محمد الطيب",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            8.238,
+            35.788
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Boughrara Mohamed",
+      "display_name_ar": "محطة خدمات بيع الوقود بوغرارة محمد الطيب"
+    },
+    {
+      "id": "tariki-6780",
+      "coordinates": [
+        8.231,
+        35.8
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6780",
+          "route_id": "11609",
+          "name_fr": "Station de services Bouhnik Slimane",
+          "name_ar": "محطة خدمات بيع الوقود بوحنيك سليمان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.231,
+            35.8
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Bouhnik Slimane",
+      "display_name_ar": "محطة خدمات بيع الوقود بوحنيك سليمان"
+    },
+    {
+      "id": "tariki-6796",
+      "coordinates": [
+        7.7552,
+        35.2734
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6796",
+          "route_id": "3936",
+          "name_fr": "Station de services messar abdelmadjid",
+          "name_ar": "محطة مصار عبد المجيد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.7552,
+            35.2734
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services messar abdelmadjid",
+      "display_name_ar": "محطة مصار عبد المجيد"
+    },
+    {
+      "id": "tariki-6816",
+      "coordinates": [
+        8.2521,
+        35.006
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6816",
+          "route_id": "9550",
+          "name_fr": "Station de services Mebarki",
+          "name_ar": "محطة خدمات ملك مباركي العطرة بقرية الذكارة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.2521,
+            35.006
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Mebarki",
+      "display_name_ar": "محطة خدمات ملك مباركي العطرة بقرية الذكارة"
+    },
+    {
+      "id": "tariki-6818",
+      "coordinates": [
+        8.2525,
+        35.0076
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6818",
+          "route_id": "9550",
+          "name_fr": "Station de services Maifi",
+          "name_ar": "محطة خدمات ملك معيفي عبد الحق",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.2525,
+            35.0076
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Maifi",
+      "display_name_ar": "محطة خدمات ملك معيفي عبد الحق"
+    },
+    {
+      "id": "tariki-6819",
+      "coordinates": [
+        8.0932,
+        34.885
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6819",
+          "route_id": "9550",
+          "name_fr": "Station de services Rzaiguia Boughdir Safia",
+          "name_ar": "محطة خدمات رزايقية بغدير الصافية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.0932,
+            34.885
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Rzaiguia Boughdir Safia",
+      "display_name_ar": "محطة خدمات رزايقية بغدير الصافية"
+    },
+    {
+      "id": "tariki-6828",
+      "coordinates": [
+        8.0706,
+        35.4864
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6828",
+          "route_id": "11516",
+          "name_fr": "Station de services  ben hedda",
+          "name_ar": "محطة بن حدة و شركائه",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.0706,
+            35.4864
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  ben hedda",
+      "display_name_ar": "محطة بن حدة و شركائه"
+    },
+    {
+      "id": "tariki-6936",
+      "coordinates": [
+        8.0085,
+        35.67
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6936",
+          "route_id": "11793",
+          "name_fr": "Station de services Bekai Rokaia",
+          "name_ar": "بكاي رقية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.0085,
+            35.67
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Bekai Rokaia",
+      "display_name_ar": "بكاي رقية"
+    },
+    {
+      "id": "tariki-7013",
+      "coordinates": [
+        8.173,
+        35.207
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7013",
+          "route_id": "11896",
+          "name_fr": "Station de services Bayadh",
+          "name_ar": "محطة نفطال وسط الماء البيض",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.173,
+            35.207
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Bayadh",
+      "display_name_ar": "محطة نفطال وسط الماء البيض"
+    },
+    {
+      "id": "tariki-7015",
+      "coordinates": [
+        8.177,
+        35.227
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7015",
+          "route_id": "11896",
+          "name_fr": "Station de services Katel Farida",
+          "name_ar": "محطة قتال فريدة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.177,
+            35.227
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Katel Farida",
+      "display_name_ar": "محطة قتال فريدة"
+    },
+    {
+      "id": "tariki-7017",
+      "coordinates": [
+        8.179,
+        35.242
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7017",
+          "route_id": "11896",
+          "name_fr": "Station de services el-Ouafi Salem",
+          "name_ar": "محطة الوافي سالم",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.179,
+            35.242
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services el-Ouafi Salem",
+      "display_name_ar": "محطة الوافي سالم"
+    },
+    {
+      "id": "tariki-7035",
+      "coordinates": [
+        8.2599,
+        35.6463
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7035",
+          "route_id": "11602",
+          "name_fr": "Station de services NEBA ABD ELDJALIL",
+          "name_ar": "محطة نبة عبد الجليل",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.2599,
+            35.6463
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NEBA ABD ELDJALIL",
+      "display_name_ar": "محطة نبة عبد الجليل"
+    },
+    {
+      "id": "tariki-7130",
+      "coordinates": [
+        8.189,
+        35.366
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7130",
+          "route_id": "11938",
+          "name_fr": "Station de services Naftal route Constantine",
+          "name_ar": "محطة نفطال طريق قسنطينة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.189,
+            35.366
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal route Constantine",
+      "display_name_ar": "محطة نفطال طريق قسنطينة"
+    },
+    {
+      "id": "tariki-7144",
+      "coordinates": [
+        8.1262,
+        35.4076
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7144",
+          "route_id": "11943",
+          "name_fr": "Station de services Ben Hadda Commune Tebessa",
+          "name_ar": "محطة بن حدة بلدية تبسة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.1262,
+            35.4076
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 12,
+          "wilaya_fr": "Tébessa",
+          "wilaya_ar": "تبسة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Ben Hadda Commune Tebessa",
+      "display_name_ar": "محطة بن حدة بلدية تبسة"
+    }
+  ]
+}

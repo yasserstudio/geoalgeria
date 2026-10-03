@@ -11,16 +11,40 @@ A first-level administrative division of Algeria (province). There are 69 as of 
 _Avoid_: province, governorate, state
 
 **Daira**:
-A second-level division that groups communes within a wilaya (district).
+A second-level division that groups communes within a wilaya (district). Named
+after its seat commune, and identified by a stable id that is never reused: a
+daira that stops existing leaves its id in `packages/dataset/data/retired-ids.json`,
+while one that is renamed or reseated on another of its communes keeps its id,
+because the id belongs to the body of communes and not to the seat.
+Membership for wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 and 59 to 69 comes
+from executive decree 26-253 (JORA n 52, 21 July 2026); the other 48 wilayas
+keep their decree 91-306 lists, so the national total is the dataset's count,
+never stated as official.
 _Avoid_: district, sub-prefecture, arrondissement
 
 **Commune**:
 The smallest administrative unit (municipality); the level a postal code resolves to.
 _Avoid_: municipality, baladiya, town
 
+**Capital**:
+The Commune that is a Wilaya's seat, published as `capital_commune_code`, the `code_commune` of that Commune, so it joins the Commune record instead of duplicating its names. Fixed by the decrees that name the chefs-lieux of the wilayas (décret n° 84-79 of 3 April 1984 for 1-48, décret présidentiel n° 21-117 of 22 March 2021 for 49-58, décret présidentiel n° 26-206 of 25 May 2026 for 59-69), never read off the Wilaya's own name: wilaya 16's Capital is Alger Centre, and wilayas 53, 54 and 57 spell theirs differently from the Wilaya. A Wilaya's own `latitude`/`longitude` **is** its Capital's centre, the same value and not a second reading of it, so there is one point per Capital (rule 9 of `docs/adr/0001-coordinate-review-by-independent-votes.md`). Renders FR **chef-lieu**, AR **مقر الولاية**.
+_Avoid_: seat, capital city, main city, principal town, admin centre
+
+**Creation year**:
+The year a Wilaya became official, that is the year the law creating it took effect, published as `created`. The 48 founded by Law 84-09 (1984) read `original`, or `1984` where the field is a number; wilayas 49-58 read `2019` (Law 19-12); wilayas 59-69 read `2026` (Law n° 26-06, *JO* n° 25 of 5 April 2026). Never the year a reform was announced: the 59-69 reform was announced on 2025-11-16 and its Creation year is still 2026.
+_Avoid_: founded, established, announced year, reform year
+
+**Former name**:
+A spelling a Wilaya or Commune carried before a sourced correction; it still resolves to that record but is never shown as its current name.
+_Avoid_: alias, old name, legacy name
+
 **Postal code**:
 The Algérie Poste code identifying a commune; resolves upward to its daira and wilaya.
 _Avoid_: ZIP, zipcode, code postal
+
+**Area code**:
+The fixed-line telephone prefix a Wilaya's territory falls under, published as `phone_code`. ARPCE allocates it as part of a numbering zone, not as an attribute of the wilaya, so a Wilaya can exist with no Area code of record and the field is `string | null`. Taken from an official text or left null, never derived from the wilaya it was split from (`mother_wilaya_code`); the evidence for wilayas 59-69 is `phone-code-provenance.json`.
+_Avoid_: dialling code, indicatif, prefix, STD code
 
 ### Data organization
 
@@ -106,6 +130,14 @@ A named service on a **ground** transport network (bus, rail, tram), running ove
 _Avoid_: route, service
 _Note_: "route" is reserved for aviation, below. A Line is a service with many stops; a Route is one nonstop leg between two airports. The `_Avoid_` above is scoped to ground transport and does not apply to `@geoalgeria/aviation`.
 
+**Direction**:
+One directional realization of a ground-transport Line. In `@geoalgeria/buses`, each Direction preserves one source OSM relation and its `from`/`to`/`via` labels; those labels do not by themselves establish passenger termini.
+_Avoid_: route, trip, branch
+
+**Membership**:
+The link placing one Station member in one Direction at its raw source relation-member index. A Membership may repeat the same Station and preserves the source role. `osm_member_order_unvalidated` means source order is retained but has not been validated as passenger stop order.
+_Avoid_: stop sequence, call, terminus
+
 **Route**:
 One **directional** nonstop leg between two airports, as shipped by `@geoalgeria/aviation`'s `routes()`. Direction is data, not presentation: `ALG->BUD` flies nonstop on Saturdays and `BUD->ALG` on Wednesdays, and there is never a same-day nonstop round trip, so they are two records and neither implies the other. A Route that is announced but not yet operating is a **Planned route**, in a separate collection reached by `plannedRoutes()`, never a `status` value.
 _Avoid_: flight, line, connection, city pair
@@ -145,6 +177,62 @@ _Avoid_: multilingual, translated, i18n
 Carrying real `lat`/`lng` coordinates for a record (as opposed to density-only or wilaya-linked-only).
 _Avoid_: located, mapped, positioned
 
+**Twin post**:
+A second upstream entry for the same place, published by the source in the other
+language. The Ministry of Health registry lists every health establishment twice,
+once in French and once in Arabic under two post ids, so one establishment is two
+twin posts; the generator pairs them into one Bilingual record that cites both
+(`refs.msp` and `refs.msp_twin`). Both halves of a pair were first published in
+the same release, so neither id is older: the merged record keeps the
+**lower-sequence** id, which is always the French post's, because ids are
+sequenced by name and a Latin name sorts before an Arabic one.
+_Avoid_: duplicate, double, clone, Arabic record
+
+**Half-record**:
+A record standing for one Twin post while the other is published separately: half
+a facility's names, and its own coordinate. Merging the two retires the
+half-record's id, which `retired-ids.json` then reserves for good and forwards to
+the record that carries the data now.
+_Avoid_: partial record, orphan, fragment
+
+**Upstream link**:
+An identifier a record carries so a consumer can join it to an outside database without matching on a name. The administrative records carry two: an **OSM relation id** (`osm_relation_id`) and a **Wikidata item** (`wikidata`). A link is harvested from a reviewed linkage, in two documented tiers, and is null where no tier has one or where a second source proved the upstream value names a different place; it is never resolved from a name, and no id is carried by two records, because one upstream relation is one place.
+_Avoid_: external id, cross-reference, mapping, concordance
+
+**OSM relation id**:
+The id of the OpenStreetMap administrative relation that is this record upstream: `admin_level=8` for a Commune, `admin_level=4` for a Wilaya. A Wilaya's relation is its own, never its capital Commune's, even where the two share a point. Three Commune relations are mis-tagged upstream and reached the records as the **second tier**, linked on their `ref:ONS` code from a capture fetched by id.
+_Avoid_: osm id, relation, boundary id
+
+**Wikidata item**:
+The Q item (`Q` then digits) an upstream OpenStreetMap relation is tagged with, carried as published. A relation with no `wikidata` tag leaves the field null rather than having an item looked up for it, so the value is always a tag this repository read, not a claim it made.
+_Avoid_: QID, wikidata id, concept id
+
+### Search and normalization
+
+**Search key**:
+The umbrella term for a folded form of a name, produced by the shared normalization package and matched against instead of the display name. Always qualified as a **Conservative key** or a **Loose key**; unqualified "search key" names the concept, never one of the two.
+_Avoid_: slug (that is a URL identity), normalized name, canonical name, search string
+
+**Conservative key**:
+The strict fold every consumer must reproduce byte for byte: presentation forms, alef and hamza variants, tatweel, combining marks, Arabic-Indic digits and case are all resolved, word boundaries are preserved, and nothing that changes which letter a reader sees is folded away. A published catalog's keys are this fold, so a change to it is a major version.
+_Avoid_: strict key, exact key, base key
+
+**Loose key**:
+The additional equivalence tier over the Conservative key, folding the pairs a speaker may spell either way (alef maqsura with yaa, taa marbuta with haa). It exists so a loose hit can be ranked below an exact one instead of being indistinguishable from it.
+_Avoid_: fuzzy key, relaxed key, approximate key
+
+**Rule**:
+One reviewed fold or alias in the normalization package's frozen table, carrying an id (`ar.taa-marbuta-haa`), its class, the script it applies to, one sentence a speaker can argue with, and a review record. A Rule states something about the script and is safe for every name; a statement about one record is that record's own alias, carrying its own Source, not a Rule.
+_Avoid_: mapping, transform, substitution
+
+**Golden corpus**:
+The exported fixture of cases every consumer asserts against, so the package, the release generator, Web and Mobile all prove the same keys from the same inputs. Every Rule is exercised by at least one case, and every case declares which Rule it proves.
+_Avoid_: test fixtures, sample data, test corpus
+
+**Match class**:
+What a query and a name amount to, decided from the keys and their tokens alone: `exact`, `prefix`, `loose` or `none`. It stops short of ranking, which is private to the products, so a Match class says what the keys agree on and never which result comes first. The Golden corpus publishes the classes as `matchCases`, and every consumer proves its own classifier against them.
+_Avoid_: match type, match quality, relevance, tier (a tier is a ranking, not a class)
+
 ### Provenance
 
 **Source**:
@@ -161,8 +249,39 @@ _Avoid_: status, state, active/inactive
 
 **Retrieved**:
 The ISO date a source was last pulled (`SourceRef.retrieved`), distinct from `metadata.updated` (when the dataset was regenerated). Together they answer "is this stale because the source didn't change, or because we didn't re-pull?".
+For hash-only scheduled checks that deliberately avoid date-only commits, `retrieved` remains the date of the canonical payload capture; the newer no-change check is recorded by the successful scheduled workflow run.
 _Avoid_: fetched, scraped, synced
 
 **Geometry confidence**:
 How honest a coordinate is: `exact` (a real per-facility point → a Pin) vs `approximate` (a commune/wilaya centroid → a Dot) vs `null` (there is no coordinate at all → neither). Coarse-grained in `geo_precision`, which is null if and only if `lat`/`lng` are null; method detail (`osm_node`, `commune_centroid`) lives in `geo_method`, null on those same records because no method produced a point.
 _Avoid_: accuracy, precision score
+
+### Coordinate review
+
+**Claim**:
+One source's statement of where a place is, with its source, licence and snapshot date (the OSM seat, the Wikidata coordinate, the record median, a Google verdict, an Owner reading). See ADR 0001.
+_Avoid_: evidence, reading, observation
+
+**Candidate**:
+A point a place's coordinate could be set to: the published point, the OSM seat, the Wikidata point or the record median. A Claim never votes for the Candidate it produced.
+_Avoid_: option, proposal, suggestion
+
+**Vote**:
+A Claim that lands within the agreement radius of a Candidate (2 km for a commune centre) and is not a Copied claim.
+_Avoid_: match, hit, support score
+
+**Answer**:
+The Candidates that agree with each other, every pair of them within the agreement radius: one place, stated by however many sources reached it. Votes are counted per Answer, because three sources landing 400 m apart are not three rivals. See ADR 0001, "Rules 2 to 4 in detail".
+_Avoid_: cluster, group, consensus point
+
+**Copied claim**:
+A Claim within 50 m of the point it would vote for, because that point was copied from it. It proves nothing and casts no Vote. Two Claims within 50 m of **each other** are copies in the same sense, whichever way the copying went, so they cast one Vote between them and not two; the ledger records the silenced one under `not_independent` as a `copy_of` the one that stands.
+_Avoid_: duplicate, echo, reading (a Claim is a Claim)
+
+**Consensus**:
+At least two independent Votes for one Answer, none for any Candidate outside it, and the Answer's winning Candidate inside the commune outline. **Strong consensus** (three Votes, or two with the record median among them) is the tier that fixes data without the Owner. The Candidate that ships is the published point where the Answer holds it, then the OpenStreetMap seat, then the Wikidata point, then the record median.
+_Avoid_: confidence score (there is no score, only Votes), ground truth, verified (an Owner reading is recorded as `owner_confirmation` of an open Candidate)
+
+**Review queue**:
+The places the engine leaves for the Owner: plain consensus, no consensus, or a move over 25 km.
+_Avoid_: backlog, inbox, todo list

@@ -1,0 +1,667 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-62",
+    "wilaya_code": 62,
+    "name": "Bir El Ater",
+    "name_ar": "بئر العاتر",
+    "center": [
+      7.7655,
+      34.793
+    ],
+    "bounds": [
+      7.23,
+      34.244,
+      8.301,
+      35.342
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 18,
+    "osm_records": 7,
+    "tariki_records": 11,
+    "cross_source": 0,
+    "multiple_tariki": 0,
+    "osm_only": 7,
+    "tariki_only": 11,
+    "nearby_osm_pairs": 0,
+    "conflicts": 11
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-13128",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3297",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6490",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6685",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-66851",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6747",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6820",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6841",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6842",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7188",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7190",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-4547125789",
+      "coordinates": [
+        8.0575116,
+        34.765438
+      ],
+      "osm": {
+        "id": "node/4547125789",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.0575116,
+          34.765438
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6539157883",
+      "coordinates": [
+        7.5110865,
+        34.4910643
+      ],
+      "osm": {
+        "id": "node/6539157883",
+        "name": "محطة خدمات خالد أحمد",
+        "name_ar": "محطة خدمات خالد أحمد",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "خالد أحمد",
+        "opening_hours": null,
+        "coordinates": [
+          7.5110865,
+          34.4910643
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات خالد أحمد",
+      "display_name_ar": "محطة خدمات خالد أحمد"
+    },
+    {
+      "id": "osm-node-6539183190",
+      "coordinates": [
+        7.5378951,
+        34.4862437
+      ],
+      "osm": {
+        "id": "node/6539183190",
+        "name": "المحطة نفطال",
+        "name_ar": "المحطة نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          7.5378951,
+          34.4862437
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "المحطة نفطال",
+      "display_name_ar": "المحطة نفطال"
+    },
+    {
+      "id": "osm-node-6764678402",
+      "coordinates": [
+        8.055141,
+        34.723007
+      ],
+      "osm": {
+        "id": "node/6764678402",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.055141,
+          34.723007
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7085807224",
+      "coordinates": [
+        8.0600944,
+        34.7943254
+      ],
+      "osm": {
+        "id": "node/7085807224",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.0600944,
+          34.7943254
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7085807237",
+      "coordinates": [
+        8.0609447,
+        34.7905875
+      ],
+      "osm": {
+        "id": "node/7085807237",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.0609447,
+          34.7905875
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-695916289",
+      "coordinates": [
+        8.08494575,
+        34.7573314
+      ],
+      "osm": {
+        "id": "way/695916289",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.08494575,
+          34.7573314
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-13128",
+      "coordinates": [
+        7.507,
+        34.491
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13128",
+          "route_id": "1050",
+          "name_fr": "station de services Bengrine",
+          "name_ar": "محطة الوقود بنقرين الخرجة الجنوبية",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.507,
+            34.491
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 62,
+          "wilaya_fr": "Bir El Ater",
+          "wilaya_ar": "بئر العاتر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Bengrine",
+      "display_name_ar": "محطة الوقود بنقرين الخرجة الجنوبية"
+    },
+    {
+      "id": "tariki-3297",
+      "coordinates": [
+        7.522,
+        34.487
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3297",
+          "route_id": "1050",
+          "name_fr": "station de services Bengrine",
+          "name_ar": "محطة الوقود بنقرين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.522,
+            34.487
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 62,
+          "wilaya_fr": "Bir El Ater",
+          "wilaya_ar": "بئر العاتر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Bengrine",
+      "display_name_ar": "محطة الوقود بنقرين"
+    },
+    {
+      "id": "tariki-6490",
+      "coordinates": [
+        7.938,
+        34.988
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6490",
+          "route_id": "11325",
+          "name_fr": "station de services ogla melha",
+          "name_ar": "محطة خدمات العقلة المالحة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.938,
+            34.988
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 62,
+          "wilaya_fr": "Bir El Ater",
+          "wilaya_ar": "بئر العاتر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services ogla melha",
+      "display_name_ar": "محطة خدمات العقلة المالحة"
+    },
+    {
+      "id": "tariki-6685",
+      "coordinates": [
+        8.176,
+        35.102
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6685",
+          "route_id": "3798",
+          "name_fr": "Station de services GUEBLA SADEK",
+          "name_ar": "محطة  الخدمات قبلة الصادق وشركائه",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.176,
+            35.102
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 62,
+          "wilaya_fr": "Bir El Ater",
+          "wilaya_ar": "بئر العاتر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services GUEBLA SADEK",
+      "display_name_ar": "محطة  الخدمات قبلة الصادق وشركائه"
+    },
+    {
+      "id": "tariki-66851",
+      "coordinates": [
+        8.176,
+        35.102
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "66851",
+          "route_id": "20788",
+          "name_fr": "station de services gubla sadek",
+          "name_ar": "محطة الخدمات قبلة الصادق وشركائه",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.176,
+            35.102
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 62,
+          "wilaya_fr": "Bir El Ater",
+          "wilaya_ar": "بئر العاتر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services gubla sadek",
+      "display_name_ar": "محطة الخدمات قبلة الصادق وشركائه"
+    },
+    {
+      "id": "tariki-6747",
+      "coordinates": [
+        8.0562,
+        34.7693
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6747",
+          "route_id": "11551",
+          "name_fr": "Station de services RABEH MOUHSSEN",
+          "name_ar": "محطة الوقود رابح محسن",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.0562,
+            34.7693
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 62,
+          "wilaya_fr": "Bir El Ater",
+          "wilaya_ar": "بئر العاتر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services RABEH MOUHSSEN",
+      "display_name_ar": "محطة الوقود رابح محسن"
+    },
+    {
+      "id": "tariki-6820",
+      "coordinates": [
+        8.1798,
+        34.7361
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6820",
+          "route_id": "9550",
+          "name_fr": "Station de services Tebib Beakla Ahmed",
+          "name_ar": "محطة خدمات طبيب بعقلة احمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.1798,
+            34.7361
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 62,
+          "wilaya_fr": "Bir El Ater",
+          "wilaya_ar": "بئر العاتر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Tebib Beakla Ahmed",
+      "display_name_ar": "محطة خدمات طبيب بعقلة احمد"
+    },
+    {
+      "id": "tariki-6841",
+      "coordinates": [
+        8.0531,
+        34.7265
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6841",
+          "route_id": "11551",
+          "name_fr": "Station de services  TOUATI",
+          "name_ar": "محطة تواتي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.0531,
+            34.7265
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 62,
+          "wilaya_fr": "Bir El Ater",
+          "wilaya_ar": "بئر العاتر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  TOUATI",
+      "display_name_ar": "محطة تواتي"
+    },
+    {
+      "id": "tariki-6842",
+      "coordinates": [
+        8.0579,
+        34.7637
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6842",
+          "route_id": "11551",
+          "name_fr": "Station de services  naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.0579,
+            34.7637
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 62,
+          "wilaya_fr": "Bir El Ater",
+          "wilaya_ar": "بئر العاتر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "tariki-7188",
+      "coordinates": [
+        8.0585,
+        34.7677
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7188",
+          "route_id": "11551",
+          "name_fr": "station des frères ABID",
+          "name_ar": "محطة الإخوة عبيد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.0585,
+            34.7677
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 62,
+          "wilaya_fr": "Bir El Ater",
+          "wilaya_ar": "بئر العاتر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station des frères ABID",
+      "display_name_ar": "محطة الإخوة عبيد"
+    },
+    {
+      "id": "tariki-7190",
+      "coordinates": [
+        8.0472,
+        34.766
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7190",
+          "route_id": "11648",
+          "name_fr": "STATION DE SERVICES GAARI",
+          "name_ar": "محطة الخدمات قعري",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.0472,
+            34.766
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 62,
+          "wilaya_fr": "Bir El Ater",
+          "wilaya_ar": "بئر العاتر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES GAARI",
+      "display_name_ar": "محطة الخدمات قعري"
+    }
+  ]
+}

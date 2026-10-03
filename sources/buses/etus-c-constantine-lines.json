@@ -1,0 +1,174 @@
+{
+  "evidence": {
+    "mode": "operator_artwork_supplied_by_project_owner",
+    "operator_name_ar": "المؤسسة العمومية للنقل الحضري والشبه حضري قسنطينة (ETUS-C)",
+    "route_color_note": "Colors are transcribed from the route-list legend; they are presentation evidence, not a claim about a stable published color standard.",
+    "supplied_at": "2026-09-16",
+    "supplied_images": [
+      {
+        "height": 1043,
+        "role": "route_list",
+        "sha256": "df4ef0ce03a49c546e86452ddfd2761af4c2d482abd281a8b23551a63c4187fc",
+        "width": 1008
+      },
+      {
+        "height": 992,
+        "role": "schematic_network_map",
+        "sha256": "3ca2a55e5b39ab7bfe9ffc5a243e9ad4d42a012406493c63ea95b181bce83c80",
+        "width": 1063
+      }
+    ]
+  },
+  "lines": [
+    {
+      "ref": "L02",
+      "route_color": "blue",
+      "terminus1_ar": "بوالصوف",
+      "terminus2_ar": "قدور بومدوس"
+    },
+    {
+      "ref": "L04",
+      "route_color": "blue",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "سيدي مبروك"
+    },
+    {
+      "ref": "L05",
+      "route_color": "blue",
+      "terminus1_ar": "حي عرفة",
+      "terminus2_ar": "قدور بومدوس"
+    },
+    {
+      "ref": "L08",
+      "route_color": "blue",
+      "terminus1_ar": "وسط المدينة",
+      "terminus2_ar": "زواغي المطار"
+    },
+    {
+      "ref": "L14",
+      "route_color": "blue",
+      "terminus1_ar": "جبل الوحش",
+      "terminus2_ar": "بوالصوف"
+    },
+    {
+      "ref": "L15",
+      "route_color": "green",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "المدينة الجديدة"
+    },
+    {
+      "ref": "L16",
+      "route_color": "green",
+      "terminus1_ar": "محطة ماسينيسا الضريح",
+      "terminus2_ar": "زعمومش"
+    },
+    {
+      "ref": "L19",
+      "route_color": "green",
+      "terminus1_ar": "محطة قادري ابراهيم",
+      "terminus2_ar": "شعر الديب"
+    },
+    {
+      "ref": "L21",
+      "route_color": "orange",
+      "terminus1_ar": "محطة قادري ابراهيم",
+      "terminus2_ar": "الوحدة الجوارية 21"
+    },
+    {
+      "ref": "L22",
+      "route_color": "orange",
+      "terminus1_ar": "محطة نقل المسافرين",
+      "terminus2_ar": "الدرك الوطني"
+    },
+    {
+      "ref": "L23",
+      "route_color": "purple",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "عين النحاس"
+    },
+    {
+      "ref": "L24",
+      "route_color": "purple",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "الرتبة"
+    },
+    {
+      "ref": "L25",
+      "route_color": "purple",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "كاف صالح"
+    },
+    {
+      "ref": "L26",
+      "route_color": "purple",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "عين عبيد"
+    },
+    {
+      "ref": "L27",
+      "route_color": "purple",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "تييديس"
+    },
+    {
+      "ref": "L28",
+      "route_color": "purple",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "عين السمارة"
+    },
+    {
+      "ref": "L29",
+      "route_color": "purple",
+      "terminus1_ar": "محطة عين السمارة",
+      "terminus2_ar": "المدينة الجديدة"
+    },
+    {
+      "ref": "L31",
+      "route_color": "blue",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "المريج"
+    },
+    {
+      "ref": "L32",
+      "route_color": "blue",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "ديدوش مراد"
+    },
+    {
+      "ref": "L33",
+      "route_color": "blue",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "بني حميدان"
+    },
+    {
+      "ref": "L34",
+      "route_color": "blue",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "الحامة بوزيان"
+    },
+    {
+      "ref": "L35",
+      "route_color": "blue",
+      "terminus1_ar": "محطة زعمومش",
+      "terminus2_ar": "ابن باديس"
+    },
+    {
+      "ref": "L36",
+      "route_color": "blue",
+      "terminus1_ar": "عين النحاس",
+      "terminus2_ar": "المدينة الجديدة"
+    },
+    {
+      "ref": "L37",
+      "route_color": "blue",
+      "terminus1_ar": "محطة نقل المسافرين",
+      "terminus2_ar": "ابن زياد"
+    },
+    {
+      "ref": "L38",
+      "route_color": "blue",
+      "terminus1_ar": "محطة نقل المسافرين",
+      "terminus2_ar": "مسعود بوجريو"
+    }
+  ]
+}

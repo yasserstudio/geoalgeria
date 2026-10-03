@@ -1,8 +1,8 @@
 {
   "name": "@geoalgeria/telecom",
-  "version": "2.1.0",
+  "version": "3.0.1",
   "type": "module",
-  "description": "Algeria mobile-network coverage as data — 3,096 5G coverage points from operator maps (Djezzy, Mobilis, Ooredoo), with wilaya/commune linkage. JSON, CSV, GeoJSON, TypeScript.",
+  "description": "Algeria mobile-network coverage as data: 3,598 5G coverage records from operator maps (Djezzy, Mobilis, Ooredoo), with 3,580 publishable coordinates. JSON, CSV, GeoJSON, TypeScript.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {
@@ -43,7 +43,7 @@
     "dz"
   ],
   "author": "Yasser's Studio (https://yasser.studio)",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "publishConfig": {
     "access": "public"
   },

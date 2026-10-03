@@ -23,7 +23,8 @@ import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
-import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
+import { writeCapture, readCapture, stableStringify } from "../../../scripts/lib/source-store.mjs";
+import { reconcileCurrentWilayaByCommune } from "../../../scripts/lib/current-wilaya-by-commune.mjs";
 
 // Offline replay: rebuild from the committed captures with no network — a dead
 // or WAF-blocked operator site never blocks re-emission.
@@ -32,6 +33,7 @@ const OFFLINE = process.argv.includes("--cache");
 const PKG = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(PKG, "data");
 const TECH = "5G";
+const SOURCE_MANIFEST_PATH = join(PKG, "..", "..", "sources", "telecom", "manifest.json");
 
 // ── wilaya name → zero-padded code, from the geoalgeria flagship ────────────
 const WILAYAS = JSON.parse(
@@ -85,6 +87,19 @@ const id = (operator, lat, lng, extra = "") =>
     .digest("hex")
     .slice(0, 10)}`;
 
+// Ooredoo occasionally corrects a commune spelling without changing the
+// published point. The label participates in the historical public id, so use
+// the spelling that originally minted that id while still publishing the
+// corrected current label. Extend this map when the operator makes another
+// label-only correction; a real coordinate change remains a new point/id.
+const OOREDOO_ID_LABEL = new Map([
+  ["DRAA BEN KHEDDA", "DRAA BEN KHEDA"],
+  ["EL M'GHAIR", "EL MEGAIER"],
+  ["GUE DE CONSTANTINE", "DJASR KASSENTINA"],
+  ["LARBAA NATH IRATHEN", "LARBAE NATH IRATHENE"],
+  ["OUM EL BOUAGHI", "OUM BOUAGHI"],
+]);
+
 // Algeria bounding box — reject coordinates outside it (catches comma-decimal or
 // swapped lat/lng introduced by a source format change).
 const inAlgeria = (lat, lng) =>
@@ -101,6 +116,16 @@ async function get(url, headers = {}) {
   if (!res.ok) throw new Error(`${url} → HTTP ${res.status}`);
   return res;
 }
+
+// The operator endpoints expose location collections as sets. Canonicalize
+// their array order before capture so an upstream reordering alone cannot
+// change source hashes or generate noisy diffs.
+const sortUnordered = (rows) =>
+  [...rows].sort((a, b) => {
+    const left = stableStringify(a, 0);
+    const right = stableStringify(b, 0);
+    return left < right ? -1 : left > right ? 1 : 0;
+  });
 
 // ── Djezzy ──────────────────────────────────────────────────────────────────
 // The map fetches wilayas.enc and decrypts it client-side (XOR with a key built
@@ -130,6 +155,12 @@ async function fetchDjezzy() {
         /* ignore */
       }
     }
+    byWilaya = Object.fromEntries(
+      Object.entries(byWilaya).map(([name, wilaya]) => [
+        name,
+        { ...wilaya, markers: sortUnordered(wilaya.markers ?? []) },
+      ]),
+    );
     // Raw capture before validation, so the evidence survives an aborted run.
     writeCapture("telecom", "djezzy-5g", byWilaya, {
       url: `${base}/map.html`,
@@ -178,7 +209,7 @@ async function fetchMobilis() {
       Referer: "https://mobilis.dz/map/5g",
       Accept: "application/json, text/plain, */*",
     });
-    rows = await res.json();
+    rows = sortUnordered(await res.json());
     writeCapture("telecom", "mobilis-5g", rows, { url: "https://mobilis.dz/map/5g/data" });
   }
   const sites = [];
@@ -199,7 +230,7 @@ async function fetchMobilis() {
       continue;
     }
     seen.add(siteId);
-    sites.push({
+    const site = {
       id: siteId,
       technology: TECH,
       operator: "mobilis",
@@ -212,7 +243,8 @@ async function fetchMobilis() {
       lat,
       lng,
       source: "https://mobilis.dz/map/5g",
-    });
+    };
+    sites.push({ ...site, ...reconcileCurrentWilayaByCommune(site) });
   }
   if (sites.length === 0) throw new Error("got 0 Mobilis sites");
   return sites;
@@ -267,6 +299,7 @@ async function fetchOoredoo() {
         /* ignore */
       }
     }
+    items = sortUnordered(items);
     writeCapture("telecom", "ooredoo-5g", items, { url });
   }
   // Projection happens here, in reviewable Node code, not in the browser eval —
@@ -286,7 +319,7 @@ async function fetchOoredoo() {
       continue;
     }
     sites.push({
-      id: id("ooredoo", lat, lng, r.c || ""),
+      id: id("ooredoo", lat, lng, OOREDOO_ID_LABEL.get(r.c) ?? r.c ?? ""),
       technology: TECH,
       operator: "ooredoo",
       name: r.c || null,
@@ -333,11 +366,20 @@ async function main() {
     return { file: s.file, rows: perOperator[op].map(s.map) };
   });
   const today = new Date().toISOString().slice(0, 10);
+  // Read after all live extractors finish: writeCapture updates this file, so a
+  // module-start snapshot would stamp fresh data with the previous run's date.
+  const sourceManifest = JSON.parse(readFileSync(SOURCE_MANIFEST_PATH, "utf8"));
+  const sources = cfg.meta.sources.map((source) => {
+    const capture = sourceManifest[`${source.key}-5g`];
+    if (!capture?.retrieved)
+      throw new Error(`source manifest has no retrieval date for ${source.key}-5g`);
+    return { ...source, retrieved: capture.retrieved };
+  });
   const { records, metadata } = writePackageV2({
     pkg: "telecom",
     dir: DATA,
     files,
-    meta: cfg.meta,
+    meta: { ...cfg.meta, sources },
     updated: today,
     retrieved: today,
   });

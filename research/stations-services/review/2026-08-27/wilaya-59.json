@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-59",
+    "wilaya_code": 59,
+    "name": "Aflou",
+    "name_ar": "آفلو",
+    "center": [
+      1.9145,
+      34.1715
+    ],
+    "bounds": [
+      1.335,
+      33.648,
+      2.494,
+      34.695
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 17,
+    "osm_records": 14,
+    "tariki_records": 9,
+    "cross_source": 6,
+    "multiple_tariki": 0,
+    "osm_only": 8,
+    "tariki_only": 3,
+    "nearby_osm_pairs": 0,
+    "conflicts": 3
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-14208",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14250",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14254",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-11365218436",
+      "coordinates": [
+        1.8332613,
+        34.4656185
+      ],
+      "osm": {
+        "id": "node/11365218436",
+        "name": "Station Service Hassian Edheb",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.8332613,
+          34.4656185
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Hassian Edheb",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-11369407191",
+      "coordinates": [
+        1.7756707,
+        33.900554
+      ],
+      "osm": {
+        "id": "node/11369407191",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.7756707,
+          33.900554
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-13037150155",
+      "coordinates": [
+        1.9552284,
+        34.2901353
+      ],
+      "osm": {
+        "id": "node/13037150155",
+        "name": "Services Statoin",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.9552284,
+          34.2901353
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Services Statoin",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-13037150161",
+      "coordinates": [
+        1.9510174,
+        34.2967942
+      ],
+      "osm": {
+        "id": "node/13037150161",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "PVA E9557 BOUKHALFI BOUKHALFA",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.9510174,
+          34.2967942
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "PVA E9557 BOUKHALFI BOUKHALFA",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-13677167893",
+      "coordinates": [
+        2.3161143,
+        34.3882879
+      ],
+      "osm": {
+        "id": "node/13677167893",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.3161143,
+          34.3882879
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2017068487",
+      "coordinates": [
+        2.105003,
+        34.1181272
+      ],
+      "osm": {
+        "id": "node/2017068487",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          2.105003,
+          34.1181272
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5849",
+          "route_id": "9879",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الوقود نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.105,
+            34.118
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 59,
+          "wilaya_fr": "Aflou",
+          "wilaya_ar": "آفلو",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-2017068489",
+      "coordinates": [
+        2.0880593,
+        34.1208682
+      ],
+      "osm": {
+        "id": "node/2017068489",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.0880593,
+          34.1208682
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5850",
+          "route_id": "9879",
+          "name_fr": "Station de services Kherbechi",
+          "name_ar": "محطة خرباشي",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            2.088,
+            34.121
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 59,
+          "wilaya_fr": "Aflou",
+          "wilaya_ar": "آفلو",
+          "offset_m": 16
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خرباشي"
+    },
+    {
+      "id": "osm-node-3276479801",
+      "coordinates": [
+        2.1697164,
+        34.1529919
+      ],
+      "osm": {
+        "id": "node/3276479801",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.1697164,
+          34.1529919
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5847",
+          "route_id": "9879",
+          "name_fr": "Station de services Khouildi 1",
+          "name_ar": "محطة الوقود خويلدي 1",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.17,
+            34.153
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 59,
+          "wilaya_fr": "Aflou",
+          "wilaya_ar": "آفلو",
+          "offset_m": 26
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود خويلدي 1"
+    },
+    {
+      "id": "osm-node-3276479804",
+      "coordinates": [
+        1.9513631,
+        34.296219
+      ],
+      "osm": {
+        "id": "node/3276479804",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.9513631,
+          34.296219
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4957",
+          "route_id": "9615",
+          "name_fr": "Station de services BOUKHALFI BOUKHALFA",
+          "name_ar": "محطة الخدمات بوخالفي بوخالفة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.951,
+            34.296
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 59,
+          "wilaya_fr": "Aflou",
+          "wilaya_ar": "آفلو",
+          "offset_m": 41
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات بوخالفي بوخالفة"
+    },
+    {
+      "id": "osm-node-4500326995",
+      "coordinates": [
+        2.090922,
+        34.1083026
+      ],
+      "osm": {
+        "id": "node/4500326995",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.090922,
+          34.1083026
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10657",
+          "route_id": "9879",
+          "name_fr": "STATION DE SERVICES NAFTAL2",
+          "name_ar": "محطة الوقود نفطال 2",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.091,
+            34.108
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 59,
+          "wilaya_fr": "Aflou",
+          "wilaya_ar": "آفلو",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-5075513535",
+      "coordinates": [
+        1.9182547,
+        33.9601401
+      ],
+      "osm": {
+        "id": "node/5075513535",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.9182547,
+          33.9601401
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5506612213",
+      "coordinates": [
+        2.0740195,
+        34.0944033
+      ],
+      "osm": {
+        "id": "node/5506612213",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.0740195,
+          34.0944033
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1472202472",
+      "coordinates": [
+        2.1638904,
+        34.474223
+      ],
+      "osm": {
+        "id": "way/1472202472",
+        "name": "محطة وقود البيضاء",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.1638904,
+          34.474223
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة وقود البيضاء",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-320943626",
+      "coordinates": [
+        2.1011872499999997,
+        34.11834895
+      ],
+      "osm": {
+        "id": "way/320943626",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.1011872499999997,
+          34.11834895
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5848",
+          "route_id": "9879",
+          "name_fr": "Station de services Khouildi 2",
+          "name_ar": "محطة الوقود خويلدي 2",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            2.101,
+            34.118
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 59,
+          "wilaya_fr": "Aflou",
+          "wilaya_ar": "آفلو",
+          "offset_m": 42
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود خويلدي 2"
+    },
+    {
+      "id": "tariki-14208",
+      "coordinates": [
+        1.932,
+        33.975
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14208",
+          "route_id": "47",
+          "name_fr": "la station d essence",
+          "name_ar": "محطة الخدمات بوزرطالة بلدية سبقاق",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            1.932,
+            33.975
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 59,
+          "wilaya_fr": "Aflou",
+          "wilaya_ar": "آفلو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "la station d essence",
+      "display_name_ar": "محطة الخدمات بوزرطالة بلدية سبقاق"
+    },
+    {
+      "id": "tariki-14250",
+      "coordinates": [
+        2.171,
+        34.475
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14250",
+          "route_id": "9899",
+          "name_fr": "statio essence",
+          "name_ar": "محطة بيع البنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.171,
+            34.475
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 59,
+          "wilaya_fr": "Aflou",
+          "wilaya_ar": "آفلو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "statio essence",
+      "display_name_ar": "محطة بيع البنزين"
+    },
+    {
+      "id": "tariki-14254",
+      "coordinates": [
+        2.176,
+        34.475
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14254",
+          "route_id": "9899",
+          "name_fr": "cafeteria",
+          "name_ar": "مقهى",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            2.176,
+            34.475
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 59,
+          "wilaya_fr": "Aflou",
+          "wilaya_ar": "آفلو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "cafeteria",
+      "display_name_ar": "مقهى"
+    }
+  ]
+}

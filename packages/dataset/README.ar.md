@@ -2,20 +2,22 @@
 
 # GeoAlgeria
 
-> حزمة البيانات الجغرافية الجزائرية – 69 ولاية، 556 دائرة، 1,541 بلدية. بأمر `npm install` واحد.
+> حزمة البيانات الجغرافية الجزائرية – 69 ولاية، 551 دائرة، 1,541 بلدية. بأمر `npm install` واحد.
 
 هل لا زلت تنسخ قوائم الولايات من ملفات PDF؟ هل لا زلت تستخدم بيانات عالقة عند 48 ولاية؟ GeoAlgeria هي أول بيانات جغرافية جزائرية قابلة للتثبيت عبر npm ومُتحقق منها بالتكامل المستمر – محدّثة وفق إصلاح 2026. JSON، CSV، GeoJSON، SQL، TypeScript.
 
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: see LICENSE](https://img.shields.io/badge/License-MIT%20code%2C%20mixed%20data-green.svg)](LICENSE)
 
 ---
 
 ## حقائق سريعة
 
-تضم الجزائر **69 ولاية**، **564 دائرة**، و**1,541 بلدية**، رسمياً منذ **أبريل 2026**. يعكس ذلك إصلاحين إقليميين: القانون 19-12 (2019، أضاف الولايات 49 إلى 58) والقانون رقم 26-06 المؤرخ في 4 أبريل 2026 (أضاف الولايات 59 إلى 69)، المنشور في [*الجريدة الرسمية* رقم 25 بتاريخ 5 أبريل 2026](https://www.joradp.dz/FTP/jo-arabe/2026/A2026040.pdf). يُنمذج GeoAlgeria جميع الولايات الـ 69 بعد الإصلاح مع الرموز البريدية والإحداثيات الجغرافية والأسماء ثنائية اللغة. تحتوي هذه النسخة على كامل **1,541 سجل بلدية** و**556 دائرة** (جدول الدوائر ما يزال دون العدد الرسمي 564؛ انظر [سجل التغييرات](CHANGELOG.md)). آخر تحقق: يوليو 2026.
+تضم الجزائر **69 ولاية** و**1,541 بلدية**، رسمياً منذ **أبريل 2026**، وتنقسم كل ولاية إلى دوائر. يعكس ذلك إصلاحين إقليميين: القانون 19-12 (2019، أضاف الولايات 49 إلى 58) والقانون رقم 26-06 المؤرخ في 4 أبريل 2026 (أضاف الولايات 59 إلى 69)، المنشور في [*الجريدة الرسمية* رقم 25 بتاريخ 5 أبريل 2026](https://www.joradp.dz/FTP/jo-arabe/2026/A2026025.pdf). يُنمذج GeoAlgeria جميع الولايات الـ 69 بعد الإصلاح مع الرموز البريدية والإحداثيات الجغرافية والأسماء ثنائية اللغة. تحتوي هذه النسخة على كامل **1,541 سجل بلدية** و**551 دائرة في مجموعة البيانات**. هذا هو العدد الخاص بهذه المجموعة وليس عدداً رسمياً: لم يُنشر أي عدد وطني رسمي للدوائر بعد إصلاح 2026 (المرسوم 26-206 المؤرخ في 25 مايو 2026 يحدد مقار الدوائر فقط)، والعدد 564 الذي كان هذا الملف يصفه بالرسمي كان يشمل 9 دوائر وهمية ناتجة عن 13 سجل بلدية مكرراً، كما يسجل [سجل التغييرات](CHANGELOG.md) في الإصدار 1.1.2. آخر تحقق: سبتمبر 2026.
+
+**142 من الـ 551 محددة بمرسوم.** المرسوم التنفيذي رقم 26-253 المؤرخ في 15 يوليو 2026، المنشور في *الجريدة الرسمية* رقم 52 بتاريخ 21 يوليو 2026، يحدد البلديات التي ينشطها كل رئيس دائرة في الولايات 3 و 5 و 7 و 12 و 13 و 14 و 17 و 26 و 28 و 32 ومن 59 إلى 69، ويسمي فيها 142 دائرة. ويترك الولايات الـ 48 الأخرى تحت المرسوم رقم 91-306 المؤرخ في 24 أوت 1991، وقوائمها التي تحملها هذه المجموعة تبلغ 409. قراءة الملحق في [`research/_dairas/`](../../research/_dairas/).
 
 ---
 
@@ -66,7 +68,7 @@ const dz = require('geoalgeria');
 
 dz.wilayas;                    // جميع الولايات الـ 69
 dz.communes;                   // جميع البلديات الـ 1,541
-dz.dairas;                     // جميع الدوائر الـ 556
+dz.dairas;                     // جميع الدوائر الـ 551
 dz.ecommerce;                  // مجموعة بيانات مسطّحة لنماذج العناوين
 dz.postOffices;                // 3,908 مكاتب بريد الجزائر
 dz.atms;                       // 2,026 صراف آلي
@@ -133,7 +135,7 @@ sqlite3 mydb.sqlite < full.sql
 
 حمّل `data/geojson/communes.geojson` من هذا المستودع – GeoJSON قياسي، يعمل مع Leaflet، Mapbox، QGIS، إلخ.
 
-> **ملاحظة:** حزمة npm تحتوي على ملفات JSON فقط (للحفاظ على خفة الحجم). تصديرات **CSV وGeoJSON وSQL** موجودة في المستودع تحت `data/` ومرفقة كملف zip مع كل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+> **ملاحظة:** منذ مراجعة الصحة في الإصدار v2، تحتوي حزمة npm على **JSON وCSV وGeoJSON وSQL**، فملف `data/geojson/communes.geojson` موجود في الحزمة أيضًا. وملف zip المرفق بكل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases) يحمل شجرة `data/` نفسها لمن لا يستخدم npm.
 
 ---
 
@@ -143,7 +145,11 @@ sqlite3 mydb.sqlite < full.sql
 |-------|--------|---------|-----------|
 | `data/algeria.json` | JSON | 69 ولاية + بلديات | الاستخدام بملف واحد |
 | `data/wilayas.json` | JSON | 69 | قائمة الولايات فقط |
-| `data/dairas.json` | JSON | 556 | قائمة الدوائر مع عدد البلديات |
+| `data/dairas.json` | JSON | 551 | قائمة الدوائر مع عدد البلديات |
+| `data/name-history.json` | JSON | 210 | الكتابات السابقة لأسماء الولايات والبلديات، مع النص الذي عوّض كل واحدة منها |
+| `data/phone-code-provenance.json` | JSON | 11 | سبب حمل الولايات 59–69 لقيمة `phone_code` الحالية: النصوص الرسمية التي بُحث فيها وسبب كل `null` |
+| `data/wilaya-capitals.metadata.json` | JSON | 69 | مقر كل ولاية، مع المرسوم والمادة والبند والصفحة التي تحدّده |
+| `data/osm-links.metadata.json` | JSON | 1 | التغطية والمستويان وقاعدة الربط ولقطتا Overpass وراء `osm_relation_id` / `wikidata` |
 | `data/communes_w*.json` | JSON | 1,541 | بيانات البلديات المفصّلة |
 | `data/csv/wilayas.csv` | CSV | 69 | جداول البيانات، الاستيراد |
 | `data/csv/communes.csv` | CSV | 1,541 | جداول البيانات، الاستيراد |
@@ -158,7 +164,12 @@ sqlite3 mydb.sqlite < full.sql
 | `data/poste/atms.json` | JSON | 2,026 | مواقع الصرافات الآلية |
 | `data/poste/csv/*`، `data/poste/geojson/*` | CSV/GeoJSON | – | بيانات بريدية لجداول البيانات / الخرائط |
 
-> `data/poste/` مصدره [بريد الجزائر](https://baridimap.poste.dz). `commune_code` يرتبط بـ `code_commune` لكل بلدية.
+> `data/poste/` مصدره [بريد الجزائر](https://baridimap.poste.dz). يُوحَّد `commune_code` ليرتبط بـ `code_commune` لكل بلدية، ويحتفظ `source_commune_code` بقيمة المزوّد الأصلية عندما تختلف.
+
+الحقل `code_commune` هو المعرّف الفريد `WWCC` الوارد في [الرمز الجغرافي الوطني لسنة 2021 الصادر عن الديوان الوطني للإحصائيات](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). وتحتفظ البلديات التي رُقّيت إلى الولايات 59–69 ببادئة ولايتها الأم وفق تقسيم 2021.
+
+تحمل كل ولاية الحقل `capital_commune_code`، وهو `code_commune` لبلدية مقرها (chef-lieu)، فتُقرأ أسماء المقر ورمزه البريدي وإحداثياته من سجل البلدية نفسها. ومصدره المراسيم التي تحدّد مقرات الولايات (84-79 لسنة 1984، و21-117 لسنة 2021، و26-206 لسنة 2026)، لا اسم الولاية الذي يخطئ في 4 من 69. المصادر لكل ولاية: [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
+تحمل كل بلدية وكل ولاية أيضا الحقلين `osm_relation_id` و`wikidata`: علاقة OpenStreetMap الإدارية المرتبط بها السجل (`admin_level=8` للبلدية و`admin_level=4` للولاية) وعنصر Wikidata الذي تحمله تلك العلاقة، فيربط المستهلك سجله بـ OpenStreetMap أو Wikidata دون المطابقة بالأسماء. تحمل 1,540 بلدية من 1,541 والولايات الـ 69 كلها علاقة، وتحمل 1,538 بلدية والولايات الـ 69 كلها عنصر Wikidata. لا شيء هنا تخمين: الربط هو ما قرره تدقيق مقرات البلديات على وسم `ref:ONS` / `ref` للعلاقة، و`timestamp_osm_base` من Overpass هو 2026-09-29T12:54:47Z، ويضاف إليه مستوى ثان من ثلاث بلديات تحمل علاقاتها رمز `ref:ONS` الصحيح لكن بوسوم غير قياسية فلم تظهر في استعلام ذلك التدقيق؛ والعلاقة التي لا تحمل وسم `wikidata` يبقى حقلها فارغا (null)، والبلدية الوحيدة التي لا توجد لها علاقة بلدية إطلاقا (4703) يبقى حقلاها فارغين. والعنصر هو وسم العلاقة نفسها في كل الحالات إلا واحدة: علاقة البلدية 3424 موسومة بقرية داخل البلدية، فيبقى ذلك الحقل فارغا ويسجل الاستثناء في ملف البيانات الوصفية بدلا من نشر العنصر الخطأ. المعرفان موجودان في سجلات JSON (`data/algeria.json` و`data/communes_w*.json` و`data/wilayas.json`)، ولا تحملهما مرايا CSV وGeoJSON وSQL. التغطية وقاعدة الربط والسجلات بلا ارتباط: [`data/osm-links.metadata.json`](data/osm-links.metadata.json). القيمتان مستخرجتان من OpenStreetMap، إذن **ODbL 1.0، © مساهمو OpenStreetMap** (انظر `NOTICE`).
 
 ## المخطط
 
@@ -171,7 +182,7 @@ sqlite3 mydb.sqlite < full.sql
 انظر [CONTRIBUTING.md](https://github.com/yasserstudio/geoalgeria/blob/main/CONTRIBUTING.md). نرحّب بـ:
 
 - تصحيحات البيانات (مع مصادر رسمية)
-- قيم `code_commune` الناقصة (10 متبقية)
+- تصحيحات رموز البلديات المدعومة بمصدر رسمي
 - بيانات مناطق التوصيل من حسابات ناقلين حقيقية (Yalidine، ZR Express، Maystro)
 - صيغ تصدير جديدة (XML، YAML، مصفوفات PHP، إلخ.)
 - تصحيحات الترجمة والكتابة بالحروف اللاتينية
@@ -207,15 +218,15 @@ sqlite3 mydb.sqlite < full.sql
 | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | محلات جيزي – نقاط بيع مُرمّزة جغرافياً مع الفئة وأوقات العمل (djezzy.dz) |
 | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | مساجد – تجميع Wikidata + OpenStreetMap، ثنائي اللغة، كل الـ69 ولاية |
 | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | المؤسسات الصحية العمومية – EPH، EPSP، EHS، CHU (وزارة الصحة)، ثنائية اللغة، بإحداثيات عبر OSM + Wikidata |
-| [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | العيادات ومرافق الرعاية الجوارية – 1,894 عيادة متعددة الخدمات وقاعة علاج ومركز صحي ومصحة توليد وعيادة خاصة من OpenStreetMap، مُصنَّفة حسب النوع، ثنائية اللغة، 66 ولاية |
+| [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | العيادات ومرافق الرعاية الجوارية – 1,917 عيادة متعددة الخدمات وقاعة علاج ومركز صحي ومصحة توليد وعيادة خاصة من OpenStreetMap، مُصنَّفة حسب النوع، ثنائية اللغة، 66 ولاية |
 | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | الأطلس الثقافي – مواقع محمية، متاحف، مسارح، مكتبات + مؤسسات ثقافية (وزارة الثقافة)، ثنائي اللغة، كامل الإحداثيات |
 | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | المؤسسات الفلاحية – مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية (وزارة الفلاحة)، ثنائي اللغة، بإحداثيات |
-| [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس – 11,830 مدرسة ابتدائية ومتوسطة وثانوية وتحضيرية مُصنَّفة حسب الطور، ثنائية اللغة، كل الـ69 ولاية (OpenStreetMap) |
-| [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | المحطات البرية – 74 محطة SOGRAL عبر 51 ولاية، بإحداثيات مع المساحات وربط بالبلدية/الولاية |
+| [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس – 11,858 مدرسة ابتدائية ومتوسطة وثانوية وتحضيرية مُصنَّفة حسب الطور، ثنائية اللغة، كل الـ69 ولاية (OpenStreetMap) |
+| [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | المحطات البرية – 74 محطة SOGRAL عبر 52 ولاية، بإحداثيات مع المساحات وربط بالبلدية/الولاية |
 | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري – 692 عقدة قطار/ترام/مترو/تلفريك/قمرة (SNTF/SETRAM/SEMA)، تجميع Wikidata + OpenStreetMap، ثنائي اللغة |
 | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | شبكات الحافلات الحضرية – 50 خط ETUSA (الجزائر) مع المحطات الطرفية وعدد المواقف والبلديات والمحطات المخدومة (مستوى الخط v1) |
 | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | مصنّعو الأدوية – 171 مصنّعًا معتمدًا للأدوية والأجهزة الطبية من وزارة الصناعة الصيدلانية، ثنائيو اللغة، مُحدَّدون جغرافيًا |
-| [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines) – 3٬797 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية |
+| [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines) – 3,797 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية |
 | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | نقاط بيع أوريدو – 572 فضاء أوريدو / متجر مدينة / فضاء خدمات بإحداثيات حقيقية؛ يُكمل ثلاثي الاتصالات |
 | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | مظلة النقل – تثبّت aviation + ferroviaire + gares-routieres + buses في خطوة واحدة |
 | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | مظلة الصيدلة – تثبّت industrie-pharmaceutique + pharmacies دفعة واحدة |
@@ -241,7 +252,7 @@ sqlite3 mydb.sqlite < full.sql
 
 ## الرعاية
 
-GeoAlgeria مجاني وتحت رخصة MIT. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
+GeoAlgeria مجاني، شيفرته وتجميعه بترخيص MIT مع ثلاثة أجزاء بترخيص ODbL وبيانات بريد الجزائر المنسوخة، جميعها مذكورة أدناه. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
 
 ---
 
@@ -254,7 +265,7 @@ GeoAlgeria مجاني وتحت رخصة MIT. إذا وفّر لك الوقت، [
 ## الأسئلة الشائعة
 
 **كم عدد ولايات الجزائر في 2026؟**
-69. الولايات الـ 48 الأصلية، بالإضافة إلى 10 أُضيفت في 2019 (القانون 19-12)، و11 أصبحت رسمية في أبريل 2026 ([القانون رقم 26-06، *الجريدة الرسمية* رقم 25 بتاريخ 5 أبريل 2026](https://www.joradp.dz/FTP/jo-arabe/2026/A2026040.pdf)). تنتهي الفترة الانتقالية في 31 ديسمبر 2026؛ الاستقلالية الكاملة اعتباراً من 1 يناير 2027.
+69. الولايات الـ 48 الأصلية، بالإضافة إلى 10 أُضيفت في 2019 (القانون 19-12)، و11 أصبحت رسمية في أبريل 2026 ([القانون رقم 26-06، *الجريدة الرسمية* رقم 25 بتاريخ 5 أبريل 2026](https://www.joradp.dz/FTP/jo-arabe/2026/A2026025.pdf)). تنتهي الفترة الانتقالية في 31 ديسمبر 2026؛ الاستقلالية الكاملة اعتباراً من 1 يناير 2027.
 
 **أين أجد قائمة بجميع بلديات الجزائر بصيغة JSON؟**
 هنا – `data/ecommerce/communes.json` يحتوي على جميع البلديات الـ 1,541 بصيغة مسطّحة جاهزة للاستخدام.
@@ -273,9 +284,33 @@ GeoAlgeria هي الخيار الأكثر اكتمالاً في 2026 – هي ح
 
 ---
 
-## الرخصة
+## الرخصة والإسناد
 
-MIT – مجاني للاستخدام الشخصي والتجاري.
+**شيفرة** الحزمة بترخيص [MIT](LICENSE)، وكذلك **التجميع**: الولايات والدوائر والبلديات
+وأسماؤها ثنائية اللغة والرموز البريدية والرموز الإدارية. مجاني للاستخدام الشخصي والتجاري.
+
+ثلاثة أجزاء من البيانات مصدرها **OpenStreetMap**، وهي **© مساهمو OpenStreetMap** وبترخيص
+**[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** بدلًا من ذلك:
+
+- الـ69 مضلّع حدود ولاية في `data/geojson/wilaya-boundaries.geojson`؛
+- 323 من أصل 1,541 إحداثية مركز بلدية، كل واحدة مأخوذة من علاقة `admin_level=8` الخاصة بالبلدية
+  نفسها (318 من عقدة `admin_centre`: 56 بتاريخ 2026-09-27 و189 بتاريخ 2026-09-29 و5 بتاريخ
+  2026-10-01 و68 بتاريخ 2026-10-01 عبر مراجعة الإحداثيات، التي لا تكتب قيمة إلا حين تصوّت لها
+  مصادر مستقلة، و5 من مركز العلاقة في الإصدار 2.1.0)، في كل مكان تظهر فيه هذه القيم؛
+- 6 من أصل 69 نقطة مقر ولاية، وهي نفس القيم: إحداثيات الولاية هي مركز بلدية مقرها، لذلك
+  تحمل الولايات 7 و 16 و 25 و 32 و 52 و 61 إحدى الإحداثيات أعلاه، أما نقاط مقرات
+  الولايات الـ 63 الأخرى فليس مصدرها OpenStreetMap.
+
+عند استخدامك أو إعادة نشرك لأيٍّ من هذه الأجزاء يجب **إسناد الفضل لمساهمي OpenStreetMap**
+وإبقاء القواعد المُشتقّة تحت ترخيصٍ متوافق.
+
+البيانات البريدية المنسوخة في `data/poste/` تخضع لشروط **بريد الجزائر** نفسها، لا لترخيص MIT:
+**Data © Algérie Poste; redistributed for reference**، وهي الشروط ذاتها التي تعلنها حزمة
+[`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste). تحقّق من بريد الجزائر
+للحصول على معلومات رسمية وآنية.
+
+لأن البيانات تخضع لثلاث مجموعات من الشروط، يعلن الـmanifest القيمة
+`SEE LICENSE IN LICENSE` بدلًا من تعبير SPDX. الإسناد لكل جزء والصفوف المعنية في [NOTICE](NOTICE).
 
 صُنع بعناية من طرف [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 

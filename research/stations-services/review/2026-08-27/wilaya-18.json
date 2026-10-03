@@ -1,0 +1,1372 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-18",
+    "wilaya_code": 18,
+    "name": "Jijel",
+    "name_ar": "جيجل",
+    "center": [
+      5.965,
+      36.7295
+    ],
+    "bounds": [
+      5.42,
+      36.519,
+      6.51,
+      36.94
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 32,
+    "osm_records": 25,
+    "tariki_records": 28,
+    "cross_source": 15,
+    "multiple_tariki": 3,
+    "osm_only": 7,
+    "tariki_only": 7,
+    "nearby_osm_pairs": 0,
+    "conflicts": 10
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-way-1310589072",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1424102439",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-404741402",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-594",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7931",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8129",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8351",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-862",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9191",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9197",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-13097283667",
+      "coordinates": [
+        5.9485504,
+        36.7743612
+      ],
+      "osm": {
+        "id": "node/13097283667",
+        "name": "محطة بن زايد",
+        "name_ar": "محطة بن زايد",
+        "name_fr": "Station Benzaid",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9485504,
+          36.7743612
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Benzaid",
+      "display_name_ar": "محطة بن زايد"
+    },
+    {
+      "id": "osm-node-1895364994",
+      "coordinates": [
+        5.766652,
+        36.8239776
+      ],
+      "osm": {
+        "id": "node/1895364994",
+        "name": "محطة نفطال مالك عبلة",
+        "name_ar": "محطة نفطال مالك عبلة",
+        "name_fr": "Station Naftal Malek Abla",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.766652,
+          36.8239776
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8298",
+          "route_id": "13224",
+          "name_fr": "Station naftal malek abla",
+          "name_ar": "محطة نفطال مالك عبلة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.767,
+            36.824
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Naftal Malek Abla",
+      "display_name_ar": "محطة نفطال مالك عبلة"
+    },
+    {
+      "id": "osm-node-5044186222",
+      "coordinates": [
+        6.276564,
+        36.7547966
+      ],
+      "osm": {
+        "id": "node/5044186222",
+        "name": "محطة الوقود نفطال",
+        "name_ar": "محطة الوقود نفطال",
+        "name_fr": "Station-service Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.276564,
+          36.7547966
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11738",
+          "route_id": "1226",
+          "name_fr": "STATION DE SERVICES NAFTAL",
+          "name_ar": "محطة الوقود نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.277,
+            36.755
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 45
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Naftal",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-way-1211273664",
+      "coordinates": [
+        5.89677195,
+        36.72771175
+      ],
+      "osm": {
+        "id": "way/1211273664",
+        "name": "محطة وقود أكروشن",
+        "name_ar": "محطة وقود أكروشن",
+        "name_fr": "Station-service Akrouchen",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.89677195,
+          36.72771175
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14699",
+          "route_id": "17554",
+          "name_fr": "محطة وقود موساوي رياض",
+          "name_ar": "محطة وقود أكروشن وجانة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.897,
+            36.728
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Akrouchen",
+      "display_name_ar": "محطة وقود أكروشن"
+    },
+    {
+      "id": "osm-way-1226150857",
+      "coordinates": [
+        5.9437295,
+        36.80167805
+      ],
+      "osm": {
+        "id": "way/1226150857",
+        "name": "محطة خدمات بن فاضل",
+        "name_ar": "محطة خدمات بن فاضل",
+        "name_fr": "Station-service Benfadel",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9437295,
+          36.80167805
+        ]
+      },
+      "tariki": [
+        {
+          "id": "865",
+          "route_id": "2399",
+          "name_fr": "Station de services Ben Fadel",
+          "name_ar": "محطة خدمات بن فاضل",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.9442,
+            36.8017
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 42
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Benfadel",
+      "display_name_ar": "محطة خدمات بن فاضل"
+    },
+    {
+      "id": "osm-way-1310589072",
+      "coordinates": [
+        5.5975658,
+        36.7752306
+      ],
+      "osm": {
+        "id": "way/1310589072",
+        "name": "محطة الوقود نفطال",
+        "name_ar": "محطة الوقود نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5975658,
+          36.7752306
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6242",
+          "route_id": "11032",
+          "name_fr": "NAFTAL",
+          "name_ar": "نافطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.5975,
+            36.7748
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 48
+        },
+        {
+          "id": "8381",
+          "route_id": "1136",
+          "name_fr": "station naftal cavalou",
+          "name_ar": "محطة نفطال كافالو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.598,
+            36.775
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 46
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-way-1343895922",
+      "coordinates": [
+        6.273024749999999,
+        36.62990015
+      ],
+      "osm": {
+        "id": "way/1343895922",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.273024749999999,
+          36.62990015
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1346340851",
+      "coordinates": [
+        5.914302,
+        36.7953368
+      ],
+      "osm": {
+        "id": "way/1346340851",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.914302,
+          36.7953368
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1420684819",
+      "coordinates": [
+        5.77070255,
+        36.81802325
+      ],
+      "osm": {
+        "id": "way/1420684819",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.77070255,
+          36.81802325
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9369",
+          "route_id": "13224",
+          "name_fr": "Station de services beyoud",
+          "name_ar": "محطة نفطال بيوض",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.771,
+            36.818
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال بيوض"
+    },
+    {
+      "id": "osm-way-1422508718",
+      "coordinates": [
+        5.797079999999999,
+        36.802703550000004
+      ],
+      "osm": {
+        "id": "way/1422508718",
+        "name": "Chabi auto;محطة خدمات شابي",
+        "name_ar": "محطة خدمات شابي",
+        "name_fr": "Chabi auto",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.797079999999999,
+          36.802703550000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8265",
+          "route_id": "13224",
+          "name_fr": "STATION DE SERVICES  chabi mustphafa",
+          "name_ar": "محطة متعددة الخدمات شابي مصطفى",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.797,
+            36.803
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Chabi auto",
+      "display_name_ar": "محطة خدمات شابي"
+    },
+    {
+      "id": "osm-way-1422510154",
+      "coordinates": [
+        5.770838449999999,
+        36.81018315
+      ],
+      "osm": {
+        "id": "way/1422510154",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.770838449999999,
+          36.81018315
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8289",
+          "route_id": "13224",
+          "name_fr": "Station naftal GD2",
+          "name_ar": "محطة نفطال  GD2",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.771,
+            36.81
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 25
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال  GD2"
+    },
+    {
+      "id": "osm-way-1422511295",
+      "coordinates": [
+        5.763574500000001,
+        36.8212136
+      ],
+      "osm": {
+        "id": "way/1422511295",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.763574500000001,
+          36.8212136
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8295",
+          "route_id": "13224",
+          "name_fr": "Station naftal ararda daoud",
+          "name_ar": "محطة نفطال عرارضة داود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.764,
+            36.821
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 45
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال عرارضة داود"
+    },
+    {
+      "id": "osm-way-1424081884",
+      "coordinates": [
+        5.95226805,
+        36.82107015
+      ],
+      "osm": {
+        "id": "way/1424081884",
+        "name": "محطة خدمات حمادوا لخضر",
+        "name_ar": "محطة خدمات حمادوا لخضر",
+        "name_fr": "Station-service Hammadou Lakhdar",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.95226805,
+          36.82107015
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1006",
+          "route_id": "2034",
+          "name_fr": "Station de services Hamadou Lakheder",
+          "name_ar": "محطة خدمات حمادوا لخضر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.9523,
+            36.8211
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Hammadou Lakhdar",
+      "display_name_ar": "محطة خدمات حمادوا لخضر"
+    },
+    {
+      "id": "osm-way-1424084857",
+      "coordinates": [
+        6.1194023,
+        36.832815749999995
+      ],
+      "osm": {
+        "id": "way/1424084857",
+        "name": "محطة الوقود مريمش",
+        "name_ar": "محطة الوقود مريمش",
+        "name_fr": "Station-service Merimech",
+        "brand": "نفطال",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1194023,
+          36.832815749999995
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-service Merimech",
+      "display_name_ar": "محطة الوقود مريمش"
+    },
+    {
+      "id": "osm-way-1424086017",
+      "coordinates": [
+        6.23737085,
+        36.76245985
+      ],
+      "osm": {
+        "id": "way/1424086017",
+        "name": "محطة خدمات شبيرة",
+        "name_ar": "محطة خدمات شبيرة",
+        "name_fr": "Station-service Chebira",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.23737085,
+          36.76245985
+        ]
+      },
+      "tariki": [
+        {
+          "id": "388",
+          "route_id": "1226",
+          "name_fr": "Station de services Chebira",
+          "name_ar": "محطة خدمات شبيرة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.237,
+            36.763
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 69
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Chebira",
+      "display_name_ar": "محطة خدمات شبيرة"
+    },
+    {
+      "id": "osm-way-1424086982",
+      "coordinates": [
+        6.2645222,
+        36.7581692
+      ],
+      "osm": {
+        "id": "way/1424086982",
+        "name": "محطة الوقود نفطال",
+        "name_ar": "محطة الوقود نفطال",
+        "name_fr": "Station-service Naftal",
+        "brand": "نفطال",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2645222,
+          36.7581692
+        ]
+      },
+      "tariki": [
+        {
+          "id": "427",
+          "route_id": "1226",
+          "name_fr": "station de services Naftal",
+          "name_ar": "محطة الوقود نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.265,
+            36.758
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 47
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Naftal",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-way-1424088139",
+      "coordinates": [
+        6.2638184500000005,
+        36.75341005
+      ],
+      "osm": {
+        "id": "way/1424088139",
+        "name": "Petrom",
+        "name_ar": null,
+        "name_fr": "Petrom",
+        "brand": "Petrom",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2638184500000005,
+          36.75341005
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Petrom",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1424097476",
+      "coordinates": [
+        5.45853085,
+        36.6624673
+      ],
+      "osm": {
+        "id": "way/1424097476",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.45853085,
+          36.6624673
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1424099246",
+      "coordinates": [
+        5.483612150000001,
+        36.672715800000006
+      ],
+      "osm": {
+        "id": "way/1424099246",
+        "name": "محطة منصورية",
+        "name_ar": "محطة منصورية",
+        "name_fr": "Station Mansouria",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.483612150000001,
+          36.672715800000006
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8126",
+          "route_id": "1492",
+          "name_fr": "station mansouria",
+          "name_ar": "محطة منصورية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.484,
+            36.673
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 47
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Mansouria",
+      "display_name_ar": "محطة منصورية"
+    },
+    {
+      "id": "osm-way-1424102193",
+      "coordinates": [
+        5.80766555,
+        36.75924175
+      ],
+      "osm": {
+        "id": "way/1424102193",
+        "name": "Station Naftal Bouchemet;محطة نفطال بوشمط",
+        "name_ar": "محطة نفطال بوشمط",
+        "name_fr": "Station Naftal Bouchemet",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.80766555,
+          36.75924175
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8369",
+          "route_id": "3571",
+          "name_fr": "Station naftal bouchmet",
+          "name_ar": "محطة نفطال بوشمط",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.8075,
+            36.759
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Naftal Bouchemet",
+      "display_name_ar": "محطة نفطال بوشمط"
+    },
+    {
+      "id": "osm-way-1424102439",
+      "coordinates": [
+        5.789885249999999,
+        36.662897650000005
+      ],
+      "osm": {
+        "id": "way/1424102439",
+        "name": "محطة الوقود بوعموشة",
+        "name_ar": "محطة الوقود بوعموشة",
+        "name_fr": "Station-service Bouamouchasha",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.789885249999999,
+          36.662897650000005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8467",
+          "route_id": "13406",
+          "name_fr": "Station de services boamoucha",
+          "name_ar": "محطة الوقود بوعموشة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.79,
+            36.663
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 15
+        },
+        {
+          "id": "13532",
+          "route_id": "18981",
+          "name_fr": "STATION SERVICE BOUAMOUCHA",
+          "name_ar": "محطة الوقود بوعموشة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.79,
+            36.663
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 15
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station-service Bouamouchasha",
+      "display_name_ar": "محطة الوقود بوعموشة"
+    },
+    {
+      "id": "osm-way-1426838649",
+      "coordinates": [
+        5.88258375,
+        36.7664162
+      ],
+      "osm": {
+        "id": "way/1426838649",
+        "name": "محطة قصاب",
+        "name_ar": "محطة قصاب",
+        "name_fr": "Station Kassab",
+        "brand": "نفطال",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.88258375,
+          36.7664162
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Kassab",
+      "display_name_ar": "محطة قصاب"
+    },
+    {
+      "id": "osm-way-249387415",
+      "coordinates": [
+        5.7493856999999995,
+        36.81827375
+      ],
+      "osm": {
+        "id": "way/249387415",
+        "name": "محطة خدمة نفطال",
+        "name_ar": "محطة خدمة نفطال",
+        "name_fr": "Station-service Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.7493856999999995,
+          36.81827375
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6243",
+          "route_id": "11034",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.7493,
+            36.8182
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Naftal",
+      "display_name_ar": "محطة خدمة نفطال"
+    },
+    {
+      "id": "osm-way-404741402",
+      "coordinates": [
+        6.26850305,
+        36.7406756
+      ],
+      "osm": {
+        "id": "way/404741402",
+        "name": "محطة خدمات الأحمدي",
+        "name_ar": "محطة خدمات الأحمدي",
+        "name_fr": "Station-service El Ahmadi",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.26850305,
+          36.7406756
+        ]
+      },
+      "tariki": [
+        {
+          "id": "433",
+          "route_id": "1231",
+          "name_fr": "Station de services Oucif",
+          "name_ar": "محطة متعددة الخدمات اوصيف",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.268,
+            36.741
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 58
+        },
+        {
+          "id": "13533",
+          "route_id": "19006",
+          "name_fr": "STATION AL AHMADI",
+          "name_ar": "محطة الوقود ALAHMADI",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.269,
+            36.741
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 57
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station-service El Ahmadi",
+      "display_name_ar": "محطة خدمات الأحمدي"
+    },
+    {
+      "id": "osm-way-473021494",
+      "coordinates": [
+        5.8928724,
+        36.7780088
+      ],
+      "osm": {
+        "id": "way/473021494",
+        "name": "محطة قصاب عادل",
+        "name_ar": "محطة قصاب عادل",
+        "name_fr": "Station Kassab Adel",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.8928724,
+          36.7780088
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8250",
+          "route_id": "12905",
+          "name_fr": "station kassab adel",
+          "name_ar": "محطة قصاب عادل",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.893,
+            36.778
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Kassab Adel",
+      "display_name_ar": "محطة قصاب عادل"
+    },
+    {
+      "id": "tariki-594",
+      "coordinates": [
+        6.138,
+        36.722
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "594",
+          "route_id": "1945",
+          "name_fr": "Station de services Kherkhache Elhechimi",
+          "name_ar": "محطة خدمات خرخاش الهاشمي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.138,
+            36.722
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Kherkhache Elhechimi",
+      "display_name_ar": "محطة خدمات خرخاش الهاشمي"
+    },
+    {
+      "id": "tariki-7931",
+      "coordinates": [
+        5.8994,
+        36.7717
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7931",
+          "route_id": "12894",
+          "name_fr": "Station de services Naftal Ouled saleh",
+          "name_ar": "محطة نفطال أولاد صالح",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.8994,
+            36.7717
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal Ouled saleh",
+      "display_name_ar": "محطة نفطال أولاد صالح"
+    },
+    {
+      "id": "tariki-8129",
+      "coordinates": [
+        6.1183,
+        36.8337
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8129",
+          "route_id": "2303",
+          "name_fr": "station d'essense mrimeche",
+          "name_ar": "محطة الوقود مريمش",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.1183,
+            36.8337
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station d'essense mrimeche",
+      "display_name_ar": "محطة الوقود مريمش"
+    },
+    {
+      "id": "tariki-8351",
+      "coordinates": [
+        5.846,
+        36.549
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8351",
+          "route_id": "13340",
+          "name_fr": "STATION DE SERVICES freres ben ali",
+          "name_ar": "محطة الخدمات الاخوة بن علي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.846,
+            36.549
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES freres ben ali",
+      "display_name_ar": "محطة الخدمات الاخوة بن علي"
+    },
+    {
+      "id": "tariki-862",
+      "coordinates": [
+        5.954,
+        36.7714
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "862",
+          "route_id": "2396",
+          "name_fr": "Station de services Ben Ziad",
+          "name_ar": "محطة خدمات بن زياد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.954,
+            36.7714
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Ben Ziad",
+      "display_name_ar": "محطة خدمات بن زياد"
+    },
+    {
+      "id": "tariki-9191",
+      "coordinates": [
+        6.1305,
+        36.8154
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9191",
+          "route_id": "14066",
+          "name_fr": "Station de services el ghachi",
+          "name_ar": "محطة الوقود الغاشي",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.1305,
+            36.8154
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services el ghachi",
+      "display_name_ar": "محطة الوقود الغاشي"
+    },
+    {
+      "id": "tariki-9197",
+      "coordinates": [
+        6.1564,
+        36.8
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9197",
+          "route_id": "14067",
+          "name_fr": "Station de services el issaoui",
+          "name_ar": "محطة الوقود العيساوي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.1564,
+            36.8
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 18,
+          "wilaya_fr": "Jijel",
+          "wilaya_ar": "جيجل",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services el issaoui",
+      "display_name_ar": "محطة الوقود العيساوي"
+    }
+  ]
+}

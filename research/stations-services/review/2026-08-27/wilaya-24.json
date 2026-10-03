@@ -1,0 +1,1941 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-24",
+    "wilaya_code": 24,
+    "name": "Guelma",
+    "name_ar": "قالمة",
+    "center": [
+      7.449,
+      36.349000000000004
+    ],
+    "bounds": [
+      6.939,
+      36.024,
+      7.959,
+      36.674
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 47,
+    "osm_records": 30,
+    "tariki_records": 38,
+    "cross_source": 17,
+    "multiple_tariki": 2,
+    "osm_only": 11,
+    "tariki_only": 17,
+    "nearby_osm_pairs": 2,
+    "conflicts": 23
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-4358071490",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6786163150",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6786163151",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-322980999",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-715583281",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-800161609",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10173",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12830",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1690",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-227",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3918",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4626",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4673",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5521",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-614",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6280",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6424",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6482",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6598",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6625",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6884",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6888",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7442",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10736542935",
+      "coordinates": [
+        7.0939279,
+        36.270249
+      ],
+      "osm": {
+        "id": "node/10736542935",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.0939279,
+          36.270249
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-10748734430",
+      "coordinates": [
+        7.5034502,
+        36.4631271
+      ],
+      "osm": {
+        "id": "node/10748734430",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.5034502,
+          36.4631271
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6874",
+          "route_id": "11737",
+          "name_fr": "Station de services Nour el-Yosr",
+          "name_ar": "محطة وقود نور اليسر",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.5035,
+            36.4633
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 20
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Nour el-Yosr",
+      "display_name_ar": "محطة وقود نور اليسر"
+    },
+    {
+      "id": "osm-node-13283081940",
+      "coordinates": [
+        7.4532688,
+        36.4661233
+      ],
+      "osm": {
+        "id": "node/13283081940",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4532688,
+          36.4661233
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6618",
+          "route_id": "11405",
+          "name_fr": "Station de services Naftal route Belkhir",
+          "name_ar": "محطة خدمات نافطال طريق بلخير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.453,
+            36.467
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 100
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Naftal route Belkhir",
+      "display_name_ar": "محطة خدمات نافطال طريق بلخير"
+    },
+    {
+      "id": "osm-node-1539008649",
+      "coordinates": [
+        7.7219635,
+        36.4954704
+      ],
+      "osm": {
+        "id": "node/1539008649",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          7.7219635,
+          36.4954704
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1827284967",
+      "coordinates": [
+        7.2811668,
+        36.4184317
+      ],
+      "osm": {
+        "id": "node/1827284967",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.2811668,
+          36.4184317
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3818282148",
+      "coordinates": [
+        7.4745954,
+        36.5502404
+      ],
+      "osm": {
+        "id": "node/3818282148",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4745954,
+          36.5502404
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6128",
+          "route_id": "10980",
+          "name_fr": "station de services  MRABET",
+          "name_ar": "محطة متعددة الخدمات مرابط",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.475,
+            36.55
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 45
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة متعددة الخدمات مرابط"
+    },
+    {
+      "id": "osm-node-3944915722",
+      "coordinates": [
+        7.4185358,
+        36.4581922
+      ],
+      "osm": {
+        "id": "node/3944915722",
+        "name": "belaabidi station",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4185358,
+          36.4581922
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10014",
+          "route_id": "11441",
+          "name_fr": "BELABIDI AHCENE",
+          "name_ar": "بلعبيدي أحسن",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.419,
+            36.458
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 47
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "belaabidi station",
+      "display_name_ar": "بلعبيدي أحسن"
+    },
+    {
+      "id": "osm-node-4236823289",
+      "coordinates": [
+        7.4419918,
+        36.4500112
+      ],
+      "osm": {
+        "id": "node/4236823289",
+        "name": "Pompe à essebnce",
+        "name_ar": "محطة وقود",
+        "name_fr": "Pompe à essence",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4419918,
+          36.4500112
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10015",
+          "route_id": "14857",
+          "name_fr": "STATION NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.442,
+            36.451
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 110
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Pompe à essence",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "osm-node-4236823389",
+      "coordinates": [
+        7.4503093,
+        36.4531776
+      ],
+      "osm": {
+        "id": "node/4236823389",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4503093,
+          36.4531776
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6574",
+          "route_id": "11413",
+          "name_fr": "Station de services Belabidi ahcen",
+          "name_ar": "محطة خدمات بلعبيدي احسن طريق سدراتة",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.45,
+            36.453
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات بلعبيدي احسن طريق سدراتة"
+    },
+    {
+      "id": "osm-node-4341056790",
+      "coordinates": [
+        7.4176495,
+        36.4593436
+      ],
+      "osm": {
+        "id": "node/4341056790",
+        "name": "skalop Tolier",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4176495,
+          36.4593436
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "skalop Tolier",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4358071490",
+      "coordinates": [
+        7.5760217,
+        36.4605305
+      ],
+      "osm": {
+        "id": "node/4358071490",
+        "name": "محطة خدمات بزملال",
+        "name_ar": "محطة خدمات بزملال",
+        "name_fr": "Station BAZNAFT",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.5760217,
+          36.4605305
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4590",
+          "route_id": "4079",
+          "name_fr": "Station de services Kamilia",
+          "name_ar": "محطة الخدمات كامليا",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            7.575,
+            36.461
+          ],
+          "coordinate_fix": "lat_lng_swapped",
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 105
+        },
+        {
+          "id": "6944",
+          "route_id": "11799",
+          "name_fr": "Station de services Camilia Beni Mezlin",
+          "name_ar": "محطة كاميليا ببني مزلين",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            7.577,
+            36.461
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 102
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station BAZNAFT",
+      "display_name_ar": "محطة خدمات بزملال"
+    },
+    {
+      "id": "osm-node-4362272390",
+      "coordinates": [
+        7.4329988,
+        36.4748254
+      ],
+      "osm": {
+        "id": "node/4362272390",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4329988,
+          36.4748254
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6612",
+          "route_id": "11428",
+          "name_fr": "station de services Naftal route Annaba",
+          "name_ar": "محطة خدمات نافطال طريق عنابة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.433,
+            36.474
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 92
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات نافطال طريق عنابة"
+    },
+    {
+      "id": "osm-node-4408501092",
+      "coordinates": [
+        7.7248317,
+        36.4831146
+      ],
+      "osm": {
+        "id": "node/4408501092",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.7248317,
+          36.4831146
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6601",
+          "route_id": "3538",
+          "name_fr": "Station de services",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.7245,
+            36.4835
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-4465368589",
+      "coordinates": [
+        7.7890227,
+        36.4413381
+      ],
+      "osm": {
+        "id": "node/4465368589",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.7890227,
+          36.4413381
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6987",
+          "route_id": "11852",
+          "name_fr": "Station de services Majaz Safaa",
+          "name_ar": "محطة الخدمات بمجاز الصفاء",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.789,
+            36.442
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 74
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات بمجاز الصفاء"
+    },
+    {
+      "id": "osm-node-4564848390",
+      "coordinates": [
+        7.1662434,
+        36.3070866
+      ],
+      "osm": {
+        "id": "node/4564848390",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1662434,
+          36.3070866
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5402",
+          "route_id": "9247",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال بوادي الزناتي",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            7.166,
+            36.307
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة نفطال بوادي الزناتي"
+    },
+    {
+      "id": "osm-node-4564877591",
+      "coordinates": [
+        7.1627462,
+        36.307486
+      ],
+      "osm": {
+        "id": "node/4564877591",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1627462,
+          36.307486
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5515",
+          "route_id": "10330",
+          "name_fr": "Station de services CHETAIBI Oued znati",
+          "name_ar": "محطة شطايبي بوادي الزناتي",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.163,
+            36.308
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 62
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services CHETAIBI Oued znati",
+      "display_name_ar": "محطة شطايبي بوادي الزناتي"
+    },
+    {
+      "id": "osm-node-4564893389",
+      "coordinates": [
+        7.1700767,
+        36.317825
+      ],
+      "osm": {
+        "id": "node/4564893389",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1700767,
+          36.317825
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5591048546",
+      "coordinates": [
+        7.2589508,
+        36.2481157
+      ],
+      "osm": {
+        "id": "node/5591048546",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.2589508,
+          36.2481157
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6975",
+          "route_id": "1605",
+          "name_fr": "Station de services Talhi Mohammed",
+          "name_ar": "محطة طلحي محمد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.259,
+            36.248
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Talhi Mohammed",
+      "display_name_ar": "محطة طلحي محمد"
+    },
+    {
+      "id": "osm-node-5960776986",
+      "coordinates": [
+        7.3360562,
+        36.6094347
+      ],
+      "osm": {
+        "id": "node/5960776986",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "station service NAFTAL",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.3360562,
+          36.6094347
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3218",
+          "route_id": "6892",
+          "name_fr": "Station de services hadad el atra",
+          "name_ar": "محطة الخدمات حداد العطرة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.336,
+            36.609
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station service NAFTAL",
+      "display_name_ar": "محطة الخدمات حداد العطرة"
+    },
+    {
+      "id": "osm-node-6786163150",
+      "coordinates": [
+        7.1441702,
+        36.1511316
+      ],
+      "osm": {
+        "id": "node/6786163150",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1441702,
+          36.1511316
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-322980999",
+          "offset_m": 17
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6786163151",
+      "coordinates": [
+        7.1375343,
+        36.171602
+      ],
+      "osm": {
+        "id": "node/6786163151",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1375343,
+          36.171602
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-800161609",
+          "offset_m": 10
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7821308188",
+      "coordinates": [
+        7.716737,
+        36.651918
+      ],
+      "osm": {
+        "id": "node/7821308188",
+        "name": "محطة الوقود هيبون",
+        "name_ar": "محطة الوقود هيبون",
+        "name_fr": "Station-service Hiboun",
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          7.716737,
+          36.651918
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-service Hiboun",
+      "display_name_ar": "محطة الوقود هيبون"
+    },
+    {
+      "id": "osm-node-8382935323",
+      "coordinates": [
+        7.4130601,
+        36.4895457
+      ],
+      "osm": {
+        "id": "node/8382935323",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4130601,
+          36.4895457
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-304072408",
+      "coordinates": [
+        7.2447555999999995,
+        36.2381755
+      ],
+      "osm": {
+        "id": "way/304072408",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.2447555999999995,
+          36.2381755
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6960",
+          "route_id": "1605",
+          "name_fr": "Station de services Rebai Kamel",
+          "name_ar": "محطة رباعي كمال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.245,
+            36.238
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Rebai Kamel",
+      "display_name_ar": "محطة رباعي كمال"
+    },
+    {
+      "id": "osm-way-307294427",
+      "coordinates": [
+        7.5110561,
+        36.60614995
+      ],
+      "osm": {
+        "id": "way/307294427",
+        "name": "SARL ABDELLIOUI FILLING STATION",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "CARBUSUD",
+        "operator": "RELAIS 21",
+        "opening_hours": "24/7",
+        "coordinates": [
+          7.5110561,
+          36.60614995
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "SARL ABDELLIOUI FILLING STATION",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-322980999",
+      "coordinates": [
+        7.14399105,
+        36.1511926
+      ],
+      "osm": {
+        "id": "way/322980999",
+        "name": "اورحمان يوسف",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.14399105,
+          36.1511926
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6786163150",
+          "offset_m": 17
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "اورحمان يوسف",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-356803840",
+      "coordinates": [
+        7.4346616,
+        36.468041549999995
+      ],
+      "osm": {
+        "id": "way/356803840",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4346616,
+          36.468041549999995
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6626",
+          "route_id": "11433",
+          "name_fr": "Station de services Mermoura Centre ville Geulma",
+          "name_ar": "محطة خدمات مرمورة وسط مدينة قالمة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.435,
+            36.468
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات مرمورة وسط مدينة قالمة"
+    },
+    {
+      "id": "osm-way-715583281",
+      "coordinates": [
+        7.5107696,
+        36.31286715
+      ],
+      "osm": {
+        "id": "way/715583281",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.5107696,
+          36.31286715
+        ]
+      },
+      "tariki": [
+        {
+          "id": "608",
+          "route_id": "1645",
+          "name_fr": "station de services Bouhchana",
+          "name_ar": "محطة الوقود بوحشانة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.51,
+            36.313
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 71
+        },
+        {
+          "id": "12419",
+          "route_id": "16924",
+          "name_fr": "station d essence bohachana",
+          "name_ar": "محطة الوقود بوحشانة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.511,
+            36.313
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 25
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "station de services Bouhchana",
+      "display_name_ar": "محطة الوقود بوحشانة"
+    },
+    {
+      "id": "osm-way-800161609",
+      "coordinates": [
+        7.1376431,
+        36.1715799
+      ],
+      "osm": {
+        "id": "way/800161609",
+        "name": "تواتي محمد",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1376431,
+          36.1715799
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14297",
+          "route_id": "930",
+          "name_fr": "Station de services elbaraka",
+          "name_ar": "محطة خدمات البركة مدخل بتاملوكة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.138,
+            36.171
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 72
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6786163151",
+          "offset_m": 10
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "تواتي محمد",
+      "display_name_ar": "محطة خدمات البركة مدخل بتاملوكة"
+    },
+    {
+      "id": "osm-way-804720101",
+      "coordinates": [
+        7.23590415,
+        36.540652800000004
+      ],
+      "osm": {
+        "id": "way/804720101",
+        "name": "محطة خدمة حمودة صادق",
+        "name_ar": "محطة خدمة حمودة صادق",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          7.23590415,
+          36.540652800000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4777",
+          "route_id": "2071",
+          "name_fr": "Station de services  HAMOUDA EL SADDEK",
+          "name_ar": "محطة الخدمات حمودة الصادق",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.236,
+            36.541
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": 40
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة خدمة حمودة صادق",
+      "display_name_ar": "محطة خدمة حمودة صادق"
+    },
+    {
+      "id": "tariki-10173",
+      "coordinates": [
+        7.511,
+        36.605
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10173",
+          "route_id": "11752",
+          "name_fr": "Station de services Abdellioui",
+          "name_ar": "محطة  الخدمات عبد الليوي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.511,
+            36.605
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Abdellioui",
+      "display_name_ar": "محطة  الخدمات عبد الليوي"
+    },
+    {
+      "id": "tariki-12830",
+      "coordinates": [
+        7.7117,
+        36.6508
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12830",
+          "route_id": "17612",
+          "name_fr": "el oueras",
+          "name_ar": "محطة الأوراس",
+          "services": [
+            "fuel",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.7117,
+            36.6508
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "el oueras",
+      "display_name_ar": "محطة الأوراس"
+    },
+    {
+      "id": "tariki-1690",
+      "coordinates": [
+        7.28,
+        36.454
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1690",
+          "route_id": "3263",
+          "name_fr": "Station de services Naftal Hammam Debagh",
+          "name_ar": "محطة خدمات نفطال بحمام دباغ",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.28,
+            36.454
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal Hammam Debagh",
+      "display_name_ar": "محطة خدمات نفطال بحمام دباغ"
+    },
+    {
+      "id": "tariki-227",
+      "coordinates": [
+        7.14,
+        36.159
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "227",
+          "route_id": "930",
+          "name_fr": "CAFETERIA DES FELLAHS",
+          "name_ar": "مقهى الفلاحين",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.14,
+            36.159
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "CAFETERIA DES FELLAHS",
+      "display_name_ar": "مقهى الفلاحين"
+    },
+    {
+      "id": "tariki-3918",
+      "coordinates": [
+        7.096,
+        36.271
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3918",
+          "route_id": "4631",
+          "name_fr": "Station de services OMAR belouaar",
+          "name_ar": "محطة بلواعر",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.096,
+            36.271
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services OMAR belouaar",
+      "display_name_ar": "محطة بلواعر"
+    },
+    {
+      "id": "tariki-4626",
+      "coordinates": [
+        7.712,
+        36.558
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4626",
+          "route_id": "2832",
+          "name_fr": "Station de services Madi Abd Hamid",
+          "name_ar": "محطة ماضي عبد الحميد لتوزيع البنزين (وادي فراغة )",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.712,
+            36.558
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Madi Abd Hamid",
+      "display_name_ar": "محطة ماضي عبد الحميد لتوزيع البنزين (وادي فراغة )"
+    },
+    {
+      "id": "tariki-4673",
+      "coordinates": [
+        7.594,
+        36.449
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4673",
+          "route_id": "9361",
+          "name_fr": "Station de services Kamilia",
+          "name_ar": "محطة كامليا",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            7.594,
+            36.449
+          ],
+          "coordinate_fix": "lat_lng_swapped",
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Kamilia",
+      "display_name_ar": "محطة كامليا"
+    },
+    {
+      "id": "tariki-5521",
+      "coordinates": [
+        7.179,
+        36.317
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5521",
+          "route_id": "10340",
+          "name_fr": "Station de services CHEGHAIB Oued Znati",
+          "name_ar": "محطة شغيب بوادي الزناتي",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            7.179,
+            36.317
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services CHEGHAIB Oued Znati",
+      "display_name_ar": "محطة شغيب بوادي الزناتي"
+    },
+    {
+      "id": "tariki-614",
+      "coordinates": [
+        7.641,
+        36.355
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "614",
+          "route_id": "2022",
+          "name_fr": null,
+          "name_ar": "محطة البرنوس",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.641,
+            36.355
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة البرنوس",
+      "display_name_ar": "محطة البرنوس"
+    },
+    {
+      "id": "tariki-6280",
+      "coordinates": [
+        7.4516,
+        36.4526
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6280",
+          "route_id": "11064",
+          "name_fr": "Station LAABIDI",
+          "name_ar": "محطة بلعبيدي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.4516,
+            36.4526
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station LAABIDI",
+      "display_name_ar": "محطة بلعبيدي"
+    },
+    {
+      "id": "tariki-6424",
+      "coordinates": [
+        7.28,
+        36.419
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6424",
+          "route_id": "1509",
+          "name_fr": "station naftal houari boumedien",
+          "name_ar": "محطة نفطال لبلدية هواري بومدين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.28,
+            36.419
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station naftal houari boumedien",
+      "display_name_ar": "محطة نفطال لبلدية هواري بومدين"
+    },
+    {
+      "id": "tariki-6482",
+      "coordinates": [
+        7.412,
+        36.491
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6482",
+          "route_id": "9786",
+          "name_fr": "Station de services Mouadna Belfdjouj",
+          "name_ar": "محطة الخدمات موادنة بالفجوج",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.412,
+            36.491
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Mouadna Belfdjouj",
+      "display_name_ar": "محطة الخدمات موادنة بالفجوج"
+    },
+    {
+      "id": "tariki-6598",
+      "coordinates": [
+        7.7102,
+        36.4588
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6598",
+          "route_id": "3556",
+          "name_fr": "Station de services Benzerguine",
+          "name_ar": "محطة خدمات بن زرقين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.7102,
+            36.4588
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Benzerguine",
+      "display_name_ar": "محطة خدمات بن زرقين"
+    },
+    {
+      "id": "tariki-6625",
+      "coordinates": [
+        7.433,
+        36.467
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6625",
+          "route_id": "11433",
+          "name_fr": "Station de services Centre ville Geulma",
+          "name_ar": "محطة خدمات وسط مدينة قالمة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.433,
+            36.467
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Centre ville Geulma",
+      "display_name_ar": "محطة خدمات وسط مدينة قالمة"
+    },
+    {
+      "id": "tariki-6884",
+      "coordinates": [
+        7.4719,
+        36.465
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6884",
+          "route_id": "11743",
+          "name_fr": "Station de services Mouadna Belkhir",
+          "name_ar": "محطة موادنة ببلخير",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.4719,
+            36.465
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Mouadna Belkhir",
+      "display_name_ar": "محطة موادنة ببلخير"
+    },
+    {
+      "id": "tariki-6888",
+      "coordinates": [
+        7.488,
+        36.4635
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6888",
+          "route_id": "11743",
+          "name_fr": "Station de services Rehal Belkhir",
+          "name_ar": "محطة رحال ببلخير",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.488,
+            36.4635
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Rehal Belkhir",
+      "display_name_ar": "محطة رحال ببلخير"
+    },
+    {
+      "id": "tariki-7442",
+      "coordinates": [
+        7.241,
+        36.391
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7442",
+          "route_id": "1507",
+          "name_fr": "Station GHOULI Sellaoua Announa",
+          "name_ar": "محطة غولي سلاوة عنونة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.241,
+            36.391
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 24,
+          "wilaya_fr": "Guelma",
+          "wilaya_ar": "قالمة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station GHOULI Sellaoua Announa",
+      "display_name_ar": "محطة غولي سلاوة عنونة"
+    }
+  ]
+}

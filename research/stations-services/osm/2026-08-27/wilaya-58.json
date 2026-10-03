@@ -1,0 +1,181 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 58,
+  "records": [
+    {
+      "id": "node/10093497628",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.1944077,
+        30.7256892
+      ]
+    },
+    {
+      "id": "node/1159237780",
+      "amenity": "fuel",
+      "name": "Station Belaouebar",
+      "name_ar": "محطة بلوبر",
+      "name_fr": "Staion Belaouebar",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.9066271,
+        30.6072114
+      ]
+    },
+    {
+      "id": "node/1159237847",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal Hassi El Fhel",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.6803167,
+        31.6066693
+      ]
+    },
+    {
+      "id": "node/2625370467",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "NAFTAL",
+      "opening_hours": null,
+      "coordinates": [
+        3.7031956,
+        31.7050481
+      ]
+    },
+    {
+      "id": "node/3149017103",
+      "amenity": "fuel",
+      "name": "Station Service NAFTAL",
+      "name_ar": "محطة خدمة نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "NAFTAL",
+      "opening_hours": null,
+      "coordinates": [
+        3.7515113,
+        31.9767651
+      ]
+    },
+    {
+      "id": "node/4137873790",
+      "amenity": "fuel",
+      "name": "محطة نفطال حاسي القارة",
+      "name_ar": "محطة نفطال حاسي القارة",
+      "name_fr": "Station-service NAFTAL",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.8968218,
+        30.5594462
+      ]
+    },
+    {
+      "id": "node/4147438866",
+      "amenity": "fuel",
+      "name": "محطة الوقود سيراج",
+      "name_ar": "محطة الوقود سيراج",
+      "name_fr": "Station Siradj",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.8816971,
+        30.587234
+      ]
+    },
+    {
+      "id": "node/4212336291",
+      "amenity": "fuel",
+      "name": "محطة متعددة الخدمات بلمشرح",
+      "name_ar": "محطة متعددة الخدمات بلمشرح",
+      "name_fr": "Station Belemcharah",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": "24/7",
+      "coordinates": [
+        2.930201,
+        30.5350115
+      ]
+    },
+    {
+      "id": "node/6173445688",
+      "amenity": "fuel",
+      "name": "محطة أولاد حيموة",
+      "name_ar": "محطة أولاد حيموة",
+      "name_fr": "station Ouled Haimouda",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.1930392,
+        30.724878
+      ]
+    },
+    {
+      "id": "node/6207293286",
+      "amenity": "fuel",
+      "name": "أولاد حيمودة",
+      "name_ar": "أولاد حيمودة",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.1929591,
+        30.7248387
+      ]
+    },
+    {
+      "id": "node/6207293385",
+      "amenity": "fuel",
+      "name": "محطة بلوبر",
+      "name_ar": "محطة بلوبر",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.9676124,
+        30.058803
+      ]
+    },
+    {
+      "id": "node/9956366893",
+      "amenity": "fuel",
+      "name": "محطة متعددة الخدمات - مليكة.",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": "24/7",
+      "coordinates": [
+        2.9672829,
+        30.0590279
+      ]
+    }
+  ]
+}

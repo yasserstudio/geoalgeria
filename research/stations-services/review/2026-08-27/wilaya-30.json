@@ -1,0 +1,2348 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-30",
+    "wilaya_code": 30,
+    "name": "Ouargla",
+    "name_ar": "ورقلة",
+    "center": [
+      6.2355,
+      30.9985
+    ],
+    "bounds": [
+      2.997,
+      28.498,
+      9.474,
+      33.499
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 63,
+    "osm_records": 59,
+    "tariki_records": 27,
+    "cross_source": 19,
+    "multiple_tariki": 2,
+    "osm_only": 38,
+    "tariki_only": 4,
+    "nearby_osm_pairs": 10,
+    "conflicts": 22
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3733618598",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6642796808",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6644109674",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6644109675",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6644112186",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-9546115641",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1036123307",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-276955981",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-277042828",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-289263585",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-339331803",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-369728452",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-375709790",
+      "reasons": [
+        "multiple-tariki",
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-384666489",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-385085031",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-385085032",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-385085033",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-440047352",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5585",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5612",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5618",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6648",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-11910008869",
+      "coordinates": [
+        5.0882519,
+        31.917762
+      ],
+      "osm": {
+        "id": "node/11910008869",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0882519,
+          31.917762
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1573144028",
+      "coordinates": [
+        5.4606602,
+        31.9326827
+      ],
+      "osm": {
+        "id": "node/1573144028",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.4606602,
+          31.9326827
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7825",
+          "route_id": "6791",
+          "name_fr": "STATION DE SERVICES messtfaoui abdelhakim",
+          "name_ar": "محطة خدمات مصطفاوي عبد الحكيم",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.461,
+            31.933
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات مصطفاوي عبد الحكيم"
+    },
+    {
+      "id": "osm-node-2924603722",
+      "coordinates": [
+        6.1513974,
+        31.6612029
+      ],
+      "osm": {
+        "id": "node/2924603722",
+        "name": "Station de carburant INTERNE Sonatrach",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Sonatrach",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1513974,
+          31.6612029
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station de carburant INTERNE Sonatrach",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2930491114",
+      "coordinates": [
+        6.0542556,
+        31.6955602
+      ],
+      "osm": {
+        "id": "node/2930491114",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          6.0542556,
+          31.6955602
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6659",
+          "route_id": "11468",
+          "name_fr": "station de services ben asaih aghiless",
+          "name_ar": "محطة الخدمات بن السايح أغيلاس",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.0539,
+            31.6955
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات بن السايح أغيلاس"
+    },
+    {
+      "id": "osm-node-2930506296",
+      "coordinates": [
+        6.054666,
+        31.6931593
+      ],
+      "osm": {
+        "id": "node/2930506296",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          6.054666,
+          31.6931593
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6654",
+          "route_id": "11468",
+          "name_fr": "Station de services Ben Moussa Tayeb",
+          "name_ar": "محطة خدما ت بن موسى الطيب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.0552,
+            31.6923
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 108
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدما ت بن موسى الطيب"
+    },
+    {
+      "id": "osm-node-2953122445",
+      "coordinates": [
+        4.5718414,
+        32.1270531
+      ],
+      "osm": {
+        "id": "node/2953122445",
+        "name": "Station Essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          4.5718414,
+          32.1270531
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Essence",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3733569007",
+      "coordinates": [
+        5.4156716,
+        32.7032458
+      ],
+      "osm": {
+        "id": "node/3733569007",
+        "name": "STATION DE SERVICES",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4156716,
+          32.7032458
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5620",
+          "route_id": "10418",
+          "name_fr": "Station de services  KAYOUS Bachir",
+          "name_ar": "محطة الخدمات كيوص بشير",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            5.4158,
+            32.7032
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION DE SERVICES",
+      "display_name_ar": "محطة الخدمات كيوص بشير"
+    },
+    {
+      "id": "osm-node-3733572328",
+      "coordinates": [
+        5.5066932,
+        32.639804
+      ],
+      "osm": {
+        "id": "node/3733572328",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5066932,
+          32.639804
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3733577794",
+      "coordinates": [
+        5.5182259,
+        32.6108496
+      ],
+      "osm": {
+        "id": "node/3733577794",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5182259,
+          32.6108496
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5608",
+          "route_id": "10418",
+          "name_fr": "Station de services guetoum med",
+          "name_ar": "محطة الخدمات قتوم محمد (نفطال)",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.5183,
+            32.6109
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات قتوم محمد (نفطال)"
+    },
+    {
+      "id": "osm-node-3733618597",
+      "coordinates": [
+        5.8466848,
+        32.5977767
+      ],
+      "osm": {
+        "id": "node/3733618597",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.8466848,
+          32.5977767
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5583",
+          "route_id": "10407",
+          "name_fr": "Station de Services Hamisi Belkasem",
+          "name_ar": "محطة الخدمات حميسي بلقاسم",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            5.8467,
+            32.5978
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات حميسي بلقاسم"
+    },
+    {
+      "id": "osm-node-3733618598",
+      "coordinates": [
+        5.5963006,
+        33.1404954
+      ],
+      "osm": {
+        "id": "node/3733618598",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5963006,
+          33.1404954
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7903",
+          "route_id": "10512",
+          "name_fr": "STATION DE SERVICES CHEAIB MOSTAFA",
+          "name_ar": "محطة الخدمات شعيب مصطفى",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.5963,
+            33.1405
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 1
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-369728452",
+          "offset_m": 12
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات شعيب مصطفى"
+    },
+    {
+      "id": "osm-node-3775593757",
+      "coordinates": [
+        6.4625675,
+        30.5171605
+      ],
+      "osm": {
+        "id": "node/3775593757",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.4625675,
+          30.5171605
+        ]
+      },
+      "tariki": [
+        {
+          "id": "455",
+          "route_id": "1477",
+          "name_fr": "Station de services naftal Bouaaraba Ali",
+          "name_ar": "محطة الوقود بوعرابة علي بقاسي الطويل",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            6.463,
+            30.517
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 45
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود بوعرابة علي بقاسي الطويل"
+    },
+    {
+      "id": "osm-node-4192477610",
+      "coordinates": [
+        5.3854122,
+        31.941697
+      ],
+      "osm": {
+        "id": "node/4192477610",
+        "name": "Station Service E. Leclerc",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3854122,
+          31.941697
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5390",
+          "route_id": "6902",
+          "name_fr": "Station de services BEN FARDIA Abd Elrahmane",
+          "name_ar": "محطة الخدمات بن فردية عبد الرحمان",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.385,
+            31.942
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 51
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service E. Leclerc",
+      "display_name_ar": "محطة الخدمات بن فردية عبد الرحمان"
+    },
+    {
+      "id": "osm-node-4406190543",
+      "coordinates": [
+        5.8455809,
+        32.6174769
+      ],
+      "osm": {
+        "id": "node/4406190543",
+        "name": "محطة شعيب ابراهيم للخدمات",
+        "name_ar": "محطة شعيب ابراهيم للخدمات",
+        "name_fr": "Station de service Choaïb Brahim",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.8455809,
+          32.6174769
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station de service Choaïb Brahim",
+      "display_name_ar": "محطة شعيب ابراهيم للخدمات"
+    },
+    {
+      "id": "osm-node-4426130593",
+      "coordinates": [
+        6.1963814,
+        31.6241722
+      ],
+      "osm": {
+        "id": "node/4426130593",
+        "name": "Sacotec",
+        "name_ar": "Sacotec",
+        "name_fr": "Sacotec",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1963814,
+          31.6241722
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Sacotec",
+      "display_name_ar": "Sacotec"
+    },
+    {
+      "id": "osm-node-4579359490",
+      "coordinates": [
+        5.5159597,
+        32.9281722
+      ],
+      "osm": {
+        "id": "node/4579359490",
+        "name": "محطة زروقي فتيتة للخدمات",
+        "name_ar": "محطة زروقي فتيتة للخدمات",
+        "name_fr": "Station de services zerrouki ftita",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5159597,
+          32.9281722
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station de services zerrouki ftita",
+      "display_name_ar": "محطة زروقي فتيتة للخدمات"
+    },
+    {
+      "id": "osm-node-4894316018",
+      "coordinates": [
+        5.8574191,
+        32.7895474
+      ],
+      "osm": {
+        "id": "node/4894316018",
+        "name": "محطة خدمات",
+        "name_ar": "محطة خدمات",
+        "name_fr": "Station service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.8574191,
+          32.7895474
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-4894321049",
+      "coordinates": [
+        5.9049,
+        32.8833685
+      ],
+      "osm": {
+        "id": "node/4894321049",
+        "name": "محطة خدمات",
+        "name_ar": "محطة خدمات",
+        "name_fr": "Station service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9049,
+          32.8833685
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-4938227910",
+      "coordinates": [
+        5.8007705,
+        32.4649857
+      ],
+      "osm": {
+        "id": "node/4938227910",
+        "name": "محطة وقود بتروبركة",
+        "name_ar": "محطة وقود بتروبركة",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": "بتروبركة",
+        "opening_hours": null,
+        "coordinates": [
+          5.8007705,
+          32.4649857
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود بتروبركة"
+    },
+    {
+      "id": "osm-node-5003130780",
+      "coordinates": [
+        9.1476223,
+        31.5921192
+      ],
+      "osm": {
+        "id": "node/5003130780",
+        "name": "محطة وقود نفطال",
+        "name_ar": "محطة وقود نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "06:00-21:00",
+        "coordinates": [
+          9.1476223,
+          31.5921192
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6672",
+          "route_id": "11351",
+          "name_fr": "Station de services  Touati",
+          "name_ar": "محطة خدمات تواتي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            9.1478,
+            31.592
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 21
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود نفطال"
+    },
+    {
+      "id": "osm-node-5481223822",
+      "coordinates": [
+        6.439735,
+        32.201385
+      ],
+      "osm": {
+        "id": "node/5481223822",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.439735,
+          32.201385
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5904166819",
+      "coordinates": [
+        5.9247842,
+        31.8494016
+      ],
+      "osm": {
+        "id": "node/5904166819",
+        "name": "محطة الخدمات بتروبركة",
+        "name_ar": "محطة الخدمات بتروبركة",
+        "name_fr": "Naftal",
+        "brand": "Petro Baraka",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9247842,
+          31.8494016
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات بتروبركة"
+    },
+    {
+      "id": "osm-node-5913704354",
+      "coordinates": [
+        5.4714964,
+        31.9305643
+      ],
+      "osm": {
+        "id": "node/5913704354",
+        "name": "محطة زبيدي للخدمات",
+        "name_ar": "محطة زبيدي للخدمات",
+        "name_fr": "station-service Zbidi",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4714964,
+          31.9305643
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station-service Zbidi",
+      "display_name_ar": "محطة زبيدي للخدمات"
+    },
+    {
+      "id": "osm-node-5913707930",
+      "coordinates": [
+        5.7572096,
+        31.8902885
+      ],
+      "osm": {
+        "id": "node/5913707930",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7572096,
+          31.8902885
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6642796808",
+      "coordinates": [
+        5.9259923,
+        32.9343452
+      ],
+      "osm": {
+        "id": "node/6642796808",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9259923,
+          32.9343452
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3271",
+          "route_id": "4389",
+          "name_fr": "Station de servicesSelami Ahmed",
+          "name_ar": "محطة سلامي أحمد",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            5.926,
+            32.934
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-289263585",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de servicesSelami Ahmed",
+      "display_name_ar": "محطة سلامي أحمد"
+    },
+    {
+      "id": "osm-node-6642796809",
+      "coordinates": [
+        5.9198812,
+        32.8938923
+      ],
+      "osm": {
+        "id": "node/6642796809",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9198812,
+          32.8938923
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6644109674",
+      "coordinates": [
+        6.037511,
+        31.7348807
+      ],
+      "osm": {
+        "id": "node/6644109674",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.037511,
+          31.7348807
+        ]
+      },
+      "tariki": [
+        {
+          "id": "453",
+          "route_id": "1354",
+          "name_fr": "Station de services Baouchi",
+          "name_ar": "محطة خدمات بعوشي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.038,
+            31.735
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-277042828",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de services Baouchi",
+      "display_name_ar": "محطة خدمات بعوشي"
+    },
+    {
+      "id": "osm-node-6644109675",
+      "coordinates": [
+        6.0444285,
+        31.7300556
+      ],
+      "osm": {
+        "id": "node/6644109675",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0444285,
+          31.7300556
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-276955981",
+          "offset_m": 21
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6644112186",
+      "coordinates": [
+        6.054827,
+        31.7042162
+      ],
+      "osm": {
+        "id": "node/6644112186",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.054827,
+          31.7042162
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-339331803",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6698386661",
+      "coordinates": [
+        5.5727817,
+        31.9008249
+      ],
+      "osm": {
+        "id": "node/6698386661",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "نفطال",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5727817,
+          31.9008249
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-7009155185",
+      "coordinates": [
+        5.0094418,
+        31.9472974
+      ],
+      "osm": {
+        "id": "node/7009155185",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0094418,
+          31.9472974
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7030259386",
+      "coordinates": [
+        8.1974689,
+        31.0159181
+      ],
+      "osm": {
+        "id": "node/7030259386",
+        "name": "إتش بي بي سي بركين",
+        "name_ar": "إتش بي بي سي بركين",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.1974689,
+          31.0159181
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "إتش بي بي سي بركين",
+      "display_name_ar": "إتش بي بي سي بركين"
+    },
+    {
+      "id": "osm-node-8819108418",
+      "coordinates": [
+        5.0120773,
+        31.9464333
+      ],
+      "osm": {
+        "id": "node/8819108418",
+        "name": "محطة خدمات نفطال خروبي",
+        "name_ar": null,
+        "name_fr": "Station naftal kharoubi",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0120773,
+          31.9464333
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station naftal kharoubi",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9377055517",
+      "coordinates": [
+        5.8019794,
+        32.4573153
+      ],
+      "osm": {
+        "id": "node/9377055517",
+        "name": "station Services Bencheikh",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.8019794,
+          32.4573153
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station Services Bencheikh",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9521467417",
+      "coordinates": [
+        6.3089597,
+        31.2560944
+      ],
+      "osm": {
+        "id": "node/9521467417",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3089597,
+          31.2560944
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9546115641",
+      "coordinates": [
+        5.9707835,
+        31.8764051
+      ],
+      "osm": {
+        "id": "node/9546115641",
+        "name": "محطة بنزين",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9707835,
+          31.8764051
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1036123307",
+          "offset_m": 4
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "محطة بنزين",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9546996511",
+      "coordinates": [
+        5.291079,
+        31.9199685
+      ],
+      "osm": {
+        "id": "node/9546996511",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.291079,
+          31.9199685
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9934477902",
+      "coordinates": [
+        5.5745942,
+        32.0548825
+      ],
+      "osm": {
+        "id": "node/9934477902",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5745942,
+          32.0548825
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1036123307",
+      "coordinates": [
+        5.9707542,
+        31.876374
+      ],
+      "osm": {
+        "id": "way/1036123307",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9707542,
+          31.876374
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-9546115641",
+          "offset_m": 4
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1036520002",
+      "coordinates": [
+        5.312702249999999,
+        32.04064485
+      ],
+      "osm": {
+        "id": "way/1036520002",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.312702249999999,
+          32.04064485
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1306994158",
+      "coordinates": [
+        5.39740795,
+        31.970764799999998
+      ],
+      "osm": {
+        "id": "way/1306994158",
+        "name": "محطة وقود خضران",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.39740795,
+          31.970764799999998
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة وقود خضران",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-276955981",
+      "coordinates": [
+        6.04423215,
+        31.7299738
+      ],
+      "osm": {
+        "id": "way/276955981",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.04423215,
+          31.7299738
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4326",
+          "route_id": "1354",
+          "name_fr": "Station de services zone Industrielle",
+          "name_ar": "محطة المنطقة الصناعية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.044,
+            31.73
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6644109675",
+          "offset_m": 21
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة المنطقة الصناعية"
+    },
+    {
+      "id": "osm-way-277042828",
+      "coordinates": [
+        6.03748975,
+        31.73487065
+      ],
+      "osm": {
+        "id": "way/277042828",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.03748975,
+          31.73487065
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6644109674",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-289263585",
+      "coordinates": [
+        5.9260158999999994,
+        32.9344172
+      ],
+      "osm": {
+        "id": "way/289263585",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9260158999999994,
+          32.9344172
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6642796808",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-303809037",
+      "coordinates": [
+        5.31573315,
+        31.94210225
+      ],
+      "osm": {
+        "id": "way/303809037",
+        "name": "Station Service",
+        "name_ar": "محطة وقود",
+        "name_fr": "Naftal",
+        "brand": "E.Leclerc",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.31573315,
+          31.94210225
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6363",
+          "route_id": "10159",
+          "name_fr": "STATION DE SERVICES bechoumi ismail",
+          "name_ar": "محطة خدمات بشومي اسماعيل( نفطال)",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.316,
+            31.942
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 28
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "osm-way-305384818",
+      "coordinates": [
+        5.3320439,
+        31.98776815
+      ],
+      "osm": {
+        "id": "way/305384818",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3320439,
+          31.98776815
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6691",
+          "route_id": "10159",
+          "name_fr": "Station de services Zoubaidi",
+          "name_ar": "محطة خدمات زبيدي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.332,
+            31.988
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 26
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Zoubaidi",
+      "display_name_ar": "محطة خدمات زبيدي"
+    },
+    {
+      "id": "osm-way-305386918",
+      "coordinates": [
+        5.28514765,
+        31.94471155
+      ],
+      "osm": {
+        "id": "way/305386918",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.28514765,
+          31.94471155
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5576",
+          "route_id": "10159",
+          "name_fr": "Station de services Nen Ferdia",
+          "name_ar": "محطة خدمات بن فردية محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.285,
+            31.945
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 35
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Nen Ferdia",
+      "display_name_ar": "محطة خدمات بن فردية محمد"
+    },
+    {
+      "id": "osm-way-308893712",
+      "coordinates": [
+        5.0594404,
+        31.8471739
+      ],
+      "osm": {
+        "id": "way/308893712",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.0594404,
+          31.8471739
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-339331803",
+      "coordinates": [
+        6.05481855,
+        31.7041958
+      ],
+      "osm": {
+        "id": "way/339331803",
+        "name": "Station Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.05481855,
+          31.7041958
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6644112186",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-369728452",
+      "coordinates": [
+        5.5962243,
+        33.14057915
+      ],
+      "osm": {
+        "id": "way/369728452",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": "Station-essence",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5962243,
+          33.14057915
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3733618598",
+          "offset_m": 12
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station-essence",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-way-375709790",
+      "coordinates": [
+        5.3061314,
+        32.15461205
+      ],
+      "osm": {
+        "id": "way/375709790",
+        "name": "STATIN",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3061314,
+          32.15461205
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6947",
+          "route_id": "11809",
+          "name_fr": "Station de services  Rabia Ismail",
+          "name_ar": "محطة خدمات ربيع اسماعيل",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.3061,
+            32.1546
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 3
+        },
+        {
+          "id": "8246",
+          "route_id": "202",
+          "name_fr": "STATION DE SERVICES ngoussa",
+          "name_ar": "محطة خدمات أنقوسة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.306,
+            32.155
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 45
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-440047352",
+          "offset_m": 13
+        }
+      ],
+      "source_state": "multiple-tariki",
+      "display_name": "STATIN",
+      "display_name_ar": "محطة خدمات ربيع اسماعيل"
+    },
+    {
+      "id": "osm-way-375933362",
+      "coordinates": [
+        5.3293696,
+        31.948621099999997
+      ],
+      "osm": {
+        "id": "way/375933362",
+        "name": "Station de service MOSTFAOUI",
+        "name_ar": "محطة خدمة المصطفى",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3293696,
+          31.948621099999997
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6386",
+          "route_id": "10159",
+          "name_fr": "STATION MULTI SERVICE zoubaidi abderrahmane",
+          "name_ar": "محطة خدمات زبيدي عبد الرحمان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.329,
+            31.949
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de service MOSTFAOUI",
+      "display_name_ar": "محطة خدمة المصطفى"
+    },
+    {
+      "id": "osm-way-377161427",
+      "coordinates": [
+        5.3301991,
+        31.9477212
+      ],
+      "osm": {
+        "id": "way/377161427",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3301991,
+          31.9477212
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6387",
+          "route_id": "10159",
+          "name_fr": "station de services messtfaoui med seghir",
+          "name_ar": "محطة خدمات مصطفاوي محمد الصغير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.33,
+            31.948
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 36
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de services messtfaoui med seghir",
+      "display_name_ar": "محطة خدمات مصطفاوي محمد الصغير"
+    },
+    {
+      "id": "osm-way-384666489",
+      "coordinates": [
+        5.34719045,
+        31.91648805
+      ],
+      "osm": {
+        "id": "way/384666489",
+        "name": "محطة الحاج عمر للخدمات",
+        "name_ar": "محطة الحاج عمر للخدمات",
+        "name_fr": "Station Services Hadj Omar",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.34719045,
+          31.91648805
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6396",
+          "route_id": "11233",
+          "name_fr": "station de services Hadj omar miloud",
+          "name_ar": "محطة خدمات حاج عمار ميلود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.3473,
+            31.9166
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 16
+        },
+        {
+          "id": "12717",
+          "route_id": "17283",
+          "name_fr": null,
+          "name_ar": "محطة البركة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.3472,
+            31.9164
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Services Hadj Omar",
+      "display_name_ar": "محطة الحاج عمر للخدمات"
+    },
+    {
+      "id": "osm-way-385085031",
+      "coordinates": [
+        5.33924135,
+        31.955308799999997
+      ],
+      "osm": {
+        "id": "way/385085031",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.33924135,
+          31.955308799999997
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-385085032",
+          "offset_m": 18
+        },
+        {
+          "candidate_id": "osm-way-385085033",
+          "offset_m": 21
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-385085032",
+      "coordinates": [
+        5.3394083000000006,
+        31.9552295
+      ],
+      "osm": {
+        "id": "way/385085032",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.3394083000000006,
+          31.9552295
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-385085031",
+          "offset_m": 18
+        },
+        {
+          "candidate_id": "osm-way-385085033",
+          "offset_m": 31
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-385085033",
+      "coordinates": [
+        5.33908725,
+        31.9551701
+      ],
+      "osm": {
+        "id": "way/385085033",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.33908725,
+          31.9551701
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6362",
+          "route_id": "10159",
+          "name_fr": "STATION DE SERVICES segai",
+          "name_ar": "محطة خدمات سقاي ( نفطال )",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.339,
+            31.955
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": 21
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-385085031",
+          "offset_m": 21
+        },
+        {
+          "candidate_id": "osm-way-385085032",
+          "offset_m": 31
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات سقاي ( نفطال )"
+    },
+    {
+      "id": "osm-way-440047352",
+      "coordinates": [
+        5.3061687,
+        32.1545015
+      ],
+      "osm": {
+        "id": "way/440047352",
+        "name": "STATION SERVICES",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3061687,
+          32.1545015
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-375709790",
+          "offset_m": 13
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "STATION SERVICES",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-690163274",
+      "coordinates": [
+        5.58059265,
+        32.0664291
+      ],
+      "osm": {
+        "id": "way/690163274",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.58059265,
+          32.0664291
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-5585",
+      "coordinates": [
+        5.8459,
+        32.6498
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5585",
+          "route_id": "10407",
+          "name_fr": "Station de services  Chouaib Ibrahim",
+          "name_ar": "محطة الخدمات شعيب ابراهيم",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.8459,
+            32.6498
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  Chouaib Ibrahim",
+      "display_name_ar": "محطة الخدمات شعيب ابراهيم"
+    },
+    {
+      "id": "tariki-5612",
+      "coordinates": [
+        5.5249,
+        32.599
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5612",
+          "route_id": "10418",
+          "name_fr": "Station de services CHOUAIB RACHID",
+          "name_ar": "محطة الخدمات شعيب رشيد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.5249,
+            32.599
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services CHOUAIB RACHID",
+      "display_name_ar": "محطة الخدمات شعيب رشيد"
+    },
+    {
+      "id": "tariki-5618",
+      "coordinates": [
+        5.5068,
+        32.6421
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5618",
+          "route_id": "10418",
+          "name_fr": "Station de services AOULAD HADJE",
+          "name_ar": "محطة الخدمات أولاد الحاج",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.5068,
+            32.6421
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AOULAD HADJE",
+      "display_name_ar": "محطة الخدمات أولاد الحاج"
+    },
+    {
+      "id": "tariki-6648",
+      "coordinates": [
+        6.056,
+        31.6897
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6648",
+          "route_id": "11468",
+          "name_fr": "Station de services Mondir chaaban",
+          "name_ar": "محطة خدما ت منذر شعبان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.056,
+            31.6897
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 30,
+          "wilaya_fr": "Ouargla",
+          "wilaya_ar": "ورقلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Mondir chaaban",
+      "display_name_ar": "محطة خدما ت منذر شعبان"
+    }
+  ]
+}

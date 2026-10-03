@@ -2,20 +2,22 @@
 
 # GeoAlgeria
 
-> The Algerian geodata package, 69 wilayas, 556 dairas, 1,541 communes. One `npm install` away.
+> The Algerian geodata package, 69 wilayas, 551 dairas, 1,541 communes. One `npm install` away.
 
 Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wilayas? GeoAlgeria is the first CI-validated, npm-installable Algerian geodata, updated for the 2026 reform. JSON, CSV, GeoJSON, SQL, TypeScript.
 
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: see LICENSE](https://img.shields.io/badge/License-MIT%20code%2C%20mixed%20data-green.svg)](LICENSE)
 
 ---
 
 ## Quick Facts
 
-Algeria has **69 wilayas** (provinces), **564 dairas** (districts), and **1,541 communes** (municipalities), official since **April 2026**. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, GPS coordinates, and bilingual names. This release ships all **1,541 commune records** and **556 dairas** (the daira table is still short of the official 564; see the [changelog](CHANGELOG.md)). Last validated: July 2026.
+Algeria has **69 wilayas** (provinces) and **1,541 communes** (municipalities), official since **April 2026**, each wilaya divided into dairas (districts). This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, GPS coordinates, and bilingual names. This release ships all **1,541 commune records** and **551 dairas in the dataset**. That is this dataset's own count, not an official total: no post-2026 national daira total has been published (decree 26-206 of 25 May 2026 names the chefs-lieux only), and the 564 this README used to call official included 9 phantom dairas produced by 13 duplicate commune records, as the [changelog](CHANGELOG.md) records for v1.1.2. Last validated: September 2026.
+
+**142 of the 551 are settled by decree.** Executive decree n° 26-253 of 15 July 2026, published in the *Journal Officiel* n° 52 of 21 July 2026, fixes the communes each daira chief administers in wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 and 59–69, and names 142 dairas there. It leaves the other 48 wilayas under decree n° 91-306 of 24 August 1991, whose lists this dataset holds and which come to 409. The reading of the annex is in [`research/_dairas/`](../../research/_dairas/).
 
 ---
 
@@ -66,7 +68,7 @@ const dz = require('geoalgeria');
 
 dz.wilayas;                    // all 69 wilayas
 dz.communes;                   // all 1,541 communes
-dz.dairas;                     // all 556 dairas
+dz.dairas;                     // all 551 dairas
 dz.ecommerce;                  // flat dataset for address forms
 dz.postOffices;                // 3,908 Algérie Poste offices
 dz.atms;                       // 2,026 ATMs
@@ -74,7 +76,7 @@ dz.atms;                       // 2,026 ATMs
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
 dz.getCommunesByWilaya(16);    // 57 communes in Algiers
 dz.getDairasByWilaya(16);      // dairas in Algiers
-dz.findCommune('Oran');        // search by name (FR or AR)
+dz.findCommune('Oran');        // search by name (FR or AR, Former names too)
 dz.findByPostalCode('16000');  // lookup by postal code
 dz.getPostOfficesByCommune(1731); // post offices in a commune (by code_commune)
 ```
@@ -133,7 +135,7 @@ sqlite3 mydb.sqlite < full.sql
 
 Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works with Leaflet, Mapbox, QGIS, etc.
 
-> **Note:** the npm package ships JSON only (to stay lightweight). The **CSV, GeoJSON, and SQL** exports live in the repo under `data/` and are bundled as a zip on every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
+> **Note:** the npm package ships **JSON, CSV, GeoJSON and SQL** since the v2 correctness pass, so `data/geojson/communes.geojson` is in the tarball too. The [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) zip bundles the same `data/` tree for people who do not use npm.
 
 ---
 
@@ -143,7 +145,11 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 |------|--------|---------|----------|
 | `data/algeria.json` | JSON | 69 wilayas + communes | Single-file usage |
 | `data/wilayas.json` | JSON | 69 | Wilaya list only |
-| `data/dairas.json` | JSON | 556 | Daira list with commune counts |
+| `data/dairas.json` | JSON | 551 | Daira list with commune counts |
+| `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
+| `data/phone-code-provenance.json` | JSON | 11 | Why wilayas 59–69 carry the `phone_code` they carry: the official texts searched and the reason for each `null` |
+| `data/wilaya-capitals.metadata.json` | JSON | 69 | The chef-lieu of each wilaya, with the decree, article, item and page that fixes it |
+| `data/osm-links.metadata.json` | JSON | 1 | Coverage, tiers, join rule and Overpass snapshots behind `osm_relation_id` / `wikidata` |
 | `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
 | `data/csv/wilayas.csv` | CSV | 69 | Spreadsheets, imports |
 | `data/csv/communes.csv` | CSV | 1,541 | Spreadsheets, imports |
@@ -158,7 +164,12 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/poste/atms.json` | JSON | 2,026 | ATM locations |
 | `data/poste/csv/*`, `data/poste/geojson/*` | CSV/GeoJSON | – | Postal data for spreadsheets / maps |
 
-> `data/poste/` is sourced from [Algérie Poste](https://baridimap.poste.dz). `commune_code` joins to each commune's `code_commune`.
+> `data/poste/` is sourced from [Algérie Poste](https://baridimap.poste.dz). `commune_code` is normalized to join each commune's `code_commune`; `source_commune_code` preserves a differing provider-native value.
+
+`code_commune` is the unique `WWCC` identifier from the [ONS 2021 Code Géographique National](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). Communes promoted into wilayas 59–69 retain their 2021 mother-wilaya prefix.
+
+Each wilaya carries `capital_commune_code`, the `code_commune` of its capital (chef-lieu), so the capital's names, postal code and coordinates are read from the commune record. It comes from the decrees that fix the chefs-lieux (n° 84-79 of 1984, n° 21-117 of 2021, n° 26-206 of 2026), never from the wilaya's name, which gets 4 of 69 wrong. Per-wilaya sources: [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
+Every commune and wilaya also carries `osm_relation_id` and `wikidata`: the OpenStreetMap administrative relation this record is linked to (`admin_level=8` for a commune, `admin_level=4` for a wilaya) and that relation's own Wikidata item, so a consumer joins to OpenStreetMap or Wikidata without matching on a name. 1,540 of the 1,541 communes and all 69 wilayas carry a relation; 1,538 communes and all 69 wilayas carry a Wikidata item. Nothing is guessed: the linkage is the one the commune-centre audit decided on the relation's `ref:ONS` / `ref` tag, Overpass `timestamp_osm_base` 2026-09-29T12:54:47Z, plus a second tier of three communes whose relation carries the right `ref:ONS` code under non-standard tags and was therefore invisible to that audit's query; a relation with no `wikidata` tag leaves that field null, and the one commune with no commune relation at all (4703) keeps both fields null. The item is the relation's own tag in every case bar one: commune 3424's relation is tagged with a village inside the commune, so that field is null and the exclusion is recorded in the sidecar rather than the wrong item published. The two ids are on the JSON records (`data/algeria.json`, `data/communes_w*.json`, `data/wilayas.json`); the CSV, GeoJSON and SQL mirrors do not carry them. Coverage, the join rule and the records with no link: [`data/osm-links.metadata.json`](data/osm-links.metadata.json). Both values are OpenStreetMap-derived, so **ODbL 1.0, © OpenStreetMap contributors** (see `NOTICE`).
 
 ## Schema
 
@@ -171,7 +182,7 @@ See [`data/README.md`](data/README.md) for full field documentation.
 See [CONTRIBUTING.md](https://github.com/yasserstudio/geoalgeria/blob/main/CONTRIBUTING.md). We welcome:
 
 - Data corrections (with official sources)
-- Missing `code_commune` values (10 remaining)
+- Commune-code corrections backed by an official source
 - Delivery zone data from real carrier accounts (Yalidine, ZR Express, Maystro)
 - New export formats (XML, YAML, PHP arrays, etc.)
 - Translations and transliteration fixes
@@ -207,10 +218,10 @@ This dataset uses [Semantic Versioning](https://semver.org/). See [CHANGELOG.md]
 | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Djezzy boutiques – geocoded retail stores with category & hours (djezzy.dz) |
 | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosques – Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
 | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments – EPH, EPSP, EHS, CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
-| [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Clinics & proximity-care facilities – 1,894 polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas |
+| [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Clinics & proximity-care facilities – 1,917 polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas |
 | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Cultural atlas – protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Agriculture-sector institutions – services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
-| [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Schools – 11,830 primaires, CEM, lycées & préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
+| [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Schools – 11,858 primaires, CEM, lycées & préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
 | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | Intercity bus stations – 74 SOGRAL gares routières across 52 wilayas, geocoded with surfaces & commune/wilaya linkage |
 | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | Rail & urban transit – 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OpenStreetMap composite, bilingual |
 | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | Urban bus networks – 50 ETUSA (Alger) lines with termini, stop counts, communes & stations served (line-level v1) |
@@ -241,7 +252,7 @@ Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/iss
 
 ## Sponsor
 
-GeoAlgeria is free and MIT. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
+GeoAlgeria is free: MIT code and an MIT compilation, with three ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
 
 ---
 
@@ -254,13 +265,13 @@ View all 69 wilayas on a map: [`algeria.geojson`](algeria.geojson) (GitHub rende
 ## FAQ
 
 **How many wilayas does Algeria have in 2026?**
-69. The original 48, plus 10 added in 2019 (Law 19-12), plus 11 made official in April 2026 ([Law n° 26-06, *Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf)). Transition period ends December 31, 2026; full autonomy from January 1, 2027.
+69. The original 48, plus 10 added in 2019 (Law 19-12), plus 11 made official in April 2026 ([Law n° 26-06, *Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf)). Transition period ends December 31, 2026; full autonomy from January 1, 2027.
 
 **Where can I find a list of all Algerian communes in JSON?**
 Right here, `data/ecommerce/communes.json` has all 1,541 communes in a flat, ready-to-use format.
 
 **What are the new wilayas added in 2026?**
-Wilayas 59-69 (numbered by mother wilaya code order): 59 Aflou (from Laghouat), 60 Barika (from Batna), 61 El Kantara (from Biskra), 62 Bir El Ater (from Tébessa), 63 El Aricha (from Tlemcen), 64 Ksar Chellala (from Tiaret), 65 Aïn Oussara (from Djelfa), 66 Messaad (from Djelfa), 67 Ksar El Boukhari (from Médéa), 68 Bou Saâda (from M'sila), 69 El Abiodh Sidi Cheikh (from El Bayadh).
+Wilayas 59-69 (numbered by mother wilaya code order): 59 Aflou (from Laghouat), 60 Barika (from Batna), 61 El Kantara (from Biskra), 62 Bir El Ater (from Tébessa), 63 El Aricha (from Tlemcen), 64 Ksar Chellala (from Tiaret), 65 Aïn Ouessara (from Djelfa), 66 Messaad (from Djelfa), 67 Ksar El Boukhari (from Médéa), 68 Bou Saâda (from M'Sila), 69 El Abiodh Sidi Cheikh (from El Bayadh).
 
 **How can I get Algeria postal codes in JSON format?**
 Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly, it maps commune names in French and Arabic to their postal codes across all 1,541 communes (5 have no citable code yet).
@@ -268,14 +279,41 @@ Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly
 **What is the best Algeria geodata package for developers?**
 GeoAlgeria is the most complete option as of 2026, it is the only npm package with all 69 wilayas, postal codes, coordinates, dairas, and delivery zone templates in one install. CI-validated on every commit.
 
-**Liste des wilayas d'Algérie 2026, où trouver?**
-GeoAlgeria contient les 69 wilayas avec noms en français et arabe, codes postaux, et coordonnées GPS. Disponible en JSON, CSV, GeoJSON, et SQL. `npm install geoalgeria`
+**Where can I find the 2026 list of Algeria's wilayas?**
+GeoAlgeria carries all 69 wilayas with French and Arabic names, postal codes, and GPS coordinates. Available as JSON, CSV, GeoJSON, and SQL. `npm install geoalgeria`
 
 ---
 
-## License
+## License & attribution
 
-MIT, free for personal and commercial use.
+Package **code** is [MIT](LICENSE), and so is the **compilation**: wilayas, dairas, communes,
+their bilingual names, postal codes and administrative codes. Free for personal and commercial
+use.
+
+Three parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and
+are licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
+
+- the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
+- 323 of the 1,541 commune centre coordinates, each taken from that commune's own
+  `admin_level=8` relation (318 from its `admin_centre` node, 56 on 2026-09-27, 189 on
+  2026-09-29, 5 on 2026-10-01 and 68 on 2026-10-01 by the coordinate review, which writes a
+  value only where independent sources vote for it, and 5 from the relation centroid in
+  2.1.0), wherever those values appear;
+- 6 of the 69 wilaya capital points, which are the same values again: a wilaya's coordinates
+  are the centre of its capital commune, so wilayas 7, 16, 25, 32, 52 and 61 carry one of the
+  coordinates above. The other 63 wilaya capital points are not OpenStreetMap-derived.
+
+If you use or redistribute any of those parts you must **attribute OpenStreetMap contributors**
+and keep derived databases under a compatible licence.
+
+The mirrored postal data under `data/poste/` carries **Algérie Poste's** own terms, not the MIT
+License: **Data © Algérie Poste; redistributed for reference**, the same terms
+[`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste) states. Verify against
+Algérie Poste for authoritative, real-time information.
+
+Because the data is under three sets of terms, the manifest declares
+`SEE LICENSE IN LICENSE` rather than an SPDX expression. Per-part attribution and the affected
+rows are in [NOTICE](NOTICE).
 
 Made with care by [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 

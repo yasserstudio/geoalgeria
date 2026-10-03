@@ -1,0 +1,2000 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-39",
+    "wilaya_code": 39,
+    "name": "El Oued",
+    "name_ar": "الوادي",
+    "center": [
+      7.5135000000000005,
+      33.2155
+    ],
+    "bounds": [
+      5.956,
+      32.003,
+      9.071,
+      34.428
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 54,
+    "osm_records": 38,
+    "tariki_records": 30,
+    "cross_source": 12,
+    "multiple_tariki": 1,
+    "osm_only": 25,
+    "tariki_only": 16,
+    "nearby_osm_pairs": 4,
+    "conflicts": 25
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-13247635460",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3361562903",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5221280245",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5411865021",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5497558983",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-7222111704",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-9907955475",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1080980356",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1151508578",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-11840",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1193",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13127",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13586",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2300",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2524",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2698",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2753",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2981",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3025",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3069",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3304",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3672",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4217",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5431",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6798",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10011726217",
+      "coordinates": [
+        6.8886249,
+        33.534794
+      ],
+      "osm": {
+        "id": "node/10011726217",
+        "name": "محطة هيه للوقود",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8886249,
+          33.534794
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة هيه للوقود",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-10011726218",
+      "coordinates": [
+        6.9143049,
+        33.5490355
+      ],
+      "osm": {
+        "id": "node/10011726218",
+        "name": "محطة خدمات شرفي",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9143049,
+          33.5490355
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات شرفي",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-11898445872",
+      "coordinates": [
+        6.8161693,
+        33.425556
+      ],
+      "osm": {
+        "id": "node/11898445872",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8161693,
+          33.425556
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-13247635460",
+      "coordinates": [
+        6.9314885,
+        33.5506504
+      ],
+      "osm": {
+        "id": "node/13247635460",
+        "name": "محطة وقود قدوري",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9314885,
+          33.5506504
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5497558983",
+          "offset_m": 12
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "محطة وقود قدوري",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2178432183",
+      "coordinates": [
+        7.5281318,
+        33.7277628
+      ],
+      "osm": {
+        "id": "node/2178432183",
+        "name": "محطة الوقود بالطالب العربي",
+        "name_ar": "محطة الوقود بالطالب العربي",
+        "name_fr": "Taleb Larbi",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          7.5281318,
+          33.7277628
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4496",
+          "route_id": "8789",
+          "name_fr": "Station de services TOUMI NOUREDDINE",
+          "name_ar": "تومي نور الدين",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.528,
+            33.728
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Taleb Larbi",
+      "display_name_ar": "محطة الوقود بالطالب العربي"
+    },
+    {
+      "id": "osm-node-2417946362",
+      "coordinates": [
+        6.7979028,
+        33.5050185
+      ],
+      "osm": {
+        "id": "node/2417946362",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7979028,
+          33.5050185
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1104",
+          "route_id": "2818",
+          "name_fr": "station de services Naftal  GUEMMAR",
+          "name_ar": "محطة نفطال قمار",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.798,
+            33.505
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال قمار"
+    },
+    {
+      "id": "osm-node-2519600292",
+      "coordinates": [
+        6.897224,
+        33.3186668
+      ],
+      "osm": {
+        "id": "node/2519600292",
+        "name": "Station Naftal carburant",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.897224,
+          33.3186668
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Naftal carburant",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3255378648",
+      "coordinates": [
+        6.8494033,
+        33.3897687
+      ],
+      "osm": {
+        "id": "node/3255378648",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8494033,
+          33.3897687
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2598",
+          "route_id": "6040",
+          "name_fr": "Station de services Redouene",
+          "name_ar": "محطة خدمات الرضوان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.8494,
+            33.3897
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات الرضوان"
+    },
+    {
+      "id": "osm-node-3255378749",
+      "coordinates": [
+        6.8303584,
+        33.3977763
+      ],
+      "osm": {
+        "id": "node/3255378749",
+        "name": "Station Tliba;محطة طليبة",
+        "name_ar": "محطة طليبة",
+        "name_fr": "Station Tliba",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8303584,
+          33.3977763
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2602",
+          "route_id": "6056",
+          "name_fr": "Station de services TLIBA",
+          "name_ar": "محطة طليبة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.83,
+            33.398
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 42
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Tliba",
+      "display_name_ar": "محطة طليبة"
+    },
+    {
+      "id": "osm-node-3255381480",
+      "coordinates": [
+        6.8371761,
+        33.3874729
+      ],
+      "osm": {
+        "id": "node/3255381480",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8371761,
+          33.3874729
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2615",
+          "route_id": "6071",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.8372,
+            33.3874
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "osm-node-3255390476",
+      "coordinates": [
+        6.8221752,
+        33.4166454
+      ],
+      "osm": {
+        "id": "node/3255390476",
+        "name": "محطة زوبيدي",
+        "name_ar": "محطة زوبيدي",
+        "name_fr": "Station service zoubaidi",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8221752,
+          33.4166454
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2603",
+          "route_id": "6056",
+          "name_fr": "Station de services ZOUBIDI",
+          "name_ar": "محطة الزبيدي",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            6.822,
+            33.417
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 43
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service zoubaidi",
+      "display_name_ar": "محطة زوبيدي"
+    },
+    {
+      "id": "osm-node-3255463899",
+      "coordinates": [
+        6.71473,
+        33.2105621
+      ],
+      "osm": {
+        "id": "node/3255463899",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          6.71473,
+          33.2105621
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14314",
+          "route_id": "21528",
+          "name_fr": "//",
+          "name_ar": "محطة تزويد بالوقود محده قدور",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.715,
+            33.211
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3361538676",
+      "coordinates": [
+        6.9092711,
+        33.4871442
+      ],
+      "osm": {
+        "id": "node/3361538676",
+        "name": "pompe d'essance",
+        "name_ar": "محطة وقود",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "3mirat",
+        "opening_hours": null,
+        "coordinates": [
+          6.9092711,
+          33.4871442
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "osm-node-3361562903",
+      "coordinates": [
+        6.9288027,
+        33.4997967
+      ],
+      "osm": {
+        "id": "node/3361562903",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          6.9288027,
+          33.4997967
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7102",
+          "route_id": "11922",
+          "name_fr": "STATION D UTILITE PUBLIQUE",
+          "name_ar": "محطة ذات منفعة عامة",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            6.929,
+            33.5
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 29
+        },
+        {
+          "id": "12949",
+          "route_id": "11549",
+          "name_fr": "station abidi de servise",
+          "name_ar": "محطة عبيدي لخدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.929,
+            33.5
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة ذات منفعة عامة"
+    },
+    {
+      "id": "osm-node-4247638595",
+      "coordinates": [
+        6.2100073,
+        34.1202944
+      ],
+      "osm": {
+        "id": "node/4247638595",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2100073,
+          34.1202944
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13004",
+          "route_id": "17866",
+          "name_fr": "s. miloudi",
+          "name_ar": "محطة ميلودي",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            6.21,
+            34.12
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة ميلودي"
+    },
+    {
+      "id": "osm-node-4461673603",
+      "coordinates": [
+        6.7501636,
+        33.6088834
+      ],
+      "osm": {
+        "id": "node/4461673603",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7501636,
+          33.6088834
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4508745734",
+      "coordinates": [
+        6.8232266,
+        33.35216
+      ],
+      "osm": {
+        "id": "node/4508745734",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          6.8232266,
+          33.35216
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2303",
+          "route_id": "5590",
+          "name_fr": "Station de services Ferhat",
+          "name_ar": "محطة خدمات فرحات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.8231,
+            33.3519
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-4549713623",
+      "coordinates": [
+        6.8626583,
+        33.3530846
+      ],
+      "osm": {
+        "id": "node/4549713623",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8626583,
+          33.3530846
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4552188461",
+      "coordinates": [
+        6.8637849,
+        33.37583
+      ],
+      "osm": {
+        "id": "node/4552188461",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          6.8637849,
+          33.37583
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4642621346",
+      "coordinates": [
+        6.9941242,
+        33.5661014
+      ],
+      "osm": {
+        "id": "node/4642621346",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9941242,
+          33.5661014
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4642621594",
+      "coordinates": [
+        6.9831554,
+        33.5558008
+      ],
+      "osm": {
+        "id": "node/4642621594",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9831554,
+          33.5558008
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5221280244",
+      "coordinates": [
+        6.771469,
+        33.576953
+      ],
+      "osm": {
+        "id": "node/5221280244",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.771469,
+          33.576953
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5221280245",
+      "coordinates": [
+        6.787472,
+        33.544532
+      ],
+      "osm": {
+        "id": "node/5221280245",
+        "name": "Station SOUIDg",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.787472,
+          33.544532
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1103",
+          "route_id": "2818",
+          "name_fr": "station de services SOUID GHOMMRA GUEMMAR",
+          "name_ar": "محطة سويد غمرة قمار",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.787,
+            33.545
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 68
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5411865021",
+          "offset_m": 28
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station SOUIDg",
+      "display_name_ar": "محطة سويد غمرة قمار"
+    },
+    {
+      "id": "osm-node-5411865021",
+      "coordinates": [
+        6.7875914,
+        33.5443029
+      ],
+      "osm": {
+        "id": "node/5411865021",
+        "name": "محطة سويد",
+        "name_ar": "محطة سويد",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7875914,
+          33.5443029
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5221280245",
+          "offset_m": 28
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة سويد"
+    },
+    {
+      "id": "osm-node-5497558983",
+      "coordinates": [
+        6.9314182,
+        33.5507378
+      ],
+      "osm": {
+        "id": "node/5497558983",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9314182,
+          33.5507378
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-13247635460",
+          "offset_m": 12
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5581174773",
+      "coordinates": [
+        7.31554,
+        34.1774591
+      ],
+      "osm": {
+        "id": "node/5581174773",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          7.31554,
+          34.1774591
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5844823046",
+      "coordinates": [
+        6.9376691,
+        33.4205701
+      ],
+      "osm": {
+        "id": "node/5844823046",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9376691,
+          33.4205701
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7222111704",
+      "coordinates": [
+        6.9073762,
+        33.3033135
+      ],
+      "osm": {
+        "id": "node/7222111704",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9073762,
+          33.3033135
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1151508578",
+          "offset_m": 10
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9907955475",
+      "coordinates": [
+        6.2378732,
+        34.1054428
+      ],
+      "osm": {
+        "id": "node/9907955475",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2378732,
+          34.1054428
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1080980356",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1009242296",
+      "coordinates": [
+        6.8470091,
+        33.3431195
+      ],
+      "osm": {
+        "id": "way/1009242296",
+        "name": "Station-service Bahri,محطة خدمات بحري",
+        "name_ar": "محطة خدمات بحري",
+        "name_fr": "Station-service Bahri",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8470091,
+          33.3431195
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-service Bahri",
+      "display_name_ar": "محطة خدمات بحري"
+    },
+    {
+      "id": "osm-way-1080980356",
+      "coordinates": [
+        6.23789415,
+        34.1054463
+      ],
+      "osm": {
+        "id": "way/1080980356",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.23789415,
+          34.1054463
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-9907955475",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1081380908",
+      "coordinates": [
+        6.66832375,
+        33.7160842
+      ],
+      "osm": {
+        "id": "way/1081380908",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.66832375,
+          33.7160842
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1149613924",
+      "coordinates": [
+        6.80774585,
+        33.45450005
+      ],
+      "osm": {
+        "id": "way/1149613924",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.80774585,
+          33.45450005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14281",
+          "route_id": "2818",
+          "name_fr": "station de services TAGHZOUT",
+          "name_ar": "محطة نفطال  تغزوت",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.808,
+            33.454
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 60
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de services TAGHZOUT",
+      "display_name_ar": "محطة نفطال  تغزوت"
+    },
+    {
+      "id": "osm-way-1151508578",
+      "coordinates": [
+        6.9072847,
+        33.3033521
+      ],
+      "osm": {
+        "id": "way/1151508578",
+        "name": "محطة البشير للخدمات",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9072847,
+          33.3033521
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-7222111704",
+          "offset_m": 10
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "محطة البشير للخدمات",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-309648705",
+      "coordinates": [
+        6.87426185,
+        33.402474
+      ],
+      "osm": {
+        "id": "way/309648705",
+        "name": "محطة خدمات",
+        "name_ar": "محطة خدمات",
+        "name_fr": "Station service",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          6.87426185,
+          33.402474
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2301",
+          "route_id": "5590",
+          "name_fr": "Station de services bey abd el hafid",
+          "name_ar": "محطة خدمات باي عبد الحفيظ",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.8743,
+            33.4025
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-781329847",
+      "coordinates": [
+        6.8942207,
+        33.4716038
+      ],
+      "osm": {
+        "id": "way/781329847",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          6.8942207,
+          33.4716038
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-905072275",
+      "coordinates": [
+        6.8285919,
+        33.35043105
+      ],
+      "osm": {
+        "id": "way/905072275",
+        "name": "Station multi-services Tayr,محطة متعددة الخدمات طير",
+        "name_ar": "محطة متعددة الخدمات طير",
+        "name_fr": "Station multi-services Tayr",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8285919,
+          33.35043105
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station multi-services Tayr",
+      "display_name_ar": "محطة متعددة الخدمات طير"
+    },
+    {
+      "id": "osm-way-905587969",
+      "coordinates": [
+        6.8640606,
+        33.34180055
+      ],
+      "osm": {
+        "id": "way/905587969",
+        "name": "Station Bousbia,محطة بوصبيع",
+        "name_ar": "محطة بوصبيع",
+        "name_fr": "Station Bousbia",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8640606,
+          33.34180055
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Bousbia",
+      "display_name_ar": "محطة بوصبيع"
+    },
+    {
+      "id": "tariki-11840",
+      "coordinates": [
+        6.7728,
+        33.5753
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "11840",
+          "route_id": "16279",
+          "name_fr": "STATION DE SERVICES GHOMRA NORD  GUEMMAR",
+          "name_ar": "محطة نفطال غمرة الشمالية قمار",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.7728,
+            33.5753
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES GHOMRA NORD  GUEMMAR",
+      "display_name_ar": "محطة نفطال غمرة الشمالية قمار"
+    },
+    {
+      "id": "tariki-1193",
+      "coordinates": [
+        6.713,
+        33.209
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1193",
+          "route_id": "3595",
+          "name_fr": "Station de services Meheda",
+          "name_ar": "محطة محدة للخدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.713,
+            33.209
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Meheda",
+      "display_name_ar": "محطة محدة للخدمات"
+    },
+    {
+      "id": "tariki-13127",
+      "coordinates": [
+        7.316,
+        34.291
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13127",
+          "route_id": "1050",
+          "name_fr": "station de services Bengrine",
+          "name_ar": "محطة الوقود بنقرين الخرجة الشمالية",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.316,
+            34.291
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Bengrine",
+      "display_name_ar": "محطة الوقود بنقرين الخرجة الشمالية"
+    },
+    {
+      "id": "tariki-13586",
+      "coordinates": [
+        7.132,
+        34.305
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13586",
+          "route_id": "13339",
+          "name_fr": "STATION DE SERVICSE KAZIZ",
+          "name_ar": "محطة خدمات كزيز",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.132,
+            34.305
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICSE KAZIZ",
+      "display_name_ar": "محطة خدمات كزيز"
+    },
+    {
+      "id": "tariki-2300",
+      "coordinates": [
+        6.8622,
+        33.375
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2300",
+          "route_id": "5590",
+          "name_fr": "Station de services Oum Salma",
+          "name_ar": "محطة خدمات سالمة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.8622,
+            33.375
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Oum Salma",
+      "display_name_ar": "محطة خدمات سالمة"
+    },
+    {
+      "id": "tariki-2524",
+      "coordinates": [
+        6.757,
+        33.602
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2524",
+          "route_id": "3304",
+          "name_fr": "Station de services Radouani",
+          "name_ar": "محطة رضواني للخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.757,
+            33.602
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Radouani",
+      "display_name_ar": "محطة رضواني للخدمات"
+    },
+    {
+      "id": "tariki-2698",
+      "coordinates": [
+        7.314,
+        33.702
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2698",
+          "route_id": "6217",
+          "name_fr": "Station de services Setine",
+          "name_ar": "محطة التزود بالوقود بالستين",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            7.314,
+            33.702
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Setine",
+      "display_name_ar": "محطة التزود بالوقود بالستين"
+    },
+    {
+      "id": "tariki-2753",
+      "coordinates": [
+        6.718,
+        33.549
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2753",
+          "route_id": "3313",
+          "name_fr": "Station de services Atiya Bachir",
+          "name_ar": "محطة عطية بشير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.718,
+            33.549
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Atiya Bachir",
+      "display_name_ar": "محطة عطية بشير"
+    },
+    {
+      "id": "tariki-2981",
+      "coordinates": [
+        6.988,
+        33.561
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2981",
+          "route_id": "6217",
+          "name_fr": "Station de services Boughazala",
+          "name_ar": "محطة بوغزالة للتزود بالوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.988,
+            33.561
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Boughazala",
+      "display_name_ar": "محطة بوغزالة للتزود بالوقود"
+    },
+    {
+      "id": "tariki-3025",
+      "coordinates": [
+        6.939,
+        33.424
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3025",
+          "route_id": "6658",
+          "name_fr": "Station de services TLIBA EL HADI",
+          "name_ar": "طليبة الهادي للخدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.939,
+            33.424
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services TLIBA EL HADI",
+      "display_name_ar": "طليبة الهادي للخدمات"
+    },
+    {
+      "id": "tariki-3069",
+      "coordinates": [
+        7.316,
+        34.174
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3069",
+          "route_id": "6216",
+          "name_fr": "Station de services Douilet",
+          "name_ar": "محطة لمقدم للخدمات الدويلات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.316,
+            34.174
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Douilet",
+      "display_name_ar": "محطة لمقدم للخدمات الدويلات"
+    },
+    {
+      "id": "tariki-3304",
+      "coordinates": [
+        6.404,
+        34.353
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3304",
+          "route_id": "6819",
+          "name_fr": "Station de services RAIS MOHAMED",
+          "name_ar": "محطة الخدمات رايس محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.404,
+            34.353
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services RAIS MOHAMED",
+      "display_name_ar": "محطة الخدمات رايس محمد"
+    },
+    {
+      "id": "tariki-3672",
+      "coordinates": [
+        6.315,
+        34.371
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3672",
+          "route_id": "7685",
+          "name_fr": "Station de services Hmaydia Djamel",
+          "name_ar": "محطة الخدمات لحمايدية جمال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.315,
+            34.371
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Hmaydia Djamel",
+      "display_name_ar": "محطة الخدمات لحمايدية جمال"
+    },
+    {
+      "id": "tariki-4217",
+      "coordinates": [
+        6.92,
+        33.301
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4217",
+          "route_id": "8647",
+          "name_fr": "Station de services BOUSSBIA",
+          "name_ar": "محطة بوصبيع",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.92,
+            33.301
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOUSSBIA",
+      "display_name_ar": "محطة بوصبيع"
+    },
+    {
+      "id": "tariki-5431",
+      "coordinates": [
+        6.207,
+        34.121
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5431",
+          "route_id": "48",
+          "name_fr": "Station de services Miloudi",
+          "name_ar": "محطة ميلودي للخدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.207,
+            34.121
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Miloudi",
+      "display_name_ar": "محطة ميلودي للخدمات"
+    },
+    {
+      "id": "tariki-6798",
+      "coordinates": [
+        6.8951,
+        33.3185
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6798",
+          "route_id": "6866",
+          "name_fr": "station de services  Abadi",
+          "name_ar": "محطة الخدمات  عبادي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.8951,
+            33.3185
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 39,
+          "wilaya_fr": "El Oued",
+          "wilaya_ar": "الوادي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services  Abadi",
+      "display_name_ar": "محطة الخدمات  عبادي"
+    }
+  ]
+}

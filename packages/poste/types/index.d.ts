@@ -8,7 +8,7 @@
  *  `null` when the record has no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How the coordinate was obtained. `null` on an ungeocoded record — no method
+/** How the coordinate was obtained. `null` on an ungeocoded record: no method
  *  produced a point, so none can be named. */
 export type GeoMethod = "baridimap" | null;
 
@@ -21,7 +21,7 @@ export type AtmStatus = "OPEN" | "CLOSED (OFFLINE)" | "1";
 
 /** A post office (bureau de poste). */
 export interface PostOffice {
-  /** Stable id, unique within this file. Opaque — do not parse. */
+  /** Stable id, unique within this file. Opaque: do not parse. */
   id: string;
   /** Office name (French / transliterated). */
   name: string;
@@ -29,8 +29,14 @@ export interface PostOffice {
   name_ar: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
+  /** Algérie Poste's pre-reform wilaya code when the commune now belongs to a
+   *  wilaya created in 2026. Omitted when it matches `wilaya_code`. */
+  source_wilaya_code?: string;
   /** Commune (ONS) code as a 4-digit string. */
   commune_code: string;
+  /** Algérie Poste's provider-native commune code when it differs from the
+   *  normalized ONS join. Omitted when both values agree. */
+  source_commune_code?: string;
   /** Commune name (French). */
   commune: string;
   /** Commune name in Arabic. */
@@ -39,12 +45,12 @@ export interface PostOffice {
   lat: number | null;
   /** Longitude, or null. Both coordinates are set, or both are null. */
   lng: number | null;
-  /** `"exact"` for a Baridimap point, `null` when `lat`/`lng` are null —
+  /** `"exact"` for a Baridimap point, `null` when `lat`/`lng` are null:
    *  a record with no point asserts no precision. */
   geo_precision: GeoPrecision;
   /** How `lat`/`lng` were obtained; null when there are none. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "baridimap". */
+  /** Provenance key into `metadata.sources[]`: always "baridimap". */
   source: "baridimap";
   /** Office class/category. */
   class: OfficeClass;
@@ -56,17 +62,17 @@ export interface PostOffice {
   address: string;
 }
 
-/** An ATM (GAB — distributeur automatique). */
+/** An ATM (GAB, distributeur automatique). */
 export interface Atm {
-  /** Stable id, unique within this file. Opaque — do not parse. */
+  /** Stable id, unique within this file. Opaque: do not parse. */
   id: string;
   /** ATM name/label. */
   name: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
-  /** Commune (ONS) code. Currently null for every ATM (the source resolves ATMs
-   *  to a commune name only); typed as `string | null` so a future populated
-   *  value is not a breaking change. */
+  /** Provider wilaya code when it differs from the reconciled current code. */
+  source_wilaya_code?: string;
+  /** Commune (ONS) code when the name, mother wilaya, and point agree. */
   commune_code: string | null;
   /** Commune name (French). */
   commune: string;
@@ -80,7 +86,7 @@ export interface Atm {
   geo_precision: GeoPrecision;
   /** How `lat`/`lng` were obtained; null when there are none. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "baridimap". */
+  /** Provenance key into `metadata.sources[]`: always "baridimap". */
   source: "baridimap";
   /** Operational status. */
   status: AtmStatus;
@@ -91,6 +97,12 @@ export interface Atm {
   /** Street address. Currently null for every ATM (the source omits it); typed
    *  as `string | null` so a future populated value is not a breaking change. */
   address: string | null;
+  /** Present when a versioned evidence review corrected this record
+   *  (quality/overrides/). */
+  review_status?: "corrected";
+  reviewed_at?: string;
+  reviewed_by?: string;
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */
@@ -109,7 +121,7 @@ export interface EntityRef {
   count: number;
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus postal stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus postal stats. */
 export interface Metadata {
   package: "@geoalgeria/poste";
   schema_version: string;

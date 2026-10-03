@@ -1,0 +1,839 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 13,
+  "records": [
+    {
+      "id": "node/1103497525",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3631202,
+        34.9431447
+      ]
+    },
+    {
+      "id": "node/11405024772",
+      "amenity": "fuel",
+      "name": "محطة الوقود نفطال",
+      "name_ar": null,
+      "name_fr": "NAFTAL",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.025781,
+        34.9048457
+      ]
+    },
+    {
+      "id": "node/11405376672",
+      "amenity": "fuel",
+      "name": "مضخة طيبي",
+      "name_ar": null,
+      "name_fr": "Pompe Taibi",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0365354,
+        34.9095516
+      ]
+    },
+    {
+      "id": "node/1172285152",
+      "amenity": "fuel",
+      "name": "Bendi",
+      "name_ar": null,
+      "name_fr": "Bendi",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3204493,
+        34.8756728
+      ]
+    },
+    {
+      "id": "node/12830266595",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.2002054,
+        34.8705941
+      ]
+    },
+    {
+      "id": "node/1327026775",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        -1.7169311,
+        34.8430178
+      ]
+    },
+    {
+      "id": "node/1327027911",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        -1.6424753,
+        34.889376
+      ]
+    },
+    {
+      "id": "node/1955413885",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        -1.2200182,
+        34.9845659
+      ]
+    },
+    {
+      "id": "node/3200291700",
+      "amenity": "fuel",
+      "name": "محطة رزوڨ",
+      "name_ar": null,
+      "name_fr": "Station Rezzoug",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0516936,
+        34.8991431
+      ]
+    },
+    {
+      "id": "node/3205271985",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.5386505,
+        34.8250444
+      ]
+    },
+    {
+      "id": "node/3211284557",
+      "amenity": "fuel",
+      "name": "نفطال",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        -1.8811787,
+        34.8683958
+      ]
+    },
+    {
+      "id": "node/3265051168",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.2378888,
+        34.980809
+      ]
+    },
+    {
+      "id": "node/3325164457",
+      "amenity": "fuel",
+      "name": "Station Carburant Sidi Abdelli",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1349921,
+        35.0602415
+      ]
+    },
+    {
+      "id": "node/3667387564",
+      "amenity": "fuel",
+      "name": "نفطال",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        -1.7781453,
+        34.8386721
+      ]
+    },
+    {
+      "id": "node/3797547861",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3539625,
+        34.7954121
+      ]
+    },
+    {
+      "id": "node/3931522211",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0915313,
+        34.9959263
+      ]
+    },
+    {
+      "id": "node/3989110748",
+      "amenity": "fuel",
+      "name": "NAFTAL Bab Khroufa",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.7998934,
+        35.0845611
+      ]
+    },
+    {
+      "id": "node/4346725889",
+      "amenity": "fuel",
+      "name": "خدمات طوطال كورتس",
+      "name_ar": "خدمات طوطال كورتس",
+      "name_fr": "Total Quartz Services",
+      "brand": "Naftal",
+      "operator": "طوطال",
+      "opening_hours": "Sa-We 08:30-17:00; Th 08:30-12:30",
+      "coordinates": [
+        -1.2930517,
+        34.9120555
+      ]
+    },
+    {
+      "id": "node/4385359949",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.5217469,
+        34.8307087
+      ]
+    },
+    {
+      "id": "node/4465585389",
+      "amenity": "fuel",
+      "name": "محطة بنزين زدازي",
+      "name_ar": "محطة بنزين زدازي",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        -2.1002044,
+        34.9692044
+      ]
+    },
+    {
+      "id": "node/4672143390",
+      "amenity": "fuel",
+      "name": "محطة التزود بالوقود عين يوسف",
+      "name_ar": "محطة التزود بالوقود عين يوسف",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3712028,
+        35.0446548
+      ]
+    },
+    {
+      "id": "node/4693783843",
+      "amenity": "fuel",
+      "name": "Station-service Naftal",
+      "name_ar": "محطة خدمة نفطال",
+      "name_fr": "Station-service Naftal",
+      "brand": "Naftal",
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        -2.026533,
+        34.9596269
+      ]
+    },
+    {
+      "id": "node/472898028",
+      "amenity": "fuel",
+      "name": "NAFTAL RN 35",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "NAFTAL",
+      "opening_hours": null,
+      "coordinates": [
+        -1.5038289,
+        35.0480131
+      ]
+    },
+    {
+      "id": "node/4737208286",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3326755,
+        34.6373476
+      ]
+    },
+    {
+      "id": "node/4737240498",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3417616,
+        34.6302916
+      ]
+    },
+    {
+      "id": "node/4848434327",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3492887,
+        34.8787652
+      ]
+    },
+    {
+      "id": "node/4848434328",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.341531,
+        34.8638815
+      ]
+    },
+    {
+      "id": "node/4988930023",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3091743,
+        34.8947566
+      ]
+    },
+    {
+      "id": "node/5139687222",
+      "amenity": "fuel",
+      "name": "Hôtel Stambouli",
+      "name_ar": null,
+      "name_fr": "Hôtel Stambouli",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.302948,
+        34.8823814
+      ]
+    },
+    {
+      "id": "node/5139687223",
+      "amenity": "fuel",
+      "name": "Station Services Chekchou",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3024376,
+        34.8820685
+      ]
+    },
+    {
+      "id": "node/5930850891",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.2275416,
+        35.0689605
+      ]
+    },
+    {
+      "id": "node/6886254022",
+      "amenity": "fuel",
+      "name": "Station-service Naftal",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.4525516,
+        35.1508907
+      ]
+    },
+    {
+      "id": "node/6886254023",
+      "amenity": "fuel",
+      "name": "Station-service Naftal Ghorzi",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.4162343,
+        35.2129841
+      ]
+    },
+    {
+      "id": "way/1080147134",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3274592,
+        34.900679350000004
+      ]
+    },
+    {
+      "id": "way/1087727123",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3483716000000001,
+        34.915428649999996
+      ]
+    },
+    {
+      "id": "way/1090308520",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1857201000000002,
+        34.86783509999999
+      ]
+    },
+    {
+      "id": "way/1091957596",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.4205475,
+        34.8659582
+      ]
+    },
+    {
+      "id": "way/1093252289",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3095939,
+        34.8941188
+      ]
+    },
+    {
+      "id": "way/1098636489",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.2956434,
+        35.11293485
+      ]
+    },
+    {
+      "id": "way/1148195073",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        -1.67933775,
+        34.85952315
+      ]
+    },
+    {
+      "id": "way/1172403718",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.8349666500000001,
+        35.0926496
+      ]
+    },
+    {
+      "id": "way/1216226098",
+      "amenity": "fuel",
+      "name": "Station service Bab Khroufa",
+      "name_ar": null,
+      "name_fr": "Station service Bab Khroufa",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.7999101,
+        35.084462099999996
+      ]
+    },
+    {
+      "id": "way/314962138",
+      "amenity": "fuel",
+      "name": "Pompe à essence chiger",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.7324231499999998,
+        34.8559076
+      ]
+    },
+    {
+      "id": "way/413709981",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3493613,
+        34.87780255
+      ]
+    },
+    {
+      "id": "way/413709982",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3419949999999998,
+        34.90731425
+      ]
+    },
+    {
+      "id": "way/419587764",
+      "amenity": "fuel",
+      "name": "Station Service E. Leclerc",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.2956262,
+        34.9193348
+      ]
+    },
+    {
+      "id": "way/420529238",
+      "amenity": "fuel",
+      "name": "Station Service",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.42473965,
+        35.05092355
+      ]
+    },
+    {
+      "id": "way/420529262",
+      "amenity": "fuel",
+      "name": "Station Service",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.4329125500000002,
+        35.07209695
+      ]
+    },
+    {
+      "id": "way/430401787",
+      "amenity": "fuel",
+      "name": "Station Service Taher",
+      "name_ar": null,
+      "name_fr": "Station Service Taher",
+      "brand": "E.Leclerc",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.87126925,
+        35.0976606
+      ]
+    },
+    {
+      "id": "way/437387142",
+      "amenity": "fuel",
+      "name": "محطه وقود",
+      "name_ar": "محطه وقود",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -0.95504225,
+        34.92361485
+      ]
+    },
+    {
+      "id": "way/720373064",
+      "amenity": "fuel",
+      "name": "محطة بنزين نفطال",
+      "name_ar": "محطة بنزين نفطال",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        -2.2115627,
+        35.07303285
+      ]
+    },
+    {
+      "id": "way/720566946",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        -2.0351411500000003,
+        34.9710427
+      ]
+    },
+    {
+      "id": "way/735237046",
+      "amenity": "fuel",
+      "name": "محطة خدمة نفطال",
+      "name_ar": "محطة خدمة نفطال",
+      "name_fr": "Station Service Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        -1.439877,
+        35.109203949999994
+      ]
+    },
+    {
+      "id": "way/87265977",
+      "amenity": "fuel",
+      "name": "نفطال مرسى بن مهيدي",
+      "name_ar": "نفطال مرسى بن مهيدي",
+      "name_fr": "NAFTAL Marsa Benmhidi",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        -2.2109271,
+        35.072609549999996
+      ]
+    },
+    {
+      "id": "way/87999707",
+      "amenity": "fuel",
+      "name": "NAFTAL de Khouriba",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": "NAFTAL",
+      "opening_hours": null,
+      "coordinates": [
+        -1.7656252000000001,
+        35.0273311
+      ]
+    },
+    {
+      "id": "way/89554993",
+      "amenity": "fuel",
+      "name": "NAFTAL Tounane",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": "NAFTAL",
+      "opening_hours": null,
+      "coordinates": [
+        -1.8878431,
+        35.041554500000004
+      ]
+    },
+    {
+      "id": "way/90606895",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.38281975,
+        34.953323499999996
+      ]
+    },
+    {
+      "id": "way/90626015",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.4584584,
+        34.98466905
+      ]
+    },
+    {
+      "id": "way/93233870",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.87126925,
+        35.0976606
+      ]
+    }
+  ]
+}

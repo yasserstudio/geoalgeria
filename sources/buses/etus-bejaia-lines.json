@@ -1,0 +1,410 @@
+[
+  {
+    "geometry": "official_embedded_map_reference",
+    "map_id": "1lSsQzOo8pZY7ayY3y97O_X5Pn1_LkCc",
+    "map_receipt": {
+      "payload_bytes": 22506,
+      "payload_sha256": "c5bab266c1da7e30efac481942f05bc17f3f87af5b68e1e4668bd41a7f6f7918",
+      "retrieved_at": "2026-09-02T09:54:52.361Z",
+      "url": "https://www.google.com/maps/d/kml?mid=1lSsQzOo8pZY7ayY3y97O_X5Pn1_LkCc&forcekml=1"
+    },
+    "page_receipt": {
+      "payload_bytes": 17912,
+      "payload_sha256": "f69f1b3f652a123b35afe248b1d0b5934898c708ddbb3d1aae6d1c64e22d2494",
+      "retrieved_at": "2026-09-02T09:54:51.965Z",
+      "url": "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=ligne1&_fields=id,modified,link,title,content"
+    },
+    "page_url": "https://etusbejaia.dz/ligne1/",
+    "ref": "1",
+    "round_trip_km": 18,
+    "service_hours": [
+      {
+        "days": [
+          "saturday",
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "first_departure": "06:30",
+        "last_departure": "18:20",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "first_departure": null,
+        "last_departure": null,
+        "operates": false,
+        "period": "friday"
+      }
+    ],
+    "source_title": "LIGNE  1 : GARE ROUTIERE / ADRAR OUFARNOU",
+    "stop_count": 6,
+    "stop_count_kind": "major",
+    "terminus1": "GARE ROUTIERE",
+    "terminus2": "ADRAR OUFARNOU",
+    "timetable_receipts": [
+      {
+        "payload_bytes": 38014,
+        "payload_sha256": "4e811cf6244a5551412b9d47d1525b9099cc2954d4911e199d26ef3deac40589",
+        "retrieved_at": "2026-09-02T09:54:56.784Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/1.png"
+      },
+      {
+        "payload_bytes": 32784,
+        "payload_sha256": "b089029d25dde58ad240bad12e89e3de73e65318926d25d09a3229dc22ebb553",
+        "retrieved_at": "2026-09-02T09:54:57.127Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/9.png"
+      },
+      {
+        "payload_bytes": 34592,
+        "payload_sha256": "bd172f004ec086b34d4a836ecd985aec745cbeb85bfd4a7f4e555897d2a0d6dc",
+        "retrieved_at": "2026-09-02T09:54:57.303Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/10.png"
+      }
+    ]
+  },
+  {
+    "geometry": "official_embedded_map_reference",
+    "map_id": "1VK-8bdLxv9AC0zifGTHiTNpYkadihcc",
+    "map_receipt": {
+      "payload_bytes": 16247,
+      "payload_sha256": "1b780df8f46e997387511dc34d691bffa9cfee38c663b69d43daf46d9e1024c6",
+      "retrieved_at": "2026-09-02T09:54:53.426Z",
+      "url": "https://www.google.com/maps/d/kml?mid=1VK-8bdLxv9AC0zifGTHiTNpYkadihcc&forcekml=1"
+    },
+    "page_receipt": {
+      "payload_bytes": 17348,
+      "payload_sha256": "c65aabffee207fbf059180479639b11edd8ed92cce924d62a5fd64c346362edf",
+      "retrieved_at": "2026-09-02T09:54:53.142Z",
+      "url": "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=ligne2&_fields=id,modified,link,title,content"
+    },
+    "page_url": "https://etusbejaia.dz/ligne2/",
+    "ref": "2",
+    "round_trip_km": 11,
+    "service_hours": [
+      {
+        "days": [
+          "saturday",
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "first_departure": "05:50",
+        "last_departure": "18:50",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "first_departure": "06:15",
+        "last_departure": "18:05",
+        "operates": true,
+        "period": "friday"
+      }
+    ],
+    "source_title": "LIGNE 2 : GARE ROUTIERE / UNIVERSITE",
+    "stop_count": 12,
+    "stop_count_kind": "total",
+    "terminus1": "GARE ROUTIERE",
+    "terminus2": "UNIVERSITE",
+    "timetable_receipts": [
+      {
+        "payload_bytes": 40649,
+        "payload_sha256": "db0bea397824682d0774260f3c89c49e3d3b23104363bb838eb928bfea73768e",
+        "retrieved_at": "2026-09-02T09:54:57.396Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/0.png"
+      },
+      {
+        "payload_bytes": 27331,
+        "payload_sha256": "aa49d2275b576b733969e37f116a79553ce651820599708583c2f5f909dd917e",
+        "retrieved_at": "2026-09-02T09:54:57.485Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/10-1.png"
+      },
+      {
+        "payload_bytes": 29323,
+        "payload_sha256": "17886898537bbb7ed83285b961f6eb177eb5c40a740b905203668063d170bd96",
+        "retrieved_at": "2026-09-02T09:54:57.572Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/13.png"
+      }
+    ]
+  },
+  {
+    "geometry": "official_embedded_map_reference",
+    "map_id": "1sTCj6svdW1NKRiplo19ZnBAxfB_N5C4",
+    "map_receipt": {
+      "payload_bytes": 13351,
+      "payload_sha256": "d206968914bbfea073d64b9186d4d8c279a6c82003cd954aea647e0bcf49119d",
+      "retrieved_at": "2026-09-02T09:54:54.449Z",
+      "url": "https://www.google.com/maps/d/kml?mid=1sTCj6svdW1NKRiplo19ZnBAxfB_N5C4&forcekml=1"
+    },
+    "page_receipt": {
+      "payload_bytes": 18609,
+      "payload_sha256": "8cc5a47a915db4824b147c50fa27530c28a8a5cf27456c7f73ca7dc71bb14712",
+      "retrieved_at": "2026-09-02T09:54:54.168Z",
+      "url": "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=ligne3&_fields=id,modified,link,title,content"
+    },
+    "page_url": "https://etusbejaia.dz/ligne3/",
+    "ref": "3",
+    "round_trip_km": 8.7,
+    "service_hours": [
+      {
+        "days": [
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "first_departure": "05:50",
+        "last_departure": "18:50",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "first_departure": "06:15",
+        "last_departure": "18:05",
+        "operates": true,
+        "period": "friday"
+      },
+      {
+        "days": [
+          "saturday"
+        ],
+        "first_departure": "06:00",
+        "last_departure": "18:50",
+        "operates": true,
+        "period": "saturday"
+      }
+    ],
+    "source_title": "LIGNE 3 : GARE ROUTIERE / BVD AMIROUCHE",
+    "stop_count": 10,
+    "stop_count_kind": "total",
+    "terminus1": "GARE ROUTIERE",
+    "terminus2": "BVD AMIROUCHE",
+    "timetable_receipts": [
+      {
+        "payload_bytes": 36665,
+        "payload_sha256": "766a68d7ad65c7df295660a71a17d8cd73de7b228138f75c6cf1b6852b8b7c19",
+        "retrieved_at": "2026-09-02T09:54:57.661Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/8.png"
+      },
+      {
+        "payload_bytes": 27331,
+        "payload_sha256": "74254e7c01ac62c034dac27f51cd93ccee7b9da9889f4113f337f61454733e99",
+        "retrieved_at": "2026-09-02T09:54:57.748Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/10-2.png"
+      },
+      {
+        "payload_bytes": 29323,
+        "payload_sha256": "d0311fa2149fc9f1e0255ff6e15c5c82a6eeea5c034ad9cc54857f02c0eee57d",
+        "retrieved_at": "2026-09-02T09:54:57.839Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/13-1.png"
+      },
+      {
+        "payload_bytes": 29528,
+        "payload_sha256": "4005bdbae458b80eb47180f262a8474e12dbdf84f1db703159576ac86a4aa1c9",
+        "retrieved_at": "2026-09-02T09:54:57.926Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/15.png"
+      }
+    ]
+  },
+  {
+    "geometry": "official_embedded_map_reference",
+    "map_id": "1_hnbjP6GLHh9pMQHiO7l5eiaTtkE8jw",
+    "map_receipt": {
+      "payload_bytes": 21086,
+      "payload_sha256": "b1b5fd53db9c0ab55dc7674197bf48be4eb247294f1c02867cf775a8d0fea531",
+      "retrieved_at": "2026-09-02T09:54:55.563Z",
+      "url": "https://www.google.com/maps/d/kml?mid=1_hnbjP6GLHh9pMQHiO7l5eiaTtkE8jw&forcekml=1"
+    },
+    "page_receipt": {
+      "payload_bytes": 17347,
+      "payload_sha256": "41b5de703279027f3889fc916538312dc292e51121102e6e3c188fe5de48ab20",
+      "retrieved_at": "2026-09-02T09:54:55.221Z",
+      "url": "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=ligne4&_fields=id,modified,link,title,content"
+    },
+    "page_url": "https://etusbejaia.dz/ligne4/",
+    "ref": "4",
+    "round_trip_km": 15,
+    "service_hours": [
+      {
+        "days": [
+          "saturday",
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "first_departure": "05:50",
+        "last_departure": "18:30",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "first_departure": "07:00",
+        "last_departure": "18:30",
+        "operates": true,
+        "period": "friday"
+      }
+    ],
+    "source_title": "LIGNE 4 : GERE ROUTIERE / SIDI AHMED",
+    "stop_count": 14,
+    "stop_count_kind": "total",
+    "terminus1": "GARE ROUTIERE",
+    "terminus2": "SIDI AHMED",
+    "timetable_receipts": [
+      {
+        "payload_bytes": 40649,
+        "payload_sha256": "14bf11fa0717b9e967c7c9bcc69b1f639877fe775051a265015b4d00874e11a5",
+        "retrieved_at": "2026-09-02T09:54:58.016Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/8-1.png"
+      },
+      {
+        "payload_bytes": 32687,
+        "payload_sha256": "45d5ebce847896136d798cf9ac3a9c32da281097ba5a98429813fb242c298f0e",
+        "retrieved_at": "2026-09-02T09:54:58.107Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/11.png"
+      },
+      {
+        "payload_bytes": 34018,
+        "payload_sha256": "763ad138adbf7ee1be4cd1255a81561ea00f35a0b695a85fe71dd558b2b2514c",
+        "retrieved_at": "2026-09-02T09:54:58.198Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/14.png"
+      }
+    ]
+  },
+  {
+    "geometry": "official_embedded_map_reference",
+    "map_id": "1YX4Zd8vFfkPXSMeXOfuo1IlDtcmSe-4",
+    "map_receipt": {
+      "payload_bytes": 22857,
+      "payload_sha256": "438474835a7082a3db091163dbe7c0d0243b31b47f94d0753a591ee5dd326d2d",
+      "retrieved_at": "2026-09-02T09:54:56.609Z",
+      "url": "https://www.google.com/maps/d/kml?mid=1YX4Zd8vFfkPXSMeXOfuo1IlDtcmSe-4&forcekml=1"
+    },
+    "page_receipt": {
+      "payload_bytes": 27729,
+      "payload_sha256": "869b4746ab0d8f3f1c58ea6bdf6b5009f7ce0e43033b6c897f1771e0c3c89874",
+      "retrieved_at": "2026-09-02T09:54:56.318Z",
+      "url": "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=ligne5&_fields=id,modified,link,title,content"
+    },
+    "page_url": "https://etusbejaia.dz/ligne5/",
+    "ref": "5",
+    "round_trip_km": 34,
+    "service_hours": [
+      {
+        "days": [
+          "saturday",
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "direction_from": "GARE ROUTIERE",
+        "direction_to": "IGHZER OUZARIF",
+        "first_departure": "06:30",
+        "last_departure": "20:00",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "direction_from": "GARE ROUTIERE",
+        "direction_to": "IGHZER OUZARIF",
+        "first_departure": "06:30",
+        "last_departure": "17:30",
+        "operates": true,
+        "period": "friday"
+      },
+      {
+        "days": [
+          "saturday",
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "direction_from": "IGHZER OUZARIF",
+        "direction_to": "GARE ROUTIERE",
+        "first_departure": "05:10",
+        "last_departure": "20:45",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "direction_from": "IGHZER OUZARIF",
+        "direction_to": "GARE ROUTIERE",
+        "first_departure": "06:45",
+        "last_departure": "17:30",
+        "operates": true,
+        "period": "friday"
+      }
+    ],
+    "source_title": "LIGNE 5 : GARE ROUTIERE / IGHER OUZARIF",
+    "stop_count": 11,
+    "stop_count_kind": "total",
+    "terminus1": "GARE ROUTIERE",
+    "terminus2": "IGHZER OUZARIF",
+    "timetable_receipts": [
+      {
+        "payload_bytes": 40649,
+        "payload_sha256": "2b01e2420c84f310c01fdda76fdc165ebff5c668580b1fa7b760ae72e83db393",
+        "retrieved_at": "2026-09-02T09:54:58.285Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/8.png"
+      },
+      {
+        "payload_bytes": 32588,
+        "payload_sha256": "a023445d0f735f025cd67c91a189a20cff48962c34e077d7a284a11deb62449e",
+        "retrieved_at": "2026-09-02T09:54:58.376Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/11.png"
+      },
+      {
+        "payload_bytes": 34669,
+        "payload_sha256": "9bff689883138b06245fbec8887f46a19ba765b73f1f03ecf733e357db6d3f95",
+        "retrieved_at": "2026-09-02T09:54:58.467Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/13.png"
+      },
+      {
+        "payload_bytes": 40649,
+        "payload_sha256": "8cfb888a52d092b0a873c321ab976171e0aba87206b2605d0cbadcd7c5a678d1",
+        "retrieved_at": "2026-09-02T09:54:58.555Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/8_(1).png"
+      },
+      {
+        "payload_bytes": 24141,
+        "payload_sha256": "ddfc48a1243bfce96bd7908571bfa272601a6638d84d0febbfbd7a332568894d",
+        "retrieved_at": "2026-09-02T09:54:58.644Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/Circulation-1.png"
+      },
+      {
+        "payload_bytes": 34262,
+        "payload_sha256": "37461ca44c2f98afe57cbe2ce71183facde8240bdf0bca889093ca6576b55c0c",
+        "retrieved_at": "2026-09-02T09:54:58.733Z",
+        "url": "https://etusbejaia.dz/wp-content/uploads/photo-gallery/13_(1).png"
+      }
+    ]
+  }
+]

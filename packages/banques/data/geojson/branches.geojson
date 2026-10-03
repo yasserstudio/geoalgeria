@@ -2856,23 +2856,23 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.057756,
-          36.77193
+          3.059089422094985,
+          36.77145887306215
         ]
       },
       "properties": {
         "id": "albaraka-33",
-        "name": "Agence El-Khettabi 101",
+        "name": "Agence Amirouche 101",
         "wilaya_code": "16",
         "commune_code": null,
         "commune": null,
-        "lat": 36.77193,
-        "lng": 3.057756,
+        "lat": 36.77145887306215,
+        "lng": 3.059089422094985,
         "geo_precision": "exact",
         "geo_method": "bank_locator",
         "source": "bank_locator",
         "bank_id": "albaraka",
-        "address": "9, rue Emir El-Khettabi, Alger Centre - Alger",
+        "address": "5 Boulevard Colonel Amirouche, La Grande Poste, Alger-Centre, Alger, Daïra Sidi M'Hamed, Alger, 16000, Algérie",
         "phone": null
       }
     },
@@ -2906,8 +2906,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.1681918,
-          36.7291687
+          3.277094006734842,
+          36.740027618891475
         ]
       },
       "properties": {
@@ -2916,8 +2916,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": null,
-        "lat": 36.7291687,
-        "lng": 3.1681918,
+        "lat": 36.740027618891475,
+        "lng": 3.277094006734842,
         "geo_precision": "exact",
         "geo_method": "bank_locator",
         "source": "bank_locator",
@@ -10906,6 +10906,70 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          4.8562265,
+          36.6797911
+        ]
+      },
+      "properties": {
+        "id": "bdl-142",
+        "name": "EL KSEUR",
+        "wilaya_code": "06",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.6797911,
+        "lng": 4.8562265,
+        "geo_precision": "approximate",
+        "geo_method": "osm_way",
+        "source": "bank_locator",
+        "bank_id": "bdl",
+        "address": "RUE ATTIR SALAH",
+        "phone": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+          "https://www.openstreetmap.org/way/1172539020"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.1251352,
+          36.8914736
+        ]
+      },
+      "properties": {
+        "id": "bdl-144",
+        "name": "TIGZIRT",
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.8914736,
+        "lng": 4.1251352,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "bank_locator",
+        "bank_id": "bdl",
+        "address": "CITÉ 150 LOGTS, TIGZIRT",
+        "phone": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+          "https://www.openstreetmap.org/node/4334599299"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           4.0357937,
           36.7093938
         ]
@@ -10974,6 +11038,38 @@
         "bank_id": "bdl",
         "address": "03, PLACE EMIR ABDELKADER ALGER",
         "phone": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.41712,
+          36.5128396
+        ]
+      },
+      "properties": {
+        "id": "bdl-182",
+        "name": "HADJOUT",
+        "wilaya_code": "42",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.5128396,
+        "lng": 2.41712,
+        "geo_precision": "approximate",
+        "geo_method": "osm_way",
+        "source": "bank_locator",
+        "bank_id": "bdl",
+        "address": "63 FETTAKA ALI HADJOUT TIPAZA",
+        "phone": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+          "https://www.openstreetmap.org/way/1202402578"
+        ]
       }
     },
     {
@@ -11156,6 +11252,70 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          0.4145834,
+          36.0974362
+        ]
+      },
+      "properties": {
+        "id": "bdl-424",
+        "name": "SIDI ALI",
+        "wilaya_code": "27",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.0974362,
+        "lng": 0.4145834,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "bank_locator",
+        "bank_id": "bdl",
+        "address": "01, BVD DU 1ER NOVEMBRE SIDI ALI",
+        "phone": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+          "https://www.openstreetmap.org/node/3692424906"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.9163278,
+          35.9605357
+        ]
+      },
+      "properties": {
+        "id": "bdl-433",
+        "name": "OUED RHIOU",
+        "wilaya_code": "48",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.9605357,
+        "lng": 0.9163278,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "bank_locator",
+        "bank_id": "bdl",
+        "address": "RUE TAZGHAIT DJILALI OUED RHIOU",
+        "phone": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+          "https://www.openstreetmap.org/node/3139374641"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.1338498,
           35.4006543
         ]
@@ -11256,6 +11416,2232 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.0269546,
+          36.7483061
+        ]
+      },
+      "properties": {
+        "id": "bea-agence_Hydra-0",
+        "name": "وكالة حيدرة",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7483061,
+        "lng": 3.0269546,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "جنان الملك حيدرة، الجزائر",
+        "phone": "021546006"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0620461999999997,
+          36.7822617
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_est-0-agences-2",
+        "name": "غيفارا",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7822617,
+        "lng": 3.0620461999999997,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "06، شارع تشي غيفارا، الجزائر",
+        "phone": "02143937780"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1624651999999998,
+          36.7313038
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_est-0-agences-3",
+        "name": "قصر المعارض",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7313038,
+        "lng": 3.1624651999999998,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "بنز البحرية ص.ب 49، الجزائر",
+        "phone": "023795478"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0570478,
+          36.7706746
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_est-0-agences-4",
+        "name": "حماني",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7706746,
+        "lng": 3.0570478,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "01 شارع عرزقي حماني، الجزائر",
+        "phone": "023492252"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0623348999999997,
+          36.7520093
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_est-0-agences-5",
+        "name": "بلكور",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7520093,
+        "lng": 3.0623348999999997,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "118 شارع محمد بلعيد بلكور، الجزائر",
+        "phone": "023513830"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0954626999999997,
+          36.7439214
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_est-0-agences-6",
+        "name": "حسين داي",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7439214,
+        "lng": 3.0954626999999997,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "33 شارع طرابلسي حسين داي، الجزائر",
+        "phone": "023771666"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1376625,
+          36.7209669
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_est-0-agences-7",
+        "name": "الحراش",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7209669,
+        "lng": 3.1376625,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "14 شارع عون أحمد الحراش",
+        "phone": "023621128"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0596617,
+          36.7603915
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_est-0-agences-8",
+        "name": "حسيبة بن بوعلي",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7603915,
+        "lng": 3.0596617,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "88 شارع حسيبة بن بوعلي، الجزائر",
+        "phone": "021662090"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0581524,
+          36.770866
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_ouest-0-agences-1",
+        "name": "عميروش",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.770866,
+        "lng": 3.0581524,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "11، شارع العقيد عميروش، الجزائر",
+        "phone": "021643494"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.058592,
+          36.774632
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_ouest-0-agences-2",
+        "name": "بن مهيدي",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.774632,
+        "lng": 3.058592,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "49، شارع العربي بن مهيدي، الجزائر",
+        "phone": "021737973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9867703999999997,
+          36.7498775
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_ouest-0-agences-4",
+        "name": "دالي إبراهيم",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7498775,
+        "lng": 2.9867703999999997,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "36، الطريق الوطني - دالي إبراهيم، الجزائر",
+        "phone": "023312718"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0897411999999997,
+          36.6717909
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_ouest-0-agences-5",
+        "name": "براقي",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.6717909,
+        "lng": 3.0897411999999997,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "06، شارع محمد بلعربي براقي",
+        "phone": "023914881"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0617937,
+          36.7390249
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_ouest-0-agences-6",
+        "name": "بئر مراد رايس (رافين)",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7390249,
+        "lng": 3.0617937,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "48، شارع الإخوة بوعدو برج موراد رايس (رافين)، الجزائر",
+        "phone": "023569249"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0473130000000004,
+          36.754601799999996
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_ouest-0-agences-7",
+        "name": "الجزائر",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.754601799999996,
+        "lng": 3.0473130000000004,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "20، شارع سويداني بوجمعة، الجزائر",
+        "phone": "023473629"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0608218999999997,
+          36.7737466
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_ouest-0-agences-8",
+        "name": "زيغود المرادية",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7737466,
+        "lng": 3.0608218999999997,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "21، شارع زيغود يوسف، وسط الجزائر",
+        "phone": "023509780"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0344644000000005,
+          36.7272866
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_ouest-0-agences-9",
+        "name": "حيدرة الورود",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7272866,
+        "lng": 3.0344644000000005,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "الإقامة الورود طريق بورساس، حيدرة، الجزائر",
+        "phone": "023230743"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0440369,
+          36.7135986
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_peripherie-0-agences-10",
+        "name": "تيزي وزو 2",
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7135986,
+        "lng": 4.0440369,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "موقع إنييم شارع ستيتي علي، تيزي وزو",
+        "phone": "026196395"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0483138,
+          36.7152057
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_peripherie-0-agences-3",
+        "name": "تيزي وزو 1",
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7152057,
+        "lng": 4.0483138,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "66 شارع هواري بومدين تيزي وزو",
+        "phone": "026123805"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2842255,
+          36.7285653
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_peripherie-0-agences-4",
+        "name": "الرويبة الكنز",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7285653,
+        "lng": 3.2842255,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "15، شارع العقيد عميروش الرويبة",
+        "phone": "023716144"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.1425564999999995,
+          36.6995508
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_peripherie-0-agences-5",
+        "name": "وادي عيسي موقع إنييم",
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.6995508,
+        "lng": 4.1425564999999995,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "موقع إنييم مركز تاجا - وادي عيسي تيزي وزو",
+        "phone": "026413299"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8891301,
+          36.7563439
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_peripherie-0-agences-6",
+        "name": "سطاوالي سابقا زرالدة",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7563439,
+        "lng": 2.8891301,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "64، شارع خياطي أحمد سطاوالي الجزائر",
+        "phone": "020325058"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0007528,
+          36.7146379
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_peripherie-0-agences-7",
+        "name": "درارية",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7146379,
+        "lng": 3.0007528,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "القطعة F رقم 48 درارية الجزائر",
+        "phone": "023349371"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.4615926000000004,
+          36.750174
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_peripherie-0-agences-8",
+        "name": "بومرداس",
+        "wilaya_code": "35",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.750174,
+        "lng": 3.4615926000000004,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "المبنى A ، وادي تاتريغ بومرداس",
+        "phone": "024941603"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4550369,
+          36.5888142
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_alger_peripherie-0-agences-9",
+        "name": "تيبازة",
+        "wilaya_code": "42",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.5888142,
+        "lng": 2.4550369,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "تجزئة عبان رمضان بلدية تيبازة",
+        "phone": "024371885"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7620021999999995,
+          36.909489199999996
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_annaba-0-agences-1",
+        "name": "عنابة طارق بن زياد",
+        "wilaya_code": "23",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.909489199999996,
+        "lng": 7.7620021999999995,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "19، شارع 1 نوفمبر 1954 عنابة",
+        "phone": "038450632"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.1128854,
+          35.4075406
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_annaba-0-agences-2",
+        "name": "تبسة",
+        "wilaya_code": "12",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.4075406,
+        "lng": 8.1128854,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "طريق الأمير عبد القادر تبسة",
+        "phone": "037582279"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.912463499999999,
+          36.8712911
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_annaba-0-agences-3",
+        "name": "سكيكدة",
+        "wilaya_code": "21",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.8712911,
+        "lng": 6.912463499999999,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "الأليّات 20 أوت 1955 سكيكدة",
+        "phone": "038721844"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.421503599999999,
+          36.4603694
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_annaba-0-agences-4",
+        "name": "قالمة",
+        "wilaya_code": "24",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.4603694,
+        "lng": 7.421503599999999,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع علي شرفي قالمة",
+        "phone": "037150341"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.9462977,
+          36.284848
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_annaba-0-agences-5",
+        "name": "سوق أهراس",
+        "wilaya_code": "41",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.284848,
+        "lng": 7.9462977,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع 1 نوفمبر 1954 سوق أهراس",
+        "phone": "037824771"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.700941599999999,
+          36.793430799999996
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_annaba-0-agences-6",
+        "name": "عنابة الحجار موقع ميتال ستيل",
+        "wilaya_code": "23",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.793430799999996,
+        "lng": 7.700941599999999,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "المركب الصناعي الحديدي الحجار عنابة",
+        "phone": "038982086"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.764760299999999,
+          36.8708676
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_annaba-0-agences-7",
+        "name": "عنابة (البوني)",
+        "wilaya_code": "23",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.8708676,
+        "lng": 7.764760299999999,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "مجمع ASMIDAL طريق الملاحات البوني عنابة",
+        "phone": "038594086"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9745699,
+          36.8706039
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_annaba-0-agences-8",
+        "name": "سكيكدة موقع سوناطراك",
+        "wilaya_code": "21",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.8706039,
+        "lng": 6.9745699,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "موقع سوناطراك سكيكدة",
+        "phone": "038948314"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.742667300000001,
+          36.914208099999996
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_annaba-0-agences-9",
+        "name": "عنابة إليزا",
+        "wilaya_code": "23",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.914208099999996,
+        "lng": 7.742667300000001,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "122، شارع معطار الأخضر عنابة",
+        "phone": "038453770"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9469612,
+          36.5554974
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_blida-0-agences-1",
+        "name": "بوفاريك",
+        "wilaya_code": "09",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.5554974,
+        "lng": 2.9469612,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "3، شارع سويداني بوجمعة بوفاريك",
+        "phone": "025481985"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.9532323000000003,
+          36.2566993
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_blida-0-agences-10",
+        "name": "عين الدفلى",
+        "wilaya_code": "44",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.2566993,
+        "lng": 1.9532323000000003,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع الأمير عبد القادر، قطعة رقم 72 طريق 104 عين الدفلى",
+        "phone": "027501765"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8094498999999997,
+          36.4765273
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_blida-0-agences-2",
+        "name": "البليدة 1",
+        "wilaya_code": "09",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.4765273,
+        "lng": 2.8094498999999997,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "10 شارع لياشي عبد الله البليدة",
+        "phone": "025214419"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8631960999999997,
+          36.5231308
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_blida-0-agences-3",
+        "name": "بني مراد",
+        "wilaya_code": "09",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.5231308,
+        "lng": 2.8631960999999997,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "ص.ب رقم 04 بني مراد البليدة",
+        "phone": "025276827"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7586773,
+          36.2636153
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_blida-0-agences-4",
+        "name": "المدية",
+        "wilaya_code": "26",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.2636153,
+        "lng": 2.7586773,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع أحمد فرح المدية",
+        "phone": "025804101"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2407645,
+          34.6565674
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_blida-0-agences-6",
+        "name": "الجلفة",
+        "wilaya_code": "17",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.6565674,
+        "lng": 3.2407645,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "مدينة بن ربيح الجلفة",
+        "phone": "027938745"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3356211,
+          36.165375
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_blida-0-agences-7",
+        "name": "الشلف",
+        "wilaya_code": "02",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.165375,
+        "lng": 1.3356211,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "17، شارع العقيد بونعامة الشلف",
+        "phone": "044359149"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8579687,
+          36.497469099999996
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_blida-0-agences-8",
+        "name": "أولاد يعيش",
+        "wilaya_code": "09",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.497469099999996,
+        "lng": 2.8579687,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "21 شارع الشهداء أولاد يعيش البليدة",
+        "phone": "025262295"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8243687,
+          36.4828787
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_blida-0-agences-9",
+        "name": "البليدة 2",
+        "wilaya_code": "09",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.4828787,
+        "lng": 2.8243687,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "المركز متعدد الخدمات، المبنى رقم 01، شارع محمد بوضياف بليدة",
+        "phone": "025226937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7658793,
+          36.8246147
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_constantine-0-agences-1",
+        "name": "جيجل أمير عبد القادر",
+        "wilaya_code": "18",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.8246147,
+        "lng": 5.7658793,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "47 شارع أمير عبد القادر، جيجل",
+        "phone": "044499657"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.771703400000001,
+          36.812745299999996
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_constantine-0-agences-2",
+        "name": "جيجل (المركز)",
+        "wilaya_code": "18",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.812745299999996,
+        "lng": 5.771703400000001,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "طريق قسنطينة، جيجل",
+        "phone": "034471340"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.693032199999999,
+          36.2636548
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_constantine-0-agences-3",
+        "name": "قسنطينة خميستي",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.2636548,
+        "lng": 6.693032199999999,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع خميستي وبستانجي محمد رقم 01، قسنطينة",
+        "phone": "031871306"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.130758999999999,
+          35.8627074
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_constantine-0-agences-4",
+        "name": "أم البواقي",
+        "wilaya_code": "04",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.8627074,
+        "lng": 7.130758999999999,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع 1 نوفمبر، 50 مسكن، أم البواقي",
+        "phone": "032541685"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.156470199999999,
+          35.5423652
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_constantine-0-agences-5",
+        "name": "باتنة لا فيردور",
+        "wilaya_code": "05",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.5423652,
+        "lng": 6.156470199999999,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع عبد الصمد عبد السلام، لا فيردور، باتنة",
+        "phone": "033807323"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.174758,
+          35.5355017
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_constantine-0-agences-6",
+        "name": "باتنة بوعكال",
+        "wilaya_code": "05",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.5355017,
+        "lng": 6.174758,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "حي 742 مسكن، بوعكال، باتنة",
+        "phone": "033853848"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.276430500000001,
+          36.754501999999995
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_constantine-0-agences-7",
+        "name": "الميلية",
+        "wilaya_code": "18",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.754501999999995,
+        "lng": 6.276430500000001,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "ساحة الشهداء، الميلية",
+        "phone": "034429480"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.638871,
+          36.3569496
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_constantine-0-agences-8",
+        "name": "قسنطينة سي الحواس",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.3569496,
+        "lng": 6.638871,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "ساحة العقيد سي الحواس",
+        "phone": "031874614"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.578917199999999,
+          36.256694599999996
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_constantine-0-agences-9",
+        "name": "قسنطينة الباي",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.256694599999996,
+        "lng": 6.578917199999999,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "نويفيل علي مندجلي، وحدة الجوار UV 7، قسنطينة",
+        "phone": "031776910"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1394272,
+          35.395451900000005
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_mostaganem-0-agences-1",
+        "name": "معسكر",
+        "wilaya_code": "29",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.395451900000005,
+        "lng": 0.1394272,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع 1 نوفمبر معسكر",
+        "phone": "045752942"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3217428999999998,
+          35.370921599999996
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_mostaganem-0-agences-2",
+        "name": "تيارت",
+        "wilaya_code": "14",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.370921599999996,
+        "lng": 1.3217428999999998,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "02، شارع ابن باديس تيارت",
+        "phone": "046205635"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3143392,
+          35.8486317
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_mostaganem-0-agences-3",
+        "name": "أرزيو المرسى",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.8486317,
+        "lng": -0.3143392,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "11، شارع محمد فرطاس أرزيو وهران",
+        "phone": "041791176"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.5536844,
+          35.7421185
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_mostaganem-0-agences-5",
+        "name": "غليزان",
+        "wilaya_code": "48",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.7421185,
+        "lng": 0.5536844,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "زاوية السد غليزان",
+        "phone": "046715356"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3131278,
+          35.8554275
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_mostaganem-0-agences-6",
+        "name": "أرزيو المدينة",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.8554275,
+        "lng": -0.3131278,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "الشارع الثاني حدائق أرزيو",
+        "phone": "041792844"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.315984,
+          35.372446499999995
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_mostaganem-0-agences-9",
+        "name": "تيارت تور",
+        "wilaya_code": "14",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.372446499999995,
+        "lng": 1.315984,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "02، شارع غلام الله نور الدين، طريق الجزائر تيارت",
+        "phone": "046214001"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6387292,
+          35.704387
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_oran-0-agences-2",
+        "name": "وهران خميستي",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.704387,
+        "lng": -0.6387292,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "05، ساحة كايلا وهران",
+        "phone": "041336026"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.2140398,
+          31.6190312
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_oran-0-agences-3",
+        "name": "بشار",
+        "wilaya_code": "08",
+        "commune_code": null,
+        "commune": null,
+        "lat": 31.6190312,
+        "lng": -2.2140398,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "37، شارع العقيد لطفي بشار",
+        "phone": "049220772"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6432853,
+          35.686879499999996
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_oran-0-agences-4",
+        "name": "وهران يوغوسلافيا",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.686879499999996,
+        "lng": -0.6432853,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع الشيخ ميديوي وهران",
+        "phone": "041232491"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6312091000000001,
+          35.6933003
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_oran-0-agences-5",
+        "name": "وهران موقع SNS",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.6933003,
+        "lng": -0.6312091000000001,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "02، شارع الشهداء وهران",
+        "phone": "041246642"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6011149,
+          35.6952138
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_oran-0-agences-6",
+        "name": "وهران الجمال",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.6952138,
+        "lng": -0.6011149,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "حي جمال الدين الأفغاني وهران",
+        "phone": "041858186"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6251021999999999,
+          35.7070626
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_oran-0-agences-7",
+        "name": "وهران زبانا",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.7070626,
+        "lng": -0.6251021999999999,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "برج شريف، حي الأميرية شارع أولد قبليّة صالحة وهران",
+        "phone": "041858184"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.9012594,
+          36.370923999999995
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_setif-0-agences-1",
+        "name": "البويرة",
+        "wilaya_code": "10",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.370923999999995,
+        "lng": 3.9012594,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "11، شارع أبان رمضان البويرة",
+        "phone": "026748346"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0611761,
+          34.4303855
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_setif-0-agences-11",
+        "name": "أولاد جلال",
+        "wilaya_code": "51",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.4303855,
+        "lng": 5.0611761,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "التعاونية العقارية منظر جميل رقم 13 بلدية أولاد جلال",
+        "phone": "033670900"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0563082999999995,
+          36.750710999999995
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_setif-0-agences-2",
+        "name": "بجاية سي الحواس",
+        "wilaya_code": "06",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.750710999999995,
+        "lng": 5.0563082999999995,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "11، شارع سي الحواس - بجاية",
+        "phone": "034174355"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0475124,
+          36.7364713
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_setif-0-agences-3",
+        "name": "بجاية إحّدادين",
+        "wilaya_code": "06",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7364713,
+        "lng": 5.0475124,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع كريم بلقاسم بجاية",
+        "phone": "034120127"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.528293000000001,
+          35.7150585
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_setif-0-agences-4",
+        "name": "المسيلة",
+        "wilaya_code": "28",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.7150585,
+        "lng": 4.528293000000001,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "حي 206 سكنات - المسيلة",
+        "phone": "035370719"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4094923999999995,
+          36.1904849
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_setif-0-agences-5",
+        "name": "سطيف بل إير",
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.1904849,
+        "lng": 5.4094923999999995,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع جيش التحرير الوطني طريق بجاية سطيف",
+        "phone": "036613396"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7732098,
+          34.825114899999996
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_setif-0-agences-6",
+        "name": "بسكرة",
+        "wilaya_code": "07",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.825114899999996,
+        "lng": 5.7732098,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع ابن باديس وسي الحواس بسكرة",
+        "phone": "033537217"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.754923499999999,
+          36.0653873
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_setif-0-agences-7",
+        "name": "برج بوعريرج",
+        "wilaya_code": "34",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.0653873,
+        "lng": 4.754923499999999,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع محمد مقدمي برج بوعريرج",
+        "phone": "035764028"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.1693536,
+          35.2035275
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_setif-0-agences-8",
+        "name": "بوعسادة",
+        "wilaya_code": "68",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.2035275,
+        "lng": 4.1693536,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "المركز التجاري بوعسادة، المسيلة",
+        "phone": "035434111",
+        "source_wilaya_code": "28"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.6860471,
+          36.1521434
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_setif-0-agences-9",
+        "name": "الأولمة",
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.1521434,
+        "lng": 5.6860471,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع أونيس حملاوي قطعة رقم 43، الأولمة، سطيف",
+        "phone": "036475028"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8352565999999997,
+          33.790041599999995
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_sud-0-agences-1",
+        "name": "الأغواط",
+        "wilaya_code": "03",
+        "commune_code": null,
+        "commune": null,
+        "lat": 33.790041599999995,
+        "lng": 2.8352565999999997,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "حي بو صحنون المعمورة الأغواط",
+        "phone": "029131914"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.8577694,
+          33.3593522
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_sud-0-agences-10",
+        "name": "الوادي",
+        "wilaya_code": "39",
+        "commune_code": null,
+        "commune": null,
+        "lat": 33.3593522,
+        "lng": 6.8577694,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "حي 400 مسكن الرمال الوادي",
+        "phone": "032141060"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2658384,
+          27.8818584
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_sud-0-agences-12",
+        "name": "أدرار",
+        "wilaya_code": "01",
+        "commune_code": null,
+        "commune": null,
+        "lat": 27.8818584,
+        "lng": -0.2658384,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع بادجي مختار مدينة أدرار قسم 32 مجموعة الملكية 204 أدرار",
+        "phone": "049369671"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.23049019999999998,
+          29.257797600000004
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_sud-0-agences-13",
+        "name": "تيميمون",
+        "wilaya_code": "49",
+        "commune_code": null,
+        "commune": null,
+        "lat": 29.257797600000004,
+        "lng": 0.23049019999999998,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع فلسطين، قسم 44 مجموعة الملكية رقم 04 تيميمون",
+        "phone": "049821199"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.3318258,
+          31.9538373
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_sud-0-agences-2",
+        "name": "ورقلة",
+        "wilaya_code": "30",
+        "commune_code": null,
+        "commune": null,
+        "lat": 31.9538373,
+        "lng": 5.3318258,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "ساحة سدراتة ورقلة",
+        "phone": "029703567"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.065346,
+          31.699681100000003
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_sud-0-agences-3",
+        "name": "حاسي مسعود Corporate",
+        "wilaya_code": "30",
+        "commune_code": null,
+        "commune": null,
+        "lat": 31.699681100000003,
+        "lng": 6.065346,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "الحي السكني ص.ب 108 حاسي مسعود ورقلة",
+        "phone": "029745274"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.063536,
+          31.68609489999999
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_sud-0-agences-4",
+        "name": "حاسي مسعود الأمير عبد القادر",
+        "wilaya_code": "30",
+        "commune_code": null,
+        "commune": null,
+        "lat": 31.68609489999999,
+        "lng": 6.063536,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "حي 300 مسكن حاسي مسعود",
+        "phone": "029745288"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0662834,
+          33.104964200000005
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_sud-0-agences-7",
+        "name": "توقرت",
+        "wilaya_code": "55",
+        "commune_code": null,
+        "commune": null,
+        "lat": 33.104964200000005,
+        "lng": 6.0662834,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "نهج هواري بومدين ص.ب 96 توقرت",
+        "phone": "029661375"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.5765888,
+          28.038407
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_sud-0-agences-8",
+        "name": "إن أمناس (إليزي)",
+        "wilaya_code": "33",
+        "commune_code": null,
+        "commune": null,
+        "lat": 28.038407,
+        "lng": 9.5765888,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "ساحة 11 ديسمبر 1960 وسط المدينة إن أمناس، إليزي",
+        "phone": "029457030"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3094034,
+          34.8804819
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_tlemcen-0-agences-1",
+        "name": "تلمسان",
+        "wilaya_code": "13",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.8804819,
+        "lng": -1.3094034,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "02، شارع الاستقلال المشوير تلمسان",
+        "phone": "043262644"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6363719,
+          35.190589599999996
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_tlemcen-0-agences-2",
+        "name": "سيدي بلعباس 1",
+        "wilaya_code": "22",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.190589599999996,
+        "lng": -0.6363719,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "25، شارع الشيخ العربي تبسي سيدي بلعباس",
+        "phone": "048743177"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1391863,
+          35.3038931
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_tlemcen-0-agences-3",
+        "name": "عين تموشنت",
+        "wilaya_code": "46",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.3038931,
+        "lng": -1.1391863,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "61، شارع 1 نوفمبر 54 عين تموشنت",
+        "phone": "043782570"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3831312,
+          35.3036794
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_tlemcen-0-agences-4",
+        "name": "بني صاف",
+        "wilaya_code": "46",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.3036794,
+        "lng": -1.3831312,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "10، شارع الجمهورية بني صاف",
+        "phone": "043742291"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3166815,
+          34.8828864
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_tlemcen-0-agences-6",
+        "name": "تلمسان الكيفان",
+        "wilaya_code": "13",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.8828864,
+        "lng": -1.3166815,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "03، ضاحية عين سباع الكيفان تلمسان",
+        "phone": "043267717"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.7295212,
+          34.8495734
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_tlemcen-0-agences-7",
+        "name": "مغنية",
+        "wilaya_code": "13",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.8495734,
+        "lng": -1.7295212,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "شارع محمد خميستي، مغنية، ولاية تلمسان",
+        "phone": "043502963"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6340922999999999,
+          35.1981073
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_tlemcen-0-agences-8",
+        "name": "سيدي بلعباس 2",
+        "wilaya_code": "22",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.1981073,
+        "lng": -0.6340922999999999,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "المنطقة الشمالية UBA شارع رباح بطات سيدي بلعباس",
+        "phone": "048766731"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           7.388172567004568,
           35.792344432658126
         ]
@@ -11299,6 +13685,32 @@
         "bank_id": "bna",
         "address": "14, Rue des Fidayines-",
         "phone": "(033) 80 58 46, (033) 80 38 39"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.3670426,
+          35.3873302
+        ]
+      },
+      "properties": {
+        "id": "bna-102",
+        "name": "Agence BARIKA",
+        "wilaya_code": "60",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.3873302,
+        "lng": 5.3670426,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Rue Yahiaoui Amar 3éme Tranche N°27 -",
+        "phone": "(033) 39 11 06",
+        "source_wilaya_code": "05"
       }
     },
     {
@@ -11899,6 +14311,32 @@
         "bank_id": "bna",
         "address": "Place du 1er Novembre 1954 12350",
         "phone": "(037) 67 82 12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0579296,
+          34.7499522
+        ]
+      },
+      "properties": {
+        "id": "bna-128",
+        "name": "Agence BIR EL ATER",
+        "wilaya_code": "62",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.7499522,
+        "lng": 8.0579296,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Cité Administrative,",
+        "phone": "(037) 64 92 51, (037) 64 92 52",
+        "source_wilaya_code": "12"
       }
     },
     {
@@ -13581,6 +16019,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.904514026584127,
+          35.457107580251716
+        ]
+      },
+      "properties": {
+        "id": "bna-199",
+        "name": "Agence AIN OUSSERA",
+        "wilaya_code": "65",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.457107580251716,
+        "lng": 2.904514026584127,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Lot Ali Amar",
+        "phone": "(027) 80 14 27, (027) 80 15 29",
+        "source_wilaya_code": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.2522227114810223,
           34.67582929303842
         ]
@@ -14456,6 +16920,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.748638747703027,
+          35.88459450122904
+        ]
+      },
+      "properties": {
+        "id": "bna-237",
+        "name": "Agence KSAR EL BOUKHARI",
+        "wilaya_code": "67",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.88459450122904,
+        "lng": 2.748638747703027,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Bd Ahmed Zouaoucha",
+        "phone": "(025) 69 23 55 ,(025) 69 19 43 ,(025) 69 19 44",
+        "source_wilaya_code": "26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.08314893334128187,
           35.930358238710525
         ]
@@ -14549,6 +17039,58 @@
         "bank_id": "bna",
         "address": "Cité administrative rue Chenouf Abdelkader",
         "phone": "(035) 33 88 71/ 06 ,(035) 33 85 79/38"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.179612231,
+          35.213552231
+        ]
+      },
+      "properties": {
+        "id": "bna-242",
+        "name": "Agence  BOUSSAADA",
+        "wilaya_code": "68",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.213552231,
+        "lng": 4.179612231,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Centre Commercial Boussaada, M'sila",
+        "phone": "(035) 43 41 22",
+        "source_wilaya_code": "28"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.16552918401589,
+          34.84546752355364
+        ]
+      },
+      "properties": {
+        "id": "bna-243",
+        "name": "Agence AIN EL-MELH",
+        "wilaya_code": "68",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.84546752355364,
+        "lng": 4.16552918401589,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Centre Commercial",
+        "phone": "(035) 10 03 18, (035) 10 03 26",
+        "source_wilaya_code": "28"
       }
     },
     {
@@ -14999,6 +17541,31 @@
         "bank_id": "bna",
         "address": "Rue des Invalides",
         "phone": " (041) 18 72 20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.7630667090090107,
+          35.74278951485728
+        ]
+      },
+      "properties": {
+        "id": "bna-263",
+        "name": "Agence AIN TURCK",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.74278951485728,
+        "lng": -0.7630667090090107,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "45 Route National Angle 02",
+        "phone": "(041) 44 73 51 ,(041) 44 73 92"
       }
     },
     {
@@ -16731,6 +19298,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          7.82134558450683,
+          36.82454439538017
+        ]
+      },
+      "properties": {
+        "id": "bna-336",
+        "name": "ANNABA AEROPORT",
+        "wilaya_code": "23",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.82454439538017,
+        "lng": 7.82134558450683,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Aéroport Rabah BITAT",
+        "phone": "038.59.01.76"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -1.8585244709529292,
           35.099641993829636
         ]
@@ -16824,6 +19416,32 @@
         "bank_id": "bna",
         "address": "Cité Mentouri (ex- Le Bosquet)",
         "phone": "  (031) 65 01 73"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.748638747703027,
+          35.88459450122904
+        ]
+      },
+      "properties": {
+        "id": "bna-341",
+        "name": "Agence KSAR EL BOUKHARI",
+        "wilaya_code": "67",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.88459450122904,
+        "lng": 2.748638747703027,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Bd Ahmed Zouaoucha",
+        "phone": "(025) 69 23 55 ,(025) 69 19 43 ,(025) 69 19 44",
+        "source_wilaya_code": "26"
       }
     },
     {
@@ -17506,6 +20124,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          0.15355849641455607,
+          34.83030683171389
+        ]
+      },
+      "properties": {
+        "id": "bna-659",
+        "name": "Agence Saida",
+        "wilaya_code": "20",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.83030683171389,
+        "lng": 0.15355849641455607,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Rue CHEBLI Mokhtar N°11",
+        "phone": "048.41.89.68"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.14054486,
           36.7187492
         ]
@@ -17524,6 +20167,81 @@
         "bank_id": "bna",
         "address": "Ave. des Frères Djeli (Hai Naîli) BP 28",
         "phone": "(021) 52 61 02 ,(021) 52 70 34"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.477427,
+          27.196947
+        ]
+      },
+      "properties": {
+        "id": "bna-660",
+        "name": "Agence In Salah",
+        "wilaya_code": "53",
+        "commune_code": null,
+        "commune": null,
+        "lat": 27.196947,
+        "lng": 2.477427,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Centre ville In Salah",
+        "phone": "029.36.66.13 - 029.36.66.10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.28023172883517217,
+          27.872356394652716
+        ]
+      },
+      "properties": {
+        "id": "bna-664",
+        "name": "Agence Adrar",
+        "wilaya_code": "01",
+        "commune_code": null,
+        "commune": null,
+        "lat": 27.872356394652716,
+        "lng": -0.28023172883517217,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Rue 19 Mars",
+        "phone": "040.00.18.18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.28023172883517217,
+          27.872356394652716
+        ]
+      },
+      "properties": {
+        "id": "bna-665",
+        "name": "DIRECTION REGIONALE D'EXPLOITATION \"ADRAR\"",
+        "wilaya_code": "01",
+        "commune_code": null,
+        "commune": null,
+        "lat": 27.872356394652716,
+        "lng": -0.28023172883517217,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Rue 19 Mars",
+        "phone": "040.00.16.60 - 040.00.16.29"
       }
     },
     {
@@ -17624,6 +20342,32 @@
         "bank_id": "bna",
         "address": "Marché Couvert Place Aoulef",
         "phone": "(049) 32 77 77"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.512301807,
+          24.47518423
+        ]
+      },
+      "properties": {
+        "id": "bna-71",
+        "name": "Agence DJANET",
+        "wilaya_code": "56",
+        "commune_code": null,
+        "commune": null,
+        "lat": 24.47518423,
+        "lng": 9.512301807,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "76 Ave du Centre-Ville",
+        "phone": "(029) 48 55 78 ,(029) 48 56 03",
+        "source_wilaya_code": "33"
       }
     },
     {
@@ -17799,6 +20543,32 @@
         "bank_id": "bna",
         "address": "Rue Bensahnoun El-Maâmoura - 03000",
         "phone": "(029) 13 27 54,(029) 13 27 53,(029) 13 27 52"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.096377304525409,
+          34.116671082378154
+        ]
+      },
+      "properties": {
+        "id": "bna-95",
+        "name": "Agence AFLOU",
+        "wilaya_code": "59",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.116671082378154,
+        "lng": 2.096377304525409,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Bd Emir AbdelKader  03400 Aflou",
+        "phone": "(029) 16 60 44",
+        "source_wilaya_code": "03"
       }
     },
     {
@@ -29474,6 +32244,102 @@
         "bank_id": "natixis",
         "address": "05 Rue Said Boukhrissa, Setif 19000",
         "phone": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0591324,
+          36.7715307
+        ]
+      },
+      "properties": {
+        "id": "sga-amirouche",
+        "name": "Amirouche",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7715307,
+        "lng": 3.0591324,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "bank_locator",
+        "bank_id": "sga",
+        "address": "3, Boulevard Colonel Amirouche",
+        "phone": "(+213) 21 74 75 30",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://particuliers.societegenerale.dz/fr/locations-details/agences/",
+          "https://www.openstreetmap.org/node/2964284353"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1891634,
+          36.7148763
+        ]
+      },
+      "properties": {
+        "id": "sga-bab-ezzouar",
+        "name": "Bab - Ezzouar",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7148763,
+        "lng": 3.1891634,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "bank_locator",
+        "bank_id": "sga",
+        "address": "1 Boulevard Rezig kadda - Bab Ezzouar",
+        "phone": "(+213) 23 83 95 28/24",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://particuliers.societegenerale.dz/fr/locations-details/agences/",
+          "https://www.openstreetmap.org/node/3287544248"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3359694,
+          36.1676259
+        ]
+      },
+      "properties": {
+        "id": "sga-chlef",
+        "name": "Chlef",
+        "wilaya_code": "02",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.1676259,
+        "lng": 1.3359694,
+        "geo_precision": "approximate",
+        "geo_method": "osm_way",
+        "source": "bank_locator",
+        "bank_id": "sga",
+        "address": "20, Rue des Martyrs - Chlef",
+        "phone": "(+213) 27 77 83 12",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://particuliers.societegenerale.dz/fr/locations-details/agences/",
+          "https://www.openstreetmap.org/way/310443120"
+        ]
       }
     },
     {

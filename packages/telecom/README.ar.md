@@ -8,13 +8,13 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/telecom)](https://www.npmjs.com/package/@geoalgeria/telecom)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/telecom)](https://www.npmjs.com/package/@geoalgeria/telecom)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
-**3,096 نقطة تغطية 5G** عبر الجزائر، منشورة من خرائط التغطية الخاصة
-بالمشغلين – **جيزي (1,001)** و**موبيليس (1,919)** و**أوريدو (176)** – كل
-نقطة بإحداثياتها وربطها بالولاية/البلدية. متوفرة بصيغ JSON وCSV وGeoJSON
+**3,598 سجل تغطية 5G** عبر الجزائر، منشورة من خرائط التغطية الخاصة
+بالمشغلين – **جيزي (1,001)** و**موبيليس (2,421)** و**أوريدو (176)** – كل
+سجل مرتبط بالولاية/البلدية، منها 3,580 بإحداثيات قابلة للنشر. متوفرة بصيغ JSON وCSV وGeoJSON
 وTypeScript. جزء من [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -24,9 +24,9 @@ npm install @geoalgeria/telecom
 ```js
 import telecom from "@geoalgeria/telecom";
 
-const sites = telecom.coverage();                       // جميع النقاط (3,096)
+const sites = telecom.coverage();                       // جميع النقاط (3,598)
 const djezzy = telecom.coverageByOperator("djezzy");    // 1,001
-const mobilis = telecom.coverageByOperator("mobilis");  // 1,919
+const mobilis = telecom.coverageByOperator("mobilis");  // 2,421
 const ooredoo = telecom.coverageByOperator("ooredoo");  // 176
 
 // تغطية 5G في ولاية (ربط عبر wilaya_code الخاص بـ GeoAlgeria)
@@ -51,11 +51,11 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 | المشغل | النقاط | الدقة | خريطة المصدر |
 | --- | --- | --- | --- |
 | جيزي | **1,001** | موقع خلية | djezzy5g.dz |
-| موبيليس | **1,919** | موقع خلية | mobilis.dz/map/5g |
+| موبيليس | **2,421** | موقع خلية | mobilis.dz/map/5g |
 | أوريدو | **176** | بلدية مغطاة | ooredoo.dz |
 
-تغطي **58 ولاية** (بما في ذلك الولايات الجديدة مثل تيميمون وعين صالح
-وتقرت).
+تغطي **66 ولاية حالية**. لا تزال خرائط المشغلين تستخدم تقسيم 58 ولاية؛ وقد
+أعيد ربط 31 نقطة لموبيليس بثماني ولايات جديدة بعد تحقق صارم.
 
 > **ما هي النقطة:** كل سجل هو نقطة منشورة على خريطة تغطية 5G الخاصة
 > بالمشغل. جيزي وموبيليس ينشران مواقع **الخلايا**؛ أوريدو ينشر نقاطًا على
@@ -63,6 +63,10 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 > الدوائر المعروضة على تلك الخرائط ذات نصف قطر ثابت للعرض، **وليست قياسًا
 > فعليًا لتغطية الترددات الراديوية** – اعتبرها نقاط *تواجد* 5G وليس مضلعات
 > تغطية.
+
+تبقى ثمانية عشر سجلًا لجيزي دون إحداثيات لأن الولاية واسم الموقع المنشورين
+من المشغل يتعارضان مع النقطة المعروضة. حُفظت إيصالات المراجعة، وحُجبت النقاط
+الخاطئة من حقول الخرائط وGeoJSON إلى أن تتوفر إحداثيات بديلة موثقة.
 
 ## التنظيم (قابل للتوسع)
 
@@ -107,7 +111,9 @@ data/
 ```
 
 `id` هو مفتاح حتمي بصيغة `{operator}-{coordinate-hash}`، ثابت عبر عمليات
-إعادة الجلب. `wilaya_code` يرتبط بـ `wilaya_code` الخاص بـ GeoAlgeria.
+إعادة الجلب. `wilaya_code` يرتبط برمز الولاية الحالي في GeoAlgeria. في 31
+سجلًا لموبيليس، يحفظ `source_wilaya_code` الولاية الأم التي نشرها المشغل،
+ويحدد `commune_code` البلدية المرجعية التي تؤكد التصحيح.
 الحقول التي لا يوفرها مشغل معين تكون `null` (جيزي ليس لديه بلدية؛ موبيليس
 لديه البلدية بالفرنسية/العربية لكن بدون عنوان؛ أوريدو لديه اسم البلدية
 فقط). بالنسبة لأوريدو، `name` هو اسم البلدية المغطاة والنقاط `approximate`
@@ -127,7 +133,8 @@ data/
 جلسة متصفح حقيقية (موقع أوريدو يُصادق نفسه؛ هذه الخطوة تتطلب أداة
 [`agent-browser`](https://www.npmjs.com/package/agent-browser) في `PATH`).
 يتم تطبيع كل شيء في مخطط واحد مع حل `wilaya_code` إلى رموز GeoAlgeria.
-المشغلون يستخدمون نظام 58 ولاية. الكتابة تتم بالكامل أو لا تتم على
+المشغلون يستخدمون نظام 58 ولاية؛ ولا تُنقل نقطة لموبيليس إلى ولاية جديدة إلا
+عند تطابق فرنسي أو عربي دقيق مع الاسم الحالي أو سجل الديوان الوطني للإحصائيات لسنة 2021 مع احتواء المضلع. الكتابة تتم بالكامل أو لا تتم على
 الإطلاق، فلا يقوم مشغل فاشل أبدًا بالكتابة فوق بيانات صالحة ومؤكدة
 بمجموعة جزئية.
 

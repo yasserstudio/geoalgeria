@@ -1,8 +1,8 @@
 {
   "name": "@geoalgeria/culture",
-  "version": "2.0.0",
+  "version": "2.0.4",
   "type": "module",
-  "description": "Algeria's cultural atlas — protected heritage sites, museums, theatres, libraries and cultural establishments (maisons & palais de culture, cinemas, culture directorates, arts schools) from the Ministry of Culture's Patrimoine Culturel portal, bilingual FR/AR, fully geocoded, with commune/wilaya linkage. JSON, CSV, GeoJSON, TypeScript.",
+  "description": "Algeria's cultural atlas: protected heritage sites, museums, theatres, libraries and cultural establishments (maisons & palais de culture, cinemas, culture directorates, arts schools) from the Ministry of Culture's Patrimoine Culturel portal, bilingual FR/AR, fully geocoded, with commune/wilaya linkage. JSON, CSV, GeoJSON, TypeScript.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {
@@ -42,7 +42,7 @@
     "dz"
   ],
   "author": "Yasser's Studio (https://yasser.studio)",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "publishConfig": {
     "access": "public"
   },

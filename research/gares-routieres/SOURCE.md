@@ -12,16 +12,20 @@ company that operates Algeria's intercity road-bus stations (the authoritative
 *source*). Surfaced by the user 2026-07-01 (live departures board + Arabic agency
 listing).
 
-Two sources: a **working JSON API** (the anchor) and the **Joomla website**
-(bilingual names + detail pages). Note `www.sogral.com` currently 500s across the
-board; the live subdomain and the `.dz` site are up.
+The station attributes were captured from SOGRAL's former `live.sogral.com`
+JSON registry on 2026-07-01 and enriched with bilingual names from the Joomla
+website. The old live host is now retired; it remains the provenance address of
+the committed snapshot, not a current endpoint. The current traveller-facing
+surface is `https://mahatati.sogral.com/`, whose 2026-08-28 station-directory
+audit exactly matched the 73 MAHATATI agency ids shipped by the package. In
+Saleh is the intentional 74th station without a departure-agency id.
 
-## 1. Primary source — `live.sogral.com` JSON API (authoritative anchor)
+## 1. Archived primary source — `live.sogral.com` JSON API
 
-Public, **unauthenticated** REST API behind the real-time departures board at
-`https://live.sogral.com/`. No key, no token, CORS-open. Values in the
-summary/departures endpoints are live (change through the day); the agency
-registry is effectively static.
+This was the public, unauthenticated REST API behind SOGRAL's real-time
+departures board when captured on 2026-07-01. It required no key or token and
+was CORS-open. The descriptions below document the archived source contract;
+they are not a promise that the retired host can still be queried.
 
 ### Endpoints
 - **`GET /api/live/agencies`** — the registry. **74 stations**, full attributes
@@ -112,8 +116,11 @@ preserved. Shape:
 }
 ```
 
-Coverage: **74 stations across 42 of 58 wilayas** (some cities have 2–3 stations,
-e.g. Constantine ×3, Aïn Témouchent ×2). Every station has surfaces + a code.
+Raw-source coverage at capture time: **74 stations across 42 of the then-used 58
+wilaya buckets** (some cities have 2–3 stations, e.g. Constantine ×3, Aïn
+Témouchent ×2). After coordinate repair and reconciliation to the current
+69-wilaya model, the published package covers **52 wilayas**. Every station has
+surfaces and a source code.
 
 ## Data-quality notes
 

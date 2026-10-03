@@ -1,0 +1,58 @@
+{
+  "wilaya_code": "08",
+  "wilaya_name_fr": "Bechar",
+  "operator_abbr": "ETUSB",
+  "operator_name_ar": "المؤسسة العمومية للنقل الحضري و شبه الحضري بشار",
+  "operator_name_fr": "Entreprise de transport urbain et suburbain de Bechar",
+  "retrieved": "2026-09-03",
+  "sources": [
+    {
+      "url": "https://www.etus-bechar.dz/",
+      "kind": "official_site",
+      "status": "dns_dead",
+      "retrieved": "2026-09-03",
+      "finding": "Indexed by search engines with the title \"ETUSB | مؤسسة النقل الحضري وشبه الحضري بشار\", but both etus-bechar.dz and www.etus-bechar.dz returned getaddrinfo ENOTFOUND on 2026-09-03. Same result as the 2026-09-03 check already recorded in research/buses/EXPANSION.md. No content retrievable."
+    },
+    {
+      "url": "https://play.google.com/store/apps/dev?id=7999500614944294104&hl=en",
+      "kind": "app_store_developer",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "Google Play developer account named \"ETUS Bechar\", tagline \"entreprise transport urbain et suburbain bechar\", declared website https://www.etus-bechar.dz. This is the strongest operator-identity receipt found: it independently ties the operator name to that domain. The only app visible on the profile is a puzzle game (com.etusb.dessert.sort.game); no transport app, no line list."
+    },
+    {
+      "url": "https://www.facebook.com/p/%D8%A7%D9%84%D9%85%D8%A4%D8%B3%D8%B3%D8%A9-%D8%A7%D9%84%D8%B9%D9%85%D9%88%D9%85%D9%8A%D8%A9-%D9%84%D9%84%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D9%88-%D8%B4%D8%A8%D9%87-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D8%A8%D8%B4%D8%A7%D8%B1-ETUS-Bechar-100042790543167/",
+      "kind": "official_facebook",
+      "status": "login_walled",
+      "retrieved": "2026-09-03",
+      "finding": "Operator page exists (id 100042790543167). Login-walled to a fetcher; search engines expose only the title. Not read."
+    },
+    {
+      "url": "https://www.facebook.com/p/%D9%85%D8%AF%D9%8A%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%82%D9%84-%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A9-%D8%A8%D8%B4%D8%A7%D8%B1-Direction-des-Transports-de-la-Wilaya-de-Bechar-100063984100351/",
+      "kind": "government_facebook",
+      "status": "login_walled",
+      "retrieved": "2026-09-03",
+      "finding": "Direction des transports de la wilaya de Bechar page (id 100063984100351). Login-walled. Not read."
+    },
+    {
+      "url": "https://www.openstreetmap.org/relation/9974721",
+      "kind": "osm",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "ref=1, name حافلة: بشار -> القنادسة, 19 stop members, 23.4 km, no operator, no network."
+    },
+    {
+      "url": "https://www.openstreetmap.org/relation/10169262",
+      "kind": "osm",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "ref=1, name \"Bus : Kenadsa ->Béchar\", 7 stop members, 22.5 km, no operator, no network."
+    }
+  ],
+  "searched_without_result": [
+    "ETUSB Bechar lignes / خطوط الحافلات (FR + AR)",
+    "بشار القنادسة خط النقل الحضري",
+    "aps.dz Bechar urban transport bus deliveries",
+    "Google Play com.deeper.etus.* Bechar variant (none exists; Deeper Tech ships Setif, Blida, Batna, El Taref, Djelfa, Ain Defla, Souk Ahras, Mascara, Tipaza, Sidi Bel Abbes)"
+  ]
+}

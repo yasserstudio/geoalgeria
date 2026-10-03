@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-27",
+  "schema_version": 1,
+  "usage": "advisory-semantic-triage-only",
+  "wilaya_count": 69,
+  "batch_count": 13,
+  "candidate_count": 2977,
+  "result_count": 2977,
+  "coverage_percent": 100,
+  "source_states": {
+    "cross-source": 1035,
+    "multiple-tariki": 117,
+    "osm-only": 1011,
+    "tariki-only": 814
+  },
+  "triage": {
+    "ambiguous": 724,
+    "no_change": 495,
+    "normalization": 1568,
+    "possible_duplicate": 190
+  },
+  "escalation": {
+    "duplicate_review": 301,
+    "field_check": 1218,
+    "human_review": 185,
+    "none": 1273
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 33,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "5fbbbfb532852c8b46930c0876df0e27569c46dc9f4df6e146b7c583d8928b44",
+  "count": 4,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "5fbbbfb532852c8b46930c0876df0e27569c46dc9f4df6e146b7c583d8928b44:0",
+      "source_id": "257",
+      "raw": {
+        "id": "257",
+        "code_wilaya": "33",
+        "wilaya": "ILLIZI",
+        "commune": "ILLIZI",
+        "adresse": "RUE DE DJANET,  ILLIZI",
+        "type": "Agence Commerciale",
+        "latitude": " 26.497847",
+        "longitude": "  8.474539\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 26.497847,
+      "lng": 8.474539,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "33"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "5fbbbfb532852c8b46930c0876df0e27569c46dc9f4df6e146b7c583d8928b44:1",
+      "source_id": "258",
+      "raw": {
+        "id": "258",
+        "code_wilaya": "33",
+        "wilaya": "ILLIZI",
+        "commune": "IN AMENAS",
+        "adresse": "CENTRE VILLE IN AMENAS",
+        "type": "Agence Commerciale",
+        "latitude": " 28.047436",
+        "longitude": "  9.578139\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 28.047436,
+      "lng": 9.578139,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "33"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "5fbbbfb532852c8b46930c0876df0e27569c46dc9f4df6e146b7c583d8928b44:2",
+      "source_id": "259",
+      "raw": {
+        "id": "259",
+        "code_wilaya": "33",
+        "wilaya": "ILLIZI",
+        "commune": "BORDJ OMAR DRISS",
+        "adresse": "CENTRE VILLE OMAR DRISS",
+        "type": "Point de présence",
+        "latitude": " 28.121944",
+        "longitude": "  6.820417\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 28.121944,
+      "lng": 6.820417,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "33"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "5fbbbfb532852c8b46930c0876df0e27569c46dc9f4df6e146b7c583d8928b44:3",
+      "source_id": "260",
+      "raw": {
+        "id": "260",
+        "code_wilaya": "33",
+        "wilaya": "ILLIZI",
+        "commune": "DEB DEB",
+        "adresse": "CENTRE VILLE DEB-DEB",
+        "type": "Point de présence",
+        "latitude": " 29.967167",
+        "longitude": "  9.421111\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 29.967167,
+      "lng": 9.421111,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "33"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

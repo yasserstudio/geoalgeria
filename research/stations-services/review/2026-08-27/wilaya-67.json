@@ -1,0 +1,810 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-67",
+    "wilaya_code": 67,
+    "name": "Ksar El Boukhari",
+    "name_ar": "قصر البخاري",
+    "center": [
+      2.884,
+      35.772
+    ],
+    "bounds": [
+      2.139,
+      35.446,
+      3.629,
+      36.098
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 21,
+    "osm_records": 20,
+    "tariki_records": 9,
+    "cross_source": 8,
+    "multiple_tariki": 0,
+    "osm_only": 12,
+    "tariki_only": 1,
+    "nearby_osm_pairs": 3,
+    "conflicts": 4
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-4513361356",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-526821010",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-526821011",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4370",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-12518286874",
+      "coordinates": [
+        2.5670645,
+        35.4991726
+      ],
+      "osm": {
+        "id": "node/12518286874",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.5670645,
+          35.4991726
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1953140405",
+      "coordinates": [
+        2.7490567,
+        35.8885184
+      ],
+      "osm": {
+        "id": "node/1953140405",
+        "name": "Mazouz",
+        "name_ar": null,
+        "name_fr": "Mazouz",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7490567,
+          35.8885184
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Mazouz",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1953140956",
+      "coordinates": [
+        2.7489359,
+        35.8898353
+      ],
+      "osm": {
+        "id": "node/1953140956",
+        "name": "Maskri",
+        "name_ar": null,
+        "name_fr": "Maskri",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7489359,
+          35.8898353
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4366",
+          "route_id": "8945",
+          "name_fr": "Station de services RAMBO",
+          "name_ar": "محطة خدمات رومبو حي خميستي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.7488,
+            35.8897
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 67,
+          "wilaya_fr": "Ksar El Boukhari",
+          "wilaya_ar": "قصر البخاري",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Maskri",
+      "display_name_ar": "محطة خدمات رومبو حي خميستي"
+    },
+    {
+      "id": "osm-node-2428851202",
+      "coordinates": [
+        2.8570774,
+        35.6866192
+      ],
+      "osm": {
+        "id": "node/2428851202",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.8570774,
+          35.6866192
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4170335690",
+      "coordinates": [
+        2.757102,
+        35.9035439
+      ],
+      "osm": {
+        "id": "node/4170335690",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "E.Leclerc",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.757102,
+          35.9035439
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4359",
+          "route_id": "8937",
+          "name_fr": "Station de services TAHAR MISSOUM",
+          "name_ar": "محطة خدمات طاهر ميسوم قصر البخاري",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.757,
+            35.904
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 67,
+          "wilaya_fr": "Ksar El Boukhari",
+          "wilaya_ar": "قصر البخاري",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "E.Leclerc",
+      "display_name_ar": "محطة خدمات طاهر ميسوم قصر البخاري"
+    },
+    {
+      "id": "osm-node-4251823206",
+      "coordinates": [
+        3.1591454,
+        35.8940196
+      ],
+      "osm": {
+        "id": "node/4251823206",
+        "name": "Station Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1591454,
+          35.8940196
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4427",
+          "route_id": "9044",
+          "name_fr": "Station de services DROUCHE Ain Boucif",
+          "name_ar": "محطة خدمات دروش عين بوسيف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.159,
+            35.894
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 67,
+          "wilaya_fr": "Ksar El Boukhari",
+          "wilaya_ar": "قصر البخاري",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Naftal",
+      "display_name_ar": "محطة خدمات دروش عين بوسيف"
+    },
+    {
+      "id": "osm-node-4330915388",
+      "coordinates": [
+        2.8617751,
+        35.680665
+      ],
+      "osm": {
+        "id": "node/4330915388",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.8617751,
+          35.680665
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4378091189",
+      "coordinates": [
+        2.7490455,
+        35.8840955
+      ],
+      "osm": {
+        "id": "node/4378091189",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Station service Hamza",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7490455,
+          35.8840955
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Hamza",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4383719596",
+      "coordinates": [
+        2.7576973,
+        35.8581754
+      ],
+      "osm": {
+        "id": "node/4383719596",
+        "name": null,
+        "name_ar": "محطة طهار بالمخرج.الجنوبي",
+        "name_fr": "station tahar sud",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7576973,
+          35.8581754
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station tahar sud",
+      "display_name_ar": "محطة طهار بالمخرج.الجنوبي"
+    },
+    {
+      "id": "osm-node-4513361356",
+      "coordinates": [
+        2.4551771,
+        35.8250763
+      ],
+      "osm": {
+        "id": "node/4513361356",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.4551771,
+          35.8250763
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-526821010",
+          "offset_m": 17
+        },
+        {
+          "candidate_id": "osm-way-526821011",
+          "offset_m": 6
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5051712612",
+      "coordinates": [
+        2.7571296,
+        35.8600217
+      ],
+      "osm": {
+        "id": "node/5051712612",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7571296,
+          35.8600217
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5121790521",
+      "coordinates": [
+        2.7515459,
+        35.8958604
+      ],
+      "osm": {
+        "id": "node/5121790521",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Mazouz",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7515459,
+          35.8958604
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4364",
+          "route_id": "8945",
+          "name_fr": "Station de services cité BELKHIRAT",
+          "name_ar": "محطة خدمات حي بلخيرات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.752,
+            35.896
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 67,
+          "wilaya_fr": "Ksar El Boukhari",
+          "wilaya_ar": "قصر البخاري",
+          "offset_m": 44
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Mazouz",
+      "display_name_ar": "محطة خدمات حي بلخيرات"
+    },
+    {
+      "id": "osm-node-5494262543",
+      "coordinates": [
+        3.4226858,
+        35.9407647
+      ],
+      "osm": {
+        "id": "node/5494262543",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.4226858,
+          35.9407647
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4425",
+          "route_id": "9043",
+          "name_fr": "Station de services cité CHOHADA",
+          "name_ar": "محطة خدمات حي الشهداء الشلالة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.423,
+            35.941
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 67,
+          "wilaya_fr": "Ksar El Boukhari",
+          "wilaya_ar": "قصر البخاري",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات حي الشهداء الشلالة"
+    },
+    {
+      "id": "osm-way-256480488",
+      "coordinates": [
+        2.62920505,
+        35.55349595
+      ],
+      "osm": {
+        "id": "way/256480488",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.62920505,
+          35.55349595
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-256480501",
+      "coordinates": [
+        2.8393034000000004,
+        35.703827700000005
+      ],
+      "osm": {
+        "id": "way/256480501",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Sakhri",
+        "opening_hours": null,
+        "coordinates": [
+          2.8393034000000004,
+          35.703827700000005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6949",
+          "route_id": "11810",
+          "name_fr": "Station de services SAKHRI HAFSI",
+          "name_ar": "محطة صخري حفصي",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            2.839,
+            35.704
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 67,
+          "wilaya_fr": "Ksar El Boukhari",
+          "wilaya_ar": "قصر البخاري",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services SAKHRI HAFSI",
+      "display_name_ar": "محطة صخري حفصي"
+    },
+    {
+      "id": "osm-way-256480508",
+      "coordinates": [
+        2.8406641500000003,
+        35.7030976
+      ],
+      "osm": {
+        "id": "way/256480508",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.8406641500000003,
+          35.7030976
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6948",
+          "route_id": "11810",
+          "name_fr": "Station de services SONAH",
+          "name_ar": "محطة صوناح",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.841,
+            35.703
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 67,
+          "wilaya_fr": "Ksar El Boukhari",
+          "wilaya_ar": "قصر البخاري",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services SONAH",
+      "display_name_ar": "محطة صوناح"
+    },
+    {
+      "id": "osm-way-416220629",
+      "coordinates": [
+        2.7570110999999997,
+        35.902878900000005
+      ],
+      "osm": {
+        "id": "way/416220629",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7570110999999997,
+          35.902878900000005
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-526821010",
+      "coordinates": [
+        2.45517565,
+        35.82492055
+      ],
+      "osm": {
+        "id": "way/526821010",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.45517565,
+          35.82492055
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4513361356",
+          "offset_m": 17
+        },
+        {
+          "candidate_id": "osm-way-526821011",
+          "offset_m": 23
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-526821011",
+      "coordinates": [
+        2.4551536,
+        35.825122300000004
+      ],
+      "osm": {
+        "id": "way/526821011",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.4551536,
+          35.825122300000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4513361356",
+          "offset_m": 6
+        },
+        {
+          "candidate_id": "osm-way-526821010",
+          "offset_m": 23
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-652466616",
+      "coordinates": [
+        2.7500228,
+        35.89943465
+      ],
+      "osm": {
+        "id": "way/652466616",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          2.7500228,
+          35.89943465
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6930",
+          "route_id": "8937",
+          "name_fr": "Station de services TAHAR MISSOUM Kasr Boukhari",
+          "name_ar": "محطة خدمات طاهر ميسوم قصر البخاري",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.75,
+            35.9
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 67,
+          "wilaya_fr": "Ksar El Boukhari",
+          "wilaya_ar": "قصر البخاري",
+          "offset_m": 63
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات طاهر ميسوم قصر البخاري"
+    },
+    {
+      "id": "tariki-4370",
+      "coordinates": [
+        2.62,
+        35.548
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4370",
+          "route_id": "8949",
+          "name_fr": "Station de services Laamouri",
+          "name_ar": "محطة خدمات لعموري الشهبونية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.62,
+            35.548
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 67,
+          "wilaya_fr": "Ksar El Boukhari",
+          "wilaya_ar": "قصر البخاري",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Laamouri",
+      "display_name_ar": "محطة خدمات لعموري الشهبونية"
+    }
+  ]
+}

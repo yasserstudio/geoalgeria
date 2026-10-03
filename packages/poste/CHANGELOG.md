@@ -1,5 +1,42 @@
 # Changelog
 
+## 2.1.3
+
+### Patch Changes
+
+- 4deabd3: Replace em dashes in source names and citations with plain separators.
+
+  - Every source `name` reads `Operator: descriptor`, where it used to carry a
+    U+2014 em dash, in `data/metadata.json` and in the `dataset-metadata.json`
+    descriptor built from it.
+  - The schema.org/DCAT `citation` entries join a source name and its licence with
+    a comma: `OpenStreetMap: schools & kindergartens in Algeria, ODbL 1.0 (© OpenStreetMap contributors)`.
+  - Coverage notes, package `description`s, the `types/index.d.ts` documentation and
+    the `index.js` headers carry a colon, comma or semicolon in place of the dash.
+
+  No count, coordinate, licence or date changes. Consumers that match a source name
+  or a citation string literally need to update the separator; anything keyed on
+  `sources[].key` is unaffected. `pnpm validate` now fails on an em dash in
+  published metadata, so it cannot come back through a generator.
+
+## 2.1.2
+
+### Patch Changes
+
+- 68a06ac: Correct reviewed current-Wilaya assignments for the Annaba airport, Algérie Poste offices and ATMs, and Ministry of Youth and Sports establishments while preserving differing Source codes and keeping the flagship Poste mirror synchronized.
+
+## 2.1.1
+
+### Patch Changes
+
+- 76dfd0d: Declare the exact per-package licence terms in the manifest and the LICENSE file.
+
+## 2.1.0
+
+### Minor Changes
+
+- 64b10a1: Replace duplicated and missing `code_commune` values with the 1,541 unique codes from the official ONS 2021 Code Géographique National. Cascade the corrected foreign keys through every linked dataset, preserve Algérie Poste's differing provider-native values, enforce the SQL and repository-wide FK contracts, retain the 2021 mother-wilaya prefix for communes promoted in later reforms, and document the code contract.
+
 ## 2.0.0
 
 ### Major Changes

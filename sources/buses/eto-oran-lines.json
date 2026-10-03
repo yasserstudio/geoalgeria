@@ -1,0 +1,123 @@
+{
+  "evidence": {
+    "announcement_note": "Six route drawings (Google My Maps screenshots, Arabic labels) published on ETO's official page; read by the project owner and supplied as images on 2026-09-04. Only 'خط 83' carries a line number.",
+    "announcement_url": "https://www.facebook.com/p/ETO-100093054514209/",
+    "corroboration": [
+      "None of the six corridors appears in the GuideOran or Wikipedia line tables (agents/oran/lines.json), and ref 83 is absent from both; these are new Operator-published facts."
+    ],
+    "geometry_note": "The drawings are Operator-controlled geometry on a Google basemap: validation-only under the promotion gate, not redistributed.",
+    "geometry_validations": [],
+    "mode": "operator_artwork_supplied_by_project_owner",
+    "named_services": [
+      {
+        "from_ar": "عين الترك",
+        "label_ar": "خط عين الترك",
+        "to_ar": "ساحة اول نوفمبر",
+        "via_ar": [
+          "محور دوران الدلافين",
+          "المرسى الكبير",
+          "البحرية العسكرية",
+          "المسبكة"
+        ]
+      },
+      {
+        "from_ar": "1800 مسكن",
+        "label_ar": "خط 1800 سكن سيد البشير",
+        "to_ar": "USTO",
+        "via_ar": [
+          "1600 مسكن",
+          "الدرك الوطني",
+          "السوق",
+          "الطريق الجديدة",
+          "المتوسطة",
+          "بئر الجير 2",
+          "بئر الجير 1",
+          "محور دوران المشتلة",
+          "محور دوران المرشد",
+          "حي ابن رشد"
+        ]
+      },
+      {
+        "from_ar": "حي 1430 مسكن",
+        "label_ar": "حي 1430 مسكن - محطة الحمري",
+        "to_ar": "محطة الحمري",
+        "via_ar": [
+          "محور دوران مغرب العربي",
+          "دوار بلقايد",
+          "المنزه",
+          "حي العقيد لطفي"
+        ]
+      },
+      {
+        "from_ar": "محمد بوضياف",
+        "label_ar": "محمد بوضياف - محطة الحمري",
+        "to_ar": "محطة الحمري",
+        "via_ar": [
+          "حاسي بونيف",
+          "مستشفى اول نوفمبر"
+        ]
+      },
+      {
+        "from_ar": "المحطة البرية الباهية",
+        "label_ar": "المحطة البرية الباهية - طفراوي",
+        "to_ar": "طفراوي",
+        "via_ar": [
+          "مطار احمد بن بلة"
+        ]
+      }
+    ],
+    "supplied_at": "2026-09-04",
+    "supplied_images": [
+      {
+        "height": 460,
+        "role": "route_1",
+        "sha256": "d51b65914a20aafc603abde9c55abbc004ad9184e9217c5b1e4b040892afb847",
+        "width": 453
+      },
+      {
+        "height": 464,
+        "role": "route_2",
+        "sha256": "14f6b9d74563df42333e7a86aa321bda17bb1430f98fa28772257301c5a68fd9",
+        "width": 931
+      },
+      {
+        "height": 472,
+        "role": "route_3",
+        "sha256": "0638ec8552f68fdcb8121b6f06a08d7cd06967c70a38ed9a3095334d4ef8ee5c",
+        "width": 1008
+      },
+      {
+        "height": 575,
+        "role": "route_4",
+        "sha256": "f40d1e291753cbe0a7a0730b04d4fb18b90f1d052009332b9e29f21bdb146fb1",
+        "width": 728
+      },
+      {
+        "height": 601,
+        "role": "route_5",
+        "sha256": "31ed11e71980bb2f3e2c4253a42ee550bc871d07aa4c01f21fb5cc3674b50dbf",
+        "width": 644
+      },
+      {
+        "height": 269,
+        "role": "route_6",
+        "sha256": "016f7601022b0feba6f2d20b3679f5cc0d9cb4fff6ba30dc2c98de2c70602f75",
+        "width": 710
+      }
+    ],
+    "unmatched_osm": [
+      {
+        "note": "OSM 19393432 (Line 39, Palais des Sports-Hai Nedjma) and 19393433 (Hai Nedjma-Hai Sabah) are not among the six published routes; nothing to attach."
+      }
+    ]
+  },
+  "lines": [
+    {
+      "ref": "83",
+      "terminus1_ar": "محطة الحمري",
+      "terminus1_fr": "Station El Hamri",
+      "terminus2_ar": "المحطة النهائية HPC 41",
+      "terminus2_fr": "Terminus HPC 41 (Aïn El Beïda)"
+    }
+  ]
+}

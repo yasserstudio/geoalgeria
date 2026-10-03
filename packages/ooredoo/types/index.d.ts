@@ -6,7 +6,7 @@
 export type OoredooType = "CSO" | "EO" | "ESO";
 
 /** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
- *  `null` means there is no coordinate at all — not observed in this dataset
+ *  `null` means there is no coordinate at all: not observed in this dataset
  *  (every store is geocoded), but part of the shared contract vocabulary. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
@@ -48,7 +48,7 @@ export interface OoredooStore {
   geo_precision: "exact" | "approximate";
   /** `"operator_api"`, or `"commune_centroid"` on a corrected record. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "ooredoo". */
+  /** Provenance key into `metadata.sources[]`: always "ooredoo". */
   source: "ooredoo";
   /** External identifiers: the operator's own store id. */
   refs: Refs;
@@ -60,7 +60,7 @@ export interface OoredooStore {
   type_label_ar: string;
   /** Street address as listed by the operator. */
   address: string;
-  /** The operator's own declared wilaya name, for transparency — a few points
+  /** The operator's own declared wilaya name, for transparency: a few points
    *  carry inaccurate source coordinates, so their derived `wilaya_code`/
    *  `commune` (nearest-centroid) may not match this. */
   operator_wilaya: string;
@@ -76,7 +76,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus Ooredoo stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus Ooredoo stats. */
 export interface Metadata {
   package: "@geoalgeria/ooredoo";
   schema_version: string;
@@ -84,7 +84,7 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — every store. */
+  /** Records with coordinates: every store. */
   geocoded_count: number;
   geocoded_pct: number;
   /** Count by `geo_precision`. */

@@ -10,6 +10,9 @@ export type GeoPrecision = "exact" | "approximate" | null;
 /** How the coordinate was obtained: always the source's own published point. */
 export type GeoMethod = "source_point";
 
+/** Maintainer review applied to a source-derived record. */
+export type ReviewStatus = "corrected";
+
 /** External identifiers keyed by source system. */
 export interface Refs {
   /** ICAO (OACI) code, duplicated from the top-level `icao` field. */
@@ -24,15 +27,17 @@ export interface Refs {
 
 /** A civil airport. */
 export interface Airport {
-  /** Stable id — the ICAO code, lowercased (e.g. "daad"). */
+  /** Stable id: the ICAO code, lowercased (e.g. "daad"). */
   id: string;
   /** Official airport name in French. */
   name: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
-  /** Always null — this dataset is wilaya-level only, no commune linkage. */
+  /** ANAC's original Wilaya code when a reviewed correction changed the linkage. */
+  source_wilaya_code?: string;
+  /** Always null: this dataset is wilaya-level only, no commune linkage. */
   commune_code: null;
-  /** Always null — see `commune_code`. */
+  /** Always null: see `commune_code`. */
   commune: null;
   /** Latitude (WGS84). Every airport carries its source's own published point. */
   lat: number;
@@ -40,14 +45,14 @@ export interface Airport {
   lng: number;
   /** Always "exact": every point comes straight from a source, not a fallback. */
   geo_precision: "exact";
-  /** Always "source_point" — see `geo_precision`. */
+  /** Always "source_point": see `geo_precision`. */
   geo_method: GeoMethod;
   /** Provenance key into `metadata.sources[]`. "anac" for the 33 airports on
    *  ANAC's map; "ourairports" for the three it omits (HRM, MZW, LOO). */
   source: "anac" | "ourairports";
   /** External identifiers: the ICAO and IATA codes. */
   refs: Refs;
-  /** ICAO (OACI) code — matches /^DA[A-Z]{2}$/ (e.g. "DAAD"). */
+  /** ICAO (OACI) code: matches /^DA[A-Z]{2}$/ (e.g. "DAAD"). */
   icao: string;
   /** IATA code (e.g. "ALG"). ANAC does not publish these; they are backfilled
    *  from OurAirports on an ICAO join, each confirmed by coordinate distance.
@@ -61,6 +66,14 @@ export interface Airport {
   phone: string | null;
   /** Official website URL, or null, see `address`. */
   website: string | null;
+  /** Present when maintainers corrected a source-derived field after review. */
+  review_status?: ReviewStatus;
+  /** ISO date (YYYY-MM-DD) of the correction review. */
+  reviewed_at?: string;
+  /** Maintainer or team that performed the review. */
+  reviewed_by?: string;
+  /** Public evidence URLs supporting the correction. */
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */
@@ -102,7 +115,7 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — equal to `record_count`: both sources publish a
+  /** Records with coordinates, equal to `record_count`: both sources publish a
    *  point for every airport. */
   geocoded_count: number;
   geocoded_pct: number;
@@ -117,7 +130,7 @@ export interface Metadata {
   license: string;
   /** ISO date (YYYY-MM-DD) the dataset was regenerated. */
   updated: string;
-  /** Airports carrying an IATA code — currently all 36. */
+  /** Airports carrying an IATA code: currently all 36. */
   with_iata: number;
   /** Record count per `source` key, e.g. `{ anac: 33, ourairports: 3 }`. */
   by_source: Record<string, number>;
@@ -205,7 +218,7 @@ export function airportByIcao(code: string): Airport | null;
  *  All 36 records carry a code today; a record with a null `iata` would simply
  *  be unreachable through this lookup, and `airportByIcao` still finds it. */
 export function airportByIata(code: string): Airport | null;
-/** Airports in a wilaya — accepts "16", 16, or "01". */
+/** Airports in a wilaya: accepts "16", 16, or "01". */
 export function airportsByWilaya(code: string | number): Airport[];
 /** Dataset metadata (counts, source, generated_at). */
 export function metadata(): Metadata;

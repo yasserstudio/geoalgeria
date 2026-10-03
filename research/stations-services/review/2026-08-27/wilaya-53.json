@@ -1,0 +1,349 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-53",
+    "wilaya_code": 53,
+    "name": "In Salah",
+    "name_ar": "عين صالح",
+    "center": [
+      3.355,
+      27.197499999999998
+    ],
+    "bounds": [
+      0.933,
+      24.637,
+      5.777,
+      29.758
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 9,
+    "osm_records": 9,
+    "tariki_records": 2,
+    "cross_source": 2,
+    "multiple_tariki": 0,
+    "osm_only": 7,
+    "tariki_only": 0,
+    "nearby_osm_pairs": 1,
+    "conflicts": 2
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-5646603522",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1361736303",
+      "reasons": [
+        "nearby-osm"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-1159237783",
+      "coordinates": [
+        2.5419212,
+        28.4687801
+      ],
+      "osm": {
+        "id": "node/1159237783",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal Bouhraoua",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.5419212,
+          28.4687801
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal Bouhraoua",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3090318903",
+      "coordinates": [
+        1.8832861,
+        27.0866197
+      ],
+      "osm": {
+        "id": "node/3090318903",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.8832861,
+          27.0866197
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12751",
+          "route_id": "52",
+          "name_fr": "station naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.883,
+            27.087
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 53,
+          "wilaya_fr": "In Salah",
+          "wilaya_ar": "عين صالح",
+          "offset_m": 51
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-3888311744",
+      "coordinates": [
+        2.5067879,
+        27.2744256
+      ],
+      "osm": {
+        "id": "node/3888311744",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.5067879,
+          27.2744256
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14671",
+          "route_id": "16634",
+          "name_fr": "PK10",
+          "name_ar": "شمال عين صالح على بعد 10 كلم",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.507,
+            27.274
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 53,
+          "wilaya_fr": "In Salah",
+          "wilaya_ar": "عين صالح",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "شمال عين صالح على بعد 10 كلم"
+    },
+    {
+      "id": "osm-node-4566437690",
+      "coordinates": [
+        2.524485,
+        28.4653218
+      ],
+      "osm": {
+        "id": "node/4566437690",
+        "name": "تي إي جي عين صالح",
+        "name_ar": "تي إي جي عين صالح",
+        "name_fr": "TEG I-nSalah",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.524485,
+          28.4653218
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "TEG I-nSalah",
+      "display_name_ar": "تي إي جي عين صالح"
+    },
+    {
+      "id": "osm-node-4583334690",
+      "coordinates": [
+        1.9095833,
+        27.1076792
+      ],
+      "osm": {
+        "id": "node/4583334690",
+        "name": "مركز التطهير باينغر",
+        "name_ar": "مركز التطهير باينغر",
+        "name_fr": "Centre d'assainaissement",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.9095833,
+          27.1076792
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Centre d'assainaissement",
+      "display_name_ar": "مركز التطهير باينغر"
+    },
+    {
+      "id": "osm-node-5435202622",
+      "coordinates": [
+        2.5007283,
+        27.1749054
+      ],
+      "osm": {
+        "id": "node/5435202622",
+        "name": "بتروماق",
+        "name_ar": "بتروماق",
+        "name_fr": "PETROMAG",
+        "brand": "بتروماق",
+        "operator": "بتروماق",
+        "opening_hours": null,
+        "coordinates": [
+          2.5007283,
+          27.1749054
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "PETROMAG",
+      "display_name_ar": "بتروماق"
+    },
+    {
+      "id": "osm-node-5646603522",
+      "coordinates": [
+        3.1640067,
+        26.0825804
+      ],
+      "osm": {
+        "id": "node/5646603522",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1640067,
+          26.0825804
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1361736303",
+          "offset_m": 25
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1361736303",
+      "coordinates": [
+        3.16422385,
+        26.082473450000002
+      ],
+      "osm": {
+        "id": "way/1361736303",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.16422385,
+          26.082473450000002
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5646603522",
+          "offset_m": 25
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-266865960",
+      "coordinates": [
+        2.4876382,
+        27.2050882
+      ],
+      "osm": {
+        "id": "way/266865960",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.4876382,
+          27.2050882
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    }
+  ]
+}

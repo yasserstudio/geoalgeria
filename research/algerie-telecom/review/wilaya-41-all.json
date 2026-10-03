@@ -1,0 +1,106 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 41,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "f6ca32826f98a64ed8c27839fce7b8f0890e896e457ac6df771854169a8ab373",
+  "count": 4,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "f6ca32826f98a64ed8c27839fce7b8f0890e896e457ac6df771854169a8ab373:0",
+      "source_id": "438",
+      "raw": {
+        "id": "438",
+        "code_wilaya": "41",
+        "wilaya": "SOUK AHRAS ",
+        "commune": "SOUK AHRAS ,ZAAROURIA ,HENANCHA,MECHROUHA ,OULED IDRISS, AIN ZENA ,",
+        "adresse": "IBN KHALDOUN",
+        "type": "Agence Commerciale",
+        "latitude": " 36.285151",
+        "longitude": "  7.957600\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.285151,
+      "lng": 7.9576,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "41"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "f6ca32826f98a64ed8c27839fce7b8f0890e896e457ac6df771854169a8ab373:1",
+      "source_id": "439",
+      "raw": {
+        "id": "439",
+        "code_wilaya": "41",
+        "wilaya": "SOUK AHRAS ",
+        "commune": "TAOURA,MERAHNA,HEDDADA,KHEDARA,OULED MOUMEN , SIDI FREDJ ,OUILANE",
+        "adresse": "TAOURA CENTRE VILLE ",
+        "type": "Point de présence",
+        "latitude": " 36.166829",
+        "longitude": "  8.039433\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.166829,
+      "lng": 8.039433,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "41"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "f6ca32826f98a64ed8c27839fce7b8f0890e896e457ac6df771854169a8ab373:2",
+      "source_id": "440",
+      "raw": {
+        "id": "440",
+        "code_wilaya": "41",
+        "wilaya": "SOUK AHRAS ",
+        "commune": "SEDRATA,AIN SOLTANE,ZOUABI,BIRBOUHOUCHE,SAFEL EL OUIDANE ,OUM LADHAIM , TERGUALET ,KHEMISSA",
+        "adresse": "RUE DE 08 MAI 1945",
+        "type": "Agence Commerciale",
+        "latitude": " 36.132590",
+        "longitude": "  7.532572\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.13259,
+      "lng": 7.532572,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "41"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "f6ca32826f98a64ed8c27839fce7b8f0890e896e457ac6df771854169a8ab373:3",
+      "source_id": "441",
+      "raw": {
+        "id": "441",
+        "code_wilaya": "41",
+        "wilaya": "SOUK AHRAS ",
+        "commune": "M'DAOUROUCHE,TIFECHE,RAGOUBA,OUED KEBRITE ,DREAA ",
+        "adresse": "CENTRE VILLE M'DAOUROUCHE",
+        "type": "Point de présence",
+        "latitude": " 36.076270",
+        "longitude": "  7.821371\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.07627,
+      "lng": 7.821371,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "41"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

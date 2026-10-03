@@ -14,7 +14,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/geoalgeria)](https://www.jsdelivr.com/package/npm/geoalgeria)
 [![GitHub stars](https://img.shields.io/github/stars/yasserstudio/geoalgeria?style=flat)](https://github.com/yasserstudio/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -38,7 +38,7 @@ GeoAlgeria is a solo-built, open project with one goal: to become the first and 
 
 ## The data
 
-Most Algeria datasets online still list **48 wilayas**. Algeria has had **69 since April 2026**. GeoAlgeria is kept current, with real Algérie Poste postal codes, geographic coordinates, bilingual names, and post offices & ATMs, shipped as JSON, CSV, GeoJSON, SQL, and TypeScript. One `npm install`, MIT-licensed, and CI-validated on every commit.
+Most Algeria datasets online still list **48 wilayas**. Algeria has had **69 since April 2026**. GeoAlgeria is kept current, with real Algérie Poste postal codes, geographic coordinates, bilingual names, and post offices & ATMs, shipped as JSON, CSV, GeoJSON, SQL, and TypeScript. One `npm install`, MIT code with per-package data terms, and CI-validated on every commit.
 
 ```bash
 npm install geoalgeria
@@ -57,41 +57,41 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 
 | | Count | |
 |---|---|---|
-| **Wilayas** | 69 | provinces (2019 + 2026 reforms) |
-| **Dairas** | 556 | districts, as first-class entities |
-| **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates |
+| **Wilayas** | 69 | provinces (2019 + 2026 reforms), each with its capital commune (chef-lieu) |
+| **Dairas** | 551 | districts, as first-class entities |
+| **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates, OpenStreetMap + Wikidata links |
 | **Post offices** | 3,908 | real Algérie Poste codes, coordinates |
 | **ATMs** | 2,026 | Algérie Poste GAB network |
 | **Employment agencies** | 331 | ANEM: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
-| **Mobilis network** | 12,345 | 165 agencies + 12,180 points of sale. [`@geoalgeria/mobilis`](packages/mobilis) |
-| **5G coverage** | 3,096 | Djezzy + Mobilis + Ooredoo 5G sites. [`@geoalgeria/telecom`](packages/telecom) |
+| **Mobilis network** | 12,344 | 164 agencies + 12,180 points of sale. [`@geoalgeria/mobilis`](packages/mobilis) |
+| **5G coverage** | 3,598 | Djezzy + Mobilis + Ooredoo 5G sites. [`@geoalgeria/telecom`](packages/telecom) |
 | **Civil airports** | 36 | ANAC + OurAirports: names, ICAO + IATA codes, contacts, coordinates. [`@geoalgeria/aviation`](packages/aviation) |
-| **Nonstop routes** | 123 | Air Algérie's international network as directional legs, each with an operator, an evidence tier and a source. [`@geoalgeria/aviation`](packages/aviation) |
+| **Nonstop routes** | 129 | Air Algérie's international network as directional legs, each with an operator, an evidence tier and a source. [`@geoalgeria/aviation`](packages/aviation) |
 | **Banks & branches** | 1,704 | all 21 licensed banks + 8 institutions; branches with RIB/SWIFT codes, ownership, coordinates. [`@geoalgeria/banques`](packages/banques) |
 | **Delivery carriers** | 411 | 16-carrier registry + 411 geocoded stop-desks across 61 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro). [`@geoalgeria/livraison`](packages/livraison) |
 | **Youth establishments** | 2,334 | maisons de jeunes, complexes sportifs de proximité, salles polyvalentes, auberges, cultural & science centers & more across 58 wilayas (Ministry of Youth and Sports). [`@geoalgeria/jeunesse`](packages/jeunesse) |
 | **Sports facilities** | 5,141 | stadiums, pools, proximity fields, athletics tracks, courts & more (27 types) across 58 wilayas (Ministry of Youth and Sports). [`@geoalgeria/sports`](packages/sports) |
 | **Higher education** | 177 | universities, grandes écoles, ENS, centres + 19 private & 48 other-ministry institutions across 51 wilayas, with official websites (MESRS). [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
 | **Tourism** | 4,348 | 1,602 hotels, 1,248 attractions, 1,184 historic sites, 282 thermal springs (ASAL), 32 national parks. [`@geoalgeria/tourisme`](packages/tourisme) |
-| **Vocational training** | 1,932 | 856 CFPA + 182 INSFP + 723 private accredited + 58 DFEPs + more across 58 wilayas (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
+| **Vocational training** | 1,932 | 856 CFPA + 182 INSFP + 723 private accredited + 58 DFEPs + more across all 69 current wilayas (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **Mosques** | 20,759 | Wikidata + OpenStreetMap composite, Arabic & French names, denomination, all 69 wilayas. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **Djezzy boutiques** | 128 | geocoded retail stores with category, hours & commune/wilaya linkage (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
-| **Health establishments** | 695 | EPH · EPSP · EHS · CHU from the Ministry of Health, bilingual, 600 geocoded via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
-| **Clinics & care facilities** | 1,894 | Polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas. The community tier beside the `sante` registry, never summed with it. [`@geoalgeria/cliniques`](packages/cliniques) |
+| **Health establishments** | 668 | EPH · EPSP · EHS · CHU from the Ministry of Health, bilingual, 597 geocoded via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
+| **Clinics & care facilities** | 1,917 | Polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas. The community tier beside the `sante` registry, never summed with it. [`@geoalgeria/cliniques`](packages/cliniques) |
 | **Civil protection units** | 880 | DGPC fire & rescue units nationwide, Arabic-named, address/phone/fax, status tier, all geocoded, official-primary (dgpc.dz), post-2026-reform wilaya linkage. [`@geoalgeria/protection-civile`](packages/protection-civile) |
 | **Cultural places** | 1,083 | Protected sites, museums, theatres, libraries + cultural establishments from the Ministry of Culture, bilingual, all geocoded, 66 wilayas. [`@geoalgeria/culture`](packages/culture) |
 | **Agriculture institutions** | 196 | Services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups from the Ministry of Agriculture, bilingual, geocoded, 58 wilayas. [`@geoalgeria/agriculture`](packages/agriculture) |
-| **Schools** | 11,855 | Primaires, CEM, lycées & préscolaires classified by cycle from OpenStreetMap, bilingual, all 69 wilayas. [`@geoalgeria/ecoles`](packages/ecoles) |
+| **Schools** | 11,858 | Primaires, CEM, lycées & préscolaires classified by cycle from OpenStreetMap, bilingual, all 69 wilayas. [`@geoalgeria/ecoles`](packages/ecoles) |
 | **Intercity bus stations** | 74 | SOGRAL gares routières across 52 wilayas, names, addresses, surface areas, coordinates. [`@geoalgeria/gares-routieres`](packages/gares-routieres) |
 | **Rail & urban transit** | 692 | train, tram, metro, aerial-tramway & gondola nodes (SNTF / SETRAM / SEMA), Wikidata + OSM composite, bilingual, 50 wilayas. [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
-| **Urban bus lines** | 50 | ETUSA (Alger), termini, stop counts, communes & stations served. [`@geoalgeria/buses`](packages/buses) |
-| **Pharmacies** | 3,797 | officines geocoded from OpenStreetMap, bilingual where named, wilaya/commune-linked. [`@geoalgeria/pharmacies`](packages/pharmacies) |
+| **Urban/suburban bus Lines** | 184 | 16 Operators, 76 shapes, 128 Directions, 1,603 Stations. [`@geoalgeria/buses`](packages/buses) |
+| **Pharmacies** | 3,807 | officines geocoded from OpenStreetMap, bilingual where named, wilaya/commune-linked. [`@geoalgeria/pharmacies`](packages/pharmacies) |
 | **Pharma manufacturers** | 171 | approved medicine & medical-device makers from the Ministry of Pharmaceutical Industry register, geocoded. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **Ooredoo stores** | 572 | Espaces Ooredoo, City Shops & Espaces Services with real coordinates, wilaya/commune-linked (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
 Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships JSON to stay light; CSV/GeoJSON/SQL ride in every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
 
-> Current to **Law n° 26-06** (new territorial organization), [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf), plus the 2019 reform (Law 19-12).
+> Current to **Law n° 26-06** (new territorial organization), [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf), plus the 2019 reform (Law 19-12).
 
 ## Why GeoAlgeria?
 
@@ -136,20 +136,21 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Vocational training, 1,932 CFPA, INSFP, IFEP, IEP, DFEPs & private centers from MFEP (takwin.dz), with capacity, boarding & coordinates |
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Djezzy boutiques, 128 geocoded retail stores from djezzy.dz, with category, hours & commune/wilaya linkage |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosques of Algeria, 20,759 geocoded, a Wikidata + OpenStreetMap composite with Arabic & French names, denomination & commune/wilaya linkage |
-| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments, 695 from the Ministry of Health (EPH, EPSP, EHS, CHU), bilingual, geocoded via OSM + Wikidata with commune/wilaya linkage |
-| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Clinics & proximity-care facilities, 1,894 geocoded from OpenStreetMap across 66 wilayas, classified by type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingual, with sector, speciality, phone & hours where tagged; the OSM community tier of the health sector, and every OSM element `sante` references is excluded from it |
+| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments, 668 from the Ministry of Health (EPH, EPSP, EHS, CHU), bilingual, geocoded via OSM + Wikidata with commune/wilaya linkage |
+| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Clinics & proximity-care facilities, 1,917 geocoded from OpenStreetMap across 66 wilayas, classified by type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingual, with sector, speciality, phone & hours where tagged; the OSM community tier of the health sector, and every OSM element `sante` references is excluded from it |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Cultural atlas, 1,083 places from the Ministry of Culture (protected sites, museums, theatres, libraries, cultural establishments), bilingual, fully geocoded with commune/wilaya linkage |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Agriculture-sector institutions, 196 from the Ministry of Agriculture across 7 networks (DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups), bilingual, geocoded with commune/wilaya linkage |
-| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Schools, 11,855 schools & kindergartens from OpenStreetMap, classified by cycle (primaire/moyen/secondaire/préscolaire), bilingual, all 69 wilayas, with commune/wilaya linkage |
+| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Schools, 11,858 schools & kindergartens from OpenStreetMap, classified by cycle (primaire/moyen/secondaire/préscolaire), bilingual, all 69 wilayas, with commune/wilaya linkage |
 | [`packages/gares-routieres`](packages/gares-routieres) | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | Intercity bus stations, 74 SOGRAL gares routières across 52 wilayas, geocoded with surfaces & commune/wilaya linkage |
 | [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | Rail & urban transit, 692 train/tram/metro/aerial/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual FR/AR |
-| [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | Urban bus networks, 50 ETUSA (Alger) lines with termini, stop counts, communes & stations served (line-level v1) |
+| [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | 184 reviewed urban/suburban Lines, 76 shapes and 1,603 Stations across 16 Operators |
 | [`packages/industrie-pharmaceutique`](packages/industrie-pharmaceutique) | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | Pharmaceutical manufacturers, 171 approved medicine (PP) & medical-device (DM) makers from the Ministry of Pharmaceutical Industry register, bilingual, geocoded to commune/wilaya centroid |
-| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines), 3,797 geocoded across 67 wilayas from OpenStreetMap, bilingual where named, with phone/hours/dispensing where tagged & commune/wilaya linkage |
+| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines), 3,807 geocoded across 67 wilayas from OpenStreetMap, bilingual where named, with phone/hours/dispensing where tagged & commune/wilaya linkage |
 | [`packages/protection-civile`](packages/protection-civile) | [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | Civil protection (fire & rescue) units, 880 DGPC units nationwide, Arabic-named, with address/phone/fax & a status tier, all geocoded, official-primary (dgpc.dz); wilaya re-derived against the 69 post-2026-reform boundaries |
 | [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Ooredoo stores, 572 EO / City Shop / Espace Services with real coordinates & commune/wilaya linkage (ooredoo.dz); completes the telecom retail trio |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | Umbrella, installs aviation + ferroviaire + gares-routieres + buses in one step |
 | [`packages/pharma`](packages/pharma) | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | Umbrella, installs industrie-pharmaceutique + pharmacies in one step |
+| [`packages/normalize`](packages/normalize) | [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize) | Search keys for Algerian place names, the Conservative key, the Loose key, the tokenizer and their Golden corpus; code only, zero dependencies, so every index folds a name the same way |
 
 [Browse all packages →](https://geoalgeria.com/data) · [API docs & field reference →](https://geoalgeria.com/data/docs)
 
@@ -163,7 +164,22 @@ Every record follows the same shape:
 - External ids live under `refs` (`osm`, `wikidata`, …).
 - `geo_precision` is strictly `exact | approximate | null`, `null` exactly when there is no coordinate, with the geocoding method in `geo_method`.
 
-Machine-readable artifacts ride alongside: a root [`index.json`](index.json) catalog, a `schema.org/Dataset` descriptor (`dataset-metadata.json`) in each package, and the 69 wilaya boundary polygons in the core package at [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (display-grade).
+Machine-readable artifacts ride alongside: a root [`index.json`](index.json) catalog, a `schema.org/Dataset` descriptor (`dataset-metadata.json`) in each data-bearing package (the code-only `@geoalgeria/normalize` carries no dataset descriptor), and the 69 wilaya boundary polygons in the core package at [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (display-grade).
+
+Human-reviewed corrections use the same contract across packages. A package can
+add `quality/overrides/<package>.json`; the canonical writer checks the expected
+old values, requires public evidence for changes or exclusions, applies the
+decision, and then runs the ordinary schema gate. See
+[`quality/overrides/README.md`](quality/overrides/README.md). Health data is the
+first pilot.
+
+A published id is a join key, so it is never reused. A record that leaves a
+package leaves its id in that package's `data/retired-ids.json`, reserved for
+good, and where two records are merged into one the ledger's `migrations` map
+also says where the absorbed id's data went: `merged_into` names the record that
+carries it now, with a note and, where the upstream has them, the source ids the
+pair stood for. A consumer holding an old id can follow it instead of only
+finding it gone.
 
 One package predates the contract, the core `geoalgeria` dataset (administrative divisions, not GeoRecords; marked `schema_version: null` in the catalog).
 
@@ -198,11 +214,13 @@ Semantic versioning per package, automated with [Changesets](https://github.com/
 
 ## Sponsor
 
-GeoAlgeria is free and MIT. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), it funds keeping the data current and expanding the coverage.
+GeoAlgeria is free. The code is MIT and each package states its own data terms. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), it funds keeping the data current and expanding the coverage.
 
 ## License & disclaimer
 
 **Code:** [MIT](LICENSE). **Data:** compiled from public official sources (the *Journal Officiel*, Algérie Poste, ANEM, ANAC, each operator's/institution's public site) and redistributed for reference.
+
+Each package manifest declares its exact terms (an SPDX expression, or `SEE LICENSE IN LICENSE`) and its own `LICENSE` file carries the data terms in full.
 
 GeoAlgeria is an **independent project, not affiliated with or endorsed by** any government body, regulator, operator, or institution it references; their names and marks belong to their respective owners. The data is provided **"as is", without warranty, verify against the official source** before relying on it, especially for financial, payment, KYC, or compliance use. Full terms: **[DISCLAIMER](DISCLAIMER.md)**.
 

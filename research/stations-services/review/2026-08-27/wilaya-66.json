@@ -1,0 +1,596 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-66",
+    "wilaya_code": 66,
+    "name": "Messaad",
+    "name_ar": "مسعد",
+    "center": [
+      4.102,
+      33.7485
+    ],
+    "bounds": [
+      3.125,
+      32.853,
+      5.079,
+      34.644
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 16,
+    "osm_records": 13,
+    "tariki_records": 8,
+    "cross_source": 5,
+    "multiple_tariki": 0,
+    "osm_only": 8,
+    "tariki_only": 3,
+    "nearby_osm_pairs": 0,
+    "conflicts": 3
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-14027",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4927",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5884",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10912492859",
+      "coordinates": [
+        4.6618858,
+        33.1761286
+      ],
+      "osm": {
+        "id": "node/10912492859",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.6618858,
+          33.1761286
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-12010373887",
+      "coordinates": [
+        3.4115427,
+        34.1836704
+      ],
+      "osm": {
+        "id": "node/12010373887",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.4115427,
+          34.1836704
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2145317375",
+      "coordinates": [
+        3.4978686,
+        34.178311
+      ],
+      "osm": {
+        "id": "node/2145317375",
+        "name": "محطة بنزين العايب",
+        "name_ar": "محطة بنزين العايب",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.4978686,
+          34.178311
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5898",
+          "route_id": "10750",
+          "name_fr": "Station de services Elaib",
+          "name_ar": "العايب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.498,
+            34.179
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 66,
+          "wilaya_fr": "Messaad",
+          "wilaya_ar": "مسعد",
+          "offset_m": 78
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بنزين العايب"
+    },
+    {
+      "id": "osm-node-2145970909",
+      "coordinates": [
+        3.2334111,
+        33.9581631
+      ],
+      "osm": {
+        "id": "node/2145970909",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2334111,
+          33.9581631
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-2176224573",
+      "coordinates": [
+        3.5109335,
+        34.1464322
+      ],
+      "osm": {
+        "id": "node/2176224573",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.5109335,
+          34.1464322
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5891",
+          "route_id": "3018",
+          "name_fr": "Station de services Derkouche",
+          "name_ar": "دركوش",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.511,
+            34.146
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 66,
+          "wilaya_fr": "Messaad",
+          "wilaya_ar": "مسعد",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "دركوش"
+    },
+    {
+      "id": "osm-node-2182262183",
+      "coordinates": [
+        3.5008054,
+        34.1479327
+      ],
+      "osm": {
+        "id": "node/2182262183",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.5008054,
+          34.1479327
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5888",
+          "route_id": "3018",
+          "name_fr": "Station de services Meknez",
+          "name_ar": "مكناز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.501,
+            34.148
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 66,
+          "wilaya_fr": "Messaad",
+          "wilaya_ar": "مسعد",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "مكناز"
+    },
+    {
+      "id": "osm-node-2437356059",
+      "coordinates": [
+        3.4770738,
+        34.1545569
+      ],
+      "osm": {
+        "id": "node/2437356059",
+        "name": "محطة وقود سير غاز",
+        "name_ar": "محطة وقود سير غاز",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "سير غاز",
+        "opening_hours": null,
+        "coordinates": [
+          3.4770738,
+          34.1545569
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5887",
+          "route_id": "3018",
+          "name_fr": "Station de services Douha",
+          "name_ar": "الدوحة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.477,
+            34.154
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 66,
+          "wilaya_fr": "Messaad",
+          "wilaya_ar": "مسعد",
+          "offset_m": 62
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود سير غاز"
+    },
+    {
+      "id": "osm-node-4319364768",
+      "coordinates": [
+        3.7739586,
+        34.5346902
+      ],
+      "osm": {
+        "id": "node/4319364768",
+        "name": "فيض البطمة",
+        "name_ar": "فيض البطمة",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7739586,
+          34.5346902
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5905",
+          "route_id": "10758",
+          "name_fr": "station de services Mofouk Deradji",
+          "name_ar": "محطة الخدمات موفق الدراجي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.7731,
+            34.5352
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 66,
+          "wilaya_fr": "Messaad",
+          "wilaya_ar": "مسعد",
+          "offset_m": 97
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "فيض البطمة",
+      "display_name_ar": "فيض البطمة"
+    },
+    {
+      "id": "osm-node-6122497535",
+      "coordinates": [
+        3.7714725,
+        34.5230266
+      ],
+      "osm": {
+        "id": "node/6122497535",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7714725,
+          34.5230266
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6390414762",
+      "coordinates": [
+        3.5335502,
+        34.1371603
+      ],
+      "osm": {
+        "id": "node/6390414762",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.5335502,
+          34.1371603
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1373090107",
+      "coordinates": [
+        3.4958813500000003,
+        34.152629149999996
+      ],
+      "osm": {
+        "id": "way/1373090107",
+        "name": "محطة بنزين وسط المدينة",
+        "name_ar": "محطة بنزين وسط المدينة",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.4958813500000003,
+          34.152629149999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بنزين وسط المدينة"
+    },
+    {
+      "id": "osm-way-791591468",
+      "coordinates": [
+        4.43791945,
+        33.466406649999996
+      ],
+      "osm": {
+        "id": "way/791591468",
+        "name": "محطة وقود نفطال",
+        "name_ar": "محطة وقود نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          4.43791945,
+          33.466406649999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود نفطال"
+    },
+    {
+      "id": "osm-way-791591469",
+      "coordinates": [
+        4.4463931500000005,
+        33.46386905
+      ],
+      "osm": {
+        "id": "way/791591469",
+        "name": "محطة الوقود رماضنية",
+        "name_ar": "محطة الوقود رماضنية",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          4.4463931500000005,
+          33.46386905
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود رماضنية"
+    },
+    {
+      "id": "tariki-14027",
+      "coordinates": [
+        3.236,
+        33.96
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14027",
+          "route_id": "20578",
+          "name_fr": null,
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.236,
+            33.96
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 66,
+          "wilaya_fr": "Messaad",
+          "wilaya_ar": "مسعد",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة بنزين",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "tariki-4927",
+      "coordinates": [
+        3.777,
+        34.525
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4927",
+          "route_id": "9607",
+          "name_fr": "Station de services Hamdi Lakhdar",
+          "name_ar": "حامدي لخضر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.777,
+            34.525
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 66,
+          "wilaya_fr": "Messaad",
+          "wilaya_ar": "مسعد",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Hamdi Lakhdar",
+      "display_name_ar": "حامدي لخضر"
+    },
+    {
+      "id": "tariki-5884",
+      "coordinates": [
+        3.273,
+        34.222
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5884",
+          "route_id": "546",
+          "name_fr": "Station de services Guelila Elarbi",
+          "name_ar": "محطة الخدمات قليلة العربي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.273,
+            34.222
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 66,
+          "wilaya_fr": "Messaad",
+          "wilaya_ar": "مسعد",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Guelila Elarbi",
+      "display_name_ar": "محطة الخدمات قليلة العربي"
+    }
+  ]
+}

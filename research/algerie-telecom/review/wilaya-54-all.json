@@ -1,0 +1,60 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 54,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "b306f6a6add56d4798ec5e61f56ad74a5c0b183b5a81d01b8095c2a19e42f938",
+  "count": 2,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "b306f6a6add56d4798ec5e61f56ad74a5c0b183b5a81d01b8095c2a19e42f938:0",
+      "source_id": "261",
+      "raw": {
+        "id": "261",
+        "code_wilaya": "54",
+        "wilaya": "IN GUEZZAM",
+        "commune": "IN GUEZZAM",
+        "adresse": "CENTRE VILLE AIN GUEZZAM",
+        "type": "Agence Commerciale",
+        "latitude": "19,57203056",
+        "longitude": "5,766736111\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 19.57203056,
+      "lng": 5.766736111,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "54"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "b306f6a6add56d4798ec5e61f56ad74a5c0b183b5a81d01b8095c2a19e42f938:1",
+      "source_id": "262",
+      "raw": {
+        "id": "262",
+        "code_wilaya": "54",
+        "wilaya": "IN GUEZZAM",
+        "commune": "TINZAOUATINE",
+        "adresse": " CITE 05  JUILLET CENTRE VILLE COMMUNE TINZAOUATINE",
+        "type": "Point de présence",
+        "latitude": "19,958459",
+        "longitude": "2,9705639\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 19.958459,
+      "lng": 2.9705639,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "54"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

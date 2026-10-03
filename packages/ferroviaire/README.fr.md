@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/ferroviaire)](https://www.npmjs.com/package/@geoalgeria/ferroviaire)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/ferroviaire)](https://www.npmjs.com/package/@geoalgeria/ferroviaire)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
 
 </div>
 

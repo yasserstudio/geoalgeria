@@ -1,0 +1,363 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 18,
+  "records": [
+    {
+      "id": "node/13097283667",
+      "amenity": "fuel",
+      "name": "محطة بن زايد",
+      "name_ar": "محطة بن زايد",
+      "name_fr": "Station Benzaid",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.9485504,
+        36.7743612
+      ]
+    },
+    {
+      "id": "node/1895364994",
+      "amenity": "fuel",
+      "name": "محطة نفطال مالك عبلة",
+      "name_ar": "محطة نفطال مالك عبلة",
+      "name_fr": "Station Naftal Malek Abla",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.766652,
+        36.8239776
+      ]
+    },
+    {
+      "id": "node/5044186222",
+      "amenity": "fuel",
+      "name": "محطة الوقود نفطال",
+      "name_ar": "محطة الوقود نفطال",
+      "name_fr": "Station-service Naftal",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        6.276564,
+        36.7547966
+      ]
+    },
+    {
+      "id": "way/1211273664",
+      "amenity": "fuel",
+      "name": "محطة وقود أكروشن",
+      "name_ar": "محطة وقود أكروشن",
+      "name_fr": "Station-service Akrouchen",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.89677195,
+        36.72771175
+      ]
+    },
+    {
+      "id": "way/1226150857",
+      "amenity": "fuel",
+      "name": "محطة خدمات بن فاضل",
+      "name_ar": "محطة خدمات بن فاضل",
+      "name_fr": "Station-service Benfadel",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.9437295,
+        36.80167805
+      ]
+    },
+    {
+      "id": "way/1310589072",
+      "amenity": "fuel",
+      "name": "محطة الوقود نفطال",
+      "name_ar": "محطة الوقود نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.5975658,
+        36.7752306
+      ]
+    },
+    {
+      "id": "way/1343895922",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        6.273024749999999,
+        36.62990015
+      ]
+    },
+    {
+      "id": "way/1346340851",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.914302,
+        36.7953368
+      ]
+    },
+    {
+      "id": "way/1420684819",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        5.77070255,
+        36.81802325
+      ]
+    },
+    {
+      "id": "way/1422508718",
+      "amenity": "fuel",
+      "name": "Chabi auto;محطة خدمات شابي",
+      "name_ar": "محطة خدمات شابي",
+      "name_fr": "Chabi auto",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.797079999999999,
+        36.802703550000004
+      ]
+    },
+    {
+      "id": "way/1422510154",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.770838449999999,
+        36.81018315
+      ]
+    },
+    {
+      "id": "way/1422511295",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        5.763574500000001,
+        36.8212136
+      ]
+    },
+    {
+      "id": "way/1424081884",
+      "amenity": "fuel",
+      "name": "محطة خدمات حمادوا لخضر",
+      "name_ar": "محطة خدمات حمادوا لخضر",
+      "name_fr": "Station-service Hammadou Lakhdar",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.95226805,
+        36.82107015
+      ]
+    },
+    {
+      "id": "way/1424084857",
+      "amenity": "fuel",
+      "name": "محطة الوقود مريمش",
+      "name_ar": "محطة الوقود مريمش",
+      "name_fr": "Station-service Merimech",
+      "brand": "نفطال",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        6.1194023,
+        36.832815749999995
+      ]
+    },
+    {
+      "id": "way/1424086017",
+      "amenity": "fuel",
+      "name": "محطة خدمات شبيرة",
+      "name_ar": "محطة خدمات شبيرة",
+      "name_fr": "Station-service Chebira",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        6.23737085,
+        36.76245985
+      ]
+    },
+    {
+      "id": "way/1424086982",
+      "amenity": "fuel",
+      "name": "محطة الوقود نفطال",
+      "name_ar": "محطة الوقود نفطال",
+      "name_fr": "Station-service Naftal",
+      "brand": "نفطال",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        6.2645222,
+        36.7581692
+      ]
+    },
+    {
+      "id": "way/1424088139",
+      "amenity": "fuel",
+      "name": "Petrom",
+      "name_ar": null,
+      "name_fr": "Petrom",
+      "brand": "Petrom",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        6.2638184500000005,
+        36.75341005
+      ]
+    },
+    {
+      "id": "way/1424097476",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.45853085,
+        36.6624673
+      ]
+    },
+    {
+      "id": "way/1424099246",
+      "amenity": "fuel",
+      "name": "محطة منصورية",
+      "name_ar": "محطة منصورية",
+      "name_fr": "Station Mansouria",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.483612150000001,
+        36.672715800000006
+      ]
+    },
+    {
+      "id": "way/1424102193",
+      "amenity": "fuel",
+      "name": "Station Naftal Bouchemet;محطة نفطال بوشمط",
+      "name_ar": "محطة نفطال بوشمط",
+      "name_fr": "Station Naftal Bouchemet",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.80766555,
+        36.75924175
+      ]
+    },
+    {
+      "id": "way/1424102439",
+      "amenity": "fuel",
+      "name": "محطة الوقود بوعموشة",
+      "name_ar": "محطة الوقود بوعموشة",
+      "name_fr": "Station-service Bouamouchasha",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.789885249999999,
+        36.662897650000005
+      ]
+    },
+    {
+      "id": "way/1426838649",
+      "amenity": "fuel",
+      "name": "محطة قصاب",
+      "name_ar": "محطة قصاب",
+      "name_fr": "Station Kassab",
+      "brand": "نفطال",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.88258375,
+        36.7664162
+      ]
+    },
+    {
+      "id": "way/249387415",
+      "amenity": "fuel",
+      "name": "محطة خدمة نفطال",
+      "name_ar": "محطة خدمة نفطال",
+      "name_fr": "Station-service Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        5.7493856999999995,
+        36.81827375
+      ]
+    },
+    {
+      "id": "way/404741402",
+      "amenity": "fuel",
+      "name": "محطة خدمات الأحمدي",
+      "name_ar": "محطة خدمات الأحمدي",
+      "name_fr": "Station-service El Ahmadi",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        6.26850305,
+        36.7406756
+      ]
+    },
+    {
+      "id": "way/473021494",
+      "amenity": "fuel",
+      "name": "محطة قصاب عادل",
+      "name_ar": "محطة قصاب عادل",
+      "name_fr": "Station Kassab Adel",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.8928724,
+        36.7780088
+      ]
+    }
+  ]
+}

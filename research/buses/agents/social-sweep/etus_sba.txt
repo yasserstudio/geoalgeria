@@ -1,0 +1,58 @@
+I'll search public Facebook, X, Instagram, and YouTube posts from ETUS Sidi Bel Abbès for line maps, lists, termini, and timetables since March 2025. First I'm loading the research workflow and checking what's already in this workspace.The last-30-days skill only covers a month; this sweep needs 18 months of ETUS Sidi Bel Abbès posts. I'll match the existing `etus_sba` notes and search Facebook, X, Instagram, and YouTube directly.I'll check sibling sweep notes and the operator registry so I can match format and search the right ETUS Sidi Bel Abbès accounts.I have the operator identity (`etus22.dz`, eight known lines). Next I’ll search Facebook, X, Instagram, and YouTube for indexed posts about those routes.The official page is `facebook.com/etus22`. I’ll open that, the June 2026 night-service post, and search Instagram/YouTube plus indexed line-map posts.I’ll open the official Facebook page, the June 2026 night-service image, and the Instagram posts that mention ETUS lines so I can transcribe them exactly.I’ll pull the June 2026 night-service image and the older network-map reel so I can transcribe routes and lock exact URLs.Internal error: {
+  "message": "API error (status 402 Payment Required): Grok Build usage balance exhausted",
+  "http_status": 402,
+  "promptUsage": {
+    "inputTokens": 1837479,
+    "outputTokens": 6134,
+    "totalTokens": 1843613,
+    "cachedReadTokens": 1542912,
+    "cacheCreationTokens": 0,
+    "reasoningTokens": 4213,
+    "modelCalls": 6,
+    "apiDurationMs": 203757,
+    "costUsdTicks": 5598337200,
+    "modelUsage": {
+      "grok-4.6-build": {
+        "inputTokens": 1837479,
+        "outputTokens": 6134,
+        "totalTokens": 1843613,
+        "cachedReadTokens": 1542912,
+        "cacheCreationTokens": 0,
+        "reasoningTokens": 4213,
+        "modelCalls": 6,
+        "apiDurationMs": 203757,
+        "costUsdTicks": 5598337200
+      }
+    },
+    "numTurns": 6
+  }
+}
+Error: Internal error: {
+  "message": "API error (status 402 Payment Required): Grok Build usage balance exhausted",
+  "http_status": 402,
+  "promptUsage": {
+    "inputTokens": 1837479,
+    "outputTokens": 6134,
+    "totalTokens": 1843613,
+    "cachedReadTokens": 1542912,
+    "cacheCreationTokens": 0,
+    "reasoningTokens": 4213,
+    "modelCalls": 6,
+    "apiDurationMs": 203757,
+    "costUsdTicks": 5598337200,
+    "modelUsage": {
+      "grok-4.6-build": {
+        "inputTokens": 1837479,
+        "outputTokens": 6134,
+        "totalTokens": 1843613,
+        "cachedReadTokens": 1542912,
+        "cacheCreationTokens": 0,
+        "reasoningTokens": 4213,
+        "modelCalls": 6,
+        "apiDurationMs": 203757,
+        "costUsdTicks": 5598337200
+      }
+    },
+    "numTurns": 6
+  }
+}

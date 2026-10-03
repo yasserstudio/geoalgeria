@@ -1,0 +1,1891 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-17",
+    "wilaya_code": 17,
+    "name": "Djelfa",
+    "name_ar": "الجلفة",
+    "center": [
+      3.1395,
+      34.5975
+    ],
+    "bounds": [
+      2.359,
+      33.995,
+      3.92,
+      35.2
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 43,
+    "osm_records": 33,
+    "tariki_records": 35,
+    "cross_source": 16,
+    "multiple_tariki": 4,
+    "osm_only": 13,
+    "tariki_only": 10,
+    "nearby_osm_pairs": 4,
+    "conflicts": 21
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-13681190822",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3855958830",
+      "reasons": [
+        "multiple-tariki",
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4265496289",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5314483921",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5488932562",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1492556784",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1493013068",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-191161798",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-266417417",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-266434083",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-552167946",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10206",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12079",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13011",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13419",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14019",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14177",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14178",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14522",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5903",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5907",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-13681190822",
+      "coordinates": [
+        2.7239482,
+        34.6683625
+      ],
+      "osm": {
+        "id": "node/13681190822",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7239482,
+          34.6683625
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1493013068",
+          "offset_m": 38
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1935068947",
+      "coordinates": [
+        3.1300767,
+        34.7999702
+      ],
+      "osm": {
+        "id": "node/1935068947",
+        "name": "Bengharbi",
+        "name_ar": "بن غربي",
+        "name_fr": "Bengharbi",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.1300767,
+          34.7999702
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Bengharbi",
+      "display_name_ar": "بن غربي"
+    },
+    {
+      "id": "osm-node-2017432918",
+      "coordinates": [
+        3.2375712,
+        34.6984302
+      ],
+      "osm": {
+        "id": "node/2017432918",
+        "name": "Station",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2375712,
+          34.6984302
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6848",
+          "route_id": "11699",
+          "name_fr": "Station de services  privé",
+          "name_ar": "محطة خاص",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            3.2374,
+            34.6985
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 17
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station",
+      "display_name_ar": "محطة خاص"
+    },
+    {
+      "id": "osm-node-2017478797",
+      "coordinates": [
+        3.2327996,
+        34.4651825
+      ],
+      "osm": {
+        "id": "node/2017478797",
+        "name": "STATION",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2327996,
+          34.4651825
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5925",
+          "route_id": "10771",
+          "name_fr": "OUED SDEUR",
+          "name_ar": "واد صدر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            3.2327,
+            34.4653
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 16
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION",
+      "display_name_ar": "واد صدر"
+    },
+    {
+      "id": "osm-node-2017478798",
+      "coordinates": [
+        3.2323114,
+        34.4658636
+      ],
+      "osm": {
+        "id": "node/2017478798",
+        "name": "STATION",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2323114,
+          34.4658636
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5926",
+          "route_id": "10771",
+          "name_fr": "NAFTAL",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            3.2325,
+            34.4658
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-2017524169",
+      "coordinates": [
+        3.2508278,
+        34.6285015
+      ],
+      "osm": {
+        "id": "node/2017524169",
+        "name": "STATION",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2508278,
+          34.6285015
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5912",
+          "route_id": "10760",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.2507,
+            34.6285
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-node-2207631600",
+      "coordinates": [
+        3.2956234,
+        34.6809118
+      ],
+      "osm": {
+        "id": "node/2207631600",
+        "name": "belabbas",
+        "name_ar": null,
+        "name_fr": "Belabbas",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2956234,
+          34.6809118
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5915",
+          "route_id": "10763",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الخدمات المحطة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            3.2954,
+            34.6811
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Belabbas",
+      "display_name_ar": "محطة الخدمات المحطة"
+    },
+    {
+      "id": "osm-node-2437416058",
+      "coordinates": [
+        3.2659582,
+        34.6792211
+      ],
+      "osm": {
+        "id": "node/2437416058",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": "Station essence",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2659582,
+          34.6792211
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5916",
+          "route_id": "10763",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            3.2659,
+            34.6792
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station essence",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-2640140894",
+      "coordinates": [
+        3.3224325,
+        34.6900569
+      ],
+      "osm": {
+        "id": "node/2640140894",
+        "name": "Station service",
+        "name_ar": "كل انواع الخدمات",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.3224325,
+          34.6900569
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5914",
+          "route_id": "10763",
+          "name_fr": "Station de services Moukrani",
+          "name_ar": "محطة الخدمات مقراني",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.3225,
+            34.69
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service",
+      "display_name_ar": "كل انواع الخدمات"
+    },
+    {
+      "id": "osm-node-3185611313",
+      "coordinates": [
+        3.0243358,
+        35.0804742
+      ],
+      "osm": {
+        "id": "node/3185611313",
+        "name": "Station Service Hassi Bahbah",
+        "name_ar": "محطة وقود حاسي بحبح",
+        "name_fr": "Station service Hassi Bahbah",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.0243358,
+          35.0804742
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5909",
+          "route_id": "10759",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0244,
+            35.0805
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Hassi Bahbah",
+      "display_name_ar": "محطة وقود حاسي بحبح"
+    },
+    {
+      "id": "osm-node-3855958830",
+      "coordinates": [
+        2.5283625,
+        34.4609894
+      ],
+      "osm": {
+        "id": "node/3855958830",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.5283625,
+          34.4609894
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7357",
+          "route_id": "12236",
+          "name_fr": "Station de services Messoudi",
+          "name_ar": "مسعودي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.5285,
+            34.461
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 13
+        },
+        {
+          "id": "14195",
+          "route_id": "21278",
+          "name_fr": "محطة الخدمات مسعودي",
+          "name_ar": "محطة الخدمات بالادريسية",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.529,
+            34.461
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 58
+        },
+        {
+          "id": "14196",
+          "route_id": "17707",
+          "name_fr": "مسعودي",
+          "name_ar": "محطة متعددة الخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.529,
+            34.461
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 58
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1492556784",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "مسعودي"
+    },
+    {
+      "id": "osm-node-4110101289",
+      "coordinates": [
+        3.2309456,
+        34.6669428
+      ],
+      "osm": {
+        "id": "node/4110101289",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          3.2309456,
+          34.6669428
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5913",
+          "route_id": "10763",
+          "name_fr": "Station de services  cite ben said",
+          "name_ar": "محطة الخدمات حي بن سعيد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.231,
+            34.6668
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 17
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات حي بن سعيد"
+    },
+    {
+      "id": "osm-node-4265496289",
+      "coordinates": [
+        2.8058328,
+        34.6276107
+      ],
+      "osm": {
+        "id": "node/4265496289",
+        "name": "station d esence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.8058328,
+          34.6276107
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-552167946",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "station d esence",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4312511394",
+      "coordinates": [
+        3.0645274,
+        34.8994576
+      ],
+      "osm": {
+        "id": "node/4312511394",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.0645274,
+          34.8994576
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5908",
+          "route_id": "10759",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0652,
+            34.8999
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 79
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-node-4393805749",
+      "coordinates": [
+        2.5200644,
+        34.4497958
+      ],
+      "osm": {
+        "id": "node/4393805749",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.5200644,
+          34.4497958
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7358",
+          "route_id": "12238",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.5205,
+            34.4492
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 77
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-5314483921",
+      "coordinates": [
+        3.1893097,
+        34.4028301
+      ],
+      "osm": {
+        "id": "node/5314483921",
+        "name": "عين الرومية",
+        "name_ar": "عين الرومية",
+        "name_fr": "Ain Romia",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1893097,
+          34.4028301
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5924",
+          "route_id": "10771",
+          "name_fr": "AIN ROMIA",
+          "name_ar": "عين الرومية",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.1894,
+            34.4027
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 17
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-266434083",
+          "offset_m": 48
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Ain Romia",
+      "display_name_ar": "عين الرومية"
+    },
+    {
+      "id": "osm-node-5363868622",
+      "coordinates": [
+        3.0423283,
+        35.0513309
+      ],
+      "osm": {
+        "id": "node/5363868622",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.0423283,
+          35.0513309
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5488932562",
+      "coordinates": [
+        3.2058728,
+        34.3333213
+      ],
+      "osm": {
+        "id": "node/5488932562",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2058728,
+          34.3333213
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5927",
+          "route_id": "10772",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.2057,
+            34.3333
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 16
+        },
+        {
+          "id": "14189",
+          "route_id": "21265",
+          "name_fr": null,
+          "name_ar": "خاصة بالدولة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.206,
+            34.333
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-5488932588",
+      "coordinates": [
+        3.1066284,
+        34.2436036
+      ],
+      "osm": {
+        "id": "node/5488932588",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1066284,
+          34.2436036
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5875232566",
+      "coordinates": [
+        2.8867916,
+        34.6369529
+      ],
+      "osm": {
+        "id": "node/5875232566",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.8867916,
+          34.6369529
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6139632244",
+      "coordinates": [
+        3.0833414,
+        34.2152889
+      ],
+      "osm": {
+        "id": "node/6139632244",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.0833414,
+          34.2152889
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7952332373",
+      "coordinates": [
+        2.9137383,
+        34.8176407
+      ],
+      "osm": {
+        "id": "node/7952332373",
+        "name": "Station service Mohammedi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.9137383,
+          34.8176407
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Mohammedi",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8399740917",
+      "coordinates": [
+        2.6286368,
+        34.6459813
+      ],
+      "osm": {
+        "id": "node/8399740917",
+        "name": "محطة وقود وخدمات",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          2.6286368,
+          34.6459813
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة وقود وخدمات",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8911096918",
+      "coordinates": [
+        3.4372052,
+        34.7310457
+      ],
+      "osm": {
+        "id": "node/8911096918",
+        "name": "بحري بلقاسم",
+        "name_ar": null,
+        "name_fr": "Bahri Belkacem",
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          3.4372052,
+          34.7310457
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Bahri Belkacem",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1492556784",
+      "coordinates": [
+        2.5282883,
+        34.4610392
+      ],
+      "osm": {
+        "id": "way/1492556784",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.5282883,
+          34.4610392
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3855958830",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1493013068",
+      "coordinates": [
+        2.7236447999999998,
+        34.6685955
+      ],
+      "osm": {
+        "id": "way/1493013068",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7236447999999998,
+          34.6685955
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-13681190822",
+          "offset_m": 38
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-191161798",
+      "coordinates": [
+        3.2376839,
+        34.58486185
+      ],
+      "osm": {
+        "id": "way/191161798",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2376839,
+          34.58486185
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5910",
+          "route_id": "10760",
+          "name_fr": "Station de services Kchida",
+          "name_ar": "محطة الخدمات كشيدة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            3.238,
+            34.5847
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 34
+        },
+        {
+          "id": "13443",
+          "route_id": "18767",
+          "name_fr": "//",
+          "name_ar": "محطة جقبوب",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            3.238,
+            34.585
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services Kchida",
+      "display_name_ar": "محطة الخدمات كشيدة"
+    },
+    {
+      "id": "osm-way-266417417",
+      "coordinates": [
+        3.2399285,
+        34.60296945
+      ],
+      "osm": {
+        "id": "way/266417417",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2399285,
+          34.60296945
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5911",
+          "route_id": "10760",
+          "name_fr": "Station de services Oued benaam",
+          "name_ar": "محطة الخدمات واد بنعام",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.2402,
+            34.603
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 25
+        },
+        {
+          "id": "13442",
+          "route_id": "18767",
+          "name_fr": "//",
+          "name_ar": "محطة قرية اولاد عبيد الله",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            3.24,
+            34.603
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services Oued benaam",
+      "display_name_ar": "محطة الخدمات واد بنعام"
+    },
+    {
+      "id": "osm-way-266434083",
+      "coordinates": [
+        3.1888736,
+        34.40258555
+      ],
+      "osm": {
+        "id": "way/266434083",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1888736,
+          34.40258555
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5314483921",
+          "offset_m": 48
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-274287005",
+      "coordinates": [
+        3.1355896999999997,
+        34.80238285
+      ],
+      "osm": {
+        "id": "way/274287005",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1355896999999997,
+          34.80238285
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5005",
+          "route_id": "9820",
+          "name_fr": "Station de services Bengherbi",
+          "name_ar": "بن غربي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.136,
+            34.803
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 78
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Bengherbi",
+      "display_name_ar": "بن غربي"
+    },
+    {
+      "id": "osm-way-462882061",
+      "coordinates": [
+        3.46596445,
+        34.50872455
+      ],
+      "osm": {
+        "id": "way/462882061",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.46596445,
+          34.50872455
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6030",
+          "route_id": "10748",
+          "name_fr": "Station de services Bekkouka Lezhari",
+          "name_ar": "بقوقة لزهاري",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.465,
+            34.509
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 94
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Bekkouka Lezhari",
+      "display_name_ar": "بقوقة لزهاري"
+    },
+    {
+      "id": "osm-way-531120720",
+      "coordinates": [
+        3.487744,
+        34.7607192
+      ],
+      "osm": {
+        "id": "way/531120720",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.487744,
+          34.7607192
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5928",
+          "route_id": "10774",
+          "name_fr": "Station de services Reguig Mohamed",
+          "name_ar": "رقيق محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.488,
+            34.7611
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Reguig Mohamed",
+      "display_name_ar": "رقيق محمد"
+    },
+    {
+      "id": "osm-way-552167946",
+      "coordinates": [
+        2.8057838,
+        34.6275554
+      ],
+      "osm": {
+        "id": "way/552167946",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.8057838,
+          34.6275554
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6846",
+          "route_id": "11696",
+          "name_fr": "Station de services  charef",
+          "name_ar": "محطة الشارف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.8059,
+            34.6274
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": 20
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4265496289",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de services  charef",
+      "display_name_ar": "محطة الشارف"
+    },
+    {
+      "id": "tariki-10206",
+      "coordinates": [
+        3.487,
+        34.759
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10206",
+          "route_id": "15060",
+          "name_fr": "Station de services Reguigue Ahmed",
+          "name_ar": "محطة الخدمات رقيق محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.487,
+            34.759
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Reguigue Ahmed",
+      "display_name_ar": "محطة الخدمات رقيق محمد"
+    },
+    {
+      "id": "tariki-12079",
+      "coordinates": [
+        2.419,
+        34.546
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12079",
+          "route_id": "9879",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "مجطة الوقود في طور الانجاز (طريق البيض)",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.419,
+            34.546
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "مجطة الوقود في طور الانجاز (طريق البيض)"
+    },
+    {
+      "id": "tariki-13011",
+      "coordinates": [
+        3.261,
+        35.037
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13011",
+          "route_id": "17681",
+          "name_fr": "SETATION TRAVAIL REVASION",
+          "name_ar": "محطة الخدمات لتوزيع الوقود",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            3.261,
+            35.037
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "SETATION TRAVAIL REVASION",
+      "display_name_ar": "محطة الخدمات لتوزيع الوقود"
+    },
+    {
+      "id": "tariki-13419",
+      "coordinates": [
+        3.075,
+        34.492
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13419",
+          "route_id": "9818",
+          "name_fr": "BEN GARBI",
+          "name_ar": "محطة بن غربي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.075,
+            34.492
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "BEN GARBI",
+      "display_name_ar": "محطة بن غربي"
+    },
+    {
+      "id": "tariki-14019",
+      "coordinates": [
+        3.495,
+        34.764
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14019",
+          "route_id": "20556",
+          "name_fr": "LES FRERE REGUIG ANEX MOUILEH",
+          "name_ar": "محطة تعدد الخدمات الإخوة رقيق المويلح",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.495,
+            34.764
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "LES FRERE REGUIG ANEX MOUILEH",
+      "display_name_ar": "محطة تعدد الخدمات الإخوة رقيق المويلح"
+    },
+    {
+      "id": "tariki-14177",
+      "coordinates": [
+        3.446,
+        34.734
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14177",
+          "route_id": "10743",
+          "name_fr": null,
+          "name_ar": "محطة بحري للخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.446,
+            34.734
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة بحري للخدمات",
+      "display_name_ar": "محطة بحري للخدمات"
+    },
+    {
+      "id": "tariki-14178",
+      "coordinates": [
+        3.484,
+        34.44
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14178",
+          "route_id": "10748",
+          "name_fr": null,
+          "name_ar": "محطة خدمات فصيح عمر",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.484,
+            34.44
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة خدمات فصيح عمر",
+      "display_name_ar": "محطة خدمات فصيح عمر"
+    },
+    {
+      "id": "tariki-14522",
+      "coordinates": [
+        3.238,
+        35.154
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14522",
+          "route_id": "10412",
+          "name_fr": "Station de services Djaghboub",
+          "name_ar": "محطة خدمات نفطال ملك للمسمى جغبوب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.238,
+            35.154
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Djaghboub",
+      "display_name_ar": "محطة خدمات نفطال ملك للمسمى جغبوب"
+    },
+    {
+      "id": "tariki-5903",
+      "coordinates": [
+        3.482,
+        34.892
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5903",
+          "route_id": "9199",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.482,
+            34.892
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "tariki-5907",
+      "coordinates": [
+        3.0316,
+        35.067
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5907",
+          "route_id": "10759",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0316,
+            35.067
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 17,
+          "wilaya_fr": "Djelfa",
+          "wilaya_ar": "الجلفة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    }
+  ]
+}

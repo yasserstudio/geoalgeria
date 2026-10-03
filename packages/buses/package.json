@@ -1,8 +1,8 @@
 {
   "name": "@geoalgeria/buses",
-  "version": "2.0.0",
+  "version": "2.2.1",
   "type": "module",
-  "description": "Algeria's urban bus networks — line-level data (termini, stop counts, communes & transit stations served). First operator: ETUSA (Alger), 50 lines. Multi-operator umbrella. Sourced from fr.wikipedia. JSON, CSV, TypeScript.",
+  "description": "Reviewed urban and suburban bus data for Algeria: 184 Lines, 76 shapes, 128 Directions and 1,603 Stations across 16 Operators.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {
@@ -14,8 +14,10 @@
   },
   "files": [
     "dataset-metadata.json",
+    "NOTICE",
     "data/**/*.json",
     "data/**/*.csv",
+    "data/**/*.geojson",
     "types/",
     "index.js"
   ],
@@ -37,7 +39,7 @@
     "dz"
   ],
   "author": "Yasser's Studio (https://yasser.studio)",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "publishConfig": {
     "access": "public"
   },

@@ -1,0 +1,695 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-64",
+    "wilaya_code": 64,
+    "name": "Ksar Chellala",
+    "name_ar": "قصر الشلالة",
+    "center": [
+      2.2045,
+      35.199
+    ],
+    "bounds": [
+      1.738,
+      34.79,
+      2.671,
+      35.608
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 16,
+    "osm_records": 9,
+    "tariki_records": 14,
+    "cross_source": 7,
+    "multiple_tariki": 0,
+    "osm_only": 2,
+    "tariki_only": 7,
+    "nearby_osm_pairs": 0,
+    "conflicts": 7
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-13028",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2862",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3040",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3347",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3791",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3794",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8568",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-2978182661",
+      "coordinates": [
+        1.9717317,
+        35.4137886
+      ],
+      "osm": {
+        "id": "node/2978182661",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.9717317,
+          35.4137886
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8567",
+          "route_id": "5694",
+          "name_fr": "Station de services el-Rtimi",
+          "name_ar": "محطة الخدمات الرتيمي",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            1.972,
+            35.414
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات الرتيمي"
+    },
+    {
+      "id": "osm-node-2978708277",
+      "coordinates": [
+        2.3079115,
+        35.2319243
+      ],
+      "osm": {
+        "id": "node/2978708277",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.3079115,
+          35.2319243
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1454",
+          "route_id": "4252",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.308,
+            35.232
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-node-3242005668",
+      "coordinates": [
+        2.3009334,
+        35.2202066
+      ],
+      "osm": {
+        "id": "node/3242005668",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.3009334,
+          35.2202066
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1573",
+          "route_id": "4479",
+          "name_fr": "Station de services Cheallal Djelloul",
+          "name_ar": "محطة الخدمات شعلال جلول",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            2.301,
+            35.22
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات شعلال جلول"
+    },
+    {
+      "id": "osm-node-4758845851",
+      "coordinates": [
+        2.3150866,
+        35.2180633
+      ],
+      "osm": {
+        "id": "node/4758845851",
+        "name": null,
+        "name_ar": "محطة المقراني",
+        "name_fr": "Station service de Makrani",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.3150866,
+          35.2180633
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1455",
+          "route_id": "4252",
+          "name_fr": "Station de services Chellali Abdelkader",
+          "name_ar": "محطة الخدمات شلالي عبد القدر",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.315,
+            35.218
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service de Makrani",
+      "display_name_ar": "محطة المقراني"
+    },
+    {
+      "id": "osm-node-5246512112",
+      "coordinates": [
+        2.3067453,
+        34.9102967
+      ],
+      "osm": {
+        "id": "node/5246512112",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.3067453,
+          34.9102967
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5312472523",
+      "coordinates": [
+        2.3072249,
+        34.9014701
+      ],
+      "osm": {
+        "id": "node/5312472523",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.3072249,
+          34.9014701
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3038",
+          "route_id": "6675",
+          "name_fr": "Station de services Hadji Saadia",
+          "name_ar": "محظة توزيع البنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.307,
+            34.901
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": 56
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Hadji Saadia",
+      "display_name_ar": "محظة توزيع البنزين"
+    },
+    {
+      "id": "osm-node-5969316658",
+      "coordinates": [
+        1.9647392,
+        35.4122999
+      ],
+      "osm": {
+        "id": "node/5969316658",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.9647392,
+          35.4122999
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-252835479",
+      "coordinates": [
+        1.875695,
+        35.4460692
+      ],
+      "osm": {
+        "id": "way/252835479",
+        "name": "Station Service E. Leclerc",
+        "name_ar": "محطة خدمات",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.875695,
+          35.4460692
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2856",
+          "route_id": "2091",
+          "name_fr": "Station de services Mahmoudi Masseouad Est",
+          "name_ar": "محطة بنزين بالخرجة الشرقية لبلدية حمادية ملك للمسمى محمودي مسعود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.876,
+            35.446
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service E. Leclerc",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-254524018",
+      "coordinates": [
+        1.86617175,
+        35.457845899999995
+      ],
+      "osm": {
+        "id": "way/254524018",
+        "name": "Station Service",
+        "name_ar": "محطة خدمات",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.86617175,
+          35.457845899999995
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2845",
+          "route_id": "2091",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.866,
+            35.458
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": 23
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "tariki-13028",
+      "coordinates": [
+        2.6,
+        35.248
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13028",
+          "route_id": "17089",
+          "name_fr": "STATION  LABAID",
+          "name_ar": "محطة خدمات لبيض",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            2.6,
+            35.248
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION  LABAID",
+      "display_name_ar": "محطة خدمات لبيض"
+    },
+    {
+      "id": "tariki-2862",
+      "coordinates": [
+        1.871,
+        35.459
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2862",
+          "route_id": "2091",
+          "name_fr": "Station de services Mahmoudi Masseouad centre",
+          "name_ar": "محطة بنزين وسط بلدية حمادية ملك للمسمى محمودي مسعود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.871,
+            35.459
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Mahmoudi Masseouad centre",
+      "display_name_ar": "محطة بنزين وسط بلدية حمادية ملك للمسمى محمودي مسعود"
+    },
+    {
+      "id": "tariki-3040",
+      "coordinates": [
+        2.307,
+        34.909
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3040",
+          "route_id": "6675",
+          "name_fr": "Station de services Kadari aiachi",
+          "name_ar": "محطة توزيع البنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.307,
+            34.909
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Kadari aiachi",
+      "display_name_ar": "محطة توزيع البنزين"
+    },
+    {
+      "id": "tariki-3347",
+      "coordinates": [
+        1.959,
+        35.559
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3347",
+          "route_id": "7216",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.959,
+            35.559
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "tariki-3791",
+      "coordinates": [
+        2.318,
+        35.212
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3791",
+          "route_id": "137",
+          "name_fr": "Station de services ZEKRI AHMED",
+          "name_ar": "محطة البنزين زكري أحمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.318,
+            35.212
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ZEKRI AHMED",
+      "display_name_ar": "محطة البنزين زكري أحمد"
+    },
+    {
+      "id": "tariki-3794",
+      "coordinates": [
+        2.318,
+        35.211
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3794",
+          "route_id": "4479",
+          "name_fr": "Station de services CHERGUI MOHAMED",
+          "name_ar": "محطة الوقود  شرقي محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.318,
+            35.211
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services CHERGUI MOHAMED",
+      "display_name_ar": "محطة الوقود  شرقي محمد"
+    },
+    {
+      "id": "tariki-8568",
+      "coordinates": [
+        1.967,
+        35.413
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8568",
+          "route_id": "5694",
+          "name_fr": "Station de services Mouissi",
+          "name_ar": "محطةالخدمات مويسي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            1.967,
+            35.413
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 64,
+          "wilaya_fr": "Ksar Chellala",
+          "wilaya_ar": "قصر الشلالة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Mouissi",
+      "display_name_ar": "محطةالخدمات مويسي"
+    }
+  ]
+}

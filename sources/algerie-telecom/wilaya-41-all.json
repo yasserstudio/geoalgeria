@@ -1,0 +1,57 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "IBN KHALDOUN",
+        "code_wilaya": "41",
+        "commune": "SOUK AHRAS ,ZAAROURIA ,HENANCHA,MECHROUHA ,OULED IDRISS, AIN ZENA ,",
+        "date": "2024-10-30 15:09:40",
+        "id": "438",
+        "latitude": " 36.285151",
+        "longitude": "  7.957600\r",
+        "type": "Agence Commerciale",
+        "wilaya": "SOUK AHRAS "
+      },
+      {
+        "adresse": "TAOURA CENTRE VILLE ",
+        "code_wilaya": "41",
+        "commune": "TAOURA,MERAHNA,HEDDADA,KHEDARA,OULED MOUMEN , SIDI FREDJ ,OUILANE",
+        "date": "2024-10-30 15:09:40",
+        "id": "439",
+        "latitude": " 36.166829",
+        "longitude": "  8.039433\r",
+        "type": "Point de présence",
+        "wilaya": "SOUK AHRAS "
+      },
+      {
+        "adresse": "RUE DE 08 MAI 1945",
+        "code_wilaya": "41",
+        "commune": "SEDRATA,AIN SOLTANE,ZOUABI,BIRBOUHOUCHE,SAFEL EL OUIDANE ,OUM LADHAIM , TERGUALET ,KHEMISSA",
+        "date": "2024-10-30 15:09:40",
+        "id": "440",
+        "latitude": " 36.132590",
+        "longitude": "  7.532572\r",
+        "type": "Agence Commerciale",
+        "wilaya": "SOUK AHRAS "
+      },
+      {
+        "adresse": "CENTRE VILLE M'DAOUROUCHE",
+        "code_wilaya": "41",
+        "commune": "M'DAOUROUCHE,TIFECHE,RAGOUBA,OUED KEBRITE ,DREAA ",
+        "date": "2024-10-30 15:09:40",
+        "id": "441",
+        "latitude": " 36.076270",
+        "longitude": "  7.821371\r",
+        "type": "Point de présence",
+        "wilaya": "SOUK AHRAS "
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    SOUK AHRAS </b> ",
+    "resultat": "ok",
+    "wilaya": "SOUK AHRAS "
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 41
+}

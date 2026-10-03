@@ -21,31 +21,58 @@ reads as further along than it is.
 ## Aviation
 
 - [ ] **Scheduled flight duration per route.** Asked for on the route card and
-  refused, correctly: there is no duration field, and **0 of 122** routes in
+  refused, correctly: there is no duration field, and **0 of 148** routes in
   `research/_flight-routes/route-dataset.json` carry one. The great-circle
   duration check used during verification was computed and discarded. Deriving a
   duration from distance would put a fabricated number beside sourced ones. Wants
   scheduled block times collected per route from a citable source.
   _(logged 2026-07-28)_
 
-- [ ] **64 routes are `listed` rather than `verified`,** and 69 pairs are
-  one-directional (an outbound leg with no recorded return; was 70 before the
-  LYS -> TLM return verified on 2026-07-29). `listed` means a published table
-  names the carrier serving the pair without confirming Air Algérie operates
-  it. The screen + confirm pipeline exists now
+- [ ] **72 rows are `listed` rather than `verified`,** and 70 legs are
+  one-directional (an outbound with no recorded return). `listed` means a
+  published table names the carrier serving the pair without confirming Air
+  Algérie operates it. The screen + confirm pipeline exists now
   (`research/_flight-routes/screen_returns_soar.py`, hypotheses only, then
   citable confirmation); open-ended collection, better run as background.
-  _(logged 2026-07-28, updated 2026-07-29)_
+  _(logged 2026-07-28, counts refreshed 2026-10-02)_
 
-- [ ] **Disputed: `blj-cdg` may actually serve Orly.** The verified record
-  cites aeroroutes' homepage (which names nothing by itself), and 2026-07-29
-  live operations showed AH1120 landing at ORY and AH1121 flying ORY -> BLJ.
-  parisaeroport.fr sits behind a bot-check that blocks automated fetches; a
-  human browser session on its Batna flight search settles it in a minute. If
-  Orly confirms: correct blj-cdg to blj-ory, add ory-blj, and replace the
-  citation with the page that names the airport. Detail in
-  `research/_flight-routes/verification-2026-07-29.md`.
-  _(logged 2026-07-29)_
+- [x] **Settled: `blj-cdg` was Orly all along.** Three independent
+  flight-tracking aggregators name ORY for both AH1120 and AH1121 and nothing
+  current names CDG, which is section 9's Reported tier. So `blj-cdg` is
+  corrected to `blj-ory`, the `ory-blj` return leg ships, each direction cites
+  its own route page, and the Wikipedia row for the old pair is guarded so the
+  table cannot re-add it. parisaeroport.fr still blocks automated fetches and its
+  Air Algérie page names no city, so the hoped-for single official source was
+  never obtained. Detail in
+  `research/_flight-routes/verification-2026-09-27.md`.
+  _(logged 2026-07-29, resolved 2026-09-27)_
+
+- [ ] **`alg-ber` / `ber-alg` move from Monday to Sunday on 25 Oct 2026.** The
+  winter programme keeps the Algiers-Berlin weekly nonstop and changes its day
+  ([visa-algerie, 20 Sep 2026](https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/)).
+  `days: ["mon"]` is right for the 2026-09-27 snapshot, so this is a one-line edit
+  plus an `as_of` bump at the next pass, not a correction to make now.
+  _(logged 2026-09-27)_
+
+- [ ] **The winter programme's launch dates, to flip on the release-day pass.**
+  Every row below is `planned` on the 2026-10-02 snapshot because its launch date
+  is still ahead. Each flips to the operating collection only on a dated report
+  that it flew, never because the date arrived: `alg-cky` / `cky-alg` (25 Oct),
+  `alg-bzv` / `bzv-alg`, `abv-los`, `alg-pvg` / `pvg-alg`, `alg-kwi` / `kwi-amm` /
+  `amm-alg` (26 Oct), `alg-mji` / `mji-alg` (28 Oct), `alg-los` / `los-abv`
+  (29 Oct). `alg-svo` / `svo-alg` carried an announced 2 Oct resumption with no
+  report of a first flight, so they are the first to re-check. Detail in
+  `research/_flight-routes/verification-2026-10-02.md`.
+  _(logged 2026-10-02)_
+
+- [ ] **`alg-doh` / `doh-alg` go daily on 25 Oct 2026.** The resumed service runs
+  three weekly, Sun/Tue/Fri, and the same reports announce a daily programme from
+  25 October
+  ([visa-algerie, 27 Sep 2026](https://www.visa-algerie.com/air-algerie-accelere-sur-le-qatar-avec-des-vols-quotidiens-des-octobre/)).
+  `days: ["sun", "tue", "fri"]` is right for the 2026-10-02 snapshot, so this is a
+  one-line edit plus an `as_of` bump at the next pass, the same shape as the
+  Berlin item above.
+  _(logged 2026-10-02)_
 
 - [ ] **Screened positive, awaiting a citable source: IST -> ORN** (AH3025
   en-route during the 2026-07-29 screen; istairport.com timed out, aeroroutes
@@ -72,21 +99,33 @@ reads as further along than it is.
   prefixes for reform daughters, so we do too. `code_commune` itself is still
   the open half. _(logged 2026-07-29; postal half shipped 2026-08-07)_
 
-- [ ] **Arabic name hygiene surfaced by the 2026-08-13 snippet audit.** 22
-  commune `name_ar` values in wilaya 15 carry decorative tatweel/kashida
-  characters (`أيت عقـواشة`, `بنــــي زمنزار`, ...) that render as broken
-  typography in search snippets; the app stripped them in its committed copy,
-  so the next core regeneration must strip them at source or the lockstep
-  resurrects the artifact. Separately, dairas have NO Arabic name field at
-  all, so Arabic commune pages either showed the French daira name in Latin
-  script (fixed app-side by omitting the daira clause in Arabic) or nothing;
-  an `name_ar` for dairas would let the clause return. _(logged 2026-08-13)_
+- [ ] **Arabic name hygiene surfaced by the 2026-08-13 snippet audit.** The
+  tatweel half **shipped 2026-10-01** (ticket #239): 22 commune `name_ar`
+  values carried decorative tatweel/kashida characters
+  (`أيت عقـواشة`, `بنــــي زمنزار`, ...) that render as broken typography in
+  search snippets, 21 in wilaya 15 and Drean in wilaya 36, and the app had
+  stripped them in its own committed copy. They are now stripped at source in
+  all eight carriers by `scripts/fix-commune-name-ar.mjs`, with Souk El
+  Tenine's definite article repaired alongside them, and
+  `test/commune-name-ar.test.mjs` holds the floor at zero so a regeneration
+  cannot resurrect them. Still open: dairas have NO Arabic name field at all,
+  so Arabic commune pages either showed the French daira name in Latin script
+  (fixed app-side by omitting the daira clause in Arabic) or nothing; an
+  `name_ar` for dairas would let the clause return.
+  _(logged 2026-08-13; tatweel half shipped 2026-10-01)_
 
-- [ ] **4 communes disagree with the app file by tens of km** (Souama w15,
+- [x] **4 communes disagreed with the app file by tens of km** (Souama w15,
   Sidi Demed w67, M'fatha w67, Ouled Sidi Brahim w68): same name and wilaya,
-  coordinates ~1 degree apart. Which side is right is unresolved; verify
-  against Wikidata/OSM before touching either.
-  _(logged 2026-07-29)_
+  coordinates ~1 degree apart, and which side was right was unresolved.
+  **Closed 2026-10-01.** Three of the four were settled by the 2026-09-27 and
+  2026-09-29 commune-centre audits, which verified every centre against its own
+  OpenStreetMap commune boundary and corrected it there
+  (`research/_commune-centres/`); the app's remaining disagreement on Ouled Sidi
+  Brahim was point-in-polygon tested on the Web side and the app's value fell
+  outside wilaya 68 while this package's fell inside (ticket #179). There is no
+  app file to disagree with any more: ticket #239 retired the Web fork of this
+  table, and the app now serves this package's `algeria.json` byte for byte.
+  _(logged 2026-07-29, closed 2026-10-01)_
 
 - [ ] **39 records across packages sit geographically inside El Aricha (63)
   but still carry wilaya_code 13 or 22**, the boundary warnings the El Aricha
@@ -99,6 +138,23 @@ reads as further along than it is.
   wilaya, so a rebuild alone will not fix them; they need a deliberate
   reconciliation pass against El Aricha's new extent. Not fixed in this PR.
   _(logged 2026-08-09)_
+
+- [ ] **The `phone_code` of wilayas 1 to 58 has no established official source.**
+  The 2026 cohort (59 to 69) now carries its evidence in
+  `data/phone-code-provenance.json`, and the answer there is `null`: ARPCE
+  allocates numbering resources under the ten-digit *plan national de
+  numérotation* of 22 February 2008, whose geographic digits identify a numbering
+  zone rather than a wilaya, and has published no allocation for the eleven; the
+  creating texts are silent on numbering; Algérie Télécom has announced none. The
+  58 codes the dataset already ships predate that ledger and were never traced to
+  a JORA text, an ARPCE decision or an operator notice, and the commonly
+  circulated per-wilaya table is community-compiled with no citations of its own.
+  Every one of the ten wilayas the 2019 reform created carries exactly its mother
+  wilaya's code, which is the signature of a derivation rather than a source. The
+  work is to trace all 58 to an official text, or to say in the README that they
+  are unsourced. Not a correction to make blind: the values are probably right in
+  practice, and changing one without a source would be the same mistake twice.
+  _(logged 2026-10-01, from the #235 source hunt)_
 
 ## Generators
 
@@ -119,12 +175,27 @@ reads as further along than it is.
   spatial join contradicts it, rather than silently preferring the point.
   _(logged 2026-08-13)_
 
-- [x] **Nearest-centroid fallback can cross a boundary** — fixed in the shared
+- [ ] **The commune join has the same silent-rewrite problem one level down,
+  with a correct coordinate.** Communes have no polygons, so `attachCommune`
+  assigns the nearest commune centre within the containing wilaya, and a
+  station between two centres lands on the wrong one without a warning:
+  GHERDAIA published as "Dhayet Bendhahoua" on a 110 m margin until a reader
+  reported it (four such labels fixed in the PR that logs this). The tell is
+  again data already in the record: the source's own `city` field named the
+  correct commune in all four. The guard is the wilaya one's sibling: flag any
+  record whose joined commune disagrees with a commune the source itself
+  names, then reconcile against OSM's admin_level-8 boundary and override only
+  when boundary and source agree against the join. Four three-way cases
+  (BISKRA, ALGER, ALI MENDJILI, BOUHNIFIFIA) are documented next to
+  `COMMUNE_FIX` in the gares-routieres fetch as deliberately unresolved.
+  _(logged 2026-08-14)_
+
+- [x] **Nearest-centroid fallback can cross a boundary**, fixed in the shared
   helper: `attachCommune` now resolves the containing wilaya by point-in-polygon
   against the 69 boundaries first and restricts the centroid search to it, so
   the join can never cross a wilaya boundary (commune-level containment stays
   best-effort; commune polygons don't exist). Data effects land at each
-  package's next refresh — the 3 known ooredoo records (documented in their
+  package's next refresh: the 3 known ooredoo records (documented in their
   coverageNote) repair themselves on the next ooredoo fetch. Per-package local
   copies of `nearestCommune` (djezzy, ooredoo, culture, ecoles,
   enseignement-superieur) converge on the shared helper as those packages are
@@ -133,14 +204,14 @@ reads as further along than it is.
 - [ ] **Ferroviaire regeneration drifts from the committed dataset.** Discovered
   while testing the fix above: re-running `packages/ferroviaire/scripts/fetch.mjs`
   on today's committed research/ferroviaire raws produces 233 coordinate
-  changes, 232 name changes and 18 id add/removes against the committed data —
+  changes, 232 name changes and 18 id add/removes against the committed data:
   the OSM↔Wikidata merge no longer reproduces what shipped, and the per-wilaya
   sequential ids reshuffle (the id-churn class the v2 generator rework
   eliminated elsewhere). Until diagnosed, do NOT regenerate ferroviaire; the
   regeneration was reverted and only the helper fix shipped.
   _(logged 2026-08-03)_
 
-- [ ] **`carryOverIds` does not persist retirements, so a retired id becomes
+- [x] **`carryOverIds` does not persist retirements, so a retired id becomes
   reusable one survey later.** The reserve set is built from the committed file
   alone (`scripts/lib/v2-transforms.mjs:978`), so an id only stays protected
   while the record that held it is still in the data. Once a release that drops
@@ -159,7 +230,9 @@ reads as further along than it is.
   this. The 2.1.0 pharmacies release retired ids `44-00029` and `47-00001`, so
   the next pharmacies re-survey WILL reuse them unless retirements are
   persisted first; this item now gates that re-survey.
-  _(logged 2026-08-08)_
+  Fixed with persistent `retired-ids.json` ledgers, a run N+1 regression test,
+  and a release gate that rejects any retired id appearing in live data.
+  _(logged 2026-08-08, fixed 2026-08-30)_
 
 - [ ] **pharmacies is the last generator bypassing `writePackageV2`.**
   `packages/pharmacies/scripts/fetch.mjs` hand-rolls `buildMetadata` + `toCSV` +
@@ -183,8 +256,11 @@ reads as further along than it is.
 
 ## Transport
 
-- [ ] **`@geoalgeria/buses` re-extracted from OSM route relations (breaking,
-  3.0.0).** The package today is 50 ETUSA lines scraped from Wikipedia with
+- [x] **`@geoalgeria/buses` reviewed OSM route release (completed 2026-09-01).**
+  The additive release preserves the 50 ETUSA Line ids and publishes the safe reviewed
+  subset: 42 shapes, 75 Directions, 1,046 Stations and 1,878 raw ordered memberships,
+  plus 8 ETUS Tiaret and 1 ETUS Mostaganem Line. The original investigation follows.
+  The package previously was 50 ETUSA lines scraped from Wikipedia with
   **no coordinates at all**: line-level attributes, `lat`/`lng` null on every
   record, `geocoded_pct` 0. Its coverage note says OSM `route=bus` coverage
   tagged ETUSA "is currently thin", and **that is now stale**. Measured against
@@ -215,6 +291,32 @@ reads as further along than it is.
   Demand signal: a user on Reddit (2026-08-09) describing exactly this gap,
   planning a move to an unfamiliar area with no way to see what serves it.
   _(logged 2026-08-09)_
+
+  **Update 2026-09-04:** the breaking id-scheme change sketched above never
+  shipped. Every ETUSA Line kept its Wikipedia registry id; OSM only supplies
+  geometry and identifies additional Lines the registry omitted (the 6xx/7xx
+  suburban network), so the release stayed additive and went out as **2.0.0**
+  then **2.1.0**, not 3.0.0. The package has since grown well past the numbers
+  above: **153 Lines across 14 Operators** (ETUSA plus ETUS Setif, Tiaret,
+  ETUSTO Tizi Ouzou, Bejaia, M'Sila, Sidi Bel Abbes, Mostaganem, Ain Defla,
+  Annaba, Tlemcen, Oum El Bouaghi, ETUL Laghouat and ETO Oran), **76 shapes,
+  128 Directions, 1,603 Stations and 2,685 memberships**. Next levers: an ETO
+  Oran numbered Line list (only one of six ETO drawings carries a ref today,
+  the rest are evidence-only), the ETUSA network API probed 2026-09-03
+  (validation-only, see `research/buses/ETUSA-API-PROBE.md`), and Constantine
+  (ETUSC), whose page is login-walled.
+
+  **Update 2026-09-27:** Constantine and Skikda are no longer gaps. 25 reviewed
+  ETUS-C route identities landed from owner-supplied numbered route graphics,
+  and 6 ETUS Skikda Lines from the Operator's own website page, both with no
+  inferred geometry, taking the package to **184 Lines across 16 Operators**;
+  shapes, Directions, Stations and memberships stay at **76, 128, 1,603 and
+  2,685**. Released as `@geoalgeria/buses` **2.2.0**. Skikda is the first
+  Operator to publish complete ordered stop sequences for every Line, so it is
+  the best candidate for the next geometry pass: the stop names are committed as
+  Source evidence and only need coordinates. The remaining directory levers are
+  unchanged: an ETO Oran numbered Line list, and the validation-only ETUSA
+  network API.
 
 - [ ] **Intercity bus schedules are a licence problem, not a scraping
   problem.** ETUSA is Algiers **urban** transport only, so the OSM re-extraction
@@ -303,7 +405,61 @@ reads as further along than it is.
   page on exactly the basis this repo already redistributes their station list.
   _(logged 2026-08-09)_
 
+## Search
+
+- [x] **Publish `@geoalgeria/normalize`.** Tickets #128 to #132 (PRs #211 to
+  #214) landed the package at 1.0.0: seven exports, a fixtures subpath, 24
+  reviewed Rules with a review gate, punctuation as a separator so tokens
+  match SQLite FTS5 `unicode61`, and a Match class documented in the fixtures
+  but not exported. The release script skips a package npm has never seen, so
+  publish was a manual bootstrap (ticket #134, Owner action per RELEASING.md),
+  gated on the Owner's native Arabic review of the Arabic rationales.
+  **Published 2026-09-29**, with its Trusted Publisher entry created the same day,
+  so it stages like every other package from here on.
+  _(logged 2026-09-06, closed 2026-09-29)_
+
+- [ ] **Web adoption of `@geoalgeria/normalize`** (ticket #136), now that #134 has
+  published, and after the core-extraction ticket #139. Replaces the live Web
+  normalizer's three deviations (concatenated tokens, taa marbuta/alef
+  maqsura folded into its only key, tatweel not stripped) with the package's
+  keys. _(logged 2026-09-06)_
+
 ## Releases
+
+- [x] **Releases were cut before the Version PR merged** (2026-09-26 and
+  2026-09-13), fixed 2026-09-27. Root cause: `changesets/action` builds the
+  Version PR in the runner's own workspace (`git checkout -b
+  changeset-release/main`, then `changeset version`, commit, push) and never
+  switches back, so the `GitHub Releases + data bundles` step read an
+  already-bumped working tree on a push that released nothing. Run 36243800992
+  shows it in sequence: branch created 13:02:48, `creating pull request`
+  13:03:07, `releasing: geoalgeria@2.1.0` 13:03:09, while Version PR #223 only
+  merged at 13:06. The tag landed on the pre-bump commit with the bot's raw
+  `### Minor Changes` notes, and the tag-existence guard then blocked the real
+  Release, so the Owner had to `gh release delete --cleanup-tag`. Run
+  34766226083 did the same to seven tags on 2026-09-13, so this fired every
+  cycle. Fixed with `scripts/release-guard.mjs` (logic in
+  `scripts/lib/release-guard.mjs`): the loop now declines a release unless
+  `$GITHUB_SHA` itself carries that version AND a `CHANGELOG.md` section for it,
+  failing closed on anything it cannot read. `test/release-guard.test.mjs`
+  pins the verdicts, including the 2.1.0 replay.
+
+- [x] **Announce workflow failed for `geoalgeria` 2.1.0** (2026-09-26), fixed
+  2026-09-27. Root cause, from run 36244148854: `createDiscussion` answered
+  `Title is too long (maximum is 256 characters)` and the step exited 1. A
+  changeset writes its brief as one bullet continued in indented paragraphs, and
+  `highlights()` merged every indented line into the lead bullet, so the title
+  was the whole 2,705-character brief. The earlier run succeeded because it ran
+  before the Version PR merged: no CHANGELOG section existed for 2.1.0 yet, so
+  the headline was the short fallback and the post step stood down on
+  `announceWorthy: false`. Fixed by sharing the release-notes title clamp:
+  `scripts/lib/release-copy.mjs` now holds section extraction,
+  entry splitting (a blank line ends an entry, so each paragraph of a brief is
+  its own body entry) and `clampTitle`, and the headline is the lead paragraph's
+  first sentence clamped to 120 characters. `test/announce-copy.test.mjs` pins it
+  on the real 2.1.0 section. Announce also gained a `dry_run` dispatch input
+  (`GEOALGERIA_DRY_RUN` locally) that renders the Discussion into the job summary
+  and posts nothing.
 
 - [ ] **Umbrella release tag for the current state.** Per-package releases have
   kept up; the project-level tag has not. Manual, and worth doing at the next
@@ -314,6 +470,25 @@ reads as further along than it is.
 ---
 
 ## Recently closed
+
+- **`geoalgeria` 2.1.0, the Official Journal corrections** (2026-09-26): issue
+  #221 from @djamel2288 led to a full audit of the commune list of Law 26-06
+  against both editions of the Journal. 2 wilaya and 178 commune names follow
+  the law (wilaya 65 `Aïn Ouessara`, 28 `M'Sila`), six placeholder coordinates
+  are replaced from each commune's own OSM boundary, `Deux Bassins` moved to
+  daira Tablat, the 59 to 69 atlas and delivery labels are rebuilt, and the new
+  `data/name-history.json` keeps all 210 replaced spellings searchable. Released
+  as a minor (a new data file). `@geoalgeria/transport` 2.0.3 published the
+  umbrella licence declaration by hand. PRs #222/#223; announced in Discussion
+  #225. The web app took the same corrections the same day, with Former-address
+  redirects.
+
+- **Telecom 2.2.0, the September 5G refresh** (2026-09-08): the operator map
+  now carries 3,598 coverage points: Mobilis 2,421, Djezzy 1,001 and Ooredoo
+  176. Operator source captures are stored and ordered deterministically,
+  retrieval metadata reflects the 8 September refresh, and stable Ooredoo IDs
+  survive five source label corrections. The package was published and the app
+  consumed it through the receipt-backed snapshot sync. PRs #209/#216.
 
 - **The health batch, 2026-08-09**: `@geoalgeria/cliniques` 1.0.0 published,
   its first release, 1,894 care facilities across 66 wilayas from

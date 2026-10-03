@@ -1,0 +1,35 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "CENTRE VILLE AIN GUEZZAM",
+        "code_wilaya": "54",
+        "commune": "IN GUEZZAM",
+        "date": "2024-10-30 15:09:40",
+        "id": "261",
+        "latitude": "19,57203056",
+        "longitude": "5,766736111\r",
+        "type": "Agence Commerciale",
+        "wilaya": "IN GUEZZAM"
+      },
+      {
+        "adresse": " CITE 05  JUILLET CENTRE VILLE COMMUNE TINZAOUATINE",
+        "code_wilaya": "54",
+        "commune": "TINZAOUATINE",
+        "date": "2024-10-30 15:09:40",
+        "id": "262",
+        "latitude": "19,958459",
+        "longitude": "2,9705639\r",
+        "type": "Point de présence",
+        "wilaya": "IN GUEZZAM"
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    IN GUEZZAM</b> ",
+    "resultat": "ok",
+    "wilaya": "IN GUEZZAM"
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 54
+}

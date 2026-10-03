@@ -1,4 +1,12 @@
 {
-  "note": "Ids no record may ever hold again. A retired id stays reserved so a future station in the same wilaya can never silently inherit a public join key that used to point somewhere else.",
-  "ids": ["14-01", "14-03", "31-01", "32-02", "33-01", "69-01", "69-02"]
+  "note": "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.",
+  "ids": [
+    "14-01",
+    "14-03",
+    "31-01",
+    "32-02",
+    "33-01",
+    "69-01",
+    "69-02"
+  ]
 }

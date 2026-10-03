@@ -307,14 +307,23 @@ test("a facility sante's EPSP entities merely anchor on is kept", () => {
   }
 });
 
-test("ids are unique and shaped {wilaya_code}-{seq}", () => {
+test("ids are unique and shaped {wilaya}-{seq}, and are never renumbered", () => {
+  // The prefix is the wilaya the record was FIRST published in, not necessarily the one
+  // it is in now. A published id is a public join key and is never retired or renumbered
+  // unless the place itself is gone (Owner rule, 2026-09-29), so when a commune-boundary
+  // correction moves a facility across a wilaya line the id stays and `wilaya_code`
+  // changes: 09-00032, Laboratoire Tarzaali, is inside Sidi Moussa (1637) in wilaya 16
+  // per OpenStreetMap and was published as Meftah (0918) in wilaya 09.
   const ids = new Set();
+  let rescoped = 0;
   for (const r of records) {
     assert.match(r.id, /^\d{2}-\d{5}$/, `bad id ${r.id}`);
-    assert.equal(r.id.slice(0, 2), r.wilaya_code, `id prefix does not match wilaya_code on ${r.id}`);
     assert.ok(!ids.has(r.id), `duplicate id ${r.id}`);
     ids.add(r.id);
+    if (r.id.slice(0, 2) !== r.wilaya_code) rescoped++;
   }
+  // A drift this large would mean the join, not a correction.
+  assert.ok(rescoped <= 5, `${rescoped} id(s) no longer match their wilaya_code`);
 });
 
 test("the emitted metadata stats agree with the records", () => {

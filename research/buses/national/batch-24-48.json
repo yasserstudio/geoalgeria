@@ -1,0 +1,1523 @@
+{
+  "schema_version": 1,
+  "updated": "2026-09-01",
+  "scope": {
+    "wilaya_codes": [
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "48"
+    ],
+    "modes": [
+      "urban_bus",
+      "suburban_bus"
+    ],
+    "source_policy": "Official and operator-controlled sources are preferred. Third-party apps and reporting are discovery evidence only unless the operator relationship is independently established."
+  },
+  "common_sources": [
+    {
+      "id": "executive-decree-10-92",
+      "url": "https://www.joradp.dz/FTP/jo-arabe/2010/A2010018.pdf",
+      "source_type": "official_legislation",
+      "evidence_status": "seen",
+      "claims": [
+        "creation_of_public_urban_and_suburban_transport_enterprises_for_wilayas_in_batch",
+        "references_earlier_dedicated_creation_decrees_for_constantine_and_ghardaia"
+      ],
+      "freshness": "2010-03-14",
+      "access_status": "public",
+      "reuse_status": "public_factual_record_not_a_transport_data_license"
+    }
+  ],
+  "wilayas": [
+    {
+      "wilaya_code": "24",
+      "wilaya_name": "Guelma",
+      "operator": {
+        "id": "etus-guelma",
+        "name": "Entreprise publique de transport urbain et suburbain de Guelma",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "http://etusguelma.dz/",
+          "source_type": "operator_domain",
+          "evidence_status": "seen",
+          "freshness": "HTTP last-modified 2026-01-13",
+          "access_status": "public_default_hosting_page",
+          "reuse_status": "no_transport_data",
+          "claims": []
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=com.cleversoft.tanakoli",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-08-06",
+          "access_status": "public_listing_app_login_required_for_some_features",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions",
+            "line_status",
+            "transport_card_management"
+          ]
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=org.busguelma.manager",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-07-15",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "operator_domain_contains_no_transport_content",
+        "apps_are_third_party_and_expose_no_reusable_feed"
+      ]
+    },
+    {
+      "wilaya_code": "25",
+      "wilaya_name": "Constantine",
+      "operator": {
+        "id": "etusc-constantine",
+        "name": "Entreprise de transport urbain et suburbain de Constantine",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://play.google.com/store/apps/details?id=org.buscirta.manager",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-07-09",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "ETUSC_live_bus_positions"
+          ]
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=dz.etu.bus",
+          "source_type": "third_party_multi_city_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-07-26",
+          "access_status": "public_listing_app_claims_no_registration",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions",
+            "line_refs",
+            "full_route_geometry",
+            "stations",
+            "eta"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "only_third_party_app_claims_found",
+        "no_public_reusable_endpoint_found"
+      ]
+    },
+    {
+      "wilaya_code": "26",
+      "wilaya_name": "Medea",
+      "operator": {
+        "id": "etus-medea",
+        "name": "Entreprise publique de transport urbain et suburbain de Medea",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://play.google.com/store/apps/details?id=org.busmedea.manager",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-07-11",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "only_third_party_live_position_claim_found",
+        "no_public_reusable_endpoint_found"
+      ]
+    },
+    {
+      "wilaya_code": "27",
+      "wilaya_name": "Mostaganem",
+      "operator": {
+        "id": "etus-mostaganem",
+        "name": "Entreprise publique de transport urbain et suburbain de Mostaganem",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "no_official_or_operator_controlled_network_source_found",
+        "existing_project_geometry_is_not_an_official_operator_feed"
+      ],
+      "negative_result": "No acceptable official/operator-controlled Line, Station, schedule, geometry, tracker, app, or logo source found."
+    },
+    {
+      "wilaya_code": "28",
+      "wilaya_name": "M'Sila",
+      "operator": {
+        "id": "etus-msila",
+        "name": "Entreprise publique de transport urbain et suburbain de M'Sila",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://play.google.com/store/apps/details?id=org.bushodna.manager",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-08-06",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "only_third_party_live_position_claim_found",
+        "no_public_reusable_endpoint_found"
+      ]
+    },
+    {
+      "wilaya_code": "29",
+      "wilaya_name": "Mascara",
+      "operator": {
+        "id": "etus-mascara",
+        "name": "Entreprise publique de transport urbain et suburbain de Mascara",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "http://etusmascara.dz/",
+          "source_type": "official_operator_site",
+          "evidence_status": "seen",
+          "freshness": "footer 2025; accessed 2026-09-01",
+          "access_status": "public_http; HTTPS certificate hostname mismatch",
+          "reuse_status": "no_open_license_found",
+          "claims": [
+            "operator_identity",
+            "official_logo",
+            "operator_contacts",
+            "app_link"
+          ]
+        },
+        {
+          "url": "http://etusmascara.dz/exploi.html",
+          "source_type": "official_operator_line_page",
+          "evidence_status": "seen",
+          "freshness": "accessed 2026-09-01",
+          "access_status": "public_http",
+          "reuse_status": "no_open_license_found",
+          "claims": [
+            "six_line_refs",
+            "six_embedded_public_maps"
+          ]
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=com.deeper.etus.mascara",
+          "source_type": "operator_linked_third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2023-05-15",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_locations",
+            "payment"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [
+          "08",
+          "02",
+          "16",
+          "01",
+          "17",
+          "05"
+        ],
+        "line_count": 6,
+        "endpoints": [
+          {
+            "ref": "08",
+            "from": "Mascara passenger bus station",
+            "to": "Avenue Cheikh El Khaldi",
+            "status": "inferred_from_first_and_last_KML_placemarks"
+          },
+          {
+            "ref": "02",
+            "from": "Mascara passenger bus station",
+            "to": "C524+VMW, Mascara",
+            "status": "inferred_from_KML_route_names"
+          },
+          {
+            "ref": "16",
+            "from": "94PG+286, Mascara",
+            "to": "C524+VMW, Mascara",
+            "status": "inferred_from_KML_route_names"
+          },
+          {
+            "ref": "01",
+            "from": "94WP+87G, Mascara",
+            "to": "C46F+M67, Mascara",
+            "status": "inferred_from_KML_route_names"
+          },
+          {
+            "ref": "17",
+            "from": "94PG+286, Mascara",
+            "to": "94WP+7V5, Mascara",
+            "status": "inferred_from_KML_route_names"
+          },
+          {
+            "ref": "05",
+            "from": null,
+            "to": null,
+            "status": "multi_segment_KML_requires_human_validation"
+          }
+        ],
+        "ordered_stations": true,
+        "ordered_stations_qualification": "KML placemark order is observable but passenger stop order has not been operationally validated",
+        "geometry": true,
+        "geometry_qualification": "Google My Maps KML linked by official operator page",
+        "schedules": false,
+        "live_endpoint": null,
+        "maps": [
+          {
+            "ref": "08",
+            "map_id": "1tmHKvSMzC04PYwZt2r_VG6XJwN-qZfs",
+            "kml_url": "https://www.google.com/maps/d/kml?mid=1tmHKvSMzC04PYwZt2r_VG6XJwN-qZfs&forcekml=1",
+            "point_count": 11,
+            "line_string_count": 1
+          },
+          {
+            "ref": "02",
+            "map_id": "1PMwuGBYJVHV88V_oSxgRgQVUFtL-vyg",
+            "kml_url": "https://www.google.com/maps/d/kml?mid=1PMwuGBYJVHV88V_oSxgRgQVUFtL-vyg&forcekml=1",
+            "point_count": 19,
+            "line_string_count": 4
+          },
+          {
+            "ref": "16",
+            "map_id": "15KGgyUDuLcWrYoxMz1kCtz8x8t8bAdg",
+            "kml_url": "https://www.google.com/maps/d/kml?mid=15KGgyUDuLcWrYoxMz1kCtz8x8t8bAdg&forcekml=1",
+            "point_count": 17,
+            "line_string_count": 3
+          },
+          {
+            "ref": "01",
+            "map_id": "1yX3CZ7j9YHPzUcu9_8DDiCrg6OJcvlg",
+            "kml_url": "https://www.google.com/maps/d/kml?mid=1yX3CZ7j9YHPzUcu9_8DDiCrg6OJcvlg&forcekml=1",
+            "point_count": 6,
+            "line_string_count": 1
+          },
+          {
+            "ref": "17",
+            "map_id": "1ZuSudpU1FQHw3d6c3NLXUSCxIKp2viQ",
+            "kml_url": "https://www.google.com/maps/d/kml?mid=1ZuSudpU1FQHw3d6c3NLXUSCxIKp2viQ&forcekml=1",
+            "point_count": 9,
+            "line_string_count": 1
+          },
+          {
+            "ref": "05",
+            "map_id": "1tPlHDmps5ta7q6vtL-xxorfkIgg6g4I",
+            "kml_url": "https://www.google.com/maps/d/kml?mid=1tPlHDmps5ta7q6vtL-xxorfkIgg6g4I&forcekml=1",
+            "point_count": 8,
+            "line_string_count": 3
+          }
+        ]
+      },
+      "logo": {
+        "url": "http://etusmascara.dz/assets/logo.png",
+        "verification": "verified_on_official_operator_site"
+      },
+      "conflicts": [
+        "official_page_refs_08_02_16_01_17_05_conflict_with_embedded_map_internal_titles_that_call_the_maps_lines_1_through_6"
+      ],
+      "blockers": [
+        "line_identity_conflict_requires_human_validation_before_promotion",
+        "no_explicit_open_data_license",
+        "no_concrete_timetables_or_public_live_endpoint"
+      ]
+    },
+    {
+      "wilaya_code": "30",
+      "wilaya_name": "Ouargla",
+      "operator": {
+        "id": "etus-ouargla",
+        "name": "Entreprise publique de transport urbain et suburbain de Ouargla",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "http://etus-ouargla.dz/",
+          "source_type": "operator_domain",
+          "evidence_status": "seen",
+          "freshness": "accessed 2026-09-01",
+          "access_status": "public_default_hosting_page",
+          "reuse_status": "no_transport_data",
+          "claims": []
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=org.ouareglabus.manager",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-07-15",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions"
+          ]
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=ouargla.routes.devcloud",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2025-12-09",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions",
+            "schedules",
+            "route_information"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "operator_domain_contains_no_transport_content",
+        "apps_are_third_party_and_expose_no_reusable_feed"
+      ]
+    },
+    {
+      "wilaya_code": "31",
+      "wilaya_name": "Oran",
+      "operator": {
+        "id": "etus-oran",
+        "name": "Entreprise de transport d'Oran",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ],
+        "aliases": [
+          "ETO",
+          "ETUS Oran"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://gps.etusoran.dz/",
+          "source_type": "official_operator_tracker",
+          "evidence_status": "seen",
+          "freshness": "live; probed 2026-09-01",
+          "access_status": "public_shell_authentication_required_for_operational_data",
+          "reuse_status": "operator_access_required_no_open_license_found",
+          "claims": [
+            "Traccar_6_6",
+            "protected_devices",
+            "protected_positions",
+            "official_logo"
+          ]
+        },
+        {
+          "url": "https://gps.etusoran.dz/api/server",
+          "source_type": "official_public_tracker_metadata_endpoint",
+          "evidence_status": "seen",
+          "freshness": "live; probed 2026-09-01",
+          "access_status": "public",
+          "reuse_status": "no_open_license_found",
+          "claims": [
+            "tracker_title_etus_oran",
+            "tracker_version_6_6",
+            "logo_path_logo_png"
+          ]
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=oran.routes.devcloud",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-01-26",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions",
+            "schedules",
+            "route_information"
+          ]
+        },
+        {
+          "url": "https://capdz.dz/archives/16261",
+          "source_type": "secondary_current_line_report",
+          "evidence_status": "seen",
+          "freshness": "published 2026-08-09",
+          "access_status": "public",
+          "reuse_status": "factual_reference_no_open_dataset_license",
+          "claims": [
+            "line_69_El_Hamri_El_Braya",
+            "El_Morchid_Gdyel_bus_station_line"
+          ]
+        },
+        {
+          "url": "https://www.lexpression.dz/societe/mise-en-service-de-deux-nouvelles-lignes-de-transport-urbain-407130",
+          "source_type": "secondary_current_line_report",
+          "evidence_status": "seen",
+          "freshness": "published 2026-07-01",
+          "access_status": "public",
+          "reuse_status": "factual_reference_no_open_dataset_license",
+          "claims": [
+            "line_G1_Arab_Maghreb_roundabout_El_Bahia",
+            "AADL_Ain_El_Beida_Hassi_Mdina_Jdida_El_Hamri_line"
+          ]
+        },
+        {
+          "url": "https://di.univ-blida.dz/xmlui/bitstream/handle/123456789/15306/4.720.1770.pdf?isAllowed=y&sequence=1",
+          "source_type": "historical_academic_study",
+          "evidence_status": "seen",
+          "freshness": "historical and materially stale",
+          "access_status": "public",
+          "reuse_status": "no_open_data_license_found",
+          "claims": [
+            "ten_historical_ETO_only_line_refs_and_endpoints"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [
+          "69",
+          "G1"
+        ],
+        "line_count": 4,
+        "line_count_qualification": "four current services described in secondary reporting; two are unnumbered",
+        "endpoints": [
+          {
+            "ref": "69",
+            "from": "El Hamri",
+            "to": "El Braya",
+            "status": "seen"
+          },
+          {
+            "ref": null,
+            "from": "El Morchid station",
+            "to": "Gdyel bus station",
+            "status": "seen"
+          },
+          {
+            "ref": "G1",
+            "from": "Arab Maghreb roundabout",
+            "to": "El Bahia station",
+            "via": [
+              "Belgaid 4000 logements",
+              "Miloud Hadefi complex",
+              "Boulevard des Lions",
+              "Emir Abdelkader mosque"
+            ],
+            "status": "seen"
+          },
+          {
+            "ref": null,
+            "from": "AADL 2500 and 2700 Ain El Beida / AADL 1300 Hassi",
+            "to": "M'dina J'dida / El Hamri",
+            "status": "seen"
+          }
+        ],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null,
+        "public_metadata_endpoint": "https://gps.etusoran.dz/api/server"
+      },
+      "logo": {
+        "url": "https://gps.etusoran.dz/logo.png",
+        "verification": "verified_on_official_operator_tracker"
+      },
+      "conflicts": [
+        "historical_line_table_is_stale_after_multiple_2026_service_additions"
+      ],
+      "blockers": [
+        "devices_positions_groups_and_operational_tracker_data_return_401_without_authorized_session",
+        "no_public_complete_line_station_geometry_or_schedule_feed",
+        "no_explicit_open_data_license"
+      ]
+    },
+    {
+      "wilaya_code": "32",
+      "wilaya_name": "El Bayadh",
+      "operator": {
+        "id": "etus-el-bayadh",
+        "name": "Entreprise publique de transport urbain et suburbain d'El Bayadh",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "no_network_source_app_tracker_lines_stations_schedules_geometry_or_verified_logo_found"
+      ],
+      "negative_result": "No transport-data source found beyond the Operator's legal identity."
+    },
+    {
+      "wilaya_code": "33",
+      "wilaya_name": "Illizi",
+      "operator": {
+        "id": "etus-illizi",
+        "name": "Entreprise publique de transport urbain et suburbain d'Illizi",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.ech-chaab.com/new/wp-content/uploads/2026/02/echaab05022026.pdf",
+          "source_type": "secondary_public_report",
+          "evidence_status": "seen",
+          "freshness": "published 2026-02-05",
+          "access_status": "public_pdf",
+          "reuse_status": "factual_reference_no_open_dataset_license",
+          "claims": [
+            "four_new_urban_lines",
+            "hourly_service_cycle"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": 4,
+        "line_count_qualification": "new urban lines reported without refs or endpoints",
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": true,
+        "schedule_qualification": "reported hourly cycle only; no departure table",
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "report_does_not_name_line_refs_endpoints_stations_or_geometry",
+        "no_operator_dataset_or_open_license_found"
+      ]
+    },
+    {
+      "wilaya_code": "34",
+      "wilaya_name": "Bordj Bou Arreridj",
+      "operator": {
+        "id": "etus-bordj-bou-arreridj",
+        "name": "Entreprise publique de transport urbain et suburbain de Bordj Bou Arreridj",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "no_network_source_app_tracker_lines_stations_schedules_geometry_or_verified_logo_found"
+      ],
+      "negative_result": "No transport-data source found beyond the Operator's legal identity."
+    },
+    {
+      "wilaya_code": "35",
+      "wilaya_name": "Boumerdes",
+      "operator": {
+        "id": "etus-boumerdes",
+        "name": "Entreprise publique de transport urbain et suburbain de Boumerdes",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "no_network_source_app_tracker_lines_stations_schedules_geometry_or_verified_logo_found"
+      ],
+      "negative_result": "No transport-data source found beyond the Operator's legal identity."
+    },
+    {
+      "wilaya_code": "36",
+      "wilaya_name": "El Tarf",
+      "operator": {
+        "id": "etus-el-tarf",
+        "name": "Entreprise publique de transport urbain et suburbain d'El Tarf",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "http://etuseltarf.dz/",
+          "source_type": "operator_domain",
+          "evidence_status": "seen",
+          "freshness": "accessed 2026-09-01",
+          "access_status": "public_default_hosting_page",
+          "reuse_status": "no_transport_data",
+          "claims": []
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "operator_domain_contains_only_hosting_placeholder",
+        "no_reusable_network_data_or_verified_logo_found"
+      ],
+      "negative_result": "No reusable transport-data source found."
+    },
+    {
+      "wilaya_code": "37",
+      "wilaya_name": "Tindouf",
+      "operator": {
+        "id": "etus-tindouf",
+        "name": "Entreprise publique de transport urbain et suburbain de Tindouf",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "no_network_source_app_tracker_lines_stations_schedules_geometry_or_verified_logo_found"
+      ],
+      "negative_result": "No transport-data source found beyond the Operator's legal identity."
+    },
+    {
+      "wilaya_code": "38",
+      "wilaya_name": "Tissemsilt",
+      "operator": {
+        "id": "etus-tissemsilt",
+        "name": "Entreprise publique de transport urbain et suburbain de Tissemsilt",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "no_network_source_app_tracker_lines_stations_schedules_geometry_or_verified_logo_found"
+      ],
+      "negative_result": "No transport-data source found beyond the Operator's legal identity."
+    },
+    {
+      "wilaya_code": "39",
+      "wilaya_name": "El Oued",
+      "operator": {
+        "id": "etus-el-oued",
+        "name": "Entreprise publique de transport urbain et suburbain d'El Oued",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "no_network_source_app_tracker_lines_stations_schedules_geometry_or_verified_logo_found"
+      ],
+      "negative_result": "No transport-data source found beyond the Operator's legal identity."
+    },
+    {
+      "wilaya_code": "40",
+      "wilaya_name": "Khenchela",
+      "operator": {
+        "id": "etus-khenchela",
+        "name": "Entreprise publique de transport urbain et suburbain de Khenchela",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "no_network_source_app_tracker_lines_stations_schedules_geometry_or_verified_logo_found"
+      ],
+      "negative_result": "No transport-data source found beyond the Operator's legal identity."
+    },
+    {
+      "wilaya_code": "41",
+      "wilaya_name": "Souk Ahras",
+      "operator": {
+        "id": "etus-souk-ahras",
+        "name": "Entreprise publique de transport urbain et suburbain de Souk Ahras",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "http://etus-soukahras.dz/",
+          "source_type": "official_operator_site",
+          "evidence_status": "seen",
+          "freshness": "operational statistics through 2023 and activity text through 2024; accessed 2026-09-01",
+          "access_status": "public_http; HTTPS certificate hostname mismatch",
+          "reuse_status": "no_open_license_found",
+          "claims": [
+            "operator_identity",
+            "official_logo",
+            "83_km_network",
+            "six_urban_lines",
+            "four_suburban_lines",
+            "nine_endpoint_pairs_with_fleet_length_and_interval"
+          ]
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=org.bussoukahras.manager",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-07-15",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": 10,
+        "line_count_qualification": "official site states 6 urban plus 4 suburban lines but displays 9 endpoint records",
+        "network_length_km": 83,
+        "endpoints": [
+          {
+            "from": "University Pole",
+            "to": "Ibn Rochd district",
+            "bus_count": 6,
+            "length_km": 8,
+            "interval_minutes": "5-10",
+            "status": "seen"
+          },
+          {
+            "from": "University Pole",
+            "to": "Berrel Salah",
+            "bus_count": 6,
+            "length_km": 16,
+            "interval_minutes": "25-30",
+            "status": "seen"
+          },
+          {
+            "from": "University Pole",
+            "to": "El Mechroha passenger station",
+            "bus_count": 2,
+            "length_km": 12,
+            "interval_minutes": "20-25",
+            "status": "seen"
+          },
+          {
+            "from": "University Pole",
+            "to": "Diar Ezzarga 2",
+            "bus_count": 2,
+            "length_km": 13,
+            "interval_minutes": "20-25",
+            "status": "seen"
+          },
+          {
+            "from": "Railway station",
+            "to": "2900 Housing district",
+            "bus_count": 3,
+            "length_km": 10,
+            "interval_minutes": "10-15",
+            "status": "seen"
+          },
+          {
+            "from": "Madaure passenger station",
+            "to": "Achouri district",
+            "bus_count": 1,
+            "length_km": 5,
+            "interval_minutes": "45",
+            "status": "seen"
+          },
+          {
+            "from": "Sidi Belghith, Sedrata",
+            "to": "Mohamed Boudiaf",
+            "bus_count": 1,
+            "length_km": 7,
+            "interval_minutes": "30-35",
+            "status": "seen"
+          },
+          {
+            "from": "Obeid Said, Sedrata",
+            "to": "Mohamed Boudiaf",
+            "bus_count": 2,
+            "length_km": 6,
+            "interval_minutes": "30-40",
+            "status": "seen"
+          },
+          {
+            "from": "Taoura centre",
+            "to": "Veterinary Institute",
+            "bus_count": 1,
+            "length_km": 6,
+            "interval_minutes": "20-25",
+            "status": "seen"
+          }
+        ],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": true,
+        "schedule_qualification": "service intervals only, not departure times",
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": "http://etus-soukahras.dz/images/logo.png",
+        "verification": "verified_on_official_operator_site"
+      },
+      "conflicts": [
+        "official_summary_claims_ten_lines_but_only_nine_endpoint_records_are_rendered"
+      ],
+      "blockers": [
+        "no_ordered_intermediate_stations_or_geometry",
+        "no_explicit_open_data_license",
+        "third_party_live_app_exposes_no_public_feed"
+      ]
+    },
+    {
+      "wilaya_code": "42",
+      "wilaya_name": "Tipaza",
+      "operator": {
+        "id": "etus-tipaza",
+        "name": "Entreprise publique de transport urbain et suburbain de Tipaza",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://play.google.com/store/apps/details?id=com.cleversoft.tipazaway",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-08-06",
+          "access_status": "public_listing_app_login_required_for_some_features",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions",
+            "line_status",
+            "transport_card_management"
+          ]
+        },
+        {
+          "url": "https://www.el-massa.com/dz/%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D8%B3%D9%84%D9%88%D9%86/%D9%82%D9%84%D9%82-%D9%8A%D9%88%D9%85%D9%8A-%D9%8A%D8%A4%D8%B1%D9%82-%D9%85%D8%B1%D8%A8%D9%8A-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B4%D9%8A-%D8%A8%D8%AA%D9%8A%D8%A8%D8%A7%D8%B2%D8%A9",
+          "source_type": "secondary_current_line_report",
+          "evidence_status": "seen",
+          "freshness": "published 2026-08",
+          "access_status": "public",
+          "reuse_status": "factual_reference_no_open_dataset_license",
+          "claims": [
+            "Daouda_Tipaza_line_with_ordered_via_places"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": 1,
+        "line_count_qualification": "one current line described without a ref",
+        "endpoints": [
+          {
+            "ref": null,
+            "from": "Daouda urban passenger station",
+            "to": "Tipaza passenger bus station",
+            "via": [
+              "Fouka",
+              "Bou Ismail, Balili",
+              "Khemisti Marine",
+              "Bou Haroun",
+              "Ain Tagourait"
+            ],
+            "status": "seen"
+          }
+        ],
+        "ordered_stations": true,
+        "ordered_stations_qualification": "ordered municipal corridor from reporting, not a validated stop-by-stop sequence",
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "no_line_ref_or_geometry_for_reported_corridor",
+        "third_party_app_exposes_no_public_feed",
+        "no_explicit_open_data_license"
+      ]
+    },
+    {
+      "wilaya_code": "43",
+      "wilaya_name": "Mila",
+      "operator": {
+        "id": "etus-mila",
+        "name": "Entreprise publique de transport urbain et suburbain de Mila",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://play.google.com/store/apps/details?id=org.busmila.manager",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-07-13",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions"
+          ]
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=dz.milabus.com",
+          "source_type": "explicitly_unofficial_third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-03-17",
+          "access_status": "public_listing_token_protected_app_data",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions",
+            "Traccar_compatible_server"
+          ]
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=dz.etu.bus",
+          "source_type": "third_party_multi_city_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-07-26",
+          "access_status": "public_listing_app_claims_no_registration",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions",
+            "line_refs",
+            "full_route_geometry",
+            "stations",
+            "eta"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [
+        "Etus_Mila_app_listing_explicitly_says_it_is_not_an_official_ETUS_Mila_application"
+      ],
+      "blockers": [
+        "live_data_is_token_protected",
+        "only_third_party_claims_found",
+        "no_public_reusable_endpoint_or_verified_operator_logo"
+      ]
+    },
+    {
+      "wilaya_code": "44",
+      "wilaya_name": "Ain Defla",
+      "operator": {
+        "id": "etus-ain-defla",
+        "name": "Entreprise publique de transport urbain et suburbain d'Ain Defla",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "http://etusaindefla.dz/",
+          "source_type": "operator_domain",
+          "evidence_status": "seen",
+          "freshness": "accessed 2026-09-01",
+          "access_status": "public_default_hosting_page",
+          "reuse_status": "no_transport_data",
+          "claims": []
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=ain_defla.cloudroutes.devcloud",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2025-12-09",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions",
+            "schedules",
+            "route_information"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "operator_domain_contains_only_hosting_placeholder",
+        "app_is_third_party_and_exposes_no_reusable_feed"
+      ]
+    },
+    {
+      "wilaya_code": "45",
+      "wilaya_name": "Naama",
+      "operator": {
+        "id": "etus-naama",
+        "name": "Entreprise publique de transport urbain et suburbain de Naama",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.djazairess.com/aps/257935",
+          "source_type": "historical_secondary_report",
+          "evidence_status": "seen",
+          "freshness": "published approximately 2012",
+          "access_status": "public",
+          "reuse_status": "factual_reference_no_open_dataset_license",
+          "claims": [
+            "fourteen_buses",
+            "several_urban_lines"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "only_historical_fleet_and_generic_line_count_claim_found",
+        "no_current_refs_endpoints_stations_geometry_schedule_app_tracker_or_verified_logo"
+      ],
+      "negative_result": "No current reusable network source found."
+    },
+    {
+      "wilaya_code": "46",
+      "wilaya_name": "Ain Temouchent",
+      "operator": {
+        "id": "etus-ain-temouchent",
+        "name": "Entreprise publique de transport urbain et suburbain d'Ain Temouchent",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "no_network_source_app_tracker_lines_stations_schedules_geometry_or_verified_logo_found"
+      ],
+      "negative_result": "No transport-data source found beyond the Operator's legal identity."
+    },
+    {
+      "wilaya_code": "47",
+      "wilaya_name": "Ghardaia",
+      "operator": {
+        "id": "etus-ghardaia",
+        "name": "Entreprise publique de transport urbain et suburbain de Ghardaia",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://play.google.com/store/apps/details?id=ghardaia.routes.devcloud",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2025-12-09",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions",
+            "schedules",
+            "route_information"
+          ]
+        },
+        {
+          "url": "https://www.taxyc.com/DZ/Gharda%C3%AFa/239890002537462/%D8%A7%D9%84%D9%85%D8%A4%D8%B3%D8%B3%D8%A9-%D8%A7%D9%84%D8%B9%D9%85%D9%88%D9%85%D9%8A%D8%A9-%D9%84%D9%84%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D9%88%D8%B4%D8%A8%D9%87-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A9-%D8%BA%D9%80%D9%80%D9%80%D8%B1%D8%AF%D8%A7%D9%8A%D8%A9",
+          "source_type": "third_party_mirror_of_operator_social_page",
+          "evidence_status": "seen",
+          "freshness": "operator posts through 2026-08-20",
+          "access_status": "public_mirror",
+          "reuse_status": "no_open_data_license_found",
+          "claims": [
+            "active_operator_identity",
+            "operator_address",
+            "operator_social_activity"
+          ]
+        },
+        {
+          "url": "https://dspace.univ-ghardaia.dz/jspui/bitstream/123456789/1269/1/GES.4.281.pdf",
+          "source_type": "historical_academic_study",
+          "evidence_status": "seen",
+          "freshness": "historical",
+          "access_status": "public_pdf",
+          "reuse_status": "no_open_transport_data_license_found",
+          "claims": [
+            "historical_twelve_line_count"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": 12,
+        "line_count_qualification": "historical academic count only; not current and extraction quality is poor",
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "historical_line_count_is_not_current",
+        "app_is_third_party_and_exposes_no_reusable_feed",
+        "no_verified_operator_logo_or_open_license"
+      ]
+    },
+    {
+      "wilaya_code": "48",
+      "wilaya_name": "Relizane",
+      "operator": {
+        "id": "etus-relizane",
+        "name": "Entreprise publique de transport urbain et suburbain de Relizane",
+        "identity_status": "seen",
+        "identity_source_ids": [
+          "executive-decree-10-92"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://play.google.com/store/apps/details?id=org.relizanebus.manager",
+          "source_type": "third_party_app_listing",
+          "evidence_status": "seen",
+          "freshness": "updated 2026-07-10",
+          "access_status": "public_listing",
+          "reuse_status": "no_open_feed_or_reuse_grant_found",
+          "claims": [
+            "live_bus_positions"
+          ]
+        }
+      ],
+      "available": {
+        "line_refs": [],
+        "line_count": null,
+        "endpoints": [],
+        "ordered_stations": false,
+        "geometry": false,
+        "schedules": false,
+        "live_endpoint": null
+      },
+      "logo": {
+        "url": null,
+        "verification": "not_verified"
+      },
+      "conflicts": [],
+      "blockers": [
+        "only_third_party_live_position_claim_found",
+        "no_public_reusable_endpoint_or_verified_operator_logo"
+      ]
+    }
+  ],
+  "private_network_result": {
+    "evidence_status": "seen_negative_result",
+    "result": "No named private urban/suburban Operator registry or reusable private Line network source was found for Wilayas 24-48 during this audit.",
+    "limitation": "This is a source-discovery result, not proof that private Operators do not exist."
+  },
+  "audit_summary": {
+    "wilaya_count": 25,
+    "strongest_reusable_candidate": "ETUS Mascara operator-linked KML, pending Line identity validation and permission review",
+    "official_endpoint_facts_without_geometry": [
+      "ETO Oran current 2026 services",
+      "ETUS Souk Ahras endpoint and interval table",
+      "ETUS Tipaza Daouda-Tipaza corridor"
+    ],
+    "license_result": "No audited source publishes an explicit open transport-data license.",
+    "app_result": "Google Play descriptions establish feature claims only; they do not authorize data reuse or verify Operator ownership unless linked from an official Operator source."
+  }
+}

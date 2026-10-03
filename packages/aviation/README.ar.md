@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/aviation)](https://www.npmjs.com/package/@geoalgeria/aviation)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/aviation)](https://www.npmjs.com/package/@geoalgeria/aviation)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -45,8 +45,8 @@ const inOran = aviation.airportsByWilaya(31);     // مطارات الولاية
 | مجموعة البيانات | العدد | ملاحظات |
 | --- | --- | --- |
 | المطارات المدنية | **36** | الاسم الرسمي، رمزا OACI وIATA، العنوان، الهاتف، الموقع الإلكتروني، الإحداثيات |
-| الخطوط الجوية المباشرة | **123** | خطوط اتجاهية مع المشغّل والحالة ومستوى الإثبات والمصدر |
-| الخطوط الجوية المخطّطة | **2** | معلن عنها ولم تبدأ بعد؛ مجموعة منفصلة، وليست حالة |
+| الخطوط الجوية المباشرة | **129** | خطوط اتجاهية مع المشغّل والحالة ومستوى الإثبات والمصدر |
+| الخطوط الجوية المخطّطة | **19** | معلن عنها ولم تبدأ بعد؛ مجموعة منفصلة، وليست حالة |
 
 تغطي **33 ولاية**، كل مطار محدد الإحداثيات ويحمل رمز IATA. `wilaya_code` مرتبط بنموذج الـ 69
 ولاية في [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).

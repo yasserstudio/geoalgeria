@@ -35,6 +35,11 @@ const status = args.includes("--status");
 const allowStaleMatrix = args.includes("--allow-stale-matrix");
 const limit = positiveLimit(option("--limit"));
 const delayMs = 1_250;
+const PROBE_KEYS = [
+  "1:213-000019001", // ALGER → SETIF
+  "1:213-000025001", // ALGER → CONSTANTINE
+  "10:213-000016000", // ADRAR → ALGER (original probe)
+];
 assertServiceDate(date);
 if ([run, probe, status].filter(Boolean).length !== 1) {
   throw new Error("Choose exactly one of --probe, --run or --status");
@@ -143,12 +148,20 @@ async function search(pair, session) {
 }
 
 if (probe) {
-  const matching = pairs.find((pair) => pair.agency_id === 10 && pair.destination_id === "213-000016000");
-  if (!matching) throw new Error("probe pair ADRAR → ALGER missing from current matrix");
-  const rows = await search(matching, await sessionPage());
-  if (!rows.length) throw new Error("probe returned no rows: do not begin matrix collection");
-  console.log(JSON.stringify({ probe: matching, departures: rows.length, sample: rows[0] }, null, 2));
-  process.exit(0);
+  const candidates = PROBE_KEYS.flatMap((key) => {
+    const matching = pairs.find((pair) => `${pair.agency_id}:${pair.destination_id}` === key);
+    return matching ? [matching] : [];
+  });
+  if (!candidates.length) throw new Error("all known probe pairs are missing from the current matrix");
+
+  const session = await sessionPage();
+  for (const matching of candidates) {
+    const rows = await search(matching, session);
+    if (!rows.length) continue;
+    console.log(JSON.stringify({ probe: matching, departures: rows.length, sample: rows[0] }, null, 2));
+    process.exit(0);
+  }
+  throw new Error("known probe pairs returned no rows: do not begin matrix collection");
 }
 
 if (status) {

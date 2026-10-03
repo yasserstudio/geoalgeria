@@ -1,0 +1,1414 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-42",
+    "wilaya_code": 42,
+    "name": "Tipaza",
+    "name_ar": "تيبازة",
+    "center": [
+      2.2375,
+      36.5275
+    ],
+    "bounds": [
+      1.642,
+      36.356,
+      2.833,
+      36.699
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 35,
+    "osm_records": 30,
+    "tariki_records": 24,
+    "cross_source": 17,
+    "multiple_tariki": 1,
+    "osm_only": 12,
+    "tariki_only": 5,
+    "nearby_osm_pairs": 1,
+    "conflicts": 8
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-4761969655",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4761969656",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-310216692",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10079",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-11796",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12362",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14629",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4166",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-12147884954",
+      "coordinates": [
+        2.809245,
+        36.6648679
+      ],
+      "osm": {
+        "id": "node/12147884954",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.809245,
+          36.6648679
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-13314305031",
+      "coordinates": [
+        2.4680863,
+        36.5685028
+      ],
+      "osm": {
+        "id": "node/13314305031",
+        "name": "NAFTAL gas station محطة الوقود نفطال",
+        "name_ar": "محطة الوقود نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.4680863,
+          36.5685028
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "NAFTAL gas station محطة الوقود نفطال",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-13314305263",
+      "coordinates": [
+        2.5705996,
+        36.5784438
+      ],
+      "osm": {
+        "id": "node/13314305263",
+        "name": "NAFTAL gas station محطة الوقود نفطال",
+        "name_ar": "محطة الوقود نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.5705996,
+          36.5784438
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "NAFTAL gas station محطة الوقود نفطال",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-13314305264",
+      "coordinates": [
+        2.5694302,
+        36.5794303
+      ],
+      "osm": {
+        "id": "node/13314305264",
+        "name": "NAFTAL gas station محطة الوقود نفطال",
+        "name_ar": "محطة الوقود نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.5694302,
+          36.5794303
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "NAFTAL gas station محطة الوقود نفطال",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-1828172829",
+      "coordinates": [
+        2.7454863,
+        36.6652855
+      ],
+      "osm": {
+        "id": "node/1828172829",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.7454863,
+          36.6652855
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3594",
+          "route_id": "7599",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.746,
+            36.665
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 56
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-1830323264",
+      "coordinates": [
+        2.768344,
+        36.6393565
+      ],
+      "osm": {
+        "id": "node/1830323264",
+        "name": "Station service Koléa",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.768344,
+          36.6393565
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3790",
+          "route_id": "7871",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال مقابل وكالة موبليس",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.7683,
+            36.6394
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Koléa",
+      "display_name_ar": "محطة نفطال مقابل وكالة موبليس"
+    },
+    {
+      "id": "osm-node-1837282006",
+      "coordinates": [
+        2.3706255,
+        36.5668921
+      ],
+      "osm": {
+        "id": "node/1837282006",
+        "name": "Nadour Tipaza",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          2.3706255,
+          36.5668921
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6300",
+          "route_id": "11105",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.3706,
+            36.567
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Nadour Tipaza",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "osm-node-2028866902",
+      "coordinates": [
+        2.7564283,
+        36.6387474
+      ],
+      "osm": {
+        "id": "node/2028866902",
+        "name": "station service Koléa",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.7564283,
+          36.6387474
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12065",
+          "route_id": "16498",
+          "name_fr": null,
+          "name_ar": "محطة وقود طريق بواسماعيل",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.7564,
+            36.6387
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station service Koléa",
+      "display_name_ar": "محطة وقود طريق بواسماعيل"
+    },
+    {
+      "id": "osm-node-2043290622",
+      "coordinates": [
+        1.7224956,
+        36.5530617
+      ],
+      "osm": {
+        "id": "node/2043290622",
+        "name": "Damous",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.7224956,
+          36.5530617
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3104",
+          "route_id": "6775",
+          "name_fr": "Station de services AIT AMMAR",
+          "name_ar": "محطة خدمات آيت عمار",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.722,
+            36.553
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 45
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Damous",
+      "display_name_ar": "محطة خدمات آيت عمار"
+    },
+    {
+      "id": "osm-node-2118687597",
+      "coordinates": [
+        2.769129,
+        36.6367898
+      ],
+      "osm": {
+        "id": "node/2118687597",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.769129,
+          36.6367898
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9798",
+          "route_id": "7871",
+          "name_fr": "Station de services en direction de BLIDA",
+          "name_ar": "محطة نفطال طريق البليدة",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.7691,
+            36.6368
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال طريق البليدة"
+    },
+    {
+      "id": "osm-node-2118709691",
+      "coordinates": [
+        2.7771722,
+        36.6454369
+      ],
+      "osm": {
+        "id": "node/2118709691",
+        "name": "Naftal محطة الوقود نفطال القليعة",
+        "name_ar": "محطة الوقود نفطال القليعة",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.7771722,
+          36.6454369
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3789",
+          "route_id": "7871",
+          "name_fr": "Station de services NAFTAL ROUTE D'ALGER",
+          "name_ar": "محطة نفطال طريق الجزائر",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.7771,
+            36.6454
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود نفطال القليعة"
+    },
+    {
+      "id": "osm-node-2483389075",
+      "coordinates": [
+        1.9087727,
+        36.5727032
+      ],
+      "osm": {
+        "id": "node/2483389075",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          1.9087727,
+          36.5727032
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8271",
+          "route_id": "13239",
+          "name_fr": "STATION NAFTAL",
+          "name_ar": "محطة نافطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.9088,
+            36.5726
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION NAFTAL",
+      "display_name_ar": "محطة نافطال"
+    },
+    {
+      "id": "osm-node-2485169072",
+      "coordinates": [
+        1.832815,
+        36.5633417
+      ],
+      "osm": {
+        "id": "node/2485169072",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.832815,
+          36.5633417
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2880824065",
+      "coordinates": [
+        2.2191934,
+        36.6107949
+      ],
+      "osm": {
+        "id": "node/2880824065",
+        "name": "Station Bouchmaa",
+        "name_ar": null,
+        "name_fr": "Station Bouchmaa",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.2191934,
+          36.6107949
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5647",
+          "route_id": "10479",
+          "name_fr": "Station de services BOUCHMAA",
+          "name_ar": "محطة بوشمع",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.2192,
+            36.6108
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 1
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Bouchmaa",
+      "display_name_ar": "محطة بوشمع"
+    },
+    {
+      "id": "osm-node-2952897431",
+      "coordinates": [
+        2.6918655,
+        36.6438078
+      ],
+      "osm": {
+        "id": "node/2952897431",
+        "name": "محطة الوقود بواسماعيل",
+        "name_ar": "محطة الوقود بواسماعيل",
+        "name_fr": "station service Bouismail",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.6918655,
+          36.6438078
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8876",
+          "route_id": "13756",
+          "name_fr": "Station de services Bousmail cintre",
+          "name_ar": "محطة البنزين وسط مدينة بواسماعيل",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.6919,
+            36.6437
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station service Bouismail",
+      "display_name_ar": "محطة الوقود بواسماعيل"
+    },
+    {
+      "id": "osm-node-2952897869",
+      "coordinates": [
+        2.6775775,
+        36.6351043
+      ],
+      "osm": {
+        "id": "node/2952897869",
+        "name": "Khemisti",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.6775775,
+          36.6351043
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8874",
+          "route_id": "13756",
+          "name_fr": "Station de services oued Elgherbi",
+          "name_ar": "محطة البنزين واد الغربي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.6776,
+            36.635
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Khemisti",
+      "display_name_ar": "محطة البنزين واد الغربي"
+    },
+    {
+      "id": "osm-node-3102072520",
+      "coordinates": [
+        2.7570157,
+        36.6493788
+      ],
+      "osm": {
+        "id": "node/3102072520",
+        "name": "Kerkouba",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.7570157,
+          36.6493788
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Kerkouba",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3445251565",
+      "coordinates": [
+        2.7551578,
+        36.6098103
+      ],
+      "osm": {
+        "id": "node/3445251565",
+        "name": "station service",
+        "name_ar": null,
+        "name_fr": "Berbessa",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.7551578,
+          36.6098103
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7957",
+          "route_id": "12923",
+          "name_fr": "Station de services Saouli",
+          "name_ar": "محطة توزيع الوقود صولي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.755,
+            36.61
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 25
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Berbessa",
+      "display_name_ar": "محطة توزيع الوقود صولي"
+    },
+    {
+      "id": "osm-node-3545245235",
+      "coordinates": [
+        2.7900079,
+        36.6736074
+      ],
+      "osm": {
+        "id": "node/3545245235",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.7900079,
+          36.6736074
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3831394698",
+      "coordinates": [
+        2.7166496,
+        36.6414621
+      ],
+      "osm": {
+        "id": "node/3831394698",
+        "name": "Zone Industrille Bousmail",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.7166496,
+          36.6414621
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Zone Industrille Bousmail",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-454642525",
+      "coordinates": [
+        2.5247588,
+        36.5599582
+      ],
+      "osm": {
+        "id": "node/454642525",
+        "name": "سيدي راشد",
+        "name_ar": "سيدي راشد",
+        "name_fr": "Sidi Rached",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.5247588,
+          36.5599582
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Sidi Rached",
+      "display_name_ar": "سيدي راشد"
+    },
+    {
+      "id": "osm-node-4761969655",
+      "coordinates": [
+        2.1970545,
+        36.6095191
+      ],
+      "osm": {
+        "id": "node/4761969655",
+        "name": null,
+        "name_ar": "محطة خدمات",
+        "name_fr": "Station service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.1970545,
+          36.6095191
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5648",
+          "route_id": "10479",
+          "name_fr": "Station de services MAHI",
+          "name_ar": "محطة ماحي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.197,
+            36.6096
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4761969656",
+          "offset_m": 30
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-4761969656",
+      "coordinates": [
+        2.1971819,
+        36.6092742
+      ],
+      "osm": {
+        "id": "node/4761969656",
+        "name": "Station service Mahi",
+        "name_ar": "محطة البنزين",
+        "name_fr": "Station service Mahi",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.1971819,
+          36.6092742
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5649",
+          "route_id": "10479",
+          "name_fr": "Station de services BEN CHERIFA",
+          "name_ar": "محطة بن شريفة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.1973,
+            36.6092
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4761969655",
+          "offset_m": 30
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station service Mahi",
+      "display_name_ar": "محطة البنزين"
+    },
+    {
+      "id": "osm-node-5115665822",
+      "coordinates": [
+        2.7971787,
+        36.6856181
+      ],
+      "osm": {
+        "id": "node/5115665822",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.7971787,
+          36.6856181
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5759470005",
+      "coordinates": [
+        2.429321,
+        36.5894991
+      ],
+      "osm": {
+        "id": "node/5759470005",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Station service NAFTAL",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.429321,
+          36.5894991
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6291",
+          "route_id": "11101",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.4293,
+            36.5895
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 2
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service NAFTAL",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "osm-node-6693345178",
+      "coordinates": [
+        2.3011791,
+        36.5746886
+      ],
+      "osm": {
+        "id": "node/6693345178",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.3011791,
+          36.5746886
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1171701469",
+      "coordinates": [
+        2.68972285,
+        36.6427716
+      ],
+      "osm": {
+        "id": "way/1171701469",
+        "name": "Bou Ismail 2 Centre",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.68972285,
+          36.6427716
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Bou Ismail 2 Centre",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-307576776",
+      "coordinates": [
+        2.6155445999999998,
+        36.6051227
+      ],
+      "osm": {
+        "id": "way/307576776",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.6155445999999998,
+          36.6051227
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10956",
+          "route_id": "15595",
+          "name_fr": "STATION DE SERVICES AIN TAGOURAIT",
+          "name_ar": "محطة الوقود عين تاقورايت",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.616,
+            36.605
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 43
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود عين تاقورايت"
+    },
+    {
+      "id": "osm-way-310216692",
+      "coordinates": [
+        2.4186709000000004,
+        36.5124632
+      ],
+      "osm": {
+        "id": "way/310216692",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.4186709000000004,
+          36.5124632
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4162",
+          "route_id": "8570",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.418,
+            36.512
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 79
+        },
+        {
+          "id": "4163",
+          "route_id": "8570",
+          "name_fr": "Station de services AISSANI",
+          "name_ar": "محطة الوقود عيساني",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.418,
+            36.512
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 79
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-way-310218935",
+      "coordinates": [
+        2.41188065,
+        36.51227105
+      ],
+      "osm": {
+        "id": "way/310218935",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.41188065,
+          36.51227105
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4165",
+          "route_id": "8570",
+          "name_fr": "Station de services BADJOU",
+          "name_ar": "محطة الوقود باجو",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.412,
+            36.512
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود باجو"
+    },
+    {
+      "id": "tariki-10079",
+      "coordinates": [
+        2.6745,
+        36.5725
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10079",
+          "route_id": "14926",
+          "name_fr": "NAFTAL",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.6745,
+            36.5725
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "NAFTAL",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "tariki-11796",
+      "coordinates": [
+        2.251,
+        36.495
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "11796",
+          "route_id": "5210",
+          "name_fr": "STATION DE SERVICES NAFTAL (ZEGUAGUI)",
+          "name_ar": "محطة نافطال (زقاقي)",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.251,
+            36.495
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES NAFTAL (ZEGUAGUI)",
+      "display_name_ar": "محطة نافطال (زقاقي)"
+    },
+    {
+      "id": "tariki-12362",
+      "coordinates": [
+        2.57,
+        36.477
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12362",
+          "route_id": "10008",
+          "name_fr": "Rahal Mohamed",
+          "name_ar": "رحال محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.57,
+            36.477
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Rahal Mohamed",
+      "display_name_ar": "رحال محمد"
+    },
+    {
+      "id": "tariki-14629",
+      "coordinates": [
+        2.131,
+        36.586
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14629",
+          "route_id": "10431",
+          "name_fr": null,
+          "name_ar": "محطة تزود بالوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.131,
+            36.586
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة تزود بالوقود",
+      "display_name_ar": "محطة تزود بالوقود"
+    },
+    {
+      "id": "tariki-4166",
+      "coordinates": [
+        2.41,
+        36.512
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4166",
+          "route_id": "8570",
+          "name_fr": "Station de services KHOUTCHOU",
+          "name_ar": "محطة الوقود خوتشو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.41,
+            36.512
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 42,
+          "wilaya_fr": "Tipaza",
+          "wilaya_ar": "تيبازة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services KHOUTCHOU",
+      "display_name_ar": "محطة الوقود خوتشو"
+    }
+  ]
+}

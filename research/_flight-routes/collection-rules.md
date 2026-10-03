@@ -750,3 +750,134 @@ is itself worth knowing about the source.
 
 The honest reading of a route on this list: a published table says Air Algérie
 serves it, no probe has yet seen it, and neither statement outranks the other.
+
+## 29. Berlin is bookable in both directions, but still planned (2026-08-21)
+
+Air Algérie's own booking results now expose both legs of the new Berlin
+rotation for Monday 14 September 2026:
+
+| Route | Flight | Local schedule | Block time |
+| --- | --- | --- | --- |
+| `ALG-BER` | `AH 2072` | 14:00–18:00 | 3h00 |
+| `BER-ALG` | `AH 2073` | 19:00–21:05 | 3h05 |
+
+The booking results name Air Algérie, label both as direct, and show fares for
+the launch date. A public schedule report independently says reservations opened
+on 20 August, with one Monday rotation per week from 14 September through at
+least 19 October. The two legs therefore enter `plannedRoutes()` separately at
+the `verified` evidence tier: carrier, direction, flight number and duration are
+confirmed, while `planned` remains true because neither leg was operating on the
+21 August snapshot date. See `verification-2026-08-21.md` for the receipts and
+the decision record.
+
+An independent production search through the official Soar Flights MCP matched
+both legs exactly on the same date. Use that search as a live confirmation, not
+as the published `source`: offer IDs, fares and expiries are transient, so a
+stable public report still belongs in each route record.
+
+## 30. Korea has traffic rights, not a filed schedule (2026-08-21)
+
+The Korea–Algeria bilateral announcement permits up to four weekly passenger and
+cargo flights. Contemporary coverage describes an Algiers–Incheon link, but the
+agreement itself permits any airport in either country and publishes no launch
+date, flight number or operating day.
+
+The map therefore carries `ALG-ICN` and `ICN-ALG` only in `plannedRoutes()` so
+they render as dashed arcs. Both stay `listed` / `unclear`, with null flight and
+days, until an operator schedule or booking result resolves the remaining
+details. Do not promote them to operating routes from traffic rights alone.
+
+## 31. New inventory can retire an old codeshare exclusion (2026-08-21)
+
+Doha was previously excluded because every probe returned only Qatar Airways
+metal with Air Algérie marketing. New Air Algérie inventory now exposes
+`AH4078` and `AH4079` from 29 September, so the old codeshare finding remains
+historically true but no longer describes the forward schedule. Both directions
+move into `plannedRoutes()` until the resumption date.
+
+The same pass confirms new October inventory for Shanghai, Brazzaville, Conakry
+and the Lagos/Abuja triangles. Record only Algeria-touching nonstop legs of a
+triangle, and record each direction separately: `AH5354` produces different
+direct legs on the Monday and Thursday rotations.
+
+Delhi demonstrates the lower boundary. A diplomatic confirmation and filed
+directional schedule are enough for `listed` planned rows, but an empty booking
+probe is not enough to upgrade them. Tripoli remains below the inclusion bar
+because the current report states only an objective and supplies no filed
+schedule or sale inventory.
+
+## 32. What leaves the dataset, and on whose word (2026-09-27)
+
+Three durable rules from the Delhi, Batna and Dubai changes. Detail in
+`verification-2026-09-27.md`.
+
+**A withdrawal removes planned rows; a suspension never removes anything.** Both
+are negatives and they are not interchangeable. `plannedRoutes()` is a claim that a
+route is coming, so "Air Algérie a retiré la demande d'autorisation" for Delhi
+deletes `alg-del` and `del-alg` outright. A suspension is a route that exists and
+is not running, so Dubai keeps its row, keeps its evidence tier, and only changes
+`status`. The asymmetry follows from section 2: the map is structural, but a plan
+that was called off was never structure.
+
+Both still need a citable source. Section 7 is usually read as protecting a route
+from an empty probe, and it protects a removal the same way: what takes a row out
+is a source saying so, never a silence.
+
+**A removal needs a guard, or the Wikipedia pass undoes it.** `alg-del` and
+`blj-cdg` would both have walked straight back in as `listed` rows on the table's
+own citation. `WITHDRAWN` and `AIRPORT_CORRECTED` exist for that, alongside
+`CODESHARE_ONLY` and `OPERATED_BY_OTHERS`, and each carries the reason inline
+rather than in a commit message nobody will find. The same applies in reverse:
+`SUSPENDED` fails the build if it names a leg the dataset does not carry, so a
+stale override cannot sit there looking effective.
+
+**An exclusion is about a leg, not about an endpoint.** `ALG-AMM` was excluded
+because the probe returned Royal Jordanian metal and no Air Algérie leg. The
+announced Algiers-Kuwait-Amman-Algiers triangle then made `AMM-ALG` an Air Algérie
+leg, and both statements are true at once: nonstop Algiers to Amman is still not an
+Air Algérie route, and Amman to Algiers is a planned one. A triangle is exactly the
+shape that produces this, which is why section 1's directional record is the unit
+and an "Amman: in or out" question has no answer.
+
+## 33. A triangle's middle leg is in scope (amended 2026-10-02)
+
+Scope was locked on 2026-07-20 and section 2 says not to re-litigate it. This is an
+Owner amendment to it, dated, written here rather than left in a commit message,
+because the next pass would otherwise delete the rows as out of scope.
+
+**Old rule, as applied on 2026-09-27.** Only Algeria-touching legs ship. The
+Algiers-Kuwait-Amman-Algiers triangle therefore produced two rows and explicitly
+"nothing for the Kuwait to Amman leg, which touches Algeria at neither end".
+
+**New rule.** Every **nonstop leg of an Air Algérie rotation that touches Algeria**
+is in scope, including the legs between two foreign airports. So the Gulf triangle
+ships three rows and each Nigeria triangle ships three.
+
+**Why the old rule was the wrong cut.** Section 1 makes the directional nonstop leg
+the unit of the dataset, and the reason given is that a pair-shaped record "will
+draw a line that nobody can fly on any given day". Dropping a triangle's middle leg
+has the same defect one level up: it draws a rotation with a hole in it, where an
+aircraft leaves Algiers, reappears at a third airport, and the leg that carried it
+there is missing. `ALG-KWI` and `AMM-ALG` without `KWI-AMM` is not a smaller truth,
+it is a broken one.
+
+**What has NOT changed, and must not drift.**
+
+- **International only.** Section 2's actual lock. Algeria-to-Algeria legs stay out,
+  and nothing here touches that.
+- **Air Algérie only.** A foreign-to-foreign leg qualifies because Air Algérie flies
+  it on a rotation out of Algeria, never because two foreign airports are connected.
+- **The candidate list is unchanged.** Section 4's Algerian-airports-by-foreign-
+  airports cross-product is still how pairs are found. A foreign-to-foreign leg
+  enters only through a rotation already in the dataset, never through a sweep: no
+  probe of Lagos to Abuja, no page of Kuwait's airport, nothing that would turn this
+  into a world airline dataset.
+- **Evidence per leg.** Unchanged, and it is what keeps this honest. `ABV-LOS` ships
+  on the trade filing that states the routing `Algiers - Abuja - Lagos - Algiers`,
+  not on an assumption that a triangle must have a middle.
+- **`days` per leg.** Also unchanged. Where only the Algiers departure day is
+  published, the middle leg takes the day the filing gives the rotation and the
+  inbound leg stays null. `KWI-AMM` is null for exactly that reason.
+
+**Rows added under this rule on 2026-10-02:** `KWI-AMM`, `ABV-LOS`, `LOS-ABV`. All
+planned. See `verification-2026-10-02.md` sections 4 and 5.

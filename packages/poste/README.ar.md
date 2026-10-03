@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/poste)](https://www.npmjs.com/package/@geoalgeria/poste)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/poste)](https://www.npmjs.com/package/@geoalgeria/poste)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -77,9 +77,8 @@ data/
 
 > GeoJSON يتضمن فقط السجلات التي تحتوي على إحداثيات – 16 مكتبًا و5 أجهزة صراف
 > آلي لا تُبلّغ عن `lat`/`lng` وتُحذف منه (لكنها تبقى في JSON/CSV، مع
-> `geo_precision`/`geo_method` بقيمة `null`). سجلات أجهزة الصراف الآلي تحمل
-> `commune_code` بقيمة `null` (واجهة API المصدر لا تحلّ كود بلدية لأجهزة
-> الصراف الآلي).
+> `geo_precision`/`geo_method` بقيمة `null`). يملأ GeoAlgeria حقل
+> `commune_code` لـ90 جهازًا فقط عند تطابق اسم البلدية والولاية الأم وموقع النقطة.
 
 ## أشكال السجلات
 
@@ -107,15 +106,16 @@ data/
 ```
 
 `class` هو تصنيف المكتب (`CE`، `R1`–`R4`، `HC`، `GA`). `commune_code` هو
-كود البلدية المكون من 4 أرقام الخاص ببريد الجزائر، والذي يرتبط بـ `code_commune`
-الخاص بـ GeoAlgeria. `geo_precision` تكون `"exact"` (أو `null` إلى جانب
+كود ONS الموحّد المكوّن من 4 أرقام، والذي يرتبط بـ `code_commune` الخاص بـ
+GeoAlgeria. عندما ينشر بريد الجزائر قيمة أصلية مختلفة، يحتفظ بها الحقل الاختياري
+`source_commune_code` دون تغيير. `geo_precision` تكون `"exact"` (أو `null` إلى جانب
 `lat`/`lng` عندما لا يكون المكتب مُرمّزًا جغرافيًا)؛ `geo_method` يحدد كيفية
 الحصول على الإحداثية.
 
 **جهاز صراف آلي** – نفس الشكل، مُعرّف بـ `id`/`name`/`wilaya_code`/`postal_code`
 مع `lat`/`lng`، بالإضافة إلى حقل `status` (‏`"OPEN"`، ‏`"CLOSED (OFFLINE)"`، أو
-قيمة المصدر غير الموثقة `"1"`)؛ `commune_code` و`address` تكون دائمًا `null`
-(المصدر لا يحلّهما لأجهزة الصراف الآلي).
+قيمة المصدر غير الموثقة `"1"`)؛ يُملأ `commune_code` في 90 سجلًا مؤكّدًا ويبقى
+`null` في غيرها، بينما يبقى `address` دائمًا `null`.
 
 ## هل تحتاج التقسيمات الإدارية أيضًا؟
 
@@ -131,8 +131,10 @@ data/
 (<https://baridimap.poste.dz>). نفّذ `npm run fetch` لإعادة توليد جميع
 المخرجات من واجهة API المباشرة؛ نفس العملية تعكس البيانات في حزمة `geoalgeria`
 حتى لا يحدث اختلاف بينهما أبدًا (هذه الحزمة هي المصدر المرجعي). أعد التشغيل
-دوريًا – BaridiMap لا يزال يصنف المكاتب وفق نظام 58 ولاية، لذا الولايات
-الجديدة 59–69 تظهر حاليًا تحت ولاياتها الأم.
+دوريًا. لا يزال BaridiMap يصنف بعض السجلات وفق نظام 58 ولاية. يربط GeoAlgeria
+المكاتب عبر `commune_code` المرجعي، ويربط 90 جهاز صراف عندما يتطابق اسم البلدية
+الفرنسي أو العربي الدقيق وعلاقة الولاية الأم والمضلع الوحيد الذي يحتوي النقطة. يحتفظ
+`source_wilaya_code` بقيمة المصدر عند اختلافها.
 
 ## الترخيص والإسناد
 

@@ -14,7 +14,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/geoalgeria)](https://www.jsdelivr.com/package/npm/geoalgeria)
 [![GitHub stars](https://img.shields.io/github/stars/yasserstudio/geoalgeria?style=flat)](https://github.com/yasserstudio/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -38,7 +38,7 @@ GeoAlgeria est un projet ouvert, développé en solo, avec un seul objectif : de
 
 ## Les données
 
-La plupart des jeux de données sur l'Algérie disponibles en ligne listent encore **48 wilayas**. L'Algérie en compte **69 depuis avril 2026**. GeoAlgeria fait partie des rares jeux de données déjà mis à jour, avec les vrais codes postaux d'Algérie Poste, les coordonnées géographiques, les noms bilingues, les bureaux de poste et les DAB, livré en JSON, CSV, GeoJSON, SQL et TypeScript. Un seul `npm install`, licence MIT, validation CI automatique à chaque mise à jour.
+La plupart des jeux de données sur l'Algérie disponibles en ligne listent encore **48 wilayas**. L'Algérie en compte **69 depuis avril 2026**. GeoAlgeria fait partie des rares jeux de données déjà mis à jour, avec les vrais codes postaux d'Algérie Poste, les coordonnées géographiques, les noms bilingues, les bureaux de poste et les DAB, livré en JSON, CSV, GeoJSON, SQL et TypeScript. Un seul `npm install`, code sous licence MIT et conditions de données propres à chaque paquet, validation CI automatique à chaque mise à jour.
 
 ```bash
 npm install geoalgeria
@@ -57,41 +57,41 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 
 | | Nombre | |
 |---|---|---|
-| **Wilayas** | 69 | provinces (réformes 2019 + 2026) |
-| **Daïras** | 556 | districts, comme entités de premier niveau |
-| **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées |
+| **Wilayas** | 69 | provinces (réformes 2019 + 2026), chacune avec la commune chef-lieu |
+| **Daïras** | 551 | districts, comme entités de premier niveau |
+| **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées, liens OpenStreetMap + Wikidata |
 | **Bureaux de poste** | 3 908 | vrais codes Algérie Poste, coordonnées |
 | **DAB** | 2 026 | réseau GAB d'Algérie Poste |
 | **Agences d'emploi** | 331 | ANEM : 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
-| **Réseau Mobilis** | 12 345 | 165 agences + 12 180 points de vente. [`@geoalgeria/mobilis`](packages/mobilis) |
-| **Couverture 5G** | 3 096 | sites 5G Djezzy + Mobilis + Ooredoo. [`@geoalgeria/telecom`](packages/telecom) |
+| **Réseau Mobilis** | 12 344 | 164 agences + 12 180 points de vente. [`@geoalgeria/mobilis`](packages/mobilis) |
+| **Couverture 5G** | 3 598 | sites 5G Djezzy + Mobilis + Ooredoo. [`@geoalgeria/telecom`](packages/telecom) |
 | **Aéroports civils** | 36 | ANAC + OurAirports : noms, codes OACI + IATA, contacts, coordonnées. [`@geoalgeria/aviation`](packages/aviation) |
-| **Liaisons directes** | 123 | Le réseau international d'Air Algérie en trajets directionnels, chacun avec un exploitant, un niveau de preuve et une source. [`@geoalgeria/aviation`](packages/aviation) |
+| **Liaisons directes** | 129 | Le réseau international d'Air Algérie en trajets directionnels, chacun avec un exploitant, un niveau de preuve et une source. [`@geoalgeria/aviation`](packages/aviation) |
 | **Banques et agences** | 1 704 | les 21 banques agréées + 8 institutions ; agences avec codes RIB/SWIFT, propriété, coordonnées. [`@geoalgeria/banques`](packages/banques) |
 | **Transporteurs de livraison** | 411 | 16 transporteurs + 411 bureaux de retrait géocodés dans 61 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro). [`@geoalgeria/livraison`](packages/livraison) |
 | **Établissements de jeunesse** | 2 334 | maisons de jeunes, complexes sportifs de proximité, salles polyvalentes, auberges, centres culturels et plus dans 58 wilayas (Ministère de la Jeunesse et des Sports). [`@geoalgeria/jeunesse`](packages/jeunesse) |
 | **Installations sportives** | 5 141 | stades, piscines, terrains de proximité, pistes d'athlétisme, terrains de sport et plus (27 types) dans 58 wilayas (Ministère de la Jeunesse et des Sports). [`@geoalgeria/sports`](packages/sports) |
 | **Enseignement supérieur** | 177 | universités, grandes écoles, ENS, centres + 19 établissements privés et 48 relevant d'autres ministères dans 51 wilayas, avec sites web officiels (MESRS). [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
 | **Tourisme** | 4 348 | 1 602 hôtels, 1 248 attractions, 1 184 sites historiques, 282 sources thermales (ASAL), 32 parcs nationaux. [`@geoalgeria/tourisme`](packages/tourisme) |
-| **Formation professionnelle** | 1 932 | 856 CFPA + 182 INSFP + 723 établissements privés agréés + 58 DFEP + plus dans 58 wilayas (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
+| **Formation professionnelle** | 1 932 | 856 CFPA + 182 INSFP + 723 établissements privés agréés + 58 DFEP + plus dans les 69 wilayas actuelles (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **Mosquées** | 20 759 | composite Wikidata + OpenStreetMap, noms arabes & français, dénomination, les 69 wilayas. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **Boutiques Djezzy** | 128 | points de vente géolocalisés avec catégorie, horaires et rattachement commune/wilaya (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
-| **Établissements de santé** | 695 | EPH · EPSP · EHS · CHU du Ministère de la Santé, bilingues, 600 géolocalisés via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
-| **Cliniques et structures de soins** | 1 894 | Polycliniques, salles de soins, centres de santé, maternités et cliniques privées depuis OpenStreetMap, classées par type, bilingues, 66 wilayas. Le volet communautaire à côté du registre `sante`, jamais additionné avec lui. [`@geoalgeria/cliniques`](packages/cliniques) |
+| **Établissements de santé** | 668 | EPH · EPSP · EHS · CHU du Ministère de la Santé, bilingues, 597 géolocalisés via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
+| **Cliniques et structures de soins** | 1 917 | Polycliniques, salles de soins, centres de santé, maternités et cliniques privées depuis OpenStreetMap, classées par type, bilingues, 66 wilayas. Le volet communautaire à côté du registre `sante`, jamais additionné avec lui. [`@geoalgeria/cliniques`](packages/cliniques) |
 | **Unités de la Protection Civile** | 880 | Unités de secours (incendie & secours) de la DGPC sur tout le territoire, nommées en arabe, adresse/téléphone/fax, palier de statut, toutes géolocalisées, source officielle primaire (dgpc.dz), rattachement wilaya post-réforme 2026. [`@geoalgeria/protection-civile`](packages/protection-civile) |
 | **Lieux culturels** | 1 083 | Sites protégés, musées, théâtres, bibliothèques + établissements culturels du Ministère de la Culture, bilingues, tous géolocalisés, 66 wilayas. [`@geoalgeria/culture`](packages/culture) |
 | **Institutions agricoles** | 196 | Directions des services agricoles (DSA), conservations des forêts, instituts de recherche/formation, chambres d'agriculture, offices et groupes publics du Ministère de l'Agriculture, bilingues, géolocalisées, 58 wilayas. [`@geoalgeria/agriculture`](packages/agriculture) |
-| **Écoles** | 11 855 | Écoles primaires, CEM, lycées et préscolaires classées par cycle depuis OpenStreetMap, bilingues, les 69 wilayas. [`@geoalgeria/ecoles`](packages/ecoles) |
+| **Écoles** | 11 858 | Écoles primaires, CEM, lycées et préscolaires classées par cycle depuis OpenStreetMap, bilingues, les 69 wilayas. [`@geoalgeria/ecoles`](packages/ecoles) |
 | **Gares routières** | 74 | Gares routières SOGRAL sur 52 wilayas, noms, adresses, superficies, coordonnées. [`@geoalgeria/gares-routieres`](packages/gares-routieres) |
 | **Rail & transport urbain** | 692 | nœuds train, tram, métro, téléphérique & télécabine (SNTF / SETRAM / SEMA), composite Wikidata + OSM, bilingue, 50 wilayas. [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
-| **Lignes de bus urbaines** | 50 | ETUSA (Alger), terminus, nombre d'arrêts, communes & stations desservies. [`@geoalgeria/buses`](packages/buses) |
-| **Pharmacies** | 3 797 | officines géolocalisées depuis OpenStreetMap, bilingues si nommées, rattachées commune/wilaya. [`@geoalgeria/pharmacies`](packages/pharmacies) |
+| **Lignes de bus urbaines/suburbaines** | 184 | 16 exploitants, 76 tracés, 128 directions, 1 603 stations. [`@geoalgeria/buses`](packages/buses) |
+| **Pharmacies** | 3 807 | officines géolocalisées depuis OpenStreetMap, bilingues si nommées, rattachées commune/wilaya. [`@geoalgeria/pharmacies`](packages/pharmacies) |
 | **Fabricants pharmaceutiques** | 171 | fabricants agréés de médicaments & dispositifs médicaux du registre du Ministère de l'Industrie Pharmaceutique, géolocalisés. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **Points de vente Ooredoo** | 572 | Espaces Ooredoo, City Shops & Espaces Services avec coordonnées réelles, rattachés commune/wilaya (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
 Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contient le JSON pour rester léger ; les CSV/GeoJSON/SQL sont dans chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 
-> À jour avec la **Loi n° 26-06** (nouvelle organisation territoriale), [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf), ainsi que la réforme de 2019 (Loi 19-12).
+> À jour avec la **Loi n° 26-06** (nouvelle organisation territoriale), [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf), ainsi que la réforme de 2019 (Loi 19-12).
 
 ## Pourquoi GeoAlgeria ?
 
@@ -136,20 +136,21 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Formation professionnelle, 1 932 CFPA, INSFP, IFEP, IEP, DFEP et centres privés du MFEP (takwin.dz), avec capacité, internat et coordonnées |
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Boutiques Djezzy, 128 points de vente géolocalisés de djezzy.dz, avec catégorie, horaires et rattachement commune/wilaya |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosquées d'Algérie, 20 759 géolocalisées, un composite Wikidata + OpenStreetMap avec noms arabes & français, dénomination et rattachement commune/wilaya |
-| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Établissements de santé publics, 695 du Ministère de la Santé (EPH, EPSP, EHS, CHU), bilingues, géolocalisés via OSM + Wikidata avec rattachement commune/wilaya |
-| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Cliniques et structures de soins, 1 894 géolocalisées depuis OpenStreetMap sur 66 wilayas, classées par type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingues, avec secteur, spécialité, téléphone & horaires si renseignés ; le volet communautaire du secteur santé, dont tout élément OSM référencé par `sante` est exclu |
+| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Établissements de santé publics, 668 du Ministère de la Santé (EPH, EPSP, EHS, CHU), bilingues, géolocalisés via OSM + Wikidata avec rattachement commune/wilaya |
+| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Cliniques et structures de soins, 1 917 géolocalisées depuis OpenStreetMap sur 66 wilayas, classées par type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingues, avec secteur, spécialité, téléphone & horaires si renseignés ; le volet communautaire du secteur santé, dont tout élément OSM référencé par `sante` est exclu |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Atlas culturel, 1 083 lieux du Ministère de la Culture (sites protégés, musées, théâtres, bibliothèques, établissements culturels), bilingues, entièrement géolocalisés avec rattachement commune/wilaya |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Institutions du secteur agricole, 196 du Ministère de l'Agriculture réparties en 7 réseaux (DSA, conservations des forêts, instituts de recherche/formation, chambres d'agriculture, offices et groupes publics), bilingues, géolocalisées avec rattachement commune/wilaya |
-| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Écoles, 11 855 écoles et préscolaires depuis OpenStreetMap, classées par cycle (primaire/moyen/secondaire/préscolaire), bilingues, les 69 wilayas, avec rattachement commune/wilaya |
+| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Écoles, 11 858 écoles et préscolaires depuis OpenStreetMap, classées par cycle (primaire/moyen/secondaire/préscolaire), bilingues, les 69 wilayas, avec rattachement commune/wilaya |
 | [`packages/gares-routieres`](packages/gares-routieres) | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | Gares routières, 74 gares SOGRAL sur 52 wilayas, géolocalisées avec superficies et rattachement commune/wilaya |
 | [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | Rail & transport urbain, 692 nœuds train/tram/métro/téléphérique/télécabine (SNTF/SETRAM/SEMA), composite Wikidata + OSM, bilingue FR/AR |
-| [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | Réseaux de bus urbains, 50 lignes ETUSA (Alger) avec terminus, arrêts, communes & stations desservies (niveau ligne, v1) |
+| [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | 184 lignes urbaines/suburbaines, 76 tracés et 1 603 stations pour 16 exploitants |
 | [`packages/industrie-pharmaceutique`](packages/industrie-pharmaceutique) | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | Fabricants pharmaceutiques, 171 fabricants agréés de médicaments (PP) & dispositifs médicaux (DM) du registre du Ministère de l'Industrie Pharmaceutique, bilingues, géolocalisés au centroïde commune/wilaya |
-| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines), 3 797 géolocalisées sur 67 wilayas depuis OpenStreetMap, bilingues si nommées, avec téléphone/horaires/dispensing si renseignés & rattachement commune/wilaya |
+| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines), 3 807 géolocalisées sur 67 wilayas depuis OpenStreetMap, bilingues si nommées, avec téléphone/horaires/dispensing si renseignés & rattachement commune/wilaya |
 | [`packages/protection-civile`](packages/protection-civile) | [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | Unités de la Protection Civile (incendie & secours), 880 unités de la DGPC sur tout le territoire, nommées en arabe, avec adresse/téléphone/fax & un palier de statut, toutes géolocalisées, source officielle primaire (dgpc.dz) ; wilaya recalculée sur les 69 limites post-réforme 2026 |
 | [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Points de vente Ooredoo, 572 EO / City Shop / Espace Services avec coordonnées réelles & rattachement commune/wilaya (ooredoo.dz) ; complète le trio télécom |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | Parapluie, installe aviation + ferroviaire + gares-routieres + buses en une fois |
 | [`packages/pharma`](packages/pharma) | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | Parapluie, installe industrie-pharmaceutique + pharmacies en une fois |
+| [`packages/normalize`](packages/normalize) | [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize) | Clés de recherche des noms de lieux algériens, la clé conservatrice, la clé souple, le découpage en mots et leur corpus de référence ; code seul, sans dépendances, pour que tous les index plient un nom de la même façon |
 
 [Parcourir tous les paquets →](https://geoalgeria.com/data) · [Documentation API et référence des champs →](https://geoalgeria.com/data/docs)
 
@@ -163,7 +164,17 @@ Chaque enregistrement suit la même forme :
 - Les identifiants externes sont regroupés sous `refs` (`osm`, `wikidata`, …).
 - `geo_precision` vaut strictement `exact | approximate | null`, `null` exactement lorsqu'il n'y a pas de coordonnée, avec la méthode de géocodage dans `geo_method`.
 
-Des artefacts lisibles par machine les accompagnent : un catalogue racine [`index.json`](index.json), un descripteur `schema.org/Dataset` (`dataset-metadata.json`) dans chaque paquet, et les 69 polygones de limites des wilayas dans le paquet principal, sous [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (qualité d'affichage).
+Des artefacts lisibles par machine les accompagnent : un catalogue racine [`index.json`](index.json), un descripteur `schema.org/Dataset` (`dataset-metadata.json`) dans chaque paquet porteur de données (le paquet `@geoalgeria/normalize`, code seul, n'en porte pas), et les 69 polygones de limites des wilayas dans le paquet principal, sous [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (qualité d'affichage).
+
+Un identifiant publié est une clé de jointure : il n'est jamais réutilisé. Un
+enregistrement qui quitte un paquet laisse son identifiant dans le
+`data/retired-ids.json` de ce paquet, réservé définitivement, et lorsque deux
+enregistrements sont fusionnés en un seul, la table `migrations` du registre
+indique aussi où sont passées les données de l'identifiant absorbé :
+`merged_into` nomme l'enregistrement qui les porte désormais, avec une note et,
+quand la source en fournit, les identifiants d'origine que la paire représentait.
+Un consommateur qui détient un ancien identifiant peut le suivre au lieu de
+simplement le voir disparaître.
 
 Un paquet est antérieur au contrat, le jeu de données principal `geoalgeria` (divisions administratives, pas des GeoRecords ; marqué `schema_version: null` dans le catalogue).
 
@@ -198,11 +209,13 @@ Versionnage sémantique par paquet, automatisé avec [Changesets](https://github
 
 ## Sponsoriser
 
-GeoAlgeria est gratuit et MIT. Si ça vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio), ça finance la mise à jour des données et l'extension de la couverture.
+GeoAlgeria est gratuit. Le code est sous licence MIT et chaque paquet indique ses propres conditions de données. Si ça vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio), ça finance la mise à jour des données et l'extension de la couverture.
 
 ## Licence et avertissement
 
 **Code :** [MIT](LICENSE). **Données :** compilées à partir de sources officielles publiques (le *Journal Officiel*, Algérie Poste, ANEM, ANAC, le site public de chaque opérateur/institution) et redistribuées pour référence.
+
+Le `package.json` de chaque paquet déclare ses conditions exactes (une expression SPDX, ou `SEE LICENSE IN LICENSE`) et son propre fichier `LICENSE` porte les conditions de données en entier.
 
 GeoAlgeria est un **projet indépendant, non affilié ni soutenu par** aucun organisme gouvernemental, régulateur, opérateur ou institution qu'il référence ; leurs noms et marques appartiennent à leurs propriétaires respectifs. Les données sont fournies **« en l'état », sans garantie, vérifiez auprès de la source officielle** avant de vous y fier, notamment pour les usages financiers, de paiement, KYC ou de conformité. Conditions complètes : **[DISCLAIMER](DISCLAIMER.md)**.
 

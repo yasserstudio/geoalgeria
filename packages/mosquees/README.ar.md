@@ -8,14 +8,14 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/mosquees)](https://www.npmjs.com/package/@geoalgeria/mosquees)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/mosquees)](https://www.npmjs.com/package/@geoalgeria/mosquees)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
 
 </div>
 
-**20٬759 مسجدًا بإحداثيات جغرافية** عبر **69 ولاية** في الجزائر – كلٌّ بإحداثياته،
+**20,759 مسجدًا بإحداثيات جغرافية** عبر **69 ولاية** في الجزائر – كلٌّ بإحداثياته،
 ومعظمها باسمٍ عربي و/أو فرنسي، مع ربطٍ بالبلدية والولاية. **تجميعٌ مجتمعي من
 Wikidata وOpenStreetMap**، مُقدَّمٌ بصدقٍ مقابل الإحصاء الوطني لوزارة الشؤون الدينية
-والأوقاف (MARW) البالغ نحو 18٬449. متوفر بصيغ JSON وCSV وGeoJSON وTypeScript.
+والأوقاف (MARW) البالغ نحو 18,449. متوفر بصيغ JSON وCSV وGeoJSON وTypeScript.
 جزء من [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -25,7 +25,7 @@ npm install @geoalgeria/mosquees
 ```js
 import mosquees from "@geoalgeria/mosquees";
 
-const all = mosquees.mosquees();   // 20٬759 مسجدًا بإحداثيات جغرافية
+const all = mosquees.mosquees();   // 20,759 مسجدًا بإحداثيات جغرافية
 
 // المساجد في ولاية (ربط بـ wilaya_code في GeoAlgeria)
 const inSetif = all.filter((m) => m.wilaya_code === "19");
@@ -36,7 +36,7 @@ const named = all.filter((m) => m.name_fr);
 
 ## ما يمكنك بناؤه
 
-- **خرائط وأدلّة المساجد** – إحداثيات على كل السجلات الـ20٬759، جاهزة للخريطة أو
+- **خرائط وأدلّة المساجد** – إحداثيات على كل السجلات الـ20,759، جاهزة للخريطة أو
   للترتيب حسب المسافة.
 - **أدلّة ثنائية اللغة** – أكثر من 15 ألف اسمٍ بالعربية و7 آلاف بالفرنسية.
 - **تحليل التغطية** – حساب أو ترتيب كثافة المساجد حسب البلدية/الولاية عبر البلاد.
@@ -45,18 +45,18 @@ const named = all.filter((m) => m.name_fr);
 
 | مجموعة البيانات | العدد | الإحداثيات | ملاحظات |
 | --- | --- | --- | --- |
-| المساجد | **20٬759** | ✅ الكل | 19٬783 مُسمّى، 69 ولاية |
+| المساجد | **20,759** | ✅ الكل | 19,783 مُسمّى، 69 ولاية |
 
 **حسب المصدر**
 
 | المصدر | العدد | المعنى |
 | --- | --- | --- |
-| `wikidata` | 13٬200 | من Wikidata فقط |
-| `wikidata+osm` | 5٬897 | في الاثنين، مُطابَق ضمن ~150 م (يضيف OSM اسمًا فرنسيًا / مذهبًا / `refs.osm`) |
-| `osm` | 1٬662 | مُسجَّل في OpenStreetMap وليس بعد في Wikidata |
+| `wikidata` | 13,200 | من Wikidata فقط |
+| `wikidata+osm` | 5,897 | في الاثنين، مُطابَق ضمن ~150 م (يضيف OSM اسمًا فرنسيًا / مذهبًا / `refs.osm`) |
+| `osm` | 1,662 | مُسجَّل في OpenStreetMap وليس بعد في Wikidata |
 
 > **هذا تجميعٌ وليس سجلًّا رسميًّا.** يوفّر Wikidata تغطيةً وطنيةً شبه كاملة (~19 ألف
-> مسجد بإحداثيات، قريبًا من رقم MARW البالغ ~18٬449)؛ ويُضيف OpenStreetMap إحداثيات
+> مسجد بإحداثيات، قريبًا من رقم MARW البالغ ~18,449)؛ ويُضيف OpenStreetMap إحداثيات
 > دقيقة وأسماء فرنسية ومذاهب ومساجد يفتقدها Wikidata. تتغيّر الأعداد مع تحرير
 > المشروعين – وتعكس كل إعادة بناء الحالة الراهنة للمصادر.
 
@@ -82,7 +82,7 @@ const all: Mosquee[] = mosquees.mosquees();
 
 ```
 data/
-  mosquees.json              # 20٬759 مسجدًا (مصفوفة)
+  mosquees.json              # 20,759 مسجدًا (مصفوفة)
   metadata.json              # المصادر، الأعداد، التغطية، updated
   csv/mosquees.csv           # المستودع + الإصدار (ليس في حزمة npm)
   geojson/mosquees.geojson   # معالم نقطية

@@ -6,8 +6,7 @@
       "lon": 2.9829936,
       "tags": {
         "amenity": "clinic",
-        "healthcare": "clinic",
-        "name": "Dispensaire"
+        "healthcare": "clinic"
       },
       "type": "node"
     },
@@ -93,7 +92,6 @@
       "tags": {
         "amenity": "clinic",
         "healthcare": "clinic",
-        "name": "Polyclinique",
         "source": "Algerie Mapper Team"
       },
       "type": "node"
@@ -237,8 +235,7 @@
       "lat": 36.674644,
       "lon": 3.0217446,
       "tags": {
-        "amenity": "clinic",
-        "name": "dispensaire"
+        "amenity": "clinic"
       },
       "type": "node"
     },
@@ -304,10 +301,7 @@
       "tags": {
         "addr:city": "دراق",
         "amenity": "clinic",
-        "healthcare": "clinic",
-        "name": "عيادة",
-        "name:ar": "عيادة",
-        "name:fr": "Polyclinique"
+        "healthcare": "clinic"
       },
       "type": "node"
     },
@@ -537,7 +531,6 @@
       "lon": 3.0148228,
       "tags": {
         "amenity": "clinic",
-        "name": "Polyclinique",
         "source": "Algerie Mapper Team"
       },
       "type": "node"
@@ -569,9 +562,7 @@
       "lon": 3.0077599,
       "tags": {
         "amenity": "clinic",
-        "healthcare": "clinic",
-        "name": "Dispensaire",
-        "name:ar": "مستوصف"
+        "healthcare": "clinic"
       },
       "type": "node"
     },
@@ -993,8 +984,7 @@
       "lon": 3.1771207,
       "tags": {
         "amenity": "clinic",
-        "healthcare": "clinic",
-        "name": "Dispensaire"
+        "healthcare": "clinic"
       },
       "type": "node"
     },
@@ -1226,7 +1216,6 @@
       "tags": {
         "amenity": "clinic",
         "healthcare": "clinic",
-        "name": "Polyclinique",
         "source": "Algerie Mapper Team"
       },
       "type": "node"
@@ -2324,9 +2313,7 @@
       "lat": 36.697514,
       "lon": 3.0782868,
       "tags": {
-        "amenity": "clinic",
-        "name": "Salle de Soins",
-        "name:ar": "قاعة العلاج"
+        "amenity": "clinic"
       },
       "type": "node"
     },
@@ -2345,8 +2332,7 @@
       "lat": 36.7322573,
       "lon": 3.1482717,
       "tags": {
-        "amenity": "clinic",
-        "name": "Salle de soins"
+        "amenity": "clinic"
       },
       "type": "node"
     },
@@ -2973,9 +2959,7 @@
       "lat": 36.8127062,
       "lon": 3.0110934,
       "tags": {
-        "amenity": "clinic",
-        "name": "Polyclinique",
-        "name:ar": "عيادة"
+        "amenity": "clinic"
       },
       "type": "node"
     },
@@ -3238,6 +3222,7 @@
       "lon": 4.6341767,
       "tags": {
         "amenity": "clinic",
+        "healthcare:speciality": "general",
         "name": "clinique bourenane"
       },
       "type": "node"
@@ -3512,8 +3497,7 @@
       "lat": 34.875693,
       "lon": -1.3243449,
       "tags": {
-        "amenity": "clinic",
-        "name": "Laboratoire"
+        "amenity": "clinic"
       },
       "type": "node"
     },
@@ -3936,7 +3920,8 @@
       "lat": 36.063401,
       "lon": 4.6268336,
       "tags": {
-        "amenity": "hospital",
+        "amenity": "clinic",
+        "healthcare:speciality": "general + dentist",
         "name": "الطب المدرسي",
         "name:ar": "الطب المدرسي",
         "name:fr": "Médecine scolaire"
@@ -5917,9 +5902,7 @@
       "lat": 36.1164249,
       "lon": 1.5059673,
       "tags": {
-        "amenity": "clinic",
-        "name": "Clinique",
-        "name:fr": "Clinique"
+        "amenity": "clinic"
       },
       "type": "node"
     },
@@ -6134,8 +6117,7 @@
       "lat": 36.6675755,
       "lon": 3.1692775,
       "tags": {
-        "amenity": "clinic",
-        "name": "Dispensaire"
+        "amenity": "clinic"
       },
       "type": "node"
     },
@@ -6184,10 +6166,6 @@
       "lon": 3.222942,
       "tags": {
         "amenity": "clinic",
-        "name": "مستشفى",
-        "name:ar": "مستشفى",
-        "name:en": "Hospital",
-        "name:fr": "Hôpital",
         "opening_hours": "24/7"
       },
       "type": "node"
@@ -8137,8 +8115,7 @@
       "lat": 36.611454,
       "lon": 3.1261205,
       "tags": {
-        "amenity": "clinic",
-        "name": "dispensaire"
+        "amenity": "clinic"
       },
       "type": "node"
     },
@@ -8359,7 +8336,8 @@
       "tags": {
         "amenity": "clinic",
         "name": "المركز الطبي الإجتماعي-الشرطة",
-        "name:ar": "المركز الطبي الإجتماعي-الشرطة"
+        "name:ar": "المركز الطبي الإجتماعي-الشرطة",
+        "name:fr": "Centre Médico-Social de la Police"
       },
       "type": "node"
     },
@@ -9688,11 +9666,7 @@
       "tags": {
         "addr:city": "عين صالح",
         "amenity": "clinic",
-        "healthcare": "clinic",
-        "name": "مستشفى",
-        "name:ar": "مستشفى",
-        "name:en": "miustosaf",
-        "name:fr": "Hôpital"
+        "healthcare": "clinic"
       },
       "type": "node"
     },
@@ -9818,11 +9792,7 @@
       "lat": 32.8953314,
       "lon": 0.5586732,
       "tags": {
-        "amenity": "clinic",
-        "name": "عيادة",
-        "name:ar": "عيادة",
-        "name:en": "clinic",
-        "name:fr": "clinic"
+        "amenity": "clinic"
       },
       "type": "node"
     },
@@ -9967,8 +9937,7 @@
       "lon": 2.9454041,
       "tags": {
         "amenity": "clinic",
-        "healthcare": "clinic",
-        "name": "Polyclinique"
+        "healthcare": "clinic"
       },
       "type": "node"
     },
@@ -10353,7 +10322,7 @@
       "tags": {
         "addr:street": "100 chemin Abdelkader, El mouradia",
         "healthcare": "clinic",
-        "name": "Clinique",
+        "name": "Clinique Diar Saada",
         "name:ar": "Clinique Diar Saada",
         "name:fr": "Clinique Diar Saada",
         "phone": "(213-21) 69 87 11"
@@ -11928,10 +11897,7 @@
       "lat": 36.6292618,
       "lon": 2.9180313,
       "tags": {
-        "amenity": "hospital",
-        "name": "مستوصف",
-        "name:ar": "مستوصف",
-        "name:fr": "policlinique"
+        "amenity": "hospital"
       },
       "type": "node"
     },
@@ -12318,10 +12284,7 @@
       "lat": 36.4576352,
       "lon": 2.6952667,
       "tags": {
-        "amenity": "clinic",
-        "name": "عيادة",
-        "name:ar": "عيادة",
-        "name:fr": "Clinique"
+        "amenity": "clinic"
       },
       "type": "node"
     },
@@ -13326,8 +13289,7 @@
       "lon": 3.1093301,
       "tags": {
         "amenity": "clinic",
-        "healthcare": "clinic",
-        "name": "Polyclinique"
+        "healthcare": "clinic"
       },
       "type": "node"
     },
@@ -13472,17 +13434,6 @@
       "type": "node"
     },
     {
-      "id": 6356625885,
-      "lat": 36.0681814,
-      "lon": 4.7719765,
-      "tags": {
-        "amenity": "clinic",
-        "name": "طبيبة النساء العجري زوجة عبد الرحيم",
-        "name:ar": "طبيبة النساء العجري زوجة عبد الرحيم"
-      },
-      "type": "node"
-    },
-    {
       "id": 6359332044,
       "lat": 32.4720974,
       "lon": 3.6923057,
@@ -13550,7 +13501,7 @@
         "amenity": "clinic",
         "name": "مخبر ابن النفيس للتحاليل الطبية",
         "name:ar": "مخبر ابن النفيس للتحاليل الطبية",
-        "name:en": "العربية",
+        "name:fr": "Laboratoire Ibn Nafis d'analyses médicales",
         "phone": "0561691616"
       },
       "type": "node"
@@ -14154,8 +14105,6 @@
         "addr:city:ar": "تلمسان",
         "amenity": "clinic",
         "healthcare": "clinic",
-        "name": "عيادة",
-        "name:ar": "عيادة",
         "name:fr": "Clinique du Grand Bassin"
       },
       "type": "node"
@@ -17674,6 +17623,314 @@
       "type": "node"
     },
     {
+      "id": 14102755675,
+      "lat": 36.7470946,
+      "lon": 3.0817415,
+      "tags": {
+        "addr:city": "Hamma",
+        "addr:country": "DZ",
+        "addr:state": "Algiers",
+        "addr:street": "07, Fernane Hanafi Road",
+        "addr:street:ar": "07 طريق فرنان حنفي",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:phone": "021 67 77 89",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS El Hamma Sosc Sonelgaz (Fosc) مركز طبي اجتماعي الحامة سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي الحامة سوسك سونلغاز (فوسك)",
+        "name:en": "CMS El Hamma Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14122670315,
+      "lat": 36.0649268,
+      "lon": 4.7864222,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "diagnostic_radiology",
+        "name": "عيادة الدكتور مهني نبيل"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130606472,
+      "lat": 36.7874833,
+      "lon": 3.0644268,
+      "tags": {
+        "addr:city": "Algiers",
+        "addr:country": "DZ",
+        "addr:state": "Algiers",
+        "addr:street": "Amara Rachid Boulevard",
+        "addr:street:ar": "جادة عمارة رشيد",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS Algeria North Sosc Sonelgaz (Fosc) مركز طبي اجتماعي سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي الجزائر شمال سوسك سونلغاز (فوسك)",
+        "name:en": "CMS Algeria North Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130606482,
+      "lat": 36.5857898,
+      "lon": 2.4573356,
+      "tags": {
+        "addr:city": "Tipaza",
+        "addr:country": "DZ",
+        "addr:state": "Tipaza",
+        "addr:street": "oued merzoug",
+        "addr:street:ar": "واد مرزوق",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:phone": "021 67 77 89",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS Tipaza Sosc Sonelgaz (Fosc) مركز طبي اجتماعي تيبازة سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي تيبازة سوسك سونلغاز (فوسك)",
+        "name:en": "CMS Tipaza Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130606483,
+      "lat": 36.7483215,
+      "lon": 3.0814095,
+      "tags": {
+        "addr:city": "Hamma",
+        "addr:country": "DZ",
+        "addr:state": "Algiers",
+        "addr:street": "07, Fernane Hanafi Road",
+        "addr:street:ar": "07 طريق فرنان حنفي",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:phone": "021 67 77 89",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "Social Medical Center CMS Sosc Sonelgaz (Fosc) مركز طبي اجتماعي سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي",
+        "name:en": "Social Medical Center CMS Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130606484,
+      "lat": 36.7480388,
+      "lon": 3.0814843,
+      "tags": {
+        "addr:city": "Hamma",
+        "addr:country": "DZ",
+        "addr:state": "Algiers",
+        "addr:street": "07, Fernane Hanafi Road",
+        "addr:street:ar": "07 طريق فرنان حنفي",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:phone": "021 67 77 89",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "Social Medical Center CMS Sosc Sonelgaz (Fosc) مركز طبي اجتماعي سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي",
+        "name:en": "Social Medical Center CMS Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130606485,
+      "lat": 36.7477876,
+      "lon": 3.0816678,
+      "tags": {
+        "addr:city": "Hamma",
+        "addr:country": "DZ",
+        "addr:state": "Algiers",
+        "addr:street": "07, Fernane Hanafi Road",
+        "addr:street:ar": "07 طريق فرنان حنفي",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:phone": "021 67 77 89",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "Social Medical Center CMS Sosc Sonelgaz (Fosc) مركز طبي اجتماعي سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي",
+        "name:en": "Social Medical Center CMS Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130978581,
+      "lat": 32.4837393,
+      "lon": 3.6787006,
+      "tags": {
+        "addr:city": "Ghardaia",
+        "addr:country": "DZ",
+        "addr:state": "Ghardaia",
+        "addr:street": "R W 147 ط و",
+        "addr:street:ar": "الطريق الولائي 147",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:phone": "021 67 77 89",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS Ghardaia Sosc Sonelgaz (Fosc) مركز طبي اجتماعي غرداية سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي غرداية سوسك سونلغاز (فوسك)",
+        "name:en": "CMS Ghardaia Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130978741,
+      "lat": 36.7996538,
+      "lon": 5.7448585,
+      "tags": {
+        "addr:city": "Jijel",
+        "addr:country": "DZ",
+        "addr:state": "Jijel",
+        "addr:street": "40 hectare district",
+        "addr:street:ar": "حي 40 هكتار",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:phone": "034 47 70 51",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS Jijel Sosc Sonelgaz (Fosc) مركز طبي اجتماعي جيجل سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي جيجل سوسك سونلغاز (فوسك)",
+        "name:en": "CMS Jijel Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130978773,
+      "lat": 36.4738105,
+      "lon": 2.8237978,
+      "tags": {
+        "addr:city": "Blida",
+        "addr:country": "DZ",
+        "addr:state": "Blida",
+        "addr:street": "amara youcef",
+        "addr:street:ar": "عمارة يوسف",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS Blida Sosc Sonelgaz (Fosc) مركز طبي اجتماعي البليدة سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي البليدة سوسك سونلغاز (فوسك)",
+        "name:en": "CMS Blida Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130978774,
+      "lat": 35.3096476,
+      "lon": -1.1443941,
+      "tags": {
+        "addr:city": "Ain Temouchent",
+        "addr:country": "DZ",
+        "addr:state": "Ain Temouchent",
+        "addr:street": "بجاوي محمد",
+        "addr:street:ar": "Bedjaoui Mohamed",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS Ain Temouchent Sosc Sonelgaz (Fosc) مركز طبي اجتماعي عين تموشنت سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي عين تموشنت سوسك سونلغاز (فوسك)",
+        "name:en": "CMS Ain Temouchent Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130978801,
+      "lat": 35.68179,
+      "lon": -0.6399257,
+      "tags": {
+        "addr:city": "Oran",
+        "addr:country": "DZ",
+        "addr:state": "Oran",
+        "addr:street": "Khiat salah",
+        "addr:street:ar": "خياط صالح",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:phone": "0675 65 59 58",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS Oran Sosc Sonelgaz (Fosc) مركز طبي اجتماعي وهران سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي وهران سوسك سونلغاز (فوسك)",
+        "name:en": "CMS Oran Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130978864,
+      "lat": 36.1696751,
+      "lon": 1.3252314,
+      "tags": {
+        "addr:city": "Chlef",
+        "addr:country": "DZ",
+        "addr:state": "Chlef",
+        "addr:street": "R N 19 ط و",
+        "addr:street:ar": "الطريق الوطني 19",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:phone": "021 67 77 89",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS Chlef Sosc Sonelgaz (Fosc) مركز طبي اجتماعي شلف سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي شلف سوسك سونلغاز (فوسك)",
+        "name:en": "CMS Chlef Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130978865,
+      "lat": 36.2611485,
+      "lon": 1.9640205,
+      "tags": {
+        "addr:city": "Ain Defla",
+        "addr:country": "DZ",
+        "addr:state": "Ain Defla",
+        "addr:street": "Menad Brothers",
+        "addr:street:ar": "الاخوة مناد",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:phone": "021 67 77 89",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS Ain Defla Sosc Sonelgaz (Fosc) مركز طبي اجتماعي عين الدفلة سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي عين الدفلة سوسك سونلغاز (فوسك)",
+        "name:en": "CMS Ain Defla Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14130978866,
+      "lat": 36.7070293,
+      "lon": 3.0956481,
+      "tags": {
+        "addr:city": "Gué de Constantine",
+        "addr:country": "DZ",
+        "addr:state": "Algiers",
+        "addr:street": "R W 14 ط و",
+        "addr:street:ar": "الطريق الولائي 14",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS Gué de Constantine Sosc Sonelgaz (Fosc) مركز طبي اجتماعي جسر قسنطينة سوسك سونلغاز (فوسك)",
+        "name:ar": "مركز طبي اجتماعي جسر قسنطينة سوسك سونلغاز (فوسك)",
+        "name:en": "CMS Gué de Constantine Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
+      "id": 14131236617,
+      "lat": 35.4292047,
+      "lon": 7.1389139,
+      "tags": {
+        "addr:city": "Khenchela",
+        "addr:country": "DZ",
+        "addr:state": "Khenchela",
+        "addr:street": "300 Housing Unit Neighborhood",
+        "addr:street:ar": "حي 300 مسكن",
+        "amenity": "clinic",
+        "contact:email": "communication.sosc@sosc-sonelgaz.dz",
+        "contact:phone": "021 67 77 89",
+        "contact:website": "https://www.sosc-sonelgaz.dz",
+        "name": "CMS Khenchela Sosc Sonelgaz (Fosc) مركز طبي اجتماعي خنشلة سوسك سونلغاز (فوسك)‎",
+        "name:ar": "مركز طبي اجتماعي خنشلة‎ سوسك سونلغاز (فوسك)",
+        "name:en": "CMS Khenchela Sosc Sonelgaz (Fosc)"
+      },
+      "type": "node"
+    },
+    {
       "center": {
         "lat": 36.3018974,
         "lon": 2.2243137
@@ -18172,7 +18429,6 @@
       "tags": {
         "amenity": "clinic",
         "building": "yes",
-        "name": "Polyclinique",
         "source": "Algerie Mapper Team"
       },
       "type": "way"
@@ -18848,7 +19104,6 @@
         "addr:postcode": "26300",
         "amenity": "hospital",
         "healthcare": "hospital",
-        "name": "Hôpital",
         "name:ar": "مستشفى قصر البخاري",
         "name:fr": "Hôpital EPH Ksar el Boukhari",
         "phone": "025692003"
@@ -18889,8 +19144,6 @@
       "tags": {
         "amenity": "hospital",
         "healthcare": "hospital",
-        "name": "Maternité",
-        "name:fr": "Maternité",
         "wheelchair": "yes"
       },
       "type": "way"
@@ -18995,7 +19248,7 @@
         "addr:postcode": "26000",
         "amenity": "hospital",
         "emergency": "yes",
-        "name": "Hôpital Mohamed Boudiaf"
+        "name": "مستشفى محمّد بوضياف"
       },
       "type": "way"
     },
@@ -19656,7 +19909,6 @@
       "tags": {
         "addr:city": "Bachdjarrah",
         "amenity": "clinic",
-        "name": "Polyclinique",
         "source": "Algerie Mapper Team"
       },
       "type": "way"
@@ -20028,7 +20280,6 @@
       "tags": {
         "amenity": "clinic",
         "barrier": "wall",
-        "name": "Polyclinique",
         "source": "Algerie Mapper Team"
       },
       "type": "way"
@@ -20501,10 +20752,7 @@
         "addr:city": "Gouraya",
         "amenity": "hospital",
         "emergency": "yes",
-        "healthcare": "hospital",
-        "name": "Hôpital",
-        "name:ar": "مستشفى",
-        "name:fr": "Hôpital"
+        "healthcare": "hospital"
       },
       "type": "way"
     },
@@ -22947,10 +23195,6 @@
         "amenity": "clinic",
         "building": "yes",
         "healthcare": "clinic",
-        "name": "مستوصف",
-        "name:ar": "مستوصف",
-        "name:en": "Polyclinique",
-        "name:fr": "Polyclinique",
         "source": "Algerie Mapper Team"
       },
       "type": "way"
@@ -24182,7 +24426,8 @@
       "id": 314330600,
       "tags": {
         "amenity": "hospital",
-        "healthcare": "hospital"
+        "healthcare": "hospital",
+        "name": "مستشفى المنصورة"
       },
       "type": "way"
     },
@@ -25488,8 +25733,7 @@
       "id": 332351709,
       "tags": {
         "amenity": "clinic",
-        "building": "yes",
-        "name:ar": "عيادة"
+        "building": "yes"
       },
       "type": "way"
     },
@@ -26119,7 +26363,6 @@
       "tags": {
         "amenity": "clinic",
         "building": "yes",
-        "name": "Polyclinique",
         "source": "Algerie Mapper Team"
       },
       "type": "way"
@@ -28328,10 +28571,7 @@
       "id": 389895672,
       "tags": {
         "amenity": "clinic",
-        "building": "yes",
-        "name": "عيادة",
-        "name:ar": "عيادة",
-        "name:fr": "Clinique"
+        "building": "yes"
       },
       "type": "way"
     },
@@ -28407,8 +28647,7 @@
         "barrier": "wall",
         "emergency": "yes",
         "healthcare": "hospital",
-        "name": "مستشفى",
-        "name:ar": "مستشفى",
+        "name": "Hôpital Meghaier",
         "name:fr": "Hôpital Meghaier"
       },
       "type": "way"
@@ -29625,8 +29864,7 @@
       "id": 435217513,
       "tags": {
         "amenity": "hospital",
-        "healthcare": "hospital",
-        "name": "Maternité"
+        "healthcare": "hospital"
       },
       "type": "way"
     },
@@ -29739,7 +29977,6 @@
         "healthcare": "hospital",
         "language:ar": "main",
         "name": "Epsp Tin Zaouatine",
-        "name:ar": "مستشفى",
         "name:fr": "Epsp Tin Zaouatine",
         "opening_hours": "24/7"
       },
@@ -29850,10 +30087,7 @@
       "id": 439746215,
       "tags": {
         "amenity": "hospital",
-        "healthcare": "hospital",
-        "name": "عيادة",
-        "name:ar": "عيادة",
-        "name:fr": "Clinique"
+        "healthcare": "hospital"
       },
       "type": "way"
     },
@@ -30943,8 +31177,8 @@
     },
     {
       "center": {
-        "lat": 35.6780618,
-        "lon": 5.6494811
+        "lat": 35.6779218,
+        "lon": 5.6493236
       },
       "id": 462851014,
       "tags": {
@@ -31571,9 +31805,7 @@
       },
       "id": 477373398,
       "tags": {
-        "amenity": "hospital",
-        "name": "Salle de soins",
-        "name:ar": "قاعة العلاج"
+        "amenity": "hospital"
       },
       "type": "way"
     },
@@ -31761,8 +31993,7 @@
       },
       "id": 484025889,
       "tags": {
-        "amenity": "hospital",
-        "name": "Salle de soins"
+        "amenity": "hospital"
       },
       "type": "way"
     },
@@ -32215,7 +32446,6 @@
         "healthcare": "clinic",
         "healthcare:speciality": "general",
         "insurance:health": "public",
-        "name": "Dispensaire",
         "opening_hours": "Mo-Fr 09:00-17:00",
         "operational_status": "operational",
         "operator": "Etatique"
@@ -33153,9 +33383,11 @@
       "tags": {
         "addr:city": "Medjana",
         "amenity": "clinic",
+        "building": "yes",
         "fixme": "Rajouter le nom officiel",
         "healthcare": "clinic",
-        "name": "EPSP"
+        "healthcare:speciality": "general",
+        "name": "EPSP centre de Sante"
       },
       "type": "way"
     },
@@ -34329,8 +34561,11 @@
       },
       "id": 783008755,
       "tags": {
-        "amenity": "hospital",
-        "healthcare": "hospital"
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "المركز الاستشفائي - اليشير - polyclinic EL Achir"
       },
       "type": "way"
     },
@@ -36015,10 +36250,7 @@
       "id": 783874682,
       "tags": {
         "amenity": "hospital",
-        "healthcare": "hospital",
-        "name": "مستوصف",
-        "name:ar": "مستوصف",
-        "name:fr": "Polyclinique"
+        "healthcare": "hospital"
       },
       "type": "way"
     },
@@ -36702,10 +36934,7 @@
       "id": 805346223,
       "tags": {
         "amenity": "hospital",
-        "healthcare": "hospital",
-        "name": "مستشفى",
-        "name:ar": "مستشفى",
-        "name:fr": "Ehu"
+        "healthcare": "hospital"
       },
       "type": "way"
     },
@@ -36719,6 +36948,20 @@
         "amenity": "clinic",
         "building": "yes",
         "healthcare": "clinic"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 34.4463875,
+        "lon": 5.0431692
+      },
+      "id": 830132999,
+      "tags": {
+        "amenity": "hospital",
+        "name": "المؤسسة العمومية للصحة الجوارية مصطفى بن بوالعيد",
+        "name:en": "public institution nearby health",
+        "name:fr": "établissement public de santé de proximité"
       },
       "type": "way"
     },
@@ -36916,7 +37159,6 @@
         "amenity": "hospital",
         "healthcare": "hospital",
         "healthcare:speciality": "general",
-        "name": "مدرسة ابتدائية",
         "operator": "مدرية التربية",
         "operator:type": "government"
       },
@@ -38393,6 +38635,37 @@
     },
     {
       "center": {
+        "lat": 36.1313241,
+        "lon": 4.6713929
+      },
+      "id": 1174034007,
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "name": "عياد الدكتور زوغام",
+        "source": "Algerie Mapper Team"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 36.092181,
+        "lon": 4.7293605
+      },
+      "id": 1174041234,
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Dr Gettab Meriem. عيادة الطبيبة قطاب مريم للطب العام",
+        "source": "Algerie Mapper Team (Superadlen)"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
         "lat": 36.5170593,
         "lon": 2.9064442
       },
@@ -38965,6 +39238,36 @@
         "amenity": "clinic",
         "building": "yes",
         "name": "المركز الصحي عكال الحسين",
+        "source": "microsoft/BuildingFootprints"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 36.0662427,
+        "lon": 4.6262377
+      },
+      "id": 1197080324,
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "name": "عيادة الدكتور بلال وشن",
+        "source": "microsoft/BuildingFootprints"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 36.0725975,
+        "lon": 4.6244542
+      },
+      "id": 1197080936,
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "name": "عيادة الطيب الشفاء",
         "source": "microsoft/BuildingFootprints"
       },
       "type": "way"
@@ -40312,7 +40615,9 @@
       },
       "id": 1538271074,
       "tags": {
-        "amenity": "clinic"
+        "amenity": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Centre De Sante Birkasdali"
       },
       "type": "way"
     },
@@ -40330,13 +40635,101 @@
         "operator:type": "government"
       },
       "type": "way"
+    },
+    {
+      "center": {
+        "lat": 36.0650732,
+        "lon": 4.6268673
+      },
+      "id": 1551608275,
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "name": "عيادة الدكتورة كرميش"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 36.0662427,
+        "lon": 4.6262377
+      },
+      "id": 1551608280,
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "name": "عيادة الدكتور وشن بلال"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 36.0650786,
+        "lon": 4.6388209
+      },
+      "id": 1551608292,
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "diagnostic_radiology",
+        "name": "centre d'imagerie medicale chifa"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 36.1509884,
+        "lon": 5.0277398
+      },
+      "id": 1553626509,
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "الدكتورة بونشادة لـ زوجة غربي (طب عام)",
+        "operator": "الدكتورة بونشادة لـ زوجة غربي"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 36.1441619,
+        "lon": 5.0247097
+      },
+      "id": 1553652290,
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "orthopaedics",
+        "name": "Dr Bouzit Tarek chirurgien orthopédique et traumatologique"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 36.0915296,
+        "lon": 4.7302191
+      },
+      "id": 1553918578,
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "name": "المركز الصحي الجديد عوين زريقة"
+      },
+      "type": "way"
     }
   ],
   "generator": "Overpass API 0.7.62.11 87bfad18",
   "osm3s": {
     "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-    "timestamp_areas_base": "2026-08-07T17:44:51Z",
-    "timestamp_osm_base": "2026-08-08T15:00:36Z"
+    "timestamp_areas_base": "2026-08-31T02:26:05Z",
+    "timestamp_osm_base": "2026-08-31T16:58:51Z"
   },
   "version": 0.6
 }

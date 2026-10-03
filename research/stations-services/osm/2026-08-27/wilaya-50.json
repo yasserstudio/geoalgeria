@@ -1,0 +1,111 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 50,
+  "records": [
+    {
+      "id": "node/5039813069",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.9544345,
+        21.3333277
+      ]
+    },
+    {
+      "id": "node/5068497558",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        1.002084,
+        23.3868131
+      ]
+    },
+    {
+      "id": "node/8301075518",
+      "amenity": "fuel",
+      "name": "Station Naftal;صحراء عين بدون",
+      "name_ar": "صحراء عين بدون",
+      "name_fr": "Station Naftal",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.972771,
+        21.3115487
+      ]
+    },
+    {
+      "id": "node/8301095817",
+      "amenity": "fuel",
+      "name": "Ouled El Moulat;محطة اولاد المولات",
+      "name_ar": null,
+      "name_fr": "Ouled El Moulat",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.9717977,
+        21.3164644
+      ]
+    },
+    {
+      "id": "node/8301098817",
+      "amenity": "fuel",
+      "name": "Bab El Baraka;محطة باب البركة",
+      "name_ar": "محطة بن مخاطري",
+      "name_fr": "Bab El Baraka",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.9753459,
+        21.3095539
+      ]
+    },
+    {
+      "id": "node/8314567017",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.9848833,
+        21.7618788
+      ]
+    },
+    {
+      "id": "node/8364342917",
+      "amenity": "fuel",
+      "name": "محطة خدمات عين بيدون",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        1.1128797,
+        22.2983526
+      ]
+    }
+  ]
+}

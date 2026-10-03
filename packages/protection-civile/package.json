@@ -1,8 +1,8 @@
 {
   "name": "@geoalgeria/protection-civile",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "type": "module",
-  "description": "Algeria's Protection Civile (civil protection / fire & rescue) units — official-primary from the DGPC's own dataset (dgpc.dz): 880 units nationwide, Arabic names, address/phone/fax, status tier, geocoded, with post-2026-reform wilaya linkage. JSON, CSV, GeoJSON, TypeScript.",
+  "description": "Algeria's Protection Civile (civil protection / fire & rescue) units, official-primary from the DGPC's own dataset (dgpc.dz): 880 units nationwide, Arabic names, address/phone/fax, status tier, geocoded, with post-2026-reform wilaya linkage. JSON, CSV, GeoJSON, TypeScript.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {
@@ -25,6 +25,7 @@
   },
   "scripts": {
     "fetch": "node scripts/fetch.mjs",
+    "review": "node ../../scripts/build-protection-civile-review.mjs",
     "test": "node ../../scripts/validate-packages.mjs protection-civile"
   },
   "keywords": [
@@ -42,7 +43,7 @@
     "dz"
   ],
   "author": "Yasser's Studio (https://yasser.studio)",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "publishConfig": {
     "access": "public"
   },

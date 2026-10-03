@@ -1,5 +1,5 @@
 // Type definitions for @geoalgeria/sante (schema v2).
-// Public health establishments of Algeria — the Ministry of Health (MoH)
+// Public health establishments of Algeria: the Ministry of Health (MoH)
 // registry, geocoded via OpenStreetMap (ODbL) and Wikidata (CC0).
 // Records follow the canonical GeoRecord contract from @geoalgeria/schema
 // (zero-padded string wilaya_code, string ONS commune_code, geo_precision/
@@ -15,14 +15,31 @@ export type HealthSector = "public" | "private";
  *  `null` when the establishment has no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How the coordinate was obtained. `null` on an ungeocoded record — no method
- *  produced a point, so none can be named. */
-export type GeoMethod = "osm_point" | "wikidata_point" | "commune_centroid" | null;
+/** How the coordinate was obtained. `owner_verified` is a building point a
+ *  maintainer read off the map and recorded in the guarded evidence ledger
+ *  (quality/overrides/sante.json), which outranks anything the generator derives.
+ *  `null` on an ungeocoded record: no method produced a point, so none can be
+ *  named. */
+export type GeoMethod =
+  | "osm_point"
+  | "wikidata_point"
+  | "commune_centroid"
+  | "owner_verified"
+  | null;
+
+/** A human-reviewed correction applied through the guarded evidence ledger. */
+export type ReviewStatus = "corrected";
 
 /** External identifiers keyed by source system. */
 export interface Refs {
-  /** MoH post id on sante.gov.dz. */
+  /** MoH post id on sante.gov.dz: this record's primary post, the French one
+   *  where the registry publishes both. */
   msp: string;
+  /** The MoH's other-language post for the SAME establishment, when it
+   *  publishes one. The registry lists each establishment twice, once in French
+   *  and once in Arabic, under two post ids; a bilingual record stands for both,
+   *  and either id resolves to it. */
+  msp_twin?: string;
   /** OSM element id (e.g. "way/432370657") when an OSM facility matched. */
   osm?: string;
   /** Wikidata QID when a Wikidata facility matched. */
@@ -50,11 +67,11 @@ export interface HealthEstablishment {
   /** Longitude, or null. Both coordinates are set, or both are null. */
   lng: number | null;
   /** "exact" for an OSM/Wikidata point, "approximate" for a commune centroid,
-   *  `null` when `lat`/`lng` are null — a record with no point asserts no precision. */
+   *  `null` when `lat`/`lng` are null: a record with no point asserts no precision. */
   geo_precision: GeoPrecision;
   /** How `lat`/`lng` were obtained; null when there are none. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "msp" (the MoH registry).
+  /** Provenance key into `metadata.sources[]`: always "msp" (the MoH registry).
    *  The geocoding sources are named per record in {@link HealthEstablishment.refs}. */
   source: "msp";
   /** External identifiers: always the MoH post id, plus OSM/Wikidata where matched. */
@@ -69,6 +86,14 @@ export interface HealthEstablishment {
   sector: HealthSector;
   /** URL slug of the source post (French post preferred). */
   slug: string;
+  /** Present only when a reviewed correction was applied to this record. */
+  review_status?: ReviewStatus;
+  /** ISO date of the reviewed correction. */
+  reviewed_at?: string;
+  /** Who recorded the reviewed correction. */
+  reviewed_by?: string;
+  /** Public evidence URLs the correction was checked against. */
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */
@@ -81,7 +106,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus health stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus health stats. */
 export interface Metadata {
   package: "@geoalgeria/sante";
   schema_version: string;

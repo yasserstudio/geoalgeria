@@ -26,7 +26,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -247,7 +247,8 @@ async function main() {
   // only diffs the records whose wilaya/commune actually changed.
   const cfg = MIGRATIONS.djezzy;
   const v2 = rows.map(cfg.map);
-  carryOverIds(v2, readCommitted(OUT_DIR, "boutiques.json"), (r) => (r.refs?.djezzy ? `dz:${r.refs.djezzy}` : null), "djezzy");
+  const retiredIds = readRetiredIds(OUT_DIR);
+  carryOverIds(v2, readCommitted(OUT_DIR, "boutiques.json"), (r) => (r.refs?.djezzy ? `dz:${r.refs.djezzy}` : null), "djezzy", retiredIds);
   const today = new Date().toISOString().slice(0, 10);
   writePackageV2({
     pkg: "djezzy",
@@ -256,6 +257,7 @@ async function main() {
     meta: cfg.meta,
     updated: today,
     retrieved: today,
+    retiredIds,
   });
   const wilayas = new Set(v2.map((r) => r.wilaya_code).filter(Boolean)).size;
   console.log(`Wrote ${v2.length} boutiques (${wilayas} wilayas) → v2 to data/.`);

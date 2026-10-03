@@ -5,7 +5,15 @@ function load(file) {
   return JSON.parse(fs.readFileSync(path.join(__dirname, "data", file), "utf-8"));
 }
 
-let _wilayas, _communes, _dairas, _ecommerce, _all, _postOffices, _atms;
+let _wilayas,
+  _communes,
+  _dairas,
+  _ecommerce,
+  _all,
+  _postOffices,
+  _atms,
+  _nameHistory,
+  _phoneCodeProvenance;
 
 module.exports = {
   get wilayas() {
@@ -54,6 +62,23 @@ module.exports = {
     return _atms;
   },
 
+  // Names this dataset used to carry, with the official text that replaced each
+  // one. Corrections land in the record itself; this keeps the older spelling
+  // findable, so a stored address or an old export still resolves.
+  get nameHistory() {
+    if (!_nameHistory) _nameHistory = load("name-history.json");
+    return _nameHistory;
+  },
+
+  // Why each wilaya of the 2026 cohort (codes 59 to 69) carries the `phone_code`
+  // it carries: the official texts searched, and for a null the recorded reason.
+  // A code enters it only with an official citation, so read this before inferring
+  // one from the wilaya a 2026 wilaya was split from.
+  get phoneCodeProvenance() {
+    if (!_phoneCodeProvenance) _phoneCodeProvenance = load("phone-code-provenance.json");
+    return _phoneCodeProvenance;
+  },
+
   getWilaya(code) {
     const n = Number(code);
     return this.wilayas.find((w) => w.code === n);
@@ -72,10 +97,20 @@ module.exports = {
   findCommune(name) {
     const trimmed = String(name).trim();
     const lower = trimmed.toLowerCase();
+    const former = new Set(
+      this.nameHistory.communes
+        .filter(
+          (entry) =>
+            entry.former_names_fr.some((n) => n.toLowerCase().includes(lower)) ||
+            entry.former_names_ar.some((n) => n.includes(trimmed))
+        )
+        .map((entry) => entry.code_commune)
+    );
     return this.communes.filter(
       (c) =>
         c.name_fr.toLowerCase().includes(lower) ||
-        c.name_ar.includes(trimmed)
+        c.name_ar.includes(trimmed) ||
+        former.has(c.code_commune)
     );
   },
 

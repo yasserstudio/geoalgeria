@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Algeria Bus Atlas — research artifact</title>
+  <style>
+/*__ARTIFACT_STYLES__*/
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 30 30">
+            <path d="M6 5.5h18v17H6z"></path>
+            <path d="M9.5 9h11M9.5 13h11M10 22.5v2M20 22.5v2"></path>
+            <circle cx="10.5" cy="18.5" r="1.4"></circle>
+            <circle cx="19.5" cy="18.5" r="1.4"></circle>
+          </svg>
+        </span>
+        <div>
+          <p class="eyebrow">GeoAlgeria / research workspace</p>
+          <h1>Algeria Bus Atlas</h1>
+        </div>
+      </div>
+      <div class="topbar-meta">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Local snapshot</span>
+        <span class="meta-divider" aria-hidden="true"></span>
+        <time id="snapshotDate"></time>
+      </div>
+    </header>
+
+    <aside class="review-rail" aria-label="Bus data review controls">
+      <section class="rail-intro">
+        <div class="intro-heading">
+          <div>
+            <p class="eyebrow">Collection artifact</p>
+            <h2>What we have now</h2>
+          </div>
+          <span class="research-badge">Research only</span>
+        </div>
+        <p class="intro-copy">
+          A local audit of candidate Lines, Line geometry, Station members,
+          Operators and source access. Nothing here is published package data.
+        </p>
+      </section>
+
+      <section class="metrics" aria-label="Snapshot metrics">
+        <article>
+          <strong id="metricLines">—</strong>
+          <span>candidate Lines</span>
+        </article>
+        <article>
+          <strong id="metricReady">—</strong>
+          <span>map-ready</span>
+        </article>
+        <article>
+          <strong id="metricStations">—</strong>
+          <span>Station members</span>
+        </article>
+        <article>
+          <strong id="metricReceipts">—</strong>
+          <span>source receipts</span>
+        </article>
+      </section>
+
+      <nav class="rail-tabs" aria-label="Artifact views">
+        <button class="rail-tab is-active" type="button" data-panel="lines" aria-selected="true">Lines</button>
+        <button class="rail-tab" type="button" data-panel="sources" aria-selected="false">Sources</button>
+      </nav>
+
+      <section id="linesPanel" class="rail-panel">
+        <div class="filters">
+          <label class="search-field">
+            <span class="visually-hidden">Search candidate Lines</span>
+            <svg aria-hidden="true" viewBox="0 0 20 20">
+              <circle cx="8.4" cy="8.4" r="5.4"></circle>
+              <path d="m12.4 12.4 4 4"></path>
+            </svg>
+            <input id="searchInput" type="search" placeholder="Search ref, Line, Operator…">
+          </label>
+          <div class="filter-grid">
+            <label>
+              <span>Classification</span>
+              <select id="classificationFilter"></select>
+            </label>
+            <label>
+              <span>Map readiness</span>
+              <select id="readinessFilter"></select>
+            </label>
+            <label>
+              <span>Operator</span>
+              <select id="operatorFilter"></select>
+            </label>
+            <label>
+              <span>Wilaya</span>
+              <select id="wilayaFilter"></select>
+            </label>
+          </div>
+        </div>
+
+        <div class="list-heading">
+          <p id="resultCount" aria-live="polite">—</p>
+          <button id="clearFilters" class="text-button" type="button">Reset filters</button>
+        </div>
+        <div id="lineList" class="line-list" aria-label="Candidate Lines"></div>
+      </section>
+
+      <section id="sourcesPanel" class="rail-panel" hidden>
+        <div class="source-summary">
+          <p class="eyebrow">Evidence boundary</p>
+          <h3>OSM Source is reusable.<br>Live data is not public.</h3>
+          <p>
+            OSM Line geometry is ODbL. Official pages and apps help validate
+            identity and availability, but their geometry or live positions
+            cannot be republished without permission or an open license.
+          </p>
+        </div>
+        <div class="source-key" aria-label="Evidence key">
+          <span><i class="key-swatch key-osm"></i> Reusable Line geometry</span>
+          <span><i class="key-swatch key-official"></i> Official validation</span>
+          <span><i class="key-swatch key-context"></i> Identity / attribute evidence</span>
+          <span><i class="key-swatch key-lead"></i> Discovery / legacy comparison</span>
+        </div>
+        <div id="sourceList" class="source-list"></div>
+      </section>
+    </aside>
+
+    <main class="map-stage">
+      <div class="map-caption">
+        <div>
+          <p class="eyebrow">Coverage view</p>
+          <p><strong id="visibleGeometryCount">—</strong> drawable candidates visible</p>
+        </div>
+        <label class="station-toggle">
+          <input id="stationToggle" type="checkbox">
+          <span aria-hidden="true"></span>
+          Show all stations
+        </label>
+      </div>
+
+      <svg id="atlasMap" class="atlas-map" role="img" aria-labelledby="mapTitle mapDescription">
+        <title id="mapTitle">Algeria bus candidate Line map</title>
+        <desc id="mapDescription">An interactive local map of collected OpenStreetMap bus Lines and Station members.</desc>
+        <defs>
+          <pattern id="mapGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0H0V40" class="map-grid-line"></path>
+          </pattern>
+        </defs>
+        <rect id="mapBackdrop" class="map-backdrop" x="-10000" y="-10000" width="20000" height="20000"></rect>
+        <rect class="map-grid" x="-10000" y="-10000" width="20000" height="20000"></rect>
+        <g id="boundaryLayer" class="boundary-layer"></g>
+        <g id="wilayaLabelLayer" class="wilaya-label-layer"></g>
+        <g id="lineLayer" class="line-layer"></g>
+        <g id="stationLayer" class="station-layer"></g>
+      </svg>
+
+      <div class="map-tools" aria-label="Map controls">
+        <button id="zoomIn" type="button" aria-label="Zoom in">+</button>
+        <button id="zoomOut" type="button" aria-label="Zoom out">−</button>
+        <button id="fitMap" type="button" aria-label="Fit visible Lines">
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M3 8V3h5M12 3h5v5M17 12v5h-5M8 17H3v-5"></path>
+          </svg>
+        </button>
+      </div>
+
+      <section class="map-legend" aria-label="Line classification legend">
+        <p>Classification</p>
+        <span><i class="legend-line urban"></i> Urban / suburban</span>
+        <span><i class="legend-line inter"></i> Inter-wilaya candidate</span>
+        <span><i class="legend-line review"></i> Cross-wilaya review</span>
+        <span><i class="legend-line unresolved"></i> Unresolved</span>
+        <span><i class="legend-line excluded"></i> Taxi excluded</span>
+      </section>
+
+      <div class="map-note">
+        <span>OSM · ODbL 1.0</span>
+        <span id="mappedDistance">—</span>
+      </div>
+
+      <article id="lineDetail" class="line-detail" hidden aria-live="polite">
+        <button id="closeDetail" class="detail-close" type="button" aria-label="Close Line details">×</button>
+        <div id="lineDetailContent"></div>
+      </article>
+    </main>
+  </div>
+
+  <script>
+/*__ARTIFACT_DATA__*/
+/*__ARTIFACT_APPLICATION__*/
+  </script>
+</body>
+</html>

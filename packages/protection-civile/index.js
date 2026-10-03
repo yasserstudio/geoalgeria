@@ -1,4 +1,4 @@
-// @geoalgeria/protection-civile — lightweight loaders for Algeria's Protection
+// @geoalgeria/protection-civile: lightweight loaders for Algeria's Protection
 // Civile (civil protection / fire & rescue) units (DGPC).
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";

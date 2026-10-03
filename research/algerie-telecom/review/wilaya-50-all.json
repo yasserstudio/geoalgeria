@@ -1,0 +1,37 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 50,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "7136cee1017a51152b32d535ce19fc4b65d43639d4228d70b22e80ae59dcecbd",
+  "count": 1,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "7136cee1017a51152b32d535ce19fc4b65d43639d4228d70b22e80ae59dcecbd:0",
+      "source_id": "148",
+      "raw": {
+        "id": "148",
+        "code_wilaya": "50",
+        "wilaya": "BORDJ BADJI MOKHTAR",
+        "commune": "BORDJ BADJI MOKHTAR/ TIMIAOUINE ",
+        "adresse": "HAI EL DJADID BORDJ BADJI MOKHTAR",
+        "type": "Agence Commerciale",
+        "latitude": "21.33092",
+        "longitude": "0.95074\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 21.33092,
+      "lng": 0.95074,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "50"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

@@ -464,7 +464,7 @@
         "name_ar": "جامعة بسكرة – محمد خيضر",
         "wilaya_code": "07",
         "commune_code": null,
-        "commune": "Biskra",
+        "commune": "Chetma",
         "lat": 34.8450582,
         "lng": 5.7473592,
         "geo_precision": "exact",
@@ -520,7 +520,7 @@
         "name_ar": "جامعة برج بوعريريج – محمد البشير الابراهيمي",
         "wilaya_code": "34",
         "commune_code": null,
-        "commune": "Belimour",
+        "commune": "El Annasseur",
         "lat": 36.037974,
         "lng": 4.8141892,
         "geo_precision": "exact",
@@ -912,7 +912,7 @@
         "name_ar": "جامعة المسيلة – محمد بوضياف",
         "wilaya_code": "28",
         "commune_code": null,
-        "commune": "M'sila",
+        "commune": "M'Sila",
         "lat": 35.7416528,
         "lng": 4.5467418,
         "geo_precision": "exact",
@@ -940,7 +940,7 @@
         "name_ar": "جامعة مصطفى اسطمبولي معسكر",
         "wilaya_code": "29",
         "commune_code": null,
-        "commune": "Mascara",
+        "commune": "El Mamounia",
         "lat": 35.4152817,
         "lng": 0.1276161,
         "geo_precision": "exact",
@@ -1276,7 +1276,7 @@
         "name_ar": "جامعة تبسة – العربي التبسي",
         "wilaya_code": "12",
         "commune_code": null,
-        "commune": "Tebessa",
+        "commune": "Tébessa",
         "lat": 35.4243876,
         "lng": 8.0760054,
         "geo_precision": "exact",
@@ -1528,7 +1528,7 @@
         "name_ar": "جامعة سكيكدة – 20 أوت 1955",
         "wilaya_code": "21",
         "commune_code": null,
-        "commune": "Hammadi Krouma",
+        "commune": "El Hadaiek",
         "lat": 36.8478191,
         "lng": 6.891858,
         "geo_precision": "exact",
@@ -1556,7 +1556,7 @@
         "name_ar": "جامعة المدية – يحي فارس",
         "wilaya_code": "26",
         "commune_code": null,
-        "commune": "Medea",
+        "commune": "Médéa",
         "lat": 36.2649519,
         "lng": 2.7976246,
         "geo_precision": "exact",
@@ -1658,8 +1658,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.715,
-          36.7164
+          3.137389,
+          36.720797
         ]
       },
       "properties": {
@@ -1669,8 +1669,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "El Harrach",
-        "lat": 36.7164,
-        "lng": 3.715,
+        "lat": 36.720797,
+        "lng": 3.137389,
         "geo_precision": "approximate",
         "geo_method": "commune",
         "source": "mesrs",
@@ -1742,8 +1742,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.715,
-          36.7164
+          3.137389,
+          36.720797
         ]
       },
       "properties": {
@@ -1753,8 +1753,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "El Harrach",
-        "lat": 36.7164,
-        "lng": 3.715,
+        "lat": 36.720797,
+        "lng": 3.137389,
         "geo_precision": "approximate",
         "geo_method": "commune",
         "source": "mesrs",
@@ -1920,7 +1920,7 @@
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
-        "commune": "Herraoua",
+        "commune": "Bordj El Bahri",
         "lat": 36.7761552,
         "lng": 3.2581993,
         "geo_precision": "exact",
@@ -2022,8 +2022,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.086474,
-          36.74413
+          3.087478,
+          36.732356
         ]
       },
       "properties": {
@@ -2033,8 +2033,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Kouba",
-        "lat": 36.74413,
-        "lng": 3.086474,
+        "lat": 36.732356,
+        "lng": 3.087478,
         "geo_precision": "approximate",
         "geo_method": "commune",
         "source": "mesrs",
@@ -2116,7 +2116,7 @@
         "name_ar": "المدرسة الوطنية العليا للبيطرة-الشهيد الربيع بوشامة",
         "wilaya_code": "16",
         "commune_code": null,
-        "commune": "Bab Ezzouar",
+        "commune": "Oued Smar",
         "lat": 36.7122437,
         "lng": 3.1694233,
         "geo_precision": "exact",
@@ -2134,8 +2134,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.715,
-          36.7164
+          3.137389,
+          36.720797
         ]
       },
       "properties": {
@@ -2145,8 +2145,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "El Harrach",
-        "lat": 36.7164,
-        "lng": 3.715,
+        "lat": 36.720797,
+        "lng": 3.137389,
         "geo_precision": "approximate",
         "geo_method": "commune",
         "source": "mesrs",
@@ -4654,8 +4654,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.086474,
-          36.74413
+          3.087478,
+          36.732356
         ]
       },
       "properties": {
@@ -4665,8 +4665,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Kouba",
-        "lat": 36.74413,
-        "lng": 3.086474,
+        "lat": 36.732356,
+        "lng": 3.087478,
         "geo_precision": "approximate",
         "geo_method": "commune",
         "source": "mesrs",

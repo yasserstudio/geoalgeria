@@ -16,7 +16,7 @@
     "type": "boutique",
     "category": "C",
     "address": "Groupe 74, Prés souk Dinar Tayeb, Adrar.",
-    "hours": "08H00 - 18H00",
+    "hours": "08H00 - 19H30",
     "code_ouverture": null
   },
   {
@@ -63,8 +63,8 @@
     "id": "02-003",
     "name": "Chlef - Chéttia",
     "wilaya_code": "02",
-    "commune_code": "0210",
-    "commune": "Ouled Fares",
+    "commune_code": "0224",
+    "commune": "Chettia",
     "lat": 36.19799,
     "lng": 1.26206,
     "geo_precision": "exact",
@@ -296,14 +296,14 @@
     "type": "boutique",
     "category": "A",
     "address": "38, Boulevard Larbi Tebessi, place Zabana, Blida.",
-    "hours": "08H00-19H30",
+    "hours": "08H00-20H00",
     "code_ouverture": "A09B001"
   },
   {
     "id": "09-002",
     "name": "Blida - Boufarik",
     "wilaya_code": "09",
-    "commune_code": "0916",
+    "commune_code": "0920",
     "commune": "Boufarik",
     "lat": 36.57347,
     "lng": 2.91213,
@@ -316,14 +316,14 @@
     "type": "boutique",
     "category": null,
     "address": "31, BOULEVARD MOUKHTARI, BOUFARIK, BLIDA.",
-    "hours": "08H00-18H00",
+    "hours": "08H00-19H00",
     "code_ouverture": null
   },
   {
     "id": "09-003",
     "name": "Larbâa - Blida",
     "wilaya_code": "09",
-    "commune_code": "0917",
+    "commune_code": "0921",
     "commune": "Larbaa",
     "lat": 36.56654,
     "lng": 3.15288,
@@ -396,7 +396,7 @@
     "type": "boutique",
     "category": "C",
     "address": "Quartier Sersouf, Tamanrasset.",
-    "hours": "08H00 -18H30",
+    "hours": "08H00 -19H30",
     "code_ouverture": null
   },
   {
@@ -404,7 +404,7 @@
     "name": "TÉBÉSSA - Djebel El Djorf",
     "wilaya_code": "12",
     "commune_code": "1201",
-    "commune": "Tebessa",
+    "commune": "Tébessa",
     "lat": 35.40069,
     "lng": 8.11718,
     "geo_precision": "exact",
@@ -556,7 +556,7 @@
     "type": "boutique",
     "category": "B+",
     "address": "Tour Ali OUARAB, Boulevard Krim Belkacem, Nouvelle Ville, Tizi Ouzou.",
-    "hours": "08H00-19H30",
+    "hours": "08H00-20H00",
     "code_ouverture": "A15B001R"
   },
   {
@@ -576,7 +576,7 @@
     "type": "boutique",
     "category": null,
     "address": "130 Boulevard Ali KHODJA , El Biar",
-    "hours": "08H00 -20H00",
+    "hours": "08H00 -20H30",
     "code_ouverture": null
   },
   {
@@ -596,7 +596,7 @@
     "type": "boutique",
     "category": "B",
     "address": "Rue Saada Larbi (Ex Gambita) Groupe 37 N° 10.",
-    "hours": "08H00 -20H00",
+    "hours": "08H00 -20H30",
     "code_ouverture": "A16B002"
   },
   {
@@ -623,8 +623,8 @@
     "id": "16-004",
     "name": "Alger - Kouba (Ex Lavigerie)",
     "wilaya_code": "16",
-    "commune_code": "1603",
-    "commune": "El Madania",
+    "commune_code": "1618",
+    "commune": "Kouba",
     "lat": 36.72947,
     "lng": 3.07893,
     "geo_precision": "exact",
@@ -636,15 +636,15 @@
     "type": "boutique",
     "category": "A",
     "address": "86, Avenue des frères Abdeslami (Ex Lavigerie), Vieux Kouba, Alger.",
-    "hours": "08H00 -20H00",
+    "hours": "08H00 -20H30",
     "code_ouverture": "A16B003"
   },
   {
     "id": "16-005",
     "name": "Alger - Audin",
     "wilaya_code": "16",
-    "commune_code": "1602",
-    "commune": "Sidi M'hamed",
+    "commune_code": "1601",
+    "commune": "Alger Centre",
     "lat": 36.76921,
     "lng": 3.05506,
     "geo_precision": "exact",
@@ -656,7 +656,7 @@
     "type": "boutique",
     "category": "A",
     "address": "23, Rue Didouche Mourad, Place Audin, Alger.",
-    "hours": "08H00 -20H00",
+    "hours": "08H00 -20H30",
     "code_ouverture": "A16B004"
   },
   {
@@ -676,14 +676,14 @@
     "type": "boutique",
     "category": "B",
     "address": "Rue Mohamed KHEMISTI N°14 & N°16 Lot N°18 propriété N°13 – Commune Dar El Beida, Alger.",
-    "hours": "08H00 -20H00",
+    "hours": "08H00 -20H30",
     "code_ouverture": "A16T033"
   },
   {
     "id": "16-007",
     "name": "Alger - Rouiba",
     "wilaya_code": "16",
-    "commune_code": "1638",
+    "commune_code": "1642",
     "commune": "Rouiba",
     "lat": 36.73778,
     "lng": 3.28249,
@@ -696,7 +696,7 @@
     "type": "boutique",
     "category": "A",
     "address": "5, Boulevard Colonel Amirouche, Rouiba, Alger.",
-    "hours": "08H00 -20H00",
+    "hours": "08H00 -20H30",
     "code_ouverture": "A16B006"
   },
   {
@@ -716,15 +716,15 @@
     "type": "boutique",
     "category": "B",
     "address": "06, Boulevard Abderrahmane Mira, BEO, Alger.",
-    "hours": "08H00 -20H00",
+    "hours": "08H00 -20H30",
     "code_ouverture": "A16B007"
   },
   {
     "id": "16-009",
     "name": "Alger - El Harrach",
     "wilaya_code": "16",
-    "commune_code": "1629",
-    "commune": "Mohammadia",
+    "commune_code": "1613",
+    "commune": "El Harrach",
     "lat": 36.72321,
     "lng": 3.14839,
     "geo_precision": "exact",
@@ -756,7 +756,7 @@
     "type": "boutique",
     "category": "B",
     "address": "C.E.M Lychly, Staouéli, Alger.",
-    "hours": "08H00 -20H00",
+    "hours": "08H00 -20H30",
     "code_ouverture": "A16B009"
   },
   {
@@ -776,7 +776,7 @@
     "type": "boutique",
     "category": "B",
     "address": "Centre commercial et des loisirs -Quartier des affaires- Bab Ezzouar, Alger.",
-    "hours": "09H00 -22H00",
+    "hours": "09H00 -23H00",
     "code_ouverture": "A16X955"
   },
   {
@@ -823,7 +823,7 @@
     "id": "16-014",
     "name": "Alger - Draria",
     "wilaya_code": "16",
-    "commune_code": "1649",
+    "commune_code": "1653",
     "commune": "Draria",
     "lat": 36.71011,
     "lng": 2.99773,
@@ -876,7 +876,7 @@
     "type": "boutique",
     "category": null,
     "address": "Rue Mohamed khider Bt:07-9 Sidi Abdellah,wilaya Alger",
-    "hours": "08H00 -20H00",
+    "hours": "08H00 -20H30",
     "code_ouverture": null
   },
   {
@@ -916,7 +916,7 @@
     "type": "boutique",
     "category": "B",
     "address": "84, Rue Sidi Naîl, Djelfa.",
-    "hours": "08H00-18H30",
+    "hours": "08H00-19H30",
     "code_ouverture": "A17B001"
   },
   {
@@ -936,7 +936,7 @@
     "type": "boutique",
     "category": null,
     "address": "Cité Colonel Si El Houasse Bloc 43 N°07,  Hassi Bahbah - Djelfa",
-    "hours": "08H00 - 18H00",
+    "hours": "08H00 - 19H00",
     "code_ouverture": null
   },
   {
@@ -1143,8 +1143,8 @@
     "id": "21-003",
     "name": "Skikda - El Harrouche",
     "wilaya_code": "21",
-    "commune_code": "2117",
-    "commune": "Zerdezas",
+    "commune_code": "2116",
+    "commune": "El Arrouch",
     "lat": 36.65245,
     "lng": 6.83603,
     "geo_precision": "exact",
@@ -1203,8 +1203,8 @@
     "id": "23-002",
     "name": "Annaba - El Bouni",
     "wilaya_code": "23",
-    "commune_code": "2311",
-    "commune": "Sidi Amar",
+    "commune_code": "2305",
+    "commune": "El Bouni",
     "lat": 36.85454,
     "lng": 7.74166,
     "geo_precision": "exact",
@@ -1303,8 +1303,8 @@
     "id": "25-004",
     "name": "Constantine - Nouvel Aéroport International",
     "wilaya_code": "25",
-    "commune_code": "2506",
-    "commune": "El Khroub",
+    "commune_code": "2501",
+    "commune": "Constantine",
     "lat": 36.283724,
     "lng": 6.622237,
     "geo_precision": "exact",
@@ -1323,8 +1323,8 @@
     "id": "25-005",
     "name": "Constantine - Ali Menjeli",
     "wilaya_code": "25",
-    "commune_code": "2510",
-    "commune": "Ain Smara",
+    "commune_code": "2506",
+    "commune": "El Khroub",
     "lat": 36.2581,
     "lng": 6.5905,
     "geo_precision": "exact",
@@ -1336,7 +1336,7 @@
     "type": "boutique",
     "category": null,
     "address": "Lotissement Ain En Baye , lot N° 65 , ville Ali Mendjli , Constantine",
-    "hours": "08H00 - 20H00",
+    "hours": "09H00 - 21H00",
     "code_ouverture": null
   },
   {
@@ -1383,8 +1383,8 @@
     "id": "25-008",
     "name": "Constantine - Ritedj MALL",
     "wilaya_code": "25",
-    "commune_code": "2510",
-    "commune": "Ain Smara",
+    "commune_code": "2506",
+    "commune": "El Khroub",
     "lat": 36.25103,
     "lng": 6.57281,
     "geo_precision": "exact",
@@ -1404,7 +1404,7 @@
     "name": "Médéa - Boukasmi El Tayeb",
     "wilaya_code": "26",
     "commune_code": "2601",
-    "commune": "Medea",
+    "commune": "Médéa",
     "lat": 36.26416,
     "lng": 2.75592,
     "geo_precision": "exact",
@@ -1416,7 +1416,7 @@
     "type": "boutique",
     "category": "B",
     "address": "06 Rue colonel Boukasmi El Tayeb, Médéa, Alger.",
-    "hours": "08H00-18H00",
+    "hours": "08H00-19H00",
     "code_ouverture": "A26B001"
   },
   {
@@ -1443,8 +1443,8 @@
     "id": "27-002",
     "name": "Mostaganem - UNO",
     "wilaya_code": "27",
-    "commune_code": "2701",
-    "commune": "Mostaganem",
+    "commune_code": "2706",
+    "commune": "Hassi Mameche",
     "lat": 35.89966,
     "lng": 0.12107,
     "geo_precision": "exact",
@@ -1464,7 +1464,7 @@
     "name": "MSILA - Promotion Neggaz",
     "wilaya_code": "28",
     "commune_code": "2801",
-    "commune": "M'sila",
+    "commune": "M'Sila",
     "lat": 35.70433,
     "lng": 4.53541,
     "geo_precision": "exact",
@@ -1576,7 +1576,7 @@
     "type": "boutique",
     "category": "C",
     "address": "Cité du 24 Février, Quartier la Silice, Ouargla.",
-    "hours": "08H00 - 18H30",
+    "hours": "08H00 - 19H30",
     "code_ouverture": "C30B003"
   },
   {
@@ -1596,7 +1596,7 @@
     "type": "boutique",
     "category": "C-",
     "address": "Cité des logements à côté de la banque Société Générale Hassi, Messaoud",
-    "hours": "08H00-18H30",
+    "hours": "08H00 -19H30",
     "code_ouverture": "C30B003"
   },
   {
@@ -1623,8 +1623,8 @@
     "id": "31-002",
     "name": "ORAN - St Hubert ex : Boulanger",
     "wilaya_code": "31",
-    "commune_code": "3105",
-    "commune": "Es Senia",
+    "commune_code": "3101",
+    "commune": "Oran",
     "lat": 35.67261,
     "lng": -0.63835,
     "geo_precision": "exact",
@@ -1643,8 +1643,8 @@
     "id": "31-003",
     "name": "ORAN AÉROPORT",
     "wilaya_code": "31",
-    "commune_code": "3117",
-    "commune": "El Kerma",
+    "commune_code": "3105",
+    "commune": "Es Senia",
     "lat": 35.62031,
     "lng": -0.60615,
     "geo_precision": "exact",
@@ -1836,7 +1836,7 @@
     "type": "boutique",
     "category": null,
     "address": "Centre-ville, Illizi",
-    "hours": "08H00 - 18H00",
+    "hours": "07H00-14H00 & 16H00 - 20H00",
     "code_ouverture": null
   },
   {
@@ -1863,8 +1863,8 @@
     "id": "35-001",
     "name": "BOUMERDES",
     "wilaya_code": "35",
-    "commune_code": "3516",
-    "commune": "Corso",
+    "commune_code": "3501",
+    "commune": "Boumerdes",
     "lat": 36.75038,
     "lng": 3.47381,
     "geo_precision": "exact",
@@ -1876,7 +1876,7 @@
     "type": "boutique",
     "category": "B",
     "address": "Cité Deriche N°24, Lot N°06, Boumerdes.",
-    "hours": "08H00-18H00",
+    "hours": "08H00-19H00",
     "code_ouverture": "A35B001"
   },
   {
@@ -1916,7 +1916,7 @@
     "type": "boutique",
     "category": "C",
     "address": "Cité El Kassabi, N°05, Tindouf.",
-    "hours": "08H30- 19H00",
+    "hours": "09H00- 20H00",
     "code_ouverture": "O37B001"
   },
   {
@@ -1956,7 +1956,7 @@
     "type": "boutique",
     "category": "B",
     "address": "Cité l'Asnam, El Oued.",
-    "hours": "08H00 -18H30",
+    "hours": "08H00 -19H30",
     "code_ouverture": "C39B001"
   },
   {
@@ -2016,7 +2016,7 @@
     "type": "boutique",
     "category": null,
     "address": "01, Rue du stade, Tipaza.",
-    "hours": "08H00-19H00",
+    "hours": "08H00-20H00",
     "code_ouverture": null
   },
   {
@@ -2043,8 +2043,8 @@
     "id": "43-001",
     "name": "Mila - Chelghoum El Aid",
     "wilaya_code": "43",
-    "commune_code": "4305",
-    "commune": "Ain Mellouk",
+    "commune_code": "4303",
+    "commune": "Chelghoum Laid",
     "lat": 36.16281,
     "lng": 6.17012,
     "geo_precision": "exact",
@@ -2096,7 +2096,7 @@
     "type": "boutique",
     "category": "B",
     "address": "Cité les frères Hadj KADDOUR LOT N° 66  Groupe propriété N° 154 Commune Ain defla, wilaya AIN DEFLA)",
-    "hours": "08H00-19H00",
+    "hours": "08H00-20H00",
     "code_ouverture": null
   },
   {
@@ -2116,7 +2116,7 @@
     "type": "boutique",
     "category": "C",
     "address": "Rue Belsaadi Abdelkader, Khemis Meliana, Aïn Defla.",
-    "hours": "08H00-18H00",
+    "hours": "08H00-19H00",
     "code_ouverture": "A44B002"
   },
   {
@@ -2216,7 +2216,7 @@
     "type": "boutique",
     "category": "B",
     "address": "Rue du 1er Novembre, Thniyet El Makhzen, Ghardaia",
-    "hours": "08H00 - 18H30",
+    "hours": "08H00 - 19H30",
     "code_ouverture": "C47B001"
   },
   {
@@ -2263,7 +2263,7 @@
     "id": "49-001",
     "name": "Timimoun",
     "wilaya_code": "49",
-    "commune_code": "0109",
+    "commune_code": "4901",
     "commune": "Timimoun",
     "lat": 29.2627,
     "lng": 0.23166,
@@ -2276,14 +2276,14 @@
     "type": "boutique",
     "category": null,
     "address": "Rue Zita Miloud, TIMIMOUN.",
-    "hours": "08h00 -18H00",
+    "hours": "07H00-14H00  & 16H30-20H30",
     "code_ouverture": null
   },
   {
     "id": "50-001",
     "name": "Bordj Badji Mokhtar - Nouvelle Ville",
     "wilaya_code": "50",
-    "commune_code": "0125",
+    "commune_code": "5001",
     "commune": "Bordj Badji Mokhtar",
     "lat": 21.328055,
     "lng": 0.954765,
@@ -2303,7 +2303,7 @@
     "id": "51-001",
     "name": "Ouled Djellal - 1er Novembre",
     "wilaya_code": "51",
-    "commune_code": "0705",
+    "commune_code": "5101",
     "commune": "Ouled Djellal",
     "lat": 34.425104,
     "lng": 5.065105,
@@ -2323,7 +2323,7 @@
     "id": "52-001",
     "name": "Béni Abbés - Aissat IDIR",
     "wilaya_code": "52",
-    "commune_code": "0807",
+    "commune_code": "5201",
     "commune": "Beni-Abbes",
     "lat": 30.131216,
     "lng": -2.168388,
@@ -2336,14 +2336,14 @@
     "type": "boutique",
     "category": null,
     "address": "Lotissement Aissat IDIR,",
-    "hours": "08H00 - 18H00",
+    "hours": "08H00 - 14H00",
     "code_ouverture": null
   },
   {
     "id": "53-001",
     "name": "In Salah - K'ser EL Mourabitine",
     "wilaya_code": "53",
-    "commune_code": "1108",
+    "commune_code": "5301",
     "commune": "Ain Salah",
     "lat": 27.195471,
     "lng": 2.479,
@@ -2356,14 +2356,14 @@
     "type": "boutique",
     "category": null,
     "address": "Lotissement AKBOUR - K'ser EL Mourabitine. In Salah",
-    "hours": "08h00 -18H00",
+    "hours": "07H00 -14H00 & 17H00-21H00",
     "code_ouverture": null
   },
   {
     "id": "54-001",
     "name": "In Guezzam - APC",
     "wilaya_code": "54",
-    "commune_code": "1104",
+    "commune_code": "5401",
     "commune": "Ain Guezzam",
     "lat": 19.569717,
     "lng": 5.772027,
@@ -2376,14 +2376,14 @@
     "type": "boutique",
     "category": null,
     "address": "Centre-Ville /APC IN Guezzam",
-    "hours": "08H00 - 18H00",
+    "hours": "08H00 - 19H30",
     "code_ouverture": null
   },
   {
     "id": "55-001",
     "name": "Touggourt",
     "wilaya_code": "55",
-    "commune_code": "3013",
+    "commune_code": "5501",
     "commune": "Touggourt",
     "lat": 33.10562,
     "lng": 6.06691,
@@ -2396,14 +2396,14 @@
     "type": "boutique",
     "category": "C",
     "address": "Place El Houria, Lot N°746, Touggourt, Ouargla.",
-    "hours": "08H00 -18H30",
+    "hours": "08H00 -14H00 & 16H00-20H00",
     "code_ouverture": "C30B004"
   },
   {
     "id": "56-001",
     "name": "Djanet - Centre Ville",
     "wilaya_code": "56",
-    "commune_code": "3302",
+    "commune_code": "5601",
     "commune": "Djanet",
     "lat": 24.553839,
     "lng": 9.486068,
@@ -2416,14 +2416,14 @@
     "type": "boutique",
     "category": null,
     "address": "Boulevard principale cité nouvelle ville IDFRI, DJANET",
-    "hours": "08H00 - 18H00",
+    "hours": "08H00 - 19H30",
     "code_ouverture": null
   },
   {
     "id": "57-001",
     "name": "EL MEGHIER - EL SAADA",
     "wilaya_code": "57",
-    "commune_code": "3927",
+    "commune_code": "5701",
     "commune": "El-M'ghaier",
     "lat": 33.950244,
     "lng": 5.925707,
@@ -2436,7 +2436,7 @@
     "type": "boutique",
     "category": null,
     "address": "Lot 425 Cité EL SAADA -En Face la poste principale. Wilaya El Mghaier",
-    "hours": "08H00 - 18H00",
+    "hours": "07H00 -14H00 & 16H00-20H00",
     "code_ouverture": null
   },
   {
@@ -2456,7 +2456,7 @@
     "type": "boutique",
     "category": null,
     "address": "Centre-Ville EL MENIAA",
-    "hours": "08H00 -18H30",
+    "hours": "08H00 -19H30",
     "code_ouverture": null
   },
   {
@@ -2476,15 +2476,15 @@
     "type": "boutique",
     "category": null,
     "address": "Ilot 23 Boulvard Emir Abdelkader, Aflou - Laghouat",
-    "hours": "08H00 - 18H00",
+    "hours": "08H00 - 19H00",
     "code_ouverture": null
   },
   {
     "id": "60-001",
     "name": "Batna - Barika",
     "wilaya_code": "60",
-    "commune_code": "0515",
-    "commune": "Azil Abedelkader",
+    "commune_code": "0542",
+    "commune": "Barika",
     "lat": 35.38422,
     "lng": 5.22912,
     "geo_precision": "exact",
@@ -2501,10 +2501,10 @@
   },
   {
     "id": "65-001",
-    "name": "Djelfa - Ain Oussara",
+    "name": "Ain Oussara",
     "wilaya_code": "65",
     "commune_code": "1731",
-    "commune": "Aïn Oussera",
+    "commune": "Aïn Ouessara",
     "lat": 35.44905,
     "lng": 2.90111,
     "geo_precision": "exact",

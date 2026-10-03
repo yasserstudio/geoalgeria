@@ -1,0 +1,125 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 69,
+  "records": [
+    {
+      "id": "node/2486619099",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        0.545314,
+        32.8971332
+      ]
+    },
+    {
+      "id": "node/3905477488",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.0528906,
+        33.0295373
+      ]
+    },
+    {
+      "id": "node/3921213251",
+      "amenity": "fuel",
+      "name": "Station Service",
+      "name_ar": "محطة خدمات",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.2448152,
+        32.3065892
+      ]
+    },
+    {
+      "id": "node/5027287465",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.5834408,
+        33.1916913
+      ]
+    },
+    {
+      "id": "node/6813299149",
+      "amenity": "fuel",
+      "name": "محطة خدمات أولاد جميلة",
+      "name_ar": "محطة خدمات أولاد جميلة",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.9066984,
+        33.6558495
+      ]
+    },
+    {
+      "id": "node/8851417336",
+      "amenity": "fuel",
+      "name": "غاز السيرات",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "GPL",
+      "operator": "SONATRACH",
+      "opening_hours": null,
+      "coordinates": [
+        0.5432032,
+        32.9098751
+      ]
+    },
+    {
+      "id": "way/240978989",
+      "amenity": "fuel",
+      "name": "محطة الوقود نافطال - Station Naftal",
+      "name_ar": "محطة الوقود نافطال",
+      "name_fr": "Station Naftal",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.5459611499999999,
+        32.90856935
+      ]
+    },
+    {
+      "id": "way/341498191",
+      "amenity": "fuel",
+      "name": "غاز السيارات",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.5432695,
+        32.90979995
+      ]
+    }
+  ]
+}

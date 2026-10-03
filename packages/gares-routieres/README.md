@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/gares-routieres)](https://www.npmjs.com/package/@geoalgeria/gares-routieres)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/gares-routieres)](https://www.npmjs.com/package/@geoalgeria/gares-routieres)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -136,9 +136,14 @@ For wilayas, dairas, and communes to join against, use the main
 ## Source
 
 Data comes from **SOGRAL – EPE SOGRAL Spa** (Société de Gestion des Gares Routières
-d'Algérie), via its live departures registry (<https://live.sogral.com>). Run
-`npm run fetch` to regenerate every output. `wilaya_code`/`commune` are resolved by
-nearest commune centroid from the `geoalgeria` dataset.
+d'Algérie). Station attributes come from the SOGRAL registry snapshot retrieved
+from `live.sogral.com` on 2026-07-01; that host is now retired. The 73 populated
+`refs.mahatati_agency` values were rechecked against the current public
+[MAHATATI](https://mahatati.sogral.com/) departure-station list on 2026-08-28
+with an exact match; In Saleh is the one station that is not a departure agency.
+Run `npm run fetch` to regenerate from the committed research snapshot; it does
+not make a live registry request. `wilaya_code`/`commune` are resolved by nearest
+commune centroid from the `geoalgeria` dataset.
 
 ## License & attribution
 

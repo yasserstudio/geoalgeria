@@ -1,0 +1,57 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "HAI EZZAHRA",
+        "code_wilaya": "55",
+        "commune": "TOUGGOURT/MEGARINE/NEZLA/SIDI SLIMANE/ZAOUIA LABIDIA/TEBESBEST",
+        "date": "2024-10-30 15:09:40",
+        "id": "523",
+        "latitude": "33.107314",
+        "longitude": "6.070920\r",
+        "type": "Agence Commerciale",
+        "wilaya": "TOUGGOURT"
+      },
+      {
+        "adresse": "TAIBAT CENTRE",
+        "code_wilaya": "55",
+        "commune": "TAIBET/BENNACEUR/M'NAGEUR",
+        "date": "2024-10-30 15:09:40",
+        "id": "524",
+        "latitude": "33.084960",
+        "longitude": "6.399821\r",
+        "type": "Point de présence",
+        "wilaya": "TOUGGOURT"
+      },
+      {
+        "adresse": "BOULVARD  MOHAMED BODIAF",
+        "code_wilaya": "55",
+        "commune": "TEMACINE/BLIDET AMOR",
+        "date": "2024-10-30 15:09:40",
+        "id": "525",
+        "latitude": "33.01284",
+        "longitude": "6.007651\r",
+        "type": "Agence Commerciale",
+        "wilaya": "TOUGGOURT"
+      },
+      {
+        "adresse": "EL-HADJIRA CENTRE VILLE ",
+        "code_wilaya": "55",
+        "commune": "EL HADJIRA/AL ALIA",
+        "date": "2024-10-30 15:09:40",
+        "id": "526",
+        "latitude": "32.617497",
+        "longitude": "5.512837\r",
+        "type": "Point de présence",
+        "wilaya": "TOUGGOURT"
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    TOUGGOURT</b> ",
+    "resultat": "ok",
+    "wilaya": "TOUGGOURT"
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 55
+}

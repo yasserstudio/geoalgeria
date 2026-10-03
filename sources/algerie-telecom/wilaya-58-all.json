@@ -1,0 +1,35 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "RUE DES MOUDJAHIDINE ",
+        "code_wilaya": "58",
+        "commune": "EL MENIAA/ HASSI EL GARA",
+        "date": "2024-10-30 15:09:40",
+        "id": "220",
+        "latitude": " 30.581344",
+        "longitude": "  2.883583\r",
+        "type": "Agence Commerciale",
+        "wilaya": "EL MENIAA"
+      },
+      {
+        "adresse": "CENTRE- VILLE",
+        "code_wilaya": "58",
+        "commune": " HASSI EL FEHAL",
+        "date": "2024-10-30 15:09:40",
+        "id": "221",
+        "latitude": " 31.604629",
+        "longitude": "  3.678470\r",
+        "type": "Point de présence",
+        "wilaya": "EL MENIAA"
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    EL MENIAA</b> ",
+    "resultat": "ok",
+    "wilaya": "EL MENIAA"
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 58
+}

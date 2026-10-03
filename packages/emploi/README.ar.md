@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/emploi)](https://www.npmjs.com/package/@geoalgeria/emploi)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/emploi)](https://www.npmjs.com/package/@geoalgeria/emploi)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -131,7 +131,10 @@ data/
 مدمجة في حزمة JavaScript الخاصة بالبوابة. شغّل `npm run fetch` لإعادة توليد جميع
 المخرجات: يعيد اكتشاف الحزمة الحالية، يستخرج مجموعتي البيانات، يصحح انعكاس
 `X`=lat / `Y`=lng في المصدر، ويُوحّد أكواد الولايات. تصنّف ANEM الوكالات وفق
-**نظام 58 ولاية**، لذا تظهر الولايات الجديدة 59-69 حالياً تحت ولايتها الأم.
+**نظام 58 ولاية**. وعندما يضع عنوان الوكالة وإحداثيتها كلاهما في بلدية نقلها إصلاح 2026،
+ينشر تصحيح مُراجَع في `quality/overrides/emploi.json` الولاية الحالية (59-69) والبلدية
+المُستمد منها؛ وتعيد إعادة التوليد تطبيقه وتتوقف إذا تغيّرت قيمة ANEM نفسها. صُحّحت 17
+وكالة ALEM بهذه الطريقة، أما الباقي فلا يزال يظهر تحت ولايته الأم.
 
 ## الترخيص والإسناد
 

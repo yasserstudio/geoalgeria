@@ -4,7 +4,7 @@
   "name": "Algeria delivery stop-desks",
   "alternateName": "Points relais de livraison d'Algérie",
   "identifier": "@geoalgeria/livraison",
-  "description": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists — 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+  "description": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
   "conditionsOfAccess": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
   "isAccessibleForFree": true,
   "creator": {
@@ -69,10 +69,10 @@
   "url": "https://geoalgeria.com",
   "sameAs": "https://github.com/yasserstudio/geoalgeria",
   "citation": [
-    "Yalidine Express — nos-agences — Data © Yalidine Express; redistributed for reference",
-    "Guepex — public agences feed — Data © Guepex; redistributed for reference",
-    "Anderson Logistics — agency directory — Data © Anderson Logistics; redistributed for reference",
-    "Noest Express — bureaux directory — Data © Noest Express; redistributed for reference",
-    "Maystro Delivery — coverage page — Data © Maystro Delivery; redistributed for reference"
+    "Yalidine Express: nos-agences, Data © Yalidine Express; redistributed for reference",
+    "Guepex: public agences feed, Data © Guepex; redistributed for reference",
+    "Anderson Logistics: agency directory, Data © Anderson Logistics; redistributed for reference",
+    "Noest Express: bureaux directory, Data © Noest Express; redistributed for reference",
+    "Maystro Delivery: coverage page, Data © Maystro Delivery; redistributed for reference"
   ]
 }

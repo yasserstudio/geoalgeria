@@ -1,0 +1,195 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 61,
+  "records": [
+    {
+      "id": "node/3450728773",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.659111,
+        34.9353041
+      ]
+    },
+    {
+      "id": "node/4242712089",
+      "amenity": "fuel",
+      "name": "Station El Kantara",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.7030201,
+        35.2088801
+      ]
+    },
+    {
+      "id": "node/4326815264",
+      "amenity": "fuel",
+      "name": "Petro Baraka",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.6055506,
+        35.1096287
+      ]
+    },
+    {
+      "id": "node/4383601297",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": "Station",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.6124739,
+        35.1278944
+      ]
+    },
+    {
+      "id": "node/4464849414",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.6125402,
+        35.1233129
+      ]
+    },
+    {
+      "id": "node/4888918621",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.6035855,
+        35.0245321
+      ]
+    },
+    {
+      "id": "node/6032571685",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.6885272,
+        35.2068616
+      ]
+    },
+    {
+      "id": "node/6251236135",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.7922921,
+        35.060905
+      ]
+    },
+    {
+      "id": "node/6637648948",
+      "amenity": "fuel",
+      "name": "Station service Barbari",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.6808685,
+        34.9227811
+      ]
+    },
+    {
+      "id": "way/288373564",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.69390135,
+        35.19846795
+      ]
+    },
+    {
+      "id": "way/288534411",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.58587115,
+        35.0422652
+      ]
+    },
+    {
+      "id": "way/288561959",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.6809352,
+        34.92275085
+      ]
+    },
+    {
+      "id": "way/315665590",
+      "amenity": "fuel",
+      "name": "Station Service",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.65926135,
+        34.93519125
+      ]
+    }
+  ]
+}

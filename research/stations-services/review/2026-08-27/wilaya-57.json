@@ -1,0 +1,605 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-57",
+    "wilaya_code": 57,
+    "name": "El M'Ghair",
+    "name_ar": "المغير",
+    "center": [
+      5.665,
+      33.958
+    ],
+    "bounds": [
+      5.183,
+      33.405,
+      6.147,
+      34.511
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 14,
+    "osm_records": 9,
+    "tariki_records": 11,
+    "cross_source": 6,
+    "multiple_tariki": 0,
+    "osm_only": 3,
+    "tariki_only": 5,
+    "nearby_osm_pairs": 0,
+    "conflicts": 5
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-1121",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12955",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3102",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4902",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-94",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-2923744108",
+      "coordinates": [
+        5.913307,
+        34.2380864
+      ],
+      "osm": {
+        "id": "node/2923744108",
+        "name": "Station Service NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.913307,
+          34.2380864
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1125",
+          "route_id": "3499",
+          "name_fr": "Station de services GMARI",
+          "name_ar": "محطة الخدمات قماري",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            5.913,
+            34.238
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 57,
+          "wilaya_fr": "El M'Ghair",
+          "wilaya_ar": "المغير",
+          "offset_m": 30
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service NAFTAL",
+      "display_name_ar": "محطة الخدمات قماري"
+    },
+    {
+      "id": "osm-node-4247637654",
+      "coordinates": [
+        5.9097778,
+        33.951471
+      ],
+      "osm": {
+        "id": "node/4247637654",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.9097778,
+          33.951471
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2484",
+          "route_id": "3329",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة الوقود نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.909,
+            33.951
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 57,
+          "wilaya_fr": "El M'Ghair",
+          "wilaya_ar": "المغير",
+          "offset_m": 89
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-4247637704",
+      "coordinates": [
+        5.9213069,
+        33.9370338
+      ],
+      "osm": {
+        "id": "node/4247637704",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9213069,
+          33.9370338
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5529001273",
+      "coordinates": [
+        5.9203678,
+        34.2627535
+      ],
+      "osm": {
+        "id": "node/5529001273",
+        "name": "محطة وقود نفطال",
+        "name_ar": "محطة وقود نفطال",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          5.9203678,
+          34.2627535
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1124",
+          "route_id": "3499",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.92,
+            34.262
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 57,
+          "wilaya_fr": "El M'Ghair",
+          "wilaya_ar": "المغير",
+          "offset_m": 90
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود نفطال"
+    },
+    {
+      "id": "osm-node-6335068682",
+      "coordinates": [
+        5.9823386,
+        33.5561192
+      ],
+      "osm": {
+        "id": "node/6335068682",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9823386,
+          33.5561192
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1152",
+          "route_id": "3555",
+          "name_fr": "Station de services Elguerouf",
+          "name_ar": "محطة خدمات القروف",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.982,
+            33.556
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 57,
+          "wilaya_fr": "El M'Ghair",
+          "wilaya_ar": "المغير",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Elguerouf",
+      "display_name_ar": "محطة خدمات القروف"
+    },
+    {
+      "id": "osm-node-6940003219",
+      "coordinates": [
+        5.9882347,
+        33.5425463
+      ],
+      "osm": {
+        "id": "node/6940003219",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9882347,
+          33.5425463
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1173430094",
+      "coordinates": [
+        5.8061012000000005,
+        34.17458145
+      ],
+      "osm": {
+        "id": "way/1173430094",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.8061012000000005,
+          34.17458145
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12959",
+          "route_id": "17793",
+          "name_fr": null,
+          "name_ar": null,
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.807,
+            34.174
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 57,
+          "wilaya_fr": "El M'Ghair",
+          "wilaya_ar": "المغير",
+          "offset_m": 105
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-288838340",
+      "coordinates": [
+        5.915606049999999,
+        33.94652775
+      ],
+      "osm": {
+        "id": "way/288838340",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.915606049999999,
+          33.94652775
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-288902352",
+      "coordinates": [
+        5.985235449999999,
+        33.49748905
+      ],
+      "osm": {
+        "id": "way/288902352",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.985235449999999,
+          33.49748905
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1237",
+          "route_id": "3699",
+          "name_fr": "Station de services Masseoudi",
+          "name_ar": "محطة خدمات مسعودي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.985,
+            33.498
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 57,
+          "wilaya_fr": "El M'Ghair",
+          "wilaya_ar": "المغير",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Masseoudi",
+      "display_name_ar": "محطة خدمات مسعودي"
+    },
+    {
+      "id": "tariki-1121",
+      "coordinates": [
+        5.92,
+        33.935
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1121",
+          "route_id": "3329",
+          "name_fr": "Station de services BOUZEGAG",
+          "name_ar": "محطة بوزقاق( قيد الاشغال )",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.92,
+            33.935
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 57,
+          "wilaya_fr": "El M'Ghair",
+          "wilaya_ar": "المغير",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOUZEGAG",
+      "display_name_ar": "محطة بوزقاق( قيد الاشغال )"
+    },
+    {
+      "id": "tariki-12955",
+      "coordinates": [
+        5.8076,
+        34.1754
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12955",
+          "route_id": "17791",
+          "name_fr": null,
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            5.8076,
+            34.1754
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 57,
+          "wilaya_fr": "El M'Ghair",
+          "wilaya_ar": "المغير",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة الوقود",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "tariki-3102",
+      "coordinates": [
+        5.99,
+        33.539
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3102",
+          "route_id": "3555",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.99,
+            33.539
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 57,
+          "wilaya_fr": "El M'Ghair",
+          "wilaya_ar": "المغير",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "tariki-4902",
+      "coordinates": [
+        5.342,
+        34.402
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4902",
+          "route_id": "9571",
+          "name_fr": "Station de services guidom Sahraoui",
+          "name_ar": "محطة قيدوم صحراوي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            5.342,
+            34.402
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 57,
+          "wilaya_fr": "El M'Ghair",
+          "wilaya_ar": "المغير",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services guidom Sahraoui",
+      "display_name_ar": "محطة قيدوم صحراوي"
+    },
+    {
+      "id": "tariki-94",
+      "coordinates": [
+        5.808,
+        34.175
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "94",
+          "route_id": "512",
+          "name_fr": null,
+          "name_ar": "مفترق الطرق الوطنية رقم 03 و46 أ",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            5.808,
+            34.175
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 57,
+          "wilaya_fr": "El M'Ghair",
+          "wilaya_ar": "المغير",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "مفترق الطرق الوطنية رقم 03 و46 أ",
+      "display_name_ar": "مفترق الطرق الوطنية رقم 03 و46 أ"
+    }
+  ]
+}

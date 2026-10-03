@@ -1,0 +1,60 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 58,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "e53f076a32287fe158109a64cb04935bd0e849324f3be84b26a57e922ab4d1fa",
+  "count": 2,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "e53f076a32287fe158109a64cb04935bd0e849324f3be84b26a57e922ab4d1fa:0",
+      "source_id": "220",
+      "raw": {
+        "id": "220",
+        "code_wilaya": "58",
+        "wilaya": "EL MENIAA",
+        "commune": "EL MENIAA/ HASSI EL GARA",
+        "adresse": "RUE DES MOUDJAHIDINE ",
+        "type": "Agence Commerciale",
+        "latitude": " 30.581344",
+        "longitude": "  2.883583\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 30.581344,
+      "lng": 2.883583,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "58"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "e53f076a32287fe158109a64cb04935bd0e849324f3be84b26a57e922ab4d1fa:1",
+      "source_id": "221",
+      "raw": {
+        "id": "221",
+        "code_wilaya": "58",
+        "wilaya": "EL MENIAA",
+        "commune": " HASSI EL FEHAL",
+        "adresse": "CENTRE- VILLE",
+        "type": "Point de présence",
+        "latitude": " 31.604629",
+        "longitude": "  3.678470\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 31.604629,
+      "lng": 3.67847,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "58"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

@@ -1,0 +1,152 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 52,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "20eb14538768e4521798bad845800e9a905643ffc4f095cf33f9242a748f0aa8",
+  "count": 6,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "20eb14538768e4521798bad845800e9a905643ffc4f095cf33f9242a748f0aa8:0",
+      "source_id": "122",
+      "raw": {
+        "id": "122",
+        "code_wilaya": "52",
+        "wilaya": "BENI ABBES",
+        "commune": "  BENI ABBES ",
+        "adresse": "RUE EMIR ABDELKADER BENI ABBES ",
+        "type": "Agence Commerciale",
+        "latitude": "30,127966",
+        "longitude": "-2,169652\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 30.127966,
+      "lng": -2.169652,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "52"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "20eb14538768e4521798bad845800e9a905643ffc4f095cf33f9242a748f0aa8:1",
+      "source_id": "123",
+      "raw": {
+        "id": "123",
+        "code_wilaya": "52",
+        "wilaya": "BENI ABBES",
+        "commune": "  IGLI",
+        "adresse": "LA PLACE NACER IGLI /BENI ABBES ",
+        "type": "Point de présence",
+        "latitude": "30,453702",
+        "longitude": "-2,291642\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 30.453702,
+      "lng": -2.291642,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "52"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "20eb14538768e4521798bad845800e9a905643ffc4f095cf33f9242a748f0aa8:2",
+      "source_id": "124",
+      "raw": {
+        "id": "124",
+        "code_wilaya": "52",
+        "wilaya": "BENI ABBES",
+        "commune": "  EL OUATA  /   TAMTERT",
+        "adresse": "NOUVELLE VILLE EL OUATA / BENI ABBES ",
+        "type": "Point de présence",
+        "latitude": "29,857883",
+        "longitude": "-1,851207\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 29.857883,
+      "lng": -1.851207,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "52"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "20eb14538768e4521798bad845800e9a905643ffc4f095cf33f9242a748f0aa8:3",
+      "source_id": "125",
+      "raw": {
+        "id": "125",
+        "code_wilaya": "52",
+        "wilaya": "BENI ABBES",
+        "commune": "  KERZAZ  /  BENI IKHLEF  /   TIMOUDI",
+        "adresse": "CENTRE VILLE KERZAZ / BENI ABBES ",
+        "type": "Point de présence",
+        "latitude": "29,463231",
+        "longitude": "-1,439279\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 29.463231,
+      "lng": -1.439279,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "52"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "20eb14538768e4521798bad845800e9a905643ffc4f095cf33f9242a748f0aa8:4",
+      "source_id": "126",
+      "raw": {
+        "id": "126",
+        "code_wilaya": "52",
+        "wilaya": "BENI ABBES",
+        "commune": "  OULED KHODEIR  /   KSABI",
+        "adresse": "CENTRE OULED KHODEIR /  BENI ABBES ",
+        "type": "Point de présence",
+        "latitude": "29,250112",
+        "longitude": "-1,072701\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 29.250112,
+      "lng": -1.072701,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "52"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "20eb14538768e4521798bad845800e9a905643ffc4f095cf33f9242a748f0aa8:5",
+      "source_id": "127",
+      "raw": {
+        "id": "127",
+        "code_wilaya": "52",
+        "wilaya": "BENI ABBES",
+        "commune": "  TABELBALA",
+        "adresse": "CENTRE VILLE TABLBALA ",
+        "type": "Point de présence",
+        "latitude": "29,405323",
+        "longitude": "-3,259319\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 29.405323,
+      "lng": -3.259319,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "52"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

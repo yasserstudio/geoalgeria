@@ -1,0 +1,1111 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-38",
+    "wilaya_code": 38,
+    "name": "Tissemsilt",
+    "name_ar": "تيسمسيلت",
+    "center": [
+      1.7850000000000001,
+      35.786
+    ],
+    "bounds": [
+      1.257,
+      35.537,
+      2.313,
+      36.035
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 23,
+    "osm_records": 18,
+    "tariki_records": 22,
+    "cross_source": 10,
+    "multiple_tariki": 3,
+    "osm_only": 5,
+    "tariki_only": 5,
+    "nearby_osm_pairs": 2,
+    "conflicts": 11
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3418576618",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4311734445",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4661347689",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5255414722",
+      "reasons": [
+        "multiple-tariki",
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5255414723",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-431960339",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13738",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3908",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-579",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6323",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6373",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-3169354884",
+      "coordinates": [
+        1.8235524,
+        35.6134888
+      ],
+      "osm": {
+        "id": "node/3169354884",
+        "name": "Station d'éssence route d'Alger",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": "24/7",
+        "coordinates": [
+          1.8235524,
+          35.6134888
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6322",
+          "route_id": "7487",
+          "name_fr": "station d'essence route d'alger",
+          "name_ar": "محطة توزيع الوقود طريق الجزائر",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.824,
+            35.613
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 68
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station d'éssence route d'Alger",
+      "display_name_ar": "محطة توزيع الوقود طريق الجزائر"
+    },
+    {
+      "id": "osm-node-3418576618",
+      "coordinates": [
+        1.6172068,
+        35.8477125
+      ],
+      "osm": {
+        "id": "node/3418576618",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.6172068,
+          35.8477125
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3935",
+          "route_id": "552",
+          "name_fr": "Station de services  3823",
+          "name_ar": "محطة خدمات لاجيدي 3823",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.6172,
+            35.8478
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 10
+        },
+        {
+          "id": "13440",
+          "route_id": "6490",
+          "name_fr": "STATION NAFTAL",
+          "name_ar": "محطة خدمات البنزين نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.617,
+            35.847
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 81
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات لاجيدي 3823"
+    },
+    {
+      "id": "osm-node-4235765693",
+      "coordinates": [
+        1.8084359,
+        35.6144279
+      ],
+      "osm": {
+        "id": "node/4235765693",
+        "name": "Station service e Abrousse",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.8084359,
+          35.6144279
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6325",
+          "route_id": "7487",
+          "name_fr": "station d'essence ABROUSSE",
+          "name_ar": "محطة توزيع الوقود عبروس",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.809,
+            35.614
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 70
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service e Abrousse",
+      "display_name_ar": "محطة توزيع الوقود عبروس"
+    },
+    {
+      "id": "osm-node-4311729781",
+      "coordinates": [
+        1.8591956,
+        35.6837201
+      ],
+      "osm": {
+        "id": "node/4311729781",
+        "name": "RATIAT KADOUR",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.8591956,
+          35.6837201
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2362",
+          "route_id": "5689",
+          "name_fr": "Station de services RATAAT KADOUR",
+          "name_ar": "رتعات قدور",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.859,
+            35.6836
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "RATIAT KADOUR",
+      "display_name_ar": "رتعات قدور"
+    },
+    {
+      "id": "osm-node-4311729782",
+      "coordinates": [
+        1.9868128,
+        35.6924154
+      ],
+      "osm": {
+        "id": "node/4311729782",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "bel hocine aissa.",
+        "opening_hours": null,
+        "coordinates": [
+          1.9868128,
+          35.6924154
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4389",
+          "route_id": "8928",
+          "name_fr": "Station de services Belhocine Aissa",
+          "name_ar": "بلحسين عيسى",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.987,
+            35.692
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "بلحسين عيسى"
+    },
+    {
+      "id": "osm-node-4311734445",
+      "coordinates": [
+        1.9557557,
+        35.6642618
+      ],
+      "osm": {
+        "id": "node/4311734445",
+        "name": "station d essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.9557557,
+          35.6642618
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-431960339",
+          "offset_m": 11
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "station d essence",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4311821564",
+      "coordinates": [
+        1.8212158,
+        35.589019
+      ],
+      "osm": {
+        "id": "node/4311821564",
+        "name": "Station-Service Belakam Bouamara.",
+        "name_ar": "محطة خدمات",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.8212158,
+          35.589019
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6333",
+          "route_id": "7581",
+          "name_fr": "Station de services Belakam Bouamara",
+          "name_ar": "محطة توزيع البنزين بلقام بوعمارة",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.821,
+            35.589
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 20
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-Service Belakam Bouamara.",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-4610327861",
+      "coordinates": [
+        1.5587407,
+        35.7203363
+      ],
+      "osm": {
+        "id": "node/4610327861",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.5587407,
+          35.7203363
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2463",
+          "route_id": "5880",
+          "name_fr": "Station de services DAHMAN",
+          "name_ar": "محطة دحمان",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.559,
+            35.72
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 44
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services DAHMAN",
+      "display_name_ar": "محطة دحمان"
+    },
+    {
+      "id": "osm-node-4610760352",
+      "coordinates": [
+        1.5487134,
+        35.7351471
+      ],
+      "osm": {
+        "id": "node/4610760352",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.5487134,
+          35.7351471
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6356",
+          "route_id": "5880",
+          "name_fr": "station challal abdekader",
+          "name_ar": "محطة شعلال عبد القادر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.549,
+            35.735
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station challal abdekader",
+      "display_name_ar": "محطة شعلال عبد القادر"
+    },
+    {
+      "id": "osm-node-4661346290",
+      "coordinates": [
+        2.0281067,
+        35.8757613
+      ],
+      "osm": {
+        "id": "node/4661346290",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.0281067,
+          35.8757613
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4661347589",
+      "coordinates": [
+        2.0279755,
+        35.8762787
+      ],
+      "osm": {
+        "id": "node/4661347589",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.0279755,
+          35.8762787
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4399",
+          "route_id": "8997",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة البنزين نفطال",
+          "services": [
+            "fuel",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.027,
+            35.876
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 93
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة البنزين نفطال"
+    },
+    {
+      "id": "osm-node-4661347689",
+      "coordinates": [
+        2.0285031,
+        35.8618882
+      ],
+      "osm": {
+        "id": "node/4661347689",
+        "name": "GBS",
+        "name_ar": null,
+        "name_fr": "GBS",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.0285031,
+          35.8618882
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4401",
+          "route_id": "9000",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة البنزين نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.0281,
+            35.8618
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 38
+        },
+        {
+          "id": "6301",
+          "route_id": "9008",
+          "name_fr": "Groupe Belhocine",
+          "name_ar": "مجموعة بلحسين للخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.0287,
+            35.8619
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 18
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "GBS",
+      "display_name_ar": "محطة البنزين نفطال"
+    },
+    {
+      "id": "osm-node-5255414722",
+      "coordinates": [
+        1.6114248,
+        35.8575681
+      ],
+      "osm": {
+        "id": "node/5255414722",
+        "name": "القروي",
+        "name_ar": "القروي",
+        "name_fr": "Station karwi",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.6114248,
+          35.8575681
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3932",
+          "route_id": "552",
+          "name_fr": "Station de services Baghdad Aissa",
+          "name_ar": "محطة خدمات بغداد عيسى",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.611,
+            35.857
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 74
+        },
+        {
+          "id": "3934",
+          "route_id": "552",
+          "name_fr": "Station de services Lachmi Serbah",
+          "name_ar": "محطة خدمات لاشمي سرباح",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.612,
+            35.857
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 82
+        },
+        {
+          "id": "13439",
+          "route_id": "6490",
+          "name_fr": "STATION LACHEMI AZEDDINE",
+          "name_ar": "محطة البنزين لاشمي عز الدين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.611,
+            35.857
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 74
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5255414723",
+          "offset_m": 49
+        }
+      ],
+      "source_state": "multiple-tariki",
+      "display_name": "Station karwi",
+      "display_name_ar": "القروي"
+    },
+    {
+      "id": "osm-node-5255414723",
+      "coordinates": [
+        1.6117093,
+        35.857948
+      ],
+      "osm": {
+        "id": "node/5255414723",
+        "name": "بغداد",
+        "name_ar": "بغداد",
+        "name_fr": "Station baghdad",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.6117093,
+          35.857948
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13438",
+          "route_id": "6490",
+          "name_fr": "STATION BAGHDAD ISSA",
+          "name_ar": "محطة البنزين بغداد عيسى",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.612,
+            35.858
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5255414722",
+          "offset_m": 49
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station baghdad",
+      "display_name_ar": "بغداد"
+    },
+    {
+      "id": "osm-way-259235891",
+      "coordinates": [
+        2.25542075,
+        35.861524450000005
+      ],
+      "osm": {
+        "id": "way/259235891",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.25542075,
+          35.861524450000005
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-308365166",
+      "coordinates": [
+        1.7776697,
+        35.60184445
+      ],
+      "osm": {
+        "id": "way/308365166",
+        "name": "station d'essence Halla",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.7776697,
+          35.60184445
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3700",
+          "route_id": "7487",
+          "name_fr": "Station de services  Alla",
+          "name_ar": "محطة توزيع الوقود علة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.778,
+            35.602
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": 35
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station d'essence Halla",
+      "display_name_ar": "محطة توزيع الوقود علة"
+    },
+    {
+      "id": "osm-way-431960339",
+      "coordinates": [
+        1.9558369,
+        35.66418555
+      ],
+      "osm": {
+        "id": "way/431960339",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.9558369,
+          35.66418555
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4311734445",
+          "offset_m": 11
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-806993262",
+      "coordinates": [
+        1.7959665500000002,
+        35.6028984
+      ],
+      "osm": {
+        "id": "way/806993262",
+        "name": "محطة خدمة نفطال",
+        "name_ar": "محطة خدمة نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          1.7959665500000002,
+          35.6028984
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمة نفطال",
+      "display_name_ar": "محطة خدمة نفطال"
+    },
+    {
+      "id": "tariki-13738",
+      "coordinates": [
+        1.339,
+        35.712
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13738",
+          "route_id": "7016",
+          "name_fr": "محطة الخدمات الملعب",
+          "name_ar": "محطة الخدمات رقيق",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.339,
+            35.712
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة الخدمات الملعب",
+      "display_name_ar": "محطة الخدمات رقيق"
+    },
+    {
+      "id": "tariki-3908",
+      "coordinates": [
+        2.252,
+        35.859
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3908",
+          "route_id": "8011",
+          "name_fr": "gbs",
+          "name_ar": "gbs",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.252,
+            35.859
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "gbs",
+      "display_name_ar": "gbs"
+    },
+    {
+      "id": "tariki-579",
+      "coordinates": [
+        1.955,
+        35.663
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "579",
+          "route_id": "1890",
+          "name_fr": "station de services commune khemisti",
+          "name_ar": "محطة بنزين مخرج بلدية خميستي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.955,
+            35.663
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services commune khemisti",
+      "display_name_ar": "محطة بنزين مخرج بلدية خميستي"
+    },
+    {
+      "id": "tariki-6323",
+      "coordinates": [
+        1.624,
+        35.814
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6323",
+          "route_id": "11135",
+          "name_fr": "Station de services TAMLAHT",
+          "name_ar": "محطة تملاحت",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.624,
+            35.814
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services TAMLAHT",
+      "display_name_ar": "محطة تملاحت"
+    },
+    {
+      "id": "tariki-6373",
+      "coordinates": [
+        1.569,
+        35.922
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6373",
+          "route_id": "7970",
+          "name_fr": "station de services Belhoucine",
+          "name_ar": "محطة خدمات بلحوسين",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            1.569,
+            35.922
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 38,
+          "wilaya_fr": "Tissemsilt",
+          "wilaya_ar": "تيسمسيلت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Belhoucine",
+      "display_name_ar": "محطة خدمات بلحوسين"
+    }
+  ]
+}

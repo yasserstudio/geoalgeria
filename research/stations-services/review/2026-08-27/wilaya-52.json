@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-52",
+    "wilaya_code": 52,
+    "name": "Béni Abbès",
+    "name_ar": "بني عباس",
+    "center": [
+      -2.558,
+      29.0905
+    ],
+    "bounds": [
+      -5.5,
+      27.301,
+      0.384,
+      30.88
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 9,
+    "osm_records": 8,
+    "tariki_records": 5,
+    "cross_source": 4,
+    "multiple_tariki": 0,
+    "osm_only": 4,
+    "tariki_only": 1,
+    "nearby_osm_pairs": 1,
+    "conflicts": 3
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3978096729",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-394921036",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9937",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-3163378791",
+      "coordinates": [
+        -1.4913035,
+        29.4799049
+      ],
+      "osm": {
+        "id": "node/3163378791",
+        "name": "محطة البنزين بربوشي",
+        "name_ar": "محطة البنزين بربوشي",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          -1.4913035,
+          29.4799049
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12064",
+          "route_id": "9682",
+          "name_fr": "station service ets barouchi kerzaz",
+          "name_ar": "محطة الخدمات بربوشي خدمات كرزاز",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.491,
+            29.48
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 52,
+          "wilaya_fr": "Béni Abbès",
+          "wilaya_ar": "بني عباس",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة البنزين بربوشي",
+      "display_name_ar": "محطة البنزين بربوشي"
+    },
+    {
+      "id": "osm-node-3754732477",
+      "coordinates": [
+        -3.2619152,
+        29.40725
+      ],
+      "osm": {
+        "id": "node/3754732477",
+        "name": "محطة وقود أحمد كدا",
+        "name_ar": "محطة وقود أحمد كدا",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "أحمد كدا",
+        "opening_hours": null,
+        "coordinates": [
+          -3.2619152,
+          29.40725
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9317",
+          "route_id": "13002",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -3.2619,
+            29.4072
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 52,
+          "wilaya_fr": "Béni Abbès",
+          "wilaya_ar": "بني عباس",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة وقود أحمد كدا",
+      "display_name_ar": "محطة وقود أحمد كدا"
+    },
+    {
+      "id": "osm-node-3978096729",
+      "coordinates": [
+        -2.2436949,
+        30.012331
+      ],
+      "osm": {
+        "id": "node/3978096729",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "station service NAFTAL",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.2436949,
+          30.012331
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-394921036",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "station service NAFTAL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4010123028",
+      "coordinates": [
+        -2.1791095,
+        30.1223446
+      ],
+      "osm": {
+        "id": "node/4010123028",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.1791095,
+          30.1223446
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8153",
+          "route_id": "12053",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.1791,
+            30.1223
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 52,
+          "wilaya_fr": "Béni Abbès",
+          "wilaya_ar": "بني عباس",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-node-4456100891",
+      "coordinates": [
+        -1.4403115,
+        29.4547962
+      ],
+      "osm": {
+        "id": "node/4456100891",
+        "name": "محطة البنزين نفطال",
+        "name_ar": "محطة البنزين نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          -1.4403115,
+          29.4547962
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12063",
+          "route_id": "9682",
+          "name_fr": "station de services NAFTAL KERZAZ",
+          "name_ar": "محطة الخدمات نفطال كرزاز",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            -1.441,
+            29.454
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 52,
+          "wilaya_fr": "Béni Abbès",
+          "wilaya_ar": "بني عباس",
+          "offset_m": 111
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة البنزين نفطال",
+      "display_name_ar": "محطة البنزين نفطال"
+    },
+    {
+      "id": "osm-node-4578026638",
+      "coordinates": [
+        -2.2996255,
+        30.4689881
+      ],
+      "osm": {
+        "id": "node/4578026638",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -2.2996255,
+          30.4689881
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6910595587",
+      "coordinates": [
+        -4.0095383,
+        29.773741
+      ],
+      "osm": {
+        "id": "node/6910595587",
+        "name": "محطة بنزين بولعظام",
+        "name_ar": "برشمة تبلبالا",
+        "name_fr": "Station d'essence boulaadam",
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          -4.0095383,
+          29.773741
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station d'essence boulaadam",
+      "display_name_ar": "برشمة تبلبالا"
+    },
+    {
+      "id": "osm-way-394921036",
+      "coordinates": [
+        -2.2436546,
+        30.012255699999997
+      ],
+      "osm": {
+        "id": "way/394921036",
+        "name": "المحطة الوقود نفطال",
+        "name_ar": "المحطة الوقود نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -2.2436546,
+          30.012255699999997
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3978096729",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "المحطة الوقود نفطال"
+    },
+    {
+      "id": "tariki-9937",
+      "coordinates": [
+        -1.85,
+        29.8566
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9937",
+          "route_id": "14768",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            -1.85,
+            29.8566
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 52,
+          "wilaya_fr": "Béni Abbès",
+          "wilaya_ar": "بني عباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة بنزين"
+    }
+  ]
+}

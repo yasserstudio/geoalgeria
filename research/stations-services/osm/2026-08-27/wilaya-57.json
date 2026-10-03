@@ -1,0 +1,139 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 57,
+  "records": [
+    {
+      "id": "node/2923744108",
+      "amenity": "fuel",
+      "name": "Station Service NAFTAL",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        5.913307,
+        34.2380864
+      ]
+    },
+    {
+      "id": "node/4247637654",
+      "amenity": "fuel",
+      "name": "نفطال",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        5.9097778,
+        33.951471
+      ]
+    },
+    {
+      "id": "node/4247637704",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.9213069,
+        33.9370338
+      ]
+    },
+    {
+      "id": "node/5529001273",
+      "amenity": "fuel",
+      "name": "محطة وقود نفطال",
+      "name_ar": "محطة وقود نفطال",
+      "name_fr": "Naftal",
+      "brand": null,
+      "operator": "نفطال",
+      "opening_hours": "24/7",
+      "coordinates": [
+        5.9203678,
+        34.2627535
+      ]
+    },
+    {
+      "id": "node/6335068682",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.9823386,
+        33.5561192
+      ]
+    },
+    {
+      "id": "node/6940003219",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.9882347,
+        33.5425463
+      ]
+    },
+    {
+      "id": "way/1173430094",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.8061012000000005,
+        34.17458145
+      ]
+    },
+    {
+      "id": "way/288838340",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.915606049999999,
+        33.94652775
+      ]
+    },
+    {
+      "id": "way/288902352",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        5.985235449999999,
+        33.49748905
+      ]
+    }
+  ]
+}

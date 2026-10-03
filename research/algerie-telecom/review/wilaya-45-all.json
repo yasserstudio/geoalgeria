@@ -1,0 +1,152 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 45,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "44507339d597c5c269ce89c89dbde048c9ff8a6ec21e7e8a3021edfb8286bda0",
+  "count": 6,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "44507339d597c5c269ce89c89dbde048c9ff8a6ec21e7e8a3021edfb8286bda0:0",
+      "source_id": "347",
+      "raw": {
+        "id": "347",
+        "code_wilaya": "45",
+        "wilaya": "NAAMA",
+        "commune": "MECHERIA/ EL BIODH",
+        "adresse": "ROUTE  NATIONAL  06 HAI SALAM",
+        "type": "Agence Commerciale",
+        "latitude": "33.540076",
+        "longitude": "- 0.277723\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.540076,
+      "lng": -0.277723,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "45"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "44507339d597c5c269ce89c89dbde048c9ff8a6ec21e7e8a3021edfb8286bda0:1",
+      "source_id": "348",
+      "raw": {
+        "id": "348",
+        "code_wilaya": "45",
+        "wilaya": "NAAMA",
+        "commune": "BEN AMMAR/EL KESDIR",
+        "adresse": "BEN AMMAR CENTRE VILLE ",
+        "type": "Point de présence",
+        "latitude": "33.719533",
+        "longitude": "- 0.731515\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.719533,
+      "lng": -0.731515,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "45"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "44507339d597c5c269ce89c89dbde048c9ff8a6ec21e7e8a3021edfb8286bda0:2",
+      "source_id": "349",
+      "raw": {
+        "id": "349",
+        "code_wilaya": "45",
+        "wilaya": "NAAMA",
+        "commune": "AIN SEFRA/TIOUT/SFISIFA",
+        "adresse": "1ER NOVEMBRE CENTRE VILLE",
+        "type": "Agence Commerciale",
+        "latitude": "32.753667",
+        "longitude": "- 0.579999\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 32.753667,
+      "lng": -0.579999,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "45"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "44507339d597c5c269ce89c89dbde048c9ff8a6ec21e7e8a3021edfb8286bda0:3",
+      "source_id": "350",
+      "raw": {
+        "id": "350",
+        "code_wilaya": "45",
+        "wilaya": "NAAMA",
+        "commune": "ASLA",
+        "adresse": "CITE AUTO CONSTRICTION 28 FEVRIER ",
+        "type": "Point de présence",
+        "latitude": "32.995278",
+        "longitude": "- 0.066984\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 32.995278,
+      "lng": -0.066984,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "45"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "44507339d597c5c269ce89c89dbde048c9ff8a6ec21e7e8a3021edfb8286bda0:4",
+      "source_id": "351",
+      "raw": {
+        "id": "351",
+        "code_wilaya": "45",
+        "wilaya": "NAAMA",
+        "commune": "MOGHRAR/DJENIEN BOUREZG",
+        "adresse": "MOGHRAR CENTRE VILLE ",
+        "type": "Point de présence",
+        "latitude": "32.517535",
+        "longitude": "- 0.582970\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 32.517535,
+      "lng": -0.58297,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "45"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "44507339d597c5c269ce89c89dbde048c9ff8a6ec21e7e8a3021edfb8286bda0:5",
+      "source_id": "352",
+      "raw": {
+        "id": "352",
+        "code_wilaya": "45",
+        "wilaya": "NAAMA",
+        "commune": "NAAMA/AIN BEN KHELIL",
+        "adresse": "HAI EN NASR  CITE ADMINISTRATIVE",
+        "type": "Agence Commerciale",
+        "latitude": "33.265353",
+        "longitude": "- 0.310276\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.265353,
+      "lng": -0.310276,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "45"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

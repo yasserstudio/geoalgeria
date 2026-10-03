@@ -1,0 +1,90 @@
+[
+  {
+    "code": 5,
+    "name_fr": "Batna",
+    "name_ar": "باتنة",
+    "phone_code": "033",
+    "postal_code": "05000",
+    "latitude": 35.55,
+    "longitude": 6.17,
+    "created": "original",
+    "communes": [
+      {
+        "name_fr": "Lemcene",
+        "name_ar": "لمسان",
+        "wilaya_code": 5,
+        "daira": "Ouled Si Slimane",
+        "postal_code": "05999",
+        "latitude": 35.65611,
+        "longitude": 5.79667,
+        "code_commune": 527
+      },
+      {
+        "name_fr": "Arris",
+        "name_ar": "أريس",
+        "wilaya_code": 5,
+        "daira": "Arris",
+        "postal_code": "05007",
+        "latitude": 35.25881,
+        "longitude": 6.34706,
+        "code_commune": 516
+      }
+    ]
+  },
+  {
+    "code": 26,
+    "name_fr": "Médéa",
+    "name_ar": "المدية",
+    "phone_code": "025",
+    "postal_code": "26000",
+    "latitude": 36.26,
+    "longitude": 2.75,
+    "created": "original",
+    "communes": [
+      {
+        "name_fr": "El Haoudane",
+        "name_ar": "الحوضان",
+        "wilaya_code": 26,
+        "daira": "Ouzera",
+        "postal_code": null,
+        "latitude": 36.3369617,
+        "longitude": 2.8776638,
+        "code_commune": 2653
+      }
+    ]
+  },
+  {
+    "code": 28,
+    "name_fr": "M'sila",
+    "name_ar": "المسيلة",
+    "phone_code": "035",
+    "postal_code": "28000",
+    "latitude": 35.7,
+    "longitude": 4.54,
+    "created": "original",
+    "communes": []
+  },
+  {
+    "code": 65,
+    "name_fr": "Aïn Oussara",
+    "name_ar": "عين وسارة",
+    "phone_code": null,
+    "postal_code": "65000",
+    "latitude": 35.44873,
+    "longitude": 2.90733,
+    "created": "2026",
+    "parent_wilaya": "Djelfa",
+    "communes": [
+      {
+        "name_fr": "Ain Oussera",
+        "name_ar": "عين وسارة",
+        "wilaya_code": 65,
+        "daira": "Ain Oussera",
+        "postal_code": null,
+        "latitude": 35.4542653,
+        "longitude": 2.904444,
+        "code_commune": 1731
+      }
+    ]
+  }
+]

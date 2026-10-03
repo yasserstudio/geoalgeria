@@ -1,0 +1,200 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 7,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "23e28afa610c72d75e9f0bd9f3404f007d6033a32a1c0b6dfa039065d2fd231b",
+  "count": 8,
+  "flagged": 1,
+  "candidates": [
+    {
+      "candidate_id": "23e28afa610c72d75e9f0bd9f3404f007d6033a32a1c0b6dfa039065d2fd231b:0",
+      "source_id": "128",
+      "raw": {
+        "id": "128",
+        "code_wilaya": "7",
+        "wilaya": "BISKRA",
+        "commune": "BISKRA (ZONE EEST)/DJAMORAH/ELOUTAYA/BRANIS/EL HADJEB /OUMACHE",
+        "adresse": "01RUE KHACHAI MOHAMED ",
+        "type": "Agence Commerciale",
+        "latitude": "34,85987222",
+        "longitude": "5,71825\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.85987222,
+      "lng": 5.71825,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "07"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "23e28afa610c72d75e9f0bd9f3404f007d6033a32a1c0b6dfa039065d2fd231b:1",
+      "source_id": "129",
+      "raw": {
+        "id": "129",
+        "code_wilaya": "7",
+        "wilaya": "BISKRA",
+        "commune": "EL KANTARA/AIN ZAATOUT",
+        "adresse": " CITE 05 JUILLET EL-KANTARA ",
+        "type": "Point de présence",
+        "latitude": "35.224804",
+        "longitude": "5.710435\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.224804,
+      "lng": 5.710435,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "61"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "23e28afa610c72d75e9f0bd9f3404f007d6033a32a1c0b6dfa039065d2fd231b:2",
+      "source_id": "130",
+      "raw": {
+        "id": "130",
+        "code_wilaya": "7",
+        "wilaya": "BISKRA",
+        "commune": "BISKRA(ZONE OUEST)",
+        "adresse": "CITE726 LOGTS BISKRA,",
+        "type": "Point de présence",
+        "latitude": "34,84895556",
+        "longitude": "5,708125\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.84895556,
+      "lng": 5.708125,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "07"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "23e28afa610c72d75e9f0bd9f3404f007d6033a32a1c0b6dfa039065d2fd231b:3",
+      "source_id": "131",
+      "raw": {
+        "id": "131",
+        "code_wilaya": "7",
+        "wilaya": "BISKRA",
+        "commune": "BISKRA(CENTRE) /CHETMA/M'CHOUNCHE ",
+        "adresse": "BOULEVARD HAMMOUDA AHMED ",
+        "type": "Agence Commerciale",
+        "latitude": " 34.853100",
+        "longitude": "5.730843\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.8531,
+      "lng": 5.730843,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "07"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "23e28afa610c72d75e9f0bd9f3404f007d6033a32a1c0b6dfa039065d2fd231b:4",
+      "source_id": "132",
+      "raw": {
+        "id": "132",
+        "code_wilaya": "7",
+        "wilaya": "BISKRA",
+        "commune": "SIDI OKBA/AIN NAGA/ELHAOUCH/M'ZIRAA",
+        "adresse": "CITE BOUZITOUNA SUD SIDI OKBA ",
+        "type": "Point de présence",
+        "latitude": "34.748236",
+        "longitude": "5.904008\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.748236,
+      "lng": 5.904008,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "07"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "23e28afa610c72d75e9f0bd9f3404f007d6033a32a1c0b6dfa039065d2fd231b:5",
+      "source_id": "133",
+      "raw": {
+        "id": "133",
+        "code_wilaya": "7",
+        "wilaya": "BISKRA",
+        "commune": "ZERIBET ELOUED/KHENGETSIDI NADJI/ELFEIDH",
+        "adresse": "CITE MARCHE",
+        "type": "Point de présence",
+        "latitude": "34.679611",
+        "longitude": "6.510582\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.679611,
+      "lng": 6.510582,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "07"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "23e28afa610c72d75e9f0bd9f3404f007d6033a32a1c0b6dfa039065d2fd231b:6",
+      "source_id": "134",
+      "raw": {
+        "id": "134",
+        "code_wilaya": "7",
+        "wilaya": "BISKRA",
+        "commune": "TOLGA/LICHANA/BOUCHAGROUNE /FOUGHALA/ELGHROUS / BORDJ BEN AZOUZ ",
+        "adresse": "05 JUIILLET 1962  TOLGA ",
+        "type": "Agence Commerciale",
+        "latitude": "34.731028",
+        "longitude": "5.381492\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.731028,
+      "lng": 5.381492,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "07"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "23e28afa610c72d75e9f0bd9f3404f007d6033a32a1c0b6dfa039065d2fd231b:7",
+      "source_id": "135",
+      "raw": {
+        "id": "135",
+        "code_wilaya": "7",
+        "wilaya": "BISKRA",
+        "commune": "OURLAL/M'ILLI/MEKHADMA/LIOUA",
+        "adresse": "ÿ HAI ATALLAH MOHAMED OURELLAL  ",
+        "type": "Point de présence",
+        "latitude": "34.656217",
+        "longitude": "5.513836 \r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.656217,
+      "lng": 5.513836,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "07"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

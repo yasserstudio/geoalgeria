@@ -1,0 +1,1045 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-65",
+    "wilaya_code": 65,
+    "name": "Aïn Oussara",
+    "name_ar": "عين وسارة",
+    "center": [
+      2.8535,
+      35.434
+    ],
+    "bounds": [
+      2.013,
+      35.036,
+      3.694,
+      35.832
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 24,
+    "osm_records": 18,
+    "tariki_records": 18,
+    "cross_source": 7,
+    "multiple_tariki": 2,
+    "osm_only": 9,
+    "tariki_only": 6,
+    "nearby_osm_pairs": 1,
+    "conflicts": 9
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3983208817",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4200209927",
+      "reasons": [
+        "multiple-tariki",
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-388214578",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12518",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13063",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13404",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13405",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13409",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4870",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10205215410",
+      "coordinates": [
+        2.9595571,
+        35.4607291
+      ],
+      "osm": {
+        "id": "node/10205215410",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.9595571,
+          35.4607291
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2428667288",
+      "coordinates": [
+        3.0096058,
+        35.7030042
+      ],
+      "osm": {
+        "id": "node/2428667288",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.0096058,
+          35.7030042
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2614042111",
+      "coordinates": [
+        2.9075522,
+        35.4586762
+      ],
+      "osm": {
+        "id": "node/2614042111",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.9075522,
+          35.4586762
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3421288315",
+      "coordinates": [
+        2.917373,
+        35.4279038
+      ],
+      "osm": {
+        "id": "node/3421288315",
+        "name": "جكبوب",
+        "name_ar": "جكبوب",
+        "name_fr": "Djackboub",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.917373,
+          35.4279038
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5259",
+          "route_id": "10012",
+          "name_fr": "station de services DJAKBOUB",
+          "name_ar": "محطة جقبوب",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            2.917,
+            35.428
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 35
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Djackboub",
+      "display_name_ar": "جكبوب"
+    },
+    {
+      "id": "osm-node-3421290073",
+      "coordinates": [
+        2.9478023,
+        35.3655292
+      ],
+      "osm": {
+        "id": "node/3421290073",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.9478023,
+          35.3655292
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5213",
+          "route_id": "10012",
+          "name_fr": "station de services TAIBA",
+          "name_ar": "محطة  طيبة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.948,
+            35.365
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 62
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة  طيبة"
+    },
+    {
+      "id": "osm-node-3937600866",
+      "coordinates": [
+        3.023555,
+        35.2109938
+      ],
+      "osm": {
+        "id": "node/3937600866",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.023555,
+          35.2109938
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3983208817",
+      "coordinates": [
+        3.3526831,
+        35.3495454
+      ],
+      "osm": {
+        "id": "node/3983208817",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.3526831,
+          35.3495454
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5904",
+          "route_id": "10757",
+          "name_fr": "Station de services Gherbi",
+          "name_ar": "محطة الخدمات غربي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.3526,
+            35.3497
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 19
+        },
+        {
+          "id": "10205",
+          "route_id": "15053",
+          "name_fr": "STATION DE SERVICES GHERBI",
+          "name_ar": "محطة خدمات غربي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.353,
+            35.35
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 58
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات غربي"
+    },
+    {
+      "id": "osm-node-4200209927",
+      "coordinates": [
+        3.2136342,
+        35.7034341
+      ],
+      "osm": {
+        "id": "node/4200209927",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2136342,
+          35.7034341
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5922",
+          "route_id": "10768",
+          "name_fr": "Station de services Aoudj",
+          "name_ar": "محطة الخدمات عوج",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            3.2141,
+            35.7036
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 46
+        },
+        {
+          "id": "13407",
+          "route_id": "18653",
+          "name_fr": "STATION DELMADJI",
+          "name_ar": "محطة دلماجي للخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.214,
+            35.704
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 71
+        },
+        {
+          "id": "13408",
+          "route_id": "18664",
+          "name_fr": "STATION AISSOU",
+          "name_ar": "محطة عيسو للخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.214,
+            35.704
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 71
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-388214578",
+          "offset_m": 40
+        }
+      ],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات عوج"
+    },
+    {
+      "id": "osm-node-5152379258",
+      "coordinates": [
+        3.5912579,
+        35.4329064
+      ],
+      "osm": {
+        "id": "node/5152379258",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.5912579,
+          35.4329064
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9927459451",
+      "coordinates": [
+        2.9969053,
+        35.4778716
+      ],
+      "osm": {
+        "id": "node/9927459451",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.9969053,
+          35.4778716
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1546755598",
+      "coordinates": [
+        2.2006225500000003,
+        35.43380715000001
+      ],
+      "osm": {
+        "id": "way/1546755598",
+        "name": "محطة وقود المرحوم عبيدات عامر",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          2.2006225500000003,
+          35.43380715000001
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة وقود المرحوم عبيدات عامر",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-256465266",
+      "coordinates": [
+        2.2188390499999997,
+        35.4322436
+      ],
+      "osm": {
+        "id": "way/256465266",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.2188390499999997,
+          35.4322436
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5885",
+          "route_id": "694",
+          "name_fr": "Station de services Belhocine",
+          "name_ar": "بلحسين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.219,
+            35.432
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Belhocine",
+      "display_name_ar": "بلحسين"
+    },
+    {
+      "id": "osm-way-256465268",
+      "coordinates": [
+        2.22295395,
+        35.43288535
+      ],
+      "osm": {
+        "id": "way/256465268",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.22295395,
+          35.43288535
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5886",
+          "route_id": "694",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "جلال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.223,
+            35.433
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "جلال"
+    },
+    {
+      "id": "osm-way-256465293",
+      "coordinates": [
+        2.5210225,
+        35.44533885
+      ],
+      "osm": {
+        "id": "way/256465293",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.5210225,
+          35.44533885
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-274188275",
+      "coordinates": [
+        2.87123045,
+        35.451378649999995
+      ],
+      "osm": {
+        "id": "way/274188275",
+        "name": "Station Service RAHOU",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.87123045,
+          35.451378649999995
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5897",
+          "route_id": "10012",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.872,
+            35.451
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 81
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service RAHOU",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-way-363114125",
+      "coordinates": [
+        3.2182952499999997,
+        35.62463785
+      ],
+      "osm": {
+        "id": "way/363114125",
+        "name": "Station Aoudj",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2182952499999997,
+          35.62463785
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5923",
+          "route_id": "10769",
+          "name_fr": "GUESMI",
+          "name_ar": "قاسمي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.2181,
+            35.6248
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 25
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Aoudj",
+      "display_name_ar": "قاسمي"
+    },
+    {
+      "id": "osm-way-388214578",
+      "coordinates": [
+        3.213208,
+        35.70332125
+      ],
+      "osm": {
+        "id": "way/388214578",
+        "name": "GPL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.213208,
+          35.70332125
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4200209927",
+          "offset_m": 40
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "GPL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-496778089",
+      "coordinates": [
+        2.874287,
+        35.452204
+      ],
+      "osm": {
+        "id": "way/496778089",
+        "name": "Station Service GHERBI",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          2.874287,
+          35.452204
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5327",
+          "route_id": "10121",
+          "name_fr": "station de services RAHO",
+          "name_ar": "محطة  رحو",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.874,
+            35.452
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": 35
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service GHERBI",
+      "display_name_ar": "محطة  رحو"
+    },
+    {
+      "id": "tariki-12518",
+      "coordinates": [
+        3.015,
+        35.702
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12518",
+          "route_id": "17092",
+          "name_fr": "STASIONT EL HBILL",
+          "name_ar": "محطة الخدمات الحبيل",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.015,
+            35.702
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STASIONT EL HBILL",
+      "display_name_ar": "محطة الخدمات الحبيل"
+    },
+    {
+      "id": "tariki-13063",
+      "coordinates": [
+        3.005,
+        35.484
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13063",
+          "route_id": "17088",
+          "name_fr": "STATION DJEGHBOUBE",
+          "name_ar": "محطة خدمات جغبوب",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.005,
+            35.484
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DJEGHBOUBE",
+      "display_name_ar": "محطة خدمات جغبوب"
+    },
+    {
+      "id": "tariki-13404",
+      "coordinates": [
+        2.567,
+        35.429
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13404",
+          "route_id": "602",
+          "name_fr": "STATION SERVICE MANSOURI",
+          "name_ar": "محطة الخمات منصوري",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.567,
+            35.429
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVICE MANSOURI",
+      "display_name_ar": "محطة الخمات منصوري"
+    },
+    {
+      "id": "tariki-13405",
+      "coordinates": [
+        3.229,
+        35.617
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13405",
+          "route_id": "18647",
+          "name_fr": "STASIN AOUDJ",
+          "name_ar": "محطة عوج للخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.229,
+            35.617
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STASIN AOUDJ",
+      "display_name_ar": "محطة عوج للخدمات"
+    },
+    {
+      "id": "tariki-13409",
+      "coordinates": [
+        3.229,
+        35.617
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13409",
+          "route_id": "18667",
+          "name_fr": null,
+          "name_ar": "محطة عيسو",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.229,
+            35.617
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة عيسو",
+      "display_name_ar": "محطة عيسو"
+    },
+    {
+      "id": "tariki-4870",
+      "coordinates": [
+        3.592,
+        35.434
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4870",
+          "route_id": "9513",
+          "name_fr": "Station des services Ouekel Messoued",
+          "name_ar": "محطة وكال المسعود بالخرجة الشرقية لبلدية عين افقه",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.592,
+            35.434
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 65,
+          "wilaya_fr": "Aïn Oussara",
+          "wilaya_ar": "عين وسارة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station des services Ouekel Messoued",
+      "display_name_ar": "محطة وكال المسعود بالخرجة الشرقية لبلدية عين افقه"
+    }
+  ]
+}

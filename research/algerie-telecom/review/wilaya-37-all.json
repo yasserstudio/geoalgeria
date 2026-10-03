@@ -1,0 +1,152 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 37,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "bc8f14f2628512f9f5b7c5fd0245916b84b0d31d0409796e8e7b679e3d37ac29",
+  "count": 6,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "bc8f14f2628512f9f5b7c5fd0245916b84b0d31d0409796e8e7b679e3d37ac29:0",
+      "source_id": "473",
+      "raw": {
+        "id": "473",
+        "code_wilaya": "37",
+        "wilaya": "TINDOUF",
+        "commune": "TINDOUF",
+        "adresse": "RUE ANP TINDOUF",
+        "type": "Agence Commerciale",
+        "latitude": " 27.673667",
+        "longitude": " -8.149056\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 27.673667,
+      "lng": -8.149056,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "37"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "bc8f14f2628512f9f5b7c5fd0245916b84b0d31d0409796e8e7b679e3d37ac29:1",
+      "source_id": "474",
+      "raw": {
+        "id": "474",
+        "code_wilaya": "37",
+        "wilaya": "TINDOUF",
+        "commune": "TINDOUF",
+        "adresse": "HAI NASR TINDOUF",
+        "type": "Point de présence",
+        "latitude": " 27.676806",
+        "longitude": " -8.128611\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 27.676806,
+      "lng": -8.128611,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "37"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "bc8f14f2628512f9f5b7c5fd0245916b84b0d31d0409796e8e7b679e3d37ac29:2",
+      "source_id": "475",
+      "raw": {
+        "id": "475",
+        "code_wilaya": "37",
+        "wilaya": "TINDOUF",
+        "commune": "TINDOUF",
+        "adresse": "HAI NAHDA TINDOUF",
+        "type": "Point de présence",
+        "latitude": " 27.659361",
+        "longitude": " -8.126528\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 27.659361,
+      "lng": -8.126528,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "37"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "bc8f14f2628512f9f5b7c5fd0245916b84b0d31d0409796e8e7b679e3d37ac29:3",
+      "source_id": "476",
+      "raw": {
+        "id": "476",
+        "code_wilaya": "37",
+        "wilaya": "TINDOUF",
+        "commune": "TINDOUF",
+        "adresse": "HAI TINDOUF LOTFI TINDOUF",
+        "type": "Point de présence",
+        "latitude": " 27.649639",
+        "longitude": " -8.133028\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 27.649639,
+      "lng": -8.133028,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "37"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "bc8f14f2628512f9f5b7c5fd0245916b84b0d31d0409796e8e7b679e3d37ac29:4",
+      "source_id": "477",
+      "raw": {
+        "id": "477",
+        "code_wilaya": "37",
+        "wilaya": "TINDOUF",
+        "commune": "OUM EL ASSEL",
+        "adresse": "OUM EL ASSEL TINDOUF",
+        "type": "Point de présence",
+        "latitude": " 28.616417",
+        "longitude": " -6.979444\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 28.616417,
+      "lng": -6.979444,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "37"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "bc8f14f2628512f9f5b7c5fd0245916b84b0d31d0409796e8e7b679e3d37ac29:5",
+      "source_id": "478",
+      "raw": {
+        "id": "478",
+        "code_wilaya": "37",
+        "wilaya": "TINDOUF",
+        "commune": "OUM EL ASSEL",
+        "adresse": "HASSI KHEBBI TINDOUF",
+        "type": "Point de présence",
+        "latitude": " 29.186667",
+        "longitude": " -5.074556\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 29.186667,
+      "lng": -5.074556,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "37"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

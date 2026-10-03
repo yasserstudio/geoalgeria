@@ -1,0 +1,267 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 25,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df",
+  "count": 11,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df:0",
+      "source_id": "186",
+      "raw": {
+        "id": "186",
+        "code_wilaya": "25",
+        "wilaya": "CONSTANTINE",
+        "commune": "CONSTANTINE",
+        "adresse": "COMPLEXE COUDIAT",
+        "type": "Agence Commerciale",
+        "latitude": "36,363224",
+        "longitude": "6,606899\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.363224,
+      "lng": 6.606899,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df:1",
+      "source_id": "187",
+      "raw": {
+        "id": "187",
+        "code_wilaya": "25",
+        "wilaya": "CONSTANTINE",
+        "commune": "CONSTANTINE",
+        "adresse": "DAKSI CENTRE VILLE ",
+        "type": "Agence Commerciale",
+        "latitude": "36,35763",
+        "longitude": "6,640672\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.35763,
+      "lng": 6.640672,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df:2",
+      "source_id": "188",
+      "raw": {
+        "id": "188",
+        "code_wilaya": "25",
+        "wilaya": "CONSTANTINE",
+        "commune": "EL KHROUB/BENBADIS/ OULED RAHMOUNE / AIN ABID",
+        "adresse": "EL KHROUB CENTRE VILLE",
+        "type": "Agence Commerciale",
+        "latitude": "36,25854",
+        "longitude": "6,695922\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.25854,
+      "lng": 6.695922,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df:3",
+      "source_id": "189",
+      "raw": {
+        "id": "189",
+        "code_wilaya": "25",
+        "wilaya": "CONSTANTINE",
+        "commune": "HAMMA BOUZIANE/BENI HEMIDENE",
+        "adresse": "BOULEVARD DE L'ALN",
+        "type": "Agence Commerciale",
+        "latitude": "36,414233",
+        "longitude": "6,597077\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.414233,
+      "lng": 6.597077,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df:4",
+      "source_id": "190",
+      "raw": {
+        "id": "190",
+        "code_wilaya": "25",
+        "wilaya": "CONSTANTINE",
+        "commune": "DIDOUCHE MOURAD",
+        "adresse": "RUE LARBI BENMHIDI",
+        "type": "Point de présence",
+        "latitude": "36,449575",
+        "longitude": "6,635738\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.449575,
+      "lng": 6.635738,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df:5",
+      "source_id": "191",
+      "raw": {
+        "id": "191",
+        "code_wilaya": "25",
+        "wilaya": "CONSTANTINE",
+        "commune": "ZIGHOUD YOUCEF",
+        "adresse": "RUE DE L'INDEPENDANCE",
+        "type": "Point de présence",
+        "latitude": "36,533672",
+        "longitude": "6,711163\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.533672,
+      "lng": 6.711163,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df:6",
+      "source_id": "192",
+      "raw": {
+        "id": "192",
+        "code_wilaya": "25",
+        "wilaya": "CONSTANTINE",
+        "commune": "IBN ZIAD/ MESSAOUD BOUDJRIOU",
+        "adresse": "BOULEVARD PRINCIPAL IBN ZIAD · CâTE DU COMMISSARIAT",
+        "type": "Point de présence",
+        "latitude": "36,383323",
+        "longitude": "6,469693\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.383323,
+      "lng": 6.469693,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df:7",
+      "source_id": "193",
+      "raw": {
+        "id": "193",
+        "code_wilaya": "25",
+        "wilaya": "CONSTANTINE",
+        "commune": "EL KHROUB (localité Ali Mendjeli)",
+        "adresse": "ALI MENDJELI CENTRE VILLE",
+        "type": "Agence Commerciale",
+        "latitude": "36,255436",
+        "longitude": "6,579696\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.255436,
+      "lng": 6.579696,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df:8",
+      "source_id": "194",
+      "raw": {
+        "id": "194",
+        "code_wilaya": "25",
+        "wilaya": "CONSTANTINE",
+        "commune": "CONSTANTINE - HAMMA BOUZIANE (site  bekira)",
+        "adresse": "AIN SMARA CENTRE",
+        "type": "Agence Commerciale",
+        "latitude": "36,364801",
+        "longitude": "6,610532\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.364801,
+      "lng": 6.610532,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df:9",
+      "source_id": "195",
+      "raw": {
+        "id": "195",
+        "code_wilaya": "25",
+        "wilaya": "CONSTANTINE",
+        "commune": "CONSTANTINE (localité de zouaghi slimane ain el bey)",
+        "adresse": "ZOUAGHI CENTRE VILLE ",
+        "type": "Point de présence",
+        "latitude": "36,308642",
+        "longitude": "6,619882\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.308642,
+      "lng": 6.619882,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "e199f6a5b382d503eb96a9a8d778b911df528e158424b8594ba869634f3af5df:10",
+      "source_id": "196",
+      "raw": {
+        "id": "196",
+        "code_wilaya": "25",
+        "wilaya": "CONSTANTINE",
+        "commune": "AIN SMARA ",
+        "adresse": "BOULEVARD DE L'ALN",
+        "type": "Agence Commerciale",
+        "latitude": "36,266127",
+        "longitude": "6,499655\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.266127,
+      "lng": 6.499655,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

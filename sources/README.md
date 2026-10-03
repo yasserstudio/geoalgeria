@@ -15,7 +15,7 @@ directory exists so that:
 
 ```
 sources/<pkg>/<source>.json   # raw payload as received (post-parse, pre-transform)
-sources/<pkg>/manifest.json   # per-source: url, retrieved, records, sha256, bytes
+sources/<pkg>/manifest.json   # per-source: provenance, url, retrieved, records, sha256, bytes
 ```
 
 Written only through `scripts/lib/source-store.mjs` (`writeCapture` /
@@ -34,12 +34,27 @@ capturing, so reordering noise never reaches the diff.
 3. Review the delta; commit the capture together with the regenerated package.
 4. Offline rebuild: the package's `--cache` mode reads from here, no network.
 
+### Guarded scheduled promotion
+
+The low-churn DGPC Protection Civile directory has an approved zero-touch
+exception to step 3. Its monthly workflow may promote a changed capture only
+after deterministic sorting, schema/package validation, review-queue rebuild,
+stable-id retention, bounded record-count change, and bounded material field
+change all pass. Any failed gate leaves `main` and the published snapshot
+unchanged; the resulting bot commit keeps the accepted source delta reviewable
+in git history. Larger or structural publisher changes require a manual run and
+human review.
+
 ## Rules
 
 - Latest capture only — history lives in git. Never `<source>-2026-08.json`
   date-suffixed siblings.
 - Capture the payload **as received** (post-parse, pre-transform). Cleaning
   belongs in the fetcher's transform step, visible in code review.
+- A capture needs an upstream `url`. When the project owner supplies an
+  official artifact without its original post URL, use the explicit
+  `owner_supplied_artifact` provenance and a null URL; never substitute a
+  guessed page or generic search URL.
 - Captures are not published: nothing here ships to npm or the CDN.
 - Size: captures of a few MB are fine. For an unusually large pull (>20 MB),
   capture the trimmed projection the build actually consumes and record the
@@ -48,5 +63,14 @@ capturing, so reordering noise never reaches the diff.
 ## Status
 
 Converted so far: `telecom`, `ecoles` (reference implementations,
-2026-08-03). Remaining packages convert as they are next touched — their raw
-pulls still land in gitignored `research/<pkg>/` until then.
+2026-08-03), `protection-civile`, and `buses`. The buses capture is a reviewed,
+trimmed OSM projection with its non-atomic Overpass receipts preserved. Bus
+Operator captures are rights-safe projections: they retain only factual fields
+used by the package plus upstream URLs, retrieval timestamps, byte counts and
+SHA-256 hashes for the ignored raw HTML, API and map responses. This keeps the
+evidence auditable without committing or relicensing full all-rights-reserved
+pages and KML files. The Sidi Bel Abbès projection is explicitly marked as
+owner-supplied official HTML because its PHP pages returned 404 during the live
+recheck; it does not claim a live-response hash. Remaining packages convert as they are
+next touched — their raw pulls still land in gitignored `research/<pkg>/`
+until then.

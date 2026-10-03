@@ -1,0 +1,35 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "TINKHATMA , DJANET",
+        "code_wilaya": "56",
+        "commune": "DJANET",
+        "date": "2024-10-30 15:09:40",
+        "id": "197",
+        "latitude": "24,554928",
+        "longitude": "9,486045\r",
+        "type": "Agence Commerciale",
+        "wilaya": "DJANET"
+      },
+      {
+        "adresse": "CENTRE VILLE BORDJ  EL-HOUES",
+        "code_wilaya": "56",
+        "commune": "BORDJ EL-HOUES",
+        "date": "2024-10-30 15:09:40",
+        "id": "198",
+        "latitude": " 24.876867",
+        "longitude": "  8.442008\r",
+        "type": "Point de présence",
+        "wilaya": "DJANET"
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    DJANET</b> ",
+    "resultat": "ok",
+    "wilaya": "DJANET"
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 56
+}

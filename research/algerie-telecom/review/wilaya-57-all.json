@@ -1,0 +1,60 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 57,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "33bc6457bf3ee0903d888365754ea2beabb8ba8d2955f083f060d8a4962e9972",
+  "count": 2,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "33bc6457bf3ee0903d888365754ea2beabb8ba8d2955f083f060d8a4962e9972:0",
+      "source_id": "218",
+      "raw": {
+        "id": "218",
+        "code_wilaya": "57",
+        "wilaya": "El M'Ghair",
+        "commune": "EL MEGHAIER/STILL/OUM THIOUR/SIDI KHELIL",
+        "adresse": "HAI ESSAADA EL MEGHAIER",
+        "type": "Agence Commerciale",
+        "latitude": "33,94963056",
+        "longitude": "5,926422222\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.94963056,
+      "lng": 5.926422222,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "57"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "33bc6457bf3ee0903d888365754ea2beabb8ba8d2955f083f060d8a4962e9972:1",
+      "source_id": "219",
+      "raw": {
+        "id": "219",
+        "code_wilaya": "57",
+        "wilaya": "El M'Ghair",
+        "commune": "DJAMAA/SIDI AMRANE/TENDLA/M'RARA",
+        "adresse": "RUE NATIONAL Nø03 DJAMAA",
+        "type": "Point de présence",
+        "latitude": "33,53270833",
+        "longitude": "5,990455556\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.53270833,
+      "lng": 5.990455556,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "57"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

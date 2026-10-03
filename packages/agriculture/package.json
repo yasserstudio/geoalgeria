@@ -1,8 +1,8 @@
 {
   "name": "@geoalgeria/agriculture",
-  "version": "2.0.0",
+  "version": "2.0.4",
   "type": "module",
-  "description": "Agriculture-sector institutions of Algeria — agricultural-services directorates (DSA), forest conservations, technical & research institutes, training centres, chambers of agriculture, public offices and groups from the Ministry of Agriculture (MADR), bilingual FR/AR, geocoded against the geoalgeria commune set with wilaya/commune linkage. JSON, CSV, GeoJSON, TypeScript.",
+  "description": "Agriculture-sector institutions of Algeria: agricultural-services directorates (DSA), forest conservations, technical & research institutes, training centres, chambers of agriculture, public offices and groups from the Ministry of Agriculture (MADR), bilingual FR/AR, geocoded against the geoalgeria commune set with wilaya/commune linkage. JSON, CSV, GeoJSON, TypeScript.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {
@@ -39,7 +39,7 @@
     "dz"
   ],
   "author": "Yasser's Studio (https://yasser.studio)",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "publishConfig": {
     "access": "public"
   },

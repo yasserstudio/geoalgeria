@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/tourisme)](https://www.npmjs.com/package/@geoalgeria/tourisme)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/tourisme)](https://www.npmjs.com/package/@geoalgeria/tourisme)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -117,7 +117,9 @@ data/
 و`source` مفتاح قصير يُحلّ في `metadata.sources[]`، بينما تعيش المعرّفات الخارجية في `refs`
 (`refs.osm` هو معرّف OSM كسلسلة نصية، و`refs.wikidata` معرّف QID، و`refs.wikipedia` رابط
 لغوي بالشكل `"<اللغة>:<العنوان>"`). طبقات OSM الأربع لا تحمل أي ربط بالبلدية، لذا يبقى
-`commune_code` و`commune` فارغين فيها.
+`commune_code` و`commune` فارغين فيها، إلا في المواقع الأربعة التي أعاد تصحيح مُراجَع
+ربطها بالولاية التي منحها إصلاح لبلديتها (quality/overrides/tourisme.json)، والتي تحمل
+`commune_code` المُستمد من التصحيح.
 
 حقول الاتصال والتصنيف الاختيارية موجودة حيث ينشرها المصدر، وغائبة فيما عدا ذلك – وليست
 فارغة أبدًا. في الإقامة: `address` (209 سجلات)، و`phone` (204، وقد تحوي عدّة أرقام مفصولة
@@ -156,7 +158,8 @@ Wikidata و100 سجلّ تحمل رابط Wikipedia.
 `type` يأخذ إحدى القيم: `hammam`، `ain`، `source`، `forage`. الخصائص الفيزيائية
 (`temperature_c`، `debit_l_s`، `altitude_m`، `minerality`) مأخوذة مباشرة من مجموعة
 بيانات ASAL، و`minerality` هي الوحيدة الاختيارية منها. هذه هي الطبقة الوحيدة التي تسمّي
-بلدية – عبر `commune`، أي اسم لا رمز `commune_code` من الديوان الوطني للإحصائيات، الذي يبقى فارغًا.
+بلدية – عبر `commune`، أي اسم لا رمز `commune_code` من الديوان الوطني للإحصائيات، الذي يبقى
+فارغًا إلا في المَنبع الذي أعاد تصحيح مُراجَع ربطه بولايته الحالية.
 
 `wilaya_code` مكمّل بصفر إلى رقمين في جميع الطبقات ويرتبط بولايات GeoAlgeria.
 
@@ -166,6 +169,15 @@ Wikidata و100 سجلّ تحمل رابط Wikipedia.
 **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – توفر مجموعة بيانات التقسيم
 الكاملة للـ 69 ولاية التي يشير إليها `wilaya_code` هنا. استخدم `@geoalgeria/tourisme`
 عندما تحتاج *فقط* البيانات السياحية.
+
+## الحد الأدنى للجودة
+
+تحمي اختبارات المستودع هذه اللقطة من التراجع الصامت: يجب ألا تنخفض تغطية
+الأسماء بالفرنسية والعربية عن 28.8٪، ويجب أن يحتفظ كل سجل محدد جغرافيًا
+بالحقلين `geo_precision` و`geo_method`، وألا تتراجع حقول الاتصال والتفاصيل
+المتاحة حاليًا للإقامة، وأن تبقى مراجع OpenStreetMap المشتركة بين الفئات ضمن
+حدود صريحة. هذه حدود لمنع التراجع وليست ادعاءً بالشمول؛ ويمكن لتحديث موثّق
+أكبر أن يرفعها.
 
 ## المصدر
 

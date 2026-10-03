@@ -1,0 +1,204 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 32,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "bdafdb4634ab56f062b65a6a686cf7a1fca80c625149d2db3e01a9659106db19",
+  "count": 8,
+  "flagged": 3,
+  "candidates": [
+    {
+      "candidate_id": "bdafdb4634ab56f062b65a6a686cf7a1fca80c625149d2db3e01a9659106db19:0",
+      "source_id": "210",
+      "raw": {
+        "id": "210",
+        "code_wilaya": "32",
+        "wilaya": "EL BAYADH",
+        "commune": "   EL BAYADH",
+        "adresse": "PLACE TRIPOLI CENTRE VILLE EL BAYADH",
+        "type": "Agence Commerciale",
+        "latitude": "33,68025",
+        "longitude": "1,01451\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.68025,
+      "lng": 1.01451,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "32"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "bdafdb4634ab56f062b65a6a686cf7a1fca80c625149d2db3e01a9659106db19:1",
+      "source_id": "211",
+      "raw": {
+        "id": "211",
+        "code_wilaya": "32",
+        "wilaya": "EL BAYADH",
+        "commune": "   ROGASSA/   KHEF LAHMAR /   CHEGUIGE",
+        "adresse": "RUE MOKADEM NAIMI COMMINE REGASSA",
+        "type": "Point de présence",
+        "latitude": "34.018",
+        "longitude": "0.926\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.018,
+      "lng": 0.926,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "32"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "bdafdb4634ab56f062b65a6a686cf7a1fca80c625149d2db3e01a9659106db19:2",
+      "source_id": "212",
+      "raw": {
+        "id": "212",
+        "code_wilaya": "32",
+        "wilaya": "EL BAYADH",
+        "commune": "   BOUGTOB /   EL KHEITER/   TOUSMOULINE",
+        "adresse": "COMPLEXE BOUGTOB ROUTE MECHERIA BOUGTOB",
+        "type": "Point de présence",
+        "latitude": "34,04473",
+        "longitude": "0,08443\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.04473,
+      "lng": 0.08443,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "32"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "bdafdb4634ab56f062b65a6a686cf7a1fca80c625149d2db3e01a9659106db19:3",
+      "source_id": "213",
+      "raw": {
+        "id": "213",
+        "code_wilaya": "32",
+        "wilaya": "EL BAYADH",
+        "commune": "   BREZINA    EL GHASSOULE/   KRAKEDA",
+        "adresse": "RUE 5 JUILLET KHELLAF BREZINA EL BAYADH",
+        "type": "Point de présence",
+        "latitude": "33,10288",
+        "longitude": "1,27508\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.10288,
+      "lng": 1.27508,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "32"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "bdafdb4634ab56f062b65a6a686cf7a1fca80c625149d2db3e01a9659106db19:4",
+      "source_id": "214",
+      "raw": {
+        "id": "214",
+        "code_wilaya": "32",
+        "wilaya": "EL BAYADH",
+        "commune": "   BOUALEM/   SIDI SLIMANE /   SIDI TIFFOUR/   SIDI AMAR/   STITTEN",
+        "adresse": "RUE 1 IER NOVEMBRE BOUALEM",
+        "type": "Point de présence",
+        "latitude": "33,72661",
+        "longitude": "1,53221\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.72661,
+      "lng": 1.53221,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "32"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "bdafdb4634ab56f062b65a6a686cf7a1fca80c625149d2db3e01a9659106db19:5",
+      "source_id": "215",
+      "raw": {
+        "id": "215",
+        "code_wilaya": "32",
+        "wilaya": "EL BAYADH",
+        "commune": "   EL ABIODH SIDI CHEIKH/   ARBAOUAT/   AIN ORAK/   EL BNOUD",
+        "adresse": "RUE AMIR AEK EL ABIODH SIDI CHEIKH",
+        "type": "Agence Commerciale",
+        "latitude": "32,89742",
+        "longitude": "0,54441\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 32.89742,
+      "lng": 0.54441,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "69"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "bdafdb4634ab56f062b65a6a686cf7a1fca80c625149d2db3e01a9659106db19:6",
+      "source_id": "216",
+      "raw": {
+        "id": "216",
+        "code_wilaya": "32",
+        "wilaya": "EL BAYADH",
+        "commune": "   BOUSSEMGHOUN ",
+        "adresse": "RUE AMIR AEK BOUSSEMGHOUN",
+        "type": "Point de présence",
+        "latitude": "32,86794",
+        "longitude": "0,0254\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 32.86794,
+      "lng": 0.0254,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "69"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "bdafdb4634ab56f062b65a6a686cf7a1fca80c625149d2db3e01a9659106db19:7",
+      "source_id": "217",
+      "raw": {
+        "id": "217",
+        "code_wilaya": "32",
+        "wilaya": "EL BAYADH",
+        "commune": "   CHALLALA/   MEHARRA",
+        "adresse": "RUE ADMINISTRATIF CHELLALA",
+        "type": "Point de présence",
+        "latitude": " 33.032797",
+        "longitude": "  0.055097\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.032797,
+      "lng": 0.055097,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "69"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

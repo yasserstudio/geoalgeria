@@ -1,0 +1,2662 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-10",
+    "wilaya_code": 10,
+    "name": "Bouira",
+    "name_ar": "البويرة",
+    "center": [
+      3.8445,
+      36.2315
+    ],
+    "bounds": [
+      3.294,
+      35.85,
+      4.395,
+      36.613
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 69,
+    "osm_records": 41,
+    "tariki_records": 46,
+    "cross_source": 18,
+    "multiple_tariki": 0,
+    "osm_only": 23,
+    "tariki_only": 28,
+    "nearby_osm_pairs": 4,
+    "conflicts": 35
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3255630423",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4604923697",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4605010594",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-555471388",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-558627455",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-558898455",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-564458380",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10063",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12556",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12880",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14201",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14202",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14203",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14204",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14205",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14206",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3115",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3131",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3175",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3225",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3268",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3423",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3638",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3669",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3917",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3930",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4008",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4623",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4831",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7778",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9110",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9211",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9268",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9294",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9347",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-1194522895",
+      "coordinates": [
+        3.5918099,
+        36.553556
+      ],
+      "osm": {
+        "id": "node/1194522895",
+        "name": "Ouwis",
+        "name_ar": "اويس",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.5918099,
+          36.553556
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3219",
+          "route_id": "6980",
+          "name_fr": "Station de services les oliviers - vers BOUIRA",
+          "name_ar": "محطة متعددة الخدمات الزيتونة اتجاه ولاية البويرة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.592,
+            36.553
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 64
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Ouwis",
+      "display_name_ar": "اويس"
+    },
+    {
+      "id": "osm-node-1212713300",
+      "coordinates": [
+        3.7634475,
+        35.9139876
+      ],
+      "osm": {
+        "id": "node/1212713300",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7634475,
+          35.9139876
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3342",
+          "route_id": "7192",
+          "name_fr": "Station de services Akrimi",
+          "name_ar": "محطة الخدمات عكيريمي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.764,
+            35.914
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 50
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة الخدمات عكيريمي"
+    },
+    {
+      "id": "osm-node-13361433994",
+      "coordinates": [
+        4.3415321,
+        36.3164986
+      ],
+      "osm": {
+        "id": "node/13361433994",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.3415321,
+          36.3164986
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9402",
+          "route_id": "14188",
+          "name_fr": "Station de services  AKFADOU",
+          "name_ar": "محطة الوقود أكفادو",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            4.3418,
+            36.3156
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 103
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services  AKFADOU",
+      "display_name_ar": "محطة الوقود أكفادو"
+    },
+    {
+      "id": "osm-node-13605486901",
+      "coordinates": [
+        3.7811579,
+        36.2138478
+      ],
+      "osm": {
+        "id": "node/13605486901",
+        "name": null,
+        "name_ar": "محطة وقود الحاج المسيلي",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7811579,
+          36.2138478
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": "محطة وقود الحاج المسيلي"
+    },
+    {
+      "id": "osm-node-1817411275",
+      "coordinates": [
+        3.7457808,
+        36.1788858
+      ],
+      "osm": {
+        "id": "node/1817411275",
+        "name": "Station Service Kadou",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7457808,
+          36.1788858
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9679",
+          "route_id": "7258",
+          "name_fr": "Station de services Naftal katou",
+          "name_ar": "محطة الوقود كتو",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.7458,
+            36.1788
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Kadou",
+      "display_name_ar": "محطة الوقود كتو"
+    },
+    {
+      "id": "osm-node-1817567607",
+      "coordinates": [
+        3.7059151,
+        36.1251275
+      ],
+      "osm": {
+        "id": "node/1817567607",
+        "name": "Sour el Ghozlane",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7059151,
+          36.1251275
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9306",
+          "route_id": "7078",
+          "name_fr": "Station de services AIN AMAR",
+          "name_ar": "محطة عين اعمر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.706,
+            36.1251
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Sour el Ghozlane",
+      "display_name_ar": "محطة عين اعمر"
+    },
+    {
+      "id": "osm-node-1822882705",
+      "coordinates": [
+        3.6500572,
+        36.2348107
+      ],
+      "osm": {
+        "id": "node/1822882705",
+        "name": "محطة البنزين قاسم",
+        "name_ar": "محطة البنزين قاسم",
+        "name_fr": "Station service gacem",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          3.6500572,
+          36.2348107
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service gacem",
+      "display_name_ar": "محطة البنزين قاسم"
+    },
+    {
+      "id": "osm-node-2512348399",
+      "coordinates": [
+        3.5501511,
+        36.2718637
+      ],
+      "osm": {
+        "id": "node/2512348399",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.5501511,
+          36.2718637
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3013043873",
+      "coordinates": [
+        3.5738104,
+        36.5699204
+      ],
+      "osm": {
+        "id": "node/3013043873",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.5738104,
+          36.5699204
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3311",
+          "route_id": "7122",
+          "name_fr": "Station de services Elzahra",
+          "name_ar": "محطة متعددة الخدمات الزهرة",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.574,
+            36.57
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة متعددة الخدمات الزهرة"
+    },
+    {
+      "id": "osm-node-3215603429",
+      "coordinates": [
+        3.7423242,
+        36.3220899
+      ],
+      "osm": {
+        "id": "node/3215603429",
+        "name": "Station Service Naftal Aïn laloui",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Privée",
+        "opening_hours": null,
+        "coordinates": [
+          3.7423242,
+          36.3220899
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3309",
+          "route_id": "7083",
+          "name_fr": "Station de services Naftal privé",
+          "name_ar": "محطة خدمات نفطال خاصة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.7429,
+            36.322
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 53
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal Aïn laloui",
+      "display_name_ar": "محطة خدمات نفطال خاصة"
+    },
+    {
+      "id": "osm-node-3255630423",
+      "coordinates": [
+        3.6707616,
+        36.2900571
+      ],
+      "osm": {
+        "id": "node/3255630423",
+        "name": "Naftal Aïn Bessam",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6707616,
+          36.2900571
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-564458380",
+          "offset_m": 13
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal Aïn Bessam",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3476969250",
+      "coordinates": [
+        3.6851324,
+        36.5329238
+      ],
+      "osm": {
+        "id": "node/3476969250",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6851324,
+          36.5329238
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3531",
+          "route_id": "7494",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.685,
+            36.533
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 15
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-node-3514815863",
+      "coordinates": [
+        3.5899175,
+        36.2587853
+      ],
+      "osm": {
+        "id": "node/3514815863",
+        "name": "Bir Ghabalou",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.5899175,
+          36.2587853
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Bir Ghabalou",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3581730623",
+      "coordinates": [
+        3.9698414,
+        36.0842285
+      ],
+      "osm": {
+        "id": "node/3581730623",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.9698414,
+          36.0842285
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4293",
+          "route_id": "7499",
+          "name_fr": "Station de services ouadi",
+          "name_ar": "محطة تزود بالوقود  برج أخريص",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.9699,
+            36.0842
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة تزود بالوقود  برج أخريص"
+    },
+    {
+      "id": "osm-node-4156173891",
+      "coordinates": [
+        4.0382451,
+        36.272932
+      ],
+      "osm": {
+        "id": "node/4156173891",
+        "name": "Station Service NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NACERI & Cies-. Ahl El Ksar",
+        "opening_hours": null,
+        "coordinates": [
+          4.0382451,
+          36.272932
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service NAFTAL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4604923697",
+      "coordinates": [
+        4.0072831,
+        36.3235194
+      ],
+      "osm": {
+        "id": "node/4604923697",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0072831,
+          36.3235194
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-555471388",
+          "offset_m": 24
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4605010594",
+      "coordinates": [
+        4.0812112,
+        36.3145963
+      ],
+      "osm": {
+        "id": "node/4605010594",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0812112,
+          36.3145963
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-558627455",
+          "offset_m": 13
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4683010542",
+      "coordinates": [
+        3.7635152,
+        35.9110044
+      ],
+      "osm": {
+        "id": "node/4683010542",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7635152,
+          35.9110044
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4725996390",
+      "coordinates": [
+        3.6207206,
+        36.5565177
+      ],
+      "osm": {
+        "id": "node/4725996390",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6207206,
+          36.5565177
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4745257488",
+      "coordinates": [
+        4.0651499,
+        36.3112211
+      ],
+      "osm": {
+        "id": "node/4745257488",
+        "name": "Station Service Bechloul NAFTAL محطة الوقود بشلول نفطال",
+        "name_ar": "Station Service Bechloul NAFTAL محطة الوقود بشلول نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0651499,
+          36.3112211
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Bechloul NAFTAL محطة الوقود بشلول نفطال",
+      "display_name_ar": "Station Service Bechloul NAFTAL محطة الوقود بشلول نفطال"
+    },
+    {
+      "id": "osm-node-5230524447",
+      "coordinates": [
+        4.2629902,
+        36.3382182
+      ],
+      "osm": {
+        "id": "node/5230524447",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2629902,
+          36.3382182
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6562199790",
+      "coordinates": [
+        4.0607464,
+        36.3103292
+      ],
+      "osm": {
+        "id": "node/6562199790",
+        "name": "Station Service Bechloul NAFTAL محطة الوقود بشلول نفطال",
+        "name_ar": "Station Service Bechloul NAFTAL محطة الوقود بشلول نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0607464,
+          36.3103292
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Bechloul NAFTAL محطة الوقود بشلول نفطال",
+      "display_name_ar": "Station Service Bechloul NAFTAL محطة الوقود بشلول نفطال"
+    },
+    {
+      "id": "osm-node-7058145490",
+      "coordinates": [
+        4.3357487,
+        36.3272398
+      ],
+      "osm": {
+        "id": "node/7058145490",
+        "name": "عند مولوج",
+        "name_ar": "عند مولوج",
+        "name_fr": "ETS MOULOUDJ",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          4.3357487,
+          36.3272398
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "ETS MOULOUDJ",
+      "display_name_ar": "عند مولوج"
+    },
+    {
+      "id": "osm-node-7058159285",
+      "coordinates": [
+        4.2937306,
+        36.3524555
+      ],
+      "osm": {
+        "id": "node/7058159285",
+        "name": "رافور",
+        "name_ar": "رافور",
+        "name_fr": "RAFFOUR",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          4.2937306,
+          36.3524555
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10064",
+          "route_id": "7973",
+          "name_fr": "STATION RAFOUR",
+          "name_ar": "محطة الرافور",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.2932,
+            36.3525
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "RAFFOUR",
+      "display_name_ar": "رافور"
+    },
+    {
+      "id": "osm-node-8047871432",
+      "coordinates": [
+        3.6630507,
+        36.5469864
+      ],
+      "osm": {
+        "id": "node/8047871432",
+        "name": "Pompe a essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6630507,
+          36.5469864
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Pompe a essence",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1191203164",
+      "coordinates": [
+        3.6894286999999997,
+        36.1488743
+      ],
+      "osm": {
+        "id": "way/1191203164",
+        "name": "Station Service Hamaidi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6894286999999997,
+          36.1488743
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Hamaidi",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-287314897",
+      "coordinates": [
+        3.7260112999999997,
+        36.1011874
+      ],
+      "osm": {
+        "id": "way/287314897",
+        "name": "Relai Routier",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7260112999999997,
+          36.1011874
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Relai Routier",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-349561328",
+      "coordinates": [
+        3.6705164999999997,
+        36.219251650000004
+      ],
+      "osm": {
+        "id": "way/349561328",
+        "name": "Station Service Naftal",
+        "name_ar": "محطة وقود نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6705164999999997,
+          36.219251650000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة وقود نفطال"
+    },
+    {
+      "id": "osm-way-352850386",
+      "coordinates": [
+        3.6871796,
+        36.148515
+      ],
+      "osm": {
+        "id": "way/352850386",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6871796,
+          36.148515
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-352996145",
+      "coordinates": [
+        3.6922428,
+        36.15827525
+      ],
+      "osm": {
+        "id": "way/352996145",
+        "name": "Station Service Mokrane",
+        "name_ar": "محطة وقود مقران",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6922428,
+          36.15827525
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9307",
+          "route_id": "7078",
+          "name_fr": "Station de services MOKRANE",
+          "name_ar": "محطة  مقران",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.6922,
+            36.1582
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Mokrane",
+      "display_name_ar": "محطة وقود مقران"
+    },
+    {
+      "id": "osm-way-393384299",
+      "coordinates": [
+        3.77330855,
+        36.489681450000006
+      ],
+      "osm": {
+        "id": "way/393384299",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.77330855,
+          36.489681450000006
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10635",
+          "route_id": "8173",
+          "name_fr": "STATION  SERVICE DISTRIBUTION ESSENCE",
+          "name_ar": "محطة الخدمات لتوزيع البنزين",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.7733,
+            36.4898
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION  SERVICE DISTRIBUTION ESSENCE",
+      "display_name_ar": "محطة الخدمات لتوزيع البنزين"
+    },
+    {
+      "id": "osm-way-393385253",
+      "coordinates": [
+        3.77049285,
+        36.49021705
+      ],
+      "osm": {
+        "id": "way/393385253",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.77049285,
+          36.49021705
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10639",
+          "route_id": "8173",
+          "name_fr": "Station – talach kamel",
+          "name_ar": "محطة طلاش كمال لبيع مادة المازوت",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.7705,
+            36.4902
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 2
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station – talach kamel",
+      "display_name_ar": "محطة طلاش كمال لبيع مادة المازوت"
+    },
+    {
+      "id": "osm-way-550674771",
+      "coordinates": [
+        3.9053645,
+        36.3728429
+      ],
+      "osm": {
+        "id": "way/550674771",
+        "name": "Naftal sud",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.9053645,
+          36.3728429
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6304",
+          "route_id": "8602",
+          "name_fr": "station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.9052,
+            36.373
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 23
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal sud",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-553129905",
+      "coordinates": [
+        3.90158795,
+        36.3959338
+      ],
+      "osm": {
+        "id": "way/553129905",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Station service naftal Nord",
+        "operator": "naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.90158795,
+          36.3959338
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6307",
+          "route_id": "8602",
+          "name_fr": "station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.9018,
+            36.396
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 20
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service naftal Nord",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-555471388",
+      "coordinates": [
+        4.0071978999999995,
+        36.3237204
+      ],
+      "osm": {
+        "id": "way/555471388",
+        "name": "Station Service El Asnam",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Privée",
+        "opening_hours": null,
+        "coordinates": [
+          4.0071978999999995,
+          36.3237204
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4604923697",
+          "offset_m": 24
+        },
+        {
+          "candidate_id": "osm-way-558898455",
+          "offset_m": 43
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station Service El Asnam",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-558627455",
+      "coordinates": [
+        4.08117325,
+        36.3144871
+      ],
+      "osm": {
+        "id": "way/558627455",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.08117325,
+          36.3144871
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4605010594",
+          "offset_m": 13
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-558898455",
+      "coordinates": [
+        4.0075318499999995,
+        36.32399385
+      ],
+      "osm": {
+        "id": "way/558898455",
+        "name": "Aire de Repos El Asnam RN 05",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0075318499999995,
+          36.32399385
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-555471388",
+          "offset_m": 43
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Aire de Repos El Asnam RN 05",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-563471030",
+      "coordinates": [
+        3.8164246,
+        36.34034175
+      ],
+      "osm": {
+        "id": "way/563471030",
+        "name": "Station Service Aïn El Hadjar",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.8164246,
+          36.34034175
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3457",
+          "route_id": "7430",
+          "name_fr": "Station de services",
+          "name_ar": "محطة متعددة الخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.816,
+            36.34
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 54
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Aïn El Hadjar",
+      "display_name_ar": "محطة متعددة الخدمات"
+    },
+    {
+      "id": "osm-way-564448121",
+      "coordinates": [
+        3.68127265,
+        36.289088
+      ],
+      "osm": {
+        "id": "way/564448121",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Publique",
+        "opening_hours": null,
+        "coordinates": [
+          3.68127265,
+          36.289088
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3916",
+          "route_id": "8074",
+          "name_fr": "Station de services Naftal n 1032",
+          "name_ar": "محطة نفطال رقم 1032",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            3.6813,
+            36.2891
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة نفطال رقم 1032"
+    },
+    {
+      "id": "osm-way-564458380",
+      "coordinates": [
+        3.6706553,
+        36.28997615
+      ],
+      "osm": {
+        "id": "way/564458380",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6706553,
+          36.28997615
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3255630423",
+          "offset_m": 13
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-566810653",
+      "coordinates": [
+        4.16929665,
+        36.33239519999999
+      ],
+      "osm": {
+        "id": "way/566810653",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Privée",
+        "opening_hours": null,
+        "coordinates": [
+          4.16929665,
+          36.33239519999999
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3121",
+          "route_id": "6751",
+          "name_fr": "Station de services Elhadj Aissa",
+          "name_ar": "محطة الخدمات الحاج عيسى",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.1692,
+            36.3324
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة الخدمات الحاج عيسى"
+    },
+    {
+      "id": "tariki-10063",
+      "coordinates": [
+        4.3561,
+        36.2901
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10063",
+          "route_id": "14188",
+          "name_fr": "STATION ERAWDA",
+          "name_ar": "محطة الروضة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.3561,
+            36.2901
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION ERAWDA",
+      "display_name_ar": "محطة الروضة"
+    },
+    {
+      "id": "tariki-12556",
+      "coordinates": [
+        3.8289,
+        36.2104
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12556",
+          "route_id": "8416",
+          "name_fr": "AIN HAZEM",
+          "name_ar": "محطة عين حازم",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.8289,
+            36.2104
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "AIN HAZEM",
+      "display_name_ar": "محطة عين حازم"
+    },
+    {
+      "id": "tariki-12880",
+      "coordinates": [
+        4.078,
+        36.307
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12880",
+          "route_id": "7761",
+          "name_fr": "Station de services Nafta",
+          "name_ar": "محطة الخدمات نفطال إتجاه قسنطينة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            4.078,
+            36.307
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Nafta",
+      "display_name_ar": "محطة الخدمات نفطال إتجاه قسنطينة"
+    },
+    {
+      "id": "tariki-14201",
+      "coordinates": [
+        4.331,
+        36.282
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14201",
+          "route_id": "21289",
+          "name_fr": "BELHOUL AHCEN",
+          "name_ar": "بلهول أحسن",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            4.331,
+            36.282
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "BELHOUL AHCEN",
+      "display_name_ar": "بلهول أحسن"
+    },
+    {
+      "id": "tariki-14202",
+      "coordinates": [
+        4.334,
+        36.286
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14202",
+          "route_id": "21290",
+          "name_fr": "AMOUCH MOHAND",
+          "name_ar": "محطة البنزين عموش محند",
+          "services": [
+            "fuel",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.334,
+            36.286
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "AMOUCH MOHAND",
+      "display_name_ar": "محطة البنزين عموش محند"
+    },
+    {
+      "id": "tariki-14203",
+      "coordinates": [
+        4.32,
+        36.263
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14203",
+          "route_id": "21291",
+          "name_fr": "ISKOUNAN MOHAND",
+          "name_ar": "محطة البنزين إسقونن محند",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            4.32,
+            36.263
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "ISKOUNAN MOHAND",
+      "display_name_ar": "محطة البنزين إسقونن محند"
+    },
+    {
+      "id": "tariki-14204",
+      "coordinates": [
+        4.314,
+        36.265
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14204",
+          "route_id": "21292",
+          "name_fr": "NAFTAL",
+          "name_ar": "محطة البنزين نافطال",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            4.314,
+            36.265
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "NAFTAL",
+      "display_name_ar": "محطة البنزين نافطال"
+    },
+    {
+      "id": "tariki-14205",
+      "coordinates": [
+        4.285,
+        36.254
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14205",
+          "route_id": "21293",
+          "name_fr": "BOUFJAMA RABIA",
+          "name_ar": "محطة البنزين بوجمعة ربيع",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.285,
+            36.254
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "BOUFJAMA RABIA",
+      "display_name_ar": "محطة البنزين بوجمعة ربيع"
+    },
+    {
+      "id": "tariki-14206",
+      "coordinates": [
+        4.331,
+        36.282
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14206",
+          "route_id": "21294",
+          "name_fr": "BOUKHALDA HAMAR",
+          "name_ar": "محطة البنزين بوخالفة حمار",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.331,
+            36.282
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "BOUKHALDA HAMAR",
+      "display_name_ar": "محطة البنزين بوخالفة حمار"
+    },
+    {
+      "id": "tariki-3115",
+      "coordinates": [
+        3.554,
+        36.27
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3115",
+          "route_id": "6801",
+          "name_fr": "Station de services Bir ghebalou",
+          "name_ar": "شارع راعي عبد القادر بلدية بئر غبالو",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.554,
+            36.27
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Bir ghebalou",
+      "display_name_ar": "شارع راعي عبد القادر بلدية بئر غبالو"
+    },
+    {
+      "id": "tariki-3131",
+      "coordinates": [
+        4.265,
+        36.339
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3131",
+          "route_id": "6751",
+          "name_fr": "Station de services Aliene Ahnif",
+          "name_ar": "محطة الخدمات عليان أحنيف",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.265,
+            36.339
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Aliene Ahnif",
+      "display_name_ar": "محطة الخدمات عليان أحنيف"
+    },
+    {
+      "id": "tariki-3175",
+      "coordinates": [
+        3.9101,
+        35.9733
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3175",
+          "route_id": "6821",
+          "name_fr": "Station de services ELHADJ BACHIRI",
+          "name_ar": "محطة الحاج بشيري قرية الزبارة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.9101,
+            35.9733
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ELHADJ BACHIRI",
+      "display_name_ar": "محطة الحاج بشيري قرية الزبارة"
+    },
+    {
+      "id": "tariki-3225",
+      "coordinates": [
+        3.626,
+        36.554
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3225",
+          "route_id": "6980",
+          "name_fr": "Station de services El Mokhfi",
+          "name_ar": "محطة منعددة الخدمات المخفي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.626,
+            36.554
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services El Mokhfi",
+      "display_name_ar": "محطة منعددة الخدمات المخفي"
+    },
+    {
+      "id": "tariki-3268",
+      "coordinates": [
+        3.582,
+        36.575
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3268",
+          "route_id": "6910",
+          "name_fr": "Station de services BELAZEM",
+          "name_ar": "محطة الوقود بلعزم",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.582,
+            36.575
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BELAZEM",
+      "display_name_ar": "محطة الوقود بلعزم"
+    },
+    {
+      "id": "tariki-3423",
+      "coordinates": [
+        3.762,
+        35.909
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3423",
+          "route_id": "7192",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.762,
+            35.909
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "tariki-3638",
+      "coordinates": [
+        3.6472,
+        36.2354
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3638",
+          "route_id": "7636",
+          "name_fr": "Station de services Rouroua centre",
+          "name_ar": "محطة الوقود بالروراوة مركز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.6472,
+            36.2354
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Rouroua centre",
+      "display_name_ar": "محطة الوقود بالروراوة مركز"
+    },
+    {
+      "id": "tariki-3669",
+      "coordinates": [
+        3.616,
+        35.993
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3669",
+          "route_id": "7689",
+          "name_fr": "Station de services Brahimi",
+          "name_ar": "محطة براهيمي للخدمات",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            3.616,
+            35.993
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Brahimi",
+      "display_name_ar": "محطة براهيمي للخدمات"
+    },
+    {
+      "id": "tariki-3917",
+      "coordinates": [
+        3.6674,
+        36.2813
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3917",
+          "route_id": "8074",
+          "name_fr": "Station de services Mahfoud",
+          "name_ar": "محطة محفوظ",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.6674,
+            36.2813
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Mahfoud",
+      "display_name_ar": "محطة محفوظ"
+    },
+    {
+      "id": "tariki-3930",
+      "coordinates": [
+        3.574,
+        36.05
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3930",
+          "route_id": "7499",
+          "name_fr": "Station de services BOUAFIA",
+          "name_ar": "محطة تزود بالوقود  برج أخريص",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.574,
+            36.05
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOUAFIA",
+      "display_name_ar": "محطة تزود بالوقود  برج أخريص"
+    },
+    {
+      "id": "tariki-4008",
+      "coordinates": [
+        4.037,
+        36.272
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4008",
+          "route_id": "8168",
+          "name_fr": "Station de services Nasri",
+          "name_ar": "محطة وقود ناصري",
+          "services": [
+            "fuel",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.037,
+            36.272
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Nasri",
+      "display_name_ar": "محطة وقود ناصري"
+    },
+    {
+      "id": "tariki-4623",
+      "coordinates": [
+        3.647,
+        36.227
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4623",
+          "route_id": "9255",
+          "name_fr": "Station de services Mahfoud",
+          "name_ar": "محطة محفوظ",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.647,
+            36.227
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Mahfoud",
+      "display_name_ar": "محطة محفوظ"
+    },
+    {
+      "id": "tariki-4831",
+      "coordinates": [
+        3.4248,
+        36.4352
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4831",
+          "route_id": "9485",
+          "name_fr": "Station de services",
+          "name_ar": "محطة البنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.4248,
+            36.4352
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة البنزين"
+    },
+    {
+      "id": "tariki-7778",
+      "coordinates": [
+        3.843,
+        36.2457
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7778",
+          "route_id": "8313",
+          "name_fr": "Station de services oueld El-Houssein",
+          "name_ar": "محطة ولد الحسين",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.843,
+            36.2457
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services oueld El-Houssein",
+      "display_name_ar": "محطة ولد الحسين"
+    },
+    {
+      "id": "tariki-9110",
+      "coordinates": [
+        3.6727,
+        36.2922
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9110",
+          "route_id": "13944",
+          "name_fr": "Station de services  Naftal n 1026",
+          "name_ar": "محطة نفطال رقم 1026",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.6727,
+            36.2922
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  Naftal n 1026",
+      "display_name_ar": "محطة نفطال رقم 1026"
+    },
+    {
+      "id": "tariki-9211",
+      "coordinates": [
+        4.0701,
+        36.0822
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9211",
+          "route_id": "9769",
+          "name_fr": "Station de services Mennad et ses frères",
+          "name_ar": "محطة مناد و إخوانه",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.0701,
+            36.0822
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Mennad et ses frères",
+      "display_name_ar": "محطة مناد و إخوانه"
+    },
+    {
+      "id": "tariki-9268",
+      "coordinates": [
+        3.99,
+        36.39
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9268",
+          "route_id": "7490",
+          "name_fr": null,
+          "name_ar": "محطة غسل السيارات+ التشحيم",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.99,
+            36.39
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة غسل السيارات+ التشحيم",
+      "display_name_ar": "محطة غسل السيارات+ التشحيم"
+    },
+    {
+      "id": "tariki-9294",
+      "coordinates": [
+        4.078,
+        36.314
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9294",
+          "route_id": "7761",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات نفطال إتجاه الجزائر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.078,
+            36.314
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "محطة الخدمات نفطال إتجاه الجزائر"
+    },
+    {
+      "id": "tariki-9347",
+      "coordinates": [
+        4.0664,
+        36.3096
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9347",
+          "route_id": "14186",
+          "name_fr": "Station de services Naftal en direction Alger",
+          "name_ar": "محطة الخدمات نفطال(إتجاه الجزائر)",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.0664,
+            36.3096
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 10,
+          "wilaya_fr": "Bouira",
+          "wilaya_ar": "البويرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal en direction Alger",
+      "display_name_ar": "محطة الخدمات نفطال(إتجاه الجزائر)"
+    }
+  ]
+}

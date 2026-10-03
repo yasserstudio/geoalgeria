@@ -1,5 +1,83 @@
 # @geoalgeria/transport
 
+## 2.0.6
+
+### Patch Changes
+
+- 91ff643: Restate `@geoalgeria/buses`'s data terms in the umbrella LICENSE as prose, matching the member package: Line data © the respective Operators; redistributed for reference, with its CC BY-SA 4.0 and ODbL 1.0 parts named.
+- Updated dependencies [924b092]
+- Updated dependencies [91ff643]
+- Updated dependencies [2310783]
+  - @geoalgeria/ferroviaire@2.0.4
+  - @geoalgeria/gares-routieres@2.2.6
+  - @geoalgeria/buses@2.2.1
+
+## 2.0.5
+
+### Patch Changes
+
+- e693ea4: Republish the transport and pharma umbrellas on a fresh version number after an aborted staged publish reserved the previous one.
+
+  transport 2.0.4 and pharma 2.0.2 were staged on npm on 2026-09-27 and the staged uploads were dropped before approval; npm never reuses a version it has seen, so those numbers can no longer be published. This release carries exactly the same content: transport depends on aviation ^2.6.0, buses ^2.2.0, gares-routieres ^2.2.5 and ferroviaire ^2.0.3; pharma depends on industrie-pharmaceutique ^2.0.3 and pharmacies ^2.2.2.
+
+## 2.0.4
+
+### Patch Changes
+
+- 5d84d16: Carry the umbrella to buses 2.2.0, so its published dependency range and docs name 16 bus Operators.
+
+  `@geoalgeria/buses` 2.2.0 adds ETUS-C Constantine and ETUS Skikda as its fifteenth and sixteenth Operators. The umbrella's own `workspace:^` range already resolves to it, but the last published manifest pins `^2.1.1` and the published READMEs (EN/FR/AR) still say 14 Operators. This patch republishes the umbrella so the resolved range and the counts match the member package. No API change.
+
+- Updated dependencies [ecaaa2c]
+- Updated dependencies [5d84d16]
+- Updated dependencies [4deabd3]
+  - @geoalgeria/aviation@2.6.0
+  - @geoalgeria/buses@2.2.0
+  - @geoalgeria/ferroviaire@2.0.3
+  - @geoalgeria/gares-routieres@2.2.5
+
+## 2.0.3
+
+### Patch Changes
+
+- 5fc1b8e: Publish the umbrella licence declaration.
+
+  `license` became `SEE LICENSE IN LICENSE` in the repository when the restricted and umbrella packages were corrected, but the registry still serves `MIT` for the last published version, because no release since has touched this package. This patch carries the manifest to npm so the published terms match the `LICENSE` file, which states the MIT grant for the code and lists each member's data terms separately.
+
+## 2.0.2
+
+### Patch Changes
+
+- 76dfd0d: Declare the exact per-package licence terms in the manifest and the LICENSE file.
+- Updated dependencies [76dfd0d]
+- Updated dependencies [76dfd0d]
+- Updated dependencies [76dfd0d]
+- Updated dependencies [76dfd0d]
+  - @geoalgeria/aviation@2.5.1
+  - @geoalgeria/buses@2.1.1
+  - @geoalgeria/ferroviaire@2.0.2
+  - @geoalgeria/gares-routieres@2.2.4
+
+## 2.0.1
+
+### Patch Changes
+
+- 0308a2a: Reconcile ETUS Tiaret with its extracted official Line payload, publish all five official ETUSTO Lines (three with reusable OSM shapes), add five ETUS Béjaïa Lines with typed stop counts and transcribed service hours, add four ETUS M'Sila Lines from official route pages and diagrams, add eight ETUS Sidi Bel Abbès Lines with complete directional departure lists from supplied official HTML, and add five official ETUS Setif Lines with a verified reusable OSM shape for Line 101. Published Line provenance now identifies Operator sources first and uses OSM only where it supplies reusable geometry.
+- Updated dependencies [05e17e5]
+- Updated dependencies [0308a2a]
+- Updated dependencies [b3746f5]
+- Updated dependencies [186a9c5]
+- Updated dependencies [23c4df9]
+- Updated dependencies [354eac0]
+- Updated dependencies [ccc9ebf]
+- Updated dependencies [24518b5]
+- Updated dependencies [14aa4bf]
+- Updated dependencies [ce1509f]
+- Updated dependencies [ef41100]
+- Updated dependencies [bb24c0b]
+  - @geoalgeria/buses@2.1.0
+  - @geoalgeria/gares-routieres@2.2.3
+
 ## 2.0.0
 
 ### Major Changes

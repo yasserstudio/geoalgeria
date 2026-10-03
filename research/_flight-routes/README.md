@@ -10,6 +10,7 @@ arcs globe on the app side.
 | --- | --- |
 | `collection-rules.md` | **Read this first.** The reproducible procedure: scope, query recipe, the two filters that matter, evidence tiers, and the working protocol. |
 | `verification-2026-07-27.md` | Per-pair evidence: tier, source URL, operator, direction and frequency. **Opens with a CURRENT STATUS table that supersedes everything below it**; the tables under it are the historical record, kept because two of them were wrong in instructive ways. |
+| `verification-<date>.md` | One file per later verification pass, each recording only what it changed and why. Newest first: `2026-09-27` (Delhi withdrawn, Batna corrected to Orly, Berlin now operating, the Kuwait/Amman triangle planned, Dubai suspended), then `2026-08-21`, `2026-07-29`. |
 | `opensky-licence.md` | Why the "observe later" phase is blocked: OpenSky's terms bar commercial use, operational API use, and redistribution. |
 | `resolve_endpoints.py` | Resolves Air Algérie's foreign destination cities to specific airports and coordinates. The city-to-airport decision is pinned in the script, one IATA per row, so it is reviewable; OurAirports supplies only the coordinate. |
 | `foreign-endpoints.json` | Its output: 64 foreign endpoints across 37 countries. A **candidate** set, not a route list. |

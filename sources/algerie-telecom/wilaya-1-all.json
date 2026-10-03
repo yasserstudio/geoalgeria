@@ -1,0 +1,68 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "CITE ADMINISTRATIVE TILILANE ADRAR",
+        "code_wilaya": "1",
+        "commune": "ADRAR / BOUDA / TSABIT / FENOUGHIL / TAMEST / SBAA",
+        "date": "2024-10-30 15:09:40",
+        "id": "1",
+        "latitude": "27.878099",
+        "longitude": "-0.273921\r",
+        "type": "Agence Commerciale",
+        "wilaya": "ADRAR"
+      },
+      {
+        "adresse": "CITE CENTRE VILLE BELKBIR ADRAR",
+        "code_wilaya": "1",
+        "commune": "OULED AHMED TIMMI / TAMENTIT",
+        "date": "2024-10-30 15:09:40",
+        "id": "2",
+        "latitude": "27.87163",
+        "longitude": "-0.28671\r",
+        "type": "Point de présence",
+        "wilaya": "ADRAR"
+      },
+      {
+        "adresse": "CENTRE VILLE REGGANE",
+        "code_wilaya": "1",
+        "commune": "REGGANE / SALI",
+        "date": "2024-10-30 15:09:40",
+        "id": "3",
+        "latitude": "26.71908",
+        "longitude": "0.17324\r",
+        "type": "Agence Commerciale",
+        "wilaya": "ADRAR"
+      },
+      {
+        "adresse": "ZAOUIET KOUNTA CENTRE",
+        "code_wilaya": "1",
+        "commune": "INZEGMIR / ZAOUITE KOUNTA",
+        "date": "2024-10-30 15:09:40",
+        "id": "4",
+        "latitude": "27.2281861",
+        "longitude": "-0.1915449\r",
+        "type": "Point de présence",
+        "wilaya": "ADRAR"
+      },
+      {
+        "adresse": "CITE CENTRE VILLE AOULEF",
+        "code_wilaya": "1",
+        "commune": "AOULEF / TIT / AKABELI / TIMEKTANE",
+        "date": "2024-10-30 15:09:40",
+        "id": "5",
+        "latitude": "26.972426",
+        "longitude": "1.083798\r",
+        "type": "Agence Commerciale",
+        "wilaya": "ADRAR"
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    ADRAR</b> ",
+    "resultat": "ok",
+    "wilaya": "ADRAR"
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 1
+}

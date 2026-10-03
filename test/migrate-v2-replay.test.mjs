@@ -6,7 +6,7 @@
 // hand. The transform that its own header calls "the source-of-truth transform
 // for packages whose upstream source is dead or blocked" kept emitting the old
 // colliding ids, and nothing noticed, because the transform is never re-run
-// against v1 input — the double-run guard skips any package that already looks
+// against v1 input: the double-run guard skips any package that already looks
 // v2, so replaying it in place is a no-op that always passes.
 //
 // The check: keep a sample of each package's real v1 input and replay the map
@@ -15,9 +15,9 @@
 // fails the deep-equal.
 //
 // What this asserts: the per-record transform, for all 24 configured packages
-// and all 35 of their data files, over the fixture sample (429 records — 12
+// and all 35 of their data files, over the fixture sample (429 records, 12
 // evenly spaced per file plus the first ungeocoded one).
-// What it does NOT assert: the file-level behaviour of the runner — id sort
+// What it does NOT assert: the file-level behaviour of the runner: id sort
 // order, the CSV/GeoJSON emit, or metadata.json. Those are checked by replaying
 // the full v1 tree out of git history, which cannot run here: CI checks out at
 // depth 1, and the full v1 inputs are ~24 MB.
@@ -94,6 +94,64 @@ for (const [pkg, entry] of Object.entries(FIXTURE.packages)) {
 // its own output before comparing, so the guard keeps watching every OTHER
 // field of the same record instead of being silenced record-wide.
 const CORRECTIONS = {
+  banques: {
+    // BEA's locator publishes address-only rows. The reviewed seed enriches
+    // them with the locator's embedded map coordinates after the v2 cutover;
+    // keep the frozen source row fixed while replaying that enrichment.
+    "bea-dga_mostaganem-0-agences-6": {
+      lat: 35.8554275,
+      lng: -0.3131278,
+      geo_precision: "approximate",
+      geo_method: "bank_locator",
+    },
+  },
+  aviation: {
+    // OurAirports now publishes the same Mecheria point with fewer trailing
+    // decimal places. Keep the frozen migration row fixed while accepting that
+    // source-only precision normalization on the generated supplement.
+    daay: { lat: 33.5359, lng: -0.242353 },
+    // ANAC's nearest-centroid join placed Annaba's Rabah Bitat airport in
+    // El Tarf. The reviewed ledger corrects the wilaya using the airport's
+    // official EGSA page and carries the public review receipt with the row.
+    dabb: {
+      source_wilaya_code: "36",
+      wilaya_code: "23",
+      review_status: "corrected",
+      reviewed_at: "2026-09-09",
+      reviewed_by: "geoalgeria-maintainers",
+      review_evidence: [
+        "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-d-annaba-rabah-bitat",
+      ],
+    },
+  },
+  telecom: {
+    // Ooredoo corrected these commune spellings without moving the published
+    // points. The generator keeps each historical public id while exposing the
+    // current label, so the frozen migration rows need the same label-only
+    // corrections before replay comparison.
+    "ooredoo-0d9443c3d8": { name: "GUE DE CONSTANTINE", commune: "GUE DE CONSTANTINE" },
+    "ooredoo-78ab7c5be0": { name: "DRAA BEN KHEDDA", commune: "DRAA BEN KHEDDA" },
+    "ooredoo-8a1bf7231f": { name: "LARBAA NATH IRATHEN", commune: "LARBAA NATH IRATHEN" },
+    "ooredoo-cdabff807b": { name: "EL M'GHAIR", commune: "EL M'GHAIR" },
+    "ooredoo-fbaefa673c": { name: "OUM EL BOUAGHI", commune: "OUM EL BOUAGHI" },
+  },
+  djezzy: {
+    // Djezzy now publishes a later closing time for its Adrar boutique. Keep
+    // the frozen migration input frozen and apply this one observed source
+    // change explicitly, so every other field on the row remains guarded.
+    "01-001": { hours: "08H00 - 19H30" },
+    "47-001": { hours: "08H00 - 19H30" },
+    "55-001": { hours: "08H00 -14H00 & 16H00-20H00" },
+    "59-001": { hours: "08H00 - 19H00" },
+    // Commune label and re-join, the two classes documented further down.
+    "12-001": { commune: "Tébessa" }, // label
+    "16-009": { commune: "El Harrach" }, // re-join: El Harrach's centre moved 51.5 km
+    // Both re-joined by containment rather than by distance, and both now agree
+    // with the boutique's own address, which the nearest centre did not:
+    // "Barika-centre, Barika, Batna" and "Aéroport Mohamed Boudiaf, Constantine".
+    "60-001": { commune: "Barika" },
+    "25-004": { commune: "Constantine" },
+  },
   "gares-routieres": {
     // NAAMA is one of six stations SOGRAL ships with a corrupted longitude. The
     // migration-era input carries the bad point, and because wilaya and commune
@@ -111,12 +169,127 @@ const CORRECTIONS = {
       lat: 33.2814,
       lng: -0.3072,
     },
+    // GHERDAIA's coordinate was always right: the new gare at Bouhraoua, the
+    // northern entrance of Ghardaïa (OSM's admin boundary contains the point,
+    // and the source's own address says "Bouheraoua commune de ghardaia").
+    // The nearest-centroid join had labelled it Dhayet Bendhahoua, whose
+    // centre is 110 m closer than Ghardaïa's. Corrected in fetch.mjs
+    // COMMUNE_FIX; reader report on r/algeria, 2026-08-13.
+    "47-01": { commune_code: "4701", commune: "Ghardaia" },
+    // Two more of the same kind, both now agreeing with SOGRAL's own address field
+    // or with the commune outline the station's point is inside, where the nearest
+    // centre did not: "Commune El Hadjeb Biskra" for 07-01, and Tizi's outline for
+    // Mascara's 29-01, whose cité label names a locality the point is not in.
+    "07-01": { commune: "El Hadjeb" },
+    "29-01": { commune: "Tizi" },
   },
   "enseignement-superieur": {
     // ESI's campus sits in Oued Smar (its own address: BP 68M, 16270); the
     // nearest-centroid join had labelled it Bab Ezzouar. Corrected via
     // scripts/seeds/commune-labels.json, user report 2026-08-06.
     "00065": { commune: "Oued Smar" },
+    // Flagship commune label, corrected against JORA n° 25 / n° 40.
+    "00033": { commune: "M'Sila" },
+    "00017": { commune: "Chetma" }, // re-join: Biskra's centre moved
+  },
+  // Two classes below, both of them the flagship moving under a derived field,
+  // and both caught by gates of their own rather than by this replay:
+  //
+  //   label   the commune kept its code and changed its spelling (JORA n° 25 and
+  //           n° 40). The packages publish the flagship's current label, so the
+  //           frozen v1 row carries the old one. Repository-wide FK tests own the
+  //           code; the label follows it.
+  //   re-join the commune CHANGED, because a commune centre moved in the 2026-09-27
+  //           correction of 56 centres or the 2026-09-29 correction of 174, and the
+  //           nearest-centroid join answers differently now. The validator section
+  //           "commune-centroid coordinates track the flagship commune centres" owns
+  //           the borrowed-coordinate half of that class, and
+  //           test/commune-centre-in-commune.test.mjs owns the centres themselves.
+  //           A re-join keeps its public id: the id is a frozen join key, not a
+  //           claim about which wilaya the record is in, so 26-0114 below still
+  //           reads 26 while its wilaya_code reads 10.
+  //
+  // A third class joined them on 2026-09-29: the join itself changed. It decides the
+  // commune by CONTAINMENT in the commune's own OpenStreetMap outline, inside the
+  // wilaya whose shipped polygon holds the point, and only falls back to distance
+  // (scripts/lib/build-utils.mjs resolveCommune). Several of the rows below now agree
+  // with the source's own address where the nearest centre never did.
+  mosquees: {
+    "16-0914": { commune: "Alger Centre" }, // re-join: Alger Centre's centre left the sea
+    // Was a label-only fix until 2026-09-29; Sedraïa's own centre moved 33 km, and
+    // this mosque is inside Bir Ghbalou's outline, in wilaya 10.
+    "26-0114": { wilaya_code: "10", commune: "Bir Ghbalou" }, // re-join, across a wilaya
+    "29-0088": { commune: "El Hachem" }, // re-join: Zelamta's centre moved
+    "68-0056": { commune: "El Houamed" }, // re-join by containment, out of Bou Saada
+    "02-0384": { commune: "Sendjas" }, // re-join by containment, out of Chlef
+  },
+  culture: {
+    "14-bcp-09": { commune: "Chehaïma" }, // label
+    "28-bcp-07": { commune: "Ouled Mansour" }, // re-join by containment, out of Hammam Dalaa
+    "34-maison-06": { commune: "El Euch" }, // re-join by containment, out of Elhammadia
+  },
+  ooredoo: {
+    "69-002": { commune: "El Abiodh Sidi Cheikh" }, // label
+  },
+  cliniques: {
+    "28-00005": { commune: "M'Sila" }, // label
+    "40-00009": { commune: "Taouzianat" }, // re-join: Kais' centre moved
+    "31-00107": { commune: "Oran" }, // re-join by containment, out of Es Senia
+  },
+  ecoles: {
+    "16-00039": { commune: "Bir Touta" }, // re-join: Maalma's centre moved
+  },
+  emploi: {
+    // ANEM still files this ALEM under Medea while its own address and coordinate are
+    // both in Ain Boucif, which the 2026 reform moved to wilaya 67. The reviewed
+    // ledger (quality/overrides/emploi.json, yasserstudio/geoalgeria.com#209) corrects
+    // the wilaya and carries the public review receipt with the row, so the frozen v1
+    // row needs the same correction before replay comparison.
+    "26-08": {
+      wilaya_code: "67",
+      commune_code: "2604",
+      review_status: "corrected",
+      reviewed_at: "2026-10-01",
+      reviewed_by: "geoalgeria-maintainers",
+      review_evidence: [
+        "https://www.anem.dz",
+        "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+        "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+      ],
+    },
+  },
+  ferroviaire: {
+    // All four re-joined by containment. Boughezoul is a spelling the flagship
+    // settled; the other three are the station's point landing inside a different
+    // commune's outline than the nearest centre belonged to.
+    "09-012": { commune: "Blida" },
+    "23-011": { commune: "Annaba" },
+    "31-010": { commune: "Sidi Chami" },
+    "67-002": { commune: "Boughezoul" },
+  },
+  sante: {
+    // Beni Ourtilane borrows its commune's centre (geo_method `commune_centroid`),
+    // and that centre moved: its OSM seat node carries the relation's own wikidata
+    // item, which the 2026-09-29 audit's first pass read as a name disagreement.
+    "19-epsp-05": { lat: 36.442259, lng: 4.855743 },
+  },
+  "formation-professionnelle": {
+    // Borrows its commune's centre (geo_method `commune`), and Beni Messous moved.
+    "00703": { lat: 36.780096, lng: 2.974557 },
+  },
+  "industrie-pharmaceutique": {
+    // Same class: a commune-centroid placement in Algiers whose commune moved.
+    "16-pp-08": { lat: 36.70442, lng: 3.168156 },
+    // And again on 2026-10-01: Constantine's own centre sat 3 km east of the city,
+    // so every record that borrows it moves with it (private tracker #236).
+    "25-pp-04": { lat: 36.364164, lng: 6.608428 },
+  },
+  agriculture: {
+    // Both rows are Algiers institutions placed at the wilaya chief town's centre.
+    // Alger Centre's centre was in the sea east of the port and now sits by the
+    // Grande Poste, so every record that borrows it moves with it.
+    "16-chambre_agriculture-01": { lat: 36.776335, lng: 3.058211 },
+    "16-institut_recherche-10": { lat: 36.776335, lng: 3.058211 },
   },
 };
 
@@ -125,6 +298,16 @@ const CORRECTIONS = {
 // the shipped value onto its own output before comparing, so the guard keeps
 // watching every other field of the same record.
 const ENRICHMENTS = {
+  buses: (produced, shipped) => {
+    // The frozen v1 fixture predates the reviewed OSM shape join. The package
+    // generator now attaches these fields from sources/buses; buses-v3.test.mjs
+    // independently guards the exact-ref selection and every relation id.
+    if (!shipped) return;
+    produced.source = shipped.source;
+    produced.source_refs = shipped.source_refs;
+    produced.shape_id = shipped.shape_id;
+    produced.osm_relation_ids = shipped.osm_relation_ids;
+  },
   "gares-routieres": (produced, shipped) => {
     // refs.mahatati_agency joins from research/gares-routieres/
     // mahatati-agency-ids.json (staged 2026-08-13 from the public MAHATATI
@@ -132,7 +315,61 @@ const ENRICHMENTS = {
     if (shipped?.refs?.mahatati_agency)
       produced.refs = { ...produced.refs, mahatati_agency: shipped.refs.mahatati_agency };
   },
+  "formation-professionnelle": (produced, shipped) => {
+    // The frozen v1 sample carries the source's pre-reform directorate code.
+    // The package generator now derives the current wilaya from exact point
+    // containment or its resolved commune, a file-level spatial operation the
+    // per-record v2 map cannot reproduce. Dedicated formation-current-wilayas
+    // tests guard that join; replay continues to guard every other field here.
+    if (shipped) produced.wilaya_code = shipped.wilaya_code;
+  },
+  sante: (produced, shipped) => {
+    // refs.msp_twin is the registry's other-language post for the same
+    // establishment, decided by the generator's FR/AR pairing over the whole
+    // group. The frozen v1 row carries one post id and the per-record v2 map
+    // cannot know which other post it was paired with; test/sante-pairing and
+    // test/sante-twin-posts guard the pairing and the ids it retires.
+    if (!shipped?.refs?.msp_twin) return;
+    produced.refs = { ...produced.refs, msp_twin: shipped.refs.msp_twin };
+    // A record the frozen row shipped in one language is bilingual once the
+    // twin post is paired to it, and the name it gains comes from that post.
+    for (const key of ["name_fr", "name_ar"]) if (produced[key] == null) produced[key] = shipped[key];
+    produced.name = produced.name_fr || produced.name_ar;
+    // Its geography comes from whichever half matched its commune on more of
+    // the name (betterPlaced), and the frozen row is only one half.
+    // test/sante-twin-posts guards which half places the record.
+    for (const key of ["commune", "lat", "lng", "geo_precision", "geo_method"]) produced[key] = shipped[key];
+  },
+  "protection-civile": (produced, shipped) => {
+    // Commune is assigned by the package generator from the current Arabic
+    // name/centroid index. The frozen v1 row can carry an older nearest-commune
+    // label even after its ONS code has been reconciled, so replay the generated
+    // label here while the dedicated repository-wide FK tests guard the join.
+    if (shipped) produced.commune = shipped.commune;
+  },
 };
+
+// The ONS 2021 repair is a file-level administrative join: its source-aware
+// reconciliation and repository-wide FK tests guard the mapping, while this
+// replay remains responsible for every other field produced from frozen v1
+// input. The original provider code is likewise copied only for Poste rows
+// where normalization had to preserve it separately.
+const COMMUNE_CODE_ENRICHED = new Set([
+  "agriculture",
+  "cliniques",
+  "culture",
+  "djezzy",
+  "ecoles",
+  "ferroviaire",
+  "gares-routieres",
+  "industrie-pharmaceutique",
+  "mosquees",
+  "ooredoo",
+  "pharmacies",
+  "poste",
+  "protection-civile",
+  "sante",
+]);
 
 for (const [pkg, file, map] of SPECS) {
   test(`migrate-to-v2 replay: ${pkg}/${file} reproduces the committed records`, () => {
@@ -141,8 +378,14 @@ for (const [pkg, file, map] of SPECS) {
 
     const rows = read(`packages/${pkg}/data/${file}`);
     const committed = new Map(rows.map((r) => [r.id, r]));
-    // The runner's demoteSharedPoints() pass is file-level — a per-record map
-    // cannot see that another record carries the same point — so replay it here.
+    let retired = new Set();
+    try {
+      retired = new Set(read(`packages/${pkg}/data/retired-ids.json`).ids);
+    } catch {
+      // Packages without removals do not need a ledger.
+    }
+    // The runner's demoteSharedPoints() pass is file-level: a per-record map
+    // cannot see that another record carries the same point, so replay it here.
     // The transform never moves a coordinate, so the clusters in the committed
     // file are exactly the clusters the runner saw.
     const shared = new Set([...sharedPoints(rows)].map((i) => `${rows[i].lat},${rows[i].lng}`));
@@ -154,12 +397,22 @@ for (const [pkg, file, map] of SPECS) {
       const fix = CORRECTIONS[pkg]?.[produced.id];
       if (fix) Object.assign(produced, fix);
       const shipped = committed.get(produced.id);
+      // A refreshed source may remove a row sampled at the v2 cutover. Its
+      // transformed id must remain permanently reserved; that still guards the
+      // prefix/id rule while acknowledging that no live row remains to compare.
+      if (!shipped && retired.has(produced.id)) continue;
       assert.ok(
         shipped,
         `${pkg}/${file}: the transform produced id ${JSON.stringify(produced.id)}, which is not ` +
-          `in the committed data — the id rule drifted (v1 id was ${JSON.stringify(v1.id)})`,
+          `in the committed data; the id rule drifted (v1 id was ${JSON.stringify(v1.id)})`,
       );
       ENRICHMENTS[pkg]?.(produced, shipped);
+      if (COMMUNE_CODE_ENRICHED.has(pkg)) {
+        produced.commune_code = shipped.commune_code;
+        if ("source_commune_code" in shipped)
+          produced.source_commune_code = shipped.source_commune_code;
+        else delete produced.source_commune_code;
+      }
       assert.deepEqual(produced, shipped, `${pkg}/${file}: transform output differs from the committed record ${produced.id}`);
     }
   });

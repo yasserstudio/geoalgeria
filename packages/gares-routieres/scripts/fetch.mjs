@@ -7,13 +7,14 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { loadCommunes, attachCommune, round6 } from "../../../scripts/lib/build-utils.mjs";
+import { loadCommunes, attachCommuneWithRules, describeLinkage, round6, wcode } from "../../../scripts/lib/build-utils.mjs";
 import {
   MIGRATIONS,
   writePackageV2,
   committedDates,
   carryOverIds,
   readCommitted,
+  readRetiredIds,
 } from "../../../scripts/lib/v2-transforms.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -106,8 +107,52 @@ const records = raw.map((r) => {
   };
 });
 
-// Spatial-join commune + wilaya (reconciles legacy wilaya codes to geoalgeria).
-attachCommune(records, communes);
+// Spatial-join commune + wilaya (reconciles legacy wilaya codes to geoalgeria). The
+// commune and wilaya a station already shipped under are the claim the linkage KEEPS
+// wherever geometry cannot contradict it (a coordinate too coarse to join, a commune
+// OpenStreetMap ships no outline for such as Dhayet Bendhahoua 4703, a point outside
+// every wilaya polygon). Keyed on the station name, as carryOverIds is below.
+const publishedStations = new Map(
+  (readCommitted(DATA, "stations.json") ?? []).filter((r) => r.name).map((r) => [r.name, r]),
+);
+console.log(
+  `gares-routieres linkage: ${describeLinkage(
+    attachCommuneWithRules(records, communes, (r) => publishedStations.get(r.name) ?? r),
+  )}`,
+);
+
+// Commune overrides for stations the distance join mislabelled. Since 2026-09-29 the
+// linkage decides by containment in the commune's own OSM admin_level=8 outline, which
+// is the evidence each case below was already decided on, so these four are now
+// agreements rather than overrides; they stay as the ratchet that says so, and as the
+// answer for Dhayet Bendhahoua (4703), one of the four communes OSM ships no relation
+// for. In each, the source's own record already named the commune the old join
+// contradicted.
+// GHERDAIA: the new gare at Bouhraoua, the northern entrance of Ghardaïa on the
+// RN1 (OSM maps a "Gare routière" 100 m from the point). 6.46 km from Dhayet
+// Bendhahoua's centre vs 6.57 km from Ghardaïa's, so a 110 m margin published
+// it as "Dhayet Bendhahoua" while the source's address says "Bouheraoua commune
+// de ghardaia" and its city says GHARDAIA. Reader-reported (r/algeria,
+// 2026-08-13).
+// EL OUED: 2.6 km from Bayadha's centre vs 2.8 km from El-Oued's; OSM puts the
+// point in El-Oued commune, where the source's own city field puts it too.
+// BLIDA: published as "Ouled Yaich" on a 200 m margin. The source's city says
+// BLIDA, its address says "Cité Ramoul Blida", and OSM's boundary agrees.
+// DJAMAA: published as "Sidi Amrane". The source's city says DJAMAA, its
+// address says "cité 19 Mars 1962 Djamaa", and OSM's boundary agrees.
+// (An OSM sweep of every knife-edge join also disputes BISKRA, ALGER,
+// ALI MENDJILI and BOUHNIFIFIA, but there OSM contradicts the source's own
+// city field too, so those stay as joined until better evidence exists.)
+const COMMUNE_FIX = { 47: "Ghardaia", 46: "El-Oued", 32: "Blida", 41: "Djamaa" };
+for (const r of records) {
+  const name = COMMUNE_FIX[r.sogral_id];
+  if (!name) continue;
+  const c = communes.find((x) => x.name_fr === name && wcode(x.wilaya_code) === r.wilaya_code);
+  if (!c) throw new Error(`COMMUNE_FIX: no commune "${name}" in wilaya ${r.wilaya_code}`);
+  r.commune = c.name_fr;
+  r.commune_code = c.code_commune ?? null;
+}
+
 // Fail loudly on any ungeocoded station — never ship an un-reconciled wilaya_code.
 const ungeocoded = records.filter((r) => !Number.isFinite(r.lat) || !Number.isFinite(r.lng));
 if (ungeocoded.length) {
@@ -127,14 +172,13 @@ for (const r of records) {
 // correction moves a station to its real wilaya (TINDOUF, 33-01 → 37-01),
 // the old id is added to retired-ids.json so no future wilaya-33 station can
 // silently inherit it.
-const retired = JSON.parse(readFileSync(join(DATA, "retired-ids.json"), "utf-8")).ids;
+const retiredIds = readRetiredIds(DATA);
 carryOverIds(
   records,
-  readCommitted(DATA, "stations.json")
-    .filter((r) => !retired.includes(r.id))
-    .concat(retired.map((id) => ({ id }))),
+  readCommitted(DATA, "stations.json"),
   (r) => r.name,
   "gares-routieres",
+  retiredIds,
 );
 
 // ---- Emit v2 via the shared writer (map → canonical GeoRecord + metadata) ----
@@ -148,6 +192,7 @@ const { records: final, metadata } = writePackageV2({
   meta: cfg.meta,
   updated,
   retrieved,
+  retiredIds,
 });
 
 console.log(`gares-routieres: ${final.length} stations → v2 · ${metadata.wilayas_covered} wilayas · geocoded ${metadata.geocoded_count}/${final.length}`);

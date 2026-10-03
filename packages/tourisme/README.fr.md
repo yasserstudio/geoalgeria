@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/tourisme)](https://www.npmjs.com/package/@geoalgeria/tourisme)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/tourisme)](https://www.npmjs.com/package/@geoalgeria/tourisme)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -117,7 +117,10 @@ data/
 langue. `source` est une clé courte résolue dans `metadata.sources[]`, et les identifiants
 externes vivent dans `refs` (`refs.osm` est l'identifiant OSM sous forme de chaîne,
 `refs.wikidata` un QID, `refs.wikipedia` un lien interlangue `"<langue>:<titre>"`). Les quatre
-couches OSM ne portent aucun rattachement communal : `commune_code` et `commune` y sont nuls.
+couches OSM ne portent aucun rattachement communal : `commune_code` et `commune` y sont nuls,
+sauf sur les quatre sites qu'une correction revue a replacés dans la wilaya qu'une réforme a
+donnée à leur commune (quality/overrides/tourisme.json), qui portent le `commune_code` dont
+la correction est tirée.
 
 Les champs de contact et de classification optionnels sont présents lorsque la source les
 publie, et absents sinon – jamais nuls. Sur l'hébergement : `address` (209 enregistrements),
@@ -157,7 +160,8 @@ attribution. Au total, 236 enregistrements portent un QID Wikidata et 100 un lie
 `type` est l'un des suivants : `hammam`, `ain`, `source`, `forage`. Les propriétés physiques
 (`temperature_c`, `debit_l_s`, `altitude_m`, `minerality`) proviennent directement du jeu de
 données ASAL ; `minerality` est la seule optionnelle. C'est la seule couche qui nomme une
-commune – via `commune`, un nom et non un `commune_code` ONS, qui reste nul.
+commune – via `commune`, un nom et non un `commune_code` ONS, qui reste nul sauf sur la
+source qu'une correction revue a replacée dans sa wilaya actuelle.
 
 `wilaya_code` est complété à deux chiffres avec un zéro dans toutes les couches et rejoint les
 wilayas de GeoAlgeria.
@@ -168,6 +172,16 @@ Si vous avez également besoin des wilayas, daïras et communes pour des jointur
 le package principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – il fournit
 le jeu de données complet des 69 wilayas auquel `wilaya_code` fait référence ici. Utilisez
 `@geoalgeria/tourisme` quand vous avez *uniquement* besoin des données touristiques.
+
+## Seuil de qualité
+
+La suite de tests du dépôt protège cet instantané contre les régressions
+silencieuses : la couverture bilingue français + arabe doit rester au moins à
+28,8 %, chaque enregistrement géocodé doit conserver `geo_precision` et
+`geo_method`, les champs de contact et de détail d'hébergement déjà sourcés ne
+peuvent pas diminuer, et les références OpenStreetMap présentes dans plusieurs
+catégories restent explicitement bornées. Ce sont des seuils de régression, pas
+des affirmations d'exhaustivité ; une actualisation vérifiée peut les relever.
 
 ## Source
 

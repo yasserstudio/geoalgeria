@@ -1,14 +1,16 @@
 # GeoAlgeria
 
-> The most complete open-source dataset of Algerian administrative divisions. 69 wilayas, 564 dairas, 1,541 communes with postal codes, coordinates, and bilingual names (Arabic/French). Updated for Algeria's 2025 territorial reform (Law 26-06).
+> The most complete open-source dataset of Algerian administrative divisions. 69 wilayas, 551 dairas, 1,541 communes with postal codes, coordinates, and bilingual names (Arabic/French). Updated for Algeria's 2026 territorial reform (Law 26-06).
 
 ## Key Facts
 
-- Algeria has 69 wilayas as of 2025 (48 original + 10 added in 2019 via Law 19-12 + 11 added in 2025 via Law 26-06)
-- 564 dairas and 1,541 communes total
+- Algeria has 69 wilayas as of April 2026 (48 original + 10 added in 2019 via Law 19-12 + 11 added in 2026 via Law 26-06)
+- 551 dairas and 1,541 communes total
+- Each wilaya carries its capital (chef-lieu) as a commune code (`capital_commune_code`), fixed by the decrees that name the chefs-lieux: n° 84-79 (1984) for wilayas 1-48, n° 21-117 (2021) for 49-58, n° 26-206 (2026) for 59-69
+- Every commune and wilaya carries `osm_relation_id`, the id of its own OpenStreetMap administrative relation (admin_level=8 for a commune, admin_level=4 for a wilaya), and `wikidata`, the Wikidata item that relation is tagged with, so a record joins to OpenStreetMap or Wikidata without matching on a name: 1,540 of the 1,541 communes and all 69 wilayas have a relation, 1,538 communes and all 69 wilayas have a Wikidata item, null where the source has none or where the relation's tag was proved to name a different place (one commune, 3424) (JSON records only, not the CSV/GeoJSON/SQL mirrors)
 - Available as: JSON, CSV, GeoJSON, SQL, npm package (TypeScript)
-- Source: Official Algerian government gazette (JORA), Algérie Poste
-- License: MIT
+- Source: Official Algerian government gazette (JORA), Algérie Poste, plus OpenStreetMap for the wilaya boundary polygons, 323 commune centre coordinates and the relation/Wikidata links
+- License: SEE LICENSE IN LICENSE, because the data is under three sets of terms. The compilation is MIT; the wilaya boundary polygons and those 323 commune centre coordinates are ODbL 1.0, (c) OpenStreetMap contributors, and must keep that attribution (see NOTICE); a wilaya's coordinates are the centre of its capital commune, so 6 of the 69 wilaya capital points are among those coordinates (wilayas 7, 16, 25, 32, 52 and 61) and the other 63 wilaya capital points are not OpenStreetMap-derived; the `osm_relation_id` and `wikidata` values are read out of OpenStreetMap and are ODbL too; the mirrored postal data under data/poste carries Algerie Poste's own terms, Data (c) Algerie Poste; redistributed for reference
 - npm: geoalgeria
 - GitHub: https://github.com/yasserstudio/geoalgeria
 

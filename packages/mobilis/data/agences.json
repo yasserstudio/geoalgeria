@@ -88,7 +88,7 @@
     "id": "ag-03-001",
     "name": "Agence Commerciale Aflou",
     "name_ar": "الوكالة التجارية أفلو",
-    "wilaya_code": "03",
+    "wilaya_code": "59",
     "commune_code": null,
     "commune": null,
     "lat": 34.113882,
@@ -98,8 +98,8 @@
     "source": "mobilis",
     "type": "agence",
     "code": "12321",
-    "address": "Rue Amir Abdelkader, centre ville, Aflou, Laghouat",
-    "address_ar": "شارع الأمير عبد القادر، أفلو.الأغواط"
+    "address": "Rue Amir Abdelkader, centre ville, Aflou",
+    "address_ar": "شارع الأمير عبد القادر، أفلو"
   },
   {
     "id": "ag-03-002",
@@ -190,7 +190,7 @@
     "id": "ag-05-001",
     "name": "Agence Commerciale Barika",
     "name_ar": "الوكالة التجارية بريكة",
-    "wilaya_code": "05",
+    "wilaya_code": "60",
     "commune_code": null,
     "commune": null,
     "lat": 35.385614,
@@ -200,8 +200,8 @@
     "source": "mobilis",
     "type": "agence",
     "code": "12269",
-    "address": "Rue 01 Novembre,Centre ville, Barika, Batna",
-    "address_ar": "شارع أول نوفمبر, وسط مدينة, بريكة، باتنة."
+    "address": "Rue 01 Novembre,Centre ville, Barika",
+    "address_ar": "شارع أول نوفمبر, وسط مدينة, بريكة"
   },
   {
     "id": "ag-05-002",
@@ -462,7 +462,7 @@
     "id": "ag-12-001",
     "name": "Agence Commerciale Bir El Ater",
     "name_ar": "الوكالة التجارية بئر العاتر",
-    "wilaya_code": "12",
+    "wilaya_code": "62",
     "commune_code": null,
     "commune": null,
     "lat": 34.745338604147776,
@@ -472,8 +472,8 @@
     "source": "mobilis",
     "type": "agence",
     "code": "12233",
-    "address": "Quartier Houari Boumediene,Bir El Ater, Tebessa",
-    "address_ar": "حي هواري بومدين بئر العاتر, تبسة"
+    "address": "Quartier Houari Boumediene,Bir El Ater,",
+    "address_ar": "حي هواري بومدين بئر العاتر"
   },
   {
     "id": "ag-12-002",
@@ -598,7 +598,7 @@
     "id": "ag-14-002",
     "name": "Agence Commerciale Ksar Chellala",
     "name_ar": "الوكالة التجارية قصر الشلالة",
-    "wilaya_code": "14",
+    "wilaya_code": "64",
     "commune_code": null,
     "commune": null,
     "lat": 35.21825242555629,
@@ -608,8 +608,8 @@
     "source": "mobilis",
     "type": "agence",
     "code": "12265",
-    "address": "Rue Souih Slimane Hai El Fateh,Ksar Chellala,Tiaret",
-    "address_ar": "شارع سويح سليمان ، حي الفتح. قصر الشلالة. تيارت"
+    "address": "Rue Souih Slimane Hai El Fateh,Ksar Chellala",
+    "address_ar": "شارع سويح سليمان ، حي الفتح. قصر الشلالة."
   },
   {
     "id": "ag-14-003",
@@ -1057,7 +1057,7 @@
     "id": "ag-17-001",
     "name": "Agence Commerciale Ain Ouessara",
     "name_ar": "الوكالة التجارية عين وسارة",
-    "wilaya_code": "17",
+    "wilaya_code": "65",
     "commune_code": null,
     "commune": null,
     "lat": 35.454806936929685,
@@ -1067,8 +1067,8 @@
     "source": "mobilis",
     "type": "agence",
     "code": "12254",
-    "address": "Cité Zighout Youcef, séction N° 22 Lot 236 , Ain Oussara, Djelfa.",
-    "address_ar": "حي زيغود يوسف، جزء 22 قطعة 236،، عين وسارة ، الجلفة"
+    "address": "Cité Zighout Youcef, séction N° 22 Lot 236 , Ain Oussara .",
+    "address_ar": "حي زيغود يوسف، جزء 22 قطعة 236،، عين وسارة"
   },
   {
     "id": "ag-17-002",
@@ -1091,7 +1091,7 @@
     "id": "ag-17-003",
     "name": "Agence Commerciale Messad",
     "name_ar": "الوكالة التجارية مسعد",
-    "wilaya_code": "17",
+    "wilaya_code": "66",
     "commune_code": null,
     "commune": null,
     "lat": 34.153815067522395,
@@ -1101,8 +1101,8 @@
     "source": "mobilis",
     "type": "agence",
     "code": "12256",
-    "address": "Cite 1 Novembre Bâtisse N° 343, Messad, Djelfa",
-    "address_ar": "شارع أول نوفمبر عمارة رقم 343 , مسعد, الجلفة ."
+    "address": "Cite 1 Novembre Bâtisse N° 343, Messad",
+    "address_ar": "شارع أول نوفمبر عمارة رقم 343 , مسعد, ."
   },
   {
     "id": "ag-18-001",
@@ -1632,6 +1632,31 @@
     "address_ar": "رقم 10 طريق الاستقلال, زيغود يوسف, قسنطينة"
   },
   {
+    "id": "ag-25-009",
+    "name": "Proxishop Constantine",
+    "name_ar": "الوكالة التجارية قسنطينة",
+    "wilaya_code": "25",
+    "commune_code": "2506",
+    "commune": "El Khroub",
+    "lat": 36.26333,
+    "lng": 6.69361,
+    "geo_precision": "approximate",
+    "geo_method": "commune_centroid",
+    "source": "mobilis",
+    "type": "agence",
+    "code": "12346",
+    "address": "Université « 03 » Salah Boubnider constantine",
+    "address_ar": "الجامعة رقم 3 صالح بوبنيدر قسنطينة",
+    "review_status": "corrected",
+    "reviewed_at": "2026-08-31",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://mobilis.dz/mapagence?type_agence=Mobilis+Agency",
+      "https://univ-constantine3.dz/pdfs/formulaire%20%20de%20%20reservationvisiofinal-converti.pdf",
+      "https://whed.net/institutions/IAU-024027"
+    ]
+  },
+  {
     "id": "ag-26-001",
     "name": "Agence Commerciale Beni Slimane",
     "name_ar": "الوكالة التجارية بني سليمان",
@@ -1652,7 +1677,7 @@
     "id": "ag-26-002",
     "name": "Agence Commerciale Kesur El Boukhari",
     "name_ar": "الوكالة التجارية قصر البخاري",
-    "wilaya_code": "26",
+    "wilaya_code": "67",
     "commune_code": null,
     "commune": null,
     "lat": 35.88773415147028,
@@ -1662,8 +1687,8 @@
     "source": "mobilis",
     "type": "agence",
     "code": "12258",
-    "address": "Boulevard Mohamed Khemisti,Kseur El Boukhari, Medea",
-    "address_ar": "نهج محمد خميستي، قصر البخاري, المدية."
+    "address": "Boulevard Mohamed Khemisti,Kseur El Boukhari",
+    "address_ar": "نهج محمد خميستي، قصر البخاري ."
   },
   {
     "id": "ag-26-003",
@@ -1703,7 +1728,7 @@
     "id": "ag-28-001",
     "name": "Agence Commerciale BOUSAADA",
     "name_ar": "الوكالة التجارية بوسعادة",
-    "wilaya_code": "28",
+    "wilaya_code": "68",
     "commune_code": null,
     "commune": null,
     "lat": 35.20075935966173,
@@ -1713,8 +1738,8 @@
     "source": "mobilis",
     "type": "agence",
     "code": "12338",
-    "address": "Route de Djelfa 948/21, Boussaâda, Msila",
-    "address_ar": "طريق الجلفة 948/21، بوسعادة، المسيلة"
+    "address": "Route de Djelfa 948/21, Boussaâda",
+    "address_ar": "طريق الجلفة 948/21، بوسعادة"
   },
   {
     "id": "ag-28-002",
@@ -1992,7 +2017,7 @@
     "id": "ag-32-002",
     "name": "Agence Commerciale El Biodh Sid Cheikh",
     "name_ar": "الوكالة التجارية البيض سيد الشيخ",
-    "wilaya_code": "32",
+    "wilaya_code": "69",
     "commune_code": null,
     "commune": null,
     "lat": 32.89642678684606,
@@ -2002,8 +2027,8 @@
     "source": "mobilis",
     "type": "agence",
     "code": "12243",
-    "address": "Rue Didouche Mourad N° 01,N°02, Biod Sidi Echikh, El Bayadh",
-    "address_ar": "شارع ديدوش مراد رقم 01، رقم 02. البيض سيد الشيخ البيض"
+    "address": "Rue Didouche Mourad N° 01,N°02, Biod Sidi Echikh",
+    "address_ar": "شارع ديدوش مراد رقم 01، رقم 02. البيض سيد الشيخ"
   },
   {
     "id": "ag-33-001",
@@ -2213,7 +2238,7 @@
     "id": "ag-39-001",
     "name": "Agence Commerciale Djamaa",
     "name_ar": "الوكالة التجارية جامعة",
-    "wilaya_code": "39",
+    "wilaya_code": "57",
     "commune_code": null,
     "commune": null,
     "lat": 33.53229070626119,
@@ -2242,23 +2267,6 @@
     "code": "12315",
     "address": "Cité Mohamed Khemisti , centre ville, El Oued",
     "address_ar": "شارع محمد خميستي، وسط المدينة,الوادي."
-  },
-  {
-    "id": "ag-40-001",
-    "name": "Agence Commerciale KAIS",
-    "name_ar": "الوكالة التجارية قايس",
-    "wilaya_code": "40",
-    "commune_code": null,
-    "commune": null,
-    "lat": 35.492784482668405,
-    "lng": 6.927675923055561,
-    "geo_precision": "exact",
-    "geo_method": "mobilis",
-    "source": "mobilis",
-    "type": "agence",
-    "code": "12280",
-    "address": "Rue Abbas laghrour, Kais, Khenchla",
-    "address_ar": "شارع عباس لغرور، قايس, خنشلة"
   },
   {
     "id": "ag-40-002",
@@ -2531,23 +2539,6 @@
     "code": "12288",
     "address": "Rue 01 Novembre , Ain Temouchent",
     "address_ar": "شارع أول نوفمبر،, عين تيموشنت"
-  },
-  {
-    "id": "ag-46-002",
-    "name": "Agence Commerciale Beni Saf",
-    "name_ar": "الوكالة التجارية بني صاف",
-    "wilaya_code": "46",
-    "commune_code": null,
-    "commune": null,
-    "lat": 35.302176,
-    "lng": -1.382682,
-    "geo_precision": "exact",
-    "geo_method": "mobilis",
-    "source": "mobilis",
-    "type": "agence",
-    "code": "12289",
-    "address": "Avenue Kadri Kadour ex Jean Kuras, Beni Saf, Ain Temouchent",
-    "address_ar": "شارع قادري قدور(جون كوراس سابقا)، بني صاف, عين تيموشنت."
   },
   {
     "id": "ag-46-003",

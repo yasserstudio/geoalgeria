@@ -1,5 +1,5 @@
-// @geoalgeria/jeunesse — lightweight loaders for Algeria's youth establishments
-// (Ministry of Youth and Sports — SIG).
+// @geoalgeria/jeunesse: lightweight loaders for Algeria's youth establishments
+// (Ministry of Youth and Sports: SIG).
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

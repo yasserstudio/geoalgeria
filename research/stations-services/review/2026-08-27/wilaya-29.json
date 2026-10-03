@@ -1,0 +1,3135 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-29",
+    "wilaya_code": 29,
+    "name": "Mascara",
+    "name_ar": "معسكر",
+    "center": [
+      0.19,
+      35.397999999999996
+    ],
+    "bounds": [
+      -0.522,
+      35.011,
+      0.902,
+      35.785
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 76,
+    "osm_records": 46,
+    "tariki_records": 65,
+    "cross_source": 31,
+    "multiple_tariki": 2,
+    "osm_only": 13,
+    "tariki_only": 30,
+    "nearby_osm_pairs": 2,
+    "conflicts": 36
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3199242684",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4267415790",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4267415791",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4554196995",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-7595583416",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-304024737",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1176",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1323",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1338",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13873",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13876",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13993",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14527",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14635",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14636",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14680",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1622",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1729",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3010",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-375",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3892",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5366",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5527",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5558",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5561",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5565",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5584",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5682",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-615",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-654",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-723",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-730",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7852",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-962",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-966",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-968",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-1327036202",
+      "coordinates": [
+        -0.3707115,
+        35.5372783
+      ],
+      "osm": {
+        "id": "node/1327036202",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.3707115,
+          35.5372783
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1327043649",
+      "coordinates": [
+        -0.2106328,
+        35.5873993
+      ],
+      "osm": {
+        "id": "node/1327043649",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.2106328,
+          35.5873993
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3887",
+          "route_id": "2362",
+          "name_fr": "Station de services 1",
+          "name_ar": "محطة الوقود 1",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.21,
+            35.587
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 72
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود 1"
+    },
+    {
+      "id": "osm-node-2047666659",
+      "coordinates": [
+        0.0010957,
+        35.4584459
+      ],
+      "osm": {
+        "id": "node/2047666659",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0010957,
+          35.4584459
+        ]
+      },
+      "tariki": [
+        {
+          "id": "652",
+          "route_id": "1466",
+          "name_fr": "Station de services Baouche",
+          "name_ar": "محطة خدمات بعوش",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.001,
+            35.4584
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات بعوش"
+    },
+    {
+      "id": "osm-node-2431210628",
+      "coordinates": [
+        0.2482513,
+        35.4833396
+      ],
+      "osm": {
+        "id": "node/2431210628",
+        "name": "station de service douba kaddour",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2482513,
+          35.4833396
+        ]
+      },
+      "tariki": [
+        {
+          "id": "875",
+          "route_id": "2756",
+          "name_fr": "Station de services Petroser Douba",
+          "name_ar": "محطة خدمات بتروسار دوبة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.2485,
+            35.4832
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de service douba kaddour",
+      "display_name_ar": "محطة خدمات بتروسار دوبة"
+    },
+    {
+      "id": "osm-node-2982361513",
+      "coordinates": [
+        0.2007382,
+        35.6738802
+      ],
+      "osm": {
+        "id": "node/2982361513",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2007382,
+          35.6738802
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6676",
+          "route_id": "3755",
+          "name_fr": "Station de services EL GHOMRI",
+          "name_ar": "محطة خدمات الغمري",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.2,
+            35.674
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 68
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات الغمري"
+    },
+    {
+      "id": "osm-node-3085466789",
+      "coordinates": [
+        0.1312784,
+        35.3955642
+      ],
+      "osm": {
+        "id": "node/3085466789",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1312784,
+          35.3955642
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6663",
+          "route_id": "2751",
+          "name_fr": "Station de services MASCARA 04",
+          "name_ar": "محطة خدمات معسكر 04",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.131,
+            35.396
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات معسكر 04"
+    },
+    {
+      "id": "osm-node-3181633400",
+      "coordinates": [
+        0.2947221,
+        35.511378
+      ],
+      "osm": {
+        "id": "node/3181633400",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2947221,
+          35.511378
+        ]
+      },
+      "tariki": [
+        {
+          "id": "725",
+          "route_id": "2286",
+          "name_fr": "station de services commune Elbordj",
+          "name_ar": "محطة الخدمات بلدية البرج",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.295,
+            35.511
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات بلدية البرج"
+    },
+    {
+      "id": "osm-node-3198481975",
+      "coordinates": [
+        0.3256996,
+        35.4153058
+      ],
+      "osm": {
+        "id": "node/3198481975",
+        "name": "Station Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          0.3256996,
+          35.4153058
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7851",
+          "route_id": "2324",
+          "name_fr": "STATION DE SERVICES NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.326,
+            35.415
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 44
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Naftal",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "osm-node-3199224965",
+      "coordinates": [
+        0.1537973,
+        35.2522466
+      ],
+      "osm": {
+        "id": "node/3199224965",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1537973,
+          35.2522466
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13870",
+          "route_id": "2047",
+          "name_fr": "STATION SERVICE NAFTAL",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.154,
+            35.252
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-node-3199242684",
+      "coordinates": [
+        0.1477466,
+        35.2390467
+      ],
+      "osm": {
+        "id": "node/3199242684",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1477466,
+          35.2390467
+        ]
+      },
+      "tariki": [
+        {
+          "id": "624",
+          "route_id": "2047",
+          "name_fr": "station de services Sersar",
+          "name_ar": "محطة  خدمات صرصار",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.148,
+            35.239
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 24
+        },
+        {
+          "id": "13869",
+          "route_id": "2047",
+          "name_fr": "STATION SERVICE KLAWZI",
+          "name_ar": "محطة الخدمات قلاوزي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.148,
+            35.239
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة  خدمات صرصار"
+    },
+    {
+      "id": "osm-node-3199893406",
+      "coordinates": [
+        -0.0546341,
+        35.4052423
+      ],
+      "osm": {
+        "id": "node/3199893406",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.0546341,
+          35.4052423
+        ]
+      },
+      "tariki": [
+        {
+          "id": "758",
+          "route_id": "1470",
+          "name_fr": "Station de services Affene",
+          "name_ar": "محطة خدمات عفان",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.0548,
+            35.4053
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 16
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات عفان"
+    },
+    {
+      "id": "osm-node-3722756296",
+      "coordinates": [
+        -0.0264178,
+        35.6080424
+      ],
+      "osm": {
+        "id": "node/3722756296",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.0264178,
+          35.6080424
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3722756297",
+      "coordinates": [
+        -0.0260958,
+        35.6107963
+      ],
+      "osm": {
+        "id": "node/3722756297",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.0260958,
+          35.6107963
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4009708071",
+      "coordinates": [
+        0.2388121,
+        35.3780402
+      ],
+      "osm": {
+        "id": "node/4009708071",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2388121,
+          35.3780402
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1474",
+          "route_id": "4231",
+          "name_fr": "Station de services Dinar Habib",
+          "name_ar": "محطة خدمات دينار الحبيب",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.2388,
+            35.378
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات دينار الحبيب"
+    },
+    {
+      "id": "osm-node-4009708078",
+      "coordinates": [
+        0.2532601,
+        35.379365
+      ],
+      "osm": {
+        "id": "node/4009708078",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2532601,
+          35.379365
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1475",
+          "route_id": "4231",
+          "name_fr": "Station de services Lakhdar Ali",
+          "name_ar": "محطة خدمات لخضر علي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.2533,
+            35.3793
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات لخضر علي"
+    },
+    {
+      "id": "osm-node-4107114589",
+      "coordinates": [
+        0.3002964,
+        35.4676816
+      ],
+      "osm": {
+        "id": "node/4107114589",
+        "name": "Station Khalouia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.3002964,
+          35.4676816
+        ]
+      },
+      "tariki": [
+        {
+          "id": "843",
+          "route_id": "2630",
+          "name_fr": "Station de services Si Tayeb",
+          "name_ar": "محطة خدمات سي الطيب بلدية خلوية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.3,
+            35.468
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 44
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Khalouia",
+      "display_name_ar": "محطة خدمات سي الطيب بلدية خلوية"
+    },
+    {
+      "id": "osm-node-4267415691",
+      "coordinates": [
+        -0.2167361,
+        35.6426184
+      ],
+      "osm": {
+        "id": "node/4267415691",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2167361,
+          35.6426184
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4267415790",
+      "coordinates": [
+        -0.1927187,
+        35.5309552
+      ],
+      "osm": {
+        "id": "node/4267415790",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -0.1927187,
+          35.5309552
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4267415791",
+          "offset_m": 45
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4267415791",
+      "coordinates": [
+        -0.193149,
+        35.5307442
+      ],
+      "osm": {
+        "id": "node/4267415791",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -0.193149,
+          35.5307442
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2998",
+          "route_id": "3046",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نافطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.1936,
+            35.5309
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 44
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4267415790",
+          "offset_m": 45
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نافطال"
+    },
+    {
+      "id": "osm-node-4267416090",
+      "coordinates": [
+        -0.2049527,
+        35.5312217
+      ],
+      "osm": {
+        "id": "node/4267416090",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2049527,
+          35.5312217
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3003",
+          "route_id": "3046",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نافطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.2039,
+            35.5308
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 106
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نافطال"
+    },
+    {
+      "id": "osm-node-4374857527",
+      "coordinates": [
+        -0.407055,
+        35.5092895
+      ],
+      "osm": {
+        "id": "node/4374857527",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.407055,
+          35.5092895
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5184",
+          "route_id": "2171",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.407,
+            35.509
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-4377598592",
+      "coordinates": [
+        -0.1903641,
+        35.5311811
+      ],
+      "osm": {
+        "id": "node/4377598592",
+        "name": "محطة البنزين",
+        "name_ar": "محطة البنزين",
+        "name_fr": "Station d'essence",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -0.1903641,
+          35.5311811
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2997",
+          "route_id": "3046",
+          "name_fr": "Station de services",
+          "name_ar": "محطة GBS",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.1908,
+            35.531
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 44
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station d'essence",
+      "display_name_ar": "محطة البنزين"
+    },
+    {
+      "id": "osm-node-4410694291",
+      "coordinates": [
+        -0.0879325,
+        35.5643887
+      ],
+      "osm": {
+        "id": "node/4410694291",
+        "name": "محطة البنزين",
+        "name_ar": "محطة البنزين",
+        "name_fr": "Station d'essence",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.0879325,
+          35.5643887
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1610",
+          "route_id": "4583",
+          "name_fr": "Station de services Mehedji",
+          "name_ar": "محطة خدمات مهاجي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.088,
+            35.5643
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station d'essence",
+      "display_name_ar": "محطة البنزين"
+    },
+    {
+      "id": "osm-node-4552104334",
+      "coordinates": [
+        0.6826936,
+        35.4527124
+      ],
+      "osm": {
+        "id": "node/4552104334",
+        "name": "محطة البنزين",
+        "name_ar": "محطة البنزين",
+        "name_fr": "Station d'essence",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          0.6826936,
+          35.4527124
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3255",
+          "route_id": "4338",
+          "name_fr": "Station de services Naftal Oued ElAbtal",
+          "name_ar": "محطة نفطال واد الأبطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.683,
+            35.453
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 42
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station d'essence",
+      "display_name_ar": "محطة البنزين"
+    },
+    {
+      "id": "osm-node-4554196995",
+      "coordinates": [
+        0.1447374,
+        35.4147574
+      ],
+      "osm": {
+        "id": "node/4554196995",
+        "name": "Station service Arafa",
+        "name_ar": "محطة الخدمات عرفة",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1447374,
+          35.4147574
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2739",
+          "route_id": "6246",
+          "name_fr": "Station de services ARAFA",
+          "name_ar": "محطة الخدمات  عرفة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.145,
+            35.415
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 36
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-304024737",
+          "offset_m": 14
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station service Arafa",
+      "display_name_ar": "محطة الخدمات عرفة"
+    },
+    {
+      "id": "osm-node-4664170596",
+      "coordinates": [
+        0.0698116,
+        35.3208022
+      ],
+      "osm": {
+        "id": "node/4664170596",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0698116,
+          35.3208022
+        ]
+      },
+      "tariki": [
+        {
+          "id": "638",
+          "route_id": "2094",
+          "name_fr": "Station de services Tizi",
+          "name_ar": "محطة خدمات تيزي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.0698,
+            35.3206
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 23
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Tizi",
+      "display_name_ar": "محطة خدمات تيزي"
+    },
+    {
+      "id": "osm-node-4672100802",
+      "coordinates": [
+        -0.0448602,
+        35.5701983
+      ],
+      "osm": {
+        "id": "node/4672100802",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.0448602,
+          35.5701983
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1609",
+          "route_id": "4583",
+          "name_fr": "Station de services yaellou",
+          "name_ar": "محطة خدمات يعلو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.0449,
+            35.5703
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services yaellou",
+      "display_name_ar": "محطة خدمات يعلو"
+    },
+    {
+      "id": "osm-node-4818330721",
+      "coordinates": [
+        0.0570382,
+        35.5891879
+      ],
+      "osm": {
+        "id": "node/4818330721",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0570382,
+          35.5891879
+        ]
+      },
+      "tariki": [
+        {
+          "id": "717",
+          "route_id": "2288",
+          "name_fr": "Station de services Oued Elhebra",
+          "name_ar": "محطة خدمات واد الهبرة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.057,
+            35.589
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 21
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Oued Elhebra",
+      "display_name_ar": "محطة خدمات واد الهبرة"
+    },
+    {
+      "id": "osm-node-5161397534",
+      "coordinates": [
+        0.0886927,
+        35.1089676
+      ],
+      "osm": {
+        "id": "node/5161397534",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": "station service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0886927,
+          35.1089676
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3741",
+          "route_id": "1895",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.089,
+            35.109
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 28
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station service",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-5832618473",
+      "coordinates": [
+        0.3624826,
+        35.4150735
+      ],
+      "osm": {
+        "id": "node/5832618473",
+        "name": "Station service Sirgaz (GPL)",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.3624826,
+          35.4150735
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Sirgaz (GPL)",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6550232021",
+      "coordinates": [
+        0.1600938,
+        35.3817142
+      ],
+      "osm": {
+        "id": "node/6550232021",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1600938,
+          35.3817142
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7595583416",
+      "coordinates": [
+        0.2111823,
+        35.3294306
+      ],
+      "osm": {
+        "id": "node/7595583416",
+        "name": "STATION SERVICES PETROSAR",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2111823,
+          35.3294306
+        ]
+      },
+      "tariki": [
+        {
+          "id": "378",
+          "route_id": "1252",
+          "name_fr": "Station de services Petroser 1",
+          "name_ar": "محطة  خدمات بتروسار 1",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.211,
+            35.329
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 51
+        },
+        {
+          "id": "442",
+          "route_id": "1252",
+          "name_fr": "station de services Petroser 2",
+          "name_ar": "محطة خدمات بتروسار 2",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.211,
+            35.329
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 51
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "STATION SERVICES PETROSAR",
+      "display_name_ar": "محطة  خدمات بتروسار 1"
+    },
+    {
+      "id": "osm-node-8527209418",
+      "coordinates": [
+        -0.2185898,
+        35.6772312
+      ],
+      "osm": {
+        "id": "node/8527209418",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2185898,
+          35.6772312
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8527209419",
+      "coordinates": [
+        -0.0078072,
+        35.4606148
+      ],
+      "osm": {
+        "id": "node/8527209419",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.0078072,
+          35.4606148
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8527209420",
+      "coordinates": [
+        -0.2478414,
+        35.5512838
+      ],
+      "osm": {
+        "id": "node/8527209420",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2478414,
+          35.5512838
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8527209517",
+      "coordinates": [
+        -0.1455306,
+        35.531663
+      ],
+      "osm": {
+        "id": "node/8527209517",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.1455306,
+          35.531663
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1183374733",
+      "coordinates": [
+        0.06086305,
+        35.628103550000006
+      ],
+      "osm": {
+        "id": "way/1183374733",
+        "name": "Station D'essence  Hennian",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.06086305,
+          35.628103550000006
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station D'essence  Hennian",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-250232643",
+      "coordinates": [
+        -0.056407799999999994,
+        35.32661025
+      ],
+      "osm": {
+        "id": "way/250232643",
+        "name": "Station Service",
+        "name_ar": "محطة خدمات",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.056407799999999994,
+          35.32661025
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3619",
+          "route_id": "3020",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.0564,
+            35.3266
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 1
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-255880923",
+      "coordinates": [
+        0.11719615,
+        35.37897735
+      ],
+      "osm": {
+        "id": "way/255880923",
+        "name": "Station Naftal Khessibia",
+        "name_ar": "محطة الوقود نفطال خصيبية",
+        "name_fr": "Station Naftal Khessibia",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": "24/7",
+        "coordinates": [
+          0.11719615,
+          35.37897735
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6658",
+          "route_id": "2749",
+          "name_fr": "Station de services MASCARA 02",
+          "name_ar": "محطة خدمات معسكر 02",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.117,
+            35.379
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 18
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Naftal Khessibia",
+      "display_name_ar": "محطة الوقود نفطال خصيبية"
+    },
+    {
+      "id": "osm-way-255880927",
+      "coordinates": [
+        0.10997005,
+        35.3978822
+      ],
+      "osm": {
+        "id": "way/255880927",
+        "name": "Station Essence Petroser",
+        "name_ar": "محطة الوقود بتروسار",
+        "name_fr": "Station Essence Petroser",
+        "brand": null,
+        "operator": "Petroser",
+        "opening_hours": "24/7",
+        "coordinates": [
+          0.10997005,
+          35.3978822
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6656",
+          "route_id": "2749",
+          "name_fr": "Station de services MASCARA 01",
+          "name_ar": "محطة خدمات معسكر 01",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.11,
+            35.398
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Essence Petroser",
+      "display_name_ar": "محطة الوقود بتروسار"
+    },
+    {
+      "id": "osm-way-276898156",
+      "coordinates": [
+        0.06169385,
+        35.590987049999995
+      ],
+      "osm": {
+        "id": "way/276898156",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.06169385,
+          35.590987049999995
+        ]
+      },
+      "tariki": [
+        {
+          "id": "718",
+          "route_id": "2288",
+          "name_fr": "Station de services à coté du tunnel",
+          "name_ar": "محطة خدمات بمحاذاة النفق",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.062,
+            35.591
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 28
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات بمحاذاة النفق"
+    },
+    {
+      "id": "osm-way-276898157",
+      "coordinates": [
+        0.0652412,
+        35.591991750000005
+      ],
+      "osm": {
+        "id": "way/276898157",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0652412,
+          35.591991750000005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7819",
+          "route_id": "2288",
+          "name_fr": "Station de services mouhamadia",
+          "name_ar": "محطة بنزين المحمدية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.065,
+            35.592
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services mouhamadia",
+      "display_name_ar": "محطة بنزين المحمدية"
+    },
+    {
+      "id": "osm-way-277255321",
+      "coordinates": [
+        0.09863985,
+        35.61154775
+      ],
+      "osm": {
+        "id": "way/277255321",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.09863985,
+          35.61154775
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3658",
+          "route_id": "2288",
+          "name_fr": "Station de services Hamdi",
+          "name_ar": "محطة البنزين حمدي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.099,
+            35.611
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 69
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Hamdi",
+      "display_name_ar": "محطة البنزين حمدي"
+    },
+    {
+      "id": "osm-way-297042941",
+      "coordinates": [
+        -0.1588093,
+        35.5301092
+      ],
+      "osm": {
+        "id": "way/297042941",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.1588093,
+          35.5301092
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2995",
+          "route_id": "3046",
+          "name_fr": "Station de services petroser",
+          "name_ar": "محطة البنزين بدوار سحادلية",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.159,
+            35.5297
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services petroser",
+      "display_name_ar": "محطة البنزين بدوار سحادلية"
+    },
+    {
+      "id": "osm-way-297049505",
+      "coordinates": [
+        -0.26754195000000003,
+        35.55298835
+      ],
+      "osm": {
+        "id": "way/297049505",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.26754195000000003,
+          35.55298835
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1395",
+          "route_id": "4066",
+          "name_fr": "Station de services Cherif Hadria",
+          "name_ar": "محطة البنزين شريف حضرية",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            -0.268,
+            35.553
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": 41
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Cherif Hadria",
+      "display_name_ar": "محطة البنزين شريف حضرية"
+    },
+    {
+      "id": "osm-way-304024737",
+      "coordinates": [
+        0.14470545,
+        35.41463695
+      ],
+      "osm": {
+        "id": "way/304024737",
+        "name": "Station Essence Petroser Arafa",
+        "name_ar": "محطة الوقود بتروسار عرفة",
+        "name_fr": "Station Essence Petroser Arafa",
+        "brand": "Naftal",
+        "operator": "Petroser",
+        "opening_hours": null,
+        "coordinates": [
+          0.14470545,
+          35.41463695
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4554196995",
+          "offset_m": 14
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station Essence Petroser Arafa",
+      "display_name_ar": "محطة الوقود بتروسار عرفة"
+    },
+    {
+      "id": "tariki-1176",
+      "coordinates": [
+        0.003,
+        35.23
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1176",
+          "route_id": "2113",
+          "name_fr": "Station de services naftal",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.003,
+            35.23
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "tariki-1323",
+      "coordinates": [
+        0.368,
+        35.319
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1323",
+          "route_id": "2395",
+          "name_fr": "station de services Minari",
+          "name_ar": "مجطة خدمات مناري",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.368,
+            35.319
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Minari",
+      "display_name_ar": "مجطة خدمات مناري"
+    },
+    {
+      "id": "tariki-1338",
+      "coordinates": [
+        0.33,
+        35.341
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1338",
+          "route_id": "3947",
+          "name_fr": "Station de services SIDI KAKA",
+          "name_ar": "محطة الوقود سيدي قادة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.33,
+            35.341
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services SIDI KAKA",
+      "display_name_ar": "محطة الوقود سيدي قادة"
+    },
+    {
+      "id": "tariki-13873",
+      "coordinates": [
+        0.205,
+        35.531
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13873",
+          "route_id": "7364",
+          "name_fr": "naftal",
+          "name_ar": "station de service nftazl",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.205,
+            35.531
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "naftal",
+      "display_name_ar": "station de service nftazl"
+    },
+    {
+      "id": "tariki-13876",
+      "coordinates": [
+        0.024,
+        35.611
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13876",
+          "route_id": "19806",
+          "name_fr": "BABA ALI",
+          "name_ar": "بابا علي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            0.024,
+            35.611
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "BABA ALI",
+      "display_name_ar": "بابا علي"
+    },
+    {
+      "id": "tariki-13993",
+      "coordinates": [
+        0.608,
+        35.401
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13993",
+          "route_id": "9131",
+          "name_fr": null,
+          "name_ar": "محطة الخدمات واك موسى",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.608,
+            35.401
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة الخدمات واك موسى",
+      "display_name_ar": "محطة الخدمات واك موسى"
+    },
+    {
+      "id": "tariki-14527",
+      "coordinates": [
+        0.457,
+        35.432
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14527",
+          "route_id": "22217",
+          "name_fr": "TTASSALA",
+          "name_ar": "محطة تسالة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            0.457,
+            35.432
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "TTASSALA",
+      "display_name_ar": "محطة تسالة"
+    },
+    {
+      "id": "tariki-14635",
+      "coordinates": [
+        0.457,
+        35.431
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14635",
+          "route_id": "22562",
+          "name_fr": "STATION DE SERVICES TASSALA SUD",
+          "name_ar": "محطة الخدمات تسالة الجنوبية",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            0.457,
+            35.431
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES TASSALA SUD",
+      "display_name_ar": "محطة الخدمات تسالة الجنوبية"
+    },
+    {
+      "id": "tariki-14636",
+      "coordinates": [
+        0.456,
+        35.434
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14636",
+          "route_id": "22562",
+          "name_fr": "STATION DE SERVICES TASSALA NORD",
+          "name_ar": "محطة الخدمات تسالة الشمالية",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            0.456,
+            35.434
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES TASSALA NORD",
+      "display_name_ar": "محطة الخدمات تسالة الشمالية"
+    },
+    {
+      "id": "tariki-14680",
+      "coordinates": [
+        0.452,
+        35.18
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14680",
+          "route_id": "22744",
+          "name_fr": "station ben sehil",
+          "name_ar": "محطة الخدمات بن سهيل",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.452,
+            35.18
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station ben sehil",
+      "display_name_ar": "محطة الخدمات بن سهيل"
+    },
+    {
+      "id": "tariki-1622",
+      "coordinates": [
+        -0.023,
+        35.61
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1622",
+          "route_id": "4599",
+          "name_fr": "Station de services Baba Ali",
+          "name_ar": "محطة خدمات بابا علي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            -0.023,
+            35.61
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Baba Ali",
+      "display_name_ar": "محطة خدمات بابا علي"
+    },
+    {
+      "id": "tariki-1729",
+      "coordinates": [
+        0.34,
+        35.39
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1729",
+          "route_id": "1382",
+          "name_fr": "Station de services s.m.b",
+          "name_ar": "محطة خدمات سيدي أمحمد بن عودة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.34,
+            35.39
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services s.m.b",
+      "display_name_ar": "محطة خدمات سيدي أمحمد بن عودة"
+    },
+    {
+      "id": "tariki-3010",
+      "coordinates": [
+        -0.1444,
+        35.4888
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3010",
+          "route_id": "3046",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.1444,
+            35.4888
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "tariki-375",
+      "coordinates": [
+        0.198,
+        35.313
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "375",
+          "route_id": "1239",
+          "name_fr": "Station de services Ziani",
+          "name_ar": "محطة الوقود زياني",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.198,
+            35.313
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Ziani",
+      "display_name_ar": "محطة الوقود زياني"
+    },
+    {
+      "id": "tariki-3892",
+      "coordinates": [
+        -0.217,
+        35.646
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3892",
+          "route_id": "2362",
+          "name_fr": "Station de services 2",
+          "name_ar": "محطة الوقود  2",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.217,
+            35.646
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services 2",
+      "display_name_ar": "محطة الوقود  2"
+    },
+    {
+      "id": "tariki-5366",
+      "coordinates": [
+        -0.374,
+        35.537
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5366",
+          "route_id": "2173",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            -0.374,
+            35.537
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة الخدمات"
+    },
+    {
+      "id": "tariki-5527",
+      "coordinates": [
+        0.117,
+        35.388
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5527",
+          "route_id": "2749",
+          "name_fr": "Station de services Elkurt",
+          "name_ar": "محطة خدمات الكرط نفطال",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.117,
+            35.388
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Elkurt",
+      "display_name_ar": "محطة خدمات الكرط نفطال"
+    },
+    {
+      "id": "tariki-5558",
+      "coordinates": [
+        0.3581,
+        35.0986
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5558",
+          "route_id": "2021",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.3581,
+            35.0986
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "tariki-5561",
+      "coordinates": [
+        0.285,
+        35.391
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5561",
+          "route_id": "2324",
+          "name_fr": "Station de services HALFAOUI",
+          "name_ar": "محطة خدمات حلفاوي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.285,
+            35.391
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services HALFAOUI",
+      "display_name_ar": "محطة خدمات حلفاوي"
+    },
+    {
+      "id": "tariki-5565",
+      "coordinates": [
+        0.386,
+        35.414
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5565",
+          "route_id": "2324",
+          "name_fr": "Station de services  ALAKI",
+          "name_ar": "محطة خدمات العلاقي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.386,
+            35.414
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  ALAKI",
+      "display_name_ar": "محطة خدمات العلاقي"
+    },
+    {
+      "id": "tariki-5584",
+      "coordinates": [
+        0.471,
+        35.291
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5584",
+          "route_id": "1409",
+          "name_fr": "Station de services Zlamta",
+          "name_ar": "محطة خدمات زلامطة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.471,
+            35.291
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Zlamta",
+      "display_name_ar": "محطة خدمات زلامطة"
+    },
+    {
+      "id": "tariki-5682",
+      "coordinates": [
+        0.3289,
+        35.4079
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5682",
+          "route_id": "2335",
+          "name_fr": "Station de services rue sidi kada",
+          "name_ar": "محطة طريق سيدي قادة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.3289,
+            35.4079
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services rue sidi kada",
+      "display_name_ar": "محطة طريق سيدي قادة"
+    },
+    {
+      "id": "tariki-615",
+      "coordinates": [
+        0.1092,
+        35.2015
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "615",
+          "route_id": "2023",
+          "name_fr": "Station de services Klouezi",
+          "name_ar": "محطة خدمات  قلاوزي",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.1092,
+            35.2015
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Klouezi",
+      "display_name_ar": "محطة خدمات  قلاوزي"
+    },
+    {
+      "id": "tariki-654",
+      "coordinates": [
+        0.2362,
+        35.1036
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "654",
+          "route_id": "2012",
+          "name_fr": "Station Boudia Abd Razek",
+          "name_ar": "محطة الخدمات بودية عبد الرازق",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            0.2362,
+            35.1036
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station Boudia Abd Razek",
+      "display_name_ar": "محطة الخدمات بودية عبد الرازق"
+    },
+    {
+      "id": "tariki-723",
+      "coordinates": [
+        0.365,
+        35.537
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "723",
+          "route_id": "2286",
+          "name_fr": "station de services commune Mnaouer",
+          "name_ar": "محطة خدمات بلدية المناور",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            0.365,
+            35.537
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services commune Mnaouer",
+      "display_name_ar": "محطة خدمات بلدية المناور"
+    },
+    {
+      "id": "tariki-730",
+      "coordinates": [
+        0.127,
+        35.3
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "730",
+          "route_id": "2291",
+          "name_fr": "Station de services Elhebib Bouzian",
+          "name_ar": "محطة خدمات  بوزيان الحبيب",
+          "services": [
+            "fuel",
+            "restaurant"
+          ],
+          "coordinates": [
+            0.127,
+            35.3
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Elhebib Bouzian",
+      "display_name_ar": "محطة خدمات  بوزيان الحبيب"
+    },
+    {
+      "id": "tariki-7852",
+      "coordinates": [
+        0.3287,
+        35.4241
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7852",
+          "route_id": "2335",
+          "name_fr": "STATION DE SERVICES KHALADI",
+          "name_ar": "محطة خدمات خلادي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.3287,
+            35.4241
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES KHALADI",
+      "display_name_ar": "محطة خدمات خلادي"
+    },
+    {
+      "id": "tariki-962",
+      "coordinates": [
+        0.113,
+        35.543
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "962",
+          "route_id": "1433",
+          "name_fr": "station de services Kizene",
+          "name_ar": "محطة خدمات نفطال قيزان",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.113,
+            35.543
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Kizene",
+      "display_name_ar": "محطة خدمات نفطال قيزان"
+    },
+    {
+      "id": "tariki-966",
+      "coordinates": [
+        0.4863,
+        35.3778
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "966",
+          "route_id": "2242",
+          "name_fr": "Station de services Remil Sayeh",
+          "name_ar": "محطة خدمات رميل السايح",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.4863,
+            35.3778
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Remil Sayeh",
+      "display_name_ar": "محطة خدمات رميل السايح"
+    },
+    {
+      "id": "tariki-968",
+      "coordinates": [
+        0.4887,
+        35.3781
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "968",
+          "route_id": "2241",
+          "name_fr": "Station de services Petroser Brahmi Benaouda",
+          "name_ar": "محطة خدمات بتروسار براهمي بن عودة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.4887,
+            35.3781
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 29,
+          "wilaya_fr": "Mascara",
+          "wilaya_ar": "معسكر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Petroser Brahmi Benaouda",
+      "display_name_ar": "محطة خدمات بتروسار براهمي بن عودة"
+    }
+  ]
+}

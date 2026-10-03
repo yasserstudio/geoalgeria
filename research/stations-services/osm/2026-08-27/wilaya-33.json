@@ -1,0 +1,167 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 33,
+  "records": [
+    {
+      "id": "node/1158920872",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "Naftal Illizi",
+      "opening_hours": null,
+      "coordinates": [
+        8.4803127,
+        26.5188605
+      ]
+    },
+    {
+      "id": "node/2482469626",
+      "amenity": "fuel",
+      "name": "مضخة الوقود غاز إويل الدبداب",
+      "name_ar": "مضخة الوقود غاز إويل الدبداب",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        9.4191323,
+        29.9644048
+      ]
+    },
+    {
+      "id": "node/3196584859",
+      "amenity": "fuel",
+      "name": "نفطال",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        8.4791592,
+        26.4663646
+      ]
+    },
+    {
+      "id": "node/3775584259",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        7.3816055,
+        28.4257453
+      ]
+    },
+    {
+      "id": "node/4502432089",
+      "amenity": "fuel",
+      "name": "UTG( atelier mécanique instrumentation )",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        7.5446004,
+        28.6238969
+      ]
+    },
+    {
+      "id": "node/452451987",
+      "amenity": "fuel",
+      "name": "نفطال حاسي بلقبور",
+      "name_ar": "نفطال حاسي بلقبور",
+      "name_fr": null,
+      "brand": "Naftal نفطال",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        6.5047323,
+        28.6895893
+      ]
+    },
+    {
+      "id": "node/5407140822",
+      "amenity": "fuel",
+      "name": "Naftal محطة خدمات",
+      "name_ar": "محطة خدمات",
+      "name_fr": "Station Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        8.4848517,
+        26.4420825
+      ]
+    },
+    {
+      "id": "node/5585460925",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": "la centrale électrique TFT",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        7.5240931,
+        28.5901895
+      ]
+    },
+    {
+      "id": "node/7036423186",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        9.564551,
+        28.037733
+      ]
+    },
+    {
+      "id": "node/7132962407",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        8.8935828,
+        28.6848524
+      ]
+    },
+    {
+      "id": "way/842501843",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        8.8935976,
+        28.68492055
+      ]
+    }
+  ]
+}

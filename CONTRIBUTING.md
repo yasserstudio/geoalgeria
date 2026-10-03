@@ -10,6 +10,7 @@ This is a small monorepo:
 | Path | Package | Contents |
 | --- | --- | --- |
 | `packages/schema/` | `@geoalgeria/schema` | shared v2 record/metadata contract, types, runtime validator, canonical metadata + manifest builders, CSV/GeoJSON emit helpers; a dev dependency of every generator, not itself a dataset |
+| `packages/normalize/` | `@geoalgeria/normalize` | Search key generation, the Conservative key, the Loose key, the tokenizer and their Golden corpus; code only, no data, zero runtime dependencies |
 | `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ mirrored postal data) |
 | `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |
@@ -28,10 +29,10 @@ This is a small monorepo:
 | `packages/sante/` | `@geoalgeria/sante` | public health establishments, EPH/EPSP/EHS/CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
 | `packages/culture/` | `@geoalgeria/culture` | cultural atlas, protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions, DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
-| `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,830 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
-| `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations, 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces (live.sogral.com) |
+| `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,858 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
+| `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations, 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
 | `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit, 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
-| `packages/buses/` | `@geoalgeria/buses` | urban bus networks, 50 ETUSA (Alger) lines, line-level v1 (fr.wikipedia) |
+| `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks, 59 Lines, 42 OSM shapes, 75 Directions and 1,046 Stations across 3 Operators |
 | `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | pharmaceutical manufacturers, 171 medicine & medical-device makers (Ministry of Pharmaceutical Industry), bilingual, geocoded |
 | `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines), 3,797 geocoded, 67 wilayas (OpenStreetMap) |
 | `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores, 572 EO/CSO/ESO with real coordinates (ooredoo.dz); completes the telecom retail trio |
@@ -54,6 +55,12 @@ pnpm install
 - Add missing communes, dairas, or fields
 - Improve Arabic transliterations
 - Add a new export format
+
+For generated sector packages, do not hand-edit an emitted JSON/CSV/GeoJSON
+file. Put an evidence-backed correction in
+[`quality/overrides/`](quality/overrides/README.md) instead. The ledger keeps the
+review finding separate from the publication action and stops regeneration if
+the upstream record no longer matches the reviewed value.
 
 Data lives under `packages/dataset/data/` and `packages/poste/data/`. The postal
 data in `packages/dataset/data/poste/` is **generated**: edit it in
@@ -90,6 +97,7 @@ pnpm changeset   # pick package(s) + bump type + a one-line note
 - Keep entries sorted by `wilaya_code`, then alphabetically by `name_fr`
 
 ### Naming
+- Use the project glossary's terms ([`CONTEXT.md`](CONTEXT.md)), including [Search and normalization](CONTEXT.md#search-and-normalization) for Search key, Conservative key, Loose key, Rule and Golden corpus
 - **French**: official JORA spelling (e.g., "Oum El Bouaghi")
 - **Arabic**: standard script, no tashkeel (diacritics)
 - **Daira**: the French name of the daira seat (chef-lieu)
@@ -101,6 +109,133 @@ Always cite a source for data changes. Accepted:
 - ONS (National Statistics Office)
 - Interior Ministry publications
 - Wikipedia (secondary reference only)
+
+### Separators in metadata
+No em dash (U+2014) anywhere in published metadata. A source name reads
+`Operator: descriptor`, the DCAT `citation` joins a name and its licence with a
+comma, and a coverage note takes the colon or semicolon the sentence wants. Fix
+it in the generator that writes the field, never in the generated file:
+`pnpm validate` walks every `dataset-metadata.json`, `data/metadata.json` and
+`data/geojson/*.metadata.json` and fails on one
+([`scripts/lib/no-em-dash.mjs`](scripts/lib/no-em-dash.mjs)). A record's own
+`name` is a value, not prose, and is out of scope.
+
+### Licence field
+Every package states its terms in three places that must agree: the manifest
+`license`, the package `LICENSE` file, and the data terms in
+`dataset-metadata.json`. Pick the class that matches the metadata:
+
+| `dataset-metadata.json` | manifest `license` | `LICENSE` file |
+| --- | --- | --- |
+| absent, with `dependencies` on `@geoalgeria/*` (umbrella) | `SEE LICENSE IN LICENSE` | starts with `## Code` then the MIT text, plus a `## Data` section listing exactly one `- @geoalgeria/<member>: <terms>` line per member |
+| absent (code only) | `MIT` | the plain MIT text |
+| `license` is the MIT URL | `MIT` | the plain MIT text |
+| `license` is the ODbL 1.0 URL | `MIT AND ODbL-1.0` | `## Code` MIT, plus a `## Data` section carrying the ODbL URL |
+| `license` is an array of the MIT URL and the ODbL 1.0 URL | `MIT AND ODbL-1.0` | starts with `## Code` then the MIT text, plus a `## Data` section carrying both URLs and listing each non-MIT carve-out as a `- ` bullet naming the `data/...` paths it covers. Also needs a `NOTICE`, listed in `files[]`, carrying the ODbL URL and every one of those paths |
+| `conditionsOfAccess` | `SEE LICENSE IN LICENSE` | starts with `## Code` then the MIT text, plus a `## Data` section carrying `conditionsOfAccess` verbatim |
+
+The array class is for a package whose data is not all under one set of terms:
+the bulk under one licence and a named part under another, as `geoalgeria` ships
+MIT-licensed administrative divisions beside OpenStreetMap-derived geometry and
+coordinates. A single URL cannot say that, and picking the stricter one alone
+would relicense the rest, so the array carries both and the `LICENSE` and
+`NOTICE` say which part each one covers.
+
+It is the only class where the carve-out has to be enumerated, so it is the only
+one whose `NOTICE` is checked: the `LICENSE` sends a consumer there for the
+per-part attribution, so a missing `NOTICE`, a `NOTICE` left out of `files[]` (in
+git, absent from the npm tarball), a `NOTICE` without the ODbL URL, or a carved-out
+path the `NOTICE` never names all fail `pnpm validate`. A carve-out bullet that
+names no `data/...` path fails too: prose cannot be checked part by part.
+
+A package also ships descriptors under `data/`: `data/metadata.json`, and a
+`<file>.metadata.json` beside any file that needs one. Each carries a `license`
+of its own, and `pnpm validate` reads every one of them, discovered rather than
+listed, against the class above:
+
+- exactly one of `license` or `conditionsOfAccess`, the exclusive pair the
+  Dataset JSON-LD rule already requires of `dataset-metadata.json`;
+- prose terms must be carried verbatim by the `## Data` section of the package
+  `LICENSE`, so a descriptor cannot offer data on terms no licence file grants;
+- an SPDX expression under a `SEE LICENSE IN LICENSE` package needs a
+  `provenance_notes` entry naming both the expression and that manifest value.
+  The manifest value means no SPDX expression states the package's terms, so a
+  descriptor producing one is either a stale copy of a pre-class-change manifest,
+  or a part whose own data really is wholly under that licence. Only the second
+  is allowed, and the note is where it is argued: `data/geojson/communes.geojson`
+  mixes MIT rows with ODbL ones and states prose, while every feature of
+  `data/geojson/wilaya-boundaries.geojson` is ODbL and it states `ODbL-1.0`.
+
+`pnpm validate` enforces this on every package, so a new licence class needs an
+entry in [`scripts/lib/licence-terms.mjs`](scripts/lib/licence-terms.mjs) before
+the package can pass. Whichever class a package falls in, its
+`LICENSE` must carry the MIT grant itself, verbatim and above any `## Data`
+section: the `## Code` heading is not the terms.
+
+### Search-key rules
+`@geoalgeria/normalize` publishes the orthographic equivalences GeoAlgeria asserts
+about Algerian names as a reviewed table, so that someone who reads the language
+and not the code can argue with one. Changing or adding a rule means, in the same
+pull request:
+
+- the rule in [`packages/normalize/src/rules.js`](packages/normalize/src/rules.js),
+  with one sentence a speaker of the language can argue with and a review record
+  naming who reviewed that sentence and when;
+- at least one case in `packages/normalize/fixtures/corpus.js` proving it, naming
+  the rule in its `proves` list;
+- the committed reviewed order in
+  [`scripts/lib/normalize-rules.mjs`](scripts/lib/normalize-rules.mjs), if the rule
+  is new, moved or removed;
+- the rationale in all three package READMEs, in each language.
+
+`pnpm validate` fails on a rule with no review record, a rule no corpus case
+proves, a case naming a rule that is not in the table, a repeated identifier, or a
+table order that no longer matches the committed one. Changing what a key function
+returns for any input is a major version: published catalogs are keyed on it.
+
+### The major-changeset guard
+
+Search keys are baked into every published catalog, and an installed catalog is
+never migrated record by record, so a key that changes after a release has shipped
+rebuilds and re-downloads the whole catalog on every device. A key change is
+therefore closer to a schema change than to a bug fix, and CI enforces it at the
+only cheap moment. A pull request whose diff touches
+
+- `packages/normalize/src/**`
+- `packages/normalize/fixtures/corpus.js`
+- `packages/normalize/index.js`
+
+must carry a changeset declaring `"@geoalgeria/normalize": major`, or the
+`normalize major changeset` job fails. The decision is
+[`scripts/lib/normalize-changeset.mjs`](scripts/lib/normalize-changeset.mjs), the
+job feeds it `git diff --name-only` against the base branch, and the unit tests are
+in [`test/normalize-changeset.test.mjs`](test/normalize-changeset.test.mjs).
+
+**The check is path-based and deliberately blunt.** It reads which files the diff
+touched, not what the change meant, so fixing a typo in a comment in
+`packages/normalize/src/rules.js` still needs the major changeset, even though the
+keys did not move. That is the accepted cost: a guard that decides whether an edit
+changed behaviour would have to understand the edit, which is exactly the judgement
+this guard exists so that nobody has to trust. An unnecessary major costs one
+version number; a missed one costs every installed catalog on every device. When a
+documentation-only edit to one of those files is genuinely all you have, either
+write the major changeset or move the edit to a file outside the list, such as a
+README or a type declaration.
+
+One exception used to apply, while `@geoalgeria/normalize` was not yet on npm: the
+guard also passes when `npm view @geoalgeria/normalize version` answers 404, because
+there was then no published catalog to invalidate and the package's first release
+entry was a patch on the flagship rather than a major on a package nobody could
+install. **1.0.0 was published on 2026-09-29**, so the registry no longer answers
+404 and that path is closed: only the major changeset satisfies the guard. The code
+path stays as a fail-safe, not as a route anyone can take.
+
+A 404 is the only registry answer that opens that exception. If the registry
+cannot be reached at all, a timeout, an auth error, no `npm` on the PATH, the guard
+**fails closed** and asks for the major anyway. A registry that did not answer is
+not a registry that said the package does not exist, and the asymmetry above
+decides the tie: blocking a pull request until the registry is back costs a rerun,
+while letting a key change through on a timeout costs every installed catalog.
 
 ### What not to submit
 - Data from unofficial/unverifiable sources

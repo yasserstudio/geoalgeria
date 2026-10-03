@@ -1,0 +1,69 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 49,
+  "records": [
+    {
+      "id": "node/2356932684",
+      "amenity": "fuel",
+      "name": "Naftal;نفطال",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        0.231269,
+        29.2546887
+      ]
+    },
+    {
+      "id": "node/3331424081",
+      "amenity": "fuel",
+      "name": "Station Service Naftal",
+      "name_ar": null,
+      "name_fr": "Station Service Naftal",
+      "brand": "Naftal",
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        0.7005044,
+        29.6977876
+      ]
+    },
+    {
+      "id": "node/4569335122",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        0.3336204,
+        28.7199351
+      ]
+    },
+    {
+      "id": "node/5278242633",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.2432549,
+        29.2764794
+      ]
+    }
+  ]
+}

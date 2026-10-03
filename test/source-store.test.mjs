@@ -9,7 +9,13 @@ import { fileURLToPath } from "node:url";
 
 // The store roots itself at the repo's sources/; use a throwaway package name
 // so tests never touch real captures.
-import { stableStringify, writeCapture, readCapture, captureMeta } from "../scripts/lib/source-store.mjs";
+import {
+  captureMeta,
+  captureSha256,
+  readCapture,
+  stableStringify,
+  writeCapture,
+} from "../scripts/lib/source-store.mjs";
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PKG = `test-tmp-${process.pid}`;
@@ -21,6 +27,14 @@ test("stableStringify sorts keys at every depth and leaves array order alone", (
   assert.equal(a, b);
   assert.ok(a.indexOf('"a"') < a.indexOf('"b"'));
   assert.deepEqual(JSON.parse(a).a.z, [3, 1, 2]);
+});
+
+test("captureSha256 ignores object key order but preserves array order", () => {
+  assert.equal(
+    captureSha256({ b: 1, a: [{ z: 2, y: 1 }] }),
+    captureSha256({ a: [{ y: 1, z: 2 }], b: 1 }),
+  );
+  assert.notEqual(captureSha256([1, 2]), captureSha256([2, 1]));
 });
 
 test("writeCapture/readCapture round-trip, manifest fields, byte stability", (t) => {
@@ -70,7 +84,18 @@ test("hardening: names are validated, non-plain payloads refused, hand edits det
   assert.throws(() => readCapture(pkg, "ok"), /does not match its manifest sha256/);
 });
 
-test("writeCapture requires a source url", () => {
-  assert.throws(() => writeCapture(PKG, "x", {}, {}), /meta\.url is required/);
-  assert.ok(!existsSync(join(DIR, "x.json")));
+test("writeCapture requires a source URL or explicit supplied-artifact provenance", (t) => {
+  const pkg = `${PKG}-supplied`;
+  t.after(() => rmSync(join(REPO, "sources", pkg), { recursive: true, force: true }));
+
+  assert.throws(() => writeCapture(pkg, "x", {}, {}), /meta\.url or owner-supplied provenance is required/);
+  assert.throws(
+    () => writeCapture(pkg, "x", {}, { url: "https://example.dz/search", provenance: "owner_supplied_artifact" }),
+    /owner-supplied provenance requires a null URL/,
+  );
+  writeCapture(pkg, "x", {}, { provenance: "owner_supplied_artifact", retrieved: "2026-09-04" });
+  assert.deepEqual(
+    { url: captureMeta(pkg, "x").url, provenance: captureMeta(pkg, "x").provenance },
+    { url: null, provenance: "owner_supplied_artifact" },
+  );
 });

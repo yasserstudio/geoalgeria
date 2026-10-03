@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/gares-routieres)](https://www.npmjs.com/package/@geoalgeria/gares-routieres)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/gares-routieres)](https://www.npmjs.com/package/@geoalgeria/gares-routieres)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -67,8 +67,12 @@ const setif = gares.stationsByWilaya(19);
 
 ## المصدر
 
-البيانات من **سوقرال – EPE SOGRAL Spa** عبر سجلّها الآني (<https://live.sogral.com>).
-يُحدّد `wilaya_code`/`commune` عبر أقرب مركز بلدية من مجموعة `geoalgeria`.
+البيانات من **سوقرال – EPE SOGRAL Spa**، اعتمادًا على نسخة سجل سوقرال التي جُلبت من
+`live.sogral.com` بتاريخ 2026/07/01؛ وقد توقّف هذا الموقع عن العمل. أُعيد التحقق في
+2026/08/28 من قيم `refs.mahatati_agency` الـ73، وطابقت جميعها قائمة محطات المغادرة
+العلنية في [محطتي](https://mahatati.sogral.com/). تبقى عين صالح المحطة الوحيدة التي
+لا تظهر كمحطة مغادرة. يُحدّد `wilaya_code`/`commune` عبر أقرب مركز بلدية من مجموعة
+`geoalgeria`.
 
 ## الرخصة والإسناد
 

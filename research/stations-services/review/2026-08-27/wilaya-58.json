@@ -1,0 +1,908 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-58",
+    "wilaya_code": 58,
+    "name": "El Meniaa",
+    "name_ar": "المنيعة",
+    "center": [
+      3.1609999999999996,
+      30.7245
+    ],
+    "bounds": [
+      1.903,
+      28.899,
+      4.419,
+      32.55
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 19,
+    "osm_records": 12,
+    "tariki_records": 17,
+    "cross_source": 6,
+    "multiple_tariki": 2,
+    "osm_only": 4,
+    "tariki_only": 7,
+    "nearby_osm_pairs": 2,
+    "conflicts": 12
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-1159237780",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6173445688",
+      "reasons": [
+        "multiple-tariki",
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6207293286",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6207293385",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-9956366893",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13962",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14330",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14331",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14580",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6378",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7933",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7934",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10093497628",
+      "coordinates": [
+        3.1944077,
+        30.7256892
+      ],
+      "osm": {
+        "id": "node/10093497628",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1944077,
+          30.7256892
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6380",
+          "route_id": "3612",
+          "name_fr": "Station de services OUELAD HAIMOUD",
+          "name_ar": "محطة خدمات وتوزيع البنزين اولاد حيمودة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            3.194,
+            30.725
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": 86
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services OUELAD HAIMOUD",
+      "display_name_ar": "محطة خدمات وتوزيع البنزين اولاد حيمودة"
+    },
+    {
+      "id": "osm-node-1159237780",
+      "coordinates": [
+        2.9066271,
+        30.6072114
+      ],
+      "osm": {
+        "id": "node/1159237780",
+        "name": "Station Belaouebar",
+        "name_ar": "محطة بلوبر",
+        "name_fr": "Staion Belaouebar",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.9066271,
+          30.6072114
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6376",
+          "route_id": "3612",
+          "name_fr": "Station de services BELOUBER",
+          "name_ar": "محطة خدمات وتوزيع البنزين بلوبر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.907,
+            30.607
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": 43
+        },
+        {
+          "id": "7479",
+          "route_id": "3613",
+          "name_fr": "Station de services Blouber",
+          "name_ar": "محطة خدمات وتوزيع البنزين بلوبر",
+          "services": [
+            "fuel",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.907,
+            30.607
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": 43
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Staion Belaouebar",
+      "display_name_ar": "محطة بلوبر"
+    },
+    {
+      "id": "osm-node-1159237847",
+      "coordinates": [
+        3.6803167,
+        31.6066693
+      ],
+      "osm": {
+        "id": "node/1159237847",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal Hassi El Fhel",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6803167,
+          31.6066693
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal Hassi El Fhel",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2625370467",
+      "coordinates": [
+        3.7031956,
+        31.7050481
+      ],
+      "osm": {
+        "id": "node/2625370467",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          3.7031956,
+          31.7050481
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3149017103",
+      "coordinates": [
+        3.7515113,
+        31.9767651
+      ],
+      "osm": {
+        "id": "node/3149017103",
+        "name": "Station Service NAFTAL",
+        "name_ar": "محطة خدمة نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          3.7515113,
+          31.9767651
+        ]
+      },
+      "tariki": [
+        {
+          "id": "238",
+          "route_id": "945",
+          "name_fr": "Station de services BELGHITHE Kadour",
+          "name_ar": "محطة الخدمات بلغيث قدور",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.751,
+            31.977
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمة نفطال"
+    },
+    {
+      "id": "osm-node-4137873790",
+      "coordinates": [
+        2.8968218,
+        30.5594462
+      ],
+      "osm": {
+        "id": "node/4137873790",
+        "name": "محطة نفطال حاسي القارة",
+        "name_ar": "محطة نفطال حاسي القارة",
+        "name_fr": "Station-service NAFTAL",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.8968218,
+          30.5594462
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6407",
+          "route_id": "3612",
+          "name_fr": "Station de service NAFTAL",
+          "name_ar": "محطة توزيع البنزين نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.897,
+            30.559
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service NAFTAL",
+      "display_name_ar": "محطة نفطال حاسي القارة"
+    },
+    {
+      "id": "osm-node-4147438866",
+      "coordinates": [
+        2.8816971,
+        30.587234
+      ],
+      "osm": {
+        "id": "node/4147438866",
+        "name": "محطة الوقود سيراج",
+        "name_ar": "محطة الوقود سيراج",
+        "name_fr": "Station Siradj",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.8816971,
+          30.587234
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6406",
+          "route_id": "3612",
+          "name_fr": "Station de service SIRAJE",
+          "name_ar": "محطة بنزين سيراج",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.881,
+            30.588
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": 108
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Siradj",
+      "display_name_ar": "محطة الوقود سيراج"
+    },
+    {
+      "id": "osm-node-4212336291",
+      "coordinates": [
+        2.930201,
+        30.5350115
+      ],
+      "osm": {
+        "id": "node/4212336291",
+        "name": "محطة متعددة الخدمات بلمشرح",
+        "name_ar": "محطة متعددة الخدمات بلمشرح",
+        "name_fr": "Station Belemcharah",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          2.930201,
+          30.5350115
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7480",
+          "route_id": "3613",
+          "name_fr": "Station de services lemcherah",
+          "name_ar": "محطة خدمات وتوزيع البنزين بلمشرح",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.93,
+            30.535
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Belemcharah",
+      "display_name_ar": "محطة متعددة الخدمات بلمشرح"
+    },
+    {
+      "id": "osm-node-6173445688",
+      "coordinates": [
+        3.1930392,
+        30.724878
+      ],
+      "osm": {
+        "id": "node/6173445688",
+        "name": "محطة أولاد حيموة",
+        "name_ar": "محطة أولاد حيموة",
+        "name_fr": "station Ouled Haimouda",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1930392,
+          30.724878
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13960",
+          "route_id": "20375",
+          "name_fr": "STATION OUALED HAYMOUDA",
+          "name_ar": "محطة الوقود أولاد حيمودة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.193,
+            30.725
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": 14
+        },
+        {
+          "id": "14332",
+          "route_id": "21580",
+          "name_fr": "STASION DE 40 KM",
+          "name_ar": "محطة 40 كلم",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.193,
+            30.725
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6207293286",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "multiple-tariki",
+      "display_name": "station Ouled Haimouda",
+      "display_name_ar": "محطة أولاد حيموة"
+    },
+    {
+      "id": "osm-node-6207293286",
+      "coordinates": [
+        3.1929591,
+        30.7248387
+      ],
+      "osm": {
+        "id": "node/6207293286",
+        "name": "أولاد حيمودة",
+        "name_ar": "أولاد حيمودة",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1929591,
+          30.7248387
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6173445688",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "أولاد حيمودة",
+      "display_name_ar": "أولاد حيمودة"
+    },
+    {
+      "id": "osm-node-6207293385",
+      "coordinates": [
+        2.9676124,
+        30.058803
+      ],
+      "osm": {
+        "id": "node/6207293385",
+        "name": "محطة بلوبر",
+        "name_ar": "محطة بلوبر",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.9676124,
+          30.058803
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13961",
+          "route_id": "20377",
+          "name_fr": null,
+          "name_ar": "محطة وقود 60",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.967,
+            30.058
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": 107
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-9956366893",
+          "offset_m": 40
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "محطة بلوبر",
+      "display_name_ar": "محطة بلوبر"
+    },
+    {
+      "id": "osm-node-9956366893",
+      "coordinates": [
+        2.9672829,
+        30.0590279
+      ],
+      "osm": {
+        "id": "node/9956366893",
+        "name": "محطة متعددة الخدمات - مليكة.",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          2.9672829,
+          30.0590279
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6207293385",
+          "offset_m": 40
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "محطة متعددة الخدمات - مليكة.",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-13962",
+      "coordinates": [
+        2.922,
+        30.55
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13962",
+          "route_id": "20377",
+          "name_fr": null,
+          "name_ar": "محطة الوقود بلمشرح",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            2.922,
+            30.55
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة الوقود بلمشرح",
+      "display_name_ar": "محطة الوقود بلمشرح"
+    },
+    {
+      "id": "tariki-14330",
+      "coordinates": [
+        2.923,
+        30.546
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14330",
+          "route_id": "21579",
+          "name_fr": "STASION BEL MCHAEREH",
+          "name_ar": "محطة بلمشرح",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.923,
+            30.546
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STASION BEL MCHAEREH",
+      "display_name_ar": "محطة بلمشرح"
+    },
+    {
+      "id": "tariki-14331",
+      "coordinates": [
+        2.972,
+        30.083
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14331",
+          "route_id": "21579",
+          "name_fr": "SATASION BLOUBER",
+          "name_ar": "محطة بلوبر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.972,
+            30.083
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "SATASION BLOUBER",
+      "display_name_ar": "محطة بلوبر"
+    },
+    {
+      "id": "tariki-14580",
+      "coordinates": [
+        2.244,
+        30.012
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14580",
+          "route_id": "1515",
+          "name_fr": "station rahmani",
+          "name_ar": "محطة رحماني",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.244,
+            30.012
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station rahmani",
+      "display_name_ar": "محطة رحماني"
+    },
+    {
+      "id": "tariki-6378",
+      "coordinates": [
+        2.928,
+        30.539
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6378",
+          "route_id": "3612",
+          "name_fr": "Station de services BELMECHAREH",
+          "name_ar": "محطة خدمات وتوزيع البنزين بلمشرح",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.928,
+            30.539
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BELMECHAREH",
+      "display_name_ar": "محطة خدمات وتوزيع البنزين بلمشرح"
+    },
+    {
+      "id": "tariki-7933",
+      "coordinates": [
+        3.707,
+        31.695
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7933",
+          "route_id": "3965",
+          "name_fr": "Station de services Eldhahbi",
+          "name_ar": "محطة الخدمات الذهبي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            3.707,
+            31.695
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Eldhahbi",
+      "display_name_ar": "محطة الخدمات الذهبي"
+    },
+    {
+      "id": "tariki-7934",
+      "coordinates": [
+        3.679,
+        31.606
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7934",
+          "route_id": "3965",
+          "name_fr": "Station de services sonatrach",
+          "name_ar": "محطة خدمات سوناطراك",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.679,
+            31.606
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 58,
+          "wilaya_fr": "El Meniaa",
+          "wilaya_ar": "المنيعة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services sonatrach",
+      "display_name_ar": "محطة خدمات سوناطراك"
+    }
+  ]
+}

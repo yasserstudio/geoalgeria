@@ -1,0 +1,60 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 49,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "8586e9dd0a68ec7374f06199c5d99f2110d096fb3a2dbdc58d15175eb6c07666",
+  "count": 2,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "8586e9dd0a68ec7374f06199c5d99f2110d096fb3a2dbdc58d15175eb6c07666:0",
+      "source_id": "471",
+      "raw": {
+        "id": "471",
+        "code_wilaya": "49",
+        "wilaya": "TIMIMOUNE",
+        "commune": "TIMIMOUN/OULED SAID/TINERKOUK/ KSAR KADDOUR /CHAROUINE/TALMINE/OULED AISSA",
+        "adresse": "CITE HASSI GHAMBOU",
+        "type": "Agence Commerciale",
+        "latitude": "29.262941",
+        "longitude": "0.236359\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 29.262941,
+      "lng": 0.236359,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "49"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "8586e9dd0a68ec7374f06199c5d99f2110d096fb3a2dbdc58d15175eb6c07666:1",
+      "source_id": "472",
+      "raw": {
+        "id": "472",
+        "code_wilaya": "49",
+        "wilaya": "TIMIMOUNE",
+        "commune": "AOUGROUT/ METARFA/ DELDOUL",
+        "adresse": "TIBERGHAMINE",
+        "type": "Point de présence",
+        "latitude": "28.70508",
+        "longitude": "0.34543\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 28.70508,
+      "lng": 0.34543,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "49"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

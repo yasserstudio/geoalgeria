@@ -1,0 +1,900 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-45",
+    "wilaya_code": 45,
+    "name": "Naâma",
+    "name_ar": "النعامة",
+    "center": [
+      -0.781,
+      33.236000000000004
+    ],
+    "bounds": [
+      -1.732,
+      32.146,
+      0.17,
+      34.326
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 25,
+    "osm_records": 20,
+    "tariki_records": 12,
+    "cross_source": 5,
+    "multiple_tariki": 1,
+    "osm_only": 14,
+    "tariki_only": 5,
+    "nearby_osm_pairs": 0,
+    "conflicts": 6
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-4966327622",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13080",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2699",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2705",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4441",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5364",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-11638621469",
+      "coordinates": [
+        -0.0713806,
+        32.9524207
+      ],
+      "osm": {
+        "id": "node/11638621469",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          -0.0713806,
+          32.9524207
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-13132016801",
+      "coordinates": [
+        -0.8120662,
+        32.367618
+      ],
+      "osm": {
+        "id": "node/13132016801",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.8120662,
+          32.367618
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2367115477",
+      "coordinates": [
+        -0.2956049,
+        33.4659914
+      ],
+      "osm": {
+        "id": "node/2367115477",
+        "name": "بيتروماق",
+        "name_ar": "بيتروماق",
+        "name_fr": "PETROMAG",
+        "brand": "Naftal",
+        "operator": "بيتروماق",
+        "opening_hours": "24/7",
+        "coordinates": [
+          -0.2956049,
+          33.4659914
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "PETROMAG",
+      "display_name_ar": "بيتروماق"
+    },
+    {
+      "id": "osm-node-2569035395",
+      "coordinates": [
+        -0.3163849,
+        33.2605915
+      ],
+      "osm": {
+        "id": "node/2569035395",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.3163849,
+          33.2605915
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12864",
+          "route_id": "8179",
+          "name_fr": "STATION NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.3163,
+            33.2605
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-3088015726",
+      "coordinates": [
+        -0.2469366,
+        33.5792846
+      ],
+      "osm": {
+        "id": "node/3088015726",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2469366,
+          33.5792846
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2715",
+          "route_id": "6212",
+          "name_fr": "Station de services Belhocine Aissa",
+          "name_ar": "محطة بلحسين عيسى",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.2469,
+            33.5793
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بلحسين عيسى"
+    },
+    {
+      "id": "osm-node-3091606393",
+      "coordinates": [
+        -0.4971742,
+        32.5386628
+      ],
+      "osm": {
+        "id": "node/3091606393",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.4971742,
+          32.5386628
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5361",
+          "route_id": "1099",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات والتزويد بالوقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            -0.497,
+            32.539
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": 41
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات والتزويد بالوقود"
+    },
+    {
+      "id": "osm-node-4548245073",
+      "coordinates": [
+        -0.1095492,
+        33.7543827
+      ],
+      "osm": {
+        "id": "node/4548245073",
+        "name": "station service NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.1095492,
+          33.7543827
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2724",
+          "route_id": "4045",
+          "name_fr": "Station de services Houichi Mohamed",
+          "name_ar": "محطة الخدمات حويشي محمد",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            -0.1098,
+            33.7546
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station service NAFTAL",
+      "display_name_ar": "محطة الخدمات حويشي محمد"
+    },
+    {
+      "id": "osm-node-4966327622",
+      "coordinates": [
+        -0.7280066,
+        33.7175462
+      ],
+      "osm": {
+        "id": "node/4966327622",
+        "name": "محطة الوقوظ",
+        "name_ar": "محطة الوقوظ",
+        "name_fr": "Station service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.7280066,
+          33.7175462
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12854",
+          "route_id": "17651",
+          "name_fr": "STATION  DE SERVICES NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.728,
+            33.7176
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": 6
+        },
+        {
+          "id": "12878",
+          "route_id": "17675",
+          "name_fr": "station de essence naftal mekmen ben amar",
+          "name_ar": "محطة الوقود نفطال مكمن بن عمار",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.7272,
+            33.7171
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": 90
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station service",
+      "display_name_ar": "محطة الوقوظ"
+    },
+    {
+      "id": "osm-node-5427638421",
+      "coordinates": [
+        -0.2864156,
+        33.5096349
+      ],
+      "osm": {
+        "id": "node/5427638421",
+        "name": "Station-service Naftal",
+        "name_ar": "محطة الخدمات نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2864156,
+          33.5096349
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-service Naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-node-5830586421",
+      "coordinates": [
+        -0.5343023,
+        32.5308357
+      ],
+      "osm": {
+        "id": "node/5830586421",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.5343023,
+          32.5308357
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6420858900",
+      "coordinates": [
+        -0.9879831,
+        33.8863096
+      ],
+      "osm": {
+        "id": "node/6420858900",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.9879831,
+          33.8863096
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6813336053",
+      "coordinates": [
+        -0.4606825,
+        32.7628016
+      ],
+      "osm": {
+        "id": "node/6813336053",
+        "name": "Station de service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.4606825,
+          32.7628016
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station de service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8614233144",
+      "coordinates": [
+        -0.6018575,
+        32.8831711
+      ],
+      "osm": {
+        "id": "node/8614233144",
+        "name": "Station d'essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.6018575,
+          32.8831711
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station d'essence",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9025123177",
+      "coordinates": [
+        -0.2407337,
+        33.5870582
+      ],
+      "osm": {
+        "id": "node/9025123177",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2407337,
+          33.5870582
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1059042902",
+      "coordinates": [
+        -0.76926865,
+        32.692997399999996
+      ],
+      "osm": {
+        "id": "way/1059042902",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.76926865,
+          32.692997399999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-304291546",
+      "coordinates": [
+        -0.2858018,
+        33.52354525
+      ],
+      "osm": {
+        "id": "way/304291546",
+        "name": "Station Service Aghamir",
+        "name_ar": "محطة الخدمات أغامير",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2858018,
+          33.52354525
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Aghamir",
+      "display_name_ar": "محطة الخدمات أغامير"
+    },
+    {
+      "id": "osm-way-304557617",
+      "coordinates": [
+        -0.5972059000000001,
+        32.7637269
+      ],
+      "osm": {
+        "id": "way/304557617",
+        "name": "Station Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.5972059000000001,
+          32.7637269
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-589247778",
+      "coordinates": [
+        -0.60563135,
+        32.82466615
+      ],
+      "osm": {
+        "id": "way/589247778",
+        "name": "Station Service Tirkount",
+        "name_ar": "محطة بنزين تيركونت",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.60563135,
+          32.82466615
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Tirkount",
+      "display_name_ar": "محطة بنزين تيركونت"
+    },
+    {
+      "id": "osm-way-611666433",
+      "coordinates": [
+        -0.26463844999999997,
+        33.5524853
+      ],
+      "osm": {
+        "id": "way/611666433",
+        "name": "Station Service Naftal",
+        "name_ar": "محطة الخدمات نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.26463844999999997,
+          33.5524853
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2711",
+          "route_id": "6212",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.2644,
+            33.5526
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": 26
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-way-867480036",
+      "coordinates": [
+        -0.321955,
+        33.24787835
+      ],
+      "osm": {
+        "id": "way/867480036",
+        "name": "Naftal Rond point Naama",
+        "name_ar": null,
+        "name_fr": "Naftal Rond point Naama",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.321955,
+          33.24787835
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal Rond point Naama",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-13080",
+      "coordinates": [
+        -0.6061,
+        32.8218
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13080",
+          "route_id": "3974",
+          "name_fr": "station disance",
+          "name_ar": "محطة  خدمات( محطة تزويد بالوقود)",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.6061,
+            32.8218
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station disance",
+      "display_name_ar": "محطة  خدمات( محطة تزويد بالوقود)"
+    },
+    {
+      "id": "tariki-2699",
+      "coordinates": [
+        -0.2859,
+        33.5252
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2699",
+          "route_id": "6212",
+          "name_fr": "Station de services AGAMIR",
+          "name_ar": "محطة أغامير",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.2859,
+            33.5252
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AGAMIR",
+      "display_name_ar": "محطة أغامير"
+    },
+    {
+      "id": "tariki-2705",
+      "coordinates": [
+        -0.2745,
+        33.5438
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2705",
+          "route_id": "6212",
+          "name_fr": "Station de services Bitat",
+          "name_ar": "محطة بيطاط",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.2745,
+            33.5438
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Bitat",
+      "display_name_ar": "محطة بيطاط"
+    },
+    {
+      "id": "tariki-4441",
+      "coordinates": [
+        -1.2403,
+        34.2074
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4441",
+          "route_id": "6360",
+          "name_fr": "Station de services NAFTAL ISMAIL",
+          "name_ar": "محطة نفطال إسماعيل",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            -1.2403,
+            34.2074
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NAFTAL ISMAIL",
+      "display_name_ar": "محطة نفطال إسماعيل"
+    },
+    {
+      "id": "tariki-5364",
+      "coordinates": [
+        -0.538,
+        32.53
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5364",
+          "route_id": "1099",
+          "name_fr": "station de services",
+          "name_ar": "محطة خدمات والتزويد بالوقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            -0.538,
+            32.53
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 45,
+          "wilaya_fr": "Naâma",
+          "wilaya_ar": "النعامة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services",
+      "display_name_ar": "محطة خدمات والتزويد بالوقود"
+    }
+  ]
+}
