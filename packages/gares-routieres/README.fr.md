@@ -48,6 +48,25 @@ const setif = gares.stationsByWilaya(19);      // gares de la wilaya 19
 Couvrant **52 wilayas**, toutes géocodées. `wilaya_code` est lié au modèle à 69 wilayas de
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
+### Identifiants retirés
+
+L'identifiant encode la wilaya : corriger la coordonnée d'une gare peut donc la
+déplacer vers une autre wilaya et lui donner un nouvel identifiant. Celui qu'elle
+libère est retiré dans `data/retired-ids.json` et n'est jamais réattribué, afin
+qu'aucune gare future n'hérite d'une clé de jointure qui désignait autre chose.
+Sept à ce jour, toutes dues à une longitude source qui plaçait la gare dans la
+mauvaise wilaya :
+
+| Retiré | Gare | Devenu |
+| --- | --- | --- |
+| `33-01` | TINDOUF | `37-01` |
+| `14-01` | SEBDOU | `13-02` |
+| `14-03` | MAGHENIA | `13-03` |
+| `31-01` | RELIZANE | `48-01` |
+| `32-02` | EL OUED | `39-01` |
+| `69-01` | AIN SEFRA | `45-02` |
+| `69-02` | NAAMA | `45-03` |
+
 ## Formats
 
 Le paquet npm livre le **JSON** (importable directement) ; **CSV et GeoJSON** sont dans le

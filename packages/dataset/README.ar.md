@@ -221,7 +221,7 @@ sqlite3 mydb.sqlite < full.sql
 | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | العيادات ومرافق الرعاية الجوارية – 1,917 عيادة متعددة الخدمات وقاعة علاج ومركز صحي ومصحة توليد وعيادة خاصة من OpenStreetMap، مُصنَّفة حسب النوع، ثنائية اللغة، 66 ولاية |
 | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | الأطلس الثقافي – مواقع محمية، متاحف، مسارح، مكتبات + مؤسسات ثقافية (وزارة الثقافة)، ثنائي اللغة، كامل الإحداثيات |
 | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | المؤسسات الفلاحية – مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية (وزارة الفلاحة)، ثنائي اللغة، بإحداثيات |
-| [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس – 11,855 مدرسة ابتدائية ومتوسطة وثانوية وتحضيرية مُصنَّفة حسب الطور، ثنائية اللغة، كل الـ69 ولاية (OpenStreetMap) |
+| [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس – 11,858 مدرسة ابتدائية ومتوسطة وثانوية وتحضيرية مُصنَّفة حسب الطور، ثنائية اللغة، كل الـ69 ولاية (OpenStreetMap) |
 | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | المحطات البرية – 74 محطة SOGRAL عبر 52 ولاية، بإحداثيات مع المساحات وربط بالبلدية/الولاية |
 | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري – 692 عقدة قطار/ترام/مترو/تلفريك/قمرة (SNTF/SETRAM/SEMA)، تجميع Wikidata + OpenStreetMap، ثنائي اللغة |
 | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | شبكات الحافلات الحضرية – 50 خط ETUSA (الجزائر) مع المحطات الطرفية وعدد المواقف والبلديات والمحطات المخدومة (مستوى الخط v1) |

@@ -111,9 +111,21 @@ SOGRAL location code lives under `refs.sogral`; it is a **town-level** id shared
 twin stations of one town (Annaba and Sidi Brahim, the three Constantine gares), so
 never treat it as a station key. `refs.mahatati_agency` is the per-station MAHATATI
 departure-agency id (absent only for In Saleh, which is not a departure agency).
-Retired ids are listed in `data/retired-ids.json` and are never reassigned:
-`33-01` belonged to Tindouf while a sign-flipped source longitude placed it in
-Illizi; the corrected station is `37-01`.
+Retired ids are listed in `data/retired-ids.json` and are never reassigned. An id
+encodes the wilaya, so correcting a station's coordinate can move it to a
+different wilaya and therefore give it a new id; the one it vacates is retired
+so no future station can inherit a join key that used to point elsewhere. Seven
+so far, all from source longitudes that placed a station in the wrong wilaya:
+
+| Retired | Station | Now |
+| --- | --- | --- |
+| `33-01` | TINDOUF | `37-01` |
+| `14-01` | SEBDOU | `13-02` |
+| `14-03` | MAGHENIA | `13-03` |
+| `31-01` | RELIZANE | `48-01` |
+| `32-02` | EL OUED | `39-01` |
+| `69-01` | AIN SEFRA | `45-02` |
+| `69-02` | NAAMA | `45-03` |
 
 ## Need the administrative divisions too?
 
