@@ -613,3 +613,14 @@ test("every data descriptor in the repository states the terms its package grant
   assert.deepEqual(errors, []);
   assert.ok(checked >= 29, `expected every package's data descriptors, checked only ${checked}`);
 });
+
+test("a package-level descriptor names no licence the package does not grant", () => {
+  const descriptor = (license) => [{ path: "data/metadata.json", json: { license } }];
+  const base = { name: "mosquees", manifest: { license: "MIT AND ODbL-1.0" }, licenceText: "" };
+  assert.deepEqual(descriptorTermsErrors({ ...base, descriptors: descriptor("MIT AND ODbL-1.0") }), []);
+  const errors = descriptorTermsErrors({ ...base, descriptors: descriptor("CC0-1.0 AND ODbL-1.0") });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0], /names CC0-1.0, which mosquees\/package.json/);
+  // narrowing to the data half of the expression is allowed
+  assert.deepEqual(descriptorTermsErrors({ ...base, descriptors: descriptor("ODbL-1.0") }), []);
+});

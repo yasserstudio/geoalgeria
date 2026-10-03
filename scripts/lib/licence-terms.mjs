@@ -385,7 +385,21 @@ export function descriptorTermsErrors({ name, manifest, licenceText, descriptors
     }
 
     if (isSpdxExpression(terms)) {
-      if (manifest?.license !== SEE_LICENSE) continue;
+      // A package-level descriptor may narrow the package's SPDX expression (a
+      // data descriptor saying "ODbL-1.0" under "MIT AND ODbL-1.0") but may not
+      // name a licence the package does not grant. mosquees and ferroviaire
+      // shipped "CC0-1.0 AND ODbL-1.0" under "MIT AND ODbL-1.0": CC0 is their
+      // Wikidata source's licence, which belongs in sources[].license.
+      if (manifest?.license !== SEE_LICENSE) {
+        const ids = (expression) => new Set(String(expression).split(/\s+(?:AND|OR|WITH)\s+|[()\s]+/).filter(Boolean));
+        const granted = ids(manifest?.license ?? "");
+        const foreign = [...ids(terms)].filter((id) => !granted.has(id));
+        if (path === "data/metadata.json" && granted.size && foreign.length)
+          errors.push(
+            `${where}: license "${terms}" names ${foreign.join(", ")}, which ${name}/package.json ("${manifest.license}") does not grant; a source's licence belongs in sources[].license`,
+          );
+        continue;
+      }
       const notes = Array.isArray(json.provenance_notes) ? json.provenance_notes : [];
       const documented = notes.some((note) => note.includes(terms) && note.includes(SEE_LICENSE));
       if (!documented)
