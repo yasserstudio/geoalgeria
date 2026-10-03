@@ -20,7 +20,11 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const DIR = join(ROOT, "research", "_commune-centres");
 
 /** Oldest first. A new audit appends its file here. */
-export const CORRECTION_FILES = ["corrections-2026-09-27.json", "corrections-2026-09-29.json"];
+export const CORRECTION_FILES = [
+  "corrections-2026-09-27.json",
+  "corrections-2026-09-29.json",
+  "corrections-2026-10-01.json",
+];
 
 /**
  * Every applied correction, oldest batch first, each row carrying the `batch`

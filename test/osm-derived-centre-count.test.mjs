@@ -23,6 +23,23 @@ const json = (...p) => JSON.parse(read(...p));
 // OpenStreetMap value was ever written to them. See CHANGELOG.md, 2.1.0.
 const RELATION_CENTROID_COMMUNES = [2242, 2616, 2627, 2653, 2915, 3427];
 
+// Every number a file puts on the carve-out has to be the derived one: a stale count
+// reads as a different claim over the same data, which is the defect this file guards.
+// These are the shapes the prose actually uses across the carriers; the denominator in
+// "N of the 1,541" is the second number and is checked separately.
+const CLAIM_SHAPES = [
+  /(?<![\d,])([\d,]+)\s+(?:OpenStreetMap-derived\s+)?commune\s+centre\s+coordinates/g,
+  /(?<![\d,])([\d,]+)\s+OpenStreetMap-derived\s+commune\s+centres\b/g,
+  /(?<![\d,])([\d,]+)\s+of\s+the\s+[\d,]+\s+(?:commune|points)\b/g,
+  /(?:these|those)\s+([\d,]+)\s+(?:coordinates|values)/g,
+  /Those\s+([\d,]+)\s+points\b/g,
+];
+
+/** The carve-out counts one text claims, in whatever shape it claims them. */
+function claimsIn(text) {
+  return CLAIM_SHAPES.flatMap((re) => [...text.matchAll(re)].map((m) => Number(m[1].replace(/,/g, ""))));
+}
+
 function derive() {
   const communes = [
     ...json(PKG, "data", "communes_w1_w23.json"),
@@ -34,11 +51,24 @@ function derive() {
   const ledgers = [
     json(ROOT, "research", "_commune-centres", "corrections-2026-09-27.json"),
     json(ROOT, "research", "_commune-centres", "corrections-2026-09-29.json"),
+    json(ROOT, "research", "_commune-centres", "corrections-2026-10-01.json"),
   ];
 
   // A ledger row only counts if its value is the one the package ships: a correction
   // that was reverted, or never applied, carries no ODbL claim.
+  //
+  // AND ONLY IF ITS VALUE CAME FROM OPENSTREETMAP. Every published coordinate does
+  // today, which is the Owner's rule of 2026-10-01: a reading taken off a proprietary
+  // map may only CONFIRM an open source, within 500 m, and the open coordinate is what
+  // ships (Beni-Abbes 5201 is the first row to carry such a confirmation, and its
+  // published value is its `admin_centre` node like every other row). The counting
+  // still turns on the row's own `decided_by` rather than on that rule holding, because
+  // a row that one day ships a non-open value must drop out of the carve-out instead of
+  // being counted by default. A row with no `decided_by` is an older ledger, where every
+  // row is a node correction by construction, which is asserted here rather than
+  // assumed.
   const fromAdminCentreNode = new Set();
+  const ownerVerified = new Set();
   const perLedger = [];
   for (const ledger of ledgers) {
     perLedger.push({ generated: ledger.generated, count: ledger.corrections.length });
@@ -50,9 +80,38 @@ function derive() {
         Math.abs(commune.longitude - to[0]) < 1e-6 && Math.abs(commune.latitude - to[1]) < 1e-6,
         `commune ${row.code_commune}: shipped [${commune.longitude}, ${commune.latitude}] is not the ledger's [${to}], so the correction is not applied`,
       );
+      const decidedBy = row.decided_by ?? "osm_admin_centre_node";
+      assert.ok(
+        ["osm_admin_centre_node", "owner_verified"].includes(decidedBy),
+        `commune ${row.code_commune}: decided_by ${JSON.stringify(decidedBy)} is neither deciding source, so its licence cannot be settled`,
+      );
+      if (decidedBy === "owner_verified") {
+        // No row ships one today. If one ever does, it has to state its own licence,
+        // or "not ODbL" would rest on this test alone.
+        assert.ok(
+          row.owner_verified?.licence,
+          `commune ${row.code_commune}: an owner_verified row must state its own licence, because it is the exception to the carve-out`,
+        );
+        ownerVerified.add(row.code_commune);
+        continue;
+      }
+      // A confirmation is not a provenance: a row may record a reading taken off a
+      // proprietary map, but only as the check on an open value it agrees with, so the
+      // row still counts and the confirmation must say what it confirms.
+      if (row.owner_confirmation)
+        assert.equal(
+          row.owner_confirmation.confirms,
+          "osm_admin_centre_node",
+          `commune ${row.code_commune}: a confirmation must name the open source it confirms, or its terms are unsettled`,
+        );
       fromAdminCentreNode.add(row.code_commune);
     }
   }
+  for (const code of ownerVerified)
+    assert.ok(
+      !fromAdminCentreNode.has(code),
+      `commune ${code} is counted both as an admin_centre node correction and as an owner-verified point`,
+    );
 
   for (const code of RELATION_CENTROID_COMMUNES) {
     assert.ok(byCode.has(code), `relation-centroid commune ${code} is not a commune this package ships`);
@@ -67,6 +126,7 @@ function derive() {
     total: communes.length,
     fromAdminCentreNode: fromAdminCentreNode.size,
     fromRelationCentroid: RELATION_CENTROID_COMMUNES.length,
+    ownerVerified: ownerVerified.size,
     osmDerived: osmDerived.size,
     rest: communes.length - osmDerived.size,
     perLedger,
@@ -79,11 +139,17 @@ test("the OpenStreetMap-derived commune centres are the applied ledger rows plus
   assert.deepEqual(counts.perLedger, [
     { generated: "2026-09-27", count: 56 },
     { generated: "2026-09-29", count: 189 },
+    { generated: "2026-10-01", count: 5 },
   ]);
-  assert.equal(counts.fromAdminCentreNode, 245);
+  assert.equal(counts.fromAdminCentreNode, 250);
   assert.equal(counts.fromRelationCentroid, 6);
-  assert.equal(counts.osmDerived, 251);
-  assert.equal(counts.rest, 1290);
+  // No published coordinate is a reading off a proprietary map. Beni-Abbes (5201) is the
+  // one row that carries such a reading, and it carries it as a confirmation of its
+  // `admin_centre` node, which is the value that ships; so all 250 ledger rows are in
+  // the carve-out and none is an owner-verified exception.
+  assert.equal(counts.ownerVerified, 0);
+  assert.equal(counts.osmDerived, 256);
+  assert.equal(counts.rest, 1285);
 });
 
 test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no other", () => {
@@ -104,18 +170,7 @@ test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no o
   }
 
   for (const [where, text] of Object.entries(stated)) {
-    // Every number these files put on the carve-out has to be the derived one. A
-    // stale count reads as a different claim over the same data, which is the defect
-    // this guards. The three shapes the prose uses; the denominator in "N of the
-    // 1,541" is the second number and is checked separately.
-    const CLAIM_SHAPES = [
-      /(?<![\d,])([\d,]+)\s+(?:OpenStreetMap-derived\s+)?commune\s+centre\s+coordinates/g,
-      /(?<![\d,])([\d,]+)\s+of\s+the\s+[\d,]+\s+commune\b/g,
-      /these\s+([\d,]+)\s+coordinates/g,
-    ];
-    const claims = CLAIM_SHAPES.flatMap((re) =>
-      [...text.matchAll(re)].map((m) => Number(m[1].replace(/,/g, ""))),
-    );
+    const claims = claimsIn(text);
     assert.ok(claims.length > 0, `${where}: states no commune centre count at all`);
     for (const claim of claims)
       assert.equal(claim, osmDerived, `${where}: states ${claim} OpenStreetMap-derived commune centres, the data gives ${osmDerived}`);
@@ -155,4 +210,40 @@ test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no o
   // pinned list cannot drift away from the published claim.
   for (const code of RELATION_CENTROID_COMMUNES)
     assert.ok(stated.NOTICE.includes(`(${code})`), `NOTICE: does not name relation-centroid commune ${code}`);
+});
+
+// The count is stated in more than the three files above, and every one of those is a
+// licence claim a consumer reads. `llms.txt` and `wilaya-boundaries.metadata.json` both
+// shipped 251 past this guard on 2026-10-01, because it only ever read LICENSE, NOTICE
+// and dataset-metadata.json. Each file is listed with the claim shape it uses, so a
+// carrier that stops stating the count fails here rather than going quiet.
+const OTHER_CARRIERS = [
+  ["packages/dataset/llms.txt", () => read(PKG, "llms.txt")],
+  ["packages/dataset/data/README.md", () => read(PKG, "data", "README.md")],
+  ["data/geojson/communes.metadata.json", () => JSON.stringify(json(PKG, "data", "geojson", "communes.metadata.json"))],
+  [
+    "data/geojson/wilaya-boundaries.metadata.json",
+    () => JSON.stringify(json(PKG, "data", "geojson", "wilaya-boundaries.metadata.json")),
+  ],
+  ["index.json", () => JSON.stringify(json(ROOT, "index.json"))],
+];
+
+test("every other file that states the OpenStreetMap-derived count states the derived one", () => {
+  const { osmDerived, rest } = derive();
+  for (const [where, load] of OTHER_CARRIERS) {
+    const text = load().replace(/\s+/g, " ");
+    const claims = claimsIn(text);
+    assert.ok(claims.length > 0, `${where}: states no commune centre count at all`);
+    for (const claim of claims)
+      assert.equal(claim, osmDerived, `${where}: states ${claim} OpenStreetMap-derived commune centres, the data gives ${osmDerived}`);
+    // The complement, only where the file gives it. A file naming one of the two
+    // numbers and not the other is still a complete claim.
+    const complement = [...text.matchAll(/(?:other|remaining)\s+([\d,]+)\s+commune\b|(?:other|remaining)\s+([\d,]+)\s+carry/g)];
+    for (const m of complement)
+      assert.equal(
+        Number((m[1] ?? m[2]).replace(/,/g, "")),
+        rest,
+        `${where}: states a different complement than the ${rest} commune coordinates that are not OpenStreetMap-derived`,
+      );
+  }
 });
