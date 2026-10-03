@@ -8,8 +8,8 @@
   "geocoded_count": 597,
   "geocoded_pct": 89.4,
   "precision": {
-    "exact": 130,
-    "approximate": 467
+    "exact": 132,
+    "approximate": 465
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -18,7 +18,7 @@
   "bbox": [
     -8.140085,
     19.573539,
-    9.635,
+    9.576151,
     37.065039
   ],
   "sources": [
@@ -60,8 +60,8 @@
     "public": 668
   },
   "by_geo_method": {
-    "commune_centroid": 467,
-    "osm_point": 116,
+    "commune_centroid": 465,
+    "osm_point": 118,
     "wikidata_point": 3,
     "owner_verified": 11
   },

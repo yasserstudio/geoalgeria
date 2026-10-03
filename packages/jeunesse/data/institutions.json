@@ -17514,8 +17514,8 @@
     "id": "00728",
     "name": null,
     "name_ar": null,
-    "wilaya_code": "14",
-    "commune_code": null,
+    "wilaya_code": "64",
+    "commune_code": "1439",
     "commune": "SERGUINE",
     "lat": 35.255,
     "lng": 2.4868,
@@ -17532,7 +17532,15 @@
     "operational": true,
     "pmr": null,
     "surface_built_m2": 475,
-    "surface_land_m2": 955
+    "surface_land_m2": 955,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "00729",
@@ -30500,8 +30508,8 @@
     "id": "01268",
     "name": "Chahid Zoumati Nadhir",
     "name_ar": "المركب الرياضي الجواري المجاهد زوماتي النذير",
-    "wilaya_code": "26",
-    "commune_code": null,
+    "wilaya_code": "67",
+    "commune_code": "2618",
     "commune": "CHELLALAT EL ADHAOURA",
     "lat": 35.9396,
     "lng": 3.4216,
@@ -30518,7 +30526,15 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": 850,
-    "surface_land_m2": 4624
+    "surface_land_m2": 4624,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01269",
@@ -30866,8 +30882,8 @@
     "id": "01283",
     "name": "Chahid Bensaasaa Salami",
     "name_ar": "دار الشباب المجاهد بن سعسع السلامي شلالة العذاورة",
-    "wilaya_code": "26",
-    "commune_code": null,
+    "wilaya_code": "67",
+    "commune_code": "2618",
     "commune": "CHELLALAT EL ADHAOURA",
     "lat": 35.9412,
     "lng": 3.4174,
@@ -30884,7 +30900,15 @@
     "operational": true,
     "pmr": false,
     "surface_built_m2": 858,
-    "surface_land_m2": 1215
+    "surface_land_m2": 1215,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01284",
@@ -33772,8 +33796,8 @@
     "id": "01403",
     "name": "Maison de jeunes",
     "name_ar": null,
-    "wilaya_code": "28",
-    "commune_code": null,
+    "wilaya_code": "68",
+    "commune_code": "2846",
     "commune": "OULTENE",
     "lat": 35.121633,
     "lng": 4.368947,
@@ -33790,7 +33814,15 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": 450,
-    "surface_land_m2": 400
+    "surface_land_m2": 400,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01404",
@@ -37402,8 +37434,8 @@
     "id": "01554",
     "name": "Auberge de jeune",
     "name_ar": "بيت الشباب الابيض سيد الشيخ بن كامو الشيخ",
-    "wilaya_code": "32",
-    "commune_code": null,
+    "wilaya_code": "69",
+    "commune_code": "3207",
     "commune": ":",
     "lat": 32.894455,
     "lng": 0.545365,
@@ -37420,7 +37452,15 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": null,
-    "surface_land_m2": null
+    "surface_land_m2": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01555",
@@ -37498,8 +37538,8 @@
     "id": "01558",
     "name": "auberge de jeunes DE CHELLALA",
     "name_ar": "بيت الشباب تبون محمد الشلالة",
-    "wilaya_code": "32",
-    "commune_code": null,
+    "wilaya_code": "69",
+    "commune_code": "3214",
     "commune": ":",
     "lat": 33.033688,
     "lng": 0.063674,
@@ -37516,14 +37556,22 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": null,
-    "surface_land_m2": null
+    "surface_land_m2": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01559",
     "name": "centres sportifs et culturels CHELLALA",
     "name_ar": "المركز الرياضي الثقافي الشلالة",
-    "wilaya_code": "32",
-    "commune_code": null,
+    "wilaya_code": "69",
+    "commune_code": "3214",
     "commune": "CHALLALA",
     "lat": 33.0319,
     "lng": 0.0536,
@@ -37540,7 +37588,15 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": null,
-    "surface_land_m2": null
+    "surface_land_m2": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01560",
@@ -37570,8 +37626,8 @@
     "id": "01561",
     "name": "centres sportifs et culturels DE BOUSSEMGHOUN",
     "name_ar": null,
-    "wilaya_code": "32",
-    "commune_code": null,
+    "wilaya_code": "69",
+    "commune_code": "3213",
     "commune": "BOUSEMGHOUN",
     "lat": 32.8689,
     "lng": 0.021,
@@ -37588,7 +37644,15 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": null,
-    "surface_land_m2": null
+    "surface_land_m2": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01562",
@@ -37618,8 +37682,8 @@
     "id": "01563",
     "name": "complexe sportifs de proximité DE BOUSSEMGHOUN",
     "name_ar": "المركب الرياضي الجواري بوسمغون",
-    "wilaya_code": "32",
-    "commune_code": null,
+    "wilaya_code": "69",
+    "commune_code": "3213",
     "commune": "BOUSEMGHOUN",
     "lat": 32.8747,
     "lng": 0.0245,
@@ -37636,7 +37700,15 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": 2,
-    "surface_land_m2": null
+    "surface_land_m2": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01564",
@@ -37666,8 +37738,8 @@
     "id": "01565",
     "name": "complexe sportifs de proximité DE CHELLALA",
     "name_ar": "المركب الرياضي الجواري المجاهد المتوفي بويهي بن دين الشلالة",
-    "wilaya_code": "32",
-    "commune_code": null,
+    "wilaya_code": "69",
+    "commune_code": "3214",
     "commune": "CHALLALA",
     "lat": 33.0287,
     "lng": 0.0483,
@@ -37684,7 +37756,15 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": null,
-    "surface_land_m2": null
+    "surface_land_m2": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01566",
@@ -37786,8 +37866,8 @@
     "id": "01570",
     "name": "complexe sportifs de proximité EL ABIODH SIDI CHEIKH",
     "name_ar": null,
-    "wilaya_code": "32",
-    "commune_code": null,
+    "wilaya_code": "69",
+    "commune_code": "3207",
     "commune": "EL ABIOD SIDI CHEIKH",
     "lat": 32.9117,
     "lng": 0.5466,
@@ -37804,7 +37884,15 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": null,
-    "surface_land_m2": null
+    "surface_land_m2": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01571",
@@ -37883,8 +37971,8 @@
     "id": "01574",
     "name": "maison de jeune",
     "name_ar": null,
-    "wilaya_code": "32",
-    "commune_code": null,
+    "wilaya_code": "69",
+    "commune_code": "3207",
     "commune": "EL ABIOD SIDI CHEIKH",
     "lat": 32.8973,
     "lng": 0.547,
@@ -37901,7 +37989,15 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": null,
-    "surface_land_m2": null
+    "surface_land_m2": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01575",
@@ -38075,8 +38171,8 @@
     "id": "01582",
     "name": "maison de jeunes CHELLALA GAIBELIA",
     "name_ar": "دار الشباب شلالة القبيلة",
-    "wilaya_code": "32",
-    "commune_code": null,
+    "wilaya_code": "69",
+    "commune_code": "3214",
     "commune": "CHALLALA",
     "lat": 33.026,
     "lng": 0.1146,
@@ -38093,14 +38189,22 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": null,
-    "surface_land_m2": null
+    "surface_land_m2": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01583",
     "name": "maison de jeunes de BOUSSEMGHOUN",
     "name_ar": "دار الشباب بوسمغون محمد الصديق بن يحي",
-    "wilaya_code": "32",
-    "commune_code": null,
+    "wilaya_code": "69",
+    "commune_code": "3213",
     "commune": ":",
     "lat": 32.868254,
     "lng": 0.021055,
@@ -38117,14 +38221,22 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": null,
-    "surface_land_m2": null
+    "surface_land_m2": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01584",
     "name": "maison de jeunes DE CHELLALA",
     "name_ar": null,
-    "wilaya_code": "32",
-    "commune_code": null,
+    "wilaya_code": "69",
+    "commune_code": "3214",
     "commune": "CHALLALA",
     "lat": 33.0314,
     "lng": 0.0535,
@@ -38141,7 +38253,15 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": null,
-    "surface_land_m2": null
+    "surface_land_m2": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://sig.mjs.gov.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "01585",

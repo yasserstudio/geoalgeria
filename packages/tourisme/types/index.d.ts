@@ -55,8 +55,8 @@ interface Base {
   name: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
-  /** Commune (ONS) code, always null: OSM/ASAL sources carry no ONS join;
-   *  typed as `string | null` so a future value is not a break. */
+  /** Commune (ONS) code. Null unless a reviewed correction filled it
+   *  (quality/overrides/tourisme.json): the OSM/ASAL sources carry no ONS join. */
   commune_code: string | null;
   /** Commune name, or null. Only thermal springs carry a real commune name;
    *  the other four layers always carry null (point sources, no commune join). */
@@ -94,6 +94,12 @@ export interface Lodging extends Base {
   stars?: number;
   /** Number of rooms, when published. */
   rooms?: number;
+  /** Present when a versioned evidence review corrected this record
+   *  (quality/overrides/). */
+  review_status?: "corrected";
+  reviewed_at?: string;
+  reviewed_by?: string;
+  review_evidence?: string[];
 }
 
 /** A tourist attraction (viewpoint, museum, artwork, …). */
@@ -107,6 +113,12 @@ export interface Attraction extends Base {
   refs: Refs;
   /** Free-text description carried by the source, when published. */
   description?: string;
+  /** Present when a versioned evidence review corrected this record
+   *  (quality/overrides/). */
+  review_status?: "corrected";
+  reviewed_at?: string;
+  reviewed_by?: string;
+  review_evidence?: string[];
 }
 
 /** A historic site (archaeological site, monument, fort, …). OSM's `historic`
@@ -142,6 +154,12 @@ export interface ThermalSpring extends Base {
   altitude_m: number;
   /** Mineral composition, when published. */
   minerality?: string;
+  /** Present when a versioned evidence review corrected this record
+   *  (quality/overrides/). */
+  review_status?: "corrected";
+  reviewed_at?: string;
+  reviewed_by?: string;
+  review_evidence?: string[];
 }
 
 /** A national park, nature reserve, or other protected area. */

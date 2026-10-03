@@ -57,9 +57,9 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 
 | | Count | |
 |---|---|---|
-| **Wilayas** | 69 | provinces (2019 + 2026 reforms) |
+| **Wilayas** | 69 | provinces (2019 + 2026 reforms), each with its capital commune (chef-lieu) |
 | **Dairas** | 551 | districts, as first-class entities |
-| **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates |
+| **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates, OpenStreetMap + Wikidata links |
 | **Post offices** | 3,908 | real Algérie Poste codes, coordinates |
 | **ATMs** | 2,026 | Algérie Poste GAB network |
 | **Employment agencies** | 331 | ANEM: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |

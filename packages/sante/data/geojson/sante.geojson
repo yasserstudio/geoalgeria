@@ -1544,8 +1544,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.919839,
-          35.399109
+          5.894213,
+          35.375209
         ]
       },
       "properties": {
@@ -1556,8 +1556,8 @@
         "wilaya_code": "05",
         "commune_code": "0545",
         "commune": "Aïn Touta",
-        "lat": 35.399109,
-        "lng": 5.919839,
+        "lat": 35.375209,
+        "lng": 5.894213,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -1876,8 +1876,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.004412,
-          35.830828
+          6.001284,
+          35.859687
         ]
       },
       "properties": {
@@ -1888,8 +1888,8 @@
         "wilaya_code": "05",
         "commune_code": "0519",
         "commune": "Ain Djasser",
-        "lat": 35.830828,
-        "lng": 6.004412,
+        "lat": 35.859687,
+        "lng": 6.001284,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -1908,8 +1908,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.004412,
-          35.830828
+          6.001284,
+          35.859687
         ]
       },
       "properties": {
@@ -1920,8 +1920,8 @@
         "wilaya_code": "05",
         "commune_code": "0519",
         "commune": "Ain Djasser",
-        "lat": 35.830828,
-        "lng": 6.004412,
+        "lat": 35.859687,
+        "lng": 6.001284,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -1940,8 +1940,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.919839,
-          35.399109
+          5.894213,
+          35.375209
         ]
       },
       "properties": {
@@ -1952,8 +1952,8 @@
         "wilaya_code": "05",
         "commune_code": "0545",
         "commune": "Aïn Touta",
-        "lat": 35.399109,
-        "lng": 5.919839,
+        "lat": 35.375209,
+        "lng": 5.894213,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -2205,8 +2205,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.919839,
-          35.399109
+          5.894213,
+          35.375209
         ]
       },
       "properties": {
@@ -2217,8 +2217,8 @@
         "wilaya_code": "05",
         "commune_code": "0545",
         "commune": "Aïn Touta",
-        "lat": 35.399109,
-        "lng": 5.919839,
+        "lat": 35.375209,
+        "lng": 5.894213,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -2502,8 +2502,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.339233,
-          36.628824
+          5.336022,
+          36.625652
         ]
       },
       "properties": {
@@ -2514,13 +2514,12 @@
         "wilaya_code": "06",
         "commune_code": "0608",
         "commune": "Souk El Tenine",
-        "lat": 36.628824,
-        "lng": 5.339233,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "lat": 36.625652,
+        "lng": 5.336022,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "osm": "node/6655121204",
           "msp": "4448",
           "msp_twin": "4449"
         },
@@ -2536,8 +2535,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.6667,
-          36.683333
+          4.673701,
+          36.691726
         ]
       },
       "properties": {
@@ -2548,12 +2547,13 @@
         "wilaya_code": "06",
         "commune_code": "0624",
         "commune": "Adekar",
-        "lat": 36.683333,
-        "lng": 4.6667,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 36.691726,
+        "lng": 4.673701,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "way/404804111",
           "msp": "4430",
           "msp_twin": "4431"
         },
@@ -2701,8 +2701,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.689464,
-          36.547234
+          4.686417,
+          36.551549
         ]
       },
       "properties": {
@@ -2713,12 +2713,13 @@
         "wilaya_code": "06",
         "commune_code": "0626",
         "commune": "Seddouk",
-        "lat": 36.547234,
-        "lng": 4.689464,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 36.551549,
+        "lng": 4.686417,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "way/778818343",
           "msp": "4440",
           "msp_twin": "4441"
         },
@@ -2886,6 +2887,7 @@
         "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
+          "osm": "node/4728650389",
           "msp": "3663"
         },
         "type": "ehs",
@@ -2897,7 +2899,8 @@
         "reviewed_at": "2026-09-30",
         "reviewed_by": "GeoAlgeria owner",
         "review_evidence": [
-          "https://www.google.com/maps?q=34.849784,5.742165"
+          "https://www.google.com/maps?q=34.849784,5.742165",
+          "https://www.google.com/maps?q=34.849738,5.741997"
         ]
       }
     },
@@ -2924,6 +2927,7 @@
         "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
+          "osm": "way/377862818",
           "msp": "3659",
           "msp_twin": "3660"
         },
@@ -2936,7 +2940,8 @@
         "reviewed_at": "2026-09-30",
         "reviewed_by": "GeoAlgeria owner",
         "review_evidence": [
-          "https://www.google.com/maps?q=34.8495918,5.7435019"
+          "https://www.google.com/maps?q=34.8495918,5.7435019",
+          "https://www.google.com/maps?q=34.849537,5.743875"
         ]
       }
     },
@@ -3045,8 +3050,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.751048,
-          34.8
+          5.729074,
+          34.850882
         ]
       },
       "properties": {
@@ -3057,8 +3062,8 @@
         "wilaya_code": "07",
         "commune_code": "0701",
         "commune": "Biskra",
-        "lat": 34.8,
-        "lng": 5.751048,
+        "lat": 34.850882,
+        "lng": 5.729074,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -9888,8 +9893,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.663889,
-          36.853576
+          7.741371,
+          36.854828
         ]
       },
       "properties": {
@@ -9900,8 +9905,8 @@
         "wilaya_code": "23",
         "commune_code": "2305",
         "commune": "El Bouni",
-        "lat": 36.853576,
-        "lng": 7.663889,
+        "lat": 36.854828,
+        "lng": 7.741371,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -9972,6 +9977,7 @@
         "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
+          "osm": "way/378148732",
           "msp": "4914",
           "msp_twin": "4923"
         },
@@ -9984,7 +9990,8 @@
         "reviewed_at": "2026-09-30",
         "reviewed_by": "GeoAlgeria owner",
         "review_evidence": [
-          "https://www.google.com/maps?q=36.9093728,7.6766901"
+          "https://www.google.com/maps?q=36.9093728,7.6766901",
+          "https://www.google.com/maps?q=36.90948,7.676721"
         ]
       }
     },
@@ -10093,8 +10100,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.663889,
-          36.853576
+          7.737211,
+          36.856289
         ]
       },
       "properties": {
@@ -10105,12 +10112,13 @@
         "wilaya_code": "23",
         "commune_code": "2305",
         "commune": "El Bouni",
-        "lat": 36.853576,
-        "lng": 7.663889,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 36.856289,
+        "lng": 7.737211,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "node/4617339161",
           "msp": "4926"
         },
         "type": "eph",
@@ -10618,8 +10626,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.642433,
-          36.365
+          6.608428,
+          36.364164
         ]
       },
       "properties": {
@@ -10630,8 +10638,8 @@
         "wilaya_code": "25",
         "commune_code": "2501",
         "commune": "Constantine",
-        "lat": 36.365,
-        "lng": 6.642433,
+        "lat": 36.364164,
+        "lng": 6.608428,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -10717,8 +10725,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.642433,
-          36.365
+          6.608428,
+          36.364164
         ]
       },
       "properties": {
@@ -10729,8 +10737,8 @@
         "wilaya_code": "25",
         "commune_code": "2501",
         "commune": "Constantine",
-        "lat": 36.365,
-        "lng": 6.642433,
+        "lat": 36.364164,
+        "lng": 6.608428,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -12140,8 +12148,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.1614,
-          35.216944
+          0.160451,
+          35.248175
         ]
       },
       "properties": {
@@ -12152,8 +12160,8 @@
         "wilaya_code": "29",
         "commune_code": "2912",
         "commune": "Ghriss",
-        "lat": 35.216944,
-        "lng": 0.1614,
+        "lat": 35.248175,
+        "lng": 0.160451,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -13990,8 +13998,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.020278,
-          33.721667
+          1.018245,
+          33.684319
         ]
       },
       "properties": {
@@ -14002,8 +14010,8 @@
         "wilaya_code": "32",
         "commune_code": "3201",
         "commune": "El Bayadh",
-        "lat": 33.721667,
-        "lng": 1.020278,
+        "lat": 33.684319,
+        "lng": 1.018245,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -14188,8 +14196,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.635,
-          28.040833
+          9.576151,
+          28.038665
         ]
       },
       "properties": {
@@ -14200,8 +14208,8 @@
         "wilaya_code": "33",
         "commune_code": "3306",
         "commune": "In Amenas",
-        "lat": 28.040833,
-        "lng": 9.635,
+        "lat": 28.038665,
+        "lng": 9.576151,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -16847,8 +16855,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.343878,
-          36.249722
+          6.287062,
+          36.249555
         ]
       },
       "properties": {
@@ -16859,8 +16867,8 @@
         "wilaya_code": "43",
         "commune_code": "4304",
         "commune": "Oued Athmenia",
-        "lat": 36.249722,
-        "lng": 6.343878,
+        "lat": 36.249555,
+        "lng": 6.287062,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -17011,8 +17019,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.343878,
-          36.249722
+          6.287062,
+          36.249555
         ]
       },
       "properties": {
@@ -17023,8 +17031,8 @@
         "wilaya_code": "43",
         "commune_code": "4304",
         "commune": "Oued Athmenia",
-        "lat": 36.249722,
-        "lng": 6.343878,
+        "lat": 36.249555,
+        "lng": 6.287062,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -17076,8 +17084,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.343878,
-          36.249722
+          6.287062,
+          36.249555
         ]
       },
       "properties": {
@@ -17088,8 +17096,8 @@
         "wilaya_code": "43",
         "commune_code": "4304",
         "commune": "Oued Athmenia",
-        "lat": 36.249722,
-        "lng": 6.343878,
+        "lat": 36.249555,
+        "lng": 6.287062,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -19030,8 +19038,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.17,
-          30.08
+          -2.169031,
+          30.131743
         ]
       },
       "properties": {
@@ -19042,8 +19050,8 @@
         "wilaya_code": "52",
         "commune_code": "5201",
         "commune": "Beni-Abbes",
-        "lat": 30.08,
-        "lng": -2.17,
+        "lat": 30.131743,
+        "lng": -2.169031,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -19096,8 +19104,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.17,
-          30.08
+          -2.169031,
+          30.131743
         ]
       },
       "properties": {
@@ -19108,8 +19116,8 @@
         "wilaya_code": "52",
         "commune_code": "5201",
         "commune": "Beni-Abbes",
-        "lat": 30.08,
-        "lng": -2.17,
+        "lat": 30.131743,
+        "lng": -2.169031,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",

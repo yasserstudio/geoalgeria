@@ -97,6 +97,12 @@ export interface Atm {
   /** Street address. Currently null for every ATM (the source omits it); typed
    *  as `string | null` so a future populated value is not a breaking change. */
   address: string | null;
+  /** Present when a versioned evidence review corrected this record
+   *  (quality/overrides/). */
+  review_status?: "corrected";
+  reviewed_at?: string;
+  reviewed_by?: string;
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */

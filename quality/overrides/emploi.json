@@ -1,0 +1,518 @@
+{
+  "schema_version": 1,
+  "dataset": "emploi",
+  "reviewer": "geoalgeria-maintainers",
+  "reviewed_at": "2026-10-01",
+  "decisions": [
+    {
+      "file": "alem.json",
+      "record_id": "03-02",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "03",
+        "commune_code": null,
+        "lat": 34.11215,
+        "lng": 2.08051
+      },
+      "patch": {
+        "wilaya_code": "59",
+        "commune_code": "0319"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "05-02",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "05",
+        "commune_code": null,
+        "lat": 35.38662,
+        "lng": 5.36762
+      },
+      "patch": {
+        "wilaya_code": "60",
+        "commune_code": "0542"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "07-02",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "07",
+        "commune_code": null,
+        "lat": 35.21655,
+        "lng": 5.71741
+      },
+      "patch": {
+        "wilaya_code": "61",
+        "commune_code": "0717"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "12-02",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "12",
+        "commune_code": null,
+        "lat": 34.75207,
+        "lng": 8.05845
+      },
+      "patch": {
+        "wilaya_code": "62",
+        "commune_code": "1202"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "14-03",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "14",
+        "commune_code": null,
+        "lat": 35.21407,
+        "lng": 2.31744
+      },
+      "patch": {
+        "wilaya_code": "64",
+        "commune_code": "1429"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "17-02",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "17",
+        "commune_code": null,
+        "lat": 35.44863,
+        "lng": 2.90455
+      },
+      "patch": {
+        "wilaya_code": "65",
+        "commune_code": "1731"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "17-03",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "17",
+        "commune_code": null,
+        "lat": 35.63289,
+        "lng": 3.22309
+      },
+      "patch": {
+        "wilaya_code": "65",
+        "commune_code": "1708"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "17-05",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "17",
+        "commune_code": null,
+        "lat": 34.15352,
+        "lng": 3.48802
+      },
+      "patch": {
+        "wilaya_code": "66",
+        "commune_code": "1717"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "17-07",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "17",
+        "commune_code": null,
+        "lat": 35.43959,
+        "lng": 2.51662
+      },
+      "patch": {
+        "wilaya_code": "65",
+        "commune_code": "1719"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "17-08",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "17",
+        "commune_code": null,
+        "lat": 35.34348,
+        "lng": 3.36041
+      },
+      "patch": {
+        "wilaya_code": "65",
+        "commune_code": "1720"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "26-02",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 35.88379,
+        "lng": 2.74946
+      },
+      "patch": {
+        "wilaya_code": "67",
+        "commune_code": "2635"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "26-05",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 35.70472,
+        "lng": 2.84233
+      },
+      "patch": {
+        "wilaya_code": "67",
+        "commune_code": "2651"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "26-07",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 35.93795,
+        "lng": 3.42916
+      },
+      "patch": {
+        "wilaya_code": "67",
+        "commune_code": "2618"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "26-08",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 35.8876,
+        "lng": 3.14205
+      },
+      "patch": {
+        "wilaya_code": "67",
+        "commune_code": "2604"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "28-02",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "28",
+        "commune_code": null,
+        "lat": 35.20663,
+        "lng": 4.17141
+      },
+      "patch": {
+        "wilaya_code": "68",
+        "commune_code": "2820"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "28-05",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "28",
+        "commune_code": null,
+        "lat": 34.85362,
+        "lng": 4.15839
+      },
+      "patch": {
+        "wilaya_code": "68",
+        "commune_code": "2841"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "alem.json",
+      "record_id": "32-03",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "32",
+        "commune_code": null,
+        "lat": 32.89808,
+        "lng": 0.54628
+      },
+      "patch": {
+        "wilaya_code": "69",
+        "commune_code": "3207"
+      },
+      "evidence": [
+        {
+          "url": "https://www.anem.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    }
+  ]
+}

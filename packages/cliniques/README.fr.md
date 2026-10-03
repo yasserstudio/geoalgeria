@@ -74,14 +74,14 @@ const urgences = all.filter((c) => c.emergency);
 
 > **Ce paquet ne republie jamais un hôpital déjà publié par [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante), et les deux ne s'additionnent pas.**
 > `sante` est le volet *registre* : 668 établissements publics (CHU, EPH, EHS,
-> EPSP) du Ministère de la Santé. Ce paquet est le volet *communautaire*. 116 des
-> enregistrements de `sante` référencent un élément OSM par identifiant. Les 83
+> EPSP) du Ministère de la Santé. Ce paquet est le volet *communautaire*. 121 des
+> enregistrements de `sante` référencent un élément OSM par identifiant. Les 86
 > qui portent sur un hôpital (CHU, EPH, EHS) sont exclus ici **par
 > construction** : aucun hôpital n'est publié deux fois sous le même élément OSM.
-> Les 33 autres sont des EPSP, dont l'élément ancre l'entité sur l'une des
+> Les 35 autres sont des EPSP, dont l'élément ancre l'entité sur l'une des
 > structures de proximité qu'elle gère, et cette structure reste ici : l'entité
 > dans `sante`, la structure ici. Soyons précis sur ce que cela ne
-> garantit pas : les 552 autres enregistrements de `sante` ne portent aucune
+> garantit pas : les 547 autres enregistrements de `sante` ne portent aucune
 > référence OSM, donc un même établissement physique peut malgré tout figurer
 > dans les deux paquets, sous des coordonnées et des identifiants différents,
 > sans qu'aucun mécanisme ne puisse le détecter. Les deux décrivent des volets
@@ -103,9 +103,9 @@ identifier comme structures de soins.
 
 | Exclu | Nombre | Raison |
 | --- | --- | --- |
-| `hopital` | 368 | hôpital / مستشفى / المؤسسة الاستشفائية / EPH / EHS / EHU / centre anti-cancer, le volet registre (`@geoalgeria/sante`) |
+| `hopital` | 365 | hôpital / مستشفى / المؤسسة الاستشفائية / EPH / EHS / EHU / centre anti-cancer, le volet registre (`@geoalgeria/sante`) |
 | `unnamed_hospital` | 249 | aucun nom *et* tagué hôpital, donc indistinguable du volet registre |
-| `sante_overlap` | 82 | l'élément OSM est déjà publié par un enregistrement **hospitalier** (CHU/EPH/EHS) de `@geoalgeria/sante`, quel que soit son nom ici. Les éléments référencés par un enregistrement *EPSP* de sante ne sont pas exclus : la référence y sert d'ancrage de géocodage sur le siège de l'entité, et l'élément visé est en général une structure que ce paquet doit porter |
+| `sante_overlap` | 85 | l'élément OSM est déjà publié par un enregistrement **hospitalier** (CHU/EPH/EHS) de `@geoalgeria/sante`, quel que soit son nom ici. Les éléments référencés par un enregistrement *EPSP* de sante ne sont pas exclus : la référence y sert d'ancrage de géocodage sur le siège de l'entité, et l'élément visé est en général une structure que ce paquet doit porter |
 | `cabinet` | 96 | cabinet individuel : le mot cabinet, ou un nom qui n'est qu'un praticien (Dr X, الطبيب …) |
 | `epsp_entity` | 105 | l'entité administrative EPSP elle-même (ses structures restent) |
 | `hospital_subfeature` | 54 | partie d'un hôpital cartographiée à part : une entrée, un service, « Service de radiologie », un simple « urgences » |

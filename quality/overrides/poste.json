@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "dataset": "poste",
+  "reviewer": "geoalgeria-maintainers",
+  "reviewed_at": "2026-10-01",
+  "decisions": [
+    {
+      "file": "atms.json",
+      "record_id": "11610",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "28",
+        "commune_code": null,
+        "lat": 35.1458683,
+        "lng": 3.6964617
+      },
+      "patch": {
+        "wilaya_code": "68",
+        "commune_code": "2839"
+      },
+      "evidence": [
+        {
+          "url": "https://baridimap.poste.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "atms.json",
+      "record_id": "14908",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 35.9380268,
+        "lng": 3.4279322
+      },
+      "patch": {
+        "wilaya_code": "67",
+        "commune_code": "2618"
+      },
+      "evidence": [
+        {
+          "url": "https://baridimap.poste.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    }
+  ]
+}

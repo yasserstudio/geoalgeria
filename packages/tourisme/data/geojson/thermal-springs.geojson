@@ -5733,8 +5733,8 @@
       "properties": {
         "id": "thermal-spring-36",
         "name": "HAMMAM SOUARI",
-        "wilaya_code": "26",
-        "commune_code": null,
+        "wilaya_code": "67",
+        "commune_code": "2657",
         "commune": "EL AOUINET",
         "lat": 35.867168,
         "lng": 3.047429,
@@ -5745,7 +5745,15 @@
         "temperature_c": 20,
         "debit_l_s": 0.1,
         "altitude_m": 928,
-        "minerality": "BICARBONATEE CALCIQUE ET MAGNESIENNE"
+        "minerality": "BICARBONATEE CALCIQUE ET MAGNESIENNE",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-01",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org",
+          "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+        ]
       }
     },
     {

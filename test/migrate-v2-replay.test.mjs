@@ -239,6 +239,25 @@ const CORRECTIONS = {
   ecoles: {
     "16-00039": { commune: "Bir Touta" }, // re-join: Maalma's centre moved
   },
+  emploi: {
+    // ANEM still files this ALEM under Medea while its own address and coordinate are
+    // both in Ain Boucif, which the 2026 reform moved to wilaya 67. The reviewed
+    // ledger (quality/overrides/emploi.json, yasserstudio/geoalgeria.com#209) corrects
+    // the wilaya and carries the public review receipt with the row, so the frozen v1
+    // row needs the same correction before replay comparison.
+    "26-08": {
+      wilaya_code: "67",
+      commune_code: "2604",
+      review_status: "corrected",
+      reviewed_at: "2026-10-01",
+      reviewed_by: "geoalgeria-maintainers",
+      review_evidence: [
+        "https://www.anem.dz",
+        "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+        "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+      ],
+    },
+  },
   ferroviaire: {
     // All four re-joined by containment. Boughezoul is a spelling the flagship
     // settled; the other three are the station's point landing inside a different
@@ -261,6 +280,9 @@ const CORRECTIONS = {
   "industrie-pharmaceutique": {
     // Same class: a commune-centroid placement in Algiers whose commune moved.
     "16-pp-08": { lat: 36.70442, lng: 3.168156 },
+    // And again on 2026-10-01: Constantine's own centre sat 3 km east of the city,
+    // so every record that borrows it moves with it (private tracker #236).
+    "25-pp-04": { lat: 36.364164, lng: 6.608428 },
   },
   agriculture: {
     // Both rows are Algiers institutions placed at the wilaya chief town's centre.

@@ -66,8 +66,8 @@ function fromCsv(...args) {
 }
 
 function fromSql() {
-  // (code, 'name_fr', 'name_ar', phone, postal, latitude, longitude, created)
-  const re = /^ {2}\((\d+), .*, '([^']*)'\)[,;]$/gm;
+  // (code, 'name_fr', 'name_ar', phone, postal, latitude, longitude, created, capital)
+  const re = /^ {2}\((\d+), .*, '([^']*)', \d+\)[,;]$/gm;
   const out = {};
   for (const m of readText("data", "sql", "full.sql").matchAll(re)) out[Number(m[1])] = m[2];
   return out;

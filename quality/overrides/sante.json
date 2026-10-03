@@ -39,10 +39,10 @@
       "status": "corrected",
       "publish_action": "patch",
       "expect": {
-        "lat": 34.8,
-        "lng": 5.751048,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid"
+        "lat": 34.849738,
+        "lng": 5.741997,
+        "geo_precision": "exact",
+        "geo_method": "osm_point"
       },
       "patch": {
         "lat": 34.849784,
@@ -55,6 +55,11 @@
           "url": "https://www.google.com/maps?q=34.849784,5.742165",
           "checked_at": "2026-09-30",
           "note": "EHS Mere et Enfant Biskra, building point read off the map by the project owner. The Biskra commune centre sits about 5 km from the city, so the centroid fallback was far out."
+        },
+        {
+          "url": "https://www.google.com/maps?q=34.849738,5.741997",
+          "checked_at": "2026-10-03",
+          "note": "After the Biskra commune centre moved onto its seat (data PR #248), the generator matches an OpenStreetMap point for this record, 15 m from the owner's building point. Same building; the owner's point stays the published one."
         }
       ]
     },
@@ -64,10 +69,10 @@
       "status": "corrected",
       "publish_action": "patch",
       "expect": {
-        "lat": 34.8,
-        "lng": 5.751048,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid"
+        "lat": 34.849537,
+        "lng": 5.743875,
+        "geo_precision": "exact",
+        "geo_method": "osm_point"
       },
       "patch": {
         "lat": 34.8495918,
@@ -80,6 +85,11 @@
           "url": "https://www.google.com/maps?q=34.8495918,5.7435019",
           "checked_at": "2026-09-30",
           "note": "EPH Bachir Benacer Biskra, building point read off the map by the project owner."
+        },
+        {
+          "url": "https://www.google.com/maps?q=34.849537,5.743875",
+          "checked_at": "2026-10-03",
+          "note": "After the Biskra commune centre moved onto its seat (data PR #248), the generator matches an OpenStreetMap point for this record, 35 m from the owner's point. Same place; the owner's point stays the published one."
         }
       ]
     },
@@ -89,10 +99,10 @@
       "status": "corrected",
       "publish_action": "patch",
       "expect": {
-        "lat": 36.91129,
-        "lng": 7.666667,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid"
+        "lat": 36.90948,
+        "lng": 7.676721,
+        "geo_precision": "exact",
+        "geo_method": "osm_point"
       },
       "patch": {
         "lat": 36.9093728,
@@ -105,6 +115,11 @@
           "url": "https://www.google.com/maps?q=36.9093728,7.6766901",
           "checked_at": "2026-09-30",
           "note": "EHS Reeducation et Readaptation Fonctionnelle Seraidi, building point read off the map by the project owner."
+        },
+        {
+          "url": "https://www.google.com/maps?q=36.90948,7.676721",
+          "checked_at": "2026-10-03",
+          "note": "After the Biskra commune centre moved onto its seat (data PR #248), the generator matches an OpenStreetMap point for this record, 12 m from the owner's point. Same place; the owner's point stays the published one."
         }
       ]
     },
