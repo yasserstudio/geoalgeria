@@ -49,7 +49,7 @@ const named = all.filter((e) => e.name_fr);
 
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
-| Écoles | **11 858** | ✅ toutes | 8 635 nommées, 69 wilayas |
+| Écoles | **11 858** | ✅ toutes | 8 213 nommées, 69 wilayas |
 
 **Par cycle**
 
