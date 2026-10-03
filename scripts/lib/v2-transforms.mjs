@@ -177,7 +177,7 @@ export const MIGRATIONS = {
         { key: "wikidata", name: "Wikidata: mosques in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0" },
         { key: "osm", name: "OpenStreetMap: mosques in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" },
       ],
-      license: "CC0-1.0 AND ODbL-1.0",
+      license: "MIT AND ODbL-1.0",
       estimatedUniverse: 18449,
       coverageNote:
         "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry; the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it.",
@@ -355,7 +355,7 @@ export const MIGRATIONS = {
         { key: "wikidata", name: "Wikidata: rail & urban transit stations in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: "2026-07-01" },
         { key: "osm", name: "OpenStreetMap: rail & urban transit stations in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-07-01" },
       ],
-      license: "CC0-1.0 AND ODbL-1.0",
+      license: "MIT AND ODbL-1.0",
       estimatedUniverse: null,
       coverageNote: "Rail and urban-transit stations (SNTF, metro, tram) compiled from Wikidata + OpenStreetMap.",
       titles: { en: "Algeria railway & transit stations", fr: "Gares ferroviaires et de transit d'Algérie", ar: "محطات السكك الحديدية والنقل الجزائرية" },
