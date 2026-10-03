@@ -1,0 +1,682 @@
+{
+  "field": "capital_commune_code",
+  "title_en": "Algeria: wilaya capitals (chefs-lieux), 69",
+  "title_fr": "Algérie: chefs-lieux de wilayas (69)",
+  "title_ar": "الجزائر: مقرات الولايات (69)",
+  "description": "The commune code of each wilaya's Capital (chef-lieu), taken from the decrees that fix the names and chefs-lieux of the wilayas, never derived from the wilaya's own name. It joins Commune.code_commune, so the capital's names, postal code and coordinates are read from the commune record instead of being duplicated here.",
+  "carriers": [
+    "data/algeria.json",
+    "data/wilayas.json",
+    "data/wilayas.csv",
+    "data/csv/wilayas.csv",
+    "data/sql/full.sql"
+  ],
+  "license": "MIT",
+  "sources": [
+    {
+      "key": "decret-84-79",
+      "name": "Décret n° 84-79 du 3 avril 1984 fixant les noms et les chefs-lieux des wilayas, art. 1er",
+      "journal_officiel": "JORA n° 14 du 3 avril 1984, pp. 295-296",
+      "url": "https://www.joradp.dz/FTP/jo-francais/1984/F1984014.pdf",
+      "evidence_type": "official",
+      "covers": "wilayas 1-48",
+      "quote": "01 - wilaya d'Adrar avec chef-lieu à Adrar."
+    },
+    {
+      "key": "decret-21-117",
+      "name": "Décret présidentiel n° 21-117 du 22 mars 2021 complétant le décret n° 84-79 du 3 avril 1984 fixant les noms et les chefs-lieux des wilayas, art. 1er",
+      "journal_officiel": "JORA n° 22 du 25 mars 2021, pp. 7-8",
+      "url": "https://www.joradp.dz/FTP/jo-francais/2021/F2021022.pdf",
+      "evidence_type": "official",
+      "covers": "wilayas 49-58, created by Law 19-12 of 11 December 2019",
+      "quote": "49- Wilaya de Timimoun avec chef-lieu à Timimoun ;"
+    },
+    {
+      "key": "decret-26-206",
+      "name": "Décret présidentiel n° 26-206 du 25 mai 2026 complétant le décret n° 84-79 du 3 avril 1984 fixant les noms et les chefs-lieux des wilayas, art. 1er",
+      "journal_officiel": "JORA n° 40 du 3 juin 2026, p. 5",
+      "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+      "evidence_type": "official",
+      "covers": "wilayas 59-69, created by Law n° 26-06 of 4 April 2026",
+      "quote": "59- Wilaya d'Aflou avec chef-lieu la ville d'Aflou ;"
+    },
+    {
+      "key": "osm-admin-centre",
+      "name": "OpenStreetMap: commune relations (boundary=administrative, admin_level=8) in Algeria and their admin_centre member nodes",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 ((c) OpenStreetMap contributors)",
+      "evidence_type": "crowdsourced",
+      "covers": "cross-check, and the wilaya 16 capital point. No capital_commune_code comes from it: the commune centres it established are what each wilaya's capital point is matched against, so a capital naming the wrong commune shows up as a point in a different commune. Wilaya 16's capital point is now the Alger Centre commune centre, one of the 62 OpenStreetMap-derived commune coordinates, so it carries their ODbL terms wherever it appears (see the package LICENSE and NOTICE)"
+    }
+  ],
+  "provenance_notes": [
+    "Every decree above prints the chef-lieu as a town, not as a commune code, so each row records the spelling the text carries next to the commune it resolves to. The 4 rows where the two spellings differ are the ones a name-based derivation gets wrong.",
+    "Wilaya 16 was the one disagreement between the legal text and OpenStreetMap, and the legal text won. The decree fixes the chef-lieu of the wilaya d'Alger as Alger, which is the commune Alger Centre (1601) and the commune whose postal code 16000 the wilaya record carries; the wilaya's published capital point was an OpenStreetMap admin_centre at 36.7325, 3.08722, which is 1.3 km from the centre of Kouba (1618) and 5.5 km from Alger Centre. It now reads 36.776335, 3.058211, the coordinate the commune record carries for Alger Centre. Wilaya 16 is no longer a special case: under the Owner's rule of 2026-10-01 every wilaya point IS its capital commune's centre, so 66 of the 69 points were rewritten from the commune record in the same batch, in all five files that carry a capital point (data/algeria.json, data/csv/wilayas.csv, data/sql/full.sql, data/geojson/wilayas.geojson and algeria.geojson), and test/wilaya-capital-commune.test.mjs checks equality plus containment in the capital commune's own OpenStreetMap outline, with no exemptions. A wilaya point therefore carries its capital commune centre's terms: 6 of the 69 are OpenStreetMap-derived and ODbL 1.0, (c) OpenStreetMap contributors, as the package LICENSE and NOTICE state.",
+    "Wilaya 11's decree spelling is Tamanghasset where the dataset writes Tamanrasset, and the wilaya 53, 54 and 57 spellings (In Salah, In Guezzam, El M'Ghaier) differ from the commune records (Ain Salah, Ain Guezzam, El-M'ghaier). Those are spellings of the same place, not different places; renaming a commune to follow a JORA reading is a separate audit, recorded in scripts/lib/jo-2026-corrections.mjs.",
+    "Communes promoted into wilayas 59-69 keep their 2021 ONS mother-wilaya prefix, so a capital code does not have to start with its wilaya code: wilaya 59 (Aflou) reads 319, a Laghouat-prefixed code.",
+    "The license is the SPDX expression \"MIT\" although the package declares \"SEE LICENSE IN LICENSE\": `capital_commune_code` is read from the decrees listed under sources and resolved against the commune table, which makes it part of the compilation LICENSE puts under MIT. The wilaya points themselves are not in this file."
+  ],
+  "capitals": [
+    {
+      "code": 1,
+      "capital_commune_code": 101,
+      "commune_name_fr": "Adrar",
+      "commune_name_ar": "أدرار",
+      "chef_lieu_printed": "Adrar",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 01, p. 295"
+    },
+    {
+      "code": 2,
+      "capital_commune_code": 201,
+      "commune_name_fr": "Chlef",
+      "commune_name_ar": "الشلف",
+      "chef_lieu_printed": "Chlef",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 02, p. 295"
+    },
+    {
+      "code": 3,
+      "capital_commune_code": 301,
+      "commune_name_fr": "Laghouat",
+      "commune_name_ar": "الأغواط",
+      "chef_lieu_printed": "Laghouat",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 03, p. 295"
+    },
+    {
+      "code": 4,
+      "capital_commune_code": 401,
+      "commune_name_fr": "Oum El Bouaghi",
+      "commune_name_ar": "أم البواقي",
+      "chef_lieu_printed": "Oum El Bouaghi",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 04, p. 295"
+    },
+    {
+      "code": 5,
+      "capital_commune_code": 501,
+      "commune_name_fr": "Batna",
+      "commune_name_ar": "باتنة",
+      "chef_lieu_printed": "Batna",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 05, p. 295"
+    },
+    {
+      "code": 6,
+      "capital_commune_code": 601,
+      "commune_name_fr": "Bejaia",
+      "commune_name_ar": "بجاية",
+      "chef_lieu_printed": "Bejaia",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 06, p. 295"
+    },
+    {
+      "code": 7,
+      "capital_commune_code": 701,
+      "commune_name_fr": "Biskra",
+      "commune_name_ar": "بسكرة",
+      "chef_lieu_printed": "Biskra",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 07, p. 295"
+    },
+    {
+      "code": 8,
+      "capital_commune_code": 801,
+      "commune_name_fr": "Bechar",
+      "commune_name_ar": "بشار",
+      "chef_lieu_printed": "Béchar",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 08, p. 295"
+    },
+    {
+      "code": 9,
+      "capital_commune_code": 901,
+      "commune_name_fr": "Blida",
+      "commune_name_ar": "البليدة",
+      "chef_lieu_printed": "Blida",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 09, p. 295"
+    },
+    {
+      "code": 10,
+      "capital_commune_code": 1001,
+      "commune_name_fr": "Bouira",
+      "commune_name_ar": "البويرة",
+      "chef_lieu_printed": "Bouira",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 10, p. 295"
+    },
+    {
+      "code": 11,
+      "capital_commune_code": 1101,
+      "commune_name_fr": "Tamanrasset",
+      "commune_name_ar": "تمنراست",
+      "chef_lieu_printed": "Tamanghasset",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 11, p. 295"
+    },
+    {
+      "code": 12,
+      "capital_commune_code": 1201,
+      "commune_name_fr": "Tébessa",
+      "commune_name_ar": "تبسة",
+      "chef_lieu_printed": "Tebessa",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 12, p. 295"
+    },
+    {
+      "code": 13,
+      "capital_commune_code": 1301,
+      "commune_name_fr": "Tlemcen",
+      "commune_name_ar": "تلمسان",
+      "chef_lieu_printed": "Tlemcen",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 13, p. 295"
+    },
+    {
+      "code": 14,
+      "capital_commune_code": 1401,
+      "commune_name_fr": "Tiaret",
+      "commune_name_ar": "تيارت",
+      "chef_lieu_printed": "Tiaret",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 14, p. 295"
+    },
+    {
+      "code": 15,
+      "capital_commune_code": 1501,
+      "commune_name_fr": "Tizi-Ouzou",
+      "commune_name_ar": "تيزي وزو",
+      "chef_lieu_printed": "Tizi Ouzou",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 15, p. 295"
+    },
+    {
+      "code": 16,
+      "capital_commune_code": 1601,
+      "commune_name_fr": "Alger Centre",
+      "commune_name_ar": "الجزائر الوسطى",
+      "chef_lieu_printed": "Alger",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 16, p. 295"
+    },
+    {
+      "code": 17,
+      "capital_commune_code": 1701,
+      "commune_name_fr": "Djelfa",
+      "commune_name_ar": "الجلفة",
+      "chef_lieu_printed": "Djelfa",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 17, p. 295"
+    },
+    {
+      "code": 18,
+      "capital_commune_code": 1801,
+      "commune_name_fr": "Jijel",
+      "commune_name_ar": "جيجل",
+      "chef_lieu_printed": "Jijel",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 18, p. 295"
+    },
+    {
+      "code": 19,
+      "capital_commune_code": 1901,
+      "commune_name_fr": "Setif",
+      "commune_name_ar": "سطيف",
+      "chef_lieu_printed": "Sétif",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 19, p. 295"
+    },
+    {
+      "code": 20,
+      "capital_commune_code": 2001,
+      "commune_name_fr": "Saida",
+      "commune_name_ar": "سعيدة",
+      "chef_lieu_printed": "Saida",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 20, p. 295"
+    },
+    {
+      "code": 21,
+      "capital_commune_code": 2101,
+      "commune_name_fr": "Skikda",
+      "commune_name_ar": "سكيكدة",
+      "chef_lieu_printed": "Skikda",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 21, p. 295"
+    },
+    {
+      "code": 22,
+      "capital_commune_code": 2201,
+      "commune_name_fr": "Sidi Bel-Abbes",
+      "commune_name_ar": "سيدي بلعباس",
+      "chef_lieu_printed": "Sidi Bel Abbès",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 22, p. 295"
+    },
+    {
+      "code": 23,
+      "capital_commune_code": 2301,
+      "commune_name_fr": "Annaba",
+      "commune_name_ar": "عنابة",
+      "chef_lieu_printed": "Annaba",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 23, p. 295"
+    },
+    {
+      "code": 24,
+      "capital_commune_code": 2401,
+      "commune_name_fr": "Guelma",
+      "commune_name_ar": "قالمة",
+      "chef_lieu_printed": "Guelma",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 24, p. 295"
+    },
+    {
+      "code": 25,
+      "capital_commune_code": 2501,
+      "commune_name_fr": "Constantine",
+      "commune_name_ar": "قسنطينة",
+      "chef_lieu_printed": "Constantine",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 25, p. 295"
+    },
+    {
+      "code": 26,
+      "capital_commune_code": 2601,
+      "commune_name_fr": "Médéa",
+      "commune_name_ar": "المدية",
+      "chef_lieu_printed": "Médéa",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 26, p. 295"
+    },
+    {
+      "code": 27,
+      "capital_commune_code": 2701,
+      "commune_name_fr": "Mostaganem",
+      "commune_name_ar": "مستغانم",
+      "chef_lieu_printed": "Mostaganem",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 27, p. 296"
+    },
+    {
+      "code": 28,
+      "capital_commune_code": 2801,
+      "commune_name_fr": "M'Sila",
+      "commune_name_ar": "المسيلة",
+      "chef_lieu_printed": "M'Sila",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 28, p. 296"
+    },
+    {
+      "code": 29,
+      "capital_commune_code": 2901,
+      "commune_name_fr": "Mascara",
+      "commune_name_ar": "معسكر",
+      "chef_lieu_printed": "Mascara",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 29, p. 296"
+    },
+    {
+      "code": 30,
+      "capital_commune_code": 3001,
+      "commune_name_fr": "Ouargla",
+      "commune_name_ar": "ورقلة",
+      "chef_lieu_printed": "Ouargla",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 30, p. 296"
+    },
+    {
+      "code": 31,
+      "capital_commune_code": 3101,
+      "commune_name_fr": "Oran",
+      "commune_name_ar": "وهران",
+      "chef_lieu_printed": "Oran",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 31, p. 296"
+    },
+    {
+      "code": 32,
+      "capital_commune_code": 3201,
+      "commune_name_fr": "El Bayadh",
+      "commune_name_ar": "البيض",
+      "chef_lieu_printed": "El Bayadh",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 32, p. 296"
+    },
+    {
+      "code": 33,
+      "capital_commune_code": 3301,
+      "commune_name_fr": "Illizi",
+      "commune_name_ar": "إيليزي",
+      "chef_lieu_printed": "Illizi",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 33, p. 296"
+    },
+    {
+      "code": 34,
+      "capital_commune_code": 3401,
+      "commune_name_fr": "Bordj Bou Arreridj",
+      "commune_name_ar": "برج بوعريرج",
+      "chef_lieu_printed": "Bordj Bou Arréridj",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 34, p. 296"
+    },
+    {
+      "code": 35,
+      "capital_commune_code": 3501,
+      "commune_name_fr": "Boumerdes",
+      "commune_name_ar": "بومرداس",
+      "chef_lieu_printed": "Boumerdes",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 35, p. 296"
+    },
+    {
+      "code": 36,
+      "capital_commune_code": 3601,
+      "commune_name_fr": "El Tarf",
+      "commune_name_ar": "الطارف",
+      "chef_lieu_printed": "El Tarf",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 36, p. 296"
+    },
+    {
+      "code": 37,
+      "capital_commune_code": 3701,
+      "commune_name_fr": "Tindouf",
+      "commune_name_ar": "تندوف",
+      "chef_lieu_printed": "Tindouf",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 37, p. 296"
+    },
+    {
+      "code": 38,
+      "capital_commune_code": 3801,
+      "commune_name_fr": "Tissemsilt",
+      "commune_name_ar": "تيسمسيلت",
+      "chef_lieu_printed": "Tissemsilt",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 38, p. 296"
+    },
+    {
+      "code": 39,
+      "capital_commune_code": 3901,
+      "commune_name_fr": "El-Oued",
+      "commune_name_ar": "الوادي",
+      "chef_lieu_printed": "El Oued",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 39, p. 296"
+    },
+    {
+      "code": 40,
+      "capital_commune_code": 4001,
+      "commune_name_fr": "Khenchela",
+      "commune_name_ar": "خنشلة",
+      "chef_lieu_printed": "Khenchela",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 40, p. 296"
+    },
+    {
+      "code": 41,
+      "capital_commune_code": 4101,
+      "commune_name_fr": "Souk Ahras",
+      "commune_name_ar": "سوق أهراس",
+      "chef_lieu_printed": "Souk Ahras",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 41, p. 296"
+    },
+    {
+      "code": 42,
+      "capital_commune_code": 4201,
+      "commune_name_fr": "Tipaza",
+      "commune_name_ar": "تيبازة",
+      "chef_lieu_printed": "Tipaza",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 42, p. 296"
+    },
+    {
+      "code": 43,
+      "capital_commune_code": 4301,
+      "commune_name_fr": "Mila",
+      "commune_name_ar": "ميلة",
+      "chef_lieu_printed": "Mila",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 43, p. 296"
+    },
+    {
+      "code": 44,
+      "capital_commune_code": 4401,
+      "commune_name_fr": "Ain-Defla",
+      "commune_name_ar": "عين الدفلى",
+      "chef_lieu_printed": "Aïn Defla",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 44, p. 296"
+    },
+    {
+      "code": 45,
+      "capital_commune_code": 4501,
+      "commune_name_fr": "Naama",
+      "commune_name_ar": "النعامة",
+      "chef_lieu_printed": "Naama",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 45, p. 296"
+    },
+    {
+      "code": 46,
+      "capital_commune_code": 4601,
+      "commune_name_fr": "Ain Temouchent",
+      "commune_name_ar": "عين تموشنت",
+      "chef_lieu_printed": "Aïn Temouchent",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 46, p. 296"
+    },
+    {
+      "code": 47,
+      "capital_commune_code": 4701,
+      "commune_name_fr": "Ghardaia",
+      "commune_name_ar": "غرداية",
+      "chef_lieu_printed": "Ghardaïa",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 47, p. 296"
+    },
+    {
+      "code": 48,
+      "capital_commune_code": 4801,
+      "commune_name_fr": "Relizane",
+      "commune_name_ar": "غليزان",
+      "chef_lieu_printed": "Relizane",
+      "source": "decret-84-79",
+      "citation": "art. 1er, item 48, p. 296"
+    },
+    {
+      "code": 49,
+      "capital_commune_code": 4901,
+      "commune_name_fr": "Timimoun",
+      "commune_name_ar": "تيميمون",
+      "chef_lieu_printed": "Timimoun",
+      "source": "decret-21-117",
+      "citation": "art. 1er, item 49, p. 7"
+    },
+    {
+      "code": 50,
+      "capital_commune_code": 5001,
+      "commune_name_fr": "Bordj Badji Mokhtar",
+      "commune_name_ar": "برج باجي مختار",
+      "chef_lieu_printed": "Bordj Badji Mokhtar",
+      "source": "decret-21-117",
+      "citation": "art. 1er, item 50, p. 7"
+    },
+    {
+      "code": 51,
+      "capital_commune_code": 5101,
+      "commune_name_fr": "Ouled Djellal",
+      "commune_name_ar": "أولاد جلال",
+      "chef_lieu_printed": "Ouled Djellal",
+      "source": "decret-21-117",
+      "citation": "art. 1er, item 51, p. 8"
+    },
+    {
+      "code": 52,
+      "capital_commune_code": 5201,
+      "commune_name_fr": "Beni-Abbes",
+      "commune_name_ar": "بني عباس",
+      "chef_lieu_printed": "Béni Abbès",
+      "source": "decret-21-117",
+      "citation": "art. 1er, item 52, p. 8"
+    },
+    {
+      "code": 53,
+      "capital_commune_code": 5301,
+      "commune_name_fr": "Ain Salah",
+      "commune_name_ar": "عين صالح",
+      "chef_lieu_printed": "In Salah",
+      "source": "decret-21-117",
+      "citation": "art. 1er, item 53, p. 8"
+    },
+    {
+      "code": 54,
+      "capital_commune_code": 5401,
+      "commune_name_fr": "Ain Guezzam",
+      "commune_name_ar": "عين قزام",
+      "chef_lieu_printed": "In Guezzam",
+      "source": "decret-21-117",
+      "citation": "art. 1er, item 54, p. 8"
+    },
+    {
+      "code": 55,
+      "capital_commune_code": 5501,
+      "commune_name_fr": "Touggourt",
+      "commune_name_ar": "تقرت",
+      "chef_lieu_printed": "Touggourt",
+      "source": "decret-21-117",
+      "citation": "art. 1er, item 55, p. 8"
+    },
+    {
+      "code": 56,
+      "capital_commune_code": 5601,
+      "commune_name_fr": "Djanet",
+      "commune_name_ar": "جانت",
+      "chef_lieu_printed": "Djanet",
+      "source": "decret-21-117",
+      "citation": "art. 1er, item 56, p. 8"
+    },
+    {
+      "code": 57,
+      "capital_commune_code": 5701,
+      "commune_name_fr": "El-M'ghaier",
+      "commune_name_ar": "المغير",
+      "chef_lieu_printed": "El M'Ghaier",
+      "source": "decret-21-117",
+      "citation": "art. 1er, item 57, p. 8"
+    },
+    {
+      "code": 58,
+      "capital_commune_code": 5801,
+      "commune_name_fr": "El Meniaa",
+      "commune_name_ar": "المنيعة",
+      "chef_lieu_printed": "El Meniaa",
+      "source": "decret-21-117",
+      "citation": "art. 1er, item 58, p. 8"
+    },
+    {
+      "code": 59,
+      "capital_commune_code": 319,
+      "commune_name_fr": "Aflou",
+      "commune_name_ar": "آفلو",
+      "chef_lieu_printed": "Aflou",
+      "source": "decret-26-206",
+      "citation": "art. 1er, item 59, p. 5"
+    },
+    {
+      "code": 60,
+      "capital_commune_code": 542,
+      "commune_name_fr": "Barika",
+      "commune_name_ar": "بريكة",
+      "chef_lieu_printed": "Barika",
+      "source": "decret-26-206",
+      "citation": "art. 1er, item 60, p. 5"
+    },
+    {
+      "code": 61,
+      "capital_commune_code": 717,
+      "commune_name_fr": "El Kantara",
+      "commune_name_ar": "القنطرة",
+      "chef_lieu_printed": "El Kantara",
+      "source": "decret-26-206",
+      "citation": "art. 1er, item 61, p. 5"
+    },
+    {
+      "code": 62,
+      "capital_commune_code": 1202,
+      "commune_name_fr": "Bir El Ater",
+      "commune_name_ar": "بئر العاتر",
+      "chef_lieu_printed": "Bir El Ater",
+      "source": "decret-26-206",
+      "citation": "art. 1er, item 62, p. 5"
+    },
+    {
+      "code": 63,
+      "capital_commune_code": 1332,
+      "commune_name_fr": "El Aricha",
+      "commune_name_ar": "العريشة",
+      "chef_lieu_printed": "El Aricha",
+      "source": "decret-26-206",
+      "citation": "art. 1er, item 63, p. 5"
+    },
+    {
+      "code": 64,
+      "capital_commune_code": 1429,
+      "commune_name_fr": "Ksar Chellala",
+      "commune_name_ar": "قصر الشلالة",
+      "chef_lieu_printed": "Ksar Chellala",
+      "source": "decret-26-206",
+      "citation": "art. 1er, item 64, p. 5"
+    },
+    {
+      "code": 65,
+      "capital_commune_code": 1731,
+      "commune_name_fr": "Aïn Ouessara",
+      "commune_name_ar": "عين وسارة",
+      "chef_lieu_printed": "Aïn Ouessara",
+      "source": "decret-26-206",
+      "citation": "art. 1er, item 65, p. 5"
+    },
+    {
+      "code": 66,
+      "capital_commune_code": 1717,
+      "commune_name_fr": "Messaad",
+      "commune_name_ar": "مسعد",
+      "chef_lieu_printed": "Messaad",
+      "source": "decret-26-206",
+      "citation": "art. 1er, item 66, p. 5"
+    },
+    {
+      "code": 67,
+      "capital_commune_code": 2635,
+      "commune_name_fr": "Ksar El Boukhari",
+      "commune_name_ar": "قصر البخاري",
+      "chef_lieu_printed": "Ksar El Boukhari",
+      "source": "decret-26-206",
+      "citation": "art. 1er, item 67, p. 5"
+    },
+    {
+      "code": 68,
+      "capital_commune_code": 2820,
+      "commune_name_fr": "Bou Saada",
+      "commune_name_ar": "بوسعادة",
+      "chef_lieu_printed": "Bou Saâda",
+      "source": "decret-26-206",
+      "citation": "art. 1er, item 68, p. 5"
+    },
+    {
+      "code": 69,
+      "capital_commune_code": 3207,
+      "commune_name_fr": "El Abiodh Sidi Cheikh",
+      "commune_name_ar": "الأبيض سيدي الشيخ",
+      "chef_lieu_printed": "El Abiodh Sidi Cheikh",
+      "source": "decret-26-206",
+      "citation": "art. 1er, item 69, p. 5"
+    }
+  ]
+}

@@ -45,6 +45,12 @@ function writeAtomic(path, content) {
  *  committed metadata.json to read a real `updated` from. Live/replay dates come
  *  from resolveDates()/committedDates(), not from this constant. */
 export const CUTOVER_DATE = "2026-07-18";
+
+/** The one sentence about the Ministry of Health's twin posts, so the published
+ *  coverage note, the generator's review report and every retirement note say it
+ *  the same way instead of drifting into three near-copies. */
+export const TWIN_POSTS_NOTE =
+  "The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record.";
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
 /** A package opts into reviewed corrections by adding one committed ledger. */
@@ -278,7 +284,10 @@ export const MIGRATIONS = {
         wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
         ...geoAt(r, gp === "osm_point" || gp === "wikidata_point" ? "exact" : "approximate", gp),
         source: "msp",
-        refs: refs({ wikidata: r.wikidata, osm: r.osm_id, msp: r.msp_id }),
+        // `msp_twin` is the registry's other-language post for the same
+        // facility: the Ministry publishes each establishment once in French and
+        // once in Arabic, and a bilingual record stands for both posts.
+        refs: refs({ wikidata: r.wikidata, osm: r.osm_id, msp: r.msp_id, msp_twin: r.msp_id_twin }),
         type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
         sector: r.sector, slug: r.slug,
       });
@@ -291,7 +300,7 @@ export const MIGRATIONS = {
       ],
       license: "Official registry (Ministry of Health); geocoding ODbL/CC0",
       estimatedUniverse: null,
-      coverageNote: "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 95 remain ungeocoded.",
+      coverageNote: `Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. ${TWIN_POSTS_NOTE} Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 71 remain ungeocoded.`,
       titles: { en: "Algeria public health establishments", fr: "Établissements de santé publique d'Algérie", ar: "المؤسسات الصحية العمومية الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), bilingual: rows.filter((r) => r.name_ar && r.name_fr).length, linkage_note: LINKAGE }),
     },
@@ -907,6 +916,7 @@ export const MIGRATIONS = {
  *           stats?: (rows: object[]) => object },
  *   oldMeta?: object, reviewLedger?: object|null,
  *   retiredIds?: Set<string>|null,
+ *   retiredMigrations?: Record<string, { merged_into: string, msp_posts?: string[], note: string }>|null,
  * }} input
  * @returns {{ records: object[], metadata: object, review: object }}
  */
@@ -922,6 +932,7 @@ export function writePackageV2({
   oldMeta = {},
   reviewLedger = undefined,
   retiredIds = null,
+  retiredMigrations = null,
 }) {
   const effectiveReviewLedger =
     reviewLedger === undefined ? loadReviewLedger(pkg) : reviewLedger;
@@ -1081,7 +1092,7 @@ export function writePackageV2({
     // so an empty set here can only come from an empty or absent file).
     pending.push({
       path: join(dir, "retired-ids.json"),
-      content: retiredIds.size ? retiredIdsContent(retiredIds) : null,
+      content: retiredIds.size ? retiredIdsContent(retiredIds, retiredMigrations) : null,
     });
   }
 
@@ -1226,11 +1237,70 @@ export function carryOverIds(
 const RETIRED_IDS_NOTE =
   "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.";
 
-function retiredIdsContent(ids) {
+/** `migrations` says where a retired id's data went, for the ids whose record
+ *  did not disappear but was folded into another one. A consumer holding the old
+ *  id can then follow it instead of only learning that it is gone. Emitted only
+ *  for ids the ledger actually reserves, and omitted entirely when there are
+ *  none, so a package that has never merged a record ships the file it always
+ *  shipped. */
+function retiredIdsContent(ids, migrations = null) {
+  const reserved = [...ids].map(String).sort();
+  const moved = {};
+  for (const id of reserved) if (migrations?.[id]) moved[id] = migrations[id];
   return `${JSON.stringify({
     note: RETIRED_IDS_NOTE,
-    ids: [...ids].map(String).sort(),
+    ...(Object.keys(moved).length ? { migrations: moved } : {}),
+    ids: reserved,
   }, null, 2)}\n`;
+}
+
+/** The per-id migration entries a package's ledger already carries. The ledger
+ *  is append-only: a generator recomputes only the migrations it can see this
+ *  run, and a record merged in an earlier release is no longer visible in the
+ *  committed data, so its entry has to be carried forward rather than recomputed. */
+/** What is wrong with a ledger's `migrations` map, one message per fault, each
+ *  starting `migrations[...]`. `reserved` is the ledger's own retired ids. The
+ *  generator throws on the first message and validate-packages reports them all,
+ *  so the two cannot drift into two different contracts. */
+export function migrationErrors(migrations, reserved) {
+  if (migrations == null) return [];
+  if (typeof migrations !== "object" || Array.isArray(migrations)) return ["migrations must be an object"];
+  const errors = [];
+  for (const [id, entry] of Object.entries(migrations)) {
+    const where = `migrations[${JSON.stringify(id)}]`;
+    if (!reserved.has(id)) { errors.push(`${where} is not one of the retired ids`); continue; }
+    if (entry == null || typeof entry !== "object" || Array.isArray(entry)) {
+      errors.push(`${where} must be an object`);
+      continue;
+    }
+    if (typeof entry.merged_into !== "string" || !entry.merged_into) {
+      errors.push(`${where}.merged_into must be a non-empty string`);
+      continue;
+    }
+    if (entry.merged_into === id) errors.push(`${where}.merged_into points at itself`);
+    else if (reserved.has(entry.merged_into)) errors.push(`${where}.merged_into ${entry.merged_into} is itself retired`);
+    if (typeof entry.note !== "string" || !entry.note) errors.push(`${where}.note must be a non-empty string`);
+    if (
+      entry.msp_posts != null &&
+      (!Array.isArray(entry.msp_posts) ||
+        !entry.msp_posts.length ||
+        entry.msp_posts.some((post) => typeof post !== "string" || !post))
+    ) {
+      errors.push(`${where}.msp_posts must be a non-empty array of non-empty strings`);
+    }
+  }
+  return errors;
+}
+
+/** Read and validate a package's `migrations` map (see migrationErrors). */
+export function readRetiredMigrations(dir) {
+  const path = join(dir, "retired-ids.json");
+  if (!existsSync(path)) return {};
+  const document = JSON.parse(readFileSync(path, "utf-8"));
+  const reserved = new Set((Array.isArray(document.ids) ? document.ids : []).map(String));
+  const [first] = migrationErrors(document.migrations, reserved);
+  if (first) throw new Error(`${path}: ${first}`);
+  return document.migrations ?? {};
 }
 
 /** Read and validate a package's persistent retired-id ledger. */
@@ -1253,11 +1323,11 @@ export function readRetiredIds(dir) {
 /** Persist a ledger for a generator that has not moved to writePackageV2 yet.
  *  An empty ledger is not written, and an empty one on disk is removed, so a
  *  package that has never retired an id ships no `retired-ids.json`. */
-export function writeRetiredIds(dir, ids) {
+export function writeRetiredIds(dir, ids, migrations = null) {
   const path = join(dir, "retired-ids.json");
   const size = ids instanceof Set ? ids.size : [...ids].length;
   if (!size) rmSync(path, { force: true });
-  else writeAtomic(path, retiredIdsContent(ids));
+  else writeAtomic(path, retiredIdsContent(ids, migrations));
 }
 
 /** Read a package's committed records for carryOverIds, or [] if none exist yet. */

@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-29",
+  "generated": "2026-10-01",
   "guard": "test/record-in-declared-wilaya.test.mjs",
   "ref": "origin/main",
   "note": "Published records their own geometry contradicts. `kind: commune_outline` is a coordinate outside the OpenStreetMap outline of the commune the record names; `kind: wilaya_polygon` is a record with no commune outline to check whose coordinate is inside a different wilaya's shipped polygon. Every row is a defect, not a tolerance: `rule` names the clause of scripts/lib/commune-resolver.mjs that decides it today, and the group's reason says which two claims disagree and who can settle it. `pre_existing` is recomputed by running the same rule over the same file at origin/main, so a row this batch created cannot hide among the rows it inherited (those are yasserstudio/geoalgeria.com#209). Records with no commune outline whose coordinate is inside NO wilaya polygon are not listed and not failed, because the 69 shipped outlines are display-grade (mapshaper `dp 2% keep-shapes`, a 3.4 km median vertex gap) and cut inside the shoreline. Regenerate with `node scripts/build-wilaya-containment-exceptions.mjs --write`.",
   "files_checked": 46,
-  "count": 358,
-  "pre_existing": 358,
+  "count": 303,
+  "pre_existing": 303,
   "created_by_this_batch": 0,
   "groups": [
     {
@@ -342,209 +342,17 @@
     {
       "file": "packages/emploi/data/alem.json",
       "package": "emploi",
-      "count": 19,
-      "pre_existing": 19,
+      "count": 2,
+      "pre_existing": 2,
       "created_by_this_batch": 0,
       "kinds": {
-        "outside_declared_wilaya_polygon": 19
+        "outside_declared_wilaya_polygon": 2
       },
       "rules": {
-        "commune_outline": 19
+        "commune_outline": 2
       },
       "reason": "ANEM publishes the agency's wilaya as a field and its address separately; the coordinate is geocoded from the address, so a disagreement is an address or a geocode to re-check against ANEM, not a re-join",
       "records": [
-        {
-          "id": "03-02",
-          "declared_wilaya": "03",
-          "declared_commune": null,
-          "lng": 2.08051,
-          "lat": 34.11215,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "59",
-          "pre_existing": true
-        },
-        {
-          "id": "05-02",
-          "declared_wilaya": "05",
-          "declared_commune": null,
-          "lng": 5.36762,
-          "lat": 35.38662,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "60",
-          "pre_existing": true
-        },
-        {
-          "id": "07-02",
-          "declared_wilaya": "07",
-          "declared_commune": null,
-          "lng": 5.71741,
-          "lat": 35.21655,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "61",
-          "pre_existing": true
-        },
-        {
-          "id": "12-02",
-          "declared_wilaya": "12",
-          "declared_commune": null,
-          "lng": 8.05845,
-          "lat": 34.75207,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "62",
-          "pre_existing": true
-        },
-        {
-          "id": "14-03",
-          "declared_wilaya": "14",
-          "declared_commune": null,
-          "lng": 2.31744,
-          "lat": 35.21407,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "64",
-          "pre_existing": true
-        },
-        {
-          "id": "17-02",
-          "declared_wilaya": "17",
-          "declared_commune": null,
-          "lng": 2.90455,
-          "lat": 35.44863,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "65",
-          "pre_existing": true
-        },
-        {
-          "id": "17-03",
-          "declared_wilaya": "17",
-          "declared_commune": null,
-          "lng": 3.22309,
-          "lat": 35.63289,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "65",
-          "pre_existing": true
-        },
-        {
-          "id": "17-05",
-          "declared_wilaya": "17",
-          "declared_commune": null,
-          "lng": 3.48802,
-          "lat": 34.15352,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "66",
-          "pre_existing": true
-        },
-        {
-          "id": "17-07",
-          "declared_wilaya": "17",
-          "declared_commune": null,
-          "lng": 2.51662,
-          "lat": 35.43959,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "65",
-          "pre_existing": true
-        },
-        {
-          "id": "17-08",
-          "declared_wilaya": "17",
-          "declared_commune": null,
-          "lng": 3.36041,
-          "lat": 35.34348,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "65",
-          "pre_existing": true
-        },
-        {
-          "id": "26-02",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 2.74946,
-          "lat": 35.88379,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
-          "id": "26-05",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 2.84233,
-          "lat": 35.70472,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
-          "id": "26-07",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 3.42916,
-          "lat": 35.93795,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
-          "id": "26-08",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 3.14205,
-          "lat": 35.8876,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
-          "id": "28-02",
-          "declared_wilaya": "28",
-          "declared_commune": null,
-          "lng": 4.17141,
-          "lat": 35.20663,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "68",
-          "pre_existing": true
-        },
-        {
-          "id": "28-05",
-          "declared_wilaya": "28",
-          "declared_commune": null,
-          "lng": 4.15839,
-          "lat": 34.85362,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "68",
-          "pre_existing": true
-        },
         {
           "id": "31-04",
           "declared_wilaya": "31",
@@ -555,18 +363,6 @@
           "kind": "outside_declared_wilaya_polygon",
           "containing_commune": null,
           "containing_wilaya": "29",
-          "pre_existing": true
-        },
-        {
-          "id": "32-03",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.54628,
-          "lat": 32.89808,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
           "pre_existing": true
         },
         {
@@ -619,202 +415,6 @@
           "kind": "outside_own_commune_outline",
           "containing_commune": null,
           "containing_wilaya": "35",
-          "pre_existing": true
-        }
-      ]
-    },
-    {
-      "file": "packages/jeunesse/data/institutions.json",
-      "package": "jeunesse",
-      "count": 15,
-      "pre_existing": 15,
-      "created_by_this_batch": 0,
-      "kinds": {
-        "outside_declared_wilaya_polygon": 15
-      },
-      "rules": {
-        "commune_outline": 15
-      },
-      "reason": "the establishment's wilaya is the ministry register's own column and the coordinate was geocoded from the same row's locality, so the two are independent claims and the register decides",
-      "records": [
-        {
-          "id": "00728",
-          "declared_wilaya": "14",
-          "declared_commune": null,
-          "lng": 2.4868,
-          "lat": 35.255,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "64",
-          "pre_existing": true
-        },
-        {
-          "id": "01268",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 3.4216,
-          "lat": 35.9396,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
-          "id": "01283",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 3.4174,
-          "lat": 35.9412,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
-          "id": "01403",
-          "declared_wilaya": "28",
-          "declared_commune": null,
-          "lng": 4.368947,
-          "lat": 35.121633,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "68",
-          "pre_existing": true
-        },
-        {
-          "id": "01554",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.545365,
-          "lat": 32.894455,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "01558",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.063674,
-          "lat": 33.033688,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "01559",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.0536,
-          "lat": 33.0319,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "01561",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.021,
-          "lat": 32.8689,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "01563",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.0245,
-          "lat": 32.8747,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "01565",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.0483,
-          "lat": 33.0287,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "01570",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.5466,
-          "lat": 32.9117,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "01574",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.547,
-          "lat": 32.8973,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "01582",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.1146,
-          "lat": 33.026,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "01583",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.021055,
-          "lat": 32.868254,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "01584",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.0535,
-          "lat": 33.0314,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
           "pre_existing": true
         }
       ]
@@ -1135,29 +735,17 @@
     {
       "file": "packages/poste/data/atms.json",
       "package": "poste",
-      "count": 3,
-      "pre_existing": 3,
+      "count": 1,
+      "pre_existing": 1,
       "created_by_this_batch": 0,
       "kinds": {
-        "outside_declared_wilaya_polygon": 3
+        "outside_declared_wilaya_polygon": 1
       },
       "rules": {
-        "commune_outline": 3
+        "commune_outline": 1
       },
       "reason": "Algérie Poste's own office and ATM lists carry the wilaya and the commune; the coordinate is the operator's, and a disagreement is a row for the operator, not for this join",
       "records": [
-        {
-          "id": "11610",
-          "declared_wilaya": "28",
-          "declared_commune": null,
-          "lng": 3.6964617,
-          "lat": 35.1458683,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "68",
-          "pre_existing": true
-        },
         {
           "id": "14761",
           "declared_wilaya": "20",
@@ -1168,18 +756,6 @@
           "kind": "outside_declared_wilaya_polygon",
           "containing_commune": null,
           "containing_wilaya": "29",
-          "pre_existing": true
-        },
-        {
-          "id": "14908",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 3.4279322,
-          "lat": 35.9380268,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
           "pre_existing": true
         }
       ]
@@ -2642,16 +2218,16 @@
     {
       "file": "packages/sports/data/facilities.json",
       "package": "sports",
-      "count": 34,
-      "pre_existing": 34,
+      "count": 19,
+      "pre_existing": 19,
       "created_by_this_batch": 0,
       "kinds": {
         "outside_own_commune_outline": 8,
-        "outside_declared_wilaya_polygon": 26
+        "outside_declared_wilaya_polygon": 11
       },
       "rules": {
         "kept_low_precision": 2,
-        "commune_outline": 32
+        "commune_outline": 17
       },
       "reason": "the facility's wilaya is the ministry register's own column, its coordinate geocoded from the same row, so a disagreement is a register row to re-check",
       "records": [
@@ -2752,30 +2328,6 @@
           "pre_existing": true
         },
         {
-          "id": "01663",
-          "declared_wilaya": "14",
-          "declared_commune": null,
-          "lng": 2.4818,
-          "lat": 35.2515,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "64",
-          "pre_existing": true
-        },
-        {
-          "id": "01666",
-          "declared_wilaya": "14",
-          "declared_commune": null,
-          "lng": 2.4996,
-          "lat": 35.2967,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "64",
-          "pre_existing": true
-        },
-        {
           "id": "01835",
           "declared_wilaya": "66",
           "declared_commune": "1717",
@@ -2800,66 +2352,6 @@
           "pre_existing": true
         },
         {
-          "id": "02725",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 3.4337,
-          "lat": 35.9368,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
-          "id": "02769",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 3.0364,
-          "lat": 35.8931,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
-          "id": "02775",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 3.427,
-          "lat": 35.9388,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
-          "id": "02776",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 3.4115,
-          "lat": 35.9423,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
-          "id": "02777",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 3.4125,
-          "lat": 35.944,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
           "id": "02802",
           "declared_wilaya": "26",
           "declared_commune": null,
@@ -2869,102 +2361,6 @@
           "kind": "outside_declared_wilaya_polygon",
           "containing_commune": null,
           "containing_wilaya": "67",
-          "pre_existing": true
-        },
-        {
-          "id": "03396",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.5444,
-          "lat": 32.8947,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "03398",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.547,
-          "lat": 32.9126,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "03400",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.0249,
-          "lat": 32.8749,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "03401",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.0479,
-          "lat": 33.0302,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "03404",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.0216,
-          "lat": 32.8697,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "03406",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.0481,
-          "lat": 33.0293,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "03407",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.549,
-          "lat": 32.9126,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
-          "pre_existing": true
-        },
-        {
-          "id": "03416",
-          "declared_wilaya": "32",
-          "declared_commune": null,
-          "lng": 0.5479,
-          "lat": 32.9142,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "69",
           "pre_existing": true
         },
         {
@@ -3226,44 +2622,16 @@
       ]
     },
     {
-      "file": "packages/telecom/data/5g-mobilis.json",
-      "package": "telecom",
-      "count": 1,
-      "pre_existing": 1,
-      "created_by_this_batch": 0,
-      "kinds": {
-        "outside_declared_wilaya_polygon": 1
-      },
-      "rules": {
-        "commune_outline": 1
-      },
-      "reason": "the operator's 5G coverage export carries its own wilaya label per point; the label and the point are both the operator's, so a disagreement is theirs to resolve",
-      "records": [
-        {
-          "id": "mobilis-27904a9e47",
-          "declared_wilaya": "11",
-          "declared_commune": null,
-          "lng": 2.96527,
-          "lat": 19.955901,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "54",
-          "pre_existing": true
-        }
-      ]
-    },
-    {
       "file": "packages/tourisme/data/attractions.json",
       "package": "tourisme",
-      "count": 23,
-      "pre_existing": 23,
+      "count": 21,
+      "pre_existing": 21,
       "created_by_this_batch": 0,
       "kinds": {
-        "outside_declared_wilaya_polygon": 23
+        "outside_declared_wilaya_polygon": 21
       },
       "rules": {
-        "commune_outline": 23
+        "commune_outline": 21
       },
       "reason": "the attraction's wilaya comes from the source listing's own wilaya field while the coordinate is OpenStreetMap's, and for a natural feature that straddles a border the listing is often right and the polygon crude",
       "records": [
@@ -3325,30 +2693,6 @@
           "kind": "outside_declared_wilaya_polygon",
           "containing_commune": null,
           "containing_wilaya": "41",
-          "pre_existing": true
-        },
-        {
-          "id": "attraction-310",
-          "declared_wilaya": "08",
-          "declared_commune": null,
-          "lng": -5.0020334,
-          "lat": 29.8519331,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "52",
-          "pre_existing": true
-        },
-        {
-          "id": "attraction-312",
-          "declared_wilaya": "08",
-          "declared_commune": null,
-          "lng": -4.8991921,
-          "lat": 29.829096,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "52",
           "pre_existing": true
         },
         {
@@ -4068,14 +3412,14 @@
     {
       "file": "packages/tourisme/data/lodging.json",
       "package": "tourisme",
-      "count": 15,
-      "pre_existing": 15,
+      "count": 13,
+      "pre_existing": 13,
       "created_by_this_batch": 0,
       "kinds": {
-        "outside_declared_wilaya_polygon": 15
+        "outside_declared_wilaya_polygon": 13
       },
       "rules": {
-        "commune_outline": 15
+        "commune_outline": 13
       },
       "reason": "the attraction's wilaya comes from the source listing's own wilaya field while the coordinate is OpenStreetMap's, and for a natural feature that straddles a border the listing is often right and the polygon crude",
       "records": [
@@ -4137,30 +3481,6 @@
           "kind": "outside_declared_wilaya_polygon",
           "containing_commune": null,
           "containing_wilaya": "45",
-          "pre_existing": true
-        },
-        {
-          "id": "lodging-238",
-          "declared_wilaya": "08",
-          "declared_commune": null,
-          "lng": -3.2557317,
-          "lat": 29.40555,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "52",
-          "pre_existing": true
-        },
-        {
-          "id": "lodging-239",
-          "declared_wilaya": "08",
-          "declared_commune": null,
-          "lng": -4.4556408,
-          "lat": 30.398352,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "52",
           "pre_existing": true
         },
         {
@@ -4328,14 +3648,14 @@
     {
       "file": "packages/tourisme/data/thermal-springs.json",
       "package": "tourisme",
-      "count": 27,
-      "pre_existing": 27,
+      "count": 26,
+      "pre_existing": 26,
       "created_by_this_batch": 0,
       "kinds": {
-        "outside_declared_wilaya_polygon": 27
+        "outside_declared_wilaya_polygon": 26
       },
       "rules": {
-        "commune_outline": 27
+        "commune_outline": 26
       },
       "reason": "the attraction's wilaya comes from the source listing's own wilaya field while the coordinate is OpenStreetMap's, and for a natural feature that straddles a border the listing is often right and the polygon crude",
       "records": [
@@ -4589,18 +3909,6 @@
           "kind": "outside_declared_wilaya_polygon",
           "containing_commune": null,
           "containing_wilaya": "06",
-          "pre_existing": true
-        },
-        {
-          "id": "thermal-spring-36",
-          "declared_wilaya": "26",
-          "declared_commune": null,
-          "lng": 3.047429,
-          "lat": 35.867168,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "67",
           "pre_existing": true
         },
         {

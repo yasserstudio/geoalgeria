@@ -4,7 +4,9 @@
   "title_fr": "Algérie: chefs-lieux de communes (1 541)",
   "title_ar": "الجزائر: مراكز البلديات (1,541)",
   "feature_count": 1541,
-  "geometry_types": { "Point": 1541 },
+  "geometry_types": {
+    "Point": 1541
+  },
   "properties": {
     "name_fr": "commune name in French",
     "name_ar": "commune name in Arabic",
@@ -12,7 +14,7 @@
     "postal_code": "commune postal code, null for the 5 communes with no citable code",
     "daira": "parent daira name in French"
   },
-  "license": "Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The 69 wilaya boundary polygons and 251 OpenStreetMap-derived commune centre coordinates are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.",
+  "license": "Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The 69 wilaya boundary polygons, 323 OpenStreetMap-derived commune centre coordinates and the OpenStreetMap relation ids and Wikidata items on the commune and wilaya records are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.",
   "sources": [
     {
       "key": "osm-admin-centre",
@@ -25,21 +27,53 @@
       "covers": "56 commune centres corrected on 2026-09-27, one row per correction in research/_commune-centres/corrections-2026-09-27.json"
     },
     {
+      "key": "osm-admin-centre-2026-09-29",
+      "name": "OpenStreetMap: commune relations (boundary=administrative, admin_level=8) in Algeria and their admin_centre member nodes",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 ((c) OpenStreetMap contributors)",
+      "retrieved": "2026-09-29",
+      "timestamp_osm_base": "2026-09-29T12:54:47Z",
+      "evidence_type": "crowdsourced",
+      "covers": "189 commune centres corrected on 2026-09-29, one row per correction in research/_commune-centres/corrections-2026-09-29.json"
+    },
+    {
+      "key": "osm-admin-centre-2026-10-01",
+      "name": "OpenStreetMap: wilaya capital commune relations (boundary=administrative, admin_level=8) and their admin_centre member nodes, each node re-read from the OpenStreetMap node API",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 ((c) OpenStreetMap contributors)",
+      "retrieved": "2026-10-01",
+      "timestamp_osm_base": "2026-09-29T12:54:47Z",
+      "evidence_type": "crowdsourced",
+      "covers": "5 wilaya capital commune centres corrected on 2026-10-01: Biskra (701), El Kantara (717), Constantine (2501), El Bayadh (3201) and Beni-Abbes (5201), one row per correction in research/_commune-centres/corrections-2026-10-01.json",
+      "retrieved_note": "The values come from the 2026-09-29 Overpass pull this file's timestamp_osm_base records; `retrieved` is 2026-10-01 because each of the five nodes was re-read from api.openstreetmap.org that day, before the value was written"
+    },
+    {
+      "key": "osm-admin-centre-2026-10-01-review",
+      "name": "OpenStreetMap: commune relations (boundary=administrative, admin_level=8) in Algeria and their admin_centre member nodes, weighed by the coordinate review engine",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 ((c) OpenStreetMap contributors)",
+      "retrieved": "2026-10-01",
+      "timestamp_osm_base": "2026-09-29T12:54:47Z",
+      "evidence_type": "crowdsourced",
+      "covers": "68 commune centres corrected on 2026-10-01 by the coordinate review (docs/adr/0001-coordinate-review-by-independent-votes.md): the admin_centre node was written only where it won a Strong consensus, meaning at least three independent sources place the town within 2 km of it, or two of them including the median of the geo_precision: exact records inside the commune's own outline, with no source backing a different answer. One row per correction, with its Candidates and Votes, in research/_commune-centres/corrections-2026-10-01b.json; the 67 the engine left undecided are in research/_commune-centres/review-queue-2026-10-01.json and keep the coordinates they already had",
+      "retrieved_note": "The coordinates come from the 2026-09-29 Overpass pull this entry's timestamp_osm_base records; `retrieved` is 2026-10-01 because that is the day the review weighed them and the values were written. The Wikidata P625 snapshot the review also reads (research/_commune-centres/wikidata-reference.json, CC0 1.0, queried 2026-10-01) decided no coordinate on its own: it voted, and each of the 68 published coordinates is the OpenStreetMap node"
+    },
+    {
       "key": "osm-relation-centroid",
       "name": "OpenStreetMap: commune relations (boundary=administrative, admin_level=8) in Algeria, relation centroid",
       "url": "https://www.openstreetmap.org",
       "license": "ODbL 1.0 ((c) OpenStreetMap contributors)",
       "retrieved": "2026-09-24",
       "evidence_type": "crowdsourced",
-      "covers": "6 commune centres that shared a placeholder point, replaced in version 2.1.0: Belarbi (2242), El Hamdania (2616), Ouled Bouachra (2627), Deux Bassins (2653), Makhda (2915), El Euch (3427). Si Mahdjoub (2644) and El Achir (3407) shared a placeholder too but were left unchanged, byte-identical to their pre-2.1.0 values, so this source does not cover them",
+      "covers": "5 commune centres that shared a placeholder point, replaced in version 2.1.0: Belarbi (2242), El Hamdania (2616), Ouled Bouachra (2627), Deux Bassins (2653), Makhda (2915). El Euch (3427) was a sixth until 2026-10-01, when the coordinate review moved it 9.7 km off that centroid onto its own admin_centre node, so it is covered by osm-admin-centre-2026-10-01-review instead. Si Mahdjoub (2644) and El Achir (3407) shared a placeholder too but were left unchanged, byte-identical to their pre-2.1.0 values, so this source does not cover them",
       "retrieved_note": "2026-09-24 is the commit date of that repair (b39ee3b) and therefore an upper bound on the pull date; the run recorded no timestamp of its own"
     }
   ],
   "provenance_notes": [
     "A commune's point is its chef-lieu, a point in the built-up centre of the commune, not the centroid of its territory.",
-    "Licence split: 251 of the 1,541 points are OpenStreetMap-derived and are ODbL 1.0, (c) OpenStreetMap contributors, per the two sources above. The remaining 1,290 carry no recorded source: no geocoding run, generator or capture accounts for them anywhere in the repository's history, so they are offered under the package's MIT licence and their provenance reads as unknown rather than official. No ODbL claim is made over them, and none should be inferred. The per-part terms are in the package LICENSE and NOTICE.",
+    "Licence split: 323 of the 1,541 points are OpenStreetMap-derived and are ODbL 1.0, (c) OpenStreetMap contributors, per the five sources above. The remaining 1,218 carry no recorded source: no geocoding run, generator or capture accounts for them anywhere in the repository's history, so they are offered under the package's MIT licence and their provenance reads as unknown rather than official. No ODbL claim is made over them, and none should be inferred. The per-part terms are in the package LICENSE and NOTICE.",
     "Why this descriptor carries prose rather than an SPDX expression: the split above is per row, not per file, and no SPDX expression states it. \"MIT AND ODbL-1.0\" would read as the ODbL over all 1,541 points, which is the claim the note above refuses. The package itself declares SEE LICENSE IN LICENSE for the same reason, so this descriptor states the terms its LICENSE grants, verbatim. The other ODbL carve-out, data/geojson/wilaya-boundaries.geojson, is wholly ODbL and does carry a per-file expression.",
-    "This file is a generated mirror, not an independent source. The same 1,541 points are carried by data/algeria.json, data/communes_w1_w23.json, data/communes_w24_w48.json, data/communes_w49_w69.json, data/csv/communes.csv and data/sql/full.sql, and every coordinate fix patches all six together, so the ODbL covers those 251 values in each of them. data/ecommerce/ ships no coordinates.",
+    "This file is a generated mirror, not an independent source. The same 1,541 points are carried by data/algeria.json, data/communes_w1_w23.json, data/communes_w24_w48.json, data/communes_w49_w69.json, data/csv/communes.csv and data/sql/full.sql, and every coordinate fix patches all six together, so the ODbL covers those 323 values in each of them. data/ecommerce/ ships no coordinates.",
     "Guarded by test/commune-in-boundary.test.mjs: no commune centre may sit more than 500 m outside its own wilaya polygon in any of those representations, with three reviewed exceptions pinned by name."
   ]
 }

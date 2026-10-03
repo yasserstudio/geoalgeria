@@ -57,9 +57,9 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 
 | | Nombre | |
 |---|---|---|
-| **Wilayas** | 69 | provinces (réformes 2019 + 2026) |
+| **Wilayas** | 69 | provinces (réformes 2019 + 2026), chacune avec la commune chef-lieu |
 | **Daïras** | 551 | districts, comme entités de premier niveau |
-| **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées |
+| **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées, liens OpenStreetMap + Wikidata |
 | **Bureaux de poste** | 3 908 | vrais codes Algérie Poste, coordonnées |
 | **DAB** | 2 026 | réseau GAB d'Algérie Poste |
 | **Agences d'emploi** | 331 | ANEM : 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
@@ -76,8 +76,8 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | **Formation professionnelle** | 1 932 | 856 CFPA + 182 INSFP + 723 établissements privés agréés + 58 DFEP + plus dans les 69 wilayas actuelles (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **Mosquées** | 20 759 | composite Wikidata + OpenStreetMap, noms arabes & français, dénomination, les 69 wilayas. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **Boutiques Djezzy** | 128 | points de vente géolocalisés avec catégorie, horaires et rattachement commune/wilaya (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
-| **Établissements de santé** | 695 | EPH · EPSP · EHS · CHU du Ministère de la Santé, bilingues, 600 géolocalisés via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
-| **Cliniques et structures de soins** | 1 918 | Polycliniques, salles de soins, centres de santé, maternités et cliniques privées depuis OpenStreetMap, classées par type, bilingues, 66 wilayas. Le volet communautaire à côté du registre `sante`, jamais additionné avec lui. [`@geoalgeria/cliniques`](packages/cliniques) |
+| **Établissements de santé** | 668 | EPH · EPSP · EHS · CHU du Ministère de la Santé, bilingues, 597 géolocalisés via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
+| **Cliniques et structures de soins** | 1 917 | Polycliniques, salles de soins, centres de santé, maternités et cliniques privées depuis OpenStreetMap, classées par type, bilingues, 66 wilayas. Le volet communautaire à côté du registre `sante`, jamais additionné avec lui. [`@geoalgeria/cliniques`](packages/cliniques) |
 | **Unités de la Protection Civile** | 880 | Unités de secours (incendie & secours) de la DGPC sur tout le territoire, nommées en arabe, adresse/téléphone/fax, palier de statut, toutes géolocalisées, source officielle primaire (dgpc.dz), rattachement wilaya post-réforme 2026. [`@geoalgeria/protection-civile`](packages/protection-civile) |
 | **Lieux culturels** | 1 083 | Sites protégés, musées, théâtres, bibliothèques + établissements culturels du Ministère de la Culture, bilingues, tous géolocalisés, 66 wilayas. [`@geoalgeria/culture`](packages/culture) |
 | **Institutions agricoles** | 196 | Directions des services agricoles (DSA), conservations des forêts, instituts de recherche/formation, chambres d'agriculture, offices et groupes publics du Ministère de l'Agriculture, bilingues, géolocalisées, 58 wilayas. [`@geoalgeria/agriculture`](packages/agriculture) |
@@ -136,8 +136,8 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Formation professionnelle, 1 932 CFPA, INSFP, IFEP, IEP, DFEP et centres privés du MFEP (takwin.dz), avec capacité, internat et coordonnées |
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Boutiques Djezzy, 128 points de vente géolocalisés de djezzy.dz, avec catégorie, horaires et rattachement commune/wilaya |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosquées d'Algérie, 20 759 géolocalisées, un composite Wikidata + OpenStreetMap avec noms arabes & français, dénomination et rattachement commune/wilaya |
-| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Établissements de santé publics, 695 du Ministère de la Santé (EPH, EPSP, EHS, CHU), bilingues, géolocalisés via OSM + Wikidata avec rattachement commune/wilaya |
-| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Cliniques et structures de soins, 1 918 géolocalisées depuis OpenStreetMap sur 66 wilayas, classées par type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingues, avec secteur, spécialité, téléphone & horaires si renseignés ; le volet communautaire du secteur santé, dont tout élément OSM référencé par `sante` est exclu |
+| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Établissements de santé publics, 668 du Ministère de la Santé (EPH, EPSP, EHS, CHU), bilingues, géolocalisés via OSM + Wikidata avec rattachement commune/wilaya |
+| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Cliniques et structures de soins, 1 917 géolocalisées depuis OpenStreetMap sur 66 wilayas, classées par type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingues, avec secteur, spécialité, téléphone & horaires si renseignés ; le volet communautaire du secteur santé, dont tout élément OSM référencé par `sante` est exclu |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Atlas culturel, 1 083 lieux du Ministère de la Culture (sites protégés, musées, théâtres, bibliothèques, établissements culturels), bilingues, entièrement géolocalisés avec rattachement commune/wilaya |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Institutions du secteur agricole, 196 du Ministère de l'Agriculture réparties en 7 réseaux (DSA, conservations des forêts, instituts de recherche/formation, chambres d'agriculture, offices et groupes publics), bilingues, géolocalisées avec rattachement commune/wilaya |
 | [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Écoles, 11 858 écoles et préscolaires depuis OpenStreetMap, classées par cycle (primaire/moyen/secondaire/préscolaire), bilingues, les 69 wilayas, avec rattachement commune/wilaya |
@@ -165,6 +165,16 @@ Chaque enregistrement suit la même forme :
 - `geo_precision` vaut strictement `exact | approximate | null`, `null` exactement lorsqu'il n'y a pas de coordonnée, avec la méthode de géocodage dans `geo_method`.
 
 Des artefacts lisibles par machine les accompagnent : un catalogue racine [`index.json`](index.json), un descripteur `schema.org/Dataset` (`dataset-metadata.json`) dans chaque paquet porteur de données (le paquet `@geoalgeria/normalize`, code seul, n'en porte pas), et les 69 polygones de limites des wilayas dans le paquet principal, sous [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (qualité d'affichage).
+
+Un identifiant publié est une clé de jointure : il n'est jamais réutilisé. Un
+enregistrement qui quitte un paquet laisse son identifiant dans le
+`data/retired-ids.json` de ce paquet, réservé définitivement, et lorsque deux
+enregistrements sont fusionnés en un seul, la table `migrations` du registre
+indique aussi où sont passées les données de l'identifiant absorbé :
+`merged_into` nomme l'enregistrement qui les porte désormais, avec une note et,
+quand la source en fournit, les identifiants d'origine que la paire représentait.
+Un consommateur qui détient un ancien identifiant peut le suivre au lieu de
+simplement le voir disparaître.
 
 Un paquet est antérieur au contrat, le jeu de données principal `geoalgeria` (divisions administratives, pas des GeoRecords ; marqué `schema_version: null` dans le catalogue).
 

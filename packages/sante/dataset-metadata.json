@@ -4,7 +4,7 @@
   "name": "Algeria public health establishments",
   "alternateName": "Établissements de santé publique d'Algérie",
   "identifier": "@geoalgeria/sante",
-  "description": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 95 remain ungeocoded.",
+  "description": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 71 remain ungeocoded.",
   "conditionsOfAccess": "Official registry (Ministry of Health); geocoding ODbL/CC0",
   "isAccessibleForFree": true,
   "creator": {
@@ -17,10 +17,10 @@
     "name": "Algeria",
     "geo": {
       "@type": "GeoShape",
-      "box": "19.573539 -8.140085 37.065039 9.635"
+      "box": "19.573539 -8.140085 37.065039 9.576151"
     }
   },
-  "variableMeasured": "695 records, 58 wilayas",
+  "variableMeasured": "668 records, 58 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",

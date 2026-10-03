@@ -586,7 +586,9 @@ test("publishedMetadataPaths finds every data descriptor and not dataset-metadat
   assert.deepEqual(publishedMetadataPaths(join(root, "packages", "dataset")), [
     "data/geojson/communes.metadata.json",
     "data/geojson/wilaya-boundaries.metadata.json",
+    "data/osm-links.metadata.json",
     "data/poste/metadata.json",
+    "data/wilaya-capitals.metadata.json",
   ]);
   assert.deepEqual(publishedMetadataPaths(join(root, "packages", "ecoles")), ["data/metadata.json"]);
   assert.deepEqual(publishedMetadataPaths(join(root, "packages", "schema")), []);
