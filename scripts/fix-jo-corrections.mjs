@@ -20,6 +20,7 @@ import {
   coordinateCorrections,
   wilayaNameCorrections,
 } from "./lib/jo-2026-corrections.mjs";
+import { isWilayaSqlRow } from "./lib/full-sql-rows.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PKG = join(ROOT, "packages", "dataset");
@@ -348,8 +349,8 @@ patchCsv(join(DATA, "csv", "communes.csv"), 8, (f) => {
   }
 });
 
-// code,name_fr,name_ar,phone_code,postal_code,latitude,longitude,created
-patchCsv(join(DATA, "csv", "wilayas.csv"), 8, (f) => {
+// code,name_fr,name_ar,phone_code,postal_code,latitude,longitude,created,capital_commune_code
+patchCsv(join(DATA, "csv", "wilayas.csv"), 9, (f) => {
   const rename = wilayaNames.get(Number(f[0]));
   if (!rename) return;
   expect(f[1], [...rename.formerNames, rename.to], `csv/wilayas.csv ${f[0]} name_fr`);
@@ -410,9 +411,9 @@ function patchSql(path, patch) {
   queueText(path, out.join("\n"));
 }
 
-// wilayas: (code, 'name_fr', …)   communes: (id, 'name_fr', 'name_ar', wilaya, 'daira', 'postal', lat, lng, code_commune)
+
 patchSql(join(DATA, "sql", "full.sql"), (f) => {
-  if (f.length === 8) {
+  if (isWilayaSqlRow(f)) {
     const rename = wilayaNames.get(Number(f[0]));
     if (!rename) return false;
     expect(f[1], [sqlQuote(rename.from), sqlQuote(rename.to)], `sql/full.sql wilaya ${f[0]}`);
@@ -488,8 +489,8 @@ for (const provider of ["yalidine", "zr_express", "maystro"]) {
 }
 
 // --- the two flat CSVs beside the JSON --------------------------------------
-// code,name_ar,name_fr,name_en,created,mother_wilaya_code,law,communes_count,…
-patchCsv(join(DATA, "wilayas.csv"), 11, (f) => {
+// code,name_ar,name_fr,name_en,created,mother_wilaya_code,law,communes_count,…,capital_commune_code
+patchCsv(join(DATA, "wilayas.csv"), 12, (f) => {
   const rename = wilayaNames.get(Number(f[0]));
   if (!rename) return;
   expect(f[2], [...rename.formerNames, rename.to], `wilayas.csv ${f[0]} name_fr`);

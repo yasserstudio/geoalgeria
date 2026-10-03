@@ -5,6 +5,14 @@
 //
 // This test derives the number from the correction ledgers and the data itself, then
 // requires LICENSE, NOTICE and dataset-metadata.json to state that number.
+//
+// THE WILAYA CAPITAL POINTS ARE THE SAME CLAIM. Since rule 9 of
+// docs/adr/0001-coordinate-review-by-independent-votes.md a wilaya's latitude/longitude
+// IS its capital commune's centre, so it carries whatever terms that centre carries.
+// NOTICE claimed the opposite, that none of the 69 is OpenStreetMap-derived, which
+// stopped being true the moment wilaya 16 took Alger Centre's ODbL value. That count is
+// derived here as well, from the same ledgers and the published `capital_commune_code`,
+// and the files that make the claim have to state the derived number.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -122,8 +130,33 @@ function derive() {
   }
 
   const osmDerived = new Set([...fromAdminCentreNode, ...RELATION_CENTROID_COMMUNES]);
+
+  // A wilaya point inherits its capital commune centre's terms only because it IS that
+  // value. Equality is asserted here rather than assumed, so a wilaya point that drifts
+  // off its commune drops the licence claim instead of carrying a wrong one; the field
+  // and the equality have their own guard in test/wilaya-capital-commune.test.mjs.
+  const capitals = json(PKG, "data", "algeria.json").map((w) => ({
+    wilaya_code: Number(w.code),
+    code_commune: w.capital_commune_code,
+    point: [w.longitude, w.latitude],
+  }));
+  assert.equal(capitals.length, 69, `read ${capitals.length} wilayas`);
+  const osmCapitals = [];
+  for (const cap of capitals) {
+    const commune = byCode.get(cap.code_commune);
+    assert.ok(commune, `wilaya ${cap.wilaya_code}: capital ${cap.code_commune} is not a commune`);
+    assert.deepEqual(
+      cap.point,
+      [commune.longitude, commune.latitude],
+      `wilaya ${cap.wilaya_code}: its point is not its capital commune's centre, so its licence does not follow from it`,
+    );
+    if (osmDerived.has(cap.code_commune)) osmCapitals.push(cap.wilaya_code);
+  }
+
   return {
     total: communes.length,
+    osmCapitals: osmCapitals.sort((a, b) => a - b),
+    restCapitals: capitals.length - osmCapitals.length,
     fromAdminCentreNode: fromAdminCentreNode.size,
     fromRelationCentroid: RELATION_CENTROID_COMMUNES.length,
     ownerVerified: ownerVerified.size,
@@ -150,6 +183,11 @@ test("the OpenStreetMap-derived commune centres are the applied ledger rows plus
   assert.equal(counts.ownerVerified, 0);
   assert.equal(counts.osmDerived, 256);
   assert.equal(counts.rest, 1285);
+  // Wilayas 7 (Biskra 701), 16 (Alger Centre 1601), 25 (Constantine 2501), 32 (El Bayadh
+  // 3201), 52 (Beni-Abbes 5201) and 61 (El Kantara 717): the six whose capital commune is
+  // one of the 256, so their own point is ODbL as well.
+  assert.deepEqual(counts.osmCapitals, [7, 16, 25, 32, 52, 61]);
+  assert.equal(counts.restCapitals, 63);
 });
 
 test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no other", () => {
@@ -185,9 +223,13 @@ test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no o
       `${where}: does not state the ${fromAdminCentreNode} taken from an admin_centre node`,
     );
   for (const where of ["LICENSE", "NOTICE", "dataset-metadata.json usageInfo"]) {
+    // The count has to be read against its own date, not found anywhere in the file:
+    // LICENSE shipped "4 on 2026-10-01" for a 5-row ledger and passed, because every
+    // file that states 256 contains a "5".
     for (const { generated, count } of perLedger)
-      assert.ok(
-        stated[where].includes(String(count)) && stated[where].includes(generated),
+      assert.match(
+        stated[where],
+        new RegExp(`(?:^|[^\\d,])${count} (?:corrected )?on ${generated}`),
         `${where}: does not state the ${count} centres corrected on ${generated}`,
       );
     assert.ok(
@@ -210,6 +252,90 @@ test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no o
   // pinned list cannot drift away from the published claim.
   for (const code of RELATION_CENTROID_COMMUNES)
     assert.ok(stated.NOTICE.includes(`(${code})`), `NOTICE: does not name relation-centroid commune ${code}`);
+});
+
+// Every file that carries the wilaya-capital claim. NOTICE used to say the 69 wilaya
+// capital coordinates are not OpenStreetMap-derived, which was already false, so each of
+// these has to state the derived count, its complement, and every wilaya it covers.
+const CAPITAL_CARRIERS = [
+  ["LICENSE", () => read(PKG, "LICENSE")],
+  ["NOTICE", () => read(PKG, "NOTICE")],
+  ["dataset-metadata.json usageInfo", () => json(PKG, "dataset-metadata.json").usageInfo],
+  ["packages/dataset/llms.txt", () => read(PKG, "llms.txt")],
+  ["packages/dataset/data/README.md", () => read(PKG, "data", "README.md")],
+  ["packages/dataset/README.md", () => read(PKG, "README.md")],
+];
+
+/** The two locale READMEs carry the same claim in their own words, so the English shapes
+ *  above cannot read them. What is checkable across locales is the arithmetic and the
+ *  wilayas it covers, inside the ODbL bullet list, which is what drifts. */
+const CAPITAL_LOCALES = [
+  ["packages/dataset/README.fr.md", () => read(PKG, "README.fr.md")],
+  ["packages/dataset/README.ar.md", () => read(PKG, "README.ar.md")],
+];
+
+test("every file that states which wilaya capital points are OpenStreetMap-derived states the derived set", () => {
+  const { osmCapitals, restCapitals } = derive();
+  for (const [where, load] of CAPITAL_CARRIERS) {
+    const text = load().replace(/\s+/g, " ");
+    const claims = [...text.matchAll(/(?<![\d,])([\d,]+) of the 69 wilaya capital points/g)].map((m) =>
+      Number(m[1].replace(/,/g, "")),
+    );
+    assert.ok(claims.length > 0, `${where}: states no wilaya capital count at all`);
+    for (const claim of claims)
+      assert.equal(
+        claim,
+        osmCapitals.length,
+        `${where}: states ${claim} of the 69 wilaya capital points are OpenStreetMap-derived, the data gives ${osmCapitals.length}`,
+      );
+
+    const complement = [...text.matchAll(/(?:other|remaining) ([\d,]+) wilaya\b/g)].map((m) =>
+      Number(m[1].replace(/,/g, "")),
+    );
+    assert.ok(complement.length > 0, `${where}: does not state how many wilaya capital points are not covered`);
+    for (const claim of complement)
+      assert.equal(
+        claim,
+        restCapitals,
+        `${where}: states a different complement than the ${restCapitals} wilaya capital points that are not OpenStreetMap-derived`,
+      );
+
+    // And it names them, because a count nobody can check is not a licence statement.
+    for (const code of osmCapitals)
+      assert.match(
+        text,
+        new RegExp(`(?:^|[^\\d,])${code}[ ,()]`),
+        `${where}: does not name wilaya ${code} among the OpenStreetMap-derived capital points`,
+      );
+  }
+});
+
+test("the FR and AR READMEs state the same wilaya capital arithmetic as the English one", () => {
+  const { osmCapitals, restCapitals } = derive();
+  for (const [where, load] of CAPITAL_LOCALES) {
+    const text = load().replace(/\s+/g, " ");
+    // The ODbL bullet list only, so a number from elsewhere in the README cannot stand in
+    // for the claim. It runs from the licence heading to the attribution sentence after it.
+    const start = text.indexOf("ODbL 1.0");
+    const bullets = text.slice(start, text.indexOf("data/poste/", start));
+    assert.ok(bullets.length > 0, `${where}: no ODbL section to read`);
+    assert.match(
+      bullets,
+      new RegExp(`(?:^|[^\\d,])${osmCapitals.length} [^.;]*?(?:^|[^\\d,])69`),
+      `${where}: does not state that ${osmCapitals.length} of the 69 wilaya capital points are OpenStreetMap-derived`,
+    );
+    assert.match(
+      bullets,
+      new RegExp(`(?:^|[^\\d,])${restCapitals}(?![\\d])`),
+      `${where}: does not state the ${restCapitals} wilaya capital points that are not OpenStreetMap-derived`,
+    );
+    for (const code of osmCapitals)
+      assert.match(
+        bullets,
+        new RegExp(`(?:^|[^\\d,])${code}(?![\\d])`),
+        `${where}: does not name wilaya ${code} among the OpenStreetMap-derived capital points`,
+      );
+  }
 });
 
 // The count is stated in more than the three files above, and every one of those is a

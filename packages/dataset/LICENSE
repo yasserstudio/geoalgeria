@@ -29,9 +29,9 @@ Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of w
 In detail, the data is compiled from public official sources. The compilation of
 wilayas, dairas, communes, their bilingual names, postal codes and administrative
 codes is offered under the MIT License above,
-https://opensource.org/licenses/MIT. Three parts are not:
+https://opensource.org/licenses/MIT. Four parts are not:
 
-The two OpenStreetMap-derived parts are made available under the Open Database
+The three OpenStreetMap-derived parts are made available under the Open Database
 License (ODbL) 1.0, (c) OpenStreetMap contributors:
 
 https://opendatacommons.org/licenses/odbl/1-0/
@@ -40,17 +40,26 @@ https://opendatacommons.org/licenses/odbl/1-0/
   derived from OpenStreetMap `admin_level=4` relations.
 - 256 commune centre coordinates (`latitude` and `longitude`), each taken from
   that commune's own OpenStreetMap `admin_level=8` relation: 250 from its
-  `admin_centre` node, 56 corrected on 2026-09-27, 189 on 2026-09-29 and 4 on
+  `admin_centre` node, 56 corrected on 2026-09-27, 189 on 2026-09-29 and 5 on
   2026-10-01, and 6 from the relation centroid, corrected in version 2.1.0. Those coordinates are
   repeated in
   `data/algeria.json`, `data/communes_w*.json`, `data/csv/communes.csv`,
   `data/geojson/communes.geojson` and `data/sql/full.sql`, so the ODbL covers
   those values in every representation that carries them.
+- 6 of the 69 wilaya capital points, which are the same values again. A wilaya's
+  `latitude` / `longitude` is the centre of its capital commune, so where that
+  commune is one of the 256 above, the wilaya row carries an
+  OpenStreetMap-derived coordinate too: wilayas 7 (Biskra), 16 (Alger Centre),
+  25 (Constantine), 32 (El Bayadh), 52 (Beni-Abbes) and 61 (El Kantara), in
+  `data/algeria.json`, `data/csv/wilayas.csv`, `data/sql/full.sql`,
+  `data/geojson/wilayas.geojson` and `algeria.geojson`. The other 63 wilaya
+  capital points are the centres of communes with no recorded source and no ODbL
+  claim is made over them.
 
-If you use or redistribute either part you must attribute OpenStreetMap
+If you use or redistribute any of those parts you must attribute OpenStreetMap
 contributors and keep derived databases under a compatible licence.
 
-The third part carries Algérie Poste's own terms, not the MIT License:
+The fourth part carries Algérie Poste's own terms, not the MIT License:
 
 - The mirrored postal data under `data/poste/` (post offices and ATMs, generated
   from `@geoalgeria/poste`, which states the same terms): Data © Algérie Poste;

@@ -23,6 +23,7 @@ data/
 ├── communes_w49_w69.json        ← communes for wilayas 49–69
 ├── name-history.json            ← former names, so an older spelling still finds the record
 ├── retired-ids.json             ← daira ids that no longer exist and are never reused
+├── wilaya-capitals.metadata.json          ← the chef-lieu of each wilaya, with its decree
 ├── csv/
 │   ├── wilayas.csv
 │   └── communes.csv
@@ -55,9 +56,10 @@ data/
   "name_ar": "الجزائر",
   "phone_code": "021",
   "postal_code": "16000",
-  "latitude": 36.7525,
-  "longitude": 3.04197,
-  "created": "original"
+  "latitude": 36.776335,
+  "longitude": 3.058211,
+  "created": "original",
+  "capital_commune_code": 1601
 }
 ```
 
@@ -68,9 +70,41 @@ data/
 | `name_ar` | string | Arabic name |
 | `phone_code` | string | Telephone area code |
 | `postal_code` | string | Main postal code |
-| `latitude` | number | Capital city latitude |
-| `longitude` | number | Capital city longitude |
+| `latitude` | number | Latitude of the capital commune's centre, the same value as that commune's `latitude` |
+| `longitude` | number | Longitude of the capital commune's centre, the same value as that commune's `longitude` |
 | `created` | string | The year the wilaya became official: `"original"` (1–48, Law 84-09 of 1984), `"2019"` (49–58, Law 19-12), `"2026"` (59–69, Law n° 26-06, *JO* n° 25 of 5 April 2026) |
+| `capital_commune_code` | integer | The `code_commune` of the wilaya's capital (chef-lieu); join it for the capital's names, postal code and coordinates |
+
+`capital_commune_code` comes from the decrees that fix the names and chefs-lieux
+of the wilayas, never from the wilaya's own name: décret n° 84-79 of 3 April 1984
+(*JO* n° 14, pp. 295–296) for 1–48, décret présidentiel n° 21-117 of 22 March 2021
+(*JO* n° 22, pp. 7–8) for 49–58, and décret présidentiel n° 26-206 of 25 May 2026
+(*JO* n° 40 of 3 June 2026, p. 5) for 59–69. Deriving it from the name resolves 65
+of 69 and gets 4 wrong: wilaya 16's capital is `1601` (Alger Centre, there is no
+commune called "Alger"), and wilayas 53, 54 and 57 spell their capital commune
+`Ain Salah`, `Ain Guezzam` and `El-M'ghaier`. A commune promoted into wilayas
+59–69 keeps its 2021 mother-wilaya prefix, so a capital code need not start with
+its wilaya code: wilaya 59 (Aflou) reads `319`. Per-wilaya source, citation and
+the one point where the decree and OpenStreetMap disagree:
+[`wilaya-capitals.metadata.json`](wilaya-capitals.metadata.json).
+
+A wilaya's `latitude`/`longitude` **is** the centre of its capital commune, the same
+value and not a second reading of it, so there is one point to verify per capital
+(the Owner's rule of 2026-10-01).
+Before that rule, 66 of the 69 wilaya points were a separate OpenStreetMap
+`admin_level=4` `admin_centre`, up to 8.8 km from the commune they were the capital
+of (wilaya 52, Beni-Abbes), and one of them, wilaya 55, sat outside its capital
+commune altogether. Each now reads its commune's own coordinate, and the check is
+containment in that commune's OpenStreetMap outline plus equality,
+`test/wilaya-capital-commune.test.mjs`.
+
+A wilaya point therefore carries whatever terms its capital commune's centre
+carries. 6 of the 69 wilaya capital points are among the OpenStreetMap-derived
+commune centres below, so
+they are **ODbL 1.0, © OpenStreetMap contributors** wherever they appear: wilayas 7
+(Biskra), 16 (Alger Centre), 25 (Constantine), 32 (El Bayadh), 52 (Beni-Abbes) and
+61 (El Kantara). The other 63 wilaya capital points are the centres of communes with
+no recorded source.
 
 `created` is the year the creating law took effect, never the year a reform was
 announced: wilayas 59–69 were announced on 2025-11-16 and are still `"2026"`.
@@ -272,8 +306,9 @@ that selects exactly these four.
 
 A fifth capital moved in the same batch, and it is the same source. Beni-Abbes (5201) sat
 5,754 m from its town centre, and the two-claim criterion could not nominate it, because
-wilaya 52's own point is 6,735 m from the repudiated centre and 8,786 m from the town: that
-point is itself about 8.8 km out. The project owner raised it instead, reading the town
+wilaya 52's own point was 6,735 m from the repudiated centre and 8,786 m from the town:
+that point was itself about 8.8 km out, and now reads this commune's corrected centre like
+every other wilaya point. The project owner raised it instead, reading the town
 centre off Google Maps on 2026-10-01. **That reading is not what ships.** The rule from
 that day is that a coordinate read off a proprietary map may only confirm an open source,
 within 500 m, and the open coordinate is what is published, so the value here is the
@@ -301,6 +336,8 @@ the per-source breakdown is in `geojson/communes.metadata.json`.
 
 - Journal Officiel No. 25, April 5, 2026 (Law 26-06) for wilayas 59–69 and for the commune lists of wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28 and 32
 - Journal Officiel No. 40, June 3, 2026 (Presidential decree 26-206) for the names and chef-lieux of wilayas 59–69
+- Journal Officiel No. 22, March 25, 2021 (Presidential decree 21-117) for the names and chef-lieux of wilayas 49–58
+- Journal Officiel No. 14, April 3, 1984 (Decree 84-79) for the names and chef-lieux of wilayas 1–48
 - Journal Officiel No. 52, July 21, 2026 (Executive decree 26-253) for the daira lists of wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 and 59–69
 - Journal Officiel No. 78, December 18, 2019 (Law 19-12) for wilayas 49–58
 - Ministry of Interior (interieur.gov.dz)

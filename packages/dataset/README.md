@@ -147,6 +147,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/wilayas.json` | JSON | 69 | Wilaya list only |
 | `data/dairas.json` | JSON | 551 | Daira list with commune counts |
 | `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
+| `data/wilaya-capitals.metadata.json` | JSON | 69 | The chef-lieu of each wilaya, with the decree, article, item and page that fixes it |
 | `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
 | `data/csv/wilayas.csv` | CSV | 69 | Spreadsheets, imports |
 | `data/csv/communes.csv` | CSV | 1,541 | Spreadsheets, imports |
@@ -164,6 +165,8 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 > `data/poste/` is sourced from [Algérie Poste](https://baridimap.poste.dz). `commune_code` is normalized to join each commune's `code_commune`; `source_commune_code` preserves a differing provider-native value.
 
 `code_commune` is the unique `WWCC` identifier from the [ONS 2021 Code Géographique National](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). Communes promoted into wilayas 59–69 retain their 2021 mother-wilaya prefix.
+
+Each wilaya carries `capital_commune_code`, the `code_commune` of its capital (chef-lieu), so the capital's names, postal code and coordinates are read from the commune record. It comes from the decrees that fix the chefs-lieux (n° 84-79 of 1984, n° 21-117 of 2021, n° 26-206 of 2026), never from the wilaya's name, which gets 4 of 69 wrong. Per-wilaya sources: [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
 
 ## Schema
 
@@ -246,7 +249,7 @@ Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/iss
 
 ## Sponsor
 
-GeoAlgeria is free: MIT code and an MIT compilation, with two ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
+GeoAlgeria is free: MIT code and an MIT compilation, with three ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
 
 ---
 
@@ -284,17 +287,20 @@ Package **code** is [MIT](LICENSE), and so is the **compilation**: wilayas, dair
 their bilingual names, postal codes and administrative codes. Free for personal and commercial
 use.
 
-Two parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and are
-licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
+Three parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and
+are licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
 
 - the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
 - 256 of the 1,541 commune centre coordinates, each taken from that commune's own
   `admin_level=8` relation (250 from its `admin_centre` node, 56 on 2026-09-27, 189 on
   2026-09-29 and 5 on 2026-10-01, and 6 from the relation centroid in 2.1.0), wherever those
-  values appear.
+  values appear;
+- 6 of the 69 wilaya capital points, which are the same values again: a wilaya's coordinates
+  are the centre of its capital commune, so wilayas 7, 16, 25, 32, 52 and 61 carry one of the
+  coordinates above. The other 63 wilaya capital points are not OpenStreetMap-derived.
 
-If you use or redistribute either part you must **attribute OpenStreetMap contributors** and
-keep derived databases under a compatible licence.
+If you use or redistribute any of those parts you must **attribute OpenStreetMap contributors**
+and keep derived databases under a compatible licence.
 
 The mirrored postal data under `data/poste/` carries **Algérie Poste's** own terms, not the MIT
 License: **Data © Algérie Poste; redistributed for reference**, the same terms

@@ -26,6 +26,10 @@ _Avoid_: district, sub-prefecture, arrondissement
 The smallest administrative unit (municipality); the level a postal code resolves to.
 _Avoid_: municipality, baladiya, town
 
+**Capital**:
+The Commune that is a Wilaya's seat, published as `capital_commune_code`, the `code_commune` of that Commune, so it joins the Commune record instead of duplicating its names. Fixed by the decrees that name the chefs-lieux of the wilayas (décret n° 84-79 of 3 April 1984 for 1-48, décret présidentiel n° 21-117 of 22 March 2021 for 49-58, décret présidentiel n° 26-206 of 25 May 2026 for 59-69), never read off the Wilaya's own name: wilaya 16's Capital is Alger Centre, and wilayas 53, 54 and 57 spell theirs differently from the Wilaya. A Wilaya's own `latitude`/`longitude` **is** its Capital's centre, the same value and not a second reading of it, so there is one point per Capital (rule 9 of `docs/adr/0001-coordinate-review-by-independent-votes.md`). Renders FR **chef-lieu**, AR **مقر الولاية**.
+_Avoid_: seat, capital city, main city, principal town, admin centre
+
 **Creation year**:
 The year a Wilaya became official, that is the year the law creating it took effect, published as `created`. The 48 founded by Law 84-09 (1984) read `original`, or `1984` where the field is a number; wilayas 49-58 read `2019` (Law 19-12); wilayas 59-69 read `2026` (Law n° 26-06, *JO* n° 25 of 5 April 2026). Never the year a reform was announced: the 59-69 reform was announced on 2025-11-16 and its Creation year is still 2026.
 _Avoid_: founded, established, announced year, reform year
