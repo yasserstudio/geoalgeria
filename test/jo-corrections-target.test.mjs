@@ -1,28 +1,56 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { cpSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
-import test from "node:test";
+import { join, sep } from "node:path";
+import test, { after, before } from "node:test";
+
+import { assertRepoUnchanged, repoStatus } from "./lib/repo-clean.mjs";
 
 // The app keeps its own fork of the flagship data (repaired communes, postal
 // fixes, its own spellings). These fixtures copy the app's four carriers in
 // their real formatting so the fixer is exercised the way the app runs it.
+const REPO = join(import.meta.dirname, "..");
 const FIXTURES = join(import.meta.dirname, "fixtures/app-carriers");
 const SCRIPT = join(import.meta.dirname, "../scripts/fix-jo-corrections.mjs");
 const CARRIERS = ["algeria.json", "communes.geojson", "wilayas.geojson", "wilaya-boundaries.geojson"];
 
+// The fixer patches this repo's own carriers alongside the --target ones, so
+// every run here is pointed at a throwaway copy of them with --root. Without it
+// a --write under test rewrites tracked files and reverts whatever edit was in
+// progress. Only packages/dataset is copied, minus the postal mirror: no
+// correction reads either of those.
+function repoCopy(dir) {
+  const root = join(dir, "repo");
+  mkdirSync(join(root, "packages", "dataset"), { recursive: true });
+  cpSync(join(REPO, "packages/dataset/data"), join(root, "packages/dataset/data"), {
+    recursive: true,
+    filter: (src) => !src.includes(`${sep}data${sep}poste`),
+  });
+  cpSync(join(REPO, "packages/dataset/algeria.geojson"), join(root, "packages/dataset/algeria.geojson"));
+  return root;
+}
+
 function appCopy() {
   const dir = mkdtempSync(join(tmpdir(), "jo-target-"));
   for (const file of CARRIERS) cpSync(join(FIXTURES, file), join(dir, file));
+  repoCopy(dir);
   return dir;
 }
 
 function fix(dir, mode, files = CARRIERS) {
-  const args = [SCRIPT, ...(mode ? [mode] : [])];
+  const args = [SCRIPT, ...(mode ? [mode] : []), "--root", join(dir, "repo")];
   for (const file of files) args.push("--target", join(dir, file));
   return execFileSync(process.execPath, args, { stdio: "pipe", encoding: "utf8" });
 }
+
+// Every test below runs the fixer with --write, and none of it may reach a
+// tracked file. This brackets the whole file, so a test added later trips it too.
+let tracked;
+before(() => {
+  tracked = repoStatus();
+});
+after(() => assertRepoUnchanged(tracked));
 
 const readJson = (dir, file) => JSON.parse(readFileSync(join(dir, file), "utf8"));
 const commune = (doc, code) => doc.flatMap((w) => w.communes).find((c) => c.code_commune === code);
