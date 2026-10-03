@@ -88,7 +88,9 @@ export const NAME_AR_CARRIERS = [
         const match = /^ {2}\((.*)\)[,;]$/.exec(line);
         if (!match) continue;
         const fields = splitSqlRow(match[1]);
-        if (fields.length !== 9) continue;
+        // Wilaya rows print 9 fields too since `capital_commune_code`; their
+        // `created` literal is what tells them apart.
+        if (fields.length !== 9 || /^'(?:original|2019|2026)'$/.test(fields[7])) continue;
         rows.push({
           code: Number(fields[8]),
           wilaya_code: Number(fields[3]),
