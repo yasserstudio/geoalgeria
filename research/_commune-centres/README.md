@@ -350,6 +350,33 @@ Overpass query filters on `boundary=administrative` AND `admin_level=8`, and the
 relations carry the right `ref:ONS` code with non-standard tags, so the filter hid them
 rather than OpenStreetMap lacking them.
 
+### The cache is proved, and it is refreshed
+
+Two things could weaken the guard without anything failing, because `pnpm validate`
+neither re-pulls OpenStreetMap nor rebuilds the cache: a hand edit to the committed
+geometry, and the cache going stale.
+
+The edit is answered by `commune-boundaries.provenance.json`, the cache's content
+digest held in its own file. `test/boundary-cache-provenance.test.mjs` recomputes it
+on every run, so moving one ordinate of one ring now fails a test instead of quietly
+moving a verdict. The digest is deliberately not a field inside the cache: a digest
+cannot cover the document it sits in without first defining itself away, and a
+payload and its proof in one file is one edit in one place. It is taken over a
+canonical serialisation of the whole document, provenance fields included, rather
+than over the file's bytes, so a re-indent is not a failure and a changed
+`timestamp_osm_base` or `tolerance_deg` is. The reasoning is in
+`scripts/lib/boundary-cache-provenance.mjs`.
+
+Staleness is answered by `.github/workflows/refresh-commune-boundary-cache.yml`,
+monthly and on demand. It makes one Overpass request, rebuilds the cache, and
+compares verdicts rather than geometry: the rings always move, but a pull request is
+only opened when a centre crossed its own boundary either way, or a commune's
+geometry became or stopped being usable. `scripts/diff-boundary-verdicts.mjs` writes
+that diff as the pull-request body. `generated` follows `timestamp_osm_base` rather
+than the clock, so an unchanged OSM base rebuilds to the same bytes and the month
+passes with no diff at all. The workflow never pushes to `main`: every row it finds
+is a hand decision about one commune's coordinates.
+
 ## Files
 
 | File | Contents |
@@ -359,6 +386,7 @@ rather than OpenStreetMap lacking them.
 | `corrections-2026-09-29.json` | the 189 decided errors, applied in the 2026-10 batch |
 | `../_wilaya-containment/record-exceptions.json` | the 245 pre-existing records outside their declared wilaya, which the corrected join does not derive |
 | `commune-boundaries.json` | the reduced commune outlines the standing guard holds the data to |
+| `commune-boundaries.provenance.json` | that file's content digest, held outside it so a hand edit to a ring fails a test |
 | `containment-exceptions.json` | the guard's exceptions, with a reason each |
 | `osm-seat-reference.json` | the seat per commune, which the seat-distance report measures against |
 | `seat-distance-2026-09-29.md` | the seat delta as a report, over 1 km by delta; no test reads it |

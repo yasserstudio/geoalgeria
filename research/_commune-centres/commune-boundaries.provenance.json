@@ -1,0 +1,8 @@
+{
+  "document": "commune-boundaries.json",
+  "generated": "2026-09-29",
+  "algorithm": "sha256",
+  "canonical_form": "sha256 over JSON.stringify of the whole document with every object's keys sorted ascending and `communes` sorted by code_commune ascending, so the digest states the content and not the file's indentation, key order or line endings",
+  "sha256": "f4f99a0d04dc0f3f7e8c893de767898a722d5264018e8f3a6f44dbaf9f74ea24",
+  "note": "The content digest of commune-boundaries.json, held outside it so the geometry and its proof are two committed files rather than one. test/boundary-cache-provenance.test.mjs recomputes it and fails if the cache does not match, which is what stops a hand edit to a ring from quietly moving a containment verdict. It covers the whole document, the envelope's own Overpass endpoint, timestamp_osm_base, query and relation identity included, so nothing here repeats them. Rebuild both with `node scripts/build-commune-boundary-cache.mjs --fetch-geometry --write`, or re-emit them from the committed cache with `node scripts/build-commune-boundary-cache.mjs --write`."
+}

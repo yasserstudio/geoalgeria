@@ -28,6 +28,14 @@
 // unless every one of the 1,541 verdicts is identical to the verdict from the
 // unsimplified pull, so the reduction is proved rather than assumed.
 //
+// A FILE STILL HAS TO BE THE RIGHT FILE. This test reads the cache and believes it.
+// That the cache is the one the builder reduced from OpenStreetMap, and not one a
+// hand edit walked, is test/boundary-cache-provenance.test.mjs, which recomputes the
+// content digest in research/_commune-centres/commune-boundaries.provenance.json.
+// That the cache is still current is
+// .github/workflows/refresh-commune-boundary-cache.yml, which re-pulls monthly and
+// opens a pull request when the rebuild moves a verdict.
+//
 // THE EXCEPTIONS ARE DEFECTS, NOT A TOLERANCE. research/_commune-centres/
 // containment-exceptions.json lists 41 centres still outside their own commune and
 // 4 communes with no usable OSM geometry at all, each with the reason it is there.
