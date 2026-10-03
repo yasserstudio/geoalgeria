@@ -8,6 +8,12 @@ The first pilot is `sante.json`. Any other package can adopt the same workflow b
 adding a ledger named after the package; no generator-specific correction code is
 needed.
 
+Landing a ledger entry means re-running the package's writer so the correction is
+applied, validated and mirrored. `banques` has `npm run build` for that; most sector
+packages have only `npm run fetch`, which needs the live upstream, so
+`node scripts/apply-overrides.mjs <package>...` re-emits one from the records it already
+ships. It makes no decision of its own, and a second run is a no-op.
+
 ## Safety contract
 
 - `status` records what the reviewer found. `publish_action` separately chooses

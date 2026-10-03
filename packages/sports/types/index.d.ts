@@ -65,6 +65,12 @@ export interface Facility {
   surface_built_m2: number | null;
   /** Total land surface in m², or null when unknown. */
   surface_land_m2: number | null;
+  /** Present when a versioned evidence review corrected this record
+   *  (quality/overrides/). */
+  review_status?: "corrected";
+  reviewed_at?: string;
+  reviewed_by?: string;
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */

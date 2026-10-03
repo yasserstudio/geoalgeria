@@ -105,7 +105,23 @@ not one row was added. Two classes:
 | `packages/telecom/data/5g-mobilis.json` | 1 | 1 outside its wilaya polygon |
 
 The list is exact in both directions: a record that stops needing its entry fails
-the guard rather than keeping it, so the 360 can only shrink.
+the guard rather than keeping it, so the count can only shrink.
+
+## What #209 then corrected
+
+The 358 above were triaged one by one for yasserstudio/geoalgeria.com#209 against the
+commune registry as well as the geometry; `triage-209.md` is the record. **55 of them
+were a stale label rather than a bad coordinate**: the source still files the record
+under the wilaya it belonged to before a reform (50 the 2026 one, 5 the 2019 one),
+while its coordinate is inside exactly one OpenStreetMap commune outline that the
+registry assigns to the daughter wilaya. Those are corrected, ids unchanged, and each
+published row carries its review receipt while the source's own wilaya stays in the
+ledger decision's `expect` block. **303 remain**, and the tables above are the list
+after the correction.
+
+Nothing was corrected from geometry alone where the record's own commune label named a
+different commune, and nothing whose coordinate is too rounded to join on: those stay
+for the owner, listed per record in `triage-209.md`.
 
 ## One count this batch deliberately raises
 
@@ -114,10 +130,13 @@ display-grade polygon of the wilaya it declares, and `quality/accuracy-review` c
 the same rows as `outside_declared_wilaya`. Measured by running each tree rather than
 quoted:
 
-| Reason | `origin/main` | before #171 | now |
-| --- | --- | --- | --- |
-| `outside_declared_wilaya` | 1,159 | 572 | **447** |
-| `inside_adjacent_wilaya` | 960 | 373 | **248** |
+| Reason | `origin/main` | before #171 | after #171 | after #209 |
+| --- | --- | --- | --- | --- |
+| `outside_declared_wilaya` | 1,159 | 572 | 447 | **392** |
+| `inside_adjacent_wilaya` | 960 | 373 | 248 | **193** |
+
+The last column is #209: each of its 55 corrections ends one row of both counts, because a
+record moved into the wilaya its coordinate is in is no longer outside the wilaya it declares.
 
 An earlier revision of this file gave 960 and 373 as the `outside_declared_wilaya`
 count. Those two numbers are real, but they are the `inside_adjacent_wilaya` row:
@@ -141,6 +160,14 @@ branch does not redraw.
 
 | File | Contents |
 | --- | --- |
-| `record-exceptions.json` | the 360 records, grouped by file, each with its kind, the clause of the join that decides it, whether it pre-exists `origin/main`, and the reason per group |
+| `record-exceptions.json` | the 303 records, grouped by file, each with its kind, the clause of the join that decides it, whether it pre-exists `origin/main`, and the reason per group |
+| `triage-209.md` | all 358 found on 2026-09-29, each classified and with the action taken: the 55 corrected, the 136 left as outline noise, the 167 left for the owner |
+
+The 55 corrections themselves are **not** here. They are one reviewed decision per record in
+`quality/overrides/<package>.json`, because that is the ledger `CONTRIBUTING.md` routes an
+evidence-backed correction of a generated package to and the only place one survives a
+regeneration. `test/reform-stale-209.test.mjs` re-derives each from the registry and the
+outlines; `scripts/apply-overrides.mjs` re-emits a package that has no offline writer of its
+own to run.
 
 Regenerate with `node scripts/build-wilaya-containment-exceptions.mjs --write`.

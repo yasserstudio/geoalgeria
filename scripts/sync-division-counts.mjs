@@ -82,17 +82,34 @@ wilayasDoc.metadata.total_communes = communes.length;
 queueJson(wilayasPath, wilayasDoc);
 
 // --- wilayas.csv ------------------------------------------------------------
-// code,name_ar,name_fr,name_en,created,mother_wilaya_code,law,communes_count,
-// dairas_count,post_reform_communes,post_reform_dairas
-const COLUMN = { CODE: 0, CREATED: 4, MOTHER: 5, COMMUNES: 7, DAIRAS: 8, POST_COMMUNES: 9, POST_DAIRAS: 10 };
+// Columns are found by header name, not position: the file gained
+// capital_commune_code after this script was written, and a positional read
+// would then refuse every row or, worse, write a count into the wrong column.
 const csvPath = join(DATA, "wilayas.csv");
 const csvText = readFileSync(csvPath, "utf8");
 const csvNewline = csvText.includes("\r\n") ? "\r\n" : "\n";
 const csvLines = csvText.trimEnd().split(/\r?\n/);
+const header = csvLines[0].split(",");
+const column = (name) => {
+  const index = header.indexOf(name);
+  if (index < 0) throw new Error(`${basename(csvPath)}: no ${name} column in ${csvLines[0]}`);
+  return index;
+};
+const COLUMN = {
+  CODE: column("code"),
+  CREATED: column("created"),
+  MOTHER: column("mother_wilaya_code"),
+  COMMUNES: column("communes_count"),
+  DAIRAS: column("dairas_count"),
+  POST_COMMUNES: column("post_reform_communes"),
+  POST_DAIRAS: column("post_reform_dairas"),
+};
 const csvRows = csvLines.slice(1).map((line) => line.split(","));
 for (const [index, fields] of csvRows.entries()) {
-  if (fields.length !== 11) {
-    throw new Error(`${basename(csvPath)} row ${index + 2}: expected 11 fields, found ${fields.length}`);
+  if (fields.length !== header.length) {
+    throw new Error(
+      `${basename(csvPath)} row ${index + 2}: expected ${header.length} fields, found ${fields.length}`,
+    );
   }
 }
 

@@ -1,0 +1,458 @@
+{
+  "schema_version": 1,
+  "dataset": "sports",
+  "reviewer": "geoalgeria-maintainers",
+  "reviewed_at": "2026-10-01",
+  "decisions": [
+    {
+      "file": "facilities.json",
+      "record_id": "01663",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "14",
+        "commune_code": null,
+        "lat": 35.2515,
+        "lng": 2.4818
+      },
+      "patch": {
+        "wilaya_code": "64",
+        "commune_code": "1439"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "01666",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "14",
+        "commune_code": null,
+        "lat": 35.2967,
+        "lng": 2.4996
+      },
+      "patch": {
+        "wilaya_code": "64",
+        "commune_code": "1439"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "02725",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 35.9368,
+        "lng": 3.4337
+      },
+      "patch": {
+        "wilaya_code": "67",
+        "commune_code": "2618"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "02769",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 35.8931,
+        "lng": 3.0364
+      },
+      "patch": {
+        "wilaya_code": "67",
+        "commune_code": "2657"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "02775",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 35.9388,
+        "lng": 3.427
+      },
+      "patch": {
+        "wilaya_code": "67",
+        "commune_code": "2618"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "02776",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 35.9423,
+        "lng": 3.4115
+      },
+      "patch": {
+        "wilaya_code": "67",
+        "commune_code": "2618"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "02777",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 35.944,
+        "lng": 3.4125
+      },
+      "patch": {
+        "wilaya_code": "67",
+        "commune_code": "2618"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "03396",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "32",
+        "commune_code": null,
+        "lat": 32.8947,
+        "lng": 0.5444
+      },
+      "patch": {
+        "wilaya_code": "69",
+        "commune_code": "3207"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "03398",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "32",
+        "commune_code": null,
+        "lat": 32.9126,
+        "lng": 0.547
+      },
+      "patch": {
+        "wilaya_code": "69",
+        "commune_code": "3207"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "03400",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "32",
+        "commune_code": null,
+        "lat": 32.8749,
+        "lng": 0.0249
+      },
+      "patch": {
+        "wilaya_code": "69",
+        "commune_code": "3213"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "03401",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "32",
+        "commune_code": null,
+        "lat": 33.0302,
+        "lng": 0.0479
+      },
+      "patch": {
+        "wilaya_code": "69",
+        "commune_code": "3214"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "03404",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "32",
+        "commune_code": null,
+        "lat": 32.8697,
+        "lng": 0.0216
+      },
+      "patch": {
+        "wilaya_code": "69",
+        "commune_code": "3213"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "03406",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "32",
+        "commune_code": null,
+        "lat": 33.0293,
+        "lng": 0.0481
+      },
+      "patch": {
+        "wilaya_code": "69",
+        "commune_code": "3214"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "03407",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "32",
+        "commune_code": null,
+        "lat": 32.9126,
+        "lng": 0.549
+      },
+      "patch": {
+        "wilaya_code": "69",
+        "commune_code": "3207"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "facilities.json",
+      "record_id": "03416",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "32",
+        "commune_code": null,
+        "lat": 32.9142,
+        "lng": 0.5479
+      },
+      "patch": {
+        "wilaya_code": "69",
+        "commune_code": "3207"
+      },
+      "evidence": [
+        {
+          "url": "https://sig.mjs.gov.dz",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    }
+  ]
+}

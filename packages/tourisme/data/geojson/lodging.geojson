@@ -20567,8 +20567,8 @@
         "id": "lodging-238",
         "name": "تبلبالة",
         "name_ar": "تبلبالة",
-        "wilaya_code": "08",
-        "commune_code": null,
+        "wilaya_code": "52",
+        "commune_code": "5206",
         "commune": null,
         "lat": 29.40555,
         "lng": -3.2557317,
@@ -20578,7 +20578,14 @@
         "refs": {
           "osm": "7969645742"
         },
-        "type": "apartment"
+        "type": "apartment",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-01",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org",
+          "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf"
+        ]
       }
     },
     {
@@ -20593,8 +20600,8 @@
       "properties": {
         "id": "lodging-239",
         "name": "tamasent",
-        "wilaya_code": "08",
-        "commune_code": null,
+        "wilaya_code": "52",
+        "commune_code": "5206",
         "commune": null,
         "lat": 30.398352,
         "lng": -4.4556408,
@@ -20604,7 +20611,14 @@
         "refs": {
           "osm": "4244145444"
         },
-        "type": "chalet"
+        "type": "chalet",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-01",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org",
+          "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf"
+        ]
       }
     },
     {
