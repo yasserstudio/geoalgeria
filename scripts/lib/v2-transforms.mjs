@@ -45,6 +45,12 @@ function writeAtomic(path, content) {
  *  committed metadata.json to read a real `updated` from. Live/replay dates come
  *  from resolveDates()/committedDates(), not from this constant. */
 export const CUTOVER_DATE = "2026-07-18";
+
+/** The one sentence about the Ministry of Health's twin posts, so the published
+ *  coverage note, the generator's review report and every retirement note say it
+ *  the same way instead of drifting into three near-copies. */
+export const TWIN_POSTS_NOTE =
+  "The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record.";
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
 /** A package opts into reviewed corrections by adding one committed ledger. */
@@ -294,7 +300,7 @@ export const MIGRATIONS = {
       ],
       license: "Official registry (Ministry of Health); geocoding ODbL/CC0",
       estimatedUniverse: null,
-      coverageNote: "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. The registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 83 remain ungeocoded.",
+      coverageNote: `Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. ${TWIN_POSTS_NOTE} Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 71 remain ungeocoded.`,
       titles: { en: "Algeria public health establishments", fr: "Établissements de santé publique d'Algérie", ar: "المؤسسات الصحية العمومية الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), bilingual: rows.filter((r) => r.name_ar && r.name_fr).length, linkage_note: LINKAGE }),
     },
@@ -909,7 +915,8 @@ export const MIGRATIONS = {
  *           coverageNote?: string, titles?: object, preserve?: string[],
  *           stats?: (rows: object[]) => object },
  *   oldMeta?: object, reviewLedger?: object|null,
- *   retiredIds?: Set<string>|null, retiredMigrations?: Record<string,string>|null,
+ *   retiredIds?: Set<string>|null,
+ *   retiredMigrations?: Record<string, { merged_into: string, msp_posts?: string[], note: string }>|null,
  * }} input
  * @returns {{ records: object[], metadata: object, review: object }}
  */
@@ -1259,6 +1266,28 @@ export function readRetiredMigrations(dir) {
   if (migrations == null) return {};
   if (typeof migrations !== "object" || Array.isArray(migrations))
     throw new Error(`${path}: expected an object at migrations`);
+  const reserved = new Set((Array.isArray(document.ids) ? document.ids : []).map(String));
+  for (const [id, entry] of Object.entries(migrations)) {
+    const where = `${path}: migrations[${JSON.stringify(id)}]`;
+    if (!reserved.has(id)) throw new Error(`${where} is not one of the retired ids`);
+    if (entry == null || typeof entry !== "object" || Array.isArray(entry))
+      throw new Error(`${where} must be an object`);
+    if (typeof entry.merged_into !== "string" || !entry.merged_into)
+      throw new Error(`${where}.merged_into must be a non-empty string`);
+    if (entry.merged_into === id) throw new Error(`${where}.merged_into points at itself`);
+    if (reserved.has(entry.merged_into))
+      throw new Error(`${where}.merged_into is itself retired`);
+    if (typeof entry.note !== "string" || !entry.note)
+      throw new Error(`${where}.note must be a non-empty string`);
+    if (
+      entry.msp_posts != null &&
+      (!Array.isArray(entry.msp_posts) ||
+        !entry.msp_posts.length ||
+        entry.msp_posts.some((post) => typeof post !== "string" || !post))
+    ) {
+      throw new Error(`${where}.msp_posts must be a non-empty array of non-empty strings`);
+    }
+  }
   return migrations;
 }
 

@@ -1777,6 +1777,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          5.65,
+          35.675
+        ]
+      },
+      "properties": {
+        "id": "05-eph-10",
+        "name": "Etablissement Public Hospitalier Ras Layoune",
+        "name_fr": "Etablissement Public Hospitalier Ras Layoune",
+        "name_ar": "المؤسسة العمومية الاستشفائية راس العيون",
+        "wilaya_code": "05",
+        "commune_code": "0551",
+        "commune": "Ras El Aïoun",
+        "lat": 35.675,
+        "lng": 5.65,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "source": "msp",
+        "refs": {
+          "msp": "4417",
+          "msp_twin": "4419"
+        },
+        "type": "eph",
+        "type_label_fr": "Établissement Public Hospitalier",
+        "type_label_ar": "المؤسسة العمومية الاستشفائية",
+        "sector": "public",
+        "slug": "etablissement-public-hospitalier-ras-layoune"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.19062,
           35.24695
         ]
@@ -3155,7 +3188,7 @@
         "id": "08-ehs-02",
         "name": "Etablissement Hospitalier Spécialisé Mère et Enfant Mohamed Boudiaf Béchar",
         "name_fr": "Etablissement Hospitalier Spécialisé Mère et Enfant Mohamed Boudiaf Béchar",
-        "name_ar": null,
+        "name_ar": "المؤسسة الإستشفائية المتخصصة الام و الطفل محمد بوضياف بشار",
         "wilaya_code": "08",
         "commune_code": "0801",
         "commune": "Bechar",
@@ -3166,45 +3199,14 @@
         "source": "msp",
         "refs": {
           "osm": "way/273456230",
-          "msp": "3667"
+          "msp": "3667",
+          "msp_twin": "3669"
         },
         "type": "ehs",
         "type_label_fr": "Établissement Hospitalier Spécialisé",
         "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
         "sector": "public",
         "slug": "etablissement-hospitalier-specialise-mere-et-enfant-mohamed-boudiaf-bechar"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -2.21667,
-          31.61667
-        ]
-      },
-      "properties": {
-        "id": "08-ehs-03",
-        "name": "المؤسسة الإستشفائية المتخصصة الام و الطفل محمد بوضياف بشار",
-        "name_fr": null,
-        "name_ar": "المؤسسة الإستشفائية المتخصصة الام و الطفل محمد بوضياف بشار",
-        "wilaya_code": "08",
-        "commune_code": "0801",
-        "commune": "Bechar",
-        "lat": 31.61667,
-        "lng": -2.21667,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
-        "source": "msp",
-        "refs": {
-          "msp": "3669"
-        },
-        "type": "ehs",
-        "type_label_fr": "Établissement Hospitalier Spécialisé",
-        "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
-        "sector": "public",
-        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%ae%d8%b5%d8%b5%d8%a9-%d8%a7%d9%84%d8%a7%d9%85-%d9%88-%d8%a7"
       }
     },
     {
@@ -3547,6 +3549,39 @@
         ]
       },
       "properties": {
+        "id": "09-chu-01",
+        "name": "Centre Hospitalo Universitaire Bilda",
+        "name_fr": "Centre Hospitalo Universitaire Bilda",
+        "name_ar": "المركز الإستشفائي الجامعي بالبليدة",
+        "wilaya_code": "09",
+        "commune_code": "0901",
+        "commune": "Blida",
+        "lat": 36.47004,
+        "lng": 2.8319,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "source": "msp",
+        "refs": {
+          "msp": "3673",
+          "msp_twin": "3674"
+        },
+        "type": "chu",
+        "type_label_fr": "Centre Hospitalo-Universitaire",
+        "type_label_ar": "المركز الاستشفائي الجامعي",
+        "sector": "public",
+        "slug": "centre-hospitalo-universitaire-bilda"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8319,
+          36.47004
+        ]
+      },
+      "properties": {
         "id": "09-ehs-01",
         "name": "Etablissement Hospitalier Spécialisé Centre Anti Cancer Blida",
         "name_fr": "Etablissement Hospitalier Spécialisé Centre Anti Cancer Blida",
@@ -3840,8 +3875,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.568342,
-          36.422154
+          2.8619,
+          36.50393
         ]
       },
       "properties": {
@@ -3850,15 +3885,14 @@
         "name_fr": "Etablissement Public de Santé de Proximité Ouled Aiche",
         "name_ar": "المؤسسة العمومية للصحة الجوارية أولاد يعيش",
         "wilaya_code": "09",
-        "commune_code": "0922",
-        "commune": "Oued Djer",
-        "lat": 36.422154,
-        "lng": 2.568342,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "commune_code": "0907",
+        "commune": "Ouled Yaich",
+        "lat": 36.50393,
+        "lng": 2.8619,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "osm": "node/4452098893",
           "msp": "4502",
           "msp_twin": "4503"
         },
@@ -4107,6 +4141,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          4.26178,
+          36.3348
+        ]
+      },
+      "properties": {
+        "id": "10-epsp-01",
+        "name": "Etablissement Public de Santé de Proximité Ahnif",
+        "name_fr": "Etablissement Public de Santé de Proximité Ahnif",
+        "name_ar": "المؤسسة العمومية للصحة الجوارية أحنيف",
+        "wilaya_code": "10",
+        "commune_code": "1006",
+        "commune": "Hanif",
+        "lat": 36.3348,
+        "lng": 4.26178,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "source": "msp",
+        "refs": {
+          "msp": "4508",
+          "msp_twin": "4509"
+        },
+        "type": "epsp",
+        "type_label_fr": "Établissement Public de Santé de Proximité",
+        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
+        "sector": "public",
+        "slug": "etablissement-public-de-sante-de-proximite-ahnif"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.67,
           36.296667
         ]
@@ -4244,6 +4311,39 @@
         ]
       },
       "properties": {
+        "id": "11-ehs-01",
+        "name": "Etablissement Hospitalier Spécialisé Mère et Enfant Tamenghasset",
+        "name_fr": "Etablissement Hospitalier Spécialisé Mère et Enfant Tamenghasset",
+        "name_ar": "المؤسسة الاستشفائية المتخصصة الأم والطفل تمنراست",
+        "wilaya_code": "11",
+        "commune_code": "1101",
+        "commune": "Tamanrasset",
+        "lat": 22.788821,
+        "lng": 5.52278,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "source": "msp",
+        "refs": {
+          "msp": "4532",
+          "msp_twin": "4533"
+        },
+        "type": "ehs",
+        "type_label_fr": "Établissement Hospitalier Spécialisé",
+        "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
+        "sector": "public",
+        "slug": "etablissement-hospitalier-specialise-mere-et-enfant-tamenghasset"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.52278,
+          22.788821
+        ]
+      },
+      "properties": {
         "id": "11-eph-01",
         "name": "Etablissement Public Hospitalier Tamenrasset",
         "name_fr": "Etablissement Public Hospitalier Tamenrasset",
@@ -4265,6 +4365,73 @@
         "type_label_ar": "المؤسسة العمومية الاستشفائية",
         "sector": "public",
         "slug": "etablissement-public-hospitalier-tamenrasset"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.84722,
+          22.89
+        ]
+      },
+      "properties": {
+        "id": "11-epsp-01",
+        "name": "Etablissement Public de Santé de Proximité Abalessa (silet)",
+        "name_fr": "Etablissement Public de Santé de Proximité Abalessa (silet)",
+        "name_ar": "المؤسسة العمومية للصحة الجوارية أبلسة",
+        "wilaya_code": "11",
+        "commune_code": "1102",
+        "commune": "Abelsa",
+        "lat": 22.89,
+        "lng": 4.84722,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "source": "msp",
+        "refs": {
+          "msp": "4527",
+          "msp_twin": "4529"
+        },
+        "type": "epsp",
+        "type_label_fr": "Établissement Public de Santé de Proximité",
+        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
+        "sector": "public",
+        "slug": "etablissement-public-de-sante-de-proximite-abalessa-silet-2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.149845,
+          23.690893
+        ]
+      },
+      "properties": {
+        "id": "11-epsp-02",
+        "name": "Etablissement Public de Santé de Proximité In M’guel",
+        "name_fr": "Etablissement Public de Santé de Proximité In M’guel",
+        "name_ar": "المؤسسة العمومية للصحة الجوارية إن أمقل",
+        "wilaya_code": "11",
+        "commune_code": "1109",
+        "commune": "Ain Amguel",
+        "lat": 23.690893,
+        "lng": 5.149845,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
+        "source": "msp",
+        "refs": {
+          "osm": "node/4202804189",
+          "msp": "3727",
+          "msp_twin": "3728"
+        },
+        "type": "epsp",
+        "type_label_fr": "Établissement Public de Santé de Proximité",
+        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
+        "sector": "public",
+        "slug": "etablissement-public-de-sante-de-proximite-in-mguel"
       }
     },
     {
@@ -4298,38 +4465,6 @@
         "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
         "sector": "public",
         "slug": "etablissement-public-de-sante-de-proximite-tazrouk"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.84722,
-          22.89
-        ]
-      },
-      "properties": {
-        "id": "11-epsp-05",
-        "name": "المؤسسة العمومية للصحة الجوارية أبلسة",
-        "name_fr": null,
-        "name_ar": "المؤسسة العمومية للصحة الجوارية أبلسة",
-        "wilaya_code": "11",
-        "commune_code": "1102",
-        "commune": "Abelsa",
-        "lat": 22.89,
-        "lng": 4.84722,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
-        "source": "msp",
-        "refs": {
-          "msp": "4529"
-        },
-        "type": "epsp",
-        "type_label_fr": "Établissement Public de Santé de Proximité",
-        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
-        "sector": "public",
-        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%b9%d9%85%d9%88%d9%85%d9%8a%d8%a9-%d9%84%d9%84%d8%b5%d8%ad%d8%a9-%d8%a7%d9%84%d8%ac%d9%88%d8%a7%d8%b1%d9%8a%d8%a9-%d8%a3%d8%a8%d9%84%d8%b3"
       }
     },
     {
@@ -7908,8 +8043,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.8683,
-          36.468333
+          4.855743,
+          36.442259
         ]
       },
       "properties": {
@@ -7918,10 +8053,10 @@
         "name_fr": "Etablissement Public Hospitalier Beni Ouartilene",
         "name_ar": "المؤسسة العمومية الإستشفائية بني ورتيلان",
         "wilaya_code": "19",
-        "commune_code": "1909",
-        "commune": "Beni Chebana",
-        "lat": 36.468333,
-        "lng": 4.8683,
+        "commune_code": "1922",
+        "commune": "Beni Ourtilane",
+        "lat": 36.442259,
+        "lng": 4.855743,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "msp",
@@ -8626,6 +8761,40 @@
         "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
         "sector": "public",
         "slug": "etablissement-public-de-sante-de-proximite-sidi-boubekeur"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.837952,
+          36.652598
+        ]
+      },
+      "properties": {
+        "id": "21-ehs-01",
+        "name": "Etablissement Hospitalier Spécialisé Psychiatrique El Harrouche",
+        "name_fr": "Etablissement Hospitalier Spécialisé Psychiatrique El Harrouche",
+        "name_ar": "المؤسسة الإستشفائية المتخصصة في الأمراض العقلية بوغاغة البغدادي الحروش",
+        "wilaya_code": "21",
+        "commune_code": "2116",
+        "commune": "El Arrouch",
+        "lat": 36.652598,
+        "lng": 6.837952,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
+        "source": "msp",
+        "refs": {
+          "osm": "node/2239891060",
+          "msp": "4805",
+          "msp_twin": "4810"
+        },
+        "type": "ehs",
+        "type_label_fr": "Établissement Hospitalier Spécialisé",
+        "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
+        "sector": "public",
+        "slug": "etablissement-hospitalier-specialise-psychiatrique-el-harrouche"
       }
     },
     {
@@ -11311,6 +11480,40 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          0.266752,
+          35.748654
+        ]
+      },
+      "properties": {
+        "id": "27-eph-03",
+        "name": "Etablissement Public Hospitalier Boukirat",
+        "name_fr": "Etablissement Public Hospitalier Boukirat",
+        "name_ar": "المؤسسة العمومية الاستشفائية بوقيراط",
+        "wilaya_code": "27",
+        "commune_code": "2719",
+        "commune": "Bouguirat",
+        "lat": 35.748654,
+        "lng": 0.266752,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
+        "source": "msp",
+        "refs": {
+          "osm": "way/315303334",
+          "msp": "5024",
+          "msp_twin": "5023"
+        },
+        "type": "eph",
+        "type_label_fr": "Établissement Public Hospitalier",
+        "type_label_ar": "المؤسسة العمومية الاستشفائية",
+        "sector": "public",
+        "slug": "etablissement-public-hospitalier-boukirat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.169722,
           35.837222
         ]
@@ -11833,6 +12036,39 @@
         "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
         "sector": "public",
         "slug": "etablissement-public-de-sante-de-proximite-sidi-aissa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.133333,
+          35.4
+        ]
+      },
+      "properties": {
+        "id": "29-ehs-01",
+        "name": "Etablissement Hospitalier Spécialisé Mere et Enfant Belbouri Rahma",
+        "name_fr": "Etablissement Hospitalier Spécialisé Mere et Enfant Belbouri Rahma",
+        "name_ar": "المؤسسة الاستشفائية المتخصصة الأم والطفل بلبوري رحمة معسكر",
+        "wilaya_code": "29",
+        "commune_code": "2901",
+        "commune": "Mascara",
+        "lat": 35.4,
+        "lng": 0.133333,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "source": "msp",
+        "refs": {
+          "msp": "5085",
+          "msp_twin": "5071"
+        },
+        "type": "ehs",
+        "type_label_fr": "Établissement Hospitalier Spécialisé",
+        "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
+        "sector": "public",
+        "slug": "etablissement-hospitalier-specialise-mere-et-enfant-belbouri-rahma"
       }
     },
     {
@@ -12994,8 +13230,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.706944,
-          35.728611
+          -0.655698,
+          35.690754
         ]
       },
       "properties": {
@@ -13004,14 +13240,15 @@
         "name_fr": "Etablissement Hospitalier Spécialisé Mére et Enfant Hadj Abed Atika (oran)",
         "name_ar": "المؤسسة الاستشفائية المتخصصة الام و الطفل حاج عابد عتيقة وهران",
         "wilaya_code": "31",
-        "commune_code": "3115",
-        "commune": "Mers El Kebir",
-        "lat": 35.728611,
-        "lng": -0.706944,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "commune_code": "3101",
+        "commune": "Oran",
+        "lat": 35.690754,
+        "lng": -0.655698,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "way/293367044",
           "msp": "5166",
           "msp_twin": "5152"
         },
@@ -19431,6 +19668,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          5.9242,
+          33.953
+        ]
+      },
+      "properties": {
+        "id": "57-epsp-01",
+        "name": "Etablissement Public de Santé de Proximité Del Meghaier",
+        "name_fr": "Etablissement Public de Santé de Proximité Del Meghaier",
+        "name_ar": "المؤسسة العمومية للصحة الجوارية المغير",
+        "wilaya_code": "57",
+        "commune_code": "5701",
+        "commune": "El-M'ghaier",
+        "lat": 33.953,
+        "lng": 5.9242,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "source": "msp",
+        "refs": {
+          "msp": "5526",
+          "msp_twin": "5522"
+        },
+        "type": "epsp",
+        "type_label_fr": "Établissement Public de Santé de Proximité",
+        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
+        "sector": "public",
+        "slug": "etablissement-public-de-sante-de-proximite-del-meghaier"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           5.989239,
           33.530433
         ]
@@ -19490,6 +19760,39 @@
         "type_label_ar": "المؤسسة العمومية الاستشفائية",
         "sector": "public",
         "slug": "etablissement-public-hospitalier-el-menia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.885833,
+          30.57556
+        ]
+      },
+      "properties": {
+        "id": "58-epsp-01",
+        "name": "Etablissement Public de Santé de Proximité El Menea",
+        "name_fr": "Etablissement Public de Santé de Proximité El Menea",
+        "name_ar": "المؤسسة العمومية للصحة الجوارية المنيعة",
+        "wilaya_code": "58",
+        "commune_code": "5801",
+        "commune": "El Meniaa",
+        "lat": 30.57556,
+        "lng": 2.885833,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "source": "msp",
+        "refs": {
+          "msp": "5547",
+          "msp_twin": "5545"
+        },
+        "type": "epsp",
+        "type_label_fr": "Établissement Public de Santé de Proximité",
+        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
+        "sector": "public",
+        "slug": "etablissement-public-de-sante-de-proximite-el-menea"
       }
     }
   ]

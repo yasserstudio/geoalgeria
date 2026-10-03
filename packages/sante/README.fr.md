@@ -12,24 +12,24 @@
 
 </div>
 
-**670 établissements de santé publics** dans les **58 wilayas** dotées d'une
+**667 établissements de santé publics** dans les **58 wilayas** dotées d'une
 direction de la santé – établissements publics hospitaliers (EPH), de santé de
 proximité (EPSP), hospitaliers spécialisés (EHS) et centres hospitalo-universitaires
-(CHU) du **Ministère de la Santé (MSP)**, bilingues français/arabe, **587
-géolocalisés** (116 sur un point précis OpenStreetMap/Wikidata, 11 vérifiés à la
-main, 460 sur un centroïde de commune) avec rattachement commune/wilaya.
+(CHU) du **Ministère de la Santé (MSP)**, bilingues français/arabe, **596
+géolocalisés** (119 sur un point précis OpenStreetMap/Wikidata, 11 vérifiés à la
+main, 466 sur un centroïde de commune) avec rattachement commune/wilaya.
 Livré en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 > **Le volet communautaire vit dans [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques), et les deux ne doivent jamais être additionnés.**
 > Ce paquet est le volet *registre* : les établissements publics que gère le
 > ministère de la Santé, officiel et clos. `cliniques` est le volet
-> *communautaire* : 1 894 polycliniques, salles de soins, centres de santé,
+> *communautaire* : 1 917 polycliniques, salles de soins, centres de santé,
 > maternités et cliniques cartographiés par les contributeurs OpenStreetMap,
 > partiel par nature. Tout élément OSM référencé par un enregistrement d'ici en
 > est exclu par construction, donc aucun lieu n'est publié deux fois sous le
 > même élément, mais les deux décrivent des volets différents d'un système de
-> santé : additionner 670 et 1 894 ne compte rien de réel.
+> santé : additionner 667 et 1 917 ne compte rien de réel.
 
 ```bash
 npm install @geoalgeria/sante
@@ -38,7 +38,7 @@ npm install @geoalgeria/sante
 ```js
 import sante from "@geoalgeria/sante";
 
-const all = sante.sante();              // 670 établissements
+const all = sante.sante();              // 667 établissements
 
 // Hôpitaux publics d'une wilaya (jointure sur le wilaya_code de GeoAlgeria)
 const ephAlger = all.filter((e) => e.wilaya_code === "16" && e.type === "eph");
@@ -49,7 +49,7 @@ const mappable = all.filter((e) => e.lat != null);
 
 ## Ce que vous pouvez construire
 
-- **Localisateurs d'hôpitaux et de cliniques** – des coordonnées sur 587 des 670
+- **Localisateurs d'hôpitaux et de cliniques** – des coordonnées sur 596 des 667
   enregistrements, prêtes pour une carte ou une recherche de proximité.
 - **Annuaires de santé bilingues** – noms français et arabe, type officiel et
   wilaya pour chaque établissement.
@@ -60,15 +60,15 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
-| Établissements de santé | **670** | 587 géolocalisés | 58 wilayas, 588 bilingues |
+| Établissements de santé | **667** | 596 géolocalisés | 58 wilayas, 591 bilingues |
 
 **Par type**
 
 | Type | Nombre | Signification |
 | --- | --- | --- |
 | `eph` | 257 | Établissement Public Hospitalier |
-| `epsp` | 285 | Établissement Public de Santé de Proximité |
-| `ehs` | 104 | Établissement Hospitalier Spécialisé |
+| `epsp` | 283 | Établissement Public de Santé de Proximité |
+| `ehs` | 103 | Établissement Hospitalier Spécialisé |
 | `chu` | 19 | Centre Hospitalo-Universitaire |
 | `hopital` | 5 | autre hôpital public |
 
@@ -76,19 +76,19 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
-| `exact` | 127 | point précis : un établissement OSM ou Wikidata dans la commune, ou une position vérifiée à la main |
-| `approximate` | 460 | centroïde de la commune de l'établissement |
-| `null` | 83 | localité non rattachée à une commune – pas de coordonnées (`lat`/`lng` aussi `null`) |
+| `exact` | 130 | point précis : un établissement OSM ou Wikidata dans la commune, ou une position vérifiée à la main |
+| `approximate` | 466 | centroïde de la commune de l'établissement |
+| `null` | 71 | localité non rattachée à une commune – pas de coordonnées (`lat`/`lng` aussi `null`) |
 
 **Par méthode d'obtention** (`geo_method`)
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
-| `osm_point` | 113 | point précis d'un établissement OpenStreetMap dans la commune |
+| `osm_point` | 116 | point précis d'un établissement OpenStreetMap dans la commune |
 | `wikidata_point` | 3 | point précis d'un établissement Wikidata dans la commune |
-| `commune_centroid` | 460 | centroïde de la commune de l'établissement (approximatif) |
+| `commune_centroid` | 466 | centroïde de la commune de l'établissement (approximatif) |
 | `owner_verified` | 11 | position relevée sur la carte par le propriétaire du projet, via le registre de corrections révisées |
-| `null` | 83 | aucune méthode – l'enregistrement n'a pas de coordonnées |
+| `null` | 71 | aucune méthode – l'enregistrement n'a pas de coordonnées |
 
 > **Le registre est officiel ; les coordonnées sont au mieux.** Les noms, le type
 > et la wilaya proviennent du Ministère de la Santé. Le MSP ne publie pas de
@@ -117,7 +117,7 @@ chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
-  sante.json              # 670 établissements (tableau)
+  sante.json              # 667 établissements (tableau)
   metadata.json           # sources, totaux, couverture, updated
   retired-ids.json        # identifiants à jamais réservés, et où sont passées leurs données
   csv/sante.csv           # dépôt + Release (pas dans le tarball npm)
@@ -167,7 +167,7 @@ quand la coordonnée a été remplacée par un point précis. `geo_precision` va
 `null` ; `geo_method` indique comment la coordonnée a été obtenue (`osm_point`,
 `wikidata_point`, `commune_centroid`, `owner_verified`, ou `null`).
 `lat`/`lng`/`geo_precision`/
-`geo_method` valent tous `null` ensemble pour les 83 enregistrements dont la
+`geo_method` valent tous `null` ensemble pour les 71 enregistrements dont la
 localité n'a pu être rattachée à une commune.
 
 > **Les coordonnées et la commune sont dérivées, pas issues du MSP.** Le

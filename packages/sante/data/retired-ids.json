@@ -7,7 +7,7 @@
         "3584",
         "3585"
       ],
-      "note": "Merged into 01-eph-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3584 and 3585), and the two posts are one facility. 01-eph-03 is the older published id and carries both names."
+      "note": "Merged into 01-eph-03, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3584 and 3585 are one facility. Both ids were first published together, so neither is older: 01-eph-03 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "02-eph-08": {
       "merged_into": "02-eph-03",
@@ -15,7 +15,7 @@
         "3598",
         "3599"
       ],
-      "note": "Merged into 02-eph-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3598 and 3599), and the two posts are one facility. 02-eph-03 is the older published id and carries both names."
+      "note": "Merged into 02-eph-03, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3598 and 3599 are one facility. Both ids were first published together, so neither is older: 02-eph-03 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "02-eph-09": {
       "merged_into": "02-eph-02",
@@ -23,7 +23,7 @@
         "3841",
         "3840"
       ],
-      "note": "Merged into 02-eph-02: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3841 and 3840), and the two posts are one facility. 02-eph-02 is the older published id and carries both names."
+      "note": "Merged into 02-eph-02, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3841 and 3840 are one facility. Both ids were first published together, so neither is older: 02-eph-02 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "05-eph-13": {
       "merged_into": "05-eph-05",
@@ -31,7 +31,7 @@
         "3891",
         "3892"
       ],
-      "note": "Merged into 05-eph-05: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3891 and 3892), and the two posts are one facility. 05-eph-05 is the older published id and carries both names."
+      "note": "Merged into 05-eph-05, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3891 and 3892 are one facility. Both ids were first published together, so neither is older: 05-eph-05 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "05-eph-14": {
       "merged_into": "05-eph-01",
@@ -39,7 +39,7 @@
         "3895",
         "3896"
       ],
-      "note": "Merged into 05-eph-01: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3895 and 3896), and the two posts are one facility. 05-eph-01 is the older published id and carries both names."
+      "note": "Merged into 05-eph-01, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3895 and 3896 are one facility. Both ids were first published together, so neither is older: 05-eph-01 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "05-eph-15": {
       "merged_into": "05-eph-08",
@@ -47,7 +47,15 @@
         "3897",
         "3898"
       ],
-      "note": "Merged into 05-eph-08: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3897 and 3898), and the two posts are one facility. 05-eph-08 is the older published id and carries both names."
+      "note": "Merged into 05-eph-08, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3897 and 3898 are one facility. Both ids were first published together, so neither is older: 05-eph-08 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
+    },
+    "05-epsp-12": {
+      "merged_into": "05-epsp-05",
+      "msp_posts": [
+        "4399",
+        "4401"
+      ],
+      "note": "Merged into 05-epsp-05, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4399 and 4401 are one facility. Both ids were first published together, so neither is older: 05-epsp-05 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "07-epsp-07": {
       "merged_into": "07-epsp-03",
@@ -55,7 +63,7 @@
         "4458",
         "4459"
       ],
-      "note": "Merged into 07-epsp-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4458 and 4459), and the two posts are one facility. 07-epsp-03 is the older published id and carries both names."
+      "note": "Merged into 07-epsp-03, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4458 and 4459 are one facility. Both ids were first published together, so neither is older: 07-epsp-03 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "07-epsp-08": {
       "merged_into": "07-epsp-02",
@@ -63,7 +71,15 @@
         "4456",
         "4457"
       ],
-      "note": "Merged into 07-epsp-02: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4456 and 4457), and the two posts are one facility. 07-epsp-02 is the older published id and carries both names."
+      "note": "Merged into 07-epsp-02, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4456 and 4457 are one facility. Both ids were first published together, so neither is older: 07-epsp-02 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
+    },
+    "08-ehs-03": {
+      "merged_into": "08-ehs-02",
+      "msp_posts": [
+        "3667",
+        "3669"
+      ],
+      "note": "Merged into 08-ehs-02, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3667 and 3669 are one facility. Both ids were first published together, so neither is older: 08-ehs-02 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "08-ehs-04": {
       "merged_into": "08-ehs-01",
@@ -71,7 +87,7 @@
         "4484",
         "4485"
       ],
-      "note": "Merged into 08-ehs-01: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4484 and 4485), and the two posts are one facility. 08-ehs-01 is the older published id and carries both names."
+      "note": "Merged into 08-ehs-01, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4484 and 4485 are one facility. Both ids were first published together, so neither is older: 08-ehs-01 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "08-eph-06": {
       "merged_into": "08-eph-01",
@@ -79,7 +95,7 @@
         "4482",
         "4483"
       ],
-      "note": "Merged into 08-eph-01: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4482 and 4483), and the two posts are one facility. 08-eph-01 is the older published id and carries both names."
+      "note": "Merged into 08-eph-01, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4482 and 4483 are one facility. Both ids were first published together, so neither is older: 08-eph-01 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "08-eph-08": {
       "merged_into": "08-eph-05",
@@ -87,7 +103,7 @@
         "3665",
         "3666"
       ],
-      "note": "Merged into 08-eph-05: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3665 and 3666), and the two posts are one facility. 08-eph-05 is the older published id and carries both names."
+      "note": "Merged into 08-eph-05, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3665 and 3666 are one facility. Both ids were first published together, so neither is older: 08-eph-05 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "08-eph-09": {
       "merged_into": "08-eph-03",
@@ -95,7 +111,7 @@
         "4480",
         "4481"
       ],
-      "note": "Merged into 08-eph-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4480 and 4481), and the two posts are one facility. 08-eph-03 is the older published id and carries both names."
+      "note": "Merged into 08-eph-03, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4480 and 4481 are one facility. Both ids were first published together, so neither is older: 08-eph-03 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "09-epsp-05": {
       "merged_into": "09-epsp-04",
@@ -103,7 +119,15 @@
         "4502",
         "4503"
       ],
-      "note": "Merged into 09-epsp-04: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4502 and 4503), and the two posts are one facility. 09-epsp-04 is the older published id and carries both names."
+      "note": "Merged into 09-epsp-04, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4502 and 4503 are one facility. Both ids were first published together, so neither is older: 09-epsp-04 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
+    },
+    "11-epsp-05": {
+      "merged_into": "11-epsp-01",
+      "msp_posts": [
+        "4527",
+        "4529"
+      ],
+      "note": "Merged into 11-epsp-01, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4527 and 4529 are one facility. Both ids were first published together, so neither is older: 11-epsp-01 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "11-epsp-06": {
       "merged_into": "11-epsp-02",
@@ -111,7 +135,7 @@
         "3727",
         "3728"
       ],
-      "note": "Merged into 11-epsp-02: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3727 and 3728), and the two posts are one facility. 11-epsp-02 is the older published id and carries both names."
+      "note": "Merged into 11-epsp-02, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3727 and 3728 are one facility. Both ids were first published together, so neither is older: 11-epsp-02 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "11-epsp-07": {
       "merged_into": "11-epsp-03",
@@ -119,7 +143,7 @@
         "3729",
         "3730"
       ],
-      "note": "Merged into 11-epsp-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3729 and 3730), and the two posts are one facility. 11-epsp-03 is the older published id and carries both names."
+      "note": "Merged into 11-epsp-03, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3729 and 3730 are one facility. Both ids were first published together, so neither is older: 11-epsp-03 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "14-eph-06": {
       "merged_into": "14-eph-05",
@@ -127,7 +151,7 @@
         "3753",
         "3754"
       ],
-      "note": "Merged into 14-eph-05: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3753 and 3754), and the two posts are one facility. 14-eph-05 is the older published id and carries both names."
+      "note": "Merged into 14-eph-05, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3753 and 3754 are one facility. Both ids were first published together, so neither is older: 14-eph-05 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "16-ehs-13": {
       "merged_into": "16-ehs-03",
@@ -135,7 +159,7 @@
         "4660",
         "4661"
       ],
-      "note": "Merged into 16-ehs-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4660 and 4661), and the two posts are one facility. 16-ehs-03 is the older published id and carries both names."
+      "note": "Merged into 16-ehs-03, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4660 and 4661 are one facility. Both ids were first published together, so neither is older: 16-ehs-03 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "16-ehs-14": {
       "merged_into": "16-ehs-04",
@@ -143,7 +167,7 @@
         "4668",
         "4669"
       ],
-      "note": "Merged into 16-ehs-04: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4668 and 4669), and the two posts are one facility. 16-ehs-04 is the older published id and carries both names."
+      "note": "Merged into 16-ehs-04, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4668 and 4669 are one facility. Both ids were first published together, so neither is older: 16-ehs-04 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "16-ehs-15": {
       "merged_into": "16-ehs-06",
@@ -151,7 +175,7 @@
         "4666",
         "4667"
       ],
-      "note": "Merged into 16-ehs-06: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4666 and 4667), and the two posts are one facility. 16-ehs-06 is the older published id and carries both names."
+      "note": "Merged into 16-ehs-06, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4666 and 4667 are one facility. Both ids were first published together, so neither is older: 16-ehs-06 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "17-eph-08": {
       "merged_into": "17-eph-01",
@@ -159,7 +183,7 @@
         "4718",
         "4719"
       ],
-      "note": "Merged into 17-eph-01: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4718 and 4719), and the two posts are one facility. 17-eph-01 is the older published id and carries both names."
+      "note": "Merged into 17-eph-01, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4718 and 4719 are one facility. Both ids were first published together, so neither is older: 17-eph-01 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "17-eph-09": {
       "merged_into": "17-eph-07",
@@ -167,7 +191,7 @@
         "4706",
         "4707"
       ],
-      "note": "Merged into 17-eph-07: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4706 and 4707), and the two posts are one facility. 17-eph-07 is the older published id and carries both names."
+      "note": "Merged into 17-eph-07, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4706 and 4707 are one facility. Both ids were first published together, so neither is older: 17-eph-07 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "17-eph-10": {
       "merged_into": "17-eph-05",
@@ -175,7 +199,7 @@
         "3783",
         "3782"
       ],
-      "note": "Merged into 17-eph-05: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3783 and 3782), and the two posts are one facility. 17-eph-05 is the older published id and carries both names."
+      "note": "Merged into 17-eph-05, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3783 and 3782 are one facility. Both ids were first published together, so neither is older: 17-eph-05 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "17-epsp-06": {
       "merged_into": "17-epsp-03",
@@ -183,7 +207,7 @@
         "4712",
         "4713"
       ],
-      "note": "Merged into 17-epsp-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4712 and 4713), and the two posts are one facility. 17-epsp-03 is the older published id and carries both names."
+      "note": "Merged into 17-epsp-03, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4712 and 4713 are one facility. Both ids were first published together, so neither is older: 17-epsp-03 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "17-epsp-07": {
       "merged_into": "17-epsp-05",
@@ -191,7 +215,7 @@
         "4716",
         "4717"
       ],
-      "note": "Merged into 17-epsp-05: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4716 and 4717), and the two posts are one facility. 17-epsp-05 is the older published id and carries both names."
+      "note": "Merged into 17-epsp-05, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4716 and 4717 are one facility. Both ids were first published together, so neither is older: 17-epsp-05 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
     "19-chu-02": {
       "merged_into": "19-chu-01",
@@ -199,7 +223,7 @@
         "4748",
         "4749"
       ],
-      "note": "Merged into 19-chu-01: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4748 and 4749), and the two posts are one facility. 19-chu-01 is the older published id and carries both names."
+      "note": "Merged into 19-chu-01, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4748 and 4749 are one facility. Both ids were first published together, so neither is older: 19-chu-01 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     }
   },
   "ids": [
@@ -209,13 +233,16 @@
     "05-eph-13",
     "05-eph-14",
     "05-eph-15",
+    "05-epsp-12",
     "07-epsp-07",
     "07-epsp-08",
+    "08-ehs-03",
     "08-ehs-04",
     "08-eph-06",
     "08-eph-08",
     "08-eph-09",
     "09-epsp-05",
+    "11-epsp-05",
     "11-epsp-06",
     "11-epsp-07",
     "14-eph-06",

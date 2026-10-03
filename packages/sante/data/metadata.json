@@ -4,16 +4,16 @@
   "title_fr": "Établissements de santé publique d'Algérie",
   "title_ar": "المؤسسات الصحية العمومية الجزائرية",
   "title_en": "Algeria public health establishments",
-  "record_count": 670,
-  "geocoded_count": 587,
-  "geocoded_pct": 87.6,
+  "record_count": 667,
+  "geocoded_count": 596,
+  "geocoded_pct": 89.4,
   "precision": {
-    "exact": 127,
-    "approximate": 460
+    "exact": 130,
+    "approximate": 466
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. The registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 83 remain ungeocoded.",
+  "coverage_note": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 71 remain ungeocoded.",
   "wilayas_covered": 58,
   "bbox": [
     -8.140085,
@@ -50,21 +50,21 @@
   "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
   "updated": "2026-06-27",
   "by_type": {
-    "ehs": 104,
+    "ehs": 103,
     "eph": 257,
-    "epsp": 285,
+    "epsp": 283,
     "hopital": 5,
     "chu": 19
   },
   "by_sector": {
-    "public": 670
+    "public": 667
   },
   "by_geo_method": {
-    "commune_centroid": 460,
-    "osm_point": 113,
+    "commune_centroid": 466,
+    "osm_point": 116,
     "wikidata_point": 3,
     "owner_verified": 11
   },
-  "bilingual": 588,
+  "bilingual": 591,
   "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

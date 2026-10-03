@@ -12,7 +12,7 @@
 
 </div>
 
-**1 894 structures de soins géolocalisées** sur **66 wilayas**, toutes avec
+**1 917 structures de soins géolocalisées** sur **66 wilayas**, toutes avec
 coordonnées, classées par **type** (polyclinique · salle de soins · centre de
 santé · maternité · clinique), la plupart avec des noms arabes et/ou français, et
 un rattachement commune/wilaya. Extraites d'**OpenStreetMap**. C'est le **volet
@@ -29,7 +29,7 @@ npm install @geoalgeria/cliniques
 ```js
 import cliniques from "@geoalgeria/cliniques";
 
-const all = cliniques.cliniques();   // 1 894 structures géolocalisées
+const all = cliniques.cliniques();   // 1 917 structures géolocalisées
 
 // Le volet public de proximité d'une wilaya
 const proximite = cliniques.cliniquesByWilaya("16")
@@ -41,7 +41,7 @@ const urgences = all.filter((c) => c.emergency);
 
 ## Ce que vous pouvez construire
 
-- **Des localisateurs « soins près de chez moi »**, coordonnées sur les 1 894
+- **Des localisateurs « soins près de chez moi »**, coordonnées sur les 1 917
   enregistrements, prêts pour une carte ou un tri par distance.
 - **Des cartes de couverture de proximité**, comptez polycliniques et salles de
   soins par commune ou wilaya, les structures que les Algériens poussent en premier.
@@ -52,17 +52,17 @@ const urgences = all.filter((c) => c.emergency);
 
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
-| Structures de soins | **1 894** | ✅ toutes | 1 617 nommées, 66 wilayas |
+| Structures de soins | **1 917** | ✅ toutes | 1 610 nommées, 66 wilayas |
 
 **Par type**
 
 | Type | Nombre | Signification |
 | --- | --- | --- |
-| `clinique` | 1 098 | clinique (عيادة / مصحة), majoritairement privée |
-| `polyclinique` | 411 | polyclinique (عيادة متعددة الخدمات), volet public de proximité |
-| `salle_de_soins` | 206 | salle de soins / dispensaire (قاعة علاج / مستوصف) |
-| `centre_sante` | 137 | centre de santé / centre de soins (مركز صحي) |
-| `maternite` | 28 | maternité / clinique d'accouchement (مصحة توليد) |
+| `clinique` | 1 144 | clinique (عيادة / مصحة), majoritairement privée |
+| `polyclinique` | 406 | polyclinique (عيادة متعددة الخدمات), volet public de proximité |
+| `salle_de_soins` | 199 | salle de soins / dispensaire (قاعة علاج / مستوصف) |
+| `centre_sante` | 142 | centre de santé / centre de soins (مركز صحي) |
+| `maternite` | 26 | maternité / clinique d'accouchement (مصحة توليد) |
 
 > **C'est un extrait OpenStreetMap, pas un registre officiel.** La couverture est
 > partielle et inégale selon les wilayas, et trois wilayas (54 In Guezzam,
@@ -73,16 +73,16 @@ const urgences = all.filter((c) => c.emergency);
 > ne liste les cliniques privées. Les chiffres bougent au fil des contributions.
 
 > **Ce paquet ne republie jamais un élément OSM déjà publié par [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante), et les deux ne s'additionnent pas.**
-> `sante` est le volet *registre* : 695 établissements publics (CHU, EPH, EHS,
-> EPSP) du Ministère de la Santé. Ce paquet est le volet *communautaire*. 114 des
+> `sante` est le volet *registre* : 667 établissements publics (CHU, EPH, EHS,
+> EPSP) du Ministère de la Santé. Ce paquet est le volet *communautaire*. 116 des
 > enregistrements de `sante` référencent un élément OSM par identifiant, et
 > chacun de ces éléments est exclu ici **par construction** : aucun lieu n'est
 > publié deux fois sous le même élément OSM. Soyons précis sur ce que cela ne
-> garantit pas : les 581 autres enregistrements de `sante` ne portent aucune
+> garantit pas : les 551 autres enregistrements de `sante` ne portent aucune
 > référence OSM, donc un même établissement physique peut malgré tout figurer
 > dans les deux paquets, sous des coordonnées et des identifiants différents,
 > sans qu'aucun mécanisme ne puisse le détecter. Les deux décrivent des volets
-> différents : additionner 695 et 1 894 ne compte rien de réel.
+> différents : additionner 667 et 1 917 ne compte rien de réel.
 
 **Le type est déduit du nom.** Une polyclinique se nomme
 polyclinique/عيادة متعددة الخدمات, une salle de soins قاعة علاج/مستوصف/dispensaire,
@@ -126,13 +126,13 @@ doit jamais être lu comme EPH (public).
 d'enseignement), ou structurellement pour `polyclinique` et `salle_de_soins`
 (deux structures publiques par définition dans le système algérien) ; `private`
 sur `operator:type=private` ou un nom en privé/خاصة lu sur toutes les balises de
-nom, un enregistrement pouvant ne porter son signal que dans `name:en`. 629
-enregistrements sont publics, 67 privés, et les 1 184 restants demeurent `null`.
+nom, un enregistrement pouvant ne porter son signal que dans `name:en`. 616
+enregistrements sont publics, 67 privés, et les 1 234 restants demeurent `null`.
 La plupart des cliniques sont privées en pratique, mais la carte ne le dit pas.
 
 **Aussi sur chaque enregistrement :** `speciality` (depuis
-`healthcare:speciality`, sur 158), `address` (depuis les tags `addr:*`, sur 634),
-`phone` (sur 106), `opening_hours` (sur 166) et `emergency` (`true` sur les 68
+`healthcare:speciality`, sur 166), `address` (depuis les tags `addr:*`, sur 654),
+`phone` (sur 116), `opening_hours` (sur 168) et `emergency` (`true` sur les 69
 enregistrements tagués `emergency=yes`, jamais `false` : un silence de la carte
 n'est pas une affirmation d'absence d'urgences).
 
@@ -158,7 +158,7 @@ const all: Clinique[] = cliniques.cliniques();
 
 ```
 data/
-  cliniques.json              # 1 894 structures (tableau)
+  cliniques.json              # 1 917 structures (tableau)
   metadata.json               # sources, comptes, couverture, mise à jour
   csv/cliniques.csv           # dépôt + bundle Release (pas dans le tarball npm)
   geojson/cliniques.geojson   # entités Point

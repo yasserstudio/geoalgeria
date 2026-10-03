@@ -174,9 +174,18 @@ A second upstream entry for the same place, published by the source in the other
 language. The Ministry of Health registry lists every health establishment twice,
 once in French and once in Arabic under two post ids, so one establishment is two
 twin posts; the generator pairs them into one Bilingual record that cites both
-(`refs.msp` and `refs.msp_twin`), and the id the first-published post shipped
-under is the one the merged record keeps, because ids follow places.
+(`refs.msp` and `refs.msp_twin`). Both halves of a pair were first published in
+the same release, so neither id is older: the merged record keeps the
+**lower-sequence** id, which is always the French post's, because ids are
+sequenced by name and a Latin name sorts before an Arabic one.
 _Avoid_: duplicate, double, clone, Arabic record
+
+**Half-record**:
+A record standing for one Twin post while the other is published separately: half
+a facility's names, and its own coordinate. Merging the two retires the
+half-record's id, which `retired-ids.json` then reserves for good and forwards to
+the record that carries the data now.
+_Avoid_: partial record, orphan, fragment
 
 ### Search and normalization
 

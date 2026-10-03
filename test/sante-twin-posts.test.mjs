@@ -35,13 +35,16 @@ test("sante twins: every recovered pair is one bilingual record", () => {
   }
 });
 
-test("sante twins: the merged record keeps the older id and reserves the other", () => {
+test("sante twins: the merged record keeps the lower-sequence id and reserves the other", () => {
   for (const pair of report.pairs) {
     assert.ok(pair.absorbed_id, `${pair.kept_id} absorbed no id, so nothing was merged`);
-    // ids follow places: the id published first is the one that carries on
+    // Both halves were first published in the same release, so neither id is
+    // older. What decides is the sequence number: assignIds numbers a group by
+    // name, and the French name is Latin where the Arabic one is not, so the
+    // French half always holds the lower one. Consumers migrate one way only.
     assert.ok(
       pair.kept_id < pair.absorbed_id,
-      `${pair.kept_id} is not older than the id it absorbed, ${pair.absorbed_id}`,
+      `${pair.kept_id} is not the lower-sequence id of the two; it absorbed ${pair.absorbed_id}`,
     );
     assert.equal(byId.has(pair.absorbed_id), false, `${pair.absorbed_id} is still live`);
     assert.ok(retiredIds.has(pair.absorbed_id), `${pair.absorbed_id} is not reserved`);
@@ -120,4 +123,79 @@ test("sante twins: merging the Algiers EHS pair restores exact precision", () =>
   // Owner decision of 2026-10-02: the Kabyle given name محند, not the registry's
   // محمد, which stays documented in quality/overrides/sante.json.
   assert.match(byId.get("16-ehs-04").name_ar, /الدكتور معوش محند أمقران$/);
+});
+
+// The registry publishes the two posts at consecutive ids, but not always: a
+// wilaya entered out of order leaves a third post between them. A gap of two is
+// allowed on stronger name evidence, and this pins which pairs that reached.
+test("sante twins: a gap of two is the exception and each case is named", () => {
+  const far = report.pairs.filter((pair) => pair.msp_gap > 1);
+  assert.deepEqual(
+    far.map((pair) => `${pair.msp_fr}/${pair.msp_ar}`).sort(),
+    ["3667/3669", "4399/4401", "4527/4529"],
+    "the gap-two pairs are the Bechar mother-and-child EHS and the Barika and Abalessa EPSPs",
+  );
+  for (const pair of far) assert.equal(pair.msp_gap, 2, "nothing further apart than two ever pairs");
+  // the Oran gynaecology EHS is two posts from a different maternity it shares a
+  // specialty with, and the gate is what keeps them apart
+  const oran = report.refused_candidates.find((c) => c.msp_fr === "5130" && c.msp_ar === "5128");
+  assert.ok(oran, "the Oran gynaecology candidate must be reported");
+  assert.equal(oran.reason, "name_evidence_too_thin_for_the_gap");
+});
+
+// The Blida EPSP: the French post writes the commune Ouled Yaich as "Ouled
+// Aiche" and matched the wrong commune on the fragment "Oued", 28 km away, while
+// its Arabic twin names the commune outright. Taking the French half's geography
+// because it is French shipped the merged record in the wrong commune.
+test("sante twins: a merged record is placed by its better-matched half", () => {
+  const blida = byId.get("09-epsp-04");
+  assert.ok(blida, "09-epsp-04 is not in the shipped data");
+  assert.equal(blida.commune, "Ouled Yaich");
+  assert.equal(blida.commune_code, "0907");
+  // and the Ain Amguel EPSP, whose French post matches no commune at all, keeps
+  // the commune its Arabic post names and the OpenStreetMap point inside it
+  const amguel = byId.get("11-epsp-02");
+  assert.ok(amguel, "11-epsp-02 is not in the shipped data");
+  assert.equal(amguel.commune, "Ain Amguel");
+  assert.equal(amguel.geo_precision, "exact");
+  assert.equal(amguel.refs.osm, "node/4202804189");
+});
+
+// An absolute check on the two pinned coordinates, not a relative one: a pin that
+// silently drifts to another building still reads "exact" and still validates.
+// The radius is small enough that only the Wikidata point itself fits.
+test("sante twins: each pinned record sits on its Wikidata coordinate", () => {
+  const P625 = {
+    Q18785599: { lat: 27.8709, lng: -0.281111, name: "hopital d'Adrar" },
+    Q7894776: { lat: 35.693276, lng: -0.639028, name: "centre hospitalier universitaire d'Oran" },
+  };
+  const metres = (a, b) => {
+    const R = 6371000, d = Math.PI / 180;
+    const dLat = (b.lat - a.lat) * d, dLng = (b.lng - a.lng) * d;
+    const h =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(a.lat * d) * Math.cos(b.lat * d) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  };
+  for (const [item, point] of Object.entries(P625)) {
+    const record = records.find((r) => r.refs?.wikidata === item);
+    assert.ok(record, `${item} (${point.name}) is not attached to any record`);
+    const off = metres(record, point);
+    assert.ok(off <= 50, `${record.id} is ${Math.round(off)} m from ${item}'s P625 coordinate`);
+  }
+});
+
+// A Wikidata item is one real hospital, so two records citing it are the same
+// place published twice. The pins correct WHICH record an item belongs to, and
+// that means taking it off the record the matcher had given it to.
+test("sante twins: no external identifier is cited by two records", () => {
+  const owner = new Map();
+  for (const r of records)
+    for (const key of ["wikidata", "osm", "msp", "msp_twin"]) {
+      const value = r.refs?.[key];
+      if (!value) continue;
+      const ref = `${key === "msp_twin" ? "msp" : key}:${value}`;
+      assert.equal(owner.has(ref), false, `${ref} is on both ${owner.get(ref)} and ${r.id}`);
+      owner.set(ref, r.id);
+    }
 });

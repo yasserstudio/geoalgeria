@@ -201,6 +201,7 @@ test("specialtyCode: an Arabic chest facility is pneumo, not psy", () => {
 // has to pass a name check too, and the check has to cross two scripts.
 
 import {
+  betterPlaced,
   mspCarryKey,
   pairTwinPosts,
   resolveTwinPairs,
@@ -248,7 +249,7 @@ test("twinTokens: the facility class is not name evidence, the specialty is", ()
   assert.deepEqual(twinTokens(twinPost("fr", "1", "EPH", "HOPITAL CHLEF"), wset), []);
   // the specialty is read from the title, not from post.specialty: the generator
   // only records one for an EHS, and the ophthalmology hospitals of Bechar and
-  // Djelfa are filed as EPH. Their halves share nothing else — one writes the
+  // Djelfa are filed as EPH. Their halves share nothing else: one writes the
   // Greek root, the other "medicine of the eyes".
   assert.ok(
     twinTokens(twinPost("fr", "1", "Etablissement hospitalier Ophtalm Djelfa", "OPHTALM DJELFA"), new Set(["djelfa"]))
@@ -335,34 +336,39 @@ test("pairTwinPosts: a commune reached on a name fragment cannot veto a pair", (
 
 // The residual from the same review: the carry-over key was `(fr || ar).msp_id`,
 // the record's own primary post. A bilingual record stands for TWO registry
-// posts, so that key moved whenever the pairing did — losing the French post
+// posts, so that key moved whenever the pairing did: losing the French post
 // flipped the key to the Arabic one, retired the published id, and minted a new
 // one for a place that had not moved. Resolving the key through either post
 // pins it in both directions.
 test("mspCarryKey: losing or gaining a twin post keeps the published id", () => {
   const committed = [{ id: "01-eph-03", refs: { msp: "3584", msp_twin: "3585" } }];
-  const keyOf = mspCarryKey(committed);
-  // the committed record keys to itself
-  assert.equal(keyOf(committed[0]), "msp:3584");
+  // the committed record keys on its own primary post
+  assert.equal(mspCarryKey(committed)(committed[0]), "msp:3584");
   // the registry drops the French post: the surviving Arabic one keys the same
-  assert.equal(keyOf({ refs: { msp: "3585" } }), "msp:3584");
+  const lost = [{ refs: { msp: "3585" } }];
+  assert.equal(mspCarryKey(committed, lost)(lost[0]), "msp:3584");
   // and so does the pair, however the halves are ordered
-  assert.equal(keyOf({ refs: { msp: "3584", msp_twin: "3585" } }), "msp:3584");
+  const kept = [{ refs: { msp: "3584", msp_twin: "3585" } }];
+  assert.equal(mspCarryKey(committed, kept)(kept[0]), "msp:3584");
+  // the registry adds a French post to a record that shipped Arabic-only
+  const arOnly = [{ id: "01-eph-05", refs: { msp: "3585" } }];
+  const gained = [{ refs: { msp: "3584", msp_twin: "3585" } }];
+  assert.equal(mspCarryKey(arOnly, gained)(gained[0]), "msp:3585");
   // the merge itself: two committed half-records, one surviving pair, and the
-  // older published id is the one that carries on
+  // lower-sequence id is the one that carries on
   const halves = [
     { id: "16-ehs-03", refs: { msp: "4660" } },
     { id: "16-ehs-13", refs: { msp: "4661" } },
   ];
-  const merged = mspCarryKey(halves);
-  assert.equal(merged({ refs: { msp: "4660", msp_twin: "4661" } }), "msp:4660");
+  const merged = [{ refs: { msp: "4660", msp_twin: "4661" } }];
+  assert.equal(mspCarryKey(halves, merged)(merged[0]), "msp:4660");
   // a post the committed data never carried keys to itself, not to nothing
-  assert.equal(keyOf({ refs: { msp: "9999" } }), "msp:9999");
+  assert.equal(mspCarryKey(committed)({ refs: { msp: "9999" } }), "msp:9999");
   // and a record with no registry post at all still falls back to OSM/Wikidata
-  assert.equal(keyOf({ refs: { osm: "way/1" } }), "osm:way/1");
+  assert.equal(mspCarryKey(committed)({ refs: { osm: "way/1" } }), "osm:way/1");
 });
 
-test("resolveTwinPairs: the kept id is the older one and the absorbed one migrates", () => {
+test("resolveTwinPairs: the kept id is the lower-sequence one and the absorbed one migrates", () => {
   const twins = [
     { paired: true, reason: "shared_key", wilaya_code: "16", type: "ehs", msp_fr: "4660", msp_ar: "4661" },
     { paired: false, reason: "name_conflict", wilaya_code: "16", type: "ehs", msp_fr: "4668", msp_ar: "4667" },
@@ -387,4 +393,137 @@ test("resolveTwinPairs: the kept id is the older one and the absorbed one migrat
   const replay = resolveTwinPairs(twins, rows, rows, migrations);
   assert.equal(replay.pairs[0].absorbed_id, "16-ehs-13");
   assert.deepEqual(replay.migrations, migrations);
+});
+
+// The locative elements Algerian place names are built from are as shared as the
+// facility classes: 121 of 1,541 communes begin "Ain", 96 "Sidi", 65 "Ouled".
+// Agreeing on one of them says only that both names are an Ouled something, and
+// it was the whole of the evidence that paired the Blida EPSP, whose halves also
+// resolved to two communes 28 km apart.
+test("twinTokens: a locative element of a place name is not name evidence", () => {
+  const wset = new Set(["blida"]);
+  const keys = twinTokens(twinPost("fr", "4502", "EPSP OULED AICHE", "OULED AICHE", { type: "epsp" }), wset);
+  assert.equal(keys.includes("ld"), false, "ouled must not key");
+  for (const locative of ["ain", "sidi", "ouled", "aoulad", "oued", "beni", "bni", "bordj", "hassi", "souk", "tizi"])
+    assert.deepEqual(
+      twinTokens(twinPost("fr", "1", `EPSP ${locative}`, locative.toUpperCase(), { type: "epsp" }), wset),
+      [],
+      `${locative} should leave no key`,
+    );
+});
+
+// The veto used to run only when the names said nothing, so a pair that agreed on
+// one locative element kept a commune disagreement. It now runs on every accept.
+test("pairTwinPosts: two communes both halves name outright veto any accept reason", () => {
+  const wil = { byCode: new Map([["09", { code: "09", name_fr: "Blida", name_ar: "البليدة" }]]) };
+  const commune = (code, name_fr) => ({ code_commune: code, name_fr });
+  const fr = [twinPost("fr", "100", "EPSP Barika", "BARIKA", {
+    wilayaCode: "09", type: "epsp", commune: commune(922, "Oued Djer"), communeHow: "exact",
+  })];
+  const ar = [twinPost("ar", "101", "المؤسسة العمومية للصحة الجوارية بريكه", "بريكه", {
+    wilayaCode: "09", type: "epsp", commune: commune(907, "Ouled Yaich"), communeHow: "exact",
+  })];
+  const verdict = pairTwinPosts(fr, ar, wil)[0].verdict;
+  assert.ok(verdict.shared_keys > 0, "the names do agree on something specific");
+  assert.equal(verdict.paired, false);
+  assert.equal(verdict.reason, "different_commune");
+});
+
+// A gap of 2 means a third post was published between the two, so the name
+// evidence has to be stronger. The Oran gynaecology EHS is the case that forces
+// it: it shares its specialty and the word "pines" with a different maternity two
+// posts away, and three agreeing keys out of five is not the whole of either name.
+test("pairTwinPosts: a gap of two needs a complete match or a shared commune", () => {
+  const wil = { byCode: new Map([["05", { code: "05", name_fr: "Batna", name_ar: "باتنة" }]]) };
+  const at = (lang, msp, title, locality, extra) =>
+    twinPost(lang, msp, title, locality, { wilayaCode: "05", type: "epsp", ...extra });
+  // everything the briefer side offers is matched: Barika, بريكه
+  const complete = pairTwinPosts(
+    [at("fr", "4399", "EPSP BARIKA", "BARIKA")],
+    [at("ar", "4401", "المؤسسة العمومية للصحة الجوارية بريكه", "بريكه")],
+    wil,
+  )[0].verdict;
+  assert.equal(complete.msp_gap, 2);
+  assert.equal(complete.paired, true);
+  // a partial agreement, where each side still names something the other does
+  // not and the communes cannot vouch for them, is refused at this gap
+  const partialFr = at("fr", "4399", "EPSP BARIKA MERLAOUA", "BARIKA MERLAOUA");
+  const partialAr = at("ar", "4401", "المؤسسة العمومية للصحة الجوارية بريكه تكوت", "بريكه تكوت");
+  const thin = pairTwinPosts([partialFr], [partialAr], wil)[0].verdict;
+  assert.ok(thin.shared_keys > 0 && thin.fr_keys.length > 1 && thin.ar_keys.length > 1);
+  assert.equal(thin.paired, false);
+  assert.equal(thin.reason, "name_evidence_too_thin_for_the_gap");
+  // the same partial agreement does pair at a gap of 1
+  const near = pairTwinPosts(
+    [partialFr],
+    [at("ar", "4400", "المؤسسة العمومية للصحة الجوارية بريكه تكوت", "بريكه تكوت")],
+    wil,
+  )[0].verdict;
+  assert.equal(near.msp_gap, 1);
+  assert.equal(near.paired, true);
+  // and a gap of three is not a candidate at all
+  assert.deepEqual(
+    pairTwinPosts([at("fr", "4399", "EPSP BARIKA", "BARIKA")], [at("ar", "4402", "EPSP", "بريكه")], wil),
+    [],
+  );
+});
+
+// The merged record used to take its geography from whichever half was French.
+// The Arabic post of the Ain Amguel EPSP names its commune outright where the
+// French one, "IN M'GUEL", matches nothing, so the merge shipped no commune, no
+// coordinate, and nothing for the OpenStreetMap pass to find a facility inside.
+test("betterPlaced: the merged record takes the better-matched commune", () => {
+  const weak = { commune: { code_commune: 922, name_fr: "Oued Djer" }, communeHow: "token_partial" };
+  const named = { commune: { code_commune: 907, name_fr: "Ouled Yaich" }, communeHow: "exact" };
+  const unplaced = { commune: null, communeHow: null };
+  assert.equal(betterPlaced(weak, named), named);
+  assert.equal(betterPlaced(named, weak), named);
+  assert.equal(betterPlaced(unplaced, named), named);
+  assert.equal(betterPlaced(named, unplaced), named);
+  // a tie keeps the French half, so the choice is stable
+  const alsoNamed = { commune: { code_commune: 101, name_fr: "Adrar" }, communeHow: "exact" };
+  assert.equal(betterPlaced(named, alsoNamed), named);
+  // and a lone half is itself
+  assert.equal(betterPlaced(null, named), named);
+  assert.equal(betterPlaced(named, null), named);
+});
+
+// The Arabic half only places the record when its match names the commune and
+// nothing else. A person's name reads as a commune on one word: "مصطفى باشا"
+// hits Baba Hassen on باشا, and the Mustapha Pacha CHU is not in Baba Hassen.
+test("betterPlaced: an Arabic match that leaves a given name over does not place", () => {
+  const unplacedFr = { lang: "fr", commune: null, communeHow: null };
+  const ar = (locality, name_ar, communeHow) => ({
+    lang: "ar",
+    locality,
+    commune: { code_commune: 1, name_ar },
+    communeHow,
+  });
+  // Ain Amguel: every long word of the locality belongs to the commune name
+  const amguel = ar("ان امقل", "عين امقل", "token");
+  assert.equal(betterPlaced(unplacedFr, amguel), amguel);
+  // Mustapha Pacha: مصطفي is left over, so the French half (no commune) stands
+  assert.equal(betterPlaced(unplacedFr, ar("مصطفي باشا", "بابا حسن", "token")), unplacedFr);
+  // and a fragment match never places, whatever the French half has
+  assert.equal(betterPlaced(unplacedFr, ar("مريم بوعتوره", "اولاد سلام", "token_partial")), unplacedFr);
+});
+
+// If a merged pair is ever split back into two records, both halves are present
+// at once and both would resolve to the French post's committed id. Handing one
+// committed id to two records makes carryOverIds throw, so the resolution is an
+// assignment: the half that owns the primary post keeps the merged id and the
+// other keys on its own post and takes a fresh one. The id its half-record held
+// before the merge stays retired and is never handed back.
+test("mspCarryKey: a merged pair that splits does not claim one id twice", () => {
+  const committed = [{ id: "01-eph-03", refs: { msp: "3584", msp_twin: "3585" } }];
+  const rows = [
+    { id: "01-eph-03", refs: { msp: "3584" } },
+    { id: "01-eph-07", refs: { msp: "3585" } },
+  ];
+  const keyOf = mspCarryKey(committed, rows);
+  assert.equal(keyOf(rows[0]), "msp:3584");
+  assert.equal(keyOf(rows[1]), "msp:3585");
+  assert.notEqual(keyOf(rows[0]), keyOf(rows[1]));
+  // the committed record still keys on its own primary post
+  assert.equal(keyOf(committed[0]), "msp:3584");
 });
