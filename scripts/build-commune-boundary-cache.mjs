@@ -38,6 +38,11 @@
 //   research/_commune-centres/commune-boundaries.json
 //       the reduced polygons, undated on purpose: a standing reference the guard
 //       reads on every run, refreshed in place.
+//   research/_commune-centres/commune-boundaries.provenance.json
+//       the cache's content digest, held in its own file so the geometry and the
+//       proof of it are two committed files rather than one. The reasoning is in
+//       scripts/lib/boundary-cache-provenance.mjs; the gate is
+//       test/boundary-cache-provenance.test.mjs.
 //   research/_commune-centres/containment-exceptions.json
 //       the documented exceptions, one reason each: every commune the guard cannot
 //       decide (no OSM relation, unusable geometry) and every centre still outside
@@ -46,31 +51,60 @@
 //       the seat delta as a report. No test reads it.
 //
 // USAGE
+//   node scripts/build-commune-boundary-cache.mjs --fetch-geometry --write
+//       pull `out geom` for the relations the committed audit matched, reduce it and
+//       write everything. One Overpass request; it is 52 MB and rate-limited.
 //   node scripts/build-commune-boundary-cache.mjs --from-raw-geometry --write
-//       reduce the local (gitignored) `out geom` pull and write everything
+//       the same from a local (gitignored) pull, optionally at --raw-geometry <path>
+//   node scripts/build-commune-boundary-cache.mjs --write
+//       re-emit the committed cache, its digest, the exceptions and the report with
+//       nothing refetched. Deterministic: identical input, identical bytes.
 //   node scripts/build-commune-boundary-cache.mjs
 //       re-verify the committed cache against the current data, write nothing
+//   node scripts/build-commune-boundary-cache.mjs --verdicts <path>
+//       the same, and write the verdicts the refresh workflow diffs, nothing else
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { canonicalCommunes } from "./lib/commune-index.mjs";
+import {
+  PROVENANCE_FILE,
+  boundaryCacheHash,
+  sealEnvelope,
+  serialiseCache,
+  serialiseProvenance,
+} from "./lib/boundary-cache-provenance.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const RESEARCH = join(ROOT, "research", "_commune-centres");
 const PULL = "2026-09-29";
 const PULL_DIR = join(RESEARCH, `osm-${PULL}`);
-const RAW_GEOM = join(PULL_DIR, "overpass-geometry-raw.json");
 const AUDIT = join(RESEARCH, `audit-${PULL}.json`);
 const SEATS = join(RESEARCH, "osm-seat-reference.json");
 const CACHE = join(RESEARCH, "commune-boundaries.json");
+const PROVENANCE = join(RESEARCH, PROVENANCE_FILE);
 const EXCEPTIONS = join(RESEARCH, "containment-exceptions.json");
 const REPORT = join(RESEARCH, `seat-distance-${PULL}.md`);
 
-const FROM_RAW_GEOMETRY = process.argv.includes("--from-raw-geometry");
+/** `--flag value`, so the refresh workflow can point at its own paths. */
+const option = (name) => {
+  const at = process.argv.indexOf(name);
+  return at === -1 ? null : (process.argv[at + 1] ?? null);
+};
+
+const FETCH_GEOMETRY = process.argv.includes("--fetch-geometry");
+const RAW_GEOM = option("--raw-geometry") ?? join(PULL_DIR, "overpass-geometry-raw.json");
+const FROM_RAW_GEOMETRY = process.argv.includes("--from-raw-geometry") || FETCH_GEOMETRY;
+const VERDICTS = option("--verdicts");
 const WRITE = process.argv.includes("--write");
 
+// One endpoint for the whole run, for the reason scripts/audit-commune-centres.mjs
+// states: Overpass mirrors are independently replicated and drift by hours, so a
+// pull split across two of them compares rows against two planet states.
+const ENDPOINT = "https://overpass-api.de/api/interpreter";
+const UA = "geoalgeria-data/1.0 (+https://geoalgeria.com)";
 const LICENCE = "ODbL 1.0, (c) OpenStreetMap contributors";
 
 // ~55 m of Douglas-Peucker, at 5 decimals (~1.1 m). Chosen as the coarsest rung
@@ -191,6 +225,28 @@ function distanceToRings(point, ringSets) {
 const DEG_M = 111_320;
 const marginMetres = (deg, lat) => Math.round(deg * DEG_M * Math.cos((lat * Math.PI) / 180));
 
+// --- the pull -----------------------------------------------------------------
+
+/**
+ * Fetch the `out geom` pull for exactly the relations the committed audit matched,
+ * and keep it. It is 52 MB and Overpass is rate-limited, so the response is written
+ * to a gitignored file first: a rebuild that then fails is re-run from the file with
+ * --from-raw-geometry rather than by asking the mirror again.
+ */
+async function fetchGeometry(relationIds, into) {
+  const query = `[out:json][timeout:900];\nrel(id:${relationIds.join(",")});\nout geom;\n`;
+  const response = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: { "content-type": "application/x-www-form-urlencoded", "user-agent": UA },
+    body: `data=${encodeURIComponent(query)}`,
+  });
+  if (!response.ok) throw new Error(`Overpass ${response.status} ${response.statusText}`);
+  const text = await response.text();
+  writeFileSync(into, text);
+  console.log(`fetched ${relationIds.length} relation(s) into ${into} (${text.length} bytes)`);
+  return JSON.parse(text);
+}
+
 // --- the data under test ------------------------------------------------------
 
 const centres = new Map(
@@ -206,7 +262,12 @@ const relationOf = new Map(audit.all.map((r) => [r.code_commune, r.osm.relation]
 
 let cache;
 if (FROM_RAW_GEOMETRY) {
-  const rawGeom = JSON.parse(readFileSync(RAW_GEOM, "utf-8"));
+  const rawGeom = FETCH_GEOMETRY
+    ? await fetchGeometry(
+        [...new Set(relationOf.values())].filter((id) => Number.isInteger(id)).sort((a, b) => a - b),
+        RAW_GEOM,
+      )
+    : JSON.parse(readFileSync(RAW_GEOM, "utf-8"));
   const byId = new Map(rawGeom.elements.filter((e) => e.type === "relation").map((r) => [r.id, r]));
   const communes = [];
   const disagreements = [];
@@ -249,21 +310,22 @@ if (FROM_RAW_GEOMETRY) {
     for (const d of disagreements) console.error(`  ${d}`);
     process.exit(1);
   }
-  cache = {
-    generated: PULL,
+  // `generated`, `note`, `query` and the relation identity are set by sealEnvelope,
+  // which both this path and a plain re-emit go through, so the two write the same
+  // bytes from the same pull. `generated` follows timestamp_osm_base rather than the
+  // clock: an unchanged OSM base must leave no diff for the refresh workflow to open
+  // a pull request about.
+  cache = sealEnvelope({
     source: "OpenStreetMap admin_level=8 commune relations with full geometry (`out geom`), via Overpass",
-    endpoint: "https://overpass-api.de/api/interpreter",
-    timestamp_osm_base: JSON.parse(readFileSync(RAW_GEOM, "utf-8")).osm3s?.timestamp_osm_base ?? null,
+    endpoint: ENDPOINT,
+    timestamp_osm_base: rawGeom.osm3s?.timestamp_osm_base ?? null,
     licence: LICENCE,
-    note:
-      "The commune outlines test/commune-centre-in-commune.test.mjs reads. Reduced from the 52 MB `out geom` pull, which stays local: outer and inner rings stitched from the relation's way members, simplified with Douglas-Peucker at tolerance_deg and rounded to 5 decimals. Undated in effect: refresh it in place with `node scripts/build-commune-boundary-cache.mjs --from-raw-geometry --write` and review the diff. Every stored centre's verdict was proved identical against the unsimplified rings before this file was written; `margin_m` is each centre's distance to the reduced boundary, negative-free because it is an unsigned distance, so a small value marks a row where the reduction is close to doing the deciding.",
     tolerance_deg: TOLERANCE_DEG,
     precision: PRECISION,
-    count: communes.length,
     communes,
-  };
+  });
 } else {
-  cache = JSON.parse(readFileSync(CACHE, "utf-8"));
+  cache = sealEnvelope(JSON.parse(readFileSync(CACHE, "utf-8")));
 }
 
 // --- the verdict over the current data ---------------------------------------
@@ -312,14 +374,47 @@ for (const [code, commune] of [...centres].sort((a, b) => a[0] - b[0])) {
       seat_delta_m: auditRow.get(code)?.delta_m ?? null,
       reason: whyNotCorrected(code),
     });
-  else if (boundary.margin_m <= Math.round(TOLERANCE_DEG * DEG_M)) nearEdge.push(`${commune.name_fr} (${code}) ${boundary.margin_m} m`);
+  else if (boundary.margin_m <= Math.round(TOLERANCE_DEG * DEG_M))
+    nearEdge.push({ code_commune: code, wilaya_code: Number(commune.wilaya_code), name_fr: commune.name_fr, margin_m: boundary.margin_m });
 }
 
 console.log(`boundary cache: ${cache.count} commune(s), tolerance ${cache.tolerance_deg} deg, OSM ${cache.timestamp_osm_base}`);
+console.log(`  sha256: ${boundaryCacheHash(cache)}`);
 console.log(`  undecidable: ${undecidable.length} (no usable OSM boundary)`);
 console.log(`  outside their own commune: ${outside.length}`);
 console.log(`  inside but within the reduction tolerance of the boundary: ${nearEdge.length}`);
-for (const n of nearEdge) console.log(`    ${n}`);
+for (const n of nearEdge) console.log(`    ${n.name_fr} (${n.code_commune}) ${n.margin_m} m`);
+
+// --- the verdicts, for the refresh workflow to diff ---------------------------
+// Written on request and nowhere near the committed files: the refresh workflow
+// takes one of these from the committed cache and one from the rebuilt cache, and
+// scripts/diff-boundary-verdicts.mjs decides from the pair whether anything a human
+// has to read actually moved.
+
+if (VERDICTS) {
+  writeFileSync(
+    VERDICTS,
+    `${JSON.stringify(
+      {
+        cache: {
+          generated: cache.generated,
+          timestamp_osm_base: cache.timestamp_osm_base,
+          tolerance_deg: cache.tolerance_deg,
+          count: cache.count,
+          relation_count: cache.relation_count,
+          sha256: boundaryCacheHash(cache),
+        },
+        counts: { outside: outside.length, undecidable: undecidable.length, near_edge: nearEdge.length },
+        outside,
+        undecidable,
+        near_edge: nearEdge,
+      },
+      null,
+      2,
+    )}\n`,
+  );
+  console.log(`wrote ${VERDICTS}`);
+}
 
 // --- the seat delta, as a report ----------------------------------------------
 
@@ -356,27 +451,22 @@ console.log(`seat deltas after this batch: >300 m ${report.over(300)} · >1 km $
 
 if (!WRITE) process.exit(0);
 
-// Pretty-printed envelope, one commune per line. The 1.03 million way vertices
-// reduce to ~188,000, and JSON.stringify's 2-space indent spends 8.5 MB on
-// newlines and indentation for them; one line per commune is the same data at
-// under half the bytes and is still the diff a reviewer reads, because a commune
-// whose outline changed is exactly one changed line.
-const { communes: communeRows, ...envelope } = cache;
-const head = JSON.stringify(envelope, null, 2).replace(/\n}$/, "");
-writeFileSync(
-  CACHE,
-  `${head},\n  "communes": [\n${communeRows.map((c) => `    ${JSON.stringify(c)}`).join(",\n")}\n  ]\n}\n`,
-);
+// The cache and the digest that proves it, written together and never apart:
+// scripts/lib/boundary-cache-provenance.mjs owns both serialisations so the file on
+// disk and the hash in the sidecar can only ever have been computed from the same
+// document.
+writeFileSync(CACHE, serialiseCache(cache));
+writeFileSync(PROVENANCE, serialiseProvenance(cache));
 
 writeFileSync(
   EXCEPTIONS,
   `${JSON.stringify(
     {
-      generated: PULL,
+      generated: cache.generated,
       guard: "test/commune-centre-in-commune.test.mjs",
       licence: LICENCE,
       note:
-        "Every commune the containment guard does not hold to its own polygon, with the reason. `no_boundary` is what cannot be decided at all: OpenStreetMap carries no usable admin_level=8 geometry, so there is nothing to be inside of. `exceptions` is a centre still outside its own commune, which is a known defect waiting on evidence, not a tolerance. Both lists are exact in both directions: a commune that stops needing its entry fails the guard rather than keeping it. Regenerate with `node scripts/build-commune-boundary-cache.mjs --from-raw-geometry --write`.",
+        "Every commune the containment guard does not hold to its own polygon, with the reason. `no_boundary` is what cannot be decided at all: OpenStreetMap carries no usable admin_level=8 geometry, so there is nothing to be inside of. `exceptions` is a centre still outside its own commune, which is a known defect waiting on evidence, not a tolerance. Both lists are exact in both directions: a commune that stops needing its entry fails the guard rather than keeping it. Regenerate with `node scripts/build-commune-boundary-cache.mjs --fetch-geometry --write`.",
       no_boundary: undecidable,
       count: outside.length,
       exceptions: outside,
@@ -437,4 +527,4 @@ ${table}
 `,
 );
 
-console.log(`wrote commune-boundaries.json (${cache.count}), containment-exceptions.json (${outside.length} + ${undecidable.length} no_boundary), seat-distance-${PULL}.md`);
+console.log(`wrote commune-boundaries.json (${cache.count}), commune-boundaries.provenance.json, containment-exceptions.json (${outside.length} + ${undecidable.length} no_boundary), seat-distance-${PULL}.md`);
