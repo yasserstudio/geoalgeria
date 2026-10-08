@@ -211,9 +211,10 @@ notice is read as of its date, not as a standing claim.
 ## 6. Long-haul returns and flight numbers, from the NW26 filings
 
 Every row in this section is Reported tier, and every one ships `verified` rather
-than `listed` because its filing states the operator, the direction, the flight
-number and the times. None of them ships `days`: the filings give weekly
-frequencies, never day names.
+than `listed` because its filing states the operator, the direction, the times and
+a flight number. None of them ships `days`: the filings give weekly frequencies,
+never day names. Three ship no `flight` either, each for its own reason, given
+under the table.
 
 | Pair | Change | Flight | Source |
 | --- | --- | --- | --- |
@@ -222,10 +223,10 @@ frequencies, never day names.
 | `pek-alg` | **new**, active | `AH 3061` | <https://www.aeroroutes.com/eng/260416-ahmay26pek> |
 | `can-alg` | **new**, active | `AH 3181` | <https://www.aeroroutes.com/eng/260620-ahnw26cankul> |
 | `kul-alg` | **new**, active | `AH 3157` | <https://www.aeroroutes.com/eng/260620-ahnw26cankul> |
-| `dla-alg` | **new**, active | `AH 5349` | <https://www.aeroroutes.com/eng/260629-ahnw26> |
-| `alg-dla` | flight corrected | `AH 5350` to `AH 5348` | <https://www.aeroroutes.com/eng/260629-ahnw26> |
-| `alg-lbv` | promoted from `listed` | `AH 5040` | <https://www.aeroroutes.com/eng/260629-ahnw26> |
-| `lbv-alg` | **new**, active | `AH 5041` | <https://www.aeroroutes.com/eng/260629-ahnw26> |
+| `dla-alg` | **new**, active | null, see below | <https://www.aeroroutes.com/eng/260629-ahnw26> |
+| `alg-dla` | re-cited, number unchanged | `AH 5350` | <https://www.aeroroutes.com/eng/260609-ahjun26lbv> |
+| `alg-lbv` | promoted from `listed` | `AH 5350` | <https://www.aeroroutes.com/eng/260609-ahjun26lbv> |
+| `lbv-alg` | **new**, active | null, see below | <https://www.aeroroutes.com/eng/260629-ahnw26> |
 | `alg-nbj` | promoted from `listed` | `AH 5360` | <https://www.aeroroutes.com/eng/260608-ahjul26nbj> |
 | `nbj-alg` | **new**, active | `AH 5361` | <https://www.aeroroutes.com/eng/260608-ahjul26nbj> |
 
@@ -236,23 +237,46 @@ to 31 October 2026 and names **two** numbers for the outbound, `AH2700` and
 it holds none, and the filing's numbers are recorded here instead. `yul-alg` keeps
 its existing `verified` row and its own citation.
 
-**Douala and Libreville: why the number changed, and the snapshot tension.** Both
-routes ran on the single triangle number `AH 5350` until the NW26 programme, which
-is what `alg-dla` shipped on the airline's own destination list, a page that in
-fact carries no flight number for the leg at all. The 29 June filing splits them
-into point-to-point numbers, `AH5348`/`AH5349` for Douala and `AH5040`/`AH5041`
-for Libreville, 3x weekly each, **effective 25 October 2026**, which is 16 days
-after this `as_of`.
+**Douala and Libreville: the NW26 numbers do NOT ship in this release.** Both
+routes run on the single triangle number `AH 5350`, which the 9 June 2026 filing
+states for both rotations, `ALG-DLA-LBV-ALG` from 16 June and `ALG-LBV-DLA-ALG`
+from 19 June. The 29 June filing splits them into point-to-point numbers,
+`AH5348`/`AH5349` for Douala and `AH5040`/`AH5041` for Libreville, 3x weekly each,
+**effective 25 October 2026**, which is 16 days after this `as_of`.
 
-This pass writes those numbers in, on the Owner's instruction, and the tension is
-worth stating plainly: the 2 October pass declined to write in Doha's 25 October
-daily service on the grounds that `as_of` is a snapshot date. The distinction being
-drawn here is that `AH 5350` is the number the restructure **retires**, not a
-competing current value, so keeping it would ship a flight number that no timetable
-will carry by the time anyone reads this release. A frequency change, by contrast,
-leaves the old frequency true until the date arrives. If that distinction is not
-wanted, the fix is to revert the four flight numbers and not to re-litigate the
-snapshot rule.
+**Owner decision, 2026-10-09: the dataset stays a snapshot.** A first draft of
+this pass wrote the NW26 numbers in on the reasoning that `AH 5350` is the number
+the restructure retires rather than a competing current value. That was overruled,
+and correctly: it is the same shape as Doha's 25 October step-up to daily, which
+the 2 October pass declined to write in for exactly this reason. **A flight number
+that takes effect after `as_of` is a future change, not a correction.** The four
+NW26 numbers above are recorded here and go into the data with the 25-29 October
+flip pass, alongside Doha's daily service and Berlin's move to Sunday.
+
+So, in the data as shipped:
+
+- `alg-dla` keeps **`AH 5350`**, and its citation moves from the airline's own
+  destination list to the 9 June filing. The destination list carries no flight
+  number for this leg at all, so it never covered the field the row ships; the
+  June filing is the page that states `AH 5350`.
+- `alg-lbv` is promoted out of the Wikipedia pass with **`AH 5350`** on the same
+  9 June filing, for the same reason.
+- `dla-alg` and `lbv-alg` ship **`flight: null`**. The only numbers any read
+  source gives for these two directions are the NW26 ones, which cannot ship yet.
+  What they fly today is the shared triangle number on whichever rotation carries
+  them home, and nothing published splits that number by leg, so the field stays
+  null rather than carrying a future value or a guess. Both keep `verified` and
+  the 29 June filing: that filing is what confirms the legs operate, each
+  direction with its own times, which is the operation check `verified` asserts.
+
+**One judgement inside this worth a second look.** `alg-dla` and `alg-lbv` are
+tiered `verified` while cited to the 9 June filing, because it is the post that
+carries their flight number, and the end-to-end operation check behind the tier
+rests on the 29 June filing's per-direction times plus the duration check already
+recorded in `collection-rules.md` section 17 (`ALG-DLA`, `AH 5350`, 5h05, ratio
+0.99). Both posts are the same source and the same Reported tier, so no tier is
+weakened, but the row's citation and the row's operation evidence are two
+different pages here, which is unusual for this dataset.
 
 **Luanda.** `NBJ` is Dr. Antonio Agostinho Neto International, which replaced
 Quatro de Fevereiro (`LAD`) as Luanda's airport; the endpoint table has had it
@@ -380,6 +404,10 @@ ship. The rest are held, and these are the groups worth naming.
 - **Berlin's winter day.** The slot moves from Monday to Sunday on 25 October
   2026, still ahead of this `as_of`. The ROADMAP item stays open.
 - **Doha's daily service from 25 October**, for the same reason.
+- **The NW26 flight numbers for Douala and Libreville**, `AH5348`/`AH5349` and
+  `AH5040`/`AH5041`, effective 25 October 2026. Same reason again, and section 6
+  records them in full. All three of these belong to the 25-29 October flip pass,
+  which is now a release-day job with three known items rather than one.
 - **Moscow.** Still planned. Its announced 2 October resumption date has now
   passed and nothing dated reports a first flight, which is exactly the outcome
   the 2 October pass said would keep it planned.

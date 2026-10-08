@@ -111,12 +111,20 @@ VERIFIED = [
     # returned a codeshare object.
     {"from": "ALG", "to": "JNB", "flight": "AH 5360", "status": "active",
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
-    # Douala outbound. The flight number moves from AH 5350 to AH 5348 and the
-    # citation with it; see the DLA-ALG entry below for why, and note that the
-    # airline's own destination list, the previous citation, never carried a flight
-    # number for this leg at all.
-    {"from": "ALG", "to": "DLA", "flight": "AH 5348", "status": "active",
-     "source": "https://www.aeroroutes.com/eng/260629-ahnw26"},
+    # Douala outbound. `AH 5350` is the number this leg flies ON this AS_OF: it is
+    # the shared number of the ALG-DLA-LBV-ALG / ALG-LBV-DLA-ALG triangle, which
+    # the 9 Jun 2026 filing states for both rotations from 16 and 19 Jun 2026. The
+    # citation moves to that filing, because the airline's own destination list,
+    # the previous source, carries no flight number for this leg at all and so
+    # never covered the field the row ships.
+    #
+    # The NW26 programme splits the triangle into point-to-point numbers from
+    # 25 Oct 2026. Those are NOT written in: the dataset is a snapshot as of
+    # AS_OF, and a number that takes effect sixteen days from now is a future
+    # change, exactly as Doha's 25 Oct step-up to daily was on 2026-10-02. They go
+    # in with the 25-29 Oct flip pass; see verification-2026-10-09.md section 6.
+    {"from": "ALG", "to": "DLA", "flight": "AH 5350", "status": "active",
+     "source": "https://www.aeroroutes.com/eng/260609-ahjun26lbv"},
     # Missed entirely by the Wikipedia sweep: the Algiers article lists Tunis
     # under Nouvelair and Tunisair but NOT Air Algérie, even though AH 4001,
     # 4002 and 4003 fly it in both directions with no codeshare. Proof that the
@@ -373,20 +381,29 @@ VERIFIED = [
      "source": "https://www.aeroroutes.com/eng/260620-ahnw26cankul"},
     {"from": "KUL", "to": "ALG", "flight": "AH 3157", "status": "active",
      "source": "https://www.aeroroutes.com/eng/260620-ahnw26cankul"},
-    # Douala and Libreville, restructured. Until the NW26 programme both ran on the
-    # single ALG-DLA-LBV-ALG / ALG-LBV-DLA-ALG triangle number AH 5350, which is
-    # what `alg-dla` shipped. The 29 Jun 2026 filing splits them into
-    # point-to-point numbers, AH5348/AH5349 for Douala and AH5040/AH5041 for
-    # Libreville, 3x weekly each, effective 25 Oct 2026. Those numbers are written
-    # in here, 16 days ahead of this AS_OF, because AH 5350 is the number the
-    # restructure retires rather than a competing current value: keeping it would
-    # ship a flight number no timetable will carry. The filing gives no day names,
-    # so `days` stays null on all four.
-    {"from": "DLA", "to": "ALG", "flight": "AH 5349", "status": "active",
+    # Douala and Libreville. The 29 Jun 2026 filing is what makes these legs
+    # `verified`: it states the operator, each direction, its times and its flight
+    # number, and it raises both routes to 3x weekly. It gives no day names, so
+    # `days` is null on all of them.
+    #
+    # `flight` is NULL on both return legs, deliberately. The numbers this filing
+    # gives for them, AH5349 and AH5041, are the NW26 point-to-point numbers and
+    # take effect 25 Oct 2026, sixteen days after this AS_OF; the dataset is a
+    # snapshot, so a future number does not ship. The numbers these legs fly today
+    # are the shared triangle number on the rotation that carries them home, and no
+    # read source splits that number by leg, which is the inference this file does
+    # not make. So the field stays null rather than carrying either a future value
+    # or a guess. The outbound legs keep `AH 5350` because the June filing states
+    # it for the rotation's departure from Algiers.
+    #
+    # The NW26 numbers for all four legs are recorded in
+    # verification-2026-10-09.md section 6 and go into the data with the 25-29 Oct
+    # flip pass.
+    {"from": "DLA", "to": "ALG", "status": "active",
      "source": "https://www.aeroroutes.com/eng/260629-ahnw26"},
-    {"from": "ALG", "to": "LBV", "flight": "AH 5040", "status": "active",
-     "source": "https://www.aeroroutes.com/eng/260629-ahnw26"},
-    {"from": "LBV", "to": "ALG", "flight": "AH 5041", "status": "active",
+    {"from": "ALG", "to": "LBV", "flight": "AH 5350", "status": "active",
+     "source": "https://www.aeroroutes.com/eng/260609-ahjun26lbv"},
+    {"from": "LBV", "to": "ALG", "status": "active",
      "source": "https://www.aeroroutes.com/eng/260629-ahnw26"},
     # Luanda, both directions, promoted from the Wikipedia pass. `NBJ` is Dr.
     # Antonio Agostinho Neto International, which replaced Quatro de Fevereiro
