@@ -881,3 +881,63 @@ it is a broken one.
 
 **Rows added under this rule on 2026-10-02:** `KWI-AMM`, `ABV-LOS`, `LOS-ABV`. All
 planned. See `verification-2026-10-02.md` sections 4 and 5.
+
+## 34. A country probe cannot widen a silence (amended 2026-10-09)
+
+Section 22 drew a conclusion this file now withdraws. Its Italy row reads
+"Algeria to Italy | none: one flight, ITA Airways | `ALG-FCO` **excluded**", and
+the paragraph under the table generalised it: "a `listed` route to a country with
+a strong national carrier deserves a country-form probe before it is drawn."
+
+**What was wrong.** Rome was flying the whole time. AeroRoutes' post of 6 July
+2026 (`/eng/260706-ahns26320`) lists Rome Fiumicino among 23 routes Air Algérie
+flew with a wet-leased A320 between 1 July and 24 October 2026, and the full 2026
+tag archive, 23 posts read on 8 October, contains no Rome launch or resumption
+post at all. The route pre-dates the exclusion that removed it.
+
+**The rule, restated.** Section 7 says a silence is never a negative. **Widening a
+silence does not change what it is.** A country-form probe that comes back with
+one foreign carrier's flight and none of Air Algérie's has told you about the
+probe's coverage, not about the country. The country form is a better *search*
+than the pair form, which is what section 20 actually established, and that stands;
+what does not stand is reading its empty result as evidence.
+
+**What a `listed` route to a strong-carrier country really deserves** is the thing
+that settled this one: the airline's or an airport operator's own page, or a trade
+schedule filing. Not a probe.
+
+**What survives of section 22.** Every positive row. A probe returning another
+carrier's metal on a pair is still good evidence about *that* pair on *that* date,
+which is why `ALG-AMM` and `ALG-JED` remain in `OPERATED_BY_OTHERS`: those entries
+rest on repeated probes that each saw a different airline actually flying the
+pair, which is a finding, not a silence. Rome's did too, and the difference is
+that a readable published source now contradicts it. That is the order of
+precedence section 9 already sets: on conflict, the citable source wins.
+
+**Rows changed under this amendment on 2026-10-09:** `ALG-FCO` and `FCO-ALG`,
+both now `listed` and operating. See `verification-2026-10-09.md` section 3.
+
+## 35. An Official source can only support `listed`, and now has somewhere to sit
+
+`build_route_dataset.py` had two curated collections, and `VERIFIED` stamps
+`evidence: "verified"` on everything in it by construction. So an Official-tier
+source that names the operator but publishes no per-direction day, time or flight
+number, which is exactly what an airport's own carrier page is, had no way into
+`routes()`. The only `listed` rows were the Wikipedia pass's.
+
+The effect was perverse. Lyon airport publishes the nine Algerian cities Air
+Algérie serves from Lyon, on its own site. Five of those legs shipped citing a
+Wikipedia article because that is what the merge produced, and four could not ship
+at all.
+
+**The third collection, `LISTED`, fixes it**, and the tiers themselves are
+unchanged: section 9 still governs which tier a source earns, and `verified` still
+means operator, direction and duration confirmed end to end. What changed is only
+that a curated row can now declare `listed`, the way a `PLANNED` row already
+could. A duplicate guard came with it, because three collections can name one leg
+and two rows with one id fail in the emitter rather than at the cause.
+
+`status` on these rows is `active`, not `unclear`: an airport operator's current
+carrier page is a present-tense statement that the service runs, and `unclear`
+would be under-claiming it. `days` and `flight` stay null, because that is what
+the page does not support.
