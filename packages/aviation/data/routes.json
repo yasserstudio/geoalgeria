@@ -31,11 +31,11 @@
     "to": "LYS",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
     "great_circle_km": 1016
   },
   {
@@ -206,11 +206,11 @@
     "to": "BEY",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "suspended",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/",
+    "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
     "great_circle_km": 2934
   },
   {
@@ -247,11 +247,11 @@
     "flight": "AH 2028",
     "status": "active",
     "days": [
-      "sat"
+      "thu"
     ],
     "evidence": "verified",
     "planned": false,
-    "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud",
+    "source": "https://www.aeroroutes.com/eng/260102-ahapr26bud",
     "great_circle_km": 1777
   },
   {
@@ -311,12 +311,12 @@
     "from": "ALG",
     "to": "DLA",
     "carrier": "AH",
-    "flight": "AH 5350",
+    "flight": "AH 5348",
     "status": "active",
     "days": null,
     "evidence": "verified",
     "planned": false,
-    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
     "great_circle_km": 3696
   },
   {
@@ -359,8 +359,34 @@
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://www.visa-algerie.com/emirats-lalgerie-ferme-son-espace-aerien-les-vols-commerciaux-maintenus-provisoirement/",
+    "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
     "great_circle_km": 5069
+  },
+  {
+    "id": "alg-etz",
+    "from": "ALG",
+    "to": "ETZ",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://lorraineaeroport.com/vols-destinations/",
+    "great_circle_km": 1388
+  },
+  {
+    "id": "alg-fco",
+    "from": "ALG",
+    "to": "FCO",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/260706-ahns26320",
+    "great_circle_km": 963
   },
   {
     "id": "alg-fra",
@@ -432,13 +458,26 @@
     "from": "ALG",
     "to": "LBV",
     "carrier": "AH",
-    "flight": null,
-    "status": "unclear",
+    "flight": "AH 5040",
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
+    "great_circle_km": 4080
+  },
+  {
+    "id": "alg-lhr",
+    "from": "ALG",
+    "to": "LHR",
+    "carrier": "AH",
+    "flight": "AH 2054",
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://voyagerdz.com/air-algerie-inaugure-sa-nouvelle-ligne-vers-libreville-et-renforce-son-reseau-africain/",
-    "great_circle_km": 4080
+    "source": "https://www.aeroroutes.com/eng/260720-ahjul267m8",
+    "great_circle_km": 1668
   },
   {
     "id": "alg-lil",
@@ -459,11 +498,11 @@
     "to": "LYS",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/",
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
     "great_circle_km": 1016
   },
   {
@@ -471,13 +510,29 @@
     "from": "ALG",
     "to": "MAN",
     "carrier": "AH",
-    "flight": null,
+    "flight": "AH 2058",
     "status": "seasonal",
+    "days": [
+      "tue",
+      "sun"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/",
+    "great_circle_km": 1900
+  },
+  {
+    "id": "alg-mpl",
+    "from": "ALG",
+    "to": "MPL",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes",
-    "great_circle_km": 1900
+    "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+    "great_circle_km": 767
   },
   {
     "id": "alg-mrs",
@@ -497,12 +552,12 @@
     "from": "ALG",
     "to": "NBJ",
     "carrier": "AH",
-    "flight": null,
-    "status": "unclear",
+    "flight": "AH 5360",
+    "status": "active",
     "days": null,
-    "evidence": "listed",
+    "evidence": "verified",
     "planned": false,
-    "source": "https://www.tsa-algerie.dz/air-algerie-se-pose-pour-la-premiere-fois-a-luanda-en-angola/",
+    "source": "https://www.aeroroutes.com/eng/260608-ahjul26nbj",
     "great_circle_km": 5199
   },
   {
@@ -537,11 +592,11 @@
     "to": "NTE",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://www.algerie360.com/air-algerie-renforce-ses-vols-vers-la-france-deux-nouvelles-liaisons-des-le-1er-decembre/",
+    "source": "https://www.nantes.aeroport.fr/fr/air-algerie",
     "great_circle_km": 1228
   },
   {
@@ -584,6 +639,35 @@
     "great_circle_km": 2748
   },
   {
+    "id": "alg-pek",
+    "from": "ALG",
+    "to": "PEK",
+    "carrier": "AH",
+    "flight": "AH 3060",
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/260416-ahmay26pek",
+    "great_circle_km": 9105
+  },
+  {
+    "id": "alg-rtm",
+    "from": "ALG",
+    "to": "RTM",
+    "carrier": "AH",
+    "flight": "AH 2084",
+    "status": "active",
+    "days": [
+      "wed",
+      "sat"
+    ],
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/250901-ahnw25rtm",
+    "great_circle_km": 1699
+  },
+  {
     "id": "alg-ssh",
     "from": "ALG",
     "to": "SSH",
@@ -601,12 +685,17 @@
     "from": "ALG",
     "to": "STN",
     "carrier": "AH",
-    "flight": null,
-    "status": "unclear",
-    "days": null,
-    "evidence": "listed",
+    "flight": "AH 2056",
+    "status": "active",
+    "days": [
+      "wed",
+      "thu",
+      "sat",
+      "sun"
+    ],
+    "evidence": "verified",
     "planned": false,
-    "source": "https://web.archive.org/web/20250709164335/https://www.algerianewsgate.com/post/air-alg%C3%A9rie-expands-services-to-the-uk-with-new-algiers-london-stansted-route",
+    "source": "https://mediacentre.stanstedairport.com/new-airline-air-algerie-launches-direct-flights-to-algiers/",
     "great_circle_km": 1705
   },
   {
@@ -615,11 +704,14 @@
     "to": "SXB",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
-    "days": null,
-    "evidence": "listed",
+    "status": "active",
+    "days": [
+      "mon",
+      "thu"
+    ],
+    "evidence": "verified",
     "planned": false,
-    "source": "https://voyagerdz.com/air-algerie-propose-rome-londres-et-toulouse-a-prix-reduits/",
+    "source": "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/",
     "great_circle_km": 1365
   },
   {
@@ -662,6 +754,19 @@
     "great_circle_km": 448
   },
   {
+    "id": "alg-yul",
+    "from": "ALG",
+    "to": "YUL",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/260430-ahns26yul",
+    "great_circle_km": 6275
+  },
+  {
     "id": "bcn-alg",
     "from": "BCN",
     "to": "ALG",
@@ -690,6 +795,19 @@
     "great_circle_km": 1919
   },
   {
+    "id": "bey-alg",
+    "from": "BEY",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "suspended",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+    "great_circle_km": 2934
+  },
+  {
     "id": "bja-cdg",
     "from": "BJA",
     "to": "CDG",
@@ -708,11 +826,11 @@
     "to": "LYS",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://en.wikipedia.org/wiki/Abane_Ramdane_Airport",
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
     "great_circle_km": 1002
   },
   {
@@ -747,11 +865,11 @@
     "to": "LYS",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport",
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
     "great_circle_km": 1113
   },
   {
@@ -812,11 +930,11 @@
     "to": "LYS",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://en.wikipedia.org/wiki/Biskra_Airport",
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
     "great_circle_km": 1217
   },
   {
@@ -839,12 +957,10 @@
     "carrier": "AH",
     "flight": "AH 2028",
     "status": "active",
-    "days": [
-      "wed"
-    ],
+    "days": null,
     "evidence": "verified",
     "planned": false,
-    "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud",
+    "source": "https://www.aeroroutes.com/eng/260102-ahapr26bud",
     "great_circle_km": 1777
   },
   {
@@ -859,6 +975,19 @@
     "planned": false,
     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
     "great_circle_km": 2706
+  },
+  {
+    "id": "can-alg",
+    "from": "CAN",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 3181",
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/260620-ahnw26cankul",
+    "great_circle_km": 10106
   },
   {
     "id": "cdg-alg",
@@ -944,11 +1073,11 @@
     "to": "ETZ",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+    "source": "https://lorraineaeroport.com/vols-destinations/",
     "great_circle_km": 1412
   },
   {
@@ -996,11 +1125,11 @@
     "to": "LYS",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
     "great_circle_km": 1058
   },
   {
@@ -1110,6 +1239,19 @@
     "great_circle_km": 2814
   },
   {
+    "id": "dla-alg",
+    "from": "DLA",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 5349",
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
+    "great_circle_km": 3696
+  },
+  {
     "id": "doh-alg",
     "from": "DOH",
     "to": "ALG",
@@ -1127,6 +1269,19 @@
     "great_circle_km": 4733
   },
   {
+    "id": "dxb-alg",
+    "from": "DXB",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "suspended",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+    "great_circle_km": 5069
+  },
+  {
     "id": "elu-cdg",
     "from": "ELU",
     "to": "CDG",
@@ -1140,6 +1295,32 @@
     "great_circle_km": 1759
   },
   {
+    "id": "etz-alg",
+    "from": "ETZ",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://lorraineaeroport.com/vols-destinations/",
+    "great_circle_km": 1388
+  },
+  {
+    "id": "etz-czl",
+    "from": "ETZ",
+    "to": "CZL",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://lorraineaeroport.com/vols-destinations/",
+    "great_circle_km": 1412
+  },
+  {
     "id": "etz-orn",
     "from": "ETZ",
     "to": "ORN",
@@ -1151,6 +1332,19 @@
     "planned": false,
     "source": "https://www.lorraineaeroport.com/vols-destinations/oran/",
     "great_circle_km": 1588
+  },
+  {
+    "id": "fco-alg",
+    "from": "FCO",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/260706-ahns26320",
+    "great_circle_km": 963
   },
   {
     "id": "fra-alg",
@@ -1218,6 +1412,32 @@
     "great_circle_km": 7463
   },
   {
+    "id": "kul-alg",
+    "from": "KUL",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 3157",
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/260620-ahnw26cankul",
+    "great_circle_km": 10580
+  },
+  {
+    "id": "lbv-alg",
+    "from": "LBV",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 5041",
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
+    "great_circle_km": 4080
+  },
+  {
     "id": "lhr-alg",
     "from": "LHR",
     "to": "ALG",
@@ -1231,6 +1451,19 @@
     "great_circle_km": 1668
   },
   {
+    "id": "lys-aae",
+    "from": "LYS",
+    "to": "AAE",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+    "great_circle_km": 1016
+  },
+  {
     "id": "lys-alg",
     "from": "LYS",
     "to": "ALG",
@@ -1242,6 +1475,45 @@
     "planned": false,
     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
     "great_circle_km": 1016
+  },
+  {
+    "id": "lys-bja",
+    "from": "LYS",
+    "to": "BJA",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+    "great_circle_km": 1002
+  },
+  {
+    "id": "lys-blj",
+    "from": "LYS",
+    "to": "BLJ",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+    "great_circle_km": 1113
+  },
+  {
+    "id": "lys-bsk",
+    "from": "LYS",
+    "to": "BSK",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+    "great_circle_km": 1217
   },
   {
     "id": "lys-czl",
@@ -1270,6 +1542,19 @@
     "great_circle_km": 1222
   },
   {
+    "id": "lys-qsf",
+    "from": "LYS",
+    "to": "QSF",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+    "great_circle_km": 1062
+  },
+  {
     "id": "lys-tlm",
     "from": "LYS",
     "to": "TLM",
@@ -1281,6 +1566,48 @@
     "planned": false,
     "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
     "great_circle_km": 1313
+  },
+  {
+    "id": "man-alg",
+    "from": "MAN",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 2059",
+    "status": "seasonal",
+    "days": [
+      "tue",
+      "sun"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/",
+    "great_circle_km": 1900
+  },
+  {
+    "id": "mpl-alg",
+    "from": "MPL",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+    "great_circle_km": 767
+  },
+  {
+    "id": "mpl-orn",
+    "from": "MPL",
+    "to": "ORN",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+    "great_circle_km": 967
   },
   {
     "id": "mrs-alg",
@@ -1320,6 +1647,19 @@
     "planned": false,
     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
     "great_circle_km": 1002
+  },
+  {
+    "id": "nbj-alg",
+    "from": "NBJ",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 5361",
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/260608-ahjul26nbj",
+    "great_circle_km": 5199
   },
   {
     "id": "nce-alg",
@@ -1444,12 +1784,25 @@
     "to": "LYS",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
     "great_circle_km": 1222
+  },
+  {
+    "id": "orn-mpl",
+    "from": "ORN",
+    "to": "MPL",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+    "great_circle_km": 967
   },
   {
     "id": "orn-mrs",
@@ -1517,6 +1870,19 @@
     "great_circle_km": 1478
   },
   {
+    "id": "pek-alg",
+    "from": "PEK",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 3061",
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/260416-ahmay26pek",
+    "great_circle_km": 9105
+  },
+  {
     "id": "qsf-lil",
     "from": "QSF",
     "to": "LIL",
@@ -1535,11 +1901,11 @@
     "to": "LYS",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "active",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://en.wikipedia.org/wiki/Ain_Arnat_Airport",
+    "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
     "great_circle_km": 1062
   },
   {
@@ -1554,6 +1920,22 @@
     "planned": false,
     "source": "https://en.wikipedia.org/wiki/Ain_Arnat_Airport",
     "great_circle_km": 1417
+  },
+  {
+    "id": "rtm-alg",
+    "from": "RTM",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 2085",
+    "status": "active",
+    "days": [
+      "wed",
+      "sat"
+    ],
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.aeroroutes.com/eng/250901-ahnw25rtm",
+    "great_circle_km": 1699
   },
   {
     "id": "stn-alg",
@@ -1809,6 +2191,19 @@
     "planned": true,
     "source": "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
     "great_circle_km": 1012
+  },
+  {
+    "id": "alg-ndj",
+    "from": "ALG",
+    "to": "NDJ",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": true,
+    "source": "https://www.aeroroutes.com/eng/260622-ahnw267m8",
+    "great_circle_km": 2976
   },
   {
     "id": "alg-pvg",
