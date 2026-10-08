@@ -257,7 +257,9 @@ facilities, economic indicators, transport…)?
 ## Code of conduct
 
 Be respectful and constructive, assume good intent, focus on accuracy over
-preference, and welcome newcomers, not everyone is fluent in git or JSON.
+preference, and welcome newcomers, not everyone is fluent in git or JSON. The
+full text, with how to report a problem, is in
+[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## Questions?
 
