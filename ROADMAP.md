@@ -79,6 +79,17 @@ reads as further along than it is.
   has no article). One departures-board row upgrades it.
   _(logged 2026-07-29)_
 
+- [ ] **Next pass: 2.9.0 citation sweep.** `@geoalgeria/aviation` 2.8.0
+  shipped 157 nonstop + 20 planned; the open citation gaps are 17 legs
+  resting on a single aggregator that need an airport-side source, Lille
+  and the Hajj charters needing a second source each, and 69 uncited legs,
+  mostly to/from Paris. Same pass picks up the 25-29 Oct planned-to-operating
+  flips above (Berlin's Monday-to-Sunday day change, Doha going daily,
+  Tripoli MJI) plus Douala/Libreville's NW26 flight numbers and the
+  N'Djamena route, none of which flip on the date alone, only on a dated
+  report that they flew.
+  _(logged 2026-10-09)_
+
 - [ ] **Carriers beyond Air Algérie.** v1 is deliberately one operator, which the
   app's title and copy now have to caveat, since other carriers do fly nonstop
   from Algeria. Widening it is mostly a collection question: the app's route card
@@ -498,6 +509,13 @@ reads as further along than it is.
 ---
 
 ## Recently closed
+
+- **Release batch 2026-12** (2026-10-09, data main `1b91ae9`): PRs #266,
+  #268, #269, #270, #271, #272, #273, #274, #275 and #279 merged.
+  `@geoalgeria/aviation` 2.8.0 published (157 nonstop + 20 planned),
+  Version PR #277, GitHub Release and Discussion #278 auto, discussion
+  #280. App release PR #270 merged to production as `c70ec58` the same
+  day (tracker #269; tickets #257, #260, #266, #267, #268 closed).
 
 - **Release batch 2026-10, the coordinate review and upstream links** (2026-10-03):
   `geoalgeria` 2.3.0 published with `osm_relation_id` and `wikidata` on every
