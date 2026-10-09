@@ -1,7 +1,7 @@
 id,from,to,carrier,flight,status,days,evidence,planned,source,great_circle_km
 aae-cdg,AAE,CDG,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Rabah_Bitat_Airport,1420
 aae-ist,AAE,IST,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Rabah_Bitat_Airport,1867
-aae-lys,AAE,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Rabah_Bitat_Airport,1016
+aae-lys,AAE,LYS,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1016
 aae-mrs,AAE,MRS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Rabah_Bitat_Airport,768
 aae-ory,AAE,ORY,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Rabah_Bitat_Airport,1396
 abv-alg,ABV,ALG,AH,AH 5354,active,fri,verified,false,https://www.algerie360.com/air-algerie-accelere-son-envol-en-afrique-avec-40-vols-hebdomadaires-a-lhorizon-2026/,3106
@@ -14,67 +14,76 @@ alg-alc,ALG,ALC,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/n
 alg-ayt,ALG,AYT,AH,,unclear,,listed,false,https://www.visa-algerie.com/air-algerie-lance-une-promo-vers-une-magnifique-destination-populaire-3-raisons-de-reserver/,2448
 alg-bcn,ALG,BCN,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,520
 alg-ber,ALG,BER,AH,AH 2072,active,mon,verified,false,https://www.algerie360.com/air-algerie-nouvelle-ligne-directe-berlin/,1919
-alg-bey,ALG,BEY,AH,,unclear,,listed,false,https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/,2934
+alg-bey,ALG,BEY,AH,,suspended,,listed,false,https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai,2934
 alg-bko,ALG,BKO,AH,,unclear,,listed,false,https://www.visa-algerie.com/air-algerie-apres-pekin-et-guangzhou-une-autre-grande-ville-en-chine-dans-le-viseur/,2909
 alg-bru,ALG,BRU,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1582
-alg-bud,ALG,BUD,AH,AH 2028,active,sat,verified,false,https://www.aeroroutes.com/eng/250728-ahnw25bud,1777
+alg-bud,ALG,BUD,AH,AH 2028,active,thu,verified,false,https://www.aeroroutes.com/eng/260102-ahapr26bud,1777
 alg-cai,ALG,CAI,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,2706
 alg-can,ALG,CAN,AH,,active,,verified,false,https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html,10106
 alg-cdg,ALG,CDG,AH,AH 1002,active,,verified,false,https://www.parisaeroport.fr/,1370
 alg-dje,ALG,DJE,AH,AH 4708,seasonal,,verified,false,https://www.visa-algerie.com/air-algerie-relance-ses-vols-saisonniers-vers-la-destination-la-plus-prisee-de-tunisie/,755
-alg-dla,ALG,DLA,AH,AH 5350,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,3696
+alg-dla,ALG,DLA,AH,AH 5350,active,,verified,false,https://www.aeroroutes.com/eng/260609-ahjun26lbv,3696
 alg-doh,ALG,DOH,AH,AH 4078,active,sun tue fri,verified,false,https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches,4733
 alg-dss,ALG,DSS,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,3168
-alg-dxb,ALG,DXB,AH,,suspended,,listed,false,https://www.visa-algerie.com/emirats-lalgerie-ferme-son-espace-aerien-les-vols-commerciaux-maintenus-provisoirement/,5069
+alg-dxb,ALG,DXB,AH,,suspended,,listed,false,https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai,5069
+alg-etz,ALG,ETZ,AH,,active,,listed,false,https://lorraineaeroport.com/vols-destinations/,1388
+alg-fco,ALG,FCO,AH,,active,,listed,false,https://www.aeroroutes.com/eng/260706-ahns26320,963
 alg-fra,ALG,FRA,AH,,unclear,,listed,false,https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html,1543
 alg-hrg,ALG,HRG,AH,,unclear,,verified,false,https://www.observalgerie.com/,3058
 alg-ist,ALG,IST,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,2255
 alg-jnb,ALG,JNB,AH,AH 5360,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,7463
 alg-kul,ALG,KUL,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,10580
-alg-lbv,ALG,LBV,AH,,unclear,,listed,false,https://voyagerdz.com/air-algerie-inaugure-sa-nouvelle-ligne-vers-libreville-et-renforce-son-reseau-africain/,4080
+alg-lbv,ALG,LBV,AH,AH 5350,active,,verified,false,https://www.aeroroutes.com/eng/260609-ahjun26lbv,4080
+alg-lhr,ALG,LHR,AH,AH 2054,active,,listed,false,https://www.aeroroutes.com/eng/260720-ahjul267m8,1668
 alg-lil,ALG,LIL,AH,,unclear,,listed,false,https://www.tsa-algerie.com/air-algerie-renonce-a-quitter-laeroport-de-londres-heathrow-voici-les-raisons/,1542
-alg-lys,ALG,LYS,AH,,unclear,,listed,false,https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/,1016
-alg-man,ALG,MAN,AH,,seasonal,,listed,false,https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes,1900
+alg-lys,ALG,LYS,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1016
+alg-man,ALG,MAN,AH,AH 2058,seasonal,tue sun,verified,false,https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/,1900
+alg-mpl,ALG,MPL,AH,,active,,listed,false,https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines,767
 alg-mrs,ALG,MRS,AH,AH 1020,active,,verified,false,https://www.marseille.aeroport.fr/,768
-alg-nbj,ALG,NBJ,AH,,unclear,,listed,false,https://www.tsa-algerie.dz/air-algerie-se-pose-pour-la-premiere-fois-a-luanda-en-angola/,5199
+alg-nbj,ALG,NBJ,AH,AH 5360,active,,verified,false,https://www.aeroroutes.com/eng/260608-ahjul26nbj,5199
 alg-nim,ALG,NIM,AH,,unclear,,listed,false,https://news.radioalgerie.dz/fr/node/72797,2584
 alg-nkc,ALG,NKC,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,2774
-alg-nte,ALG,NTE,AH,,unclear,,listed,false,https://www.algerie360.com/air-algerie-renforce-ses-vols-vers-la-france-deux-nouvelles-liaisons-des-le-1er-decembre/,1228
+alg-nte,ALG,NTE,AH,,active,,listed,false,https://www.nantes.aeroport.fr/fr/air-algerie,1228
 alg-opo,ALG,OPO,AH,,unclear,,listed,false,https://www.dzairdaily.com/une-nouvelle-ville-deurope-bientot-desservie-par-air-algerie/,1144
 alg-ory,ALG,ORY,AH,,unclear,,listed,false,https://www.parisaeroport.fr/en/passengers/flights/airlines/airline?airline=AH&,1339
 alg-oua,ALG,OUA,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,2748
+alg-pek,ALG,PEK,AH,AH 3060,active,,verified,false,https://www.aeroroutes.com/eng/260416-ahmay26pek,9105
+alg-rtm,ALG,RTM,AH,AH 2084,active,wed sat,listed,false,https://www.aeroroutes.com/eng/250901-ahnw25rtm,1699
 alg-ssh,ALG,SSH,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Houari_Boumediene_Airport,3070
-alg-stn,ALG,STN,AH,,unclear,,listed,false,https://web.archive.org/web/20250709164335/https://www.algerianewsgate.com/post/air-alg%C3%A9rie-expands-services-to-the-uk-with-new-algiers-london-stansted-route,1705
-alg-sxb,ALG,SXB,AH,,unclear,,listed,false,https://voyagerdz.com/air-algerie-propose-rome-londres-et-toulouse-a-prix-reduits/,1365
+alg-stn,ALG,STN,AH,AH 2056,active,wed thu sat sun,verified,false,https://mediacentre.stanstedairport.com/new-airline-air-algerie-launches-direct-flights-to-algiers/,1705
+alg-sxb,ALG,SXB,AH,,active,mon thu,verified,false,https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/,1365
 alg-tun,ALG,TUN,AH,AH 4002,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,625
 alg-vie,ALG,VIE,AH,,active,,verified,false,https://www.aeroroutes.com/eng/250728-ahnw25bud,1672
 alg-vlc,ALG,VLC,AH,,seasonal,,listed,false,https://algerie-eco.com/2026/04/01/air-algerie-reouverture-de-la-ligne-alger-budapest-via-vienne/,448
+alg-yul,ALG,YUL,AH,,active,,verified,false,https://www.aeroroutes.com/eng/260430-ahns26yul,6275
 bcn-alg,BCN,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,520
 ber-alg,BER,ALG,AH,AH 2073,active,mon,verified,false,https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/,1919
+bey-alg,BEY,ALG,AH,,suspended,,listed,false,https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai,2934
 bja-cdg,BJA,CDG,AH,,unclear,,listed,false,https://www.parisaeroport.fr/en/passengers/flights/airlines/ah,1382
-bja-lys,BJA,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Abane_Ramdane_Airport,1002
+bja-lys,BJA,LYS,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1002
 bja-mrs,BJA,MRS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Abane_Ramdane_Airport,748
 bja-ory,BJA,ORY,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Abane_Ramdane_Airport,1354
-blj-lys,BLJ,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport,1113
+blj-lys,BLJ,LYS,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1113
 blj-mrs,BLJ,MRS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport,859
 blj-ory,BLJ,ORY,AH,AH 1120,active,,verified,false,https://www.flightsfrom.com/BLJ-ORY,1478
 bod-alg,BOD,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,962
 bru-alg,BRU,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1582
-bsk-lys,BSK,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Biskra_Airport,1217
+bsk-lys,BSK,LYS,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1217
 bsk-ory,BSK,ORY,AH,,unclear,,listed,false,https://web.archive.org/web/20110221154249/http://www.airalgerie.dz/,1574
-bud-alg,BUD,ALG,AH,AH 2028,active,wed,verified,false,https://www.aeroroutes.com/eng/250728-ahnw25bud,1777
+bud-alg,BUD,ALG,AH,AH 2028,active,,verified,false,https://www.aeroroutes.com/eng/260102-ahapr26bud,1777
 cai-alg,CAI,ALG,AH,AH 4039,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,2706
+can-alg,CAN,ALG,AH,AH 3181,active,,verified,false,https://www.aeroroutes.com/eng/260620-ahnw26cankul,10106
 cdg-alg,CDG,ALG,AH,AH 1013,active,,verified,false,https://www.parisaeroport.fr/,1370
 cdg-czl,CDG,CZL,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1453
 cdg-orn,CDG,ORN,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1511
 cfk-cdg,CFK,CDG,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Chlef_International_Airport,1426
 cfk-mrs,CFK,MRS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Chlef_International_Airport,869
 czl-cdg,CZL,CDG,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport,1453
-czl-etz,CZL,ETZ,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport,1412
+czl-etz,CZL,ETZ,AH,,active,,listed,false,https://lorraineaeroport.com/vols-destinations/,1412
 czl-ist,CZL,IST,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport,1989
 czl-jed,CZL,JED,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport,3533
 czl-lil,CZL,LIL,AH,,unclear,,listed,false,https://www.routesonline.com/news/38/airlineroute/285075/air-algerie-adds-constantine-lille-from-late-oct-2019/,1613
-czl-lys,CZL,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport,1058
+czl-lys,CZL,LYS,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1058
 czl-med,CZL,MED,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport,3409
 czl-mir,CZL,MIR,AH,,unclear,,listed,false,https://www.aaco.org/media-center/news/aaco-members/air-algerie-commences-constantine-monastir-and-algiers-luanda-services-in-june-2026,376
 czl-mrs,CZL,MRS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport,805
@@ -83,22 +92,38 @@ czl-ory,CZL,ORY,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mohamed_
 czl-ssh,CZL,SSH,AH,,seasonal,,verified,false,https://www.visa-algerie.com/apres-djerba-en-tunisie-air-algerie-se-pose-a-charm-el-cheikh-en-egypte/,2762
 czl-tls,CZL,TLS,AH,AH 1052,active,tue,verified,false,https://www.toulouse.aeroport.fr/vols-et-destinations/constantine,931
 djg-cdg,DJG,CDG,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Djanet_Inedbirene_Airport,2814
+dla-alg,DLA,ALG,AH,,active,,verified,false,https://www.aeroroutes.com/eng/260629-ahnw26,3696
 doh-alg,DOH,ALG,AH,AH 4079,active,sun tue fri,verified,false,https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches,4733
+dxb-alg,DXB,ALG,AH,,suspended,,listed,false,https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai,5069
 elu-cdg,ELU,CDG,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Guemar_Airport,1759
+etz-alg,ETZ,ALG,AH,,active,,listed,false,https://lorraineaeroport.com/vols-destinations/,1388
+etz-czl,ETZ,CZL,AH,,active,,listed,false,https://lorraineaeroport.com/vols-destinations/,1412
 etz-orn,ETZ,ORN,AH,AH 1185,seasonal,,verified,false,https://www.lorraineaeroport.com/vols-destinations/oran/,1588
+fco-alg,FCO,ALG,AH,,active,,listed,false,https://www.aeroroutes.com/eng/260706-ahns26320,963
 fra-alg,FRA,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1543
 gjl-mrs,GJL,MRS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Jijel_Ferhat_Abbas_Airport,741
 ist-alg,IST,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,2255
 ist-czl,IST,CZL,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1989
 jnb-alg,JNB,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,7463
+kul-alg,KUL,ALG,AH,AH 3157,active,,verified,false,https://www.aeroroutes.com/eng/260620-ahnw26cankul,10580
+lbv-alg,LBV,ALG,AH,,active,,verified,false,https://www.aeroroutes.com/eng/260629-ahnw26,4080
 lhr-alg,LHR,ALG,AH,,active,,verified,false,https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes,1668
+lys-aae,LYS,AAE,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1016
 lys-alg,LYS,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1016
+lys-bja,LYS,BJA,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1002
+lys-blj,LYS,BLJ,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1113
+lys-bsk,LYS,BSK,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1217
 lys-czl,LYS,CZL,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1058
 lys-orn,LYS,ORN,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1222
+lys-qsf,LYS,QSF,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1062
 lys-tlm,LYS,TLM,AH,AH 1099,active,,verified,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1313
+man-alg,MAN,ALG,AH,AH 2059,seasonal,tue sun,verified,false,https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/,1900
+mpl-alg,MPL,ALG,AH,,active,,listed,false,https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines,767
+mpl-orn,MPL,ORN,AH,,active,,listed,false,https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines,967
 mrs-alg,MRS,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,768
 mrs-czl,MRS,CZL,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,805
 mrs-orn,MRS,ORN,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1002
+nbj-alg,NBJ,ALG,AH,AH 5361,active,,verified,false,https://www.aeroroutes.com/eng/260608-ahjul26nbj,5199
 nce-alg,NCE,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,845
 nkc-alg,NKC,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,2774
 nte-alg,NTE,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1228
@@ -108,15 +133,18 @@ orn-bod,ORN,BOD,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Ahmed_Be
 orn-etz,ORN,ETZ,AH,,seasonal,,verified,false,https://www.lorraineaeroport.com/vols-destinations/oran/,1588
 orn-ist,ORN,IST,AH,AH 3024,active,,verified,false,https://www.aeroroutes.com/,2618
 orn-lil,ORN,LIL,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport,1689
-orn-lys,ORN,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport,1222
+orn-lys,ORN,LYS,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1222
+orn-mpl,ORN,MPL,AH,,active,,listed,false,https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines,967
 orn-mrs,ORN,MRS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport,1002
 orn-ssh,ORN,SSH,AH,,unclear,,listed,false,https://www.aeroroutes.com/eng/250722-ah3q25eg,3396
 ory-alg,ORY,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1339
 ory-blj,ORY,BLJ,AH,AH 1121,active,,verified,false,https://www.flightsfrom.com/ORY-BLJ,1478
 ory-orn,ORY,ORN,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1478
+pek-alg,PEK,ALG,AH,AH 3061,active,,verified,false,https://www.aeroroutes.com/eng/260416-ahmay26pek,9105
 qsf-lil,QSF,LIL,AH,,unclear,,listed,false,https://www.air-journal.fr/2025-01-06-asl-airlines-france-lance-une-ligne-entre-lille-et-toulon-5260220.html,1610
-qsf-lys,QSF,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Ain_Arnat_Airport,1062
+qsf-lys,QSF,LYS,AH,,active,,listed,false,https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie,1062
 qsf-ory,QSF,ORY,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Ain_Arnat_Airport,1417
+rtm-alg,RTM,ALG,AH,AH 2085,active,wed sat,listed,false,https://www.aeroroutes.com/eng/250901-ahnw25rtm,1699
 stn-alg,STN,ALG,AH,,active,,verified,false,https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes,1705
 sxb-alg,SXB,ALG,AH,AH 1453,seasonal,,verified,false,https://www.observalgerie.com/,1365
 tlm-cdg,TLM,CDG,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Zenata_–_Messali_El_Hadj_Airport,1590
@@ -135,6 +163,7 @@ alg-icn,ALG,ICN,AH,,unclear,,listed,true,https://www.visa-algerie.com/air-algeri
 alg-kwi,ALG,KWI,AH,,unclear,mon,listed,true,https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/,4219
 alg-los,ALG,LOS,AH,AH 5354,unclear,thu,verified,true,https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/,3349
 alg-mji,ALG,MJI,AH,,unclear,wed fri,listed,true,https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/,1012
+alg-ndj,ALG,NDJ,AH,,unclear,,listed,true,https://www.aeroroutes.com/eng/260622-ahnw267m8,2976
 alg-pvg,ALG,PVG,AH,AH 3082,unclear,mon wed sat,verified,true,https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/,10131
 alg-svo,ALG,SVO,AH,,unclear,mon wed fri,listed,true,https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/,3332
 amm-alg,AMM,ALG,AH,,unclear,,listed,true,https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/,3050
