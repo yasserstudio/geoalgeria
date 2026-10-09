@@ -21,8 +21,8 @@ import { reconcileCurrentWilayaByCommune } from "../../../scripts/lib/current-wi
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 // Canonical output for this package, plus the byte-identical mirror inside the
-// geoalgeria dataset (dataset/data/poste). validateMirror only *detects* drift —
-// it never re-syncs — so this run must write both trees itself to keep the
+// geoalgeria dataset (dataset/data/poste). validateMirror only *detects* drift,
+// it never re-syncs, so this run must write both trees itself to keep the
 // guarantee the README makes ("the mirror never drifts").
 const OUT_DIR = join(__dirname, "..", "data");
 const MIRROR_DIR = join(__dirname, "..", "..", "dataset", "data", "poste");
@@ -120,7 +120,7 @@ async function main() {
 
   // Emit v2 via the shared writer (live-only source, so stamp the run's date) to
   // BOTH the package tree and the dataset mirror, so the two stay byte-identical.
-  // Fresh rows per destination — writePackageV2 sorts/demotes in place.
+  // Fresh rows per destination: writePackageV2 sorts/demotes in place.
   const cfg = MIGRATIONS.poste;
   const mapOf = (f) => cfg.files.find((s) => s.file === f).map;
   const today = new Date().toISOString().slice(0, 10);

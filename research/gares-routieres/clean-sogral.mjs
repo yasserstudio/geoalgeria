@@ -1,7 +1,7 @@
 // Transform SOGRAL raw agencies (live.sogral.com/api/live/agencies) into a clean,
 // documented local dataset. High-confidence fields are promoted to named keys;
 // uncertain operational metrics / amenity flags are grouped and preserved verbatim.
-// Local research artifact only — not a published package.
+// Local research artifact only, not a published package.
 import { readFileSync, writeFileSync } from "node:fs";
 
 const IN = "/Volumes/Work/algeria/geoalgeria-data/research/gares-routieres/sogral-agencies-raw.json";

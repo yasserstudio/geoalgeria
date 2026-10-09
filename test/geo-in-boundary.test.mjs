@@ -1,4 +1,4 @@
-// Guards the geo-in-boundary check itself — that it is switched ON and answering,
+// Guards the geo-in-boundary check itself: that it is switched ON and answering,
 // not merely present.
 //
 // The bug this exists for is not a bad coordinate, it is a check that passes
@@ -7,7 +7,7 @@
 // them, so for 24 packages the check ran zero times. It also could not be switched
 // on: the only wilaya geometry in the repo was dataset/geojson/wilayas.geojson, 69
 // *Point* features, over which the old loadBoundaries indexed nothing and returned
-// an empty Map — and pointInWilaya answers "inside" for a code it has no polygon
+// an empty Map, and pointInWilaya answers "inside" for a code it has no polygon
 // for. Wiring that would have printed a clean run over data nothing looked at.
 //
 // So the assertions here are deliberately end-to-end against the SHIPPED polygons
@@ -39,7 +39,7 @@ test("the shipped boundaries cover all 69 wilayas as polygons", () => {
   const types = boundaryFc.features.map((f) => f.geometry.type);
   assert.equal(types.filter((t) => t === "Polygon").length, 68);
   assert.equal(types.filter((t) => t === "MultiPolygon").length, 1);
-  // codes join to wilayas.json — the file is useless as an index if they drift
+  // codes join to wilayas.json: the file is useless as an index if they drift
   const wilayaCodes = read("packages", "dataset", "data", "wilayas.json").wilayas.map((w) => w.code);
   assert.deepEqual(
     boundaryFc.features.map((f) => f.properties.code).sort((a, b) => a - b),
@@ -66,7 +66,7 @@ test("a real point stamped with the wrong wilaya_code is reported", () => {
   assert.equal(res.warnings.length, 1);
   assert.match(res.warnings[0], /outside the wilaya 01 boundary/);
 
-  // and the check must be OFF when no boundaries are passed — proving the warning
+  // and the check must be OFF when no boundaries are passed: proving the warning
   // above came from the boundary test and not from some other rule
   assert.deepEqual(validateRecords([mislinked]), { errors: [], warnings: [] });
 });

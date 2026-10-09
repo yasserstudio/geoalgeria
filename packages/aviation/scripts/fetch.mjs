@@ -11,11 +11,11 @@
  *   the parent page so an ANAC version bump (the `-1.21` suffix) doesn't break us.
  *
  * The same file also embeds ~25k boundary-polygon coords for Algeria's outline,
- * so we DON'T grab every `[lat,lng]` — we bind each airport's coords to its popup
+ * so we DON'T grab every `[lat,lng]`: we bind each airport's coords to its popup
  * through Folium's marker -> bindPopup -> setContent -> html hash wiring.
  *
  * wilaya_code is resolved by nearest commune centroid (haversine) from the
- * flagship geoalgeria commune data — the flagship ships only centroids, not
+ * flagship geoalgeria commune data: the flagship ships only centroids, not
  * boundary polygons, so true point-in-polygon isn't possible. The build prints
  * every `name -> wilaya_code` row for a one-time eyeball.
  *
@@ -86,7 +86,7 @@ const ANCHOR_MAX_KM = 25;
 const ENTITIES = {
   "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&apos;": "'", "&nbsp;": " ",
 };
-// Decode named entities via the table, and any numeric/hex entity generically —
+// Decode named entities via the table, and any numeric/hex entity generically;
 // ANAC's French/Arabic labels can carry &#233; / &#x... that a fixed table misses.
 const decodeEntity = (m) => {
   const named = ENTITIES[m.toLowerCase()];
@@ -98,7 +98,7 @@ const decodeEntity = (m) => {
       try {
         return String.fromCodePoint(code);
       } catch {
-        /* out-of-range code point — fall through and keep the literal */
+        /* out-of-range code point: fall through and keep the literal */
       }
     }
   }
@@ -380,7 +380,7 @@ function supplements(byIcao) {
 function loadCommunes() {
   if (!existsSync(DATASET)) {
     throw new Error(
-      `geoalgeria commune data not found at ${DATASET} — run this from the monorepo; ` +
+      `geoalgeria commune data not found at ${DATASET}: run this from the monorepo; ` +
         `wilaya_code resolution needs the flagship dataset's commune centroids.`
     );
   }
@@ -424,7 +424,7 @@ async function main() {
   const map = await getText(mapUrl, PAGE);
   const anacAirports = parseAirports(map.text);
 
-  // Guards — fail loudly if ANAC reshapes the map.
+  // Guards: fail loudly if ANAC reshapes the map.
   if (anacAirports.length !== ANAC_EXPECTED) {
     throw new Error(`expected ${ANAC_EXPECTED} airports on ANAC's map, parsed ${anacAirports.length}`);
   }
@@ -459,7 +459,7 @@ async function main() {
       `  ${a.icao}  ${String(a.name).padEnd(52)} -> w${w.code}  (${w.commune}, ${w.km.toFixed(1)} km)`
     );
   }
-  // Algeria now has 69 wilayas (Law 26-06, Apr 2026 — codes 59-69 promoted from
+  // Algeria now has 69 wilayas (Law 26-06, Apr 2026; codes 59-69 promoted from
   // delegated). The flagship geoalgeria models all 69, so derived codes can reach 69.
   const overflow = airports.filter((a) => Number(a.wilaya_code) < 1 || Number(a.wilaya_code) > 69);
   if (overflow.length) {
@@ -476,7 +476,7 @@ async function main() {
   try {
     routeCount = JSON.parse(readFileSync(join(DATA, "routes.json"), "utf8")).length;
   } catch {
-    console.log("  (no routes.json yet — run scripts/build-routes.mjs to emit it)");
+    console.log("  (no routes.json yet: run scripts/build-routes.mjs to emit it)");
   }
   if (routeCount) {
     // The validity stamp build-routes.mjs patched in: a live ANAC pull says

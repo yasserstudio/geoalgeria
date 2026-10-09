@@ -8,13 +8,13 @@ name: Announce
 # How it's triggered: release.yml explicitly DISPATCHES this workflow (per tag)
 # right after it cuts each GitHub Release. The `release: published` event does NOT
 # fire for those releases because release.yml creates them with GITHUB_TOKEN, and
-# GitHub suppresses token-created events to prevent recursion — workflow_dispatch
+# GitHub suppresses token-created events to prevent recursion: workflow_dispatch
 # is the documented exception, so dispatch is the reliable path. The `release`
 # trigger is kept for releases created by a human/PAT. Run by hand from the Actions
 # tab (workflow_dispatch) for any tag too, with `dry_run` to rehearse: the job
 # summary then shows the exact Discussion title and body and nothing is posted.
 #
-# Note on timing: release.yml cuts the GitHub Release at npm STAGE time — the
+# Note on timing: release.yml cuts the GitHub Release at npm STAGE time: the
 # package goes live only once you approve the staged version (see RELEASING.md).
 # Approve promptly so the announcement and the live npm version line up.
 
@@ -51,20 +51,20 @@ jobs:
         id: tag
         env:
           # RAW_TAG is operator/attacker-influenceable (release name / dispatch
-          # input) — keep it in env, never interpolate it into a shell command.
+          # input), keep it in env, never interpolate it into a shell command.
           RAW_TAG: ${{ github.event.release.tag_name || inputs.tag }}
         run: |
           set -euo pipefail
-          # Umbrella project tags (vX.Y.Z) are cut manually and announced by hand —
+          # Umbrella project tags (vX.Y.Z) are cut manually and announced by hand:
           # they aren't a single npm package, so the package announcer skips them.
           if printf '%s' "$RAW_TAG" | grep -Eq '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
-            echo "Umbrella project tag $RAW_TAG — not a package release; skipping."
+            echo "Umbrella project tag $RAW_TAG: not a package release; skipping."
             printf 'skip=true\n' >> "$GITHUB_OUTPUT"
             exit 0
           fi
           # Fail closed on anything that isn't one of our package tags. Match any
           # @geoalgeria/<name> scoped package (or the unscoped flagship) plus a
-          # semver suffix — generic so a new package never needs this list edited
+          # semver suffix: generic so a new package never needs this list edited
           # (the old hardcoded list silently failed jeunesse + enseignement-superieur).
           if ! printf '%s' "$RAW_TAG" | grep -Eq '^(geoalgeria|@geoalgeria/[a-z][a-z0-9]*(-[a-z0-9]+)*)@[0-9]+\.[0-9]+\.[0-9]+$'; then
             echo "::error::Refusing to announce malformed tag: $RAW_TAG"
@@ -109,7 +109,7 @@ jobs:
           CAT_ID=$(gh api graphql -f query='{repository(owner:"yasserstudio",name:"geoalgeria"){discussionCategories(first:25){nodes{name id}}}}' \
             --jq '.data.repository.discussionCategories.nodes[] | select(.name=="Announcements") | .id')
           if [ -z "$CAT_ID" ]; then
-            echo "::warning::No 'Announcements' discussion category — skipping post."
+            echo "::warning::No 'Announcements' discussion category, skipping post."
             exit 0
           fi
           # Idempotency: one announcement per tag. Re-runs and workflow_dispatch

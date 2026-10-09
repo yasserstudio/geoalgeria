@@ -160,7 +160,7 @@ jobs:
             # RELEASE_TEMPLATE.md). Title = the descriptive headline line of the
             # CHANGELOG section (falls back to the first bullet); body = the
             # ### Added/Improved/Dropped sections. The version + package scope are
-            # never in the title — both are already in the release tag chip + URL.
+            # never in the title; both are already in the release tag chip + URL.
             RN="node scripts/release-notes.mjs $pkg/CHANGELOG.md $VER $TAG"
 
             # Patches get a GitHub Release too (decision 2026-08-03): the app's
@@ -190,8 +190,8 @@ jobs:
 
             # Announce this release. The release: published event won't fire (this
             # release was created with GITHUB_TOKEN, which GitHub suppresses to avoid
-            # recursion), so dispatch Announce explicitly — workflow_dispatch is the
+            # recursion), so dispatch Announce explicitly; workflow_dispatch is the
             # documented exception GITHUB_TOKEN is allowed to trigger.
             gh workflow run announce.yml -f tag="$TAG" \
-              || echo "::warning::Could not dispatch Announce for $TAG — run it by hand (Actions tab → Announce)."
+              || echo "::warning::Could not dispatch Announce for $TAG: run it by hand (Actions tab → Announce)."
           done

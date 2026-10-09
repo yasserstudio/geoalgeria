@@ -1,6 +1,6 @@
-// @geoalgeria/ferroviaire — build Algeria's rail + urban-transit node network.
+// @geoalgeria/ferroviaire: build Algeria's rail + urban-transit node network.
 // Composite: Wikidata (CC0, base geometry/names/line membership) + OpenStreetMap
-// (ODbL, coord/name fill + additions, 150 m dedup) — the mosquees pattern.
+// (ODbL, coord/name fill + additions, 150 m dedup): the mosquees pattern.
 // Operators stamped by mode/wilaya: SNTF (rail), SETRAM (tram), SEMA (metro).
 // Bus stations are out of scope (see @geoalgeria/gares-routieres).
 // Raws staged in research/ferroviaire/. Run: node scripts/fetch.mjs
@@ -63,7 +63,7 @@ for (const b of wdRaw) {
   const name_fr = b.name_fr?.value || null, name_ar = b.name_ar?.value || null;
   const line = b.lines?.value || null;
   const cur = wdMap.get(qid);
-  if (cur) { // extra binding for the same entity — merge, don't duplicate
+  if (cur) { // extra binding for the same entity: merge, don't duplicate
     cur.name_fr = cur.name_fr || name_fr;
     cur.name_ar = cur.name_ar || name_ar;
     cur.name = cur.name || name_fr || name_ar;
@@ -111,7 +111,7 @@ let merged = 0;
 for (const o of osm) {
   let bestIdx = -1, bestD = Infinity;
   if (o.wikidata && wdByQid.has(o.wikidata)) {
-    bestIdx = wdByQid.get(o.wikidata); bestD = 0; // same entity — match regardless of distance
+    bestIdx = wdByQid.get(o.wikidata); bestD = 0; // same entity: match regardless of distance
   } else {
     const cosLat = Math.cos(o.lat * DEG);
     const bLat = Math.floor(o.lat / CELL), bLng = Math.floor(o.lng / CELL);
@@ -200,7 +200,7 @@ for (const r of records) {
 // Every WILAYA_FIX key must have hit a record; an unmatched key means the Wikidata
 // id was renamed/retired upstream and the pin silently reverted.
 const unmatchedFix = Object.keys(WILAYA_FIX).filter((k) => !wilayaFixMatched.has(k));
-if (unmatchedFix.length) throw new Error(`ferroviaire: WILAYA_FIX key(s) [${unmatchedFix.join(", ")}] matched no record — the Wikidata id was renamed or retired upstream; update WILAYA_FIX in scripts/fetch.mjs.`);
+if (unmatchedFix.length) throw new Error(`ferroviaire: WILAYA_FIX key(s) [${unmatchedFix.join(", ")}] matched no record: the Wikidata id was renamed or retired upstream; update WILAYA_FIX in scripts/fetch.mjs.`);
 
 // ---- Emit v2 via the shared writer (map → canonical GeoRecord + metadata) ----
 // Raws are staged (no live fetch), so the dates are always the committed ones.

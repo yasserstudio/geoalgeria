@@ -30,7 +30,7 @@ const ids = (rows) => rows.map((r) => r.id);
 const uniqueIds = (rows) => new Set(ids(rows)).size === rows.length;
 
 // assignIds emits {wilaya}-{seq}, seq = position in the key-sorted order (1-based,
-// width 5) — exactly the shape ecoles/mosquees derive before carry-over.
+// width 5), exactly the shape ecoles/mosquees derive before carry-over.
 function assignIds(rows) {
   const byW = new Map();
   for (const r of rows) {
@@ -58,7 +58,7 @@ test("carryOverIds: reorder alone churns nothing", () => {
   assert.ok(uniqueIds(rows));
 });
 
-test("carryOverIds: growth — a new record inserted mid-sequence never steals a carried slot", () => {
+test("carryOverIds: growth, a new record inserted mid-sequence never steals a carried slot", () => {
   const committed = [rec("06-00001", "A"), rec("06-00002", "B"), rec("06-00003", "C")];
   // "A0" sorts first, so assignIds re-sequences everyone: A0=1,A=2,B=3,C=4
   const rows = assignIds([
@@ -85,7 +85,7 @@ test("carryOverIds: growth — a new record inserted mid-sequence never steals a
   assert.ok(uniqueIds(rows));
 });
 
-test("carryOverIds: shrink — a dropped record's id retires and a new record cannot reuse it", () => {
+test("carryOverIds: shrink, a dropped record's id retires and a new record cannot reuse it", () => {
   const committed = [rec("06-00001", "A"), rec("06-00002", "B"), rec("06-00003", "C")];
   // B dropped upstream; new record D added. assignIds: A=1, C=2, D=3
   const rows = assignIds([
@@ -101,7 +101,7 @@ test("carryOverIds: shrink — a dropped record's id retires and a new record ca
   assert.notEqual(byKey.D, "06-00002");
   assert.equal(byKey.D, "06-00004");
   assert.ok(uniqueIds(rows));
-  // a missing committed key is expected — it must not throw
+  // a missing committed key is expected: it must not throw
 });
 
 test("carryOverIds: a persisted run N retirement stays reserved in run N+1", (t) => {
@@ -146,7 +146,7 @@ test("carryOverIds: genuinely-new wilaya keeps its freshly derived ids", () => {
 });
 
 test("carryOverIds: growth + duplicated committed carry key throws loud", () => {
-  // committed shipped two records under the SAME osm key — the key can't pin an id
+  // committed shipped two records under the SAME osm key: the key can't pin an id
   const committed = [rec("06-00001", "A"), rec("06-00002", "A"), rec("06-00003", "C")];
   const rows = assignIds([
     { wilaya: "06", refs: { osm: "A" } },

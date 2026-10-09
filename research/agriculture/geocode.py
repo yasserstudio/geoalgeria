@@ -5,7 +5,7 @@ Strategy (honest, sante-style geo_precision):
   1. address → commune match within the wilaya (Arabic token/substring) → commune centroid.
   2. fallback → wilaya chief-town commune centroid → wilaya_centroid.
   3. best-effort upgrade to a precise Wikidata point for named entities (guarded;
-     skipped with --no-net or on any network failure — the baseline still stands).
+     skipped with --no-net or on any network failure: the baseline still stands).
 
 Emits package-ready records (sante schema + agriculture contact fields):
   data/agriculture.json, csv/agriculture.csv, geojson/agriculture.geojson, metadata.json
@@ -181,7 +181,7 @@ def main():
             lat, lng, precision = cm["latitude"], cm["longitude"], "commune_centroid"
         elif communes:
             # No commune in the address: place at the wilaya chief-town centroid,
-            # but leave commune/commune_code null — a non-null commune then always
+            # but leave commune/commune_code null: a non-null commune then always
             # means an address-matched commune (see geo_precision).
             cap = wilaya_capital(communes, wfr)
             lat, lng, precision = cap["latitude"], cap["longitude"], "wilaya_centroid"

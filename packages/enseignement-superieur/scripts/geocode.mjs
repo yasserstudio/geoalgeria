@@ -87,7 +87,7 @@ async function main() {
   for (let i = 0; i < Math.min(limit, insts.length); i++) {
     const inst = insts[i];
     const k = instKey(inst);
-    if (!force && seed[k]) { skipped++; continue; } // already geocoded — FORCE=1 to refresh
+    if (!force && seed[k]) { skipped++; continue; } // already geocoded: FORCE=1 to refresh
     try {
       const g = await geocode(inst.name);
       if (g) {

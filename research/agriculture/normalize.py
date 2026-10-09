@@ -21,7 +21,7 @@ WILAYAS = REPO / "packages/dataset/data/wilayas.json"
 
 
 def ar_norm(s: str) -> str:
-    # Strips the leading article "ال" — deliberate, for wilaya-name matching.
+    # Strips the leading article "ال": deliberate, for wilaya-name matching.
     # (geocode.py's ar_norm keeps it, because it substring-matches inside addresses.)
     s = (s or "").strip()
     s = s.replace("ـ", "")                       # tatweel

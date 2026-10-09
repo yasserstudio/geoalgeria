@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Release announcer: turns a published release tag into ready-to-use marketing
- * copy — a GitHub Discussion body plus X (Twitter) and LinkedIn drafts — built
+ * copy (a GitHub Discussion body plus X (Twitter) and LinkedIn drafts) built
  * from that version's CHANGELOG section.
  *
  * It WRITES files; it never posts anything. The announce.yml workflow decides
@@ -15,7 +15,7 @@
  *
  *   GEOALGERIA_DRY_RUN=1 GEOALGERIA_TAG="geoalgeria@2.1.0" node scripts/announce.js
  *
- * No dependencies — Node built-ins only.
+ * No dependencies: Node built-ins only.
  */
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
@@ -67,14 +67,14 @@ if (!tag) {
 // `at` must be > 0: no '@' (-1) or a leading scope '@' (0) means a malformed tag.
 const at = tag.lastIndexOf("@");
 if (at <= 0) {
-  console.error(`Malformed tag "${tag}" — expected name@version (e.g. geoalgeria@1.2.0)`);
+  console.error(`Malformed tag "${tag}": expected name@version (e.g. geoalgeria@1.2.0)`);
   process.exit(1);
 }
 const name = tag.slice(0, at);
 const version = tag.slice(at + 1);
 const pkg = PACKAGES[name];
 if (!pkg) {
-  console.error(`Unknown package "${name}" — expected one of: ${Object.keys(PACKAGES).join(", ")}`);
+  console.error(`Unknown package "${name}": expected one of: ${Object.keys(PACKAGES).join(", ")}`);
   process.exit(1);
 }
 
@@ -93,7 +93,7 @@ function changelogSection(dir, ver) {
 
 const section = changelogSection(pkg.dir, version);
 if (!section) {
-  console.warn(`WARN  no CHANGELOG section matched ${tag} — drafts will be minimal.`);
+  console.warn(`WARN  no CHANGELOG section matched ${tag}: drafts will be minimal.`);
 }
 
 // Classify the bump (gates auto-announce: minor/major post, patch stays quiet).
@@ -169,12 +169,12 @@ const bulletList = bullets
   .map((b) => `- ${b}`)
   .join("\n");
 
-// Title is the headline alone — never the package tag (it's already in the
+// Title is the headline alone, never the package tag (it's already in the
 // release chip + URL). The tag goes on its own "Release" line. See
 // .github/RELEASE_TEMPLATE.md.
 const discussion = `## ${version} - ${headline}
 
-${name === "geoalgeria" ? "**GeoAlgeria** — the open dataset for Algeria. " : `**${name}** (${pkg.label}). `}Release \`${tag}\` — this ${bump} update:
+${name === "geoalgeria" ? "**GeoAlgeria**: the open dataset for Algeria. " : `**${name}** (${pkg.label}). `}Release \`${tag}\`, this ${bump} update:
 
 ${bulletList}
 
@@ -189,14 +189,14 @@ ${bundles} bundles are attached to the [release](${releaseUrl}). Issues and corr
 npm: ${npmUrl} · Release: ${releaseUrl}
 `;
 
-const xThread = `# X / Twitter — ${tag} (single post, sober — edit before posting)
+const xThread = `# X / Twitter: ${tag} (single post, sober; edit before posting)
 
 ${name === "geoalgeria" ? "GeoAlgeria" : name} ${version}: ${headline}.${bullets[1] ? "\n" + plain(bullets[1]) : ""}
 
 ${npmUrl}
 `;
 
-const linkedin = `# LinkedIn — ${tag} (sober — edit before posting)
+const linkedin = `# LinkedIn: ${tag} (sober; edit before posting)
 
 Note: put the link in the first comment (LinkedIn suppresses reach on posts with external links); the first line is the hook.
 
@@ -208,7 +208,7 @@ ${bullets
   .map((b) => `- ${plain(b)}`)
   .join("\n")}
 
-${totals ? `It now covers ${totals}, ` : ""}shipped as ${allFormats} — one \`${install}\`, MIT-licensed code, validated on every commit. Corrections and use cases welcome.
+${totals ? `It now covers ${totals}, ` : ""}shipped as ${allFormats}, one \`${install}\`, MIT-licensed code, validated on every commit. Corrections and use cases welcome.
 
 #OpenData #Algeria
 

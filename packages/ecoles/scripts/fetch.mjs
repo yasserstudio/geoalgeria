@@ -5,8 +5,8 @@
  *
  * Source:
  *   - OpenStreetMap (ODbL): amenity=school + amenity=kindergarten in Algeria.
- *     Wikidata carries only ~17 geocoded Algerian schools, so — unlike mosquees
- *     — there is no Wikidata base; OSM is the sole source, with honest coverage
+ *     Wikidata carries only ~17 geocoded Algerian schools, so, unlike mosquees,
+ *     there is no Wikidata base; OSM is the sole source, with honest coverage
  *     framing (~11.6k mapped against the ~28k of the national school network).
  *
  * Cycle: Algeria's school system is primaire (école primaire) → moyen (CEM,
@@ -14,11 +14,11 @@
  * (maternelle / روضة). Each record is classified from `isced:level` and the
  * French + Arabic name. A CEM always carries متوسطة/collège and a lycée always
  * carries ثانوية/lycée; a bare "école"/"مدرسة" with no cycle word is, by
- * Algerian convention, a primary school (المدرسة الابتدائية) — classified
+ * Algerian convention, a primary school (المدرسة الابتدائية): classified
  * `primaire` at lowest priority. Anything still unresolved is `autre`.
  *
  * Sector: "private" when `operator:type=private` or the name carries privé/خاص;
- * "public" when `operator:type` says so; otherwise null (unknown — most schools
+ * "public" when `operator:type` says so; otherwise null (unknown, most schools
  * are public, but this leaves it honest rather than assumed).
  *
  * OSM carries no commune/wilaya codes, so administrative linkage is attached by
@@ -231,12 +231,12 @@ async function fetchOSM() {
       }
     }
   }
-  throw new Error("Overpass unavailable on every endpoint — OSM is the sole source, so aborting rather than writing a partial dataset");
+  throw new Error("Overpass unavailable on every endpoint: OSM is the sole source, so aborting rather than writing a partial dataset");
 }
 
 // --- helpers ---------------------------------------------------------------
 const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
-// True only for actual Arabic *letters* — excludes combining marks/punctuation,
+// True only for actual Arabic *letters*: excludes combining marks/punctuation,
 // so a Latin string carrying a stray harakat (e.g. "ُÉcole") is not "Arabic".
 const isArabic = (s) => typeof s === "string" && /[ء-يٱ-ۓۺ-ۿ]/.test(s);
 // Clean a raw OSM name: collapse whitespace, drop stray leading combining marks
@@ -260,7 +260,7 @@ const CYCLE_LABELS = {
   autre: { fr: "École (cycle non précisé)", ar: "مدرسة (المستوى غير محدّد)" },
 };
 
-// Establishment kind — WHAT the "école" is, orthogonal to its cycle. Most
+// Establishment kind: WHAT the "école" is, orthogonal to its cycle. Most
 // records are "regular"; the rest are special-purpose places OSM files under
 // amenity=school but that aren't part of the K-12 ladder. The non-regular kinds
 // carry cycle "autre" (langues/coranique/conduite/formation) or keep their
@@ -287,10 +287,10 @@ function normalizeArabic(s) {
     .replace(/ـ/g, "") // tatweel ـ
     .replace(/[ؐ-ًؚ-ٰٟ]/g, ""); // harakat, hamza above/below, superscript alef
 }
-// Lower-case + strip Latin accents + fold Arabic — the canonical match form.
+// Lower-case + strip Latin accents + fold Arabic: the canonical match form.
 const normalizeName = (s) => normalizeArabic(stripLatinAccents(s.toLowerCase()));
 
-// Names, normalized and joined — the match form both classifiers work over.
+// Names, normalized and joined: the match form both classifiers work over.
 function nameHay(t) {
   return normalizeName(
     [
@@ -308,14 +308,14 @@ function classifyKind(t, amenity) {
   const hay = nameHay(t);
   // Driving schools. "السياقة" = driving.
   if (/auto[- ]?ecole|driving school|تعليم السياقة|مدرسة السياقة|السياقة/.test(hay)) return "conduite";
-  // Quranic schools — precise forms only (قرآنية→قرانية, القرآن→القران, coranique,
+  // Quranic schools: precise forms only (قرآنية→قرانية, القرآن→القران, coranique,
   // تحفيظ); avoid bare قران, a substring of the surname المقراني / El Mokrani.
   if (/coraniqu|قرانية|القران|قرءان|تحفيظ/.test(hay)) return "coranique";
   // Vocational / training centres (belong to @geoalgeria/formation-professionnelle).
   if (/\bformation\b|de formation|\bcfpa\b|\binsfp\b|تكوين/.test(hay)) return "formation";
   // Language institutes.
   if (/\blangues?\b|\blanguages?\b|لغات|انجليزية|français langue|\bfle\b|berlitz|linguistic|معهد.{0,6}لغ/.test(hay)) return "langues";
-  // Special-needs / adapted schools (kept as real schools — they keep a cycle).
+  // Special-needs / adapted schools (kept as real schools: they keep a cycle).
   if (/sourd|aveugle|handicap|besoins spec|inadapt|autist|deaf|blind|الصم|المكفوفين|المعاقين|ذوي الاحتياجات|تربية خاصة/.test(hay)) return "special";
   return "regular";
 }
@@ -467,8 +467,8 @@ function normOSM(elements) {
   }
   if (dropped) console.log(`  OSM internal de-dup: ${dropped} same-name-within-40m record(s)`);
 
-  // Second pass: collapse records at the exact same point (a school mapped twice
-  // — e.g. a node and a building, or two spellings — that the name pass missed
+  // Second pass: collapse records at the exact same point (a school mapped twice:
+  // e.g. a node and a building, or two spellings, that the name pass missed
   // because the names differ or one is unnamed). Keep the richest record.
   const richness = (r) => (r.name ? 1 : 0) + (r.name_ar ? 1 : 0) + (r.name_fr ? 1 : 0);
   const byPoint = new Map();
@@ -505,7 +505,7 @@ function assignIds(rows) {
 // --- main ------------------------------------------------------------------
 async function main() {
   // Offline replay: rebuild from the committed capture (sources/ecoles/osm.json)
-  // with no network — a dead upstream never blocks re-emission.
+  // with no network: a dead upstream never blocks re-emission.
   const OFFLINE = process.argv.includes("--cache");
   const osmRaw = OFFLINE ? readCapture("ecoles", "osm").elements : await fetchOSM();
   let rows = normOSM(osmRaw);

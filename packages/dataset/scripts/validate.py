@@ -20,7 +20,7 @@ def validate_json(path):
         with open(path, encoding="utf-8") as f:
             return json.load(f)
     except json.JSONDecodeError as e:
-        error(f"{path.name}: invalid JSON — {e}")
+        error(f"{path.name}: invalid JSON: {e}")
         return None
 
 

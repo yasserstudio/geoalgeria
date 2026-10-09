@@ -63,11 +63,9 @@ test("every published metadata file in the repo is clean", () => {
 //
 // The sweep above only ever looked at published metadata, so the code that
 // writes it was never covered: #260 found 95 em dashes still sitting in
-// validate-packages.mjs and lib/v2-transforms.mjs, cleared them by hand, and
-// nothing would have stopped the next one. 342 remain across 60 other files
-// (the fetchers, announce.js, build-catalog.mjs, the CI workflows, the Python
-// research scripts, a few tests), which is a sweep of its own, not a
-// prerequisite for a gate.
+// validate-packages.mjs and lib/v2-transforms.mjs, then 342 more across 60
+// files (the fetchers, announce.js, build-catalog.mjs, the CI workflows, the
+// Python research scripts, a few tests). The prose ones are all swept now.
 //
 // So this walks every hand-written source file and pins each one at the debt it
 // carries today. A new file, a new em dash in an old one, and a stale entry all
@@ -81,80 +79,46 @@ const GENERATED = new Set(["pnpm-lock.yaml"]);
 
 // Recorded debt, in em dashes per file. Only ever edit a number downward.
 //
-// Four entries are pinned rather than swept because the character is the point,
-// not a slip. They stay in the ledger instead of being exempted outright so a
-// second, genuinely prose dash in the same file still fails.
+// What is left is pinned rather than swept because the character is the point,
+// not a slip: a regex, an entity table, an upstream null placeholder, an empty-
+// cell placeholder, a golden-corpus input, an asserted published name format.
+// Each stays in the ledger instead of being exempted outright so a second,
+// genuinely prose dash in the same file still fails.
 const DEBT = {
-  ".github/ISSUE_TEMPLATE/dataset-request.yml": 1,
-  ".github/workflows/announce.yml": 7,
-  ".github/workflows/ci.yml": 14,
-  ".github/workflows/release.yml": 3,
-  "packages/aviation/scripts/fetch.mjs": 9,
-  "packages/banques/scripts/build.mjs": 1,
-  "packages/banques/scripts/fetch.mjs": 15,
-  "packages/culture/scripts/fetch.mjs": 6,
-  "packages/dataset/scripts/validate.py": 1,
-  "packages/djezzy/scripts/fetch.mjs": 7,
-  "packages/ecoles/scripts/fetch.mjs": 14,
-  "packages/emploi/scripts/fetch.mjs": 11,
-  "packages/enseignement-superieur/scripts/fetch.mjs": 13,
-  "packages/enseignement-superieur/scripts/geocode-osm.mjs": 3,
-  "packages/enseignement-superieur/scripts/geocode.mjs": 2,
-  "packages/enseignement-superieur/scripts/mesrs-ar.mjs": 6,
-  "packages/enseignement-superieur/scripts/mesrs.mjs": 2,
-  "packages/ferroviaire/scripts/fetch.mjs": 5,
-  "packages/gares-routieres/scripts/fetch.mjs": 3,
-  "packages/jeunesse/scripts/fetch.mjs": 10,
-  // fetch.mjs:62 matches an em dash as an upstream null placeholder. One of
-  // these 24 is a value, not prose: do not sweep that line.
-  "packages/livraison/scripts/fetch.mjs": 24,
-  "packages/mobilis/scripts/fetch.mjs": 9,
-  "packages/mosquees/scripts/fetch.mjs": 3,
+  // fetch.mjs:116 matches an em dash as an upstream null placeholder.
+  "packages/aviation/scripts/fetch.mjs": 1,
+  // geocode.mjs:48 splits an eponym on any dash, em dash included.
+  "packages/enseignement-superieur/scripts/geocode.mjs": 1,
+  // mesrs-ar.mjs:36 is the &#8212; entity table entry.
+  "packages/enseignement-superieur/scripts/mesrs-ar.mjs": 1,
+  // mesrs.mjs:25 is the same entity table entry.
+  "packages/enseignement-superieur/scripts/mesrs.mjs": 1,
+  // fetch.mjs:62 matches an em dash as an upstream null placeholder.
+  "packages/livraison/scripts/fetch.mjs": 1,
   // corpus.js feeds "Alger-Centre<em dash>Rue-Didouche" to the dash-folding
-  // golden corpus. Value, not prose: do not sweep.
+  // golden corpus.
   "packages/normalize/fixtures/corpus.js": 1,
-  "packages/ooredoo/scripts/fetch.mjs": 12,
-  "packages/pharmacies/scripts/fetch.mjs": 11,
-  "packages/poste/scripts/fetch.mjs": 3,
-  "packages/protection-civile/scripts/fetch.mjs": 10,
-  "packages/schema/test/schema.test.mjs": 15,
-  "packages/sports/scripts/fetch.mjs": 5,
-  "packages/telecom/scripts/fetch.mjs": 13,
+  // localize_endpoint_names.py:95 is the em-dash-to-en-dash replacement itself.
   "research/_flight-routes/localize_endpoint_names.py": 1,
-  "research/_pharma-landscape/build.py": 10,
-  "research/agriculture/geocode.py": 2,
-  "research/agriculture/normalize.py": 1,
-  "research/agriculture/parse.py": 1,
-  "research/buses/analyze-candidates.mjs": 2,
+  // app.js renders an em dash as the empty-cell placeholder, twice.
   "research/buses/artifact/app.js": 2,
-  "research/buses/collect-osm.mjs": 2,
+  // collect-osm.mjs:334 is the same empty-cell placeholder.
+  "research/buses/collect-osm.mjs": 1,
+  // build-national-inventory.mjs fills five inventory columns with it.
   "research/buses/national/build-national-inventory.mjs": 5,
-  "research/buses/parse-etusa.mjs": 1,
+  // promote-official-sources.mjs:67 parses "Ligne X<em dash>A / B" headings.
   "research/buses/promote-official-sources.mjs": 2,
-  "research/gares-routieres/clean-sogral.mjs": 1,
-  "scripts/announce.js": 14,
-  "scripts/build-catalog.mjs": 9,
+  // fix-jo-corrections.mjs:330 quotes the published "name_fr<em dash>name_ar".
   "scripts/fix-jo-corrections.mjs": 1,
-  // no-em-dash.mjs declares EM_DASH itself. Value, not prose: do not sweep.
+  // no-em-dash.mjs declares EM_DASH itself.
   "scripts/lib/no-em-dash.mjs": 1,
-  "scripts/lib/source-store.mjs": 8,
-  "scripts/migrate-to-v2.mjs": 5,
-  "scripts/purge-cdn.js": 4,
-  "scripts/release-notes.mjs": 3,
-  "scripts/stage-publish.js": 3,
   // buses-research.test.mjs:17 parses the OSM name "1A<em dash>Timizart".
-  // Value, not prose: do not sweep.
   "test/buses-research.test.mjs": 1,
-  "test/carry-over-ids.test.mjs": 5,
-  "test/commune-in-boundary.test.mjs": 6,
-  "test/geo-in-boundary.test.mjs": 4,
   // jo-corrections.test.mjs:107 asserts the published GeoJSON name format,
-  // "name_fr<em dash>name_ar". Value, not prose: do not sweep.
+  // "name_fr<em dash>name_ar".
   "test/jo-corrections.test.mjs": 1,
-  "test/package-api.test.mjs": 1,
-  "test/source-store.test.mjs": 1,
-  "test/wilaya-capitals.test.mjs": 6,
 };
+
 
 // git ls-files, not a directory walk: it is already the list of hand-written
 // files, so node_modules, dist, coverage and the gitignored research/ caches

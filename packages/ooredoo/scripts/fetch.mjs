@@ -4,10 +4,10 @@
  * Espaces Services) from the operator's public "Trouvez-nous" JSON API, and emit
  * JSON, CSV, and GeoJSON to ../data. The raw pull is cached under research/ooredoo/.
  *
- * Source: Ooredoo Algérie — Liferay Headless "Objects" API behind
+ * Source: Ooredoo Algérie, Liferay Headless "Objects" API behind
  *   https://www.ooredoo.dz/fr/particuliers/trouvez-nous
  *   - token:  POST /o/oauth2/token  (public client-credentials embedded in the
- *             page and served to every browser — not secrets, same status as the
+ *             page and served to every browser, not secrets, same status as the
  *             djezzy inline JSON / mobilis /map API)
  *   - stores: GET  /o/c/stores/?pageSize=…&page=…  (Bearer token)
  *   Each record carries a real lat/lng and the operator's own villaya/commune
@@ -41,11 +41,11 @@ const RESEARCH_DIR = join(REPO_ROOT, "research", "ooredoo");
 
 const BASE = "https://www.ooredoo.dz";
 // Public client-credentials embedded in the "Trouvez-nous" page (served to every
-// browser — not secrets). Documented in research/ooredoo/SOURCE.md.
+// browser, not secrets). Documented in research/ooredoo/SOURCE.md.
 const CLIENT_ID = "id-7472c3ce-ff72-e3dc-886a-687f3efdc75";
 const CLIENT_SECRET = "secret-51784c2a-3c2f-ea38-586b-7283faae14d";
 const UA = "geoalgeria-data/1.0 (+https://geoalgeria.com)";
-const MIN_STORES = 300; // sanity floor — reject a truncated pull
+const MIN_STORES = 300; // sanity floor: reject a truncated pull
 const MAX_BYTES = 64 * 1024 * 1024;
 
 // --- known-bad source coordinates ------------------------------------------
@@ -121,7 +121,7 @@ export function applyCoordFix(records, communes = loadCommunes()) {
   const unmatched = Object.keys(COORD_FIX).filter((k) => !matched.has(k));
   if (unmatched.length) {
     throw new Error(
-      `ooredoo: COORD_FIX key(s) [${unmatched.join(", ")}] matched no record — the operator store id was ` +
+      `ooredoo: COORD_FIX key(s) [${unmatched.join(", ")}] matched no record, the operator store id was ` +
         `retired or renumbered upstream, so the bad coordinate would silently come back. Re-check the ` +
         `store and update COORD_FIX in scripts/fetch.mjs.`,
     );
@@ -210,7 +210,7 @@ async function fetchStores() {
     await sleep(400);
   }
   if (items.length < MIN_STORES) {
-    throw new Error(`only ${items.length} stores (< ${MIN_STORES}) — refusing to write a partial dataset`);
+    throw new Error(`only ${items.length} stores (< ${MIN_STORES}): refusing to write a partial dataset`);
   }
   mkdirSync(RESEARCH_DIR, { recursive: true });
   writeFileSync(join(RESEARCH_DIR, "stores-raw.json"), JSON.stringify({ totalCount: total, items }) + "\n");
@@ -222,7 +222,7 @@ function readCache() {
   const json = JSON.parse(readFileSync(p, "utf-8"));
   const items = json.items || json;
   if (!Array.isArray(items) || items.length < MIN_STORES) {
-    throw new Error(`cache ${p} missing or too small — run without --cache to refetch`);
+    throw new Error(`cache ${p} missing or too small: run without --cache to refetch`);
   }
   console.log(`Using cached pull: ${items.length} stores`);
   return items;
@@ -232,7 +232,7 @@ function readCache() {
 // The API files stores under the legacy 48-wilaya scheme (a Timimoun store is
 // tagged "Adrar"); since every record has a real lat/lng we instead attach the
 // wilaya/commune by nearest-centroid join, which resolves to the current
-// 69-wilaya scheme — same method as @geoalgeria/djezzy. The operator's own
+// 69-wilaya scheme, same method as @geoalgeria/djezzy. The operator's own
 // declared wilaya name is kept as `operator_wilaya` for transparency.
 const DEG = Math.PI / 180;
 function loadCommunes() {
@@ -248,7 +248,7 @@ function loadCommunes() {
       }
     }
   }
-  if (!communes.length) throw new Error("no commune centroids loaded — check packages/dataset/data/algeria.json");
+  if (!communes.length) throw new Error("no commune centroids loaded: check packages/dataset/data/algeria.json");
   return communes;
 }
 
@@ -334,8 +334,8 @@ async function main() {
   // A few operator points carry inaccurate coordinates in the source, which the
   // nearest-centroid join then places in the wrong wilaya. We don't auto-correct
   // (a bad coord that lands one wilaya over is indistinguishable from a legitimate
-  // post-2019 split), but we surface gross outliers — coords far from the store's
-  // own declared wilaya — so they can be eyeballed each pull. operator_wilaya
+  // post-2019 split), but we surface gross outliers: coords far from the store's
+  // own declared wilaya, so they can be eyeballed each pull. operator_wilaya
   // preserves Ooredoo's declared wilaya in the data regardless.
   const wPts = new Map();
   const wByName = new Map();
@@ -357,7 +357,7 @@ async function main() {
     const km = Math.round(Math.sqrt(dx * dx + (ctr[0] - r.lat) ** 2) * 111);
     if (km > 300) {
       suspect++;
-      console.warn(`  ⚠ ${r.id} "${r.name}" is ${km} km from its declared wilaya (${r.operator_wilaya}) — likely a bad source coordinate`);
+      console.warn(`  ⚠ ${r.id} "${r.name}" is ${km} km from its declared wilaya (${r.operator_wilaya}): likely a bad source coordinate`);
     }
   }
   if (suspect) console.warn(`  ${suspect} store(s) with suspect source coordinates flagged (operator_wilaya preserves the declared wilaya).`);

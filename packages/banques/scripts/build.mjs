@@ -3,8 +3,8 @@
 // from the source JSON. The registry (banks.json, institutions.json) is hand-curated
 // from the Banque d'Algérie agréé list in the canonical v2 GeoRecord shape;
 // branches.json is produced by scripts/fetch.mjs from each bank's official locator.
-// All three are already v2, so they pass straight through the shared writer (no map)
-// — it owns the id sort, shared-point demotion, CSV/GeoJSON, and the derived metadata.
+// All three are already v2, so they pass straight through the shared writer (no map):
+// it owns the id sort, shared-point demotion, CSV/GeoJSON, and the derived metadata.
 // Run after editing any source file (and after scripts/fetch.mjs refreshes branches).
 //
 // Usage: node scripts/build.mjs

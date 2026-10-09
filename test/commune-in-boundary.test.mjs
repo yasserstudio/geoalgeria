@@ -2,7 +2,7 @@
 //
 // Why this file exists, and why it is a test rather than a line in
 // validate-packages.mjs: `dataset` ships no data/metadata.json, never reaches that
-// script's v2 gate, and is a declared V1 holdout — so the geo-in-boundary check
+// script's v2 gate, and is a declared V1 holdout, so the geo-in-boundary check
 // that now runs over all 24 scoped packages ran over none of the 1,541 commune
 // centroids they are all derived from. The table was the one file exempt from the
 // standard its consumers are held to.
@@ -11,7 +11,7 @@
 // same pattern in mosquees, culture, pharmacies, sante, djezzy, ooredoo) stamps
 // wilaya_code onto OSM features by nearest-centroid join against
 // dataset/data/algeria.json. A commune row carrying another wilaya's coordinate is
-// therefore not one wrong row — it is an attractor that stamps its own wilaya_code
+// therefore not one wrong row: it is an attractor that stamps its own wilaya_code
 // onto every facility near a point it does not belong to. Five such rows produced
 // 30 of the repo's mislinks before they were repaired.
 //
@@ -50,7 +50,7 @@ const readJson = (...p) => JSON.parse(readText(...p));
 
 // Commune rows whose point cannot be asked about, pinned per file so a second one
 // cannot appear unnoticed. Stidia (w27) carries longitude 0 in every JSON/CSV/
-// GeoJSON copy — a value that is inside Mostaganem, so nothing here disproves it —
+// GeoJSON copy (a value that is inside Mostaganem, so nothing here disproves it)
 // while full.sql alone writes NULL, because whatever emitted it treats 0 as absent.
 // Which of the two is right is an ONS question (P3 commune reconciliation), not a
 // validator one, so the drift is recorded rather than papered over.
@@ -65,7 +65,7 @@ for (const [label, load] of COPIES) {
   test(`${label}: every commune centroid sits in its own wilaya or a neighbour`, () => {
     const rows = load();
     // A parser that silently drops rows would report a clean run over data it
-    // never looked at — the exact failure this whole check exists to prevent.
+    // never looked at: the exact failure this whole check exists to prevent.
     assert.equal(rows.length, COMMUNE_COUNT, `${label}: parsed ${rows.length} communes`);
 
     const mislinked = [];
@@ -88,7 +88,7 @@ for (const [label, load] of COPIES) {
     assert.deepEqual(
       noPoint,
       UNCHECKABLE[label] ?? [],
-      `${label}: commune(s) with no usable point — nothing can check where they are`,
+      `${label}: commune(s) with no usable point; nothing can check where they are`,
     );
     assert.deepEqual(
       mislinked,

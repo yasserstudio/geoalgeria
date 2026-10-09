@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-// @geoalgeria/telecom — regenerate the 5G coverage datasets from operator maps.
+// @geoalgeria/telecom: regenerate the 5G coverage datasets from operator maps.
 //
 // Sources:
-//   Djezzy  https://www.djezzy5g.dz/map.html  — markers in an XOR-encoded blob
-//   Mobilis https://mobilis.dz/map/5g/data    — JSON endpoint (browser headers)
-//   Ooredoo https://www.ooredoo.dz/.../5g      — /o/c/communes, read via a real
+//   Djezzy  https://www.djezzy5g.dz/map.html:  markers in an XOR-encoded blob
+//   Mobilis https://mobilis.dz/map/5g/data:    JSON endpoint (browser headers)
+//   Ooredoo https://www.ooredoo.dz/.../5g:     /o/c/communes, read via a real
 //           browser session (the site self-authenticates; see fetchOoredoo).
 //           Requires the `agent-browser` CLI on PATH.
 //
@@ -26,7 +26,7 @@ import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.m
 import { writeCapture, readCapture, stableStringify } from "../../../scripts/lib/source-store.mjs";
 import { reconcileCurrentWilayaByCommune } from "../../../scripts/lib/current-wilaya-by-commune.mjs";
 
-// Offline replay: rebuild from the committed captures with no network — a dead
+// Offline replay: rebuild from the committed captures with no network, a dead
 // or WAF-blocked operator site never blocks re-emission.
 const OFFLINE = process.argv.includes("--cache");
 
@@ -100,7 +100,7 @@ const OOREDOO_ID_LABEL = new Map([
   ["OUM EL BOUAGHI", "OUM BOUAGHI"],
 ]);
 
-// Algeria bounding box — reject coordinates outside it (catches comma-decimal or
+// Algeria bounding box: reject coordinates outside it (catches comma-decimal or
 // swapped lat/lng introduced by a source format change).
 const inAlgeria = (lat, lng) =>
   Number.isFinite(lat) && Number.isFinite(lng) && lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
@@ -131,7 +131,7 @@ const sortUnordered = (rows) =>
 // The map fetches wilayas.enc and decrypts it client-side (XOR with a key built
 // from page constants + the footer data-version-id), populating a top-level
 // `wilayas` binding. Node fetch to djezzy5g.dz is blocked at the network layer,
-// so — as with Ooredoo — we drive a real browser and read the page's own
+// so, as with Ooredoo, we drive a real browser and read the page's own
 // already-decrypted `wilayas`, which also means no XOR key to maintain here.
 // Requires the `agent-browser` CLI on PATH.
 async function fetchDjezzy() {
@@ -194,7 +194,7 @@ async function fetchDjezzy() {
       });
     }
   }
-  if (sites.length === 0) throw new Error("decoded 0 Djezzy sites (wilayas empty — page/format drift?)");
+  if (sites.length === 0) throw new Error("decoded 0 Djezzy sites (wilayas empty: page/format drift?)");
   return sites;
 }
 
@@ -214,7 +214,7 @@ async function fetchMobilis() {
   }
   const sites = [];
   // The 2026-08 re-import ships exact duplicate rows (same coords + commune);
-  // keep the first of each — they hash to the same id and the writer rejects dupes.
+  // keep the first of each: they hash to the same id and the writer rejects dupes.
   const seen = new Set();
   for (const r of rows) {
     const [latS, lngS] = String(r.coordonnes || "").split(",");
@@ -254,7 +254,7 @@ async function fetchMobilis() {
 // Ooredoo's 5G page authenticates itself client-side and exposes a public read
 // API of its 5G-covered communes (/o/c/communes). We drive a real browser via
 // the `agent-browser` CLI so the SITE performs its own auth, then read that
-// endpoint from the page's session — we never handle or replay credentials.
+// endpoint from the page's session: we never handle or replay credentials.
 // This step therefore requires the agent-browser CLI on PATH; without it the
 // fetch aborts (rather than silently dropping Ooredoo). Coverage here is
 // commune-level (one point per covered commune), unlike Djezzy/Mobilis sites.
@@ -302,7 +302,7 @@ async function fetchOoredoo() {
     items = sortUnordered(items);
     writeCapture("telecom", "ooredoo-5g", items, { url });
   }
-  // Projection happens here, in reviewable Node code, not in the browser eval —
+  // Projection happens here, in reviewable Node code, not in the browser eval:
   // the capture keeps the items as received.
   const rows = items.map((it) => ({
     w: it.villayaId && it.villayaId.key,
@@ -348,7 +348,7 @@ async function main() {
       console.log(`  ${op}: ${perOperator[op].length} sites`);
     } catch (e) {
       failures.push(op);
-      console.error(`  ${op}: FAILED — ${e.message}`);
+      console.error(`  ${op}: FAILED: ${e.message}`);
     }
   }
   // All-or-nothing: never overwrite the combined data with a partial set.
