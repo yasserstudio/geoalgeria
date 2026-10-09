@@ -101,3 +101,38 @@ counts.
    record median, by how directly the source speaks about the commune's town. Keeping the
    published value is the no-op whenever it is one of the agreeing readings. That ordering is
    why all 68 fixes of the first run carry the seat's value and therefore its licence.
+
+## Rule 8 in detail: the record median is frozen per run (added 2026-10-09, private tracker #267)
+
+Rule 8 reads every input from a committed snapshot, and the L2 record median was taken as
+satisfying it because the records it is a median of are themselves committed here. They
+are, but they are not held still: they are the packages, and every release adds, removes or
+moves some of them. Merging the sante twins (private tracker #216) moved two of run
+2026-10-01b's medians by metres, changed no decision at all (the same 68 fixes at the same
+points, the same 67 queued with the same reasons) and failed
+`test/review-decisions.test.mjs`, whose answer at the time was to rewrite the landed ledger
+so it matched the new evidence. A landed decision rewritten to match a later reading is the
+opposite of what rule 8 is for.
+
+So a run freezes the Claim it read, and the replay reads that file:
+
+1. **A run lands three documents**, not two: `corrections-<run>.json`,
+   `review-queue-<date>.json` and `record-medians-<run>.json`, the last holding, per commune
+   the run reviewed, the record count, the number of packages behind it and the median.
+   `node scripts/review/run.mjs --write` writes all three.
+2. **A replay reads the frozen set** (`--records <file>`, which
+   `test/review-decisions.test.mjs` passes), so the two documents stay byte-identical
+   however the packages move afterwards, and a decision that does change still fails the
+   test.
+3. **What is frozen is the Claim, not the records behind it.** The engine only ever reads
+   the median and the counts, so freezing those is 19 KB where the point clouds would be
+   ten times that; the median algorithm keeps a worked example of its own in
+   `test/review-record-medians.test.mjs`.
+4. **A commune the frozen set does not hold is an error**, because the set under review is
+   derived from the published centres and the seats: a code missing from the file means the
+   run being replayed is not the run that was frozen, and that is a re-run, not a replay.
+5. **A set frozen at another `MIN_EXACT_RECORDS` is refused** for the same reason.
+
+The frozen set of run 2026-10-01b was written from the packages as they stood on
+2026-10-09, which still reproduced both of that run's documents byte for byte, so it is the
+evidence the run decided on and not a new reading.

@@ -1,0 +1,1222 @@
+{
+  "generated": "2026-10-01",
+  "run": "2026-10-01b",
+  "note": "The L2 record-median Claim of run 2026-10-01b, frozen. The median of the geo_precision: exact records inside each reviewed commune's own OpenStreetMap outline is a reading of this repository's working tree, so it is landed with the run: a later release that moves one record must not move the evidence of a decision already taken (ADR 0001 rule 8, private tracker #267). Replay with `node scripts/review/run.mjs --records research/_commune-centres/record-medians-2026-10-01b.json`; rebuild only by re-running the review.",
+  "read": "2026-10-01",
+  "records_total": 53128,
+  "min_exact_records": 10,
+  "communes": [
+    {
+      "code_commune": 122,
+      "records": 35,
+      "files": 8,
+      "median": [
+        -0.432772,
+        28.002849
+      ]
+    },
+    {
+      "code_commune": 214,
+      "records": 11,
+      "files": 6,
+      "median": [
+        1.088633,
+        36.426547
+      ]
+    },
+    {
+      "code_commune": 219,
+      "records": 35,
+      "files": 8,
+      "median": [
+        1.394748,
+        36.070191
+      ]
+    },
+    {
+      "code_commune": 224,
+      "records": 80,
+      "files": 13,
+      "median": [
+        1.259265,
+        36.196216
+      ]
+    },
+    {
+      "code_commune": 413,
+      "records": 10,
+      "files": 5,
+      "median": [
+        6.74354,
+        35.935198
+      ]
+    },
+    {
+      "code_commune": 512,
+      "records": 13,
+      "files": 5,
+      "median": [
+        6.313679,
+        35.554603
+      ]
+    },
+    {
+      "code_commune": 514,
+      "records": 19,
+      "files": 9,
+      "median": [
+        5.372875,
+        35.311216
+      ]
+    },
+    {
+      "code_commune": 515,
+      "records": 23,
+      "files": 7,
+      "median": [
+        5.066785,
+        35.474632
+      ]
+    },
+    {
+      "code_commune": 519,
+      "records": 20,
+      "files": 11,
+      "median": [
+        6.001698,
+        35.859059
+      ]
+    },
+    {
+      "code_commune": 521,
+      "records": 21,
+      "files": 5,
+      "median": [
+        5.980308,
+        35.124289
+      ]
+    },
+    {
+      "code_commune": 526,
+      "records": 10,
+      "files": 5,
+      "median": [
+        6.299808,
+        35.209872
+      ]
+    },
+    {
+      "code_commune": 532,
+      "records": 4,
+      "files": 4,
+      "median": [
+        6.005791,
+        35.363195
+      ]
+    },
+    {
+      "code_commune": 538,
+      "records": 13,
+      "files": 3,
+      "median": [
+        5.768099,
+        35.584905
+      ]
+    },
+    {
+      "code_commune": 539,
+      "records": 24,
+      "files": 8,
+      "median": [
+        5.458241,
+        35.67102
+      ]
+    },
+    {
+      "code_commune": 545,
+      "records": 65,
+      "files": 14,
+      "median": [
+        5.899163,
+        35.3765
+      ]
+    },
+    {
+      "code_commune": 552,
+      "records": 16,
+      "files": 4,
+      "median": [
+        6.130017,
+        35.222815
+      ]
+    },
+    {
+      "code_commune": 554,
+      "records": 14,
+      "files": 5,
+      "median": [
+        6.097704,
+        35.792988
+      ]
+    },
+    {
+      "code_commune": 557,
+      "records": 9,
+      "files": 5,
+      "median": [
+        5.941,
+        35.8033
+      ]
+    },
+    {
+      "code_commune": 604,
+      "records": 12,
+      "files": 6,
+      "median": [
+        4.701677,
+        36.703134
+      ]
+    },
+    {
+      "code_commune": 613,
+      "records": 11,
+      "files": 4,
+      "median": [
+        5.018044,
+        36.53927
+      ]
+    },
+    {
+      "code_commune": 630,
+      "records": 0,
+      "files": 0,
+      "median": null
+    },
+    {
+      "code_commune": 633,
+      "records": 16,
+      "files": 9,
+      "median": [
+        5.045892,
+        36.706294
+      ]
+    },
+    {
+      "code_commune": 635,
+      "records": 19,
+      "files": 5,
+      "median": [
+        4.688716,
+        36.857485
+      ]
+    },
+    {
+      "code_commune": 638,
+      "records": 13,
+      "files": 4,
+      "median": [
+        4.426095,
+        36.440932
+      ]
+    },
+    {
+      "code_commune": 642,
+      "records": 20,
+      "files": 8,
+      "median": [
+        4.61755,
+        36.63376
+      ]
+    },
+    {
+      "code_commune": 646,
+      "records": 15,
+      "files": 6,
+      "median": [
+        5.407905,
+        36.582242
+      ]
+    },
+    {
+      "code_commune": 647,
+      "records": 11,
+      "files": 6,
+      "median": [
+        5.239889,
+        36.550473
+      ]
+    },
+    {
+      "code_commune": 648,
+      "records": 10,
+      "files": 2,
+      "median": [
+        5.089968,
+        36.642283
+      ]
+    },
+    {
+      "code_commune": 650,
+      "records": 36,
+      "files": 9,
+      "median": [
+        4.765997,
+        36.500524
+      ]
+    },
+    {
+      "code_commune": 716,
+      "records": 17,
+      "files": 5,
+      "median": [
+        6.649704,
+        34.607547
+      ]
+    },
+    {
+      "code_commune": 720,
+      "records": 19,
+      "files": 9,
+      "median": [
+        5.84398,
+        35.070219
+      ]
+    },
+    {
+      "code_commune": 913,
+      "records": 24,
+      "files": 8,
+      "median": [
+        2.86109,
+        36.592864
+      ]
+    },
+    {
+      "code_commune": 917,
+      "records": 4,
+      "files": 3,
+      "median": [
+        3.238427,
+        36.506658
+      ]
+    },
+    {
+      "code_commune": 928,
+      "records": 9,
+      "files": 4,
+      "median": [
+        2.69843,
+        36.423722
+      ]
+    },
+    {
+      "code_commune": 1003,
+      "records": 25,
+      "files": 6,
+      "median": [
+        3.425786,
+        36.442856
+      ]
+    },
+    {
+      "code_commune": 1007,
+      "records": 28,
+      "files": 7,
+      "median": [
+        3.752739,
+        35.999005
+      ]
+    },
+    {
+      "code_commune": 1019,
+      "records": 17,
+      "files": 8,
+      "median": [
+        4.157994,
+        36.330186
+      ]
+    },
+    {
+      "code_commune": 1027,
+      "records": 27,
+      "files": 10,
+      "median": [
+        4.344487,
+        36.416833
+      ]
+    },
+    {
+      "code_commune": 1034,
+      "records": 13,
+      "files": 4,
+      "median": [
+        3.395569,
+        36.533935
+      ]
+    },
+    {
+      "code_commune": 1039,
+      "records": 8,
+      "files": 6,
+      "median": [
+        3.55263,
+        36.033267
+      ]
+    },
+    {
+      "code_commune": 1215,
+      "records": 16,
+      "files": 6,
+      "median": [
+        7.951071,
+        35.12166
+      ]
+    },
+    {
+      "code_commune": 1225,
+      "records": 15,
+      "files": 6,
+      "median": [
+        8.078496,
+        35.488288
+      ]
+    },
+    {
+      "code_commune": 1226,
+      "records": 10,
+      "files": 5,
+      "median": [
+        7.471445,
+        35.348449
+      ]
+    },
+    {
+      "code_commune": 1303,
+      "records": 23,
+      "files": 9,
+      "median": [
+        -0.954587,
+        34.921657
+      ]
+    },
+    {
+      "code_commune": 1309,
+      "records": 11,
+      "files": 5,
+      "median": [
+        -1.807701,
+        34.981154
+      ]
+    },
+    {
+      "code_commune": 1312,
+      "records": 12,
+      "files": 8,
+      "median": [
+        -1.228624,
+        34.887285
+      ]
+    },
+    {
+      "code_commune": 1316,
+      "records": 6,
+      "files": 5,
+      "median": [
+        -1.447581,
+        35.010475
+      ]
+    },
+    {
+      "code_commune": 1407,
+      "records": 4,
+      "files": 3,
+      "median": [
+        0.979385,
+        35.240781
+      ]
+    },
+    {
+      "code_commune": 1411,
+      "records": 8,
+      "files": 4,
+      "median": [
+        1.351791,
+        35.620034
+      ]
+    },
+    {
+      "code_commune": 1441,
+      "records": 8,
+      "files": 7,
+      "median": [
+        1.7051,
+        35.1037
+      ]
+    },
+    {
+      "code_commune": 1523,
+      "records": 10,
+      "files": 2,
+      "median": [
+        4.589505,
+        36.780246
+      ]
+    },
+    {
+      "code_commune": 1526,
+      "records": 14,
+      "files": 4,
+      "median": [
+        3.791715,
+        36.625495
+      ]
+    },
+    {
+      "code_commune": 1528,
+      "records": 20,
+      "files": 5,
+      "median": [
+        4.111103,
+        36.608277
+      ]
+    },
+    {
+      "code_commune": 1541,
+      "records": 12,
+      "files": 5,
+      "median": [
+        4.435481,
+        36.67501
+      ]
+    },
+    {
+      "code_commune": 1554,
+      "records": 36,
+      "files": 9,
+      "median": [
+        4.188908,
+        36.883864
+      ]
+    },
+    {
+      "code_commune": 1560,
+      "records": 17,
+      "files": 7,
+      "median": [
+        4.244499,
+        36.515569
+      ]
+    },
+    {
+      "code_commune": 1634,
+      "records": 0,
+      "files": 0,
+      "median": null
+    },
+    {
+      "code_commune": 1708,
+      "records": 25,
+      "files": 14,
+      "median": [
+        3.225124,
+        35.631361
+      ]
+    },
+    {
+      "code_commune": 1713,
+      "records": 12,
+      "files": 4,
+      "median": [
+        3.757556,
+        34.71597
+      ]
+    },
+    {
+      "code_commune": 1722,
+      "records": 9,
+      "files": 4,
+      "median": [
+        3.599415,
+        34.175252
+      ]
+    },
+    {
+      "code_commune": 1732,
+      "records": 10,
+      "files": 5,
+      "median": [
+        3.008044,
+        35.485333
+      ]
+    },
+    {
+      "code_commune": 1823,
+      "records": 6,
+      "files": 5,
+      "median": [
+        6.140005,
+        36.861019
+      ]
+    },
+    {
+      "code_commune": 1908,
+      "records": 24,
+      "files": 12,
+      "median": [
+        5.838053,
+        36.130701
+      ]
+    },
+    {
+      "code_commune": 1910,
+      "records": 27,
+      "files": 8,
+      "median": [
+        5.104668,
+        35.810498
+      ]
+    },
+    {
+      "code_commune": 1933,
+      "records": 22,
+      "files": 9,
+      "median": [
+        5.324759,
+        36.108761
+      ]
+    },
+    {
+      "code_commune": 1947,
+      "records": 43,
+      "files": 9,
+      "median": [
+        5.502017,
+        36.176167
+      ]
+    },
+    {
+      "code_commune": 1953,
+      "records": 18,
+      "files": 8,
+      "median": [
+        5.127367,
+        36.271313
+      ]
+    },
+    {
+      "code_commune": 1960,
+      "records": 17,
+      "files": 9,
+      "median": [
+        5.718103,
+        36.005337
+      ]
+    },
+    {
+      "code_commune": 2110,
+      "records": 0,
+      "files": 0,
+      "median": null
+    },
+    {
+      "code_commune": 2121,
+      "records": 15,
+      "files": 9,
+      "median": [
+        6.634974,
+        36.628173
+      ]
+    },
+    {
+      "code_commune": 2125,
+      "records": 24,
+      "files": 10,
+      "median": [
+        6.860121,
+        36.703945
+      ]
+    },
+    {
+      "code_commune": 2128,
+      "records": 20,
+      "files": 8,
+      "median": [
+        6.571759,
+        36.688873
+      ]
+    },
+    {
+      "code_commune": 2220,
+      "records": 16,
+      "files": 9,
+      "median": [
+        -0.888655,
+        35.026368
+      ]
+    },
+    {
+      "code_commune": 2237,
+      "records": 7,
+      "files": 4,
+      "median": [
+        -0.708752,
+        34.587957
+      ]
+    },
+    {
+      "code_commune": 2251,
+      "records": 11,
+      "files": 4,
+      "median": [
+        -0.564368,
+        34.961357
+      ]
+    },
+    {
+      "code_commune": 2305,
+      "records": 153,
+      "files": 24,
+      "median": [
+        7.739456,
+        36.858144
+      ]
+    },
+    {
+      "code_commune": 2411,
+      "records": 9,
+      "files": 7,
+      "median": [
+        7.370822,
+        36.43171
+      ]
+    },
+    {
+      "code_commune": 2434,
+      "records": 5,
+      "files": 3,
+      "median": [
+        7.5464,
+        36.4682
+      ]
+    },
+    {
+      "code_commune": 2612,
+      "records": 16,
+      "files": 9,
+      "median": [
+        2.936388,
+        36.242465
+      ]
+    },
+    {
+      "code_commune": 2622,
+      "records": 4,
+      "files": 2,
+      "median": [
+        2.51474,
+        35.951576
+      ]
+    },
+    {
+      "code_commune": 2641,
+      "records": 6,
+      "files": 4,
+      "median": [
+        3.470504,
+        35.849919
+      ]
+    },
+    {
+      "code_commune": 2651,
+      "records": 16,
+      "files": 10,
+      "median": [
+        2.832349,
+        35.691915
+      ]
+    },
+    {
+      "code_commune": 2658,
+      "records": 6,
+      "files": 3,
+      "median": [
+        2.603806,
+        35.947051
+      ]
+    },
+    {
+      "code_commune": 2711,
+      "records": 17,
+      "files": 7,
+      "median": [
+        0.165328,
+        35.959379
+      ]
+    },
+    {
+      "code_commune": 2732,
+      "records": 13,
+      "files": 5,
+      "median": [
+        0.042458,
+        35.766089
+      ]
+    },
+    {
+      "code_commune": 2802,
+      "records": 39,
+      "files": 9,
+      "median": [
+        4.792149,
+        35.815136
+      ]
+    },
+    {
+      "code_commune": 2803,
+      "records": 61,
+      "files": 14,
+      "median": [
+        4.377846,
+        35.926232
+      ]
+    },
+    {
+      "code_commune": 2810,
+      "records": 9,
+      "files": 4,
+      "median": [
+        4.510484,
+        35.613002
+      ]
+    },
+    {
+      "code_commune": 2826,
+      "records": 13,
+      "files": 4,
+      "median": [
+        4.29428,
+        35.215146
+      ]
+    },
+    {
+      "code_commune": 2829,
+      "records": 14,
+      "files": 5,
+      "median": [
+        4.280658,
+        35.370387
+      ]
+    },
+    {
+      "code_commune": 2832,
+      "records": 10,
+      "files": 3,
+      "median": [
+        4.287046,
+        35.629341
+      ]
+    },
+    {
+      "code_commune": 2836,
+      "records": 6,
+      "files": 2,
+      "median": [
+        3.775966,
+        34.823185
+      ]
+    },
+    {
+      "code_commune": 2840,
+      "records": 5,
+      "files": 4,
+      "median": [
+        4.667714,
+        35.58558
+      ]
+    },
+    {
+      "code_commune": 2842,
+      "records": 17,
+      "files": 9,
+      "median": [
+        3.674867,
+        35.146192
+      ]
+    },
+    {
+      "code_commune": 2843,
+      "records": 8,
+      "files": 6,
+      "median": [
+        3.742328,
+        34.898866
+      ]
+    },
+    {
+      "code_commune": 2912,
+      "records": 52,
+      "files": 18,
+      "median": [
+        0.158544,
+        35.247621
+      ]
+    },
+    {
+      "code_commune": 2915,
+      "records": 10,
+      "files": 3,
+      "median": [
+        0.28612,
+        35.184547
+      ]
+    },
+    {
+      "code_commune": 2916,
+      "records": 10,
+      "files": 4,
+      "median": [
+        0.297208,
+        35.290563
+      ]
+    },
+    {
+      "code_commune": 2921,
+      "records": 8,
+      "files": 2,
+      "median": [
+        0.381031,
+        35.537658
+      ]
+    },
+    {
+      "code_commune": 2941,
+      "records": 4,
+      "files": 3,
+      "median": [
+        0.447629,
+        35.126064
+      ]
+    },
+    {
+      "code_commune": 3021,
+      "records": 26,
+      "files": 10,
+      "median": [
+        8.594368,
+        31.262389
+      ]
+    },
+    {
+      "code_commune": 3123,
+      "records": 54,
+      "files": 11,
+      "median": [
+        -0.722368,
+        35.62179
+      ]
+    },
+    {
+      "code_commune": 3124,
+      "records": 34,
+      "files": 15,
+      "median": [
+        -0.897296,
+        35.575135
+      ]
+    },
+    {
+      "code_commune": 3217,
+      "records": 4,
+      "files": 3,
+      "median": [
+        1.145733,
+        34.084888
+      ]
+    },
+    {
+      "code_commune": 3220,
+      "records": 6,
+      "files": 4,
+      "median": [
+        0.316793,
+        33.646871
+      ]
+    },
+    {
+      "code_commune": 3304,
+      "records": 36,
+      "files": 11,
+      "median": [
+        6.823517,
+        28.144656
+      ]
+    },
+    {
+      "code_commune": 3306,
+      "records": 54,
+      "files": 19,
+      "median": [
+        9.581802,
+        28.044344
+      ]
+    },
+    {
+      "code_commune": 3427,
+      "records": 23,
+      "files": 6,
+      "median": [
+        4.685303,
+        35.946035
+      ]
+    },
+    {
+      "code_commune": 3606,
+      "records": 33,
+      "files": 13,
+      "median": [
+        8.382844,
+        36.786453
+      ]
+    },
+    {
+      "code_commune": 3610,
+      "records": 23,
+      "files": 10,
+      "median": [
+        8.123155,
+        36.837861
+      ]
+    },
+    {
+      "code_commune": 3623,
+      "records": 9,
+      "files": 5,
+      "median": [
+        8.03427,
+        36.520318
+      ]
+    },
+    {
+      "code_commune": 3807,
+      "records": 7,
+      "files": 4,
+      "median": [
+        1.333196,
+        35.714366
+      ]
+    },
+    {
+      "code_commune": 3808,
+      "records": 4,
+      "files": 2,
+      "median": [
+        1.458203,
+        35.693214
+      ]
+    },
+    {
+      "code_commune": 3819,
+      "records": 9,
+      "files": 4,
+      "median": [
+        1.622853,
+        35.811791
+      ]
+    },
+    {
+      "code_commune": 3820,
+      "records": 14,
+      "files": 7,
+      "median": [
+        1.68474,
+        35.865162
+      ]
+    },
+    {
+      "code_commune": 3926,
+      "records": 36,
+      "files": 7,
+      "median": [
+        6.707379,
+        33.196592
+      ]
+    },
+    {
+      "code_commune": 4014,
+      "records": 17,
+      "files": 6,
+      "median": [
+        6.997351,
+        35.256748
+      ]
+    },
+    {
+      "code_commune": 4104,
+      "records": 28,
+      "files": 10,
+      "median": [
+        7.845054,
+        36.355799
+      ]
+    },
+    {
+      "code_commune": 4110,
+      "records": 12,
+      "files": 7,
+      "median": [
+        8.335188,
+        36.231115
+      ]
+    },
+    {
+      "code_commune": 4113,
+      "records": 5,
+      "files": 4,
+      "median": [
+        8.316278,
+        36.343997
+      ]
+    },
+    {
+      "code_commune": 4126,
+      "records": 6,
+      "files": 4,
+      "median": [
+        7.398262,
+        36.124565
+      ]
+    },
+    {
+      "code_commune": 4223,
+      "records": 20,
+      "files": 13,
+      "median": [
+        1.70767,
+        36.549439
+      ]
+    },
+    {
+      "code_commune": 4304,
+      "records": 49,
+      "files": 14,
+      "median": [
+        6.287578,
+        36.248674
+      ]
+    },
+    {
+      "code_commune": 4307,
+      "records": 25,
+      "files": 8,
+      "median": [
+        6.388796,
+        36.180701
+      ]
+    },
+    {
+      "code_commune": 4413,
+      "records": 11,
+      "files": 6,
+      "median": [
+        2.538276,
+        36.169868
+      ]
+    },
+    {
+      "code_commune": 4418,
+      "records": 6,
+      "files": 4,
+      "median": [
+        1.917308,
+        35.945977
+      ]
+    },
+    {
+      "code_commune": 4433,
+      "records": 15,
+      "files": 3,
+      "median": [
+        1.76531,
+        36.283942
+      ]
+    },
+    {
+      "code_commune": 4605,
+      "records": 8,
+      "files": 5,
+      "median": [
+        -1.146701,
+        35.579782
+      ]
+    },
+    {
+      "code_commune": 4703,
+      "records": 0,
+      "files": 0,
+      "median": null
+    },
+    {
+      "code_commune": 4826,
+      "records": 40,
+      "files": 11,
+      "median": [
+        0.67776,
+        35.805813
+      ]
+    },
+    {
+      "code_commune": 4831,
+      "records": 8,
+      "files": 6,
+      "median": [
+        1.249535,
+        35.955444
+      ]
+    },
+    {
+      "code_commune": 4905,
+      "records": 65,
+      "files": 11,
+      "median": [
+        0.71278,
+        29.71502
+      ]
+    },
+    {
+      "code_commune": 4906,
+      "records": 19,
+      "files": 4,
+      "median": [
+        0.043653,
+        28.784371
+      ]
+    },
+    {
+      "code_commune": 4908,
+      "records": 36,
+      "files": 11,
+      "median": [
+        0.339404,
+        28.706896
+      ]
+    },
+    {
+      "code_commune": 5205,
+      "records": 20,
+      "files": 8,
+      "median": [
+        -2.288198,
+        30.449018
+      ]
+    },
+    {
+      "code_commune": 5702,
+      "records": 12,
+      "files": 7,
+      "median": [
+        5.909779,
+        34.26203
+      ]
+    }
+  ]
+}
