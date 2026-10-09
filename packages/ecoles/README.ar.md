@@ -202,4 +202,4 @@ data/
 
 من إنجاز [Yasser's studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [support@yasser.studio](mailto:support@yasser.studio)
 
-المشروع مجاني ويبقى كذلك، والاستوديو نفسه يصنع لعملائه خرائط ومواقع إلكترونية وتطبيقات هاتف وبيانات مفتوحة.
+المشروع مجاني ويبقى كذلك، والاستوديو نفسه ينجز لعملائه خرائط ومواقع ويب وتطبيقات هاتف وبيانات مفتوحة.
