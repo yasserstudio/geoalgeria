@@ -18,7 +18,7 @@ stations de métro, téléphériques et télécabines** – avec noms bilingues 
 Wikidata + OpenStreetMap, en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
-> **Exploitants (sources) :** SNTF (rail), SETRAM (tramways), SEMA/EMA (Métro d'Alger).
+> **Exploitants (sources) :** SNTF (rail), SETRAM (tramways), SEMA/EMA (Métro d'Alger).
 > Les **gares routières** sont dans [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres).
 
 ```bash
@@ -46,9 +46,9 @@ const alger = ferroviaire.stationsByWilaya(16);    // rail + métro + tram à Al
 Couvrant **50 wilayas**, tous géocodés. `wilaya_code` est lié au modèle à 69 wilayas de
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
-> Note de couverture : univers de nœuds Wikidata + OSM. SETRAM exploite 172 stations de
-> tram sur 7 réseaux ; le Métro d'Alger (SEMA) compte **19 stations en exploitation**
-> (Wikidata liste davantage de nœuds métro : accès/extensions).
+> Note de couverture : univers de nœuds Wikidata + OSM. SETRAM exploite 172 stations de
+> tram sur 7 réseaux ; le Métro d'Alger (SEMA) compte **19 stations en exploitation**
+> (Wikidata liste davantage de nœuds métro : accès/extensions).
 
 ## Formats
 
@@ -64,7 +64,7 @@ import stations from "@geoalgeria/ferroviaire/data/stations.json" with { type: "
 
 Composite de **Wikidata** (CC0) et **OpenStreetMap** (© contributeurs OpenStreetMap,
 ODbL 1.0), avec exploitants **SNTF**, **SETRAM**, **SEMA/EMA**. Le code est sous
-[MIT](LICENSE) ; les données issues d'OSM restent sous ODbL – conservez l'attribution.
+[MIT](LICENSE) ; les données issues d'OSM restent sous ODbL – conservez l'attribution.
 Vérifiez auprès des exploitants pour toute information officielle.
 
 [Voir tous les paquets →](https://geoalgeria.com/data)

@@ -34,7 +34,7 @@ const ooredoo = telecom.coverageByOperator("ooredoo");  // 176
 const inAlger = sites.filter((s) => s.wilaya_code === "16");
 ```
 
-Les chargeurs et les structures d'enregistrements sont entièrement **typés** :
+Les chargeurs et les structures d'enregistrements sont entièrement **typés** :
 
 ```ts
 import telecom, { type CoverageSite } from "@geoalgeria/telecom";
@@ -43,7 +43,7 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 
 ## Ce que vous pouvez construire
 
-- **Vérificateurs de couverture 5G** – « y a-t-il de la 5G près de chez moi / dans ma wilaya ? »
+- **Vérificateurs de couverture 5G** – « y a-t-il de la 5G près de chez moi / dans ma wilaya ? »
 - **Comparaison entre opérateurs** – empreinte Djezzy / Mobilis / Ooredoo par wilaya/commune.
 - **Cartes** – couches de points GeoJSON prêtes à l'emploi pour le déploiement 5G.
 
@@ -56,18 +56,18 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 | Ooredoo | **176** | commune couverte | ooredoo.dz |
 
 Couvrant **66 wilayas actuelles**. Les cartes des opérateurs utilisent encore le
-découpage à 58 wilayas ; 31 points Mobilis sont réaffectés de façon sûre à huit
+découpage à 58 wilayas ; 31 points Mobilis sont réaffectés de façon sûre à huit
 nouvelles wilayas.
 
-> **Ce qu'est un point :** chaque enregistrement est un point publié sur la
+> **Ce qu'est un point :** chaque enregistrement est un point publié sur la
 > carte de couverture 5G de l'opérateur. Djezzy et Mobilis publient des
-> emplacements de **sites cellulaires** ; Ooredoo publie des points au **niveau
+> emplacements de **sites cellulaires** ; Ooredoo publie des points au **niveau
 > communal** dans les communes couvertes (quelques communes en comportent
 > plusieurs). Les cercles affichés sur ces cartes ont un rayon fixe d'affichage,
 > **pas une mesure de couverture RF** – considérez-les comme des points de
 > *présence* 5G, et non comme des polygones de couverture.
 
-Dix-huit enregistrements Djezzy restent sans coordonnées : la wilaya et le nom
+Dix-huit enregistrements Djezzy restent sans coordonnées : la wilaya et le nom
 du site publiés par l'opérateur contredisent le point affiché. Les justificatifs
 de revue sont conservés, tandis que ces faux points sont retirés des champs
 cartographiques et du GeoJSON jusqu'à vérification de coordonnées de remplacement.
@@ -75,7 +75,7 @@ cartographiques et du GeoJSON jusqu'à vérification de coordonnées de remplace
 ## Organisation (évolutive)
 
 Les fichiers sont nommés par **technologie et opérateur**, de sorte que l'ajout
-d'une nouvelle génération est purement additif – rien n'est renommé :
+d'une nouvelle génération est purement additif – rien n'est renommé :
 
 ```
 data/
@@ -85,7 +85,7 @@ data/
   metadata.json                      # métadonnées v2 canoniques (schema_version, sources[], entities[], by_operator)
 ```
 
-Le paquet npm contient le **JSON, le CSV et le GeoJSON** ; les mêmes fichiers
+Le paquet npm contient le **JSON, le CSV et le GeoJSON** ; les mêmes fichiers
 sont inclus dans chaque [Release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 `coverage()` concatène les fichiers par opérateur (les ids sont préfixés par
 l'opérateur, l'union est donc sans collision).
@@ -94,7 +94,7 @@ l'opérateur, l'union est donc sans collision).
 
 Les enregistrements suivent le contrat canonique GeoAlgeria v2 (`geo_precision`,
 `geo_method`, `source` comme clé vers `metadata.sources[]`), plus les champs
-propres à la couverture :
+propres à la couverture :
 
 ```json
 {
@@ -120,12 +120,12 @@ extraction à l'autre. `wilaya_code` permet la jointure avec le `wilaya_code`
 actuel de GeoAlgeria. Pour 31 enregistrements Mobilis, `source_wilaya_code`
 conserve la wilaya mère publiée et `commune_code` identifie la commune canonique
 qui confirme la correction. Les champs qu'un opérateur donné ne fournit pas sont `null` (Djezzy
-n'a pas de commune ; Mobilis a la commune FR/AR mais pas d'adresse ; Ooredoo n'a
+n'a pas de commune ; Mobilis a la commune FR/AR mais pas d'adresse ; Ooredoo n'a
 que le nom de la commune). Pour Ooredoo, `name` est la commune couverte et les
-points sont `approximate` (`operator_commune_point`) : un point par commune
+points sont `approximate` (`operator_commune_point`) : un point par commune
 couverte, pas un site cellulaire.
 
-## Besoin des divisions administratives ?
+## Besoin des divisions administratives ?
 
 Pour les wilayas, dairas et communes, utilisez le paquet principal
 **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est lui qui
@@ -134,17 +134,17 @@ vous permet de convertir un `wilaya_code` en polygone ou en nom.
 ## Source et régénération
 
 Les données proviennent de la carte de couverture 5G publique de chaque
-opérateur. Exécutez `npm run fetch` pour régénérer toutes les sorties : le
+opérateur. Exécutez `npm run fetch` pour régénérer toutes les sorties : le
 script décode le blob encodé de marqueurs de Djezzy, lit le point d'accès JSON
 de Mobilis et lit le point d'accès des communes couvertes d'Ooredoo via une
-session navigateur réelle (le site d'Ooredoo s'authentifie lui-même ; cette
+session navigateur réelle (le site d'Ooredoo s'authentifie lui-même ; cette
 étape nécessite le CLI
 [`agent-browser`](https://www.npmjs.com/package/agent-browser) dans le `PATH`).
 Tout est normalisé en un schéma unique avec `wilaya_code` résolu vers les codes
-GeoAlgeria. Les opérateurs utilisent le schéma à 58 wilayas ; un point Mobilis
+GeoAlgeria. Les opérateurs utilisent le schéma à 58 wilayas ; un point Mobilis
 n'est affecté à une nouvelle wilaya que si une correspondance française ou arabe exacte, actuelle ou issue du registre ONS 2021
 et le polygone concordent. Les écritures sont
-tout-ou-rien : un opérateur en échec n'écrase jamais des données valides
+tout-ou-rien : un opérateur en échec n'écrase jamais des données valides
 commitées avec un jeu partiel.
 
 ## Licence et attribution
@@ -153,7 +153,7 @@ Le code est sous [MIT](LICENSE). Les données sous-jacentes sont la propriété 
 opérateurs respectifs (**Djezzy**, **Mobilis**, **Ooredoo**), redistribuées à
 titre de référence et pour alimenter
 [GeoAlgeria](https://geoalgeria.com). Le déploiement 5G est en cours – chaque
-reconstruction reflète ce que les cartes des opérateurs montrent à ce moment ;
+reconstruction reflète ce que les cartes des opérateurs montrent à ce moment ;
 vérifiez auprès des opérateurs pour des informations officielles et en temps
 réel.
 

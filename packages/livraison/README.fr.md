@@ -12,7 +12,7 @@
 
 </div>
 
-La couche livraison / e-commerce pour l'Algérie, en trois volets : un **registre** de
+La couche livraison / e-commerce pour l'Algérie, en trois volets : un **registre** de
 transporteurs, **411 bureaux de retrait géocodés** répartis sur 61 wilayas, et la
 **couverture par transporteur**. Distribué en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -44,7 +44,7 @@ const reach = livraison.coverageByCarrier("yalidine"); // wilayas desservies
 
 | Jeu de données | Nombre | Géocodé | Notes |
 | --- | --- | --- | --- |
-| Transporteurs (`carriers.json`) | **16** | – | registre : nom, site web, modèle, paiement à la livraison, périmètre, ouverture des données, API |
+| Transporteurs (`carriers.json`) | **16** | – | registre : nom, site web, modèle, paiement à la livraison, périmètre, ouverture des données, API |
 | Bureaux de retrait (`stopdesks.json`) | **411** | ✅ tous | id, opérateur, nom, adresse, commune, `wilaya_code`, lat/lng |
 | Couverture (`coverage.json`) | **9** | – | présence par transporteur (wilaya/commune) |
 
@@ -55,11 +55,11 @@ modèle 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
 L'Algérie compte plus de 90 entreprises de livraison, mais seules quelques-unes publient
 leurs emplacements d'agences ouvertement. Le **registre** couvre le paysage (les principaux
-transporteurs et ce que chacun fait) ; la **couche géocodée** couvre les transporteurs qui
-publient leurs emplacements de manière ouverte :
+transporteurs et ce que chacun fait) ; la **couche géocodée** couvre les transporteurs qui
+publient leurs emplacements de manière ouverte :
 
 - l'**écosystème relais Yalidine + Guepex** – Yalidine, Guepex, et les opérateurs qui
-  utilisent leur réseau partagé (EasyAndSpeed, WeCanServices, SpeedMail, Zimou Express) ;
+  utilisent leur réseau partagé (EasyAndSpeed, WeCanServices, SpeedMail, Zimou Express) ;
 - **Anderson**, **Noest** et **Maystro**, trois réseaux indépendants, chacun géocodé à
   partir du lien Google Maps sur ses fiches d'agence (les agences dont les liens sont
   manquants, irrésolvables ou pointent vers une wilaya différente de celle déclarée sur
@@ -73,7 +73,7 @@ ouvertes, pas une affirmation sur la portée de la livraison à domicile.
 
 ## Formats
 
-Le package npm distribue le **JSON** (importable directement) :
+Le package npm distribue le **JSON** (importable directement) :
 
 ```js
 import carriers from "@geoalgeria/livraison/data/carriers.json" with { type: "json" };
@@ -81,7 +81,7 @@ import carriers from "@geoalgeria/livraison/data/carriers.json" with { type: "js
 // https://cdn.jsdelivr.net/npm/@geoalgeria/livraison/data/stopdesks.json
 ```
 
-Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import livraison, { type StopDesk } from "@geoalgeria/livraison";
@@ -89,7 +89,7 @@ const desks: StopDesk[] = livraison.stopdesks();
 ```
 
 Les fichiers **CSV et GeoJSON** se trouvent dans le dépôt sous [`data/`](data) et sont
-inclus dans chaque [Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
+inclus dans chaque [Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -149,7 +149,7 @@ jamais un code ONS. `wilaya_code` fait la jointure avec les wilayas de GeoAlgeri
 `sources` liste les flux ouverts qui référencent le bureau – `["yalidine","guepex"]`
 quand les cartes relais concordent, ou `["anderson"]` pour une agence Anderson.
 
-## Besoin aussi des divisions administratives ?
+## Besoin aussi des divisions administratives ?
 
 Si vous avez également besoin des wilayas, daïras et communes pour effectuer des jointures,
 utilisez le package principal
@@ -159,7 +159,7 @@ quand vous avez *uniquement* besoin des données de livraison.
 
 ## Sources
 
-Les bureaux de retrait proviennent des transporteurs qui publient des données d'agences ouvertes :
+Les bureaux de retrait proviennent des transporteurs qui publient des données d'agences ouvertes :
 
 - **Yalidine** (<https://yalidine-express.com.dz/nos-agences/>) et **Guepex**
   (<https://www.guepex.dz/public/data/agences.json>) partagent un réseau relais fédéré et
@@ -167,21 +167,21 @@ Les bureaux de retrait proviennent des transporteurs qui publient des données d
   et dédupliqués par identifiant.
 - **Anderson** (<https://anderson-ecommerce.com>), **Noest** (<https://noest-dz.com>) et
   **Maystro** (<https://maystro-delivery.com/Coverage.html>) listent chacun leurs agences
-  avec un lien Google Maps par fiche ; le build résout chaque lien vers le point de
+  avec un lien Google Maps par fiche ; le build résout chaque lien vers le point de
   l'agence (les agences dont les liens sont manquants, irrésolvables ou pointent vers une
   wilaya différente de celle déclarée sur la fiche sont omises).
 
 Le registre des transporteurs est compilé à partir de
 [CourierDZ](https://github.com/PiteurStudio/CourierDZ), des sites web des transporteurs
 et des recherches GeoAlgeria. Exécutez `npm run fetch` pour régénérer toutes les sorties
-à partir des sources en ligne ; le build échoue bruyamment si le nombre d'une source
+à partir des sources en ligne ; le build échoue bruyamment si le nombre d'une source
 s'effondre ou si un transporteur inconnu apparaît. `wilaya_code` est résolu par le
 centroïde de commune le plus proche à partir du jeu de données `geoalgeria`.
 
 ## Licence et attribution
 
 Le code est sous licence [MIT](LICENSE). Les données des bureaux de retrait sont
-© les transporteurs respectifs ; le registre des transporteurs est compilé par GeoAlgeria.
+© les transporteurs respectifs ; le registre des transporteurs est compilé par GeoAlgeria.
 Redistribué à titre de référence et pour alimenter
 [GeoAlgeria](https://geoalgeria.com). Vérifiez auprès de chaque transporteur pour des
 informations officielles et en temps réel.

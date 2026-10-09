@@ -44,7 +44,7 @@ const visites = all.filter((p) => p.has_virtual_tour);
 - **Cartes culturelles & recherche de proximité** – chacun des 1 083 lieux a des
   coordonnées, prêtes pour une carte ou une fonction « à proximité ».
 - **Annuaires culturels bilingues** – noms français et arabe, type officiel et
-  wilaya pour chaque lieu ; filtrer patrimoine vs établissements en activité.
+  wilaya pour chaque lieu ; filtrer patrimoine vs établissements en activité.
 - **Applications patrimoine & tourisme** – sites protégés, musées et visites
   virtuelles à 360°, rattachés à la commune/wilaya pour l'itinéraire et l'analyse.
 
@@ -77,14 +77,14 @@ const visites = all.filter((p) => p.has_virtual_tour);
 | `arts-school` | 15 | École d'art – beaux-arts / conservatoire |
 | `cultural-palace` | 6 | Palais de la culture |
 
-> **L'atlas est officiel ; les coordonnées sont au mieux.** Les noms, le type, les
+> **L'atlas est officiel ; les coordonnées sont au mieux.** Les noms, le type, les
 > coordonnées et le drapeau 360° proviennent du portail du Ministère de la
-> Culture. La wilaya est exacte ; la commune est dérivée (voir *Source &
+> Culture. La wilaya est exacte ; la commune est dérivée (voir *Source &
 > méthode*). Les totaux évoluent au gré des mises à jour du portail.
 
 ## Formats
 
-Le paquet npm fournit le **JSON** (importable directement) :
+Le paquet npm fournit le **JSON** (importable directement) :
 
 ```js
 import culture from "@geoalgeria/culture/data/culture.json" with { type: "json" };
@@ -92,7 +92,7 @@ import culture from "@geoalgeria/culture/data/culture.json" with { type: "json" 
 // https://cdn.jsdelivr.net/npm/@geoalgeria/culture/data/culture.json
 ```
 
-Les chargeurs et les enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses :
+Les chargeurs et les enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses :
 
 ```ts
 import culture, { type CulturalSite } from "@geoalgeria/culture";
@@ -100,7 +100,7 @@ const all: CulturalSite[] = culture.culture();
 ```
 
 Les **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inclus dans
-chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
+chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -141,23 +141,23 @@ data/
 
 `id` est une clé stable `{wilaya_code}-{type_code}-{seq}`, unique au sein de ce
 fichier – à traiter comme opaque. `name` est le nom français s'il existe, sinon
-l'arabe. `type` est la couche du lieu sur le portail ; `category` regroupe les
+l'arabe. `type` est la couche du lieu sur le portail ; `category` regroupe les
 11 types en `heritage` vs `establishment`. `has_virtual_tour` vaut `true` pour
 les 22 lieux dotés d'une visite 360°. `geo_precision` vaut `"exact"` pour
 1 067 enregistrements et `"approximate"` pour 16 – chaque lieu a une
 coordonnée, mais 16 n'atteignent pas le seuil de précision de `"exact"`.
-`geo_method` vaut `"source_point"` pour chaque enregistrement : la coordonnée
+`geo_method` vaut `"source_point"` pour chaque enregistrement : la coordonnée
 est le point publié par le portail lui-même, pas un centroïde dérivé.
 `refs.patrimoine` est l'identifiant du lieu sur le portail.
 
-> **La wilaya est exacte ; la commune est dérivée.** Le portail classe encore
-> certains lieux sous d'anciens codes de wilaya ; GeoAlgeria les réaffecte au
+> **La wilaya est exacte ; la commune est dérivée.** Le portail classe encore
+> certains lieux sous d'anciens codes de wilaya ; GeoAlgeria les réaffecte au
 > découpage actuel à 69 wilayas en rattachant chaque coordonnée au centroïde de
 > commune [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) le plus proche
 > (qui fournit aussi `commune`/`commune_code`). La commune est approximative (le
 > paquet principal fournit des centroïdes, pas des polygones de limites).
 
-## Besoin des divisions administratives ?
+## Besoin des divisions administratives ?
 
 Pour les wilayas, dairas et communes, utilisez le paquet principal
 **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est ce qui
@@ -166,16 +166,16 @@ transforme le `commune_code` d'un lieu en polygone ou centroïde. Utilisez
 
 ## Source & méthode
 
-Lancez `npm run fetch` pour régénérer les sorties. Le script :
+Lancez `npm run fetch` pour régénérer les sorties. Le script :
 
 1. lit l'atlas culturel bilingue curé (assemblé et traduit depuis le portail
    `cartes.patrimoineculturelalgerien.org` du Ministère de la Culture – les
    catalogues français et arabe du portail sont des ensembles de nœuds disjoints,
    unis par proximité de coordonnées et traduits pour combler les manques
-   bilingues) ;
+   bilingues) ;
 2. **réaffecte** chaque lieu au découpage actuel à 69 wilayas et lui rattache une
    `commune`/`commune_code` en le rapprochant du centroïde de commune `geoalgeria`
-   le plus proche ;
+   le plus proche ;
 3. attribue des identifiants stables, retire les nœuds en double, et produit le
    JSON, le CSV, le GeoJSON et les métadonnées.
 

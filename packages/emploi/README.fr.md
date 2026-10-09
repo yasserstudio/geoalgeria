@@ -50,7 +50,7 @@ const reggane = alem.filter((a) => a.name.includes("REGGANE"));
 
 ## Formats
 
-Le package npm contient le **JSON** (importable directement) :
+Le package npm contient le **JSON** (importable directement) :
 
 ```js
 import alem from "@geoalgeria/emploi/data/alem.json" with { type: "json" };
@@ -58,7 +58,7 @@ import alem from "@geoalgeria/emploi/data/alem.json" with { type: "json" };
 // https://cdn.jsdelivr.net/npm/@geoalgeria/emploi/data/alem.json
 ```
 
-Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import emploi, { type Awem, type Alem } from "@geoalgeria/emploi";
@@ -66,7 +66,7 @@ const local: Alem[] = emploi.alem();
 ```
 
 **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inclus dans chaque
-[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
+[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -119,7 +119,7 @@ commune. `wilaya_code` permet la jointure avec le `wilaya_code` de GeoAlgeria.
 **AWEM (agence de wilaya)** – même structure, `id` = le `wilaya_code` à 2 chiffres,
 avec `name` / `address` / `phone` / `manager` et `lat`/`lng`.
 
-## Besoin des divisions administratives aussi ?
+## Besoin des divisions administratives aussi ?
 
 Pour les wilayas, dairas et communes (et les données postales), utilisez le package
 principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)**. Utilisez
@@ -130,13 +130,13 @@ principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)**. Utilisez
 Les données proviennent de l'**ANEM** (Agence Nationale de l'Emploi) via son portail
 cartographique (<https://www.anem.dz/#/portail-carto>). Il n'y a pas d'API publique –
 les agences sont intégrées dans le bundle JavaScript du portail. Lancez `npm run fetch`
-pour régénérer toutes les sorties : le script redécouvre le bundle actuel, extrait les
+pour régénérer toutes les sorties : le script redécouvre le bundle actuel, extrait les
 deux jeux de données, corrige l'inversion `X`=lat / `Y`=lng de la source et normalise
 les codes de wilaya. L'ANEM classe les agences selon le **schéma à 58 wilayas**. Lorsque
 l'adresse et la coordonnée d'une agence la situent toutes deux dans une commune déplacée par
 la réforme de 2026, une correction revue dans `quality/overrides/emploi.json` publie la wilaya
-actuelle (59-69) et la commune dont elle est tirée ; la régénération la réapplique et s'arrête
-si la valeur de l'ANEM a changé. 17 agences ALEM sont ainsi corrigées ; les autres apparaissent
+actuelle (59-69) et la commune dont elle est tirée ; la régénération la réapplique et s'arrête
+si la valeur de l'ANEM a changé. 17 agences ALEM sont ainsi corrigées ; les autres apparaissent
 encore sous leur wilaya mère.
 
 ## Licence et attribution
@@ -147,7 +147,7 @@ Vérifiez auprès de l'ANEM pour des informations officielles et à jour.
 
 Le champ `manager` contient le nom du responsable de l'agence tel que publié, textuellement,
 sur le portail public de l'ANEM – ce n'est pas une donnée privée. Chaque reconstruction
-reflète ce que l'ANEM affiche actuellement ; s'ils le retirent, il disparaît ici aussi.
+reflète ce que l'ANEM affiche actuellement ; s'ils le retirent, il disparaît ici aussi.
 
 [Documentation API et référence des champs →](https://geoalgeria.com/data/docs/emploi) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
 

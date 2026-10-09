@@ -16,7 +16,7 @@
 **IFEP**, **IEP**, **DFEP** et centres privés agréés – chacun avec son nom officiel (arabe,
 avec le français quand disponible), **type** d'établissement, **capacité**, informations
 d'**internat**, **coordonnées de contact** détaillées (téléphone, fax, email, site web,
-Facebook) et coordonnées GPS. Source : **Ministère de la Formation et de l'Enseignement
+Facebook) et coordonnées GPS. Source : **Ministère de la Formation et de l'Enseignement
 Professionnels (MFEP)** via [takwin.dz](https://takwin.dz), distribué en JSON, CSV et GeoJSON.
 Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -60,16 +60,16 @@ const one = fp.establishmentById("00001");          // un seul enregistrement pa
 | **Total** | | **1 932** |
 
 Couvrant **les 69 wilayas actuelles**. La source est indexée selon l'ancien schéma à 58
-wilayas ; le générateur rattache donc les coordonnées et communes au découpage actuel et affecte 134
+wilayas ; le générateur rattache donc les coordonnées et communes au découpage actuel et affecte 134
 établissements à leur nouvelle wilaya issue de la réforme de 2026. 1 920 des 1 932 établissements sont géocodés
 (99 %) – `lat`/`lng` est `null` pour les 12 restants. Parmi les enregistrements géocodés,
-1 375 portent le point publié par takwin.dz (`geo_precision` `"exact"`) ; le portail laisse
+1 375 portent le point publié par takwin.dz (`geo_precision` `"exact"`) ; le portail laisse
 la coordonnée vide pour les autres, donc 510 sont placés sur le centroïde de leur commune et
 35 sur celui de leur wilaya, tous deux `"approximate"` et signalés dans `geo_method`.
 
 ## Formats
 
-Le package npm fournit le **JSON** (importable directement) :
+Le package npm fournit le **JSON** (importable directement) :
 
 ```js
 import establishments from "@geoalgeria/formation-professionnelle/data/establishments.json" with { type: "json" };
@@ -77,7 +77,7 @@ import establishments from "@geoalgeria/formation-professionnelle/data/establish
 // https://cdn.jsdelivr.net/npm/@geoalgeria/formation-professionnelle/data/establishments.json
 ```
 
-Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import fp, { type Establishment } from "@geoalgeria/formation-professionnelle";
@@ -85,7 +85,7 @@ const all: Establishment[] = fp.establishments();
 ```
 
 Les formats **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inclus dans chaque
-[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
+[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -136,16 +136,16 @@ data/
 (toujours présent), `name_fr` est en français (peut être `null`). `type` est un slug
 correspondant à l'un des dix types d'établissements listés ci-dessus. `secteur` est
 `"public"` ou `"prive"`. `wilaya_code` est complété à deux chiffres avec un zéro dans le
-schéma actuel à 69 wilayas, dérivé par rapprochement avec la commune source ; `commune_code` est actuellement toujours `null` pour cette source
+schéma actuel à 69 wilayas, dérivé par rapprochement avec la commune source ; `commune_code` est actuellement toujours `null` pour cette source
 (aucun code ONS publié par takwin.dz). `lat`/`lng`, ainsi que `geo_precision`/`geo_method`,
-sont `null` pour les 12 enregistrements non encore géocodés ; quand ils sont présents,
+sont `null` pour les 12 enregistrements non encore géocodés ; quand ils sont présents,
 `geo_precision` vaut `"exact"` ou `"approximate"` et `geo_method` indique l'origine de la
-coordonnée : `takwin` pour un point publié, `commune` ou `wilaya` pour un centroïde
+coordonnée : `takwin` pour un point publié, `commune` ou `wilaya` pour un centroïde
 remplaçant une coordonnée que le portail n'a jamais renseignée. `capacite` (théorique) et `capacite_reelle` (réalisée) sont des
-nombres de places ; `internat` indique la disponibilité d'un internat avec un
+nombres de places ; `internat` indique la disponibilité d'un internat avec un
 `capacite_internat` optionnel. `vocations` est un tableau de spécialisations quand disponible.
 
-## Besoin aussi des divisions administratives ?
+## Besoin aussi des divisions administratives ?
 
 Si vous avez également besoin des wilayas, daïras et communes pour des jointures, utilisez
 le package principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – il fournit

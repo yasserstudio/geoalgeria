@@ -17,7 +17,7 @@ superficies et rattachement wilaya/commune. Données issues de **SOGRAL** (l'exp
 public des gares routières), livrées en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
-> **Également connu sous le nom de :** réseau SOGRAL. SOGRAL est la *source* ; le paquet
+> **Également connu sous le nom de :** réseau SOGRAL. SOGRAL est la *source* ; le paquet
 > est nommé par domaine (`gares-routieres`) et repérable via le mot-clé `sogral`.
 
 ```bash
@@ -50,12 +50,12 @@ Couvrant **52 wilayas**, toutes géocodées. `wilaya_code` est lié au modèle �
 
 ### Identifiants retirés
 
-L'identifiant encode la wilaya : corriger la coordonnée d'une gare peut donc la
+L'identifiant encode la wilaya : corriger la coordonnée d'une gare peut donc la
 déplacer vers une autre wilaya et lui donner un nouvel identifiant. Celui qu'elle
 libère est retiré dans `data/retired-ids.json` et n'est jamais réattribué, afin
 qu'aucune gare future n'hérite d'une clé de jointure qui désignait autre chose.
 Sept à ce jour, toutes dues à une longitude source qui plaçait la gare dans la
-mauvaise wilaya :
+mauvaise wilaya :
 
 | Retiré | Gare | Devenu |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ mauvaise wilaya :
 
 ## Formats
 
-Le paquet npm livre le **JSON** (importable directement) ; **CSV et GeoJSON** sont dans le
+Le paquet npm livre le **JSON** (importable directement) ; **CSV et GeoJSON** sont dans le
 dépôt sous [`data/`](data) et joints à chaque
 [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -85,10 +85,10 @@ data/
 
 Données de **SOGRAL – EPE SOGRAL Spa** (Société de Gestion des Gares Routières d'Algérie),
 issues de l'instantané du registre SOGRAL récupéré sur `live.sogral.com` le
-01/07/2026 ; cet hôte est désormais retiré. Les 73 valeurs
+01/07/2026 ; cet hôte est désormais retiré. Les 73 valeurs
 `refs.mahatati_agency` renseignées ont été revérifiées le 28/08/2026 avec une
 correspondance exacte dans la liste publique des gares de départ de
-[MAHATATI](https://mahatati.sogral.com/) ; In Saleh est la seule gare qui n'y
+[MAHATATI](https://mahatati.sogral.com/) ; In Saleh est la seule gare qui n'y
 figure pas comme gare de départ. `wilaya_code`/`commune` sont résolus par
 centroïde de commune le plus proche à partir du jeu `geoalgeria`.
 

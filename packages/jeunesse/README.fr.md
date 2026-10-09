@@ -15,7 +15,7 @@
 2 334 institutions de jeunesse à travers l'Algérie – **maisons de jeunes**, complexes sportifs de
 proximité, salles polyvalentes, auberges de jeunes, centres de sciences et centres culturels, camps de jeunes
 et plus encore – chacune avec son nom, son **type**, son adresse, sa capacité, son statut opérationnel, l'accessibilité PMR,
-la surface bâtie/terrain, commune / daïra / wilaya, et coordonnées GPS. Source : **Ministère de la Jeunesse et des Sports GIS (sig.mjs.gov.dz)** – le même
+la surface bâtie/terrain, commune / daïra / wilaya, et coordonnées GPS. Source : **Ministère de la Jeunesse et des Sports GIS (sig.mjs.gov.dz)** – le même
 système officiel derrière le package sœur [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports).
 Distribué en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -61,7 +61,7 @@ Couvrant **69 wilayas**, chaque institution est géocodée. `wilaya_code` est li
 
 ## Formats
 
-Le package npm fournit le **JSON** (importable directement) :
+Le package npm fournit le **JSON** (importable directement) :
 
 ```js
 import institutions from "@geoalgeria/jeunesse/data/institutions.json" with { type: "json" };
@@ -69,7 +69,7 @@ import institutions from "@geoalgeria/jeunesse/data/institutions.json" with { ty
 // https://cdn.jsdelivr.net/npm/@geoalgeria/jeunesse/data/institutions.json
 ```
 
-Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import jeunesse, { type Institution } from "@geoalgeria/jeunesse";
@@ -77,7 +77,7 @@ const all: Institution[] = jeunesse.institutions();
 ```
 
 **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inclus dans chaque
-[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
+[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -117,31 +117,31 @@ data/
 ```
 
 `id` est une chaîne opaque à séquence complétée par des zéros, unique dans
-`institutions.json` – ne pas la parser. Le SIG publie les noms en **français** ; `name_ar`
+`institutions.json` – ne pas la parser. Le SIG publie les noms en **français** ; `name_ar`
 est le nom arabe **complété** à partir de la carte publique historique du ministère par
 appariement géographique au plus proche (≤ 200 m, et vérifié par type pour ne jamais greffer
 le nom d'un bâtiment voisin) – présent sur ~59 % des enregistrements, `null` où aucune
 correspondance de confiance n'existe (comme ci-dessus). `name` est `null` pour les ~5 % que
-la source laisse vides ; `commune` et `daira` sont en français (majuscules, comme publiés) ;
+la source laisse vides ; `commune` et `daira` sont en français (majuscules, comme publiés) ;
 `commune_code` est renseigné pour 128 enregistrements dont le libellé exact de commune actuel
-ou officiel ONS 2021 concorde avec le point ; sinon il vaut `null`. Pour l'ensemble complet des divisions wilaya/commune en français, joignez
+ou officiel ONS 2021 concorde avec le point ; sinon il vaut `null`. Pour l'ensemble complet des divisions wilaya/commune en français, joignez
 `wilaya_code` avec le jeu de données [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 `wilaya_code` est complété avec un zéro sur deux chiffres et suit le modèle actuel à 69 wilayas.
 Lorsqu'il diffère de la valeur ministérielle antérieure à la réforme, `source_wilaya_code`
 conserve la valeur Source. `geo_precision` vaut `"exact"` pour 2 244 enregistrements et `"approximate"` pour
 90 (le point du SIG est trop grossier, ou partagé avec un autre établissement, pour compter
-comme un point propre à l'établissement) ; tous les enregistrements sont géocodés, donc
+comme un point propre à l'établissement) ; tous les enregistrements sont géocodés, donc
 `null` n'apparaît pas ici.
 
-## Infrastructures sportives aussi ?
+## Infrastructures sportives aussi ?
 
 Pour les stades, piscines, pistes, terrains de jeu et autres installations **sportives** d'Algérie (du
 même SIG du MJS), consultez le package sœur
 **[`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports)**. Utilisez
-`@geoalgeria/jeunesse` pour les institutions de jeunesse ; utilisez `@geoalgeria/sports` pour les
+`@geoalgeria/jeunesse` pour les institutions de jeunesse ; utilisez `@geoalgeria/sports` pour les
 infrastructures sportives.
 
-## Besoin des divisions administratives ?
+## Besoin des divisions administratives ?
 
 Si vous avez aussi besoin des wilayas, daïras et communes pour les jointures, utilisez le package principal
 **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – il fournit le jeu de données complet
@@ -151,7 +151,7 @@ des divisions de wilayas auquel `wilaya_code` fait référence ici.
 
 Les données proviennent du **Ministère de la Jeunesse et des Sports**, via son SIG public
 (<https://sig.mjs.gov.dz/dashboard/viewer>). Exécutez `npm run fetch` pour régénérer
-toutes les sorties depuis le système en ligne ; le build résout chaque nom de wilaya français au code wilaya officiel,
+toutes les sorties depuis le système en ligne ; le build résout chaque nom de wilaya français au code wilaya officiel,
 répare les enregistrements avec des coordonnées transposées, complète les noms arabes à partir de la carte historique, et
 supprime les quelques enregistrements avec des coordonnées de remplissage/hors limites. Il échoue bruyamment
 si le nombre d'institutions s'effondre ou si un type inconnu apparaît.

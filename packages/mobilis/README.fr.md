@@ -15,7 +15,7 @@
 Les **165 agences commerciales** (*Agence Mobilis*) et les **12 180 points de
 vente agréés** de **Mobilis** (ATM Mobilis), l'opérateur mobile public algérien.
 Les agences disposent de noms et adresses bilingues FR/AR ainsi que de
-coordonnées GPS ; les points de vente disposent du nom, de l'adresse et de la
+coordonnées GPS ; les points de vente disposent du nom, de l'adresse et de la
 commune. Livré en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -60,7 +60,7 @@ const inBabEzzouar = pdv.filter((p) => p.commune === "BAB EZZOUAR");
 
 ## Formats
 
-Le package npm fournit le **JSON** (importable directement) :
+Le package npm fournit le **JSON** (importable directement) :
 
 ```js
 import agences from "@geoalgeria/mobilis/data/agences.json" with { type: "json" };
@@ -68,7 +68,7 @@ import agences from "@geoalgeria/mobilis/data/agences.json" with { type: "json" 
 // https://cdn.jsdelivr.net/npm/@geoalgeria/mobilis/data/agences.json
 ```
 
-Les chargeurs et les structures d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les structures d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import mobilis, { type Agence, type Pdv } from "@geoalgeria/mobilis";
@@ -76,7 +76,7 @@ const agences: Agence[] = mobilis.agences();
 ```
 
 Les fichiers **CSV et GeoJSON** se trouvent dans le dépôt sous [`data/`](data) et sont inclus dans chaque
-[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
+[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -127,12 +127,12 @@ data/
 ```
 
 `id` est une clé stable `{prefix}-{wilaya_code}-{seq}` générée par GeoAlgeria
-(`ag-` pour les agences, `pdv-` pour les points de vente ; seq ordonnée par
+(`ag-` pour les agences, `pdv-` pour les points de vente ; seq ordonnée par
 l'identifiant source), afin qu'elle reste unique dans la collection fusionnée
 `all()`. L'identifiant propre à Mobilis est conservé dans `code`. `wilaya_code`
 permet la jointure avec le `wilaya_code` de GeoAlgeria.
 
-## Besoin des divisions administratives ?
+## Besoin des divisions administratives ?
 
 Pour les wilayas, daïras et communes, utilisez le package principal
 **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est ainsi que
@@ -146,7 +146,7 @@ Les données proviennent du localisateur de magasins de **Mobilis**
 (<https://mobilis.dz/mapagence>). Il n'existe pas d'API documentée – le
 localisateur appelle quelques endpoints JSON derrière un en-tête
 `X-Requested-With`, et le site est protégé par un WAF. Exécutez `npm run fetch`
-pour régénérer toutes les sorties : il initialise une session, parcourt les 58
+pour régénérer toutes les sorties : il initialise une session, parcourt les 58
 wilayas pour les deux catégories, analyse les chaînes de coordonnées
 `"lat, lng"` (en gérant les lignes avec virgule décimale) et normalise les codes
 de wilaya. Mobilis enregistre les données selon le **schéma à 58 wilayas**, donc

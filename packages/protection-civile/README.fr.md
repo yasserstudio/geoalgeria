@@ -14,7 +14,7 @@
 
 # Aperçu
 
-**880 unités de la Protection Civile** réparties sur toutes les wilayas, directement issues du **jeu de données de la DGPC** (dgpc.dz), chaque unité avec un nom arabe, une adresse, téléphone et fax, un palier de statut (`statut`) et une coordonnée DGPC réelle. C'est une source **officielle primaire** : la DGPC est la source d'autorité « cette unité existe ici ».
+**880 unités de la Protection Civile** réparties sur toutes les wilayas, directement issues du **jeu de données de la DGPC** (dgpc.dz), chaque unité avec un nom arabe, une adresse, téléphone et fax, un palier de statut (`statut`) et une coordonnée DGPC réelle. C'est une source **officielle primaire** : la DGPC est la source d'autorité « cette unité existe ici ».
 
 ## Installation
 
@@ -52,9 +52,9 @@ metadata().wilayas_covered; // 69
 | --- | --- | --- | --- |
 | `protection-civile` | 880 | les 880 | DGPC (dgpc.dz), géocodé, rattachement wilaya post-réforme 2026 |
 
-**Par palier de statut (`statut`) :** UNITE SECONDAIRE 444 · POSTE AVANCE 146 · UNITE DE SECTEUR 132 · UNITE PRINCIPALE 62 · SIEGE DE DIRECTION WILAYA 58 · POSTE DE SECOURS ROUTIER 20 · UNITE MARINE 15 · U.N D'INSTRUCTION ET D'INTERVENTION 1 · DIRECTION GENERALE 1 · CELLULE DE SECURITE 1
+**Par palier de statut (`statut`) :** UNITE SECONDAIRE 444 · POSTE AVANCE 146 · UNITE DE SECTEUR 132 · UNITE PRINCIPALE 62 · SIEGE DE DIRECTION WILAYA 58 · POSTE DE SECOURS ROUTIER 20 · UNITE MARINE 15 · U.N D'INSTRUCTION ET D'INTERVENTION 1 · DIRECTION GENERALE 1 · CELLULE DE SECURITE 1
 
-Chaque unité porte `tel`, `fax` et `address` ; **780** communes rattachées par nom, le reste au centroïde le plus proche.
+Chaque unité porte `tel`, `fax` et `address` ; **780** communes rattachées par nom, le reste au centroïde le plus proche.
 
 ## Formats
 
@@ -65,20 +65,20 @@ Chaque unité porte `tel`, `fax` et `address` ; **780** communes rattachées par
 
 ## Comment les données sont construites
 
-Téléchargé depuis le GeoJSON de la DGPC (`dgpc.dz/dgpc2/unite.geojson`). Les coordonnées partent du `x`/`y` décimal de chaque entité ; un registre de révision protégé remplace six points grossiers par des coordonnées d'unité étayées par OpenStreetMap et inscrit les liens de preuve publics sur les lignes corrigées. Le `wilaya_code` est dérivé par point-dans-polygone contre les 69 limites de wilayas post-réforme 2026, puis **réconcilié avec le `cod_wilaya` propre à la DGPC** (pré-réforme, codes `"01".."58"`) : les unités désormais dans les 11 nouvelles wilayas 2026 portent leur nouveau code correct (géométrie `59..69`), mais lorsque la géométrie et le code DGPC divergent entre codes pré-réforme, une unité frontalière mal classée par un contour simplifié à `~150 m`, le code officiel de la DGPC l'emporte et la commune est re-rapprochée là. Le code DGPC est conservé tel quel dans `refs.dgpc_wilaya` comme reçu. La commune est au mieux, le nom arabe `commune_1` est rapproché du jeu de communes geoalgeria dans la wilaya résolue (repli au centroïde le plus proche). Reconstruire avec `npm run fetch` (ou `--cache` depuis `sources/protection-civile/dgpc-units.json`), puis lancer `npm run review`.
+Téléchargé depuis le GeoJSON de la DGPC (`dgpc.dz/dgpc2/unite.geojson`). Les coordonnées partent du `x`/`y` décimal de chaque entité ; un registre de révision protégé remplace six points grossiers par des coordonnées d'unité étayées par OpenStreetMap et inscrit les liens de preuve publics sur les lignes corrigées. Le `wilaya_code` est dérivé par point-dans-polygone contre les 69 limites de wilayas post-réforme 2026, puis **réconcilié avec le `cod_wilaya` propre à la DGPC** (pré-réforme, codes `"01".."58"`) : les unités désormais dans les 11 nouvelles wilayas 2026 portent leur nouveau code correct (géométrie `59..69`), mais lorsque la géométrie et le code DGPC divergent entre codes pré-réforme, une unité frontalière mal classée par un contour simplifié à `~150 m`, le code officiel de la DGPC l'emporte et la commune est re-rapprochée là. Le code DGPC est conservé tel quel dans `refs.dgpc_wilaya` comme reçu. La commune est au mieux, le nom arabe `commune_1` est rapproché du jeu de communes geoalgeria dans la wilaya résolue (repli au centroïde le plus proche). Reconstruire avec `npm run fetch` (ou `--cache` depuis `sources/protection-civile/dgpc-units.json`), puis lancer `npm run review`.
 
-> **Risque connu, clés de report.** Les ids publics stables sont reportés d'une reconstruction à l'autre via l'`objectid` de la DGPC (`refs.dgpc`), un identifiant de substitution de type ArcGIS que la DGPC pourrait renuméroter de son côté. La reconstruction journalise un décompte de reports ; une chute soudaine sous ~880 signifie que le substitut a été renuméroté, comparez les ids avant de committer plutôt que de les laisser se régénérer.
+> **Risque connu, clés de report.** Les ids publics stables sont reportés d'une reconstruction à l'autre via l'`objectid` de la DGPC (`refs.dgpc`), un identifiant de substitution de type ArcGIS que la DGPC pourrait renuméroter de son côté. La reconstruction journalise un décompte de reports ; une chute soudaine sous ~880 signifie que le substitut a été renuméroté, comparez les ids avant de committer plutôt que de les laisser se régénérer.
 
 ## Précision & couverture
 
-> **C'est le réseau complet publié par la DGPC, 880 unités.** Six points DGPC grossiers disposent désormais de coordonnées d'unité étayées ; 23 points coïncidents, issus d'un centroïde de polygone ou encore grossiers restent honnêtement `approximate`, et 857 sont `exact`. Il n'y a pas de nom français dans la source, donc `name_fr` n'est pas dérivé, rien n'est traduit automatiquement. La commune est un rapprochement par nom (au mieux) ; **la wilaya est dérivée de la géométrie puis recoupée avec le code propre à la DGPC**: les conflits entre codes pré-réforme (une unité frontalière mal classée par un contour simplifié) se résolvent au code officiel de la DGPC.
+> **C'est le réseau complet publié par la DGPC, 880 unités.** Six points DGPC grossiers disposent désormais de coordonnées d'unité étayées ; 23 points coïncidents, issus d'un centroïde de polygone ou encore grossiers restent honnêtement `approximate`, et 857 sont `exact`. Il n'y a pas de nom français dans la source, donc `name_fr` n'est pas dérivé, rien n'est traduit automatiquement. La commune est un rapprochement par nom (au mieux) ; **la wilaya est dérivée de la géométrie puis recoupée avec le code propre à la DGPC**: les conflits entre codes pré-réforme (une unité frontalière mal classée par un contour simplifié) se résolvent au code officiel de la DGPC.
 >
 > Le `cod_wilaya` d'origine de la DGPC est pré-réforme 2026 et n'est conservé que dans `refs.dgpc_wilaya`. Utilisez `wilaya_code` (le code post-réforme dérivé de la géométrie) pour tout rattachement wilaya.
 
 ## Source & licence
 
-Enregistrements DGPC © **Direction Générale de la Protection Civile (DGPC)** : contenu officiel public, redistribué ici pour référence, sans licence ouverte déclarée. Preuves de coordonnées révisées © **contributeurs OpenStreetMap**, ODbL 1.0. Le rattachement wilaya/commune utilise le jeu de données de base geoalgeria. Code du paquet sous licence MIT (voir [LICENSE](LICENSE)).
+Enregistrements DGPC © **Direction Générale de la Protection Civile (DGPC)** : contenu officiel public, redistribué ici pour référence, sans licence ouverte déclarée. Preuves de coordonnées révisées © **contributeurs OpenStreetMap**, ODbL 1.0. Le rattachement wilaya/commune utilise le jeu de données de base geoalgeria. Code du paquet sous licence MIT (voir [LICENSE](LICENSE)).
 
-## Questions ?
+## Questions ?
 
-Ouvrez une issue : https://github.com/yasserstudio/geoalgeria/issues
+Ouvrez une issue : https://github.com/yasserstudio/geoalgeria/issues

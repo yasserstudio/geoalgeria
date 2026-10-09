@@ -45,9 +45,9 @@ metadata().wilayas_covered; // 25
 | `dm` | 48 | Dispositifs Médicaux – fabricants de dispositifs |
 | `mixte` | 3 | Les deux (PP + DM) |
 
-**Méthode de géocodage** (`geo_method`) : `commune_centroid` (126) · `wilaya_centroid` (45).
+**Méthode de géocodage** (`geo_method`) : `commune_centroid` (126) · `wilaya_centroid` (45).
 Les 171 enregistrements portent tous `geo_precision: "approximate"` (le registre n'a pas de
-coordonnées réelles ; chaque point est un centroïde, jamais exact).
+coordonnées réelles ; chaque point est un centroïde, jamais exact).
 
 ## Formats
 
@@ -58,15 +58,15 @@ coordonnées réelles ; chaque point est un centroïde, jamais exact).
 
 ## Sur la précision
 
-> Les noms d'opérateurs et la nature PP/DM sont **officiels** (registre MIP). Le registre ne comporte **aucune coordonnée** : chaque enregistrement est placé au centroïde de sa commune résolue, ou – lorsque seule la wilaya est connue – au centroïde de la wilaya (voir `geo_method` ; `geo_precision` vaut `"approximate"` pour
+> Les noms d'opérateurs et la nature PP/DM sont **officiels** (registre MIP). Le registre ne comporte **aucune coordonnée** : chaque enregistrement est placé au centroïde de sa commune résolue, ou – lorsque seule la wilaya est connue – au centroïde de la wilaya (voir `geo_method` ; `geo_precision` vaut `"approximate"` pour
 chaque enregistrement). Ce sont des emplacements approximatifs de la *wilaya/commune*, non des points d'usine relevés.
 >
-> **Couverture :** 171 des ~186 établissements de fabrication agréés sont géocodés ici. Les autres sont des sous-traitants (sans site propre) ou de très petits fabricants de dispositifs sans adresse localisable – omis plutôt que placés arbitrairement. Les importateurs, grossistes, établissements d'exploitation et de promotion sont des registres MIP distincts, non inclus.
+> **Couverture :** 171 des ~186 établissements de fabrication agréés sont géocodés ici. Les autres sont des sous-traitants (sans site propre) ou de très petits fabricants de dispositifs sans adresse localisable – omis plutôt que placés arbitrairement. Les importateurs, grossistes, établissements d'exploitation et de promotion sont des registres MIP distincts, non inclus.
 
 ## Source & licence
 
 Données du registre de fabrication du **Ministère de l'Industrie Pharmaceutique (MIP)** – un listing factuel du secteur public, redistribué à titre de référence. Rattachement wilaya/commune via le jeu de données de base geoalgeria. Code du paquet sous licence MIT (voir [LICENSE](LICENSE)).
 
-## Questions ?
+## Questions ?
 
-Ouvrez une issue : https://github.com/yasserstudio/geoalgeria/issues
+Ouvrez une issue : https://github.com/yasserstudio/geoalgeria/issues

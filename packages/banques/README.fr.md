@@ -38,7 +38,7 @@ banques.byId("BNA");          // → Banque Nationale d'Algérie (par id ou acro
 | --- | --- | --- |
 | Banques | **21** | 7 publiques · 14 à capitaux étrangers – code banque RIB, nom FR/AR, propriété + groupe, pays, SWIFT/BIC, siège |
 | Établissements financiers | **8** | crédit-bail, refinancement et crédit mutuel (non-dépôt) |
-| Agences | **1 704** | **les 21 banques** – nom, adresse, téléphone, wilaya, coordonnées ; 1 325 géocodées ; **67/69 wilayas** |
+| Agences | **1 704** | **les 21 banques** – nom, adresse, téléphone, wilaya, coordonnées ; 1 325 géocodées ; **67/69 wilayas** |
 
 Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèle
 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
@@ -49,27 +49,27 @@ Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèl
   21 banques + 8 établissements (Ziraat Bankası, agréée en janvier 2025, est la
   banque la plus récente).
 - Les champs non confirmables par une source officielle sont **`null`**, jamais
-  devinés – la plupart des banques étrangères ne publient pas de nom arabe ; les
-  établissements financiers n'ont pas de SWIFT/BIC ; quelques adresses de siège
+  devinés – la plupart des banques étrangères ne publient pas de nom arabe ; les
+  établissements financiers n'ont pas de SWIFT/BIC ; quelques adresses de siège
   sont approximatives et pourront être affinées.
 - Les valeurs SWIFT/BIC correspondent aux variantes siège (`…XXX`).
 - Les **coordonnées des agences** ne sont conservées que si elles se situent en
   Algérie (et, pour les banques dont le localisateur se contente de géocoder les
-  adresses, concordent avec la wilaya déclarée de l'agence) ; sinon le point est
+  adresses, concordent avec la wilaya déclarée de l'agence) ; sinon le point est
   supprimé et la wilaya conservée – jamais de coordonnée devinée. Les pages de
   localisation sont récupérées avec la vérification TLS désactivée (`curl -k`)
   car plusieurs hôtes bancaires `.dz` servent des certificats invalides.
-- **Banques entièrement sans coordonnées** : BNH (60 agences), HBTF (10) et
-  Fransabank (23). Leurs annuaires officiels ne publient aucun point ; ces
+- **Banques entièrement sans coordonnées** : BNH (60 agences), HBTF (10) et
+  Fransabank (23). Leurs annuaires officiels ne publient aucun point ; ces
   agences sont donc livrées avec `lat`/`lng` `null` et une wilaya déduite de la
   localité en fin d'adresse. BEA compte 89 agences géocodées sur 111 et SGA 3
-  sur 84 après des contrôles stricts des sources et des preuves ; leurs autres
+  sur 84 après des contrôles stricts des sources et des preuves ; leurs autres
   agences restent elles aussi limitées à l'adresse. Le localisateur d'**AGB**
-  est protégé par un défi anti-bot :
+  est protégé par un défi anti-bot :
   ses 63 agences sont capturées via un navigateur headless et rafraîchies
-  manuellement ; **Arab Bank** ne publie que des points au niveau ville (nom +
+  manuellement ; **Arab Bank** ne publie que des points au niveau ville (nom +
   coordonnées, sans adresse). **BDL** et **Trust Bank** proviennent des
-  Google My Maps (KML) publiés par chaque banque ; **Citibank**, **HSBC** et
+  Google My Maps (KML) publiés par chaque banque ; **Citibank**, **HSBC** et
   **Ziraat** correspondent à leur bureau unique à Alger.
 - Cinq agences BDL sans point dans la source sont complétées par des coordonnées
   OpenStreetMap vérifiées uniquement lorsque l'objet OSM porte le même numéro
@@ -87,23 +87,23 @@ Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèl
 
 ## Feuille de route (ce paquet)
 
-Le registre est la première couche ; les **agences** couvrent désormais
+Le registre est la première couche ; les **agences** couvrent désormais
 **les 21 banques / 1 704 agences** (67/69 wilayas). Chaque banque publie son
 réseau via un localisateur différent – Joomla `com_mymaplocations`,
 WordPress store-locator / extensions cartographiques, bundle Vite SPA, pages
 ASP.NET/TYPO3, JSON intégré, Google My Maps KML – les banques sont donc ajoutées
 un extracteur à la fois (voir `scripts/fetch.mjs`). Les localisateurs sans
-coordonnées livrent `lat`/`lng` `null` (wilaya déduite de l'adresse) ; lorsque
+coordonnées livrent `lat`/`lng` `null` (wilaya déduite de l'adresse) ; lorsque
 les coordonnées d'une source ne concordent pas avec la wilaya déclarée de
 l'agence, elles sont supprimées plutôt que livrées erronées. Encore à venir sous
-le même `@geoalgeria/banques` :
+le même `@geoalgeria/banques` :
 
-- **DAB/GAB** – là où les banques publient des localisateurs ; honnêteté assumée
+- **DAB/GAB** – là où les banques publient des localisateurs ; honnêteté assumée
   sur la complétude, l'Algérie n'ayant pas de répertoire public unique de DAB.
 
 ## Formats
 
-`banks.json` et `institutions.json` s'importent directement ; des miroirs
+`banks.json` et `institutions.json` s'importent directement ; des miroirs
 **CSV** se trouvent sous [`data/csv/`](data/csv) et sont inclus dans chaque
 [release GitHub](https://github.com/yasserstudio/geoalgeria/releases). Les
 chargeurs et les formes d'enregistrement sont entièrement **typés**.
@@ -112,7 +112,7 @@ chargeurs et les formes d'enregistrement sont entièrement **typés**.
 
 `@geoalgeria/banques` est un jeu de données ouvert **indépendant**. Il n'est
 **ni affilié à, ni approuvé par, ni lié à** la Banque d'Algérie ou à toute
-banque ou établissement listé ; leurs noms, acronymes et codes **SWIFT/BIC**
+banque ou établissement listé ; leurs noms, acronymes et codes **SWIFT/BIC**
 appartiennent à leurs propriétaires respectifs et ne sont utilisés qu'à des fins
 d'identification. Les données sont compilées à partir de sources publiques et
 fournies **« en l'état », sans garantie** – elles peuvent être incomplètes ou
@@ -122,11 +122,11 @@ de conformité.** Rien ici ne constitue un conseil financier ou juridique. Pour
 signaler une erreur ou demander une correction/suppression,
 [ouvrez un ticket](https://github.com/yasserstudio/geoalgeria/issues/new/choose).
 
-Conditions complètes : voir le [**DISCLAIMER**](https://github.com/yasserstudio/geoalgeria/blob/main/DISCLAIMER.md) du projet.
+Conditions complètes : voir le [**DISCLAIMER**](https://github.com/yasserstudio/geoalgeria/blob/main/DISCLAIMER.md) du projet.
 
 ## Licence
 
-**Code** (chargeurs, types) : [MIT](LICENSE). **Données** : données factuelles
+**Code** (chargeurs, types) : [MIT](LICENSE). **Données** : données factuelles
 publiques (listes réglementaires + localisateur public de chaque établissement),
 redistribuées à titre de référence. Les coordonnées OSM vérifiées sont © contributeurs
 OpenStreetMap sous ODbL 1.0. Vous restez responsable des conditions des sources originales.

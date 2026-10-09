@@ -46,7 +46,7 @@ const inAdrar = offices.filter((o) => o.commune_code === "0101");
 
 ## Formats
 
-Le paquet npm contient le **JSON** (importable directement) :
+Le paquet npm contient le **JSON** (importable directement) :
 
 ```js
 import offices from "@geoalgeria/poste/data/postoffices.json" with { type: "json" };
@@ -54,7 +54,7 @@ import offices from "@geoalgeria/poste/data/postoffices.json" with { type: "json
 // https://cdn.jsdelivr.net/npm/@geoalgeria/poste/data/postoffices.json
 ```
 
-Les chargeurs et les structures d'enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses dans le paquet :
+Les chargeurs et les structures d'enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses dans le paquet :
 
 ```ts
 import poste, { type PostOffice, type Atm } from "@geoalgeria/poste";
@@ -62,7 +62,7 @@ const offices: PostOffice[] = poste.postOffices();
 ```
 
 Les fichiers **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inclus dans chaque
-[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
+[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -110,14 +110,14 @@ data/
 est le code ONS normalisé à 4 chiffres qui se joint au `code_commune` de
 GeoAlgeria. Quand Algérie Poste publie une valeur native différente, le champ
 facultatif `source_commune_code` la conserve sans modification. `geo_precision` vaut `"exact"` (ou `null` avec `lat`/`lng` quand
-le bureau n'est pas géocodé) ; `geo_method` indique comment le point a été obtenu.
+le bureau n'est pas géocodé) ; `geo_method` indique comment le point a été obtenu.
 
 **DAB** – même structure, identifié par `id`/`name`/`wilaya_code`/`postal_code`
 avec `lat`/`lng`, plus un champ `status` (`"OPEN"`, `"CLOSED (OFFLINE)"`, ou la
-valeur source non documentée `"1"`) ; `commune_code` est renseigné pour 90
-enregistrements corroborés et vaut sinon `null` ; `address` vaut toujours `null`.
+valeur source non documentée `"1"`) ; `commune_code` est renseigné pour 90
+enregistrements corroborés et vaut sinon `null` ; `address` vaut toujours `null`.
 
-## Besoin des divisions administratives ?
+## Besoin des divisions administratives ?
 
 Si vous avez aussi besoin des wilayas, dairas et communes, utilisez le paquet
 principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – il
@@ -129,7 +129,7 @@ n'avez besoin *que* des données postales/bancaires.
 
 Les données proviennent d'**Algérie Poste** via l'API publique BaridiMap
 (<https://baridimap.poste.dz>). Exécutez `npm run fetch` pour régénérer toutes
-les sorties à partir de l'API en direct ; la même exécution reflète les données
+les sorties à partir de l'API en direct ; la même exécution reflète les données
 dans le paquet `geoalgeria` pour que les deux ne divergent jamais (ce paquet est
 la source canonique). Relancez périodiquement. BaridiMap classe encore certains
 enregistrements selon le schéma à 58 wilayas. GeoAlgeria rattache les bureaux via
