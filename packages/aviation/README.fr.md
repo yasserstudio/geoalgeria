@@ -46,7 +46,7 @@ const inOran = aviation.airportsByWilaya(31);     // aéroports de la wilaya 31
 | --- | --- | --- |
 | Aéroports civils | **36** | nom officiel, codes OACI et IATA, adresse, téléphone, site web, coordonnées |
 | Liaisons sans escale | **157** | liaisons directionnelles avec exploitant, statut, niveau de preuve et source |
-| Liaisons planifiées | **20** | annoncées, pas encore exploitées ; une collection distincte, jamais un statut |
+| Liaisons planifiées | **20** | annoncées, pas encore exploitées ; une collection distincte, jamais un statut |
 
 Couvrant **33 wilayas**, chaque aéroport est géocodé et porte un code IATA. `wilaya_code`
 est lié au modèle 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
