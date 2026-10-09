@@ -29,7 +29,7 @@
 import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-// v2 contract enforcement — required of every package outside V1_HOLDOUTS (see below).
+// v2 contract enforcement: required of every package outside V1_HOLDOUTS (see below).
 import {
   validateRecords as validateV2Records,
   validateMetadata as validateV2Metadata,
@@ -70,7 +70,7 @@ const fail = (msg) => {
 // schema_version "2.0.0".
 //
 // This list exists because the gate is inverted. It used to read
-// `const isV2 = meta.schema_version === "2.0.0"`, and every v2 check hung off it —
+// `const isV2 = meta.schema_version === "2.0.0"`, and every v2 check hung off it,
 // so a package whose metadata lacked the key was not "v1", it was unvalidated. The
 // generators still emit v1 metadata, which makes that fail-open reachable: re-running
 // any packages/*/scripts/fetch.mjs rewrites its metadata without schema_version, and
@@ -79,7 +79,7 @@ const fail = (msg) => {
 // now the assumed state and a missing or wrong version is an error.
 //
 // Empty since telecom's v2 migration: every data-shipping package satisfies the
-// canonical contract. `dataset` (the core geoalgeria package) needs no entry — it
+// canonical contract. `dataset` (the core geoalgeria package) needs no entry: it
 // ships no data/metadata.json at all (dataset-metadata.json is a schema.org
 // descriptor), never reaches this gate, and is validated by
 // packages/dataset/scripts/validate.py.
@@ -90,7 +90,7 @@ const V1_HOLDOUTS = new Set([]);
  * and doesn't, rather than quietly skipping every downstream v2 check.
  *
  * Returns false after failing, so v1-shaped data does not then cascade hundreds of
- * contract errors on top of the one that explains them — the build is already red.
+ * contract errors on top of the one that explains them; the build is already red.
  */
 function requireV2(pkg, meta) {
   const declared = meta.schema_version;
@@ -98,13 +98,13 @@ function requireV2(pkg, meta) {
     if (declared === "2.0.0")
       fail(
         `${pkg}/metadata.json: declares schema_version "2.0.0" but ${pkg} is listed in ` +
-          `V1_HOLDOUTS — it migrated, so drop it from that list to switch its v2 checks on`,
+          `V1_HOLDOUTS: it migrated, so drop it from that list to switch its v2 checks on`,
       );
     return false;
   }
   if (declared !== "2.0.0") {
     fail(
-      `${pkg}/metadata.json: schema_version is ${JSON.stringify(declared ?? null)}, expected "2.0.0" — ` +
+      `${pkg}/metadata.json: schema_version is ${JSON.stringify(declared ?? null)}, expected "2.0.0"; ` +
         `the package reverted to v1 metadata (a generator re-run overwrites it), or it is a new ` +
         `v1 holdout that belongs in V1_HOLDOUTS. All v2 contract checks are skipped until this is fixed`,
     );
@@ -115,7 +115,7 @@ function requireV2(pkg, meta) {
 
 const readJson = (path) => JSON.parse(readFileSync(path, "utf-8"));
 // A coordinate is "present" iff it is a finite number (or numeric string).
-// Note `Number("") === 0`, so empty strings must be rejected explicitly —
+// Note `Number("") === 0`, so empty strings must be rejected explicitly;
 // otherwise blank coords would count as geocoded and the GeoJSON-count check
 // (features === records-with-coords) would silently diverge.
 const toNum = (v) => (v === "" || v == null ? NaN : Number(v));
@@ -125,14 +125,14 @@ const hasCoord = (r) => Number.isFinite(toNum(r.lat)) && Number.isFinite(toNum(r
 // Geo-in-boundary validation (v2 scope addition #1).
 //
 // @geoalgeria/schema has implemented point-in-wilaya since P1 and validateRecords
-// has accepted opts.boundaries since P1 — but nothing ever passed them, so the
+// has accepted opts.boundaries since P1, but nothing ever passed them, so the
 // check was dead for every package. It could not be switched on either: the only
 // wilaya geometry in this repo was dataset/geojson/wilayas.geojson, 69 *Point*
 // features, over which loadBoundaries indexes nothing and pointInWilaya answers
 // "inside" for everything. Wiring that would have produced a false green.
 //
-// The polygons now ship here (dataset/geojson/wilaya-boundaries.geojson, OSM/ODbL
-// — see its .metadata.json). loadBoundaries throws on an empty or partial index,
+// The polygons now ship here (dataset/geojson/wilaya-boundaries.geojson, OSM/ODbL,
+// see its .metadata.json). loadBoundaries throws on an empty or partial index,
 // and this file refuses to run without them, so the check cannot go quiet again.
 const BOUNDARIES_FILE = join(ROOT, "packages", "dataset", "data", "geojson", "wilaya-boundaries.geojson");
 let boundaryFc, BOUNDARIES;
@@ -141,7 +141,7 @@ try {
   BOUNDARIES = loadBoundaries(boundaryFc);
 } catch (e) {
   console.error(
-    `FAILED: cannot load the wilaya boundaries from packages/dataset/data/geojson/wilaya-boundaries.geojson — ${e.message}\n` +
+    `FAILED: cannot load the wilaya boundaries from packages/dataset/data/geojson/wilaya-boundaries.geojson: ${e.message}\n` +
       `The geo-in-boundary check is not optional: skipping it would report every package clean over data nothing looked at.`,
   );
   process.exit(1);
@@ -151,7 +151,7 @@ if (BOUNDARIES.size !== WILAYA_CODES.length) {
   process.exit(1);
 }
 
-// Which wilayas border which — see wilayaNeighbours() in @geoalgeria/schema for why
+// Which wilayas border which: see wilayaNeighbours() in @geoalgeria/schema for why
 // adjacency, not distance, is what separates a coarse-geometry warning from a
 // mislink. The same helper backs test/commune-in-boundary.test.mjs, so the two
 // gates cannot answer differently about the same pair of wilayas.
@@ -203,7 +203,7 @@ function tallyBoundaries(pkg, label, rows) {
     t.outside++;
     const inside = [...BOUNDARIES].filter(([, g]) => pointInGeometry(r.lng, r.lat, g)).map(([c]) => c);
     // No containing wilaya at all = just outside the national outline (coast, desert
-    // frontier). Median 153 m — that is the geometry, not the record.
+    // frontier). Median 153 m; that is the geometry, not the record.
     if (!inside.length || inside.some((c) => NEIGHBOURS.get(r.wilaya_code).has(c))) continue;
     t.mislinked.push({
       label,
@@ -227,7 +227,7 @@ function tallyBoundaries(pkg, label, rows) {
 // The band 0.62–2.68% is empty: one package sits 4.4x above every other. Same shape
 // as the capital guard's 10 km ceiling (68 values under 6.74 km, the defect at 22.5).
 // 1.0% leaves 64% headroom over the worst clean package and sits 2.7x under the
-// offender. NOTE the raw "outside its wilaya" rate does NOT support a ceiling — it
+// offender. NOTE the raw "outside its wilaya" rate does NOT support a ceiling: it
 // runs 0.00, 0.66, 0.70 … 5.15, 5.60, 6.13, 7.29, 9.16, 11.73 with no gap anywhere,
 // and its top entry (agriculture, 11.73%) is the cleanest package in the repo by
 // this measure: all 23 of its outliers sit outside the national outline, median
@@ -258,15 +258,15 @@ function reportBoundaries(full) {
     if (allowed !== undefined) {
       if (t.mislinked.length !== allowed)
         fail(
-          `${line} — recorded debt is ${allowed}. ` +
+          `${line}; recorded debt is ${allowed}. ` +
             (t.mislinked.length > allowed
               ? `New mislinks have shipped; fix them, do not raise the number.`
-              : `The debt shrank — ratchet KNOWN_MISLINKS down to ${t.mislinked.length} in scripts/validate-packages.mjs.`),
+              : `The debt shrank: ratchet KNOWN_MISLINKS down to ${t.mislinked.length} in scripts/validate-packages.mjs.`),
         );
-      else if (allowed > 0) console.log(`  ⚠ ${line} — over the ${MISLINK_CEILING_PCT}% ceiling, pinned as known debt`);
-      else console.log(`  OK: ${line} — pinned at 0`);
+      else if (allowed > 0) console.log(`  ⚠ ${line}, over the ${MISLINK_CEILING_PCT}% ceiling, pinned as known debt`);
+      else console.log(`  OK: ${line}, pinned at 0`);
     } else if (rate > MISLINK_CEILING_PCT) {
-      fail(`${line} — over the ${MISLINK_CEILING_PCT}% mislink ceiling`);
+      fail(`${line}, over the ${MISLINK_CEILING_PCT}% mislink ceiling`);
     } else if (t.mislinked.length) {
       console.log(`  ⚠ ${line}`);
     } else {
@@ -276,7 +276,7 @@ function reportBoundaries(full) {
       console.log(
         `      ${m.label} id=${m.id} declared=w${m.declared} actual=w${m.actual} ` +
           `${m.km.toFixed(1)} km outside w${m.declared} geo_method=${m.geo_method}` +
-          (m.name ? ` — ${m.name.slice(0, 40)}` : ""),
+          (m.name ? `, ${m.name.slice(0, 40)}` : ""),
       );
     if (t.mislinked.length > 5) console.log(`      … ${t.mislinked.length - 5} more`);
   }
@@ -284,20 +284,20 @@ function reportBoundaries(full) {
   // iterates KNOWN_MISLINKS itself: a package rename, a PACKAGES typo, or the
   // package going fully ungeocoded drops its debt entry without a word, and the
   // ratchet quietly stops ratcheting. A recorded debt that was never visited is
-  // therefore an error in its own right. Only meaningful on a full run — a
+  // therefore an error in its own right. Only meaningful on a full run; a
   // single-package run legitimately visits one package.
   if (full)
     for (const pkg of Object.keys(KNOWN_MISLINKS))
       if (!visited.has(pkg))
         fail(
           `KNOWN_MISLINKS records ${KNOWN_MISLINKS[pkg]} mislink(s) for "${pkg}", but no geocoded ` +
-            `record of that package was checked — it was renamed, dropped from PACKAGES, or lost ` +
+            `record of that package was checked: it was renamed, dropped from PACKAGES, or lost ` +
             `its coordinates. Remove the entry deliberately or restore the package; do not leave ` +
             `a debt no run can pay down.`,
         );
 
   console.log(
-    `  ${checked} geocoded records checked against 69 polygons — ${outside} outside their declared wilaya ` +
+    `  ${checked} geocoded records checked against 69 polygons, ${outside} outside their declared wilaya ` +
       `(${((100 * outside) / checked).toFixed(2)}%, warnings: the outlines are display-grade), ${mislinked} mislinked`,
   );
 }
@@ -767,7 +767,7 @@ const PACKAGES = {
       json: "lines.json",
       metaKey: "lines",
       csv: "csv/lines.csv",
-      // Line-level only (no per-stop geometry yet) — every record is ungeocoded,
+      // Line-level only (no per-stop geometry yet): every record is ungeocoded,
       // so there is nothing to mirror. A 0-feature FeatureCollection is
       // indistinguishable from a failed download in QGIS/Mapbox, so ship none.
       geojson: null,
@@ -816,7 +816,7 @@ function validateMergedIds(pkgs) {
       try {
         arr = readJson(join(ROOT, "packages", pkg, "data", file));
       } catch (e) {
-        fail(`${pkg}/${file}: cannot read for the merged-id check — ${e.message}`);
+        fail(`${pkg}/${file}: cannot read for the merged-id check: ${e.message}`);
         continue;
       }
       total += arr.length;
@@ -833,11 +833,11 @@ function validateMergedIds(pkgs) {
     const dups = total - owner.size;
     if (dups > 0) {
       fail(
-        `${pkg}: ${dups} id(s) collide across the files merged by index.js (${files.join(" + ")}) — ` +
+        `${pkg}: ${dups} id(s) collide across the files merged by index.js (${files.join(" + ")}): ` +
           [...collisions].map(([k, n]) => `${k}: ${n}`).join(", "),
       );
     } else {
-      console.log(`  OK: ${pkg} — ${owner.size} ids unique across ${files.length} merged files`);
+      console.log(`  OK: ${pkg}, ${owner.size} ids unique across ${files.length} merged files`);
     }
   }
 }
@@ -927,7 +927,7 @@ function validateDataset(pkg, spec) {
   try {
     arr = readJson(jsonPath);
   } catch (e) {
-    return fail(`${label}: invalid JSON — ${e.message}`);
+    return fail(`${label}: invalid JSON: ${e.message}`);
   }
   if (!Array.isArray(arr) || arr.length === 0) {
     return fail(`${label}: expected a non-empty array`);
@@ -975,7 +975,7 @@ function validateDataset(pkg, spec) {
   try {
     meta = readJson(join(dataDir, "metadata.json"));
   } catch (e) {
-    fail(`${pkg}/metadata.json: cannot read — ${e.message}`);
+    fail(`${pkg}/metadata.json: cannot read: ${e.message}`);
   }
   // v2 packages carry canonical metadata: multi-file packages track per-file counts in
   // entities[], single-file packages use record_count. v1 uses the package-named key.
@@ -1089,7 +1089,7 @@ function validateDataset(pkg, spec) {
   }
 
   console.log(
-    `  OK: ${label} — ${arr.length} records${spec.geojson ? `, ${withCoord} geocoded` : " (ungeocoded)"}`,
+    `  OK: ${label}, ${arr.length} records${spec.geojson ? `, ${withCoord} geocoded` : " (ungeocoded)"}`,
   );
   return arr;
 }
@@ -1099,19 +1099,19 @@ function validateDataset(pkg, spec) {
 //
 // validateDataset compared `record_count` and the GeoJSON feature count, and
 // nothing else. `geocoded_count`, `precision`, `wilayas_covered` and `bbox` were
-// four published numbers no gate ever looked at — and build-catalog.mjs copies all
+// four published numbers no gate ever looked at, and build-catalog.mjs copies all
 // four into index.json and into every dataset-metadata.json, where bbox becomes
 // the schema.org spatialCoverage box that Google Dataset Search reads.
 //
 // Demonstrated before this check existed: setting packages/aviation/data/metadata.json
 // to precision {exact:1, approximate:32} (real 33/0), geocoded_count 7 (real 33),
 // wilayas_covered 3 (real 31) and bbox [0,0,1,1] left `validate-packages.mjs aviation`
-// PASSING. The only gate that noticed was the catalog drift check — whose printed
+// PASSING. The only gate that noticed was the catalog drift check, whose printed
 // remedy is to regenerate the catalog *from* the corrupt metadata, i.e. to publish
 // bbox [0,0,1,1] to Google.
 //
-// Recomputed with @geoalgeria/schema's buildMetadata — the same function the
-// generators use to write these blocks — so the check cannot drift from the writer.
+// Recomputed with @geoalgeria/schema's buildMetadata, the same function the
+// generators use to write these blocks, so the check cannot drift from the writer.
 // Multi-file packages are compared once, over the union of their entities.
 function validateDerivedMetadata(pkg, records) {
   const metaPath = join(ROOT, "packages", pkg, "data", "metadata.json");
@@ -1129,7 +1129,7 @@ function validateDerivedMetadata(pkg, records) {
     const sum = meta.entities.reduce((n, e) => n + (e.count || 0), 0);
     if (sum !== meta.record_count)
       fail(
-        `${pkg}/metadata.json: entities[] sum ${sum} ≠ record_count ${meta.record_count} — ` +
+        `${pkg}/metadata.json: entities[] sum ${sum} ≠ record_count ${meta.record_count}; ` +
           `the catalog publishes record_count`,
       );
   }
@@ -1169,13 +1169,13 @@ function validateDerivedMetadata(pkg, records) {
     if (same(meta[key], want[key])) continue;
     fail(
       `${pkg}/metadata.json: ${key} is ${JSON.stringify(meta[key])} but the ${records.length} ` +
-        `shipped record(s) give ${JSON.stringify(want[key])} — regenerate the metadata, ` +
+        `shipped record(s) give ${JSON.stringify(want[key])}; regenerate the metadata, ` +
         `do not edit the number (build-catalog.mjs republishes it verbatim)`,
     );
   }
 }
 
-// dataset/data/poste is a mirror of @geoalgeria/poste — guard against drift.
+// dataset/data/poste is a mirror of @geoalgeria/poste; guard against drift.
 //
 // The whole tree, not just the JSON. poste/scripts/fetch.mjs emits all seven
 // files (json + csv/ + geojson/ + metadata.json) to both destinations from one
@@ -1187,7 +1187,7 @@ function validateDerivedMetadata(pkg, records) {
 // the same records, and CI stayed green throughout.
 //
 // Compares bytes, and walks both sides so an extra or missing file is caught
-// too — a re-copy that forgets a file must not read as "in sync".
+// too; a re-copy that forgets a file must not read as "in sync".
 function walkFiles(dir, base = dir, out = []) {
   for (const e of readdirSync(dir, { withFileTypes: true })) {
     const p = join(dir, e.name);
@@ -1211,7 +1211,7 @@ function validateRouteEndpoints() {
     routes = readJson(join(dataDir, "routes.json"));
     meta = readJson(join(dataDir, "metadata.json"));
   } catch (e) {
-    return fail(`${label}: cannot read — ${e.message}`);
+    return fail(`${label}: cannot read: ${e.message}`);
   }
   let missing = 0;
   for (const e of eps) {
@@ -1226,7 +1226,7 @@ function validateRouteEndpoints() {
   if (unresolved.length) fail(`${label}: routes reference absent endpoint(s) ${[...new Set(unresolved)].join(", ")}`);
   if (meta.routes && !/^\d{4}-\d{2}-\d{2}$/.test(meta.routes_as_of ?? ""))
     fail(`aviation/metadata.json: routes present but routes_as_of is not a YYYY-MM-DD date`);
-  console.log(`  OK: ${label} — ${eps.length} endpoints, fully named (fr/en/ar), all route terminals resolve`);
+  console.log(`  OK: ${label}, ${eps.length} endpoints, fully named (fr/en/ar), all route terminals resolve`);
 }
 
 function validateMirror() {
@@ -1248,7 +1248,7 @@ function validateMirror() {
     }
     if (!readFileSync(join(sourceDir, file)).equals(readFileSync(mirror))) {
       fail(
-        `mirror: dataset/data/poste/${file} drifted from @geoalgeria/poste — re-copy from packages/poste/data/${file}`,
+        `mirror: dataset/data/poste/${file} drifted from @geoalgeria/poste; re-copy from packages/poste/data/${file}`,
       );
     }
   }
@@ -1262,7 +1262,7 @@ function validateMirror() {
 
 // npm's `files` patterns are literal: "data/**/*.json" does NOT match ".geojson".
 // A package that generates CSV/GeoJSON mirrors but forgets the matching glob
-// therefore publishes JSON only — and nothing catches it, because the mirrors are
+// therefore publishes JSON only, and nothing catches it, because the mirrors are
 // committed and every check above passes on the working tree, not on the tarball.
 // (banques, livraison and buses each shipped that way.) Assert the two stay in sync.
 const DERIVED = [
@@ -1292,7 +1292,7 @@ function validatePackageFiles(pkgs) {
     try {
       files = readJson(join(ROOT, "packages", pkg, "package.json")).files || [];
     } catch (e) {
-      fail(`${pkg}/package.json: cannot read — ${e.message}`);
+      fail(`${pkg}/package.json: cannot read: ${e.message}`);
       continue;
     }
     const exts = derivedExtensions(dataDir);
@@ -1301,7 +1301,7 @@ function validatePackageFiles(pkgs) {
       fail(
         `${pkg}/package.json: data/ ships ${missing.map(([e]) => e).join(" + ")} but files[] omits ${missing
           .map(([, g]) => `"${g}"`)
-          .join(" + ")} — npm would publish neither`,
+          .join(" + ")}; npm would publish neither`,
       );
     } else {
       console.log(`  OK: ${pkg} files[] covers its derived data`);
@@ -1318,7 +1318,7 @@ function validateRetiredIds(pkgs) {
     try {
       document = readJson(ledgerPath);
     } catch (error) {
-      fail(`${pkg}/retired-ids.json: cannot read — ${error.message}`);
+      fail(`${pkg}/retired-ids.json: cannot read: ${error.message}`);
       continue;
     }
     const ids = document?.ids;
@@ -1372,7 +1372,7 @@ function validateRetiredIds(pkgs) {
         console.log(`  OK: ${pkg}: ${Object.keys(migrations).length} retired id(s) forward to a live record`);
     }
     if (!reused.length) {
-      console.log(`  OK: ${pkg} — ${ids.length} retired ids remain reserved`);
+      console.log(`  OK: ${pkg}, ${ids.length} retired ids remain reserved`);
     }
   }
 }
@@ -1380,7 +1380,7 @@ function validateRetiredIds(pkgs) {
 // types/index.d.ts ↔ shipped JSON.
 //
 // Every data package publishes `types/` in files[], so its .d.ts IS the public
-// API for TypeScript consumers — and nothing ever checked it against the data.
+// API for TypeScript consumers, and nothing ever checked it against the data.
 // The v2 migration renamed and added fields in 22 packages and updated five
 // declarations, so the rest kept describing v1: `metadata().airports` typed
 // `number` and `undefined` at runtime, `id: number` against `"00001"` strings,
@@ -1388,7 +1388,7 @@ function validateRetiredIds(pkgs) {
 // `geo_method` anywhere. All of it type-checks; all of it is wrong.
 //
 // A .d.ts is not executable, so this checks the two things that can be checked
-// mechanically — which names are declared, and whether a declaration admits null:
+// mechanically: which names are declared, and whether a declaration admits null:
 //   - every key in the JSON is declared            (undeclared field)
 //   - every key the .d.ts declares itself occurs   (declared-but-absent)
 //   - every non-optional key is on EVERY record    (required but sometimes missing)
@@ -1397,8 +1397,8 @@ function validateRetiredIds(pkgs) {
 // The second rule applies to inherited keys too. It used to exempt them, because
 // @geoalgeria/pharmacies extended the shared GeoRecord, which describes the family
 // and so declares fields any one dataset may not carry. No published declaration
-// imports the schema package any more — it is unpublished, so a .d.ts that did
-// would not resolve for consumers — and every remaining `extends` names a base
+// imports the schema package any more (it is unpublished, so a .d.ts that did
+// would not resolve for consumers), and every remaining `extends` names a base
 // local to its own package, which has no licence to declare a field its data
 // lacks. Local `type` aliases are expanded before the null test, so
 // `geo_precision: GeoPrecision` counts as nullable exactly when that alias
@@ -1533,7 +1533,7 @@ function validateTypes(pkgs) {
     if (!existsSync(dataDir) || !existsSync(typesPath)) continue;
     const files = TYPED[pkg];
     if (!files) {
-      fail(`${pkg}: ships data/ + types/index.d.ts but has no entry in TYPED — add its record interfaces`);
+      fail(`${pkg}: ships data/ + types/index.d.ts but has no entry in TYPED: add its record interfaces`);
       continue;
     }
 
@@ -1568,23 +1568,23 @@ function validateTypes(pkgs) {
       }
       if (undeclared.length) {
         problems++;
-        fail(`${pkg}/${file}: ${undeclared.length} field(s) ship but ${iname} does not declare them — ${undeclared.join(", ")}`);
+        fail(`${pkg}/${file}: ${undeclared.length} field(s) ship but ${iname} does not declare them: ${undeclared.join(", ")}`);
       }
       if (absent.length) {
         problems++;
-        fail(`${pkg}/${file}: ${iname} declares ${absent.length} field(s) that no record carries — ${absent.join(", ")}`);
+        fail(`${pkg}/${file}: ${iname} declares ${absent.length} field(s) that no record carries: ${absent.join(", ")}`);
       }
       if (notAlways.length) {
         problems++;
-        fail(`${pkg}/${file}: ${iname} declares ${notAlways.join(", ")} as required, but some records omit it — mark optional`);
+        fail(`${pkg}/${file}: ${iname} declares ${notAlways.join(", ")} as required, but some records omit it; mark optional`);
       }
       if (notNullable.length) {
         problems++;
-        fail(`${pkg}/${file}: ${iname} declares ${notNullable.join(", ")} as non-nullable, but records carry null — add "| null"`);
+        fail(`${pkg}/${file}: ${iname} declares ${notNullable.join(", ")} as non-nullable, but records carry null; add "| null"`);
       }
       if (badEnum.length) {
         problems++;
-        fail(`${pkg}/${file}: ${iname} declares a string-literal union that the data escapes — ${badEnum.join("; ")}`);
+        fail(`${pkg}/${file}: ${iname} declares a string-literal union that the data escapes: ${badEnum.join("; ")}`);
       }
     };
 
@@ -1597,7 +1597,7 @@ function validateTypes(pkgs) {
         rows = readJson(join(dataDir, file));
       } catch (e) {
         problems++;
-        fail(`${pkg}/${file}: cannot read for the types check — ${e.message}`);
+        fail(`${pkg}/${file}: cannot read for the types check: ${e.message}`);
         continue;
       }
       const group = byInterface.get(iname) ?? { files: [], rows: [] };
@@ -1610,7 +1610,7 @@ function validateTypes(pkgs) {
       check("metadata.json", "Metadata", [readJson(join(dataDir, "metadata.json"))]);
     } catch (e) {
       problems++;
-      fail(`${pkg}/metadata.json: cannot read for the types check — ${e.message}`);
+      fail(`${pkg}/metadata.json: cannot read for the types check: ${e.message}`);
     }
     if (!problems)
       console.log(`  OK: ${pkg} types match the shipped data (${Object.keys(files).length + 1} files)`);
@@ -1749,19 +1749,19 @@ function validateLivraison() {
   try {
     meta = readJson(join(dataDir, "metadata.json"));
   } catch (e) {
-    return fail(`livraison/metadata.json: cannot read — ${e.message}`);
+    return fail(`livraison/metadata.json: cannot read: ${e.message}`);
   }
   // v2 contract: stopdesks.json is the package's only true GeoRecord file (carriers/
   // coverage have no wilaya_code, so they stay outside the strict contract). Required,
-  // not dormant — mirrors validateDataset's requireV2 gate.
+  // not dormant; mirrors validateDataset's requireV2 gate.
   const isV2 = requireV2("livraison", meta);
 
-  // carriers (registry — no coordinates, no wilaya_code)
+  // carriers (registry: no coordinates, no wilaya_code)
   let carriers = [];
   try {
     carriers = readJson(join(dataDir, "carriers.json"));
   } catch (e) {
-    fail(`livraison/carriers.json: invalid JSON — ${e.message}`);
+    fail(`livraison/carriers.json: invalid JSON: ${e.message}`);
   }
   if (!Array.isArray(carriers) || !carriers.length) fail("livraison/carriers.json: expected a non-empty array");
   if (meta.carriers !== carriers.length) {
@@ -1779,7 +1779,7 @@ function validateLivraison() {
   try {
     desks = readJson(join(dataDir, "stopdesks.json"));
   } catch (e) {
-    fail(`livraison/stopdesks.json: invalid JSON — ${e.message}`);
+    fail(`livraison/stopdesks.json: invalid JSON: ${e.message}`);
   }
   if (!Array.isArray(desks) || !desks.length) fail("livraison/stopdesks.json: expected a non-empty array");
   if (meta.stopdesks !== desks.length) {
@@ -1828,12 +1828,12 @@ function validateLivraison() {
     else if (features.length !== withCoord) fail(`livraison: GeoJSON features ${features.length} ≠ stop-desks with coordinates ${withCoord}`);
   }
 
-  // coverage (per-carrier presence — reconciles against stopdesks + carriers)
+  // coverage (per-carrier presence; reconciles against stopdesks + carriers)
   let cov = [];
   try {
     cov = readJson(join(dataDir, "coverage.json"));
   } catch (e) {
-    fail(`livraison/coverage.json: invalid JSON — ${e.message}`);
+    fail(`livraison/coverage.json: invalid JSON: ${e.message}`);
   }
   if (!Array.isArray(cov) || !cov.length) fail("livraison/coverage.json: expected a non-empty array");
   if (meta.coverage !== cov.length) {
@@ -1847,7 +1847,7 @@ function validateLivraison() {
     if (!Number.isInteger(c.stopdesks)) fail(`livraison/coverage.json: operator "${c.operator}" has a non-integer stopdesks count`);
     covSum += Number(c.stopdesks);
     // coverage.wilayas is derived from stopdesks.wilaya_code, so it must carry the
-    // same key type — zero-padded strings — or the two files won't join.
+    // same key type (zero-padded strings) or the two files won't join.
     if (!Array.isArray(c.wilayas) || c.wilayas.some((w) => !WILAYA_CODES.includes(w))) covBadWilaya++;
   }
   if (covBadWilaya) fail(`livraison: ${covBadWilaya} coverage row(s) whose wilayas[] are not zero-padded codes "01".."69"`);
@@ -1927,7 +1927,7 @@ validateNoEmDash(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 console.log(`\n[normalize: every Rule reviewed and proved]`);
 validateNormalizeRules();
 
-// the mirror is poste-specific — only run it when validating poste (or all)
+// the mirror is poste-specific: only run it when validating poste (or all)
 if (!only || only === "poste") {
   console.log(`\n[mirror: dataset ↔ poste]`);
   validateMirror();

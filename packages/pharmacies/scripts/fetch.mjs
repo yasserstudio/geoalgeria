@@ -7,7 +7,7 @@
  *   - OpenStreetMap (ODbL): amenity=pharmacy in Algeria. Wikidata carries
  *     essentially no geocoded Algerian pharmacies and there is no open official
  *     directory (the Ordre National des Pharmaciens site is down), so OSM is the
- *     sole source — published with honest partial-coverage framing (~3.8k real
+ *     sole source: published with honest partial-coverage framing (~3.8k real
  *     officines, after excluding an OSM bulk-import artifact, against an estimated
  *     ~11k nationally).
  *
@@ -32,7 +32,7 @@ const OUT_DIR = join(__dirname, "..", "data");
 const REPO_ROOT = join(__dirname, "..", "..", "..");
 const RESEARCH_DIR = join(REPO_ROOT, "research", "pharmacies");
 // Approximate size of the national officine network for honest coverage framing.
-// Deliberately round — a reference order-of-magnitude, not a claim of a registry.
+// Deliberately round: a reference order-of-magnitude, not a claim of a registry.
 const OFFICIAL_TOTAL = 11000;
 // Sanity floor: a truncated upstream response parses fine and would otherwise be
 // silently accepted as the whole dataset. Algeria has ~5.5k pharmacies in OSM;
@@ -136,13 +136,13 @@ async function fetchOSM() {
       }
     }
   }
-  throw new Error("Overpass unavailable on every endpoint — OSM is the sole source, so aborting rather than writing a partial dataset");
+  throw new Error("Overpass unavailable on every endpoint: OSM is the sole source, so aborting rather than writing a partial dataset");
 }
 
 // --- helpers ---------------------------------------------------------------
 const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
 const wcode = (n) => (Number.isInteger(n) && n > 0 ? String(n).padStart(2, "0") : null);
-// True only for actual Arabic *letters* — excludes combining marks/punctuation.
+// True only for actual Arabic *letters*: excludes combining marks/punctuation.
 const isArabic = (s) => typeof s === "string" && /[ء-يٱ-ۓۺ-ۿ]/.test(s);
 const LEAD_MARKS = /^[̀-ͯؐ-ًؚ-ٰٟۖ-ۭ]+/;
 const cleanName = (v) => {
@@ -227,8 +227,8 @@ function normOSM(elements) {
   }
   if (dropped) console.log(`  OSM internal de-dup: ${dropped} same-name-within-40m record(s)`);
 
-  // Second pass: collapse records at the exact same point (a pharmacy mapped twice
-  // — a node and a building, or two spellings — that the name pass missed). Keep
+  // Second pass: collapse records at the exact same point (a pharmacy mapped twice:
+  // a node and a building, or two spellings, that the name pass missed). Keep
   // the richest record.
   const richness = (r) =>
     (r.name ? 1 : 0) + (r.name_ar ? 1 : 0) + (r.name_fr ? 1 : 0) +
@@ -256,7 +256,7 @@ function normOSM(elements) {
 // country.
 function dropBulkImports(rows) {
   const RUN_MIN = 20; // no real place is mapped as 20+ consecutive-id unnamed ways
-  const MAX_SPAN = 0.5; // degrees (~55 km) — the whole run must sit in a tight box
+  const MAX_SPAN = 0.5; // degrees (~55 km): the whole run must sit in a tight box
   const ways = rows
     .map((r, i) => ({ i, lat: r.lat, lng: r.lng, id: r.osm_id.startsWith("way/") && !r.name ? Number(r.osm_id.slice(4)) : NaN }))
     .filter((x) => Number.isFinite(x.id))
@@ -302,7 +302,7 @@ function loadCommunes() {
       }
     }
   }
-  if (!communes.length) throw new Error("no commune centroids loaded — check packages/dataset/data/algeria.json");
+  if (!communes.length) throw new Error("no commune centroids loaded: check packages/dataset/data/algeria.json");
   return communes;
 }
 
@@ -385,13 +385,13 @@ const writeJSON = (p, obj) => writeFileSync(join(OUT_DIR, p), JSON.stringify(obj
 const writeText = (p, txt) => writeFileSync(join(OUT_DIR, p), txt);
 
 // --- main ------------------------------------------------------------------
-// Reuse the cached raw pull (research/pharmacies/osm-raw.json) — a reproducible,
+// Reuse the cached raw pull (research/pharmacies/osm-raw.json): a reproducible,
 // offline rebuild that doesn't re-hit Overpass. Use: node scripts/fetch.mjs --cache
 function readCache() {
   const p = join(RESEARCH_DIR, "osm-raw.json");
   const json = JSON.parse(readFileSync(p, "utf-8"));
   if (!Array.isArray(json.elements) || json.elements.length < OSM_MIN) {
-    throw new Error(`cache ${p} missing or too small — run without --cache to refetch`);
+    throw new Error(`cache ${p} missing or too small: run without --cache to refetch`);
   }
   console.log(`Using cached OSM pull: ${json.elements.length} elements`);
   return json.elements;
@@ -476,7 +476,7 @@ async function main() {
   writeJSON("metadata.json", metadata);
   writeRetiredIds(OUT_DIR, retiredIds);
   console.log(
-    `Wrote ${rows.length} pharmacies (${named} named, ${metadata.wilayas_covered} wilayas) — ` +
+    `Wrote ${rows.length} pharmacies (${named} named, ${metadata.wilayas_covered} wilayas): ` +
       `${metadata.with_phone} with phone, ${metadata.with_hours} with hours, ${metadata.with_address} with address.`,
   );
 }

@@ -37,7 +37,7 @@ const normAr = (s) => String(s || "")
   .replace(/[^؀-ۿ]/g, "");
 const COMMUNE_PROPS = JSON.parse(readFileSync(join(REF, "communes.geojson"), "utf8")).features.map((f) => f.properties);
 // Exact-token place lookups (commune + wilaya names → wilaya_code), French and Arabic. EXACT match
-// on a whole token/phrase — never substring — so an eponymous street like "rue Colonel Amirouche"
+// on a whole token/phrase (never substring), so an eponymous street like "rue Colonel Amirouche"
 // (Algiers) can't match the Amirouche commune elsewhere. Communes loaded first; wilaya names win on
 // the bare canonical name.
 const PLACE_LAT = new Map(), PLACE_AR = new Map();
@@ -45,7 +45,7 @@ for (const c of COMMUNE_PROPS) { const l = norm(c.name_fr), a = normAr(c.name_ar
 for (const w of WILAYAS) { const l = norm(w.name_fr), a = normAr(w.name_ar); if (l) PLACE_LAT.set(l, w.code); if (a) PLACE_AR.set(a, w.code); }
 // Last-resort wilaya assignment for address-only banks (no coords, no stated wilaya). Algerian
 // addresses end with the locality (street names honoring national figures appear earlier), so scan
-// tokens RIGHT-TO-LEFT and return the first exact place match — trying the longest trailing phrase
+// tokens RIGHT-TO-LEFT and return the first exact place match, trying the longest trailing phrase
 // first so multi-word names ("Bordj Bou Arréridj", "برج بوعريرج") resolve. Returns null if unmatched.
 function wilayaFromText(text) {
   if (!text) return null;
@@ -77,7 +77,7 @@ const num = (v) => { const n = parseFloat(String(v ?? "").trim()); return Number
 const decode = (s) =>
   String(s || "").replace(/&#?\w+;/g, (m) => ({ "&#44;": ",", "&nbsp;": " ", "&amp;": "&" }[m] ?? " "))
     .replace(/<[^>]+>/g, " ").replace(/\\(['’"])/g, "$1").replace(/\s+/g, " ").trim();
-// Split an HTML fragment on <br>, decode each line, drop empties — shared by the address-only banks.
+// Split an HTML fragment on <br>, decode each line, drop empties: shared by the address-only banks.
 const brLines = (s) => String(s || "").split(/<br\s*\/?>/i).map(decode).filter(Boolean);
 // curl via execFileSync with array args: nothing is shell-interpreted, so source
 // values (incl. the remote-scraped BADR asset path) can't inject commands. -k:
@@ -86,7 +86,7 @@ const curl = (args) => execFileSync("curl", ["-sk", "--proto", "=https", "--prot
 
 const inRange = (w) => Number.isInteger(w) && w >= 1 && w <= 69;
 // Coordinates are trusted only inside Algeria's bounding box and never exactly on
-// a zero axis (a common missing-value default) — guards against malformed source
+// a zero axis (a common missing-value default), guards against malformed source
 // values such as a latitude that lost its decimal point, or lng:0.
 const inAlgeria = (lat, lng) =>
   Number.isFinite(lat) && Number.isFinite(lng) && lat !== 0 && lng !== 0 &&
@@ -230,8 +230,8 @@ function badr(src) {
   return out;
 }
 
-// Static HTML table (BNH /agences): each branch row is 5 <td>s — name, wilaya, address, phone,
-// activity. Phone placeholder 000-00-00-00 means "none". No coordinates on the page.
+// Static HTML table (BNH /agences): each branch row is 5 <td>s (name, wilaya, address, phone,
+// activity). Phone placeholder 000-00-00-00 means "none". No coordinates on the page.
 function bnhtable(src) {
   const html = curl([src.url]);
   const out = [];
@@ -364,7 +364,7 @@ function bnp(src) {
 }
 
 // Arab Bank PLC Algeria: a global location tree at /branches/jsonmap (the body is JSON, sometimes
-// JSON-string-wrapped). Only city-level points for Algeria — coordinates, no street address/phone.
+// JSON-string-wrapped). Only city-level points for Algeria: coordinates, no street address/phone.
 function arabbank(src) {
   let data = JSON.parse(curl([src.url]));
   if (typeof data === "string") data = JSON.parse(data);
@@ -396,7 +396,7 @@ function sga(src) {
   for (const u of urls) {
     let html;
     try { html = curl([u.href]); } catch { continue; }
-    // The page heading is the wilaya these branches belong to — more reliable than the abstract's
+    // The page heading is the wilaya these branches belong to, more reliable than the abstract's
     // line order, which varies (some cards omit the wilaya line).
     const wilaya = decode((html.match(/<h1[^>]*>([\s\S]{0,200}?)<\/h1>/i) || [, ""])[1]) || null;
     const re = /card__title>\s*<a href="([^"]+)"[^>]*class=card__link>([^<]*)<\/a>[\s\S]{0,800}?card__abstract>([\s\S]{0,800}?)<\/div>/gi;
@@ -417,7 +417,7 @@ function sga(src) {
 // AGB (Gulf Bank Algérie) sits behind an F5/Shape JS challenge that plain curl can't solve, so its
 // 63 branches are captured once via a headless browser into scripts/seeds/agb.json and merged here
 // (refresh manually: re-run the browser capture and overwrite the seed). The seed lives under
-// scripts/ — a scrape input, not part of the published data/ tree. See README » Provenance.
+// scripts/: a scrape input, not part of the published data/ tree. See README » Provenance.
 function seed(src) {
   return JSON.parse(readFileSync(join(SCRIPTS, "seeds", src.seed), "utf8"));
 }
@@ -459,7 +459,7 @@ function kmldesc(src) {
       else if (/^fax/i.test(ln)) continue;
       else if (!address) address = ln;
     }
-    // Some rows pack "address ;TEL… ;FAX…" on one line — pull the phone out and trim the tail.
+    // Some rows pack "address ;TEL… ;FAX…" on one line: pull the phone out and trim the tail.
     if (!phone && address && /t[ée]l[^0-9]*\d/i.test(address)) {
       phone = (address.match(/t[ée]l[^0-9]*([0-9][0-9\s.\-]{5,})/i) || [])[1]?.trim() || null;
       address = address.replace(/[;,]?\s*t[ée]l[^0-9]*\d[\s\S]*$/i, "").trim() || address;
@@ -490,7 +490,7 @@ const SOURCES = [
   { bank_id: "arabbank", kind: "arabbank", url: "https://www.arabbank.dz/mainmenu/home/ways-to-bank/branches/jsonmap" },
   { bank_id: "sga", kind: "sga", url: "https://particuliers.societegenerale.dz/fr/locations-details/agences/" },
   { bank_id: "agb", kind: "seed", seed: "agb.json", url: "https://www.agb.dz/" },
-  // BDL — committed export of the bank's Google My Maps. Refresh:
+  // BDL: committed export of the bank's Google My Maps. Refresh:
   // curl 'https://www.google.com/maps/d/kml?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8&forcekml=1' > scripts/seeds/bdl.kml
   { bank_id: "bdl", kind: "gmymaps", kml: "bdl.kml" },
   { bank_id: "trustbank", kind: "kmldesc", kml: "trustbank.kml" },
@@ -515,16 +515,16 @@ for (const src of SOURCES) {
       if (src.bank_id === "bea" && beaFix && beaFix.expected_name === r.name && beaFix.expected_address === r.address) return { ...r, lat: beaFix.lat, lng: beaFix.lng, wilaya_code: beaFix.wilaya_code ?? r.wilaya_code, source_wilaya_code: beaFix.source_wilaya_code ?? r.source_wilaya_code, geo_precision: "approximate", geo_method: "bank_locator" };
       return r;
     });
-    // A handler that returns nothing usually means the bank changed its markup — surface it loudly
+    // A handler that returns nothing usually means the bank changed its markup: surface it loudly
     // rather than silently shipping a smaller dataset.
-    console.log(`${src.bank_id}: ${recs.length} branches${recs.length === 0 ? "  ⚠️  ZERO — locator markup may have changed" : ""}`);
+    console.log(`${src.bank_id}: ${recs.length} branches${recs.length === 0 ? "  ⚠️  ZERO: locator markup may have changed" : ""}`);
     all.push(...recs);
   } catch (e) {
-    console.log(`${src.bank_id}: FAILED — ${e.message.split("\n")[0]}`);
+    console.log(`${src.bank_id}: FAILED: ${e.message.split("\n")[0]}`);
   }
 }
 
-// Drop any record without a valid wilaya_code — can't place it honestly; keeps the
+// Drop any record without a valid wilaya_code: can't place it honestly; keeps the
 // published set clean and the validator green regardless of source quirks.
 const dropped = all.filter((r) => !inRange(r.wilaya_code));
 if (dropped.length) console.log(`dropped ${dropped.length} record(s) with no valid wilaya_code: ${dropped.map((r) => r.id).join(", ")}`);

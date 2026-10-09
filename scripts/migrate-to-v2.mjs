@@ -10,7 +10,7 @@
 // Guarded against double-runs: the transform is ONE-WAY (buses reads source_url out
 // of the pre-v2 `source`, so a second pass would overwrite the URL with the key
 // "wikipedia" and still exit 0), so a package is skipped when its metadata says v2
-// OR when its records already carry v2 geo fields — metadata alone can desync.
+// OR when its records already carry v2 geo fields: metadata alone can desync.
 // Usage: node scripts/migrate-to-v2.mjs [pkg ...]   (no arg = all configured)
 
 import { readFileSync, existsSync } from "node:fs";
@@ -25,7 +25,7 @@ import {
 
 // Re-exported so test/migrate-v2-replay.test.mjs can replay each map against the v1
 // fixture without importing the writer's fs side effects. Importing this module
-// must not rewrite data — the runner below only runs as a CLI.
+// must not rewrite data: the runner below only runs as a CLI.
 export { MIGRATIONS };
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -48,7 +48,7 @@ function migrate(pkg) {
     input: JSON.parse(readFileSync(join(dir, s.from ?? s.file), "utf-8")),
   }));
   if (oldMeta.schema_version === "2.0.0" || sources.some(({ input }) => isV2Shaped(input))) {
-    console.log(`  ${pkg}: already v2 — skipped`);
+    console.log(`  ${pkg}: already v2, skipped`);
     return true;
   }
 
@@ -78,7 +78,7 @@ function migrate(pkg) {
 // Refuse to run once the cutover has already been applied. The transform stamps
 // `updated`/`retrieved` from CUTOVER_DATE (below), so a second pass would silently
 // reset every package's honest, later-refreshed dates back to the 2026-07-18
-// constant. The per-package skip inside migrate() is a belt; this is the braces —
+// constant. The per-package skip inside migrate() is a belt; this is the braces:
 // a loud pre-flight abort before anything on disk is touched.
 function refuseIfAlreadyCutover(targets) {
   const applied = targets.filter((pkg) => {
@@ -92,7 +92,7 @@ function refuseIfAlreadyCutover(targets) {
   });
   if (applied.length) {
     console.error(
-      `refusing to run: cutover already applied to ${applied.join(", ")} — re-running ` +
+      `refusing to run: cutover already applied to ${applied.join(", ")}, re-running ` +
         `would re-stamp honest dates back to the cutover constant (${CUTOVER_DATE}). ` +
         `This script is historical; regenerate via each package's v2 generator instead.`,
     );

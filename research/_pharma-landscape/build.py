@@ -37,7 +37,7 @@ NATURE_LABEL = {
 # first match wins. 11 makers stayed unlocatable and are intentionally omitted.
 OVERRIDES = [
     # site-specific needles FIRST so they win over broader company-wide needles below:
-    ('ALGERIEN ORAN', 'Oran', 'Messerghine'),  # GPA Oran plant — beats the generic GPA row
+    ('ALGERIEN ORAN', 'Oran', 'Messerghine'),  # GPA Oran plant: beats the generic GPA row
     ('OASIS DES ZIBANS', 'Biskra', None),       # recovered by the inverted-wrap parser fix
     ('BABA ALI', 'Alger', 'Baba Ali'), ('INJECTABLES', 'Alger', 'Staoueli'),
     ('GENIS', 'Sétif', 'Sétif'), ('MAGHREB DENTAL', 'Oran', 'Es Senia'),
@@ -74,7 +74,7 @@ def deaccent(s):
     return ''.join(c for c in unicodedata.normalize('NFKD', s) if not unicodedata.combining(c))
 
 def cnorm(s):
-    # deaccent + punctuation-to-space + collapse — the ONE normalization used on BOTH
+    # deaccent + punctuation-to-space + collapse: the ONE normalization used on BOTH
     # sides of place matching, so gazetteer hyphens (TIZI-OUZOU) meet spaced names.
     return re.sub(r'\s+', ' ', re.sub(r'[^A-Za-z0-9]', ' ', deaccent(s))).upper().strip()
 
@@ -126,7 +126,7 @@ def parse_2026(path):
             pending = ''
         elif cur is not None:  # continuation of the current record
             cur['operator'] = (cur['operator'] + ' ' + t).strip()
-        else:  # a name fragment ahead of its number line — buffer it
+        else:  # a name fragment ahead of its number line, buffer it
             pending = (pending + ' ' + t).strip()
     return records
 
@@ -186,7 +186,7 @@ def load_gaz():
     for c in communes:
         c_by_name.setdefault(cnorm(c['name_fr']), []).append(c)
     # wilaya centroid: the commune matching the wilaya name (chief town) when present,
-    # else the mean of the wilaya's commune coordinates — always defined.
+    # else the mean of the wilaya's commune coordinates: always defined.
     w_centroid = {}
     by_wcode = {}
     for c in communes:
@@ -211,7 +211,7 @@ def build():
     cnames = sorted([n for n in c_by_name if len(n) >= 5],
                     key=lambda n: (n.count(' '), len(n)), reverse=True)
 
-    def _pad(text):  # normalized + padded — same cnorm used to key the gazetteer
+    def _pad(text):  # normalized + padded, same cnorm used to key the gazetteer
         return ' ' + cnorm(text) + ' '
 
     def find_commune(text, wilaya_hint=None):
@@ -249,14 +249,14 @@ def build():
         prov = 'mip'
         c = None
         raw = deaccent(r['operator']).upper()  # punctuation kept for \b needle matching
-        # 0) verified research overrides (word-boundary needle) — win over the stale 2023 list
+        # 0) verified research overrides (word-boundary needle): win over the stale 2023 list
         for needle, wn, cn in OVERRIDES:
             if re.search(r'\b' + re.escape(needle) + r'\b', raw):
                 wcode = name2code.get(cnorm(wn))
                 if wcode:
                     c = commune_by(cn, wcode); prov = 'mip+research'; src_stats['manual'] += 1
                 break
-        # A place token IN the operator name is ground truth for THIS site — it must beat
+        # A place token IN the operator name is ground truth for THIS site: it must beat
         # the fuzzy 2023 name-join, which otherwise cross-matches multi-site firms (every
         # "SAIDAL <city>" collapsing onto the first Saidal row). So: name tokens first.
         # 1) commune token in the operator name
@@ -269,7 +269,7 @@ def build():
             wcode = find_wilaya(r['operator'])
             if wcode:
                 c = None; src_stats['wilaya_token'] += 1; prov = 'mip'
-        # 3) 2023 wilaya-column join (fuzzy — last resort, name has no place signal)
+        # 3) 2023 wilaya-column join (fuzzy: last resort, name has no place signal)
         if wcode is None:
             place = match_2023(r['operator'], geo23)
             if place:
@@ -339,7 +339,7 @@ def build():
         by_nature[r['nature']] = by_nature.get(r['nature'], 0) + 1
         by_wilaya.add(r['wilaya_code'])
     meta = {
-        'source': "Ministère de l'Industrie Pharmaceutique (MIP) — official list of "
+        'source': "Ministère de l'Industrie Pharmaceutique (MIP): official list of "
                   "approved pharmaceutical manufacturing establishments (établissements "
                   "pharmaceutiques de fabrication), geocoded against the geoalgeria commune set",
         'origin': 'https://miph.gov.dz/fr/etablissements-pharmaceutiques/',
@@ -354,7 +354,7 @@ def build():
                         "register (updated 2026-06-28), which carries no coordinates. Wilaya/commune "
                         "are resolved from the 2023 MIP list's wilaya column, a place token in the "
                         "operator name, or a per-company research pass (company sites, the CACI/El "
-                        "Mouchir directory, press) for makers absent from the 2023 list — never "
+                        "Mouchir directory, press) for makers absent from the 2023 list, never "
                         "guessed. Coordinates are the commune centroid, or the wilaya centroid where "
                         "only the wilaya is known (see geo_precision).",
         'coverage_note': f"Approved pharmaceutical MANUFACTURERS only (fabrication agrément). "

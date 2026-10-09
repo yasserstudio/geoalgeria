@@ -88,7 +88,7 @@ for (const [name, file, fnName] of BY_ID) {
  * Value lookups: every export that filters the data on one of its own fields.
  * [package, data file, export name, the record field it claims to filter on]
  *
- * Driven by EVERY distinct value in the file, not just the first — a lookup
+ * Driven by EVERY distinct value in the file, not just the first: a lookup
  * that reads a renamed field returns [] for every input, and asserting the
  * per-value totals sum back to the record count catches both that and a
  * partial mismatch (e.g. a case-normalization that only fits some values).

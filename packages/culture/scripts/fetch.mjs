@@ -10,13 +10,13 @@
  * research/patrimoine/patrimoine-cultural-2026-06-28.json (1,090 places across
  * 11 typed layers, every place carrying a source coordinate + has_virtual_tour).
  * This script is the deterministic transform of that curated input into the
- * published package shape — it does NOT re-pull the portal (that would lose the
+ * published package shape: it does NOT re-pull the portal (that would lose the
  * hand-built FR↔AR translations); a live refresh is a separate future step.
  *
  * Geography (layered on): each place is assigned to its current wilaya + commune
  * by nearest commune centroid over the flagship geoalgeria set (the portal files
  * places under pre-2019 wilaya codes; the source points are exact, so geography
- * is the reliable signal — this auto-tracks the flagship's administrative scheme,
+ * is the reliable signal: this auto-tracks the flagship's administrative scheme,
  * incl. the 2019 + Law 26-06 reorganizations). The repo ships only centroids, not
  * boundary polygons, so commune is best-effort.
  *
@@ -84,7 +84,7 @@ function loadCommunes() {
       all.push(e);
     }
   }
-  if (!all.length) throw new Error("no commune centroids loaded — check packages/dataset/data");
+  if (!all.length) throw new Error("no commune centroids loaded: check packages/dataset/data");
   return { byWilaya, all };
 }
 // The shared administrative-linkage rule, scripts/lib/build-utils.mjs
@@ -105,7 +105,7 @@ function nearestCommune(lat, lng, communes, publishedWilayaCode = null) {
 }
 
 // Deep-desert protected sites where nearest-commune lands the point in Tabelbala
-// (Béchar, 08) — the only commune centroid for hundreds of km — while the source
+// (Béchar, 08), the only commune centroid for hundreds of km, while the source
 // point sits well inside another wilaya per the boundary polygons (200–390 km from
 // Tabelbala, and Béchar borders neither Adrar nor Tindouf). Pin the wilaya to the
 // containing one, keyed by the stable patrimoine node id (nid_ar); commune is left
@@ -217,7 +217,7 @@ function main() {
   // Every DESERT_FIX key must have hit a record; an unmatched key means the
   // patrimoine node id was renamed/retired upstream and the pin silently reverted.
   const unmatched = Object.keys(DESERT_FIX).filter((k) => !desertFixMatched.has(Number(k)));
-  if (unmatched.length) throw new Error(`culture: DESERT_FIX key(s) [${unmatched.join(", ")}] matched no record — the patrimoine node id was renamed or retired upstream; update DESERT_FIX in scripts/fetch.mjs.`);
+  if (unmatched.length) throw new Error(`culture: DESERT_FIX key(s) [${unmatched.join(", ")}] matched no record: the patrimoine node id was renamed or retired upstream; update DESERT_FIX in scripts/fetch.mjs.`);
   rows = dedupe(rows, stats);
   assignIds(rows);
 

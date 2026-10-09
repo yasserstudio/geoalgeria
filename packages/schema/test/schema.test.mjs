@@ -117,7 +117,7 @@ test("sharedPoints finds the records that are not alone on their coordinate", ()
 
 test("geo_precision 'exact' must survive the resolution and uniqueness tests", () => {
   // Resolution: (35, 4) locates nothing finer than ±55 km, so it cannot be a
-  // per-facility point — this is the shape three BADR branches in three different
+  // per-facility point: this is the shape three BADR branches in three different
   // towns shipped under `exact`.
   const coarse = validateRecords([rec({ lat: 35, lng: 4 })]);
   assert.equal(coarse.errors.length, 1);
@@ -145,7 +145,7 @@ test("geo_precision is null if and only if lat/lng are null", () => {
   assert.match(stamped.errors[0], /geo_precision must be null when lat\/lng are null/);
   assert.equal(validateRecords([ungeo({ geo_precision: "exact" })]).errors.length, 1);
 
-  // geocoded record with no precision — provenance thrown away
+  // geocoded record with no precision: provenance thrown away
   const unstamped = validateRecords([rec({ geo_precision: null })]);
   assert.equal(unstamped.errors.length, 1);
   assert.match(unstamped.errors[0], /geo_precision must not be null on a geocoded record/);
@@ -159,14 +159,14 @@ test("geo_precision is null if and only if lat/lng are null", () => {
 });
 
 test("geo_method is null if and only if lat/lng are null", () => {
-  // ungeocoded record naming a method for a point that does not exist — the exact
+  // ungeocoded record naming a method for a point that does not exist: the exact
   // false provenance ("ungeocoded") that was writable and CI-green before this rule
   const claimed = validateRecords([ungeo({ geo_method: "ungeocoded" })]);
   assert.equal(claimed.errors.length, 1);
   assert.match(claimed.errors[0], /geo_method must be null when lat\/lng are null/);
   assert.equal(validateRecords([ungeo({ geo_method: "commune_centroid" })]).errors.length, 1);
 
-  // geocoded record with no method — the point's provenance silently dropped
+  // geocoded record with no method: the point's provenance silently dropped
   const unstamped = validateRecords([rec({ geo_method: null })]);
   assert.equal(unstamped.errors.length, 1);
   assert.match(unstamped.errors[0], /geo_method must name how the point was obtained/);
@@ -181,9 +181,9 @@ test("geo_method is null if and only if lat/lng are null", () => {
 
 test("lifecycle is optional but validated against the vocabulary when present", () => {
   assert.deepEqual(LIFECYCLE, ["operating", "planned", "closed", "unknown"]);
-  assert.equal(validateRecords([rec()]).errors.length, 0); // absent — fine
+  assert.equal(validateRecords([rec()]).errors.length, 0); // absent, fine
   assert.equal(validateRecords([rec({ lifecycle: "operating" })]).errors.length, 0);
-  assert.equal(validateRecords([rec({ lifecycle: null })]).errors.length, 0); // null — fine
+  assert.equal(validateRecords([rec({ lifecycle: null })]).errors.length, 0); // null, fine
   const { errors } = validateRecords([rec({ lifecycle: "demolished" })]);
   assert.equal(errors.length, 1);
   assert.match(errors[0], /lifecycle must be one of/);
@@ -268,7 +268,7 @@ test("loadBoundaries throws instead of handing back an index that checks nothing
     /indexed 0 wilayas/,
   );
 
-  // one bad feature among good ones — its wilaya would go unchecked, silently
+  // one bad feature among good ones: its wilaya would go unchecked, silently
   const ok = { properties: { code: 16 }, geometry: { type: "Polygon", coordinates: [[[2, 35], [4, 35], [4, 37], [2, 37], [2, 35]]] } };
   assert.throws(
     () => loadBoundaries({ features: [ok, { properties: { code: 31 }, geometry: { type: "Polygon", coordinates: null } }] }),
@@ -276,7 +276,7 @@ test("loadBoundaries throws instead of handing back an index that checks nothing
   );
   assert.throws(() => loadBoundaries({ features: [ok, { properties: {}, geometry: ok.geometry }] }), /no wilaya code/);
 
-  // duplicate code — the second polygon would silently replace the first
+  // duplicate code: the second polygon would silently replace the first
   assert.throws(() => loadBoundaries({ features: [ok, ok] }), /duplicate wilaya code\(s\) 16/);
 
   // and a well-formed collection still works
@@ -377,7 +377,7 @@ test("source evidence_type is optional but validated when present", () => {
     wilayas_covered: 1, license: "MIT", updated: "2026-07-18",
   };
   assert.equal(validateMetadata({ ...base, sources: [{ key: "a", license: "b", evidence_type: "official" }] }).errors.length, 0);
-  assert.equal(validateMetadata({ ...base, sources: [{ key: "a", license: "b" }] }).errors.length, 0); // absent — fine
+  assert.equal(validateMetadata({ ...base, sources: [{ key: "a", license: "b" }] }).errors.length, 0); // absent, fine
   assert.match(
     validateMetadata({ ...base, sources: [{ key: "a", license: "b", evidence_type: "guessed" }] }).errors.join(),
     /evidence_type must be one of/,
@@ -407,7 +407,7 @@ test("buildManifest + buildDcat shape", () => {
   assert.equal(dcat["@type"], "Dataset");
   assert.equal(dcat.identifier, "@geoalgeria/sante");
   assert.equal(dcat.spatialCoverage.geo["@type"], "GeoShape");
-  // the dataset's own licence, not the first source's — an open SPDX id resolves
+  // the dataset's own licence, not the first source's: an open SPDX id resolves
   // to its canonical URL, and an open dataset carries no conditionsOfAccess prose.
   assert.equal(dcat.license, "https://opensource.org/licenses/MIT");
   assert.equal("conditionsOfAccess" in dcat, false);
@@ -432,12 +432,12 @@ test("buildManifest + buildDcat shape", () => {
     ],
   );
   // Fail-safe routing: an AND-expression that mixes open SPDX terms with an unknown
-  // (prose) term is NOT all-open, so the whole expression is carried as prose — the
+  // (prose) term is NOT all-open, so the whole expression is carried as prose: the
   // `license` slot is omitted rather than fabricating a URL from the open terms alone.
   const mixed = buildDcat({ ...meta, license: "ODbL-1.0 AND CC0-1.0 AND factual public listing (ASAL)" });
   assert.equal("license" in mixed, false);
   assert.equal(mixed.conditionsOfAccess, "ODbL-1.0 AND CC0-1.0 AND factual public listing (ASAL)");
-  // A falsy licence yields neither slot — no URL, no prose.
+  // A falsy licence yields neither slot: no URL, no prose.
   const empty = buildDcat({ ...meta, license: "" });
   assert.equal("license" in empty, false);
   assert.equal("conditionsOfAccess" in empty, false);
@@ -460,7 +460,7 @@ test("a coverage percentage never travels without the universe it divides by", (
   const ok = buildManifest([meta({ coverageNote: "50 of ETUSA's ~122 lines." })]).datasets[0];
   assert.deepEqual(ok.coverage, { pct: 0.8, of: 122, note: "50 of ETUSA's ~122 lines." });
 
-  // A universe with no note is a build error — "Algeria urban bus lines: 41%"
+  // A universe with no note is a build error: "Algeria urban bus lines: 41%"
   // is exactly the artifact this rule exists to stop.
   assert.throws(() => buildManifest([meta({})]), /without a coverage_note/);
 
@@ -478,8 +478,8 @@ test("emit: toCSV injection guard + toGeoJSON", () => {
 });
 
 // The schema package declares the contract every other package is type-checked
-// against, and nothing type-checks it. Four runtime exports — MIN_EXACT_DECIMALS,
-// fractionDigits, coordDecimals, sharedPoints — shipped with no declaration at
+// against, and nothing type-checks it. Four runtime exports: MIN_EXACT_DECIMALS,
+// fractionDigits, coordDecimals, sharedPoints, shipped with no declaration at
 // all, so a TypeScript consumer importing them got an error against a symbol that
 // exists. This is the cheap half of that gap: names only, no signatures. Signature
 // drift (buildManifest's opts, DatasetEntry's fields) still needs a real `tsc

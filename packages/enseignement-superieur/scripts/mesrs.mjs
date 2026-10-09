@@ -4,7 +4,7 @@
 //
 // Source (public): https://www.mesrs.dz/en/university-network/
 //   The "university network" page is a WordPress listing. Each institution is a
-//   single anchor — its official French name as the link text, its own website as
+//   single anchor: its official French name as the link text, its own website as
 //   the href (e.g. <a href="http://www.usthb.dz/">Université … Houari Boumediène</a>).
 //   There is no public REST collection for it, so we parse the listing HTML. The
 //   ministry publishes the names in French only.

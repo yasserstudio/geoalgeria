@@ -2,13 +2,13 @@
 //
 // Two jobs the English listing can't do:
 //   1. Backfill the Arabic name for the public network (the English page gives
-//      French names only). Joined on website hostname — each institution links to
+//      French names only). Joined on website hostname, each institution links to
 //      its own site on both pages, so the host is a stable cross-page key.
 //   2. Supply the institutions the English page omits entirely: the licensed
 //      PRIVATE institutions and the higher-education establishments under OTHER
 //      ministries (Défense, Santé, Culture, …) that MESRS supervises
 //      pedagogically. These appear only here, in Arabic, inside accordion blocks
-//      with their location embedded in the entry text — no coordinates. We resolve
+//      with their location embedded in the entry text, no coordinates. We resolve
 //      each to a wilaya (centroid precision) from that embedded location.
 //
 // The page is WordPress/Elementor: the network sits in anchor links (regional
@@ -93,7 +93,7 @@ const COMMUNE_ALIASES = {
   "بلوزداد": 16, "سعيد حمدين": 16, "كاليتوس": 16, "مدينه الجديده": 15,
   "شرشال": 42, "قليعه": 42, "عين ارنات": 19, "تافراوي": 31, "ارزيو": 31,
   // The flagship spells Aïn Defla عين الدفلى (ـى); the listing uses الدفلة (ـة),
-  // which normalises to a different final letter — pin it explicitly.
+  // which normalises to a different final letter: pin it explicitly.
   "عين الدفله": 44,
 };
 
@@ -126,7 +126,7 @@ export function buildResolver(wilayasJson) {
   const fromGaz = (text) => {
     const k = arKey(text);
     // The location sits at the end, so prefer the match that ENDS latest (idx +
-    // key length). Scoring by end-position — not just start-position — makes the
+    // key length). Scoring by end-position, not just start-position, makes the
     // longer key win whenever one wilaya name is a substring of another's
     // ("يزي" Illizi ⊂ "تيزي وزو" Tizi Ouzou): both could appear, but Tizi Ouzou
     // ends later, so it wins.

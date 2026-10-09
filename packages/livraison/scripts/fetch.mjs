@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * Build @geoalgeria/livraison — Algeria's COD / e-commerce delivery layer:
- *   1. carriers   — a registry of delivery companies (scripts/carriers.seed.json,
+ * Build @geoalgeria/livraison: Algeria's COD / e-commerce delivery layer:
+ *   1. carriers: a registry of delivery companies (scripts/carriers.seed.json,
  *                   augmented here with derived stop-desk stats).
- *   2. stopdesks  — geocoded stop-desk / relay-point locations, merged from the two
+ *   2. stopdesks: geocoded stop-desk / relay-point locations, merged from the two
  *                   sources that publish them openly.
- *   3. coverage   — per-carrier stop-desk presence (which wilayas/communes each
+ *   3. coverage: per-carrier stop-desk presence (which wilayas/communes each
  *                   carrier with open data physically reaches).
  *
  * Open stop-desk sources (no auth, no WAF):
@@ -17,12 +17,12 @@
  * dedupe by id. Each row is tagged with the operating carrier in "[...]".
  *
  * Most Algerian COD carriers (Noest, ZR/Procolis, Maystro, DHL, …) do NOT publish an
- * open agency list — they live in carriers.json (registry) with open_agency_data:"none".
+ * open agency list: they live in carriers.json (registry) with open_agency_data:"none".
  * So the geocoded layer is the openly-published relay ecosystem, not all 90+ carriers;
  * the registry carries the breadth. (Recon: 2026-06-18.)
  *
  * wilaya_code is resolved by nearest flagship commune centroid (haversine) from the
- * geoalgeria dataset — same method as @geoalgeria/aviation — and cross-checked against
+ * geoalgeria dataset (same method as @geoalgeria/aviation) and cross-checked against
  * the source-provided wilaya where available.
  *
  * Usage: node scripts/fetch.mjs
@@ -82,7 +82,7 @@ const DROPPED_OPERATORS = new Set(["yalitec"]);
 const unknownOperators = new Set();
 const lookupOperator = (tag) =>
   OPERATOR_VARIANTS[decode(tag).toLowerCase().replace(/[^a-z0-9]/g, "")] ?? null;
-// Operator is tagged in "[...]" (always an operator) or trailing "(...)" — but parens
+// Operator is tagged in "[...]" (always an operator) or trailing "(...)", but parens
 // are also used for localities ("Agence El Hataba (Adrar)"), so a paren group counts
 // as the operator only when it maps to a known carrier; otherwise it stays in the name.
 function splitName(raw) {
@@ -235,7 +235,7 @@ const MAYSTRO_WILAYA = {
 };
 
 // Maystro "Coverage" → Stop-Desk list: each <span translation="wilaya"><a href=mapslink>City</a>.
-// (Warehouses overlap stop-desks; third-party "pickup points" are excluded — not Maystro's own.)
+// (Warehouses overlap stop-desks; third-party "pickup points" are excluded, not Maystro's own.)
 function parseMaystro(html) {
   const start = html.indexOf('id="liststopdesk"');
   if (start < 0) return [];
@@ -264,7 +264,7 @@ async function resolveMapsLink(link) {
       const res = await fetch(link, { headers: { "User-Agent": FB_UA }, redirect: "follow" });
       url = decodeURIComponent(res.url || "");
       body = await res.text();
-    } catch { /* network blip — retry once */ }
+    } catch { /* network blip: retry once */ }
   }
   const order = [
     /!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/,
@@ -318,14 +318,14 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60) {
   const seen = new Map();
   for (const r of recs) { const n = (seen.get(r.id) || 0) + 1; seen.set(r.id, n); if (n > 1) r.id = `${r.id}-${n}`; }
   console.log(`  ${recs.length} ${label} desks geocoded, ${skipped} skipped (no/unresolvable link)`);
-  if (recs.length < minDesks) throw new Error(`only ${recs.length} ${label} desks resolved — Maps resolution may be blocked`);
+  if (recs.length < minDesks) throw new Error(`only ${recs.length} ${label} desks resolved: Maps resolution may be blocked`);
   return recs;
 }
 
 // --- wilaya resolution (same as @geoalgeria/aviation) ----------------------
 function loadCommunes() {
   if (!existsSync(DATASET)) {
-    throw new Error(`geoalgeria commune data not found at ${DATASET} — run from the monorepo.`);
+    throw new Error(`geoalgeria commune data not found at ${DATASET}: run from the monorepo.`);
   }
   const files = ["communes_w1_w23.json", "communes_w24_w48.json", "communes_w49_w69.json"];
   const out = [];
@@ -346,7 +346,7 @@ function resolveWilaya(lat, lng, communes, hint) {
     if (km < bestKm) { bestKm = km; best = c; }
   }
   // Tie-break: if the source declares a wilaya and one of ITS communes sits within ~1 km
-  // of the nearest (a duplicate/near-duplicate centroid across wilayas — e.g. the flagship
+  // of the nearest (a duplicate/near-duplicate centroid across wilayas: e.g. the flagship
   // lists "Ain Turk" under both Oran and Bouira), trust the source's declared wilaya.
   // Reform promotions (old code → 59-69) are unaffected: the old wilaya has no commune near.
   if (hint != null && best.wilaya_code !== hint) {
@@ -358,8 +358,8 @@ function resolveWilaya(lat, lng, communes, hint) {
 
 // --- writers (same conventions as @geoalgeria/aviation) --------------------
 function toCSV(rows, cols) {
-  // Neutralize spreadsheet formula injection per value — and per array element before
-  // joining — even when the trigger char follows leading whitespace. Numbers pass through.
+  // Neutralize spreadsheet formula injection per value, and per array element before
+  // joining, even when the trigger char follows leading whitespace. Numbers pass through.
   const neutralize = (x) => (/^\s*[=+\-@\t\r]/.test(x) ? `'${x}` : x);
   const esc = (v) => {
     if (v === null || v === undefined) return "";
@@ -386,14 +386,14 @@ async function main() {
 
   // Per-source floors catch a partial/truncated fetch that still clears the merged total.
   if (yal.length < 150 || guepex.length < 120) {
-    throw new Error(`source under-returned (yalidine ${yal.length}, guepex ${guepex.length}) — possible partial fetch`);
+    throw new Error(`source under-returned (yalidine ${yal.length}, guepex ${guepex.length}): possible partial fetch`);
   }
 
   if (unknownOperators.size) {
-    throw new Error(`unknown operator tag(s) — add to carriers.seed.json + OPERATOR_VARIANTS: ${[...unknownOperators].join(", ")}`);
+    throw new Error(`unknown operator tag(s): add to carriers.seed.json + OPERATOR_VARIANTS: ${[...unknownOperators].join(", ")}`);
   }
 
-  // Anderson, Noest & Maystro — independent carriers with their own agency networks, geocoded
+  // Anderson, Noest & Maystro: independent carriers with their own agency networks, geocoded
   // by resolving the Google Maps link on each agency card (the carrier's own published pin).
   const anderson = await buildCarded("Anderson", ANDERSON_URL, parseAnderson, "anderson");
   const noest = await buildCarded("Noest", NOEST_URL, parseNoest, "noest");
@@ -413,7 +413,7 @@ async function main() {
   }
   const merged = [...byId.values()];
 
-  if (merged.length < 150) throw new Error(`only ${merged.length} stop-desks parsed — source layout may have changed`);
+  if (merged.length < 150) throw new Error(`only ${merged.length} stop-desks parsed: source layout may have changed`);
 
   console.log("Resolving wilaya_code by nearest commune centroid…");
   const communes = loadCommunes();
@@ -461,9 +461,9 @@ async function main() {
   if (badCarrier.length) throw new Error(`stop-desk operators missing from registry: ${badCarrier.join(", ")}`);
   if (conflicts.length) throw new Error(`centroid wilaya conflicts with source (both ≤58): ${conflicts.join(", ")}`);
   if (promoted) console.log(`  ${promoted} desk(s) in wilayas promoted by the 2026 reform (source ≤58 → flagship 59-69)`);
-  if (droppedPins.length) console.log(`  ${droppedPins.length} carded desk(s) dropped — pin in a different wilaya than the card (bad/duplicate link): ${droppedPins.slice(0, 6).join(", ")}${droppedPins.length > 6 ? "…" : ""}`);
+  if (droppedPins.length) console.log(`  ${droppedPins.length} carded desk(s) dropped: pin in a different wilaya than the card (bad/duplicate link): ${droppedPins.slice(0, 6).join(", ")}${droppedPins.length > 6 ? "…" : ""}`);
 
-  // coverage — per operator that has stop-desks
+  // coverage, per operator that has stop-desks
   const covMap = new Map();
   for (const s of stopdesks) {
     if (!covMap.has(s.operator)) covMap.set(s.operator, { wilayas: new Set(), communes: new Set(), n: 0 });
@@ -484,7 +484,7 @@ async function main() {
     }))
     .sort((a, b) => b.stopdesks - a.stopdesks || a.operator.localeCompare(b.operator));
 
-  // carriers — seed augmented with derived stop-desk stats
+  // carriers: seed augmented with derived stop-desk stats
   const statById = new Map(coverage.map((c) => [c.operator, c]));
   const carriers = seed
     .map((c) => ({
@@ -500,7 +500,7 @@ async function main() {
   // carriers.json + coverage.json are auxiliary registry files (not GeoRecords),
   // written as-is. stopdesks.json is the canonical GeoRecord layer: emit it, its
   // CSV/GeoJSON and the derived metadata.json via the shared v2 writer. Write the
-  // auxiliary files FIRST — the shared metadata's stats read carriers.json/
+  // auxiliary files FIRST: the shared metadata's stats read carriers.json/
   // coverage.json off disk. Live-only source, so stamp the run's date.
   mkdirSync(join(DATA, "csv"), { recursive: true });
   writeJSON("carriers.json", carriers);

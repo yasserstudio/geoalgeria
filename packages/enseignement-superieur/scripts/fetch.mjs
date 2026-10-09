@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 /**
- * Build @geoalgeria/enseignement-superieur — Algeria's higher-education network
+ * Build @geoalgeria/enseignement-superieur: Algeria's higher-education network
  * (universities, grandes écoles, écoles normales supérieures, centres
  * universitaires) from the Ministère de l'Enseignement Supérieur (MESRS), and
  * emit JSON, CSV, and GeoJSON to ../data.
  *
  * Source (public): https://www.mesrs.dz/en/university-network/  (see mesrs.mjs)
  *   The ministry's listing gives each institution's official French name and its
- *   own website — but NO coordinates and no address. So this build supplies the
+ *   own website, but NO coordinates and no address. So this build supplies the
  *   geography itself, transparently:
  *
  *   - wilaya + commune come from the flagship `geoalgeria` dataset: every shipped
  *     coordinate is reconciled to its nearest flagship commune, and `wilaya_code`
- *     is that commune's — authoritative and in the 69-wilaya scheme.
+ *     is that commune's, authoritative and in the 69-wilaya scheme.
  *   - coordinates are OSM/Nominatim campus geocodes captured once into
  *     scripts/seeds/coordinates.json (run `node scripts/geocode.mjs` to refresh).
  *     Each is cross-checked: if the geocoded point's wilaya disagrees with the
@@ -46,13 +46,13 @@ const COMMUNE_LABELS_FILE = join(__dirname, "seeds", "commune-labels.json");
 const MIN_CAMPUS_RATIO = 0.4;
 
 // Read a committed seed file, failing with the file path on corruption (vs a bare
-// SyntaxError) — keeps the loud-and-clear failure style of the rest of the build.
+// SyntaxError): keeps the loud-and-clear failure style of the rest of the build.
 function readSeed(path) {
   if (!existsSync(path)) return {};
   try {
     return JSON.parse(readFileSync(path, "utf8"));
   } catch (e) {
-    throw new Error(`${path}: corrupt seed JSON — ${e.message}`);
+    throw new Error(`${path}: corrupt seed JSON: ${e.message}`);
   }
 }
 
@@ -104,7 +104,7 @@ function wilayaFromName(name) {
   return null;
 }
 
-// Commune lookup by (name, wilaya_code) for the curated overrides — resolves a
+// Commune lookup by (name, wilaya_code) for the curated overrides: resolves a
 // hand-asserted commune to its flagship centroid + code (so override coordinates
 // are still the authoritative flagship data, never typed by hand).
 const COMMUNE_BY_NW = new Map();
@@ -129,13 +129,13 @@ async function main() {
   const html = await getHtml();
   const insts = parseInstitutions(html);
   if (insts.length < MIN_EXPECTED) {
-    throw new Error(`parsed ${insts.length} institutions; expected >= ${MIN_EXPECTED} — the listing markup may have changed`);
+    throw new Error(`parsed ${insts.length} institutions; expected >= ${MIN_EXPECTED}: the listing markup may have changed`);
   }
   console.log(`  parsed ${insts.length} institutions`);
 
   const seed = readSeed(SEED);
   if (!Object.keys(seed).length) {
-    console.warn("  ⚠️  no coordinate seed found — run `node scripts/geocode.mjs` first (the MIN_CAMPUS_RATIO guard below will fail this build)");
+    console.warn("  ⚠️  no coordinate seed found: run `node scripts/geocode.mjs` first (the MIN_CAMPUS_RATIO guard below will fail this build)");
   }
   // Curated overrides for institutions Nominatim can't find AND whose title names
   // no wilaya (mostly Algiers/Koléa grandes écoles named by discipline). Each
@@ -168,7 +168,7 @@ async function main() {
     const g = seed[key];
     let lat = null, lng = null, wilaya_code = null, commune = null, precision = null;
 
-    // 1. Curated override — a commune (→ flagship centroid) or a bare wilaya. Takes
+    // 1. Curated override: a commune (→ flagship centroid) or a bare wilaya. Takes
     // precedence: it both places the schools OSM can't find and CORRECTS the few
     // discipline-only names that geocode to a same-named school in another wilaya.
     if (overrides[key]) {
@@ -238,7 +238,7 @@ async function main() {
 
   // The private + other-ministry institutions (Arabic-only). No coordinates in the
   // source, so each is placed at its resolved wilaya's centroid (geo_precision
-  // "wilaya"). name stays null — there is no official French name to ship.
+  // "wilaya"). name stays null: there is no official French name to ship.
   const networkCount = records.length;
   for (const e of extras) {
     const code = Number(e.wilaya_code);
@@ -270,21 +270,21 @@ async function main() {
   records.sort((a, b) => (TYPE_ORDER[a.type] - TYPE_ORDER[b.type]) || sortName(a).localeCompare(sortName(b), "fr"));
   records.forEach((r, i) => (r.id = i + 1));
 
-  // Guards — fail loudly on a malformed build. Every record must carry at least one
+  // Guards: fail loudly on a malformed build. Every record must carry at least one
   // name (French for the network, Arabic for the extras).
   const missing = records.filter((r) => (!r.name && !r.name_ar) || !r.type || !r.wilaya_code || !r.wilaya_name || r.lat == null || r.lng == null);
   if (missing.length) throw new Error(`${missing.length} record(s) missing a required field (${missing.slice(0, 3).map((r) => r.name || r.name_ar).join("; ")})`);
   const overflow = records.filter((r) => Number(r.wilaya_code) < 1 || Number(r.wilaya_code) > 69);
   if (overflow.length) throw new Error(`wilaya_code out of [1,69]: ${overflow.length} record(s)`);
 
-  // The campus-geocode quality guard applies only to the public MESRS network — the
+  // The campus-geocode quality guard applies only to the public MESRS network: the
   // private/other-ministry extras are wilaya-precision by nature (no source coords),
   // so they're excluded from the ratio to keep the guard meaningful.
   const networkRecords = records.filter((r) => r.source === PAGE);
   const campus = networkRecords.filter((r) => r.geo_precision === "campus").length;
   if (campus < networkRecords.length * MIN_CAMPUS_RATIO) {
     throw new Error(
-      `only ${campus}/${networkRecords.length} network records are campus-geocoded (< ${Math.round(MIN_CAMPUS_RATIO * 100)}%) — ` +
+      `only ${campus}/${networkRecords.length} network records are campus-geocoded (< ${Math.round(MIN_CAMPUS_RATIO * 100)}%): ` +
         `regenerate the coordinate seed with \`node scripts/geocode.mjs\` before building`,
     );
   }

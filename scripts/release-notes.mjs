@@ -7,14 +7,14 @@
  * A CHANGELOG section is everything between `## <version>` and the next `## `.
  * Two shapes are supported, both detected automatically:
  *
- *   Preferred (jeunesse style) — a descriptive title line, then keep-a-changelog
+ *   Preferred (jeunesse style): a descriptive title line, then keep-a-changelog
  *   sections. The prose line is the Release TITLE; the `###` sections are the body:
  *       ## 2.0.0
- *       Algeria's youth establishments — 2,334 from the Ministry of Youth and Sports GIS…
+ *       Algeria's youth establishments: 2,334 from the Ministry of Youth and Sports GIS…
  *       ### Added
  *       - …
  *
- *   Changesets fallback — `### Major/Minor Changes` + bullets. The first bullet is
+ *   Changesets fallback: `### Major/Minor Changes` + bullets. The first bullet is
  *   the TITLE (hash/marker/bold stripped); the whole section is the body.
  *
  * Usage: node scripts/release-notes.mjs <changelog> <version> <tag> <title|body|is-patch>

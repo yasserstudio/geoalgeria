@@ -1,5 +1,5 @@
 // The source store must produce byte-stable captures (sorted keys, canonical
-// layout) and a manifest that round-trips — that stability is what makes a
+// layout) and a manifest that round-trips: that stability is what makes a
 // re-fetch diffable at all.
 import { test } from "node:test";
 import assert from "node:assert/strict";

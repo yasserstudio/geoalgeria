@@ -3,7 +3,7 @@
  * Fetch Algeria public employment agencies (AWEM + ALEM) from ANEM's
  * cartographic portal and emit JSON, CSV, and GeoJSON to ../data.
  *
- * Source (ANEM — National Employment Agency):
+ * Source (ANEM: National Employment Agency):
  *   https://www.anem.dz/#/portail-carto
  *
  * There is no public agencies API. The two datasets are baked into the
@@ -11,7 +11,7 @@
  *   JSON.parse('{"a":[ …GeoJSON Features… ]}')
  * blocks. We read the current bundle hash from the page, download the bundle,
  * extract both blocks, and normalize. The bundle hash changes on redeploys, so
- * this script always rediscovers it — never hard-code it.
+ * this script always rediscovers it, never hard-code it.
  *
  * ⚠️ Two source quirks handled here:
  *   1. ANEM serves an incomplete TLS chain → Node rejects it. We relax cert
@@ -33,10 +33,10 @@ const ORIGIN = "https://www.anem.dz";
 const HEADERS = { "User-Agent": "Mozilla/5.0 (geoalgeria-emploi dataset builder)" };
 
 // (1) ANEM serves an incomplete TLS chain → Node rejects it. Relax verification
-// for this host only (the data is static & public). Scoped to this agent — we
+// for this host only (the data is static & public). Scoped to this agent: we
 // never touch the global TLS settings. Safer alternative if you have the chain:
 // `NODE_EXTRA_CA_CERTS=anem-chain.pem node scripts/fetch.mjs`. Re-check ANEM's
-// certificate periodically — if they fix it, drop this agent.
+// certificate periodically: if they fix it, drop this agent.
 const insecure = new https.Agent({ rejectUnauthorized: false });
 
 // --- helpers ---------------------------------------------------------------
@@ -52,7 +52,7 @@ const toLng = (v) => { const n = num(v); return n !== null && n > -9 && n < 13 ?
 const wcode = (v) => (typeof v === "string" ? v.replace(/^DZ-?/i, "").padStart(2, "0") : null);
 const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
 
-const MAX_BYTES = 30 * 1024 * 1024; // cap remote reads — the bundle is ~1.6 MB
+const MAX_BYTES = 30 * 1024 * 1024; // cap remote reads: the bundle is ~1.6 MB
 
 function getText(url) {
   return new Promise((resolve, reject) => {
@@ -107,7 +107,7 @@ function readLiteral(src, open) {
 
 /**
  * Decode a JS string-literal body to its runtime value. The value *is* the JSON
- * document, so this must resolve every JS escape the source uses — notably
+ * document, so this must resolve every JS escape the source uses: notably
  * `\xHH` hex and `\uHHHH` (invalid / fine in JSON respectively) and the
  * double-escaped `\\"` the source uses for quotes inside values.
  */
@@ -171,7 +171,7 @@ function extractFeatureArrays(bundle) {
 function normAlem(f) {
   const p = f.properties || {};
   return {
-    id: null, // assigned in main() — see above
+    id: null, // assigned in main(): see above
     code: str(p.code),
     type: "ALEM",
     name: str(p.anthenne_name), // source spells it "anthenne"
@@ -207,7 +207,7 @@ function normAwem(f) {
 
 /**
  * Assign a stable, unique `id` per ALEM: `{wilaya_code}-{seq within wilaya}`.
- * NOTE: `seq` follows the source array order, so an agency's id is positional —
+ * NOTE: `seq` follows the source array order, so an agency's id is positional:
  * if ANEM reorders records within a wilaya, ids downstream of the change shift.
  * `"00"` is the bucket for an (unexpected) agency with no wilaya code.
  */
@@ -244,7 +244,7 @@ async function main() {
 
   const alem = assignAlemIds(alemRaw.map(normAlem));
   // Upstream ANEM files two Bordj Bou Arreridj (34) local agencies under Illizi's
-  // wilaya_id (33) — their coordinates are correct (Mansourah / Bordj Ghedir, ~36 °N,
+  // wilaya_id (33): their coordinates are correct (Mansourah / Bordj Ghedir, ~36 °N,
   // 400+ km from Illizi, which BBA does not border). Pin the wilaya to where the
   // point lands. Keyed by agency name (stable across re-pulls; the {wilaya}-{seq} id
   // is not) and run after id assignment so the public ids ("33-05", "33-06") hold.
@@ -252,9 +252,9 @@ async function main() {
   const wilayaFixMatched = new Set();
   for (const r of alem) { const w = WILAYA_FIX.get(r.name); if (w) { r.wilaya_code = w; wilayaFixMatched.add(r.name); } }
   // Every WILAYA_FIX key must have hit a record; an unmatched key means ANEM renamed
-  // or retired the agency and the pin silently reverted — update the table, not this.
+  // or retired the agency and the pin silently reverted: update the table, not this.
   const unmatchedFix = [...WILAYA_FIX.keys()].filter((k) => !wilayaFixMatched.has(k));
-  if (unmatchedFix.length) throw new Error(`emploi: WILAYA_FIX key(s) [${unmatchedFix.join(", ")}] matched no record — the ANEM agency was renamed or retired upstream; update WILAYA_FIX in scripts/fetch.mjs.`);
+  if (unmatchedFix.length) throw new Error(`emploi: WILAYA_FIX key(s) [${unmatchedFix.join(", ")}] matched no record: the ANEM agency was renamed or retired upstream; update WILAYA_FIX in scripts/fetch.mjs.`);
   const awem = awemRaw.map(normAwem);
   console.log(`  ${awem.length} AWEM (wilaya) + ${alem.length} ALEM (local) agencies`);
 

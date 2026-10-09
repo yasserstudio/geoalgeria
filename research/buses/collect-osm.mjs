@@ -349,7 +349,7 @@ function buildReport(audit) {
     .map(([field, value]) => `| ${field} | ${value.count} | ${value.pct}% |`)
     .join("\n");
   const wilayas = audit.by_wilaya.map((row) =>
-    `| ${mdCell(`${row.code} — ${row.name_fr ?? "Unknown"}`)} | ${row.relations} | ${row.candidate_lines} | ${row.drawable} | ${row.identifiable} | ${row.with_operator} | ${row.with_stations} |`,
+    `| ${mdCell(`${row.code}: ${row.name_fr ?? "Unknown"}`)} | ${row.relations} | ${row.candidate_lines} | ${row.drawable} | ${row.identifiable} | ${row.with_operator} | ${row.with_stations} |`,
   ).join("\n");
 
   return `# Algeria OSM bus-line coverage audit
