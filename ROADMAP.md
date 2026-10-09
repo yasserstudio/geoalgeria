@@ -499,6 +499,28 @@ reads as further along than it is.
 
 ## Recently closed
 
+- **Release batch 2026-10, the coordinate review and upstream links** (2026-10-03):
+  `geoalgeria` 2.3.0 published with `osm_relation_id` and `wikidata` on every
+  commune and wilaya (1,540 of 1,541 communes and all 69 wilayas carry a
+  relation; 1,538 communes and all 69 wilayas carry a Wikidata item),
+  `capital_commune_code` on every wilaya read from the chefs-lieux decrees
+  (so a wilaya's own point is now its capital commune's centre, moving 66 of
+  the 69), the coordinate review engine's first production run (data ADR
+  0001) fixing 5 wilaya capital centres and 68 more commune centres by
+  independent votes with 67 left on a review queue, 551 dairas with derived
+  daira/commune counts, 23 commune `name_ar` kashida/article repairs, and
+  `phone-code-provenance.json` recording why wilayas 59-69 carry no
+  `phone_code`. `@geoalgeria/sante` 2.1.0 merged 28 French/Arabic twin posts
+  into bilingual records (668 total, a `retired-ids.json` migrations map for
+  the 28 retired ids). `@geoalgeria/cliniques` 1.2.0 moved 2 hospital records
+  into `sante` (1,917, down from 1,919). `@geoalgeria/aviation` 2.7.0 added
+  Tripoli (MJI) as a planned route from 28 October, moved Doha and Abuja to
+  operating (129 operating, 19 planned). Reform-stale wilaya corrections
+  landed as patches across `agriculture`, `emploi`, `ferroviaire`,
+  `formation-professionnelle`, `industrie-pharmaceutique`, `jeunesse`,
+  `mosquees`, `poste`, `sports`, `telecom` and `tourisme`; `jeunesse` and
+  `sports` now cover all 69 wilayas, up from 58. Version PR #260.
+
 - **Release batch 2026-10** (2026-09-30): `geoalgeria` 2.2.0 published with the
   551 dairas of decree 26-253 (#240, PR #243), a commune-centre audit that
   corrected 189 records and put 251 centres on OSM-derived coordinates (#237),
