@@ -16,7 +16,7 @@ import { readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { PIN_FILE, pinDocument, pinRefusal, serialisePin } from "./lib/core-date-pin.mjs";
+import { PIN_FILE, pinDocument, pinRefusal, serialisePin, todayUtc } from "./lib/core-date-pin.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PKG = join(ROOT, "packages", "dataset");
@@ -36,10 +36,30 @@ if (readFileSync(PIN_PATH, "utf8") === bytes) {
   process.exit(0);
 }
 
-// The direction. A moved core may only be re-pinned against a later date; an
-// unchanged core may be re-pinned at any date, because `dateModified` dates the
-// whole descriptor and a licence correction legitimately refreshes it.
-const refusal = pinRefusal({ pin: committed, dateModified: next.dateModified, digest: next.sha256 });
+// --check is what CI and the test suite run, so it reads no clock: it reports
+// that the committed pin is not the core's and leaves the date to the releaser,
+// which is the same verdict on any later day and in a shallow clone.
+if (CHECK) {
+  console.error(
+    `\nFAILED: ${PIN_FILE} is not the digest of the administrative core.\n` +
+      `Fix: if the core changed in this branch, set "dateModified" in ` +
+      "packages/dataset/dataset-metadata.json to the date this release ships (unless it already " +
+      "reads it), rebuild the catalog with `node scripts/build-catalog.mjs`, then re-pin with " +
+      "`pnpm pin-core-date --write`. If the core did not change, revert the edit.",
+  );
+  process.exit(1);
+}
+
+// The direction, enforced where the pin is written. A moved core may only be
+// re-pinned against a date it has not outlived; an unchanged core may be re-pinned
+// at any date, because `dateModified` dates the whole descriptor and a licence
+// correction legitimately refreshes it.
+const refusal = pinRefusal({
+  pin: committed,
+  dateModified: next.dateModified,
+  digest: next.sha256,
+  today: todayUtc(),
+});
 if (refusal) throw new Error(refusal);
 
 console.log(
@@ -51,4 +71,3 @@ if (WRITE) {
   writeFileSync(tmp, bytes);
   renameSync(tmp, PIN_PATH);
 }
-if (CHECK) process.exit(1);

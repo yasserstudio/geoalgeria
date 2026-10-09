@@ -123,14 +123,29 @@ data / format · **patch** = corrections to existing records.
   pages dating new data at the previous release. It is no longer a step to
   remember: `packages/dataset/core-date.pin.json` holds the digest of every
   published carrier of the core next to the date they were last dated at, and
-  `test/core-date-pinned.test.mjs` fails the whole suite when the core has moved
-  and the pin has not. The fix it asks for is two edits in the release's own
-  diff: set `dateModified` to the release date, then
-  `node scripts/pin-core-date.mjs --write`, which refuses to re-pin a moved core
-  against a date that did not move. The rule is one-directional, so refreshing
-  the field for a licence or prose correction with no record changed stays legal
-  and needs no re-pin. `data/poste/` is outside the digest: it mirrors
-  `@geoalgeria/poste` and carries that package's date.
+  both `pnpm validate` (through `scripts/pin-core-date.mjs --check`) and
+  `test/core-date-pinned.test.mjs` fail when the core has moved and the pin has
+  not. Three steps, in this order, in the release's own diff:
+
+  ```bash
+  # 1. set "dateModified" in packages/dataset/dataset-metadata.json to the
+  #    date this release ships (skip if it already reads it)
+  node scripts/build-catalog.mjs   # 2. index.json's `updated` copies that field
+  pnpm pin-core-date --write       # 3. re-pin the core against the new date
+  ```
+
+  Step 2 is not optional: `scripts/build-catalog.mjs` copies the field into the
+  root `index.json` as `updated`, and `pnpm validate` runs that script with
+  `--check`, so a bump without a rebuild fails the catalog gate instead.
+
+  Step 3 refuses while `dateModified` is older than the day you run it, which is
+  the whole rule: the core moving requires the date to be current, never the
+  other way round. Later core changes on the same day re-pin with no further
+  bump, because the date already reads that day. Refreshing the field for a
+  licence or prose correction with no record changed is legal at any date, and
+  still takes steps 2 and 3, because the pin states the date the core is
+  published under and the catalog states it too. `data/poste/` is outside the
+  digest: it mirrors `@geoalgeria/poste` and carries that package's date.
 
 On push to `main`, the **Release** workflow runs `changesets/action`. If
 unconsumed changesets exist, it opens (or updates) a **`chore: version

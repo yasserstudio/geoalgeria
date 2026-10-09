@@ -15,17 +15,18 @@
 // (see test/division-counts.test.mjs).
 //
 // WHAT IS ENFORCED, AND WHAT IS NOT. The rule is one-directional: the core moving
-// requires the date to move, never the other way round. `dateModified` dates the
-// published descriptor as a whole, so a licence-prose or terms correction may
+// requires the date to be current, never the other way round. `dateModified` dates
+// the published descriptor as a whole, so a licence-prose or terms correction may
 // refresh it with no record having changed, and that stays legal here.
 //
 // HOW. packages/dataset/core-date.pin.json records the digest of the core's
-// carriers next to the `dateModified` they were last dated at. This file fails
-// when the committed digest is not the core's, which is the releaser's prompt to
-// bump the date and re-pin; and scripts/pin-core-date.mjs refuses to re-pin a
-// moved core against a date that did not move, which is where the direction is
-// enforced. Neither needs git history or the network, so a shallow CI clone
-// checks the same thing a full one does.
+// carriers next to the `dateModified` they were last dated at. This file, and
+// `pnpm validate` through scripts/pin-core-date.mjs --check, fail when the
+// committed digest is not the core's, which is the releaser's prompt to date the
+// release and re-pin; `--write` then refuses while `dateModified` is older than
+// the day it runs on, which is where the direction is enforced and the only place
+// a clock is read. Nothing here needs git history or the network, so a shallow CI
+// clone checks the same thing a full one does, on any day.
 import test from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
@@ -161,29 +162,68 @@ test("a carrier dropped from the set changes the digest", () => {
   );
 });
 
-test("re-pinning a moved core is refused while `dateModified` has not moved", () => {
-  // Where the direction is enforced. The pin on its own only proves the core and
-  // the date were written together; this is what stops them being written
-  // together on the old date.
+test("re-pinning a moved core is refused while `dateModified` is older than the day it is re-pinned on", () => {
+  // Where the direction is enforced, and the only place a clock is read. The pin
+  // on its own proves the core and the date were written together; this is what
+  // stops them being written together on a date the core has outlived.
   const dated = { dateModified: "2026-10-03", sha256: "a".repeat(64) };
   const moved = "b".repeat(64);
 
-  // The release-day mistake: the core moved, the field was left alone.
+  // The release-day mistake: the core moved, the field still reads the previous
+  // release's date.
   assert.match(
-    pinRefusal({ pin: dated, dateModified: "2026-10-03", digest: moved }),
-    /dated 2026-10-03, and dateModified reads 2026-10-03, which is not later/,
+    pinRefusal({ pin: dated, dateModified: "2026-10-03", digest: moved, today: "2026-10-09" }),
+    /dateModified reads 2026-10-03, older than 2026-10-09/,
   );
   // And a date edited backwards is the same refusal, not a pass.
   assert.match(
-    pinRefusal({ pin: dated, dateModified: "2026-09-29", digest: moved }),
-    /dated 2026-10-03, and dateModified reads 2026-09-29, which is not later/,
+    pinRefusal({ pin: dated, dateModified: "2026-09-29", digest: moved, today: "2026-10-09" }),
+    /dateModified reads 2026-09-29, older than 2026-10-09/,
   );
-  assert.equal(pinRefusal({ pin: dated, dateModified: "2026-10-09", digest: moved }), null);
+  assert.equal(pinRefusal({ pin: dated, dateModified: "2026-10-09", digest: moved, today: "2026-10-09" }), null);
 
   // An unchanged core may be re-pinned at any date, because `dateModified` dates
   // the whole descriptor and a licence correction legitimately refreshes it.
-  assert.equal(pinRefusal({ pin: dated, dateModified: "2026-10-09", digest: dated.sha256 }), null);
-  assert.equal(pinRefusal({ pin: dated, dateModified: "2026-10-03", digest: dated.sha256 }), null);
+  assert.equal(pinRefusal({ pin: dated, dateModified: "2026-10-03", digest: dated.sha256, today: "2026-10-09" }), null);
+  assert.equal(pinRefusal({ pin: dated, dateModified: "2026-09-29", digest: dated.sha256, today: "2026-10-09" }), null);
+});
+
+test("the second core change of a release day needs no second date bump", () => {
+  // The deadlock the first cut of this rule created, and the reason the floor is
+  // the day the re-pin happens rather than the date already in the pin. A release
+  // batch lands eight to eleven core commits in one day (29 September and 1
+  // October 2026 each did), so the first of them dates the core and every later
+  // one re-pins against a date that is already today's. Under a rule that asked
+  // for a date LATER than the pinned one, the second commit of the day had no
+  // legal fix at all: there was no date it could honestly bump to.
+  const afterTheFirstChange = { dateModified: "2026-10-09", sha256: "a".repeat(64) };
+  for (const digest of ["b".repeat(64), "c".repeat(64)])
+    assert.equal(
+      pinRefusal({ pin: afterTheFirstChange, dateModified: "2026-10-09", digest, today: "2026-10-09" }),
+      null,
+    );
+
+  // A date ahead of the day is a release deliberately pre-dated, not a stale one,
+  // so it is not refused either.
+  assert.equal(
+    pinRefusal({ pin: afterTheFirstChange, dateModified: "2026-10-12", digest: "d".repeat(64), today: "2026-10-09" }),
+    null,
+  );
+});
+
+test("the refusal is the only thing that reads a clock, and it refuses without one", () => {
+  // `--check` and every test above compare the pin with the tree and never ask
+  // what day it is, so a shallow clone checked on any later day reaches the same
+  // verdict. A caller that forgets `today` is a programming error and must not
+  // read as a pass.
+  assert.match(
+    pinRefusal({
+      pin: { dateModified: "2026-10-03", sha256: "a".repeat(64) },
+      dateModified: "2026-10-03",
+      digest: "b".repeat(64),
+    }),
+    /today's date was not supplied/,
+  );
 });
 
 test("the committed pin is byte-identical to what the writer emits", () => {
@@ -196,4 +236,13 @@ test("pin-core-date.mjs --check passes on the committed tree", () => {
   assert.doesNotThrow(() =>
     execFileSync(process.execPath, [join(ROOT, "scripts", "pin-core-date.mjs"), "--check"], { stdio: "pipe" }),
   );
+});
+
+test("`pnpm validate` runs the check, and `pnpm pin-core-date` is the writer", () => {
+  // The suite covers the pin on its own, but the check belongs in the validate
+  // chain beside the other --check gates: a releaser who runs `pnpm validate`
+  // and reads the last line should not have to also read the test names.
+  const scripts = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8")).scripts;
+  assert.match(scripts.validate, /scripts\/pin-core-date\.mjs --check/);
+  assert.equal(scripts["pin-core-date"], "node scripts/pin-core-date.mjs");
 });

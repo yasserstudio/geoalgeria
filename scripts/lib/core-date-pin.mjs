@@ -90,19 +90,46 @@ export const coreDigest = (pkgDir) => digestOf(carrierHashes(pkgDir));
 
 /**
  * The one-directional rule, in one place: a core that moved may only be re-pinned
- * against a `dateModified` later than the one it was last pinned at.
+ * against a `dateModified` the core has not outlived, which is any date from the
+ * day of the re-pin onwards.
+ *
+ * WHY THE FLOOR IS THE DAY OF THE RE-PIN AND NOT THE DATE IN THE PIN. The first
+ * cut asked for a date strictly later than the pinned one, which deadlocked the
+ * second core change of a release day: a batch lands eight to eleven core commits
+ * in one day (29 September and 1 October 2026 each did), the first of them dates
+ * the core at today, and the second then had no date it could honestly bump to.
+ * Carrying the previous release's date in the pin as well does not fix it, because
+ * the first commit of the day would then pass against that older date without
+ * bumping anything, which is the defect this guard exists for. The day of the
+ * re-pin is the one reference that makes "this date is stale" decidable, so that
+ * is the floor, and a date ahead of it is a deliberately pre-dated release rather
+ * than a stale one.
+ *
+ * This is the only clock in the guard, and nothing that runs in CI reaches it:
+ * `--check` and test/core-date-pinned.test.mjs compare the pin with the tree, so a
+ * shallow clone checked on any later day reaches the same verdict.
  *
  * @returns the refusal, or null when re-pinning is legal.
  */
-export function pinRefusal({ pin, dateModified, digest }) {
+export function pinRefusal({ pin, dateModified, digest, today }) {
   if (!pin || pin.sha256 === digest) return null;
-  if (dateModified > pin.dateModified) return null;
+  if (!today)
+    return (
+      "the administrative core has changed and today's date was not supplied, so whether " +
+      "dateModified is stale cannot be decided"
+    );
+  if (dateModified >= today) return null;
   return (
     `the administrative core has changed since it was dated ${pin.dateModified}, and dateModified ` +
-    `reads ${dateModified}, which is not later. Set "dateModified" in ` +
-    "packages/dataset/dataset-metadata.json to this release's date, then re-pin."
+    `reads ${dateModified}, older than ${today}. Set "dateModified" in ` +
+    "packages/dataset/dataset-metadata.json to the date this release ships, rebuild the catalog " +
+    "with `node scripts/build-catalog.mjs`, then re-pin."
   );
 }
+
+/** Today in UTC, as the ISO date the descriptor states its dates in. UTC rather
+ *  than local time so two releasers in different zones get one floor. */
+export const todayUtc = () => new Date().toISOString().slice(0, 10);
 
 /** The sidecar document. */
 export function pinDocument(pkgDir) {
@@ -118,11 +145,11 @@ export function pinDocument(pkgDir) {
     sha256: digestOf(entries),
     note:
       "The digest of the administrative core's published carriers, next to the `dateModified` they " +
-      "were last dated at. test/core-date-pinned.test.mjs recomputes it and fails when the core has " +
-      "moved and this file has not, which is the releaser's prompt to date the release; " +
-      "`node scripts/pin-core-date.mjs --write` re-pins, and refuses while `dateModified` has not " +
-      "moved. `data/poste/` is excluded: it is a mirror of @geoalgeria/poste and carries that " +
-      "package's date.",
+      "were last dated at. `pnpm validate` and test/core-date-pinned.test.mjs recompute it and fail " +
+      "when the core has moved and this file has not, which is the releaser's prompt to date the " +
+      "release: set `dateModified`, run `node scripts/build-catalog.mjs`, then `pnpm pin-core-date " +
+      "--write`, which refuses while `dateModified` is older than the day it runs on. `data/poste/` " +
+      "is excluded: it is a mirror of @geoalgeria/poste and carries that package's date.",
   };
 }
 
