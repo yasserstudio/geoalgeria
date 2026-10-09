@@ -60,13 +60,13 @@ const named = all.filter((m) => m.name_fr);
 
 > **C'est un composite, pas un registre officiel.** Wikidata offre une couverture
 > quasi complète (~19 000 mosquées géolocalisées, proche du chiffre MARW d'environ
-> 18 449) ; OpenStreetMap ajoute des coordonnées précises, des noms français, la
+> 18 449) ; OpenStreetMap ajoute des coordonnées précises, des noms français, la
 > dénomination, et des mosquées absentes de Wikidata. Les totaux évoluent au gré
 > des deux projets – chaque reconstruction reflète l'état actuel des sources.
 
 ## Formats
 
-Le paquet npm fournit le **JSON** (importable directement) :
+Le paquet npm fournit le **JSON** (importable directement) :
 
 ```js
 import mosquees from "@geoalgeria/mosquees/data/mosquees.json" with { type: "json" };
@@ -74,7 +74,7 @@ import mosquees from "@geoalgeria/mosquees/data/mosquees.json" with { type: "jso
 // https://cdn.jsdelivr.net/npm/@geoalgeria/mosquees/data/mosquees.json
 ```
 
-Les chargeurs et les enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses :
+Les chargeurs et les enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses :
 
 ```ts
 import mosquees, { type Mosquee } from "@geoalgeria/mosquees";
@@ -82,7 +82,7 @@ const all: Mosquee[] = mosquees.mosquees();
 ```
 
 Les **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inclus dans
-chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
+chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -127,10 +127,10 @@ préférence, sinon arabe) et vaut `null` pour les points OSM sans nom.
 > `wilaya_code`, `commune_code` et `commune` par **jointure au centroïde le plus
 > proche** sur le jeu de communes
 > [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). La wilaya est quasi
-> exacte ; la commune est une approximation (proximité de centroïde, non inclusion
+> exacte ; la commune est une approximation (proximité de centroïde, non inclusion
 > dans le polygone).
 
-## Besoin des divisions administratives ?
+## Besoin des divisions administratives ?
 
 Pour les wilayas, dairas et communes, utilisez le paquet principal
 **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est ce qui
@@ -139,17 +139,17 @@ transforme le `commune_code` d'une mosquée en polygone ou centroïde. Utilisez
 
 ## Source & méthode
 
-Lancez `npm run fetch` pour régénérer les sorties. Le script :
+Lancez `npm run fetch` pour régénérer les sorties. Le script :
 
 1. interroge **Wikidata** (SPARQL) pour tout élément instance d'une sous-classe de
    *mosquée* (Q32815) située en Algérie (P17 = Q262) avec une coordonnée (P625) –
-   la base exhaustive ;
+   la base exhaustive ;
 2. interroge **OpenStreetMap** (Overpass) pour `amenity=place_of_worship` +
-   `religion=muslim` en Algérie ;
+   `religion=muslim` en Algérie ;
 3. les **fusionne** – une mosquée OSM à ~150 m d'une mosquée Wikidata est intégrée
    à cet enregistrement (apportant son nom français, sa dénomination et son
-   `refs.osm`) ; les mosquées OSM sans correspondance deviennent leurs propres
-   enregistrements ;
+   `refs.osm`) ; les mosquées OSM sans correspondance deviennent leurs propres
+   enregistrements ;
 4. attache la commune/wilaya par centroïde de commune le plus proche.
 
 Les extractions brutes sont mises en cache sous
@@ -157,7 +157,7 @@ Les extractions brutes sont mises en cache sous
 
 ## Licence & attribution
 
-Le **code** du paquet est sous [MIT](LICENSE). Les **données** sont un composite :
+Le **code** du paquet est sous [MIT](LICENSE). Les **données** sont un composite :
 
 - Le contenu **Wikidata** est sous **CC0** (domaine public).
 - Le contenu **OpenStreetMap** est **© les contributeurs d'OpenStreetMap**, sous
@@ -174,4 +174,6 @@ de données est fourni à titre de référence et pour alimenter
 
 ---
 
-Réalisé par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+Réalisé par [Yasser's studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [support@yasser.studio](mailto:support@yasser.studio)
+
+GeoAlgeria est gratuit, et il le reste. Le même studio réalise aussi des cartes, des sites web, des applications mobiles et des données ouvertes pour ses clients.

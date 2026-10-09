@@ -40,6 +40,6 @@ import { pharmacies } from "@geoalgeria/pharma";
 
 Chaque membre porte sa propre source et attribution (voir son README) – registre MIP pour `industrie`, OpenStreetMap (ODbL) pour `pharmacies`. Code du paquet sous licence MIT (voir [LICENSE](LICENSE)).
 
-## Questions ?
+## Questions ?
 
-Ouvrez une issue : https://github.com/yasserstudio/geoalgeria/issues
+Ouvrez une issue : https://github.com/yasserstudio/geoalgeria/issues

@@ -73,12 +73,12 @@ const named = all.filter((e) => e.name_fr);
 **Le cycle est déduit.** Il provient d'`isced:level` et du nom français/arabe –
 un CEM se nomme toujours متوسطة/collège, un lycée ثانوية/lycée, une maternelle
 روضة/préscolaire. Une simple « école »/« مدرسة » sans mot de cycle est classée
-`primaire` par convention algérienne ; le reste est `autre`. 93 % des écoles
+`primaire` par convention algérienne ; le reste est `autre`. 93 % des écoles
 *nommées* obtiennent un cycle précis.
 
 **Par type (`kind`)** – le `kind` est le type d'établissement, *orthogonal* au
 cycle, pour filtrer (ou isoler) les lieux particuliers qu'OSM classe sous
-`amenity=school` :
+`amenity=school` :
 
 | Type | Nombre | Signification | Cycle |
 | --- | --- | --- | --- |
@@ -91,16 +91,16 @@ cycle, pour filtrer (ou isoler) les lieux particuliers qu'OSM classe sous
 
 Les quatre types hors K-12 (`formation`/`coranique`/`langues`/`conduite`) portent
 le cycle `autre` – ce ne sont pas des écoles primaires même si leur nom contient
-« école » ; le `kind` les rend repérables au lieu de les noyer dans `autre`.
+« école » ; le `kind` les rend repérables au lieu de les noyer dans `autre`.
 
-**Aussi sur chaque enregistrement :** `isced_levels` (les niveaux `isced:level`
+**Aussi sur chaque enregistrement :** `isced_levels` (les niveaux `isced:level`
 d'OSM, normalisés en liste triée comme `"1;2"` – sur 2 048 enregistrements),
 `address` (depuis les tags OSM `addr:*` – sur 2 626) et `sector`
 (`public`/`private` là où la carte le signale).
 
 ## Formats
 
-Le paquet npm fournit le **JSON** (importable directement) :
+Le paquet npm fournit le **JSON** (importable directement) :
 
 ```js
 import ecoles from "@geoalgeria/ecoles/data/ecoles.json" with { type: "json" };
@@ -109,7 +109,7 @@ import ecoles from "@geoalgeria/ecoles/data/ecoles.json" with { type: "json" };
 ```
 
 Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les
-définitions TypeScript sont incluses dans le paquet :
+définitions TypeScript sont incluses dans le paquet :
 
 ```ts
 import ecoles, { type Ecole } from "@geoalgeria/ecoles";
@@ -118,7 +118,7 @@ const all: Ecole[] = ecoles.ecoles();
 
 Les fichiers **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et
 inclus dans chaque
-[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
+[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -160,7 +160,7 @@ data/
 ```
 
 `id` est une clé stable `{wilaya_code}-{seq}` synthétisée par GeoAlgeria, unique
-dans ce jeu de données ; l'élément OSM correspondant est conservé dans
+dans ce jeu de données ; l'élément OSM correspondant est conservé dans
 `refs.osm`. `name` est `null` pour les points non nommés. `cycle` est le niveau
 et `kind` le type d'établissement (voir ci-dessus), chacun avec des libellés
 bilingues. `isced_levels` et `address` proviennent directement d'OSM (`null` si
@@ -176,10 +176,10 @@ bâtiment – `geo_method` précise lequel (`osm_node`/`osm_centroid`).
 > polygone de wilaya contenant le point, puis le centroïde de commune le plus
 > proche **dans cette wilaya**, depuis le jeu de communes
 > [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). La wilaya est issue
-> de l'inclusion polygonale ; la commune reste une proximité de centroïde au
+> de l'inclusion polygonale ; la commune reste une proximité de centroïde au
 > sein de cette limite.
 
-## Besoin aussi des divisions administratives ?
+## Besoin aussi des divisions administratives ?
 
 Pour les wilayas, daïras et communes, utilisez le paquet principal
 **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est ainsi que
@@ -188,12 +188,12 @@ vous transformez le `commune_code` d'une école en polygone ou centroïde. Utili
 
 ## Source & méthode
 
-Lancez `npm run fetch` pour régénérer toutes les sorties. Le script :
+Lancez `npm run fetch` pour régénérer toutes les sorties. Le script :
 
 1. interroge **OpenStreetMap** (Overpass) pour `amenity=school` et
-   `amenity=kindergarten` en Algérie ;
-2. **classe le cycle** à partir d'`isced:level` et du nom français/arabe ;
-3. déduplique la même école cartographiée à la fois comme nœud et comme bâtiment ;
+   `amenity=kindergarten` en Algérie ;
+2. **classe le cycle** à partir d'`isced:level` et du nom français/arabe ;
+3. déduplique la même école cartographiée à la fois comme nœud et comme bâtiment ;
 4. localise le polygone de wilaya contenant le point, puis attache le centroïde
    de commune le plus proche dans cette wilaya.
 
@@ -216,4 +216,6 @@ Ce jeu de données est fourni à titre de référence et pour alimenter
 
 ---
 
-Réalisé par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+Réalisé par [Yasser's studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [support@yasser.studio](mailto:support@yasser.studio)
+
+GeoAlgeria est gratuit, et il le reste. Le même studio réalise aussi des cartes, des sites web, des applications mobiles et des données ouvertes pour ses clients.

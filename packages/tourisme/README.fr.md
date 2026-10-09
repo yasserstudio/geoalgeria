@@ -14,7 +14,7 @@
 
 4 348 sites touristiques géocodés à travers les 69 wilayas d'Algérie – **hôtels**, attractions,
 sites historiques, sources thermales et espaces protégés – chacun avec coordonnées, rattachement
-à la wilaya et attribution de la source. Sources : **ASAL Geoportail** (sources thermales),
+à la wilaya et attribution de la source. Sources : **ASAL Geoportail** (sources thermales),
 **OpenStreetMap** (hôtels, attractions, sites historiques, parcs) et **Wikidata** (sites
 patrimoniaux, musées, parcs). Distribué en JSON, CSV et GeoJSON.
 Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -59,7 +59,7 @@ Couvrant **69 wilayas**. `wilaya_code` est lié au modèle 69 wilayas de
 
 ## Formats
 
-Le package npm fournit le **JSON** (importable directement) :
+Le package npm fournit le **JSON** (importable directement) :
 
 ```js
 import lodging from "@geoalgeria/tourisme/data/lodging.json" with { type: "json" };
@@ -67,7 +67,7 @@ import lodging from "@geoalgeria/tourisme/data/lodging.json" with { type: "json"
 // https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/lodging.json
 ```
 
-Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import tourisme, { type Lodging, type ThermalSpring } from "@geoalgeria/tourisme";
@@ -76,7 +76,7 @@ const springs: ThermalSpring[] = tourisme.thermalSprings();
 ```
 
 Les formats **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inclus dans chaque
-[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
+[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -92,7 +92,7 @@ data/
 
 ## Structure d'un enregistrement
 
-**Hébergement** – hôtels, auberges, maisons d'hôtes :
+**Hébergement** – hôtels, auberges, maisons d'hôtes :
 
 ```json
 {
@@ -112,30 +112,30 @@ data/
 }
 ```
 
-`type` est l'un des suivants : `hotel`, `hostel`, `guest_house`, `apartment`, `chalet`, `motel`,
+`type` est l'un des suivants : `hotel`, `hostel`, `guest_house`, `apartment`, `chalet`, `motel`,
 `alpine_hut`. `name_fr` et `name_ar` ne sont présents que lorsque OpenStreetMap porte cette
 langue. `source` est une clé courte résolue dans `metadata.sources[]`, et les identifiants
 externes vivent dans `refs` (`refs.osm` est l'identifiant OSM sous forme de chaîne,
 `refs.wikidata` un QID, `refs.wikipedia` un lien interlangue `"<langue>:<titre>"`). Les quatre
-couches OSM ne portent aucun rattachement communal : `commune_code` et `commune` y sont nuls,
+couches OSM ne portent aucun rattachement communal : `commune_code` et `commune` y sont nuls,
 sauf sur les quatre sites qu'une correction revue a replacés dans la wilaya qu'une réforme a
 donnée à leur commune (quality/overrides/tourisme.json), qui portent le `commune_code` dont
 la correction est tirée.
 
 Les champs de contact et de classification optionnels sont présents lorsque la source les
-publie, et absents sinon – jamais nuls. Sur l'hébergement : `address` (209 enregistrements),
+publie, et absents sinon – jamais nuls. Sur l'hébergement : `address` (209 enregistrements),
 `phone` (204, plusieurs numéros séparés par `;` comme OSM les balise), `website` (84), `stars`
-(60) et `rooms` (24). Sur les attractions : `description` (26). Sur les sites historiques :
+(60) et `rooms` (24). Sur les attractions : `description` (26). Sur les sites historiques :
 `heritage_status` (17, par exemple `"part of UNESCO World Heritage Site"`) et `heritage`
 (12, le niveau de protection OSM).
 
 La plupart des enregistrements de ces quatre couches proviennent d'OpenStreetMap, mais 115
 proviennent de Wikidata (32 attractions, 75 sites historiques, 8 parcs). Ceux-là portent
-`source` et `geo_method` à `"wikidata"` et un QID `refs.wikidata` sans `refs.osm` : ils sont
+`source` et `geo_method` à `"wikidata"` et un QID `refs.wikidata` sans `refs.osm` : ils sont
 en CC0 et non en ODbL, filtrez donc sur `source` si la distinction compte pour votre
 attribution. Au total, 236 enregistrements portent un QID Wikidata et 100 un lien Wikipedia.
 
-**Source thermale** – source ASAL Geoportail, avec propriétés physiques :
+**Source thermale** – source ASAL Geoportail, avec propriétés physiques :
 
 ```json
 {
@@ -157,16 +157,16 @@ attribution. Au total, 236 enregistrements portent un QID Wikidata et 100 un lie
 }
 ```
 
-`type` est l'un des suivants : `hammam`, `ain`, `source`, `forage`. Les propriétés physiques
+`type` est l'un des suivants : `hammam`, `ain`, `source`, `forage`. Les propriétés physiques
 (`temperature_c`, `debit_l_s`, `altitude_m`, `minerality`) proviennent directement du jeu de
-données ASAL ; `minerality` est la seule optionnelle. C'est la seule couche qui nomme une
+données ASAL ; `minerality` est la seule optionnelle. C'est la seule couche qui nomme une
 commune – via `commune`, un nom et non un `commune_code` ONS, qui reste nul sauf sur la
 source qu'une correction revue a replacée dans sa wilaya actuelle.
 
 `wilaya_code` est complété à deux chiffres avec un zéro dans toutes les couches et rejoint les
 wilayas de GeoAlgeria.
 
-## Besoin aussi des divisions administratives ?
+## Besoin aussi des divisions administratives ?
 
 Si vous avez également besoin des wilayas, daïras et communes pour des jointures, utilisez
 le package principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – il fournit
@@ -176,16 +176,16 @@ le jeu de données complet des 69 wilayas auquel `wilaya_code` fait référence 
 ## Seuil de qualité
 
 La suite de tests du dépôt protège cet instantané contre les régressions
-silencieuses : la couverture bilingue français + arabe doit rester au moins à
+silencieuses : la couverture bilingue français + arabe doit rester au moins à
 28,8 %, chaque enregistrement géocodé doit conserver `geo_precision` et
 `geo_method`, les champs de contact et de détail d'hébergement déjà sourcés ne
 peuvent pas diminuer, et les références OpenStreetMap présentes dans plusieurs
 catégories restent explicitement bornées. Ce sont des seuils de régression, pas
-des affirmations d'exhaustivité ; une actualisation vérifiée peut les relever.
+des affirmations d'exhaustivité ; une actualisation vérifiée peut les relever.
 
 ## Source
 
-Les données proviennent de trois sources :
+Les données proviennent de trois sources :
 
 - **ASAL Geoportail** – sources thermales (température, débit, altitude, composition minérale).
   Données gouvernementales publiques.
@@ -196,11 +196,11 @@ Les données proviennent de trois sources :
 
 ## Licence et attribution
 
-Le code est sous licence [MIT](LICENSE). Les données sous-jacentes :
+Le code est sous licence [MIT](LICENSE). Les données sous-jacentes :
 
-- Sources thermales : données gouvernementales publiques (ASAL).
-- Couches issues d'OSM : © contributeurs OpenStreetMap, [ODbL](https://opendatacommons.org/licenses/odbl/).
-- Enregistrements issus de Wikidata : [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+- Sources thermales : données gouvernementales publiques (ASAL).
+- Couches issues d'OSM : © contributeurs OpenStreetMap, [ODbL](https://opendatacommons.org/licenses/odbl/).
+- Enregistrements issus de Wikidata : [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 Redistribué à titre de référence et pour alimenter [GeoAlgeria](https://geoalgeria.com). Vérifiez
 auprès des sources originales pour des informations officielles et en temps réel.
@@ -209,4 +209,6 @@ auprès des sources originales pour des informations officielles et en temps ré
 
 ---
 
-Fait par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+Réalisé par [Yasser's studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [support@yasser.studio](mailto:support@yasser.studio)
+
+GeoAlgeria est gratuit, et il le reste. Le même studio réalise aussi des cartes, des sites web, des applications mobiles et des données ouvertes pour ses clients.

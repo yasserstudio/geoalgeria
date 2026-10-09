@@ -52,7 +52,7 @@
 ### Patch Changes
 
 - Author credit in README
-- Added a "Made by Yasser's Studio · LinkedIn · X · email" footer to the package README.
+- Added a "Made by Yasser's studio · LinkedIn · X · email" footer to the package README.
 
 ## 1.1.1
 

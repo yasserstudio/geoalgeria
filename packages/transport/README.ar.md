@@ -43,6 +43,8 @@ transport.buses.lines();              // شبكات الحافلات الحضر�
 
 <div dir="rtl">
 
-من إنجاز [Yasser's Studio](https://yasser.studio)
+من إنجاز [Yasser's studio](https://yasser.studio)
+
+المشروع مجاني ويبقى كذلك، والاستوديو نفسه يصنع لعملائه خرائط ومواقع إلكترونية وتطبيقات هاتف وبيانات مفتوحة.
 
 </div>

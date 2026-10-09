@@ -52,7 +52,7 @@ const flagships = boutiques.filter((b) => b.category === "A");
 
 ## Formats
 
-Le paquet npm fournit le **JSON** (importable directement) :
+Le paquet npm fournit le **JSON** (importable directement) :
 
 ```js
 import boutiques from "@geoalgeria/djezzy/data/boutiques.json" with { type: "json" };
@@ -60,7 +60,7 @@ import boutiques from "@geoalgeria/djezzy/data/boutiques.json" with { type: "jso
 // https://cdn.jsdelivr.net/npm/@geoalgeria/djezzy/data/boutiques.json
 ```
 
-Les chargeurs et les enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses :
+Les chargeurs et les enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses :
 
 ```ts
 import djezzy, { type Boutique } from "@geoalgeria/djezzy";
@@ -68,7 +68,7 @@ const boutiques: Boutique[] = djezzy.boutiques();
 ```
 
 Les **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inclus dans
-chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
+chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -114,10 +114,10 @@ porte une vraie coordonnée publiée par l'opérateur.
 > attache `wilaya_code`, `commune_code` et `commune` par **jointure au centroïde
 > le plus proche** sur le jeu de communes
 > [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). La wilaya est quasi
-> exacte ; la commune est une approximation (proximité de centroïde, non
+> exacte ; la commune est une approximation (proximité de centroïde, non
 > inclusion dans le polygone).
 
-## Besoin des divisions administratives ?
+## Besoin des divisions administratives ?
 
 Pour les wilayas, dairas et communes, utilisez le paquet principal
 **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est ce qui
@@ -129,7 +129,7 @@ transforme le `commune_code` d'une boutique en polygone ou centroïde. Utilisez
 Les données proviennent du localisateur de boutiques **Djezzy**
 (<https://www.djezzy.dz/nos-boutiques/>). La page intègre la liste complète sous
 forme de tableau JSON encodé en entités HTML – il n'y a pas d'API séparée. Lancez
-`npm run fetch` pour régénérer les sorties : le script lit les objets boutique,
+`npm run fetch` pour régénérer les sorties : le script lit les objets boutique,
 vérifie que les coordonnées tombent en Algérie, et attache le rattachement
 administratif par commune la plus proche.
 
@@ -146,4 +146,6 @@ localisateur.
 
 ---
 
-Réalisé par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+Réalisé par [Yasser's studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [support@yasser.studio](mailto:support@yasser.studio)
+
+GeoAlgeria est gratuit, et il le reste. Le même studio réalise aussi des cartes, des sites web, des applications mobiles et des données ouvertes pour ses clients.

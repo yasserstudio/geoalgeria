@@ -1,6 +1,6 @@
 # Disclaimer
 
-GeoAlgeria is an independent, community open-data project by Yasser's Studio.
+GeoAlgeria is an independent, community open-data project by Yasser's studio.
 Please read this before relying on any dataset in this repository, especially
 the bank/financial, postal, employment, telecom, and aviation data.
 

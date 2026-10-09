@@ -5,7 +5,7 @@
 <a href="https://geoalgeria.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/brand/logo/geoalgeria-logo-horizontal-white.png"><img src="./assets/brand/logo/geoalgeria-logo-horizontal.png" alt="GeoAlgeria" width="280"></picture></a>
 
 <sub>par</sub><br>
-<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's Studio" height="28"></picture></a>
+<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's studio" height="28"></picture></a>
 
 **Le jeu de données ouvert pour l'Algérie, installez-le, ne le scrapez pas.**
 
@@ -18,7 +18,7 @@
 
 </div>
 
-GeoAlgeria est un projet ouvert, développé en solo, avec un seul objectif : devenir le premier portail, et le plus complet, pour toutes les données de l'Algérie. Vérifiable, à jour et libre d'utilisation. Il se compose de deux parties : un atlas interactif que vous explorez dans le navigateur, et les jeux de données qui l'alimentent, publiés sous forme de packages npm que vous installez au lieu de les scraper.
+GeoAlgeria est un projet ouvert, développé en solo, avec un seul objectif : devenir le premier portail, et le plus complet, pour toutes les données de l'Algérie. Vérifiable, à jour et libre d'utilisation. Il se compose de deux parties : un atlas interactif que vous explorez dans le navigateur, et les jeux de données qui l'alimentent, publiés sous forme de packages npm que vous installez au lieu de les scraper.
 
 ## L'atlas
 
@@ -26,13 +26,13 @@ GeoAlgeria est un projet ouvert, développé en solo, avec un seul objectif : de
 
 **[geoalgeria.com](https://geoalgeria.com)** réunit 28+ jeux de données et 80 000+ enregistrements sur une seule carte interactive, redessinée pour les 69 wilayas.
 
-- **[Atlas multisectoriel](https://geoalgeria.com) :** tous les secteurs sur une même carte, des bureaux de poste aux mosquées et aux hôpitaux, avec une vue de densité par wilaya.
-- **[Carte des feux en direct](https://geoalgeria.com/fires) :** les points chauds satellite NASA FIRMS aux côtés des bulletins officiels de la Protection Civile, mis à jour tout au long de la saison des feux (lancée le 23 juillet 2026).
-- **[3 951 pages par wilaya](https://geoalgeria.com/wilaya) :** une page pour chaque wilaya et chaque secteur, pensée pour la recherche.
-- **[Superposition de couches](https://geoalgeria.com/explore) :** activez et désactivez les secteurs et lisez-les ensemble sur la même carte.
-- **Recherche Command-K :** accédez à n'importe quelle wilaya ou commune directement au clavier.
-- **Arabe, français et anglais :** toute l'interface, entièrement en écriture de droite à gauche en arabe.
-- **[Provenance sur chaque enregistrement](https://geoalgeria.com/sources) :** chaque point indique d'où il provient et quand il a changé pour la dernière fois. Voir les [sources](https://geoalgeria.com/sources) et le [journal des modifications](https://geoalgeria.com/changelog).
+- **[Atlas multisectoriel](https://geoalgeria.com) :** tous les secteurs sur une même carte, des bureaux de poste aux mosquées et aux hôpitaux, avec une vue de densité par wilaya.
+- **[Carte des feux en direct](https://geoalgeria.com/fires) :** les points chauds satellite NASA FIRMS aux côtés des bulletins officiels de la Protection Civile, mis à jour tout au long de la saison des feux (lancée le 23 juillet 2026).
+- **[3 951 pages par wilaya](https://geoalgeria.com/wilaya) :** une page pour chaque wilaya et chaque secteur, pensée pour la recherche.
+- **[Superposition de couches](https://geoalgeria.com/explore) :** activez et désactivez les secteurs et lisez-les ensemble sur la même carte.
+- **Recherche Command-K :** accédez à n'importe quelle wilaya ou commune directement au clavier.
+- **Arabe, français et anglais :** toute l'interface, entièrement en écriture de droite à gauche en arabe.
+- **[Provenance sur chaque enregistrement](https://geoalgeria.com/sources) :** chaque point indique d'où il provient et quand il a changé pour la dernière fois. Voir les [sources](https://geoalgeria.com/sources) et le [journal des modifications](https://geoalgeria.com/changelog).
 
 [![La carte des feux en direct sur geoalgeria.com/fires](assets/screenshots/fires-map.png)](https://geoalgeria.com/fires)
 
@@ -62,12 +62,12 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées, liens OpenStreetMap + Wikidata |
 | **Bureaux de poste** | 3 908 | vrais codes Algérie Poste, coordonnées |
 | **DAB** | 2 026 | réseau GAB d'Algérie Poste |
-| **Agences d'emploi** | 331 | ANEM : 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
+| **Agences d'emploi** | 331 | ANEM : 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
 | **Réseau Mobilis** | 12 344 | 164 agences + 12 180 points de vente. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **Couverture 5G** | 3 598 | sites 5G Djezzy + Mobilis + Ooredoo. [`@geoalgeria/telecom`](packages/telecom) |
-| **Aéroports civils** | 36 | ANAC + OurAirports : noms, codes OACI + IATA, contacts, coordonnées. [`@geoalgeria/aviation`](packages/aviation) |
+| **Aéroports civils** | 36 | ANAC + OurAirports : noms, codes OACI + IATA, contacts, coordonnées. [`@geoalgeria/aviation`](packages/aviation) |
 | **Liaisons directes** | 157 | Le réseau international d'Air Algérie en trajets directionnels, chacun avec un exploitant, un niveau de preuve et une source. [`@geoalgeria/aviation`](packages/aviation) |
-| **Banques et agences** | 1 704 | les 21 banques agréées + 8 institutions ; agences avec codes RIB/SWIFT, propriété, coordonnées. [`@geoalgeria/banques`](packages/banques) |
+| **Banques et agences** | 1 704 | les 21 banques agréées + 8 institutions ; agences avec codes RIB/SWIFT, propriété, coordonnées. [`@geoalgeria/banques`](packages/banques) |
 | **Transporteurs de livraison** | 411 | 16 transporteurs + 411 bureaux de retrait géocodés dans 61 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro). [`@geoalgeria/livraison`](packages/livraison) |
 | **Établissements de jeunesse** | 2 334 | maisons de jeunes, complexes sportifs de proximité, salles polyvalentes, auberges, centres culturels et plus dans 69 wilayas (Ministère de la Jeunesse et des Sports). [`@geoalgeria/jeunesse`](packages/jeunesse) |
 | **Installations sportives** | 5 141 | stades, piscines, terrains de proximité, pistes d'athlétisme, terrains de sport et plus (27 types) dans 69 wilayas (Ministère de la Jeunesse et des Sports). [`@geoalgeria/sports`](packages/sports) |
@@ -89,11 +89,11 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | **Fabricants pharmaceutiques** | 171 | fabricants agréés de médicaments & dispositifs médicaux du registre du Ministère de l'Industrie Pharmaceutique, géolocalisés. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **Points de vente Ooredoo** | 572 | Espaces Ooredoo, City Shops & Espaces Services avec coordonnées réelles, rattachés commune/wilaya (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
-Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contient le JSON pour rester léger ; les CSV/GeoJSON/SQL sont dans chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contient le JSON pour rester léger ; les CSV/GeoJSON/SQL sont dans chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 
 > À jour avec la **Loi n° 26-06** (nouvelle organisation territoriale), [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf), ainsi que la réforme de 2019 (Loi 19-12).
 
-## Pourquoi GeoAlgeria ?
+## Pourquoi GeoAlgeria ?
 
 | | geoalgeria | leblad | algeria-cities |
 |---|:---:|:---:|:---:|
@@ -137,7 +137,7 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Boutiques Djezzy, 128 points de vente géolocalisés de djezzy.dz, avec catégorie, horaires et rattachement commune/wilaya |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosquées d'Algérie, 20 759 géolocalisées, un composite Wikidata + OpenStreetMap avec noms arabes & français, dénomination et rattachement commune/wilaya |
 | [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Établissements de santé publics, 668 du Ministère de la Santé (EPH, EPSP, EHS, CHU), bilingues, géolocalisés via OSM + Wikidata avec rattachement commune/wilaya |
-| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Cliniques et structures de soins, 1 917 géolocalisées depuis OpenStreetMap sur 66 wilayas, classées par type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingues, avec secteur, spécialité, téléphone & horaires si renseignés ; le volet communautaire du secteur santé, dont tout élément OSM référencé par `sante` est exclu |
+| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Cliniques et structures de soins, 1 917 géolocalisées depuis OpenStreetMap sur 66 wilayas, classées par type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingues, avec secteur, spécialité, téléphone & horaires si renseignés ; le volet communautaire du secteur santé, dont tout élément OSM référencé par `sante` est exclu |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Atlas culturel, 1 083 lieux du Ministère de la Culture (sites protégés, musées, théâtres, bibliothèques, établissements culturels), bilingues, entièrement géolocalisés avec rattachement commune/wilaya |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Institutions du secteur agricole, 196 du Ministère de l'Agriculture réparties en 7 réseaux (DSA, conservations des forêts, instituts de recherche/formation, chambres d'agriculture, offices et groupes publics), bilingues, géolocalisées avec rattachement commune/wilaya |
 | [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Écoles, 11 858 écoles et préscolaires depuis OpenStreetMap, classées par cycle (primaire/moyen/secondaire/préscolaire), bilingues, les 69 wilayas, avec rattachement commune/wilaya |
@@ -146,11 +146,11 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | 184 lignes urbaines/suburbaines, 76 tracés et 1 603 stations pour 16 exploitants |
 | [`packages/industrie-pharmaceutique`](packages/industrie-pharmaceutique) | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | Fabricants pharmaceutiques, 171 fabricants agréés de médicaments (PP) & dispositifs médicaux (DM) du registre du Ministère de l'Industrie Pharmaceutique, bilingues, géolocalisés au centroïde commune/wilaya |
 | [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines), 3 807 géolocalisées sur 67 wilayas depuis OpenStreetMap, bilingues si nommées, avec téléphone/horaires/dispensing si renseignés & rattachement commune/wilaya |
-| [`packages/protection-civile`](packages/protection-civile) | [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | Unités de la Protection Civile (incendie & secours), 880 unités de la DGPC sur tout le territoire, nommées en arabe, avec adresse/téléphone/fax & un palier de statut, toutes géolocalisées, source officielle primaire (dgpc.dz) ; wilaya recalculée sur les 69 limites post-réforme 2026 |
-| [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Points de vente Ooredoo, 572 EO / City Shop / Espace Services avec coordonnées réelles & rattachement commune/wilaya (ooredoo.dz) ; complète le trio télécom |
+| [`packages/protection-civile`](packages/protection-civile) | [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | Unités de la Protection Civile (incendie & secours), 880 unités de la DGPC sur tout le territoire, nommées en arabe, avec adresse/téléphone/fax & un palier de statut, toutes géolocalisées, source officielle primaire (dgpc.dz) ; wilaya recalculée sur les 69 limites post-réforme 2026 |
+| [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Points de vente Ooredoo, 572 EO / City Shop / Espace Services avec coordonnées réelles & rattachement commune/wilaya (ooredoo.dz) ; complète le trio télécom |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | Parapluie, installe aviation + ferroviaire + gares-routieres + buses en une fois |
 | [`packages/pharma`](packages/pharma) | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | Parapluie, installe industrie-pharmaceutique + pharmacies en une fois |
-| [`packages/normalize`](packages/normalize) | [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize) | Clés de recherche des noms de lieux algériens, la clé conservatrice, la clé souple, le découpage en mots et leur corpus de référence ; code seul, sans dépendances, pour que tous les index plient un nom de la même façon |
+| [`packages/normalize`](packages/normalize) | [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize) | Clés de recherche des noms de lieux algériens, la clé conservatrice, la clé souple, le découpage en mots et leur corpus de référence ; code seul, sans dépendances, pour que tous les index plient un nom de la même façon |
 
 [Parcourir tous les paquets →](https://geoalgeria.com/data) · [Documentation API et référence des champs →](https://geoalgeria.com/data/docs)
 
@@ -158,27 +158,27 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 
 Depuis la **v2.0.0**, tous les paquets sectoriels partagent un même contrat d'enregistrement canonique, défini par le paquet interne [`@geoalgeria/schema`](packages/schema), une dépendance de développement utilisée par chaque générateur, jamais publiée sur npm.
 
-Chaque enregistrement suit la même forme :
+Chaque enregistrement suit la même forme :
 
-- `wilaya_code` est une **chaîne** complétée par des zéros (`"16"`) ; le rattachement à la commune se fait via `commune_code` + `commune` ; les coordonnées sont `lat` / `lng` (deux nombres, ou deux `null`).
+- `wilaya_code` est une **chaîne** complétée par des zéros (`"16"`) ; le rattachement à la commune se fait via `commune_code` + `commune` ; les coordonnées sont `lat` / `lng` (deux nombres, ou deux `null`).
 - Les identifiants externes sont regroupés sous `refs` (`osm`, `wikidata`, …).
 - `geo_precision` vaut strictement `exact | approximate | null`, `null` exactement lorsqu'il n'y a pas de coordonnée, avec la méthode de géocodage dans `geo_method`.
 
-Des artefacts lisibles par machine les accompagnent : un catalogue racine [`index.json`](index.json), un descripteur `schema.org/Dataset` (`dataset-metadata.json`) dans chaque paquet porteur de données (le paquet `@geoalgeria/normalize`, code seul, n'en porte pas), et les 69 polygones de limites des wilayas dans le paquet principal, sous [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (qualité d'affichage).
+Des artefacts lisibles par machine les accompagnent : un catalogue racine [`index.json`](index.json), un descripteur `schema.org/Dataset` (`dataset-metadata.json`) dans chaque paquet porteur de données (le paquet `@geoalgeria/normalize`, code seul, n'en porte pas), et les 69 polygones de limites des wilayas dans le paquet principal, sous [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (qualité d'affichage).
 
-Un identifiant publié est une clé de jointure : il n'est jamais réutilisé. Un
+Un identifiant publié est une clé de jointure : il n'est jamais réutilisé. Un
 enregistrement qui quitte un paquet laisse son identifiant dans le
 `data/retired-ids.json` de ce paquet, réservé définitivement, et lorsque deux
 enregistrements sont fusionnés en un seul, la table `migrations` du registre
-indique aussi où sont passées les données de l'identifiant absorbé :
+indique aussi où sont passées les données de l'identifiant absorbé :
 `merged_into` nomme l'enregistrement qui les porte désormais, avec une note et,
 quand la source en fournit, les identifiants d'origine que la paire représentait.
 Un consommateur qui détient un ancien identifiant peut le suivre au lieu de
 simplement le voir disparaître.
 
-Un paquet est antérieur au contrat, le jeu de données principal `geoalgeria` (divisions administratives, pas des GeoRecords ; marqué `schema_version: null` dans le catalogue).
+Un paquet est antérieur au contrat, le jeu de données principal `geoalgeria` (divisions administratives, pas des GeoRecords ; marqué `schema_version: null` dans le catalogue).
 
-Vous migrez un paquet ? Voir [`packages/schema/MIGRATING.md`](packages/schema/MIGRATING.md).
+Vous migrez un paquet ? Voir [`packages/schema/MIGRATING.md`](packages/schema/MIGRATING.md).
 
 ## Utilisation sans npm
 
@@ -191,7 +191,7 @@ Vous migrez un paquet ? Voir [`packages/schema/MIGRATING.md`](packages/schema/MI
 </script>
 ```
 
-Vous préférez les fichiers ? Téléchargez les **CSV / GeoJSON / SQL** depuis le bundle zippé de n'importe quelle [release GitHub](https://github.com/yasserstudio/geoalgeria/releases), ou parcourez [`packages/dataset/data/`](packages/dataset/data).
+Vous préférez les fichiers ? Téléchargez les **CSV / GeoJSON / SQL** depuis le bundle zippé de n'importe quelle [release GitHub](https://github.com/yasserstudio/geoalgeria/releases), ou parcourez [`packages/dataset/data/`](packages/dataset/data).
 
 ## La suite
 
@@ -201,7 +201,7 @@ Suivez ou mettez une ⭐ au repo, et [ouvrez une discussion](https://github.com/
 
 ## Contribuer
 
-Les corrections et ajouts sont les bienvenus, voir [CONTRIBUTING.md](CONTRIBUTING.md) et notre [code de conduite](CODE_OF_CONDUCT.md). Les bonnes premières contributions nécessitent généralement juste un lien source ou une coordonnée de commune manquante. Des données incorrectes ? [Ouvrez une issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose).
+Les corrections et ajouts sont les bienvenus, voir [CONTRIBUTING.md](CONTRIBUTING.md) et notre [code de conduite](CODE_OF_CONDUCT.md). Les bonnes premières contributions nécessitent généralement juste un lien source ou une coordonnée de commune manquante. Des données incorrectes ? [Ouvrez une issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose).
 
 ## Versionnage et releases
 
@@ -213,11 +213,11 @@ GeoAlgeria est gratuit. Le code est sous licence MIT et chaque paquet indique se
 
 ## Licence et avertissement
 
-**Code :** [MIT](LICENSE). **Données :** compilées à partir de sources officielles publiques (le *Journal Officiel*, Algérie Poste, ANEM, ANAC, le site public de chaque opérateur/institution) et redistribuées pour référence.
+**Code :** [MIT](LICENSE). **Données :** compilées à partir de sources officielles publiques (le *Journal Officiel*, Algérie Poste, ANEM, ANAC, le site public de chaque opérateur/institution) et redistribuées pour référence.
 
 Le `package.json` de chaque paquet déclare ses conditions exactes (une expression SPDX, ou `SEE LICENSE IN LICENSE`) et son propre fichier `LICENSE` porte les conditions de données en entier.
 
-GeoAlgeria est un **projet indépendant, non affilié ni soutenu par** aucun organisme gouvernemental, régulateur, opérateur ou institution qu'il référence ; leurs noms et marques appartiennent à leurs propriétaires respectifs. Les données sont fournies **« en l'état », sans garantie, vérifiez auprès de la source officielle** avant de vous y fier, notamment pour les usages financiers, de paiement, KYC ou de conformité. Conditions complètes : **[DISCLAIMER](DISCLAIMER.md)**.
+GeoAlgeria est un **projet indépendant, non affilié ni soutenu par** aucun organisme gouvernemental, régulateur, opérateur ou institution qu'il référence ; leurs noms et marques appartiennent à leurs propriétaires respectifs. Les données sont fournies **« en l'état », sans garantie, vérifiez auprès de la source officielle** avant de vous y fier, notamment pour les usages financiers, de paiement, KYC ou de conformité. Conditions complètes : **[DISCLAIMER](DISCLAIMER.md)**.
 
 ---
 
@@ -225,8 +225,10 @@ GeoAlgeria est un **projet indépendant, non affilié ni soutenu par** aucun org
 
 Si GeoAlgeria vous a évité de copier-coller des wilayas depuis un PDF, **[mettez-lui une ⭐](https://github.com/yasserstudio/geoalgeria)**: ça aide le prochain développeur algérien à trouver des données propres.
 
-<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's Studio" height="44"></picture></a>
+<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's studio" height="44"></picture></a>
 
-Fait par [Yasser's Studio](https://yasser.studio) · [geoalgeria.com](https://geoalgeria.com) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+Réalisé par [Yasser's studio](https://yasser.studio) · [geoalgeria.com](https://geoalgeria.com) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [support@yasser.studio](mailto:support@yasser.studio)
+
+GeoAlgeria est gratuit, et il le reste. Le même studio réalise aussi des cartes, des sites web, des applications mobiles et des données ouvertes pour ses clients.
 
 </div>

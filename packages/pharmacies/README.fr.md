@@ -43,7 +43,7 @@ metadata().wilayas_covered; // 67
 | --- | --- | --- | --- |
 | `pharmacies` | 3 797 | les 3 797 | OpenStreetMap, géocodé, rattaché wilaya/commune |
 
-- **Nommées :** 2 461 · **avec téléphone :** 146 · **avec horaires :** 257 · **avec adresse :** 1 163 · **avec `dispensing` :** 526
+- **Nommées :** 2 461 · **avec téléphone :** 146 · **avec horaires :** 257 · **avec adresse :** 1 163 · **avec `dispensing` :** 526
 
 ## Formats
 
@@ -54,14 +54,14 @@ metadata().wilayas_covered; // 67
 
 ## Précision & couverture
 
-> **Couverture partielle.** 3 797 pharmacies sont cartographiées dans OpenStreetMap face à un estimé de **~11 000 officines** à l'échelle nationale (ordre de grandeur – aucun registre officiel ouvert ; le portail de l'Ordre National des Pharmaciens est hors service). La couverture est inégale selon la wilaya et plus dense au nord – c'est un extrait communautaire, **pas un registre officiel**.
+> **Couverture partielle.** 3 797 pharmacies sont cartographiées dans OpenStreetMap face à un estimé de **~11 000 officines** à l'échelle nationale (ordre de grandeur – aucun registre officiel ouvert ; le portail de l'Ordre National des Pharmaciens est hors service). La couverture est inégale selon la wilaya et plus dense au nord – c'est un extrait communautaire, **pas un registre officiel**.
 >
-> Les coordonnées sont des points OSM (relevés) ou des centroïdes de bâtiment (`geo_method`). La commune est un rapprochement au centroïde le plus proche (au mieux) ; la wilaya est quasi exacte. Noms, téléphones et horaires ne figurent que là où un contributeur OSM les a renseignés.
+> Les coordonnées sont des points OSM (relevés) ou des centroïdes de bâtiment (`geo_method`). La commune est un rapprochement au centroïde le plus proche (au mieux) ; la wilaya est quasi exacte. Noms, téléphones et horaires ne figurent que là où un contributeur OSM les a renseignés.
 
 ## Source & licence
 
 Données © **contributeurs d'OpenStreetMap**, sous licence **ODbL 1.0**. Toute redistribution doit créditer OpenStreetMap et rester sous ODbL. Le rattachement wilaya/commune utilise le jeu de données de base geoalgeria. Code du paquet sous licence MIT (voir [LICENSE](LICENSE)).
 
-## Questions ?
+## Questions ?
 
-Ouvrez une issue : https://github.com/yasserstudio/geoalgeria/issues
+Ouvrez une issue : https://github.com/yasserstudio/geoalgeria/issues

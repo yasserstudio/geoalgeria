@@ -17,7 +17,7 @@
 agréées**, et les établissements **relevant d'autres ministères** (Défense, Santé, Culture…)
 que le MESRS supervise – chacun avec son nom (français et/ou arabe), son **type**
 d'établissement, son **secteur**, le ministère de tutelle, **son propre site web**, son
-rattachement wilaya / commune et ses coordonnées. Source : le **Ministère de l'Enseignement
+rattachement wilaya / commune et ses coordonnées. Source : le **Ministère de l'Enseignement
 Supérieur et de la Recherche Scientifique (MESRS)**, livré en JSON, CSV et GeoJSON. Fait
 partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -53,7 +53,7 @@ const privates = es.institutionsBySector("private");      // les 19 établisseme
 | Centre universitaire | `centre_universitaire` | 5 |
 | **Total** | | **177** |
 
-Par **secteur** : 158 publiques · 19 privées agréées. Parmi les établissements publics, 48 relèvent
+Par **secteur** : 158 publiques · 19 privées agréées. Parmi les établissements publics, 48 relèvent
 **d'autres ministères** que le MESRS qu'il supervise pédagogiquement – lisez `supervisory_ministry`
 (ex. `"Ministère de la Santé"` pour les 25 instituts paramédicaux, `"Ministère de la Défense nationale"`
 pour les 16 écoles militaires), qui est `null` pour le réseau MESRS lui-même.
@@ -64,18 +64,18 @@ Couvrant **51 wilayas**. `wilaya_code` est relié au modèle de wilayas de
 ## Noms et coordonnées – provenance
 
 L'**identité** de chaque enregistrement est à 100 % MESRS. Le réseau public's `name` (français)
-et `website` proviennent de la liste du ministère ; les établissements privés et relevant d'autres
+et `website` proviennent de la liste du ministère ; les établissements privés et relevant d'autres
 ministères sont publiés uniquement en arabe, donc ils portent `name_ar` avec `name: null`. `name_ar`
 est également **rétroempli** pour le réseau public (jointure sur site web) – présent sur ~93% de tous
 les enregistrements.
 
 La page du ministère ne contient **ni coordonnées ni adresse**, donc la **géographie est
 fournie ici** et étiquetée honnêtement sur chaque enregistrement via `geo_method` (le détail) et
-`geo_precision` (`"exact"` pour `campus`, `"approximate"` pour `commune`/`wilaya`) :
+`geo_precision` (`"exact"` pour `campus`, `"approximate"` pour `commune`/`wilaya`) :
 
 | `geo_method` | Nombre | `geo_precision` | Ce que représente la coordonnée |
 | --- | --- | --- | --- |
-| `campus` | 67 | `exact` | Un géocodage OpenStreetMap du campus nommé, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
+| `campus` | 67 | `exact` | Un géocodage OpenStreetMap du campus nommé, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
 | `commune` | 15 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria` – utilisé quand OSM ne trouve pas le campus par son nom. |
 | `wilaya` | 95 | `approximate` | Le centroïde de la wilaya de l'établissement – solution de repli quand seule la wilaya est connue. Chaque établissement privé/relevant d'autres ministères s'y trouve, car la source ne publie pas d'adresse pour eux. |
 
@@ -88,7 +88,7 @@ de campus relevée. Régénérez-les avec `npm run geocode` (OpenStreetMap Nomin
 
 ## Formats
 
-Le package npm contient le **JSON** (importable directement) :
+Le package npm contient le **JSON** (importable directement) :
 
 ```js
 import institutions from "@geoalgeria/enseignement-superieur/data/institutions.json" with { type: "json" };
@@ -96,7 +96,7 @@ import institutions from "@geoalgeria/enseignement-superieur/data/institutions.j
 // https://cdn.jsdelivr.net/npm/@geoalgeria/enseignement-superieur/data/institutions.json
 ```
 
-Les chargeurs et les structures d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les structures d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import es, { type Institution } from "@geoalgeria/enseignement-superieur";
@@ -104,7 +104,7 @@ const all: Institution[] = es.institutions();
 ```
 
 Les fichiers **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inclus dans chaque
-[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
+[Release GitHub](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
@@ -143,13 +143,13 @@ pour les établissements privés/relevant d'autres ministères publiés uniqueme
 utilisez `name ?? name_ar` pour un label d'affichage. Pour les noms de wilaya et de commune en
 arabe, joignez `wilaya_code` au jeu de données
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). `wilaya_code` est complété à deux
-chiffres avec un zéro ; `commune_code` vaut actuellement `null` sur tous les enregistrements.
+chiffres avec un zéro ; `commune_code` vaut actuellement `null` sur tous les enregistrements.
 `geo_precision` vaut `"exact"` pour un vrai point de campus ou `"approximate"` pour un centroïde
 de commune/wilaya – `geo_method` précise lequel. `source` est une clé de provenance fixe
 (`"mesrs"`) dans `metadata.sources[]`, pas une URL – voir **Source** ci-dessous pour les pages
 réelles.
 
-## Besoin des divisions administratives aussi ?
+## Besoin des divisions administratives aussi ?
 
 Si vous avez aussi besoin des wilayas, daïras et communes pour effectuer des jointures, utilisez
 le package principal
@@ -164,7 +164,7 @@ L'identité des établissements provient du **MESRS**, via la page publique du r
 universitaire – la [liste en anglais](https://www.mesrs.dz/en/university-network/) pour les noms
 français du réseau et la [liste en arabe](https://www.mesrs.dz/reseau-universitaire-ar/) pour les
 noms arabes et les établissements privés + relevant d'autres ministères que la page anglaise
-omet. Exécutez `npm run fetch` pour régénérer toutes les sorties à partir des listes en ligne ;
+omet. Exécutez `npm run fetch` pour régénérer toutes les sorties à partir des listes en ligne ;
 la commande réconcilie la wilaya/commune de chaque enregistrement avec le jeu de données principal
 et attache les coordonnées de référence (`scripts/seeds/coordinates.json`, actualisées avec
 `npm run geocode`). Elle échoue bruyamment si le nombre d'établissements s'effondre. Les
@@ -181,4 +181,6 @@ et de chaque établissement pour des informations faisant autorité.
 
 ---
 
-Fait par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+Réalisé par [Yasser's studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [support@yasser.studio](mailto:support@yasser.studio)
+
+GeoAlgeria est gratuit, et il le reste. Le même studio réalise aussi des cartes, des sites web, des applications mobiles et des données ouvertes pour ses clients.
