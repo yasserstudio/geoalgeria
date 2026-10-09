@@ -108,15 +108,10 @@ const DEBT = {
   "research/buses/national/build-national-inventory.mjs": 5,
   // promote-official-sources.mjs:67 parses "Ligne X<em dash>A / B" headings.
   "research/buses/promote-official-sources.mjs": 2,
-  // fix-jo-corrections.mjs:330 quotes the published "name_fr<em dash>name_ar".
-  "scripts/fix-jo-corrections.mjs": 1,
   // no-em-dash.mjs declares EM_DASH itself.
   "scripts/lib/no-em-dash.mjs": 1,
   // buses-research.test.mjs:17 parses the OSM name "1A<em dash>Timizart".
   "test/buses-research.test.mjs": 1,
-  // jo-corrections.test.mjs:107 asserts the published GeoJSON name format,
-  // "name_fr<em dash>name_ar".
-  "test/jo-corrections.test.mjs": 1,
 };
 
 
