@@ -146,4 +146,6 @@ GeoAlgeria. عندما ينشر بريد الجزائر قيمة أصلية مخ
 
 ---
 
-من تطوير [Yasser's studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+من إنجاز [Yasser's studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [support@yasser.studio](mailto:support@yasser.studio)
+
+المشروع مجاني ويبقى كذلك، والاستوديو نفسه يصنع لعملائه خرائط ومواقع إلكترونية وتطبيقات هاتف وبيانات مفتوحة.

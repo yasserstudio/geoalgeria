@@ -226,6 +226,8 @@ GeoAlgeria هو **مشروع مستقل، غير تابع لأي جهة حكوم
 
 <a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's studio" height="44"></picture></a>
 
-صنع بواسطة [Yasser's studio](https://yasser.studio) · [geoalgeria.com](https://geoalgeria.com) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+من إنجاز [Yasser's studio](https://yasser.studio) · [geoalgeria.com](https://geoalgeria.com) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [support@yasser.studio](mailto:support@yasser.studio)
+
+المشروع مجاني ويبقى كذلك، والاستوديو نفسه يصنع لعملائه خرائط ومواقع إلكترونية وتطبيقات هاتف وبيانات مفتوحة.
 
 </div>
