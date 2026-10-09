@@ -116,6 +116,22 @@ data / format · **patch** = corrections to existing records.
 
 - **Docs parity:** the root READMEs (EN/FR/AR) and any affected package READMEs reflect every contract, artifact, licence, or count change shipping in this release, sweep before tagging, not after.
 
+- **Date the administrative core when it moves.** `dateModified` in
+  `packages/dataset/dataset-metadata.json` is the date the Web app quotes on
+  every Wilaya and Commune page, as the visible freshness line and as the page's
+  JSON-LD, so a release that changes the core and leaves the field alone ships
+  pages dating new data at the previous release. It is no longer a step to
+  remember: `packages/dataset/core-date.pin.json` holds the digest of every
+  published carrier of the core next to the date they were last dated at, and
+  `test/core-date-pinned.test.mjs` fails the whole suite when the core has moved
+  and the pin has not. The fix it asks for is two edits in the release's own
+  diff: set `dateModified` to the release date, then
+  `node scripts/pin-core-date.mjs --write`, which refuses to re-pin a moved core
+  against a date that did not move. The rule is one-directional, so refreshing
+  the field for a licence or prose correction with no record changed stays legal
+  and needs no re-pin. `data/poste/` is outside the digest: it mirrors
+  `@geoalgeria/poste` and carries that package's date.
+
 On push to `main`, the **Release** workflow runs `changesets/action`. If
 unconsumed changesets exist, it opens (or updates) a **`chore: version
 packages`** PR. Review the version bumps and CHANGELOG entries there.
