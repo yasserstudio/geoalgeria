@@ -326,14 +326,18 @@ const wilayasGeo = JSON.parse(readFileSync(wilayasGeoPath, "utf8"));
 patchWilayaPoints(wilayasGeo, "wilayas.geojson");
 queueJson(wilayasGeoPath, wilayasGeo);
 
-// The repo-root atlas GeoJSON (README map, release bundle) labels each wilaya
-// "name_fr — name_ar". Its labels were zipped alphabetically against numeric
+// The repo-root atlas GeoJSON (README map, release bundle) names each wilaya in
+// English, French and Arabic, one property per language like every other file,
+// with `name` kept as the French name for readers of the original field. Its labels were zipped alphabetically against numeric
 // codes, so wilayas 60-69 each carried another wilaya's name over the right
 // point; a dozen older rows had also lost their accents. Rebuild every label
 // from algeria.json, which the coordinate check below proves is the same row.
 const atlasPath = join(PKG, "algeria.geojson");
 const atlas = JSON.parse(readFileSync(atlasPath, "utf8"));
 const unifiedByCode = new Map(unified.map((wilaya) => [Number(wilaya.code), wilaya]));
+const englishByCode = new Map(
+  JSON.parse(readFileSync(wilayasPath, "utf8")).wilayas.map((w) => [Number(w.code), w.name_en]),
+);
 for (const feature of atlas.features) {
   const wilaya = unifiedByCode.get(Number(feature.properties.code));
   if (!wilaya) throw new Error(`algeria.geojson: unknown wilaya ${feature.properties.code}`);
@@ -341,8 +345,16 @@ for (const feature of atlas.features) {
   if (lng !== wilaya.longitude || lat !== wilaya.latitude) {
     throw new Error(`algeria.geojson ${wilaya.code}: point disagrees with algeria.json`);
   }
-  feature.properties.name = `${wilaya.name_fr} \u2014 ${wilaya.name_ar}`;
-  feature.properties.postal_code = wilaya.postal_code;
+  const name_en = englishByCode.get(Number(wilaya.code));
+  if (!name_en) throw new Error(`algeria.geojson ${wilaya.code}: no English name in wilayas.json`);
+  feature.properties = {
+    name: wilaya.name_fr,
+    name_en,
+    name_fr: wilaya.name_fr,
+    name_ar: wilaya.name_ar,
+    code: feature.properties.code,
+    postal_code: wilaya.postal_code,
+  };
 }
 queueJson(atlasPath, atlas);
 
