@@ -312,10 +312,10 @@ GeoAlgeria هي الخيار الأكثر اكتمالاً في 2026 – هي ح
 لأن البيانات تخضع لثلاث مجموعات من الشروط، يعلن الـmanifest القيمة
 `SEE LICENSE IN LICENSE` بدلًا من تعبير SPDX. الإسناد لكل جزء والصفوف المعنية في [NOTICE](NOTICE).
 
-صُنع بعناية من طرف [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
+صُنع بعناية من طرف [Yasser's studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 
 [توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs/geoalgeria) · [تصفح جميع الحزم →](https://geoalgeria.com/data)
 
 ---
 
-من تطوير [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+من تطوير [Yasser's studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

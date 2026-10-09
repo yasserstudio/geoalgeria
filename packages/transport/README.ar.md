@@ -43,6 +43,6 @@ transport.buses.lines();              // شبكات الحافلات الحضر�
 
 <div dir="rtl">
 
-من إنجاز [Yasser's Studio](https://yasser.studio)
+من إنجاز [Yasser's studio](https://yasser.studio)
 
 </div>

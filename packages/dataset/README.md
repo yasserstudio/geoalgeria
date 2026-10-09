@@ -315,10 +315,10 @@ Because the data is under three sets of terms, the manifest declares
 `SEE LICENSE IN LICENSE` rather than an SPDX expression. Per-part attribution and the affected
 rows are in [NOTICE](NOTICE).
 
-Made with care by [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
+Made with care by [Yasser's studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 
 [API docs & field reference →](https://geoalgeria.com/data/docs/geoalgeria) · [Browse all packages →](https://geoalgeria.com/data)
 
 ---
 
-Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+Made by [Yasser's studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

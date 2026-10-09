@@ -34,4 +34,4 @@ les README respectifs.
 
 ---
 
-Réalisé par [Yasser's Studio](https://yasser.studio)
+Réalisé par [Yasser's studio](https://yasser.studio)

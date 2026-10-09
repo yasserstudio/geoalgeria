@@ -234,7 +234,7 @@ export function buildDcat(meta, opts = {}) {
     ...(lic.url ? { license: lic.url } : {}),
     ...(lic.prose ? { conditionsOfAccess: lic.prose } : {}),
     isAccessibleForFree: true,
-    creator: { "@type": "Organization", name: "Yasser's Studio", url: "https://yasser.studio" },
+    creator: { "@type": "Organization", name: "Yasser's studio", url: "https://yasser.studio" },
     ...geo,
     variableMeasured: `${meta.record_count} records, ${meta.wilayas_covered} wilayas`,
     distribution: (opts.distributions || []).map((d) => ({

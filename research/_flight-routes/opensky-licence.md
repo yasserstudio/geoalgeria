@@ -18,7 +18,7 @@ the third blocks even a derived layer.
 > commercial entity requires written permission and a license granted by the OpenSky
 > Network."
 
-GeoAlgeria is published by Yasser's Studio. That is a for-profit entity, so this applies
+GeoAlgeria is published by Yasser's studio. That is a for-profit entity, so this applies
 regardless of the fact that the site is free to read.
 
 **2. Operational API use requires a written licence even for non-profits.**

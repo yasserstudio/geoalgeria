@@ -317,10 +317,10 @@ Les données relevant de trois ensembles de conditions, le manifeste déclare
 `SEE LICENSE IN LICENSE` plutôt qu'une expression SPDX. L'attribution par partie et les lignes
 concernées sont dans [NOTICE](NOTICE).
 
-Réalisé avec soin par [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
+Réalisé avec soin par [Yasser's studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 
 [Documentation API et référence des champs →](https://geoalgeria.com/data/docs/geoalgeria) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
 
 ---
 
-Réalisé par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+Réalisé par [Yasser's studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

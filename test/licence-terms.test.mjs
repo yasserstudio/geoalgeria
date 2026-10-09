@@ -19,8 +19,8 @@ import {
 // The real header a package LICENSE carries: the MIT title, the copyright line, and
 // the grant itself. The grant is what a consumer relies on, so it is part of every
 // fixture; a fixture without it is the "gutted MIT" case the tests below pin.
-const MIT_TEXT = `MIT License\n\nCopyright (c) 2025-2026 Yasser's Studio\n\n${MIT_BODY}\n`;
-const GUTTED_MIT = "MIT License\n\nCopyright (c) 2025-2026 Yasser's Studio\n";
+const MIT_TEXT = `MIT License\n\nCopyright (c) 2025-2026 Yasser's studio\n\n${MIT_BODY}\n`;
+const GUTTED_MIT = "MIT License\n\nCopyright (c) 2025-2026 Yasser's studio\n";
 
 test("a code-only package with no metadata must declare MIT", () => {
   assert.deepEqual(

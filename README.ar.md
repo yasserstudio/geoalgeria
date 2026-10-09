@@ -5,7 +5,7 @@
 <a href="https://geoalgeria.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/brand/logo/geoalgeria-logo-horizontal-white.png"><img src="./assets/brand/logo/geoalgeria-logo-horizontal.png" alt="جيو الجزائر – GeoAlgeria" width="280"></picture></a>
 
 <sub>من</sub><br>
-<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's Studio" height="28"></picture></a>
+<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's studio" height="28"></picture></a>
 
 **قاعدة البيانات المفتوحة للجزائر، ثبّتها بدلًا من جمعها يدويًا.**
 
@@ -224,8 +224,8 @@ GeoAlgeria هو **مشروع مستقل، غير تابع لأي جهة حكوم
 
 إذا وفّرت عليك جيو الجزائر ساعات من البحث وتجميع البيانات، **[ضع لها ⭐](https://github.com/yasserstudio/geoalgeria)**: هذا يساعد المطور الجزائري التالي في إيجاد بيانات نظيفة.
 
-<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's Studio" height="44"></picture></a>
+<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's studio" height="44"></picture></a>
 
-صنع بواسطة [Yasser's Studio](https://yasser.studio) · [geoalgeria.com](https://geoalgeria.com) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+صنع بواسطة [Yasser's studio](https://yasser.studio) · [geoalgeria.com](https://geoalgeria.com) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
 
 </div>
