@@ -201,7 +201,7 @@ Suivez ou mettez une ⭐ au repo, et [ouvrez une discussion](https://github.com/
 
 ## Contribuer
 
-Les corrections et ajouts sont les bienvenus, voir [CONTRIBUTING.md](CONTRIBUTING.md). Les bonnes premières contributions nécessitent généralement juste un lien source ou une coordonnée de commune manquante. Des données incorrectes ? [Ouvrez une issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose).
+Les corrections et ajouts sont les bienvenus, voir [CONTRIBUTING.md](CONTRIBUTING.md) et notre [code de conduite](CODE_OF_CONDUCT.md). Les bonnes premières contributions nécessitent généralement juste un lien source ou une coordonnée de commune manquante. Des données incorrectes ? [Ouvrez une issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose).
 
 ## Versionnage et releases
 

@@ -200,7 +200,7 @@ GeoAlgeria ليست تصديرًا لمرة واحدة. الهدف هو أن ت�
 
 ## المساهمة
 
-التصحيحات والإضافات مرحب بها، انظر [CONTRIBUTING.md](CONTRIBUTING.md). المساهمات الأولى الجيدة تحتاج عادة فقط رابط مصدر أو إحداثية بلدية مفقودة. وجدت بيانات خاطئة؟ [افتح issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose).
+التصحيحات والإضافات مرحب بها، انظر [CONTRIBUTING.md](CONTRIBUTING.md) و[مدونة السلوك](CODE_OF_CONDUCT.md). المساهمات الأولى الجيدة تحتاج عادة فقط رابط مصدر أو إحداثية بلدية مفقودة. وجدت بيانات خاطئة؟ [افتح issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose).
 
 ## الإصدارات
 
