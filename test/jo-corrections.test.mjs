@@ -104,7 +104,10 @@ test("the atlas GeoJSON names the wilaya its point belongs to", () => {
   for (const feature of atlas.features) {
     const wilaya = wilayas.get(feature.properties.code);
     assert.ok(wilaya, `unknown wilaya ${feature.properties.code}`);
-    assert.equal(feature.properties.name, `${wilaya.name_fr} — ${wilaya.name_ar}`);
+    assert.equal(feature.properties.name, wilaya.name_fr);
+    assert.equal(feature.properties.name_fr, wilaya.name_fr);
+    assert.equal(feature.properties.name_ar, wilaya.name_ar);
+    assert.ok(feature.properties.name_en, `wilaya ${wilaya.code} has no English name`);
   }
 });
 
