@@ -116,6 +116,13 @@ Full details and one-time setup: [`RELEASING.md`](RELEASING.md).
   by `node scripts/sync-division-counts.mjs --write`; run it instead.
 - Push a bump without a changeset, or a changeset without a source for the data.
 - Commit anything from `.agents/`; it's intentionally local.
+- Write an em dash (U+2014) into any tracked source file, not just published
+  metadata. `test/no-em-dash.test.mjs` walks every tracked hand-written file
+  (JS/TS, Python, YAML) and ratchets the debt down per file.
+- Re-derive a coordinate review run's record medians from the live packages
+  once that run has landed. Each run's medians are frozen in
+  `research/_commune-centres/record-medians-<run>.json` and replayed from
+  there (ADR 0001 rule 8).
 
 ## Agent skills
 
