@@ -36,7 +36,7 @@ jobs:
 
   # Dependency security is covered by the org-wide Socket.dev GitHub App
   # (Socket Security checks run on every PR). GitHub's dependency-review action
-  # is intentionally omitted — it requires the repo's Dependency Graph feature
+  # is intentionally omitted: it requires the repo's Dependency Graph feature
   # and would duplicate Socket's coverage.
   check:
     name: check (node ${{ matrix.node-version }})
@@ -70,55 +70,55 @@ jobs:
         if: matrix.node-version == 22
         run: pnpm validate
 
-      - name: Smoke test — geoalgeria (CommonJS)
+      - name: "Smoke test: geoalgeria (CommonJS)"
         working-directory: packages/dataset
         run: node -e "const d=require('./index.js'); const k=Object.keys(d); if(!k.length){console.error('no exports');process.exit(1)} console.log('geoalgeria exports:', k.join(', '))"
 
-      - name: Smoke test — @geoalgeria/poste (ESM)
+      - name: "Smoke test: @geoalgeria/poste (ESM)"
         working-directory: packages/poste
         run: node --input-type=module -e "import('./index.js').then(m=>{const o=m.postOffices(),a=m.atms(); if(!Array.isArray(o)||!o.length||!Array.isArray(a)||!a.length){console.error('empty data');process.exit(1)} console.log('poste:',o.length,'offices,',a.length,'atms')})"
 
-      - name: Smoke test — @geoalgeria/mobilis (ESM)
+      - name: "Smoke test: @geoalgeria/mobilis (ESM)"
         working-directory: packages/mobilis
         run: node --input-type=module -e "import('./index.js').then(m=>{const a=m.agences(),p=m.pdv(); if(!Array.isArray(a)||!a.length||!Array.isArray(p)||!p.length){console.error('empty data');process.exit(1)} console.log('mobilis:',a.length,'agences,',p.length,'pdv')})"
 
-      - name: Smoke test — @geoalgeria/emploi (ESM)
+      - name: "Smoke test: @geoalgeria/emploi (ESM)"
         working-directory: packages/emploi
         run: node --input-type=module -e "import('./index.js').then(m=>{const w=m.awem(),l=m.alem(); if(!Array.isArray(w)||!w.length||!Array.isArray(l)||!l.length){console.error('empty data');process.exit(1)} console.log('emploi:',w.length,'awem,',l.length,'alem')})"
 
-      - name: Smoke test — @geoalgeria/banques (ESM)
+      - name: "Smoke test: @geoalgeria/banques (ESM)"
         working-directory: packages/banques
         run: node --input-type=module -e "import('./index.js').then(m=>{const b=m.banks(),br=m.branches(); if(!Array.isArray(b)||!b.length||!Array.isArray(br)||!br.length){console.error('empty data');process.exit(1)} console.log('banques:',b.length,'banks,',br.length,'branches')})"
 
-      - name: Smoke test — @geoalgeria/telecom (ESM)
+      - name: "Smoke test: @geoalgeria/telecom (ESM)"
         working-directory: packages/telecom
         run: node --input-type=module -e "import('./index.js').then(m=>{const s=m.coverage(); if(!Array.isArray(s)||!s.length){console.error('empty data');process.exit(1)} console.log('telecom:',s.length,'5G sites,',m.metadata().wilayas_covered,'wilayas')})"
 
-      - name: Smoke test — @geoalgeria/aviation (ESM)
+      - name: "Smoke test: @geoalgeria/aviation (ESM)"
         working-directory: packages/aviation
         run: node --input-type=module -e "import('./index.js').then(m=>{const a=m.airports(); if(!Array.isArray(a)||!a.length){console.error('empty data');process.exit(1)} console.log('aviation:',a.length,'airports,',m.metadata().wilayas_covered,'wilayas')})"
 
-      - name: Smoke test — @geoalgeria/tourisme (ESM)
+      - name: "Smoke test: @geoalgeria/tourisme (ESM)"
         working-directory: packages/tourisme
         run: node --input-type=module -e "import('./index.js').then(m=>{const a=m.all(); if(!Array.isArray(a)||!a.length){console.error('empty data');process.exit(1)} console.log('tourisme:',a.length,'entries,',m.lodging().length,'lodging,',m.thermalSprings().length,'thermal springs')})"
 
-      - name: Smoke test — @geoalgeria/formation-professionnelle (ESM)
+      - name: "Smoke test: @geoalgeria/formation-professionnelle (ESM)"
         working-directory: packages/formation-professionnelle
         run: node --input-type=module -e "import('./index.js').then(m=>{const e=m.establishments(); if(!Array.isArray(e)||!e.length){console.error('empty data');process.exit(1)} console.log('formation-professionnelle:',e.length,'establishments,',m.metadata().wilayas_covered,'wilayas')})"
 
-      - name: Smoke test — @geoalgeria/culture (ESM)
+      - name: "Smoke test: @geoalgeria/culture (ESM)"
         working-directory: packages/culture
         run: node --input-type=module -e "import('./index.js').then(m=>{const c=m.culture(); if(!Array.isArray(c)||!c.length){console.error('empty data');process.exit(1)} console.log('culture:',c.length,'places,',m.metadata().wilayas_covered,'wilayas')})"
 
-      - name: Smoke test — @geoalgeria/agriculture (ESM)
+      - name: "Smoke test: @geoalgeria/agriculture (ESM)"
         working-directory: packages/agriculture
         run: node --input-type=module -e "import('./index.js').then(m=>{const a=m.agriculture(); if(!Array.isArray(a)||!a.length){console.error('empty data');process.exit(1)} console.log('agriculture:',a.length,'institutions,',m.metadata().wilayas_covered,'wilayas')})"
 
-      - name: Smoke test — @geoalgeria/ecoles (ESM)
+      - name: "Smoke test: @geoalgeria/ecoles (ESM)"
         working-directory: packages/ecoles
         run: node --input-type=module -e "import('./index.js').then(m=>{const e=m.ecoles(); if(!Array.isArray(e)||!e.length){console.error('empty data');process.exit(1)} console.log('ecoles:',e.length,'schools,',m.metadata().wilayas_covered,'wilayas')})"
 
-      - name: Smoke test — @geoalgeria/protection-civile (ESM)
+      - name: "Smoke test: @geoalgeria/protection-civile (ESM)"
         working-directory: packages/protection-civile
         run: node --input-type=module -e "import('./index.js').then(m=>{const u=m.units(); if(!Array.isArray(u)||!u.length){console.error('empty data');process.exit(1)} console.log('protection-civile:',u.length,'units,',m.metadata().wilayas_covered,'wilayas')})"
 

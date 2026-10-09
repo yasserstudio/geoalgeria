@@ -57,16 +57,22 @@ export const layer = {
   licence: "the terms of the GeoAlgeria packages the records come from",
   describe: `the geometric median of at least ${MIN_EXACT_RECORDS} exact records inside the commune outline`,
 
+  /**
+   * `exactRecords` is `{records, files, median}`, either from the sweep of the packages in
+   * scripts/review/snapshots.mjs or from the record-median set a landed run froze, which
+   * is the same Claim at the date that run read it (ADR 0001 rule 8). The layer owns the
+   * threshold, so the two inputs differ in nothing but when they were read.
+   */
   claim({ snapshots, exactRecords }) {
-    if (exactRecords.points.length < MIN_EXACT_RECORDS) return null;
+    if (exactRecords.records < MIN_EXACT_RECORDS) return null;
     return {
       layer: layer.id,
       source: layer.source,
       licence: layer.licence,
       snapshot: snapshots.records.committed,
-      point: geometricMedian(exactRecords.points),
+      point: exactRecords.median,
       verdict: null,
-      detail: { records: exactRecords.points.length, files: exactRecords.files.length },
+      detail: { records: exactRecords.records, files: exactRecords.files },
     };
   },
 };

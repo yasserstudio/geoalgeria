@@ -285,3 +285,7 @@ _Avoid_: confidence score (there is no score, only Votes), ground truth, verifie
 **Review queue**:
 The places the engine leaves for the Owner: plain consensus, no consensus, or a move over 25 km.
 _Avoid_: backlog, inbox, todo list
+
+**Record median set**:
+The L2 record-median Claim of every commune one run reviewed, frozen into `record-medians-<run>.json` and landed with that run's ledger: the record count, the number of packages behind it and the median. The records it is taken from are the packages, which move at every release, so the set is what keeps a landed run replaying. See ADR 0001, "Rule 8 in detail".
+_Avoid_: median cache, snapshot of the records, baseline

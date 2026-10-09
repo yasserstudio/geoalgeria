@@ -1,4 +1,4 @@
-// Source store — committed raw captures under sources/<pkg>/.
+// Source store: committed raw captures under sources/<pkg>/.
 //
 // One canonical LATEST capture per (package, source); git history is the
 // archive. Fetchers write through writeCapture() the moment a raw payload
@@ -40,7 +40,7 @@ export function stableStringify(value, indent = 2) {
     if (Array.isArray(v)) return v.map(sort);
     if (v && typeof v === "object") {
       // Payloads come from JSON parsing, so only plain objects belong here. A
-      // Map/Set/Date would JSON.stringify to "{}" — a silently empty capture —
+      // Map/Set/Date would JSON.stringify to "{}", a silently empty capture,
       // so refuse loudly instead.
       const proto = Object.getPrototypeOf(v);
       if (proto !== Object.prototype && proto !== null)
@@ -79,7 +79,7 @@ function readManifest(pkg) {
  * @param {string} pkg     package name (directory under sources/)
  * @param {string} source  capture name, kebab-case, no extension (e.g. "osm", "mobilis-5g")
  * @param {*}      payload the raw payload as received (post-parse, pre-transform)
- * @param {object} meta    { url?, provenance?, retrieved?, records?, note? } —
+ * @param {object} meta    { url?, provenance?, retrieved?, records?, note? }:
  *                         url is required unless provenance is the explicit
  *                         `owner_supplied_artifact` value;
  *                         retrieved defaults to today; records defaults to
@@ -105,7 +105,7 @@ export function writeCapture(pkg, source, payload, meta) {
   const body = stableStringify(payload) + "\n";
   if (Buffer.byteLength(body) > SIZE_WARN_BYTES)
     console.warn(
-      `  ⚠ sources/${pkg}/${source}.json is ${(Buffer.byteLength(body) / 1e6).toFixed(0)} MB (> 20 MB) — capture the trimmed projection instead (sources/README.md)`,
+      `  ⚠ sources/${pkg}/${source}.json is ${(Buffer.byteLength(body) / 1e6).toFixed(0)} MB (> 20 MB): capture the trimmed projection instead (sources/README.md)`,
     );
   const file = join(dir, `${source}.json`);
   writeFileSync(file, body);
@@ -138,18 +138,18 @@ export function readCapture(pkg, source) {
   } catch (e) {
     if (e && e.code === "ENOENT")
       throw new Error(
-        `sources/${pkg}/${source}.json not found — run the package fetcher once to capture it`,
+        `sources/${pkg}/${source}.json not found: run the package fetcher once to capture it`,
       );
     throw e;
   }
   // Captures must only be written through writeCapture; a manifest/file hash
-  // mismatch means a hand edit or corruption — refuse to build from it.
+  // mismatch means a hand edit or corruption: refuse to build from it.
   const meta = readManifest(pkg)[source];
   if (meta?.sha256) {
     const actual = createHash("sha256").update(body).digest("hex");
     if (actual !== meta.sha256)
       throw new Error(
-        `sources/${pkg}/${source}.json does not match its manifest sha256 — re-run the fetcher (captures are never edited by hand)`,
+        `sources/${pkg}/${source}.json does not match its manifest sha256: re-run the fetcher (captures are never edited by hand)`,
       );
   }
   return JSON.parse(body);

@@ -6,7 +6,7 @@
  *
  * Replaces `changeset publish` in the release workflow.
  * Requires npm >= 11.15.0 and a Trusted Publisher configured on npmjs.com
- * (no NPM_TOKEN needed — auth is via the workflow's OIDC id-token).
+ * (no NPM_TOKEN needed: auth is via the workflow's OIDC id-token).
  */
 
 import { execFileSync } from "node:child_process";
@@ -70,12 +70,12 @@ for (const pkg of PACKAGES) {
     continue;
   }
 
-  // A package npm has never seen can't be staged — Trusted Publishing's OIDC
+  // A package npm has never seen can't be staged: Trusted Publishing's OIDC
   // grant attaches to an existing package, so `npm stage publish` would 404/401
   // and fail the whole run. New packages are bootstrapped by a one-time manual
   // `npm publish` (see RELEASING.md); skip until that's done.
   if (registryVersion === null) {
-    console.log(`skip: ${name}@${version} (not yet on npm — publish once by hand first; see RELEASING.md)`);
+    console.log(`skip: ${name}@${version} (not yet on npm, publish once by hand first; see RELEASING.md)`);
     skipped++;
     continue;
   }

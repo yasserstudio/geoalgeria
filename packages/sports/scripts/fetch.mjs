@@ -43,7 +43,7 @@ const UA =
 
 const MIN_EXPECTED = 4000;
 
-// Infrastructure type codes — short, stable keys for the 27 types the source publishes.
+// Infrastructure type codes: short, stable keys for the 27 types the source publishes.
 const TYPE_MAP = {
   "Terrains Sportif de Proximité": { code: "TSP", fr: "Terrain sportif de proximité" },
   "Aire de Jeux Football": { code: "AJF", fr: "Aire de jeux football" },
@@ -161,7 +161,7 @@ async function main() {
   const raw = await res.json();
 
   if (!raw.features || !Array.isArray(raw.features)) {
-    throw new Error("unexpected response — no features array");
+    throw new Error("unexpected response: no features array");
   }
   if (raw.features.length < MIN_EXPECTED) {
     throw new Error(`only ${raw.features.length} features; expected >= ${MIN_EXPECTED}`);
@@ -187,7 +187,7 @@ async function main() {
       else { dropped.push({ id: p.id, reason: "out of bounds" }); continue; }
     }
 
-    // Type — try exact match first, then whitespace-normalised
+    // Type: try exact match first, then whitespace-normalised
     const typeRaw = stripUUID(p.type_de_linfrastructure);
     let typeEntry = typeRaw ? TYPE_MAP[typeRaw] : null;
     if (!typeEntry && typeRaw) {
@@ -243,10 +243,10 @@ async function main() {
   }
 
   if (unknownTypes.size) {
-    throw new Error(`unknown type(s): ${[...unknownTypes].join(", ")} — extend TYPE_MAP`);
+    throw new Error(`unknown type(s): ${[...unknownTypes].join(", ")}; extend TYPE_MAP`);
   }
   if (unmappedWilayas.size) {
-    throw new Error(`unmapped wilaya(s): ${[...unmappedWilayas].join(", ")} — extend WILAYA_ALIASES`);
+    throw new Error(`unmapped wilaya(s): ${[...unmappedWilayas].join(", ")}; extend WILAYA_ALIASES`);
   }
 
   // Sort by wilaya then type then name

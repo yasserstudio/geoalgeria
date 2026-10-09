@@ -12,7 +12,7 @@
  *   sister packages (sports infrastructure vs. youth establishments).
  *
  * v2 note: earlier releases sourced the ministry's public Arabic map. This build
- * moves to the authoritative GeoServer — more records (~2,300) and far richer
+ * moves to the authoritative GeoServer, more records (~2,300) and far richer
  * fields (capacity, address, PMR accessibility, operational status, built/land
  * area, reception year). The GeoServer publishes names in French; the Arabic
  * names from the legacy source are backfilled by nearest-neighbour geo-match
@@ -61,13 +61,13 @@ const NAME_AR_MAX_M = 200;
 // type code accepts only its legacy equivalent(s). New types with no legacy
 // counterpart (FJ, BA) never match, so they stay `name_ar: null`. The legacy seed
 // also carries CLJ (clubs de jeunes) and PAL (piscines) codes, which this layer
-// doesn't publish — they have no new-type counterpart and are intentionally unused.
+// doesn't publish: they have no new-type counterpart and are intentionally unused.
 const LEGACY_TYPES_FOR = {
   MJ: ["MJ"], CSP: ["CS"], SPA: ["SPA"], AJ: ["AJ"],
   CJ: ["CJ"], CLS: ["CLS"], FJ: [], CC: ["CC"], BA: [],
 };
 
-// The MJS youth-establishment types — short, stable keys for the 9 the source
+// The MJS youth-establishment types: short, stable keys for the 9 the source
 // publishes on this layer. `fr` is the cleaned French label; `ar` is an
 // indicative Arabic label for non-French consumers (the per-record `name_ar`
 // carries the institution's own Arabic name where matched).
@@ -124,7 +124,7 @@ const clean = (s) => {
   return v === "" ? null : v;
 };
 
-// Names the GIS uses as "no value" placeholders — drop to null rather than ship.
+// Names the GIS uses as "no value" placeholders: drop to null rather than ship.
 const JUNK_NAME = new Set(["", "-", "ind", "néant", "neant", "n/a", "na", "."]);
 const cleanName = (s) => {
   const v = clean(s);
@@ -164,7 +164,7 @@ function parseSurface(v) {
 }
 
 // --- Arabic name backfill (nearest-neighbour over the legacy seed) -----------
-// Equirectangular metres — good enough at Algeria's latitudes for a sub-km test.
+// Equirectangular metres, good enough at Algeria's latitudes for a sub-km test.
 function metres(aLat, aLng, bLat, bLng) {
   const R = 6371000;
   const dLat = ((bLat - aLat) * Math.PI) / 180;
@@ -180,7 +180,7 @@ function loadNamesArSeed() {
     const seed = JSON.parse(readFileSync(NAMES_AR_SEED, "utf8"));
     return Array.isArray(seed) ? seed.filter((s) => s.name_ar && inAlgeria(s.lat, s.lng)) : [];
   } catch (e) {
-    throw new Error(`${NAMES_AR_SEED}: corrupt seed JSON — ${e.message}`);
+    throw new Error(`${NAMES_AR_SEED}: corrupt seed JSON: ${e.message}`);
   }
 }
 
@@ -228,7 +228,7 @@ async function main() {
   const raw = await res.json();
 
   if (!raw.features || !Array.isArray(raw.features)) {
-    throw new Error("unexpected response — no features array");
+    throw new Error("unexpected response: no features array");
   }
   if (raw.features.length < MIN_EXPECTED) {
     throw new Error(`only ${raw.features.length} features; expected >= ${MIN_EXPECTED}`);
@@ -305,17 +305,17 @@ async function main() {
   }
 
   if (unknownTypes.size) {
-    throw new Error(`unknown type(s): ${[...unknownTypes].join(", ")} — extend TYPE_MAP`);
+    throw new Error(`unknown type(s): ${[...unknownTypes].join(", ")}; extend TYPE_MAP`);
   }
   if (unmappedWilayas.size) {
-    throw new Error(`unmapped wilaya(s): ${[...unmappedWilayas].join(", ")} — extend WILAYA_ALIASES`);
+    throw new Error(`unmapped wilaya(s): ${[...unmappedWilayas].join(", ")}; extend WILAYA_ALIASES`);
   }
   // type_code is a non-null contract (typed + advertised). A source row with an
   // empty type adds nothing to unknownTypes, so guard it explicitly rather than
   // silently shipping a null-typed record on a future refresh.
   const typeless = institutions.filter((r) => r.type_code == null);
   if (typeless.length) {
-    throw new Error(`${typeless.length} record(s) with no type — investigate before shipping`);
+    throw new Error(`${typeless.length} record(s) with no type: investigate before shipping`);
   }
 
   institutions.sort((a, b) =>

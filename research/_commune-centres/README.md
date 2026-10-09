@@ -579,6 +579,13 @@ modules behind one interface, thresholds as named constants in one module with t
 measurement behind each, and a run that reads committed snapshots only, so
 `test/review-decisions.test.mjs` re-derives every decision offline.
 
+One of those inputs is this repository's own records, and they move at every release. So a
+run also freezes the record medians it read, in `record-medians-<run>.json`, and the replay
+reads that file: merging the sante twins moved two of this run's medians by metres, changed
+no decision, and still failed the replay until the landed ledger was rewritten to match
+(private tracker #267). What a run decided on is now landed with it; ADR 0001, "Rule 8 in
+detail".
+
 ## The set, and what came out
 
 The 137 communes the 2026-09-29 audit left more than 3 km from their OpenStreetMap
@@ -701,22 +708,22 @@ helpers:
 
 The run is replayed, not re-run: `rewind()` puts the corrected communes back at their
 `from`, which is the state the measurements were taken on and the state
-`test/review-decisions.test.mjs` asserts against.
+`test/review-decisions.test.mjs` asserts against. `loadSnapshots()` with no
+`recordMediansPath` sweeps the packages as they stand, which is what a measurement wants;
+the replay instead reads the run's frozen set, below.
 
 ```js
 // seat to record median, over the communes that have both: the AGREEMENT_KM
 // and COPY_RADIUS_M measurements
 import { loadSnapshots } from "./scripts/review/snapshots.mjs";
-import { geometricMedian } from "./scripts/review/layers/l2-record-median.mjs";
 import { metresBetween } from "./scripts/lib/seat-evidence.mjs";
 const s = loadSnapshots();
 const d = [];
 for (const c of s.communes) {
   const seat = s.seats.byCommune.get(c.code_commune)?.seat;
-  const pts = s.records.byCommune.get(c.code_commune)?.points ?? [];
-  if (!seat || pts.length < 10) continue;
-  const m = geometricMedian(pts);
-  d.push(metresBetween(m[0], m[1], seat[0], seat[1]));
+  const r = s.records.byCommune.get(c.code_commune);
+  if (!seat || !r || r.records < 10) continue;
+  d.push(metresBetween(r.median[0], r.median[1], seat[0], seat[1]));
 }
 d.sort((a, b) => a - b);
 ```
@@ -741,4 +748,5 @@ itself never queries live.
 | --- | --- |
 | `corrections-2026-10-01b.json` | the 68 fixes, each with `decided_by: "consensus"`, the licence of the winning Candidate, every Candidate with its distance and Vote count, and every Vote with its source, snapshot date, distance and copy flag |
 | `review-queue-2026-10-01.json` | the 67 undecided and the 1 confirmed, in the same shape plus the reason, for the Owner's review page |
+| `record-medians-2026-10-01b.json` | the run's frozen record-median set: for each of the 136 reviewed communes, the record count, the number of packages behind it and the median the run decided on |
 | `wikidata-reference.json` | the CC0 Wikidata P625 snapshot, 1,536 communes, queried 2026-10-01 |

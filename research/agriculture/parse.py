@@ -28,7 +28,7 @@ TABLES = {
 class TableParser(HTMLParser):
     """Pull <thead> headers + <tbody> rows for a single <table id=...>.
 
-    Assumes flat (non-nested) tables — the source has 7 flat wpDataTables; the
+    Assumes flat (non-nested) tables: the source has 7 flat wpDataTables; the
     first </table> seen while capturing ends the capture.
     """
 

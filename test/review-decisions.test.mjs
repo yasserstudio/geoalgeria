@@ -7,6 +7,14 @@
 // `node scripts/review/run.mjs --rewind` does. Anything else the engine reads is a
 // committed snapshot, so the two documents below have to come out byte-identical.
 //
+// WHY THE RECORD MEDIANS COME FROM A FILE. The L2 Claim is a reading of this repository's
+// own packages, and this test replays a run that has already landed, so sweeping the
+// packages as they stand today compares a landed decision against evidence that has moved
+// since. Merging the sante twins moved two of this run's medians by metres and failed this
+// test with the same 68 fixes, the same points and the same 67 queued rows (private
+// tracker #267). The run's own record-median set is read instead, and a replay that cannot
+// be made from it is a run that has to be re-run rather than rewritten.
+//
 // WHAT THIS GUARDS. That the ledger and the queue are what the rules produce and not what
 // a hand-run script once produced; that no row was decided by the optional L3 verdicts,
 // which live outside this repository; and the three cases a run over this data has to get
@@ -18,6 +26,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { recordMediansFile } from "../scripts/review/record-medians.mjs";
 import { loadSnapshots, loadVerdicts } from "../scripts/review/snapshots.mjs";
 import { reviewCommuneCentres } from "../scripts/review/engine.mjs";
 import { buildDocuments, rewind } from "../scripts/review/run.mjs";
@@ -33,10 +42,16 @@ const RUN = "2026-10-01b";
 const GENERATED = "2026-10-01";
 const LEDGER = json(DIR, `corrections-${RUN}.json`);
 const QUEUE = json(DIR, `review-queue-${GENERATED}.json`);
+const RECORD_MEDIANS = join(DIR, recordMediansFile(RUN));
 
-/** The run as it was made: committed snapshots, no verdicts file, communes rewound. */
+/**
+ * The run as it was made: committed snapshots, the run's own record medians, no verdicts
+ * file, communes rewound.
+ */
 function replay() {
-  const snapshots = rewind(loadSnapshots({ today: GENERATED, verdictsPath: null }), [LEDGER]);
+  const snapshots = rewind(loadSnapshots({ today: GENERATED, verdictsPath: null, recordMediansPath: RECORD_MEDIANS }), [
+    LEDGER,
+  ]);
   const result = reviewCommuneCentres(snapshots);
   return { snapshots, result, documents: buildDocuments(result, snapshots, { run: RUN, generated: GENERATED }) };
 }

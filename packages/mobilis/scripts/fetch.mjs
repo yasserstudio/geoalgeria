@@ -3,7 +3,7 @@
  * Fetch Mobilis agencies & approved points of sale from the Mobilis store
  * locator and emit JSON, CSV, and GeoJSON to ../data.
  *
- * Source (ATM Mobilis — state mobile operator):
+ * Source (ATM Mobilis: state mobile operator):
  *   https://mobilis.dz/mapagence
  *
  * The locator is an Alpine.js component backed by four JSON endpoints, each
@@ -18,9 +18,9 @@
  *      served an HTML "Request Rejected" page instead of JSON. We prime a
  *      cookie jar from the locator page (the WAF issues TS / XSRF-TOKEN cookies),
  *      reuse it, send a Referer, throttle, and on a rejection we re-prime and
- *      retry with backoff — never silently treat it as empty.
+ *      retry with backoff, never silently treat it as empty.
  *   2. `xy` is a single "lat, lng" string (note: lat first, the reverse of
- *      GeoJSON), and the decimal separator is inconsistent — most rows use "."
+ *      GeoJSON), and the decimal separator is inconsistent: most rows use "."
  *      ("36.76, 3.05") but a few use "," ("35,191261, -0,632265").
  *
  * Two categories, very different shape:
@@ -28,9 +28,9 @@
  *                          bilingual FR/AR name + address.
  *   - "Approved Agency" → third-party approved resellers (points de vente). FR
  *                          name + address + commune, but NO coordinates (xy is
- *                          null on every record) — a commune-level directory.
+ *                          null on every record): a commune-level directory.
  *
- * `wil=0` returns []; you must loop wilayas. `cat` must be the English name —
+ * `wil=0` returns []; you must loop wilayas. `cat` must be the English name;
  * the numeric category id returns [].
  *
  * Usage: node scripts/fetch.mjs
@@ -135,7 +135,7 @@ async function getJSON(path, tries = 6) {
     try {
       const { body } = await request(url);
       if (looksLikeJson(body)) return JSON.parse(body);
-      // WAF rejection or HTML — re-prime and back off.
+      // WAF rejection or HTML: re-prime and back off.
       const wait = Math.min(2000 + i * 2000, 12_000);
       console.warn(`  WAF/HTML on ${path} (try ${i + 1}); re-prime, wait ${wait}ms`);
       await sleep(wait);
@@ -218,8 +218,8 @@ function parseXY(xy) {
   let parts = s.split(/,\s+/); // pair separator = comma + whitespace
   if (parts.length !== 2) {
     const p = s.split(",");
-    if (p.length === 2) parts = p; // "a.b,c.d" — dot-decimal, no space
-    else if (p.length === 4) parts = [`${p[0]}.${p[1]}`, `${p[2]}.${p[3]}`]; // "a,b,c,d" — comma-decimal, no space
+    if (p.length === 2) parts = p; // "a.b,c.d": dot-decimal, no space
+    else if (p.length === 4) parts = [`${p[0]}.${p[1]}`, `${p[2]}.${p[3]}`]; // "a,b,c,d": comma-decimal, no space
     else return [null, null];
   }
   const lat = Number(parts[0].replace(",", ".").trim());
@@ -330,7 +330,7 @@ async function main() {
             : normPdv(a, wilayaCodes),
         );
       }
-      process.stdout.write(`\r  [${file}] wilaya ${wil}/${ids.at(-1)} — ${rows.length} records   `);
+      process.stdout.write(`\r  [${file}] wilaya ${wil}/${ids.at(-1)}: ${rows.length} records   `);
     }
     process.stdout.write("\n");
     assignIds(rows);

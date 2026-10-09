@@ -39,7 +39,7 @@ import urllib.parse
 import urllib.request
 
 API = "https://en.wikipedia.org/w/api.php"
-UA = "geoalgeria-research/1.0 (https://geoalgeria.com; hello@yasser.studio)"
+UA = "geoalgeria-research/1.0 (https://geoalgeria.com; support@yasser.studio)"
 HERE = os.path.dirname(os.path.abspath(__file__))
 PAUSE = 0.5  # be a good citizen; the API asks for serial requests, not a flood
 

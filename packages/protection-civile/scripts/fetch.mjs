@@ -6,7 +6,7 @@
  *
  * Source (official-primary): the Direction Générale de la Protection Civile
  * publishes its national unit network as a point GeoJSON at
- * https://dgpc.dz/dgpc2/unite.geojson — 880 units, each with an Arabic name
+ * https://dgpc.dz/dgpc2/unite.geojson: 880 units, each with an Arabic name
  * (nom_ar), an address, phone/fax, a status tier (statut), a commune name
  * (commune_1) and a decimal x/y coordinate. This is the authoritative
  * "this unit exists here" source (evidence_type "official").
@@ -16,12 +16,12 @@
  * boundaries, then reconciled against the DGPC code: units now inside the 11 new
  * 2026 wilayas (59..69) carry their correct new code, but when geometry and the
  * DGPC code disagree and BOTH are pre-reform (<= "58") the reform cannot explain
- * it — a ~150m-simplified boundary has misfiled a border unit — so the DGPC's
+ * it (a ~150m-simplified boundary has misfiled a border unit), so the DGPC's
  * authoritative code wins and commune is re-matched there. The DGPC's published
  * code is kept verbatim in refs.dgpc_wilaya as a receipt. Commune is best-effort:
  * the Arabic commune_1 name is matched against the flagship geoalgeria commune set
  * within the derived wilaya (nearest-centroid fallback). The source carries no
- * French name, so name_fr is left unset — nothing is machine-translated.
+ * French name, so name_fr is left unset; nothing is machine-translated.
  *
  * Usage: node scripts/fetch.mjs            # live pull from dgpc.dz
  *        node scripts/fetch.mjs --if-changed # live pull, rebuild only on a new source hash
@@ -59,7 +59,7 @@ const REPO_ROOT = join(__dirname, "..", "..", "..");
 const SRC_URL = "https://dgpc.dz/dgpc2/unite.geojson";
 const CAPTURE_NAME = "dgpc-units";
 // Sanity floor: a truncated response parses fine and would otherwise be accepted
-// as the whole network. The published set is 880 units — reject anything well below.
+// as the whole network. The published set is 880 units: reject anything well below.
 const MIN_FEATURES = 700;
 // dgpc.dz serves the file only to a browser User-Agent (a bare CLI UA is blocked).
 const BROWSER_UA =
@@ -148,7 +148,7 @@ async function fetchDGPC({ onlyIfChanged = false } = {}) {
 function readCache() {
   const json = readCapture("protection-civile", CAPTURE_NAME);
   if (!Array.isArray(json.features) || json.features.length < MIN_FEATURES)
-    throw new Error(`capture ${CAPTURE_NAME} missing or too small — run without --cache to refetch`);
+    throw new Error(`capture ${CAPTURE_NAME} missing or too small: run without --cache to refetch`);
   console.log(`Using stored DGPC capture: ${json.features.length} unit features`);
   return json.features;
 }
@@ -173,7 +173,7 @@ const cleanTel = (v) => {
   return dialableContact(s.replace(/\s+/g, ""));
 };
 // Arabic name folding for commune matching (strip diacritics/tatweel, fold
-// alef/ya/ta-marbuta variants) — same recipe as the sante generator.
+// alef/ya/ta-marbuta variants), same recipe as the sante generator.
 function normAr(s) {
   if (!s) return "";
   s = s.replace(/[ً-ْٰـ]/g, "");
@@ -221,7 +221,7 @@ function loadCommunes() {
       all.push(entry);
     }
   }
-  if (!all.length) throw new Error("no commune centroids loaded — check packages/dataset/data/algeria.json");
+  if (!all.length) throw new Error("no commune centroids loaded: check packages/dataset/data/algeria.json");
   return { byWilaya, all };
 }
 
@@ -251,7 +251,7 @@ function assignWilaya(lng, lat, boundaries, communes, stats) {
 
 // Reconcile the geometry-derived code against the DGPC's own cod_wilaya. The 2026
 // reform is the ONLY legitimate reason they may differ: a unit inside a new 59..69
-// wilaya keeps the DGPC's old (<= "58") code but must carry the new one — those
+// wilaya keeps the DGPC's old (<= "58") code but must carry the new one: those
 // remaps keep the geometry code. When the geometry code is instead ANOTHER
 // pre-reform code (both <= "58"), the reform cannot explain the disagreement, so
 // a ~150m-simplified boundary has misfiled a border unit: the DGPC's authoritative
@@ -381,7 +381,7 @@ async function main() {
   // Carry public ids over by the DGPC objectid. KNOWN RISK: objectid is an
   // ArcGIS-style surrogate the DGPC could renumber server-side; if it ever does, a
   // whole regeneration silently misses its carry keys and re-mints ids. The
-  // carry-hit count logged below is the tripwire — a sharp drop from ~880 means
+  // carry-hit count logged below is the tripwire: a sharp drop from ~880 means
   // diff the ids against the committed data before committing.
   const committed = readCommitted(OUT_DIR, "protection-civile.json");
   const carryKey = protectionCivileCarryKey;

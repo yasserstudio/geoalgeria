@@ -1,4 +1,4 @@
-// @geoalgeria/gares-routieres — build Algeria's intercity bus stations (gares
+// @geoalgeria/gares-routieres: build Algeria's intercity bus stations (gares
 // routières) from the cleaned SOGRAL registry.
 // Source: SOGRAL (live.sogral.com/api/live/agencies), staged + decoded in
 // research/gares-routieres/. Here we fix 3 bad coords, spatial-join commune/wilaya
@@ -153,10 +153,10 @@ for (const r of records) {
   r.commune_code = c.code_commune ?? null;
 }
 
-// Fail loudly on any ungeocoded station — never ship an un-reconciled wilaya_code.
+// Fail loudly on any ungeocoded station, never ship an un-reconciled wilaya_code.
 const ungeocoded = records.filter((r) => !Number.isFinite(r.lat) || !Number.isFinite(r.lng));
 if (ungeocoded.length) {
-  throw new Error(`${ungeocoded.length} ungeocoded station(s): ${ungeocoded.map((r) => r.name).slice(0, 5).join(", ")} — add a COORD_FIX entry or centroid fallback in fetch.mjs`);
+  throw new Error(`${ungeocoded.length} ungeocoded station(s): ${ungeocoded.map((r) => r.name).slice(0, 5).join(", ")}; add a COORD_FIX entry or centroid fallback in fetch.mjs`);
 }
 
 // Stable ids: {wilaya}-{seq}, sorted by wilaya then sogral_id.

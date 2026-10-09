@@ -53,7 +53,8 @@ function centreIndex(communes) {
 export function reviewCommune({ commune, seat, selected_because, seat_delta_m }, snapshots, centresByKey) {
   const outline = snapshots.boundaries.byCommune.get(commune.code_commune) ?? null;
   const usableOutline = outline?.usable && outline.bbox ? outline : null;
-  const exactRecords = snapshots.records.byCommune.get(commune.code_commune) ?? { points: [], files: [] };
+  // A commune with no usable outline is in no bucket, so it states no record median.
+  const exactRecords = snapshots.records.byCommune.get(commune.code_commune) ?? { records: 0, files: 0, median: null };
   const context = { commune, outline: usableOutline, seat, snapshots, exactRecords, centresByKey };
 
   const claims = CLAIM_LAYERS.map((l) => l.claim(context)).filter(Boolean);

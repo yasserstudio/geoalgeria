@@ -361,7 +361,7 @@ This is a classification audit, not published package data.
 ${table(
   ["Operator", "Candidate Lines", "Relations", "Geometry candidates", "With stations"],
   summary.by_operator.filter((row) => row.candidate_lines > 0).map((row) => [
-    `${row.operator_id} — ${row.name_fr}`,
+    `${row.operator_id}: ${row.name_fr}`,
     row.candidate_lines,
     row.relations,
     row.geometry_candidates,
@@ -374,7 +374,7 @@ ${table(
 ${table(
   ["Wilaya", "Candidates", "Urban/suburban", "Geometry candidates", "Unresolved"],
   summary.by_wilaya.map((row) => [
-    row.code === "(missing)" ? "Unassigned" : `${row.code} — ${row.name_fr ?? "Unknown"}`,
+    row.code === "(missing)" ? "Unassigned" : `${row.code}: ${row.name_fr ?? "Unknown"}`,
     row.candidates,
     row.urban_suburban,
     row.geometry_candidates,

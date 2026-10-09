@@ -5,7 +5,7 @@
  * amenity=university|college features in Algeria.
  *
  * Nominatim indexes few of these écoles under their official MESRS French
- * name, but the campuses themselves are widely mapped — often under a short
+ * name, but the campuses themselves are widely mapped, often under a short
  * form, an acronym, or an Arabic name. So: pull every DZ university/college
  * feature once (captured to sources/enseignement-superieur/osm-campuses.json),
  * token-match the un-seeded MESRS names against name/name:fr/official_name/
@@ -95,7 +95,7 @@ export function tokens(s) {
 }
 
 // Wilaya/city words that, when present in the MESRS name, MUST appear on the
-// OSM side too — a subject-only overlap ("informatique") must never relocate a
+// OSM side too: a subject-only overlap ("informatique") must never relocate a
 // school to another city's campus.
 const PLACES = new Set(
   JSON.parse(readFileSync(join(__dirname, "..", "..", "dataset", "data", "wilayas.json"), "utf8"))
@@ -103,7 +103,7 @@ const PLACES = new Set(
 );
 
 // An OSM feature whose name marks it as one of these can never be a MESRS
-// higher-education campus, whatever its token overlap — the first run matched
+// higher-education campus, whatever its token overlap: the first run matched
 // a CFPA and a lycée purely through shared eponyms.
 const WRONG_TYPE = /\b(cfpa|lyc[ée]e|cem\b|coll[èe]ge|primaire|متوسطة|ثانوية|ابتدائية|مركز التكوين)/i;
 

@@ -60,7 +60,7 @@ const lines = blocks.map((b) => {
 }).filter((l) => l.line);
 
 const out = {
-  note: "ETUSA (Entreprise de transport urbain et suburbain d'Alger) bus lines, parsed from fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'. Line-level attributes only — routes, not geocoded. For geometry, pull OSM route relations (route=bus, operator=ETUSA) or terminus points. Community source (Wikipedia CC BY-SA), not an official ETUSA feed.",
+  note: "ETUSA (Entreprise de transport urbain et suburbain d'Alger) bus lines, parsed from fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'. Line-level attributes only (routes, not geocoded). For geometry, pull OSM route relations (route=bus, operator=ETUSA) or terminus points. Community source (Wikipedia CC BY-SA), not an official ETUSA feed.",
   source: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99",
   fetched: "2026-07-01",
   lines_count: lines.length,

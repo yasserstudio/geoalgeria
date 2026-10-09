@@ -7,12 +7,17 @@
 //     `decided_by: "consensus"`, its Votes and the licence of the Candidate that won.
 //   research/_commune-centres/review-queue-<date>.json  everything the engine did not
 //     settle, with its Candidates, its Votes and the reason, for the Owner's review page.
+//   research/_commune-centres/record-medians-<run>.json  the L2 record-median Claim of
+//     every commune the run reviewed, frozen, because that one input is read from this
+//     repository's own packages and would otherwise move under a landed run.
 //
 // REPLAYABLE. The run reads committed snapshots only, so test/review-decisions.test.mjs
 // re-derives every row of both files offline. Because applying a fix removes the commune
 // from the set under review, that test rewinds the corrected communes to their `from`
 // first, and `--rewind <ledger>` does the same here, which is how a run is verified after
-// the fixes have landed.
+// the fixes have landed. `--records <frozen set>` replays the record medians the run read
+// rather than sweeping the packages as they stand today, which is what keeps a landed run
+// replaying after a release moves a record (private tracker #267).
 //
 // THE L3 VERDICTS FILE IS NEVER COMMITTED. `--verdicts <path>` (or
 // GEOALGERIA_GOOGLE_VERDICTS) points at a file outside this repository and raises the
@@ -22,19 +27,23 @@
 //
 // USAGE
 //   node scripts/review/run.mjs                       # report
-//   node scripts/review/run.mjs --write                # write the ledger and the queue
+//   node scripts/review/run.mjs --write                # write all three documents
 //   node scripts/review/run.mjs --verdicts <path>      # add the L3 layer (report only)
 //   node scripts/review/run.mjs --rewind <ledger>      # replay a landed run
+//   node scripts/review/run.mjs --records <frozen set> # replay its record medians too
+//   node scripts/review/run.mjs --freeze-records       # write only the record-median set,
+//      # which is how a run that landed before #267 is frozen after the fact
 //   node scripts/review/run.mjs --date 2026-10-01 --run 2026-10-01b
-//      # name the run: --date dates the queue and the record median's snapshot, --run
-//      # names the ledger file, which is how two runs can share a date (2026-10-01
-//      # settled the wilaya capitals and then ran this review)
+//      # name the run: --date dates the queue and a fresh sweep of the records, --run
+//      # names the ledger and the frozen record-median set, which is how two runs can
+//      # share a date (2026-10-01 settled the wilaya capitals and then ran this review)
 
 import { readFileSync, renameSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { metresBetween } from "../lib/seat-evidence.mjs";
+import { buildRecordMedians, recordMediansFile, writeRecordMedians } from "./record-medians.mjs";
 import { REPO_ROOT, loadSnapshots } from "./snapshots.mjs";
 import { SEAT_DELTA_KM, reviewCommuneCentres } from "./engine.mjs";
 import { WINNER_LICENCE } from "./layers/index.mjs";
@@ -204,10 +213,11 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     return i < 0 ? null : argv[i + 1];
   };
   const verdictsPath = flag("--verdicts") ?? process.env.GEOALGERIA_GOOGLE_VERDICTS ?? null;
+  const recordMediansPath = flag("--records") ?? null;
   const generated = flag("--date") ?? new Date().toISOString().slice(0, 10);
   const run = flag("--run") ?? generated;
 
-  const snapshots = loadSnapshots({ verdictsPath, today: generated });
+  const snapshots = loadSnapshots({ verdictsPath, recordMediansPath, today: generated });
   const rewinds = argv.flatMap((a, i) => (argv[i - 1] === "--rewind" ? [JSON.parse(readFileSync(a, "utf-8"))] : []));
   if (rewinds.length) rewind(snapshots, rewinds);
 
@@ -220,8 +230,16 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   console.log(`  ${result.counts.queue} in the Review queue: ${JSON.stringify(result.counts.byReason)}`);
   if (snapshots.verdicts) console.log("  L3 verdicts were read; this run must NOT be written to the repository");
 
+  if (argv.includes("--write") || argv.includes("--freeze-records")) {
+    if (snapshots.verdicts)
+      throw new Error("writing with --verdicts: a committed row must re-derive from committed inputs only");
+    // The frozen record-median set lands with the run: without it the next release that
+    // moves one exact record moves this run's L2 evidence (ADR 0001 rule 8).
+    writeRecordMedians(join(DIR, recordMediansFile(run)), buildRecordMedians(result, snapshots, { run, generated }));
+    console.log(`wrote ${recordMediansFile(run)}`);
+  }
+
   if (argv.includes("--write")) {
-    if (snapshots.verdicts) throw new Error("--write with --verdicts: a committed row must re-derive from committed inputs only");
     writeAtomic(join(DIR, `corrections-${run}.json`), ledger);
     writeAtomic(join(DIR, `review-queue-${generated}.json`), queue);
     console.log(`wrote corrections-${run}.json and review-queue-${generated}.json`);

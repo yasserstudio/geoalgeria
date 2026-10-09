@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Generate the repo catalog — one root index.json listing every published
-// dataset, plus a schema.org/DCAT `Dataset` descriptor per package — from the
+// Generate the repo catalog: one root index.json listing every published
+// dataset, plus a schema.org/DCAT `Dataset` descriptor per package: from the
 // packages' own committed metadata.json. Nothing here invents a number: every
 // count, bbox, licence and date is copied out of the file the package's own
 // generator wrote, through @geoalgeria/schema's buildManifest / buildDcat.
@@ -10,14 +10,11 @@
 // never see the README that qualifies it.
 //
 // Where the artifacts live:
-//   index.json                            — repo root, not published to npm (the
-//                                           root package is private); served from
-//                                           GitHub raw / jsDelivr / geoalgeria.com.
-//   packages/<pkg>/dataset-metadata.json  — package root, shipped in files[] so
-//                                           consumers and crawlers get it from the
-//                                           npm tarball and the CDN. Same name and
-//                                           place as the core `geoalgeria`
-//                                           package's hand-written descriptor.
+//   index.json: repo root, not published to npm (the root package is private);
+//     served from GitHub raw / jsDelivr / geoalgeria.com.
+//   packages/<pkg>/dataset-metadata.json: package root, shipped in files[] so
+//     consumers and crawlers get it from the npm tarball and the CDN. Same name
+//     and place as the core `geoalgeria` package's hand-written descriptor.
 // Neither lives under data/, so the validatePackageFiles gate (which walks data/
 // for derived .csv/.geojson) is unaffected; the files[] requirement for the
 // descriptor is enforced by --check below instead.
@@ -38,12 +35,12 @@ const read = (p) => JSON.parse(readFileSync(p, "utf-8"));
 
 // Packages that do not meet the v2 metadata contract, listed by name so a new one
 // cannot fall through unnoticed (see the guard in collect()). A real, published
-// dataset belongs in the catalog — with the figures its own files actually carry,
+// dataset belongs in the catalog: with the figures its own files actually carry,
 // and schema_version null so the entry says it is not v2.
 //
-//   dataset  — the core `geoalgeria` package: administrative divisions, not
-//              GeoRecords. It ships no data/metadata.json at all and keeps its own
-//              hand-written dataset-metadata.json, which this script does not touch.
+//   dataset: the core `geoalgeria` package, administrative divisions, not
+//     GeoRecords. It ships no data/metadata.json at all and keeps its own
+//     hand-written dataset-metadata.json, which this script does not touch.
 const V1_HOLDOUTS = {
   dataset: () => {
     const a = read(join(ROOT, "packages", "dataset", "data", "algeria.json"));
@@ -93,7 +90,7 @@ function distributions(pkg, meta) {
   return out;
 }
 
-/** Single-entity packages don't list `entities` — take the one data/*.json file. */
+/** Single-entity packages don't list `entities`: take the one data/*.json file. */
 const defaultEntityFiles = (dir) =>
   readdirSync(dir).filter(
     (f) => f.endsWith(".json") && f !== "metadata.json" && f !== "retired-ids.json",
@@ -114,7 +111,7 @@ function collect() {
     if (!existsSync(metaPath))
       throw new Error(
         `packages/${pkg}: ships data/ but no data/metadata.json, and is not a declared ` +
-          `V1_HOLDOUT — add it to the contract or name it in build-catalog.mjs`,
+          `V1_HOLDOUT: add it to the contract or name it in build-catalog.mjs`,
       );
     const meta = read(metaPath);
     if (meta.schema_version !== "2.0.0")
@@ -174,7 +171,7 @@ if (process.argv.includes("--check")) {
     if (!files.includes("dataset-metadata.json"))
       drift.push({
         cls: "files",
-        msg: `packages/${pkg}/package.json: files[] omits "dataset-metadata.json" — npm would not publish it`,
+        msg: `packages/${pkg}/package.json: files[] omits "dataset-metadata.json"; npm would not publish it`,
       });
   }
   if (drift.length) {

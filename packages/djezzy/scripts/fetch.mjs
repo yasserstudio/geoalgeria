@@ -3,7 +3,7 @@
  * Fetch Djezzy boutiques from the Djezzy store locator and emit JSON, CSV, and
  * GeoJSON to ../data.
  *
- * Source (Optimum Telecom Algérie — "Djezzy"):
+ * Source (Optimum Telecom Algérie, "Djezzy"):
  *   https://www.djezzy.dz/nos-boutiques/
  *
  * The locator is a WordPress page that ships the full boutique list inline as
@@ -12,12 +12,12 @@
  *   { cds, code, categorie, adresse, email, horaires_ouverture, vendredi,
  *     fetes, code_ouverture, latitude, longitude, comment }
  *
- * The source has NO commune/wilaya codes and NO Arabic — only an address string
+ * The source has NO commune/wilaya codes and NO Arabic: only an address string
  * and a "lat,lng" pair. We attach administrative linkage by nearest-centroid
  * join against the flagship `geoalgeria` commune centroids (1,528 communes):
  * the nearest commune yields its code_commune + name + wilaya_code. Wilaya
  * assignment is effectively exact (wilayas are large); commune is best-effort
- * (centroid proximity, not polygon containment) — stated honestly in the README.
+ * (centroid proximity, not polygon containment): stated honestly in the README.
  *
  * Usage: node scripts/fetch.mjs
  */
@@ -41,7 +41,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // --- fetch -----------------------------------------------------------------
 const MAX_REDIRECTS = 5;
-// Only follow a redirect that stays on https and on the same host — refuse
+// Only follow a redirect that stays on https and on the same host: refuse
 // cross-host / scheme-downgrade targets (SSRF guard) and cap the depth so a
 // redirect loop can't recurse unbounded.
 function safeRedirect(location, fromUrl) {
@@ -144,12 +144,12 @@ function loadCommunes() {
       if (Number.isFinite(c.latitude) && Number.isFinite(c.longitude)) communes.push(c);
     }
   }
-  if (!communes.length) throw new Error("no commune centroids loaded — check packages/dataset/data");
+  if (!communes.length) throw new Error("no commune centroids loaded: check packages/dataset/data");
   return communes;
 }
 
 // Equirectangular squared distance is monotonic with great-circle distance at
-// this scale and avoids trig per candidate — fine for a nearest-centroid pick.
+// this scale and avoids trig per candidate, fine for a nearest-centroid pick.
 const DEG = Math.PI / 180;
 function nearestCommune(lat, lng, communes) {
   let best = null;
@@ -224,7 +224,7 @@ async function main() {
   const html = await getPage();
   const raw = extractStores(html);
   console.log(`  extracted ${raw.length} boutique objects`);
-  if (raw.length < 50) throw new Error(`only ${raw.length} boutiques extracted — page shape may have changed`);
+  if (raw.length < 50) throw new Error(`only ${raw.length} boutiques extracted: page shape may have changed`);
 
   const communes = loadCommunes();
   console.log(`  ${communes.length} commune centroids loaded`);

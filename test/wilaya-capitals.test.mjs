@@ -2,7 +2,7 @@
 //
 // The bug this exists for: the 9 wilayas created by the 2026 reform had their
 // capital points assigned in French alphabetical order of capital name instead
-// of by code — a closed 9-cycle. Every coordinate VALUE was a real Algerian
+// of by code: a closed 9-cycle. Every coordinate VALUE was a real Algerian
 // town and inside Algeria, so range/bbox checks saw nothing. Only the code each
 // point was attached to was wrong.
 //
@@ -17,14 +17,14 @@
 // the nearest commune is Ouled Aissa, 22.5 km away and also a commune of 49. So
 // a second, quantitative check rides on the same distance: a capital must sit
 // within CEILING_KM of one of its OWN wilaya's commune centroids. A capital is
-// a commune of its wilaya, so that distance is small by construction — the
+// a commune of its wilaya, so that distance is small by construction: the
 // observed distribution is 0.0-6.7 km over the 68 correct capitals, with the
 // 22.5 km outlier the defect itself. See CEILING_KM below.
 //
 // Catches: permutations/swaps of capitals, lat↔lng transposition, sign flips,
 // and any displacement of more than CEILING_KM.
 // Does NOT catch: a displacement under CEILING_KM that stays inside the
-// capital's own commune neighbourhood (see the "wilaya coords" note — small
+// capital's own commune neighbourhood (see the "wilaya coords" note: small
 // displacements are invisible here), nor a wrong-but-plausible point in a
 // wilaya with no commune centroids.
 
@@ -52,7 +52,7 @@ const communes = ["communes_w1_w23", "communes_w24_w48", "communes_w49_w69"]
 // 6.74 km is the worst correct capital and the median is under 0.5 km, so the
 // real signal dies out an order of magnitude below 22.5 km. 10 km leaves ~48%
 // headroom over the worst legitimate value while sitting less than half the
-// distance of the defect it exists to catch — the gap 6.74…22.51 is empty.
+// distance of the defect it exists to catch: the gap 6.74…22.51 is empty.
 const CEILING_KM = 10;
 
 /** Every file in packages/dataset that carries a capital point: [label, () => {code: [lng, lat]}] */
@@ -104,7 +104,7 @@ function fromSql() {
   return out;
 }
 
-/** Equirectangular approximation — plenty for "which commune is nearest". */
+/** Equirectangular approximation: plenty for "which commune is nearest". */
 function km([lngA, latA], [lngB, latB]) {
   const x = (lngA - lngB) * Math.cos((((latA + latB) / 2) * Math.PI) / 180) * 111.32;
   return Math.hypot(x, (latA - latB) * 110.57);
@@ -148,7 +148,7 @@ for (const [label, load] of COPIES) {
       } else if (ownD > CEILING_KM) {
         wrong.push(
           `wilaya ${code}: point ${JSON.stringify(point)} is ${ownD.toFixed(1)} km from ` +
-            `${own.name_fr}, the nearest commune of wilaya ${code} — over the ${CEILING_KM} km ceiling`,
+            `${own.name_fr}, the nearest commune of wilaya ${code}: over the ${CEILING_KM} km ceiling`,
         );
       }
     }

@@ -3,7 +3,7 @@
 //
 // One writer, many thin transforms: every dataset shapes its rows to the canonical
 // GeoRecord via its `map`, then hands them to writePackageV2, which owns the
-// per-file demote/sort/emit + the canonical metadata. This is the P3 rework's core —
+// per-file demote/sort/emit + the canonical metadata. This is the P3 rework's core:
 // re-running a generator now reproduces the committed v2 data (and its ids) rather
 // than reverting the package to v1.
 //
@@ -32,7 +32,7 @@ import {
 import { reconcileCurrentWilayaByCommune } from "./current-wilaya-by-commune.mjs";
 
 /** Write via a temp sibling + rename so a reader never sees a torn file. Not a
- *  whole-directory transaction — a crash between renames can still leave a mix of
+ *  whole-directory transaction; a crash between renames can still leave a mix of
  *  old and new files, but never a truncated one. */
 function writeAtomic(path, content) {
   const tmp = `${path}.${process.pid}.tmp`;
@@ -41,7 +41,7 @@ function writeAtomic(path, content) {
 }
 
 /** The cutover date. Since c3e1349 it is only the bootstrap fallback in
- *  committedDates()'s catch branch — the date used for a package that has no
+ *  committedDates()'s catch branch: the date used for a package that has no
  *  committed metadata.json to read a real `updated` from. Live/replay dates come
  *  from resolveDates()/committedDates(), not from this constant. */
 export const CUTOVER_DATE = "2026-07-18";
@@ -74,10 +74,10 @@ export const refs = (o) => { const r = {}; for (const k in o) if (o[k] != null &
 /** Keep published contact strings only when they contain a dialable digit. */
 export const dialableContact = (value) =>
   typeof value === "string" && /\d/.test(value) ? value : null;
-/** atomic lat/lng: both finite → a point at the given precision; otherwise ungeocoded —
+/** atomic lat/lng: both finite → a point at the given precision; otherwise ungeocoded:
  *  both null, and a null geo_precision/geo_method (the contract enforces both iffs).
  *  `exact` is demoted to `approximate` when the coordinate is coarser than
- *  MIN_EXACT_DECIMALS — a whole-degree point cannot carry a per-facility claim. */
+ *  MIN_EXACT_DECIMALS; a whole-degree point cannot carry a per-facility claim. */
 export const geoAt = (r, precision, method) => {
   const has = Number.isFinite(r.lat) && Number.isFinite(r.lng);
   const p = precision === "exact" && coordDecimals(r.lat, r.lng) < MIN_EXACT_DECIMALS ? "approximate" : precision;
@@ -841,7 +841,7 @@ export const MIGRATIONS = {
         { key: "dgpc", name: "Direction Générale de la Protection Civile", url: "https://dgpc.dz/dgpc2/", license: "Government content © Direction Générale de la Protection Civile (DGPC); redistributed for reference", evidence_type: "official" },
         { key: "osm", name: "OpenStreetMap contributors: reviewed unit coordinates", url: "https://www.openstreetmap.org/copyright", license: "© OpenStreetMap contributors, ODbL 1.0", evidence_type: "crowdsourced" },
       ],
-      // No open licence — official government content, so the prose moves to
+      // No open licence: official government content, so the prose moves to
       // conditionsOfAccess in the discovery descriptor (buildDcat) rather than a
       // fabricated licence URL.
       license: "DGPC records © Direction Générale de la Protection Civile; redistributed for reference with no stated open licence. Reviewed OpenStreetMap coordinate evidence © OpenStreetMap contributors, ODbL 1.0.",
@@ -870,7 +870,7 @@ export const MIGRATIONS = {
     files: [
       { file: "5g-djezzy.json", from: "coverage/5g/djezzy.json", map: telecom5g((r) => geoExact(r, "operator_map")) },
       { file: "5g-mobilis.json", from: "coverage/5g/mobilis.json", map: telecom5g((r) => geoExact(r, "operator_map"), true) },
-      // Ooredoo publishes covered communes, not cell sites — points are placed
+      // Ooredoo publishes covered communes, not cell sites; points are placed
       // within the commune, so they are approximate by construction.
       { file: "5g-ooredoo.json", from: "coverage/5g/ooredoo.json", map: telecom5g((r) => geoAt(r, "approximate", "operator_commune_point")) },
     ],
@@ -884,7 +884,7 @@ export const MIGRATIONS = {
         { key: "mobilis", name: "Mobilis: published 5G coverage map (ATM Mobilis)", url: "https://mobilis.dz/map/5g", license: "Data © ATM Mobilis; redistributed for reference", evidence_type: "official" },
         { key: "ooredoo", name: "Ooredoo Algérie: published 5G covered communes", url: "https://www.ooredoo.dz/fr/particuliers/internet/5g", license: "Data © Ooredoo Algérie; redistributed for reference", evidence_type: "official" },
       ],
-      // No open licence — operator-published coverage claims, so the prose moves
+      // No open licence: operator-published coverage claims, so the prose moves
       // to conditionsOfAccess in the discovery descriptor (buildDcat) rather than
       // a fabricated licence URL.
       license: "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
@@ -968,7 +968,7 @@ export function writePackageV2({
   mkdirSync(join(dir, "csv"), { recursive: true });
   mkdirSync(join(dir, "geojson"), { recursive: true });
 
-  // Phase 1 — prepare + validate every file BEFORE writing anything. A schema
+  // Phase 1: prepare + validate every file BEFORE writing anything. A schema
   // error (a null-vs-geocoded geo mismatch, an id collision, an `exact` claim on a
   // shared/whole-degree point) aborts the run with the directory untouched, closing
   // the window where an emit could ship data the release gate would only reject later.
@@ -985,7 +985,7 @@ export function writePackageV2({
     // emit or validate rows it was never given.
     if (f.rows == null) {
       if (typeof f.count !== "number")
-        throw new Error(`writePackageV2 [${pkg}/${f.file}]: no rows and no count — cannot declare it`);
+        throw new Error(`writePackageV2 [${pkg}/${f.file}]: no rows and no count, cannot declare it`);
       entities.push({ file: f.file, count: f.count });
       continue;
     }
@@ -999,13 +999,13 @@ export function writePackageV2({
     for (const key of Object.keys(review)) review[key] += reviewed.stats[key];
     const rows = reviewed.records;
     demoteSharedPoints(rows);
-    // Plain codepoint order — localeCompare() without a locale reads the ambient
+    // Plain codepoint order: localeCompare() without a locale reads the ambient
     // ICU and can reorder committed JSON between machines.
     rows.sort(f.sortRows ?? ((a, b) => (String(a.id) < String(b.id) ? -1 : String(a.id) > String(b.id) ? 1 : 0)));
     const { errors } = validateRecords(rows);
     if (errors.length)
       throw new Error(
-        `writePackageV2 [${pkg}/${f.file}]: ${errors.length} schema error(s) — refusing to write:\n  ` +
+        `writePackageV2 [${pkg}/${f.file}]: ${errors.length} schema error(s), refusing to write:\n  ` +
           errors.slice(0, 20).join("\n  ") +
           (errors.length > 20 ? `\n  …(+${errors.length - 20} more)` : ""),
       );
@@ -1096,7 +1096,7 @@ export function writePackageV2({
     });
   }
 
-  // Phase 2 — everything validated; now write each file atomically.
+  // Phase 2: everything validated; now write each file atomically.
   for (const { path, content } of pending) {
     if (content === null) rmSync(path, { force: true });
     else writeAtomic(path, content);
@@ -1110,7 +1110,7 @@ export function writePackageV2({
  *
  * Why the join packages need it: their generators derive ids as `{wilaya}-{seq}`, so
  * when the root commune fix (5 rows in dataset/algeria.json) re-scopes ~30 records to
- * the correct wilaya, a naive re-run re-sequences every id in the affected wilayas —
+ * the correct wilaya, a naive re-run re-sequences every id in the affected wilayas,
  * churning the ids of records that did not otherwise change. Keying on the source id
  * (refs.osm / refs.patrimoine / refs.msp …) pins every record's id to what it shipped,
  * so the only diff a replay produces is the corrected wilaya_code/commune on the
@@ -1118,15 +1118,15 @@ export function writePackageV2({
  * (a genuinely new record on a live pull).
  *
  * Growth/shrink/reorder are all handled:
- *  - reorder — every record matches a committed key, so every id is pinned back.
- *  - shrink  — a dropped record's key is simply absent; its id retires (a missing
+ *  - reorder: every record matches a committed key, so every id is pinned back.
+ *  - shrink:  a dropped record's key is simply absent; its id retires (a missing
  *    key is expected, never an error). The retired id stays reserved so a live
  *    record can never inherit a join key that used to mean a different place.
- *  - growth  — a genuinely new record keeps its freshly derived id UNLESS that id
+ *  - growth:  a genuinely new record keeps its freshly derived id UNLESS that id
  *    lands on a reserved (pinned-or-retired) committed id; then it is re-homed to
  *    the next free {prefix}-{seq} slot in its own id space. Without this, the
- *    sequential assignIds() pass — which runs before carry-over and does not know
- *    which slots carry-over will pin back — can hand a new record the very slot a
+ *    sequential assignIds() pass (which runs before carry-over and does not know
+ *    which slots carry-over will pin back) can hand a new record the very slot a
  *    carried record returns to, minting a duplicate public id (empirically: a live
  *    ecoles regen produced 20 duplicate-id pairs).
  *
@@ -1155,7 +1155,7 @@ export function carryOverIds(
     );
   }
   // Index the committed id each carry key shipped under. A duplicated key means
-  // the key does not uniquely identify a record, so pinning would be arbitrary —
+  // the key does not uniquely identify a record, so pinning would be arbitrary;
   // fail the build rather than silently churn the ambiguous records' ids.
   const byKey = new Map();
   const dupKeys = new Set();
@@ -1169,7 +1169,7 @@ export function carryOverIds(
     throw new Error(
       `carryOverIds${tag}: committed data has duplicate carry key(s) ` +
         `${[...dupKeys].slice(0, 5).map((k) => JSON.stringify(k)).join(", ")}` +
-        `${dupKeys.size > 5 ? ` (+${dupKeys.size - 5} more)` : ""} — the carry key is not ` +
+        `${dupKeys.size > 5 ? ` (+${dupKeys.size - 5} more)` : ""}; the carry key is not ` +
         `unique, so it cannot pin ids; make keyOf discriminate these records`,
     );
 
@@ -1182,7 +1182,7 @@ export function carryOverIds(
   // Every id any committed record ever held, plus ids retired by earlier runs.
   // A record still present is pinned
   // back to it below; a record upstream dropped retires its id. Either way a NEW
-  // record must never be handed one of these — reuse would silently repoint a
+  // record must never be handed one of these; reuse would silently repoint a
   // cached public join key at a different place.
   const reserved = new Set([
     ...retiredIds,
@@ -1220,14 +1220,14 @@ export function carryOverIds(
     occupied.add(next);
   }
 
-  // 3. The final id set must be globally unique — two current records sharing one
+  // 3. The final id set must be globally unique: two current records sharing one
   //    upstream key would pin to the same committed id and slip past step 2.
   const ids = new Set();
   for (const r of rows) {
     if (ids.has(r.id))
       throw new Error(
-        `carryOverIds${tag}: id ${JSON.stringify(r.id)} is duplicated after carry-over ` +
-          `— two records resolve to the same public id`,
+        `carryOverIds${tag}: id ${JSON.stringify(r.id)} is duplicated after carry-over: ` +
+          `two records resolve to the same public id`,
       );
     ids.add(r.id);
   }
@@ -1350,7 +1350,7 @@ export function committedDates(dir) {
     const m = JSON.parse(readFileSync(join(dir, "metadata.json"), "utf-8"));
     // H2: the writer now preserves each source's own `retrieved`, so this only
     // supplies the run-date FALLBACK stamped on sources that carry none. That
-    // fallback is a package-level default — the committed `updated` — not an
+    // fallback is a package-level default (the committed `updated`), not an
     // arbitrary first source's date (which would misdate every other source).
     const updated = m.updated || CUTOVER_DATE;
     return { updated, retrieved: updated };
@@ -1362,7 +1362,7 @@ export function committedDates(dir) {
 /**
  * The {updated, retrieved} a generator stamps: a live pull uses today's date; an
  * offline `--cache` replay reuses the committed dates so it reproduces them.
- * (H2: these are only the run-date fallback — each source keeps its own retrieved.)
+ * (H2: these are only the run-date fallback; each source keeps its own retrieved.)
  * @param {string} dir       the package's data/ directory
  * @param {boolean} offline  true on a --cache replay
  */
@@ -1386,7 +1386,7 @@ export function readCacheFile(researchDir, file, pkg) {
   } catch (e) {
     if (e && e.code === "ENOENT")
       throw new Error(
-        `--cache: ${file} not found under research/${pkg}/ — run once without --cache to populate it`,
+        `--cache: ${file} not found under research/${pkg}/; run once without --cache to populate it`,
       );
     throw e;
   }
