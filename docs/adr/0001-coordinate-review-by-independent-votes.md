@@ -132,7 +132,12 @@ So a run freezes the Claim it read, and the replay reads that file:
    derived from the published centres and the seats: a code missing from the file means the
    run being replayed is not the run that was frozen, and that is a re-run, not a replay.
 5. **A set frozen at another `MIN_EXACT_RECORDS` is refused** for the same reason.
+6. **Every row is read on the way in.** A row at or over the threshold states a Claim the
+   voting rules measure distances with, so one carrying no median, or a median that is not
+   a `[lng, lat]`, is refused by the commune it belongs to instead of surfacing as a type
+   error inside `votes.mjs`. Below the threshold a row states nothing and may carry either.
 
 The frozen set of run 2026-10-01b was written from the packages as they stood on
 2026-10-09, which still reproduced both of that run's documents byte for byte, so it is the
-evidence the run decided on and not a new reading.
+evidence the run decided on and not a new reading. Its `read` field stays the run's own
+date, 2026-10-01, because that is the date both landed documents give the Claim it holds.

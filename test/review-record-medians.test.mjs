@@ -59,6 +59,34 @@ test("a set frozen at another record threshold is refused, because the run canno
   assert.throws(() => loadRecordMedians(write({ ...DOC, min_exact_records: 4 })), /min_exact_records 4/);
 });
 
+// A row over the threshold IS a Claim, so the engine reads its point and measures
+// distances with it. A null or malformed median there used to surface as a TypeError deep
+// inside the voting rules (`claim.point[0]` in votes.mjs), which says nothing about which
+// commune's row is wrong. The file is checked on the way in instead.
+test("a commune over the record threshold with no median is refused, and the error names it", () => {
+  const broken = { ...DOC, communes: [{ code_commune: 122, records: 23, files: 11, median: null }] };
+  assert.throws(() => loadRecordMedians(write(broken)), /commune 122/);
+});
+
+test("a malformed median is refused wherever it sits, over the threshold or under it", () => {
+  for (const median of [[3.1], [3.1, 36.7, 0], ["3.1", "36.7"], [3.1, 936.7], [181, 36.7], [Number.NaN, 36.7]]) {
+    const over = { ...DOC, communes: [{ code_commune: 122, records: 23, files: 11, median }] };
+    assert.throws(() => loadRecordMedians(write(over)), /commune 122/, `over the threshold: ${JSON.stringify(median)}`);
+    const under = { ...DOC, communes: [{ code_commune: 122, records: 4, files: 3, median }] };
+    assert.throws(() => loadRecordMedians(write(under)), /commune 122/, `under it: ${JSON.stringify(median)}`);
+  }
+});
+
+test("a commune under the record threshold states no Claim, with a median or without one", () => {
+  const rows = [
+    { code_commune: 630, records: 0, files: 0, median: null },
+    { code_commune: 532, records: 4, files: 4, median: [6.005791, 35.363195] },
+  ];
+  const records = loadRecordMedians(write({ ...DOC, communes: rows }));
+  assert.equal(records.byCommune.get(630).median, null);
+  assert.deepEqual(records.byCommune.get(532).median, [6.005791, 35.363195]);
+});
+
 // THE READ PATH, PROVEN. The one thing the freeze has to buy is that a replay no longer
 // looks at the packages. A frozen median moved 500 m west comes back out of the engine as
 // the record-median Candidate, which it could not do if the layer were still taking the

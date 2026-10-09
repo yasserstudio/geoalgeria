@@ -40,7 +40,24 @@ class FrozenRecordMedians extends Map {
   }
 }
 
-/** The frozen set of a run, in the shape loadSnapshots puts under `records`. */
+/** A median is a [lng, lat] somewhere on the globe, or nothing at all. */
+const isPoint = (p) =>
+  Array.isArray(p) &&
+  p.length === 2 &&
+  p.every((n) => typeof n === "number" && Number.isFinite(n)) &&
+  Math.abs(p[0]) <= 180 &&
+  Math.abs(p[1]) <= 90;
+
+/**
+ * The frozen set of a run, in the shape loadSnapshots puts under `records`.
+ *
+ * THE ROWS ARE CHECKED ON THE WAY IN. A row at or over MIN_EXACT_RECORDS states a Claim,
+ * so the voting rules read its point and measure distances with it: a missing or malformed
+ * median there surfaced as a TypeError on `claim.point[0]` inside votes.mjs, naming
+ * neither the commune nor the file. The rows are read once here instead, and a bad one
+ * says which commune it is. Below the threshold a row states nothing, so it may carry a
+ * median the engine will not read, or none.
+ */
 export function loadRecordMedians(path) {
   const doc = JSON.parse(readFileSync(path, "utf-8"));
   if (!Array.isArray(doc.communes)) throw new Error(`${path} is not a record-median set`);
@@ -48,6 +65,14 @@ export function loadRecordMedians(path) {
     throw new Error(
       `${path} was frozen at min_exact_records ${doc.min_exact_records}, and the engine now uses ${MIN_EXACT_RECORDS}: the threshold moved, so the run has to be re-run rather than replayed`,
     );
+  for (const row of doc.communes) {
+    if (row.median !== null && !isPoint(row.median))
+      throw new Error(`${path}, commune ${row.code_commune}: ${JSON.stringify(row.median)} is not a [lng, lat] median`);
+    if (row.median === null && row.records >= MIN_EXACT_RECORDS)
+      throw new Error(
+        `${path}, commune ${row.code_commune}: ${row.records} records state a record median, and this row carries none`,
+      );
+  }
   return {
     committed: doc.read,
     total: doc.records_total,
