@@ -160,9 +160,9 @@ export type RouteEvidence = "verified" | "listed";
 
 /** One DIRECTIONAL nonstop leg between two airports.
  *
- *  Direction is not decoration. Algiers→Budapest flies nonstop on Saturdays and
- *  Budapest→Algiers on Wednesdays, and there is never a same-day nonstop round
- *  trip, so they are two routes and neither implies the other.
+ *  Direction is not decoration. Algiers→Abuja flies nonstop on Mondays and
+ *  Abuja→Algiers on Fridays, and there is never a same-day nonstop round trip,
+ *  so they are two routes and neither implies the other.
  *
  *  Known codeshares are excluded rather than marked: this file says a carrier
  *  FLIES these, and a codeshare would make that false. */
