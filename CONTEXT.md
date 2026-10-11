@@ -256,6 +256,28 @@ _Avoid_: fetched, scraped, synced
 How honest a coordinate is: `exact` (a real per-facility point → a Pin) vs `approximate` (a commune/wilaya centroid → a Dot) vs `null` (there is no coordinate at all → neither). Coarse-grained in `geo_precision`, which is null if and only if `lat`/`lng` are null; method detail (`osm_node`, `commune_centroid`) lives in `geo_method`, null on those same records because no method produced a point.
 _Avoid_: accuracy, precision score
 
+### Source rights
+
+**Source rights record**:
+One Source's rights decision as data: its permanent Source key, the keys packages capture it under, its Access class and Rights class, the Targets it is cleared for, its attribution and NOTICE text, the evidence the classification was read from with a retrieval date, a review date, and a slot for a Recorded refusal. One record per Source, never per package, because packages mix Sources. Lives in `packages/schema/rights/registry.json`; `isSourceClearedFor` is the only question asked of it.
+_Avoid_: licence record, rights manifest, permission table
+
+**Access class**:
+How a Source is reached: `public-access`, `account-access`, `permissioned-access` or `private-research`. Separate from the Rights class, because being able to read something is not permission to republish it.
+_Avoid_: visibility, availability, public/private
+
+**Rights class**:
+What GeoAlgeria may do with a Source: `open-licensed`, `public-domain-or-cc0`, `permissioned`, `rights-unconfirmed`, `restricted-research` or `prohibited`. `rights-unconfirmed` is the honest default for a Source whose terms were read and grant nothing; `evidence_type: official` describes authority and is never a Rights class.
+_Avoid_: licence class, permission level, trust tier
+
+**Target**:
+A place GeoAlgeria publishes to, and the unit a Source is cleared for: `web`, `npm`, `cdn` (the signed Content release), `mobile-pack` (an offline catalog on a device) or `live` (the app's Live layer). A Source with no record is cleared for none of them.
+_Avoid_: channel, destination, distribution
+
+**Recorded refusal**:
+A written refusal from a Source owner, with the date it was recorded. Once recorded it removes every Target, so the next Content release drops that Source and installed apps drop it when they activate that release.
+_Avoid_: takedown, opt-out, objection
+
 ### Coordinate review
 
 **Claim**:

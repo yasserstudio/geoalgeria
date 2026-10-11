@@ -172,6 +172,50 @@ the package can pass. Whichever class a package falls in, its
 `LICENSE` must carry the MIT grant itself, verbatim and above any `## Data`
 section: the `## Code` heading is not the terms.
 
+### Source rights registry
+The `license` field says how a package may be used. It does not say what may be
+done with each Source behind it, and the sentences in `metadata.sources[].license`
+only look like they do: "Factual public listing (ANEM)" and
+"Data © SOGRAL; redistributed for reference" are Source notes, not grants. So
+rights live in their own registry, keyed by Source rather than by package, because
+packages mix Sources: `@geoalgeria/sante` is an official registry plus ODbL and
+CC0 geocoding.
+
+[`packages/schema/rights/registry.json`](packages/schema/rights/registry.json)
+holds one record per Source: the permanent Source key, every
+`metadata.sources[].key` it is captured under, its
+[Access class and Rights class](CONTEXT.md#source-rights), the Targets it is
+cleared for, attribution and NOTICE text, the evidence the classification was read
+from with a retrieval date, a review date, and a slot for a Recorded refusal.
+`isSourceClearedFor(sourceKey, target)` from `@geoalgeria/schema` is the only
+question a publisher asks of it, and it fails closed: an unknown Source, an unknown
+Rights class, an unknown Target, `restricted-research`, `prohibited`, or a recorded
+refusal all answer no, whatever `allowed_targets` says.
+
+`pnpm validate` enforces two rules:
+
+- every Source key in every `data/metadata.json` and `<file>.metadata.json`
+  resolves to a record. Adding a Source to a fetcher without classifying it fails
+  the build, which is the point: a Source with no record enters no Target.
+- the registry stays inside its vocabulary and stays consistent. A
+  `restricted-research` or `prohibited` record carrying Targets, a recorded refusal
+  that left the Targets behind, `cdn` or `mobile-pack` without the `web` Target
+  that clears them, two records claiming one key, unsorted records, evidence with
+  no public URL and no committed file, or a missing retrieval or review date are
+  all errors naming the record.
+
+A new Source therefore means, in the same pull request: the fetcher, the record,
+and a changeset (the registry ships in `@geoalgeria/schema`). The classification
+comes from the Source's own terms, read and dated, not from the fact that the page
+loaded without a login. Where the terms grant nothing, `rights-unconfirmed` is the
+correct answer and not a placeholder: a Source that Web and npm already publish
+carries `cdn` and `mobile-pack` on that basis alone, and a Source they do not
+publish carries neither.
+
+Package `license` fields, `LICENSE` files and metadata licence text are untouched
+by the registry. It is the decision record a generator reads, not a new claim about
+terms.
+
 ### Search-key rules
 `@geoalgeria/normalize` publishes the orthographic equivalences GeoAlgeria asserts
 about Algerian names as a reviewed table, so that someone who reads the language
