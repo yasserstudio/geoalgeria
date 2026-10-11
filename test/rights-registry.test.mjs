@@ -128,13 +128,17 @@ test("two records cannot claim one key", () => {
     registryErrors(
       registryOf(record(), record({ key: "other", metadata_keys: ["other", "fixture"] })),
     ),
-    /key `fixture` is already claimed by `fixture`|key `fixture` is already claimed by `other`/,
+    /registry\/other: key `fixture` is already claimed by `fixture`/,
   );
 });
 
 test("records must be sorted by key", () => {
-  const unsorted = { version: 1, updated: "2026-10-11", sources: [record({ key: "z" }), record({ key: "a" })] };
-  assert.match(registryErrors(unsorted).join(" | "), /records must be sorted by `key`/);
+  const unsorted = {
+    version: 1,
+    updated: "2026-10-11",
+    sources: [record({ key: "z", metadata_keys: ["z"] }), record({ key: "a", metadata_keys: ["a"] })],
+  };
+  only(registryErrors(unsorted), /records must be sorted by `key`/);
 });
 
 test("a classification needs checkable evidence and a retrieval date", () => {
