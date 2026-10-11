@@ -8,7 +8,6 @@ This package is the single source of truth for the shape of GeoAlgeria's open da
 - **A zero-dependency runtime validator** – `validateRecords` / `validateMetadata`. Enforces the contract (string `wilaya_code`, string ONS `commune_code`, `geo_precision: exact|approximate|null` and `geo_method`, each null if and only if the record has no coordinate, `lat`/`lng`, `refs`), an always-on **Algeria-bbox coordinate guard** that catches lat/lng swaps and sign flips, and an optional **point-in-wilaya** check when you supply boundary polygons.
 - **Canonical builders** – `buildMetadata` (counts, precision breakdown, honest `estimated_universe` coverage, `bbox`), `buildManifest` (the repo catalog / `index.json`), and `buildDcat` (a schema.org `Dataset` descriptor for Google Dataset Search / AI answer engines).
 - **Emit helpers** – `toCSV`, `toGeoJSON`, `wcode`, `round6`, `haversine`, `bbox`.
-- **The Source rights registry** – one record per Source, and `isSourceClearedFor(sourceKey, target)`, the one question a publisher asks of it. See below.
 
 ## Usage
 
@@ -41,35 +40,34 @@ const meta = buildMetadata({
 | `geo_method` | `string \| null` | how the point was obtained (`"osm_node"`, …); **null iff `lat`/`lng` are null** |
 | `refs` | `{ osm?, wikidata?, msp?, … }` | cross-dataset external ids |
 
-## Source rights registry
+## Source rights registry (not part of this package)
 
-A package's `license` field says how the package may be used. It does not say what
-may be done with each Source behind it, and the sentences in
-`metadata.sources[].license` only look like they do. `rights/registry.json` holds
-that decision as data: one record per Source, keyed by the Source key the packages
-already use, with its access class, rights class, the targets it is cleared for
-(`web`, `npm`, `cdn`, `mobile-pack`, `live`), attribution and NOTICE text, the
-evidence the classification was read from with a retrieval date, a review date, and
-a slot for a recorded refusal.
+`rights/registry.json` and `src/rights.js` sit in this directory but are **not**
+published with it: `rights/` is outside the npm files, `src/rights.js` is excluded
+from them, and `index.js` never reaches either. They live here because the
+generators that read the contract are the ones that read the rights, and they are
+read by path from a data checkout rather than installed:
 
 ```js
-import { isSourceClearedFor, sourcesClearedFor } from "@geoalgeria/schema";
+import { isSourceClearedFor } from "<data checkout>/packages/schema/src/rights.js";
 
 isSourceClearedFor("osm", "mobile-pack"); // true
 isSourceClearedFor("sogral-timetable", "cdn"); // false: restricted-research
 isSourceClearedFor("whatever-nobody-classified", "npm"); // false: no record
-sourcesClearedFor("cdn"); // every Source key an offline release may carry
 ```
 
-`isSourceClearedFor` **fails closed**, deliberately unlike `evidenceForSourceKey`:
-an unknown Source, an unknown rights class, an unknown target,
-`restricted-research`, `prohibited`, or a recorded refusal all answer `false`,
-whatever a record's `allowed_targets` says. A false "no" costs one Sector in one
-release and is visible; a false "yes" is an unlicensed copy that cannot be
-withdrawn until the holder takes a newer release.
+One record per Source holds its access class, rights class, the targets it is
+cleared for (`web`, `npm`, `cdn`, `mobile-pack`, `live`), attribution and NOTICE
+text, public evidence with a retrieval date, and a review date. The reader **fails
+closed**, deliberately unlike `evidenceForSourceKey`: an unknown Source, a key two
+records claim, an unknown rights class, an unknown target, `restricted-research`,
+`prohibited`, or a recorded refusal all answer `false`, whatever a record's
+`allowed_targets` says. One record covers every key one Source was captured under,
+so `osm`, `osm-communes` and `osm-admin-centre-2026-09-29` resolve to the same
+rights.
 
-One record covers every key one Source was captured under, so `osm`,
-`osm-communes` and `osm-admin-centre-2026-09-29` resolve to the same rights.
+The rule, the vocabulary and what `pnpm validate` enforces are in
+[CONTRIBUTING.md](../../CONTRIBUTING.md#source-rights-registry).
 
 ## Boundary checks
 

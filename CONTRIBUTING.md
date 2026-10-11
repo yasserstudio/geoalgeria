@@ -182,35 +182,56 @@ packages mix Sources: `@geoalgeria/sante` is an official registry plus ODbL and
 CC0 geocoding.
 
 [`packages/schema/rights/registry.json`](packages/schema/rights/registry.json)
-holds one record per Source: the permanent Source key, every
-`metadata.sources[].key` it is captured under, its
-[Access class and Rights class](CONTEXT.md#source-rights), the Targets it is
-cleared for, attribution and NOTICE text, the evidence the classification was read
-from with a retrieval date, a review date, and a slot for a Recorded refusal.
-`isSourceClearedFor(sourceKey, target)` from `@geoalgeria/schema` is the only
-question a publisher asks of it, and it fails closed: an unknown Source, an unknown
-Rights class, an unknown Target, `restricted-research`, `prohibited`, or a recorded
-refusal all answer no, whatever `allowed_targets` says.
+holds one record per Source: the permanent Source key, every Source key it is
+captured under, its [Access class and Rights class](CONTEXT.md#source-rights), the
+Targets it is cleared for, attribution and NOTICE text, the evidence the
+classification was read from with a retrieval date, a review date, and a slot for
+a Recorded refusal. 49 records cover the 57 distinct Source keys the packages
+publish.
+
+The registry is a **repository file**, not part of any published package: it sits
+beside `@geoalgeria/schema` for the generators that already import that contract,
+but `rights/registry.json` is excluded from the npm files and the package entry
+point does not reach it. Read it by path from a checkout, which is how the Content
+release generator reads it at a pinned data commit:
+
+```js
+import { isSourceClearedFor } from "<data checkout>/packages/schema/src/rights.js";
+```
+
+`isSourceClearedFor(sourceKey, target)` is the only question a publisher asks, and
+it fails closed: an unknown Source, a key two records claim, an unknown Rights
+class, an unknown Target, `restricted-research`, `prohibited`, or a recorded
+refusal all answer no, whatever `allowed_targets` says. `clearanceForMetadata`
+asks it for a whole dataset and names the Sources that block a Target.
 
 `pnpm validate` enforces two rules:
 
-- every Source key in every `data/metadata.json` and `<file>.metadata.json`
-  resolves to a record. Adding a Source to a fetcher without classifying it fails
-  the build, which is the point: a Source with no record enters no Target.
+- every Source key in every published `.json` and `.geojson` under a package's
+  `data/` resolves to exactly one record. The scan reads them at any depth,
+  because `sources` and `source` are overloaded: a provenance block of objects
+  with a `key`, a record-level array of bare keys, a record's `source` string with
+  keys joined by `+`, and prose or URL citations in those same positions. A key is
+  lowercase with no spaces, and that shape is what tells the two apart, so the
+  registry's own keys are held to it too. Adding a Source to a fetcher without
+  classifying it fails the build, which is the point: a Source with no record
+  enters no Target.
 - the registry stays inside its vocabulary and stays consistent. A
   `restricted-research` or `prohibited` record carrying Targets, a recorded refusal
-  that left the Targets behind, `cdn` or `mobile-pack` without the `web` Target
-  that clears them, two records claiming one key, unsorted records, evidence with
-  no public URL and no committed file, or a missing retrieval or review date are
-  all errors naming the record.
+  that left the Targets behind, `cdn` or `mobile-pack` without both the `web` and
+  `npm` Targets that clear them, two records claiming one key, unsorted records,
+  evidence with no public URL and no committed file, or a missing retrieval or
+  review date are all errors naming the record. A `review_after` that has passed is
+  a warning, not a failure.
 
-A new Source therefore means, in the same pull request: the fetcher, the record,
-and a changeset (the registry ships in `@geoalgeria/schema`). The classification
-comes from the Source's own terms, read and dated, not from the fact that the page
-loaded without a login. Where the terms grant nothing, `rights-unconfirmed` is the
-correct answer and not a placeholder: a Source that Web and npm already publish
-carries `cdn` and `mobile-pack` on that basis alone, and a Source they do not
-publish carries neither.
+A new Source therefore means, in the same pull request: the fetcher and the
+record. No changeset, because nothing published changes. The classification comes
+from the Source's own terms, read and dated, not from the fact that the page loaded
+without a login. Where the terms grant nothing, `rights-unconfirmed` is the correct
+answer and not a placeholder: a Source that Web and npm already publish carries
+`cdn` and `mobile-pack` on that basis alone, and a Source they do not publish
+carries neither. Third-party tiles and styles are `prohibited` and carry no Target
+in any form.
 
 Package `license` fields, `LICENSE` files and metadata licence text are untouched
 by the registry. It is the decision record a generator reads, not a new claim about

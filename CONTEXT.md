@@ -259,7 +259,7 @@ _Avoid_: accuracy, precision score
 ### Source rights
 
 **Source rights record**:
-One Source's rights decision as data: its permanent Source key, the keys packages capture it under, its Access class and Rights class, the Targets it is cleared for, its attribution and NOTICE text, the evidence the classification was read from with a retrieval date, a review date, and a slot for a Recorded refusal. One record per Source, never per package, because packages mix Sources. Lives in `packages/schema/rights/registry.json`; `isSourceClearedFor` is the only question asked of it.
+One Source's rights decision as data: its permanent Source key, the keys packages capture it under, its Access class and Rights class, the Targets it is cleared for, its attribution and NOTICE text, the evidence the classification was read from with a retrieval date, a review date, and a slot for a Recorded refusal. One record per Source, never per package, because packages mix Sources. Lives in `packages/schema/rights/registry.json`, a repository file read by path from a checkout and published in no package; `isSourceClearedFor` is the only question asked of it.
 _Avoid_: licence record, rights manifest, permission table
 
 **Access class**:

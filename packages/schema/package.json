@@ -13,8 +13,8 @@
   },
   "files": [
     "index.js",
-    "rights/",
     "src/",
+    "!src/rights.js",
     "types/"
   ],
   "scripts": {
