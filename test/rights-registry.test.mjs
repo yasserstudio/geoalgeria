@@ -10,14 +10,122 @@ import assert from "node:assert/strict";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { packageSourceRefs, registryErrors, unregisteredSourceErrors } from "../scripts/lib/rights-registry.mjs";
+import {
+  packageSourceRefs,
+  registryErrors,
+  registryWarnings,
+  sourceRefsInDocument,
+  unregisteredSourceErrors,
+} from "../scripts/lib/rights-registry.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-test("every Source key in published metadata resolves to a rights record", () => {
+test("every Source key in published data resolves to a rights record", () => {
   const refs = packageSourceRefs(join(ROOT, "packages"));
   assert.ok(refs.length > 0, "the scan found no Source references at all");
   assert.deepEqual(unregisteredSourceErrors(refs), []);
+});
+
+test("the scan reaches Sources no metadata-named file declares", () => {
+  // The first version of this scan only read `sources` at the top level of
+  // metadata.json and *.metadata.json, and these seven keys are what it missed:
+  // they sit under `metadata.sources` in two ordinary data files.
+  const keys = new Set(packageSourceRefs(join(ROOT, "packages")).map((r) => r.key));
+  for (const key of [
+    "jora-25-2026",
+    "jora-25-2026-ar",
+    "jora-40-2026",
+    "jora-52-2026",
+    "arpce-numbering",
+    "arpce-numbering-plan-2007",
+    "algerie-telecom-numerotations",
+  ])
+    assert.ok(keys.has(key), `the scan should have found ${key}`);
+});
+
+test("a document declares its Sources at any depth, in `sources` and in `source`", () => {
+  assert.deepEqual(
+    sourceRefsInDocument(
+      {
+        metadata: { sources: [{ key: "jora-25-2026" }, { key: "arpce-numbering" }] },
+        rows: [
+          { id: 1, source: "msp" },
+          { id: 2, source: "wikidata+osm" },
+          { id: 3, source: "msp" },
+        ],
+      },
+      "pkg/data/x.json",
+    ),
+    [
+      { where: "pkg/data/x.json", key: "jora-25-2026" },
+      { where: "pkg/data/x.json", key: "arpce-numbering" },
+      { where: "pkg/data/x.json", key: "msp" },
+      { where: "pkg/data/x.json", key: "wikidata" },
+      { where: "pkg/data/x.json", key: "osm" },
+    ],
+  );
+});
+
+test("a document reads a GeoJSON feature's properties.source", () => {
+  assert.deepEqual(
+    sourceRefsInDocument(
+      { type: "FeatureCollection", features: [{ properties: { source: "dgpc" }, geometry: null }] },
+      "pkg/data/geojson/x.geojson",
+    ),
+    [{ where: "pkg/data/geojson/x.geojson", key: "dgpc" }],
+  );
+});
+
+test("a citation URL in `source` is not a Source key", () => {
+  // @geoalgeria/aviation cites each flight leg to the page that publishes the
+  // service, in the same `source` field other packages put a Source key in.
+  // Those pages are cited, never redistributed, so they are not Sources here.
+  assert.deepEqual(
+    sourceRefsInDocument(
+      [{ id: "alg-cdg", source: "https://www.parisaeroport.fr/" }, { id: "alg", source: "anac" }],
+      "packages/aviation/data/routes.json",
+    ),
+    [{ where: "packages/aviation/data/routes.json", key: "anac" }],
+  );
+});
+
+test("prose in a `source` or `sources` position is a citation, not a key", () => {
+  // packages/dataset/data/osm-links.metadata.json describes itself in `source`,
+  // and packages/dataset/data/wilayas.json and name-history.json cite official
+  // texts as strings in `sources`. A key is lowercase with no spaces; these are
+  // sentences, so they name no Source to look up.
+  assert.deepEqual(
+    sourceRefsInDocument(
+      { title: "links", source: "OpenStreetMap administrative relations, via Overpass" },
+      "pkg/data/x.metadata.json",
+    ),
+    [],
+  );
+  assert.deepEqual(
+    sourceRefsInDocument(
+      { metadata: { sources: ["Office National des Statistiques: Code Geographique National 2021"] } },
+      "pkg/data/wilayas.json",
+    ),
+    [],
+  );
+});
+
+test("a `sources` array of bare keys is read as keys", () => {
+  // @geoalgeria/livraison records carry every carrier that lists the stop desk.
+  assert.deepEqual(
+    sourceRefsInDocument([{ id: 1, sources: ["guepex", "yalidine"] }], "livraison/data/stopdesks.json"),
+    [
+      { where: "livraison/data/stopdesks.json", key: "guepex" },
+      { where: "livraison/data/stopdesks.json", key: "yalidine" },
+    ],
+  );
+});
+
+test("a provenance entry with no key is reported rather than skipped", () => {
+  assert.deepEqual(
+    unregisteredSourceErrors(sourceRefsInDocument({ sources: [{ name: "someone" }] }, "pkg/data/x.json")),
+    ["pkg/data/x.json: a source has no `key`, so its rights cannot be looked up"],
+  );
 });
 
 test("a Source with no record is reported, with the file that names it", () => {
@@ -90,9 +198,9 @@ test("a target outside the vocabulary fails", () => {
 test("a restricted-research Source may list no target", () => {
   only(
     registryErrors(
-      registryOf(record({ rights_class: "restricted-research", allowed_targets: ["cdn", "web"] })),
+      registryOf(record({ rights_class: "restricted-research", allowed_targets: ["web", "npm"] })),
     ),
-    /restricted-research Source lists cdn, web; it must list none/,
+    /restricted-research Source lists web, npm; it must list none/,
   );
   assert.deepEqual(
     registryErrors(registryOf(record({ rights_class: "restricted-research", allowed_targets: [] }))),
@@ -116,11 +224,35 @@ test("a recorded refusal must clear every target in the same change", () => {
   assert.deepEqual(registryErrors(registryOf(record({ refusal, allowed_targets: [] }))), []);
 });
 
-test("the offline targets need the web target they are cleared through", () => {
-  const errors = registryErrors(registryOf(record({ allowed_targets: ["npm", "cdn", "mobile-pack"] })));
-  assert.equal(errors.length, 2);
-  assert.match(errors[0], /`cdn` without `web`/);
-  assert.match(errors[1], /`mobile-pack` without `web`/);
+test("the offline targets need both targets they are cleared through", () => {
+  // ADR 0010 clears cdn and mobile-pack through what Web *and* npm publish
+  // today, so either one missing removes the basis for both.
+  for (const [targets, missing] of [
+    [["npm", "cdn", "mobile-pack"], "web"],
+    [["web", "cdn", "mobile-pack"], "npm"],
+  ]) {
+    const errors = registryErrors(registryOf(record({ allowed_targets: targets })));
+    assert.equal(errors.length, 2, errors.join(" | "));
+    assert.match(errors[0], new RegExp("`cdn` needs `web` and `npm`"));
+    assert.match(errors[1], new RegExp("`mobile-pack` needs `web` and `npm`"));
+    assert.match(errors[0], new RegExp(missing));
+  }
+  assert.deepEqual(registryErrors(registryOf(record({ allowed_targets: ["web", "npm", "cdn"] }))), []);
+});
+
+test("a review date in the past warns and does not fail", () => {
+  // A classification nobody has revisited is a real problem and a bad reason to
+  // redden CI on a day nobody changed anything.
+  const stale = registryOf(record({ review_after: "2020-01-01" }));
+  assert.deepEqual(registryErrors(stale), []);
+  const warnings = registryWarnings(stale, new Date("2026-10-11T00:00:00Z"));
+  assert.equal(warnings.length, 1);
+  assert.match(warnings[0], /registry\/fixture: review_after 2020-01-01 has passed/);
+  assert.deepEqual(registryWarnings(registryOf(record()), new Date("2026-10-11T00:00:00Z")), []);
+});
+
+test("the shipped registry has no stale review date today", () => {
+  assert.deepEqual(registryWarnings(), []);
 });
 
 test("two records cannot claim one key", () => {

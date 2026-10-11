@@ -1,36 +1,39 @@
 {
   "version": 1,
   "updated": "2026-10-11",
-  "policy": {
-    "governance": "app docs/research/public-data-governance-and-licensing.md",
-    "adr": "app docs/adr/0010-offline-packs-follow-the-web-and-npm-rule.md",
-    "rule": "A Source with no record enters no target. A Source Web and npm publish today also carries cdn and mobile-pack (ADR 0010). restricted-research, prohibited and third-party tiles carry none. A recorded refusal removes every target."
-  },
+  "rule": "A Source with no record enters no target. A Source Web and npm publish today also carries cdn and mobile-pack (ADR 0010). restricted-research, prohibited and third-party tiles carry none. A recorded refusal removes every target.",
   "sources": [
     {
       "key": "algerie-telecom",
-      "name": "Algérie Télécom: agency finder",
+      "name": "Algérie Télécom: agency finder and numbering notices",
       "publisher": "Algérie Télécom",
-      "metadata_keys": [],
+      "metadata_keys": [
+        "algerie-telecom-numerotations"
+      ],
       "access_class": "public-access",
       "rights_class": "rights-unconfirmed",
       "rights_basis": "none-recorded",
       "license_expression": null,
       "license_url": null,
-      "allowed_targets": [],
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
       "attribution": {
         "text": "Algérie Télécom",
         "url": "https://www.algerietelecom.dz"
       },
-      "notice": "Agency locations: data © Algérie Télécom, redistributed for reference; no open reuse licence is recorded.",
+      "notice": "Agency locations and area-code notices: data © Algérie Télécom, redistributed for reference; no open reuse licence is recorded.",
       "evidence": {
-        "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+        "source_url": "https://www.algerietelecom.dz/fr/basculement/20",
         "repo_path": "sources/algerie-telecom/manifest.json",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded. The capture is committed under sources/ and no package publishes it."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
-      "notes": "No target: Web and npm publish nothing from it today, so ADR 0010's rule adds nothing. A package built on it needs this record changed first.",
+      "notes": "The numbering notices are cited by the flagship dataset's phone-code provenance ledger, which npm publishes. The agency capture under sources/ feeds no package yet.",
       "refusal": null
     },
     {
@@ -60,7 +63,7 @@
         "source_url": "https://www.anac.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -93,7 +96,7 @@
         "source_url": "https://anderson-ecommerce.com/",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -126,10 +129,44 @@
         "source_url": "https://www.anem.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "arpce",
+      "name": "ARPCE: national numbering plan and numbering decisions",
+      "publisher": "Autorité de Régulation de la Poste et des Communications Électroniques",
+      "metadata_keys": [
+        "arpce-numbering",
+        "arpce-numbering-plan-2007"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Autorité de Régulation de la Poste et des Communications Électroniques (ARPCE)",
+        "url": "https://www.arpce.dz/en/service/num"
+      },
+      "notice": "Wilaya telephone area codes read from the ARPCE numbering plan and its published decisions, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.arpce.dz/en/service/num",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Behind the phone_code values of the 2026 wilaya cohort, recorded in the flagship dataset's phone-code provenance ledger.",
       "refusal": null
     },
     {
@@ -159,7 +196,7 @@
         "source_url": "https://www.asal.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -192,10 +229,10 @@
         "source_url": null,
         "repo_path": "packages/banques/LICENSE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded for any of them; the package LICENSE records the terms as public factual data redistributed for reference. app docs/research/public-data-governance-and-licensing.md asks that the Banque d'Algérie regulatory identity be kept separate from bank-owned locator data, and that permission be sought per bank."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The package LICENSE records the terms as public factual data redistributed for reference."
       },
       "review_after": "2027-03-02",
-      "notes": "One record for a group of Sources, as the packages key it: @geoalgeria/banques names every locator under the single key bank_locator. Splitting it per bank is the follow-up the inventory asks for.",
+      "notes": "One record for a group of Sources, as the packages key it: @geoalgeria/banques names every locator under the single key bank_locator. A per-bank split is a follow-up.",
       "refusal": null
     },
     {
@@ -225,10 +262,10 @@
         "source_url": "https://baridimap.poste.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
-      "notes": "The inventory asks for written permission and says not to commit full API or site payloads. The mirrored postal data under the flagship dataset's data/poste carries the same terms.",
+      "notes": "The mirrored postal data under the flagship dataset's data/poste carries the same terms.",
       "refusal": null
     },
     {
@@ -258,7 +295,7 @@
         "source_url": "https://www.bank-of-algeria.dz/banques-commerciales/",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -270,24 +307,24 @@
       "publisher": "CARTO",
       "metadata_keys": [],
       "access_class": "account-access",
-      "rights_class": "rights-unconfirmed",
+      "rights_class": "prohibited",
       "rights_basis": "provider-terms",
       "license_expression": null,
-      "license_url": null,
+      "license_url": "https://carto.com/legal/",
       "allowed_targets": [],
       "attribution": {
         "text": "CARTO",
-        "url": "https://carto.com"
+        "url": "https://carto.com/legal/"
       },
       "notice": null,
       "evidence": {
-        "source_url": "https://carto.com",
+        "source_url": "https://carto.com/legal/",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "Provider and service terms, not an open-data grant to republish a tile archive."
+        "note": "The provider's service terms, not an open-data grant to redistribute an archive of its tiles or imagery."
       },
       "review_after": "2027-03-02",
-      "notes": "Rendered from the provider's own endpoint under the provider's terms, which is not a GeoAlgeria publication target. Never a target: no npm, no public Git, no CDN mirror, no offline pack. OpenStreetMap's data licence grants nothing over a third party's tiles or style.",
+      "notes": "Rendered from the provider's own endpoint under the provider's terms. Never a target: no npm, no public Git, no CDN mirror, no offline pack. OpenStreetMap's data licence grants nothing over a third party's tiles or style.",
       "refusal": null
     },
     {
@@ -317,7 +354,7 @@
         "source_url": "https://dgpc.dz/dgpc2/",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -350,7 +387,7 @@
         "source_url": "https://www.djezzy.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -361,25 +398,25 @@
       "name": "Esri World Imagery tiles",
       "publisher": "Esri",
       "metadata_keys": [],
-      "access_class": "public-access",
-      "rights_class": "rights-unconfirmed",
+      "access_class": "account-access",
+      "rights_class": "prohibited",
       "rights_basis": "provider-terms",
       "license_expression": null,
-      "license_url": null,
+      "license_url": "https://www.esri.com/en-us/legal/terms/full-master-agreement",
       "allowed_targets": [],
       "attribution": {
         "text": "Esri",
-        "url": "https://www.esri.com"
+        "url": "https://www.esri.com/en-us/legal/terms/full-master-agreement"
       },
       "notice": null,
       "evidence": {
-        "source_url": "https://www.esri.com",
+        "source_url": "https://www.esri.com/en-us/legal/terms/full-master-agreement",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "Provider and service terms, not an open-data grant to republish an imagery archive."
+        "note": "The provider's service terms, not an open-data grant to redistribute an archive of its tiles or imagery."
       },
       "review_after": "2027-03-02",
-      "notes": "Rendered from the provider's own endpoint under the provider's terms, which is not a GeoAlgeria publication target. Never a target: no npm, no public Git, no CDN mirror, no offline pack. OpenStreetMap's data licence grants nothing over a third party's tiles or style.",
+      "notes": "Rendered from the provider's own endpoint under the provider's terms. Never a target: no npm, no public Git, no CDN mirror, no offline pack. OpenStreetMap's data licence grants nothing over a third party's tiles or style.",
       "refusal": null
     },
     {
@@ -409,10 +446,10 @@
         "source_url": "https://www.facebook.com/p/ETO-100093054514209/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -442,10 +479,10 @@
         "source_url": null,
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -475,10 +512,10 @@
         "source_url": "https://www.facebook.com/ETUS44/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -508,10 +545,10 @@
         "source_url": "https://www.facebook.com/100063517660926/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -541,10 +578,10 @@
         "source_url": "https://etusbejaia.dz/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -574,10 +611,10 @@
         "source_url": null,
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -607,10 +644,10 @@
         "source_url": "https://etus-msila.dz/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -640,10 +677,10 @@
         "source_url": null,
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -673,10 +710,10 @@
         "source_url": null,
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -706,10 +743,10 @@
         "source_url": "https://etus22.dz/Horaires.php",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -739,10 +776,10 @@
         "source_url": "https://etus-skikda.dz/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -772,10 +809,10 @@
         "source_url": "https://www.etus-tiaret.dz/ar/lines",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -805,10 +842,10 @@
         "source_url": "https://www.facebook.com/etustlemcen13/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -838,10 +875,10 @@
         "source_url": "http://etusto.dz/espv.html",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
       "refusal": null
     },
     {
@@ -871,7 +908,7 @@
         "source_url": "https://www.guepex.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -879,12 +916,16 @@
     },
     {
       "key": "jora",
-      "name": "Journal Officiel de la République Algérienne: laws and chefs-lieux decrees",
+      "name": "Journal Officiel de la République Algérienne: laws and decrees",
       "publisher": "Secrétariat Général du Gouvernement",
       "metadata_keys": [
-        "decret-84-79",
         "decret-21-117",
-        "decret-26-206"
+        "decret-26-206",
+        "decret-84-79",
+        "jora-25-2026",
+        "jora-25-2026-ar",
+        "jora-40-2026",
+        "jora-52-2026"
       ],
       "access_class": "public-access",
       "rights_class": "rights-unconfirmed",
@@ -901,15 +942,15 @@
         "text": "Journal Officiel de la République Algérienne (JORA)",
         "url": "https://www.joradp.dz"
       },
-      "notice": "Wilaya names, seats and the territorial reform are taken from the Journal Officiel, cited per instrument with its issue and page.",
+      "notice": "Wilaya and daira names, seats and the territorial reform are taken from the Journal Officiel, cited per instrument with its issue and page.",
       "evidence": {
-        "source_url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+        "source_url": "https://www.joradp.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "Ordinance 03-05 article 11 excludes laws, regulations and administrative acts from copyright, but app docs/research/public-data-governance-and-licensing.md keeps that conclusion as a counsel gate rather than a recorded grant, so the class stays rights-unconfirmed."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. Ordinance 03-05 article 11 excludes laws, regulations and administrative acts from copyright; the review did not convert that into a recorded grant."
       },
       "review_after": "2027-03-02",
-      "notes": "Covers decret 84-79 (1984), decret presidentiel 21-117 (2021) and decret presidentiel 26-206 (2026), plus Law 19-12 and Law 26-06 as cited by the flagship dataset.",
+      "notes": "One record for the Journal Officiel, with one metadata key per cited issue: decret 84-79 (1984), decret présidentiel 21-117 (2021), decret présidentiel 26-206 (2026), JO 25 of 2026 in French and Arabic, JO 40 of 2026 and JO 52 of 2026.",
       "refusal": null
     },
     {
@@ -939,7 +980,7 @@
         "source_url": "https://madr.gov.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -972,7 +1013,7 @@
         "source_url": "https://maystro-delivery.com/Coverage.html",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1005,7 +1046,7 @@
         "source_url": "https://www.mesrs.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1038,7 +1079,7 @@
         "source_url": "https://takwin.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1071,7 +1112,7 @@
         "source_url": "https://www.miph.gov.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1104,7 +1145,7 @@
         "source_url": "https://sig.mjs.gov.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1137,7 +1178,7 @@
         "source_url": "https://www.mobilis.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1170,7 +1211,7 @@
         "source_url": "https://sante.gov.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1203,7 +1244,7 @@
         "source_url": "https://noest-dz.com/",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1234,7 +1275,7 @@
         "source_url": "https://www.ons.dz/IMG/pdf/code_geo_2021.pdf",
         "repo_path": "sources/dataset/ons-code-geo-2021.json",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded. The inventory in app docs/research/public-data-governance-and-licensing.md warns that an ONS table must not inherit the Official Journal's article-11 conclusion without counsel. The committed capture carries the retrieval date and sha256."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The committed capture carries the retrieval date and the sha256."
       },
       "review_after": "2027-03-02",
       "notes": "Named in the flagship dataset's measurementTechnique and citation rather than a metadata.sources[] key, so this record carries no metadata key; the dataset's administrative codes are what it covers.",
@@ -1267,7 +1308,7 @@
         "source_url": "https://www.ooredoo.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1309,7 +1350,7 @@
         "note": "OpenStreetMap states the data may be copied, distributed and adapted with credit and same-licence treatment for altered or built-upon data."
       },
       "review_after": "2027-09-02",
-      "notes": "Share-alike applies to a Derivative Database, and whether each OSM-enriched dataset or offline pack is a Derivative Database, a Collective Database or a Produced Work is a counsel question the inventory leaves open. API, Nominatim and tile usage policies are separate from the data licence.",
+      "notes": "Share-alike applies to a Derivative Database. API, Nominatim and tile usage policies are separate from the data licence.",
       "refusal": null
     },
     {
@@ -1372,7 +1413,7 @@
         "source_url": "https://cartes.patrimoineculturelalgerien.org",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1405,7 +1446,7 @@
         "source_url": "https://live.sogral.com",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence; the package metadata only says \"redistributed for reference\". app docs/research/public-data-governance-and-licensing.md marks the station directory a counsel gate and asks for written permission."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The package metadata states only that the data is redistributed for reference."
       },
       "review_after": "2027-03-02",
       "notes": "The station directory only. The observed connection graph is sogral-mahatati-graph and the timetable captures are sogral-timetable; neither is covered by this record.",
@@ -1433,10 +1474,10 @@
         "source_url": "https://live.sogral.com",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence, and app docs/research/public-data-governance-and-licensing.md records the Source footer as all rights reserved. Attribution, the omission of times and a facts-only transformation reduce product risk without establishing a right to systematic extraction."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
-      "notes": "Served by Web at /departures and by no npm package, so ADR 0010's rule reaches web and no further: no cdn, no mobile-pack. A counsel gate in the inventory.",
+      "notes": "Served by Web at /departures and by no npm package, so ADR 0010's rule reaches web and no further: no cdn, no mobile-pack.",
       "refusal": null
     },
     {
@@ -1459,10 +1500,10 @@
         "source_url": "https://live.sogral.com",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "Deliberately restricted locally; app docs/research/public-data-governance-and-licensing.md classifies the captures restricted-research and ADR 0010 keeps them out of every public target."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. Held locally as research material only."
       },
       "review_after": "2027-03-02",
-      "notes": "Never published, packaged or exposed from a production endpoint. Full volatile captures expire within 30 days of the research need ending; hashes, Source URLs, capture parameters and dates are what is kept.",
+      "notes": "Never published, packaged or exposed from a production endpoint. Full captures expire within 30 days of the research need ending; hashes, Source URLs, capture parameters and dates are what is kept.",
       "refusal": null
     },
     {
@@ -1528,7 +1569,7 @@
         "note": "Wikimedia text terms; the buses NOTICE selects CC BY-SA 4.0. Record the page URL and revision id."
       },
       "review_after": "2027-09-02",
-      "notes": "Whether a facts-only extraction escapes copyright and share-alike is a counsel question; the release posture is to keep treating it as CC BY-SA.",
+      "notes": "Share-alike applies to a protected adaptation of the article.",
       "refusal": null
     },
     {
@@ -1558,7 +1599,7 @@
         "source_url": "https://yalidine-express.com.dz/nos-agences/",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded; classified from the Source inventory in app docs/research/public-data-governance-and-licensing.md."
+        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
       },
       "review_after": "2027-03-02",
       "notes": null,

@@ -4,6 +4,10 @@
 //
 // The cases that matter are the "no" ones. A reader that fails open is worse
 // than no registry at all, because it looks like a gate.
+//
+// Imported by path, not from the package entry point: the registry is a
+// repository file read from a pinned data checkout, not part of the
+// @geoalgeria/schema surface.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
@@ -13,11 +17,12 @@ import {
   PUBLICATION_TARGETS,
   RIGHTS_BASES,
   RIGHTS_CLASSES,
+  clearanceForMetadata,
   isSourceClearedFor,
   rightsRecordFor,
   rightsRegistry,
   sourcesClearedFor,
-} from "../index.js";
+} from "../src/rights.js";
 
 /** A record shaped like the shipped ones, cleared everywhere unless overridden. */
 const record = (over = {}) => ({
@@ -43,7 +48,7 @@ const record = (over = {}) => ({
 /** A registry of exactly the records given. */
 const registryOf = (...records) => ({ version: 1, updated: "2026-10-11", sources: records });
 
-test("the vocabularies are the governance document's", () => {
+test("the vocabularies are the governance review's", () => {
   assert.deepEqual(ACCESS_CLASSES, [
     "public-access",
     "account-access",
@@ -73,6 +78,16 @@ test("a Source with no registry record is cleared for nothing", () => {
   assert.equal(isSourceClearedFor("a-source-nobody-classified", "npm"), false);
   assert.equal(isSourceClearedFor("a-source-nobody-classified", "mobile-pack"), false);
   assert.equal(rightsRecordFor("a-source-nobody-classified"), null);
+});
+
+test("a registry with no usable `sources` clears nothing", () => {
+  // `undefined` is not in this list on purpose: it means "the shipped registry",
+  // which is what the default parameter is for.
+  for (const broken of [{}, { sources: null }, { sources: "osm" }, { sources: {} }, null]) {
+    assert.equal(rightsRecordFor("osm", broken), null);
+    assert.equal(isSourceClearedFor("osm", "npm", broken), false);
+    assert.deepEqual(sourcesClearedFor("npm", broken), []);
+  }
 });
 
 test("a record clears exactly the targets it lists", () => {
@@ -114,7 +129,7 @@ test("a recorded refusal removes every target", () => {
   const reg = registryOf(
     record({
       allowed_targets: [...PUBLICATION_TARGETS],
-      refusal: { recorded_on: "2026-11-01", summary: "The Source owner asked in writing that the data not be redistributed." },
+      refusal: { recorded_on: "2026-11-01", summary: "The Source owner asked in writing not to be redistributed." },
     }),
   );
   for (const target of PUBLICATION_TARGETS) assert.equal(isSourceClearedFor("fixture", target, reg), false);
@@ -129,21 +144,63 @@ test("one Source answers for every key it was captured under", () => {
   assert.equal(rightsRecordFor("osm-communes", reg).key, "osm");
 });
 
-test("sourcesClearedFor lists record keys only, sorted", () => {
+test("a key two records claim resolves to neither", () => {
+  // Ambiguity is not a tie to break. Two records can disagree about the class,
+  // the targets or a refusal, and picking the first one found would make the
+  // answer depend on the order of the file.
+  const reg = registryOf(
+    record({ key: "a", metadata_keys: ["a", "shared"] }),
+    record({ key: "b", metadata_keys: ["b", "shared"] }),
+  );
+  assert.equal(rightsRecordFor("shared", reg), null);
+  for (const target of PUBLICATION_TARGETS) assert.equal(isSourceClearedFor("shared", target, reg), false);
+  assert.equal(isSourceClearedFor("a", "npm", reg), true, "an unambiguous key still answers");
+});
+
+test("sourcesClearedFor lists every key that resolves to a cleared record", () => {
+  // Alias-aware on purpose: a caller holding a record's `source` value asks this
+  // set with `has`, and a set of record keys only would answer no for a capture
+  // key that is in fact cleared.
   const reg = registryOf(
     record({ key: "b", metadata_keys: ["b", "b-2026"], allowed_targets: ["cdn"] }),
     record({ key: "a", metadata_keys: ["a"], allowed_targets: ["cdn", "npm"] }),
     record({ key: "c", metadata_keys: ["c"], allowed_targets: ["npm"] }),
   );
-  assert.deepEqual(sourcesClearedFor("cdn", reg), ["a", "b"]);
+  assert.deepEqual(sourcesClearedFor("cdn", reg), ["a", "b", "b-2026"]);
   assert.deepEqual(sourcesClearedFor("npm", reg), ["a", "c"]);
   assert.deepEqual(sourcesClearedFor("live", reg), []);
 });
 
+test("clearanceForMetadata names the Sources that block a target", () => {
+  const reg = registryOf(
+    record({ key: "open", metadata_keys: ["open"], allowed_targets: ["web", "npm", "cdn", "mobile-pack"] }),
+    record({ key: "held", metadata_keys: ["held"], rights_class: "restricted-research", allowed_targets: [] }),
+  );
+  assert.deepEqual(clearanceForMetadata({ sources: [{ key: "open" }] }, "cdn", reg), {
+    cleared: true,
+    blocking: [],
+  });
+  assert.deepEqual(
+    clearanceForMetadata({ sources: [{ key: "open" }, { key: "held" }, { key: "never-seen" }] }, "cdn", reg),
+    { cleared: false, blocking: ["held", "never-seen"] },
+  );
+});
+
+test("clearanceForMetadata fails closed on metadata that names no Source", () => {
+  const reg = registryOf(record());
+  for (const meta of [null, undefined, {}, { sources: [] }, { sources: "osm" }])
+    assert.deepEqual(clearanceForMetadata(meta, "cdn", reg), { cleared: false, blocking: [] });
+  // A source entry with no key is a blocker, not an absence.
+  assert.deepEqual(clearanceForMetadata({ sources: [{ name: "x" }] }, "cdn", reg), {
+    cleared: false,
+    blocking: ["(no key)"],
+  });
+});
+
 test("the shipped registry clears the administrative core for cdn and mobile-pack", () => {
   // ADR 0010: the national core's Wilaya, Daira and Commune rows come from the
-  // Sources Web publishes today, so a Content release can carry them.
-  for (const key of ["ons", "jora", "osm", "wikidata"]) {
+  // Sources Web and npm publish today, so a Content release can carry them.
+  for (const key of ["ons", "jora", "osm", "wikidata", "arpce", "algerie-telecom"]) {
     assert.equal(isSourceClearedFor(key, "cdn"), true, `${key} should be cleared for cdn`);
     assert.equal(isSourceClearedFor(key, "mobile-pack"), true, `${key} should be cleared for mobile-pack`);
   }
@@ -154,6 +211,74 @@ test("the shipped registry keeps the SOGRAL timetable and third-party tiles out 
     for (const target of PUBLICATION_TARGETS)
       assert.equal(isSourceClearedFor(key, target), false, `${key} must not be cleared for ${target}`);
   }
+});
+
+test("the SOGRAL observed graph stays web-only", () => {
+  assert.equal(isSourceClearedFor("sogral-mahatati-graph", "web"), true);
+  for (const target of ["npm", "cdn", "mobile-pack", "live"])
+    assert.equal(isSourceClearedFor("sogral-mahatati-graph", target), false);
+});
+
+// A Source key is permanent: packages, record `source` values and future Content
+// releases all name Sources by it. This list is the pin, so a rename or a
+// removal is a deliberate diff in this file and not a silent one in the data.
+const RECORD_KEYS = [
+  "algerie-telecom",
+  "anac",
+  "anderson",
+  "anem",
+  "arpce",
+  "asal",
+  "bank_locator",
+  "baridimap",
+  "boa",
+  "carto",
+  "dgpc",
+  "djezzy",
+  "esri",
+  "eto-oran",
+  "etul-laghouat",
+  "etus-ain-defla",
+  "etus-annaba",
+  "etus-bejaia",
+  "etus-c-constantine",
+  "etus-msila",
+  "etus-oeb",
+  "etus-setif",
+  "etus-sidi-bel-abbes",
+  "etus-skikda",
+  "etus-tiaret",
+  "etus-tlemcen",
+  "etusto",
+  "guepex",
+  "jora",
+  "madr",
+  "maystro",
+  "mesrs",
+  "mfep",
+  "mip",
+  "mjs",
+  "mobilis",
+  "msp",
+  "noest",
+  "ons",
+  "ooredoo",
+  "osm",
+  "ourairports",
+  "patrimoine",
+  "sogral",
+  "sogral-mahatati-graph",
+  "sogral-timetable",
+  "wikidata",
+  "wikipedia-fr",
+  "yalidine",
+];
+
+test("the shipped record keys are the pinned ones, in order", () => {
+  assert.deepEqual(
+    rightsRegistry().sources.map((r) => r.key),
+    RECORD_KEYS,
+  );
 });
 
 test("in the shipped registry every key resolves to one record or none", () => {

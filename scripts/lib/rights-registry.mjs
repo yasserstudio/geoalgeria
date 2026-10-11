@@ -1,4 +1,5 @@
-// The repository gate over the Source rights registry in @geoalgeria/schema.
+// The repository gate over the Source rights registry in
+// packages/schema/rights/registry.json.
 //
 // Two rules, and the reason each one exists:
 //
@@ -6,9 +7,12 @@
 //     this check existed, a fetcher could add a Source and nothing would notice:
 //     `metadata.sources[]` is free text, the schema validator reads its shape and
 //     not its rights, and the release machinery publishes whatever validated. So
-//     the fail-closed rule the governance research asks for has to be a scan of
-//     what is on disk rather than a declaration anyone keeps by hand, the same
-//     reason the licence rule reads every descriptor instead of a list.
+//     the fail-closed rule has to be a scan of what is on disk rather than a
+//     declaration anyone keeps by hand, the same reason the licence rule reads
+//     every descriptor instead of a list. The scan reads every published .json
+//     and .geojson at any depth, because reading only the top level of the
+//     metadata-named files missed seven Sources sitting one level down in two
+//     ordinary data files.
 //  2. The registry itself stays inside its vocabulary, and its records stay
 //     consistent with the publication rule. A record whose rights class is a typo
 //     reads as a classification and clears nothing, which would silently empty a
@@ -16,46 +20,116 @@
 //     Source still listing them, is a contradiction that must not sit in the file
 //     waiting for a reader that trusts it.
 //
-// The registry data and the reader live in packages/schema, because the Content
-// release generator in the app repository reads them from the pinned data
-// checkout. This module is the data repository's enforcement of them.
+// The registry data and the reader live under packages/schema but are not part of
+// that package's surface: the Content release generator reads them by path from a
+// pinned data checkout, and this module is the data repository's enforcement of
+// them.
 
-import { existsSync, readFileSync, readdirSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import {
   ACCESS_CLASSES,
+  NEVER_CLEARED_RIGHTS_CLASSES,
   PUBLICATION_TARGETS,
   RIGHTS_BASES,
   RIGHTS_CLASSES,
   rightsRecordFor,
   rightsRegistry,
-} from "../../packages/schema/index.js";
-import { publishedMetadataPaths } from "./licence-terms.mjs";
+} from "../../packages/schema/src/rights.js";
 
 const REPO_ROOT = fileURLToPath(new URL("../../", import.meta.url));
 
 /**
- * Every `metadata.sources[].key` under `packages/`, with the file that names it.
- * Discovered rather than listed: the point is to read what ships.
+ * The shape of a Source key, and therefore what tells a key from a citation.
+ * `sources` and `source` are overloaded in this repository and carry both:
+ *
+ *   sources: [{ key: "jora-25-2026", name: ..., url: ... }]  a provenance block
+ *   sources: ["yalidine", "guepex"]                          record-level keys
+ *   sources: ["JORA n 25 (2026), law 26-06 art. 7, p. 4"]    a prose citation
+ *   source:  "msp+osm"                                       record-level keys
+ *   source:  "https://www.parisaeroport.fr/"                 a per-leg citation
+ *
+ * Every key the repository uses is lowercase with no spaces; every citation has
+ * spaces, capitals or punctuation a key never carries. `registryErrors` holds
+ * the registry to the same shape, so the two sides cannot drift apart.
+ */
+const IS_SOURCE_KEY = /^[a-z0-9][a-z0-9_.-]*$/;
+
+/** The marker a source entry with no `key` is reported under. */
+const NO_KEY = "(no key)";
+
+/**
+ * Every Source key one published document declares, first occurrence kept.
+ *
+ * Read at any depth, in both shapes, because both appear nested: a `sources`
+ * array (of provenance objects with a `key`, or of bare keys on a record), and a
+ * record's own `source` string, which may name several keys joined by `+`. A
+ * value that is not key-shaped is a citation and contributes nothing; a
+ * provenance object with no `key` at all is reported, because that is a Source
+ * nobody can look up rather than a citation.
+ * @param {unknown} document parsed JSON
+ * @param {string} where the path to name in an error
+ * @returns {{where: string, key: string}[]}
+ */
+export function sourceRefsInDocument(document, where) {
+  const keys = new Set();
+  const add = (value) => {
+    if (typeof value === "string" && IS_SOURCE_KEY.test(value)) keys.add(value);
+  };
+  const walk = (value) => {
+    if (Array.isArray(value)) {
+      for (const entry of value) walk(entry);
+      return;
+    }
+    if (!value || typeof value !== "object") return;
+    if (Array.isArray(value.sources))
+      for (const source of value.sources) {
+        if (typeof source === "string") add(source);
+        else if (source && typeof source === "object")
+          keys.add(typeof source.key === "string" && source.key ? source.key : NO_KEY);
+      }
+    if (typeof value.source === "string") for (const key of value.source.split("+")) add(key);
+    for (const [name, child] of Object.entries(value)) if (name !== "sources") walk(child);
+  };
+  walk(document);
+  return [...keys].map((key) => ({ where, key }));
+}
+
+/**
+ * Every Source key declared by every published .json and .geojson under each
+ * package's `data/`, with the file that declares it. Discovered rather than
+ * listed: the point is to read what ships.
  * @param {string} packagesDir
- * @returns {{where: string, key: unknown}[]}
+ * @returns {{where: string, key: string}[]}
  */
 export function packageSourceRefs(packagesDir) {
   const refs = [];
   for (const pkg of readdirSync(packagesDir).sort()) {
     const dir = join(packagesDir, pkg);
     if (!existsSync(join(dir, "package.json"))) continue;
-    for (const rel of publishedMetadataPaths(dir)) {
-      let meta;
-      try {
-        meta = JSON.parse(readFileSync(join(dir, rel), "utf-8"));
-      } catch {
-        continue; // the licence and schema checks report a malformed descriptor
+    const dataDir = join(dir, "data");
+    if (!existsSync(dataDir)) continue;
+    const walk = (current) => {
+      for (const entry of readdirSync(current).sort()) {
+        const path = join(current, entry);
+        if (statSync(path).isDirectory()) {
+          walk(path);
+          continue;
+        }
+        if (!/\.(json|geojson)$/.test(entry)) continue;
+        let document;
+        try {
+          document = JSON.parse(readFileSync(path, "utf-8"));
+        } catch {
+          continue; // the licence and schema checks report a malformed file
+        }
+        const rel = relative(dir, path).split(sep).join("/");
+        refs.push(...sourceRefsInDocument(document, `${pkg}/${rel}`));
       }
-      for (const source of meta?.sources ?? []) refs.push({ where: `${pkg}/${rel}`, key: source?.key });
-    }
+    };
+    walk(dataDir);
   }
   return refs;
 }
@@ -70,23 +144,21 @@ export function packageSourceRefs(packagesDir) {
 export function unregisteredSourceErrors(refs, registry = rightsRegistry()) {
   const errors = [];
   for (const { where, key } of refs) {
-    if (typeof key !== "string" || !key) {
+    if (typeof key !== "string" || !key || key === NO_KEY) {
       errors.push(`${where}: a source has no \`key\`, so its rights cannot be looked up`);
       continue;
     }
     if (!rightsRecordFor(key, registry))
       errors.push(
-        `${where}: source \`${key}\` has no record in the Source rights registry ` +
-          `(packages/schema/rights/registry.json): add one, or list the key under an existing record's \`metadata_keys\``,
+        `${where}: source \`${key}\` resolves to no single record in the Source rights registry ` +
+          `(packages/schema/rights/registry.json): add a record, or list the key under an existing ` +
+          `record's \`metadata_keys\``,
       );
   }
   return errors;
 }
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
-
-/** Rights classes that may list no target at all, whatever else a record says. */
-const NO_TARGET_CLASSES = new Set(["restricted-research", "prohibited"]);
 
 /**
  * Errors (empty when the registry is well formed) for the registry document.
@@ -111,11 +183,16 @@ export function registryErrors(registry = rightsRegistry()) {
 
   for (const record of records) {
     const key = record?.key;
-    const at = `registry/${key ?? "(no key)"}`;
+    const at = `registry/${key ?? NO_KEY}`;
     if (typeof key !== "string" || !key) {
       errors.push(`${at}: a record needs a non-empty \`key\``);
       continue;
     }
+    if (!IS_SOURCE_KEY.test(key))
+      errors.push(
+        `${at}: a Source key is lowercase with no spaces (${IS_SOURCE_KEY.source}); the scan tells a key ` +
+          `from a prose citation by that shape, so a key outside it would never be looked up`,
+      );
     for (const field of ["name", "publisher"])
       if (typeof record[field] !== "string" || !record[field])
         errors.push(`${at}: \`${field}\` must be a non-empty string`);
@@ -153,7 +230,7 @@ export function registryErrors(registry = rightsRegistry()) {
           );
       if (JSON.stringify(targets) !== JSON.stringify([...new Set(targets)]))
         errors.push(`${at}: \`allowed_targets\` repeats a target`);
-      if (NO_TARGET_CLASSES.has(record.rights_class) && targets.length)
+      if (NEVER_CLEARED_RIGHTS_CLASSES.includes(record.rights_class) && targets.length)
         errors.push(
           `${at}: a ${record.rights_class} Source lists ${targets.join(", ")}; it must list none, ` +
             `because the reader answers no for every target and a list that says otherwise is a lie in the file`,
@@ -163,15 +240,18 @@ export function registryErrors(registry = rightsRegistry()) {
           `${at}: a refusal is recorded and ${targets.join(", ")} are still listed; a recorded refusal ` +
             `removes every target, so clear the list in the same change`,
         );
-      // ADR 0010 reaches `cdn` and `mobile-pack` through what Web and npm already
-      // publish. A record that offers an offline copy of something Web does not
-      // even serve has no basis in the rule it is standing on.
-      for (const downstream of ["cdn", "mobile-pack"])
-        if (targets.includes(downstream) && !targets.includes("web"))
-          errors.push(
-            `${at}: \`${downstream}\` without \`web\`: ADR 0010 clears the offline targets through what ` +
-              `Web and npm publish today, so a Source Web does not publish has no basis for them`,
-          );
+      // ADR 0010 reaches `cdn` and `mobile-pack` through what Web *and* npm
+      // already publish. A record that offers an offline copy of something one of
+      // them does not carry has no basis in the rule it is standing on.
+      const missing = ["web", "npm"].filter((upstream) => !targets.includes(upstream));
+      if (missing.length)
+        for (const downstream of ["cdn", "mobile-pack"])
+          if (targets.includes(downstream))
+            errors.push(
+              `${at}: \`${downstream}\` needs \`web\` and \`npm\`, and ${missing.join(" and ")} ` +
+                `${missing.length > 1 ? "are" : "is"} missing: ADR 0010 clears the offline targets through ` +
+                `what Web and npm publish today`,
+            );
     }
 
     if (record.refusal) {
@@ -195,7 +275,9 @@ export function registryErrors(registry = rightsRegistry()) {
             `nobody can check is not evidence`,
         );
       if (!ISO_DATE.test(evidence.retrieved_at ?? ""))
-        errors.push(`${at}: \`evidence.retrieved_at\` must be an ISO date: terms change, so a URL alone is not durable`);
+        errors.push(
+          `${at}: \`evidence.retrieved_at\` must be an ISO date: terms change, so a URL alone is not durable`,
+        );
       if (evidence.repo_path && !existsSync(join(REPO_ROOT, evidence.repo_path)))
         errors.push(`${at}: \`evidence.repo_path\` ${evidence.repo_path} is not in the repository`);
     }
@@ -204,4 +286,28 @@ export function registryErrors(registry = rightsRegistry()) {
       errors.push(`${at}: \`review_after\` must be an ISO date: a classification with no review date never expires`);
   }
   return errors;
+}
+
+/**
+ * Warnings (empty when every classification is current) for review dates that
+ * have passed.
+ *
+ * A warning and not an error on purpose: a stale classification is a real
+ * problem, and failing the build for it would redden CI on a day nobody changed
+ * anything, which teaches people to ignore the gate that does matter.
+ * @param {object} [registry]
+ * @param {Date} [now]
+ * @returns {string[]}
+ */
+export function registryWarnings(registry = rightsRegistry(), now = new Date()) {
+  const today = now.toISOString().slice(0, 10);
+  const warnings = [];
+  for (const record of registry?.sources ?? []) {
+    const due = record?.review_after;
+    if (ISO_DATE.test(due ?? "") && due < today)
+      warnings.push(
+        `registry/${record.key}: review_after ${due} has passed; re-read the Source's terms and set a new date`,
+      );
+  }
+  return warnings;
 }

@@ -39,9 +39,11 @@ import {
   wilayaNeighbours,
   buildMetadata,
   WILAYA_CODES,
-  rightsRegistry,
-  sourcesClearedFor,
 } from "../packages/schema/index.js";
+// Imported by path, not from the package entry point: the Source rights registry
+// is a repository file read from a pinned data checkout, not part of the
+// @geoalgeria/schema surface, and the entry point must stay free of node:fs.
+import { isSourceClearedFor, rightsRegistry } from "../packages/schema/src/rights.js";
 // Each package's own stats() lives here, beside its provenance config. The
 // validator re-runs it so the published stats block is checked against the
 // shipped records rather than trusted.
@@ -55,7 +57,12 @@ import {
 import { descriptorTermsErrors, licenceTermsErrors, publishedMetadataPaths } from "./lib/licence-terms.mjs";
 // The fail-closed Source rights gate: every Source a package publishes has a
 // record, and the registry stays inside its vocabulary.
-import { packageSourceRefs, registryErrors, unregisteredSourceErrors } from "./lib/rights-registry.mjs";
+import {
+  packageSourceRefs,
+  registryErrors,
+  registryWarnings,
+  unregisteredSourceErrors,
+} from "./lib/rights-registry.mjs";
 // The review gate over @geoalgeria/normalize's Rule table: a Rule cannot enter
 // without a reviewer and a corpus case, and a case cannot claim a Rule that does
 // not exist. The table and the corpus are read from the package as data.
@@ -1700,12 +1707,18 @@ function validateSourceRights() {
   const refs = packageSourceRefs(join(ROOT, "packages"));
   const problems = [...registryErrors(), ...unregisteredSourceErrors(refs)];
   for (const problem of problems) fail(problem);
+  // A review date that has passed is a warning, never a failure: a classification
+  // nobody has revisited is a real problem and a bad reason to redden CI on a day
+  // nobody changed anything.
+  for (const warning of registryWarnings()) console.warn(`  WARN: ${warning}`);
   if (problems.length) return;
   const registry = rightsRegistry();
+  const cleared = (target) => registry.sources.filter((r) => isSourceClearedFor(r.key, target)).length;
+  const keys = new Set(refs.map((ref) => ref.key));
   console.log(
     `  OK: ${registry.sources.length} Source rights record(s) (registry v${registry.version}) cover all ` +
-      `${refs.length} Source reference(s) in published metadata; ${sourcesClearedFor("mobile-pack").length} ` +
-      `Source(s) cleared for mobile-pack, ${sourcesClearedFor("cdn").length} for cdn`,
+      `${keys.size} distinct Source key(s) in published data; ${cleared("mobile-pack")} Source(s) cleared ` +
+      `for mobile-pack, ${cleared("cdn")} for cdn`,
   );
 }
 
