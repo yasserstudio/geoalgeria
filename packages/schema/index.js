@@ -1,6 +1,7 @@
 // @geoalgeria/schema: the canonical data contract for GeoAlgeria datasets.
 // Types (types/index.d.ts) + a zero-dependency runtime validator + canonical
-// metadata / manifest / DCAT builders + CSV/GeoJSON emit helpers.
+// metadata / manifest / DCAT builders + CSV/GeoJSON emit helpers + the Source
+// rights registry and the one question it answers, `isSourceClearedFor`.
 
 export {
   SCHEMA_VERSION,
@@ -29,3 +30,14 @@ export {
   validateReviewLedger,
   applyReviewedOverrides,
 } from "./src/review.js";
+export {
+  ACCESS_CLASSES,
+  RIGHTS_CLASSES,
+  RIGHTS_BASES,
+  PUBLICATION_TARGETS,
+  NEVER_CLEARED_RIGHTS_CLASSES,
+  rightsRegistry,
+  rightsRecordFor,
+  isSourceClearedFor,
+  sourcesClearedFor,
+} from "./src/rights.js";
