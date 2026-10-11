@@ -7,6 +7,8 @@
 // would publish it in three formats with no rights decision anywhere.
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -108,6 +110,61 @@ test("prose in a `source` or `sources` position is a citation, not a key", () =>
     ),
     [],
   );
+});
+
+test("a key-shaped string that is not a registered key is an error, not a citation", () => {
+  // The shape rule used to require lowercase, so every one of these slipped
+  // through as "prose" and the Source behind it was never classified.
+  for (const document of [{ id: 1, source: "OSM" }, { id: 1, sources: ["Wikidata"] }])
+    assert.equal(
+      unregisteredSourceErrors(sourceRefsInDocument(document, "pkg/data/x.json")).length,
+      1,
+      JSON.stringify(document),
+    );
+  assert.match(
+    unregisteredSourceErrors(sourceRefsInDocument({ id: 1, source: "OSM" }, "pkg/data/x.json"))[0],
+    /source `OSM` resolves to no single record/,
+  );
+});
+
+test("every part of a joined `source` is checked, not only the first", () => {
+  // `msp+OSM` used to resolve msp and drop OSM on the floor.
+  const refs = sourceRefsInDocument({ id: 1, source: "msp+OSM" }, "pkg/data/x.json");
+  assert.deepEqual(refs.map((r) => r.key), ["msp", "OSM"]);
+  assert.equal(unregisteredSourceErrors(refs).length, 1);
+});
+
+test("a string with whitespace, a slash, a colon or only digits is a citation", () => {
+  for (const value of [
+    "Air Algerie",
+    "OpenStreetMap administrative relations, via Overpass",
+    "JORA n 25 (2026), law 26-06 art. 7, p. 4",
+    "https://www.parisaeroport.fr/",
+    "ourairports/airports.csv",
+    "ONS:code_geo_2021",
+    "2026",
+  ]) {
+    assert.deepEqual(sourceRefsInDocument({ id: 1, source: value }, "pkg/data/x.json"), [], value);
+    assert.deepEqual(sourceRefsInDocument({ sources: [value] }, "pkg/data/x.json"), [], value);
+  }
+});
+
+test("the scan reads a package's root dataset-metadata.json", () => {
+  // It is in files[], so npm publishes it: a Source named only there would ship
+  // unclassified.
+  const root = mkdtempSync(join(tmpdir(), "geoalgeria-rights-"));
+  const pkg = join(root, "somepkg");
+  mkdirSync(join(pkg, "data"), { recursive: true });
+  writeFileSync(join(pkg, "package.json"), JSON.stringify({ name: "somepkg" }));
+  writeFileSync(
+    join(pkg, "dataset-metadata.json"),
+    JSON.stringify({ "@type": "Dataset", sources: [{ key: "a-root-only-source" }] }),
+  );
+  writeFileSync(join(pkg, "data", "metadata.json"), JSON.stringify({ sources: [{ key: "msp" }] }));
+  assert.deepEqual(packageSourceRefs(root), [
+    { where: "somepkg/dataset-metadata.json", key: "a-root-only-source" },
+    { where: "somepkg/data/metadata.json", key: "msp" },
+  ]);
 });
 
 test("a `sources` array of bare keys is read as keys", () => {
@@ -225,8 +282,8 @@ test("a recorded refusal must clear every target in the same change", () => {
 });
 
 test("the offline targets need both targets they are cleared through", () => {
-  // ADR 0010 clears cdn and mobile-pack through what Web *and* npm publish
-  // today, so either one missing removes the basis for both.
+  // cdn and mobile-pack are cleared through what Web *and* npm publish today,
+  // so either one missing removes the basis for both.
   for (const [targets, missing] of [
     [["npm", "cdn", "mobile-pack"], "web"],
     [["web", "cdn", "mobile-pack"], "npm"],
@@ -294,4 +351,23 @@ test("a record needs a review date and an attribution line", () => {
     registryErrors(registryOf(record({ attribution: { text: "", url: null } }))),
     /`attribution.text` must be the credit line/,
   );
+});
+
+test("a metadata key outside the key shape fails", () => {
+  // The scan tells a key from a citation by that shape, so a registered key
+  // outside it would never be looked up.
+  only(
+    registryErrors(registryOf(record({ metadata_keys: ["fixture", "Bad Key"] }))),
+    /metadata key `Bad Key` is not key-shaped/,
+  );
+  only(registryErrors(registryOf(record({ key: "Fixture", metadata_keys: [] }))), /is not key-shaped/);
+});
+
+test("the public registry cites no document a reader cannot open", () => {
+  // The file is public and the decision records are not, so a pointer at one
+  // names something nobody outside the project can open.
+  const text = readFileSync(join(ROOT, "packages/schema/rights/registry.json"), "utf-8");
+  // Word-bounded: MADR is a ministry, not a pointer.
+  for (const dangling of [/\bADR\b/, /docs\/adr/, /docs\/research/, /governance review/i])
+    assert.ok(!dangling.test(text), `the registry should not mention ${dangling}`);
 });

@@ -208,20 +208,25 @@ asks it for a whole dataset and names the Sources that block a Target.
 `pnpm validate` enforces two rules:
 
 - every Source key in every published `.json` and `.geojson` under a package's
-  `data/` resolves to exactly one record. The scan reads them at any depth,
-  because `sources` and `source` are overloaded: a provenance block of objects
-  with a `key`, a record-level array of bare keys, a record's `source` string with
-  keys joined by `+`, and prose or URL citations in those same positions. A key is
-  lowercase with no spaces, and that shape is what tells the two apart, so the
-  registry's own keys are held to it too. Adding a Source to a fetcher without
-  classifying it fails the build, which is the point: a Source with no record
-  enters no Target.
+  `data/`, plus the root `dataset-metadata.json`, resolves to exactly one record.
+  The scan reads them at any depth, because `sources` and `source` are
+  overloaded: a provenance block of objects with a `key`, a record-level array of
+  bare keys, a record's `source` string with keys joined by `+`, and prose or URL
+  citations in those same positions. What tells a key from a citation is what a
+  citation always has and a key never does: whitespace, a `/`, a `:`, or nothing
+  but digits. Everything else is read as a key and has to resolve, so `OSM` and
+  `Wikidata` are errors naming them rather than prose the scan walks past, and
+  both halves of `msp+OSM` are checked. A registered key is narrower still,
+  lowercase with no spaces, so a record cannot introduce a key spelled in a way
+  the data would not match. Adding a Source to a fetcher without classifying it
+  fails the build, which is the point: a Source with no record enters no Target.
 - the registry stays inside its vocabulary and stays consistent. A
   `restricted-research` or `prohibited` record carrying Targets, a recorded refusal
   that left the Targets behind, `cdn` or `mobile-pack` without both the `web` and
-  `npm` Targets that clear them, two records claiming one key, unsorted records,
-  evidence with no public URL and no committed file, or a missing retrieval or
-  review date are all errors naming the record. A `review_after` that has passed is
+  `npm` Targets that clear them, a key or metadata key outside the key shape, two
+  records claiming one key, unsorted records, evidence with no public URL and no
+  committed file, or a missing retrieval or review date are all errors naming the
+  record. A `review_after` that has passed is
   a warning, not a failure.
 
 A new Source therefore means, in the same pull request: the fetcher and the

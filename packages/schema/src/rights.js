@@ -23,10 +23,11 @@
 // of a false "yes" is an unlicensed copy on a phone that cannot be withdrawn
 // until that phone activates a newer release.
 //
-// Vocabulary and the initial classification come from the project's governance
-// review and ADR 0010: a Source that Web and npm publish today may also enter
-// `cdn` and `mobile-pack`; `restricted-research`, `prohibited` and third-party
-// tiles stay out of every target; a recorded refusal removes every target.
+// The rule the initial classification follows, in full: a Source with no record
+// enters no target; a Source that Web and npm both publish today may also enter
+// `cdn` and `mobile-pack`; a `restricted-research` or `prohibited` Source,
+// third-party tiles and styles included, enters none; and a recorded refusal
+// removes every target.
 
 import { readFileSync } from "node:fs";
 
@@ -38,9 +39,8 @@ export const ACCESS_CLASSES = [
   "private-research",
 ];
 
-/** What GeoAlgeria may do with the Source. `public-domain-or-cc0` is the
- *  governance review's token for the class sometimes shorthanded as
- *  "public-domain"; one class, one name. */
+/** What GeoAlgeria may do with the Source. The CC0 class is spelled
+ *  `public-domain-or-cc0` and never "public-domain": one class, one name. */
 export const RIGHTS_CLASSES = [
   "open-licensed",
   "public-domain-or-cc0",

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-10-11",
-  "rule": "A Source with no record enters no target. A Source Web and npm publish today also carries cdn and mobile-pack (ADR 0010). restricted-research, prohibited and third-party tiles carry none. A recorded refusal removes every target.",
+  "rule": "A Source with no record enters no target. A Source that Web and npm both publish today may also enter cdn and mobile-pack. A restricted-research or prohibited Source, including third-party tiles and styles, enters none. A recorded refusal removes every target.",
   "sources": [
     {
       "key": "algerie-telecom",
@@ -30,10 +30,10 @@
         "source_url": "https://www.algerietelecom.dz/fr/basculement/20",
         "repo_path": "sources/algerie-telecom/manifest.json",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
-      "notes": "The numbering notices are cited by the flagship dataset's phone-code provenance ledger, which npm publishes. The agency capture under sources/ feeds no package yet.",
+      "notes": "The numbering notices are cited by the flagship dataset's phone-code provenance ledger, which Web and npm both publish. The agency capture under sources/ feeds no package yet.",
       "refusal": null
     },
     {
@@ -63,7 +63,7 @@
         "source_url": "https://www.anac.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -96,7 +96,7 @@
         "source_url": "https://anderson-ecommerce.com/",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -129,7 +129,7 @@
         "source_url": "https://www.anem.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -163,7 +163,7 @@
         "source_url": "https://www.arpce.dz/en/service/num",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": "Behind the phone_code values of the 2026 wilaya cohort, recorded in the flagship dataset's phone-code provenance ledger.",
@@ -196,7 +196,7 @@
         "source_url": "https://www.asal.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -229,7 +229,7 @@
         "source_url": null,
         "repo_path": "packages/banques/LICENSE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The package LICENSE records the terms as public factual data redistributed for reference."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The package LICENSE records the terms as public factual data redistributed for reference."
       },
       "review_after": "2027-03-02",
       "notes": "One record for a group of Sources, as the packages key it: @geoalgeria/banques names every locator under the single key bank_locator. A per-bank split is a follow-up.",
@@ -262,7 +262,7 @@
         "source_url": "https://baridimap.poste.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": "The mirrored postal data under the flagship dataset's data/poste carries the same terms.",
@@ -295,7 +295,7 @@
         "source_url": "https://www.bank-of-algeria.dz/banques-commerciales/",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -354,7 +354,7 @@
         "source_url": "https://dgpc.dz/dgpc2/",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -387,7 +387,7 @@
         "source_url": "https://www.djezzy.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -446,7 +446,7 @@
         "source_url": "https://www.facebook.com/p/ETO-100093054514209/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -479,7 +479,7 @@
         "source_url": null,
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -512,7 +512,7 @@
         "source_url": "https://www.facebook.com/ETUS44/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -545,7 +545,7 @@
         "source_url": "https://www.facebook.com/100063517660926/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -578,7 +578,7 @@
         "source_url": "https://etusbejaia.dz/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -611,7 +611,7 @@
         "source_url": null,
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -644,7 +644,7 @@
         "source_url": "https://etus-msila.dz/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -677,7 +677,7 @@
         "source_url": null,
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -710,7 +710,7 @@
         "source_url": null,
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -743,7 +743,7 @@
         "source_url": "https://etus22.dz/Horaires.php",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -776,7 +776,7 @@
         "source_url": "https://etus-skikda.dz/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -809,7 +809,7 @@
         "source_url": "https://www.etus-tiaret.dz/ar/lines",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -842,7 +842,7 @@
         "source_url": "https://www.facebook.com/etustlemcen13/",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -875,7 +875,7 @@
         "source_url": "http://etusto.dz/espv.html",
         "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
       },
       "review_after": "2027-03-02",
       "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
@@ -908,7 +908,7 @@
         "source_url": "https://www.guepex.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -947,7 +947,7 @@
         "source_url": "https://www.joradp.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. Ordinance 03-05 article 11 excludes laws, regulations and administrative acts from copyright; the review did not convert that into a recorded grant."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. Ordinance 03-05 article 11 excludes laws, regulations and administrative acts from copyright, and no grant covering this dataset is recorded."
       },
       "review_after": "2027-03-02",
       "notes": "One record for the Journal Officiel, with one metadata key per cited issue: decret 84-79 (1984), decret présidentiel 21-117 (2021), decret présidentiel 26-206 (2026), JO 25 of 2026 in French and Arabic, JO 40 of 2026 and JO 52 of 2026.",
@@ -980,7 +980,7 @@
         "source_url": "https://madr.gov.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1013,7 +1013,7 @@
         "source_url": "https://maystro-delivery.com/Coverage.html",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1046,7 +1046,7 @@
         "source_url": "https://www.mesrs.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1079,7 +1079,7 @@
         "source_url": "https://takwin.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1112,7 +1112,7 @@
         "source_url": "https://www.miph.gov.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1145,7 +1145,7 @@
         "source_url": "https://sig.mjs.gov.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1178,7 +1178,7 @@
         "source_url": "https://www.mobilis.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1211,7 +1211,7 @@
         "source_url": "https://sante.gov.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1244,7 +1244,7 @@
         "source_url": "https://noest-dz.com/",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1275,7 +1275,7 @@
         "source_url": "https://www.ons.dz/IMG/pdf/code_geo_2021.pdf",
         "repo_path": "sources/dataset/ons-code-geo-2021.json",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The committed capture carries the retrieval date and the sha256."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The committed capture carries the retrieval date and the sha256."
       },
       "review_after": "2027-03-02",
       "notes": "Named in the flagship dataset's measurementTechnique and citation rather than a metadata.sources[] key, so this record carries no metadata key; the dataset's administrative codes are what it covers.",
@@ -1308,7 +1308,7 @@
         "source_url": "https://www.ooredoo.dz",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1413,7 +1413,7 @@
         "source_url": "https://cartes.patrimoineculturelalgerien.org",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,
@@ -1446,7 +1446,7 @@
         "source_url": "https://live.sogral.com",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. The package metadata states only that the data is redistributed for reference."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The package metadata states only that the data is redistributed for reference."
       },
       "review_after": "2027-03-02",
       "notes": "The station directory only. The observed connection graph is sogral-mahatati-graph and the timetable captures are sogral-timetable; neither is covered by this record.",
@@ -1474,10 +1474,10 @@
         "source_url": "https://live.sogral.com",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Web publishes it and npm does not, so it is cleared for web and for nothing else."
       },
       "review_after": "2027-03-02",
-      "notes": "Served by Web at /departures and by no npm package, so ADR 0010's rule reaches web and no further: no cdn, no mobile-pack.",
+      "notes": "Served by Web at /departures and by no npm package. The offline targets are cleared only through what Web and npm both publish, so this Source reaches neither cdn nor mobile-pack.",
       "refusal": null
     },
     {
@@ -1500,7 +1500,7 @@
         "source_url": "https://live.sogral.com",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies. Held locally as research material only."
+        "note": "No open reuse licence is recorded. Held locally as research material only, and published to nothing."
       },
       "review_after": "2027-03-02",
       "notes": "Never published, packaged or exposed from a production endpoint. Full captures expire within 30 days of the research need ending; hashes, Source URLs, capture parameters and dates are what is kept.",
@@ -1599,7 +1599,7 @@
         "source_url": "https://yalidine-express.com.dz/nos-agences/",
         "repo_path": null,
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence is recorded. Classification per the project's governance review; ADR 0010 applies."
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
       "notes": null,

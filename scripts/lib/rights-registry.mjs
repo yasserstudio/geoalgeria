@@ -42,7 +42,8 @@ import {
 const REPO_ROOT = fileURLToPath(new URL("../../", import.meta.url));
 
 /**
- * The shape of a Source key, and therefore what tells a key from a citation.
+ * Is this string meant as a Source key rather than a citation?
+ *
  * `sources` and `source` are overloaded in this repository and carry both:
  *
  *   sources: [{ key: "jora-25-2026", name: ..., url: ... }]  a provenance block
@@ -51,9 +52,25 @@ const REPO_ROOT = fileURLToPath(new URL("../../", import.meta.url));
  *   source:  "msp+osm"                                       record-level keys
  *   source:  "https://www.parisaeroport.fr/"                 a per-leg citation
  *
- * Every key the repository uses is lowercase with no spaces; every citation has
- * spaces, capitals or punctuation a key never carries. `registryErrors` holds
- * the registry to the same shape, so the two sides cannot drift apart.
+ * The test is what a citation always has and a key never does: whitespace, a
+ * slash, a colon, or nothing but digits. Everything else is meant as a key and
+ * must resolve, which is the fail-closed direction. An earlier version also
+ * required lowercase, and that read `OSM`, `Wikidata` and the `OSM` half of
+ * `msp+OSM` as prose and classified none of them.
+ */
+const looksLikeSourceKey = (value) =>
+  typeof value === "string" &&
+  value.length > 0 &&
+  !/\s/.test(value) &&
+  !value.includes("/") &&
+  !value.includes(":") &&
+  !/^\d+$/.test(value);
+
+/**
+ * The shape every registered key is written in. Narrower than
+ * `looksLikeSourceKey`, which decides what has to resolve; this decides what may
+ * be registered, so a record cannot introduce a key spelled in a way the data
+ * would not match.
  */
 const IS_SOURCE_KEY = /^[a-z0-9][a-z0-9_.-]*$/;
 
@@ -76,7 +93,7 @@ const NO_KEY = "(no key)";
 export function sourceRefsInDocument(document, where) {
   const keys = new Set();
   const add = (value) => {
-    if (typeof value === "string" && IS_SOURCE_KEY.test(value)) keys.add(value);
+    if (looksLikeSourceKey(value)) keys.add(value);
   };
   const walk = (value) => {
     if (Array.isArray(value)) {
@@ -90,7 +107,9 @@ export function sourceRefsInDocument(document, where) {
         else if (source && typeof source === "object")
           keys.add(typeof source.key === "string" && source.key ? source.key : NO_KEY);
       }
-    if (typeof value.source === "string") for (const key of value.source.split("+")) add(key);
+    // The whole value decides citation or keys, then every part is a key: a
+    // citation never survives the split, and `msp+OSM` is two keys, not one.
+    if (looksLikeSourceKey(value.source)) for (const part of value.source.split("+")) add(part);
     for (const [name, child] of Object.entries(value)) if (name !== "sources") walk(child);
   };
   walk(document);
@@ -109,6 +128,19 @@ export function packageSourceRefs(packagesDir) {
   for (const pkg of readdirSync(packagesDir).sort()) {
     const dir = join(packagesDir, pkg);
     if (!existsSync(join(dir, "package.json"))) continue;
+    const read = (path, rel) => {
+      let document;
+      try {
+        document = JSON.parse(readFileSync(path, "utf-8"));
+      } catch {
+        return; // the licence and schema checks report a malformed file
+      }
+      refs.push(...sourceRefsInDocument(document, `${pkg}/${rel}`));
+    };
+    // The root descriptor is in files[], so npm publishes it: a Source named
+    // only there would ship unclassified.
+    const descriptor = join(dir, "dataset-metadata.json");
+    if (existsSync(descriptor)) read(descriptor, "dataset-metadata.json");
     const dataDir = join(dir, "data");
     if (!existsSync(dataDir)) continue;
     const walk = (current) => {
@@ -119,14 +151,7 @@ export function packageSourceRefs(packagesDir) {
           continue;
         }
         if (!/\.(json|geojson)$/.test(entry)) continue;
-        let document;
-        try {
-          document = JSON.parse(readFileSync(path, "utf-8"));
-        } catch {
-          continue; // the licence and schema checks report a malformed file
-        }
-        const rel = relative(dir, path).split(sep).join("/");
-        refs.push(...sourceRefsInDocument(document, `${pkg}/${rel}`));
+        read(path, relative(dir, path).split(sep).join("/"));
       }
     };
     walk(dataDir);
@@ -190,8 +215,8 @@ export function registryErrors(registry = rightsRegistry()) {
     }
     if (!IS_SOURCE_KEY.test(key))
       errors.push(
-        `${at}: a Source key is lowercase with no spaces (${IS_SOURCE_KEY.source}); the scan tells a key ` +
-          `from a prose citation by that shape, so a key outside it would never be looked up`,
+        `${at}: the record key \`${key}\` is not key-shaped (${IS_SOURCE_KEY.source}), so the data that ` +
+          `names it would never match this record`,
       );
     for (const field of ["name", "publisher"])
       if (typeof record[field] !== "string" || !record[field])
@@ -213,6 +238,11 @@ export function registryErrors(registry = rightsRegistry()) {
     if (!Array.isArray(record.metadata_keys)) errors.push(`${at}: \`metadata_keys\` must be an array`);
     else
       for (const alias of [key, ...record.metadata_keys]) {
+        if (alias !== key && !IS_SOURCE_KEY.test(alias))
+          errors.push(
+            `${at}: metadata key \`${alias}\` is not key-shaped (${IS_SOURCE_KEY.source}), so the data ` +
+              `that names it would never match this record`,
+          );
         const first = claimedBy.get(alias);
         if (first !== undefined && first !== key)
           errors.push(`${at}: key \`${alias}\` is already claimed by \`${first}\`; one key, one record`);
@@ -240,16 +270,16 @@ export function registryErrors(registry = rightsRegistry()) {
           `${at}: a refusal is recorded and ${targets.join(", ")} are still listed; a recorded refusal ` +
             `removes every target, so clear the list in the same change`,
         );
-      // ADR 0010 reaches `cdn` and `mobile-pack` through what Web *and* npm
-      // already publish. A record that offers an offline copy of something one of
-      // them does not carry has no basis in the rule it is standing on.
+      // `cdn` and `mobile-pack` are cleared through what Web *and* npm already
+      // publish. A record that offers an offline copy of something one of them
+      // does not carry has no basis for it.
       const missing = ["web", "npm"].filter((upstream) => !targets.includes(upstream));
       if (missing.length)
         for (const downstream of ["cdn", "mobile-pack"])
           if (targets.includes(downstream))
             errors.push(
               `${at}: \`${downstream}\` needs \`web\` and \`npm\`, and ${missing.join(" and ")} ` +
-                `${missing.length > 1 ? "are" : "is"} missing: ADR 0010 clears the offline targets through ` +
+                `${missing.length > 1 ? "are" : "is"} missing: the offline targets are cleared only through ` +
                 `what Web and npm publish today`,
             );
     }

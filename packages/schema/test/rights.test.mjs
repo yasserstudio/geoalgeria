@@ -48,7 +48,7 @@ const record = (over = {}) => ({
 /** A registry of exactly the records given. */
 const registryOf = (...records) => ({ version: 1, updated: "2026-10-11", sources: records });
 
-test("the vocabularies are the governance review's", () => {
+test("the vocabularies are the ones the registry is written in", () => {
   assert.deepEqual(ACCESS_CLASSES, [
     "public-access",
     "account-access",
@@ -198,8 +198,8 @@ test("clearanceForMetadata fails closed on metadata that names no Source", () =>
 });
 
 test("the shipped registry clears the administrative core for cdn and mobile-pack", () => {
-  // ADR 0010: the national core's Wilaya, Daira and Commune rows come from the
-  // Sources Web and npm publish today, so a Content release can carry them.
+  // The national core's Wilaya, Daira and Commune rows come from Sources Web and
+  // npm both publish today, which is what clears them for a Content release.
   for (const key of ["ons", "jora", "osm", "wikidata", "arpce", "algerie-telecom"]) {
     assert.equal(isSourceClearedFor(key, "cdn"), true, `${key} should be cleared for cdn`);
     assert.equal(isSourceClearedFor(key, "mobile-pack"), true, `${key} should be cleared for mobile-pack`);
