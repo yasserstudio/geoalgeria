@@ -39,6 +39,8 @@ import {
   wilayaNeighbours,
   buildMetadata,
   WILAYA_CODES,
+  rightsRegistry,
+  sourcesClearedFor,
 } from "../packages/schema/index.js";
 // Each package's own stats() lives here, beside its provenance config. The
 // validator re-runs it so the published stats block is checked against the
@@ -51,6 +53,9 @@ import {
   canonicalCommunes,
 } from "./lib/commune-index.mjs";
 import { descriptorTermsErrors, licenceTermsErrors, publishedMetadataPaths } from "./lib/licence-terms.mjs";
+// The fail-closed Source rights gate: every Source a package publishes has a
+// record, and the registry stays inside its vocabulary.
+import { packageSourceRefs, registryErrors, unregisteredSourceErrors } from "./lib/rights-registry.mjs";
 // The review gate over @geoalgeria/normalize's Rule table: a Rule cannot enter
 // without a reviewer and a corpus case, and a case cannot claim a Rule that does
 // not exist. The table and the corpus are read from the package as data.
@@ -1684,6 +1689,26 @@ function validateLicenceTerms(pkgs) {
   }
 }
 
+// Rights were free text until the registry existed: `metadata.sources[].license`
+// carries sentences that read as terms and grant nothing, so a generator had
+// nothing to refuse on and a new Source could enter a release unclassified. The
+// records and the reader live in packages/schema, because the Content release
+// generator reads them from a pinned data checkout; the two rules are in
+// scripts/lib/rights-registry.mjs. Not gated on `only`: one registry serves the
+// whole repository, like the licence check above.
+function validateSourceRights() {
+  const refs = packageSourceRefs(join(ROOT, "packages"));
+  const problems = [...registryErrors(), ...unregisteredSourceErrors(refs)];
+  for (const problem of problems) fail(problem);
+  if (problems.length) return;
+  const registry = rightsRegistry();
+  console.log(
+    `  OK: ${registry.sources.length} Source rights record(s) (registry v${registry.version}) cover all ` +
+      `${refs.length} Source reference(s) in published metadata; ${sourcesClearedFor("mobile-pack").length} ` +
+      `Source(s) cleared for mobile-pack, ${sourcesClearedFor("cdn").length} for cdn`,
+  );
+}
+
 // No em dash (U+2014) in the metadata GeoAlgeria publishes. Every separator that
 // used to be one lives in a generator (scripts/lib/v2-transforms.mjs source names,
 // @geoalgeria/schema's citation join, each coverage note), so a single hand-fixed
@@ -1918,6 +1943,9 @@ validateTypes(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 console.log(`\n[licence terms: manifest ↔ LICENSE ↔ metadata]`);
 validateLicenceTerms(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
+
+console.log(`\n[Source rights: every published Source has a record]`);
+validateSourceRights();
 
 console.log(`\n[no em dash in published metadata]`);
 validateNoEmDash(only ? [only] : readdirSync(join(ROOT, "packages")).sort());

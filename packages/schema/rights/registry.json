@@ -190,9 +190,9 @@
       "notice": "Branch locations: data © the respective banks, redistributed for reference; no open reuse licence is recorded.",
       "evidence": {
         "source_url": null,
-        "repo_path": null,
+        "repo_path": "packages/banques/LICENSE",
         "retrieved_at": "2026-09-02",
-        "note": "No open reuse licence recorded for any of them. app docs/research/public-data-governance-and-licensing.md asks that the Banque d'Algérie regulatory identity be kept separate from bank-owned locator data, and that permission be sought per bank."
+        "note": "No open reuse licence recorded for any of them; the package LICENSE records the terms as public factual data redistributed for reference. app docs/research/public-data-governance-and-licensing.md asks that the Banque d'Algérie regulatory identity be kept separate from bank-owned locator data, and that permission be sought per bank."
       },
       "review_after": "2027-03-02",
       "notes": "One record for a group of Sources, as the packages key it: @geoalgeria/banques names every locator under the single key bank_locator. Splitting it per bank is the follow-up the inventory asks for.",
@@ -407,7 +407,7 @@
       "notice": "ETO Oran: route drawings: data © ETO Oran, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": "https://www.facebook.com/p/ETO-100093054514209/",
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -440,7 +440,7 @@
       "notice": "ETUL Laghouat: dated operating programs: data © ETUL Laghouat, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": null,
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -473,7 +473,7 @@
       "notice": "ETUS Aïn Defla: Line artwork and service program: data © ETUS Aïn Defla, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": "https://www.facebook.com/ETUS44/",
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -506,7 +506,7 @@
       "notice": "ETUS Annaba: service program: data © ETUS Annaba, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": "https://www.facebook.com/100063517660926/",
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -539,7 +539,7 @@
       "notice": "ETUS Béjaïa: itineraries and Line maps: data © ETUS Béjaïa, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": "https://etusbejaia.dz/",
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -572,7 +572,7 @@
       "notice": "ETUS-C Constantine: numbered route graphics: data © ETUS-C Constantine, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": null,
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -605,7 +605,7 @@
       "notice": "ETUS M'Sila: Line pages and diagrams: data © ETUS M'Sila, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": "https://etus-msila.dz/",
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -638,7 +638,7 @@
       "notice": "ETUS Oum El Bouaghi: numbered Line diagrams: data © ETUS Oum El Bouaghi, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": null,
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -671,7 +671,7 @@
       "notice": "ETUS Sétif: 2026 Line artwork: data © ETUS Sétif, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": null,
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -704,7 +704,7 @@
       "notice": "ETUS Sidi Bel Abbès: network and timetable pages: data © ETUS Sidi Bel Abbès, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": "https://etus22.dz/Horaires.php",
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -737,7 +737,7 @@
       "notice": "ETUS Skikda: Line pages and service section: data © ETUS Skikda, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": "https://etus-skikda.dz/",
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -770,7 +770,7 @@
       "notice": "ETUS Tiaret: current Lines: data © ETUS Tiaret, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": "https://www.etus-tiaret.dz/ar/lines",
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -803,7 +803,7 @@
       "notice": "ETUS Tlemcen: service program: data © ETUS Tlemcen, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": "https://www.facebook.com/etustlemcen13/",
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
@@ -836,7 +836,7 @@
       "notice": "ETUSTO: passenger Lines: data © ETUSTO, redistributed for reference; the Operator states no open reuse licence.",
       "evidence": {
         "source_url": "http://etusto.dz/espv.html",
-        "repo_path": null,
+        "repo_path": "packages/buses/NOTICE",
         "retrieved_at": "2026-09-02",
         "note": "The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence. Material the Owner collected from the Operator's own public channels is still rights-unconfirmed: app docs/research/public-data-governance-and-licensing.md treats Owner-supplied material as permissioned only under a written grant that names public redistribution, and no such grant is recorded."
       },
