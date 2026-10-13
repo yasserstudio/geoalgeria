@@ -26,7 +26,11 @@
 //      it is verified-current, and stability beats churn.
 //   3. Else the canonical code is the principal office's: the office NAMED
 //      like the commune (with or without a trailing RP), else the best class
-//      (HC > CE > R1 > R2 > R3 > R4), ties to the lowest code.
+//      (HC > CE > R1 > R2 > R3 > R4), ties to the lowest code. "Named like the
+//      commune" reads both our name_fr and the name the capture files the group
+//      under, spacing-blind, and accepts a wilaya or locality prefix, because a
+//      transliteration difference used to make that test miss and hand the answer
+//      to the tie-break: see principalOffice below.
 //   4. A commune with no resolvable office loses its code (null): the page
 //      copy has an honest no-postal-code variant, and keeping a fabricated
 //      value is worse than admitting the gap.
@@ -164,16 +168,55 @@ function groupFor(wilayaCode, commune) {
   return coded;
 }
 
-function canonical(group, foldedName, current) {
+/** Best class first, then the lowest code: rule 3's tie-break. */
+const bestFirst = (offices) =>
+  [...offices].sort((a, b) => rank(a.cls) - rank(b.cls) || a.code.localeCompare(b.code))[0].code;
+
+/**
+ * Rule 3's "named like the commune", which is the step that must not fall through
+ * to the class tie-break on a spelling difference.
+ *
+ * TWO NAMES, NOT ONE. A commune is matched against our `name_fr` AND against the
+ * name the capture files its office group under, because the two transliterate
+ * differently often enough to decide the answer: we write Abelsa and Algérie Poste
+ * writes ABALESSA, we write Mohamed Belouzdad and it writes BELOUIZDAD. The group's
+ * own name is not a second opinion about the commune, it is the label on the rows
+ * being read, so an office named after it is the eponymous office by construction.
+ *
+ * SPACING-BLIND, AND A TRAILING MATCH. The office names carry a locality or wilaya
+ * prefix (ALGER MOHAMED BELOUIZDAD, THAMEUR SIDI MHAMED, BOUIRA TAGHZOUT) and move
+ * apostrophes and hyphens around, so the comparison drops the separators and
+ * accepts a name that ENDS with the commune's. It is a trailing match and never a
+ * leading or an interior one: Algérie Poste prefixes, it does not suffix, and an
+ * interior match would let OUED EL KHMIS claim a commune called Khmis.
+ *
+ * The tiers are ordered so an exact name still beats a prefixed one, and the class
+ * tie-break only decides between offices that all name the commune.
+ *
+ * NOT THE LOOSE KEY. @geoalgeria/normalize's Loose key is the Arabic tier (alef
+ * maqsura with yaa, taa marbuta with haa) over the Conservative fold, so it closes
+ * none of these three: it keeps "abelsa" apart from "abalessa", and it tokenizes at
+ * the apostrophe, which keeps "sidi m hamed" apart from "sidi mhamed". The folding
+ * this rule needs is the spacing-blind `tight` helper above, already used by the
+ * join tiers, so the script folds one way throughout.
+ */
+function principalOffice(group, nameFr) {
+  const wanted = [tight(nameFr), tight(group.folded)].filter(Boolean);
+  const matching = (test) => group.offices.filter((o) => wanted.some((want) => test(tight(o.name), want)));
+  const tiers = [
+    matching((name, want) => name === want),
+    matching((name, want) => name === `${want}RP`),
+    matching((name, want) => name.endsWith(want)),
+    matching((name, want) => name.endsWith(`${want}RP`)),
+  ];
+  for (const tier of tiers) if (tier.length) return bestFirst(tier);
+  return null;
+}
+
+function canonical(group, nameFr, current) {
   const codes = group.offices.map((o) => o.code);
   if (current && codes.includes(current)) return current;
-  const principal =
-    group.offices.find((o) => o.name === foldedName) ??
-    group.offices.find((o) => o.name === `${foldedName} RP`);
-  if (principal) return principal.code;
-  return [...group.offices].sort(
-    (a, b) => rank(a.cls) - rank(b.cls) || a.code.localeCompare(b.code),
-  )[0].code;
+  return principalOffice(group, nameFr) ?? bestFirst(group.offices);
 }
 
 /** code_commune -> the superseded value this repository already published. */
@@ -194,7 +237,7 @@ for (const w of wilayasArr) {
       next = null;
       if (current) report.nulled++;
     } else {
-      next = canonical(g, foldedName, current);
+      next = canonical(g, c.name_fr, current);
       if (!current) report.filled++;
       else if (next === current) report.kept++;
       else {
