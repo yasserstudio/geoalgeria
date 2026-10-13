@@ -79,15 +79,16 @@ Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèl
   wilaya et la localité concordent dans OSM, avec le numéro également concordant
   lorsqu'il est disponible. Chaque correction publie les deux liens de preuve.
 - Six agences portaient un **repère arrondi** : des degrés et des minutes, les
-  secondes omises, ce qui se lit comme une décimale précise. Le 33.58333, 2.66667
-  d'AGB Laghouat est 33°35'N 2°40'E, à 30,9 km de la rue que son adresse indique.
-  Quatre sont replacées sur un objet OpenStreetMap vérifié de la même banque dans
-  la même commune (AGB Constantine, AGB Tébessa, BADR Kenadsa, BADR Aïn
-  Témouchent) ; les deux autres, AGB Laghouat et BADR Taghit, portent le centre de
-  leur commune en `approximate`, car OpenStreetMap ne cartographie aucun objet de
-  leur banque dans un rayon de 25 km. Les six publient leur
-  `commune_code`/`commune` et leurs liens de preuve, et un point situé sur la
-  grille des minutes d'arc ne peut plus entrer dans le jeu de données en `exact`.
+  secondes omises, ce qui se lit comme une décimale précise. Le 33.58333,
+  2.66667 d'AGB Laghouat correspond à 33°35'N 2°40'E, à 30,9 km de la rue que
+  son adresse indique. Quatre sont replacées sur un objet OpenStreetMap révisé
+  de la même banque dans la même commune (AGB Constantine, AGB Tébessa, BADR
+  Kenadsa, BADR Aïn Témouchent) ; les deux autres, AGB Laghouat et BADR Taghit,
+  portent le centre de leur commune en `approximate`, car OpenStreetMap ne
+  cartographie aucun objet de leur banque dans un rayon de 25 km. Les six
+  publient leur `commune_code`/`commune` et leurs liens de preuve, et un point
+  situé sur la grille des minutes d'arc ne peut plus entrer dans le jeu de
+  données comme `exact`.
 - **`bank_code`** est le _code banque_ RIB à 3 chiffres (positions 5–7 de
   l'IBAN), vérifié contre des tables de codes banque indépendantes – il n'existe
   pas de registre officiel public unique. BNH et Ziraat (toutes deux nouvellement
