@@ -5,7 +5,7 @@
 // records their own geometry contradicts, so it fails the day a new one appears. It
 // cannot tell a shrinking list from a list someone edited: deleting a group's rows and
 // deleting the records both make it pass. This file pins the two numbers that cannot be
-// edited into agreement, the 55 corrections and the 303 residual.
+// edited into agreement, the 55 corrections and the 302 residual.
 //
 // WHY IT RE-DERIVES RATHER THAN RESTATES. test/reviewed-overrides-applied.test.mjs
 // already checks that every ledger decision was applied field by field. What it cannot
@@ -132,7 +132,7 @@ test("every correction still holds against the registry and the commune outlines
   }
 });
 
-test("the residual is the documented 303, and shrank by exactly the 55 corrected", () => {
+test("the residual is the documented 302, and shrank by exactly the 55 corrected", () => {
   assert.equal(exceptions.count, RESIDUAL);
   assert.equal(exceptions.pre_existing, RESIDUAL, "a residual row this batch created is not a residual");
   assert.equal(exceptions.created_by_this_batch, 0);

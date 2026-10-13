@@ -11,38 +11,12 @@
       "publish_action": "patch",
       "reviewer": "geoalgeria-arcminute-review",
       "reviewed_at": "2026-10-13",
-      "notes": "36.35, 6.6 is 36°21'N 6°36'E, the same locator placeholder. No AGB object exists in OpenStreetMap within 12 km of Constantine, so the point moves to the Constantine commune centre and stays approximate; Sidi Mabrouk Supérieur is a quarter of that commune, mapped only as a neighbourhood point.",
-      "expect": {
-        "name": "CONSTANTINE",
-        "address": "01 cité Essaada Sidi Mabrouk Superieur Constantine.",
-        "bank_id": "agb",
-        "wilaya_code": "25",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.35,
-        "lng": 6.6,
-        "geo_precision": "approximate",
-        "geo_method": "bank_locator"
-      },
-      "patch": {
-        "commune_code": "2501",
-        "commune": "Constantine",
-        "lat": 36.364164,
-        "lng": 6.608428,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid"
-      },
+      "notes": "36.35, 6.6 is 36°21'N 6°36'E: a rounded placeholder from the locator, which ingest already demoted to approximate on its decimal count alone. The branch is re-placed on AGB's own OpenStreetMap point in Sidi Mabrouk, 3.31 km away, matched on the bank (its website tag is agb.dz) and on the quarter the address names.",
+      "expect": { "name": "CONSTANTINE", "address": "01 cité Essaada Sidi Mabrouk Superieur Constantine.", "bank_id": "agb", "wilaya_code": "25", "commune_code": null, "commune": null, "lat": 36.35, "lng": 6.6, "geo_precision": "approximate", "geo_method": "bank_locator" },
+      "patch": { "commune_code": "2501", "commune": "Constantine", "lat": 36.3575503, "lng": 6.6357619, "geo_precision": "exact", "geo_method": "osm_node" },
       "evidence": [
-        {
-          "url": "https://www.openstreetmap.org/relation/2245418",
-          "checked_at": "2026-10-13",
-          "note": "Constantine commune outline, the relation the flagship commune centre 36.364164, 6.608428 is read from."
-        },
-        {
-          "url": "https://www.openstreetmap.org/node/2631787447",
-          "checked_at": "2026-10-13",
-          "note": "Sidi Mabrouk, the Constantine neighbourhood the branch address names, 2.0 km east of the commune centre."
-        }
+        { "url": "https://www.openstreetmap.org/node/4828121569", "checked_at": "2026-10-13", "note": "Bank point in Sidi Mabrouk, Constantine: name:fr/name:en Gulf Bank, official_name:fr Gulf Bank Algérie, website https://www.agb.dz/; the only AGB object in the wilaya." },
+        { "url": "https://www.openstreetmap.org/node/2631787447", "checked_at": "2026-10-13", "note": "Sidi Mabrouk, the Constantine quarter the branch address names, 0.47 km from that point." }
       ]
     },
     {
@@ -52,38 +26,12 @@
       "publish_action": "patch",
       "reviewer": "geoalgeria-arcminute-review",
       "reviewed_at": "2026-10-13",
-      "notes": "33.58333, 2.66667 is 33°35'N 2°40'E: the locator's degrees-and-minutes placeholder, 30.9 km southwest of Laghouat city. OpenStreetMap holds no AGB object anywhere near Laghouat (checked over amenity=bank nationwide and every name matching AGB/Gulf/خليج within 15 km), and agb.dz rejects non-browser requests, so the branch cannot be placed on its own street. It sits on the Laghouat commune centre as approximate instead.",
-      "expect": {
-        "name": "LAGHOUAT",
-        "address": "Rue de l’Indépendance - Laghouat.",
-        "bank_id": "agb",
-        "wilaya_code": "03",
-        "commune_code": null,
-        "commune": null,
-        "lat": 33.58333,
-        "lng": 2.66667,
-        "geo_precision": "exact",
-        "geo_method": "bank_locator"
-      },
-      "patch": {
-        "commune_code": "0301",
-        "commune": "Laghouat",
-        "lat": 33.8,
-        "lng": 2.875,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid"
-      },
+      "notes": "33.58333, 2.66667 is 33°35'N 2°40'E: a rounded placeholder 30.9 km southwest of Laghouat city, published as exact. OpenStreetMap holds no AGB object within 25 km of Laghouat, over every tag value and not only the name, and agb.dz rejects non-browser requests, so the branch cannot be placed on the street its address names. It sits on the Laghouat commune centre as approximate instead. expect.geo_precision is approximate, not the exact this record shipped: ingest now demotes a rounded placeholder itself, so that is what a fresh locator pull hands the ledger.",
+      "expect": { "name": "LAGHOUAT", "address": "Rue de l’Indépendance - Laghouat.", "bank_id": "agb", "wilaya_code": "03", "commune_code": null, "commune": null, "lat": 33.58333, "lng": 2.66667, "geo_precision": "approximate", "geo_method": "bank_locator" },
+      "patch": { "commune_code": "0301", "commune": "Laghouat", "lat": 33.8, "lng": 2.875, "geo_precision": "approximate", "geo_method": "commune_centroid" },
       "evidence": [
-        {
-          "url": "https://www.openstreetmap.org/relation/6546026",
-          "checked_at": "2026-10-13",
-          "note": "Laghouat commune outline, the relation the flagship commune centre 33.8, 2.875 is read from."
-        },
-        {
-          "url": "https://www.openstreetmap.org/way/42329273",
-          "checked_at": "2026-10-13",
-          "note": "Avenue de l'Indépendance, the street the branch address names, runs through Laghouat city 30 km from the published point."
-        }
+        { "url": "https://www.openstreetmap.org/relation/6546026", "checked_at": "2026-10-13", "note": "Laghouat commune outline, the relation the flagship commune centre 33.8, 2.875 is read from." },
+        { "url": "https://www.openstreetmap.org/way/42329273", "checked_at": "2026-10-13", "note": "Avenue de l'Indépendance, the street the branch address names, runs through Laghouat city 30.9 km from the published point." }
       ]
     },
     {
@@ -93,33 +41,11 @@
       "publish_action": "patch",
       "reviewer": "geoalgeria-arcminute-review",
       "reviewed_at": "2026-10-13",
-      "notes": "35, 8 is a whole-degree placeholder 46.8 km from Tébessa. The reviewed point is the OpenStreetMap building, so it is a building centroid and stays approximate per the package's OSM rule.",
-      "expect": {
-        "name": "Tebessa",
-        "address": "Cite Houari Boumediene Lot 183 groupe propriété n°181 -  Tébessa.",
-        "bank_id": "agb",
-        "wilaya_code": "12",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35,
-        "lng": 8,
-        "geo_precision": "approximate",
-        "geo_method": "bank_locator"
-      },
-      "patch": {
-        "commune_code": "1201",
-        "commune": "Tébessa",
-        "lat": 35.4078992,
-        "lng": 8.1258582,
-        "geo_precision": "approximate",
-        "geo_method": "osm_way"
-      },
+      "notes": "35, 8 is a whole-degree rounded placeholder 46.8 km from Tébessa. The reviewed point is AGB's building in OpenStreetMap, so it is a building centroid and stays approximate per the package's OSM rule.",
+      "expect": { "name": "Tebessa", "address": "Cite Houari Boumediene Lot 183 groupe propriété n°181 -  Tébessa.", "bank_id": "agb", "wilaya_code": "12", "commune_code": null, "commune": null, "lat": 35, "lng": 8, "geo_precision": "approximate", "geo_method": "bank_locator" },
+      "patch": { "commune_code": "1201", "commune": "Tébessa", "lat": 35.4078992, "lng": 8.1258582, "geo_precision": "approximate", "geo_method": "osm_way" },
       "evidence": [
-        {
-          "url": "https://www.openstreetmap.org/way/288328744",
-          "checked_at": "2026-10-13",
-          "note": "Bank building in Tébessa tagged brand/operator بنك الخليج الجزائر (Gulf Bank Algeria) with operator:de=AGB and addr:city تبسة; the only AGB object in the wilaya."
-        }
+        { "url": "https://www.openstreetmap.org/way/288328744", "checked_at": "2026-10-13", "note": "Bank building in Tébessa tagged brand/operator بنك الخليج الجزائر (Gulf Bank Algeria) with operator:de AGB and addr:city تبسة; the only AGB object in the wilaya." }
       ]
     },
     {
@@ -129,33 +55,11 @@
       "publish_action": "patch",
       "reviewer": "geoalgeria-arcminute-review",
       "reviewed_at": "2026-10-13",
-      "notes": "31.56667, -2.43333 is 31°34'N 2°26'W, 1.2 km from the branch. The OpenStreetMap node is the branch's own point, so it ships exact.",
-      "expect": {
-        "name": "KENADSA",
-        "address": "CITE IBN BADIS CNE DE KENADSA",
-        "bank_id": "badr",
-        "wilaya_code": "08",
-        "commune_code": null,
-        "commune": null,
-        "lat": 31.56667,
-        "lng": -2.43333,
-        "geo_precision": "exact",
-        "geo_method": "bank_locator"
-      },
-      "patch": {
-        "commune_code": "0810",
-        "commune": "Kenadsa",
-        "lat": 31.5560899,
-        "lng": -2.4309637,
-        "geo_precision": "exact",
-        "geo_method": "osm_node"
-      },
+      "notes": "31.56667, -2.43333 is 31°34'N 2°26'W, a rounded placeholder 1.2 km from the branch. The OpenStreetMap node is the branch's own point, so it ships exact. expect.geo_precision is approximate, not the exact this record shipped: ingest now demotes a rounded placeholder itself, so that is what a fresh locator pull hands the ledger.",
+      "expect": { "name": "KENADSA", "address": "CITE IBN BADIS CNE DE KENADSA", "bank_id": "badr", "wilaya_code": "08", "commune_code": null, "commune": null, "lat": 31.56667, "lng": -2.43333, "geo_precision": "approximate", "geo_method": "bank_locator" },
+      "patch": { "commune_code": "0810", "commune": "Kenadsa", "lat": 31.5560899, "lng": -2.4309637, "geo_precision": "exact", "geo_method": "osm_node" },
       "evidence": [
-        {
-          "url": "https://www.openstreetmap.org/node/6337732136",
-          "checked_at": "2026-10-13",
-          "note": "BADR branch point in Kenadsa: brand بنك بدر / Banque BADR, addr:city القنادسة (Kenadsa), addr:postcode 08011; the only BADR object in the commune, matching the only BADR branch Kenadsa has."
-        }
+        { "url": "https://www.openstreetmap.org/node/6337732136", "checked_at": "2026-10-13", "note": "BADR branch point in Kenadsa: brand بنك بدر / Banque BADR, addr:city القنادسة (Kenadsa), addr:postcode 08011; the only BADR object within 21 km, and Kenadsa has one BADR branch." }
       ]
     },
     {
@@ -165,33 +69,11 @@
       "publish_action": "patch",
       "reviewer": "geoalgeria-arcminute-review",
       "reviewed_at": "2026-10-13",
-      "notes": "30.91667, -2.03333 is 30°55'N 2°02'W. OpenStreetMap maps no bank at all within 8 km of Taghit, so \"centre de ville de Taghit\" can only be the commune centre, 0.4 km away and approximate rather than exact.",
-      "expect": {
-        "name": "TAGHIT",
-        "address": "CENTRE DE VILLE DE TAGHIT",
-        "bank_id": "badr",
-        "wilaya_code": "08",
-        "commune_code": null,
-        "commune": null,
-        "lat": 30.91667,
-        "lng": -2.03333,
-        "geo_precision": "exact",
-        "geo_method": "bank_locator"
-      },
-      "patch": {
-        "commune_code": "0813",
-        "commune": "Taghit",
-        "lat": 30.920106,
-        "lng": -2.032217,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid"
-      },
+      "notes": "30.91667, -2.03333 is 30°55'N 2°02'W, a rounded placeholder. OpenStreetMap maps no bank at all within 25 km of Taghit, so \"centre de ville de Taghit\" can only be the commune centre, 0.4 km away and approximate rather than exact. expect.geo_precision is approximate, not the exact this record shipped: ingest now demotes a rounded placeholder itself, so that is what a fresh locator pull hands the ledger.",
+      "expect": { "name": "TAGHIT", "address": "CENTRE DE VILLE DE TAGHIT", "bank_id": "badr", "wilaya_code": "08", "commune_code": null, "commune": null, "lat": 30.91667, "lng": -2.03333, "geo_precision": "approximate", "geo_method": "bank_locator" },
+      "patch": { "commune_code": "0813", "commune": "Taghit", "lat": 30.920106, "lng": -2.032217, "geo_precision": "approximate", "geo_method": "commune_centroid" },
       "evidence": [
-        {
-          "url": "https://www.openstreetmap.org/relation/6531002",
-          "checked_at": "2026-10-13",
-          "note": "Taghit commune outline, the relation the flagship commune centre 30.920106, -2.032217 is read from."
-        }
+        { "url": "https://www.openstreetmap.org/relation/6531002", "checked_at": "2026-10-13", "note": "Taghit commune outline, the relation the flagship commune centre 30.920106, -2.032217 is read from." }
       ]
     },
     {
@@ -201,38 +83,12 @@
       "publish_action": "patch",
       "reviewer": "geoalgeria-arcminute-review",
       "reviewed_at": "2026-10-13",
-      "notes": "35.33333, -1.08333 is 35°20'N 1°05'W, 6.1 km northeast of the city. The OpenStreetMap node is the branch's own point, so it ships exact.",
-      "expect": {
-        "name": "AIN TEMOUCHENT",
-        "address": "COMPLEXE BD ROUTE D'ORAN",
-        "bank_id": "badr",
-        "wilaya_code": "46",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.33333,
-        "lng": -1.08333,
-        "geo_precision": "exact",
-        "geo_method": "bank_locator"
-      },
-      "patch": {
-        "commune_code": "4601",
-        "commune": "Ain Temouchent",
-        "lat": 35.3063378,
-        "lng": -1.1424099,
-        "geo_precision": "exact",
-        "geo_method": "osm_node"
-      },
+      "notes": "35.33333, -1.08333 is 35°20'N 1°05'W, a rounded placeholder 6.1 km northeast of the city. Matched on the bank and the locality only: OpenStreetMap carries no street or agency number on this node, and the next BADR object is 11.5 km away in another commune with its own branch record. The node is the branch's own point, so it ships exact. expect.geo_precision is approximate, not the exact this record shipped: ingest now demotes a rounded placeholder itself, so that is what a fresh locator pull hands the ledger.",
+      "expect": { "name": "AIN TEMOUCHENT", "address": "COMPLEXE BD ROUTE D'ORAN", "bank_id": "badr", "wilaya_code": "46", "commune_code": null, "commune": null, "lat": 35.33333, "lng": -1.08333, "geo_precision": "approximate", "geo_method": "bank_locator" },
+      "patch": { "commune_code": "4601", "commune": "Ain Temouchent", "lat": 35.3063378, "lng": -1.1424099, "geo_precision": "exact", "geo_method": "osm_node" },
       "evidence": [
-        {
-          "url": "https://www.openstreetmap.org/node/6298375922",
-          "checked_at": "2026-10-13",
-          "note": "BADR branch point in Aïn Témouchent: brand BADR Banque, brand:wikidata Q2883031; the only BADR object in the commune, matching the only BADR branch the commune has."
-        },
-        {
-          "url": "https://www.openstreetmap.org/way/36843537",
-          "checked_at": "2026-10-13",
-          "note": "The node stands on Boulevard Larbi Ben M'Hidi, carrying RN 2, the Aïn Témouchent to Oran trunk road the address calls \"BD ROUTE D'ORAN\"."
-        }
+        { "url": "https://www.openstreetmap.org/node/6298375922", "checked_at": "2026-10-13", "note": "BADR branch point in Aïn Témouchent: brand BADR Banque, brand:wikidata Q2883031; the only BADR object within 11 km, and the commune has one BADR branch." },
+        { "url": "https://www.openstreetmap.org/way/36843537", "checked_at": "2026-10-13", "note": "The node stands on Boulevard Larbi Ben M'Hidi, carrying RN 2, the Aïn Témouchent to Oran trunk road the address calls \"BD ROUTE D'ORAN\"; corroboration of the locality, not an addr:street match." }
       ]
     },
     {
@@ -240,33 +96,11 @@
       "record_id": "bdl-142",
       "status": "corrected",
       "publish_action": "patch",
-      "expect": {
-        "name": "EL KSEUR",
-        "address": "RUE ATTIR SALAH",
-        "bank_id": "bdl",
-        "wilaya_code": "06",
-        "lat": null,
-        "lng": null,
-        "geo_precision": null,
-        "geo_method": null
-      },
-      "patch": {
-        "lat": 36.6797911,
-        "lng": 4.8562265,
-        "geo_precision": "approximate",
-        "geo_method": "osm_way"
-      },
+      "expect": { "name": "EL KSEUR", "address": "RUE ATTIR SALAH", "bank_id": "bdl", "wilaya_code": "06", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.6797911, "lng": 4.8562265, "geo_precision": "approximate", "geo_method": "osm_way" },
       "evidence": [
-        {
-          "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
-          "checked_at": "2026-09-09",
-          "note": "BDL's published branch map identifies agency 142 in El Kseur."
-        },
-        {
-          "url": "https://www.openstreetmap.org/way/1172539020",
-          "checked_at": "2026-09-09",
-          "note": "BDL building with ref 142 on Rue Attir Salah, El Kseur."
-        }
+        { "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8", "checked_at": "2026-09-09", "note": "BDL's published branch map identifies agency 142 in El Kseur." },
+        { "url": "https://www.openstreetmap.org/way/1172539020", "checked_at": "2026-09-09", "note": "BDL building with ref 142 on Rue Attir Salah, El Kseur." }
       ]
     },
     {
@@ -274,33 +108,11 @@
       "record_id": "bdl-144",
       "status": "corrected",
       "publish_action": "patch",
-      "expect": {
-        "name": "TIGZIRT",
-        "address": "CITÉ 150 LOGTS, TIGZIRT",
-        "bank_id": "bdl",
-        "wilaya_code": "15",
-        "lat": null,
-        "lng": null,
-        "geo_precision": null,
-        "geo_method": null
-      },
-      "patch": {
-        "lat": 36.8914736,
-        "lng": 4.1251352,
-        "geo_precision": "exact",
-        "geo_method": "osm_node"
-      },
+      "expect": { "name": "TIGZIRT", "address": "CITÉ 150 LOGTS, TIGZIRT", "bank_id": "bdl", "wilaya_code": "15", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.8914736, "lng": 4.1251352, "geo_precision": "exact", "geo_method": "osm_node" },
       "evidence": [
-        {
-          "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
-          "checked_at": "2026-09-09",
-          "note": "BDL's published branch map identifies agency 144 in Tigzirt."
-        },
-        {
-          "url": "https://www.openstreetmap.org/node/4334599299",
-          "checked_at": "2026-09-09",
-          "note": "BDL point with ref 144 in Tigzirt."
-        }
+        { "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8", "checked_at": "2026-09-09", "note": "BDL's published branch map identifies agency 144 in Tigzirt." },
+        { "url": "https://www.openstreetmap.org/node/4334599299", "checked_at": "2026-09-09", "note": "BDL point with ref 144 in Tigzirt." }
       ]
     },
     {
@@ -308,33 +120,11 @@
       "record_id": "bdl-182",
       "status": "corrected",
       "publish_action": "patch",
-      "expect": {
-        "name": "HADJOUT",
-        "address": "63 FETTAKA ALI HADJOUT TIPAZA",
-        "bank_id": "bdl",
-        "wilaya_code": "42",
-        "lat": null,
-        "lng": null,
-        "geo_precision": null,
-        "geo_method": null
-      },
-      "patch": {
-        "lat": 36.5128396,
-        "lng": 2.41712,
-        "geo_precision": "approximate",
-        "geo_method": "osm_way"
-      },
+      "expect": { "name": "HADJOUT", "address": "63 FETTAKA ALI HADJOUT TIPAZA", "bank_id": "bdl", "wilaya_code": "42", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.5128396, "lng": 2.41712, "geo_precision": "approximate", "geo_method": "osm_way" },
       "evidence": [
-        {
-          "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
-          "checked_at": "2026-09-09",
-          "note": "BDL's published branch map identifies agency 182 in Hadjout."
-        },
-        {
-          "url": "https://www.openstreetmap.org/way/1202402578",
-          "checked_at": "2026-09-09",
-          "note": "BDL building with ref 182 in Hadjout."
-        }
+        { "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8", "checked_at": "2026-09-09", "note": "BDL's published branch map identifies agency 182 in Hadjout." },
+        { "url": "https://www.openstreetmap.org/way/1202402578", "checked_at": "2026-09-09", "note": "BDL building with ref 182 in Hadjout." }
       ]
     },
     {
@@ -342,33 +132,11 @@
       "record_id": "bdl-424",
       "status": "corrected",
       "publish_action": "patch",
-      "expect": {
-        "name": "SIDI ALI",
-        "address": "01, BVD DU 1ER NOVEMBRE SIDI ALI",
-        "bank_id": "bdl",
-        "wilaya_code": "27",
-        "lat": null,
-        "lng": null,
-        "geo_precision": null,
-        "geo_method": null
-      },
-      "patch": {
-        "lat": 36.0974362,
-        "lng": 0.4145834,
-        "geo_precision": "exact",
-        "geo_method": "osm_node"
-      },
+      "expect": { "name": "SIDI ALI", "address": "01, BVD DU 1ER NOVEMBRE SIDI ALI", "bank_id": "bdl", "wilaya_code": "27", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.0974362, "lng": 0.4145834, "geo_precision": "exact", "geo_method": "osm_node" },
       "evidence": [
-        {
-          "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
-          "checked_at": "2026-09-09",
-          "note": "BDL's published branch map identifies agency 424 in Sidi Ali."
-        },
-        {
-          "url": "https://www.openstreetmap.org/node/3692424906",
-          "checked_at": "2026-09-09",
-          "note": "BDL point with ref 424 in Sidi Ali."
-        }
+        { "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8", "checked_at": "2026-09-09", "note": "BDL's published branch map identifies agency 424 in Sidi Ali." },
+        { "url": "https://www.openstreetmap.org/node/3692424906", "checked_at": "2026-09-09", "note": "BDL point with ref 424 in Sidi Ali." }
       ]
     },
     {
@@ -376,101 +144,11 @@
       "record_id": "bdl-433",
       "status": "corrected",
       "publish_action": "patch",
-      "expect": {
-        "name": "OUED RHIOU",
-        "address": "RUE TAZGHAIT DJILALI OUED RHIOU",
-        "bank_id": "bdl",
-        "wilaya_code": "48",
-        "lat": null,
-        "lng": null,
-        "geo_precision": null,
-        "geo_method": null
-      },
-      "patch": {
-        "lat": 35.9605357,
-        "lng": 0.9163278,
-        "geo_precision": "exact",
-        "geo_method": "osm_node"
-      },
+      "expect": { "name": "OUED RHIOU", "address": "RUE TAZGHAIT DJILALI OUED RHIOU", "bank_id": "bdl", "wilaya_code": "48", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 35.9605357, "lng": 0.9163278, "geo_precision": "exact", "geo_method": "osm_node" },
       "evidence": [
-        {
-          "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
-          "checked_at": "2026-09-09",
-          "note": "BDL's published branch map identifies agency 433 in Oued Rhiou."
-        },
-        {
-          "url": "https://www.openstreetmap.org/node/3139374641",
-          "checked_at": "2026-09-09",
-          "note": "BDL point with ref 433 on Rue Tazghat Djillali, Oued Rhiou."
-        }
-      ]
-    },
-    {
-      "file": "branches.json",
-      "record_id": "sga-amirouche",
-      "status": "corrected",
-      "publish_action": "patch",
-      "expect": {
-        "name": "Amirouche",
-        "address": "3, Boulevard Colonel Amirouche",
-        "bank_id": "sga",
-        "wilaya_code": "16",
-        "lat": null,
-        "lng": null,
-        "geo_precision": null,
-        "geo_method": null
-      },
-      "patch": {
-        "lat": 36.7715307,
-        "lng": 3.0591324,
-        "geo_precision": "exact",
-        "geo_method": "osm_node"
-      },
-      "evidence": [
-        {
-          "url": "https://particuliers.societegenerale.dz/fr/locations-details/agences/",
-          "checked_at": "2026-09-09",
-          "note": "SGA's locator publishes its Amirouche branch at 3 Boulevard Colonel Amirouche."
-        },
-        {
-          "url": "https://www.openstreetmap.org/node/2964284353",
-          "checked_at": "2026-09-09",
-          "note": "Société Générale Amirouche point on Boulevard Colonel Amirouche, Alger."
-        }
-      ]
-    },
-    {
-      "file": "branches.json",
-      "record_id": "sga-bab-ezzouar",
-      "status": "corrected",
-      "publish_action": "patch",
-      "expect": {
-        "name": "Bab - Ezzouar",
-        "address": "1 Boulevard Rezig kadda - Bab Ezzouar",
-        "bank_id": "sga",
-        "wilaya_code": "16",
-        "lat": null,
-        "lng": null,
-        "geo_precision": null,
-        "geo_method": null
-      },
-      "patch": {
-        "lat": 36.7148763,
-        "lng": 3.1891634,
-        "geo_precision": "exact",
-        "geo_method": "osm_node"
-      },
-      "evidence": [
-        {
-          "url": "https://particuliers.societegenerale.dz/fr/locations-details/agences/",
-          "checked_at": "2026-09-09",
-          "note": "SGA's locator publishes its Bab Ezzouar branch at 1 Boulevard Rezig Kadda."
-        },
-        {
-          "url": "https://www.openstreetmap.org/node/3287544248",
-          "checked_at": "2026-09-09",
-          "note": "Société Générale point at 1 Rue Rezig Kadda, Bab Ezzouar."
-        }
+        { "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8", "checked_at": "2026-09-09", "note": "BDL's published branch map identifies agency 433 in Oued Rhiou." },
+        { "url": "https://www.openstreetmap.org/node/3139374641", "checked_at": "2026-09-09", "note": "BDL point with ref 433 on Rue Tazghat Djillali, Oued Rhiou." }
       ]
     },
     {
@@ -478,33 +156,35 @@
       "record_id": "sga-chlef",
       "status": "corrected",
       "publish_action": "patch",
-      "expect": {
-        "name": "Chlef",
-        "address": "20, Rue des Martyrs - Chlef",
-        "bank_id": "sga",
-        "wilaya_code": "02",
-        "lat": null,
-        "lng": null,
-        "geo_precision": null,
-        "geo_method": null
-      },
-      "patch": {
-        "lat": 36.1676259,
-        "lng": 1.3359694,
-        "geo_precision": "approximate",
-        "geo_method": "osm_way"
-      },
+      "expect": { "name": "Chlef", "address": "20, Rue des Martyrs - Chlef", "bank_id": "sga", "wilaya_code": "02", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.1676259, "lng": 1.3359694, "geo_precision": "approximate", "geo_method": "osm_way" },
       "evidence": [
-        {
-          "url": "https://particuliers.societegenerale.dz/fr/locations-details/agences/",
-          "checked_at": "2026-09-09",
-          "note": "SGA's locator publishes its Chlef branch at 20 Rue des Martyrs."
-        },
-        {
-          "url": "https://www.openstreetmap.org/way/310443120",
-          "checked_at": "2026-09-09",
-          "note": "Société Générale building at 20 Rue des Martyrs, Chlef."
-        }
+        { "url": "https://particuliers.societegenerale.dz/fr/locations-details/agences/", "checked_at": "2026-09-09", "note": "SGA's locator publishes its Chlef branch at 20 Rue des Martyrs." },
+        { "url": "https://www.openstreetmap.org/way/310443120", "checked_at": "2026-09-09", "note": "Société Générale building at 20 Rue des Martyrs, Chlef." }
+      ]
+    },
+    {
+      "file": "branches.json",
+      "record_id": "sga-bab-ezzouar",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": { "name": "Bab - Ezzouar", "address": "1 Boulevard Rezig kadda - Bab Ezzouar", "bank_id": "sga", "wilaya_code": "16", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.7148763, "lng": 3.1891634, "geo_precision": "exact", "geo_method": "osm_node" },
+      "evidence": [
+        { "url": "https://particuliers.societegenerale.dz/fr/locations-details/agences/", "checked_at": "2026-09-09", "note": "SGA's locator publishes its Bab Ezzouar branch at 1 Boulevard Rezig Kadda." },
+        { "url": "https://www.openstreetmap.org/node/3287544248", "checked_at": "2026-09-09", "note": "Société Générale point at 1 Rue Rezig Kadda, Bab Ezzouar." }
+      ]
+    },
+    {
+      "file": "branches.json",
+      "record_id": "sga-amirouche",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": { "name": "Amirouche", "address": "3, Boulevard Colonel Amirouche", "bank_id": "sga", "wilaya_code": "16", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.7715307, "lng": 3.0591324, "geo_precision": "exact", "geo_method": "osm_node" },
+      "evidence": [
+        { "url": "https://particuliers.societegenerale.dz/fr/locations-details/agences/", "checked_at": "2026-09-09", "note": "SGA's locator publishes its Amirouche branch at 3 Boulevard Colonel Amirouche." },
+        { "url": "https://www.openstreetmap.org/node/2964284353", "checked_at": "2026-09-09", "note": "Société Générale Amirouche point on Boulevard Colonel Amirouche, Alger." }
       ]
     },
     {
@@ -512,26 +192,10 @@
       "record_id": "sga-tizi-ouzou",
       "status": "corrected",
       "publish_action": "patch",
-      "expect": {
-        "name": "Tizi Ouzou",
-        "address": "06, Boulevard Stiti Ali - Tizi Ouzou",
-        "phone": "(+213) 26 20 03 80",
-        "bank_id": "sga",
-        "wilaya_code": "15",
-        "lat": null,
-        "lng": null,
-        "geo_precision": null,
-        "geo_method": null
-      },
-      "patch": {
-        "address": "Lot 254 N°34, Boulevard Stiti Ali, Tizi Ouzou"
-      },
+      "expect": { "name": "Tizi Ouzou", "address": "06, Boulevard Stiti Ali - Tizi Ouzou", "phone": "(+213) 26 20 03 80", "bank_id": "sga", "wilaya_code": "15", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "address": "Lot 254 N°34, Boulevard Stiti Ali, Tizi Ouzou" },
       "evidence": [
-        {
-          "url": "https://particuliers.societegenerale.dz/fr/locations-details/tizi-ouzou/",
-          "checked_at": "2026-09-09",
-          "note": "SGA's current branch page publishes Lot 254 N°34 on Boulevard Stiti Ali; its directions point conflicts with the locality, so no coordinate is published."
-        }
+        { "url": "https://particuliers.societegenerale.dz/fr/locations-details/tizi-ouzou/", "checked_at": "2026-09-09", "note": "SGA's current branch page publishes Lot 254 N°34 on Boulevard Stiti Ali; its directions point conflicts with the locality, so no coordinate is published." }
       ]
     }
   ]

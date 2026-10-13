@@ -8,12 +8,12 @@
   "geocoded_count": 1325,
   "geocoded_pct": 76.5,
   "precision": {
-    "exact": 1159,
-    "approximate": 166
+    "exact": 1160,
+    "approximate": 165
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,325 carry a geocoded point, including eleven reviewed BDL, SGA, AGB and BADR branches matched to OSM by bank, wilaya, locality, and agency number or street address, and three whose locator published only a degrees-and-minutes placeholder and which carry their commune's centre as approximate. The rest remain address-only (see README).",
+  "coverage_note": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,325 carry a geocoded point. Twelve of those are reviewed OpenStreetMap matches on BDL, SGA, AGB and BADR branches, each agreeing on bank, wilaya and locality, and nine of the twelve on an agency number or street address as well; the other three (BADR Aïn Témouchent, BADR Kenadsa and AGB Constantine) rest on bank and locality alone, the source carrying no street to match. Two further branches sat on a rounded placeholder their locator published as degrees and minutes, and carry their commune's centre as approximate because OpenStreetMap maps no object of their bank there. The rest remain address-only (see README).",
   "wilayas_covered": 67,
   "bbox": [
     -8.149472,
@@ -60,7 +60,7 @@
       "evidence_type": "crowdsourced"
     }
   ],
-  "license": "Compiled from public regulatory listings and official institution sites/locators; eight reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
+  "license": "Compiled from public regulatory listings and official institution sites/locators; twelve reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
   "updated": "2026-09-09",
   "banks": 21,
   "institutions": 8,

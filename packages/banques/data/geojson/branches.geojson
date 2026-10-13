@@ -1256,8 +1256,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.608428,
-          36.364164
+          6.6357619,
+          36.3575503
         ]
       },
       "properties": {
@@ -1266,10 +1266,10 @@
         "wilaya_code": "25",
         "commune_code": "2501",
         "commune": "Constantine",
-        "lat": 36.364164,
-        "lng": 6.608428,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 36.3575503,
+        "lng": 6.6357619,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
         "source": "bank_locator",
         "bank_id": "agb",
         "address": "01 cité Essaada Sidi Mabrouk Superieur Constantine.",
@@ -1278,7 +1278,7 @@
         "reviewed_at": "2026-10-13",
         "reviewed_by": "geoalgeria-arcminute-review",
         "review_evidence": [
-          "https://www.openstreetmap.org/relation/2245418",
+          "https://www.openstreetmap.org/node/4828121569",
           "https://www.openstreetmap.org/node/2631787447"
         ]
       }

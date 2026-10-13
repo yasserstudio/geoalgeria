@@ -186,10 +186,11 @@ export function coordDecimals(lat, lng) {
 const axisOnArcminute = (deg) =>
   Number.isFinite(deg) && Math.abs(deg * 60 - Math.round(deg * 60)) < ARCMINUTE_TOLERANCE;
 
-/** Is the point degrees-and-minutes with the seconds missing? True only when BOTH
- *  axes sit on a whole arcminute: one axis alone happens to real coordinates often
- *  enough to be meaningless, while both together is the conversion's signature
- *  (see ARCMINUTE_TOLERANCE). Ungeocoded rows are never a hit. */
+/** Is the point a **rounded placeholder** of the degrees-and-minutes kind, the
+ *  seconds missing? True only when BOTH axes sit on a whole arcminute: one axis
+ *  alone happens to real coordinates often enough to be meaningless, while both
+ *  together is the conversion's signature (see ARCMINUTE_TOLERANCE). Ungeocoded
+ *  rows are never a hit. */
 export function onArcminuteGrid(lat, lng) {
   return axisOnArcminute(lat) && axisOnArcminute(lng);
 }

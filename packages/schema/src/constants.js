@@ -38,18 +38,31 @@ export const WILAYA_CODES = Array.from({ length: 69 }, (_, i) =>
 export const MIN_EXACT_DECIMALS = 3;
 
 /** How close to a whole arcminute a coordinate has to sit, in arcminutes, before
- *  the value reads as degrees-and-minutes with the seconds missing rather than as
- *  a measurement. 0.002' is 0.0000333°, about 3.7 m.
+ *  the value reads as a **rounded placeholder** (ADR 0001 L0): degrees and minutes
+ *  with the seconds missing, rather than a measurement. 0.003' is 0.00005°, about
+ *  5.6 m of latitude.
  *
- *  `MIN_EXACT_DECIMALS` cannot see this placeholder, because minutes divided by 60
- *  produce a long decimal tail: AGB's Laghouat branch shipped 33.58333, 2.66667
- *  (33°35'N 2°40'E) at five fraction digits, a cell about 1.5 km across and 30 km
+ *  `MIN_EXACT_DECIMALS` cannot see this one, because minutes divided by 60 produce
+ *  a long decimal tail: AGB's Laghouat branch shipped 33.58333, 2.66667
+ *  (33°35'N 2°40'E) at five fraction digits, a cell about 1.5 km across and 30.9 km
  *  from the branch's own street address, and nothing in the contract objected
- *  (private tracker #285). A conversion written to five decimals sits inside
- *  0.0002' of the grid and one written to seven inside 0.00002', so the cut has
- *  two orders of magnitude of room above the rounding it catches, while a measured
- *  point lands inside it on BOTH axes about once in 60,000. */
-export const ARCMINUTE_TOLERANCE = 0.002;
+ *  (private tracker #285).
+ *
+ *  The cut is set by the coarsest conversion it must still catch. A grid point
+ *  rounded to d decimal degrees sits at most 0.5×10⁻ᵈ×60 arcminutes off the grid:
+ *  0.003' at d=4, 0.0003' at d=5, 0.000003' at d=7. So 0.003' covers every DMS
+ *  value written to four or more decimals, and the comparison stays strict (`<`)
+ *  without sitting on a boundary: m/60 for integer m terminates at two decimals or
+ *  never, so a 4-decimal rounding is always strictly inside 0.003' and never
+ *  exactly on it. 33.5833 (0.002' off) is the case a 0.002' cut let through, in
+ *  both directions of the float comparison.
+ *
+ *  It is not set wider, because the rate at which a measured point lands inside the
+ *  cut on BOTH axes is 4t²: 1 in 27,800 at 0.003', against 1 in 278 at the 0.03'
+ *  that three decimals would need. Three decimals is therefore a known gap, stated
+ *  rather than bought with 60 false positives over the repository's exact records;
+ *  two decimals and coarser are already MIN_EXACT_DECIMALS's job. */
+export const ARCMINUTE_TOLERANCE = 0.003;
 
 /** Generous Algeria bounding box (WGS84) for the coordinate sanity guard.
  *  Deliberately loose: its job is to catch lat/lng swaps and sign flips, not to
