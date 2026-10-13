@@ -134,7 +134,12 @@ declare namespace algeriaGeodata {
     name_ar: string;
     wilaya_code: number;
     daira: string | null;
-    /** `null` on the 1 commune for which no citable postal code was found. */
+    /** The postal code of the commune's principal Algérie Poste office. Its first
+     *  two digits are that office's wilaya at the time the code was issued, so like
+     *  `code_commune` the prefix does not necessarily equal `wilaya_code`: Algérie
+     *  Poste kept the old numbering through the 2026 reform, so Aflou is `03001` in
+     *  wilaya 59. 108 of the 1,540 coded communes are in that case, all of them in
+     *  wilayas 59-69. `null` on the 1 commune for which no citable code was found. */
     postal_code: string | null;
     latitude: number | null;
     longitude: number | null;

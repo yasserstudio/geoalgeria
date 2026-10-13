@@ -147,7 +147,7 @@ all eleven wilayas of the 2026 cohort (59–69). See
 | `name_ar` | string | Arabic name |
 | `wilaya_code` | integer | Parent wilaya code (1–69) |
 | `daira` | string | Parent daira name (French) |
-| `postal_code` | string \| null | Commune postal code (null for 1 commune with no citable code) |
+| `postal_code` | string \| null | Commune postal code, the code of the commune's principal Algérie Poste office; its two-digit prefix is that office's wilaya when the code was issued, so it does not necessarily equal `wilaya_code` (108 of 1,540, all in wilayas 59–69, e.g. Aflou `03001` in wilaya 59); null for 1 commune with no citable code |
 | `latitude` | number | Latitude (100% geocoded — no nulls) |
 | `longitude` | number | Longitude (100% geocoded — no nulls) |
 | `code_commune` | integer | Unique ONS 2021 administrative code (`WWCC`); communes promoted in 2026 retain their 2021 mother-wilaya prefix |
@@ -158,14 +158,14 @@ all eleven wilayas of the 2026 cohort (59–69). See
 
 ```json
 {
-  "id": 586,
-  "commune_name_fr": "Aïn El Ibel",
-  "commune_name_ar": "عين الإبل",
-  "daira_name_fr": "Aïn El Ibel",
-  "wilaya_code": 17,
-  "wilaya_name_fr": "Djelfa",
-  "wilaya_name_ar": "الجلفة",
-  "postal_code": "17001"
+  "id": 1434,
+  "commune_name_fr": "Aflou",
+  "commune_name_ar": "آفلو",
+  "daira_name_fr": "Aflou",
+  "wilaya_code": 59,
+  "wilaya_name_fr": "Aflou",
+  "wilaya_name_ar": "آفلو",
+  "postal_code": "03001"
 }
 ```
 

@@ -106,7 +106,7 @@ Récupérez `data/ecommerce/communes.json` – plat, dénormalisé, sans jointur
 ```json
 {
   "id": 541,
-  "commune_name_fr": "Ain El Ibel",
+  "commune_name_fr": "Aïn El Ibel",
   "commune_name_ar": "عين الإبل",
   "daira_name_fr": "Aïn El Ibel",
   "wilaya_code": 17,
@@ -115,6 +115,8 @@ Récupérez `data/ecommerce/communes.json` – plat, dénormalisé, sans jointur
   "postal_code": "17011"
 }
 ```
+
+Un code postal est celui du bureau de poste principal de la commune, et ses deux premiers chiffres sont la wilaya de ce bureau au moment où le code a été attribué. Comme `code_commune`, le préfixe n'est pas forcément égal à `wilaya_code` : Algérie Poste a gardé l'ancienne numérotation après la réforme de 2026, donc Aflou est `03001` dans la wilaya 59. Cela concerne 108 des 1 540 communes codées, toutes dans les wilayas 59 à 69.
 
 ### Alimentation de base de données
 
