@@ -187,53 +187,64 @@ function treeOf(dir, base = dir) {
   return out;
 }
 
-/** Give one carrier per writer a value the fixer is recorded as replacing. */
+/**
+ * Drift EVERY output the fixer queues, one recorded value each, so the scoping
+ * assertion cannot pass on a writer that simply had nothing to write. The test
+ * below checks the count the fixer reports against this list, so a writer added
+ * later that is not drifted here fails rather than passing silently.
+ */
 function driftRepoCopy(repo) {
-  const data = join(repo, "packages", "dataset", "data");
-  const edit = (relPath, change) => {
-    const path = join(data, relPath);
-    writeFileSync(path, change(readFileSync(path, "utf8")));
-  };
+  const pkg = join(repo, "packages", "dataset");
+  const data = join(pkg, "data");
+  const edit = (path, change) => writeFileSync(path, change(readFileSync(path, "utf8")));
+  const editData = (relPath, change) => edit(join(data, relPath), change);
   const editJson = (relPath, change) =>
-    edit(relPath, (text) => {
+    editData(relPath, (text) => {
       const doc = JSON.parse(text);
       change(doc);
       return `${JSON.stringify(doc, null, 2)}\n`;
     });
-
-  // patchCsv: commune 527 is keyed on its trailing code, so its old name is safe.
-  // data/csv/communes.csv is CRLF, so that code is the last field before the \r.
-  edit(
-    join("csv", "communes.csv"),
-    (text) =>
+  /** Set one field of the CSV rows a predicate picks, keeping the line endings. */
+  const editCsv = (relPath, pick, index, value) =>
+    editData(relPath, (text) =>
       text
         .split("\n")
-        .map((line) => (/,527\r?$/.test(line) ? line.replace("Lemsane,", "Lemcene,") : line))
+        .map((line) => {
+          if (!pick(line)) return line;
+          const carriage = line.endsWith("\r") ? "\r" : "";
+          const fields = (carriage ? line.slice(0, -1) : line).split(",");
+          fields[index] = value;
+          return fields.join(",") + carriage;
+        })
         .join("\n"),
-  );
-  // patchSql: same row, keyed on the trailing code too.
-  edit(
-    join("sql", "full.sql"),
-    (text) => text.split("\n").map((line) => (line.endsWith(", 527),") ? line.replace("'Lemsane'", "'Lemcene'") : line)).join("\n"),
-  );
-  // The ecommerce carriers are keyed on the commune name, so the drift goes in
-  // the denormalized wilaya name instead: wilaya 28 is recorded as "M'sila".
-  editJson(join("ecommerce", "communes.json"), (rows) => {
-    for (const row of rows) if (row.wilaya_code === 28) row.wilaya_name_fr = "M'sila";
-  });
-  edit(
-    join("ecommerce", "communes.csv"),
-    (text) => text.split("\n").map((line) => line.replace(",28,M'Sila,", ",28,M'sila,")).join("\n"),
-  );
-  edit(
-    join("ecommerce", "communes.sql"),
-    (text) => text.split("\n").map((line) => line.replace(", 28, 'M''Sila', ", ", 28, 'M''sila', ")).join("\n"),
-  );
-  // The JSON and GeoJSON writers, and the delivery tables the fixer rebuilds
-  // from algeria.json on every run.
+    );
+  /** Replace a substring on the SQL rows a predicate picks. */
+  const editSql = (relPath, pick, from, to) =>
+    editData(relPath, (text) => text.split("\n").map((line) => (pick(line) ? line.replace(from, to) : line)).join("\n"));
+  const nameAr = (doc, code, value) => {
+    const row = doc.find((c) => c.code_commune === code);
+    assert.ok(row, `commune ${code} is in this split file`);
+    row.name_ar = value;
+  };
+
+  // The three split files, one recorded name_ar per wilaya range. They are keyed on
+  // code_commune and the ecommerce joins read name_fr, so a name_ar drift is safe.
+  editJson("communes_w1_w23.json", (doc) => nameAr(doc, 516, "أريس"));
+  editJson("communes_w24_w48.json", (doc) => nameAr(doc, 2606, "أولاد دايد"));
+  editJson("communes_w49_w69.json", (doc) => nameAr(doc, 319, "أفلو"));
+
+  // algeria.json, wilayas.json and both wilaya GeoJSONs: wilaya 28 is recorded as
+  // "M'sila", which `expect` accepts as the old reading.
   editJson("algeria.json", (doc) => {
     for (const wilaya of doc) if (wilaya.code === 28) wilaya.name_fr = "M'sila";
   });
+  editJson("wilayas.json", (doc) => {
+    for (const wilaya of doc.wilayas) if (wilaya.code === 28) wilaya.name_fr = "M'sila";
+  });
+  editJson(join("geojson", "wilayas.geojson"), (doc) => {
+    for (const feature of doc.features) if (feature.properties.code === 28) feature.properties.name_fr = "M'sila";
+  });
+  // The commune GeoJSON is placed by name, and Lemcene is commune 527's old one.
   editJson(join("geojson", "communes.geojson"), (doc) => {
     for (const feature of doc.features) {
       if (feature.properties.wilaya_code === 5 && feature.properties.name_fr === "Lemsane") {
@@ -241,17 +252,63 @@ function driftRepoCopy(repo) {
       }
     }
   });
-  editJson(join("delivery", "yalidine.json"), (doc) => {
-    doc.zones[0].wilaya_name_fr = "not a wilaya name";
+  // dairas.json: the fixer recounts the two dairas a commune moved between, so a
+  // wrong count there is drift it must correct.
+  editJson("dairas.json", (doc) => {
+    const tablat = doc.find((daira) => daira.wilaya_code === 26 && daira.name_fr === "Tablat");
+    assert.ok(tablat, "daira Tablat is in wilaya 26");
+    tablat.commune_count = 999;
+  });
+  // The ecommerce carriers are keyed on the commune name, so their drift goes in
+  // the denormalized wilaya name.
+  editJson(join("ecommerce", "communes.json"), (rows) => {
+    for (const row of rows) if (row.wilaya_code === 28) row.wilaya_name_fr = "M'sila";
+  });
+  // id,commune_fr,commune_ar,daira,wilaya_code,wilaya_fr,wilaya_ar,postal
+  editCsv(join("ecommerce", "communes.csv"), (line) => line.split(",")[4] === "28", 5, "M'sila");
+  editSql(join("ecommerce", "communes.sql"), (line) => line.includes(", 28, 'M''Sila', "), "'M''Sila'", "'M''sila'");
+
+  // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
+  editCsv(join("csv", "communes.csv"), (line) => /,527\r?$/.test(line), 0, "Lemcene");
+  // code,name_fr,name_ar,phone_code,postal_code,latitude,longitude,created,capital
+  editCsv(join("csv", "wilayas.csv"), (line) => line.startsWith("28,"), 1, "M'sila");
+  // code,name_ar,name_fr,name_en,created,… ,capital_commune_code
+  editCsv("wilayas.csv", (line) => line.startsWith("28,"), 2, "M'sila");
+  // wilaya_code,wilaya_name_fr,commune_name_ar,commune_name_fr, rebuilt every run
+  editCsv("communes_new_wilayas.csv", (line) => line.startsWith("59,"), 1, "not a wilaya name");
+  // (id, 'name_fr', …, code_commune): keyed on the trailing code
+  editSql(join("sql", "full.sql"), (line) => line.endsWith(", 527),"), "'Lemsane'", "'Lemcene'");
+
+  // The three delivery tables, whose wilaya label is rebuilt from algeria.json.
+  for (const provider of ["yalidine", "zr_express", "maystro"]) {
+    editJson(join("delivery", `${provider}.json`), (doc) => {
+      doc.zones[0].wilaya_name_fr = "not a wilaya name";
+    });
+  }
+
+  // The repo-root atlas GeoJSON, whose properties are rebuilt from algeria.json.
+  edit(join(pkg, "algeria.geojson"), (text) => {
+    const doc = JSON.parse(text);
+    doc.features[0].properties.name_en = "not a wilaya name";
+    return `${JSON.stringify(doc, null, 2)}\n`;
   });
 }
+
+/** Every output the fixer queues when no --target narrows it. */
+const QUEUED_OUTPUTS = 20;
 
 test("a --target run writes the targets and nothing else", () => {
   const dir = appCopy();
   const repo = join(dir, "repo");
   driftRepoCopy(repo);
-  const snapshot = treeOf(repo);
 
+  // Every writer has something to write, or the assertion below is vacuous for the
+  // ones that do not. A dry run with no --target reports what the fixer would
+  // touch, so this is also the check that the drift list keeps up with the writers.
+  const dry = execFileSync(process.execPath, [SCRIPT, "--root", repo], { stdio: "pipe", encoding: "utf8" });
+  assert.match(dry, new RegExp(`^${QUEUED_OUTPUTS} carrier\\(s\\) need an update$`, "m"));
+
+  const snapshot = treeOf(repo);
   fix(dir, "--write", ["algeria.json"]);
 
   const after = treeOf(repo);
