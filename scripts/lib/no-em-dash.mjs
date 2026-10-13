@@ -24,6 +24,12 @@ export const EM_DASH = "—";
 /** The separator a published name takes instead of an em dash. */
 export const NAME_SEPARATOR = " - ";
 
+// The dash and the ASCII blanks touching it, and nothing else. Spelled from
+// EM_DASH so this file still declares the character exactly once. Deliberately
+// not \s: that class matches U+00A0, and a sweep over the whole string turned
+// the non-breaking space French copy puts before a colon into a plain one.
+const EM_DASH_RUN = new RegExp(`[ \t]*${EM_DASH}[ \t]*`, "g");
+
 // `name`, `name_fr`, `former_names_ar`, `commune_name_fr`, `osm_name`: the
 // published name fields are exactly the keys carrying "name" as a whole word.
 const NAME_KEY = /(^|_)names?(_|$)/;
@@ -84,10 +90,14 @@ export const nameEmDashErrors = (files) =>
   );
 
 /**
- * Rewrite an upstream em dash in a name as the separator this repo publishes.
- * Anything that is not a string, and any other dash, is returned untouched.
+ * Rewrite an upstream em dash in a name as the spaced hyphen this repo
+ * publishes, together with the ASCII spaces or tabs immediately around it so
+ * the result is not doubly spaced. Every other character is left exactly as the
+ * source wrote it: other dashes, a non-breaking space, an interior tab. Only
+ * leading and trailing whitespace is trimmed, so a name opening on the dash
+ * does not open on a space. Anything that is not a string comes back untouched.
  */
 export function withoutEmDash(name) {
   if (typeof name !== "string" || !name.includes(EM_DASH)) return name;
-  return name.split(EM_DASH).join(NAME_SEPARATOR).replace(/\s+/g, " ").trim();
+  return name.replace(EM_DASH_RUN, NAME_SEPARATOR).trim();
 }

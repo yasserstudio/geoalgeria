@@ -89,6 +89,22 @@ test("withoutEmDash swaps the separator and leaves everything else alone", () =>
   assert.equal(withoutEmDash(null), null);
 });
 
+// It rewrites the dash, not the whitespace of the string it sits in. A /\s+/
+// sweep looked equivalent and was not: \s matches U+00A0, so it flattened the
+// non-breaking space French copy puts before a colon, and any interior tab with
+// it. Those are the source's own characters and nothing here asked to touch
+// them.
+test("withoutEmDash leaves a non-breaking space and an interior tab alone", () => {
+  const NBSP = "\u00a0";
+  assert.equal(
+    withoutEmDash(`Ligne 1${NBSP}: Alger ${EM_DASH} Oran`),
+    `Ligne 1${NBSP}: Alger - Oran`,
+  );
+  assert.equal(withoutEmDash(`a${NBSP}${EM_DASH}${NBSP}b`), `a${NBSP} - ${NBSP}b`);
+  assert.equal(withoutEmDash(`a\tb ${EM_DASH} c`), "a\tb - c");
+  assert.equal(withoutEmDash(`a  ${EM_DASH}  b`), "a - b", "ASCII blanks touching the dash do go");
+});
+
 test("nameEmDashPointers points at names only, at any depth", () => {
   assert.deepEqual(nameEmDashPointers({ name: `a ${EM_DASH} b`, address: `c ${EM_DASH} d` }), ["/name"]);
   assert.deepEqual(
