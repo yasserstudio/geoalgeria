@@ -5,9 +5,9 @@
 // test/lib/commune-name-ar-carriers.mjs are: a guard that checks one carrier and
 // not the others is the drift it exists to prevent. The three lists are not the
 // same list, which is why they are three readers and not one: the wilaya rows of
-// data/sql/full.sql carry a postal code of their own (the chef-lieu's), the two
-// GeoJSON point files carry one without a commune code, and the three ecommerce
-// flattenings carry one with neither a code nor a coordinate.
+// data/sql/full.sql carry a postal code of their own (the chef-lieu's),
+// data/geojson/communes.geojson carries one without a commune code, and the three
+// ecommerce flattenings carry one with neither a code nor a coordinate.
 //
 // Each reader returns rows in the carrier's own shape, read with the carrier's own
 // expression rather than with a helper the fix script also uses, so a reader's

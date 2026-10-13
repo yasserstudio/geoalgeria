@@ -385,7 +385,13 @@ function resolved(where, { code, wilaya_code: wilaya, name_fr: nameFr, postal_co
 // --- JSON carriers ----------------------------------------------------------
 /** Every commune row of a JSON doc, in any of the shapes this repo and its fork ship. */
 function communeRows(parsed) {
-  if (parsed?.type === "FeatureCollection") return parsed.features.map((f) => ({ row: f.properties }));
+  if (parsed?.type === "FeatureCollection") {
+    // A feature with no properties is not a commune point, and reading its postal
+    // code off `undefined` is a TypeError with no file in it. Say what the file is
+    // instead, the same way an unknown object shape does below.
+    if (!parsed.features?.every((f) => f?.properties && typeof f.properties === "object")) return null;
+    return parsed.features.map((f) => ({ row: f.properties }));
+  }
   const arr = Array.isArray(parsed) ? parsed : parsed.wilayas ?? parsed.communes;
   if (!Array.isArray(arr)) return null;
   if (arr[0]?.communes) return arr.flatMap((w) => w.communes.map((c) => ({ row: c, wilaya_code: w.code })));
