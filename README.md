@@ -46,12 +46,15 @@ npm install geoalgeria
 
 ```js
 const dz = require("geoalgeria");
+// or, in an ESM app or with a bundler: import dz from "geoalgeria";
 
 dz.wilayas;                       // all 69 wilayas
 dz.getCommunesByWilaya(16);       // 57 communes in Algiers
 dz.findByPostalCode("16000");     // → commune, daira, wilaya
 dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 ```
+
+A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office and ATM mirrors among them. If you need one part only, import its file on its own: `import communes from "geoalgeria/data/ecommerce/communes.json"` in a bundler, or with `with { type: "json" }` in plain Node. In TypeScript the default import needs `esModuleInterop`; `import dz = require("geoalgeria")` does not.
 
 ## What's inside
 
