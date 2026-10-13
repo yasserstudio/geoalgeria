@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { cpSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join, sep } from "node:path";
+import { join, relative, sep } from "node:path";
 import test, { after, before } from "node:test";
 
 import { assertRepoUnchanged, repoStatus } from "./lib/repo-clean.mjs";
@@ -163,4 +163,156 @@ test("commune points are only corrected beside the algeria.json they must agree 
     () => fix(dir, "--write", ["communes.geojson"]),
     (error) => /algeria\.json/.test(error.stderr),
   );
+});
+
+// --- --target scoping -------------------------------------------------------
+// The fixer ran every one of its writers at module level, against the repo it
+// lives in, even when --target named a copy somewhere else: during #243 that put
+// El Euch (3427) back on a superseded centroid in csv/communes.csv and
+// sql/full.sql while the suite passed, because the test suite's own --target run
+// rewrote two tracked files (private tracker #247). #252's supersede guard made
+// that particular revert harmless; the scoping stayed wrong, and it is invisible
+// while the repo's own carriers are already correct, since every writer then
+// produces byte-identical content. So the copy is drifted first, in one carrier
+// per writer, and then the whole copy must come out untouched.
+
+/** Every file under `dir`, as a path -> contents map. */
+function treeOf(dir, base = dir) {
+  const out = new Map();
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) for (const [k, v] of treeOf(path, base)) out.set(k, v);
+    else out.set(relative(base, path), readFileSync(path, "utf8"));
+  }
+  return out;
+}
+
+/**
+ * Drift EVERY output the fixer queues, one recorded value each, so the scoping
+ * assertion cannot pass on a writer that simply had nothing to write. The test
+ * below checks the count the fixer reports against this list, so a writer added
+ * later that is not drifted here fails rather than passing silently.
+ */
+function driftRepoCopy(repo) {
+  const pkg = join(repo, "packages", "dataset");
+  const data = join(pkg, "data");
+  const edit = (path, change) => writeFileSync(path, change(readFileSync(path, "utf8")));
+  const editData = (relPath, change) => edit(join(data, relPath), change);
+  const editJson = (relPath, change) =>
+    editData(relPath, (text) => {
+      const doc = JSON.parse(text);
+      change(doc);
+      return `${JSON.stringify(doc, null, 2)}\n`;
+    });
+  /** Set one field of the CSV rows a predicate picks, keeping the line endings. */
+  const editCsv = (relPath, pick, index, value) =>
+    editData(relPath, (text) =>
+      text
+        .split("\n")
+        .map((line) => {
+          if (!pick(line)) return line;
+          const carriage = line.endsWith("\r") ? "\r" : "";
+          const fields = (carriage ? line.slice(0, -1) : line).split(",");
+          fields[index] = value;
+          return fields.join(",") + carriage;
+        })
+        .join("\n"),
+    );
+  /** Replace a substring on the SQL rows a predicate picks. */
+  const editSql = (relPath, pick, from, to) =>
+    editData(relPath, (text) => text.split("\n").map((line) => (pick(line) ? line.replace(from, to) : line)).join("\n"));
+  const nameAr = (doc, code, value) => {
+    const row = doc.find((c) => c.code_commune === code);
+    assert.ok(row, `commune ${code} is in this split file`);
+    row.name_ar = value;
+  };
+
+  // The three split files, one recorded name_ar per wilaya range. They are keyed on
+  // code_commune and the ecommerce joins read name_fr, so a name_ar drift is safe.
+  editJson("communes_w1_w23.json", (doc) => nameAr(doc, 516, "أريس"));
+  editJson("communes_w24_w48.json", (doc) => nameAr(doc, 2606, "أولاد دايد"));
+  editJson("communes_w49_w69.json", (doc) => nameAr(doc, 319, "أفلو"));
+
+  // algeria.json, wilayas.json and both wilaya GeoJSONs: wilaya 28 is recorded as
+  // "M'sila", which `expect` accepts as the old reading.
+  editJson("algeria.json", (doc) => {
+    for (const wilaya of doc) if (wilaya.code === 28) wilaya.name_fr = "M'sila";
+  });
+  editJson("wilayas.json", (doc) => {
+    for (const wilaya of doc.wilayas) if (wilaya.code === 28) wilaya.name_fr = "M'sila";
+  });
+  editJson(join("geojson", "wilayas.geojson"), (doc) => {
+    for (const feature of doc.features) if (feature.properties.code === 28) feature.properties.name_fr = "M'sila";
+  });
+  // The commune GeoJSON is placed by name, and Lemcene is commune 527's old one.
+  editJson(join("geojson", "communes.geojson"), (doc) => {
+    for (const feature of doc.features) {
+      if (feature.properties.wilaya_code === 5 && feature.properties.name_fr === "Lemsane") {
+        feature.properties.name_fr = "Lemcene";
+      }
+    }
+  });
+  // dairas.json: the fixer recounts the two dairas a commune moved between, so a
+  // wrong count there is drift it must correct.
+  editJson("dairas.json", (doc) => {
+    const tablat = doc.find((daira) => daira.wilaya_code === 26 && daira.name_fr === "Tablat");
+    assert.ok(tablat, "daira Tablat is in wilaya 26");
+    tablat.commune_count = 999;
+  });
+  // The ecommerce carriers are keyed on the commune name, so their drift goes in
+  // the denormalized wilaya name.
+  editJson(join("ecommerce", "communes.json"), (rows) => {
+    for (const row of rows) if (row.wilaya_code === 28) row.wilaya_name_fr = "M'sila";
+  });
+  // id,commune_fr,commune_ar,daira,wilaya_code,wilaya_fr,wilaya_ar,postal
+  editCsv(join("ecommerce", "communes.csv"), (line) => line.split(",")[4] === "28", 5, "M'sila");
+  editSql(join("ecommerce", "communes.sql"), (line) => line.includes(", 28, 'M''Sila', "), "'M''Sila'", "'M''sila'");
+
+  // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
+  editCsv(join("csv", "communes.csv"), (line) => /,527\r?$/.test(line), 0, "Lemcene");
+  // code,name_fr,name_ar,phone_code,postal_code,latitude,longitude,created,capital
+  editCsv(join("csv", "wilayas.csv"), (line) => line.startsWith("28,"), 1, "M'sila");
+  // code,name_ar,name_fr,name_en,created,… ,capital_commune_code
+  editCsv("wilayas.csv", (line) => line.startsWith("28,"), 2, "M'sila");
+  // wilaya_code,wilaya_name_fr,commune_name_ar,commune_name_fr, rebuilt every run
+  editCsv("communes_new_wilayas.csv", (line) => line.startsWith("59,"), 1, "not a wilaya name");
+  // (id, 'name_fr', …, code_commune): keyed on the trailing code
+  editSql(join("sql", "full.sql"), (line) => line.endsWith(", 527),"), "'Lemsane'", "'Lemcene'");
+
+  // The three delivery tables, whose wilaya label is rebuilt from algeria.json.
+  for (const provider of ["yalidine", "zr_express", "maystro"]) {
+    editJson(join("delivery", `${provider}.json`), (doc) => {
+      doc.zones[0].wilaya_name_fr = "not a wilaya name";
+    });
+  }
+
+  // The repo-root atlas GeoJSON, whose properties are rebuilt from algeria.json.
+  edit(join(pkg, "algeria.geojson"), (text) => {
+    const doc = JSON.parse(text);
+    doc.features[0].properties.name_en = "not a wilaya name";
+    return `${JSON.stringify(doc, null, 2)}\n`;
+  });
+}
+
+/** Every output the fixer queues when no --target narrows it. */
+const QUEUED_OUTPUTS = 20;
+
+test("a --target run writes the targets and nothing else", () => {
+  const dir = appCopy();
+  const repo = join(dir, "repo");
+  driftRepoCopy(repo);
+
+  // Every writer has something to write, or the assertion below is vacuous for the
+  // ones that do not. A dry run with no --target reports what the fixer would
+  // touch, so this is also the check that the drift list keeps up with the writers.
+  const dry = execFileSync(process.execPath, [SCRIPT, "--root", repo], { stdio: "pipe", encoding: "utf8" });
+  assert.match(dry, new RegExp(`^${QUEUED_OUTPUTS} carrier\\(s\\) need an update$`, "m"));
+
+  const snapshot = treeOf(repo);
+  fix(dir, "--write", ["algeria.json"]);
+
+  const after = treeOf(repo);
+  const written = [...snapshot.keys()].filter((path) => after.get(path) !== snapshot.get(path));
+  assert.deepEqual(written, [], `${written.length} file(s) outside --target were written`);
+  assert.deepEqual([...after.keys()].sort(), [...snapshot.keys()].sort(), "a file outside --target was added or removed");
 });
