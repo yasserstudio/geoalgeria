@@ -30,7 +30,7 @@
  */
 
 import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
 import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
@@ -242,9 +242,12 @@ const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
 const isArabic = (s) => typeof s === "string" && /[ء-يٱ-ۓۺ-ۿ]/.test(s);
 // Clean a raw OSM name: collapse whitespace, drop stray leading combining marks
 // (a common mis-tag), swap the em dash a mapper typed as a separator for the
-// " - " every other name here uses, and reject strings with no letter at all.
+// " - " this package's own names use, and reject strings with no letter at all.
+// Exported for test/ecoles-clean-name.test.mjs, which pins the em-dash fold:
+// the gate only ever sees committed JSON, so dropping withoutEmDash() here
+// would stay green until a refresh picked up a new OSM name carrying one.
 const LEAD_MARKS = /^[̀-ͯؐ-ًؚ-ٰٟۖ-ۭ]+/;
-const cleanName = (v) => {
+export const cleanName = (v) => {
   if (typeof v !== "string") return null;
   const x = withoutEmDash(v.replace(/\s+/g, " ").trim().replace(LEAD_MARKS, "").trim());
   // require ≥2 chars and at least one letter (rejects a lone "ب", "-", "12")
@@ -573,7 +576,10 @@ async function main() {
   console.log(`Wrote ${records.length} schools → v2 (${metadata.named} named, ${metadata.wilayas_covered} wilayas).`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// Importable for the cleanName test; only the direct invocation builds.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}
