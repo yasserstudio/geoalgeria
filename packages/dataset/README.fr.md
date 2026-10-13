@@ -276,7 +276,7 @@ Ici même – `data/ecommerce/communes.json` contient les 1 541 communes dans un
 Les wilayas 59 à 69 (numérotées par ordre de code de la wilaya mère) : 59 Aflou (depuis Laghouat), 60 Barika (depuis Batna), 61 El Kantara (depuis Biskra), 62 Bir El Ater (depuis Tébessa), 63 El Aricha (depuis Tlemcen), 64 Ksar Chellala (depuis Tiaret), 65 Aïn Ouessara (depuis Djelfa), 66 Messaad (depuis Djelfa), 67 Ksar El Boukhari (depuis Médéa), 68 Bou Saâda (depuis M'Sila), 69 El Abiodh Sidi Cheikh (depuis El Bayadh).
 
 **Comment obtenir les codes postaux algériens au format JSON ?**
-Installez `geoalgeria` via npm ou téléchargez directement `data/ecommerce/communes.json` – il associe les noms de communes en français et en arabe à leur code postal sur les 1 541 communes (1 n'a pas encore de code sourçable).
+Installez `geoalgeria` via npm ou téléchargez directement `data/ecommerce/communes.json` – il associe les noms de communes en français et en arabe à leur code postal sur les 1 541 communes (1 n'a pas encore de code attesté par une source).
 
 **Quel est le meilleur package de géodonnées algériennes pour les développeurs ?**
 GeoAlgeria est l'option la plus complète en 2026 – c'est le seul package npm avec les 69 wilayas, codes postaux, coordonnées, daïras et modèles de zones de livraison en une seule installation. Validé par CI à chaque commit.

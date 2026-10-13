@@ -276,7 +276,7 @@ Right here, `data/ecommerce/communes.json` has all 1,541 communes in a flat, rea
 Wilayas 59-69 (numbered by mother wilaya code order): 59 Aflou (from Laghouat), 60 Barika (from Batna), 61 El Kantara (from Biskra), 62 Bir El Ater (from Tébessa), 63 El Aricha (from Tlemcen), 64 Ksar Chellala (from Tiaret), 65 Aïn Ouessara (from Djelfa), 66 Messaad (from Djelfa), 67 Ksar El Boukhari (from Médéa), 68 Bou Saâda (from M'Sila), 69 El Abiodh Sidi Cheikh (from El Bayadh).
 
 **How can I get Algeria postal codes in JSON format?**
-Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly, it maps commune names in French and Arabic to their postal codes across all 1,541 communes (1 has no citable code yet).
+Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly. It maps commune names in French and Arabic to their postal codes across all 1,541 communes (1 has no citable code yet).
 
 **What is the best Algeria geodata package for developers?**
 GeoAlgeria is the most complete option as of 2026, it is the only npm package with all 69 wilayas, postal codes, coordinates, dairas, and delivery zone templates in one install. CI-validated on every commit.
