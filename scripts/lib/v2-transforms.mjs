@@ -1112,6 +1112,30 @@ const idPrefix = (id) => {
 };
 
 /**
+ * Forward a retired id to the live id that carries its data now, in the ledger's
+ * `migrations` map, and re-point any earlier forward that aimed at `from`, so a
+ * consumer following a retired id always arrives in ONE hop. Every site that
+ * retires an id forwards through here, so the no-chain rule is stated once.
+ *
+ * An earlier entry keeps its own note and its own upstream ids: they record why
+ * THAT id was retired, which `from` being retired in turn does not change.
+ *
+ * @param {Record<string, object>|null} migrations  the ledger's map, mutated in place
+ * @param {string} from     the id being retired
+ * @param {string} to       the live id that carries the data now
+ * @param {string} note     why `from` was retired
+ * @param {object} [extra]  the upstream ids the retirement stood for, as the ledger
+ *                          names them for this package (e.g. `{ osm: [...] }`)
+ */
+export function forwardRetiredId(migrations, from, to, note, extra = null) {
+  if (!migrations) return;
+  for (const entry of Object.values(migrations)) {
+    if (entry?.merged_into === from) entry.merged_into = to;
+  }
+  migrations[from] = { merged_into: to, ...(extra ?? {}), note };
+}
+
+/**
  * Carry each record's id over from the committed data, keyed by a stable upstream
  * identifier, so regeneration reproduces the SAME public join keys (v2 decision 10/11).
  *
@@ -1264,11 +1288,7 @@ export function carryOverIds(
         `carryOverIds${tag}: re-issued ${was} onto ${row.id}, which is reserved`,
       );
     }
-    if (!migrations) continue;
-    for (const entry of Object.values(migrations)) {
-      if (entry?.merged_into === was) entry.merged_into = row.id;
-    }
-    migrations[was] = { merged_into: row.id, note };
+    forwardRetiredId(migrations, was, row.id, note);
   }
 
   // 3. The final id set must be globally unique: two current records sharing one
@@ -1309,6 +1329,10 @@ function retiredIdsContent(ids, migrations = null) {
  *  is append-only: a generator recomputes only the migrations it can see this
  *  run, and a record merged in an earlier release is no longer visible in the
  *  committed data, so its entry has to be carried forward rather than recomputed. */
+/** The `migrations` fields that cite the upstream ids a retirement stood for,
+ *  one field per source system. */
+const UPSTREAM_ID_FIELDS = ["msp_posts", "osm"];
+
 /** What is wrong with a ledger's `migrations` map, one message per fault, each
  *  starting `migrations[...]`. `reserved` is the ledger's own retired ids. The
  *  generator throws on the first message and validate-packages reports them all,
@@ -1331,17 +1355,26 @@ export function migrationErrors(migrations, reserved) {
     if (entry.merged_into === id) errors.push(`${where}.merged_into points at itself`);
     else if (reserved.has(entry.merged_into)) errors.push(`${where}.merged_into ${entry.merged_into} is itself retired`);
     if (typeof entry.note !== "string" || !entry.note) errors.push(`${where}.note must be a non-empty string`);
-    if (
-      entry.msp_posts != null &&
-      (!Array.isArray(entry.msp_posts) ||
-        !entry.msp_posts.length ||
-        entry.msp_posts.some((post) => typeof post !== "string" || !post))
-    ) {
-      errors.push(`${where}.msp_posts must be a non-empty array of non-empty strings`);
+    // The upstream ids the retirement stood for, named per source system, so a
+    // consumer can check the merge against the source instead of taking the note's
+    // word for it (RELEASING.md, "Retiring a published id"). One field per source:
+    // `msp_posts` for the Ministry of Health registry, `osm` for OpenStreetMap
+    // elements. Same shape in each case, so the check is written once.
+    for (const field of UPSTREAM_ID_FIELDS) {
+      const value = entry[field];
+      if (value == null) continue;
+      if (
+        !Array.isArray(value) ||
+        !value.length ||
+        value.some((id) => typeof id !== "string" || !id)
+      ) {
+        errors.push(`${where}.${field} must be a non-empty array of non-empty strings`);
+      }
     }
   }
   return errors;
 }
+
 
 /** Read and validate a package's `migrations` map (see migrationErrors). */
 export function readRetiredMigrations(dir) {

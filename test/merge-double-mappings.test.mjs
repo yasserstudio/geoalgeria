@@ -1,24 +1,25 @@
-// collapseDuplicates is what turns two OpenStreetMap records for one pharmacy into
-// one record. The rule the owner set on 13 October 2026: the survivor must come out
-// of a collapse carrying every field either side had, so de-duplication never costs
-// a phone number, an address, opening hours or a dispensing flag. The survivor's own
-// value wins wherever both state one, and a disagreement is reported rather than
-// merged or concatenated.
+// mergeDoubleMappings is what turns the two OpenStreetMap elements of a Double
+// mapping into one record. The rule the owner set on 13 October 2026: the kept
+// element must come out of a merge carrying every field either side had, so merging
+// never costs a phone number, an address, opening hours or a dispensing flag. The
+// kept element's own value wins wherever both state one, and a disagreement is
+// reported rather than resolved or concatenated.
 //
-// The pair fixtures below are the real `amenity=pharmacy` tags of the twelve pairs
-// this collapses dataset-wide, read from the committed Overpass pull, so a
+// The fixtures below are the real `amenity=pharmacy` tags of the twelve double
+// mappings this merges dataset-wide, read from the committed Overpass pull, so a
 // regression here is a regression against observed upstream data rather than
 // against an invented example.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { collapseDuplicates } from "../scripts/lib/collapse-duplicates.mjs";
+import { mergeDoubleMappings } from "../scripts/lib/merge-double-mappings.mjs";
 import { PHARMACY_WORDS } from "../scripts/lib/name-script.mjs";
 
-// The pharmacies generator's own two lists: `rank` decides which record of a pair
-// survives, `fill` is everything the survivor absorbs when it lacks it.
+// The pharmacies generator's own two lists: `RANK` decides which element of a pair
+// is kept, `FILL` is everything the kept element absorbs when it lacks it, declared
+// as a superset of RANK the same way the generator declares it.
 const RANK = ["name", "name_ar", "name_fr", "phone", "opening_hours", "address"];
-const FILL = ["name", "name_fr", "name_ar", "operator", "phone", "opening_hours", "dispensing", "address"];
+const FILL = [...RANK, "operator", "dispensing"];
 
 const row = (osm_id, lat, lng, fields) => ({
   osm_id,
@@ -35,11 +36,12 @@ const row = (osm_id, lat, lng, fields) => ({
   ...fields,
 });
 
-const collapse = (rows, isPublished = () => false) =>
-  collapseDuplicates(rows, { ignoredWords: PHARMACY_WORDS, rankFields: RANK, fillFields: FILL, isPublished });
+const merge = (rows, isPublished = () => false) =>
+  mergeDoubleMappings(rows, { ignoredWords: PHARMACY_WORDS, rankFields: RANK, fillFields: FILL, isPublished });
 
-// Each entry: the pair as tagged, and the OSM id that must survive it. Coordinates
-// are the real ones, so each pair's own distance (1.3 m to 38.1 m) is under test too.
+// Each entry: the double mapping as tagged, and the OSM id that must be kept.
+// Coordinates are the real ones, so each pair's own distance (1.3 m to 38.1 m) is
+// under test too.
 const PAIRS = [
   {
     label: "02 Fettah",
@@ -139,83 +141,83 @@ const PAIRS = [
   },
 ];
 
-test("each of the twelve pairs collapses to the record the survivor rule names", () => {
+test("each of the twelve double mappings merges to the element the keep rule names", () => {
   for (const pair of PAIRS) {
-    const { rows, collapsed } = collapse(pair.rows);
+    const { rows, merged } = merge(pair.rows);
     assert.equal(rows.length, 1, pair.label);
     assert.equal(rows[0].osm_id, pair.keep, pair.label);
-    assert.equal(collapsed.length, 1, pair.label);
+    assert.equal(merged.length, 1, pair.label);
     assert.deepEqual(
-      collapsed[0],
+      merged[0],
       { dropped: pair.rows.find((r) => r.osm_id !== pair.keep).osm_id, kept: pair.keep },
       pair.label,
     );
   }
 });
 
-// The rule itself: a collapse may not cost a field.
-test("a collapsed pair loses no non-null field the retired record had", () => {
+// The rule itself: a merge may not cost a field.
+test("a merged double mapping loses no non-null field the retired element had", () => {
   for (const pair of PAIRS) {
     const before = pair.rows.map((r) => ({ ...r }));
-    const { rows } = collapse(pair.rows);
-    const survivor = rows[0];
+    const { rows } = merge(pair.rows);
+    const kept = rows[0];
     for (const field of FILL) {
       const stated = before.filter((r) => r[field] != null);
       if (!stated.length) continue;
       assert.notEqual(
-        survivor[field],
+        kept[field],
         null,
-        `${pair.label}: ${field} was stated by ${stated.map((r) => r.osm_id).join(" and ")} and the survivor has none`,
+        `${pair.label}: ${field} was stated by ${stated.map((r) => r.osm_id).join(" and ")} and the kept element has none`,
       );
     }
   }
 });
 
-test("the three dispensing flags that only the retired record carried are kept", () => {
+test("the three dispensing flags that only the merged-away element carried are kept", () => {
   for (const label of [
     "07 Zobiri, dispensing only on the dropped side",
     "16 Bouhassane, dispensing only on the dropped side",
     "51 Djeghader Reda, dispensing only on the dropped side and two real conflicts",
   ]) {
     const pair = PAIRS.find((p) => p.label === label);
-    const { rows } = collapse(pair.rows.map((r) => ({ ...r })));
+    const { rows } = merge(pair.rows.map((r) => ({ ...r })));
     assert.equal(rows[0].dispensing, true, label);
   }
 });
 
-test("the survivor's own value wins a conflict, and the conflict is reported", () => {
+test("the kept element's own value wins a conflict, and the conflict is reported", () => {
   const pair = PAIRS.find((p) => p.label.startsWith("51 Djeghader"));
-  const { rows, conflicts } = collapse(pair.rows.map((r) => ({ ...r })));
-  const survivor = rows[0];
+  const { rows, conflicts } = merge(pair.rows.map((r) => ({ ...r })));
+  const kept = rows[0];
   // Nothing is resolved, averaged or concatenated: the kept record's value stands.
-  assert.equal(survivor.opening_hours, "24/7");
-  assert.equal(survivor.address, "06 BIS شارع سعودي عبد القادر, الدوسن 07007");
-  assert.ok(!survivor.address.includes("SAOUDI ABDELKADER"));
+  assert.equal(kept.opening_hours, "24/7");
+  assert.equal(kept.address, "06 BIS شارع سعودي عبد القادر, الدوسن 07007");
+  assert.ok(!kept.address.includes("SAOUDI ABDELKADER"));
   const reported = conflicts.filter((c) => c.kept === "node/8406143532").map((c) => c.field);
   assert.ok(reported.includes("opening_hours"), `expected an opening_hours conflict, got ${reported}`);
   assert.ok(reported.includes("address"), `expected an address conflict, got ${reported}`);
 });
 
-test("an already-published record survives a pair even when the other carries more", () => {
+test("an already-published element is kept even when the other carries more", () => {
   const rows = [
     row("node/1", 36.75, 3.06, { name: "Pharmacie Amel", name_fr: "Pharmacie Amel" }),
     row("node/2", 36.750045, 3.06, { name: "Amel", name_fr: "Amel", name_ar: "الأمل", phone: "021000000", address: "Rue X" }),
   ];
-  const { rows: out } = collapse(rows, (id) => id === "node/1");
+  const { rows: out } = merge(rows, (id) => id === "node/1");
   assert.equal(out.length, 1);
   assert.equal(out[0].osm_id, "node/1");
-  // It survives, and still ends up with everything the richer record had.
+  // It is kept, and still ends up with everything the richer element had.
   assert.equal(out[0].name_ar, "الأمل");
   assert.equal(out[0].phone, "021000000");
   assert.equal(out[0].address, "Rue X");
 });
 
-test("a record whose name only says 'pharmacy' collapses nothing", () => {
+test("a record whose name only says 'pharmacy' merges nothing", () => {
   const rows = [
     row("node/1", 36.75, 3.06, { name: "Pharmacie", name_fr: "Pharmacie" }),
     row("node/2", 36.750045, 3.06, { name: "صيدلية", name_ar: "صيدلية" }),
   ];
-  assert.equal(collapse(rows).rows.length, 2);
+  assert.equal(merge(rows).rows.length, 2);
 });
 
 test("records further apart than the radius are two pharmacies", () => {
@@ -223,35 +225,35 @@ test("records further apart than the radius are two pharmacies", () => {
     row("node/1", 36.75, 3.06, { name: "Fettah", name_fr: "Fettah" }),
     row("node/2", 36.7509, 3.06, { name: "Fettah", name_fr: "Fettah" }), // ~100 m
   ];
-  assert.equal(collapse(rows).rows.length, 2);
+  assert.equal(merge(rows).rows.length, 2);
 });
 
 test("the outcome does not depend on the order upstream answered in", () => {
   for (const pair of PAIRS) {
-    const forward = collapse(pair.rows.map((r) => ({ ...r })));
-    const reversed = collapse([...pair.rows].reverse().map((r) => ({ ...r })));
+    const forward = merge(pair.rows.map((r) => ({ ...r })));
+    const reversed = merge([...pair.rows].reverse().map((r) => ({ ...r })));
     assert.equal(forward.rows[0].osm_id, reversed.rows[0].osm_id, pair.label);
     assert.deepEqual(
       FILL.map((field) => forward.rows[0][field]),
       FILL.map((field) => reversed.rows[0][field]),
       pair.label,
     );
-    assert.deepEqual(forward.collapsed, reversed.collapsed, pair.label);
+    assert.deepEqual(forward.merged, reversed.merged, pair.label);
   }
 });
 
-test("a forward is re-pointed rather than chained when a third record displaces the survivor", () => {
+test("a forward is re-pointed rather than chained when a third element displaces the kept one", () => {
   // node/3 is published and arrives last in id order, so it takes over a pair that
-  // has already collapsed once. Both retired ids must forward straight to it.
+  // has already merged once. Both retired ids must forward straight to it.
   const rows = [
     row("node/1", 36.75, 3.06, { name: "Fettah", name_fr: "Fettah", phone: "021000001" }),
     row("node/2", 36.750045, 3.06, { name: "Pharmacie Fettah", name_fr: "Pharmacie Fettah", address: "Rue X" }),
     row("node/3", 36.750089, 3.06, { name: "Fettah", name_fr: "Fettah", opening_hours: "24/7" }),
   ];
-  const { rows: out, collapsed } = collapse(rows, (id) => id === "node/3");
+  const { rows: out, merged } = merge(rows, (id) => id === "node/3");
   assert.equal(out.length, 1);
   assert.equal(out[0].osm_id, "node/3");
-  assert.deepEqual([...new Set(collapsed.map((c) => c.kept))], ["node/3"]);
+  assert.deepEqual([...new Set(merged.map((c) => c.kept))], ["node/3"]);
   // And it carries what both of them said.
   assert.equal(out[0].phone, "021000001");
   assert.equal(out[0].address, "Rue X");

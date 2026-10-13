@@ -195,6 +195,27 @@ half-record's id, which `retired-ids.json` then reserves for good and forwards t
 the record that carries the data now.
 _Avoid_: partial record, orphan, fragment
 
+**Double mapping**:
+One real place a crowdsourced source holds as more than one element, because two
+contributors added it, or one mapped the node and another the building outline. Not
+a Twin post, which is a registry publishing one place twice on purpose and in two
+languages: a double mapping is one source contradicting itself by accident, so its
+elements disagree on spelling and on which fields they carry at all. The elements
+are **merged** into one record, which keeps every field any of them stated and
+whose own value stands wherever two of them disagree; the merged-away element's id
+is retired and forwarded in `retired-ids.json`, which cites every upstream element
+the merge stood for. Two elements are one double mapping when they stand within 40 m
+and their names share a **Loose name key**.
+_Avoid_: duplicate, de-duplication, dupe, clone, collision, twin (that is a Twin post)
+
+**Loose name key**:
+A name folded to a Loose key per script, so a mixed-script name yields one key per
+language, with the words that say only what every record in the set is ("pharmacy")
+dropped. It is what a merge compares instead of the display text, which is why one
+spelling of a place can meet another. Always named in full: an unqualified "name
+key" says neither which fold nor which tier.
+_Avoid_: name key, dedup key, match key, normalized name
+
 **Upstream link**:
 An identifier a record carries so a consumer can join it to an outside database without matching on a name. The administrative records carry two: an **OSM relation id** (`osm_relation_id`) and a **Wikidata item** (`wikidata`). A link is harvested from a reviewed linkage, in two documented tiers, and is null where no tier has one or where a second source proved the upstream value names a different place; it is never resolved from a name, and no id is carried by two records, because one upstream relation is one place.
 _Avoid_: external id, cross-reference, mapping, concordance

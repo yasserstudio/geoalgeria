@@ -3,7 +3,11 @@
   "migrations": {
     "02-00063": {
       "merged_into": "02-00062",
-      "note": "Merged into 02-00062, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/4310053290",
+        "node/4310071589"
+      ],
+      "note": "Merged into 02-00062: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/4310053290 (kept) and node/4310071589 (merged away)."
     },
     "02-00160": {
       "merged_into": "48-00142",
@@ -15,11 +19,19 @@
     },
     "07-00052": {
       "merged_into": "07-00002",
-      "note": "Merged into 07-00002, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/3449612819",
+        "way/1025833581"
+      ],
+      "note": "Merged into 07-00002: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/3449612819 (kept) and way/1025833581 (merged away)."
     },
     "10-00021": {
       "merged_into": "10-00019",
-      "note": "Merged into 10-00019, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/4354050798",
+        "node/4366704493"
+      ],
+      "note": "Merged into 10-00019: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/4354050798 (kept) and node/4366704493 (merged away)."
     },
     "13-00009": {
       "merged_into": "22-00080",
@@ -31,7 +43,11 @@
     },
     "14-00032": {
       "merged_into": "14-00031",
-      "note": "Merged into 14-00031, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/4842288624",
+        "node/4842421621"
+      ],
+      "note": "Merged into 14-00031: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/4842288624 (kept) and node/4842421621 (merged away)."
     },
     "16-00279": {
       "merged_into": "35-00091",
@@ -39,11 +55,19 @@
     },
     "16-00426": {
       "merged_into": "16-00178",
-      "note": "Merged into 16-00178, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/2952897872",
+        "node/4722427389"
+      ],
+      "note": "Merged into 16-00178: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/2952897872 (kept) and node/4722427389 (merged away)."
     },
     "19-00074": {
       "merged_into": "19-00073",
-      "note": "Merged into 19-00073, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/4828614724",
+        "node/4850703921"
+      ],
+      "note": "Merged into 19-00073: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/4828614724 (kept) and node/4850703921 (merged away)."
     },
     "21-00036": {
       "merged_into": "23-00061",
@@ -71,7 +95,11 @@
     },
     "23-00042": {
       "merged_into": "23-00044",
-      "note": "Merged into 23-00044, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/6468796085",
+        "node/6259508786"
+      ],
+      "note": "Merged into 23-00044: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/6468796085 (kept) and node/6259508786 (merged away)."
     },
     "25-00049": {
       "merged_into": "43-00111",
@@ -79,7 +107,11 @@
     },
     "39-00004": {
       "merged_into": "39-00003",
-      "note": "Merged into 39-00003, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/4420614389",
+        "node/4421596289"
+      ],
+      "note": "Merged into 39-00003: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/4420614389 (kept) and node/4421596289 (merged away)."
     },
     "40-00003": {
       "merged_into": "05-00072",
@@ -87,19 +119,35 @@
     },
     "43-00052": {
       "merged_into": "43-00051",
-      "note": "Merged into 43-00051, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/4588887389",
+        "node/4620337791"
+      ],
+      "note": "Merged into 43-00051: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/4588887389 (kept) and node/4620337791 (merged away)."
     },
     "43-00079": {
       "merged_into": "43-00004",
-      "note": "Merged into 43-00004, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/2418479678",
+        "node/5971620189"
+      ],
+      "note": "Merged into 43-00004: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/2418479678 (kept) and node/5971620189 (merged away)."
     },
     "51-00039": {
       "merged_into": "51-00036",
-      "note": "Merged into 51-00036, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/8406143532",
+        "way/905180545"
+      ],
+      "note": "Merged into 51-00036: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/8406143532 (kept) and way/905180545 (merged away)."
     },
     "55-00017": {
       "merged_into": "55-00018",
-      "note": "Merged into 55-00018, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+      "osm": [
+        "node/6175270286",
+        "node/6157205085"
+      ],
+      "note": "Merged into 55-00018: one pharmacy OpenStreetMap held as two elements. The two stood within 40 m and their names share a Loose name key once each is split by script, and the element kept is the one carrying the most fields. Elements node/6175270286 (kept) and node/6157205085 (merged away)."
     },
     "61-00005": {
       "merged_into": "07-00055",

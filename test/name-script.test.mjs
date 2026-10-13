@@ -1,40 +1,42 @@
-// splitByScript / nameKeys: the fold a generator de-duplicates bilingual
+// splitByScript / looseNameKeys: the fold a generator merges multilingual
 // OpenStreetMap names through. Cases are the real tags behind private tracker
 // #256, so a regression here is a regression against observed upstream data.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { PHARMACY_WORDS, nameKeys, splitByScript } from "../scripts/lib/name-script.mjs";
+import { ARABIC_LETTER, LATIN_LETTER, PHARMACY_WORDS, SCRIPTS, TIFINAGH_LETTER, looseNameKeys, splitByScript } from "../scripts/lib/name-script.mjs";
 
-test("splitByScript: a single-script name comes back verbatim, with no second half", () => {
-  assert.deepEqual(splitByScript("Pharmacie Bouchekouf"), { ar: null, la: "Pharmacie Bouchekouf" });
-  assert.deepEqual(splitByScript("بوشقوف"), { ar: "بوشقوف", la: null });
-  assert.deepEqual(splitByScript("Béjaïa"), { ar: null, la: "Béjaïa" });
-  assert.deepEqual(splitByScript(null), { ar: null, la: null });
-  assert.deepEqual(splitByScript("06"), { ar: null, la: null });
+test("splitByScript: a single-script name comes back verbatim, with no other half", () => {
+  assert.deepEqual(splitByScript("Pharmacie Bouchekouf"), { ar: null, la: "Pharmacie Bouchekouf", tfng: null });
+  assert.deepEqual(splitByScript("بوشقوف"), { ar: "بوشقوف", la: null, tfng: null });
+  assert.deepEqual(splitByScript("Béjaïa"), { ar: null, la: "Béjaïa", tfng: null });
+  assert.deepEqual(splitByScript(null), { ar: null, la: null, tfng: null });
+  assert.deepEqual(splitByScript("06"), { ar: null, la: null, tfng: null });
   // Nothing is tidied on the way through: there is no split to make here, so a
   // leading number, a quote and a full stop all survive as tagged.
-  assert.deepEqual(splitByScript("24 ساعة"), { ar: "24 ساعة", la: null });
-  assert.deepEqual(splitByScript('"قايدي"'), { ar: '"قايدي"', la: null });
-  assert.deepEqual(splitByScript("ك."), { ar: "ك.", la: null });
+  assert.deepEqual(splitByScript("24 ساعة"), { ar: "24 ساعة", la: null, tfng: null });
+  assert.deepEqual(splitByScript('"قايدي"'), { ar: '"قايدي"', la: null, tfng: null });
+  assert.deepEqual(splitByScript("ك."), { ar: "ك.", la: null, tfng: null });
 });
 
 test("splitByScript: a mixed name cuts at the script boundary and keeps every word", () => {
   assert.deepEqual(splitByScript("Pharmacie bouchekouf صيدلية بوشقوف"), {
     ar: "صيدلية بوشقوف",
     la: "Pharmacie bouchekouf",
+    tfng: null,
   });
   // A digit or an internal dot belongs to the run around it.
-  assert.deepEqual(splitByScript("Pharmacie 3806 صيدلية"), { ar: "صيدلية", la: "Pharmacie 3806" });
-  assert.deepEqual(splitByScript("H. Bouhassane بوحسان"), { ar: "بوحسان", la: "H. Bouhassane" });
+  assert.deepEqual(splitByScript("Pharmacie 3806 صيدلية"), { ar: "صيدلية", la: "Pharmacie 3806", tfng: null });
+  assert.deepEqual(splitByScript("H. Bouhassane بوحسان"), { ar: "بوحسان", la: "H. Bouhassane", tfng: null });
   // The separator standing between the two scripts is dropped, whichever it is.
-  assert.deepEqual(splitByScript("Mahria;مهرية"), { ar: "مهرية", la: "Mahria" });
-  assert.deepEqual(splitByScript("Plateau, بلاطو"), { ar: "بلاطو", la: "Plateau" });
-  assert.deepEqual(splitByScript("Nasri. ناصري"), { ar: "ناصري", la: "Nasri" });
+  assert.deepEqual(splitByScript("Mahria;مهرية"), { ar: "مهرية", la: "Mahria", tfng: null });
+  assert.deepEqual(splitByScript("Plateau, بلاطو"), { ar: "بلاطو", la: "Plateau", tfng: null });
+  assert.deepEqual(splitByScript("Nasri. ناصري"), { ar: "ناصري", la: "Nasri", tfng: null });
   // Arabic first, and more than one run per script.
   assert.deepEqual(splitByScript("صيدلية الأمل Pharmacie Amel مستغانم"), {
     ar: "صيدلية الأمل مستغانم",
     la: "Pharmacie Amel",
+    tfng: null,
   });
 });
 
@@ -47,31 +49,103 @@ test("splitByScript: nothing is transliterated, translated or invented", () => {
   for (const half of [ar, la]) for (const character of half.replace(/ /g, "")) assert.ok(value.includes(character));
 });
 
-test("nameKeys: the Oued Endja pair meets on its Arabic key", () => {
-  const a = nameKeys(["Pharmacie bouchekouf صيدلية بوشقوف", "Pharmacie Bouchekouf", "Pharmacie bouchekouf صيدلية بوشقوف"], PHARMACY_WORDS);
-  const b = nameKeys(["بوشقوف", "Pharmacie Bouchekouf", "بوشقوف"], PHARMACY_WORDS);
+test("looseNameKeys: the Oued Endja pair meets on its Arabic key", () => {
+  const a = looseNameKeys(["Pharmacie bouchekouf صيدلية بوشقوف", "Pharmacie Bouchekouf", "Pharmacie bouchekouf صيدلية بوشقوف"], PHARMACY_WORDS);
+  const b = looseNameKeys(["بوشقوف", "Pharmacie Bouchekouf", "بوشقوف"], PHARMACY_WORDS);
   assert.ok([...a].some((key) => b.has(key)));
   assert.ok(a.has("ar:بوشقوف"));
   assert.ok(b.has("ar:بوشقوف"));
 });
 
-test("nameKeys: a name that only says 'pharmacy' keys on nothing", () => {
-  assert.equal(nameKeys(["Pharmacie"], PHARMACY_WORDS).size, 0);
-  assert.equal(nameKeys(["صيدلية"], PHARMACY_WORDS).size, 0);
-  assert.equal(nameKeys(["Pharmacy صيدلية"], PHARMACY_WORDS).size, 0);
-  assert.equal(nameKeys([null, null, null], PHARMACY_WORDS).size, 0);
+test("looseNameKeys: a name that only says 'pharmacy' keys on nothing", () => {
+  assert.equal(looseNameKeys(["Pharmacie"], PHARMACY_WORDS).size, 0);
+  assert.equal(looseNameKeys(["صيدلية"], PHARMACY_WORDS).size, 0);
+  assert.equal(looseNameKeys(["Pharmacy صيدلية"], PHARMACY_WORDS).size, 0);
+  assert.equal(looseNameKeys([null, null, null], PHARMACY_WORDS).size, 0);
 });
 
-test("nameKeys: a key never crosses scripts, so a romanisation is not a match", () => {
-  const latin = nameKeys(["Pharmacie Bouchekouf"], PHARMACY_WORDS);
-  const arabic = nameKeys(["صيدلية بوشقوف"], PHARMACY_WORDS);
+test("looseNameKeys: a key never crosses scripts, so a romanisation is not a match", () => {
+  const latin = looseNameKeys(["Pharmacie Bouchekouf"], PHARMACY_WORDS);
+  const arabic = looseNameKeys(["صيدلية بوشقوف"], PHARMACY_WORDS);
   assert.deepEqual([...latin], ["la:bouchekouf"]);
   assert.deepEqual([...arabic], ["ar:بوشقوف"]);
   assert.equal([...latin].filter((key) => arabic.has(key)).length, 0);
 });
 
-test("nameKeys: the Loose key absorbs the spellings one name is written with", () => {
+test("looseNameKeys: the Loose key absorbs the spellings one name is written with", () => {
   // taa marbuta / haa and alef maqsura / yaa are the two Loose equivalences.
-  assert.deepEqual([...nameKeys(["قسنطينة"])], [...nameKeys(["قسنطينه"])]);
-  assert.deepEqual([...nameKeys(["Béjaïa"])], [...nameKeys(["BEJAIA"])]);
+  assert.deepEqual([...looseNameKeys(["قسنطينة"])], [...looseNameKeys(["قسنطينه"])]);
+  assert.deepEqual([...looseNameKeys(["Béjaïa"])], [...looseNameKeys(["BEJAIA"])]);
+});
+
+// Neo-Tifinagh is the third script Algeria writes its place names in, and two
+// pharmacy records carry it: `40-00024` tags
+// `name=ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏصيدلية بوزيان`, with Tifinagh running straight into
+// Arabic and no separator between them. A two-script fold puts the Tifinagh into
+// `name_ar`, and a Tifinagh-only name reaches neither field.
+test("splitByScript: Tifinagh is its own half, never folded into Arabic or Latin", () => {
+  assert.deepEqual(splitByScript("ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏصيدلية بوزيان"), {
+    ar: "صيدلية بوزيان",
+    la: null,
+    tfng: "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏ",
+  });
+  assert.deepEqual(splitByScript("ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⵊⴰⵔⵎⵓⵏ صيدالية جرمون"), {
+    ar: "صيدالية جرمون",
+    la: null,
+    tfng: "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⵊⴰⵔⵎⵓⵏ",
+  });
+  // All three at once, each half its own script and nothing lost between them.
+  assert.deepEqual(splitByScript("Pharmacie Bouziane ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏ صيدلية بوزيان"), {
+    ar: "صيدلية بوزيان",
+    la: "Pharmacie Bouziane",
+    tfng: "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏ",
+  });
+});
+
+test("splitByScript: a Tifinagh-only name is reported, not dropped", () => {
+  assert.deepEqual(splitByScript("ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏ"), {
+    ar: null,
+    la: null,
+    tfng: "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏ",
+  });
+});
+
+// The positive class, not the absence of one other script: every letter of a half
+// must belong to that half's own script. A fold that only checked "no Latin in the
+// Arabic half" passed Tifinagh straight through.
+test("splitByScript: every half holds only its own script's letters", () => {
+  const TESTS = { ar: ARABIC_LETTER, la: LATIN_LETTER, tfng: TIFINAGH_LETTER };
+  const values = [
+    "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏصيدلية بوزيان",
+    "Pharmacie Bouziane ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏ صيدلية بوزيان",
+    "Pharmacie bouchekouf صيدلية بوشقوف",
+    "Mahria;مهرية",
+    "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ Pharmacie",
+  ];
+  for (const value of values) {
+    const halves = splitByScript(value);
+    for (const script of SCRIPTS) {
+      const half = halves[script];
+      if (!half) continue;
+      for (const character of half) {
+        const foreign = SCRIPTS.filter((other) => other !== script && TESTS[other].test(character));
+        assert.deepEqual(
+          foreign,
+          [],
+          `${JSON.stringify(value)}: ${script} half ${JSON.stringify(half)} holds ${JSON.stringify(character)} (${foreign})`,
+        );
+      }
+    }
+  }
+});
+
+test("looseNameKeys: a Tifinagh name keys on its own script, matching no romanisation", () => {
+  const tifinagh = looseNameKeys(["ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏ"], PHARMACY_WORDS);
+  const latin = looseNameKeys(["Pharmacie Bouziane"], PHARMACY_WORDS);
+  const arabic = looseNameKeys(["صيدلية بوزيان"], PHARMACY_WORDS);
+  assert.ok([...tifinagh].every((key) => key.startsWith("tfng:")));
+  assert.ok([...tifinagh].every((key) => !latin.has(key) && !arabic.has(key)));
+  // The Tifinagh word for "pharmacy" is dropped like its Arabic and Latin twins,
+  // so the key is the name and not the category.
+  assert.deepEqual([...looseNameKeys(["ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ"], PHARMACY_WORDS)], []);
 });

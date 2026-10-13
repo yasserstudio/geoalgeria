@@ -62,7 +62,7 @@ metadata().wilayas_covered; // 67
 - `data/csv/pharmacies.csv` – flat CSV
 - `data/geojson/pharmacies.geojson` – `FeatureCollection` (all records)
 - `data/metadata.json` – counts, sources, generated date
-- `data/retired-ids.json` – ids no record may hold again, each forwarded to the id that carries the pharmacy now
+- `data/retired-ids.json` – ids no record may hold again, each forwarded to the id that carries the pharmacy now, citing the OpenStreetMap elements the merge stood for
 
 ```js
 import data from "@geoalgeria/pharmacies/data/pharmacies.json" with { type: "json" };
@@ -74,7 +74,9 @@ import type { Pharmacy } from "@geoalgeria/pharmacies";
 
 ## How the data is built
 
-Extracted from OpenStreetMap via Overpass (`amenity=pharmacy` across Algeria), de-duplicated (same name within 40 m, and coincident points), then linked to wilaya/commune by nearest-centroid join against the geoalgeria commune set. Names are routed strictly by script so `name_ar` is always Arabic and `name_fr` always Latin, even when OSM mis-tags them: a tag holding both languages at once ("Pharmacie bouchekouf صيدلية بوشقوف") is cut at the script boundary, so each field keeps its own half and neither gains a word the source does not have. De-duplication compares those halves as [`@geoalgeria/normalize`](../normalize) Loose keys rather than as text, with the words that only say "pharmacy" dropped, which is how one pharmacy written "Pharmacie Bouchekouf صيدلية بوشقوف" and plain "بوشقوف" six metres away is read as one record. A bulk-import artifact, 1,769 unnamed, consecutive-id pharmacy *ways* dumped into one small area near Attatba (Tipaza), is detected and excluded (it is not real officines). Rebuild with `npm run fetch` (or `--cache` to rebuild from the cached pull). See `research/pharmacies/` in the monorepo.
+Extracted from OpenStreetMap via Overpass (`amenity=pharmacy` across Algeria), then linked to wilaya/commune by nearest-centroid join against the geoalgeria commune set. Names are routed strictly by script so `name_ar` holds Arabic only and `name_fr` Latin only, even when OSM mis-tags them: a tag holding more than one language at once ("Pharmacie bouchekouf صيدلية بوشقوف") is cut at each script boundary, so every field keeps its own half and none gains a word the source does not have. Tifinagh is one of the three scripts and belongs to neither field, so a Tamazight name stays on `name`, which is the raw tag, rather than being dropped or filed as Arabic.
+
+Where OpenStreetMap holds one pharmacy as two elements, a node and a building outline or two spellings, the elements are merged into one record. Two elements are one pharmacy when they stand within 40 m and their names share a **Loose name key**: each half from the script split, folded through [`@geoalgeria/normalize`](../normalize) and compared as keys rather than as display text, with the words that only say "pharmacy" dropped. That is how "Pharmacie Bouchekouf صيدلية بوشقوف" and plain "بوشقوف" six metres away are read as one record. The kept element absorbs every field it lacks from the one it replaces, so merging costs no phone, address, opening hours or `dispensing` flag; its own value stands wherever both state one, and nothing is concatenated. A bulk-import artifact, 1,769 unnamed, consecutive-id pharmacy *ways* dumped into one small area near Attatba (Tipaza), is detected and excluded (it is not real officines). Rebuild with `npm run fetch` (or `--cache` to rebuild from the cached pull). See `research/pharmacies/` in the monorepo.
 
 ## On accuracy & coverage
 

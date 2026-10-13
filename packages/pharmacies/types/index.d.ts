@@ -33,13 +33,17 @@ export interface Pharmacy {
    *  one, so an id a consumer cached still resolves in a single hop. */
   id: string;
   /** Best display name, or null (many OSM pharmacies are unnamed). The OSM `name`
-   *  tag as tagged, so this one may hold both languages at once. */
+   *  tag as tagged, so this one may hold more than one script at once, and may be
+   *  the only field carrying a Tamazight name: Tifinagh is published here rather
+   *  than in `name_fr` or `name_ar`, which hold one script each. Prefer `name_fr`
+   *  or `name_ar` when a single-script label is what you need. */
   name: string | null;
-  /** French/Latin name, or null. Latin letters only: a tag that holds both
-   *  languages is split at the script boundary, never translated. */
+  /** French/Latin name, or null. Latin letters only: a tag holding more than one
+   *  script is split at each boundary, never translated. */
   name_fr: string | null;
-  /** Arabic name, or null. Arabic letters only: a tag that holds both languages
-   *  is split at the script boundary, never transliterated. */
+  /** Arabic name, or null. Arabic letters only: a tag holding more than one
+   *  script is split at each boundary, never transliterated. Tifinagh never lands
+   *  here; it stays on `name`. */
   name_ar: string | null;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
