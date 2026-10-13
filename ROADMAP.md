@@ -313,7 +313,7 @@ reads as further along than it is.
   Boumediene". Decide: allow it, or fold it to " - " like the em dash; if
   folded, extend the name gate in `scripts/lib/no-em-dash.mjs` and each
   generator, then regenerate. A related defect needs fixing either way:
-  banques branch cnep-156 reads "AIN -AZEL" (should be Aïn Azel). Also owed
+  banques branch cnep-156 reads "AIN –AZEL" (en dash, U+2013) (should be Aïn Azel). Also owed
   from the same review: `withoutEmDash` in the cliniques and pharmacies
   `cleanName` (once #283 and #286 land), and `livraison` sits outside the
   name gate entirely. _(logged 2026-10-13, tracker #294)_
