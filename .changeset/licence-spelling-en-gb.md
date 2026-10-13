@@ -33,9 +33,11 @@
 ---
 
 English copy now spells the noun "licence" the one way the rest of the docs
-already do (en-GB). Every English README heading reads `Licence & attribution`,
-`Source & licence` or `Licence`; the OpenStreetMap share-alike sentence asks for
-"a compatible licence"; the `transport` umbrella points at each member's own
+already do (en-GB). No English README heading spells it "License" any more:
+`Licence & attribution` in 19 of them, `Source & licence` in 7, a bare `Licence`
+in 4, `Licence & disclaimer` in the root README, and `Sources and licences` in
+`@geoalgeria/buses`, which already read that way. The OpenStreetMap share-alike
+sentence asks for "a compatible licence"; the `transport` umbrella points at each member's own
 "data licence"; and `@geoalgeria/buses` states "no open reuse licence" in its 14
 Operator source descriptors, the wording its NOTICE, its README and the `##
 Data` section of its LICENSE already carried. That LICENSE's `## Code` preamble
