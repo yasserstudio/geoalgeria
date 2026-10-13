@@ -171,7 +171,7 @@ from the live sources; the build fails loudly if any source's count collapses or
 unknown carrier appears. `wilaya_code` is resolved by nearest commune centroid from the
 `geoalgeria` dataset.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). Stop-desk data is © the respective carriers; the carrier
 registry is compiled by GeoAlgeria. Redistributed for reference and to power

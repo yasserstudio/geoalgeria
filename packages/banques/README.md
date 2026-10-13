@@ -113,7 +113,7 @@ financial or legal advice. To report an error or request a correction/removal,
 
 Full terms: see the project [**DISCLAIMER**](https://github.com/yasserstudio/geoalgeria/blob/main/DISCLAIMER.md).
 
-## License
+## Licence
 
 **Code** (loaders, types): [MIT](LICENSE). **Data**: public factual data
 (regulatory listings + each institution's public locator), redistributed for

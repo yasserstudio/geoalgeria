@@ -161,7 +161,7 @@ regenerate every output from the live GIS. The build resolves wilaya names to co
 the flagship dataset, normalises infrastructure types to stable short codes, and fails loudly
 if the facility count collapses or an unknown type appears.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). The underlying data is © **Ministry of Youth and Sports**,
 redistributed for reference and to power [GeoAlgeria](https://geoalgeria.com). Verify against

@@ -189,7 +189,7 @@ Data comes from three sources:
 - **Wikidata** – heritage sites, museums, and park metadata. Licensed under
   [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). Underlying data:
 

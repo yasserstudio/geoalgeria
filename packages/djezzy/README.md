@@ -132,7 +132,7 @@ inline as an HTML-entity-encoded JSON array, there is no separate API. Run
 validates the coordinates fall inside Algeria, and attaches the administrative
 linkage by nearest commune centroid.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). The underlying data is © **Optimum Telecom Algérie
 (Djezzy)**, redistributed for reference and to power

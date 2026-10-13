@@ -89,7 +89,7 @@ Pulled from Ooredoo Algérie's public *Trouvez-nous* locator API (a Liferay Head
 
 > Store names, types and coordinates are **from the operator** (`geo_method: "operator_api"`). Coordinates are `geo_precision: "exact"` for 548 stores and `"approximate"` for 24: 19 whose source coordinate has fewer than 3 decimal places, plus 5 (`16-001`, `16-052`, `31-001`, `48-001`, `67-002`) whose API point contradicts both the wilaya Ooredoo declares for the store and the store's own name and address, and which are pinned to their commune's point instead (`geo_method: "commune_centroid"`). Those 5 keep the id they were first assigned, so the id prefix on them is the wilaya the bad point fell in rather than `wilaya_code`; treat the id as opaque. Wilaya is effectively exact (from the operator point); commune is a nearest-centroid best-effort. A **few** operator points carry inaccurate coordinates in the source, so their derived wilaya/commune can be wrong, the `operator_wilaya` field preserves Ooredoo's own declared wilaya in those cases. This is Ooredoo's own store directory as exposed by its locator; a store may occasionally be a partner point rather than a company-owned space.
 
-## Source & license
+## Source & licence
 
 Data © **Ooredoo Algérie**, redistributed for reference (the same status as `@geoalgeria/mobilis` / `@geoalgeria/djezzy`). Wilaya/commune linkage uses the geoalgeria base dataset. Package code under MIT (see [LICENSE](LICENSE)).
 

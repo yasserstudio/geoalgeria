@@ -37,7 +37,7 @@ import { pharmacies } from "@geoalgeria/pharma";
 
 > More of the sector may join over time (e.g. a medical-laboratories layer once open coverage is adequate). Installing `@geoalgeria/pharma` keeps you on the full set.
 
-## Source & license
+## Source & licence
 
 Each member carries its own source and attribution (see its README), MIP register for `industrie`, OpenStreetMap (ODbL) for `pharmacies`. Package code under MIT (see [LICENSE](LICENSE)).
 

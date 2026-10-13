@@ -193,13 +193,13 @@ Run `npm run fetch` to regenerate every output. It:
 The raw source pull is captured under
 [`sources/ecoles/`](https://github.com/yasserstudio/geoalgeria/tree/main/sources/ecoles).
 
-## License & attribution
+## Licence & attribution
 
 Package **code** is [MIT](LICENSE). The **data** is from **OpenStreetMap**:
 **© OpenStreetMap contributors**, licensed under the
 **[ODbL 1.0](https://www.openstreetmap.org/copyright)**. If you use or
 redistribute this dataset, you must **attribute OpenStreetMap contributors** and
-keep derived databases under a compatible license.
+keep derived databases under a compatible licence.
 
 Verify against official sources for authoritative information. This dataset is
 provided for reference and to power [GeoAlgeria](https://geoalgeria.com).

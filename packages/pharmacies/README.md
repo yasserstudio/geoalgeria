@@ -81,7 +81,7 @@ Extracted from OpenStreetMap via Overpass (`amenity=pharmacy` across Algeria), d
 >
 > Coordinates are OSM node points (surveyed) or building-outline centroids (`geo_method`). Commune is a nearest-centroid best-effort; wilaya is effectively exact. Names, phones and hours are only present where an OSM contributor tagged them.
 
-## Source & license
+## Source & licence
 
 Data © **OpenStreetMap contributors**, licensed **ODbL 1.0**. Any distribution of this data (or derived DB) must credit OpenStreetMap and keep it under ODbL. Wilaya/commune linkage uses the geoalgeria base dataset. Package code under MIT (see [LICENSE](LICENSE)).
 

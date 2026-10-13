@@ -110,15 +110,32 @@ Always cite a source for data changes. Accepted:
 - Interior Ministry publications
 - Wikipedia (secondary reference only)
 
-### Separators in metadata
+### Separators in metadata and names
 No em dash (U+2014) anywhere in published metadata. A source name reads
 `Operator: descriptor`, the DCAT `citation` joins a name and its licence with a
 comma, and a coverage note takes the colon or semicolon the sentence wants. Fix
 it in the generator that writes the field, never in the generated file:
 `pnpm validate` walks every `dataset-metadata.json`, `data/metadata.json` and
 `data/geojson/*.metadata.json` and fails on one
-([`scripts/lib/no-em-dash.mjs`](scripts/lib/no-em-dash.mjs)). A record's own
-`name` is a value, not prose, and is out of scope.
+([`scripts/lib/no-em-dash.mjs`](scripts/lib/no-em-dash.mjs)).
+
+A published **name** is covered too, and takes ` - ` instead: the em dash becomes
+a spaced hyphen, which keeps the source's separation of the name without keeping
+the character, and nothing else about the name changes. This is a substitution,
+not a house separator; the repository has no single one, and the en dash is out
+of scope. Put an upstream name through
+`withoutEmDash()` in the generator that reads it (as `packages/ecoles` does with
+the raw OpenStreetMap tag) rather than editing the generated file; a
+hand-curated record is fixed in its own source file. `pnpm validate` checks
+every `name`-keyed field of every published record, and
+`test/no-em-dash.test.mjs` sweeps the same fields over every published JSON and
+GeoJSON, `packages/dataset/algeria.geojson` included. The GeoJSON is walked in
+its own right because a mirror can carry a name the records do not: aviation's
+`routes.geojson` resolves `from_name` and `to_name` at emit time. The CSV and
+SQL mirrors are not parsed, being a projection of the same columns.
+Anything
+that is not a name stays out of scope: an address or a note is the source's own
+sentence, and rewriting one would be a data decision.
 
 ### Licence field
 Every package states its terms in three places that must agree: the manifest
