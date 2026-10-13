@@ -25,7 +25,8 @@ import { dirname, join } from "node:path";
 import { buildMetadata, toCSV, toGeoJSON } from "@geoalgeria/schema";
 import { carryOverIds, readCommitted, readRetiredIds, readRetiredMigrations, writeRetiredIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 import { RESOLVE_RULES, describeLinkage, resolveCommune } from "../../../scripts/lib/build-utils.mjs";
-import { PHARMACY_WORDS, nameKeys, splitByScript } from "../../../scripts/lib/name-script.mjs";
+import { PHARMACY_WORDS, splitByScript } from "../../../scripts/lib/name-script.mjs";
+import { collapseDuplicates } from "../../../scripts/lib/collapse-duplicates.mjs";
 import https from "node:https";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -42,8 +43,6 @@ const OSM_MIN = 2500;
 const UA = "geoalgeria-data/1.0 (+https://geoalgeria.com)";
 const MAX_BYTES = 128 * 1024 * 1024;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const DEG = Math.PI / 180;
-const M_PER_DEG = 111_320;
 
 // --- generic HTTP ----------------------------------------------------------
 const MAX_REDIRECTS = 5;
@@ -207,78 +206,32 @@ function normOSM(elements, publishedOsmIds = new Set()) {
       address: parseAddress(t),
     });
   }
-  // The two de-dup passes run over a fixed order, so which record survives a
-  // collapse never depends on how Overpass happened to order its response.
-  rows.sort((a, b) => (a.osm_id < b.osm_id ? -1 : a.osm_id > b.osm_id ? 1 : 0));
-
-  // Every collapse, as `{ dropped, kept }` OSM ids: main() turns each into a
-  // forward in retired-ids.json, so a consumer holding the dropped record's
-  // published id still resolves to the pharmacy in one hop.
-  const collapsed = [];
-  const richness = (r) =>
-    (r.name ? 1 : 0) + (r.name_ar ? 1 : 0) + (r.name_fr ? 1 : 0) +
-    (r.phone ? 1 : 0) + (r.opening_hours ? 1 : 0) + (r.address ? 1 : 0);
-  // Which of two records standing for one pharmacy survives. An already-published
-  // record wins first, so a collapse never retires an id it could have kept and
-  // never mints one it could have reused. Otherwise the record carrying the most
-  // wins, so collapsing costs no name, phone or address, and the lower OSM id
-  // breaks the remaining ties.
-  const survives = (r, other) => {
-    const published = publishedOsmIds.has(r.osm_id);
-    if (published !== publishedOsmIds.has(other.osm_id)) return published;
-    if (richness(r) !== richness(other)) return richness(r) > richness(other);
-    return r.osm_id < other.osm_id;
-  };
-  // Re-point the forwards that aimed at a record another has just displaced, so a
-  // forward is always one hop and never a chain.
-  const collapse = (dropped, survivor) => {
-    for (const entry of collapsed) if (entry.kept === dropped.osm_id) entry.kept = survivor.osm_id;
-    collapsed.push({ dropped: dropped.osm_id, kept: survivor.osm_id });
-  };
-
-  // Conservative internal de-dup: the same name within ~40 m (the same pharmacy
-  // mapped as both a node and a building outline, or under two spellings). Names
-  // are compared as Loose keys per script, not as text: "Pharmacie bouchekouf
-  // صيدلية بوشقوف" and the plain "بوشقوف" six metres away are one Oued Endja
-  // pharmacy, and an exact string comparison shipped both (private tracker #256).
-  // A name that only says "pharmacy" keys on nothing, so it never collapses anything.
-  const kept = [];
-  for (const r of rows) {
-    const keys = nameKeys([r.name, r.name_fr, r.name_ar], PHARMACY_WORDS);
-    const cosLat = Math.cos(r.lat * DEG);
-    const near = (k) => {
-      const dx = (k.row.lng - r.lng) * cosLat * M_PER_DEG;
-      const dy = (k.row.lat - r.lat) * M_PER_DEG;
-      return dx * dx + dy * dy <= 40 * 40;
-    };
-    const hit = keys.size ? kept.findIndex((k) => [...k.keys].some((key) => keys.has(key)) && near(k)) : -1;
-    if (hit < 0) { kept.push({ row: r, keys }); continue; }
-    if (survives(r, kept[hit].row)) {
-      collapse(kept[hit].row, r);
-      kept[hit] = { row: r, keys };
-    } else {
-      collapse(r, kept[hit].row);
-    }
+  // De-duplication is scripts/lib/collapse-duplicates.mjs: the same name within
+  // 40 m, then the exact same point. Names are compared there as Loose keys per
+  // script rather than as text, so "Pharmacie bouchekouf صيدلية بوشقوف" and the
+  // plain "بوشقوف" six metres away are read as one Oued Endja pharmacy, which an
+  // exact string comparison shipped twice (private tracker #256). The survivor
+  // absorbs every field it lacks from the record it replaces, so a collapse costs
+  // no phone, address, opening hours or dispensing flag; its own value wins
+  // wherever both state one, and the disagreement is reported rather than merged.
+  // `collapsed` becomes a forward in retired-ids.json, so a consumer holding the
+  // retired id still resolves to the pharmacy in one hop.
+  const { rows: deduped, collapsed, conflicts } = collapseDuplicates(rows, {
+    radiusM: 40,
+    ignoredWords: PHARMACY_WORDS,
+    // Which record of a pair survives, unchanged: the names and contact details a
+    // record states. `fillFields` adds the two the ranking never counted, so they
+    // are still carried over.
+    rankFields: ["name", "name_ar", "name_fr", "phone", "opening_hours", "address"],
+    fillFields: ["name", "name_fr", "name_ar", "operator", "phone", "opening_hours", "dispensing", "address"],
+    isPublished: (osmId) => publishedOsmIds.has(osmId),
+  });
+  if (collapsed.length) {
+    console.log(`  OSM de-dup: ${collapsed.length} duplicate record(s) collapsed, fields carried over`);
   }
-  const named = kept.map((k) => k.row);
-  if (rows.length !== named.length) {
-    console.log(`  OSM internal de-dup: ${rows.length - named.length} same-name-within-40m record(s)`);
+  for (const c of conflicts) {
+    console.log(`    conflict kept ${c.kept} ${c.field}=${JSON.stringify(c.keptValue)} over ${c.dropped} ${JSON.stringify(c.droppedValue)}`);
   }
-
-  // Second pass: collapse records at the exact same point (a pharmacy mapped twice,
-  // under names the key pass could not see were one).
-  const byPoint = new Map();
-  const order = [];
-  for (const r of named) {
-    const pk = `${r.lat},${r.lng}`;
-    const prev = byPoint.get(pk);
-    if (!prev) { byPoint.set(pk, r); order.push(pk); }
-    else if (survives(r, prev)) { collapse(prev, r); byPoint.set(pk, r); }
-    else collapse(r, prev);
-  }
-  const deduped = order.map((pk) => byPoint.get(pk));
-  const removed = named.length - deduped.length;
-  if (removed) console.log(`  OSM coord de-dup: ${removed} exact-coincident record(s)`);
 
   // The bulk-import guard runs last, so a forward whose survivor it drops leads
   // nowhere and is not a forward at all.

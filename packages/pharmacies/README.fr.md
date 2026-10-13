@@ -43,7 +43,7 @@ metadata().wilayas_covered; // 67
 | --- | --- | --- | --- |
 | `pharmacies` | 3 795 | les 3 795 | OpenStreetMap, géocodé, rattaché wilaya/commune |
 
-- **Nommées :** 2 455 · **avec téléphone :** 145 · **avec horaires :** 255 · **avec adresse :** 1 160 · **avec `dispensing` :** 526
+- **Nommées :** 2 455 · **avec téléphone :** 145 · **avec horaires :** 256 · **avec adresse :** 1 161 · **avec `dispensing` :** 530
 
 ## Formats
 

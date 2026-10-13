@@ -212,11 +212,11 @@
     },
     {
       "path": "packages/pharmacies/data/metadata.json",
-      "sha256": "b6b4b198dafa70a46d6c7fbe9fe8830177bd78d2177fcbf0746f12ea67951437"
+      "sha256": "d414e031e82ff77e784b5fcf72a68bb01458f00997b876aa881a3f25f35fc49c"
     },
     {
       "path": "packages/pharmacies/data/pharmacies.json",
-      "sha256": "e2e765e87b582f6a0261bd83c7c57448f05b319a466031baad5058567cdfdaa5"
+      "sha256": "7778122712a7a3427e339e47e7b2f1ba2a95730fb8d055b2c289d7a7557a5d7c"
     },
     {
       "path": "packages/pharmacies/data/retired-ids.json",
@@ -1740,9 +1740,9 @@
         "updated": "2026-08-31",
         "named": 2455,
         "with_phone": 145,
-        "with_hours": 255,
-        "with_address": 1160,
-        "with_dispensing": 526,
+        "with_hours": 256,
+        "with_address": 1161,
+        "with_dispensing": 530,
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
     },
