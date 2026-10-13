@@ -134,7 +134,7 @@ declare namespace algeriaGeodata {
     name_ar: string;
     wilaya_code: number;
     daira: string | null;
-    /** `null` on the 5 communes for which no citable postal code was found. */
+    /** `null` on the 1 commune for which no citable postal code was found. */
     postal_code: string | null;
     latitude: number | null;
     longitude: number | null;

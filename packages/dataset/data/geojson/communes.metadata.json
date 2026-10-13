@@ -11,7 +11,7 @@
     "name_fr": "commune name in French",
     "name_ar": "commune name in Arabic",
     "wilaya_code": "parent wilaya code as an integer 1-69 (join key to wilayas.json)",
-    "postal_code": "commune postal code, null for the 5 communes with no citable code",
+    "postal_code": "commune postal code, null for the 1 commune with no citable code",
     "daira": "parent daira name in French"
   },
   "license": "Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The 69 wilaya boundary polygons, 323 OpenStreetMap-derived commune centre coordinates and the OpenStreetMap relation ids and Wikidata items on the commune and wilaya records are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.",

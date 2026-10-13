@@ -147,7 +147,7 @@ all eleven wilayas of the 2026 cohort (59–69). See
 | `name_ar` | string | Arabic name |
 | `wilaya_code` | integer | Parent wilaya code (1–69) |
 | `daira` | string | Parent daira name (French) |
-| `postal_code` | string \| null | Commune postal code (null for 5 communes with no citable code) |
+| `postal_code` | string \| null | Commune postal code (null for 1 commune with no citable code) |
 | `latitude` | number | Latitude (100% geocoded — no nulls) |
 | `longitude` | number | Longitude (100% geocoded — no nulls) |
 | `code_commune` | integer | Unique ONS 2021 administrative code (`WWCC`); communes promoted in 2026 retain their 2021 mother-wilaya prefix |

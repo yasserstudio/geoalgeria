@@ -73,7 +73,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 72,Berriche,بريش,Aïn Beïda,4,Oum El Bouaghi,أم البواقي,04015
 73,Bir Chouhada,بئر الشهداء,Souk Naamane,4,Oum El Bouaghi,أم البواقي,04021
 74,Dhalaa,الضلعة,Dhalaa,4,Oum El Bouaghi,أم البواقي,04008
-75,El Amiria,العامرية,Sigus,4,Oum El Bouaghi,أم البواقي,04004
+75,El Amiria,العامرية,Sigus,4,Oum El Bouaghi,أم البواقي,04038
 76,El Belala,البلالة,Meskiana,4,Oum El Bouaghi,أم البواقي,04044
 77,El Djazia,الجازية,Dhalaa,4,Oum El Bouaghi,أم البواقي,04040
 78,El Fedjoudj Boughrara Sa,الفجوج بوغرارة سعودي,Aïn Fakroun,4,Oum El Bouaghi,أم البواقي,04042
@@ -116,7 +116,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 115,Inoughissene,إينوغيسن,Ichmoul,5,Batna,باتنة,05083
 116,Kimmel,كيمل,T'Kout,5,Batna,باتنة,05079
 117,Ksar Belezma,قصر بلزمة,Merouana,5,Batna,باتنة,05047
-118,Larbaa,لارباع,Bouzina,5,Batna,باتنة,38022
+118,Larbaa,لارباع,Bouzina,5,Batna,باتنة,
 119,Lazrou,لازرو,Seriana,5,Batna,باتنة,05117
 120,Lemsane,لمسان,Ouled Si Slimane,5,Batna,باتنة,05088
 121,Maafa,معافة,Aïn Touta,5,Batna,باتنة,05123
@@ -230,7 +230,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 229,Mogheul,موغل,Lahmar,8,Béchar,بشار,08042
 230,Tabelbala,تبلبالة,Tabelbala,52,Béni Abbès,بني عباس,52029
 231,Taghit,تاغيت,Taghit,8,Béchar,بشار,08030
-232,Ain Romana,عين الرمانة,Mouzaïa,9,Blida,البليدة,09028
+232,Ain Romana,عين الرمانة,Mouzaïa,9,Blida,البليدة,09023
 233,Beni Mered,بني مراد,Ouled Yaïch,9,Blida,البليدة,09003
 234,Beni-Tamou,بني تامو,Oued Alleug,9,Blida,البليدة,09024
 235,Benkhelil,بن خليل,Oued Alleug,9,Blida,البليدة,09025
@@ -242,7 +242,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 241,Chebli,الشبلي,Bouinan,9,Blida,البليدة,09009
 242,Chiffa,الشفة,Mouzaïa,9,Blida,البليدة,09010
 243,Chrea,الشريعة,Ouled Yaïch,9,Blida,البليدة,09027
-244,Djebabra,جبابرة,Meftah,9,Blida,البليدة,09023
+244,Djebabra,جبابرة,Meftah,9,Blida,البليدة,09028
 245,El-Affroun,العفرون,El Affroun,9,Blida,البليدة,09011
 246,Guerrouaou,قرواو,Boufarik,9,Blida,البليدة,09029
 247,Hammam Elouane,حمام ملوان,Bougara,9,Blida,البليدة,09030
@@ -259,7 +259,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 258,Ahl El Ksar,أهل القصر,Bechloul,10,Bouira,البويرة,10008
 259,Ain El Hadjar,عين الحجر,Aïn Bessem,10,Bouira,البويرة,10031
 260,Ain Laloui,عين العلوي,Aïn Bessem,10,Bouira,البويرة,10032
-261,Ain Turk,عين الترك,Bouira,10,Bouira,البويرة,10120
+261,Ain Turk,عين الترك,Bouira,10,Bouira,البويرة,10033
 262,Ain-Bessem,عين بسام,Aïn Bessem,10,Bouira,البويرة,10005
 263,Ait Laaziz,أيت لعزيز,Bouira,10,Bouira,البويرة,10034
 264,Aomar,أعمر,Kadiria,10,Bouira,البويرة,10010
@@ -300,7 +300,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 299,Taghzout,تاغزوت,Haizer,10,Bouira,البويرة,10055
 300,Taguedite,تاقديت,Bordj Okhriss,10,Bouira,البويرة,10045
 301,Z'barbar,زبربر,Lakhdaria,10,Bouira,البويرة,10047
-302,Abelsa,ابلسة,Abalessa,11,Tamanrasset,تمنراست,11012
+302,Abelsa,ابلسة,Abalessa,11,Tamanrasset,تمنراست,11007
 303,Ain Amguel,عين امقل,Tamanrasset,11,Tamanrasset,تمنراست,11003
 304,Idles,أدلس,Tazrouk,11,Tamanrasset,تمنراست,11020
 305,Tamanrasset,تمنراست,Tamanrasset,11,Tamanrasset,تمنراست,11000
@@ -481,62 +481,62 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 480,Yakourene,إعكورن,Azazga,15,Tizi Ouzou,تيزي وزو,15052
 481,Yatafene,يطافن,Beni Yenni,15,Tizi Ouzou,تيزي وزو,15053
 482,Zekri,زكري,Azazga,15,Tizi Ouzou,تيزي وزو,15077
-483,Ain Benian,عين بنيان,Chéraga,16,Alger,الجزائر,16095
-484,Ain Taya,عين طاية,Dar El Beïda,16,Alger,الجزائر,16116
+483,Ain Benian,عين بنيان,Chéraga,16,Alger,الجزائر,16018
+484,Ain Taya,عين طاية,Dar El Beïda,16,Alger,الجزائر,16019
 485,Alger Centre,الجزائر الوسطى,Sidi M'Hamed,16,Alger,الجزائر,16000
 486,Bab El Oued,باب الوادي,Bab El Oued,16,Alger,الجزائر,16008
 487,Bab Ezzouar,باب الزوار,Dar El Beïda,16,Alger,الجزائر,16024
-488,Baba Hassen,بابا حسن,Draria,16,Alger,الجزائر,16093
+488,Baba Hassen,بابا حسن,Draria,16,Alger,الجزائر,16081
 489,Bachedjerah,باش جراح,El Harrach,16,Alger,الجزائر,16026
 490,Baraki,براقي,Baraki,16,Alger,الجزائر,16027
 491,Ben Aknoun,ابن عكنون,Bouzareah,16,Alger,الجزائر,16028
 492,Beni Messous,بني مسوس,Bouzareah,16,Alger,الجزائر,16044
 493,Bir Mourad Rais,بئر مراد رايس,Bir Mourad Raïs,16,Alger,الجزائر,16013
-494,Bir Touta,بئر توتة,Birtouta,16,Alger,الجزائر,16118
+494,Bir Touta,بئر توتة,Birtouta,16,Alger,الجزائر,16045
 495,Birkhadem,بئر خادم,Bir Mourad Raïs,16,Alger,الجزائر,16029
 496,Bologhine Ibnou Ziri,بولوغين بن زيري,Bab El Oued,16,Alger,الجزائر,16030
-497,Bordj El Bahri,برج البحري,Dar El Beïda,16,Alger,الجزائر,16017
+497,Bordj El Bahri,برج البحري,Dar El Beïda,16,Alger,الجزائر,16046
 498,Bordj El Kiffan,برج الكيفان,Dar El Beïda,16,Alger,الجزائر,16031
 499,Bourouba,بوروبة,El Harrach,16,Alger,الجزائر,16162
 500,Bouzareah,بوزريعة,Bouzareah,16,Alger,الجزائر,16032
 501,Casbah,القصبة,Bab El Oued,16,Alger,الجزائر,16001
-502,Cheraga,الشراقة,Chéraga,16,Alger,الجزائر,16104
+502,Cheraga,الشراقة,Chéraga,16,Alger,الجزائر,16014
 503,Dar El Beida,الدار البيضاء,Dar El Beïda,16,Alger,الجزائر,16033
 504,Dely Ibrahim,دالي ابراهيم,Chéraga,16,Alger,الجزائر,16047
 505,Djasr Kasentina,جسر قسنطينة,Bir Mourad Raïs,16,Alger,الجزائر,16048
-506,Douira,الدويرة,Draria,16,Alger,الجزائر,16121
-507,Draria,الدرارية,Draria,16,Alger,الجزائر,16097
-508,El Achour,العاشور,Draria,16,Alger,الجزائر,16049
+506,Douira,الدويرة,Draria,16,Alger,الجزائر,16049
+507,Draria,الدرارية,Draria,16,Alger,الجزائر,16050
+508,El Achour,العاشور,Draria,16,Alger,الجزائر,16104
 509,El Biar,الابيار,Bouzareah,16,Alger,الجزائر,16003
 510,El Harrach,الحراش,El Harrach,16,Alger,الجزائر,16004
 511,El Madania,المدنية,Sidi M'Hamed,16,Alger,الجزائر,16015
 512,El Magharia,المغارية,Hussein Dey,16,Alger,الجزائر,16053
-513,El Marsa,المرسى,Dar El Beïda,16,Alger,الجزائر,16036
+513,El Marsa,المرسى,Dar El Beïda,16,Alger,الجزائر,16115
 514,El Mouradia,المرادية,Sidi M'Hamed,16,Alger,الجزائر,16035
 515,Hammamet,الحمامات,Chéraga,16,Alger,الجزائر,16082
-516,Herraoua,هراوة,Rouïba,16,Alger,الجزائر,16046
+516,Herraoua,هراوة,Rouïba,16,Alger,الجزائر,16116
 517,Hussein Dey,حسين داي,Hussein Dey,16,Alger,الجزائر,16005
 518,Hydra,حيدرة,Bir Mourad Raïs,16,Alger,الجزائر,16016
 519,Khraissia,الخرايسية,Draria,16,Alger,الجزائر,16091
 520,Kouba,القبة,Hussein Dey,16,Alger,الجزائر,16006
 521,Les Eucalyptus,الكاليتوس,Baraki,16,Alger,الجزائر,16057
 522,Maalma,المعالمة,Zéralda,16,Alger,الجزائر,16093
-523,Mohamed Belouzdad,محمد بلوزداد,Hussein Dey,16,Alger,الجزائر,16244
+523,Mohamed Belouzdad,محمد بلوزداد,Hussein Dey,16,Alger,الجزائر,16009
 524,Mohammadia,المحمدية,Dar El Beïda,16,Alger,الجزائر,16058
 525,Oued Koriche,وادي قريش,Bab El Oued,16,Alger,الجزائر,16041
 526,Oued Smar,وادي السمار,El Harrach,16,Alger,الجزائر,16059
-527,Ouled Chebel,اولاد شبل,Birtouta,16,Alger,الجزائر,16099
+527,Ouled Chebel,اولاد شبل,Birtouta,16,Alger,الجزائر,16118
 528,Ouled Fayet,اولاد فايت,Chéraga,16,Alger,الجزائر,16094
 529,Rahmania,الرحمانية,Zéralda,16,Alger,الجزائر,16121
 530,Rais Hamidou,الرايس حميدو,Bab El Oued,16,Alger,الجزائر,16060
-531,Reghaia,رغاية,Rouïba,16,Alger,الجزائر,16115
-532,Rouiba,الرويبة,Rouïba,16,Alger,الجزائر,16019
-533,Sehaoula,السحاولة,Bir Mourad Raïs,16,Alger,الجزائر,16062
+531,Reghaia,رغاية,Rouïba,16,Alger,الجزائر,16036
+532,Rouiba,الرويبة,Rouïba,16,Alger,الجزائر,16017
+533,Sehaoula,السحاولة,Bir Mourad Raïs,16,Alger,الجزائر,16095
 534,Sidi M'hamed,سيدي امحمد,Sidi M'Hamed,16,Alger,الجزائر,16007
 535,Sidi Moussa,سيدي موسى,Baraki,16,Alger,الجزائر,16061
 536,Souidania,سويدانية,Zéralda,16,Alger,الجزائر,16097
 537,Staoueli,سطاوالي,Zéralda,16,Alger,الجزائر,16062
-538,Tessala El Merdja,تسالة المرجة,Birtouta,16,Alger,الجزائر,16045
+538,Tessala El Merdja,تسالة المرجة,Birtouta,16,Alger,الجزائر,16099
 539,Zeralda,زرالدة,Zéralda,16,Alger,الجزائر,16063
 540,Aïn Chouhada,عين الشهداء,El Idrissia,17,Djelfa,الجلفة,17039
 541,Aïn El Ibel,عين الإبل,Aïn El Ibel,17,Djelfa,الجلفة,17011
@@ -652,7 +652,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 651,Hounet,هونت,Sidi Boubekeur,20,Saïda,سعيدة,20025
 652,Maamora,المعمورة,El Hassasna,20,Saïda,سعيدة,20013
 653,Moulay Larbi,مولاي العربي,Aïn El Hadjar,20,Saïda,سعيدة,20014
-654,Ouled Brahim,أولاد إبراهيم,Ouled Brahim,20,Saïda,سعيدة,26036
+654,Ouled Brahim,أولاد إبراهيم,Ouled Brahim,20,Saïda,سعيدة,20002
 655,Ouled Khaled,أولاد خالد,Sidi Boubekeur,20,Saïda,سعيدة,20004
 656,Saida,سعيدة,Saïda,20,Saïda,سعيدة,20000
 657,Sidi Ahmed,سيدي احمد,Aïn El Hadjar,20,Saïda,سعيدة,20012
@@ -756,7 +756,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 755,Chetaibi,شطايبي,Chetaïbi,23,Annaba,عنابة,23014
 756,Cheurfa,الشرفة,Aïn Berda,23,Annaba,عنابة,23018
 757,El Bouni,البوني,El Bouni,23,Annaba,عنابة,23010
-758,El Eulma,العلمة,Aïn Berda,23,Annaba,عنابة,
+758,El Eulma,العلمة,Aïn Berda,23,Annaba,عنابة,23031
 759,El Hadjar,الحجار,El Hadjar,23,Annaba,عنابة,23004
 760,Oued El Aneb,واد العنب,Berrahal,23,Annaba,عنابة,23021
 761,Seraidi,سرايدي,Annaba,23,Annaba,عنابة,23015
@@ -798,7 +798,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 797,Tamlouka,تاملوكة,Aïn Makhlouf,24,Guelma,قالمة,24010
 798,Ain Abid,عين عبيد,Aïn Abid,25,Constantine,قسنطينة,25015
 799,Ain Smara,عين السمارة,Aïn Smara,25,Constantine,قسنطينة,25006
-800,Ben Badis,ابن باديس,Aïn Abid,25,Constantine,قسنطينة,25102
+800,Ben Badis,ابن باديس,Aïn Abid,25,Constantine,قسنطينة,25030
 801,Beni Hamidane,بني حميدان,Zighoud Youcef,25,Constantine,قسنطينة,25035
 802,Constantine,قسنطينة,Constantine,25,Constantine,قسنطينة,25000
 803,Didouche Mourad,ديدوش مراد,Hamma Bouziane,25,Constantine,قسنطينة,25024
@@ -822,7 +822,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 821,Al Azizia,العزيزية,Al Azizia,26,Médéa,المدية,26018
 822,El Guelb El Kebir,القلب الكبير,El Guelb El Kebir,26,Médéa,المدية,26030
 823,El Hamdania,الحمدانية,Ouzera,26,Médéa,المدية,26060
-824,Deux Bassins,الحوضان,Tablat,26,Médéa,المدية,26060
+824,Deux Bassins,الحوضان,Tablat,26,Médéa,المدية,26058
 825,El Omaria,العمارية,El Omaria,26,Médéa,المدية,26008
 826,Hannacha,حناشة,Ouamri,26,Médéa,المدية,26027
 827,Khamsa Djoumaa,خمس جوامع,Sidi Naâmane,26,Médéa,المدية,26062
@@ -963,7 +963,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 962,Rouissat,الرويسات,Ouargla,30,Ouargla,ورقلة,30013
 963,Sidi Khouiled,سيدي خويلد,Sidi Khouiled,30,Ouargla,ورقلة,30035
 964,Ain Biya,عين البية,Bethioua,31,Oran,وهران,31040
-965,Ain Kerma,عين الكرمة,Boutlelis,31,Oran,وهران,
+965,Ain Kerma,عين الكرمة,Boutlelis,31,Oran,وهران,31059
 966,Ain Turk,عين الترك,Aïn El Turk,31,Oran,وهران,31014
 967,Arzew,أرزيو,Arzew,31,Oran,وهران,31004
 968,Ben Freha,بن فريحة,Gdyel,31,Oran,وهران,31063
@@ -1019,7 +1019,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1018,Djaafra,جعافرة,Djaafra,34,Bordj Bou Arreridj,برج بوعريريج,34016
 1019,El Achir,الياشير,Medjana,34,Bordj Bou Arreridj,برج بوعريريج,34006
 1020,El Annasseur,العناصر,Bordj Ghedir,34,Bordj Bou Arreridj,برج بوعريريج,34030
-1021,El Euch,العش,El Hamadia,34,Bordj Bou Arreridj,برج بوعريريج,34006
+1021,El Euch,العش,El Hamadia,34,Bordj Bou Arreridj,برج بوعريريج,34029
 1022,El M'hir,المهير,Mansoura,34,Bordj Bou Arreridj,برج بوعريريج,34019
 1023,El Main,الماين,Djaafra,34,Bordj Bou Arreridj,برج بوعريريج,34018
 1024,Elhammadia,الحمادية,El Hamadia,34,Bordj Bou Arreridj,برج بوعريريج,34017
@@ -1175,7 +1175,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1174,M'daourouche,مداوروش,M'daourouch,41,Souk Ahras,سوق أهراس,41001
 1175,Machroha,المشروحة,Mechroha,41,Souk Ahras,سوق أهراس,41010
 1176,Merahna,المراهنة,Merahna,41,Souk Ahras,سوق أهراس,41004
-1177,Oued Kebrit,وادي الكبريت,Oum El Adhaim,41,Souk Ahras,سوق أهراس,41026
+1177,Oued Kebrit,وادي الكبريت,Oum El Adhaim,41,Souk Ahras,سوق أهراس,41018
 1178,Ouillen,ويلان,Merahna,41,Souk Ahras,سوق أهراس,41032
 1179,Ouled Driss,أولاد إدريس,Ouled Driss,41,Souk Ahras,سوق أهراس,41005
 1180,Ouled Moumen,أولاد مومن,Heddada,41,Souk Ahras,سوق أهراس,41034
@@ -1183,43 +1183,43 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1182,Ragouba,الراقوبة,M'daourouch,41,Souk Ahras,سوق أهراس,41033
 1183,Safel El Ouiden,سافل الويدان,Bir Bou Haouch,41,Souk Ahras,سوق أهراس,41035
 1184,Sedrata,سدراتة,Sedrata,41,Souk Ahras,سوق أهراس,41002
-1185,Sidi Fredj,سيدي فرج,Merahna,41,Souk Ahras,سوق أهراس,41026
+1185,Sidi Fredj,سيدي فرج,Merahna,41,Souk Ahras,سوق أهراس,41030
 1186,Souk Ahras,سوق أهراس,Souk Ahras,41,Souk Ahras,سوق أهراس,41000
 1187,Taoura,تاورة,Taoura,41,Souk Ahras,سوق أهراس,41009
 1188,Terraguelt,ترقالت,Oum El Adhaim,41,Souk Ahras,سوق أهراس,41037
 1189,Tiffech,تيفاش,M'daourouch,41,Souk Ahras,سوق أهراس,41038
-1190,Zaarouria,الزعرورية,Taoura,41,Souk Ahras,سوق أهراس,41010
+1190,Zaarouria,الزعرورية,Taoura,41,Souk Ahras,سوق أهراس,41025
 1191,Zouabi,الزوابي,Bir Bou Haouch,41,Souk Ahras,سوق أهراس,41039
-1192,Aghbal,أغبال,Gouraya,42,Tipaza,تيبازة,42007
-1193,Ahmer El Ain,أحمر العين,Ahmar El Ain,42,Tipaza,تيبازة,42024
-1194,Ain Tagourait,عين تاقورايت,Bou Ismail,42,Tipaza,تيبازة,42006
+1192,Aghbal,أغبال,Gouraya,42,Tipaza,تيبازة,42035
+1193,Ahmer El Ain,أحمر العين,Ahmar El Ain,42,Tipaza,تيبازة,42005
+1194,Ain Tagourait,عين تاقورايت,Bou Ismail,42,Tipaza,تيبازة,42023
 1195,Attatba,الحطاطبة,Kolea,42,Tipaza,تيبازة,42008
 1196,Beni Mileuk,بني ميلك,Damous,42,Tipaza,تيبازة,42024
-1197,Bou Haroun,بوهارون,Bou Ismail,42,Tipaza,تيبازة,42020
-1198,Bou Ismail,بواسماعيل,Bou Ismail,42,Tipaza,تيبازة,42041
+1197,Bou Haroun,بوهارون,Bou Ismail,42,Tipaza,تيبازة,42009
+1198,Bou Ismail,بواسماعيل,Bou Ismail,42,Tipaza,تيبازة,42004
 1199,Bourkika,بورقيقة,Ahmar El Ain,42,Tipaza,تيبازة,42011
-1200,Chaiba,الشعيبة,Kolea,42,Tipaza,تيبازة,42019
-1201,Cherchell,شرشال,Cherchell,42,Tipaza,تيبازة,42036
-1202,Damous,الداموس,Damous,42,Tipaza,تيبازة,42040
+1200,Chaiba,الشعيبة,Kolea,42,Tipaza,تيبازة,42012
+1201,Cherchell,شرشال,Cherchell,42,Tipaza,تيبازة,42002
+1202,Damous,الداموس,Damous,42,Tipaza,تيبازة,42014
 1203,Douaouda,دواودة,Fouka,42,Tipaza,تيبازة,42015
-1204,Fouka,فوكة,Fouka,42,Tipaza,تيبازة,42008
-1205,Gouraya,قوراية,Gouraya,42,Tipaza,تيبازة,42018
-1206,Hadjout,حجوط,Hadjout,42,Tipaza,تيبازة,42012
+1204,Fouka,فوكة,Fouka,42,Tipaza,تيبازة,42006
+1205,Gouraya,قوراية,Gouraya,42,Tipaza,تيبازة,42007
+1206,Hadjout,حجوط,Hadjout,42,Tipaza,تيبازة,42001
 1207,Hadjret Ennous,حجرة النص,Cherchell,42,Tipaza,تيبازة,42029
 1208,Khemisti,خميستي,Bou Ismail,42,Tipaza,تيبازة,42016
 1209,Kolea,القليعة,Kolea,42,Tipaza,تيبازة,42003
 1210,Larhat,الأرهاط,Damous,42,Tipaza,تيبازة,42017
 1211,Menaceur,مناصر,Sidi Amar,42,Tipaza,تيبازة,42018
-1212,Merad,مراد,Hadjout,42,Tipaza,تيبازة,42003
+1212,Merad,مراد,Hadjout,42,Tipaza,تيبازة,42019
 1213,Messelmoun,مسلمون,Gouraya,42,Tipaza,تيبازة,42036
-1214,Nador,الناظور,Sidi Amar,42,Tipaza,تيبازة,42014
+1214,Nador,الناظور,Sidi Amar,42,Tipaza,تيبازة,42038
 1215,Sidi Ghiles,سيدي غيلاس,Cherchell,42,Tipaza,تيبازة,42021
 1216,Sidi Rached,سيدي راشد,Ahmar El Ain,42,Tipaza,تيبازة,42040
 1217,Sidi Semiane,سيدي سميان,Cherchell,42,Tipaza,تيبازة,42041
-1218,Sidi-Amar,سيدي عامر,Sidi Amar,42,Tipaza,تيبازة,42023
+1218,Sidi-Amar,سيدي عامر,Sidi Amar,42,Tipaza,تيبازة,42020
 1219,Tipaza,تيبازة,Tipaza,42,Tipaza,تيبازة,42000
 1220,Ahmed Rachedi,أحمد راشدي,Oued Endja,43,Mila,ميلة,43013
-1221,Ain Beida Harriche,عين البيضاء أحريش,Aïn Beida Harriche,43,Mila,ميلة,43033
+1221,Ain Beida Harriche,عين البيضاء أحريش,Aïn Beida Harriche,43,Mila,ميلة,43014
 1222,Ain Mellouk,عين الملوك,Chelghoum Laid,43,Mila,ميلة,43015
 1223,Ain Tine,عين التين,Mila,43,Mila,ميلة,43016
 1224,Amira Arres,اعميرة اراس,Terrai Bainen,43,Mila,ميلة,43017
@@ -1228,7 +1228,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1227,Chelghoum Laid,شلغوم العيد,Chelghoum Laid,43,Mila,ميلة,43001
 1228,Chigara,الشيقارة,Sidi Merouane,43,Mila,ميلة,43025
 1229,Derrahi Bousselah,دراحي بوصلاح,Bouhatem,43,Mila,ميلة,43046
-1230,El Ayadi Barbes,العياضي برباس,Aïn Beida Harriche,43,Mila,ميلة,43009
+1230,El Ayadi Barbes,العياضي برباس,Aïn Beida Harriche,43,Mila,ميلة,43050
 1231,El Mechira,مشيرة,Teleghma,43,Mila,ميلة,43026
 1232,Ferdjioua,فرجيوة,Ferdjioua,43,Mila,ميلة,43002
 1233,Grarem Gouga,القرارم قوقة,Grarem Gouga,43,Mila,ميلة,43004
@@ -1244,11 +1244,11 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1243,Sidi Merouane,سيدي مروان,Sidi Merouane,43,Mila,ميلة,43010
 1244,Tadjenanet,تاجنانت,Tadjenanet,43,Mila,ميلة,43007
 1245,Tassadane Haddada,تسدان حدادة,Tassadane Haddada,43,Mila,ميلة,43033
-1246,Tassala Lematai,تسالة لمطاعي,Terrai Bainen,43,Mila,ميلة,43007
+1246,Tassala Lematai,تسالة لمطاعي,Terrai Bainen,43,Mila,ميلة,43034
 1247,Teleghma,التلاغمة,Teleghma,43,Mila,ميلة,43008
 1248,Terrai Bainen,ترعي باينان,Terrai Bainen,43,Mila,ميلة,43018
 1249,Tiberguent,تيبرقنت,Rouached,43,Mila,ميلة,43035
-1250,Yahia Beniguecha,يحي بني قشة,Ferdjioua,43,Mila,ميلة,43015
+1250,Yahia Beniguecha,يحي بني قشة,Ferdjioua,43,Mila,ميلة,43019
 1251,Zeghaia,زغاية,Oued Endja,43,Mila,ميلة,43012
 1252,Ain-Benian,عين البنيان,Aïn Defla,44,Aïn Defla,عين الدفلى,44035
 1253,Ain-Bouyahia,عين بويحيى,Aïn Defla,44,Aïn Defla,عين الدفلى,44032
@@ -1260,18 +1260,18 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1259,Bathia,بطحية,Bathia,44,Aïn Defla,عين الدفلى,44041
 1260,Belaas,بلعاص,El Attaf,44,Aïn Defla,عين الدفلى,44038
 1261,Ben Allal,بن علال,Rouina,44,Aïn Defla,عين الدفلى,44040
-1262,Bir-Ould-Khelifa,بئر ولد خليفة,Hammam Righa,44,Aïn Defla,عين الدفلى,44002
+1262,Bir-Ould-Khelifa,بئر ولد خليفة,Hammam Righa,44,Aïn Defla,عين الدفلى,44043
 1263,Birbouche,بربوش,El Attaf,44,Aïn Defla,عين الدفلى,44042
 1264,Bordj-Emir-Khaled,برج الأمير خالد,Bordj Emir Khaled,44,Aïn Defla,عين الدفلى,44021
 1265,Boumedfaa,بومدفع,Boumedfaa,44,Aïn Defla,عين الدفلى,44004
 1266,Bourached,بوراشد,Djendel,44,Aïn Defla,عين الدفلى,44044
 1267,Djelida,جليدة,Djelida,44,Aïn Defla,عين الدفلى,44009
 1268,Djemaa Ouled Cheikh,جمعة أولاد الشيخ,El Amra,44,Aïn Defla,عين الدفلى,44047
-1269,Djendel,جندل,Djendel,44,Aïn Defla,عين الدفلى,44023
+1269,Djendel,جندل,Djendel,44,Aïn Defla,عين الدفلى,44005
 1270,El-Abadia,العبادية,El Abadia,44,Aïn Defla,عين الدفلى,44006
 1271,El-Amra,العامرة,El Amra,44,Aïn Defla,عين الدفلى,44010
 1272,El-Attaf,العطاف,El Attaf,44,Aïn Defla,عين الدفلى,44002
-1273,El-Maine,الماين,Miliana,44,Aïn Defla,عين الدفلى,44020
+1273,El-Maine,الماين,Miliana,44,Aïn Defla,عين الدفلى,44051
 1274,Hammam-Righa,حمام ريغة,Hammam Righa,44,Aïn Defla,عين الدفلى,44023
 1275,Hassania,الحسانية,Khemis Miliana,44,Aïn Defla,عين الدفلى,44022
 1276,Hoceinia,الحسينية,Miliana,44,Aïn Defla,عين الدفلى,44048
@@ -1288,30 +1288,30 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1287,Zeddine,زدين,Rouina,44,Aïn Defla,عين الدفلى,44031
 1288,Ain Ben Khelil,عين بن خليل,Mecheria,45,Naâma,النعامة,45008
 1289,Ain Sefra,عين الصفراء,Aïn Sefra,45,Naâma,النعامة,45001
-1290,Asla,عسلة,Assela,45,Naâma,النعامة,45030
-1291,Djenienne Bourezg,جنين بورزق,Moghrar,45,Naâma,النعامة,45030
+1290,Asla,عسلة,Assela,45,Naâma,النعامة,45012
+1291,Djenienne Bourezg,جنين بورزق,Moghrar,45,Naâma,النعامة,45013
 1292,El Biodh,البيوض,Mecheria,45,Naâma,النعامة,45004
 1293,Kasdir,القصدير,Makman Ben Amer,45,Naâma,النعامة,45007
 1294,Makmen Ben Amar,مكمن بن عمار,Makman Ben Amer,45,Naâma,النعامة,45005
 1295,Mecheria,المشرية,Mecheria,45,Naâma,النعامة,45002
 1296,Moghrar,مغرار,Moghrar,45,Naâma,النعامة,45019
 1297,Naama,النعامة,Naama,45,Naâma,النعامة,45000
-1298,Sfissifa,سفيسيفة,Sfissifa,45,Naâma,النعامة,45001
+1298,Sfissifa,سفيسيفة,Sfissifa,45,Naâma,النعامة,45021
 1299,Tiout,تيوت,Aïn Sefra,45,Naâma,النعامة,45030
 1300,Aghlal,أغلال,Aïn Kihal,46,Aïn Témouchent,عين تموشنت,46016
 1301,Ain El Arbaa,عين الأربعاء,Aïn El Arbaa,46,Aïn Témouchent,عين تموشنت,46009
-1302,Ain Kihal,عين الكيحل,Aïn Kihal,46,Aïn Témouchent,عين تموشنت,46045
+1302,Ain Kihal,عين الكيحل,Aïn Kihal,46,Aïn Témouchent,عين تموشنت,46008
 1303,Ain Temouchent,عين تموشنت,Aïn Témouchent,46,Aïn Témouchent,عين تموشنت,46000
 1304,Ain Tolba,عين الطلبة,Aïn Kihal,46,Aïn Témouchent,عين تموشنت,46010
 1305,Aoubellil,عقب الليل,Aïn Kihal,46,Aïn Témouchent,عين تموشنت,46017
 1306,Beni Saf,بني صاف,Beni Saf,46,Aïn Témouchent,عين تموشنت,46001
 1307,Bouzedjar,بوزجار,El Amria,46,Aïn Témouchent,عين تموشنت,46033
-1308,Chaabat El Ham,شعبة اللحم,El Malah,46,Aïn Témouchent,عين تموشنت,46033
+1308,Chaabat El Ham,شعبة اللحم,El Malah,46,Aïn Témouchent,عين تموشنت,46011
 1309,Chentouf,شنتوف,Hammam Bou Hadjar,46,Aïn Témouchent,عين تموشنت,46020
-1310,El Amria,العامرية,El Amria,46,Aïn Témouchent,عين تموشنت,46022
-1311,El Maleh,المالح,El Malah,46,Aïn Témouchent,عين تموشنت,46016
+1310,El Amria,العامرية,El Amria,46,Aïn Témouchent,عين تموشنت,46006
+1311,El Maleh,المالح,El Malah,46,Aïn Témouchent,عين تموشنت,46007
 1312,El Messaid,المساعيد,El Amria,46,Aïn Témouchent,عين تموشنت,46036
-1313,Emir Abdelkader,الأمير عبد القادر,Beni Saf,46,Aïn Témouchent,عين تموشنت,
+1313,Emir Abdelkader,الأمير عبد القادر,Beni Saf,46,Aïn Témouchent,عين تموشنت,46037
 1314,Hammam Bou Hadjar,حمام بوحجر,Hammam Bou Hadjar,46,Aïn Témouchent,عين تموشنت,46005
 1315,Hassasna,الحساسنة,Hammam Bou Hadjar,46,Aïn Témouchent,عين تموشنت,46021
 1316,Hassi El Ghella,حاسي الغلة,El Amria,46,Aïn Témouchent,عين تموشنت,46012
@@ -1322,22 +1322,22 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1321,Oulhaca El Gheraba,ولهاصة الغرابة,Oulhaca El Gheraba,46,Aïn Témouchent,عين تموشنت,46014
 1322,Sidi Ben Adda,سيدي بن عدة,Aïn Témouchent,46,Aïn Témouchent,عين تموشنت,46013
 1323,Sidi Boumediene,سيدي بومدين,Aïn El Arbaa,46,Aïn Témouchent,عين تموشنت,46051
-1324,Sidi Ouriache,سيدي ورياش,Oulhaca El Gheraba,46,Aïn Témouchent,عين تموشنت,46033
+1324,Sidi Ouriache,سيدي ورياش,Oulhaca El Gheraba,46,Aïn Témouchent,عين تموشنت,46024
 1325,Sidi Safi,سيدي صافي,Beni Saf,46,Aïn Témouchent,عين تموشنت,46025
 1326,Tamzoura,تامزورة,Aïn El Arbaa,46,Aïn Témouchent,عين تموشنت,46026
 1327,Terga,تارقة,El Malah,46,Aïn Témouchent,عين تموشنت,46015
 1328,Berriane,بريان,Berriane,47,Ghardaïa,غرداية,47003
 1329,Bounoura,بونورة,Bounoura,47,Ghardaïa,غرداية,47010
-1330,Dhayet Bendhahoua,ضاية بن ضحوة,Daia Ben Dahoua,47,Ghardaïa,غرداية,47012
-1331,El Atteuf,العطف,Bounoura,47,Ghardaïa,غرداية,58006
-1332,El Guerrara,القرارة,El Guerrara,47,Ghardaïa,غرداية,58001
+1330,Dhayet Bendhahoua,ضاية بن ضحوة,Daia Ben Dahoua,47,Ghardaïa,غرداية,47011
+1331,El Atteuf,العطف,Bounoura,47,Ghardaïa,غرداية,47012
+1332,El Guerrara,القرارة,El Guerrara,47,Ghardaïa,غرداية,47004
 1333,Ghardaia,غرداية,Ghardaia,47,Ghardaïa,غرداية,47000
 1334,Mansoura,المنصورة,Mansoura,47,Ghardaïa,غرداية,47023
 1335,Metlili,متليلي,Metlili,47,Ghardaïa,غرداية,47002
 1336,Sebseb,سبسب,Metlili,47,Ghardaïa,غرداية,47025
 1337,Zelfana,زلفانة,Zelfana,47,Ghardaïa,غرداية,47007
 1338,Ain Rahma,عين الرحمة,Yellel,48,Relizane,غليزان,48033
-1339,Ain-Tarek,عين طارق,Aïn Tarek,48,Relizane,غليزان,48016
+1339,Ain-Tarek,عين طارق,Aïn Tarek,48,Relizane,غليزان,48015
 1340,Ammi Moussa,عمي موسى,Ammi Moussa,48,Relizane,غليزان,48004
 1341,Belaassel Bouzagza,بلعسل بوزقزة,El Matmar,48,Relizane,غليزان,48036
 1342,Bendaoud,بن داود,Relizane,48,Relizane,غليزان,48037
@@ -1346,30 +1346,30 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1345,Dar Ben Abdelah,دار بن عبد الله,Zemmora,48,Relizane,غليزان,48044
 1346,Djidiouia,جديوية,Djidioua,48,Relizane,غليزان,48005
 1347,El H'madna,الحمادنة,El Hamadna,48,Relizane,غليزان,48017
-1348,El Hassi,الحاسي,Ammi Moussa,48,Relizane,غليزان,48067
+1348,El Hassi,الحاسي,Ammi Moussa,48,Relizane,غليزان,48046
 1349,El Ouldja,الولجة,Ammi Moussa,48,Relizane,غليزان,48048
-1350,El-Guettar,القطار,Mazouna,48,Relizane,غليزان,48051
+1350,El-Guettar,القطار,Mazouna,48,Relizane,غليزان,48016
 1351,El-Matmar,المطمر,El Matmar,48,Relizane,غليزان,48009
-1352,Had Echkalla,حد الشكالة,Aïn Tarek,48,Relizane,غليزان,48003
+1352,Had Echkalla,حد الشكالة,Aïn Tarek,48,Relizane,غليزان,48043
 1353,Hamri,حمري,Djidioua,48,Relizane,غليزان,48051
 1354,Kalaa,القلعة,Yellel,48,Relizane,غليزان,48018
 1355,Lahlef,لحلاف,Oued Rhiou,48,Relizane,غليزان,48020
 1356,Mazouna,مازونة,Mazouna,48,Relizane,غليزان,48002
-1357,Mediouna,مديونة,Sidi M'Hamed Ben Ali,48,Relizane,غليزان,48015
+1357,Mediouna,مديونة,Sidi M'Hamed Ben Ali,48,Relizane,غليزان,48011
 1358,Mendes,منداس,Mendes,48,Relizane,غليزان,48012
 1359,Merdja Sidi Abed,مرجة سيدي عابد,Oued Rhiou,48,Relizane,غليزان,48056
 1360,Ouarizane,واريزان,Oued Rhiou,48,Relizane,غليزان,48013
 1361,Oued El Djemaa,وادي الجمعة,El Hamadna,48,Relizane,غليزان,48021
 1362,Oued Essalem,وادي السلام,Mendes,48,Relizane,غليزان,48022
 1363,Oued-Rhiou,وادي رهيو,Oued Rhiou,48,Relizane,غليزان,48001
-1364,Ouled Aiche,أولاد يعيش,Ammi Moussa,48,Relizane,غليزان,48039
+1364,Ouled Aiche,أولاد يعيش,Ammi Moussa,48,Relizane,غليزان,48019
 1365,Ouled Sidi Mihoub,أولاد سيدي الميهوب,Djidioua,48,Relizane,غليزان,48061
 1366,Ramka,الرمكة,Ramka,48,Relizane,غليزان,48024
 1367,Relizane,غليزان,Relizane,48,Relizane,غليزان,48000
 1368,Sidi Khettab,سيدي خطاب,El Matmar,48,Relizane,غليزان,48029
 1369,Sidi Lazreg,سيدي لزرق,Mendes,48,Relizane,غليزان,48065
 1370,Sidi M'hamed Benali,سيدي أمحمد بن علي,Sidi M'Hamed Ben Ali,48,Relizane,غليزان,48003
-1371,Sidi M'hamed Benaouda,سيدي امحمد بن عودة,El Matmar,48,Relizane,غليزان,48033
+1371,Sidi M'hamed Benaouda,سيدي امحمد بن عودة,El Matmar,48,Relizane,غليزان,48030
 1372,Sidi Saada,سيدي سعادة,Yellel,48,Relizane,غليزان,48067
 1373,Souk El Had,سوق الحد,Ramka,48,Relizane,غليزان,48068
 1374,Yellel,يلل,Yellel,48,Relizane,غليزان,48006
@@ -1387,10 +1387,10 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1386,Bordj Badji Mokhtar,برج باجي مختار,Bordj Badji Mokhtar,50,Bordj Badji Mokhtar,برج باجي مختار,50010
 1387,Timiaouine,تيمياوين,Bordj Badji Mokhtar,50,Bordj Badji Mokhtar,برج باجي مختار,50042
 1388,Besbes,بسباس,Sidi Khaled,51,Ouled Djellal,أولاد جلال,51044
-1389,Chaiba,الشعيبة,Ouled Djellal,51,Ouled Djellal,أولاد جلال,
+1389,Chaiba,الشعيبة,Ouled Djellal,51,Ouled Djellal,أولاد جلال,51047
 1390,Doucen,الدوسن,Ouled Djellal,51,Ouled Djellal,أولاد جلال,51007
 1391,Ouled Djellal,أولاد جلال,Ouled Djellal,51,Ouled Djellal,أولاد جلال,51002
-1392,Ras El Miad,رأس الميعاد,Sidi Khaled,51,Ouled Djellal,أولاد جلال,05087
+1392,Ras El Miad,رأس الميعاد,Sidi Khaled,51,Ouled Djellal,أولاد جلال,51062
 1393,Sidi Khaled,سيدي خالد,Sidi Khaled,51,Ouled Djellal,أولاد جلال,51004
 1394,Beni-Abbes,بني عباس,Beni Abbes,52,Béni Abbès,بني عباس,52002
 1395,Beni-Ikhlef,بن يخلف,El Ouata,52,Béni Abbès,بني عباس,52025
@@ -1413,7 +1413,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1412,M'naguer,المنقر,Taibet,55,Touggourt,توقرت,55029
 1413,Megarine,المقارين,Megarine,55,Touggourt,توقرت,55009
 1414,Nezla,النزلة,Touggourt,55,Touggourt,توقرت,55004
-1415,Sidi Slimane,سيدي سليمان,Megarine,55,Touggourt,توقرت,55008
+1415,Sidi Slimane,سيدي سليمان,Megarine,55,Touggourt,توقرت,55037
 1416,Taibet,الطيبات,Taibet,55,Touggourt,توقرت,55015
 1417,Tebesbest,تبسبست,Touggourt,55,Touggourt,توقرت,55016
 1418,Temacine,تماسين,Tamacine,55,Touggourt,توقرت,55003
@@ -1441,8 +1441,8 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1440,Hadj Mechri,الحاج المشري,Brida,59,Aflou,آفلو,03038
 1441,Oued M'Zi,وادي مزي,Oued Morra,59,Aflou,آفلو,03041
 1442,Oued Morra,وادي مرة,Oued Morra,59,Aflou,آفلو,03027
-1443,Sebgag,سبقاق,Aflou,59,Aflou,آفلو,03003
-1444,Sidi Bouzid,سيدي بوزيد,Aflou,59,Aflou,آفلو,03007
+1443,Sebgag,سبقاق,Aflou,59,Aflou,آفلو,03034
+1444,Sidi Bouzid,سيدي بوزيد,Aflou,59,Aflou,آفلو,03024
 1445,Taouiala,تاويالة,Brida,59,Aflou,آفلو,03026
 1446,Abdelkader Azil,عبد القادر عزيل,Djezzar,60,Barika,بريكة,05087
 1447,Barika,بريكة,Barika,60,Barika,بريكة,05001
@@ -1456,7 +1456,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1455,Branis,البرانيس,Djemourah,61,El Kantara,القنطرة,07023
 1456,Djemourah,جمورة,Djemourah,61,El Kantara,القنطرة,07025
 1457,El Kantara,القنطرة,El Kantara,61,El Kantara,القنطرة,07008
-1458,El Outaya,الوطاية,El Outaya,61,El Kantara,القنطرة,07026
+1458,El Outaya,الوطاية,El Outaya,61,El Kantara,القنطرة,07030
 1459,Bir El Ater,بئر العاتر,Bir El Ater,62,Bir El Ater,بئر العاتر,12001
 1460,El Ogla El Melha,العقلة المالحة,Bir El Ater,62,Bir El Ater,بئر العاتر,12043
 1461,Ferkane,فركان,Negrine,62,Bir El Ater,بئر العاتر,12044
@@ -1469,7 +1469,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1468,Hamadia,حمادية,Hamadia,64,Ksar Chellala,قصر الشلالة,14020
 1469,Ksar Chellala,قصر الشلالة,Ksar Chellala,64,Ksar Chellala,قصر الشلالة,14002
 1470,Rechaiga,الرشايقة,Hamadia,64,Ksar Chellala,قصر الشلالة,14026
-1471,Serguine,سرقين,Ksar Chellala,64,Ksar Chellala,قصر الشلالة,14051
+1471,Serguine,سرقين,Ksar Chellala,64,Ksar Chellala,قصر الشلالة,14063
 1472,Zmalet El Emir Abdelkader,زمالة الأمير عبد القادر,Ksar Chellala,64,Ksar Chellala,قصر الشلالة,14038
 1473,Aïn Fekka,عين فقة,Had Sahary,65,Aïn Ouessara,عين وسارة,17040
 1474,Aïn Ouessara,عين وسارة,Aïn Ouessara,65,Aïn Ouessara,عين وسارة,17001
@@ -1482,7 +1482,7 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1481,Hassi Fedoul,حاسي فدول,Sidi Ladjel,65,Aïn Ouessara,عين وسارة,17056
 1482,Sidi Ladjel,سيدي لعجال,Sidi Ladjel,65,Aïn Ouessara,عين وسارة,17024
 1483,Amourah,عمورة,Faïdh El Botma,66,Messaad,مسعد,17042
-1484,Deldoul,دلدول,Messaad,66,Messaad,مسعد,17415
+1484,Deldoul,دلدول,Messaad,66,Messaad,مسعد,17046
 1485,Faïdh El Botma,فيض البطمة,Faïdh El Botma,66,Messaad,مسعد,17021
 1486,Guettara,قطارة,Messaad,66,Messaad,مسعد,17055
 1487,Messaad,مسعد,Messaad,66,Messaad,مسعد,17003
@@ -1523,13 +1523,13 @@ id,commune_name_fr,commune_name_ar,daira_name_fr,wilaya_code,wilaya_name_fr,wila
 1522,Khoubana,الخبانة,Khoubana,68,Bou Saâda,بوسعادة,28030
 1523,M'Cif,امسيف,Khoubana,68,Bou Saâda,بوسعادة,28029
 1524,Medjedel,امجدل,Medjedel,68,Bou Saâda,بوسعادة,28016
-1525,Menaâ,مناعة,Medjedel,68,Bou Saâda,بوسعادة,28016
+1525,Menaâ,مناعة,Medjedel,68,Bou Saâda,بوسعادة,28070
 1526,Mouhamed Boudiaf,محمد بوضياف,Ben Srour,68,Bou Saâda,بوسعادة,28033
 1527,Ouled Sidi Brahim,أولاد سيدي إبراهيم,Ouled Sidi Brahim,68,Bou Saâda,بوسعادة,28032
 1528,Ouled Slimane,أولاد سليمان,Ben Srour,68,Bou Saâda,بوسعادة,28031
-1529,Oultem,ولتام,Bou Saada,68,Bou Saâda,بوسعادة,28054
+1529,Oultem,ولتام,Bou Saada,68,Bou Saâda,بوسعادة,28061
 1530,Sidi Ameur,سيدي عامر,Sidi Ameur,68,Bou Saâda,بوسعادة,28035
-1531,Sidi M'Hamed,سيدي امحمد,Aïn El Meleh,68,Bou Saâda,بوسعادة,
+1531,Sidi M'Hamed,سيدي امحمد,Aïn El Meleh,68,Bou Saâda,بوسعادة,28045
 1532,Slim,سليم,Djebel Messaad,68,Bou Saâda,بوسعادة,28037
 1533,Tamsa,تامسة,Sidi Ameur,68,Bou Saâda,بوسعادة,28065
 1534,Zarzour,الزرزور,Ben Srour,68,Bou Saâda,بوسعادة,28067
