@@ -136,7 +136,7 @@ reconciles each office through its canonical `commune_code`. It also reconciles
 sole polygon containment agree. `source_wilaya_code` preserves a differing
 provider value.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). The underlying data is © **Algérie Poste**, redistributed
 for reference and to power [GeoAlgeria](https://geoalgeria.com). Verify against

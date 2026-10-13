@@ -159,7 +159,7 @@ The generator maps its commune names to GeoAlgeria's current 69-wilaya division.
 `npm run fetch` to replay the committed source capture. Names, types, contacts, capacities
 and coordinates are as published by the ministry.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). The underlying data is &copy; **MFEP**, redistributed for reference
 and to power [GeoAlgeria](https://geoalgeria.com). Verify against the ministry for

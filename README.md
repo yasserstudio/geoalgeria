@@ -216,7 +216,7 @@ Semantic versioning per package, automated with [Changesets](https://github.com/
 
 GeoAlgeria is free. The code is MIT and each package states its own data terms. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), it funds keeping the data current and expanding the coverage.
 
-## License & disclaimer
+## Licence & disclaimer
 
 **Code:** [MIT](LICENSE). **Data:** compiled from public official sources (the *Journal Officiel*, Algérie Poste, ANEM, ANAC, each operator's/institution's public site) and redistributed for reference.
 
