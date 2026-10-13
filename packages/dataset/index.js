@@ -1,10 +1,8 @@
 // Every JSON file is reached by a static `require`, never through a path built
-// at runtime. A bundler (Next.js with Turbopack, webpack, esbuild, Vite)
-// rewrites `__dirname` and cannot follow a computed path, so a runtime read
-// builds fine and then fails with ENOENT on the first request (issue #276).
-// A `require` inside a getter stays lazy: Node reads and parses the file the
-// first time that getter runs, so an import costs nothing. A real bundler
-// checks it in `scripts/check-bundlers.mjs`.
+// at runtime: a bundler rewrites `__dirname` and cannot follow a computed path,
+// so a runtime read builds fine and then fails with ENOENT on the first request.
+// A `require` inside a getter stays lazy, so an import still costs nothing.
+// Why, and what each bundler does: `scripts/check-bundlers.mjs` (issue #276).
 
 let _wilayas,
   _communes,

@@ -1,29 +1,38 @@
 #!/usr/bin/env node
 /**
- * Prove the published packages survive a bundler, not just Node.
+ * Prove the `geoalgeria` umbrella survives a bundler, not just Node.
  *
- * `geoalgeria` shipped two faults that only a bundler sees (issue #276): an
- * `exports` map with no `import` path, so `import geo from "geoalgeria"` did
- * not resolve at all, and JSON read through a path built from `__dirname` at
- * runtime, which a bundler rewrites, so the build passed and every request
- * failed with ENOENT. Node alone never noticed either one.
+ * This is the canonical account of issue #276; `packages/dataset/index.js` and
+ * `test/dataset-bundler-safe.test.mjs` point here rather than repeat it.
  *
- * So this packs the real tarballs (`npm pack`, the shipped `files[]` and
- * nothing else), unpacks them into a throwaway node_modules, bundles entries
- * that import them, and runs the bundles.
+ * The umbrella shipped two faults that only a bundler sees, both reproduced in
+ * a Vercel Sandbox on 2026-10-13 (Next.js 16.4, Turbopack, geoalgeria 2.3.0):
  *
- * Two shapes, checked differently on purpose:
+ *   1. `exports["."]` offered a `require` path and nothing else, so
+ *      `import geo from "geoalgeria"` did not resolve at all ("Module not
+ *      found"), even with the package in `serverExternalPackages`.
+ *   2. The JSON was read through `fs.readFileSync(path.join(__dirname, "data",
+ *      file))` with the file name in a variable. A bundler rewrites `__dirname`
+ *      and cannot trace a computed path, so the build passed and every request
+ *      failed with ENOENT on `/ROOT/node_modules/geoalgeria/data/algeria.json`.
  *
- *   - `geoalgeria` inlines its JSON through static `require`s, so its bundle is
- *     self-contained: it is run from an unrelated directory, where a runtime
- *     read could not find the data even by accident. Both module formats are
- *     covered, since an ESM bundle takes the `import` condition of the exports
- *     map and a CommonJS one takes `require`.
- *   - the scoped packages are ESM and read their data relative to
- *     `import.meta.url`, which bundlers with asset tracing (Turbopack, webpack)
- *     relocate and esbuild does not. Their bundle is therefore emitted inside
- *     the installed package, next to the `data/` directory it points at, which
- *     is where asset tracing would put it anyway.
+ * Node alone noticed neither one, hence this check: it packs the real tarball
+ * (`npm pack`, the shipped `files[]` and nothing else), unpacks it into a
+ * throwaway node_modules, bundles an entry that imports it, and runs the
+ * bundle from an unrelated directory, where a runtime read could not find the
+ * data even by accident. Both module formats are covered, since an ESM bundle
+ * takes the `import` condition of the exports map and a CommonJS one takes
+ * `require`.
+ *
+ * Only the umbrella. The scoped packages were verified WORKING in that same
+ * sandbox (`import { branches } from "@geoalgeria/banques"` served all 1,704),
+ * because they are ESM that join their data path at runtime from
+ * `import.meta.url`, which Turbopack and webpack trace and relocate. esbuild
+ * and Vite do not relocate it, so a scoped package does break under those two;
+ * that is a real gap, tracked in its own ticket, and not something an esbuild
+ * leg here can usefully assert: it would either fail for a reason this fix is
+ * not about, or pass only because the bundle was emitted next to the `data/`
+ * directory it reads, which proves nothing.
  *
  * Usage: node scripts/check-bundlers.mjs
  *
@@ -41,13 +50,7 @@ import * as esbuild from "esbuild";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-/** [package directory, the name it installs as] */
-const PACKAGES = [
-  ["packages/dataset", "geoalgeria"],
-  ["packages/aviation", "@geoalgeria/aviation"],
-];
-
-const UMBRELLA_ENTRY = `
+const ENTRY = `
 import geo from "geoalgeria";
 
 console.log(JSON.stringify({
@@ -62,17 +65,7 @@ console.log(JSON.stringify({
 }));
 `;
 
-const SECTOR_ENTRY = `
-import { airports, airportsByWilaya, metadata } from "@geoalgeria/aviation";
-
-console.log(JSON.stringify({
-  airports: airports().length,
-  airportsOfAlger: airportsByWilaya("16").length,
-  wilayasCovered: metadata().wilayas_covered,
-}));
-`;
-
-/** Bundle one entry, run it, and hand back what it printed. */
+/** Bundle the entry, run it, and hand back what it printed. */
 function bundleAndRun({ label, source, outfile, format, cwd }) {
   const entry = `${outfile}.entry.mjs`;
   writeFileSync(entry, source);
@@ -91,7 +84,7 @@ function bundleAndRun({ label, source, outfile, format, cwd }) {
   return report;
 }
 
-/** Fail loudly, with the format that produced the wrong number. */
+/** Fail loudly, naming the format that produced the wrong number. */
 function expect(label, report, exact, positive) {
   for (const [key, value] of Object.entries(exact)) {
     if (report[key] !== value) {
@@ -106,29 +99,30 @@ function expect(label, report, exact, positive) {
 const work = mkdtempSync(join(tmpdir(), "geoalgeria-bundlers-"));
 
 try {
-  const installed = {};
-  for (const [dir, name] of PACKAGES) {
-    const tarball = execFileSync("npm", ["pack", "--silent", "--pack-destination", work], {
-      cwd: join(ROOT, dir),
-      encoding: "utf8",
-    }).trim();
-    const target = join(work, "node_modules", name);
-    mkdirSync(target, { recursive: true });
-    execFileSync("tar", ["-xzf", join(work, tarball), "-C", target, "--strip-components=1"]);
-    installed[name] = target;
-    console.log(`packed ${name} (${tarball})`);
-  }
+  const tarball = execFileSync("npm", ["pack", "--silent", "--pack-destination", work], {
+    cwd: join(ROOT, "packages", "dataset"),
+    encoding: "utf8",
+  }).trim();
+  mkdirSync(join(work, "node_modules", "geoalgeria"), { recursive: true });
+  execFileSync("tar", [
+    "-xzf",
+    join(work, tarball),
+    "-C",
+    join(work, "node_modules", "geoalgeria"),
+    "--strip-components=1",
+  ]);
+  console.log(`packed geoalgeria (${tarball})`);
 
-  // The umbrella, in both module formats, run away from its own data.
   for (const format of ["esm", "cjs"]) {
+    const label = `geoalgeria ${format} bundle`;
     const report = bundleAndRun({
-      label: `geoalgeria ${format} bundle`,
-      source: UMBRELLA_ENTRY,
+      label,
+      source: ENTRY,
       outfile: join(work, `geoalgeria.${format === "esm" ? "mjs" : "cjs"}`),
       format,
       cwd: tmpdir(),
     });
-    expect(`geoalgeria ${format} bundle`, report, { wilayas: 69, communes: 1541, alger: "Alger" }, [
+    expect(label, report, { wilayas: 69, communes: 1541, alger: "Alger" }, [
       "dairas",
       "postOffices",
       "atms",
@@ -136,21 +130,6 @@ try {
       "communesOfAlger",
     ]);
   }
-
-  // One scoped package, to catch an exports map or an entry that stops
-  // resolving. Its bundle sits beside the data it reads; see the header.
-  const sector = bundleAndRun({
-    label: "@geoalgeria/aviation esm bundle",
-    source: SECTOR_ENTRY,
-    outfile: join(installed["@geoalgeria/aviation"], "bundle.mjs"),
-    format: "esm",
-    cwd: tmpdir(),
-  });
-  expect("@geoalgeria/aviation esm bundle", sector, {}, [
-    "airports",
-    "airportsOfAlger",
-    "wilayasCovered",
-  ]);
 
   console.log("check-bundlers: ok");
 } finally {

@@ -54,6 +54,8 @@ dz.findByPostalCode("16000");     // → commune, daira, wilaya
 dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 ```
 
+A bundler (Next.js, Vite, webpack) inlines all ten JSON files, the post office and ATM mirrors included. For one slice, import that file on its own: `import communes from "geoalgeria/data/ecommerce/communes.json"`. In TypeScript the default import needs `esModuleInterop`; `import dz = require("geoalgeria")` does not.
+
 ## What's inside
 
 | | Count | |

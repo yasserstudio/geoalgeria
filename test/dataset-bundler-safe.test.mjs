@@ -1,22 +1,14 @@
-// `geoalgeria` must stay loadable by a bundler, not just by Node.
+// `geoalgeria` must stay loadable by a bundler, not just by Node. Two faults in
+// the umbrella made it unusable in a bundled app: an exports map with no ESM
+// path, and JSON read at runtime from a `__dirname` path a bundler rewrites.
+// `scripts/check-bundlers.mjs` holds the one full account of issue #276, which
+// bundlers each shape works under included; this file does not repeat it.
 //
-// Two separate faults made the umbrella package unusable in a Next.js app on
-// Turbopack (issue #276):
-//
-//   1. `exports["."]` listed only `types` and `require`, so an ESM consumer
-//      (`import geo from "geoalgeria"`) got "Module not found", even with
-//      serverExternalPackages.
-//   2. `index.js` read its JSON through `fs.readFileSync(path.join(__dirname,
-//      "data", file))` with the file name in a variable. A bundler rewrites
-//      `__dirname` and cannot trace a computed path, so the build passed and
-//      every request failed with ENOENT on `/ROOT/node_modules/geoalgeria/data/
-//      algeria.json`.
-//
-// The scoped packages are ESM with string-literal reads and were never
-// affected. This file guards the umbrella: the exports map resolves for both
-// kinds of consumer, every data file is reached by a static `require` a bundler
-// can see, and the public API still answers with the same values, lazily.
-// `scripts/check-bundlers.mjs` proves the same end to end with a real bundler.
+// What it does is guard the umbrella cheaply, with no bundler: the exports map
+// resolves for an ESM consumer as well as a CommonJS one, every data file is
+// reached by a static `require` a bundler can see, and the public API still
+// answers with the same values, lazily. The script proves the same end to end
+// with a real bundler.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
