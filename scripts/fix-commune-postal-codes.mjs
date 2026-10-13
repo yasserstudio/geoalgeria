@@ -186,12 +186,21 @@ const bestFirst = (offices) =>
  * SPACING-BLIND, AND A TRAILING MATCH. The office names carry a locality or wilaya
  * prefix (ALGER MOHAMED BELOUIZDAD, THAMEUR SIDI MHAMED, BOUIRA TAGHZOUT) and move
  * apostrophes and hyphens around, so the comparison drops the separators and
- * accepts a name that ENDS with the commune's. It is a trailing match and never a
- * leading or an interior one: Algérie Poste prefixes, it does not suffix, and an
- * interior match would let OUED EL KHMIS claim a commune called Khmis.
+ * accepts a name that ENDS with the commune's. Trailing and not leading, because
+ * Algérie Poste prefixes rather than suffixes: OUED KEBRIT is the office of OUED
+ * KEBERIT, so a leading match would hand a commune called Oued its first office in
+ * every wilaya.
  *
- * The tiers are ordered so an exact name still beats a prefixed one, and the class
- * tie-break only decides between offices that all name the commune.
+ * WHAT KEEPS THAT SAFE IS THE GROUP, NOT THE DIRECTION. A trailing match is a
+ * substring match, so OUED EL KHMIS does end with KHMIS. It cannot reach a commune
+ * called Khmis because only the offices of that commune's OWN group are ever
+ * offered here: the group is resolved first, by name or by Algérie Poste's own
+ * commune code, and this function never looks outside it. The limitation that
+ * remains is inside a group: where one commune's group holds an office whose name
+ * merely ends with the commune's name, this rule prefers it to a better-class
+ * office. The tiers keep that narrow, an exact name beats a prefixed one, and
+ * test/commune-postal-eponymous.test.mjs states every commune where the published
+ * code is not the eponymous office, so a new one is visible.
  *
  * NOT THE LOOSE KEY. @geoalgeria/normalize's Loose key is the Arabic tier (alef
  * maqsura with yaa, taa marbuta with haa) over the Conservative fold, so it closes
