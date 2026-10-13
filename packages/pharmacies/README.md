@@ -14,7 +14,7 @@
 
 # Overview
 
-3,807 pharmacies (officines) across **67 wilayas**, from **OpenStreetMap**, every record geocoded, bilingual (FR/AR) where named, with phone, opening hours and a `dispensing` flag where OSM has them, plus wilaya/commune linkage.
+3,795 pharmacies (officines) across **67 wilayas**, from **OpenStreetMap**, every record geocoded, bilingual (FR/AR) where named, with phone, opening hours and a `dispensing` flag where OSM has them, plus wilaya/commune linkage.
 
 ## Installation
 
@@ -32,7 +32,7 @@ import {
   metadata,
 } from "@geoalgeria/pharmacies";
 
-pharmacies().length; // 3807
+pharmacies().length; // 3795
 
 // Everything in Alger (code 16)
 pharmaciesByWilaya(16).length;
@@ -52,9 +52,9 @@ metadata().wilayas_covered; // 67
 
 | Dataset | Count | Coordinates | Notes |
 | --- | --- | --- | --- |
-| `pharmacies` | 3,807 | all 3,807 | OpenStreetMap, geocoded, wilaya/commune-linked |
+| `pharmacies` | 3,795 | all 3,795 | OpenStreetMap, geocoded, wilaya/commune-linked |
 
-- **Named:** 2,467 · **with phone:** 146 · **with opening hours:** 257 · **with address:** 1,164 · **with `dispensing`:** 529
+- **Named:** 2,461 · **with phone:** 145 · **with opening hours:** 256 · **with address:** 1,161 · **with `dispensing`:** 530
 
 ## Formats
 
@@ -62,6 +62,7 @@ metadata().wilayas_covered; // 67
 - `data/csv/pharmacies.csv` – flat CSV
 - `data/geojson/pharmacies.geojson` – `FeatureCollection` (all records)
 - `data/metadata.json` – counts, sources, generated date
+- `data/retired-ids.json` – ids no record may hold again, each forwarded to the id that carries the pharmacy now, citing the OpenStreetMap elements the merge stood for
 
 ```js
 import data from "@geoalgeria/pharmacies/data/pharmacies.json" with { type: "json" };
@@ -73,11 +74,13 @@ import type { Pharmacy } from "@geoalgeria/pharmacies";
 
 ## How the data is built
 
-Extracted from OpenStreetMap via Overpass (`amenity=pharmacy` across Algeria), de-duplicated (same-name-within-40 m and coincident points), then linked to wilaya/commune by nearest-centroid join against the geoalgeria commune set. Names are routed strictly by script so `name_ar` is always Arabic and `name_fr` always Latin, even when OSM mis-tags them. A bulk-import artifact, 1,769 unnamed, consecutive-id pharmacy *ways* dumped into one small area near Attatba (Tipaza), is detected and excluded (it is not real officines). Rebuild with `npm run fetch` (or `--cache` to rebuild from the cached pull). See `research/pharmacies/` in the monorepo.
+Extracted from OpenStreetMap via Overpass (`amenity=pharmacy` across Algeria), then linked to wilaya/commune by nearest-centroid join against the geoalgeria commune set. Each name is kept as the tag writes it, with three exceptions: repeated spaces become one, spaces at either end are trimmed, and combining marks at the very start are dropped. No letter is added, deleted, reordered or transliterated. Names are then routed strictly by script so `name_ar` holds Arabic only and `name_fr` Latin only, even when OSM mis-tags them. A tag holding more than one language at once ("Pharmacie bouchekouf صيدلية بوشقوف") is cut at each script boundary, so each field keeps its own half and neither gains a word the source does not have. Tifinagh is one of the three scripts and belongs to neither field, so a Tamazight name stays on `name` rather than being dropped or filed as Arabic.
+
+Where OpenStreetMap holds one pharmacy as two elements (a node and a building outline, or two spellings), the elements are merged into one record. Two elements are one pharmacy when they stand within 40 m and their names share a **Loose name key**: each half from the script split, folded through [`@geoalgeria/normalize`](../normalize) and compared as keys rather than as display text, with the words that only say "pharmacy" dropped. That is how "Pharmacie Bouchekouf صيدلية بوشقوف" and plain "بوشقوف" six metres away are read as one record. The kept element absorbs every field it lacks from the one it replaces, so no phone, address, opening hours or `dispensing` flag is lost in the merge; its own value stands wherever both state one, and no two values are ever joined into one. A bulk-import artifact, 1,769 unnamed, consecutive-id pharmacy *ways* dumped into one small area near Attatba (Tipaza), is detected and excluded (it is not real officines). Rebuild with `npm run fetch` (or `--cache` to rebuild from the cached pull). See `research/pharmacies/` in the monorepo.
 
 ## On accuracy & coverage
 
-> **Coverage is partial.** 3,807 pharmacies are mapped in OpenStreetMap against an estimated **~11,000 officines** nationally (an order-of-magnitude reference, there is no open official registry; the Ordre National des Pharmaciens portal is down). Coverage is uneven by wilaya and denser in the north, this is a community-maintained extract, **not an official registry**.
+> **Coverage is partial.** 3,795 pharmacies are mapped in OpenStreetMap against an estimated **~11,000 officines** nationally (an order-of-magnitude reference, there is no open official registry; the Ordre National des Pharmaciens portal is down). Coverage is uneven by wilaya and denser in the north, this is a community-maintained extract, **not an official registry**.
 >
 > Coordinates are OSM node points (surveyed) or building-outline centroids (`geo_method`). Commune is a nearest-centroid best-effort; wilaya is effectively exact. Names, phones and hours are only present where an OSM contributor tagged them.
 
