@@ -136,11 +136,12 @@ test("nameEmDashErrors names the file, the pointer and the separator to use", ()
 });
 
 test("the name sweep walks record files and leaves metadata to the other rule", () => {
-  const walked = publishedDataFiles(join(ROOT, "packages", "ecoles", "data")).map((p) =>
-    p.slice(join(ROOT, "packages", "ecoles", "data").length + 1),
+  const walked = publishedRecordFiles("ecoles");
+  assert.ok(walked.includes(join("data", "ecoles.json")), "the canonical records are not being walked");
+  assert.ok(
+    walked.includes(join("data", "geojson", "ecoles.geojson")),
+    "the GeoJSON mirror is not being walked",
   );
-  assert.ok(walked.includes("ecoles.json"), "the canonical records are not being walked");
-  assert.ok(walked.includes(join("geojson", "ecoles.geojson")), "the GeoJSON mirror is not being walked");
   assert.deepEqual(
     walked.filter((p) => p.includes("metadata.json")),
     [],
@@ -148,26 +149,36 @@ test("the name sweep walks record files and leaves metadata to the other rule", 
   );
 });
 
+// packages/dataset/algeria.geojson is the atlas file the README points at and
+// the release workflow zips into every bundle beside data/. It carries the
+// wilaya `name`, `name_en`, `name_fr` and `name_ar` of all 69 features and sat
+// outside every walk in the repository, this one included, because it is the
+// only published record file that does not live under data/.
+test("the name sweep reaches the package-root atlas file", () => {
+  assert.ok(
+    publishedRecordFiles("dataset").includes("algeria.geojson"),
+    "packages/dataset/algeria.geojson is published and must be swept",
+  );
+});
+
 test("every published name in the repo is clean", () => {
   const offenders = [];
-  for (const pkg of readdirSync(join(ROOT, "packages")).sort()) {
-    const dir = join(ROOT, "packages", pkg, "data");
-    if (!existsSync(dir)) continue;
-    for (const path of publishedDataFiles(dir)) {
+  for (const pkg of readdirSync(join(ROOT, "packages")).sort())
+    for (const rel of publishedRecordFiles(pkg)) {
       // Cheap first: the full tree is ~120 MB, and only a file that carries the
       // character at all is worth parsing.
-      const text = readFileSync(path, "utf-8");
+      const text = readFileSync(join(ROOT, "packages", pkg, rel), "utf-8");
       if (!text.includes(EM_DASH)) continue;
-      offenders.push(
-        ...nameEmDashErrors([{ label: path.slice(join(ROOT, "packages").length + 1), json: JSON.parse(text) }]),
-      );
+      offenders.push(...nameEmDashErrors([{ label: `${pkg}/${rel}`, json: JSON.parse(text) }]));
     }
-  }
   assert.deepEqual(offenders, []);
 });
 
 /**
- * Every published record file under a package's `data/`, mirrors included.
+ * Every published record file of one package, as paths relative to the package:
+ * all of `data/` with its mirrors, plus any GeoJSON sitting at the package root
+ * (`packages/dataset/algeria.geojson`). Nothing outside those, so a generator's
+ * `scripts/seeds/*.json` stays out: it is input, not published.
  *
  * `metadata.json` and the `*.metadata.json` sidecars are left out on purpose.
  * Their `sources[].name` is a name by key and prose by nature ("OpenStreetMap:
@@ -178,14 +189,25 @@ test("every published name in the repo is clean", () => {
  * scripts/validate-packages.mjs).
  */
 const METADATA_FILE = /(^|\.)metadata\.json$/;
+const RECORD_FILE = /\.(json|geojson)$/;
 
-function publishedDataFiles(dir, out = []) {
-  for (const entry of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+function publishedRecordFiles(pkg) {
+  const pkgDir = join(ROOT, "packages", pkg);
+  const out = [];
+  const dataDir = join(pkgDir, "data");
+  if (existsSync(dataDir)) walkRecordFiles(dataDir, pkgDir, out);
+  for (const entry of readdirSync(pkgDir, { withFileTypes: true }))
+    if (entry.isFile() && entry.name.endsWith(".geojson")) out.push(entry.name);
+  return out.sort();
+}
+
+function walkRecordFiles(dir, base, out) {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const path = join(dir, entry.name);
-    if (entry.isDirectory()) publishedDataFiles(path, out);
-    else if (/\.(json|geojson)$/.test(entry.name) && !METADATA_FILE.test(entry.name)) out.push(path);
+    if (entry.isDirectory()) walkRecordFiles(path, base, out);
+    else if (RECORD_FILE.test(entry.name) && !METADATA_FILE.test(entry.name))
+      out.push(path.slice(base.length + 1));
   }
-  return out;
 }
 
 // ---------------------------------------------------------------------------
