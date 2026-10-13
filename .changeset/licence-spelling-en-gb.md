@@ -3,7 +3,7 @@
 "@geoalgeria/sante": patch
 ---
 
-The noun "licence" is now spelled the en-GB way in every file these two packages publish.
+The noun "licence" is now spelled the en-GB way in everything these packages publish.
 
 `@geoalgeria/buses` states "no open reuse licence" in its 14 Operator source
 descriptors, in `data/metadata.json` and in the catalog entry. That is the
