@@ -935,9 +935,10 @@ function validateDataset(pkg, spec) {
 
   // A published name is gated like the metadata around it. #281 found four that
   // had reached npm, and none of them was a source stating something: each was
-  // an em dash typed where every neighbouring record uses " - ". The derived
-  // CSV and GeoJSON carry the same strings, so gating the canonical JSON covers
-  // them; test/no-em-dash.test.mjs sweeps the mirrors too.
+  // an em dash typed where every neighbouring record uses " - ". This is the
+  // canonical JSON; the CSV, GeoJSON and SQL mirrors are written from these same
+  // rows, so a clean record here is a clean mirror. test/no-em-dash.test.mjs
+  // re-checks the GeoJSON itself, and does not parse the CSV or the SQL.
   for (const problem of nameEmDashErrors([{ label, json: arr }])) fail(problem);
 
   // Every populated commune_code is a foreign key into the flagship commune

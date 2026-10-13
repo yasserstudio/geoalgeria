@@ -125,7 +125,10 @@ every other record here already uses. Put an upstream name through
 the raw OpenStreetMap tag) rather than editing the generated file; a
 hand-curated record is fixed in its own source file. `pnpm validate` checks
 every `name`-keyed field of every published record, and
-`test/no-em-dash.test.mjs` sweeps the CSV and GeoJSON mirrors with it. Anything
+`test/no-em-dash.test.mjs` sweeps the same fields over every published JSON and
+GeoJSON, the GeoJSON mirrors included. The CSV and SQL mirrors are not parsed:
+they are written from the same rows, so a clean record is a clean CSV line.
+Anything
 that is not a name stays out of scope: an address or a note is the source's own
 sentence, and rewriting one would be a data decision.
 
