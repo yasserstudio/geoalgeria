@@ -36,6 +36,7 @@ import https from "node:https";
 import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { attachCommuneWithRules, describeLinkage, loadCommunes } from "../../../scripts/lib/build-utils.mjs";
 import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
+import { withoutEmDash } from "../../../scripts/lib/no-em-dash.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -240,11 +241,12 @@ const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
 // so a Latin string carrying a stray harakat (e.g. "ُÉcole") is not "Arabic".
 const isArabic = (s) => typeof s === "string" && /[ء-يٱ-ۓۺ-ۿ]/.test(s);
 // Clean a raw OSM name: collapse whitespace, drop stray leading combining marks
-// (a common mis-tag), and reject strings with no letter at all.
+// (a common mis-tag), swap the em dash a mapper typed as a separator for the
+// " - " every other name here uses, and reject strings with no letter at all.
 const LEAD_MARKS = /^[̀-ͯؐ-ًؚ-ٰٟۖ-ۭ]+/;
 const cleanName = (v) => {
   if (typeof v !== "string") return null;
-  const x = v.replace(/\s+/g, " ").trim().replace(LEAD_MARKS, "").trim();
+  const x = withoutEmDash(v.replace(/\s+/g, " ").trim().replace(LEAD_MARKS, "").trim());
   // require ≥2 chars and at least one letter (rejects a lone "ب", "-", "12")
   return x.length >= 2 && /[A-Za-zء-يٱ-ۿ]/.test(x) ? x : null;
 };

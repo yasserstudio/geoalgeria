@@ -119,6 +119,9 @@ Full details and one-time setup: [`RELEASING.md`](RELEASING.md).
 - Write an em dash (U+2014) into any tracked source file, not just published
   metadata. `test/no-em-dash.test.mjs` walks every tracked hand-written file
   (JS/TS, Python, YAML) and ratchets the debt down per file.
+- Publish a record **name** carrying one either. It takes ` - `, and an upstream
+  name goes through `withoutEmDash()` in the generator that reads it, never a
+  hand-edit of the generated file. `pnpm validate` gates every published name.
 - Re-derive a coordinate review run's record medians from the live packages
   once that run has landed. Each run's medians are frozen in
   `research/_commune-centres/record-medians-<run>.json` and replayed from

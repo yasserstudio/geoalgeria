@@ -11,7 +11,14 @@ import { execFileSync } from "node:child_process";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { EM_DASH, emDashPointers, emDashErrors } from "../scripts/lib/no-em-dash.mjs";
+import {
+  EM_DASH,
+  emDashPointers,
+  emDashErrors,
+  nameEmDashPointers,
+  nameEmDashErrors,
+  withoutEmDash,
+} from "../scripts/lib/no-em-dash.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -57,6 +64,78 @@ test("every published metadata file in the repo is clean", () => {
   }
   assert.deepEqual(offenders, []);
 });
+
+// ---------------------------------------------------------------------------
+// The published-name gate.
+//
+// Metadata was the whole of the rule until #281: a record's own name counted as
+// a value, so an em dash inside one was treated as a data decision. It is not,
+// because nobody decided it. All four that had reached npm were a separator
+// someone typed where every neighbouring record uses " - ": one hand-curated
+// bank name, and two OpenStreetMap school names the fetcher passed straight
+// through. So a published name is gated like the metadata around it, and
+// `withoutEmDash` is what a generator calls to keep it that way.
+
+test("withoutEmDash swaps the separator and leaves everything else alone", () => {
+  assert.equal(withoutEmDash(`École primaire ${EM_DASH} Khaldi Mohammed`), "École primaire - Khaldi Mohammed");
+  assert.equal(withoutEmDash(`a${EM_DASH}b`), "a - b");
+  assert.equal(withoutEmDash(`${EM_DASH} a`), "- a");
+  assert.equal(withoutEmDash("Al Salam Bank - Algeria"), "Al Salam Bank - Algeria");
+  assert.equal(withoutEmDash("6–7"), "6–7");
+  assert.equal(withoutEmDash(null), null);
+});
+
+test("nameEmDashPointers points at names only, at any depth", () => {
+  assert.deepEqual(nameEmDashPointers({ name: `a ${EM_DASH} b`, address: `c ${EM_DASH} d` }), ["/name"]);
+  assert.deepEqual(
+    nameEmDashPointers({ features: [{ properties: { name_fr: `a ${EM_DASH} b` } }] }),
+    ["/features/0/properties/name_fr"],
+  );
+  assert.deepEqual(nameEmDashPointers([{ name: "ok" }, { former_names_fr: [`a ${EM_DASH} b`] }]), [
+    "/1/former_names_fr/0",
+  ]);
+  assert.deepEqual(nameEmDashPointers({ name: "Al Salam Bank - Algeria", note: 1 }), []);
+});
+
+test("nameEmDashErrors names the file, the pointer and the separator to use", () => {
+  const errors = nameEmDashErrors([
+    { label: "banques/data/banks.json", json: [{ name: `CNEP ${EM_DASH} Banque` }] },
+    { label: "banques/data/institutions.json", json: [{ name: "clean" }] },
+  ]);
+  assert.equal(errors.length, 1);
+  assert.match(
+    errors[0],
+    /^banques\/data\/banks\.json: em dash \(U\+2014\) in a published name at \/0\/name, use " - "/,
+  );
+});
+
+test("every published name in the repo is clean", () => {
+  const offenders = [];
+  for (const pkg of readdirSync(join(ROOT, "packages")).sort()) {
+    const dir = join(ROOT, "packages", pkg, "data");
+    if (!existsSync(dir)) continue;
+    for (const path of publishedDataFiles(dir)) {
+      // Cheap first: the full tree is ~120 MB, and only a file that carries the
+      // character at all is worth parsing.
+      const text = readFileSync(path, "utf-8");
+      if (!text.includes(EM_DASH)) continue;
+      offenders.push(
+        ...nameEmDashErrors([{ label: path.slice(join(ROOT, "packages").length + 1), json: JSON.parse(text) }]),
+      );
+    }
+  }
+  assert.deepEqual(offenders, []);
+});
+
+/** Every published JSON/GeoJSON under a package's `data/`, mirrors included. */
+function publishedDataFiles(dir, out = []) {
+  for (const entry of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) publishedDataFiles(path, out);
+    else if (/\.(json|geojson)$/.test(entry.name)) out.push(path);
+  }
+  return out;
+}
 
 // ---------------------------------------------------------------------------
 // The source gate.

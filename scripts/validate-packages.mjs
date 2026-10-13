@@ -55,7 +55,7 @@ import { descriptorTermsErrors, licenceTermsErrors, publishedMetadataPaths } fro
 // without a reviewer and a corpus case, and a case cannot claim a Rule that does
 // not exist. The table and the corpus are read from the package as data.
 import { normalizeRuleErrors } from "./lib/normalize-rules.mjs";
-import { emDashErrors } from "./lib/no-em-dash.mjs";
+import { emDashErrors, nameEmDashErrors } from "./lib/no-em-dash.mjs";
 import { rules as normalizeRules } from "../packages/normalize/index.js";
 import { corpus as normalizeCorpus } from "../packages/normalize/fixtures/corpus.js";
 
@@ -933,6 +933,13 @@ function validateDataset(pkg, spec) {
     return fail(`${label}: expected a non-empty array`);
   }
 
+  // A published name is gated like the metadata around it. #281 found four that
+  // had reached npm, and none of them was a source stating something: each was
+  // an em dash typed where every neighbouring record uses " - ". The derived
+  // CSV and GeoJSON carry the same strings, so gating the canonical JSON covers
+  // them; test/no-em-dash.test.mjs sweeps the mirrors too.
+  for (const problem of nameEmDashErrors([{ label, json: arr }])) fail(problem);
+
   // Every populated commune_code is a foreign key into the flagship commune
   // table. Format-only validation allowed thousands of stale-but-well-formed
   // values to survive an ONS crosswalk repair, breaking code-keyed joins while
@@ -1688,7 +1695,9 @@ function validateLicenceTerms(pkgs) {
 // used to be one lives in a generator (scripts/lib/v2-transforms.mjs source names,
 // @geoalgeria/schema's citation join, each coverage note), so a single hand-fixed
 // sweep would come back on the next rebuild. The rule and the message live in
-// scripts/lib/no-em-dash.mjs; record values are out of scope on purpose.
+// scripts/lib/no-em-dash.mjs. Published record *names* are gated in
+// validateDataset instead, as data rather than prose; other record values stay
+// out of scope on purpose.
 function validateNoEmDash(pkgs) {
   const files = [];
   for (const pkg of pkgs) {
