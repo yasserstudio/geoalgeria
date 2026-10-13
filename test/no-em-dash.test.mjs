@@ -70,10 +70,11 @@ test("every published metadata file in the repo is clean", () => {
 //
 // Metadata was the whole of the rule until #281: a record's own name counted as
 // a value, so an em dash inside one was treated as a data decision. It is not,
-// because nobody decided it. All four that had reached npm were a separator
-// someone typed where every neighbouring record uses " - ": one hand-curated
-// bank name, and two OpenStreetMap school names the fetcher passed straight
-// through. So a published name is gated like the metadata around it, and
+// because nobody decided it. The three records that had reached npm with one,
+// four name strings between them, all carried a separator someone typed where
+// every neighbouring record uses " - ": one hand-curated bank name in both
+// `name` and `name_fr`, and two OpenStreetMap school names the fetcher passed
+// straight through. So a published name is gated like the metadata around it, and
 // `withoutEmDash` is what a generator calls to keep it that way.
 
 test("withoutEmDash swaps the separator and leaves everything else alone", () => {

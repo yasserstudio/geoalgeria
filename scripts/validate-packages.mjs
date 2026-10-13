@@ -933,9 +933,10 @@ function validateDataset(pkg, spec) {
     return fail(`${label}: expected a non-empty array`);
   }
 
-  // A published name is gated like the metadata around it. #281 found four that
-  // had reached npm, and none of them was a source stating something: each was
-  // an em dash typed where every neighbouring record uses " - ". This is the
+  // A published name is gated like the metadata around it. #281 found three
+  // records carrying one, four name strings between them, and none of them was a
+  // source stating something: each was an em dash typed where every neighbouring
+  // record uses " - ". This is the
   // canonical JSON; the CSV, GeoJSON and SQL mirrors are written from these same
   // rows, so a clean record here is a clean mirror. test/no-em-dash.test.mjs
   // re-checks the GeoJSON itself, and does not parse the CSV or the SQL.

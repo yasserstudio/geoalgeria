@@ -5,9 +5,10 @@
 // gated here instead of re-swept by hand.
 //
 // A record's own `name` was out of scope at first, as a value rather than prose.
-// #281 settled it the other way: the four that had reached npm were nobody's
-// decision, just a separator typed where every neighbouring record uses " - "
-// (one hand-curated bank name, two OpenStreetMap school names passed straight
+// #281 settled it the other way: the three records that had reached npm with
+// one (four name strings in all) were nobody's decision, just a separator typed
+// where every neighbouring record uses " - " (one hand-curated bank name, in
+// both `name` and `name_fr`, and two OpenStreetMap school names passed straight
 // through a fetcher). So `nameEmDashErrors` gates published names too, and a
 // generator that reads an upstream name puts it through `withoutEmDash` first.
 // Everything other than a name stays out: an address or a note is the source's
