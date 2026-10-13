@@ -22,26 +22,60 @@ export const NAME_SEPARATOR = " - ";
 // published name fields are exactly the keys carrying "name" as a whole word.
 const NAME_KEY = /(^|_)names?(_|$)/;
 
-/** JSON pointers of every string in `value` that carries an em dash. */
-export function emDashPointers(value, pointer = "") {
-  if (typeof value === "string") return value.includes(EM_DASH) ? [pointer || "/"] : [];
-  if (Array.isArray(value)) return value.flatMap((v, i) => emDashPointers(v, `${pointer}/${i}`));
+// The two rules differ only in which keys they look under, so they share one
+// walk. `gated(key)` is that difference; `inScope` carries its verdict down
+// through arrays, so a list of names is checked entry by entry while an object
+// nested under a name key is judged by its own keys, as a name is never one.
+function pointersWhere(value, gated, inScope, pointer = "") {
+  if (typeof value === "string")
+    return inScope && value.includes(EM_DASH) ? [pointer || "/"] : [];
+  if (Array.isArray(value))
+    return value.flatMap((v, i) => pointersWhere(v, gated, inScope, `${pointer}/${i}`));
   if (value && typeof value === "object")
-    return Object.entries(value).flatMap(([k, v]) => emDashPointers(v, `${pointer}/${k}`));
+    return Object.entries(value).flatMap(([k, v]) =>
+      pointersWhere(v, gated, gated(k), `${pointer}/${k}`),
+    );
   return [];
 }
+
+/** One error per pointer `find` returns, prefixed with the document's label. */
+function errorsWhere(files, find, remedy) {
+  const errors = [];
+  for (const { label, json } of files)
+    for (const pointer of find(json)) errors.push(`${label}: ${remedy(pointer)}`);
+  return errors;
+}
+
+/** JSON pointers of every string in `value` that carries an em dash. */
+export const emDashPointers = (value) => pointersWhere(value, () => true, true);
+
+/** JSON pointers of every *name* string in `value` that carries an em dash. */
+export const nameEmDashPointers = (value) =>
+  pointersWhere(value, (key) => NAME_KEY.test(key), false);
 
 /**
  * @param {{ label: string, json: unknown }[]} files parsed metadata documents
  * @returns {string[]} one error per offending string, empty when clean
  */
-export function emDashErrors(files) {
-  const errors = [];
-  for (const { label, json } of files)
-    for (const pointer of emDashPointers(json))
-      errors.push(`${label}: em dash (U+2014) at ${pointer}, use a colon, comma or semicolon`);
-  return errors;
-}
+export const emDashErrors = (files) =>
+  errorsWhere(
+    files,
+    emDashPointers,
+    (pointer) => `em dash (U+2014) at ${pointer}, use a colon, comma or semicolon`,
+  );
+
+/**
+ * @param {{ label: string, json: unknown }[]} files parsed published documents
+ * @returns {string[]} one error per offending name, empty when clean
+ */
+export const nameEmDashErrors = (files) =>
+  errorsWhere(
+    files,
+    nameEmDashPointers,
+    (pointer) =>
+      `em dash (U+2014) in a published name at ${pointer}, use ` +
+      `"${NAME_SEPARATOR}" and put it through withoutEmDash() in the generator`,
+  );
 
 /**
  * Rewrite an upstream em dash in a name as the separator this repo publishes.
@@ -50,31 +84,4 @@ export function emDashErrors(files) {
 export function withoutEmDash(name) {
   if (typeof name !== "string" || !name.includes(EM_DASH)) return name;
   return name.split(EM_DASH).join(NAME_SEPARATOR).replace(/\s+/g, " ").trim();
-}
-
-/** JSON pointers of every *name* string in `value` that carries an em dash. */
-export function nameEmDashPointers(value, pointer = "", isName = false) {
-  if (typeof value === "string") return isName && value.includes(EM_DASH) ? [pointer || "/"] : [];
-  if (Array.isArray(value))
-    return value.flatMap((v, i) => nameEmDashPointers(v, `${pointer}/${i}`, isName));
-  if (value && typeof value === "object")
-    return Object.entries(value).flatMap(([k, v]) =>
-      nameEmDashPointers(v, `${pointer}/${k}`, NAME_KEY.test(k)),
-    );
-  return [];
-}
-
-/**
- * @param {{ label: string, json: unknown }[]} files parsed published documents
- * @returns {string[]} one error per offending name, empty when clean
- */
-export function nameEmDashErrors(files) {
-  const errors = [];
-  for (const { label, json } of files)
-    for (const pointer of nameEmDashPointers(json))
-      errors.push(
-        `${label}: em dash (U+2014) in a published name at ${pointer}, use ` +
-          `"${NAME_SEPARATOR}" and put it through withoutEmDash() in the generator`,
-      );
-  return errors;
 }
