@@ -72,6 +72,7 @@ import { dirname, join } from "node:path";
 import https from "node:https";
 import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
+import { stripLeadingMarks } from "../../../scripts/lib/name-script.mjs";
 import { attachCommuneWithRules, describeLinkage } from "../../../scripts/lib/build-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -214,11 +215,14 @@ const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
 // so a Latin string carrying a stray harakat (e.g. "ُClinique") is not "Arabic".
 const isArabic = (s) => typeof s === "string" && /[ء-يٱ-ۓۺ-ۿ]/.test(s);
 // Clean a raw OSM name: collapse whitespace, drop stray leading combining marks
-// (a common mis-tag), and reject strings with no letter at all.
-const LEAD_MARKS = /^[̀-ͯؐ-ًؚ-ٰٟۖ-ۭ]+/;
-const cleanName = (v) => {
+// (a common mis-tag, stripLeadingMarks), and reject strings with no letter at
+// all. The mark class is imported rather than written out here because it
+// cannot be proof-read: a class that swallows the whole Arabic letter block
+// renders exactly like the marks-only one. That is how @geoalgeria/pharmacies
+// came to strip the first word off 1,029 names (private tracker #291).
+export const cleanName = (v) => {
   if (typeof v !== "string") return null;
-  const x = v.replace(/\s+/g, " ").trim().replace(LEAD_MARKS, "").trim();
+  const x = stripLeadingMarks(v.replace(/\s+/g, " ").trim()).trim();
   // require ≥2 chars and at least one letter (rejects a lone "ب", "-", "12")
   return x.length >= 2 && /[A-Za-zء-يٱ-ۿ]/.test(x) ? x : null;
 };
