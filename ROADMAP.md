@@ -195,6 +195,18 @@ reads as further along than it is.
   practice, and changing one without a source would be the same mistake twice.
   _(logged 2026-10-01, from the #235 source hunt)_
 
+- [ ] **Follow-ups from the #288 postal review (batch 2026-13).** For the 11
+  reform wilayas, the contradiction now has a second live value: wilaya 59
+  publishes 59000 (no office holds it) while its capital commune 319 Aflou
+  publishes 03001 (a real office); same pattern for 60 to 69. Separately, 13
+  communes keep (rule 2) a code belonging to one of their own offices other
+  than the eponymous one (Tamantit, Bouzeghaia, Gosbat, Taourit Ighil,
+  Taghzout, Ouled Rached, Sidi M'hamed w16, Casbah, Oued Ferragha, Hassiane,
+  Machroha, Nezla, Zaouia El Abidia), listed as `RULE_2_KEEPS` in
+  `test/commune-postal-eponymous.test.mjs`; each needs a source check. Also
+  verify Mohamed Belouzdad 1604 -> 16244 (rule-3 branch, over 16009 HC)
+  against an external directory. _(logged 2026-10-13, tracker #293)_
+
 ## Generators
 
 - [ ] **A corrupt source coordinate silently rewrites a record's identity, and
@@ -292,6 +304,19 @@ reads as further along than it is.
   Deferred out of the cliniques branch on purpose. A repo-wide 3-line sweep,
   worth doing at the next coordinated bump rather than alone.
   _(logged 2026-08-09)_
+
+- [ ] **Decide the en dash (U+2013) in published names (batch 2026-13,
+  deferred to a later batch).** #287 bans the em dash in published names, but
+  486 name-keyed values across 10 packages use an en dash in the same
+  separator role (culture 315, enseignement-superieur 106, aviation 29, sante
+  23, and others), for example aviation's "Aéroport d'Alger - Houari
+  Boumediene". Decide: allow it, or fold it to " - " like the em dash; if
+  folded, extend the name gate in `scripts/lib/no-em-dash.mjs` and each
+  generator, then regenerate. A related defect needs fixing either way:
+  banques branch cnep-156 reads "AIN -AZEL" (should be Aïn Azel). Also owed
+  from the same review: `withoutEmDash` in the cliniques and pharmacies
+  `cleanName` (once #283 and #286 land), and `livraison` sits outside the
+  name gate entirely. _(logged 2026-10-13, tracker #294)_
 
 ## Transport
 
