@@ -50,15 +50,22 @@ const TESTS = { ar: ARABIC_LETTER, la: LATIN_LETTER, tfng: TIFINAGH_LETTER };
 const EDGE_SEPARATORS = /^[\s\p{P}\p{S}]+|[\s\p{P}\p{S}]+$/gu;
 
 /**
- * Combining marks a name may open with and that no reader sees: the Latin
+ * What a name may open with that no reader reads as part of a word: the Latin
  * combining diacriticals, the Arabic honorifics and Quranic annotation signs, the
- * harakat, the superscript alef, and the Quranic stop marks. **Marks only.**
+ * harakat, the superscript alef, and the Quranic stop marks.
+ * **Combining marks and Quranic annotation signs, never a base letter.**
+ *
+ * Not quite "marks only": five members are not \p{M}. U+06DD end of ayah is Cf,
+ * U+06DE start of rub el hizb and U+06E9 place of sajdah are So, and U+06E5 and
+ * U+06E6, the small waw and small yeh, are Lm, so they are \p{L} too. All five are
+ * written above or around the line and none has a letter form of its own, which is
+ * why they belong here. No Lu, Ll, Lt or Lo character is in the class.
  *
  * The ranges are written out codepoint by codepoint because the obvious shorthand
  * is a trap: `[ؐ-ً]` and `[ؚ-ٰ]` each swallow the whole Arabic
  * letter block, and a generator carrying exactly that class stripped the first
- * Arabic word off 822 of 3,795 pharmacy names, surnames included (private tracker
- * #291).
+ * Arabic word off 1,029 of 3,795 pharmacy names, surnames included (private
+ * tracker #291).
  *
  * Shared rather than written per generator, so the other packages that copied the
  * broken class can import this one instead of each repairing its own.
