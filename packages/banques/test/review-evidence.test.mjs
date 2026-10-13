@@ -95,3 +95,67 @@ test("reviewed SGA Tizi Ouzou address stays ungeocoded", () => {
   assert.equal(decision.expect.lat, null);
   assert.equal(decision.expect.lng, null);
 });
+
+// --- the arcminute re-placements (private tracker #285) ----------------------
+// Six branches sat on degrees-and-minutes placeholders. Three could be bound to an
+// OpenStreetMap object of the right bank; three could not, and carry their commune's
+// centre instead. Both halves are checked against the source they name, so a
+// decision cannot quietly become a coordinate nobody can re-derive.
+
+test("re-placed AGB and BADR branches reproduce their OSM evidence", () => {
+  const expected = new Map([
+    // record id -> [OSM object, the bank the tags must name]
+    ["agb-tebessa", ["https://www.openstreetmap.org/way/288328744", /AGB|الخليج|Gulf/i]],
+    ["badr-412", ["https://www.openstreetmap.org/node/6337732136", /BADR|بدر/i]],
+    ["badr-772", ["https://www.openstreetmap.org/node/6298375922", /BADR|بدر/i]],
+  ]);
+  for (const [record_id, [osmUrl, bank]] of expected) {
+    const decision = ledger.decisions.find((d) => d.record_id === record_id);
+    assert.ok(decision, `${record_id}: no ledger decision`);
+    assert.ok(
+      decision.evidence.some(({ url }) => url === osmUrl),
+      `${record_id}: ${osmUrl} is not among its evidence`,
+    );
+    const candidate = byUrl.get(osmUrl);
+    assert.ok(candidate, `${record_id}: missing OSM snapshot record`);
+    assert.match(
+      [candidate.tags.brand, candidate.tags.operator, candidate.tags.name, candidate.tags["operator:de"]]
+        .filter(Boolean)
+        .join(" "),
+      bank,
+    );
+    assert.equal(candidate.wilaya_code, decision.expect.wilaya_code);
+    assert.equal(candidate.lat, decision.patch.lat);
+    assert.equal(candidate.lng, decision.patch.lng);
+    // The snapshot's own precision decides: a node is the branch's point, a building
+    // outline is a centroid. Nothing in the ledger may claim more than that.
+    assert.equal(candidate.precision, decision.patch.geo_precision);
+    assert.equal(`osm_${candidate.osm_id.split("/")[0]}`, decision.patch.geo_method);
+  }
+});
+
+test("branches with no OSM object carry their commune's flagship centre", () => {
+  const round6 = (n) => Number(n.toFixed(6));
+  const communes = ["communes_w1_w23.json", "communes_w24_w48.json", "communes_w49_w69.json"].flatMap(
+    (file) => read(`packages/dataset/data/${file}`),
+  );
+  const byCode = new Map(
+    communes.map((commune) => [String(commune.code_commune).padStart(4, "0"), commune]),
+  );
+
+  const centroidDecisions = ledger.decisions.filter((d) => d.patch?.geo_method === "commune_centroid");
+  assert.deepEqual(
+    centroidDecisions.map((d) => d.record_id).sort(),
+    ["agb-constantine", "agb-laghouat", "badr-413"],
+  );
+  for (const decision of centroidDecisions) {
+    const commune = byCode.get(decision.patch.commune_code);
+    assert.ok(commune, `${decision.record_id}: commune_code is not in the flagship set`);
+    assert.equal(commune.name_fr, decision.patch.commune);
+    assert.equal(String(commune.wilaya_code).padStart(2, "0"), decision.expect.wilaya_code);
+    assert.equal(round6(commune.latitude), round6(decision.patch.lat));
+    assert.equal(round6(commune.longitude), round6(decision.patch.lng));
+    // A borrowed centre is never a per-facility point.
+    assert.equal(decision.patch.geo_precision, "approximate");
+  }
+});

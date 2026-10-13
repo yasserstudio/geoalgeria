@@ -37,6 +37,20 @@ export const WILAYA_CODES = Array.from({ length: 69 }, (_, i) =>
  *  Hammam Dhalaa) all sat on exactly (35, 4), 93/29/100 km from those towns. */
 export const MIN_EXACT_DECIMALS = 3;
 
+/** How close to a whole arcminute a coordinate has to sit, in arcminutes, before
+ *  the value reads as degrees-and-minutes with the seconds missing rather than as
+ *  a measurement. 0.002' is 0.0000333°, about 3.7 m.
+ *
+ *  `MIN_EXACT_DECIMALS` cannot see this placeholder, because minutes divided by 60
+ *  produce a long decimal tail: AGB's Laghouat branch shipped 33.58333, 2.66667
+ *  (33°35'N 2°40'E) at five fraction digits, a cell about 1.5 km across and 30 km
+ *  from the branch's own street address, and nothing in the contract objected
+ *  (private tracker #285). A conversion written to five decimals sits inside
+ *  0.0002' of the grid and one written to seven inside 0.00002', so the cut has
+ *  two orders of magnitude of room above the rounding it catches, while a measured
+ *  point lands inside it on BOTH axes about once in 60,000. */
+export const ARCMINUTE_TOLERANCE = 0.002;
+
 /** Generous Algeria bounding box (WGS84) for the coordinate sanity guard.
  *  Deliberately loose: its job is to catch lat/lng swaps and sign flips, not to
  *  fence the border. A swapped Algerian point (lat≈28 → lng=28) or a sign-flipped

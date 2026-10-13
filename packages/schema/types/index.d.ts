@@ -260,6 +260,10 @@ export const WILAYA_CODES: readonly string[];
 export const DZ_BBOX: { minLng: number; maxLng: number; minLat: number; maxLat: number };
 /** Fewest fraction digits a coordinate must carry to be called `exact`. */
 export const MIN_EXACT_DECIMALS: number;
+
+/** Arcminutes of slack allowed when testing a coordinate against the
+ *  whole-arcminute grid (degrees-and-minutes with the seconds missing). */
+export const ARCMINUTE_TOLERANCE: number;
 export const REVIEW_STATUSES: readonly ReviewStatus[];
 export const REVIEW_PUBLISH_ACTIONS: readonly ReviewPublishAction[];
 
@@ -310,6 +314,8 @@ export function coordDecimals(lat: number | null, lng: number | null): number;
 /** Indexes of the rows whose coordinate is carried by at least one other row in the
  *  same collection: a point several records share is not a per-facility point.
  *  Ungeocoded rows are never members. */
+export function onArcminuteGrid(lat: number | null, lng: number | null): boolean;
+
 export function sharedPoints(rows: GeoRecord[]): Set<number>;
 
 export function validateRecords(records: GeoRecord[], opts?: ValidateOptions): ValidationResult;

@@ -753,16 +753,23 @@
     "id": "agb-constantine",
     "name": "CONSTANTINE",
     "wilaya_code": "25",
-    "commune_code": null,
-    "commune": null,
-    "lat": 36.35,
-    "lng": 6.6,
+    "commune_code": "2501",
+    "commune": "Constantine",
+    "lat": 36.364164,
+    "lng": 6.608428,
     "geo_precision": "approximate",
-    "geo_method": "bank_locator",
+    "geo_method": "commune_centroid",
     "source": "bank_locator",
     "bank_id": "agb",
     "address": "01 cité Essaada Sidi Mabrouk Superieur Constantine.",
-    "phone": "030 33 69 90 / 030 33 69 64"
+    "phone": "030 33 69 90 / 030 33 69 64",
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-13",
+    "reviewed_by": "geoalgeria-arcminute-review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/relation/2245418",
+      "https://www.openstreetmap.org/node/2631787447"
+    ]
   },
   {
     "id": "agb-constantinealimendjeli",
@@ -993,16 +1000,23 @@
     "id": "agb-laghouat",
     "name": "LAGHOUAT",
     "wilaya_code": "03",
-    "commune_code": null,
-    "commune": null,
-    "lat": 33.58333,
-    "lng": 2.66667,
-    "geo_precision": "exact",
-    "geo_method": "bank_locator",
+    "commune_code": "0301",
+    "commune": "Laghouat",
+    "lat": 33.8,
+    "lng": 2.875,
+    "geo_precision": "approximate",
+    "geo_method": "commune_centroid",
     "source": "bank_locator",
     "bank_id": "agb",
     "address": "Rue de l’Indépendance - Laghouat.",
-    "phone": "029 10 16 39 / 029 10 15 61"
+    "phone": "029 10 16 39 / 029 10 15 61",
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-13",
+    "reviewed_by": "geoalgeria-arcminute-review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/relation/6546026",
+      "https://www.openstreetmap.org/way/42329273"
+    ]
   },
   {
     "id": "agb-lessources",
@@ -1248,16 +1262,22 @@
     "id": "agb-tebessa",
     "name": "Tebessa",
     "wilaya_code": "12",
-    "commune_code": null,
-    "commune": null,
-    "lat": 35,
-    "lng": 8,
+    "commune_code": "1201",
+    "commune": "Tébessa",
+    "lat": 35.4078992,
+    "lng": 8.1258582,
     "geo_precision": "approximate",
-    "geo_method": "bank_locator",
+    "geo_method": "osm_way",
     "source": "bank_locator",
     "bank_id": "agb",
     "address": "Cite Houari Boumediene Lot 183 groupe propriété n°181 -  Tébessa.",
-    "phone": "037 51 51 14 / 037 51 51 12"
+    "phone": "037 51 51 14 / 037 51 51 12",
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-13",
+    "reviewed_by": "geoalgeria-arcminute-review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/way/288328744"
+    ]
   },
   {
     "id": "agb-tiaret",
@@ -3363,31 +3383,43 @@
     "id": "badr-412",
     "name": "KENADSA",
     "wilaya_code": "08",
-    "commune_code": null,
-    "commune": null,
-    "lat": 31.56667,
-    "lng": -2.43333,
+    "commune_code": "0810",
+    "commune": "Kenadsa",
+    "lat": 31.5560899,
+    "lng": -2.4309637,
     "geo_precision": "exact",
-    "geo_method": "bank_locator",
+    "geo_method": "osm_node",
     "source": "bank_locator",
     "bank_id": "badr",
     "address": "CITE IBN BADIS CNE DE KENADSA",
-    "phone": null
+    "phone": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-13",
+    "reviewed_by": "geoalgeria-arcminute-review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/node/6337732136"
+    ]
   },
   {
     "id": "badr-413",
     "name": "TAGHIT",
     "wilaya_code": "08",
-    "commune_code": null,
-    "commune": null,
-    "lat": 30.91667,
-    "lng": -2.03333,
-    "geo_precision": "exact",
-    "geo_method": "bank_locator",
+    "commune_code": "0813",
+    "commune": "Taghit",
+    "lat": 30.920106,
+    "lng": -2.032217,
+    "geo_precision": "approximate",
+    "geo_method": "commune_centroid",
     "source": "bank_locator",
     "bank_id": "badr",
     "address": "CENTRE DE VILLE DE TAGHIT",
-    "phone": null
+    "phone": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-13",
+    "reviewed_by": "geoalgeria-arcminute-review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/relation/6531002"
+    ]
   },
   {
     "id": "badr-425",
@@ -5553,16 +5585,23 @@
     "id": "badr-772",
     "name": "AIN TEMOUCHENT",
     "wilaya_code": "46",
-    "commune_code": null,
-    "commune": null,
-    "lat": 35.33333,
-    "lng": -1.08333,
+    "commune_code": "4601",
+    "commune": "Ain Temouchent",
+    "lat": 35.3063378,
+    "lng": -1.1424099,
     "geo_precision": "exact",
-    "geo_method": "bank_locator",
+    "geo_method": "osm_node",
     "source": "bank_locator",
     "bank_id": "badr",
     "address": "COMPLEXE BD ROUTE D'ORAN",
-    "phone": null
+    "phone": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-13",
+    "reviewed_by": "geoalgeria-arcminute-review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/node/6298375922",
+      "https://www.openstreetmap.org/way/36843537"
+    ]
   },
   {
     "id": "badr-773",

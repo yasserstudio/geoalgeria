@@ -32,7 +32,7 @@
     },
     {
       "path": "packages/banques/data/branches.json",
-      "sha256": "7d661a711b45ee58d760d29c0f69a71811cb3dd1df579ba1874872063169ef77"
+      "sha256": "c8821e0a13315d83f2a52312787337ad5c95a323c05e19207c5bdaaff48bc0db"
     },
     {
       "path": "packages/banques/data/institutions.json",
@@ -40,7 +40,7 @@
     },
     {
       "path": "packages/banques/data/metadata.json",
-      "sha256": "18af82cec1b12376f6fe4af76222cc2293d90d21b017d47c81953cd255dfa123"
+      "sha256": "e60c37ce7758e71b8aa3f654f4cbc6d9bc21d1de09bac375dbcb01fe35cf80a4"
     },
     {
       "path": "packages/buses/data/lines.json",
@@ -310,13 +310,13 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70518,
-  "candidates": 17738,
+  "candidates": 17740,
   "reasons": {
-    "approximate_coordinate": 16888,
-    "inside_adjacent_wilaya": 193,
+    "approximate_coordinate": 16890,
+    "inside_adjacent_wilaya": 192,
     "missing_coordinate": 502,
     "outside_all_wilaya_boundaries": 199,
-    "outside_declared_wilaya": 392,
+    "outside_declared_wilaya": 391,
     "shared_coordinate": 1298
   },
   "datasets": [
@@ -456,13 +456,13 @@
     {
       "dataset": "banques",
       "total_records": 1704,
-      "candidates": 553,
+      "candidates": 555,
       "reasons": {
-        "approximate_coordinate": 164,
-        "inside_adjacent_wilaya": 5,
+        "approximate_coordinate": 166,
+        "inside_adjacent_wilaya": 4,
         "missing_coordinate": 379,
         "outside_all_wilaya_boundaries": 6,
-        "outside_declared_wilaya": 11,
+        "outside_declared_wilaya": 10,
         "shared_coordinate": 60
       },
       "metadata_path": "packages/banques/data/metadata.json",
@@ -476,12 +476,12 @@
         "geocoded_count": 1325,
         "geocoded_pct": 76.5,
         "precision": {
-          "exact": 1161,
-          "approximate": 164
+          "exact": 1159,
+          "approximate": 166
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,325 carry a geocoded point, including eight reviewed BDL and SGA branches matched to OSM by bank, wilaya, locality, and agency number or street address. The rest remain address-only (see README).",
+        "coverage_note": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,325 carry a geocoded point, including eleven reviewed BDL, SGA, AGB and BADR branches matched to OSM by bank, wilaya, locality, and agency number or street address, and three whose locator published only a degrees-and-minutes placeholder and which carry their commune's centre as approximate. The rest remain address-only (see README).",
         "wilayas_covered": 67,
         "bbox": [
           -8.149472,
@@ -2307,13 +2307,13 @@
       "dataset": "banques",
       "entity": "branches.json",
       "total_records": 1704,
-      "candidates": 553,
+      "candidates": 555,
       "reasons": {
-        "approximate_coordinate": 164,
-        "inside_adjacent_wilaya": 5,
+        "approximate_coordinate": 166,
+        "inside_adjacent_wilaya": 4,
         "missing_coordinate": 379,
         "outside_all_wilaya_boundaries": 6,
-        "outside_declared_wilaya": 11,
+        "outside_declared_wilaya": 10,
         "shared_coordinate": 60
       },
       "path": "packages/banques/data/branches.json"
