@@ -66,7 +66,7 @@ import { readFileSync, renameSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { basename, dirname, join, resolve } from "node:path";
 
-import { supersededByCode } from "./lib/commune-postal-drift.mjs";
+import { filledFromNull, supersededByCode } from "./lib/commune-postal-drift.mjs";
 import { isWilayaSqlRow } from "./lib/full-sql-rows.mjs";
 import { splitSqlRow, sqlQuote, sqlUnquote } from "./lib/sql-rows.mjs";
 
@@ -221,6 +221,8 @@ function canonical(group, nameFr, current) {
 
 /** code_commune -> the superseded value this repository already published. */
 const superseded = supersededByCode();
+/** The communes this release gives a first code to, for which a blank is a `from`. */
+const filled = filledFromNull();
 
 /** One commune's answer: what the table says now (`from`) and what this run derives (`to`). */
 const byCommuneCode = new Map();
@@ -325,7 +327,15 @@ function resolved(where, { code, wilaya_code: wilaya, name_fr: nameFr, postal_co
   }
   saw(where, entry.code);
   if (postal === entry.to) return null;
-  if (postal === entry.from || (superseded.has(entry.code) && postal === superseded.get(entry.code))) {
+  // Three readings are a `from`: the value the table carries, the value a mirror of
+  // this repository published before the repair, and, for the communes this release
+  // gives a first code to, nothing at all. The last one is why an un-repaired fork
+  // can be patched: once the table holds the derived code its `from` and its `to`
+  // are the same value, so a blank is neither, and every blank the release fills
+  // would abort the run instead of being filled. A blank on any OTHER commune still
+  // aborts it.
+  const blankIsFrom = postal === null && filled.has(entry.code);
+  if (postal === entry.from || blankIsFrom || (superseded.has(entry.code) && postal === superseded.get(entry.code))) {
     changed++;
     return { next: entry.to };
   }
