@@ -1104,6 +1104,13 @@ export function writePackageV2({
   return { records: all, metadata, review };
 }
 
+/** Everything before an id's last `-`, which is the part a derived id spends on
+ *  describing the record (`16` in `16-00042`, `16-ehs` in `16-ehs-03`). */
+const idPrefix = (id) => {
+  const cut = String(id).lastIndexOf("-");
+  return cut >= 0 ? String(id).slice(0, cut) : String(id);
+};
+
 /**
  * Carry each record's id over from the committed data, keyed by a stable upstream
  * identifier, so regeneration reproduces the SAME public join keys (v2 decision 10/11).
@@ -1133,12 +1140,31 @@ export function writePackageV2({
  * Fails loud on a duplicated committed carry key (the key cannot pin an id it does
  * not uniquely identify) and on any residual duplicate id after carry-over.
  *
+ * `prefixOf` is the opt-in exception to pinning, for a package whose id prefix is a
+ * claim about the record and not an opaque string. `{wilaya_code}-{seq}` is such a
+ * prefix: a consumer reads the wilaya off it, which the published type invites.
+ * Pinning alone lets that claim go stale, because a record the commune join moves
+ * to another wilaya comes back to the id it was minted under, prefix and all
+ * (empirically: 17 of 3,807 pharmacies, private tracker #255). Where `prefixOf`
+ * disagrees with the committed id's prefix the id is NOT pinned: it retires, the
+ * record keeps its freshly derived id, and `migrations` records the forward so the
+ * old join key still resolves. Any earlier forward that pointed at the retiring id
+ * is re-pointed at the new one, so a forward is always one hop and never a chain.
+ * Without `prefixOf` nothing changes: a stale prefix is pinned as before.
+ *
  * @param {object[]} rows          the v2 records being emitted (mutated in place)
  * @param {object[]} committed     the committed v2 records (empty on a first build)
  * @param {(r: object) => (string|null)} keyOf  stable upstream key, or null to skip
  * @param {string} [pkg]           package name, for error messages
  * @param {Set<string>} retiredIds ids retired by an earlier run; mutated with
  *                                 ids retired by this run
+ * @param {object} [options]
+ * @param {(r: object) => (string|null)} [options.prefixOf]  the prefix the record's
+ *                                 id must carry; a committed id with another prefix
+ *                                 is re-issued instead of pinned
+ * @param {Record<string, object>} [options.migrations]  the ledger's forwarding
+ *                                 table, mutated with each re-issue
+ * @param {string} [options.note]  the note a re-issue's forward carries
  * @returns {object[]} rows
  */
 export function carryOverIds(
@@ -1147,6 +1173,7 @@ export function carryOverIds(
   keyOf,
   pkg = "",
   retiredIds,
+  { prefixOf = null, migrations = null, note = "Re-issued id." } = {},
 ) {
   const tag = pkg ? ` [${pkg}]` : "";
   if (!(retiredIds instanceof Set)) {
@@ -1189,14 +1216,23 @@ export function carryOverIds(
     ...committed.map((record) => String(record.id)),
   ]);
 
-  // 1. Pin each still-present record back to the id it shipped under.
+  // 1. Pin each still-present record back to the id it shipped under, unless
+  //    `prefixOf` says the committed id's prefix no longer describes the record.
+  //    Such an id is re-issued: it retires here and forwards to the record's new
+  //    id once step 2 has settled it.
   const carried = new Set();
+  const reissued = [];
   for (const r of rows) {
     const k = keyOf(r);
-    if (k != null && byKey.has(k)) {
-      r.id = byKey.get(k);
-      carried.add(r);
+    if (k == null || !byKey.has(k)) continue;
+    const was = String(byKey.get(k));
+    if (prefixOf && idPrefix(was) !== prefixOf(r)) {
+      retiredIds.add(was);
+      reissued.push({ row: r, was });
+      continue;
     }
+    r.id = was;
+    carried.add(r);
   }
 
   // 2. Re-home any new record whose freshly-derived id collides with a reserved
@@ -1209,7 +1245,7 @@ export function carryOverIds(
     if (carried.has(r) || !reserved.has(r.id)) continue;
     const id = String(r.id);
     const cut = id.lastIndexOf("-");
-    const prefix = cut >= 0 ? id.slice(0, cut) : id;
+    const prefix = idPrefix(id);
     const width = cut >= 0 ? id.length - cut - 1 : 0;
     let seq = 1;
     let next;
@@ -1218,6 +1254,21 @@ export function carryOverIds(
     } while (occupied.has(next));
     r.id = next;
     occupied.add(next);
+  }
+
+  // 2b. Forward every re-issued id to where its record landed, and re-point any
+  //     earlier forward that aimed at it, so following a retired id is one hop.
+  for (const { row, was } of reissued) {
+    if (reserved.has(row.id) || retiredIds.has(row.id)) {
+      throw new Error(
+        `carryOverIds${tag}: re-issued ${was} onto ${row.id}, which is reserved`,
+      );
+    }
+    if (!migrations) continue;
+    for (const entry of Object.values(migrations)) {
+      if (entry?.merged_into === was) entry.merged_into = row.id;
+    }
+    migrations[was] = { merged_into: row.id, note };
   }
 
   // 3. The final id set must be globally unique: two current records sharing one

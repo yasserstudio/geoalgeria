@@ -1,7 +1,154 @@
 {
   "note": "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.",
+  "migrations": {
+    "02-00063": {
+      "merged_into": "02-00062",
+      "note": "Merged into 02-00062, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "02-00160": {
+      "merged_into": "48-00142",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "07-00018": {
+      "merged_into": "51-00040",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "07-00052": {
+      "merged_into": "07-00002",
+      "note": "Merged into 07-00002, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "10-00021": {
+      "merged_into": "10-00019",
+      "note": "Merged into 10-00019, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "13-00009": {
+      "merged_into": "22-00080",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "13-00010": {
+      "merged_into": "22-00081",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "14-00032": {
+      "merged_into": "14-00031",
+      "note": "Merged into 14-00031, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "16-00279": {
+      "merged_into": "35-00091",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "16-00426": {
+      "merged_into": "16-00178",
+      "note": "Merged into 16-00178, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "19-00074": {
+      "merged_into": "19-00073",
+      "note": "Merged into 19-00073, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "21-00036": {
+      "merged_into": "23-00061",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "21-00037": {
+      "merged_into": "23-00062",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "21-00038": {
+      "merged_into": "23-00063",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "22-00039": {
+      "merged_into": "13-00089",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "22-00078": {
+      "merged_into": "13-00090",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "22-00079": {
+      "merged_into": "13-00088",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "23-00042": {
+      "merged_into": "23-00044",
+      "note": "Merged into 23-00044, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "25-00049": {
+      "merged_into": "43-00111",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "39-00004": {
+      "merged_into": "39-00003",
+      "note": "Merged into 39-00003, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "40-00003": {
+      "merged_into": "05-00072",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "43-00052": {
+      "merged_into": "43-00051",
+      "note": "Merged into 43-00051, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "43-00079": {
+      "merged_into": "43-00004",
+      "note": "Merged into 43-00004, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "51-00039": {
+      "merged_into": "51-00036",
+      "note": "Merged into 51-00036, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "55-00017": {
+      "merged_into": "55-00018",
+      "note": "Merged into 55-00018, the same pharmacy mapped twice in OpenStreetMap. The two records sat within 40 m and their names fold to the same key once each is split by script, and the record kept is the one carrying the most fields."
+    },
+    "61-00005": {
+      "merged_into": "07-00055",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "65-00020": {
+      "merged_into": "68-00023",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "65-00025": {
+      "merged_into": "68-00024",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    },
+    "68-00001": {
+      "merged_into": "28-00049",
+      "note": "Re-issued as the id on the right: this record's wilaya changed, and the id documents its wilaya in the prefix, so the old id was no longer readable. Same pharmacy, same OpenStreetMap element, new public id."
+    }
+  },
   "ids": [
+    "02-00063",
+    "02-00160",
+    "07-00018",
+    "07-00052",
+    "10-00021",
+    "13-00009",
+    "13-00010",
+    "14-00032",
+    "16-00279",
+    "16-00426",
+    "19-00074",
+    "21-00036",
+    "21-00037",
+    "21-00038",
+    "22-00039",
+    "22-00078",
+    "22-00079",
+    "23-00042",
+    "25-00049",
+    "39-00004",
+    "40-00003",
+    "43-00052",
+    "43-00079",
     "44-00029",
-    "47-00001"
+    "47-00001",
+    "51-00039",
+    "55-00017",
+    "61-00005",
+    "65-00020",
+    "65-00025",
+    "68-00001"
   ]
 }

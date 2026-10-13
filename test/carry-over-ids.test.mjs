@@ -171,6 +171,82 @@ test("carryOverIds: two current records under one key surface as a duplicate-id 
   );
 });
 
+// `prefixOf` is the opt-in clause for a package whose id prefix is a claim about
+// the record rather than an opaque string: `{wilaya_code}-{seq}`. Pinning alone
+// made that claim go stale, because a record the commune join moves to another
+// wilaya came back to the id it was minted under, prefix and all (empirically: 17
+// of 3,807 pharmacies, private tracker #255). With the clause the stale id retires
+// and forwards, so the prefix is always readable and the old join key still
+// resolves in one hop.
+test("carryOverIds: prefixOf re-issues a carried id whose prefix went stale", () => {
+  const committed = [rec("06-00001", "A"), rec("06-00002", "B")];
+  // B moved to wilaya 31; A did not move.
+  const rows = assignIds([
+    { wilaya: "06", refs: { osm: "A" } },
+    { wilaya: "31", refs: { osm: "B" } },
+  ]);
+  const retired = new Set();
+  const migrations = {};
+  carryOverIds(rows, committed, keyOf, "t", retired, {
+    prefixOf: (r) => r.wilaya,
+    migrations,
+    note: "Re-issued.",
+  });
+  const byKey = Object.fromEntries(rows.map((r) => [r.refs.osm, r.id]));
+  assert.equal(byKey.A, "06-00001"); // unmoved, still pinned
+  assert.equal(byKey.B, "31-00001"); // re-issued into its own wilaya's id space
+  assert.deepEqual([...retired], ["06-00002"]);
+  assert.deepEqual(migrations, { "06-00002": { merged_into: "31-00001", note: "Re-issued." } });
+  assert.ok(uniqueIds(rows));
+});
+
+test("carryOverIds: a re-issued record never lands on a reserved id", () => {
+  // 31-00001 is already taken by a carried record and 31-00002 is retired, so the
+  // re-issued record has to be re-homed past both.
+  const committed = [rec("31-00001", "A"), rec("06-00009", "B")];
+  const rows = assignIds([
+    { wilaya: "31", refs: { osm: "A" } },
+    { wilaya: "31", refs: { osm: "B" } },
+  ]);
+  const retired = new Set(["31-00002"]);
+  const migrations = {};
+  carryOverIds(rows, committed, keyOf, "t", retired, { prefixOf: (r) => r.wilaya, migrations });
+  const byKey = Object.fromEntries(rows.map((r) => [r.refs.osm, r.id]));
+  assert.equal(byKey.A, "31-00001");
+  assert.equal(byKey.B, "31-00003");
+  assert.deepEqual([...retired].sort(), ["06-00009", "31-00002"]);
+  assert.equal(migrations["06-00009"].merged_into, "31-00003");
+  assert.ok(uniqueIds(rows));
+});
+
+test("carryOverIds: a second move re-points the first forward instead of chaining", () => {
+  // Run N retired 06-00002 -> 31-00001. Run N+1 moves the same record again: the
+  // older entry must forward straight to the new id, so one hop still resolves.
+  const committed = [rec("31-00001", "B")];
+  const rows = assignIds([{ wilaya: "44", refs: { osm: "B" } }]);
+  const retired = new Set(["06-00002"]);
+  const migrations = { "06-00002": { merged_into: "31-00001", note: "Re-issued." } };
+  carryOverIds(rows, committed, keyOf, "t", retired, {
+    prefixOf: (r) => r.wilaya,
+    migrations,
+    note: "Re-issued again.",
+  });
+  assert.equal(rows[0].id, "44-00001");
+  assert.deepEqual([...retired].sort(), ["06-00002", "31-00001"]);
+  assert.equal(migrations["06-00002"].merged_into, "44-00001");
+  assert.equal(migrations["06-00002"].note, "Re-issued."); // the old note is kept
+  assert.equal(migrations["31-00001"].merged_into, "44-00001");
+});
+
+test("carryOverIds: without prefixOf a stale prefix is still pinned, unchanged", () => {
+  const committed = [rec("06-00002", "B")];
+  const rows = assignIds([{ wilaya: "31", refs: { osm: "B" } }]);
+  const retired = new Set();
+  carryOverIds(rows, committed, keyOf, "t", retired);
+  assert.equal(rows[0].id, "06-00002");
+  assert.deepEqual([...retired], []);
+});
+
 test("carryOverIds: refuses an ephemeral missing ledger", () => {
   assert.throws(
     () => carryOverIds([], [], keyOf, "t"),

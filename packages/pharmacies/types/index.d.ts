@@ -25,13 +25,21 @@ export interface Refs {
 /** A pharmacy (officine), sourced from OpenStreetMap (ODbL). Every field is
  *  present on every record; the optional ones are `null` where OSM has no tag. */
 export interface Pharmacy {
-  /** Stable id, `{wilaya_code}-{seq}` (e.g. "16-00042"). Unique within this file. */
+  /** Stable id, `{wilaya_code}-{seq}` (e.g. "16-00042"). Unique within this file.
+   *  The prefix is always this record's own `wilaya_code`, so reading the wilaya
+   *  off an id is safe. A record whose wilaya changes is therefore re-issued
+   *  rather than kept under a prefix that no longer describes it: the old id goes
+   *  to `data/retired-ids.json`, where a `migrations` entry forwards it to the new
+   *  one, so an id a consumer cached still resolves in a single hop. */
   id: string;
-  /** Best display name, or null (many OSM pharmacies are unnamed). */
+  /** Best display name, or null (many OSM pharmacies are unnamed). The OSM `name`
+   *  tag as tagged, so this one may hold both languages at once. */
   name: string | null;
-  /** French/Latin name, or null. */
+  /** French/Latin name, or null. Latin letters only: a tag that holds both
+   *  languages is split at the script boundary, never translated. */
   name_fr: string | null;
-  /** Arabic name, or null. */
+  /** Arabic name, or null. Arabic letters only: a tag that holds both languages
+   *  is split at the script boundary, never transliterated. */
   name_ar: string | null;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;

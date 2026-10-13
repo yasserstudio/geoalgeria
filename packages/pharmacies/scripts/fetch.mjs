@@ -23,8 +23,9 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { buildMetadata, toCSV, toGeoJSON } from "@geoalgeria/schema";
-import { carryOverIds, readCommitted, readRetiredIds, writeRetiredIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
+import { carryOverIds, readCommitted, readRetiredIds, readRetiredMigrations, writeRetiredIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 import { RESOLVE_RULES, describeLinkage, resolveCommune } from "../../../scripts/lib/build-utils.mjs";
+import { PHARMACY_WORDS, nameKeys, splitByScript } from "../../../scripts/lib/name-script.mjs";
 import https from "node:https";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -142,8 +143,6 @@ async function fetchOSM() {
 // --- helpers ---------------------------------------------------------------
 const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
 const wcode = (n) => (Number.isInteger(n) && n > 0 ? String(n).padStart(2, "0") : null);
-// True only for actual Arabic *letters*: excludes combining marks/punctuation.
-const isArabic = (s) => typeof s === "string" && /[ء-يٱ-ۓۺ-ۿ]/.test(s);
 const LEAD_MARKS = /^[̀-ͯؐ-ًؚ-ٰٟۖ-ۭ]+/;
 const cleanName = (v) => {
   if (typeof v !== "string") return null;
@@ -171,7 +170,7 @@ function parseAddress(t) {
   return parts.length ? parts.join(", ") : null;
 }
 
-function normOSM(elements) {
+function normOSM(elements, publishedOsmIds = new Set()) {
   const rows = [];
   for (const el of elements) {
     const lat = el.lat ?? el.center?.lat;
@@ -182,15 +181,15 @@ function normOSM(elements) {
     const tagFr = cleanName(t["name:fr"]);
     const tagAr = cleanName(t["name:ar"]);
     // Route strictly by script so name_ar is always Arabic and name_fr always Latin,
-    // even when OSM mis-tags them. Prefer the dedicated tag, then raw, then mis-tagged.
-    const nameAr = (tagAr && isArabic(tagAr)) ? tagAr
-      : (rawName && isArabic(rawName)) ? rawName
-      : (tagFr && isArabic(tagFr)) ? tagFr
-      : null;
-    const nameFr = (tagFr && !isArabic(tagFr)) ? tagFr
-      : (rawName && !isArabic(rawName)) ? rawName
-      : (tagAr && !isArabic(tagAr)) ? tagAr
-      : null;
+    // even when OSM mis-tags them. Every candidate tag is split by script first,
+    // because contributors routinely write both languages into one tag
+    // ("Pharmacie bouchekouf صيدلية بوشقوف"): classifying such a value whole filed
+    // its Latin words under name_ar on 28 records (private tracker #256). The split
+    // only cuts, so neither field ever holds a word the source does not. Preference
+    // is unchanged: the dedicated tag, then the raw name, then the other tag.
+    const halves = [splitByScript(tagAr), splitByScript(rawName), splitByScript(tagFr)];
+    const nameAr = halves.find((h) => h.ar)?.ar ?? null;
+    const nameFr = [halves[2], halves[1], halves[0]].find((h) => h.la)?.la ?? null;
     rows.push({
       source: "osm",
       osm_id: `${el.type}/${el.id}`,
@@ -208,43 +207,84 @@ function normOSM(elements) {
       address: parseAddress(t),
     });
   }
-  // Conservative internal de-dup: identical non-empty name within ~40 m (the same
-  // pharmacy mapped as both a node and a building outline).
-  const kept = [];
-  let dropped = 0;
-  for (const r of rows) {
-    if (!r.name) { kept.push(r); continue; }
-    const key = r.name.trim().toLowerCase();
-    const cosLat = Math.cos(r.lat * DEG);
-    const dup = kept.some((k) => {
-      if (!k.name || k.name.trim().toLowerCase() !== key) return false;
-      const dx = (k.lng - r.lng) * cosLat * M_PER_DEG;
-      const dy = (k.lat - r.lat) * M_PER_DEG;
-      return dx * dx + dy * dy <= 40 * 40;
-    });
-    if (dup) dropped++;
-    else kept.push(r);
-  }
-  if (dropped) console.log(`  OSM internal de-dup: ${dropped} same-name-within-40m record(s)`);
+  // The two de-dup passes run over a fixed order, so which record survives a
+  // collapse never depends on how Overpass happened to order its response.
+  rows.sort((a, b) => (a.osm_id < b.osm_id ? -1 : a.osm_id > b.osm_id ? 1 : 0));
 
-  // Second pass: collapse records at the exact same point (a pharmacy mapped twice:
-  // a node and a building, or two spellings, that the name pass missed). Keep
-  // the richest record.
+  // Every collapse, as `{ dropped, kept }` OSM ids: main() turns each into a
+  // forward in retired-ids.json, so a consumer holding the dropped record's
+  // published id still resolves to the pharmacy in one hop.
+  const collapsed = [];
   const richness = (r) =>
     (r.name ? 1 : 0) + (r.name_ar ? 1 : 0) + (r.name_fr ? 1 : 0) +
     (r.phone ? 1 : 0) + (r.opening_hours ? 1 : 0) + (r.address ? 1 : 0);
+  // Which of two records standing for one pharmacy survives. An already-published
+  // record wins first, so a collapse never retires an id it could have kept and
+  // never mints one it could have reused. Otherwise the record carrying the most
+  // wins, so collapsing costs no name, phone or address, and the lower OSM id
+  // breaks the remaining ties.
+  const survives = (r, other) => {
+    const published = publishedOsmIds.has(r.osm_id);
+    if (published !== publishedOsmIds.has(other.osm_id)) return published;
+    if (richness(r) !== richness(other)) return richness(r) > richness(other);
+    return r.osm_id < other.osm_id;
+  };
+  // Re-point the forwards that aimed at a record another has just displaced, so a
+  // forward is always one hop and never a chain.
+  const collapse = (dropped, survivor) => {
+    for (const entry of collapsed) if (entry.kept === dropped.osm_id) entry.kept = survivor.osm_id;
+    collapsed.push({ dropped: dropped.osm_id, kept: survivor.osm_id });
+  };
+
+  // Conservative internal de-dup: the same name within ~40 m (the same pharmacy
+  // mapped as both a node and a building outline, or under two spellings). Names
+  // are compared as Loose keys per script, not as text: "Pharmacie bouchekouf
+  // صيدلية بوشقوف" and the plain "بوشقوف" six metres away are one Oued Endja
+  // pharmacy, and an exact string comparison shipped both (private tracker #256).
+  // A name that only says "pharmacy" keys on nothing, so it never collapses anything.
+  const kept = [];
+  for (const r of rows) {
+    const keys = nameKeys([r.name, r.name_fr, r.name_ar], PHARMACY_WORDS);
+    const cosLat = Math.cos(r.lat * DEG);
+    const near = (k) => {
+      const dx = (k.row.lng - r.lng) * cosLat * M_PER_DEG;
+      const dy = (k.row.lat - r.lat) * M_PER_DEG;
+      return dx * dx + dy * dy <= 40 * 40;
+    };
+    const hit = keys.size ? kept.findIndex((k) => [...k.keys].some((key) => keys.has(key)) && near(k)) : -1;
+    if (hit < 0) { kept.push({ row: r, keys }); continue; }
+    if (survives(r, kept[hit].row)) {
+      collapse(kept[hit].row, r);
+      kept[hit] = { row: r, keys };
+    } else {
+      collapse(r, kept[hit].row);
+    }
+  }
+  const named = kept.map((k) => k.row);
+  if (rows.length !== named.length) {
+    console.log(`  OSM internal de-dup: ${rows.length - named.length} same-name-within-40m record(s)`);
+  }
+
+  // Second pass: collapse records at the exact same point (a pharmacy mapped twice,
+  // under names the key pass could not see were one).
   const byPoint = new Map();
   const order = [];
-  for (const r of kept) {
+  for (const r of named) {
     const pk = `${r.lat},${r.lng}`;
     const prev = byPoint.get(pk);
     if (!prev) { byPoint.set(pk, r); order.push(pk); }
-    else if (richness(r) > richness(prev)) byPoint.set(pk, r);
+    else if (survives(r, prev)) { collapse(prev, r); byPoint.set(pk, r); }
+    else collapse(r, prev);
   }
   const deduped = order.map((pk) => byPoint.get(pk));
-  const removed = kept.length - deduped.length;
+  const removed = named.length - deduped.length;
   if (removed) console.log(`  OSM coord de-dup: ${removed} exact-coincident record(s)`);
-  return dropBulkImports(deduped);
+
+  // The bulk-import guard runs last, so a forward whose survivor it drops leads
+  // nowhere and is not a forward at all.
+  const live = dropBulkImports(deduped);
+  const published = new Set(live.map((r) => r.osm_id));
+  return { rows: live, collapsed: collapsed.filter((entry) => published.has(entry.kept)) };
 }
 
 // Drop OSM bulk-import artifacts: a long run of consecutive-id, unnamed pharmacy
@@ -400,15 +440,16 @@ function readCache() {
 async function main() {
   const OFFLINE = process.argv.includes("--cache");
   const osmRaw = OFFLINE ? readCache() : await fetchOSM();
-  let rows = normOSM(osmRaw);
+  const committed = readCommitted(OUT_DIR, "pharmacies.json") ?? [];
+  const published = new Map();
+  for (const r of committed) {
+    if (r.refs?.osm && r.wilaya_code) published.set(`osm:${r.refs.osm}`, r);
+  }
+  let { rows, collapsed } = normOSM(osmRaw, new Set(committed.map((r) => r.refs?.osm).filter(Boolean)));
   console.log(`  OSM: ${rows.length} geocoded pharmacies`);
 
   const communes = loadCommunes();
   console.log(`  ${communes.length} commune centroids loaded`);
-  const published = new Map();
-  for (const r of readCommitted(OUT_DIR, "pharmacies.json") ?? []) {
-    if (r.refs?.osm && r.wilaya_code) published.set(`osm:${r.refs.osm}`, r);
-  }
   const linkage = attachCommune(rows, communes, published);
   console.log(`  linkage: ${describeLinkage(linkage)}`);
 
@@ -418,9 +459,40 @@ async function main() {
   // Pin every still-present pharmacy back to the id it shipped under, keyed on the
   // stable OSM id. Without this a single new pharmacy re-sequences every later
   // record in its wilaya, so a re-survey would churn ids that are public join keys.
+  //
+  // `prefixOf` is the one exception: the published type documents the id as
+  // `{wilaya_code}-{seq}`, so a pinned id whose prefix the commune join has
+  // contradicted is re-issued into its own wilaya's id space instead, and the stale
+  // id retires with a forward to the new one (private tracker #255).
   const retiredIds = readRetiredIds(OUT_DIR);
-  carryOverIds(rows, readCommitted(OUT_DIR, "pharmacies.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "pharmacies", retiredIds);
+  const migrations = readRetiredMigrations(OUT_DIR);
+  carryOverIds(rows, committed, (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "pharmacies", retiredIds, {
+    prefixOf: (r) => r.wilaya_code,
+    migrations,
+    note:
+      "Re-issued as the id on the right: this record's wilaya changed, and the id " +
+      "documents its wilaya in the prefix, so the old id was no longer readable. " +
+      "Same pharmacy, same OpenStreetMap element, new public id.",
+  });
   rows.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+
+  // Forward each pharmacy the de-dup passes collapsed to the record that now
+  // carries it. carryOverIds has already retired the dropped record's id, because
+  // its OSM key left the dataset; this says where the pharmacy went.
+  const idByOsm = new Map(rows.map((r) => [r.refs.osm, r.id]));
+  for (const { dropped, kept } of collapsed) {
+    const was = published.get(`osm:${dropped}`)?.id;
+    const now = idByOsm.get(kept);
+    if (!was || !now || !retiredIds.has(was)) continue;
+    for (const entry of Object.values(migrations)) if (entry.merged_into === was) entry.merged_into = now;
+    migrations[was] = {
+      merged_into: now,
+      note:
+        `Merged into ${now}, the same pharmacy mapped twice in OpenStreetMap. The two ` +
+        `records sat within 40 m and their names fold to the same key once each is split ` +
+        `by script, and the record kept is the one carrying the most fields.`,
+    };
+  }
 
   const cols = [
     "id", "name", "name_fr", "name_ar", "wilaya_code", "commune_code", "commune",
@@ -474,7 +546,7 @@ async function main() {
   writeText("csv/pharmacies.csv", toCSV(rows, cols));
   writeJSON("geojson/pharmacies.geojson", toGeoJSON(rows));
   writeJSON("metadata.json", metadata);
-  writeRetiredIds(OUT_DIR, retiredIds);
+  writeRetiredIds(OUT_DIR, retiredIds, migrations);
   console.log(
     `Wrote ${rows.length} pharmacies (${named} named, ${metadata.wilayas_covered} wilayas): ` +
       `${metadata.with_phone} with phone, ${metadata.with_hours} with hours, ${metadata.with_address} with address.`,

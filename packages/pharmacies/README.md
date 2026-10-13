@@ -14,7 +14,7 @@
 
 # Overview
 
-3,807 pharmacies (officines) across **67 wilayas**, from **OpenStreetMap**, every record geocoded, bilingual (FR/AR) where named, with phone, opening hours and a `dispensing` flag where OSM has them, plus wilaya/commune linkage.
+3,795 pharmacies (officines) across **67 wilayas**, from **OpenStreetMap**, every record geocoded, bilingual (FR/AR) where named, with phone, opening hours and a `dispensing` flag where OSM has them, plus wilaya/commune linkage.
 
 ## Installation
 
@@ -32,7 +32,7 @@ import {
   metadata,
 } from "@geoalgeria/pharmacies";
 
-pharmacies().length; // 3807
+pharmacies().length; // 3795
 
 // Everything in Alger (code 16)
 pharmaciesByWilaya(16).length;
@@ -52,9 +52,9 @@ metadata().wilayas_covered; // 67
 
 | Dataset | Count | Coordinates | Notes |
 | --- | --- | --- | --- |
-| `pharmacies` | 3,807 | all 3,807 | OpenStreetMap, geocoded, wilaya/commune-linked |
+| `pharmacies` | 3,795 | all 3,795 | OpenStreetMap, geocoded, wilaya/commune-linked |
 
-- **Named:** 2,467 · **with phone:** 146 · **with opening hours:** 257 · **with address:** 1,164 · **with `dispensing`:** 529
+- **Named:** 2,455 · **with phone:** 145 · **with opening hours:** 255 · **with address:** 1,160 · **with `dispensing`:** 526
 
 ## Formats
 
@@ -62,6 +62,7 @@ metadata().wilayas_covered; // 67
 - `data/csv/pharmacies.csv` – flat CSV
 - `data/geojson/pharmacies.geojson` – `FeatureCollection` (all records)
 - `data/metadata.json` – counts, sources, generated date
+- `data/retired-ids.json` – ids no record may hold again, each forwarded to the id that carries the pharmacy now
 
 ```js
 import data from "@geoalgeria/pharmacies/data/pharmacies.json" with { type: "json" };
@@ -73,11 +74,11 @@ import type { Pharmacy } from "@geoalgeria/pharmacies";
 
 ## How the data is built
 
-Extracted from OpenStreetMap via Overpass (`amenity=pharmacy` across Algeria), de-duplicated (same-name-within-40 m and coincident points), then linked to wilaya/commune by nearest-centroid join against the geoalgeria commune set. Names are routed strictly by script so `name_ar` is always Arabic and `name_fr` always Latin, even when OSM mis-tags them. A bulk-import artifact, 1,769 unnamed, consecutive-id pharmacy *ways* dumped into one small area near Attatba (Tipaza), is detected and excluded (it is not real officines). Rebuild with `npm run fetch` (or `--cache` to rebuild from the cached pull). See `research/pharmacies/` in the monorepo.
+Extracted from OpenStreetMap via Overpass (`amenity=pharmacy` across Algeria), de-duplicated (same name within 40 m, and coincident points), then linked to wilaya/commune by nearest-centroid join against the geoalgeria commune set. Names are routed strictly by script so `name_ar` is always Arabic and `name_fr` always Latin, even when OSM mis-tags them: a tag holding both languages at once ("Pharmacie bouchekouf صيدلية بوشقوف") is cut at the script boundary, so each field keeps its own half and neither gains a word the source does not have. De-duplication compares those halves as [`@geoalgeria/normalize`](../normalize) Loose keys rather than as text, with the words that only say "pharmacy" dropped, which is how one pharmacy written "Pharmacie Bouchekouf صيدلية بوشقوف" and plain "بوشقوف" six metres away is read as one record. A bulk-import artifact, 1,769 unnamed, consecutive-id pharmacy *ways* dumped into one small area near Attatba (Tipaza), is detected and excluded (it is not real officines). Rebuild with `npm run fetch` (or `--cache` to rebuild from the cached pull). See `research/pharmacies/` in the monorepo.
 
 ## On accuracy & coverage
 
-> **Coverage is partial.** 3,807 pharmacies are mapped in OpenStreetMap against an estimated **~11,000 officines** nationally (an order-of-magnitude reference, there is no open official registry; the Ordre National des Pharmaciens portal is down). Coverage is uneven by wilaya and denser in the north, this is a community-maintained extract, **not an official registry**.
+> **Coverage is partial.** 3,795 pharmacies are mapped in OpenStreetMap against an estimated **~11,000 officines** nationally (an order-of-magnitude reference, there is no open official registry; the Ordre National des Pharmaciens portal is down). Coverage is uneven by wilaya and denser in the north, this is a community-maintained extract, **not an official registry**.
 >
 > Coordinates are OSM node points (surveyed) or building-outline centroids (`geo_method`). Commune is a nearest-centroid best-effort; wilaya is effectively exact. Names, phones and hours are only present where an OSM contributor tagged them.
 
