@@ -39,9 +39,26 @@ const run = (path) =>
   execFileSync(process.execPath, [SCRIPT, "--write", "--target", path], { stdio: "pipe", encoding: "utf8" });
 
 test("a --target run writes the target and leaves this repository alone", () => {
+  // Drifted first, or the assertion passes on a run that did nothing: an unchanged
+  // copy of a repaired table is byte-identical whether or not a writer ever ran. El
+  // Amiria is a ledger row, so this covers accept-and-replace as well as the
+  // scoping: the mirrors published Meskiana's 04004 for it, and its own OULED
+  // NACEUR office is 04038.
   const path = copyOfTable();
+  const doc = JSON.parse(readFileSync(path, "utf8"));
+  const at = (parsed, code) => parsed.flatMap((wilaya) => wilaya.communes).find((commune) => commune.code_commune === code);
+  assert.equal(at(doc, 405).postal_code, "04038", "El Amiria carries its own office's code to begin with");
+  at(doc, 405).postal_code = "04004";
+  writeFileSync(path, `${JSON.stringify(doc, null, 2)}\n`);
+
   run(path);
-  assert.equal(readFileSync(path, "utf8"), readFileSync(TABLE, "utf8"), "the target keeps the codes the repo carries");
+
+  assert.equal(
+    at(JSON.parse(readFileSync(path, "utf8")), 405).postal_code,
+    "04038",
+    "a superseded value in a target is replaced by the derived code",
+  );
+  assert.equal(readFileSync(path, "utf8"), readFileSync(TABLE, "utf8"), "and nothing else in the target moves");
 });
 
 test("a target value the mapping does not account for stops the run", () => {
