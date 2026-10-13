@@ -15,6 +15,8 @@
 // holds the right code is the fix script's question, and its pins answer it.
 import test from "node:test";
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import { join } from "node:path";
 
 import { POSTAL_CARRIERS, postalTable } from "./lib/commune-postal-carriers.mjs";
 
@@ -60,4 +62,16 @@ test("every carrier of a commune postal code agrees with algeria.json", () => {
   }
 
   assert.deepEqual(problems, [], `${problems.length} carrier row(s) disagree with algeria.json`);
+});
+
+test("the fix script agrees that every carrier is corrected", () => {
+  // The same acceptance the script's own --check runs, so a carrier that drifts
+  // fails here as well as under
+  // `node scripts/fix-commune-postal-codes.mjs --check`. It is a different
+  // question from the comparison above: this one re-derives the mapping from
+  // packages/poste/data/postoffices.json and fails when the published codes are no
+  // longer what the rule produces, which is what a postal refresh will trip.
+  execFileSync(process.execPath, [join(import.meta.dirname, "../scripts/fix-commune-postal-codes.mjs"), "--check"], {
+    stdio: "pipe",
+  });
 });
