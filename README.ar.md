@@ -48,6 +48,7 @@ npm install geoalgeria
 
 ```js
 const dz = require("geoalgeria");
+// أو في تطبيق ESM أو مع bundler: import dz from "geoalgeria";
 
 dz.wilayas;                       // جميع الولايات الـ69
 dz.getCommunesByWilaya(16);       // 57 بلدية في الجزائر العاصمة

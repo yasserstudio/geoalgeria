@@ -46,6 +46,7 @@ npm install geoalgeria
 
 ```js
 const dz = require("geoalgeria");
+// ou, dans une application ESM ou avec un bundler : import dz from "geoalgeria";
 
 dz.wilayas;                       // les 69 wilayas
 dz.getCommunesByWilaya(16);       // 57 communes à Alger
