@@ -12,9 +12,9 @@
 
 </div>
 
-**668 public health establishments** across all **58 wilayas** with health
+**661 public health establishments** across all **58 wilayas** with health
 directorates, public hospitals (EPH), proximity-health establishments (EPSP),
-specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **597 geocoded** (121 to a precise
+specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **591 geocoded** (122 to a precise
 OpenStreetMap/Wikidata point, 11 verified by hand, 465 to a commune centroid) with commune/wilaya
 linkage. Shipped as JSON, CSV, GeoJSON, and
 TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -26,7 +26,7 @@ TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 > mapped by OpenStreetMap volunteers, partial by nature. Every OSM element a
 > record here references is excluded there by construction, so no place is
 > published twice under the same element, but the two describe different tiers
-> of a health system and adding 668 to 1,917 counts nothing real.
+> of a health system and adding 661 to 1,917 counts nothing real.
 
 ```bash
 npm install @geoalgeria/sante
@@ -35,7 +35,7 @@ npm install @geoalgeria/sante
 ```js
 import sante from "@geoalgeria/sante";
 
-const all = sante.sante();              // 668 establishments
+const all = sante.sante();              // 661 establishments
 
 // Public hospitals in a wilaya (joins GeoAlgeria's wilaya_code)
 const ephAlger = all.filter((e) => e.wilaya_code === "16" && e.type === "eph");
@@ -46,7 +46,7 @@ const mappable = all.filter((e) => e.lat != null);
 
 ## What you can build
 
-- **Hospital & clinic locators** – coordinates on 597 of 668 records, ready for a
+- **Hospital & clinic locators** – coordinates on 591 of 661 records, ready for a
   map or nearest-facility search.
 - **Bilingual health directories** – French and Arabic names, official type and
   wilaya for every establishment.
@@ -57,14 +57,14 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Dataset | Count | Coordinates | Notes |
 | --- | --- | --- | --- |
-| Health establishments | **668** | 597 geocoded | 58 wilayas, 590 bilingual |
+| Health establishments | **661** | 591 geocoded | 58 wilayas, 590 bilingual |
 
 **By type**
 
 | Type | Count | Meaning |
 | --- | --- | --- |
-| `eph` | 257 | Établissement Public Hospitalier – public hospital |
-| `epsp` | 284 | Établissement Public de Santé de Proximité – proximity health |
+| `eph` | 254 | Établissement Public Hospitalier – public hospital |
+| `epsp` | 280 | Établissement Public de Santé de Proximité – proximity health |
 | `ehs` | 103 | Établissement Hospitalier Spécialisé – specialized hospital |
 | `chu` | 19 | Centre Hospitalo-Universitaire – university hospital |
 | `hopital` | 5 | other public hospital |
@@ -73,19 +73,19 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Value | Count | Meaning |
 | --- | --- | --- |
-| `exact` | 132 | precise point: an OSM or Wikidata facility in the commune, or a location verified by hand |
-| `approximate` | 465 | the establishment's commune centroid |
-| `null` | 71 | locality not resolved to a commune – no coordinates (`lat`/`lng` also `null`) |
+| `exact` | 133 | precise point: an OSM or Wikidata facility in the commune, or a location verified by hand |
+| `approximate` | 458 | the establishment's commune centroid |
+| `null` | 70 | locality not resolved to a commune – no coordinates (`lat`/`lng` also `null`) |
 
 **By coordinate method** (`geo_method`)
 
 | Value | Count | Meaning |
 | --- | --- | --- |
-| `osm_point` | 118 | precise point from an OpenStreetMap facility in the commune |
+| `osm_point` | 119 | precise point from an OpenStreetMap facility in the commune |
 | `wikidata_point` | 3 | precise point from a Wikidata facility in the commune |
-| `commune_centroid` | 465 | the establishment's commune centroid (approximate) |
+| `commune_centroid` | 458 | the establishment's commune centroid (approximate) |
 | `owner_verified` | 11 | location read off the map by the project owner, through the reviewed-correction ledger |
-| `null` | 71 | no method – record has no coordinate |
+| `null` | 70 | no method – record has no coordinate |
 
 > **The registry is official; the coordinates are best-effort.** Names, type and
 > wilaya come from the Ministry of Health. The MoH publishes no coordinates,
@@ -115,7 +115,7 @@ const all: HealthEstablishment[] = sante.sante();
 
 ```
 data/
-  sante.json              # 668 establishments (array)
+  sante.json              # 661 establishments (array)
   metadata.json           # sources, counts, coverage, updated
   retired-ids.json        # ids no record may hold again, and where each one's data went
   csv/sante.csv           # repo + Release bundle (not in npm tarball)
@@ -160,11 +160,12 @@ all; the private facilities OpenStreetMap records live in
 `source` is always `"msp"` (the Ministry of Health registry);
 `refs` carries the per-provenance ids that contributed the record, `msp`
 always, plus `msp_twin` where the registry published the same establishment a
-second time in the other language, plus `osm` or `wikidata` when the coordinate
+second time in the other language and `msp_repeat` where it entered it a second
+time in the same language, plus `osm` or `wikidata` when the coordinate
 was upgraded to a precise point. `geo_precision` is `"exact"`, `"approximate"`, or `null`; `geo_method`
 names how the coordinate was obtained (`osm_point`, `wikidata_point`,
 `commune_centroid`, `owner_verified`, or `null`). `lat`/`lng`/`geo_precision`/`geo_method` are all
-`null` together for the 71 records whose locality could not be matched to a
+`null` together for the 70 records whose locality could not be matched to a
 commune.
 
 > **Coordinates and commune are derived, not from the MoH.** The Ministry of
@@ -201,9 +202,19 @@ Run `npm run fetch` to regenerate every output. It:
    [`quality/sante-twin-recovery.json`](https://github.com/yasserstudio/geoalgeria/blob/main/quality/sante-twin-recovery.json).
    A record cites both posts: `refs.msp` is its primary (French) post and
    `refs.msp_twin` the Arabic one, so either id resolves to it;
-3. matches each establishment's **locality to a commune** in the `geoalgeria`
+3. folds in the registry's **repeat posts**: 7 establishments were entered a
+   second time in the language they already had, which step 2 cannot reach
+   because it only ever pairs a French post with an Arabic one. The whole title
+   has to fold to the same
+   [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize)
+   key, so a name the registry wrote differently stays two records: the two
+   Skikda hospitals and the two Ouargla ones are two facilities, not one entered
+   twice. Every decision and every pair kept apart is written to
+   [`quality/sante-repeat-posts.json`](https://github.com/yasserstudio/geoalgeria/blob/main/quality/sante-repeat-posts.json),
+   and the merged record cites the absorbed post as `refs.msp_repeat`;
+4. matches each establishment's **locality to a commune** in the `geoalgeria`
    set within its wilaya, attaching `commune`, `commune_code` and a centroid;
-4. queries **Wikidata** (SPARQL, hospitals) and **OpenStreetMap** (Overpass,
+5. queries **Wikidata** (SPARQL, hospitals) and **OpenStreetMap** (Overpass,
    `amenity=hospital`/`clinic`, `healthcare=*`) and **upgrades** the coordinate
    to a precise point where one sits in the establishment's commune.
 

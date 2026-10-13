@@ -76,7 +76,7 @@ test("sante twins: a refused candidate was not merged anyway", () => {
 test("sante twins: one registry post belongs to exactly one record", () => {
   const owner = new Map();
   for (const r of records)
-    for (const post of [r.refs?.msp, r.refs?.msp_twin]) {
+    for (const post of [r.refs?.msp, r.refs?.msp_twin, r.refs?.msp_repeat]) {
       if (post == null) continue;
       assert.equal(owner.has(post), false, `MSP post ${post} is on both ${owner.get(post)} and ${r.id}`);
       owner.set(post, r.id);
@@ -191,10 +191,10 @@ test("sante twins: each pinned record sits on its Wikidata coordinate", () => {
 test("sante twins: no external identifier is cited by two records", () => {
   const owner = new Map();
   for (const r of records)
-    for (const key of ["wikidata", "osm", "msp", "msp_twin"]) {
+    for (const key of ["wikidata", "osm", "msp", "msp_twin", "msp_repeat"]) {
       const value = r.refs?.[key];
       if (!value) continue;
-      const ref = `${key === "msp_twin" ? "msp" : key}:${value}`;
+      const ref = `${key.startsWith("msp") ? "msp" : key}:${value}`;
       assert.equal(owner.has(ref), false, `${ref} is on both ${owner.get(ref)} and ${r.id}`);
       owner.set(ref, r.id);
     }

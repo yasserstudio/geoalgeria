@@ -188,6 +188,17 @@ the same release, so neither id is older: the merged record keeps the
 sequenced by name and a Latin name sorts before an Arabic one.
 _Avoid_: duplicate, double, clone, Arabic record
 
+**Repeat post**:
+A second upstream entry for the same place in the SAME language: the Ministry of
+Health registry entered a handful of establishments twice under the one name, so
+one establishment is one post and one repeat post. A Twin post adds a language, a
+repeat post adds nothing, and the two are reached by different rules: the twin
+rule pairs one language with the other and can never see a repeat post. The
+generator folds the repeat post into the same record, which cites it as
+`refs.msp_repeat`, and the record stays on the entry the registry describes most
+fully, so the kept id is not always the lower-sequence one.
+_Avoid_: twin post, same-language twin, re-entry, clone
+
 **Half-record**:
 A record standing for one Twin post while the other is published separately: half
 a facility's names, and its own coordinate. Merging the two retires the
