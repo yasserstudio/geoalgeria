@@ -56,7 +56,7 @@ dz.findByPostalCode("16000");     // → بلدية، دائرة، ولاية
 dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحقيقية
 ```
 
-مع أي bundler (Next.js أو Vite أو webpack) تُضمّ ملفات JSON العشرة كلها، بما فيها مرايا مكاتب البريد والصرافات الآلية. إذا كنت تحتاج جزءاً واحداً، استورد ملفه وحده: `import communes from "geoalgeria/data/ecommerce/communes.json"`. في TypeScript يحتاج الاستيراد الافتراضي إلى `esModuleInterop`، بخلاف `import dz = require("geoalgeria")`.
+مع أي bundler (Next.js أو Vite أو webpack) تُضمّ ملفات JSON العشرة كلها، بما فيها مرايا مكاتب البريد والصرافات الآلية. إذا كنت تحتاج جزءًا واحدًا، استورد ملفه وحده: `import communes from "geoalgeria/data/ecommerce/communes.json"`. في TypeScript يحتاج الاستيراد الافتراضي إلى `esModuleInterop`، بخلاف `import dz = require("geoalgeria")`.
 
 ## المحتوى
 
