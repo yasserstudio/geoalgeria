@@ -51,13 +51,13 @@ metadata().wilayas_covered; // 67
 - `data/csv/pharmacies.csv` – CSV à plat
 - `data/geojson/pharmacies.geojson` – `FeatureCollection`
 - `data/metadata.json` – comptes, sources, date de génération
-- `data/retired-ids.json` – identifiants qu'aucun enregistrement ne peut reprendre, chacun redirigé vers celui qui porte désormais la pharmacie, avec les éléments OpenStreetMap que la fusion recouvrait
+- `data/retired-ids.json` – identifiants qu'aucun enregistrement ne peut reprendre, chacun redirigé vers celui qui porte désormais la pharmacie, avec les éléments OpenStreetMap que la fusion a réunis
 
 ## Comment les données sont construites
 
 Les noms sont répartis strictement par écriture : `name_ar` ne contient que de l'arabe et `name_fr` que du latin, même quand OSM les étiquette mal. Une étiquette qui porte plusieurs langues à la fois (« Pharmacie bouchekouf صيدلية بوشقوف ») est coupée à chaque frontière d'écriture, donc chaque champ garde sa propre moitié et aucun ne gagne un mot absent de la source. Le tifinagh est la troisième écriture et n'appartient à aucun des deux champs : un nom en tamazight reste sur `name`, l'étiquette brute, plutôt que d'être supprimé ou classé comme arabe.
 
-Là où OpenStreetMap tient une même pharmacie pour deux éléments (un nœud et le contour d'un bâtiment, ou deux orthographes), les éléments sont fusionnés en un seul enregistrement. Deux éléments sont une même pharmacie lorsqu'ils se trouvent à moins de 40 m et que leurs noms partagent une **clé de nom souple** : chaque moitié issue de la coupure par écriture, pliée via [`@geoalgeria/normalize`](../normalize) et comparée comme clé et non comme texte affiché, les mots qui ne disent que « pharmacie » étant écartés. C'est ainsi que « Pharmacie Bouchekouf صيدلية بوشقوف » et le simple « بوشقوف » à six mètres sont lus comme un seul enregistrement. L'élément conservé reprend tout champ qui lui manque de celui qu'il remplace, donc une fusion ne coûte ni téléphone, ni adresse, ni horaires, ni indicateur `dispensing` ; sa propre valeur prime partout où les deux en donnent une, et rien n'est concaténé.
+Là où OpenStreetMap tient une même pharmacie pour deux éléments (un nœud et le contour d'un bâtiment, ou deux orthographes), les éléments sont fusionnés en un seul enregistrement. Deux éléments sont une même pharmacie lorsqu'ils se trouvent à moins de 40 m et que leurs noms partagent une **clé de nom souple** : chaque moitié issue de la coupure par écriture, repliée par [`@geoalgeria/normalize`](../normalize) et comparée comme clé et non comme texte affiché, les mots qui ne disent que « pharmacie » étant écartés. C'est ainsi que « Pharmacie Bouchekouf صيدلية بوشقوف » et le simple « بوشقوف » à six mètres sont lus comme un seul enregistrement. L'élément conservé reprend tout champ qui lui manque de celui qu'il remplace, donc une fusion ne perd ni téléphone, ni adresse, ni horaires, ni indicateur `dispensing` ; sa propre valeur prime partout où les deux en donnent une, et deux valeurs ne sont jamais collées en une seule.
 
 ## Précision & couverture
 
