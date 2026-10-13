@@ -109,6 +109,19 @@ test("nameEmDashErrors names the file, the pointer and the separator to use", ()
   );
 });
 
+test("the name sweep walks record files and leaves metadata to the other rule", () => {
+  const walked = publishedDataFiles(join(ROOT, "packages", "ecoles", "data")).map((p) =>
+    p.slice(join(ROOT, "packages", "ecoles", "data").length + 1),
+  );
+  assert.ok(walked.includes("ecoles.json"), "the canonical records are not being walked");
+  assert.ok(walked.includes(join("geojson", "ecoles.geojson")), "the GeoJSON mirror is not being walked");
+  assert.deepEqual(
+    walked.filter((p) => p.includes("metadata.json")),
+    [],
+    "metadata belongs to the metadata rule, which gives a different remedy",
+  );
+});
+
 test("every published name in the repo is clean", () => {
   const offenders = [];
   for (const pkg of readdirSync(join(ROOT, "packages")).sort()) {
@@ -127,12 +140,24 @@ test("every published name in the repo is clean", () => {
   assert.deepEqual(offenders, []);
 });
 
-/** Every published JSON/GeoJSON under a package's `data/`, mirrors included. */
+/**
+ * Every published record file under a package's `data/`, mirrors included.
+ *
+ * `metadata.json` and the `*.metadata.json` sidecars are left out on purpose.
+ * Their `sources[].name` is a name by key and prose by nature ("OpenStreetMap:
+ * schools"), so sweeping them here would report one string twice with two
+ * contradictory remedies: a colon, comma or semicolon from the metadata rule,
+ * " - " from this one. The metadata rule owns them, and it already walks every
+ * string they carry, sidecars included (validateNoEmDash in
+ * scripts/validate-packages.mjs).
+ */
+const METADATA_FILE = /(^|\.)metadata\.json$/;
+
 function publishedDataFiles(dir, out = []) {
   for (const entry of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
     const path = join(dir, entry.name);
     if (entry.isDirectory()) publishedDataFiles(path, out);
-    else if (/\.(json|geojson)$/.test(entry.name)) out.push(path);
+    else if (/\.(json|geojson)$/.test(entry.name) && !METADATA_FILE.test(entry.name)) out.push(path);
   }
   return out;
 }
