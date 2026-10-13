@@ -55,7 +55,7 @@
         "3901",
         "3902"
       ],
-      "note": "Merged into 05-epsp-02, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 3901 and 3902 are the same establishment, entered twice in French under the same name. 05-epsp-02 is kept because its entry is the registry's first one, and the other is the re-entry."
+      "note": "Merged into 05-epsp-02, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 3901 and 3902 are the same establishment, entered twice in French under the same name. 05-epsp-02 is kept because its post is the one the registry published first, and the other is the repeat post."
     },
     "05-epsp-12": {
       "merged_into": "05-epsp-05",
@@ -68,10 +68,10 @@
     "05-epsp-13": {
       "merged_into": "05-epsp-03",
       "msp_posts": [
-        "4394",
+        "4395",
         "3905"
       ],
-      "note": "Merged into 05-epsp-03, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 4394 and 3905 are the same establishment, entered twice in Arabic under the same name. 05-epsp-03 is kept because it is the entry the registry published in both languages."
+      "note": "Merged into 05-epsp-03, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 4395 and 3905 are the same establishment, entered twice in Arabic under the same name. 05-epsp-03 is kept because it is the entry the registry published in both languages."
     },
     "07-epsp-07": {
       "merged_into": "07-epsp-03",
@@ -116,10 +116,10 @@
     "08-eph-07": {
       "merged_into": "08-eph-02",
       "msp_posts": [
-        "4470",
+        "4471",
         "3672"
       ],
-      "note": "Merged into 08-eph-02, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 4470 and 3672 are the same establishment, entered twice in Arabic under the same name. 08-eph-02 is kept because it is the entry the registry published in both languages."
+      "note": "Merged into 08-eph-02, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 4471 and 3672 are the same establishment, entered twice in Arabic under the same name. 08-eph-02 is kept because it is the entry the registry published in both languages."
     },
     "08-eph-08": {
       "merged_into": "08-eph-05",
@@ -228,10 +228,10 @@
     "17-eph-11": {
       "merged_into": "18-eph-02",
       "msp_posts": [
-        "4728",
+        "4729",
         "4727"
       ],
-      "note": "Merged into 18-eph-02, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 4728 and 4727 are the same establishment, entered twice in Arabic under the same name, and the absorbed entry carried the wrong wilaya tag. 18-eph-02 is kept because it is the entry the registry published in both languages."
+      "note": "Merged into 18-eph-02, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 4729 and 4727 are the same establishment, entered twice in Arabic under the same name, and the absorbed entry's wilaya tag contradicts the name both posts carry, which is the establishment's own place; nothing but that tag put it in wilaya 17. 18-eph-02 is kept because it is the entry the registry published in both languages."
     },
     "17-epsp-06": {
       "merged_into": "17-epsp-03",
@@ -271,7 +271,7 @@
         "4931",
         "5550"
       ],
-      "note": "Merged into 24-epsp-06, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 4931 and 5550 are the same establishment, entered twice in Arabic under the same name. 24-epsp-06 is kept because its entry is the registry's first one, and the other is the re-entry."
+      "note": "Merged into 24-epsp-06, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 4931 and 5550 are the same establishment, entered twice in Arabic under the same name. 24-epsp-06 is kept because its post is the one the registry published first, and the other is the repeat post."
     },
     "26-epsp-08": {
       "merged_into": "26-epsp-09",
@@ -279,7 +279,7 @@
         "4988",
         "5551"
       ],
-      "note": "Merged into 26-epsp-09, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 4988 and 5551 are the same establishment, entered twice in Arabic under the same name. 26-epsp-09 is kept because its entry is the registry's first one, and the other is the re-entry."
+      "note": "Merged into 26-epsp-09, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 4988 and 5551 are the same establishment, entered twice in Arabic under the same name. 26-epsp-09 is kept because its post is the one the registry published first, and the other is the repeat post."
     }
   },
   "ids": [

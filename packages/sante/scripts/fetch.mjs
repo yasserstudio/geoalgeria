@@ -35,8 +35,9 @@ import tls from "node:tls";
 import { X509Certificate, createHash } from "node:crypto";
 import { MIGRATIONS, TWIN_POSTS_NOTE, REPEAT_POSTS_NOTE, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds, readRetiredMigrations, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
 // The project's one fold, used for the repeat-post check, which compares two
-// names written in the SAME script (see the repeat-post section).
-import { conservativeKey } from "../../normalize/index.js";
+// names written in the SAME script (see the repeat-post section). The
+// conservative key decides; the loose key is reported beside it.
+import { conservativeKey, looseKey } from "../../normalize/index.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -707,9 +708,11 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats, verd
   // 3) the registry's repeat posts: an establishment entered a second time in a
   //    language it already had, which step 3 of the pairing cannot reach because
   //    it pairs one language with the other (see mergeRepeatPosts).
-  const slots = [];
-  for (const g of groups.values()) for (const slot of pairPosts(g.fr, g.ar, wil, verdicts)) slots.push(slot);
-  for (const slot of mergeRepeatPosts(slots, repeats)) {
+  const paired = [];
+  for (const g of groups.values()) for (const slot of pairPosts(g.fr, g.ar, wil, verdicts)) paired.push(slot);
+  const merged = mergeRepeatPosts(paired);
+  if (repeats) repeats.push(...merged.verdicts);
+  for (const slot of merged.slots) {
     if (slot.fr && slot.ar) stats.paired++;
     push(slot.fr, slot.ar, slot.repeat);
   }
@@ -972,15 +975,19 @@ export function pairTwinPosts(fr, ar, wil, usedF = new Set(), usedA = new Set())
 // --- the registry's repeat posts -------------------------------------------
 // A twin post is the SAME establishment in the OTHER language. A repeat post is
 // the same establishment in the language it already had: the registry entered it
-// twice, and WordPress gave the second entry a `-2` slug because the title
-// collided exactly. The twin rule cannot reach these, because it only ever pairs
-// a French post with an Arabic one, so both copies ship as records and split the
-// facility's coordinate and anything joined to it.
+// twice under the one name. The twin rule cannot reach these, because it only
+// ever pairs a French post with an Arabic one, so both copies ship as records and
+// split the facility's coordinate and anything joined to it.
 //
 // The measurement that scoped this: of 1,258 registry posts, exactly 7 titles are
-// published twice, and the conservative and the loose key of @geoalgeria/normalize
-// agree on all 7. The fold is what the gate reads, not the raw string, so a later
-// refresh that re-enters a title with a hamza or spacing variant is still caught.
+// published twice in one language. The gate reads a folded title, not the raw
+// string, so a later refresh that enters a title again with a hamza or spacing
+// variant is still caught. WordPress's own `-N` slug suffix is NOT evidence here:
+// `post_name` is truncated, so the suffix marks a collision on the truncated stem
+// and not on the title (the Ain Touta repeat pair carries -2 and -3, the
+// Berrouaghia one -2 and -4). The report publishes both @geoalgeria/normalize
+// keys per candidate instead, and the committed test asserts that the loose key
+// agrees on every pair this merges and separates every pair it keeps apart.
 //
 // Unlike the twin rule, the whole title has to fold to the same key, which is the
 // strongest form of the "complete match" the twin gate allows at a gap of two: a
@@ -993,9 +1000,14 @@ const REPEAT_LANGS = ["fr", "ar"];
 
 /** The whole title, folded. @geoalgeria/normalize is the project's one fold, and
  *  it applies here where it did not to the twin check: a repeat post is in the
- *  SAME script, which is exactly what a search key folds. */
+ *  SAME script, which is exactly what a search key folds. The gate reads the
+ *  conservative key; the loose key is published beside it as a second opinion
+ *  the test holds the rule to, never as the thing that decides. */
 export function repeatTitleKey(post) {
   return conservativeKey(post.title);
+}
+export function repeatTitleKeyLoose(post) {
+  return looseKey(post.title);
 }
 
 /** The post a slot is published under, and the post that places it, the same two
@@ -1003,36 +1015,40 @@ export function repeatTitleKey(post) {
 const slotPrimary = (slot) => slot.fr || slot.ar;
 const slotPlacer = (slot) => betterPlaced(slot.fr, slot.ar);
 
-/** Which of two duplicate slots keeps the record, and so keeps the public id the
- *  carry-over ledger has for its post. In order: the slot the registry itself
- *  vouched for by publishing both languages of it, then the slot whose commune
- *  match read more of the commune name, then the registry's earlier entry, the
- *  lower post id. The kept id is therefore the id that slot's post shipped
- *  under, which is not always the lower-sequence id of the two: the Ain Djasser
- *  EPSP keeps the record of post 3901, the registry's first entry, and retires
- *  the id of its `-2` re-entry. */
+/** Which of two duplicate entries keeps the record, and so keeps the public id
+ *  the carry-over ledger has for its post. In order: the entry the registry
+ *  itself vouched for by publishing both languages of it, then the entry whose
+ *  commune match read more of the commune name, then the post the registry
+ *  published first. The kept id is therefore the id that entry shipped under,
+ *  which is not always the lower-sequence id of the two: the Ain Djasser EPSP
+ *  keeps the record of post 3901, the first of the two, and retires the id its
+ *  repeat post held. Takes and returns the candidate ENTRIES, `{ slot, post,
+ *  lang }`, because the ledger has to name the post in the DUPLICATED language
+ *  and not whichever post the slot happens to be published under. */
 export function repeatKeeper(a, b) {
   const order = (keep, drop, because) => ({ keep, drop, because });
-  const langs = (slot) => (slot.fr ? 1 : 0) + (slot.ar ? 1 : 0);
+  const langs = (e) => (e.slot.fr ? 1 : 0) + (e.slot.ar ? 1 : 0);
   if (langs(a) !== langs(b))
     return langs(a) > langs(b) ? order(a, b, "both_languages") : order(b, a, "both_languages");
-  const [ra, rb] = [communeRank(slotPlacer(a)), communeRank(slotPlacer(b))];
+  const [ra, rb] = [communeRank(slotPlacer(a.slot)), communeRank(slotPlacer(b.slot))];
   if (ra !== rb) return ra > rb ? order(a, b, "better_placed") : order(b, a, "better_placed");
-  return Number(slotPrimary(a).msp_id) <= Number(slotPrimary(b).msp_id)
-    ? order(a, b, "earlier_entry")
-    : order(b, a, "earlier_entry");
+  return Number(a.post.msp_id) <= Number(b.post.msp_id)
+    ? order(a, b, "first_post")
+    : order(b, a, "first_post");
 }
 
 /** Why the kept post was kept, as the sentence the retirement note carries. */
 const REPEAT_KEPT_BECAUSE = {
   both_languages: "it is the entry the registry published in both languages",
   better_placed: "its entry is the one that names the establishment's commune",
-  earlier_entry: "its entry is the registry's first one, and the other is the re-entry",
+  first_post: "its post is the one the registry published first, and the other is the repeat post",
 };
 
 /**
- * Fold the registry's repeat posts into one slot each and return the slots that
- * survive, each merged one carrying `repeat`, the post it absorbed.
+ * Fold the registry's repeat posts into one record each. Returns the surviving
+ * slots, each a fresh object carrying `repeat`, the post it absorbed, plus the
+ * verdict on every candidate. The slots handed in are never mutated, so the
+ * decision is the return value and not a side effect on the caller's data.
  *
  * Candidates come from the weaker signal the measurement started from, two slots
  * of one type and wilaya whose LOCALITY folds to the same key in the same
@@ -1046,28 +1062,28 @@ const REPEAT_KEPT_BECAUSE = {
  *   Ouargla hospitals are refused here.
  * - `different_commune`: both slots name a commune outright and the two differ,
  *   which is two places whatever the titles agree on (the twin rule's own veto).
- * - `different_wilaya`: the two slots sit in different wilayas and both are
- *   placed. A commune name repeats across Algeria, so an identical title is not
- *   evidence on its own; only a pair where exactly ONE side is placed merges,
- *   as `same_title_one_placement`, because the other side then carries a wilaya
- *   tag and nothing at all to support it. That is the Jijel hospital the
- *   registry filed under Djelfa.
+ * - `different_wilaya`: the two slots sit in different wilayas and the placement
+ *   does not point one way. A commune name repeats across Algeria, so an
+ *   identical title is not evidence on its own. A cross-wilaya pair merges only
+ *   as `same_title_one_placement`, and only when the KEPT side is the placed one
+ *   and the absorbed side is placed nowhere, so a record is never moved into a
+ *   wilaya nothing but a registry tag puts it in. That is the Jijel hospital the
+ *   registry filed under Djelfa, whose own name reads جيجل.
  * - `absorbs_two_posts`: the absorbed slot is bilingual, so the merge would hand
  *   the record a repeat post in each language and `refs.msp_repeat` names one.
  *   Refused rather than silently dropping a post.
  * - `already_merged`: one of the two slots has already absorbed or been absorbed
  *   by a repeat post, so a third copy is left alone rather than chained.
- *
- * `verdicts`, when passed, collects every candidate for the review report.
  */
-export function mergeRepeatPosts(slots, verdicts = null) {
+export function mergeRepeatPosts(slots) {
   const buckets = new Map();
   const bucket = (k) => buckets.get(k) || buckets.set(k, []).get(k);
   for (const slot of slots)
     for (const lang of REPEAT_LANGS) {
       const post = slot[lang];
       if (!post) continue;
-      // the weak signal is wilaya-scoped, the strong one is national
+      // the weak signal is wilaya-scoped, the strong one is national. Both carry
+      // the type, so two entries in one bucket always share it.
       bucket(`loc|${lang}|${post.type}|${wcode(post.wilayaCode)}|${conservativeKey(post.locality)}`).push({ slot, post, lang });
       bucket(`title|${lang}|${post.type}|${repeatTitleKey(post)}`).push({ slot, post, lang });
     }
@@ -1089,54 +1105,66 @@ export function mergeRepeatPosts(slots, verdicts = null) {
   // registry returned the posts in.
   const ordered = [...cands.entries()].sort((p, q) => (p[0] < q[0] ? -1 : p[0] > q[0] ? 1 : 0));
   const dropped = new Set();
+  const absorbed = new Map(); // kept slot -> the post it absorbs
+  const verdicts = [];
   for (const [, { lo, hi }] of ordered) {
     let reason = null;
-    if (slotPrimary(lo.slot).type !== slotPrimary(hi.slot).type) reason = "different_type";
-    else if (repeatTitleKey(lo.post) !== repeatTitleKey(hi.post)) reason = "names_differ";
-    else if ([lo.slot, hi.slot].some((s) => dropped.has(s) || s.repeat)) reason = "already_merged";
+    if (repeatTitleKey(lo.post) !== repeatTitleKey(hi.post)) reason = "names_differ";
+    else if ([lo, hi].some((e) => dropped.has(e.slot) || absorbed.has(e.slot))) reason = "already_merged";
     else if (namesTwoCommunes(slotPlacer(lo.slot), slotPlacer(hi.slot))) reason = "different_commune";
 
     let keep = null, drop = null, because = null, crossWilaya = false;
     if (!reason) {
-      ({ keep, drop, because } = repeatKeeper(lo.slot, hi.slot));
-      crossWilaya = slotPrimary(keep).wilayaCode !== slotPrimary(drop).wilayaCode;
-      if (crossWilaya && [keep, drop].filter((s) => slotPlacer(s).commune).length !== 1)
+      ({ keep, drop, because } = repeatKeeper(lo, hi));
+      crossWilaya = slotPrimary(keep.slot).wilayaCode !== slotPrimary(drop.slot).wilayaCode;
+      // across a wilaya the KEPT side has to be the placed one: merging into an
+      // unplaced record would move the establishment into a wilaya nothing but a
+      // registry tag puts it in.
+      if (crossWilaya && !(slotPlacer(keep.slot).commune && !slotPlacer(drop.slot).commune))
         reason = "different_wilaya";
       // the absorbed slot would hand the record a post in each language, and a
       // record publishes one repeat post, so refuse rather than drop a post
-      else if (drop.fr && drop.ar) reason = "absorbs_two_posts";
+      else if (drop.slot.fr && drop.slot.ar) reason = "absorbs_two_posts";
     }
 
     if (!reason) {
-      keep.repeat = slotPrimary(drop);
-      dropped.add(drop);
+      absorbed.set(keep.slot, drop.post);
+      dropped.add(drop.slot);
     }
-    if (verdicts)
-      verdicts.push({
-        merged: !reason,
-        reason: reason ?? (crossWilaya ? "same_title_one_placement" : "same_title"),
-        language: lo.lang,
-        type: slotPrimary(lo.slot).type,
-        ...(reason
-          ? { msp: [String(lo.post.msp_id), String(hi.post.msp_id)] }
-          : {
-              wilaya_code: wcode(slotPrimary(keep).wilayaCode),
-              cross_wilaya: crossWilaya,
-              kept_because: because,
-              msp_kept: String(slotPrimary(keep).msp_id),
-              msp_repeat: String(slotPrimary(drop).msp_id),
-            }),
-        names: [lo.post.title, hi.post.title],
-        title_keys: [repeatTitleKey(lo.post), repeatTitleKey(hi.post)],
-        wilaya_codes: [wcode(lo.post.wilayaCode), wcode(hi.post.wilayaCode)],
-        communes: [lo, hi].map((e) => {
-          const code = slotPlacer(e.slot).commune?.code_commune;
-          return code == null ? null : String(code).padStart(4, "0");
-        }),
-        slugs: [lo.post.slug, hi.post.slug],
-      });
+    // Every array below describes the same two posts, in the same order, as the
+    // ids beside it: [kept, absorbed] once a pair merges, and [first post,
+    // second post] for a pair kept apart, which has no kept side.
+    const sides = reason ? [lo, hi] : [keep, drop];
+    verdicts.push({
+      merged: !reason,
+      reason: reason ?? (crossWilaya ? "same_title_one_placement" : "same_title"),
+      language: lo.lang,
+      type: lo.post.type,
+      ...(reason
+        ? { msp: sides.map((e) => String(e.post.msp_id)) }
+        : {
+            wilaya_code: wcode(slotPrimary(keep.slot).wilayaCode),
+            cross_wilaya: crossWilaya,
+            kept_because: because,
+            msp_kept: String(keep.post.msp_id),
+            msp_repeat: String(drop.post.msp_id),
+          }),
+      names: sides.map((e) => e.post.title),
+      conservative_keys: sides.map((e) => repeatTitleKey(e.post)),
+      loose_keys: sides.map((e) => repeatTitleKeyLoose(e.post)),
+      wilaya_codes: sides.map((e) => wcode(e.post.wilayaCode)),
+      communes: sides.map((e) => {
+        const code = slotPlacer(e.slot).commune?.code_commune;
+        return code == null ? null : String(code).padStart(4, "0");
+      }),
+    });
   }
-  return slots.filter((slot) => !dropped.has(slot));
+  return {
+    slots: slots
+      .filter((slot) => !dropped.has(slot))
+      .map((slot) => ({ fr: slot.fr, ar: slot.ar, repeat: absorbed.get(slot) ?? null })),
+    verdicts,
+  };
 }
 
 // Locality tokens for FR↔AR matching (AR transliterated; wilaya name removed).
@@ -1476,17 +1504,30 @@ function assignIds(rows) {
   );
 }
 
+/** Every kind of Ministry of Health post a record can cite, in the order a
+ *  resolution tries them: its own primary post, the other-language twin post,
+ *  and the same-language repeat post it absorbed. One list, so a further kind is
+ *  added here and not at each site that walks them. */
+export const MSP_POST_KEYS = ["msp", "msp_twin", "msp_repeat"];
+
+/** The MSP post ids a record cites, in `MSP_POST_KEYS` order, as strings, with
+ *  the kinds it does not carry left out. */
+export const mspPosts = (record) =>
+  MSP_POST_KEYS.map((key) => record?.refs?.[key])
+    .filter((post) => post != null)
+    .map(String);
+
 /**
  * The carry-over key: the MSP post id the record SHIPPED under, found through
- * either of the posts it carries.
+ * any of the posts it carries.
  *
  * A bilingual record stands for two registry posts, so the naive key, the
  * record's own primary post, moves the instant the pairing changes: when a
  * paired record loses its French post the key flips to the Arabic one, the
  * published id retires, and a place that never moved is handed a new public
- * join key. Resolving the key through `refs.msp` OR `refs.msp_twin` keeps it
- * fixed in both directions: gaining a twin, losing a twin, and merging two
- * half-records all land on the id the place already had.
+ * join key. Resolving the key through any of `MSP_POST_KEYS` keeps it fixed in
+ * every direction: gaining a twin, losing a twin, merging two half-records and
+ * absorbing a repeat post all land on the id the place already had.
  *
  * Resolution is an assignment over all the rows, not a per-record lookup,
  * because one committed id cannot be handed to two records. A row whose OWN
@@ -1507,8 +1548,8 @@ export function mspCarryKey(committed, rows = []) {
   for (const r of committed) {
     const primary = r.refs?.msp;
     if (primary == null) continue;
-    for (const post of [primary, r.refs?.msp_twin, r.refs?.msp_repeat])
-      if (post != null && !primaryByPost.has(String(post))) primaryByPost.set(String(post), String(primary));
+    for (const post of mspPosts(r))
+      if (!primaryByPost.has(post)) primaryByPost.set(post, String(primary));
   }
 
   const assigned = new Map();
@@ -1522,9 +1563,8 @@ export function mspCarryKey(committed, rows = []) {
   }
   for (const r of rows) {
     if (assigned.has(r)) continue;
-    for (const post of [r.refs?.msp, r.refs?.msp_twin, r.refs?.msp_repeat]) {
-      if (post == null) continue;
-      const primary = primaryByPost.get(String(post));
+    for (const post of mspPosts(r)) {
+      const primary = primaryByPost.get(post);
       if (primary && !claimed.has(primary)) {
         assigned.set(r, `msp:${primary}`);
         claimed.add(primary);
@@ -1633,10 +1673,7 @@ async function main() {
  */
 export function resolveTwinPairs(verdicts, rows, committed, priorMigrations = {}) {
   const liveByPost = new Map();
-  for (const r of rows) {
-    if (r.refs?.msp != null) liveByPost.set(String(r.refs.msp), r.id);
-    if (r.refs?.msp_twin != null) liveByPost.set(String(r.refs.msp_twin), r.id);
-  }
+  for (const r of rows) for (const post of mspPosts(r)) liveByPost.set(post, r.id);
   // Where the Arabic half's id is read from, in order: the committed data on the
   // release that merges the pair, and the ledger itself on every run after it,
   // when that record is no longer in the data to look up. The ledger is
@@ -1711,15 +1748,13 @@ function writeTwinReport({ pairs, refused }) {
  *
  * The kept id is the one the SURVIVING post shipped under, chosen by
  * `repeatKeeper` and not by which id sorts first, because here the two posts are
- * not two halves published together: one is the establishment and the other is a
- * re-entry of it, and the record has to stay on the post that carries the
- * establishment's two names and its commune (see repeatKeeper).
+ * not two halves published together: one entry carries the establishment's two
+ * names and its commune and the other carries less, and the record has to stay
+ * on the fuller one (see repeatKeeper).
  */
 export function resolveRepeatPairs(verdicts, rows, committed, priorMigrations = {}) {
   const liveByPost = new Map();
-  for (const r of rows)
-    for (const post of [r.refs?.msp, r.refs?.msp_twin, r.refs?.msp_repeat])
-      if (post != null) liveByPost.set(String(post), r.id);
+  for (const r of rows) for (const post of mspPosts(r)) liveByPost.set(post, r.id);
   // Where the absorbed record's id is read from, in order: the committed data on
   // the release that merges the pair, and the append-only ledger on every run
   // after it, when that record is no longer in the data to look up.
@@ -1751,7 +1786,10 @@ export function resolveRepeatPairs(verdicts, rows, committed, priorMigrations = 
             `Merged into ${kept_id}, which carries the establishment's names and its commune. ` +
             `${REPEAT_POSTS_NOTE} Posts ${t.msp_kept} and ${t.msp_repeat} are the same establishment, ` +
             `entered twice in ${t.language === "fr" ? "French" : "Arabic"} under the same name` +
-            (t.cross_wilaya ? ", and the absorbed entry carried the wrong wilaya tag" : "") +
+            (t.cross_wilaya
+              ? `, and the absorbed entry's wilaya tag contradicts the name both posts carry, which is ` +
+                `the establishment's own place; nothing but that tag put it in wilaya ${t.wilaya_codes[1]}`
+              : "") +
             `. ${kept_id} is kept because ${REPEAT_KEPT_BECAUSE[t.kept_because]}.`,
         };
       return { kept_id, absorbed_id, ...t };
@@ -1778,7 +1816,12 @@ function writeRepeatReport({ pairs, kept }) {
           "candidate it kept apart, with the reason. Candidates come from two signals, two posts of one " +
           "type and wilaya whose locality folds to the same @geoalgeria/normalize key, and two posts whose " +
           "whole title folds to the same key; only the second merges, so a name the registry wrote " +
-          "differently stays two records. Regenerated by `npm run fetch` in packages/sante.",
+          "differently stays two records. `conservative_keys` is what the gate reads and `loose_keys` is " +
+          "the second opinion test/sante-repeat-posts.test.mjs holds it to: the loose key has to agree on " +
+          "every pair merged here and to separate every pair kept apart. WordPress's `-N` slug suffix is " +
+          "not used as evidence, because post_name is truncated and the suffix marks a collision on the " +
+          "truncated stem rather than on the title. Every array describes the same two posts, in the same " +
+          "order, as the ids beside it. Regenerated by `npm run fetch` in packages/sante.",
         dataset: "sante",
         merged: pairs.length,
         kept: kept.length,

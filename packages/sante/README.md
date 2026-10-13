@@ -15,7 +15,7 @@
 **661 public health establishments** across all **58 wilayas** with health
 directorates, public hospitals (EPH), proximity-health establishments (EPSP),
 specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **591 geocoded** (122 to a precise
-OpenStreetMap/Wikidata point, 11 verified by hand, 465 to a commune centroid) with commune/wilaya
+OpenStreetMap/Wikidata point, 11 verified by hand, 458 to a commune centroid) with commune/wilaya
 linkage. Shipped as JSON, CSV, GeoJSON, and
 TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 

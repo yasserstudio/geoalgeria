@@ -17,7 +17,7 @@ direction de la santé – établissements publics hospitaliers (EPH), de santé
 proximité (EPSP), hospitaliers spécialisés (EHS) et centres hospitalo-universitaires
 (CHU) du **Ministère de la Santé (MSP)**, bilingues français/arabe, **591
 géolocalisés** (122 sur un point précis OpenStreetMap/Wikidata, 11 vérifiés à la
-main, 465 sur un centroïde de commune) avec rattachement commune/wilaya.
+main, 458 sur un centroïde de commune) avec rattachement commune/wilaya.
 Livré en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -162,7 +162,8 @@ que cartographie OpenStreetMap vivent dans
 `source` vaut toujours `"msp"` (le registre du Ministère de la
 Santé) ; `refs` porte les identifiants de provenance ayant contribué –
 toujours `msp`, plus `msp_twin` quand le registre a publié le même
-établissement une seconde fois dans l'autre langue, plus `osm` ou `wikidata`
+établissement une seconde fois dans l'autre langue et `msp_repeat` quand il
+l'a saisi une seconde fois dans la même langue, plus `osm` ou `wikidata`
 quand la coordonnée a été remplacée par un point précis. `geo_precision` vaut `"exact"`, `"approximate"` ou
 `null` ; `geo_method` indique comment la coordonnée a été obtenue (`osm_point`,
 `wikidata_point`, `commune_centroid`, `owner_verified`, ou `null`).
@@ -208,7 +209,7 @@ Lancez `npm run fetch` pour régénérer les sorties. Le script :
    Un enregistrement cite les deux fiches : `refs.msp` est sa fiche principale
    (française) et `refs.msp_twin` la fiche arabe, de sorte que les deux
    identifiants résolvent vers lui ;
-3. intègre les **fiches en double** du registre : 7 établissements ont été
+3. intègre les **fiches répétées** du registre : 7 établissements ont été
    saisis une seconde fois dans la langue qu'ils avaient déjà, ce que l'étape 2
    ne peut atteindre puisqu'elle n'apparie qu'une fiche française avec une fiche
    arabe. Le titre entier doit se replier sur la même clé
