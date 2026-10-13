@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { cpSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join, sep } from "node:path";
+import { join, relative, sep } from "node:path";
 import test, { after, before } from "node:test";
 
 import { assertRepoUnchanged, repoStatus } from "./lib/repo-clean.mjs";
@@ -163,4 +163,99 @@ test("commune points are only corrected beside the algeria.json they must agree 
     () => fix(dir, "--write", ["communes.geojson"]),
     (error) => /algeria\.json/.test(error.stderr),
   );
+});
+
+// --- --target scoping -------------------------------------------------------
+// The fixer ran every one of its writers at module level, against the repo it
+// lives in, even when --target named a copy somewhere else: during #243 that put
+// El Euch (3427) back on a superseded centroid in csv/communes.csv and
+// sql/full.sql while the suite passed, because the test suite's own --target run
+// rewrote two tracked files (private tracker #247). #252's supersede guard made
+// that particular revert harmless; the scoping stayed wrong, and it is invisible
+// while the repo's own carriers are already correct, since every writer then
+// produces byte-identical content. So the copy is drifted first, in one carrier
+// per writer, and then the whole copy must come out untouched.
+
+/** Every file under `dir`, as a path -> contents map. */
+function treeOf(dir, base = dir) {
+  const out = new Map();
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) for (const [k, v] of treeOf(path, base)) out.set(k, v);
+    else out.set(relative(base, path), readFileSync(path, "utf8"));
+  }
+  return out;
+}
+
+/** Give one carrier per writer a value the fixer is recorded as replacing. */
+function driftRepoCopy(repo) {
+  const data = join(repo, "packages", "dataset", "data");
+  const edit = (relPath, change) => {
+    const path = join(data, relPath);
+    writeFileSync(path, change(readFileSync(path, "utf8")));
+  };
+  const editJson = (relPath, change) =>
+    edit(relPath, (text) => {
+      const doc = JSON.parse(text);
+      change(doc);
+      return `${JSON.stringify(doc, null, 2)}\n`;
+    });
+
+  // patchCsv: commune 527 is keyed on its trailing code, so its old name is safe.
+  // data/csv/communes.csv is CRLF, so that code is the last field before the \r.
+  edit(
+    join("csv", "communes.csv"),
+    (text) =>
+      text
+        .split("\n")
+        .map((line) => (/,527\r?$/.test(line) ? line.replace("Lemsane,", "Lemcene,") : line))
+        .join("\n"),
+  );
+  // patchSql: same row, keyed on the trailing code too.
+  edit(
+    join("sql", "full.sql"),
+    (text) => text.split("\n").map((line) => (line.endsWith(", 527),") ? line.replace("'Lemsane'", "'Lemcene'") : line)).join("\n"),
+  );
+  // The ecommerce carriers are keyed on the commune name, so the drift goes in
+  // the denormalized wilaya name instead: wilaya 28 is recorded as "M'sila".
+  editJson(join("ecommerce", "communes.json"), (rows) => {
+    for (const row of rows) if (row.wilaya_code === 28) row.wilaya_name_fr = "M'sila";
+  });
+  edit(
+    join("ecommerce", "communes.csv"),
+    (text) => text.split("\n").map((line) => line.replace(",28,M'Sila,", ",28,M'sila,")).join("\n"),
+  );
+  edit(
+    join("ecommerce", "communes.sql"),
+    (text) => text.split("\n").map((line) => line.replace(", 28, 'M''Sila', ", ", 28, 'M''sila', ")).join("\n"),
+  );
+  // The JSON and GeoJSON writers, and the delivery tables the fixer rebuilds
+  // from algeria.json on every run.
+  editJson("algeria.json", (doc) => {
+    for (const wilaya of doc) if (wilaya.code === 28) wilaya.name_fr = "M'sila";
+  });
+  editJson(join("geojson", "communes.geojson"), (doc) => {
+    for (const feature of doc.features) {
+      if (feature.properties.wilaya_code === 5 && feature.properties.name_fr === "Lemsane") {
+        feature.properties.name_fr = "Lemcene";
+      }
+    }
+  });
+  editJson(join("delivery", "yalidine.json"), (doc) => {
+    doc.zones[0].wilaya_name_fr = "not a wilaya name";
+  });
+}
+
+test("a --target run writes the targets and nothing else", () => {
+  const dir = appCopy();
+  const repo = join(dir, "repo");
+  driftRepoCopy(repo);
+  const snapshot = treeOf(repo);
+
+  fix(dir, "--write", ["algeria.json"]);
+
+  const after = treeOf(repo);
+  const written = [...snapshot.keys()].filter((path) => after.get(path) !== snapshot.get(path));
+  assert.deepEqual(written, [], `${written.length} file(s) outside --target were written`);
+  assert.deepEqual([...after.keys()].sort(), [...snapshot.keys()].sort(), "a file outside --target was added or removed");
 });
