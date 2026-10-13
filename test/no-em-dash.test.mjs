@@ -115,6 +115,12 @@ test("nameEmDashPointers points at names only, at any depth", () => {
     "/1/former_names_fr/0",
   ]);
   assert.deepEqual(nameEmDashPointers({ name: "Al Salam Bank - Algeria", note: 1 }), []);
+  // Scope is inherited through a nested object, not only through an array. No
+  // published file shapes a name this way today, and the gate should not be the
+  // thing that depends on that.
+  assert.deepEqual(nameEmDashPointers({ name: { fr: `a ${EM_DASH} b` } }), ["/name/fr"]);
+  assert.deepEqual(nameEmDashPointers({ note: { name_fr: `a ${EM_DASH} b` } }), ["/note/name_fr"]);
+  assert.deepEqual(nameEmDashPointers({ note: { detail: `a ${EM_DASH} b` } }), []);
 });
 
 test("nameEmDashErrors names the file, the pointer and the separator to use", () => {

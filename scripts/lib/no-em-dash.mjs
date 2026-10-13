@@ -35,9 +35,12 @@ const EM_DASH_RUN = new RegExp(`[ \t]*${EM_DASH}[ \t]*`, "g");
 const NAME_KEY = /(^|_)names?(_|$)/;
 
 // The two rules differ only in which keys they look under, so they share one
-// walk. `gated(key)` is that difference; `inScope` carries its verdict down
-// through arrays, so a list of names is checked entry by entry while an object
-// nested under a name key is judged by its own keys, as a name is never one.
+// walk. `gated(key)` is that difference, and `inScope` carries its verdict all
+// the way down: once a key puts its subtree in scope, every string under it is
+// checked, through arrays and through nested objects alike. Inheriting through
+// arrays only would have left `{ name: { fr: "a <em dash> b" } }` uninspected,
+// which no published file happens to contain today and which a gate should not
+// depend on.
 function pointersWhere(value, gated, inScope, pointer = "") {
   if (typeof value === "string")
     return inScope && value.includes(EM_DASH) ? [pointer || "/"] : [];
@@ -45,7 +48,7 @@ function pointersWhere(value, gated, inScope, pointer = "") {
     return value.flatMap((v, i) => pointersWhere(v, gated, inScope, `${pointer}/${i}`));
   if (value && typeof value === "object")
     return Object.entries(value).flatMap(([k, v]) =>
-      pointersWhere(v, gated, gated(k), `${pointer}/${k}`),
+      pointersWhere(v, gated, inScope || gated(k), `${pointer}/${k}`),
     );
   return [];
 }
