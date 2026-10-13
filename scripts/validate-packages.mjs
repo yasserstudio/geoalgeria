@@ -938,10 +938,14 @@ function validateDataset(pkg, spec) {
   // source stating something: each was an em dash typed where that package's own
   // names use " - " (97 name strings in ecoles; of the 21 bank names, every one
   // of the 10 taking a separator at all). It is not a repo-wide separator rule:
-  // 486 name values use an en dash, and the gate is about the em dash only. This is the
-  // canonical JSON; the CSV, GeoJSON and SQL mirrors are written from these same
-  // rows, so a clean record here is a clean mirror. test/no-em-dash.test.mjs
-  // re-checks the GeoJSON itself, and does not parse the CSV or the SQL.
+  // 486 name values use an en dash, and the gate is about the em dash only.
+  //
+  // This walks the canonical JSON. The CSV and SQL mirrors are a projection of
+  // these same columns, so a clean record here is a clean line there. The
+  // GeoJSON is not: aviation's routes.geojson resolves from_name and to_name at
+  // emit time, fields no row in routes.json carries, so a mirror can hold a name
+  // this check never sees. test/no-em-dash.test.mjs walks every published
+  // GeoJSON for that reason, and parses neither the CSV nor the SQL.
   for (const problem of nameEmDashErrors([{ label, json: arr }])) fail(problem);
 
   // Every populated commune_code is a foreign key into the flagship commune
