@@ -119,8 +119,10 @@ it in the generator that writes the field, never in the generated file:
 `data/geojson/*.metadata.json` and fails on one
 ([`scripts/lib/no-em-dash.mjs`](scripts/lib/no-em-dash.mjs)).
 
-A published **name** is covered too, and takes ` - ` instead, the separator
-every other record here already uses. Put an upstream name through
+A published **name** is covered too, and takes ` - ` instead: the separator the
+affected package's own names already use, read off its data rather than imposed
+repo-wide (the repository has no single separator, and 486 name values use an en
+dash, which this rule leaves alone). Put an upstream name through
 `withoutEmDash()` in the generator that reads it (as `packages/ecoles` does with
 the raw OpenStreetMap tag) rather than editing the generated file; a
 hand-curated record is fixed in its own source file. `pnpm validate` checks

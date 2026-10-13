@@ -7,9 +7,14 @@
 // A record's own `name` was out of scope at first, as a value rather than prose.
 // #281 settled it the other way: the three records that had reached npm with
 // one (four name strings in all) were nobody's decision, just a separator typed
-// where every neighbouring record uses " - " (one hand-curated bank name, in
-// both `name` and `name_fr`, and two OpenStreetMap school names passed straight
-// through a fetcher). So `nameEmDashErrors` gates published names too, and a
+// where the records around it use " - " (one hand-curated bank name, in both
+// `name` and `name_fr`, and two OpenStreetMap school names passed straight
+// through a fetcher). " - " is what those two packages' own names already say,
+// not a repo-wide convention: 97 `ecoles` name strings carry it and none an en
+// dash, and of the 21 bank names the 10 that take a separator at all now all
+// read " - ", CNEP having been the only exception. Repo-wide the picture is
+// mixed, 486 name values use an en dash (U+2013), mostly in `culture` and
+// `enseignement-superieur`; that is a separate question this rule leaves alone. So `nameEmDashErrors` gates published names too, and a
 // generator that reads an upstream name puts it through `withoutEmDash` first.
 // Everything other than a name stays out: an address or a note is the source's
 // own sentence, and rewriting one would be a data decision.

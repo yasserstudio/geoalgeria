@@ -935,8 +935,10 @@ function validateDataset(pkg, spec) {
 
   // A published name is gated like the metadata around it. #281 found three
   // records carrying one, four name strings between them, and none of them was a
-  // source stating something: each was an em dash typed where every neighbouring
-  // record uses " - ". This is the
+  // source stating something: each was an em dash typed where that package's own
+  // names use " - " (97 name strings in ecoles; of the 21 bank names, every one
+  // of the 10 taking a separator at all). It is not a repo-wide separator rule:
+  // 486 name values use an en dash, and the gate is about the em dash only. This is the
   // canonical JSON; the CSV, GeoJSON and SQL mirrors are written from these same
   // rows, so a clean record here is a clean mirror. test/no-em-dash.test.mjs
   // re-checks the GeoJSON itself, and does not parse the CSV or the SQL.
