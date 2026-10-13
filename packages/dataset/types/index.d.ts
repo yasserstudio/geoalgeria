@@ -272,7 +272,7 @@ declare namespace algeriaGeodata {
     wilaya_code: number;
     wilaya_name_fr: string;
     wilaya_name_ar: string;
-    /** `null` on the same 5 communes as `Commune.postal_code`. */
+    /** `null` on the same 1 commune as `Commune.postal_code`. */
     postal_code: string | null;
   }
 

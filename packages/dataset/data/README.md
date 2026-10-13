@@ -178,7 +178,7 @@ all eleven wilayas of the 2026 cohort (59–69). See
 | `wilaya_code` | integer | Wilaya number |
 | `wilaya_name_fr` | string | Wilaya French name (denormalized) |
 | `wilaya_name_ar` | string | Wilaya Arabic name (denormalized) |
-| `postal_code` | string \| null | Postal code (null for the same 5 communes) |
+| `postal_code` | string \| null | Postal code (null for the same 1 commune) |
 
 ### Daira
 
@@ -257,7 +257,7 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 - **69 wilayas** — complete (original 48 + 2019 reform + 2026 reform)
 - **551 dairas**
 - **1,541 communes** (complete; the 13 name-twin communes of the reform wilayas were added 2026-07-29 from `research/_communes-reconcile/`)
-- **Postal codes** — 100%
+- **Postal codes**: 1,540 of 1,541 (99.94%); Larbaa (561) in Batna has no citable Algérie Poste office code
 - **OpenStreetMap / Wikidata links** on 1,537 / 1,536 of the 1,541 communes and on all 69 wilayas
 - **Formats** — JSON, CSV, GeoJSON, SQL
 
