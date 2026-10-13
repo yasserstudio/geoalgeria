@@ -1,48 +1,31 @@
 ---
-"@geoalgeria/agriculture": patch
-"@geoalgeria/aviation": patch
-"@geoalgeria/banques": patch
 "@geoalgeria/buses": patch
-"@geoalgeria/cliniques": patch
-"@geoalgeria/culture": patch
-"geoalgeria": patch
-"@geoalgeria/djezzy": patch
-"@geoalgeria/ecoles": patch
-"@geoalgeria/emploi": patch
-"@geoalgeria/enseignement-superieur": patch
-"@geoalgeria/ferroviaire": patch
-"@geoalgeria/formation-professionnelle": patch
-"@geoalgeria/gares-routieres": patch
-"@geoalgeria/industrie-pharmaceutique": patch
-"@geoalgeria/jeunesse": patch
-"@geoalgeria/livraison": patch
-"@geoalgeria/mobilis": patch
-"@geoalgeria/mosquees": patch
-"@geoalgeria/normalize": patch
-"@geoalgeria/ooredoo": patch
-"@geoalgeria/pharma": patch
-"@geoalgeria/pharmacies": patch
-"@geoalgeria/poste": patch
-"@geoalgeria/protection-civile": patch
 "@geoalgeria/sante": patch
-"@geoalgeria/schema": patch
-"@geoalgeria/sports": patch
-"@geoalgeria/telecom": patch
-"@geoalgeria/tourisme": patch
-"@geoalgeria/transport": patch
 ---
 
-English copy now spells the noun "licence" the one way the rest of the docs
-already do (en-GB). No English README heading spells it "License" any more:
-`Licence & attribution` in 19 of them, `Source & licence` in 7, a bare `Licence`
-in 4, `Licence & disclaimer` in the root README, and `Sources and licences` in
-`@geoalgeria/buses`, which already read that way. The OpenStreetMap share-alike
-sentence asks for "a compatible licence"; the `transport` umbrella points at each member's own
-"data licence"; and `@geoalgeria/buses` states "no open reuse licence" in its 14
-Operator source descriptors, the wording its NOTICE, its README and the `##
-Data` section of its LICENSE already carried. That LICENSE's `## Code` preamble
-was the one place still reading "This license applies to package code", and now
-reads "licence" as well. The identifier keeps its own spelling: the manifest
-`license` key, the `license` metadata field, SPDX expressions, the `LICENSE`
-file name, licence URLs and the verb "licensed" are untouched, and the French and
-Arabic READMEs are unaffected. No record changes.
+The noun "licence" is now spelled the en-GB way in every file these two packages publish.
+
+`@geoalgeria/buses` states "no open reuse licence" in its 14 Operator source
+descriptors, in `data/metadata.json` and in the catalog entry. That is the
+wording its NOTICE, its README and the `## Data` section of its LICENSE already
+carried; the LICENSE's `## Code` preamble was the one line still reading "This
+license applies to package code", and reads "licence" now too. The descriptor
+text is written by `scripts/lib/v2-transforms.mjs`, so it was corrected there
+and regenerated rather than edited in place.
+
+`@geoalgeria/sante` asks for "a compatible licence" in the OpenStreetMap
+share-alike sentence of both its README and its LICENSE, which is what
+`packages/dataset/LICENSE` already said.
+
+The identifier keeps its own spelling throughout: the manifest `license` key,
+the `license` metadata field, SPDX expressions, the `LICENSE` file name, licence
+URLs, the shields.io badge labels and every use of the verb or adjective
+"licensed". The French and Arabic READMEs are untouched. No record changes.
+
+The same sweep corrected the English README of every other package too, so that
+no English README heading spells the noun "License" any more (`Licence &
+attribution` in 19 of them, `Source & licence` in 7, a bare `Licence` in 4,
+`Licence & disclaimer` in the root README, and `Sources and licences` in buses,
+which already read that way). Those packages are deliberately not bumped here:
+nothing they publish changed but README prose, and each carries the corrected
+text into whatever release it next has for a reason of its own.
