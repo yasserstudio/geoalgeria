@@ -212,7 +212,7 @@ function normOSM(elements, publishedOsmIds = new Set()) {
     // neither field ever holds a word the source does not. Preference is unchanged:
     // the dedicated tag, then the raw name, then the other tag. A Tifinagh half
     // goes in neither field, because this package publishes no Tamazight name
-    // field; it stays on `name`, which is the raw tag.
+    // field; it stays on `name`.
     const halves = [splitByScript(tagAr), splitByScript(rawName), splitByScript(tagFr)];
     const nameAr = halves.find((h) => h.ar)?.ar ?? null;
     const nameFr = [halves[2], halves[1], halves[0]].find((h) => h.la)?.la ?? null;
