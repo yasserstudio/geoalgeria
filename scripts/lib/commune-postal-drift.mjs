@@ -117,3 +117,50 @@ export function supersededByCode() {
   }
   return out;
 }
+
+/**
+ * The communes this release gives a postal code for the FIRST time: every commune
+ * whose `postal_code` was null in the four JSON tables before this branch and is a
+ * derived office code after it.
+ *
+ * WHY THE SCRIPT NEEDS THEM NAMED. The from/to contract accepts a row holding the
+ * value `data/algeria.json` carries or the value the run derives. Once the table is
+ * repaired those two are the same value, so null stops being either of them, and a
+ * carrier that has not had this release yet is refused rather than repaired: a
+ * `--write --target` run against the web app's own copy of the table reported 135
+ * problems and wrote nothing, which is the whole point of `--target`. Null is
+ * therefore accepted as a `from` for exactly these 135 communes, which is a
+ * statement about a release and not a general licence to overwrite a blank: a
+ * commune that is not here and holds null still aborts the run.
+ *
+ * NOT THE SAME CLAIM AS SUPERSEDED_CARRIER_CODES. A row there says the mirrors
+ * published a value and it was wrong. A code here says there was no value to
+ * publish. Ain Kerma (3125) is in the ledger with `superseded: null` because the
+ * mirrors published nothing while the table had 31059; it is not here, because the
+ * table was not blank. 21 of these 135 are in the ledger as well, with the code a
+ * mirror published, and both readings have to pass: a mirror holding that code, and
+ * a fork holding nothing.
+ *
+ * @type {readonly number[]}
+ */
+export const FILLED_FROM_NULL = [
+  310, 311, 312, 313, 314, 315, 316, 317, 319, 321, 322, 324,
+  514, 515, 518, 527, 529, 542, 543, 555, 556, 703, 717, 718,
+  719, 720, 1102, 1202, 1209, 1215, 1228, 1310, 1332, 1341, 1343, 1409,
+  1429, 1430, 1435, 1439, 1440, 1604, 1641, 1654, 1657, 1706, 1707, 1708,
+  1709, 1711, 1717, 1718, 1719, 1720, 1721, 1722, 1724, 1729, 1731, 1732,
+  1733, 1734, 1735, 1802, 2304, 2603, 2604, 2608, 2610, 2617, 2618, 2622,
+  2623, 2625, 2631, 2632, 2635, 2638, 2640, 2641, 2642, 2649, 2651, 2653,
+  2657, 2658, 2664, 2807, 2808, 2820, 2821, 2822, 2823, 2824, 2825, 2826,
+  2827, 2833, 2834, 2835, 2836, 2837, 2838, 2839, 2841, 2842, 2843, 2844,
+  2846, 2847, 3207, 3208, 3209, 3213, 3214, 3216, 3219, 3427, 4124, 4241,
+  4316, 4419, 4508, 4602, 4614, 4626, 4627, 4703, 4834, 5106, 5206, 5502,
+  5602, 5801, 5803,
+];
+
+/** The communes a null is a valid `from` for, as a set. */
+export function filledFromNull() {
+  const out = new Set(FILLED_FROM_NULL);
+  if (out.size !== FILLED_FROM_NULL.length) throw new Error("a code_commune is listed twice");
+  return out;
+}

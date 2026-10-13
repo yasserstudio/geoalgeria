@@ -14,6 +14,7 @@ import { cpSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
+import { filledFromNull } from "../scripts/lib/commune-postal-drift.mjs";
 import { assertRepoUnchanged, repoStatus } from "./lib/repo-clean.mjs";
 
 const REPO = join(import.meta.dirname, "..");
@@ -54,4 +55,28 @@ test("a target value the mapping does not account for stops the run", () => {
     (error) => /Adrar \(101\) holds "99999"/.test(error.stderr) && /nothing written/.test(error.stderr),
   );
   assert.equal(JSON.parse(readFileSync(path, "utf8"))[0].communes[0].postal_code, "99999", "no carrier is half-written");
+});
+
+test("a fork that has not had this release yet takes the codes it fills", () => {
+  // The web app keeps its own copy of the table, so until it is relinked it holds
+  // null for every commune this release gives a first code to. Those nulls are the
+  // state --target exists to repair, and the from/to contract used to refuse all
+  // 135 of them: once the table is repaired the `from` and the `to` are the same
+  // value, which null is neither of.
+  const path = copyOfTable();
+  const doc = JSON.parse(readFileSync(path, "utf8"));
+  const blank = filledFromNull();
+  let blanked = 0;
+  for (const wilaya of doc) {
+    for (const commune of wilaya.communes) {
+      if (!blank.has(commune.code_commune)) continue;
+      commune.postal_code = null;
+      blanked++;
+    }
+  }
+  assert.equal(blanked, blank.size, "every commune this release fills is in the fork copy");
+  writeFileSync(path, `${JSON.stringify(doc, null, 2)}\n`);
+
+  run(path);
+  assert.equal(readFileSync(path, "utf8"), readFileSync(TABLE, "utf8"), "the fork takes every code this release fills");
 });
