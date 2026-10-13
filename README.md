@@ -28,13 +28,16 @@ GeoAlgeria is a solo-built, open project with one goal: to become the first and 
 
 - **[Cross-sector atlas](https://geoalgeria.com):** every sector on a single map, from post offices to mosques to hospitals, with a per-wilaya density view.
 - **[Live wildfire map](https://geoalgeria.com/fires):** NASA FIRMS satellite hotspots alongside official Civil Protection bulletins, updated through the fire season (launched 23 July 2026).
+- **[Flight routes globe](https://geoalgeria.com/flights):** every nonstop Air Algérie route on a globe, marked verified, listed, or announced.
 - **[3,951 per-wilaya pages](https://geoalgeria.com/wilaya):** one page for every wilaya and sector, built to be searchable.
 - **[Layer stacking](https://geoalgeria.com/explore):** switch sectors on and off and read them together on the same map.
 - **Command-K search:** jump to any wilaya or commune straight from the keyboard.
 - **Arabic, French, and English:** the entire interface, fully right-to-left in Arabic.
 - **[Provenance on every record](https://geoalgeria.com/sources):** each point shows where it came from and when it last changed. See the [sources](https://geoalgeria.com/sources) and [changelog](https://geoalgeria.com/changelog).
 
-[![The live wildfire map at geoalgeria.com/fires](assets/screenshots/fires-map.png)](https://geoalgeria.com/fires)
+[![The flight routes globe at geoalgeria.com/flights](assets/screenshots/flights-map.png)](https://geoalgeria.com/flights)
+
+<p align="center"><a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/commune-casbah-ar-mobile.jpg" alt="The Casbah commune page in Arabic on a phone at geoalgeria.com" width="560"></a></p>
 
 ## The data
 

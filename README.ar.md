@@ -30,13 +30,16 @@
 
 - **[أطلس متعدّد القطاعات](https://geoalgeria.com):** كل القطاعات على خريطة واحدة، من مكاتب البريد إلى المساجد والمستشفيات، مع عرض للكثافة حسب الولاية.
 - **[خريطة الحرائق المباشرة](https://geoalgeria.com/fires):** نقاط الحرارة من أقمار NASA FIRMS إلى جانب النشرات الرسمية للحماية المدنية، محدّثة طوال موسم الحرائق (أُطلقت في 23 جويلية 2026).
+- **[خريطة الرحلات الجوية](https://geoalgeria.com/flights):** كل الخطوط المباشرة للجوية الجزائرية على كرة أرضية، مع تمييز المؤكّدة والمدرجة والمعلنة.
 - **[3,951 صفحة لكل ولاية](https://geoalgeria.com/wilaya):** صفحة لكل ولاية وكل قطاع، مصمّمة لتظهر في البحث.
 - **[تركيب الطبقات](https://geoalgeria.com/explore):** فعّل القطاعات وأوقفها واقرأها معًا على الخريطة نفسها.
 - **بحث Command-K:** انتقل إلى أي ولاية أو بلدية مباشرة من لوحة المفاتيح.
 - **العربية والفرنسية والإنجليزية:** الواجهة بالكامل، بدعم كامل للكتابة من اليمين إلى اليسار في العربية.
 - **[مصدر لكل سجل](https://geoalgeria.com/sources):** كل نقطة تُظهر مصدرها وتاريخ آخر تغيير فيها. اطّلع على [المصادر](https://geoalgeria.com/sources) و[سجل التغييرات](https://geoalgeria.com/changelog).
 
-[![خريطة الحرائق المباشرة على geoalgeria.com/fires](assets/screenshots/fires-map.png)](https://geoalgeria.com/fires)
+[![خريطة الرحلات الجوية على geoalgeria.com/flights](assets/screenshots/flights-map.png)](https://geoalgeria.com/flights)
+
+<p align="center"><a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/commune-casbah-ar-mobile.jpg" alt="صفحة بلدية القصبة بالعربية على الهاتف في geoalgeria.com" width="560"></a></p>
 
 ## البيانات
 
