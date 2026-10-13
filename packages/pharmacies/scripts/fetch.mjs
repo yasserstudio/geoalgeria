@@ -25,7 +25,8 @@ import { dirname, join } from "node:path";
 import { buildMetadata, toCSV, toGeoJSON } from "@geoalgeria/schema";
 import { carryOverIds, forwardRetiredId, readCommitted, readRetiredIds, readRetiredMigrations, writeRetiredIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 import { RESOLVE_RULES, describeLinkage, resolveCommune } from "../../../scripts/lib/build-utils.mjs";
-import { PHARMACY_WORDS, TIFINAGH_LETTER, splitByScript } from "../../../scripts/lib/name-script.mjs";
+import { TIFINAGH_LETTER, splitByScript, stripLeadingMarks } from "../../../scripts/lib/name-script.mjs";
+import { looseKey } from "../../../packages/normalize/index.js";
 import { mergeDoubleMappings } from "../../../scripts/lib/merge-double-mappings.mjs";
 import https from "node:https";
 
@@ -142,18 +143,29 @@ async function fetchOSM() {
 // --- helpers ---------------------------------------------------------------
 const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
 const wcode = (n) => (Number.isInteger(n) && n > 0 ? String(n).padStart(2, "0") : null);
-const LEAD_MARKS = /^[̀-ͯؐ-ًؚ-ٰٟۖ-ۭ]+/;
 // Tifinagh counts as a name-bearing script here, so a Tamazight-only name reaches
 // `name` instead of being dropped as unnamed. It is never routed into name_ar or
 // name_fr, which carry one script each.
 const NAME_LETTER = /[A-Za-zء-يٱ-ۿⴰ-⵿]/;
+// Runs of whitespace collapse to one, the ends are trimmed, and leading combining
+// marks go (stripLeadingMarks, shared so its character class is right in one
+// place). Nothing else is touched: no letter is added, removed or reordered.
 const cleanName = (v) => {
   if (typeof v !== "string") return null;
-  const x = v.replace(/\s+/g, " ").trim().replace(LEAD_MARKS, "").trim();
+  const x = stripLeadingMarks(v.replace(/\s+/g, " ").trim()).trim();
   return x.length >= 2 && NAME_LETTER.test(x) ? x : null;
 };
 const inAlgeria = (lat, lng) =>
   Number.isFinite(lat) && Number.isFinite(lng) && lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
+
+// The words that say "pharmacy" rather than which pharmacy, in each script a
+// pharmacy is named in here. A Loose name key drops them, so "Pharmacie Bouchekouf"
+// and "بوشقوف" both key on the family name and a record tagged only
+// `name=Pharmacie` keys on nothing at all. Which words these are is a fact about
+// this dataset, so this generator owns the list and the shared fold does not.
+const PHARMACY_WORDS = new Set(
+  ["pharmacie", "pharmacy", "pharmacia", "officine", "صيدلية", "الصيدلية", "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ"].map(looseKey),
+);
 
 // Which element of a Double mapping is kept: the names and contact details it
 // states. Unchanged from the rule this package has always used.
@@ -438,6 +450,9 @@ async function main() {
       "Re-issued as the id on the right: this record's wilaya changed, and the id " +
       "documents its wilaya in the prefix, so the old id was no longer readable. " +
       "Same pharmacy, same OpenStreetMap element, new public id.",
+    // The one element the re-issue stood for, so the forward cites its source the
+    // same way a merge's does.
+    extraOf: (r) => (r.refs?.osm ? { osm: [r.refs.osm] } : null),
   });
   rows.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 

@@ -4,7 +4,18 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { ARABIC_LETTER, LATIN_LETTER, PHARMACY_WORDS, SCRIPTS, TIFINAGH_LETTER, looseNameKeys, splitByScript } from "../scripts/lib/name-script.mjs";
+import { ARABIC_LETTER, LATIN_LETTER, SCRIPTS, TIFINAGH_LETTER, looseNameKeys, splitByScript, stripLeadingMarks } from "../scripts/lib/name-script.mjs";
+import { looseKey } from "../packages/normalize/index.js";
+
+// The generator's own ignored-word list, which it owns because which words say
+// only "pharmacy" is a fact about this dataset and not about the shared fold
+// (scripts/lib/name-script.mjs). Declared here the same way RANK/FILL are, and
+// checked against the generator's source by the parity test in
+// test/pharmacies-name-script.test.mjs, so the copy cannot drift.
+const PHARMACY_WORDS = new Set(
+  ["pharmacie", "pharmacy", "pharmacia", "officine", "صيدلية", "الصيدلية", "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ"].map(looseKey),
+);
+
 
 test("splitByScript: a single-script name comes back verbatim, with no other half", () => {
   assert.deepEqual(splitByScript("Pharmacie Bouchekouf"), { ar: null, la: "Pharmacie Bouchekouf", tfng: null });
@@ -148,4 +159,60 @@ test("looseNameKeys: a Tifinagh name keys on its own script, matching no romanis
   // The Tifinagh word for "pharmacy" is dropped like its Arabic and Latin twins,
   // so the key is the name and not the category.
   assert.deepEqual([...looseNameKeys(["ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ"], PHARMACY_WORDS)], []);
+});
+
+// stripLeadingMarks removes the combining marks a name may open with and NOTHING
+// else. The class it replaces was `[\u0300-\u036F\u0610-\u064B\u061A-\u0670...]`,
+// whose second and third ranges each span the whole Arabic letter block, so it ate
+// the first Arabic word of 822 of 3,795 pharmacy names: 156 lost a surname and three
+// were cut mid-word at ڨ, which is U+06A8 and happens to fall outside the ranges
+// (private tracker #291).
+test("stripLeadingMarks: a pure-Arabic name is returned whole", () => {
+  // The four records the ticket names, as the source tags them.
+  assert.equal(stripLeadingMarks("مربوح الهادي"), "مربوح الهادي");
+  assert.equal(stripLeadingMarks("فلاڨ شبرة الجيلالي"), "فلاڨ شبرة الجيلالي");
+  assert.equal(stripLeadingMarks("سبيڨة ربيحة"), "سبيڨة ربيحة");
+  assert.equal(stripLeadingMarks("بوڨرزي رملة"), "بوڨرزي رملة");
+  // And the shapes around them: one word, the definite article, a Latin name.
+  assert.equal(stripLeadingMarks("صيدلية"), "صيدلية");
+  assert.equal(stripLeadingMarks("الشفاء"), "الشفاء");
+  assert.equal(stripLeadingMarks("Pharmacie Bouchekouf"), "Pharmacie Bouchekouf");
+  assert.equal(stripLeadingMarks("ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏ"), "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ ⵏ ⴱⵓⵣⵢⴰⵏ");
+});
+
+test("stripLeadingMarks: leading combining marks are still removed", () => {
+  // A harakat, a superscript alef, a Latin combining acute, a Quranic stop mark,
+  // and an Arabic honorific, each leading a real name.
+  assert.equal(stripLeadingMarks("\u064Eمربوح"), "مربوح");
+  assert.equal(stripLeadingMarks("\u0670صيدلية"), "صيدلية");
+  assert.equal(stripLeadingMarks("\u0301Pharmacie"), "Pharmacie");
+  assert.equal(stripLeadingMarks("\u06D6بوشقوف"), "بوشقوف");
+  assert.equal(stripLeadingMarks("\u0610الشفاء"), "الشفاء");
+  // A run of them, and marks that are not leading, which stay where they are.
+  assert.equal(stripLeadingMarks("\u064E\u064F\u0651مربوح"), "مربوح");
+  assert.equal(stripLeadingMarks("بِجَايَة"), "بِجَايَة");
+  // Not a string, and a value that is only marks.
+  assert.equal(stripLeadingMarks(null), null);
+  assert.equal(stripLeadingMarks("\u064E\u064F"), "");
+});
+
+// The split buffers a character that belongs to no script until it knows which run
+// it falls in. Between two runs that buffer is the separator and trails the run
+// that closes; at the very start there is no earlier run, so it must lead the one
+// opening. Treating both the same dropped a leading number.
+test("splitByScript: a leading script-neutral run is kept, not dropped", () => {
+  assert.equal(splitByScript("24 ساعة Pharmacie").ar, "24 ساعة");
+  assert.deepEqual(splitByScript("24 ساعة Pharmacie"), {
+    ar: "24 ساعة",
+    la: "Pharmacie",
+    tfng: null,
+  });
+  // Leading punctuation is still a separator and still trimmed off the edge.
+  assert.deepEqual(splitByScript("(صيدلية) Pharmacie"), {
+    ar: "صيدلية",
+    la: "Pharmacie",
+    tfng: null,
+  });
+  // And the number stays with the Latin run when that is where it sits.
+  assert.equal(splitByScript("Pharmacie 3806 صيدلية").la, "Pharmacie 3806");
 });

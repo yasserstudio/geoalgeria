@@ -33,10 +33,12 @@ export interface Pharmacy {
    *  one, so an id a consumer cached still resolves in a single hop. */
   id: string;
   /** Best display name, or null (many OSM pharmacies are unnamed). The OSM `name`
-   *  tag as tagged, so this one may hold more than one script at once, and may be
-   *  the only field carrying a Tamazight name: Tifinagh is published here rather
-   *  than in `name_fr` or `name_ar`, which hold one script each. Prefer `name_fr`
-   *  or `name_ar` when a single-script label is what you need. */
+   *  tag with runs of whitespace collapsed to one, the ends trimmed and any
+   *  leading combining marks removed, and nothing else: no letter is added,
+   *  removed, reordered or transliterated. So this one may hold more than one
+   *  script at once, and may be the only field carrying a Tamazight name, since
+   *  Tifinagh is published here rather than in `name_fr` or `name_ar`, which hold
+   *  one script each. Prefer `name_fr` or `name_ar` for a single-script label. */
   name: string | null;
   /** French/Latin name, or null. Latin letters only: a tag holding more than one
    *  script is split at each boundary, never translated. */

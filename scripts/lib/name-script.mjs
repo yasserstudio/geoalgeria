@@ -49,6 +49,35 @@ const TESTS = { ar: ARABIC_LETTER, la: LATIN_LETTER, tfng: TIFINAGH_LETTER };
  *  separator that stood between two scripts, never part of either name. */
 const EDGE_SEPARATORS = /^[\s\p{P}\p{S}]+|[\s\p{P}\p{S}]+$/gu;
 
+/**
+ * Combining marks a name may open with and that no reader sees: the Latin
+ * combining diacriticals, the Arabic honorifics and Quranic annotation signs, the
+ * harakat, the superscript alef, and the Quranic stop marks. **Marks only.**
+ *
+ * The ranges are written out codepoint by codepoint because the obvious shorthand
+ * is a trap: `[ؐ-ً]` and `[ؚ-ٰ]` each swallow the whole Arabic
+ * letter block, and a generator carrying exactly that class stripped the first
+ * Arabic word off 822 of 3,795 pharmacy names, surnames included (private tracker
+ * #291).
+ *
+ * Shared rather than written per generator, so the other packages that copied the
+ * broken class can import this one instead of each repairing its own.
+ */
+export const LEAD_MARKS = new RegExp(
+  "^[" +
+    "\\u0300-\\u036F" + // combining diacritical marks (Latin)
+    "\\u0610-\\u061A" + // Arabic honorifics and Quranic annotation signs
+    "\\u064B-\\u065F" + // harakat, and the annotation marks above and below
+    "\\u0670" + //        Arabic letter superscript alef
+    "\\u06D6-\\u06ED" + // Quranic stop marks and the small high/low signs
+    "]+",
+);
+
+/** A name with any leading combining marks removed and nothing else touched. A
+ *  name opening with a letter, which is the normal case, comes back unchanged. */
+export const stripLeadingMarks = (value) =>
+  typeof value === "string" ? value.replace(LEAD_MARKS, "") : value;
+
 /** Which of SCRIPTS this one character belongs to, or null for a character that is
  *  none of them (a digit, a space, a comma, a script this fold does not name). */
 export const scriptOf = (character) => SCRIPTS.find((script) => TESTS[script].test(character)) ?? null;
@@ -92,9 +121,14 @@ export function splitByScript(value) {
       pending = "";
       continue;
     }
-    if (script !== null) runs.push({ script, text: text + pending });
+    // Opening a run: anything buffered so far leads THIS run, because there is no
+    // earlier run for it to trail. Only between two runs is the buffer a separator,
+    // and then it trails the run that is closing. Without the distinction a value
+    // opening with digits lost them ("24 ساعة Pharmacie" shipped as "ساعة").
+    const opening = script === null;
+    if (!opening) runs.push({ script, text: text + pending });
     script = next;
-    text = character;
+    text = (opening ? pending : "") + character;
     pending = "";
   }
   if (script !== null) runs.push({ script, text: text + pending });
@@ -109,22 +143,16 @@ export function splitByScript(value) {
   return { ar: half("ar"), la: half("la"), tfng: half("tfng") };
 }
 
-/** The words that say "pharmacy" rather than which pharmacy, in each script a
- *  pharmacy is named in. A Loose name key drops them, so "Pharmacie Bouchekouf"
- *  and "بوشقوف" both key on the family name and a record tagged only
- *  `name=Pharmacie` keys on nothing at all. */
-export const PHARMACY_WORDS = new Set(
-  ["pharmacie", "pharmacy", "pharmacia", "officine", "صيدلية", "الصيدلية", "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ"].map(looseKey),
-);
-
 /**
  * The Loose name keys a merge compares, as `"<script>:<Loose key>"`.
  *
  * Every value is split by script first, so a multi-script tag contributes one key
  * per language instead of one key no other spelling can match. `ignoredWords` are
- * dropped token by token (already folded to Loose keys), and a half left with no
- * token at all contributes no key: two records both tagged just "Pharmacie" are not
- * evidence of anything.
+ * the caller's own list of words that say only what every record in its set is,
+ * already folded to Loose keys, dropped token by token; which words those are is a
+ * fact about one dataset, so the caller owns the list and this fold does not. A
+ * half left with no token at all contributes no key: two records both tagged just
+ * "Pharmacie" are not evidence of anything.
  *
  * @param {Array<unknown>} values      the record's name fields, best first
  * @param {Set<string>} [ignoredWords] Loose keys of the words to drop

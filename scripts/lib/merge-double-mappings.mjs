@@ -25,7 +25,8 @@ import { haversine } from "./build-utils.mjs";
 import { looseNameKeys } from "./name-script.mjs";
 
 /**
- * @param {object[]} rows                    the normalized OSM rows
+ * @param {object[]} rows                    the normalized OSM rows, never mutated:
+ *                                           the returned rows are fresh objects
  * @param {object} options
  * @param {number} [options.radiusM]         how close two elements must stand to be one place
  * @param {Set<string>} [options.ignoredWords]  Loose keys a Loose name key drops
@@ -56,8 +57,12 @@ export function mergeDoubleMappings(
   }
 
   // A fixed order, so which element is kept never depends on how Overpass happened
-  // to order its response.
-  const ordered = [...rows].sort((a, b) => (a.osm_id < b.osm_id ? -1 : a.osm_id > b.osm_id ? 1 : 0));
+  // to order its response. Shallow copies, not the caller's objects: absorb() fills
+  // the kept element's gaps, and a caller that still holds the input array has every
+  // right to find it as it passed it (the same rule sante's mergeRepeatPosts keeps).
+  const ordered = rows
+    .map((row) => ({ ...row }))
+    .sort((a, b) => (a.osm_id < b.osm_id ? -1 : a.osm_id > b.osm_id ? 1 : 0));
 
   const merged = [];
   const conflicts = [];

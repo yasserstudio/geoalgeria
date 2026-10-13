@@ -20,11 +20,27 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { ARABIC_LETTER, LATIN_LETTER, PHARMACY_WORDS, TIFINAGH_LETTER, looseNameKeys } from "../scripts/lib/name-script.mjs";
+import { ARABIC_LETTER, LATIN_LETTER, TIFINAGH_LETTER, looseNameKeys } from "../scripts/lib/name-script.mjs";
+import { looseKey } from "../packages/normalize/index.js";
 import { haversine } from "../scripts/lib/build-utils.mjs";
 
 const DATA = join(dirname(fileURLToPath(import.meta.url)), "..", "packages", "pharmacies", "data");
 const records = JSON.parse(readFileSync(join(DATA, "pharmacies.json"), "utf-8"));
+
+// The generator owns the ignored-word list, because which words say only
+// "pharmacy" is a fact about this dataset. This is that list; the parity test below
+// reads the generator's source so this copy cannot drift from it and leave the
+// dataset-wide check asserting a different rule than the build applies.
+const WORDS = ["pharmacie", "pharmacy", "pharmacia", "officine", "صيدلية", "الصيدلية", "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ"];
+const PHARMACY_WORDS = new Set(WORDS.map(looseKey));
+
+test("the ignored-word list here is the one the generator uses", () => {
+  const source = readFileSync(join(DATA, "..", "scripts", "fetch.mjs"), "utf-8");
+  const literal = source.match(/const PHARMACY_WORDS = new Set\(\s*\[([^\]]*)\]/);
+  assert.ok(literal, "could not find PHARMACY_WORDS in the pharmacies generator");
+  const generator = literal[1].split(",").map((w) => w.trim().replace(/^"|"$/g, "")).filter(Boolean);
+  assert.deepEqual(generator, WORDS);
+});
 
 // Which letters each published name field may hold, and the scripts it may not.
 const FIELD_SCRIPT = {

@@ -1189,6 +1189,9 @@ export function forwardRetiredId(migrations, from, to, note, extra = null) {
  * @param {Record<string, object>} [options.migrations]  the ledger's forwarding
  *                                 table, mutated with each re-issue
  * @param {string} [options.note]  the note a re-issue's forward carries
+ * @param {(r: object) => (object|null)} [options.extraOf]  the upstream ids a
+ *                                 re-issue's forward should cite, as the ledger
+ *                                 names them for this package (`{ osm: [...] }`)
  * @returns {object[]} rows
  */
 export function carryOverIds(
@@ -1197,12 +1200,21 @@ export function carryOverIds(
   keyOf,
   pkg = "",
   retiredIds,
-  { prefixOf = null, migrations = null, note = "Re-issued id." } = {},
+  { prefixOf = null, migrations = null, note = "Re-issued id.", extraOf = null } = {},
 ) {
   const tag = pkg ? ` [${pkg}]` : "";
   if (!(retiredIds instanceof Set)) {
     throw new Error(
       `carryOverIds${tag}: a persistent retiredIds Set is required`,
+    );
+  }
+  // A re-issue retires a published join key, and the only thing that keeps it
+  // followable is the forward. Re-issuing with nowhere to write one would retire
+  // the key silently, so it is a build error rather than a quiet loss.
+  if (prefixOf && !migrations) {
+    throw new Error(
+      `carryOverIds${tag}: prefixOf re-issues ids, so a migrations map is required ` +
+        `to forward each retired id; pass the ledger's own map`,
     );
   }
   // Index the committed id each carry key shipped under. A duplicated key means
@@ -1288,7 +1300,7 @@ export function carryOverIds(
         `carryOverIds${tag}: re-issued ${was} onto ${row.id}, which is reserved`,
       );
     }
-    forwardRetiredId(migrations, was, row.id, note);
+    forwardRetiredId(migrations, was, row.id, note, extraOf ? extraOf(row) : null);
   }
 
   // 3. The final id set must be globally unique: two current records sharing one
@@ -1406,11 +1418,17 @@ export function readRetiredIds(dir) {
 
 /** Persist a ledger for a generator that has not moved to writePackageV2 yet.
  *  An empty ledger is not written, and an empty one on disk is removed, so a
- *  package that has never retired an id ships no `retired-ids.json`. */
+ *  package that has never retired an id ships no `retired-ids.json`.
+ *
+ *  The `migrations` map is checked by the same rule validate-packages reports, and
+ *  the first fault throws: a forwarding table is a public contract, and a build
+ *  that writes a broken one has already shipped it by the time validate runs. */
 export function writeRetiredIds(dir, ids, migrations = null) {
   const path = join(dir, "retired-ids.json");
-  const size = ids instanceof Set ? ids.size : [...ids].length;
-  if (!size) rmSync(path, { force: true });
+  const reserved = new Set([...ids].map(String));
+  const [fault] = migrationErrors(migrations, reserved);
+  if (fault) throw new Error(`writeRetiredIds [${path}]: ${fault}`);
+  if (!reserved.size) rmSync(path, { force: true });
   else writeAtomic(path, retiredIdsContent(ids, migrations));
 }
 
