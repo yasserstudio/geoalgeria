@@ -62,7 +62,7 @@
 //      # patch arbitrary JSON carriers (the app repo's committed copies) with the
 //      # SAME mapping, and write nothing else, so every surface agrees.
 
-import { readFileSync, renameSync, writeFileSync } from "node:fs";
+import { readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { basename, dirname, join, resolve } from "node:path";
 
@@ -290,7 +290,13 @@ const problems = [];
 const coverage = new Map();
 let changed = 0;
 
-/** With --target, only a target is an output; the repo's own carriers are then read only. */
+/**
+ * With --target, only a target is an output. The branch at the bottom of this file
+ * already reads the repository's own carriers without queueing them, so this gate
+ * is belt and braces: it is what stops a writer added later, outside that branch,
+ * from reaching packages/dataset/data behind --target's back, which is the defect
+ * scripts/fix-jo-corrections.mjs shipped (private tracker #247).
+ */
 const targetPaths = new Set(targets.map((path) => resolve(path)));
 const queued = (path) => targets.length === 0 || targetPaths.has(resolve(path));
 const queueJson = (path, value) => {
@@ -300,10 +306,31 @@ const queueText = (path, value) => {
   if (queued(path)) outputs.push([path, value]);
 };
 
-function writeAtomic(path, content) {
-  const tmp = `${path}.${process.pid}.tmp`;
-  writeFileSync(tmp, content);
-  renameSync(tmp, path);
+/**
+ * Write every carrier: all the temporary files first, then all the renames.
+ *
+ * WHY TWO PASSES. A rename is atomic per file, so a one-file-at-a-time loop still
+ * leaves the set half-written if the run dies in the middle of it, and a half-written
+ * set is the disagreement this whole repair is about. Staging every carrier first
+ * shortens the window to the renames alone, and a disk-full or permission error,
+ * which is the failure that actually happens here, is then raised before any carrier
+ * has moved. The temporary files carry the pid, so two runs cannot collide, and the
+ * finally clause removes the ones this run staged and did not rename rather than
+ * leaving them beside the data.
+ */
+function writeAll(queue) {
+  const staged = [];
+  let renamed = 0;
+  try {
+    for (const [path, content] of queue) {
+      const tmp = `${path}.${process.pid}.tmp`;
+      writeFileSync(tmp, content);
+      staged.push([tmp, path]);
+    }
+    for (; renamed < staged.length; renamed++) renameSync(staged[renamed][0], staged[renamed][1]);
+  } finally {
+    for (let i = renamed; i < staged.length; i++) rmSync(staged[i][0], { force: true });
+  }
 }
 
 /** What each carrier matched, so a carrier that stopped carrying a commune fails. */
@@ -526,7 +553,7 @@ if (CHECK) {
   }
   console.log("✓ every carrier carries the derived postal codes");
 } else if (WRITE) {
-  for (const [path, content] of outputs) writeAtomic(path, content);
+  writeAll(outputs);
   console.log(`✓ wrote ${outputs.length} carrier(s)`);
 } else {
   console.log("dry run; pass --write to patch the carriers");
