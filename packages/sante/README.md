@@ -160,8 +160,8 @@ all; the private facilities OpenStreetMap records live in
 `source` is always `"msp"` (the Ministry of Health registry);
 `refs` carries the per-provenance ids that contributed the record, `msp`
 always, plus `msp_twin` where the registry published the same establishment a
-second time in the other language and `msp_repeat` where it entered it a second
-time in the same language, plus `osm` or `wikidata` when the coordinate
+second time in the other language and `msp_repeat` where the registry entered it
+a second time in the same language, plus `osm` or `wikidata` when the coordinate
 was upgraded to a precise point. `geo_precision` is `"exact"`, `"approximate"`, or `null`; `geo_method`
 names how the coordinate was obtained (`osm_point`, `wikidata_point`,
 `commune_centroid`, `owner_verified`, or `null`). `lat`/`lng`/`geo_precision`/`geo_method` are all
@@ -203,7 +203,7 @@ Run `npm run fetch` to regenerate every output. It:
    A record cites both posts: `refs.msp` is its primary (French) post and
    `refs.msp_twin` the Arabic one, so either id resolves to it;
 3. folds in the registry's **repeat posts**: 7 establishments were entered a
-   second time in the language they already had, which step 2 cannot reach
+   second time in the language they already had, which step 2 can never see,
    because it only ever pairs a French post with an Arabic one. The whole title
    has to fold to the same
    [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize)

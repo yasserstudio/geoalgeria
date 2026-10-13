@@ -162,8 +162,8 @@ que cartographie OpenStreetMap vivent dans
 `source` vaut toujours `"msp"` (le registre du Ministère de la
 Santé) ; `refs` porte les identifiants de provenance ayant contribué –
 toujours `msp`, plus `msp_twin` quand le registre a publié le même
-établissement une seconde fois dans l'autre langue et `msp_repeat` quand il
-l'a saisi une seconde fois dans la même langue, plus `osm` ou `wikidata`
+établissement une seconde fois dans l'autre langue et `msp_repeat` quand le
+registre l'a saisi une seconde fois dans la même langue, plus `osm` ou `wikidata`
 quand la coordonnée a été remplacée par un point précis. `geo_precision` vaut `"exact"`, `"approximate"` ou
 `null` ; `geo_method` indique comment la coordonnée a été obtenue (`osm_point`,
 `wikidata_point`, `commune_centroid`, `owner_verified`, ou `null`).
@@ -211,11 +211,11 @@ Lancez `npm run fetch` pour régénérer les sorties. Le script :
    identifiants résolvent vers lui ;
 3. intègre les **fiches répétées** du registre : 7 établissements ont été
    saisis une seconde fois dans la langue qu'ils avaient déjà, ce que l'étape 2
-   ne peut atteindre puisqu'elle n'apparie qu'une fiche française avec une fiche
+   ne voit jamais, puisqu'elle n'apparie qu'une fiche française à une fiche
    arabe. Le titre entier doit se replier sur la même clé
    [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize) :
-   un nom que le registre a écrit autrement reste deux enregistrements, car les
-   deux hôpitaux de Skikda et les deux de Ouargla sont deux établissements et
+   un nom que le registre a écrit autrement reste deux enregistrements : les
+   deux hôpitaux de Skikda et les deux d'Ouargla sont deux établissements et
    non un seul saisi deux fois. Chaque décision et chaque paire laissée séparée
    est écrite dans
    [`quality/sante-repeat-posts.json`](https://github.com/yasserstudio/geoalgeria/blob/main/quality/sante-repeat-posts.json),
