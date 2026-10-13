@@ -22,7 +22,10 @@ GeoAlgeria est un projet ouvert, développé en solo, avec un seul objectif : d
 
 ## L'atlas
 
-[![L'atlas GeoAlgeria sur geoalgeria.com](assets/screenshots/atlas-home.png)](https://geoalgeria.com)
+<a href="https://geoalgeria.com"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/atlas-home-dark.jpg">
+  <img src="assets/screenshots/atlas-home-light.jpg" alt="L'atlas GeoAlgeria sur geoalgeria.com">
+</picture></a>
 
 **[geoalgeria.com](https://geoalgeria.com)** réunit 28+ jeux de données et 80 000+ enregistrements sur une seule carte interactive, redessinée pour les 69 wilayas.
 
@@ -35,9 +38,14 @@ GeoAlgeria est un projet ouvert, développé en solo, avec un seul objectif : d
 - **Arabe, français et anglais :** toute l'interface, entièrement en écriture de droite à gauche en arabe.
 - **[Provenance sur chaque enregistrement](https://geoalgeria.com/sources) :** chaque point indique d'où il provient et quand il a changé pour la dernière fois. Voir les [sources](https://geoalgeria.com/sources) et le [journal des modifications](https://geoalgeria.com/changelog).
 
-[![Le globe des lignes aériennes sur geoalgeria.com/flights](assets/screenshots/flights-map.png)](https://geoalgeria.com/flights)
-
-<p align="center"><a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/commune-casbah-ar-mobile.jpg" alt="La page de la commune de la Casbah en arabe sur mobile, sur geoalgeria.com" width="560"></a></p>
+<p align="center">
+  <a href="https://geoalgeria.com/flights"><img src="assets/screenshots/phone-flights-light.jpg" alt="Le globe des lignes aériennes sur mobile" width="32%"></a>
+  <a href="https://geoalgeria.com/pharmacies"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/phone-pharmacies-dark.jpg">
+    <img src="assets/screenshots/phone-pharmacies-light.jpg" alt="La carte des pharmacies sur mobile" width="32%">
+  </picture></a>
+  <a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/phone-commune-casbah.jpg" alt="La page de la commune de la Casbah en arabe sur mobile" width="32%"></a>
+</p>
 
 ## Les données
 

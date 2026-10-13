@@ -24,7 +24,10 @@
 
 ## الأطلس
 
-[![أطلس جيو الجزائر على geoalgeria.com](assets/screenshots/atlas-home.png)](https://geoalgeria.com)
+<a href="https://geoalgeria.com"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/atlas-home-dark.jpg">
+  <img src="assets/screenshots/atlas-home-light.jpg" alt="أطلس جيو الجزائر على geoalgeria.com">
+</picture></a>
 
 **[geoalgeria.com](https://geoalgeria.com)** يضع أكثر من 28 قاعدة بيانات وأكثر من 80,000 سجل على خريطة تفاعلية واحدة، أُعيد رسمها لتشمل الولايات الـ69.
 
@@ -37,9 +40,14 @@
 - **العربية والفرنسية والإنجليزية:** الواجهة بالكامل، بدعم كامل للكتابة من اليمين إلى اليسار في العربية.
 - **[مصدر لكل سجل](https://geoalgeria.com/sources):** كل نقطة تُظهر مصدرها وتاريخ آخر تغيير فيها. اطّلع على [المصادر](https://geoalgeria.com/sources) و[سجل التغييرات](https://geoalgeria.com/changelog).
 
-[![خريطة الرحلات الجوية على geoalgeria.com/flights](assets/screenshots/flights-map.png)](https://geoalgeria.com/flights)
-
-<p align="center"><a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/commune-casbah-ar-mobile.jpg" alt="صفحة بلدية القصبة بالعربية على الهاتف في geoalgeria.com" width="560"></a></p>
+<p align="center">
+  <a href="https://geoalgeria.com/flights"><img src="assets/screenshots/phone-flights-light.jpg" alt="خريطة الرحلات الجوية على الهاتف" width="32%"></a>
+  <a href="https://geoalgeria.com/pharmacies"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/phone-pharmacies-dark.jpg">
+    <img src="assets/screenshots/phone-pharmacies-light.jpg" alt="خريطة الصيدليات على الهاتف" width="32%">
+  </picture></a>
+  <a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/phone-commune-casbah.jpg" alt="صفحة بلدية القصبة بالعربية على الهاتف" width="32%"></a>
+</p>
 
 ## البيانات
 

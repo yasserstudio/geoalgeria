@@ -22,7 +22,10 @@ GeoAlgeria is a solo-built, open project with one goal: to become the first and 
 
 ## The atlas
 
-[![The GeoAlgeria atlas at geoalgeria.com](assets/screenshots/atlas-home.png)](https://geoalgeria.com)
+<a href="https://geoalgeria.com"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/atlas-home-dark.jpg">
+  <img src="assets/screenshots/atlas-home-light.jpg" alt="The GeoAlgeria atlas at geoalgeria.com">
+</picture></a>
 
 **[geoalgeria.com](https://geoalgeria.com)** puts 28+ datasets and 80,000+ records on one interactive map, redrawn for the 69 wilayas.
 
@@ -35,9 +38,14 @@ GeoAlgeria is a solo-built, open project with one goal: to become the first and 
 - **Arabic, French, and English:** the entire interface, fully right-to-left in Arabic.
 - **[Provenance on every record](https://geoalgeria.com/sources):** each point shows where it came from and when it last changed. See the [sources](https://geoalgeria.com/sources) and [changelog](https://geoalgeria.com/changelog).
 
-[![The flight routes globe at geoalgeria.com/flights](assets/screenshots/flights-map.png)](https://geoalgeria.com/flights)
-
-<p align="center"><a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/commune-casbah-ar-mobile.jpg" alt="The Casbah commune page in Arabic on a phone at geoalgeria.com" width="560"></a></p>
+<p align="center">
+  <a href="https://geoalgeria.com/flights"><img src="assets/screenshots/phone-flights-light.jpg" alt="The flight routes globe on a phone" width="32%"></a>
+  <a href="https://geoalgeria.com/pharmacies"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/phone-pharmacies-dark.jpg">
+    <img src="assets/screenshots/phone-pharmacies-light.jpg" alt="The pharmacy map on a phone" width="32%">
+  </picture></a>
+  <a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/phone-commune-casbah.jpg" alt="The Casbah commune page in Arabic on a phone" width="32%"></a>
+</p>
 
 ## The data
 
