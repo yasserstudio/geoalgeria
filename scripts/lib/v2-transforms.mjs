@@ -23,6 +23,7 @@ import {
   GEO_PRECISION,
   evidenceForSourceKey,
   coordDecimals,
+  onArcminuteGrid,
   sharedPoints,
   validateRecords,
   MIN_EXACT_DECIMALS,
@@ -83,6 +84,22 @@ export const geoAt = (r, precision, method) => {
   const p = precision === "exact" && coordDecimals(r.lat, r.lng) < MIN_EXACT_DECIMALS ? "approximate" : precision;
   return { lat: has ? r.lat : null, lng: has ? r.lng : null, geo_precision: has ? p : null, geo_method: has ? method : null };
 };
+
+/** `geoAt` plus the other half of the **rounded placeholder** rule (CONTEXT.md):
+ *  degrees and minutes with the seconds dropped, which the decimal count cannot see
+ *  because minutes divided by 60 leave a long tail (private tracker #285).
+ *
+ *  WHY THIS IS NOT IN geoAt. The grid test is repository-wide as a GUARD
+ *  (`test/arcminute-exact.test.mjs`, which fails on a new occurrence in any
+ *  package). Demoting at INGEST is different: it changes published `geo_precision`,
+ *  and 15 records in tourisme, mosquees, ooredoo and formation-professionnelle are
+ *  on the grid today. Folding it into `geoAt` would move those 15 on their next
+ *  regeneration, in a pass that has not re-sourced them, and `test/migrate-v2-replay`
+ *  catches the one of them its fixture samples while the other 14 drift silently. So
+ *  a generator adopts this once its own records have been swept, and the allow-list
+ *  in the guard test is the list of generators that have not. */
+export const geoAtMeasured = (r, precision, method) =>
+  geoAt(r, precision === "exact" && onArcminuteGrid(r.lat, r.lng) ? "approximate" : precision, method);
 /** the common case: a real per-facility point. */
 export const geoExact = (r, method) => geoAt(r, "exact", method);
 /** A coordinate carried by more than one record in the same file is not a
@@ -692,7 +709,7 @@ export const MIGRATIONS = {
       { file: "branches.json", map: (r) => clean({
         id: r.id, name: r.name,
         wilaya_code: wcode(r.wilaya_code), source_wilaya_code: r.source_wilaya_code ? wcode(r.source_wilaya_code) : undefined, commune_code: null, commune: null,
-        ...geoAt(r, r.geo_precision ?? "exact", r.geo_method ?? "bank_locator"),
+        ...geoAtMeasured(r, r.geo_precision ?? "exact", r.geo_method ?? "bank_locator"),
         source: "bank_locator",
         bank_id: r.bank_id, address: r.address, phone: r.phone,
       }) },
@@ -703,9 +720,9 @@ export const MIGRATIONS = {
         { key: "bank_locator", name: "Each licensed bank's own branch locator (site/API/KML)", license: "Data © respective banks; redistributed for reference", retrieved: "2026-06-16", evidence_type: "official" },
         { key: "osm", name: "OpenStreetMap: reviewed bank coordinate evidence", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-09", evidence_type: "crowdsourced" },
       ],
-      license: "Compiled from public regulatory listings and official institution sites/locators; eight reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
+      license: "Compiled from public regulatory listings and official institution sites/locators; twelve reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
       estimatedUniverse: null,
-      coverageNote: "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,325 carry a geocoded point, including eight reviewed BDL and SGA branches matched to OSM by bank, wilaya, locality, and agency number or street address. The rest remain address-only (see README).",
+      coverageNote: "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,325 carry a geocoded point. Twelve of those are reviewed OpenStreetMap matches on BDL, SGA, AGB and BADR branches, each agreeing on bank, wilaya and locality, and nine of the twelve on an agency number or street address as well; the other three (BADR Aïn Témouchent, BADR Kenadsa and AGB Constantine) rest on bank and locality alone, the source carrying no street to match. Two further branches sat on a rounded placeholder their locator published as degrees and minutes, and carry their commune's centre as approximate because OpenStreetMap maps no object of their bank there. The rest remain address-only (see README).",
       titles: { en: "Algeria banks & financial institutions", fr: "Banques et institutions financières d'Algérie", ar: "البنوك والمؤسسات المالية الجزائرية" },
       stats: (rows) => {
         const registry = rows.filter((r) => r.source === "boa");

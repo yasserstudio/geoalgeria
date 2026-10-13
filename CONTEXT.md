@@ -256,6 +256,10 @@ _Avoid_: fetched, scraped, synced
 How honest a coordinate is: `exact` (a real per-facility point → a Pin) vs `approximate` (a commune/wilaya centroid → a Dot) vs `null` (there is no coordinate at all → neither). Coarse-grained in `geo_precision`, which is null if and only if `lat`/`lng` are null; method detail (`osm_node`, `commune_centroid`) lives in `geo_method`, null on those same records because no method produced a point.
 _Avoid_: accuracy, precision score
 
+**Rounded placeholder**:
+A coordinate a source rounded instead of measuring, so it names an area and not a facility and can never be `exact`. ADR 0001 rules one out at L0. Two shapes, and the second hides inside the first's blind spot: rounded in **decimal degrees**, which `MIN_EXACT_DECIMALS` catches by counting fraction digits (35, 8 locates a degree square); and **degrees and minutes with the seconds dropped**, which survives that count because minutes divided by 60 leave a long tail, so `onArcminuteGrid` tests the whole-arcminute grid on both axes instead (33.58333, 2.66667 is 33°35'N 2°40'E, a cell about 1.5 km across). A third shape is a point borrowed from elsewhere, which is a Copied claim rather than a rounding.
+_Avoid_: rounded coordinate, low-precision point, DMS artifact, placeholder (unqualified)
+
 ### Coordinate review
 
 **Claim**:

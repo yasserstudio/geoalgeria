@@ -4,8 +4,8 @@
   "name": "Algeria banks & financial institutions",
   "alternateName": "Banques et institutions financières d'Algérie",
   "identifier": "@geoalgeria/banques",
-  "description": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,325 carry a geocoded point, including eight reviewed BDL and SGA branches matched to OSM by bank, wilaya, locality, and agency number or street address. The rest remain address-only (see README).",
-  "conditionsOfAccess": "Compiled from public regulatory listings and official institution sites/locators; eight reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
+  "description": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,325 carry a geocoded point. Twelve of those are reviewed OpenStreetMap matches on BDL, SGA, AGB and BADR branches, each agreeing on bank, wilaya and locality, and nine of the twelve on an agency number or street address as well; the other three (BADR Aïn Témouchent, BADR Kenadsa and AGB Constantine) rest on bank and locality alone, the source carrying no street to match. Two further branches sat on a rounded placeholder their locator published as degrees and minutes, and carry their commune's centre as approximate because OpenStreetMap maps no object of their bank there. The rest remain address-only (see README).",
+  "conditionsOfAccess": "Compiled from public regulatory listings and official institution sites/locators; twelve reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
   "isAccessibleForFree": true,
   "creator": {
     "@type": "Organization",
