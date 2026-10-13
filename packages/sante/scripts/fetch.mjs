@@ -996,6 +996,13 @@ export function pairTwinPosts(fr, ar, wil, usedF = new Set(), usedA = new Set())
 // Skikda" and "Etablissement Public Hospitalier Skikda") and the two Ouargla ones
 // apart; they are two facilities whose French and Arabic halves the twin rule
 // could not reach either, not one facility entered twice.
+//
+// An EMPTY fold is not agreement. `conservativeKey` keeps no punctuation, so a
+// placeholder title such as "-" or "..." folds to "", and two placeholders would
+// otherwise read as the same name and retire a public id between them. The twin
+// check already draws this line the same way, where a half left with no token
+// contributes no key and cannot carry a pair on its own; here, with no second
+// signal to lean on, an empty key is a refusal rather than silence.
 const REPEAT_LANGS = ["fr", "ar"];
 
 /** The whole title, folded. @geoalgeria/normalize is the project's one fold, and
@@ -1074,6 +1081,9 @@ const REPEAT_KEPT_BECAUSE = {
  *   Refused rather than silently dropping a post.
  * - `already_merged`: one of the two slots has already absorbed or been absorbed
  *   by a repeat post, so a third copy is left alone rather than chained.
+ * - `no_name_key`: a title that folds to nothing, which a punctuation-only
+ *   placeholder does. An empty key is not a name the two share, so it never
+ *   buckets and never agrees.
  */
 export function mergeRepeatPosts(slots) {
   const buckets = new Map();
@@ -1083,9 +1093,13 @@ export function mergeRepeatPosts(slots) {
       const post = slot[lang];
       if (!post) continue;
       // the weak signal is wilaya-scoped, the strong one is national. Both carry
-      // the type, so two entries in one bucket always share it.
-      bucket(`loc|${lang}|${post.type}|${wcode(post.wilayaCode)}|${conservativeKey(post.locality)}`).push({ slot, post, lang });
-      bucket(`title|${lang}|${post.type}|${repeatTitleKey(post)}`).push({ slot, post, lang });
+      // the type, so two entries in one bucket always share it. A key that folds
+      // to nothing is not a key: it buckets nobody, so a placeholder title never
+      // becomes a candidate at all.
+      const locality = conservativeKey(post.locality);
+      const title = repeatTitleKey(post);
+      if (locality) bucket(`loc|${lang}|${post.type}|${wcode(post.wilayaCode)}|${locality}`).push({ slot, post, lang });
+      if (title) bucket(`title|${lang}|${post.type}|${title}`).push({ slot, post, lang });
     }
 
   const cands = new Map(); // one candidate per (slot pair, language)
@@ -1109,7 +1123,10 @@ export function mergeRepeatPosts(slots) {
   const verdicts = [];
   for (const [, { lo, hi }] of ordered) {
     let reason = null;
-    if (repeatTitleKey(lo.post) !== repeatTitleKey(hi.post)) reason = "names_differ";
+    // An empty fold is nothing in common, not a shared name, however the
+    // candidate reached this loop: the gate never agrees on nothing.
+    if (!repeatTitleKey(lo.post) || !repeatTitleKey(hi.post)) reason = "no_name_key";
+    else if (repeatTitleKey(lo.post) !== repeatTitleKey(hi.post)) reason = "names_differ";
     else if ([lo, hi].some((e) => dropped.has(e.slot) || absorbed.has(e.slot))) reason = "already_merged";
     else if (namesTwoCommunes(slotPlacer(lo.slot), slotPlacer(hi.slot))) reason = "different_commune";
 

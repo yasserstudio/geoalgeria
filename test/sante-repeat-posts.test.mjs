@@ -225,6 +225,41 @@ test("sante repeats: a cross-wilaya merge never moves a record into the unplaced
   assert.equal(merged.msp_repeat, "4727");
 });
 
+// An empty fold is not agreement. `conservativeKey` keeps no punctuation, so a
+// placeholder title such as "-" or "..." folds to the empty string, and two
+// placeholders in one wilaya and type would otherwise read as the same name and
+// retire a public id between them. The registry carries no such title today,
+// which is exactly why this is a fixture: the rule has to hold before one
+// appears, not after a refresh has already merged two unrelated establishments.
+test("sante repeats: a title that folds to nothing is never a shared name", () => {
+  for (const placeholder of ["-", "...", "( )"]) {
+    assert.equal(conservativeKey(placeholder), "", `${placeholder} is not a punctuation-only title`);
+    const blank = (msp_id) => ({
+      fr: null,
+      ar: repeatPost({ wilayaCode: 18, msp_id, title: placeholder, locality: placeholder, ...placedIn(1801, "Jijel") }),
+    });
+    const { slots, verdicts } = mergeRepeatPosts([blank(9001), blank(9002)]);
+    assert.equal(slots.length, 2, `${placeholder}: two placeholder posts were folded into one record`);
+    assert.equal(slots.every((s) => s.repeat === null), true, `${placeholder}: a placeholder was absorbed`);
+    // neither key buckets, so the pair is never even a candidate
+    assert.deepEqual(verdicts, [], `${placeholder}: an empty key still raised a candidate`);
+  }
+
+  // and the gate itself refuses an empty key however the candidate arrives: here
+  // the locality folds to a real key and buckets the pair, while the titles the
+  // merge would read fold to nothing
+  const named = (msp_id) => ({
+    fr: null,
+    ar: repeatPost({ wilayaCode: 18, msp_id, title: "...", ...placedIn(1801, "Jijel") }),
+  });
+  const { slots, verdicts } = mergeRepeatPosts([named(9003), named(9004)]);
+  assert.equal(slots.length, 2, "the gate agreed on two empty keys");
+  assert.equal(slots.every((s) => s.repeat === null), true);
+  assert.equal(verdicts.length, 1, "the locality bucket should have raised the candidate");
+  assert.equal(verdicts[0].merged, false);
+  assert.equal(verdicts[0].reason, "no_name_key");
+});
+
 // mergeRepeatPosts returns its decision; it never writes it back onto the slots
 // it was handed, so a caller cannot half-apply a merge by reading the input.
 test("sante repeats: the merge does not mutate the slots it is given", () => {
