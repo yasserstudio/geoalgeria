@@ -84,7 +84,7 @@ dz.getPostOfficesByCommune(1731); // post offices in a commune (by code_commune)
 
 TypeScript types included out of the box. The default import needs `esModuleInterop`, because the package is CommonJS; `import dz = require('geoalgeria')` works without it.
 
-A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office and ATM mirrors among them. If you need one part only, import its file on its own: `import communes from 'geoalgeria/data/ecommerce/communes.json'`.
+A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office and ATM mirrors among them. If you need one part only, import its file on its own: `import communes from 'geoalgeria/data/ecommerce/communes.json'` in a bundler, or with `with { type: 'json' }` in plain Node.
 
 **Using this in production?** [Tell us about it](https://github.com/yasserstudio/geoalgeria/discussions), we feature community projects in the README.
 

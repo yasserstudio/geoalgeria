@@ -20,8 +20,9 @@
  * (`npm pack`, the shipped `files[]` and nothing else), unpacks it into a
  * throwaway node_modules, bundles an entry that imports it, and runs the
  * bundle from an unrelated directory, where a runtime read could not find the
- * data even by accident. Both module formats are covered, since an ESM bundle
- * takes the `import` condition of the exports map and a CommonJS one takes
+ * data even by accident. Both module formats are covered, and they take
+ * different branches of the exports map: it declares no `import` condition, so
+ * an ESM bundle falls through to `default`, while a CommonJS one takes
  * `require`.
  *
  * Only the umbrella. The scoped packages were verified WORKING in that same

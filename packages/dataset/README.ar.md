@@ -84,7 +84,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب البريد في بلدية (ح
 
 أنواع TypeScript مضمّنة مباشرة. الاستيراد الافتراضي يحتاج إلى `esModuleInterop` لأن الحزمة بصيغة CommonJS، أما `import dz = require('geoalgeria')` فلا يحتاجه.
 
-مع أي bundler (Next.js أو Vite أو webpack) تُضمّ ملفات JSON العشرة كلها، بما فيها مرايا مكاتب البريد والصرافات الآلية. إذا كنت تحتاج جزءًا واحدًا، استورد ملفه وحده: `import communes from 'geoalgeria/data/ecommerce/communes.json'`.
+مع أي bundler (Next.js أو Vite أو webpack) تُضمّ ملفات JSON العشرة كلها، بما فيها مرايا مكاتب البريد والصرافات الآلية. إذا كنت تحتاج جزءًا واحدًا، استورد ملفه وحده: `import communes from 'geoalgeria/data/ecommerce/communes.json'` مع bundler، أو مع `with { type: 'json' }` في Node وحده.
 
 **تستخدم هذه البيانات في الإنتاج؟** [أخبرنا](https://github.com/yasserstudio/geoalgeria/discussions) – نعرض مشاريع المجتمع في الـ README.
 

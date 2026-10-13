@@ -84,7 +84,7 @@ dz.getPostOfficesByCommune(1731); // bureaux de poste d'une commune (par code_co
 
 Types TypeScript inclus nativement. L'import par défaut demande `esModuleInterop`, car le paquet est en CommonJS ; `import dz = require('geoalgeria')` s'en passe.
 
-Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les miroirs des bureaux de poste et des DAB compris. Si vous n'avez besoin que d'une partie, importez son fichier seul : `import communes from 'geoalgeria/data/ecommerce/communes.json'`.
+Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les miroirs des bureaux de poste et des DAB compris. Si vous n'avez besoin que d'une partie, importez son fichier seul : `import communes from 'geoalgeria/data/ecommerce/communes.json'` dans un bundler, ou avec `with { type: 'json' }` sous Node sans bundler.
 
 **Vous utilisez ces données en production ?** [Dites-le nous](https://github.com/yasserstudio/geoalgeria/discussions) – nous mettons en avant les projets de la communauté dans le README.
 

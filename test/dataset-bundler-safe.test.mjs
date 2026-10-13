@@ -21,12 +21,61 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATASET = join(ROOT, "packages", "dataset");
 const manifest = JSON.parse(readFileSync(join(DATASET, "package.json"), "utf-8"));
 const source = readFileSync(join(DATASET, "index.js"), "utf-8");
-// The shape assertions below are about code, so drop the comment lines: they
-// name the very patterns the code must not contain.
-const code = source
-  .split("\n")
-  .filter((line) => !line.trim().startsWith("//"))
-  .join("\n");
+
+/** `index.js` with its comments removed, because the shape assertions below are
+ *  about code and the comments name the very patterns the code must not hold.
+ *  A character walk, not a line filter: a trailing `// ...` and a block comment
+ *  have to go too. It tracks quotes so a comment marker inside a string is
+ *  kept; `index.js` carries no regex literal, which is the one case this would
+ *  read wrong. */
+function stripComments(src) {
+  let out = "";
+  let quote = null;
+  for (let i = 0; i < src.length; i += 1) {
+    const c = src[i];
+    const next = src[i + 1];
+    if (quote) {
+      if (c === "\\") {
+        out += c + (next ?? "");
+        i += 1;
+      } else {
+        if (c === quote) quote = null;
+        out += c;
+      }
+      continue;
+    }
+    if (c === '"' || c === "'" || c === "`") {
+      quote = c;
+      out += c;
+      continue;
+    }
+    if (c === "/" && next === "/") {
+      while (i < src.length && src[i] !== "\n") i += 1;
+      out += "\n";
+      continue;
+    }
+    if (c === "/" && next === "*") {
+      i += 2;
+      while (i < src.length && !(src[i] === "*" && src[i + 1] === "/")) i += 1;
+      i += 1;
+      continue;
+    }
+    out += c;
+  }
+  return out;
+}
+
+const code = stripComments(source);
+
+/** The lazy getters of `index.js`, name to body, read out of the file rather
+ *  than listed here, so a getter added tomorrow is checked tomorrow. */
+function gettersOf(src) {
+  const found = new Map();
+  for (const [, name, body] of src.matchAll(/\n {2}get (\w+)\(\) \{\n([\s\S]*?)\n {2}\},/g)) {
+    found.set(name, body);
+  }
+  return found;
+}
 
 /** Walk a package.json exports value the way Node and bundlers do: first key
  *  whose condition is active wins, `default` always matches. */
@@ -76,29 +125,53 @@ test("geoalgeria resolves for an ESM consumer as well as a CommonJS one", () => 
   assert.ok(existsSync(join(DATASET, "types", "index.d.ts")));
 });
 
-test("every data file is loaded by a static require a bundler can trace", () => {
-  assert.doesNotMatch(
-    code,
-    /__dirname/,
-    "index.js still builds a runtime path from __dirname; a bundler rewrites it and the read fails with ENOENT"
-  );
-  assert.doesNotMatch(
-    code,
-    /readFileSync/,
-    "index.js still reads its data at runtime; use static require(\"./data/<file>.json\") instead"
+test("every getter reaches its data by a static require, none builds a runtime path", () => {
+  const bodies = gettersOf(code);
+  const geo = createRequire(import.meta.url)(join(DATASET, "index.js"));
+  const accessors = Object.keys(geo).filter(
+    (key) => typeof Object.getOwnPropertyDescriptor(geo, key)?.get === "function"
   );
 
-  const required = [...code.matchAll(/require\("(\.\/data\/[^"]+)"\)/g)].map((m) => m[1]);
-  // The ten files the getters answer with: algeria, the three commune shards,
-  // dairas, the ecommerce view, the two poste mirrors, name history and phone
-  // code provenance.
-  assert.equal(required.length, 10, `expected 10 static data requires, found ${required.length}`);
-  for (const specifier of required) {
-    assert.ok(
-      existsSync(join(DATASET, specifier)),
-      `index.js requires ${specifier}, which is not in the package`
+  // Read out of the file, so no count here can go stale against the module.
+  assert.deepEqual(
+    [...bodies.keys()].sort(),
+    [...accessors].sort(),
+    "the getters this test can read are not the getters the module exposes; check the formatting it is matched on"
+  );
+
+  for (const [name, body] of bodies) {
+    assert.doesNotMatch(
+      body,
+      /__dirname|import\.meta\.url|readFileSync/,
+      `${name} builds a path at runtime; a bundler rewrites it and the read fails with ENOENT`
     );
+
+    const args = [...body.matchAll(/require\(([^)]*)\)/g)].map((m) => m[1]);
+    for (const arg of args) {
+      assert.match(
+        arg,
+        /^"\.\/data\/[-\w/.]+\.json"$/,
+        `${name} calls require(${arg}); a bundler can only trace a string literal under ./data`
+      );
+      const file = arg.slice(1, -1);
+      assert.ok(
+        existsSync(join(DATASET, file)),
+        `${name} requires ${file}, which is not in the package`
+      );
+    }
+
+    // `wilayas` is derived from `all`; every other getter answers with a file.
+    if (name !== "wilayas") {
+      assert.ok(args.length > 0, `${name} loads no data file`);
+    }
   }
+
+  // The helpers and the module body, not just the getters.
+  assert.doesNotMatch(
+    code,
+    /__dirname|readFileSync/,
+    "index.js still reads its data at runtime; use a static require(\"./data/<file>.json\")"
+  );
   assert.ok(
     manifest.files.includes("data/**/*.json"),
     "files[] no longer ships the JSON the requires point at"

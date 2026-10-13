@@ -54,7 +54,7 @@ dz.findByPostalCode("16000");     // → commune, daïra, wilaya
 dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 ```
 
-Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les miroirs des bureaux de poste et des DAB compris. Si vous n'avez besoin que d'une partie, importez son fichier seul : `import communes from "geoalgeria/data/ecommerce/communes.json"`. En TypeScript, l'import par défaut demande `esModuleInterop` ; `import dz = require("geoalgeria")` non.
+Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les miroirs des bureaux de poste et des DAB compris. Si vous n'avez besoin que d'une partie, importez son fichier seul : `import communes from "geoalgeria/data/ecommerce/communes.json"` dans un bundler, ou avec `with { type: "json" }` sous Node sans bundler. En TypeScript, l'import par défaut demande `esModuleInterop` ; `import dz = require("geoalgeria")` non.
 
 ## Contenu
 
