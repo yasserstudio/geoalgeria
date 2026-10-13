@@ -97,3 +97,18 @@ test("a fork that has not had this release yet takes the codes it fills", () => 
   run(path);
   assert.equal(readFileSync(path, "utf8"), readFileSync(TABLE, "utf8"), "the fork takes every code this release fills");
 });
+
+test("a target that no longer carries every commune stops the run", () => {
+  // The coverage check used to sit inside the no-targets branch, so a target could
+  // drop rows and still read clean. A carrier that stopped carrying a commune is
+  // exactly how one file keeps a stale code while the report says nothing.
+  const path = copyOfTable();
+  const doc = JSON.parse(readFileSync(path, "utf8"));
+  doc[0].communes.splice(0, 1);
+  writeFileSync(path, `${JSON.stringify(doc, null, 2)}\n`);
+
+  assert.throws(
+    () => run(path),
+    (error) => /algeria\.json matched 1540 of 1541 communes/.test(error.stderr) && /nothing written/.test(error.stderr),
+  );
+});

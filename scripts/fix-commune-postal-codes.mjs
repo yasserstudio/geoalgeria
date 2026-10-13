@@ -490,16 +490,22 @@ if (targets.length) {
     return true;
   });
 
-  // Every carrier must have matched every commune, or one file keeps a stale code
-  // while the report reads clean. The three split files hold one wilaya range each,
-  // so between them they see all 1,541 and individually they do not.
-  const total = byCommuneCode.size;
+}
+
+// Every carrier must have matched every commune, or one file keeps a stale code
+// while the report reads clean. This holds a --target as well as this repository's
+// own carriers: a fork that stopped carrying a commune is the same defect, and
+// while the check sat inside the branch above it could not see one.
+const total = byCommuneCode.size;
+for (const [where, seen] of coverage) {
+  // The three split files hold one wilaya range each, so between them they see all
+  // 1,541 and individually they do not; they are checked as a group below.
+  if (SPLIT_FILES.includes(where)) continue;
+  if (seen.size !== total) problems.push(`${where} matched ${seen.size} of ${total} communes`);
+}
+if (!targets.length) {
   const splitSeen = SPLIT_FILES.reduce((n, file) => n + (coverage.get(file)?.size ?? 0), 0);
   if (splitSeen !== total) problems.push(`the three split files together matched ${splitSeen} of ${total} communes`);
-  for (const [where, seen] of coverage) {
-    if (SPLIT_FILES.includes(where)) continue;
-    if (seen.size !== total) problems.push(`${where} matched ${seen.size} of ${total} communes`);
-  }
 }
 
 // ---------------------------------------------------------------------------
