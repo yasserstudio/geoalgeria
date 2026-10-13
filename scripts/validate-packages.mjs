@@ -934,11 +934,10 @@ function validateDataset(pkg, spec) {
   }
 
   // A published name is gated like the metadata around it. #281 found three
-  // records carrying one, four name strings between them, and none of them was a
-  // source stating something: each was an em dash typed where that package's own
-  // names use " - " (97 name strings in ecoles; of the 21 bank names, every one
-  // of the 10 taking a separator at all). It is not a repo-wide separator rule:
-  // 486 name values use an en dash, and the gate is about the em dash only.
+  // records carrying one, four name strings between them. The remedy is a spaced
+  // hyphen, which keeps the source's separation of the name without keeping the
+  // character, and changes nothing else. It is not a separator convention: the
+  // repository has no single one, and the gate is about the em dash only.
   //
   // This walks the canonical JSON. The CSV and SQL mirrors are a projection of
   // these same columns, so a clean record here is a clean line there. The

@@ -69,16 +69,16 @@ test("every published metadata file in the repo is clean", () => {
 // The published-name gate.
 //
 // Metadata was the whole of the rule until #281: a record's own name counted as
-// a value, so an em dash inside one was treated as a data decision. It is not,
-// because nobody decided it. The three records that had reached npm with one,
-// four name strings between them, all carried a separator someone typed where
-// the records around it use " - ": one hand-curated bank name in both `name`
-// and `name_fr`, and two OpenStreetMap school names the fetcher passed straight
-// through. The separator is the one those two packages' own names already use
-// (97 ecoles name strings; of the 21 bank names, every one of the 10 that takes
-// a separator at all), not a claim about the repository: 486 name values use an
-// en dash, which this rule deliberately leaves alone. So a published name is gated like the metadata around it, and
-// `withoutEmDash` is what a generator calls to keep it that way.
+// a value, so an em dash inside one was treated as a data decision. Three
+// records had reached npm with one, four name strings between them: a
+// hand-curated bank name in both `name` and `name_fr`, and two OpenStreetMap
+// school names the fetcher passed straight through. So a published name is gated
+// like the metadata around it, and `withoutEmDash` is what a generator calls to
+// keep it that way.
+//
+// The substitution is a spaced hyphen and nothing more: it keeps the source's
+// separation of the name without the character. No claim is made about a house
+// separator, and the en dash is left alone.
 
 test("withoutEmDash swaps the separator and leaves everything else alone", () => {
   assert.equal(withoutEmDash(`École primaire ${EM_DASH} Khaldi Mohammed`), "École primaire - Khaldi Mohammed");
