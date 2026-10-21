@@ -65,6 +65,7 @@ npm install geoalgeria
 
 ```javascript
 const dz = require('geoalgeria');
+// أو في تطبيق ESM أو مع bundler: import dz from 'geoalgeria';
 
 dz.wilayas;                    // جميع الولايات الـ 69
 dz.communes;                   // جميع البلديات الـ 1,541
@@ -81,7 +82,9 @@ dz.findByPostalCode('16000');  // البحث بالرمز البريدي
 dz.getPostOfficesByCommune(1731); // مكاتب البريد في بلدية (حسب code_commune)
 ```
 
-أنواع TypeScript مضمّنة مباشرة.
+أنواع TypeScript مضمّنة مباشرة. الاستيراد الافتراضي يحتاج إلى `esModuleInterop` لأن الحزمة بصيغة CommonJS، أما `import dz = require('geoalgeria')` فلا يحتاجه.
+
+مع أي bundler (Next.js أو Vite أو webpack) تُضمّ ملفات JSON العشرة كلها، بما فيها مرايا مكاتب البريد والصرافات الآلية. إذا كنت تحتاج جزءًا واحدًا، استورد ملفه وحده: `import communes from 'geoalgeria/data/ecommerce/communes.json'` مع bundler، أو مع `with { type: 'json' }` في Node وحده.
 
 **تستخدم هذه البيانات في الإنتاج؟** [أخبرنا](https://github.com/yasserstudio/geoalgeria/discussions) – نعرض مشاريع المجتمع في الـ README.
 
