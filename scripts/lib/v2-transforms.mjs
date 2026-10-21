@@ -52,6 +52,12 @@ export const CUTOVER_DATE = "2026-07-18";
  *  the same way instead of drifting into three near-copies. */
 export const TWIN_POSTS_NOTE =
   "The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record.";
+
+/** The same, for the registry's REPEAT posts: a handful of establishments were
+ *  entered a second time in the language they already had, which the twin rule
+ *  cannot reach because it pairs one language with the other. */
+export const REPEAT_POSTS_NOTE =
+  "A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too.";
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
 /** A package opts into reviewed corrections by adding one committed ledger. */
@@ -304,7 +310,9 @@ export const MIGRATIONS = {
         // `msp_twin` is the registry's other-language post for the same
         // facility: the Ministry publishes each establishment once in French and
         // once in Arabic, and a bilingual record stands for both posts.
-        refs: refs({ wikidata: r.wikidata, osm: r.osm_id, msp: r.msp_id, msp_twin: r.msp_id_twin }),
+        // `msp_repeat` is a third post, in a language the record already has,
+        // which the registry entered a second time for the same establishment.
+        refs: refs({ wikidata: r.wikidata, osm: r.osm_id, msp: r.msp_id, msp_twin: r.msp_id_twin, msp_repeat: r.msp_id_repeat }),
         type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
         sector: r.sector, slug: r.slug,
       });
@@ -317,7 +325,7 @@ export const MIGRATIONS = {
       ],
       license: "Official registry (Ministry of Health); geocoding ODbL/CC0",
       estimatedUniverse: null,
-      coverageNote: `Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. ${TWIN_POSTS_NOTE} Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 71 remain ungeocoded.`,
+      coverageNote: `Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. ${TWIN_POSTS_NOTE} ${REPEAT_POSTS_NOTE} Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 70 remain ungeocoded.`,
       titles: { en: "Algeria public health establishments", fr: "Établissements de santé publique d'Algérie", ar: "المؤسسات الصحية العمومية الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), bilingual: rows.filter((r) => r.name_ar && r.name_fr).length, linkage_note: LINKAGE }),
     },
