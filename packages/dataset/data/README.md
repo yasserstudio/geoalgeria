@@ -74,11 +74,11 @@ data/
 | `name_fr` | string | French name |
 | `name_ar` | string | Arabic name |
 | `phone_code` | string \| null | Telephone area code, `null` where no official text allocates one |
-| `postal_code` | string | Main postal code |
+| `postal_code` | string | The postal code of the wilaya's chef-lieu commune, the same value that commune carries: a wilaya has no postal code of its own. Its two-digit prefix is the issuing office's wilaya, so it does not necessarily equal `code` (11 of 69, all in wilayas 59–69, e.g. Aflou `03001` in wilaya 59) |
 | `latitude` | number | Latitude of the capital commune's centre, the same value as that commune's `latitude` |
 | `longitude` | number | Longitude of the capital commune's centre, the same value as that commune's `longitude` |
 | `created` | string | The year the wilaya became official: `"original"` (1–48, Law 84-09 of 1984), `"2019"` (49–58, Law 19-12), `"2026"` (59–69, Law n° 26-06, *JO* n° 25 of 5 April 2026) |
-| `capital_commune_code` | integer | The `code_commune` of the wilaya's capital (chef-lieu); join it for the capital's names, postal code and coordinates |
+| `capital_commune_code` | integer | The `code_commune` of the wilaya's capital (chef-lieu); join it for the capital's names, and read its postal code and coordinates here or on the commune, which carry the same values |
 | `osm_relation_id` | integer \| null | The id of this wilaya's OpenStreetMap `admin_level=4` administrative relation; null where the capture has none |
 | `wikidata` | string \| null | The Wikidata item that relation carries (`Q` then digits); null where it carries no `wikidata` tag |
 

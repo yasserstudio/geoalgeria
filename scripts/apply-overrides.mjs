@@ -20,6 +20,13 @@
 // generator, running that generator applies the same ledger, so this is an alternative
 // to it and never a step after it.
 //
+// A LEDGER IS NOT REQUIRED. The other reason a published tree needs re-emitting is a
+// change to the WRITER itself, with no decision about any single record: private
+// tracker #288 moved the **rounded placeholder** demotion into `writePackageV2`, so
+// `mosquees`, `ooredoo` and `formation-professionnelle` each had to re-emit without a
+// ledger to land it. A package name that is not in MIGRATIONS still fails, which is
+// what the ledger check was really catching.
+//
 // It names its packages explicitly, and has no "every ledger" mode: a package can
 // legitimately have a second generator whose files this writer does not own (aviation's
 // routes come from a reviewed research dataset, not from the ANAC pull), and re-emitting
@@ -28,7 +35,7 @@
 // USAGE
 //   node scripts/apply-overrides.mjs emploi sports
 
-import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -51,8 +58,6 @@ if (!packages.length) {
 }
 
 for (const pkg of packages) {
-  if (!existsSync(join(OVERRIDES, `${pkg}.json`)))
-    throw new Error(`${pkg}: no ledger at quality/overrides/${pkg}.json`);
   const config = MIGRATIONS[pkg];
   if (!config) throw new Error(`${pkg}: not in MIGRATIONS, so there is no writer to re-run`);
   const dir = join(ROOT, "packages", pkg, "data");

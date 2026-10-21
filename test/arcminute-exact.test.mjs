@@ -15,9 +15,13 @@
 // `exact` on such a point is making a claim the number itself disproves, exactly as
 // the decimals rule does.
 //
-// The allow-list below is PRE-EXISTING debt in packages outside this fix's scope.
-// It is a ratchet: an entry that no longer trips is a failure too, so fixing a
-// record means deleting its line rather than leaving a stale exemption behind.
+// NO ALLOW-LIST. This file shipped with 15 exemptions, one per record in a package
+// #285 did not touch, because the demotion lived in one generator's ingest
+// (`geoAtMeasured`) and the rest had not been swept. Private tracker #288 swept them
+// and moved the rule into `writePackageV2`, beside the shared-point demotion every
+// package already went through, so a rounded placeholder cannot leave the writer
+// claiming `exact` whichever generator produced it. An exemption would now mean a
+// record that bypassed the writer, which is the thing to find rather than to allow.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -25,32 +29,10 @@ import { readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { onArcminuteGrid } from "../packages/schema/index.js";
+import { demoteRoundedPlaceholders } from "../scripts/lib/v2-transforms.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PACKAGES = join(ROOT, "packages");
-
-/** `<package>/<file>:<record id>` → why it is still allowed to claim `exact`.
- *  Each of these is a DMS-sourced point in a package this fix does not touch;
- *  they need their own sourcing pass (see the PR for #285). The four written to
- *  four decimals rather than five or seven are the ones ARCMINUTE_TOLERANCE was
- *  widened to 0.003' to reach, so they arrived with the rule, not before it. */
-const ALLOWED = new Map([
-  ["formation-professionnelle/establishments.json:01392", "takwin DMS point, 4 decimals"],
-  ["mosquees/mosquees.json:10-0439", "Wikidata DMS point, mosquees sourcing pass owed"],
-  ["mosquees/mosquees.json:68-0238", "Wikidata DMS point, 4-decimal grid value"],
-  ["ooredoo/stores.json:16-059", "operator API DMS point, ooredoo sourcing pass owed"],
-  ["ooredoo/stores.json:44-003", "operator API DMS point, 4 decimals"],
-  ["tourisme/attractions.json:attraction-846", "DMS point from the tourism source"],
-  ["tourisme/attractions.json:attraction-848", "DMS point from the tourism source"],
-  ["tourisme/historic.json:historic-91", "DMS point from the tourism source"],
-  ["tourisme/historic.json:historic-144", "DMS point from the tourism source"],
-  ["tourisme/historic.json:historic-487", "DMS point from the tourism source"],
-  ["tourisme/historic.json:historic-746", "DMS point from the tourism source"],
-  ["tourisme/historic.json:historic-837", "DMS point from the tourism source"],
-  ["tourisme/parks.json:park-25", "DMS point from the tourism source"],
-  ["tourisme/parks.json:park-29", "DMS point from the tourism source, 4 decimals"],
-  ["tourisme/parks.json:park-31", "DMS point from the tourism source"],
-]);
 
 /** Every published record collection in the repository, as `{ key, record }`. */
 function* publishedRecords() {
@@ -85,7 +67,7 @@ function tripping() {
 }
 
 test("no published record claims `exact` on a rounded placeholder", () => {
-  const offenders = [...tripping()].filter((key) => !ALLOWED.has(key)).sort();
+  const offenders = [...tripping()].sort();
   assert.deepEqual(
     offenders,
     [],
@@ -94,22 +76,43 @@ test("no published record claims `exact` on a rounded placeholder", () => {
   );
 });
 
-test("every allow-listed record still trips the rule", () => {
-  const hits = tripping();
-  const stale = [...ALLOWED.keys()].filter((key) => !hits.has(key)).sort();
-  assert.deepEqual(stale, [], "fixed or removed: delete these lines from ALLOWED");
+test("the writer, not this file, is what keeps that true", () => {
+  // The assertion above is a GUARD: it says the shipped tree is clean. This one says
+  // why it cannot stop being clean, because `writePackageV2` calls
+  // `demoteRoundedPlaceholders` on every file of every package before it validates
+  // or writes. A generator that stamps `exact` on a grid point therefore cannot
+  // publish it, and the 15 records private tracker #288 swept are not an exemption
+  // list this file has to carry.
+  const rows = [
+    { id: "on-the-grid", lat: 33.58333, lng: 2.66667, geo_precision: "exact" },
+    { id: "four-decimals", lat: 33.5833, lng: 2.6667, geo_precision: "exact" },
+    { id: "measured", lat: 36.7483061, lng: 3.0269546, geo_precision: "exact" },
+    { id: "one-axis-only", lat: 33.58333, lng: 2.875, geo_precision: "exact" },
+    { id: "already-honest", lat: 35, lng: 8, geo_precision: "approximate" },
+    { id: "ungeocoded", lat: null, lng: null, geo_precision: null },
+  ];
+  assert.equal(demoteRoundedPlaceholders(rows), 2);
+  assert.deepEqual(
+    rows.map((r) => r.geo_precision),
+    ["approximate", "approximate", "exact", "exact", "approximate", null],
+  );
 });
 
-test("no banques branch is allow-listed: #285 re-placed all of them", () => {
-  // The four that failed this file when it was written, named so a regression in
-  // the override ledger cannot quietly return under a new allow-list entry.
-  assert.deepEqual(
-    [...ALLOWED.keys()].filter((key) => key.startsWith("banques/")),
-    [],
-  );
+test("the records #285 and #288 re-placed or demoted stay off the grid as `exact`", () => {
+  // Named so a regression in a ledger or a generator cannot quietly bring one back
+  // under a precision the coordinate contradicts.
   const hits = tripping();
-  for (const id of ["agb-laghouat", "badr-412", "badr-413", "badr-772"])
-    assert.ok(!hits.has(`banques/branches.json:${id}`), `${id} is back on the grid as exact`);
+  const named = [
+    ["banques/branches.json", ["agb-laghouat", "badr-412", "badr-413", "badr-772"]],
+    ["formation-professionnelle/establishments.json", ["01392"]],
+    ["mosquees/mosquees.json", ["10-0439", "68-0238"]],
+    ["ooredoo/stores.json", ["16-059", "44-003"]],
+    ["tourisme/attractions.json", ["attraction-846", "attraction-848"]],
+    ["tourisme/historic.json", ["historic-91", "historic-144", "historic-487", "historic-746", "historic-837"]],
+    ["tourisme/parks.json", ["park-25", "park-29", "park-31"]],
+  ];
+  for (const [file, ids] of named)
+    for (const id of ids) assert.ok(!hits.has(`${file}:${id}`), `${file}:${id} is back on the grid as exact`);
 });
 
 test("the rule is answering: both axes are required, and a real point passes", () => {

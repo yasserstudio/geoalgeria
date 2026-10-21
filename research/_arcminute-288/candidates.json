@@ -1,0 +1,224 @@
+{
+  "generated_at": "2026-10-21T00:00:00Z",
+  "method_note": "Overpass (overpass-api.de and overpass.kumi.systems) and overpass.openstreetmap.fr were unreachable from this environment (connection timeout / 403 'white-listed usages only') via both direct curl and the WebFetch tool. Substituted the official OpenStreetMap API /api/0.6/map?bbox= raw-data endpoint (reachable), parsed client-side for every tag on every node/way inside the box, which satisfies the 'search over all tag values, not only name' requirement but is capped by that endpoint's 50,000-node limit per request. Box size was therefore shrunk in dense urban areas (Bouira city, Algiers/Khraissia) to ~1.1 km across and could not reach the full 5 km radius there; rural/Saharan boxes reached 5-22 km. Nominatim (nominatim.openstreetmap.org, reachable) was used for text search and for relation/way label points. Each record below states the actual radius searched.",
+  "queries": [
+    {"record_id": "historic-487", "endpoint": "api.openstreetmap.org/api/0.6/way/237164994/full.json", "query": "direct ref lookup (refs.osm)", "raw_response_summary": "way 237164994, 4 unique nodes, tags incl. name=Mosquée Abdallah Ibn Salam, old_name=Grande Synagogue d'Oran, amenity=place_of_worship, historic=heritage; simple node-average centroid 35.7000268,-0.6500225"},
+    {"record_id": "historic-487", "endpoint": "api.openstreetmap.org/api/0.6/interpreter (overpass substitute: bbox map around 35.7000197,-0.6500277, r=300m)", "query": "node search amenity=place_of_worship or name~Salam within 300m", "raw_response_summary": "no separate node found; only the way itself in that radius"},
+    {"record_id": "01392", "endpoint": "nominatim.openstreetmap.org/search", "query": "Sania, Relizane, Algeria", "raw_response_summary": "no results"},
+    {"record_id": "01392", "endpoint": "nominatim.openstreetmap.org/search", "query": "Es Senia, Oran, Algeria", "raw_response_summary": "relation 1259764 'Es Senia السانية', boundary=administrative, town, wilaya Oran (31), bbox lat 35.6037-35.6829 / lon -0.7031--0.5896"},
+    {"record_id": "01392", "endpoint": "nominatim.openstreetmap.org/search", "query": "Institut Hygiene Securite Oran / HSE Institut Bir El Djir", "raw_response_summary": "no results"},
+    {"record_id": "01392", "endpoint": "api.openstreetmap.org/api/0.6/map?bbox=-0.620,35.695,-0.580,35.725 (~3.3km box around Bir El Djir)", "query": "all tags scanned for hygi*/institut/secur/hse", "raw_response_summary": "only match: way 457939266 'Institut Hydrométéorologique de Formation et de Recherches' (IHFR) - a different institute, not the target"},
+    {"record_id": "10-0439", "endpoint": "api.openstreetmap.org/api/0.6/map?bbox=3.873,36.3567,3.893,36.3767 (~1.1km box, Bouira; wider boxes return HTTP 400 'too many nodes')", "query": "all amenity=place_of_worship + any tag mentioning 'Bouira' or wikidata=Q45908489", "raw_response_summary": "4 unnamed/other-named place_of_worship ways (255330143, 551131480 'Mosquée draa el bordj', 558576341 'Mosquée en construction', 706083696); none named 'mosquée de Bouira' or tagged wikidata=Q45908489; no wikidata-tagged element in the box at all"},
+    {"record_id": "68-0238", "endpoint": "api.openstreetmap.org/api/0.6/map?bbox=4.195,35.280,4.272,35.353 (~7x7km box, Maarif/M'Sila)", "query": "amenity=place_of_worship scan, name match 'صلاح الدين'", "raw_response_summary": "one unnamed place_of_worship way 506218450 (building=mosque), centroid 35.288270,4.270342, 4.607 km from published point, no name/ref tying it to the record"},
+    {"record_id": "16-059", "endpoint": "api.openstreetmap.org/api/0.6/map?bbox=2.968,36.673,2.998,36.693 (~2x2.2km box, Khraissia/Algiers)", "query": "any tag value containing 'ooredoo', shop=mobile_phone, office=telecommunication", "raw_response_summary": "zero matches"},
+    {"record_id": "44-003", "endpoint": "api.openstreetmap.org/api/0.6/map?bbox=2.025,36.246,2.108,36.320 (~5x5.4km box, Arib/Ain Defla)", "query": "any tag value containing 'ooredoo', shop=mobile_phone, office=telecommunication", "raw_response_summary": "zero matches"},
+    {"record_id": "attraction-846", "endpoint": "api.openstreetmap.org/api/0.6/map?bbox=6.843,36.573,6.923,36.653 (~7x7km box)", "query": "natural=cave_entrance or any tag containing grotte/ghar/rhar/cave", "raw_response_summary": "30220 nodes / 4868 ways scanned, zero matches"},
+    {"record_id": "attraction-848", "endpoint": "api.openstreetmap.org/api/0.6/map?bbox=7.627,36.393,7.707,36.473 (~7x7km box)", "query": "natural=cave_entrance or any tag containing grotte/ghar/rhar/cave", "raw_response_summary": "5787 nodes / 69 ways scanned, zero matches"},
+    {"record_id": "historic-144", "endpoint": "api.openstreetmap.org/api/0.6/map?bbox=1.055,35.837,1.178,35.897 (~6.6x6.6km box)", "query": "historic=* scan", "raw_response_summary": "nearest historic feature: node 3352114631 'ضريح المرابط سيدي عمارة' / 'Tombeau du marabout Sidi Amara' (historic=tomb), 0.366 km away - a different monument, not Ksar el Kaoua"},
+    {"record_id": "historic-91", "endpoint": "api.openstreetmap.org/api/0.6/map?bbox=3.403,36.103,3.463,36.163 (~6.6x6.6km box)", "query": "historic=* scan", "raw_response_summary": "node 1212738075 name='Rapidium', historic=ruins, 1.055 km from published point"},
+    {"record_id": "historic-91", "endpoint": "nominatim.openstreetmap.org/reverse", "query": "lat=36.1368537&lon=3.4224246 and lat=36.1333306&lon=3.4333306", "raw_response_summary": "both resolve to village Djouab, Daïra Souagui, wilaya Médéa (26) - confirms same commune as the record's wilaya_code 26"},
+    {"record_id": "historic-746", "endpoint": "api.openstreetmap.org/api/0.6/map?bbox=6.783,23.167,6.983,23.367 (~22x22km box, remote Sahara)", "query": "historic=*/memorial=*/name contains monument,flatters", "raw_response_summary": "1081 nodes / 4 ways scanned, zero matches"},
+    {"record_id": "historic-837", "endpoint": "api.openstreetmap.org/api/0.6/map?bbox=8.883,31.367,9.083,31.567 (~22x22km box, remote south)", "query": "historic=*/memorial=*/name contains monument,leboeuf", "raw_response_summary": "2695 nodes / 22 ways scanned, zero matches"},
+    {"record_id": "park-25", "endpoint": "nominatim.openstreetmap.org/search", "query": "Belezma National Park", "raw_response_summary": "way 324041581, label point 35.604378,6.0848983"},
+    {"record_id": "park-25", "endpoint": "api.openstreetmap.org/api/0.6/way/324041581.json and /full.json", "query": "tag + geometry fetch", "raw_response_summary": "tags incl. boundary=national_park, wikidata=Q2664184 (matches record ref); 1581 unique boundary nodes, vertex-average centroid 35.589193,6.069889"},
+    {"record_id": "park-29", "endpoint": "nominatim.openstreetmap.org/search", "query": "Djurdjura National Park", "raw_response_summary": "way 522229283, label point 36.4646223,4.1542035"},
+    {"record_id": "park-29", "endpoint": "api.openstreetmap.org/api/0.6/way/522229283.json and /full.json", "query": "tag + geometry fetch", "raw_response_summary": "tags incl. boundary=national_park, wikidata=Q2580089 (matches record ref); 461 unique boundary nodes, vertex-average centroid 36.471829,4.164619"},
+    {"record_id": "park-31", "endpoint": "api.openstreetmap.org/api/0.6/relation/5424406.json and /full.json", "query": "direct ref via Wikidata P402=5424406", "raw_response_summary": "relation tags incl. boundary=national_park, wikidata=Q650992 (matches record ref, and Wikidata P402 points back to this exact relation id - mutual confirmation); 19 members, outer-ring vertex-average centroid 36.884870,8.383097 (approximate, not an area-weighted polygon centroid)"}
+  ],
+  "records": [
+    {
+      "record_id": "01392",
+      "file": "packages/formation-professionnelle/data/establishments.json",
+      "published": {"lat": 35.7167, "lng": 0.6333, "commune_code": null, "commune": "السانية", "wilaya_code": "48", "refs": {}},
+      "wikidata": null,
+      "osm": [],
+      "verdict": "demote_only",
+      "verdict_reason": "No refs.wikidata/refs.osm on this record at all (geo_method='takwin', source='mfep'). The published value is internally contradictory: commune 'السانية' (Es Senia) IS a real place, but it is a commune of Oran wilaya (31) per OSM relation 1259764, not of wilaya '48' as the record states; the record's own address fields say 'بلدية بئر الجير وهران' / 'BIR EL DJIR ORAN' (a different, nearby Oran commune). The published longitude (+0.6333) has the wrong sign for anywhere near Oran/Es Senia/Bir El Djir (all around lng -0.60 to -0.65); its magnitude is plausible only for the old wilaya-48 (Relizane) area, which the address contradicts. Searched ~3.3 km around Bir El Djir/Es Senia for the institute by name and by amenity/office tag family: not found (only an unrelated hydrometeorology institute nearby). No citable open source exists for any coordinate here; flagging the wilaya_code/commune/sign contradiction rather than attempting a fix.",
+      "evidence": [
+        {"url": "https://nominatim.openstreetmap.org/search?q=Es+Senia,+Oran,+Algeria", "checked_at": "2026-10-21", "note": "Es Senia (السانية) is a commune of Oran wilaya (31), bbox 35.60-35.68 lat / -0.70 to -0.59 lon; published wilaya_code 48 and published +lng sign are both inconsistent with this"},
+        {"url": "https://api.openstreetmap.org/api/0.6/map?bbox=-0.620,35.695,-0.580,35.725", "checked_at": "2026-10-21", "note": "no matching institute found near the address given in the record (Bir El Djir, Oran)"}
+      ]
+    },
+    {
+      "record_id": "10-0439",
+      "file": "packages/mosquees/data/mosquees.json",
+      "published": {"lat": 36.36666, "lng": 3.88333, "commune_code": "1001", "commune": "Bouira", "wilaya_code": "10", "refs": {"wikidata": "Q45908489"}},
+      "wikidata": {"qid": "Q45908489", "p625": {"lat": 36.36666, "lng": 3.88333, "precision": 0.011155884410441}, "osm_refs": null, "reference": "P143 (imported from) Q8447 = French Wikipedia"},
+      "osm": [],
+      "verdict": "demote_only",
+      "verdict_reason": "Published lat/lng is an exact copy of Wikidata Q45908489's P625 value (not independent). That P625 statement's own declared precision is 0.01116 degrees (~40 arcsec, ~1.24 km at this latitude), sourced only as 'imported from French Wikipedia' - i.e. Wikidata itself documents this as a coarse, non-surveyed value. Searched a ~1.1x1.1 km box around the published point (the OSM /map endpoint's 50,000-node cap forced a smaller box than 5 km in this dense city) for amenity=place_of_worship and for any tag mentioning Bouira: found 4 other place_of_worship ways, none named 'mosquée de Bouira' and none carrying wikidata=Q45908489. No independent, same-place corroboration found within the searched radius.",
+      "evidence": [
+        {"url": "https://www.wikidata.org/wiki/Special:EntityData/Q45908489.json", "checked_at": "2026-10-21", "note": "P625 precision 0.0112 deg, ref P143=Q8447 (fr.wikipedia)"},
+        {"url": "https://api.openstreetmap.org/api/0.6/map?bbox=3.873,36.3567,3.893,36.3767", "checked_at": "2026-10-21", "note": "no wikidata-tagged or name-matching mosque within ~0.6 km radius box"}
+      ]
+    },
+    {
+      "record_id": "68-0238",
+      "file": "packages/mosquees/data/mosquees.json",
+      "published": {"lat": 35.316633, "lng": 4.233335, "commune_code": "2829", "commune": "Maarif", "wilaya_code": "28", "refs": {"wikidata": "Q137877170"}},
+      "wikidata": {"qid": "Q137877170", "p625": {"lat": 35.3166329999999, "lng": 4.2333355, "precision": 0.000001}, "osm_refs": null, "reference": "none attached to the P625 statement"},
+      "osm": [],
+      "verdict": "demote_only",
+      "verdict_reason": "Published lat/lng is a copy of Wikidata Q137877170's P625 value (differs only by floating-point noise at the 7th decimal). The P625 statement carries no reference at all, so the declared precision of 1e-6 degrees (~11 cm) is not backed by any stated source - it does not prove a real high-precision survey and is not independently citable. Searched a ~7x7 km box around the published point for amenity=place_of_worship and for the name 'صلاح الدين الأيوبي': found only one unnamed place_of_worship way (506218450), 4.6 km away, with no name or reference tying it to this specific mosque. No defensible independent match.",
+      "evidence": [
+        {"url": "https://www.wikidata.org/wiki/Special:EntityData/Q137877170.json", "checked_at": "2026-10-21", "note": "P625 precision 1e-6 deg, no reference block on the statement"},
+        {"url": "https://api.openstreetmap.org/api/0.6/map?bbox=4.195,35.280,4.272,35.353", "checked_at": "2026-10-21", "note": "nearest place_of_worship is unnamed, 4.607 km away"}
+      ]
+    },
+    {
+      "record_id": "16-059",
+      "file": "packages/ooredoo/data/stores.json",
+      "published": {"lat": 36.6833, "lng": 2.98333, "commune_code": "1656", "commune": "Khraissia", "wilaya_code": "16", "refs": {"ooredoo": "1467405"}},
+      "wikidata": null,
+      "osm": [],
+      "verdict": "demote_only",
+      "verdict_reason": "Source is the Ooredoo operator API (refs.ooredoo internal id), not an open source, and ADR rules only accept OSM/Wikidata. Searched a ~2x2.2 km box (OSM /map node-limit forced a smaller-than-5km box in this dense Algiers suburb) for any tag value mentioning 'ooredoo' and for shop=mobile_phone / office=telecommunication: zero matches. Nothing citable exists to support 'exact'.",
+      "evidence": [
+        {"url": "https://api.openstreetmap.org/api/0.6/map?bbox=2.968,36.673,2.998,36.693", "checked_at": "2026-10-21", "note": "no ooredoo/mobile-phone/telecom tag anywhere in box"}
+      ]
+    },
+    {
+      "record_id": "44-003",
+      "file": "packages/ooredoo/data/stores.json",
+      "published": {"lat": 36.2833, "lng": 2.06667, "commune_code": "4406", "commune": "Arib", "wilaya_code": "44", "refs": {"ooredoo": "1423660"}},
+      "wikidata": null,
+      "osm": [],
+      "verdict": "demote_only",
+      "verdict_reason": "Same situation as 16-059: operator_api is not an open source. Searched a ~5x5.4 km box around the published point for 'ooredoo' in any tag value and for shop=mobile_phone / office=telecommunication: zero matches.",
+      "evidence": [
+        {"url": "https://api.openstreetmap.org/api/0.6/map?bbox=2.025,36.246,2.108,36.320", "checked_at": "2026-10-21", "note": "no ooredoo/mobile-phone/telecom tag anywhere in box"}
+      ]
+    },
+    {
+      "record_id": "attraction-846",
+      "file": "packages/tourisme/data/attractions.json",
+      "published": {"lat": 36.6166667, "lng": 6.8833333, "commune_code": null, "commune": null, "wilaya_code": "21", "refs": {"wikidata": "Q23790561"}},
+      "wikidata": {"qid": "Q23790561", "p625": {"lat": 36.616666666667, "lng": 6.8833333333333, "precision": 0.00027777777777778}, "osm_refs": null, "reference": "P248 stated in Q1194038 (GEOnet Names Server), P577 retrieved 2018-06-11, P2326 GNS unique feature id -484482"},
+      "osm": [],
+      "verdict": "demote_only",
+      "verdict_reason": "Published value is a copy of Wikidata's P625 (identical to 13 significant figures). Precision is declared as exactly 1 arcsecond, but the statement's own reference shows this is a bulk 2018 import from the US NGA's GEOnet Names Server (GNS) gazetteer, not a survey - 1-arcsecond is GNS's standard default precision flag, not evidence of fine measurement. Searched a ~7x7 km box for natural=cave_entrance and for any tag mentioning grotte/ghar/rhar/cave: zero matches among 30,220 nodes / 4,868 ways scanned.",
+      "evidence": [
+        {"url": "https://www.wikidata.org/wiki/Special:EntityData/Q23790561.json", "checked_at": "2026-10-21", "note": "P625 copied verbatim; GNS import, precision=1 arcsec by GNS convention"},
+        {"url": "https://api.openstreetmap.org/api/0.6/map?bbox=6.843,36.573,6.923,36.653", "checked_at": "2026-10-21", "note": "no cave feature found"}
+      ]
+    },
+    {
+      "record_id": "attraction-848",
+      "file": "packages/tourisme/data/attractions.json",
+      "published": {"lat": 36.4333333, "lng": 7.6666667, "commune_code": null, "commune": null, "wilaya_code": "24", "refs": {"wikidata": "Q23789926"}},
+      "wikidata": {"qid": "Q23789926", "p625": {"lat": 36.433333333333, "lng": 7.6666666666667, "precision": 0.00027777777777778}, "osm_refs": null, "reference": "P248 stated in Q1194038 (GEOnet Names Server), P577 retrieved 2018-06-11, P2326 GNS unique feature id -485249"},
+      "osm": [],
+      "verdict": "demote_only",
+      "verdict_reason": "Same GNS-import pattern as attraction-846: published value is a direct copy of P625, whose 1-arcsec precision is the GNS gazetteer's default flag, not a survey claim. Searched a ~7x7 km box for natural=cave_entrance / grotte / ghar / rhar / cave: zero matches among 5,787 nodes / 69 ways scanned.",
+      "evidence": [
+        {"url": "https://www.wikidata.org/wiki/Special:EntityData/Q23789926.json", "checked_at": "2026-10-21", "note": "P625 copied verbatim; GNS import"},
+        {"url": "https://api.openstreetmap.org/api/0.6/map?bbox=7.627,36.393,7.707,36.473", "checked_at": "2026-10-21", "note": "no cave feature found"}
+      ]
+    },
+    {
+      "record_id": "historic-144",
+      "file": "packages/tourisme/data/historic.json",
+      "published": {"lat": 35.86667, "lng": 1.11667, "commune_code": null, "commune": null, "wilaya_code": "48", "refs": {"wikidata": "Q109258706"}},
+      "wikidata": {"qid": "Q109258706", "p625": {"lat": 35.86667, "lng": 1.11667, "precision": 0.011085076067902}, "osm_refs": null, "reference": "P143 imported from Q8447 = French Wikipedia"},
+      "osm": [{"type": "node", "id": "3352114631", "url": "https://www.openstreetmap.org/node/3352114631", "tags": {"historic": "tomb", "name": "ضريح المرابط سيدي عمارة", "name:fr": "Tombeau du marabout Sidi Amara", "tomb": "mausoleum", "addr:city": "عمي موسى"}, "lat": 35.8665556, "lng": 1.1207252, "centroid_of_nodes": null, "distance_km": 0.366}],
+      "verdict": "demote_only",
+      "verdict_reason": "Published value is a verbatim copy of Wikidata Q109258706's P625, itself only sourced as 'imported from French Wikipedia' with a declared precision of ~40 arcsec (~1.2 km), not independently surveyed. Searched a ~6.6x6.6 km box for historic=*: the only nearby historic feature is a different monument - a marabout's tomb (Sidi Amara mausoleum), 0.366 km away, named nothing like 'Ksar el Kaoua'. Not the same place, so it is not a candidate under the ADR's same-place rule. No citable match.",
+      "evidence": [
+        {"url": "https://www.wikidata.org/wiki/Special:EntityData/Q109258706.json", "checked_at": "2026-10-21", "note": "P625 copied verbatim, fr.wikipedia import, precision ~40 arcsec"},
+        {"url": "https://www.openstreetmap.org/node/3352114631", "checked_at": "2026-10-21", "note": "nearest historic node is a different place (a tomb, not the ksar)"}
+      ]
+    },
+    {
+      "record_id": "historic-487",
+      "file": "packages/tourisme/data/historic.json",
+      "published": {"lat": 35.7000197, "lng": -0.6500277, "commune_code": null, "commune": null, "wilaya_code": "31", "refs": {"osm": "237164994"}},
+      "wikidata": null,
+      "osm": [{"type": "way", "id": "237164994", "url": "https://www.openstreetmap.org/way/237164994", "tags": {"amenity": "place_of_worship", "historic": "heritage", "name": "Mosquée Abdallah Ibn Salam", "old_name": "Grande Synagogue d'Oran", "addr:city": "Oran", "denomination": "sunni", "religion": "muslim"}, "lat": null, "lng": null, "centroid_of_nodes": [35.7000268, -0.6500225], "distance_km": 0.001}],
+      "verdict": "demote_only",
+      "verdict_reason": "CONFIRMS the flag: this is NOT an arcminute-rounded placeholder. Way 237164994 is a genuine 4-node building footprint (the former Grande Synagogue d'Oran, now Mosquée Abdallah Ibn Salam); its node-average centroid, computed to 7 decimals, is (35.7000268, -0.6500225) - 0.001 km (about 1 metre) from the published point. The coincidence with an arcminute grid value noted in the brief is real but irrelevant; the point is accurate. However, under the ADR's own rule ('an area - OSM way or relation - gives a centroid, which is approximate, not exact; only a node that is the facility itself supports exact'), a way can never carry 'exact' regardless of how accurate its centroid is, and this way is the record's own source (refs.osm=237164994), so it is also not independent corroboration of itself. A 300 m search found no separate OSM node for this mosque. Net effect: keep the existing (correct) point, but the geo_precision label must still drop from 'exact' to 'approximate' because the underlying OSM object is an area, not a node - demote_only, not a coordinate problem.",
+      "evidence": [
+        {"url": "https://api.openstreetmap.org/api/0.6/way/237164994/full.json", "checked_at": "2026-10-21", "note": "4-node way, centroid within 1 m of the published point; this is the record's own source, not independent"}
+      ]
+    },
+    {
+      "record_id": "historic-746",
+      "file": "packages/tourisme/data/historic.json",
+      "published": {"lat": 23.2666667, "lng": 6.8833333, "commune_code": null, "commune": null, "wilaya_code": "11", "refs": {"wikidata": "Q23813071"}},
+      "wikidata": {"qid": "Q23813071", "p625": {"lat": 23.266666666667, "lng": 6.8833333333333, "precision": 0.00027777777777778}, "osm_refs": null, "reference": "P248 stated in Q1194038 (GEOnet Names Server), P577 retrieved 2018-06-11, P2326 GNS unique feature id -469494"},
+      "osm": [],
+      "verdict": "demote_only",
+      "verdict_reason": "Published value is a verbatim copy of Wikidata's P625 (GNS-import pattern as with the caves; 1-arcsec precision is GNS's default flag, not a survey). Searched a ~22x22 km box in this remote Sahara location (Illizi) for historic=* / memorial=* / name mentioning 'monument'/'flatters': 1,081 nodes and 4 ways scanned, zero matches. OSM has essentially no coverage of this feature.",
+      "evidence": [
+        {"url": "https://www.wikidata.org/wiki/Special:EntityData/Q23813071.json", "checked_at": "2026-10-21", "note": "P625 copied verbatim, GNS import"},
+        {"url": "https://api.openstreetmap.org/api/0.6/map?bbox=6.783,23.167,6.983,23.367", "checked_at": "2026-10-21", "note": "no historic/memorial feature anywhere in the 22 km box"}
+      ]
+    },
+    {
+      "record_id": "historic-837",
+      "file": "packages/tourisme/data/historic.json",
+      "published": {"lat": 31.4666667, "lng": 8.9833333, "commune_code": null, "commune": null, "wilaya_code": "30", "refs": {"wikidata": "Q23816639"}},
+      "wikidata": {"qid": "Q23816639", "p625": {"lat": 31.466666666667, "lng": 8.9833333333333, "precision": 0.00027777777777778}, "osm_refs": null, "reference": "P248 stated in Q1194038 (GEOnet Names Server), P577 retrieved 2018-06-11, P2326 GNS unique feature id -464713"},
+      "osm": [],
+      "verdict": "demote_only",
+      "verdict_reason": "Same GNS-import pattern. Searched a ~22x22 km box in the remote south (Ouargla area) for historic=* / memorial=* / name mentioning 'monument'/'leboeuf': 2,695 nodes and 22 ways scanned, zero matches.",
+      "evidence": [
+        {"url": "https://www.wikidata.org/wiki/Special:EntityData/Q23816639.json", "checked_at": "2026-10-21", "note": "P625 copied verbatim, GNS import"},
+        {"url": "https://api.openstreetmap.org/api/0.6/map?bbox=8.883,31.367,9.083,31.567", "checked_at": "2026-10-21", "note": "no historic/memorial feature anywhere in the 22 km box"}
+      ]
+    },
+    {
+      "record_id": "historic-91",
+      "file": "packages/tourisme/data/historic.json",
+      "published": {"lat": 36.1333306, "lng": 3.4333306, "commune_code": null, "commune": null, "wilaya_code": "26", "refs": {"wikidata": "Q109626723"}},
+      "wikidata": {"qid": "Q109626723", "p625": {"lat": 36.13333055555555, "lng": 3.4333305555555556, "precision": 0.0000027777777777778}, "osm_refs": null, "reference": "none attached to the P625 statement"},
+      "osm": [{"type": "node", "id": "1212738075", "url": "https://www.openstreetmap.org/node/1212738075", "tags": {"historic": "ruins", "name": "Rapidium"}, "lat": 36.1368537, "lng": 3.4224246, "centroid_of_nodes": null, "distance_km": 1.055}],
+      "verdict": "replace_exact",
+      "verdict_reason": "Published value is a copy of Wikidata's unreferenced, over-precise P625 (not citable as independent). OpenStreetMap carries a standalone node (1212738075, historic=ruins, name='Rapidium' - OSM's spelling of the same Roman site Wikidata calls 'Rapidum') 1.055 km from the published point. Reverse-geocoding both the published point and the OSM node places them in the same commune, Djouab (Daïra Souagui, wilaya Médéa/26), matching the record's own wilaya_code 26. This is a genuine OSM node (not a way/relation), for the same place, in the same commune, independent of the Wikidata value the record was copied from: it qualifies to replace the published point and keep geo_precision=exact.",
+      "evidence": [
+        {"url": "https://www.wikidata.org/wiki/Special:EntityData/Q109626723.json", "checked_at": "2026-10-21", "note": "P625 unreferenced, precision 2.78e-6 deg (not citable)"},
+        {"url": "https://www.openstreetmap.org/node/1212738075", "checked_at": "2026-10-21", "note": "node 'Rapidium', historic=ruins, 1.055 km from published point"},
+        {"url": "https://nominatim.openstreetmap.org/reverse?lat=36.1368537&lon=3.4224246", "checked_at": "2026-10-21", "note": "same commune (Djouab, Médéa) as the published point's reverse geocode"}
+      ]
+    },
+    {
+      "record_id": "park-25",
+      "file": "packages/tourisme/data/parks.json",
+      "published": {"lat": 35.5833333, "lng": 6.0333333, "commune_code": null, "commune": null, "wilaya_code": "05", "refs": {"wikidata": "Q2664184"}},
+      "wikidata": {"qid": "Q2664184", "p625": [{"lat": 35.58333333, "lng": 6.03333333, "precision": 0.016666666666667, "reference": "P143 imported from Q328 = English Wikipedia", "rank": "normal"}, {"lat": 35.58333, "lng": 6.03333, "precision": 0.00001, "reference": "none", "rank": "normal"}], "osm_refs": null},
+      "osm": [{"type": "way", "id": "324041581", "url": "https://www.openstreetmap.org/way/324041581", "tags": {"boundary": "national_park", "leisure": "nature_reserve", "name": "Parc National de Belezma", "wikidata": "Q2664184"}, "lat": null, "lng": null, "centroid_of_nodes": [35.589193, 6.069889], "distance_km": 3.369}],
+      "verdict": "replace_approximate",
+      "verdict_reason": "Published value matches the enwiki-imported Wikidata P625 (precision ~1 arcmin, i.e. ~1.85 km), a coarse, non-independent copy; Wikidata itself holds two conflicting, equally-ranked P625 statements, neither definitive. OSM carries the park as a real boundary way (324041581, wikidata=Q2664184, same place confirmed by the matching QID tag). Per the ADR, an OSM way/area gives a centroid, which is approximate, not exact: computed vertex-average centroid of the park boundary is (35.589193, 6.069889), 3.369 km from the published point. Recommend replacing the point with this centroid and downgrading geo_precision to approximate.",
+      "evidence": [
+        {"url": "https://www.wikidata.org/wiki/Special:EntityData/Q2664184.json", "checked_at": "2026-10-21", "note": "two conflicting P625 statements, one enwiki-imported at ~1 arcmin precision"},
+        {"url": "https://www.openstreetmap.org/way/324041581", "checked_at": "2026-10-21", "note": "wikidata=Q2664184 on the way confirms same place"}
+      ]
+    },
+    {
+      "record_id": "park-29",
+      "file": "packages/tourisme/data/parks.json",
+      "published": {"lat": 36.4667, "lng": 4.1333, "commune_code": null, "commune": null, "wilaya_code": "15", "refs": {"wikidata": "Q2580089"}},
+      "wikidata": {"qid": "Q2580089", "p625": {"lat": 36.4667, "lng": 4.1333, "precision": 0.000001, "reference": "P854 = unesco.org MAB directory URL for the biosphere reserve"}, "osm_refs": null},
+      "osm": [{"type": "way", "id": "522229283", "url": "https://www.openstreetmap.org/way/522229283", "tags": {"boundary": "national_park", "leisure": "nature_reserve", "name": "Parc National du Djurdjura", "wikidata": "Q2580089"}, "lat": null, "lng": null, "centroid_of_nodes": [36.471829, 4.164619], "distance_km": 2.858}],
+      "verdict": "replace_approximate",
+      "verdict_reason": "Published value is a verbatim copy of Wikidata's P625 (sourced to a UNESCO MAB directory URL - a real external reference, but still a single rounded 4-decimal point for an entire park, and not independent of what the record already used). OSM carries a matching boundary way (522229283, wikidata=Q2580089 confirming same object). Per the ADR, the way's centroid is approximate: vertex-average centroid (36.471829, 4.164619), 2.858 km from the published point. Recommend replacing with this centroid, geo_precision=approximate.",
+      "evidence": [
+        {"url": "https://www.wikidata.org/wiki/Special:EntityData/Q2580089.json", "checked_at": "2026-10-21", "note": "P625 ref P854 = UNESCO MAB directory URL"},
+        {"url": "https://www.openstreetmap.org/way/522229283", "checked_at": "2026-10-21", "note": "wikidata=Q2580089 on the way confirms same place"}
+      ]
+    },
+    {
+      "record_id": "park-31",
+      "file": "packages/tourisme/data/parks.json",
+      "published": {"lat": 36.8166667, "lng": 8.4166667, "commune_code": null, "commune": null, "wilaya_code": "36", "refs": {"wikidata": "Q650992"}},
+      "wikidata": {"qid": "Q650992", "p625": {"lat": 36.81666667, "lng": 8.41666667, "precision": 0.016666666666667, "reference": "P143 imported from Q328 = English Wikipedia"}, "osm_refs": "P402 (OSM relation ID) = 5424406"},
+      "osm": [{"type": "relation", "id": "5424406", "url": "https://www.openstreetmap.org/relation/5424406", "tags": {"boundary": "national_park", "leisure": "nature_reserve", "name": "Parc National d'El Kala", "wikidata": "Q650992"}, "lat": null, "lng": null, "centroid_of_nodes": [36.88487042, 8.38309713], "distance_km": 8.151}],
+      "verdict": "replace_approximate",
+      "verdict_reason": "Published value matches the enwiki-imported Wikidata P625 (~1 arcmin precision, non-independent copy). Wikidata's own P402 statement names this exact OSM relation (5424406), and the relation's wikidata tag points back to Q650992 - mutual, independent confirmation it is the same object. Per the ADR, a relation is still an area and gives a centroid, which is approximate: computed outer-ring vertex-average centroid is (36.884870, 8.383097), 8.151 km from the published point (this is a large multi-member relation, so the vertex-average is an approximation of the true area-weighted centroid, not an exact calculation; Nominatim's label point for the same relation, 36.7708284/8.4157582, is 5.1 km away, in the same general direction, corroborating that the published point sits well outside the park's true geometric middle). Recommend replacing with a centroid in this range, geo_precision=approximate.",
+      "evidence": [
+        {"url": "https://www.wikidata.org/wiki/Special:EntityData/Q650992.json", "checked_at": "2026-10-21", "note": "P402=5424406 links directly to the OSM relation"},
+        {"url": "https://www.openstreetmap.org/relation/5424406", "checked_at": "2026-10-21", "note": "wikidata=Q650992 on the relation confirms the mutual link"},
+        {"url": "https://nominatim.openstreetmap.org/lookup?osm_ids=R5424406", "checked_at": "2026-10-21", "note": "independent label-point estimate, 5.1 km from published point, same direction as the vertex-average centroid"}
+      ]
+    }
+  ]
+}
