@@ -10,6 +10,11 @@ declare namespace algeriaGeodata {
     name_fr: string;
     name_ar: string;
     phone_code: string | null;
+    /** The postal code of the wilaya's capital commune
+     *  (`capital_commune_code`), the same value that commune carries: a wilaya
+     *  has no postal code of its own. Its two-digit prefix is the issuing
+     *  office's wilaya, so it need not equal `code`; wilaya 59 reads `03001`,
+     *  its chef-lieu Aflou's own code, and 11 of the 69 are in that case. */
     postal_code: string;
     /** The wilaya's point: the centre of its capital commune
      *  (`capital_commune_code`), the same value that commune carries and not a

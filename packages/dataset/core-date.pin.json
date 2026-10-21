@@ -1,7 +1,7 @@
 {
   "document": "dataset-metadata.json",
   "field": "dateModified",
-  "dateModified": "2026-10-13",
+  "dateModified": "2026-10-21",
   "algorithm": "sha256",
   "canonical_form": "sha256 over one line per carrier, `<path> <sha256 of the file with CRLF normalised to LF>`, the carriers in ascending path order, so the digest states the published content of the core and not the order the files were read in or the line endings a checkout produced",
   "carrier_count": 27,
@@ -34,6 +34,6 @@
     "wilayas.csv",
     "wilayas.json"
   ],
-  "sha256": "739653dba1601eb4dfe469c6815661738ebefe00e3aa59bfa28dfdb69697a38a",
+  "sha256": "5c3fb7cf99f3ca187c4bbd360b23e05c21b17bd4222c65abaaa32d4346e097e0",
   "note": "The digest of the administrative core's published carriers, next to the `dateModified` they were last dated at. `pnpm validate` and test/core-date-pinned.test.mjs recompute it and fail when the core has moved and this file has not, which is the releaser's prompt to date the release: set `dateModified`, run `node scripts/build-catalog.mjs`, then `pnpm pin-core-date --write`, which refuses while `dateModified` is older than the day it runs on. `data/poste/` is excluded: it is a mirror of @geoalgeria/poste and carries that package's date."
 }
