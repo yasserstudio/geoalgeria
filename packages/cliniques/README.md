@@ -73,7 +73,7 @@ const urgences = all.filter((c) => c.emergency);
 > each rebuild reflects the current state of the map.
 
 > **It never republishes a hospital [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) already ships, and the two must not be summed.**
-> `sante` is the *registry* tier: 668 public establishments (CHU, EPH, EHS, EPSP)
+> `sante` is the *registry* tier: 661 public establishments (CHU, EPH, EHS, EPSP)
 > from the Ministry of Health. This package is the *community* tier. 121 of
 > sante's records reference an OSM element by id. The 86 of them on a hospital
 > (CHU, EPH, EHS) are excluded here **by construction**, so no hospital is
@@ -83,7 +83,7 @@ const urgences = all.filter((c) => c.emergency);
 > sante's other 547 records carry no OSM reference at all, so the same physical
 > establishment can still appear in both packages, under different coordinates
 > and different ids, with nothing mechanical to detect it. The two describe
-> different tiers of a health system, so adding 668 to 1,917 counts nothing real.
+> different tiers of a health system, so adding 661 to 1,917 counts nothing real.
 
 **Type is inferred from the name.** A polyclinique names itself
 polyclinique/عيادة متعددة الخدمات, a salle de soins قاعة علاج/مستوصف/dispensaire,
@@ -235,13 +235,13 @@ The raw source pull is captured under
 [`sources/cliniques/`](https://github.com/yasserstudio/geoalgeria/tree/main/sources/cliniques),
 so a rebuild never depends on Overpass being up.
 
-## License & attribution
+## Licence & attribution
 
 Package **code** is [MIT](LICENSE). The **data** is from **OpenStreetMap**:
 **© OpenStreetMap contributors**, licensed under the
 **[ODbL 1.0](https://www.openstreetmap.org/copyright)**. If you use or
 redistribute this dataset, you must **attribute OpenStreetMap contributors** and
-keep derived databases under a compatible license.
+keep derived databases under a compatible licence.
 
 Verify against official sources for authoritative information. This dataset is
 provided for reference and to power [GeoAlgeria](https://geoalgeria.com).

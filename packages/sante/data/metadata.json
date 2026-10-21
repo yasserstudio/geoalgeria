@@ -4,16 +4,16 @@
   "title_fr": "Établissements de santé publique d'Algérie",
   "title_ar": "المؤسسات الصحية العمومية الجزائرية",
   "title_en": "Algeria public health establishments",
-  "record_count": 668,
-  "geocoded_count": 597,
+  "record_count": 661,
+  "geocoded_count": 591,
   "geocoded_pct": 89.4,
   "precision": {
-    "exact": 132,
-    "approximate": 465
+    "exact": 133,
+    "approximate": 458
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 71 remain ungeocoded.",
+  "coverage_note": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 70 remain ungeocoded.",
   "wilayas_covered": 58,
   "bbox": [
     -8.140085,
@@ -51,17 +51,17 @@
   "updated": "2026-06-27",
   "by_type": {
     "ehs": 103,
-    "eph": 257,
-    "epsp": 284,
+    "eph": 254,
+    "epsp": 280,
     "hopital": 5,
     "chu": 19
   },
   "by_sector": {
-    "public": 668
+    "public": 661
   },
   "by_geo_method": {
-    "commune_centroid": 465,
-    "osm_point": 118,
+    "commune_centroid": 458,
+    "osm_point": 119,
     "wikidata_point": 3,
     "owner_verified": 11
   },

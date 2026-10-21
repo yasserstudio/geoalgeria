@@ -11,7 +11,14 @@ import { execFileSync } from "node:child_process";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { EM_DASH, emDashPointers, emDashErrors } from "../scripts/lib/no-em-dash.mjs";
+import {
+  EM_DASH,
+  emDashPointers,
+  emDashErrors,
+  nameEmDashPointers,
+  nameEmDashErrors,
+  withoutEmDash,
+} from "../scripts/lib/no-em-dash.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -57,6 +64,151 @@ test("every published metadata file in the repo is clean", () => {
   }
   assert.deepEqual(offenders, []);
 });
+
+// ---------------------------------------------------------------------------
+// The published-name gate.
+//
+// Metadata was the whole of the rule until #281: a record's own name counted as
+// a value, so an em dash inside one was treated as a data decision. Three
+// records had reached npm with one, four name strings between them: a
+// hand-curated bank name in both `name` and `name_fr`, and two OpenStreetMap
+// school names the fetcher passed straight through. So a published name is gated
+// like the metadata around it, and `withoutEmDash` is what a generator calls to
+// keep it that way.
+//
+// The substitution is a spaced hyphen and nothing more: it keeps the source's
+// separation of the name without the character. No claim is made about a house
+// separator, and the en dash is left alone.
+
+test("withoutEmDash swaps the separator and leaves everything else alone", () => {
+  assert.equal(withoutEmDash(`École primaire ${EM_DASH} Khaldi Mohammed`), "École primaire - Khaldi Mohammed");
+  assert.equal(withoutEmDash(`a${EM_DASH}b`), "a - b");
+  assert.equal(withoutEmDash(`${EM_DASH} a`), "- a");
+  assert.equal(withoutEmDash("Al Salam Bank - Algeria"), "Al Salam Bank - Algeria");
+  assert.equal(withoutEmDash("6–7"), "6–7");
+  assert.equal(withoutEmDash(null), null);
+});
+
+// It rewrites the dash, not the whitespace of the string it sits in. A /\s+/
+// sweep looked equivalent and was not: \s matches U+00A0, so it flattened the
+// non-breaking space French copy puts before a colon, and any interior tab with
+// it. Those are the source's own characters and nothing here asked to touch
+// them.
+test("withoutEmDash leaves a non-breaking space and an interior tab alone", () => {
+  const NBSP = "\u00a0";
+  assert.equal(
+    withoutEmDash(`Ligne 1${NBSP}: Alger ${EM_DASH} Oran`),
+    `Ligne 1${NBSP}: Alger - Oran`,
+  );
+  assert.equal(withoutEmDash(`a${NBSP}${EM_DASH}${NBSP}b`), `a${NBSP} - ${NBSP}b`);
+  assert.equal(withoutEmDash(`a\tb ${EM_DASH} c`), "a\tb - c");
+  assert.equal(withoutEmDash(`a  ${EM_DASH}  b`), "a - b", "ASCII blanks touching the dash do go");
+});
+
+test("nameEmDashPointers points at names only, at any depth", () => {
+  assert.deepEqual(nameEmDashPointers({ name: `a ${EM_DASH} b`, address: `c ${EM_DASH} d` }), ["/name"]);
+  assert.deepEqual(
+    nameEmDashPointers({ features: [{ properties: { name_fr: `a ${EM_DASH} b` } }] }),
+    ["/features/0/properties/name_fr"],
+  );
+  assert.deepEqual(nameEmDashPointers([{ name: "ok" }, { former_names_fr: [`a ${EM_DASH} b`] }]), [
+    "/1/former_names_fr/0",
+  ]);
+  assert.deepEqual(nameEmDashPointers({ name: "Al Salam Bank - Algeria", note: 1 }), []);
+  // Scope is inherited through a nested object, not only through an array. No
+  // published file shapes a name this way today, and the gate should not be the
+  // thing that depends on that.
+  assert.deepEqual(nameEmDashPointers({ name: { fr: `a ${EM_DASH} b` } }), ["/name/fr"]);
+  assert.deepEqual(nameEmDashPointers({ note: { name_fr: `a ${EM_DASH} b` } }), ["/note/name_fr"]);
+  assert.deepEqual(nameEmDashPointers({ note: { detail: `a ${EM_DASH} b` } }), []);
+});
+
+test("nameEmDashErrors names the file, the pointer and the separator to use", () => {
+  const errors = nameEmDashErrors([
+    { label: "banques/data/banks.json", json: [{ name: `CNEP ${EM_DASH} Banque` }] },
+    { label: "banques/data/institutions.json", json: [{ name: "clean" }] },
+  ]);
+  assert.equal(errors.length, 1);
+  assert.match(
+    errors[0],
+    /^banques\/data\/banks\.json: em dash \(U\+2014\) in a published name at \/0\/name, use " - "/,
+  );
+});
+
+test("the name sweep walks record files and leaves metadata to the other rule", () => {
+  const walked = publishedRecordFiles("ecoles");
+  assert.ok(walked.includes(join("data", "ecoles.json")), "the canonical records are not being walked");
+  assert.ok(
+    walked.includes(join("data", "geojson", "ecoles.geojson")),
+    "the GeoJSON mirror is not being walked",
+  );
+  assert.deepEqual(
+    walked.filter((p) => p.includes("metadata.json")),
+    [],
+    "metadata belongs to the metadata rule, which gives a different remedy",
+  );
+});
+
+// packages/dataset/algeria.geojson is the atlas file the README points at and
+// the release workflow zips into every bundle beside data/. It carries the
+// wilaya `name`, `name_en`, `name_fr` and `name_ar` of all 69 features and sat
+// outside every walk in the repository, this one included, because it is the
+// only published record file that does not live under data/.
+test("the name sweep reaches the package-root atlas file", () => {
+  assert.ok(
+    publishedRecordFiles("dataset").includes("algeria.geojson"),
+    "packages/dataset/algeria.geojson is published and must be swept",
+  );
+});
+
+test("every published name in the repo is clean", () => {
+  const offenders = [];
+  for (const pkg of readdirSync(join(ROOT, "packages")).sort())
+    for (const rel of publishedRecordFiles(pkg)) {
+      // Cheap first: the full tree is ~120 MB, and only a file that carries the
+      // character at all is worth parsing.
+      const text = readFileSync(join(ROOT, "packages", pkg, rel), "utf-8");
+      if (!text.includes(EM_DASH)) continue;
+      offenders.push(...nameEmDashErrors([{ label: `${pkg}/${rel}`, json: JSON.parse(text) }]));
+    }
+  assert.deepEqual(offenders, []);
+});
+
+/**
+ * Every published record file of one package, as paths relative to the package:
+ * all of `data/` with its mirrors, plus any GeoJSON sitting at the package root
+ * (`packages/dataset/algeria.geojson`). Nothing outside those, so a generator's
+ * `scripts/seeds/*.json` stays out: it is input, not published.
+ *
+ * `metadata.json` and the `*.metadata.json` sidecars are left out on purpose.
+ * Their `sources[].name` is a name by key and prose by nature ("OpenStreetMap:
+ * schools"), so sweeping them here would report one string twice with two
+ * contradictory remedies: a colon, comma or semicolon from the metadata rule,
+ * " - " from this one. The metadata rule owns them, and it already walks every
+ * string they carry, sidecars included (validateNoEmDash in
+ * scripts/validate-packages.mjs).
+ */
+const METADATA_FILE = /(^|\.)metadata\.json$/;
+const RECORD_FILE = /\.(json|geojson)$/;
+
+function publishedRecordFiles(pkg) {
+  const pkgDir = join(ROOT, "packages", pkg);
+  const out = [];
+  const dataDir = join(pkgDir, "data");
+  if (existsSync(dataDir)) walkRecordFiles(dataDir, pkgDir, out);
+  for (const entry of readdirSync(pkgDir, { withFileTypes: true }))
+    if (entry.isFile() && entry.name.endsWith(".geojson")) out.push(entry.name);
+  return out.sort();
+}
+
+function walkRecordFiles(dir, base, out) {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) walkRecordFiles(path, base, out);
+    else if (RECORD_FILE.test(entry.name) && !METADATA_FILE.test(entry.name))
+      out.push(path.slice(base.length + 1));
+  }
+}
 
 // ---------------------------------------------------------------------------
 // The source gate.

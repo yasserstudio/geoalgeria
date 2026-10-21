@@ -4,6 +4,8 @@
 // So a dataset can be checked "does every point fall inside its declared wilaya?"
 // without this package taking on ~MBs of geometry or a hard dep on the boundaries.
 
+import { ARCMINUTE_TOLERANCE } from "./constants.js";
+
 /** Ray-casting: is (lng,lat) inside a single linear ring [[lng,lat], ...]?
  *  Returns false for malformed rings (non-array, <3 vertices, non-point vertex)
  *  rather than throwing: a validator must fail gracefully on bad geometry. */
@@ -178,6 +180,19 @@ export function fractionDigits(n) {
 /** A point is only as precise as its coarser axis → min of the two digit counts. */
 export function coordDecimals(lat, lng) {
   return Math.min(fractionDigits(lat), fractionDigits(lng));
+}
+
+/** Does this axis sit on a whole arcminute, within ARCMINUTE_TOLERANCE? */
+const axisOnArcminute = (deg) =>
+  Number.isFinite(deg) && Math.abs(deg * 60 - Math.round(deg * 60)) < ARCMINUTE_TOLERANCE;
+
+/** Is the point a **rounded placeholder** of the degrees-and-minutes kind, the
+ *  seconds missing? True only when BOTH axes sit on a whole arcminute: one axis
+ *  alone happens to real coordinates often enough to be meaningless, while both
+ *  together is the conversion's signature (see ARCMINUTE_TOLERANCE). Ungeocoded
+ *  rows are never a hit. */
+export function onArcminuteGrid(lat, lng) {
+  return axisOnArcminute(lat) && axisOnArcminute(lng);
 }
 
 /** Indexes of the rows whose coordinate is carried by at least one other row in

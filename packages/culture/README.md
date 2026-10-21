@@ -180,7 +180,7 @@ Run `npm run fetch` to regenerate every output. It:
 The curated source and extraction notes are under
 [`research/patrimoine/`](https://github.com/yasserstudio/geoalgeria/tree/main/research/patrimoine).
 
-## License & attribution
+## Licence & attribution
 
 Package **code** is [MIT](LICENSE). The **data** is a factual public listing from
 the **Ministry of Culture's** cultural-heritage portal (names, types, coordinates

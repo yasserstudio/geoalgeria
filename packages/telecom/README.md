@@ -140,7 +140,7 @@ current daughter wilaya only when an exact current or official ONS 2021 French o
 agree. Writes are all-or-nothing, so a
 failed operator never overwrites good committed data with a partial set.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). The underlying data is © the respective operators
 (**Djezzy**, **Mobilis**, **Ooredoo**), redistributed for reference and to power

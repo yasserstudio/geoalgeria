@@ -4,29 +4,103 @@
 // The rule kept coming back through the generators, so the generated metadata is
 // gated here instead of re-swept by hand.
 //
-// Scope is metadata only. A record's own `name` is a value, not prose: if a
-// source publishes an em dash inside one, that is a data decision (fix it
-// upstream or in an override), not something a release gate should block.
+// A record's own `name` was out of scope at first, as a value rather than prose.
+// #281 settled it the other way: three records had reached npm with one, four
+// name strings in all (one hand-curated bank name, in both `name` and
+// `name_fr`, and two OpenStreetMap school names passed straight through a
+// fetcher). So `nameEmDashErrors` gates published names too, and a generator
+// that reads an upstream name puts it through `withoutEmDash` first.
+//
+// The substitution is deliberately dull: the em dash becomes a spaced hyphen,
+// which keeps the fact that the source separated the two halves of the name
+// without keeping the character. Nothing else about the name changes. It is not
+// a house style: the repository has no single separator, and the 486 name values
+// that use an en dash (U+2013) are a separate question this rule leaves alone.
+// Everything other than a name stays out: an address or a note is the source's
+// own sentence, and rewriting one would be a data decision.
 
 export const EM_DASH = "—";
 
-/** JSON pointers of every string in `value` that carries an em dash. */
-export function emDashPointers(value, pointer = "") {
-  if (typeof value === "string") return value.includes(EM_DASH) ? [pointer || "/"] : [];
-  if (Array.isArray(value)) return value.flatMap((v, i) => emDashPointers(v, `${pointer}/${i}`));
+/** The separator a published name takes instead of an em dash. */
+export const NAME_SEPARATOR = " - ";
+
+// The dash and the ASCII blanks touching it, and nothing else. Spelled from
+// EM_DASH so this file still declares the character exactly once. Deliberately
+// not \s: that class matches U+00A0, and a sweep over the whole string turned
+// the non-breaking space French copy puts before a colon into a plain one.
+const EM_DASH_RUN = new RegExp(`[ \t]*${EM_DASH}[ \t]*`, "g");
+
+// `name`, `name_fr`, `former_names_ar`, `commune_name_fr`, `osm_name`: the
+// published name fields are exactly the keys carrying "name" as a whole word.
+const NAME_KEY = /(^|_)names?(_|$)/;
+
+// The two rules differ only in which keys they look under, so they share one
+// walk. `gated(key)` is that difference, and `inScope` carries its verdict all
+// the way down: once a key puts its subtree in scope, every string under it is
+// checked, through arrays and through nested objects alike. Inheriting through
+// arrays only would have left `{ name: { fr: "a <em dash> b" } }` uninspected,
+// which no published file happens to contain today and which a gate should not
+// depend on.
+function pointersWhere(value, gated, inScope, pointer = "") {
+  if (typeof value === "string")
+    return inScope && value.includes(EM_DASH) ? [pointer || "/"] : [];
+  if (Array.isArray(value))
+    return value.flatMap((v, i) => pointersWhere(v, gated, inScope, `${pointer}/${i}`));
   if (value && typeof value === "object")
-    return Object.entries(value).flatMap(([k, v]) => emDashPointers(v, `${pointer}/${k}`));
+    return Object.entries(value).flatMap(([k, v]) =>
+      pointersWhere(v, gated, inScope || gated(k), `${pointer}/${k}`),
+    );
   return [];
 }
+
+/** One error per pointer `find` returns, prefixed with the document's label. */
+function errorsWhere(files, find, remedy) {
+  const errors = [];
+  for (const { label, json } of files)
+    for (const pointer of find(json)) errors.push(`${label}: ${remedy(pointer)}`);
+  return errors;
+}
+
+/** JSON pointers of every string in `value` that carries an em dash. */
+export const emDashPointers = (value) => pointersWhere(value, () => true, true);
+
+/** JSON pointers of every *name* string in `value` that carries an em dash. */
+export const nameEmDashPointers = (value) =>
+  pointersWhere(value, (key) => NAME_KEY.test(key), false);
 
 /**
  * @param {{ label: string, json: unknown }[]} files parsed metadata documents
  * @returns {string[]} one error per offending string, empty when clean
  */
-export function emDashErrors(files) {
-  const errors = [];
-  for (const { label, json } of files)
-    for (const pointer of emDashPointers(json))
-      errors.push(`${label}: em dash (U+2014) at ${pointer}, use a colon, comma or semicolon`);
-  return errors;
+export const emDashErrors = (files) =>
+  errorsWhere(
+    files,
+    emDashPointers,
+    (pointer) => `em dash (U+2014) at ${pointer}, use a colon, comma or semicolon`,
+  );
+
+/**
+ * @param {{ label: string, json: unknown }[]} files parsed published documents
+ * @returns {string[]} one error per offending name, empty when clean
+ */
+export const nameEmDashErrors = (files) =>
+  errorsWhere(
+    files,
+    nameEmDashPointers,
+    (pointer) =>
+      `em dash (U+2014) in a published name at ${pointer}, use ` +
+      `"${NAME_SEPARATOR}" and put it through withoutEmDash() in the generator`,
+  );
+
+/**
+ * Rewrite an upstream em dash in a name as the spaced hyphen this repo
+ * publishes, together with the ASCII spaces or tabs immediately around it so
+ * the result is not doubly spaced. Every other character is left exactly as the
+ * source wrote it: other dashes, a non-breaking space, an interior tab. Only
+ * leading and trailing whitespace is trimmed, so a name opening on the dash
+ * does not open on a space. Anything that is not a string comes back untouched.
+ */
+export function withoutEmDash(name) {
+  if (typeof name !== "string" || !name.includes(EM_DASH)) return name;
+  return name.replace(EM_DASH_RUN, NAME_SEPARATOR).trim();
 }
