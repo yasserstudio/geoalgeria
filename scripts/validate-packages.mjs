@@ -55,7 +55,7 @@ import { descriptorTermsErrors, licenceTermsErrors, publishedMetadataPaths } fro
 // without a reviewer and a corpus case, and a case cannot claim a Rule that does
 // not exist. The table and the corpus are read from the package as data.
 import { normalizeRuleErrors } from "./lib/normalize-rules.mjs";
-import { emDashErrors } from "./lib/no-em-dash.mjs";
+import { emDashErrors, nameEmDashErrors } from "./lib/no-em-dash.mjs";
 import { rules as normalizeRules } from "../packages/normalize/index.js";
 import { corpus as normalizeCorpus } from "../packages/normalize/fixtures/corpus.js";
 
@@ -934,6 +934,20 @@ function validateDataset(pkg, spec) {
     return fail(`${label}: expected a non-empty array`);
   }
 
+  // A published name is gated like the metadata around it. #281 found three
+  // records carrying one, four name strings between them. The remedy is a spaced
+  // hyphen, which keeps the source's separation of the name without keeping the
+  // character, and changes nothing else. It is not a separator convention: the
+  // repository has no single one, and the gate is about the em dash only.
+  //
+  // This walks the canonical JSON. The CSV and SQL mirrors are a projection of
+  // these same columns, so a clean record here is a clean line there. The
+  // GeoJSON is not: aviation's routes.geojson resolves from_name and to_name at
+  // emit time, fields no row in routes.json carries, so a mirror can hold a name
+  // this check never sees. test/no-em-dash.test.mjs walks every published
+  // GeoJSON for that reason, and parses neither the CSV nor the SQL.
+  for (const problem of nameEmDashErrors([{ label, json: arr }])) fail(problem);
+
   // Every populated commune_code is a foreign key into the flagship commune
   // table. Format-only validation allowed thousands of stale-but-well-formed
   // values to survive an ONS crosswalk repair, breaking code-keyed joins while
@@ -1689,7 +1703,9 @@ function validateLicenceTerms(pkgs) {
 // used to be one lives in a generator (scripts/lib/v2-transforms.mjs source names,
 // @geoalgeria/schema's citation join, each coverage note), so a single hand-fixed
 // sweep would come back on the next rebuild. The rule and the message live in
-// scripts/lib/no-em-dash.mjs; record values are out of scope on purpose.
+// scripts/lib/no-em-dash.mjs. Published record *names* are gated in
+// validateDataset instead, as data rather than prose; other record values stay
+// out of scope on purpose.
 function validateNoEmDash(pkgs) {
   const files = [];
   for (const pkg of pkgs) {

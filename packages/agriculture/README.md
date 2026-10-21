@@ -102,7 +102,7 @@ Extracted from the MADR directory (`madr.gov.dz/contact/دليل-الهاتف/`,
 
 > Names, wilaya, address and phone/fax are **official** (from the MADR directory). The directory carries **no coordinates**: each record is placed at the centroid of the commune named in its address, or, when the address has no recognizable commune, at the centroid of the wilaya chief town (see `geo_method`; `geo_precision` is `"approximate"` for every record here, none of these are surveyed points). These are approximate locations for the *wilaya/commune*, not surveyed building points. Some source rows have minor typos that have been normalized.
 
-## Source & license
+## Source & licence
 
 Data from the **Ministry of Agriculture, Rural Development and Fisheries (MADR)**, a factual public-sector listing, redistributed for reference. Wilaya/commune linkage uses the geoalgeria base dataset. Package code under MIT (see [LICENSE](LICENSE)).
 

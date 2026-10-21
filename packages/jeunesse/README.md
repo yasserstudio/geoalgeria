@@ -155,7 +155,7 @@ repairs records with transposed coordinates, backfills Arabic names from the leg
 drops the few with placeholder/out-of-country coordinates. It fails
 loudly if the establishment count collapses or an unknown type appears.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). The underlying data is © **Ministry of Youth and Sports**,
 redistributed for reference and to power [GeoAlgeria](https://geoalgeria.com). Verify against

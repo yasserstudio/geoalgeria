@@ -22,6 +22,7 @@ import { globSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join, sep } from "node:path";
 import { LEAD_MARKS, stripLeadingMarks } from "../scripts/lib/name-script.mjs";
+import { withoutEmDash } from "../scripts/lib/no-em-dash.mjs";
 import { cleanName as cleanCliniqueName } from "../packages/cliniques/scripts/fetch.mjs";
 import { cleanName as cleanEcoleName } from "../packages/ecoles/scripts/fetch.mjs";
 
@@ -197,7 +198,11 @@ test("over the committed captures, cleanName removes only marks and whitespace",
         if (typeof value !== "string") continue;
         const cleaned = cleanName(value);
         if (cleaned === null) continue;
-        const trimmed = value.replace(/\s+/g, " ").trim();
+        // Folded the way cleanName folds it: ecoles also swaps an em dash a mapper
+        // typed as a separator (3 name tags in the capture), which is an interior
+        // rewrite, not a prefix strip. Everything below still only tolerates a
+        // prefix being removed, so the stripper keeps its teeth.
+        const trimmed = withoutEmDash(value.replace(/\s+/g, " ").trim());
         assert.ok(trimmed.endsWith(cleaned), `${pkg} ${element.type}/${element.id} reordered ${tag}`);
         const removed = trimmed.slice(0, trimmed.length - cleaned.length);
         for (const character of removed) {

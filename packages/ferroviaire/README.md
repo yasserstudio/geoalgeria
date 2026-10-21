@@ -116,7 +116,7 @@ nearest-centroid join against `geoalgeria`. `id` is an opaque string, unique wit
 records are geocoded, so `null` doesn't occur here); `geo_method` records how the
 coordinate was sourced (e.g. `osm_node`, `wikidata`). External ids live under `refs`.
 
-## Source & license
+## Source & licence
 
 A composite of **Wikidata** (CC0) and **OpenStreetMap** (© OpenStreetMap contributors,
 ODbL 1.0), with operators from **SNTF**, **SETRAM**, and **SEMA/EMA**. Code is

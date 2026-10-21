@@ -287,7 +287,7 @@ GeoAlgeria carries all 69 wilayas with French and Arabic names, postal codes, an
 
 ---
 
-## License & attribution
+## Licence & attribution
 
 Package **code** is [MIT](LICENSE), and so is the **compilation**: wilayas, dairas, communes,
 their bilingual names, postal codes and administrative codes. Free for personal and commercial

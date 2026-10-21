@@ -137,7 +137,7 @@ and coordinate both place it in a commune the 2026 reform moved, a reviewed corr
 derived from; the regeneration reapplies it, and stops if ANEM's own value has moved. 17 ALEM
 agencies are corrected this way; the rest still appear under their mother wilaya.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). The underlying data is © **ANEM**, redistributed for
 reference and to power [GeoAlgeria](https://geoalgeria.com). Verify against ANEM
