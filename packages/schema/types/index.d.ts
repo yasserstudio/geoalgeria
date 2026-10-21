@@ -260,6 +260,10 @@ export const WILAYA_CODES: readonly string[];
 export const DZ_BBOX: { minLng: number; maxLng: number; minLat: number; maxLat: number };
 /** Fewest fraction digits a coordinate must carry to be called `exact`. */
 export const MIN_EXACT_DECIMALS: number;
+
+/** Arcminutes of slack allowed when testing a coordinate against the
+ *  whole-arcminute grid (degrees-and-minutes with the seconds missing). */
+export const ARCMINUTE_TOLERANCE: number;
 export const REVIEW_STATUSES: readonly ReviewStatus[];
 export const REVIEW_PUBLISH_ACTIONS: readonly ReviewPublishAction[];
 
@@ -307,6 +311,10 @@ export function wilayaNeighbours(featureCollection: {
 export function fractionDigits(n: number): number;
 /** A point is only as precise as its coarser axis → min of the two digit counts. */
 export function coordDecimals(lat: number | null, lng: number | null): number;
+/** Is the point degrees-and-minutes with the seconds missing (a rounded
+ *  placeholder)? True only when BOTH axes sit within ARCMINUTE_TOLERANCE of a
+ *  whole arcminute. Ungeocoded rows are never a hit. */
+export function onArcminuteGrid(lat: number | null, lng: number | null): boolean;
 /** Indexes of the rows whose coordinate is carried by at least one other row in the
  *  same collection: a point several records share is not a per-facility point.
  *  Ungeocoded rows are never members. */

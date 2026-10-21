@@ -268,6 +268,6 @@ returns for any input is a **major** version, including a bug fix, because keys 
 into published catalogs and installed catalogs are never migrated record by record. Adding
 an export is a minor; documentation and types are a patch. Consumers pin an exact version.
 
-## License
+## Licence
 
 MIT. This package ships code only, no data.

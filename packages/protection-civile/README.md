@@ -88,7 +88,7 @@ Downloaded from the DGPC's own GeoJSON (`dgpc.dz/dgpc2/unite.geojson`). Coordina
 >
 > The DGPC's original `cod_wilaya` is pre-2026-reform and is kept only as `refs.dgpc_wilaya`. Use `wilaya_code` (the geometry-derived, post-reform code) for any wilaya join.
 
-## Source & license
+## Source & licence
 
 DGPC records © **General Directorate of Civil Protection (DGPC)**: official government content, redistributed here for reference. There is **no stated open licence**; treat it as a factual public listing and attribute the DGPC. Reviewed coordinate evidence © **OpenStreetMap contributors**, ODbL 1.0. Wilaya/commune linkage uses the geoalgeria base dataset. Package code under MIT (see [LICENSE](LICENSE)).
 

@@ -104,6 +104,14 @@ const CORRECTIONS = {
       geo_precision: "approximate",
       geo_method: "bank_locator",
     },
+    // CNEP's name separated the long form from the brand with an em dash, where
+    // the other 20 banks use " - ". No published name carries one any more
+    // (#281), and this registry is hand-curated, so the correction lives in
+    // banks.json itself while the frozen migration row keeps the old separator.
+    cnep: {
+      name: "Caisse Nationale d'Épargne et de Prévoyance - CNEP-Banque",
+      name_fr: "Caisse Nationale d'Épargne et de Prévoyance - CNEP-Banque",
+    },
   },
   aviation: {
     // OurAirports now publishes the same Mecheria point with fewer trailing

@@ -145,7 +145,7 @@ Run `npm run fetch` to regenerate from the committed research snapshot; it does
 not make a live registry request. `wilaya_code`/`commune` are resolved by nearest
 commune centroid from the `geoalgeria` dataset.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). The underlying data is © **SOGRAL**, redistributed for reference
 and to power [GeoAlgeria](https://geoalgeria.com). Verify against SOGRAL for authoritative,

@@ -52,8 +52,8 @@
       "geocoded_count": 1325,
       "geocoded_pct": 76.5,
       "precision": {
-        "exact": 1161,
-        "approximate": 164
+        "exact": 1160,
+        "approximate": 165
       },
       "wilayas_covered": 67,
       "bbox": [
@@ -62,7 +62,7 @@
         9.577856,
         37.008375
       ],
-      "license": "Compiled from public regulatory listings and official institution sites/locators; eight reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
+      "license": "Compiled from public regulatory listings and official institution sites/locators; twelve reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
       "updated": "2026-09-09"
     },
     {
@@ -415,17 +415,17 @@
       "package": "@geoalgeria/pharmacies",
       "schema_version": "2.0.0",
       "title": "Algeria pharmacies (officines)",
-      "record_count": 3807,
-      "geocoded_count": 3807,
+      "record_count": 3795,
+      "geocoded_count": 3795,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 3509,
-        "approximate": 298
+        "exact": 3499,
+        "approximate": 296
       },
       "coverage": {
-        "pct": 34.6,
+        "pct": 34.5,
         "of": 11000,
-        "note": "3807 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north."
+        "note": "3795 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north."
       },
       "wilayas_covered": 67,
       "bbox": [
@@ -488,12 +488,12 @@
       "package": "@geoalgeria/sante",
       "schema_version": "2.0.0",
       "title": "Algeria public health establishments",
-      "record_count": 668,
-      "geocoded_count": 597,
+      "record_count": 661,
+      "geocoded_count": 591,
       "geocoded_pct": 89.4,
       "precision": {
-        "exact": 132,
-        "approximate": 465
+        "exact": 133,
+        "approximate": 458
       },
       "wilayas_covered": 58,
       "bbox": [
@@ -578,7 +578,7 @@
       "wilayas_covered": 69,
       "bbox": null,
       "license": "Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The 69 wilaya boundary polygons, 323 OpenStreetMap-derived commune centre coordinates and the OpenStreetMap relation ids and Wikidata items on the commune and wilaya records are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.",
-      "updated": "2026-10-03"
+      "updated": "2026-10-13"
     }
   ]
 }

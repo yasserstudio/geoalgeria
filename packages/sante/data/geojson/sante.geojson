@@ -1876,40 +1876,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.001284,
-          35.859687
-        ]
-      },
-      "properties": {
-        "id": "05-epsp-01",
-        "name": "Etablissement Public de Santé de Proximité Ain Djasser",
-        "name_fr": "Etablissement Public de Santé de Proximité Ain Djasser",
-        "name_ar": null,
-        "wilaya_code": "05",
-        "commune_code": "0519",
-        "commune": "Ain Djasser",
-        "lat": 35.859687,
-        "lng": 6.001284,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
-        "source": "msp",
-        "refs": {
-          "msp": "3902"
-        },
-        "type": "epsp",
-        "type_label_fr": "Établissement Public de Santé de Proximité",
-        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
-        "sector": "public",
-        "slug": "etablissement-public-de-sante-de-proximite-ain-djasser-2"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.001284,
-          35.859687
+          6.000833,
+          35.857076
         ]
       },
       "properties": {
@@ -1920,13 +1888,15 @@
         "wilaya_code": "05",
         "commune_code": "0519",
         "commune": "Ain Djasser",
-        "lat": 35.859687,
-        "lng": 6.001284,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 35.857076,
+        "lng": 6.000833,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
-          "msp": "3901"
+          "osm": "node/3971311988",
+          "msp": "3901",
+          "msp_repeat": "3902"
         },
         "type": "epsp",
         "type_label_fr": "Établissement Public de Santé de Proximité",
@@ -1959,7 +1929,8 @@
         "source": "msp",
         "refs": {
           "msp": "4394",
-          "msp_twin": "4395"
+          "msp_twin": "4395",
+          "msp_repeat": "3905"
         },
         "type": "epsp",
         "type_label_fr": "Établissement Public de Santé de Proximité",
@@ -2198,38 +2169,6 @@
         "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
         "sector": "public",
         "slug": "etablissement-public-de-sante-de-proximite-theniet-el-abed"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.894213,
-          35.375209
-        ]
-      },
-      "properties": {
-        "id": "05-epsp-13",
-        "name": "المؤسسة العمومية للصحة الجوارية عين التوتة",
-        "name_fr": null,
-        "name_ar": "المؤسسة العمومية للصحة الجوارية عين التوتة",
-        "wilaya_code": "05",
-        "commune_code": "0545",
-        "commune": "Aïn Touta",
-        "lat": 35.375209,
-        "lng": 5.894213,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
-        "source": "msp",
-        "refs": {
-          "msp": "3905"
-        },
-        "type": "epsp",
-        "type_label_fr": "Établissement Public de Santé de Proximité",
-        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
-        "sector": "public",
-        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%b9%d9%85%d9%88%d9%85%d9%8a%d8%a9-%d9%84%d9%84%d8%b5%d8%ad%d8%a9-%d8%a7%d9%84%d8%ac%d9%88%d8%a7%d8%b1%d9%8a%d8%a9-%d8%b9%d9%8a%d9%86-%d8%a7-2"
       }
     },
     {
@@ -3303,7 +3242,8 @@
         "source": "msp",
         "refs": {
           "msp": "4470",
-          "msp_twin": "4471"
+          "msp_twin": "4471",
+          "msp_repeat": "3672"
         },
         "type": "eph",
         "type_label_fr": "Établissement Public Hospitalier",
@@ -3409,38 +3349,6 @@
         "type_label_ar": "المؤسسة العمومية الاستشفائية",
         "sector": "public",
         "slug": "etablissement-public-hospitalier-nouvel-hopital-bechar"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -2.72387,
-          31.019
-        ]
-      },
-      "properties": {
-        "id": "08-eph-07",
-        "name": "المؤسسة العمومية الإستشفائية العبادلة",
-        "name_fr": null,
-        "name_ar": "المؤسسة العمومية الإستشفائية العبادلة",
-        "wilaya_code": "08",
-        "commune_code": "0817",
-        "commune": "Abadla",
-        "lat": 31.019,
-        "lng": -2.72387,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
-        "source": "msp",
-        "refs": {
-          "msp": "3672"
-        },
-        "type": "eph",
-        "type_label_fr": "Établissement Public Hospitalier",
-        "type_label_ar": "المؤسسة العمومية الاستشفائية",
-        "sector": "public",
-        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%b9%d9%85%d9%88%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a7%d9%84%d8%b9%d8%a8%d8%a7%d8%af"
       }
     },
     {
@@ -7591,7 +7499,8 @@
         "source": "msp",
         "refs": {
           "msp": "4728",
-          "msp_twin": "4729"
+          "msp_twin": "4729",
+          "msp_repeat": "4727"
         },
         "type": "eph",
         "type_label_fr": "Établissement Public Hospitalier",
@@ -9450,45 +9359,14 @@
         "source": "msp",
         "refs": {
           "msp": "5553",
-          "msp_twin": "4900"
+          "msp_twin": "4900",
+          "msp_repeat": "4869"
         },
         "type": "eph",
         "type_label_fr": "Établissement Public Hospitalier",
         "type_label_ar": "المؤسسة العمومية الاستشفائية",
         "sector": "public",
         "slug": "etablissement-public-hospitalier-ras-el-ma-2"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.805598,
-          34.497361
-        ]
-      },
-      "properties": {
-        "id": "22-eph-03",
-        "name": "Etablissement Public Hospitalier Ras El Ma",
-        "name_fr": "Etablissement Public Hospitalier Ras El Ma",
-        "name_ar": null,
-        "wilaya_code": "22",
-        "commune_code": "2223",
-        "commune": "Ras El Ma",
-        "lat": 34.497361,
-        "lng": -0.805598,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
-        "source": "msp",
-        "refs": {
-          "msp": "4869"
-        },
-        "type": "eph",
-        "type_label_fr": "Établissement Public Hospitalier",
-        "type_label_ar": "المؤسسة العمومية الاستشفائية",
-        "sector": "public",
-        "slug": "etablissement-public-hospitalier-ras-el-ma"
       }
     },
     {
@@ -10567,38 +10445,6 @@
         ]
       },
       "properties": {
-        "id": "24-epsp-05",
-        "name": "المؤسسة العمومية للصحة الجوارية قالمة",
-        "name_fr": null,
-        "name_ar": "المؤسسة العمومية للصحة الجوارية قالمة",
-        "wilaya_code": "24",
-        "commune_code": "2401",
-        "commune": "Guelma",
-        "lat": 36.466,
-        "lng": 7.4206,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
-        "source": "msp",
-        "refs": {
-          "msp": "5550"
-        },
-        "type": "epsp",
-        "type_label_fr": "Établissement Public de Santé de Proximité",
-        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
-        "sector": "public",
-        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%b9%d9%85%d9%88%d9%85%d9%8a%d8%a9-%d9%84%d9%84%d8%b5%d8%ad%d8%a9-%d8%a7%d9%84%d8%ac%d9%88%d8%a7%d8%b1%d9%8a%d8%a9-%d9%82%d8%a7%d9%84%d9%85-2"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          7.4206,
-          36.466
-        ]
-      },
-      "properties": {
         "id": "24-epsp-06",
         "name": "المؤسسة العمومية للصحة الجوارية قالمة",
         "name_fr": null,
@@ -10612,7 +10458,8 @@
         "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "msp": "4931"
+          "msp": "4931",
+          "msp_repeat": "5550"
         },
         "type": "epsp",
         "type_label_fr": "Établissement Public de Santé de Proximité",
@@ -11294,38 +11141,6 @@
         ]
       },
       "properties": {
-        "id": "26-epsp-08",
-        "name": "المؤسسة العمومية للصحة الجوارية البرواقية",
-        "name_fr": null,
-        "name_ar": "المؤسسة العمومية للصحة الجوارية البرواقية",
-        "wilaya_code": "26",
-        "commune_code": "2647",
-        "commune": "Berrouaghia",
-        "lat": 36.13516,
-        "lng": 2.911,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
-        "source": "msp",
-        "refs": {
-          "msp": "5551"
-        },
-        "type": "epsp",
-        "type_label_fr": "Établissement Public de Santé de Proximité",
-        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
-        "sector": "public",
-        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%b9%d9%85%d9%88%d9%85%d9%8a%d8%a9-%d9%84%d9%84%d8%b5%d8%ad%d8%a9-%d8%a7%d9%84%d8%ac%d9%88%d8%a7%d8%b1%d9%8a%d8%a9-%d8%a7%d9%84%d8%a8%d8%b1-4"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.911,
-          36.13516
-        ]
-      },
-      "properties": {
         "id": "26-epsp-09",
         "name": "المؤسسة العمومية للصحة الجوارية البرواقية",
         "name_fr": null,
@@ -11339,7 +11154,8 @@
         "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "msp": "4988"
+          "msp": "4988",
+          "msp_repeat": "5551"
         },
         "type": "epsp",
         "type_label_fr": "Établissement Public de Santé de Proximité",
