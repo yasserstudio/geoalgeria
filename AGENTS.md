@@ -43,7 +43,7 @@ Conservative key, Loose key, Rule, Golden corpus.
 | `packages/culture/` | `@geoalgeria/culture` | cultural atlas – protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions – services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
 | `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | approved pharmaceutical manufacturers – 171 medicine (PP) & medical-device (DM) makers from the Ministry of Pharmaceutical Industry (MIP) fabrication register, bilingual, typed by nature, geocoded to commune/wilaya centroid |
-| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) – 3,807 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
+| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) – 3,795 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
 | `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella – re-exports industrie-pharmaceutique + pharmacies in one install |
 | `packages/ecoles/` | `@geoalgeria/ecoles` | schools – 11,858 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
 | `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations – 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
@@ -66,7 +66,11 @@ pulls in gitignored `research/<pkg>/` until they are next touched.
 1. **Branch** off `main`: `fix/commune-name`, `feat/emploi-coords`, `chore/ci`.
 2. **Edit data**, keeping the rules in [`CONTRIBUTING.md`](CONTRIBUTING.md):
    sorted, UTF-8, sourced (JORA / Algérie Poste / ONS), bilingual FR/AR.
-3. **`pnpm validate`**: schema + integrity checks. Must pass.
+3. **`pnpm validate`**: schema + integrity checks, then a bundler check
+   ([`scripts/check-bundlers.mjs`](scripts/check-bundlers.mjs), on its own as
+   `pnpm check-bundlers`) that packs the real tarball, bundles it with esbuild
+   and runs the output, because a package can load in Node and still fail in a
+   bundled app (issue #276). Must pass.
 4. **Add a changeset** if a published package changed: `pnpm changeset`
    (data semver: **major** = breaking schema · **minor** = new data/format ·
    **patch** = corrections).

@@ -72,6 +72,15 @@ Every record carries `wilaya_code` (head office) linked to the
 - Three SGA agencies are supplemented only where the bank, street, wilaya, and
   locality match in OSM, with the house number also matched where available. Each
   corrected record carries both locator and OSM evidence URLs.
+- Six branches sat on a **rounded placeholder**: degrees and minutes with the
+  seconds dropped, which reads as a precise decimal. AGB Laghouat's 33.58333,
+  2.66667 is 33°35'N 2°40'E, 30.9 km from the street its own address names. Four
+  are re-placed on a reviewed OpenStreetMap object of the same bank in the same
+  commune (AGB Constantine, AGB Tébessa, BADR Kenadsa, BADR Aïn Témouchent); the
+  other two, AGB Laghouat and BADR Taghit, carry their commune's centre as
+  `approximate`, because OpenStreetMap maps no object of their bank within 25 km.
+  All six publish their `commune_code`/`commune` and their evidence URLs, and a
+  point on the whole-arcminute grid can no longer enter the dataset as `exact`.
 - **`bank_code`** is the 3-digit RIB _code banque_ (IBAN positions 5–7), verified
   against independent code-banque tables, no single official public register
   exists. BNH and Ziraat (both newly licensed) have no published code yet →

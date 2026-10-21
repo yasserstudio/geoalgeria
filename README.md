@@ -46,12 +46,15 @@ npm install geoalgeria
 
 ```js
 const dz = require("geoalgeria");
+// or, in an ESM app or with a bundler: import dz from "geoalgeria";
 
 dz.wilayas;                       // all 69 wilayas
 dz.getCommunesByWilaya(16);       // 57 communes in Algiers
 dz.findByPostalCode("16000");     // → commune, daira, wilaya
 dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 ```
+
+A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office and ATM mirrors among them. If you need one part only, import its file on its own: `import communes from "geoalgeria/data/ecommerce/communes.json"` in a bundler, or with `with { type: "json" }` in plain Node. In TypeScript the default import needs `esModuleInterop`; `import dz = require("geoalgeria")` does not.
 
 ## What's inside
 
@@ -76,7 +79,7 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 | **Vocational training** | 1,932 | 856 CFPA + 182 INSFP + 723 private accredited + 58 DFEPs + more across all 69 current wilayas (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **Mosques** | 20,759 | Wikidata + OpenStreetMap composite, Arabic & French names, denomination, all 69 wilayas. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **Djezzy boutiques** | 128 | geocoded retail stores with category, hours & commune/wilaya linkage (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
-| **Health establishments** | 668 | EPH · EPSP · EHS · CHU from the Ministry of Health, bilingual, 597 geocoded via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
+| **Health establishments** | 661 | EPH · EPSP · EHS · CHU from the Ministry of Health, bilingual, 591 geocoded via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
 | **Clinics & care facilities** | 1,917 | Polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas. The community tier beside the `sante` registry, never summed with it. [`@geoalgeria/cliniques`](packages/cliniques) |
 | **Civil protection units** | 880 | DGPC fire & rescue units nationwide, Arabic-named, address/phone/fax, status tier, all geocoded, official-primary (dgpc.dz), post-2026-reform wilaya linkage. [`@geoalgeria/protection-civile`](packages/protection-civile) |
 | **Cultural places** | 1,083 | Protected sites, museums, theatres, libraries + cultural establishments from the Ministry of Culture, bilingual, all geocoded, 66 wilayas. [`@geoalgeria/culture`](packages/culture) |
@@ -85,7 +88,7 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 | **Intercity bus stations** | 74 | SOGRAL gares routières across 52 wilayas, names, addresses, surface areas, coordinates. [`@geoalgeria/gares-routieres`](packages/gares-routieres) |
 | **Rail & urban transit** | 692 | train, tram, metro, aerial-tramway & gondola nodes (SNTF / SETRAM / SEMA), Wikidata + OSM composite, bilingual, 50 wilayas. [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
 | **Urban/suburban bus Lines** | 184 | 16 Operators, 76 shapes, 128 Directions, 1,603 Stations. [`@geoalgeria/buses`](packages/buses) |
-| **Pharmacies** | 3,807 | officines geocoded from OpenStreetMap, bilingual where named, wilaya/commune-linked. [`@geoalgeria/pharmacies`](packages/pharmacies) |
+| **Pharmacies** | 3,795 | officines geocoded from OpenStreetMap, bilingual where named, wilaya/commune-linked. [`@geoalgeria/pharmacies`](packages/pharmacies) |
 | **Pharma manufacturers** | 171 | approved medicine & medical-device makers from the Ministry of Pharmaceutical Industry register, geocoded. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **Ooredoo stores** | 572 | Espaces Ooredoo, City Shops & Espaces Services with real coordinates, wilaya/commune-linked (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
@@ -136,7 +139,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Vocational training, 1,932 CFPA, INSFP, IFEP, IEP, DFEPs & private centers from MFEP (takwin.dz), with capacity, boarding & coordinates |
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Djezzy boutiques, 128 geocoded retail stores from djezzy.dz, with category, hours & commune/wilaya linkage |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosques of Algeria, 20,759 geocoded, a Wikidata + OpenStreetMap composite with Arabic & French names, denomination & commune/wilaya linkage |
-| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments, 668 from the Ministry of Health (EPH, EPSP, EHS, CHU), bilingual, geocoded via OSM + Wikidata with commune/wilaya linkage |
+| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments, 661 from the Ministry of Health (EPH, EPSP, EHS, CHU), bilingual, geocoded via OSM + Wikidata with commune/wilaya linkage |
 | [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Clinics & proximity-care facilities, 1,917 geocoded from OpenStreetMap across 66 wilayas, classified by type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingual, with sector, speciality, phone & hours where tagged; the OSM community tier of the health sector, and every OSM element `sante` references is excluded from it |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Cultural atlas, 1,083 places from the Ministry of Culture (protected sites, museums, theatres, libraries, cultural establishments), bilingual, fully geocoded with commune/wilaya linkage |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Agriculture-sector institutions, 196 from the Ministry of Agriculture across 7 networks (DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups), bilingual, geocoded with commune/wilaya linkage |
@@ -145,7 +148,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | Rail & urban transit, 692 train/tram/metro/aerial/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual FR/AR |
 | [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | 184 reviewed urban/suburban Lines, 76 shapes and 1,603 Stations across 16 Operators |
 | [`packages/industrie-pharmaceutique`](packages/industrie-pharmaceutique) | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | Pharmaceutical manufacturers, 171 approved medicine (PP) & medical-device (DM) makers from the Ministry of Pharmaceutical Industry register, bilingual, geocoded to commune/wilaya centroid |
-| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines), 3,807 geocoded across 67 wilayas from OpenStreetMap, bilingual where named, with phone/hours/dispensing where tagged & commune/wilaya linkage |
+| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines), 3,795 geocoded across 67 wilayas from OpenStreetMap, bilingual where named, with phone/hours/dispensing where tagged & commune/wilaya linkage |
 | [`packages/protection-civile`](packages/protection-civile) | [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | Civil protection (fire & rescue) units, 880 DGPC units nationwide, Arabic-named, with address/phone/fax & a status tier, all geocoded, official-primary (dgpc.dz); wilaya re-derived against the 69 post-2026-reform boundaries |
 | [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Ooredoo stores, 572 EO / City Shop / Espace Services with real coordinates & commune/wilaya linkage (ooredoo.dz); completes the telecom retail trio |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | Umbrella, installs aviation + ferroviaire + gares-routieres + buses in one step |

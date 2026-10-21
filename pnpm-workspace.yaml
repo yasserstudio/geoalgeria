@@ -1,2 +1,7 @@
 packages:
   - "packages/*"
+allowBuilds:
+  # esbuild's install script only places the CLI binary. scripts/check-bundlers.mjs
+  # drives the JS API, which loads the binary from the platform package directly,
+  # and CI installs with --ignore-scripts anyway.
+  esbuild: false

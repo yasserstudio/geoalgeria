@@ -334,6 +334,7 @@ function reportBoundaries(full) {
 //           declared wilaya, which is what a repudiated one stops being.
 const CENTROID_ANCHORS = {
   agriculture: { commune_centroid: "code", wilaya_centroid: "wilaya" },
+  banques: { commune_centroid: "code" },
   "enseignement-superieur": { commune: "name" },
   "formation-professionnelle": { commune: "name" },
   "industrie-pharmaceutique": { commune_centroid: "code" },
