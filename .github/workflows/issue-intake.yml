@@ -1,0 +1,55 @@
+name: Issue intake
+
+# Community issues used to arrive unlabelled and invisible: nothing marked a new
+# public report, and the internal backlog lives in the private tracker, so an
+# issue opened here was only ever seen if someone happened to look. This marks
+# each new one needs-triage, labels the dataset it names when that dataset is a
+# real package, and files a mirror on the private tracker so the work shows up
+# where the work is planned.
+#
+# It never replies in public. Answering a reporter is the Owner's, under the
+# Owner's identity (AGENTS.md: automation drafts, humans post).
+#
+# The mirror needs TRACKER_ISSUES_TOKEN, a fine-grained token with Issues:write
+# on yasserstudio/geoalgeria.com and nothing else (see CONTRIBUTING.md). Until
+# that secret exists the job still labels, logs that it did not mirror, and
+# passes: a red workflow on every community issue would be worse than a missing
+# mirror.
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read # read scripts/ and the issue forms
+  issues: write # add needs-triage and the dataset label
+
+# One run per issue, never cancelled: a cancelled run could label without
+# mirroring, and the mirror check is what keeps a re-run from filing twice.
+concurrency:
+  group: issue-intake-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          # Only the script and the forms it reads: the data captures in
+          # sources/ are megabytes this job never touches.
+          sparse-checkout: |
+            scripts
+            .github/ISSUE_TEMPLATE
+          filter: blob:none
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+
+      - name: Label and mirror the new issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TRACKER_ISSUES_TOKEN: ${{ secrets.TRACKER_ISSUES_TOKEN }}
+          TRACKER_REPO: yasserstudio/geoalgeria.com
+        run: node scripts/issue-intake.mjs

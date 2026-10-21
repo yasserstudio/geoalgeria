@@ -132,11 +132,11 @@
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
-      "sha256": "eb8248155ec33d4e1550fd2c77c3afaf721fd64d8e24c5e96783f070cc25ed17"
+      "sha256": "a54725e67acba94a9c756bc15be612a49e28e1a0129f58a815c588fff867e741"
     },
     {
       "path": "packages/formation-professionnelle/data/metadata.json",
-      "sha256": "f1fcddbdc8dc72aa2d14ca05eb45b349bf7cc1a81ba7c99dfe46966c138c6606"
+      "sha256": "225cf3cac72bd037b22ec29ec52c05cd7c96024b40ccc3e3644870f1f35d07d6"
     },
     {
       "path": "packages/gares-routieres/data/metadata.json",
@@ -196,19 +196,19 @@
     },
     {
       "path": "packages/mosquees/data/metadata.json",
-      "sha256": "d2dfb8a5d82a12e83312c2ba30a32a8c3b0cc841d3e8609882f63d03e5bc1298"
+      "sha256": "2e5d3921c0168f161ac6a1e904b16e1bafe9046df048c0022e4e8bdae6424bd5"
     },
     {
       "path": "packages/mosquees/data/mosquees.json",
-      "sha256": "405941372a269587f3cb32a2e7f28f7c5b390639fa4fc0f0c848e6606692bce7"
+      "sha256": "2e43fd930fe26a2ab1bed5e0c0d238262948ae0e014bea66169fe59ec490255a"
     },
     {
       "path": "packages/ooredoo/data/metadata.json",
-      "sha256": "5506fed5163bf5930d598826113c25aa99a12b7299dc0cc98759691107fd3110"
+      "sha256": "4a95cc095b6d5836e5d24bcef05b5586c7c8fb66c1d7eb5b7eb4b73596a6513c"
     },
     {
       "path": "packages/ooredoo/data/stores.json",
-      "sha256": "d406b73d7d7668f4558d7d98de7a8f71ef30f01a6d86e52eb6f868f558154c66"
+      "sha256": "121c82cbebd83a40b9a6757f01e63766e68a7538453fce92b5e3f802422dbfa0"
     },
     {
       "path": "packages/pharmacies/data/metadata.json",
@@ -284,11 +284,11 @@
     },
     {
       "path": "packages/tourisme/data/attractions.json",
-      "sha256": "5ee6c22c9476427bf0b9f5c564d558626ea1ebba961441da4a1c2ed674b73278"
+      "sha256": "1f0060025a183d5d9f510395d9a0754f4354f889d096e81d54d23e2bde7a2c8c"
     },
     {
       "path": "packages/tourisme/data/historic.json",
-      "sha256": "ac2b043ce45569c851343a1740a5679f2da7756d0d5e1924bda6f23fdcd5c596"
+      "sha256": "dc6bf9f45a6c125c1a749d2516c0a5201a5ee9fddf6e9824ff35183cddf2ac35"
     },
     {
       "path": "packages/tourisme/data/lodging.json",
@@ -296,11 +296,11 @@
     },
     {
       "path": "packages/tourisme/data/metadata.json",
-      "sha256": "bfa42c5507a5de25d861b9de9753dc471122bb79f5d08315055045d0d8066b66"
+      "sha256": "f170699669c676bf47b65aee2b8573e638924c7b8d13d4f0eab9e65adbe18530"
     },
     {
       "path": "packages/tourisme/data/parks.json",
-      "sha256": "8ae6fc017a411740653c33216cb22db70e37c3bbfd0c618f2e353338e1255d6f"
+      "sha256": "241148e19d19c04b2502643dd42a0ef94c352fae47768dc2c8076e79fa6bbcfc"
     },
     {
       "path": "packages/tourisme/data/thermal-springs.json",
@@ -310,9 +310,9 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70499,
-  "candidates": 17729,
+  "candidates": 17743,
   "reasons": {
-    "approximate_coordinate": 16880,
+    "approximate_coordinate": 16895,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 501,
     "outside_all_wilaya_boundaries": 199,
@@ -1199,9 +1199,9 @@
     {
       "dataset": "formation-professionnelle",
       "total_records": 1932,
-      "candidates": 570,
+      "candidates": 571,
       "reasons": {
-        "approximate_coordinate": 558,
+        "approximate_coordinate": 559,
         "missing_coordinate": 11,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
@@ -1218,8 +1218,8 @@
         "geocoded_count": 1921,
         "geocoded_pct": 99.4,
         "precision": {
-          "exact": 1363,
-          "approximate": 558
+          "exact": 1362,
+          "approximate": 559
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1581,9 +1581,9 @@
     {
       "dataset": "mosquees",
       "total_records": 20759,
-      "candidates": 4576,
+      "candidates": 4578,
       "reasons": {
-        "approximate_coordinate": 4532,
+        "approximate_coordinate": 4534,
         "inside_adjacent_wilaya": 39,
         "outside_all_wilaya_boundaries": 19,
         "outside_declared_wilaya": 58
@@ -1599,8 +1599,8 @@
         "geocoded_count": 20759,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 16227,
-          "approximate": 4532
+          "exact": 16225,
+          "approximate": 4534
         },
         "estimated_universe": 18449,
         "coverage_pct": 112.5,
@@ -1644,9 +1644,9 @@
     {
       "dataset": "ooredoo",
       "total_records": 572,
-      "candidates": 24,
+      "candidates": 26,
       "reasons": {
-        "approximate_coordinate": 24,
+        "approximate_coordinate": 26,
         "shared_coordinate": 4
       },
       "metadata_path": "packages/ooredoo/data/metadata.json",
@@ -1660,8 +1660,8 @@
         "geocoded_count": 572,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 548,
-          "approximate": 24
+          "exact": 546,
+          "approximate": 26
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -2134,9 +2134,9 @@
     {
       "dataset": "tourisme",
       "total_records": 4348,
-      "candidates": 229,
+      "candidates": 238,
       "reasons": {
-        "approximate_coordinate": 33,
+        "approximate_coordinate": 43,
         "inside_adjacent_wilaya": 106,
         "outside_all_wilaya_boundaries": 95,
         "outside_declared_wilaya": 201,
@@ -2153,8 +2153,8 @@
         "geocoded_count": 4348,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 4315,
-          "approximate": 33
+          "exact": 4305,
+          "approximate": 43
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -2430,9 +2430,9 @@
       "dataset": "formation-professionnelle",
       "entity": "establishments.json",
       "total_records": 1932,
-      "candidates": 570,
+      "candidates": 571,
       "reasons": {
-        "approximate_coordinate": 558,
+        "approximate_coordinate": 559,
         "missing_coordinate": 11,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
@@ -2496,9 +2496,9 @@
       "dataset": "mosquees",
       "entity": "mosquees.json",
       "total_records": 20759,
-      "candidates": 4576,
+      "candidates": 4578,
       "reasons": {
-        "approximate_coordinate": 4532,
+        "approximate_coordinate": 4534,
         "inside_adjacent_wilaya": 39,
         "outside_all_wilaya_boundaries": 19,
         "outside_declared_wilaya": 58
@@ -2509,9 +2509,9 @@
       "dataset": "ooredoo",
       "entity": "stores.json",
       "total_records": 572,
-      "candidates": 24,
+      "candidates": 26,
       "reasons": {
-        "approximate_coordinate": 24,
+        "approximate_coordinate": 26,
         "shared_coordinate": 4
       },
       "path": "packages/ooredoo/data/stores.json"
@@ -2635,9 +2635,9 @@
       "dataset": "tourisme",
       "entity": "attractions.json",
       "total_records": 1248,
-      "candidates": 81,
+      "candidates": 83,
       "reasons": {
-        "approximate_coordinate": 3,
+        "approximate_coordinate": 5,
         "inside_adjacent_wilaya": 21,
         "outside_all_wilaya_boundaries": 57,
         "outside_declared_wilaya": 78
@@ -2648,9 +2648,9 @@
       "dataset": "tourisme",
       "entity": "historic.json",
       "total_records": 1184,
-      "candidates": 73,
+      "candidates": 78,
       "reasons": {
-        "approximate_coordinate": 8,
+        "approximate_coordinate": 13,
         "inside_adjacent_wilaya": 42,
         "outside_all_wilaya_boundaries": 23,
         "outside_declared_wilaya": 65
@@ -2673,9 +2673,9 @@
       "dataset": "tourisme",
       "entity": "parks.json",
       "total_records": 32,
-      "candidates": 8,
+      "candidates": 10,
       "reasons": {
-        "approximate_coordinate": 2,
+        "approximate_coordinate": 5,
         "inside_adjacent_wilaya": 4,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 6

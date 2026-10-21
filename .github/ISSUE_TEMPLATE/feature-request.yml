@@ -1,6 +1,6 @@
 name: Feature / New Data Request
 description: Suggest new data fields or datasets
-labels: ["enhancement"]
+labels: ["needs-triage", "enhancement"]
 body:
   - type: textarea
     id: description

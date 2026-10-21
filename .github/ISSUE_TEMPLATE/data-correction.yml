@@ -1,43 +1,86 @@
-name: Data Correction
-description: Report incorrect or missing data
-labels: ["data", "correction"]
+name: Data correction
+description: A record in a GeoAlgeria dataset is wrong, misplaced or missing
+title: "Data correction: "
+labels: ["needs-triage", "data", "correction"]
 body:
-  - type: dropdown
-    id: file
+  - type: markdown
     attributes:
-      label: Which file?
+      value: |
+        Thank you for the report. One record, or one clear group of records, per
+        issue, and always with a source anyone can check: a correction with no
+        evidence cannot be applied.
+
+        The dataset list below uses **package slugs**, the part after
+        `@geoalgeria/` on npm. `geoalgeria` is the core set of wilayas, dairas
+        and communes. The full table is in the
+        [README](https://github.com/yasserstudio/geoalgeria#packages).
+  - type: dropdown
+    id: dataset
+    attributes:
+      label: Which dataset?
+      description: The package the record belongs to. Pick "other / not sure" if you cannot tell.
       options:
-        - data/wilayas.json
-        - data/dairas.json
-        - data/communes_w1_w23.json
-        - data/communes_w24_w48.json
-        - data/communes_w49_w69.json
-        - data/ecommerce/communes.json
-        - data/delivery/yalidine.json
-        - data/delivery/zr_express.json
-        - data/delivery/maystro.json
+        - agriculture
+        - aviation
+        - banques
+        - buses
+        - cliniques
+        - culture
+        - djezzy
+        - ecoles
+        - emploi
+        - enseignement-superieur
+        - ferroviaire
+        - formation-professionnelle
+        - gares-routieres
+        - geoalgeria
+        - industrie-pharmaceutique
+        - jeunesse
+        - livraison
+        - mobilis
+        - mosquees
+        - ooredoo
+        - pharmacies
+        - poste
+        - protection-civile
+        - sante
+        - sports
+        - telecom
+        - tourisme
+        - other / not sure
     validations:
       required: true
   - type: input
-    id: entry
+    id: record
     attributes:
-      label: Entry (commune or wilaya name)
-      placeholder: e.g., "Bordj Bou Arreridj"
+      label: Record id or scope
+      description: The record's `id` as the data carries it, or the scope the problem covers when it spans several records.
+      placeholder: 'buses:line:etusa-16, commune 1601, or "every post office in Djanet"'
     validations:
       required: true
   - type: textarea
-    id: correction
+    id: problem
     attributes:
-      label: What's wrong and what should it be?
+      label: What is wrong, and what should it be?
+      description: Name the field as well as the value, so the fix is unambiguous.
       placeholder: |
+        Field: name_ar
         Current value: ...
         Correct value: ...
     validations:
       required: true
   - type: input
-    id: source
+    id: evidence
     attributes:
-      label: Source (link or reference)
-      placeholder: e.g., JORA issue number, Algerie Poste page, Wikipedia link
+      label: Evidence or source URL
+      description: "A link anyone can open: an official page, a JORA issue, an OpenStreetMap object, an operator notice. Required, because every record here carries a source."
+      placeholder: https://...
     validations:
       required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: Context, a second source, or how you came across the problem.
+    validations:
+      required: false

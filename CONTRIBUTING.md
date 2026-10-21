@@ -356,6 +356,46 @@ facilities, economic indicators, transport…)?
 - **Just an idea or want to discuss/upvote?** Use
   [Discussions](https://github.com/yasserstudio/geoalgeria/discussions).
 
+## What happens to an issue you open
+
+Use the
+[forms](https://github.com/yasserstudio/geoalgeria/issues/new/choose) rather
+than a blank issue: a **Data correction** asks for the dataset, the record and a
+source link, and will not submit without the evidence field, because a
+correction nobody can check cannot be applied.
+
+The site's "report a data issue" link, on every record panel, opens that same
+form with the dataset and the record id already filled in.
+
+From there `.github/workflows/issue-intake.yml` runs once, on open:
+
+- it labels the issue `needs-triage`, so nothing sits unseen;
+- it adds a `data:<slug>` label when the issue names one of the dataset
+  packages and that label exists on this repository;
+- it files a matching issue on the maintainer's private tracker, titled
+  `[public #N]` and linking back here. Your thread stays the record of what you
+  reported.
+
+Nothing answers you automatically. Replies come from the maintainer, so expect
+a human rather than a bot, and allow a few days.
+
+### Maintainers: the intake token
+
+The mirror step needs `TRACKER_ISSUES_TOKEN`, an **Actions repository secret**
+on `yasserstudio/geoalgeria` holding a **fine-grained personal access token**
+scoped as narrowly as it goes:
+
+- resource owner `yasserstudio`, and **only** the `yasserstudio/geoalgeria.com`
+  repository;
+- repository permission **Issues: read and write**, nothing else;
+- a deliberate expiry, with a calendar reminder to rotate it. The workflow logs
+  a notice and passes when the token is absent, so an expired one loses mirrors
+  quietly instead of turning runs red: the reminder is what catches that.
+
+The labelling half uses the run's own `GITHUB_TOKEN` and needs no secret, so
+intake keeps working while the token is missing or being rotated. The same
+token is documented on the app side, in `docs/agents/issue-tracker.md`.
+
 ## Code of conduct
 
 Be respectful and constructive, assume good intent, focus on accuracy over

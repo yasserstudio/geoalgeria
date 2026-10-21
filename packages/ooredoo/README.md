@@ -56,7 +56,7 @@ metadata().wilayas_covered; // 63
 
 | Dataset | Count | Coordinates | Notes |
 | --- | --- | --- | --- |
-| `stores` | 572 | all 572 (548 `exact`, 24 `approximate`) | Ooredoo locator API, wilaya/commune-linked |
+| `stores` | 572 | all 572 (546 `exact`, 26 `approximate`) | Ooredoo locator API, wilaya/commune-linked |
 
 **By type (`type`)**
 
@@ -87,7 +87,7 @@ Pulled from Ooredoo Algérie's public *Trouvez-nous* locator API (a Liferay Head
 
 ## On accuracy
 
-> Store names, types and coordinates are **from the operator** (`geo_method: "operator_api"`). Coordinates are `geo_precision: "exact"` for 548 stores and `"approximate"` for 24: 19 whose source coordinate has fewer than 3 decimal places, plus 5 (`16-001`, `16-052`, `31-001`, `48-001`, `67-002`) whose API point contradicts both the wilaya Ooredoo declares for the store and the store's own name and address, and which are pinned to their commune's point instead (`geo_method: "commune_centroid"`). Those 5 keep the id they were first assigned, so the id prefix on them is the wilaya the bad point fell in rather than `wilaya_code`; treat the id as opaque. Wilaya is effectively exact (from the operator point); commune is a nearest-centroid best-effort. A **few** operator points carry inaccurate coordinates in the source, so their derived wilaya/commune can be wrong, the `operator_wilaya` field preserves Ooredoo's own declared wilaya in those cases. This is Ooredoo's own store directory as exposed by its locator; a store may occasionally be a partner point rather than a company-owned space.
+> Store names, types and coordinates are **from the operator** (`geo_method: "operator_api"`). Coordinates are `geo_precision: "exact"` for 546 stores and `"approximate"` for 26: 19 whose source coordinate has fewer than 3 decimal places, 2 (`16-059`, `44-003`) whose source coordinate is degrees and whole arcminutes with the seconds dropped, a cell about 1.5 km across and not a per-store point, plus 5 (`16-001`, `16-052`, `31-001`, `48-001`, `67-002`) whose API point contradicts both the wilaya Ooredoo declares for the store and the store's own name and address, and which are pinned to their commune's point instead (`geo_method: "commune_centroid"`). Those 5 keep the id they were first assigned, so the id prefix on them is the wilaya the bad point fell in rather than `wilaya_code`; treat the id as opaque. Wilaya is effectively exact (from the operator point); commune is a nearest-centroid best-effort. A **few** operator points carry inaccurate coordinates in the source, so their derived wilaya/commune can be wrong, the `operator_wilaya` field preserves Ooredoo's own declared wilaya in those cases. This is Ooredoo's own store directory as exposed by its locator; a store may occasionally be a partner point rather than a company-owned space.
 
 ## Source & licence
 

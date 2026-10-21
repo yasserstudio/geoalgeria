@@ -32,12 +32,12 @@ const byWilaya = fp.establishmentsByWilaya(16);     // establishments in wilaya 
 const cfpas = fp.establishmentsByType("cfpa");      // every CFPA
 const one = fp.establishmentById("00001");          // single record by id
 
-// 1,920 records have lat/lng – distance-sort, map, or nearest center in a few lines.
+// 1,921 records have lat/lng – distance-sort, map, or nearest center in a few lines.
 ```
 
 ## What you can build
 
-- **"Nearest training center" lookups** – 1,920 geocoded records, ready for distance sorting.
+- **"Nearest training center" lookups** – 1,921 geocoded records, ready for distance sorting.
 - **Vocational training directories** – bilingual names, type, capacity and full contact info on every record.
 - **Maps** – drop-in GeoJSON point layer for the vocational training network (99% geocoded).
 - **Capacity planning** – theoretical and realized capacities, boarding availability and surface area.
@@ -61,11 +61,13 @@ const one = fp.establishmentById("00001");          // single record by id
 
 Spanning **all 69 current wilayas**. The source is keyed by the pre-reform 58-wilaya
 scheme, so the generator matches source coordinates and communes to the current division and assigns 134
-establishments to their post-2026 daughter wilaya. 1,920 of 1,932 establishments are geocoded
-(99%), `lat`/`lng` is `null` for the remaining 12. Of the geocoded records, 1,375 carry the
-point takwin.dz publishes (`geo_precision` `"exact"`); the portal leaves the coordinate empty
-on the rest, so 510 sit on their commune's centroid and 35 on their wilaya's, both
-`"approximate"` and labelled in `geo_method`.
+establishments to their post-2026 daughter wilaya. 1,921 of 1,932 establishments are geocoded
+(99%), `lat`/`lng` is `null` for the remaining 11. Of the geocoded records, 1,362 carry the
+point takwin.dz publishes as `geo_precision` `"exact"`, and 13 carry a published point the
+number itself disproves, fewer than three decimals or degrees and whole arcminutes with the
+seconds dropped, so those keep `geo_method` `"takwin"` but read `"approximate"`; the portal
+leaves the coordinate empty on the rest, so 511 sit on their commune's centroid and 35 on
+their wilaya's, both `"approximate"` and labelled in `geo_method`.
 
 ## Formats
 
@@ -92,7 +94,7 @@ data/
   establishments.json      # 1,932 establishments (array)
   metadata.json            # sources, counts, by_type, by_secteur, geocoded, license, updated
   csv/                     # CSV export (repo + Release bundle, not in npm tarball)
-  geojson/                 # GeoJSON features (1,920 geocoded points)
+  geojson/                 # GeoJSON features (1,921 geocoded points)
 ```
 
 ## Record shape

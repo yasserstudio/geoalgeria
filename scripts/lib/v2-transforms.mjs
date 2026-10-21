@@ -96,25 +96,52 @@ export const geoAt = (r, precision, method) => {
  *  degrees and minutes with the seconds dropped, which the decimal count cannot see
  *  because minutes divided by 60 leave a long tail (private tracker #285).
  *
- *  WHY THIS IS NOT IN geoAt. The grid test is repository-wide as a GUARD
- *  (`test/arcminute-exact.test.mjs`, which fails on a new occurrence in any
- *  package). Demoting at INGEST is different: it changes published `geo_precision`,
- *  and 15 records in tourisme, mosquees, ooredoo and formation-professionnelle are
- *  on the grid today. Folding it into `geoAt` would move those 15 on their next
- *  regeneration, in a pass that has not re-sourced them, and `test/migrate-v2-replay`
- *  catches the one of them its fixture samples while the other 14 drift silently. So
- *  a generator adopts this once its own records have been swept, and the allow-list
- *  in the guard test is the list of generators that have not. */
+ *  WHY THIS IS NOT IN geoAt, still. `demoteRoundedPlaceholders` below applies the
+ *  same rule at EMIT, to every package, so no generator can ship a false `exact` by
+ *  forgetting this one. What this adds is that the demotion happens at INGEST, before
+ *  `applyReviewedOverrides` reads the record, so a review ledger's `expect` block
+ *  reads the honest `approximate` and not a claim the writer is about to drop two
+ *  steps later. A generator whose rounded placeholders have been swept uses it:
+ *  banques in #285, then tourisme, mosquees, ooredoo and formation-professionnelle in
+ *  private tracker #288. */
 export const geoAtMeasured = (r, precision, method) =>
   geoAt(r, precision === "exact" && onArcminuteGrid(r.lat, r.lng) ? "approximate" : precision, method);
 /** the common case: a real per-facility point. */
 export const geoExact = (r, method) => geoAt(r, "exact", method);
+/** `geoExact` for a generator whose rounded placeholders have been swept: see
+ *  `geoAtMeasured` for why a swept generator demotes at ingest as well as at emit. */
+export const geoExactMeasured = (r, method) => geoAtMeasured(r, "exact", method);
 /** A coordinate carried by more than one record in the same file is not a
  *  *per-facility* point. Mutates in place; returns the count demoted. */
 export function demoteSharedPoints(rows) {
   let n = 0;
   for (const i of sharedPoints(rows))
     if (rows[i].geo_precision === "exact") { rows[i].geo_precision = "approximate"; n++; }
+  return n;
+}
+/** A **rounded placeholder** of the degrees-and-minutes kind is not a per-facility
+ *  point either, and the number says so on its own. Mutates in place; returns the
+ *  count demoted.
+ *
+ *  WHY AT EMIT, beside demoteSharedPoints. These are the two halves of the same
+ *  question (packages/schema/src/geo.js, "Can this coordinate honestly be called
+ *  `exact`?"), and until private tracker #288 only one of them was asked of every
+ *  package. The other was a per-generator opt-in (`geoAtMeasured`) with a
+ *  repository-wide guard test carrying an allow-list of the generators that had not
+ *  opted in, which meant every new generator started out able to ship a false
+ *  `exact` and the guard's job was to notice afterwards. Asked here, it holds for
+ *  all 26 packages on every emit, including a re-emit through
+ *  scripts/apply-overrides.mjs, and the guard test has nothing left to allow.
+ *
+ *  It runs AFTER applyReviewedOverrides, so a reviewed re-placement onto a real
+ *  measured point is judged on the point it moved to, not the one it left. A ledger
+ *  that patched a record ONTO the grid and claimed `exact` would be demoted here,
+ *  which is the right answer: evidence for a place is not evidence for a precision
+ *  the coordinate itself contradicts. */
+export function demoteRoundedPlaceholders(rows) {
+  let n = 0;
+  for (const r of rows)
+    if (r.geo_precision === "exact" && onArcminuteGrid(r.lat, r.lng)) { r.geo_precision = "approximate"; n++; }
   return n;
 }
 /** the ungeocoded geo quartet, for datasets that carry no coordinates at all. */
@@ -145,7 +172,7 @@ export function colsFor(rows) {
 // tourisme.all() merges into one collection.
 const tourSource = (r) => {
   const key = r.source === "Wikidata" ? "wikidata" : "osm";
-  return { ...geoExact(r, key), source: key };
+  return { ...geoExactMeasured(r, key), source: key };
 };
 const tourOsm = (prefix) => (r) => clean({
   id: prefix + String(r.id), name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
@@ -159,7 +186,7 @@ const tourOsm = (prefix) => (r) => clean({
 const tourThermal = (prefix) => (r) => clean({
   id: prefix + String(r.id), name: r.name,
   wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune_name,
-  ...geoExact(r, "asal"),
+  ...geoExactMeasured(r, "asal"),
   source: "asal",
   type: r.type, temperature_c: r.temperature_c, debit_l_s: r.debit_l_s, altitude_m: r.altitude_m, minerality: r.minerality,
 });
@@ -190,7 +217,7 @@ export const MIGRATIONS = {
       return clean({
         id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
         wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
-        ...geoAt(r, isArea ? "approximate" : "exact", method),
+        ...geoAtMeasured(r, isArea ? "approximate" : "exact", method),
         source: r.source,
         refs: refs({ wikidata: r.wikidata, osm: r.osm_id }),
         denomination: r.denomination,
@@ -283,7 +310,7 @@ export const MIGRATIONS = {
     map: (r) => clean({
       id: r.id, name: r.name,
       wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
-      ...geoExact(r, "operator_api"),
+      ...geoExactMeasured(r, "operator_api"),
       source: "ooredoo",
       refs: refs({ ooredoo: r.ooredoo_id }),
       type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
@@ -570,7 +597,7 @@ export const MIGRATIONS = {
       // stays exact/takwin, while a record the portal left at 0 is placed on its
       // commune's (or wilaya's) flagship centroid and says so. A v1 row carries
       // neither field, so it still maps to exact/takwin as it always did.
-      ...geoAt(r, r.geo_precision ?? "exact", r.geo_method ?? "takwin"),
+      ...geoAtMeasured(r, r.geo_precision ?? "exact", r.geo_method ?? "takwin"),
       source: "mfep",
       type: r.type, type_label: r.type_label, abreviation: r.abreviation, code: r.code, secteur: r.secteur,
       adresse: r.adresse, adresse_fr: r.adresse_fr, telephone: r.telephone, fax: r.fax, email: r.email,
@@ -1038,6 +1065,7 @@ export function writePackageV2({
     // before validateRecords so what is checked is what is written.
     const rows = foldNameDashes(reviewed.records);
     demoteSharedPoints(rows);
+    demoteRoundedPlaceholders(rows);
     // Plain codepoint order: localeCompare() without a locale reads the ambient
     // ICU and can reorder committed JSON between machines.
     rows.sort(f.sortRows ?? ((a, b) => (String(a.id) < String(b.id) ? -1 : String(a.id) > String(b.id) ? 1 : 0)));

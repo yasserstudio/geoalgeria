@@ -22,17 +22,22 @@
 // generator, running that generator applies the same ledger, so this is an alternative
 // to it and never a step after it.
 //
-// It names its packages explicitly, and has no "all packages" mode: a package can
+// A LEDGER IS NOT REQUIRED. The other reason a published tree needs re-emitting is a
+// change to the WRITER itself, with no decision about any single record: private
+// tracker #288 moved the **rounded placeholder** demotion into `writePackageV2`, so
+// `mosquees`, `ooredoo` and `formation-professionnelle` each had to re-emit without a
+// ledger to land it, and #294 made the same writer fold the dash separators out of
+// every published name, which `enseignement-superieur` needed with no ledger either.
+// A package name that is not in MIGRATIONS still fails, which is what the ledger check
+// was really catching.
+//
+// It names its packages explicitly, and has no "every ledger" mode: a package can
 // legitimately have a second generator whose files this writer does not own (aviation's
 // routes come from a reviewed research dataset, not from the ANAC pull), and re-emitting
 // it from MIGRATIONS alone would drop those files from the manifest. Those a writer does
 // not own but a metadata key names are carried over instead of recomputed: each source's
 // `snapshot`, which attests the bytes the committed records were read from, and whatever
 // the package's `meta.preserve` lists (aviation's route count and its as-of stamp).
-//
-// A ledger is not required. It was while this ran corrections alone; #294 made the
-// writer fold the dash separators out of every published name, which a package with no
-// offline generator (enseignement-superieur) needs re-emitted with no ledger to apply.
 //
 // USAGE
 //   node scripts/apply-overrides.mjs emploi sports

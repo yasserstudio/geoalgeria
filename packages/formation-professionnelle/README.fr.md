@@ -32,12 +32,12 @@ const byWilaya = fp.establishmentsByWilaya(16);     // établissements de la wil
 const cfpas = fp.establishmentsByType("cfpa");      // tous les CFPA
 const one = fp.establishmentById("00001");          // un seul enregistrement par id
 
-// 1 920 enregistrements ont lat/lng – tri par distance, carte ou centre le plus proche en quelques lignes.
+// 1 921 enregistrements ont lat/lng – tri par distance, carte ou centre le plus proche en quelques lignes.
 ```
 
 ## Ce que vous pouvez construire
 
-- **Recherche du centre de formation le plus proche** – 1 920 enregistrements géocodés, prêts pour le tri par distance.
+- **Recherche du centre de formation le plus proche** – 1 921 enregistrements géocodés, prêts pour le tri par distance.
 - **Annuaires de formation professionnelle** – noms bilingues, type, capacité et coordonnées de contact complètes.
 - **Cartes** – couche de points GeoJSON prête à l'emploi pour le réseau de formation professionnelle (99 % géocodés).
 - **Planification des capacités** – capacités théoriques et réelles, disponibilité d'internat et superficie.
@@ -61,11 +61,14 @@ const one = fp.establishmentById("00001");          // un seul enregistrement pa
 
 Couvrant **les 69 wilayas actuelles**. La source est indexée selon l'ancien schéma à 58
 wilayas ; le générateur rattache donc les coordonnées et communes au découpage actuel et affecte 134
-établissements à leur nouvelle wilaya issue de la réforme de 2026. 1 920 des 1 932 établissements sont géocodés
-(99 %) – `lat`/`lng` est `null` pour les 12 restants. Parmi les enregistrements géocodés,
-1 375 portent le point publié par takwin.dz (`geo_precision` `"exact"`) ; le portail laisse
-la coordonnée vide pour les autres, donc 510 sont placés sur le centroïde de leur commune et
-35 sur celui de leur wilaya, tous deux `"approximate"` et signalés dans `geo_method`.
+établissements à leur nouvelle wilaya issue de la réforme de 2026. 1 921 des 1 932 établissements sont géocodés
+(99 %) – `lat`/`lng` est `null` pour les 11 restants. Parmi les enregistrements géocodés,
+1 362 portent le point publié par takwin.dz en `geo_precision` `"exact"`, et 13 portent un
+point publié que le nombre lui-même dément, moins de trois décimales ou des degrés et des
+minutes entières sans les secondes ; ceux-là gardent `geo_method` `"takwin"` mais passent en
+`"approximate"`. Le portail laisse la coordonnée vide pour les autres, donc 511 sont placés
+sur le centroïde de leur commune et 35 sur celui de leur wilaya, tous deux `"approximate"` et
+signalés dans `geo_method`.
 
 ## Formats
 
@@ -92,7 +95,7 @@ data/
   establishments.json      # 1 932 établissements (tableau)
   metadata.json            # sources, comptages, by_type, by_secteur, geocoded, license, updated
   csv/                     # Export CSV (dépôt + bundle Release, pas dans le tarball npm)
-  geojson/                 # Entités GeoJSON (1 920 points géocodés)
+  geojson/                 # Entités GeoJSON (1 921 points géocodés)
 ```
 
 ## Structure d'un enregistrement
