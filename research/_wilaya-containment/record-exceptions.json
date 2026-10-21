@@ -4,37 +4,24 @@
   "ref": "origin/main",
   "note": "Published records their own geometry contradicts. `kind: commune_outline` is a coordinate outside the OpenStreetMap outline of the commune the record names; `kind: wilaya_polygon` is a record with no commune outline to check whose coordinate is inside a different wilaya's shipped polygon. Every row is a defect, not a tolerance: `rule` names the clause of scripts/lib/commune-resolver.mjs that decides it today, and the group's reason says which two claims disagree and who can settle it. `pre_existing` is recomputed by running the same rule over the same file at origin/main, so a row this batch created cannot hide among the rows it inherited (those are yasserstudio/geoalgeria.com#209). Records with no commune outline whose coordinate is inside NO wilaya polygon are not listed and not failed, because the 69 shipped outlines are display-grade (mapshaper `dp 2% keep-shapes`, a 3.4 km median vertex gap) and cut inside the shoreline. Regenerate with `node scripts/build-wilaya-containment-exceptions.mjs --write`.",
   "files_checked": 46,
-  "count": 303,
-  "pre_existing": 303,
+  "count": 302,
+  "pre_existing": 302,
   "created_by_this_batch": 0,
   "groups": [
     {
       "file": "packages/banques/data/branches.json",
       "package": "banques",
-      "count": 5,
-      "pre_existing": 5,
+      "count": 4,
+      "pre_existing": 4,
       "created_by_this_batch": 0,
       "kinds": {
-        "outside_declared_wilaya_polygon": 5
+        "outside_declared_wilaya_polygon": 4
       },
       "rules": {
-        "kept_low_precision": 1,
         "commune_outline": 4
       },
       "reason": "the branch's wilaya comes from each bank's own branch list, and its coordinate from a separate geocode; the two disagree here and only the bank can say which is wrong",
       "records": [
-        {
-          "id": "agb-tebessa",
-          "declared_wilaya": "12",
-          "declared_commune": null,
-          "lng": 8,
-          "lat": 35,
-          "rule": "kept_low_precision",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "62",
-          "pre_existing": true
-        },
         {
           "id": "badr-281",
           "declared_wilaya": "67",

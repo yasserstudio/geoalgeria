@@ -34,7 +34,7 @@ This is a small monorepo:
 | `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit, 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
 | `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks, 59 Lines, 42 OSM shapes, 75 Directions and 1,046 Stations across 3 Operators |
 | `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | pharmaceutical manufacturers, 171 medicine & medical-device makers (Ministry of Pharmaceutical Industry), bilingual, geocoded |
-| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines), 3,797 geocoded, 67 wilayas (OpenStreetMap) |
+| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines), 3,795 geocoded, 67 wilayas (OpenStreetMap) |
 | `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores, 572 EO/CSO/ESO with real coordinates (ooredoo.dz); completes the telecom retail trio |
 | `packages/transport/` | `@geoalgeria/transport` | transport umbrella, re-exports aviation + ferroviaire + gares-routieres + buses |
 | `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella, re-exports industrie-pharmaceutique + pharmacies |
@@ -72,6 +72,11 @@ hand-edit the mirror.
 ```bash
 pnpm validate    # schema + integrity checks on the dataset
 ```
+
+It ends with a bundler check ([`scripts/check-bundlers.mjs`](scripts/check-bundlers.mjs),
+also `pnpm check-bundlers`): it packs the real tarballs, bundles them with esbuild
+and runs the output, because a package can load perfectly in Node and still fail in
+a bundled app (issue #276).
 
 ### 4. Open a pull request
 

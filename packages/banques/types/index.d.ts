@@ -11,8 +11,16 @@ export type Ownership = "public" | "private_foreign" | "private_domestic";
 export type GeoPrecision = "exact" | "approximate" | null;
 
 /** How a coordinate was obtained. Only branches ever carry a point: the
- *  registry entries (banks/institutions) are never geocoded. */
-export type GeoMethod = "bank_locator" | "osm_node" | "osm_way" | null;
+ *  registry entries (banks/institutions) are never geocoded. `commune_centroid`
+ *  is the honest fallback for a branch whose locator published only a
+ *  degrees-and-minutes placeholder and which no open source can place: the
+ *  record carries its commune's centre and is always `approximate`. */
+export type GeoMethod =
+  | "bank_locator"
+  | "osm_node"
+  | "osm_way"
+  | "commune_centroid"
+  | null;
 
 /** A licensed bank or financial institution: a registry entry (head office
  *  only, not a geocoded premises). */
@@ -75,10 +83,11 @@ export interface Branch {
   wilaya_code: string;
   /** Provider wilaya code retained when reconciled to a current code. */
   source_wilaya_code?: string;
-  /** Always null: bank locators publish no commune. */
-  commune_code: null;
-  /** Always null: see `commune_code`. */
-  commune: null;
+  /** 4-digit ONS commune code; null on the branches no locator or review has
+   *  pinned to a commune, which is most of them (bank locators publish none). */
+  commune_code: string | null;
+  /** Commune name (French), paired with `commune_code`; null together with it. */
+  commune: string | null;
   /** Null when the source gave no usable (in-Algeria) coordinates. */
   lat: number | null;
   lng: number | null;

@@ -23,6 +23,7 @@ import {
   GEO_PRECISION,
   evidenceForSourceKey,
   coordDecimals,
+  onArcminuteGrid,
   sharedPoints,
   validateRecords,
   MIN_EXACT_DECIMALS,
@@ -51,6 +52,12 @@ export const CUTOVER_DATE = "2026-07-18";
  *  the same way instead of drifting into three near-copies. */
 export const TWIN_POSTS_NOTE =
   "The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record.";
+
+/** The same, for the registry's REPEAT posts: a handful of establishments were
+ *  entered a second time in the language they already had, which the twin rule
+ *  cannot reach because it pairs one language with the other. */
+export const REPEAT_POSTS_NOTE =
+  "A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too.";
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
 /** A package opts into reviewed corrections by adding one committed ledger. */
@@ -83,6 +90,22 @@ export const geoAt = (r, precision, method) => {
   const p = precision === "exact" && coordDecimals(r.lat, r.lng) < MIN_EXACT_DECIMALS ? "approximate" : precision;
   return { lat: has ? r.lat : null, lng: has ? r.lng : null, geo_precision: has ? p : null, geo_method: has ? method : null };
 };
+
+/** `geoAt` plus the other half of the **rounded placeholder** rule (CONTEXT.md):
+ *  degrees and minutes with the seconds dropped, which the decimal count cannot see
+ *  because minutes divided by 60 leave a long tail (private tracker #285).
+ *
+ *  WHY THIS IS NOT IN geoAt. The grid test is repository-wide as a GUARD
+ *  (`test/arcminute-exact.test.mjs`, which fails on a new occurrence in any
+ *  package). Demoting at INGEST is different: it changes published `geo_precision`,
+ *  and 15 records in tourisme, mosquees, ooredoo and formation-professionnelle are
+ *  on the grid today. Folding it into `geoAt` would move those 15 on their next
+ *  regeneration, in a pass that has not re-sourced them, and `test/migrate-v2-replay`
+ *  catches the one of them its fixture samples while the other 14 drift silently. So
+ *  a generator adopts this once its own records have been swept, and the allow-list
+ *  in the guard test is the list of generators that have not. */
+export const geoAtMeasured = (r, precision, method) =>
+  geoAt(r, precision === "exact" && onArcminuteGrid(r.lat, r.lng) ? "approximate" : precision, method);
 /** the common case: a real per-facility point. */
 export const geoExact = (r, method) => geoAt(r, "exact", method);
 /** A coordinate carried by more than one record in the same file is not a
@@ -287,7 +310,9 @@ export const MIGRATIONS = {
         // `msp_twin` is the registry's other-language post for the same
         // facility: the Ministry publishes each establishment once in French and
         // once in Arabic, and a bilingual record stands for both posts.
-        refs: refs({ wikidata: r.wikidata, osm: r.osm_id, msp: r.msp_id, msp_twin: r.msp_id_twin }),
+        // `msp_repeat` is a third post, in a language the record already has,
+        // which the registry entered a second time for the same establishment.
+        refs: refs({ wikidata: r.wikidata, osm: r.osm_id, msp: r.msp_id, msp_twin: r.msp_id_twin, msp_repeat: r.msp_id_repeat }),
         type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
         sector: r.sector, slug: r.slug,
       });
@@ -300,7 +325,7 @@ export const MIGRATIONS = {
       ],
       license: "Official registry (Ministry of Health); geocoding ODbL/CC0",
       estimatedUniverse: null,
-      coverageNote: `Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. ${TWIN_POSTS_NOTE} Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 71 remain ungeocoded.`,
+      coverageNote: `Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. ${TWIN_POSTS_NOTE} ${REPEAT_POSTS_NOTE} Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 70 remain ungeocoded.`,
       titles: { en: "Algeria public health establishments", fr: "Établissements de santé publique d'Algérie", ar: "المؤسسات الصحية العمومية الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), bilingual: rows.filter((r) => r.name_ar && r.name_fr).length, linkage_note: LINKAGE }),
     },
@@ -692,7 +717,7 @@ export const MIGRATIONS = {
       { file: "branches.json", map: (r) => clean({
         id: r.id, name: r.name,
         wilaya_code: wcode(r.wilaya_code), source_wilaya_code: r.source_wilaya_code ? wcode(r.source_wilaya_code) : undefined, commune_code: null, commune: null,
-        ...geoAt(r, r.geo_precision ?? "exact", r.geo_method ?? "bank_locator"),
+        ...geoAtMeasured(r, r.geo_precision ?? "exact", r.geo_method ?? "bank_locator"),
         source: "bank_locator",
         bank_id: r.bank_id, address: r.address, phone: r.phone,
       }) },
@@ -703,9 +728,9 @@ export const MIGRATIONS = {
         { key: "bank_locator", name: "Each licensed bank's own branch locator (site/API/KML)", license: "Data © respective banks; redistributed for reference", retrieved: "2026-06-16", evidence_type: "official" },
         { key: "osm", name: "OpenStreetMap: reviewed bank coordinate evidence", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-09", evidence_type: "crowdsourced" },
       ],
-      license: "Compiled from public regulatory listings and official institution sites/locators; eight reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
+      license: "Compiled from public regulatory listings and official institution sites/locators; twelve reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
       estimatedUniverse: null,
-      coverageNote: "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,325 carry a geocoded point, including eight reviewed BDL and SGA branches matched to OSM by bank, wilaya, locality, and agency number or street address. The rest remain address-only (see README).",
+      coverageNote: "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,325 carry a geocoded point. Twelve of those are reviewed OpenStreetMap matches on BDL, SGA, AGB and BADR branches, each agreeing on bank, wilaya and locality, and nine of the twelve on an agency number or street address as well; the other three (BADR Aïn Témouchent, BADR Kenadsa and AGB Constantine) rest on bank and locality alone, the source carrying no street to match. Two further branches sat on a rounded placeholder their locator published as degrees and minutes, and carry their commune's centre as approximate because OpenStreetMap maps no object of their bank there. The rest remain address-only (see README).",
       titles: { en: "Algeria banks & financial institutions", fr: "Banques et institutions financières d'Algérie", ar: "البنوك والمؤسسات المالية الجزائرية" },
       stats: (rows) => {
         const registry = rows.filter((r) => r.source === "boa");
@@ -1104,6 +1129,37 @@ export function writePackageV2({
   return { records: all, metadata, review };
 }
 
+/** Everything before an id's last `-`, which is the part a derived id spends on
+ *  describing the record (`16` in `16-00042`, `16-ehs` in `16-ehs-03`). */
+const idPrefix = (id) => {
+  const cut = String(id).lastIndexOf("-");
+  return cut >= 0 ? String(id).slice(0, cut) : String(id);
+};
+
+/**
+ * Forward a retired id to the live id that carries its data now, in the ledger's
+ * `migrations` map, and re-point any earlier forward that aimed at `from`, so a
+ * consumer following a retired id always arrives in ONE hop. Every site that
+ * retires an id forwards through here, so the no-chain rule is stated once.
+ *
+ * An earlier entry keeps its own note and its own upstream ids: they record why
+ * THAT id was retired, which `from` being retired in turn does not change.
+ *
+ * @param {Record<string, object>|null} migrations  the ledger's map, mutated in place
+ * @param {string} from     the id being retired
+ * @param {string} to       the live id that carries the data now
+ * @param {string} note     why `from` was retired
+ * @param {object} [extra]  the upstream ids the retirement stood for, as the ledger
+ *                          names them for this package (e.g. `{ osm: [...] }`)
+ */
+export function forwardRetiredId(migrations, from, to, note, extra = null) {
+  if (!migrations) return;
+  for (const entry of Object.values(migrations)) {
+    if (entry?.merged_into === from) entry.merged_into = to;
+  }
+  migrations[from] = { merged_into: to, ...(extra ?? {}), note };
+}
+
 /**
  * Carry each record's id over from the committed data, keyed by a stable upstream
  * identifier, so regeneration reproduces the SAME public join keys (v2 decision 10/11).
@@ -1133,12 +1189,34 @@ export function writePackageV2({
  * Fails loud on a duplicated committed carry key (the key cannot pin an id it does
  * not uniquely identify) and on any residual duplicate id after carry-over.
  *
+ * `prefixOf` is the opt-in exception to pinning, for a package whose id prefix is a
+ * claim about the record and not an opaque string. `{wilaya_code}-{seq}` is such a
+ * prefix: a consumer reads the wilaya off it, which the published type invites.
+ * Pinning alone lets that claim go stale, because a record the commune join moves
+ * to another wilaya comes back to the id it was minted under, prefix and all
+ * (empirically: 17 of 3,807 pharmacies, private tracker #255). Where `prefixOf`
+ * disagrees with the committed id's prefix the id is NOT pinned: it retires, the
+ * record keeps its freshly derived id, and `migrations` records the forward so the
+ * old join key still resolves. Any earlier forward that pointed at the retiring id
+ * is re-pointed at the new one, so a forward is always one hop and never a chain.
+ * Without `prefixOf` nothing changes: a stale prefix is pinned as before.
+ *
  * @param {object[]} rows          the v2 records being emitted (mutated in place)
  * @param {object[]} committed     the committed v2 records (empty on a first build)
  * @param {(r: object) => (string|null)} keyOf  stable upstream key, or null to skip
  * @param {string} [pkg]           package name, for error messages
  * @param {Set<string>} retiredIds ids retired by an earlier run; mutated with
  *                                 ids retired by this run
+ * @param {object} [options]
+ * @param {(r: object) => (string|null)} [options.prefixOf]  the prefix the record's
+ *                                 id must carry; a committed id with another prefix
+ *                                 is re-issued instead of pinned
+ * @param {Record<string, object>} [options.migrations]  the ledger's forwarding
+ *                                 table, mutated with each re-issue
+ * @param {string} [options.note]  the note a re-issue's forward carries
+ * @param {(r: object) => (object|null)} [options.extraOf]  the upstream ids a
+ *                                 re-issue's forward should cite, as the ledger
+ *                                 names them for this package (`{ osm: [...] }`)
  * @returns {object[]} rows
  */
 export function carryOverIds(
@@ -1147,11 +1225,21 @@ export function carryOverIds(
   keyOf,
   pkg = "",
   retiredIds,
+  { prefixOf = null, migrations = null, note = "Re-issued id.", extraOf = null } = {},
 ) {
   const tag = pkg ? ` [${pkg}]` : "";
   if (!(retiredIds instanceof Set)) {
     throw new Error(
       `carryOverIds${tag}: a persistent retiredIds Set is required`,
+    );
+  }
+  // A re-issue retires a published join key, and the only thing that keeps it
+  // followable is the forward. Re-issuing with nowhere to write one would retire
+  // the key silently, so it is a build error rather than a quiet loss.
+  if (prefixOf && !migrations) {
+    throw new Error(
+      `carryOverIds${tag}: prefixOf re-issues ids, so a migrations map is required ` +
+        `to forward each retired id; pass the ledger's own map`,
     );
   }
   // Index the committed id each carry key shipped under. A duplicated key means
@@ -1189,14 +1277,23 @@ export function carryOverIds(
     ...committed.map((record) => String(record.id)),
   ]);
 
-  // 1. Pin each still-present record back to the id it shipped under.
+  // 1. Pin each still-present record back to the id it shipped under, unless
+  //    `prefixOf` says the committed id's prefix no longer describes the record.
+  //    Such an id is re-issued: it retires here and forwards to the record's new
+  //    id once step 2 has settled it.
   const carried = new Set();
+  const reissued = [];
   for (const r of rows) {
     const k = keyOf(r);
-    if (k != null && byKey.has(k)) {
-      r.id = byKey.get(k);
-      carried.add(r);
+    if (k == null || !byKey.has(k)) continue;
+    const was = String(byKey.get(k));
+    if (prefixOf && idPrefix(was) !== prefixOf(r)) {
+      retiredIds.add(was);
+      reissued.push({ row: r, was });
+      continue;
     }
+    r.id = was;
+    carried.add(r);
   }
 
   // 2. Re-home any new record whose freshly-derived id collides with a reserved
@@ -1209,7 +1306,7 @@ export function carryOverIds(
     if (carried.has(r) || !reserved.has(r.id)) continue;
     const id = String(r.id);
     const cut = id.lastIndexOf("-");
-    const prefix = cut >= 0 ? id.slice(0, cut) : id;
+    const prefix = idPrefix(id);
     const width = cut >= 0 ? id.length - cut - 1 : 0;
     let seq = 1;
     let next;
@@ -1218,6 +1315,17 @@ export function carryOverIds(
     } while (occupied.has(next));
     r.id = next;
     occupied.add(next);
+  }
+
+  // 2b. Forward every re-issued id to where its record landed, and re-point any
+  //     earlier forward that aimed at it, so following a retired id is one hop.
+  for (const { row, was } of reissued) {
+    if (reserved.has(row.id) || retiredIds.has(row.id)) {
+      throw new Error(
+        `carryOverIds${tag}: re-issued ${was} onto ${row.id}, which is reserved`,
+      );
+    }
+    forwardRetiredId(migrations, was, row.id, note, extraOf ? extraOf(row) : null);
   }
 
   // 3. The final id set must be globally unique: two current records sharing one
@@ -1258,6 +1366,10 @@ function retiredIdsContent(ids, migrations = null) {
  *  is append-only: a generator recomputes only the migrations it can see this
  *  run, and a record merged in an earlier release is no longer visible in the
  *  committed data, so its entry has to be carried forward rather than recomputed. */
+/** The `migrations` fields that cite the upstream ids a retirement stood for,
+ *  one field per source system. */
+const UPSTREAM_ID_FIELDS = ["msp_posts", "osm"];
+
 /** What is wrong with a ledger's `migrations` map, one message per fault, each
  *  starting `migrations[...]`. `reserved` is the ledger's own retired ids. The
  *  generator throws on the first message and validate-packages reports them all,
@@ -1280,17 +1392,26 @@ export function migrationErrors(migrations, reserved) {
     if (entry.merged_into === id) errors.push(`${where}.merged_into points at itself`);
     else if (reserved.has(entry.merged_into)) errors.push(`${where}.merged_into ${entry.merged_into} is itself retired`);
     if (typeof entry.note !== "string" || !entry.note) errors.push(`${where}.note must be a non-empty string`);
-    if (
-      entry.msp_posts != null &&
-      (!Array.isArray(entry.msp_posts) ||
-        !entry.msp_posts.length ||
-        entry.msp_posts.some((post) => typeof post !== "string" || !post))
-    ) {
-      errors.push(`${where}.msp_posts must be a non-empty array of non-empty strings`);
+    // The upstream ids the retirement stood for, named per source system, so a
+    // consumer can check the merge against the source instead of taking the note's
+    // word for it (RELEASING.md, "Retiring a published id"). One field per source:
+    // `msp_posts` for the Ministry of Health registry, `osm` for OpenStreetMap
+    // elements. Same shape in each case, so the check is written once.
+    for (const field of UPSTREAM_ID_FIELDS) {
+      const value = entry[field];
+      if (value == null) continue;
+      if (
+        !Array.isArray(value) ||
+        !value.length ||
+        value.some((id) => typeof id !== "string" || !id)
+      ) {
+        errors.push(`${where}.${field} must be a non-empty array of non-empty strings`);
+      }
     }
   }
   return errors;
 }
+
 
 /** Read and validate a package's `migrations` map (see migrationErrors). */
 export function readRetiredMigrations(dir) {
@@ -1322,11 +1443,17 @@ export function readRetiredIds(dir) {
 
 /** Persist a ledger for a generator that has not moved to writePackageV2 yet.
  *  An empty ledger is not written, and an empty one on disk is removed, so a
- *  package that has never retired an id ships no `retired-ids.json`. */
+ *  package that has never retired an id ships no `retired-ids.json`.
+ *
+ *  The `migrations` map is checked by the same rule validate-packages reports, and
+ *  the first fault throws: a forwarding table is a public contract, and a build
+ *  that writes a broken one has already shipped it by the time validate runs. */
 export function writeRetiredIds(dir, ids, migrations = null) {
   const path = join(dir, "retired-ids.json");
-  const size = ids instanceof Set ? ids.size : [...ids].length;
-  if (!size) rmSync(path, { force: true });
+  const reserved = new Set([...ids].map(String));
+  const [fault] = migrationErrors(migrations, reserved);
+  if (fault) throw new Error(`writeRetiredIds [${path}]: ${fault}`);
+  if (!reserved.size) rmSync(path, { force: true });
   else writeAtomic(path, retiredIdsContent(ids, migrations));
 }
 

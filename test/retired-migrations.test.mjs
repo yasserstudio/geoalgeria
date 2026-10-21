@@ -28,3 +28,19 @@ test("migrationErrors: every way a forward can dead-end is named", () => {
   // all faults are reported, not only the first
   assert.equal(faults({ "16-ehs-13": { ...entry, note: "", msp_posts: [1] } }).length, 2);
 });
+
+// The upstream ids a retirement stood for, named per source system, so a consumer
+// can check a merge against the source instead of taking the note's word for it.
+// Every source's field has the same shape, so one check covers them all.
+test("migrationErrors: every upstream-id field is checked the same way", () => {
+  const faults = (map) => migrationErrors(map, reserved);
+  const osm = { merged_into: "16-ehs-03", osm: ["node/2418479678", "node/5971620189"], note: "Merged." };
+  assert.deepEqual(faults({ "16-ehs-13": osm }), []);
+  // Absent is fine; present and malformed is not.
+  assert.deepEqual(faults({ "16-ehs-13": { ...osm, osm: undefined } }), []);
+  assert.match(faults({ "16-ehs-13": { ...osm, osm: [] } })[0], /osm must be a non-empty array/);
+  assert.match(faults({ "16-ehs-13": { ...osm, osm: "node/1" } })[0], /osm must be a non-empty array/);
+  assert.match(faults({ "16-ehs-13": { ...osm, osm: ["node/1", ""] } })[0], /osm must be a non-empty array/);
+  // Both source fields on one entry are each checked.
+  assert.equal(faults({ "16-ehs-13": { ...osm, osm: [], msp_posts: [] } }).length, 2);
+});

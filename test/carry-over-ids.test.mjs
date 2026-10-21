@@ -171,6 +171,115 @@ test("carryOverIds: two current records under one key surface as a duplicate-id 
   );
 });
 
+// `prefixOf` is the opt-in clause for a package whose id prefix is a claim about
+// the record rather than an opaque string: `{wilaya_code}-{seq}`. Pinning alone
+// made that claim go stale, because a record the commune join moves to another
+// wilaya came back to the id it was minted under, prefix and all (empirically: 17
+// of 3,807 pharmacies, private tracker #255). With the clause the stale id retires
+// and forwards, so the prefix is always readable and the old join key still
+// resolves in one hop.
+test("carryOverIds: prefixOf re-issues a carried id whose prefix went stale", () => {
+  const committed = [rec("06-00001", "A"), rec("06-00002", "B")];
+  // B moved to wilaya 31; A did not move.
+  const rows = assignIds([
+    { wilaya: "06", refs: { osm: "A" } },
+    { wilaya: "31", refs: { osm: "B" } },
+  ]);
+  const retired = new Set();
+  const migrations = {};
+  carryOverIds(rows, committed, keyOf, "t", retired, {
+    prefixOf: (r) => r.wilaya,
+    migrations,
+    note: "Re-issued.",
+  });
+  const byKey = Object.fromEntries(rows.map((r) => [r.refs.osm, r.id]));
+  assert.equal(byKey.A, "06-00001"); // unmoved, still pinned
+  assert.equal(byKey.B, "31-00001"); // re-issued into its own wilaya's id space
+  assert.deepEqual([...retired], ["06-00002"]);
+  assert.deepEqual(migrations, { "06-00002": { merged_into: "31-00001", note: "Re-issued." } });
+  assert.ok(uniqueIds(rows));
+});
+
+test("carryOverIds: a re-issued record never lands on a reserved id", () => {
+  // 31-00001 is already taken by a carried record and 31-00002 is retired, so the
+  // re-issued record has to be re-homed past both.
+  const committed = [rec("31-00001", "A"), rec("06-00009", "B")];
+  const rows = assignIds([
+    { wilaya: "31", refs: { osm: "A" } },
+    { wilaya: "31", refs: { osm: "B" } },
+  ]);
+  const retired = new Set(["31-00002"]);
+  const migrations = {};
+  carryOverIds(rows, committed, keyOf, "t", retired, { prefixOf: (r) => r.wilaya, migrations });
+  const byKey = Object.fromEntries(rows.map((r) => [r.refs.osm, r.id]));
+  assert.equal(byKey.A, "31-00001");
+  assert.equal(byKey.B, "31-00003");
+  assert.deepEqual([...retired].sort(), ["06-00009", "31-00002"]);
+  assert.equal(migrations["06-00009"].merged_into, "31-00003");
+  assert.ok(uniqueIds(rows));
+});
+
+test("carryOverIds: a second move re-points the first forward instead of chaining", () => {
+  // Run N retired 06-00002 -> 31-00001. Run N+1 moves the same record again: the
+  // older entry must forward straight to the new id, so one hop still resolves.
+  const committed = [rec("31-00001", "B")];
+  const rows = assignIds([{ wilaya: "44", refs: { osm: "B" } }]);
+  const retired = new Set(["06-00002"]);
+  const migrations = { "06-00002": { merged_into: "31-00001", note: "Re-issued." } };
+  carryOverIds(rows, committed, keyOf, "t", retired, {
+    prefixOf: (r) => r.wilaya,
+    migrations,
+    note: "Re-issued again.",
+  });
+  assert.equal(rows[0].id, "44-00001");
+  assert.deepEqual([...retired].sort(), ["06-00002", "31-00001"]);
+  assert.equal(migrations["06-00002"].merged_into, "44-00001");
+  assert.equal(migrations["06-00002"].note, "Re-issued."); // the old note is kept
+  assert.equal(migrations["31-00001"].merged_into, "44-00001");
+});
+
+test("carryOverIds: without prefixOf a stale prefix is still pinned, unchanged", () => {
+  const committed = [rec("06-00002", "B")];
+  const rows = assignIds([{ wilaya: "31", refs: { osm: "B" } }]);
+  const retired = new Set();
+  carryOverIds(rows, committed, keyOf, "t", retired);
+  assert.equal(rows[0].id, "06-00002");
+  assert.deepEqual([...retired], []);
+});
+
+// A re-issue retires a published join key, and the forward is the only thing that
+// keeps it followable. Re-issuing with nowhere to write one would retire the key
+// silently, so it is a build error rather than a quiet loss.
+test("carryOverIds: prefixOf without a migrations map is refused", () => {
+  const committed = [rec("06-00002", "B")];
+  const rows = assignIds([{ wilaya: "31", refs: { osm: "B" } }]);
+  assert.throws(
+    () => carryOverIds(rows, committed, keyOf, "t", new Set(), { prefixOf: (r) => r.wilaya }),
+    /prefixOf re-issues ids, so a migrations map is required/,
+  );
+  // The rows are left alone, so a caller that catches it has not half-applied one.
+  assert.equal(rows[0].id, "31-00001");
+});
+
+test("carryOverIds: extraOf puts the upstream ids on a re-issue's forward", () => {
+  const committed = [rec("06-00002", "B")];
+  const rows = assignIds([{ wilaya: "31", refs: { osm: "B" } }]);
+  const migrations = {};
+  carryOverIds(rows, committed, keyOf, "t", new Set(), {
+    prefixOf: (r) => r.wilaya,
+    migrations,
+    note: "Re-issued.",
+    extraOf: (r) => ({ osm: [r.refs.osm] }),
+  });
+  assert.deepEqual(migrations["06-00002"], {
+    merged_into: "31-00001",
+    osm: ["B"],
+    note: "Re-issued.",
+  });
+  // merged_into comes first and note last, whatever the extra fields are.
+  assert.deepEqual(Object.keys(migrations["06-00002"]), ["merged_into", "osm", "note"]);
+});
+
 test("carryOverIds: refuses an ephemeral missing ledger", () => {
   assert.throws(
     () => carryOverIds([], [], keyOf, "t"),
@@ -187,6 +296,30 @@ test("writeRetiredIds: an empty ledger is not written", (t) => {
   writeRetiredIds(dir, new Set());
   assert.equal(existsSync(join(dir, "retired-ids.json")), false);
   assert.deepEqual([...readRetiredIds(dir)], []);
+});
+
+// A forwarding table is a public contract, and a build that writes a broken one has
+// already shipped it by the time validate-packages reports it. So the writer checks
+// it by the same rule and refuses.
+test("writeRetiredIds: a broken migrations map is refused rather than written", (t) => {
+  const dir = mkdtempSync(join(tmpdir(), "geoalgeria-ledger-guard-"));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  const ids = new Set(["06-00002", "06-00003"]);
+  // merged_into points at an id that is itself retired: a chain, not a forward.
+  assert.throws(
+    () => writeRetiredIds(dir, ids, { "06-00002": { merged_into: "06-00003", note: "x" } }),
+    /is itself retired/,
+  );
+  // A forward for an id the ledger does not reserve.
+  assert.throws(
+    () => writeRetiredIds(dir, ids, { "06-09999": { merged_into: "06-00001", note: "x" } }),
+    /is not one of the retired ids/,
+  );
+  // Nothing was written, so the broken table never reached disk.
+  assert.equal(existsSync(join(dir, "retired-ids.json")), false);
+  // And a sound one still writes.
+  writeRetiredIds(dir, ids, { "06-00002": { merged_into: "06-00001", note: "x" } });
+  assert.deepEqual([...readRetiredIds(dir)], ["06-00002", "06-00003"]);
 });
 
 test("writeRetiredIds: an empty ledger already on disk is removed", (t) => {
