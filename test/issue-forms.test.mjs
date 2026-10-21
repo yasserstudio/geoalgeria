@@ -20,7 +20,7 @@ import {
   requiredIds,
   datasetSlug,
   NON_DATASET_PACKAGES,
-} from "./lib/issue-forms.mjs";
+} from "../scripts/lib/issue-forms.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const TEMPLATE_DIR = join(ROOT, ".github", "ISSUE_TEMPLATE");
