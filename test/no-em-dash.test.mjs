@@ -92,7 +92,7 @@ test("every published metadata file in the repo is clean", () => {
 test("withoutEmDash swaps the separator and leaves everything else alone", () => {
   assert.equal(withoutEmDash(`École primaire ${EM_DASH} Khaldi Mohammed`), "École primaire - Khaldi Mohammed");
   assert.equal(withoutEmDash(`a${EM_DASH}b`), "a - b");
-  assert.equal(withoutEmDash(`${EM_DASH} a`), "- a");
+  assert.equal(withoutEmDash(`${EM_DASH} a`), "a", "a name cannot open on a separator");
   assert.equal(withoutEmDash("Al Salam Bank - Algeria"), "Al Salam Bank - Algeria");
   assert.equal(withoutEmDash("6–7"), "6–7");
   assert.equal(withoutEmDash(null), null);
@@ -190,9 +190,34 @@ test("withoutEmDash folds an en dash separator, spaced or not", () => {
     withoutEmDash(`A\u00e9roport de Tlemcen ${EN_DASH} Zenata ${EN_DASH} Messali El Hadj`),
     "A\u00e9roport de Tlemcen - Zenata - Messali El Hadj",
   );
-  assert.equal(withoutEmDash(`Psychiatrie -yellel ${EN_DASH}`), "Psychiatrie -yellel -");
+  assert.equal(withoutEmDash(`Psychiatrie -yellel ${EN_DASH}`), "Psychiatrie -yellel");
   // Mixed, and the em dash is still folded wherever it stands.
   assert.equal(withoutEmDash(`a ${EN_DASH} b ${EM_DASH} c`), "a - b - c");
+});
+
+test("a folded name never opens or closes on a separator", () => {
+  // There is nothing on the other side of it to separate. The real case: a
+  // Relizane psychiatric hospital whose upstream name ends on the dash, which
+  // the fold alone would have published ending " -".
+  assert.equal(
+    withoutEmDash(`Etablissement Hospitalier Sp\u00e9cialis\u00e9 en Psychiatrie -yellel ${EN_DASH}`),
+    "Etablissement Hospitalier Sp\u00e9cialis\u00e9 en Psychiatrie -yellel",
+  );
+  assert.equal(withoutEmDash(`${EN_DASH} Mus\u00e9e de site`), "Mus\u00e9e de site");
+  assert.equal(withoutEmDash(`Mus\u00e9e de site ${EM_DASH}`), "Mus\u00e9e de site");
+
+  // A hyphen glued to the word beside it is part of that word, not a separator,
+  // so it stays at either end: the blank on the inner side is what tells them
+  // apart. Both of these are real upstream names.
+  assert.equal(withoutEmDash(`-yellel ${EN_DASH} Relizane`), "-yellel - Relizane");
+  assert.equal(
+    withoutEmDash(`\u0633\u0648\u0642 \u0623\u0647\u0631\u0627\u0633 ${EN_DASH}\u062f\u0631\u0627\u064a\u0639\u064a\u0629 \u0623\u062d\u0645\u062f-`),
+    "\u0633\u0648\u0642 \u0623\u0647\u0631\u0627\u0633 - \u062f\u0631\u0627\u064a\u0639\u064a\u0629 \u0623\u062d\u0645\u062f-",
+  );
+
+  // And a name with no dash at all is returned untouched, edges included: the
+  // trim only ever runs on a name the fold changed.
+  assert.equal(withoutEmDash("- Agence Hammani"), "- Agence Hammani");
 });
 
 test("withoutEmDash leaves a range between two digits alone", () => {

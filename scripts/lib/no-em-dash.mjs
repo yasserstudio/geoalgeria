@@ -142,14 +142,25 @@ export const nameEmDashErrors = (files) =>
       `"${NAME_SEPARATOR}" and put it through withoutEmDash() in the generator`,
   );
 
+// A separator the fold left at one end of the name, which separates it from
+// nothing. A blank on the inner side is what makes it one: a hyphen glued to the
+// word next to it is part of that word, as in the French "-yellel" an upstream
+// typed or the trailing one in "درايعية أحمد-", and neither is the fold's
+// business. Applied after the trim, so the hyphen is at the end by then.
+const EDGE_SEPARATOR = /^-[ \t]+|[ \t]+-$/g;
+
 /**
  * Rewrite an upstream em dash or en dash in a name as the spaced hyphen this
  * repo publishes, together with the ASCII spaces or tabs immediately around it
  * so the result is not doubly spaced. A dash between two digits is a range and
  * is left as it stands. Every other character is left exactly as the source
- * wrote it: other dashes, a non-breaking space, an interior tab. Only leading
- * and trailing whitespace is trimmed, so a name opening on the dash does not
- * open on a space. Anything that is not a string comes back untouched.
+ * wrote it: other dashes, a non-breaking space, an interior tab.
+ *
+ * Leading and trailing whitespace is trimmed, and so is a separator left at
+ * either end: a name cannot open or close on one, because there is nothing on
+ * the other side of it to separate. One upstream name ends on a dash (a
+ * Relizane psychiatric hospital), and folding it alone would have published a
+ * name ending " -". Anything that is not a string comes back untouched.
  */
 export function withoutEmDash(name) {
   if (typeof name !== "string") return name;
@@ -158,6 +169,8 @@ export function withoutEmDash(name) {
     .replace(NAME_DASH_RUN, (run, offset, whole) =>
       isRange(whole, offset, run) ? run : NAME_SEPARATOR,
     )
+    .trim()
+    .replace(EDGE_SEPARATOR, "")
     .trim();
 }
 
