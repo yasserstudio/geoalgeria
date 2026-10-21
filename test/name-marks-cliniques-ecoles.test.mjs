@@ -198,10 +198,10 @@ test("over the committed captures, cleanName removes only marks and whitespace",
         if (typeof value !== "string") continue;
         const cleaned = cleanName(value);
         if (cleaned === null) continue;
-        // Folded the way cleanName folds it: ecoles also swaps an em dash a mapper
-        // typed as a separator (3 name tags in the capture), which is an interior
-        // rewrite, not a prefix strip. Everything below still only tolerates a
-        // prefix being removed, so the stripper keeps its teeth.
+        // Folded the way cleanName folds it: both packages also swap a dash a
+        // mapper typed as a separator, which is an interior rewrite, not a
+        // prefix strip. Everything below still only tolerates a prefix being
+        // removed, so the stripper keeps its teeth.
         const trimmed = withoutEmDash(value.replace(/\s+/g, " ").trim());
         assert.ok(trimmed.endsWith(cleaned), `${pkg} ${element.type}/${element.id} reordered ${tag}`);
         const removed = trimmed.slice(0, trimmed.length - cleaned.length);

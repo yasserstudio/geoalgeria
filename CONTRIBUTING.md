@@ -124,14 +124,24 @@ it in the generator that writes the field, never in the generated file:
 `data/geojson/*.metadata.json` and fails on one
 ([`scripts/lib/no-em-dash.mjs`](scripts/lib/no-em-dash.mjs)).
 
-A published **name** is covered too, and takes ` - ` instead: the em dash becomes
-a spaced hyphen, which keeps the source's separation of the name without keeping
-the character, and nothing else about the name changes. This is a substitution,
-not a house separator; the repository has no single one, and the en dash is out
-of scope. Put an upstream name through
-`withoutEmDash()` in the generator that reads it (as `packages/ecoles` does with
-the raw OpenStreetMap tag) rather than editing the generated file; a
-hand-curated record is fixed in its own source file. `pnpm validate` checks
+A published **name** is covered too, and so is the en dash (U+2013) when it
+separates two halves of one: either takes ` - ` instead, a spaced hyphen that
+keeps the source's separation of the name without keeping the character, and
+nothing else about the name changes. This is a substitution, not a house
+separator; the repository has no single one. A dash between two digits is a
+range rather than a separator, so it is left alone: three sports facilities name
+an eponym's years.
+
+`writePackageV2` folds every name it emits, so the rule reaches every package
+through the shared writer, and `scripts/apply-overrides.mjs` applies it to a
+package whose generator cannot be re-run offline. A generator that writes its
+own files folds them itself (`packages/aviation/scripts/build-routes.mjs`), and
+a fetcher that cleans a raw upstream name puts it through `withoutEmDash()`
+there as well (as `packages/ecoles`, `packages/cliniques` and
+`packages/pharmacies` do with the raw OpenStreetMap tag), so a name is folded
+before anything keys or dedupes on it. Never edit the generated file; a
+hand-curated record is fixed in its own source file, and a correction to a
+fetched one is a `quality/overrides/<package>.json` entry. `pnpm validate` checks
 every `name`-keyed field of every published record, and
 `test/no-em-dash.test.mjs` sweeps the same fields over every published JSON and
 GeoJSON, `packages/dataset/algeria.geojson` included. The GeoJSON is walked in

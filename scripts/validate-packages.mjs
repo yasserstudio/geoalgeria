@@ -1911,6 +1911,15 @@ function validateLivraison() {
   if (!existsSync(covCsv)) fail("livraison: missing csv/coverage.csv");
   else if (csvRowCount(covCsv) !== cov.length) fail(`livraison: coverage CSV rows ≠ JSON ${cov.length}`);
 
+  // The published-name gate, which validateDataset runs for every table-driven
+  // package and this bespoke validator did not. #281 left livraison out because
+  // the one dash it carried sat in a stop-desk address, which is the carrier's
+  // own sentence and stays out of scope; the names themselves were never
+  // checked. All three files are swept here, carriers.json included: those names
+  // are hand-curated, so a typed separator would land with nothing to catch it.
+  for (const [file, rows] of [["carriers.json", carriers], ["stopdesks.json", desks], ["coverage.json", cov]])
+    for (const problem of nameEmDashErrors([{ label: `livraison/${file}`, json: rows }])) fail(problem);
+
   // livraison's metadata describes the stop-desks; carriers.json and coverage.json
   // are reconciled above and are not GeoRecords.
   validateDerivedMetadata("livraison", desks);

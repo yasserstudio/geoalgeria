@@ -13,11 +13,13 @@ import { fileURLToPath } from "node:url";
 
 import {
   EM_DASH,
+  EN_DASH,
   emDashPointers,
   emDashErrors,
   nameEmDashPointers,
   nameEmDashErrors,
   withoutEmDash,
+  foldNameDashes,
 } from "../scripts/lib/no-em-dash.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -78,12 +80,19 @@ test("every published metadata file in the repo is clean", () => {
 //
 // The substitution is a spaced hyphen and nothing more: it keeps the source's
 // separation of the name without the character. No claim is made about a house
-// separator, and the en dash is left alone.
+// separator.
+//
+// #294 brought the en dash (U+2013) under the same half of the rule, which 486
+// published name values carried. The one shape left alone is a dash between two
+// digits, a range rather than a separator: three sports facilities name an
+// eponym's years. The metadata rule above is unchanged and still about the em
+// dash alone, because its remedy is prose punctuation, which a range does not
+// want.
 
 test("withoutEmDash swaps the separator and leaves everything else alone", () => {
   assert.equal(withoutEmDash(`École primaire ${EM_DASH} Khaldi Mohammed`), "École primaire - Khaldi Mohammed");
   assert.equal(withoutEmDash(`a${EM_DASH}b`), "a - b");
-  assert.equal(withoutEmDash(`${EM_DASH} a`), "- a");
+  assert.equal(withoutEmDash(`${EM_DASH} a`), "a", "a name cannot open on a separator");
   assert.equal(withoutEmDash("Al Salam Bank - Algeria"), "Al Salam Bank - Algeria");
   assert.equal(withoutEmDash("6–7"), "6–7");
   assert.equal(withoutEmDash(null), null);
@@ -161,14 +170,156 @@ test("the name sweep reaches the package-root atlas file", () => {
   );
 });
 
+// ---------------------------------------------------------------------------
+// The en dash, folded by #294 the same way and for the same reason.
+
+test("withoutEmDash folds an en dash separator, spaced or not", () => {
+  assert.equal(
+    withoutEmDash(`Universit\u00e9 de Blida 1 ${EN_DASH} Saad Dahlab`),
+    "Universit\u00e9 de Blida 1 - Saad Dahlab",
+  );
+  // Unspaced is the English Wikipedia airport form, which the route endpoints
+  // are named from. It gains the spaces the separator is published with.
+  assert.equal(
+    withoutEmDash(`Tunis${EN_DASH}Carthage International Airport`),
+    "Tunis - Carthage International Airport",
+  );
+  // Two separators in one name, which four airport names and six library names
+  // carry, and a trailing one, which a health establishment carries.
+  assert.equal(
+    withoutEmDash(`A\u00e9roport de Tlemcen ${EN_DASH} Zenata ${EN_DASH} Messali El Hadj`),
+    "A\u00e9roport de Tlemcen - Zenata - Messali El Hadj",
+  );
+  assert.equal(withoutEmDash(`Psychiatrie -yellel ${EN_DASH}`), "Psychiatrie -yellel");
+  // Mixed, and the em dash is still folded wherever it stands.
+  assert.equal(withoutEmDash(`a ${EN_DASH} b ${EM_DASH} c`), "a - b - c");
+});
+
+test("a folded name never opens or closes on a separator", () => {
+  // There is nothing on the other side of it to separate. The real case: a
+  // Relizane psychiatric hospital whose upstream name ends on the dash, which
+  // the fold alone would have published ending " -".
+  assert.equal(
+    withoutEmDash(`Etablissement Hospitalier Sp\u00e9cialis\u00e9 en Psychiatrie -yellel ${EN_DASH}`),
+    "Etablissement Hospitalier Sp\u00e9cialis\u00e9 en Psychiatrie -yellel",
+  );
+  assert.equal(withoutEmDash(`${EN_DASH} Mus\u00e9e de site`), "Mus\u00e9e de site");
+  assert.equal(withoutEmDash(`Mus\u00e9e de site ${EM_DASH}`), "Mus\u00e9e de site");
+
+  // A hyphen glued to the word beside it is part of that word, not a separator,
+  // so it stays at either end: the blank on the inner side is what tells them
+  // apart. Both of these are real upstream names.
+  assert.equal(withoutEmDash(`-yellel ${EN_DASH} Relizane`), "-yellel - Relizane");
+  assert.equal(
+    withoutEmDash(`\u0633\u0648\u0642 \u0623\u0647\u0631\u0627\u0633 ${EN_DASH}\u062f\u0631\u0627\u064a\u0639\u064a\u0629 \u0623\u062d\u0645\u062f-`),
+    "\u0633\u0648\u0642 \u0623\u0647\u0631\u0627\u0633 - \u062f\u0631\u0627\u064a\u0639\u064a\u0629 \u0623\u062d\u0645\u062f-",
+  );
+
+  // And a name with no dash at all is returned untouched, edges included: the
+  // trim only ever runs on a name the fold changed.
+  assert.equal(withoutEmDash("- Agence Hammani"), "- Agence Hammani");
+});
+
+test("withoutEmDash leaves a range between two digits alone", () => {
+  // The three sports facilities that name an eponym's years. A range is not a
+  // separator, so folding it would be a data decision, and the gate below
+  // reports exactly what the fold would change.
+  for (const name of [
+    `Piscine semi-olympique 25m Aichaoui Kaddour (1924 ${EN_DASH} 2008)`,
+    `Stade Mohammed Dahbi Chraa (1933 ${EN_DASH} 2020)`,
+    `Salle OMS Allag Mokhtar (1942 ${EN_DASH} 2019) Hassi Messaoud`,
+  ])
+    assert.equal(withoutEmDash(name), name);
+  assert.equal(withoutEmDash(`6${EN_DASH}7`), `6${EN_DASH}7`);
+  // A digit on one side only is still a separator: a university numbered 1 and
+  // the eponym after it, and Guelma's 8 May 1945.
+  assert.equal(withoutEmDash(`Universit\u00e9 d'Alger 1 ${EN_DASH} Benyoucef`), "Universit\u00e9 d'Alger 1 - Benyoucef");
+  assert.equal(withoutEmDash(`\u062c\u0627\u0645\u0639\u0629 \u0642\u0627\u0644\u0645\u0629 ${EN_DASH} 08 \u0645\u0627\u064a 1945`), "\u062c\u0627\u0645\u0639\u0629 \u0642\u0627\u0644\u0645\u0629 - 08 \u0645\u0627\u064a 1945");
+  // No exemption for the em dash: the gate has reported it in a name since #281
+  // and no published name uses one as a range.
+  assert.equal(withoutEmDash(`1924 ${EM_DASH} 2008`), "1924 - 2008");
+});
+
+test("the name gate reports an en dash separator and not a range", () => {
+  assert.deepEqual(nameEmDashPointers({ name: `a ${EN_DASH} b` }), ["/name"]);
+  assert.deepEqual(nameEmDashPointers({ name: `Kaddour (1924 ${EN_DASH} 2008)` }), []);
+  // Still a name field only: an address or a note is the source's own sentence.
+  assert.deepEqual(nameEmDashPointers({ address: `a ${EN_DASH} b` }), []);
+  // And the metadata rule is untouched by #294: there an en dash range in a
+  // coverage note does not want a colon, comma or semicolon.
+  assert.deepEqual(emDashPointers({ coverage_note: `2019 ${EN_DASH} 2026`, name: `a ${EN_DASH} b` }), []);
+});
+
+test("nameEmDashErrors says which dash it found", () => {
+  const errors = nameEmDashErrors([
+    { label: "culture/data/culture.json", json: [{ name: `Dar El Baroud ${EN_DASH} T\u00e9n\u00e8s` }] },
+    { label: "banques/data/banks.json", json: [{ name: `CNEP ${EM_DASH} Banque` }] },
+  ]);
+  assert.equal(errors.length, 2);
+  assert.match(errors[0], /^culture\/data\/culture\.json: en dash \(U\+2013\) in a published name at \/0\/name, use " - "/);
+  assert.match(errors[1], /^banques\/data\/banks\.json: em dash \(U\+2014\) in a published name at \/0\/name, use " - "/);
+});
+
+test("foldNameDashes folds a record's names and nothing else", () => {
+  assert.deepEqual(
+    foldNameDashes({
+      name: `a ${EN_DASH} b`,
+      name_ar: `c ${EM_DASH} d`,
+      address: `e ${EN_DASH} f`,
+      former_names_fr: [`g ${EN_DASH} h`],
+      capacity: 25,
+    }),
+    {
+      name: "a - b",
+      name_ar: "c - d",
+      address: `e ${EN_DASH} f`,
+      former_names_fr: ["g - h"],
+      capacity: 25,
+    },
+  );
+  // It returns a new value rather than editing the rows a caller still holds.
+  const row = { name: `a ${EN_DASH} b` };
+  foldNameDashes(row);
+  assert.equal(row.name, `a ${EN_DASH} b`);
+});
+
+// livraison is swept by the walk above like every other package, and since #294
+// by `pnpm validate` too: its bespoke validator (validateLivraison in
+// scripts/validate-packages.mjs) ran no name check at all, so the three files
+// below were gated only by this test. carriers.json is the one that matters
+// most: those names are hand-curated.
+test("the name sweep reaches all three livraison files", () => {
+  const walked = publishedRecordFiles("livraison");
+  for (const file of ["carriers.json", "stopdesks.json", "coverage.json"])
+    assert.ok(walked.includes(join("data", file)), `livraison/data/${file} is not being walked`);
+});
+
+// A fetcher that reads an upstream name folds it itself, before anything keys or
+// dedupes on it, rather than relying on the shared writer at the end. Asserted
+// over the source because the committed JSON cannot tell: it stays clean, and
+// the regression only appears on the next refresh. ecoles has its own
+// function-level pin in test/ecoles-clean-name.test.mjs; this is the cheap check
+// that the other two OpenStreetMap fetchers still do it at all.
+test("the OpenStreetMap fetchers fold a raw name in cleanName", () => {
+  for (const pkg of ["ecoles", "cliniques", "pharmacies"]) {
+    const source = readFileSync(join(ROOT, "packages", pkg, "scripts", "fetch.mjs"), "utf-8");
+    assert.match(source, /no-em-dash\.mjs"/, `${pkg} does not import the fold`);
+    assert.match(
+      source,
+      /const cleanName = \(v\) => \{[^}]*withoutEmDash\(/,
+      `${pkg}'s cleanName does not put the raw name through withoutEmDash`,
+    );
+  }
+});
+
 test("every published name in the repo is clean", () => {
   const offenders = [];
   for (const pkg of readdirSync(join(ROOT, "packages")).sort())
     for (const rel of publishedRecordFiles(pkg)) {
-      // Cheap first: the full tree is ~120 MB, and only a file that carries the
-      // character at all is worth parsing.
+      // Cheap first: the full tree is ~120 MB, and only a file that carries one
+      // of the two characters at all is worth parsing.
       const text = readFileSync(join(ROOT, "packages", pkg, rel), "utf-8");
-      if (!text.includes(EM_DASH)) continue;
+      if (!text.includes(EM_DASH) && !text.includes(EN_DASH)) continue;
       offenders.push(...nameEmDashErrors([{ label: `${pkg}/${rel}`, json: JSON.parse(text) }]));
     }
   assert.deepEqual(offenders, []);

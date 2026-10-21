@@ -33,6 +33,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { MIGRATIONS } from "../scripts/migrate-to-v2.mjs";
 import { sharedPoints } from "../packages/schema/index.js";
+import { foldNameDashes } from "../scripts/lib/no-em-dash.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => JSON.parse(readFileSync(join(ROOT, p), "utf-8"));
@@ -399,7 +400,12 @@ for (const [pkg, file, map] of SPECS) {
     const shared = new Set([...sharedPoints(rows)].map((i) => `${rows[i].lat},${rows[i].lng}`));
 
     for (const v1 of sample) {
-      const produced = map(v1);
+      // The runner folds the dash separators out of every published name on its
+      // way through writePackageV2 (#294), after the per-record transform this
+      // replay calls, so replay it here as demoteSharedPoints is replayed below.
+      // Per-record CORRECTIONS entries would be the alternative, and the fold
+      // touched 486 names.
+      const produced = foldNameDashes(map(v1));
       if (produced.geo_precision === "exact" && shared.has(`${produced.lat},${produced.lng}`))
         produced.geo_precision = "approximate";
       const fix = CORRECTIONS[pkg]?.[produced.id];

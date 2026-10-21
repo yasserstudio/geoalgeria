@@ -153,6 +153,20 @@
     },
     {
       "file": "branches.json",
+      "record_id": "cnep-156",
+      "status": "corrected",
+      "publish_action": "patch",
+      "reviewer": "geoalgeria-name-review",
+      "reviewed_at": "2026-10-21",
+      "notes": "The CNEP locator writes this branch \"AIN –AZEL\": the commune name with a stray dash wedged into it, not a separator between two halves of a name. Folding the dash to \" - \" would publish \"AIN - AZEL\", which reads as a branch called Azel in a place called Ain, so the name is corrected to the commune instead. \"AIN AZEL\" is the spelling this dataset already carries: the flagship commune table reads Ain Azel, and the BADR branch in the same commune publishes AIN AZEL, in the all-caps CNEP writes 212 of its 230 branch names in.",
+      "expect": { "name": "AIN –AZEL", "address": "Cité Ben Boulaid", "bank_id": "cnep", "wilaya_code": "19", "geo_precision": "exact", "geo_method": "bank_locator" },
+      "patch": { "name": "AIN AZEL" },
+      "evidence": [
+        { "url": "https://www.openstreetmap.org/relation/4298137", "checked_at": "2026-10-21", "note": "Aïn Azel commune, Setif: the relation the flagship commune record for code 1940 is linked to, and the commune the branch coordinate falls in." }
+      ]
+    },
+    {
+      "file": "branches.json",
       "record_id": "sga-chlef",
       "status": "corrected",
       "publish_action": "patch",

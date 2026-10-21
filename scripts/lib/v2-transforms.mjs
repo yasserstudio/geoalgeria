@@ -31,6 +31,7 @@ import {
   applyReviewedOverrides,
 } from "../../packages/schema/index.js";
 import { reconcileCurrentWilayaByCommune } from "./current-wilaya-by-commune.mjs";
+import { foldNameDashes } from "./no-em-dash.mjs";
 
 /** Write via a temp sibling + rename so a reader never sees a torn file. Not a
  *  whole-directory transaction; a crash between renames can still leave a mix of
@@ -470,7 +471,11 @@ export const MIGRATIONS = {
       titles: { en: "Algeria airports", fr: "Aéroports d'Algérie", ar: "مطارات الجزائر" },
       // `routes` is the relation file's own count, kept out of entities[] and
       // record_count because those describe places. Injected by the generator,
-      // which reads the file build-routes.mjs writes.
+      // which reads the file build-routes.mjs writes. Preserved as well, so a
+      // re-emit from the committed airports (scripts/apply-overrides.mjs, which
+      // has no route count to pass) keeps the stamp build-routes.mjs set instead
+      // of dropping the route network out of the metadata.
+      preserve: ["routes", "routes_as_of"],
       stats: (rows, extra = {}) => ({ with_iata: rows.filter((r) => r.iata).length, by_source: count(rows, "source"), ...extra }),
     },
   },
@@ -1049,7 +1054,16 @@ export function writePackageV2({
           stats: { reviewed: 0, patched: 0, excluded: 0, kept: 0 },
         };
     for (const key of Object.keys(review)) review[key] += reviewed.stats[key];
-    const rows = reviewed.records;
+    // No published name carries an em dash or an en dash as a separator: each
+    // becomes " - ", a range between two digits is left alone, and nothing but a
+    // name-keyed field is touched (scripts/lib/no-em-dash.mjs). It runs here,
+    // once, rather than in each generator: the gate covers every package, four
+    // of the ten #294 had to fold have no offline generator to re-run, and the
+    // CSV and GeoJSON mirrors are projections of these same rows, so folding
+    // before the mirrors are built is what keeps them in agreement. It runs
+    // after the review ledger so a reviewed correction is folded too, and
+    // before validateRecords so what is checked is what is written.
+    const rows = foldNameDashes(reviewed.records);
     demoteSharedPoints(rows);
     demoteRoundedPlaceholders(rows);
     // Plain codepoint order: localeCompare() without a locale reads the ambient
