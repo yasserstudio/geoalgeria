@@ -120,12 +120,7 @@ test("the two generators take the class from the shared module", () => {
 
 // A generator that is allowed to still carry its own class, and why. Dated, so an
 // entry cannot quietly become permanent.
-const OWN_CLASS_ALLOWED = new Map([
-  [
-    "packages/pharmacies/scripts/fetch.mjs",
-    "2026-10-13: removed by private tracker #283, which lands before this branch. Delete this entry when #283 lands.",
-  ],
-]);
+const OWN_CLASS_ALLOWED = new Map([]);
 
 test("no generator outside scripts/lib declares a leading-mark class of its own", () => {
   // The whole tree, not the two packages this branch touches: the class cannot be
