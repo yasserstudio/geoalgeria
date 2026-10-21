@@ -1,0 +1,1609 @@
+{
+  "version": 1,
+  "updated": "2026-10-11",
+  "rule": "A Source with no record enters no target. A Source that Web and npm both publish today may also enter cdn and mobile-pack. A restricted-research or prohibited Source, including third-party tiles and styles, enters none. A recorded refusal removes every target.",
+  "sources": [
+    {
+      "key": "algerie-telecom",
+      "name": "Algérie Télécom: agency finder and numbering notices",
+      "publisher": "Algérie Télécom",
+      "metadata_keys": [
+        "algerie-telecom-numerotations"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Algérie Télécom",
+        "url": "https://www.algerietelecom.dz"
+      },
+      "notice": "Agency locations and area-code notices: data © Algérie Télécom, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.algerietelecom.dz/fr/basculement/20",
+        "repo_path": "sources/algerie-telecom/manifest.json",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": "The numbering notices are cited by the flagship dataset's phone-code provenance ledger, which Web and npm both publish. The agency capture under sources/ feeds no package yet.",
+      "refusal": null
+    },
+    {
+      "key": "anac",
+      "name": "ANAC: Autorité Nationale de l'Aviation Civile",
+      "publisher": "ANAC",
+      "metadata_keys": [
+        "anac"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Autorité Nationale de l'Aviation Civile (ANAC)",
+        "url": "https://www.anac.dz"
+      },
+      "notice": "Autorité Nationale de l'Aviation Civile (ANAC): a factual public listing, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.anac.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "anderson",
+      "name": "Anderson Logistics: agency directory",
+      "publisher": "Anderson Logistics",
+      "metadata_keys": [
+        "anderson"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Anderson Logistics",
+        "url": "https://anderson-ecommerce.com/"
+      },
+      "notice": "Anderson Logistics: agency directory: data © Anderson Logistics, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://anderson-ecommerce.com/",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "anem",
+      "name": "ANEM: National Employment Agency",
+      "publisher": "ANEM",
+      "metadata_keys": [
+        "anem"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Agence Nationale de l'Emploi (ANEM)",
+        "url": "https://www.anem.dz"
+      },
+      "notice": "Agence Nationale de l'Emploi (ANEM): a factual public listing, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.anem.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "arpce",
+      "name": "ARPCE: national numbering plan and numbering decisions",
+      "publisher": "Autorité de Régulation de la Poste et des Communications Électroniques",
+      "metadata_keys": [
+        "arpce-numbering",
+        "arpce-numbering-plan-2007"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Autorité de Régulation de la Poste et des Communications Électroniques (ARPCE)",
+        "url": "https://www.arpce.dz/en/service/num"
+      },
+      "notice": "Wilaya telephone area codes read from the ARPCE numbering plan and its published decisions, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.arpce.dz/en/service/num",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Behind the phone_code values of the 2026 wilaya cohort, recorded in the flagship dataset's phone-code provenance ledger.",
+      "refusal": null
+    },
+    {
+      "key": "asal",
+      "name": "ASAL Geoportail",
+      "publisher": "Agence Spatiale Algérienne",
+      "metadata_keys": [
+        "asal"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Agence Spatiale Algérienne (ASAL)",
+        "url": "https://www.asal.dz"
+      },
+      "notice": "Agence Spatiale Algérienne (ASAL): a factual public listing, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.asal.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "bank_locator",
+      "name": "Licensed banks' own branch locators (site, API or KML)",
+      "publisher": "the respective licensed banks",
+      "metadata_keys": [
+        "bank_locator"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "the respective licensed banks",
+        "url": null
+      },
+      "notice": "Branch locations: data © the respective banks, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": null,
+        "repo_path": "packages/banques/LICENSE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The package LICENSE records the terms as public factual data redistributed for reference."
+      },
+      "review_after": "2027-03-02",
+      "notes": "One record for a group of Sources, as the packages key it: @geoalgeria/banques names every locator under the single key bank_locator. A per-bank split is a follow-up.",
+      "refusal": null
+    },
+    {
+      "key": "baridimap",
+      "name": "Algérie Poste: baridimap.poste.dz",
+      "publisher": "Algérie Poste",
+      "metadata_keys": [
+        "baridimap"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Algérie Poste",
+        "url": "https://baridimap.poste.dz"
+      },
+      "notice": "Post offices, ATMs and postal codes: data © Algérie Poste, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://baridimap.poste.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": "The mirrored postal data under the flagship dataset's data/poste carries the same terms.",
+      "refusal": null
+    },
+    {
+      "key": "boa",
+      "name": "Banque d'Algérie: licensed banks and financial institutions",
+      "publisher": "Banque d'Algérie",
+      "metadata_keys": [
+        "boa"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Banque d'Algérie",
+        "url": "https://www.bank-of-algeria.dz/banques-commerciales/"
+      },
+      "notice": "Banque d'Algérie: a factual public listing, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.bank-of-algeria.dz/banques-commerciales/",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "carto",
+      "name": "CARTO basemap vector tiles and styles",
+      "publisher": "CARTO",
+      "metadata_keys": [],
+      "access_class": "account-access",
+      "rights_class": "prohibited",
+      "rights_basis": "provider-terms",
+      "license_expression": null,
+      "license_url": "https://carto.com/legal/",
+      "allowed_targets": [],
+      "attribution": {
+        "text": "CARTO",
+        "url": "https://carto.com/legal/"
+      },
+      "notice": null,
+      "evidence": {
+        "source_url": "https://carto.com/legal/",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "The provider's service terms, not an open-data grant to redistribute an archive of its tiles or imagery."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Rendered from the provider's own endpoint under the provider's terms. Never a target: no npm, no public Git, no CDN mirror, no offline pack. OpenStreetMap's data licence grants nothing over a third party's tiles or style.",
+      "refusal": null
+    },
+    {
+      "key": "dgpc",
+      "name": "Direction Générale de la Protection Civile",
+      "publisher": "DGPC",
+      "metadata_keys": [
+        "dgpc"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Direction Générale de la Protection Civile (DGPC)",
+        "url": "https://dgpc.dz/dgpc2/"
+      },
+      "notice": "Civil protection units: government content © Direction Générale de la Protection Civile (DGPC), redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://dgpc.dz/dgpc2/",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "djezzy",
+      "name": "Djezzy: boutiques and published 5G coverage",
+      "publisher": "Optimum Telecom Algérie (Djezzy)",
+      "metadata_keys": [
+        "djezzy"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Optimum Telecom Algérie (Djezzy)",
+        "url": "https://www.djezzy.dz"
+      },
+      "notice": "Djezzy: boutiques and published 5G coverage: data © Optimum Telecom Algérie (Djezzy), redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.djezzy.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "esri",
+      "name": "Esri World Imagery tiles",
+      "publisher": "Esri",
+      "metadata_keys": [],
+      "access_class": "account-access",
+      "rights_class": "prohibited",
+      "rights_basis": "provider-terms",
+      "license_expression": null,
+      "license_url": "https://www.esri.com/en-us/legal/terms/full-master-agreement",
+      "allowed_targets": [],
+      "attribution": {
+        "text": "Esri",
+        "url": "https://www.esri.com/en-us/legal/terms/full-master-agreement"
+      },
+      "notice": null,
+      "evidence": {
+        "source_url": "https://www.esri.com/en-us/legal/terms/full-master-agreement",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "The provider's service terms, not an open-data grant to redistribute an archive of its tiles or imagery."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Rendered from the provider's own endpoint under the provider's terms. Never a target: no npm, no public Git, no CDN mirror, no offline pack. OpenStreetMap's data licence grants nothing over a third party's tiles or style.",
+      "refusal": null
+    },
+    {
+      "key": "eto-oran",
+      "name": "ETO Oran: route drawings",
+      "publisher": "ETO Oran",
+      "metadata_keys": [
+        "eto-oran"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETO Oran",
+        "url": "https://www.facebook.com/p/ETO-100093054514209/"
+      },
+      "notice": "ETO Oran: route drawings: data © ETO Oran, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": "https://www.facebook.com/p/ETO-100093054514209/",
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etul-laghouat",
+      "name": "ETUL Laghouat: dated operating programs",
+      "publisher": "ETUL Laghouat",
+      "metadata_keys": [
+        "etul-laghouat"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUL Laghouat",
+        "url": null
+      },
+      "notice": "ETUL Laghouat: dated operating programs: data © ETUL Laghouat, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": null,
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etus-ain-defla",
+      "name": "ETUS Aïn Defla: Line artwork and service program",
+      "publisher": "ETUS Aïn Defla",
+      "metadata_keys": [
+        "etus-ain-defla"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUS Aïn Defla",
+        "url": "https://www.facebook.com/ETUS44/"
+      },
+      "notice": "ETUS Aïn Defla: Line artwork and service program: data © ETUS Aïn Defla, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": "https://www.facebook.com/ETUS44/",
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etus-annaba",
+      "name": "ETUS Annaba: service program",
+      "publisher": "ETUS Annaba",
+      "metadata_keys": [
+        "etus-annaba"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUS Annaba",
+        "url": "https://www.facebook.com/100063517660926/"
+      },
+      "notice": "ETUS Annaba: service program: data © ETUS Annaba, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": "https://www.facebook.com/100063517660926/",
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etus-bejaia",
+      "name": "ETUS Béjaïa: itineraries and Line maps",
+      "publisher": "ETUS Béjaïa",
+      "metadata_keys": [
+        "etus-bejaia"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUS Béjaïa",
+        "url": "https://etusbejaia.dz/"
+      },
+      "notice": "ETUS Béjaïa: itineraries and Line maps: data © ETUS Béjaïa, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": "https://etusbejaia.dz/",
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etus-c-constantine",
+      "name": "ETUS-C Constantine: numbered route graphics",
+      "publisher": "ETUS-C Constantine",
+      "metadata_keys": [
+        "etus-c-constantine"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUS-C Constantine",
+        "url": null
+      },
+      "notice": "ETUS-C Constantine: numbered route graphics: data © ETUS-C Constantine, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": null,
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etus-msila",
+      "name": "ETUS M'Sila: Line pages and diagrams",
+      "publisher": "ETUS M'Sila",
+      "metadata_keys": [
+        "etus-msila"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUS M'Sila",
+        "url": "https://etus-msila.dz/"
+      },
+      "notice": "ETUS M'Sila: Line pages and diagrams: data © ETUS M'Sila, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": "https://etus-msila.dz/",
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etus-oeb",
+      "name": "ETUS Oum El Bouaghi: numbered Line diagrams",
+      "publisher": "ETUS Oum El Bouaghi",
+      "metadata_keys": [
+        "etus-oeb"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUS Oum El Bouaghi",
+        "url": null
+      },
+      "notice": "ETUS Oum El Bouaghi: numbered Line diagrams: data © ETUS Oum El Bouaghi, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": null,
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etus-setif",
+      "name": "ETUS Sétif: 2026 Line artwork",
+      "publisher": "ETUS Sétif",
+      "metadata_keys": [
+        "etus-setif"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUS Sétif",
+        "url": null
+      },
+      "notice": "ETUS Sétif: 2026 Line artwork: data © ETUS Sétif, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": null,
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etus-sidi-bel-abbes",
+      "name": "ETUS Sidi Bel Abbès: network and timetable pages",
+      "publisher": "ETUS Sidi Bel Abbès",
+      "metadata_keys": [
+        "etus-sidi-bel-abbes"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUS Sidi Bel Abbès",
+        "url": "https://etus22.dz/Horaires.php"
+      },
+      "notice": "ETUS Sidi Bel Abbès: network and timetable pages: data © ETUS Sidi Bel Abbès, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": "https://etus22.dz/Horaires.php",
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etus-skikda",
+      "name": "ETUS Skikda: Line pages and service section",
+      "publisher": "ETUS Skikda",
+      "metadata_keys": [
+        "etus-skikda"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUS Skikda",
+        "url": "https://etus-skikda.dz/"
+      },
+      "notice": "ETUS Skikda: Line pages and service section: data © ETUS Skikda, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": "https://etus-skikda.dz/",
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etus-tiaret",
+      "name": "ETUS Tiaret: current Lines",
+      "publisher": "ETUS Tiaret",
+      "metadata_keys": [
+        "etus-tiaret"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUS Tiaret",
+        "url": "https://www.etus-tiaret.dz/ar/lines"
+      },
+      "notice": "ETUS Tiaret: current Lines: data © ETUS Tiaret, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": "https://www.etus-tiaret.dz/ar/lines",
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etus-tlemcen",
+      "name": "ETUS Tlemcen: service program",
+      "publisher": "ETUS Tlemcen",
+      "metadata_keys": [
+        "etus-tlemcen"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUS Tlemcen",
+        "url": "https://www.facebook.com/etustlemcen13/"
+      },
+      "notice": "ETUS Tlemcen: service program: data © ETUS Tlemcen, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": "https://www.facebook.com/etustlemcen13/",
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "etusto",
+      "name": "ETUSTO: passenger Lines",
+      "publisher": "ETUSTO",
+      "metadata_keys": [
+        "etusto"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ETUSTO",
+        "url": "http://etusto.dz/espv.html"
+      },
+      "notice": "ETUSTO: passenger Lines: data © ETUSTO, redistributed for reference; the Operator states no open reuse licence.",
+      "evidence": {
+        "source_url": "http://etusto.dz/espv.html",
+        "repo_path": "packages/buses/NOTICE",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The @geoalgeria/buses NOTICE records that the Operator grants no open reuse licence."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Material the Owner collected from the Operator's own public channels is classified the same way: no written grant naming public redistribution is recorded.",
+      "refusal": null
+    },
+    {
+      "key": "guepex",
+      "name": "Guepex: public agences feed",
+      "publisher": "Guepex",
+      "metadata_keys": [
+        "guepex"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Guepex",
+        "url": "https://www.guepex.dz"
+      },
+      "notice": "Guepex: public agences feed: data © Guepex, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.guepex.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "jora",
+      "name": "Journal Officiel de la République Algérienne: laws and decrees",
+      "publisher": "Secrétariat Général du Gouvernement",
+      "metadata_keys": [
+        "decret-21-117",
+        "decret-26-206",
+        "decret-84-79",
+        "jora-25-2026",
+        "jora-25-2026-ar",
+        "jora-40-2026",
+        "jora-52-2026"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Journal Officiel de la République Algérienne (JORA)",
+        "url": "https://www.joradp.dz"
+      },
+      "notice": "Wilaya and daira names, seats and the territorial reform are taken from the Journal Officiel, cited per instrument with its issue and page.",
+      "evidence": {
+        "source_url": "https://www.joradp.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. Ordinance 03-05 article 11 excludes laws, regulations and administrative acts from copyright, and no grant covering this dataset is recorded."
+      },
+      "review_after": "2027-03-02",
+      "notes": "One record for the Journal Officiel, with one metadata key per cited issue: decret 84-79 (1984), decret présidentiel 21-117 (2021), decret présidentiel 26-206 (2026), JO 25 of 2026 in French and Arabic, JO 40 of 2026 and JO 52 of 2026.",
+      "refusal": null
+    },
+    {
+      "key": "madr",
+      "name": "Ministry of Agriculture, Rural Development and Fisheries (MADR)",
+      "publisher": "MADR",
+      "metadata_keys": [
+        "madr"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Ministry of Agriculture, Rural Development and Fisheries (MADR)",
+        "url": "https://madr.gov.dz"
+      },
+      "notice": "Ministry of Agriculture, Rural Development and Fisheries (MADR): a factual public listing, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://madr.gov.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "maystro",
+      "name": "Maystro Delivery: coverage page",
+      "publisher": "Maystro Delivery",
+      "metadata_keys": [
+        "maystro"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Maystro Delivery",
+        "url": "https://maystro-delivery.com/Coverage.html"
+      },
+      "notice": "Maystro Delivery: coverage page: data © Maystro Delivery, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://maystro-delivery.com/Coverage.html",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "mesrs",
+      "name": "Ministry of Higher Education and Scientific Research (MESRS)",
+      "publisher": "MESRS",
+      "metadata_keys": [
+        "mesrs"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Ministry of Higher Education and Scientific Research (MESRS)",
+        "url": "https://www.mesrs.dz"
+      },
+      "notice": "Ministry of Higher Education and Scientific Research (MESRS): a factual public listing, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.mesrs.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "mfep",
+      "name": "Ministry of Vocational Training and Education (MFEP): takwin.dz",
+      "publisher": "MFEP",
+      "metadata_keys": [
+        "mfep"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Ministry of Vocational Training and Education (MFEP)",
+        "url": "https://takwin.dz"
+      },
+      "notice": "Ministry of Vocational Training and Education (MFEP): a factual public listing, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://takwin.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "mip",
+      "name": "Ministry of Pharmaceutical Industry (MIP): approved manufacturers register",
+      "publisher": "MIP",
+      "metadata_keys": [
+        "mip"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Ministry of Pharmaceutical Industry (MIP)",
+        "url": "https://www.miph.gov.dz"
+      },
+      "notice": "Ministry of Pharmaceutical Industry (MIP): a factual public listing, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.miph.gov.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "mjs",
+      "name": "Ministry of Youth and Sports: SIG",
+      "publisher": "Ministry of Youth and Sports",
+      "metadata_keys": [
+        "mjs"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Ministry of Youth and Sports",
+        "url": "https://sig.mjs.gov.dz"
+      },
+      "notice": "Ministry of Youth and Sports: a factual public listing, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://sig.mjs.gov.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "mobilis",
+      "name": "Mobilis: agencies, points of sale and published 5G coverage",
+      "publisher": "ATM Mobilis",
+      "metadata_keys": [
+        "mobilis"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ATM Mobilis",
+        "url": "https://www.mobilis.dz"
+      },
+      "notice": "Mobilis: agencies, points of sale and published 5G coverage: data © ATM Mobilis, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.mobilis.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "msp",
+      "name": "Ministry of Health: health-establishment registry",
+      "publisher": "Ministry of Health",
+      "metadata_keys": [
+        "msp"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Ministry of Health",
+        "url": "https://sante.gov.dz"
+      },
+      "notice": "Ministry of Health: a factual public listing, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://sante.gov.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "noest",
+      "name": "Noest Express: bureaux directory",
+      "publisher": "Noest Express",
+      "metadata_keys": [
+        "noest"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Noest Express",
+        "url": "https://noest-dz.com/"
+      },
+      "notice": "Noest Express: bureaux directory: data © Noest Express, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://noest-dz.com/",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "ons",
+      "name": "ONS Code Géographique National 2021",
+      "publisher": "Office National des Statistiques",
+      "metadata_keys": [],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Office National des Statistiques (ONS)",
+        "url": "https://www.ons.dz"
+      },
+      "notice": "Commune and wilaya administrative codes from the ONS Code Géographique National 2021, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.ons.dz/IMG/pdf/code_geo_2021.pdf",
+        "repo_path": "sources/dataset/ons-code-geo-2021.json",
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The committed capture carries the retrieval date and the sha256."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Named in the flagship dataset's measurementTechnique and citation rather than a metadata.sources[] key, so this record carries no metadata key; the dataset's administrative codes are what it covers.",
+      "refusal": null
+    },
+    {
+      "key": "ooredoo",
+      "name": "Ooredoo Algérie: retail network and published 5G communes",
+      "publisher": "Ooredoo Algérie",
+      "metadata_keys": [
+        "ooredoo"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Ooredoo Algérie",
+        "url": "https://www.ooredoo.dz"
+      },
+      "notice": "Ooredoo Algérie: retail network and published 5G communes: data © Ooredoo Algérie, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.ooredoo.dz",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "osm",
+      "name": "OpenStreetMap",
+      "publisher": "OpenStreetMap Foundation",
+      "metadata_keys": [
+        "osm",
+        "osm-admin-centre",
+        "osm-admin-centre-2026-09-29",
+        "osm-admin-centre-2026-10-01",
+        "osm-admin-centre-2026-10-01-review",
+        "osm-communes",
+        "osm-relation-centroid"
+      ],
+      "access_class": "public-access",
+      "rights_class": "open-licensed",
+      "rights_basis": "licence",
+      "license_expression": "ODbL-1.0",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "© OpenStreetMap contributors",
+        "url": "https://www.openstreetmap.org/copyright"
+      },
+      "notice": "Contains information from OpenStreetMap, which is made available under the Open Database License (ODbL) 1.0. © OpenStreetMap contributors.",
+      "evidence": {
+        "source_url": "https://www.openstreetmap.org/copyright",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "OpenStreetMap states the data may be copied, distributed and adapted with credit and same-licence treatment for altered or built-upon data."
+      },
+      "review_after": "2027-09-02",
+      "notes": "Share-alike applies to a Derivative Database. API, Nominatim and tile usage policies are separate from the data licence.",
+      "refusal": null
+    },
+    {
+      "key": "ourairports",
+      "name": "OurAirports airport data",
+      "publisher": "OurAirports",
+      "metadata_keys": [
+        "ourairports"
+      ],
+      "access_class": "public-access",
+      "rights_class": "public-domain-or-cc0",
+      "rights_basis": "public-domain-statement",
+      "license_expression": null,
+      "license_url": "https://ourairports.com/data/",
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "OurAirports",
+        "url": "https://ourairports.com/data/"
+      },
+      "notice": "Airport identifiers from OurAirports, which states its data is in the public domain and offers no warranty.",
+      "evidence": {
+        "source_url": "https://ourairports.com/data/",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "The provider states all data is public domain; credit is appreciated but not required."
+      },
+      "review_after": "2027-09-02",
+      "notes": "Record the exact download and retrieval date, and preserve the no-warranty notice.",
+      "refusal": null
+    },
+    {
+      "key": "patrimoine",
+      "name": "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)",
+      "publisher": "Ministry of Culture",
+      "metadata_keys": [
+        "patrimoine"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Ministry of Culture",
+        "url": "https://cartes.patrimoineculturelalgerien.org"
+      },
+      "notice": "Ministry of Culture: a factual public listing, redistributed with attribution; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://cartes.patrimoineculturelalgerien.org",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "sogral",
+      "name": "SOGRAL: intercity bus station directory",
+      "publisher": "Société de Gestion des Gares Routières d'Algérie (SOGRAL)",
+      "metadata_keys": [
+        "sogral"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "SOGRAL",
+        "url": "https://live.sogral.com"
+      },
+      "notice": "Intercity bus stations: data © SOGRAL, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://live.sogral.com",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it. The package metadata states only that the data is redistributed for reference."
+      },
+      "review_after": "2027-03-02",
+      "notes": "The station directory only. The observed connection graph is sogral-mahatati-graph and the timetable captures are sogral-timetable; neither is covered by this record.",
+      "refusal": null
+    },
+    {
+      "key": "sogral-mahatati-graph",
+      "name": "SOGRAL MAHATATI: observed connection graph",
+      "publisher": "Société de Gestion des Gares Routières d'Algérie (SOGRAL)",
+      "metadata_keys": [],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web"
+      ],
+      "attribution": {
+        "text": "SOGRAL",
+        "url": "https://live.sogral.com"
+      },
+      "notice": "Observed intercity connections: data © SOGRAL, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://live.sogral.com",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Web publishes it and npm does not, so it is cleared for web and for nothing else."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Served by Web at /departures and by no npm package. The offline targets are cleared only through what Web and npm both publish, so this Source reaches neither cdn nor mobile-pack.",
+      "refusal": null
+    },
+    {
+      "key": "sogral-timetable",
+      "name": "SOGRAL: timetable, fares, states, zones, seats and route details",
+      "publisher": "Société de Gestion des Gares Routières d'Algérie (SOGRAL)",
+      "metadata_keys": [],
+      "access_class": "private-research",
+      "rights_class": "restricted-research",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [],
+      "attribution": {
+        "text": "SOGRAL",
+        "url": "https://live.sogral.com"
+      },
+      "notice": null,
+      "evidence": {
+        "source_url": "https://live.sogral.com",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Held locally as research material only, and published to nothing."
+      },
+      "review_after": "2027-03-02",
+      "notes": "Never published, packaged or exposed from a production endpoint. Full captures expire within 30 days of the research need ending; hashes, Source URLs, capture parameters and dates are what is kept.",
+      "refusal": null
+    },
+    {
+      "key": "wikidata",
+      "name": "Wikidata structured data",
+      "publisher": "Wikimedia Foundation",
+      "metadata_keys": [
+        "wikidata"
+      ],
+      "access_class": "public-access",
+      "rights_class": "public-domain-or-cc0",
+      "rights_basis": "public-domain-statement",
+      "license_expression": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Wikidata",
+        "url": "https://www.wikidata.org"
+      },
+      "notice": "Structured data from Wikidata, dedicated to the public domain under CC0 1.0.",
+      "evidence": {
+        "source_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "CC0 covers structured data in the main, property and lexeme namespaces. Text from other namespaces is CC BY-SA 4.0 and is not covered by this record."
+      },
+      "review_after": "2027-09-02",
+      "notes": "Record the entity ids, the query and the retrieval date. CC0 does not clear trademark, privacy, publicity, patent or third-party-content rights.",
+      "refusal": null
+    },
+    {
+      "key": "wikipedia-fr",
+      "name": "French Wikipedia: Lignes de bus ETUSA de 1 à 99",
+      "publisher": "Wikimedia Foundation",
+      "metadata_keys": [
+        "wikipedia"
+      ],
+      "access_class": "public-access",
+      "rights_class": "open-licensed",
+      "rights_basis": "licence",
+      "license_expression": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "French Wikipedia contributors, CC BY-SA 4.0",
+        "url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_%C3%A0_99"
+      },
+      "notice": "ETUSA Line material from French Wikipedia, used under CC BY-SA 4.0; authors are credited through the page history, and the extraction is modified from the article.",
+      "evidence": {
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "Wikimedia text terms; the buses NOTICE selects CC BY-SA 4.0. Record the page URL and revision id."
+      },
+      "review_after": "2027-09-02",
+      "notes": "Share-alike applies to a protected adaptation of the article.",
+      "refusal": null
+    },
+    {
+      "key": "yalidine",
+      "name": "Yalidine Express: agency directory",
+      "publisher": "Yalidine Express",
+      "metadata_keys": [
+        "yalidine"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Yalidine Express",
+        "url": "https://yalidine-express.com.dz/nos-agences/"
+      },
+      "notice": "Yalidine Express: agency directory: data © Yalidine Express, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://yalidine-express.com.dz/nos-agences/",
+        "repo_path": null,
+        "retrieved_at": "2026-09-02",
+        "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    }
+  ]
+}

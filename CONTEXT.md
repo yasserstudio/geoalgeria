@@ -292,6 +292,28 @@ _Avoid_: accuracy, precision score
 A coordinate a source rounded instead of measuring, so it names an area and not a facility and can never be `exact`. ADR 0001 rules one out at L0. Two shapes, and the second hides inside the first's blind spot: rounded in **decimal degrees**, which `MIN_EXACT_DECIMALS` catches by counting fraction digits (35, 8 locates a degree square); and **degrees and minutes with the seconds dropped**, which survives that count because minutes divided by 60 leave a long tail, so `onArcminuteGrid` tests the whole-arcminute grid on both axes instead (33.58333, 2.66667 is 33°35'N 2°40'E, a cell about 1.5 km across). A third shape is a point borrowed from elsewhere, which is a Copied claim rather than a rounding.
 _Avoid_: rounded coordinate, low-precision point, DMS artifact, placeholder (unqualified)
 
+### Source rights
+
+**Source rights record**:
+One Source's rights decision as data: its permanent Source key, the keys packages capture it under, its Access class and Rights class, the Targets it is cleared for, its attribution and NOTICE text, the evidence the classification was read from with a retrieval date, a review date, and a slot for a Recorded refusal. One record per Source, never per package, because packages mix Sources. Lives in `packages/schema/rights/registry.json`, a repository file read by path from a checkout and published in no package; `isSourceClearedFor` is the only question asked of it.
+_Avoid_: licence record, rights manifest, permission table
+
+**Access class**:
+How a Source is reached: `public-access`, `account-access`, `permissioned-access` or `private-research`. Separate from the Rights class, because being able to read something is not permission to republish it.
+_Avoid_: visibility, availability, public/private
+
+**Rights class**:
+What GeoAlgeria may do with a Source: `open-licensed`, `public-domain-or-cc0`, `permissioned`, `rights-unconfirmed`, `restricted-research` or `prohibited`. `rights-unconfirmed` is the honest default for a Source whose terms were read and grant nothing; `evidence_type: official` describes authority and is never a Rights class.
+_Avoid_: licence class, permission level, trust tier
+
+**Target**:
+A place GeoAlgeria publishes to, and the unit a Source is cleared for: `web`, `npm`, `cdn` (the signed Content release), `mobile-pack` (an offline catalog on a device) or `live` (the app's Live layer). A Source with no record is cleared for none of them.
+_Avoid_: channel, destination, distribution
+
+**Recorded refusal**:
+A written refusal from a Source owner, with the date it was recorded. Once recorded it removes every Target, so the next Content release drops that Source and installed apps drop it when they activate that release.
+_Avoid_: takedown, opt-out, objection
+
 ### Coordinate review
 
 **Claim**:

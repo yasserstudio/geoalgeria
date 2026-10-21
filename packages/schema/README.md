@@ -41,6 +41,35 @@ const meta = buildMetadata({
 | `geo_method` | `string \| null` | how the point was obtained (`"osm_node"`, …); **null iff `lat`/`lng` are null** |
 | `refs` | `{ osm?, wikidata?, msp?, … }` | cross-dataset external ids |
 
+## Source rights registry (not part of this package)
+
+`rights/registry.json` and `src/rights.js` sit in this directory but are **not**
+published with it: `rights/` is outside the npm files, `src/rights.js` is excluded
+from them, and `index.js` never reaches either. They live here because the
+generators that read the contract are the ones that read the rights, and they are
+read by path from a data checkout rather than installed:
+
+```js
+import { isSourceClearedFor } from "<data checkout>/packages/schema/src/rights.js";
+
+isSourceClearedFor("osm", "mobile-pack"); // true
+isSourceClearedFor("sogral-timetable", "cdn"); // false: restricted-research
+isSourceClearedFor("whatever-nobody-classified", "npm"); // false: no record
+```
+
+One record per Source holds its access class, rights class, the targets it is
+cleared for (`web`, `npm`, `cdn`, `mobile-pack`, `live`), attribution and NOTICE
+text, public evidence with a retrieval date, and a review date. The reader **fails
+closed**, deliberately unlike `evidenceForSourceKey`: an unknown Source, a key two
+records claim, an unknown rights class, an unknown target, `restricted-research`,
+`prohibited`, or a recorded refusal all answer `false`, whatever a record's
+`allowed_targets` says. One record covers every key one Source was captured under,
+so `osm`, `osm-communes` and `osm-admin-centre-2026-09-29` resolve to the same
+rights.
+
+The rule, the vocabulary and what `pnpm validate` enforces are in
+[CONTRIBUTING.md](../../CONTRIBUTING.md#source-rights-registry).
+
 ## Boundary checks
 
 `validateRecords` runs the point-in-wilaya check only when you pass `boundaries` (built with `loadBoundaries(featureCollection)`), so the package ships no polygons. Without them, the Algeria-bbox guard still catches gross coordinate errors. This repo's polygons live in `packages/dataset/data/geojson/wilaya-boundaries.geojson` (69 wilayas, OSM/ODbL; published in the `geoalgeria` npm package under `data/geojson/`).
