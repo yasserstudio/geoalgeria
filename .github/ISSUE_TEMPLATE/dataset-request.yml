@@ -1,6 +1,6 @@
 name: Request a dataset
 description: Propose a new kind of Algeria data for GeoAlgeria to add
-labels: ["dataset-request"]
+labels: ["needs-triage", "dataset-request"]
 body:
   - type: markdown
     attributes:
