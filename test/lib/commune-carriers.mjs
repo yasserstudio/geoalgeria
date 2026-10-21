@@ -66,9 +66,9 @@ export const COPIES = [
     // …, wilaya_code, 'daira', 'postal', latitude, longitude, code_commune)
     // Anchored at the end of the row: commune names carry SQL-escaped apostrophes
     // (M''fatha), so a left-anchored quoted-field pattern drops them silently.
-    // postal_code matches NULL as well as a quoted value: five of the 13 communes
-    // added in the 1,541 completion have no citable postal code, and a pattern that
-    // only accepted '\d+' would drop exactly those rows instead of checking them.
+    // postal_code matches NULL as well as a quoted value: Larbaa (561) has no
+    // citable postal code, and a pattern that only accepted '\d+' would drop exactly
+    // that row instead of checking it.
     "data/sql/full.sql",
     () => {
       const re =

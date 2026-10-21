@@ -109,7 +109,7 @@ Récupérez `data/ecommerce/communes.json` – plat, dénormalisé, sans jointur
 ```json
 {
   "id": 541,
-  "commune_name_fr": "Ain El Ibel",
+  "commune_name_fr": "Aïn El Ibel",
   "commune_name_ar": "عين الإبل",
   "daira_name_fr": "Aïn El Ibel",
   "wilaya_code": 17,
@@ -118,6 +118,8 @@ Récupérez `data/ecommerce/communes.json` – plat, dénormalisé, sans jointur
   "postal_code": "17011"
 }
 ```
+
+Un code postal est celui du bureau de poste principal de la commune, et ses deux premiers chiffres sont la wilaya de ce bureau au moment où le code a été attribué. Comme `code_commune`, le préfixe n'est pas forcément égal à `wilaya_code` : Algérie Poste a conservé l'ancienne numérotation malgré la réforme de 2026, donc Aflou est `03001` dans la wilaya 59. Cela concerne 108 des 1 540 communes codées, toutes dans les wilayas 59 à 69.
 
 ### Alimentation de base de données
 
@@ -277,7 +279,7 @@ Ici même – `data/ecommerce/communes.json` contient les 1 541 communes dans un
 Les wilayas 59 à 69 (numérotées par ordre de code de la wilaya mère) : 59 Aflou (depuis Laghouat), 60 Barika (depuis Batna), 61 El Kantara (depuis Biskra), 62 Bir El Ater (depuis Tébessa), 63 El Aricha (depuis Tlemcen), 64 Ksar Chellala (depuis Tiaret), 65 Aïn Ouessara (depuis Djelfa), 66 Messaad (depuis Djelfa), 67 Ksar El Boukhari (depuis Médéa), 68 Bou Saâda (depuis M'Sila), 69 El Abiodh Sidi Cheikh (depuis El Bayadh).
 
 **Comment obtenir les codes postaux algériens au format JSON ?**
-Installez `geoalgeria` via npm ou téléchargez directement `data/ecommerce/communes.json` – il associe les noms de communes en français et en arabe à leur code postal sur les 1 541 communes (5 n'ont pas encore de code sourçable).
+Installez `geoalgeria` via npm ou téléchargez directement `data/ecommerce/communes.json` – il associe les noms de communes en français et en arabe à leur code postal sur les 1 541 communes (1 n'a pas encore de code attesté par une source).
 
 **Quel est le meilleur package de géodonnées algériennes pour les développeurs ?**
 GeoAlgeria est l'option la plus complète en 2026 – c'est le seul package npm avec les 69 wilayas, codes postaux, coordonnées, daïras et modèles de zones de livraison en une seule installation. Validé par CI à chaque commit.
