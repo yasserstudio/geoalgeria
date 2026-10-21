@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-// Re-emit a package from its own committed data so the reviewed corrections in
-// quality/overrides/<package>.json are applied, validated and mirrored.
+// Re-emit a package from its own committed data so that what the shared writer
+// decides, rather than the package's own generator, is applied, validated and
+// mirrored: the reviewed corrections in quality/overrides/<package>.json, and
+// the published-name rules the writer enforces for every package.
 //
 // WHY THIS EXISTS. `writePackageV2` loads a package's override ledger on every emit
 // (quality/overrides/README.md), so landing a ledger entry means re-running the
@@ -20,15 +22,22 @@
 // generator, running that generator applies the same ledger, so this is an alternative
 // to it and never a step after it.
 //
-// It names its packages explicitly, and has no "every ledger" mode: a package can
+// It names its packages explicitly, and has no "all packages" mode: a package can
 // legitimately have a second generator whose files this writer does not own (aviation's
 // routes come from a reviewed research dataset, not from the ANAC pull), and re-emitting
-// it from MIGRATIONS alone would drop those files from the manifest.
+// it from MIGRATIONS alone would drop those files from the manifest. Those a writer does
+// not own but a metadata key names are carried over instead of recomputed: each source's
+// `snapshot`, which attests the bytes the committed records were read from, and whatever
+// the package's `meta.preserve` lists (aviation's route count and its as-of stamp).
+//
+// A ledger is not required. It was while this ran corrections alone; #294 made the
+// writer fold the dash separators out of every published name, which a package with no
+// offline generator (enseignement-superieur) needs re-emitted with no ledger to apply.
 //
 // USAGE
 //   node scripts/apply-overrides.mjs emploi sports
 
-import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -47,12 +56,13 @@ if (!packages.length) {
   const withLedger = readdirSync(OVERRIDES)
     .filter((entry) => entry.endsWith(".json"))
     .map((entry) => entry.replace(/\.json$/, ""));
-  throw new Error(`name the package(s) to re-emit. Packages with a ledger: ${withLedger.join(", ")}`);
+  throw new Error(
+    `name the package(s) to re-emit. Any package in MIGRATIONS can be; those with a ledger ` +
+      `to apply: ${withLedger.join(", ")}`,
+  );
 }
 
 for (const pkg of packages) {
-  if (!existsSync(join(OVERRIDES, `${pkg}.json`)))
-    throw new Error(`${pkg}: no ledger at quality/overrides/${pkg}.json`);
   const config = MIGRATIONS[pkg];
   if (!config) throw new Error(`${pkg}: not in MIGRATIONS, so there is no writer to re-run`);
   const dir = join(ROOT, "packages", pkg, "data");
@@ -65,6 +75,14 @@ for (const pkg of packages) {
   }));
   // A package dates its capture by its first declared source, as its own writer does.
   const retrieved = oldMeta.sources?.[0]?.retrieved;
+  // Each source's committed `snapshot` attests the bytes the committed records were
+  // read from, and those are the records being re-emitted, so it is carried over
+  // rather than dropped: only the generator that pulled the upstream can produce one,
+  // and a re-emit that silently removed it would publish records with less provenance
+  // than they had.
+  const snapshots = Object.fromEntries(
+    (oldMeta.sources ?? []).filter((s) => s.snapshot).map((s) => [s.key, s.snapshot]),
+  );
   for (const where of [dir, ...(MIRRORS[pkg] ?? []).map((mirror) => join(ROOT, mirror))]) {
     writePackageV2({
       pkg,
@@ -73,8 +91,9 @@ for (const pkg of packages) {
       meta: config.meta,
       updated: oldMeta.updated,
       retrieved,
+      snapshots,
       oldMeta,
     });
   }
-  console.log(`${pkg}: re-emitted with its reviewed corrections applied`);
+  console.log(`${pkg}: re-emitted from its committed records`);
 }

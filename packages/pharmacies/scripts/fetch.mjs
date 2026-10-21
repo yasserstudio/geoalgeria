@@ -26,6 +26,7 @@ import { buildMetadata, toCSV, toGeoJSON } from "@geoalgeria/schema";
 import { carryOverIds, forwardRetiredId, readCommitted, readRetiredIds, readRetiredMigrations, writeRetiredIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 import { RESOLVE_RULES, describeLinkage, resolveCommune } from "../../../scripts/lib/build-utils.mjs";
 import { TIFINAGH_LETTER, splitByScript, stripLeadingMarks } from "../../../scripts/lib/name-script.mjs";
+import { withoutEmDash } from "../../../scripts/lib/no-em-dash.mjs";
 import { looseKey } from "../../../packages/normalize/index.js";
 import { mergeDoubleMappings } from "../../../scripts/lib/merge-double-mappings.mjs";
 import https from "node:https";
@@ -147,12 +148,14 @@ const wcode = (n) => (Number.isInteger(n) && n > 0 ? String(n).padStart(2, "0") 
 // `name` instead of being dropped as unnamed. It is never routed into name_ar or
 // name_fr, which carry one script each.
 const NAME_LETTER = /[A-Za-zء-يٱ-ۿⴰ-⵿]/;
-// Runs of whitespace collapse to one, the ends are trimmed, and leading combining
+// Runs of whitespace collapse to one, the ends are trimmed, leading combining
 // marks go (stripLeadingMarks, shared so its character class is right in one
-// place). Nothing else is touched: no letter is added, removed or reordered.
+// place), and a dash a mapper typed as a separator becomes the " - " this
+// package's own names use (withoutEmDash, #294). No letter is added, removed or
+// reordered.
 const cleanName = (v) => {
   if (typeof v !== "string") return null;
-  const x = stripLeadingMarks(v.replace(/\s+/g, " ").trim()).trim();
+  const x = withoutEmDash(stripLeadingMarks(v.replace(/\s+/g, " ").trim()).trim());
   return x.length >= 2 && NAME_LETTER.test(x) ? x : null;
 };
 const inAlgeria = (lat, lng) =>
