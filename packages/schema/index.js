@@ -10,6 +10,7 @@ export {
   WILAYA_CODES,
   DZ_BBOX,
   MIN_EXACT_DECIMALS,
+  ARCMINUTE_TOLERANCE,
 } from "./src/constants.js";
 export { round6, wcode, toCSV, toGeoJSON, haversine, bbox } from "./src/emit.js";
 export {
@@ -19,6 +20,7 @@ export {
   wilayaNeighbours,
   fractionDigits,
   coordDecimals,
+  onArcminuteGrid,
   sharedPoints,
 } from "./src/geo.js";
 export { validateRecords, validateMetadata } from "./src/validate.js";

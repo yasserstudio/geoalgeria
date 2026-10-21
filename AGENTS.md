@@ -66,7 +66,11 @@ pulls in gitignored `research/<pkg>/` until they are next touched.
 1. **Branch** off `main`: `fix/commune-name`, `feat/emploi-coords`, `chore/ci`.
 2. **Edit data**, keeping the rules in [`CONTRIBUTING.md`](CONTRIBUTING.md):
    sorted, UTF-8, sourced (JORA / Algérie Poste / ONS), bilingual FR/AR.
-3. **`pnpm validate`**: schema + integrity checks. Must pass.
+3. **`pnpm validate`**: schema + integrity checks, then a bundler check
+   ([`scripts/check-bundlers.mjs`](scripts/check-bundlers.mjs), on its own as
+   `pnpm check-bundlers`) that packs the real tarball, bundles it with esbuild
+   and runs the output, because a package can load in Node and still fail in a
+   bundled app (issue #276). Must pass.
 4. **Add a changeset** if a published package changed: `pnpm changeset`
    (data semver: **major** = breaking schema · **minor** = new data/format ·
    **patch** = corrections).

@@ -40,6 +40,10 @@ export interface Refs {
    *  and once in Arabic, under two post ids; a bilingual record stands for both,
    *  and either id resolves to it. */
   msp_twin?: string;
+  /** The MoH's REPEAT post for the same establishment: a second entry in a
+   *  language the record already has, made under the same name. The record
+   *  stands for it too, so that id resolves to the record as well. */
+  msp_repeat?: string;
   /** OSM element id (e.g. "way/432370657") when an OSM facility matched. */
   osm?: string;
   /** Wikidata QID when a Wikidata facility matched. */

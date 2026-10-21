@@ -188,6 +188,17 @@ the same release, so neither id is older: the merged record keeps the
 sequenced by name and a Latin name sorts before an Arabic one.
 _Avoid_: duplicate, double, clone, Arabic record
 
+**Repeat post**:
+A second upstream entry for the same place in the SAME language: the Ministry of
+Health registry entered a handful of establishments twice under the one name, so
+one establishment is one post and one repeat post. A Twin post adds a language, a
+repeat post adds nothing, and the two are reached by different rules: the twin
+rule pairs one language with the other and can never see a repeat post. The
+generator folds the repeat post into the same record, which cites it as
+`refs.msp_repeat`, and the record stays on the entry the registry describes most
+fully, so the kept id is not always the lower-sequence one.
+_Avoid_: twin post, same-language twin, re-entry, clone
+
 **Half-record**:
 A record standing for one Twin post while the other is published separately: half
 a facility's names, and its own coordinate. Merging the two retires the
@@ -276,6 +287,10 @@ _Avoid_: fetched, scraped, synced
 **Geometry confidence**:
 How honest a coordinate is: `exact` (a real per-facility point → a Pin) vs `approximate` (a commune/wilaya centroid → a Dot) vs `null` (there is no coordinate at all → neither). Coarse-grained in `geo_precision`, which is null if and only if `lat`/`lng` are null; method detail (`osm_node`, `commune_centroid`) lives in `geo_method`, null on those same records because no method produced a point.
 _Avoid_: accuracy, precision score
+
+**Rounded placeholder**:
+A coordinate a source rounded instead of measuring, so it names an area and not a facility and can never be `exact`. ADR 0001 rules one out at L0. Two shapes, and the second hides inside the first's blind spot: rounded in **decimal degrees**, which `MIN_EXACT_DECIMALS` catches by counting fraction digits (35, 8 locates a degree square); and **degrees and minutes with the seconds dropped**, which survives that count because minutes divided by 60 leave a long tail, so `onArcminuteGrid` tests the whole-arcminute grid on both axes instead (33.58333, 2.66667 is 33°35'N 2°40'E, a cell about 1.5 km across). A third shape is a point borrowed from elsewhere, which is a Copied claim rather than a rounding.
+_Avoid_: rounded coordinate, low-precision point, DMS artifact, placeholder (unqualified)
 
 ### Coordinate review
 

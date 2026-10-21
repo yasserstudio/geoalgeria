@@ -5,7 +5,7 @@
 // records their own geometry contradicts, so it fails the day a new one appears. It
 // cannot tell a shrinking list from a list someone edited: deleting a group's rows and
 // deleting the records both make it pass. This file pins the two numbers that cannot be
-// edited into agreement, the 55 corrections and the 303 residual.
+// edited into agreement, the 55 corrections and the 302 residual.
 //
 // WHY IT RE-DERIVES RATHER THAN RESTATES. test/reviewed-overrides-applied.test.mjs
 // already checks that every ledger decision was applied field by field. What it cannot
@@ -17,12 +17,15 @@
 // is actually in. A decision that stops holding fails here even though the ledger still
 // describes it accurately.
 //
-// WHY 303 REMAIN. They are not a tolerance. 55 of the 358 found on 2026-09-29 were a
+// WHY 302 REMAIN. They are not a tolerance. 55 of the 358 found on 2026-09-29 were a
 // stale label a reform explains, and those are corrected. The rest are a coordinate and
 // an attribution that disagree with no reform to explain them, a coordinate too rounded
 // to join on, or a commune OpenStreetMap ships no relation for;
 // research/_wilaya-containment/triage-209.md classifies all 358 and says, per record,
-// what would settle it.
+// what would settle it. It was 303 until #285 re-placed @geoalgeria/banques'
+// `agb-tebessa`, which was in the list under `kept_low_precision`: the branch sat on
+// (35, 8), inside wilaya 62 rather than the 12 it declares. The residual only ever goes
+// down, and only with the record that left it named here.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -40,7 +43,8 @@ const read = (...parts) => JSON.parse(readFileSync(join(ROOT, ...parts), "utf8")
 // rather than counted, so dropping a package's ledger fails instead of passing quietly.
 const CORRECTED = { emploi: 17, jeunesse: 15, poste: 2, sports: 15, telecom: 1, tourisme: 5 };
 const TOTAL = 55;
-const RESIDUAL = 303;
+// 303 on 2026-09-29, minus banques' agb-tebessa, re-placed from OpenStreetMap by #285.
+const RESIDUAL = 302;
 // The Journal officiel each reform appears in, which its decisions have to cite.
 const REFORM_EVIDENCE = {
   2026: [
@@ -128,7 +132,7 @@ test("every correction still holds against the registry and the commune outlines
   }
 });
 
-test("the residual is the documented 303, and shrank by exactly the 55 corrected", () => {
+test("the residual is the documented 302, and shrank by exactly the 55 corrected", () => {
   assert.equal(exceptions.count, RESIDUAL);
   assert.equal(exceptions.pre_existing, RESIDUAL, "a residual row this batch created is not a residual");
   assert.equal(exceptions.created_by_this_batch, 0);

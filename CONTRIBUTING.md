@@ -73,6 +73,11 @@ hand-edit the mirror.
 pnpm validate    # schema + integrity checks on the dataset
 ```
 
+It ends with a bundler check ([`scripts/check-bundlers.mjs`](scripts/check-bundlers.mjs),
+also `pnpm check-bundlers`): it packs the real tarballs, bundles them with esbuild
+and runs the output, because a package can load perfectly in Node and still fail in
+a bundled app (issue #276).
+
 ### 4. Open a pull request
 
 Branch (`git checkout -b fix/commune-name-typo`), commit using

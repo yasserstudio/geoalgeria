@@ -73,7 +73,7 @@ const urgences = all.filter((c) => c.emergency);
 > ne liste les cliniques privées. Les chiffres bougent au fil des contributions.
 
 > **Ce paquet ne republie jamais un hôpital déjà publié par [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante), et les deux ne s'additionnent pas.**
-> `sante` est le volet *registre* : 668 établissements publics (CHU, EPH, EHS,
+> `sante` est le volet *registre* : 661 établissements publics (CHU, EPH, EHS,
 > EPSP) du Ministère de la Santé. Ce paquet est le volet *communautaire*. 121 des
 > enregistrements de `sante` référencent un élément OSM par identifiant. Les 86
 > qui portent sur un hôpital (CHU, EPH, EHS) sont exclus ici **par
@@ -85,7 +85,7 @@ const urgences = all.filter((c) => c.emergency);
 > référence OSM, donc un même établissement physique peut malgré tout figurer
 > dans les deux paquets, sous des coordonnées et des identifiants différents,
 > sans qu'aucun mécanisme ne puisse le détecter. Les deux décrivent des volets
-> différents : additionner 668 et 1 917 ne compte rien de réel.
+> différents : additionner 661 et 1 917 ne compte rien de réel.
 
 **Le type est déduit du nom.** Une polyclinique se nomme
 polyclinique/عيادة متعددة الخدمات, une salle de soins قاعة علاج/مستوصف/dispensaire,
