@@ -17875,7 +17875,7 @@
   },
   {
     "id": "cnep-156",
-    "name": "AIN –AZEL",
+    "name": "AIN AZEL",
     "wilaya_code": "19",
     "commune_code": null,
     "commune": null,
@@ -17886,7 +17886,13 @@
     "source": "bank_locator",
     "bank_id": "cnep",
     "address": "Cité Ben Boulaid",
-    "phone": "036 55 45 40"
+    "phone": "036 55 45 40",
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-21",
+    "reviewed_by": "geoalgeria-name-review",
+    "review_evidence": [
+      "https://www.openstreetmap.org/relation/4298137"
+    ]
   },
   {
     "id": "cnep-157",
