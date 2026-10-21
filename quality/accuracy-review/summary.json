@@ -212,15 +212,15 @@
     },
     {
       "path": "packages/pharmacies/data/metadata.json",
-      "sha256": "83fb3e153f40cdf65769bc4a41aad1c3bd452149187645b28fc1992a350317a9"
+      "sha256": "84c5721722da68aa76ddc9065d23d2aa746cb42fd76c19e973b1c7243c04c5ec"
     },
     {
       "path": "packages/pharmacies/data/pharmacies.json",
-      "sha256": "916de0be98596fcd608b0d580a8cd08f67b80fc166017e74811bbcb8be119463"
+      "sha256": "c7f2649cbea712ae144c3eec8f000f16971282df04837ccb0cf5b068bb17dfde"
     },
     {
       "path": "packages/pharmacies/data/retired-ids.json",
-      "sha256": "6206eff33a0f8d050a9c71ec7a6e549e9cbf1ca5ed6dc6177e5358b207d4a2cf"
+      "sha256": "771590bc36f2e7d52a7779e34ce942c47beb81821ff137465b9d43b3ddff22f0"
     },
     {
       "path": "packages/poste/data/atms.json",
@@ -309,10 +309,10 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70511,
-  "candidates": 17731,
+  "total_records": 70499,
+  "candidates": 17729,
   "reasons": {
-    "approximate_coordinate": 16882,
+    "approximate_coordinate": 16880,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 501,
     "outside_all_wilaya_boundaries": 199,
@@ -1694,10 +1694,10 @@
     },
     {
       "dataset": "pharmacies",
-      "total_records": 3807,
-      "candidates": 306,
+      "total_records": 3795,
+      "candidates": 304,
       "reasons": {
-        "approximate_coordinate": 298,
+        "approximate_coordinate": 296,
         "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 8
@@ -1709,16 +1709,16 @@
         "title_fr": "Pharmacies d'Algérie",
         "title_ar": "صيدليات الجزائر",
         "title_en": "Algeria pharmacies (officines)",
-        "record_count": 3807,
-        "geocoded_count": 3807,
+        "record_count": 3795,
+        "geocoded_count": 3795,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 3509,
-          "approximate": 298
+          "exact": 3499,
+          "approximate": 296
         },
         "estimated_universe": 11000,
-        "coverage_pct": 34.6,
-        "coverage_note": "3807 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north.",
+        "coverage_pct": 34.5,
+        "coverage_note": "3795 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north.",
         "wilayas_covered": 67,
         "bbox": [
           -8.139568,
@@ -1738,11 +1738,11 @@
         ],
         "license": "ODbL-1.0",
         "updated": "2026-08-31",
-        "named": 2467,
-        "with_phone": 146,
-        "with_hours": 257,
-        "with_address": 1164,
-        "with_dispensing": 529,
+        "named": 2461,
+        "with_phone": 145,
+        "with_hours": 256,
+        "with_address": 1161,
+        "with_dispensing": 530,
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
     },
@@ -2519,10 +2519,10 @@
     {
       "dataset": "pharmacies",
       "entity": "pharmacies.json",
-      "total_records": 3807,
-      "candidates": 306,
+      "total_records": 3795,
+      "candidates": 304,
       "reasons": {
-        "approximate_coordinate": 298,
+        "approximate_coordinate": 296,
         "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 8
