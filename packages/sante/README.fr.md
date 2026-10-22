@@ -66,27 +66,27 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Type | Nombre | Signification |
 | --- | --- | --- |
-| `eph` | 254 | Établissement Public Hospitalier |
+| `eph` | 252 | Établissement Public Hospitalier |
 | `epsp` | 280 | Établissement Public de Santé de Proximité |
 | `ehs` | 103 | Établissement Hospitalier Spécialisé |
-| `chu` | 19 | Centre Hospitalo-Universitaire |
+| `chu` | 17 | Centre Hospitalo-Universitaire |
 | `hopital` | 5 | autre hôpital public |
 
 **Par précision des coordonnées** (`geo_precision`)
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
-| `exact` | 133 | point précis : un établissement OSM ou Wikidata dans la commune, ou une position vérifiée à la main |
-| `approximate` | 458 | centroïde de la commune de l'établissement |
+| `exact` | 132 | point précis : un établissement OSM ou Wikidata dans la commune, ou une position vérifiée à la main |
+| `approximate` | 455 | centroïde de la commune de l'établissement |
 | `null` | 70 | localité non rattachée à une commune – pas de coordonnées (`lat`/`lng` aussi `null`) |
 
 **Par méthode d'obtention** (`geo_method`)
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
-| `osm_point` | 119 | point précis d'un établissement OpenStreetMap dans la commune |
+| `osm_point` | 118 | point précis d'un établissement OpenStreetMap dans la commune |
 | `wikidata_point` | 3 | point précis d'un établissement Wikidata dans la commune |
-| `commune_centroid` | 458 | centroïde de la commune de l'établissement (approximatif) |
+| `commune_centroid` | 455 | centroïde de la commune de l'établissement (approximatif) |
 | `owner_verified` | 11 | position relevée sur la carte par le propriétaire du projet, via le registre de corrections révisées |
 | `null` | 70 | aucune méthode – l'enregistrement n'a pas de coordonnées |
 
@@ -203,13 +203,19 @@ Lancez `npm run fetch` pour régénérer les sorties. Le script :
    ont une fiche arabe à id+1 : les deux noms doivent aussi s'accorder sur un
    squelette consonantique, ce que les orthographes française et arabe d'un même
    nom partagent réellement, et un candidat ambigu reste deux enregistrements
-   plutôt qu'une supposition. L'adjacence ne porte qu'à deux identifiants : quatre
-   établissements dont le registre a saisi les deux moitiés de cinq à quatorze
-   identifiants d'écart sont donc appariés à la main, dans une table explicite où
-   chaque paire cite une source qui n'est **pas** le registre, un élément
-   OpenStreetMap ou une fiche Wikidata portant les deux noms. Quatre autres cas
-   soumis à cette table restent deux enregistrements, faute d'une telle source, et
-   sont listés à côté des paires avec ce qui manque. Chaque décision, y compris
+   plutôt qu'une supposition. L'adjacence ne porte qu'à deux identifiants :
+   quatre paires réparties sur trois villes, dont le registre a saisi les moitiés
+   à 4, 10, 14 et 1284 identifiants d'écart, sont donc appariées à la main, dans
+   une table explicite. Chaque ligne consigne ce que couvre sa preuve, et les
+   deux niveaux ne sont pas la même affirmation : pour deux d'entre elles, une
+   source qui n'est **pas** le registre (un élément OpenStreetMap, une fiche
+   Wikidata) nomme l'établissement dans les **deux** écritures, donc elle énonce
+   la paire elle-même ; pour les deux autres, cette source ne confirme que la
+   **moitié française**, et la moitié arabe repose sur le fait que les deux
+   titres sont des traductions exactes l'un de l'autre et que la paire est le seul
+   candidat restant dans son groupe wilaya et type. Quatre autres cas soumis à la
+   table restent deux enregistrements, faute de toute source, et sont listés à
+   côté des paires avec ce qui manque. Chaque décision, y compris
    chaque refus et son motif, est écrite dans
    [`quality/sante-twin-recovery.json`](https://github.com/yasserstudio/geoalgeria/blob/main/quality/sante-twin-recovery.json).
    Un enregistrement cite les deux fiches : `refs.msp` est sa fiche principale

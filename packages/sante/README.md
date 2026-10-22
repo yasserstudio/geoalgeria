@@ -63,27 +63,27 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Type | Count | Meaning |
 | --- | --- | --- |
-| `eph` | 254 | Établissement Public Hospitalier – public hospital |
+| `eph` | 252 | Établissement Public Hospitalier – public hospital |
 | `epsp` | 280 | Établissement Public de Santé de Proximité – proximity health |
 | `ehs` | 103 | Établissement Hospitalier Spécialisé – specialized hospital |
-| `chu` | 19 | Centre Hospitalo-Universitaire – university hospital |
+| `chu` | 17 | Centre Hospitalo-Universitaire – university hospital |
 | `hopital` | 5 | other public hospital |
 
 **By coordinate precision** (`geo_precision`)
 
 | Value | Count | Meaning |
 | --- | --- | --- |
-| `exact` | 133 | precise point: an OSM or Wikidata facility in the commune, or a location verified by hand |
-| `approximate` | 458 | the establishment's commune centroid |
+| `exact` | 132 | precise point: an OSM or Wikidata facility in the commune, or a location verified by hand |
+| `approximate` | 455 | the establishment's commune centroid |
 | `null` | 70 | locality not resolved to a commune – no coordinates (`lat`/`lng` also `null`) |
 
 **By coordinate method** (`geo_method`)
 
 | Value | Count | Meaning |
 | --- | --- | --- |
-| `osm_point` | 119 | precise point from an OpenStreetMap facility in the commune |
+| `osm_point` | 118 | precise point from an OpenStreetMap facility in the commune |
 | `wikidata_point` | 3 | precise point from a Wikidata facility in the commune |
-| `commune_centroid` | 458 | the establishment's commune centroid (approximate) |
+| `commune_centroid` | 455 | the establishment's commune centroid (approximate) |
 | `owner_verified` | 11 | location read off the map by the project owner, through the reviewed-correction ledger |
 | `null` | 70 | no method – record has no coordinate |
 
@@ -198,11 +198,16 @@ Run `npm run fetch` to regenerate every output. It:
    two names must also agree on a consonant skeleton, which is what French and
    Arabic spellings of one name actually share, and an ambiguous candidate is
    left as two records rather than guessed at. Adjacency only reaches two post
-   ids, so four establishments whose two halves the registry entered five to
-   fourteen ids apart are paired by hand instead, in an explicit table where
-   every pair cites a source that is **not** the registry: an OpenStreetMap
-   element or a Wikidata item carrying both names. Four further cases that table
-   was asked about stay two records, because no such source names them, and they
+   ids, so four pairs across three cities, whose halves the registry entered 4,
+   10, 14 and 1284 ids apart, are paired by hand instead, in an explicit table.
+   Each row records what its evidence covers, and the two levels are not the
+   same claim: for two of them a source that is **not** the registry (an
+   OpenStreetMap element, a Wikidata item) names the establishment in **both**
+   scripts, so it states the pair itself; for the other two that source confirms
+   the **French half only**, and the Arabic half rests on the two titles being
+   exact translations of each other together with the pair being the one
+   candidate left in its wilaya and type group. Four further cases the table was
+   asked about stay two records, because no source names them at all, and they
    are listed beside the pairs with what is missing. Every decision, including each
    refusal and its reason, is written to
    [`quality/sante-twin-recovery.json`](https://github.com/yasserstudio/geoalgeria/blob/main/quality/sante-twin-recovery.json).
