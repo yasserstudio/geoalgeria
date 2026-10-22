@@ -33,7 +33,11 @@ import https from "node:https";
 import http from "node:http";
 import tls from "node:tls";
 import { X509Certificate, createHash } from "node:crypto";
-import { MIGRATIONS, TWIN_POSTS_NOTE, REPEAT_POSTS_NOTE, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds, readRetiredMigrations, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, TWIN_POSTS_NOTE, REPEAT_POSTS_NOTE, writePackageV2, resolveDates, carryOverIds, forwardRetiredId, readCommitted, readRetiredIds, readRetiredMigrations, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
+// The FR/AR pairs the gap rule below cannot reach, asserted by hand with a
+// second source each (private tracker #287). Kept in its own module because the
+// table IS the evidence, and is read by the standing test as well as this build.
+import { TWIN_PAIR_TABLE, UNPAIRED_CANDIDATES, assertPairTable, pairTableFor } from "./twin-pair-table.mjs";
 // The project's one fold, used for the repeat-post check, which compares two
 // names written in the SAME script (see the repeat-post section). The
 // conservative key decides; the loose key is reported beside it.
@@ -651,9 +655,17 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats, verd
     posts.push({ lang, type, locality, specialty, wilayaCode, title, slug: str(r.slug), msp_id: r.id, commune, communeHow });
   }
 
+  // 1b) the hand-asserted pairs have to still describe this registry: a post the
+  //     Ministry renamed, moved to another wilaya or stopped publishing is no
+  //     longer the facility its evidence was gathered for, so the build stops
+  //     rather than merge two records on a stale reading. Checked here, over
+  //     every post, because a group never sees a row that belongs elsewhere.
+  assertPairTable(posts);
+
   // 2) pair FR + AR posts within each (wilaya, type) group (see pairPosts):
-  //    by transliterated-locality similarity, then by an unambiguous shared
-  //    commune. Ambiguous cases stay monolingual rather than risk a wrong pair.
+  //    by the evidence-backed pair table, then by transliterated-locality
+  //    similarity, then by an unambiguous shared commune. Ambiguous cases stay
+  //    monolingual rather than risk a wrong pair.
   const groups = new Map(); // "wilaya|type" -> { fr:[], ar:[] }
   for (const p of posts) {
     const key = `${p.wilayaCode}|${p.type}`;
@@ -720,18 +732,31 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats, verd
   return establishments;
 }
 
-// Pair FR and AR posts of one (wilaya, type) group. Step 1: transliterated-
-// locality token similarity (≥ 0.5). Step 2: an unambiguous shared commune
-// (exactly one remaining fr + one ar in it). Step 3: an adjacent MSP post id
-// whose name does not contradict (see pairTwinPosts). Step 4: leftovers stay
-// monolingual. The wilaya name is stripped from locality tokens, because inside
-// the capital every establishment carries it and it cannot tell two of them apart.
-// `verdicts`, when passed, collects the step-3 decisions for the review report.
-export function pairPosts(fr, ar, wil, verdicts = null) {
+// Pair FR and AR posts of one (wilaya, type) group. Step 0: the evidence-backed
+// pair table. Step 1: transliterated-locality token similarity (≥ 0.5). Step 2:
+// an unambiguous shared commune (exactly one remaining fr + one ar in it). Step
+// 3: an adjacent MSP post id whose name does not contradict (see
+// pairTwinPosts). Step 4: leftovers stay monolingual. The wilaya name is
+// stripped from locality tokens, because inside the capital every establishment
+// carries it and it cannot tell two of them apart. `verdicts`, when passed,
+// collects the step-0 and step-3 decisions for the review report.
+export function pairPosts(fr, ar, wil, verdicts = null, table = TWIN_PAIR_TABLE) {
   const out = [];
   if (!fr.length && !ar.length) return out;
   const wset = wilayaTokens(wil.byCode.get((fr[0] || ar[0]).wilayaCode));
   const usedF = new Set(), usedA = new Set();
+
+  // step 0: a pair asserted by hand on a second source (see twin-pair-table.mjs).
+  // It runs before every automatic step, because a read of OpenStreetMap or of a
+  // ministry page is stronger evidence than any signal the registry alone
+  // offers, and because the halves it names are exactly the ones a weaker step
+  // would otherwise claim: in Skikda and Ouargla both hospitals' halves name
+  // nothing but the city, so the locality-similarity step pairs whichever two it
+  // reaches first.
+  for (const { fr: f, ar: a, verdict } of pairTableFor(fr, ar, table)) {
+    if (verdicts) verdicts.push(verdict);
+    usedF.add(f); usedA.add(a); out.push({ fr: f, ar: a });
+  }
 
   const cands = [];
   for (const f of fr) {
@@ -957,6 +982,7 @@ export function pairTwinPosts(fr, ar, wil, usedF = new Set(), usedA = new Set())
     ar: a,
     verdict: {
       paired: gated && !refusal,
+      decided_by: "rule",
       reason: refusal ?? (gated ? check.reason : check.ok ? "name_evidence_too_thin_for_the_gap" : check.reason),
       wilaya_code: wcode(f.wilayaCode),
       type: f.type,
@@ -1688,6 +1714,12 @@ async function main() {
  * group by name, and the French name is Latin where the Arabic one is not, so
  * the French half always takes the lower sequence number.
  */
+/** The evidence a hand-asserted pair rests on, as the clause its retirement note
+ *  carries, so a consumer reading the ledger sees the source and not just the
+ *  decision. */
+const evidenceSentence = (evidence = []) =>
+  evidence.map((e) => `${e.url} (read ${e.checked_at}): ${e.note}`).join(" ");
+
 export function resolveTwinPairs(verdicts, rows, committed, priorMigrations = {}) {
   const liveByPost = new Map();
   for (const r of rows) for (const post of mspPosts(r)) liveByPost.set(post, r.id);
@@ -1714,27 +1746,37 @@ export function resolveTwinPairs(verdicts, rows, committed, priorMigrations = {}
       ledgerByPosts.get([t.msp_fr, t.msp_ar].join("/")) ??
       null;
     if (absorbed_id && kept_id)
-      migrations[absorbed_id] = {
-        merged_into: kept_id,
-        msp_posts: [t.msp_fr, t.msp_ar],
-        note:
-          `Merged into ${kept_id}, which carries both names. ${TWIN_POSTS_NOTE} Posts ${t.msp_fr} and ` +
-          `${t.msp_ar} are one facility. Both ids were first published together, so neither is older: ` +
+      forwardRetiredId(
+        migrations,
+        absorbed_id,
+        kept_id,
+        `Merged into ${kept_id}, which carries both names. ${TWIN_POSTS_NOTE} Posts ${t.msp_fr} and ` +
+          `${t.msp_ar} are one facility` +
+          (t.decided_by === "pair_table"
+            ? `, paired by hand from ${evidenceSentence(t.evidence)} because the two posts sit ${t.msp_gap} ids ` +
+              `apart, beyond the reach of the registry's own adjacency`
+            : "") +
+          `. Both ids were first published together, so neither is older: ` +
           `${kept_id} is kept because it is the lower-sequence id of the two, which is always the one the ` +
           `French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one.`,
-      };
+        { msp_posts: [t.msp_fr, t.msp_ar] },
+      );
     return { kept_id, absorbed_id, ...t };
   });
   return { pairs, refused: ordered.filter((t) => !t.paired), migrations };
 }
 
 // The twin-post decisions, as a reviewable file rather than build-log noise:
-// which pairs the rule recovered, which public id each merged record keeps,
-// which id it absorbed, and every candidate the rule refused with its reason.
+// which pairs were merged into one record, which public id each merged record
+// keeps, which id it absorbed, and every candidate refused with its reason.
+// `decided_by` separates the two kinds of decision: "rule" is the automatic
+// adjacency-plus-name recovery, "pair_table" is a pair asserted by hand on a
+// second source, which publishes that evidence here beside the ids it retires.
 // Regenerated on every run, so it can never drift from the shipped data.
 const TWIN_REPORT = join(REPO_ROOT, "quality", "sante-twin-recovery.json");
 function writeTwinReport({ pairs, refused }) {
   mkdirSync(dirname(TWIN_REPORT), { recursive: true });
+  const fromTable = pairs.filter((p) => p.decided_by === "pair_table");
   writeFileSync(
     TWIN_REPORT,
     JSON.stringify(
@@ -1745,12 +1787,20 @@ function writeTwinReport({ pairs, refused }) {
           "every nearby candidate it refused, with the reason. A near post id is not evidence on its own, " +
           "so a candidate must also pass a consonant-skeleton name check, a gap of two needs stronger name " +
           "evidence than a gap of one, and an ambiguous candidate is left alone rather than guessed at. " +
+          "A handful of cities entered their two halves far enough apart that adjacency cannot reach them " +
+          "at all, and in each the two halves name nothing but the city; those pairs carry " +
+          '`decided_by: "pair_table"`, are asserted by hand in packages/sante/scripts/twin-pair-table.mjs ' +
+          "and publish the second source each one rests on in `evidence`. The cases that table was asked " +
+          "about and left alone are listed in `unpaired_candidates`, with what is missing. " +
           "Regenerated by `npm run fetch` in packages/sante.",
         dataset: "sante",
         recovered: pairs.length,
+        recovered_by_rule: pairs.length - fromTable.length,
+        recovered_from_pair_table: fromTable.length,
         refused: refused.length,
         pairs,
         refused_candidates: refused,
+        unpaired_candidates: UNPAIRED_CANDIDATES,
       },
       null,
       2,
@@ -1796,11 +1846,11 @@ export function resolveRepeatPairs(verdicts, rows, committed, priorMigrations = 
         ledgerByPosts.get([t.msp_kept, t.msp_repeat].join("/")) ??
         null;
       if (absorbed_id && kept_id)
-        migrations[absorbed_id] = {
-          merged_into: kept_id,
-          msp_posts: [t.msp_kept, t.msp_repeat],
-          note:
-            `Merged into ${kept_id}, which carries the establishment's names and its commune. ` +
+        forwardRetiredId(
+          migrations,
+          absorbed_id,
+          kept_id,
+          `Merged into ${kept_id}, which carries the establishment's names and its commune. ` +
             `${REPEAT_POSTS_NOTE} Posts ${t.msp_kept} and ${t.msp_repeat} are the same establishment, ` +
             `entered twice in ${t.language === "fr" ? "French" : "Arabic"} under the same name` +
             (t.cross_wilaya
@@ -1808,7 +1858,8 @@ export function resolveRepeatPairs(verdicts, rows, committed, priorMigrations = 
                 `the establishment's own place; nothing but that tag put it in wilaya ${t.wilaya_codes[1]}`
               : "") +
             `. ${kept_id} is kept because ${REPEAT_KEPT_BECAUSE[t.kept_because]}.`,
-        };
+          { msp_posts: [t.msp_kept, t.msp_repeat] },
+        );
       return { kept_id, absorbed_id, ...t };
     });
   return { pairs, kept: ordered.filter((t) => !t.merged), migrations };
