@@ -75,8 +75,14 @@ pnpm validate    # schema + integrity checks on the dataset
 
 It ends with a bundler check ([`scripts/check-bundlers.mjs`](scripts/check-bundlers.mjs),
 also `pnpm check-bundlers`): it packs the real tarballs, bundles them with esbuild
-and runs the output, because a package can load perfectly in Node and still fail in
-a bundled app (issue #276).
+and with Vite and runs the output, because a package can load perfectly in Node and
+still fail in a bundled app (issues #276 and #290).
+
+That is also why every package reaches its JSON through a generated
+`loaders.cjs`, one `require` of a literal path per data file, instead of joining
+a path at run time, which a bundler rewrites. Don't hand-edit a `loaders.cjs`:
+when a dataset gains or loses a data file, run `pnpm generate-loaders` and commit
+what it writes. `pnpm validate` fails on a stale one.
 
 ### 4. Open a pull request
 

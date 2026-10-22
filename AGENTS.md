@@ -68,9 +68,10 @@ pulls in gitignored `research/<pkg>/` until they are next touched.
    sorted, UTF-8, sourced (JORA / Algérie Poste / ONS), bilingual FR/AR.
 3. **`pnpm validate`**: schema + integrity checks, then a bundler check
    ([`scripts/check-bundlers.mjs`](scripts/check-bundlers.mjs), on its own as
-   `pnpm check-bundlers`) that packs the real tarball, bundles it with esbuild
-   and runs the output, because a package can load in Node and still fail in a
-   bundled app (issue #276). Must pass.
+   `pnpm check-bundlers`) that packs every real tarball, bundles it with esbuild
+   and with Vite and runs the output, because a package can load in Node and
+   still fail in a bundled app (issues #276 and #290). Must pass. If a dataset
+   gained or lost a data file, `pnpm generate-loaders` first (next item).
 4. **Add a changeset** if a published package changed: `pnpm changeset`
    (data semver: **major** = breaking schema · **minor** = new data/format ·
    **patch** = corrections).
@@ -116,6 +117,12 @@ Full details and one-time setup: [`RELEASING.md`](RELEASING.md).
 ## Don't
 
 - Hand-edit generated mirrors (`packages/dataset/data/poste/`).
+- Hand-edit a package's `loaders.cjs`, or make an `index.js` read a data file by
+  a path built at run time. Each package reaches its JSON through one generated
+  loader per data file, with a literal path a bundler can follow, because a
+  computed path builds fine and then throws ENOENT in a bundled app (#290). A
+  dataset that gains or loses a data file needs
+  `node scripts/generate-loaders.mjs`; `pnpm validate` fails on a stale loader.
 - Type a daira or commune count into a carrier. They are derived from the records
   by `node scripts/sync-division-counts.mjs --write`; run it instead.
 - Push a bump without a changeset, or a changeset without a source for the data.

@@ -29,7 +29,7 @@
  */
 
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -121,45 +121,53 @@ function withLoaderInFiles(manifest) {
   return { ...manifest, files };
 }
 
-const check = process.argv.includes("--check");
-const stale = [];
-let written = 0;
+function main(check) {
+  const stale = [];
+  let written = 0;
 
-for (const dir of loaderPackages()) {
-  const manifestPath = join(PACKAGES, dir, "package.json");
-  const manifest = JSON.parse(readFileSync(manifestPath, "utf-8"));
-  const files = dataFilesFor(dir);
-  const wanted = render(manifest.name, dir, files);
-  const target = join(PACKAGES, dir, "loaders.cjs");
-  const current = existsSync(target) ? readFileSync(target, "utf-8") : null;
+  for (const dir of loaderPackages()) {
+    const manifestPath = join(PACKAGES, dir, "package.json");
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf-8"));
+    const files = dataFilesFor(dir);
+    const wanted = render(manifest.name, dir, files);
+    const target = join(PACKAGES, dir, "loaders.cjs");
+    const current = existsSync(target) ? readFileSync(target, "utf-8") : null;
 
-  if (current !== wanted) {
-    if (check) stale.push(`${dir}/loaders.cjs is ${current === null ? "missing" : "out of date"}`);
-    else {
-      writeFileSync(target, wanted);
-      written += 1;
-      console.log(`  wrote ${dir}/loaders.cjs (${files.length} data files)`);
+    if (current !== wanted) {
+      if (check) stale.push(`${dir}/loaders.cjs is ${current === null ? "missing" : "out of date"}`);
+      else {
+        writeFileSync(target, wanted);
+        written += 1;
+        console.log(`  wrote ${dir}/loaders.cjs (${files.length} data files)`);
+      }
+    }
+
+    const patched = withLoaderInFiles(manifest);
+    if (patched) {
+      if (check) stale.push(`${dir}/package.json files[] does not ship loaders.cjs`);
+      else {
+        writeFileSync(manifestPath, JSON.stringify(patched, null, 2) + "\n");
+        console.log(`  wrote ${dir}/package.json (files[] + loaders.cjs)`);
+      }
     }
   }
 
-  const patched = withLoaderInFiles(manifest);
-  if (patched) {
-    if (check) stale.push(`${dir}/package.json files[] does not ship loaders.cjs`);
-    else {
-      writeFileSync(manifestPath, JSON.stringify(patched, null, 2) + "\n");
-      console.log(`  wrote ${dir}/package.json (files[] + loaders.cjs)`);
-    }
+  if (stale.length) {
+    console.error(`generate-loaders --check: ${stale.length} problem(s)`);
+    for (const line of stale) console.error(`  ${line}`);
+    console.error("  run: node scripts/generate-loaders.mjs");
+    process.exit(1);
   }
+  console.log(
+    check
+      ? `  OK: every loaders.cjs is in sync (${loaderPackages().length} packages)`
+      : `generate-loaders: ${written} file(s) written`,
+  );
 }
 
-if (stale.length) {
-  console.error(`generate-loaders --check: ${stale.length} problem(s)`);
-  for (const line of stale) console.error(`  ${line}`);
-  console.error("  run: node scripts/generate-loaders.mjs");
-  process.exit(1);
+// Run only as a CLI. The helpers above are exported so
+// test/scoped-bundler-safe.test.mjs can re-render each loader and compare;
+// importing the module must not write a file.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main(process.argv.includes("--check"));
 }
-console.log(
-  check
-    ? `  OK: every loaders.cjs is in sync (${loaderPackages().length} packages)`
-    : `generate-loaders: ${written} file(s) written`,
-);
