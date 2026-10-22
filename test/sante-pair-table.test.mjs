@@ -20,6 +20,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
   TWIN_PAIR_TABLE,
+  UNPAIRED_CANDIDATES,
   assertPairTable,
   pairTableSides,
 } from "../packages/sante/scripts/twin-pair-table.mjs";
@@ -149,6 +150,36 @@ test("pair table: every row shipped as one bilingual record with the absorbed id
     assert.ok(migration, `${pair.absorbed_id} retired with no migration entry`);
     assert.equal(migration.merged_into, pair.kept_id);
     assert.deepEqual(migration.msp_posts, [row.msp_fr, row.msp_ar]);
+  }
+});
+
+// The national measurement the table was asked for: every FR/AR candidate still
+// unpaired in the shipped data. It is what makes "no twin is missed" a fact this
+// build re-establishes rather than a claim made once in a ticket, so it has to
+// agree with the data and with the refusals recorded beside it.
+test("pair table: the measurement lists every still-unpaired candidate and nothing it merged", () => {
+  const leftovers = report.monolingual_leftovers;
+  assert.ok(leftovers.length > 0, "the measurement has to be published, even when it is not empty");
+  const byPosts = new Set(leftovers.map((c) => `${c.msp_fr}/${c.msp_ar}`));
+  // a pair this release merged is no longer a leftover
+  for (const row of TWIN_PAIR_TABLE)
+    assert.equal(
+      byPosts.has(`${row.msp_fr}/${row.msp_ar}`),
+      false,
+      `${row.msp_fr}/${row.msp_ar} was merged and is still listed as unpaired`,
+    );
+  // and every case the table refused IS one, so the refusal can be checked
+  for (const row of UNPAIRED_CANDIDATES)
+    assert.ok(
+      byPosts.has(`${row.msp_fr}/${row.msp_ar}`),
+      `${row.msp_fr}/${row.msp_ar} is recorded as left unpaired but is not an unpaired candidate`,
+    );
+  // the measurement is derived, so it has to match the records it is derived from
+  const monolingual = new Set(records.filter((r) => !(r.name_fr && r.name_ar)).map((r) => r.id));
+  for (const c of leftovers) {
+    assert.ok(monolingual.has(c.id_fr), `${c.id_fr} is listed as French-only but is not`);
+    assert.ok(monolingual.has(c.id_ar), `${c.id_ar} is listed as Arabic-only but is not`);
+    assert.equal(c.msp_gap, Math.abs(Number(c.msp_fr) - Number(c.msp_ar)));
   }
 });
 
