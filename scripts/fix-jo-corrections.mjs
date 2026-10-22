@@ -9,7 +9,10 @@
 //   node scripts/fix-jo-corrections.mjs --check    # exit 1 if a carrier drifts
 //   node scripts/fix-jo-corrections.mjs --write
 //   node scripts/fix-jo-corrections.mjs --write --target /path/algeria.json
+//        # writes that carrier and nothing else: this repo's own carriers are
+//        # read for the indexes and the drift checks, never written
 //   node scripts/fix-jo-corrections.mjs --write --root /path/to/a/repo/copy
+//        # moves this repo's own carriers to another checkout or a throwaway copy
 
 import { readFileSync, renameSync, writeFileSync } from "node:fs";
 import { basename, dirname, join, resolve } from "node:path";
@@ -114,10 +117,28 @@ function dairaFor(code, wilaya, name, where) {
 
 // ---------------------------------------------------------------------------
 // Output queue, written atomically only once every carrier has been built.
+//
+// --target NARROWS THE QUEUE TO THE TARGETS. The repository's own carriers are
+// still read, because the indexes and every drift assertion come from them, but
+// they are not queued: a --target run writes the targets and nothing else. Every
+// writer went through this gate rather than each one learning the rule, because
+// three of them had not: patchCsv, patchSql and the ecommerce writers ran at
+// module level against packages/dataset/data whatever --target said, so the test
+// suite's own --write --target run put El Euch (3427) back on a superseded
+// centroid in csv/communes.csv and sql/full.sql while the suite passed (private
+// tracker #247). Point this script at another checkout with --root instead.
 // ---------------------------------------------------------------------------
+const targetPaths = new Set(targets.map((path) => resolve(path)));
+/** With --target, only a target is an output. */
+const queued = (path) => targets.length === 0 || targetPaths.has(resolve(path));
+
 const outputs = [];
-const queueJson = (path, value) => outputs.push([path, `${JSON.stringify(value, null, 2)}\n`]);
-const queueText = (path, value) => outputs.push([path, value]);
+const queueJson = (path, value) => {
+  if (queued(path)) outputs.push([path, `${JSON.stringify(value, null, 2)}\n`]);
+};
+const queueText = (path, value) => {
+  if (queued(path)) outputs.push([path, value]);
+};
 
 function writeAtomic(path, content) {
   const tmp = `${path}.${process.pid}.tmp`;
@@ -179,9 +200,13 @@ const COMMUNE_KEYS = {
 };
 
 // --- the three split commune files -----------------------------------------
+// Kept after patching as well as queued: dairas.json recounts from them, and
+// under --target they are read and patched in memory but never written.
+const patchedCommunes = [];
 for (const path of splitPaths) {
   const rows = JSON.parse(readFileSync(path, "utf8"));
   for (const row of rows) patchCommune(row, COMMUNE_KEYS, basename(path));
+  patchedCommunes.push(...rows);
   queueJson(path, rows);
 }
 
@@ -229,9 +254,6 @@ const dairas = JSON.parse(readFileSync(dairasPath, "utf8"));
 for (const daira of dairas) daira.name_fr = dairaRename(daira.wilaya_code, daira.name_fr);
 // A moved commune changes two dairas' counts; recount those from the patched
 // split files rather than adjusting by one, so a re-run stays idempotent.
-const patchedCommunes = splitPaths.flatMap((path) =>
-  JSON.parse(outputs.find(([p]) => p === path)[1]),
-);
 for (const move of communeDairaCorrections) {
   for (const name of [move.from, move.to]) {
     const count = patchedCommunes.filter(

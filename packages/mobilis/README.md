@@ -149,7 +149,7 @@ Mobilis's Arabic wilaya labels to GeoAlgeria's canonical codes. That name join
 is required because Mobilis's numeric ids 59–69 use a different ordering from
 the official codes.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). The underlying data is © **ATM Mobilis**, redistributed
 for reference and to power [GeoAlgeria](https://geoalgeria.com). Verify against

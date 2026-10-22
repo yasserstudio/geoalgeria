@@ -60,6 +60,12 @@ export interface PostOffice {
   postal_code_old: string | null;
   /** Street address. */
   address: string;
+  /** Present when a versioned evidence review corrected this record
+   *  (quality/overrides/). */
+  review_status?: "corrected";
+  reviewed_at?: string;
+  reviewed_by?: string;
+  review_evidence?: string[];
 }
 
 /** An ATM (GAB, distributeur automatique). */

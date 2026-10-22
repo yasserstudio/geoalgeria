@@ -1,5 +1,66 @@
 # Changelog
 
+## 2.4.0
+
+### Minor Changes
+
+- efd2b84: Commune postal codes now match in every format, and 135 communes gain one.
+
+  The CSV, GeoJSON and SQL exports, and the three e-commerce files, had kept the codes they shipped before the 2026-08-07 repair of the main tables, so 187 communes read a different postal code depending on which file you installed. All eight carriers now say what `data/algeria.json` says, and a test fails on any disagreement.
+
+  135 communes that carried no code at all now have one, and nothing that already had a code changed. Algérie Poste's capture was reconciled with the current 69 wilayas after that repair, which is what lets those communes' offices be found: 108 of the 135 are communes of the reform wilayas 59 to 69, and 27 are not. Larbaa (Batna) is the one commune left with no citable code, so postal coverage is 1,540 of 1,541.
+
+  A postal code is the code of the commune's principal Algérie Poste office, so its two-digit prefix is that office's wilaya at the time the code was issued and does not necessarily equal `wilaya_code`: Aflou is `03001` in wilaya 59. That holds for 108 of the 1,540 coded communes, all of them in wilayas 59 to 69. It is now documented in `types/index.d.ts` and the READMEs, beside the same caveat on `code_commune`, so a consumer does not validate a code against the wrong wilaya.
+
+- e744d65: Three post offices are named after the places their own fields name.
+
+  BaridiMap glued a dash to a word inside the Arabic name instead of separating two
+  halves of it, so folding the dash would have published a separator that was never
+  there:
+
+  - `2298` read `عين –الزانة`, with the dash inside the commune name itself, and
+    now reads `عين الزانة`, which is its own `commune_ar` and its Latin `AIN ZANA`.
+  - `3935` read `برج –بو-عريريج - أخروف`, which split the wilaya name in two, and
+    now reads `برج بوعريريج - أخروف`: `commune_ar` is `برج بوعريريج` and the Latin
+    name `BORDJ BOU ARRERIDJ AKHROUF`, so the farm is the only real separator.
+  - `725` read `سوق أهراس –درايعية أحمد-`, where the separator is real and the
+    glued dash and the trailing hyphen are not, and now reads
+    `سوق أهراس - درايعية أحمد`.
+
+  The source word order is kept in all three, the Latin `name` was always correct
+  and is unchanged, and so are ids, coordinates, codes, postal codes and counts.
+  The `geoalgeria` postal mirror follows, byte-identical as always.
+
+  Each correction is a reviewed entry in `quality/overrides/poste.json`, so it
+  survives the next BaridiMap pull and declines to apply if the upstream name
+  moves. That gives `postoffices.json` the four review fields `atms.json` already
+  carries, `review_status`, `reviewed_at`, `reviewed_by` and `review_evidence`,
+  declared optional on `PostOffice` as they are on `Atm`. **`csv/postoffices.csv`
+  gains those four columns**, which is why this is a minor rather than a patch: the
+  columns are appended, every existing column keeps its position, and no value
+  changes. A consumer reading the CSV by header name is unaffected; one reading a
+  fixed column count is not.
+
+### Patch Changes
+
+- ec83e55: GeoAlgeria now works in a bundled app: an ESM import resolves, and Next.js with Turbopack serves the data.
+
+  `import geo from "geoalgeria"` failed before this release, and so did the fallback. Two separate faults, both reproduced on Next.js 16.4 with Turbopack. The `exports` map offered a `require` path and nothing else, so the ESM import ended in `Module not found: Can't resolve 'geoalgeria'`, even with the package listed in `serverExternalPackages`. And the data was read at runtime from a path built out of `__dirname`, which a bundler rewrites, so `require("geoalgeria")` built fine and then every request died with `ENOENT /ROOT/node_modules/geoalgeria/data/algeria.json`.
+
+  The exports map now answers an ESM import as well as a `require`, and every JSON file is reached by a static `require("./data/<file>.json")` that a bundler can follow. `require("geoalgeria")` keeps working exactly as before, the getters stay lazy, and every value is unchanged: 69 wilayas, 551 dairas, 1,541 communes, 3,908 post offices, 2,026 ATMs. In TypeScript the default import needs `esModuleInterop` (or `allowSyntheticDefaultImports`), because the package is CommonJS; `import geo = require("geoalgeria")` needs neither.
+
+  One thing to know when you bundle: a bundler inlines the JSON it can see, all ten files, the post office and ATM mirrors included. An app that needs one slice can keep its bundle small by taking that file on its own, for example `import communes from "geoalgeria/data/ecommerce/communes.json"` (in plain Node that import needs `with { type: "json" }`).
+
+- 1581b81: Each of the 21 wilayas created in 2019 and 2026 now publishes its chef-lieu commune's postal code instead of a synthetic one.
+
+  Wilayas 1 to 48 have always published their chef-lieu's code: wilaya 1 reads Adrar's `01000`, wilaya 3 reads Laghouat's `03000`. Wilayas 49 to 69 published `NN000` built from the wilaya's own number instead, and no Algérie Poste office holds any of those 21 values. Each wilaya's own chef-lieu said otherwise in the same install: wilaya 59 Aflou read `59000` while commune 319 Aflou read `03001`, the code of a real office.
+
+  The rule is now the same for all 69: a wilaya's `postal_code` is its chef-lieu commune's. Wilaya 49 reads `49001` (Timimoun), wilaya 59 reads `03001` (Aflou), wilaya 69 reads `32003` (El Abiodh Sidi Cheikh). Every derived code was checked against Algérie Poste's own office register, by its code and wilaya, so each one is held by a real office of that chef-lieu.
+
+  The two-digit prefix is the issuing office's wilaya, which is why 11 of the 69 no longer start with their own number: a commune promoted into wilayas 59 to 69 kept the postal numbering of its pre-reform wilaya, exactly as 108 commune codes already do. A consumer reading a wilaya's `postal_code` as a prefix of its communes' codes was reading something the postal service never guaranteed; a consumer joining `capital_commune_code` to the commune table already saw this value.
+
+  Corrected in all five carriers at once, so JSON, CSV, GeoJSON and SQL agree: `data/algeria.json`, `data/csv/wilayas.csv`, `data/geojson/wilayas.geojson`, `algeria.geojson` and the wilaya rows of `data/sql/full.sql`. No field, record or count changes: still 69 wilayas, 551 dairas and 1,541 communes.
+
 ## 2.3.0
 
 ### Minor Changes

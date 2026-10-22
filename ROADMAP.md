@@ -162,21 +162,27 @@ reads as further along than it is.
   that input per run.
   _(logged 2026-10-01, updated 2026-10-03)_
 
-- [ ] **`communes.csv` and `communes.geojson` disagree with `algeria.json` on
-  187 commune postal codes**: 132 where the mirror is null and the table has a
+- [x] **`communes.csv` and `communes.geojson` disagree with `algeria.json` on
+  187 commune postal codes**: 132 where the table is null and the mirror has a
   value, 54 where both differ, 1 the other way.
-  `scripts/fix-commune-postal-codes.mjs` writes only the four JSON tables,
+  `scripts/fix-commune-postal-codes.mjs` wrote only the four JSON tables,
   never the geojson/csv/sql/ecommerce mirrors, so consumers of those mirrors
-  read wrong postal codes today.
-  _(logged 2026-10-01)_
+  read wrong postal codes. The script writes all eight carriers now, under the
+  from/to refusal contract of `fix-commune-centres.mjs`, and
+  `test/commune-postal-carriers.test.mjs` fails on any disagreement. The
+  table's 132 nulls were stale: the Algérie Poste capture was reconciled with
+  the current 69 wilayas after that run, so re-deriving fills 135 communes and
+  replaces none.
+  _(logged 2026-10-01, closed 2026-10-13)_
 
-- [ ] **`fix-jo-corrections.mjs` writes CSV and SQL outside `--target`**: its
-  CSV/SQL/ecommerce writers run at module top level against
-  `packages/dataset/data` unconditionally, even under `--target`. Harmless
-  behind the supersede guard PR #252 added to all four writers, and the test no
-  longer runs it against the real carriers (`--root`, PR #257), but the scoping
-  bug itself remains.
-  _(logged 2026-10-01)_
+- [x] **`fix-jo-corrections.mjs` writes CSV and SQL outside `--target`**: its
+  CSV/SQL/ecommerce writers ran at module top level against
+  `packages/dataset/data` unconditionally, even under `--target`. The output
+  queue drops anything that is not a `--target` when one is given, `--root`
+  still moves the whole run to another checkout, and
+  `test/jo-corrections-target.test.mjs` drifts all 20 outputs in a throwaway
+  copy and fails if any of them is written.
+  _(logged 2026-10-01, closed 2026-10-13)_
 
 - [ ] **The `phone_code` of wilayas 1 to 58 has no established official source.**
   The 2026 cohort (59 to 69) now carries its evidence in

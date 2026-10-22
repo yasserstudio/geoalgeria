@@ -188,12 +188,44 @@ the same release, so neither id is older: the merged record keeps the
 sequenced by name and a Latin name sorts before an Arabic one.
 _Avoid_: duplicate, double, clone, Arabic record
 
+**Repeat post**:
+A second upstream entry for the same place in the SAME language: the Ministry of
+Health registry entered a handful of establishments twice under the one name, so
+one establishment is one post and one repeat post. A Twin post adds a language, a
+repeat post adds nothing, and the two are reached by different rules: the twin
+rule pairs one language with the other and can never see a repeat post. The
+generator folds the repeat post into the same record, which cites it as
+`refs.msp_repeat`, and the record stays on the entry the registry describes most
+fully, so the kept id is not always the lower-sequence one.
+_Avoid_: twin post, same-language twin, re-entry, clone
+
 **Half-record**:
 A record standing for one Twin post while the other is published separately: half
 a facility's names, and its own coordinate. Merging the two retires the
 half-record's id, which `retired-ids.json` then reserves for good and forwards to
 the record that carries the data now.
 _Avoid_: partial record, orphan, fragment
+
+**Double mapping**:
+One real place a crowdsourced source holds as more than one element, because two
+contributors added it, or one mapped the node and another the building outline. Not
+a Twin post, which is a registry publishing one place twice on purpose and in two
+languages: a double mapping is one source contradicting itself by accident, so its
+elements disagree on spelling and on which fields they carry at all. The elements
+are **merged** into one record, which keeps every field any of them stated and
+whose own value stands wherever two of them disagree; the merged-away element's id
+is retired and forwarded in `retired-ids.json`, which cites every upstream element
+the merge stood for. Two elements are one double mapping when they stand within 40 m
+and their names share a **Loose name key**.
+_Avoid_: duplicate, de-duplication, dupe, clone, collision, twin (that is a Twin post)
+
+**Loose name key**:
+A name folded to a Loose key per script, so a mixed-script name yields one key per
+language, with the words that say only what every record in the set is ("pharmacy")
+dropped. It is what a merge compares instead of the display text, which is why one
+spelling of a place can meet another. Always named in full: an unqualified "name
+key" says neither which fold nor which tier.
+_Avoid_: name key, dedup key, match key, normalized name
 
 **Upstream link**:
 An identifier a record carries so a consumer can join it to an outside database without matching on a name. The administrative records carry two: an **OSM relation id** (`osm_relation_id`) and a **Wikidata item** (`wikidata`). A link is harvested from a reviewed linkage, in two documented tiers, and is null where no tier has one or where a second source proved the upstream value names a different place; it is never resolved from a name, and no id is carried by two records, because one upstream relation is one place.
@@ -255,6 +287,32 @@ _Avoid_: fetched, scraped, synced
 **Geometry confidence**:
 How honest a coordinate is: `exact` (a real per-facility point → a Pin) vs `approximate` (a commune/wilaya centroid → a Dot) vs `null` (there is no coordinate at all → neither). Coarse-grained in `geo_precision`, which is null if and only if `lat`/`lng` are null; method detail (`osm_node`, `commune_centroid`) lives in `geo_method`, null on those same records because no method produced a point.
 _Avoid_: accuracy, precision score
+
+**Rounded placeholder**:
+A coordinate a source rounded instead of measuring, so it names an area and not a facility and can never be `exact`. ADR 0001 rules one out at L0. Two shapes, and the second hides inside the first's blind spot: rounded in **decimal degrees**, which `MIN_EXACT_DECIMALS` catches by counting fraction digits (35, 8 locates a degree square); and **degrees and minutes with the seconds dropped**, which survives that count because minutes divided by 60 leave a long tail, so `onArcminuteGrid` tests the whole-arcminute grid on both axes instead (33.58333, 2.66667 is 33°35'N 2°40'E, a cell about 1.5 km across). A third shape is a point borrowed from elsewhere, which is a Copied claim rather than a rounding.
+_Avoid_: rounded coordinate, low-precision point, DMS artifact, placeholder (unqualified)
+
+### Source rights
+
+**Source rights record**:
+One Source's rights decision as data: its permanent Source key, the keys packages capture it under, its Access class and Rights class, the Targets it is cleared for, its attribution and NOTICE text, the evidence the classification was read from with a retrieval date, a review date, and a slot for a Recorded refusal. One record per Source, never per package, because packages mix Sources. Lives in `packages/schema/rights/registry.json`, a repository file read by path from a checkout and published in no package; `isSourceClearedFor` is the only question asked of it.
+_Avoid_: licence record, rights manifest, permission table
+
+**Access class**:
+How a Source is reached: `public-access`, `account-access`, `permissioned-access` or `private-research`. Separate from the Rights class, because being able to read something is not permission to republish it.
+_Avoid_: visibility, availability, public/private
+
+**Rights class**:
+What GeoAlgeria may do with a Source: `open-licensed`, `public-domain-or-cc0`, `permissioned`, `rights-unconfirmed`, `restricted-research` or `prohibited`. `rights-unconfirmed` is the honest default for a Source whose terms were read and grant nothing; `evidence_type: official` describes authority and is never a Rights class.
+_Avoid_: licence class, permission level, trust tier
+
+**Target**:
+A place GeoAlgeria publishes to, and the unit a Source is cleared for: `web`, `npm`, `cdn` (the signed Content release), `mobile-pack` (an offline catalog on a device) or `live` (the app's Live layer). A Source with no record is cleared for none of them.
+_Avoid_: channel, destination, distribution
+
+**Recorded refusal**:
+A written refusal from a Source owner, with the date it was recorded. Once recorded it removes every Target, so the next Content release drops that Source and installed apps drop it when they activate that release.
+_Avoid_: takedown, opt-out, objection
 
 ### Coordinate review
 

@@ -25,13 +25,27 @@ export interface Refs {
 /** A pharmacy (officine), sourced from OpenStreetMap (ODbL). Every field is
  *  present on every record; the optional ones are `null` where OSM has no tag. */
 export interface Pharmacy {
-  /** Stable id, `{wilaya_code}-{seq}` (e.g. "16-00042"). Unique within this file. */
+  /** Stable id, `{wilaya_code}-{seq}` (e.g. "16-00042"). Unique within this file.
+   *  The prefix is always this record's own `wilaya_code`, so reading the wilaya
+   *  off an id is safe. A record whose wilaya changes is therefore re-issued
+   *  rather than kept under a prefix that no longer describes it: the old id goes
+   *  to `data/retired-ids.json`, where a `migrations` entry forwards it to the new
+   *  one, so an id a consumer cached still resolves in a single hop. */
   id: string;
-  /** Best display name, or null (many OSM pharmacies are unnamed). */
+  /** Best display name, or null (many OSM pharmacies are unnamed). The OSM `name`
+   *  tag with runs of whitespace collapsed to one, the ends trimmed and any
+   *  leading combining marks removed, and nothing else: no letter is added,
+   *  removed, reordered or transliterated. So this one may hold more than one
+   *  script at once, and may be the only field carrying a Tamazight name, since
+   *  Tifinagh is published here rather than in `name_fr` or `name_ar`, which hold
+   *  one script each. Prefer `name_fr` or `name_ar` for a single-script label. */
   name: string | null;
-  /** French/Latin name, or null. */
+  /** French/Latin name, or null. Latin letters only: a tag holding more than one
+   *  script is split at each boundary, never translated. */
   name_fr: string | null;
-  /** Arabic name, or null. */
+  /** Arabic name, or null. Arabic letters only: a tag holding more than one
+   *  script is split at each boundary, never transliterated. Tifinagh never lands
+   *  here; it stays on `name`. */
   name_ar: string | null;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;

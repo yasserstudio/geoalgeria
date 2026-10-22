@@ -49,7 +49,7 @@ agb-bouira,BOUIRA,10,,,,36.3755,3.88263,exact,bank_locator,bank_locator,agb,"01,
 agb-boumerdes,BOUMERDES,35,,,,36.750579,3.473218,exact,bank_locator,bank_locator,agb,"Hai Driche, n°8 - Boumerdès.",024 79 96 03 / 024 79 96 04,,,,
 agb-chlef,Chlef ,02,,,,36.167129,1.334756,exact,bank_locator,bank_locator,agb,"46, Boulevard des Martyrs, Chlef",020 64 23 88 / 020 64 25 23,,,,
 agb-chlefelmokrani,Chlef El Mokrani,02,,,,36.1574,1.32583,exact,bank_locator,bank_locator,agb,"Rue el mokrani angle rue 1er novembre, lot 60 propriété N°01 Chlef",020 64 30 53 / 020 64 34 12,,,,
-agb-constantine,CONSTANTINE,25,,,,36.35,6.6,approximate,bank_locator,bank_locator,agb,01 cité Essaada Sidi Mabrouk Superieur Constantine.,030 33 69 90 / 030 33 69 64,,,,
+agb-constantine,CONSTANTINE,25,,2501,Constantine,36.3575503,6.6357619,exact,osm_node,bank_locator,agb,01 cité Essaada Sidi Mabrouk Superieur Constantine.,030 33 69 90 / 030 33 69 64,corrected,2026-10-13,geoalgeria-arcminute-review,"[""https://www.openstreetmap.org/node/4828121569"",""https://www.openstreetmap.org/node/2631787447""]"
 agb-constantinealimendjeli,Constantine Ali Mendjeli,25,,,,36.2579851078915,6.59048575074655,exact,bank_locator,bank_locator,agb,Uv 07 Lot n°66 Ali  Mendjeli  El Khroub- Constantine.,031 74 53 72,,,,
 agb-delyibrahim,DELY IBRAHIM,16,,,,36.753675,2.976194,exact,bank_locator,bank_locator,agb,"211, Bois des Cars 2, Dely Brahim, Alger",020 39 57 16 /  020 39 57 17,,,,
 agb-didouchemouradselfbanking,DIDOUCHE MOURAD (Self Banking),16,,,,36.77159,3.057602,exact,bank_locator,bank_locator,agb,"Rue Didouche Mourad, Bâtiment A, Lot31.",,,,,
@@ -65,7 +65,7 @@ agb-jijel,JIJEL,18,,,,36.8045041,5.753700400000071,exact,bank_locator,bank_locat
 agb-khenchla,KHENCHLA,40,,,,35.417,7.14163,exact,bank_locator,bank_locator,agb,Sup  27 Lot 326 Route de Babar - Khenchela.,032 73 53 68 / 032 73 53 70,,,,
 agb-kolea,KOLEA,42,,,,36.648691,2.762462,exact,bank_locator,bank_locator,agb,Route de fouka bt12 A bis commune de kolea TIPAZA,024 36 21 40/ 024 36 23 38,,,,
 agb-kouba,KOUBA,16,,,,36.728325,3.088679,exact,bank_locator,bank_locator,agb,"Parc Ben Omar, N°27, Kouba",023 78 29 85,,,,
-agb-laghouat,LAGHOUAT,03,,,,33.58333,2.66667,exact,bank_locator,bank_locator,agb,Rue de l’Indépendance - Laghouat.,029 10 16 39 / 029 10 15 61,,,,
+agb-laghouat,LAGHOUAT,03,,0301,Laghouat,33.8,2.875,approximate,commune_centroid,bank_locator,agb,Rue de l’Indépendance - Laghouat.,029 10 16 39 / 029 10 15 61,corrected,2026-10-13,geoalgeria-arcminute-review,"[""https://www.openstreetmap.org/relation/6546026"",""https://www.openstreetmap.org/way/42329273""]"
 agb-lessources,LES SOURCES,16,,,,36.7341,3.06215,exact,bank_locator,bank_locator,agb,"2, Rue Guy De Maupassant, Alger",023 42 04 53,,,,
 agb-lesvergers,LES VERGERS,16,,,,36.71499,3.05002,exact,bank_locator,bank_locator,agb,"N°07 route nationale N°01 Lot N°32 groupe de   propriété N°09, Les Vergers, Bir Mourad Rais, Alger.",020 05 75 66 / 020 05 75 65,,,,
 agb-mascara,MASCARA,29,,,,35.398137,0.137359,exact,bank_locator,bank_locator,agb,17 Lot 108 Rue Omar Baghzal et Allée Kouizi Ahmed et rue Larbi Ben M'hidi – Mascara.,045 75 33 36 / 045 75 33 26,,,,
@@ -82,7 +82,7 @@ agb-setif,SETIF,19,,,,36.1969,5.41509,exact,bank_locator,bank_locator,agb,"143, 
 agb-sidibelabbes,SIDI BEL ABBES,22,,,,35.2,-0.641389,approximate,bank_locator,bank_locator,agb,"N° 8, Angle de Av .Cheikh Larbi Tébessi & Colonel Lotfi -Sidi-Bel-Abbés.",048 74 31 49 / 048 74 31 50 / 048 74 31 52,,,,
 agb-sidifredjselfbanking,SIDI FREDJ (Self Banking),16,,,,36.763114,2.843978,exact,bank_locator,bank_locator,agb,"Hôtel El Manar, Complexe Touristique Sidi Fredj, Staoueli, Alger",,,,,
 agb-skikda,Skikda,21,,,,36.8713289,6.9102513,exact,bank_locator,bank_locator,agb,"Beni Malek, Lot 02 - Skikda.",038 75 33 08 / 038 75 31 05,,,,
-agb-tebessa,Tebessa,12,,,,35,8,approximate,bank_locator,bank_locator,agb,Cite Houari Boumediene Lot 183 groupe propriété n°181 -  Tébessa.,037 51 51 14 / 037 51 51 12,,,,
+agb-tebessa,Tebessa,12,,1201,Tébessa,35.4078992,8.1258582,approximate,osm_way,bank_locator,agb,Cite Houari Boumediene Lot 183 groupe propriété n°181 -  Tébessa.,037 51 51 14 / 037 51 51 12,corrected,2026-10-13,geoalgeria-arcminute-review,"[""https://www.openstreetmap.org/way/288328744""]"
 agb-tiaret,TIARET,14,,,,35.3674,1.32203,exact,bank_locator,bank_locator,agb,17 Boulevard Ben Badis - Tiaret.,046 20 24 00 / 046 20 24 03,,,,
 agb-tiziouzou,TIZI OUZOU,15,,,,36.7167,4.05,approximate,bank_locator,bank_locator,agb,"Rue Stiti Ali, n°15 - Tizi Ouzou.",026 45 87 70 / 026 45 87 30,,,,
 agb-tlemcen,TLEMCEN,13,,,,34.883,-1.32577,exact,bank_locator,bank_locator,agb,"N°5 Bd Mohamed V, Hai Bab El Khemis - Tlemcen.",043 41 74 38 / 043 41 74 37 / 043 41 74 40,,,,
@@ -223,8 +223,8 @@ badr-408,BENI ABBES,52,,,,30.131895,-2.173175,exact,bank_locator,bank_locator,ba
 badr-409,BECHAR,08,,,,31.617115,-2.214099,exact,bank_locator,bank_locator,badr,RUE CDT FERRADJ CENTRE VILLE BECHAR,,,,,
 badr-410,TINDOUF,37,,,,27.6674579,-8.1494725,exact,bank_locator,bank_locator,badr,CITE MOUSSANI,,,,,
 badr-411,BENI-OUNIF,08,,,,32.04875,-1.24878,exact,bank_locator,bank_locator,badr,RUE LAROUI MOHAMED BENI - OUNIF,,,,,
-badr-412,KENADSA,08,,,,31.56667,-2.43333,exact,bank_locator,bank_locator,badr,CITE IBN BADIS CNE DE KENADSA,,,,,
-badr-413,TAGHIT,08,,,,30.91667,-2.03333,exact,bank_locator,bank_locator,badr,CENTRE DE VILLE DE TAGHIT,,,,,
+badr-412,KENADSA,08,,0810,Kenadsa,31.5560899,-2.4309637,exact,osm_node,bank_locator,badr,CITE IBN BADIS CNE DE KENADSA,,corrected,2026-10-13,geoalgeria-arcminute-review,"[""https://www.openstreetmap.org/node/6337732136""]"
+badr-413,TAGHIT,08,,0813,Taghit,30.920106,-2.032217,approximate,commune_centroid,bank_locator,badr,CENTRE DE VILLE DE TAGHIT,,corrected,2026-10-13,geoalgeria-arcminute-review,"[""https://www.openstreetmap.org/relation/6531002""]"
 badr-425,BLIDA,09,,,,36.474863,2.8282462,exact,bank_locator,bank_locator,badr,"47, Boulevard BEN BOULAID - BLIDA -",,,,,
 badr-426,BLIDA,09,,,,36.4705255,2.828664,exact,bank_locator,bank_locator,badr,"07, PLACE du 1er NOVEMBRE",,,,,
 badr-427,OULED YAICH,09,,,,36.5035109,2.8682537,exact,bank_locator,bank_locator,badr,CITE 1652 Logts AADL – OULED YAICH –,,,,,
@@ -369,7 +369,7 @@ badr-768,EL MALAH,46,,,,35.3899817,-1.0959775,exact,bank_locator,bank_locator,ba
 badr-769,HAMMAM BOU-HADJAR,46,,,,35.37889,-0.96778,exact,bank_locator,bank_locator,badr,RUE LARBI BENM'HIDI,,,,,
 badr-770,EL AMRIA,46,,,,35.52439,-1.01577,exact,bank_locator,bank_locator,badr,MAISON DE L'AGRICULTURE,,,,,
 badr-771,SFISEF,22,,,,,,,,bank_locator,badr,RUEAISSAT IDIR ( RUE DU TRIBUNAL) SFISEF,,,,,
-badr-772,AIN TEMOUCHENT,46,,,,35.33333,-1.08333,exact,bank_locator,bank_locator,badr,COMPLEXE BD ROUTE D'ORAN,,,,,
+badr-772,AIN TEMOUCHENT,46,,4601,Ain Temouchent,35.3063378,-1.1424099,exact,osm_node,bank_locator,badr,COMPLEXE BD ROUTE D'ORAN,,corrected,2026-10-13,geoalgeria-arcminute-review,"[""https://www.openstreetmap.org/node/6298375922"",""https://www.openstreetmap.org/way/36843537""]"
 badr-773,EMIR ABDELKADER,22,,,,35.2103473,-0.6295963,exact,bank_locator,bank_locator,badr,CITE 274 LOGEMENTS ZONE NORD SIDI DJILLALI,,,,,
 badr-774,SORIA BENDIMERED,22,,,,35.19118226,-0.6333212,exact,bank_locator,bank_locator,badr,RUE LALOUT BELABBES,,,,,
 badr-775,SIDI LAHCENE,22,,,,35.1658323,-0.6924438,exact,bank_locator,bank_locator,badr,RUE DOUSSAS ZOUAOUI,,,,,
@@ -1185,7 +1185,7 @@ cnep-152,AIN- OULMENE,19,,,,35.91927549914939,5.2975231561356235,exact,bank_loca
 cnep-153,EL-EULMA,19,,,,36.14855819493476,5.716914594569407,exact,bank_locator,bank_locator,cnep,Avenue du 1er Novembre 54,036 47 14 04	,,,,
 cnep-154,AIN EL-KEBIRA,19,,,,36.36958612841685,5.50751164999357,exact,bank_locator,bank_locator,cnep,Route de l’Hopital,036 59 28 01,,,,
 cnep-155,BOUGAA,06,,,,36.38342192407127,4.40200560343229,exact,bank_locator,bank_locator,cnep,Cité des Martyrs,036 60 32 03,,,,
-cnep-156,AIN –AZEL,19,,,,35.818133417468474,5.514289744850025,exact,bank_locator,bank_locator,cnep,Cité Ben Boulaid,036 55 45 40,,,,
+cnep-156,AIN AZEL,19,,,,35.818133417468474,5.514289744850025,exact,bank_locator,bank_locator,cnep,Cité Ben Boulaid,036 55 45 40,corrected,2026-10-21,geoalgeria-name-review,"[""https://www.openstreetmap.org/relation/4298137""]"
 cnep-157,BENI-AZIZ,19,,,,36.4639619,5.6382158,exact,bank_locator,bank_locator,cnep,Béni Aziz,036 76 80 23,,,,
 cnep-158,M’SILA,28,,,,35.707983535248,4.536696311754079,exact,bank_locator,bank_locator,cnep,Cité Administrative,035.35.05.38,,,,
 cnep-159,BOUSAADA,68,,,,35.21286895105897,4.177633567278592,exact,bank_locator,bank_locator,cnep,Ancienne  Route de l’Hopital,035 43 44 96,,,,

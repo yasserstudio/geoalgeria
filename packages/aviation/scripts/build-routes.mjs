@@ -31,6 +31,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { toCSV } from "../../schema/index.js";
+import { foldNameDashes } from "../../../scripts/lib/no-em-dash.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -64,11 +65,17 @@ function greatCircle([lng1, lat1], [lng2, lat2], steps = 48) {
 }
 
 function main() {
-  const { routes, planned, endpoints, as_of: asOf } = JSON.parse(readFileSync(SRC, "utf-8"));
+  const { routes, planned, endpoints: rawEndpoints, as_of: asOf } = JSON.parse(readFileSync(SRC, "utf-8"));
   // Validated BEFORE any write, same discipline as writePackageV2: a dataset
   // regenerated without a validity stamp must abort with the directory
   // untouched, not after four files are already on disk.
   if (!asOf) throw new Error("route-dataset.json carries no as_of; rebuild it");
+  // Endpoint names come from Wikipedia by way of the research dataset, which writes
+  // the dash separator the English articles use ("Tunis<en dash>Carthage"). This
+  // script writes route-endpoints.json and the route GeoJSON itself rather than
+  // through writePackageV2, so it folds the separator here, the one place both files
+  // and the from_name/to_name they carry are read from (#294).
+  const endpoints = foldNameDashes(rawEndpoints);
   const ep = Object.fromEntries(endpoints.map((e) => [e.iata, e]));
 
   // One flat table: planned routes are marked rather than split into a second

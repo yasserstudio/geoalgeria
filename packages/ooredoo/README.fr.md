@@ -40,7 +40,7 @@ metadata().wilayas_covered; // 63
 | `ESO` | 436 | Espace Services Ooredoo |
 | `CSO` | 36 | City Shop Ooredoo |
 
-Coordonnées : les 572 géocodées (548 en `exact`, 24 en `approximate`).
+Coordonnées : les 572 géocodées (546 en `exact`, 26 en `approximate`).
 
 ## Formats
 
@@ -51,7 +51,7 @@ Coordonnées : les 572 géocodées (548 en `exact`, 24 en `approximate`).
 
 ## Précision
 
-> Noms, types et coordonnées proviennent de **l'opérateur** (`geo_method : "operator_api"`). Les coordonnées sont en `geo_precision : "exact"` pour 548 points de vente et en `"approximate"` pour 24 : 19 dont la coordonnée source a moins de 3 décimales, et 5 (`16-001`, `16-052`, `31-001`, `48-001`, `67-002`) dont le point de l'API contredit à la fois la wilaya déclarée par Ooredoo et le nom et l'adresse du point de vente, et qui sont ramenés au point de leur commune (`geo_method : "commune_centroid"`). Ces 5 conservent l'identifiant qui leur a été attribué en premier : le préfixe de l'`id` y désigne la wilaya où tombait le mauvais point, et non `wilaya_code` ; l'`id` est à traiter comme opaque. La wilaya est quasi exacte (issue du point relevé) ; la commune est un rapprochement au centroïde le plus proche. L'API classant les points selon l'ancien découpage à 48 wilayas, la wilaya/commune est recalculée depuis les coordonnées vers le découpage actuel à 69 wilayas ; la wilaya déclarée par l'opérateur est conservée dans `operator_wilaya`.
+> Noms, types et coordonnées proviennent de **l'opérateur** (`geo_method : "operator_api"`). Les coordonnées sont en `geo_precision : "exact"` pour 546 points de vente et en `"approximate"` pour 26 : 19 dont la coordonnée source a moins de 3 décimales, 2 (`16-059`, `44-003`) dont la coordonnée source est en degrés et minutes entières, les secondes tombées, soit une cellule d'environ 1,5 km et non le point du magasin, et 5 (`16-001`, `16-052`, `31-001`, `48-001`, `67-002`) dont le point de l'API contredit à la fois la wilaya déclarée par Ooredoo et le nom et l'adresse du point de vente, et qui sont ramenés au point de leur commune (`geo_method : "commune_centroid"`). Ces 5 conservent l'identifiant qui leur a été attribué en premier : le préfixe de l'`id` y désigne la wilaya où tombait le mauvais point, et non `wilaya_code` ; l'`id` est à traiter comme opaque. La wilaya est quasi exacte (issue du point relevé) ; la commune est un rapprochement au centroïde le plus proche. L'API classant les points selon l'ancien découpage à 48 wilayas, la wilaya/commune est recalculée depuis les coordonnées vers le découpage actuel à 69 wilayas ; la wilaya déclarée par l'opérateur est conservée dans `operator_wilaya`.
 
 ## Source & licence
 

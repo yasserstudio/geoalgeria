@@ -63,6 +63,84 @@
           "checked_at": "2026-10-01"
         }
       ]
+    },
+    {
+      "file": "postoffices.json",
+      "record_id": "2298",
+      "status": "corrected",
+      "publish_action": "patch",
+      "reviewer": "geoalgeria-name-review",
+      "reviewed_at": "2026-10-21",
+      "notes": "BaridiMap glues a dash to a word inside the Arabic name instead of separating two halves of it, so the dash fold would publish a false separator. The name is corrected to the place the record's own fields name instead. Here the dash sits inside the commune name: the record's own commune_ar reads عين الزانة and its Latin name reads AIN ZANA, one place and not two.",
+      "expect": {
+        "name_ar": "عين –الزانة",
+        "name": "AIN ZANA",
+        "commune_ar": "عين الزانة",
+        "commune_code": "4117",
+        "postal_code": "41027"
+      },
+      "patch": {
+        "name_ar": "عين الزانة"
+      },
+      "evidence": [
+        {
+          "url": "https://baridimap.poste.dz",
+          "checked_at": "2026-10-21",
+          "note": "The BaridiMap record this office is published from, whose own Latin name and commune fields name the place the Arabic name is corrected to."
+        }
+      ]
+    },
+    {
+      "file": "postoffices.json",
+      "record_id": "3935",
+      "status": "corrected",
+      "publish_action": "patch",
+      "reviewer": "geoalgeria-name-review",
+      "reviewed_at": "2026-10-21",
+      "notes": "BaridiMap glues a dash to a word inside the Arabic name instead of separating two halves of it, so the dash fold would publish a false separator. The name is corrected to the place the record's own fields name instead. Here it splits the wilaya name in two and a hyphen joins what is left: the record's own commune_ar reads برج بوعريريج and its Latin name reads BORDJ BOU ARRERIDJ AKHROUF, so the commune is one word group and the only real separator is the one before the farm, أخروف.",
+      "expect": {
+        "name_ar": "برج –بو-عريريج - أخروف",
+        "name": "BORDJ BOU ARRERIDJ AKHROUF",
+        "commune_ar": "برج بوعريريج",
+        "commune_code": "3401",
+        "postal_code": "34076"
+      },
+      "patch": {
+        "name_ar": "برج بوعريريج - أخروف"
+      },
+      "evidence": [
+        {
+          "url": "https://baridimap.poste.dz",
+          "checked_at": "2026-10-21",
+          "note": "The BaridiMap record this office is published from, whose own Latin name and commune fields name the place the Arabic name is corrected to."
+        }
+      ]
+    },
+    {
+      "file": "postoffices.json",
+      "record_id": "725",
+      "status": "corrected",
+      "publish_action": "patch",
+      "reviewer": "geoalgeria-name-review",
+      "reviewed_at": "2026-10-21",
+      "notes": "BaridiMap glues a dash to a word inside the Arabic name instead of separating two halves of it, so the dash fold would publish a false separator. The name is corrected to the place the record's own fields name instead. Here the commune and the office are two halves, so the separator is real and the stray marks are the dash glued to درايعية and a trailing hyphen after أحمد. Both go, the source word order is kept, and the commune_ar سوق أهراس leads as upstream wrote it.",
+      "expect": {
+        "name_ar": "سوق أهراس –درايعية أحمد-",
+        "name": "AHMED DRAIA",
+        "commune_ar": "سوق أهراس",
+        "commune_code": "4101",
+        "postal_code": "41022"
+      },
+      "patch": {
+        "name_ar": "سوق أهراس - درايعية أحمد"
+      },
+      "evidence": [
+        {
+          "url": "https://baridimap.poste.dz",
+          "checked_at": "2026-10-21",
+          "note": "The BaridiMap record this office is published from, whose own Latin name and commune fields name the place the Arabic name is corrected to."
+        }
+      ]
     }
   ]
 }

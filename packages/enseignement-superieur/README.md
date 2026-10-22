@@ -163,7 +163,7 @@ dataset and attaches the coordinate seed (`scripts/seeds/coordinates.json`, refr
 run geocode`). It fails loudly if the institution count collapses. Coordinates are
 OpenStreetMap-derived, see **Names and coordinates** above.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). Institution data is © **MESRS**, redistributed for reference and to
 power [GeoAlgeria](https://geoalgeria.com). Coordinates are © OpenStreetMap contributors (ODbL),

@@ -1,5 +1,84 @@
 # @geoalgeria/sante
 
+## 2.2.0
+
+### Minor Changes
+
+- 78a07fd: **Migration.** Seven establishments were published twice in the same language, under the same name, and are now one record each. The record stays on the registry entry that describes the establishment most fully, and the other id is retired for good: `05-epsp-01`, `05-epsp-13`, `08-eph-07`, `17-eph-11`, `22-eph-03`, `24-epsp-05`, `26-epsp-08`. If you hold one of them, `data/retired-ids.json` carries a `migrations` entry naming the id it was merged into and both Ministry of Health post ids, so an old join key can be followed rather than only found missing. The record count falls from 668 to 661 and nothing was deleted.
+
+  **The registry enters a few establishments twice in one language, which the twin-post rule cannot see.** The previous release merged the French/Arabic twin posts the Ministry of Health publishes for every facility. That rule pairs one language with the other, so it can never reach a facility entered twice in the language it already had: both copies ship as records and split the establishment's coordinate and anything joined to it. Of 1,258 registry posts, exactly 7 titles are published twice in one language.
+
+  **A pair the registry names differently stays two records.** The gate is the whole title folded to the same [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize) conservative key, which is stronger than the complete-match branch of the twin gate, and two further checks guard the placement. Two records that each name a commune outright, and name different ones, are two places whatever their titles agree on. Two records in different wilayas are two places too, unless the kept one is the placed one and the absorbed one is placed nowhere: a commune name repeats across Algeria, so an identical title alone is not evidence, and a record is never moved into a wilaya nothing but a registry tag puts it in. Five candidates the weaker locality signal raised are kept apart on the names: the registry's own أريس 1 and أريس 2 in Batna, and the two Skikda and the two Ouargla hospitals, which it writes as "Etablissement Hospitalier" and "Etablissement Public Hospitalier" in French and as المؤسسة الإستشفائية and المؤسسة العمومية الإستشفائية in Arabic.
+
+  Every decision and every pair kept apart, with both titles, both wilayas, both communes and both normalize keys, is in [`quality/sante-repeat-posts.json`](https://github.com/yasserstudio/geoalgeria/blob/main/quality/sante-repeat-posts.json), regenerated on every build so it cannot drift from the data. The report publishes the conservative key the gate reads and the loose key beside it, and the committed test holds the rule to both: the loose key has to agree on every pair merged and to separate every pair kept apart. WordPress's `-N` slug suffix is deliberately not used as evidence, because `post_name` is truncated and a suffix marks a collision on the truncated stem rather than on the title.
+
+  **A Jijel hospital was published as a Djelfa record with no commune.** Post 4727 reads المؤسسة العمومية الاستشفائية جيجل, the Jijel EPH, and carries the wilaya tag of Djelfa, so it shipped as `17-eph-11`, in a wilaya its own name contradicts and with no commune, no coordinate and nothing for the OpenStreetMap pass to find a facility in. The name is the evidence: both posts read جيجل, and nothing but that tag placed one of them in Djelfa. It is the one merge that crosses a wilaya, and it is allowed because the Jijel side is the placed one: it goes into `18-eph-02`, which keeps its commune and its point.
+
+  **`refs.msp_repeat` is new**: the repeat post the record absorbed, alongside the primary `refs.msp` and the other-language `refs.msp_twin`. The carry-over key resolves through all three, so a record keeps the id it already had whether it gains a twin, loses one, or absorbs a repeat post. A record cites at most one repeat post, and a pair whose absorbed half would hand it a post in each language is refused rather than quietly dropping one.
+
+  Also: geocoded records move from 597 to 591 of a smaller total and 70 establishments remain unplaced, down from 71. One more record publishes an exact point, 133 rather than 132: the Ain Djasser EPSP shipped as two records standing on the same commune centroid, which the writer's shared-point rule has to demote to `approximate`, and merged it is one record on `node/3971311988`. Every other merged record changes only its `refs`.
+
+### Patch Changes
+
+- 91055e8: No published name uses an en dash as a separator any more.
+
+  476 name values carried one, and each now reads with a spaced hyphen: `Université
+de Blida 1 - Saad Dahlab`, `Dar El Baroud - musée de site de Ténès`, `Aéroport de
+Constantine - Mohamed Boudiaf`. It is the same substitution the em dash already
+  took, for the same reason: the character is a typographic habit of the page the
+  name was read from, not a fact about the place, and someone keying or searching
+  the name has no way to type it. Nothing else about any name changes, and no claim
+  is made about a house separator.
+
+  Where they were: 315 in `@geoalgeria/culture`, 106 in
+  `@geoalgeria/enseignement-superieur`, 29 in `@geoalgeria/aviation` (14 airport
+  names and 15 route endpoints, which the route GeoJSON resolves `from_name` and
+  `to_name` from), 23 in `@geoalgeria/sante`, 2 in `@geoalgeria/cliniques` and 1 in
+  `@geoalgeria/ferroviaire`. Ids, coordinates, codes, counts and every `name_ar`
+  that did not carry one are unchanged.
+
+  A name cannot open or close on a separator either, there being nothing on the
+  other side of it: the Relizane psychiatric hospital in `@geoalgeria/sante`, whose
+  upstream name ends on the dash, now ends on its own last word. A hyphen glued to
+  the word beside it is part of that word and stays.
+
+  A dash between two digits is a range rather than a separator, so it is left
+  exactly as it stands: three `@geoalgeria/sports` facilities name an eponym's
+  years, `Stade Mohammed Dahbi Chraa (1933 – 2020)`, and that package is not
+  touched here.
+
+  Neither dash can come back. The shared writer folds every name it emits, the
+  fetchers that read raw OpenStreetMap names fold them as they clean them, and the
+  gate `pnpm validate` runs over every published record now reports both
+  characters, `@geoalgeria/livraison` included, which was outside it.
+
+- 4a7b7c9: The noun "licence" is now spelled the en-GB way in everything these packages publish.
+
+  `@geoalgeria/buses` states "no open reuse licence" in its 14 Operator source
+  descriptors, in `data/metadata.json` and in the catalog entry. That is the
+  wording its NOTICE, its README and the `## Data` section of its LICENSE already
+  carried; the LICENSE's `## Code` preamble was the one line still reading "This
+  license applies to package code", and reads "licence" now too. The descriptor
+  text is written by `scripts/lib/v2-transforms.mjs`, so it was corrected there
+  and regenerated rather than edited in place.
+
+  `@geoalgeria/sante` asks for "a compatible licence" in the OpenStreetMap
+  share-alike sentence of both its README and its LICENSE, which is what
+  `packages/dataset/LICENSE` already said.
+
+  The identifier keeps its own spelling throughout: the manifest `license` key,
+  the `license` metadata field, SPDX expressions, the `LICENSE` file name, licence
+  URLs, the shields.io badge labels and every use of the verb or adjective
+  "licensed". The French and Arabic READMEs are untouched. No record changes.
+
+  The same sweep corrected the English README of every other package too, so that
+  no English README heading spells the noun "License" any more (`Licence &
+attribution` in 19 of them, `Source & licence` in 7, a bare `Licence` in 4,
+  `Licence & disclaimer` in the root README, and `Sources and licences` in buses,
+  which already read that way). Those packages are deliberately not bumped here:
+  nothing they publish changed but README prose, and each carries the corrected
+  text into whatever release it next has for a reason of its own.
+
 ## 2.1.0
 
 ### Minor Changes

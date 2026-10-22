@@ -65,6 +65,7 @@ npm install geoalgeria
 
 ```javascript
 const dz = require('geoalgeria');
+// or, in an ESM app or with a bundler: import dz from 'geoalgeria';
 
 dz.wilayas;                    // all 69 wilayas
 dz.communes;                   // all 1,541 communes
@@ -81,7 +82,9 @@ dz.findByPostalCode('16000');  // lookup by postal code
 dz.getPostOfficesByCommune(1731); // post offices in a commune (by code_commune)
 ```
 
-TypeScript types included out of the box.
+TypeScript types included out of the box. The default import needs `esModuleInterop`, because the package is CommonJS; `import dz = require('geoalgeria')` works without it.
+
+A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office and ATM mirrors among them. If you need one part only, import its file on its own: `import communes from 'geoalgeria/data/ecommerce/communes.json'` in a bundler, or with `with { type: 'json' }` in plain Node.
 
 **Using this in production?** [Tell us about it](https://github.com/yasserstudio/geoalgeria/discussions), we feature community projects in the README.
 
@@ -106,7 +109,7 @@ Grab `data/ecommerce/communes.json`, flat, denormalized, no joins:
 ```json
 {
   "id": 541,
-  "commune_name_fr": "Ain El Ibel",
+  "commune_name_fr": "Aïn El Ibel",
   "commune_name_ar": "عين الإبل",
   "daira_name_fr": "Aïn El Ibel",
   "wilaya_code": 17,
@@ -115,6 +118,8 @@ Grab `data/ecommerce/communes.json`, flat, denormalized, no joins:
   "postal_code": "17011"
 }
 ```
+
+A postal code is the code of the commune's principal Algérie Poste office, and its first two digits are that office's wilaya at the time the code was issued. Like `code_commune`, the prefix does not necessarily equal `wilaya_code`: Algérie Poste kept the old numbering through the 2026 reform, so Aflou is `03001` in wilaya 59. 108 of the 1,540 coded communes are in that case, all of them in wilayas 59–69.
 
 ### Database seeding
 
@@ -168,7 +173,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 
 `code_commune` is the unique `WWCC` identifier from the [ONS 2021 Code Géographique National](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). Communes promoted into wilayas 59–69 retain their 2021 mother-wilaya prefix.
 
-Each wilaya carries `capital_commune_code`, the `code_commune` of its capital (chef-lieu), so the capital's names, postal code and coordinates are read from the commune record. It comes from the decrees that fix the chefs-lieux (n° 84-79 of 1984, n° 21-117 of 2021, n° 26-206 of 2026), never from the wilaya's name, which gets 4 of 69 wrong. Per-wilaya sources: [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
+Each wilaya carries `capital_commune_code`, the `code_commune` of its capital (chef-lieu), so the capital's names are read from the commune record, and its postal code and coordinates are mirrored on the wilaya: a wilaya's `postal_code` is its chef-lieu's own code, which is why wilaya 59 reads `03001` and not a code of its own. It comes from the decrees that fix the chefs-lieux (n° 84-79 of 1984, n° 21-117 of 2021, n° 26-206 of 2026), never from the wilaya's name, which gets 4 of 69 wrong. Per-wilaya sources: [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
 Every commune and wilaya also carries `osm_relation_id` and `wikidata`: the OpenStreetMap administrative relation this record is linked to (`admin_level=8` for a commune, `admin_level=4` for a wilaya) and that relation's own Wikidata item, so a consumer joins to OpenStreetMap or Wikidata without matching on a name. 1,540 of the 1,541 communes and all 69 wilayas carry a relation; 1,538 communes and all 69 wilayas carry a Wikidata item. Nothing is guessed: the linkage is the one the commune-centre audit decided on the relation's `ref:ONS` / `ref` tag, Overpass `timestamp_osm_base` 2026-09-29T12:54:47Z, plus a second tier of three communes whose relation carries the right `ref:ONS` code under non-standard tags and was therefore invisible to that audit's query; a relation with no `wikidata` tag leaves that field null, and the one commune with no commune relation at all (4703) keeps both fields null. The item is the relation's own tag in every case bar one: commune 3424's relation is tagged with a village inside the commune, so that field is null and the exclusion is recorded in the sidecar rather than the wrong item published. The two ids are on the JSON records (`data/algeria.json`, `data/communes_w*.json`, `data/wilayas.json`); the CSV, GeoJSON and SQL mirrors do not carry them. Coverage, the join rule and the records with no link: [`data/osm-links.metadata.json`](data/osm-links.metadata.json). Both values are OpenStreetMap-derived, so **ODbL 1.0, © OpenStreetMap contributors** (see `NOTICE`).
 
 ## Schema
@@ -274,7 +279,7 @@ Right here, `data/ecommerce/communes.json` has all 1,541 communes in a flat, rea
 Wilayas 59-69 (numbered by mother wilaya code order): 59 Aflou (from Laghouat), 60 Barika (from Batna), 61 El Kantara (from Biskra), 62 Bir El Ater (from Tébessa), 63 El Aricha (from Tlemcen), 64 Ksar Chellala (from Tiaret), 65 Aïn Ouessara (from Djelfa), 66 Messaad (from Djelfa), 67 Ksar El Boukhari (from Médéa), 68 Bou Saâda (from M'Sila), 69 El Abiodh Sidi Cheikh (from El Bayadh).
 
 **How can I get Algeria postal codes in JSON format?**
-Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly, it maps commune names in French and Arabic to their postal codes across all 1,541 communes (5 have no citable code yet).
+Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly. It maps commune names in French and Arabic to their postal codes across all 1,541 communes (1 has no citable code yet).
 
 **What is the best Algeria geodata package for developers?**
 GeoAlgeria is the most complete option as of 2026, it is the only npm package with all 69 wilayas, postal codes, coordinates, dairas, and delivery zone templates in one install. CI-validated on every commit.
@@ -284,7 +289,7 @@ GeoAlgeria carries all 69 wilayas with French and Arabic names, postal codes, an
 
 ---
 
-## License & attribution
+## Licence & attribution
 
 Package **code** is [MIT](LICENSE), and so is the **compilation**: wilayas, dairas, communes,
 their bilingual names, postal codes and administrative codes. Free for personal and commercial

@@ -99,7 +99,7 @@ The operator names and PP/DM nature come from the current MIP fabrication regist
 >
 > **Coverage:** 171 of the ~186 approved manufacturing establishments are geocoded here. The rest are contract manufacturers listed as *sous-traitance* (no own site) or a few very small device makers with no locatable address, omitted rather than placed speculatively. **Importers, wholesalers, exploitation and promotion** are separate MIP registers, not part of this manufacturers layer.
 
-## Source & license
+## Source & licence
 
 Data from the **Ministry of Pharmaceutical Industry (MIP)** fabrication register, a factual public-sector listing, redistributed for reference. Wilaya/commune linkage uses the geoalgeria base dataset. Package code under MIT (see [LICENSE](LICENSE)).
 

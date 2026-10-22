@@ -158,7 +158,7 @@ asked; the snapshot records what it got. Check it yourself with
 `curl -sL <snapshot.url> | shasum -a 256`. It attests rather than pins, so a changed
 upstream never fails the build.
 
-## License & attribution
+## Licence & attribution
 
 Code is [MIT](LICENSE). The ANAC records are © **ANAC**, redistributed for reference and
 to power [GeoAlgeria](https://geoalgeria.com); the IATA codes and the three supplementary

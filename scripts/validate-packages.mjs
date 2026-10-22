@@ -40,6 +40,10 @@ import {
   buildMetadata,
   WILAYA_CODES,
 } from "../packages/schema/index.js";
+// Imported by path, not from the package entry point: the Source rights registry
+// is a repository file read from a pinned data checkout, not part of the
+// @geoalgeria/schema surface, and the entry point must stay free of node:fs.
+import { isSourceClearedFor, rightsRegistry } from "../packages/schema/src/rights.js";
 // Each package's own stats() lives here, beside its provenance config. The
 // validator re-runs it so the published stats block is checked against the
 // shipped records rather than trusted.
@@ -51,11 +55,19 @@ import {
   canonicalCommunes,
 } from "./lib/commune-index.mjs";
 import { descriptorTermsErrors, licenceTermsErrors, publishedMetadataPaths } from "./lib/licence-terms.mjs";
+// The fail-closed Source rights gate: every Source a package publishes has a
+// record, and the registry stays inside its vocabulary.
+import {
+  packageSourceRefs,
+  registryErrors,
+  registryWarnings,
+  unregisteredSourceErrors,
+} from "./lib/rights-registry.mjs";
 // The review gate over @geoalgeria/normalize's Rule table: a Rule cannot enter
 // without a reviewer and a corpus case, and a case cannot claim a Rule that does
 // not exist. The table and the corpus are read from the package as data.
 import { normalizeRuleErrors } from "./lib/normalize-rules.mjs";
-import { emDashErrors } from "./lib/no-em-dash.mjs";
+import { emDashErrors, nameEmDashErrors } from "./lib/no-em-dash.mjs";
 import { rules as normalizeRules } from "../packages/normalize/index.js";
 import { corpus as normalizeCorpus } from "../packages/normalize/fixtures/corpus.js";
 
@@ -334,6 +346,7 @@ function reportBoundaries(full) {
 //           declared wilaya, which is what a repudiated one stops being.
 const CENTROID_ANCHORS = {
   agriculture: { commune_centroid: "code", wilaya_centroid: "wilaya" },
+  banques: { commune_centroid: "code" },
   "enseignement-superieur": { commune: "name" },
   "formation-professionnelle": { commune: "name" },
   "industrie-pharmaceutique": { commune_centroid: "code" },
@@ -932,6 +945,20 @@ function validateDataset(pkg, spec) {
   if (!Array.isArray(arr) || arr.length === 0) {
     return fail(`${label}: expected a non-empty array`);
   }
+
+  // A published name is gated like the metadata around it. #281 found three
+  // records carrying one, four name strings between them. The remedy is a spaced
+  // hyphen, which keeps the source's separation of the name without keeping the
+  // character, and changes nothing else. It is not a separator convention: the
+  // repository has no single one, and the gate is about the em dash only.
+  //
+  // This walks the canonical JSON. The CSV and SQL mirrors are a projection of
+  // these same columns, so a clean record here is a clean line there. The
+  // GeoJSON is not: aviation's routes.geojson resolves from_name and to_name at
+  // emit time, fields no row in routes.json carries, so a mirror can hold a name
+  // this check never sees. test/no-em-dash.test.mjs walks every published
+  // GeoJSON for that reason, and parses neither the CSV nor the SQL.
+  for (const problem of nameEmDashErrors([{ label, json: arr }])) fail(problem);
 
   // Every populated commune_code is a foreign key into the flagship commune
   // table. Format-only validation allowed thousands of stale-but-well-formed
@@ -1684,11 +1711,39 @@ function validateLicenceTerms(pkgs) {
   }
 }
 
+// Rights were free text until the registry existed: `metadata.sources[].license`
+// carries sentences that read as terms and grant nothing, so a generator had
+// nothing to refuse on and a new Source could enter a release unclassified. The
+// records and the reader live in packages/schema, because the Content release
+// generator reads them from a pinned data checkout; the two rules are in
+// scripts/lib/rights-registry.mjs. Not gated on `only`: one registry serves the
+// whole repository, like the licence check above.
+function validateSourceRights() {
+  const refs = packageSourceRefs(join(ROOT, "packages"));
+  const problems = [...registryErrors(), ...unregisteredSourceErrors(refs)];
+  for (const problem of problems) fail(problem);
+  // A review date that has passed is a warning, never a failure: a classification
+  // nobody has revisited is a real problem and a bad reason to redden CI on a day
+  // nobody changed anything.
+  for (const warning of registryWarnings()) console.warn(`  WARN: ${warning}`);
+  if (problems.length) return;
+  const registry = rightsRegistry();
+  const cleared = (target) => registry.sources.filter((r) => isSourceClearedFor(r.key, target)).length;
+  const keys = new Set(refs.map((ref) => ref.key));
+  console.log(
+    `  OK: ${registry.sources.length} Source rights record(s) (registry v${registry.version}) cover all ` +
+      `${keys.size} distinct Source key(s) in published data; ${cleared("mobile-pack")} Source(s) cleared ` +
+      `for mobile-pack, ${cleared("cdn")} for cdn`,
+  );
+}
+
 // No em dash (U+2014) in the metadata GeoAlgeria publishes. Every separator that
 // used to be one lives in a generator (scripts/lib/v2-transforms.mjs source names,
 // @geoalgeria/schema's citation join, each coverage note), so a single hand-fixed
 // sweep would come back on the next rebuild. The rule and the message live in
-// scripts/lib/no-em-dash.mjs; record values are out of scope on purpose.
+// scripts/lib/no-em-dash.mjs. Published record *names* are gated in
+// validateDataset instead, as data rather than prose; other record values stay
+// out of scope on purpose.
 function validateNoEmDash(pkgs) {
   const files = [];
   for (const pkg of pkgs) {
@@ -1856,6 +1911,15 @@ function validateLivraison() {
   if (!existsSync(covCsv)) fail("livraison: missing csv/coverage.csv");
   else if (csvRowCount(covCsv) !== cov.length) fail(`livraison: coverage CSV rows ≠ JSON ${cov.length}`);
 
+  // The published-name gate, which validateDataset runs for every table-driven
+  // package and this bespoke validator did not. #281 left livraison out because
+  // the one dash it carried sat in a stop-desk address, which is the carrier's
+  // own sentence and stays out of scope; the names themselves were never
+  // checked. All three files are swept here, carriers.json included: those names
+  // are hand-curated, so a typed separator would land with nothing to catch it.
+  for (const [file, rows] of [["carriers.json", carriers], ["stopdesks.json", desks], ["coverage.json", cov]])
+    for (const problem of nameEmDashErrors([{ label: `livraison/${file}`, json: rows }])) fail(problem);
+
   // livraison's metadata describes the stop-desks; carriers.json and coverage.json
   // are reconciled above and are not GeoRecords.
   validateDerivedMetadata("livraison", desks);
@@ -1918,6 +1982,9 @@ validateTypes(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 console.log(`\n[licence terms: manifest ↔ LICENSE ↔ metadata]`);
 validateLicenceTerms(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
+
+console.log(`\n[Source rights: every published Source has a record]`);
+validateSourceRights();
 
 console.log(`\n[no em dash in published metadata]`);
 validateNoEmDash(only ? [only] : readdirSync(join(ROOT, "packages")).sort());

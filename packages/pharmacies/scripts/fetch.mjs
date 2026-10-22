@@ -23,8 +23,12 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { buildMetadata, toCSV, toGeoJSON } from "@geoalgeria/schema";
-import { carryOverIds, readCommitted, readRetiredIds, writeRetiredIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
+import { carryOverIds, forwardRetiredId, readCommitted, readRetiredIds, readRetiredMigrations, writeRetiredIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 import { RESOLVE_RULES, describeLinkage, resolveCommune } from "../../../scripts/lib/build-utils.mjs";
+import { TIFINAGH_LETTER, splitByScript, stripLeadingMarks } from "../../../scripts/lib/name-script.mjs";
+import { withoutEmDash } from "../../../scripts/lib/no-em-dash.mjs";
+import { looseKey } from "../../../packages/normalize/index.js";
+import { mergeDoubleMappings } from "../../../scripts/lib/merge-double-mappings.mjs";
 import https from "node:https";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -41,8 +45,6 @@ const OSM_MIN = 2500;
 const UA = "geoalgeria-data/1.0 (+https://geoalgeria.com)";
 const MAX_BYTES = 128 * 1024 * 1024;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const DEG = Math.PI / 180;
-const M_PER_DEG = 111_320;
 
 // --- generic HTTP ----------------------------------------------------------
 const MAX_REDIRECTS = 5;
@@ -142,16 +144,39 @@ async function fetchOSM() {
 // --- helpers ---------------------------------------------------------------
 const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
 const wcode = (n) => (Number.isInteger(n) && n > 0 ? String(n).padStart(2, "0") : null);
-// True only for actual Arabic *letters*: excludes combining marks/punctuation.
-const isArabic = (s) => typeof s === "string" && /[ء-يٱ-ۓۺ-ۿ]/.test(s);
-const LEAD_MARKS = /^[̀-ͯؐ-ًؚ-ٰٟۖ-ۭ]+/;
+// Tifinagh counts as a name-bearing script here, so a Tamazight-only name reaches
+// `name` instead of being dropped as unnamed. It is never routed into name_ar or
+// name_fr, which carry one script each.
+const NAME_LETTER = /[A-Za-zء-يٱ-ۿⴰ-⵿]/;
+// Runs of whitespace collapse to one, the ends are trimmed, leading combining
+// marks go (stripLeadingMarks, shared so its character class is right in one
+// place), and a dash a mapper typed as a separator becomes the " - " this
+// package's own names use (withoutEmDash, #294). No letter is added, removed or
+// reordered.
 const cleanName = (v) => {
   if (typeof v !== "string") return null;
-  const x = v.replace(/\s+/g, " ").trim().replace(LEAD_MARKS, "").trim();
-  return x.length >= 2 && /[A-Za-zء-يٱ-ۿ]/.test(x) ? x : null;
+  const x = withoutEmDash(stripLeadingMarks(v.replace(/\s+/g, " ").trim()).trim());
+  return x.length >= 2 && NAME_LETTER.test(x) ? x : null;
 };
 const inAlgeria = (lat, lng) =>
   Number.isFinite(lat) && Number.isFinite(lng) && lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
+
+// The words that say "pharmacy" rather than which pharmacy, in each script a
+// pharmacy is named in here. A Loose name key drops them, so "Pharmacie Bouchekouf"
+// and "بوشقوف" both key on the family name and a record tagged only
+// `name=Pharmacie` keys on nothing at all. Which words these are is a fact about
+// this dataset, so this generator owns the list and the shared fold does not.
+const PHARMACY_WORDS = new Set(
+  ["pharmacie", "pharmacy", "pharmacia", "officine", "صيدلية", "الصيدلية", "ⵜⴰⴼⴰⵔⵎⴰⵙⵉⵜ"].map(looseKey),
+);
+
+// Which element of a Double mapping is kept: the names and contact details it
+// states. Unchanged from the rule this package has always used.
+const RANK_FIELDS = ["name", "name_ar", "name_fr", "phone", "opening_hours", "address"];
+// What the kept element absorbs from the one it replaces. Derived from RANK_FIELDS
+// rather than retyped, so a field that decides a merge can never be left out of
+// the carry-over it just decided; the extras are the two the ranking never counted.
+const FILL_FIELDS = [...RANK_FIELDS, "operator", "dispensing"];
 
 // OSM dispensing=yes/no -> boolean, else null (unknown).
 function parseDispensing(t) {
@@ -171,7 +196,7 @@ function parseAddress(t) {
   return parts.length ? parts.join(", ") : null;
 }
 
-function normOSM(elements) {
+function normOSM(elements, publishedOsmIds = new Set()) {
   const rows = [];
   for (const el of elements) {
     const lat = el.lat ?? el.center?.lat;
@@ -181,16 +206,19 @@ function normOSM(elements) {
     const rawName = cleanName(t.name);
     const tagFr = cleanName(t["name:fr"]);
     const tagAr = cleanName(t["name:ar"]);
-    // Route strictly by script so name_ar is always Arabic and name_fr always Latin,
-    // even when OSM mis-tags them. Prefer the dedicated tag, then raw, then mis-tagged.
-    const nameAr = (tagAr && isArabic(tagAr)) ? tagAr
-      : (rawName && isArabic(rawName)) ? rawName
-      : (tagFr && isArabic(tagFr)) ? tagFr
-      : null;
-    const nameFr = (tagFr && !isArabic(tagFr)) ? tagFr
-      : (rawName && !isArabic(rawName)) ? rawName
-      : (tagAr && !isArabic(tagAr)) ? tagAr
-      : null;
+    // Route strictly by script so name_ar holds Arabic only and name_fr Latin only,
+    // even when OSM mis-tags them. Every candidate tag is split by script first,
+    // because contributors routinely write more than one language into one tag
+    // ("Pharmacie bouchekouf صيدلية بوشقوف", or Tifinagh run straight into Arabic
+    // with no separator): classifying such a value whole filed its Latin words
+    // under name_ar on 28 records (private tracker #256). The split only cuts, so
+    // neither field ever holds a word the source does not. Preference is unchanged:
+    // the dedicated tag, then the raw name, then the other tag. A Tifinagh half
+    // goes in neither field, because this package publishes no Tamazight name
+    // field; it stays on `name`.
+    const halves = [splitByScript(tagAr), splitByScript(rawName), splitByScript(tagFr)];
+    const nameAr = halves.find((h) => h.ar)?.ar ?? null;
+    const nameFr = [halves[2], halves[1], halves[0]].find((h) => h.la)?.la ?? null;
     rows.push({
       source: "osm",
       osm_id: `${el.type}/${el.id}`,
@@ -208,43 +236,35 @@ function normOSM(elements) {
       address: parseAddress(t),
     });
   }
-  // Conservative internal de-dup: identical non-empty name within ~40 m (the same
-  // pharmacy mapped as both a node and a building outline).
-  const kept = [];
-  let dropped = 0;
-  for (const r of rows) {
-    if (!r.name) { kept.push(r); continue; }
-    const key = r.name.trim().toLowerCase();
-    const cosLat = Math.cos(r.lat * DEG);
-    const dup = kept.some((k) => {
-      if (!k.name || k.name.trim().toLowerCase() !== key) return false;
-      const dx = (k.lng - r.lng) * cosLat * M_PER_DEG;
-      const dy = (k.lat - r.lat) * M_PER_DEG;
-      return dx * dx + dy * dy <= 40 * 40;
-    });
-    if (dup) dropped++;
-    else kept.push(r);
+  // Double mappings are merged by scripts/lib/merge-double-mappings.mjs: a shared
+  // Loose name key within 40 m, then the exact same point. Names are compared there
+  // as keys per script rather than as display text, so "Pharmacie bouchekouf صيدلية
+  // بوشقوف" and the plain "بوشقوف" six metres away are read as one Oued Endja
+  // pharmacy, which an exact string comparison shipped twice (private tracker
+  // #256). The kept element absorbs every field it lacks from the one it replaces,
+  // so a merge costs no phone, address, opening hours or dispensing flag; its own
+  // value wins wherever both state one, and the disagreement is reported rather
+  // than resolved. Each merge becomes a forward in retired-ids.json, so a consumer
+  // holding the retired id still reaches the pharmacy in one hop.
+  const { rows: mergedRows, merged, conflicts } = mergeDoubleMappings(rows, {
+    radiusM: 40,
+    ignoredWords: PHARMACY_WORDS,
+    rankFields: RANK_FIELDS,
+    fillFields: FILL_FIELDS,
+    isPublished: (osmId) => publishedOsmIds.has(osmId),
+  });
+  if (merged.length) {
+    console.log(`  OSM double mappings: ${merged.length} element(s) merged away, fields carried over`);
   }
-  if (dropped) console.log(`  OSM internal de-dup: ${dropped} same-name-within-40m record(s)`);
+  for (const c of conflicts) {
+    console.log(`    conflict kept ${c.kept} ${c.field}=${JSON.stringify(c.keptValue)} over ${c.dropped} ${JSON.stringify(c.droppedValue)}`);
+  }
 
-  // Second pass: collapse records at the exact same point (a pharmacy mapped twice:
-  // a node and a building, or two spellings, that the name pass missed). Keep
-  // the richest record.
-  const richness = (r) =>
-    (r.name ? 1 : 0) + (r.name_ar ? 1 : 0) + (r.name_fr ? 1 : 0) +
-    (r.phone ? 1 : 0) + (r.opening_hours ? 1 : 0) + (r.address ? 1 : 0);
-  const byPoint = new Map();
-  const order = [];
-  for (const r of kept) {
-    const pk = `${r.lat},${r.lng}`;
-    const prev = byPoint.get(pk);
-    if (!prev) { byPoint.set(pk, r); order.push(pk); }
-    else if (richness(r) > richness(prev)) byPoint.set(pk, r);
-  }
-  const deduped = order.map((pk) => byPoint.get(pk));
-  const removed = kept.length - deduped.length;
-  if (removed) console.log(`  OSM coord de-dup: ${removed} exact-coincident record(s)`);
-  return dropBulkImports(deduped);
+  // The bulk-import guard runs last, so a forward whose kept element it drops leads
+  // nowhere and is not a forward at all.
+  const live = dropBulkImports(mergedRows);
+  const published = new Set(live.map((r) => r.osm_id));
+  return { rows: live, merged: merged.filter((entry) => published.has(entry.kept)) };
 }
 
 // Drop OSM bulk-import artifacts: a long run of consecutive-id, unnamed pharmacy
@@ -400,15 +420,16 @@ function readCache() {
 async function main() {
   const OFFLINE = process.argv.includes("--cache");
   const osmRaw = OFFLINE ? readCache() : await fetchOSM();
-  let rows = normOSM(osmRaw);
+  const committed = readCommitted(OUT_DIR, "pharmacies.json") ?? [];
+  const published = new Map();
+  for (const r of committed) {
+    if (r.refs?.osm && r.wilaya_code) published.set(`osm:${r.refs.osm}`, r);
+  }
+  let { rows, merged } = normOSM(osmRaw, new Set(committed.map((r) => r.refs?.osm).filter(Boolean)));
   console.log(`  OSM: ${rows.length} geocoded pharmacies`);
 
   const communes = loadCommunes();
   console.log(`  ${communes.length} commune centroids loaded`);
-  const published = new Map();
-  for (const r of readCommitted(OUT_DIR, "pharmacies.json") ?? []) {
-    if (r.refs?.osm && r.wilaya_code) published.set(`osm:${r.refs.osm}`, r);
-  }
   const linkage = attachCommune(rows, communes, published);
   console.log(`  linkage: ${describeLinkage(linkage)}`);
 
@@ -418,9 +439,47 @@ async function main() {
   // Pin every still-present pharmacy back to the id it shipped under, keyed on the
   // stable OSM id. Without this a single new pharmacy re-sequences every later
   // record in its wilaya, so a re-survey would churn ids that are public join keys.
+  //
+  // `prefixOf` is the one exception: the published type documents the id as
+  // `{wilaya_code}-{seq}`, so a pinned id whose prefix the commune join has
+  // contradicted is re-issued into its own wilaya's id space instead, and the stale
+  // id retires with a forward to the new one (private tracker #255).
   const retiredIds = readRetiredIds(OUT_DIR);
-  carryOverIds(rows, readCommitted(OUT_DIR, "pharmacies.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "pharmacies", retiredIds);
+  const migrations = readRetiredMigrations(OUT_DIR);
+  carryOverIds(rows, committed, (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "pharmacies", retiredIds, {
+    prefixOf: (r) => r.wilaya_code,
+    migrations,
+    note:
+      "Re-issued as the id on the right: this record's wilaya changed, and the id " +
+      "documents its wilaya in the prefix, so the old id was no longer readable. " +
+      "Same pharmacy, same OpenStreetMap element, new public id.",
+    // The one element the re-issue stood for, so the forward cites its source the
+    // same way a merge's does.
+    extraOf: (r) => (r.refs?.osm ? { osm: [r.refs.osm] } : null),
+  });
   rows.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+
+  // Forward each merged-away pharmacy to the record that carries it now, citing
+  // both OpenStreetMap elements the merge stood for so a consumer can check it
+  // against the source instead of taking the note's word for it. carryOverIds has
+  // already retired the merged-away record's id, because its OSM key left the
+  // dataset; this says where the pharmacy went.
+  const idByOsm = new Map(rows.map((r) => [r.refs.osm, r.id]));
+  for (const { dropped, kept } of merged) {
+    const was = published.get(`osm:${dropped}`)?.id;
+    const now = idByOsm.get(kept);
+    if (!was || !now || !retiredIds.has(was)) continue;
+    forwardRetiredId(
+      migrations,
+      was,
+      now,
+      `Merged into ${now}: one pharmacy OpenStreetMap held as two elements. The two ` +
+        `stood within 40 m and their names share a Loose name key once each is split by ` +
+        `script, and the element kept is the one carrying the most fields. Elements ` +
+        `${kept} (kept) and ${dropped} (merged away).`,
+      { osm: [kept, dropped] },
+    );
+  }
 
   const cols = [
     "id", "name", "name_fr", "name_ar", "wilaya_code", "commune_code", "commune",
@@ -474,7 +533,7 @@ async function main() {
   writeText("csv/pharmacies.csv", toCSV(rows, cols));
   writeJSON("geojson/pharmacies.geojson", toGeoJSON(rows));
   writeJSON("metadata.json", metadata);
-  writeRetiredIds(OUT_DIR, retiredIds);
+  writeRetiredIds(OUT_DIR, retiredIds, migrations);
   console.log(
     `Wrote ${rows.length} pharmacies (${named} named, ${metadata.wilayas_covered} wilayas): ` +
       `${metadata.with_phone} with phone, ${metadata.with_hours} with hours, ${metadata.with_address} with address.`,

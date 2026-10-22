@@ -42,9 +42,9 @@ import { ferroviaire } from "@geoalgeria/transport";
 Prefer a single dataset? Install just that member. This umbrella is for when you want the
 whole sector.
 
-## License
+## Licence
 
-Code is [MIT](LICENSE). Each member carries its own data license and attribution, see the
+Code is [MIT](LICENSE). Each member carries its own data licence and attribution, see the
 respective package READMEs.
 
 [Browse all packages →](https://geoalgeria.com/data)
