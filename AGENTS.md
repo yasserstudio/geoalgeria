@@ -70,8 +70,8 @@ pulls in gitignored `research/<pkg>/` until they are next touched.
    ([`scripts/check-bundlers.mjs`](scripts/check-bundlers.mjs), on its own as
    `pnpm check-bundlers`) that packs every real tarball, bundles it with esbuild
    and with Vite and runs the output, because a package can load in Node and
-   still fail in a bundled app (issues #276 and #290). Must pass. If a dataset
-   gained or lost a data file, `pnpm generate-loaders` first (next item).
+   still fail in a bundled app (issues #276 and #290). Must pass. A dataset that
+   gained or lost a data file needs `pnpm generate-loaders` first (see Don't).
 4. **Add a changeset** if a published package changed: `pnpm changeset`
    (data semver: **major** = breaking schema · **minor** = new data/format ·
    **patch** = corrections).

@@ -212,7 +212,16 @@ for (const key of Object.keys(pkg).sort()) {
     report[key] = { error: String(error && error.message ? error.message : error) };
   }
 }
-console.log(JSON.stringify(report));
+
+// The one value checked against the repo rather than against the other runs: a
+// bundle that resolved SOME data but not this package's would still agree with
+// itself.
+let recordCount = null;
+try {
+  recordCount = pkg.metadata().record_count ?? null;
+} catch {}
+
+console.log(JSON.stringify({ report, recordCount }));
 `;
 
 /** Run a built (or plain) ESM file from outside the work tree and parse its line. */
@@ -262,10 +271,10 @@ async function sectorLeg(work, only) {
     const recordCount = JSON.parse(
       readFileSync(join(ROOT, dir, "data", "metadata.json"), "utf-8"),
     ).record_count;
-    const problems = describe(name, reports, recordCount);
-    if (problems.length) failures.push(...problems);
+    const problems = describe(reports, recordCount);
+    if (problems.length) failures.push(...problems.map((problem) => `${name} ${problem}`));
     console.log(
-      `${name}: ${problems.length ? "FAILED" : "ok"} (${Object.keys(reports.node).length} loaders, ${recordCount} records)`,
+      `${name}: ${problems.length ? "FAILED" : "ok"} (${Object.keys(reports.node.report).length} loaders, ${recordCount} records)`,
     );
     if (problems.length) for (const problem of problems) console.log(`    ${problem}`);
   }
@@ -302,20 +311,25 @@ async function viteBundle(work, probe, name) {
  * have always worked there), so a bundler disagreeing with it is the bug, and
  * no expected count is written down anywhere.
  */
-function describe(name, reports, recordCount) {
+function describe(reports, recordCount) {
   const problems = [];
-  const baseline = reports.node;
+  const baseline = reports.node.report;
 
   for (const [key, answer] of Object.entries(baseline)) {
     if (answer.error) problems.push(`node: ${key}() threw: ${answer.error}`);
   }
   const arrays = Object.values(baseline).filter((a) => typeof a.array === "number");
   if (!arrays.some((a) => a.array > 0)) problems.push("node: no loader answered with records");
-  const metadata = baseline.metadata;
-  if (!metadata || !(metadata.keys > 0)) problems.push("node: metadata() answered with nothing");
 
-  for (const bundler of ["esbuild", "vite"]) {
-    const report = reports[bundler];
+  for (const bundler of ["node", "esbuild", "vite"]) {
+    const { report, recordCount: seen } = reports[bundler];
+    if (seen !== recordCount) {
+      problems.push(
+        `${bundler}: metadata().record_count is ${seen}, the package's metadata.json says ${recordCount}`,
+      );
+    }
+    if (bundler === "node") continue;
+
     for (const [key, answer] of Object.entries(report)) {
       if (answer.error) problems.push(`${bundler}: ${key}() threw: ${answer.error}`);
     }
@@ -329,10 +343,6 @@ function describe(name, reports, recordCount) {
         problems.push(`${bundler}: ${key}() answered ${b}, Node answered ${a}`);
       }
     }
-  }
-
-  if (!arrays.some((a) => a.array >= Math.min(recordCount, 1))) {
-    problems.push(`${name}: metadata declares ${recordCount} records and no loader served any`);
   }
   return problems;
 }
