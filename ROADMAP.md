@@ -201,17 +201,19 @@ reads as further along than it is.
   practice, and changing one without a source would be the same mistake twice.
   _(logged 2026-10-01, from the #235 source hunt)_
 
-- [ ] **Follow-ups from the #288 postal review (batch 2026-13).** For the 11
-  reform wilayas, the contradiction now has a second live value: wilaya 59
-  publishes 59000 (no office holds it) while its capital commune 319 Aflou
-  publishes 03001 (a real office); same pattern for 60 to 69. Separately, 13
+- [ ] **Follow-ups from the #288 postal review (batch 2026-13).** The wilaya
+  half **shipped 2026-10-21** (geoalgeria 2.4.0, tracker #293): wilayas 49 to
+  69 now publish their chef-lieu commune's postal code on every carrier, with a
+  carrier-agreement test, so wilaya 59 no longer reads 59000 against Aflou's
+  03001. Still open: 13
   communes keep (rule 2) a code belonging to one of their own offices other
   than the eponymous one (Tamantit, Bouzeghaia, Gosbat, Taourit Ighil,
   Taghzout, Ouled Rached, Sidi M'hamed w16, Casbah, Oued Ferragha, Hassiane,
   Machroha, Nezla, Zaouia El Abidia), listed as `RULE_2_KEEPS` in
   `test/commune-postal-eponymous.test.mjs`; each needs a source check. Also
   verify Mohamed Belouzdad 1604 -> 16244 (rule-3 branch, over 16009 HC)
-  against an external directory. _(logged 2026-10-13, tracker #293)_
+  against an external directory. _(logged 2026-10-13, tracker #293; wilaya half
+  shipped 2026-10-21)_
 
 ## Generators
 
@@ -311,8 +313,11 @@ reads as further along than it is.
   worth doing at the next coordinated bump rather than alone.
   _(logged 2026-08-09)_
 
-- [ ] **Decide the en dash (U+2013) in published names (batch 2026-13,
-  deferred to a later batch).** #287 bans the em dash in published names, but
+- [x] **Decided and shipped 2026-10-21: the en dash (U+2013) in published
+  names folds to " - "** (batch 2026-14, tracker #294). The name gate in
+  `scripts/lib/no-em-dash.mjs` covers U+2013, every generator folds it, cnep-156
+  reads Aïn Azel, cliniques and pharmacies `cleanName` use `withoutEmDash`, and
+  livraison is inside the gate. The original note follows. #287 bans the em dash in published names, but
   486 name-keyed values across 10 packages use an en dash in the same
   separator role (culture 315, enseignement-superieur 106, aviation 29, sante
   23, and others), for example aviation's "Aéroport d'Alger - Houari
@@ -540,6 +545,12 @@ reads as further along than it is.
 ---
 
 ## Recently closed
+
+- **Release batch 2026-14, with 2026-13 folded in** (2026-10-21, data main
+  `e07e029`): PRs #282 to #288 and #290 to #293 merged, Version PR #289.
+  Sixteen packages published, among them `geoalgeria` 2.4.0, pharmacies 2.3.0,
+  sante 2.2.0, banques 2.1.0 and poste 2.2.0. App release PR #302 merged to
+  production as `ff8d72d` the same day (tracker #296).
 
 - **Release batch 2026-12** (2026-10-09, data main `1b91ae9`): PRs #266,
   #268, #269, #270, #271, #272, #273, #274, #275 and #279 merged.
