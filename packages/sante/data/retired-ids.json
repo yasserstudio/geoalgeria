@@ -9,6 +9,14 @@
       ],
       "note": "Merged into 01-eph-03, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3584 and 3585 are one facility. Both ids were first published together, so neither is older: 01-eph-03 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
+    "01-eph-06": {
+      "merged_into": "01-eph-01",
+      "msp_posts": [
+        "2359",
+        "3643"
+      ],
+      "note": "Merged into 01-eph-01, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 2359 and 3643 are one facility, paired by hand because the two sit 1284 post ids apart, beyond the reach of the registry's own adjacency. The evidence, which is never the registry: https://www.openstreetmap.org/way/393042095 (read 2026-10-22): amenity=hospital, name 'Hopital Ibn Sina', official_name 'Etablissement Public Hospitalier Ibn Sina Adrar', wikidata Q18785599. A public hospital establishment of Adrar city in its own right, which is what post 2359 names, and a different building from the Nouveau Hopital of post 3584 that already ships bilingual as 01-eph-03. https://www.wikidata.org/wiki/Q18785599 (read 2026-10-22): P31 Q16917 hospital, P131 Q251181 Adrar, fr label 'hopital d'Adrar'. The item carries NO Arabic label, so it testifies to the French half only; the Arabic half is fixed by elimination, as the single remaining Arabic EPH post of wilaya 01 once Aoulef, the Nouveau Hopital and Reggane are each paired, and its own text reads 'at Adrar'. That is the same reading the generator's own one-left rule makes for a place-named type. Both ids were first published together, so neither is older: 01-eph-01 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
+    },
     "02-eph-08": {
       "merged_into": "02-eph-03",
       "msp_posts": [
@@ -177,6 +185,14 @@
       ],
       "note": "Merged into 14-eph-05, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 3753 and 3754 are one facility. Both ids were first published together, so neither is older: 14-eph-05 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     },
+    "14-eph-07": {
+      "merged_into": "14-eph-04",
+      "msp_posts": [
+        "4582",
+        "4586"
+      ],
+      "note": "Merged into 14-eph-04, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 4582 and 4586 are one facility, paired by hand because the two sit 4 post ids apart, beyond the reach of the registry's own adjacency. The evidence, which is never the registry: https://www.openstreetmap.org/node/5477990321 (read 2026-10-22): amenity=hospital at 35.18651, 1.49134, name:fr 'eph sougueur guermit Nasseur' and name:ar 'مستشفى سوقر قرميط ناصر'. One element naming the public hospital of Sougueur in both scripts, which is the two halves of posts 4582 and 4586 stated together by a source that is not the registry. https://www.openstreetmap.org/node/2947184170 (read 2026-10-22): A second, independently mapped element 160 m away: name 'EPH Sougueur', name:fr 'hopital ghermit naseur', name:ar 'مستشفى قرميط ناصر'. Both elements sit in the commune of Sougueur, not in Tiaret, which is also why the merged record takes the French half's commune: the Arabic half matched Tiaret on the wilaya name in its title. Both ids were first published together, so neither is older: 14-eph-04 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
+    },
     "16-ehs-13": {
       "merged_into": "16-ehs-03",
       "msp_posts": [
@@ -280,10 +296,27 @@
         "5551"
       ],
       "note": "Merged into 26-epsp-09, which carries the establishment's names and its commune. A few establishments were also entered a second time in the same language; the repeat post is folded into the same record and `refs.msp_repeat` names it, so that id resolves to the record too. Posts 4988 and 5551 are the same establishment, entered twice in Arabic under the same name. 26-epsp-09 is kept because its post is the one the registry published first, and the other is the repeat post."
+    },
+    "31-chu-03": {
+      "merged_into": "31-chu-02",
+      "msp_posts": [
+        "5158",
+        "5144"
+      ],
+      "note": "Merged into 31-chu-02, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 5158 and 5144 are one facility, paired by hand because the two sit 14 post ids apart, beyond the reach of the registry's own adjacency. The evidence, which is never the registry: https://www.openstreetmap.org/way/71816173 (read 2026-10-22): amenity=hospital, name:fr 'EHU USTO - 1 Novembre', operator:wikidata Q17639127 (the Ministry of Health), at USTO in Bir El Djir. A ministry-run university hospital establishment distinct from the CHU relation in central Oran, which is what post 5158 names. Its name:ar reads 'المؤسسة العمومية الإستشفائية أول نوفمبر', which says public hospital establishment and not university hospital establishment; that tag is mistagged upstream and is NOT cited here as evidence for the Arabic half. https://www.wikidata.org/wiki/Q7894776 (read 2026-10-22): What fixes the Arabic half is the CHU pair above: this group holds exactly two French and two Arabic posts, and two independent sources give the CHU's Arabic name as post 5129's, so the only pairing left for post 5158 is post 5144, whose own text reads 'university hospital establishment of Oran'. The swap is excluded by evidence rather than assumed. Both ids were first published together, so neither is older: 31-chu-02 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
+    },
+    "31-chu-04": {
+      "merged_into": "31-chu-01",
+      "msp_posts": [
+        "5139",
+        "5129"
+      ],
+      "note": "Merged into 31-chu-01, which carries both names. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Posts 5139 and 5129 are one facility, paired by hand because the two sit 10 post ids apart, beyond the reach of the registry's own adjacency. The evidence, which is never the registry: https://www.openstreetmap.org/relation/5484301 (read 2026-10-22): amenity=hospital, name:fr 'Centre Hospitalier Universitaire d'Oran', name:ar 'المركز الاستشفائي الجامعي وهران', short_name 'CHU Oran'. The two halves of posts 5139 and 5129 on one element, in central Oran. https://www.wikidata.org/wiki/Q7894776 (read 2026-10-22): P31 Q16917 hospital and Q3918 university, P131 Q131818 Oran, fr label 'centre hospitalier universitaire d'Oran', ar label 'المركز الإستشفائي الجامعي وهران'. An independent second reading of the same two names, and the item this record is already pinned to. Both ids were first published together, so neither is older: 31-chu-01 is kept because it is the lower-sequence id of the two, which is always the one the French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one."
     }
   },
   "ids": [
     "01-eph-05",
+    "01-eph-06",
     "02-eph-08",
     "02-eph-09",
     "05-eph-13",
@@ -305,6 +338,7 @@
     "11-epsp-06",
     "11-epsp-07",
     "14-eph-06",
+    "14-eph-07",
     "16-ehs-13",
     "16-ehs-14",
     "16-ehs-15",
@@ -317,6 +351,8 @@
     "19-chu-02",
     "22-eph-03",
     "24-epsp-05",
-    "26-epsp-08"
+    "26-epsp-08",
+    "31-chu-03",
+    "31-chu-04"
   ]
 }

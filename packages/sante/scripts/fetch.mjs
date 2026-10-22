@@ -1417,7 +1417,13 @@ function placeTokens(latin, com, wil) {
   const w = wil.byCode.get(com.wilaya_code);
   for (const s of [norm(w.name_fr).toLowerCase(), translitAr(w.name_ar), norm(com.name_fr).toLowerCase(), translitAr(com.name_ar)])
     for (const t of s.split(" ")) if (t.length >= 3) drop.add(t);
-  return latin.split(" ").filter((t) => t.length >= 3 && !drop.has(t) && !isGeneric(t));
+  // A place name the title reaches through an Arabic locative particle is still
+  // that place name: translitAr writes بأدرار and بادرار ("at Adrar") as "badrar",
+  // which `drop` does not hold, so the bare city name survived as if it told two
+  // establishments of that city apart. It stamped the OpenStreetMap EPSP of Adrar
+  // onto the EPH of Adrar the moment the EPH gained its Arabic half.
+  const placeName = (t) => drop.has(t) || ((t[0] === "b" || t[0] === "l") && drop.has(t.slice(1))) || (t.startsWith("al") && drop.has(t.slice(2)));
+  return latin.split(" ").filter((t) => t.length >= 3 && !placeName(t) && !isGeneric(t));
 }
 export function estTokens(est, com, wil) {
   const fr = est.name_fr ? classify(est.name_fr).locality.toLowerCase() : "";
@@ -1753,10 +1759,10 @@ export function resolveTwinPairs(verdicts, rows, committed, priorMigrations = {}
         `Merged into ${kept_id}, which carries both names. ${TWIN_POSTS_NOTE} Posts ${t.msp_fr} and ` +
           `${t.msp_ar} are one facility` +
           (t.decided_by === "pair_table"
-            ? `, paired by hand from ${evidenceSentence(t.evidence)} because the two posts sit ${t.msp_gap} ids ` +
-              `apart, beyond the reach of the registry's own adjacency`
-            : "") +
-          `. Both ids were first published together, so neither is older: ` +
+            ? `, paired by hand because the two sit ${t.msp_gap} post ids apart, beyond the reach of the ` +
+              `registry's own adjacency. The evidence, which is never the registry: ${evidenceSentence(t.evidence)}`
+            : ".") +
+          ` Both ids were first published together, so neither is older: ` +
           `${kept_id} is kept because it is the lower-sequence id of the two, which is always the one the ` +
           `French post holds, since ids are sequenced by name and a Latin name sorts before an Arabic one.`,
         { msp_posts: [t.msp_fr, t.msp_ar] },

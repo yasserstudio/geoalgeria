@@ -50,7 +50,127 @@
  *         expect_fr: string, expect_ar: string, facility: string,
  *         evidence: PairEvidence[]}[]}
  */
-export const TWIN_PAIR_TABLE = [];
+export const TWIN_PAIR_TABLE = [
+  {
+    wilaya_code: "01",
+    type: "eph",
+    msp_fr: "2359",
+    msp_ar: "3643",
+    expect_fr: "Etablissement Public Hospitalier Adrar",
+    expect_ar: "المؤسسة العمومية الإستشفائية بادرار",
+    facility: "EPH Ibn Sina, Adrar",
+    evidence: [
+      {
+        source: "openstreetmap",
+        url: "https://www.openstreetmap.org/way/393042095",
+        checked_at: "2026-10-22",
+        note:
+          "amenity=hospital, name 'Hopital Ibn Sina', official_name 'Etablissement Public Hospitalier Ibn Sina Adrar', " +
+          "wikidata Q18785599. A public hospital establishment of Adrar city in its own right, which is what post 2359 " +
+          "names, and a different building from the Nouveau Hopital of post 3584 that already ships bilingual as 01-eph-03.",
+      },
+      {
+        source: "wikidata",
+        url: "https://www.wikidata.org/wiki/Q18785599",
+        checked_at: "2026-10-22",
+        note:
+          "P31 Q16917 hospital, P131 Q251181 Adrar, fr label 'hopital d'Adrar'. The item carries NO Arabic label, so it " +
+          "testifies to the French half only; the Arabic half is fixed by elimination, as the single remaining Arabic EPH " +
+          "post of wilaya 01 once Aoulef, the Nouveau Hopital and Reggane are each paired, and its own text reads " +
+          "'at Adrar'. That is the same reading the generator's own one-left rule makes for a place-named type.",
+      },
+    ],
+  },
+  {
+    wilaya_code: "14",
+    type: "eph",
+    msp_fr: "4582",
+    msp_ar: "4586",
+    expect_fr: "Etablissement Public Hospitalier SOUGUEUR TIARET",
+    expect_ar: "المؤسسة العمومية الإستشفائية سوقر تيارت",
+    facility: "EPH Ghermit Naceur, Sougueur",
+    evidence: [
+      {
+        source: "openstreetmap",
+        url: "https://www.openstreetmap.org/node/5477990321",
+        checked_at: "2026-10-22",
+        note:
+          "amenity=hospital at 35.18651, 1.49134, name:fr 'eph sougueur guermit Nasseur' and name:ar " +
+          "'مستشفى سوقر قرميط ناصر'. One element naming the public hospital of Sougueur in both scripts, which is the two " +
+          "halves of posts 4582 and 4586 stated together by a source that is not the registry.",
+      },
+      {
+        source: "openstreetmap",
+        url: "https://www.openstreetmap.org/node/2947184170",
+        checked_at: "2026-10-22",
+        note:
+          "A second, independently mapped element 160 m away: name 'EPH Sougueur', name:fr 'hopital ghermit naseur', " +
+          "name:ar 'مستشفى قرميط ناصر'. Both elements sit in the commune of Sougueur, not in Tiaret, which is also why the " +
+          "merged record takes the French half's commune: the Arabic half matched Tiaret on the wilaya name in its title.",
+      },
+    ],
+  },
+  {
+    wilaya_code: "31",
+    type: "chu",
+    msp_fr: "5139",
+    msp_ar: "5129",
+    expect_fr: "Centre Hospitalo Universitaire Oran",
+    expect_ar: "المركز الإستشفائي الجامعي لوهران",
+    facility: "CHU Oran",
+    evidence: [
+      {
+        source: "openstreetmap",
+        url: "https://www.openstreetmap.org/relation/5484301",
+        checked_at: "2026-10-22",
+        note:
+          "amenity=hospital, name:fr 'Centre Hospitalier Universitaire d'Oran', name:ar 'المركز الاستشفائي الجامعي وهران', " +
+          "short_name 'CHU Oran'. The two halves of posts 5139 and 5129 on one element, in central Oran.",
+      },
+      {
+        source: "wikidata",
+        url: "https://www.wikidata.org/wiki/Q7894776",
+        checked_at: "2026-10-22",
+        note:
+          "P31 Q16917 hospital and Q3918 university, P131 Q131818 Oran, fr label 'centre hospitalier universitaire d'Oran', " +
+          "ar label 'المركز الإستشفائي الجامعي وهران'. An independent second reading of the same two names, and the item " +
+          "this record is already pinned to.",
+      },
+    ],
+  },
+  {
+    wilaya_code: "31",
+    type: "chu",
+    msp_fr: "5158",
+    msp_ar: "5144",
+    expect_fr: "Etablissement Hospitalier Universitaire Oran",
+    expect_ar: "المؤسسة الاستشفائية الجامعية وهران",
+    facility: "EHU 1er Novembre 1954, Oran (USTO)",
+    evidence: [
+      {
+        source: "openstreetmap",
+        url: "https://www.openstreetmap.org/way/71816173",
+        checked_at: "2026-10-22",
+        note:
+          "amenity=hospital, name:fr 'EHU USTO - 1 Novembre', operator:wikidata Q17639127 (the Ministry of Health), at USTO " +
+          "in Bir El Djir. A ministry-run university hospital establishment distinct from the CHU relation in central Oran, " +
+          "which is what post 5158 names. Its name:ar reads 'المؤسسة العمومية الإستشفائية أول نوفمبر', which says public " +
+          "hospital establishment and not university hospital establishment; that tag is mistagged upstream and is NOT " +
+          "cited here as evidence for the Arabic half.",
+      },
+      {
+        source: "wikidata",
+        url: "https://www.wikidata.org/wiki/Q7894776",
+        checked_at: "2026-10-22",
+        note:
+          "What fixes the Arabic half is the CHU pair above: this group holds exactly two French and two Arabic posts, and " +
+          "two independent sources give the CHU's Arabic name as post 5129's, so the only pairing left for post 5158 is " +
+          "post 5144, whose own text reads 'university hospital establishment of Oran'. The swap is excluded by evidence " +
+          "rather than assumed.",
+      },
+    ],
+  },
+];
 
 /**
  * Cases #287 asked about that this table does NOT pair, each with what is
@@ -59,7 +179,54 @@ export const TWIN_PAIR_TABLE = [];
  * @type {{wilaya_code: string, type: string, msp_fr: string, msp_ar: string,
  *         facility: string, why: string}[]}
  */
-export const UNPAIRED_CANDIDATES = [];
+export const UNPAIRED_CANDIDATES = [
+  {
+    wilaya_code: "21",
+    type: "eph",
+    msp_fr: "4804",
+    msp_ar: "4809",
+    facility: "Skikda, the establishment the registry calls public",
+    why:
+      "Skikda city publishes an 'Etablissement hospitalier' and an 'Etablissement Public Hospitalier', and both carry the " +
+      "city name and nothing else. Separating them needs a source that says which Skikda hospital is the public " +
+      "establishment and which is not, in both languages. OpenStreetMap has two hospital buildings in the city, way/253913494 " +
+      "'Nouvel Hopital Abderezzak Bouhara' with no Arabic name at all and way/253914659 'Hopital de Skikda' / 'مستشفى سكيكدة', " +
+      "which is a toponym carrying neither legal class. Checked 2026-10-22: no ministry page, Journal Officiel text, Wikidata " +
+      "item or OpenStreetMap element names either establishment by its class in both languages, so both halves stay separate " +
+      "records.",
+  },
+  {
+    wilaya_code: "21",
+    type: "eph",
+    msp_fr: "4814",
+    msp_ar: "4825",
+    facility: "Skikda, the establishment the registry does not call public",
+    why: "The other half of the same Skikda question; same reading, same date, same absence of a second source.",
+  },
+  {
+    wilaya_code: "30",
+    type: "eph",
+    msp_fr: "5117",
+    msp_ar: "5109",
+    facility: "Ouargla, the establishment the registry calls public",
+    why:
+      "Ouargla reads like Skikda, one 'Etablissement hospitalier' and one 'Etablissement Public Hospitalier' of the city, but " +
+      "with a second doubt on top of the first: checked 2026-10-22, only ONE general hospital of Ouargla city could be found " +
+      "in any source, way/303499771 'Hopital Mohamed Boudiaf' (and it carries no Arabic name). The other two hospitals found " +
+      "are a different legal class, the ophthalmology hospital way/304632975 and the mother-and-child EHS way/377113766. So it " +
+      "is not established that these four posts are two establishments at all: they may be one, entered under an older and a " +
+      "newer legal name, which would be a repeat merge of four posts rather than two pairs. Pairing them would decide that " +
+      "question by assumption.",
+  },
+  {
+    wilaya_code: "30",
+    type: "eph",
+    msp_fr: "5112",
+    msp_ar: "5104",
+    facility: "Ouargla, the establishment the registry does not call public",
+    why: "The other half of the same Ouargla question; same reading, same date, same unresolved doubt about how many establishments there are.",
+  },
+];
 
 /** The two languages a row names, in the order it names them. Both halves are
  *  always one French post and one Arabic post: a same-language duplicate is a

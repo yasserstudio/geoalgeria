@@ -12,12 +12,12 @@
 
 </div>
 
-**661 établissements de santé publics** dans les **58 wilayas** dotées d'une
+**657 établissements de santé publics** dans les **58 wilayas** dotées d'une
 direction de la santé – établissements publics hospitaliers (EPH), de santé de
 proximité (EPSP), hospitaliers spécialisés (EHS) et centres hospitalo-universitaires
-(CHU) du **Ministère de la Santé (MSP)**, bilingues français/arabe, **591
-géolocalisés** (122 sur un point précis OpenStreetMap/Wikidata, 11 vérifiés à la
-main, 458 sur un centroïde de commune) avec rattachement commune/wilaya.
+(CHU) du **Ministère de la Santé (MSP)**, bilingues français/arabe, **587
+géolocalisés** (121 sur un point précis OpenStreetMap/Wikidata, 11 vérifiés à la
+main, 455 sur un centroïde de commune) avec rattachement commune/wilaya.
 Livré en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -29,7 +29,7 @@ Livré en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 > partiel par nature. Tout élément OSM référencé par un enregistrement d'ici en
 > est exclu par construction, donc aucun lieu n'est publié deux fois sous le
 > même élément, mais les deux décrivent des volets différents d'un système de
-> santé : additionner 661 et 1 917 ne compte rien de réel.
+> santé : additionner 657 et 1 917 ne compte rien de réel.
 
 ```bash
 npm install @geoalgeria/sante
@@ -38,7 +38,7 @@ npm install @geoalgeria/sante
 ```js
 import sante from "@geoalgeria/sante";
 
-const all = sante.sante();              // 661 établissements
+const all = sante.sante();              // 657 établissements
 
 // Hôpitaux publics d'une wilaya (jointure sur le wilaya_code de GeoAlgeria)
 const ephAlger = all.filter((e) => e.wilaya_code === "16" && e.type === "eph");
@@ -49,7 +49,7 @@ const mappable = all.filter((e) => e.lat != null);
 
 ## Ce que vous pouvez construire
 
-- **Localisateurs d'hôpitaux et de cliniques** – des coordonnées sur 591 des 661
+- **Localisateurs d'hôpitaux et de cliniques** – des coordonnées sur 587 des 657
   enregistrements, prêtes pour une carte ou une recherche de proximité.
 - **Annuaires de santé bilingues** – noms français et arabe, type officiel et
   wilaya pour chaque établissement.
@@ -60,7 +60,7 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
-| Établissements de santé | **661** | 591 géolocalisés | 58 wilayas, 590 bilingues |
+| Établissements de santé | **657** | 587 géolocalisés | 58 wilayas, 594 bilingues |
 
 **Par type**
 
@@ -117,7 +117,7 @@ chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
-  sante.json              # 661 établissements (tableau)
+  sante.json              # 657 établissements (tableau)
   metadata.json           # sources, totaux, couverture, updated
   retired-ids.json        # identifiants à jamais réservés, et où sont passées leurs données
   csv/sante.csv           # dépôt + Release (pas dans le tarball npm)
@@ -203,8 +203,14 @@ Lancez `npm run fetch` pour régénérer les sorties. Le script :
    ont une fiche arabe à id+1 : les deux noms doivent aussi s'accorder sur un
    squelette consonantique, ce que les orthographes française et arabe d'un même
    nom partagent réellement, et un candidat ambigu reste deux enregistrements
-   plutôt qu'une supposition. Chaque décision, y compris chaque refus et son
-   motif, est écrite dans
+   plutôt qu'une supposition. L'adjacence ne porte qu'à deux identifiants : quatre
+   établissements dont le registre a saisi les deux moitiés de cinq à quatorze
+   identifiants d'écart sont donc appariés à la main, dans une table explicite où
+   chaque paire cite une source qui n'est **pas** le registre, un élément
+   OpenStreetMap ou une fiche Wikidata portant les deux noms. Quatre autres cas
+   soumis à cette table restent deux enregistrements, faute d'une telle source, et
+   sont listés à côté des paires avec ce qui manque. Chaque décision, y compris
+   chaque refus et son motif, est écrite dans
    [`quality/sante-twin-recovery.json`](https://github.com/yasserstudio/geoalgeria/blob/main/quality/sante-twin-recovery.json).
    Un enregistrement cite les deux fiches : `refs.msp` est sa fiche principale
    (française) et `refs.msp_twin` la fiche arabe, de sorte que les deux

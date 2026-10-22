@@ -4,12 +4,12 @@
   "title_fr": "Établissements de santé publique d'Algérie",
   "title_ar": "المؤسسات الصحية العمومية الجزائرية",
   "title_en": "Algeria public health establishments",
-  "record_count": 661,
-  "geocoded_count": 591,
-  "geocoded_pct": 89.4,
+  "record_count": 657,
+  "geocoded_count": 587,
+  "geocoded_pct": 89.3,
   "precision": {
-    "exact": 133,
-    "approximate": 458
+    "exact": 132,
+    "approximate": 455
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -51,20 +51,20 @@
   "updated": "2026-06-27",
   "by_type": {
     "ehs": 103,
-    "eph": 254,
+    "eph": 252,
     "epsp": 280,
     "hopital": 5,
-    "chu": 19
+    "chu": 17
   },
   "by_sector": {
-    "public": 661
+    "public": 657
   },
   "by_geo_method": {
-    "commune_centroid": 458,
-    "osm_point": 119,
+    "commune_centroid": 455,
+    "osm_point": 118,
     "wikidata_point": 3,
     "owner_verified": 11
   },
-  "bilingual": 590,
+  "bilingual": 594,
   "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }
