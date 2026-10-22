@@ -201,10 +201,46 @@ _Avoid_: twin post, same-language twin, re-entry, clone
 
 **Half-record**:
 A record standing for one Twin post while the other is published separately: half
-a facility's names, and its own coordinate. Merging the two retires the
+an Establishment's names, and its own coordinate. Merging the two retires the
 half-record's id, which `retired-ids.json` then reserves for good and forwards to
 the record that carries the data now.
-_Avoid_: partial record, orphan, fragment
+_Avoid_: partial record, orphan, fragment, monolingual record, leftover
+
+**Pair table**:
+The committed table that pairs two Twin posts by hand, for the Establishments the
+twin rule cannot reach because their two posts sit further apart than its post-id
+window. A row names the two posts, the registry titles it was written about
+(so a renamed post fails the build rather than merging the wrong pair), and its
+**Evidence level**. It is the exception to the rule, never a replacement for it:
+a pair the rule can reach never appears here.
+_Avoid_: override, manual mapping, allowlist, exceptions file
+
+**Evidence level**:
+What a Pair table row's evidence actually covers, in its `second_source` field,
+because the two levels are different claims and are never written as if they were
+the same one. `both`: a source that is not the registry names the Establishment
+in both scripts, so it states the pair itself. `fr_only`: that source confirms
+the French half, and the Arabic half rests on two further readings recorded on
+the row, the two titles being exact translations of each other and the pair being
+the one candidate left in its wilaya and type group. The registry itself is never
+the evidence, and neither is Google (ADR 0001 rule 6).
+_Avoid_: confidence, score, strength, verified
+
+**Decided by**:
+Which kind of decision merged a pair, in a report's `decided_by` field: `rule`
+for the automatic adjacency-plus-name recovery, `pair_table` for a pair asserted
+by hand. A reader can tell the two apart without reading the code, and a standing
+test holds each to the invariants of its own kind.
+_Avoid_: method, origin, automatic/manual flag
+
+**Unpaired candidate**:
+A pairing the Pair table was asked about and deliberately did not make, recorded
+with what is missing, so a silence is a decision a reader can check rather than
+an omission. Published as `unpaired_candidates`. Distinct from the measurement
+beside it, `half_record_candidates`, which is every Half-record crossed with
+every Half-record of the other language in its own group and is derived from the
+shipped data on every build.
+_Avoid_: rejected, skipped, blocked, known issue
 
 **Double mapping**:
 One real place a crowdsourced source holds as more than one element, because two
