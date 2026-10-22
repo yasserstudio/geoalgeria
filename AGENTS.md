@@ -61,6 +61,15 @@ converted package rebuilds offline (`--cache`). Rules in
 [`sources/README.md`](sources/README.md). Unconverted packages still cache raw
 pulls in gitignored `research/<pkg>/` until they are next touched.
 
+[`refresh-schedule.json`](refresh-schedule.json) is the **freshness schedule**:
+one row per published package with its source, the command that refreshes it, a
+cadence, the date its data was last retrieved and when it is next due. It is
+hand-maintained, and `test/refresh-schedule.test.mjs` keeps `last_retrieved` in
+step with each package's own `data/metadata.json`, so a refresh that forgets the
+schedule fails the build rather than going stale quietly. Read the row before
+refreshing a package: `blocked` means do not run the fetcher at all, and the
+`note` says why a source needs a manual pass or a particular vantage point.
+
 ## The loop
 
 1. **Branch** off `main`: `fix/commune-name`, `feat/emploi-coords`, `chore/ci`.
@@ -116,6 +125,8 @@ Full details and one-time setup: [`RELEASING.md`](RELEASING.md).
 ## Don't
 
 - Hand-edit generated mirrors (`packages/dataset/data/poste/`).
+- Land a refresh without updating that package's `refresh-schedule.json` row, or
+  run a fetcher whose row reads `blocked`.
 - Type a daira or commune count into a carrier. They are derived from the records
   by `node scripts/sync-division-counts.mjs --write`; run it instead.
 - Push a bump without a changeset, or a changeset without a source for the data.

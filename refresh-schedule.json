@@ -1,0 +1,375 @@
+{
+  "schema_version": "1.0.0",
+  "note": "Freshness schedule for every published package. Hand-maintained: cadence, next_due and note are judgement, not derived. last_retrieved is copied from the package's own data/metadata.json, taking the OLDEST sources[].retrieved, because a package is only as fresh as its stalest source; source mirrors sources[0] there and sources_count says how many it has. test/refresh-schedule.test.mjs holds the two in step, so a refresh that forgets this file fails the build instead of going stale quietly. cadence n/a means the package ships no data of its own (umbrella or code), manual means the source has no scripted path, and blocked means the fetcher must not be run until the reason in note is resolved. next_due is last_retrieved + cadence unless a note says otherwise; packages with cadence manual, blocked or n/a have none.",
+  "cadences": {
+    "monthly": "refresh every month",
+    "quarterly": "refresh every three months; the default",
+    "semiannual": "refresh every six months; high-volume sources whose review pass is the real cost",
+    "manual": "no scripted path; refresh is a hand pass, scheduled per batch",
+    "blocked": "do not run the fetcher until the reason in note is resolved",
+    "n/a": "ships no data of its own"
+  },
+  "packages": [
+    {
+      "package": "@geoalgeria/agriculture",
+      "path": null,
+      "source": {
+        "name": "Ministry of Agriculture, Rural Development and Fisheries (MADR)",
+        "url": "https://madr.gov.dz"
+      },
+      "cadence": "manual",
+      "last_retrieved": "2026-06-30",
+      "next_due": null,
+      "note": "MADR directory has no coordinates (0/196 points placed); refreshing means a manual geocoding pass."
+    },
+    {
+      "package": "@geoalgeria/aviation",
+      "path": "pnpm --filter @geoalgeria/aviation fetch",
+      "source": {
+        "name": "ANAC: Autorité Nationale de l'Aviation Civile",
+        "url": "https://www.anac.dz"
+      },
+      "sources_count": 2,
+      "cadence": "quarterly",
+      "last_retrieved": "2026-09-09",
+      "next_due": "2026-12-09",
+      "note": "Airports refresh on this cadence; the Air Algérie route citations are a manual per-route evidence pass tracked separately."
+    },
+    {
+      "package": "@geoalgeria/banques",
+      "path": "pnpm --filter @geoalgeria/banques build",
+      "source": {
+        "name": "Banque d'Algérie: liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)",
+        "url": "https://www.bank-of-algeria.dz/banques-commerciales/"
+      },
+      "sources_count": 3,
+      "cadence": "manual",
+      "last_retrieved": "2026-06-16",
+      "next_due": null,
+      "note": "AGB's locator sits behind a WAF and needs a manual headless capture; the bank list itself is address-only."
+    },
+    {
+      "package": "@geoalgeria/buses",
+      "path": "pnpm --filter @geoalgeria/buses fetch",
+      "source": {
+        "name": "French Wikipedia: Lignes de bus ETUSA de 1 à 99",
+        "url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+      },
+      "sources_count": 16,
+      "cadence": "semiannual",
+      "last_retrieved": "2026-07-01",
+      "next_due": "2027-01-01",
+      "note": "Sixteen hand-curated operator sources, several of them Facebook artwork or owner-supplied official pages; a resync is a per-operator pass, not one fetch."
+    },
+    {
+      "package": "@geoalgeria/cliniques",
+      "path": "pnpm --filter @geoalgeria/cliniques fetch",
+      "source": {
+        "name": "OpenStreetMap: clinics & proximity-care facilities in Algeria",
+        "url": "https://www.openstreetmap.org"
+      },
+      "cadence": "semiannual",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2027-02-28",
+      "note": "OSM pull with a classification pass; 833 approximate coordinates are a #244 P3 debt."
+    },
+    {
+      "package": "@geoalgeria/culture",
+      "path": "pnpm --filter @geoalgeria/culture fetch",
+      "source": {
+        "name": "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)",
+        "url": "https://cartes.patrimoineculturelalgerien.org"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-06-28",
+      "next_due": "2026-09-28"
+    },
+    {
+      "package": "geoalgeria",
+      "path": null,
+      "source": null,
+      "cadence": "manual",
+      "last_retrieved": null,
+      "next_due": null,
+      "note": "Administrative divisions change only by JORA decree, not on a polling cadence, and are validated by packages/dataset/scripts/validate.py. Its data/poste/ tree is a generated mirror refreshed by the @geoalgeria/poste row."
+    },
+    {
+      "package": "@geoalgeria/djezzy",
+      "path": "pnpm --filter @geoalgeria/djezzy fetch",
+      "source": {
+        "name": "Djezzy: Optimum Telecom Algérie (nos-boutiques)",
+        "url": "https://www.djezzy.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2026-11-30"
+    },
+    {
+      "package": "@geoalgeria/ecoles",
+      "path": "pnpm --filter @geoalgeria/ecoles fetch",
+      "source": {
+        "name": "OpenStreetMap: schools & kindergartens in Algeria",
+        "url": "https://www.openstreetmap.org"
+      },
+      "cadence": "semiannual",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2027-02-28",
+      "note": "Large OSM pull (11,858 records); 9,018 approximate coordinates are an OSM sparsity debt for #244 P3, not a refresh debt."
+    },
+    {
+      "package": "@geoalgeria/emploi",
+      "path": "pnpm --filter @geoalgeria/emploi fetch",
+      "source": {
+        "name": "ANEM: National Employment Agency (anem.dz)",
+        "url": "https://www.anem.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2026-11-30"
+    },
+    {
+      "package": "@geoalgeria/enseignement-superieur",
+      "path": "pnpm --filter @geoalgeria/enseignement-superieur fetch && pnpm --filter @geoalgeria/enseignement-superieur geocode",
+      "source": {
+        "name": "Ministry of Higher Education and Scientific Research (MESRS)",
+        "url": "https://www.mesrs.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-08-03",
+      "next_due": "2026-11-03",
+      "note": "Two steps: fetch, then geocode."
+    },
+    {
+      "package": "@geoalgeria/ferroviaire",
+      "path": "pnpm --filter @geoalgeria/ferroviaire fetch",
+      "source": {
+        "name": "Wikidata: rail & urban transit stations in Algeria",
+        "url": "https://www.wikidata.org"
+      },
+      "sources_count": 2,
+      "cadence": "blocked",
+      "last_retrieved": "2026-07-01",
+      "next_due": null,
+      "note": "Regeneration frozen since 2026-08-03: a replay produces 233 coordinate and 232 name diffs whose root cause is undiagnosed. Never run the fetcher until that is explained."
+    },
+    {
+      "package": "@geoalgeria/formation-professionnelle",
+      "path": "pnpm --filter @geoalgeria/formation-professionnelle fetch",
+      "source": {
+        "name": "Ministry of Vocational Training and Education (MFEP): takwin.dz",
+        "url": "https://takwin.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-06-22",
+      "next_due": "2026-09-22"
+    },
+    {
+      "package": "@geoalgeria/gares-routieres",
+      "path": "pnpm --filter @geoalgeria/gares-routieres fetch",
+      "source": {
+        "name": "SOGRAL: Société de Gestion des Gares Routières d'Algérie",
+        "url": "https://live.sogral.com"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-07-01",
+      "next_due": "2026-10-01",
+      "note": "The SOGRAL registry is archived, so churn comes from MAHATATI agency ids."
+    },
+    {
+      "package": "@geoalgeria/industrie-pharmaceutique",
+      "path": null,
+      "source": {
+        "name": "Ministère de l'Industrie Pharmaceutique (MIP): approved manufacturers register",
+        "url": "https://www.miph.gov.dz"
+      },
+      "cadence": "manual",
+      "last_retrieved": "2026-07-05",
+      "next_due": null,
+      "note": "The MIP fabrication register carries no coordinates; records are placed at commune or wilaya centroid by hand."
+    },
+    {
+      "package": "@geoalgeria/jeunesse",
+      "path": "pnpm --filter @geoalgeria/jeunesse fetch",
+      "source": {
+        "name": "Ministry of Youth and Sports: SIG",
+        "url": "https://sig.mjs.gov.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-06-23",
+      "next_due": "2026-09-23",
+      "note": "El Aricha reconciliation (39 records shared with sports) is a manual pass for 2026-16."
+    },
+    {
+      "package": "@geoalgeria/livraison",
+      "path": "pnpm --filter @geoalgeria/livraison fetch",
+      "source": {
+        "name": "Yalidine Express: nos-agences",
+        "url": "https://yalidine-express.com.dz/nos-agences/"
+      },
+      "sources_count": 5,
+      "cadence": "quarterly",
+      "last_retrieved": "2026-06-18",
+      "next_due": "2026-09-18"
+    },
+    {
+      "package": "@geoalgeria/mobilis",
+      "path": "pnpm --filter @geoalgeria/mobilis fetch",
+      "source": {
+        "name": "Mobilis: ATM Mobilis (mobilis.dz)",
+        "url": "https://www.mobilis.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2026-11-30",
+      "note": "Agencies only. The ~12k approved points of sale carry no coordinates at source, so density is the ceiling (locator is WAF-protected)."
+    },
+    {
+      "package": "@geoalgeria/mosquees",
+      "path": "pnpm --filter @geoalgeria/mosquees fetch",
+      "source": {
+        "name": "Wikidata: mosques in Algeria",
+        "url": "https://www.wikidata.org"
+      },
+      "sources_count": 2,
+      "cadence": "semiannual",
+      "last_retrieved": "2026-06-25",
+      "next_due": "2026-12-25",
+      "note": "Wikidata + OSM composite, high volume; 4,534 approximate coordinates are a #244 P3 debt."
+    },
+    {
+      "package": "@geoalgeria/normalize",
+      "path": null,
+      "source": null,
+      "cadence": "n/a",
+      "last_retrieved": null,
+      "next_due": null,
+      "note": "Code only: Search key generation and its Golden corpus, not a dataset."
+    },
+    {
+      "package": "@geoalgeria/ooredoo",
+      "path": "pnpm --filter @geoalgeria/ooredoo fetch",
+      "source": {
+        "name": "Ooredoo Algérie: retail network (trouvez-nous JSON API)",
+        "url": "https://www.ooredoo.dz/fr/particuliers/trouvez-nous"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2026-11-30"
+    },
+    {
+      "package": "@geoalgeria/pharma",
+      "path": null,
+      "source": null,
+      "cadence": "n/a",
+      "last_retrieved": null,
+      "next_due": null,
+      "note": "Umbrella: re-exports industrie-pharmaceutique + pharmacies, holds no data of its own."
+    },
+    {
+      "package": "@geoalgeria/pharmacies",
+      "path": "pnpm --filter @geoalgeria/pharmacies fetch",
+      "source": {
+        "name": "OpenStreetMap: pharmacies (amenity=pharmacy) in Algeria",
+        "url": "https://www.openstreetmap.org"
+      },
+      "cadence": "semiannual",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2027-02-28",
+      "note": "Large OSM pull with a heavy review pass; its accuracy debt is coordinate precision, which #244 P3 fixes rather than a refresh."
+    },
+    {
+      "package": "@geoalgeria/poste",
+      "path": "pnpm --filter @geoalgeria/poste fetch",
+      "source": {
+        "name": "Algérie Poste: baridimap.poste.dz",
+        "url": "https://baridimap.poste.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-06-08",
+      "next_due": "2026-09-08",
+      "note": "Geo-blocked from outside Algeria: poste.dz drops non-Algerian IPs (verified 2026-10-22, TCP connect dropped on every A record, ports 80 and 443). Needs an Algerian vantage point."
+    },
+    {
+      "package": "@geoalgeria/protection-civile",
+      "path": "pnpm --filter @geoalgeria/protection-civile fetch",
+      "source": {
+        "name": "Direction Générale de la Protection Civile",
+        "url": "https://dgpc.dz/dgpc2/"
+      },
+      "sources_count": 2,
+      "cadence": "monthly",
+      "last_retrieved": "2026-09-08",
+      "next_due": "2026-10-08",
+      "note": "Already automated: the guarded scheduled promotion workflow (sources/README.md) refreshes the DGPC capture monthly and only promotes it when every gate passes."
+    },
+    {
+      "package": "@geoalgeria/sante",
+      "path": "pnpm --filter @geoalgeria/sante fetch",
+      "source": {
+        "name": "Ministry of Health (sante.gov.dz): health-establishment registry",
+        "url": "https://sante.gov.dz"
+      },
+      "sources_count": 3,
+      "cadence": "quarterly",
+      "last_retrieved": "2026-06-27",
+      "next_due": "2026-09-27",
+      "note": "458 approximate coordinates are a #244 P3 debt."
+    },
+    {
+      "package": "@geoalgeria/schema",
+      "path": null,
+      "source": null,
+      "cadence": "n/a",
+      "last_retrieved": null,
+      "next_due": null,
+      "note": "Code only: the shared v2 contract, not a dataset."
+    },
+    {
+      "package": "@geoalgeria/sports",
+      "path": "pnpm --filter @geoalgeria/sports fetch",
+      "source": {
+        "name": "Ministry of Youth and Sports: SIG",
+        "url": "https://sig.mjs.gov.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-06-23",
+      "next_due": "2026-09-23",
+      "note": "El Aricha reconciliation (39 records shared with jeunesse) is a manual pass for 2026-16."
+    },
+    {
+      "package": "@geoalgeria/telecom",
+      "path": "pnpm --filter @geoalgeria/telecom fetch",
+      "source": {
+        "name": "Djezzy: published 5G coverage map (Optimum Telecom Algérie)",
+        "url": "https://www.djezzy5g.dz/map.html"
+      },
+      "sources_count": 3,
+      "cadence": "monthly",
+      "last_retrieved": "2026-09-08",
+      "next_due": "2026-10-08",
+      "note": "5G coverage is the fastest-churning source in the repo: operators add sites continuously. Djezzy and Ooredoo need the agent-browser path."
+    },
+    {
+      "package": "@geoalgeria/tourisme",
+      "path": null,
+      "source": {
+        "name": "OpenStreetMap: attractions, historic sites, lodging & parks in Algeria",
+        "url": "https://www.openstreetmap.org"
+      },
+      "sources_count": 3,
+      "cadence": "manual",
+      "last_retrieved": "2026-06-21",
+      "next_due": null,
+      "note": "Generator path unconfirmed: no fetch script is wired, so the next refresh has to re-establish it first."
+    },
+    {
+      "package": "@geoalgeria/transport",
+      "path": null,
+      "source": null,
+      "cadence": "n/a",
+      "last_retrieved": null,
+      "next_due": null,
+      "note": "Umbrella: re-exports aviation + ferroviaire + gares-routieres + buses, holds no data of its own."
+    }
+  ]
+}
