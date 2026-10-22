@@ -115,6 +115,33 @@ test("the npm tarball ships the loader and the JSON it points at", () => {
   }
 });
 
+test("a loader answers with a fresh copy, so one caller cannot reorder another's data", () => {
+  // The generated loader reads through one shared parse: the require cache in
+  // Node, a single inlined object in a bundle. Handing that out would have
+  // turned the per-call `JSON.parse` it replaced into shared mutable state,
+  // where a `.sort()` on one display path reorders every later caller's
+  // records. The copy is what keeps the old semantics, so it is tested.
+  for (const { dir, root, loaders } of packages) {
+    const load = require(join(root, "loaders.cjs"));
+    const file = [...loaders.matchAll(/^ {2}"([^"]+)":/gm)]
+      .map((m) => m[1])
+      .find((name) => Array.isArray(load(name)));
+    assert.ok(file, `${dir} has no loader answering with an array`);
+
+    const first = load(file);
+    const before = first.length;
+    const sample = JSON.stringify(first[0]);
+    first.reverse();
+    first.push({ id: "injected-by-the-test" });
+    first[0].name_fr = "mutated by the test";
+
+    const second = load(file);
+    assert.equal(second.length, before, `${dir}: ${file} kept a caller's push`);
+    assert.equal(JSON.stringify(second[0]), sample, `${dir}: ${file} kept a caller's sort or edit`);
+    assert.notEqual(second, first, `${dir}: ${file} handed the same array to two callers`);
+  }
+});
+
 test("a loader refuses a file this package does not have", () => {
   for (const { dir, root, manifest } of packages) {
     const load = require(join(root, "loaders.cjs"));
@@ -149,6 +176,13 @@ test("the public API keeps its lazy functions and its values", async () => {
       metadata.record_count,
       JSON.parse(readFileSync(join(root, "data", "metadata.json"), "utf-8")).record_count,
       `${dir} metadata() does not answer with its own metadata.json`,
+    );
+    // The same copy-per-call contract, at the level a consumer sees it.
+    metadata.record_count = -1;
+    assert.equal(
+      api.metadata().record_count,
+      JSON.parse(readFileSync(join(root, "data", "metadata.json"), "utf-8")).record_count,
+      `${dir} metadata() hands out a shared object a caller can edit`,
     );
   }
 });

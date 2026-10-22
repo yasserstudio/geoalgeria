@@ -28,9 +28,9 @@
  * The scoped packages were verified WORKING in that same sandbox (`import
  * { branches } from "@geoalgeria/banques"` served all 1,704), because they are
  * ESM that join their data path at runtime from `import.meta.url`, which
- * Turbopack and webpack trace and relocate. esbuild and Vite do not relocate
- * it, so every scoped package broke under those two with the same ENOENT. That
- * is issue #290, and the second leg below is its proof: it packs every sector
+ * Turbopack traces and relocates. esbuild and Vite do not relocate it, so
+ * every scoped package broke under those two with the same ENOENT. That is
+ * issue #290, and the second leg below is its proof: it packs every sector
  * tarball, runs the same probe three ways (plain Node, an esbuild bundle, a
  * Vite SSR bundle) and demands the three agree, so a bundler that cannot reach
  * the data fails here instead of in a consumer's app.
@@ -43,30 +43,30 @@
  *
  * Usage: node scripts/check-bundlers.mjs [--only=poste,telecom]
  *
- * Turbopack's own resolver is still not run: it needs a Next.js app and a
- * `next build`, which belongs in a Vercel Sandbox and not on a laptop or in
- * this repo's CI. It is also the one bundler these packages already worked
- * under, so a Turbopack leg would pass before the fix as well as after it and
- * assert nothing. esbuild and Vite are the two that broke, and they cover the
- * esbuild / Rollup resolvers between them.
+ * What is actually exercised here, and nothing beyond it: Node, esbuild
+ * (`esbuild.buildSync`, ESM and CommonJS output) and Vite 8's SSR build, which
+ * bundles with rolldown. Not Rollup proper, not webpack.
+ *
+ * Turbopack is not run here and still needs proving. It needs a Next.js app and
+ * a `next build`, which this repo has not got and which never runs on the
+ * owner's machine. The fix gives it a graph it has not seen before: an ESM
+ * `index.js` default-importing a CommonJS loader whose JSON arrives by literal
+ * `require`, where before it traced a runtime read. The proof is the app's
+ * Vercel preview build in the batch lockstep, which exercises exactly this
+ * path: `apps/web/lib/sogral-summaries.ts` imports `@geoalgeria/gares-routieres`
+ * through its index and calls a loader at request time. Until that preview is
+ * green, Turbopack is untested against this change.
  */
 
 import { execFile as execFileCb, execFileSync } from "node:child_process";
 import { promisify } from "node:util";
-import {
-  existsSync,
-  mkdtempSync,
-  mkdirSync,
-  readdirSync,
-  readFileSync,
-  rmSync,
-  writeFileSync,
-} from "node:fs";
+import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import * as esbuild from "esbuild";
 import { build as viteBuild } from "vite";
+import { loaderPackages } from "./generate-loaders.mjs";
 
 const execFile = promisify(execFileCb);
 
@@ -173,14 +173,11 @@ async function umbrellaLeg(work) {
 
 // --- leg 2: every scoped sector package (issue #290) ------------------------
 
-/** The sector packages: the ones that ship a `data/metadata.json` and load it.
- *  Read off disk, so a package added tomorrow is covered tomorrow. */
+/** The sector packages, from the generator's own predicate rather than a second
+ *  copy of it: the two must agree on which packages carry a loader. */
 function sectorPackages(only) {
-  return readdirSync(join(ROOT, "packages"))
-    .filter((dir) => existsSync(join(ROOT, "packages", dir, "data", "metadata.json")))
-    .filter((dir) => existsSync(join(ROOT, "packages", dir, "index.js")))
+  return loaderPackages()
     .filter((dir) => !only || only.includes(dir))
-    .sort()
     .map((dir) => ({
       dir: join("packages", dir),
       name: JSON.parse(readFileSync(join(ROOT, "packages", dir, "package.json"), "utf-8")).name,
@@ -271,7 +268,7 @@ async function sectorLeg(work, only) {
     const recordCount = JSON.parse(
       readFileSync(join(ROOT, dir, "data", "metadata.json"), "utf-8"),
     ).record_count;
-    const problems = describe(reports, recordCount);
+    const problems = problemsIn(reports, recordCount);
     if (problems.length) failures.push(...problems.map((problem) => `${name} ${problem}`));
     console.log(
       `${name}: ${problems.length ? "FAILED" : "ok"} (${Object.keys(reports.node.report).length} loaders, ${recordCount} records)`,
@@ -286,7 +283,8 @@ async function sectorLeg(work, only) {
   }
 }
 
-/** Build the probe with Vite's SSR pipeline (Rollup) and hand back the bundle. */
+/** Build the probe with Vite 8's SSR pipeline, which bundles with rolldown
+ *  (`rollupOptions` is the config name it kept), and hand back the bundle. */
 async function viteBundle(work, probe, name) {
   const outDir = join(work, "out", "vite", name);
   await viteBuild({
@@ -307,11 +305,12 @@ async function viteBundle(work, probe, name) {
 }
 
 /**
- * Compare the three runs. The plain-Node run is the baseline (these packages
- * have always worked there), so a bundler disagreeing with it is the bug, and
- * no expected count is written down anywhere.
+ * The problems in one package's three runs, as a list of lines, empty when
+ * there are none. The plain-Node run is the baseline (these packages have
+ * always worked there), so a bundler disagreeing with it is the bug, and no
+ * expected count is written down anywhere.
  */
-function describe(reports, recordCount) {
+function problemsIn(reports, recordCount) {
   const problems = [];
   const baseline = reports.node.report;
 
@@ -357,6 +356,18 @@ try {
   // `--only=dataset` runs the umbrella leg alone. No flag runs everything.
   const flag = process.argv.find((arg) => arg.startsWith("--only="));
   const only = flag ? flag.slice("--only=".length).split(",").filter(Boolean) : null;
+
+  // A name that matches nothing checked nothing, and a mistyped `--only` that
+  // printed "ok" after bundling zero packages would be worse than no flag.
+  const known = ["dataset", ...loaderPackages()];
+  const unknown = (only ?? []).filter((name) => !known.includes(name));
+  if (only && (!only.length || unknown.length)) {
+    throw new Error(
+      `--only matched no package${unknown.length ? `: ${unknown.join(", ")}` : ""}. ` +
+        `Known: ${known.join(", ")}`,
+    );
+  }
+
   if (!only || only.includes("dataset")) await umbrellaLeg(work);
   await sectorLeg(work, only);
   console.log("check-bundlers: ok");

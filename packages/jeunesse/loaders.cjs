@@ -17,8 +17,11 @@ const LOADERS = {
 /**
  * Read one of this package's data files.
  *
- * The answer is the module cache's copy, shared by every caller and inlined by
- * a bundler, so treat it as read-only: sort or splice a copy, not this.
+ * Every call answers with a fresh copy, exactly as the `JSON.parse` this
+ * replaced did, so a caller that sorts or splices what it gets cannot reorder
+ * another caller's data. The copy is what makes that true: the `require` cache
+ * holds one parse of the file, and a bundler inlines it as a single shared
+ * object, so handing that out directly would be shared mutable state.
  *
  * @param {string} file  file name under `data/`, e.g. "institutions.json"
  * @returns {any} the parsed JSON
@@ -26,5 +29,5 @@ const LOADERS = {
 module.exports = function load(file) {
   const loader = LOADERS[file];
   if (!loader) throw new Error(`@geoalgeria/jeunesse: no data file "${file}" in this package`);
-  return loader();
+  return structuredClone(loader());
 };

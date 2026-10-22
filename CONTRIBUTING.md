@@ -49,6 +49,9 @@ cd geoalgeria
 pnpm install
 ```
 
+Node **20.19+ or 22.12+** for the toolchain: `pnpm validate` bundles with Vite,
+which requires it. The published packages themselves still run on Node 18.
+
 ### 2. Make your change
 
 - Fix incorrect data (names, postal codes, coordinates)
@@ -74,15 +77,18 @@ pnpm validate    # schema + integrity checks on the dataset
 ```
 
 It ends with a bundler check ([`scripts/check-bundlers.mjs`](scripts/check-bundlers.mjs),
-also `pnpm check-bundlers`): it packs the real tarballs, bundles them with esbuild
-and with Vite and runs the output, because a package can load perfectly in Node and
-still fail in a bundled app (issues #276 and #290).
+also `pnpm check-bundlers`): it packs the real tarballs and runs each one three
+ways, under plain Node, an esbuild bundle and a Vite 8 SSR bundle (rolldown),
+because a package can load perfectly in Node and still fail in a bundled app
+(issues #276 and #290). Turbopack is not run here, it needs a `next build`; the
+app's preview build in the batch lockstep is what proves that one.
 
 That is also why every package reaches its JSON through a generated
 `loaders.cjs`, one `require` of a literal path per data file, instead of joining
 a path at run time, which a bundler rewrites. Don't hand-edit a `loaders.cjs`:
 when a dataset gains or loses a data file, run `pnpm generate-loaders` and commit
-what it writes. `pnpm validate` fails on a stale one.
+what it writes. `pnpm validate` fails on a stale one, and on an `index.js` that
+no longer loads through it.
 
 ### 4. Open a pull request
 

@@ -98,8 +98,11 @@ ${entries}
 /**
  * Read one of this package's data files.
  *
- * The answer is the module cache's copy, shared by every caller and inlined by
- * a bundler, so treat it as read-only: sort or splice a copy, not this.
+ * Every call answers with a fresh copy, exactly as the \`JSON.parse\` this
+ * replaced did, so a caller that sorts or splices what it gets cannot reorder
+ * another caller's data. The copy is what makes that true: the \`require\` cache
+ * holds one parse of the file, and a bundler inlines it as a single shared
+ * object, so handing that out directly would be shared mutable state.
  *
  * @param {string} file  file name under \`data/\`, e.g. ${JSON.stringify(files[0])}
  * @returns {any} the parsed JSON
@@ -107,9 +110,36 @@ ${entries}
 module.exports = function load(file) {
   const loader = LOADERS[file];
   if (!loader) throw new Error(\`${name}: no data file "\${file}" in this package\`);
-  return loader();
+  return structuredClone(loader());
 };
 `;
+}
+
+/**
+ * The one line an `index.js` may reach its data through. Checked here rather
+ * than generated: an index is hand-written around it, with its own exports and
+ * comments, and only this import and the absence of a run-time read are what
+ * the bundlers care about. Never auto-fixed, so a package that drifts back to
+ * `readFileSync` fails the check instead of being quietly rewritten.
+ */
+const PREAMBLE = 'import load from "./loaders.cjs";';
+
+function preambleProblems(dir) {
+  const code = readFileSync(join(PACKAGES, dir, "index.js"), "utf-8")
+    .split("\n")
+    .filter((line) => !line.trimStart().startsWith("//"))
+    .join("\n");
+  const problems = [];
+  if (!code.includes(PREAMBLE)) {
+    problems.push(`${dir}/index.js does not reach its data through \`${PREAMBLE}\``);
+  }
+  const runtime = code.match(/readFileSync|import\.meta\.url|__dirname/);
+  if (runtime) {
+    problems.push(
+      `${dir}/index.js builds a data path at run time (${runtime[0]}); a bundler rewrites it and the read fails with ENOENT`,
+    );
+  }
+  return problems;
 }
 
 /** Every generated artifact has to be in the npm tarball, or it ships broken. */
@@ -122,10 +152,12 @@ function withLoaderInFiles(manifest) {
 }
 
 function main(check) {
-  const stale = [];
+  const stale = []; // this generator can fix these
+  const blocking = []; // it cannot: a human edits index.js
   let written = 0;
 
   for (const dir of loaderPackages()) {
+    blocking.push(...preambleProblems(dir));
     const manifestPath = join(PACKAGES, dir, "package.json");
     const manifest = JSON.parse(readFileSync(manifestPath, "utf-8"));
     const files = dataFilesFor(dir);
@@ -152,15 +184,16 @@ function main(check) {
     }
   }
 
-  if (stale.length) {
-    console.error(`generate-loaders --check: ${stale.length} problem(s)`);
-    for (const line of stale) console.error(`  ${line}`);
-    console.error("  run: node scripts/generate-loaders.mjs");
+  if (stale.length || blocking.length) {
+    console.error(`generate-loaders${check ? " --check" : ""}: ${stale.length + blocking.length} problem(s)`);
+    for (const line of [...stale, ...blocking]) console.error(`  ${line}`);
+    if (stale.length) console.error("  run: node scripts/generate-loaders.mjs");
+    if (blocking.length) console.error(`  then fix the index.js above by hand: ${PREAMBLE}`);
     process.exit(1);
   }
   console.log(
     check
-      ? `  OK: every loaders.cjs is in sync (${loaderPackages().length} packages)`
+      ? `  OK: ${loaderPackages().length} packages, every loaders.cjs in sync and every index.js loading through it`
       : `generate-loaders: ${written} file(s) written`,
   );
 }
