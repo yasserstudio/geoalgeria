@@ -22,7 +22,6 @@ import {
   TWIN_PAIR_TABLE,
   UNPAIRED_CANDIDATES,
   assertPairTable,
-  pairTableSides,
 } from "../packages/sante/scripts/twin-pair-table.mjs";
 import { pairPosts } from "../packages/sante/scripts/fetch.mjs";
 
@@ -113,9 +112,11 @@ test("pair table: every row cites a source that is not the registry", () => {
       assert.match(e.checked_at, /^\d{4}-\d{2}-\d{2}$/);
       assert.ok(e.note, `${row.msp_fr}/${row.msp_ar} evidence has no reading`);
     }
-    // the two halves are the two languages, named once each
-    assert.deepEqual(pairTableSides(row), ["fr", "ar"]);
+    // the two halves are one French post and one Arabic post: a same-language
+    // duplicate is a repeat post, which mergeRepeatPosts handles instead
+    assert.ok(row.msp_fr && row.msp_ar, `${row.facility} does not name both halves`);
     assert.notEqual(row.msp_fr, row.msp_ar);
+    assert.ok(row.expect_fr && row.expect_ar, `${row.facility} records no registry title to check against`);
   }
 });
 

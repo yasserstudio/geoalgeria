@@ -228,11 +228,6 @@ export const UNPAIRED_CANDIDATES = [
   },
 ];
 
-/** The two languages a row names, in the order it names them. Both halves are
- *  always one French post and one Arabic post: a same-language duplicate is a
- *  repeat post, which `mergeRepeatPosts` handles and this table never does. */
-export const pairTableSides = (row) => [row.msp_fr ? "fr" : null, row.msp_ar ? "ar" : null].filter(Boolean);
-
 /**
  * Fail the build unless every row still describes the registry it was written
  * about: both posts present, in the language, wilaya and type the row names, and
