@@ -657,15 +657,16 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats, verd
 
   // 1b) the hand-asserted pairs have to still describe this registry: a post the
   //     Ministry renamed, moved to another wilaya or stopped publishing is no
-  //     longer the facility its evidence was gathered for, so the build stops
-  //     rather than merge two records on a stale reading. Checked here, over
-  //     every post, because a group never sees a row that belongs elsewhere.
+  //     longer the establishment its evidence was gathered for, so the build
+  //     stops rather than merge two records on a stale reading. Checked here,
+  //     over every post, because a group never sees a row that belongs
+  //     elsewhere.
   assertPairTable(posts);
 
-  // 2) pair FR + AR posts within each (wilaya, type) group (see pairPosts):
-  //    by the evidence-backed pair table, then by transliterated-locality
-  //    similarity, then by an unambiguous shared commune. Ambiguous cases stay
-  //    monolingual rather than risk a wrong pair.
+  // 2) pair FR + AR posts within each (wilaya, type) group (see pairPosts): by
+  //    the pair table, then by transliterated-locality similarity, then by an
+  //    unambiguous shared commune. An ambiguous case stays a Half-record rather
+  //    than risk a wrong pair.
   const groups = new Map(); // "wilaya|type" -> { fr:[], ar:[] }
   for (const p of posts) {
     const key = `${p.wilayaCode}|${p.type}`;
@@ -721,7 +722,7 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats, verd
   //    language it already had, which step 3 of the pairing cannot reach because
   //    it pairs one language with the other (see mergeRepeatPosts).
   const paired = [];
-  for (const g of groups.values()) for (const slot of pairPosts(g.fr, g.ar, wil, verdicts)) paired.push(slot);
+  for (const g of groups.values()) for (const slot of pairPosts(g.fr, g.ar, wil, { verdicts })) paired.push(slot);
   const merged = mergeRepeatPosts(paired);
   if (repeats) repeats.push(...merged.verdicts);
   for (const slot of merged.slots) {
@@ -732,26 +733,30 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats, verd
   return establishments;
 }
 
-// Pair FR and AR posts of one (wilaya, type) group. Step 0: the evidence-backed
-// pair table. Step 1: transliterated-locality token similarity (≥ 0.5). Step 2:
-// an unambiguous shared commune (exactly one remaining fr + one ar in it). Step
-// 3: an adjacent MSP post id whose name does not contradict (see
-// pairTwinPosts). Step 4: leftovers stay monolingual. The wilaya name is
-// stripped from locality tokens, because inside the capital every establishment
-// carries it and it cannot tell two of them apart. `verdicts`, when passed,
-// collects the step-0 and step-3 decisions for the review report.
-export function pairPosts(fr, ar, wil, verdicts = null, table = TWIN_PAIR_TABLE) {
+// Pair FR and AR posts of one (wilaya, type) group. Step 0: the pair table.
+// Step 1: transliterated-locality token similarity (≥ 0.5). Step 2: an
+// unambiguous shared commune (exactly one remaining fr + one ar in it). Step 3:
+// an adjacent MSP post id whose name does not contradict (see pairTwinPosts).
+// Step 4: whatever is left stays a Half-record. The wilaya name is stripped from
+// locality tokens, because inside the capital every establishment carries it and
+// it cannot tell two of them apart.
+//
+// `options.verdicts`, when passed, collects the step-0 and step-3 decisions for
+// the review report; `options.table` is the seam the pair-table test writes
+// against. Both are options rather than positionals, so a caller never has to
+// count arguments to reach the one it means.
+export function pairPosts(fr, ar, wil, { verdicts = null, table = TWIN_PAIR_TABLE } = {}) {
   const out = [];
   if (!fr.length && !ar.length) return out;
   const wset = wilayaTokens(wil.byCode.get((fr[0] || ar[0]).wilayaCode));
   const usedF = new Set(), usedA = new Set();
 
-  // step 0: a pair asserted by hand on a second source (see twin-pair-table.mjs).
-  // It runs before every automatic step, because a read of OpenStreetMap or of a
-  // ministry page is stronger evidence than any signal the registry alone
-  // offers, and because the halves it names are exactly the ones a weaker step
-  // would otherwise claim: in Skikda and Ouargla both hospitals' halves name
-  // nothing but the city, so the locality-similarity step pairs whichever two it
+  // step 0: a pair asserted by hand (see twin-pair-table.mjs). It runs before
+  // every automatic step, because a read of OpenStreetMap or of a ministry page
+  // is stronger evidence than any signal the registry alone offers, and because
+  // the halves it names are exactly the ones a weaker step would otherwise
+  // claim: in Oran the CHU's halves and the EHU's name nothing but the city
+  // beyond their class, so the locality-similarity step pairs whichever two it
   // reaches first.
   for (const { fr: f, ar: a, verdict } of pairTableFor(fr, ar, table)) {
     if (verdicts) verdicts.push(verdict);
@@ -1412,23 +1417,32 @@ const isGeneric = (t) => GENERIC_TOKENS.has(t) || GENERIC_TOKENS.has(squash(t));
 
 // Discriminating tokens of a place string, with wilaya + commune names and the
 // facility-class vocabulary removed.
-function placeTokens(latin, com, wil) {
+// `arabic` says the tokens were transliterated out of Arabic, which is the only
+// script the locative rule below applies to.
+function placeTokens(latin, com, wil, arabic = false) {
   const drop = new Set();
   const w = wil.byCode.get(com.wilaya_code);
   for (const s of [norm(w.name_fr).toLowerCase(), translitAr(w.name_ar), norm(com.name_fr).toLowerCase(), translitAr(com.name_ar)])
     for (const t of s.split(" ")) if (t.length >= 3) drop.add(t);
-  // A place name the title reaches through an Arabic locative particle is still
-  // that place name: translitAr writes بأدرار and بادرار ("at Adrar") as "badrar",
-  // which `drop` does not hold, so the bare city name survived as if it told two
-  // establishments of that city apart. It stamped the OpenStreetMap EPSP of Adrar
-  // onto the EPH of Adrar the moment the EPH gained its Arabic half.
-  const placeName = (t) => drop.has(t) || ((t[0] === "b" || t[0] === "l") && drop.has(t.slice(1))) || (t.startsWith("al") && drop.has(t.slice(2)));
-  return latin.split(" ").filter((t) => t.length >= 3 && !placeName(t) && !isGeneric(t));
+  // A place name an ARABIC title reaches through a locative particle is still
+  // that place name: translitAr writes بأدرار and بادرار ("at Adrar") as
+  // "badrar", which `drop` does not hold, so the bare city name survived as if
+  // it told two establishments of that city apart. It stamped the OpenStreetMap
+  // EPSP of Adrar onto the EPH of Adrar the moment the EPH gained its Arabic
+  // half. The particles are ب and ل, which attach to the following word, plus
+  // the definite article ال.
+  //
+  // Only for Arabic, because in a Latin name a leading b or l is a letter of the
+  // name and not a particle: stripping it there would swallow any place whose
+  // name happens to be its commune's with a b or an l in front.
+  const particled = (t) =>
+    arabic && (((t[0] === "b" || t[0] === "l") && drop.has(t.slice(1))) || (t.startsWith("al") && drop.has(t.slice(2))));
+  return latin.split(" ").filter((t) => t.length >= 3 && !drop.has(t) && !particled(t) && !isGeneric(t));
 }
 export function estTokens(est, com, wil) {
   const fr = est.name_fr ? classify(est.name_fr).locality.toLowerCase() : "";
   const ar = est.name_ar ? translitAr(classify(est.name_ar).locality) : "";
-  const toks = [...placeTokens(fr, com, wil), ...placeTokens(ar, com, wil)];
+  const toks = [...placeTokens(fr, com, wil), ...placeTokens(ar, com, wil, true)];
   const spec = specialtyCode(est.name_fr || "", "fr") || specialtyCode(est.name_ar || "", "ar");
   if (spec) toks.push("spec_" + spec);
   return toks;
@@ -1437,7 +1451,7 @@ export function facilityTokens(name, com, wil) {
   if (!name) return [];
   const lang = isArabic(name) ? "ar" : "fr";
   const latin = lang === "ar" ? translitAr(name) : norm(name).toLowerCase();
-  const toks = placeTokens(latin, com, wil);
+  const toks = placeTokens(latin, com, wil, lang === "ar");
   const spec = specialtyCode(name, lang);
   if (spec) toks.push("spec_" + spec);
   return toks;
@@ -1702,12 +1716,12 @@ async function main() {
     retiredIds,
     retiredMigrations: repeatReport.migrations,
   });
-  const leftovers = monolingualLeftovers(out);
-  writeTwinReport(twinReport, leftovers);
+  const candidates = halfRecordCandidates(out);
+  writeTwinReport(twinReport, candidates);
   writeRepeatReport(repeatReport);
   console.log(
-    `  monolingual leftovers: ${leftovers.length} FR/AR candidate(s) still unpaired, ` +
-      `${leftovers.filter((c) => c.msp_gap <= TWIN_MAX_GAP).length} of them inside the gap the rule reads`,
+    `  half-records: ${candidates.length} FR/AR candidate pairing(s) still unmerged, ` +
+      `${candidates.filter((c) => c.msp_gap <= TWIN_MAX_GAP).length} of them inside the gap the rule reads`,
   );
   console.log(
     `Wrote ${out.length} establishments → v2 (${metadata.wilayas_covered} wilayas, ${metadata.geocoded_count} geocoded).`,
@@ -1715,29 +1729,19 @@ async function main() {
 }
 
 /**
- * Turn the pairing verdicts into the public record of the merge: which id each
- * merged record keeps, which id it absorbed, and the migration note that id
- * carries in retired-ids.json from now on.
- *
- * The kept id is the one the French post shipped under. Both halves of a pair
- * were first published in the same release, so neither id is older than the
- * other; what decides is that it is the LOWER-SEQUENCE id. `assignIds` numbers a
- * group by name, and the French name is Latin where the Arabic one is not, so
- * the French half always takes the lower sequence number.
- */
-/**
- * Every FR/AR pairing candidate the shipped data still holds: one French-only
- * record and one Arabic-only record of the same wilaya and type, with the post
- * gap between them.
+ * Every FR/AR pairing candidate the shipped data still holds: each Half-record
+ * of a wilaya and type crossed with every Half-record of the other language in
+ * the same group, with the post gap between them.
  *
  * This is the national measurement behind #287, computed from what is actually
- * published rather than claimed once in a ticket. It answers "is any twin still
- * missed" on every build, so a registry refresh that creates a new far-apart
- * pair shows up as a row here instead of as two records nobody notices. A row is
- * a candidate and nothing more: most of these are a wilaya's leftovers crossed
- * with each other, and a pair only merges on the rule or on the evidence table.
+ * published rather than claimed once in a ticket. It answers "is any Twin post
+ * still unpaired" on every build, so a registry refresh that leaves a new
+ * far-apart pair behind shows up as a row here instead of as two records nobody
+ * notices. A row is a candidate and nothing more: most of these are one group's
+ * Half-records crossed with each other, and a pair only merges on the twin rule
+ * or on the pair table.
  */
-export function monolingualLeftovers(rows) {
+export function halfRecordCandidates(rows) {
   const groups = new Map();
   for (const r of rows) {
     if (r.name_fr && r.name_ar) continue;
@@ -1772,6 +1776,38 @@ export function monolingualLeftovers(rows) {
 const evidenceSentence = (evidence = []) =>
   evidence.map((e) => `${e.url} (read ${e.checked_at}): ${e.note}`).join(" ");
 
+/** What a hand-asserted pair rests on, as the sentence its retirement note
+ *  carries. The two evidence LEVELS are different claims and are never written
+ *  as if they were the same one: `both` means a source that is not the registry
+ *  names the establishment in both scripts, and `fr_only` means it confirms the
+ *  French half, with the Arabic half carried by the titles being exact
+ *  translations and by the pair being the one candidate left in its group
+ *  (Owner decision, 2026-10-22, on #287). */
+function pairTableReading(t) {
+  const level =
+    t.second_source === "both"
+      ? `A source that is not the registry names this establishment in both scripts.`
+      : `The second source confirms the FRENCH half only. The Arabic half rests on two further readings, ` +
+        `recorded with it: the titles are exact translations of each other, and this is the one candidate left ` +
+        `in its wilaya and type group.`;
+  return (
+    `${level} Translation: ${t.translation}` +
+    (t.only_candidate_left ? ` Only candidate left: ${t.only_candidate_left}` : "") +
+    ` Evidence: ${evidenceSentence(t.evidence)}`
+  );
+}
+
+/**
+ * Turn the pairing verdicts into the public record of the merge: which id each
+ * merged record keeps, which id it absorbed, and the migration note that id
+ * carries in retired-ids.json from now on.
+ *
+ * The kept id is the one the French post shipped under. Both halves of a pair
+ * were first published in the same release, so neither id is older than the
+ * other; what decides is that it is the LOWER-SEQUENCE id. `assignIds` numbers a
+ * group by name, and the French name is Latin where the Arabic one is not, so
+ * the French half always takes the lower sequence number.
+ */
 export function resolveTwinPairs(verdicts, rows, committed, priorMigrations = {}) {
   const liveByPost = new Map();
   for (const r of rows) for (const post of mspPosts(r)) liveByPost.set(post, r.id);
@@ -1803,10 +1839,10 @@ export function resolveTwinPairs(verdicts, rows, committed, priorMigrations = {}
         absorbed_id,
         kept_id,
         `Merged into ${kept_id}, which carries both names. ${TWIN_POSTS_NOTE} Posts ${t.msp_fr} and ` +
-          `${t.msp_ar} are one facility` +
+          `${t.msp_ar} are one establishment` +
           (t.decided_by === "pair_table"
             ? `, paired by hand because the two sit ${t.msp_gap} post ids apart, beyond the reach of the ` +
-              `registry's own adjacency. The evidence, which is never the registry: ${evidenceSentence(t.evidence)}`
+              `registry's own adjacency. ${pairTableReading(t)}`
             : ".") +
           ` Both ids were first published together, so neither is older: ` +
           `${kept_id} is kept because it is the lower-sequence id of the two, which is always the one the ` +
@@ -1822,11 +1858,11 @@ export function resolveTwinPairs(verdicts, rows, committed, priorMigrations = {}
 // which pairs were merged into one record, which public id each merged record
 // keeps, which id it absorbed, and every candidate refused with its reason.
 // `decided_by` separates the two kinds of decision: "rule" is the automatic
-// adjacency-plus-name recovery, "pair_table" is a pair asserted by hand on a
-// second source, which publishes that evidence here beside the ids it retires.
+// adjacency-plus-name recovery, "pair_table" is a pair asserted by hand, which
+// publishes its evidence LEVEL and its reading here beside the ids it retires.
 // Regenerated on every run, so it can never drift from the shipped data.
 const TWIN_REPORT = join(REPO_ROOT, "quality", "sante-twin-recovery.json");
-function writeTwinReport({ pairs, refused }, leftovers = []) {
+function writeTwinReport({ pairs, refused }, candidates = []) {
   mkdirSync(dirname(TWIN_REPORT), { recursive: true });
   const fromTable = pairs.filter((p) => p.decided_by === "pair_table");
   writeFileSync(
@@ -1839,25 +1875,31 @@ function writeTwinReport({ pairs, refused }, leftovers = []) {
           "every nearby candidate it refused, with the reason. A near post id is not evidence on its own, " +
           "so a candidate must also pass a consonant-skeleton name check, a gap of two needs stronger name " +
           "evidence than a gap of one, and an ambiguous candidate is left alone rather than guessed at. " +
-          "A handful of cities entered their two halves far enough apart that adjacency cannot reach them " +
-          "at all, and in each the two halves name nothing but the city; those pairs carry " +
-          '`decided_by: "pair_table"`, are asserted by hand in packages/sante/scripts/twin-pair-table.mjs ' +
-          "and publish the second source each one rests on in `evidence`. The cases that table was asked " +
-          "about and left alone are listed in `unpaired_candidates`, with what is missing. " +
-          "`monolingual_leftovers` is the national measurement the same ticket asked for, recomputed from the " +
-          "shipped data on every build: every French-only record crossed with every Arabic-only record of its " +
-          "own wilaya and type, with the post gap between them, so a refresh that leaves a new far-apart pair " +
-          "behind shows up here rather than as two records nobody notices. A row is a candidate and nothing " +
-          "more. Regenerated by `npm run fetch` in packages/sante.",
+          "Four pairs across three cities sit 4, 10, 14 and 1284 post ids apart, too far for adjacency to " +
+          'reach them at all; those carry `decided_by: "pair_table"`, are asserted by hand in ' +
+          "packages/sante/scripts/twin-pair-table.mjs, and publish there what their evidence covers. " +
+          "`second_source` is that evidence LEVEL and the two levels are not the same claim: `both` means a " +
+          "source which is not the registry names the establishment in both scripts, so it states the pair " +
+          "itself, and `fr_only` means the second source confirms the FRENCH half, with the Arabic half " +
+          "carried by `translation` (the two titles are exact translations of each other) and by " +
+          "`only_candidate_left` (it is the one candidate remaining in its wilaya and type group). The cases " +
+          "that table was asked about and left alone are listed in `unpaired_candidates`, with what is " +
+          "missing. `half_record_candidates` is the national measurement the same ticket asked for, " +
+          "recomputed from the shipped data on every build: every Half-record crossed with every Half-record " +
+          "of the other language in its own wilaya and type, with the post gap between them, so a refresh " +
+          "that leaves a new far-apart pair behind shows up here rather than as two records nobody notices. " +
+          "A row is a candidate and nothing more. Regenerated by `npm run fetch` in packages/sante.",
         dataset: "sante",
         recovered: pairs.length,
         recovered_by_rule: pairs.length - fromTable.length,
         recovered_from_pair_table: fromTable.length,
+        pair_table_second_source_both: fromTable.filter((p) => p.second_source === "both").length,
+        pair_table_second_source_fr_only: fromTable.filter((p) => p.second_source === "fr_only").length,
         refused: refused.length,
         pairs,
         refused_candidates: refused,
         unpaired_candidates: UNPAIRED_CANDIDATES,
-        monolingual_leftovers: leftovers,
+        half_record_candidates: candidates,
       },
       null,
       2,
