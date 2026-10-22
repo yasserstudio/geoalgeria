@@ -212,15 +212,15 @@
     },
     {
       "path": "packages/pharmacies/data/metadata.json",
-      "sha256": "84c5721722da68aa76ddc9065d23d2aa746cb42fd76c19e973b1c7243c04c5ec"
+      "sha256": "351698817ebee7764a2a45478fb0afca93dc67fb1b6042b6edff4f94420189ea"
     },
     {
       "path": "packages/pharmacies/data/pharmacies.json",
-      "sha256": "c7f2649cbea712ae144c3eec8f000f16971282df04837ccb0cf5b068bb17dfde"
+      "sha256": "fc783df6cba97bc30c0b389490495144dc5bb102ce0f17dba744a878b26e8358"
     },
     {
       "path": "packages/pharmacies/data/retired-ids.json",
-      "sha256": "771590bc36f2e7d52a7779e34ce942c47beb81821ff137465b9d43b3ddff22f0"
+      "sha256": "bfce956c941402db963e8ef1fe9c74880cb4c1b4c85938afda6864f2c4f0c8ec"
     },
     {
       "path": "packages/poste/data/atms.json",
@@ -309,10 +309,10 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70499,
-  "candidates": 17743,
+  "total_records": 70516,
+  "candidates": 17750,
   "reasons": {
-    "approximate_coordinate": 16895,
+    "approximate_coordinate": 16902,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 501,
     "outside_all_wilaya_boundaries": 199,
@@ -1694,10 +1694,10 @@
     },
     {
       "dataset": "pharmacies",
-      "total_records": 3795,
-      "candidates": 304,
+      "total_records": 3812,
+      "candidates": 311,
       "reasons": {
-        "approximate_coordinate": 296,
+        "approximate_coordinate": 303,
         "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 8
@@ -1709,16 +1709,16 @@
         "title_fr": "Pharmacies d'Algérie",
         "title_ar": "صيدليات الجزائر",
         "title_en": "Algeria pharmacies (officines)",
-        "record_count": 3795,
-        "geocoded_count": 3795,
+        "record_count": 3812,
+        "geocoded_count": 3812,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 3499,
-          "approximate": 296
+          "exact": 3509,
+          "approximate": 303
         },
         "estimated_universe": 11000,
-        "coverage_pct": 34.5,
-        "coverage_note": "3795 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north.",
+        "coverage_pct": 34.7,
+        "coverage_note": "3812 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north.",
         "wilayas_covered": 67,
         "bbox": [
           -8.139568,
@@ -1732,17 +1732,17 @@
             "name": "OpenStreetMap: pharmacies (amenity=pharmacy) in Algeria",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-            "retrieved": "2026-08-31",
+            "retrieved": "2026-10-22",
             "evidence_type": "crowdsourced"
           }
         ],
         "license": "ODbL-1.0",
-        "updated": "2026-08-31",
-        "named": 2461,
-        "with_phone": 145,
-        "with_hours": 256,
-        "with_address": 1161,
-        "with_dispensing": 530,
+        "updated": "2026-10-22",
+        "named": 2475,
+        "with_phone": 146,
+        "with_hours": 259,
+        "with_address": 1163,
+        "with_dispensing": 536,
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
     },
@@ -2519,10 +2519,10 @@
     {
       "dataset": "pharmacies",
       "entity": "pharmacies.json",
-      "total_records": 3795,
-      "candidates": 304,
+      "total_records": 3812,
+      "candidates": 311,
       "reasons": {
-        "approximate_coordinate": 296,
+        "approximate_coordinate": 303,
         "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 8

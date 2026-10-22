@@ -415,17 +415,17 @@
       "package": "@geoalgeria/pharmacies",
       "schema_version": "2.0.0",
       "title": "Algeria pharmacies (officines)",
-      "record_count": 3795,
-      "geocoded_count": 3795,
+      "record_count": 3812,
+      "geocoded_count": 3812,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 3499,
-        "approximate": 296
+        "exact": 3509,
+        "approximate": 303
       },
       "coverage": {
-        "pct": 34.5,
+        "pct": 34.7,
         "of": 11000,
-        "note": "3795 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north."
+        "note": "3812 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north."
       },
       "wilayas_covered": 67,
       "bbox": [
@@ -435,7 +435,7 @@
         37.065122
       ],
       "license": "ODbL-1.0",
-      "updated": "2026-08-31"
+      "updated": "2026-10-22"
     },
     {
       "package": "@geoalgeria/poste",
