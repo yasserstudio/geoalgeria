@@ -176,7 +176,7 @@
     },
     {
       "path": "packages/livraison/data/metadata.json",
-      "sha256": "1d536475308ba88117bdec5adac1a766438c8656d54b8c387b6e134e302727af"
+      "sha256": "33f3642585d03d9bb47663b33af97d43a76db6223ac615ed79ad786b13a33688"
     },
     {
       "path": "packages/livraison/data/stopdesks.json",
@@ -1451,7 +1451,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 447 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 449 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
         "wilayas_covered": 63,
         "bbox": [
           -8.143583,
