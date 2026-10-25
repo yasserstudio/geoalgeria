@@ -80,9 +80,9 @@
         "name": "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)",
         "url": "https://cartes.patrimoineculturelalgerien.org"
       },
-      "cadence": "quarterly",
+      "cadence": "manual",
       "last_retrieved": "2026-06-28",
-      "next_due": "2026-09-28",
+      "next_due": null,
       "note": "No live path yet: scripts/fetch.mjs is a deterministic transform of the curated research/patrimoine capture, not a live portal pull: re-running it is byte-identical (verified 2026-10-25) and cannot move the retrieval date. The portal answers from abroad, so a real refresh is the live FR+AR re-pull the script header defers, which has to preserve the hand-built FR-AR translations."
     },
     {
