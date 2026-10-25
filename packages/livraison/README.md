@@ -13,7 +13,7 @@
 </div>
 
 The COD / e-commerce delivery layer for Algeria, in three parts: a **registry** of
-delivery carriers, **581 geocoded stop-desk points** across 64 wilayas, and
+delivery carriers, **649 geocoded stop-desk points** across 64 wilayas, and
 **per-carrier coverage**. Shipped as JSON, CSV, and GeoJSON. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -44,9 +44,9 @@ const reach = livraison.coverageByCarrier("yalidine"); // wilayas it serves
 
 | Dataset | Count | Geocoded | Notes |
 | --- | --- | --- | --- |
-| Carriers (`carriers.json`) | **17** | – | registry: name, website, model, COD, scope, data openness, API |
-| Stop-desks (`stopdesks.json`) | **581** | ✅ all | id, operator, name, address, commune, `wilaya_code`, lat/lng |
-| Coverage (`coverage.json`) | **11** | – | per-carrier wilaya/commune stop-desk presence |
+| Carriers (`carriers.json`) | **18** | – | registry: name, website, model, COD, scope, data openness, API |
+| Stop-desks (`stopdesks.json`) | **649** | ✅ all | id, operator, name, address, commune, `wilaya_code`, lat/lng |
+| Coverage (`coverage.json`) | **12** | – | per-carrier wilaya/commune stop-desk presence |
 
 Stop-desks span **64 wilayas**, every one geocoded. `wilaya_code` links against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
@@ -59,11 +59,11 @@ openly. The **registry** covers the field (the major carriers and what each is);
 
 - the **Yalidine + Guepex relay ecosystem** – Yalidine, Guepex, and the operators that
   ride their shared network (EasyAndSpeed, WeCanServices, SpeedMail, Zimou Express);
-- **Anderson**, **Noest**, **Maystro**, **ZR Express** and **Swift Express**, five
-  independent networks, each geocoded from the Google Maps link on its agency cards, office
-  rows or published office list (agencies whose links are missing, unresolvable, or point to
-  a different wilaya than the card declares are omitted; nothing is geocoded from an
-  address).
+- **Anderson**, **Noest**, **Maystro**, **ZR Express**, **Swift Express** and
+  **HHD Express**, six independent networks, each geocoded from the Google Maps link on its
+  agency cards, office rows or published agency list (agencies whose links are missing,
+  unresolvable, or point to a different wilaya than the card declares are omitted; nothing
+  is geocoded from an address).
 
 Carriers like DHD, DHL and Aramex keep their agency lists behind apps,
 logins, or licensed APIs, so they appear in the registry with `open_agency_data: "none"`
@@ -92,15 +92,15 @@ const desks: StopDesk[] = livraison.stopdesks();
 
 ```
 data/
-  carriers.json             # 16 carriers (registry)
-  stopdesks.json            # 581 geocoded stop-desks (array)
-  coverage.json             # 11 per-carrier coverage rows
+  carriers.json             # 18 carriers (registry)
+  stopdesks.json            # 649 geocoded stop-desks (array)
+  coverage.json             # 12 per-carrier coverage rows
   metadata.json             # sources, counts, updated
   csv/                      # repo + Release bundle (not in npm tarball)
     carriers.csv
     stopdesks.csv
     coverage.csv
-  geojson/stopdesks.geojson # Point features (all 581 geocoded)
+  geojson/stopdesks.geojson # Point features (all 649 geocoded)
 ```
 
 ## Record shapes
@@ -175,6 +175,13 @@ Stop-desks come from the carriers that publish open agency data:
   server-side, so one ordinary request returns the whole network as JSON inside the page.
   Each office carries its own record key, which is what its id is minted from, plus its
   address, its wilaya and a Google Maps shortlink resolved like Anderson's and Noest's.
+- **HHD Express** (<https://hhd.dz/>) shows six agencies on the page and compiles all 80
+  into the client chunk that draws the section, so the chunk the page names is read instead
+  of the preview. An agency carries no record key, so ids are minted from the wilaya and
+  commune. Eleven agencies link a Maps place that publishes no coordinate, or no link at
+  all, and are omitted rather than geocoded. HHD files El Meniaa under its pre-2021 parent
+  Ghardaïa, so that pin lands outside the wilaya the list declares and the agency is
+  dropped by the same cross-check every carded carrier gets.
 
 The carrier registry is compiled from [CourierDZ](https://github.com/PiteurStudio/CourierDZ),
 carrier websites, and GeoAlgeria research. Run `npm run fetch` to regenerate every output

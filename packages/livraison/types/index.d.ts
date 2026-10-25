@@ -29,6 +29,7 @@ export type GeoMethod = "carrier_relay";
 export type SourceKey =
   | "anderson"
   | "guepex"
+  | "hhd-express"
   | "maystro"
   | "noest"
   | "swift-express"
@@ -40,6 +41,7 @@ export type Operator =
   | "anderson"
   | "easyandspeed"
   | "guepex"
+  | "hhd-express"
   | "maystro"
   | "noest"
   | "speedmail"

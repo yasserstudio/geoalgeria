@@ -1,0 +1,17 @@
+---
+"@geoalgeria/livraison": minor
+---
+
+Add HHD Express: 68 agencies, 649 stop-desks from 581, retrieved 2026-10-25.
+
+HHD Express was not in the registry at all. It is a domestic COD carrier (SARL HHD Express, Béni Tamou, Blida) that publishes its whole agency network on `hhd.dz`, each agency with its wilaya, commune, phones, address and its own Google Maps link. The registry gains an eighteenth carrier, `hhd-express`, at `open_agency_data: "geocoded"`. It is a different company from `dhd` (dhd-dz.com), which stays as it was.
+
+**The list is read where the page compiles it, not where it shows it.** hhd.dz renders six agencies server-side behind an "Afficher les 80 agences" button, so the markup is a preview and reading it would ship six of eighty. The eighty live in a static array inside the client chunk that draws the section, and the chunk's hash changes on every deploy, so it is never hardcoded: the page names its own client components in the flight payload (`:I[<module>,["…/chunks/<hash>.js", …],"AgencyDirectory"]`), the directory's own bundle is the last chunk of its own list, and that chunk is fetched. One ordinary GET of the page, one of the chunk. The array is a JS object literal rather than JSON, with bare keys and a single-quoted value wherever one holds a double quote, so it is converted and parsed; nothing from the network is evaluated.
+
+**80 agencies published, 68 shipped, 12 left out.** Eleven link a Google Maps *place* that states no coordinate anywhere: no `!3d!4d` in the redirect URL, no DMS, no static-map pin and no `cid=` for `maps-cid-pins.json` to answer. The place is named by a plus code, by HHD's own business listing or by an address, which is a label and not a published pin, so they are logged and omitted rather than handed to a geocoder: Batna, Béjaïa, Boufarik, Lakhdaria, Tlemcen, Bab Ezzouar, Ain Oussera, Sidi Bel Abbès, Ksar El Boukhari, Relizane, and Ain Fekroune, which publishes no Maps link at all. The twelfth is El Meniaa: HHD files it under Ghardaïa, its parent before the 2021 reform, so the carrier's own pin lands in wilaya 58 against a list that declares 47, and the cross-check every carded carrier gets drops it rather than place a desk where the list says it is not. The other 68 ship the pin HHD's own link resolves to, under `geo_method: carrier_relay`, all 68 `exact`.
+
+**HHD reaches 49 wilayas and ships 44.** The five it loses are the ones where the omitted agency was HHD's only one: Oum El Bouaghi, Batna, Béjaïa, Sidi Bel Abbès and Relizane. Package coverage stays at 64 wilayas; no wilaya here is new.
+
+**The site says "96 agences"; the list has 80.** That headline is marketing copy. The page's own button reads "Afficher les 80 agences", the array holds 80 entries with 79 distinct Maps links, there is no pagination and no second request, and the footer dates the list itself: "Liste publiée sur hhd.dz, relevée le 11 octobre 2026".
+
+**Ids come from the wilaya and the commune.** An entry carries no record key of any kind, only a display order, so ids are minted the way ZR Express's are. The two agencies sharing the commune of Sétif are told apart by a short digest of HHD's own name for each ("El Hidhab", "El Hidhab 2"), which is stable under a reorder. That published name is also what each record is named after, with only the brand prefix re-cased, because the commune alone would name both Sétif agencies the same. Phones are not shipped.

@@ -49,6 +49,7 @@ const NOEST_URL = "https://noest-dz.com/";
 const MAYSTRO_URL = "https://maystro-delivery.com/Coverage.html";
 const ZR_URL = "https://www.zrexpress.net/en/offices";
 const SWIFT_URL = "https://www.swiftexpress.org/fr/offices";
+const HHD_URL = "https://hhd.dz/";
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/120.0 Safari/537.36";
@@ -354,6 +355,118 @@ export function parseSwift(html) {
     });
   }
   return out;
+}
+
+// HHD Express "Nos agences": a Next.js app whose home page renders the first six agencies
+// server-side behind an "Afficher les 80 agences" button, so the markup is a preview and
+// the list itself is a static array compiled into the client chunk that draws the section.
+// Reading the preview would ship six of eighty; the array is read instead.
+//
+// Which chunk holds it is not guessed and not searched for across every script the page
+// loads. The page names its own client components in the flight payload
+// (`<id>:I[<module>,["…/chunks/<hash>.js", …],"AgencyDirectory"]`), so the directory
+// component's own bundle is the last chunk of its own list, and the shared runtime
+// chunks it also needs come before it. Candidates are tried in that order and the first
+// one carrying the array wins: an ordinary GET of hhd.dz, then one of the chunk. The
+// chunk hash changes on every deploy, which is exactly why it is read from the page.
+export function hhdChunkCandidates(html) {
+  const seen = new Set();
+  const urls = [];
+  const add = (p) => { if (!seen.has(p)) { seen.add(p); urls.push(new URL(p, HHD_URL).href); } };
+  // The component's own chunk first (its list is dependency-first), then anything else
+  // the page loads, so a renamed component still resolves instead of failing the run.
+  const own = html.match(/:I\[\d+,\[([^\]]*)\],\\"AgencyDirectory\\"\]/);
+  if (own) for (const p of (own[1].match(/\/_next\/static\/[^\\"]+\.js/g) || []).reverse()) add(p);
+  for (const m of html.matchAll(/<script[^>]+src="(\/_next\/static\/[^"]+\.js)"/g)) add(m[1]);
+  return urls;
+}
+
+// The array is a JS object literal, not JSON: its keys are bare and a value may be
+// single-quoted (Chlef's address carries a double quote, so the minifier picked the other
+// delimiter). It is converted here rather than evaluated; nothing from the network is run.
+function jsLiteralToJson(src) {
+  let out = "";
+  for (let i = 0; i < src.length; i++) {
+    const ch = src[i];
+    if (ch === '"' || ch === "'") {
+      out += '"';
+      for (i++; i < src.length && src[i] !== ch; i++) {
+        // `\'` is legal in a single-quoted literal and illegal in JSON; every other
+        // escape is already the JSON one and is copied through with its character.
+        if (src[i] === "\\") { out += src[i + 1] === "'" ? "'" : src[i] + src[i + 1]; i++; continue; }
+        out += src[i] === '"' ? '\\"' : src[i];
+      }
+      out += '"';
+      continue;
+    }
+    const key = /^([A-Za-z_$][\w$]*)\s*:/.exec(src.slice(i));
+    if (key) { out += `"${key[1]}":`; i += key[0].length - 1; continue; }
+    out += ch;
+  }
+  return out;
+}
+
+// Each entry is {wilaya:"47", wilayaName:"Ghardaïa", city:"El Meniaa", name:"…",
+// phones:[…], address:"…", map:"https://maps.app.goo.gl/…"}. `wilaya` is the wilaya the
+// agency declares and is what the pin is cross-checked against in main(); `city` is the
+// commune. Phones are not shipped. There is no record key anywhere in the entry, so ids
+// are minted from the wilaya and the commune, the way ZR Express's are.
+export function parseHhd(js) {
+  const KEY = '[{wilaya:"';
+  const at = js.indexOf(KEY);
+  if (at < 0) return [];
+  // Walk it quote-aware to the closing bracket: `phones` puts a real bracket inside every
+  // entry, and an address is free text that may one day hold one too.
+  let depth = 0, quote = null, end = -1;
+  for (let i = at; i < js.length; i++) {
+    const ch = js[i];
+    if (quote) { if (ch === "\\") i++; else if (ch === quote) quote = null; continue; }
+    if (ch === '"' || ch === "'" || ch === "`") { quote = ch; continue; }
+    if (ch === "[") depth++;
+    else if (ch === "]" && --depth === 0) { end = i; break; }
+  }
+  if (end < 0) return [];
+  const rows = [];
+  for (const a of JSON.parse(jsLiteralToJson(js.slice(at, end + 1)))) {
+    const code = Number(a?.wilaya);
+    const commune = decode(a?.city);
+    const name = decode(a?.name);
+    if (!Number.isInteger(code) || code < 1 || code > 69 || !commune || !name) continue;
+    rows.push({
+      key: `hhd-express-${wcode(code)}-${slug(commune)}`,
+      // The agency's own published name, not one built from the commune: it is what tells
+      // Sétif's two offices apart ("El Hidhab", "El Hidhab 2"), and the commune alone would
+      // name them both the same. Only the brand prefix is re-cased, because HHD writes it
+      // "HHD Express" on some rows and "HHD EXPRESS" on others.
+      name: `HHD Express ${titleCase(name.replace(/^hhd\s*express\s*/i, ""))}`.trim(),
+      commune: titleCase(commune),
+      cardWilaya: code,
+      address: orNull(a.address),
+      link: a.map ? decode(a.map) : null,
+    });
+  }
+  // Two HHD agencies sit in the commune of Sétif, so the wilaya and commune alone do not
+  // name one. Where a commune holds more than one, each id carries a short digest of the
+  // agency's own published name, which does not move when HHD adds, drops or reorders a
+  // row: the same rule ZR Express's shared communes use.
+  const shared = new Set();
+  const seenKey = new Set();
+  for (const r of rows) (seenKey.has(r.key) ? shared : seenKey).add(r.key);
+  return rows.map(({ key, ...rest }) => ({
+    id: shared.has(key) ? `${key}-${createHash("sha1").update(rest.name).digest("hex").slice(0, 4)}` : key,
+    ...rest,
+  }));
+}
+
+// GET hhd.dz, then the one chunk that carries the agency array. Separate from parseHhd so
+// the parser stays pure and the run makes two ordinary requests, not thirteen.
+async function fetchHhdAgencyChunk() {
+  const candidates = hhdChunkCandidates(await getText(HHD_URL));
+  for (const url of candidates) {
+    const js = await getText(url);
+    if (js.includes('[{wilaya:"')) return js;
+  }
+  throw new Error(`no HHD chunk carries the agency array (tried ${candidates.length})`);
 }
 
 // Maystro tags each stop-desk with a wilaya "translation" slug rather than a code; map the
@@ -663,9 +776,11 @@ export function carryRenamedIds(recs, committed, operator, retired = retiredIds)
 // merge-ready records. A card whose link will not resolve keeps the coordinate it already
 // shipped (and is dropped only when it has none); ids are de-collided deterministically
 // so a desk keeps its suffix across runs.
-async function buildCarded(label, url, parseFn, operator, minDesks = 60, committed = new Map()) {
+async function buildCarded(label, url, parseFn, operator, minDesks = 60, committed = new Map(), text = null) {
   console.log(`Fetching ${label} agencies…`);
-  const cards = parseFn(await getText(url));
+  // `text` is for a carrier whose list is not at `url` itself: HHD Express publishes it in
+  // a client chunk whose name the page decides, so the fetch happens before the build.
+  const cards = parseFn(text ?? await getText(url));
   console.log(`  ${cards.length} cards; resolving Maps links…`);
   const coords = await mapPool(cards, 6, (c) => resolveMapsLink(c.link));
   const recs = [];
@@ -786,11 +901,13 @@ async function main() {
   const toWilaya = wilayaCoder();
   const zr = await buildCarded("ZR Express", ZR_URL, (h) => parseZrExpress(h, toWilaya), "zr-express", 60, committed);
   const swift = await buildCarded("Swift Express", SWIFT_URL, parseSwift, "swift-express", 45, committed);
+  const hhdChunk = await fetchHhdAgencyChunk();
+  const hhd = await buildCarded("HHD Express", HHD_URL, parseHhd, "hhd-express", 60, committed, hhdChunk);
 
   // Merge by stop-desk id (union). Prefer Yalidine (richer addresses); fill from Guepex.
   // Folded-out operators are dropped; Anderson ids are namespaced so they never collide.
   const byId = new Map();
-  for (const r of [...yal, ...guepex, ...anderson, ...noest, ...maystro, ...zr, ...swift].filter((x) => !DROPPED_OPERATORS.has(x.operator))) {
+  for (const r of [...yal, ...guepex, ...anderson, ...noest, ...maystro, ...zr, ...swift, ...hhd].filter((x) => !DROPPED_OPERATORS.has(x.operator))) {
     const cur = byId.get(r.id);
     if (!cur) { byId.set(r.id, { ...r, sources: [r.src] }); continue; }
     if (!cur.sources.includes(r.src)) cur.sources.push(r.src);

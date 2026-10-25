@@ -251,6 +251,7 @@ const RECORD_KEYS = [
   "etus-tlemcen",
   "etusto",
   "guepex",
+  "hhd-express",
   "jora",
   "madr",
   "maystro",

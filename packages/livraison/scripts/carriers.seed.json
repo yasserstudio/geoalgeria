@@ -110,6 +110,17 @@
     "notes": "Publishes its agency network at swiftexpress.org/fr/offices, every office with its address, phones and its own Google Maps link. Merchant operations run on the Ecotrack platform, whose API is private."
   },
   {
+    "id": "hhd-express",
+    "name": "HHD Express",
+    "website": "https://hhd.dz",
+    "type": "both",
+    "cod": true,
+    "scope": "domestic",
+    "open_agency_data": "geocoded",
+    "api": "private",
+    "notes": "Publishes its whole agency network on hhd.dz, every agency with its commune, phones, address and its own Google Maps link. Distinct from DHD (dhd-dz.com). Merchant integration API is private."
+  },
+  {
     "id": "dhd",
     "name": "DHD",
     "website": "https://dhd-dz.com",

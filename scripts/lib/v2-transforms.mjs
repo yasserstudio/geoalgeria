@@ -865,10 +865,11 @@ export const MIGRATIONS = {
         { key: "maystro", name: "Maystro Delivery: coverage page", url: "https://maystro-delivery.com/Coverage.html", license: "Data © Maystro Delivery; redistributed for reference", evidence_type: "official" },
         { key: "zr-express", name: "ZR Express: offices list", url: "https://www.zrexpress.net/en/offices", license: "Data © ZR Express; redistributed for reference", evidence_type: "official" },
         { key: "swift-express", name: "Swift Express: agency network", url: "https://www.swiftexpress.org/fr/offices", license: "Data © Swift Express; redistributed for reference", evidence_type: "official" },
+        { key: "hhd-express", name: "HHD Express: agency network", url: "https://hhd.dz/", license: "Data © HHD Express; redistributed for reference", evidence_type: "official" },
       ],
       license: "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
       estimatedUniverse: null,
-      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express and Swift Express's own agency lists: 581 points across 11 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 649 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
       titles: { en: "Algeria delivery stop-desks", fr: "Points relais de livraison d'Algérie", ar: "نقاط استلام التوصيل في الجزائر" },
       stats: (rows) => {
         const dataDir = join(REPO_ROOT, "packages", "livraison", "data");

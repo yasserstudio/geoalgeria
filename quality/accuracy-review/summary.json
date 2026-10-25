@@ -168,15 +168,15 @@
     },
     {
       "path": "packages/livraison/data/carriers.json",
-      "sha256": "de0076ab7fa0bb93fdcc21c8f8607fa82772cb4392b4a10d2d40fa65fa07e6b6"
+      "sha256": "ee919e5a3336dad22c3230a2e46b86050beb02d5145cf8dc8c9fb8176ecb8840"
     },
     {
       "path": "packages/livraison/data/coverage.json",
-      "sha256": "bef224754b87139213c9c821f62952da053469fac035f8602088baf8d716a5fe"
+      "sha256": "c079748c1ef00d9f5b1e57e8d29194f151d068b67627837835ea04dda6c9fddb"
     },
     {
       "path": "packages/livraison/data/metadata.json",
-      "sha256": "b9336381de410d2a9d1f4791c17083d8609b3fc4a90761fe813bfff37426e59f"
+      "sha256": "541b186acb528aa34aac1e46f43e0c3a58b3e9d9631d671dfb0622427cb21c32"
     },
     {
       "path": "packages/livraison/data/retired-ids.json",
@@ -184,7 +184,7 @@
     },
     {
       "path": "packages/livraison/data/stopdesks.json",
-      "sha256": "93c777d6f88aa3a4689d15e4d3dd4c8753a5750f12dd0af886f2d99a9fdd42f1"
+      "sha256": "19e7ba263e4f649b0c413740a4ed6eeecaf9510732ad5db0fe9246f04c74cb70"
     },
     {
       "path": "packages/mobilis/data/agences.json",
@@ -313,7 +313,7 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70686,
+  "total_records": 70754,
   "candidates": 17752,
   "reasons": {
     "approximate_coordinate": 16904,
@@ -1436,7 +1436,7 @@
     },
     {
       "dataset": "livraison",
-      "total_records": 581,
+      "total_records": 649,
       "candidates": 2,
       "reasons": {
         "approximate_coordinate": 2,
@@ -1449,16 +1449,16 @@
         "title_fr": "Points relais de livraison d'Algérie",
         "title_ar": "نقاط استلام التوصيل في الجزائر",
         "title_en": "Algeria delivery stop-desks",
-        "record_count": 581,
-        "geocoded_count": 581,
+        "record_count": 649,
+        "geocoded_count": 649,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 579,
+          "exact": 647,
           "approximate": 2
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express and Swift Express's own agency lists: 581 points across 11 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 649 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
         "wilayas_covered": 64,
         "bbox": [
           -8.143583,
@@ -1522,13 +1522,21 @@
             "license": "Data © Swift Express; redistributed for reference",
             "evidence_type": "official",
             "retrieved": "2026-10-25"
+          },
+          {
+            "key": "hhd-express",
+            "name": "HHD Express: agency network",
+            "url": "https://hhd.dz/",
+            "license": "Data © HHD Express; redistributed for reference",
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           }
         ],
         "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
         "updated": "2026-10-25",
-        "carriers": 17,
-        "stopdesks": 581,
-        "coverage": 11,
+        "carriers": 18,
+        "stopdesks": 649,
+        "coverage": 12,
         "by_operator": {
           "guepex": 71,
           "yalidine": 105,
@@ -1537,6 +1545,7 @@
           "zimou-express": 10,
           "speedmail": 1,
           "anderson": 104,
+          "hhd-express": 68,
           "maystro": 38,
           "noest": 102,
           "swift-express": 55,
@@ -2502,7 +2511,7 @@
     {
       "dataset": "livraison",
       "entity": "stopdesks.json",
-      "total_records": 581,
+      "total_records": 649,
       "candidates": 2,
       "reasons": {
         "approximate_coordinate": 2,

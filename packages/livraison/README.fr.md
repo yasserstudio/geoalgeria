@@ -13,7 +13,7 @@
 </div>
 
 La couche livraison / e-commerce pour l'Algérie, en trois volets : un **registre** de
-transporteurs, **581 bureaux de retrait géocodés** répartis sur 64 wilayas, et la
+transporteurs, **649 bureaux de retrait géocodés** répartis sur 64 wilayas, et la
 **couverture par transporteur**. Distribué en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -44,9 +44,9 @@ const reach = livraison.coverageByCarrier("yalidine"); // wilayas desservies
 
 | Jeu de données | Nombre | Géocodé | Notes |
 | --- | --- | --- | --- |
-| Transporteurs (`carriers.json`) | **17** | – | registre : nom, site web, modèle, paiement à la livraison, périmètre, ouverture des données, API |
-| Bureaux de retrait (`stopdesks.json`) | **581** | ✅ tous | id, opérateur, nom, adresse, commune, `wilaya_code`, lat/lng |
-| Couverture (`coverage.json`) | **11** | – | présence par transporteur (wilaya/commune) |
+| Transporteurs (`carriers.json`) | **18** | – | registre : nom, site web, modèle, paiement à la livraison, périmètre, ouverture des données, API |
+| Bureaux de retrait (`stopdesks.json`) | **649** | ✅ tous | id, opérateur, nom, adresse, commune, `wilaya_code`, lat/lng |
+| Couverture (`coverage.json`) | **12** | – | présence par transporteur (wilaya/commune) |
 
 Les bureaux de retrait couvrent **64 wilayas**, tous géocodés. `wilaya_code` se joint au
 modèle 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
@@ -60,11 +60,11 @@ publient leurs emplacements de manière ouverte :
 
 - l'**écosystème relais Yalidine + Guepex** – Yalidine, Guepex, et les opérateurs qui
   utilisent leur réseau partagé (EasyAndSpeed, WeCanServices, SpeedMail, Zimou Express) ;
-- **Anderson**, **Noest**, **Maystro**, **ZR Express** et **Swift Express**, cinq réseaux
-  indépendants, chacun géocodé à partir du lien Google Maps sur ses fiches d'agence, ses
-  lignes de bureau ou sa liste d'agences publiée (les agences dont les liens sont
-  manquants, irrésolvables ou pointent vers une wilaya différente de celle déclarée sur la
-  fiche sont omises ; rien n'est géocodé à partir d'une adresse).
+- **Anderson**, **Noest**, **Maystro**, **ZR Express**, **Swift Express** et
+  **HHD Express**, six réseaux indépendants, chacun géocodé à partir du lien Google Maps
+  sur ses fiches d'agence, ses lignes de bureau ou sa liste d'agences publiée (les agences
+  dont les liens sont manquants, irrésolvables ou pointent vers une wilaya différente de
+  celle déclarée sur la fiche sont omises ; rien n'est géocodé à partir d'une adresse).
 
 Les transporteurs comme DHD, DHL et Aramex gardent leurs listes d'agences
 derrière des applications, des connexions ou des API sous licence, et apparaissent donc
@@ -94,15 +94,15 @@ inclus dans chaque [Release GitHub](https://github.com/yasserstudio/geoalgeria/r
 
 ```
 data/
-  carriers.json             # 16 transporteurs (registre)
-  stopdesks.json            # 581 bureaux de retrait géocodés (tableau)
-  coverage.json             # 9 lignes de couverture par transporteur
+  carriers.json             # 18 transporteurs (registre)
+  stopdesks.json            # 649 bureaux de retrait géocodés (tableau)
+  coverage.json             # 12 lignes de couverture par transporteur
   metadata.json             # sources, comptages, updated
   csv/                      # dépôt + bundle Release (pas dans le tarball npm)
     carriers.csv
     stopdesks.csv
     coverage.csv
-  geojson/stopdesks.geojson # Entités Point (les 581 géocodées)
+  geojson/stopdesks.geojson # Entités Point (les 649 géocodées)
 ```
 
 ## Formes d'enregistrement
@@ -182,6 +182,14 @@ Les bureaux de retrait proviennent des transporteurs qui publient des données d
   Chaque agence porte sa propre clé d'enregistrement, dont son identifiant est formé, avec
   son adresse, sa wilaya et un lien court Google Maps résolu comme ceux d'Anderson et de
   Noest.
+- **HHD Express** (<https://hhd.dz/>) n'affiche que six agences sur la page et compile les
+  80 dans le chunk client qui dessine la section : c'est le chunk nommé par la page qui est
+  lu, pas l'aperçu. Une agence ne porte aucune clé d'enregistrement, les identifiants sont
+  donc formés à partir de la wilaya et de la commune. Onze agences renvoient vers un lieu
+  Maps qui ne publie aucune coordonnée, ou n'ont aucun lien, et sont omises plutôt que
+  géocodées. HHD classe El Meniaa sous sa wilaya parente d'avant 2021, Ghardaïa : ce point
+  tombe hors de la wilaya déclarée et l'agence est écartée par le même contrôle que
+  reçoit chaque transporteur à fiches.
 
 Le registre des transporteurs est compilé à partir de
 [CourierDZ](https://github.com/PiteurStudio/CourierDZ), des sites web des transporteurs
