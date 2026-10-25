@@ -178,6 +178,32 @@ test("a renamed card keeps the id it already published", () => {
   assert.match(log[0], /anderson-16-sidi-abdellah kept as "Anderson Alger \(Sidi Abdellah - Zeralda\)"/);
 });
 
+// A carded desk in a wilaya the 2026 reform created ships the code its coordinate
+// resolved to, while the carrier's card still prints the pre-reform one: the nine such
+// desks today include anderson-5-barika ("60" against card 05) and noest-26b ("67"
+// against card 26). Comparing the two codes literally refuses a rename in exactly those,
+// retiring the id the carry exists to keep, so a reform code agrees with any card code.
+test("a rename in a wilaya the 2026 reform created keeps its id", () => {
+  const committed = new Map([
+    ["anderson-5-barika", {
+      id: "anderson-5-barika", operator: "anderson",
+      wilaya_code: "60", lat: 35.387523, lng: 5.367122,
+    }],
+  ]);
+  const recs = [{
+    id: "anderson-5-barika-centre", name: "Anderson Batna (Barika Centre)",
+    commune: "Barika Centre", cardWilaya: 5, lat: 35.387573, lng: 5.367172,
+  }];
+  const log = carryRenamedIds(recs, committed, "anderson");
+  assert.equal(log.length, 1);
+  assert.equal(recs[0].id, "anderson-5-barika");
+
+  // The allowance is not a free pass: the radius still bounds the match.
+  const far = [{ id: "anderson-5-elsewhere", name: "n", commune: "c", cardWilaya: 5, lat: 35.4, lng: 5.367122 }];
+  assert.deepEqual(carryRenamedIds(far, committed, "anderson"), []);
+  assert.equal(far[0].id, "anderson-5-elsewhere");
+});
+
 test("the id carry does not reach past the same desk", () => {
   const prev = (id, lat, lng, wilaya_code = "16") => [id, { id, operator: "anderson", wilaya_code, lat, lng }];
   const committed = new Map([prev("anderson-16-a", 36.6805625, 2.8560625)]);

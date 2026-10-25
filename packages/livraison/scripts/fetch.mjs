@@ -369,6 +369,19 @@ export function pinFor(pin, prev) {
 // than any two desks of one operator are ever apart.
 const RENAME_RADIUS_KM = 0.1;
 
+// Does a committed desk's wilaya agree with the one its card declares?
+//
+// The committed record carries the wilaya its coordinate RESOLVED to, which for a desk in
+// a wilaya the 2026 reform created is not the <=58 code the carrier's card still prints:
+// `anderson-5-barika` ships "60" against card 05, `noest-26b` ships "67" against card 26,
+// nine carded desks in all today. Comparing the two codes literally would refuse a rename
+// in exactly those nine, retiring the id this function exists to keep. A reform code
+// therefore agrees with any card code, the same allowance main() already makes for a
+// promotion. Nothing is loosened by it: inside RENAME_RADIUS_KM the geometry decides, and
+// the wilaya is only here to stop a match reaching across the country.
+const wilayaAgrees = (committedCode, cardWilaya) =>
+  committedCode === wcode(cardWilaya) || Number(committedCode) > 58;
+
 /**
  * Give a renamed card back the id it already published.
  *
@@ -378,8 +391,8 @@ const RENAME_RADIUS_KM = 0.1;
  * `anderson-16-sidi-abdellah-zeralda` (#306). Ids follow places, so a new id that lands
  * on a disappeared one's spot takes that id back.
  *
- * Matched nearest first on operator, the wilaya the card declares, and RENAME_RADIUS_KM.
- * Deliberately
+ * Matched nearest first on operator, the wilaya the card declares (see wilayaAgrees, which
+ * reads a reform wilaya the card has not caught up with), and RENAME_RADIUS_KM. Deliberately
  * NOT on the commune: a carded `commune` is parsed out of the same card title the rename
  * changed ("Sidi Abdellah" became "Sidi Abdellah - Zeralda"), so requiring it to match
  * would refuse exactly the renames this exists for. At 100 m the geometry is the stronger
@@ -400,7 +413,7 @@ export function carryRenamedIds(recs, committed, operator) {
   for (const r of recs) {
     if (committed.has(r.id)) continue; // already its own id, nothing was renamed
     for (const p of gone) {
-      if (p.wilaya_code !== wcode(r.cardWilaya)) continue;
+      if (!wilayaAgrees(p.wilaya_code, r.cardWilaya)) continue;
       const km = haversine(p.lat, p.lng, r.lat, r.lng);
       if (km <= RENAME_RADIUS_KM) pairs.push({ r, p, km });
     }
