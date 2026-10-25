@@ -671,11 +671,20 @@ async function resolveMapsLink(link) {
 
 // Written as each carrier's links finish rather than once at the end, so the
 // receipts survive a run a later guard aborts (sources/README.md workflow step 1).
-function flushMapsResolutions() {
+// A partial flush merges this run's entries over the stored ones, so an aborted run
+// never truncates the receipts the later carriers' --cache replay needs. Only the
+// final flush, after a complete run, replaces the capture with this run's links,
+// which is what keeps a dead link from living on in it.
+function flushMapsResolutions({ final = false } = {}) {
   if (OFFLINE || !mapsResolutions.size) return;
-  writeCapture("livraison", MAPS_CAPTURE, Object.fromEntries(mapsResolutions), {
+  let base = {};
+  if (!final) {
+    try { base = readCapture("livraison", MAPS_CAPTURE); } catch { base = {}; }
+  }
+  const body = { ...base, ...Object.fromEntries(mapsResolutions) };
+  writeCapture("livraison", MAPS_CAPTURE, body, {
     url: MAPS_RESOLVER_URL,
-    records: mapsResolutions.size,
+    records: Object.keys(body).length,
     note: MAPS_CAPTURE_NOTE,
   });
 }
@@ -1341,6 +1350,8 @@ async function main() {
         .sort((a, b) => a.id.localeCompare(b.id)),
     },
   });
+
+  flushMapsResolutions({ final: true });
 
   console.log(
     `\nWrote ${carriers.length} carriers, ${stopdesks.length} stop-desks → v2 ` +
