@@ -132,11 +132,15 @@
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
-      "sha256": "a54725e67acba94a9c756bc15be612a49e28e1a0129f58a815c588fff867e741"
+      "sha256": "ba4d254c8cac1ec51c675adf7bf1a91404dec2626e98c847f3b62a6a5b6c6266"
     },
     {
       "path": "packages/formation-professionnelle/data/metadata.json",
-      "sha256": "225cf3cac72bd037b22ec29ec52c05cd7c96024b40ccc3e3644870f1f35d07d6"
+      "sha256": "d750208e1620c102f27d5a2357c4887edf0f9b320070fadeda96bcaa166c9aeb"
+    },
+    {
+      "path": "packages/formation-professionnelle/data/retired-ids.json",
+      "sha256": "3eed717ef403aeab9fa1684ab514ce1462c9738b56912b913558e68400fcd5bd"
     },
     {
       "path": "packages/gares-routieres/data/metadata.json",
@@ -309,15 +313,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70553,
-  "candidates": 17750,
+  "total_records": 70584,
+  "candidates": 17478,
   "reasons": {
-    "approximate_coordinate": 16902,
+    "approximate_coordinate": 16638,
     "inside_adjacent_wilaya": 192,
-    "missing_coordinate": 501,
+    "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1290
+    "shared_coordinate": 1134
   },
   "datasets": [
     {
@@ -1198,14 +1202,14 @@
     },
     {
       "dataset": "formation-professionnelle",
-      "total_records": 1932,
-      "candidates": 571,
+      "total_records": 1963,
+      "candidates": 299,
       "reasons": {
-        "approximate_coordinate": 559,
-        "missing_coordinate": 11,
+        "approximate_coordinate": 295,
+        "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
-        "shared_coordinate": 396
+        "shared_coordinate": 240
       },
       "metadata_path": "packages/formation-professionnelle/data/metadata.json",
       "metadata": {
@@ -1214,16 +1218,16 @@
         "title_fr": "Établissements de formation professionnelle d'Algérie",
         "title_ar": "مؤسسات التكوين المهني الجزائرية",
         "title_en": "Algeria vocational-training establishments",
-        "record_count": 1932,
-        "geocoded_count": 1921,
-        "geocoded_pct": 99.4,
+        "record_count": 1963,
+        "geocoded_count": 1961,
+        "geocoded_pct": 99.9,
         "precision": {
-          "exact": 1362,
-          "approximate": 559
+          "exact": 1666,
+          "approximate": 295
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1920 of 1932 are geocoded: 1375 on the portal's own point, 510 on their commune's centroid and 35 on their wilaya's, the portal having left those coordinates empty.",
+        "coverage_note": "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1961 of 1963 are geocoded: 1681 on the portal's own point, 249 on their commune's centroid and 31 on their wilaya's, the portal having left those coordinates empty.",
         "wilayas_covered": 69,
         "bbox": [
           -8.136773,
@@ -1237,27 +1241,27 @@
             "name": "Ministry of Vocational Training and Education (MFEP): takwin.dz",
             "url": "https://takwin.dz",
             "license": "Factual public listing (MFEP)",
-            "retrieved": "2026-06-22",
+            "retrieved": "2026-10-25",
             "evidence_type": "official"
           }
         ],
         "license": "Factual public listing (MFEP)",
-        "updated": "2026-06-22",
+        "updated": "2026-10-25",
         "by_type": {
           "dfep": 58,
           "insfp": 182,
-          "cfpa": 856,
-          "prive": 723,
+          "cfpa": 857,
+          "prive": 754,
           "iep": 18,
           "annexe_cnfepd": 9,
-          "annexe_cfpa": 70,
+          "annexe_cfpa": 69,
           "ifep": 6,
           "annexe_insfp": 9,
           "infep": 1
         },
         "by_secteur": {
           "public": 1209,
-          "prive": 723
+          "prive": 754
         }
       }
     },
@@ -2429,14 +2433,14 @@
     {
       "dataset": "formation-professionnelle",
       "entity": "establishments.json",
-      "total_records": 1932,
-      "candidates": 571,
+      "total_records": 1963,
+      "candidates": 299,
       "reasons": {
-        "approximate_coordinate": 559,
-        "missing_coordinate": 11,
+        "approximate_coordinate": 295,
+        "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
-        "shared_coordinate": 396
+        "shared_coordinate": 240
       },
       "path": "packages/formation-professionnelle/data/establishments.json"
     },
@@ -2727,6 +2731,10 @@
     },
     {
       "path": "packages/ecoles/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/formation-professionnelle/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {

@@ -160,9 +160,9 @@
         "name": "Ministry of Vocational Training and Education (MFEP): takwin.dz",
         "url": "https://takwin.dz"
       },
-      "cadence": "blocked",
-      "last_retrieved": "2026-06-22",
-      "note": "takwin.dz answered an ordinary request on 2026-10-25 over an Algerian connection the Owner supplied, where it had always served a WAF block page: the live capture (1,964 records, one call to the puball endpoint) is committed in sources/formation-professionnelle/. The rebuild is blocked until the fetcher's carry key stops being whitespace-sensitive. The portal now spaces its Arabic names correctly where the June capture had them run together, which is 1,788 corrected names, and the key code|type|name reads each one as a new place: a rebuild today retires 1,788 ids and mints 1,819. .scratch/306/formation-professionnelle-diff-2026-10-25.md has the fix.",
+      "cadence": "manual",
+      "last_retrieved": "2026-10-25",
+      "note": "takwin.dz answers an ordinary request from inside Algeria and a WAF block page from anywhere else, so a refresh is a capture run over an Algerian connection; the build itself replays the committed capture in sources/formation-professionnelle/ and needs no network. The 2026-10-25 capture (1,964 records, one call to the puball endpoint) is the current one. Its id carry key folds the name's spacing, because the portal rewrote the spacing of 1,788 Arabic names between captures without any establishment moving.",
       "next_due": null
     },
     {

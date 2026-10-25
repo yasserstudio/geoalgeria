@@ -12,7 +12,7 @@
 
 </div>
 
-1,932 vocational training establishments across Algeria, **CFPA**, **INSFP**, **IFEP**,
+1,963 vocational training establishments across Algeria, **CFPA**, **INSFP**, **IFEP**,
 **IEP**, **DFEP** and private accredited centers, each with its official name (Arabic,
 with French where available), establishment **type**, **capacity**, **boarding** info, rich
 **contact details** (phone, fax, email, website, Facebook), and GPS coordinates. Sourced
@@ -27,46 +27,46 @@ npm install @geoalgeria/formation-professionnelle
 ```js
 import fp from "@geoalgeria/formation-professionnelle";
 
-const all = fp.establishments();                    // 1,932
+const all = fp.establishments();                    // 1,963
 const byWilaya = fp.establishmentsByWilaya(16);     // establishments in wilaya 16
 const cfpas = fp.establishmentsByType("cfpa");      // every CFPA
 const one = fp.establishmentById("00001");          // single record by id
 
-// 1,921 records have lat/lng – distance-sort, map, or nearest center in a few lines.
+// 1,961 records have lat/lng – distance-sort, map, or nearest center in a few lines.
 ```
 
 ## What you can build
 
-- **"Nearest training center" lookups** – 1,921 geocoded records, ready for distance sorting.
+- **"Nearest training center" lookups** – 1,961 geocoded records, ready for distance sorting.
 - **Vocational training directories** – bilingual names, type, capacity and full contact info on every record.
 - **Maps** – drop-in GeoJSON point layer for the vocational training network (99% geocoded).
 - **Capacity planning** – theoretical and realized capacities, boarding availability and surface area.
-- **Sector analysis** – 1,209 public vs 723 private establishments across all 69 current wilayas.
+- **Sector analysis** – 1,209 public vs 754 private establishments across all 69 current wilayas.
 
 ## What's inside
 
 | Type | Code | Count |
 | --- | --- | --- |
-| Centre de Formation Professionnelle et de l'Apprentissage | `cfpa` | 856 |
-| Centre privé accrédité | `prive` | 723 |
+| Centre de Formation Professionnelle et de l'Apprentissage | `cfpa` | 857 |
+| Centre privé accrédité | `prive` | 754 |
 | Institut National Spécialisé de Formation Professionnelle | `insfp` | 182 |
-| Annexe CFPA | `annexe_cfpa` | 70 |
+| Annexe CFPA | `annexe_cfpa` | 69 |
 | Direction de la Formation et de l'Enseignement Professionnels | `dfep` | 58 |
 | Institut d'Enseignement Professionnel | `iep` | 18 |
 | Annexe CNFEPD | `annexe_cnfepd` | 9 |
 | Annexe INSFP | `annexe_insfp` | 9 |
 | Institut de Formation et d'Enseignement Professionnel | `ifep` | 6 |
 | Institut National de la Formation et de l'Enseignement Professionnels | `infep` | 1 |
-| **Total** | | **1,932** |
+| **Total** | | **1,963** |
 
 Spanning **all 69 current wilayas**. The source is keyed by the pre-reform 58-wilaya
-scheme, so the generator matches source coordinates and communes to the current division and assigns 134
-establishments to their post-2026 daughter wilaya. 1,921 of 1,932 establishments are geocoded
-(99%), `lat`/`lng` is `null` for the remaining 11. Of the geocoded records, 1,362 carry the
-point takwin.dz publishes as `geo_precision` `"exact"`, and 13 carry a published point the
+scheme, so the generator matches source coordinates and communes to the current division and assigns 137
+establishments to their post-2026 daughter wilaya. 1,961 of 1,963 establishments are geocoded
+(99.9%), `lat`/`lng` is `null` for the remaining 2. Of the geocoded records, 1,666 carry the
+point takwin.dz publishes as `geo_precision` `"exact"`, and 15 carry a published point the
 number itself disproves, fewer than three decimals or degrees and whole arcminutes with the
 seconds dropped, so those keep `geo_method` `"takwin"` but read `"approximate"`; the portal
-leaves the coordinate empty on the rest, so 511 sit on their commune's centroid and 35 on
+leaves the coordinate empty on the rest, so 249 sit on their commune's centroid and 31 on
 their wilaya's, both `"approximate"` and labelled in `geo_method`.
 
 ## Formats
@@ -91,10 +91,10 @@ const all: Establishment[] = fp.establishments();
 
 ```
 data/
-  establishments.json      # 1,932 establishments (array)
+  establishments.json      # 1,963 establishments (array)
   metadata.json            # sources, counts, by_type, by_secteur, geocoded, license, updated
   csv/                     # CSV export (repo + Release bundle, not in npm tarball)
-  geojson/                 # GeoJSON features (1,921 geocoded points)
+  geojson/                 # GeoJSON features (1,961 geocoded points)
 ```
 
 ## Record shape

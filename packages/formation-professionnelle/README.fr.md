@@ -12,7 +12,7 @@
 
 </div>
 
-1 932 établissements de formation professionnelle à travers l'Algérie – **CFPA**, **INSFP**,
+1 963 établissements de formation professionnelle à travers l'Algérie – **CFPA**, **INSFP**,
 **IFEP**, **IEP**, **DFEP** et centres privés agréés – chacun avec son nom officiel (arabe,
 avec le français quand disponible), **type** d'établissement, **capacité**, informations
 d'**internat**, **coordonnées de contact** détaillées (téléphone, fax, email, site web,
@@ -27,7 +27,7 @@ npm install @geoalgeria/formation-professionnelle
 ```js
 import fp from "@geoalgeria/formation-professionnelle";
 
-const all = fp.establishments();                    // 1 932
+const all = fp.establishments();                    // 1 963
 const byWilaya = fp.establishmentsByWilaya(16);     // établissements de la wilaya 16
 const cfpas = fp.establishmentsByType("cfpa");      // tous les CFPA
 const one = fp.establishmentById("00001");          // un seul enregistrement par id
@@ -41,33 +41,33 @@ const one = fp.establishmentById("00001");          // un seul enregistrement pa
 - **Annuaires de formation professionnelle** – noms bilingues, type, capacité et coordonnées de contact complètes.
 - **Cartes** – couche de points GeoJSON prête à l'emploi pour le réseau de formation professionnelle (99 % géocodés).
 - **Planification des capacités** – capacités théoriques et réelles, disponibilité d'internat et superficie.
-- **Analyse sectorielle** – 1 209 établissements publics contre 723 privés dans les 69 wilayas actuelles.
+- **Analyse sectorielle** – 1 209 établissements publics contre 754 privés dans les 69 wilayas actuelles.
 
 ## Contenu
 
 | Type | Code | Nombre |
 | --- | --- | --- |
-| Centre de Formation Professionnelle et de l'Apprentissage | `cfpa` | 856 |
-| Centre privé accrédité | `prive` | 723 |
+| Centre de Formation Professionnelle et de l'Apprentissage | `cfpa` | 857 |
+| Centre privé accrédité | `prive` | 754 |
 | Institut National Spécialisé de Formation Professionnelle | `insfp` | 182 |
-| Annexe CFPA | `annexe_cfpa` | 70 |
+| Annexe CFPA | `annexe_cfpa` | 69 |
 | Direction de la Formation et de l'Enseignement Professionnels | `dfep` | 58 |
 | Institut d'Enseignement Professionnel | `iep` | 18 |
 | Annexe CNFEPD | `annexe_cnfepd` | 9 |
 | Annexe INSFP | `annexe_insfp` | 9 |
 | Institut de Formation et d'Enseignement Professionnel | `ifep` | 6 |
 | Institut National de la Formation et de l'Enseignement Professionnels | `infep` | 1 |
-| **Total** | | **1 932** |
+| **Total** | | **1 963** |
 
 Couvrant **les 69 wilayas actuelles**. La source est indexée selon l'ancien schéma à 58
-wilayas ; le générateur rattache donc les coordonnées et communes au découpage actuel et affecte 134
-établissements à leur nouvelle wilaya issue de la réforme de 2026. 1 921 des 1 932 établissements sont géocodés
-(99 %) – `lat`/`lng` est `null` pour les 11 restants. Parmi les enregistrements géocodés,
-1 362 portent le point publié par takwin.dz en `geo_precision` `"exact"`, et 13 portent un
+wilayas ; le générateur rattache donc les coordonnées et communes au découpage actuel et affecte 137
+établissements à leur nouvelle wilaya issue de la réforme de 2026. 1 961 des 1 963 établissements sont géocodés
+(99,9 %) – `lat`/`lng` est `null` pour les 2 restants. Parmi les enregistrements géocodés,
+1 666 portent le point publié par takwin.dz en `geo_precision` `"exact"`, et 15 portent un
 point publié que le nombre lui-même dément, moins de trois décimales ou des degrés et des
 minutes entières sans les secondes ; ceux-là gardent `geo_method` `"takwin"` mais passent en
-`"approximate"`. Le portail laisse la coordonnée vide pour les autres, donc 511 sont placés
-sur le centroïde de leur commune et 35 sur celui de leur wilaya, tous deux `"approximate"` et
+`"approximate"`. Le portail laisse la coordonnée vide pour les autres, donc 249 sont placés
+sur le centroïde de leur commune et 31 sur celui de leur wilaya, tous deux `"approximate"` et
 signalés dans `geo_method`.
 
 ## Formats
@@ -92,7 +92,7 @@ Les formats **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et incl
 
 ```
 data/
-  establishments.json      # 1 932 établissements (tableau)
+  establishments.json      # 1 963 établissements (tableau)
   metadata.json            # sources, comptages, by_type, by_secteur, geocoded, license, updated
   csv/                     # Export CSV (dépôt + bundle Release, pas dans le tarball npm)
   geojson/                 # Entités GeoJSON (1 921 points géocodés)

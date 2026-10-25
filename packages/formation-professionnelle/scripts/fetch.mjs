@@ -10,13 +10,13 @@
  *   committed capture in sources/formation-professionnelle/ is the concatenation
  *   of all 59 calls.
  *
- * OFFLINE ONLY. takwin.dz sits behind a WAF that answers a non-browser client
- * with a block page (the same is true of the ibtikar.takwin.dz mirror), so this
- * build always replays the committed capture rather than pulling. That is also
- * why dates are resolved with offline semantics: the committed `updated` /
- * `retrieved` are preserved rather than restamped with today, because no
- * retrieval happened. Re-establishing a live pull needs a real browser session;
- * until then the capture is the source of truth and git history is its archive.
+ * OFFLINE ONLY. takwin.dz answers an ordinary request from inside Algeria, and
+ * a WAF block page from anywhere else, so this build always replays the
+ * committed capture rather than pulling: a refresh is a capture run from an
+ * Algerian connection, and the build itself needs no network. The dates it
+ * stamps are the capture's own retrieval date from the source manifest, not
+ * today's, so every replay of a given capture reproduces the same metadata and
+ * the package never claims a retrieval it did not make.
  *
  * Geocoding. The portal stores a coordinate pair per establishment, but for 557
  * of 1,932 records one or both axes are the sentinel 0.000000000000000000000000:
@@ -39,18 +39,17 @@
  */
 
 import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import {
   MIGRATIONS,
   writePackageV2,
-  resolveDates,
   carryOverIds,
   readCommitted,
   readRetiredIds,
 } from "../../../scripts/lib/v2-transforms.mjs";
 import { containingWilayaCode } from "../../../scripts/lib/build-utils.mjs";
-import { readCapture } from "../../../scripts/lib/source-store.mjs";
+import { captureMeta, readCapture } from "../../../scripts/lib/source-store.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -227,6 +226,32 @@ function resolveCommune(commune, wilaya, ref) {
   return null;
 }
 
+// --- id carry-over ----------------------------------------------------------
+// `code` alone repeats on 5 records, so type and name make the carry key unique
+// without depending on wilaya_code. That preserves ids when a commune moves from
+// its source's pre-reform wilaya to the current daughter wilaya.
+//
+// The name goes in with its spacing removed, because the portal's spacing is
+// presentation and not identity: between the June and October 2026 captures it
+// corrected 1,788 Arabic names, running apart words it had previously run
+// together, and a key that read them byte for byte took every correction for a
+// different place (#306). Removing the whitespace rather than collapsing runs of
+// it is what makes the two meet, since June carries no space at all where
+// October carries one. The published name keeps the source's corrected spelling.
+//
+// Folded away, by codepoint rather than by glyph: the whitespace characters
+// U+0009-U+000D, U+0020, U+0085, U+00A0, U+1680, U+2000-U+200A, U+2028, U+2029,
+// U+202F, U+205F and U+3000; the zero-width characters a name can pick up
+// invisibly, U+200B ZERO WIDTH SPACE, U+200C ZWNJ, U+200D ZWJ and U+FEFF; and
+// U+0640 ARABIC TATWEEL, the elongation padding this repo already treats as
+// noise (the normalization package's `ar.tatweel` Rule, and the commune name_ar
+// repairs). Nothing that changes which letter a reader sees is folded.
+const CARRY_KEY_SPACING =
+  /[\u0009-\u000D\u0020\u0085\u00A0\u1680\u2000-\u200D\u2028\u2029\u202F\u205F\u3000\uFEFF\u0640]/gu;
+
+export const carryKeyOf = (r) =>
+  [r.code, r.type, String(r.name ?? "").replace(CARRY_KEY_SPACING, "")].join("|");
+
 // --- main -------------------------------------------------------------------
 function main() {
   const raw = readCapture("formation-professionnelle", "takwin-etab").data;
@@ -361,17 +386,35 @@ function main() {
   }
 
   // --- emit v2 ---------------------------------------------------------------
-  // Offline: no retrieval happened, so the committed dates are reproduced rather
-  // than restamped.
+  // The capture is the retrieval, so its own date is what the package states,
+  // rather than today's (the build pulled nothing) or the previous metadata's
+  // (which would misdate a fresh capture as the last one). A replay of the same
+  // capture therefore reproduces the same metadata.
   const cfg = MIGRATIONS["formation-professionnelle"];
-  const { updated, retrieved } = resolveDates(OUT_DIR, true);
+  const captured = captureMeta("formation-professionnelle", "takwin-etab").retrieved;
+  const { updated, retrieved } = { updated: captured, retrieved: captured };
   const v2 = records.map(cfg.map);
-  // `code` alone repeats on 5 records, so type and name make the carry key unique
-  // without depending on wilaya_code. That preserves ids when a commune moves
-  // from its source's pre-reform wilaya to the current daughter wilaya.
-  const carryKey = (r) => [r.code, r.type, r.name].join("|");
+  // carryOverIds refuses a carry key the COMMITTED records duplicate. The live
+  // side needs the same check: two establishments whose keys collapse together
+  // would both pin to one committed id, and the error that surfaces then names
+  // an id rather than the names that folded into each other. Say which they are.
+  const byCarryKey = new Map();
+  const collisions = [];
+  for (const r of v2) {
+    const k = carryKeyOf(r);
+    if (byCarryKey.has(k)) collisions.push([byCarryKey.get(k), r]);
+    else byCarryKey.set(k, r);
+  }
+  if (collisions.length) {
+    for (const [a, b] of collisions)
+      console.error(`  carry key collision ${JSON.stringify(carryKeyOf(a))}: ${JSON.stringify(a.name)} / ${JSON.stringify(b.name)}`);
+    throw new Error(
+      `formation-professionnelle: ${collisions.length} record pair(s) share one carry key once spacing is folded; ` +
+        `the key cannot pin ids until it discriminates them`,
+    );
+  }
   const retiredIds = readRetiredIds(OUT_DIR);
-  carryOverIds(v2, readCommitted(OUT_DIR, "establishments.json"), carryKey, "formation-professionnelle", retiredIds);
+  carryOverIds(v2, readCommitted(OUT_DIR, "establishments.json"), carryKeyOf, "formation-professionnelle", retiredIds);
 
   let oldMeta = {};
   try { oldMeta = JSON.parse(readFileSync(join(OUT_DIR, "metadata.json"), "utf-8")); } catch {}
@@ -388,4 +431,8 @@ function main() {
   console.log(`Wrote ${out.length} establishments → v2 (${metadata.geocoded_count} geocoded, ${metadata.wilayas_covered} wilayas).`);
 }
 
-main();
+// Guarded so the test suite can import carryKeyOf without running the build,
+// the same shape packages/ecoles/scripts/fetch.mjs uses.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}
