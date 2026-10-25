@@ -131,12 +131,17 @@ test("a periodic cadence carries a next_due after its last_retrieved, others car
   }
 });
 
+// The `run` is not optional. `pnpm --filter <pkg> fetch` runs pnpm's own built-in
+// fetch command, a lockfile-only install that offers to purge node_modules, not the
+// package's fetch script: every row read that way until 2026-10-25. So the step is
+// matched with `run` in it, and a row that drops it fails here rather than at the
+// next refresh.
 test("every refresh path names a script the package actually declares", () => {
   for (const row of rows) {
     if (row.path === null) continue;
     assert.equal(typeof row.path, "string", `${row.package}: path must be a string or null`);
-    const steps = [...row.path.matchAll(/pnpm --filter (\S+) (\S+)/g)];
-    assert.ok(steps.length, `${row.package}: path "${row.path}" names no pnpm --filter step`);
+    const steps = [...row.path.matchAll(/pnpm --filter (\S+) run (\S+)/g)];
+    assert.ok(steps.length, `${row.package}: path "${row.path}" names no "pnpm --filter <pkg> run <script>" step`);
     for (const [, name, script] of steps) {
       const target = byName.get(name);
       assert.ok(target, `${row.package}: path refers to unknown package ${name}`);

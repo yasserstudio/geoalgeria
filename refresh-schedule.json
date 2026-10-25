@@ -24,7 +24,7 @@
     },
     {
       "package": "@geoalgeria/aviation",
-      "path": "pnpm --filter @geoalgeria/aviation fetch",
+      "path": "pnpm --filter @geoalgeria/aviation run fetch",
       "source": {
         "name": "ANAC: Autorité Nationale de l'Aviation Civile",
         "url": "https://www.anac.dz"
@@ -37,7 +37,7 @@
     },
     {
       "package": "@geoalgeria/banques",
-      "path": "pnpm --filter @geoalgeria/banques build",
+      "path": "pnpm --filter @geoalgeria/banques run build",
       "source": {
         "name": "Banque d'Algérie: liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)",
         "url": "https://www.bank-of-algeria.dz/banques-commerciales/"
@@ -50,7 +50,7 @@
     },
     {
       "package": "@geoalgeria/buses",
-      "path": "pnpm --filter @geoalgeria/buses fetch",
+      "path": "pnpm --filter @geoalgeria/buses run fetch",
       "source": {
         "name": "French Wikipedia: Lignes de bus ETUSA de 1 à 99",
         "url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
@@ -63,7 +63,7 @@
     },
     {
       "package": "@geoalgeria/cliniques",
-      "path": "pnpm --filter @geoalgeria/cliniques fetch",
+      "path": "pnpm --filter @geoalgeria/cliniques run fetch",
       "source": {
         "name": "OpenStreetMap: clinics & proximity-care facilities in Algeria",
         "url": "https://www.openstreetmap.org"
@@ -75,7 +75,7 @@
     },
     {
       "package": "@geoalgeria/culture",
-      "path": "pnpm --filter @geoalgeria/culture fetch",
+      "path": "pnpm --filter @geoalgeria/culture run fetch",
       "source": {
         "name": "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)",
         "url": "https://cartes.patrimoineculturelalgerien.org"
@@ -96,7 +96,7 @@
     },
     {
       "package": "@geoalgeria/djezzy",
-      "path": "pnpm --filter @geoalgeria/djezzy fetch",
+      "path": "pnpm --filter @geoalgeria/djezzy run fetch",
       "source": {
         "name": "Djezzy: Optimum Telecom Algérie (nos-boutiques)",
         "url": "https://www.djezzy.dz"
@@ -107,7 +107,7 @@
     },
     {
       "package": "@geoalgeria/ecoles",
-      "path": "pnpm --filter @geoalgeria/ecoles fetch",
+      "path": "pnpm --filter @geoalgeria/ecoles run fetch",
       "source": {
         "name": "OpenStreetMap: schools & kindergartens in Algeria",
         "url": "https://www.openstreetmap.org"
@@ -119,7 +119,7 @@
     },
     {
       "package": "@geoalgeria/emploi",
-      "path": "pnpm --filter @geoalgeria/emploi fetch",
+      "path": "pnpm --filter @geoalgeria/emploi run fetch",
       "source": {
         "name": "ANEM: National Employment Agency (anem.dz)",
         "url": "https://www.anem.dz"
@@ -130,7 +130,7 @@
     },
     {
       "package": "@geoalgeria/enseignement-superieur",
-      "path": "pnpm --filter @geoalgeria/enseignement-superieur fetch && pnpm --filter @geoalgeria/enseignement-superieur geocode",
+      "path": "pnpm --filter @geoalgeria/enseignement-superieur run fetch && pnpm --filter @geoalgeria/enseignement-superieur run geocode",
       "source": {
         "name": "Ministry of Higher Education and Scientific Research (MESRS)",
         "url": "https://www.mesrs.dz"
@@ -142,7 +142,7 @@
     },
     {
       "package": "@geoalgeria/ferroviaire",
-      "path": "pnpm --filter @geoalgeria/ferroviaire fetch",
+      "path": "pnpm --filter @geoalgeria/ferroviaire run fetch",
       "source": {
         "name": "Wikidata: rail & urban transit stations in Algeria",
         "url": "https://www.wikidata.org"
@@ -155,7 +155,7 @@
     },
     {
       "package": "@geoalgeria/formation-professionnelle",
-      "path": "pnpm --filter @geoalgeria/formation-professionnelle fetch",
+      "path": "pnpm --filter @geoalgeria/formation-professionnelle run fetch",
       "source": {
         "name": "Ministry of Vocational Training and Education (MFEP): takwin.dz",
         "url": "https://takwin.dz"
@@ -167,7 +167,7 @@
     },
     {
       "package": "@geoalgeria/gares-routieres",
-      "path": "pnpm --filter @geoalgeria/gares-routieres fetch",
+      "path": "pnpm --filter @geoalgeria/gares-routieres run fetch",
       "source": {
         "name": "SOGRAL: Société de Gestion des Gares Routières d'Algérie",
         "url": "https://live.sogral.com"
@@ -191,7 +191,7 @@
     },
     {
       "package": "@geoalgeria/jeunesse",
-      "path": "pnpm --filter @geoalgeria/jeunesse fetch",
+      "path": "pnpm --filter @geoalgeria/jeunesse run fetch",
       "source": {
         "name": "Ministry of Youth and Sports: SIG",
         "url": "https://sig.mjs.gov.dz"
@@ -203,7 +203,7 @@
     },
     {
       "package": "@geoalgeria/livraison",
-      "path": "pnpm --filter @geoalgeria/livraison fetch",
+      "path": "pnpm --filter @geoalgeria/livraison run fetch",
       "source": {
         "name": "Yalidine Express: nos-agences",
         "url": "https://yalidine-express.com.dz/nos-agences/"
@@ -212,11 +212,11 @@
       "cadence": "quarterly",
       "last_retrieved": "2026-06-18",
       "next_due": "2026-09-18",
-      "note": "The fetcher aborts on the live 2026-10-25 pull: three Yalidine rows (130104, 195504, 195505) no longer carry the operating carrier in brackets, so the operator tag parses as null and the malformed-stop-desk guard fires before anything is written. Needs a parser fix, not a refresh."
+      "note": "The bracket-less operator tag that aborted the 2026-10-25 pull is fixed (splitName, test/livraison-operator-tag.test.mjs), and the pull now completes at 445 stop-desks from 411. The refresh is still held back on a second defect found in its diff: a carded desk whose Google Maps link fails to resolve is dropped instead of keeping its last known coordinate, so the 2026-10-25 run would have deleted anderson-16-sidi-abdellah and anderson-25-ali-mendjeli and retired their ids although both cards are still published, on nothing but a link that would not resolve that minute. Carry a carded desk over on an unresolvable link first."
     },
     {
       "package": "@geoalgeria/mobilis",
-      "path": "pnpm --filter @geoalgeria/mobilis fetch",
+      "path": "pnpm --filter @geoalgeria/mobilis run fetch",
       "source": {
         "name": "Mobilis: ATM Mobilis (mobilis.dz)",
         "url": "https://www.mobilis.dz"
@@ -228,7 +228,7 @@
     },
     {
       "package": "@geoalgeria/mosquees",
-      "path": "pnpm --filter @geoalgeria/mosquees fetch",
+      "path": "pnpm --filter @geoalgeria/mosquees run fetch",
       "source": {
         "name": "Wikidata: mosques in Algeria",
         "url": "https://www.wikidata.org"
@@ -250,7 +250,7 @@
     },
     {
       "package": "@geoalgeria/ooredoo",
-      "path": "pnpm --filter @geoalgeria/ooredoo fetch",
+      "path": "pnpm --filter @geoalgeria/ooredoo run fetch",
       "source": {
         "name": "Ooredoo Algérie: retail network (trouvez-nous JSON API)",
         "url": "https://www.ooredoo.dz/fr/particuliers/trouvez-nous"
@@ -270,7 +270,7 @@
     },
     {
       "package": "@geoalgeria/pharmacies",
-      "path": "pnpm --filter @geoalgeria/pharmacies fetch",
+      "path": "pnpm --filter @geoalgeria/pharmacies run fetch",
       "source": {
         "name": "OpenStreetMap: pharmacies (amenity=pharmacy) in Algeria",
         "url": "https://www.openstreetmap.org"
@@ -282,7 +282,7 @@
     },
     {
       "package": "@geoalgeria/poste",
-      "path": "pnpm --filter @geoalgeria/poste fetch",
+      "path": "pnpm --filter @geoalgeria/poste run fetch",
       "source": {
         "name": "Algérie Poste: baridimap.poste.dz",
         "url": "https://baridimap.poste.dz"
@@ -294,7 +294,7 @@
     },
     {
       "package": "@geoalgeria/protection-civile",
-      "path": "pnpm --filter @geoalgeria/protection-civile fetch",
+      "path": "pnpm --filter @geoalgeria/protection-civile run fetch",
       "source": {
         "name": "Direction Générale de la Protection Civile",
         "url": "https://dgpc.dz/dgpc2/"
@@ -307,7 +307,7 @@
     },
     {
       "package": "@geoalgeria/sante",
-      "path": "pnpm --filter @geoalgeria/sante fetch",
+      "path": "pnpm --filter @geoalgeria/sante run fetch",
       "source": {
         "name": "Ministry of Health (sante.gov.dz): health-establishment registry",
         "url": "https://sante.gov.dz"
@@ -329,7 +329,7 @@
     },
     {
       "package": "@geoalgeria/sports",
-      "path": "pnpm --filter @geoalgeria/sports fetch",
+      "path": "pnpm --filter @geoalgeria/sports run fetch",
       "source": {
         "name": "Ministry of Youth and Sports: SIG",
         "url": "https://sig.mjs.gov.dz"
@@ -341,7 +341,7 @@
     },
     {
       "package": "@geoalgeria/telecom",
-      "path": "pnpm --filter @geoalgeria/telecom fetch",
+      "path": "pnpm --filter @geoalgeria/telecom run fetch",
       "source": {
         "name": "Djezzy: published 5G coverage map (Optimum Telecom Algérie)",
         "url": "https://www.djezzy5g.dz/map.html"
