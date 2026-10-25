@@ -126,6 +126,8 @@ data/
 
 `geo_precision` is `"exact"` on 648 of the 650 stop-desks and `"approximate"` on two: ZR Express publishes its Constantine sorting centre and its Zouaghi office on one operator pin, and a coordinate two desks share is not a per-desk point, so both are published as approximate.
 
+`metadata.json` also carries `carried_pins`: the desks shipping a coordinate the latest refresh did not read, each with its id, its name and the date of the run that did read it. `metadata.sources[].retrieved` dates the carrier's list, this dates the pin itself. The list is empty when every carrier link resolved, and joins `stopdesks.json` by id.
+
 ```json
 // carriers.json
 {

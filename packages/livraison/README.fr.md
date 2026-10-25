@@ -128,6 +128,8 @@ data/
 
 `geo_precision` vaut `"exact"` pour 648 des 650 bureaux de retrait et `"approximate"` pour deux : ZR Express publie son centre de tri de Constantine et son bureau de Zouaghi sur une seule épingle, et une coordonnée partagée par deux bureaux n'est pas un point propre à chacun, donc les deux sont publiés comme approximatifs.
 
+`metadata.json` porte aussi `carried_pins` : les bureaux qui publient une coordonnée non relue par le dernier rafraîchissement, chacun avec son identifiant, son nom et la date de l'exécution qui l'a réellement lue. `metadata.sources[].retrieved` date la liste du transporteur, ceci date l'épingle elle-même. La liste est vide quand tous les liens des transporteurs se résolvent, et se joint à `stopdesks.json` par l'identifiant.
+
 ```json
 // carriers.json
 {
