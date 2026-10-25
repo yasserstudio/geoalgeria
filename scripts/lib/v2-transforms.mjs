@@ -869,7 +869,7 @@ export const MIGRATIONS = {
       ],
       license: "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
       estimatedUniverse: null,
-      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 649 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 650 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
       titles: { en: "Algeria delivery stop-desks", fr: "Points relais de livraison d'Algérie", ar: "نقاط استلام التوصيل في الجزائر" },
       stats: (rows) => {
         const dataDir = join(REPO_ROOT, "packages", "livraison", "data");

@@ -4,7 +4,7 @@
   "name": "Algeria delivery stop-desks",
   "alternateName": "Points relais de livraison d'Algérie",
   "identifier": "@geoalgeria/livraison",
-  "description": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 649 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+  "description": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 650 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
   "conditionsOfAccess": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
   "isAccessibleForFree": true,
   "creator": {
@@ -20,7 +20,7 @@
       "box": "19.576488 -8.143583 37.009471 9.578836"
     }
   },
-  "variableMeasured": "649 records, 64 wilayas",
+  "variableMeasured": "650 records, 64 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",

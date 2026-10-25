@@ -13,7 +13,7 @@
 </div>
 
 The COD / e-commerce delivery layer for Algeria, in three parts: a **registry** of
-delivery carriers, **649 geocoded stop-desk points** across 64 wilayas, and
+delivery carriers, **650 geocoded stop-desk points** across 64 wilayas, and
 **per-carrier coverage**. Shipped as JSON, CSV, and GeoJSON. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -45,7 +45,7 @@ const reach = livraison.coverageByCarrier("yalidine"); // wilayas it serves
 | Dataset | Count | Geocoded | Notes |
 | --- | --- | --- | --- |
 | Carriers (`carriers.json`) | **18** | – | registry: name, website, model, COD, scope, data openness, API |
-| Stop-desks (`stopdesks.json`) | **649** | ✅ all | id, operator, name, address, commune, `wilaya_code`, lat/lng |
+| Stop-desks (`stopdesks.json`) | **650** | ✅ all | id, operator, name, `name_ar`, address, commune, `wilaya_code`, lat/lng |
 | Coverage (`coverage.json`) | **12** | – | per-carrier wilaya/commune stop-desk presence |
 
 Stop-desks span **64 wilayas**, every one geocoded. `wilaya_code` links against the
@@ -93,14 +93,14 @@ const desks: StopDesk[] = livraison.stopdesks();
 ```
 data/
   carriers.json             # 18 carriers (registry)
-  stopdesks.json            # 649 geocoded stop-desks (array)
+  stopdesks.json            # 650 geocoded stop-desks (array)
   coverage.json             # 12 per-carrier coverage rows
   metadata.json             # sources, counts, updated
   csv/                      # repo + Release bundle (not in npm tarball)
     carriers.csv
     stopdesks.csv
     coverage.csv
-  geojson/stopdesks.geojson # Point features (all 649 geocoded)
+  geojson/stopdesks.geojson # Point features (all 650 geocoded)
 ```
 
 ## Record shapes
@@ -179,9 +179,10 @@ Stop-desks come from the carriers that publish open agency data:
   into the client chunk that draws the section, so the chunk the page names is read instead
   of the preview. An agency carries no record key, so ids are minted from the wilaya and
   commune. Eleven agencies link a Maps place that publishes no coordinate, or no link at
-  all, and are omitted rather than geocoded. HHD files El Meniaa under its pre-2021 parent
-  Ghardaïa, so that pin lands outside the wilaya the list declares and the agency is
-  dropped by the same cross-check every carded carrier gets.
+  all, and are omitted rather than geocoded. HHD files El Meniaa under Ghardaïa, the
+  wilaya it was carved out of in 2021, so its pin lands outside the one the list declares;
+  the cross-check every carded carrier gets reads that parent from the wilaya registry,
+  recognises the pair and keeps the agency.
 
 The carrier registry is compiled from [CourierDZ](https://github.com/PiteurStudio/CourierDZ),
 carrier websites, and GeoAlgeria research. Run `npm run fetch` to regenerate every output

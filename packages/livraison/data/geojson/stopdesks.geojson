@@ -10604,6 +10604,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.878034,
+          30.592879
+        ]
+      },
+      "properties": {
+        "id": "hhd-express-47-el-meniaa",
+        "name": "HHD Express El Meniaa",
+        "name_ar": null,
+        "wilaya_code": "58",
+        "commune_code": null,
+        "commune": "El Meniaa",
+        "lat": 30.592879,
+        "lng": 2.878034,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "hhd-express",
+        "operator": "hhd-express",
+        "address": "موقع شارع العربي بن مهيدي تتجه نحو طريق سونلغاز، وعند محور الدوران تدخل باتجاه حي حفرة العباس.،",
+        "sources": [
+          "hhd-express"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.6833771,
           32.4943102
         ]

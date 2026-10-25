@@ -13,7 +13,7 @@
 </div>
 
 La couche livraison / e-commerce pour l'Algérie, en trois volets : un **registre** de
-transporteurs, **649 bureaux de retrait géocodés** répartis sur 64 wilayas, et la
+transporteurs, **650 bureaux de retrait géocodés** répartis sur 64 wilayas, et la
 **couverture par transporteur**. Distribué en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -45,7 +45,7 @@ const reach = livraison.coverageByCarrier("yalidine"); // wilayas desservies
 | Jeu de données | Nombre | Géocodé | Notes |
 | --- | --- | --- | --- |
 | Transporteurs (`carriers.json`) | **18** | – | registre : nom, site web, modèle, paiement à la livraison, périmètre, ouverture des données, API |
-| Bureaux de retrait (`stopdesks.json`) | **649** | ✅ tous | id, opérateur, nom, adresse, commune, `wilaya_code`, lat/lng |
+| Bureaux de retrait (`stopdesks.json`) | **650** | ✅ tous | id, opérateur, nom, `name_ar`, adresse, commune, `wilaya_code`, lat/lng |
 | Couverture (`coverage.json`) | **12** | – | présence par transporteur (wilaya/commune) |
 
 Les bureaux de retrait couvrent **64 wilayas**, tous géocodés. `wilaya_code` se joint au
@@ -95,14 +95,14 @@ inclus dans chaque [Release GitHub](https://github.com/yasserstudio/geoalgeria/r
 ```
 data/
   carriers.json             # 18 transporteurs (registre)
-  stopdesks.json            # 649 bureaux de retrait géocodés (tableau)
+  stopdesks.json            # 650 bureaux de retrait géocodés (tableau)
   coverage.json             # 12 lignes de couverture par transporteur
   metadata.json             # sources, comptages, updated
   csv/                      # dépôt + bundle Release (pas dans le tarball npm)
     carriers.csv
     stopdesks.csv
     coverage.csv
-  geojson/stopdesks.geojson # Entités Point (les 649 géocodées)
+  geojson/stopdesks.geojson # Entités Point (les 650 géocodées)
 ```
 
 ## Formes d'enregistrement
@@ -187,9 +187,10 @@ Les bureaux de retrait proviennent des transporteurs qui publient des données d
   lu, pas l'aperçu. Une agence ne porte aucune clé d'enregistrement, les identifiants sont
   donc formés à partir de la wilaya et de la commune. Onze agences renvoient vers un lieu
   Maps qui ne publie aucune coordonnée, ou n'ont aucun lien, et sont omises plutôt que
-  géocodées. HHD classe El Meniaa sous sa wilaya parente d'avant 2021, Ghardaïa : ce point
-  tombe hors de la wilaya déclarée et l'agence est écartée par le même contrôle que
-  reçoit chaque transporteur à fiches.
+  géocodées. HHD classe El Meniaa sous Ghardaïa, la wilaya dont elle a été détachée en
+  2021 : son point tombe hors de la wilaya déclarée, mais le contrôle que reçoit chaque
+  transporteur à fiches lit cette filiation dans le registre des wilayas, reconnaît la
+  paire et conserve l'agence.
 
 Le registre des transporteurs est compilé à partir de
 [CourierDZ](https://github.com/PiteurStudio/CourierDZ), des sites web des transporteurs
