@@ -538,6 +538,35 @@ LISTED = [
      "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai"},
 ]
 
+# Air Algerie's own statement of 24 Oct 2026 (Algiers), announcing five new
+# international lines at the departure of Algiers: Conakry on 25 Oct,
+# Brazzaville, Lagos and Shanghai on 26 Oct, Tripoli on 28 Oct. It calls four of
+# them African and says Shanghai becomes the third Chinese city after Beijing
+# and Guangzhou.
+#
+# The carrier publishes no press or newsroom section: airalgerie.dz is a
+# WordPress site whose `post-sitemap.xml` stops at Apr 2026, its
+# news-and-promotions page carries Miles offers only, and its social accounts
+# answer an automated fetch with a login wall. So the cited URL is the fullest
+# readable rendering of the statement rather than the carrier's own page, and
+# the state news agency corroborates that it is a statement of that date: "Le
+# Groupe Air Algerie a annonce, samedi dans un communique, le lancement, des
+# dimanche, de 5 nouvelles lignes internationales" (aps.dz, 24 Oct 2026 16:45,
+# /fr/economie/commerce-et-service/mvmkm2ni-air-algerie-lance-5-nouvelles-lignes-internationales-vers-l-afrique-et-l-asie).
+# That wire runs one sentence and names no route, which is why it is not the
+# cited URL.
+#
+# What the statement does NOT carry: no flight number, no day name and no
+# airport for Tripoli. Every row it is attached to keeps the superseded report
+# named in its comment as what supports those fields, because this is a
+# provenance upgrade on the announcement and not a re-check of the schedule.
+# AS_OF is unchanged for the same reason. A leg carries one `source` string, so
+# that split provenance can only live in a comment; a citation list per leg
+# would hold both.
+AH_STATEMENT_2026_10_24 = (
+    "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+)
+
 # Explicitly announced, but not operating on AS_OF. These stay separate from
 # VERIFIED because `plannedRoutes()` is the package's lifecycle boundary. A
 # booking result can establish carrier, direction, flight number and duration;
@@ -548,21 +577,25 @@ PLANNED = [
     # pattern, "premier vol le dimanche 25 octobre 2026, puis trois vols par
     # semaine, les mardis, jeudis et dimanches" for Conakry and "premier vol le
     # lundi 26 octobre 2026, puis trois vols par semaine, les lundis, mercredis et
-    # samedis" for Brazzaville. Both are cited to that report because it is what
-    # supports `days`; the AH5358/AH5390 flight numbers come from the 20 Aug 2026
-    # sale-inventory report the rows shipped on before. AeroRoutes' NW26 filing of
-    # 20 Aug independently carries the same effective dates and the three weekly
-    # frequency.
+    # samedis" for Brazzaville. `days` rests on that report, and the AH5358/AH5390
+    # flight numbers on the 20 Aug 2026 sale-inventory report the rows shipped on
+    # before. AeroRoutes' NW26 filing of 20 Aug independently carries the same
+    # effective dates and the three weekly frequency.
+    #
+    # Both now cite the carrier's own 24 Oct 2026 statement, which announces the
+    # two lines with those first-flight dates. They STAY PLANNED: a statement that
+    # a line opens is an announcement, and `plannedRoutes()` is left only on a
+    # dated report that the aircraft flew.
     #
     # `days` is set on the Algiers departures only. The reports state the day the
     # aircraft leaves Algiers; when each return leg flies is a separate fact
     # nothing published pins down, and section 1's directional record is the unit.
     {"from": "ALG", "to": "BZV", "flight": "AH 5390", "status": "unclear",
      "days": ["mon", "wed", "sat"], "evidence": "verified",
-     "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/"},
+     "source": AH_STATEMENT_2026_10_24},
     {"from": "ALG", "to": "CKY", "flight": "AH 5358", "status": "unclear",
      "days": ["tue", "thu", "sun"], "evidence": "verified",
-     "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/"},
+     "source": AH_STATEMENT_2026_10_24},
     {"from": "ALG", "to": "ICN", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
     # The announced Algiers-Kuwait-Amman-Algiers triangle, one weekly Monday
@@ -602,28 +635,42 @@ PLANNED = [
     # flight number, filed schedule or booking result has appeared, which is the same
     # lower boundary Kuwait and Incheon sit on. This supersedes the 27 Sep pass,
     # which left ALG-TIP out as "an on-record objective with no filed schedule".
+    #
+    # The carrier's 24 Oct 2026 statement is now cited on both legs: it groups
+    # Tripoli with the African destinations and gives the same 28 Oct first
+    # flight. It writes the city only, Tripoli, and names no airport, so MITIGA
+    # stays on the 1 Oct report that does name it; the TIP guard below is
+    # unchanged. The pair stays PLANNED, the statement being an announcement.
     {"from": "ALG", "to": "MJI", "status": "unclear", "days": ["wed", "fri"],
      "evidence": "listed",
-     "source": "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/"},
-    # The Tripoli return ships on its own evidence, as direction always does: the
-    # 1 Oct 2026 economic daily states it in as many words, "les vols au depart de
-    # Tripoli vers Alger seront egalement programmes les memes jours", and quotes
-    # that direction's own fare.
+     "source": AH_STATEMENT_2026_10_24},
+    # The Tripoli return. Its own evidence, as direction always does, is the
+    # 1 Oct 2026 economic daily, which states it in as many words, "les vols au
+    # depart de Tripoli vers Alger seront egalement programmes les memes jours",
+    # and quotes that direction's own fare; `days` and the return direction rest
+    # on that, the 24 Oct statement naming the line rather than each direction.
     {"from": "MJI", "to": "ALG", "status": "unclear", "days": ["wed", "fri"],
      "evidence": "listed",
-     "source": "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/"},
+     "source": AH_STATEMENT_2026_10_24},
     # `days` is set on the outbound only. "Un vol par semaine le lundi" dates the
     # rotation's departure from Algiers; when the Amman leg flies back is a
     # separate fact nothing published pins down, and the Nigeria triangle is the
     # standing reminder (Monday out, Friday and Tuesday back).
     {"from": "AMM", "to": "ALG", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"},
+    # Lagos and Shanghai, the Algiers departures. Both now cite the carrier's own
+    # 24 Oct 2026 statement, which announces each line with a 26 Oct first flight.
+    # `flight` and `days` keep the provenance the rows shipped on: AH5354 and the
+    # Thursday rotation from the sale-inventory report of the four new lines,
+    # AH3082 and mon/wed/sat from the 15 Aug 2026 China report. Both STAY PLANNED.
+    # The statement's "third Chinese city after Beijing and Guangzhou" is a copy
+    # fact, not a route fact, and changes nothing here.
     {"from": "ALG", "to": "LOS", "flight": "AH 5354", "status": "unclear",
      "days": ["thu"], "evidence": "verified",
-     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
+     "source": AH_STATEMENT_2026_10_24},
     {"from": "ALG", "to": "PVG", "flight": "AH 3082", "status": "unclear",
      "days": ["mon", "wed", "sat"], "evidence": "verified",
-     "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/"},
+     "source": AH_STATEMENT_2026_10_24},
     # The two Nigeria triangles' middle legs, added 2026-10-02 under the amended
     # scope rule (collection-rules.md section 33), on AeroRoutes' NW26 filing:
     # "Algiers - Abuja - Lagos - Algiers eff 26OCT26 1 weekly 737-700" and
@@ -666,20 +713,27 @@ PLANNED = [
     # the aircraft leaves Sheremetyevo.
     {"from": "SVO", "to": "ALG", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/"},
+    # The Brazzaville, Conakry and Lagos returns, and the Shanghai return below.
+    # All four now cite the 24 Oct 2026 statement, which announces each line as a
+    # line rather than per direction. Their AH5391/AH5359/AH5354/AH3083 numbers,
+    # and LOS-ALG's Tuesday and PVG-ALG's tue/thu/sun, keep the sale-inventory and
+    # China reports they shipped on as their provenance. `days` stays null on the
+    # Brazzaville and Conakry returns: nothing published says which day the
+    # aircraft leaves either city.
     {"from": "BZV", "to": "ALG", "flight": "AH 5391", "status": "unclear",
      "evidence": "verified",
-     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
+     "source": AH_STATEMENT_2026_10_24},
     {"from": "CKY", "to": "ALG", "flight": "AH 5359", "status": "unclear",
      "evidence": "verified",
-     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
+     "source": AH_STATEMENT_2026_10_24},
     {"from": "ICN", "to": "ALG", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
     {"from": "LOS", "to": "ALG", "flight": "AH 5354", "status": "unclear",
      "days": ["tue"], "evidence": "verified",
-     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
+     "source": AH_STATEMENT_2026_10_24},
     {"from": "PVG", "to": "ALG", "flight": "AH 3083", "status": "unclear",
      "days": ["tue", "thu", "sun"], "evidence": "verified",
-     "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/"},
+     "source": AH_STATEMENT_2026_10_24},
     # N'Djamena, planned. The 22 Jun 2026 737 MAX 8 network post files "Algiers -
     # N'djamena - Addis Ababa" effective 28 Oct 2026 at 2 weekly, which is 19 days
     # after this AS_OF, so it is an announcement and not an operation: the
