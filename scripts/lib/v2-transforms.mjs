@@ -990,6 +990,7 @@ export function writePackageV2({
   snapshots = {},
   stats = {},
   oldMeta = {},
+  runMeta = null,
   reviewLedger = undefined,
   retiredIds = null,
   retiredMigrations = null,
@@ -1146,6 +1147,12 @@ export function writePackageV2({
     // `stats` carries values the caller computed that this writer cannot: a
     // relation file's count, for instance, which it never sees rows for.
     ...(meta.stats ? meta.stats(all, stats) : {}),
+    // `runMeta` carries what only THIS run knows and no set of records can
+    // reproduce: livraison's carried pins, the desks whose coordinate the run did
+    // not read. It is deliberately separate from `stats`, which validate-packages
+    // re-runs over the shipped records and compares, so a value that is not
+    // derivable from them must not be published through it.
+    ...(runMeta ?? {}),
     ...preserved,
   };
   pending.push({ path: join(dir, "metadata.json"), content: JSON.stringify(metadata, null, 2) + "\n" });

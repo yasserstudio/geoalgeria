@@ -176,7 +176,7 @@
     },
     {
       "path": "packages/livraison/data/metadata.json",
-      "sha256": "845ec1d3042a11648ae52052d79d354ac4dde3c746b36efa6d0b595e2fc55045"
+      "sha256": "08c8aef25538631653e477c6b1b105b9c65d3866afb922734035818abb80b427"
     },
     {
       "path": "packages/livraison/data/retired-ids.json",
@@ -1550,7 +1550,19 @@
           "noest": 102,
           "swift-express": 55,
           "zr-express": 77
-        }
+        },
+        "carried_pins": [
+          {
+            "id": "anderson-25-ali-mendjeli",
+            "name": "Anderson Constantine (Ali Mendjeli)",
+            "retrieved": "2026-06-18"
+          },
+          {
+            "id": "noest-19b",
+            "name": "Noest Sétif «El Eulma»",
+            "retrieved": "2026-06-18"
+          }
+        ]
       }
     },
     {

@@ -145,6 +145,19 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
+/** A stop-desk whose coordinate the latest refresh did not read: the carrier
+ *  still publishes the card, its Google Maps link would not resolve, and the desk
+ *  kept the pin it already shipped. `metadata.sources[].retrieved` dates the
+ *  carrier's list; this dates the pin itself. */
+export interface CarriedPin {
+  /** Joins {@link StopDesk.id}. */
+  id: string;
+  /** Stop-desk name, as the record carries it. */
+  name: string;
+  /** ISO date (YYYY-MM-DD) of the run that last read this coordinate. */
+  retrieved: string;
+}
+
 /** Dataset metadata (data/metadata.json): canonical fields plus livraison stats. */
 export interface Metadata {
   package: "@geoalgeria/livraison";
@@ -177,6 +190,9 @@ export interface Metadata {
   coverage: number;
   /** Stop-desk count per carrier id. */
   by_operator: Partial<Record<Operator, number>>;
+  /** Desks shipping a coordinate this refresh did not read, with the date of the
+   *  run that did. Empty when every carrier link resolved. */
+  carried_pins: CarriedPin[];
 }
 
 /** The delivery-carrier registry. */

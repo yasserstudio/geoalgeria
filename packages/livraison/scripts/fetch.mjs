@@ -718,6 +718,63 @@ export function pinFor(pin, prev) {
   return prev ? { lat: prev.lat, lng: prev.lng, verdict: "carried" } : null;
 }
 
+// --- how old a carried coordinate is ---------------------------------------
+// A carried pin is a coordinate this run did NOT read. `metadata.sources[].retrieved`
+// says when each carrier's list was read, and for every fresh pin that is also when the
+// coordinate was read; for a carried one it is not, so stamping the run's date over it
+// would present a coordinate from an earlier run as this run's verified point. Each
+// carried desk is therefore listed in `metadata.carried_pins` with the date of the run
+// that actually read its pin (Owner decision, 2026-10-25).
+//
+// In metadata rather than on the record: the repository's own types-vs-data gate fails
+// a declared field that no record carries, so an optional per-record date would break
+// the build on the first refresh where every link resolves. `carried_pins` is always
+// present and simply empty when nothing was carried, and it joins to the records by id.
+let committedMetaCache = null;
+function committedMetadata() {
+  if (!committedMetaCache) {
+    try {
+      committedMetaCache = JSON.parse(readFileSync(join(DATA, "metadata.json"), "utf8"));
+    } catch {
+      committedMetaCache = {};
+    }
+  }
+  return committedMetaCache;
+}
+
+// The two desks that were already being carried when `carried_pins` was introduced: the
+// field did not exist, so the committed metadata cannot say when their pin was last read.
+// Both have shipped the same coordinate since the 2026-06-18 pull, which is the run that
+// read it; without this they would inherit their source's 2026-10-25, the very overclaim
+// this list exists to remove. Consulted only when the committed metadata has no entry.
+const CARRIED_PIN_SEED = {
+  "anderson-25-ali-mendjeli": "2026-06-18",
+  "noest-19b": "2026-06-18",
+};
+
+/**
+ * The date a carried coordinate was really read.
+ *
+ * The committed list first, so a pin carried across several refreshes keeps the one run
+ * that read it rather than ageing forward one refresh at a time. Then the seed above.
+ * Otherwise the pin was fresh in the committed data, so the date is that data's own
+ * retrieval date for the source it came from.
+ *
+ * @param {{id: string, source: string}} prev  the committed record whose pin is carried
+ * @param {object} meta  the committed metadata
+ * @returns {string|null} an ISO date
+ */
+export function carriedPinDate(prev, meta) {
+  const listed = (meta.carried_pins ?? []).find((p) => String(p.id) === String(prev.id));
+  if (listed) return listed.retrieved;
+  if (CARRIED_PIN_SEED[prev.id]) return CARRIED_PIN_SEED[prev.id];
+  const src = (meta.sources ?? []).find((s) => s.key === prev.source);
+  return src?.retrieved ?? meta.updated ?? null;
+}
+
+// This run's carried desks, { id, name, retrieved }, collected as each carrier builds.
+const carriedPins = [];
+
 /**
  * Which wilaya each reform wilaya was carved out of: code → parent code.
  *
@@ -1006,8 +1063,11 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
     // would not resolve this minute may well resolve on the next run. The run log has to
     // say which, or a permanent gap reads like a transient one.
     if (!pin) { skipped.push(`${c.id} (${c.noPin ?? (c.link ? "link did not resolve" : "card publishes no Maps link")})`); return; }
-    if (pin.verdict === "carried") carried.push(c.id);
-    else fresh++;
+    if (pin.verdict === "carried") {
+      const retrieved = carriedPinDate(committed.get(c.id), committedMetadata());
+      carriedPins.push({ id: c.id, name: c.name, retrieved });
+      carried.push(`"${c.name}" (${c.id}, pin read ${retrieved})`);
+    } else fresh++;
     recs.push({ id: c.id, operator, name: c.name, name_ar: c.name_ar ?? null, address: c.address, commune: c.commune, wilaya_num: null, cardWilaya: c.cardWilaya, lat: pin.lat, lng: pin.lng, src: operator });
   });
   // Before the sort, so a reclaimed id sorts under the id it keeps.
@@ -1015,7 +1075,7 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
   recs.sort((a, b) => a.id.localeCompare(b.id) || a.lat - b.lat || a.lng - b.lng);
   dedupeMintedIds(recs);
   console.log(`  ${recs.length} ${label} desks geocoded, ${skipped.length} skipped (nothing committed to carry)${skipped.length ? `: ${skipped.join(", ")}` : ""}`);
-  if (carried.length) console.log(`  ${carried.length} ${label} desk(s) kept their committed coordinate, link did not resolve: ${carried.join(", ")}`);
+  if (carried.length) console.log(`  ${carried.length} ${label} desk(s) kept their committed coordinate, link did not resolve: ${carried.join("; ")}`);
   if (renamed.length) console.log(`  ${renamed.length} ${label} desk(s) kept their id through a card rename: ${renamed.join("; ")}`);
   // Counted on the freshly resolved desks only: carrying a coordinate over must never
   // make a total Maps-resolution outage look like a healthy run.
@@ -1262,6 +1322,12 @@ async function main() {
     retrieved,
     retiredIds: retired,
     retiredPending: pending,
+    // Not a `stats` value: the records cannot reproduce it, and validate-packages
+    // re-runs stats() over them and compares. Sorted by id, because the order the
+    // carriers happen to build in is not a fact about the data.
+    runMeta: {
+      carried_pins: [...carriedPins].sort((a, b) => a.id.localeCompare(b.id)),
+    },
   });
 
   console.log(
