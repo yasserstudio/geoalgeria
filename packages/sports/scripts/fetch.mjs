@@ -30,6 +30,7 @@ import {
   readCommitted,
   readRetiredIds,
 } from "../../../scripts/lib/v2-transforms.mjs";
+import { foldNameDashes } from "../../../scripts/lib/no-em-dash.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -173,11 +174,27 @@ function parseSurface(v) {
 // so a revision changes fields rather than retiring an id. A corrected
 // coordinate or a renaming does retire one; publishing the ministry's feature id
 // as `refs.mjs` on the next live pull is what would close that gap.
-const PLACE_FIELDS = ["wilaya_code", "commune", "type", "name", "address", "lat", "lng"];
+//
+// Only fields the GENERATOR owns belong in the key. The key is read before
+// writePackageV2, and the writer then patches `wilaya_code`/`commune_code` from
+// quality/overrides/sports.json and folds every name-keyed string through
+// foldNameDashes, so a key that read either of those would compare a generator
+// value against a published one and retire an id on a rebuild that changed
+// nothing (empirically: `wilaya_code` cost 27 ids, 13 of them the reviewed
+// corrections themselves, which then aborted the build at "review overrides:
+// unknown record 02725"). `wilaya_code` is out for that reason, and because it is
+// GeoAlgeria-derived rather than ministry data: reconcileCurrentWilayaByCommune
+// re-decides it from the commune index and the boundaries on every run. The name
+// stays in, folded exactly as the writer folds it.
+const PLACE_FIELDS = ["commune", "type", "name", "address", "lat", "lng"];
 
 /** The place a v2 sports record stands for, as a carry key. */
-export const placeKeyOf = (r) =>
-  PLACE_FIELDS.map((f) => JSON.stringify(r[f] ?? null)).join("|");
+export const placeKeyOf = (r) => {
+  const place = foldNameDashes(
+    Object.fromEntries(PLACE_FIELDS.map((f) => [f, r[f] ?? null])),
+  );
+  return PLACE_FIELDS.map((f) => JSON.stringify(place[f])).join("|");
+};
 
 /**
  * A keyOf for carryOverIds over both sides of a rebuild. The MJS ships groups of

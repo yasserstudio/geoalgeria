@@ -16,7 +16,14 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
 import { assignStableIds, placeKeyOf } from "../packages/sports/scripts/fetch.mjs";
+import { MIGRATIONS } from "../scripts/lib/v2-transforms.mjs";
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+const read = (p) => JSON.parse(readFileSync(join(ROOT, p), "utf-8"));
 
 /** A v2 sports record, with only the fields the id pipeline reads. */
 const facility = (id, name, wilaya_code, lat, lng, extra = {}) => ({
@@ -129,6 +136,79 @@ test("field-identical twins keep their two ids instead of colliding", () => {
   const stats = assignStableIds(rows, committed, new Set());
   assert.deepEqual(rows.map((r) => r.id), ["00001", "00002", "00003"]);
   assert.deepEqual(stats, { carried: 3, minted: 0, retired: 0 });
+});
+
+// The carry key is read in the fetcher, BEFORE writePackageV2 patches
+// wilaya_code/commune_code from quality/overrides/sports.json and folds every
+// name-keyed string through foldNameDashes. A key that reads a field the writer
+// owns compares a generator value against a published one, so a rebuild that
+// changed nothing retires an id (empirically: wilaya_code cost 27 ids, 13 of them
+// the reviewed corrections themselves, and the build then aborted at "review
+// overrides: unknown record 02725"). These two guard the whole class.
+
+test("a reviewed wilaya correction does not retire the id it corrected", () => {
+  // What the review ledger does to 01663: the generator reconciles it to wilaya
+  // 14, the ledger patches the published record to 64. The place is the same.
+  const committed = [{ ...facility("01663", "Ain Ouessara", "64", 35.2515, 2.4818), commune_code: "1439" }];
+  const rows = [facility("00001", "Ain Ouessara", "14", 35.2515, 2.4818)];
+  const retiredIds = new Set();
+  const stats = assignStableIds(rows, committed, retiredIds);
+  assert.equal(rows[0].id, "01663");
+  assert.deepEqual(stats, { carried: 1, minted: 0, retired: 0 });
+  assert.equal(retiredIds.size, 0);
+});
+
+test("a dash separator in the name does not retire the id", () => {
+  // writePackageV2 folds an em dash or an en dash in a name to " - ", so the
+  // published name and the name the generator read differ by the separator.
+  const commune = { commune: "ALGER CENTRE" };
+  const committed = [facility("00001", "Stade Ali - Ammar", "16", 36.75, 3.06, commune)];
+  // Built from codepoints: the repo's own gate forbids a literal dash of either
+  // shape in hand-written source (test/no-em-dash.test.mjs).
+  const em = String.fromCodePoint(0x2014);
+  const en = String.fromCodePoint(0x2013);
+  for (const raw of [`Stade Ali ${em} Ammar`, `Stade Ali ${en} Ammar`, "Stade Ali - Ammar"]) {
+    const rows = [facility("09999", raw, "16", 36.75, 3.06, commune)];
+    const stats = assignStableIds(rows, committed, new Set());
+    assert.equal(rows[0].id, "00001", `"${raw}" did not fold to the published name`);
+    assert.deepEqual(stats, { carried: 1, minted: 0, retired: 0 });
+  }
+});
+
+test("a no-change rebuild of the published data keeps all 5,141 ids", () => {
+  // Generator-side values, not committed ones: the published wilaya_code is
+  // whatever reconcileCurrentWilayaByCommune or the review ledger decided, so the
+  // replay hands the ministry's own wilaya back (source_wilaya_code where the
+  // reconcile moved the record, the ledger's `expect` where a review patched it)
+  // and lets MIGRATIONS.sports.map re-decide, exactly as a live rebuild does.
+  const committed = read("packages/sports/data/facilities.json");
+  const expectById = new Map(
+    read("quality/overrides/sports.json").decisions.map((d) => [d.record_id, d.expect ?? {}]),
+  );
+  const rows = committed
+    .map((r) => ({
+      ...r,
+      type_code: r.type,
+      type_fr: r.type_label_fr,
+      wilaya_code: r.source_wilaya_code ?? expectById.get(r.id)?.wilaya_code ?? r.wilaya_code,
+      source_wilaya_code: undefined,
+      commune_code: expectById.get(r.id)?.commune_code ?? null,
+    }))
+    .map(MIGRATIONS.sports.map);
+  // The ids the generator derives before carry-over: positions in the sort order.
+  rows.forEach((r, i) => { r.id = String(i + 1).padStart(5, "0"); });
+
+  const retiredIds = new Set();
+  const stats = assignStableIds(rows, committed, retiredIds);
+  assert.deepEqual(stats, { carried: committed.length, minted: 0, retired: 0 });
+  assert.deepEqual([...retiredIds], []);
+
+  const published = new Map(committed.map((r) => [r.id, placeKeyOf(r)]));
+  for (const r of rows) {
+    assert.ok(published.has(r.id), `id ${r.id} is not a published id`);
+    assert.equal(placeKeyOf(r), published.get(r.id), `id ${r.id} moved to another place`);
+  }
+  assert.equal(new Set(rows.map((r) => r.id)).size, committed.length);
 });
 
 test("the first build of a package with nothing committed keeps its derived ids", () => {
