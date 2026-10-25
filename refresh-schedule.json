@@ -314,9 +314,9 @@
       },
       "sources_count": 3,
       "cadence": "quarterly",
-      "last_retrieved": "2026-06-27",
-      "next_due": "2026-09-27",
-      "note": "Geo-blocked from outside Algeria: sante.gov.dz drops TCP (verified 2026-10-25, every A record, port 443). Needs an Algerian vantage point. No raw capture is committed under research/sante/, so --cache has nothing to replay and the package cannot be rebuilt offline either. 458 approximate coordinates are a #244 P3 debt. One finding for the run that gets through: pairPosts runs step 2b before the twin-post step, and on the committed snapshot re-running it afterwards pairs 01-eph-01 with 01-eph-06 and 24-epsp-02 with 24-epsp-06, 661 records to 659."
+      "last_retrieved": "2026-10-25",
+      "next_due": "2027-01-25",
+      "note": "Refreshed 2026-10-25 over an Algerian connection the Owner supplied; sante.gov.dz is geo-blocked from outside Algeria (TCP dropped on every A record, port 443), so a pass from abroad will fail and no raw capture is committed under research/sante/, leaving --cache nothing to replay. The 2026-10-25 pull returned the registry unchanged record for record. 457 approximate coordinates are a #244 P3 debt. Still open: pairPosts runs step 2b before the twin-post step, and re-running it afterwards pairs 01-eph-01 with 01-eph-06 and 24-epsp-02 with 24-epsp-06, 661 records to 659; 14-eph-04/14-eph-07 and 19-epsp-08/19-epsp-10 are the same place but resolve to different communes, so 2b refuses them and the commune resolution is what needs fixing."
     },
     {
       "package": "@geoalgeria/schema",

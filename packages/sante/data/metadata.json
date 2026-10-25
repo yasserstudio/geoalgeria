@@ -8,8 +8,8 @@
   "geocoded_count": 591,
   "geocoded_pct": 89.4,
   "precision": {
-    "exact": 133,
-    "approximate": 458
+    "exact": 134,
+    "approximate": 457
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -27,7 +27,7 @@
       "name": "Ministry of Health (sante.gov.dz): health-establishment registry",
       "url": "https://sante.gov.dz",
       "license": "Official public registry (Ministry of Health)",
-      "retrieved": "2026-06-27",
+      "retrieved": "2026-10-25",
       "evidence_type": "official"
     },
     {
@@ -35,7 +35,7 @@
       "name": "OpenStreetMap: geocoding",
       "url": "https://www.openstreetmap.org",
       "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-      "retrieved": "2026-06-27",
+      "retrieved": "2026-10-25",
       "evidence_type": "crowdsourced"
     },
     {
@@ -43,12 +43,12 @@
       "name": "Wikidata: geocoding",
       "url": "https://www.wikidata.org",
       "license": "CC0-1.0",
-      "retrieved": "2026-06-27",
+      "retrieved": "2026-10-25",
       "evidence_type": "crowdsourced"
     }
   ],
   "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
-  "updated": "2026-06-27",
+  "updated": "2026-10-25",
   "by_type": {
     "ehs": 103,
     "eph": 254,
@@ -60,8 +60,8 @@
     "public": 661
   },
   "by_geo_method": {
-    "commune_centroid": 458,
-    "osm_point": 119,
+    "commune_centroid": 457,
+    "osm_point": 120,
     "wikidata_point": 3,
     "owner_verified": 11
   },

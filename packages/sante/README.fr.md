@@ -17,7 +17,7 @@ direction de la santé – établissements publics hospitaliers (EPH), de santé
 proximité (EPSP), hospitaliers spécialisés (EHS) et centres hospitalo-universitaires
 (CHU) du **Ministère de la Santé (MSP)**, bilingues français/arabe, **591
 géolocalisés** (122 sur un point précis OpenStreetMap/Wikidata, 11 vérifiés à la
-main, 458 sur un centroïde de commune) avec rattachement commune/wilaya.
+main, 457 sur un centroïde de commune) avec rattachement commune/wilaya.
 Livré en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -76,17 +76,17 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
-| `exact` | 133 | point précis : un établissement OSM ou Wikidata dans la commune, ou une position vérifiée à la main |
-| `approximate` | 458 | centroïde de la commune de l'établissement |
+| `exact` | 134 | point précis : un établissement OSM ou Wikidata dans la commune, ou une position vérifiée à la main |
+| `approximate` | 457 | centroïde de la commune de l'établissement |
 | `null` | 70 | localité non rattachée à une commune – pas de coordonnées (`lat`/`lng` aussi `null`) |
 
 **Par méthode d'obtention** (`geo_method`)
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
-| `osm_point` | 119 | point précis d'un établissement OpenStreetMap dans la commune |
+| `osm_point` | 120 | point précis d'un établissement OpenStreetMap dans la commune |
 | `wikidata_point` | 3 | point précis d'un établissement Wikidata dans la commune |
-| `commune_centroid` | 458 | centroïde de la commune de l'établissement (approximatif) |
+| `commune_centroid` | 457 | centroïde de la commune de l'établissement (approximatif) |
 | `owner_verified` | 11 | position relevée sur la carte par le propriétaire du projet, via le registre de corrections révisées |
 | `null` | 70 | aucune méthode – l'enregistrement n'a pas de coordonnées |
 

@@ -15,7 +15,7 @@
 **661 public health establishments** across all **58 wilayas** with health
 directorates, public hospitals (EPH), proximity-health establishments (EPSP),
 specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **591 geocoded** (122 to a precise
-OpenStreetMap/Wikidata point, 11 verified by hand, 458 to a commune centroid) with commune/wilaya
+OpenStreetMap/Wikidata point, 11 verified by hand, 457 to a commune centroid) with commune/wilaya
 linkage. Shipped as JSON, CSV, GeoJSON, and
 TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -73,17 +73,17 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Value | Count | Meaning |
 | --- | --- | --- |
-| `exact` | 133 | precise point: an OSM or Wikidata facility in the commune, or a location verified by hand |
-| `approximate` | 458 | the establishment's commune centroid |
+| `exact` | 134 | precise point: an OSM or Wikidata facility in the commune, or a location verified by hand |
+| `approximate` | 457 | the establishment's commune centroid |
 | `null` | 70 | locality not resolved to a commune – no coordinates (`lat`/`lng` also `null`) |
 
 **By coordinate method** (`geo_method`)
 
 | Value | Count | Meaning |
 | --- | --- | --- |
-| `osm_point` | 119 | precise point from an OpenStreetMap facility in the commune |
+| `osm_point` | 120 | precise point from an OpenStreetMap facility in the commune |
 | `wikidata_point` | 3 | precise point from a Wikidata facility in the commune |
-| `commune_centroid` | 458 | the establishment's commune centroid (approximate) |
+| `commune_centroid` | 457 | the establishment's commune centroid (approximate) |
 | `owner_verified` | 11 | location read off the map by the project owner, through the reviewed-correction ledger |
 | `null` | 70 | no method – record has no coordinate |
 

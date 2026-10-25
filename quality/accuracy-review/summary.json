@@ -248,7 +248,7 @@
     },
     {
       "path": "packages/sante/data/metadata.json",
-      "sha256": "9af23917ac5c69def93ea0fc9bf3a756d45fe21d18102c3ceaab86e8a6ce6fc0"
+      "sha256": "62dffd0a21f1ca568803a393923798ac83a7af63605f2d1422b1a6719eaf4a2d"
     },
     {
       "path": "packages/sante/data/retired-ids.json",
@@ -256,7 +256,7 @@
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "6cfe1b361c25f52ccf080ecb4b59c7a6a183a7032afcd0f6b9bd0b5dc340d6cf"
+      "sha256": "d001d9e7913b4f47eda066d172a1655ab9fbdb9b7eb364f5940f7fe5926e93f3"
     },
     {
       "path": "packages/sports/data/facilities.json",
@@ -310,14 +310,14 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70554,
-  "candidates": 17750,
+  "candidates": 17749,
   "reasons": {
-    "approximate_coordinate": 16902,
+    "approximate_coordinate": 16901,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 501,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1290
+    "shared_coordinate": 1288
   },
   "datasets": [
     {
@@ -1881,13 +1881,13 @@
     {
       "dataset": "sante",
       "total_records": 661,
-      "candidates": 528,
+      "candidates": 527,
       "reasons": {
-        "approximate_coordinate": 458,
+        "approximate_coordinate": 457,
         "missing_coordinate": 70,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 303
+        "shared_coordinate": 301
       },
       "metadata_path": "packages/sante/data/metadata.json",
       "metadata": {
@@ -1900,8 +1900,8 @@
         "geocoded_count": 591,
         "geocoded_pct": 89.4,
         "precision": {
-          "exact": 133,
-          "approximate": 458
+          "exact": 134,
+          "approximate": 457
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1919,7 +1919,7 @@
             "name": "Ministry of Health (sante.gov.dz): health-establishment registry",
             "url": "https://sante.gov.dz",
             "license": "Official public registry (Ministry of Health)",
-            "retrieved": "2026-06-27",
+            "retrieved": "2026-10-25",
             "evidence_type": "official"
           },
           {
@@ -1927,7 +1927,7 @@
             "name": "OpenStreetMap: geocoding",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-            "retrieved": "2026-06-27",
+            "retrieved": "2026-10-25",
             "evidence_type": "crowdsourced"
           },
           {
@@ -1935,12 +1935,12 @@
             "name": "Wikidata: geocoding",
             "url": "https://www.wikidata.org",
             "license": "CC0-1.0",
-            "retrieved": "2026-06-27",
+            "retrieved": "2026-10-25",
             "evidence_type": "crowdsourced"
           }
         ],
         "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
-        "updated": "2026-06-27",
+        "updated": "2026-10-25",
         "by_type": {
           "ehs": 103,
           "eph": 254,
@@ -1952,8 +1952,8 @@
           "public": 661
         },
         "by_geo_method": {
-          "commune_centroid": 458,
-          "osm_point": 119,
+          "commune_centroid": 457,
+          "osm_point": 120,
           "wikidata_point": 3,
           "owner_verified": 11
         },
@@ -2572,13 +2572,13 @@
       "dataset": "sante",
       "entity": "sante.json",
       "total_records": 661,
-      "candidates": 528,
+      "candidates": 527,
       "reasons": {
-        "approximate_coordinate": 458,
+        "approximate_coordinate": 457,
         "missing_coordinate": 70,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 303
+        "shared_coordinate": 301
       },
       "path": "packages/sante/data/sante.json"
     },
