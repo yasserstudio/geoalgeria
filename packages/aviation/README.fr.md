@@ -67,7 +67,7 @@ programme pour les jours.
 | Champ | Type | Notes |
 | --- | --- | --- |
 | `source` | `string` | la citation principale, toujours égale à `sources[0]` |
-| `sources` | `string[]` | tous les liens derrière la ligne, ordonnés, jamais vide, sans doublon, `sources[0]` étant `source` lui-même |
+| `sources` | `string[]` | tous les liens derrière la ligne, dans une liste ordonnée, jamais vide, sans doublon, `sources[0]` étant `source` lui-même |
 
 Dans le CSV, `sources` tient dans une colonne à côté de `source`, les liens séparés par une
 espace, comme la colonne `days` : une URL ne contient pas d'espace, la cellule se

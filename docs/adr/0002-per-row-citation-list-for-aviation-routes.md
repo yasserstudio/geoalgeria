@@ -29,6 +29,13 @@ explaining why in a comment. Both answers lose a citation a reader would want.
 3. **Entry 0 is `source`**, the same url. Asserted by the generator, the builder,
    `validate-packages.mjs` and `test/aviation-route-sources.test.mjs`, so the two fields
    can never disagree.
+4. **A suspension notice leads the list**, because it becomes the row's `source`, and the
+   citation the row arrived with stays behind it rather than being replaced.
+5. **The 24 October 2026 statement is an extra entry**, never a `source`, on the ten legs
+   it announces, since it carries no flight number and no day name. Those rows keep the
+   report covering the fields they ship as `source`, and every one stays `planned`: a
+   statement that a line opens is an announcement, and a leg leaves `plannedRoutes()` only
+   on a dated report that the aircraft flew.
 
 A richer entry was built during the work, each citation an object carrying `publisher`,
 `supports` (which of the row's claims it backed) and a publication `date`. All three were
