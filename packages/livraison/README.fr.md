@@ -126,6 +126,8 @@ data/
 }
 ```
 
+`geo_precision` vaut `"exact"` pour 648 des 650 bureaux de retrait et `"approximate"` pour deux : ZR Express publie son centre de tri de Constantine et son bureau de Zouaghi sur une seule épingle, et une coordonnée partagée par deux bureaux n'est pas un point propre à chacun, donc les deux sont publiés comme approximatifs.
+
 ```json
 // carriers.json
 {

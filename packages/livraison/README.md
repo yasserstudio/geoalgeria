@@ -124,6 +124,8 @@ data/
 }
 ```
 
+`geo_precision` is `"exact"` on 648 of the 650 stop-desks and `"approximate"` on two: ZR Express publishes its Constantine sorting centre and its Zouaghi office on one operator pin, and a coordinate two desks share is not a per-desk point, so both are published as approximate.
+
 ```json
 // carriers.json
 {
