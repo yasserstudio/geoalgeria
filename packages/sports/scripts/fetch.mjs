@@ -57,6 +57,7 @@ const TYPE_MAP = {
   "Stade OMS": { code: "STOMS", fr: "Stade OMS" },
   "Stade  OMS": { code: "STOMS", fr: "Stade OMS" },
   "Piste d'athlétisme": { code: "PA", fr: "Piste d'athlétisme" },
+  "Parcour d'Athletisme": { code: "PCA", fr: "Parcours d'athlétisme" },
   "Boulodrome": { code: "BL", fr: "Boulodrome" },
   "Court de tennis": { code: "CT", fr: "Court de tennis" },
   "Unité  d'hébergement, de soin et de réccupuration": { code: "UHR", fr: "Unité d'hébergement et de récupération" },
