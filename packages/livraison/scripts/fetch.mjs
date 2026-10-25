@@ -432,8 +432,9 @@ async function mapPool(items, n, fn) {
  *
  * A pin the operator itself publishes is treated as verified however far it moves the
  * desk, so a relocation lands as the carrier states it. The guard against a link that
- * points somewhere else entirely is the existing wilaya cross-check in main(), which
- * drops a carded desk whose pin lands outside the wilaya its card declares.
+ * points somewhere else entirely is the wilaya cross-check in main(), which drops a
+ * carded desk whose pin lands outside the wilaya its card declares (see badPinDrop):
+ * this carry covers a link that did not resolve at all, never one that resolved wrong.
  *
  * @param {{lat: number, lng: number}|null} pin  what the carrier's link resolved to
  * @param {{lat: number, lng: number}|undefined} prev  the record this id already ships
@@ -445,6 +446,27 @@ export function pinFor(pin, prev) {
   // coordinate and precision it already shipped rather than dropping the desk and
   // retiring its id.
   return prev ? { lat: prev.lat, lng: prev.lng, verdict: "carried" } : null;
+}
+
+/**
+ * Why a carded desk's freshly resolved pin disqualifies it, or null when it does not.
+ *
+ * A card declares its wilaya. When this run's pin lands in a DIFFERENT ≤58 wilaya the
+ * carrier's own link points where the card says the desk is not, and the run cannot tell
+ * which of the two is right, so the desk is dropped (Owner decision, 2026-10-25). It is
+ * NOT re-shipped at the coordinate it published last quarter: that would present a stale
+ * point as this run's verified one, and the desk returns by itself on the run after the
+ * link is fixed. A wilaya the 2026 reform created (>58) is the expected disagreement with
+ * a card still printing its parent's code, and is kept.
+ *
+ * @param {{id: string, cardWilaya: number|null, lat: number, lng: number}} rec
+ * @param {number} code  the wilaya this run's coordinate resolved to
+ * @returns {string|null} the run-log reason, naming the card id, the wilaya the card
+ *                        declares and the coordinate that was resolved
+ */
+export function badPinDrop(rec, code) {
+  if (rec.cardWilaya == null || code > 58 || code === rec.cardWilaya) return null;
+  return `${rec.id}(card ${rec.cardWilaya}→pin ${code} at ${rec.lat},${rec.lng})`;
 }
 
 // How close, in km (haversine's unit here), a new carded id must sit to a disappeared
@@ -669,34 +691,22 @@ async function main() {
   let promoted = 0;
   const conflicts = [];
   const droppedPins = [];
-  const keptOnBadPin = [];
   const stopdesks = merged
     .map((r) => {
-      let w = resolveWilaya(r.lat, r.lng, communes, r.wilaya_num ?? r.cardWilaya);
+      const w = resolveWilaya(r.lat, r.lng, communes, r.wilaya_num ?? r.cardWilaya);
       if (r.wilaya_num != null && r.wilaya_num !== w.code) {
         if (w.code > 58) promoted++;
         else conflicts.push(`${r.id}(src ${r.wilaya_num}→${w.code})`);
       }
       // Carded sources (Anderson/Noest) declare their wilaya. If the resolved pin lands in
       // a DIFFERENT ≤58 wilaya (a wrong/duplicated Maps link), drop the desk rather than
-      // ship a misplaced point. Reform promotions (→59-69) are expected and kept.
-      if (r.cardWilaya != null && w.code <= 58 && w.code !== r.cardWilaya) {
-        // The desk keeps the point it already shipped if it has one, and is dropped only
-        // when it has none, so one copy-paste slip upstream cannot unpublish a desk that
-        // was correctly placed before.
-        const prev = committed.get(r.id);
-        const pw = prev ? resolveWilaya(prev.lat, prev.lng, communes, r.cardWilaya) : null;
-        if (pw && (pw.code === r.cardWilaya || pw.code > 58)) {
-          keptOnBadPin.push(`${r.id}(card ${r.cardWilaya}→pin ${w.code}, kept its committed point)`);
-          r.lat = prev.lat;
-          r.lng = prev.lng;
-          w = pw;
-        } else {
-          // With the coordinate, so the reason is checkable against the carrier's own
-          // link without re-running the fetch.
-          droppedPins.push(`${r.id}(card ${r.cardWilaya}→pin ${w.code} at ${r.lat},${r.lng})`);
-          return null;
-        }
+      // ship a misplaced point. Reform promotions (→59-69) are expected and kept. The
+      // reason carries the coordinate, so it is checkable against the carrier's own link
+      // without re-running the fetch (see badPinDrop).
+      const badPin = badPinDrop(r, w.code);
+      if (badPin) {
+        droppedPins.push(badPin);
+        return null;
       }
       return {
         id: r.id,
@@ -723,7 +733,6 @@ async function main() {
   if (badCarrier.length) throw new Error(`stop-desk operators missing from registry: ${badCarrier.join(", ")}`);
   if (conflicts.length) throw new Error(`centroid wilaya conflicts with source (both ≤58): ${conflicts.join(", ")}`);
   if (promoted) console.log(`  ${promoted} desk(s) in wilayas promoted by the 2026 reform (source ≤58 → flagship 59-69)`);
-  if (keptOnBadPin.length) console.log(`  ${keptOnBadPin.length} carded desk(s) kept their committed point, this run's pin fell in another wilaya than the card declares: ${keptOnBadPin.join(", ")}`);
   // Every one of them, never an ellipsis: a truncated list is how an omission goes
   // unexplained in the release notes.
   if (droppedPins.length) console.log(`  ${droppedPins.length} carded desk(s) dropped: pin in a different wilaya than the card (bad/duplicate link): ${droppedPins.join(", ")}`);
