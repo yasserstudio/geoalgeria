@@ -222,9 +222,9 @@
         "url": "https://www.mobilis.dz"
       },
       "cadence": "quarterly",
-      "last_retrieved": "2026-08-31",
-      "next_due": "2026-11-30",
-      "note": "Agencies only. The ~12k approved points of sale carry no coordinates at source, so density is the ceiling (locator is WAF-protected)."
+      "last_retrieved": "2026-10-25",
+      "next_due": "2027-01-25",
+      "note": "Agencies only. The ~12k approved points of sale carry no coordinates at source, so density is the ceiling (locator is WAF-protected, though it served JSON to an ordinary primed session on 2026-10-25). Refreshed 2026-10-25 over an Algerian connection the Owner supplied; mobilis.dz is geo-blocked from outside Algeria (TCP dropped on every A record, port 443). The pull came back byte-identical to 2026-08-31 on both files, so the locator looks like a static export republished unchanged and a later identical pull is not independent confirmation."
     },
     {
       "package": "@geoalgeria/mosquees",
