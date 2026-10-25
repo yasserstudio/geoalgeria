@@ -215,6 +215,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1420,
         "from_name": "Aéroport Annaba - Rabah Bitat",
         "to_name": "Aéroport Paris-Charles-de-Gaulle"
@@ -434,6 +444,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1867,
         "from_name": "Aéroport Annaba - Rabah Bitat",
         "to_name": "Aéroport d'Istanbul"
@@ -653,6 +673,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1016,
         "from_name": "Aéroport Annaba - Rabah Bitat",
         "to_name": "Aéroport Lyon-Saint-Exupéry"
@@ -872,6 +903,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 768,
         "from_name": "Aéroport Annaba - Rabah Bitat",
         "to_name": "Aéroport Marseille-Provence"
@@ -1091,6 +1132,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1396,
         "from_name": "Aéroport Annaba - Rabah Bitat",
         "to_name": "Aéroport de Paris-Orly"
@@ -1312,6 +1363,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.algerie360.com/air-algerie-accelere-son-envol-en-afrique-avec-40-vols-hebdomadaires-a-lhorizon-2026/",
+        "sources": [
+          {
+            "url": "https://www.algerie360.com/air-algerie-accelere-son-envol-en-afrique-avec-40-vols-hebdomadaires-a-lhorizon-2026/",
+            "publisher": "Algerie360",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 3106,
         "from_name": "Aéroport international Nnamdi Azikiwe",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -1531,6 +1595,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 376,
         "from_name": "Aéroport d'Alicante",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -1750,6 +1825,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 296,
         "from_name": "Aéroport d'Alicante",
         "to_name": "Aéroport d’Oran - Ahmed Benbella"
@@ -1969,6 +2055,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.air-journal.fr/2018-08-19-air-algerie-senvole-vers-le-cameroun-et-le-gabon-5203190.html",
+        "sources": [
+          {
+            "url": "https://www.air-journal.fr/2018-08-19-air-algerie-senvole-vers-le-cameroun-et-le-gabon-5203190.html",
+            "publisher": "Air Journal",
+            "date": "2018-08-19",
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 3571,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international Félix-Houphouët-Boigny"
@@ -2190,6 +2286,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.agenceecofin.com/actualites-services/0704-127328-air-algerie-a-lance-sa-ligne-alger-abuja",
+        "sources": [
+          {
+            "url": "https://www.agenceecofin.com/actualites-services/0704-127328-air-algerie-a-lance-sa-ligne-alger-abuja",
+            "publisher": "Agence Ecofin",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 3106,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international Nnamdi Azikiwe"
@@ -2409,6 +2518,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://al24news.dz/fr/transport-aerien-lancement-du-premier-vol-de-la-ligne-directe-alger-addis-abeba/",
+        "sources": [
+          {
+            "url": "https://al24news.dz/fr/transport-aerien-lancement-du-premier-vol-de-la-ligne-directe-alger-addis-abeba/",
+            "publisher": "AL24 News",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 4726,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Bole"
@@ -2628,6 +2747,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 376,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport d'Alicante"
@@ -2847,6 +2977,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.visa-algerie.com/air-algerie-lance-une-promo-vers-une-magnifique-destination-populaire-3-raisons-de-reserver/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-lance-une-promo-vers-une-magnifique-destination-populaire-3-raisons-de-reserver/",
+            "publisher": "Visa Algerie",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 2448,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport d'Antalya"
@@ -3066,6 +3206,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 520,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Barcelone-El Prat"
@@ -3287,6 +3438,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.algerie360.com/air-algerie-nouvelle-ligne-directe-berlin/",
+        "sources": [
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelle-ligne-directe-berlin/",
+            "publisher": "Algerie360",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 1919,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Berlin-Brandebourg"
@@ -3506,6 +3670,24 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+        "sources": [
+          {
+            "url": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+            "publisher": "Algerie Presse Service",
+            "date": null,
+            "supports": [
+              "status"
+            ]
+          },
+          {
+            "url": "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/",
+            "publisher": "Algerie Eco",
+            "date": "2026-06-20",
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 2934,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Beyrouth - Rafic Hariri"
@@ -3725,6 +3907,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.visa-algerie.com/air-algerie-apres-pekin-et-guangzhou-une-autre-grande-ville-en-chine-dans-le-viseur/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-apres-pekin-et-guangzhou-une-autre-grande-ville-en-chine-dans-le-viseur/",
+            "publisher": "Visa Algerie",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 2909,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Bamako-Sénou"
@@ -3944,6 +4136,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1582,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Bruxelles"
@@ -4165,6 +4368,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260102-ahapr26bud",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260102-ahapr26bud",
+            "publisher": "AeroRoutes",
+            "date": "2026-01-02",
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 1777,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Budapest-Ferenc Liszt"
@@ -4384,6 +4600,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 2706,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international du Caire"
@@ -4603,6 +4830,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html",
+        "sources": [
+          {
+            "url": "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html",
+            "publisher": "Air Journal",
+            "date": "2025-08-29",
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 10106,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Canton Baiyun"
@@ -4822,6 +5060,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.parisaeroport.fr/",
+        "sources": [
+          {
+            "url": "https://www.parisaeroport.fr/",
+            "publisher": "Paris Aeroport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 1370,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport Paris-Charles-de-Gaulle"
@@ -5041,6 +5291,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.visa-algerie.com/air-algerie-relance-ses-vols-saisonniers-vers-la-destination-la-plus-prisee-de-tunisie/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-relance-ses-vols-saisonniers-vers-la-destination-la-plus-prisee-de-tunisie/",
+            "publisher": "Visa Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 755,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Djerba-Zarzis"
@@ -5260,6 +5522,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260609-ahjun26lbv",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260609-ahjun26lbv",
+            "publisher": "AeroRoutes",
+            "date": "2026-06-09",
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 3696,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Douala"
@@ -5483,6 +5757,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches",
+        "sources": [
+          {
+            "url": "https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches",
+            "publisher": "The Peninsula",
+            "date": "2026-09-30",
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 4733,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international Hamad"
@@ -5702,6 +5989,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 3168,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international Blaise-Diagne"
@@ -5921,6 +6219,24 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+        "sources": [
+          {
+            "url": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+            "publisher": "Algerie Presse Service",
+            "date": null,
+            "supports": [
+              "status"
+            ]
+          },
+          {
+            "url": "https://www.air-journal.fr/2026-02-18-emirates-prepare-la-fin-de-sa-ligne-dubai-alger-en-2027-sur-fond-de-crise-diplomatique-avec-lalgerie-5273218.html",
+            "publisher": "Air Journal",
+            "date": "2026-02-18",
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 5069,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Dubaï"
@@ -6140,6 +6456,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://lorraineaeroport.com/vols-destinations/",
+        "sources": [
+          {
+            "url": "https://lorraineaeroport.com/vols-destinations/",
+            "publisher": "Lorraine Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1388,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Metz-Nancy-Lorraine"
@@ -6359,6 +6686,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260706-ahns26320",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260706-ahns26320",
+            "publisher": "AeroRoutes",
+            "date": "2026-07-06",
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 963,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport Léonard-de-Vinci de Rome-Fiumicino"
@@ -6578,6 +6916,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html",
+        "sources": [
+          {
+            "url": "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html",
+            "publisher": "Air Journal",
+            "date": "2025-08-29",
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1543,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Francfort-sur-le-Main"
@@ -6797,6 +7145,16 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.observalgerie.com/",
+        "sources": [
+          {
+            "url": "https://www.observalgerie.com/",
+            "publisher": "Observalgerie",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 3058,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Hurghada"
@@ -7016,6 +7374,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 2255,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport d'Istanbul"
@@ -7235,6 +7604,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 7463,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international OR Tambo"
@@ -7454,6 +7835,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 10580,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Kuala Lumpur"
@@ -7673,6 +8065,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260609-ahjun26lbv",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260609-ahjun26lbv",
+            "publisher": "AeroRoutes",
+            "date": "2026-06-09",
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 4080,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international Léon-Mba"
@@ -7892,6 +8296,18 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260720-ahjul267m8",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260720-ahjul267m8",
+            "publisher": "AeroRoutes",
+            "date": "2026-07-20",
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 1668,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Londres Heathrow"
@@ -8111,6 +8527,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.tsa-algerie.com/air-algerie-renonce-a-quitter-laeroport-de-londres-heathrow-voici-les-raisons/",
+        "sources": [
+          {
+            "url": "https://www.tsa-algerie.com/air-algerie-renonce-a-quitter-laeroport-de-londres-heathrow-voici-les-raisons/",
+            "publisher": "Tout sur l'Algerie",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1542,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Lille-Lesquin"
@@ -8330,6 +8756,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1016,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport Lyon-Saint-Exupéry"
@@ -8552,6 +8989,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/",
+        "sources": [
+          {
+            "url": "https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/",
+            "publisher": "Manchester Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 1900,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Manchester"
@@ -8771,6 +9221,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+        "sources": [
+          {
+            "url": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+            "publisher": "Montpellier Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 767,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Montpellier-Méditerranée"
@@ -8990,6 +9451,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.marseille.aeroport.fr/",
+        "sources": [
+          {
+            "url": "https://www.marseille.aeroport.fr/",
+            "publisher": "Marseille Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 768,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport Marseille-Provence"
@@ -9209,6 +9682,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260608-ahjul26nbj",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260608-ahjul26nbj",
+            "publisher": "AeroRoutes",
+            "date": "2026-06-08",
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 5199,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport Internacional Dr. António Agostinho Neto"
@@ -9428,6 +9913,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://news.radioalgerie.dz/fr/node/72797",
+        "sources": [
+          {
+            "url": "https://news.radioalgerie.dz/fr/node/72797",
+            "publisher": "Radio Algerienne",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 2584,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international Diori-Hamani"
@@ -9647,6 +10142,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 2774,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Nouakchott-Oumtounsy"
@@ -9866,6 +10372,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.nantes.aeroport.fr/fr/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.nantes.aeroport.fr/fr/air-algerie",
+            "publisher": "Nantes Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1228,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Nantes Atlantique"
@@ -10085,6 +10602,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.dzairdaily.com/une-nouvelle-ville-deurope-bientot-desservie-par-air-algerie/",
+        "sources": [
+          {
+            "url": "https://www.dzairdaily.com/une-nouvelle-ville-deurope-bientot-desservie-par-air-algerie/",
+            "publisher": "Dzair Daily",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1144,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Porto"
@@ -10304,6 +10831,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.parisaeroport.fr/en/passengers/flights/airlines/airline?airline=AH&",
+        "sources": [
+          {
+            "url": "https://www.parisaeroport.fr/en/passengers/flights/airlines/airline?airline=AH&",
+            "publisher": "Paris Aeroport",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1339,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Paris-Orly"
@@ -10523,6 +11060,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 2748,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Ouagadougou"
@@ -10742,6 +11290,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260416-ahmay26pek",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260416-ahmay26pek",
+            "publisher": "AeroRoutes",
+            "date": "2026-04-16",
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 9105,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Pékin-Capitale"
@@ -10964,6 +11524,19 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/250901-ahnw25rtm",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/250901-ahnw25rtm",
+            "publisher": "AeroRoutes",
+            "date": "2025-09-01",
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 1699,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Rotterdam La Haye"
@@ -11183,6 +11756,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Houari_Boumediene_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Houari_Boumediene_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 3070,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Charm el-Cheikh"
@@ -11407,6 +11990,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://mediacentre.stanstedairport.com/new-airline-air-algerie-launches-direct-flights-to-algiers/",
+        "sources": [
+          {
+            "url": "https://mediacentre.stanstedairport.com/new-airline-air-algerie-launches-direct-flights-to-algiers/",
+            "publisher": "London Stansted Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 1705,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Londres Stansted"
@@ -11629,6 +12225,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/",
+        "sources": [
+          {
+            "url": "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/",
+            "publisher": "Strasbourg Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 1365,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Strasbourg-Entzheim"
@@ -11848,6 +12456,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 625,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Tunis-Carthage"
@@ -12067,6 +12687,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/250728-ahnw25bud",
+            "publisher": "AeroRoutes",
+            "date": "2025-07-28",
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1672,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Vienne-Schwechat"
@@ -12286,6 +12917,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://algerie-eco.com/2026/04/01/air-algerie-reouverture-de-la-ligne-alger-budapest-via-vienne/",
+        "sources": [
+          {
+            "url": "https://algerie-eco.com/2026/04/01/air-algerie-reouverture-de-la-ligne-alger-budapest-via-vienne/",
+            "publisher": "Algerie Eco",
+            "date": "2026-04-01",
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 448,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Valence"
@@ -12505,6 +13147,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260430-ahns26yul",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260430-ahns26yul",
+            "publisher": "AeroRoutes",
+            "date": "2026-04-30",
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 6275,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international Montréal-Trudeau"
@@ -12724,6 +13377,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 520,
         "from_name": "Aéroport international de Barcelone-El Prat",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -12945,6 +13609,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/",
+            "publisher": "Visa Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 1919,
         "from_name": "Aéroport de Berlin-Brandebourg",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -13164,6 +13841,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+        "sources": [
+          {
+            "url": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+            "publisher": "Algerie Presse Service",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 2934,
         "from_name": "Aéroport international de Beyrouth - Rafic Hariri",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -13383,6 +14071,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.parisaeroport.fr/en/passengers/flights/airlines/ah",
+        "sources": [
+          {
+            "url": "https://www.parisaeroport.fr/en/passengers/flights/airlines/ah",
+            "publisher": "Paris Aeroport",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1382,
         "from_name": "Aéroport de BEJAIA/Soummam ‐Abane Ramdane",
         "to_name": "Aéroport Paris-Charles-de-Gaulle"
@@ -13602,6 +14300,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1002,
         "from_name": "Aéroport de BEJAIA/Soummam ‐Abane Ramdane",
         "to_name": "Aéroport Lyon-Saint-Exupéry"
@@ -13821,6 +14530,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Abane_Ramdane_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Abane_Ramdane_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 748,
         "from_name": "Aéroport de BEJAIA/Soummam ‐Abane Ramdane",
         "to_name": "Aéroport Marseille-Provence"
@@ -14040,6 +14759,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Abane_Ramdane_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Abane_Ramdane_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1354,
         "from_name": "Aéroport de BEJAIA/Soummam ‐Abane Ramdane",
         "to_name": "Aéroport de Paris-Orly"
@@ -14259,6 +14988,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1113,
         "from_name": "Aéroport BATNA/ Mostepha Ben BOULAID",
         "to_name": "Aéroport Lyon-Saint-Exupéry"
@@ -14478,6 +15218,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 859,
         "from_name": "Aéroport BATNA/ Mostepha Ben BOULAID",
         "to_name": "Aéroport Marseille-Provence"
@@ -14697,6 +15447,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.flightsfrom.com/BLJ-ORY",
+        "sources": [
+          {
+            "url": "https://www.flightsfrom.com/BLJ-ORY",
+            "publisher": "FlightsFrom",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 1478,
         "from_name": "Aéroport BATNA/ Mostepha Ben BOULAID",
         "to_name": "Aéroport de Paris-Orly"
@@ -14916,6 +15678,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 962,
         "from_name": "Aéroport de Bordeaux-Mérignac",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -15135,6 +15908,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1582,
         "from_name": "Aéroport de Bruxelles",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -15354,6 +16138,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1217,
         "from_name": "Aéroport de BISKRA/ Mohamed KHIDER",
         "to_name": "Aéroport Lyon-Saint-Exupéry"
@@ -15573,6 +16368,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://web.archive.org/web/20110221154249/http://www.airalgerie.dz/",
+        "sources": [
+          {
+            "url": "https://web.archive.org/web/20110221154249/http://www.airalgerie.dz/",
+            "publisher": "Air Algerie, Internet Archive capture",
+            "date": "2011-02-21",
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1574,
         "from_name": "Aéroport de BISKRA/ Mohamed KHIDER",
         "to_name": "Aéroport de Paris-Orly"
@@ -15792,6 +16597,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260102-ahapr26bud",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260102-ahapr26bud",
+            "publisher": "AeroRoutes",
+            "date": "2026-01-02",
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 1777,
         "from_name": "Aéroport international de Budapest-Ferenc Liszt",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -16011,6 +16828,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 2706,
         "from_name": "Aéroport international du Caire",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -16230,6 +17059,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260620-ahnw26cankul",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260620-ahnw26cankul",
+            "publisher": "AeroRoutes",
+            "date": "2026-06-20",
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 10106,
         "from_name": "Aéroport international de Canton Baiyun",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -16449,6 +17290,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.parisaeroport.fr/",
+        "sources": [
+          {
+            "url": "https://www.parisaeroport.fr/",
+            "publisher": "Paris Aeroport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 1370,
         "from_name": "Aéroport Paris-Charles-de-Gaulle",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -16668,6 +17521,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1453,
         "from_name": "Aéroport Paris-Charles-de-Gaulle",
         "to_name": "Aéroport de Constantine - Mohamed Boudiaf"
@@ -16887,6 +17751,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1511,
         "from_name": "Aéroport Paris-Charles-de-Gaulle",
         "to_name": "Aéroport d’Oran - Ahmed Benbella"
@@ -17106,6 +17981,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Chlef_International_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Chlef_International_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1426,
         "from_name": "Aéroport de CHLEF",
         "to_name": "Aéroport Paris-Charles-de-Gaulle"
@@ -17325,6 +18210,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Chlef_International_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Chlef_International_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 869,
         "from_name": "Aéroport de CHLEF",
         "to_name": "Aéroport Marseille-Provence"
@@ -17544,6 +18439,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1453,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport Paris-Charles-de-Gaulle"
@@ -17763,6 +18668,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://lorraineaeroport.com/vols-destinations/",
+        "sources": [
+          {
+            "url": "https://lorraineaeroport.com/vols-destinations/",
+            "publisher": "Lorraine Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1412,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport de Metz-Nancy-Lorraine"
@@ -17982,6 +18898,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1989,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport d'Istanbul"
@@ -18201,6 +19127,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 3533,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport international Roi-Abdelaziz"
@@ -18420,6 +19356,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.routesonline.com/news/38/airlineroute/285075/air-algerie-adds-constantine-lille-from-late-oct-2019/",
+        "sources": [
+          {
+            "url": "https://www.routesonline.com/news/38/airlineroute/285075/air-algerie-adds-constantine-lille-from-late-oct-2019/",
+            "publisher": "Routes Online",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1613,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport de Lille-Lesquin"
@@ -18639,6 +19585,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1058,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport Lyon-Saint-Exupéry"
@@ -18858,6 +19815,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 3409,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport international Prince Mohammad Bin Abdulaziz"
@@ -19077,6 +20044,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.aaco.org/media-center/news/aaco-members/air-algerie-commences-constantine-monastir-and-algiers-luanda-services-in-june-2026",
+        "sources": [
+          {
+            "url": "https://www.aaco.org/media-center/news/aaco-members/air-algerie-commences-constantine-monastir-and-algiers-luanda-services-in-june-2026",
+            "publisher": "Arab Air Carriers' Organization",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 376,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport international de Monastir Habib-Bourguiba"
@@ -19296,6 +20273,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 805,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport Marseille-Provence"
@@ -19515,6 +20502,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 822,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport de Nice-Côte d'Azur"
@@ -19734,6 +20731,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1427,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport de Paris-Orly"
@@ -19953,6 +20960,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.visa-algerie.com/apres-djerba-en-tunisie-air-algerie-se-pose-a-charm-el-cheikh-en-egypte/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/apres-djerba-en-tunisie-air-algerie-se-pose-a-charm-el-cheikh-en-egypte/",
+            "publisher": "Visa Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 2762,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport international de Charm el-Cheikh"
@@ -20174,6 +21192,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine",
+        "sources": [
+          {
+            "url": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine",
+            "publisher": "Toulouse Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 931,
         "from_name": "Aéroport de Constantine - Mohamed Boudiaf",
         "to_name": "Aéroport de Toulouse-Blagnac"
@@ -20393,6 +21424,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Djanet_Inedbirene_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Djanet_Inedbirene_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 2814,
         "from_name": "Aéroport de DJANET / Tiska-DJANET",
         "to_name": "Aéroport Paris-Charles-de-Gaulle"
@@ -20612,6 +21653,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260629-ahnw26",
+            "publisher": "AeroRoutes",
+            "date": "2026-06-29",
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 3696,
         "from_name": "Aéroport international de Douala",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -20835,6 +21887,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches",
+        "sources": [
+          {
+            "url": "https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches",
+            "publisher": "The Peninsula",
+            "date": "2026-09-30",
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 4733,
         "from_name": "Aéroport international Hamad",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -21054,6 +22119,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+        "sources": [
+          {
+            "url": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+            "publisher": "Algerie Presse Service",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 5069,
         "from_name": "Aéroport international de Dubaï",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -21273,6 +22349,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Guemar_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Guemar_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1759,
         "from_name": "Aéroport d’El Oued/Guemar",
         "to_name": "Aéroport Paris-Charles-de-Gaulle"
@@ -21492,6 +22578,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://lorraineaeroport.com/vols-destinations/",
+        "sources": [
+          {
+            "url": "https://lorraineaeroport.com/vols-destinations/",
+            "publisher": "Lorraine Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1388,
         "from_name": "Aéroport de Metz-Nancy-Lorraine",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -21711,6 +22808,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://lorraineaeroport.com/vols-destinations/",
+        "sources": [
+          {
+            "url": "https://lorraineaeroport.com/vols-destinations/",
+            "publisher": "Lorraine Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1412,
         "from_name": "Aéroport de Metz-Nancy-Lorraine",
         "to_name": "Aéroport de Constantine - Mohamed Boudiaf"
@@ -21930,6 +23038,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.lorraineaeroport.com/vols-destinations/oran/",
+        "sources": [
+          {
+            "url": "https://www.lorraineaeroport.com/vols-destinations/oran/",
+            "publisher": "Lorraine Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 1588,
         "from_name": "Aéroport de Metz-Nancy-Lorraine",
         "to_name": "Aéroport d’Oran - Ahmed Benbella"
@@ -22149,6 +23269,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260706-ahns26320",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260706-ahns26320",
+            "publisher": "AeroRoutes",
+            "date": "2026-07-06",
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 963,
         "from_name": "Aéroport Léonard-de-Vinci de Rome-Fiumicino",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -22368,6 +23499,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1543,
         "from_name": "Aéroport de Francfort-sur-le-Main",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -22587,6 +23729,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Jijel_Ferhat_Abbas_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Jijel_Ferhat_Abbas_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 741,
         "from_name": "Aéroport de JIJEL/FERHAT ABBAS",
         "to_name": "Aéroport Marseille-Provence"
@@ -22806,6 +23958,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 2255,
         "from_name": "Aéroport d'Istanbul",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -23025,6 +24188,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1989,
         "from_name": "Aéroport d'Istanbul",
         "to_name": "Aéroport de Constantine - Mohamed Boudiaf"
@@ -23244,6 +24418,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 7463,
         "from_name": "Aéroport international OR Tambo",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -23463,6 +24648,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260620-ahnw26cankul",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260620-ahnw26cankul",
+            "publisher": "AeroRoutes",
+            "date": "2026-06-20",
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 10580,
         "from_name": "Aéroport international de Kuala Lumpur",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -23682,6 +24879,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260629-ahnw26",
+            "publisher": "AeroRoutes",
+            "date": "2026-06-29",
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 4080,
         "from_name": "Aéroport international Léon-Mba",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -23901,6 +25109,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes",
+        "sources": [
+          {
+            "url": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes",
+            "publisher": "Algerie Presse Service",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1668,
         "from_name": "Aéroport de Londres Heathrow",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -24120,6 +25339,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1016,
         "from_name": "Aéroport Lyon-Saint-Exupéry",
         "to_name": "Aéroport Annaba - Rabah Bitat"
@@ -24339,6 +25569,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1016,
         "from_name": "Aéroport Lyon-Saint-Exupéry",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -24558,6 +25799,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1002,
         "from_name": "Aéroport Lyon-Saint-Exupéry",
         "to_name": "Aéroport de BEJAIA/Soummam ‐Abane Ramdane"
@@ -24777,6 +26029,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1113,
         "from_name": "Aéroport Lyon-Saint-Exupéry",
         "to_name": "Aéroport BATNA/ Mostepha Ben BOULAID"
@@ -24996,6 +26259,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1217,
         "from_name": "Aéroport Lyon-Saint-Exupéry",
         "to_name": "Aéroport de BISKRA/ Mohamed KHIDER"
@@ -25215,6 +26489,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1058,
         "from_name": "Aéroport Lyon-Saint-Exupéry",
         "to_name": "Aéroport de Constantine - Mohamed Boudiaf"
@@ -25434,6 +26719,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1222,
         "from_name": "Aéroport Lyon-Saint-Exupéry",
         "to_name": "Aéroport d’Oran - Ahmed Benbella"
@@ -25653,6 +26949,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1062,
         "from_name": "Aéroport Lyon-Saint-Exupéry",
         "to_name": "Aéroport de SETIF /8 Mai 45"
@@ -25872,6 +27179,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 1313,
         "from_name": "Aéroport Lyon-Saint-Exupéry",
         "to_name": "Aéroport de Tlemcen - Zenata - Messali El Hadj"
@@ -26094,6 +27413,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/",
+        "sources": [
+          {
+            "url": "https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/",
+            "publisher": "Manchester Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 1900,
         "from_name": "Aéroport de Manchester",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -26313,6 +27645,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+        "sources": [
+          {
+            "url": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+            "publisher": "Montpellier Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 767,
         "from_name": "Aéroport de Montpellier-Méditerranée",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -26532,6 +27875,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+        "sources": [
+          {
+            "url": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+            "publisher": "Montpellier Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 967,
         "from_name": "Aéroport de Montpellier-Méditerranée",
         "to_name": "Aéroport d’Oran - Ahmed Benbella"
@@ -26751,6 +28105,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 768,
         "from_name": "Aéroport Marseille-Provence",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -26970,6 +28335,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 805,
         "from_name": "Aéroport Marseille-Provence",
         "to_name": "Aéroport de Constantine - Mohamed Boudiaf"
@@ -27189,6 +28565,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1002,
         "from_name": "Aéroport Marseille-Provence",
         "to_name": "Aéroport d’Oran - Ahmed Benbella"
@@ -27408,6 +28795,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260608-ahjul26nbj",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260608-ahjul26nbj",
+            "publisher": "AeroRoutes",
+            "date": "2026-06-08",
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 5199,
         "from_name": "Aéroport Internacional Dr. António Agostinho Neto",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -27627,6 +29026,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 845,
         "from_name": "Aéroport de Nice-Côte d'Azur",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -27846,6 +29256,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 2774,
         "from_name": "Aéroport international de Nouakchott-Oumtounsy",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -28065,6 +29486,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1228,
         "from_name": "Aéroport de Nantes Atlantique",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -28284,6 +29716,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 296,
         "from_name": "Aéroport d’Oran - Ahmed Benbella",
         "to_name": "Aéroport d'Alicante"
@@ -28503,6 +29946,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 673,
         "from_name": "Aéroport d’Oran - Ahmed Benbella",
         "to_name": "Aéroport international de Barcelone-El Prat"
@@ -28722,6 +30175,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1024,
         "from_name": "Aéroport d’Oran - Ahmed Benbella",
         "to_name": "Aéroport de Bordeaux-Mérignac"
@@ -28941,6 +30404,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.lorraineaeroport.com/vols-destinations/oran/",
+        "sources": [
+          {
+            "url": "https://www.lorraineaeroport.com/vols-destinations/oran/",
+            "publisher": "Lorraine Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1588,
         "from_name": "Aéroport d’Oran - Ahmed Benbella",
         "to_name": "Aéroport de Metz-Nancy-Lorraine"
@@ -29160,6 +30634,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/",
+            "publisher": "AeroRoutes",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 2618,
         "from_name": "Aéroport d’Oran - Ahmed Benbella",
         "to_name": "Aéroport d'Istanbul"
@@ -29379,6 +30865,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1689,
         "from_name": "Aéroport d’Oran - Ahmed Benbella",
         "to_name": "Aéroport de Lille-Lesquin"
@@ -29598,6 +31094,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1222,
         "from_name": "Aéroport d’Oran - Ahmed Benbella",
         "to_name": "Aéroport Lyon-Saint-Exupéry"
@@ -29817,6 +31324,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+        "sources": [
+          {
+            "url": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+            "publisher": "Montpellier Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 967,
         "from_name": "Aéroport d’Oran - Ahmed Benbella",
         "to_name": "Aéroport de Montpellier-Méditerranée"
@@ -30036,6 +31554,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1002,
         "from_name": "Aéroport d’Oran - Ahmed Benbella",
         "to_name": "Aéroport Marseille-Provence"
@@ -30255,6 +31783,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/250722-ah3q25eg",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/250722-ah3q25eg",
+            "publisher": "AeroRoutes",
+            "date": "2025-07-22",
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 3396,
         "from_name": "Aéroport d’Oran - Ahmed Benbella",
         "to_name": "Aéroport international de Charm el-Cheikh"
@@ -30474,6 +32012,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1339,
         "from_name": "Aéroport de Paris-Orly",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -30693,6 +32242,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.flightsfrom.com/ORY-BLJ",
+        "sources": [
+          {
+            "url": "https://www.flightsfrom.com/ORY-BLJ",
+            "publisher": "FlightsFrom",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 1478,
         "from_name": "Aéroport de Paris-Orly",
         "to_name": "Aéroport BATNA/ Mostepha Ben BOULAID"
@@ -30912,6 +32473,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1478,
         "from_name": "Aéroport de Paris-Orly",
         "to_name": "Aéroport d’Oran - Ahmed Benbella"
@@ -31131,6 +32703,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/260416-ahmay26pek",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260416-ahmay26pek",
+            "publisher": "AeroRoutes",
+            "date": "2026-04-16",
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 9105,
         "from_name": "Aéroport international de Pékin-Capitale",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -31350,6 +32934,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.air-journal.fr/2025-01-06-asl-airlines-france-lance-une-ligne-entre-lille-et-toulon-5260220.html",
+        "sources": [
+          {
+            "url": "https://www.air-journal.fr/2025-01-06-asl-airlines-france-lance-une-ligne-entre-lille-et-toulon-5260220.html",
+            "publisher": "Air Journal",
+            "date": "2025-01-06",
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1610,
         "from_name": "Aéroport de SETIF /8 Mai 45",
         "to_name": "Aéroport de Lille-Lesquin"
@@ -31569,6 +33163,17 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1062,
         "from_name": "Aéroport de SETIF /8 Mai 45",
         "to_name": "Aéroport Lyon-Saint-Exupéry"
@@ -31788,6 +33393,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Ain_Arnat_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Ain_Arnat_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1417,
         "from_name": "Aéroport de SETIF /8 Mai 45",
         "to_name": "Aéroport de Paris-Orly"
@@ -32010,6 +33625,19 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.aeroroutes.com/eng/250901-ahnw25rtm",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/250901-ahnw25rtm",
+            "publisher": "AeroRoutes",
+            "date": "2025-09-01",
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 1699,
         "from_name": "Aéroport de Rotterdam La Haye",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -32229,6 +33857,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes",
+        "sources": [
+          {
+            "url": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes",
+            "publisher": "Algerie Presse Service",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 1705,
         "from_name": "Aéroport de Londres Stansted",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -32448,6 +34087,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.observalgerie.com/",
+        "sources": [
+          {
+            "url": "https://www.observalgerie.com/",
+            "publisher": "Observalgerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 1365,
         "from_name": "Aéroport de Strasbourg-Entzheim",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -32667,6 +34318,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Zenata_–_Messali_El_Hadj_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Zenata_–_Messali_El_Hadj_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1590,
         "from_name": "Aéroport de Tlemcen - Zenata - Messali El Hadj",
         "to_name": "Aéroport Paris-Charles-de-Gaulle"
@@ -32886,6 +34547,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://www.air-journal.fr/2025-01-06-asl-airlines-france-lance-une-ligne-entre-lille-et-toulon-5260220.html",
+        "sources": [
+          {
+            "url": "https://www.air-journal.fr/2025-01-06-asl-airlines-france-lance-une-ligne-entre-lille-et-toulon-5260220.html",
+            "publisher": "Air Journal",
+            "date": "2025-01-06",
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1768,
         "from_name": "Aéroport de Tlemcen - Zenata - Messali El Hadj",
         "to_name": "Aéroport de Lille-Lesquin"
@@ -33107,6 +34778,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+        "sources": [
+          {
+            "url": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+            "publisher": "Lyon Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 1313,
         "from_name": "Aéroport de Tlemcen - Zenata - Messali El Hadj",
         "to_name": "Aéroport Lyon-Saint-Exupéry"
@@ -33326,6 +35010,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.marseille.aeroport.fr/vols-et-destinations/destinations/toutes-les-destinations/afrique/algerie/tlemcen",
+        "sources": [
+          {
+            "url": "https://www.marseille.aeroport.fr/vols-et-destinations/destinations/toutes-les-destinations/afrique/algerie/tlemcen",
+            "publisher": "Marseille Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 1098,
         "from_name": "Aéroport de Tlemcen - Zenata - Messali El Hadj",
         "to_name": "Aéroport Marseille-Provence"
@@ -33545,6 +35241,16 @@
         "evidence": "listed",
         "planned": false,
         "source": "https://en.wikipedia.org/wiki/Zenata_–_Messali_El_Hadj_Airport",
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Zenata_–_Messali_El_Hadj_Airport",
+            "publisher": "Wikipedia",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1557,
         "from_name": "Aéroport de Tlemcen - Zenata - Messali El Hadj",
         "to_name": "Aéroport de Paris-Orly"
@@ -33766,6 +35472,19 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine",
+        "sources": [
+          {
+            "url": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine",
+            "publisher": "Toulouse Airport",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 931,
         "from_name": "Aéroport de Toulouse-Blagnac",
         "to_name": "Aéroport de Constantine - Mohamed Boudiaf"
@@ -33985,6 +35704,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 907,
         "from_name": "Aéroport de Toulouse-Blagnac",
         "to_name": "Aéroport d’Oran - Ahmed Benbella"
@@ -34204,6 +35934,18 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "sources": [
+          {
+            "url": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+            "publisher": "Air Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status",
+              "flight"
+            ]
+          }
+        ],
         "great_circle_km": 625,
         "from_name": "Aéroport international de Tunis-Carthage",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -34423,6 +36165,17 @@
         "evidence": "verified",
         "planned": false,
         "source": "https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/",
+            "publisher": "Visa Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "status"
+            ]
+          }
+        ],
         "great_circle_km": 6275,
         "from_name": "Aéroport international Montréal-Trudeau",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -34644,6 +36397,17 @@
         "evidence": "listed",
         "planned": true,
         "source": "https://www.aeroroutes.com/eng/260820-ahnw26af",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260820-ahnw26af",
+            "publisher": "AeroRoutes",
+            "date": "2026-08-20",
+            "supports": [
+              "route",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 511,
         "from_name": "Aéroport international Nnamdi Azikiwe",
         "to_name": "Aéroport international Murtala-Muhammed"
@@ -34866,7 +36630,35 @@
         ],
         "evidence": "verified",
         "planned": true,
-        "source": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+        "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
+        "sources": [
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
+            "publisher": "Algerie360",
+            "date": "2026-09-26",
+            "supports": [
+              "route",
+              "days"
+            ]
+          },
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+            "publisher": "Visa Algerie",
+            "date": "2026-08-20",
+            "supports": [
+              "flight"
+            ]
+          },
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+            "publisher": "Air Algerie statement, via Algerie360",
+            "date": "2026-10-24",
+            "supports": [
+              "route",
+              "dates"
+            ]
+          }
+        ],
         "great_circle_km": 4722,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international Maya-Maya"
@@ -35089,7 +36881,35 @@
         ],
         "evidence": "verified",
         "planned": true,
-        "source": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+        "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
+        "sources": [
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
+            "publisher": "Algerie360",
+            "date": "2026-09-26",
+            "supports": [
+              "route",
+              "days"
+            ]
+          },
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+            "publisher": "Visa Algerie",
+            "date": "2026-08-20",
+            "supports": [
+              "flight"
+            ]
+          },
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+            "publisher": "Air Algerie statement, via Algerie360",
+            "date": "2026-10-24",
+            "supports": [
+              "route",
+              "dates"
+            ]
+          }
+        ],
         "great_circle_km": 3459,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international Ahmed-Sékou-Touré"
@@ -35309,6 +37129,16 @@
         "evidence": "listed",
         "planned": true,
         "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+            "publisher": "Visa Algerie",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 9914,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international d'Incheon"
@@ -35530,6 +37360,17 @@
         "evidence": "listed",
         "planned": true,
         "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+            "publisher": "Visa Algerie",
+            "date": null,
+            "supports": [
+              "route",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 4219,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Koweït"
@@ -35750,7 +37591,28 @@
         ],
         "evidence": "verified",
         "planned": true,
-        "source": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+        "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+            "publisher": "Visa Algerie",
+            "date": "2026-08-20",
+            "supports": [
+              "route",
+              "flight",
+              "days"
+            ]
+          },
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+            "publisher": "Air Algerie statement, via Algerie360",
+            "date": "2026-10-24",
+            "supports": [
+              "route",
+              "dates"
+            ]
+          }
+        ],
         "great_circle_km": 3349,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international Murtala-Muhammed"
@@ -35972,7 +37834,27 @@
         ],
         "evidence": "listed",
         "planned": true,
-        "source": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+        "source": "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
+        "sources": [
+          {
+            "url": "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
+            "publisher": "Maghreb Emergent",
+            "date": "2026-10-01",
+            "supports": [
+              "route",
+              "days"
+            ]
+          },
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+            "publisher": "Air Algerie statement, via Algerie360",
+            "date": "2026-10-24",
+            "supports": [
+              "route",
+              "dates"
+            ]
+          }
+        ],
         "great_circle_km": 1012,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Mitiga"
@@ -36192,6 +38074,16 @@
         "evidence": "listed",
         "planned": true,
         "source": "https://www.aeroroutes.com/eng/260622-ahnw267m8",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260622-ahnw267m8",
+            "publisher": "AeroRoutes",
+            "date": "2026-06-22",
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 2976,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de N'Djaména"
@@ -36414,7 +38306,28 @@
         ],
         "evidence": "verified",
         "planned": true,
-        "source": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+        "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
+            "publisher": "Visa Algerie",
+            "date": "2026-08-15",
+            "supports": [
+              "route",
+              "flight",
+              "days"
+            ]
+          },
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+            "publisher": "Air Algerie statement, via Algerie360",
+            "date": "2026-10-24",
+            "supports": [
+              "route",
+              "dates"
+            ]
+          }
+        ],
         "great_circle_km": 10131,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Shanghai-Pudong"
@@ -36638,6 +38551,17 @@
         "evidence": "listed",
         "planned": true,
         "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+            "publisher": "Visa Algerie",
+            "date": "2026-09-06",
+            "supports": [
+              "route",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 3332,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport de Moscou-Chérémétiévo"
@@ -36857,6 +38781,16 @@
         "evidence": "listed",
         "planned": true,
         "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+            "publisher": "Visa Algerie",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 3050,
         "from_name": "Aéroport international Reine Alia",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -37075,7 +39009,27 @@
         "days": null,
         "evidence": "verified",
         "planned": true,
-        "source": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+        "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+            "publisher": "Visa Algerie",
+            "date": "2026-08-20",
+            "supports": [
+              "route",
+              "flight"
+            ]
+          },
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+            "publisher": "Air Algerie statement, via Algerie360",
+            "date": "2026-10-24",
+            "supports": [
+              "route",
+              "dates"
+            ]
+          }
+        ],
         "great_circle_km": 4722,
         "from_name": "Aéroport international Maya-Maya",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -37294,7 +39248,27 @@
         "days": null,
         "evidence": "verified",
         "planned": true,
-        "source": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+        "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+            "publisher": "Visa Algerie",
+            "date": "2026-08-20",
+            "supports": [
+              "route",
+              "flight"
+            ]
+          },
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+            "publisher": "Air Algerie statement, via Algerie360",
+            "date": "2026-10-24",
+            "supports": [
+              "route",
+              "dates"
+            ]
+          }
+        ],
         "great_circle_km": 3459,
         "from_name": "Aéroport international Ahmed-Sékou-Touré",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -37514,6 +39488,16 @@
         "evidence": "listed",
         "planned": true,
         "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+            "publisher": "Visa Algerie",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 9914,
         "from_name": "Aéroport international d'Incheon",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -37733,6 +39717,16 @@
         "evidence": "listed",
         "planned": true,
         "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+            "publisher": "Visa Algerie",
+            "date": null,
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 1180,
         "from_name": "Aéroport international de Koweït",
         "to_name": "Aéroport international Reine Alia"
@@ -37954,6 +39948,17 @@
         "evidence": "listed",
         "planned": true,
         "source": "https://www.aeroroutes.com/eng/260820-ahnw26af",
+        "sources": [
+          {
+            "url": "https://www.aeroroutes.com/eng/260820-ahnw26af",
+            "publisher": "AeroRoutes",
+            "date": "2026-08-20",
+            "supports": [
+              "route",
+              "days"
+            ]
+          }
+        ],
         "great_circle_km": 511,
         "from_name": "Aéroport international Murtala-Muhammed",
         "to_name": "Aéroport international Nnamdi Azikiwe"
@@ -38174,7 +40179,28 @@
         ],
         "evidence": "verified",
         "planned": true,
-        "source": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+        "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+            "publisher": "Visa Algerie",
+            "date": "2026-08-20",
+            "supports": [
+              "route",
+              "flight",
+              "days"
+            ]
+          },
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+            "publisher": "Air Algerie statement, via Algerie360",
+            "date": "2026-10-24",
+            "supports": [
+              "route",
+              "dates"
+            ]
+          }
+        ],
         "great_circle_km": 3349,
         "from_name": "Aéroport international Murtala-Muhammed",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -38396,7 +40422,27 @@
         ],
         "evidence": "listed",
         "planned": true,
-        "source": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+        "source": "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/",
+        "sources": [
+          {
+            "url": "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/",
+            "publisher": "Algerie Eco",
+            "date": "2026-10-01",
+            "supports": [
+              "route",
+              "days"
+            ]
+          },
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+            "publisher": "Air Algerie statement, via Algerie360",
+            "date": "2026-10-24",
+            "supports": [
+              "route",
+              "dates"
+            ]
+          }
+        ],
         "great_circle_km": 1012,
         "from_name": "Aéroport de Mitiga",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -38619,7 +40665,28 @@
         ],
         "evidence": "verified",
         "planned": true,
-        "source": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+        "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
+            "publisher": "Visa Algerie",
+            "date": "2026-08-15",
+            "supports": [
+              "route",
+              "flight",
+              "days"
+            ]
+          },
+          {
+            "url": "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/",
+            "publisher": "Air Algerie statement, via Algerie360",
+            "date": "2026-10-24",
+            "supports": [
+              "route",
+              "dates"
+            ]
+          }
+        ],
         "great_circle_km": 10131,
         "from_name": "Aéroport international de Shanghai-Pudong",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
@@ -38839,6 +40906,16 @@
         "evidence": "listed",
         "planned": true,
         "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+        "sources": [
+          {
+            "url": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+            "publisher": "Visa Algerie",
+            "date": "2026-09-06",
+            "supports": [
+              "route"
+            ]
+          }
+        ],
         "great_circle_km": 3332,
         "from_name": "Aéroport de Moscou-Chérémétiévo",
         "to_name": "Aéroport d’Alger - Houari Boumediene"

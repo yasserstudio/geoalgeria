@@ -158,6 +158,29 @@ export type RouteStatus = "active" | "seasonal" | "suspended" | "unclear";
  *    different facts and only the first is supported. */
 export type RouteEvidence = "verified" | "listed";
 
+/** What one citation is claimed to support. A closed set, so a consumer can
+ *  switch on it:
+ *  - `route`: the carrier flies, or has announced, this directional leg;
+ *  - `status`: the operating state (active, seasonal, suspended);
+ *  - `dates`: a launch, resumption or suspension date;
+ *  - `flight`: the flight number the row carries;
+ *  - `days`: the operating days the row carries. */
+export type RouteSourceSupport = "route" | "status" | "dates" | "flight" | "days";
+
+/** One citation behind a route. */
+export interface RouteSource {
+  /** A URL a reader can open to check the claim. */
+  url: string;
+  /** Who published it, in plain English ("Lyon Airport", "AeroRoutes"). */
+  publisher: string;
+  /** Publication date, `YYYY-MM-DD`, or null where the source publishes none.
+   *  An airline's or an airport's destination page is a living document with no
+   *  publication date; a dated report has one. */
+  date: string | null;
+  /** Which of the route's claims this citation supports. At least one. */
+  supports: RouteSourceSupport[];
+}
+
 /** One DIRECTIONAL nonstop leg between two airports.
  *
  *  Direction is not decoration. Algiers→Abuja flies nonstop on Mondays and
@@ -187,8 +210,15 @@ export interface Route {
    *  and `plannedRoutes()` returns only them. */
   planned: boolean;
   /** A URL a reader can open to check the claim. Never a booking API: those are
-   *  used to establish facts, not to cite them. */
+   *  used to establish facts, not to cite them. The primary citation, and always
+   *  `sources[0].url`. */
   source: string;
+  /** Every citation behind the row, ordered, never empty, and `sources[0]` is
+   *  `source` itself. One row can rest on several: a launch announcement for the
+   *  route and its dates, an earlier sale-inventory report for the flight
+   *  number, a programme report for the days. Added in 2.9.0; `source` keeps its
+   *  meaning and its value. */
+  sources: RouteSource[];
   /** Great-circle distance between the endpoints, kilometres. */
   great_circle_km: number;
 }

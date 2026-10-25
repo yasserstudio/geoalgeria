@@ -96,11 +96,20 @@ function main() {
     evidence: r.evidence,
     planned: r.planned,
     source: r.source,
+    sources: r.sources,
     great_circle_km: r.great_circle_km,
   }));
 
   for (const r of rows) {
     if (!ep[r.from] || !ep[r.to]) throw new Error(`${r.id}: endpoint missing, cannot emit`);
+    // `source` keeps its meaning and its value; `sources` holds the rest of the
+    // provenance, and its first entry is that same citation. A row with an empty
+    // list, or one leading with a different url, would make the two fields
+    // disagree, so it fails here rather than shipping (ADR 0002).
+    if (!Array.isArray(r.sources) || r.sources.length === 0)
+      throw new Error(`${r.id}: no sources; rebuild route-dataset.json`);
+    if (r.sources[0].url !== r.source)
+      throw new Error(`${r.id}: sources[0] is not the row's source`);
   }
   const ids = new Set(rows.map((r) => r.id));
   if (ids.size !== rows.length) throw new Error("duplicate route id");
@@ -110,10 +119,22 @@ function main() {
 
   writeFileSync(join(DATA, "routes.json"), JSON.stringify(rows, null, 2) + "\n");
 
-  const cols = ["id", "from", "to", "carrier", "flight", "status", "days", "evidence", "planned", "source", "great_circle_km"];
+  // CSV is a flat table and `sources` is a list of objects, so the column
+  // carries it as a JSON string: `[{"url":...,"publisher":...,"date":...,
+  // "supports":[...]}]`, quoted and with its inner quotes doubled by the CSV
+  // writer. A reader who only wants one citation already has `source`, which is
+  // the same url as the first entry.
+  const cols = ["id", "from", "to", "carrier", "flight", "status", "days", "evidence", "planned", "source", "sources", "great_circle_km"];
   writeFileSync(
     join(DATA, "csv", "routes.csv"),
-    toCSV(rows.map((r) => ({ ...r, days: r.days ? r.days.join(" ") : null })), cols),
+    toCSV(
+      rows.map((r) => ({
+        ...r,
+        days: r.days ? r.days.join(" ") : null,
+        sources: JSON.stringify(r.sources),
+      })),
+      cols,
+    ),
   );
 
   const fc = {

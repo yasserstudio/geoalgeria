@@ -104,8 +104,21 @@ export function sourceRefsInDocument(document, where) {
     if (Array.isArray(value.sources))
       for (const source of value.sources) {
         if (typeof source === "string") add(source);
-        else if (source && typeof source === "object")
+        else if (source && typeof source === "object") {
+          // A citation is not a Source reference. `metadata.sources[]` keys into
+          // the rights registry; a route's `sources` list (ADR 0002) names a url,
+          // its publisher and what it supports, and has no key to look up because
+          // it cites one published report rather than declaring an upstream. All
+          // three fields together are the citation shape, so a SourceRef that has
+          // merely lost its `key` is still reported.
+          if (
+            typeof source.url === "string" &&
+            typeof source.publisher === "string" &&
+            Array.isArray(source.supports)
+          )
+            continue;
           keys.add(typeof source.key === "string" && source.key ? source.key : NO_KEY);
+        }
       }
     // The whole value decides citation or keys, then every part is a key: a
     // citation never survives the split, and `msp+OSM` is two keys, not one.

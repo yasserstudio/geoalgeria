@@ -1256,6 +1256,59 @@ function validateRouteEndpoints() {
   console.log(`  OK: ${label}, ${eps.length} endpoints, fully named (fr/en/ar), all route terminals resolve`);
 }
 
+// Every route ships `sources`, its citation list, and `source` stays the primary
+// citation: the same url as the first entry (ADR 0002). The gate is here rather
+// than in the relation spec because the contract is about the list's shape, not a
+// field's presence: entry 0 agrees with `source`, every url is openable, every
+// publisher is named, a date is either a real ISO date or honestly null, every
+// claim comes from the closed set, and a row's flight number and operating days
+// are each backed by an entry that says it supports them.
+const ROUTE_SUPPORTS = new Set(["route", "status", "dates", "flight", "days"]);
+function validateRouteSources() {
+  const label = "aviation/routes.json [sources]";
+  let routes;
+  try {
+    routes = readJson(join(ROOT, "packages", "aviation", "data", "routes.json"));
+  } catch (e) {
+    return fail(`${label}: cannot read: ${e.message}`);
+  }
+  const problems = [];
+  for (const r of routes) {
+    const list = r.sources;
+    if (!Array.isArray(list) || list.length === 0) {
+      problems.push(`${r.id}: no sources`);
+      continue;
+    }
+    if (list[0].url !== r.source) problems.push(`${r.id}: sources[0].url is not source`);
+    for (const [i, s] of list.entries()) {
+      const at = `${r.id} sources[${i}]`;
+      if (!/^https?:\/\/\S+$/.test(s.url ?? "")) problems.push(`${at}: url is not http(s)`);
+      if (typeof s.publisher !== "string" || !s.publisher.trim())
+        problems.push(`${at}: no publisher name`);
+      if (s.date !== null && (!/^\d{4}-\d{2}-\d{2}$/.test(s.date ?? "") || Number.isNaN(Date.parse(s.date))))
+        problems.push(`${at}: date ${JSON.stringify(s.date)} is not a YYYY-MM-DD date or null`);
+      if (!Array.isArray(s.supports) || s.supports.length === 0) {
+        problems.push(`${at}: supports is empty`);
+      } else {
+        const bad = s.supports.filter((x) => !ROUTE_SUPPORTS.has(x));
+        if (bad.length) problems.push(`${at}: ${bad.join(", ")} outside the supports set`);
+      }
+    }
+    const backs = (claim) => list.some((s) => (s.supports ?? []).includes(claim));
+    if (r.flight && !backs("flight")) problems.push(`${r.id}: flight ${r.flight} is uncited`);
+    if (r.days && !backs("days")) problems.push(`${r.id}: days are uncited`);
+  }
+  if (problems.length) {
+    return fail(`${label}: ${problems.length} problem(s): ${problems.slice(0, 5).join("; ")}`);
+  }
+  const entries = routes.reduce((n, r) => n + r.sources.length, 0);
+  const dated = routes.reduce((n, r) => n + r.sources.filter((s) => s.date).length, 0);
+  console.log(
+    `  OK: ${label}, ${entries} citation(s) across ${routes.length} routes ` +
+      `(${dated} dated), every list led by its own source`,
+  );
+}
+
 function validateMirror() {
   const sourceDir = join(ROOT, "packages", "poste", "data");
   const mirrorDir = join(ROOT, "packages", "dataset", "data", "poste");
@@ -2003,6 +2056,7 @@ if (!only || only === "poste") {
 if (!only || only === "aviation") {
   console.log(`\n[aviation route endpoints]`);
   validateRouteEndpoints();
+  validateRouteSources();
 }
 
 console.log("\n" + "=".repeat(40));
