@@ -337,7 +337,7 @@
       "cadence": "quarterly",
       "last_retrieved": "2026-06-23",
       "next_due": "2026-11-08",
-      "note": "Pulled live on 2026-10-25: 90 facilities added, none removed, plus one new ministry type. The rebuild is held because ids are assigned by sorted position, so those 90 rows would renumber 5,030 of the 5,141 published records; the package needs carryOverIds first. .scratch/306/sports-diff-2026-10-25.md has the measurement. Parked for 2026-16 with the El Aricha reconciliation, so next_due is that batch rather than last_retrieved + cadence."
+      "note": "Pulled live on 2026-10-25: 90 facilities added, none removed, plus one new ministry type. The ids no longer move: the fetcher carries them over (carryOverIds, keyed on the facility's place) as of 2026-10-25, measured at 5,141 kept and 90 minted with 0 published id changing place. The data is still held: the fetcher is network-only and the October capture was never committed, so the refresh needs a fresh pull from an Algerian vantage point, which should also commit its raw capture and grow a --cache replay. .scratch/306/sports-diff-2026-10-25.md has the measurement. Parked for 2026-16 with the El Aricha reconciliation, so next_due is that batch rather than last_retrieved + cadence."
     },
     {
       "package": "@geoalgeria/telecom",

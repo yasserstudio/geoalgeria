@@ -21,9 +21,15 @@
  */
 
 import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
+import {
+  MIGRATIONS,
+  writePackageV2,
+  carryOverIds,
+  readCommitted,
+  readRetiredIds,
+} from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -151,6 +157,88 @@ function parseSurface(v) {
   return Number.isFinite(n) && n > 0 ? n : null;
 }
 
+// --- stable ids ------------------------------------------------------------
+//
+// Ids follow places: a facility keeps the id it shipped under, a genuinely new
+// facility takes a fresh number, and a removed facility's number is never handed
+// out again. The ids used to be positions in the sort order, so the October 2026
+// pull (90 additions, no removals) would have moved 5,030 of the 5,141 published
+// ids onto a different place (#306).
+//
+// The carry key is the facility's place, because the MJS GeoServer's own feature
+// id is not in the published records: the generator overwrote it with the
+// sequence number, so there is nothing else both sides can be keyed on. The key
+// therefore reads only the fields that say WHICH place a record is, never the
+// attributes the ministry revises (capacity, year, operational, pmr, surfaces),
+// so a revision changes fields rather than retiring an id. A corrected
+// coordinate or a renaming does retire one; publishing the ministry's feature id
+// as `refs.mjs` on the next live pull is what would close that gap.
+const PLACE_FIELDS = ["wilaya_code", "commune", "type", "name", "address", "lat", "lng"];
+
+/** The place a v2 sports record stands for, as a carry key. */
+export const placeKeyOf = (r) =>
+  PLACE_FIELDS.map((f) => JSON.stringify(r[f] ?? null)).join("|");
+
+/**
+ * A keyOf for carryOverIds over both sides of a rebuild. The MJS ships groups of
+ * records whose every place field is identical (4 groups, 10 records as of the
+ * June capture), and a carry key that cannot pin an id uniquely fails the build,
+ * so twins are told apart by their position within their own group. They are
+ * field-identical, so which of them keeps which id carries no meaning.
+ *
+ * @param {object[]} committed  the committed v2 records
+ * @param {object[]} rows       the records being emitted
+ * @returns {(r: object) => string}
+ */
+export function sportsCarryKey(committed, rows) {
+  const keyed = new Map();
+  for (const set of [committed, rows]) {
+    const seen = new Map();
+    for (const r of set) {
+      const place = placeKeyOf(r);
+      const nth = (seen.get(place) ?? 0) + 1;
+      seen.set(place, nth);
+      keyed.set(r, `${place}#${nth}`);
+    }
+  }
+  return (r) => keyed.get(r) ?? placeKeyOf(r);
+}
+
+/**
+ * Give every record its public id: the one it already shipped under, or, for a
+ * facility the source has never shipped, the next number above every id the
+ * package has ever used (published or retired). Parking the new facilities above
+ * that high-water mark first is what keeps them out of a published slot: the ids
+ * here are a flat 5-digit space with no prefix to re-home them within.
+ *
+ * @param {object[]} rows          the v2 records being emitted (mutated in place)
+ * @param {object[]} committed     the committed v2 records
+ * @param {Set<string>} retiredIds the retired-id ledger, mutated with this run's
+ * @returns {{carried: number, minted: number, retired: number}}
+ */
+export function assignStableIds(rows, committed, retiredIds) {
+  const keyOf = sportsCarryKey(committed, rows);
+  const shipped = new Set(committed.map(keyOf));
+  let highest = 0;
+  for (const id of [...committed.map((r) => r.id), ...retiredIds]) {
+    const n = Number(id);
+    if (Number.isFinite(n) && n > highest) highest = n;
+  }
+  let minted = 0;
+  for (const r of rows) {
+    if (shipped.has(keyOf(r))) continue;
+    r.id = String(++highest).padStart(5, "0");
+    minted++;
+  }
+  const retiredBefore = retiredIds.size;
+  carryOverIds(rows, committed, keyOf, "sports", retiredIds);
+  return {
+    carried: rows.length - minted,
+    minted,
+    retired: retiredIds.size - retiredBefore,
+  };
+}
+
 // --- main ------------------------------------------------------------------
 async function main() {
   console.log("Fetching MJS sports infrastructure from GeoServer…");
@@ -265,19 +353,30 @@ async function main() {
     throw new Error(`wilaya_code out of [1,69]: ${overflow.length} record(s)`);
   }
 
-  // Assign stable sequential ids
+  // Number the records in emission order; assignStableIds settles the public ids
+  // below, once the committed data says which of them have shipped before.
   facilities.forEach((f, i) => { f.id = i + 1; });
 
   // --- emit v2 via the shared writer ---
   const cfg = MIGRATIONS.sports;
   const today = new Date().toISOString().slice(0, 10);
+  const v2 = facilities.map(cfg.map);
+  const committed = readCommitted(DATA, "facilities.json");
+  const retiredIds = readRetiredIds(DATA);
+  const ids = assignStableIds(v2, committed, retiredIds);
+  if (committed.length)
+    console.log(
+      `  id carry-over: ${ids.carried}/${v2.length} facilities kept their published id, ` +
+        `${ids.minted} new, ${ids.retired} retired`,
+    );
   const { records: out, metadata } = writePackageV2({
     pkg: "sports",
     dir: DATA,
-    files: [{ file: "facilities.json", rows: facilities.map(cfg.map) }],
+    files: [{ file: "facilities.json", rows: v2 }],
     meta: cfg.meta,
     updated: today,
     retrieved: today,
+    retiredIds,
   });
 
   console.log(`\nType breakdown:`);
@@ -291,4 +390,7 @@ async function main() {
   console.log(`\nWrote ${out.length} facilities across ${metadata.wilayas_covered} wilayas to ${DATA} (v2).`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+// Importable for the id-stability tests; only the direct invocation builds.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => { console.error(e); process.exit(1); });
+}
