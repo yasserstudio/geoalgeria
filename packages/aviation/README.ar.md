@@ -67,7 +67,7 @@ const inOran = aviation.airportsByWilaya(31);     // مطارات الولاية
 | `sources` | `RouteSource[]` | كل المراجع، مرتبة، وغير فارغة أبدا، و`sources[0]` هو `source` نفسه |
 | `sources[].url` | `string` | صفحة يمكن للقارئ فتحها |
 | `sources[].publisher` | `string` | من نشرها، بكلمات بسيطة (Lyon Airport، AeroRoutes) |
-| `sources[].date` | `string \| null` | تاريخ النشر، `YYYY-MM-DD`؛ و`null` إذا لم تنشر المصدر تاريخا، مثل صفحة الوجهات لشركة طيران أو مطار |
+| `sources[].date` | `string \| null` | تاريخ النشر، `YYYY-MM-DD`، مقروءا من توقيع الصفحة نفسها؛ و`null` إذا تعذرت قراءة أي توقيع، وغالبا لأنه غير موجود أصلا، مثل صفحة الوجهات لشركة طيران أو مطار |
 | `sources[].supports` | `("route" \| "status" \| "dates" \| "flight" \| "days")[]` | ما يدعمه هذا المرجع من معطيات السطر؛ وأي `flight` أو `days` يدعمه مرجع واحد على الأقل |
 
 في CSV تُكتب `sources` كمصفوفة JSON في عمود واحد بجانب `source`، وفي GeoJSON تبقى مصفوفة

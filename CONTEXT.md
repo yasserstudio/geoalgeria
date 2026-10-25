@@ -148,7 +148,7 @@ How strongly one Route is established: `verified` (the operator was confirmed as
 _Avoid_: confidence, quality, certainty, evidence level
 
 **Citation**:
-One published document a Route's claims rest on, as data: its url, its publisher in plain English, its publication date (null where the publisher dates nothing, as an airline's destination page does not) and the **Claim support** it backs. A Citation names a document a reader can open; a **Source** names an upstream GeoAlgeria takes records from and keys into the rights registry. Every Route ships `sources`, an ordered, non-empty list of Citations whose first entry is that Route's own `source` (ADR 0002).
+One published document a Route's claims rest on, as data: its url, its publisher in plain English, its publication date off the page's own byline (null where no byline could be read, usually because there is none, as on an airline's destination page) and the **Claim support** it backs. A Citation names a document a reader can open; a **Source** names an upstream GeoAlgeria takes records from and keys into the rights registry. Every Route ships `sources`, an ordered, non-empty list of Citations whose first entry is that Route's own `source` (ADR 0002).
 _Avoid_: reference, provenance entry, source (unqualified, for one document)
 
 **Claim support**:

@@ -173,9 +173,11 @@ export interface RouteSource {
   url: string;
   /** Who published it, in plain English ("Lyon Airport", "AeroRoutes"). */
   publisher: string;
-  /** Publication date, `YYYY-MM-DD`, or null where the source publishes none.
-   *  An airline's or an airport's destination page is a living document with no
-   *  publication date; a dated report has one. */
+  /** Publication date, `YYYY-MM-DD`, read off the page's own byline, or null
+   *  where no byline could be read. Usually that means there is none: an
+   *  airline's or an airport's destination page is a living document, and
+   *  dating it would invent a fact. A handful of dated reports are null too,
+   *  because their host refuses an automated fetch. */
   date: string | null;
   /** Which of the route's claims this citation supports. At least one. */
   supports: RouteSourceSupport[];

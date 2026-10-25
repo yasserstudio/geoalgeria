@@ -6,9 +6,10 @@ Every route now ships `sources`, its citation list: an ordered, never-empty arra
 whose first entry is the row's own `source`, so the single-citation field keeps
 its meaning and its value while the rest of the provenance becomes readable.
 Each entry carries `url`, `publisher` in plain English, `date` (the publication
-date, `YYYY-MM-DD`, or `null` where the source publishes none, as an airline's or
-an airport's destination page does not) and `supports`, which names what it backs
-from the closed set `route`, `status`, `dates`, `flight`, `days`. A row's flight
+date, `YYYY-MM-DD`, read off the page's own byline, or `null` where no byline
+could be read, usually because there is none, as on an airline's or an airport's
+destination page) and `supports`, which names what it backs from the closed set
+`route`, `status`, `dates`, `flight`, `days`. A row's flight
 number and operating days are each backed by at least one entry that says so.
 
 One row can rest on several documents, which is why the list exists. Air

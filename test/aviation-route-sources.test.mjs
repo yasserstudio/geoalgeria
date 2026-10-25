@@ -45,9 +45,10 @@ test("every citation names its publisher in plain words", () => {
 });
 
 test("a citation date is a real ISO date, or null where the source publishes none", () => {
-  // Null is deliberate and not a gap to fill later: an airline's or an airport's
-  // destination page is a living document with no publication date, and dating
-  // it would be an invention. A dated report carries its date.
+  // Null means no byline could be read. Usually there is none: an airline's or
+  // an airport's destination page is a living document, and dating it would be
+  // an invention. A dated report carries its date, read off that byline, never
+  // guessed from the slug or from what the report says happened.
   const bad = [];
   for (const r of routes)
     for (const s of r.sources) {

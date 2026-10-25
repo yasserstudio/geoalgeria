@@ -72,7 +72,7 @@ number, a programme report for the days.
 | `sources` | `RouteSource[]` | every citation, ordered, never empty, `sources[0]` being `source` itself |
 | `sources[].url` | `string` | a page a reader can open |
 | `sources[].publisher` | `string` | who published it, in plain English ("Lyon Airport", "AeroRoutes") |
-| `sources[].date` | `string \| null` | publication date, `YYYY-MM-DD`; `null` where the source publishes none, as an airline's or an airport's destination page does not |
+| `sources[].date` | `string \| null` | publication date, `YYYY-MM-DD`, off the page's own byline; `null` where no byline could be read, usually because there is none, as on an airline's or an airport's destination page |
 | `sources[].supports` | `("route" \| "status" \| "dates" \| "flight" \| "days")[]` | which of the row's claims this citation backs; a `flight` or `days` value is always backed by at least one |
 
 In the CSV, `sources` is the JSON array as a string in one column, next to `source`. In the

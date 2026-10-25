@@ -14,7 +14,7 @@ with their launch dates. It is the best evidence that those ten legs exist and w
 start, and it carries no flight number, no day name and no airport for Tripoli. Making it
 the `source` on those rows, which is what commit `20c11388` did, cited the strongest
 evidence for the route and silently dropped the reports behind each row's `flight` and
-`days`: the 20 August sale-inventory report, the 26 September programme report, the
+`days`: the 21 August sale-inventory report, the 26 September programme report, the
 15 August China report, the 1 October Tripoli reports. The provenance survived only as a
 comment in the generator, which ships to nobody.
 
@@ -35,9 +35,12 @@ explaining why in a comment. Both answers lose a citation a reader would want.
      via Algerie360"), because a reader judges a citation by who published it. A host with
      no publisher name fails the build;
    - `date` is the publication date, `YYYY-MM-DD`, read from the url where the publisher
-     puts one there and listed per source where the collection's own notes establish it.
-     It is `null` where the source publishes none: an airline's or an airport's destination
-     page is a living document, and dating it would be an invention;
+     puts one there and listed per source otherwise, off the page's own byline. It is
+     `null` where no byline could be read: usually because there is none, an airline's or
+     an airport's destination page being a living document that dating would invent a fact
+     about, and in five cases because the host refuses an automated fetch. Never dated from
+     what a report says rather than from how it is bylined, which is how the sale-inventory
+     report came to be stamped with the day sales opened;
    - `supports` names what the citation backs, from the closed set `route`, `status`,
      `dates`, `flight`, `days`. Closed so a consumer can switch on it.
 5. **Entry 0's `supports` defaults to the fields the row ships** (always `route`; `status`
