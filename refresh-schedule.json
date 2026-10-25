@@ -160,10 +160,9 @@
         "name": "Ministry of Vocational Training and Education (MFEP): takwin.dz",
         "url": "https://takwin.dz"
       },
-      "cadence": "quarterly",
+      "cadence": "blocked",
       "last_retrieved": "2026-06-22",
-      "next_due": "2026-09-22",
-      "note": "Geo-blocked from outside Algeria: takwin.dz drops TCP (verified 2026-10-25, port 443). Needs an Algerian vantage point."
+      "note": "takwin.dz answered an ordinary request on 2026-10-25 over an Algerian connection the Owner supplied, where it had always served a WAF block page: the live capture (1,964 records, one call to the puball endpoint) is committed in sources/formation-professionnelle/. The rebuild is blocked until the fetcher's carry key stops being whitespace-sensitive. The portal now spaces its Arabic names correctly where the June capture had them run together, which is 1,788 corrected names, and the key code|type|name reads each one as a new place: a rebuild today retires 1,788 ids and mints 1,819. .scratch/306/formation-professionnelle-diff-2026-10-25.md has the fix."
     },
     {
       "package": "@geoalgeria/gares-routieres",
