@@ -33,7 +33,7 @@ import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { wcode } from "../../../scripts/lib/commune-resolver.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -480,8 +480,9 @@ async function mapPool(items, n, fn) {
  *
  * A pin the operator itself publishes is treated as verified however far it moves the
  * desk, so a relocation lands as the carrier states it. The guard against a link that
- * points somewhere else entirely is the existing wilaya cross-check in main(), which
- * drops a carded desk whose pin lands outside the wilaya its card declares.
+ * points somewhere else entirely is the wilaya cross-check in main(), which drops a
+ * carded desk whose pin lands outside the wilaya its card declares (see badPinDrop):
+ * this carry covers a link that did not resolve at all, never one that resolved wrong.
  *
  * @param {{lat: number, lng: number}|null} pin  what the carrier's link resolved to
  * @param {{lat: number, lng: number}|undefined} prev  the record this id already ships
@@ -493,6 +494,93 @@ export function pinFor(pin, prev) {
   // coordinate and precision it already shipped rather than dropping the desk and
   // retiring its id.
   return prev ? { lat: prev.lat, lng: prev.lng, verdict: "carried" } : null;
+}
+
+/**
+ * Why a carded desk's freshly resolved pin disqualifies it, or null when it does not.
+ *
+ * A card declares its wilaya. When this run's pin lands in a DIFFERENT ≤58 wilaya the
+ * carrier's own link points where the card says the desk is not, and the run cannot tell
+ * which of the two is right, so the desk is dropped (Owner decision, 2026-10-25). It is
+ * NOT re-shipped at the coordinate it published last quarter: that would present a stale
+ * point as this run's verified one, and the desk returns by itself on the run after the
+ * link is fixed. A wilaya the 2026 reform created (>58) is the expected disagreement with
+ * a card still printing its parent's code, and is kept.
+ *
+ * @param {{id: string, cardWilaya: number|null, lat: number, lng: number}} rec
+ * @param {number} code  the wilaya this run's coordinate resolved to
+ * @returns {string|null} the run-log reason, naming the card id, the wilaya the card
+ *                        declares and the coordinate that was resolved
+ */
+export function badPinDrop(rec, code) {
+  if (rec.cardWilaya == null || code > 58 || code === rec.cardWilaya) return null;
+  return `${rec.id}(card ${rec.cardWilaya}→pin ${code} at ${rec.lat},${rec.lng})`;
+}
+
+// --- the retired-id ledger -------------------------------------------------
+// data/retired-ids.json is the list of ids no stop-desk may ever hold again. A
+// stop-desk id is a public join key: handing a disappeared desk's id to a different
+// desk would silently repoint every cached reference at another place.
+//
+// Module state rather than a parameter on every carded build: each carrier's build
+// consults it, and a carrier parser added later must inherit it without a call-site
+// change. main() loads it from disk; the pure functions below take it explicitly so a
+// test can hand them their own set.
+let retiredIds = new Set();
+
+/** Load the ledger the rest of this run reserves against. */
+export function setRetiredIds(ids) {
+  retiredIds = new Set([...ids].map(String));
+  return retiredIds;
+}
+
+/**
+ * Reserve every id the package ships today that this run no longer carries.
+ *
+ * Append-only: a desk that disappears upstream retires its id here, and nothing ever
+ * removes one, so the reservation outlives the record that earned it.
+ *
+ * @param {Set<string>} retired  the ledger, mutated
+ * @param {Iterable<string>} committedIds  the ids the committed data ships
+ * @param {Set<string>} liveIds  the ids this run emits
+ * @param {Set<string>} [heldIds]  ids still listed by the carrier but dropped this run for a
+ *   bad pin: held, not retired, so a fixed link brings the desk back under its own id
+ * @returns {string[]} the ids retired by this run, for the run log
+ */
+export function appendRetiredIds(retired, committedIds, liveIds, heldIds = new Set()) {
+  const added = [];
+  for (const id of committedIds) {
+    const key = String(id);
+    if (liveIds.has(key) || heldIds.has(key) || retired.has(key)) continue;
+    retired.add(key);
+    added.push(key);
+  }
+  return added.sort();
+}
+
+/**
+ * Settle the ids a carded build minted, so no two records share one and no record is
+ * handed a retired id.
+ *
+ * A carded id is minted from the card's own title, so two cards titled alike mint the
+ * same id, and a card can re-mint the id of a desk that disappeared in an earlier
+ * release. Both get the same deterministic treatment: the ledger's ids count as taken,
+ * and a collision takes the next `{id}-{n}` suffix, so a desk keeps its suffix across
+ * runs and a retired id is never re-issued.
+ *
+ * @param {Array<{id: string}>} recs  mutated in place
+ * @param {Set<string>} [retired]  the ledger; defaults to the one main() loaded
+ * @returns {Array<{id: string}>} recs
+ */
+export function dedupeMintedIds(recs, retired = retiredIds) {
+  const seen = new Map();
+  for (const id of retired) seen.set(String(id), 1);
+  for (const r of recs) {
+    const n = (seen.get(r.id) || 0) + 1;
+    seen.set(r.id, n);
+    if (n > 1) r.id = `${r.id}-${n}`;
+  }
+  return recs;
 }
 
 // How close, in km (haversine's unit here), a new carded id must sit to a disappeared
@@ -535,12 +623,17 @@ const wilayaAgrees = (committedCode, cardWilaya) =>
  * @param {Array<{id: string, name: string, commune: string|null, cardWilaya: number|null, lat: number, lng: number}>} recs  this run's records, mutated in place
  * @param {Map<string, {id: string, operator: string, wilaya_code: string, lat: number, lng: number}>} committed  what the package ships today
  * @param {string} operator  the carrier being built
+ * @param {Set<string>} [retired]  the ledger; defaults to the one main() loaded
  * @returns {string[]} one line per id handed back, for the run log
  */
-export function carryRenamedIds(recs, committed, operator) {
+export function carryRenamedIds(recs, committed, operator, retired = retiredIds) {
   const live = new Set(recs.map((r) => r.id));
-  // Ids this operator ships today that no card in this run claims.
-  const gone = [...committed.values()].filter((p) => p.operator === operator && !live.has(p.id));
+  // Ids this operator ships today that no card in this run claims. A retired id is not
+  // among them, because the ledger reserves ids the package stopped shipping, but the
+  // filter is kept so a reclaim can never resurrect one whatever the committed data says.
+  const gone = [...committed.values()].filter(
+    (p) => p.operator === operator && !live.has(p.id) && !retired.has(String(p.id)),
+  );
   // Every plausible pairing, nearest first, so which card reclaims an id never depends on
   // the order the carrier happens to list its cards in.
   const pairs = [];
@@ -597,8 +690,7 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
   // Before the sort, so a reclaimed id sorts under the id it keeps.
   const renamed = carryRenamedIds(recs, committed, operator);
   recs.sort((a, b) => a.id.localeCompare(b.id) || a.lat - b.lat || a.lng - b.lng);
-  const seen = new Map();
-  for (const r of recs) { const n = (seen.get(r.id) || 0) + 1; seen.set(r.id, n); if (n > 1) r.id = `${r.id}-${n}`; }
+  dedupeMintedIds(recs);
   console.log(`  ${recs.length} ${label} desks geocoded, ${skipped.length} skipped (nothing committed to carry)${skipped.length ? `: ${skipped.join(", ")}` : ""}`);
   if (carried.length) console.log(`  ${carried.length} ${label} desk(s) kept their committed coordinate, link did not resolve: ${carried.join(", ")}`);
   if (renamed.length) console.log(`  ${renamed.length} ${label} desk(s) kept their id through a card rename: ${renamed.join("; ")}`);
@@ -686,6 +778,8 @@ async function main() {
   const committed = new Map(
     readCommitted(DATA, "stopdesks.json").map((r) => [r.id, r]),
   );
+  // Before the first carded build: every mint and every reclaim below reserves against it.
+  const retired = setRetiredIds(readRetiredIds(DATA));
   const anderson = await buildCarded("Anderson", ANDERSON_URL, parseAnderson, "anderson", 60, committed);
   const noest = await buildCarded("Noest", NOEST_URL, parseNoest, "noest", 60, committed);
   const maystro = await buildCarded("Maystro", MAYSTRO_URL, parseMaystro, "maystro", 30, committed);
@@ -718,34 +812,24 @@ async function main() {
   let promoted = 0;
   const conflicts = [];
   const droppedPins = [];
-  const keptOnBadPin = [];
+  const heldIds = new Set();
   const stopdesks = merged
     .map((r) => {
-      let w = resolveWilaya(r.lat, r.lng, communes, r.wilaya_num ?? r.cardWilaya);
+      const w = resolveWilaya(r.lat, r.lng, communes, r.wilaya_num ?? r.cardWilaya);
       if (r.wilaya_num != null && r.wilaya_num !== w.code) {
         if (w.code > 58) promoted++;
         else conflicts.push(`${r.id}(src ${r.wilaya_num}→${w.code})`);
       }
       // Carded sources (Anderson/Noest) declare their wilaya. If the resolved pin lands in
       // a DIFFERENT ≤58 wilaya (a wrong/duplicated Maps link), drop the desk rather than
-      // ship a misplaced point. Reform promotions (→59-69) are expected and kept.
-      if (r.cardWilaya != null && w.code <= 58 && w.code !== r.cardWilaya) {
-        // The desk keeps the point it already shipped if it has one, and is dropped only
-        // when it has none, so one copy-paste slip upstream cannot unpublish a desk that
-        // was correctly placed before.
-        const prev = committed.get(r.id);
-        const pw = prev ? resolveWilaya(prev.lat, prev.lng, communes, r.cardWilaya) : null;
-        if (pw && (pw.code === r.cardWilaya || pw.code > 58)) {
-          keptOnBadPin.push(`${r.id}(card ${r.cardWilaya}→pin ${w.code}, kept its committed point)`);
-          r.lat = prev.lat;
-          r.lng = prev.lng;
-          w = pw;
-        } else {
-          // With the coordinate, so the reason is checkable against the carrier's own
-          // link without re-running the fetch.
-          droppedPins.push(`${r.id}(card ${r.cardWilaya}→pin ${w.code} at ${r.lat},${r.lng})`);
-          return null;
-        }
+      // ship a misplaced point. Reform promotions (→59-69) are expected and kept. The
+      // reason carries the coordinate, so it is checkable against the carrier's own link
+      // without re-running the fetch (see badPinDrop).
+      const badPin = badPinDrop(r, w.code);
+      if (badPin) {
+        droppedPins.push(badPin);
+        heldIds.add(r.id);
+        return null;
       }
       return {
         id: r.id,
@@ -766,16 +850,17 @@ async function main() {
   // Guards
   const ids = new Set(stopdesks.map((s) => s.id));
   if (ids.size !== stopdesks.length) throw new Error("duplicate stop-desk ids after merge");
+  const nowRetired = appendRetiredIds(retired, committed.keys(), ids, heldIds);
   const bad = stopdesks.filter((s) => !s.operator || !s.name || s.wilaya_code < 1 || s.wilaya_code > 69 || !Number.isFinite(s.lat) || !Number.isFinite(s.lng));
   if (bad.length) throw new Error(`malformed stop-desks: ${bad.slice(0, 5).map((s) => s.id).join(", ")}`);
   const badCarrier = [...new Set(stopdesks.map((s) => s.operator))].filter((o) => !carrierIds.has(o));
   if (badCarrier.length) throw new Error(`stop-desk operators missing from registry: ${badCarrier.join(", ")}`);
   if (conflicts.length) throw new Error(`centroid wilaya conflicts with source (both ≤58): ${conflicts.join(", ")}`);
   if (promoted) console.log(`  ${promoted} desk(s) in wilayas promoted by the 2026 reform (source ≤58 → flagship 59-69)`);
-  if (keptOnBadPin.length) console.log(`  ${keptOnBadPin.length} carded desk(s) kept their committed point, this run's pin fell in another wilaya than the card declares: ${keptOnBadPin.join(", ")}`);
   // Every one of them, never an ellipsis: a truncated list is how an omission goes
   // unexplained in the release notes.
   if (droppedPins.length) console.log(`  ${droppedPins.length} carded desk(s) dropped: pin in a different wilaya than the card (bad/duplicate link): ${droppedPins.join(", ")}`);
+  if (nowRetired.length) console.log(`  ${nowRetired.length} id(s) retired, the desk they named is gone from every source: ${nowRetired.join(", ")}`);
 
   // coverage, per operator that has stop-desks
   const covMap = new Map();
@@ -835,6 +920,7 @@ async function main() {
     meta: cfg.meta,
     updated: today,
     retrieved: today,
+    retiredIds: retired,
   });
 
   console.log(
