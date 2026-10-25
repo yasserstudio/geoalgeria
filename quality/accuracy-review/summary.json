@@ -168,19 +168,19 @@
     },
     {
       "path": "packages/livraison/data/carriers.json",
-      "sha256": "ebfa5344d21354b652868d2912b6b68605f68f03fd4340933bca8cde36eb630e"
+      "sha256": "78e18a27b3a8b6595e537a444c450c22164ba975aaa064e818d0a754b73ad527"
     },
     {
       "path": "packages/livraison/data/coverage.json",
-      "sha256": "f91d5ee83559e111529bdd108eca7a31f415245d89cf7840d0f27045e0828632"
+      "sha256": "bc111dd6e80d4bac78f8fd5335cae2933fb4396f77f16f9845873339cb853ec6"
     },
     {
       "path": "packages/livraison/data/metadata.json",
-      "sha256": "e2b087312a8e695e5a1e06896b5eb5b80fee74010b3fbcafa64313952583157f"
+      "sha256": "fe846a7b0b5f44ca83753f7ab106c2b3609c6c6702d61598c4475680ac9b44a6"
     },
     {
       "path": "packages/livraison/data/stopdesks.json",
-      "sha256": "81908e40080dd71d85d77cc380ee2d5dab29d37ba88d0859f5401488f465da28"
+      "sha256": "a3781af95ae7819bc94240e22ed564f4a5e847ef9f5cfae8026e63e893a9fea4"
     },
     {
       "path": "packages/mobilis/data/agences.json",
@@ -309,7 +309,7 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70516,
+  "total_records": 70552,
   "candidates": 17750,
   "reasons": {
     "approximate_coordinate": 16902,
@@ -1432,7 +1432,7 @@
     },
     {
       "dataset": "livraison",
-      "total_records": 411,
+      "total_records": 447,
       "candidates": 0,
       "reasons": {},
       "metadata_path": "packages/livraison/data/metadata.json",
@@ -1442,21 +1442,21 @@
         "title_fr": "Points relais de livraison d'Algérie",
         "title_ar": "نقاط استلام التوصيل في الجزائر",
         "title_en": "Algeria delivery stop-desks",
-        "record_count": 411,
-        "geocoded_count": 411,
+        "record_count": 447,
+        "geocoded_count": 447,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 411,
+          "exact": 447,
           "approximate": 0
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
-        "wilayas_covered": 61,
+        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 447 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+        "wilayas_covered": 62,
         "bbox": [
           -8.143583,
           22.784955,
-          9.585192,
+          9.578836,
           37.009471
         ],
         "sources": [
@@ -1465,57 +1465,57 @@
             "name": "Yalidine Express: nos-agences",
             "url": "https://yalidine-express.com.dz/nos-agences/",
             "license": "Data © Yalidine Express; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "guepex",
             "name": "Guepex: public agences feed",
             "url": "https://www.guepex.dz/public/data/agences.json",
             "license": "Data © Guepex; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "anderson",
             "name": "Anderson Logistics: agency directory",
             "url": "https://anderson-ecommerce.com/",
             "license": "Data © Anderson Logistics; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "noest",
             "name": "Noest Express: bureaux directory",
             "url": "https://noest-dz.com/",
             "license": "Data © Noest Express; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "maystro",
             "name": "Maystro Delivery: coverage page",
             "url": "https://maystro-delivery.com/Coverage.html",
             "license": "Data © Maystro Delivery; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           }
         ],
         "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
-        "updated": "2026-06-18",
+        "updated": "2026-10-25",
         "carriers": 16,
-        "stopdesks": 411,
+        "stopdesks": 447,
         "coverage": 9,
         "by_operator": {
-          "guepex": 70,
-          "yalidine": 93,
-          "easyandspeed": 14,
+          "guepex": 71,
+          "yalidine": 105,
+          "easyandspeed": 15,
           "wecanservices": 3,
-          "zimou-express": 8,
-          "speedmail": 2,
-          "anderson": 89,
+          "zimou-express": 10,
+          "speedmail": 1,
+          "anderson": 103,
           "maystro": 38,
-          "noest": 94
+          "noest": 101
         }
       }
     },
@@ -2477,7 +2477,7 @@
     {
       "dataset": "livraison",
       "entity": "stopdesks.json",
-      "total_records": 411,
+      "total_records": 447,
       "candidates": 0,
       "reasons": {},
       "path": "packages/livraison/data/stopdesks.json"

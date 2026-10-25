@@ -22,7 +22,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { splitName } from "../packages/livraison/scripts/fetch.mjs";
+import { splitName, parseYalidine, pinFor } from "../packages/livraison/scripts/fetch.mjs";
 
 test("the three rows that lost their brackets upstream on 2026-10-25", () => {
   // Stray closing bracket, no opening one.
@@ -81,4 +81,73 @@ test("an operator the registry does not know is never invented", () => {
     name: "Agence Béjaïa Centre Fastolivraison",
     operator: null,
   });
+});
+
+// The tags the live table actually carries, checked against it on 2026-10-25. All
+// five resolve to a carrier already in carriers.seed.json, so none needed a new
+// mapping invented for it.
+test("every operator tag shape the live table carries resolves", () => {
+  const cases = [
+    // Double-escaped entity: the page serves "&amp;amp;" for the "&" in the brand.
+    ["Agence freha [Easy&amp;amp;speed]", "Agence freha", "easyandspeed"],
+    ["Agence Béchar (Jet d&#039;eau) [EasyAndSpeed]", "Agence Béchar (Jet d'eau)", "easyandspeed"],
+    ["Agence les Pins Maritime [Yalitec]", "Agence les Pins Maritime", "yalitec"],
+    ["Agence de Canastel [SpeedMail]", "Agence de Canastel", "speedmail"],
+    ["Agence Sidi Achour [GHANZOH Express By Yalidine]", "Agence Sidi Achour", "yalidine"],
+    // Paren form, and the brand is spelled with a space while the id has a hyphen.
+    ["Agence BAB Ezzouar DOUZI (Zimou Express)", "Agence BAB Ezzouar DOUZI", "zimou-express"],
+    ["Agence de Sidi Abdellah [Zimou-Express]", "Agence de Sidi Abdellah", "zimou-express"],
+  ];
+  for (const [raw, name, operator] of cases) {
+    assert.deepEqual(splitName(raw), { name, operator }, raw);
+  }
+});
+
+// A Maps link in this table can carry a third number after the pair, which is the
+// zoom level and not part of the coordinate. Reading it as one would put the desk
+// in the sea.
+test("a maps link's trailing zoom is not read as a coordinate", () => {
+  const row = (id, name, commune, q) =>
+    `<tr><td>${id}</td><td>w</td><td>${commune}</td><td>${name}</td><td>addr</td>` +
+    `<td><a href="https://maps.google.com/?q=${q}">map</a></td></tr>`;
+  const parsed = parseYalidine(
+    row("80102", "Agence Béchar [EasyAndSpeed]", "Béchar", "31.6179505,-2.2146708,16") +
+      row("150401", "Agence freha [Easy&amp;amp;speed]", "Freha", "36.7560789,4.3159564,20") +
+      row("195505", "Agence Centre Ville Sétif 1014 Yalidine", "Sétif", "36.19528768347021,5.434247999999999"),
+  );
+  assert.deepEqual(
+    parsed.map((r) => [r.id, r.operator, r.lat, r.lng]),
+    [
+      ["80102", "easyandspeed", 31.6179505, -2.2146708],
+      ["150401", "easyandspeed", 36.7560789, 4.3159564],
+      ["195505", "yalidine", 36.19528768347021, 5.434247999999999],
+    ],
+  );
+});
+
+// A carded desk is re-geocoded from scratch on every run, so its coordinate hangs on
+// one HTTP request. These are the two ways that bit in #306.
+test("a published card whose link will not resolve keeps its coordinate", () => {
+  // anderson-16-sidi-abdellah and anderson-25-ali-mendjeli: both cards still
+  // published with a Maps link, both dropped by the 2026-10-25 run because the link
+  // did not resolve. Dropping a desk also retires its id, so this has to carry over.
+  const sidiAbdellah = { lat: 36.6805625, lng: 2.8560625 };
+  const aliMendjeli = { lat: 36.2664, lng: 6.6007 };
+  assert.deepEqual(pinFor(null, sidiAbdellah), { ...sidiAbdellah, verdict: "carried" });
+  assert.deepEqual(pinFor(null, aliMendjeli), { ...aliMendjeli, verdict: "carried" });
+  // Nothing committed and nothing resolved is a desk we cannot place at all.
+  assert.equal(pinFor(null, undefined), null);
+});
+
+// An operator pin is verified evidence however far it moves the desk (Owner rule,
+// 2026-10-25), so anderson-56-djanet takes the 9.4 km move its own card link states and
+// keeps its id and its `exact` precision. The guard against a link pointing somewhere
+// else is the wilaya cross-check in main(), which drops a carded desk whose pin lands
+// outside the wilaya its card declares.
+test("an operator's own pin moves the desk however far it moved", () => {
+  const djanet = { lat: 24.55814, lng: 9.48326 };
+  const movedPin = { lat: 24.47183, lng: 9.512349 };
+  assert.deepEqual(pinFor(movedPin, djanet), { ...movedPin, verdict: "fresh" });
+  // A desk with no committed coordinate takes whatever the link gives.
+  assert.deepEqual(pinFor(movedPin, undefined), { ...movedPin, verdict: "fresh" });
 });

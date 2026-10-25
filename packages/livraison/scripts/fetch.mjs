@@ -32,7 +32,8 @@
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { wcode } from "../../../scripts/lib/commune-resolver.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -131,7 +132,7 @@ async function getText(url) {
 }
 
 // --- parsers ---------------------------------------------------------------
-function parseYalidine(html) {
+export function parseYalidine(html) {
   const rows = html.match(/<tr[^>]*>[\s\S]*?<\/tr>/gi) || [];
   const out = [];
   for (const tr of rows) {
@@ -313,25 +314,58 @@ async function mapPool(items, n, fn) {
   return out;
 }
 
+/**
+ * Decide the coordinate a still-published card ships with.
+ *
+ * A carded desk is re-geocoded from scratch on every run by resolving the carrier's own
+ * Google Maps link, which makes its published coordinate hostage to one HTTP request:
+ * #306 found a run that deleted two live stop-desks and retired their ids because their
+ * links would not resolve that minute.
+ *
+ * A pin the operator itself publishes is treated as verified however far it moves the
+ * desk, so a relocation lands as the carrier states it. The guard against a link that
+ * points somewhere else entirely is the existing wilaya cross-check in main(), which
+ * drops a carded desk whose pin lands outside the wilaya its card declares.
+ *
+ * @param {{lat: number, lng: number}|null} pin  what the carrier's link resolved to
+ * @param {{lat: number, lng: number}|undefined} prev  the record this id already ships
+ * @returns {{lat: number, lng: number, verdict: "fresh"|"carried"}|null}
+ */
+export function pinFor(pin, prev) {
+  if (pin) return { lat: pin.lat, lng: pin.lng, verdict: "fresh" };
+  // The card is still published, so the desk exists; only its link failed. Keep the
+  // coordinate and precision it already shipped rather than dropping the desk and
+  // retiring its id.
+  return prev ? { lat: prev.lat, lng: prev.lng, verdict: "carried" } : null;
+}
+
 // Fetch a carded carrier's page, resolve every agency's Maps link to a pin, and return
-// merge-ready records. Cards with no resolvable link are dropped; ids are de-collided
-// deterministically so a desk keeps its suffix across runs.
-async function buildCarded(label, url, parseFn, operator, minDesks = 60) {
+// merge-ready records. A card whose link will not resolve keeps the coordinate it already
+// shipped (and is dropped only when it has none); ids are de-collided deterministically
+// so a desk keeps its suffix across runs.
+async function buildCarded(label, url, parseFn, operator, minDesks = 60, committed = new Map()) {
   console.log(`Fetching ${label} agencies…`);
   const cards = parseFn(await getText(url));
   console.log(`  ${cards.length} cards; resolving Maps links…`);
   const coords = await mapPool(cards, 6, (c) => resolveMapsLink(c.link));
   const recs = [];
-  let skipped = 0;
+  let skipped = 0, fresh = 0;
+  const carried = [];
   cards.forEach((c, i) => {
-    if (!coords[i]) { skipped++; return; }
-    recs.push({ id: c.id, operator, name: c.name, address: c.address, commune: c.commune, wilaya_num: null, cardWilaya: c.cardWilaya, lat: coords[i].lat, lng: coords[i].lng, src: operator });
+    const pin = pinFor(coords[i], committed.get(c.id));
+    if (!pin) { skipped++; return; }
+    if (pin.verdict === "carried") carried.push(c.id);
+    else fresh++;
+    recs.push({ id: c.id, operator, name: c.name, address: c.address, commune: c.commune, wilaya_num: null, cardWilaya: c.cardWilaya, lat: pin.lat, lng: pin.lng, src: operator });
   });
   recs.sort((a, b) => a.id.localeCompare(b.id) || a.lat - b.lat || a.lng - b.lng);
   const seen = new Map();
   for (const r of recs) { const n = (seen.get(r.id) || 0) + 1; seen.set(r.id, n); if (n > 1) r.id = `${r.id}-${n}`; }
-  console.log(`  ${recs.length} ${label} desks geocoded, ${skipped} skipped (no/unresolvable link)`);
-  if (recs.length < minDesks) throw new Error(`only ${recs.length} ${label} desks resolved: Maps resolution may be blocked`);
+  console.log(`  ${recs.length} ${label} desks geocoded, ${skipped} skipped (no resolvable link and nothing committed to carry)`);
+  if (carried.length) console.log(`  ${carried.length} ${label} desk(s) kept their committed coordinate, link did not resolve: ${carried.join(", ")}`);
+  // Counted on the freshly resolved desks only: carrying a coordinate over must never
+  // make a total Maps-resolution outage look like a healthy run.
+  if (fresh < minDesks) throw new Error(`only ${fresh} ${label} desks resolved fresh: Maps resolution may be blocked`);
   return recs;
 }
 
@@ -408,9 +442,14 @@ async function main() {
 
   // Anderson, Noest & Maystro: independent carriers with their own agency networks, geocoded
   // by resolving the Google Maps link on each agency card (the carrier's own published pin).
-  const anderson = await buildCarded("Anderson", ANDERSON_URL, parseAnderson, "anderson");
-  const noest = await buildCarded("Noest", NOEST_URL, parseNoest, "noest");
-  const maystro = await buildCarded("Maystro", MAYSTRO_URL, parseMaystro, "maystro", 30);
+  // What each carded desk already ships, so a card whose Maps link will not resolve
+  // keeps its coordinate instead of being dropped (see pinFor).
+  const committed = new Map(
+    readCommitted(DATA, "stopdesks.json").map((r) => [r.id, r]),
+  );
+  const anderson = await buildCarded("Anderson", ANDERSON_URL, parseAnderson, "anderson", 60, committed);
+  const noest = await buildCarded("Noest", NOEST_URL, parseNoest, "noest", 60, committed);
+  const maystro = await buildCarded("Maystro", MAYSTRO_URL, parseMaystro, "maystro", 30, committed);
 
   // Merge by stop-desk id (union). Prefer Yalidine (richer addresses); fill from Guepex.
   // Folded-out operators are dropped; Anderson ids are namespaced so they never collide.
@@ -482,7 +521,11 @@ async function main() {
     if (!covMap.has(s.operator)) covMap.set(s.operator, { wilayas: new Set(), communes: new Set(), n: 0 });
     const c = covMap.get(s.operator);
     c.n++;
-    c.wilayas.add(s.wilaya_code);
+    // Zero-padded, the same key stopdesks.json carries, because coverage.json exists to
+    // be joined to it. The v2 migration moved stop-desks to "01".."69" and 3fc4fd87
+    // converted the committed coverage.json by hand without fixing this line, so the
+    // next refresh was always going to put the integers back and break that join.
+    c.wilayas.add(wcode(s.wilaya_code));
     if (s.commune) c.communes.add(s.commune);
   }
   const nameById = new Map(seed.map((c) => [c.id, c.name]));
@@ -492,7 +535,7 @@ async function main() {
       carrier_name: nameById.get(operator),
       stopdesks: c.n,
       wilaya_count: c.wilayas.size,
-      wilayas: [...c.wilayas].sort((a, b) => a - b),
+      wilayas: [...c.wilayas].sort(),
       commune_count: c.communes.size,
     }))
     .sort((a, b) => b.stopdesks - a.stopdesks || a.operator.localeCompare(b.operator));

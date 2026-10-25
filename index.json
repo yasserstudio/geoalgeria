@@ -326,22 +326,22 @@
       "package": "@geoalgeria/livraison",
       "schema_version": "2.0.0",
       "title": "Algeria delivery stop-desks",
-      "record_count": 411,
-      "geocoded_count": 411,
+      "record_count": 447,
+      "geocoded_count": 447,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 411,
+        "exact": 447,
         "approximate": 0
       },
-      "wilayas_covered": 61,
+      "wilayas_covered": 62,
       "bbox": [
         -8.143583,
         22.784955,
-        9.585192,
+        9.578836,
         37.009471
       ],
       "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
-      "updated": "2026-06-18"
+      "updated": "2026-10-25"
     },
     {
       "package": "@geoalgeria/mobilis",

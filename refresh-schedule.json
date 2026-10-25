@@ -210,9 +210,9 @@
       },
       "sources_count": 5,
       "cadence": "quarterly",
-      "last_retrieved": "2026-06-18",
-      "next_due": "2026-09-18",
-      "note": "The bracket-less operator tag that aborted the 2026-10-25 pull is fixed (splitName, test/livraison-operator-tag.test.mjs), and the pull now completes at 445 stop-desks from 411. The refresh is still held back on a second defect found in its diff: a carded desk whose Google Maps link fails to resolve is dropped instead of keeping its last known coordinate, so the 2026-10-25 run would have deleted anderson-16-sidi-abdellah and anderson-25-ali-mendjeli and retired their ids although both cards are still published, on nothing but a link that would not resolve that minute. Carry a carded desk over on an unresolvable link first."
+      "last_retrieved": "2026-10-25",
+      "next_due": "2027-01-25",
+      "note": "Carded carriers (Anderson, Noest, Maystro) are re-geocoded on every run by resolving each agency's Google Maps link, so a desk whose link does not resolve keeps the coordinate and precision it already shipped rather than being dropped and having its id retired (pinFor). An operator pin counts as verified however far it moves a desk; the guard against a link pointing elsewhere is the wilaya cross-check, which drops a carded desk whose pin lands outside the wilaya its card declares. Known debt: a carded id is minted from the card title, so an upstream rename retires a live id and mints a new one, as anderson-16-sidi-abdellah did on 2026-10-25."
     },
     {
       "package": "@geoalgeria/mobilis",

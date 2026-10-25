@@ -67,7 +67,7 @@
       },
       "properties": {
         "id": "10102",
-        "name": "Agence El Hataba (Adrar)",
+        "name": "Agence Centre Ville (Adrar)",
         "wilaya_code": "01",
         "commune_code": null,
         "commune": "Adrar",
@@ -77,7 +77,7 @@
         "geo_method": "carrier_relay",
         "source": "yalidine",
         "operator": "easyandspeed",
-        "address": "Rue Allal, Section 22, Groupe de propriété 262, porte n°01, Commune et Wilaya d’Adrar",
+        "address": "Rue Allal, Section 22, Groupe de propriété 262, Porte N°01, Commune et Wilaya d’Adrar",
         "sources": [
           "yalidine"
         ]
@@ -150,7 +150,7 @@
       },
       "properties": {
         "id": "10401",
-        "name": "Agence Reggane",
+        "name": "Agence de Reggane",
         "wilaya_code": "01",
         "commune_code": null,
         "commune": "Reggane",
@@ -455,7 +455,7 @@
       },
       "properties": {
         "id": "130104",
-        "name": "Agence Tlemcen Amandiers",
+        "name": "Agence Tlemcen El-Kiffane",
         "wilaya_code": "13",
         "commune_code": null,
         "commune": "Tlemcen",
@@ -566,7 +566,7 @@
       },
       "properties": {
         "id": "143901",
-        "name": "Agence de Tiaret",
+        "name": "Agence de Tiaret Cité police Amar",
         "wilaya_code": "14",
         "commune_code": null,
         "commune": "Tiaret",
@@ -635,6 +635,60 @@
         "address": "Nouvelle Ville, Tizi Ouzou",
         "sources": [
           "guepex",
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.3159564,
+          36.7560789
+        ]
+      },
+      "properties": {
+        "id": "150401",
+        "name": "Agence freha",
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": "Freha",
+        "lat": 36.7560789,
+        "lng": 4.3159564,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "easyandspeed",
+        "address": "Freha centre ville tizi ouzou",
+        "sources": [
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.8272752157755745,
+          36.53541670227493
+        ]
+      },
+      "properties": {
+        "id": "151001",
+        "name": "Agence de Draâ El Mizane",
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": "Draâ El Mizan",
+        "lat": 36.53541670227493,
+        "lng": 3.8272752157755745,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "Rue Abane Ramdane",
+        "sources": [
           "yalidine"
         ]
       }
@@ -895,26 +949,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.1575205669471558,
-          36.71179225866924
+          3.1575034000000004,
+          36.71195511661799
         ]
       },
       "properties": {
         "id": "161503",
-        "name": "Agence El Harrach (Beaulieu)",
+        "name": "Agence El Harrach-Beaulieu",
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Oued Smar",
-        "lat": 36.71179225866924,
-        "lng": 3.1575205669471558,
+        "lat": 36.71195511661799,
+        "lng": 3.1575034000000004,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "guepex",
         "operator": "wecanservices",
-        "address": "128 Rue Boubaghla Lot: 08 GPE MTE N°229 Lot N°02 RDC, Beaulieu, Oued Smar, Alger",
+        "address": "128 RUE BOUBAGHLA Lot 08 GPE MTE N°229 Lot N°02 RDC (BEAULIEU - OUED SEMAR)",
         "sources": [
-          "guepex",
-          "yalidine"
+          "guepex"
         ]
       }
     },
@@ -929,7 +982,7 @@
       },
       "properties": {
         "id": "161601",
-        "name": "Agence de Bachdjerrah",
+        "name": "Agence Bachdjerrah",
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Bachdjerrah",
@@ -939,10 +992,9 @@
         "geo_method": "carrier_relay",
         "source": "guepex",
         "operator": "wecanservices",
-        "address": "Bachdjerrah 3 Derrière l’ancien APC, à Environ 80m du Métro, Bachdjerrah, Alger",
+        "address": "Bachdjerrah 3 derrière l’ancien APC, à environ 80 mètres du métro",
         "sources": [
-          "guepex",
-          "yalidine"
+          "guepex"
         ]
       }
     },
@@ -979,8 +1031,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.0908529119026102,
-          36.72543355719765
+          3.0907546386950884,
+          36.72532957012446
         ]
       },
       "properties": {
@@ -989,8 +1041,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Kouba",
-        "lat": 36.72543355719765,
-        "lng": 3.0908529119026102,
+        "lat": 36.72532957012446,
+        "lng": 3.0907546386950884,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "yalidine",
@@ -1040,7 +1092,7 @@
       },
       "properties": {
         "id": "162102",
-        "name": "Agence Bab Ezzouar",
+        "name": "Agence Bab Ezzouar 1EPLF",
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Bab Ezzouar",
@@ -1051,6 +1103,60 @@
         "source": "yalidine",
         "operator": "yalidine",
         "address": "EPLF - Bab Ezzouar, Alger",
+        "sources": [
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1799315,
+          36.729834301221054
+        ]
+      },
+      "properties": {
+        "id": "162104",
+        "name": "Agence BAB Ezzouar DOUZI",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": "Bab Ezzouar",
+        "lat": 36.729834301221054,
+        "lng": 3.1799315,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "zimou-express",
+        "address": "Agence Zimou Express, 58 Cité douzi 2 Bab Ezzouar, Alger",
+        "sources": [
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1751270423282465,
+          36.73509769638187
+        ]
+      },
+      "properties": {
+        "id": "162903",
+        "name": "Agence Mall Mohammadia - 1er étage",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": "Mohammadia",
+        "lat": 36.73509769638187,
+        "lng": 3.1751270423282465,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "zimou-express",
+        "address": "Agence Zimou Express, Centre commercial - Mohammadia mall, 1 er étage",
         "sources": [
           "yalidine"
         ]
@@ -1360,6 +1466,33 @@
         "address": "10, Rue Aïn Benian Partie: 192 C2, Cheraga, Alger",
         "sources": [
           "guepex",
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.94877563875735,
+          36.75174927226098
+        ]
+      },
+      "properties": {
+        "id": "165003",
+        "name": "Agence De Amara",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": "Cheraga",
+        "lat": 36.75174927226098,
+        "lng": 2.94877563875735,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "guepex",
+        "address": "Zone d'Activités El Amara, Route de Ouled Fayet, Groupe N° 502, section 4, Commune Cheraga - Alger 16014",
+        "sources": [
           "yalidine"
         ]
       }
@@ -1848,7 +1981,7 @@
       },
       "properties": {
         "id": "195504",
-        "name": "Agence Centre Ville",
+        "name": "Agence Centre Ville La Gare",
         "wilaya_code": "19",
         "commune_code": null,
         "commune": "Sétif",
@@ -1875,7 +2008,7 @@
       },
       "properties": {
         "id": "195505",
-        "name": "Agence Sétif (1014 Logement)",
+        "name": "Agence Centre Ville Sétif 1014",
         "wilaya_code": "19",
         "commune_code": null,
         "commune": "Sétif",
@@ -2422,6 +2555,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          7.739185542328247,
+          36.80298718116264
+        ]
+      },
+      "properties": {
+        "id": "230301",
+        "name": "Agence El Hadjar",
+        "wilaya_code": "23",
+        "commune_code": null,
+        "commune": "El Hadjar",
+        "lat": 36.80298718116264,
+        "lng": 7.739185542328247,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "Rue Larbi Ben M'hidi",
+        "sources": [
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           7.750210399999999,
           36.8559068
         ]
@@ -2708,7 +2868,7 @@
       },
       "properties": {
         "id": "250605",
-        "name": "Agence nouvelle ville Ali mendjli Square",
+        "name": "Agence Nouvelle Ville",
         "wilaya_code": "25",
         "commune_code": null,
         "commune": "El Khroub",
@@ -2720,8 +2880,7 @@
         "operator": "guepex",
         "address": "650 lpa عمارة 24 زاوية محل 145",
         "sources": [
-          "guepex",
-          "yalidine"
+          "guepex"
         ]
       }
     },
@@ -2775,6 +2934,33 @@
         "source": "yalidine",
         "operator": "guepex",
         "address": "Lotissement Ali Ben Haoua Cité Mohammedi , Berrouaghia, Médéa",
+        "sources": [
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.760217769544831,
+          35.87356625993835
+        ]
+      },
+      "properties": {
+        "id": "263101",
+        "name": "Agence Ksar Boukhari",
+        "wilaya_code": "67",
+        "commune_code": null,
+        "commune": "Ksar Boukhari",
+        "lat": 35.87356625993835,
+        "lng": 2.760217769544831,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "Rue Zibouche Zebra Ksar El Boukhari",
         "sources": [
           "yalidine"
         ]
@@ -3056,6 +3242,60 @@
         "address": "zone 08 a coté de la poste Emir Abdelkader",
         "sources": [
           "guepex",
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.19853500360860019,
+          35.530660510285
+        ]
+      },
+      "properties": {
+        "id": "294301",
+        "name": "Agence Sig",
+        "wilaya_code": "29",
+        "commune_code": null,
+        "commune": "Sig",
+        "lat": 35.530660510285,
+        "lng": -0.19853500360860019,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "RUE ZIROUT YOUCEF",
+        "sources": [
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.326132813323279,
+          35.415668743672825
+        ]
+      },
+      "properties": {
+        "id": "294401",
+        "name": "Agence de Tighennif",
+        "wilaya_code": "29",
+        "commune_code": null,
+        "commune": "Tighennif",
+        "lat": 35.415668743672825,
+        "lng": 0.326132813323279,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "RUE BAHLOUL BRAHIM",
+        "sources": [
           "yalidine"
         ]
       }
@@ -3376,7 +3616,7 @@
       },
       "properties": {
         "id": "310303",
-        "name": "Agence ILAF Belkaïd (Oran)",
+        "name": "Agence Belkaïd (Oran)",
         "wilaya_code": "31",
         "commune_code": null,
         "commune": "Bir El Djir",
@@ -3454,8 +3694,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.0147081430506253,
-          33.68182465412115
+          1.0309862252617261,
+          33.67639678710588
         ]
       },
       "properties": {
@@ -3464,8 +3704,8 @@
         "wilaya_code": "32",
         "commune_code": null,
         "commune": "El Bayadh",
-        "lat": 33.68182465412115,
-        "lng": 1.0147081430506253,
+        "lat": 33.67639678710588,
+        "lng": 1.0309862252617261,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "guepex",
@@ -3705,13 +3945,40 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.3693910000000002,
+          36.6821710205823
+        ]
+      },
+      "properties": {
+        "id": "352001",
+        "name": "Agence Ouled-Moussa",
+        "wilaya_code": "35",
+        "commune_code": null,
+        "commune": "Ouled Moussa",
+        "lat": 36.6821710205823,
+        "lng": 3.3693910000000002,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "Quartier BAROUDI, section 12 groupe de propriété N°137 commune de Ouled Moussa wilaya de Boumerdes",
+        "sources": [
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.2586671865098484,
           36.67993548309194
         ]
       },
       "properties": {
         "id": "353601",
-        "name": "Agence Hammedi",
+        "name": "agence Hammedi",
         "wilaya_code": "35",
         "commune_code": null,
         "commune": "Hammedi",
@@ -3721,10 +3988,9 @@
         "geo_method": "carrier_relay",
         "source": "guepex",
         "operator": "wecanservices",
-        "address": "Hammedi Centre Ville, Boumerdès",
+        "address": "hammedi centre ville",
         "sources": [
-          "guepex",
-          "yalidine"
+          "guepex"
         ]
       }
     },
@@ -3817,6 +4083,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          1.809867828830111,
+          35.60941808703387
+        ]
+      },
+      "properties": {
+        "id": "380101",
+        "name": "Agence de Ammari",
+        "wilaya_code": "38",
+        "commune_code": null,
+        "commune": "Ammari",
+        "lat": 35.60941808703387,
+        "lng": 1.809867828830111,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "Ammari,Tissemsilt",
+        "sources": [
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           1.8021440576717562,
           35.608883217279704
         ]
@@ -3845,8 +4138,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.853196485244896,
-          33.35200172931514
+          6.847476771164093,
+          33.352773785436234
         ]
       },
       "properties": {
@@ -3855,8 +4148,8 @@
         "wilaya_code": "39",
         "commune_code": null,
         "commune": "El Oued",
-        "lat": 33.35200172931514,
-        "lng": 6.853196485244896,
+        "lat": 33.352773785436234,
+        "lng": 6.847476771164093,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "guepex",
@@ -3929,6 +4222,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          7.3925459999999985,
+          35.79833870195303
+        ]
+      },
+      "properties": {
+        "id": "40201",
+        "name": "Agence Aïn Beïda",
+        "wilaya_code": "04",
+        "commune_code": null,
+        "commune": "Aïn Beïda",
+        "lat": 35.79833870195303,
+        "lng": 7.3925459999999985,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "Cité villigence lot 5 N°48 partie A",
+        "sources": [
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.568678708926481,
           36.04672082846558
         ]
@@ -3976,6 +4296,33 @@
         "address": "Cité El Louz Lot 64 (les Amandiers), Souk Ahras",
         "sources": [
           "guepex",
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.533729542328246,
+          36.132840669669655
+        ]
+      },
+      "properties": {
+        "id": "410201",
+        "name": "Agence Sedrata",
+        "wilaya_code": "41",
+        "commune_code": null,
+        "commune": "Sedrata",
+        "lat": 36.132840669669655,
+        "lng": 7.533729542328246,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "rue 20 aout 1956",
+        "sources": [
           "yalidine"
         ]
       }
@@ -4290,6 +4637,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          1.6777934999999997,
+          36.22582775488794
+        ]
+      },
+      "properties": {
+        "id": "442101",
+        "name": "Agence El Attaf",
+        "wilaya_code": "44",
+        "commune_code": null,
+        "commune": "El Attaf",
+        "lat": 36.22582775488794,
+        "lng": 1.6777934999999997,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "Rue Mohamed Khemisti, Local A02 et A03, El Attaf , Aindefla",
+        "sources": [
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.202986246810656,
           36.26046455568064
         ]
@@ -4402,40 +4776,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.705232,
-          32.47228618234048
-        ]
-      },
-      "properties": {
-        "id": "470201",
-        "name": "Agence Bounoura",
-        "wilaya_code": "47",
-        "commune_code": null,
-        "commune": "Bounoura",
-        "lat": 32.47228618234048,
-        "lng": 3.705232,
-        "geo_precision": "exact",
-        "geo_method": "carrier_relay",
-        "source": "yalidine",
-        "operator": "speedmail",
-        "address": "Cité Bahman local 07 Route d’el Atteuf, Bounoura, Ghardaïa",
-        "sources": [
-          "yalidine"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.680928631621788,
           32.51422379314845
         ]
       },
       "properties": {
         "id": "470701",
-        "name": "Agence de Thenia (Ghardaïa)",
+        "name": "Agence de Ghardaia Thenia",
         "wilaya_code": "47",
         "commune_code": null,
         "commune": "Ghardaïa",
@@ -4463,7 +4810,7 @@
       },
       "properties": {
         "id": "470702",
-        "name": "Agence de Bouhraoua",
+        "name": "Agence de Ghardaia Bouhraoua",
         "wilaya_code": "47",
         "commune_code": null,
         "commune": "Ghardaïa",
@@ -4476,6 +4823,33 @@
         "address": "Bouhraoua (En face centre d'exposition)",
         "sources": [
           "guepex",
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.683576266966818,
+          32.49465092463669
+        ]
+      },
+      "properties": {
+        "id": "470704",
+        "name": "Agence de 1Hadj-Messaoud",
+        "wilaya_code": "47",
+        "commune_code": null,
+        "commune": "Ghardaïa",
+        "lat": 32.49465092463669,
+        "lng": 3.683576266966818,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "DIST019IL459 cité hadj Messaoud Ghardaïa",
+        "sources": [
           "yalidine"
         ]
       }
@@ -4966,7 +5340,7 @@
       },
       "properties": {
         "id": "70402",
-        "name": "Agence de Biskra (Zone Ouest)",
+        "name": "Agence de Biskra Ville",
         "wilaya_code": "07",
         "commune_code": null,
         "commune": "Biskra",
@@ -5071,23 +5445,23 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.22078959025644,
-          31.62948007960236
+          -2.2146708,
+          31.6179505
         ]
       },
       "properties": {
         "id": "80102",
-        "name": "Agence Béchar (Cité Es Salam)",
+        "name": "Agence Béchar (Jet d'eau)",
         "wilaya_code": "08",
         "commune_code": null,
         "commune": "Béchar",
-        "lat": 31.62948007960236,
-        "lng": -2.22078959025644,
+        "lat": 31.6179505,
+        "lng": -2.2146708,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "guepex",
         "operator": "easyandspeed",
-        "address": "Quartier Essalam, Section 21, Groupe foncier n° 524, Béchar",
+        "address": "Centre ville jet d'eau , Béchar",
         "sources": [
           "guepex",
           "yalidine"
@@ -5294,8 +5668,35 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.2851299,
-          27.8746366
+          3.1464722,
+          36.56661325425576
+        ]
+      },
+      "properties": {
+        "id": "92102",
+        "name": "Agence de Larbaa",
+        "wilaya_code": "09",
+        "commune_code": null,
+        "commune": "Larbaa",
+        "lat": 36.56661325425576,
+        "lng": 3.1464722,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "yalidine",
+        "operator": "yalidine",
+        "address": "Stade Communal",
+        "sources": [
+          "yalidine"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2851875,
+          27.8746875
         ]
       },
       "properties": {
@@ -5304,8 +5705,8 @@
         "wilaya_code": "01",
         "commune_code": null,
         "commune": "Adrar",
-        "lat": 27.8746366,
-        "lng": -0.2851299,
+        "lat": 27.8746875,
+        "lng": -0.2851875,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -5348,8 +5749,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.5938759,
-          36.5699844
+          3.5934227,
+          36.5700956
         ]
       },
       "properties": {
@@ -5358,8 +5759,8 @@
         "wilaya_code": "10",
         "commune_code": null,
         "commune": "Lakhdaria",
-        "lat": 36.5699844,
-        "lng": 3.5938759,
+        "lat": 36.5700956,
+        "lng": 3.5934227,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -5402,8 +5803,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.09311,
-          35.411727
+          8.0932646,
+          35.4121788
         ]
       },
       "properties": {
@@ -5412,8 +5813,8 @@
         "wilaya_code": "12",
         "commune_code": null,
         "commune": "Tebessa",
-        "lat": 35.411727,
-        "lng": 8.09311,
+        "lat": 35.4121788,
+        "lng": 8.0932646,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -5456,8 +5857,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.3347242,
-          34.8896016
+          -1.3347222,
+          34.8896111
         ]
       },
       "properties": {
@@ -5466,8 +5867,8 @@
         "wilaya_code": "13",
         "commune_code": null,
         "commune": "Tlemcen",
-        "lat": 34.8896016,
-        "lng": -1.3347242,
+        "lat": 34.8896111,
+        "lng": -1.3347222,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -5510,8 +5911,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.3600273,
-          36.7465105
+          4.3599999,
+          36.7465247
         ]
       },
       "properties": {
@@ -5520,8 +5921,8 @@
         "wilaya_code": "15",
         "commune_code": null,
         "commune": "Azazga",
-        "lat": 36.7465105,
-        "lng": 4.3600273,
+        "lat": 36.7465247,
+        "lng": 4.3599999,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -5537,8 +5938,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.9446262,
-          36.5456705
+          3.9446084,
+          36.5455579
         ]
       },
       "properties": {
@@ -5547,13 +5948,40 @@
         "wilaya_code": "15",
         "commune_code": null,
         "commune": "Boghni",
-        "lat": 36.5456705,
-        "lng": 3.9446262,
+        "lat": 36.5455579,
+        "lng": 3.9446084,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
         "address": "RN30 à proximité de la pompe a essence NAFTAL. Sortie ouest de boghni.",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.9614040999999998,
+          36.7319196
+        ]
+      },
+      "properties": {
+        "id": "anderson-15-draa-ben-khedda",
+        "name": "Anderson Tizi Ouzou (Draa Ben Khedda)",
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": "Draa Ben Khedda",
+        "lat": 36.7319196,
+        "lng": 3.9614040999999998,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "Cooperatif ouled chouhada , à coté de la salle de sport Eric GYM, derriere la pharmacie de la DNC.",
         "sources": [
           "anderson"
         ]
@@ -5645,8 +6073,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.1862957,
-          36.7172117
+          3.186312,
+          36.7172033
         ]
       },
       "properties": {
@@ -5655,13 +6083,40 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Bab Ezzouar",
-        "lat": 36.7172117,
-        "lng": 3.1862957,
+        "lat": 36.7172033,
+        "lng": 3.186312,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
         "address": "حي 2068 مسكن عمارة 35 محل رقم 01 أ بلدية باب الزوار",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.002525,
+          36.6458982
+        ]
+      },
+      "properties": {
+        "id": "anderson-16-birtouta",
+        "name": "Anderson Alger (Birtouta)",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": "Birtouta",
+        "lat": 36.6458982,
+        "lng": 3.002525,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "التجزئة رقم 34 رقم 01، بلدية بئر توتة",
         "sources": [
           "anderson"
         ]
@@ -5699,8 +6154,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.955954,
-          36.754208
+          2.9559375,
+          36.7541875
         ]
       },
       "properties": {
@@ -5709,13 +6164,13 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Cheraga",
-        "lat": 36.754208,
-        "lng": 2.955954,
+        "lat": 36.7541875,
+        "lng": 2.9559375,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
-        "address": "Cartier issat idir numero 03 cheraga",
+        "address": "تشكل مجموعة ملكية رقم 579 قسم 01 اسطاوالي الصغرى الشراقة",
         "sources": [
           "anderson"
         ]
@@ -5780,8 +6235,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.1459888,
-          36.66368
+          3.1459375,
+          36.6636875
         ]
       },
       "properties": {
@@ -5790,8 +6245,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Eucalyptus",
-        "lat": 36.66368,
-        "lng": 3.1459888,
+        "lat": 36.6636875,
+        "lng": 3.1459375,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -5888,8 +6343,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.287285,
-          36.742523
+          3.287213,
+          36.7424454
         ]
       },
       "properties": {
@@ -5898,8 +6353,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Rouiba",
-        "lat": 36.742523,
-        "lng": 3.287285,
+        "lat": 36.7424454,
+        "lng": 3.287213,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -5942,23 +6397,23 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.856332,
-          36.680569
+          2.8560625,
+          36.6805625
         ]
       },
       "properties": {
-        "id": "anderson-16-sidi-abdellah",
-        "name": "Anderson Alger (Sidi Abdellah)",
+        "id": "anderson-16-sidi-abdellah-zeralda",
+        "name": "Anderson Alger (Sidi Abdellah - Zeralda)",
         "wilaya_code": "16",
         "commune_code": null,
-        "commune": "Sidi Abdellah",
-        "lat": 36.680569,
-        "lng": 2.856332,
+        "commune": "Sidi Abdellah - Zeralda",
+        "lat": 36.6805625,
+        "lng": 2.8560625,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
-        "address": "Cité 1137 logts sidi abdellah Q19 site 3",
+        "address": "Cité 1137 logts sidi abdellah Q19 site 3, Zeralda",
         "sources": [
           "anderson"
         ]
@@ -6104,8 +6559,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.6684722,
-          36.1621667
+          5.6709526,
+          36.1637311
         ]
       },
       "properties": {
@@ -6114,8 +6569,8 @@
         "wilaya_code": "19",
         "commune_code": null,
         "commune": "El Eulma",
-        "lat": 36.1621667,
-        "lng": 5.6684722,
+        "lat": 36.1637311,
+        "lng": 5.6709526,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -6158,8 +6613,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.3368643,
-          36.1694931
+          1.3368529,
+          36.1695513
         ]
       },
       "properties": {
@@ -6168,8 +6623,8 @@
         "wilaya_code": "02",
         "commune_code": null,
         "commune": "Chlef",
-        "lat": 36.1694931,
-        "lng": 1.3368643,
+        "lat": 36.1695513,
+        "lng": 1.3368529,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -6185,8 +6640,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.3036347,
-          36.510426
+          1.3031054,
+          36.5102828
         ]
       },
       "properties": {
@@ -6195,13 +6650,40 @@
         "wilaya_code": "02",
         "commune_code": null,
         "commune": "Tenes",
-        "lat": 36.510426,
-        "lng": 1.3036347,
+        "lat": 36.5102828,
+        "lng": 1.3031054,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
         "address": "تنس / مشروع 47 مسكن شارع بوفاديس.",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.5660001,
+          37.008807999999995
+        ]
+      },
+      "properties": {
+        "id": "anderson-21-el-collo",
+        "name": "Anderson Skikda (El Collo)",
+        "wilaya_code": "21",
+        "commune_code": null,
+        "commune": "El Collo",
+        "lat": 37.008807999999995,
+        "lng": 6.5660001,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "نهج رويبح الطاهر طريق المحكمة قرب إدارة سونلغاز",
         "sources": [
           "anderson"
         ]
@@ -6239,8 +6721,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.638027,
-          35.205652
+          -0.6367163,
+          35.2055804
         ]
       },
       "properties": {
@@ -6249,8 +6731,8 @@
         "wilaya_code": "22",
         "commune_code": null,
         "commune": "Sidi Bel Abbes",
-        "lat": 35.205652,
-        "lng": -0.638027,
+        "lat": 35.2055804,
+        "lng": -0.6367163,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -6320,6 +6802,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          7.762804999999999,
+          36.916347
+        ]
+      },
+      "properties": {
+        "id": "anderson-23-annaba-02",
+        "name": "Anderson Annaba 02",
+        "wilaya_code": "23",
+        "commune_code": null,
+        "commune": "Annaba 02",
+        "lat": 36.916347,
+        "lng": 7.762804999999999,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "حي سانكلو شواطئ قسم 54 ملكية رقم 03 طابق أرضي بلدية عنابة",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           7.7495921,
           36.8548242
         ]
@@ -6347,8 +6856,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.4378448,
-          36.4644714
+          7.4373415,
+          36.4638539
         ]
       },
       "properties": {
@@ -6357,13 +6866,13 @@
         "wilaya_code": "24",
         "commune_code": null,
         "commune": "Guelma",
-        "lat": 36.4644714,
-        "lng": 7.4378448,
+        "lat": 36.4638539,
+        "lng": 7.4373415,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
-        "address": "شارع حساني الصالح رقم ب90 قالمة",
+        "address": "شارع حساني محمد الصالح رقم 68 قالمة",
         "sources": [
           "anderson"
         ]
@@ -6390,7 +6899,7 @@
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
-        "address": "NOUVELLE VILLE UV 05",
+        "address": "Uv 07 cosider devant la nouvelle direction aadl",
         "sources": [
           "anderson"
         ]
@@ -6401,8 +6910,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.631505,
-          36.357738
+          6.6314218,
+          36.3576572
         ]
       },
       "properties": {
@@ -6411,8 +6920,8 @@
         "wilaya_code": "25",
         "commune_code": null,
         "commune": "Sidi Mebrouk",
-        "lat": 36.357738,
-        "lng": 6.631505,
+        "lat": 36.3576572,
+        "lng": 6.6314218,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -6428,8 +6937,35 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.7931331,
-          36.2656287
+          2.74925,
+          35.8908333
+        ]
+      },
+      "properties": {
+        "id": "anderson-26-ksar-el-boukhari",
+        "name": "Anderson Medea (Ksar El Boukhari)",
+        "wilaya_code": "67",
+        "commune_code": null,
+        "commune": "Ksar El Boukhari",
+        "lat": 35.8908333,
+        "lng": 2.74925,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "شارع محمد خميستيي - قصر البخاري",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7931281,
+          36.2656398
         ]
       },
       "properties": {
@@ -6438,8 +6974,8 @@
         "wilaya_code": "26",
         "commune_code": null,
         "commune": "Medea",
-        "lat": 36.2656287,
-        "lng": 2.7931331,
+        "lat": 36.2656398,
+        "lng": 2.7931281,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -6482,8 +7018,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.1711009,
-          35.205233299999996
+          4.171097,
+          35.2052098
         ]
       },
       "properties": {
@@ -6492,8 +7028,8 @@
         "wilaya_code": "68",
         "commune_code": null,
         "commune": "Bou Saada",
-        "lat": 35.205233299999996,
-        "lng": 4.1711009,
+        "lat": 35.2052098,
+        "lng": 4.171097,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -6509,8 +7045,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.5290072,
-          35.7181043
+          4.5289913,
+          35.7181856
         ]
       },
       "properties": {
@@ -6519,8 +7055,8 @@
         "wilaya_code": "28",
         "commune_code": null,
         "commune": "Msila",
-        "lat": 35.7181043,
-        "lng": 4.5290072,
+        "lat": 35.7181856,
+        "lng": 4.5289913,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -6617,8 +7153,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.7699921,
-          35.745968
+          -0.7701775,
+          35.7459403
         ]
       },
       "properties": {
@@ -6627,13 +7163,67 @@
         "wilaya_code": "31",
         "commune_code": null,
         "commune": "Ain Turk",
-        "lat": 35.745968,
-        "lng": -0.7699921,
+        "lat": 35.7459403,
+        "lng": -0.7701775,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
         "address": "شارع فلسطين مقابل الضمان الاجتماعي CNAS عين الترك",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3130718,
+          35.8574312
+        ]
+      },
+      "properties": {
+        "id": "anderson-31-arzew",
+        "name": "Anderson Oran (Arzew)",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": "Arzew",
+        "lat": 35.8574312,
+        "lng": -0.3130718,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "حي حدائق واجهة طريق 1 رقم 60 وشارع 1 بلدية ارزيو",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.570446,
+          35.698036
+        ]
+      },
+      "properties": {
+        "id": "anderson-31-bir-el-djir-hai-sabah",
+        "name": "Anderson Oran (Bir El Djir Hai Sabah)",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": "Bir El Djir Hai Sabah",
+        "lat": 35.698036,
+        "lng": -0.570446,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "كتبنا في وهران حي الصباح على الطريق الكبيرة تع الطرامواي (100م فوق المحطة على اليسار) بجانب محلات \"افرشة عمار \" ،\"Boutique Pour L \" و مطعم \"LeCoq\".",
         "sources": [
           "anderson"
         ]
@@ -6671,8 +7261,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.6417061,
-          35.7033712
+          -0.6416843,
+          35.7033535
         ]
       },
       "properties": {
@@ -6681,8 +7271,8 @@
         "wilaya_code": "31",
         "commune_code": null,
         "commune": "Khemisti",
-        "lat": 35.7033712,
-        "lng": -0.6417061,
+        "lat": 35.7033535,
+        "lng": -0.6416843,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -6725,8 +7315,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.0147051999999999,
-          33.6824588
+          1.0147648,
+          33.6824514
         ]
       },
       "properties": {
@@ -6735,8 +7325,8 @@
         "wilaya_code": "32",
         "commune_code": null,
         "commune": "El Bayadh",
-        "lat": 33.6824588,
-        "lng": 1.0147051999999999,
+        "lat": 33.6824514,
+        "lng": 1.0147648,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -6752,8 +7342,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.4750368,
-          26.5005608
+          8.4856792,
+          26.503375799999997
         ]
       },
       "properties": {
@@ -6762,40 +7352,13 @@
         "wilaya_code": "33",
         "commune_code": null,
         "commune": "Illizi",
-        "lat": 26.5005608,
-        "lng": 8.4750368,
+        "lat": 26.503375799999997,
+        "lng": 8.4856792,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
-        "address": "حي الوقواق بجانب كانكايري معطالله، شارع الأقواس",
-        "sources": [
-          "anderson"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.5851922,
-          28.0502676
-        ]
-      },
-      "properties": {
-        "id": "anderson-33-in-amenas",
-        "name": "Anderson Illizi (In Amenas)",
-        "wilaya_code": "33",
-        "commune_code": null,
-        "commune": "In Amenas",
-        "lat": 28.0502676,
-        "lng": 9.5851922,
-        "geo_precision": "exact",
-        "geo_method": "carrier_relay",
-        "source": "anderson",
-        "operator": "anderson",
-        "address": "بجانب مسجد السنة",
+        "address": "ايليزي حي السلام",
         "sources": [
           "anderson"
         ]
@@ -6860,6 +7423,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.4105206,
+          36.7235872
+        ]
+      },
+      "properties": {
+        "id": "anderson-35-boudouaou",
+        "name": "Anderson Boumerdes (Boudouaou)",
+        "wilaya_code": "35",
+        "commune_code": null,
+        "commune": "Boudouaou",
+        "lat": 36.7235872,
+        "lng": 3.4105206,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "شارع الاخوة صحراوي - بلدية بودواو (مقابل متوسطة دحو)",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.8994375,
           36.9164375
         ]
@@ -6914,6 +7504,60 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          1.6151406,
+          35.8527125
+        ]
+      },
+      "properties": {
+        "id": "anderson-38-bordj-bounaama",
+        "name": "Anderson Tissemsilt (Bordj Bounaama)",
+        "wilaya_code": "38",
+        "commune_code": null,
+        "commune": "Bordj Bounaama",
+        "lat": 35.8527125,
+        "lng": 1.6151406,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "برج بونعامة خلف ثانوية ساردو عبد القادر",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7962656,
+          33.4874375
+        ]
+      },
+      "properties": {
+        "id": "anderson-39-guemar",
+        "name": "Anderson Oued Souf (Guemar)",
+        "wilaya_code": "39",
+        "commune_code": null,
+        "commune": "Guemar",
+        "lat": 33.4874375,
+        "lng": 6.7962656,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "حي 19 مارس 1962 الشارع المقابل بريد الجزائر بجوار دار الولادة",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.8543181,
           33.3526934
         ]
@@ -6941,8 +7585,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.5673333,
-          36.0446389
+          6.5700634,
+          36.0477462
         ]
       },
       "properties": {
@@ -6951,13 +7595,13 @@
         "wilaya_code": "04",
         "commune_code": null,
         "commune": "Ain M'Lila",
-        "lat": 36.0446389,
-        "lng": 6.5673333,
+        "lat": 36.0477462,
+        "lng": 6.5700634,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
-        "address": "Quartier El Hana, route Massas, à côté de l’agence Parcours Voyages.",
+        "address": "حي الهناء بجانب ثانوية مساس محمد الابراهيمي",
         "sources": [
           "anderson"
         ]
@@ -6968,8 +7612,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.1057378,
-          35.8729657
+          7.1057412,
+          35.8728032
         ]
       },
       "properties": {
@@ -6978,8 +7622,8 @@
         "wilaya_code": "04",
         "commune_code": null,
         "commune": "Oum El Bouaghi",
-        "lat": 35.8729657,
-        "lng": 7.1057378,
+        "lat": 35.8728032,
+        "lng": 7.1057412,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -7049,6 +7693,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.18525,
+          36.603009899999996
+        ]
+      },
+      "properties": {
+        "id": "anderson-42-cherchell",
+        "name": "Anderson Tipaza (Cherchell)",
+        "wilaya_code": "42",
+        "commune_code": null,
+        "commune": "Cherchell",
+        "lat": 36.603009899999996,
+        "lng": 2.18525,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "شارع رويزي محمد الطابق الأرضي شرشال.",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.4103836,
           36.5146852
         ]
@@ -7103,8 +7774,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.4395768,
-          36.5875036
+          2.4396497,
+          36.5873851
         ]
       },
       "properties": {
@@ -7113,8 +7784,8 @@
         "wilaya_code": "42",
         "commune_code": null,
         "commune": "Tipaza",
-        "lat": 36.5875036,
-        "lng": 2.4395768,
+        "lat": 36.5873851,
+        "lng": 2.4396497,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -7130,8 +7801,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.1601747,
-          36.1588798
+          6.1603906,
+          36.1590625
         ]
       },
       "properties": {
@@ -7140,13 +7811,40 @@
         "wilaya_code": "43",
         "commune_code": null,
         "commune": "Chelghoum Laïd",
-        "lat": 36.1588798,
-        "lng": 6.1601747,
+        "lat": 36.1590625,
+        "lng": 6.1603906,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
         "address": "شارع أول نوفمبر 1954 محل رقم 61 مكرر 05 بلدية شلغوم العيد",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.9452567,
+          36.4069939
+        ]
+      },
+      "properties": {
+        "id": "anderson-43-ferjioua",
+        "name": "Anderson Mila (Ferjioua)",
+        "wilaya_code": "43",
+        "commune_code": null,
+        "commune": "Ferjioua",
+        "lat": 36.4069939,
+        "lng": 5.9452567,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "نهج أحريش علي بلدية فرجيوة ، مقابل فندق الٱغا",
         "sources": [
           "anderson"
         ]
@@ -7184,8 +7882,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.9419406,
-          36.2514183
+          1.9418125,
+          36.2514375
         ]
       },
       "properties": {
@@ -7194,8 +7892,8 @@
         "wilaya_code": "44",
         "commune_code": null,
         "commune": "Ain Defla",
-        "lat": 36.2514183,
-        "lng": 1.9419406,
+        "lat": 36.2514375,
+        "lng": 1.9418125,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -7211,8 +7909,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.2167253,
-          36.2584624
+          2.2167522,
+          36.258412
         ]
       },
       "properties": {
@@ -7221,8 +7919,8 @@
         "wilaya_code": "44",
         "commune_code": null,
         "commune": "Khemis Miliana",
-        "lat": 36.2584624,
-        "lng": 2.2167253,
+        "lat": 36.258412,
+        "lng": 2.2167522,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -7238,8 +7936,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.27844209999999997,
-          33.5438281
+          -0.2784397,
+          33.5438631
         ]
       },
       "properties": {
@@ -7248,8 +7946,8 @@
         "wilaya_code": "45",
         "commune_code": null,
         "commune": "Mechria",
-        "lat": 33.5438281,
-        "lng": -0.27844209999999997,
+        "lat": 33.5438631,
+        "lng": -0.2784397,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -7292,8 +7990,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.6818807,
-          32.491873399999996
+          3.6818296,
+          32.4916585
         ]
       },
       "properties": {
@@ -7302,8 +8000,8 @@
         "wilaya_code": "47",
         "commune_code": null,
         "commune": "Ghardaia",
-        "lat": 32.491873399999996,
-        "lng": 3.6818807,
+        "lat": 32.4916585,
+        "lng": 3.6818296,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -7346,8 +8044,35 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.1687515,
-          35.5553633
+          5.367122,
+          35.387523
+        ]
+      },
+      "properties": {
+        "id": "anderson-5-barika",
+        "name": "Anderson Batna (Barika)",
+        "wilaya_code": "60",
+        "commune_code": null,
+        "commune": "Barika",
+        "lat": 35.387523,
+        "lng": 5.367122,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "مقابل الصندوق الوطني للتأمين عن البطالة ، بريكة",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1686867,
+          35.5554378
         ]
       },
       "properties": {
@@ -7356,13 +8081,40 @@
         "wilaya_code": "05",
         "commune_code": null,
         "commune": "Batna",
-        "lat": 35.5553633,
-        "lng": 6.1687515,
+        "lat": 35.5554378,
+        "lng": 6.1686867,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
         "address": "حي برج الغولة طريق مصنع النسيج ( تيكستيل ) بجانب الثانوية الخاصة أجيال المستقبل [إبن رشد] سابقاً ، وسط المدينة باتنة",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1730781,
+          35.5549625
+        ]
+      },
+      "properties": {
+        "id": "anderson-5-el-amrani",
+        "name": "Anderson Batna (El Amrani)",
+        "wilaya_code": "05",
+        "commune_code": null,
+        "commune": "El Amrani",
+        "lat": 35.5549625,
+        "lng": 6.1730781,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "Cité les frères El Amrani , Batna.",
         "sources": [
           "anderson"
         ]
@@ -7427,8 +8179,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.047403,
-          33.084897
+          6.0473504,
+          33.084967
         ]
       },
       "properties": {
@@ -7437,8 +8189,8 @@
         "wilaya_code": "55",
         "commune_code": null,
         "commune": "Touggourt",
-        "lat": 33.084897,
-        "lng": 6.047403,
+        "lat": 33.084967,
+        "lng": 6.0473504,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -7454,8 +8206,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.4832618,
-          24.5581426
+          9.5123487,
+          24.47183
         ]
       },
       "properties": {
@@ -7464,13 +8216,13 @@
         "wilaya_code": "56",
         "commune_code": null,
         "commune": "Djanet",
-        "lat": 24.5581426,
-        "lng": 9.4832618,
+        "lat": 24.47183,
+        "lng": 9.5123487,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
-        "address": "حي تين خاتمة بجانب الصادق لبيع قطع الغيار، الطريق المؤدي إلى بني وسكن",
+        "address": "جانت ايفري",
         "sources": [
           "anderson"
         ]
@@ -7535,8 +8287,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.050761,
-          36.744193
+          5.0743125,
+          36.7516875
         ]
       },
       "properties": {
@@ -7545,13 +8297,13 @@
         "wilaya_code": "06",
         "commune_code": null,
         "commune": "Bejaia",
-        "lat": 36.744193,
-        "lng": 5.050761,
+        "lat": 36.7516875,
+        "lng": 5.0743125,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
-        "address": "Zone industrielle edimco section 2 bâtiment A A côté de cité somacob et la salle de sport power fitness femme",
+        "address": "Rue Chebouti Seddik à coté de la residence El Mokrani",
         "sources": [
           "anderson"
         ]
@@ -7562,8 +8314,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.8543145,
-          36.6776982
+          4.8543349,
+          36.6776747
         ]
       },
       "properties": {
@@ -7572,8 +8324,8 @@
         "wilaya_code": "06",
         "commune_code": null,
         "commune": "El Kseur",
-        "lat": 36.6776982,
-        "lng": 4.8543145,
+        "lat": 36.6776747,
+        "lng": 4.8543349,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
@@ -7670,8 +8422,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.625021,
-          36.4728506
+          2.6247539,
+          36.4730699
         ]
       },
       "properties": {
@@ -7680,13 +8432,40 @@
         "wilaya_code": "09",
         "commune_code": null,
         "commune": "El Affroune",
-        "lat": 36.4728506,
-        "lng": 2.625021,
+        "lat": 36.4730699,
+        "lng": 2.6247539,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "anderson",
         "operator": "anderson",
         "address": "شارع غريس محمد رقم 27 العفرون - البليدة",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.864969,
+          36.499825
+        ]
+      },
+      "properties": {
+        "id": "anderson-9-ouled-yaich",
+        "name": "Anderson Blida (Ouled Yaich)",
+        "wilaya_code": "09",
+        "commune_code": null,
+        "commune": "Ouled Yaich",
+        "lat": 36.499825,
+        "lng": 2.864969,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "موقف الحافلات Stop بجانب مسجد الأمير أولاد يعيش",
         "sources": [
           "anderson"
         ]
@@ -8804,8 +9583,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.8500429,
-          33.782706
+          2.8510768,
+          33.7820229
         ]
       },
       "properties": {
@@ -8814,13 +9593,13 @@
         "wilaya_code": "03",
         "commune_code": null,
         "commune": "Laghouat",
-        "lat": 33.782706,
-        "lng": 2.8500429,
+        "lat": 33.7820229,
+        "lng": 2.8510768,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "noest",
         "operator": "noest",
-        "address": "Cité Al Ouiam (En face la mosquée Hammani )",
+        "address": "Quartier El-Wiam – en face de l’Enfance assistée (à 100 m de l’ancien bureau)",
         "sources": [
           "noest"
         ]
@@ -9371,6 +10150,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -1.3341049,
+          34.8858765
+        ]
+      },
+      "properties": {
+        "id": "noest-13c",
+        "name": "Noest Tlemcen «Mansourah»",
+        "wilaya_code": "13",
+        "commune_code": null,
+        "commune": "Mansourah",
+        "lat": 34.8858765,
+        "lng": -1.3341049,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "noest",
+        "operator": "noest",
+        "address": "Résidence El Qods Mansourah",
+        "sources": [
+          "noest"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           1.3283730999999999,
           35.3576161
         ]
@@ -9749,6 +10555,60 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.1024434,
+          36.7396165
+        ]
+      },
+      "properties": {
+        "id": "noest-16k",
+        "name": "Noest Alger « Hussein Dey »",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": "Hussein Dey",
+        "lat": 36.7396165,
+        "lng": 3.1024434,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "noest",
+        "operator": "noest",
+        "address": "Rue Layache Yahia N06, Hussein Dey en face Mosquee De Brossette",
+        "sources": [
+          "noest"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.004906,
+          36.710662
+        ]
+      },
+      "properties": {
+        "id": "noest-16l",
+        "name": "Noest Alger « Draria »",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": "Draria",
+        "lat": 36.710662,
+        "lng": 3.004906,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "noest",
+        "operator": "noest",
+        "address": "Draria Boudjemaa Temime Al Ansar",
+        "sources": [
+          "noest"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.248441,
           34.666842
         ]
@@ -9992,6 +10852,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.566883,
+          37.00823
+        ]
+      },
+      "properties": {
+        "id": "noest-21c",
+        "name": "Noest Skikda «Collo»",
+        "wilaya_code": "21",
+        "commune_code": null,
+        "commune": "Collo",
+        "lat": 37.00823,
+        "lng": 6.566883,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "noest",
+        "operator": "noest",
+        "address": "Rue Zighoud Youssef (en face l'école primaire Mesikh Ammar / à côté du tribunal de Collo)",
+        "sources": [
+          "noest"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.6281864,
           35.1934512
         ]
@@ -10171,6 +11058,33 @@
         "source": "noest",
         "operator": "noest",
         "address": "Avenue Kaddour Boumedous (Ciloc) a coté de la direction régionale d’Air Algérie.",
+        "sources": [
+          "noest"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7591878,
+          35.8692794
+        ]
+      },
+      "properties": {
+        "id": "noest-26b",
+        "name": "Noest Médéa «Ksar El Boukhari»",
+        "wilaya_code": "67",
+        "commune_code": null,
+        "commune": "Ksar El Boukhari",
+        "lat": 35.8692794,
+        "lng": 2.7591878,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "noest",
+        "operator": "noest",
+        "address": "ZONE URBAINE NOUVELLE 246/03 LOCAL 01 KEB",
         "sources": [
           "noest"
         ]
@@ -10451,6 +11365,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.5720991,
+          35.6969091
+        ]
+      },
+      "properties": {
+        "id": "noest-31e",
+        "name": "Noest Oran «Essabah»",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": "Essabah",
+        "lat": 35.6969091,
+        "lng": -0.5720991,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "noest",
+        "operator": "noest",
+        "address": "Coopérative Immobilière El Salam, N° D3, Lotissement 02, Îlot 51 (Partie 02), Îlot 292, Sidi Chami, Cité Essabah, à côté du terminus du tramway.",
+        "sources": [
+          "noest"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           1.0267733,
           33.6857951
         ]
@@ -10478,8 +11419,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.4737864,
-          26.5014104
+          8.4835101,
+          26.5080991
         ]
       },
       "properties": {
@@ -10488,13 +11429,13 @@
         "wilaya_code": "33",
         "commune_code": null,
         "commune": "Illizi",
-        "lat": 26.5014104,
-        "lng": 8.4737864,
+        "lat": 26.5080991,
+        "lng": 8.4835101,
         "geo_precision": "exact",
         "geo_method": "carrier_relay",
         "source": "noest",
         "operator": "noest",
-        "address": "(À côté de la wilaya / Près de boulangerie Ben Ziar)",
+        "address": "Centre-ville, quartier Bouchache, rue de la Poissonnerie.",
         "sources": [
           "noest"
         ]
@@ -10683,7 +11624,7 @@
         "geo_method": "carrier_relay",
         "source": "noest",
         "operator": "noest",
-        "address": "City center ( centre commerciale zaydi 1er étage N°10 )wilaya etEl taref",
+        "address": "حي ريتين خميس , بجانب الأمن الحضري الأول",
         "sources": [
           "noest"
         ]
@@ -11224,6 +12165,33 @@
         "source": "noest",
         "operator": "noest",
         "address": "Centre-ville Tine Khatema, à côté du dentiste, Djanet",
+        "sources": [
+          "noest"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.924583,
+          33.951598
+        ]
+      },
+      "properties": {
+        "id": "noest-57a",
+        "name": "Noest El M'Ghair",
+        "wilaya_code": "57",
+        "commune_code": null,
+        "commune": "El M'Ghair",
+        "lat": 33.951598,
+        "lng": 5.924583,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "noest",
+        "operator": "noest",
+        "address": "Centre-ville, à côté du café Jneidi – El M'Ghair.",
         "sources": [
           "noest"
         ]

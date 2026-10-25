@@ -1,19 +1,5 @@
 [
   {
-    "id": "noest",
-    "name": "Noest Express",
-    "website": "https://noest-dz.com",
-    "type": "both",
-    "cod": true,
-    "scope": "domestic",
-    "open_agency_data": "geocoded",
-    "api": "private",
-    "notes": "Popular COD carrier; publishes its bureaux on its public site, each with a Google Maps link resolved to coordinates. Merchant tracking API is private.",
-    "in_stopdesks": true,
-    "stopdesk_count": 94,
-    "stopdesk_wilaya_count": 55
-  },
-  {
     "id": "yalidine",
     "name": "Yalidine Express",
     "website": "https://yalidine-express.com.dz",
@@ -24,8 +10,8 @@
     "api": "documented",
     "notes": "Largest COD network; publishes an open geocoded stop-desk table that also lists partner operators (federated relay). Documented developer API (centers/communes/wilayas) is merchant-key gated.",
     "in_stopdesks": true,
-    "stopdesk_count": 93,
-    "stopdesk_wilaya_count": 54
+    "stopdesk_count": 105,
+    "stopdesk_wilaya_count": 55
   },
   {
     "id": "anderson",
@@ -38,8 +24,22 @@
     "api": "none",
     "notes": "Publishes an agency directory; each agency carries its own Google Maps link, resolved to coordinates.",
     "in_stopdesks": true,
-    "stopdesk_count": 89,
-    "stopdesk_wilaya_count": 50
+    "stopdesk_count": 103,
+    "stopdesk_wilaya_count": 53
+  },
+  {
+    "id": "noest",
+    "name": "Noest Express",
+    "website": "https://noest-dz.com",
+    "type": "both",
+    "cod": true,
+    "scope": "domestic",
+    "open_agency_data": "geocoded",
+    "api": "private",
+    "notes": "Popular COD carrier; publishes its bureaux on its public site, each with a Google Maps link resolved to coordinates. Merchant tracking API is private.",
+    "in_stopdesks": true,
+    "stopdesk_count": 101,
+    "stopdesk_wilaya_count": 57
   },
   {
     "id": "guepex",
@@ -52,7 +52,7 @@
     "api": "none",
     "notes": "Publishes an open geocoded agencies JSON; shares the same stop-desk network/center ids as Yalidine (federated relay).",
     "in_stopdesks": true,
-    "stopdesk_count": 70,
+    "stopdesk_count": 71,
     "stopdesk_wilaya_count": 35
   },
   {
@@ -80,8 +80,8 @@
     "api": "none",
     "notes": "Stop-desk operator present in the Yalidine/Guepex relay network.",
     "in_stopdesks": true,
-    "stopdesk_count": 14,
-    "stopdesk_wilaya_count": 11
+    "stopdesk_count": 15,
+    "stopdesk_wilaya_count": 12
   },
   {
     "id": "zimou-express",
@@ -94,7 +94,7 @@
     "api": "none",
     "notes": "Stop-desk operator present in the Guepex relay data.",
     "in_stopdesks": true,
-    "stopdesk_count": 8,
+    "stopdesk_count": 10,
     "stopdesk_wilaya_count": 6
   },
   {
@@ -122,8 +122,8 @@
     "api": "none",
     "notes": "Appears in the relay network; own site is a WooCommerce shop with no public agency directory.",
     "in_stopdesks": true,
-    "stopdesk_count": 2,
-    "stopdesk_wilaya_count": 2
+    "stopdesk_count": 1,
+    "stopdesk_wilaya_count": 1
   },
   {
     "id": "aramex",

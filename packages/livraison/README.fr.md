@@ -13,7 +13,7 @@
 </div>
 
 La couche livraison / e-commerce pour l'Algérie, en trois volets : un **registre** de
-transporteurs, **411 bureaux de retrait géocodés** répartis sur 61 wilayas, et la
+transporteurs, **447 bureaux de retrait géocodés** répartis sur 62 wilayas, et la
 **couverture par transporteur**. Distribué en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -45,10 +45,10 @@ const reach = livraison.coverageByCarrier("yalidine"); // wilayas desservies
 | Jeu de données | Nombre | Géocodé | Notes |
 | --- | --- | --- | --- |
 | Transporteurs (`carriers.json`) | **16** | – | registre : nom, site web, modèle, paiement à la livraison, périmètre, ouverture des données, API |
-| Bureaux de retrait (`stopdesks.json`) | **411** | ✅ tous | id, opérateur, nom, adresse, commune, `wilaya_code`, lat/lng |
+| Bureaux de retrait (`stopdesks.json`) | **447** | ✅ tous | id, opérateur, nom, adresse, commune, `wilaya_code`, lat/lng |
 | Couverture (`coverage.json`) | **9** | – | présence par transporteur (wilaya/commune) |
 
-Les bureaux de retrait couvrent **61 wilayas**, tous géocodés. `wilaya_code` se joint au
+Les bureaux de retrait couvrent **62 wilayas**, tous géocodés. `wilaya_code` se joint au
 modèle 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
 ### Une note sur la couverture et la transparence
@@ -94,14 +94,14 @@ inclus dans chaque [Release GitHub](https://github.com/yasserstudio/geoalgeria/r
 ```
 data/
   carriers.json             # 16 transporteurs (registre)
-  stopdesks.json            # 411 bureaux de retrait géocodés (tableau)
+  stopdesks.json            # 447 bureaux de retrait géocodés (tableau)
   coverage.json             # 9 lignes de couverture par transporteur
   metadata.json             # sources, comptages, updated
   csv/                      # dépôt + bundle Release (pas dans le tarball npm)
     carriers.csv
     stopdesks.csv
     coverage.csv
-  geojson/stopdesks.geojson # Entités Point (les 411 géocodées)
+  geojson/stopdesks.geojson # Entités Point (les 447 géocodées)
 ```
 
 ## Formes d'enregistrement
