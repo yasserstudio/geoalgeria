@@ -204,6 +204,22 @@ test("a rename in a wilaya the 2026 reform created keeps its id", () => {
   assert.equal(far[0].id, "anderson-5-elsewhere");
 });
 
+// Maystro prints a wilaya badge only for the wilayas in MAYSTRO_WILAYA, so its other
+// cards arrive with cardWilaya: null. Comparing a committed code against a missing badge
+// never agrees, which refused every Maystro rename; with no badge the radius decides.
+test("a card that declares no wilaya is still matched on geometry", () => {
+  const committed = new Map([
+    ["maystro-ouargla", { id: "maystro-ouargla", operator: "maystro", wilaya_code: "30", lat: 31.949, lng: 5.3253 }],
+  ]);
+  const recs = [{ id: "maystro-ouargla-centre", name: "Maystro Ouargla Centre", commune: "Ouargla", cardWilaya: null, lat: 31.94905, lng: 5.32535 }];
+  assert.equal(carryRenamedIds(recs, committed, "maystro").length, 1);
+  assert.equal(recs[0].id, "maystro-ouargla");
+
+  // Still only within the radius.
+  const far = [{ id: "maystro-elsewhere", name: "n", commune: "c", cardWilaya: null, lat: 31.96, lng: 5.3253 }];
+  assert.deepEqual(carryRenamedIds(far, committed, "maystro"), []);
+});
+
 test("the id carry does not reach past the same desk", () => {
   const prev = (id, lat, lng, wilaya_code = "16") => [id, { id, operator: "anderson", wilaya_code, lat, lng }];
   const committed = new Map([prev("anderson-16-a", 36.6805625, 2.8560625)]);

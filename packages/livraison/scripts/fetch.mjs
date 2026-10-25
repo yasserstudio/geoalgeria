@@ -379,8 +379,11 @@ const RENAME_RADIUS_KM = 0.1;
 // therefore agrees with any card code, the same allowance main() already makes for a
 // promotion. Nothing is loosened by it: inside RENAME_RADIUS_KM the geometry decides, and
 // the wilaya is only here to stop a match reaching across the country.
+// A card that declares no wilaya at all (Maystro prints a badge only for the wilayas in
+// MAYSTRO_WILAYA) leaves the radius as the only test, which is the test that was really
+// deciding anyway. Comparing against a missing badge refused every Maystro rename.
 const wilayaAgrees = (committedCode, cardWilaya) =>
-  committedCode === wcode(cardWilaya) || Number(committedCode) > 58;
+  cardWilaya == null || committedCode === wcode(cardWilaya) || Number(committedCode) > 58;
 
 /**
  * Give a renamed card back the id it already published.
@@ -442,11 +445,16 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
   console.log(`  ${cards.length} cards; resolving Maps links…`);
   const coords = await mapPool(cards, 6, (c) => resolveMapsLink(c.link));
   const recs = [];
-  let skipped = 0, fresh = 0;
+  let fresh = 0;
   const carried = [];
+  const skipped = [];
   cards.forEach((c, i) => {
     const pin = pinFor(coords[i], committed.get(c.id));
-    if (!pin) { skipped++; return; }
+    // Named, not just counted. A skip here is a card the carrier still publishes that this
+    // run cannot place, and when the card was also retitled the committed record is under
+    // the OLD id, which carryRenamedIds below never sees because the record was never
+    // pushed. That case retires a live id, so it has to be readable in the run log.
+    if (!pin) { skipped.push(c.id); return; }
     if (pin.verdict === "carried") carried.push(c.id);
     else fresh++;
     recs.push({ id: c.id, operator, name: c.name, address: c.address, commune: c.commune, wilaya_num: null, cardWilaya: c.cardWilaya, lat: pin.lat, lng: pin.lng, src: operator });
@@ -456,7 +464,7 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
   recs.sort((a, b) => a.id.localeCompare(b.id) || a.lat - b.lat || a.lng - b.lng);
   const seen = new Map();
   for (const r of recs) { const n = (seen.get(r.id) || 0) + 1; seen.set(r.id, n); if (n > 1) r.id = `${r.id}-${n}`; }
-  console.log(`  ${recs.length} ${label} desks geocoded, ${skipped} skipped (no resolvable link and nothing committed to carry)`);
+  console.log(`  ${recs.length} ${label} desks geocoded, ${skipped.length} skipped (no resolvable link and nothing committed to carry)${skipped.length ? `: ${skipped.join(", ")}` : ""}`);
   if (carried.length) console.log(`  ${carried.length} ${label} desk(s) kept their committed coordinate, link did not resolve: ${carried.join(", ")}`);
   if (renamed.length) console.log(`  ${renamed.length} ${label} desk(s) kept their id through a card rename: ${renamed.join("; ")}`);
   // Counted on the freshly resolved desks only: carrying a coordinate over must never
