@@ -454,7 +454,11 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
     // run cannot place, and when the card was also retitled the committed record is under
     // the OLD id, which carryRenamedIds below never sees because the record was never
     // pushed. That case retires a live id, so it has to be readable in the run log.
-    if (!pin) { skipped.push(c.id); return; }
+    // Two different failures with two different fixes: a card the carrier publishes with
+    // no Maps link at all can only come back when the carrier adds one, while a link that
+    // would not resolve this minute may well resolve on the next run. The run log has to
+    // say which, or a permanent gap reads like a transient one.
+    if (!pin) { skipped.push(`${c.id} (${c.link ? "link did not resolve" : "card publishes no Maps link"})`); return; }
     if (pin.verdict === "carried") carried.push(c.id);
     else fresh++;
     recs.push({ id: c.id, operator, name: c.name, address: c.address, commune: c.commune, wilaya_num: null, cardWilaya: c.cardWilaya, lat: pin.lat, lng: pin.lng, src: operator });
@@ -464,7 +468,7 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
   recs.sort((a, b) => a.id.localeCompare(b.id) || a.lat - b.lat || a.lng - b.lng);
   const seen = new Map();
   for (const r of recs) { const n = (seen.get(r.id) || 0) + 1; seen.set(r.id, n); if (n > 1) r.id = `${r.id}-${n}`; }
-  console.log(`  ${recs.length} ${label} desks geocoded, ${skipped.length} skipped (no resolvable link and nothing committed to carry)${skipped.length ? `: ${skipped.join(", ")}` : ""}`);
+  console.log(`  ${recs.length} ${label} desks geocoded, ${skipped.length} skipped (nothing committed to carry)${skipped.length ? `: ${skipped.join(", ")}` : ""}`);
   if (carried.length) console.log(`  ${carried.length} ${label} desk(s) kept their committed coordinate, link did not resolve: ${carried.join(", ")}`);
   if (renamed.length) console.log(`  ${renamed.length} ${label} desk(s) kept their id through a card rename: ${renamed.join("; ")}`);
   // Counted on the freshly resolved desks only: carrying a coordinate over must never
@@ -602,7 +606,9 @@ async function main() {
           r.lng = prev.lng;
           w = pw;
         } else {
-          droppedPins.push(`${r.id}(card ${r.cardWilaya}→pin ${w.code})`);
+          // With the coordinate, so the reason is checkable against the carrier's own
+          // link without re-running the fetch.
+          droppedPins.push(`${r.id}(card ${r.cardWilaya}→pin ${w.code} at ${r.lat},${r.lng})`);
           return null;
         }
       }
@@ -631,7 +637,9 @@ async function main() {
   if (conflicts.length) throw new Error(`centroid wilaya conflicts with source (both ≤58): ${conflicts.join(", ")}`);
   if (promoted) console.log(`  ${promoted} desk(s) in wilayas promoted by the 2026 reform (source ≤58 → flagship 59-69)`);
   if (keptOnBadPin.length) console.log(`  ${keptOnBadPin.length} carded desk(s) kept their committed point, this run's pin fell in another wilaya than the card declares: ${keptOnBadPin.join(", ")}`);
-  if (droppedPins.length) console.log(`  ${droppedPins.length} carded desk(s) dropped: pin in a different wilaya than the card (bad/duplicate link): ${droppedPins.slice(0, 6).join(", ")}${droppedPins.length > 6 ? "…" : ""}`);
+  // Every one of them, never an ellipsis: a truncated list is how an omission goes
+  // unexplained in the release notes.
+  if (droppedPins.length) console.log(`  ${droppedPins.length} carded desk(s) dropped: pin in a different wilaya than the card (bad/duplicate link): ${droppedPins.join(", ")}`);
 
   // coverage, per operator that has stop-desks
   const covMap = new Map();
