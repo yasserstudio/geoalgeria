@@ -37,7 +37,7 @@ import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2, readCommitted, readRetiredIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, readCommitted, readRetiredIds, readPendingIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 import { wcode } from "../../../scripts/lib/commune-resolver.mjs";
 import { readCapture, writeCapture } from "../../../scripts/lib/source-store.mjs";
 
@@ -775,40 +775,85 @@ export function badPinDrop(rec, code, mothers = motherWilayas()) {
 // stop-desk id is a public join key: handing a disappeared desk's id to a different
 // desk would silently repoint every cached reference at another place.
 //
+// Retirement is not immediate. An id missing from ONE refresh goes into the ledger's
+// `pending` map instead, and retires only on the second consecutive miss (Owner
+// decision, 2026-10-25). One run is not evidence that a desk is gone: a card the
+// carrier retitles in the same run its Maps link fails mints a new id and leaves the
+// old one unclaimed, so immediate retirement would lose a live desk's id over one
+// failed request, which is the ids-follow-places rule carryRenamedIds exists to keep.
+// While pending, the id is reserved against every mint, and its own desk may still
+// claim it back.
+//
 // Module state rather than a parameter on every carded build: each carrier's build
 // consults it, and a carrier parser added later must inherit it without a call-site
 // change. main() loads it from disk; the pure functions below take it explicitly so a
 // test can hand them their own set.
 let retiredIds = new Set();
+// id → { first_missing, operator, wilaya_code, lat, lng }: the ids waiting out their
+// grace period, with the last position the package published for each, which is what
+// carryRenamedIds matches a returning card against (the record itself is gone from the
+// committed data the run it first went missing).
+let pendingIds = new Map();
 
 /** Load the ledger the rest of this run reserves against. */
-export function setRetiredIds(ids) {
+export function setRetiredIds(ids, pending = new Map()) {
   retiredIds = new Set([...ids].map(String));
-  return retiredIds;
+  pendingIds = new Map([...pending].map(([id, entry]) => [String(id), entry]));
+  return { retired: retiredIds, pending: pendingIds };
 }
 
+/** Every id a new desk may not be given: retired forever, or pending its second miss. */
+const reservedIds = () => new Set([...retiredIds, ...pendingIds.keys()]);
+
 /**
- * Reserve every id the package ships today that this run no longer carries.
+ * Move the ledger on by one refresh: open a grace period for the ids this run stopped
+ * carrying, retire the ones that have now missed two in a row, and release the ones
+ * that came back.
  *
- * Append-only: a desk that disappears upstream retires its id here, and nothing ever
- * removes one, so the reservation outlives the record that earned it.
+ * A pending id is settled from the ledger rather than from the committed data, because
+ * the record is already gone from it: the run that first missed the id did not emit it.
  *
- * @param {Set<string>} retired  the ledger, mutated
- * @param {Iterable<string>} committedIds  the ids the committed data ships
+ * Two runs on the SAME date are one refresh, not two, so an offline `--cache` replay of
+ * a live run reproduces its ledger instead of retiring everything the live run parked.
+ *
+ * Retirement stays append-only: an id that reaches `ids` never leaves it.
+ *
+ * @param {Set<string>} retired  the ledger's retired ids, mutated
+ * @param {Map<string, object>} pending  the ledger's grace-period map, mutated
+ * @param {Iterable<{id: string, operator: string, wilaya_code: string, lat: number, lng: number}>} committed
+ *   the records the committed data ships
  * @param {Set<string>} liveIds  the ids this run emits
  * @param {Set<string>} [heldIds]  ids still listed by the carrier but dropped this run for a
- *   bad pin: held, not retired, so a fixed link brings the desk back under its own id
- * @returns {string[]} the ids retired by this run, for the run log
+ *   bad pin: held, not retired and not pending, so a fixed link brings the desk back under
+ *   its own id
+ * @param {string} today  this refresh's date (the run's `retrieved`)
+ * @returns {{retired: string[], pending: string[], recovered: string[]}} for the run log
  */
-export function appendRetiredIds(retired, committedIds, liveIds, heldIds = new Set()) {
-  const added = [];
-  for (const id of committedIds) {
-    const key = String(id);
-    if (liveIds.has(key) || heldIds.has(key) || retired.has(key)) continue;
-    retired.add(key);
-    added.push(key);
+export function settleRetirements(retired, pending, committed, liveIds, heldIds = new Set(), today) {
+  const nowRetired = [];
+  const nowPending = [];
+  const recovered = [];
+  for (const [id, entry] of [...pending]) {
+    if (liveIds.has(id)) { pending.delete(id); recovered.push(id); continue; }
+    if (heldIds.has(id)) continue; // listed by the carrier, dropped for a bad pin: held
+    if (entry.first_missing === today) continue; // the same refresh, replayed
+    pending.delete(id);
+    retired.add(id);
+    nowRetired.push(id);
   }
-  return added.sort();
+  for (const rec of committed) {
+    const key = String(rec.id);
+    if (liveIds.has(key) || heldIds.has(key) || retired.has(key) || pending.has(key)) continue;
+    pending.set(key, {
+      first_missing: today,
+      operator: rec.operator,
+      wilaya_code: rec.wilaya_code,
+      lat: rec.lat,
+      lng: rec.lng,
+    });
+    nowPending.push(key);
+  }
+  return { retired: nowRetired.sort(), pending: nowPending.sort(), recovered: recovered.sort() };
 }
 
 /**
@@ -821,13 +866,17 @@ export function appendRetiredIds(retired, committedIds, liveIds, heldIds = new S
  * and a collision takes the next `{id}-{n}` suffix, so a desk keeps its suffix across
  * runs and a retired id is never re-issued.
  *
+ * A pending id counts as taken too: it is a disappeared desk's id waiting out its grace
+ * period, and the one record that may still take it is its own, through carryRenamedIds,
+ * which runs first and clears it from the map.
+ *
  * @param {Array<{id: string}>} recs  mutated in place
- * @param {Set<string>} [retired]  the ledger; defaults to the one main() loaded
+ * @param {Set<string>} [reserved]  retired + pending; defaults to the ledger main() loaded
  * @returns {Array<{id: string}>} recs
  */
-export function dedupeMintedIds(recs, retired = retiredIds) {
+export function dedupeMintedIds(recs, reserved = reservedIds()) {
   const seen = new Map();
-  for (const id of retired) seen.set(String(id), 1);
+  for (const id of reserved) seen.set(String(id), 1);
   for (const r of recs) {
     const n = (seen.get(r.id) || 0) + 1;
     seen.set(r.id, n);
@@ -877,18 +926,27 @@ const wilayaAgrees = (committedCode, cardWilaya, mothers = motherWilayas()) =>
  *
  * @param {Array<{id: string, name: string, commune: string|null, cardWilaya: number|null, lat: number, lng: number}>} recs  this run's records, mutated in place
  * @param {Map<string, {id: string, operator: string, wilaya_code: string, lat: number, lng: number}>} committed  what the package ships today
+ * A desk whose card was retitled in the same run its link failed is gone from the
+ * committed data by the next run, so the ids waiting out a grace period are matched
+ * alongside it, from the position the ledger kept. That is the case this is for: the
+ * retitle mints a new id, the rename is only visible once the link resolves again, and
+ * without the grace period the old id would already have been retired.
+ *
  * @param {string} operator  the carrier being built
  * @param {Set<string>} [retired]  the ledger; defaults to the one main() loaded
+ * @param {Map<string, object>} [pending]  ids in their grace period, mutated: one handed
+ *   back is live again and leaves the map
  * @returns {string[]} one line per id handed back, for the run log
  */
-export function carryRenamedIds(recs, committed, operator, retired = retiredIds) {
+export function carryRenamedIds(recs, committed, operator, retired = retiredIds, pending = pendingIds) {
   const live = new Set(recs.map((r) => r.id));
   // Ids this operator ships today that no card in this run claims. A retired id is not
   // among them, because the ledger reserves ids the package stopped shipping, but the
   // filter is kept so a reclaim can never resurrect one whatever the committed data says.
-  const gone = [...committed.values()].filter(
-    (p) => p.operator === operator && !live.has(p.id) && !retired.has(String(p.id)),
-  );
+  const gone = [
+    ...committed.values(),
+    ...[...pending].map(([id, entry]) => ({ ...entry, id })),
+  ].filter((p) => p.operator === operator && !live.has(p.id) && !retired.has(String(p.id)));
   // Every plausible pairing, nearest first, so which card reclaims an id never depends on
   // the order the carrier happens to list its cards in.
   const pairs = [];
@@ -906,9 +964,12 @@ export function carryRenamedIds(recs, committed, operator, retired = retiredIds)
   const renamed = [];
   for (const { r, p, km } of pairs) {
     if (takenIds.has(p.id) || movedRecs.has(r)) continue;
-    renamed.push(`${p.id} kept as "${r.name}" (was ${r.id}, ${Math.round(km * 1000)}m)`);
+    renamed.push(
+      `${p.id} kept as "${r.name}" (was ${r.id}, ${Math.round(km * 1000)}m${pending.has(p.id) ? ", reclaimed from its grace period" : ""})`,
+    );
     takenIds.add(p.id);
     movedRecs.add(r);
+    pending.delete(p.id); // live again: it is no longer waiting out a grace period
     r.id = p.id;
   }
   return renamed;
@@ -1045,7 +1106,10 @@ async function main() {
     readCommitted(DATA, "stopdesks.json").map((r) => [r.id, r]),
   );
   // Before the first carded build: every mint and every reclaim below reserves against it.
-  const retired = setRetiredIds(readRetiredIds(DATA));
+  const { retired, pending } = setRetiredIds(readRetiredIds(DATA), readPendingIds(DATA));
+  // The refresh's own date, read before the builds because the grace period is counted in
+  // refreshes: a live run stamps today, an offline replay the date the committed run used.
+  const { updated, retrieved } = resolveDates(DATA, OFFLINE);
   const anderson = await buildCarded("Anderson", ANDERSON_URL, parseAnderson, "anderson", 60, committed);
   const noest = await buildCarded("Noest", NOEST_URL, parseNoest, "noest", 60, committed);
   const maystro = await buildCarded("Maystro", MAYSTRO_URL, parseMaystro, "maystro", 30, committed);
@@ -1122,7 +1186,7 @@ async function main() {
   // Guards
   const ids = new Set(stopdesks.map((s) => s.id));
   if (ids.size !== stopdesks.length) throw new Error("duplicate stop-desk ids after merge");
-  const nowRetired = appendRetiredIds(retired, committed.keys(), ids, heldIds);
+  const settled = settleRetirements(retired, pending, committed.values(), ids, heldIds, retrieved);
   const bad = stopdesks.filter((s) => !s.operator || !s.name || s.wilaya_code < 1 || s.wilaya_code > 69 || !Number.isFinite(s.lat) || !Number.isFinite(s.lng));
   if (bad.length) throw new Error(`malformed stop-desks: ${bad.slice(0, 5).map((s) => s.id).join(", ")}`);
   const badCarrier = [...new Set(stopdesks.map((s) => s.operator))].filter((o) => !carrierIds.has(o));
@@ -1132,7 +1196,9 @@ async function main() {
   // Every one of them, never an ellipsis: a truncated list is how an omission goes
   // unexplained in the release notes.
   if (droppedPins.length) console.log(`  ${droppedPins.length} carded desk(s) dropped: pin in a different wilaya than the card (bad/duplicate link): ${droppedPins.join(", ")}`);
-  if (nowRetired.length) console.log(`  ${nowRetired.length} id(s) retired, the desk they named is gone from every source: ${nowRetired.join(", ")}`);
+  if (settled.recovered.length) console.log(`  ${settled.recovered.length} id(s) back from their grace period, the desk is published again: ${settled.recovered.join(", ")}`);
+  if (settled.pending.length) console.log(`  ${settled.pending.length} id(s) missing from this refresh, reserved until the next one before retiring: ${settled.pending.join(", ")}`);
+  if (settled.retired.length) console.log(`  ${settled.retired.length} id(s) retired, the desk they named is gone from two consecutive refreshes: ${settled.retired.join(", ")}`);
 
   // coverage, per operator that has stop-desks
   const covMap = new Map();
@@ -1183,10 +1249,10 @@ async function main() {
   writeText("csv/carriers.csv", toCSV(carriers, ["id", "name", "website", "type", "cod", "scope", "open_agency_data", "api", "in_stopdesks", "stopdesk_count", "stopdesk_wilaya_count", "notes"]));
   writeText("csv/coverage.csv", toCSV(coverage, ["operator", "carrier_name", "stopdesks", "wilaya_count", "wilayas", "commune_count"]));
 
-  const cfg = MIGRATIONS.livraison;
   // Live-only source, so a live run stamps its own date; an offline rebuild keeps the
   // dates the committed package carries, because replaying a capture retrieves nothing.
-  const { updated, retrieved } = resolveDates(DATA, OFFLINE);
+  // Both are resolved at the top of main(), where the grace period needs the date too.
+  const cfg = MIGRATIONS.livraison;
   writePackageV2({
     pkg: "livraison",
     dir: DATA,
@@ -1195,6 +1261,7 @@ async function main() {
     updated,
     retrieved,
     retiredIds: retired,
+    retiredPending: pending,
   });
 
   console.log(

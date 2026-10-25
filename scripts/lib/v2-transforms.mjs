@@ -993,6 +993,7 @@ export function writePackageV2({
   reviewLedger = undefined,
   retiredIds = null,
   retiredMigrations = null,
+  retiredPending = null,
 }) {
   const effectiveReviewLedger =
     reviewLedger === undefined ? loadReviewLedger(pkg) : reviewLedger;
@@ -1156,13 +1157,27 @@ export function writePackageV2({
         `writePackageV2 [${pkg}]: retired id(s) are still live: ${overlap.slice(0, 5).join(", ")}`,
       );
     }
+    // A pending id is one this run did NOT carry, so a live one means the grace
+    // period was not cleared when the record came back: the ledger would reserve
+    // an id the package ships, which is the one thing it must never say.
+    const stillLive = [...(retiredPending?.keys() ?? [])].filter((id) => liveIds.has(String(id)));
+    if (stillLive.length) {
+      throw new Error(
+        `writePackageV2 [${pkg}]: pending id(s) are live again and were not cleared: ${stillLive.slice(0, 5).join(", ")}`,
+      );
+    }
     // An empty ledger says nothing, so it is not a file: a package that has never
     // retired an id must not ship a `retired-ids.json` in its npm tarball. Any
     // empty one already on disk is removed (readRetiredIds seeds the set from it,
-    // so an empty set here can only come from an empty or absent file).
+    // so an empty set here can only come from an empty or absent file). A ledger
+    // that reserves nothing yet but holds an id in its grace period is still a
+    // ledger, so it is written.
     pending.push({
       path: join(dir, "retired-ids.json"),
-      content: retiredIds.size ? retiredIdsContent(retiredIds, retiredMigrations) : null,
+      content:
+        retiredIds.size || retiredPending?.size
+          ? retiredIdsContent(retiredIds, retiredMigrations, retiredPending)
+          : null,
     });
   }
 
@@ -1390,19 +1405,29 @@ export function carryOverIds(
 const RETIRED_IDS_NOTE =
   "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.";
 
+const PENDING_IDS_NOTE =
+  "Ids missing from the latest refresh but not retired yet: an id retires only after it is missing from two consecutive refreshes. Until then it is reserved (no other record may take it) and its own record may still claim it back. `first_missing` is the refresh that first did not carry it; the other fields are what the package needs to recognise the record when it returns.";
+
 /** `migrations` says where a retired id's data went, for the ids whose record
  *  did not disappear but was folded into another one. A consumer holding the old
  *  id can then follow it instead of only learning that it is gone. Emitted only
  *  for ids the ledger actually reserves, and omitted entirely when there are
  *  none, so a package that has never merged a record ships the file it always
- *  shipped. */
-function retiredIdsContent(ids, migrations = null) {
+ *  shipped.
+ *
+ *  `pending` is the same idea one refresh earlier: ids this run stopped carrying,
+ *  held in a grace period instead of retired. Same rule, emitted only when a
+ *  package keeps one and omitted entirely otherwise. */
+function retiredIdsContent(ids, migrations = null, pending = null) {
   const reserved = [...ids].map(String).sort();
   const moved = {};
   for (const id of reserved) if (migrations?.[id]) moved[id] = migrations[id];
+  const waiting = {};
+  for (const id of [...(pending?.keys() ?? [])].map(String).sort()) waiting[id] = pending.get(id);
   return `${JSON.stringify({
     note: RETIRED_IDS_NOTE,
     ...(Object.keys(moved).length ? { migrations: moved } : {}),
+    ...(Object.keys(waiting).length ? { pending_note: PENDING_IDS_NOTE, pending: waiting } : {}),
     ids: reserved,
   }, null, 2)}\n`;
 }
@@ -1484,6 +1509,41 @@ export function readRetiredIds(dir) {
     throw new Error(`${path}: duplicate retired id`);
   }
   return new Set(document.ids);
+}
+
+/**
+ * The ledger's grace-period map: id → the entry that keeps it reserved while it
+ * waits out one refresh. Absent file or absent `pending` → an empty map.
+ *
+ * Only `first_missing` (an ISO date) is a shared contract: what else an entry
+ * carries is the package's own business, because recognising a record that comes
+ * back is package-specific (livraison keeps the desk's last published position,
+ * so a retitled card can be matched to it by distance).
+ */
+export function readPendingIds(dir) {
+  const path = join(dir, "retired-ids.json");
+  if (!existsSync(path)) return new Map();
+  const document = JSON.parse(readFileSync(path, "utf-8"));
+  const pending = document.pending;
+  if (pending == null) return new Map();
+  if (typeof pending !== "object" || Array.isArray(pending)) {
+    throw new Error(`${path}: expected an object at pending`);
+  }
+  const reserved = new Set((document.ids ?? []).map(String));
+  const out = new Map();
+  for (const [id, entry] of Object.entries(pending)) {
+    if (entry == null || typeof entry !== "object" || Array.isArray(entry)) {
+      throw new Error(`${path}: pending[${JSON.stringify(id)}] must be an object`);
+    }
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.first_missing ?? "")) {
+      throw new Error(`${path}: pending[${JSON.stringify(id)}].first_missing must be an ISO date`);
+    }
+    if (reserved.has(id)) {
+      throw new Error(`${path}: ${JSON.stringify(id)} is both pending and retired`);
+    }
+    out.set(id, entry);
+  }
+  return out;
 }
 
 /** Persist a ledger for a generator that has not moved to writePackageV2 yet.
