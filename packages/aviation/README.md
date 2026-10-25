@@ -46,7 +46,7 @@ const inOran = aviation.airportsByWilaya(31);     // airports in wilaya 31
 | Dataset | Count | Notes |
 | --- | --- | --- |
 | Civil airports | **36** | official name, ICAO + IATA codes, address, phone, website, coordinates |
-| Nonstop routes | **157** | directional legs with operator, status, evidence tier and a source |
+| Nonstop routes | **157** | directional legs with operator, status, evidence tier and a citation list |
 | Planned routes | **20** | announced, not yet flying; a separate collection, never a status |
 
 Spanning **33 wilayas**, every airport geocoded and every one carrying an IATA code.
@@ -60,6 +60,24 @@ airports, the ANAC house style for the Algerian ones), plus `name_en` and
 shipped coordinate. Routes
 churn seasonally, so `metadata.routes_as_of` stamps the date the network was last
 checked against schedules: treat it as a dated snapshot, not an evergreen fact.
+
+Every route ships its citations. `source` is the primary one, a url you can open, and
+`sources` is the full list, because one row can rest on several documents: a launch
+statement for the route and its dates, an earlier sale-inventory report for the flight
+number, a programme report for the days.
+
+| Field | Type | Notes |
+| --- | --- | --- |
+| `source` | `string` | the primary citation, and always `sources[0].url` |
+| `sources` | `RouteSource[]` | every citation, ordered, never empty, `sources[0]` being `source` itself |
+| `sources[].url` | `string` | a page a reader can open |
+| `sources[].publisher` | `string` | who published it, in plain English ("Lyon Airport", "AeroRoutes") |
+| `sources[].date` | `string \| null` | publication date, `YYYY-MM-DD`; `null` where the source publishes none, as an airline's or an airport's destination page does not |
+| `sources[].supports` | `("route" \| "status" \| "dates" \| "flight" \| "days")[]` | which of the row's claims this citation backs; a `flight` or `days` value is always backed by at least one |
+
+In the CSV, `sources` is the JSON array as a string in one column, next to `source`. In the
+GeoJSON it is a real array in `properties`. Added in 2.9.0; `source` keeps its meaning and
+its value.
 
 33 of the 36 come from ANAC's own map. The other three, Hassi R'Mel (`HRM`), Mécheria
 (`MZW`) and Laghouat (`LOO`), are absent from it and come from OurAirports, so they carry

@@ -45,7 +45,7 @@ const inOran = aviation.airportsByWilaya(31);     // aéroports de la wilaya 31
 | Jeu de données | Nombre | Notes |
 | --- | --- | --- |
 | Aéroports civils | **36** | nom officiel, codes OACI et IATA, adresse, téléphone, site web, coordonnées |
-| Liaisons sans escale | **157** | liaisons directionnelles avec exploitant, statut, niveau de preuve et source |
+| Liaisons sans escale | **157** | liaisons directionnelles avec exploitant, statut, niveau de preuve et liste de citations |
 | Liaisons planifiées | **20** | annoncées, pas encore exploitées ; une collection distincte, jamais un statut |
 
 Couvrant **33 wilayas**, chaque aéroport est géocodé et porte un code IATA. `wilaya_code`
@@ -57,6 +57,25 @@ les aéroports étrangers, le style ANAC pour les algériens), plus `name_en` et
 appariés sur Wikidata par code IATA et vérifiés contre la coordonnée livrée. Les routes changent au fil
 des saisons, donc `metadata.routes_as_of` date la dernière vérification du réseau contre
 les horaires : un instantané daté, pas un fait permanent.
+
+Chaque liaison livre ses citations. `source` est la citation principale, une page que vous
+pouvez ouvrir, et `sources` est la liste complète, car une même ligne peut reposer sur
+plusieurs documents : un communiqué de lancement pour la liaison et ses dates, un rapport
+d'ouverture des ventes plus ancien pour le numéro de vol, un rapport de programme pour les
+jours.
+
+| Champ | Type | Notes |
+| --- | --- | --- |
+| `source` | `string` | la citation principale, toujours égale à `sources[0].url` |
+| `sources` | `RouteSource[]` | toutes les citations, ordonnées, jamais vide, `sources[0]` étant `source` lui-même |
+| `sources[].url` | `string` | une page qu'un lecteur peut ouvrir |
+| `sources[].publisher` | `string` | qui l'a publiée, en mots simples (« Lyon Airport », « AeroRoutes ») |
+| `sources[].date` | `string \| null` | date de publication, `YYYY-MM-DD` ; `null` quand la source n'en publie pas, comme la page destinations d'une compagnie ou d'un aéroport |
+| `sources[].supports` | `("route" \| "status" \| "dates" \| "flight" \| "days")[]` | les affirmations de la ligne que cette citation étaye ; un `flight` ou un `days` est toujours étayé par au moins une |
+
+Dans le CSV, `sources` est le tableau JSON sous forme de chaîne, dans une colonne à côté de
+`source`. Dans le GeoJSON, c'est un vrai tableau dans `properties`. Ajouté en 2.9.0 ;
+`source` garde son sens et sa valeur.
 
 33 des 36 viennent de la carte de l'ANAC. Les trois autres, Hassi R'Mel (`HRM`), Mécheria
 (`MZW`) et Laghouat (`LOO`), en sont absents et viennent d'OurAirports : ils portent
