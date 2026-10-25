@@ -6402,7 +6402,7 @@
         ]
       },
       "properties": {
-        "id": "anderson-16-sidi-abdellah-zeralda",
+        "id": "anderson-16-sidi-abdellah",
         "name": "Anderson Alger (Sidi Abdellah - Zeralda)",
         "wilaya_code": "16",
         "commune_code": null,
@@ -8368,6 +8368,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -2.2280389,
+          31.5952344
+        ]
+      },
+      "properties": {
+        "id": "anderson-8-bechar",
+        "name": "Anderson Bechar",
+        "wilaya_code": "08",
+        "commune_code": null,
+        "commune": "Bechar",
+        "lat": 31.5952344,
+        "lng": -2.2280389,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "anderson",
+        "operator": "anderson",
+        "address": "حي البدر 600 مسكن",
+        "sources": [
+          "anderson"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.8137982,
           36.4737624
         ]
@@ -10221,6 +10248,33 @@
         "source": "noest",
         "operator": "noest",
         "address": "Cité 60 logements D121 GP 82 - Frenda",
+        "sources": [
+          "noest"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3166,
+          35.2121
+        ]
+      },
+      "properties": {
+        "id": "noest-14c",
+        "name": "Noest Tiaret «Ksar Chellala»",
+        "wilaya_code": "64",
+        "commune_code": null,
+        "commune": "Ksar Chellala",
+        "lat": 35.2121,
+        "lng": 2.3166,
+        "geo_precision": "exact",
+        "geo_method": "carrier_relay",
+        "source": "noest",
+        "operator": "noest",
+        "address": "Cité Houcine Aït Ahmed, n° 17, Commune de Ksar Chellala, Wilaya de Tiaret, à côté de la mosquée Imam Ali Ibnou Abi Taleb",
         "sources": [
           "noest"
         ]

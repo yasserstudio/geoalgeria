@@ -4,17 +4,17 @@
   "title_fr": "Points relais de livraison d'Algérie",
   "title_ar": "نقاط استلام التوصيل في الجزائر",
   "title_en": "Algeria delivery stop-desks",
-  "record_count": 447,
-  "geocoded_count": 447,
+  "record_count": 449,
+  "geocoded_count": 449,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 447,
+    "exact": 449,
     "approximate": 0
   },
   "estimated_universe": null,
   "coverage_pct": null,
   "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 447 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
-  "wilayas_covered": 62,
+  "wilayas_covered": 63,
   "bbox": [
     -8.143583,
     22.784955,
@@ -66,7 +66,7 @@
   "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
   "updated": "2026-10-25",
   "carriers": 16,
-  "stopdesks": 447,
+  "stopdesks": 449,
   "coverage": 9,
   "by_operator": {
     "guepex": 71,
@@ -75,8 +75,8 @@
     "wecanservices": 3,
     "zimou-express": 10,
     "speedmail": 1,
-    "anderson": 103,
+    "anderson": 104,
     "maystro": 38,
-    "noest": 101
+    "noest": 102
   }
 }

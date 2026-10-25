@@ -39,6 +39,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
 const DATASET = join(__dirname, "..", "..", "dataset", "data");
 const SEED = join(__dirname, "carriers.seed.json");
+const CID_PINS = join(__dirname, "maps-cid-pins.json");
 
 const YAL_URL = "https://yalidine-express.com.dz/nos-agences/";
 const GUEPEX_URL = "https://www.guepex.dz/public/data/agences.json";
@@ -193,7 +194,10 @@ const dmsToDec = (d, m, s, h) => {
 };
 const inAlgeria = (lat, lng) =>
   Number.isFinite(lat) && Number.isFinite(lng) && lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
-const MAPS_LINK = /href="(https?:\/\/[^"]*(?:maps\.app\.goo\.gl|goo\.gl\/maps|maps\.google\.com)[^"]*)"/;
+// A card can link any of the Maps forms: a short goo.gl link, maps.google.com, or
+// google.com/maps?q=<lat>,<lng> straight from the operator. Missing the last form skipped
+// the card entirely, which is how Noest's 14C Ksar Chellala went unpublished (#306).
+const MAPS_LINK = /href="(https?:\/\/[^"]*(?:maps\.app\.goo\.gl|goo\.gl\/maps|maps\.google\.com|google\.com\/maps)[^"]*)"/;
 // Locality inside a trailing « … » or ( … ); else the whole name.
 const localityOf = (name) => {
   const m = name.match(/[«(]\s*(.*?)\s*[»)]\s*$/);
@@ -224,12 +228,15 @@ function parseNoest(html) {
     const nm = c.match(/desk-card__name">\s*([^<]+?)\s*</);
     const addr = c.match(/desk-card__address">\s*<i[^>]*><\/i>\s*<span>([\s\S]*?)<\/span>/);
     const link = c.match(MAPS_LINK);
-    if (!code || !nm || !link) continue;
+    if (!code || !nm) continue;
     const wm = decode(code[1]).match(/^(\d+)/);
     if (!wm) continue;
     const name = decode(nm[1]);
     const loc = localityOf(name);
-    out.push({ id: `noest-${slug(code[1])}`, name: `Noest ${titleCase(name)}`, commune: titleCase(loc), cardWilaya: Number(wm[1]), address: orNull(addr ? addr[1] : null), link: link[1].trim() });
+    // A card with no Maps link still comes through with link: null. It is a desk Noest
+    // publishes, so it gets the same chance to keep a coordinate it already shipped as a
+    // card whose link fails to resolve, and it is logged rather than silently skipped.
+    out.push({ id: `noest-${slug(code[1])}`, name: `Noest ${titleCase(name)}`, commune: titleCase(loc), cardWilaya: Number(wm[1]), address: orNull(addr ? addr[1] : null), link: link ? link[1].trim() : null });
   }
   return out;
 }
@@ -269,9 +276,24 @@ function parseMaystro(html) {
   return out;
 }
 
+// Committed pins for links that name a Maps place by cid and nothing else
+// ("maps.google.com/?cid=<decimal>"). Such a link carries no coordinate and none of the
+// tiers below can produce one, so without this the desk is dropped. Each entry is the
+// operator's own linked place, read once and committed with its provenance; see the file.
+const cidPins = (() => {
+  const raw = JSON.parse(readFileSync(CID_PINS, "utf8"));
+  return new Map(Object.entries(raw).filter(([k]) => /^\d+$/.test(k)));
+})();
+const cidPinFor = (link) => {
+  const m = String(link).match(/[?&]cid=(\d+)/);
+  const pin = m && cidPins.get(m[1]);
+  return pin && inAlgeria(pin.lat, pin.lng) ? { lat: pin.lat, lng: pin.lng } : null;
+};
+
 // Resolve a Google Maps link to its pin via the redirect a non-browser UA receives.
 // Tries the canonical (!3d!4d), decimal place/search/q, DMS place, then a static-map pin.
 async function resolveMapsLink(link) {
+  if (!link) return null; // card published no Maps link at all
   let url = "", body = "";
   for (let attempt = 0; attempt < 2 && !url; attempt++) {
     try {
@@ -299,7 +321,10 @@ async function resolveMapsLink(link) {
     .map((x) => ({ lat: +x[1], lng: +x[2], z: +x[3] }))
     .filter((x) => x.z >= 15 && inAlgeria(x.lat, x.lng))
     .sort((a, b) => b.z - a.z)[0];
-  return sm ? { lat: sm.lat, lng: sm.lng } : null;
+  if (sm) return { lat: sm.lat, lng: sm.lng };
+  // Nothing in the URL or the body placed it. A cid-only place link is the known case,
+  // and the live pin is preferred over the committed one, so this is checked last.
+  return cidPinFor(link);
 }
 
 // Bounded-concurrency map (keeps Maps-link resolution polite + fast).
@@ -339,6 +364,61 @@ export function pinFor(pin, prev) {
   return prev ? { lat: prev.lat, lng: prev.lng, verdict: "carried" } : null;
 }
 
+// How close, in km (haversine's unit here), a new carded id must sit to a disappeared
+// one before they are judged the same desk under a new card title. 100 m is tighter
+// than any two desks of one operator are ever apart.
+const RENAME_RADIUS_KM = 0.1;
+
+/**
+ * Give a renamed card back the id it already published.
+ *
+ * A carded id is minted from the card's own title, so when a carrier retitles a card the
+ * id changes with it: Anderson renamed "Sidi Abdellah" to "Sidi Abdellah - Zeralda" and
+ * the same desk, 24 m away, would have retired `anderson-16-sidi-abdellah` and minted
+ * `anderson-16-sidi-abdellah-zeralda` (#306). Ids follow places, so a new id that lands
+ * on a disappeared one's spot takes that id back.
+ *
+ * Matched nearest first on operator, the wilaya the card declares, and RENAME_RADIUS_KM.
+ * Deliberately
+ * NOT on the commune: a carded `commune` is parsed out of the same card title the rename
+ * changed ("Sidi Abdellah" became "Sidi Abdellah - Zeralda"), so requiring it to match
+ * would refuse exactly the renames this exists for. At 100 m the geometry is the stronger
+ * test anyway, and the wilaya keeps it from ever reaching across the country.
+ *
+ * @param {Array<{id: string, name: string, commune: string|null, cardWilaya: number|null, lat: number, lng: number}>} recs  this run's records, mutated in place
+ * @param {Map<string, {id: string, operator: string, wilaya_code: string, lat: number, lng: number}>} committed  what the package ships today
+ * @param {string} operator  the carrier being built
+ * @returns {string[]} one line per id handed back, for the run log
+ */
+export function carryRenamedIds(recs, committed, operator) {
+  const live = new Set(recs.map((r) => r.id));
+  // Ids this operator ships today that no card in this run claims.
+  const gone = [...committed.values()].filter((p) => p.operator === operator && !live.has(p.id));
+  // Every plausible pairing, nearest first, so which card reclaims an id never depends on
+  // the order the carrier happens to list its cards in.
+  const pairs = [];
+  for (const r of recs) {
+    if (committed.has(r.id)) continue; // already its own id, nothing was renamed
+    for (const p of gone) {
+      if (p.wilaya_code !== wcode(r.cardWilaya)) continue;
+      const km = haversine(p.lat, p.lng, r.lat, r.lng);
+      if (km <= RENAME_RADIUS_KM) pairs.push({ r, p, km });
+    }
+  }
+  pairs.sort((a, b) => a.km - b.km || a.p.id.localeCompare(b.p.id) || a.r.id.localeCompare(b.r.id));
+  const takenIds = new Set();
+  const movedRecs = new Set();
+  const renamed = [];
+  for (const { r, p, km } of pairs) {
+    if (takenIds.has(p.id) || movedRecs.has(r)) continue;
+    renamed.push(`${p.id} kept as "${r.name}" (was ${r.id}, ${Math.round(km * 1000)}m)`);
+    takenIds.add(p.id);
+    movedRecs.add(r);
+    r.id = p.id;
+  }
+  return renamed;
+}
+
 // Fetch a carded carrier's page, resolve every agency's Maps link to a pin, and return
 // merge-ready records. A card whose link will not resolve keeps the coordinate it already
 // shipped (and is dropped only when it has none); ids are de-collided deterministically
@@ -358,11 +438,14 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
     else fresh++;
     recs.push({ id: c.id, operator, name: c.name, address: c.address, commune: c.commune, wilaya_num: null, cardWilaya: c.cardWilaya, lat: pin.lat, lng: pin.lng, src: operator });
   });
+  // Before the sort, so a reclaimed id sorts under the id it keeps.
+  const renamed = carryRenamedIds(recs, committed, operator);
   recs.sort((a, b) => a.id.localeCompare(b.id) || a.lat - b.lat || a.lng - b.lng);
   const seen = new Map();
   for (const r of recs) { const n = (seen.get(r.id) || 0) + 1; seen.set(r.id, n); if (n > 1) r.id = `${r.id}-${n}`; }
   console.log(`  ${recs.length} ${label} desks geocoded, ${skipped} skipped (no resolvable link and nothing committed to carry)`);
   if (carried.length) console.log(`  ${carried.length} ${label} desk(s) kept their committed coordinate, link did not resolve: ${carried.join(", ")}`);
+  if (renamed.length) console.log(`  ${renamed.length} ${label} desk(s) kept their id through a card rename: ${renamed.join("; ")}`);
   // Counted on the freshly resolved desks only: carrying a coordinate over must never
   // make a total Maps-resolution outage look like a healthy run.
   if (fresh < minDesks) throw new Error(`only ${fresh} ${label} desks resolved fresh: Maps resolution may be blocked`);
@@ -475,9 +558,10 @@ async function main() {
   let promoted = 0;
   const conflicts = [];
   const droppedPins = [];
+  const keptOnBadPin = [];
   const stopdesks = merged
     .map((r) => {
-      const w = resolveWilaya(r.lat, r.lng, communes, r.wilaya_num ?? r.cardWilaya);
+      let w = resolveWilaya(r.lat, r.lng, communes, r.wilaya_num ?? r.cardWilaya);
       if (r.wilaya_num != null && r.wilaya_num !== w.code) {
         if (w.code > 58) promoted++;
         else conflicts.push(`${r.id}(src ${r.wilaya_num}→${w.code})`);
@@ -486,8 +570,20 @@ async function main() {
       // a DIFFERENT ≤58 wilaya (a wrong/duplicated Maps link), drop the desk rather than
       // ship a misplaced point. Reform promotions (→59-69) are expected and kept.
       if (r.cardWilaya != null && w.code <= 58 && w.code !== r.cardWilaya) {
-        droppedPins.push(`${r.id}(card ${r.cardWilaya}→pin ${w.code})`);
-        return null;
+        // The desk keeps the point it already shipped if it has one, and is dropped only
+        // when it has none, so one copy-paste slip upstream cannot unpublish a desk that
+        // was correctly placed before.
+        const prev = committed.get(r.id);
+        const pw = prev ? resolveWilaya(prev.lat, prev.lng, communes, r.cardWilaya) : null;
+        if (pw && (pw.code === r.cardWilaya || pw.code > 58)) {
+          keptOnBadPin.push(`${r.id}(card ${r.cardWilaya}→pin ${w.code}, kept its committed point)`);
+          r.lat = prev.lat;
+          r.lng = prev.lng;
+          w = pw;
+        } else {
+          droppedPins.push(`${r.id}(card ${r.cardWilaya}→pin ${w.code})`);
+          return null;
+        }
       }
       return {
         id: r.id,
@@ -513,6 +609,7 @@ async function main() {
   if (badCarrier.length) throw new Error(`stop-desk operators missing from registry: ${badCarrier.join(", ")}`);
   if (conflicts.length) throw new Error(`centroid wilaya conflicts with source (both ≤58): ${conflicts.join(", ")}`);
   if (promoted) console.log(`  ${promoted} desk(s) in wilayas promoted by the 2026 reform (source ≤58 → flagship 59-69)`);
+  if (keptOnBadPin.length) console.log(`  ${keptOnBadPin.length} carded desk(s) kept their committed point, this run's pin fell in another wilaya than the card declares: ${keptOnBadPin.join(", ")}`);
   if (droppedPins.length) console.log(`  ${droppedPins.length} carded desk(s) dropped: pin in a different wilaya than the card (bad/duplicate link): ${droppedPins.slice(0, 6).join(", ")}${droppedPins.length > 6 ? "…" : ""}`);
 
   // coverage, per operator that has stop-desks

@@ -66,8 +66,8 @@
   {
     "operator": "anderson",
     "carrier_name": "Anderson Logistics",
-    "stopdesks": 103,
-    "wilaya_count": 53,
+    "stopdesks": 104,
+    "wilaya_count": 54,
     "wilayas": [
       "01",
       "02",
@@ -76,6 +76,7 @@
       "05",
       "06",
       "07",
+      "08",
       "09",
       "10",
       "11",
@@ -123,13 +124,13 @@
       "67",
       "68"
     ],
-    "commune_count": 103
+    "commune_count": 104
   },
   {
     "operator": "noest",
     "carrier_name": "Noest Express",
-    "stopdesks": 101,
-    "wilaya_count": 57,
+    "stopdesks": 102,
+    "wilaya_count": 58,
     "wilayas": [
       "01",
       "02",
@@ -185,11 +186,12 @@
       "57",
       "58",
       "60",
+      "64",
       "65",
       "67",
       "68"
     ],
-    "commune_count": 101
+    "commune_count": 102
   },
   {
     "operator": "guepex",

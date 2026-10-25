@@ -22,7 +22,12 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { splitName, parseYalidine, pinFor } from "../packages/livraison/scripts/fetch.mjs";
+import {
+  splitName,
+  parseYalidine,
+  pinFor,
+  carryRenamedIds,
+} from "../packages/livraison/scripts/fetch.mjs";
 
 test("the three rows that lost their brackets upstream on 2026-10-25", () => {
   // Stray closing bracket, no opening one.
@@ -150,4 +155,65 @@ test("an operator's own pin moves the desk however far it moved", () => {
   assert.deepEqual(pinFor(movedPin, djanet), { ...movedPin, verdict: "fresh" });
   // A desk with no committed coordinate takes whatever the link gives.
   assert.deepEqual(pinFor(movedPin, undefined), { ...movedPin, verdict: "fresh" });
+});
+
+// Ids follow places. A carded id is minted from the card's own title, so a retitled card
+// would otherwise retire a live id and mint a new one for the same desk.
+test("a renamed card keeps the id it already published", () => {
+  // Anderson's real rename on 2026-10-25: same desk, 24 m, card title gained "- Zeralda",
+  // which also changed the commune text parsed out of that title.
+  const committed = new Map([
+    ["anderson-16-sidi-abdellah", {
+      id: "anderson-16-sidi-abdellah", operator: "anderson",
+      wilaya_code: "16", commune: "Sidi Abdellah", lat: 36.6805625, lng: 2.8560625,
+    }],
+  ]);
+  const recs = [{
+    id: "anderson-16-sidi-abdellah-zeralda", name: "Anderson Alger (Sidi Abdellah - Zeralda)",
+    commune: "Sidi Abdellah - Zeralda", cardWilaya: 16, lat: 36.68056, lng: 2.85606,
+  }];
+  const log = carryRenamedIds(recs, committed, "anderson");
+  assert.equal(recs[0].id, "anderson-16-sidi-abdellah");
+  assert.equal(log.length, 1);
+  assert.match(log[0], /anderson-16-sidi-abdellah kept as "Anderson Alger \(Sidi Abdellah - Zeralda\)"/);
+});
+
+test("the id carry does not reach past the same desk", () => {
+  const prev = (id, lat, lng, wilaya_code = "16") => [id, { id, operator: "anderson", wilaya_code, lat, lng }];
+  const committed = new Map([prev("anderson-16-a", 36.6805625, 2.8560625)]);
+  const rec = (lat, lng, cardWilaya = 16) => [{ id: "anderson-16-new", name: "n", commune: "c", cardWilaya, lat, lng }];
+
+  // 1.1 km away is a different desk, so the new id stands and the old one retires.
+  let recs = rec(36.6905, 2.8560625);
+  assert.deepEqual(carryRenamedIds(recs, committed, "anderson"), []);
+  assert.equal(recs[0].id, "anderson-16-new");
+
+  // Another wilaya never matches, however close the pin.
+  recs = rec(36.6805625, 2.8560625, 42);
+  assert.deepEqual(carryRenamedIds(recs, committed, "anderson"), []);
+
+  // Another operator's disappeared desk is not ours to claim.
+  recs = rec(36.6805625, 2.8560625);
+  assert.deepEqual(carryRenamedIds(recs, new Map([["noest-16a", { id: "noest-16a", operator: "noest", wilaya_code: "16", lat: 36.6805625, lng: 2.8560625 }]]), "anderson"), []);
+
+  // A still-live id is not up for grabs: the card that owns it is still published.
+  const live = new Map([prev("anderson-16-a", 36.6805625, 2.8560625)]);
+  recs = [
+    { id: "anderson-16-a", name: "held", commune: "c", cardWilaya: 16, lat: 36.6805625, lng: 2.8560625 },
+    { id: "anderson-16-new", name: "n", commune: "c", cardWilaya: 16, lat: 36.68057, lng: 2.85607 },
+  ];
+  assert.deepEqual(carryRenamedIds(recs, live, "anderson"), []);
+  assert.deepEqual(recs.map((r) => r.id), ["anderson-16-a", "anderson-16-new"]);
+
+  // Two new cards on one disappeared id: the nearer takes it whichever order the carrier
+  // listed them in, and no id is duplicated.
+  const far = { id: "anderson-16-n1", name: "far", commune: "c", cardWilaya: 16, lat: 36.68065, lng: 2.8560625 };
+  const near = { id: "anderson-16-n2", name: "near", commune: "c", cardWilaya: 16, lat: 36.6805626, lng: 2.8560625 };
+  for (const order of [[far, near], [near, far]]) {
+    recs = order.map((r) => ({ ...r }));
+    const log = carryRenamedIds(recs, committed, "anderson");
+    assert.equal(log.length, 1);
+    assert.equal(recs.find((r) => r.name === "near").id, "anderson-16-a");
+    assert.equal(recs.find((r) => r.name === "far").id, "anderson-16-n1");
+  }
 });

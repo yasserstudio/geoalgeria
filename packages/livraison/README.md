@@ -13,7 +13,7 @@
 </div>
 
 The COD / e-commerce delivery layer for Algeria, in three parts: a **registry** of
-delivery carriers, **447 geocoded stop-desk points** across 62 wilayas, and
+delivery carriers, **449 geocoded stop-desk points** across 63 wilayas, and
 **per-carrier coverage**. Shipped as JSON, CSV, and GeoJSON. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -45,10 +45,10 @@ const reach = livraison.coverageByCarrier("yalidine"); // wilayas it serves
 | Dataset | Count | Geocoded | Notes |
 | --- | --- | --- | --- |
 | Carriers (`carriers.json`) | **16** | – | registry: name, website, model, COD, scope, data openness, API |
-| Stop-desks (`stopdesks.json`) | **447** | ✅ all | id, operator, name, address, commune, `wilaya_code`, lat/lng |
+| Stop-desks (`stopdesks.json`) | **449** | ✅ all | id, operator, name, address, commune, `wilaya_code`, lat/lng |
 | Coverage (`coverage.json`) | **9** | – | per-carrier wilaya/commune stop-desk presence |
 
-Stop-desks span **62 wilayas**, every one geocoded. `wilaya_code` links against the
+Stop-desks span **63 wilayas**, every one geocoded. `wilaya_code` links against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
 
 ### A note on coverage and honesty
@@ -91,14 +91,14 @@ const desks: StopDesk[] = livraison.stopdesks();
 ```
 data/
   carriers.json             # 16 carriers (registry)
-  stopdesks.json            # 447 geocoded stop-desks (array)
+  stopdesks.json            # 449 geocoded stop-desks (array)
   coverage.json             # 9 per-carrier coverage rows
   metadata.json             # sources, counts, updated
   csv/                      # repo + Release bundle (not in npm tarball)
     carriers.csv
     stopdesks.csv
     coverage.csv
-  geojson/stopdesks.geojson # Point features (all 447 geocoded)
+  geojson/stopdesks.geojson # Point features (all 449 geocoded)
 ```
 
 ## Record shapes
