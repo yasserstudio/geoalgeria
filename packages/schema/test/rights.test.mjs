@@ -269,6 +269,7 @@ const RECORD_KEYS = [
   "sogral",
   "sogral-mahatati-graph",
   "sogral-timetable",
+  "swift-express",
   "wikidata",
   "wikipedia-fr",
   "yalidine",

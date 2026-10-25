@@ -13,7 +13,7 @@
 </div>
 
 La couche livraison / e-commerce pour l'Algérie, en trois volets : un **registre** de
-transporteurs, **526 bureaux de retrait géocodés** répartis sur 64 wilayas, et la
+transporteurs, **581 bureaux de retrait géocodés** répartis sur 64 wilayas, et la
 **couverture par transporteur**. Distribué en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -44,11 +44,11 @@ const reach = livraison.coverageByCarrier("yalidine"); // wilayas desservies
 
 | Jeu de données | Nombre | Géocodé | Notes |
 | --- | --- | --- | --- |
-| Transporteurs (`carriers.json`) | **16** | – | registre : nom, site web, modèle, paiement à la livraison, périmètre, ouverture des données, API |
-| Bureaux de retrait (`stopdesks.json`) | **526** | ✅ tous | id, opérateur, nom, adresse, commune, `wilaya_code`, lat/lng |
-| Couverture (`coverage.json`) | **9** | – | présence par transporteur (wilaya/commune) |
+| Transporteurs (`carriers.json`) | **17** | – | registre : nom, site web, modèle, paiement à la livraison, périmètre, ouverture des données, API |
+| Bureaux de retrait (`stopdesks.json`) | **581** | ✅ tous | id, opérateur, nom, adresse, commune, `wilaya_code`, lat/lng |
+| Couverture (`coverage.json`) | **11** | – | présence par transporteur (wilaya/commune) |
 
-Les bureaux de retrait couvrent **63 wilayas**, tous géocodés. `wilaya_code` se joint au
+Les bureaux de retrait couvrent **64 wilayas**, tous géocodés. `wilaya_code` se joint au
 modèle 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
 ### Une note sur la couverture et la transparence
@@ -60,11 +60,11 @@ publient leurs emplacements de manière ouverte :
 
 - l'**écosystème relais Yalidine + Guepex** – Yalidine, Guepex, et les opérateurs qui
   utilisent leur réseau partagé (EasyAndSpeed, WeCanServices, SpeedMail, Zimou Express) ;
-- **Anderson**, **Noest**, **Maystro** et **ZR Express**, quatre réseaux indépendants,
-  chacun géocodé à partir du lien Google Maps sur ses fiches d'agence ou ses lignes de
-  bureau (les agences dont les liens sont manquants, irrésolvables ou pointent vers une
-  wilaya différente de celle déclarée sur la fiche sont omises ; rien n'est géocodé à
-  partir d'une adresse).
+- **Anderson**, **Noest**, **Maystro**, **ZR Express** et **Swift Express**, cinq réseaux
+  indépendants, chacun géocodé à partir du lien Google Maps sur ses fiches d'agence, ses
+  lignes de bureau ou sa liste d'agences publiée (les agences dont les liens sont
+  manquants, irrésolvables ou pointent vers une wilaya différente de celle déclarée sur la
+  fiche sont omises ; rien n'est géocodé à partir d'une adresse).
 
 Les transporteurs comme DHD, DHL et Aramex gardent leurs listes d'agences
 derrière des applications, des connexions ou des API sous licence, et apparaissent donc
@@ -95,14 +95,14 @@ inclus dans chaque [Release GitHub](https://github.com/yasserstudio/geoalgeria/r
 ```
 data/
   carriers.json             # 16 transporteurs (registre)
-  stopdesks.json            # 526 bureaux de retrait géocodés (tableau)
+  stopdesks.json            # 581 bureaux de retrait géocodés (tableau)
   coverage.json             # 9 lignes de couverture par transporteur
   metadata.json             # sources, comptages, updated
   csv/                      # dépôt + bundle Release (pas dans le tarball npm)
     carriers.csv
     stopdesks.csv
     coverage.csv
-  geojson/stopdesks.geojson # Entités Point (les 526 géocodées)
+  geojson/stopdesks.geojson # Entités Point (les 581 géocodées)
 ```
 
 ## Formes d'enregistrement
@@ -177,6 +177,11 @@ Les bureaux de retrait proviennent des transporteurs qui publient des données d
   d'agence, les identifiants sont donc formés à partir de la wilaya et de la commune.
   Trois lignes renvoient vers une recherche par nom de lieu plutôt qu'une coordonnée et
   sont omises plutôt que géocodées.
+- **Swift Express** (<https://www.swiftexpress.org/fr/offices>) rend sa liste d'agences
+  côté serveur : une seule requête ordinaire renvoie tout le réseau en JSON dans la page.
+  Chaque agence porte sa propre clé d'enregistrement, dont son identifiant est formé, avec
+  son adresse, sa wilaya et un lien court Google Maps résolu comme ceux d'Anderson et de
+  Noest.
 
 Le registre des transporteurs est compilé à partir de
 [CourierDZ](https://github.com/PiteurStudio/CourierDZ), des sites web des transporteurs

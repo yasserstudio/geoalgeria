@@ -4,16 +4,16 @@
   "title_fr": "Points relais de livraison d'Algérie",
   "title_ar": "نقاط استلام التوصيل في الجزائر",
   "title_en": "Algeria delivery stop-desks",
-  "record_count": 526,
-  "geocoded_count": 526,
+  "record_count": 581,
+  "geocoded_count": 581,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 524,
+    "exact": 579,
     "approximate": 2
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro and ZR Express's own agency lists: 526 points across 10 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+  "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express and Swift Express's own agency lists: 581 points across 11 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
   "wilayas_covered": 64,
   "bbox": [
     -8.143583,
@@ -69,13 +69,21 @@
       "license": "Data © ZR Express; redistributed for reference",
       "evidence_type": "official",
       "retrieved": "2026-10-25"
+    },
+    {
+      "key": "swift-express",
+      "name": "Swift Express: agency network",
+      "url": "https://www.swiftexpress.org/fr/offices",
+      "license": "Data © Swift Express; redistributed for reference",
+      "evidence_type": "official",
+      "retrieved": "2026-10-25"
     }
   ],
   "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
   "updated": "2026-10-25",
-  "carriers": 16,
-  "stopdesks": 526,
-  "coverage": 10,
+  "carriers": 17,
+  "stopdesks": 581,
+  "coverage": 11,
   "by_operator": {
     "guepex": 71,
     "yalidine": 105,
@@ -86,6 +94,7 @@
     "anderson": 104,
     "maystro": 38,
     "noest": 102,
+    "swift-express": 55,
     "zr-express": 77
   }
 }

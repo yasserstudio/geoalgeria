@@ -1507,6 +1507,39 @@
       "refusal": null
     },
     {
+      "key": "swift-express",
+      "name": "Swift Express: agency network",
+      "publisher": "Swift Express",
+      "metadata_keys": [
+        "swift-express"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Swift Express",
+        "url": "https://www.swiftexpress.org/fr/offices"
+      },
+      "notice": "Swift Express: agency network: data © Swift Express, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.swiftexpress.org/fr/offices",
+        "repo_path": null,
+        "retrieved_at": "2026-10-25",
+        "note": "No open reuse licence is recorded; the footer states copyright and links the terms and privacy pages only. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-04-25",
+      "notes": null,
+      "refusal": null
+    },
+    {
       "key": "wikidata",
       "name": "Wikidata structured data",
       "publisher": "Wikimedia Foundation",

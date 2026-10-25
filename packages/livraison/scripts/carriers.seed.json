@@ -99,6 +99,17 @@
     "notes": "Social-commerce focused; its public coverage page lists each stop-desk with a Google Maps link, resolved to coordinates. Merchant integration API is private."
   },
   {
+    "id": "swift-express",
+    "name": "Swift Express",
+    "website": "https://www.swiftexpress.org",
+    "type": "both",
+    "cod": true,
+    "scope": "domestic",
+    "open_agency_data": "geocoded",
+    "api": "private",
+    "notes": "Publishes its agency network at swiftexpress.org/fr/offices, every office with its address, phones and its own Google Maps link. Merchant operations run on the Ecotrack platform, whose API is private."
+  },
+  {
     "id": "dhd",
     "name": "DHD",
     "website": "https://dhd-dz.com",

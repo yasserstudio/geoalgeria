@@ -70,6 +70,20 @@
     "stopdesk_wilaya_count": 35
   },
   {
+    "id": "swift-express",
+    "name": "Swift Express",
+    "website": "https://www.swiftexpress.org",
+    "type": "both",
+    "cod": true,
+    "scope": "domestic",
+    "open_agency_data": "geocoded",
+    "api": "private",
+    "notes": "Publishes its agency network at swiftexpress.org/fr/offices, every office with its address, phones and its own Google Maps link. Merchant operations run on the Ecotrack platform, whose API is private.",
+    "in_stopdesks": true,
+    "stopdesk_count": 55,
+    "stopdesk_wilaya_count": 45
+  },
+  {
     "id": "maystro",
     "name": "Maystro Delivery",
     "website": "https://maystro-delivery.com",

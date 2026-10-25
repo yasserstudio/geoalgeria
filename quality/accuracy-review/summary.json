@@ -168,19 +168,19 @@
     },
     {
       "path": "packages/livraison/data/carriers.json",
-      "sha256": "0acabbfe23bc2f6c3299410e17e5f1a29a1e711a13ba92916a5321ada2a62587"
+      "sha256": "de0076ab7fa0bb93fdcc21c8f8607fa82772cb4392b4a10d2d40fa65fa07e6b6"
     },
     {
       "path": "packages/livraison/data/coverage.json",
-      "sha256": "a58949148d1b8a76dea52c9790813777f47782b59aeab096af9076787b8a63b8"
+      "sha256": "bef224754b87139213c9c821f62952da053469fac035f8602088baf8d716a5fe"
     },
     {
       "path": "packages/livraison/data/metadata.json",
-      "sha256": "b23a80abf57c18ebd6239e45382043acd1ebc86c17b7f84e3a97be5146deb29d"
+      "sha256": "b9336381de410d2a9d1f4791c17083d8609b3fc4a90761fe813bfff37426e59f"
     },
     {
       "path": "packages/livraison/data/stopdesks.json",
-      "sha256": "f0c666c08ec8af15fa4e03868e77d4fba9b1b8e42bf5fc66bacec5a2942308fc"
+      "sha256": "93c777d6f88aa3a4689d15e4d3dd4c8753a5750f12dd0af886f2d99a9fdd42f1"
     },
     {
       "path": "packages/mobilis/data/agences.json",
@@ -309,7 +309,7 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70631,
+  "total_records": 70686,
   "candidates": 17752,
   "reasons": {
     "approximate_coordinate": 16904,
@@ -1432,7 +1432,7 @@
     },
     {
       "dataset": "livraison",
-      "total_records": 526,
+      "total_records": 581,
       "candidates": 2,
       "reasons": {
         "approximate_coordinate": 2,
@@ -1445,16 +1445,16 @@
         "title_fr": "Points relais de livraison d'Algérie",
         "title_ar": "نقاط استلام التوصيل في الجزائر",
         "title_en": "Algeria delivery stop-desks",
-        "record_count": 526,
-        "geocoded_count": 526,
+        "record_count": 581,
+        "geocoded_count": 581,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 524,
+          "exact": 579,
           "approximate": 2
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro and ZR Express's own agency lists: 526 points across 10 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express and Swift Express's own agency lists: 581 points across 11 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
         "wilayas_covered": 64,
         "bbox": [
           -8.143583,
@@ -1510,13 +1510,21 @@
             "license": "Data © ZR Express; redistributed for reference",
             "evidence_type": "official",
             "retrieved": "2026-10-25"
+          },
+          {
+            "key": "swift-express",
+            "name": "Swift Express: agency network",
+            "url": "https://www.swiftexpress.org/fr/offices",
+            "license": "Data © Swift Express; redistributed for reference",
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           }
         ],
         "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
         "updated": "2026-10-25",
-        "carriers": 16,
-        "stopdesks": 526,
-        "coverage": 10,
+        "carriers": 17,
+        "stopdesks": 581,
+        "coverage": 11,
         "by_operator": {
           "guepex": 71,
           "yalidine": 105,
@@ -1527,6 +1535,7 @@
           "anderson": 104,
           "maystro": 38,
           "noest": 102,
+          "swift-express": 55,
           "zr-express": 77
         }
       }
@@ -2489,7 +2498,7 @@
     {
       "dataset": "livraison",
       "entity": "stopdesks.json",
-      "total_records": 526,
+      "total_records": 581,
       "candidates": 2,
       "reasons": {
         "approximate_coordinate": 2,

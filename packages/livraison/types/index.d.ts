@@ -26,7 +26,14 @@ export type GeoMethod = "carrier_relay";
  *  `StopDesk.source` / `metadata.sources[]`. Narrower than {@link Operator}:
  *  a few carriers appear as `operator` via a federated feed (e.g. Yalidine's)
  *  without being a `source` themselves. */
-export type SourceKey = "anderson" | "guepex" | "maystro" | "noest" | "yalidine" | "zr-express";
+export type SourceKey =
+  | "anderson"
+  | "guepex"
+  | "maystro"
+  | "noest"
+  | "swift-express"
+  | "yalidine"
+  | "zr-express";
 
 /** Every carrier id that owns at least one geocoded stop-desk. */
 export type Operator =
@@ -36,6 +43,7 @@ export type Operator =
   | "maystro"
   | "noest"
   | "speedmail"
+  | "swift-express"
   | "wecanservices"
   | "yalidine"
   | "zimou-express"

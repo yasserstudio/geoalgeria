@@ -48,6 +48,7 @@ const ANDERSON_URL = "https://anderson-ecommerce.com/";
 const NOEST_URL = "https://noest-dz.com/";
 const MAYSTRO_URL = "https://maystro-delivery.com/Coverage.html";
 const ZR_URL = "https://www.zrexpress.net/en/offices";
+const SWIFT_URL = "https://www.swiftexpress.org/fr/offices";
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/120.0 Safari/537.36";
@@ -306,6 +307,53 @@ function wilayaCoder() {
   const by = new Map();
   for (const w of rows) for (const n of [w.name_fr, w.name_en]) if (n) by.set(slug(n), w.code);
   return (name) => by.get(slug(name)) ?? null;
+}
+
+// Swift Express "Nos agences": a Next.js app whose office list is rendered server-side
+// and therefore arrives inside the page HTML, as a JSON array in the streamed RSC payload
+// (`self.__next_f.push([1,"…\"offices\":[{…}]…"])`). One ordinary request to /fr/offices
+// returns the whole network, so nothing is paged and no API has to be found: the array
+// below IS the page's own data, read where the page itself reads it rather than scraped
+// back out of the two card layouts it renders from it.
+//
+// Each office carries its own record id ("236"), which is a database key and not the
+// display order (the first row is 236, the second 185), so ids come from it the way
+// Noest's come from its branch code. `number` restates `city.id`; neither is a branch
+// code. `city.id` is the wilaya code, `village` the commune, and the Maps link is a
+// goo.gl shortlink, resolved over the network like Anderson's and Noest's.
+export function parseSwift(html) {
+  const KEY = '\\"offices\\":[';
+  const at = html.indexOf(KEY);
+  if (at < 0) return [];
+  // The payload is a JSON array inside a JS string literal, so every quote in it is
+  // escaped. Walk it quote-aware: `phoneNumbers` is an array, so a bracket count alone
+  // is right only as long as no address ever contains one.
+  let depth = 0, inStr = false, end = -1;
+  for (let i = at + KEY.length - 1; i < html.length; i++) {
+    const two = html.slice(i, i + 2);
+    if (two === '\\\\') { i++; continue; } // an escaped backslash, not a delimiter
+    if (two === '\\"') { inStr = !inStr; i++; continue; }
+    if (inStr) continue;
+    if (html[i] === "[") depth++;
+    else if (html[i] === "]" && --depth === 0) { end = i; break; }
+  }
+  if (end < 0) return [];
+  const offices = JSON.parse(JSON.parse(`"${html.slice(at + KEY.length - 1, end + 1)}"`));
+  const out = [];
+  for (const o of offices) {
+    const code = Number(o?.city?.id);
+    const commune = decode(o?.village);
+    if (!o?.id || !Number.isInteger(code) || code < 1 || code > 69 || !commune) continue;
+    out.push({
+      id: `swift-express-${slug(o.id)}`,
+      name: `Swift Express ${titleCase(commune)}`,
+      commune: titleCase(commune),
+      cardWilaya: code,
+      address: orNull(o.address),
+      link: o.locationUrl ? decode(o.locationUrl) : null,
+    });
+  }
+  return out;
 }
 
 // Maystro tags each stop-desk with a wilaya "translation" slug rather than a code; map the
@@ -643,11 +691,12 @@ async function main() {
   const maystro = await buildCarded("Maystro", MAYSTRO_URL, parseMaystro, "maystro", 30, committed);
   const toWilaya = wilayaCoder();
   const zr = await buildCarded("ZR Express", ZR_URL, (h) => parseZrExpress(h, toWilaya), "zr-express", 60, committed);
+  const swift = await buildCarded("Swift Express", SWIFT_URL, parseSwift, "swift-express", 45, committed);
 
   // Merge by stop-desk id (union). Prefer Yalidine (richer addresses); fill from Guepex.
   // Folded-out operators are dropped; Anderson ids are namespaced so they never collide.
   const byId = new Map();
-  for (const r of [...yal, ...guepex, ...anderson, ...noest, ...maystro, ...zr].filter((x) => !DROPPED_OPERATORS.has(x.operator))) {
+  for (const r of [...yal, ...guepex, ...anderson, ...noest, ...maystro, ...zr, ...swift].filter((x) => !DROPPED_OPERATORS.has(x.operator))) {
     const cur = byId.get(r.id);
     if (!cur) { byId.set(r.id, { ...r, sources: [r.src] }); continue; }
     if (!cur.sources.includes(r.src)) cur.sources.push(r.src);
