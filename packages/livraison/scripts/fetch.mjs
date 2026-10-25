@@ -26,15 +26,20 @@
  * geoalgeria dataset (same method as @geoalgeria/aviation) and cross-checked against
  * the source-provided wilaya where available.
  *
- * Usage: node scripts/fetch.mjs
+ * Every source pull is committed under sources/livraison/ (see the capture section
+ * below), so the package rebuilds offline from the store with --cache.
+ *
+ * Usage: node scripts/fetch.mjs          # live pull from every carrier
+ *        node scripts/fetch.mjs --cache  # rebuild from sources/livraison/, no network
  */
 
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, readCommitted, readRetiredIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 import { wcode } from "../../../scripts/lib/commune-resolver.mjs";
+import { readCapture, writeCapture } from "../../../scripts/lib/source-store.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -134,6 +139,52 @@ async function getText(url) {
   const res = await fetch(url, { headers: { "User-Agent": UA, Referer: new URL(url).origin } });
   if (!res.ok) throw new Error(`${url} -> HTTP ${res.status}`);
   return res.text();
+}
+
+// --- the source store ------------------------------------------------------
+// Every pull this build makes is committed under sources/livraison/, so the
+// package re-emits with no network at all (`--cache`) and a refresh is a
+// reviewable git diff. Conventions: sources/README.md.
+//
+// What is stored is each source's PARSED projection, not the carrier's page:
+// the rows the build consumes (id, name, commune, the wilaya the card declares,
+// address, the operator's own Maps link), which is exactly what the package
+// already publishes, so nothing all-rights-reserved is relicensed into the
+// repository. That is the rights-safe shape the Bus Operator captures use, and
+// it is also what keeps the store lean: HHD's home page alone is ~530 KB and
+// Swift's ~2.7 MB of RSC payload, against a few tens of KB of facts.
+//
+// The trade-off is explicit: a parser fix is not exercised by a `--cache`
+// rebuild, because the parsers run upstream of the capture. Re-run live once
+// after changing one.
+const OFFLINE = process.argv.includes("--cache");
+const CAPTURE_NOTE =
+  "Rights-safe projection: the parsed rows this build consumes (ids, names, commune, " +
+  "the wilaya the card declares, address and the operator's own Google Maps link), not " +
+  "the carrier's page. Carrier pages are all rights reserved and are not redistributed.";
+// Resolution receipts for the operator-published Maps links. Keyed by the exact
+// link the carrier printed; each entry is what the resolver made of it. Without
+// them an offline rebuild would have to ask Google again and could not reproduce
+// the same pins, since a shortlink carries no coordinate of its own.
+const MAPS_CAPTURE = "maps-resolutions";
+const MAPS_RESOLVER_URL = "https://maps.google.com/";
+const MAPS_CAPTURE_NOTE =
+  "Resolution cache for the Google Maps links the carriers publish, keyed by the link " +
+  "itself: the final URL the redirect landed on, the coordinate extracted from it and " +
+  "which tier produced it (inline | redirect | place-dms | static-map | cid-pin | " +
+  "unresolved). Coordinates only; no map tiles, imagery or place records are stored.";
+
+/** Persist a source's parsed rows, then hand them to the build. */
+function capture(source, rows, url) {
+  writeCapture("livraison", source, rows, { url, note: CAPTURE_NOTE });
+  return rows;
+}
+
+/** Replay a source's parsed rows from the store. */
+function stored(source, label) {
+  const rows = readCapture("livraison", source);
+  console.log(`  stored capture: ${rows.length} ${label} rows`);
+  return rows;
 }
 
 // --- parsers ---------------------------------------------------------------
@@ -535,17 +586,35 @@ const coordsIn = (url) => {
   return null;
 };
 
+// The query parameters a resolved Maps URL carries that mean anything as a receipt:
+// the coordinate (`q`/`query`/`ll`/`center`) and the place's own identity (`cid`,
+// `ftid`). Everything else Google appends is per-request state: `g_ep` carries its
+// deploy string ("26.30.9"), `skid`, `entry`, `coh`, `lucs` and `utm_source` rotate
+// per response. Keeping them would make every re-fetch a 400-line capture diff with
+// no changed fact in it, which is exactly what the store exists to avoid.
+const MAPS_URL_PARAMS = new Set(["q", "query", "ll", "center", "cid", "ftid"]);
+function canonicalMapsUrl(url) {
+  if (!url) return null;
+  let parsed;
+  try { parsed = new URL(url); } catch { return url; }
+  for (const key of [...parsed.searchParams.keys()])
+    if (!MAPS_URL_PARAMS.has(key)) parsed.searchParams.delete(key);
+  // Left percent-encoded: `url` is already decoded for the coordinate match above, so
+  // re-encoding is what makes the stored form the same string every time.
+  return parsed.toString();
+}
+
 // Resolve a Google Maps link to its pin via the redirect a non-browser UA receives.
 // Tries the link itself, then the canonical (!3d!4d), decimal place/search/q, DMS
-// place, then a static-map pin.
-async function resolveMapsLink(link) {
-  if (!link) return null; // card published no Maps link at all
+// place, then a static-map pin. Returns the receipt the store keeps: the tier that
+// produced the coordinate, the coordinate, and the URL the redirect landed on.
+async function resolveMapsLinkLive(link) {
   // ZR Express writes the pin straight into the href (`?api=1&query=<lat>,<lng>`), so
   // for 77 of its 80 offices the coordinate is already in hand. Read the link itself
   // before asking the network for it: nothing is gained by a request whose answer we
   // are holding, and 77 requests to Google are 77 requests not made.
   const inline = coordsIn(decodeURIComponent(link));
-  if (inline) return inline;
+  if (inline) return { verdict: "inline", lat: inline.lat, lng: inline.lng, final_url: null };
   let url = "", body = "";
   for (let attempt = 0; attempt < 2 && !url; attempt++) {
     try {
@@ -554,21 +623,61 @@ async function resolveMapsLink(link) {
       body = await res.text();
     } catch { /* network blip: retry once */ }
   }
+  const landed = canonicalMapsUrl(url);
   const hit = coordsIn(url);
-  if (hit) return hit;
+  if (hit) return { verdict: "redirect", lat: hit.lat, lng: hit.lng, final_url: landed };
   const d = url.match(/\/maps\/place\/(\d+)°(\d+)'([\d.]+)"([NS]).*?(\d+)°(\d+)'([\d.]+)"([EW])/);
   if (d) {
     const lat = dmsToDec(d[1], d[2], d[3], d[4]), lng = dmsToDec(d[5], d[6], d[7], d[8]);
-    if (inAlgeria(lat, lng)) return { lat, lng };
+    if (inAlgeria(lat, lng)) return { verdict: "place-dms", lat, lng, final_url: landed };
   }
   const sm = [...body.matchAll(/staticmap\?center=(-?\d+\.\d+)%2C(-?\d+\.\d+)&(?:amp;)?zoom=(\d+)/g)]
     .map((x) => ({ lat: +x[1], lng: +x[2], z: +x[3] }))
     .filter((x) => x.z >= 15 && inAlgeria(x.lat, x.lng))
     .sort((a, b) => b.z - a.z)[0];
-  if (sm) return { lat: sm.lat, lng: sm.lng };
+  if (sm) return { verdict: "static-map", lat: sm.lat, lng: sm.lng, final_url: landed };
   // Nothing in the URL or the body placed it. A cid-only place link is the known case,
   // and the live pin is preferred over the committed one, so this is checked last.
-  return cidPinFor(link);
+  const cid = cidPinFor(link);
+  if (cid) return { verdict: "cid-pin", lat: cid.lat, lng: cid.lng, final_url: landed };
+  return { verdict: "unresolved", lat: null, lng: null, final_url: landed };
+}
+
+// This run's receipts, link → entry, flushed to the store as each carrier finishes.
+const mapsResolutions = new Map();
+// The store's receipts, read once when rebuilding offline.
+let storedResolutions = null;
+
+/**
+ * The pin behind a card's Maps link: resolved live and recorded, or replayed from
+ * the store. A shortlink carries no coordinate of its own, so without the recorded
+ * resolution an offline rebuild could not place the desk the same way twice.
+ */
+async function resolveMapsLink(link) {
+  if (!link) return null; // card published no Maps link at all
+  if (OFFLINE) {
+    storedResolutions ??= readCapture("livraison", MAPS_CAPTURE);
+    const hit = storedResolutions[link];
+    if (!hit)
+      throw new Error(
+        `--cache: no stored Maps resolution for ${link}: run once without --cache to capture it`,
+      );
+    return hit.lat == null ? null : { lat: hit.lat, lng: hit.lng };
+  }
+  const entry = await resolveMapsLinkLive(link);
+  mapsResolutions.set(link, entry);
+  return entry.lat == null ? null : { lat: entry.lat, lng: entry.lng };
+}
+
+// Written as each carrier's links finish rather than once at the end, so the
+// receipts survive a run a later guard aborts (sources/README.md workflow step 1).
+function flushMapsResolutions() {
+  if (OFFLINE || !mapsResolutions.size) return;
+  writeCapture("livraison", MAPS_CAPTURE, Object.fromEntries(mapsResolutions), {
+    url: MAPS_RESOLVER_URL,
+    records: mapsResolutions.size,
+    note: MAPS_CAPTURE_NOTE,
+  });
 }
 
 // Bounded-concurrency map (keeps Maps-link resolution polite + fast).
@@ -813,9 +922,14 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
   console.log(`Fetching ${label} agencies…`);
   // `text` is for a carrier whose list is not at `url` itself: HHD Express publishes it in
   // a client chunk whose name the page decides, so the fetch happens before the build.
-  const cards = parseFn(text ?? await getText(url));
+  // The capture is keyed by the operator id, and is written before the Maps links are
+  // resolved so the cards survive a run that later aborts.
+  const cards = OFFLINE
+    ? stored(operator, label)
+    : capture(operator, parseFn(text ?? await getText(url)), url);
   console.log(`  ${cards.length} cards; resolving Maps links…`);
   const coords = await mapPool(cards, 6, (c) => resolveMapsLink(c.link));
+  flushMapsResolutions();
   const recs = [];
   let fresh = 0;
   const carried = [];
@@ -904,10 +1018,14 @@ async function main() {
   const carrierIds = new Set(seed.map((c) => c.id));
 
   console.log("Fetching Yalidine stop-desks…");
-  const yal = parseYalidine(await getText(YAL_URL));
+  const yal = OFFLINE
+    ? stored("yalidine", "Yalidine")
+    : capture("yalidine", parseYalidine(await getText(YAL_URL)), YAL_URL);
   console.log(`  ${yal.length} rows`);
   console.log("Fetching Guepex agencies…");
-  const guepex = parseGuepex(JSON.parse(await getText(GUEPEX_URL)));
+  const guepex = OFFLINE
+    ? stored("guepex", "Guepex")
+    : capture("guepex", parseGuepex(JSON.parse(await getText(GUEPEX_URL))), GUEPEX_URL);
   console.log(`  ${guepex.length} rows`);
 
   // Per-source floors catch a partial/truncated fetch that still clears the merged total.
@@ -934,7 +1052,9 @@ async function main() {
   const toWilaya = wilayaCoder();
   const zr = await buildCarded("ZR Express", ZR_URL, (h) => parseZrExpress(h, toWilaya), "zr-express", 60, committed);
   const swift = await buildCarded("Swift Express", SWIFT_URL, parseSwift, "swift-express", 45, committed);
-  const hhdChunk = await fetchHhdAgencyChunk();
+  // Offline the chunk is never read: the HHD capture is the parsed agency array, so
+  // there is no page to find the chunk in and nothing to parse out of it.
+  const hhdChunk = OFFLINE ? null : await fetchHhdAgencyChunk();
   const hhd = await buildCarded("HHD Express", HHD_URL, parseHhd, "hhd-express", 60, committed, hhdChunk);
 
   // Merge by stop-desk id (union). Prefer Yalidine (richer addresses); fill from Guepex.
@@ -1064,14 +1184,16 @@ async function main() {
   writeText("csv/coverage.csv", toCSV(coverage, ["operator", "carrier_name", "stopdesks", "wilaya_count", "wilayas", "commune_count"]));
 
   const cfg = MIGRATIONS.livraison;
-  const today = new Date().toISOString().slice(0, 10);
+  // Live-only source, so a live run stamps its own date; an offline rebuild keeps the
+  // dates the committed package carries, because replaying a capture retrieves nothing.
+  const { updated, retrieved } = resolveDates(DATA, OFFLINE);
   writePackageV2({
     pkg: "livraison",
     dir: DATA,
     files: [{ file: "stopdesks.json", rows: stopdesks.map(cfg.map) }],
     meta: cfg.meta,
-    updated: today,
-    retrieved: today,
+    updated,
+    retrieved,
     retiredIds: retired,
   });
 

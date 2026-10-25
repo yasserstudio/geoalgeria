@@ -196,7 +196,7 @@ Le registre des transporteurs est compilé à partir de
 [CourierDZ](https://github.com/PiteurStudio/CourierDZ), des sites web des transporteurs
 et des recherches GeoAlgeria. Exécutez `npm run fetch` pour régénérer toutes les sorties
 à partir des sources en ligne ; le build échoue bruyamment si le nombre d'une source
-s'effondre ou si un transporteur inconnu apparaît. `wilaya_code` est résolu par le
+s'effondre ou si un transporteur inconnu apparaît. Chaque récupération est archivée dans le dépôt sous `sources/livraison/` : `node scripts/fetch.mjs --cache` reconstruit donc tout le paquet à partir de cette archive, sans réseau. `wilaya_code` est résolu par le
 centroïde de commune le plus proche à partir du jeu de données `geoalgeria`.
 
 ## Licence et attribution

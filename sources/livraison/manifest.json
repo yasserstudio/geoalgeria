@@ -1,0 +1,74 @@
+{
+  "anderson": {
+    "bytes": 32758,
+    "note": "Rights-safe projection: the parsed rows this build consumes (ids, names, commune, the wilaya the card declares, address and the operator's own Google Maps link), not the carrier's page. Carrier pages are all rights reserved and are not redistributed.",
+    "records": 116,
+    "retrieved": "2026-10-25",
+    "sha256": "e9ba539f15d383d6fcddff4a62d96f2ee23e321be48502c49608990aa66612fa",
+    "url": "https://anderson-ecommerce.com/"
+  },
+  "guepex": {
+    "bytes": 46869,
+    "note": "Rights-safe projection: the parsed rows this build consumes (ids, names, commune, the wilaya the card declares, address and the operator's own Google Maps link), not the carrier's page. Carrier pages are all rights reserved and are not redistributed.",
+    "records": 162,
+    "retrieved": "2026-10-25",
+    "sha256": "cf27e4e3134bee765199afc9f45a0c6b2ebdece8b8a212b9205f1823398d1152",
+    "url": "https://www.guepex.dz/public/data/agences.json"
+  },
+  "hhd-express": {
+    "bytes": 21927,
+    "note": "Rights-safe projection: the parsed rows this build consumes (ids, names, commune, the wilaya the card declares, address and the operator's own Google Maps link), not the carrier's page. Carrier pages are all rights reserved and are not redistributed.",
+    "records": 80,
+    "retrieved": "2026-10-25",
+    "sha256": "3d12999203b05a250edf1c4cd28d93dfa293590c9fe1e341ef692a3982f24789",
+    "url": "https://hhd.dz/"
+  },
+  "maps-resolutions": {
+    "bytes": 150730,
+    "note": "Resolution cache for the Google Maps links the carriers publish, keyed by the link itself: the final URL the redirect landed on, the coordinate extracted from it and which tier produced it (inline | redirect | place-dms | static-map | cid-pin | unresolved). Coordinates only; no map tiles, imagery or place records are stored.",
+    "records": 484,
+    "retrieved": "2026-10-25",
+    "sha256": "2175ca8db4c5f924a56e41423704e40b3f803b33a293f409a3acf2f9bf6bdfe6",
+    "url": "https://maps.google.com/"
+  },
+  "maystro": {
+    "bytes": 9820,
+    "note": "Rights-safe projection: the parsed rows this build consumes (ids, names, commune, the wilaya the card declares, address and the operator's own Google Maps link), not the carrier's page. Carrier pages are all rights reserved and are not redistributed.",
+    "records": 44,
+    "retrieved": "2026-10-25",
+    "sha256": "8e84c7fd285acb344cc06c00181d8e015564265bdb6d54cb06212d3ea0f5781a",
+    "url": "https://maystro-delivery.com/Coverage.html"
+  },
+  "noest": {
+    "bytes": 30246,
+    "note": "Rights-safe projection: the parsed rows this build consumes (ids, names, commune, the wilaya the card declares, address and the operator's own Google Maps link), not the carrier's page. Carrier pages are all rights reserved and are not redistributed.",
+    "records": 114,
+    "retrieved": "2026-10-25",
+    "sha256": "d9c8568da513d98bd85702a1a693ee637e7af2149dc67924a55d9c7ae3649df1",
+    "url": "https://noest-dz.com/"
+  },
+  "swift-express": {
+    "bytes": 14763,
+    "note": "Rights-safe projection: the parsed rows this build consumes (ids, names, commune, the wilaya the card declares, address and the operator's own Google Maps link), not the carrier's page. Carrier pages are all rights reserved and are not redistributed.",
+    "records": 60,
+    "retrieved": "2026-10-25",
+    "sha256": "130dede01bb3bf9912b8d383427b8beccf0910efb4948a02a374e4c7b0286a0b",
+    "url": "https://www.swiftexpress.org/fr/offices"
+  },
+  "yalidine": {
+    "bytes": 60183,
+    "note": "Rights-safe projection: the parsed rows this build consumes (ids, names, commune, the wilaya the card declares, address and the operator's own Google Maps link), not the carrier's page. Carrier pages are all rights reserved and are not redistributed.",
+    "records": 199,
+    "retrieved": "2026-10-25",
+    "sha256": "c0c25ac018cfb1eb17dbee9f19a98a4729c5bd9b390574d1c1d265559d6c98c6",
+    "url": "https://yalidine-express.com.dz/nos-agences/"
+  },
+  "zr-express": {
+    "bytes": 24541,
+    "note": "Rights-safe projection: the parsed rows this build consumes (ids, names, commune, the wilaya the card declares, address and the operator's own Google Maps link), not the carrier's page. Carrier pages are all rights reserved and are not redistributed.",
+    "records": 80,
+    "retrieved": "2026-10-25",
+    "sha256": "e03b3ba89325296c50e3abb160b011f63da6ace39d55ec8261cb5fb41cbb5cef",
+    "url": "https://www.zrexpress.net/en/offices"
+  }
+}

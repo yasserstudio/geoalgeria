@@ -187,7 +187,9 @@ Stop-desks come from the carriers that publish open agency data:
 The carrier registry is compiled from [CourierDZ](https://github.com/PiteurStudio/CourierDZ),
 carrier websites, and GeoAlgeria research. Run `npm run fetch` to regenerate every output
 from the live sources; the build fails loudly if any source's count collapses or an
-unknown carrier appears. `wilaya_code` is resolved by nearest commune centroid from the
+unknown carrier appears. Every pull is committed to the repository's `sources/livraison/`
+store, so `node scripts/fetch.mjs --cache` rebuilds the whole package from it with no
+network. `wilaya_code` is resolved by nearest commune centroid from the
 `geoalgeria` dataset.
 
 ## Licence & attribution
