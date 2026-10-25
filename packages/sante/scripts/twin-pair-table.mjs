@@ -80,9 +80,10 @@ export const TWIN_PAIR_TABLE = [
       "'المؤسسة العمومية الإستشفائية' is the registry's own Arabic for 'Etablissement Public Hospitalier', the phrase it " +
       "prints on every EPH, and 'بادرار' is 'at Adrar'. The two titles say the same thing in the two languages.",
     only_candidate_left:
-      "Wilaya 01 type eph holds five establishments. Aoulef (3583/3586), the Nouveau Hopital of Adrar (3584/3585) and " +
-      "Reggane (3644/2384) are each already paired on their own names, which leaves post 2359 as the one unpaired French " +
-      "post of the group and post 3643 as the one unpaired Arabic post. No other pairing is available to either.",
+      "Wilaya 01 type eph holds four establishments, published as eight posts, four French and four Arabic. Aoulef " +
+      "(3583/3586), the Nouveau Hopital of Adrar (3584/3585) and Reggane (3644/2384) are each already paired on their " +
+      "own names, which leaves post 2359 as the one unpaired French post of the group and post 3643 as the one unpaired " +
+      "Arabic post. No other pairing is available to either, and no further post of the group is left over.",
     evidence: [
       {
         source: "openstreetmap",
