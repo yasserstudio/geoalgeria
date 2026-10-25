@@ -14,7 +14,8 @@
  *     a maps.google ?q=lat,lng link).
  *   - Guepex:   https://www.guepex.dz/public/data/agences.json (open JSON, gps="lat,lng").
  * Both are federated relay maps sharing the same stop-desk `center_id` scheme, so we
- * dedupe by id. Each row is tagged with the operating carrier in "[...]".
+ * dedupe by id. Each row is tagged with the operating carrier in "[...]", though
+ * a renamed row sometimes loses the brackets: see splitName().
  *
  * Most Algerian COD carriers (Noest, ZR/Procolis, Maystro, DHL, …) do NOT publish an
  * open agency list: they live in carriers.json (registry) with open_agency_data:"none".
@@ -29,7 +30,7 @@
  */
 
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
 
@@ -85,7 +86,7 @@ const lookupOperator = (tag) =>
 // Operator is tagged in "[...]" (always an operator) or trailing "(...)", but parens
 // are also used for localities ("Agence El Hataba (Adrar)"), so a paren group counts
 // as the operator only when it maps to a known carrier; otherwise it stays in the name.
-function splitName(raw) {
+export function splitName(raw) {
   const s = decode(raw);
   const br = s.match(/^(.*?)\s*\[([^\]]+)\]\s*$/);
   if (br) {
@@ -97,6 +98,18 @@ function splitName(raw) {
   if (pr) {
     const id = lookupOperator(pr[2]);
     if (id) return { name: pr[1].trim(), operator: id };
+  }
+  // Upstream sometimes loses one or both brackets while a row is being renamed
+  // ("… La Gare Guepex", "… El-Kiffane EasyAndSpeed]"), which left the desk with
+  // no operator at all and tripped the malformed guard in main(). A bare trailing
+  // token counts as the tag under the same rule the paren form uses: only when it
+  // maps to a known carrier, so an ordinary name that merely ends in a word keeps
+  // it. Nothing is guessed; a token that maps to nothing is left in the name and
+  // the guard still fires.
+  const tr = s.match(/^(.*\S)\s+\[?([^\s[\]]+)\]?$/);
+  if (tr) {
+    const id = lookupOperator(tr[2]);
+    if (id) return { name: tr[1].trim(), operator: id };
   }
   return { name: s, operator: null };
 }
@@ -526,7 +539,10 @@ async function main() {
   );
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// Importable for the operator-tag test; only the direct invocation builds.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}
