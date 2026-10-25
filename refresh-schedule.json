@@ -82,7 +82,8 @@
       },
       "cadence": "quarterly",
       "last_retrieved": "2026-06-28",
-      "next_due": "2026-09-28"
+      "next_due": "2026-09-28",
+      "note": "No live path yet: scripts/fetch.mjs is a deterministic transform of the curated research/patrimoine capture, not a live portal pull: re-running it is byte-identical (verified 2026-10-25) and cannot move the retrieval date. The portal answers from abroad, so a real refresh is the live FR+AR re-pull the script header defers, which has to preserve the hand-built FR-AR translations."
     },
     {
       "package": "geoalgeria",
@@ -161,7 +162,8 @@
       },
       "cadence": "quarterly",
       "last_retrieved": "2026-06-22",
-      "next_due": "2026-09-22"
+      "next_due": "2026-09-22",
+      "note": "Geo-blocked from outside Algeria: takwin.dz drops TCP (verified 2026-10-25, port 443). Needs an Algerian vantage point."
     },
     {
       "package": "@geoalgeria/gares-routieres",
@@ -209,7 +211,8 @@
       "sources_count": 5,
       "cadence": "quarterly",
       "last_retrieved": "2026-06-18",
-      "next_due": "2026-09-18"
+      "next_due": "2026-09-18",
+      "note": "The fetcher aborts on the live 2026-10-25 pull: three Yalidine rows (130104, 195504, 195505) no longer carry the operating carrier in brackets, so the operator tag parses as null and the malformed-stop-desk guard fires before anything is written. Needs a parser fix, not a refresh."
     },
     {
       "package": "@geoalgeria/mobilis",
@@ -300,7 +303,7 @@
       "cadence": "monthly",
       "last_retrieved": "2026-09-08",
       "next_due": "2026-10-08",
-      "note": "Already automated: the guarded scheduled promotion workflow (sources/README.md) refreshes the DGPC capture monthly and only promotes it when every gate passes."
+      "note": "Already automated: the guarded scheduled promotion workflow (sources/README.md) refreshes the DGPC capture monthly and only promotes it when every gate passes. dgpc.dz drops TCP from outside Algeria (verified 2026-10-25, every A record, port 443), so a live pull needs an Algerian vantage point. The 2026-10-25 offline replay of the stored capture was reviewed and held back: the shared commune resolver now joins 12 of the units that record-in-declared-wilaya lists as outside the commune outline they name, but it regresses 23-017 from El Bouni, which contains its point, to Sidi Amar, which does not, because it joins on the nearest centroid and not the outline. Land it once the resolver prefers the outline."
     },
     {
       "package": "@geoalgeria/sante",
@@ -347,7 +350,7 @@
       "cadence": "monthly",
       "last_retrieved": "2026-09-08",
       "next_due": "2026-10-08",
-      "note": "5G coverage is the fastest-churning source in the repo: operators add sites continuously. Djezzy and Ooredoo need the agent-browser path."
+      "note": "5G coverage is the fastest-churning source in the repo: operators add sites continuously. Djezzy and Ooredoo need the agent-browser path. Geo-blocked from outside Algeria: mobilis.dz drops TCP (verified 2026-10-25, every A record, port 443), and the fetcher is all-or-nothing, so one unreachable operator blocks the whole refresh. Needs an Algerian vantage point."
     },
     {
       "package": "@geoalgeria/tourisme",
