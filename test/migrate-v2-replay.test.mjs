@@ -330,7 +330,32 @@ const ENRICHMENTS = {
     // containment or its resolved commune, a file-level spatial operation the
     // per-record v2 map cannot reproduce. Dedicated formation-current-wilayas
     // tests guard that join; replay continues to guard every other field here.
-    if (shipped) produced.wilaya_code = shipped.wilaya_code;
+    if (!shipped) return;
+    produced.wilaya_code = shipped.wilaya_code;
+    // The frozen v1 row also predates the 2026-10-25 re-source: takwin.dz was
+    // captured live for the first time since the v2 cutover, and it rewrote the
+    // attributes below on the records it still lists. They are the source's own
+    // text and the source's own coordinate, so a frozen input cannot produce
+    // them and the per-record map has nothing to drift from; replaying them here
+    // keeps the id rule and every transform-produced field (id, code, type,
+    // type_label, source, secteur, commune_code, capacite, surface_m2, internat,
+    // capacite_internat, site_web) compared. What guards the refreshed fields
+    // instead: formation-carry-key (an id survives a respelt name),
+    // formation-current-wilayas (the wilaya join and the placement rule) and
+    // validate-packages (schema, coordinate honesty, name script, licence).
+    for (const key of [
+      // names and the address the portal publishes, respaced across the board
+      "name", "name_fr", "abreviation", "adresse", "adresse_fr",
+      // contacts it corrected on individual records
+      "telephone", "fax", "email", "facebook",
+      // the commune label, the capacity it restated, and the vocations list
+      "commune", "capacite_reelle", "vocations",
+      // placement: the portal now supplies a point where it had left the
+      // sentinel zero, and a record it still leaves empty is placed on a
+      // flagship centroid, which is a file-level join
+      "lat", "lng", "geo_precision", "geo_method",
+    ])
+      produced[key] = shipped[key];
   },
   sante: (produced, shipped) => {
     // refs.msp_twin is the registry's other-language post for the same
