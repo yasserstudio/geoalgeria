@@ -100,6 +100,15 @@ test("a disappearing id is appended, and only once", () => {
   assert.deepEqual(appendRetiredIds(retired, ["470201", "anderson-33-in-amenas"], new Set()), []);
 });
 
+test("a desk dropped for a bad pin is held, not retired", () => {
+  // The carrier still lists it; only its link is wrong this run. Retiring it would mean a
+  // fixed link brings the desk back under a new id, which breaks ids-follow-places.
+  const retired = new Set();
+  const added = appendRetiredIds(retired, ["noest-26a", "anderson-33-in-amenas"], new Set(), new Set(["noest-26a"]));
+  assert.deepEqual(added, ["anderson-33-in-amenas"]);
+  assert.equal(retired.has("noest-26a"), false);
+});
+
 test("setRetiredIds is what the carded builds reserve against by default", () => {
   setRetiredIds(["470201"]);
   const recs = [{ id: "470201" }];

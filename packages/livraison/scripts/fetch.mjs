@@ -495,13 +495,15 @@ export function setRetiredIds(ids) {
  * @param {Set<string>} retired  the ledger, mutated
  * @param {Iterable<string>} committedIds  the ids the committed data ships
  * @param {Set<string>} liveIds  the ids this run emits
+ * @param {Set<string>} [heldIds]  ids still listed by the carrier but dropped this run for a
+ *   bad pin: held, not retired, so a fixed link brings the desk back under its own id
  * @returns {string[]} the ids retired by this run, for the run log
  */
-export function appendRetiredIds(retired, committedIds, liveIds) {
+export function appendRetiredIds(retired, committedIds, liveIds, heldIds = new Set()) {
   const added = [];
   for (const id of committedIds) {
     const key = String(id);
-    if (liveIds.has(key) || retired.has(key)) continue;
+    if (liveIds.has(key) || heldIds.has(key) || retired.has(key)) continue;
     retired.add(key);
     added.push(key);
   }
@@ -761,6 +763,7 @@ async function main() {
   let promoted = 0;
   const conflicts = [];
   const droppedPins = [];
+  const heldIds = new Set();
   const stopdesks = merged
     .map((r) => {
       const w = resolveWilaya(r.lat, r.lng, communes, r.wilaya_num ?? r.cardWilaya);
@@ -776,6 +779,7 @@ async function main() {
       const badPin = badPinDrop(r, w.code);
       if (badPin) {
         droppedPins.push(badPin);
+        heldIds.add(r.id);
         return null;
       }
       return {
@@ -797,7 +801,7 @@ async function main() {
   // Guards
   const ids = new Set(stopdesks.map((s) => s.id));
   if (ids.size !== stopdesks.length) throw new Error("duplicate stop-desk ids after merge");
-  const nowRetired = appendRetiredIds(retired, committed.keys(), ids);
+  const nowRetired = appendRetiredIds(retired, committed.keys(), ids, heldIds);
   const bad = stopdesks.filter((s) => !s.operator || !s.name || s.wilaya_code < 1 || s.wilaya_code > 69 || !Number.isFinite(s.lat) || !Number.isFinite(s.lng));
   if (bad.length) throw new Error(`malformed stop-desks: ${bad.slice(0, 5).map((s) => s.id).join(", ")}`);
   const badCarrier = [...new Set(stopdesks.map((s) => s.operator))].filter((o) => !carrierIds.has(o));
