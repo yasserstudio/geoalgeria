@@ -581,7 +581,7 @@ PLANNED = [
     # lundi 26 octobre 2026, puis trois vols par semaine, les lundis, mercredis et
     # samedis" for Brazzaville. `days` rests on that report, which is the `source`
     # and the first entry of `sources`; the AH5358/AH5390 flight numbers rest on
-    # the 20 Aug 2026 sale-inventory report, which the list carries as its own
+    # the 21 Aug 2026 sale-inventory report, which the list carries as its own
     # entry. AeroRoutes' NW26 filing of 20 Aug independently carries the same
     # effective dates and the three weekly frequency.
     #
@@ -957,18 +957,53 @@ URL_DATE_PATTERNS = {
     "web.archive.org": (r"/web/(\d{4})(\d{2})(\d{2})", "yyyymmdd"),
 }
 
-# Publication dates for sources that carry none in their URL, taken from what
-# this file's own comments already establish about each report. Anything not
-# listed and not readable from the URL ships `date: null`: an airline's or an
-# airport's destination page is a living document with no publication date, and
-# inventing one would be worse than admitting it.
+# Publication dates for sources that carry none in their URL, each read off the
+# page's own byline on 2026-10-25.
+#
+# `date: null` is a claim of its own, that the page carries no publication date,
+# so a dated report may not ship one: every news report and press release here
+# has a visible byline, and leaving it null would assert the opposite. What
+# stays null without an entry below is what genuinely has no byline: an
+# airline's or an airport's destination page, a route-schedule listing, a news
+# site's front page, a wiki article. Living documents, where inventing a date
+# would be worse than admitting there is none.
+#
+# The five `None` entries are the third case: dated reports whose byline could
+# not be read, because the host answers an automated fetch with 403, 500 or a
+# refused connection. They are listed rather than left out so the gap is visible
+# and someone who can open the page can fill it in, instead of their looking
+# like undated living pages.
 SOURCE_DATES = {
     AH_STATEMENT_2026_10_24: "2026-10-24",
+    "https://al24news.dz/fr/transport-aerien-lancement-du-premier-vol-de-la-ligne-directe-alger-addis-abeba/": None,
     "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/": "2026-10-01",
+    "https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/": "2026-04-30",
+    "https://mediacentre.stanstedairport.com/new-airline-air-algerie-launches-direct-flights-to-algiers/": "2025-04-03",
+    "https://news.radioalgerie.dz/fr/node/72797": None,
+    "https://www.aaco.org/media-center/news/aaco-members/air-algerie-commences-constantine-monastir-and-algiers-luanda-services-in-june-2026": "2026-06-29",
+    "https://www.agenceecofin.com/actualites-services/0704-127328-air-algerie-a-lance-sa-ligne-alger-abuja": None,
+    "https://www.algerie360.com/air-algerie-accelere-son-envol-en-afrique-avec-40-vols-hebdomadaires-a-lhorizon-2026/": "2025-04-07",
+    "https://www.algerie360.com/air-algerie-nouvelle-ligne-directe-berlin/": "2026-09-14",
     "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/": "2026-09-26",
+    "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes": "2026-02-24",
+    "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai": "2026-03-06",
+    "https://www.dzairdaily.com/une-nouvelle-ville-deurope-bientot-desservie-par-air-algerie/": None,
+    "https://www.routesonline.com/news/38/airlineroute/285075/air-algerie-adds-constantine-lille-from-late-oct-2019/": None,
+    "https://www.tsa-algerie.com/air-algerie-renonce-a-quitter-laeroport-de-londres-heathrow-voici-les-raisons/": "2026-02-17",
+    "https://www.visa-algerie.com/air-algerie-apres-pekin-et-guangzhou-une-autre-grande-ville-en-chine-dans-le-viseur/": "2026-05-17",
+    "https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/": "2026-09-20",
+    "https://www.visa-algerie.com/air-algerie-lance-une-promo-vers-une-magnifique-destination-populaire-3-raisons-de-reserver/": "2026-04-25",
+    "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/": "2026-08-24",
     "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/": "2026-09-06",
-    "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/": "2026-08-20",
+    # Sales OPENED on 20 August, which is what the report says; the report
+    # itself is bylined "août 21, 2026". The two were conflated, which is the
+    # hazard of dating a report from its contents rather than from its byline.
+    "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/": "2026-08-21",
     "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/": "2026-08-15",
+    "https://www.visa-algerie.com/air-algerie-relance-ses-vols-saisonniers-vers-la-destination-la-plus-prisee-de-tunisie/": "2026-07-19",
+    "https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/": "2026-05-02",
+    "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/": "2026-07-20",
+    "https://www.visa-algerie.com/apres-djerba-en-tunisie-air-algerie-se-pose-a-charm-el-cheikh-en-egypte/": "2026-07-29",
 }
 
 
