@@ -610,23 +610,54 @@ export function pinFor(pin, prev) {
 }
 
 /**
+ * Which wilaya each reform wilaya was carved out of: code → parent code.
+ *
+ * Read from the flagship registry's own `mother_wilaya_code` rather than typed here, so
+ * the 2021 reform (49-58) and the 2026 one (59-69) stay whatever the dataset says they
+ * are. Both reforms split from the 48 of 1984, so no parent is itself a reform wilaya
+ * and a single lookup is the whole chain.
+ *
+ * @returns {Map<number, number>}
+ */
+let motherByCode = null;
+export function motherWilayas() {
+  if (!motherByCode) {
+    const { wilayas: rows } = JSON.parse(readFileSync(join(DATASET, "wilayas.json"), "utf8"));
+    motherByCode = new Map(
+      rows.filter((w) => w.mother_wilaya_code != null).map((w) => [Number(w.code), Number(w.mother_wilaya_code)]),
+    );
+    if (!motherByCode.size) throw new Error("no mother_wilaya_code in the flagship registry");
+  }
+  return motherByCode;
+}
+
+/**
  * Why a carded desk's freshly resolved pin disqualifies it, or null when it does not.
  *
- * A card declares its wilaya. When this run's pin lands in a DIFFERENT ≤58 wilaya the
+ * A card declares its wilaya. When this run's pin lands in a DIFFERENT wilaya the
  * carrier's own link points where the card says the desk is not, and the run cannot tell
  * which of the two is right, so the desk is dropped (Owner decision, 2026-10-25). It is
  * NOT re-shipped at the coordinate it published last quarter: that would present a stale
  * point as this run's verified one, and the desk returns by itself on the run after the
- * link is fixed. A wilaya the 2026 reform created (>58) is the expected disagreement with
- * a card still printing its parent's code, and is kept.
+ * link is fixed.
+ *
+ * The one disagreement that is not a contradiction is a card that has not caught up with
+ * a reform: a wilaya created in 2021 (49-58) or in 2026 (59-69) against a card still
+ * printing the wilaya it was carved out of. That is tested EXACTLY, against the parent
+ * the registry records (see motherWilayas), never by code range. HHD files El Meniaa
+ * (58, carved from Ghardaia in 2021) under card 47, which agrees and ships; Noest's
+ * `noest-55a` resolves to 53 against card 55, which does not, because 53 was carved from
+ * 11, and is dropped. A range test would have shipped the second and dropped the first.
  *
  * @param {{id: string, cardWilaya: number|null, lat: number, lng: number}} rec
  * @param {number} code  the wilaya this run's coordinate resolved to
+ * @param {Map<number, number>} [mothers]  code → the wilaya it was carved out of
  * @returns {string|null} the run-log reason, naming the card id, the wilaya the card
  *                        declares and the coordinate that was resolved
  */
-export function badPinDrop(rec, code) {
-  if (rec.cardWilaya == null || code > 58 || code === rec.cardWilaya) return null;
+export function badPinDrop(rec, code, mothers = motherWilayas()) {
+  if (rec.cardWilaya == null || code === rec.cardWilaya) return null;
+  if (mothers.get(Number(code)) === Number(rec.cardWilaya)) return null;
   return `${rec.id}(card ${rec.cardWilaya}→pin ${code} at ${rec.lat},${rec.lng})`;
 }
 
@@ -704,18 +735,20 @@ const RENAME_RADIUS_KM = 0.1;
 // Does a committed desk's wilaya agree with the one its card declares?
 //
 // The committed record carries the wilaya its coordinate RESOLVED to, which for a desk in
-// a wilaya the 2026 reform created is not the <=58 code the carrier's card still prints:
+// a wilaya a reform created is not the code the carrier's card still prints:
 // `anderson-5-barika` ships "60" against card 05, `noest-26b` ships "67" against card 26,
 // nine carded desks in all today. Comparing the two codes literally would refuse a rename
 // in exactly those nine, retiring the id this function exists to keep. A reform code
-// therefore agrees with any card code, the same allowance main() already makes for a
-// promotion. Nothing is loosened by it: inside RENAME_RADIUS_KM the geometry decides, and
-// the wilaya is only here to stop a match reaching across the country.
+// therefore agrees with the card that prints its PARENT, the same allowance main() and
+// badPinDrop make, and with no other card: a range test ("code > 58") would let a desk
+// 400 km away reclaim an id on a wilaya mismatch it was meant to catch.
 // A card that declares no wilaya at all (Maystro prints a badge only for the wilayas in
 // MAYSTRO_WILAYA) leaves the radius as the only test, which is the test that was really
 // deciding anyway. Comparing against a missing badge refused every Maystro rename.
-const wilayaAgrees = (committedCode, cardWilaya) =>
-  cardWilaya == null || committedCode === wcode(cardWilaya) || Number(committedCode) > 58;
+const wilayaAgrees = (committedCode, cardWilaya, mothers = motherWilayas()) =>
+  cardWilaya == null ||
+  committedCode === wcode(cardWilaya) ||
+  mothers.get(Number(committedCode)) === Number(cardWilaya);
 
 /**
  * Give a renamed card back the id it already published.
@@ -924,8 +957,10 @@ async function main() {
   console.log("Resolving wilaya_code by nearest commune centroid…");
   const communes = loadCommunes();
   // Cross-check the centroid result against Guepex's numeric wilaya id (where present).
-  // A disagreement is expected when the desk's wilaya was promoted by the 2026 reform
-  // (source ≤58 → flagship 59-69); a disagreement where BOTH are ≤58 is a real error.
+  // A disagreement is expected when the desk's wilaya was promoted by a reform and the
+  // source still prints the wilaya it was carved out of (source → its child, 49-58 in
+  // 2021 or 59-69 in 2026); any other disagreement is a real error.
+  const mothers = motherWilayas();
   let promoted = 0;
   const conflicts = [];
   const droppedPins = [];
@@ -934,15 +969,15 @@ async function main() {
     .map((r) => {
       const w = resolveWilaya(r.lat, r.lng, communes, r.wilaya_num ?? r.cardWilaya);
       if (r.wilaya_num != null && r.wilaya_num !== w.code) {
-        if (w.code > 58) promoted++;
+        if (mothers.get(Number(w.code)) === Number(r.wilaya_num)) promoted++;
         else conflicts.push(`${r.id}(src ${r.wilaya_num}→${w.code})`);
       }
-      // Carded sources (Anderson/Noest) declare their wilaya. If the resolved pin lands in
-      // a DIFFERENT ≤58 wilaya (a wrong/duplicated Maps link), drop the desk rather than
-      // ship a misplaced point. Reform promotions (→59-69) are expected and kept. The
+      // Carded sources (Anderson/Noest/ZR/Swift/HHD) declare their wilaya. If the resolved
+      // pin lands in a DIFFERENT wilaya that is not the declared one's reform child (a
+      // wrong/duplicated Maps link), drop the desk rather than ship a misplaced point. The
       // reason carries the coordinate, so it is checkable against the carrier's own link
       // without re-running the fetch (see badPinDrop).
-      const badPin = badPinDrop(r, w.code);
+      const badPin = badPinDrop(r, w.code, mothers);
       if (badPin) {
         droppedPins.push(badPin);
         heldIds.add(r.id);
@@ -972,8 +1007,8 @@ async function main() {
   if (bad.length) throw new Error(`malformed stop-desks: ${bad.slice(0, 5).map((s) => s.id).join(", ")}`);
   const badCarrier = [...new Set(stopdesks.map((s) => s.operator))].filter((o) => !carrierIds.has(o));
   if (badCarrier.length) throw new Error(`stop-desk operators missing from registry: ${badCarrier.join(", ")}`);
-  if (conflicts.length) throw new Error(`centroid wilaya conflicts with source (both ≤58): ${conflicts.join(", ")}`);
-  if (promoted) console.log(`  ${promoted} desk(s) in wilayas promoted by the 2026 reform (source ≤58 → flagship 59-69)`);
+  if (conflicts.length) throw new Error(`centroid wilaya conflicts with source (not a reform parent/child pair): ${conflicts.join(", ")}`);
+  if (promoted) console.log(`  ${promoted} desk(s) in wilayas promoted by a reform (source → the wilaya carved out of it)`);
   // Every one of them, never an ellipsis: a truncated list is how an omission goes
   // unexplained in the release notes.
   if (droppedPins.length) console.log(`  ${droppedPins.length} carded desk(s) dropped: pin in a different wilaya than the card (bad/duplicate link): ${droppedPins.join(", ")}`);
