@@ -136,6 +136,9 @@ const cleanName = (s) => {
 const stripUUID = (s) => {
   if (s == null) return null;
   const v = String(s);
+  // A referential the GIS never had set comes back as a bare ":" (empty uuid,
+  // empty label). That is absence, not a value.
+  if (v === ":") return null;
   const idx = v.indexOf(":");
   if (idx > 0 && idx < 40 && /^[0-9a-f-]+$/.test(v.slice(0, idx))) {
     return clean(v.slice(idx + 1));
@@ -258,6 +261,10 @@ async function main() {
     const typeRaw = stripUUID(p.type_de_letablissement);
     const typeEntry = typeRaw ? TYPE_MAP[typeRaw] : null;
     if (typeRaw && !typeEntry) unknownTypes.add(typeRaw);
+    // type_code is a non-null contract, so a row the ministry has not typed yet
+    // is an unfinished entry: drop it rather than guess. A row carrying a type
+    // we do not know still throws below.
+    if (!typeRaw) { dropped.push({ id: p.id, reason: "no type" }); continue; }
 
     const wilayaName = stripUUID(p.wilaya);
     if (!wilayaName) { dropped.push({ id: p.id, reason: "no wilaya" }); continue; }
