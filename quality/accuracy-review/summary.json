@@ -179,6 +179,10 @@
       "sha256": "b23a80abf57c18ebd6239e45382043acd1ebc86c17b7f84e3a97be5146deb29d"
     },
     {
+      "path": "packages/livraison/data/retired-ids.json",
+      "sha256": "bfdbac1827592e57220d0d82493f225edc0f1f6ef4bd6ccd5dabc60c89bcae08"
+    },
+    {
       "path": "packages/livraison/data/stopdesks.json",
       "sha256": "f0c666c08ec8af15fa4e03868e77d4fba9b1b8e42bf5fc66bacec5a2942308fc"
     },
@@ -2754,6 +2758,10 @@
     },
     {
       "path": "packages/livraison/data/coverage.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/livraison/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {

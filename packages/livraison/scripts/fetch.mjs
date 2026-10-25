@@ -33,7 +33,7 @@ import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { wcode } from "../../../scripts/lib/commune-resolver.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -469,6 +469,70 @@ export function badPinDrop(rec, code) {
   return `${rec.id}(card ${rec.cardWilaya}→pin ${code} at ${rec.lat},${rec.lng})`;
 }
 
+// --- the retired-id ledger -------------------------------------------------
+// data/retired-ids.json is the list of ids no stop-desk may ever hold again. A
+// stop-desk id is a public join key: handing a disappeared desk's id to a different
+// desk would silently repoint every cached reference at another place.
+//
+// Module state rather than a parameter on every carded build: each carrier's build
+// consults it, and a carrier parser added later must inherit it without a call-site
+// change. main() loads it from disk; the pure functions below take it explicitly so a
+// test can hand them their own set.
+let retiredIds = new Set();
+
+/** Load the ledger the rest of this run reserves against. */
+export function setRetiredIds(ids) {
+  retiredIds = new Set([...ids].map(String));
+  return retiredIds;
+}
+
+/**
+ * Reserve every id the package ships today that this run no longer carries.
+ *
+ * Append-only: a desk that disappears upstream retires its id here, and nothing ever
+ * removes one, so the reservation outlives the record that earned it.
+ *
+ * @param {Set<string>} retired  the ledger, mutated
+ * @param {Iterable<string>} committedIds  the ids the committed data ships
+ * @param {Set<string>} liveIds  the ids this run emits
+ * @returns {string[]} the ids retired by this run, for the run log
+ */
+export function appendRetiredIds(retired, committedIds, liveIds) {
+  const added = [];
+  for (const id of committedIds) {
+    const key = String(id);
+    if (liveIds.has(key) || retired.has(key)) continue;
+    retired.add(key);
+    added.push(key);
+  }
+  return added.sort();
+}
+
+/**
+ * Settle the ids a carded build minted, so no two records share one and no record is
+ * handed a retired id.
+ *
+ * A carded id is minted from the card's own title, so two cards titled alike mint the
+ * same id, and a card can re-mint the id of a desk that disappeared in an earlier
+ * release. Both get the same deterministic treatment: the ledger's ids count as taken,
+ * and a collision takes the next `{id}-{n}` suffix, so a desk keeps its suffix across
+ * runs and a retired id is never re-issued.
+ *
+ * @param {Array<{id: string}>} recs  mutated in place
+ * @param {Set<string>} [retired]  the ledger; defaults to the one main() loaded
+ * @returns {Array<{id: string}>} recs
+ */
+export function dedupeMintedIds(recs, retired = retiredIds) {
+  const seen = new Map();
+  for (const id of retired) seen.set(String(id), 1);
+  for (const r of recs) {
+    const n = (seen.get(r.id) || 0) + 1;
+    seen.set(r.id, n);
+    if (n > 1) r.id = `${r.id}-${n}`;
+  }
+  return recs;
+}
+
 // How close, in km (haversine's unit here), a new carded id must sit to a disappeared
 // one before they are judged the same desk under a new card title. 100 m is tighter
 // than any two desks of one operator are ever apart.
@@ -509,12 +573,17 @@ const wilayaAgrees = (committedCode, cardWilaya) =>
  * @param {Array<{id: string, name: string, commune: string|null, cardWilaya: number|null, lat: number, lng: number}>} recs  this run's records, mutated in place
  * @param {Map<string, {id: string, operator: string, wilaya_code: string, lat: number, lng: number}>} committed  what the package ships today
  * @param {string} operator  the carrier being built
+ * @param {Set<string>} [retired]  the ledger; defaults to the one main() loaded
  * @returns {string[]} one line per id handed back, for the run log
  */
-export function carryRenamedIds(recs, committed, operator) {
+export function carryRenamedIds(recs, committed, operator, retired = retiredIds) {
   const live = new Set(recs.map((r) => r.id));
-  // Ids this operator ships today that no card in this run claims.
-  const gone = [...committed.values()].filter((p) => p.operator === operator && !live.has(p.id));
+  // Ids this operator ships today that no card in this run claims. A retired id is not
+  // among them, because the ledger reserves ids the package stopped shipping, but the
+  // filter is kept so a reclaim can never resurrect one whatever the committed data says.
+  const gone = [...committed.values()].filter(
+    (p) => p.operator === operator && !live.has(p.id) && !retired.has(String(p.id)),
+  );
   // Every plausible pairing, nearest first, so which card reclaims an id never depends on
   // the order the carrier happens to list its cards in.
   const pairs = [];
@@ -571,8 +640,7 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
   // Before the sort, so a reclaimed id sorts under the id it keeps.
   const renamed = carryRenamedIds(recs, committed, operator);
   recs.sort((a, b) => a.id.localeCompare(b.id) || a.lat - b.lat || a.lng - b.lng);
-  const seen = new Map();
-  for (const r of recs) { const n = (seen.get(r.id) || 0) + 1; seen.set(r.id, n); if (n > 1) r.id = `${r.id}-${n}`; }
+  dedupeMintedIds(recs);
   console.log(`  ${recs.length} ${label} desks geocoded, ${skipped.length} skipped (nothing committed to carry)${skipped.length ? `: ${skipped.join(", ")}` : ""}`);
   if (carried.length) console.log(`  ${carried.length} ${label} desk(s) kept their committed coordinate, link did not resolve: ${carried.join(", ")}`);
   if (renamed.length) console.log(`  ${renamed.length} ${label} desk(s) kept their id through a card rename: ${renamed.join("; ")}`);
@@ -660,6 +728,8 @@ async function main() {
   const committed = new Map(
     readCommitted(DATA, "stopdesks.json").map((r) => [r.id, r]),
   );
+  // Before the first carded build: every mint and every reclaim below reserves against it.
+  const retired = setRetiredIds(readRetiredIds(DATA));
   const anderson = await buildCarded("Anderson", ANDERSON_URL, parseAnderson, "anderson", 60, committed);
   const noest = await buildCarded("Noest", NOEST_URL, parseNoest, "noest", 60, committed);
   const maystro = await buildCarded("Maystro", MAYSTRO_URL, parseMaystro, "maystro", 30, committed);
@@ -727,6 +797,7 @@ async function main() {
   // Guards
   const ids = new Set(stopdesks.map((s) => s.id));
   if (ids.size !== stopdesks.length) throw new Error("duplicate stop-desk ids after merge");
+  const nowRetired = appendRetiredIds(retired, committed.keys(), ids);
   const bad = stopdesks.filter((s) => !s.operator || !s.name || s.wilaya_code < 1 || s.wilaya_code > 69 || !Number.isFinite(s.lat) || !Number.isFinite(s.lng));
   if (bad.length) throw new Error(`malformed stop-desks: ${bad.slice(0, 5).map((s) => s.id).join(", ")}`);
   const badCarrier = [...new Set(stopdesks.map((s) => s.operator))].filter((o) => !carrierIds.has(o));
@@ -736,6 +807,7 @@ async function main() {
   // Every one of them, never an ellipsis: a truncated list is how an omission goes
   // unexplained in the release notes.
   if (droppedPins.length) console.log(`  ${droppedPins.length} carded desk(s) dropped: pin in a different wilaya than the card (bad/duplicate link): ${droppedPins.join(", ")}`);
+  if (nowRetired.length) console.log(`  ${nowRetired.length} id(s) retired, the desk they named is gone from every source: ${nowRetired.join(", ")}`);
 
   // coverage, per operator that has stop-desks
   const covMap = new Map();
@@ -795,6 +867,7 @@ async function main() {
     meta: cfg.meta,
     updated: today,
     retrieved: today,
+    retiredIds: retired,
   });
 
   console.log(
