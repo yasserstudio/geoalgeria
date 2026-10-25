@@ -1063,17 +1063,24 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
     // would not resolve this minute may well resolve on the next run. The run log has to
     // say which, or a permanent gap reads like a transient one.
     if (!pin) { skipped.push(`${c.id} (${c.noPin ?? (c.link ? "link did not resolve" : "card publishes no Maps link")})`); return; }
+    const rec = { id: c.id, operator, name: c.name, name_ar: c.name_ar ?? null, address: c.address, commune: c.commune, wilaya_num: null, cardWilaya: c.cardWilaya, lat: pin.lat, lng: pin.lng, src: operator };
     if (pin.verdict === "carried") {
       const retrieved = carriedPinDate(committed.get(c.id), committedMetadata());
-      carriedPins.push({ id: c.id, name: c.name, retrieved });
+      // On the record, not in `carriedPins` yet: dedupeMintedIds below can still move this
+      // desk to a `{id}-{n}` suffix, and `carried_pins` has to name the id it ships.
+      rec.pinRetrieved = retrieved;
       carried.push(`"${c.name}" (${c.id}, pin read ${retrieved})`);
     } else fresh++;
-    recs.push({ id: c.id, operator, name: c.name, name_ar: c.name_ar ?? null, address: c.address, commune: c.commune, wilaya_num: null, cardWilaya: c.cardWilaya, lat: pin.lat, lng: pin.lng, src: operator });
+    recs.push(rec);
   });
   // Before the sort, so a reclaimed id sorts under the id it keeps.
   const renamed = carryRenamedIds(recs, committed, operator);
   recs.sort((a, b) => a.id.localeCompare(b.id) || a.lat - b.lat || a.lng - b.lng);
   dedupeMintedIds(recs);
+  // After the dedupe: two cards minting one id (anderson-27-mostaganem today) ship as
+  // `{id}` and `{id}-2`, and listing the carried one under the base id would date the
+  // wrong desk's coordinate.
+  for (const r of recs) if (r.pinRetrieved) carriedPins.push({ id: r.id, name: r.name, retrieved: r.pinRetrieved });
   console.log(`  ${recs.length} ${label} desks geocoded, ${skipped.length} skipped (nothing committed to carry)${skipped.length ? `: ${skipped.join(", ")}` : ""}`);
   if (carried.length) console.log(`  ${carried.length} ${label} desk(s) kept their committed coordinate, link did not resolve: ${carried.join("; ")}`);
   if (renamed.length) console.log(`  ${renamed.length} ${label} desk(s) kept their id through a card rename: ${renamed.join("; ")}`);
@@ -1325,8 +1332,13 @@ async function main() {
     // Not a `stats` value: the records cannot reproduce it, and validate-packages
     // re-runs stats() over them and compares. Sorted by id, because the order the
     // carriers happen to build in is not a fact about the data.
+    // Only the desks this run actually ships: a carried desk whose card moved to another
+    // wilaya is dropped by badPinDrop after its pin was carried, and `carried_pins` joins
+    // stopdesks.json by id, so listing it would publish a key that resolves to nothing.
     runMeta: {
-      carried_pins: [...carriedPins].sort((a, b) => a.id.localeCompare(b.id)),
+      carried_pins: carriedPins
+        .filter((p) => ids.has(p.id))
+        .sort((a, b) => a.id.localeCompare(b.id)),
     },
   });
 
