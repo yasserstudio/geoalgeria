@@ -42,6 +42,20 @@
     "stopdesk_wilaya_count": 58
   },
   {
+    "id": "zr-express",
+    "name": "ZR Express",
+    "website": "https://www.zrexpress.net",
+    "type": "both",
+    "cod": true,
+    "scope": "domestic",
+    "open_agency_data": "geocoded",
+    "api": "private",
+    "notes": "Publishes its offices at zrexpress.net/en/offices, each row linking its own Google Maps pin with the coordinate inline. The note here used to point at zrexpress.com, a different domain that is Cloudflare-blocked; the .net site answers an ordinary request. Merchant operations run through the Procolis portal, which stays auth-gated.",
+    "in_stopdesks": true,
+    "stopdesk_count": 77,
+    "stopdesk_wilaya_count": 53
+  },
+  {
     "id": "guepex",
     "name": "Guepex",
     "website": "https://www.guepex.dz",
@@ -205,20 +219,6 @@
     "open_agency_data": "none",
     "api": "none",
     "notes": "Primarily home delivery / trucking; site has no populated agency directory.",
-    "in_stopdesks": false,
-    "stopdesk_count": 0,
-    "stopdesk_wilaya_count": 0
-  },
-  {
-    "id": "zr-express",
-    "name": "ZR Express",
-    "website": "https://zrexpress.com",
-    "type": "both",
-    "cod": true,
-    "scope": "domestic",
-    "open_agency_data": "none",
-    "api": "private",
-    "notes": "Operations via the Procolis portal (auth-gated); public site is Cloudflare-blocked. No open agency list.",
     "in_stopdesks": false,
     "stopdesk_count": 0,
     "stopdesk_wilaya_count": 0

@@ -13,7 +13,7 @@
 </div>
 
 La couche livraison / e-commerce pour l'Algérie, en trois volets : un **registre** de
-transporteurs, **449 bureaux de retrait géocodés** répartis sur 63 wilayas, et la
+transporteurs, **526 bureaux de retrait géocodés** répartis sur 64 wilayas, et la
 **couverture par transporteur**. Distribué en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -45,7 +45,7 @@ const reach = livraison.coverageByCarrier("yalidine"); // wilayas desservies
 | Jeu de données | Nombre | Géocodé | Notes |
 | --- | --- | --- | --- |
 | Transporteurs (`carriers.json`) | **16** | – | registre : nom, site web, modèle, paiement à la livraison, périmètre, ouverture des données, API |
-| Bureaux de retrait (`stopdesks.json`) | **449** | ✅ tous | id, opérateur, nom, adresse, commune, `wilaya_code`, lat/lng |
+| Bureaux de retrait (`stopdesks.json`) | **526** | ✅ tous | id, opérateur, nom, adresse, commune, `wilaya_code`, lat/lng |
 | Couverture (`coverage.json`) | **9** | – | présence par transporteur (wilaya/commune) |
 
 Les bureaux de retrait couvrent **63 wilayas**, tous géocodés. `wilaya_code` se joint au
@@ -60,12 +60,13 @@ publient leurs emplacements de manière ouverte :
 
 - l'**écosystème relais Yalidine + Guepex** – Yalidine, Guepex, et les opérateurs qui
   utilisent leur réseau partagé (EasyAndSpeed, WeCanServices, SpeedMail, Zimou Express) ;
-- **Anderson**, **Noest** et **Maystro**, trois réseaux indépendants, chacun géocodé à
-  partir du lien Google Maps sur ses fiches d'agence (les agences dont les liens sont
-  manquants, irrésolvables ou pointent vers une wilaya différente de celle déclarée sur
-  la fiche sont omises).
+- **Anderson**, **Noest**, **Maystro** et **ZR Express**, quatre réseaux indépendants,
+  chacun géocodé à partir du lien Google Maps sur ses fiches d'agence ou ses lignes de
+  bureau (les agences dont les liens sont manquants, irrésolvables ou pointent vers une
+  wilaya différente de celle déclarée sur la fiche sont omises ; rien n'est géocodé à
+  partir d'une adresse).
 
-Les transporteurs comme ZR Express, DHD, DHL et Aramex gardent leurs listes d'agences
+Les transporteurs comme DHD, DHL et Aramex gardent leurs listes d'agences
 derrière des applications, des connexions ou des API sous licence, et apparaissent donc
 dans le registre avec `open_agency_data: "none"` sans bureaux de retrait ici. La couverture
 représente la *présence de bureaux de retrait* pour les transporteurs ayant des données
@@ -94,14 +95,14 @@ inclus dans chaque [Release GitHub](https://github.com/yasserstudio/geoalgeria/r
 ```
 data/
   carriers.json             # 16 transporteurs (registre)
-  stopdesks.json            # 449 bureaux de retrait géocodés (tableau)
+  stopdesks.json            # 526 bureaux de retrait géocodés (tableau)
   coverage.json             # 9 lignes de couverture par transporteur
   metadata.json             # sources, comptages, updated
   csv/                      # dépôt + bundle Release (pas dans le tarball npm)
     carriers.csv
     stopdesks.csv
     coverage.csv
-  geojson/stopdesks.geojson # Entités Point (les 449 géocodées)
+  geojson/stopdesks.geojson # Entités Point (les 526 géocodées)
 ```
 
 ## Formes d'enregistrement
@@ -170,6 +171,12 @@ Les bureaux de retrait proviennent des transporteurs qui publient des données d
   avec un lien Google Maps par fiche ; le build résout chaque lien vers le point de
   l'agence (les agences dont les liens sont manquants, irrésolvables ou pointent vers une
   wilaya différente de celle déclarée sur la fiche sont omises).
+- **ZR Express** (<https://www.zrexpress.net/en/offices>) liste ses bureaux avec le point
+  déjà présent dans le lien Maps (`?api=1&query=<lat>,<lng>`), aucun lien n'a donc besoin
+  d'être résolu. Ses numéros de ligne sont un index d'affichage et non des codes
+  d'agence, les identifiants sont donc formés à partir de la wilaya et de la commune.
+  Trois lignes renvoient vers une recherche par nom de lieu plutôt qu'une coordonnée et
+  sont omises plutôt que géocodées.
 
 Le registre des transporteurs est compilé à partir de
 [CourierDZ](https://github.com/PiteurStudio/CourierDZ), des sites web des transporteurs

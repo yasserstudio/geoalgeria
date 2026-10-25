@@ -1604,6 +1604,39 @@
       "review_after": "2027-03-02",
       "notes": null,
       "refusal": null
+    },
+    {
+      "key": "zr-express",
+      "name": "ZR Express: offices list",
+      "publisher": "ZR Express",
+      "metadata_keys": [
+        "zr-express"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ZR Express",
+        "url": "https://www.zrexpress.net/en/offices"
+      },
+      "notice": "ZR Express: offices list: data © ZR Express, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.zrexpress.net/en/offices",
+        "repo_path": null,
+        "retrieved_at": "2026-10-25",
+        "note": "No open reuse licence is recorded; the footer states copyright and links a privacy policy only. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-04-25",
+      "notes": null,
+      "refusal": null
     }
   ]
 }

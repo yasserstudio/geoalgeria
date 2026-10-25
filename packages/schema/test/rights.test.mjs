@@ -272,6 +272,7 @@ const RECORD_KEYS = [
   "wikidata",
   "wikipedia-fr",
   "yalidine",
+  "zr-express",
 ];
 
 test("the shipped record keys are the pinned ones, in order", () => {

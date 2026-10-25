@@ -4,20 +4,20 @@
   "title_fr": "Points relais de livraison d'Algérie",
   "title_ar": "نقاط استلام التوصيل في الجزائر",
   "title_en": "Algeria delivery stop-desks",
-  "record_count": 449,
-  "geocoded_count": 449,
+  "record_count": 526,
+  "geocoded_count": 526,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 449,
-    "approximate": 0
+    "exact": 524,
+    "approximate": 2
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 449 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
-  "wilayas_covered": 63,
+  "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro and ZR Express's own agency lists: 526 points across 10 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+  "wilayas_covered": 64,
   "bbox": [
     -8.143583,
-    22.784955,
+    19.576488,
     9.578836,
     37.009471
   ],
@@ -61,13 +61,21 @@
       "license": "Data © Maystro Delivery; redistributed for reference",
       "evidence_type": "official",
       "retrieved": "2026-10-25"
+    },
+    {
+      "key": "zr-express",
+      "name": "ZR Express: offices list",
+      "url": "https://www.zrexpress.net/en/offices",
+      "license": "Data © ZR Express; redistributed for reference",
+      "evidence_type": "official",
+      "retrieved": "2026-10-25"
     }
   ],
   "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
   "updated": "2026-10-25",
   "carriers": 16,
-  "stopdesks": 449,
-  "coverage": 9,
+  "stopdesks": 526,
+  "coverage": 10,
   "by_operator": {
     "guepex": 71,
     "yalidine": 105,
@@ -77,6 +85,7 @@
     "speedmail": 1,
     "anderson": 104,
     "maystro": 38,
-    "noest": 102
+    "noest": 102,
+    "zr-express": 77
   }
 }

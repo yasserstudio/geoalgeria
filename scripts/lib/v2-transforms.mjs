@@ -850,7 +850,7 @@ export const MIGRATIONS = {
   livraison: {
     file: "stopdesks.json",
     map: (r) => clean({
-      id: r.id, name: r.name,
+      id: r.id, name: r.name, name_ar: r.name_ar ?? null,
       wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: r.commune,
       ...geoExact(r, "carrier_relay"),
       source: (r.sources && r.sources[0]) || "carrier_relay",
@@ -863,10 +863,11 @@ export const MIGRATIONS = {
         { key: "anderson", name: "Anderson Logistics: agency directory", url: "https://anderson-ecommerce.com/", license: "Data © Anderson Logistics; redistributed for reference", evidence_type: "official" },
         { key: "noest", name: "Noest Express: bureaux directory", url: "https://noest-dz.com/", license: "Data © Noest Express; redistributed for reference", evidence_type: "official" },
         { key: "maystro", name: "Maystro Delivery: coverage page", url: "https://maystro-delivery.com/Coverage.html", license: "Data © Maystro Delivery; redistributed for reference", evidence_type: "official" },
+        { key: "zr-express", name: "ZR Express: offices list", url: "https://www.zrexpress.net/en/offices", license: "Data © ZR Express; redistributed for reference", evidence_type: "official" },
       ],
       license: "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
       estimatedUniverse: null,
-      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 449 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro and ZR Express's own agency lists: 526 points across 10 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
       titles: { en: "Algeria delivery stop-desks", fr: "Points relais de livraison d'Algérie", ar: "نقاط استلام التوصيل في الجزائر" },
       stats: (rows) => {
         const dataDir = join(REPO_ROOT, "packages", "livraison", "data");

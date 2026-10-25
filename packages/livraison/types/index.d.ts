@@ -26,7 +26,7 @@ export type GeoMethod = "carrier_relay";
  *  `StopDesk.source` / `metadata.sources[]`. Narrower than {@link Operator}:
  *  a few carriers appear as `operator` via a federated feed (e.g. Yalidine's)
  *  without being a `source` themselves. */
-export type SourceKey = "anderson" | "guepex" | "maystro" | "noest" | "yalidine";
+export type SourceKey = "anderson" | "guepex" | "maystro" | "noest" | "yalidine" | "zr-express";
 
 /** Every carrier id that owns at least one geocoded stop-desk. */
 export type Operator =
@@ -38,7 +38,8 @@ export type Operator =
   | "speedmail"
   | "wecanservices"
   | "yalidine"
-  | "zimou-express";
+  | "zimou-express"
+  | "zr-express";
 
 /** A delivery carrier in the registry. */
 export interface Carrier {
@@ -74,6 +75,9 @@ export interface StopDesk {
   id: string;
   /** Stop-desk name. */
   name: string;
+  /** Office name as the carrier publishes it in Arabic, or `null` when the
+   *  source publishes none. ZR Express names its offices in Arabic only. */
+  name_ar: string | null;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
   /** Commune (ONS) code, always null: carrier relay feeds publish a commune
@@ -85,8 +89,11 @@ export interface StopDesk {
   lat: number;
   /** Longitude (WGS84). Every stop-desk in this dataset is geocoded. */
   lng: number;
-  /** Always `"exact"`: carrier relay feeds publish a real per-desk point. */
-  geo_precision: "exact";
+  /** `"exact"` for all but two: a carrier relay feed publishes a real per-desk
+   *  point. A coordinate two desks of one carrier share is not a per-desk point,
+   *  so it is published `"approximate"` (ZR Express lists its Constantine sorting
+   *  centre and its Zouaghi bureau on one pin). */
+  geo_precision: "exact" | "approximate";
   /** Always `"carrier_relay"`. */
   geo_method: GeoMethod;
   /** Authoritative provenance key into `metadata.sources[]`: the first entry

@@ -79,13 +79,13 @@
   {
     "id": "zr-express",
     "name": "ZR Express",
-    "website": "https://zrexpress.com",
+    "website": "https://www.zrexpress.net",
     "type": "both",
     "cod": true,
     "scope": "domestic",
-    "open_agency_data": "none",
+    "open_agency_data": "geocoded",
     "api": "private",
-    "notes": "Operations via the Procolis portal (auth-gated); public site is Cloudflare-blocked. No open agency list."
+    "notes": "Publishes its offices at zrexpress.net/en/offices, each row linking its own Google Maps pin with the coordinate inline. The note here used to point at zrexpress.com, a different domain that is Cloudflare-blocked; the .net site answers an ordinary request. Merchant operations run through the Procolis portal, which stays auth-gated."
   },
   {
     "id": "maystro",

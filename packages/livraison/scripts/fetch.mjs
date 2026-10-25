@@ -30,6 +30,7 @@
  */
 
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import { MIGRATIONS, writePackageV2, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
@@ -46,6 +47,7 @@ const GUEPEX_URL = "https://www.guepex.dz/public/data/agences.json";
 const ANDERSON_URL = "https://anderson-ecommerce.com/";
 const NOEST_URL = "https://noest-dz.com/";
 const MAYSTRO_URL = "https://maystro-delivery.com/Coverage.html";
+const ZR_URL = "https://www.zrexpress.net/en/offices";
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/120.0 Safari/537.36";
@@ -53,10 +55,10 @@ const UA =
 const FB_UA = "facebookexternalhit/1.1";
 
 // --- helpers ---------------------------------------------------------------
-const ENTITIES = { "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&apos;": "'", "&nbsp;": " ", "&#039;": "'" };
+const ENTITIES = { "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&apos;": "'", "&nbsp;": " ", "&#039;": "'", "&#x27;": "'" };
 const decode = (s) =>
   String(s ?? "")
-    .replace(/&#0?39;|&[a-z]+;/gi, (m) => ENTITIES[m.toLowerCase()] ?? m)
+    .replace(/&#0?39;|&#x27;|&[a-z]+;/gi, (m) => ENTITIES[m.toLowerCase()] ?? m)
     .replace(/<[^>]+>/g, "")
     .replace(/\s+/g, " ")
     .trim();
@@ -241,6 +243,71 @@ function parseNoest(html) {
   return out;
 }
 
+// ZR Express "Offices": one <a class="bureau-row"> per office, laid out as a grid of
+// divs rather than a table. The pin is inline in the href the row itself links
+// (`?api=1&query=<lat>,<lng>`), so no shortlink has to be resolved.
+//
+// The leading number is the row index of the list as rendered, 001..080 straight down a
+// sort by wilaya, NOT a branch code: inserting one office in Adrar would renumber every
+// office after it. So ids are minted the way a carrier without a code scheme gets them,
+// from the wilaya and the office's own commune.
+//
+// The office name is published in Arabic only; the wilaya and commune columns are Latin,
+// and the wilaya column is what the pin is cross-checked against, so it is mapped to a
+// code here (wilayaCoder) exactly as Anderson's and Noest's badges are.
+//
+// Three of the 80 rows link a free-text place search ("query=Hub Dellys Dellys Boumerdès
+// Algerie") instead of a coordinate. That is an address, not a pin, so the row is carried
+// through with no link and a reason, never handed to Google to be geocoded.
+export function parseZrExpress(html, wilayaCode) {
+  const rows = [];
+  for (const m of html.matchAll(/<a\s+href="([^"]*)"[^>]*class="[^"]*bureau-row[^"]*"[^>]*>([\s\S]*?)<\/a>/gi)) {
+    const href = decode(m[1]);
+    const body = m[2];
+    const cols = [...body.matchAll(/<div style="font-size:14px[^"]*">([^<]*)<\/div>/gi)].map((c) => decode(c[1]));
+    const nameAr = body.match(/font-size:17px[^>]*>([^<]+)</);
+    if (cols.length < 2 || !nameAr) continue;
+    const [wilaya, commune] = cols;
+    const code = wilayaCode(wilaya);
+    if (code == null || !commune) continue;
+    const hasPin = /[?&]query=-?\d+(\.\d+)?(%2C|,)/i.test(href);
+    rows.push({
+      key: `zr-express-${wcode(code)}-${slug(commune)}`,
+      name_ar: decode(nameAr[1]),
+      name: `ZR Express ${titleCase(commune)}`,
+      commune: titleCase(commune),
+      cardWilaya: code,
+      address: null,
+      link: hasPin ? href : null,
+      noPin: hasPin ? null : "row links a place-name search, not a coordinate",
+    });
+  }
+  // Four ZR offices sit in the commune of Constantine and three in Oran, so the wilaya
+  // and commune alone do not name an office. The only field that tells them apart is the
+  // Arabic office name (مكتب زواغي, مكتب كاناستال …), which slugs to nothing in Latin, so
+  // where a commune holds more than one office each id carries a short digest of that
+  // name. The digest depends on the office's own name and nothing else, so it does not
+  // move when ZR adds, drops or reorders a row; a commune that goes from one office to
+  // two hands its old id back through carryRenamedIds, same as any rename.
+  const shared = new Set();
+  const seenKey = new Set();
+  for (const r of rows) (seenKey.has(r.key) ? shared : seenKey).add(r.key);
+  return rows.map(({ key, ...rest }) => ({
+    id: shared.has(key) ? `${key}-${createHash("sha1").update(rest.name_ar).digest("hex").slice(0, 4)}` : key,
+    ...rest,
+  }));
+}
+
+// Wilaya name -> code, read from the flagship registry rather than hard-coded, so a
+// carrier that publishes its wilaya in Latin (ZR Express) gets the same cross-check
+// against its pin that a carrier publishing a numeric badge gets.
+function wilayaCoder() {
+  const { wilayas: rows } = JSON.parse(readFileSync(join(DATASET, "wilayas.json"), "utf8"));
+  const by = new Map();
+  for (const w of rows) for (const n of [w.name_fr, w.name_en]) if (n) by.set(slug(n), w.code);
+  return (name) => by.get(slug(name)) ?? null;
+}
+
 // Maystro tags each stop-desk with a wilaya "translation" slug rather than a code; map the
 // classic 48 to their wilaya_code so the drop rule can catch its mislinked desks. Unknown
 // slugs (no entry) skip the cross-check and fall back to the centroid result.
@@ -290,10 +357,34 @@ const cidPinFor = (link) => {
   return pin && inAlgeria(pin.lat, pin.lng) ? { lat: pin.lat, lng: pin.lng } : null;
 };
 
+// The decimal coordinate forms a Google Maps URL can carry, canonical first. `query=`
+// is the `?api=1&query=<lat>,<lng>` form ZR Express links; it is also the form that can
+// carry a free-text place search instead of a pair, which simply does not match here.
+const COORD_IN_URL = [
+  /!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/,
+  /\/maps\/place\/(-?\d+\.\d+),(-?\d+\.\d+)/,
+  /\/maps\/search\/(-?\d+\.\d+),\s*\+?\s*(-?\d+\.\d+)/,
+  /[?&]q(?:uery)?=(-?\d+\.\d+),\s*\+?\s*(-?\d+\.\d+)/,
+];
+const coordsIn = (url) => {
+  for (const p of COORD_IN_URL) {
+    const m = String(url).match(p);
+    if (m && inAlgeria(+m[1], +m[2])) return { lat: +m[1], lng: +m[2] };
+  }
+  return null;
+};
+
 // Resolve a Google Maps link to its pin via the redirect a non-browser UA receives.
-// Tries the canonical (!3d!4d), decimal place/search/q, DMS place, then a static-map pin.
+// Tries the link itself, then the canonical (!3d!4d), decimal place/search/q, DMS
+// place, then a static-map pin.
 async function resolveMapsLink(link) {
   if (!link) return null; // card published no Maps link at all
+  // ZR Express writes the pin straight into the href (`?api=1&query=<lat>,<lng>`), so
+  // for 77 of its 80 offices the coordinate is already in hand. Read the link itself
+  // before asking the network for it: nothing is gained by a request whose answer we
+  // are holding, and 77 requests to Google are 77 requests not made.
+  const inline = coordsIn(decodeURIComponent(link));
+  if (inline) return inline;
   let url = "", body = "";
   for (let attempt = 0; attempt < 2 && !url; attempt++) {
     try {
@@ -302,16 +393,8 @@ async function resolveMapsLink(link) {
       body = await res.text();
     } catch { /* network blip: retry once */ }
   }
-  const order = [
-    /!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/,
-    /\/maps\/place\/(-?\d+\.\d+),(-?\d+\.\d+)/,
-    /\/maps\/search\/(-?\d+\.\d+),\s*\+?\s*(-?\d+\.\d+)/,
-    /[?&]q=(-?\d+\.\d+),\s*\+?\s*(-?\d+\.\d+)/,
-  ];
-  for (const p of order) {
-    const m = url.match(p);
-    if (m && inAlgeria(+m[1], +m[2])) return { lat: +m[1], lng: +m[2] };
-  }
+  const hit = coordsIn(url);
+  if (hit) return hit;
   const d = url.match(/\/maps\/place\/(\d+)°(\d+)'([\d.]+)"([NS]).*?(\d+)°(\d+)'([\d.]+)"([EW])/);
   if (d) {
     const lat = dmsToDec(d[1], d[2], d[3], d[4]), lng = dmsToDec(d[5], d[6], d[7], d[8]);
@@ -458,10 +541,10 @@ async function buildCarded(label, url, parseFn, operator, minDesks = 60, committ
     // no Maps link at all can only come back when the carrier adds one, while a link that
     // would not resolve this minute may well resolve on the next run. The run log has to
     // say which, or a permanent gap reads like a transient one.
-    if (!pin) { skipped.push(`${c.id} (${c.link ? "link did not resolve" : "card publishes no Maps link"})`); return; }
+    if (!pin) { skipped.push(`${c.id} (${c.noPin ?? (c.link ? "link did not resolve" : "card publishes no Maps link")})`); return; }
     if (pin.verdict === "carried") carried.push(c.id);
     else fresh++;
-    recs.push({ id: c.id, operator, name: c.name, address: c.address, commune: c.commune, wilaya_num: null, cardWilaya: c.cardWilaya, lat: pin.lat, lng: pin.lng, src: operator });
+    recs.push({ id: c.id, operator, name: c.name, name_ar: c.name_ar ?? null, address: c.address, commune: c.commune, wilaya_num: null, cardWilaya: c.cardWilaya, lat: pin.lat, lng: pin.lng, src: operator });
   });
   // Before the sort, so a reclaimed id sorts under the id it keeps.
   const renamed = carryRenamedIds(recs, committed, operator);
@@ -558,15 +641,18 @@ async function main() {
   const anderson = await buildCarded("Anderson", ANDERSON_URL, parseAnderson, "anderson", 60, committed);
   const noest = await buildCarded("Noest", NOEST_URL, parseNoest, "noest", 60, committed);
   const maystro = await buildCarded("Maystro", MAYSTRO_URL, parseMaystro, "maystro", 30, committed);
+  const toWilaya = wilayaCoder();
+  const zr = await buildCarded("ZR Express", ZR_URL, (h) => parseZrExpress(h, toWilaya), "zr-express", 60, committed);
 
   // Merge by stop-desk id (union). Prefer Yalidine (richer addresses); fill from Guepex.
   // Folded-out operators are dropped; Anderson ids are namespaced so they never collide.
   const byId = new Map();
-  for (const r of [...yal, ...guepex, ...anderson, ...noest, ...maystro].filter((x) => !DROPPED_OPERATORS.has(x.operator))) {
+  for (const r of [...yal, ...guepex, ...anderson, ...noest, ...maystro, ...zr].filter((x) => !DROPPED_OPERATORS.has(x.operator))) {
     const cur = byId.get(r.id);
     if (!cur) { byId.set(r.id, { ...r, sources: [r.src] }); continue; }
     if (!cur.sources.includes(r.src)) cur.sources.push(r.src);
     cur.address = cur.address || r.address;
+    cur.name_ar = cur.name_ar || r.name_ar;
     cur.commune = cur.commune || r.commune;
     cur.operator = cur.operator || r.operator;
     if (cur.wilaya_num == null) cur.wilaya_num = r.wilaya_num;
@@ -616,6 +702,7 @@ async function main() {
         id: r.id,
         operator: r.operator,
         name: r.name,
+        name_ar: r.name_ar ?? null,
         address: r.address,
         commune: r.commune,
         wilaya_code: w.code,

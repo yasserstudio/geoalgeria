@@ -73,7 +73,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **المطارات المدنية** | 36 | ANAC + OurAirports: أسماء، رموز ICAO + IATA، معلومات اتصال، إحداثيات. [`@geoalgeria/aviation`](packages/aviation) |
 | **الخطوط الجوية المباشرة** | 157 | شبكة الجوية الجزائرية الدولية كخطوط اتجاهية، لكل منها مشغّل ودرجة إثبات ومصدر. [`@geoalgeria/aviation`](packages/aviation) |
 | **البنوك والفروع** | 1,704 | كل البنوك الـ 21 المعتمدة + 8 مؤسسات مالية؛ فروع مع أكواد RIB/SWIFT، الملكية، الإحداثيات. [`@geoalgeria/banques`](packages/banques) |
-| **شركات التوصيل** | 449 | 16 ناقلًا + 449 نقطة استلام في 63 ولاية (Yalidine، Guepex، Anderson، Noest، Maystro). [`@geoalgeria/livraison`](packages/livraison) |
+| **شركات التوصيل** | 526 | 16 ناقلًا + 526 نقطة استلام في 64 ولاية (Yalidine، Guepex، Anderson، Noest، Maystro، ZR Express). [`@geoalgeria/livraison`](packages/livraison) |
 | **مؤسسات الشباب** | 2,334 | دور الشباب، مركّبات رياضية من الدرجة الأولى، قاعات متعددة الاستخدامات، دور إيواء، مراكز ثقافية وعلمية وأكثر في 69 ولاية (وزارة الشباب والرياضة). [`@geoalgeria/jeunesse`](packages/jeunesse) |
 | **منشآت رياضية** | 5,141 | ملاعب، حمامات سباحة، مجالات من الدرجة الأولى، مضمارات العاب القوى، ملاعب وأكثر (27 نوع) في 69 ولاية (وزارة الشباب والرياضة). [`@geoalgeria/sports`](packages/sports) |
 | **التعليم العالي** | 177 | جامعات، مدارس عليا، مدارس عليا للأساتذة، مراكز + 19 مؤسسة خاصة و48 تابعة لوزارات أخرى في 51 ولاية، مع المواقع الرسمية (وزارة التعليم العالي). [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
@@ -133,7 +133,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/telecom`](packages/telecom) | [`@geoalgeria/telecom`](https://www.npmjs.com/package/@geoalgeria/telecom) | تغطية 5G متعددة المشغلين (جيزي، موبيليس، أوريدو) |
 | [`packages/aviation`](packages/aviation) | [`@geoalgeria/aviation`](https://www.npmjs.com/package/@geoalgeria/aviation) | المطارات المدنية من ANAC + OurAirports، أسماء، رموز ICAO + IATA، إحداثيات، إضافة إلى شبكة الخطوط المباشرة الدولية |
 | [`packages/banques`](packages/banques) | [`@geoalgeria/banques`](https://www.npmjs.com/package/@geoalgeria/banques) | كل البنوك الـ 21 المعتمدة + المؤسسات المالية و1,704 فروع (RIB، SWIFT، الملكية، الإحداثيات) |
-| [`packages/livraison`](packages/livraison) | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | سجل شركات التوصيل + 449 نقطة استلام وتغطية لكل ناقل (Yalidine، Guepex، Anderson، Noest، Maystro) |
+| [`packages/livraison`](packages/livraison) | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | سجل شركات التوصيل + 526 نقطة استلام وتغطية لكل ناقل (Yalidine، Guepex، Anderson، Noest، Maystro، ZR Express) |
 | [`packages/jeunesse`](packages/jeunesse) | [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | مؤسسات الشباب لوزارة الشباب والرياضة (2,334 في 69 ولاية) |
 | [`packages/sports`](packages/sports) | [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports) | منشآت رياضية لوزارة الشباب والرياضة، 5,141 في 69 ولاية، 27 نوع، مع السعة والوصول بسهولة والإحداثيات |
 | [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | شبكة التعليم العالي لوزارة التعليم العالي، جامعات، مدارس عليا، مدارس عليا للأساتذة ومراكز + 19 مؤسسة خاصة و48 تابعة لوزارات أخرى (177)، مع المواقع الرسمية والإحداثيات |

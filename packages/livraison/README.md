@@ -13,7 +13,7 @@
 </div>
 
 The COD / e-commerce delivery layer for Algeria, in three parts: a **registry** of
-delivery carriers, **449 geocoded stop-desk points** across 63 wilayas, and
+delivery carriers, **526 geocoded stop-desk points** across 64 wilayas, and
 **per-carrier coverage**. Shipped as JSON, CSV, and GeoJSON. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -45,7 +45,7 @@ const reach = livraison.coverageByCarrier("yalidine"); // wilayas it serves
 | Dataset | Count | Geocoded | Notes |
 | --- | --- | --- | --- |
 | Carriers (`carriers.json`) | **16** | – | registry: name, website, model, COD, scope, data openness, API |
-| Stop-desks (`stopdesks.json`) | **449** | ✅ all | id, operator, name, address, commune, `wilaya_code`, lat/lng |
+| Stop-desks (`stopdesks.json`) | **526** | ✅ all | id, operator, name, address, commune, `wilaya_code`, lat/lng |
 | Coverage (`coverage.json`) | **9** | – | per-carrier wilaya/commune stop-desk presence |
 
 Stop-desks span **63 wilayas**, every one geocoded. `wilaya_code` links against the
@@ -59,11 +59,12 @@ openly. The **registry** covers the field (the major carriers and what each is);
 
 - the **Yalidine + Guepex relay ecosystem** – Yalidine, Guepex, and the operators that
   ride their shared network (EasyAndSpeed, WeCanServices, SpeedMail, Zimou Express);
-- **Anderson**, **Noest** and **Maystro**, three independent networks, each geocoded from
-  the Google Maps link on its agency cards (agencies whose links are missing, unresolvable,
-  or point to a different wilaya than the card declares are omitted).
+- **Anderson**, **Noest**, **Maystro** and **ZR Express**, four independent networks, each
+  geocoded from the Google Maps link on its agency cards or office rows (agencies whose
+  links are missing, unresolvable, or point to a different wilaya than the card declares
+  are omitted; nothing is geocoded from an address).
 
-Carriers like ZR Express, DHD, DHL and Aramex keep their agency lists behind apps,
+Carriers like DHD, DHL and Aramex keep their agency lists behind apps,
 logins, or licensed APIs, so they appear in the registry with `open_agency_data: "none"`
 and no stop-desks here. Coverage is *stop-desk presence* for the carriers with open data,
 not a claim about home-delivery reach.
@@ -91,14 +92,14 @@ const desks: StopDesk[] = livraison.stopdesks();
 ```
 data/
   carriers.json             # 16 carriers (registry)
-  stopdesks.json            # 449 geocoded stop-desks (array)
+  stopdesks.json            # 526 geocoded stop-desks (array)
   coverage.json             # 9 per-carrier coverage rows
   metadata.json             # sources, counts, updated
   csv/                      # repo + Release bundle (not in npm tarball)
     carriers.csv
     stopdesks.csv
     coverage.csv
-  geojson/stopdesks.geojson # Point features (all 449 geocoded)
+  geojson/stopdesks.geojson # Point features (all 526 geocoded)
 ```
 
 ## Record shapes
@@ -164,6 +165,11 @@ Stop-desks come from the carriers that publish open agency data:
   Google Maps link per card; the build resolves each link to the agency's pin (agencies whose
   links are missing, unresolvable, or resolve to a different wilaya than the card declares are
   omitted).
+- **ZR Express** (<https://www.zrexpress.net/en/offices>) lists its offices with the pin
+  already inside the Maps link (`?api=1&query=<lat>,<lng>`), so no link has to be resolved.
+  Its row numbers are a display index, not branch codes, so ids are minted from the wilaya
+  and commune. Three rows link a place-name search instead of a coordinate and are omitted
+  rather than geocoded.
 
 The carrier registry is compiled from [CourierDZ](https://github.com/PiteurStudio/CourierDZ),
 carrier websites, and GeoAlgeria research. Run `npm run fetch` to regenerate every output

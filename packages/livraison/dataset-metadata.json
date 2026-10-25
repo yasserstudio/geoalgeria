@@ -4,7 +4,7 @@
   "name": "Algeria delivery stop-desks",
   "alternateName": "Points relais de livraison d'Algérie",
   "identifier": "@geoalgeria/livraison",
-  "description": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 449 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+  "description": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro and ZR Express's own agency lists: 526 points across 10 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
   "conditionsOfAccess": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
   "isAccessibleForFree": true,
   "creator": {
@@ -17,10 +17,10 @@
     "name": "Algeria",
     "geo": {
       "@type": "GeoShape",
-      "box": "22.784955 -8.143583 37.009471 9.578836"
+      "box": "19.576488 -8.143583 37.009471 9.578836"
     }
   },
-  "variableMeasured": "449 records, 63 wilayas",
+  "variableMeasured": "526 records, 64 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",
@@ -73,6 +73,7 @@
     "Guepex: public agences feed, Data © Guepex; redistributed for reference",
     "Anderson Logistics: agency directory, Data © Anderson Logistics; redistributed for reference",
     "Noest Express: bureaux directory, Data © Noest Express; redistributed for reference",
-    "Maystro Delivery: coverage page, Data © Maystro Delivery; redistributed for reference"
+    "Maystro Delivery: coverage page, Data © Maystro Delivery; redistributed for reference",
+    "ZR Express: offices list, Data © ZR Express; redistributed for reference"
   ]
 }
