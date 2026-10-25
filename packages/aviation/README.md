@@ -61,20 +61,18 @@ shipped coordinate. Routes
 churn seasonally, so `metadata.routes_as_of` stamps the date the network was last
 checked against schedules: treat it as a dated snapshot, not an evergreen fact.
 
-Every route ships its citations. `source` is the primary one, a url you can open, and
-`sources` is the full list, because one row can rest on several documents: a launch
+Every route ships its citations as plain urls. `source` is the primary one, and `sources`
+is every link behind the row, because one row can rest on several documents: a launch
 statement for the route and its dates, an earlier sale-inventory report for the flight
 number, a programme report for the days.
 
 | Field | Type | Notes |
 | --- | --- | --- |
-| `source` | `string` | the primary citation, and always `sources[0].url` |
-| `sources` | `RouteSource[]` | every citation, ordered, never empty, `sources[0]` being `source` itself |
-| `sources[].url` | `string` | a page a reader can open |
-| `sources[].publisher` | `string` | who published it, in plain English ("Lyon Airport", "AeroRoutes") |
-| `sources[].supports` | `("route" \| "status" \| "dates" \| "flight" \| "days")[]` | which of the row's claims this citation backs; a `flight` or `days` value is always backed by at least one |
+| `source` | `string` | the primary citation, and always `sources[0]` |
+| `sources` | `string[]` | every url behind the row, ordered, never empty, no url twice, `sources[0]` being `source` itself |
 
-In the CSV, `sources` is the JSON array as a string in one column, next to `source`. In the
+In the CSV, `sources` is space-separated in one column next to `source`, the same encoding
+the `days` column uses: a url carries no space, so the cell splits cleanly on one. In the
 GeoJSON it is a real array in `properties`. Added in 2.9.0; `source` keeps its meaning and
 its value.
 

@@ -13,9 +13,6 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "aviation", "data");
 const routes = JSON.parse(readFileSync(join(DATA, "routes.json"), "utf-8"));
 
-/** The closed set of claims a citation may be about. */
-const SUPPORTS = ["route", "status", "dates", "flight", "days"];
-
 test("every route carries at least one citation", () => {
   const empty = routes.filter((r) => !Array.isArray(r.sources) || r.sources.length === 0);
   assert.deepEqual(empty.map((r) => r.id), [], "a route with no citation may not ship");
@@ -24,76 +21,43 @@ test("every route carries at least one citation", () => {
 test("the first citation is the row's own `source`", () => {
   // The contract that lets `source` keep its meaning: a consumer reading one
   // citation and a consumer reading the list start from the same url.
-  const disagree = routes.filter((r) => r.sources[0].url !== r.source);
+  const disagree = routes.filter((r) => r.sources[0] !== r.source);
   assert.deepEqual(disagree.map((r) => r.id), []);
+});
+
+test("a citation is a plain url string, never an object", () => {
+  // The shape, deliberately plain: a richer entry carrying a publisher, a
+  // supports list and a publication date went out before the 2.9.0 release
+  // (ADR 0002), so an object here is a regression, not an enrichment.
+  const bad = [];
+  for (const r of routes)
+    for (const s of r.sources)
+      if (typeof s !== "string") bad.push(`${r.id}: ${typeof s} ${JSON.stringify(s)}`);
+  assert.deepEqual(bad, []);
 });
 
 test("every citation url is http(s)", () => {
   const bad = [];
   for (const r of routes)
     for (const s of r.sources)
-      if (!/^https?:\/\/\S+$/.test(s.url ?? "")) bad.push(`${r.id}: ${JSON.stringify(s.url)}`);
+      if (!/^https?:\/\/\S+$/.test(s ?? "")) bad.push(`${r.id}: ${JSON.stringify(s)}`);
   assert.deepEqual(bad, [], "a citation a reader cannot open is not a citation");
 });
 
-test("every citation names its publisher in plain words", () => {
-  const bad = [];
-  for (const r of routes)
-    for (const s of r.sources)
-      if (typeof s.publisher !== "string" || !s.publisher.trim()) bad.push(`${r.id}: ${s.url}`);
-  assert.deepEqual(bad, []);
+test("no route cites the same url twice", () => {
+  const dupes = routes.filter((r) => new Set(r.sources).size !== r.sources.length);
+  assert.deepEqual(dupes.map((r) => r.id), []);
 });
 
-test("a citation carries exactly url, publisher and supports", () => {
-  // The entry shape, exactly. A publication date was dropped before the 2.9.0
-  // release (ADR 0002), so this is also the guard that keeps `date`, or any
-  // other field, from creeping back in without the ADR being revisited.
-  const KEYS = ["publisher", "supports", "url"];
-  const bad = [];
-  for (const r of routes)
-    for (const s of r.sources) {
-      const keys = Object.keys(s).sort();
-      if (keys.join(",") !== KEYS.join(",")) bad.push(`${r.id} ${s.url}: ${keys.join(", ")}`);
-    }
-  assert.deepEqual(bad, []);
-});
-
-test("every citation says what it supports, from the closed set", () => {
-  const bad = [];
-  for (const r of routes)
-    for (const s of r.sources) {
-      if (!Array.isArray(s.supports) || s.supports.length === 0) {
-        bad.push(`${r.id} ${s.url}: supports is empty`);
-        continue;
-      }
-      for (const claim of s.supports)
-        if (!SUPPORTS.includes(claim)) bad.push(`${r.id} ${s.url}: ${claim}`);
-    }
-  assert.deepEqual(bad, []);
-});
-
-test("a flight number and operating days are each backed by a citation that claims them", () => {
-  // The whole point of the list: the row's fields and its provenance cannot
-  // drift apart, so a flight number nothing in the list supports fails here.
-  const uncited = [];
-  for (const r of routes) {
-    const backs = (claim) => r.sources.some((s) => s.supports.includes(claim));
-    if (r.flight && !backs("flight")) uncited.push(`${r.id}: flight ${r.flight}`);
-    if (r.days && !backs("days")) uncited.push(`${r.id}: days ${r.days.join(" ")}`);
-  }
-  assert.deepEqual(uncited, []);
-});
-
-test("the CSV mirror carries the list as JSON in one column", () => {
+test("the CSV mirror carries the list space-separated in one column", () => {
   const csv = readFileSync(join(DATA, "csv", "routes.csv"), "utf-8");
   const header = csv.split("\n")[0].split(",");
   assert.ok(header.includes("sources"), "the CSV has a sources column");
   assert.equal(header.indexOf("sources"), header.indexOf("source") + 1);
-  // One row read back, to prove the documented format round-trips: the cell is
-  // the JSON array, quoted by the CSV writer with its inner quotes doubled.
+  // One row read back, to prove the documented format round-trips: a url carries
+  // no space, so the cell splits cleanly on one.
   const row = routes.find((r) => r.sources.length > 1);
-  const cell = JSON.stringify(row.sources).replaceAll('"', '""');
-  assert.ok(csv.includes(`"${cell}"`), `${row.id}: its citation list is not in the CSV`);
+  assert.ok(csv.includes(row.sources.join(" ")), `${row.id}: its citation list is not in the CSV`);
 });
 
 test("the GeoJSON mirror carries the list in its properties", () => {
@@ -109,21 +73,18 @@ test("the GeoJSON mirror carries the list in its properties", () => {
 
 test("the 24 October 2026 statement is cited on the ten legs it announces", () => {
   // Conakry, Brazzaville, Lagos, Shanghai and Tripoli at Mitiga, both
-  // directions of each. It supports the route and its launch dates, never a
-  // flight number or a day, because the statement carries neither, and it is an
-  // extra entry rather than the `source`, which stays the report covering the
-  // fields each row ships.
+  // directions of each. It is an extra entry rather than the `source`, which
+  // stays the report covering the fields each row ships, because the statement
+  // carries no flight number and no day name.
   const url =
     "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/";
-  const cited = routes.filter((r) => r.sources.some((s) => s.url === url));
+  const cited = routes.filter((r) => r.sources.includes(url));
   assert.deepEqual(
     cited.map((r) => r.id).sort(),
     ["alg-bzv", "alg-cky", "alg-los", "alg-mji", "alg-pvg", "bzv-alg", "cky-alg", "los-alg", "mji-alg", "pvg-alg"],
   );
   for (const r of cited) {
-    const entry = r.sources.find((s) => s.url === url);
     assert.notEqual(r.source, url, `${r.id}: the statement is not the primary citation`);
-    assert.deepEqual(entry.supports, ["route", "dates"]);
     assert.ok(r.planned, `${r.id}: an announcement never leaves plannedRoutes()`);
   }
 });

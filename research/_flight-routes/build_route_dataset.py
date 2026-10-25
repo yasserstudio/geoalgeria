@@ -29,7 +29,6 @@ Usage: python3 build_route_dataset.py
 import json
 import math
 import os
-from urllib.parse import urlparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "..")
@@ -559,9 +558,9 @@ LISTED = [
 #
 # What the statement does NOT carry: no flight number, no day name and no
 # airport for Tripoli. So it never replaces the report a row's `flight` or `days`
-# rests on: it is an EXTRA entry in that row's `sources` list, supporting the
-# route and its launch dates, while `source` stays the report that covers the
-# fields the row ships (ADR 0002). AS_OF is unchanged for the same reason: this
+# rests on: it is an EXTRA url in that row's `sources` list, the best evidence
+# for the route and its launch dates, while `source` stays the report that covers
+# the fields the row ships (ADR 0002). AS_OF is unchanged for the same reason: this
 # is a provenance addition on the announcements, not a re-check of the schedule.
 AH_STATEMENT_2026_10_24 = (
     "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
@@ -594,20 +593,16 @@ PLANNED = [
     {"from": "ALG", "to": "BZV", "flight": "AH 5390", "status": "unclear",
      "days": ["mon", "wed", "sat"], "evidence": "verified",
      "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
-     "supports": ["route", "days"],
      "extra_sources": [
-         {"url": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-          "supports": ["flight"]},
-         {"url": AH_STATEMENT_2026_10_24, "supports": ["route", "dates"]},
+         "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+         AH_STATEMENT_2026_10_24,
      ]},
     {"from": "ALG", "to": "CKY", "flight": "AH 5358", "status": "unclear",
      "days": ["tue", "thu", "sun"], "evidence": "verified",
      "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
-     "supports": ["route", "days"],
      "extra_sources": [
-         {"url": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-          "supports": ["flight"]},
-         {"url": AH_STATEMENT_2026_10_24, "supports": ["route", "dates"]},
+         "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+         AH_STATEMENT_2026_10_24,
      ]},
     {"from": "ALG", "to": "ICN", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
@@ -658,7 +653,7 @@ PLANNED = [
     {"from": "ALG", "to": "MJI", "status": "unclear", "days": ["wed", "fri"],
      "evidence": "listed",
      "source": "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
-     "extra_sources": [{"url": AH_STATEMENT_2026_10_24, "supports": ["route", "dates"]}]},
+     "extra_sources": [AH_STATEMENT_2026_10_24]},
     # The Tripoli return ships on its own evidence, as direction always does: the
     # 1 Oct 2026 economic daily states it in as many words, "les vols au depart de
     # Tripoli vers Alger seront egalement programmes les memes jours", and quotes
@@ -668,7 +663,7 @@ PLANNED = [
     {"from": "MJI", "to": "ALG", "status": "unclear", "days": ["wed", "fri"],
      "evidence": "listed",
      "source": "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/",
-     "extra_sources": [{"url": AH_STATEMENT_2026_10_24, "supports": ["route", "dates"]}]},
+     "extra_sources": [AH_STATEMENT_2026_10_24]},
     # `days` is set on the outbound only. "Un vol par semaine le lundi" dates the
     # rotation's departure from Algiers; when the Amman leg flies back is a
     # separate fact nothing published pins down, and the Nigeria triangle is the
@@ -685,11 +680,11 @@ PLANNED = [
     {"from": "ALG", "to": "LOS", "flight": "AH 5354", "status": "unclear",
      "days": ["thu"], "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-     "extra_sources": [{"url": AH_STATEMENT_2026_10_24, "supports": ["route", "dates"]}]},
+     "extra_sources": [AH_STATEMENT_2026_10_24]},
     {"from": "ALG", "to": "PVG", "flight": "AH 3082", "status": "unclear",
      "days": ["mon", "wed", "sat"], "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
-     "extra_sources": [{"url": AH_STATEMENT_2026_10_24, "supports": ["route", "dates"]}]},
+     "extra_sources": [AH_STATEMENT_2026_10_24]},
     # The two Nigeria triangles' middle legs, added 2026-10-02 under the amended
     # scope rule (collection-rules.md section 33), on AeroRoutes' NW26 filing:
     # "Algiers - Abuja - Lagos - Algiers eff 26OCT26 1 weekly 737-700" and
@@ -742,21 +737,21 @@ PLANNED = [
     {"from": "BZV", "to": "ALG", "flight": "AH 5391", "status": "unclear",
      "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-     "extra_sources": [{"url": AH_STATEMENT_2026_10_24, "supports": ["route", "dates"]}]},
+     "extra_sources": [AH_STATEMENT_2026_10_24]},
     {"from": "CKY", "to": "ALG", "flight": "AH 5359", "status": "unclear",
      "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-     "extra_sources": [{"url": AH_STATEMENT_2026_10_24, "supports": ["route", "dates"]}]},
+     "extra_sources": [AH_STATEMENT_2026_10_24]},
     {"from": "ICN", "to": "ALG", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
     {"from": "LOS", "to": "ALG", "flight": "AH 5354", "status": "unclear",
      "days": ["tue"], "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-     "extra_sources": [{"url": AH_STATEMENT_2026_10_24, "supports": ["route", "dates"]}]},
+     "extra_sources": [AH_STATEMENT_2026_10_24]},
     {"from": "PVG", "to": "ALG", "flight": "AH 3083", "status": "unclear",
      "days": ["tue", "thu", "sun"], "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
-     "extra_sources": [{"url": AH_STATEMENT_2026_10_24, "supports": ["route", "dates"]}]},
+     "extra_sources": [AH_STATEMENT_2026_10_24]},
     # N'Djamena, planned. The 22 Jun 2026 737 MAX 8 network post files "Algiers -
     # N'djamena - Addis Ababa" effective 28 Oct 2026 at 2 weekly, which is 19 days
     # after this AS_OF, so it is an announcement and not an operation: the
@@ -888,131 +883,28 @@ OPERATED_BY_OTHERS = {
 }
 
 
-# Citation list (ADR 0002). Every row ships `sources`, an ordered list whose
-# first entry is always the row's `source`, so the single-citation field keeps
-# its meaning and a reader gains the rest of the provenance instead of losing it.
-#
-# What a citation claim may be about, and nothing else: the enum is closed so a
-# consumer can switch on it.
-#   route   the carrier flies (or has announced) this directional leg
-#   status  the operating state: active, seasonal, suspended
-#   dates   a launch, resumption or suspension date
-#   flight  the flight number the row carries
-#   days    the operating days the row carries
-SUPPORTS = ("route", "status", "dates", "flight", "days")
-
-# Plain-English publisher names, by host. A reader judges a citation by who
-# published it, so the list names the publisher rather than making them read a
-# domain. A host absent from this map fails the build: an unnamed publisher is
-# the one thing a citation list must not ship.
-PUBLISHERS = {
-    "al24news.dz": "AL24 News",
-    "algerie-eco.com": "Algerie Eco",
-    "en.wikipedia.org": "Wikipedia",
-    "lorraineaeroport.com": "Lorraine Airport",
-    "maghrebemergent.news": "Maghreb Emergent",
-    "mediacentre.manchesterairport.co.uk": "Manchester Airport",
-    "mediacentre.stanstedairport.com": "London Stansted Airport",
-    "news.radioalgerie.dz": "Radio Algerienne",
-    "thepeninsulaqatar.com": "The Peninsula",
-    "web.archive.org": "Air Algerie, Internet Archive capture",
-    "www.aaco.org": "Arab Air Carriers' Organization",
-    "www.aeroroutes.com": "AeroRoutes",
-    "www.agenceecofin.com": "Agence Ecofin",
-    "www.air-journal.fr": "Air Journal",
-    "www.airalgerie.dz": "Air Algerie",
-    "www.algerie360.com": "Algerie360",
-    "www.aps.dz": "Algerie Presse Service",
-    "www.dzairdaily.com": "Dzair Daily",
-    "www.flightsfrom.com": "FlightsFrom",
-    "www.lorraineaeroport.com": "Lorraine Airport",
-    "www.lyonaeroports.com": "Lyon Airport",
-    "www.marseille.aeroport.fr": "Marseille Airport",
-    "www.montpellier.aeroport.fr": "Montpellier Airport",
-    "www.nantes.aeroport.fr": "Nantes Airport",
-    "www.observalgerie.com": "Observalgerie",
-    "www.parisaeroport.fr": "Paris Aeroport",
-    "www.routesonline.com": "Routes Online",
-    "www.strasbourg.aeroport.fr": "Strasbourg Airport",
-    "www.toulouse.aeroport.fr": "Toulouse Airport",
-    "www.tsa-algerie.com": "Tout sur l'Algerie",
-    "www.visa-algerie.com": "Visa Algerie",
-}
-
-# The 24 Oct statement is read through Algerie360, and the entry says so rather
-# than crediting the outlet with the announcement or the carrier with the page.
-PUBLISHER_OVERRIDES = {
-    AH_STATEMENT_2026_10_24: "Air Algerie statement, via Algerie360",
-}
-
-
-def citation(url, supports):
-    """One entry of a row's `sources`."""
-    host = urlparse(url).netloc
-    publisher = PUBLISHER_OVERRIDES.get(url) or PUBLISHERS.get(host)
-    if not publisher:
-        raise SystemExit(f"{host}: no publisher name; add one to PUBLISHERS")
-    bad = [s for s in supports if s not in SUPPORTS]
-    if bad:
-        raise SystemExit(f"{url}: {', '.join(bad)} is not one of {', '.join(SUPPORTS)}")
-    return {"url": url, "publisher": publisher, "supports": list(supports)}
-
-
-def default_supports(row):
-    """What a row's own citation is taken to support.
-
-    The collection's standing rule is that a row's `source` covers the fields the
-    row ships: when a source does not cover one, the citation moves to a source
-    that does (the Douala flight number) or the row carries an explicit
-    `supports` and names the covering source as a second entry (the five October
-    launches). So the default reads the fields rather than restating them, and
-    `status` is claimed only where there is a state to claim: `unclear` is the
-    absence of one.
-    """
-    out = ["route"]
-    if row["status"] != "unclear":
-        out.append("status")
-    if row.get("flight"):
-        out.append("flight")
-    if row.get("days"):
-        out.append("days")
-    return out
+# Citation list (ADR 0002). Every row ships `sources`, an ordered list of the
+# urls behind it whose first entry is always the row's `source`, so the
+# single-citation field keeps its meaning and a reader gains the rest of the
+# provenance instead of losing it. Plain urls: a reader opens them.
 
 
 def attach_sources(row, record=None, suspended_from=None):
     """Build `sources` for one row: entry 0 is always its `source`."""
     record = record or {}
-    own = record.get("supports") or default_supports(row)
+    urls = [row["source"]]
     if suspended_from:
         # A suspension notice becomes the row's `source`, so it leads the list,
-        # and it supports exactly the one thing it says: the state. The citation
-        # the row arrived with stays behind it and keeps the rest, minus the
-        # `status` it no longer supports.
-        entries = [citation(row["source"], ["status"]),
-                   citation(suspended_from, [s for s in own if s != "status"])]
-    else:
-        entries = [citation(row["source"], own)]
-    for extra in record.get("extra_sources", []):
-        entries.append(citation(extra["url"], extra["supports"]))
-    row["sources"] = dedupe_sources(entries)
-
-
-def dedupe_sources(entries):
-    """One entry per URL, supports merged, first mention keeping its position."""
-    out = []
-    by_url = {}
-    for e in entries:
-        if e["url"] in by_url:
-            kept = by_url[e["url"]]
-            for s in e["supports"]:
-                if s not in kept["supports"]:
-                    kept["supports"].append(s)
-            continue
-        by_url[e["url"]] = e
-        out.append(e)
-    for e in out:
-        e["supports"] = [s for s in SUPPORTS if s in e["supports"]]
-    return out
+        # and the citation the row arrived with stays behind it.
+        urls.append(suspended_from)
+    urls.extend(record.get("extra_sources", []))
+    seen = []
+    for url in urls:
+        if not url.startswith("http"):
+            raise SystemExit(f"{row['id']}: {url} is not a url")
+        if url not in seen:
+            seen.append(url)
+    row["sources"] = seen
 
 
 def haversine(a, b, c, d):

@@ -179,24 +179,17 @@ test("a `sources` array of bare keys is read as keys", () => {
 });
 
 test("a route's citation list is not read as Source keys", () => {
-  // @geoalgeria/aviation routes carry `sources`, a list of citations: a url, its
-  // publisher and what it supports. They cite published reports rather than
-  // declaring an upstream, so there is no key to look up (ADR 0002). A SourceRef
-  // that has merely lost its `key` is still reported, as the next test shows.
+  // @geoalgeria/aviation routes carry `sources`, a list of plain urls. They cite
+  // published reports rather than declaring an upstream, so there is no key to
+  // look up (ADR 0002), and a url is not key-shaped. A SourceRef that has merely
+  // lost its `key` is still reported, as the next test shows.
   assert.deepEqual(
     sourceRefsInDocument(
       [
         {
           id: "alg-mji",
           source: "https://example.com/tripoli",
-          sources: [
-            {
-              url: "https://example.com/tripoli",
-              publisher: "An outlet",
-              date: "2026-10-01",
-              supports: ["route", "days"],
-            },
-          ],
+          sources: ["https://example.com/tripoli", "https://example.com/statement"],
         },
       ],
       "aviation/data/routes.json",

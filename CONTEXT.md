@@ -148,12 +148,8 @@ How strongly one Route is established: `verified` (the operator was confirmed as
 _Avoid_: confidence, quality, certainty, evidence level
 
 **Citation**:
-One published document a Route's claims rest on, as data: its url, its publisher in plain English and the **Claim support** it backs. A Citation names a document a reader can open; a **Source** names an upstream GeoAlgeria takes records from and keys into the rights registry. Every Route ships `sources`, an ordered, non-empty list of Citations whose first entry is that Route's own `source` (ADR 0002).
+One published document a Route's claims rest on, as a url a reader can open. A Citation names a document; a **Source** names an upstream GeoAlgeria takes records from and keys into the rights registry. Every Route ships `sources`, an ordered, non-empty, duplicate-free list of Citations whose first entry is that Route's own `source` (ADR 0002).
 _Avoid_: reference, provenance entry, source (unqualified, for one document)
-
-**Claim support**:
-What one Citation backs, from a closed set: `route` (the carrier flies, or has announced, the directional leg), `status`, `dates` (a launch, resumption or suspension date), `flight` (the flight number the row carries) and `days` (the operating days it carries). A Route's `flight` and `days` must each be backed by a Citation that says so.
-_Avoid_: covers, scope, field support
 
 ### Telecom
 

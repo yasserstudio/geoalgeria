@@ -108,8 +108,10 @@ function main() {
     // disagree, so it fails here rather than shipping (ADR 0002).
     if (!Array.isArray(r.sources) || r.sources.length === 0)
       throw new Error(`${r.id}: no sources; rebuild route-dataset.json`);
-    if (r.sources[0].url !== r.source)
+    if (r.sources[0] !== r.source)
       throw new Error(`${r.id}: sources[0] is not the row's source`);
+    if (new Set(r.sources).size !== r.sources.length)
+      throw new Error(`${r.id}: a url is cited twice`);
   }
   const ids = new Set(rows.map((r) => r.id));
   if (ids.size !== rows.length) throw new Error("duplicate route id");
@@ -119,11 +121,10 @@ function main() {
 
   writeFileSync(join(DATA, "routes.json"), JSON.stringify(rows, null, 2) + "\n");
 
-  // CSV is a flat table and `sources` is a list of objects, so the column
-  // carries it as a JSON string: `[{"url":...,"publisher":...,"supports":[...]}]`,
-  // quoted and with its inner quotes doubled by the CSV
-  // writer. A reader who only wants one citation already has `source`, which is
-  // the same url as the first entry.
+  // CSV is a flat table, so `sources` is space-separated, the same encoding the
+  // `days` column uses: a url carries no space, so the cell splits cleanly on
+  // one. A reader who only wants one citation already has `source`, which is the
+  // first url in the cell.
   const cols = ["id", "from", "to", "carrier", "flight", "status", "days", "evidence", "planned", "source", "sources", "great_circle_km"];
   writeFileSync(
     join(DATA, "csv", "routes.csv"),
@@ -131,7 +132,7 @@ function main() {
       rows.map((r) => ({
         ...r,
         days: r.days ? r.days.join(" ") : null,
-        sources: JSON.stringify(r.sources),
+        sources: r.sources.join(" "),
       })),
       cols,
     ),

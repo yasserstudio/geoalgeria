@@ -1256,18 +1256,11 @@ function validateRouteEndpoints() {
   console.log(`  OK: ${label}, ${eps.length} endpoints, fully named (fr/en/ar), all route terminals resolve`);
 }
 
-// Every route ships `sources`, its citation list, and `source` stays the primary
-// citation: the same url as the first entry (ADR 0002). The gate is here rather
-// than in the relation spec because the contract is about the list's shape, not a
-// field's presence: entry 0 agrees with `source`, every url is openable, every
-// publisher is named, every entry carries exactly url, publisher and supports,
-// every claim comes from the closed set, and a row's flight number and operating
-// days are each backed by an entry that says it supports them.
-const ROUTE_SUPPORTS = new Set(["route", "status", "dates", "flight", "days"]);
-// The entry shape, exactly: a citation dropped its publication date before the
-// 2.9.0 release (ADR 0002), and this keeps `date` or any other field from
-// creeping back in without the ADR being revisited.
-const ROUTE_SOURCE_KEYS = ["publisher", "supports", "url"];
+// Every route ships `sources`, its citation list: the urls behind the row, and
+// `source` stays the primary citation, the same url as the first entry (ADR
+// 0002). The gate is here rather than in the relation spec because the contract
+// is about the list's shape, not a field's presence: a non-empty array of plain
+// http(s) strings, no url twice, and entry 0 agreeing with `source`.
 function validateRouteSources() {
   const label = "aviation/routes.json [sources]";
   let routes;
@@ -1283,25 +1276,15 @@ function validateRouteSources() {
       problems.push(`${r.id}: no sources`);
       continue;
     }
-    if (list[0].url !== r.source) problems.push(`${r.id}: sources[0].url is not source`);
-    for (const [i, s] of list.entries()) {
+    if (list[0] !== r.source) problems.push(`${r.id}: sources[0] is not source`);
+    if (new Set(list).size !== list.length) problems.push(`${r.id}: a url is cited twice`);
+    for (const [i, url] of list.entries()) {
       const at = `${r.id} sources[${i}]`;
-      if (!/^https?:\/\/\S+$/.test(s.url ?? "")) problems.push(`${at}: url is not http(s)`);
-      if (typeof s.publisher !== "string" || !s.publisher.trim())
-        problems.push(`${at}: no publisher name`);
-      const keys = Object.keys(s).sort();
-      if (keys.join(",") !== ROUTE_SOURCE_KEYS.join(","))
-        problems.push(`${at}: keys are ${keys.join(", ")}, not ${ROUTE_SOURCE_KEYS.join(", ")}`);
-      if (!Array.isArray(s.supports) || s.supports.length === 0) {
-        problems.push(`${at}: supports is empty`);
-      } else {
-        const bad = s.supports.filter((x) => !ROUTE_SUPPORTS.has(x));
-        if (bad.length) problems.push(`${at}: ${bad.join(", ")} outside the supports set`);
-      }
+      // A plain string, deliberately: the richer entry object went out before
+      // the 2.9.0 release (ADR 0002), so an object here is a regression.
+      if (typeof url !== "string") problems.push(`${at}: ${typeof url}, not a url string`);
+      else if (!/^https?:\/\/\S+$/.test(url)) problems.push(`${at}: url is not http(s)`);
     }
-    const backs = (claim) => list.some((s) => (s.supports ?? []).includes(claim));
-    if (r.flight && !backs("flight")) problems.push(`${r.id}: flight ${r.flight} is uncited`);
-    if (r.days && !backs("days")) problems.push(`${r.id}: days are uncited`);
   }
   if (problems.length) {
     return fail(`${label}: ${problems.length} problem(s): ${problems.slice(0, 5).join("; ")}`);
