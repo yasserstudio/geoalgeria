@@ -29,6 +29,7 @@ import {
   carryOverIds,
   readCommitted,
   readRetiredIds,
+  loadReviewLedger,
 } from "../../../scripts/lib/v2-transforms.mjs";
 import { foldNameDashes } from "../../../scripts/lib/no-em-dash.mjs";
 
@@ -176,16 +177,19 @@ function parseSurface(v) {
 // as `refs.mjs` on the next live pull is what would close that gap.
 //
 // Only fields the GENERATOR owns belong in the key. The key is read before
-// writePackageV2, and the writer then patches `wilaya_code`/`commune_code` from
+// writePackageV2, and the writer then patches fields from
 // quality/overrides/sports.json and folds every name-keyed string through
 // foldNameDashes, so a key that read either of those would compare a generator
 // value against a published one and retire an id on a rebuild that changed
 // nothing (empirically: `wilaya_code` cost 27 ids, 13 of them the reviewed
 // corrections themselves, which then aborted the build at "review overrides:
-// unknown record 02725"). `wilaya_code` is out for that reason, and because it is
-// GeoAlgeria-derived rather than ministry data: reconcileCurrentWilayaByCommune
-// re-decides it from the commune index and the boundaries on every run. The name
-// stays in, folded exactly as the writer folds it.
+// unknown record 02725"). Three things keep the two sides comparable:
+// `wilaya_code` is out of the key, being GeoAlgeria-derived rather than ministry
+// data (reconcileCurrentWilayaByCommune re-decides it from the commune index and
+// the boundaries on every run); the name is folded exactly as the writer folds
+// it; and the committed side is read through asGenerated below, which undoes the
+// review ledger, so a reviewed coordinate or name correction cannot churn the id
+// it corrected either.
 const PLACE_FIELDS = ["commune", "type", "name", "address", "lat", "lng"];
 
 /** The place a v2 sports record stands for, as a carry key. */
@@ -222,6 +226,44 @@ export function sportsCarryKey(committed, rows) {
 }
 
 /**
+ * The committed records as the generator produced them, with the review ledger's
+ * corrections undone, which is the side of the comparison the carry key can
+ * actually read.
+ *
+ * writePackageV2 applies quality/overrides/sports.json AFTER the fetcher has
+ * keyed the rows, so a published record carries reviewed values the generator
+ * never produces: 5 of the repo's 11 ledgers patch coordinates, and keying on a
+ * reviewed coordinate retires the very id the review corrected (reproduced on
+ * 01663: carried 0, minted 1, retired 1). The ledger cannot be applied to the
+ * live rows instead, because it is keyed on the published id, which is what
+ * carry-over is still deciding. Every patched field is required to appear in
+ * `expect` with its pre-patch value, precisely so a build can be replayed, so
+ * restoring `expect` (and dropping what `expect_absent` says the generator does
+ * not emit) is the exact inverse of the patch the writer will apply, and leaves
+ * both sides keyed on what the generator owns. Ids are never patchable, so the
+ * returned records still carry the published ids carry-over pins back.
+ *
+ * @param {object[]} committed  the committed v2 records
+ * @param {object|null} ledger  the review ledger, or null for a package with none
+ * @param {string} file         the data file the decisions apply to
+ */
+export function asGenerated(committed, ledger, file) {
+  const decisions = new Map(
+    (ledger?.decisions ?? [])
+      .filter((d) => d.file === file && d.publish_action === "patch")
+      .map((d) => [String(d.record_id), d]),
+  );
+  if (!decisions.size) return committed;
+  return committed.map((record) => {
+    const decision = decisions.get(String(record.id));
+    if (!decision) return record;
+    const generated = { ...record, ...decision.expect };
+    for (const field of decision.expect_absent ?? []) delete generated[field];
+    return generated;
+  });
+}
+
+/**
  * Give every record its public id: the one it already shipped under, or, for a
  * facility the source has never shipped, the next number above every id the
  * package has ever used (published or retired). Parking the new facilities above
@@ -231,13 +273,23 @@ export function sportsCarryKey(committed, rows) {
  * @param {object[]} rows          the v2 records being emitted (mutated in place)
  * @param {object[]} committed     the committed v2 records
  * @param {Set<string>} retiredIds the retired-id ledger, mutated with this run's
+ * @param {object} [options]
+ * @param {object|null} [options.ledger]  the review ledger to undo on the
+ *                                 committed side; defaults to the package's own
+ * @param {string} [options.file]  the data file the decisions apply to
  * @returns {{carried: number, minted: number, retired: number}}
  */
-export function assignStableIds(rows, committed, retiredIds) {
-  const keyOf = sportsCarryKey(committed, rows);
-  const shipped = new Set(committed.map(keyOf));
+export function assignStableIds(
+  rows,
+  committed,
+  retiredIds,
+  { ledger = loadReviewLedger("sports"), file = "facilities.json" } = {},
+) {
+  const published = asGenerated(committed, ledger, file);
+  const keyOf = sportsCarryKey(published, rows);
+  const shipped = new Set(published.map(keyOf));
   let highest = 0;
-  for (const id of [...committed.map((r) => r.id), ...retiredIds]) {
+  for (const id of [...published.map((r) => r.id), ...retiredIds]) {
     const n = Number(id);
     if (Number.isFinite(n) && n > highest) highest = n;
   }
@@ -248,7 +300,7 @@ export function assignStableIds(rows, committed, retiredIds) {
     minted++;
   }
   const retiredBefore = retiredIds.size;
-  carryOverIds(rows, committed, keyOf, "sports", retiredIds);
+  carryOverIds(rows, published, keyOf, "sports", retiredIds);
   return {
     carried: rows.length - minted,
     minted,
