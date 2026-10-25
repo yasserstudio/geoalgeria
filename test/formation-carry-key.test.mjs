@@ -20,10 +20,13 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
+  SEVERED_IDS,
   accreditationKeyOf,
   assignStableIds,
   formationCarryKey,
 } from "../packages/formation-professionnelle/scripts/fetch.mjs";
+import establishments from "../packages/formation-professionnelle/data/establishments.json" with { type: "json" };
+import retiredLedger from "../packages/formation-professionnelle/data/retired-ids.json" with { type: "json" };
 
 // The real pair from the capture diff: code 0100, the Adrar directorate. June ran
 // two words together where October spaces them and doubles the space before the
@@ -139,4 +142,101 @@ test("formationCarryKey keys both sides from one pass", () => {
   assert.equal(keyOf(rows[0]), keyOf(committed[0]));
   // A record from neither side still keys, so the function is total.
   assert.equal(typeof keyOf(row({ code: "0303", type: "cfpa" })), "string");
+});
+
+// --- the group-size guard ----------------------------------------------------
+
+test("a code and type that gains a second member is guarded too", () => {
+  // Sizing the group from the committed side alone left this unguarded: one
+  // committed record under 1500|cfpa, so the group looked like a singleton and
+  // the tie-break was skipped, while a new live record sorting first took the
+  // published id of a CFPA 288 km away.
+  const committed = [row({ id: "00500", code: "1500", type: "cfpa", name: "Tizi Ouzou", lat: 36.7169, lng: 4.0497 })];
+  const rows = [
+    row({ id: "00500", code: "1500", type: "cfpa", name: "new, sorts first", lat: 34.8581, lng: 5.7281 }),
+    row({ id: "00501", code: "1500", type: "cfpa", name: "Tizi Ouzou", lat: 36.7169, lng: 4.0497 }),
+  ];
+  assert.throws(() => assignStableIds(rows, committed, new Set()), /reordered|gained a member/);
+});
+
+test("without a coordinate the guard falls back to the commune", () => {
+  const base = { code: "1500", type: "cfpa" };
+  const committed = [
+    row({ ...base, id: "00500", name: "a", commune: "تيزي وزو", lat: null, lng: null }),
+    row({ ...base, id: "00501", name: "b", commune: "أزفون", lat: 36.8938, lng: 4.4261 }),
+  ];
+  // Same commune once the portal's spacing is folded: the pairing stands.
+  const ok = [
+    row({ ...base, id: "00500", name: "a", commune: "تيزيوزو", lat: null, lng: null }),
+    row({ ...base, id: "00501", name: "b", commune: "أزفون", lat: 36.8938, lng: 4.4261 }),
+  ];
+  assignStableIds(ok, committed, new Set());
+  assert.deepEqual(ok.map((r) => r.id), ["00500", "00501"]);
+
+  // A different commune with no coordinate to appeal to fails closed.
+  const swapped = [
+    row({ ...base, id: "00500", name: "a", commune: "أزفون", lat: null, lng: null }),
+    row({ ...base, id: "00501", name: "b", commune: "تيزي وزو", lat: 36.7169, lng: 4.0497 }),
+  ];
+  assert.throws(() => assignStableIds(swapped, committed, new Set()), /commune/);
+});
+
+test("a missing commune and a missing coordinate fail closed", () => {
+  const base = { code: "1500", type: "cfpa", commune: null, lat: null, lng: null };
+  const committed = [row({ ...base, id: "00500", name: "a" }), row({ ...base, id: "00501", name: "b" })];
+  const rows = [row({ ...base, id: "00500", name: "a" }), row({ ...base, id: "00501", name: "b" })];
+  assert.throws(() => assignStableIds(rows, committed, new Set()), /nothing locates/);
+});
+
+// --- the reviewed carry-key exception ----------------------------------------
+
+test("a severed id retires, and its accreditation code mints a fresh one", () => {
+  // SEVERED_IDS records a published id the review cut loose from its
+  // accreditation code: the code changed hands, so carrying the id would point
+  // a public join key at a different business.
+  const [severed] = [...SEVERED_IDS.keys()];
+  const entry = SEVERED_IDS.get(severed);
+  const committed = [
+    row({ id: severed, code: entry.code, type: entry.type, name: entry.was.name_fr }),
+    row({ id: "00001", code: "0100", type: "dfep", name: "untouched" }),
+  ];
+  const rows = [
+    row({ id: "00001", code: "0100", type: "dfep", name: "untouched" }),
+    row({ id: "00002", code: entry.code, type: entry.type, name: entry.now.name_fr }),
+  ];
+  const retiredIds = new Set();
+  const counts = assignStableIds(rows, committed, retiredIds);
+  assert.ok(retiredIds.has(severed), `${severed} must retire`);
+  const successor = rows.find((r) => r.code === entry.code);
+  assert.notEqual(successor.id, severed);
+  assert.match(successor.id, /^\d{5}$/);
+  assert.deepEqual(counts, { carried: 1, minted: 1, retired: 1 });
+});
+
+test("a severed id does not churn its successor on the next run", () => {
+  // The exception is keyed on the id it severs, not on the carry key, so once
+  // the successor is published under its own id the rule matches nothing and the
+  // next rebuild carries it like any other record.
+  const [severed] = [...SEVERED_IDS.keys()];
+  const entry = SEVERED_IDS.get(severed);
+  const committed = [row({ id: "01965", code: entry.code, type: entry.type, name: entry.now.name_fr })];
+  const rows = [row({ id: "00002", code: entry.code, type: entry.type, name: entry.now.name_fr })];
+  const counts = assignStableIds(rows, committed, new Set([severed]));
+  assert.equal(rows[0].id, "01965");
+  assert.deepEqual(counts, { carried: 1, minted: 0, retired: 0 });
+});
+
+test("the shipped data carries the severance out", () => {
+  const [severed] = [...SEVERED_IDS.keys()];
+  const entry = SEVERED_IDS.get(severed);
+  assert.ok(retiredLedger.ids.includes(severed), `${severed} must be in the retired ledger`);
+  assert.equal(
+    establishments.find((r) => r.id === severed),
+    undefined,
+    `${severed} must not be published`,
+  );
+  const successor = establishments.filter((r) => r.code === entry.code && r.type === entry.type);
+  assert.equal(successor.length, 1);
+  assert.equal(successor[0].name_fr, entry.now.name_fr);
+  assert.notEqual(successor[0].id, severed);
 });

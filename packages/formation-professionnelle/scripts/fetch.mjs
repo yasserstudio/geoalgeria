@@ -255,7 +255,72 @@ export const accreditationKeyOf = (r) =>
 const TIE_BREAK_MAX_KM = 5;
 
 /**
- * A keyOf for carryOverIds over both sides of a rebuild.
+ * Reviewed carry-key exceptions: a published id the review cut loose from its
+ * accreditation code, because the code changed hands rather than the
+ * establishment changing its name. Carrying such an id would point a public join
+ * key at a different business, so the id retires and the new holder is minted a
+ * fresh one. The MFEP publishes no successor field, so this cannot be derived;
+ * each entry is a reviewed decision with the evidence beside it, the same way
+ * packages/ecoles/scripts/fetch.mjs tracks its OSM primitive migrations.
+ *
+ * Keyed on the id it severs, not on the carry key, so the rule stops matching
+ * once the successor is published under its own id: a rebuild from the new
+ * committed data carries that id like any other instead of churning it.
+ */
+export const SEVERED_IDS = new Map([
+  [
+    "00591",
+    {
+      code: "15634",
+      type: "prive",
+      reviewer: "geoalgeria-maintainers",
+      reviewed_at: "2026-10-25",
+      // What the two captures say under this one accreditation code. Every
+      // descriptive field changed, in both languages, and nothing the portal
+      // publishes ties the two together.
+      was: {
+        capture: "2026-06-22",
+        name_fr: "LHIRFA USIREM",
+        name: "\u0627\u0644\u0645\u0624\u0633\u0633\u0629 \u0627\u0644\u062E\u0627\u0635\u0629\u0644\u0644\u062A\u0643\u0648\u064A\u0646 \u0627\u0644\u0645\u0647\u0646\u064A\u0644\u062D\u0631\u0641\u0627 \u0627\u0648\u0633\u064A\u0631\u0627\u0645",
+        telephone: "0540824419",
+        email: "centredeformationasirem@gmail.com",
+        facebook: "https://www.facebook.com/p/Asirem-School100086582826402/",
+        adresse_fr: "Rue frere ouamrane lot thala n 03 Tiziouzou",
+        capacite: 144,
+        surface_m2: 200,
+        vocations: 4,
+        point: "exact, 36.697271 / 4.049615",
+      },
+      now: {
+        capture: "2026-10-25",
+        name_fr: "HIGH FLY SCHOOL",
+        name: "\u0627\u0644\u0645\u0624\u0633\u0633\u0629 \u0627\u0644\u062E\u0627\u0635\u0629 \u0644\u0644\u062A\u0643\u0648\u064A\u0646 \u0627\u0644\u0645\u0647\u0646\u064A \u0647\u0627\u064A \u0641\u0644\u0627\u064A \u0633\u0643\u0648\u0644",
+        telephone: null,
+        email: "highflyschoolto@gmail.com",
+        facebook: null,
+        adresse_fr: null,
+        capacite: null,
+        surface_m2: null,
+        vocations: 0,
+        point: "none; placed on the Tizi Ouzou commune centroid",
+      },
+      note:
+        "Accreditation 15634 passed from Asirem School to High Fly School. The name " +
+        "changed in both languages, and so did the phone, the email, the Facebook page, " +
+        "the address, the capacity, the surface and the whole curriculum: June listed " +
+        "sewing, women's and men's hairdressing and childcare assistance, October lists " +
+        "none. The 4 km between the two published points is not evidence of a move, " +
+        "because October carries no portal point at all and sits on its commune's " +
+        "centroid. Nothing but the code and the wilaya connects the two records, so the " +
+        "id stays with neither: 00591 is reserved and High Fly School is a new record.",
+    },
+  ],
+]);
+
+/**
+ * A keyOf for carryOverIds over both sides of a rebuild. A severed id is keyed so
+ * that nothing can match it, which retires it; it is also left out of its group's
+ * numbering, so the records that remain still pair with each other.
  *
  * @param {object[]} committed  the committed v2 records
  * @param {object[]} rows       the records being emitted
@@ -267,6 +332,10 @@ export function formationCarryKey(committed, rows) {
     const seen = new Map();
     for (const r of set) {
       const place = accreditationKeyOf(r);
+      if (set === committed && SEVERED_IDS.has(String(r.id))) {
+        keyed.set(r, `${place}!severed:${r.id}`);
+        continue;
+      }
       const nth = (seen.get(place) ?? 0) + 1;
       seen.set(place, nth);
       keyed.set(r, `${place}#${nth}`);
@@ -281,53 +350,77 @@ const kmApart = (a, b) =>
   Math.hypot(a.lat - b.lat, (a.lng - b.lng) * Math.cos((a.lat * Math.PI) / 180));
 
 /**
- * Refuse a positional tie-break that paired two records standing far apart. A
- * group whose members the portal reordered, or gained a member, would otherwise
- * swap two published ids silently. Only a group with more than one member is
- * checked, and only where both of a pair carry a coordinate.
+ * How many records share a code and type, counted over BOTH sides. Sizing the
+ * group from the committed side alone left a singleton that gains a second member
+ * unguarded, which is the case that actually swaps an id: a new record sorting
+ * first takes the published id and the real holder is minted a new one.
+ *
+ * @param {object[]} committed
+ * @param {object[]} rows
+ * @returns {Map<string, number>}
+ */
+function groupSizes(committed, rows) {
+  const sizes = new Map();
+  for (const set of [committed, rows]) {
+    const counts = new Map();
+    for (const r of set) {
+      const place = accreditationKeyOf(r);
+      counts.set(place, (counts.get(place) ?? 0) + 1);
+    }
+    for (const [place, n] of counts) sizes.set(place, Math.max(sizes.get(place) ?? 0, n));
+  }
+  return sizes;
+}
+
+/**
+ * Refuse a positional tie-break that paired two records standing apart. A group
+ * the portal reordered, or that gained a member, would otherwise swap two
+ * published ids silently.
+ *
+ * The coordinate decides where both sides carry one, even a commune centroid:
+ * it still says which locality the record is in, which is all this asks. Where
+ * either side has none, the commune label is the only locality left, folded with
+ * normAr because the portal respaces those too. With neither, the check fails
+ * closed: nothing locates the record, so the pairing cannot be checked, and a
+ * silent id swap is worse than a build that stops.
  *
  * @param {object[]} committed
  * @param {object[]} rows
  * @param {(r: object) => string} keyOf
+ * @param {Map<string, number>} sizes
  */
-function checkTieBreaks(committed, rows, keyOf) {
+function checkTieBreaks(committed, rows, keyOf, sizes) {
   const live = new Map(rows.map((r) => [keyOf(r), r]));
-  const groups = new Map();
-  for (const r of committed) {
-    const place = accreditationKeyOf(r);
-    groups.set(place, (groups.get(place) ?? 0) + 1);
-  }
   for (const was of committed) {
-    if (groups.get(accreditationKeyOf(was)) < 2) continue;
+    const place = accreditationKeyOf(was);
+    if ((sizes.get(place) ?? 0) < 2) continue;
     const now = live.get(keyOf(was));
-    if (!now || was.lat == null || now.lat == null) continue;
-    const km = kmApart(was, now);
-    if (km <= TIE_BREAK_MAX_KM) continue;
-    throw new Error(
-      `formation-professionnelle: the tie-break paired id ${was.id} with a record ` +
-        `${km.toFixed(1)} km away (${JSON.stringify(was.name)} -> ${JSON.stringify(now.name)}); ` +
-        `code|type ${accreditationKeyOf(was)} has been reordered or gained a member, so ` +
-        `position no longer identifies its establishments`,
-    );
+    if (!now) continue;
+    const refuse = (why) => {
+      throw new Error(
+        `formation-professionnelle: the tie-break paired id ${was.id} with ${why} ` +
+          `(${JSON.stringify(was.name)} -> ${JSON.stringify(now.name)}); code|type ${place} ` +
+          `has been reordered or gained a member, so position no longer identifies ` +
+          `its establishments`,
+      );
+    };
+    if (was.lat != null && now.lat != null) {
+      const km = kmApart(was, now);
+      if (km > TIE_BREAK_MAX_KM) refuse(`a record ${km.toFixed(1)} km away`);
+      continue;
+    }
+    if (was.commune == null || now.commune == null) {
+      refuse("a record nothing locates: neither carries a coordinate or a commune");
+    }
+    if (normAr(was.commune) !== normAr(now.commune)) {
+      refuse(`a record in another commune (${was.commune} / ${now.commune}), with no coordinate to appeal to`);
+    }
   }
 }
 
-/**
- * Give every record its public id: the one it already shipped under, or, for an
- * establishment the portal has never listed, the next number above every id the
- * package has ever used (published or retired). Parking the new ones above that
- * high-water mark first is what keeps them out of a published slot and keeps
- * every id the flat 5-digit string types/index.d.ts documents: carryOverIds
- * would otherwise re-home a positional id by suffixing it (`00049-1`).
- *
- * @param {object[]} rows          the v2 records being emitted (mutated in place)
- * @param {object[]} committed     the committed v2 records
- * @param {Set<string>} retiredIds the retired-id ledger, mutated with this run's
- * @returns {{carried: number, minted: number, retired: number}}
- */
 export function assignStableIds(rows, committed, retiredIds) {
   const keyOf = formationCarryKey(committed, rows);
-  checkTieBreaks(committed, rows, keyOf);
+  checkTieBreaks(committed, rows, keyOf, groupSizes(committed, rows));
   const shipped = new Set(committed.map(keyOf));
   let highest = 0;
   for (const id of [...committed.map((r) => r.id), ...retiredIds]) {
