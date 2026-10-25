@@ -1260,10 +1260,14 @@ function validateRouteEndpoints() {
 // citation: the same url as the first entry (ADR 0002). The gate is here rather
 // than in the relation spec because the contract is about the list's shape, not a
 // field's presence: entry 0 agrees with `source`, every url is openable, every
-// publisher is named, a date is either a real ISO date or honestly null, every
-// claim comes from the closed set, and a row's flight number and operating days
-// are each backed by an entry that says it supports them.
+// publisher is named, every entry carries exactly url, publisher and supports,
+// every claim comes from the closed set, and a row's flight number and operating
+// days are each backed by an entry that says it supports them.
 const ROUTE_SUPPORTS = new Set(["route", "status", "dates", "flight", "days"]);
+// The entry shape, exactly: a citation dropped its publication date before the
+// 2.9.0 release (ADR 0002), and this keeps `date` or any other field from
+// creeping back in without the ADR being revisited.
+const ROUTE_SOURCE_KEYS = ["publisher", "supports", "url"];
 function validateRouteSources() {
   const label = "aviation/routes.json [sources]";
   let routes;
@@ -1285,8 +1289,9 @@ function validateRouteSources() {
       if (!/^https?:\/\/\S+$/.test(s.url ?? "")) problems.push(`${at}: url is not http(s)`);
       if (typeof s.publisher !== "string" || !s.publisher.trim())
         problems.push(`${at}: no publisher name`);
-      if (s.date !== null && (!/^\d{4}-\d{2}-\d{2}$/.test(s.date ?? "") || Number.isNaN(Date.parse(s.date))))
-        problems.push(`${at}: date ${JSON.stringify(s.date)} is not a YYYY-MM-DD date or null`);
+      const keys = Object.keys(s).sort();
+      if (keys.join(",") !== ROUTE_SOURCE_KEYS.join(","))
+        problems.push(`${at}: keys are ${keys.join(", ")}, not ${ROUTE_SOURCE_KEYS.join(", ")}`);
       if (!Array.isArray(s.supports) || s.supports.length === 0) {
         problems.push(`${at}: supports is empty`);
       } else {
@@ -1302,10 +1307,9 @@ function validateRouteSources() {
     return fail(`${label}: ${problems.length} problem(s): ${problems.slice(0, 5).join("; ")}`);
   }
   const entries = routes.reduce((n, r) => n + r.sources.length, 0);
-  const dated = routes.reduce((n, r) => n + r.sources.filter((s) => s.date).length, 0);
   console.log(
-    `  OK: ${label}, ${entries} citation(s) across ${routes.length} routes ` +
-      `(${dated} dated), every list led by its own source`,
+    `  OK: ${label}, ${entries} citation(s) across ${routes.length} routes, ` +
+      `every list led by its own source`,
   );
 }
 

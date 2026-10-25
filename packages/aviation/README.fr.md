@@ -70,7 +70,6 @@ jours.
 | `sources` | `RouteSource[]` | toutes les citations, ordonnées, jamais vide, `sources[0]` étant `source` lui-même |
 | `sources[].url` | `string` | une page qu'un lecteur peut ouvrir |
 | `sources[].publisher` | `string` | qui l'a publiée, en mots simples (« Lyon Airport », « AeroRoutes ») |
-| `sources[].date` | `string \| null` | date de publication, `YYYY-MM-DD`, lue sur la signature de la page ; `null` quand aucune signature n’a pu être lue, le plus souvent parce qu’il n’y en a pas, comme sur la page destinations d’une compagnie ou d’un aéroport |
 | `sources[].supports` | `("route" \| "status" \| "dates" \| "flight" \| "days")[]` | les affirmations de la ligne que cette citation étaye ; un `flight` ou un `days` est toujours étayé par au moins une |
 
 Dans le CSV, `sources` est le tableau JSON sous forme de chaîne, dans une colonne à côté de

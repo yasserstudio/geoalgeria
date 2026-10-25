@@ -30,19 +30,19 @@ explaining why in a comment. Both answers lose a citation a reader would want.
 3. **Entry 0 is `source`**, the same url. Asserted by the generator, the builder,
    `validate-packages.mjs` and `test/aviation-route-sources.test.mjs`, so the two fields
    can never disagree.
-4. **An entry is `{ url, publisher, date, supports }`**:
+4. **An entry is `{ url, publisher, supports }`**:
    - `publisher` in plain English ("Lyon Airport", "AeroRoutes", "Air Algerie statement,
      via Algerie360"), because a reader judges a citation by who published it. A host with
      no publisher name fails the build;
-   - `date` is the publication date, `YYYY-MM-DD`, read from the url where the publisher
-     puts one there and listed per source otherwise, off the page's own byline. It is
-     `null` where no byline could be read: usually because there is none, an airline's or
-     an airport's destination page being a living document that dating would invent a fact
-     about, and in five cases because the host refuses an automated fetch. Never dated from
-     what a report says rather than from how it is bylined, which is how the sale-inventory
-     report came to be stamped with the day sales opened;
    - `supports` names what the citation backs, from the closed set `route`, `status`,
      `dates`, `flight`, `days`. Closed so a consumer can switch on it.
+
+   A publication `date` was part of the entry during the work and was dropped before
+   release (Owner, 2026-10-25): many of these sources carry no readable byline, and a wrong
+   date is worse than none. `metadata.routes_as_of` remains the freshness signal, and a
+   date can come back later as an additive field once it can be read reliably. The entry
+   shape is asserted key by key in `validate-packages.mjs` and
+   `test/aviation-route-sources.test.mjs`, so it cannot creep back in unnoticed.
 5. **Entry 0's `supports` defaults to the fields the row ships** (always `route`; `status`
    where there is a state to claim, `unclear` being the absence of one; `flight` and `days`
    where the row carries them). That is the rule the collection already followed, that a
@@ -68,7 +68,7 @@ explaining why in a comment. Both answers lose a citation a reader would want.
 - `metadata.routes_as_of` stays at 2026-10-09. This is provenance, not a re-check of the
   schedule, and dating the network from a citation pass would be a false claim.
 - A consumer reading `source` is unaffected. A consumer showing provenance can render every
-  citation with its publisher and date and say which claim each one backs.
+  citation with its publisher and say which claim each one backs.
 - The Source rights scan reads any `sources` array as `metadata.sources[]`, a list of
   registry keys. A citation has a url, a publisher and a `supports` list and no key, since
   it cites a published report rather than declaring an upstream; the scan now tells the two

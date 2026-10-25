@@ -120,8 +120,8 @@ function main() {
   writeFileSync(join(DATA, "routes.json"), JSON.stringify(rows, null, 2) + "\n");
 
   // CSV is a flat table and `sources` is a list of objects, so the column
-  // carries it as a JSON string: `[{"url":...,"publisher":...,"date":...,
-  // "supports":[...]}]`, quoted and with its inner quotes doubled by the CSV
+  // carries it as a JSON string: `[{"url":...,"publisher":...,"supports":[...]}]`,
+  // quoted and with its inner quotes doubled by the CSV
   // writer. A reader who only wants one citation already has `source`, which is
   // the same url as the first entry.
   const cols = ["id", "from", "to", "carrier", "flight", "status", "days", "evidence", "planned", "source", "sources", "great_circle_km"];

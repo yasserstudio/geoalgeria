@@ -44,26 +44,18 @@ test("every citation names its publisher in plain words", () => {
   assert.deepEqual(bad, []);
 });
 
-test("a citation date is a real ISO date, or null where the source publishes none", () => {
-  // Null means no byline could be read. Usually there is none: an airline's or
-  // an airport's destination page is a living document, and dating it would be
-  // an invention. A dated report carries its date, read off that byline, never
-  // guessed from the slug or from what the report says happened.
+test("a citation carries exactly url, publisher and supports", () => {
+  // The entry shape, exactly. A publication date was dropped before the 2.9.0
+  // release (ADR 0002), so this is also the guard that keeps `date`, or any
+  // other field, from creeping back in without the ADR being revisited.
+  const KEYS = ["publisher", "supports", "url"];
   const bad = [];
   for (const r of routes)
     for (const s of r.sources) {
-      if (s.date === null) continue;
-      const iso = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s.date ?? "");
-      const real =
-        iso &&
-        new Date(`${s.date}T00:00:00Z`).toISOString().slice(0, 10) === s.date;
-      if (!real) bad.push(`${r.id}: ${JSON.stringify(s.date)}`);
+      const keys = Object.keys(s).sort();
+      if (keys.join(",") !== KEYS.join(",")) bad.push(`${r.id} ${s.url}: ${keys.join(", ")}`);
     }
   assert.deepEqual(bad, []);
-  assert.ok(
-    routes.some((r) => r.sources.some((s) => s.date)),
-    "at least one citation is dated, or the field is decoration",
-  );
 });
 
 test("every citation says what it supports, from the closed set", () => {
@@ -131,7 +123,6 @@ test("the 24 October 2026 statement is cited on the ten legs it announces", () =
   for (const r of cited) {
     const entry = r.sources.find((s) => s.url === url);
     assert.notEqual(r.source, url, `${r.id}: the statement is not the primary citation`);
-    assert.equal(entry.date, "2026-10-24");
     assert.deepEqual(entry.supports, ["route", "dates"]);
     assert.ok(r.planned, `${r.id}: an announcement never leaves plannedRoutes()`);
   }
