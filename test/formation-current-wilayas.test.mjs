@@ -18,8 +18,8 @@ test("formation-professionnelle prefers an exact point over a contradictory comm
 
   // A private establishment whose takwin.dz point sits in Algiers while the
   // portal's own commune field reads Bouira. The point wins, as it does for 71
-  // others. (It used to be 00853, whose name the portal rewrote beyond its
-  // spacing in the 2026-10-25 capture, retiring that id.)
+  // others. (It used to be 00853, whose commune the portal relabelled in the
+  // 2026-10-25 capture, so it no longer contradicts its point.)
   assert.equal(byId.get("00372")?.wilaya_code, "16");
 });
 

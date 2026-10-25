@@ -47,6 +47,7 @@ import {
   carryOverIds,
   readCommitted,
   readRetiredIds,
+  readRetiredMigrations,
 } from "../../../scripts/lib/v2-transforms.mjs";
 import { containingWilayaCode } from "../../../scripts/lib/build-utils.mjs";
 import { captureMeta, readCapture } from "../../../scripts/lib/source-store.mjs";
@@ -227,30 +228,126 @@ function resolveCommune(commune, wilaya, ref) {
 }
 
 // --- id carry-over ----------------------------------------------------------
-// `code` alone repeats on 5 records, so type and name make the carry key unique
-// without depending on wilaya_code. That preserves ids when a commune moves from
-// its source's pre-reform wilaya to the current daughter wilaya.
+// The ids are a flat 5-digit space assigned from sort position, so nothing in a
+// record's own id says which id it shipped under: the carry key is the only
+// thing holding a public join key to its establishment.
 //
-// The name goes in with its spacing removed, because the portal's spacing is
-// presentation and not identity: between the June and October 2026 captures it
-// corrected 1,788 Arabic names, running apart words it had previously run
-// together, and a key that read them byte for byte took every correction for a
-// different place (#306). Removing the whitespace rather than collapsing runs of
-// it is what makes the two meet, since June carries no space at all where
-// October carries one. The published name keeps the source's corrected spelling.
-//
-// Folded away, by codepoint rather than by glyph: the whitespace characters
-// U+0009-U+000D, U+0020, U+0085, U+00A0, U+1680, U+2000-U+200A, U+2028, U+2029,
-// U+202F, U+205F and U+3000; the zero-width characters a name can pick up
-// invisibly, U+200B ZERO WIDTH SPACE, U+200C ZWNJ, U+200D ZWJ and U+FEFF; and
-// U+0640 ARABIC TATWEEL, the elongation padding this repo already treats as
-// noise (the normalization package's `ar.tatweel` Rule, and the commune name_ar
-// repairs). Nothing that changes which letter a reader sees is folded.
-const CARRY_KEY_SPACING =
-  /[\u0009-\u000D\u0020\u0085\u00A0\u1680\u2000-\u200D\u2028\u2029\u202F\u205F\u3000\uFEFF\u0640]/gu;
+// It is the MFEP's own accreditation code plus the establishment type. The name
+// used to be in it, and that is what blocked the 2026-10-25 rebuild (#306): the
+// portal rewrote 1,788 Arabic names, and it revises their spacing, their
+// separators, their typos and their branding freely, so a key that reads one
+// takes every revision for a different place. Nine establishments were relisted
+// under a brand or a corrected spelling at the same coordinate and phone, which
+// no name-based key could have followed. Type is in the key because `code` alone
+// repeats on 5 records; neither depends on wilaya_code, so an id survives a
+// commune moving to its post-2026 daughter wilaya.
+/** The establishment a record stands for, as a carry key. */
+export const accreditationKeyOf = (r) =>
+  [r.code, r.type].map((f) => JSON.stringify(f ?? null)).join("|");
 
-export const carryKeyOf = (r) =>
-  [r.code, r.type, String(r.name ?? "").replace(CARRY_KEY_SPACING, "")].join("|");
+// Two pairs share one code and type (0303|cfpa, 10611|prive), and a carry key
+// that cannot pin an id uniquely fails the build, so they are told apart by
+// position within their own group. Same mechanism as sportsCarryKey, but not the
+// same licence: sports' twins are field-identical, so which keeps which id
+// carries no meaning, while these are different establishments tens of
+// kilometres apart. A source that reordered a group would hand each the other's
+// id, so the pairing is checked below rather than trusted.
+const TIE_BREAK_MAX_KM = 5;
+
+/**
+ * A keyOf for carryOverIds over both sides of a rebuild.
+ *
+ * @param {object[]} committed  the committed v2 records
+ * @param {object[]} rows       the records being emitted
+ * @returns {(r: object) => string}
+ */
+export function formationCarryKey(committed, rows) {
+  const keyed = new Map();
+  for (const set of [committed, rows]) {
+    const seen = new Map();
+    for (const r of set) {
+      const place = accreditationKeyOf(r);
+      const nth = (seen.get(place) ?? 0) + 1;
+      seen.set(place, nth);
+      keyed.set(r, `${place}#${nth}`);
+    }
+  }
+  return (r) => keyed.get(r) ?? accreditationKeyOf(r);
+}
+
+const KM_PER_DEGREE = 111;
+const kmApart = (a, b) =>
+  KM_PER_DEGREE *
+  Math.hypot(a.lat - b.lat, (a.lng - b.lng) * Math.cos((a.lat * Math.PI) / 180));
+
+/**
+ * Refuse a positional tie-break that paired two records standing far apart. A
+ * group whose members the portal reordered, or gained a member, would otherwise
+ * swap two published ids silently. Only a group with more than one member is
+ * checked, and only where both of a pair carry a coordinate.
+ *
+ * @param {object[]} committed
+ * @param {object[]} rows
+ * @param {(r: object) => string} keyOf
+ */
+function checkTieBreaks(committed, rows, keyOf) {
+  const live = new Map(rows.map((r) => [keyOf(r), r]));
+  const groups = new Map();
+  for (const r of committed) {
+    const place = accreditationKeyOf(r);
+    groups.set(place, (groups.get(place) ?? 0) + 1);
+  }
+  for (const was of committed) {
+    if (groups.get(accreditationKeyOf(was)) < 2) continue;
+    const now = live.get(keyOf(was));
+    if (!now || was.lat == null || now.lat == null) continue;
+    const km = kmApart(was, now);
+    if (km <= TIE_BREAK_MAX_KM) continue;
+    throw new Error(
+      `formation-professionnelle: the tie-break paired id ${was.id} with a record ` +
+        `${km.toFixed(1)} km away (${JSON.stringify(was.name)} -> ${JSON.stringify(now.name)}); ` +
+        `code|type ${accreditationKeyOf(was)} has been reordered or gained a member, so ` +
+        `position no longer identifies its establishments`,
+    );
+  }
+}
+
+/**
+ * Give every record its public id: the one it already shipped under, or, for an
+ * establishment the portal has never listed, the next number above every id the
+ * package has ever used (published or retired). Parking the new ones above that
+ * high-water mark first is what keeps them out of a published slot and keeps
+ * every id the flat 5-digit string types/index.d.ts documents: carryOverIds
+ * would otherwise re-home a positional id by suffixing it (`00049-1`).
+ *
+ * @param {object[]} rows          the v2 records being emitted (mutated in place)
+ * @param {object[]} committed     the committed v2 records
+ * @param {Set<string>} retiredIds the retired-id ledger, mutated with this run's
+ * @returns {{carried: number, minted: number, retired: number}}
+ */
+export function assignStableIds(rows, committed, retiredIds) {
+  const keyOf = formationCarryKey(committed, rows);
+  checkTieBreaks(committed, rows, keyOf);
+  const shipped = new Set(committed.map(keyOf));
+  let highest = 0;
+  for (const id of [...committed.map((r) => r.id), ...retiredIds]) {
+    const n = Number(id);
+    if (Number.isFinite(n) && n > highest) highest = n;
+  }
+  let minted = 0;
+  for (const r of rows) {
+    if (shipped.has(keyOf(r))) continue;
+    r.id = String(++highest).padStart(5, "0");
+    minted++;
+  }
+  const retiredBefore = retiredIds.size;
+  carryOverIds(rows, committed, keyOf, "formation-professionnelle", retiredIds);
+  return {
+    carried: rows.length - minted,
+    minted,
+    retired: retiredIds.size - retiredBefore,
+  };
+}
 
 // --- main -------------------------------------------------------------------
 function main() {
@@ -394,27 +491,19 @@ function main() {
   const captured = captureMeta("formation-professionnelle", "takwin-etab").retrieved;
   const { updated, retrieved } = { updated: captured, retrieved: captured };
   const v2 = records.map(cfg.map);
-  // carryOverIds refuses a carry key the COMMITTED records duplicate. The live
-  // side needs the same check: two establishments whose keys collapse together
-  // would both pin to one committed id, and the error that surfaces then names
-  // an id rather than the names that folded into each other. Say which they are.
-  const byCarryKey = new Map();
-  const collisions = [];
-  for (const r of v2) {
-    const k = carryKeyOf(r);
-    if (byCarryKey.has(k)) collisions.push([byCarryKey.get(k), r]);
-    else byCarryKey.set(k, r);
-  }
-  if (collisions.length) {
-    for (const [a, b] of collisions)
-      console.error(`  carry key collision ${JSON.stringify(carryKeyOf(a))}: ${JSON.stringify(a.name)} / ${JSON.stringify(b.name)}`);
-    throw new Error(
-      `formation-professionnelle: ${collisions.length} record pair(s) share one carry key once spacing is folded; ` +
-        `the key cannot pin ids until it discriminates them`,
-    );
-  }
+  const committed = readCommitted(OUT_DIR, "establishments.json");
   const retiredIds = readRetiredIds(OUT_DIR);
-  carryOverIds(v2, readCommitted(OUT_DIR, "establishments.json"), carryKeyOf, "formation-professionnelle", retiredIds);
+  // The ledger's forwards are append-only: read what is there, carry it back out
+  // through the writer, and add a forward for any retirement whose data went to
+  // another record. A retirement here is the portal dropping an accreditation
+  // code outright, which is a disappearance and not a merge, so it reserves the
+  // id without forwarding it; the key is unique, so no two records ever fold
+  // into one, and the ids carry no prefix for carryOverIds to re-issue against.
+  const retiredMigrations = readRetiredMigrations(OUT_DIR);
+  const ids = assignStableIds(v2, committed, retiredIds);
+  console.log(
+    `Ids: ${ids.carried} carried, ${ids.minted} minted above the high-water mark, ${ids.retired} retired`,
+  );
 
   let oldMeta = {};
   try { oldMeta = JSON.parse(readFileSync(join(OUT_DIR, "metadata.json"), "utf-8")); } catch {}
@@ -427,12 +516,13 @@ function main() {
     retrieved,
     oldMeta,
     retiredIds,
+    retiredMigrations,
   });
   console.log(`Wrote ${out.length} establishments → v2 (${metadata.geocoded_count} geocoded, ${metadata.wilayas_covered} wilayas).`);
 }
 
-// Guarded so the test suite can import carryKeyOf without running the build,
-// the same shape packages/ecoles/scripts/fetch.mjs uses.
+// Guarded so the test suite can import the carry key and the id assignment
+// without running the build, the shape packages/ecoles/scripts/fetch.mjs uses.
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main();
 }

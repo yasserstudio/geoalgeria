@@ -39,7 +39,7 @@ const one = fp.establishmentById("00001");          // single record by id
 
 - **"Nearest training center" lookups** – 1,961 geocoded records, ready for distance sorting.
 - **Vocational training directories** – bilingual names, type, capacity and full contact info on every record.
-- **Maps** – drop-in GeoJSON point layer for the vocational training network (99% geocoded).
+- **Maps** – drop-in GeoJSON point layer for the vocational training network (99.9% geocoded).
 - **Capacity planning** – theoretical and realized capacities, boarding availability and surface area.
 - **Sector analysis** – 1,209 public vs 754 private establishments across all 69 current wilayas.
 

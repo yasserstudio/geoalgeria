@@ -4,12 +4,14 @@
 
 Refresh formation-professionnelle from takwin.dz, retrieved 2026-10-25: 1,963 establishments from 1,932, and 1,961 geocoded from 1,921.
 
-The June capture needed 59 calls, one per training directorate, and the portal had answered every non-browser client with a WAF block page since. This one ran over an Algerian connection, where a single call to the bare `puball` endpoint returns the whole network. 31 establishments are new, 19 the portal no longer lists.
+The June capture needed 59 calls, one per training directorate, and the portal had answered every non-browser client with a WAF block page since. This one ran over an Algerian connection, where a single call to the bare `puball` endpoint returns the whole network. 32 establishments are new and 1 the portal no longer lists.
 
 **Far more real coordinates.** The portal had left one or both axes at its sentinel zero for 557 records in June; it now publishes a point for most of them. 1,681 establishments sit on takwin.dz's own point (1,362 before), so the commune-centroid placements drop to 249 from 511 and the wilaya-centroid ones to 31 from 35. Only 2 records are left unplaced, down from 11. The new points are the portal's own, shipped `exact` / `takwin` exactly as the old ones were, except for 15 the number itself disproves (too few decimals, or whole arcminutes with the seconds dropped), which read `approximate`.
 
-**Ids follow places through a spelling change.** The portal corrected the spacing of 1,788 Arabic names, running apart words it had previously run together, without any establishment moving. The id carry key folds a name's spacing away before matching, so 1,769 of those keep the id they shipped under while publishing the corrected spelling; the other 19 belong to records the portal dropped. Spacing is presentation and not identity: the fold removes whitespace, the zero-width characters and the tatweel, and nothing that changes which letter a reader sees.
+**Ids follow the ministry's own accreditation code.** The portal rewrote 1,788 Arabic names, correcting the spacing it had run together, adding ` - ` separators, fixing typos, and relisting nine establishments under a brand instead of an owner's name. None of them moved. The id carry key is the MFEP accreditation code plus the establishment type, so none of that touches an id: 1,931 of the 1,932 published records keep the id they shipped under, including all 1,769 whose name changed only in spacing and all 18 whose name was rewritten further.
 
-19 ids are retired and reserved, 50 are new. Of the retired, 18 have a successor under the same code and type whose name the portal rewrote beyond its spacing: 11 gained a ` - ` separator, 4 corrected a letter, 3 dropped or added a trailing qualifier. One, an annexe in Nakhla, is gone from the capture with no successor.
+One retirement. Code 3907A1, an annexe CFPA in Nakhla, is absent from the capture rather than renamed, so `01624` is reserved in `data/retired-ids.json` and no record will hold it again. It forwards nowhere, because the establishment disappeared rather than being folded into another.
+
+32 new ids, `01933` to `01964`, minted above every id the package has ever used so that no new establishment lands in a published or retired slot. Every id stays the flat 5-digit string the types and the README document.
 
 **Type mix.** CFPA 857 (856), private accredited centers 754 (723), annexe CFPA 69 (70); INSFP, DFEP, IEP, IFEP, INFEP and the other annexes unchanged.

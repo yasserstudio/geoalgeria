@@ -32,14 +32,14 @@ const byWilaya = fp.establishmentsByWilaya(16);     // établissements de la wil
 const cfpas = fp.establishmentsByType("cfpa");      // tous les CFPA
 const one = fp.establishmentById("00001");          // un seul enregistrement par id
 
-// 1 921 enregistrements ont lat/lng – tri par distance, carte ou centre le plus proche en quelques lignes.
+// 1 961 enregistrements ont lat/lng – tri par distance, carte ou centre le plus proche en quelques lignes.
 ```
 
 ## Ce que vous pouvez construire
 
-- **Recherche du centre de formation le plus proche** – 1 921 enregistrements géocodés, prêts pour le tri par distance.
+- **Recherche du centre de formation le plus proche** – 1 961 enregistrements géocodés, prêts pour le tri par distance.
 - **Annuaires de formation professionnelle** – noms bilingues, type, capacité et coordonnées de contact complètes.
-- **Cartes** – couche de points GeoJSON prête à l'emploi pour le réseau de formation professionnelle (99 % géocodés).
+- **Cartes** – couche de points GeoJSON prête à l'emploi pour le réseau de formation professionnelle (99,9 % géocodés).
 - **Planification des capacités** – capacités théoriques et réelles, disponibilité d'internat et superficie.
 - **Analyse sectorielle** – 1 209 établissements publics contre 754 privés dans les 69 wilayas actuelles.
 
@@ -95,7 +95,7 @@ data/
   establishments.json      # 1 963 établissements (tableau)
   metadata.json            # sources, comptages, by_type, by_secteur, geocoded, license, updated
   csv/                     # Export CSV (dépôt + bundle Release, pas dans le tarball npm)
-  geojson/                 # Entités GeoJSON (1 921 points géocodés)
+  geojson/                 # Entités GeoJSON (1 961 points géocodés)
 ```
 
 ## Structure d'un enregistrement
