@@ -306,12 +306,15 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
     };
   };
 
+  // Shanghai outbound FLEW: the inaugural rotation left Algiers on Monday 26 Oct
+  // 2026 and APS and a second report of that date carry it, so the leg is
+  // operating. Its return is not, and that asymmetry is the point of the pair.
   assert.deepEqual(pick("alg-pvg"), {
     flight: "AH 3082",
-    status: "unclear",
+    status: "active",
     days: ["mon", "wed", "sat"],
     evidence: "verified",
-    planned: true,
+    planned: false,
   });
   assert.deepEqual(pick("pvg-alg"), {
     flight: "AH 3083",
@@ -329,12 +332,22 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
     "DEL is still an endpoint with no route referencing it",
   );
 
-  for (const id of ["alg-bzv", "bzv-alg", "alg-cky", "cky-alg"])
+  // The new Africa bookings. Brazzaville and the Conakry return have not flown, so
+  // they stay planned on their sale-inventory evidence; Conakry's outbound landed at
+  // Ahmed Sékou Touré in the night of 25 to 26 Oct 2026 and is operating.
+  for (const id of ["alg-bzv", "bzv-alg", "cky-alg"])
     assert.deepEqual(
       { evidence: pick(id).evidence, planned: pick(id).planned },
       { evidence: "verified", planned: true },
       `${id}: new Africa booking is not a verified planned leg`,
     );
+  assert.deepEqual(pick("alg-cky"), {
+    flight: "AH 5358",
+    status: "active",
+    days: ["tue", "thu", "sun"],
+    evidence: "verified",
+    planned: false,
+  });
 
   assert.deepEqual(
     ["alg-los", "los-alg"].map((id) => ({
@@ -420,14 +433,19 @@ test("aviation: Batna serves Orly, the Gulf triangle is planned, Dubai is suspen
   // Kuwait-Amman middle leg joined on 2026-10-02 under the amended scope rule
   // (collection-rules.md section 33), and the two legs the rotation never flies
   // nonstop still must not appear.
+  //
+  // All three carry AH 4064, the one number the 29 Jun 2026 NW26 filing gives the
+  // whole rotation, and the days it times each departure to: Algiers and Kuwait on
+  // the Monday, Amman on the Tuesday after the date rolls over. They stay PLANNED,
+  // because a filed schedule is not a report that the aircraft flew.
   assert.deepEqual(shape("alg-kwi"), {
-    flight: null, status: "unclear", days: ["mon"], evidence: "listed", planned: true,
+    flight: "AH 4064", status: "unclear", days: ["mon"], evidence: "verified", planned: true,
   });
   assert.deepEqual(shape("kwi-amm"), {
-    flight: null, status: "unclear", days: null, evidence: "listed", planned: true,
+    flight: "AH 4064", status: "unclear", days: ["mon"], evidence: "verified", planned: true,
   });
   assert.deepEqual(shape("amm-alg"), {
-    flight: null, status: "unclear", days: null, evidence: "listed", planned: true,
+    flight: "AH 4064", status: "unclear", days: ["tue"], evidence: "verified", planned: true,
   });
   for (const id of ["kwi-alg", "alg-amm", "amm-kwi"])
     assert.ok(!byId.has(id), `${id}: not a nonstop leg of the announced triangle`);

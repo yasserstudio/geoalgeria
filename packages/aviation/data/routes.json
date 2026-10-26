@@ -361,6 +361,30 @@
     "great_circle_km": 1370
   },
   {
+    "id": "alg-cky",
+    "from": "ALG",
+    "to": "CKY",
+    "carrier": "AH",
+    "flight": "AH 5358",
+    "status": "active",
+    "days": [
+      "tue",
+      "thu",
+      "sun"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.africaguinee.com/transport-aerien-air-algerie-signe-son-grand-retour-en-guinee-apres-45-ans-dabsence/",
+    "sources": [
+      "https://www.africaguinee.com/transport-aerien-air-algerie-signe-son-grand-retour-en-guinee-apres-45-ans-dabsence/",
+      "https://www.guinee114.com/2026/10/26/45-ans-apres-un-avion-dair-algerie-atterrit-en-guinee-reouverture-de-la-ligne-alger-conakry-fruit-dune-victoire-diplomatique/",
+      "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
+      "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+      "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+    ],
+    "great_circle_km": 3459
+  },
+  {
     "id": "alg-dje",
     "from": "ALG",
     "to": "DJE",
@@ -799,6 +823,29 @@
       "https://www.aeroroutes.com/eng/260416-ahmay26pek"
     ],
     "great_circle_km": 9105
+  },
+  {
+    "id": "alg-pvg",
+    "from": "ALG",
+    "to": "PVG",
+    "carrier": "AH",
+    "flight": "AH 3082",
+    "status": "active",
+    "days": [
+      "mon",
+      "wed",
+      "sat"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://observalgerie.com/2026/10/26/voyage/air-algerie-inaugure-une-nouvelle-liaison-long-courrier",
+    "sources": [
+      "https://observalgerie.com/2026/10/26/voyage/air-algerie-inaugure-une-nouvelle-liaison-long-courrier",
+      "https://www.aps.dz/fr/economie/commerce-et-service/mvp5bhj8-air-algerie-ouvre-une-nouvelle-liaison-vers-shanghai",
+      "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
+      "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+    ],
+    "great_circle_km": 10131
   },
   {
     "id": "alg-rtm",
@@ -2598,28 +2645,6 @@
     "great_circle_km": 4722
   },
   {
-    "id": "alg-cky",
-    "from": "ALG",
-    "to": "CKY",
-    "carrier": "AH",
-    "flight": "AH 5358",
-    "status": "unclear",
-    "days": [
-      "tue",
-      "thu",
-      "sun"
-    ],
-    "evidence": "verified",
-    "planned": true,
-    "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
-    "sources": [
-      "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
-      "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-      "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-    ],
-    "great_circle_km": 3459
-  },
-  {
     "id": "alg-icn",
     "from": "ALG",
     "to": "ICN",
@@ -2640,15 +2665,16 @@
     "from": "ALG",
     "to": "KWI",
     "carrier": "AH",
-    "flight": null,
+    "flight": "AH 4064",
     "status": "unclear",
     "days": [
       "mon"
     ],
-    "evidence": "listed",
+    "evidence": "verified",
     "planned": true,
-    "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+    "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
     "sources": [
+      "https://www.aeroroutes.com/eng/260629-ahnw26",
       "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
     ],
     "great_circle_km": 4219
@@ -2709,27 +2735,6 @@
     "great_circle_km": 2976
   },
   {
-    "id": "alg-pvg",
-    "from": "ALG",
-    "to": "PVG",
-    "carrier": "AH",
-    "flight": "AH 3082",
-    "status": "unclear",
-    "days": [
-      "mon",
-      "wed",
-      "sat"
-    ],
-    "evidence": "verified",
-    "planned": true,
-    "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
-    "sources": [
-      "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
-      "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-    ],
-    "great_circle_km": 10131
-  },
-  {
     "id": "alg-svo",
     "from": "ALG",
     "to": "SVO",
@@ -2754,13 +2759,16 @@
     "from": "AMM",
     "to": "ALG",
     "carrier": "AH",
-    "flight": null,
+    "flight": "AH 4064",
     "status": "unclear",
-    "days": null,
-    "evidence": "listed",
+    "days": [
+      "tue"
+    ],
+    "evidence": "verified",
     "planned": true,
-    "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+    "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
     "sources": [
+      "https://www.aeroroutes.com/eng/260629-ahnw26",
       "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
     ],
     "great_circle_km": 3050
@@ -2820,13 +2828,16 @@
     "from": "KWI",
     "to": "AMM",
     "carrier": "AH",
-    "flight": null,
+    "flight": "AH 4064",
     "status": "unclear",
-    "days": null,
-    "evidence": "listed",
+    "days": [
+      "mon"
+    ],
+    "evidence": "verified",
     "planned": true,
-    "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+    "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
     "sources": [
+      "https://www.aeroroutes.com/eng/260629-ahnw26",
       "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
     ],
     "great_circle_km": 1180

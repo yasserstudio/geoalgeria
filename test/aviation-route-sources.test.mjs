@@ -75,7 +75,9 @@ test("the 24 October 2026 statement is cited on the ten legs it announces", () =
   // Conakry, Brazzaville, Lagos, Shanghai and Tripoli at Mitiga, both
   // directions of each. It is an extra entry rather than the `source`, which
   // stays the report covering the fields each row ships, because the statement
-  // carries no flight number and no day name.
+  // carries no flight number and no day name. A leg that has since flown keeps
+  // citing it: the promotion moves `source` to the report of the operation and
+  // the announcement stays behind it, which is what the list is for.
   const url =
     "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/";
   const cited = routes.filter((r) => r.sources.includes(url));
@@ -83,8 +85,30 @@ test("the 24 October 2026 statement is cited on the ten legs it announces", () =
     cited.map((r) => r.id).sort(),
     ["alg-bzv", "alg-cky", "alg-los", "alg-mji", "alg-pvg", "bzv-alg", "cky-alg", "los-alg", "mji-alg", "pvg-alg"],
   );
-  for (const r of cited) {
+  for (const r of cited)
     assert.notEqual(r.source, url, `${r.id}: the statement is not the primary citation`);
-    assert.ok(r.planned, `${r.id}: an announcement never leaves plannedRoutes()`);
+});
+
+test("the statement alone never takes a leg out of plannedRoutes()", () => {
+  // The 2026-10-26 first-flight pass moved exactly two of the ten: ALG-CKY on
+  // two Guinean reports of the inaugural landing, ALG-PVG on the inaugural
+  // rotation's departure from Algiers. Every other leg the statement names is
+  // still planned, because an announcement is not an operation and a launch date
+  // passing is not a report that the aircraft flew.
+  const flown = {
+    "alg-cky":
+      "https://www.africaguinee.com/transport-aerien-air-algerie-signe-son-grand-retour-en-guinee-apres-45-ans-dabsence/",
+    "alg-pvg":
+      "https://observalgerie.com/2026/10/26/voyage/air-algerie-inaugure-une-nouvelle-liaison-long-courrier",
+  };
+  const url =
+    "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/";
+  for (const r of routes.filter((x) => x.sources.includes(url))) {
+    if (r.id in flown) {
+      assert.equal(r.planned, false, `${r.id}: it flew, so it is not planned`);
+      assert.equal(r.source, flown[r.id], `${r.id}: cite the report of the operation first`);
+    } else {
+      assert.ok(r.planned, `${r.id}: no first-flight report, so it stays planned`);
+    }
   }
 });

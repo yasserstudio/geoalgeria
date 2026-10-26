@@ -4904,6 +4904,236 @@
             36.69951
           ],
           [
+            2.76748,
+            36.15845
+          ],
+          [
+            2.33019,
+            35.61578
+          ],
+          [
+            1.89881,
+            35.07155
+          ],
+          [
+            1.47315,
+            34.52581
+          ],
+          [
+            1.05304,
+            33.97862
+          ],
+          [
+            0.63831,
+            33.43001
+          ],
+          [
+            0.2288,
+            32.88004
+          ],
+          [
+            -0.17566,
+            32.32876
+          ],
+          [
+            -0.57521,
+            31.7762
+          ],
+          [
+            -0.97002,
+            31.22241
+          ],
+          [
+            -1.36021,
+            30.66742
+          ],
+          [
+            -1.74595,
+            30.11128
+          ],
+          [
+            -2.12737,
+            29.55403
+          ],
+          [
+            -2.50459,
+            28.9957
+          ],
+          [
+            -2.87776,
+            28.43633
+          ],
+          [
+            -3.24701,
+            27.87596
+          ],
+          [
+            -3.61244,
+            27.31461
+          ],
+          [
+            -3.9742,
+            26.75232
+          ],
+          [
+            -4.33239,
+            26.18911
+          ],
+          [
+            -4.68713,
+            25.62504
+          ],
+          [
+            -5.03853,
+            25.06011
+          ],
+          [
+            -5.38671,
+            24.49436
+          ],
+          [
+            -5.73176,
+            23.92782
+          ],
+          [
+            -6.0738,
+            23.36052
+          ],
+          [
+            -6.41292,
+            22.79249
+          ],
+          [
+            -6.74923,
+            22.22374
+          ],
+          [
+            -7.08282,
+            21.6543
+          ],
+          [
+            -7.41379,
+            21.08421
+          ],
+          [
+            -7.74222,
+            20.51347
+          ],
+          [
+            -8.06821,
+            19.94213
+          ],
+          [
+            -8.39186,
+            19.37019
+          ],
+          [
+            -8.71323,
+            18.79769
+          ],
+          [
+            -9.03243,
+            18.22464
+          ],
+          [
+            -9.34953,
+            17.65106
+          ],
+          [
+            -9.66462,
+            17.07698
+          ],
+          [
+            -9.97777,
+            16.50242
+          ],
+          [
+            -10.28906,
+            15.9274
+          ],
+          [
+            -10.59858,
+            15.35193
+          ],
+          [
+            -10.9064,
+            14.77603
+          ],
+          [
+            -11.21258,
+            14.19973
+          ],
+          [
+            -11.51721,
+            13.62305
+          ],
+          [
+            -11.82036,
+            13.04599
+          ],
+          [
+            -12.12209,
+            12.46858
+          ],
+          [
+            -12.42249,
+            11.89084
+          ],
+          [
+            -12.72161,
+            11.31279
+          ],
+          [
+            -13.01952,
+            10.73443
+          ],
+          [
+            -13.3163,
+            10.15579
+          ],
+          [
+            -13.612,
+            9.57689
+          ]
+        ]
+      },
+      "properties": {
+        "id": "alg-cky",
+        "from": "ALG",
+        "to": "CKY",
+        "carrier": "AH",
+        "flight": "AH 5358",
+        "status": "active",
+        "days": [
+          "tue",
+          "thu",
+          "sun"
+        ],
+        "evidence": "verified",
+        "planned": false,
+        "source": "https://www.africaguinee.com/transport-aerien-air-algerie-signe-son-grand-retour-en-guinee-apres-45-ans-dabsence/",
+        "sources": [
+          "https://www.africaguinee.com/transport-aerien-air-algerie-signe-son-grand-retour-en-guinee-apres-45-ans-dabsence/",
+          "https://www.guinee114.com/2026/10/26/45-ans-apres-un-avion-dair-algerie-atterrit-en-guinee-reouverture-de-la-ligne-alger-conakry-fruit-dune-victoire-diplomatique/",
+          "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
+          "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+          "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+        ],
+        "great_circle_km": 3459,
+        "from_name": "Aéroport d’Alger - Houari Boumediene",
+        "to_name": "Aéroport international Ahmed-Sékou-Touré"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            3.21085,
+            36.69951
+          ],
+          [
             3.37388,
             36.64558
           ],
@@ -10894,6 +11124,235 @@
         "great_circle_km": 9105,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Pékin-Capitale"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            3.21085,
+            36.69951
+          ],
+          [
+            5.01975,
+            37.93789
+          ],
+          [
+            6.88992,
+            39.14763
+          ],
+          [
+            8.82465,
+            40.32645
+          ],
+          [
+            10.82716,
+            41.4719
+          ],
+          [
+            12.90056,
+            42.58139
+          ],
+          [
+            15.04775,
+            43.65216
+          ],
+          [
+            17.27134,
+            44.6813
+          ],
+          [
+            19.57356,
+            45.66576
+          ],
+          [
+            21.95616,
+            46.60235
+          ],
+          [
+            24.42023,
+            47.48777
+          ],
+          [
+            26.96614,
+            48.31864
+          ],
+          [
+            29.59333,
+            49.0915
+          ],
+          [
+            32.30024,
+            49.8029
+          ],
+          [
+            35.08413,
+            50.44944
+          ],
+          [
+            37.941,
+            51.02779
+          ],
+          [
+            40.86554,
+            51.53479
+          ],
+          [
+            43.85105,
+            51.96753
+          ],
+          [
+            46.88955,
+            52.32339
+          ],
+          [
+            49.97177,
+            52.60012
+          ],
+          [
+            53.08741,
+            52.79593
+          ],
+          [
+            56.22528,
+            52.9095
+          ],
+          [
+            59.3736,
+            52.94007
+          ],
+          [
+            62.52032,
+            52.88743
+          ],
+          [
+            65.65341,
+            52.75193
+          ],
+          [
+            68.76124,
+            52.53449
+          ],
+          [
+            71.83283,
+            52.23656
+          ],
+          [
+            74.85811,
+            51.86007
+          ],
+          [
+            77.82817,
+            51.40735
+          ],
+          [
+            80.73534,
+            50.88111
+          ],
+          [
+            83.57331,
+            50.28435
+          ],
+          [
+            86.3371,
+            49.62027
+          ],
+          [
+            89.02307,
+            48.89222
+          ],
+          [
+            91.6288,
+            48.10363
+          ],
+          [
+            94.153,
+            47.25795
+          ],
+          [
+            96.59538,
+            46.35862
+          ],
+          [
+            98.95651,
+            45.40901
+          ],
+          [
+            101.23767,
+            44.41238
+          ],
+          [
+            103.44074,
+            43.3719
+          ],
+          [
+            105.56808,
+            42.29058
+          ],
+          [
+            107.62237,
+            41.17128
+          ],
+          [
+            109.60659,
+            40.01673
+          ],
+          [
+            111.52387,
+            38.82947
+          ],
+          [
+            113.37745,
+            37.61191
+          ],
+          [
+            115.17064,
+            36.3663
+          ],
+          [
+            116.90675,
+            35.09474
+          ],
+          [
+            118.58905,
+            33.79921
+          ],
+          [
+            120.22075,
+            32.48152
+          ],
+          [
+            121.805,
+            31.1434
+          ]
+        ]
+      },
+      "properties": {
+        "id": "alg-pvg",
+        "from": "ALG",
+        "to": "PVG",
+        "carrier": "AH",
+        "flight": "AH 3082",
+        "status": "active",
+        "days": [
+          "mon",
+          "wed",
+          "sat"
+        ],
+        "evidence": "verified",
+        "planned": false,
+        "source": "https://observalgerie.com/2026/10/26/voyage/air-algerie-inaugure-une-nouvelle-liaison-long-courrier",
+        "sources": [
+          "https://observalgerie.com/2026/10/26/voyage/air-algerie-inaugure-une-nouvelle-liaison-long-courrier",
+          "https://www.aps.dz/fr/economie/commerce-et-service/mvp5bhj8-air-algerie-ouvre-une-nouvelle-liaison-vers-shanghai",
+          "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
+          "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+        ],
+        "great_circle_km": 10131,
+        "from_name": "Aéroport d’Alger - Houari Boumediene",
+        "to_name": "Aéroport international de Shanghai-Pudong"
       }
     },
     {
@@ -35363,234 +35822,6 @@
             36.69951
           ],
           [
-            2.76748,
-            36.15845
-          ],
-          [
-            2.33019,
-            35.61578
-          ],
-          [
-            1.89881,
-            35.07155
-          ],
-          [
-            1.47315,
-            34.52581
-          ],
-          [
-            1.05304,
-            33.97862
-          ],
-          [
-            0.63831,
-            33.43001
-          ],
-          [
-            0.2288,
-            32.88004
-          ],
-          [
-            -0.17566,
-            32.32876
-          ],
-          [
-            -0.57521,
-            31.7762
-          ],
-          [
-            -0.97002,
-            31.22241
-          ],
-          [
-            -1.36021,
-            30.66742
-          ],
-          [
-            -1.74595,
-            30.11128
-          ],
-          [
-            -2.12737,
-            29.55403
-          ],
-          [
-            -2.50459,
-            28.9957
-          ],
-          [
-            -2.87776,
-            28.43633
-          ],
-          [
-            -3.24701,
-            27.87596
-          ],
-          [
-            -3.61244,
-            27.31461
-          ],
-          [
-            -3.9742,
-            26.75232
-          ],
-          [
-            -4.33239,
-            26.18911
-          ],
-          [
-            -4.68713,
-            25.62504
-          ],
-          [
-            -5.03853,
-            25.06011
-          ],
-          [
-            -5.38671,
-            24.49436
-          ],
-          [
-            -5.73176,
-            23.92782
-          ],
-          [
-            -6.0738,
-            23.36052
-          ],
-          [
-            -6.41292,
-            22.79249
-          ],
-          [
-            -6.74923,
-            22.22374
-          ],
-          [
-            -7.08282,
-            21.6543
-          ],
-          [
-            -7.41379,
-            21.08421
-          ],
-          [
-            -7.74222,
-            20.51347
-          ],
-          [
-            -8.06821,
-            19.94213
-          ],
-          [
-            -8.39186,
-            19.37019
-          ],
-          [
-            -8.71323,
-            18.79769
-          ],
-          [
-            -9.03243,
-            18.22464
-          ],
-          [
-            -9.34953,
-            17.65106
-          ],
-          [
-            -9.66462,
-            17.07698
-          ],
-          [
-            -9.97777,
-            16.50242
-          ],
-          [
-            -10.28906,
-            15.9274
-          ],
-          [
-            -10.59858,
-            15.35193
-          ],
-          [
-            -10.9064,
-            14.77603
-          ],
-          [
-            -11.21258,
-            14.19973
-          ],
-          [
-            -11.51721,
-            13.62305
-          ],
-          [
-            -11.82036,
-            13.04599
-          ],
-          [
-            -12.12209,
-            12.46858
-          ],
-          [
-            -12.42249,
-            11.89084
-          ],
-          [
-            -12.72161,
-            11.31279
-          ],
-          [
-            -13.01952,
-            10.73443
-          ],
-          [
-            -13.3163,
-            10.15579
-          ],
-          [
-            -13.612,
-            9.57689
-          ]
-        ]
-      },
-      "properties": {
-        "id": "alg-cky",
-        "from": "ALG",
-        "to": "CKY",
-        "carrier": "AH",
-        "flight": "AH 5358",
-        "status": "unclear",
-        "days": [
-          "tue",
-          "thu",
-          "sun"
-        ],
-        "evidence": "verified",
-        "planned": true,
-        "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
-        "sources": [
-          "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
-          "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-          "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-        ],
-        "great_circle_km": 3459,
-        "from_name": "Aéroport d’Alger - Houari Boumediene",
-        "to_name": "Aéroport international Ahmed-Sékou-Touré"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            3.21085,
-            36.69951
-          ],
-          [
             4.7773,
             38.07836
           ],
@@ -36011,15 +36242,16 @@
         "from": "ALG",
         "to": "KWI",
         "carrier": "AH",
-        "flight": null,
+        "flight": "AH 4064",
         "status": "unclear",
         "days": [
           "mon"
         ],
-        "evidence": "listed",
+        "evidence": "verified",
         "planned": true,
-        "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+        "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
         "sources": [
+          "https://www.aeroroutes.com/eng/260629-ahnw26",
           "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
         ],
         "great_circle_km": 4219,
@@ -36710,233 +36942,6 @@
             36.69951
           ],
           [
-            5.01975,
-            37.93789
-          ],
-          [
-            6.88992,
-            39.14763
-          ],
-          [
-            8.82465,
-            40.32645
-          ],
-          [
-            10.82716,
-            41.4719
-          ],
-          [
-            12.90056,
-            42.58139
-          ],
-          [
-            15.04775,
-            43.65216
-          ],
-          [
-            17.27134,
-            44.6813
-          ],
-          [
-            19.57356,
-            45.66576
-          ],
-          [
-            21.95616,
-            46.60235
-          ],
-          [
-            24.42023,
-            47.48777
-          ],
-          [
-            26.96614,
-            48.31864
-          ],
-          [
-            29.59333,
-            49.0915
-          ],
-          [
-            32.30024,
-            49.8029
-          ],
-          [
-            35.08413,
-            50.44944
-          ],
-          [
-            37.941,
-            51.02779
-          ],
-          [
-            40.86554,
-            51.53479
-          ],
-          [
-            43.85105,
-            51.96753
-          ],
-          [
-            46.88955,
-            52.32339
-          ],
-          [
-            49.97177,
-            52.60012
-          ],
-          [
-            53.08741,
-            52.79593
-          ],
-          [
-            56.22528,
-            52.9095
-          ],
-          [
-            59.3736,
-            52.94007
-          ],
-          [
-            62.52032,
-            52.88743
-          ],
-          [
-            65.65341,
-            52.75193
-          ],
-          [
-            68.76124,
-            52.53449
-          ],
-          [
-            71.83283,
-            52.23656
-          ],
-          [
-            74.85811,
-            51.86007
-          ],
-          [
-            77.82817,
-            51.40735
-          ],
-          [
-            80.73534,
-            50.88111
-          ],
-          [
-            83.57331,
-            50.28435
-          ],
-          [
-            86.3371,
-            49.62027
-          ],
-          [
-            89.02307,
-            48.89222
-          ],
-          [
-            91.6288,
-            48.10363
-          ],
-          [
-            94.153,
-            47.25795
-          ],
-          [
-            96.59538,
-            46.35862
-          ],
-          [
-            98.95651,
-            45.40901
-          ],
-          [
-            101.23767,
-            44.41238
-          ],
-          [
-            103.44074,
-            43.3719
-          ],
-          [
-            105.56808,
-            42.29058
-          ],
-          [
-            107.62237,
-            41.17128
-          ],
-          [
-            109.60659,
-            40.01673
-          ],
-          [
-            111.52387,
-            38.82947
-          ],
-          [
-            113.37745,
-            37.61191
-          ],
-          [
-            115.17064,
-            36.3663
-          ],
-          [
-            116.90675,
-            35.09474
-          ],
-          [
-            118.58905,
-            33.79921
-          ],
-          [
-            120.22075,
-            32.48152
-          ],
-          [
-            121.805,
-            31.1434
-          ]
-        ]
-      },
-      "properties": {
-        "id": "alg-pvg",
-        "from": "ALG",
-        "to": "PVG",
-        "carrier": "AH",
-        "flight": "AH 3082",
-        "status": "unclear",
-        "days": [
-          "mon",
-          "wed",
-          "sat"
-        ],
-        "evidence": "verified",
-        "planned": true,
-        "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
-        "sources": [
-          "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
-          "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-        ],
-        "great_circle_km": 10131,
-        "from_name": "Aéroport d’Alger - Houari Boumediene",
-        "to_name": "Aéroport international de Shanghai-Pudong"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            3.21085,
-            36.69951
-          ],
-          [
             3.70423,
             37.18339
           ],
@@ -37361,13 +37366,16 @@
         "from": "AMM",
         "to": "ALG",
         "carrier": "AH",
-        "flight": null,
+        "flight": "AH 4064",
         "status": "unclear",
-        "days": null,
-        "evidence": "listed",
+        "days": [
+          "tue"
+        ],
+        "evidence": "verified",
         "planned": true,
-        "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+        "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
         "sources": [
+          "https://www.aeroroutes.com/eng/260629-ahnw26",
           "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
         ],
         "great_circle_km": 3050,
@@ -38251,13 +38259,16 @@
         "from": "KWI",
         "to": "AMM",
         "carrier": "AH",
-        "flight": null,
+        "flight": "AH 4064",
         "status": "unclear",
-        "days": null,
-        "evidence": "listed",
+        "days": [
+          "mon"
+        ],
+        "evidence": "verified",
         "planned": true,
-        "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+        "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
         "sources": [
+          "https://www.aeroroutes.com/eng/260629-ahnw26",
           "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
         ],
         "great_circle_km": 1180,
