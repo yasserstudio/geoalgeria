@@ -79,13 +79,13 @@
   {
     "id": "zr-express",
     "name": "ZR Express",
-    "website": "https://zrexpress.com",
+    "website": "https://www.zrexpress.net",
     "type": "both",
     "cod": true,
     "scope": "domestic",
-    "open_agency_data": "none",
+    "open_agency_data": "geocoded",
     "api": "private",
-    "notes": "Operations via the Procolis portal (auth-gated); public site is Cloudflare-blocked. No open agency list."
+    "notes": "Publishes its offices at zrexpress.net/en/offices, each row linking its own Google Maps pin with the coordinate inline. The note here used to point at zrexpress.com, a different domain that is Cloudflare-blocked; the .net site answers an ordinary request. Merchant operations run through the Procolis portal, which stays auth-gated."
   },
   {
     "id": "maystro",
@@ -97,6 +97,28 @@
     "open_agency_data": "geocoded",
     "api": "private",
     "notes": "Social-commerce focused; its public coverage page lists each stop-desk with a Google Maps link, resolved to coordinates. Merchant integration API is private."
+  },
+  {
+    "id": "swift-express",
+    "name": "Swift Express",
+    "website": "https://www.swiftexpress.org",
+    "type": "both",
+    "cod": true,
+    "scope": "domestic",
+    "open_agency_data": "geocoded",
+    "api": "private",
+    "notes": "Publishes its agency network at swiftexpress.org/fr/offices, every office with its address, phones and its own Google Maps link. Merchant operations run on the Ecotrack platform, whose API is private."
+  },
+  {
+    "id": "hhd-express",
+    "name": "HHD Express",
+    "website": "https://hhd.dz",
+    "type": "both",
+    "cod": true,
+    "scope": "domestic",
+    "open_agency_data": "geocoded",
+    "api": "private",
+    "notes": "Publishes its whole agency network on hhd.dz, every agency with its commune, phones, address and its own Google Maps link. Distinct from DHD (dhd-dz.com). Merchant integration API is private."
   },
   {
     "id": "dhd",

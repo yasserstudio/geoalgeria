@@ -168,19 +168,23 @@
     },
     {
       "path": "packages/livraison/data/carriers.json",
-      "sha256": "66739cf27a24b21676c26e42c58afb9aa6a7e670671ef05cfd1e2772700d2ab5"
+      "sha256": "f9672976229c2385e4919c9345223c9a5d079fd5db21974ab83711b0f8661a84"
     },
     {
       "path": "packages/livraison/data/coverage.json",
-      "sha256": "63a6c4c6910aff4ce93ba4ac297e5b29b973aca8a420a3b7574130c212c0b328"
+      "sha256": "e57e20f38b33d8b46a5741b1dc6fd16df3277f4ed8b9bc7523dfdc8812394809"
     },
     {
       "path": "packages/livraison/data/metadata.json",
-      "sha256": "33f3642585d03d9bb47663b33af97d43a76db6223ac615ed79ad786b13a33688"
+      "sha256": "08c8aef25538631653e477c6b1b105b9c65d3866afb922734035818abb80b427"
+    },
+    {
+      "path": "packages/livraison/data/retired-ids.json",
+      "sha256": "bfdbac1827592e57220d0d82493f225edc0f1f6ef4bd6ccd5dabc60c89bcae08"
     },
     {
       "path": "packages/livraison/data/stopdesks.json",
-      "sha256": "c9f783e69aee883ecc67b9d71fffe43b55d57e0d6b631d251361c545c910cfd5"
+      "sha256": "c12cd49bb529d328cf40c2d3ce66eeec263bfcd4f67d532ba7b0ac3fd3cbd78c"
     },
     {
       "path": "packages/mobilis/data/agences.json",
@@ -309,15 +313,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70554,
-  "candidates": 17749,
+  "total_records": 70755,
+  "candidates": 17751,
   "reasons": {
-    "approximate_coordinate": 16901,
+    "approximate_coordinate": 16903,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 501,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1288
+    "shared_coordinate": 1290
   },
   "datasets": [
     {
@@ -1432,9 +1436,12 @@
     },
     {
       "dataset": "livraison",
-      "total_records": 449,
-      "candidates": 0,
-      "reasons": {},
+      "total_records": 650,
+      "candidates": 2,
+      "reasons": {
+        "approximate_coordinate": 2,
+        "shared_coordinate": 2
+      },
       "metadata_path": "packages/livraison/data/metadata.json",
       "metadata": {
         "package": "@geoalgeria/livraison",
@@ -1442,20 +1449,20 @@
         "title_fr": "Points relais de livraison d'Algérie",
         "title_ar": "نقاط استلام التوصيل في الجزائر",
         "title_en": "Algeria delivery stop-desks",
-        "record_count": 449,
-        "geocoded_count": 449,
+        "record_count": 650,
+        "geocoded_count": 650,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 449,
-          "approximate": 0
+          "exact": 648,
+          "approximate": 2
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 449 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
-        "wilayas_covered": 63,
+        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 650 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+        "wilayas_covered": 64,
         "bbox": [
           -8.143583,
-          22.784955,
+          19.576488,
           9.578836,
           37.009471
         ],
@@ -1499,13 +1506,37 @@
             "license": "Data © Maystro Delivery; redistributed for reference",
             "evidence_type": "official",
             "retrieved": "2026-10-25"
+          },
+          {
+            "key": "zr-express",
+            "name": "ZR Express: offices list",
+            "url": "https://www.zrexpress.net/en/offices",
+            "license": "Data © ZR Express; redistributed for reference",
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
+          },
+          {
+            "key": "swift-express",
+            "name": "Swift Express: agency network",
+            "url": "https://www.swiftexpress.org/fr/offices",
+            "license": "Data © Swift Express; redistributed for reference",
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
+          },
+          {
+            "key": "hhd-express",
+            "name": "HHD Express: agency network",
+            "url": "https://hhd.dz/",
+            "license": "Data © HHD Express; redistributed for reference",
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           }
         ],
         "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
         "updated": "2026-10-25",
-        "carriers": 16,
-        "stopdesks": 449,
-        "coverage": 9,
+        "carriers": 18,
+        "stopdesks": 650,
+        "coverage": 12,
         "by_operator": {
           "guepex": 71,
           "yalidine": 105,
@@ -1514,9 +1545,24 @@
           "zimou-express": 10,
           "speedmail": 1,
           "anderson": 104,
+          "hhd-express": 69,
           "maystro": 38,
-          "noest": 102
-        }
+          "noest": 102,
+          "swift-express": 55,
+          "zr-express": 77
+        },
+        "carried_pins": [
+          {
+            "id": "anderson-25-ali-mendjeli",
+            "name": "Anderson Constantine (Ali Mendjeli)",
+            "retrieved": "2026-06-18"
+          },
+          {
+            "id": "noest-19b",
+            "name": "Noest Sétif «El Eulma»",
+            "retrieved": "2026-06-18"
+          }
+        ]
       }
     },
     {
@@ -2477,9 +2523,12 @@
     {
       "dataset": "livraison",
       "entity": "stopdesks.json",
-      "total_records": 449,
-      "candidates": 0,
-      "reasons": {},
+      "total_records": 650,
+      "candidates": 2,
+      "reasons": {
+        "approximate_coordinate": 2,
+        "shared_coordinate": 2
+      },
       "path": "packages/livraison/data/stopdesks.json"
     },
     {
@@ -2739,6 +2788,10 @@
     },
     {
       "path": "packages/livraison/data/coverage.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/livraison/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {
