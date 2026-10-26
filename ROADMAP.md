@@ -63,7 +63,19 @@ reads as further along than it is.
   (29 Oct). `alg-svo` / `svo-alg` carried an announced 2 Oct resumption with no
   report of a first flight, so they are the first to re-check. Detail in
   `research/_flight-routes/verification-2026-10-02.md`.
-  _(logged 2026-10-02)_
+
+  First-flight pass of 2026-10-26 (`verification-2026-10-26.md`): two legs flipped,
+  `alg-cky` on two Guinean reports of the inaugural landing at Ahmed Sekou Toure and
+  `alg-pvg` on the inaugural rotation's departure from Algiers, reported by APS and
+  observalgerie. The other fourteen stay planned, each with its own re-check date:
+  `cky-alg`, `alg-bzv` / `bzv-alg` and `abv-los` after 27 Oct, `los-alg` and
+  `pvg-alg` after 28 Oct, `alg-kwi` / `kwi-amm` / `amm-alg` after 27 Oct, `alg-mji` /
+  `mji-alg` after 29 Oct, `alg-los` / `los-abv` after 30 Oct. The Kuwait triangle
+  also gained its filed flight number, `AH 4064`, and the Kuwait and Amman departure
+  days, off the AeroRoutes NW26 filing of 29 Jun 2026 that this file already cites
+  for the Douala and Libreville returns. `AS_OF` stays 2026-10-09: the pass re-read
+  the six announced lines, not the winter schedule.
+  _(logged 2026-10-02, part-resolved 2026-10-26)_
 
 - [ ] **`alg-doh` / `doh-alg` go daily on 25 Oct 2026.** The resumed service runs
   three weekly, Sun/Tue/Fri, and the same reports announce a daily programme from
@@ -72,7 +84,11 @@ reads as further along than it is.
   `days: ["sun", "tue", "fri"]` is right for the 2026-10-02 snapshot, so this is a
   one-line edit plus an `as_of` bump at the next pass, the same shape as the
   Berlin item above.
-  _(logged 2026-10-02)_
+
+  Checked 2026-10-26: still open. Everything readable on the seven-weekly schedule
+  predates the date it starts, and nothing dated on or after 25 October reports the
+  daily programme in effect, so `days` is unchanged. Re-check after 1 Nov 2026.
+  _(logged 2026-10-02, re-checked 2026-10-26)_
 
 - [ ] **Screened positive, awaiting a citable source: IST -> ORN** (AH3025
   en-route during the 2026-07-29 screen; istairport.com timed out, aeroroutes
