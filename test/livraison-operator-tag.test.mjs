@@ -220,6 +220,35 @@ test("a card that declares no wilaya is still matched on geometry", () => {
   assert.deepEqual(carryRenamedIds(far, committed, "maystro"), []);
 });
 
+// A committed desk resolved into a wilaya a reform created still answers to the card
+// that prints the wilaya it was carved out of (anderson-5-barika ships "60" against card
+// 05). The allowance is the registry's parent mapping, not "any code over 58": a reform
+// wilaya unrelated to the card is as much a mismatch as any other.
+test("a reform wilaya answers to its parent's card, and to no other", () => {
+  const prev = (id, wilaya_code) => [id, { id, operator: "anderson", wilaya_code, lat: 35.3912, lng: 5.3745 }];
+  const rec = (cardWilaya) => [{ id: "anderson-new", name: "n", commune: "c", cardWilaya, lat: 35.39125, lng: 5.37455 }];
+
+  // 60 (Barika) was carved out of 05 (Batna) in 2026: the card has not caught up, same desk.
+  let recs = rec(5);
+  assert.equal(carryRenamedIds(recs, new Map([prev("anderson-5-barika", "60")]), "anderson").length, 1);
+  assert.equal(recs[0].id, "anderson-5-barika");
+
+  // 58 (El Meniaa) was carved out of 47 (Ghardaia) in 2021: the 2021 reform counts too.
+  recs = rec(47);
+  assert.equal(carryRenamedIds(recs, new Map([prev("anderson-47-el-meniaa", "58")]), "anderson").length, 1);
+  assert.equal(recs[0].id, "anderson-47-el-meniaa");
+
+  // 60 against card 26: a reform wilaya, but not THIS card's. The pin being 5 m away is
+  // exactly the coincidence the wilaya test is there to refuse.
+  recs = rec(26);
+  assert.deepEqual(carryRenamedIds(recs, new Map([prev("anderson-5-barika", "60")]), "anderson"), []);
+  assert.equal(recs[0].id, "anderson-new");
+
+  // And the other way round: a card printing the child does not reclaim an id the parent holds.
+  recs = rec(58);
+  assert.deepEqual(carryRenamedIds(recs, new Map([prev("anderson-47-ghardaia", "47")]), "anderson"), []);
+});
+
 test("the id carry does not reach past the same desk", () => {
   const prev = (id, lat, lng, wilaya_code = "16") => [id, { id, operator: "anderson", wilaya_code, lat, lng }];
   const committed = new Map([prev("anderson-16-a", 36.6805625, 2.8560625)]);

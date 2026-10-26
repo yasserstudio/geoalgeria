@@ -63,7 +63,7 @@ human review.
 ## Status
 
 Converted so far: `telecom`, `ecoles` (reference implementations,
-2026-08-03), `protection-civile`, and `buses`. The buses capture is a reviewed,
+2026-08-03), `protection-civile`, `buses`, and `livraison`. The buses capture is a reviewed,
 trimmed OSM projection with its non-atomic Overpass receipts preserved. Bus
 Operator captures are rights-safe projections: they retain only factual fields
 used by the package plus upstream URLs, retrieval timestamps, byte counts and
@@ -71,6 +71,23 @@ SHA-256 hashes for the ignored raw HTML, API and map responses. This keeps the
 evidence auditable without committing or relicensing full all-rights-reserved
 pages and KML files. The Sidi Bel Abbès projection is explicitly marked as
 owner-supplied official HTML because its PHP pages returned 404 during the live
-recheck; it does not claim a live-response hash. Remaining packages convert as they are
+recheck; it does not claim a live-response hash.
+
+The eight `livraison` carrier captures follow the same rights-safe rule: each is
+the parsed row projection the build consumes (id, name, commune, the wilaya the
+card declares, address and the operator's own Google Maps link), not the
+carrier's page, which is all rights reserved and runs to 2.7 MB for one of them.
+Alongside them, `maps-resolutions.json` is the resolution cache for those Maps
+links, keyed by the link itself: the final URL, the coordinate extracted from it
+and the tier that produced it. A stop-desk's pin comes from resolving a
+shortlink that carries no coordinate of its own, so without that cache an
+offline rebuild could not place the same desks; with it, `--cache` reproduces
+the package byte for byte and asks Google nothing. Google's per-request
+parameters (`g_ep`, `skid`, `entry`, `coh`, `lucs`, `utm_source`) are stripped
+from the stored URL, which would otherwise churn the whole capture on every
+re-fetch. The trade-off of projecting at parse time is that a parser fix is not
+exercised by a `--cache` rebuild; re-run live once after changing one.
+
+Remaining packages convert as they are
 next touched — their raw pulls still land in gitignored `research/<pkg>/`
 until then.
