@@ -132,11 +132,11 @@
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
-      "sha256": "80e09c501f9217b604f14db07ad46bfde2e9049a29fb0071b1b662ea5f0ebf16"
+      "sha256": "e7b320bc42fae3fe7312cec63b624deec017ac79378e601eab6d52f1f1e13900"
     },
     {
       "path": "packages/formation-professionnelle/data/metadata.json",
-      "sha256": "d750208e1620c102f27d5a2357c4887edf0f9b320070fadeda96bcaa166c9aeb"
+      "sha256": "d3b26a45a7b2c3863a78f7b158495d88e39a87a8111f110620147b4c3db2ea65"
     },
     {
       "path": "packages/formation-professionnelle/data/retired-ids.json",
@@ -1231,7 +1231,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1961 of 1963 are geocoded: 1681 on the portal's own point, 249 on their commune's centroid and 31 on their wilaya's, the portal having left those coordinates empty.",
+        "coverage_note": "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1961 of 1963 are geocoded: 1680 on the portal's own point, 250 on their commune's centroid and 31 on their wilaya's, the portal having left those coordinates empty.",
         "wilayas_covered": 69,
         "bbox": [
           -8.136773,

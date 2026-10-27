@@ -285,6 +285,12 @@ const CORRECTIONS = {
   "formation-professionnelle": {
     // Borrows its commune's centre (geo_method `commune`), and Beni Messous moved.
     "00703": { lat: 36.780096, lng: 2.974557 },
+    // One of the 31 Oran rows the takwin capture ships with an unsigned longitude.
+    // fetch.mjs restores the sign when mirroring the axis carries the point into the
+    // wilaya that published the row (private tracker #301), so the frozen v1 input
+    // keeps +0.625359 while the record ships the corrected value. This is a
+    // coordinate correction, not id-rule drift: the id and every other field hold.
+    "01405": { lng: -0.625359 },
   },
   "industrie-pharmaceutique": {
     // Same class: a commune-centroid placement in Algiers whose commune moved.

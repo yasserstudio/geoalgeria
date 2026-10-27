@@ -63,10 +63,10 @@ Spanning **all 69 current wilayas**. The source is keyed by the pre-reform 58-wi
 scheme, so the generator matches source coordinates and communes to the current division and assigns 137
 establishments to their post-2026 daughter wilaya. 1,961 of 1,963 establishments are geocoded
 (99.9%), `lat`/`lng` is `null` for the remaining 2. Of the geocoded records, 1,666 carry the
-point takwin.dz publishes as `geo_precision` `"exact"`, and 15 carry a published point the
+point takwin.dz publishes as `geo_precision` `"exact"`, and 14 carry a published point the
 number itself disproves, fewer than three decimals or degrees and whole arcminutes with the
 seconds dropped, so those keep `geo_method` `"takwin"` but read `"approximate"`; the portal
-leaves the coordinate empty on the rest, so 249 sit on their commune's centroid and 31 on
+leaves the coordinate empty on the rest, so 250 sit on their commune's centroid and 31 on
 their wilaya's, both `"approximate"` and labelled in `geo_method`.
 
 ## Formats

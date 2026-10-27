@@ -28,9 +28,18 @@ Two findings worth keeping:
   this ticket's: `wilaya_code` 48 with a commune, السانية / Es Senia, that belongs to
   wilaya 31, an address in Bir El Djir (Oran) that agrees with neither, and a
   longitude whose sign would have to flip for Oran. No source was found to place it,
-  so only the precision claim was corrected here.
+  so only the precision claim was corrected here. **Settled in #301**: all three are
+  one defect, and it is 33 records wide, not one. The portal names the publishing
+  directorate on every row, and 01392's is Oran's (`IDDFEP` 31, `IDCommunn` 3105,
+  `CodeEtsWilaya` 31641); 32 further Oran rows ship the same unsigned longitude, and
+  the builder stamped each one's `wilaya_code` from that coordinate, so the
+  attribution agreed with the defect and no containment check could see it. The
+  builder now restores the sign when mirroring the axis carries the point into the
+  wilaya that published the row, and 01392, whose pair is a whole-arcminute
+  placeholder whose mirror falls in the bay of Oran, takes its commune's centroid
+  like every other row the portal left unplaced.
 
-## The four candidates this run did NOT act on
+## The four candidates this run did NOT act on, and how they were decided
 
 OpenStreetMap does hold an object for four of the records. None of the four moved,
 and each is a Review-queue candidate rather than a correction, under ADR 0001:
@@ -41,6 +50,23 @@ and each is a Review-queue candidate rather than a correction, under ADR 0001:
 | `park-25` Belezma | way 324041581 | 3.369 km | A national park is an area: both the published point and the centroid are `approximate`, so the move buys no precision and only churns a published coordinate. |
 | `park-29` Djurdjura | way 522229283 | 2.858 km | As above. |
 | `park-31` El Kala | relation 5424406 (Wikidata P402 confirms the same object) | 8.151 km | As above. |
+
+**Reviewed and closed in #301.** Each object was re-read from
+`api.openstreetmap.org` on 2026-10-27, is still the same place under the same tags
+(the node is version 1 of 2011 and has never been edited; each park area still
+carries the record's own `wikidata` QID), and each decision was taken through
+`scripts/review/votes.mjs` rather than by hand. All four keep their published point
+and stay `approximate`: `review-2026-10-27.json` holds the Candidates, the Claims,
+the engine's own answer and the reason per record, and
+`test/arcminute-288-review.test.mjs` re-derives every outcome from that file.
+
+The reading the sweep's table did not make: for `historic-91` the node is 1.055 km
+from the published point, which is inside the 2 km agreement radius, so the two are
+one Answer and the published point is the Candidate that Answer ships. The node
+confirms the published value instead of replacing it, which is why there is nothing
+to move even before the Vote count is reached. For the three parks the centroid is
+2.9 to 8.2 km out, so no Claim reaches any Candidate at all and no Candidate takes a
+single Vote.
 
 ## Method note, and its limit
 

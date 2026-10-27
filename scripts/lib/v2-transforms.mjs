@@ -608,7 +608,7 @@ export const MIGRATIONS = {
       sources: [{ key: "mfep", name: "Ministry of Vocational Training and Education (MFEP): takwin.dz", url: "https://takwin.dz", license: "Factual public listing (MFEP)", retrieved: "2026-10-25" }],
       license: "Factual public listing (MFEP)",
       estimatedUniverse: null,
-      coverageNote: "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1961 of 1963 are geocoded: 1681 on the portal's own point, 249 on their commune's centroid and 31 on their wilaya's, the portal having left those coordinates empty.",
+      coverageNote: "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1961 of 1963 are geocoded: 1680 on the portal's own point, 250 on their commune's centroid and 31 on their wilaya's, the portal having left those coordinates empty.",
       titles: { en: "Algeria vocational-training establishments", fr: "Établissements de formation professionnelle d'Algérie", ar: "مؤسسات التكوين المهني الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_secteur: count(rows, "secteur") }),
     },

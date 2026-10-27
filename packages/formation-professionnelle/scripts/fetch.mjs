@@ -73,12 +73,49 @@ const TYPE_LABELS = {
   12: "مؤسسة خاصة معتمدة",
   13: "معهد وطني للتكوين والتعليم المهنيين",
 };
-// Two records ship their coordinates transposed, and one carries a nonsense pair.
+// Two records ship their coordinates transposed, and two carry a nonsense pair.
+// 1997 is a pair that locates nothing. 1624 is the Oran row the unsigned-longitude
+// recovery below cannot explain (private tracker #301): its own IDDFEP is 31, its
+// IDCommunn 3105, its commune string "السانية_وهران" and its address "BIR EL DJIR
+// ORAN", but its pair is 35.7167 / 0.6333, whole arcminutes on both axes, so it is a
+// rounded placeholder rather than a reading, and mirroring the axis puts it in the bay
+// of Oran, inside no wilaya at all. There is nothing here to sign-correct, so the row
+// takes the same path as every other establishment the portal left unplaced and lands
+// on its own commune's centroid.
 const SWAPPED_IDS = new Set([1323, 1330]);
-const NONSENSE_IDS = new Set([1997]);
+const NONSENSE_IDS = new Set([1997, 1624]);
 const LAT_MIN = 18, LAT_MAX = 38, LNG_MIN = -9, LNG_MAX = 12;
 
 const round6 = (n) => Math.round(n * 1e6) / 1e6;
+
+/**
+ * A longitude that lost its minus sign, restored.
+ *
+ * The capture ships 32 of Oran's rows with a POSITIVE longitude. The portal names the
+ * publishing directorate on every row (IDDFEP 31), the commune string is "<an Oran
+ * commune>_وهران" and the address names Oran, but +0.63 lands in Relizane (48) and
+ * +0.31 in Mostaganem (27), and those are the codes `containingWilayaCode` then stamps,
+ * so the defect hides behind a join that agrees with itself: record 01392's wilaya_code
+ * 48 against commune Es Senia is this same block read from the published side (private
+ * tracker #301).
+ *
+ * Mirroring the axis is the only move made, and only when it carries the point INTO the
+ * wilaya that published the row, so a reading this cannot explain is left exactly as the
+ * portal shipped it. Over the committed capture it fires on 32 rows, every one of them
+ * from IDDFEP 31; the 16 Oran rows whose point sits in Mascara are a different defect
+ * and the mirror leaves them alone.
+ *
+ * @param {number|null} lat
+ * @param {number|null} lng
+ * @param {Set<number>} scope  the source wilaya and its post-2026 daughters
+ */
+function recoverLongitudeSign(lat, lng, scope) {
+  if (lat == null || lng == null || lng <= 0) return lng;
+  const asIs = containingWilayaCode(lat, lng);
+  if (asIs && scope.has(Number(asIs))) return lng;
+  const mirrored = containingWilayaCode(lat, -lng);
+  return mirrored && scope.has(Number(mirrored)) ? round6(-lng) : lng;
+}
 
 // A 0 on either axis is the portal's "no reading" sentinel, never a real value.
 // This holds even in Adrar and Ouargla, where a genuine longitude near zero is
@@ -460,14 +497,18 @@ function main() {
     viaVariant: 0,
     reassignedWilaya: 0,
     coordinateCommuneConflicts: 0,
+    signRecovered: 0,
   };
   const unresolved = new Map();
 
   const records = filtered.map((r) => {
-    const { lat, lng } = cleanCoords(r);
+    const { lat, lng: rawLng } = cleanCoords(r);
     const commune = parseCommune(r.CommunnNom);
     const sourceWilayaCode = wilayaCode(r.IDDFEP);
     const sourceWilaya = Number(sourceWilayaCode);
+    const scope = new Set([sourceWilaya, ...(ref.daughters.get(sourceWilaya) || [])]);
+    const lng = recoverLongitudeSign(lat, rawLng, scope);
+    if (lng !== rawLng) stats.signRecovered++;
     const communeHit = resolveCommune(commune, sourceWilaya, ref);
     // A source coordinate is stronger evidence than a contradictory commune
     // string. Use containment for exact points, and commune resolution for the
@@ -566,6 +607,9 @@ function main() {
   console.log(`  ${stats.reassignedWilaya} establishment(s) reassigned from a source wilaya to its post-2026 daughter`);
   if (stats.coordinateCommuneConflicts) {
     console.log(`  ${stats.coordinateCommuneConflicts} exact coordinate(s) overrode a contradictory commune-derived wilaya`);
+  }
+  if (stats.signRecovered) {
+    console.log(`  ${stats.signRecovered} longitude(s) had their minus sign restored from the publishing directorate`);
   }
   if (residuals.length)
     console.log(`  single-axis cross-check on ${residuals.length} placed records: median ${pct(0.5)} km, p90 ${pct(0.9)} km, max ${residuals[residuals.length - 1].toFixed(1)} km`);
