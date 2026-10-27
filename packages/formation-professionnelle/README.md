@@ -60,8 +60,11 @@ const one = fp.establishmentById("00001");          // single record by id
 | **Total** | | **1,963** |
 
 Spanning **all 69 current wilayas**. The source is keyed by the pre-reform 58-wilaya
-scheme, so the generator matches source coordinates and communes to the current division and assigns 137
-establishments to their post-2026 daughter wilaya. 1,961 of 1,963 establishments are geocoded
+scheme, so the generator matches source coordinates and communes to the current division. That
+re-codes 67 establishments into a post-2026 daughter of the wilaya that filed them, the same
+territory under the current scheme; a further 37 sit in a wilaya their own training directorate
+does not cover at all, which is the coordinate and the filing disagreeing rather than the reform,
+and the coordinate decides where those are published. 1,961 of 1,963 establishments are geocoded
 (99.9%), `lat`/`lng` is `null` for the remaining 2. Of the geocoded records, 1,666 carry the
 point takwin.dz publishes as `geo_precision` `"exact"`, and 14 carry a published point the
 number itself disproves, fewer than three decimals or degrees and whole arcminutes with the

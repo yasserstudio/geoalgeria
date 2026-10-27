@@ -39,7 +39,7 @@ Two findings worth keeping:
   placeholder whose mirror falls in the bay of Oran, takes its commune's centroid
   like every other row the portal left unplaced.
 
-## The four candidates this run did NOT act on, and how they were decided
+## The four candidates this run did NOT act on, and where they now stand
 
 OpenStreetMap does hold an object for four of the records. None of the four moved,
 and each is a Review-queue candidate rather than a correction, under ADR 0001:
@@ -51,14 +51,17 @@ and each is a Review-queue candidate rather than a correction, under ADR 0001:
 | `park-29` Djurdjura | way 522229283 | 2.858 km | As above. |
 | `park-31` El Kala | relation 5424406 (Wikidata P402 confirms the same object) | 8.151 km | As above. |
 
-**Reviewed and closed in #301.** Each object was re-read from
-`api.openstreetmap.org` on 2026-10-27, is still the same place under the same tags
-(the node is version 1 of 2011 and has never been edited; each park area still
-carries the record's own `wikidata` QID), and each decision was taken through
-`scripts/review/votes.mjs` rather than by hand. All four keep their published point
-and stay `approximate`: `review-2026-10-27.json` holds the Candidates, the Claims,
-the engine's own answer and the reason per record, and
-`test/arcminute-288-review.test.mjs` re-derives every outcome from that file.
+**Measured again in #301, and all four stay QUEUED: no action taken.** Each object
+was re-read from `api.openstreetmap.org` on 2026-10-27 and is still the same place
+under the same tags (the node is version 1 of 2011 and has never been edited; each
+park area still carries the record's own `wikidata` QID), and each was run through
+`scripts/review/votes.mjs` rather than judged by hand. The engine settles none of
+them, and under ADR 0001 rule 5 a queued row keeps its published point until the
+Owner rules on it through the review page, so nothing here is closed and nothing
+was changed. `review-2026-10-27.json` holds the Candidates, the Claims, the
+engine's own answer and the measurement per record, as evidence for the queue
+rather than a verdict on it, and `test/arcminute-288-review.test.mjs` re-derives
+every outcome from that file.
 
 The reading the sweep's table did not make: for `historic-91` the node is 1.055 km
 from the published point, which is inside the 2 km agreement radius, so the two are

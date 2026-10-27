@@ -1,9 +1,10 @@
 {
   "schema_version": 1,
   "run": "2026-10-27",
-  "about": "The four OpenStreetMap candidates the rounded-placeholder sweep (private tracker #288, data PR #293) left for review, decided under docs/adr/0001-coordinate-review-by-independent-votes.md. Private tracker #301. Each OpenStreetMap object was re-read from api.openstreetmap.org on the run date, with its version and timestamp recorded here, and every outcome below is re-derived from this file by test/arcminute-288-review.test.mjs through scripts/review/votes.mjs.",
+  "about": "The four OpenStreetMap candidates the rounded-placeholder sweep (private tracker #288, data PR #293) left for review, decided under docs/adr/0001-coordinate-review-by-independent-votes.md. Private tracker #301. Each OpenStreetMap object was re-read from api.openstreetmap.org on the run date, with its version and timestamp recorded here, and every outcome below is re-derived from this file by test/arcminute-288-review.test.mjs through scripts/review/votes.mjs. It is evidence for the queue, not a verdict on it.",
   "vocabulary": "The engine's Candidate and Claim sources are named for the commune-centre layers it was built for, where the OpenStreetMap reading is a chef-lieu admin_centre node. A sector record's reading is an object for the facility itself, so it is named osm_object here and mapped to osm_seat on the way into votes.mjs. Closing that gap belongs to the sector-record path, ADR 0001 P3.",
-  "outcome": "All four keep their published point and stay approximate. No coordinate, record or field changes.",
+  "outcome": "All four are QUEUED. The engine settles none of them, so none of them is a decision an agent may take: under ADR 0001 rule 5 a queued row keeps its published point until the Owner rules on it through the review page, and this run took no action. Nothing is closed here, and no coordinate, record or field changed.",
+  "action_taken": "none",
   "records": [
     {
       "record_id": "historic-91",
@@ -132,7 +133,8 @@
           }
         ]
       },
-      "decision": "keep",
+      "decision": "queued",
+      "action_taken": "none",
       "reason": "The published point and the node are 1.055 km apart, inside the 2 km agreement radius, so they are one Answer rather than two rival Candidates (ADR 0001, rules 2 to 4 in detail, point 1). The published point is the Candidate that Answer ships, because keeping the value already published is the no-op whenever it is one of the agreeing readings (point 3). The node therefore confirms the published point rather than replacing it, and there is no move to make. The Answer carries two Votes, which is plain consensus and would go to the Review queue in any case (rule 5), and the record's commune_code is null so there is no outline to test the winner against. geo_precision stays approximate: the published pair is whole arcminutes on both axes, a rounded placeholder the writer demotes whatever any other source says, and the node's own coordinate is a different point 1 km away, so nothing here makes the published value exact.",
       "evidence": [
         {
@@ -296,7 +298,8 @@
           }
         ]
       },
-      "decision": "keep",
+      "decision": "queued",
+      "action_taken": "none",
       "reason": "The centroid is 3.369 km from the published point, past the 2 km agreement radius, so the two are rival Answers. The Wikidata claim sits on the published point to the metre, which makes it a Copied claim that casts no Vote for it (rule 3), and it is too far from the centroid to vote for that; the OpenStreetMap claim is the centroid and too far from the published point. No Candidate has a single Vote, which is no consensus, and no consensus is the Review queue (rule 5). A national park is an area besides: an area's centroid is approximate exactly as the published point is, so the move would buy no precision and only churn a published coordinate.",
       "evidence": [
         {
@@ -460,7 +463,8 @@
           }
         ]
       },
-      "decision": "keep",
+      "decision": "queued",
+      "action_taken": "none",
       "reason": "The centroid is 2.858 km from the published point, past the agreement radius, so the same arithmetic as park-25 applies: the Wikidata claim is a Copied claim of the published point and too far from the centroid, the OpenStreetMap claim is too far from the published point, no Candidate takes a Vote, and no consensus is the Review queue. The way was last edited on 2026-08-08, after the sweep that found it, and its centroid recomputed on 2026-10-27 is unchanged.",
       "evidence": [
         {
@@ -625,7 +629,8 @@
           }
         ]
       },
-      "decision": "keep",
+      "decision": "queued",
+      "action_taken": "none",
       "reason": "The centroid is 8.151 km from the published point, four times the agreement radius, so no Claim reaches across and no Candidate takes a Vote: no consensus, which is the Review queue. The published point is visibly not the park's geometric middle and a future reading may well move it, but a park is an area and every Candidate here is approximate, so the move is not a correction the engine may make on its own.",
       "evidence": [
         {

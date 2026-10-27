@@ -10,9 +10,10 @@
 // outcome: a threshold moved, a rule changed, or the file edited away from its own
 // evidence.
 //
-// AND THAT THE RECORDS DID NOT MOVE. The decision was `keep` on all four, so the
-// published points and their geo_precision are part of the decision and are asserted
-// against the shipped package.
+// AND THAT THE RECORDS DID NOT MOVE. All four are QUEUED, not decided: under ADR 0001
+// rule 5 a queued row keeps its published point until the Owner rules on it, so the
+// shipped points and their geo_precision are asserted here to be exactly what they
+// were. "Queued" is the whole claim this file makes; nothing in it closes anything.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -72,11 +73,12 @@ test("the engine still reaches every recorded outcome", () => {
     // Nothing the engine can settle on its own: a fix needs strong consensus for a
     // Candidate other than the published point (ADR 0001 rule 5).
     assert.equal(result.outcome, "queue", `${r.record_id}: an outcome the engine may apply unreviewed`);
-    assert.equal(r.decision, "keep");
+    assert.equal(r.decision, "queued", `${r.record_id}: a queued row is the Owner's call, not a decision`);
+    assert.equal(r.action_taken, "none", `${r.record_id}: this run must take no action`);
   }
 });
 
-test("all four still ship the point and the precision the review kept", () => {
+test("all four still ship the point and the precision they were queued with", () => {
   const files = new Map();
   for (const r of review.records) {
     if (!files.has(r.file)) files.set(r.file, read(...r.file.split("/")));
