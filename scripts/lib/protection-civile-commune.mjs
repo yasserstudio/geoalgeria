@@ -14,11 +14,19 @@
 //
 // THE CLAUSES, IN ORDER
 //   1. the DGPC's commune_1 folds to exactly one commune of the wilaya  -> that commune
-//   2. ... or to exactly one within two edits of it, unless that would move the
-//      record off a published commune whose outline contains the point  -> that commune
+//   2. ... or to exactly one within two edits of it                     -> that commune
 //   3. the coordinate is too coarse to join on                          -> clause 5
 //   4. a commune outline of the wilaya contains the point               -> that commune
 //   5. the nearest commune centre in the wilaya                         -> best effort
+//
+// EVERY CLAUSE READS ONLY THE SOURCES. The capture, the commune registry and the
+// committed outline cache decide, and nothing here reads the package's own published
+// records. A join that consults its own last output is not reproducible: a first build
+// from an empty data/ answers differently from a rebuild, so the bytes depend on the
+// order the builds happened in rather than on the sources (ADR 0001 rule 8). Where a
+// clause gets a unit wrong, the correction is a frozen row in
+// quality/overrides/protection-civile.json, which writePackageV2 applies after this
+// join and which is a reviewable input rather than a feedback loop.
 //
 // WHY CLAUSE 2 EXISTS. Clause 1 is exact equality on the folded key, so a one-character
 // spelling difference in the DGPC's own name silently demotes the unit to geometry.
@@ -32,19 +40,13 @@
 // genuinely different commune, and a tie or an empty window falls through to geometry
 // rather than guessing.
 //
-// WHY CLAUSE 2 DEFERS TO A CONFIRMED PUBLISHED COMMUNE. A match inside the window is
-// an inference about what the source MEANT, not the source speaking plainly, and an
-// inference must not dislodge a published claim that geometry positively confirms.
-// This is the shared rule's `kept_conservative` clause (scripts/lib/commune-resolver
-// .mjs), stated for a generator that rebuilds from source: a move needs containment or
-// proof the point left its old commune. 23-017 is the case it exists for. The DGPC
-// files it under "وادي العنب", one edit from Oued El Aneb (2306), and its own unit name
-// and address say OUED ANEB too, but the point is 65 m OUTSIDE Oued El Aneb's outline
-// and 86 m inside El Bouni's, which is where it is published. At that distance the
-// reduced outlines cannot settle a seam, so the published commune the geometry does
-// confirm is kept and the disagreement goes to review rather than into the data.
-// 16-048 and 33-007 are not that case: there the DGPC's name AGREES with what is
-// published, and it is the containing outline that disagrees with both.
+// WHERE CLAUSE 2 IS KNOWN TO BE WRONG. 23-017 is the one unit whose tolerant match the
+// sources cannot settle: the DGPC files it under "وادي العنب", one edit from Oued El
+// Aneb (2306), with its own unit name and address agreeing, yet the point is 65 m
+// outside Oued El Aneb's reduced outline and 86 m inside El Bouni's (2305). The rule
+// answers 2306 and the review decided 2305, so that decision is a ledger row with its
+// OpenStreetMap evidence, not a clause. Encoding it as a clause is what made this join
+// read its own output.
 //
 // WHY CLAUSE 4 ASKS THE WHOLE COUNTRY AND THEN FILTERS. The containment search is
 // global by design (`containingCommunes`), because a commune outline is a finer claim
@@ -131,7 +133,7 @@ export function createCommuneJoin({ containingCommunes, tooCoarseToJoin = isTooC
    * @param {object} communes  `{ byWilaya }`, rows carrying `name_ar_norm`, `lat`, `lng`
    * @param {object} stats  counters, incremented by the clause that decided
    */
-  return function assignCommune(commune1, wilayaCode, lng, lat, communes, stats, published = null) {
+  return function assignCommune(commune1, wilayaCode, lng, lat, communes, stats) {
     const list = communes.byWilaya.get(wilayaCode);
     if (!list || !list.length) return null;
     const rowFor = (code) => list.find((c) => Number(c.code_commune) === Number(code)) ?? null;
@@ -159,17 +161,7 @@ export function createCommuneJoin({ containingCommunes, tooCoarseToJoin = isTooC
       const exact = list.find((c) => c.name_ar_norm === key);
       if (exact) { stats.commune_name++; return exact; }
       const near = nearestNameMatch(key, list);
-      if (near) {
-        const pub = published?.commune_code;
-        const confirmed =
-          pub != null &&
-          Number(pub) !== Number(near.code_commune) &&
-          Number(containingOfWilaya()?.code_commune) === Number(pub) &&
-          rowFor(pub);
-        if (confirmed) { stats.commune_name_near_kept++; return confirmed; }
-        stats.commune_name_near++;
-        return near;
-      }
+      if (near) { stats.commune_name_near++; return near; }
     }
 
     // 3 + 4. The commune outline of the wilaya that contains the point.
@@ -198,7 +190,6 @@ export function createCommuneJoin({ containingCommunes, tooCoarseToJoin = isTooC
 export const COMMUNE_JOIN_CLAUSES = [
   "commune_name",
   "commune_name_near",
-  "commune_name_near_kept",
   "commune_outline",
   "commune_centroid",
 ];

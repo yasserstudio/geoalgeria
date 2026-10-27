@@ -54,7 +54,7 @@ metadata().wilayas_covered; // 69
 
 **حسب مستوى الصفة (`statut`):** UNITE SECONDAIRE 444 · POSTE AVANCE 146 · UNITE DE SECTEUR 132 · UNITE PRINCIPALE 62 · SIEGE DE DIRECTION WILAYA 58 · POSTE DE SECOURS ROUTIER 20 · UNITE MARINE 15 · U.N D'INSTRUCTION ET D'INTERVENTION 1 · DIRECTION GENERALE 1 · CELLULE DE SECURITE 1
 
-كل وحدة تحمل `tel` و`fax` و`address`؛ **866** بلدية طُوبِقت بالاسم الذي تنشره المديرية العامة (**782** بالمطابقة التامة و**84** بفارق إملائي لا يتجاوز تعديلين)، و**13** بالمحيط البلدي الذي يحتوي النقطة، و**1** أُبقيت كما نُشرت حيث نازعها اسم مستنتج ضد المحيط المؤكِّد لها.
+كل وحدة تحمل `tel` و`fax` و`address`؛ **867** بلدية طُوبِقت بالاسم الذي تنشره المديرية العامة (**782** بالمطابقة التامة و**85** بفارق إملائي لا يتجاوز تعديلين)، و**13** بالمحيط البلدي الذي يحتوي النقطة؛ وإحداها، `23-017`، تُعاد بعد ذلك بقرار مراجعة.
 
 ## الصيغ
 

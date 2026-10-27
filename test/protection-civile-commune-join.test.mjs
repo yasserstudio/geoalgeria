@@ -183,6 +183,37 @@ test("the real guard is the repository's own MIN_EXACT_DECIMALS rule", async () 
   assert.equal(asked, 0, "the default guard is the shared one, not a permanently open door");
 });
 
+// --- the join reads only the sources ---------------------------------------------
+test("the join takes no published record, so its answer cannot depend on its last answer", () => {
+  const stats = counters();
+  const join = joinWith([{ code_commune: 1628 }]);
+  // Six arguments and no seventh: there is nowhere to pass the package's own output.
+  assert.equal(join.length, 6);
+  // Called twice with the same inputs it answers the same thing, whatever was published
+  // in between.
+  const first = join("بن عكنون", "16", 3.00313, 36.7453, communes, stats);
+  const second = join("بن عكنون", "16", 3.00313, 36.7453, communes, counters());
+  assert.equal(first.code_commune, 1622);
+  assert.equal(second.code_commune, 1622);
+});
+
+test("23-017's own inputs answer Oued El Aneb, the value its ledger row expects", () => {
+  // The decision to publish El Bouni is a frozen row in
+  // quality/overrides/protection-civile.json, not a clause here. This pins what the rule
+  // produces so that row's `expect` stays honest; the pair is asserted end to end in
+  // test/protection-civile-commune-outline.test.mjs.
+  const OUED_EL_ANEB = commune(2306, "23", "Oued El Aneb", "واد العنب", 36.9, 7.55);
+  const EL_BOUNI = commune(2305, "23", "El Bouni", "البوني", 36.84, 7.71);
+  const w23 = { byWilaya: new Map([["23", [EL_BOUNI, OUED_EL_ANEB]]]) };
+  const stats = counters();
+  // El Bouni's outline contains the point; the DGPC's name is one edit from Oued El Aneb.
+  const join = joinWith([{ code_commune: 2305 }]);
+  const hit = join("وادي العنب", "23", 7.60981, 36.8269, w23, stats);
+  assert.equal(hit.code_commune, 2306, "the source's own name decides, so the rule says 2306");
+  assert.equal(stats.commune_name_near, 1);
+  assert.equal(stats.commune_outline, 0);
+});
+
 // --- a wilaya with no communes --------------------------------------------------
 test("a wilaya the commune set does not know yields no commune at all", () => {
   const stats = counters();

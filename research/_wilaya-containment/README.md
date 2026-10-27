@@ -122,7 +122,7 @@ after the correction.
 Two groups have left since. #285 re-placed `@geoalgeria/banques`' `agb-tebessa` from
 OpenStreetMap, and #306 made `@geoalgeria/protection-civile`'s commune join ask the
 commune outline that contains the point before the nearest commune centre, which
-re-placed 18 of its 33 rows. 15 remain: one `kept_low_precision` and 14 where the
+re-placed 18 of its 33 rows, one of them (`23-017`) by a reviewed ledger decision rather than by a clause. 15 remain: one `kept_low_precision` and 14 where the
 DGPC's own `commune_1` names one commune and the containing outline another. Those 14
 are one class. The join reads 12 of the names exactly and reaches the other two
 (`16-048` "بن عكنون" against the registry's "ابن عكنون", `33-007` "إن أميناس" against

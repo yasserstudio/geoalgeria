@@ -278,11 +278,10 @@ const assignCommune = (...args) => {
 };
 
 // --- normalize DGPC features into internal rows ----------------------------
-// `publishedByObjectid` is the committed units keyed by the DGPC object id, which is
-// the same carry key the ids travel on. The join reads only the published
-// `commune_code`, and only to refuse to dislodge one its own outline confirms; an
-// absent or first-ever build simply passes null and the rule degrades to the source.
-function normalize(features, boundaries, communes, stats, publishedByObjectid = new Map()) {
+// Reads the capture, the commune registry and the committed outline cache, and nothing
+// the package itself has published: the rows this returns are a function of the sources
+// alone, so a first build and a rebuild agree byte for byte.
+function normalize(features, boundaries, communes, stats) {
   const rows = [];
   for (const f of features) {
     const p = f.properties || {};
@@ -295,8 +294,7 @@ function normalize(features, boundaries, communes, stats, publishedByObjectid = 
 
     const geomCode = assignWilaya(lng, lat, boundaries, communes, stats);
     const wilaya_code = reconcileWilaya(geomCode, padWilaya(p.cod_wilaya), p.objectid, stats);
-    const published = publishedByObjectid.get(String(p.objectid)) ?? null;
-    const commune = assignCommune(p.commune_1, wilaya_code, lng, lat, communes, stats, published);
+    const commune = assignCommune(p.commune_1, wilaya_code, lng, lat, communes, stats);
     rows.push({
       objectid: p.objectid,
       cod_wilaya: str(p.cod_wilaya),
@@ -344,27 +342,19 @@ async function main() {
 
   const boundaries = loadBoundaryIndex();
   const communes = loadCommunes();
-  // The committed units, read once: the commune join needs the published commune_code
-  // (clause 2 refuses to dislodge one the outlines confirm) and the id carry-over
-  // below needs the same rows.
-  const committed = readCommitted(OUT_DIR, "protection-civile.json");
-  const publishedByObjectid = new Map(
-    committed.filter((u) => u.refs?.dgpc != null).map((u) => [String(u.refs.dgpc), u]),
-  );
   const stats = {
     swapped: 0, dropped_oob: 0, wilaya_polygon: 0, wilaya_fallback: 0,
     ...Object.fromEntries(COMMUNE_JOIN_CLAUSES.map((clause) => [clause, 0])),
     reconciled: [], reform: [],
   };
-  const rows = normalize(features, boundaries, communes, stats, publishedByObjectid);
+  const rows = normalize(features, boundaries, communes, stats);
   console.log(
     `  normalized ${rows.length} units (${stats.wilaya_polygon} wilaya by polygon, ` +
       `${stats.wilaya_fallback} by nearest, ${stats.swapped} coord swap fixed, ${stats.dropped_oob} dropped OOB)`,
   );
   console.log(
     `  commune: ${stats.commune_name} by the DGPC's name, ${stats.commune_name_near} by that name ` +
-      `within two edits (${stats.commune_name_near_kept} refused, the published commune's own ` +
-      `outline confirms it), ${stats.commune_outline} by containing outline, ` +
+      `within two edits, ${stats.commune_outline} by containing outline, ` +
       `${stats.commune_centroid} by nearest centroid`,
   );
   // Every geometry-vs-DGPC disagreement, so neither category is ever silent.
@@ -389,6 +379,7 @@ async function main() {
   // whole regeneration silently misses its carry keys and re-mints ids. The
   // carry-hit count logged below is the tripwire: a sharp drop from ~880 means
   // diff the ids against the committed data before committing.
+  const committed = readCommitted(OUT_DIR, "protection-civile.json");
   const carryKey = protectionCivileCarryKey;
   const committedKeys = new Set(committed.map(carryKey).filter(Boolean));
   const carryHits = v2.filter((r) => committedKeys.has(carryKey(r))).length;

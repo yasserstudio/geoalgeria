@@ -2,15 +2,13 @@
 // clauses rather than by whichever commune centre happened to be nearest.
 //
 // WHY. The DGPC publishes a commune name (`commune_1`) per unit. 782 of the 880 fold
-// exactly to a commune of the derived wilaya, 84 more land within two edits of exactly
+// exactly to a commune of the derived wilaya, 85 more land within two edits of exactly
 // one, and the rest were joined by nearest commune centre inside the wilaya. A centre
-// is not a boundary: the 2026-10-25 replay of the stored capture moved 13 of them, 12
-// into the commune whose OpenStreetMap outline actually contains them and one, 23-017
-// at [7.60981, 36.8269], OUT of El Bouni (2305), whose outline contains it, and into
-// Sidi Amar (2311), whose outline does not, because Sidi Amar's centre is nearer. The
-// join now asks the containing outline instead (scripts/lib/protection-civile-commune
-// .mjs, over the shared resolver's own containment query), so a nearer centre cannot
-// overrule a containing boundary.
+// is not a boundary: the 2026-10-25 replay of the stored capture moved units into
+// communes that do not contain them simply because a centre was nearer, 23-017 among
+// them. The join now asks the containing outline instead (scripts/lib/
+// protection-civile-commune.mjs, over the shared resolver's own containment query), so
+// a nearer centre cannot overrule a containing boundary.
 //
 // WHY THE TOLERANT NAME MATCH IS HERE TOO. Making the outline beat the centre also made
 // it beat the DGPC's own name wherever a one-character spelling difference had demoted
@@ -18,6 +16,13 @@
 // and 33-007 "إن أميناس" against "إن أمناس": the source names the commune, we simply
 // failed to read it. The name clause now crosses up to two edits when exactly one
 // commune of the wilaya is that close, which puts both back where the DGPC files them.
+//
+// WHERE THE RULE IS KNOWN TO BE WRONG, A LEDGER ROW SAYS SO. 23-017 is the one unit the
+// sources cannot settle, and the decision is a frozen row in
+// quality/overrides/protection-civile.json rather than a clause, because a clause that
+// consulted the package's own published commune would make the output depend on the
+// previous output (ADR 0001 rule 8). The pair of tests at the bottom hold both halves:
+// the rule answers Oued El Aneb, the ledger publishes El Bouni.
 //
 // This file is the ratchet on the published rows. test/protection-civile-commune-join
 // .test.mjs holds the clauses themselves, on fixtures.
@@ -54,9 +59,11 @@ const communesOf = (() => {
 })();
 
 // --- the outline clause: the containing boundary beats the nearer centre --------
+// Both are decided by the outline clause and both moved in this change: the DGPC's name
+// reaches no commune of the wilaya, exactly or within two edits, so geometry answers.
 const OUTLINE_CASES = [
-  { id: "23-017", commune_code: "2305", commune: "El Bouni", not: "2311" },
-  { id: "55-005", commune_code: "5501", commune: "Touggourt", not: "5504" },
+  { id: "06-019", commune_code: "0618", commune: "Fenaia Il Maten", not: "0612" },
+  { id: "53-003", commune_code: "5302", commune: "Inghar", not: "5301" },
 ];
 
 for (const c of OUTLINE_CASES) {
@@ -125,16 +132,41 @@ test("no unit is published in a commune whose outline excludes it while another 
   assert.equal(wrong.length, 14, `unexpected outline disagreements:\n${wrong.join("\n")}`);
 });
 
-test("23-017 is the case the conservative clause protects, not a disagreement", () => {
+// --- 23-017: the rule answers one commune, a frozen ledger row publishes another ----
+const LEDGER = JSON.parse(
+  readFileSync(new URL("../quality/overrides/protection-civile.json", import.meta.url), "utf-8"),
+);
+const ledgerRowFor = (id) => LEDGER.decisions.find((d) => d.record_id === id) ?? null;
+
+test("the rule on its own puts 23-017 in Oued El Aneb, which is why a ledger row exists", () => {
   // The DGPC files 23-017 under "وادي العنب", one edit from Oued El Aneb (2306), and its
-  // own unit name and address say OUED ANEB too. But the point is 65 m OUTSIDE Oued El
-  // Aneb's reduced outline and 86 m inside El Bouni's, where it is published. A match
-  // inside the edit window is an inference about what the source meant, and an
-  // inference must not dislodge a published commune whose own outline confirms it, so
-  // the unit stays in El Bouni and nothing new is published for review.
+  // own unit name and address say OUED ANEB too, so the tolerant name clause answers
+  // 2306. Nothing in the sources contradicts that: the point simply sits 65 m outside
+  // Oued El Aneb's reduced outline and 86 m inside El Bouni's. This asserts the RULE,
+  // not the published row, so the ledger row below can never be quietly redundant.
   const unit = byId.get("23-017");
   const list = communesOf(unit.wilaya_code);
   assert.equal(String(nearestNameMatch(normAr("وادي العنب"), list).code_commune), "2306");
-  assert.equal(unit.commune_code, "2305");
   assert.equal(Number(containingCode(unit.lat, unit.lng)), 2305);
+});
+
+test("the ledger row for 23-017 is applied, and still describes what the rule produces", () => {
+  const row = ledgerRowFor("23-017");
+  assert.ok(row, "quality/overrides/protection-civile.json must carry the 23-017 decision");
+  assert.equal(row.publish_action, "patch");
+  // `expect` is the upstream value the join produces. If a later rule change made the
+  // join answer something else, writePackageV2 would refuse the build; this says the
+  // same thing as a test so the reason is readable.
+  assert.deepEqual(row.expect, { commune_code: "2306", commune: "Oued El Aneb" });
+  assert.deepEqual(row.patch, { commune_code: "2305", commune: "El Bouni" });
+  assert.ok(
+    row.evidence.some((e) => e.url === "https://www.openstreetmap.org/relation/1616108"),
+    "the decision cites El Bouni's own OpenStreetMap relation",
+  );
+
+  const unit = byId.get("23-017");
+  assert.equal(unit.commune_code, "2305", "the published row is the ledger's answer");
+  assert.equal(unit.commune, "El Bouni");
+  assert.equal(unit.review_status, "corrected", "and it carries its review receipt");
+  assert.ok(unit.review_evidence?.length, "with the public evidence URLs alongside");
 });

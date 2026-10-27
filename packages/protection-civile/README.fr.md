@@ -54,7 +54,7 @@ metadata().wilayas_covered; // 69
 
 **Par palier de statut (`statut`) :** UNITE SECONDAIRE 444 · POSTE AVANCE 146 · UNITE DE SECTEUR 132 · UNITE PRINCIPALE 62 · SIEGE DE DIRECTION WILAYA 58 · POSTE DE SECOURS ROUTIER 20 · UNITE MARINE 15 · U.N D'INSTRUCTION ET D'INTERVENTION 1 · DIRECTION GENERALE 1 · CELLULE DE SECURITE 1
 
-Chaque unité porte `tel`, `fax` et `address` ; **866** communes rattachées par le nom publié par la DGPC (**782** exactement, **84** à une différence d'orthographe de deux éditions au plus), **13** par le contour communal qui contient le point et **1** conservée telle que publiée, là où un nom déduit contredisait le contour qui la confirme.
+Chaque unité porte `tel`, `fax` et `address` ; **867** communes rattachées par le nom publié par la DGPC (**782** exactement, **85** à une différence d'orthographe de deux éditions au plus) et **13** par le contour communal qui contient le point ; l'une d'elles, `23-017`, est ensuite replacée par une décision de révision.
 
 ## Formats
 

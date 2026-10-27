@@ -59,7 +59,7 @@ metadata().wilayas_covered; // 69
 
 **By status tier (`statut`):** UNITE SECONDAIRE 444 · POSTE AVANCE 146 · UNITE DE SECTEUR 132 · UNITE PRINCIPALE 62 · SIEGE DE DIRECTION WILAYA 58 · POSTE DE SECOURS ROUTIER 20 · UNITE MARINE 15 · U.N D'INSTRUCTION ET D'INTERVENTION 1 · DIRECTION GENERALE 1 · CELLULE DE SECURITE 1
 
-Every unit carries `tel`, `fax` and `address`; **866** communes were matched by the DGPC's own name (**782** exactly, **84** across a spelling difference of up to two edits), **13** by the commune outline that contains the point and **1** kept as published, where an inferred name disagreed with the outline that confirms it.
+Every unit carries `tel`, `fax` and `address`; **867** communes were matched by the DGPC's own name (**782** exactly, **85** across a spelling difference of up to two edits) and **13** by the commune outline that contains the point; one of them, `23-017`, is then re-placed by a reviewed ledger decision.
 
 ## Formats
 
