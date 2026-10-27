@@ -14,13 +14,22 @@
 // part in. So a dropped sign is a point that sits outside its directorate's wilaya
 // while its MIRROR sits both inside that wilaya AND beside the commune the row names.
 //
-// WHY THE WILAYA ALONE IS NOT ENOUGH. Reflecting a longitude is a jump of up to
-// 2 * lng, which on a wilaya-sized test is unbounded: a grid scan of the 0.1 to 9 E
-// half-plane finds 13 directorates for which SOME mirror lands in their own wilaya,
+// WHY THE WILAYA ALONE IS NOT ENOUGH. Reflecting a longitude moves a point by 2 * lng,
+// and a wilaya-sized test puts no limit on where that lands: a grid scan of the 0.1 to
+// 9 E half-plane finds 13 directorates for which SOME mirror lands in their own wilaya,
 // the worst travelling 1,698 km (27.3 N, 8.6 E sits in wilaya 33 and mirrors into
 // wilaya 37). A Bechar row at 29.6 N, +5.3 E would have mirrored into Beni Abbes and
-// shipped as `exact`. The commune test bounds the jump to a commune-sized radius, and
-// `assertion 3` below is that bound stated as a case the rule must refuse.
+// shipped as `exact`. The commune test bounds the DESTINATION to within
+// MIRROR_COMMUNE_KM of the commune the row names, which is what the refusal case and
+// the boundary pair below pin.
+//
+// IT DOES NOT BOUND THE TRAVEL. Algeria's southern wilayas are wide enough that a long
+// reflection can still land beside the commune a row names: a Tindouf row at 27.6 N,
+// +8.3 E naming Tindouf travels 1,635 km and lands 18.7 km from Tindouf's centre, and a
+// Bechar row at 29.4 N, +3.5 E naming Tabelbala travels 678 km and lands 24.0 km from
+// Tabelbala's centre. Both are recovered, because in both the reflected point is where
+// the row's own two attributions say the establishment is. How far the point moved is
+// not evidence either way; where it arrives is.
 //
 // WHY A RADIUS AND NOT CONTAINMENT IN THE NAMED COMMUNE. Measured over the 32: 23 of
 // their mirrors land inside the outline of the very commune the row names, and 9 land
@@ -31,8 +40,8 @@
 // (`HAI KHEMISTI 14 N 232 BIR EL DJIR ORAN`), `PPSNN` files under Bethioua and sits in
 // Arzew at 6.81 km (`RUE DES JARDINS ARZEW ORAN`), `PN7HO` files under Sidi Chami and
 // sits in Es Senia at 9.35 km (`CITE BAHI AMER ... ES SENIA ORAN`). Containment in the
-// named commune would refuse all nine; the radius accepts them and still refuses the
-// Bechar jump by two orders of magnitude.
+// named commune would refuse all nine; the radius accepts them while still refusing a
+// mirror that arrives nowhere near the commune the row names.
 //
 // THE MIRROR IS NOT A REPO-WIDE RULE EITHER. Asked of every published record against
 // its own `wilaya_code` rather than against a publishing directorate and a named
@@ -207,6 +216,33 @@ test("a mirror that lands in the right wilaya but the wrong commune is refused",
   // And the same row with a commune beside the mirror IS recovered, so the refusal
   // above is the commune test talking and not a disabled rule.
   assert.equal(recoverLongitudeSign(lat, lng, scope, { lat, lng: -lng }), -lng);
+});
+
+test("the bound itself: recovered just inside MIRROR_COMMUNE_KM, refused just outside", () => {
+  // The threshold is the whole rule, so it is pinned from both sides rather than left
+  // to the firing set to imply. Both cases use the same row, the same wilaya scope and
+  // the same mirror; only the named commune's distance from that mirror moves, by two
+  // kilometres across the bound.
+  const lat = 29.6;
+  const lng = 5.3;
+  const scope = scopeOf(8);
+  assert.ok(!scope.has(Number(containingWilayaCode(lat, lng))), "the as-is point must be out of scope");
+  assert.ok(scope.has(Number(containingWilayaCode(lat, -lng))), "the mirror must be in scope");
+
+  // A degree of latitude is ~111.195 km on this sphere, so offsetting the commune's
+  // centre due north of the mirror puts it at a distance we can state exactly.
+  const degPerKm = 1 / ((Math.PI / 180) * 6371.0088);
+  const centreAt = (km) => ({ lat: lat + km * degPerKm, lng: -lng });
+
+  const inside = MIRROR_COMMUNE_KM - 1; // 24 km
+  const outside = MIRROR_COMMUNE_KM + 1; // 26 km
+  assert.equal(recoverLongitudeSign(lat, lng, scope, centreAt(inside)), -lng, `${inside} km must be recovered`);
+  assert.equal(recoverLongitudeSign(lat, lng, scope, centreAt(outside)), lng, `${outside} km must be refused`);
+
+  // Exactly on the bound is deliberately NOT asserted. Constructing a centre at a
+  // stated distance and measuring it back lands a few parts in 10^15 either side of
+  // the threshold, so a test of the equality case would be testing float noise rather
+  // than the rule. A kilometre each way is the contract; the knife edge is not.
 });
 
 test("a row whose commune cannot be resolved is never mirrored", () => {

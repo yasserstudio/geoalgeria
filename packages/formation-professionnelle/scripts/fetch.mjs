@@ -35,7 +35,7 @@
  * guessed. A coordinate the portal did supply is passed through as geo_precision
  * "exact" / geo_method "takwin" unless one of three named exceptions applies: two
  * rows arrive with the axes transposed (SWAPPED_IDS), two carry a pair that locates
- * nothing and are treated as unplaced (NONSENSE_IDS), and 32 of Oran's rows arrive
+ * nothing and are treated as unplaced (NONSENSE_IDS), and a block of Oran's rows arrive
  * with the longitude's minus sign dropped, which recoverLongitudeSign restores on the
  * evidence of the directorate and commune the row names. Nothing else is altered, and
  * no coordinate is invented.
@@ -97,27 +97,35 @@ const round6 = (n) => Math.round(n * 1e6) / 1e6;
  * How near the commune a row names its mirrored point has to land before the mirror
  * reads as a dropped minus sign.
  *
- * WHY THE WILAYA IS NOT THE TEST. Reflecting a longitude moves a point by 2 * lng,
- * which the wilaya alone never bounds. A grid scan of the 0.1 to 9 E half-plane finds
- * 13 directorates for which some mirror lands back inside their own wilaya, the worst
- * travelling 1,698 km (27.3 N, 8.6 E is in wilaya 33 and mirrors into wilaya 37): a
- * Bechar row at 29.6 N, +5.3 E would have mirrored 1,024 km into Beni Abbes country and
- * shipped as `exact`. The commune a row names is a second attribution the coordinate had
- * no part in, and testing against it bounds the jump to a commune-sized radius.
+ * WHY THE WILAYA IS NOT THE TEST. Reflecting a longitude moves a point by 2 * lng, and
+ * the wilaya alone puts no limit on where that lands. A grid scan of the 0.1 to 9 E
+ * half-plane finds 13 directorates for which some mirror lands back inside their own
+ * wilaya, the worst travelling 1,698 km (27.3 N, 8.6 E is in wilaya 33 and mirrors into
+ * wilaya 37): a Bechar row at 29.6 N, +5.3 E would have mirrored 1,024 km into Beni
+ * Abbes country and shipped as `exact`. The commune a row names is a second attribution
+ * the coordinate had no part in, and testing against it bounds the DESTINATION to within
+ * MIRROR_COMMUNE_KM of that commune.
  *
- * MEASURED over the 32 rows the rule fires on: 23 of their mirrors land inside the
- * outline of the very commune the row names, and 9 in a NEIGHBOURING commune of the same
- * wilaya, which is what an address on a commune edge looks like, and what a portal that
- * files a campus under its city looks like. The furthest from its own commune's centre
- * is PN7HO at 9.35 km, filed under Sidi Chami, sitting in Es Senia, address
- * "CITE BAHI AMER ... ES SENIA ORAN"; then PWGFU at 7.15 km (filed under Oran, in Bir El
- * Djir, address "HAI KHEMISTI 14 N 232 BIR EL DJIR ORAN") and PPSNN at 6.81 km (filed
- * under Bethioua, in Arzew, address "RUE DES JARDINS ARZEW ORAN"). So containment in the
- * named commune would refuse nine honest rows, while 25 km holds all 32 with the
- * furthest at a third of the bound and still refuses the Bechar jump by two orders of
- * magnitude. It is also the figure MOVE_CAP_KM already names as the distance past which
- * a moved point stops being about the same place (scripts/review/thresholds.mjs), rather
- * than a number chosen to make this set fit.
+ * IT DOES NOT BOUND THE TRAVEL, and is not meant to: Algeria's southern wilayas are
+ * wide enough that a long reflection can still land next to the commune the row names.
+ * A Tindouf row at 27.6 N, +8.3 E naming Tindouf travels 1,635 km and lands 18.7 km from
+ * Tindouf's centre, and a Bechar row at 29.4 N, +3.5 E naming Tabelbala travels 678 km
+ * and lands 24.0 km from Tabelbala's centre; both are recovered, because in both the
+ * reflected point is where the row's own two attributions say the establishment is. The
+ * distance the point moves is not evidence either way. Where it arrives is.
+ *
+ * MEASURED over the rows the rule fires on in the committed capture: 23 of their mirrors
+ * land inside the outline of the very commune the row names, and 9 in a NEIGHBOURING
+ * commune of the same wilaya, which is what an address on a commune edge looks like, and
+ * what a portal that files a campus under its city looks like. The furthest from its own
+ * commune's centre is PN7HO at 9.35 km, filed under Sidi Chami, sitting in Es Senia,
+ * address "CITE BAHI AMER ... ES SENIA ORAN"; then PWGFU at 7.15 km (filed under Oran,
+ * in Bir El Djir, address "HAI KHEMISTI 14 N 232 BIR EL DJIR ORAN") and PPSNN at 6.81 km
+ * (filed under Bethioua, in Arzew, address "RUE DES JARDINS ARZEW ORAN"). So containment
+ * in the named commune would refuse nine honest rows, while 25 km accepts all of them
+ * with the furthest at a third of the bound. It is also the figure MOVE_CAP_KM already
+ * names as the distance past which a moved point stops being about the same place
+ * (scripts/review/thresholds.mjs), rather than a number chosen to make this set fit.
  */
 export const MIRROR_COMMUNE_KM = 25;
 
@@ -135,8 +143,8 @@ function kmBetween(aLng, aLat, bLng, bLat) {
 /**
  * A longitude that lost its minus sign, restored.
  *
- * The capture ships 32 of Oran's rows with a POSITIVE longitude. The portal names the
- * publishing directorate on every row (IDDFEP 31), the commune string is "<an Oran
+ * The capture ships a block of Oran's rows with a POSITIVE longitude. The portal names
+ * the publishing directorate on every row (IDDFEP 31), the commune string is "<an Oran
  * commune>_وهران" and the address names Oran, but +0.63 lands in Relizane (48) and
  * +0.31 in Mostaganem (27), and those are the codes `containingWilayaCode` then stamps,
  * so the defect hides behind a join that agrees with itself: record 01392's wilaya_code
@@ -149,9 +157,10 @@ function kmBetween(aLng, aLat, bLng, bLat) {
  * MIRROR_COMMUNE_KM of the centre of the commune the row names. A row whose commune
  * resolves to nothing is never mirrored, because no commune to test against is not
  * evidence of a dropped sign. Anything this cannot explain is left exactly as the portal
- * shipped it: over the committed capture it fires on 32 rows, every one from IDDFEP 31,
- * and the 16 Oran rows whose point sits in Mascara are a different defect the mirror
- * leaves alone.
+ * shipped it: over the committed capture every row it fires on is IDDFEP 31's, and the
+ * 16 Oran rows whose point sits in Mascara are a different defect the mirror leaves
+ * alone. test/formation-longitude-sign.test.mjs pins how many rows that is, so the count
+ * lives in one place and cannot drift out of a comment.
  *
  * @param {number|null} lat
  * @param {number|null} lng
