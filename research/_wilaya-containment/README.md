@@ -119,6 +119,14 @@ published row carries its review receipt while the source's own wilaya stays in 
 ledger decision's `expect` block. **303 remain**, and the tables above are the list
 after the correction.
 
+Two groups have left since. #285 re-placed `@geoalgeria/banques`' `agb-tebessa` from
+OpenStreetMap, and #306 made `@geoalgeria/protection-civile`'s commune join ask the
+commune outline that contains the point before the nearest commune centre, which
+re-placed 20 of its 33 rows: 13 remain, the 12 where the DGPC's own `commune_1` names
+a commune the containing outline disputes (still #209, only the source can settle it)
+plus one `kept_low_precision`. **282 remain**; `record-exceptions.json` is the live
+list and the tables above are the 2026-09-29 snapshot.
+
 Nothing was corrected from geometry alone where the record's own commune label named a
 different commune, and nothing whose coordinate is too rounded to join on: those stay
 for the owner, listed per record in `triage-209.md`.

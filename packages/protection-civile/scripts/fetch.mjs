@@ -20,8 +20,10 @@
  * authoritative code wins and commune is re-matched there. The DGPC's published
  * code is kept verbatim in refs.dgpc_wilaya as a receipt. Commune is best-effort:
  * the Arabic commune_1 name is matched against the flagship geoalgeria commune set
- * within the derived wilaya (nearest-centroid fallback). The source carries no
- * French name, so name_fr is left unset; nothing is machine-translated.
+ * within the derived wilaya, then the commune whose OpenStreetMap outline contains
+ * the point (the shared resolver), then the nearest centroid in that wilaya. The
+ * source carries no French name, so name_fr is left unset; nothing is
+ * machine-translated.
  *
  * Usage: node scripts/fetch.mjs            # live pull from dgpc.dz
  *        node scripts/fetch.mjs --if-changed # live pull, rebuild only on a new source hash
@@ -42,6 +44,7 @@ import {
   readRetiredIds,
   dialableContact,
 } from "../../../scripts/lib/v2-transforms.mjs";
+import { containingCommuneCode } from "../../../scripts/lib/build-utils.mjs";
 import {
   assertSafeProtectionCivileRefresh,
   protectionCivileCarryKey,
@@ -267,8 +270,20 @@ function reconcileWilaya(geomCode, codWilaya, objectid, stats) {
   return geomCode;
 }
 
-// Commune within the derived wilaya: first an exact folded-Arabic name match on
-// commune_1, else the nearest commune centroid in that wilaya (best-effort).
+// Commune within the derived wilaya, in three clauses:
+//
+//   1. an exact folded-Arabic name match on the DGPC's own commune_1 (782 of 880),
+//      the source declaring the commune rather than us inferring it
+//   2. the commune whose OpenStreetMap outline CONTAINS the point, asked through the
+//      shared resolver (scripts/lib/commune-resolver.mjs)
+//   3. the nearest commune centroid in that wilaya (best-effort)
+//
+// Clause 2 is why clause 3 almost never runs, and it is there because a centre is not
+// a boundary: the 2026-10-25 replay of the stored capture moved 23-017 at
+// [7.60981, 36.8269] out of El Bouni (2305), whose outline contains it, into
+// Sidi Amar (2311), whose outline does not, because Sidi Amar's centre is nearer.
+// The containing outline is constrained to the derived wilaya's communes, so the
+// wilaya reconciliation above still decides the wilaya and this only picks within it.
 function assignCommune(commune1, wcode, lng, lat, communes, stats) {
   const list = communes.byWilaya.get(wcode);
   if (!list || !list.length) return null;
@@ -276,6 +291,11 @@ function assignCommune(commune1, wcode, lng, lat, communes, stats) {
   if (key) {
     const hit = list.find((c) => c.name_ar_norm === key);
     if (hit) { stats.commune_name++; return hit; }
+  }
+  const inside = containingCommuneCode(lat, lng);
+  if (inside != null) {
+    const hit = list.find((c) => Number(c.code_commune) === Number(inside));
+    if (hit) { stats.commune_outline++; return hit; }
   }
   let best = null, bestD = Infinity;
   const cosLat = Math.cos(lat * DEG);
@@ -353,14 +373,17 @@ async function main() {
   const communes = loadCommunes();
   const stats = {
     swapped: 0, dropped_oob: 0, wilaya_polygon: 0, wilaya_fallback: 0,
-    commune_name: 0, commune_centroid: 0, reconciled: [], reform: [],
+    commune_name: 0, commune_outline: 0, commune_centroid: 0, reconciled: [], reform: [],
   };
   const rows = normalize(features, boundaries, communes, stats);
   console.log(
     `  normalized ${rows.length} units (${stats.wilaya_polygon} wilaya by polygon, ` +
       `${stats.wilaya_fallback} by nearest, ${stats.swapped} coord swap fixed, ${stats.dropped_oob} dropped OOB)`,
   );
-  console.log(`  commune: ${stats.commune_name} by name, ${stats.commune_centroid} by nearest centroid`);
+  console.log(
+    `  commune: ${stats.commune_name} by name, ${stats.commune_outline} by containing outline, ` +
+      `${stats.commune_centroid} by nearest centroid`,
+  );
   // Every geometry-vs-DGPC disagreement, so neither category is ever silent.
   console.log(
     `  wilaya reconciliation: ${stats.reconciled.length} pre-reform conflict(s) resolved to the DGPC code, ` +

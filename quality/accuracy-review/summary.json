@@ -244,11 +244,11 @@
     },
     {
       "path": "packages/protection-civile/data/metadata.json",
-      "sha256": "bbf57322fd71d519348b7d22c59150a92585a815cf90d4d3b1798de5787998e2"
+      "sha256": "ae4e062d0d4cac1264212353484586701cc6bbb097761232aef29b8ca6e13c2e"
     },
     {
       "path": "packages/protection-civile/data/protection-civile.json",
-      "sha256": "05347374e536628e541662da0727e9e42c47dd9f129cbe84b510c8436e8ea1ef"
+      "sha256": "2a9f68e7796a12371540787c618b73d921e6a88d32acd54ae224e331063084e1"
     },
     {
       "path": "packages/protection-civile/data/retired-ids.json",
@@ -1881,7 +1881,7 @@
         },
         "estimated_universe": 880,
         "coverage_pct": 100,
-        "coverage_note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz): 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
+        "coverage_note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz): 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort: the Arabic name match first, then the commune whose OpenStreetMap outline contains the point, then the nearest commune centre.",
         "wilayas_covered": 69,
         "bbox": [
           -8.15059,
@@ -1925,7 +1925,7 @@
         "with_fax": 773,
         "with_address": 880,
         "with_commune": 880,
-        "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 post-reform wilaya boundaries and reconciled with the DGPC's own code: reform remaps into the new 59..69 wilayas keep the geometry code, but where geometry and DGPC disagree among pre-reform codes (a border unit misfiled by a simplified outline) the DGPC's official cod_wilaya wins. The DGPC code is kept in refs.dgpc_wilaya; commune is best-effort (Arabic commune-name match against the geoalgeria commune set, nearest-centroid fallback)."
+        "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 post-reform wilaya boundaries and reconciled with the DGPC's own code: reform remaps into the new 59..69 wilayas keep the geometry code, but where geometry and DGPC disagree among pre-reform codes (a border unit misfiled by a simplified outline) the DGPC's official cod_wilaya wins. The DGPC code is kept in refs.dgpc_wilaya; commune is best-effort: an Arabic commune-name match against the geoalgeria commune set, then the commune whose OpenStreetMap outline contains the point, then the nearest commune centre."
       }
     },
     {
