@@ -115,11 +115,16 @@ coverage-specific fields:
 ```
 
 `id` is a deterministic `{operator}-{coordinate-hash}` key, stable across
-re-fetches. `wilaya_code` joins to GeoAlgeria's current `wilaya_code`. For 31
+re-fetches. `wilaya_code` joins to GeoAlgeria's current `wilaya_code`. For 40
 Mobilis records, `source_wilaya_code` preserves the operator's mother wilaya and
-`commune_code` records the corroborating canonical commune. Fields a given
-operator doesn't provide are `null` (Djezzy has no commune; Mobilis has commune
-FR/AR but no street address; Ooredoo has the commune name only). For Ooredoo,
+`commune_code` records the corroborating canonical commune. `commune_ar` is the
+commune's **official Arabic name from the national commune registry** wherever a
+record resolves to a canonical commune, 3,014 of 4,094; where nothing resolves,
+the operator's own Arabic label is published unchanged. The operators treat that
+column as free text and rewrite it between pulls, so their spelling of it is not
+what ships. Fields a given operator doesn't provide are `null` (Djezzy publishes
+no commune at all; Mobilis and Ooredoo publish a commune name but no street
+address). For Ooredoo,
 `name` is the covered commune and points are `approximate`
 (`operator_commune_point`), one point per covered commune, not a cell site.
 

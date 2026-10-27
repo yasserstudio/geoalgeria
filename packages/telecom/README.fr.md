@@ -121,9 +121,14 @@ propres à la couverture :
 extraction à l'autre. `wilaya_code` permet la jointure avec le `wilaya_code`
 actuel de GeoAlgeria. Pour 40 enregistrements Mobilis, `source_wilaya_code`
 conserve la wilaya mère publiée et `commune_code` identifie la commune canonique
-qui confirme la correction. Les champs qu'un opérateur donné ne fournit pas sont `null` (Djezzy
-n'a pas de commune ; Mobilis a la commune FR/AR mais pas d'adresse ; Ooredoo n'a
-que le nom de la commune). Pour Ooredoo, `name` est la commune couverte et les
+qui confirme la correction. `commune_ar` est le **nom arabe officiel du registre
+national des communes** dès qu'un enregistrement se rattache à une commune
+canonique, 3 014 sur 4 094 ; là où rien ne se rattache, l'étiquette arabe de
+l'opérateur est publiée telle quelle. Les opérateurs traitent cette colonne comme
+du texte libre et la réécrivent d'une extraction à l'autre, leur orthographe
+n'est donc pas celle qui est publiée. Les champs qu'un opérateur donné ne fournit
+pas sont `null` (Djezzy ne publie aucune commune ; Mobilis et Ooredoo publient un
+nom de commune mais pas d'adresse). Pour Ooredoo, `name` est la commune couverte et les
 points sont `approximate` (`operator_commune_point`) : un point par commune
 couverte, pas un site cellulaire.
 
