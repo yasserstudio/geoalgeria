@@ -280,15 +280,15 @@
     },
     {
       "path": "packages/telecom/data/5g-mobilis.json",
-      "sha256": "8f186ca3c5e9eed0cd34ab7f2d3627a638af58ee10a7f1bca422efc4a1c34d4e"
+      "sha256": "4fa297dcc1b371d0e7bbccbd7a4aa3e03ba4ca1d942caf64f564708b605e5b26"
     },
     {
       "path": "packages/telecom/data/5g-ooredoo.json",
-      "sha256": "974fdc984e83b520cb169ae9db3ed1aa20614e571e61d80dc6189f03879b4d0f"
+      "sha256": "1faab080ca7d55b5521e290579961b9e56e4a2f129e58d520d3cc4a3eb7f0cf7"
     },
     {
       "path": "packages/telecom/data/metadata.json",
-      "sha256": "b4f205ef066236378576d79f5f558da09f48793ae5de1b46610342bbf8aeaa41"
+      "sha256": "b40263a8dac1eb9b092ffc232d1e3ab07893b2037fde5177488cf1e9f7c2923c"
     },
     {
       "path": "packages/tourisme/data/attractions.json",
@@ -2118,7 +2118,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records and 6 Mobilis records have their coordinates withheld because the operator's own wilaya and commune labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 40 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value, and 8 more carry a reviewed wilaya correction with the evidence that settled it. `commune_ar` is the official Arabic name from the national commune registry wherever a record resolves to a canonical commune, 3,014 of 4,094; the operator's own Arabic label publishes only where nothing resolves, because the operators rewrite that column between pulls and the 2026-10 Mobilis capture moved 46 records off the registry name. Other commune names remain unlinked free text.",
+        "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records and 6 Mobilis records have their coordinates withheld because the operator's own wilaya and commune labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 40 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value, and 8 more carry a reviewed wilaya correction with the evidence that settled it. `commune_ar` is the official Arabic name from the national commune registry wherever a record resolves to a canonical commune, 3,013 of 4,094; the operator's own Arabic label publishes only where nothing resolves, because the operators rewrite that column between pulls and the 2026-10 Mobilis capture moved 46 records off the registry name. Other commune names remain unlinked free text.",
         "wilayas_covered": 67,
         "bbox": [
           -8.16521,

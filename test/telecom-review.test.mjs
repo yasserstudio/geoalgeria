@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { applyReviewedOverrides, loadBoundaries, pointInWilaya } from "../packages/schema/index.js";
+import { communeResolver } from "../scripts/lib/build-utils.mjs";
 
 const read = (path) => JSON.parse(readFileSync(new URL(path, import.meta.url)));
 const ledger = read("../quality/overrides/telecom.json");
@@ -9,6 +10,7 @@ const mobilisRecords = read("../packages/telecom/data/5g-mobilis.json");
 const djezzyRecords = read("../packages/telecom/data/5g-djezzy.json");
 const metadata = read("../packages/telecom/data/metadata.json");
 const sourceManifest = read("../sources/telecom/manifest.json");
+const capture = read("../sources/telecom/mobilis-5g.json");
 const boundaries = loadBoundaries(read("../packages/dataset/data/geojson/wilaya-boundaries.geojson"));
 
 // Mobilis decisions come in exactly two shapes, and which one a row gets is the
@@ -86,4 +88,78 @@ test("telecom metadata preserves each cached source retrieval date", () => {
   for (const source of metadata.sources) {
     assert.equal(source.retrieved, sourceManifest[`${source.key}-5g`].retrieved);
   }
+});
+
+// The two withholding and correction decisions above say what was concluded. These
+// re-derive WHY, from the committed capture and the unsimplified OpenStreetMap commune
+// outlines, independently of the ledger's prose: a decision whose evidence stops holding
+// fails here even while the ledger still describes it accurately.
+const resolver = communeResolver();
+const rawCoords = (row) => String(row.coordonnes).split(",").map(Number);
+
+test("the withheld Ras El Ma points are a frozen longitude the commune outline refutes", () => {
+  const withheld = ledger.decisions.filter(
+    (item) => item.file === "5g-mobilis.json" && isWithhold(item),
+  );
+  assert.equal(withheld.length, 6);
+
+  // Every withheld point carries the same longitude to the digit, while its latitude
+  // varies: a column that stopped moving, not six surveyed sites.
+  const longitudes = new Set(withheld.map((item) => item.expect.lng));
+  assert.deepEqual([...longitudes], [-1.289]);
+  assert.equal(new Set(withheld.map((item) => item.expect.lat)).size, 6);
+
+  // The same capture's other rows for the same commune carry ordinary distinct
+  // longitudes, which is what makes the frozen one an outlier rather than the operator's
+  // precision for this commune.
+  const captured = capture.filter((row) => row.commune === "RAS EL MA");
+  const others = captured.filter((row) => rawCoords(row)[1] !== -1.289);
+  assert.equal(captured.length, 10);
+  assert.equal(others.length, 4);
+  assert.equal(new Set(others.map((row) => rawCoords(row)[1])).size, 4);
+  for (const row of others) {
+    const lng = rawCoords(row)[1];
+    assert.ok(lng > -0.84 && lng < -0.77, `sibling longitude ${lng} is outside the real cluster`);
+  }
+
+  // And the geometry, asked of the outlines rather than of the wilaya polygons: the
+  // frozen point is not in the commune the operator names, and one of the ordinary ones
+  // is. 2223 Ras El Ma is the commune both the operator's own label and the registry
+  // agree on, which is why the record is kept and only its coordinate is dropped.
+  for (const item of withheld) {
+    assert.equal(resolver.insideOwnOutline(item.expect.lat, item.expect.lng, 2223), false);
+    assert.deepEqual(
+      resolver.containingCommunes(item.expect.lat, item.expect.lng).map((c) => c.code_commune),
+      [1332],
+      "the frozen point is inside El Aricha, which is why it failed the wilaya guard",
+    );
+  }
+  const good = rawCoords(others[0]);
+  assert.equal(resolver.insideOwnOutline(good[0], good[1], 2223), true);
+});
+
+test("the corrected Boudouaou point is inside the commune it names", () => {
+  const decision = ledger.decisions.find((item) => item.record_id === "mobilis-8904ef2ed7");
+  assert.equal(decision.expect.wilaya_code, "16");
+  assert.equal(decision.patch.wilaya_code, "35");
+  const published = mobilisRecords.find((row) => row.id === decision.record_id);
+
+  // Commune 3502 Boudouaou's own outline contains the point, and the registry puts 3502
+  // in wilaya 35: two independent claims against the operator's single "16".
+  assert.equal(resolver.insideOwnOutline(published.lat, published.lng, 3502), true);
+  assert.deepEqual(
+    resolver.containingCommunes(published.lat, published.lng).map((c) => c.code_commune),
+    [3502],
+  );
+  assert.equal(published.wilaya_code, "35");
+  assert.ok(pointInWilaya(published.lng, published.lat, "35", boundaries));
+  assert.ok(!pointInWilaya(published.lng, published.lat, "16", boundaries));
+
+  // The operator is not consistent with itself: every other BOUDOUAOU row in the same
+  // capture files the commune under 35.
+  const siblings = capture.filter(
+    (row) => row.commune === "BOUDOUAOU" && String(row.coordonnes) !== `${published.lat},${published.lng}`,
+  );
+  assert.equal(siblings.length, 8);
+  assert.deepEqual([...new Set(siblings.map((row) => row.wilaya_id))], [35]);
 });

@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { join } from "node:path";
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import test from "node:test";
 
 import {
@@ -12,8 +14,10 @@ import {
 import { COMMUNE_COUNT } from "./lib/commune-carriers.mjs";
 import { NAME_AR_CARRIERS } from "./lib/commune-name-ar-carriers.mjs";
 
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+
 test("the repair set is one reviewed row per commune", () => {
-  assert.equal(NAME_AR_REPAIRS.length, 23);
+  assert.equal(NAME_AR_REPAIRS.length, 25);
   const codes = NAME_AR_REPAIRS.map((r) => r.code_commune);
   assert.equal(new Set(codes).size, codes.length, "a commune is repaired twice");
   for (const repair of NAME_AR_REPAIRS) {
@@ -26,11 +30,26 @@ test("the repair set is one reviewed row per commune", () => {
       );
     }
   }
-  // One row is not a tatweel removal: Souk El Tenine's definite article.
+  // Three rows are not tatweel removals: Souk El Tenine's definite article, and the two
+  // wilaya seat communes whose name_ar disagreed with their own wilaya's name.
   assert.deepEqual(
     NAME_AR_REPAIRS.filter((r) => r.repair !== "tatweel").map((r) => r.code_commune),
-    [608],
+    [608, 3301, 3401],
   );
+  // A seat repair has to agree with the wilaya table it was repaired from, which is the
+  // only reason those two rows changed.
+  const wilayaNameAr = new Map(
+    JSON.parse(readFileSync(join(ROOT, "packages", "dataset", "data", "wilayas.json"), "utf-8")).wilayas.map(
+      (w) => [w.code, w.name_ar],
+    ),
+  );
+  for (const repair of NAME_AR_REPAIRS.filter((r) => r.repair === "seat")) {
+    assert.equal(
+      repair.to,
+      wilayaNameAr.get(repair.wilaya_code),
+      `${repair.name_fr}: a seat repair must land on its own wilaya's name_ar`,
+    );
+  }
 });
 
 for (const [label, read] of NAME_AR_CARRIERS) {

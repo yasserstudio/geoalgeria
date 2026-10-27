@@ -56,7 +56,7 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 
 Covering **67 current wilayas**. The operator maps still use the 58-wilaya
 scheme; 40 Mobilis points are safely reassigned to nine daughter wilayas, and
-five more carry a reviewed wilaya correction with the evidence that settled it.
+eight carry a reviewed wilaya correction with the evidence that settled it.
 
 > **What a point is:** each record is a point published on the operator's own 5G
 > coverage map. Djezzy and Mobilis publish **cell-site** locations; Ooredoo
@@ -119,7 +119,7 @@ re-fetches. `wilaya_code` joins to GeoAlgeria's current `wilaya_code`. For 40
 Mobilis records, `source_wilaya_code` preserves the operator's mother wilaya and
 `commune_code` records the corroborating canonical commune. `commune_ar` is the
 commune's **official Arabic name from the national commune registry** wherever a
-record resolves to a canonical commune, 3,014 of 4,094; where nothing resolves,
+record resolves to a canonical commune, 3,013 of 4,094; where nothing resolves,
 the operator's own Arabic label is published unchanged. The operators treat that
 column as free text and rewrite it between pulls, so their spelling of it is not
 what ships. Fields a given operator doesn't provide are `null` (Djezzy publishes

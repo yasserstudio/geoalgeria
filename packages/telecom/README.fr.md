@@ -57,8 +57,8 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 
 Couvrant **67 wilayas actuelles**. Les cartes des opérateurs utilisent encore le
 découpage à 58 wilayas ; 40 points Mobilis sont réaffectés de façon sûre à neuf
-nouvelles wilayas, et cinq autres portent une correction de wilaya revue avec la
-preuve qui l'a tranchée.
+nouvelles wilayas, et huit portent une correction de wilaya revue avec la preuve
+qui l'a tranchée.
 
 > **Ce qu'est un point :** chaque enregistrement est un point publié sur la
 > carte de couverture 5G de l'opérateur. Djezzy et Mobilis publient des
@@ -123,7 +123,7 @@ actuel de GeoAlgeria. Pour 40 enregistrements Mobilis, `source_wilaya_code`
 conserve la wilaya mère publiée et `commune_code` identifie la commune canonique
 qui confirme la correction. `commune_ar` est le **nom arabe officiel du registre
 national des communes** dès qu'un enregistrement se rattache à une commune
-canonique, 3 014 sur 4 094 ; là où rien ne se rattache, l'étiquette arabe de
+canonique, 3 013 sur 4 094 ; là où rien ne se rattache, l'étiquette arabe de
 l'opérateur est publiée telle quelle. Les opérateurs traitent cette colonne comme
 du texte libre et la réécrivent d'une extraction à l'autre, leur orthographe
 n'est donc pas celle qui est publiée. Les champs qu'un opérateur donné ne fournit

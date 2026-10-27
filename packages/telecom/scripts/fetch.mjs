@@ -22,7 +22,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 import { writeCapture, readCapture, stableStringify } from "../../../scripts/lib/source-store.mjs";
 import { reconcileCurrentWilayaByCommune } from "../../../scripts/lib/current-wilaya-by-commune.mjs";
 
@@ -365,7 +365,9 @@ async function main() {
     const op = s.file.replace(/^5g-/, "").replace(/\.json$/, "");
     return { file: s.file, rows: perOperator[op].map(s.map) };
   });
-  const today = new Date().toISOString().slice(0, 10);
+  // A live pull stamps today; a --cache replay reuses the committed dates, so an
+  // offline rebuild reproduces the committed files whatever day it runs on.
+  const { updated, retrieved } = resolveDates(DATA, OFFLINE);
   // Read after all live extractors finish: writeCapture updates this file, so a
   // module-start snapshot would stamp fresh data with the previous run's date.
   const sourceManifest = JSON.parse(readFileSync(SOURCE_MANIFEST_PATH, "utf8"));
@@ -380,8 +382,8 @@ async function main() {
     dir: DATA,
     files,
     meta: { ...cfg.meta, sources },
-    updated: today,
-    retrieved: today,
+    updated,
+    retrieved,
   });
 
   console.log(`  combined: ${records.length} sites across ${metadata.wilayas_covered} wilayas`);

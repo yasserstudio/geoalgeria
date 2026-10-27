@@ -25,8 +25,12 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { communeArForSite } from "../scripts/lib/telecom-commune-ar.mjs";
-import { canonicalCommuneForCode, canonicalCommuneForCurrentLabel } from "../scripts/lib/commune-index.mjs";
+import {
+  canonicalCommuneForSite,
+  communeArForSite,
+  resolvedByArabicLabelAlone,
+} from "../scripts/lib/telecom-commune-ar.mjs";
+import { canonicalCommuneForCurrentLabel } from "../scripts/lib/commune-index.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (...parts) => JSON.parse(readFileSync(join(ROOT, ...parts), "utf8"));
@@ -34,16 +38,24 @@ const FILES = ["5g-djezzy.json", "5g-mobilis.json", "5g-ooredoo.json"];
 const records = FILES.flatMap((file) => read("packages", "telecom", "data", file));
 const capture = read("sources", "telecom", "mobilis-5g.json");
 
-/** The canonical commune a record resolves to by code or by label, or null. */
-const resolved = (row) =>
-  (row.commune_code ? canonicalCommuneForCode(row.commune_code) : null) ??
-  canonicalCommuneForCurrentLabel(row.wilaya_code, row.commune, row.commune_ar);
+// One definition of "resolves", shared with the generator, so a guard cannot pass
+// against a rule the build no longer applies.
+const resolved = (row) => canonicalCommuneForSite(row);
 
 test("a resolved record carries the registry's Arabic commune name", () => {
   const wrong = records
     .filter((row) => resolved(row) && row.commune_ar !== resolved(row).name_ar)
     .map((row) => `${row.id} ${row.commune}: ${row.commune_ar} is not ${resolved(row).name_ar}`);
   assert.deepEqual(wrong, [], "record(s) published with a commune_ar the registry does not use");
+  // Pinned, so a rule that silently stops resolving anything fails here rather than
+  // passing an empty check.
+  const counts = {
+    registry: records.filter((row) => resolved(row)).length,
+    operatorLabel: records.filter((row) => !resolved(row) && row.commune_ar).length,
+    noLabel: records.filter((row) => !resolved(row) && !row.commune_ar).length,
+  };
+  assert.deepEqual(counts, { registry: 3013, operatorLabel: 56, noLabel: 1025 });
+  assert.equal(counts.registry + counts.operatorLabel + counts.noLabel, records.length);
 });
 
 test("the five labels the 2026-10 Mobilis capture broke are published from the registry", () => {
@@ -90,5 +102,71 @@ test("the helper is what the published data was built with, record for record", 
       row.commune_ar,
       `${row.id} ${row.commune}: the generator's rule no longer produces the published value`,
     );
+  }
+});
+
+// The published records are no use for testing the pins: the generator has already
+// rewritten their commune_ar, so the rewritten value resolves on its own and the pins
+// could be deleted with every assertion above still green. These drive the helper with
+// the label the operator actually published, straight out of the committed capture.
+const mobilisSite = (row) => {
+  const [lat, lng] = String(row.coordonnes).split(",").map(Number);
+  return {
+    wilaya_code: String(row.wilaya_id).padStart(2, "0"),
+    commune: row.commune,
+    commune_ar: row.commune_ar ?? null,
+    commune_code: null,
+    lat,
+    lng,
+  };
+};
+
+test("a pinned operator spelling resolves from the raw captured label", () => {
+  // The registry name each pin resolves to, and the spelling the 2026-10-27 capture
+  // actually carries. Remove PINNED_OPERATOR_COMMUNE and both of these go red.
+  const expected = [
+    { commune: "FIL FILA", captured: "فلفلة فلفلة", nameAr: "فلفلة" },
+    { commune: "BIR EL OUIDEN", captured: "بئر العرش", nameAr: "بين الويدان" },
+  ];
+  for (const { commune, captured, nameAr } of expected) {
+    const rows = capture.filter((row) => row.commune === commune);
+    assert.ok(rows.length, `${commune}: not in the Mobilis capture`);
+    for (const row of rows) {
+      assert.equal(row.commune_ar, captured, `${commune}: the capture no longer carries this spelling`);
+      const site = mobilisSite(row);
+      // Neither the French nor the Arabic label resolves on its own, which is the whole
+      // reason the pin exists.
+      assert.equal(
+        canonicalCommuneForCurrentLabel(site.wilaya_code, site.commune, site.commune_ar),
+        null,
+        `${commune}: now resolves on its own, so the pin should be retired`,
+      );
+      assert.equal(communeArForSite(site), nameAr, `${commune} (${row.id})`);
+    }
+  }
+});
+
+test("an Arabic-only match is corroborated by the record's own point", () => {
+  // The Arabic column is the one the operators rewrite, so a record that resolves on it
+  // alone has its point checked against the resolved commune's outline. 237 records take
+  // that path. One is refused: mobilis-022a883976 calls itself DELY BRAHIM and carries
+  // دالي ابراهيم, the registry name of commune 1623, but its point is inside 1652 El
+  // Achour. It falls back to the operator's label, which is the same string here, so the
+  // published data does not move; what moves is that the record no longer claims a
+  // commune its own coordinate refutes.
+  const arabicOnly = records.filter((row) => resolvedByArabicLabelAlone(row));
+  const refused = arabicOnly.filter((row) => !canonicalCommuneForSite(row));
+  assert.equal(arabicOnly.length, 237);
+  assert.deepEqual(
+    refused.map((row) => row.id),
+    ["mobilis-022a883976"],
+  );
+  // It publishes the operator's own label for its own row, matched on the coordinate
+  // rather than on the commune name: three other DELY BRAHIM rows do sit inside 1623 and
+  // take the registry spelling, so the two differ by a hamza here.
+  for (const row of refused) {
+    const raw = capture.find((item) => item.coordonnes === `${row.lat},${row.lng}`);
+    assert.ok(raw, `${row.id}: not found in the capture by coordinate`);
+    assert.equal(row.commune_ar, raw.commune_ar);
   }
 });
