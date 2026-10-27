@@ -4,7 +4,7 @@
   "name": "Algeria 5G coverage points",
   "alternateName": "Points de couverture 5G en Algérie",
   "identifier": "@geoalgeria/telecom",
-  "description": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 31 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
+  "description": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records and 6 Mobilis records have their coordinates withheld because the operator's own wilaya and commune labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 40 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value, and 8 more carry a reviewed wilaya correction with the evidence that settled it. Other commune names remain unlinked free text.",
   "conditionsOfAccess": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
   "isAccessibleForFree": true,
   "creator": {
@@ -20,7 +20,7 @@
       "box": "19.562361 -8.16521 37.026438 10.027122"
     }
   },
-  "variableMeasured": "3598 records, 66 wilayas",
+  "variableMeasured": "4094 records, 67 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",
@@ -77,7 +77,7 @@
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/telecom/data/geojson/5g-ooredoo.geojson"
     }
   ],
-  "dateModified": "2026-09-10",
+  "dateModified": "2026-10-27",
   "url": "https://geoalgeria.com",
   "sameAs": "https://github.com/yasserstudio/geoalgeria",
   "citation": [

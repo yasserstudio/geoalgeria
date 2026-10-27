@@ -12,9 +12,9 @@
 
 </div>
 
-**3 598 enregistrements de couverture 5G** à travers l'Algérie, publiés à partir des
-cartes de couverture des opérateurs – **Djezzy (1 001)**, **Mobilis (2 421)** et
-**Ooredoo (176)** – avec 3 580 coordonnées publiables et leur rattachement
+**4 094 enregistrements de couverture 5G** à travers l'Algérie, publiés à partir des
+cartes de couverture des opérateurs – **Djezzy (1 001)**, **Mobilis (2 917)** et
+**Ooredoo (176)** – avec 4 070 coordonnées publiables et leur rattachement
 wilaya/commune. Distribué en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -25,9 +25,9 @@ npm install @geoalgeria/telecom
 ```js
 import telecom from "@geoalgeria/telecom";
 
-const sites = telecom.coverage();                       // les 3 598 points
+const sites = telecom.coverage();                       // les 4 094 points
 const djezzy = telecom.coverageByOperator("djezzy");    // 1 001
-const mobilis = telecom.coverageByOperator("mobilis");  // 2 421
+const mobilis = telecom.coverageByOperator("mobilis");  // 2 917
 const ooredoo = telecom.coverageByOperator("ooredoo");  // 176
 
 // Couverture 5G dans une wilaya (jointure sur wilaya_code de GeoAlgeria)
@@ -52,12 +52,13 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 | Opérateur | Points | Granularité | Carte source |
 | --- | --- | --- | --- |
 | Djezzy | **1 001** | site cellulaire | djezzy5g.dz |
-| Mobilis | **2 421** | site cellulaire | mobilis.dz/map/5g |
+| Mobilis | **2 917** | site cellulaire | mobilis.dz/map/5g |
 | Ooredoo | **176** | commune couverte | ooredoo.dz |
 
-Couvrant **66 wilayas actuelles**. Les cartes des opérateurs utilisent encore le
-découpage à 58 wilayas ; 31 points Mobilis sont réaffectés de façon sûre à huit
-nouvelles wilayas.
+Couvrant **67 wilayas actuelles**. Les cartes des opérateurs utilisent encore le
+découpage à 58 wilayas ; 40 points Mobilis sont réaffectés de façon sûre à neuf
+nouvelles wilayas, et cinq autres portent une correction de wilaya revue avec la
+preuve qui l'a tranchée.
 
 > **Ce qu'est un point :** chaque enregistrement est un point publié sur la
 > carte de couverture 5G de l'opérateur. Djezzy et Mobilis publient des
@@ -67,8 +68,9 @@ nouvelles wilayas.
 > **pas une mesure de couverture RF** – considérez-les comme des points de
 > *présence* 5G, et non comme des polygones de couverture.
 
-Dix-huit enregistrements Djezzy restent sans coordonnées : la wilaya et le nom
-du site publiés par l'opérateur contredisent le point affiché. Les justificatifs
+Dix-huit enregistrements Djezzy et six enregistrements Mobilis restent sans
+coordonnées : la wilaya et la commune publiées par l'opérateur contredisent le
+point affiché. Les justificatifs
 de revue sont conservés, tandis que ces faux points sont retirés des champs
 cartographiques et du GeoJSON jusqu'à vérification de coordonnées de remplacement.
 
@@ -117,7 +119,7 @@ propres à la couverture :
 
 `id` est une clé déterministe `{operator}-{coordinate-hash}`, stable d'une
 extraction à l'autre. `wilaya_code` permet la jointure avec le `wilaya_code`
-actuel de GeoAlgeria. Pour 31 enregistrements Mobilis, `source_wilaya_code`
+actuel de GeoAlgeria. Pour 40 enregistrements Mobilis, `source_wilaya_code`
 conserve la wilaya mère publiée et `commune_code` identifie la commune canonique
 qui confirme la correction. Les champs qu'un opérateur donné ne fournit pas sont `null` (Djezzy
 n'a pas de commune ; Mobilis a la commune FR/AR mais pas d'adresse ; Ooredoo n'a

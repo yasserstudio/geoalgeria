@@ -11,14 +11,42 @@ const metadata = read("../packages/telecom/data/metadata.json");
 const sourceManifest = read("../sources/telecom/manifest.json");
 const boundaries = loadBoundaries(read("../packages/dataset/data/geojson/wilaya-boundaries.geojson"));
 
+// Mobilis decisions come in exactly two shapes, and which one a row gets is the
+// review decision itself: correct the wilaya when the operator's own commune and
+// its point agree and only its wilaya label is wrong, and withhold the point when
+// the operator's own commune and wilaya agree and only its point is wrong.
+const mobilisDecisions = ledger.decisions.filter((item) => item.file === "5g-mobilis.json");
+const WITHHOLD_PATCH = ["lat", "lng", "geo_precision", "geo_method"];
+const isWithhold = (decision) => Object.keys(decision.patch).join() === WITHHOLD_PATCH.join();
+
 test("reviewed Mobilis linkage preserves source coordinates and matches the named wilaya", () => {
-  for (const decision of ledger.decisions.filter((item) => item.file === "5g-mobilis.json")) {
+  const linkage = mobilisDecisions.filter((decision) => !isWithhold(decision));
+  assert.equal(linkage.length, 8);
+  for (const decision of linkage) {
     const published = mobilisRecords.find((row) => row.id === decision.record_id);
     assert.deepEqual(Object.keys(decision.patch), ["wilaya_code"]);
     assert.equal(published.lat, decision.expect.lat);
     assert.equal(published.lng, decision.expect.lng);
     assert.equal(published.wilaya_code, decision.patch.wilaya_code);
     assert.ok(pointInWilaya(published.lng, published.lat, published.wilaya_code, boundaries));
+    assert.equal(published.review_status, "corrected");
+  }
+});
+
+test("reviewed Mobilis conflicts retain the coverage record but withhold false coordinates", () => {
+  const withheld = mobilisDecisions.filter(isWithhold);
+  assert.equal(withheld.length, 6);
+  for (const decision of withheld) {
+    const published = mobilisRecords.find((row) => row.id === decision.record_id);
+    assert.ok(published);
+    assert.deepEqual(Object.keys(decision.patch), WITHHOLD_PATCH);
+    // The operator's own attribution is what survives; only the point is dropped.
+    assert.equal(published.wilaya_code, decision.expect.wilaya_code);
+    assert.equal(published.commune, decision.expect.commune);
+    assert.equal(published.lat, null);
+    assert.equal(published.lng, null);
+    assert.equal(published.geo_precision, null);
+    assert.equal(published.geo_method, null);
     assert.equal(published.review_status, "corrected");
   }
 });

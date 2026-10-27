@@ -41,8 +41,11 @@ const read = (...parts) => JSON.parse(readFileSync(join(ROOT, ...parts), "utf8")
 
 // The packages whose ledgers carry a #209 decision, and how many each carries. Stated
 // rather than counted, so dropping a package's ledger fails instead of passing quietly.
-const CORRECTED = { emploi: 17, jeunesse: 15, poste: 3, sports: 15, telecom: 1, tourisme: 5 };
-const TOTAL = 56;
+const CORRECTED = { emploi: 17, jeunesse: 15, poste: 3, sports: 15, telecom: 5, tourisme: 5 };
+// 56 until the 2026-10-27 Mobilis 5G refresh added four: three GOLEA sites the operator still
+// files under 47 Ghardaia for a commune loi 19-12 moved to 58 El Meniaa, and one Chelalet El
+// Adhaoura site still filed under 26 Medea for a commune loi 26-06 moved to 67 Ksar El Boukhari.
+const TOTAL = 60;
 // 303 on 2026-09-29, minus banques' agb-tebessa, re-placed from OpenStreetMap by #285.
 const RESIDUAL = 302;
 // The Journal officiel each reform appears in, which its decisions have to cite.
