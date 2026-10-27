@@ -1,0 +1,34 @@
+{
+  "map-agences": {
+    "bytes": 95926,
+    "note": "Mobilis' own agencies, the union of the 69 per-wilaya responses sorted by id. No id repeats across wilayas and every row carries an xy pair. Captured from an Algerian vantage point on 2026-10-27: mobilis.dz sits behind an Imperva WAF and drops TCP from outside Algeria, so this is the first committed capture of the locator and the only way the package can be rebuilt offline. All 140 requests of the run returned JSON on the first try, so no response is a WAF rejection read as empty. The fetcher does not read sources/ yet; wiring it to readCapture is the conversion step that remains.",
+    "records": 164,
+    "retrieved": "2026-10-27",
+    "sha256": "18f6a2c01c35153dc11e2f7da154c731670fcc8dbcf0aa0f38fbe8f148fc9787",
+    "url": "https://mobilis.dz/map/agencies?cat=Mobilis+Agency&wil={id}&com=0"
+  },
+  "map-categories": {
+    "bytes": 797,
+    "note": "The two locator categories; the fetcher queries agencies by their English names. Captured from an Algerian vantage point on 2026-10-27: mobilis.dz sits behind an Imperva WAF and drops TCP from outside Algeria, so this is the first committed capture of the locator and the only way the package can be rebuilt offline. All 140 requests of the run returned JSON on the first try, so no response is a WAF rejection read as empty. The fetcher does not read sources/ yet; wiring it to readCapture is the conversion step that remains.",
+    "records": 2,
+    "retrieved": "2026-10-27",
+    "sha256": "c38256755133a31d8d1db16830e3e95208fece130b92f377eac279ded33b1404",
+    "url": "https://mobilis.dz/map/categories"
+  },
+  "map-pdv": {
+    "bytes": 4377477,
+    "note": "Third-party approved points of sale, the union of the 69 per-wilaya responses sorted by id. No id repeats across wilayas and xy is null on every one of them, which is the commune-level ceiling the refresh schedule records. Captured from an Algerian vantage point on 2026-10-27: mobilis.dz sits behind an Imperva WAF and drops TCP from outside Algeria, so this is the first committed capture of the locator and the only way the package can be rebuilt offline. All 140 requests of the run returned JSON on the first try, so no response is a WAF rejection read as empty. The fetcher does not read sources/ yet; wiring it to readCapture is the conversion step that remains.",
+    "records": 12180,
+    "retrieved": "2026-10-27",
+    "sha256": "44b4c5c9ae8703e960dd6d7923e794c0c32f486b5607110a3c5ed61ba04d2987",
+    "url": "https://mobilis.dz/map/agencies?cat=Approved+Agency&wil={id}&com=0"
+  },
+  "map-wilayas": {
+    "bytes": 3554,
+    "note": "Wilaya list behind the locator, Arabic labels with Mobilis' own ids (59 to 69 do not follow the official codes, which is why canonicalWilayaCodes joins on the label). Captured from an Algerian vantage point on 2026-10-27: mobilis.dz sits behind an Imperva WAF and drops TCP from outside Algeria, so this is the first committed capture of the locator and the only way the package can be rebuilt offline. All 140 requests of the run returned JSON on the first try, so no response is a WAF rejection read as empty. The fetcher does not read sources/ yet; wiring it to readCapture is the conversion step that remains.",
+    "records": 69,
+    "retrieved": "2026-10-27",
+    "sha256": "7f2d4adcc20ba0890cf06e52cb129199195816e9356f9e738a83ba2f730bff46",
+    "url": "https://mobilis.dz/map/wilayas"
+  }
+}

@@ -88,6 +88,29 @@ from the stored URL, which would otherwise churn the whole capture on every
 re-fetch. The trade-off of projecting at parse time is that a parser fix is not
 exercised by a `--cache` rebuild; re-run live once after changing one.
 
+`sante` and `mobilis` hold captures ahead of their fetchers, taken during an
+Algerian VPN window on 2026-10-27. Both hosts drop TCP from outside Algeria, so
+until that window neither package could be rebuilt offline at all: `sante` had
+no raw capture anywhere in the repository. `sante` holds the two sante.gov.dz
+WordPress REST pulls `fetchMSP()` makes, de-duplicated by post id and paged the
+same way it pages them. `mobilis` holds the three locator endpoints its own
+`main()` requests, with the per-wilaya agency responses flattened and sorted by
+id because the rows carry their own `wilaya_id` and the grouping is request
+shape rather than data. Both fetchers still write and read the gitignored
+`research/<pkg>/` pulls, so pointing them at `readCapture` is the conversion
+step that remains; the captures are already the exact payloads they request, so
+that switch is a code change and not another window.
+
+In the same window `https://dgpc.dz/dgpc2/unite.geojson` answered HTTP 500, then
+200 on a retry with a browser User-Agent, and returned the same 880 units as the
+committed `protection-civile/dgpc-units.json`: compared by `objectid` the two
+payloads are identical, and only the hash moved
+(`ac66bc1e9c...` against the stored `fc916d0559...`) because the publisher
+varies the feature order between responses. Nothing was promoted and no second
+capture was committed, since it would have been 653 KB of reordering noise. The
+DGPC fetcher sorting its features by `objectid` before capturing would make that
+order invisible, as the sorting rule above intends.
+
 Remaining packages convert as they are
 next touched — their raw pulls still land in gitignored `research/<pkg>/`
 until then.
