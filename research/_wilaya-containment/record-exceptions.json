@@ -4,8 +4,8 @@
   "ref": "origin/main",
   "note": "Published records their own geometry contradicts. `kind: commune_outline` is a coordinate outside the OpenStreetMap outline of the commune the record names; `kind: wilaya_polygon` is a record with no commune outline to check whose coordinate is inside a different wilaya's shipped polygon. Every row is a defect, not a tolerance: `rule` names the clause of scripts/lib/commune-resolver.mjs that decides it today, and the group's reason says which two claims disagree and who can settle it. `pre_existing` is recomputed by running the same rule over the same file at origin/main, so a row this batch created cannot hide among the rows it inherited (those are yasserstudio/geoalgeria.com#209). Records with no commune outline whose coordinate is inside NO wilaya polygon are not listed and not failed, because the 69 shipped outlines are display-grade (mapshaper `dp 2% keep-shapes`, a 3.4 km median vertex gap) and cut inside the shoreline. Regenerate with `node scripts/build-wilaya-containment-exceptions.mjs --write`.",
   "files_checked": 46,
-  "count": 282,
-  "pre_existing": 282,
+  "count": 284,
+  "pre_existing": 284,
   "created_by_this_batch": 0,
   "groups": [
     {
@@ -1751,15 +1751,15 @@
     {
       "file": "packages/protection-civile/data/protection-civile.json",
       "package": "protection-civile",
-      "count": 13,
-      "pre_existing": 13,
+      "count": 15,
+      "pre_existing": 15,
       "created_by_this_batch": 0,
       "kinds": {
-        "outside_own_commune_outline": 13
+        "outside_own_commune_outline": 15
       },
       "rules": {
         "kept_low_precision": 1,
-        "commune_outline": 12
+        "commune_outline": 14
       },
       "reason": "the unit's wilaya and commune are the DGPC's own fields in dgpc.dz/dgpc2/unite.geojson, shipped beside the DGPC's own coordinate; both are the same authority's claim and correcting either needs the DGPC",
       "records": [
@@ -1808,6 +1808,18 @@
           "rule": "commune_outline",
           "kind": "outside_own_commune_outline",
           "containing_commune": 1632,
+          "containing_wilaya": "16",
+          "pre_existing": true
+        },
+        {
+          "id": "16-048",
+          "declared_wilaya": "16",
+          "declared_commune": "1622",
+          "lng": 3.00313,
+          "lat": 36.7453,
+          "rule": "commune_outline",
+          "kind": "outside_own_commune_outline",
+          "containing_commune": 1628,
           "containing_wilaya": "16",
           "pre_existing": true
         },
@@ -1869,6 +1881,18 @@
           "kind": "outside_own_commune_outline",
           "containing_commune": 3203,
           "containing_wilaya": "32",
+          "pre_existing": true
+        },
+        {
+          "id": "33-007",
+          "declared_wilaya": "33",
+          "declared_commune": "3306",
+          "lng": 8.87227,
+          "lat": 28.6821,
+          "rule": "commune_outline",
+          "kind": "outside_own_commune_outline",
+          "containing_commune": 3304,
+          "containing_wilaya": "33",
           "pre_existing": true
         },
         {

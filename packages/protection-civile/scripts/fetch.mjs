@@ -44,7 +44,12 @@ import {
   readRetiredIds,
   dialableContact,
 } from "../../../scripts/lib/v2-transforms.mjs";
-import { containingCommuneCode } from "../../../scripts/lib/build-utils.mjs";
+import { communeResolver } from "../../../scripts/lib/build-utils.mjs";
+import {
+  COMMUNE_JOIN_CLAUSES,
+  createCommuneJoin,
+  normAr,
+} from "../../../scripts/lib/protection-civile-commune.mjs";
 import {
   assertSafeProtectionCivileRefresh,
   protectionCivileCarryKey,
@@ -175,19 +180,6 @@ const cleanTel = (v) => {
   if (!s) return null;
   return dialableContact(s.replace(/\s+/g, ""));
 };
-// Arabic name folding for commune matching (strip diacritics/tatweel, fold
-// alef/ya/ta-marbuta variants), same recipe as the sante generator.
-function normAr(s) {
-  if (!s) return "";
-  s = s.replace(/[ً-ْٰـ]/g, "");
-  s = s
-    .replace(/[أإآ]/g, "ا")
-    .replace(/ى/g, "ي")
-    .replace(/ة/g, "ه")
-    .replace(/ؤ/g, "و")
-    .replace(/ئ/g, "ي");
-  return s.replace(/[^؀-ۿ ]/g, " ").replace(/\s+/g, " ").trim();
-}
 const inBox = (lng, lat) =>
   Number.isFinite(lat) && Number.isFinite(lng) && lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
 
@@ -270,47 +262,27 @@ function reconcileWilaya(geomCode, codWilaya, objectid, stats) {
   return geomCode;
 }
 
-// Commune within the derived wilaya, in three clauses:
-//
-//   1. an exact folded-Arabic name match on the DGPC's own commune_1 (782 of 880),
-//      the source declaring the commune rather than us inferring it
-//   2. the commune whose OpenStreetMap outline CONTAINS the point, asked through the
-//      shared resolver (scripts/lib/commune-resolver.mjs)
-//   3. the nearest commune centroid in that wilaya (best-effort)
-//
-// Clause 2 is why clause 3 almost never runs, and it is there because a centre is not
-// a boundary: the 2026-10-25 replay of the stored capture moved 23-017 at
-// [7.60981, 36.8269] out of El Bouni (2305), whose outline contains it, into
-// Sidi Amar (2311), whose outline does not, because Sidi Amar's centre is nearer.
-// The containing outline is constrained to the derived wilaya's communes, so the
-// wilaya reconciliation above still decides the wilaya and this only picks within it.
-function assignCommune(commune1, wcode, lng, lat, communes, stats) {
-  const list = communes.byWilaya.get(wcode);
-  if (!list || !list.length) return null;
-  const key = normAr(commune1);
-  if (key) {
-    const hit = list.find((c) => c.name_ar_norm === key);
-    if (hit) { stats.commune_name++; return hit; }
-  }
-  const inside = containingCommuneCode(lat, lng);
-  if (inside != null) {
-    const hit = list.find((c) => Number(c.code_commune) === Number(inside));
-    if (hit) { stats.commune_outline++; return hit; }
-  }
-  let best = null, bestD = Infinity;
-  const cosLat = Math.cos(lat * DEG);
-  for (const c of list) {
-    const dx = (c.lng - lng) * cosLat;
-    const dy = c.lat - lat;
-    const d = dx * dx + dy * dy;
-    if (d < bestD) { bestD = d; best = c; }
-  }
-  stats.commune_centroid++;
-  return best;
-}
+// Commune within the derived wilaya. The rule, its clause order and the reasons for it
+// are scripts/lib/protection-civile-commune.mjs, so they can be tested on fixtures
+// (test/protection-civile-commune-join.test.mjs); this is the binding to the geometry
+// this repository ships. The containment query is the shared resolver's own, and it is
+// GLOBAL: a commune outline is a finer claim than any wilaya polygon, so the search
+// asks the whole country and the derived wilaya filters the answer. Bound lazily
+// because the outline file is 3.7 MB and a `--help` run must not pay for it.
+let COMMUNE_JOIN = null;
+const assignCommune = (...args) => {
+  COMMUNE_JOIN ??= createCommuneJoin({
+    containingCommunes: (lat, lng) => communeResolver().containingCommunes(lat, lng),
+  });
+  return COMMUNE_JOIN(...args);
+};
 
 // --- normalize DGPC features into internal rows ----------------------------
-function normalize(features, boundaries, communes, stats) {
+// `publishedByObjectid` is the committed units keyed by the DGPC object id, which is
+// the same carry key the ids travel on. The join reads only the published
+// `commune_code`, and only to refuse to dislodge one its own outline confirms; an
+// absent or first-ever build simply passes null and the rule degrades to the source.
+function normalize(features, boundaries, communes, stats, publishedByObjectid = new Map()) {
   const rows = [];
   for (const f of features) {
     const p = f.properties || {};
@@ -323,7 +295,8 @@ function normalize(features, boundaries, communes, stats) {
 
     const geomCode = assignWilaya(lng, lat, boundaries, communes, stats);
     const wilaya_code = reconcileWilaya(geomCode, padWilaya(p.cod_wilaya), p.objectid, stats);
-    const commune = assignCommune(p.commune_1, wilaya_code, lng, lat, communes, stats);
+    const published = publishedByObjectid.get(String(p.objectid)) ?? null;
+    const commune = assignCommune(p.commune_1, wilaya_code, lng, lat, communes, stats, published);
     rows.push({
       objectid: p.objectid,
       cod_wilaya: str(p.cod_wilaya),
@@ -371,17 +344,27 @@ async function main() {
 
   const boundaries = loadBoundaryIndex();
   const communes = loadCommunes();
+  // The committed units, read once: the commune join needs the published commune_code
+  // (clause 2 refuses to dislodge one the outlines confirm) and the id carry-over
+  // below needs the same rows.
+  const committed = readCommitted(OUT_DIR, "protection-civile.json");
+  const publishedByObjectid = new Map(
+    committed.filter((u) => u.refs?.dgpc != null).map((u) => [String(u.refs.dgpc), u]),
+  );
   const stats = {
     swapped: 0, dropped_oob: 0, wilaya_polygon: 0, wilaya_fallback: 0,
-    commune_name: 0, commune_outline: 0, commune_centroid: 0, reconciled: [], reform: [],
+    ...Object.fromEntries(COMMUNE_JOIN_CLAUSES.map((clause) => [clause, 0])),
+    reconciled: [], reform: [],
   };
-  const rows = normalize(features, boundaries, communes, stats);
+  const rows = normalize(features, boundaries, communes, stats, publishedByObjectid);
   console.log(
     `  normalized ${rows.length} units (${stats.wilaya_polygon} wilaya by polygon, ` +
       `${stats.wilaya_fallback} by nearest, ${stats.swapped} coord swap fixed, ${stats.dropped_oob} dropped OOB)`,
   );
   console.log(
-    `  commune: ${stats.commune_name} by name, ${stats.commune_outline} by containing outline, ` +
+    `  commune: ${stats.commune_name} by the DGPC's name, ${stats.commune_name_near} by that name ` +
+      `within two edits (${stats.commune_name_near_kept} refused, the published commune's own ` +
+      `outline confirms it), ${stats.commune_outline} by containing outline, ` +
       `${stats.commune_centroid} by nearest centroid`,
   );
   // Every geometry-vs-DGPC disagreement, so neither category is ever silent.
@@ -406,7 +389,6 @@ async function main() {
   // whole regeneration silently misses its carry keys and re-mints ids. The
   // carry-hit count logged below is the tripwire: a sharp drop from ~880 means
   // diff the ids against the committed data before committing.
-  const committed = readCommitted(OUT_DIR, "protection-civile.json");
   const carryKey = protectionCivileCarryKey;
   const committedKeys = new Set(committed.map(carryKey).filter(Boolean));
   const carryHits = v2.filter((r) => committedKeys.has(carryKey(r))).length;
