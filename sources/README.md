@@ -63,7 +63,8 @@ human review.
 ## Status
 
 Converted so far: `telecom`, `ecoles` (reference implementations,
-2026-08-03), `protection-civile`, `buses`, and `livraison`. The buses capture is a reviewed,
+2026-08-03), `protection-civile`, `buses`, `livraison`, `sports`, and
+`jeunesse`. The buses capture is a reviewed,
 trimmed OSM projection with its non-atomic Overpass receipts preserved. Bus
 Operator captures are rights-safe projections: they retain only factual fields
 used by the package plus upstream URLs, retrieval timestamps, byte counts and
@@ -87,6 +88,17 @@ parameters (`g_ep`, `skid`, `entry`, `coh`, `lucs`, `utm_source`) are stripped
 from the stored URL, which would otherwise churn the whole capture on every
 re-fetch. The trade-off of projecting at parse time is that a parser fix is not
 exercised by a `--cache` rebuild; re-run live once after changing one.
+
+The two MJS GeoServer captures (`sports/sig-infrastructures.json`,
+`jeunesse/sig-etablissements.json`) keep the geometry and every source property
+as received, and drop one field: the per-request feature id GeoServer mints
+(`<layer>.fid-5ffd9fe9_1a17f142549_80d`). Two pulls 90 seconds apart changed all
+2,337 of them, so keeping it would make every no-change refresh a whole-file
+diff; without it those two pulls capture byte-identically. Features are sorted by
+`properties.id`, the stable per-record UUID, so a server-side reorder stays a
+no-op. Both layers answer only from an Algerian vantage point, which is the
+reason the capture matters more here than elsewhere: with it, the refresh is
+reviewed and rebuilt offline long after the window closes.
 
 Remaining packages convert as they are
 next touched — their raw pulls still land in gitignored `research/<pkg>/`

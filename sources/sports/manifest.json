@@ -1,0 +1,10 @@
+{
+  "sig-infrastructures": {
+    "bytes": 12341662,
+    "note": "Trimmed projection: GeoServer's per-request feature id is dropped (it changes on every pull) and features are sorted by the stable properties.id. Geometry and all source properties are kept as received.",
+    "records": 5234,
+    "retrieved": "2026-10-27",
+    "sha256": "549996d0261856cb5a2b8e4ea04e9d4a089c53cd3206d47b57c337642d830d57",
+    "url": "https://sig.mjs.gov.dz/api/v1.0/geoserver/public/wms?service=WMS&version=1.1.1&request=GetMap&layers=infrastructures_sportives&bbox=-9,18,12,38&width=1&height=1&srs=EPSG:4326&format=application/json;type=geojson"
+  }
+}

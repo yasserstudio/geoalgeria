@@ -1,0 +1,10 @@
+{
+  "sig-etablissements": {
+    "bytes": 6001342,
+    "note": "Trimmed projection: GeoServer's per-request feature id is dropped (it changes on every pull) and features are sorted by the stable properties.id. Geometry and all source properties are kept as received.",
+    "records": 2337,
+    "retrieved": "2026-10-27",
+    "sha256": "62f0d255694fa5b34325e742c459cba724619f2754b81b1ae11f5caff952bb5b",
+    "url": "https://sig.mjs.gov.dz/api/v1.0/geoserver/public/wms?service=WMS&version=1.1.1&request=GetMap&layers=etablissements_de_jeunes&bbox=-9,18,12,38&width=1&height=1&srs=EPSG:4326&format=application/json;type=geojson"
+  }
+}

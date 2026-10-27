@@ -17,7 +17,12 @@
  * them to numeric wilaya_code using a normalisation map built from the flagship
  * dataset's 69 wilayas.
  *
+ * The GeoServer answers only from an Algerian vantage point, so every pull is
+ * captured under sources/sports/ and the package rebuilds from that capture
+ * offline. The capture's exact shape: scripts/lib/mjs-sig.mjs.
+ *
  * Usage: node scripts/fetch.mjs
+ *        node scripts/fetch.mjs --cache    # rebuild from sources/sports/sig-infrastructures.json
  */
 
 import { readFileSync } from "node:fs";
@@ -30,24 +35,18 @@ import {
   readCommitted,
   readRetiredIds,
   loadReviewLedger,
+  resolveDates,
 } from "../../../scripts/lib/v2-transforms.mjs";
 import { foldNameDashes } from "../../../scripts/lib/no-em-dash.mjs";
+import { fetchMjsLayer, readMjsCapture, MJS_SOURCE } from "../../../scripts/lib/mjs-sig.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
 const DATASET = join(__dirname, "..", "..", "dataset", "data");
 
-const WMS_URL =
-  "https://sig.mjs.gov.dz/api/v1.0/geoserver/public/wms?" +
-  "service=WMS&version=1.1.1&request=GetMap" +
-  "&layers=infrastructures_sportives" +
-  "&bbox=-9,18,12,38&width=1&height=1&srs=EPSG:4326" +
-  "&format=application/json;type=geojson";
-
-const SOURCE = "https://sig.mjs.gov.dz/dashboard/viewer";
-const UA =
-  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
-  "(KHTML, like Gecko) Chrome/120.0 Safari/537.36";
+const LAYER = "infrastructures_sportives";
+const CAPTURE = "sig-infrastructures";
+const SOURCE = MJS_SOURCE;
 
 const MIN_EXPECTED = 4000;
 
@@ -310,21 +309,15 @@ export function assignStableIds(
 
 // --- main ------------------------------------------------------------------
 async function main() {
-  console.log("Fetching MJS sports infrastructure from GeoServer…");
-  const res = await fetch(WMS_URL, {
-    headers: { "User-Agent": UA },
-    signal: AbortSignal.timeout(60_000),
-  });
-  if (!res.ok) throw new Error(`WMS request failed: HTTP ${res.status}`);
-  const raw = await res.json();
-
-  if (!raw.features || !Array.isArray(raw.features)) {
-    throw new Error("unexpected response: no features array");
-  }
-  if (raw.features.length < MIN_EXPECTED) {
-    throw new Error(`only ${raw.features.length} features; expected >= ${MIN_EXPECTED}`);
-  }
-  console.log(`  fetched ${raw.features.length} raw features`);
+  const OFFLINE = process.argv.includes("--cache");
+  const features = OFFLINE
+    ? readMjsCapture({ pkg: "sports", capture: CAPTURE, minExpected: MIN_EXPECTED })
+    : await fetchMjsLayer({
+        pkg: "sports",
+        capture: CAPTURE,
+        layer: LAYER,
+        minExpected: MIN_EXPECTED,
+      });
 
   const wilayaMap = buildWilayaMap();
   const facilities = [];
@@ -332,7 +325,7 @@ async function main() {
   const unknownTypes = new Set();
   const unmappedWilayas = new Set();
 
-  for (const feat of raw.features) {
+  for (const feat of features) {
     const p = feat.properties;
     if (p.deleted === true || p.deleted === "true") continue;
 
@@ -428,7 +421,9 @@ async function main() {
 
   // --- emit v2 via the shared writer ---
   const cfg = MIGRATIONS.sports;
-  const today = new Date().toISOString().slice(0, 10);
+  // A live pull stamps today; a --cache replay reuses the committed dates so an
+  // offline rebuild reproduces the committed metadata instead of redating it.
+  const { updated, retrieved } = resolveDates(DATA, OFFLINE);
   const v2 = facilities.map(cfg.map);
   const committed = readCommitted(DATA, "facilities.json");
   const retiredIds = readRetiredIds(DATA);
@@ -443,8 +438,8 @@ async function main() {
     dir: DATA,
     files: [{ file: "facilities.json", rows: v2 }],
     meta: cfg.meta,
-    updated: today,
-    retrieved: today,
+    updated,
+    retrieved,
     retiredIds,
   });
 
