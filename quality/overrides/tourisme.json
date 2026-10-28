@@ -137,6 +137,118 @@
           "checked_at": "2026-10-01"
         }
       ]
+    },
+    {
+      "file": "historic.json",
+      "record_id": "historic-91",
+      "status": "verified",
+      "publish_action": "keep",
+      "reviewer": "owner",
+      "reviewed_at": "2026-10-28",
+      "notes": "Review-queue candidate rejected; the published point is kept. OpenStreetMap node 1212738075 (historic=ruins, name=Rapidium) is 1.055 km from the published point. The published point is copied from Wikidata Q109626723 to the metre, so it states nothing of its own and the node has no independent Vote behind it. Queued by research/_arcminute-288/review-2026-10-27.json under ADR 0001 rule 5, ruled on by the Owner on 2026-10-28 (private tracker #301): the candidate is closed, not queued, and does not return to the Review queue.",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 36.1333306,
+        "lng": 3.4333306,
+        "geo_precision": "approximate"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/1212738075",
+          "checked_at": "2026-10-27",
+          "note": "version 1, last edited 2011-03-22T02:08:34Z; 1.055 km from the published point"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Special:EntityData/Q109626723.json",
+          "checked_at": "2026-10-27",
+          "note": "the P625 statement the published point was copied from, with no reference attached"
+        }
+      ]
+    },
+    {
+      "file": "parks.json",
+      "record_id": "park-25",
+      "status": "verified",
+      "publish_action": "keep",
+      "reviewer": "owner",
+      "reviewed_at": "2026-10-28",
+      "notes": "Review-queue candidate rejected; the published point is kept. The centroid of OpenStreetMap way 324041581 is 3.369 km from the published point. A national park is an area, so its centroid is approximate exactly as the published point is and the move buys no precision. Queued by research/_arcminute-288/review-2026-10-27.json under ADR 0001 rule 5, ruled on by the Owner on 2026-10-28 (private tracker #301): the candidate is closed, not queued, and does not return to the Review queue.",
+      "expect": {
+        "wilaya_code": "05",
+        "commune_code": null,
+        "lat": 35.5833333,
+        "lng": 6.0333333,
+        "geo_precision": "approximate"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/way/324041581",
+          "checked_at": "2026-10-27",
+          "note": "version 26, last edited 2023-11-22T19:47:10Z; centroid 3.369 km from the published point"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2664184.json",
+          "checked_at": "2026-10-27",
+          "note": "P143 imported from English Wikipedia, precision 1 arcminute"
+        }
+      ]
+    },
+    {
+      "file": "parks.json",
+      "record_id": "park-29",
+      "status": "verified",
+      "publish_action": "keep",
+      "reviewer": "owner",
+      "reviewed_at": "2026-10-28",
+      "notes": "Review-queue candidate rejected; the published point is kept. The centroid of OpenStreetMap way 522229283 is 2.858 km from the published point. A national park is an area, so its centroid is approximate exactly as the published point is and the move buys no precision. Queued by research/_arcminute-288/review-2026-10-27.json under ADR 0001 rule 5, ruled on by the Owner on 2026-10-28 (private tracker #301): the candidate is closed, not queued, and does not return to the Review queue.",
+      "expect": {
+        "wilaya_code": "15",
+        "commune_code": null,
+        "lat": 36.4667,
+        "lng": 4.1333,
+        "geo_precision": "approximate"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/way/522229283",
+          "checked_at": "2026-10-27",
+          "note": "version 25, last edited 2026-08-08T12:37:07Z; centroid 2.858 km from the published point"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2580089.json",
+          "checked_at": "2026-10-27",
+          "note": "P854, the UNESCO MAB directory entry for the biosphere reserve"
+        }
+      ]
+    },
+    {
+      "file": "parks.json",
+      "record_id": "park-31",
+      "status": "verified",
+      "publish_action": "keep",
+      "reviewer": "owner",
+      "reviewed_at": "2026-10-28",
+      "notes": "Review-queue candidate rejected; the published point is kept. The centroid of OpenStreetMap relation 5424406, the object Wikidata P402 names for this park, is 8.151 km from the published point. A national park is an area, so its centroid is approximate exactly as the published point is and the move buys no precision. Queued by research/_arcminute-288/review-2026-10-27.json under ADR 0001 rule 5, ruled on by the Owner on 2026-10-28 (private tracker #301): the candidate is closed, not queued, and does not return to the Review queue.",
+      "expect": {
+        "wilaya_code": "36",
+        "commune_code": null,
+        "lat": 36.8166667,
+        "lng": 8.4166667,
+        "geo_precision": "approximate"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/relation/5424406",
+          "checked_at": "2026-10-27",
+          "note": "version 20, last edited 2023-06-21T09:53:24Z; centroid 8.151 km from the published point"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Special:EntityData/Q650992.json",
+          "checked_at": "2026-10-27",
+          "note": "P143 imported from English Wikipedia, precision 1 arcminute; P402 names OSM relation 5424406"
+        }
+      ]
     }
   ]
 }

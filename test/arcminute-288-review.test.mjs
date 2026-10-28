@@ -10,10 +10,18 @@
 // outcome: a threshold moved, a rule changed, or the file edited away from its own
 // evidence.
 //
-// AND THAT THE RECORDS DID NOT MOVE. All four are QUEUED, not decided: under ADR 0001
-// rule 5 a queued row keeps its published point until the Owner rules on it, so the
-// shipped points and their geo_precision are asserted here to be exactly what they
-// were. "Queued" is the whole claim this file makes; nothing in it closes anything.
+// AND THAT THE RECORDS DID NOT MOVE. All four are QUEUED by the run, not decided by
+// it: under ADR 0001 rule 5 a queued row keeps its published point until the Owner
+// rules on it, so the shipped points and their geo_precision are asserted here to be
+// exactly what they were. "Queued" is the whole claim the run file makes; nothing in
+// it closes anything.
+//
+// THE OWNER CLOSED ALL FOUR ON 2026-10-28, rejecting the re-place and keeping the
+// published point. That ruling is a ledger row and not an edit to the frozen run (ADR
+// 0001 rule 10: the ledger, not the page, is the record), so the last test below ties
+// each record of the run to its row in quality/overrides/tourisme.json and the two
+// cannot drift apart. A `keep` row changes no published field, which is why the points
+// asserted above are still the points the run queued.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -87,5 +95,34 @@ test("all four still ship the point and the precision they were queued with", ()
     assert.deepEqual([record.lng, record.lat], r.published_point, `${r.record_id}: the published point moved`);
     assert.equal(record.geo_precision, "approximate", `${r.record_id}: precision`);
     assert.equal(record.wilaya_code, r.wilaya_code, `${r.record_id}: wilaya_code`);
+  }
+});
+
+test("the Owner's 2026-10-28 rejection closes all four in the tourisme ledger", () => {
+  const ledger = read("quality", "overrides", "tourisme.json");
+  for (const r of review.records) {
+    const row = ledger.decisions.find(
+      (d) => d.record_id === r.record_id && d.file === r.file.split("/").pop(),
+    );
+    assert.ok(row, `${r.record_id}: no ledger row closes this candidate`);
+    assert.equal(row.publish_action, "keep", `${r.record_id}: the published point is kept`);
+    assert.equal(row.status, "verified", `${r.record_id}: status`);
+    assert.equal(row.reviewer, "owner", `${r.record_id}: the Owner is the reviewer`);
+    assert.equal(row.reviewed_at, "2026-10-28", `${r.record_id}: reviewed_at`);
+    // The row states the point it keeps, so a later upstream move makes it stale
+    // instead of silently covering a different coordinate.
+    assert.equal(row.expect.lng, r.published_point[0], `${r.record_id}: expect.lng`);
+    assert.equal(row.expect.lat, r.published_point[1], `${r.record_id}: expect.lat`);
+    assert.equal(row.expect.wilaya_code, r.wilaya_code, `${r.record_id}: expect.wilaya_code`);
+    assert.equal(row.expect.geo_precision, "approximate", `${r.record_id}: expect.geo_precision`);
+    // And it carries the object and the distance the ruling was made on, rather than
+    // only pointing at the file that holds them.
+    assert.match(row.notes, new RegExp(`\\b${r.osm.id}\\b`), `${r.record_id}: notes must name the OSM object`);
+    const km = (r.engine.distances_from_published_m.osm_object / 1000).toFixed(3);
+    assert.match(row.notes, new RegExp(`${km} km`), `${r.record_id}: notes must carry the measured distance`);
+    assert.ok(
+      row.evidence.some((e) => e.url === r.osm.url),
+      `${r.record_id}: the row must cite the OSM object the run read`,
+    );
   }
 });

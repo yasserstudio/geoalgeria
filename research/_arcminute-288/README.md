@@ -41,8 +41,9 @@ Two findings worth keeping:
 
 ## The four candidates this run did NOT act on, and where they now stand
 
-OpenStreetMap does hold an object for four of the records. None of the four moved,
-and each is a Review-queue candidate rather than a correction, under ADR 0001:
+OpenStreetMap does hold an object for four of the records. None of the four moved:
+each was a Review-queue candidate rather than a correction under ADR 0001, and the
+Owner has since rejected all four (below):
 
 | record | OSM object | distance | why it was not applied |
 | --- | --- | --- | --- |
@@ -51,17 +52,31 @@ and each is a Review-queue candidate rather than a correction, under ADR 0001:
 | `park-29` Djurdjura | way 522229283 | 2.858 km | As above. |
 | `park-31` El Kala | relation 5424406 (Wikidata P402 confirms the same object) | 8.151 km | As above. |
 
-**Measured again in #301, and all four stay QUEUED: no action taken.** Each object
-was re-read from `api.openstreetmap.org` on 2026-10-27 and is still the same place
-under the same tags (the node is version 1 of 2011 and has never been edited; each
-park area still carries the record's own `wikidata` QID), and each was run through
-`scripts/review/votes.mjs` rather than judged by hand. The engine settles none of
-them, and under ADR 0001 rule 5 a queued row keeps its published point until the
-Owner rules on it through the review page, so nothing here is closed and nothing
-was changed. `review-2026-10-27.json` holds the Candidates, the Claims, the
-engine's own answer and the measurement per record, as evidence for the queue
-rather than a verdict on it, and `test/arcminute-288-review.test.mjs` re-derives
-every outcome from that file.
+**Measured again in #301, then rejected by the Owner on 2026-10-28: all four keep
+their published point.** Each object was re-read from `api.openstreetmap.org` on
+2026-10-27 and is still the same place under the same tags (the node is version 1
+of 2011 and has never been edited; each park area still carries the record's own
+`wikidata` QID), and each was run through `scripts/review/votes.mjs` rather than
+judged by hand. The engine settled none of them, so under ADR 0001 rule 5 each
+went to the Review queue with its published point intact, and the Owner ruled on
+all four on 2026-10-28: the re-place is rejected and the published point kept. For
+`historic-91` the published point is Wikidata's to the metre, so there is no
+independent Vote behind the node; for the three parks a park is an area, and a
+centroid move buys no precision.
+
+The ruling is recorded where a ruling from the Review queue belongs, in the
+reviewed-correction ledger: four rows in
+[`quality/overrides/tourisme.json`](../../quality/overrides/tourisme.json) with
+`status: "verified"`, `publish_action: "keep"`, `reviewer: "owner"` and
+`reviewed_at: "2026-10-28"`, each carrying the OSM object, the distance and the
+reason (ADR 0001 rule 10: the ledger, not the page, is the record). A `keep`
+decision changes no published field, so no coordinate, record or file moved; what
+it does is close the candidate, so it stops coming back to the queue.
+`review-2026-10-27.json` stays as the frozen run it is, the Candidates, the
+Claims, the engine's own answer and the measurement per record, evidence for the
+queue rather than a verdict on it, and `test/arcminute-288-review.test.mjs`
+re-derives every outcome from that file and checks each record's row in the
+ledger.
 
 The reading the sweep's table did not make: for `historic-91` the node is 1.055 km
 from the published point, which is inside the 2 km agreement radius, so the two are
