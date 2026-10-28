@@ -137,18 +137,16 @@ Overpass, Wikidata or the institutions' sites was reachable from the build
 machine. The only open evidence read is the committed Overpass capture
 `sources/enseignement-superieur/osm-campuses.json` (1,265
 `amenity=university|college` elements, retrieved 2026-08-03), which is one
-source. So **no record was promoted**: every match is a single-source Claim and
-waits in the Review queue.
+source. So **no record was promoted from the capture**: every match is a
+single-source Claim and waits in the Review queue.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 117
-approximate records (96 `wilaya`, 21 `commune`) are in it exactly once. ENSTA
-counts as one candidate: its entry also lists the second-site Claim below, which
-is not a candidate for the seat.
+written offline and byte for byte by `precision-review.mjs` next to it. All 116
+approximate records (96 `wilaya`, 20 `commune`) are in it exactly once.
 
 | Outcome | Records |
 | --- | --- |
-| Queued, one candidate for the campus (single source) | 32 |
+| Queued, one candidate for the campus (single source) | 31 |
 | Queued, several candidates for the campus (ambiguous) | 4 |
 | No open candidate in the capture | 81 |
 | Promoted to `exact` | 0 |
@@ -161,27 +159,36 @@ largest is 21.4 km. Hand decisions (ties rejected because the element's name
 contradicts its website, a parent university's host, a former name, another
 record's campus) sit in tables in the script, each with its reason.
 
-**ENSTA (`00189`)** was `exact` on one OpenStreetMap object, `way/245174987` at
-its Dergana seat, still named for the dissolved ENST. It is now `approximate` on
-the Bordj El Kiffan centre, the commune its own address names, and that object
-is its queued Claim (`successions.P05.place.queued_claim` in
-`scripts/seeds/bac-2026.json`). The commune was checked by containment, not by
-the nearest centre: the point lies inside Bordj El Kiffan's committed OSM
-outline, 194 m from the Bordj El Bahri border (about four times the outline's ~50 m
-simplification tolerance), and Bordj
-El Bahri's centre is only the nearer one (1,761 m against 6,601 m). The capture
-also holds `way/1267564230`, named with ENSTA's Arabic name in the singular, at
-the ex-ESSA second site the school publishes as Bab El Oued (its OSM point falls
-on the Casbah side of that boundary, 96 m from it). It is queued as a Claim for
-that site and not for the seat.
+**Owner confirmations (`docs/adr/0001` rule 6).** The Owner read two campus
+points off Google Maps on 2026-10-28. A reading off a proprietary map is a Claim
+that may only confirm an open Candidate within 500 m, outside the 50 m copy
+radius, and the open coordinate is the one that ships. Each is recorded in the
+record's seed `place` as `owner_confirmation` (point, distance, date, reader,
+source), and `scripts/fetch.mjs` refuses one past either threshold or whose
+stated distance is not the measured one.
 
-**Not in this pass.** The 70 `exact` records were not re-reviewed. 65 rest on a
-Nominatim geocode and 5 of the 11 BAC 2026 additions on one OSM object each, so
-under the same rule each has one source; demoting them is an Owner decision, not
-part of this pass.
+| id | Institution | Open Candidate | Owner reading | Outcome |
+| --- | --- | --- | --- | --- |
+| `00189` | ENSTA | OSM `way/245174987`, the Dergana seat | 60 m | `exact`, the OSM point ships |
+| `00178` | Université des sciences médicales d'Alger | OSM `way/29190325`, the Ziania campus | 96 m | stays `exact`, now on two Votes |
+
+**ENSTA (`00189`)**'s commune was decided by containment, not by the nearest
+centre: its point lies inside Bordj El Kiffan's committed OSM outline, 194 m from
+the Bordj El Bahri border (about four times the outline's ~50 m simplification
+tolerance), and Bordj El Bahri's centre is only the nearer one (1,761 m against
+6,601 m). The seed's `place.commune` carries it, and the build refuses a named
+commune outside the point's wilaya. The capture also holds `way/1267564230`,
+named with ENSTA's Arabic name in the singular, at the ex-ESSA second site the
+school publishes as Bab El Oued (its OSM point falls on the Casbah side of that
+boundary, 96 m from it): a site the record does not publish, recorded in the
+seed's `osm_search` note.
+
+**Not in this pass.** 69 of the 71 `exact` records rest on one source: 65 on a
+Nominatim geocode and 4 of the BAC 2026 additions (`P08`, `P09`, `P10`, `P23`)
+on one OSM object each. Reviewing them is a separate follow-up pass.
 
 **Re-run once the hosts answer.** Read Wikidata `P625` (and the `wikidata` tag
-where an element carries one) and the institutions' sites for the 36 queued
+where an element carries one) and the institutions' sites for the 35 queued
 records; a record whose second source lands within 2 km of its Claim, and not
 within 50 m of it, moves to `exact`: a listed record through
 `scripts/seeds/coordinates.json` (and out of `scripts/seeds/overrides.json`,
@@ -201,7 +208,7 @@ which takes precedence), a BAC 2026 record through its `place` in
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  70 campus, 21 commune, 96 wilaya; the 117 approximate records are in the
+  71 campus, 20 commune, 96 wilaya; the 116 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and

@@ -61,8 +61,7 @@
  *     outside it is dropped.
  *
  * DECISIONS taken by reading the capture, each with its reason, are the tables
- * WEBSITE_REJECTED, NOT_OWN_SITE and ROLES below. ENSTA (00189) takes
- * its Claim from scripts/seeds/bac-2026.json (successions.P05.place.queued_claim).
+ * WEBSITE_REJECTED, NOT_OWN_SITE and ROLES below.
  */
 
 import { readFileSync, writeFileSync } from "node:fs";
@@ -104,8 +103,6 @@ const NOT_OWN_SITE = {
 /** What a Claim the rule finds is a Claim for, where it is not the seat. A row
  *  whose Claim the rule no longer finds is an error, so the note cannot go stale. */
 const ROLES = {
-  "00189|way/1267564230":
-    "second site: the element carries ENSTA's Arabic name (singular التكنولوجيا) at the ex-ESSA building the school publishes as Bab El Oued (the point falls on the Casbah side of that boundary, 96 m from it), which the seed keeps out of the record (one establishment, one record, seat at Dergana); a Claim that ENSTA is here, not one for its seat",
 };
 
 /** Qualifiers that make two otherwise equal names two institutions: each must be
@@ -426,26 +423,6 @@ function review(rec) {
     }
   }
 
-  // ENSTA: the Claim decided in the seed, from api.openstreetmap.org (same source).
-  if (rec.id === "00189") {
-    const q = SEED.successions.P05.place.queued_claim;
-    const el = BY_REF.get(q.osm);
-    const at = locate(q.lat, q.lng);
-    claims.set(q.osm, {
-      source: "osm",
-      element: q.osm,
-      tie: "seat_address",
-      matched: "addr:street = Cite Diplomatique, addr:city = Dergana: the seat ENSTA publishes; the name tag still reads the dissolved ENST",
-      tags: el ? keptTags(el.tags) : { name: q.osm_name },
-      point: { lat: q.lat, lng: q.lng },
-      point_from: `scripts/seeds/bac-2026.json successions.P05.place.queued_claim (version ${q.osm_version}, ${q.osm_timestamp})`,
-      ...(el ? { capture_point: el.point, capture_point_distance_m: metres(el.point, q) } : {}),
-      commune: at.commune,
-      wilaya_code: at.wilaya == null ? null : String(at.wilaya).padStart(2, "0"),
-      in_declared_wilaya: at.wilaya === wilaya,
-      distance_m: metres(q, rec),
-    });
-  }
   for (const [key, role] of Object.entries(ROLES)) {
     const [id, ref] = key.split("|");
     if (id !== rec.id) continue;
@@ -456,7 +433,6 @@ function review(rec) {
 }
 
 function reasonFor(rec, claims) {
-  if (rec.id === "00189") return "single source";
   const inW = claims.filter((c) => c.in_declared_wilaya);
   if (!inW.length) return "candidate outside declared wilaya";
   if (inW.length < claims.length) return "ambiguous: several candidates";
@@ -466,8 +442,6 @@ function reasonFor(rec, claims) {
 
 /** What the seed already knows about a record's second source. */
 const NEEDS = {
-  "00189":
-    "P625 on Wikidata Q135398220, ENSTA's item, which had none when the record was added on 2026-10-28 (scripts/seeds/bac-2026.json); or the Dergana seat on the institution's own site (ensta.edu.dz) read as a coordinate, independent of OpenStreetMap and within 2 km of the seat Claim",
 };
 
 function needsFor(rec, claims) {

@@ -4,8 +4,8 @@
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
   "network": "OpenStreetMap, Nominatim, Overpass, Wikidata and the institutions' own sites were unreachable from the build machine on 2026-10-28, so the only open evidence read is the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf).",
   "counts": {
-    "approximate_reviewed": 117,
-    "queued_single_source": 36,
+    "approximate_reviewed": 116,
+    "queued_single_source": 35,
     "no_open_candidate": 81,
     "promoted": 0
   },
@@ -1523,73 +1523,6 @@
       ],
       "reason": "single source",
       "needs": "a campus address or map on the institution's own site (cuillizi.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00189",
-      "name": "Ecole nationale supérieure des technologies avancées (Alger)",
-      "name_ar": "المدرسة الوطنية العليا للتكنولوجيات المتقدمة",
-      "wilaya_code": "16",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.74871,
-        "lng": 3.19249,
-        "commune": "Bordj El Kiffan"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/245174987",
-          "tie": "seat_address",
-          "matched": "addr:street = Cite Diplomatique, addr:city = Dergana: the seat ENSTA publishes; the name tag still reads the dissolved ENST",
-          "tags": {
-            "addr:city": "Dergana",
-            "addr:street": "Cité Diplomatique",
-            "name": "Ecole Nationale Supérieure de Technologie ENST",
-            "name:ar": "المدرسة الوطنية العليا للتكنولوجيا",
-            "operator": "Ministère de l'Enseignement Supérieur et de la Recherche Scientifique"
-          },
-          "point": {
-            "lat": 36.7761552,
-            "lng": 3.2581993
-          },
-          "point_from": "scripts/seeds/bac-2026.json successions.P05.place.queued_claim (version 8, 2023-05-13T09:24:11Z)",
-          "capture_point": {
-            "lat": 36.7765755,
-            "lng": 3.2583392
-          },
-          "capture_point_distance_m": 48,
-          "commune": {
-            "code": "1630",
-            "name": "Bordj El Kiffan"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 6601
-        },
-        {
-          "source": "osm",
-          "element": "way/1267564230",
-          "tie": "name",
-          "matched": "name ~ name_ar (core)",
-          "tags": {
-            "name": "المدرسة الوطنية العليا للتكنولوجيا المتقدمة"
-          },
-          "point": {
-            "lat": 36.7883197,
-            "lng": 3.0609651
-          },
-          "commune": {
-            "code": "1607",
-            "name": "Casbah"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 12516,
-          "role": "second site: the element carries ENSTA's Arabic name (singular التكنولوجيا) at the ex-ESSA building the school publishes as Bab El Oued (the point falls on the Casbah side of that boundary, 96 m from it), which the seed keeps out of the record (one establishment, one record, seat at Dergana); a Claim that ENSTA is here, not one for its seat"
-        }
-      ],
-      "reason": "single source",
-      "needs": "P625 on Wikidata Q135398220, ENSTA's item, which had none when the record was added on 2026-10-28 (scripts/seeds/bac-2026.json); or the Dergana seat on the institution's own site (ensta.edu.dz) read as a coordinate, independent of OpenStreetMap and within 2 km of the seat Claim"
     }
   ],
   "no_candidate": [

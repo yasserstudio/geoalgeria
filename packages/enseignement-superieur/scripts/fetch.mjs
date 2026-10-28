@@ -32,6 +32,8 @@ import {
   readRetiredMigrations, forwardRetiredId,
 } from "../../../scripts/lib/v2-transforms.mjs";
 import { captureMeta } from "../../../scripts/lib/source-store.mjs";
+import { OWNER_CONFIRMATION_KM, COPY_RADIUS_M } from "../../../scripts/review/thresholds.mjs";
+import { metresBetween } from "../../../scripts/lib/seat-evidence.mjs";
 import { PAGE, getHtml, parseInstitutions, instKey, classifyType, MIN_EXPECTED } from "./mesrs.mjs";
 import { getHtmlAr, anchoredNamesAr, parseExtras, buildResolver, classifyTypeAr, PAGE_AR } from "./mesrs-ar.mjs";
 import { PAGE_BAC, readBacInstitutions, assertBacName, bacSnapshot } from "./bac-2026.mjs";
@@ -409,6 +411,32 @@ async function main() {
       // transcription error, not a new fact, so the build stops.
       if (p.wilaya_code != null && Number(p.wilaya_code) !== nc.code)
         throw new Error(`${where}: campus coordinate joins wilaya ${nc.code}, seed says ${p.wilaya_code}`);
+      // A commune the seed names, decided by containment in the commune outline
+      // where the nearest-centre join answers a neighbour: the label moves, the
+      // point does not, and never across a wilaya boundary.
+      if (p.commune != null) {
+        const c = communeByName(p.commune, nc.code);
+        if (!c) throw new Error(`${where}: commune "${p.commune}" does not resolve inside wilaya ${nc.code}`);
+        commune = c.name;
+      }
+      // docs/adr/0001 rule 6: an Owner reading off a proprietary map only
+      // confirms the open point, within OWNER_CONFIRMATION_KM, and the open point
+      // is what ships. A confirmation that does not agree is not one, and one
+      // within COPY_RADIUS_M of the point is a Copied claim, which casts no Vote.
+      const oc = p.owner_confirmation;
+      if (oc) {
+        for (const k of ["point", "read_at", "read_by", "source", "confirms"])
+          if (oc[k] == null) throw new Error(`${where}: owner_confirmation needs ${k}`);
+        if (oc.confirms !== p.osm) throw new Error(`${where}: owner_confirmation confirms ${oc.confirms}, the point is ${p.osm}`);
+        const [cLng, cLat] = oc.point;
+        const apart = metresBetween(cLng, cLat, p.lng, p.lat);
+        if (!(apart < OWNER_CONFIRMATION_KM * 1000))
+          throw new Error(`${where}: owner_confirmation is ${Math.round(apart)} m from the point, past the ${OWNER_CONFIRMATION_KM * 1000} m ceiling`);
+        if (!(apart > COPY_RADIUS_M))
+          throw new Error(`${where}: owner_confirmation is ${Math.round(apart)} m from the point, a Copied claim (within ${COPY_RADIUS_M} m)`);
+        if (Math.round(apart) !== oc.metres_from_published_value)
+          throw new Error(`${where}: owner_confirmation says ${oc.metres_from_published_value} m, it is ${Math.round(apart)} m`);
+      }
     } else if (p.precision === "commune") {
       const c = communeByName(p.commune, p.wilaya_code);
       if (!c) throw new Error(`${where}: commune "${p.commune}" does not resolve inside wilaya ${p.wilaya_code}`);

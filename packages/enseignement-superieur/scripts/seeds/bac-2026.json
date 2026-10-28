@@ -34,22 +34,32 @@
       ],
       "why": "Succeeded by décret exécutif 22-398 of 21 November 2022, which dissolved the Ecole nationale supérieure de technologie and the Ecole supérieure en sciences appliquées d'Alger and transferred their property, rights, obligations, personnel and resources to the Ecole nationale supérieure des technologies avancées, created by décret exécutif 22-314 of 12 September 2022 (both in Journal officiel n° 78, 2022). The MESRS BAC 2026 placement file lists only establishment P05, so the ministry places bacheliers into the successor alone, while the 2026-08-03 network listing still carries both predecessors. They are therefore not peers of P05 but the same establishment before the decree: their records leave and their ids are forwarded to this one in data/retired-ids.json, rather than three records co-existing for one school.",
       "place": {
-        "precision": "commune",
-        "commune": "Bordj El Kiffan",
+        "precision": "campus",
+        "lat": 36.7761552,
+        "lng": 3.2581993,
+        "osm": "way/245174987",
+        "osm_version": 8,
+        "osm_timestamp": "2023-05-13T09:24:11Z",
         "wilaya_code": 16,
-        "why": "docs/adr/0001: one source is not enough to call a point exact, and ENSTA's campus point has one. OSM way/245174987 (below, under queued_claim) is the only open object at the school's published seat, and no second independent open source states a coordinate for it: Wikidata's ENSTA item (Q135398220) had no P625 when the record was added on 2026-10-28, and the precision pass of the same date could not re-read Wikidata or the school's own site, neither being reachable from the build machine. Nominatim, api.openstreetmap.org and Overpass all read the same OpenStreetMap database, so they are one source, not three. The record therefore sits on its commune's flagship centroid and the OSM reading waits in the review queue (research/enseignement-superieur/precision-review-2026-10-28.json) for a second independent open source. The commune is Bordj El Kiffan, not the Bordj El Bahri the nearest-centre join gave the OSM point: the school publishes its seat as Dergana - Bordj El Kiffan, and the OSM point lies inside Bordj El Kiffan's committed OSM outline (relation of code_commune 1630 in research/_commune-centres/commune-boundaries.json), 194 m from the Bordj El Bahri border, about four times the outline's simplification tolerance (tolerance_deg 0.0005, some 50 m), while Bordj El Bahri's centre is merely the nearer of the two centres (1,761 m, against 6,601 m for Bordj El Kiffan's, which is where the record now sits).",
-        "queued_claim": {
-          "lat": 36.7761552,
-          "lng": 3.2581993,
-          "osm": "way/245174987",
-          "osm_version": 8,
-          "osm_timestamp": "2023-05-13T09:24:11Z",
-          "osm_name": "Ecole Nationale Supérieure de Technologie ENST",
-          "why": "ENSTA publishes its seat as \"Cité Diplomatique, ex Centre biomédical, Dergana - Bordj El Kiffan, Alger\" (its own plan-de-lecole page and the letterhead of its scientific-council minutes). This OSM object is amenity=college with addr:street=Cité Diplomatique, addr:city=Dergana and operator=Ministère de l'Enseignement Supérieur et de la Recherche Scientifique, so the tie is the school's own published seat address and not a name match. Nominatim returns exactly one such object, so it is unambiguous. Its name tag still reads the dissolved ENST (see osm_name above): the decree transferred the campus to ENSTA, which is why this point is the successor's seat Claim, and the stale tag is an OSM edit owed upstream. No Wikidata P625 exists for ENSTA. The school's second site, the ex-ESSA building at Bab El Oued, is NOT published as a second record: one establishment is one record, and the decree's seat is Dergana.",
-          "osm_search": "Nominatim search for \"Technologies Avancees Alger ecole\", \"ENSTA Alger\", \"ENSTA Dergana\", \"ENSTA Bordj El Bahri\" and the Arabic name all return nothing, so no object Nominatim indexes carries ENSTA's name; the object above was reached from the seat address and read back from api.openstreetmap.org for its version and timestamp. The committed Overpass capture (sources/enseignement-superieur/osm-campuses.json, 2026-08-03) does hold one: way/1267564230, amenity=college, name=المدرسة الوطنية العليا للتكنولوجيا المتقدمة, ENSTA's Arabic name with the singular التكنولوجيا, at the ex-ESSA second site, which the school publishes as Bab El Oued and whose OSM point falls on the Casbah side of the Bab El Oued boundary, 96 m from it. It is a Claim for that site, not for the Dergana seat, so it does not vote for this point; both are listed in research/enseignement-superieur/precision-review-2026-10-28.json."
-        }
+        "commune": "Bordj El Kiffan",
+        "osm_name": "Ecole Nationale Supérieure de Technologie ENST",
+        "why": "ENSTA publishes its seat as \"Cité Diplomatique, ex Centre biomédical, Dergana - Bordj El Kiffan, Alger\" (its own plan-de-lecole page and the letterhead of its scientific-council minutes). This OSM object is amenity=college with addr:street=Cité Diplomatique, addr:city=Dergana and operator=Ministère de l'Enseignement Supérieur et de la Recherche Scientifique, so the tie is the school's own published seat address and not a name match. Nominatim returns exactly one such object, so it is unambiguous. Its name tag still reads the dissolved ENST (see osm_name above): the decree transferred the campus to ENSTA, which is why this point is the successor's own seat, and the stale tag is an OSM edit owed upstream. No Wikidata P625 exists for ENSTA. The school's second site, the ex-ESSA building at Bab El Oued, is NOT published as a second record: one establishment is one record, and the decree's seat is Dergana. docs/adr/0001 asks for two independent sources before a point is exact, and this object is one: Nominatim, api.openstreetmap.org and Overpass all read the same OpenStreetMap database, and Wikidata's ENSTA item (Q135398220) had no P625 when the record was added. The second is the Owner's reading under rule 6, recorded below as owner_confirmation: it agrees with this object's point to 60 m, inside the 500 m ceiling and outside the 50 m copy radius, so it is an independent Vote. As with Beni-Abbes (research/_commune-centres/corrections-2026-10-01.json), the reading confirms the open point and never replaces it: the coordinate that ships is OpenStreetMap's, ODbL.",
+        "commune_why": "Bordj El Kiffan, the commune the school's own address names (Dergana - Bordj El Kiffan), and not the Bordj El Bahri the nearest-centre join answers. The point lies inside Bordj El Kiffan's committed OSM outline (code_commune 1630 in research/_commune-centres/commune-boundaries.json), 194 m from the Bordj El Bahri border, about four times the outline's simplification tolerance (tolerance_deg 0.0005, some 50 m); Bordj El Bahri's centre is only the nearer of the two centres (1,761 m, against 6,601 m for Bordj El Kiffan's).",
+        "owner_confirmation": {
+          "confirms": "way/245174987",
+          "point": [
+            3.2588635,
+            36.776256
+          ],
+          "metres_from_published_value": 60,
+          "read_at": "2026-10-28",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the pin of ENSTA's place entry off Google Maps and supplied 36.776256, 3.2588635, which agrees with OpenStreetMap way/245174987 to 60 m and lies inside the same Bordj El Kiffan outline. Under docs/adr/0001 rule 6 a reading taken from a proprietary map may only confirm an open source within 500 m, and it is the open coordinate that ships, so lat/lng above are the OpenStreetMap object's and this row is ODbL."
+        },
+        "osm_search": "Nominatim search for \"Technologies Avancees Alger ecole\", \"ENSTA Alger\", \"ENSTA Dergana\", \"ENSTA Bordj El Bahri\" and the Arabic name all return nothing, so no object Nominatim indexes carries ENSTA's name; the object above was reached from the seat address and read back from api.openstreetmap.org for its version and timestamp. The committed Overpass capture (sources/enseignement-superieur/osm-campuses.json, 2026-08-03) does hold one: way/1267564230, amenity=college, name=المدرسة الوطنية العليا للتكنولوجيا المتقدمة, ENSTA's Arabic name with the singular التكنولوجيا, at the ex-ESSA second site, which the school publishes as Bab El Oued and whose OSM point falls on the Casbah side of the Bab El Oued boundary, 96 m from it. It is a Claim for that site, not for the Dergana seat, so it does not vote for this point; both are listed in research/enseignement-superieur/precision-review-2026-10-28.json."
       },
-      "note": "The commune is the one the school's own address names (Dergana, in Bordj El Kiffan), which the OSM point's containment in the commune outline confirms; the nearest-centre join alone would have said Bordj El Bahri."
+      "note": "The commune is the one the school's own address names (Dergana, in Bordj El Kiffan), which the point's containment in the commune outline confirms; the nearest-centre join alone would have said Bordj El Bahri."
     }
   },
   "additions": {
@@ -67,7 +77,19 @@
         "osm": "way/29190325",
         "osm_version": 24,
         "osm_timestamp": "2026-05-30T18:59:41Z",
-        "why": "The OSM object is amenity=university named جامعة علوم الصحة - الزيانية and carries website=https://www.univ-health.dz/ plus email=rectorate@univ-health.dz, which ties the object to this institution rather than to a name match. Ben Aknoun, wilaya 16. No Wikidata P625 exists for it, so the OSM object is the only open reading."
+        "why": "The OSM object is amenity=university named جامعة علوم الصحة - الزيانية and carries website=https://www.univ-health.dz/ plus email=rectorate@univ-health.dz, which ties the object to this institution rather than to a name match. Ben Aknoun, wilaya 16. No Wikidata P625 existed for it when the record was added, so the OSM object is the only open reading. docs/adr/0001 asks for two independent sources before a point is exact; the second is the Owner's reading under rule 6, recorded below as owner_confirmation, which agrees with this object to 96 m, inside the 500 m ceiling and outside the 50 m copy radius. The coordinate that ships is OpenStreetMap's, ODbL.",
+        "owner_confirmation": {
+          "confirms": "way/29190325",
+          "point": [
+            3.0173625,
+            36.7672611
+          ],
+          "metres_from_published_value": 96,
+          "read_at": "2026-10-28",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry for the Algiers Faculty of Medicine at Ziania, one of this university's three faculties on the same Ziania campus, and supplied 36.7672611, 3.0173625. It agrees with OpenStreetMap way/29190325, the university's own campus object, to 96 m, and both lie inside Ben Aknoun's committed OSM outline. Under docs/adr/0001 rule 6 the reading confirms the open coordinate, which is the one that ships."
+        }
       },
       "note": "MESRS's placement file labels establishment C02 \"UNIVERSITE DES SCIENCES MEDICALES ALGER\"; the institution itself publishes \"Université des sciences de la santé Youcef El Khatib\". The published French name follows the ministry's own file, per the package's identity rule, and the Arabic name follows the institution. The three faculties the file places into C02 (médecine, pharmacie, médecine dentaire) are this university's three faculties."
     },
