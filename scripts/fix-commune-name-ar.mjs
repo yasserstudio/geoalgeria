@@ -16,10 +16,14 @@
 // at its `to` is a no-op, so the set is replayable and a carrier that missed an
 // earlier run still fails.
 //
-// CARRIERS. Every file in packages/dataset that holds a commune `name_ar`:
-// test/commune-name-ar.test.mjs reads the same eight through
-// test/lib/commune-name-ar-carriers.mjs and fails while one of them disagrees, so
-// a carrier this script forgets cannot ship.
+// CARRIERS. Every file in packages/dataset that holds a commune `name_ar`, eleven of
+// them: test/commune-name-ar.test.mjs reads the same eleven through the nine entries
+// of test/lib/commune-name-ar-carriers.mjs, where the three split commune files are
+// one entry, and fails while one of them disagrees, so a carrier this script forgets
+// cannot ship. That is a hand list on both sides, which is how
+// data/wilaya-capitals.metadata.json sat unlisted while it published an unrepaired
+// name; test/commune-name-ar-discovery.test.mjs walks the data directory instead, so
+// the next omission is discovered rather than reviewed for.
 //
 // USAGE
 //   node scripts/fix-commune-name-ar.mjs            # dry-run report
@@ -128,6 +132,22 @@ for (const row of ecommerce) {
   });
 }
 queueJson(ecommercePath, ecommerce);
+
+// --- wilaya-capitals.metadata.json (69 Capital communes, its own field names) ----
+// The sidecar quotes each wilaya's Capital commune next to the decree that fixed it,
+// so it holds 69 of the commune names rather than all 1,541. Its `code` is the
+// wilaya's; the commune's is `capital_commune_code`.
+const capitalsPath = join(DATA, "wilaya-capitals.metadata.json");
+const capitals = JSON.parse(readFileSync(capitalsPath, "utf8"));
+for (const row of capitals.capitals) {
+  patchRow("wilaya-capitals.metadata.json", row, {
+    code: "capital_commune_code",
+    wilaya: "code",
+    nameFr: "commune_name_fr",
+    nameAr: "commune_name_ar",
+  });
+}
+queueJson(capitalsPath, capitals);
 
 // --- CSV --------------------------------------------------------------------
 /** Patch a CSV whose fields never contain a comma, keeping its line endings. */

@@ -1,5 +1,6 @@
-// The 23 reviewed Arabic commune-name repairs, upstreamed from the Web app's own
-// copy of the flagship table (private tracker #239).
+// The 25 reviewed Arabic commune-name repairs: 23 upstreamed from the Web app's own
+// copy of the flagship table (private tracker #239), plus the two wilaya seat names
+// below.
 //
 // WHY THEY WERE NOT HERE. The app kept a fork of this table and repaired the
 // names in it, because a search snippet renders what the data says. The 2026-08-13

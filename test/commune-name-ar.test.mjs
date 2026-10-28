@@ -52,10 +52,15 @@ test("the repair set is one reviewed row per commune", () => {
   }
 });
 
-for (const [label, read] of NAME_AR_CARRIERS) {
+for (const [label, read, scope] of NAME_AR_CARRIERS) {
+  // A carrier that quotes a subset of the registry states how much of it it holds, so
+  // the floor stays exact for it too: see NAME_AR_CARRIERS for `scope`.
+  const expectedRows = scope?.rows ?? COMMUNE_COUNT;
+  const expectedRepairs = scope?.repairs ?? NAME_AR_REPAIRS.length;
+
   test(`${label} carries every repaired name_ar`, () => {
     const rows = read();
-    assert.equal(rows.length, COMMUNE_COUNT, `${label} holds ${rows.length} communes`);
+    assert.equal(rows.length, expectedRows, `${label} holds ${rows.length} communes`);
     const byCode = repairsByCode();
     const byName = repairsByName();
     let seen = 0;
@@ -65,13 +70,13 @@ for (const [label, read] of NAME_AR_CARRIERS) {
       seen++;
       assert.equal(row.name_ar, repair.to, `${label}: ${repair.name_fr} (${repair.code_commune})`);
     }
-    assert.equal(seen, NAME_AR_REPAIRS.length, `${label} matched ${seen} of the repaired communes`);
+    assert.equal(seen, expectedRepairs, `${label} matched ${seen} of the repaired communes`);
   });
 
   test(`${label} carries no tatweel in a commune name_ar`, () => {
     // A kashida is justification typography, never part of a name: it folds away
     // in every search key and renders as broken type in a search snippet. Once
-    // the 23 repairs are applied there is none left in this repository's commune
+    // the 25 repairs are applied there is none left in this repository's commune
     // names, so the floor is zero rather than "no more than before".
     const hits = read()
       .filter((row) => row.name_ar?.includes(TATWEEL))
