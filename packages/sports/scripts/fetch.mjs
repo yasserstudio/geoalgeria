@@ -127,15 +127,16 @@ const clean = (s) => {
   return v === "" ? null : v;
 };
 
-// Strip the "uuid:" prefix the GIS puts on referential values.
-const stripUUID = (s) => {
+// Strip the "uuid:" prefix the GIS puts on referential values. Only a real
+// 8-4-4-4-12 UUID counts: the 2026-10-27 capture writes 506 reception years as
+// "2013:undefined", and a looser "hex digits before a colon" test read the year
+// itself as the prefix, which blanked 168 published years.
+const UUID_PREFIX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}:/i;
+export const stripUUID = (s) => {
   if (s == null) return null;
   const v = String(s);
-  const idx = v.indexOf(":");
-  if (idx > 0 && idx < 40 && /^[0-9a-f-]+$/.test(v.slice(0, idx))) {
-    return clean(v.slice(idx + 1));
-  }
-  return clean(v);
+  const m = v.match(UUID_PREFIX);
+  return clean(m ? v.slice(m[0].length) : v);
 };
 
 function parseYear(v) {
