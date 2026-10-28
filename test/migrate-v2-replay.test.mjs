@@ -199,7 +199,20 @@ const CORRECTIONS = {
     "00065": { commune: "Oued Smar" },
     // Flagship commune label, corrected against JORA n° 25 / n° 40.
     "00033": { commune: "M'Sila" },
-    "00017": { commune: "Chetma" }, // re-join: Biskra's centre moved
+    // 00017 needed a re-join entry while Biskra's moved centre put its campus
+    // nearer Chetma's. Biskra's own centre has since moved again, so the join
+    // answers Biskra, which is what the frozen v1 row already says: no entry.
+    //
+    // Borrowed centres, the other class above: these records carry no coordinate
+    // of their own (geo_method `wilaya`, or a commune centre), so they move with
+    // the flagship centre they borrow, and the frozen v1 row keeps the old one.
+    // Alger Centre's centre moved from the sea east of the port to the Grande
+    // Poste, as it did for the agriculture rows below.
+    "00097": { lat: 36.776335, lng: 3.058211 },
+    "00113": { lat: 36.776335, lng: 3.058211 },
+    "00129": { lat: 35.405556, lng: 8.12417 }, // Tébessa
+    "00145": { lng: 0.133333 }, // Saïda
+    "00161": { lat: 36.87617 }, // Skikda
   },
   // Two classes below, both of them the flagship moving under a derived field,
   // and both caught by gates of their own rather than by this replay:

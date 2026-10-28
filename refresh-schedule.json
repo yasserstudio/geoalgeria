@@ -138,7 +138,7 @@
       "cadence": "quarterly",
       "last_retrieved": "2026-08-03",
       "next_due": "2026-11-03",
-      "note": "Two steps: fetch, then geocode."
+      "note": "Two steps: fetch, then geocode. www.mesrs.dz was UNREACHABLE from the build machine on 2026-10-27/28, so last_retrieved stays 2026-08-03: it is the date of the committed MESRS listing captures and claiming a newer one would be a false receipt. The 2026-10-28 refresh read a different MESRS publication instead, the BAC 2026 placement file (captured as sources/enseignement-superieur/bac-2026.json, retrieved 2026-10-28), which supplied 11 institutions the listing omits and the current name of 2 it lists under an older one. The listing itself still needs a live pull: re-run `fetch` without --cache once mesrs.dz answers."
     },
     {
       "package": "@geoalgeria/ferroviaire",

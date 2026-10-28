@@ -4,21 +4,21 @@
   "title_fr": "Établissements d'enseignement supérieur d'Algérie",
   "title_ar": "مؤسسات التعليم العالي الجزائرية",
   "title_en": "Algeria higher-education institutions",
-  "record_count": 177,
-  "geocoded_count": 177,
+  "record_count": 188,
+  "geocoded_count": 188,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 67,
-    "approximate": 110
+    "exact": 72,
+    "approximate": 116
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Higher-education institutions (universities, schools, research centres) from the MESRS. 61 are campus-precise; the rest are wilaya/commune centroids (approximate).",
+  "coverage_note": "Higher-education institutions (universities, schools, research centres) from the MESRS, built from two of the ministry's own publications: its university-network listing, and its BAC 2026 placement file (\"Moyennes minimales BAC 2026, suite a la premiere phase\"), which names every establishment it places new bacheliers into by the ministry's own establishment code. The placement file supplies 11 institutions the network listing omits and the current name of 2 it still lists under an older one. 72 records carry an open per-campus coordinate (exact); the other 116 are commune or wilaya centroids (approximate), because neither publication carries an address or a coordinate.",
   "wilayas_covered": 51,
   "bbox": [
-    -8.12861,
+    -8.12724,
     22.805776,
-    8.482,
+    8.483333,
     36.912274
   ],
   "sources": [
@@ -34,18 +34,18 @@
   "license": "Factual public listing (MESRS)",
   "updated": "2026-08-03",
   "by_type": {
-    "universite": 58,
-    "grande_ecole": 102,
-    "ens": 12,
+    "universite": 59,
+    "grande_ecole": 111,
+    "ens": 13,
     "centre_universitaire": 5
   },
   "by_sector": {
-    "public": 158,
+    "public": 169,
     "private": 19
   },
   "by_geo_method": {
-    "campus": 67,
-    "wilaya": 95,
-    "commune": 15
+    "campus": 72,
+    "wilaya": 96,
+    "commune": 20
   }
 }

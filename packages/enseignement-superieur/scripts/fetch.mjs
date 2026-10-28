@@ -27,9 +27,12 @@
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
-import { PAGE, getHtml, parseInstitutions, instKey, MIN_EXPECTED } from "./mesrs.mjs";
+import {
+  MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds,
+} from "../../../scripts/lib/v2-transforms.mjs";
+import { PAGE, getHtml, parseInstitutions, instKey, classifyType, MIN_EXPECTED } from "./mesrs.mjs";
 import { getHtmlAr, anchoredNamesAr, parseExtras, buildResolver, classifyTypeAr, PAGE_AR } from "./mesrs-ar.mjs";
+import { PAGE_BAC, readBacInstitutions, assertBacName } from "./bac-2026.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -38,6 +41,7 @@ const DATASET = join(__dirname, "..", "..", "dataset", "data");
 const SEED = join(__dirname, "seeds", "coordinates.json");
 const OVERRIDES_FILE = join(__dirname, "seeds", "overrides.json");
 const COMMUNE_LABELS_FILE = join(__dirname, "seeds", "commune-labels.json");
+const BAC_SEED_FILE = join(__dirname, "seeds", "bac-2026.json");
 
 // At least this share of records must carry a real campus geocode, else the build
 // is assumed degraded (a missing/empty coordinate seed, or a geocode regression)
@@ -61,6 +65,22 @@ function readSeed(path) {
 const inAlgeria = (lat, lng) =>
   Number.isFinite(lat) && Number.isFinite(lng) &&
   lat !== 0 && lng !== 0 && lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
+
+// The stable key a record's public id is pinned to across refreshes. The MESRS
+// sources publish no id, so the website host is the natural one: each institution
+// has its own. The 48 Arabic-only establishments publish no site, so they key on
+// the Arabic name the ministry lists them under, and a record with neither keys on
+// its French name. Verified unique over all committed records by the build below
+// and, independently, by carryOverIds, which refuses a key that pins two records.
+const hostOf = (url) => {
+  try { return new URL(url).hostname.replace(/^www\./, "").toLowerCase(); } catch { return null; }
+};
+export function carryKey(r) {
+  const h = hostOf(r.website);
+  if (h) return `host:${h}`;
+  if (r.name_ar) return `ar:${r.name_ar}`;
+  return r.name ? `fr:${r.name}` : null;
+}
 
 // --- flagship geo reference -------------------------------------------------
 const communeFC = JSON.parse(readFileSync(join(REF, "communes.geojson"), "utf8"));
@@ -132,6 +152,36 @@ async function main() {
     throw new Error(`parsed ${insts.length} institutions; expected >= ${MIN_EXPECTED}: the listing markup may have changed`);
   }
   console.log(`  parsed ${insts.length} institutions`);
+
+  // The ministry's BAC 2026 placement file, as the committed rights-safe
+  // projection of its institution rows (scripts/bac-2026.mjs). It is the second
+  // identity source: it renames two establishments the university-network
+  // listing still carries under their old names, and it holds institutions that
+  // listing omits entirely. Names are never typed in the seed, only re-accented:
+  // assertBacName refuses one that is not the ministry's own row for that code.
+  const bac = readBacInstitutions();
+  const bacSeed = readSeed(BAC_SEED_FILE);
+
+  // 1. Renames. Keyed by instKey (website host), so the record keeps its website
+  //    and therefore its carried id: a rename moves a name, never a join key.
+  let nRenamed = 0;
+  for (const [code, rule] of Object.entries(bacSeed.renames ?? {})) {
+    const where = `seeds/bac-2026.json renames.${code}`;
+    assertBacName(code, rule.name, bac, where);
+    const inst = insts.find((i) => instKey(i) === rule.key);
+    if (!inst) throw new Error(`${where}: no listed institution has key ${rule.key}`);
+    // The old name is asserted, not assumed: if MESRS has since renamed it
+    // upstream, this rule is stale and the build says so instead of silently
+    // overwriting a newer name. Compared on the separator the package publishes,
+    // because the listing writes an en dash there and no tracked file here is
+    // allowed to carry one (AGENTS.md, "Don't").
+    const asPublished = (s) => String(s).replace(/\s*[\u2013\u2014]\s*/g, " - ");
+    if (asPublished(inst.name) !== asPublished(rule.expect))
+      throw new Error(`${where}: expected the listing to still say\n  ${rule.expect}\nbut it says\n  ${inst.name}`);
+    inst.name = rule.name;
+    Object.assign(inst, classifyType(rule.name));
+    nRenamed++;
+  }
 
   const seed = readSeed(SEED);
   if (!Object.keys(seed).length) {
@@ -264,11 +314,94 @@ async function main() {
   }
   console.log(`  added ${records.length - networkCount} private/other-ministry institutions`);
 
-  // Stable ids: sort by type then name, number 1..N.
+  // 2. The institutions the BAC 2026 file holds and the university-network
+  //    listing omits. The French name is the ministry's own row (assertBacName);
+  //    the seed adds only what the placement file has no column for: the Arabic
+  //    name as its institution or Wikidata publishes it, the website, the
+  //    supervising ministry and the placement.
+  //
+  //    Placement follows docs/adr/0001: a "campus" entry carries the open
+  //    coordinate of that institution's OWN OpenStreetMap object with the id,
+  //    version and timestamp it was read at, and nothing else is accepted as
+  //    exact; otherwise the record lands on its commune's or wilaya's flagship
+  //    centroid with the reason recorded in the seed.
+  const bacCount = records.length;
+  for (const [code, add] of Object.entries(bacSeed.additions ?? {})) {
+    const where = `seeds/bac-2026.json additions.${code}`;
+    assertBacName(code, add.name, bac, where, add.source_spelling ?? null);
+    const p = add.place ?? {};
+    let lat = null, lng = null, wilaya_code = null, commune = null, precision = null;
+    if (p.precision === "campus") {
+      if (!inAlgeria(p.lat, p.lng)) throw new Error(`${where}: campus coordinate is not a reading inside Algeria`);
+      if (!/^(node|way|relation)\/\d+$/.test(String(p.osm)) || !Number.isInteger(p.osm_version) || !p.osm_timestamp)
+        throw new Error(`${where}: a campus coordinate needs its OSM object as osm/osm_version/osm_timestamp`);
+      const nc = nearestCommune(p.lat, p.lng);
+      if (!nc) throw new Error(`${where}: campus coordinate joins no flagship commune`);
+      lat = p.lat; lng = p.lng; wilaya_code = nc.code; commune = nc.name; precision = "campus";
+      // The seed names the wilaya it expects; a point that joins another one is a
+      // transcription error, not a new fact, so the build stops.
+      if (p.wilaya_code != null && Number(p.wilaya_code) !== nc.code)
+        throw new Error(`${where}: campus coordinate joins wilaya ${nc.code}, seed says ${p.wilaya_code}`);
+    } else if (p.precision === "commune") {
+      const c = communeByName(p.commune, p.wilaya_code);
+      if (!c) throw new Error(`${where}: commune "${p.commune}" does not resolve inside wilaya ${p.wilaya_code}`);
+      lat = c.lat; lng = c.lng; wilaya_code = c.code; commune = c.name; precision = "commune";
+    } else if (p.precision === "wilaya") {
+      const w = WILAYA.get(Number(p.wilaya_code));
+      if (!w || !inAlgeria(w.lat, w.lng)) throw new Error(`${where}: wilaya ${p.wilaya_code} has no centroid`);
+      lat = w.lat; lng = w.lng; wilaya_code = Number(p.wilaya_code); precision = "wilaya";
+    } else {
+      throw new Error(`${where}: place.precision must be campus, commune or wilaya`);
+    }
+    const { type, type_fr } = classifyType(add.name);
+    records.push({
+      name: add.name,
+      name_ar: add.name_ar ?? null,
+      type,
+      type_fr,
+      sector: add.sector ?? "public",
+      supervisory_ministry: add.supervisory_ministry ?? null,
+      website: add.website ?? null,
+      commune,
+      wilaya_code: String(wilaya_code).padStart(2, "0"),
+      wilaya_name: WILAYA.get(wilaya_code)?.name_fr ?? null,
+      lat,
+      lng,
+      geo_precision: precision,
+      source: PAGE_BAC,
+    });
+  }
+  console.log(`  added ${records.length - bacCount} institutions from the BAC 2026 file, renamed ${nRenamed}`);
+
+  // Sort by type then name, so the listing reads the way it always has.
   const TYPE_ORDER = { universite: 0, grande_ecole: 1, ens: 2, centre_universitaire: 3 };
   const sortName = (r) => r.name || r.name_ar || "";
   records.sort((a, b) => (TYPE_ORDER[a.type] - TYPE_ORDER[b.type]) || sortName(a).localeCompare(sortName(b), "fr"));
-  records.forEach((r, i) => (r.id = i + 1));
+
+  // Stable ids. The sort position is NOT the id: inserting one institution mid
+  // sequence would otherwise renumber every record after it and repoint every
+  // published join key. Each record is pinned to the id it shipped under, keyed
+  // on the same stable key carryOverIds uses below, and a genuinely new record
+  // is minted above every id the package has ever used (live or retired), so a
+  // new record can never land on a reserved slot.
+  const committed = readCommitted(DATA, "institutions.json");
+  const retiredIds = readRetiredIds(DATA);
+  const idByKey = new Map(committed.map((r) => [carryKey(r), String(r.id)]));
+  const reserved = new Set([...retiredIds, ...committed.map((r) => String(r.id))].map(String));
+  // Every id this package has ever issued is a zero-padded integer, and the mint
+  // below counts above the largest of them. A non-numeric one would not be
+  // counted, so a new record could be handed it: refuse instead of risking it.
+  const unparsable = [...reserved].filter((id) => !/^\d+$/.test(id));
+  if (unparsable.length)
+    throw new Error(`reserved id(s) are not numeric, so a new id cannot be minted above them: ${unparsable.join(", ")}`);
+  let nextId = reserved.size ? Math.max(...[...reserved].map(Number)) : 0;
+  for (const r of records) {
+    const was = idByKey.get(carryKey(r));
+    if (was != null) { r.id = Number(was); continue; }
+    r.id = ++nextId;
+    if (reserved.has(String(r.id).padStart(5, "0")))
+      throw new Error(`minted id ${r.id} is reserved; the mint must stay above every published and retired id`);
+  }
 
   // Guards: fail loudly on a malformed build. Every record must carry at least one
   // name (French for the network, Arabic for the extras).
@@ -298,13 +431,21 @@ async function main() {
     DATA,
     process.argv.includes("--cache"),
   );
+  const rows = records.map(cfg.map);
+  // The shared id-stability contract (v2 decision 10/11): pin every still-present
+  // record back to the id it shipped under, reserve the id of one that is gone,
+  // and refuse a duplicated carry key or a duplicated id. The ids above are
+  // already the carried ones, so this is the check that proves it rather than a
+  // second assignment.
+  carryOverIds(rows, committed, carryKey, "enseignement-superieur", retiredIds);
   const { records: out, metadata } = writePackageV2({
     pkg: "enseignement-superieur",
     dir: DATA,
-    files: [{ file: "institutions.json", rows: records.map(cfg.map) }],
+    files: [{ file: "institutions.json", rows }],
     meta: cfg.meta,
     updated,
     retrieved,
+    retiredIds,
   });
 
   console.log(`\nType breakdown:`);

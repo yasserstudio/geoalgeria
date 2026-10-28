@@ -12,7 +12,7 @@
 
 </div>
 
-177 établissements d'enseignement supérieur à travers l'Algérie – **universités**, grandes
+188 établissements d'enseignement supérieur à travers l'Algérie – **universités**, grandes
 écoles, écoles normales supérieures, centres universitaires, les **institutions privées
 agréées**, et les établissements **relevant d'autres ministères** (Défense, Santé, Culture…)
 que le MESRS supervise – chacun avec son nom (français et/ou arabe), son **type**
@@ -28,7 +28,7 @@ npm install @geoalgeria/enseignement-superieur
 ```js
 import es from "@geoalgeria/enseignement-superieur";
 
-const all = es.institutions();                  // 177
+const all = es.institutions();                  // 188
 const inAlgiers = es.institutionsByWilaya(16);   // établissements de la wilaya 16
 const universities = es.institutionsByType("universite"); // toutes les universités
 const privates = es.institutionsBySector("private");      // les 19 établissements privés
@@ -47,13 +47,13 @@ const privates = es.institutionsBySector("private");      // les 19 établisseme
 
 | Type | Code | Nombre |
 | --- | --- | --- |
-| Université | `universite` | 58 |
-| Grande école | `grande_ecole` | 102 |
-| École normale supérieure | `ens` | 12 |
+| Université | `universite` | 59 |
+| Grande école | `grande_ecole` | 111 |
+| École normale supérieure | `ens` | 13 |
 | Centre universitaire | `centre_universitaire` | 5 |
-| **Total** | | **177** |
+| **Total** | | **188** |
 
-Par **secteur** : 158 publiques · 19 privées agréées. Parmi les établissements publics, 48 relèvent
+Par **secteur** : 169 publiques · 19 privées agréées. Parmi les établissements publics, 50 relèvent
 **d'autres ministères** que le MESRS qu'il supervise pédagogiquement – lisez `supervisory_ministry`
 (ex. `"Ministère de la Santé"` pour les 25 instituts paramédicaux, `"Ministère de la Défense nationale"`
 pour les 16 écoles militaires), qui est `null` pour le réseau MESRS lui-même.
@@ -75,9 +75,9 @@ fournie ici** et étiquetée honnêtement sur chaque enregistrement via `geo_met
 
 | `geo_method` | Nombre | `geo_precision` | Ce que représente la coordonnée |
 | --- | --- | --- | --- |
-| `campus` | 67 | `exact` | Un géocodage OpenStreetMap du campus nommé, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
-| `commune` | 15 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria` – utilisé quand OSM ne trouve pas le campus par son nom. |
-| `wilaya` | 95 | `approximate` | Le centroïde de la wilaya de l'établissement – solution de repli quand seule la wilaya est connue. Chaque établissement privé/relevant d'autres ministères s'y trouve, car la source ne publie pas d'adresse pour eux. |
+| `campus` | 72 | `exact` | Un point OpenStreetMap propre au campus de cet établissement, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
+| `commune` | 20 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria`, utilisé quand aucune source ouverte ne situe le campus lui-même. |
+| `wilaya` | 96 | `approximate` | Le centroïde de la wilaya de l'établissement, solution de repli quand seule la wilaya est connue. Presque chaque établissement privé/relevant d'autres ministères s'y trouve, car la source ne publie pas d'adresse pour eux. |
 
 `wilaya_code` et `commune` sont toujours réconciliés avec le jeu de données principal
 `geoalgeria`, ils font donc autorité et suivent le schéma à 69 wilayas (`commune_code` vaut
@@ -108,10 +108,10 @@ Les fichiers **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inc
 
 ```
 data/
-  institutions.json            # 177 établissements (tableau)
+  institutions.json            # 188 établissements (tableau)
   metadata.json                # sources, comptages, by_type, by_sector, by_geo_method, updated
   csv/institutions.csv         # dépôt + bundle Release (pas dans le tarball npm)
-  geojson/institutions.geojson # Entités point (les 177 placées ; 61 géocodées au campus, voir geo_method)
+  geojson/institutions.geojson # Entités point (les 188 placées ; 72 géocodées au campus, voir geo_method)
 ```
 
 ## Structure d'un enregistrement
@@ -169,6 +169,21 @@ la commande réconcilie la wilaya/commune de chaque enregistrement avec le jeu d
 et attache les coordonnées de référence (`scripts/seeds/coordinates.json`, actualisées avec
 `npm run geocode`). Elle échoue bruyamment si le nombre d'établissements s'effondre. Les
 coordonnées sont dérivées d'OpenStreetMap – voir **Noms et coordonnées** ci-dessus.
+
+**Le fichier des affectations BAC 2026** : *Moyennes minimales BAC 2026 (suite à la première
+phase)*, [publié en PDF de 350 pages](https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf),
+qui nomme chaque établissement où le ministère affecte les nouveaux bacheliers, par le code
+d'établissement du ministère lui-même. Il décrit le réseau tel qu'il est aujourd'hui : il apporte
+donc **11 établissements** que la page du réseau omet et le **nom actuel de 2** qu'elle liste
+encore sous un nom plus ancien. Ce qui en est versionné est une projection respectueuse des
+droits de ses lignes d'établissements, `sources/enseignement-superieur/bac-2026.json` : le code
+d'établissement et le nom officiel français seulement, jamais les moyennes minimales par filière
+et jamais le PDF, l'URL du PDF, son SHA-256, sa taille et son nombre de pages étant consignés
+dans le manifeste de capture. Cette projection fait **autorité** pour le nom français de ces
+enregistrements : `scripts/bac-2026.mjs` refuse tout nom de `scripts/seeds/bac-2026.json` qui ne
+se réduit pas à la ligne publiée par le ministère sous ce code, de sorte que la graine peut
+restituer les accents et la casse que le fichier tout en capitales perd, sans jamais introduire
+un nom qui lui soit propre.
 
 ## Licence et attribution
 

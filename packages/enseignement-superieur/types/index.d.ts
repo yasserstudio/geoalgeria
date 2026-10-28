@@ -23,6 +23,7 @@ export type GeoMethod = "campus" | "commune" | "wilaya";
 export type SupervisoryMinistry =
   | "Ministère de la Culture et des Arts"
   | "Ministère de la Défense nationale"
+  | "Ministère de la Jeunesse"
   | "Ministère de la Poste et des Télécommunications"
   | "Ministère de la Santé"
   | "Ministère du Travail, de l'Emploi et de la Sécurité sociale";
