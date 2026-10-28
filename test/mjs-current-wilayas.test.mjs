@@ -89,3 +89,27 @@ test("official ONS Arabic labels resolve only exact unambiguous historical names
   assert.equal(String(boughzoul.wilaya_code), "67");
   assert.equal(canonicalCommuneForOfficialArabicLabel("26", "بلدية غير موجودة"), null);
 });
+
+test("a former JORA spelling still reconciles a record the reform moved", () => {
+  // The SIG writes the names communes carried before the 2026-09-24 renames
+  // (JORA n° 25 of 2026, law 26-06). Each point sits in the daughter wilaya, the
+  // source states the mother, and only the former spelling names the commune.
+  const cases = [
+    ["AZIL ABEDELKADER", "05", 35.4745, 5.064, "60", "0515"],
+    ["BOUIHI", "13", 34.4692, -1.679, "63", "1343"],
+    ["ZMALET EL EMIR ABDELKADE", "14", 34.8994, 2.3082, "64", "1409"],
+    ["OULED EMAARAF", "26", 35.815711, 3.029773, "67", "2603"],
+  ];
+  for (const [commune, source, lat, lng, current, communeCode] of cases) {
+    assert.deepEqual(
+      reconcileCurrentWilayaByCommune({ commune, wilaya_code: source, lat, lng }),
+      { wilaya_code: current, source_wilaya_code: source, commune_code: communeCode },
+      commune,
+    );
+  }
+  // A spelling no commune of the containing wilaya ever carried still abstains.
+  assert.deepEqual(
+    reconcileCurrentWilayaByCommune({ commune: "NOT A COMMUNE", wilaya_code: "13", lat: 34.4692, lng: -1.679 }),
+    { wilaya_code: "13", commune_code: null },
+  );
+});
