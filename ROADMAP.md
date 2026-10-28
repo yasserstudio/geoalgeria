@@ -116,7 +116,7 @@ reads as further along than it is.
   (`أيت عقـواشة`, `بنــــي زمنزار`, ...) that render as broken typography in
   search snippets, 21 in wilaya 15 and Drean in wilaya 36, and the app had
   stripped them in its own committed copy. They are now stripped at source in
-  all eight carriers by `scripts/fix-commune-name-ar.mjs`, with Souk El
+  all eleven carriers by `scripts/fix-commune-name-ar.mjs`, with Souk El
   Tenine's definite article repaired alongside them, and
   `test/commune-name-ar.test.mjs` holds the floor at zero so a regeneration
   cannot resurrect them. Still open: dairas have NO Arabic name field at all,
