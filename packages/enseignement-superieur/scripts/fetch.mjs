@@ -32,7 +32,7 @@ import {
   readRetiredMigrations, forwardRetiredId,
 } from "../../../scripts/lib/v2-transforms.mjs";
 import { captureMeta } from "../../../scripts/lib/source-store.mjs";
-import { OWNER_CONFIRMATION_KM, COPY_RADIUS_M } from "../../../scripts/review/thresholds.mjs";
+import { OWNER_CONFIRMATION_KM, COPY_RADIUS_M, AGREEMENT_KM } from "../../../scripts/review/thresholds.mjs";
 import { metresBetween } from "../../../scripts/lib/seat-evidence.mjs";
 import { PAGE, getHtml, parseInstitutions, instKey, classifyType, MIN_EXPECTED } from "./mesrs.mjs";
 import { getHtmlAr, anchoredNamesAr, parseExtras, buildResolver, classifyTypeAr, PAGE_AR } from "./mesrs-ar.mjs";
@@ -43,6 +43,7 @@ const DATA = join(__dirname, "..", "data");
 const REF = join(__dirname, "..", "..", "dataset", "data", "geojson");
 const DATASET = join(__dirname, "..", "..", "dataset", "data");
 const SEED = join(__dirname, "seeds", "coordinates.json");
+const SECOND_SOURCE_FILE = join(__dirname, "seeds", "second-source.json");
 const OVERRIDES_FILE = join(__dirname, "seeds", "overrides.json");
 const COMMUNE_LABELS_FILE = join(__dirname, "seeds", "commune-labels.json");
 const BAC_SEED_FILE = join(__dirname, "seeds", "bac-2026.json");
@@ -168,6 +169,60 @@ function nearestCommune(lat, lng) {
   return best;
 }
 
+// docs/adr/0001: a campus point is exact on two independent Votes, and the open
+// OpenStreetMap object is the one that ships. The second Vote is either an Owner
+// reading (rule 6: off a proprietary map it may only confirm, within
+// OWNER_CONFIRMATION_KM) or a Wikidata P625 (rule 3: within AGREEMENT_KM). Either
+// one within COPY_RADIUS_M of the point is a Copied claim and casts no Vote, and a
+// recorded distance that is not the measured one is refused, so the seed cannot
+// say more than its numbers. Returns how many second Votes the place carries.
+const SECOND_VOTES = {
+  owner_confirmation: { keys: ["point", "read_at", "read_by", "source", "confirms"], ceilingM: OWNER_CONFIRMATION_KM * 1000 },
+  wikidata_confirmation: { keys: ["item", "point", "read_at", "confirms"], ceilingM: AGREEMENT_KM * 1000 },
+};
+function secondVotes(where, p) {
+  let n = 0;
+  for (const [field, rule] of Object.entries(SECOND_VOTES)) {
+    const v = p[field];
+    if (!v) continue;
+    for (const k of rule.keys) if (v[k] == null) throw new Error(`${where}: ${field} needs ${k}`);
+    if (v.confirms !== p.osm) throw new Error(`${where}: ${field} confirms ${v.confirms}, the point is ${p.osm}`);
+    const [cLng, cLat] = v.point;
+    const apart = metresBetween(cLng, cLat, p.lng, p.lat);
+    if (!(apart < rule.ceilingM))
+      throw new Error(`${where}: ${field} is ${Math.round(apart)} m from the point, past the ${rule.ceilingM} m ceiling`);
+    if (!(apart > COPY_RADIUS_M))
+      throw new Error(`${where}: ${field} is ${Math.round(apart)} m from the point, a Copied claim (within ${COPY_RADIUS_M} m)`);
+    if (Math.round(apart) !== v.metres_from_published_value)
+      throw new Error(`${where}: ${field} says ${v.metres_from_published_value} m, it is ${Math.round(apart)} m`);
+    n++;
+  }
+  return n;
+}
+
+// A campus placement as a seed states it: the OSM object's point, the wilaya the
+// seed expects it to join, and optionally the commune its outline contains where
+// the nearest-centre join answers a neighbour (the label moves, never the point,
+// and never across a wilaya boundary).
+function campusPlace(where, p) {
+  if (!inAlgeria(p.lat, p.lng)) throw new Error(`${where}: campus coordinate is not a reading inside Algeria`);
+  if (!/^(node|way|relation)\/\d+$/.test(String(p.osm)) || !Number.isInteger(p.osm_version) || !p.osm_timestamp)
+    throw new Error(`${where}: a campus coordinate needs its OSM object as osm/osm_version/osm_timestamp`);
+  const nc = nearestCommune(p.lat, p.lng);
+  if (!nc) throw new Error(`${where}: campus coordinate joins no flagship commune`);
+  // The seed names the wilaya it expects; a point that joins another one is a
+  // transcription error, not a new fact, so the build stops.
+  if (p.wilaya_code != null && Number(p.wilaya_code) !== nc.code)
+    throw new Error(`${where}: campus coordinate joins wilaya ${nc.code}, seed says ${p.wilaya_code}`);
+  let commune = nc.name;
+  if (p.commune != null) {
+    const c = communeByName(p.commune, nc.code);
+    if (!c) throw new Error(`${where}: commune "${p.commune}" does not resolve inside wilaya ${nc.code}`);
+    commune = c.name;
+  }
+  return { lat: p.lat, lng: p.lng, wilaya_code: nc.code, commune, precision: "campus", votes: 1 + secondVotes(where, p) };
+}
+
 // --- main -------------------------------------------------------------------
 async function main() {
   console.log("Fetching MESRS university network…");
@@ -266,6 +321,26 @@ async function main() {
   if (unresolved.length) console.warn(`  ⚠️  ${unresolved.length} extra(s) had no resolvable wilaya: ${unresolved.join("; ")}`);
   const host = (url) => { try { return new URL(url).hostname.replace(/^www\./, "").toLowerCase(); } catch { return null; } };
 
+  // Campus points on two independent Votes (docs/adr/0001), for records the
+  // Nominatim seed and the overrides do not hold that way: the open OSM object
+  // that ships, plus the second Vote that makes it exact. Keyed by carryKey, so
+  // it also reaches the Arabic-only extras, and it takes precedence over every
+  // other placement. An entry no record reads is refused below, so a record that
+  // leaves the sources cannot leave a stale point behind.
+  const secondSource = readSeed(SECOND_SOURCE_FILE);
+  const usedSecond = new Set();
+  const fromSecondSource = (key, expectWilaya) => {
+    const p = secondSource[key];
+    if (!p) return null;
+    usedSecond.add(key);
+    const where = `seeds/second-source.json ${key}`;
+    const pl = campusPlace(where, p);
+    if (pl.votes < 2) throw new Error(`${where}: a second-source placement needs its second Vote`);
+    if (expectWilaya != null && pl.wilaya_code !== expectWilaya)
+      throw new Error(`${where}: the point joins wilaya ${pl.wilaya_code}, the record says ${expectWilaya}`);
+    return pl;
+  };
+
   const records = [];
   const dropped = [];
   let nReject = 0; // geocodes rejected for landing in the wrong wilaya
@@ -275,11 +350,17 @@ async function main() {
     const key = instKey(inst);
     const g = seed[key];
     let lat = null, lng = null, wilaya_code = null, commune = null, precision = null;
+    const h0 = host(inst.website);
+
+    // 0. A campus point on two independent Votes (seeds/second-source.json).
+    const ss = fromSecondSource(carryKey({ website: inst.website, name_ar: (h0 && namesAr.get(h0)) || null, name: inst.name }), nameW);
+    if (ss) ({ lat, lng, wilaya_code, commune, precision } = ss);
 
     // 1. Curated override: a commune (→ flagship centroid) or a bare wilaya. Takes
-    // precedence: it both places the schools OSM can't find and CORRECTS the few
+    // precedence over the Nominatim geocode (a two-Vote point above outranks
+    // both): it both places the schools OSM can't find and CORRECTS the few
     // discipline-only names that geocode to a same-named school in another wilaya.
-    if (overrides[key]) {
+    if (wilaya_code == null && overrides[key]) {
       const ov = overrides[key];
       const c = ov.commune ? communeByName(ov.commune, ov.wilaya_code) : null;
       if (c) {
@@ -354,6 +435,7 @@ async function main() {
     const w = WILAYA.get(code);
     if (!w || !inAlgeria(w.lat, w.lng)) { dropped.push(`${e.name_ar} [no wilaya centroid]`); continue; }
     const { type, type_fr } = classifyTypeAr(e.name_ar);
+    const ss = fromSecondSource(carryKey({ website: e.website, name_ar: e.name_ar, name: null }), code);
     records.push({
       name: null,
       name_ar: e.name_ar,
@@ -362,16 +444,19 @@ async function main() {
       sector: e.sector,
       supervisory_ministry: e.supervisory_ministry,
       website: e.website,
-      commune: null,
+      commune: ss ? ss.commune : null,
       wilaya_code: String(code).padStart(2, "0"),
       wilaya_name: w.name_fr,
-      lat: w.lat,
-      lng: w.lng,
-      geo_precision: "wilaya",
+      lat: ss ? ss.lat : w.lat,
+      lng: ss ? ss.lng : w.lng,
+      geo_precision: ss ? "campus" : "wilaya",
       source: PAGE_AR,
     });
   }
   console.log(`  added ${records.length - networkCount} private/other-ministry institutions`);
+  const unusedSecond = Object.keys(secondSource).filter((k) => !k.startsWith("_") && !usedSecond.has(k));
+  if (unusedSecond.length)
+    throw new Error(`seeds/second-source.json: no record reads ${unusedSecond.join(", ")}`);
 
   // 2. The institutions the BAC 2026 file holds and the university-network
   //    listing omits. The French name is the ministry's own row (assertBacName);
@@ -401,42 +486,7 @@ async function main() {
     const p = add.place ?? {};
     let lat = null, lng = null, wilaya_code = null, commune = null, precision = null;
     if (p.precision === "campus") {
-      if (!inAlgeria(p.lat, p.lng)) throw new Error(`${where}: campus coordinate is not a reading inside Algeria`);
-      if (!/^(node|way|relation)\/\d+$/.test(String(p.osm)) || !Number.isInteger(p.osm_version) || !p.osm_timestamp)
-        throw new Error(`${where}: a campus coordinate needs its OSM object as osm/osm_version/osm_timestamp`);
-      const nc = nearestCommune(p.lat, p.lng);
-      if (!nc) throw new Error(`${where}: campus coordinate joins no flagship commune`);
-      lat = p.lat; lng = p.lng; wilaya_code = nc.code; commune = nc.name; precision = "campus";
-      // The seed names the wilaya it expects; a point that joins another one is a
-      // transcription error, not a new fact, so the build stops.
-      if (p.wilaya_code != null && Number(p.wilaya_code) !== nc.code)
-        throw new Error(`${where}: campus coordinate joins wilaya ${nc.code}, seed says ${p.wilaya_code}`);
-      // A commune the seed names, decided by containment in the commune outline
-      // where the nearest-centre join answers a neighbour: the label moves, the
-      // point does not, and never across a wilaya boundary.
-      if (p.commune != null) {
-        const c = communeByName(p.commune, nc.code);
-        if (!c) throw new Error(`${where}: commune "${p.commune}" does not resolve inside wilaya ${nc.code}`);
-        commune = c.name;
-      }
-      // docs/adr/0001 rule 6: an Owner reading off a proprietary map only
-      // confirms the open point, within OWNER_CONFIRMATION_KM, and the open point
-      // is what ships. A confirmation that does not agree is not one, and one
-      // within COPY_RADIUS_M of the point is a Copied claim, which casts no Vote.
-      const oc = p.owner_confirmation;
-      if (oc) {
-        for (const k of ["point", "read_at", "read_by", "source", "confirms"])
-          if (oc[k] == null) throw new Error(`${where}: owner_confirmation needs ${k}`);
-        if (oc.confirms !== p.osm) throw new Error(`${where}: owner_confirmation confirms ${oc.confirms}, the point is ${p.osm}`);
-        const [cLng, cLat] = oc.point;
-        const apart = metresBetween(cLng, cLat, p.lng, p.lat);
-        if (!(apart < OWNER_CONFIRMATION_KM * 1000))
-          throw new Error(`${where}: owner_confirmation is ${Math.round(apart)} m from the point, past the ${OWNER_CONFIRMATION_KM * 1000} m ceiling`);
-        if (!(apart > COPY_RADIUS_M))
-          throw new Error(`${where}: owner_confirmation is ${Math.round(apart)} m from the point, a Copied claim (within ${COPY_RADIUS_M} m)`);
-        if (Math.round(apart) !== oc.metres_from_published_value)
-          throw new Error(`${where}: owner_confirmation says ${oc.metres_from_published_value} m, it is ${Math.round(apart)} m`);
-      }
+      ({ lat, lng, wilaya_code, commune, precision } = campusPlace(where, p));
     } else if (p.precision === "commune") {
       const c = communeByName(p.commune, p.wilaya_code);
       if (!c) throw new Error(`${where}: commune "${p.commune}" does not resolve inside wilaya ${p.wilaya_code}`);
