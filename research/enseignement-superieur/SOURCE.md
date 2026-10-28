@@ -195,13 +195,13 @@ border) and `00064` to Guerrouaou (from Soumaa). Identity rests on a name match,
 tag for `00095` and `00111`, whose Wikidata website is the defence ministry's.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 107
-approximate records (92 `wilaya`, 15 `commune`) are in it exactly once:
+written offline and byte for byte by `precision-review.mjs` next to it. All 104
+approximate records (91 `wilaya`, 13 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
-| Queued, one candidate for the campus (single source) | 22 |
-| Queued, several candidates for the campus (ambiguous) | 3 |
+| Queued, one candidate for the campus (single source) | 21 |
+| Queued, several candidates for the campus (ambiguous) | 1 |
 | No open candidate in the capture | 82 |
 
 Each queued entry carries the OSM element, the tags that make the tie (the
@@ -213,7 +213,7 @@ website, a parent university's host, a former name, another record's campus)
 sit in tables in the script, each with its reason.
 
 **Owner confirmations (`docs/adr/0001` rule 6 and "Rule 6 in detail").** The
-Owner read seven campus points off Google Maps on 2026-10-28. A reading off a
+Owner read eleven campus points off Google Maps on 2026-10-28. A reading off a
 proprietary map is a Claim that may only confirm an open Candidate within
 500 m, and the open coordinate is the one that ships; an Owner reading is never
 a Copied claim, so the 50 m copy radius does not apply to it (decided the same
@@ -232,6 +232,9 @@ the measured one.
 | `00184` | ENS en mathématiques (`P08`, Sidi Abdellah) | OSM `way/1318064031` | 28 m (over 100 m from the pole's other buildings) | stays `exact`, now on two Votes |
 | `00185` | ES des sciences de gestion de Annaba (`P23`) | OSM `node/7866678785` | 29 m | stays `exact`, now on two Votes |
 | `00182` | ENS des nanosciences et nanotechnologies (`P10`, Sidi Abdellah) | OSM `way/1318066776`, by the Owner's verdict (OSM names it for `P09`) | 40 m | stays `exact`, moved 40 m to that building, on two Votes |
+| `00073` | ENSTP, Ecole nationale supérieure des travaux publics (Kouba) | OSM `way/43331770` (not the Zeralda object, 19.6 km away) | 107 m | `exact` from `commune`, the OSM point ships |
+| `00166` | ENS de Constantine (Assia Djebar) | OSM `node/5322170362` (`website` tie; the other object is 11 km away) | 95 m | `exact` from `wilaya`, commune El Khroub by outline |
+| `00057` | USTO, Université des sciences et de la technologie d'Oran | OSM `way/71138773` | 23 m | `exact` from `commune`; Wikidata's town-level point 3.9 km away votes for no candidate |
 | `00183` | ENS des systèmes autonomes (`P09`, Sidi Abdellah) | none: no OSM object at the reading (the pole outline is 169 m away) | (no object) | **demoted** to the Maalma centre |
 
 For `P09` and `P10` the two maps first disagreed on which Sidi Abdellah
@@ -258,9 +261,9 @@ school publishes as Bab El Oued (its OSM point falls on the Casbah side of that
 boundary, 96 m from it): a site the record does not publish, recorded in the
 seed's `osm_search` note.
 
-**Two Votes and one.** 15 of the 80 `exact` records now stand on two
-independent Votes: the 9 above, and ENSTA, `00178`, `00165`, `P08`, `P10` and
-`P23` on the Owner's readings. The other 65 rest on a single Nominatim geocode and
+**Two Votes and one.** 18 of the 83 `exact` records now stand on two
+independent Votes: the 9 above, and ENSTA, `00178`, `00165`, `P08`, `P10`, `P23`, `00073` (ENSTP),
+`00166` (ENS Constantine) and `00057` (USTO) on the Owner's readings. The other 65 rest on a single Nominatim geocode and
 are reviewed in a separate follow-up pass (private tracker #336).
 
 **Re-run.** `NODE_USE_ENV_PROXY=1 node research/enseignement-superieur/fetch-second-sources.mjs`
@@ -285,7 +288,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  80 campus, 15 commune, 92 wilaya; the 107 approximate records are in the
+  83 campus, 13 commune, 91 wilaya; the 104 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and

@@ -55,7 +55,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00054,Université des sciences islamiques Emir Abdelkader de Constantine,جامعة قسنطينة للعلوم الإسلامية الأمير عبد القادر,25,,Constantine,36.3461042,6.602899,exact,campus,mesrs,universite,Université,public,,http://www.univ-emir.dz/
 00055,Université du 20 Août 1955 de Skikda,جامعة سكيكدة - 20 أوت 1955,21,,El Hadaiek,36.8478191,6.891858,exact,campus,mesrs,universite,Université,public,,http://www.univ-skikda.dz/
 00056,Université Médéa - Yahia Farès,جامعة المدية - يحي فارس,26,,Médéa,36.2649519,2.7976246,exact,campus,mesrs,universite,Université,public,,http://www.univ-medea.dz/
-00057,Université Mohamed Boudiaf des sciences et de la technologie - Mohamed Boudiaf,جامعة محمد بوضياف العلوم والتكنولوجيا- وهران,31,,Bir El Djir,35.7368,-0.545,approximate,commune,mesrs,universite,Université,public,,http://www.univ-usto.dz/
+00057,Université Mohamed Boudiaf des sciences et de la technologie - Mohamed Boudiaf,جامعة محمد بوضياف العلوم والتكنولوجيا- وهران,31,,Bir El Djir,35.7077465,-0.5791491,exact,campus,mesrs,universite,Université,public,,http://www.univ-usto.dz/
 00058,Université Sidi Bel Abbès - Djillali Liabes,جامعة جيلالي ليابس سيدي بلعباس,22,,Sidi Lahcene,35.1795014,-0.660442,exact,campus,mesrs,universite,Université,public,,http://www.univ-sba.dz/
 00059,Ecole des hautes études commerciales,مدرسة الدراسات العليا التجارية,42,,Kolea,36.638549,2.78867,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.hec.dz/
 00060,Ecole Nationale Polytechnique,المدرسة الوطنية المتعددة التقنيات,16,,El Harrach,36.720797,3.137389,approximate,commune,mesrs,grande_ecole,Grande école,public,,http://www.enp.edu.dz/
@@ -70,7 +70,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00070,Ecole nationale supérieure des mines et de la métallurgie - Amar Laskri,,23,,Annaba,36.9,7.7667,approximate,commune,mesrs,grande_ecole,Grande école,public,,http://ensmm-annaba.dz/
 00071,Ecole nationale supérieure des sciences de la mer et de l’aménagement du littoral,,16,,Dely Ibrahim,36.7553186,2.9817799,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.enssmal.dz/
 00072,Ecole Nationale Supérieure des sciences politiques,المدرسة الوطنية العليا للعلوم السياسية,16,,Ben Aknoun,36.758895,3.0100658,approximate,commune,mesrs,grande_ecole,Grande école,public,,http://www.enssp.dz/
-00073,Ecole nationale supérieure des travaux publics - Francis Jeanson,,16,,Kouba,36.732356,3.087478,approximate,commune,mesrs,grande_ecole,Grande école,public,,http://www.entp.edu.dz/
+00073,Ecole nationale supérieure des travaux publics - Francis Jeanson,,16,,Kouba,36.726099,3.0685878,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.entp.edu.dz/
 00074,École Nationale Supérieure en Intelligence Artificielle,المدرسة الوطنية العليا للذكاء الاصطناعي,16,,,36.776335,3.058211,approximate,wilaya,mesrs,grande_ecole,Grande école,public,,https://ensia.edu.dz/
 00075,Ecole nationale supérieure en statistique et en économie appliquée,,42,,Kolea,36.6405353,2.7913487,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.enssea.net/
 00076,Ecole nationale supérieure vétérinaire - Rabie Bouchama,المدرسة الوطنية العليا للبيطرة-الشهيد الربيع بوشامة,16,,Oued Smar,36.7122437,3.1694233,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.ensv.dz/
@@ -162,7 +162,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00163,Ecole normale supérieure de Béchar,,08,,,31.61667,-2.21667,approximate,wilaya,mesrs,ens,École normale supérieure,public,,http://ensb.univ-bechar.dz/ensb/?page_id=971
 00164,Ecole normale supérieure de Bou Saâda,المدرسة العليا للأساتذة بوسعادة المجاهد الفريق احمد قايد صالح,68,,Bou Saada,35.2577086,4.1811706,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.ens-bousaada.dz/ar/
 00165,Ecole normale supérieure de Bouzaréah - Cheikh Mubarak Ben Mohamed Brahimi El Mili,المدرسة العليا للأساتذة بوزريعة الشيخ مبارك بن محمد إبراهيمي الميلي الجزائري,16,,Bouzareah,36.781995,3.0126523,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.ensb.dz/
-00166,Ecole normale supérieure de Constantine -Assia Djebar,المدرسة العليا للأساتذة الآداب والعلوم الانسانية قسنطينة الكاتبة آسيا جبار,25,,,36.364164,6.608428,approximate,wilaya,mesrs,ens,École normale supérieure,public,,http://www.ensc.dz/
+00166,Ecole normale supérieure de Constantine -Assia Djebar,المدرسة العليا للأساتذة الآداب والعلوم الانسانية قسنطينة الكاتبة آسيا جبار,25,,El Khroub,36.2758594,6.5887878,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.ensc.dz/
 00167,Ecole normale supérieure de Kouba - Mohamed Bachir El Ibrahimi,المدرسة العليا للأساتذة القبة الشيخ محمد البشير الإبراهيمي,16,,Kouba,36.732356,3.087478,approximate,commune,mesrs,ens,École normale supérieure,public,,http://www.ens-kouba.dz/
 00168,Ecole normale supérieure de Laghouat - Taleb Abderrahmane,المدرسة العليا للأساتذة بالأغواط - طالب عبد الرحمان,03,,Laghouat,33.8108153,2.8641055,exact,campus,mesrs,ens,École normale supérieure,public,,https://www.ens-lagh.dz/en/
 00169,Ecole Normale Supérieure de Mostaganem,المدرسة العليا للأساتذة بمستغانم,27,,,35.9246589,0.09,approximate,wilaya,mesrs,ens,École normale supérieure,public,,http://ens.univ-mosta.dz/

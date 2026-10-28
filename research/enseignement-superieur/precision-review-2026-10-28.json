@@ -4,8 +4,8 @@
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
   "network": "Candidates come from the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf), one source. The second-source pass of the same run (research/enseignement-superieur/second-source-votes-2026-10-28.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on 2026-10-28.",
   "counts": {
-    "approximate_reviewed": 107,
-    "queued_single_source": 25,
+    "approximate_reviewed": 104,
+    "queued_single_source": 22,
     "no_open_candidate": 82,
     "promoted": 0
   },
@@ -179,47 +179,6 @@
       "needs": "a campus address or map on the institution's own site (cuniv-tissemsilt.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
-      "id": "00057",
-      "name": "Université Mohamed Boudiaf des sciences et de la technologie - Mohamed Boudiaf",
-      "name_ar": "جامعة محمد بوضياف العلوم والتكنولوجيا- وهران",
-      "wilaya_code": "31",
-      "geo_method": "commune",
-      "published": {
-        "lat": 35.7368,
-        "lng": -0.545,
-        "commune": "Bir El Djir"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/71138773",
-          "tie": "website",
-          "matched": "website host = record website host univ-usto.dz",
-          "tags": {
-            "name": "Université des Sciences et de la Technologie d'Oran",
-            "name:ar": "جامعة العلوم والتكنولوجيا بوهران",
-            "name:en": "University of Science and Technology of Oran",
-            "name:fr": "Université des Sciences et de la Technologie d'Oran",
-            "short_name": "USTO",
-            "website": "https://www.univ-usto.dz/"
-          },
-          "point": {
-            "lat": 35.7077465,
-            "lng": -0.5791492
-          },
-          "commune": {
-            "code": "3103",
-            "name": "Bir El Djir"
-          },
-          "wilaya_code": "31",
-          "in_declared_wilaya": true,
-          "distance_m": 4465
-        }
-      ],
-      "reason": "single source",
-      "needs": "a campus address or map on the institution's own site (univ-usto.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
       "id": "00060",
       "name": "Ecole Nationale Polytechnique",
       "name_ar": "المدرسة الوطنية المتعددة التقنيات",
@@ -294,67 +253,6 @@
       ],
       "reason": "single source",
       "needs": "a campus address or map on the institution's own site (enp-constantine.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00073",
-      "name": "Ecole nationale supérieure des travaux publics - Francis Jeanson",
-      "name_ar": null,
-      "wilaya_code": "16",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.732356,
-        "lng": 3.087478,
-        "commune": "Kouba"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/43331770",
-          "tie": "name",
-          "matched": "name:fr ~ name (core)",
-          "tags": {
-            "addr:city": "القبة",
-            "addr:street": "شارع سيدي قريدي",
-            "name": "المدرسة الوطنية العليا للأشغال العمومية",
-            "name:ar": "المدرسة الوطنية العليا للأشغال العمومية",
-            "name:fr": "Ecole supérieure des travaux publics",
-            "website": "https://enstp.edu.dz/ar/"
-          },
-          "point": {
-            "lat": 36.726099,
-            "lng": 3.0685877
-          },
-          "commune": {
-            "code": "1618",
-            "name": "Kouba"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 1822
-        },
-        {
-          "source": "osm",
-          "element": "way/666205567",
-          "tie": "name",
-          "matched": "name ~ name (core)",
-          "tags": {
-            "name": "Ecole Supérieure des Travaux Publics"
-          },
-          "point": {
-            "lat": 36.6752884,
-            "lng": 2.8584479
-          },
-          "commune": {
-            "code": "1646",
-            "name": "Zeralda"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 21381
-        }
-      ],
-      "reason": "ambiguous: several candidates",
-      "needs": "a campus address or map on the institution's own site (entp.edu.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
       "id": "00077",
@@ -900,64 +798,6 @@
       ],
       "reason": "single source",
       "needs": "a Wikidata item for the institution with P625 (none is tagged on the OSM element); or an official address, since the record carries no own website, independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00166",
-      "name": "Ecole normale supérieure de Constantine -Assia Djebar",
-      "name_ar": "المدرسة العليا للأساتذة الآداب والعلوم الانسانية قسنطينة الكاتبة آسيا جبار",
-      "wilaya_code": "25",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.364164,
-        "lng": 6.608428,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/375694847",
-          "tie": "name",
-          "matched": "name ~ name (core)",
-          "tags": {
-            "addr:city": "Constantine",
-            "name": "Ecole Normale Supérieure de Constantine"
-          },
-          "point": {
-            "lat": 36.3675877,
-            "lng": 6.6372326
-          },
-          "commune": {
-            "code": "2501",
-            "name": "Constantine"
-          },
-          "wilaya_code": "25",
-          "in_declared_wilaya": true,
-          "distance_m": 2607
-        },
-        {
-          "source": "osm",
-          "element": "node/5322170362",
-          "tie": "website",
-          "matched": "website host = record website host ensc.dz",
-          "tags": {
-            "name": "École normale supérieure de Constantine",
-            "website": "http://www.ensc.dz/"
-          },
-          "point": {
-            "lat": 36.2758594,
-            "lng": 6.5887878
-          },
-          "commune": {
-            "code": "2506",
-            "name": "El Khroub"
-          },
-          "wilaya_code": "25",
-          "in_declared_wilaya": true,
-          "distance_m": 9975
-        }
-      ],
-      "reason": "ambiguous: several candidates",
-      "needs": "a campus address or map on the institution's own site (ensc.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
       "id": "00167",
