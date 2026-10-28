@@ -15,6 +15,14 @@ export type GeoPrecision = "exact" | "approximate" | null;
 export type GeoMethod = "sig_mjs";
 
 /** A youth Establishment, as published by the Ministry of Youth and Sports GIS. */
+/** Upstream links: the ids that join an establishment to the source it came from. */
+export interface InstitutionRefs {
+  /** The Ministry of Youth and Sports SIG's own per-record UUID
+   *  (`properties.id` of the `etablissements_de_jeunes` layer). Stable across
+   *  pulls and across the ministry's edits, and the key `id` is carried on. */
+  mjs: string;
+}
+
 export interface Institution {
   /** Stable id, unique within this dataset. Opaque: do not parse. */
   id: string;
@@ -43,6 +51,8 @@ export interface Institution {
   geo_method: GeoMethod;
   /** Provenance key into `metadata.sources[]`: always "mjs". */
   source: "mjs";
+  /** Upstream links; see {@link InstitutionRefs}. */
+  refs: InstitutionRefs;
   /** Establishment type code. */
   type: TypeCode;
   /** Canonical French label for the type (e.g. "Maison de jeunes"). */

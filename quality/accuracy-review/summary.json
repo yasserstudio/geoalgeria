@@ -164,11 +164,11 @@
     },
     {
       "path": "packages/jeunesse/data/institutions.json",
-      "sha256": "3bbedb5b2ce878d7ce8c133e331f014d33a38a0f9496bab1e0129eface1ced11"
+      "sha256": "720e5d9484e82ce0a9e7d6dfb490f86004ff6199af905c7ded48f77d86e16f84"
     },
     {
       "path": "packages/jeunesse/data/metadata.json",
-      "sha256": "febf74cf7af1310ad9e43d52fa809129cbd7ed2745dd17a6922cf1af910302f5"
+      "sha256": "1339b69aaeeb577e3e84e1653dc00cade49b73311de9eb789723047dbd2393f4"
     },
     {
       "path": "packages/livraison/data/carriers.json",
@@ -1408,7 +1408,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 128 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+        "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 129 records are reconciled to the current wilaya only where an exact current, former (JORA) or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
         "wilayas_covered": 69,
         "bbox": [
           -8.1489,

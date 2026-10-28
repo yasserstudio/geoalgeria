@@ -10,10 +10,9 @@
 // moment it arrives, before any validation that could abort the run, so the
 // capture replays offline with --cache long after the window closes. sports
 // was rebuilt from the 2026-10-27 capture (its absorbed review decisions 01663
-// and 01666 retired). The jeunesse rebuild is still held: its --cache run aborts
-// in applyReviewedOverrides on institutions.json/00728, a decision gone stale
-// by absorption the same way (expect wilaya 14 where the build now derives 64
-// with commune 1439); refresh-schedule.json carries the reason. Owed: a gate
+// and 01666 retired), and jeunesse from its own once institutions.json/00728,
+// gone stale by absorption the same way, was retired. Both packages publish the
+// SIG UUID as refs.mjs and carry their ids on it. Owed: a gate
 // that proves a live pull replays byte-identically to the committed capture end
 // to end. The tests pin the projection only (test/mjs-sig-capture.test.mjs).
 // Convention: sources/README.md.

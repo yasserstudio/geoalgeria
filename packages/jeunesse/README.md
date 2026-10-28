@@ -123,8 +123,12 @@ from the ministry's legacy public map by nearest-neighbour geo-match (≤ 200 m,
 type-checked so a different kind of facility's name is never grafted on), present on ~59% of
 records, `null` where no confident match exists (as above). `name` is `null` for the ~5% the
 source leaves blank; `commune` and `daira` are French (uppercase, as published), or `null` on the 21 and 3 records whose SIG referential is unset. `commune_code`
-is populated for 128 records whose exact current or official 2021 ONS commune label and point
-agree; otherwise it is `null`. For the full French
+is populated for 143 records: 129 whose exact current, former (JORA) or official 2021 ONS commune
+label and point agree, and 14 reviewed corrections; otherwise it is `null`. `refs.mjs` is the
+ministry GIS's own per-record UUID (`properties.id` of the `etablissements_de_jeunes` layer),
+on every establishment since the 2026-10-27 refresh: `id` is carried on it, so an establishment
+the ministry renames, re-addresses or re-places keeps its id. The CSV carries `refs` as a JSON
+column after `source`. For the full French
 wilaya/commune divisions, join `wilaya_code` against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset. `wilaya_code` is zero-padded
 to two digits and uses the current 69-Wilaya model. Where it differs from the ministry's

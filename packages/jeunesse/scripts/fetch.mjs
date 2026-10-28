@@ -36,6 +36,8 @@ import { dirname, join } from "node:path";
 import { MIGRATIONS, writePackageV2, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { fetchMjsLayer, readMjsCapture, MJS_SOURCE } from "../../../scripts/lib/mjs-sig.mjs";
 import { captureMeta } from "../../../scripts/lib/source-store.mjs";
+import { foldNameDashes, withoutEmDash } from "../../../scripts/lib/no-em-dash.mjs";
+import { pathToFileURL } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -222,23 +224,35 @@ function buildNameArFinder(seed) {
 /**
  * The key a published id is carried on. The ids are a flat 5-digit space assigned
  * from sort position (wilaya, type, name), so nothing in a record's own id says
- * which id it shipped under, and two things move a position without the record
- * changing at all: records that tie on the sort (unnamed or same-named) keep their
- * input order, which the committed capture sorts by the SIG's per-record UUID
- * rather than by the live response's arrival order; and a record whose derived
- * wilaya changes moves to another wilaya's group. The 2026-10-27 capture did both,
- * and a positional rebuild repointed 213 published ids for a source that had not
- * changed (#308).
+ * which id it shipped under. From the 2026-10-27 refresh every record publishes
+ * the SIG's own per-record UUID as refs.mjs, which survives the ministry renaming,
+ * re-addressing or re-placing an establishment, and ids are carried on it, as
+ * sports carries its facilities.
  *
- * The key is what the establishment is and where: its type, its point, its
- * French and Arabic name and its address. None of them is a field the jeunesse
- * review ledger patches (it patches wilaya_code and commune_code only), so the
- * committed side can be read as shipped. It is unique over both the published
- * records and the 2026-10-27 rebuild, and pairs all 2,334; carryOverIds refuses a
- * duplicated key rather than pinning arbitrarily.
+ * The one release before that, the published records carry no UUID, so that
+ * transition is keyed on what the establishment is and where: its type, its
+ * point, its names (folded exactly as the writer folds them) and its address
+ * (dash-folded the same way, as the fetcher now publishes it).
+ * That key cannot be the permanent one: any edit to those fields would retire an
+ * id. It is unique over the published records and the 2026-10-27 rebuild and
+ * pairs all 2,334, so the transition retires none; and the jeunesse review ledger
+ * patches only wilaya_code and commune_code, so the committed side can be read as
+ * shipped. carryOverIds refuses a duplicated key rather than pinning arbitrarily.
+ *
+ * Why a key was needed at all: a positional rebuild of the 2026-10-27 capture
+ * repointed 213 published ids for a source that had not changed, because records
+ * that tie on the sort keep their input order (the capture sorts by UUID, the
+ * live response did not) and a record whose derived wilaya changed moved group.
  */
-export const jeunesseCarryKey = (r) =>
-  JSON.stringify([r.type, r.lat, r.lng, r.name ?? null, r.name_ar ?? null, r.address ?? null]);
+export const jeunesseContentKey = (r) => {
+  const folded = foldNameDashes({ name: r.name ?? null, name_ar: r.name_ar ?? null });
+  return JSON.stringify([r.type, r.lat, r.lng, folded.name, folded.name_ar, withoutEmDash(r.address ?? null)]);
+};
+export const mjsRefOf = (r) => r?.refs?.mjs ?? null;
+/** The carry key for a rebuild against `committed`: the UUID once the published
+ *  records carry one, the content key for the one transition before that. */
+export const carryKeyFor = (committed) =>
+  committed.length && committed.every((r) => mjsRefOf(r)) ? mjsRefOf : jeunesseContentKey;
 
 // --- main ------------------------------------------------------------------
 async function main() {
@@ -303,12 +317,16 @@ async function main() {
 
     institutions.push({
       id: p.id,
+      // The SIG's own per-record UUID, published as refs.mjs and the key ids are
+      // carried on from now on (see carryKeyFor).
+      uuid: p.id,
       name: cleanName(p.denomination_de_letablissement),
       name_ar,
       type_code: typeEntry?.code ?? null,
       type_fr: typeEntry?.fr ?? typeRaw ?? null,
       type_ar: typeEntry?.ar ?? null,
-      address: clean(p.adresse_de_letablissement),
+      // An address with a dash used as a separator is folded like a name, as sports does.
+      address: withoutEmDash(clean(p.adresse_de_letablissement)),
       commune: stripUUID(p.commune),
       daira: stripUUID(p.daira),
       wilaya_code: wilayaCode,
@@ -362,21 +380,22 @@ async function main() {
   // rebuild from a newer capture no longer keeps the previous pull's date.
   const { retrieved: updated } = captureMeta("jeunesse", CAPTURE);
   const retrieved = updated;
-  // Pin every record to the id it shipped under (see jeunesseCarryKey), reserve the
+  // Pin every record to the id it shipped under (see carryKeyFor), reserve the
   // id of one that is gone, and mint a new record's id above every id ever used.
   const rows = institutions.map(cfg.map);
   const committed = readCommitted(DATA, "institutions.json") ?? [];
   const retiredIds = readRetiredIds(DATA);
-  const shipped = new Set(committed.map(jeunesseCarryKey));
+  const keyOf = carryKeyFor(committed);
+  const shipped = new Set(committed.map(keyOf));
   let highest = Math.max(0, ...[...committed.map((r) => r.id), ...retiredIds].map(Number).filter(Number.isFinite));
   let minted = 0;
   for (const r of rows) {
-    if (shipped.has(jeunesseCarryKey(r))) continue;
+    if (shipped.has(keyOf(r))) continue;
     r.id = String(++highest).padStart(5, "0");
     minted++;
   }
   const retiredBefore = retiredIds.size;
-  carryOverIds(rows, committed, jeunesseCarryKey, "jeunesse", retiredIds);
+  carryOverIds(rows, committed, keyOf, "jeunesse", retiredIds);
   console.log(`Ids: ${rows.length - minted} carried, ${minted} minted, ${retiredIds.size - retiredBefore} retired`);
   const { records: out, metadata } = writePackageV2({
     pkg: "jeunesse",
@@ -398,4 +417,6 @@ async function main() {
   console.log(`\nWrote ${out.length} youth establishments across ${metadata.wilayas_covered} wilayas to ${DATA} (v2).`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => { console.error(e); process.exit(1); });
+}

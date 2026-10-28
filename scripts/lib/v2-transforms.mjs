@@ -530,6 +530,9 @@ export const MIGRATIONS = {
       ...reconcileCurrentWilayaByCommune(r), commune: r.commune,
       ...geoExact(r, "sig_mjs"),
       source: "mjs",
+      // The SIG's own per-record UUID (properties.id), the Upstream link the ids
+      // are carried on from the 2026-10-27 refresh.
+      refs: refs({ mjs: r.uuid }),
       type: r.type_code, type_label_fr: r.type_fr, type_label_ar: r.type_ar,
       daira: r.daira, address: r.address, capacity: r.capacity, year: r.year,
       operational: r.operational, pmr: r.pmr, surface_built_m2: r.surface_built_m2, surface_land_m2: r.surface_land_m2,
@@ -538,7 +541,7 @@ export const MIGRATIONS = {
       sources: [{ key: "mjs", name: "Ministry of Youth and Sports: SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
-      coverageNote: "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 128 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+      coverageNote: "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 129 records are reconciled to the current wilaya only where an exact current, former (JORA) or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
       titles: { en: "Algeria youth institutions", fr: "Établissements de jeunesse d'Algérie", ar: "مؤسسات الشباب الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), named_ar: rows.filter((r) => r.name_ar).length }),
     },

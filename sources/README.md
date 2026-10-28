@@ -114,11 +114,10 @@ closes.
 Replaying is not rebuilding. `@geoalgeria/sports` was rebuilt from its capture
 for batch 2026-15, once its two review decisions gone stale by absorption
 (`facilities.json/01663` and `01666`) were retired; its ids now carry on the
-`properties.id` UUID, published as `refs.mjs`. The jeunesse `--cache` run still
-aborts in `applyReviewedOverrides` on `institutions.json/00728`, stale the same
-way (expect wilaya 14 where the build now derives 64 with commune 1439), so that
-dataset has not been promoted from its capture; `refresh-schedule.json` carries
-the reason. Owed: a gate that proves a live pull replays byte-identically to the
+`properties.id` UUID, published as `refs.mjs`. `@geoalgeria/jeunesse` was rebuilt
+from its capture the same way once `institutions.json/00728`, stale the same way
+(expect wilaya 14 where the build now derives 64 with commune 1439), was retired;
+its ids carry on `refs.mjs` too. Owed: a gate that proves a live pull replays byte-identically to the
 committed capture end to end, rather than only at the projection, which is all
 `test/mjs-sig-capture.test.mjs` pins today.
 
