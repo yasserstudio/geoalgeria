@@ -8,17 +8,15 @@
 // The server answers only from an Algerian vantage point, so a refresh depends
 // on a narrow window. Each pull is therefore captured under sources/<pkg>/ the
 // moment it arrives, before any validation that could abort the run, so the
-// capture replays offline with --cache long after the window closes. The
-// rebuild itself is held: both --cache runs abort in applyReviewedOverrides on
-// a review decision gone stale by absorption (sports facilities.json/01663,
-// jeunesse institutions.json/00728, each expecting wilaya 14 where the build
-// now derives 64 with commune 1439), before either package writes anything.
-// Retiring those decisions edits the #209 audit gate, so both are parked for
-// batch 2026-16; refresh-schedule.json carries the full reason per package.
-// Owed in 2026-16, once the rebuild runs again: a gate that proves a live pull
-// replays byte-identically to the committed capture end to end. The tests pin
-// the projection only (test/mjs-sig-capture.test.mjs). Convention:
-// sources/README.md.
+// capture replays offline with --cache long after the window closes. sports
+// was rebuilt from the 2026-10-27 capture (its absorbed review decisions 01663
+// and 01666 retired). The jeunesse rebuild is still held: its --cache run aborts
+// in applyReviewedOverrides on institutions.json/00728, a decision gone stale
+// by absorption the same way (expect wilaya 14 where the build now derives 64
+// with commune 1439); refresh-schedule.json carries the reason. Owed: a gate
+// that proves a live pull replays byte-identically to the committed capture end
+// to end. The tests pin the projection only (test/mjs-sig-capture.test.mjs).
+// Convention: sources/README.md.
 //
 // The capture is a reviewed projection, not the bytes as received: GeoServer
 // mints a fresh per-request feature id ("<layer>.fid-5ffd9fe9_1a17f142549_80d")
