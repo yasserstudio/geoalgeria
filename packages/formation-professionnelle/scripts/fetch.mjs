@@ -51,6 +51,7 @@ import {
 } from "../../../scripts/lib/v2-transforms.mjs";
 import { containingWilayaCode } from "../../../scripts/lib/build-utils.mjs";
 import { captureMeta, readCapture } from "../../../scripts/lib/source-store.mjs";
+import { NAME_AR_REPAIRS } from "../../../scripts/lib/commune-name-ar-repairs.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -136,7 +137,15 @@ const COMMUNE_NAME_ALIASES = new Map([
   [normAr("أمسيف"), normAr("مسيف")],
 ]);
 
-function loadGeoReference() {
+// The flagship's reviewed Arabic commune-name repairs, read from the shared
+// table: a source still writing the spelling the flagship shipped before a
+// repair (the portal writes Illizi إيليزي, the flagship now إليزي) resolves to
+// the repaired commune, and only inside the repair's own wilaya.
+const REPAIRED_SPELLINGS = new Map(
+  NAME_AR_REPAIRS.map((r) => [`${r.wilaya_code}|${normAr(r.from)}`, normAr(r.to)]),
+);
+
+export function loadGeoReference() {
   const communeFC = JSON.parse(readFileSync(join(REF, "geojson", "communes.geojson"), "utf-8"));
   const wilayas = JSON.parse(readFileSync(join(REF, "wilayas.json"), "utf-8")).wilayas;
   const wilayaFC = JSON.parse(readFileSync(join(REF, "geojson", "wilayas.geojson"), "utf-8"));
@@ -189,7 +198,7 @@ function loadGeoReference() {
  *     form of the usual "<commune>_<wilaya>" (الطيبات توقرت, عين البيضاء أم البواقي);
  *   - the two combined.
  */
-function resolveCommune(commune, wilaya, ref) {
+export function resolveCommune(commune, wilaya, ref) {
   const scope = [wilaya, ...(ref.daughters.get(wilaya) || [])];
   const key = normAr(commune);
   if (!key) return null;
@@ -209,6 +218,12 @@ function resolveCommune(commune, wilaya, ref) {
   if (alias) {
     const hit = lookup(alias);
     if (hit) return { ...hit, how: "variant" };
+  }
+
+  for (const code of scope) {
+    const repaired = REPAIRED_SPELLINGS.get(`${code}|${key}`);
+    const hit = repaired && ref.byWilaya.get(code)?.get(repaired);
+    if (hit) return { ...hit, wilaya: code, how: "variant" };
   }
 
   const variants = [];
