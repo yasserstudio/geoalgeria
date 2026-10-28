@@ -25,7 +25,7 @@ test("once the published records carry refs.mjs, ids carry on it", () => {
 });
 
 test("the content key reads names and addresses as the writer publishes them", () => {
-  const raw = { type: "MJ", lat: 36.7, lng: 3.05, name: "Maison A — B", name_ar: null, address: "Rue X – Cite Y" };
+  const raw = { type: "MJ", lat: 36.7, lng: 3.05, name: "Maison A \u2014 B", name_ar: null, address: "Rue X \u2013 Cite Y" };
   const published = { ...raw, name: "Maison A - B", address: "Rue X - Cite Y" };
   assert.equal(jeunesseContentKey(raw), jeunesseContentKey(published));
 });
