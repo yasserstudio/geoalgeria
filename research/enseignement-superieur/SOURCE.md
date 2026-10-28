@@ -132,32 +132,77 @@ independent open sources agree within 2 km and are not a Copied claim within
 same OpenStreetMap database, so they are one source between them; the second
 has to be a Wikidata `P625` or the institution's own site.
 
-**What could be read.** On 2026-10-28 none of OpenStreetMap, Nominatim,
-Overpass, Wikidata or the institutions' sites was reachable from the build
-machine. The only open evidence read is the committed Overpass capture
+**Two passes, the same day.** The first could reach none of OpenStreetMap,
+Nominatim, Overpass, Wikidata or the institutions' sites, so it matched every
+approximate record against the committed Overpass capture
 `sources/enseignement-superieur/osm-campuses.json` (1,265
-`amenity=university|college` elements, retrieved 2026-08-03), which is one
-source. So **no record was promoted from the capture**: every match is a
-single-source Claim and waits in the Review queue.
+`amenity=university|college` elements, retrieved 2026-08-03): one source, so
+every match became a single-source Claim in the Review queue. Once the network
+was opened, the second pass (`second-source-votes.mjs`, from the captures
+`fetch-second-sources.mjs` wrote) re-read each candidate's OSM object live from
+api.openstreetmap.org and looked for the institution's own Wikidata item (tied
+by its `P856` website host, the OSM `wikidata` tag, or a strict name match)
+and its `P625`. Overpass and the institutions' `.dz` sites still did not
+answer.
+
+**Second-source pass: 38 records** (the queue as it then stood, 34, plus the 4
+BAC 2026 additions still `exact` on one OSM object), from the committed
+captures `sources/enseignement-superieur/osm-campus-objects.json` and
+`wikidata-campuses.json`, decided offline and byte for byte into
+`research/enseignement-superieur/second-source-votes-2026-10-28.json`:
+
+| Verdict | Records |
+| --- | --- |
+| Promoted: OSM and Wikidata agree within 2 km, outside 50 m | 10 |
+| Copied claim: Wikidata within 50 m of the OSM point | 7 |
+| Disagree: Wikidata over 2 km from every OSM Claim (`00057` USTO, 3,942 m) | 1 |
+| No second source (7 have a Wikidata item with no `P625`) | 20, the 4 BAC additions among them |
+
+The 10 promoted, each now in `scripts/seeds/second-source.json` on the live OSM
+point with its `wikidata_confirmation`, which the build re-measures:
+
+| id | Institution | Ships | Wikidata (tie) | Apart | Commune (by outline) |
+| --- | --- | --- | --- | --- | --- |
+| `00031` | Université de la Formation Continue | OSM `node/5658830621` v1 | Q135914996 (website) | 55 m | Dely Ibrahim |
+| `00042` | Université de Sétif 1 - Ferhat Abbas | OSM `way/185615558` v22 | Q3551403 (website) | 535 m | Setif |
+| `00054` | Université des sciences islamiques Emir Abdelkader de Constantine | OSM `node/8539621407` v2 | Q5372520 (website) | 344 m | Constantine |
+| `00063` | Ecole nationale supérieure agronomique- Khalef Abdellah alias Kasdi Merbah | OSM `way/97658307` v19 | Q21512516 (website) | 98 m | Oued Smar |
+| `00064` | Ecole nationale supérieure d’hydraulique - Arbaoui Abdellah | OSM `way/191229595` v14 | Q30261759 (website) | 67 m | Guerrouaou |
+| `00068` | Ecole nationale supérieure de management | OSM `way/390654568` v3 | Q104713296 (name) | 57 m | Kolea |
+| `00081` | Ecole Supérieure de Commerce-Mouloud Kacem Naït Belkacem | OSM `way/390654567` v3 | Q16507829 (website) | 58 m | Kolea |
+| `00095` | المدرسة العسكرية المتعددة التقينات (برج البحري، ولاية الجزائر) | OSM `way/96606361` v11 | Q3578051 (osm_wikidata_tag) | 512 m | Bordj El Bahri |
+| `00103` | المدرسة العليا للضمان الاجتماعي (بن عكنون، ولاية الجزائر). | OSM `way/561830853` v6 | Q135975682 (name) | 86 m | Ben Aknoun |
+| `00111` | المدرسة الوطنية التحضيرية لدراسة مهندس (الرويبة، ولاية الجزائر) | OSM `way/96600252` v7 | Q3578165 (osm_wikidata_tag) | 272 m | Rouiba |
+
+No `P625` among them is referenced as imported from OpenStreetMap: four cite
+English or French Wikipedia (`P143`), two another source (`P248`), four carry no
+reference. Each shipped point lies at least 131 m inside its commune outline.
+Two communes change with the move: `00063` to Oued Smar (from El Harrach, whose
+centre is nearer; the campus is inside Oued Smar's outline, 163 m from the
+border) and `00064` to Guerrouaou (from Soumaa). `00042` has three OSM campus
+objects; Wikidata's university point agrees with El Bez (535 m) and with no
+other within 2 km. Identity rests on a name match, not a website, for `00068`
+(Wikidata's `P856` is `ensmanagement.dz`, the record's `ensm.dz`) and `00103`
+(the record's own website is a page on ASAL's site), and on the OSM `wikidata`
+tag for `00095` and `00111`, whose Wikidata website is the defence ministry's.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 115
-approximate records (96 `wilaya`, 19 `commune`) are in it exactly once.
+written offline and byte for byte by `precision-review.mjs` next to it. All 105
+approximate records (91 `wilaya`, 14 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
-| Queued, one candidate for the campus (single source) | 30 |
-| Queued, several candidates for the campus (ambiguous) | 4 |
+| Queued, one candidate for the campus (single source) | 22 |
+| Queued, several candidates for the campus (ambiguous) | 2 |
 | No open candidate in the capture | 81 |
-| Promoted to `exact` | 0 |
 
 Each queued entry carries the OSM element, the tags that make the tie (the
 element's own website host where it has one, else a strict name match), the
 commune whose OSM outline contains it, its distance to the published point, and
-what second source would settle it. None is over the 25 km move limit; the
-largest is 21.4 km. Hand decisions (ties rejected because the element's name
-contradicts its website, a parent university's host, a former name, another
-record's campus) sit in tables in the script, each with its reason.
+what second source would settle it; its second-source verdict is in the votes
+file. Hand decisions (ties rejected because the element's name contradicts its
+website, a parent university's host, a former name, another record's campus)
+sit in tables in the script, each with its reason.
 
 **Owner confirmations (`docs/adr/0001` rule 6 and "Rule 6 in detail").** The
 Owner read three campus points off Google Maps on 2026-10-28. A reading off a
@@ -188,17 +233,23 @@ school publishes as Bab El Oued (its OSM point falls on the Casbah side of that
 boundary, 96 m from it): a site the record does not publish, recorded in the
 seed's `osm_search` note.
 
-**Not in this pass.** 69 of the 71 `exact` records rest on one source: 65 on a
-Nominatim geocode and 4 of the BAC 2026 additions (`P08`, `P09`, `P10`, `P23`)
-on one OSM object each. Reviewing them is a separate follow-up pass.
+**Two Votes and one.** 13 of the 82 `exact` records now stand on two
+independent Votes: the 10 above, and ENSTA, `00178` and `00165` on the Owner's
+readings. 69 rest on one: 65 on a Nominatim geocode, reviewed in a separate
+follow-up pass (private tracker #336), and the 4 BAC 2026 additions (`P08`,
+`P09`, `P10`, `P23`), which have no Wikidata coordinate (two have an item with
+no `P625`, two no item at all). Owner decision of 2026-10-28: they wait for the
+Owner's readings, and any still unconfirmed at the batch cut-off drops to its
+commune centre, as ENSTA's did before its reading.
 
-**Re-run once the hosts answer.** Read Wikidata `P625` (and the `wikidata` tag
-where an element carries one) and the institutions' sites for the 34 queued
-records; a record whose second source lands within 2 km of its Claim, and not
-within 50 m of it, moves to `exact`: a listed record through
-`scripts/seeds/coordinates.json` (and out of `scripts/seeds/overrides.json`,
-which takes precedence), a BAC 2026 record through its `place` in
-`scripts/seeds/bac-2026.json`.
+**Re-run.** `NODE_USE_ENV_PROXY=1 node research/enseignement-superieur/fetch-second-sources.mjs`
+refreshes the two captures (behind the build proxy Node needs that variable),
+then `node research/enseignement-superieur/second-source-votes.mjs` and
+`precision-review.mjs` re-decide offline. A record whose second Vote lands within
+2 km of its OSM Claim, and not within 50 m of it (an Owner reading within 500 m,
+however close), moves to `exact` through `scripts/seeds/second-source.json`, or
+through its `place` in `scripts/seeds/bac-2026.json` for a BAC 2026 record; that
+seed takes precedence over `coordinates.json` and `overrides.json`.
 
 ## Known gaps (tracked, deliberate)
 
@@ -213,7 +264,7 @@ which takes precedence), a BAC 2026 record through its `place` in
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  72 campus, 19 commune, 96 wilaya; the 115 approximate records are in the
+  82 campus, 14 commune, 91 wilaya; the 105 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and

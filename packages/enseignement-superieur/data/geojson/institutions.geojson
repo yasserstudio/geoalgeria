@@ -846,8 +846,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.9800558,
-          36.7528506
+          2.9831795,
+          36.7576724
         ]
       },
       "properties": {
@@ -857,10 +857,10 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Dely Ibrahim",
-        "lat": 36.7528506,
-        "lng": 2.9800558,
-        "geo_precision": "approximate",
-        "geo_method": "commune",
+        "lat": 36.7576724,
+        "lng": 2.9831795,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "universite",
         "type_label_fr": "Université",
@@ -1154,8 +1154,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.4150871,
-          36.19112
+          5.3657009,
+          36.1981957
         ]
       },
       "properties": {
@@ -1164,11 +1164,11 @@
         "name_ar": "جامعة سطيف1 - فرحات عباس",
         "wilaya_code": "19",
         "commune_code": null,
-        "commune": null,
-        "lat": 36.19112,
-        "lng": 5.4150871,
-        "geo_precision": "approximate",
-        "geo_method": "wilaya",
+        "commune": "Setif",
+        "lat": 36.1981957,
+        "lng": 5.3657009,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "universite",
         "type_label_fr": "Université",
@@ -1490,8 +1490,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.608428,
-          36.364164
+          6.602899,
+          36.3461042
         ]
       },
       "properties": {
@@ -1500,11 +1500,11 @@
         "name_ar": "جامعة قسنطينة للعلوم الإسلامية الأمير عبد القادر",
         "wilaya_code": "25",
         "commune_code": null,
-        "commune": null,
-        "lat": 36.364164,
-        "lng": 6.608428,
-        "geo_precision": "approximate",
-        "geo_method": "wilaya",
+        "commune": "Constantine",
+        "lat": 36.3461042,
+        "lng": 6.602899,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "universite",
         "type_label_fr": "Université",
@@ -1742,8 +1742,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.137389,
-          36.720797
+          3.1503041,
+          36.7201391
         ]
       },
       "properties": {
@@ -1752,11 +1752,11 @@
         "name_ar": "المدرسة الوطنية العليا للفلاحة -المجاهد خالف عبد الله المدعو قاصدي مرباح",
         "wilaya_code": "16",
         "commune_code": null,
-        "commune": "El Harrach",
-        "lat": 36.720797,
-        "lng": 3.137389,
-        "geo_precision": "approximate",
-        "geo_method": "commune",
+        "commune": "Oued Smar",
+        "lat": 36.7201391,
+        "lng": 3.1503041,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "grande_ecole",
         "type_label_fr": "Grande école",
@@ -1770,8 +1770,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.905278,
-          36.51833
+          2.8911938,
+          36.5107654
         ]
       },
       "properties": {
@@ -1780,11 +1780,11 @@
         "name_ar": "المدرسة الوطنية العليا للري-المجاهد عرباوي ‬عبد الله",
         "wilaya_code": "09",
         "commune_code": null,
-        "commune": "Soumaa",
-        "lat": 36.51833,
-        "lng": 2.905278,
-        "geo_precision": "approximate",
-        "geo_method": "commune",
+        "commune": "Guerrouaou",
+        "lat": 36.5107654,
+        "lng": 2.8911938,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "grande_ecole",
         "type_label_fr": "Grande école",
@@ -1882,8 +1882,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.768,
-          36.6389
+          2.7902762,
+          36.6420957
         ]
       },
       "properties": {
@@ -1893,10 +1893,10 @@
         "wilaya_code": "42",
         "commune_code": null,
         "commune": "Kolea",
-        "lat": 36.6389,
-        "lng": 2.768,
-        "geo_precision": "approximate",
-        "geo_method": "commune",
+        "lat": 36.6420957,
+        "lng": 2.7902762,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "grande_ecole",
         "type_label_fr": "Grande école",
@@ -2218,8 +2218,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.768,
-          36.6389
+          2.7875844,
+          36.6400745
         ]
       },
       "properties": {
@@ -2229,10 +2229,10 @@
         "wilaya_code": "42",
         "commune_code": null,
         "commune": "Kolea",
-        "lat": 36.6389,
-        "lng": 2.768,
-        "geo_precision": "approximate",
-        "geo_method": "commune",
+        "lat": 36.6400745,
+        "lng": 2.7875844,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "grande_ecole",
         "type_label_fr": "Grande école",
@@ -2582,8 +2582,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.058211,
-          36.776335
+          3.2624151,
+          36.7900014
         ]
       },
       "properties": {
@@ -2592,11 +2592,11 @@
         "name_ar": "المدرسة العسكرية المتعددة التقينات (برج البحري، ولاية الجزائر)",
         "wilaya_code": "16",
         "commune_code": null,
-        "commune": null,
-        "lat": 36.776335,
-        "lng": 3.058211,
-        "geo_precision": "approximate",
-        "geo_method": "wilaya",
+        "commune": "Bordj El Bahri",
+        "lat": 36.7900014,
+        "lng": 3.2624151,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "grande_ecole",
         "type_label_fr": "Grande école",
@@ -2806,8 +2806,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.058211,
-          36.776335
+          2.9984674,
+          36.7550283
         ]
       },
       "properties": {
@@ -2816,11 +2816,11 @@
         "name_ar": "المدرسة العليا للضمان الاجتماعي (بن عكنون، ولاية الجزائر).",
         "wilaya_code": "16",
         "commune_code": null,
-        "commune": null,
-        "lat": 36.776335,
-        "lng": 3.058211,
-        "geo_precision": "approximate",
-        "geo_method": "wilaya",
+        "commune": "Ben Aknoun",
+        "lat": 36.7550283,
+        "lng": 2.9984674,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "grande_ecole",
         "type_label_fr": "Grande école",
@@ -3030,8 +3030,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.058211,
-          36.776335
+          3.2653713,
+          36.7316676
         ]
       },
       "properties": {
@@ -3040,11 +3040,11 @@
         "name_ar": "المدرسة الوطنية التحضيرية لدراسة مهندس (الرويبة، ولاية الجزائر)",
         "wilaya_code": "16",
         "commune_code": null,
-        "commune": null,
-        "lat": 36.776335,
-        "lng": 3.058211,
-        "geo_precision": "approximate",
-        "geo_method": "wilaya",
+        "commune": "Rouiba",
+        "lat": 36.7316676,
+        "lng": 3.2653713,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "grande_ecole",
         "type_label_fr": "Grande école",

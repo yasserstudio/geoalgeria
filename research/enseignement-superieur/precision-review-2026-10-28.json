@@ -2,10 +2,10 @@
   "run": "2026-10-28",
   "package": "enseignement-superieur",
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
-  "network": "OpenStreetMap, Nominatim, Overpass, Wikidata and the institutions' own sites were unreachable from the build machine on 2026-10-28, so the only open evidence read is the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf).",
+  "network": "Candidates come from the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf), one source. The second-source pass of the same run (research/enseignement-superieur/second-source-votes-2026-10-28.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on 2026-10-28.",
   "counts": {
-    "approximate_reviewed": 115,
-    "queued_single_source": 34,
+    "approximate_reviewed": 105,
+    "queued_single_source": 24,
     "no_open_candidate": 81,
     "promoted": 0
   },
@@ -55,168 +55,6 @@
       "needs": "read P625 on Wikidata Q1190852 (an OSM wikidata tag is a lead, not a coordinate); or a campus address or map on the institution's own site (univ-alger.dz), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
-      "id": "00031",
-      "name": "Université de la Formation Continue",
-      "name_ar": "جامعة التكوين المتواصل",
-      "wilaya_code": "16",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.7528506,
-        "lng": 2.9800558,
-        "commune": "Dely Ibrahim"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "node/5658830621",
-          "tie": "name",
-          "matched": "name:fr ~ name (core)",
-          "tags": {
-            "name:fr": "Direction de l'Université de formation continue UFC"
-          },
-          "point": {
-            "lat": 36.7576724,
-            "lng": 2.9831795
-          },
-          "commune": {
-            "code": "1623",
-            "name": "Dely Ibrahim"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 604
-        },
-        {
-          "source": "osm",
-          "element": "node/5658830521",
-          "tie": "name",
-          "matched": "name:fr ~ name (core)",
-          "tags": {
-            "name:fr": "Université de formation continue UFC bouzerehea"
-          },
-          "point": {
-            "lat": 36.7790571,
-            "lng": 3.0040529
-          },
-          "commune": {
-            "code": "1611",
-            "name": "Bouzareah"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 3614
-        },
-        {
-          "source": "osm",
-          "element": "node/5658823722",
-          "tie": "name",
-          "matched": "name:fr ~ name (core)",
-          "tags": {
-            "name:fr": "Université de formation continue UFC kharouba"
-          },
-          "point": {
-            "lat": 36.7331422,
-            "lng": 3.1182438
-          },
-          "commune": {
-            "code": "1631",
-            "name": "El Magharia"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 12507
-        }
-      ],
-      "reason": "ambiguous: several candidates",
-      "needs": "a campus address or map on the institution's own site (ufc.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00042",
-      "name": "Université de Sétif 1 - Ferhat Abbas",
-      "name_ar": "جامعة سطيف1 - فرحات عباس",
-      "wilaya_code": "19",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.19112,
-        "lng": 5.4150871,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/52011925",
-          "tie": "name",
-          "matched": "name ~ name (eponym)",
-          "tags": {
-            "addr:city": "Sétif",
-            "addr:street": "Rue Targo Fodil",
-            "name": "Ferhat Abbas University Travaux Campus جامعة فرحات عباس - القطب الجامعي الخدمات",
-            "name:fr": "Ferhat Abbas University Travaux Campus"
-          },
-          "point": {
-            "lat": 36.1882094,
-            "lng": 5.3902805
-          },
-          "commune": {
-            "code": "1901",
-            "name": "Setif"
-          },
-          "wilaya_code": "19",
-          "in_declared_wilaya": true,
-          "distance_m": 2250
-        },
-        {
-          "source": "osm",
-          "element": "way/236035047",
-          "tie": "name",
-          "matched": "name ~ name (eponym)",
-          "tags": {
-            "addr:city": "سطيف",
-            "name": "Ferhat Abbas University El Maabouda Campus جامعة فرحات عباس - القطب الجامعي المعبودة",
-            "wikidata": "Q3551403"
-          },
-          "point": {
-            "lat": 36.1958376,
-            "lng": 5.3864369
-          },
-          "commune": {
-            "code": "1901",
-            "name": "Setif"
-          },
-          "wilaya_code": "19",
-          "in_declared_wilaya": true,
-          "distance_m": 2624,
-          "wikidata_tag": "Q3551403"
-        },
-        {
-          "source": "osm",
-          "element": "way/185615558",
-          "tie": "name",
-          "matched": "name ~ name (eponym)",
-          "tags": {
-            "name": "Ferhat Abbas University El Bez Campus جامعة فرحات عباس - القطب الجامعي الباز",
-            "name:ar": "جامعة فرحات عباس - القطب الجامعي الباز",
-            "name:fr": "Université Ferhat Abbas Campus El Bez",
-            "wikidata": "Q3551403"
-          },
-          "point": {
-            "lat": 36.1981958,
-            "lng": 5.3657009
-          },
-          "commune": {
-            "code": "1901",
-            "name": "Setif"
-          },
-          "wilaya_code": "19",
-          "in_declared_wilaya": true,
-          "distance_m": 4501,
-          "wikidata_tag": "Q3551403"
-        }
-      ],
-      "reason": "ambiguous: several candidates",
-      "needs": "read P625 on Wikidata Q3551403 (an OSM wikidata tag is a lead, not a coordinate); or a campus address or map on the institution's own site (univ-setif.dz), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
       "id": "00050",
       "name": "Université de Tissemsilt",
       "name_ar": null,
@@ -253,44 +91,6 @@
       ],
       "reason": "single source",
       "needs": "a campus address or map on the institution's own site (cuniv-tissemsilt.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00054",
-      "name": "Université des sciences islamiques Emir Abdelkader de Constantine",
-      "name_ar": "جامعة قسنطينة للعلوم الإسلامية الأمير عبد القادر",
-      "wilaya_code": "25",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.364164,
-        "lng": 6.608428,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "node/8539621407",
-          "tie": "name",
-          "matched": "name:ar ~ name_ar (core)",
-          "tags": {
-            "name": "Université Amir Abdelkader des Sciences Islamiques",
-            "name:ar": "جامعة الأمير عبد القادر للعلوم الإسلامية",
-            "name:fr": "Université Amir Abdelkader des Sciences Islamiques"
-          },
-          "point": {
-            "lat": 36.3461042,
-            "lng": 6.602899
-          },
-          "commune": {
-            "code": "2501",
-            "name": "Constantine"
-          },
-          "wilaya_code": "25",
-          "in_declared_wilaya": true,
-          "distance_m": 2068
-        }
-      ],
-      "reason": "single source",
-      "needs": "a campus address or map on the institution's own site (univ-emir.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
       "id": "00057",
@@ -408,128 +208,6 @@
       ],
       "reason": "single source",
       "needs": "a campus address or map on the institution's own site (enp-constantine.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00063",
-      "name": "Ecole nationale supérieure agronomique- Khalef Abdellah alias Kasdi Merbah",
-      "name_ar": "المدرسة الوطنية العليا للفلاحة -المجاهد خالف عبد الله المدعو قاصدي مرباح",
-      "wilaya_code": "16",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.720797,
-        "lng": 3.137389,
-        "commune": "El Harrach"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/97658307",
-          "tie": "website",
-          "matched": "website host = record website host ensa.dz",
-          "tags": {
-            "addr:city": "El Harrach- Algiers",
-            "addr:street": "Avenue Hassan Badi",
-            "name": "École Nationale Supérieure Agronomique d'Alger",
-            "website": "https://www.ensa.dz/",
-            "wikidata": "Q21512516"
-          },
-          "point": {
-            "lat": 36.7201391,
-            "lng": 3.150304
-          },
-          "commune": {
-            "code": "1615",
-            "name": "Oued Smar"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 1153,
-          "wikidata_tag": "Q21512516"
-        }
-      ],
-      "reason": "single source",
-      "needs": "read P625 on Wikidata Q21512516 (an OSM wikidata tag is a lead, not a coordinate); or a campus address or map on the institution's own site (ensa.dz), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00064",
-      "name": "Ecole nationale supérieure d’hydraulique - Arbaoui Abdellah",
-      "name_ar": "المدرسة الوطنية العليا للري-المجاهد عرباوي ‬عبد الله",
-      "wilaya_code": "09",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.51833,
-        "lng": 2.905278,
-        "commune": "Soumaa"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/191229595",
-          "tie": "website",
-          "matched": "website host = record website host ensh.dz",
-          "tags": {
-            "addr:city": "Blida",
-            "addr:street": "RN29",
-            "name": "Ecole Nationale Supérieure de l'Hydraulique",
-            "name:ar": "المدرسة الوطنية العليا للري",
-            "name:en": "National Superior School of Hydraulics",
-            "name:fr": "Ecole Nationale Supérieure de l'Hydraulique",
-            "website": "https://www.ensh.dz/"
-          },
-          "point": {
-            "lat": 36.5107653,
-            "lng": 2.8911938
-          },
-          "commune": {
-            "code": "0927",
-            "name": "Guerrouaou"
-          },
-          "wilaya_code": "09",
-          "in_declared_wilaya": true,
-          "distance_m": 1514
-        }
-      ],
-      "reason": "single source",
-      "needs": "a campus address or map on the institution's own site (ensh.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00068",
-      "name": "Ecole nationale supérieure de management",
-      "name_ar": "المدرسة الوطنية العليا للمناجمنت",
-      "wilaya_code": "42",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.6389,
-        "lng": 2.768,
-        "commune": "Kolea"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/390654568",
-          "tie": "name",
-          "matched": "name ~ name (core, one word, inside the declared commune)",
-          "tags": {
-            "addr:city": "Koléa",
-            "name": "Ecole supérieure de management",
-            "name:ar": "المدرسة العليا للمناجمنت",
-            "name:fr": "Ecole supérieure de management"
-          },
-          "point": {
-            "lat": 36.6420957,
-            "lng": 2.7902762
-          },
-          "commune": {
-            "code": "4235",
-            "name": "Kolea"
-          },
-          "wilaya_code": "42",
-          "in_declared_wilaya": true,
-          "distance_m": 2019
-        }
-      ],
-      "reason": "single source",
-      "needs": "a campus address or map on the institution's own site (ensm.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
       "id": "00073",
@@ -670,45 +348,6 @@
       "needs": "a campus address or map on the institution's own site (esi-sba.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
-      "id": "00081",
-      "name": "Ecole Supérieure de Commerce-Mouloud Kacem Naït Belkacem",
-      "name_ar": "المدرسة العليا للتجارة- المجاهد مولود قاسم نايت بلقاسم",
-      "wilaya_code": "42",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.6389,
-        "lng": 2.768,
-        "commune": "Kolea"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/390654567",
-          "tie": "name",
-          "matched": "name ~ name (core, one word, inside the declared commune)",
-          "tags": {
-            "addr:city": "Koléa",
-            "name": "Ecole supérieure de commerce",
-            "name:ar": "المدرسة العليا للتجارة",
-            "short_name": "ESC"
-          },
-          "point": {
-            "lat": 36.6400745,
-            "lng": 2.7875844
-          },
-          "commune": {
-            "code": "4235",
-            "name": "Kolea"
-          },
-          "wilaya_code": "42",
-          "in_declared_wilaya": true,
-          "distance_m": 1752
-        }
-      ],
-      "reason": "single source",
-      "needs": "a campus address or map on the institution's own site (esc-alger.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
       "id": "00082",
       "name": "Ecole Supérieure de Comptabilité et de Finance de Constantine ex EPSECG Constantine",
       "name_ar": "المدرسة العليا المحاسبة والمالية بقسنطينة سابقا- ق. ت.ع.ا.ت.ع.ت - قسنطينة",
@@ -824,47 +463,6 @@
       "needs": "a campus address or map on the institution's own site (hns-re2sd.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
-      "id": "00095",
-      "name": null,
-      "name_ar": "المدرسة العسكرية المتعددة التقينات (برج البحري، ولاية الجزائر)",
-      "wilaya_code": "16",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.776335,
-        "lng": 3.058211,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/96606361",
-          "tie": "name",
-          "matched": "name:ar ~ name_ar (core)",
-          "tags": {
-            "name": "École Militaire Polytechnique",
-            "name:ar": "المدرسة العسكرية المتعددة التقنيات",
-            "name:fr": "École Militaire Polytechnique",
-            "website": "http://www.emp.edu.dz/",
-            "wikidata": "Q3578051"
-          },
-          "point": {
-            "lat": 36.7900014,
-            "lng": 3.262415
-          },
-          "commune": {
-            "code": "1639",
-            "name": "Bordj El Bahri"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 18249,
-          "wikidata_tag": "Q3578051"
-        }
-      ],
-      "reason": "single source",
-      "needs": "read P625 on Wikidata Q3578051 (an OSM wikidata tag is a lead, not a coordinate); or an official address, since the record carries no own website, independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
       "id": "00098",
       "name": null,
       "name_ar": "المدرسة العليا لتقنيات الطيران (الدار البيضاء، ولاية الجزائر)",
@@ -936,46 +534,6 @@
           "wilaya_code": "31",
           "in_declared_wilaya": true,
           "distance_m": 2057
-        }
-      ],
-      "reason": "single source",
-      "needs": "a Wikidata item for the institution with P625 (none is tagged on the OSM element); or an official address, since the record carries no own website, independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00103",
-      "name": null,
-      "name_ar": "المدرسة العليا للضمان الاجتماعي (بن عكنون، ولاية الجزائر).",
-      "wilaya_code": "16",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.776335,
-        "lng": 3.058211,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/561830853",
-          "tie": "name",
-          "matched": "name:ar ~ name_ar (core)",
-          "tags": {
-            "addr:city": "Ben Aknoun",
-            "name": "École Supérieure de la Sécurité Sociale",
-            "name:ar": "المدرسة العليا للضمان الإجتماعي",
-            "name:fr": "École Supérieure de la Sécurité Sociale",
-            "short_name": "ESSS"
-          },
-          "point": {
-            "lat": 36.7550283,
-            "lng": 2.9984674
-          },
-          "commune": {
-            "code": "1622",
-            "name": "Ben Aknoun"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 5825
         }
       ],
       "reason": "single source",
@@ -1103,50 +661,6 @@
       ],
       "reason": "single source",
       "needs": "read P625 on Wikidata Q23846121 (an OSM wikidata tag is a lead, not a coordinate); or a campus address or map on the institution's own site (esba.dz), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00111",
-      "name": null,
-      "name_ar": "المدرسة الوطنية التحضيرية لدراسة مهندس (الرويبة، ولاية الجزائر)",
-      "wilaya_code": "16",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.776335,
-        "lng": 3.058211,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/96600252",
-          "tie": "name",
-          "matched": "name:ar ~ name_ar (core)",
-          "tags": {
-            "addr:city": "Rouiba",
-            "addr:street": "RN 5",
-            "name": "École nationale préparatoire aux études d'ingénieur",
-            "name:ar": "المدرسة الوطنية التحضيرية لدراسات مهندس",
-            "name:fr": "École nationale préparatoire aux études d'ingénieur",
-            "operator": "Ministère de la Défense Nationale",
-            "short_name": "ENPEI",
-            "wikidata": "Q3578165"
-          },
-          "point": {
-            "lat": 36.7316676,
-            "lng": 3.2653713
-          },
-          "commune": {
-            "code": "1642",
-            "name": "Rouiba"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 19113,
-          "wikidata_tag": "Q3578165"
-        }
-      ],
-      "reason": "single source",
-      "needs": "read P625 on Wikidata Q3578165 (an OSM wikidata tag is a lead, not a coordinate); or an official address, since the record carries no own website, independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
       "id": "00116",

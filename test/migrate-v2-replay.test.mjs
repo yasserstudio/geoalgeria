@@ -213,6 +213,11 @@ const CORRECTIONS = {
     "00129": { lat: 35.405556, lng: 8.12417 }, // Tébessa
     "00145": { lng: 0.133333 }, // Saïda
     "00161": { lat: 36.87617 }, // Skikda
+    // Promoted, a third class: the record left its commune centre for its own
+    // campus on two independent Votes (docs/adr/0001), OSM way/390654567 agreeing
+    // with Wikidata Q16507829's P625 to 58 m; scripts/seeds/second-source.json,
+    // PR #310. The frozen v1 row keeps the Koléa centre it borrowed.
+    "00081": { lat: 36.6400745, lng: 2.7875844, geo_precision: "exact", geo_method: "campus" },
   },
   // Two classes below, both of them the flagship moving under a derived field,
   // and both caught by gates of their own rather than by this replay:

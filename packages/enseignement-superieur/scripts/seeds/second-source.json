@@ -1,5 +1,105 @@
 {
   "_comment": "Campus points on two independent Votes (docs/adr/0001) for records the Nominatim seed (coordinates.json) and the curated overrides do not hold that way. Each entry is keyed by the record's carryKey (scripts/fetch.mjs), so it also reaches the Arabic-only extras, and it takes precedence over every other placement. lat/lng are the open OpenStreetMap object's point as read live from api.openstreetmap.org (osm, osm_version, osm_timestamp), and that is the coordinate that ships. The second Vote is a wikidata_confirmation (a Wikidata P625 within 2 km and outside the 50 m copy radius) or an owner_confirmation (an Owner reading within 500 m, ADR 0001 \"Rule 6 in detail\"), and the build re-measures both. commune, where present, is the commune whose OSM outline (research/_commune-centres/commune-boundaries.json) contains the point.",
+  "ar:المدرسة العسكرية المتعددة التقينات (برج البحري، ولاية الجزائر)": {
+    "record": "00095, المدرسة العسكرية المتعددة التقينات (برج البحري، ولاية الجزائر)",
+    "lat": 36.7900014,
+    "lng": 3.2624151,
+    "osm": "way/96606361",
+    "osm_version": 11,
+    "osm_timestamp": "2024-04-02T11:50:11Z",
+    "osm_name": "École Militaire Polytechnique",
+    "wilaya_code": 16,
+    "commune": "Bordj El Bahri",
+    "why": "OSM way/96606361 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q3578051 is this institution by osm_wikidata_tag (wikidata tag of way/96606361; labels do not contradict the record) and its P625 agrees with the OSM point to 512 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q3578051",
+      "tie": "osm_wikidata_tag",
+      "point": [
+        3.25667,
+        36.7899
+      ],
+      "metres_from_published_value": 512,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "reference": "imported from French Wikipedia (P143 Q8447)",
+      "confirms": "way/96606361"
+    }
+  },
+  "ar:المدرسة الوطنية التحضيرية لدراسة مهندس (الرويبة، ولاية الجزائر)": {
+    "record": "00111, المدرسة الوطنية التحضيرية لدراسة مهندس (الرويبة، ولاية الجزائر)",
+    "lat": 36.7316676,
+    "lng": 3.2653713,
+    "osm": "way/96600252",
+    "osm_version": 7,
+    "osm_timestamp": "2016-12-06T11:57:52Z",
+    "osm_name": "École nationale préparatoire aux études d'ingénieur",
+    "wilaya_code": 16,
+    "commune": "Rouiba",
+    "why": "OSM way/96600252 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q3578165 is this institution by osm_wikidata_tag (wikidata tag of way/96600252; labels do not contradict the record) and its P625 agrees with the OSM point to 272 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q3578165",
+      "tie": "osm_wikidata_tag",
+      "point": [
+        3.26509,
+        36.7341
+      ],
+      "metres_from_published_value": 272,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "reference": "imported from French Wikipedia (P143 Q8447)",
+      "confirms": "way/96600252"
+    }
+  },
+  "host:asal.dz": {
+    "record": "00103, المدرسة العليا للضمان الاجتماعي (بن عكنون، ولاية الجزائر).",
+    "lat": 36.7550283,
+    "lng": 2.9984674,
+    "osm": "way/561830853",
+    "osm_version": 6,
+    "osm_timestamp": "2025-10-07T13:32:28Z",
+    "osm_name": "École Supérieure de la Sécurité Sociale",
+    "wilaya_code": 16,
+    "commune": "Ben Aknoun",
+    "why": "OSM way/561830853 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q135975682 is this institution by name (label:ar ~ name_ar (core)) and its P625 agrees with the OSM point to 86 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q135975682",
+      "tie": "name",
+      "point": [
+        2.9975111598094,
+        36.755108393068
+      ],
+      "metres_from_published_value": 86,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "reference": "no reference on the statement; none names OpenStreetMap",
+      "confirms": "way/561830853"
+    }
+  },
+  "host:ensa.dz": {
+    "record": "00063, Ecole nationale supérieure agronomique- Khalef Abdellah alias Kasdi Merbah",
+    "lat": 36.7201391,
+    "lng": 3.1503041,
+    "osm": "way/97658307",
+    "osm_version": 19,
+    "osm_timestamp": "2026-06-01T00:35:25Z",
+    "osm_name": "École Nationale Supérieure Agronomique d'Alger",
+    "wilaya_code": 16,
+    "commune": "Oued Smar",
+    "why": "OSM way/97658307 (website tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q21512516 is this institution by website (P856 host = record website host ensa.dz) and its P625 agrees with the OSM point to 98 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline (the nearest-centre join would have said El Harrach). Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q21512516",
+      "tie": "website",
+      "point": [
+        3.1497230555556,
+        36.720883888889
+      ],
+      "metres_from_published_value": 98,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "reference": "no reference on the statement; none names OpenStreetMap",
+      "confirms": "way/97658307"
+    }
+  },
   "host:ensb.dz": {
     "record": "00165, Ecole normale supérieure de Bouzaréah - Cheikh Mubarak Ben Mohamed Brahimi El Mili",
     "lat": 36.781995,
@@ -22,6 +122,156 @@
       "read_by": "project owner",
       "source": "Google Maps, a proprietary map",
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry for the Higher Normal School of Bouzaréah and supplied 36.7816117, 3.0124453, 46 m from the OSM object. Under docs/adr/0001 \"Rule 6 in detail\" an Owner reading is never a Copied claim, so it is an independent Vote inside the 500 m ceiling, and the coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:ensh.dz": {
+    "record": "00064, Ecole nationale supérieure d’hydraulique - Arbaoui Abdellah",
+    "lat": 36.5107654,
+    "lng": 2.8911938,
+    "osm": "way/191229595",
+    "osm_version": 14,
+    "osm_timestamp": "2025-12-07T14:25:35Z",
+    "osm_name": "Ecole Nationale Supérieure de l'Hydraulique",
+    "wilaya_code": 9,
+    "commune": "Guerrouaou",
+    "why": "OSM way/191229595 (website tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q30261759 is this institution by website (P856 host = record website host ensh.dz) and its P625 agrees with the OSM point to 67 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q30261759",
+      "tie": "website",
+      "point": [
+        2.890453,
+        36.510704
+      ],
+      "metres_from_published_value": 67,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "reference": "stated in Q30141628 (P248)",
+      "confirms": "way/191229595"
+    }
+  },
+  "host:ensm.dz": {
+    "record": "00068, Ecole nationale supérieure de management",
+    "lat": 36.6420957,
+    "lng": 2.7902762,
+    "osm": "way/390654568",
+    "osm_version": 3,
+    "osm_timestamp": "2016-12-13T20:18:36Z",
+    "osm_name": "Ecole supérieure de management",
+    "wilaya_code": 42,
+    "commune": "Kolea",
+    "why": "OSM way/390654568 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q104713296 is this institution by name (label:fr ~ name (core, one word, inside the declared commune)) and its P625 agrees with the OSM point to 57 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q104713296",
+      "tie": "name",
+      "point": [
+        2.7899072043657,
+        36.642516860583
+      ],
+      "metres_from_published_value": 57,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "reference": "no reference on the statement; none names OpenStreetMap",
+      "confirms": "way/390654568"
+    }
+  },
+  "host:esc-alger.dz": {
+    "record": "00081, Ecole Supérieure de Commerce-Mouloud Kacem Naït Belkacem",
+    "lat": 36.6400745,
+    "lng": 2.7875844,
+    "osm": "way/390654567",
+    "osm_version": 3,
+    "osm_timestamp": "2016-12-13T20:18:36Z",
+    "osm_name": "Ecole supérieure de commerce",
+    "wilaya_code": 42,
+    "commune": "Kolea",
+    "why": "OSM way/390654567 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q16507829 is this institution by website (P856 host = record website host esc-alger.dz) and its P625 agrees with the OSM point to 58 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q16507829",
+      "tie": "website",
+      "point": [
+        2.7869444444444,
+        36.64
+      ],
+      "metres_from_published_value": 58,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "reference": "imported from English Wikipedia (P143 Q328)",
+      "confirms": "way/390654567"
+    }
+  },
+  "host:ufc.dz": {
+    "record": "00031, Université de la Formation Continue",
+    "lat": 36.7576724,
+    "lng": 2.9831795,
+    "osm": "node/5658830621",
+    "osm_version": 1,
+    "osm_timestamp": "2018-06-02T14:47:38Z",
+    "osm_name": null,
+    "wilaya_code": 16,
+    "commune": "Dely Ibrahim",
+    "why": "OSM node/5658830621 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q135914996 is this institution by website (P856 host = record website host ufc.dz) and its P625 agrees with the OSM point to 55 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q135914996",
+      "tie": "website",
+      "point": [
+        2.9837342038394,
+        36.757895980833
+      ],
+      "metres_from_published_value": 55,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "reference": "no reference on the statement; none names OpenStreetMap",
+      "confirms": "node/5658830621"
+    }
+  },
+  "host:univ-emir.dz": {
+    "record": "00054, Université des sciences islamiques Emir Abdelkader de Constantine",
+    "lat": 36.3461042,
+    "lng": 6.602899,
+    "osm": "node/8539621407",
+    "osm_version": 2,
+    "osm_timestamp": "2021-06-16T22:40:46Z",
+    "osm_name": "Université Amir Abdelkader des Sciences Islamiques",
+    "wilaya_code": 25,
+    "commune": "Constantine",
+    "why": "OSM node/8539621407 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q5372520 is this institution by website (P856 host = record website host univ-emir.dz) and its P625 agrees with the OSM point to 344 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q5372520",
+      "tie": "website",
+      "point": [
+        6.60425,
+        36.349
+      ],
+      "metres_from_published_value": 344,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "reference": "imported from English Wikipedia (P143 Q328)",
+      "confirms": "node/8539621407"
+    }
+  },
+  "host:univ-setif.dz": {
+    "record": "00042, Université de Sétif 1 - Ferhat Abbas",
+    "lat": 36.1981957,
+    "lng": 5.3657009,
+    "osm": "way/185615558",
+    "osm_version": 22,
+    "osm_timestamp": "2026-09-14T22:16:54Z",
+    "osm_name": "Université Ferhat Abbas Campus El Bez;Ferhat Abbas University El Bez Campus جامعة فرحات عباس - القطب الجامعي الباز",
+    "wilaya_code": 19,
+    "commune": "Setif",
+    "why": "OSM way/185615558 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q3551403 is this institution by website (P856 host = record website host univ-setif.dz) and its P625 agrees with the OSM point to 535 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q3551403",
+      "tie": "website",
+      "point": [
+        5.3603169127507,
+        36.196137580078
+      ],
+      "metres_from_published_value": 535,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "reference": "stated in Q12013 (P248)",
+      "confirms": "way/185615558"
     }
   }
 }

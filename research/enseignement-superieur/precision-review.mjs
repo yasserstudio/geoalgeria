@@ -493,7 +493,7 @@ const doc = {
   rule:
     `docs/adr/0001: a record becomes exact only when two independent open sources agree within ${AGREEMENT_KM} km and are not a Copied claim within ${COPY_RADIUS_M} m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.`,
   network:
-    `OpenStreetMap, Nominatim, Overpass, Wikidata and the institutions' own sites were unreachable from the build machine on ${RUN}, so the only open evidence read is the committed capture sources/${PKG}/osm-campuses.json (${MANIFEST.records} amenity=university|college elements, retrieved ${MANIFEST.retrieved}, sha256 ${MANIFEST.sha256}).`,
+    `Candidates come from the committed capture sources/${PKG}/osm-campuses.json (${MANIFEST.records} amenity=university|college elements, retrieved ${MANIFEST.retrieved}, sha256 ${MANIFEST.sha256}), one source. The second-source pass of the same run (research/${PKG}/second-source-votes-${RUN}.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on ${RUN}.`,
   counts: {
     approximate_reviewed: APPROX.length,
     queued_single_source: queue.length,
