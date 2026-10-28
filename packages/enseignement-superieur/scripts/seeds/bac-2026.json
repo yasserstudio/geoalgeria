@@ -34,18 +34,22 @@
       ],
       "why": "Succeeded by décret exécutif 22-398 of 21 November 2022, which dissolved the Ecole nationale supérieure de technologie and the Ecole supérieure en sciences appliquées d'Alger and transferred their property, rights, obligations, personnel and resources to the Ecole nationale supérieure des technologies avancées, created by décret exécutif 22-314 of 12 September 2022 (both in Journal officiel n° 78, 2022). The MESRS BAC 2026 placement file lists only establishment P05, so the ministry places bacheliers into the successor alone, while the 2026-08-03 network listing still carries both predecessors. They are therefore not peers of P05 but the same establishment before the decree: their records leave and their ids are forwarded to this one in data/retired-ids.json, rather than three records co-existing for one school.",
       "place": {
-        "precision": "campus",
-        "lat": 36.7761552,
-        "lng": 3.2581993,
-        "osm": "way/245174987",
-        "osm_version": 8,
-        "osm_timestamp": "2023-05-13T09:24:11Z",
+        "precision": "commune",
+        "commune": "Bordj El Kiffan",
         "wilaya_code": 16,
-        "osm_name": "Ecole Nationale Supérieure de Technologie ENST",
-        "why": "ENSTA publishes its seat as \"Cité Diplomatique, ex Centre biomédical, Dergana - Bordj El Kiffan, Alger\" (its own plan-de-lecole page and the letterhead of its scientific-council minutes). This OSM object is amenity=college with addr:street=Cité Diplomatique, addr:city=Dergana and operator=Ministère de l'Enseignement Supérieur et de la Recherche Scientifique, so the tie is the school's own published seat address and not a name match. Nominatim returns exactly one such object, so it is unambiguous. Its name tag still reads the dissolved ENST (see osm_name above): the decree transferred the campus to ENSTA, which is why this point is accepted as the successor's own campus, and the stale tag is an OSM edit owed upstream. No Wikidata P625 exists for ENSTA. The school's second site, the ex-ESSA building at Bab El Oued, is NOT published as a second record: one establishment is one record, and the decree's seat is Dergana.",
-        "osm_search": "Nominatim search for \"Technologies Avancees Alger ecole\", \"ENSTA Alger\", \"ENSTA Dergana\", \"ENSTA Bordj El Bahri\" and the Arabic name all return nothing, so no OSM object carries ENSTA's name; the object above was reached from the seat address and read back from api.openstreetmap.org for its version and timestamp."
+        "why": "docs/adr/0001: one source is not enough to call a point exact, and ENSTA's campus point has one. OSM way/245174987 (below, under queued_claim) is the only open object at the school's published seat, and no second independent open source states a coordinate for it: Wikidata's ENSTA item (Q135398220) had no P625 when the record was added on 2026-10-28, and the precision pass of the same date could not re-read Wikidata or the school's own site, neither being reachable from the build machine. Nominatim, api.openstreetmap.org and Overpass all read the same OpenStreetMap database, so they are one source, not three. The record therefore sits on its commune's flagship centroid and the OSM reading waits in the review queue (research/enseignement-superieur/precision-review-2026-10-28.json) for a second independent open source. The commune is Bordj El Kiffan, not the Bordj El Bahri the nearest-centre join gave the OSM point: the school publishes its seat as Dergana - Bordj El Kiffan, and the OSM point lies inside Bordj El Kiffan's committed OSM outline (relation of code_commune 1630 in research/_commune-centres/commune-boundaries.json), 194 m from the Bordj El Bahri border and so beyond that outline's 166 m simplification margin, while Bordj El Bahri's centre is merely the nearer of the two centres (1,761 m, against 6,601 m for Bordj El Kiffan's, which is where the record now sits).",
+        "queued_claim": {
+          "lat": 36.7761552,
+          "lng": 3.2581993,
+          "osm": "way/245174987",
+          "osm_version": 8,
+          "osm_timestamp": "2023-05-13T09:24:11Z",
+          "osm_name": "Ecole Nationale Supérieure de Technologie ENST",
+          "why": "ENSTA publishes its seat as \"Cité Diplomatique, ex Centre biomédical, Dergana - Bordj El Kiffan, Alger\" (its own plan-de-lecole page and the letterhead of its scientific-council minutes). This OSM object is amenity=college with addr:street=Cité Diplomatique, addr:city=Dergana and operator=Ministère de l'Enseignement Supérieur et de la Recherche Scientifique, so the tie is the school's own published seat address and not a name match. Nominatim returns exactly one such object, so it is unambiguous. Its name tag still reads the dissolved ENST (see osm_name above): the decree transferred the campus to ENSTA, which is why this point is accepted as the successor's own campus, and the stale tag is an OSM edit owed upstream. No Wikidata P625 exists for ENSTA. The school's second site, the ex-ESSA building at Bab El Oued, is NOT published as a second record: one establishment is one record, and the decree's seat is Dergana.",
+          "osm_search": "Nominatim search for \"Technologies Avancees Alger ecole\", \"ENSTA Alger\", \"ENSTA Dergana\", \"ENSTA Bordj El Bahri\" and the Arabic name all return nothing, so no OSM object carries ENSTA's name; the object above was reached from the seat address and read back from api.openstreetmap.org for its version and timestamp."
+        }
       },
-      "note": "The commune label is the flagship nearest-centre join's answer for this point, as it is for every record here; the school's own address names Dergana, in Bordj El Kiffan."
+      "note": "The commune is the one the school's own address names (Dergana, in Bordj El Kiffan), which the OSM point's containment in the commune outline confirms; the nearest-centre join alone would have said Bordj El Bahri."
     }
   },
   "additions": {

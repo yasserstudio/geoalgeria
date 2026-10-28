@@ -137,7 +137,7 @@ order-of-magnitude cross-check.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  71 campus, 20 commune, 96 wilaya.
+  70 campus, 21 commune, 96 wilaya.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and
   still lists the two schools that décret exécutif 22-398 dissolved in 2022
