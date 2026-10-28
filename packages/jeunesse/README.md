@@ -122,7 +122,7 @@ parse it. The GIS publishes names in **French**; `name_ar` is the Arabic name **
 from the ministry's legacy public map by nearest-neighbour geo-match (≤ 200 m, and
 type-checked so a different kind of facility's name is never grafted on), present on ~59% of
 records, `null` where no confident match exists (as above). `name` is `null` for the ~5% the
-source leaves blank; `commune` and `daira` are French (uppercase, as published). `commune_code`
+source leaves blank; `commune` and `daira` are French (uppercase, as published), or `null` on the 21 and 3 records whose SIG referential is unset. `commune_code`
 is populated for 128 records whose exact current or official 2021 ONS commune label and point
 agree; otherwise it is `null`. For the full French
 wilaya/commune divisions, join `wilaya_code` against the

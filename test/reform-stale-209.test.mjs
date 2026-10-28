@@ -49,8 +49,10 @@ const read = (...parts) => JSON.parse(readFileSync(join(ROOT, ...parts), "utf8")
 // 1439 from Serghine to Serguine (JORA n° 25 of 2026, loi 26-06, art. 52 bis 15), after
 // which the SIG's own label matches and the build derives wilaya 64 / commune 1439
 // itself, so the patch had nothing left to correct.
-const CORRECTED = { emploi: 17, jeunesse: 15, poste: 3, sports: 13, telecom: 1, tourisme: 5 };
-const TOTAL = 54;
+// jeunesse was 15 until the same rebuild retired institutions.json/00728, a Serguine
+// youth centre absorbed by the same rename in the same way (Owner decision 2026-10-28).
+const CORRECTED = { emploi: 17, jeunesse: 14, poste: 3, sports: 13, telecom: 1, tourisme: 5 };
+const TOTAL = 53;
 // 303 on 2026-09-29, minus banques' agb-tebessa, re-placed from OpenStreetMap by #285,
 // minus sports' 01835, gone from the SIG in the 2026-10-27 refresh.
 const RESIDUAL = 301;

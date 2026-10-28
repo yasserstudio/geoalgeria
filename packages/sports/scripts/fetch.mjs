@@ -41,6 +41,7 @@ import {
 import { foldNameDashes } from "../../../scripts/lib/no-em-dash.mjs";
 import { haversine } from "../../../scripts/lib/commune-resolver.mjs";
 import { captureMeta } from "../../../scripts/lib/source-store.mjs";
+import { withoutEmDash } from "../../../scripts/lib/no-em-dash.mjs";
 import { fetchMjsLayer, readMjsCapture, MJS_SOURCE } from "../../../scripts/lib/mjs-sig.mjs";
 import { looseKey } from "../../normalize/index.js";
 
@@ -725,7 +726,9 @@ async function main() {
       name: clean(p.nomination_de_linfrastructure),
       type_code: typeEntry?.code ?? null,
       type_fr: typeEntry?.fr ?? typeRaw ?? null,
-      address: clean(p.adresse_de_linfrastructure),
+      // An upstream address can carry an em dash as a separator (05187: "Tiourtit
+      // \u2014 Iflissen"); it is folded like a name, never published as received.
+      address: withoutEmDash(clean(p.adresse_de_linfrastructure)),
       commune: stripUUID(p.commune),
       daira: stripUUID(p.daira),
       wilaya_code: wilayaCode,

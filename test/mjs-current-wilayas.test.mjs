@@ -28,9 +28,11 @@ const expected = {
   },
   jeunesse: {
     file: "institutions.json",
-    count: 128,
-    digest: "4c137cda5050f9b9ef0be1236e6e8450cb8c47a0a04be0332b02350c7f4dd565",
-    byWilaya: { 59: 25, 60: 10, 61: 9, 62: 4, 63: 9, 64: 7, 65: 12, 66: 8, 67: 23, 68: 20, 69: 1 },
+    // 128 until the 2026-10-27 refresh: 00728 (Serguine) now reconciles by name to
+    // 64 rather than through the review ledger, whose absorbed row was retired.
+    count: 129,
+    digest: "f21bf27b64229e3fefba94331ea7e89705c9ad294a726d0bac42e7d37a9033b9",
+    byWilaya: { 59: 25, 60: 10, 61: 9, 62: 4, 63: 9, 64: 8, 65: 12, 66: 8, 67: 23, 68: 20, 69: 1 },
   },
 };
 

@@ -197,9 +197,9 @@
         "url": "https://sig.mjs.gov.dz"
       },
       "cadence": "quarterly",
-      "last_retrieved": "2026-06-23",
-      "next_due": "2026-11-08",
-      "note": "Pulled live on 2026-10-27 over the Algerian connection the Owner supplied: 2,337 features, which confirms the 2026-10-25 reading that the SIG has not touched the 2,334 published records since June and that the 3 rows it added are unfinished entries the fetcher drops. The raw capture is now committed (sources/jeunesse/sig-etablissements.json) and the fetcher replays it with --cache, so the next refresh needs no VPN window. The rebuild is still held, and it now aborts before the 6 reconciliation fallbacks are even reached: institutions.json/00728 is stale by absorption, its expect being wilaya 14 where the build now derives 64 with commune 1439. Retiring it plus the 6 new decisions the drift needs edits the #209 audit gate, which changes only under the Owner's eye, so it stays parked for 2026-16 with the El Aricha reconciliation; next_due is that batch rather than last_retrieved + cadence. last_retrieved stays 2026-06-23 because the data was not promoted."
+      "last_retrieved": "2026-10-27",
+      "next_due": "2027-01-27",
+      "note": "Pulled live on 2026-10-27 over the Algerian connection the Owner supplied: 2,337 features, which confirms that the SIG has not touched the 2,334 published records since June and that the 3 rows it added are unfinished entries the fetcher drops. The raw capture is committed (sources/jeunesse/sig-etablissements.json) and the fetcher replays it with --cache, so the next refresh needs no VPN window. Promoted in batch 2026-15: ids carry on the establishment rather than its sort position, the absorbed review row institutions.json/00728 is retired (Owner decision 2026-10-28), and the shared reconciler reads the former JORA commune spellings, so the rebuild changes only 21 placeholder communes to null and 00728's review receipt."
     },
     {
       "package": "@geoalgeria/livraison",

@@ -33,8 +33,9 @@
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { fetchMjsLayer, readMjsCapture, MJS_SOURCE } from "../../../scripts/lib/mjs-sig.mjs";
+import { captureMeta } from "../../../scripts/lib/source-store.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -356,9 +357,11 @@ async function main() {
 
   // --- emit v2 via the shared writer ---
   const cfg = MIGRATIONS.jeunesse;
-  // A live pull stamps today; a --cache replay reuses the committed dates so an
-  // offline rebuild reproduces the committed metadata instead of redating it.
-  const { updated, retrieved } = resolveDates(DATA, OFFLINE);
+  // The capture is the retrieval, so its own date is what the package states, live
+  // or --cache alike: a replay of the same capture reproduces the metadata, and a
+  // rebuild from a newer capture no longer keeps the previous pull's date.
+  const { retrieved: updated } = captureMeta("jeunesse", CAPTURE);
+  const retrieved = updated;
   // Pin every record to the id it shipped under (see jeunesseCarryKey), reserve the
   // id of one that is gone, and mint a new record's id above every id ever used.
   const rows = institutions.map(cfg.map);

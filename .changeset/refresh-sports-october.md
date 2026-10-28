@@ -10,4 +10,4 @@ Refresh sports from the Ministry of Youth and Sports SIG, layer `infrastructures
 
 **Wilayas.** 270 records are reconciled to their 2026 wilaya (was 267), now also from a commune's former JORA spelling: without it, 14 facilities the SIG still labels BOUIHI, AZIL ABEDELKADER, ZMALET EL EMIR ABDELKADE or OULED EMAARAF would have returned to the mother wilaya. `01663` and `01666` (Serguine) now reconcile by name to wilaya 64 / commune 1439, so they carry `source_wilaya_code: "14"` in place of a review receipt. `01115` (Oued El Alleug, Blida), which the SIG relabelled Ouled Djellal (wilaya 51) at an unmoved point, is corrected back to wilaya 09 / commune 0904 by a reviewed decision in `quality/overrides/sports.json`.
 
-**Also.** One new facility type, `PCA` (Parcours d'athlétisme, 1 record), in the `TypeCode` union. 5,106 points are `exact` and 128 `approximate`.
+**Also.** One new facility type, `PCA` (Parcours d'athlétisme, 1 record), in the `TypeCode` union. An address that carries a dash as a separator is folded to ` - ` like a name: 2 records, the new `05187` (an em dash) and one carried record (an en dash). 5,106 points are `exact` and 128 `approximate`.

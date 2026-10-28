@@ -122,7 +122,7 @@ est le nom arabe **complété** à partir de la carte publique historique du min
 appariement géographique au plus proche (≤ 200 m, et vérifié par type pour ne jamais greffer
 le nom d'un bâtiment voisin) – présent sur ~59 % des enregistrements, `null` où aucune
 correspondance de confiance n'existe (comme ci-dessus). `name` est `null` pour les ~5 % que
-la source laisse vides ; `commune` et `daira` sont en français (majuscules, comme publiés) ;
+la source laisse vides ; `commune` et `daira` sont en français (majuscules, comme publiés), ou `null` sur les 21 et 3 enregistrements dont le référentiel du SIG est vide ;
 `commune_code` est renseigné pour 128 enregistrements dont le libellé exact de commune actuel
 ou officiel ONS 2021 concorde avec le point ; sinon il vaut `null`. Pour l'ensemble complet des divisions wilaya/commune en français, joignez
 `wilaya_code` avec le jeu de données [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).

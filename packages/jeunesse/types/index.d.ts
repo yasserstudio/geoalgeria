@@ -29,8 +29,9 @@ export interface Institution {
   /** Commune (ONS) code where a unique canonical match supports a reconciled
    *  current wilaya; otherwise null because the SIG supplies only a name. */
   commune_code: string | null;
-  /** Commune name (French, uppercase as published). */
-  commune: string;
+  /** Commune name (French, uppercase as published), or `null` where the SIG leaves
+   *  its commune referential unset (21 records as of 2026-10-27). */
+  commune: string | null;
   /** Latitude (WGS84). */
   lat: number;
   /** Longitude (WGS84). */
@@ -48,8 +49,9 @@ export interface Institution {
   type_label_fr: string;
   /** Canonical Arabic label for the type. */
   type_label_ar: string;
-  /** Daïra name (French, uppercase as published). */
-  daira: string;
+  /** Daïra name (French, uppercase as published), or `null` where the SIG leaves
+   *  its daïra referential unset (3 records as of 2026-10-27). */
+  daira: string | null;
   /** Street address as published, or `null`. */
   address: string | null;
   /** Reception/intake capacity, or `null` if not published. */
