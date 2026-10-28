@@ -35,11 +35,11 @@
     "url": "https://overpass-api.de/api/interpreter"
   },
   "wikidata-campuses": {
-    "bytes": 169865,
+    "bytes": 174770,
     "note": "Wikidata items that could be the same institution as a record of the 2026-10-28 campus Review queue or a BAC 2026 addition, for the ADR 0001 second-source check: the live OSM element's wikidata tag, a wikibase:around search within 5 km of each Claim point for P31/P279* Q38723/Q3918/Q2385804/Q3914, and an MWAPI EntitySearch on the record's French and Arabic names (full, without parenthesis or ex-tail, and the part before the dash), a search hit kept only when its P17 is Q262 or a P625 value lies in Algeria. Per item only P625 (every value, with rank), P856, P31, P402, P17 (with rank) and the fr/ar/en labels and aliases, plus found_by, the lead that brought it in. All read over the SPARQL endpoint because www.wikidata.org/w/api.php answered HTTP 429 on 2026-10-28. Written by research/enseignement-superieur/fetch-second-sources.mjs; CC0.",
-    "records": 84,
+    "records": 83,
     "retrieved": "2026-10-28",
-    "sha256": "2f9c2b862974e958c3c7c87319d4bb9edf7cc8ef565792ed58783f237bf2ef27",
+    "sha256": "7616a34c26b4952cd47e4956f5e5e3a8b955cd66329243d79a3b2b41a38994e0",
     "url": "https://query.wikidata.org/sparql"
   }
 }

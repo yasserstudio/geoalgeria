@@ -4,8 +4,8 @@
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
   "network": "Candidates come from the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf), one source. The second-source pass of the same run (research/enseignement-superieur/second-source-votes-2026-10-28.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on 2026-10-28.",
   "counts": {
-    "approximate_reviewed": 107,
-    "queued_single_source": 26,
+    "approximate_reviewed": 108,
+    "queued_single_source": 27,
     "no_open_candidate": 81,
     "promoted": 0
   },
@@ -53,6 +53,92 @@
       ],
       "reason": "single source",
       "needs": "read P625 on Wikidata Q1190852 (an OSM wikidata tag is a lead, not a coordinate); or a campus address or map on the institution's own site (univ-alger.dz), independent of OpenStreetMap and within 2 km of the Claim"
+    },
+    {
+      "id": "00042",
+      "name": "Université de Sétif 1 - Ferhat Abbas",
+      "name_ar": "جامعة سطيف1 - فرحات عباس",
+      "wilaya_code": "19",
+      "geo_method": "wilaya",
+      "published": {
+        "lat": 36.19112,
+        "lng": 5.4150871,
+        "commune": null
+      },
+      "claims": [
+        {
+          "source": "osm",
+          "element": "way/52011925",
+          "tie": "name",
+          "matched": "name ~ name (eponym)",
+          "tags": {
+            "addr:city": "Sétif",
+            "addr:street": "Rue Targo Fodil",
+            "name": "Ferhat Abbas University Travaux Campus جامعة فرحات عباس - القطب الجامعي الخدمات",
+            "name:fr": "Ferhat Abbas University Travaux Campus"
+          },
+          "point": {
+            "lat": 36.1882094,
+            "lng": 5.3902805
+          },
+          "commune": {
+            "code": "1901",
+            "name": "Setif"
+          },
+          "wilaya_code": "19",
+          "in_declared_wilaya": true,
+          "distance_m": 2250
+        },
+        {
+          "source": "osm",
+          "element": "way/236035047",
+          "tie": "name",
+          "matched": "name ~ name (eponym)",
+          "tags": {
+            "addr:city": "سطيف",
+            "name": "Ferhat Abbas University El Maabouda Campus جامعة فرحات عباس - القطب الجامعي المعبودة",
+            "wikidata": "Q3551403"
+          },
+          "point": {
+            "lat": 36.1958376,
+            "lng": 5.3864369
+          },
+          "commune": {
+            "code": "1901",
+            "name": "Setif"
+          },
+          "wilaya_code": "19",
+          "in_declared_wilaya": true,
+          "distance_m": 2624,
+          "wikidata_tag": "Q3551403"
+        },
+        {
+          "source": "osm",
+          "element": "way/185615558",
+          "tie": "name",
+          "matched": "name ~ name (eponym)",
+          "tags": {
+            "name": "Ferhat Abbas University El Bez Campus جامعة فرحات عباس - القطب الجامعي الباز",
+            "name:ar": "جامعة فرحات عباس - القطب الجامعي الباز",
+            "name:fr": "Université Ferhat Abbas Campus El Bez",
+            "wikidata": "Q3551403"
+          },
+          "point": {
+            "lat": 36.1981958,
+            "lng": 5.3657009
+          },
+          "commune": {
+            "code": "1901",
+            "name": "Setif"
+          },
+          "wilaya_code": "19",
+          "in_declared_wilaya": true,
+          "distance_m": 4501,
+          "wikidata_tag": "Q3551403"
+        }
+      ],
+      "reason": "ambiguous: several candidates",
+      "needs": "read P625 on Wikidata Q3551403 (an OSM wikidata tag is a lead, not a coordinate); or a campus address or map on the institution's own site (univ-setif.dz), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
       "id": "00050",

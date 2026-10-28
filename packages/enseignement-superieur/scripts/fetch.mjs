@@ -335,6 +335,9 @@ async function main() {
     if (!p) return null;
     usedSecond.add(key);
     const where = `seeds/second-source.json ${key}`;
+    // The seed must say which wilaya it means, so a point copied onto the wrong
+    // record fails here instead of relabelling it.
+    if (p.wilaya_code == null) throw new Error(`${where}: a second-source placement needs its wilaya_code`);
     const pl = campusPlace(where, p);
     if (pl.votes < 2) throw new Error(`${where}: a second-source placement needs its second Vote`);
     if (expectWilaya != null && pl.wilaya_code !== expectWilaya)
@@ -354,7 +357,12 @@ async function main() {
     const h0 = host(inst.website);
 
     // 0. A campus point on two independent Votes (seeds/second-source.json).
-    const ss = fromSecondSource(carryKey({ website: inst.website, name_ar: (h0 && namesAr.get(h0)) || null, name: inst.name }), nameW);
+    // Expected wilaya: the one the title names, else the one the curated override
+    // asserts, so a record whose name carries no wilaya is still checked.
+    const ss = fromSecondSource(
+      carryKey({ website: inst.website, name_ar: (h0 && namesAr.get(h0)) || null, name: inst.name }),
+      nameW ?? (overrides[key]?.wilaya_code != null ? Number(overrides[key].wilaya_code) : null),
+    );
     if (ss) ({ lat, lng, wilaya_code, commune, precision } = ss);
 
     // 1. Curated override: a commune (→ flagship centroid) or a bare wilaya. Takes

@@ -21,8 +21,13 @@
       "metres_from_published_value": 512,
       "read_at": "2026-10-28",
       "source": "Wikidata P625, CC0",
-      "reference": "imported from French Wikipedia (P143 Q8447)",
-      "confirms": "way/96606361"
+      "confirms": "way/96606361",
+      "references": [
+        {
+          "property": "P143",
+          "value": "Q8447"
+        }
+      ]
     }
   },
   "ar:المدرسة الوطنية التحضيرية لدراسة مهندس (الرويبة، ولاية الجزائر)": {
@@ -46,8 +51,13 @@
       "metres_from_published_value": 272,
       "read_at": "2026-10-28",
       "source": "Wikidata P625, CC0",
-      "reference": "imported from French Wikipedia (P143 Q8447)",
-      "confirms": "way/96600252"
+      "confirms": "way/96600252",
+      "references": [
+        {
+          "property": "P143",
+          "value": "Q8447"
+        }
+      ]
     }
   },
   "host:asal.dz": {
@@ -71,8 +81,8 @@
       "metres_from_published_value": 86,
       "read_at": "2026-10-28",
       "source": "Wikidata P625, CC0",
-      "reference": "no reference on the statement; none names OpenStreetMap",
-      "confirms": "way/561830853"
+      "confirms": "way/561830853",
+      "references": []
     }
   },
   "host:ensa.dz": {
@@ -96,8 +106,8 @@
       "metres_from_published_value": 98,
       "read_at": "2026-10-28",
       "source": "Wikidata P625, CC0",
-      "reference": "no reference on the statement; none names OpenStreetMap",
-      "confirms": "way/97658307"
+      "confirms": "way/97658307",
+      "references": []
     }
   },
   "host:ensb.dz": {
@@ -145,8 +155,13 @@
       "metres_from_published_value": 67,
       "read_at": "2026-10-28",
       "source": "Wikidata P625, CC0",
-      "reference": "stated in Q30141628 (P248)",
-      "confirms": "way/191229595"
+      "confirms": "way/191229595",
+      "references": [
+        {
+          "property": "P248",
+          "value": "Q30141628"
+        }
+      ]
     }
   },
   "host:ensm.dz": {
@@ -170,8 +185,8 @@
       "metres_from_published_value": 57,
       "read_at": "2026-10-28",
       "source": "Wikidata P625, CC0",
-      "reference": "no reference on the statement; none names OpenStreetMap",
-      "confirms": "way/390654568"
+      "confirms": "way/390654568",
+      "references": []
     }
   },
   "host:esc-alger.dz": {
@@ -195,8 +210,13 @@
       "metres_from_published_value": 58,
       "read_at": "2026-10-28",
       "source": "Wikidata P625, CC0",
-      "reference": "imported from English Wikipedia (P143 Q328)",
-      "confirms": "way/390654567"
+      "confirms": "way/390654567",
+      "references": [
+        {
+          "property": "P143",
+          "value": "Q328"
+        }
+      ]
     }
   },
   "host:ufc.dz": {
@@ -220,8 +240,8 @@
       "metres_from_published_value": 55,
       "read_at": "2026-10-28",
       "source": "Wikidata P625, CC0",
-      "reference": "no reference on the statement; none names OpenStreetMap",
-      "confirms": "node/5658830621"
+      "confirms": "node/5658830621",
+      "references": []
     }
   },
   "host:univ-emir.dz": {
@@ -245,33 +265,13 @@
       "metres_from_published_value": 344,
       "read_at": "2026-10-28",
       "source": "Wikidata P625, CC0",
-      "reference": "imported from English Wikipedia (P143 Q328)",
-      "confirms": "node/8539621407"
-    }
-  },
-  "host:univ-setif.dz": {
-    "record": "00042, Université de Sétif 1 - Ferhat Abbas",
-    "lat": 36.1981957,
-    "lng": 5.3657009,
-    "osm": "way/185615558",
-    "osm_version": 22,
-    "osm_timestamp": "2026-09-14T22:16:54Z",
-    "osm_name": "Université Ferhat Abbas Campus El Bez;Ferhat Abbas University El Bez Campus جامعة فرحات عباس - القطب الجامعي الباز",
-    "wilaya_code": 19,
-    "commune": "Setif",
-    "why": "OSM way/185615558 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q3551403 is this institution by website (P856 host = record website host univ-setif.dz) and its P625 agrees with the OSM point to 535 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
-    "wikidata_confirmation": {
-      "item": "Q3551403",
-      "tie": "website",
-      "point": [
-        5.3603169127507,
-        36.196137580078
-      ],
-      "metres_from_published_value": 535,
-      "read_at": "2026-10-28",
-      "source": "Wikidata P625, CC0",
-      "reference": "stated in Q12013 (P248)",
-      "confirms": "way/185615558"
+      "confirms": "node/8539621407",
+      "references": [
+        {
+          "property": "P143",
+          "value": "Q328"
+        }
+      ]
     }
   }
 }

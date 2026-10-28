@@ -4,7 +4,7 @@
  * (run 2026-10-28), in the sense of docs/adr/0001 and CONTEXT.md
  * "Coordinate review".
  *
- * Reads the 35 records of the Review queue
+ * Reads the 34 records of the Review queue
  * research/enseignement-superieur/precision-review-2026-10-28.json and the four
  * BAC 2026 additions P08/P09/P10/P23 (seeds/bac-2026.json, published exact on one
  * OSM object each), and for each one asks whether Wikidata P625, an open source
@@ -313,9 +313,18 @@ const ownHost = (r) => {
 // ---- the captures, indexed ---------------------------------------------------
 
 const ELEMENT = new Map(OSM.map((e) => [e.ref, e]));
+// A P625 statement Wikidata references to OpenStreetMap (imported from or stated
+// in Q936, or an openstreetmap.org URL) is a Copied claim of the OSM object
+// whatever the distance: it proves nothing about it (docs/adr/0001 rule 3). One
+// referenced to a proprietary map is not captured at all (fetch-second-sources.mjs)
+// and is no open Claim.
+const osmReferenced = (p) => (p.references ?? []).some((r) => r.value === "Q936" || /openstreetmap\.org/i.test(String(r.value)));
 const ITEMS = WD.items.map((it) => {
+  const usable = it.P625.filter((p) => !p.excluded && p.rank !== "deprecated" && (p.globe == null || p.globe === "Q2"));
+  const fromOsm = usable.filter(osmReferenced);
+  const proprietary = it.P625.filter((p) => p.excluded);
   const best = (() => {
-    const live = it.P625.filter((p) => p.rank !== "deprecated" && (p.globe == null || p.globe === "Q2"));
+    const live = usable.filter((p) => !osmReferenced(p));
     const pref = live.filter((p) => p.rank === "preferred");
     return (pref.length ? pref : live).map((p) => ({ lat: p.lat, lng: p.lng, rank: p.rank }));
   })();
@@ -328,6 +337,8 @@ const ITEMS = WD.items.map((it) => {
   return {
     ...it,
     best,
+    fromOsm,
+    proprietary,
     hosts: [...new Set(it.P856.filter((v) => v.rank !== "deprecated").map((v) => hostOf(v.value)).filter(Boolean))].sort(),
     el: { names: names.map((n) => ({ ...n, type: typeOf(n.value), words: words(n.value) })), communeCode: loc.communeCode, wilaya: loc.wilaya },
     records: new Set(it.found_by.map((f) => f.record)),
@@ -470,14 +481,20 @@ function review(rec, claimRefs, bac) {
     votes.sort((a, b) => a.distance_m - b.distance_m || (a.element < b.element ? -1 : 1));
     const agreesWith = [...new Set(votes.filter((v) => v.kind === "vote").map((v) => v.element))].sort();
     const copiedWith = [...new Set(votes.filter((v) => v.kind === "copied").map((v) => v.element))].sort();
-    const status = !it.best.length ? "no_p625" : agreesWith.length ? "vote" : copiedWith.length ? "copied" : live.length ? "disagree" : "no_osm_claim";
+    const status = !it.best.length
+      ? (it.fromOsm.length ? "copied" : it.proprietary.length ? "proprietary_only" : "no_p625")
+      : agreesWith.length ? "vote" : copiedWith.length ? "copied" : live.length ? "disagree" : "no_osm_claim";
     return {
       qid: it.qid,
       tie,
       detail,
       found_by: via,
       labels: labelsOf(it),
-      p625: it.P625.map((p) => ({ lat: p.lat, lng: p.lng, rank: p.rank })),
+      p625: it.P625.map((p) =>
+        p.excluded
+          ? { excluded: p.excluded, rank: p.rank, references: p.references ?? [] }
+          : { lat: p.lat, lng: p.lng, rank: p.rank, references: p.references ?? [], ...(osmReferenced(p) ? { copied: "referenced to OpenStreetMap" } : {}) },
+      ),
       p856: it.P856.map((v) => v.value),
       p31: it.P31.filter((v) => v.rank !== "deprecated").map((v) => v.value),
       p402: it.P402.map((v) => v.value),
@@ -488,7 +505,7 @@ function review(rec, claimRefs, bac) {
     };
   });
 
-  const withP625 = idItems.filter((i) => i.status !== "no_p625");
+  const withP625 = idItems.filter((i) => i.status !== "no_p625" && i.status !== "proprietary_only");
   const voting = idItems.filter((i) => i.status === "vote");
   const copied = idItems.filter((i) => i.status === "copied");
   const disagreeing = idItems.filter((i) => i.status === "disagree");
@@ -499,8 +516,10 @@ function review(rec, claimRefs, bac) {
   let singledOut = false;
   if (!withP625.length) {
     verdict = "no_second_source";
+    const prop = idItems.filter((i) => i.status === "proprietary_only");
     why = idItems.length
-      ? `identity item${idItems.length > 1 ? "s" : ""} ${idItems.map((i) => `${i.qid} (${i.tie})`).join(", ")} carr${idItems.length > 1 ? "y" : "ies"} no P625`
+      ? `identity item${idItems.length > 1 ? "s" : ""} ${idItems.map((i) => `${i.qid} (${i.tie})`).join(", ")} carr${idItems.length > 1 ? "y" : "ies"} no open P625` +
+        (prop.length ? `; ${prop.map((i) => i.qid).join(", ")} only one referenced to a proprietary map, which is no open Claim (docs/adr/0001 rule 6)` : "")
       : `none of the ${considered} Wikidata candidates is this institution`;
   } else if (!live.length) {
     verdict = "ambiguous";
@@ -523,7 +542,7 @@ function review(rec, claimRefs, bac) {
     }
   } else if (copied.length && !disagreeing.length) {
     verdict = "copied";
-    why = `${copied.map((i) => `${i.qid} (${i.distances[0].distance_m} m from ${i.distances[0].element})`).join(", ")}: within ${COPY_RADIUS_M} m, a Copied claim that casts no Vote`;
+    why = `${copied.map((i) => (i.distances[0] ? `${i.qid} (${i.distances[0].distance_m} m from ${i.distances[0].element})` : `${i.qid} (P625 referenced to OpenStreetMap)`)).join(", ")}: a Copied claim that casts no Vote`;
   } else if (disagreeing.length && !copied.length) {
     verdict = "disagree";
     why = `${disagreeing.map((i) => `${i.qid} (${i.tie}) P625 is ${i.distances[0].distance_m} m from the nearest OSM Claim ${i.distances[0].element}`).join("; ")}: over ${AGREEMENT_KM} km`;

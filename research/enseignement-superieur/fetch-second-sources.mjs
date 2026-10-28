@@ -5,7 +5,7 @@
  * "Coordinate review".
  *
  * The Review queue research/enseignement-superieur/precision-review-2026-10-28.json
- * holds 35 records whose only open Claim is an OpenStreetMap campus element read
+ * holds 34 records whose only open Claim is an OpenStreetMap campus element read
  * from the 2026-08-03 Overpass capture, and the four BAC 2026 additions P08, P09,
  * P10 and P23 (packages/enseignement-superieur/scripts/seeds/bac-2026.json) are
  * published exact on one OSM object each. ADR 0001 needs a second independent
@@ -310,6 +310,10 @@ for (const k of [...searchJobs.keys()].sort()) {
 // ---- step 3: the listed fields of every candidate --------------------------
 
 const numQ = (q) => Number(q.slice(1));
+// Reference values that make a P625 statement proprietary-map content: Google
+// Maps (Q12013), or a reference URL on a Google maps host.
+const PROPRIETARY_SOURCES = new Set(["Q12013"]);
+const PROPRIETARY_URL = /^https?:\/\/(www\.)?(maps\.google\.|google\.[a-z.]+\/maps|goo\.gl\/maps|maps\.app\.goo\.gl)/i;
 const PROPS = ["P856", "P31", "P402", "P17"];
 
 async function fields(qids) {
@@ -321,16 +325,39 @@ async function fields(qids) {
       out.set(q, { qid: q, labels: {}, aliases: { ar: [], en: [], fr: [] }, P625: [], P856: [], P31: [], P402: [], P17: [] });
     // http://wikiba.se/ontology#NormalRank -> "normal"
     const rank = (u) => String(u).split("#").pop().replace(/Rank$/, "").toLowerCase();
-    for (const b of await sparql(`SELECT ?item ?lat ?lon ?globe ?rank WHERE {
+    // Each P625 statement with its references, so a coordinate's provenance is
+    // evidence the decision reads, not a note typed afterwards (PR #310 review).
+    const statements = new Map();
+    for (const b of await sparql(`SELECT ?item ?st ?lat ?lon ?globe ?rank ?rp ?rv WHERE {
   VALUES ?item { ${values} }
   ?item p:P625 ?st . ?st wikibase:rank ?rank ; psv:P625 ?v .
   ?v wikibase:geoLatitude ?lat ; wikibase:geoLongitude ?lon .
   OPTIONAL { ?v wikibase:geoGlobe ?globe }
+  OPTIONAL { ?st prov:wasDerivedFrom ?ref . ?ref ?rp ?rv . FILTER(?rp IN (pr:P143, pr:P248, pr:P854, pr:P4656)) }
 }`)) {
-      out.get(qidOf(b.item.value)).P625.push({
-        lat: Number(b.lat.value), lng: Number(b.lon.value), rank: rank(b.rank.value),
-        globe: b.globe ? qidOf(b.globe.value) : null,
-      });
+      const key = b.st.value;
+      if (!statements.has(key))
+        statements.set(key, {
+          qid: qidOf(b.item.value), lat: Number(b.lat.value), lng: Number(b.lon.value), rank: rank(b.rank.value),
+          globe: b.globe ? qidOf(b.globe.value) : null, references: [],
+        });
+      if (b.rp) {
+        const v = b.rv.type === "uri" && b.rv.value.startsWith("http://www.wikidata.org/entity/") ? qidOf(b.rv.value) : b.rv.value;
+        statements.get(key).references.push({ property: qidOf(b.rp.value), value: v });
+      }
+    }
+    for (const st of statements.values()) {
+      const references = [...new Map(st.references.map((r) => [`${r.property}|${r.value}`, r])).values()]
+        .sort((a, b) => cmp(a.property, b.property) || cmp(String(a.value), String(b.value)));
+      // docs/adr/0001: Google content never enters the public repository. A
+      // value Wikidata states from Google Maps is not captured, only the fact
+      // that one exists, so the decision can say why the item casts no Vote.
+      const proprietary = references.find((r) => PROPRIETARY_SOURCES.has(String(r.value)) || PROPRIETARY_URL.test(String(r.value)));
+      out.get(st.qid).P625.push(
+        proprietary
+          ? { excluded: `referenced to a proprietary map (${proprietary.property} ${proprietary.value}); value not captured`, rank: st.rank, references }
+          : { lat: st.lat, lng: st.lng, rank: st.rank, globe: st.globe, references },
+      );
     }
     for (const b of await sparql(`SELECT ?item ?pid ?val ?rank WHERE {
   VALUES ?item { ${values} }
@@ -352,7 +379,7 @@ async function fields(qids) {
     }
   }
   for (const it of out.values()) {
-    it.P625.sort((a, b) => a.lat - b.lat || a.lng - b.lng || cmp(a.rank, b.rank));
+    it.P625.sort((a, b) => (a.lat ?? 999) - (b.lat ?? 999) || (a.lng ?? 999) - (b.lng ?? 999) || cmp(a.rank, b.rank) || cmp(a.excluded ?? "", b.excluded ?? ""));
     for (const p of PROPS) it[p].sort((a, b) => cmp(String(a.value), String(b.value)) || cmp(a.rank, b.rank));
     for (const l of ["ar", "en", "fr"]) it.aliases[l] = [...new Set(it.aliases[l])].sort();
   }

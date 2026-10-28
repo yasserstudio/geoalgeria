@@ -8,14 +8,14 @@
     },
     "wikidata": {
       "retrieved": "2026-10-28",
-      "sha256": "2f9c2b862974e958c3c7c87319d4bb9edf7cc8ef565792ed58783f237bf2ef27"
+      "sha256": "7616a34c26b4952cd47e4956f5e5e3a8b955cd66329243d79a3b2b41a38994e0"
     }
   },
   "counts": {
     "copied": 7,
     "disagree": 1,
-    "no_second_source": 20,
-    "promote": 10
+    "no_second_source": 21,
+    "promote": 9
   },
   "records": [
     {
@@ -25,7 +25,7 @@
       "wilaya_code": "16",
       "website": "http://www.univ-alger.dz/",
       "verdict": "copied",
-      "why": "Q1190852 (32 m from way/29082561): within 50 m, a Copied claim that casts no Vote",
+      "why": "Q1190852 (32 m from way/29082561): a Copied claim that casts no Vote",
       "published": {
         "lat": 36.776335,
         "lng": 3.058211,
@@ -80,7 +80,13 @@
               {
                 "lat": 36.7708,
                 "lng": 3.05542,
-                "rank": "normal"
+                "rank": "normal",
+                "references": [
+                  {
+                    "property": "P143",
+                    "value": "Q8447"
+                  }
+                ]
               }
             ],
             "p856": [
@@ -215,7 +221,8 @@
               {
                 "lat": 36.757895980833,
                 "lng": 2.9837342038394,
-                "rank": "normal"
+                "rank": "normal",
+                "references": []
               }
             ],
             "p856": [
@@ -304,8 +311,8 @@
       "name_ar": "جامعة سطيف1 - فرحات عباس",
       "wilaya_code": "19",
       "website": "http://www.univ-setif.dz/",
-      "verdict": "promote",
-      "why": "Q3551403 (website) P625 is 535 m from way/185615558: a second independent Vote, and it singles out way/185615558 among the 3 OSM Claims",
+      "verdict": "no_second_source",
+      "why": "identity item Q3551403 (website) carries no open P625; Q3551403 only one referenced to a proprietary map, which is no open Claim (docs/adr/0001 rule 6)",
       "published": {
         "lat": 36.19112,
         "lng": 5.4150871,
@@ -404,9 +411,14 @@
             },
             "p625": [
               {
-                "lat": 36.196137580078,
-                "lng": 5.3603169127507,
-                "rank": "normal"
+                "excluded": "referenced to a proprietary map (P248 Q12013); value not captured",
+                "rank": "normal",
+                "references": [
+                  {
+                    "property": "P248",
+                    "value": "Q12013"
+                  }
+                ]
               }
             ],
             "p856": [
@@ -416,76 +428,13 @@
               "Q3918"
             ],
             "p402": [],
-            "status": "vote",
-            "agrees_with": [
-              "way/185615558"
-            ],
+            "status": "proprietary_only",
+            "agrees_with": [],
             "copied_with": [],
-            "distances": [
-              {
-                "element": "way/185615558",
-                "p625": {
-                  "lat": 36.196137580078,
-                  "lng": 5.3603169127507
-                },
-                "distance_m": 535,
-                "kind": "vote"
-              },
-              {
-                "element": "way/236035047",
-                "p625": {
-                  "lat": 36.196137580078,
-                  "lng": 5.3603169127507
-                },
-                "distance_m": 2344,
-                "kind": "disagree"
-              },
-              {
-                "element": "way/52011925",
-                "p625": {
-                  "lat": 36.196137580078,
-                  "lng": 5.3603169127507
-                },
-                "distance_m": 2830,
-                "kind": "disagree"
-              }
-            ]
+            "distances": []
           }
         ],
         "rejected": []
-      },
-      "ship": {
-        "point": {
-          "lat": 36.1981957,
-          "lng": 5.3657009
-        },
-        "osm": "way/185615558",
-        "osm_version": 22,
-        "osm_timestamp": "2026-09-14T22:16:54Z",
-        "wikidata": "Q3551403",
-        "wikidata_tie": "website",
-        "p625": {
-          "lat": 36.196137580078,
-          "lng": 5.3603169127507
-        },
-        "distance_osm_wikidata_m": 535,
-        "moves_from_published_m": 4501,
-        "singled_out": true,
-        "other_osm_claims": [
-          "way/52011925",
-          "way/236035047"
-        ]
-      },
-      "commune_by_outline": {
-        "code": "1901",
-        "name_fr": "Setif",
-        "wilaya_code": "19"
-      },
-      "commune_nearest_centre": {
-        "code": "1901",
-        "name_fr": "Setif",
-        "wilaya_code": "19",
-        "distance_m": 4501
       }
     },
     {
@@ -495,7 +444,7 @@
       "wilaya_code": "38",
       "website": "http://www.cuniv-tissemsilt.dz/",
       "verdict": "no_second_source",
-      "why": "identity item Q30294271 (name) carries no P625",
+      "why": "identity item Q30294271 (name) carries no open P625",
       "published": {
         "lat": 35.60722,
         "lng": 1.8108,
@@ -620,7 +569,13 @@
               {
                 "lat": 36.349,
                 "lng": 6.60425,
-                "rank": "normal"
+                "rank": "normal",
+                "references": [
+                  {
+                    "property": "P143",
+                    "value": "Q328"
+                  }
+                ]
               }
             ],
             "p856": [
@@ -738,7 +693,13 @@
               {
                 "lat": 35.7368,
                 "lng": -0.554123,
-                "rank": "normal"
+                "rank": "normal",
+                "references": [
+                  {
+                    "property": "P143",
+                    "value": "Q8447"
+                  }
+                ]
               }
             ],
             "p856": [
@@ -775,7 +736,7 @@
       "wilaya_code": "16",
       "website": "http://www.enp.edu.dz/",
       "verdict": "copied",
-      "why": "Q3578167 (50 m from way/97658302): within 50 m, a Copied claim that casts no Vote",
+      "why": "Q3578167 (50 m from way/97658302): a Copied claim that casts no Vote",
       "published": {
         "lat": 36.720797,
         "lng": 3.137389,
@@ -828,7 +789,8 @@
               {
                 "lat": 36.723333333333,
                 "lng": 3.1508333333333,
-                "rank": "normal"
+                "rank": "normal",
+                "references": []
               }
             ],
             "p856": [
@@ -890,7 +852,7 @@
       "wilaya_code": "25",
       "website": "http://www.enp-constantine.dz/",
       "verdict": "copied",
-      "why": "Q17651592 (31 m from node/5440413392): within 50 m, a Copied claim that casts no Vote",
+      "why": "Q17651592 (31 m from node/5440413392): a Copied claim that casts no Vote",
       "published": {
         "lat": 36.364164,
         "lng": 6.608428,
@@ -943,7 +905,8 @@
               {
                 "lat": 36.276874696322,
                 "lng": 6.5864840382284,
-                "rank": "normal"
+                "rank": "normal",
+                "references": []
               }
             ],
             "p856": [
@@ -1037,7 +1000,8 @@
               {
                 "lat": 36.720883888889,
                 "lng": 3.1497230555556,
-                "rank": "normal"
+                "rank": "normal",
+                "references": []
               }
             ],
             "p856": [
@@ -1155,7 +1119,13 @@
               {
                 "lat": 36.510704,
                 "lng": 2.890453,
-                "rank": "normal"
+                "rank": "normal",
+                "references": [
+                  {
+                    "property": "P248",
+                    "value": "Q30141628"
+                  }
+                ]
               }
             ],
             "p856": [
@@ -1287,7 +1257,8 @@
               {
                 "lat": 36.642516860583,
                 "lng": 2.7899072043657,
-                "rank": "normal"
+                "rank": "normal",
+                "references": []
               }
             ],
             "p856": [
@@ -1353,7 +1324,7 @@
       "wilaya_code": "16",
       "website": "http://www.entp.edu.dz/",
       "verdict": "no_second_source",
-      "why": "identity item Q30294186 (name) carries no P625",
+      "why": "identity item Q30294186 (name) carries no open P625",
       "published": {
         "lat": 36.732356,
         "lng": 3.087478,
@@ -1451,7 +1422,7 @@
       "wilaya_code": "16",
       "website": "http://www.epau-alger.edu.dz/",
       "verdict": "copied",
-      "why": "Q27962871 (40 m from way/426908488): within 50 m, a Copied claim that casts no Vote",
+      "why": "Q27962871 (40 m from way/426908488): a Copied claim that casts no Vote",
       "published": {
         "lat": 36.720797,
         "lng": 3.137389,
@@ -1503,7 +1474,13 @@
               {
                 "lat": 36.719767,
                 "lng": 3.154309,
-                "rank": "normal"
+                "rank": "normal",
+                "references": [
+                  {
+                    "property": "P248",
+                    "value": "Q30141628"
+                  }
+                ]
               }
             ],
             "p856": [
@@ -1542,7 +1519,7 @@
       "wilaya_code": "22",
       "website": "http://www.esi-sba.dz/",
       "verdict": "no_second_source",
-      "why": "identity item Q20971033 (website) carries no P625",
+      "why": "identity item Q20971033 (website) carries no open P625",
       "published": {
         "lat": 35.2022249,
         "lng": -0.6298922,
@@ -1666,7 +1643,13 @@
               {
                 "lat": 36.64,
                 "lng": 2.7869444444444,
-                "rank": "normal"
+                "rank": "normal",
+                "references": [
+                  {
+                    "property": "P143",
+                    "value": "Q328"
+                  }
+                ]
               }
             ],
             "p856": [
@@ -1732,7 +1715,7 @@
       "wilaya_code": "25",
       "website": "http://www.escf-constantine.dz/",
       "verdict": "copied",
-      "why": "Q136308877 (49 m from way/1145579833): within 50 m, a Copied claim that casts no Vote",
+      "why": "Q136308877 (49 m from way/1145579833): a Copied claim that casts no Vote",
       "published": {
         "lat": 36.364164,
         "lng": 6.608428,
@@ -1784,7 +1767,8 @@
               {
                 "lat": 36.271689520958,
                 "lng": 6.5895461288361,
-                "rank": "normal"
+                "rank": "normal",
+                "references": []
               }
             ],
             "p856": [
@@ -1822,7 +1806,7 @@
       "wilaya_code": "13",
       "website": "http://www.epsecg-tlemcen.dz/",
       "verdict": "no_second_source",
-      "why": "identity item Q130533282 (name) carries no P625",
+      "why": "identity item Q130533282 (name) carries no open P625",
       "published": {
         "lat": 34.882777,
         "lng": -1.316667,
@@ -1893,7 +1877,7 @@
       "wilaya_code": "05",
       "website": "http://www.hns-re2sd.dz/",
       "verdict": "no_second_source",
-      "why": "identity item Q135095705 (website) carries no P625",
+      "why": "identity item Q135095705 (website) carries no open P625",
       "published": {
         "lat": 35.55597,
         "lng": 6.1741447,
@@ -2016,7 +2000,13 @@
               {
                 "lat": 36.7899,
                 "lng": 3.25667,
-                "rank": "normal"
+                "rank": "normal",
+                "references": [
+                  {
+                    "property": "P143",
+                    "value": "Q8447"
+                  }
+                ]
               }
             ],
             "p856": [
@@ -2226,7 +2216,8 @@
               {
                 "lat": 36.755108393068,
                 "lng": 2.9975111598094,
-                "rank": "normal"
+                "rank": "normal",
+                "references": []
               }
             ],
             "p856": [
@@ -2387,7 +2378,7 @@
       "wilaya_code": "16",
       "website": "https://esba.dz/",
       "verdict": "copied",
-      "why": "Q23846121 (21 m from way/475383562): within 50 m, a Copied claim that casts no Vote",
+      "why": "Q23846121 (21 m from way/475383562): a Copied claim that casts no Vote",
       "published": {
         "lat": 36.776335,
         "lng": 3.058211,
@@ -2442,7 +2433,13 @@
               {
                 "lat": 36.76153,
                 "lng": 3.04386,
-                "rank": "normal"
+                "rank": "normal",
+                "references": [
+                  {
+                    "property": "P143",
+                    "value": "Q837615"
+                  }
+                ]
               }
             ],
             "p856": [
@@ -2533,7 +2530,13 @@
               {
                 "lat": 36.7341,
                 "lng": 3.26509,
-                "rank": "normal"
+                "rank": "normal",
+                "references": [
+                  {
+                    "property": "P143",
+                    "value": "Q8447"
+                  }
+                ]
               }
             ],
             "p856": [
@@ -2783,7 +2786,7 @@
       "wilaya_code": "25",
       "website": "http://www.ensc.dz/",
       "verdict": "copied",
-      "why": "Q30294221 (40 m from node/5322170362): within 50 m, a Copied claim that casts no Vote",
+      "why": "Q30294221 (40 m from node/5322170362): a Copied claim that casts no Vote",
       "published": {
         "lat": 36.364164,
         "lng": 6.608428,
@@ -2859,7 +2862,8 @@
               {
                 "lat": 36.275931567469,
                 "lng": 6.5883563,
-                "rank": "normal"
+                "rank": "normal",
+                "references": []
               }
             ],
             "p856": [
@@ -2906,7 +2910,7 @@
       "wilaya_code": "16",
       "website": "http://www.ens-kouba.dz/",
       "verdict": "no_second_source",
-      "why": "identity item Q30294239 (name) carries no P625",
+      "why": "none of the 12 Wikidata candidates is this institution",
       "published": {
         "lat": 36.732356,
         "lng": 3.087478,
@@ -2940,33 +2944,8 @@
         }
       ],
       "wikidata": {
-        "considered": 13,
-        "identity": [
-          {
-            "qid": "Q30294239",
-            "tie": "name",
-            "detail": "label:fr ~ name (core)",
-            "found_by": [
-              "search"
-            ],
-            "labels": {
-              "ar": "المدرسة العليا للأساتذة بالقبة",
-              "en": "École Normale Supérieure de Kouba",
-              "fr": "École Normale Supérieure de Kouba"
-            },
-            "p625": [],
-            "p856": [],
-            "p31": [
-              "Q135436",
-              "Q38723"
-            ],
-            "p402": [],
-            "status": "no_p625",
-            "agrees_with": [],
-            "copied_with": [],
-            "distances": []
-          }
-        ],
+        "considered": 12,
+        "identity": [],
         "rejected": []
       }
     },
@@ -3071,7 +3050,7 @@
       "bac_addition": "P10",
       "verdict": "no_second_source",
       "demote": true,
-      "why": "BAC 2026 addition P10 would be demoted from exact: identity item Q130537752 (name) carries no P625",
+      "why": "BAC 2026 addition P10 would be demoted from exact: identity item Q130537752 (name) carries no open P625",
       "published": {
         "lat": 36.6898241,
         "lng": 2.8688831,
@@ -3189,7 +3168,7 @@
       "bac_addition": "P08",
       "verdict": "no_second_source",
       "demote": true,
-      "why": "BAC 2026 addition P08 would be demoted from exact: identity item Q132803485 (website) carries no P625",
+      "why": "BAC 2026 addition P08 would be demoted from exact: identity item Q132803485 (website) carries no open P625",
       "published": {
         "lat": 36.6888314,
         "lng": 2.867765,

@@ -153,18 +153,17 @@ captures `sources/enseignement-superieur/osm-campus-objects.json` and
 
 | Verdict | Records |
 | --- | --- |
-| Promoted: OSM and Wikidata agree within 2 km, outside 50 m | 10 |
+| Promoted: OSM and Wikidata agree within 2 km, outside 50 m | 9 |
 | Copied claim: Wikidata within 50 m of the OSM point | 7 |
 | Disagree: Wikidata over 2 km from every OSM Claim (`00057` USTO, 3,942 m) | 1 |
-| No second source (7 have a Wikidata item with no `P625`) | 20, the 4 BAC additions among them |
+| No second source (7 have a Wikidata item with no `P625`; `00042`'s only `P625` is stated in Google Maps) | 21, the 4 BAC additions among them |
 
-The 10 promoted, each now in `scripts/seeds/second-source.json` on the live OSM
+The 9 promoted, each now in `scripts/seeds/second-source.json` on the live OSM
 point with its `wikidata_confirmation`, which the build re-measures:
 
 | id | Institution | Ships | Wikidata (tie) | Apart | Commune (by outline) |
 | --- | --- | --- | --- | --- | --- |
 | `00031` | Université de la Formation Continue | OSM `node/5658830621` v1 | Q135914996 (website) | 55 m | Dely Ibrahim |
-| `00042` | Université de Sétif 1 - Ferhat Abbas | OSM `way/185615558` v22 | Q3551403 (website) | 535 m | Setif |
 | `00054` | Université des sciences islamiques Emir Abdelkader de Constantine | OSM `node/8539621407` v2 | Q5372520 (website) | 344 m | Constantine |
 | `00063` | Ecole nationale supérieure agronomique- Khalef Abdellah alias Kasdi Merbah | OSM `way/97658307` v19 | Q21512516 (website) | 98 m | Oued Smar |
 | `00064` | Ecole nationale supérieure d’hydraulique - Arbaoui Abdellah | OSM `way/191229595` v14 | Q30261759 (website) | 67 m | Guerrouaou |
@@ -174,26 +173,35 @@ point with its `wikidata_confirmation`, which the build re-measures:
 | `00103` | المدرسة العليا للضمان الاجتماعي (بن عكنون، ولاية الجزائر). | OSM `way/561830853` v6 | Q135975682 (name) | 86 m | Ben Aknoun |
 | `00111` | المدرسة الوطنية التحضيرية لدراسة مهندس (الرويبة، ولاية الجزائر) | OSM `way/96600252` v7 | Q3578165 (osm_wikidata_tag) | 272 m | Rouiba |
 
-No `P625` among them is referenced as imported from OpenStreetMap: four cite
-English or French Wikipedia (`P143`), two another source (`P248`), four carry no
-reference. Each shipped point lies at least 131 m inside its commune outline.
+**References are read, not assumed.** The Wikidata capture holds each `P625`
+statement's references (`P143` imported from, `P248` stated in, `P854`,
+`P4656`). A statement referenced to OpenStreetMap is a Copied claim whatever the
+distance; one referenced to a proprietary map is not captured at all, only the
+fact that it exists, because Google content never enters this repository
+(`docs/adr/0001`). Five such Google Maps statements were found, Sétif 1's
+(`00042`) among them: it had been counted as a Vote in the first decision of
+the day, was caught by the independent review, and `00042` is back on its
+wilaya centre, queued with its three OSM campuses. Of the 9 Votes that stand,
+four cite English or French Wikipedia (`P143`), one the 2017 GRID research-
+organisation release (`P248` Q30141628, CC0), and four carry no reference.
+`test/enseignement-superieur-second-source.test.mjs` ties every seeded
+confirmation to this decision and the decision to the captures. Each shipped
+point lies at least 131 m inside its commune outline.
 Two communes change with the move: `00063` to Oued Smar (from El Harrach, whose
 centre is nearer; the campus is inside Oued Smar's outline, 163 m from the
-border) and `00064` to Guerrouaou (from Soumaa). `00042` has three OSM campus
-objects; Wikidata's university point agrees with El Bez (535 m) and with no
-other within 2 km. Identity rests on a name match, not a website, for `00068`
+border) and `00064` to Guerrouaou (from Soumaa). Identity rests on a name match, not a website, for `00068`
 (Wikidata's `P856` is `ensmanagement.dz`, the record's `ensm.dz`) and `00103`
 (the record's own website is a page on ASAL's site), and on the OSM `wikidata`
 tag for `00095` and `00111`, whose Wikidata website is the defence ministry's.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 107
-approximate records (91 `wilaya`, 16 `commune`) are in it exactly once:
+written offline and byte for byte by `precision-review.mjs` next to it. All 108
+approximate records (92 `wilaya`, 16 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
 | Queued, one candidate for the campus (single source) | 22 |
-| Queued, several candidates for the campus (ambiguous) | 2 |
+| Queued, several candidates for the campus (ambiguous) | 3 |
 | Queued, the Owner's reading lands nearer another school's object (`P09`, `P10`) | 2 |
 | No open candidate in the capture | 81 |
 
@@ -248,8 +256,8 @@ school publishes as Bab El Oued (its OSM point falls on the Casbah side of that
 boundary, 96 m from it): a site the record does not publish, recorded in the
 seed's `osm_search` note.
 
-**Two Votes and one.** 15 of the 80 `exact` records now stand on two
-independent Votes: the 10 above, and ENSTA, `00178`, `00165`, `P08` and `P23`
+**Two Votes and one.** 14 of the 79 `exact` records now stand on two
+independent Votes: the 9 above, and ENSTA, `00178`, `00165`, `P08` and `P23`
 on the Owner's readings. The other 65 rest on a single Nominatim geocode and
 are reviewed in a separate follow-up pass (private tracker #336).
 
@@ -275,7 +283,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  80 campus, 16 commune, 91 wilaya; the 107 approximate records are in the
+  79 campus, 16 commune, 92 wilaya; the 108 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and

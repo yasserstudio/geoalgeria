@@ -1612,13 +1612,15 @@
           "globe": "Q2",
           "lat": 36.504166666667,
           "lng": 2.875,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         },
         {
           "globe": "Q2",
           "lat": 36.505648538372,
           "lng": 2.8794742766996,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -1688,7 +1690,13 @@
           "globe": "Q2",
           "lat": 36.7708,
           "lng": 3.05542,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q8447"
+            }
+          ]
         }
       ],
       "P856": [
@@ -1775,7 +1783,13 @@
           "globe": "Q2",
           "lat": 36.64097222,
           "lng": 2.79141667,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q328"
+            }
+          ]
         }
       ],
       "P856": [
@@ -1840,7 +1854,13 @@
           "globe": "Q2",
           "lat": 36.76,
           "lng": 3.0517,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q8447"
+            }
+          ]
         }
       ],
       "P856": [
@@ -1923,13 +1943,20 @@
           "globe": "Q2",
           "lat": 36.7144,
           "lng": 3.18222,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q8447"
+            }
+          ]
         },
         {
           "globe": "Q2",
           "lat": 36.714571005088,
           "lng": 3.1981628586647,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -2018,7 +2045,13 @@
           "globe": "Q2",
           "lat": 36.7632,
           "lng": 3.0147,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q328"
+            }
+          ]
         }
       ],
       "P856": [
@@ -2092,19 +2125,22 @@
           "globe": "Q2",
           "lat": 34.880561367431,
           "lng": -1.3581842994051,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         },
         {
           "globe": "Q2",
           "lat": 34.893699463868,
           "lng": -1.3543530481215,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         },
         {
           "globe": "Q2",
           "lat": 34.9196,
           "lng": -1.301745,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -2166,7 +2202,13 @@
           "globe": "Q2",
           "lat": 35.25,
           "lng": -0.65,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q8447"
+            }
+          ]
         }
       ],
       "P856": [
@@ -2216,10 +2258,14 @@
       "P402": [],
       "P625": [
         {
-          "globe": "Q2",
-          "lat": 36.196137580078,
-          "lng": 5.3603169127507,
-          "rank": "normal"
+          "excluded": "referenced to a proprietary map (P248 Q12013); value not captured",
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P248",
+              "value": "Q12013"
+            }
+          ]
         }
       ],
       "P856": [
@@ -2295,7 +2341,8 @@
           "globe": "Q2",
           "lat": 36.341388888889,
           "lng": 6.6180555555556,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -2365,7 +2412,13 @@
           "globe": "Q2",
           "lat": 35.7368,
           "lng": -0.554123,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q8447"
+            }
+          ]
         }
       ],
       "P856": [
@@ -2421,7 +2474,13 @@
           "globe": "Q2",
           "lat": 36.7899,
           "lng": 3.25667,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q8447"
+            }
+          ]
         }
       ],
       "P856": [
@@ -2470,10 +2529,14 @@
       "P402": [],
       "P625": [
         {
-          "globe": "Q2",
-          "lat": 36.7525,
-          "lng": 3.0241666666667,
-          "rank": "normal"
+          "excluded": "referenced to a proprietary map (P248 Q12013); value not captured",
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P248",
+              "value": "Q12013"
+            }
+          ]
         }
       ],
       "P856": [
@@ -2557,7 +2620,13 @@
           "globe": "Q2",
           "lat": 36.7341,
           "lng": 3.26509,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q8447"
+            }
+          ]
         }
       ],
       "P856": [
@@ -2616,7 +2685,8 @@
           "globe": "Q2",
           "lat": 36.723333333333,
           "lng": 3.1508333333333,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -2707,7 +2777,13 @@
           "globe": "Q2",
           "lat": 36.7058,
           "lng": 3.17089,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q8447"
+            }
+          ]
         }
       ],
       "P856": [
@@ -2782,7 +2858,13 @@
           "globe": "Q2",
           "lat": 36.7178,
           "lng": 3.1526,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q8447"
+            }
+          ]
         }
       ],
       "P856": [
@@ -2904,7 +2986,8 @@
           "globe": "Q2",
           "lat": 36.731871,
           "lng": 3.160866,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -2972,10 +3055,14 @@
       "P402": [],
       "P625": [
         {
-          "globe": "Q2",
-          "lat": 36.914439687943,
-          "lng": 7.7426672979628,
-          "rank": "normal"
+          "excluded": "referenced to a proprietary map (P248 Q12013); value not captured",
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P248",
+              "value": "Q12013"
+            }
+          ]
         }
       ],
       "P856": [
@@ -3035,7 +3122,13 @@
           "globe": "Q2",
           "lat": 36.75855556,
           "lng": 3.05997222,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q328"
+            }
+          ]
         }
       ],
       "P856": [],
@@ -3099,7 +3192,13 @@
           "globe": "Q2",
           "lat": 36.349,
           "lng": 6.60425,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q328"
+            }
+          ]
         }
       ],
       "P856": [
@@ -3167,7 +3266,8 @@
           "globe": "Q2",
           "lat": 35.693276,
           "lng": -0.639028,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -3206,10 +3306,14 @@
       "P402": [],
       "P625": [
         {
-          "globe": "Q2",
-          "lat": 35.735437615537,
-          "lng": -0.5364603174165,
-          "rank": "normal"
+          "excluded": "referenced to a proprietary map (P248 Q12013); value not captured",
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P248",
+              "value": "Q12013"
+            }
+          ]
         }
       ],
       "P856": [
@@ -3271,7 +3375,8 @@
           "globe": "Q2",
           "lat": 34.88126,
           "lng": -1.31338,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -3322,7 +3427,13 @@
           "globe": "Q2",
           "lat": 36.64,
           "lng": 2.7869444444444,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q328"
+            }
+          ]
         }
       ],
       "P856": [
@@ -3376,10 +3487,14 @@
       "P402": [],
       "P625": [
         {
-          "globe": "Q2",
-          "lat": 35.744533228005,
-          "lng": 4.5518926455434,
-          "rank": "normal"
+          "excluded": "referenced to a proprietary map (P248 Q12013); value not captured",
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P248",
+              "value": "Q12013"
+            }
+          ]
         }
       ],
       "P856": [
@@ -3432,7 +3547,13 @@
           "globe": "Q2",
           "lat": 34.89,
           "lng": -1.32,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q8447"
+            }
+          ]
         }
       ],
       "P856": [],
@@ -3479,7 +3600,8 @@
           "globe": "Q2",
           "lat": 36.276874696322,
           "lng": 6.5864840382284,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -3557,7 +3679,8 @@
           "globe": "Q2",
           "lat": 36.246,
           "lng": 6.5711666666667,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -3624,7 +3747,13 @@
           "globe": "Q2",
           "lat": 36.3494,
           "lng": 6.62161,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q8447"
+            }
+          ]
         }
       ],
       "P856": [],
@@ -3681,7 +3810,8 @@
           "globe": "Q2",
           "lat": 36.788518888889,
           "lng": 3.0608488888889,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -3780,7 +3910,8 @@
           "globe": "Q2",
           "lat": 36.720883888889,
           "lng": 3.1497230555556,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -3872,7 +4003,13 @@
           "globe": "Q2",
           "lat": 36.76153,
           "lng": 3.04386,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q837615"
+            }
+          ]
         }
       ],
       "P856": [
@@ -3927,6 +4064,11 @@
           "via": "osm_wikidata_tag"
         },
         {
+          "detail": "ar: المدرسة العليا للفنون الجميلة",
+          "record": "00108",
+          "via": "search"
+        },
+        {
           "detail": "ar: المدرسة العليا للفنون الجميلة (الجزائر)",
           "record": "00108",
           "via": "search"
@@ -3963,7 +4105,13 @@
           "globe": "Q2",
           "lat": 36.747183333333,
           "lng": 3.0294944444444,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P248",
+              "value": "Q936"
+            }
+          ]
         }
       ],
       "P856": [
@@ -4047,7 +4195,13 @@
           "globe": "Q2",
           "lat": 35.635,
           "lng": 6.2774,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q328"
+            }
+          ]
         }
       ],
       "P856": [
@@ -4101,7 +4255,13 @@
           "globe": "Q2",
           "lat": 36.719767,
           "lng": 3.154309,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P248",
+              "value": "Q30141628"
+            }
+          ]
         }
       ],
       "P856": [
@@ -4145,11 +4305,6 @@
           "via": "around"
         },
         {
-          "detail": "fr: Ecole Polytechnique d'architecture et d'Urbanisme",
-          "record": "00077",
-          "via": "search"
-        },
-        {
           "detail": "fr: Ecole Polytechnique d'architecture et d'Urbanisme-Hocine Aït Ahmed",
           "record": "00077",
           "via": "search"
@@ -4185,7 +4340,8 @@
           "globe": "Q2",
           "lat": 36.733333333333,
           "lng": 3.1166666666667,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -4263,7 +4419,13 @@
           "globe": "Q2",
           "lat": 36.7882067,
           "lng": 3.0580592,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q199700"
+            }
+          ]
         }
       ],
       "P856": [],
@@ -4319,7 +4481,8 @@
           "globe": "Q2",
           "lat": 36.787783,
           "lng": 3.063714,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -4378,7 +4541,13 @@
           "globe": "Q2",
           "lat": 36.7501799,
           "lng": 3.0652381,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q199700"
+            }
+          ]
         }
       ],
       "P856": [],
@@ -4452,7 +4621,8 @@
           "globe": "Q2",
           "lat": 36.643734751515,
           "lng": 2.7458954260836,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -4515,7 +4685,13 @@
           "globe": "Q2",
           "lat": 36.75675,
           "lng": 2.98377778,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q328"
+            }
+          ]
         }
       ],
       "P856": [
@@ -4593,7 +4769,13 @@
           "globe": "Q2",
           "lat": 36.77572222,
           "lng": 3.00388889,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q328"
+            }
+          ]
         }
       ],
       "P856": [
@@ -4668,7 +4850,13 @@
           "globe": "Q2",
           "lat": 36.510704,
           "lng": 2.890453,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P248",
+              "value": "Q30141628"
+            }
+          ]
         }
       ],
       "P856": [
@@ -4725,7 +4913,13 @@
           "globe": "Q2",
           "lat": 36.755181,
           "lng": 2.981908,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P248",
+              "value": "Q30141628"
+            }
+          ]
         }
       ],
       "P856": [
@@ -4835,7 +5029,8 @@
           "globe": "Q2",
           "lat": 36.639166666667,
           "lng": 2.7883333333333,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -4892,7 +5087,8 @@
           "globe": "Q2",
           "lat": 36.275931567469,
           "lng": 6.5883563,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -4958,52 +5154,6 @@
       "P31": [
         {
           "rank": "normal",
-          "value": "Q135436"
-        },
-        {
-          "rank": "normal",
-          "value": "Q38723"
-        }
-      ],
-      "P402": [],
-      "P625": [],
-      "P856": [],
-      "aliases": {
-        "ar": [],
-        "en": [
-          "ENS Kouba",
-          "Higher Normal School of Kouba",
-          "École Normale Supérieure de Kouba Cheikh Mohamed el Bachir el Ibrahimi,"
-        ],
-        "fr": [
-          "ENS Kouba",
-          "École Normale Supérieure de Kouba Cheikh Mohamed el Bachir el Ibrahimi,"
-        ]
-      },
-      "found_by": [
-        {
-          "detail": "fr: Ecole normale supérieure de Kouba",
-          "record": "00167",
-          "via": "search"
-        }
-      ],
-      "labels": {
-        "ar": "المدرسة العليا للأساتذة بالقبة",
-        "en": "École Normale Supérieure de Kouba",
-        "fr": "École Normale Supérieure de Kouba"
-      },
-      "qid": "Q30294239"
-    },
-    {
-      "P17": [
-        {
-          "rank": "normal",
-          "value": "Q262"
-        }
-      ],
-      "P31": [
-        {
-          "rank": "normal",
           "value": "Q2385804"
         },
         {
@@ -5017,7 +5167,8 @@
           "globe": "Q2",
           "lat": 35.350833333333,
           "lng": 1.3144444444444,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -5122,7 +5273,8 @@
           "globe": "Q2",
           "lat": 35.6935155,
           "lng": -0.6375926,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -5179,7 +5331,13 @@
           "globe": "Q2",
           "lat": 35.6962788,
           "lng": -0.6434133,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q199700"
+            }
+          ]
         }
       ],
       "P856": [],
@@ -5223,7 +5381,13 @@
           "globe": "Q2",
           "lat": 36.7879188,
           "lng": 3.0599818,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q199700"
+            }
+          ]
         }
       ],
       "P856": [],
@@ -5274,7 +5438,13 @@
           "globe": "Q2",
           "lat": 36.6373502,
           "lng": 2.7699588,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q199700"
+            }
+          ]
         }
       ],
       "P856": [],
@@ -5319,7 +5489,8 @@
           "globe": "Q2",
           "lat": 36.277777777778,
           "lng": 6.5902777777778,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -5386,7 +5557,8 @@
           "globe": "Q2",
           "lat": 36.7642,
           "lng": 3.0548,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -5453,7 +5625,13 @@
           "globe": "Q2",
           "lat": 36.76317,
           "lng": 3.020575,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P143",
+              "value": "Q328"
+            }
+          ]
         }
       ],
       "P856": [
@@ -5535,7 +5713,8 @@
           "globe": "Q2",
           "lat": 36.7879223,
           "lng": 3.0596986,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -5580,7 +5759,8 @@
           "globe": "Q2",
           "lat": 36.7884592,
           "lng": 3.05956,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -5626,7 +5806,8 @@
           "globe": "Q2",
           "lat": 36.642516860583,
           "lng": 2.7899072043657,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -5698,7 +5879,8 @@
           "globe": "Q2",
           "lat": 36.279638888889,
           "lng": 6.5909722222222,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -5771,7 +5953,13 @@
           "globe": "Q2",
           "lat": 36.808092,
           "lng": 3.255004,
-          "rank": "normal"
+          "rank": "normal",
+          "references": [
+            {
+              "property": "P248",
+              "value": "Q30141628"
+            }
+          ]
         }
       ],
       "P856": [
@@ -5825,7 +6013,8 @@
           "globe": "Q2",
           "lat": 36.7308946,
           "lng": 3.0932406,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -5882,7 +6071,8 @@
           "globe": "Q2",
           "lat": 36.7074032,
           "lng": 3.1649779,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -5943,7 +6133,8 @@
           "globe": "Q2",
           "lat": 36.7708,
           "lng": 3.0554194444444,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -5999,7 +6190,8 @@
           "globe": "Q2",
           "lat": 36.723333333333,
           "lng": 3.1508333333333,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -6060,7 +6252,8 @@
           "globe": "Q2",
           "lat": 36.761530555556,
           "lng": 3.0438611111111,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -6126,7 +6319,8 @@
           "globe": "Q2",
           "lat": 34.880832509247,
           "lng": -1.3344447613661,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -6347,7 +6541,8 @@
           "globe": "Q2",
           "lat": 36.757895980833,
           "lng": 2.9837342038394,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -6426,7 +6621,8 @@
           "globe": "Q2",
           "lat": 36.755108393068,
           "lng": 2.9975111598094,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -6498,7 +6694,8 @@
           "globe": "Q2",
           "lat": 35.699444444444,
           "lng": -0.58277777777778,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -6540,7 +6737,8 @@
           "globe": "Q2",
           "lat": 36.271689520958,
           "lng": 6.5895461288361,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -6601,7 +6799,8 @@
           "globe": "Q2",
           "lat": 36.230443032517,
           "lng": 6.5694505423277,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -6642,7 +6841,8 @@
           "globe": "Q2",
           "lat": 36.23357672402,
           "lng": 6.5687084576723,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -6684,7 +6884,8 @@
           "globe": "Q2",
           "lat": 36.345938852527,
           "lng": 6.6524382846554,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -6731,7 +6932,8 @@
           "globe": "Q2",
           "lat": 34.881388888889,
           "lng": -1.3133333333333,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [],
@@ -6777,7 +6979,8 @@
           "globe": "Q2",
           "lat": 36.766478,
           "lng": 3.000598,
-          "rank": "normal"
+          "rank": "normal",
+          "references": []
         }
       ],
       "P856": [
@@ -6896,6 +7099,7 @@
     "Q16665962",
     "Q20399723",
     "Q20743909",
+    "Q20863591",
     "Q30294338",
     "Q30294344",
     "Q30294364",
@@ -6904,6 +7108,7 @@
     "Q89590375",
     "Q109021348",
     "Q110446845",
+    "Q112672035",
     "Q122270782"
   ],
   "searches": [
@@ -7092,8 +7297,14 @@
       "text": "المدرسة العليا للفندقة والإطعام عين البنيان بالجزائر"
     },
     {
-      "hits": [],
-      "kept": [],
+      "hits": [
+        "Q23846121",
+        "Q112672035",
+        "Q20863591"
+      ],
+      "kept": [
+        "Q23846121"
+      ],
       "language": "ar",
       "records": [
         "00108"
@@ -7513,12 +7724,8 @@
       "text": "Ecole Nationale Polytechnique de Constantine- Malek Bennabi"
     },
     {
-      "hits": [
-        "Q27962871"
-      ],
-      "kept": [
-        "Q27962871"
-      ],
+      "hits": [],
+      "kept": [],
       "language": "fr",
       "records": [
         "00077"
@@ -7796,12 +8003,8 @@
       "text": "Ecole normale supérieure de Constantine -Assia Djebar"
     },
     {
-      "hits": [
-        "Q30294239"
-      ],
-      "kept": [
-        "Q30294239"
-      ],
+      "hits": [],
+      "kept": [],
       "language": "fr",
       "records": [
         "00167"
