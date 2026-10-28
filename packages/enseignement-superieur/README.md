@@ -143,8 +143,10 @@ wilaya and commune names, join `wilaya_code` against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset. `wilaya_code` is zero-padded
 to two digits; `commune_code` is currently `null` on every record. `geo_precision` is `"exact"`
 for a real campus point or `"approximate"` for a commune/wilaya centroid, `geo_method` records
-which. `source` is a fixed provenance key (`"mesrs"`) into `metadata.sources[]`, not a URL, see
-**Source** below for the actual listing pages.
+which. `source` is a provenance key into `metadata.sources[]`, not a URL: `"mesrs"` for a
+record from the university-network listing, `"bac-2026"` for one the BAC 2026 placement file
+supplied, and `"mesrs+bac-2026"` where the listing supplies the record and the placement file
+its current name. See **Source** below for the actual publications.
 
 ## Need the administrative divisions too?
 

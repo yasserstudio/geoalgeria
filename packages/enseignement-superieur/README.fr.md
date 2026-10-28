@@ -146,9 +146,11 @@ arabe, joignez `wilaya_code` au jeu de données
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). `wilaya_code` est complété à deux
 chiffres avec un zéro ; `commune_code` vaut actuellement `null` sur tous les enregistrements.
 `geo_precision` vaut `"exact"` pour un vrai point de campus ou `"approximate"` pour un centroïde
-de commune/wilaya – `geo_method` précise lequel. `source` est une clé de provenance fixe
-(`"mesrs"`) dans `metadata.sources[]`, pas une URL – voir **Source** ci-dessous pour les pages
-réelles.
+de commune/wilaya – `geo_method` précise lequel. `source` est une clé de provenance dans
+`metadata.sources[]`, pas une URL : `"mesrs"` pour un enregistrement issu de la liste du réseau
+universitaire, `"bac-2026"` pour un enregistrement fourni par le fichier des affectations BAC 2026,
+et `"mesrs+bac-2026"` lorsque la liste fournit l'enregistrement et le fichier des affectations son
+nom actuel. Voir **Source** ci-dessous pour les publications réelles.
 
 ## Besoin des divisions administratives aussi ?
 
