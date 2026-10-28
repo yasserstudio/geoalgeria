@@ -4,8 +4,8 @@
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
   "network": "OpenStreetMap, Nominatim, Overpass, Wikidata and the institutions' own sites were unreachable from the build machine on 2026-10-28, so the only open evidence read is the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf).",
   "counts": {
-    "approximate_reviewed": 116,
-    "queued_single_source": 35,
+    "approximate_reviewed": 115,
+    "queued_single_source": 34,
     "no_open_candidate": 81,
     "promoted": 0
   },
@@ -1300,47 +1300,6 @@
       ],
       "reason": "single source",
       "needs": "a Wikidata item for the institution with P625 (none is tagged on the OSM element); or an official address, since the record carries no own website, independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00165",
-      "name": "Ecole normale supérieure de Bouzaréah - Cheikh Mubarak Ben Mohamed Brahimi El Mili",
-      "name_ar": "المدرسة العليا للأساتذة بوزريعة الشيخ مبارك بن محمد إبراهيمي الميلي الجزائري",
-      "wilaya_code": "16",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.79,
-        "lng": 3.0177,
-        "commune": "Bouzareah"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/249379127",
-          "tie": "website",
-          "matched": "website host = record website host ensb.dz",
-          "tags": {
-            "addr:city": "Bouzaréah",
-            "addr:street": "Avenue Remili Ali",
-            "name": "École normale de Bouzaréah",
-            "name:ar": "المدرسة العليا للأساتذة بوزريعة",
-            "name:fr": "École normale de Bouzaréah",
-            "website": "https://www.ensb.dz/"
-          },
-          "point": {
-            "lat": 36.781995,
-            "lng": 3.0126523
-          },
-          "commune": {
-            "code": "1611",
-            "name": "Bouzareah"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 997
-        }
-      ],
-      "reason": "single source",
-      "needs": "a campus address or map on the institution's own site (ensb.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
       "id": "00166",

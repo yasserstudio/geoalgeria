@@ -4542,8 +4542,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.0177,
-          36.79
+          3.0126523,
+          36.781995
         ]
       },
       "properties": {
@@ -4553,10 +4553,10 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": "Bouzareah",
-        "lat": 36.79,
-        "lng": 3.0177,
-        "geo_precision": "approximate",
-        "geo_method": "commune",
+        "lat": 36.781995,
+        "lng": 3.0126523,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "ens",
         "type_label_fr": "École normale supérieure",

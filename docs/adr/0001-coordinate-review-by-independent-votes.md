@@ -141,3 +141,27 @@ The frozen set of run 2026-10-01b was written from the packages as they stood on
 2026-10-09, which still reproduced both of that run's documents byte for byte, so it is the
 evidence the run decided on and not a new reading. Its `read` field stays the run's own
 date, 2026-10-01, because that is the date both landed documents give the Claim it holds.
+
+## Rule 6 in detail: an Owner reading is never a Copied claim (added 2026-10-28, PR #310)
+
+Confirmed by the Owner, 2026-10-28, on the first sector record it decided. Rule 3's copy
+radius exists because a published point is often a value copied from the source that
+would vote for it (seven commune centres were Wikidata's coordinate to the metre). An
+Owner reading cannot be that: it is a pin the Owner reads off a map at review time, and
+the map it is read from is proprietary and is never the provenance of a published value.
+Two such readings closer than 50 m to the open object they confirm are two sources that
+agree well, not one source stated twice. Read literally, rule 3 counted the closer
+agreement for nothing: ENS Bouzareah's pin, 46 m from its OpenStreetMap campus, cast no
+Vote where ENSTA's, 60 m from its own, did.
+
+So, for an Owner reading only:
+
+1. **The copy radius does not apply.** An Owner reading within the 500 m confirmation
+   ceiling of rule 6 is an independent Vote for the open Candidate it confirms, however
+   close it lands.
+2. **Everything else in rule 6 stands.** The reading only confirms: the coordinate that
+   ships is the open one (OpenStreetMap, Wikidata or the record median), never the
+   reading. It is recorded with the record as `owner_confirmation` (point, distance,
+   date, reader, the map it was read from), and a reading past 500 m is no confirmation.
+3. **The copy radius still applies to every other Claim**, Wikidata's P625 included,
+   because those can be copied from each other.

@@ -1,0 +1,27 @@
+{
+  "_comment": "Campus points on two independent Votes (docs/adr/0001) for records the Nominatim seed (coordinates.json) and the curated overrides do not hold that way. Each entry is keyed by the record's carryKey (scripts/fetch.mjs), so it also reaches the Arabic-only extras, and it takes precedence over every other placement. lat/lng are the open OpenStreetMap object's point as read live from api.openstreetmap.org (osm, osm_version, osm_timestamp), and that is the coordinate that ships. The second Vote is a wikidata_confirmation (a Wikidata P625 within 2 km and outside the 50 m copy radius) or an owner_confirmation (an Owner reading within 500 m, ADR 0001 \"Rule 6 in detail\"), and the build re-measures both. commune, where present, is the commune whose OSM outline (research/_commune-centres/commune-boundaries.json) contains the point.",
+  "host:ensb.dz": {
+    "record": "00165, Ecole normale supérieure de Bouzaréah - Cheikh Mubarak Ben Mohamed Brahimi El Mili",
+    "lat": 36.781995,
+    "lng": 3.0126523,
+    "osm": "way/249379127",
+    "osm_version": 6,
+    "osm_timestamp": "2023-10-24T11:32:30Z",
+    "osm_name": "École normale de Bouzaréah",
+    "wilaya_code": 16,
+    "commune": "Bouzareah",
+    "why": "The OSM object is amenity=university, name:ar المدرسة العليا للأساتذة بوزريعة, addr:city Bouzaréah, and carries website=https://www.ensb.dz/, the institution's own site, so the tie is the website and not a name match. Its point is the centre of the way's bounding box as read live on 2026-10-28, unchanged from the 2026-08-03 Overpass capture. It lies inside Bouzaréah's committed OSM outline, the commune the record was already placed on (at its centre, 997 m away).",
+    "owner_confirmation": {
+      "confirms": "way/249379127",
+      "point": [
+        3.0124453,
+        36.7816117
+      ],
+      "metres_from_published_value": 46,
+      "read_at": "2026-10-28",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry for the Higher Normal School of Bouzaréah and supplied 36.7816117, 3.0124453, 46 m from the OSM object. Under docs/adr/0001 \"Rule 6 in detail\" an Owner reading is never a Copied claim, so it is an independent Vote inside the 500 m ceiling, and the coordinate that ships is OpenStreetMap's."
+    }
+  }
+}

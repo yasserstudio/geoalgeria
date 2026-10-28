@@ -173,12 +173,13 @@ function nearestCommune(lat, lng) {
 // OpenStreetMap object is the one that ships. The second Vote is either an Owner
 // reading (rule 6: off a proprietary map it may only confirm, within
 // OWNER_CONFIRMATION_KM) or a Wikidata P625 (rule 3: within AGREEMENT_KM). Either
-// one within COPY_RADIUS_M of the point is a Copied claim and casts no Vote, and a
-// recorded distance that is not the measured one is refused, so the seed cannot
-// say more than its numbers. Returns how many second Votes the place carries.
+// a Wikidata P625 within COPY_RADIUS_M of the point is a Copied claim and casts no
+// Vote; an Owner reading never is (ADR 0001, "Rule 6 in detail"). A recorded
+// distance that is not the measured one is refused, so the seed cannot say more
+// than its numbers. Returns how many second Votes the place carries.
 const SECOND_VOTES = {
-  owner_confirmation: { keys: ["point", "read_at", "read_by", "source", "confirms"], ceilingM: OWNER_CONFIRMATION_KM * 1000 },
-  wikidata_confirmation: { keys: ["item", "point", "read_at", "confirms"], ceilingM: AGREEMENT_KM * 1000 },
+  owner_confirmation: { keys: ["point", "read_at", "read_by", "source", "confirms"], ceilingM: OWNER_CONFIRMATION_KM * 1000, copyRadiusM: 0 },
+  wikidata_confirmation: { keys: ["item", "point", "read_at", "confirms"], ceilingM: AGREEMENT_KM * 1000, copyRadiusM: COPY_RADIUS_M },
 };
 function secondVotes(where, p) {
   let n = 0;
@@ -191,8 +192,8 @@ function secondVotes(where, p) {
     const apart = metresBetween(cLng, cLat, p.lng, p.lat);
     if (!(apart < rule.ceilingM))
       throw new Error(`${where}: ${field} is ${Math.round(apart)} m from the point, past the ${rule.ceilingM} m ceiling`);
-    if (!(apart > COPY_RADIUS_M))
-      throw new Error(`${where}: ${field} is ${Math.round(apart)} m from the point, a Copied claim (within ${COPY_RADIUS_M} m)`);
+    if (rule.copyRadiusM && !(apart > rule.copyRadiusM))
+      throw new Error(`${where}: ${field} is ${Math.round(apart)} m from the point, a Copied claim (within ${rule.copyRadiusM} m)`);
     if (Math.round(apart) !== v.metres_from_published_value)
       throw new Error(`${where}: ${field} says ${v.metres_from_published_value} m, it is ${Math.round(apart)} m`);
     n++;

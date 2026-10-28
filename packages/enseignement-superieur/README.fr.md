@@ -75,8 +75,8 @@ fournie ici** et étiquetée honnêtement sur chaque enregistrement via `geo_met
 
 | `geo_method` | Nombre | `geo_precision` | Ce que représente la coordonnée |
 | --- | --- | --- | --- |
-| `campus` | 71 | `exact` | Un point OpenStreetMap propre au campus de cet établissement, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
-| `commune` | 20 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria`, utilisé quand aucune source ouverte ne situe le campus lui-même, ou, depuis la revue du 2026-10-28, quand un nouveau point de campus n'a qu'une seule source ouverte (`docs/adr/0001` en demande deux). La plupart des points `campus` reposent chacun sur une seule lecture OpenStreetMap ; l'état de revue de chaque enregistrement est dans `research/enseignement-superieur/`. |
+| `campus` | 72 | `exact` | Un point OpenStreetMap propre au campus de cet établissement, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
+| `commune` | 19 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria`, utilisé quand aucune source ouverte ne situe le campus lui-même, ou, depuis la revue du 2026-10-28, quand un nouveau point de campus n'a qu'une seule source ouverte (`docs/adr/0001` en demande deux). La plupart des points `campus` reposent chacun sur une seule lecture OpenStreetMap ; l'état de revue de chaque enregistrement est dans `research/enseignement-superieur/`. |
 | `wilaya` | 96 | `approximate` | Le centroïde de la wilaya de l'établissement, solution de repli quand seule la wilaya est connue. Presque chaque établissement privé/relevant d'autres ministères s'y trouve, car la source ne publie pas d'adresse pour eux. |
 
 `wilaya_code` et `commune` sont toujours réconciliés avec le jeu de données principal
@@ -112,7 +112,7 @@ data/
   metadata.json                # sources, comptages, by_type, by_sector, by_geo_method, updated
   retired-ids.json             # ids qu’aucun enregistrement ne peut reprendre, chacun renvoyé vers l’id qui porte désormais l’établissement
   csv/institutions.csv         # dépôt + bundle Release (pas dans le tarball npm)
-  geojson/institutions.geojson # Entités point (les 187 placées ; 71 géocodées au campus, voir geo_method)
+  geojson/institutions.geojson # Entités point (les 187 placées ; 72 géocodées au campus, voir geo_method)
 ```
 
 ## Structure d'un enregistrement

@@ -141,12 +141,12 @@ source. So **no record was promoted from the capture**: every match is a
 single-source Claim and waits in the Review queue.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 116
-approximate records (96 `wilaya`, 20 `commune`) are in it exactly once.
+written offline and byte for byte by `precision-review.mjs` next to it. All 115
+approximate records (96 `wilaya`, 19 `commune`) are in it exactly once.
 
 | Outcome | Records |
 | --- | --- |
-| Queued, one candidate for the campus (single source) | 31 |
+| Queued, one candidate for the campus (single source) | 30 |
 | Queued, several candidates for the campus (ambiguous) | 4 |
 | No open candidate in the capture | 81 |
 | Promoted to `exact` | 0 |
@@ -159,18 +159,23 @@ largest is 21.4 km. Hand decisions (ties rejected because the element's name
 contradicts its website, a parent university's host, a former name, another
 record's campus) sit in tables in the script, each with its reason.
 
-**Owner confirmations (`docs/adr/0001` rule 6).** The Owner read two campus
-points off Google Maps on 2026-10-28. A reading off a proprietary map is a Claim
-that may only confirm an open Candidate within 500 m, outside the 50 m copy
-radius, and the open coordinate is the one that ships. Each is recorded in the
-record's seed `place` as `owner_confirmation` (point, distance, date, reader,
-source), and `scripts/fetch.mjs` refuses one past either threshold or whose
-stated distance is not the measured one.
+**Owner confirmations (`docs/adr/0001` rule 6 and "Rule 6 in detail").** The
+Owner read three campus points off Google Maps on 2026-10-28. A reading off a
+proprietary map is a Claim that may only confirm an open Candidate within
+500 m, and the open coordinate is the one that ships; an Owner reading is never
+a Copied claim, so the 50 m copy radius does not apply to it (decided the same
+day, when ENS Bouzaréah's 46 m agreement would otherwise have counted for
+nothing). Each is recorded with the record as `owner_confirmation` (point,
+distance, date, reader, source): in its `place` in `scripts/seeds/bac-2026.json`
+for a BAC 2026 record, in `scripts/seeds/second-source.json` for any other.
+`scripts/fetch.mjs` refuses one past the ceiling or whose stated distance is not
+the measured one.
 
 | id | Institution | Open Candidate | Owner reading | Outcome |
 | --- | --- | --- | --- | --- |
 | `00189` | ENSTA | OSM `way/245174987`, the Dergana seat | 60 m | `exact`, the OSM point ships |
 | `00178` | Université des sciences médicales d'Alger | OSM `way/29190325`, the Ziania campus | 96 m | stays `exact`, now on two Votes |
+| `00165` | ENS de Bouzaréah | OSM `way/249379127` (`website=ensb.dz`), read live: v6, 2023-10-24 | 46 m | `exact` from `commune`, the OSM point ships |
 
 **ENSTA (`00189`)**'s commune was decided by containment, not by the nearest
 centre: its point lies inside Bordj El Kiffan's committed OSM outline, 194 m from
@@ -188,7 +193,7 @@ Nominatim geocode and 4 of the BAC 2026 additions (`P08`, `P09`, `P10`, `P23`)
 on one OSM object each. Reviewing them is a separate follow-up pass.
 
 **Re-run once the hosts answer.** Read Wikidata `P625` (and the `wikidata` tag
-where an element carries one) and the institutions' sites for the 35 queued
+where an element carries one) and the institutions' sites for the 34 queued
 records; a record whose second source lands within 2 km of its Claim, and not
 within 50 m of it, moves to `exact`: a listed record through
 `scripts/seeds/coordinates.json` (and out of `scripts/seeds/overrides.json`,
@@ -208,7 +213,7 @@ which takes precedence), a BAC 2026 record through its `place` in
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  71 campus, 20 commune, 96 wilaya; the 116 approximate records are in the
+  72 campus, 19 commune, 96 wilaya; the 115 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and
