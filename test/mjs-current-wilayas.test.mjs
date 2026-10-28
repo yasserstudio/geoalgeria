@@ -19,9 +19,12 @@ const digest = (rows) =>
 const expected = {
   sports: {
     file: "facilities.json",
-    count: 267,
-    digest: "5cdebacc7e79db0a9870fa989e51bf4232850bad98398451e888511997b379bd",
-    byWilaya: { 59: 70, 60: 40, 61: 13, 62: 12, 63: 16, 64: 15, 65: 30, 66: 16, 67: 37, 68: 17, 69: 1 },
+    // 267 until the 2026-10-27 refresh: 01663 and 01666 (Serguine) now reconcile
+    // by name rather than through the review ledger, 24 new facilities reconcile
+    // and 23 retired ones leave. No carried record changed its reconciliation.
+    count: 270,
+    digest: "b8ecbb9f565c421c84738889f6aab47f5c8ee3fadea61cab1b1b359d86c98e65",
+    byWilaya: { 59: 70, 60: 40, 61: 13, 62: 12, 63: 16, 64: 17, 65: 29, 66: 17, 67: 38, 68: 17, 69: 1 },
   },
   jeunesse: {
     file: "institutions.json",
@@ -88,4 +91,28 @@ test("official ONS Arabic labels resolve only exact unambiguous historical names
   assert.equal(String(boughzoul.code_commune).padStart(4, "0"), "2651");
   assert.equal(String(boughzoul.wilaya_code), "67");
   assert.equal(canonicalCommuneForOfficialArabicLabel("26", "بلدية غير موجودة"), null);
+});
+
+test("a former JORA spelling still reconciles a record the reform moved", () => {
+  // The SIG writes the names communes carried before the 2026-09-24 renames
+  // (JORA n° 25 of 2026, law 26-06). Each point sits in the daughter wilaya, the
+  // source states the mother, and only the former spelling names the commune.
+  const cases = [
+    ["AZIL ABEDELKADER", "05", 35.4745, 5.064, "60", "0515"],
+    ["BOUIHI", "13", 34.4692, -1.679, "63", "1343"],
+    ["ZMALET EL EMIR ABDELKADE", "14", 34.8994, 2.3082, "64", "1409"],
+    ["OULED EMAARAF", "26", 35.815711, 3.029773, "67", "2603"],
+  ];
+  for (const [commune, source, lat, lng, current, communeCode] of cases) {
+    assert.deepEqual(
+      reconcileCurrentWilayaByCommune({ commune, wilaya_code: source, lat, lng }),
+      { wilaya_code: current, source_wilaya_code: source, commune_code: communeCode },
+      commune,
+    );
+  }
+  // A spelling no commune of the containing wilaya ever carried still abstains.
+  assert.deepEqual(
+    reconcileCurrentWilayaByCommune({ commune: "NOT A COMMUNE", wilaya_code: "13", lat: 34.4692, lng: -1.679 }),
+    { wilaya_code: "13", commune_code: null },
+  );
 });

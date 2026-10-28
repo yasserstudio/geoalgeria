@@ -111,16 +111,16 @@ answer only from an Algerian vantage point, which is why the capture matters mor
 here than elsewhere: it replays offline with `--cache` long after the window
 closes.
 
-Replaying is not rebuilding. Both `--cache` runs currently abort in
-`applyReviewedOverrides` on a review decision gone stale by absorption (sports
-`facilities.json/01663`, jeunesse `institutions.json/00728`, each expecting
-wilaya 14 where the build now derives 64 with commune 1439), before either
-package writes anything, so neither dataset has been promoted from these
-captures. Retiring those decisions edits the #209 audit gate, so both are parked
-for batch 2026-16; `refresh-schedule.json` carries the reason per package. Owed
-in 2026-16, once the rebuild runs again: a gate that proves a live pull replays
-byte-identically to the committed capture end to end, rather than only at the
-projection, which is all `test/mjs-sig-capture.test.mjs` pins today.
+Replaying is not rebuilding. `@geoalgeria/sports` was rebuilt from its capture
+for batch 2026-15, once its two review decisions gone stale by absorption
+(`facilities.json/01663` and `01666`) were retired; its ids now carry on the
+`properties.id` UUID, published as `refs.mjs`. The jeunesse `--cache` run still
+aborts in `applyReviewedOverrides` on `institutions.json/00728`, stale the same
+way (expect wilaya 14 where the build now derives 64 with commune 1439), so that
+dataset has not been promoted from its capture; `refresh-schedule.json` carries
+the reason. Owed: a gate that proves a live pull replays byte-identically to the
+committed capture end to end, rather than only at the projection, which is all
+`test/mjs-sig-capture.test.mjs` pins today.
 
 Remaining packages convert as they are
 next touched — their raw pulls still land in gitignored `research/<pkg>/`

@@ -7,8 +7,16 @@
 /** Facility type code, as published by the Ministry of Youth and Sports SIG. */
 export type TypeCode =
   | "AJF" | "AJL" | "BL" | "BN" | "BNA" | "CDT" | "CE" | "CFR" | "CRP"
-  | "CT" | "CXS" | "EJT" | "EPS" | "GS" | "P25" | "P50" | "PA" | "PP"
+  | "CT" | "CXS" | "EJT" | "EPS" | "GS" | "P25" | "P50" | "PA" | "PCA" | "PP"
   | "SA" | "SF" | "SOMS" | "SS" | "STOMS" | "TF" | "TR" | "TSP" | "UHR";
+
+/** Upstream links: the ids that join a facility to the source it came from. */
+export interface FacilityRefs {
+  /** The Ministry of Youth and Sports SIG's own per-record UUID
+   *  (`properties.id` of the `infrastructures_sportives` layer). Stable across
+   *  pulls and across the ministry's edits, and the key `id` is carried on. */
+  mjs: string;
+}
 
 /** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
  *  `null` means there is no coordinate at all: not observed in this dataset
@@ -21,7 +29,9 @@ export type GeoMethod = "sig_mjs";
 
 /** A sports facility. */
 export interface Facility {
-  /** Stable id, zero-padded sequential string (e.g. "00001"). Unique within this file. */
+  /** Stable id, zero-padded 5-digit string (e.g. "00001"). Unique within this file,
+   *  carried from release to release on `refs.mjs`, never reused: an id that
+   *  left the package is listed in `data/retired-ids.json`. */
   id: string;
   /** Facility name, or null when unnamed in the source. */
   name: string | null;
@@ -45,6 +55,8 @@ export interface Facility {
   geo_method: GeoMethod;
   /** Provenance key into `metadata.sources[]`: always "mjs". */
   source: "mjs";
+  /** Upstream links; every facility carries its SIG UUID. */
+  refs: FacilityRefs;
   /** Facility type code. */
   type: TypeCode;
   /** French label for the type. */

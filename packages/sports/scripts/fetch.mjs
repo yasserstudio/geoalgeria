@@ -25,20 +25,24 @@
  *        node scripts/fetch.mjs --cache    # rebuild from sources/sports/sig-infrastructures.json
  */
 
-import { readFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import {
   MIGRATIONS,
   writePackageV2,
   carryOverIds,
+  forwardRetiredId,
   readCommitted,
   readRetiredIds,
+  readRetiredMigrations,
   loadReviewLedger,
-  resolveDates,
 } from "../../../scripts/lib/v2-transforms.mjs";
 import { foldNameDashes } from "../../../scripts/lib/no-em-dash.mjs";
+import { haversine } from "../../../scripts/lib/commune-resolver.mjs";
+import { captureMeta } from "../../../scripts/lib/source-store.mjs";
 import { fetchMjsLayer, readMjsCapture, MJS_SOURCE } from "../../../scripts/lib/mjs-sig.mjs";
+import { looseKey } from "../../normalize/index.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -46,6 +50,7 @@ const DATASET = join(__dirname, "..", "..", "dataset", "data");
 
 const LAYER = "infrastructures_sportives";
 const CAPTURE = "sig-infrastructures";
+const TRANSITION_REPORT = join(__dirname, "..", "..", "..", "research", "sports", "id-transition.json");
 const SOURCE = MJS_SOURCE;
 
 const MIN_EXPECTED = 4000;
@@ -127,15 +132,16 @@ const clean = (s) => {
   return v === "" ? null : v;
 };
 
-// Strip the "uuid:" prefix the GIS puts on referential values.
-const stripUUID = (s) => {
+// Strip the "uuid:" prefix the GIS puts on referential values. Only a real
+// 8-4-4-4-12 UUID counts: the 2026-10-27 capture writes 506 reception years as
+// "2013:undefined", and a looser "hex digits before a colon" test read the year
+// itself as the prefix, which blanked 168 published years.
+const UUID_PREFIX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}:/i;
+export const stripUUID = (s) => {
   if (s == null) return null;
   const v = String(s);
-  const idx = v.indexOf(":");
-  if (idx > 0 && idx < 40 && /^[0-9a-f-]+$/.test(v.slice(0, idx))) {
-    return clean(v.slice(idx + 1));
-  }
-  return clean(v);
+  const m = v.match(UUID_PREFIX);
+  return clean(m ? v.slice(m[0].length) : v);
 };
 
 function parseYear(v) {
@@ -163,19 +169,30 @@ function parseSurface(v) {
 // Ids follow places: a facility keeps the id it shipped under, a genuinely new
 // facility takes a fresh number, and a removed facility's number is never handed
 // out again. The ids used to be positions in the sort order, so the October 2026
-// pull (90 additions, no removals) would have moved 5,030 of the 5,141 published
-// ids onto a different place (#306).
+// pull would have moved 5,030 of the 5,141 published ids onto a different place
+// (#306).
 //
-// The carry key is the facility's place, because the MJS GeoServer's own feature
-// id is not in the published records: the generator overwrote it with the
-// sequence number, so there is nothing else both sides can be keyed on. The key
-// therefore reads only the fields that say WHICH place a record is, never the
-// attributes the ministry revises (capacity, year, operational, pmr, surfaces),
-// so a revision changes fields rather than retiring an id. A corrected
-// coordinate or a renaming does retire one; publishing the ministry's feature id
-// as `refs.mjs` on the next live pull is what would close that gap.
+// Three tiers, in this order, each over what the tiers before it left unclaimed:
 //
-// Only fields the GENERATOR owns belong in the key. The key is read before
+//  0. The SIG's own per-record UUID (`properties.id`), published as `refs.mjs`
+//     since the 2026-10-27 refresh. It is the Upstream link a ministry edit
+//     cannot move: a renamed, re-placed or reclassified facility keeps its id.
+//     Every record shipped from that refresh on carries it, so on every later
+//     run this tier decides everything and the two below see nothing.
+//  1. The place key, for a committed record that carries no `refs.mjs` (the
+//     records published before the UUID was). It reads only the fields that say
+//     WHICH place a record is, never the attributes the ministry revises.
+//  2. The one-time transition matcher (matchTransition below), for what the
+//     place key could not pin: the SIG's 2026 editing campaign changed a key field
+//     on records that still exist (an `Inclus dans le` prefix on the address, a
+//     coordinate re-saved at 4 decimals, an honorific added to the name), which a
+//     place key reads as a different facility.
+//
+// A committed record that carries a UUID is claimed by that UUID or by nothing:
+// when the UUID is gone from the source, the facility is gone, whatever place
+// key a new row happens to share with it.
+//
+// Only fields the GENERATOR owns belong in the place key. The key is read before
 // writePackageV2, and the writer then patches fields from
 // quality/overrides/sports.json and folds every name-keyed string through
 // foldNameDashes, so a key that read either of those would compare a generator
@@ -199,8 +216,11 @@ export const placeKeyOf = (r) => {
   return PLACE_FIELDS.map((f) => JSON.stringify(place[f])).join("|");
 };
 
+/** The SIG UUID a record carries as its Upstream link, or null. */
+export const mjsRefOf = (r) => r?.refs?.mjs ?? null;
+
 /**
- * A keyOf for carryOverIds over both sides of a rebuild. The MJS ships groups of
+ * A place-key carry key over both sides of a rebuild. The MJS ships groups of
  * records whose every place field is identical (4 groups, 10 records as of the
  * June capture), and a carry key that cannot pin an id uniquely fails the build,
  * so twins are told apart by their position within their own group. They are
@@ -255,11 +275,206 @@ export function asGenerated(committed, ledger, file) {
   if (!decisions.size) return committed;
   return committed.map((record) => {
     const decision = decisions.get(String(record.id));
-    if (!decision) return record;
+    // Only a patch the committed record actually carries is undone (the writer
+    // stamps review_status when it applies one): a decision added in the same run
+    // that first applies it has nothing to undo yet.
+    if (!decision || record.review_status !== "corrected") return record;
+    if (!Object.entries(decision.patch ?? {}).every(([field, value]) => record[field] === value)) return record;
     const generated = { ...record, ...decision.expect };
     for (const field of decision.expect_absent ?? []) delete generated[field];
     return generated;
   });
+}
+
+// --- the one-time transition --------------------------------------------------
+//
+// Measured against the 2026-10-27 capture (research/sports/transition-2026-10-28.md):
+// the place key alone retired 447 of the 5,141 published ids and minted 540, and
+// nearly all of the 447 were the same facility the ministry had edited. The
+// matcher below recovers those, and only those it has evidence for.
+//
+// A pairing of a published record P and a live row L is a candidate only when
+// both carry the same `type`, and one of three tiers holds:
+//
+//   strict   the same Loose key of name AND of commune, with spatial evidence:
+//              S0 the same point;
+//              S1 L's point is P's point rounded to 4 decimals (the SIG's editor
+//                 re-saves an edited record at 4 decimals, so the "move" is up to
+//                 about 7 m of rounding, not a correction);
+//              S2 within 300 m, the same address Loose key (a leading "Inclus dans
+//                 le" dropped), and that (commune, type, name, address) tuple
+//                 occurs once among all published records and once among all live
+//                 rows, so a generic "commune X" address on five identical
+//                 proximity fields cannot pick one of them by distance;
+//   relabel  S0 or S1, the same name, a different commune label, and at least 4 of
+//            the 7 attributes below agreeing (the commune field was respelled or
+//            corrected at an unmoved point);
+//   rename   S0 or S1, the same commune, a different name, and at least 5 of the 7
+//            attributes agreeing (an honorific added, "Terrain sportif de
+//            proximité" renamed "Terrain combiné").
+//
+// Candidates are ranked strict before relabel before rename, then S0, S1, S2, then
+// the same raw address, then distance, then attribute agreement, and accepted best
+// first, one per record on each side. A candidate with a rival of exactly the same
+// rank on either side is refused with that rival, and all of them fall through to
+// retire and mint: a tie is not evidence for either reading.
+//
+// A published record left unpaired is a Repeat post (CONTEXT.md) when the source
+// held one facility twice and now holds it once: no live row stands at its point,
+// and a carried record of the same type and commune stands within 40 m with the
+// same real name (a placeholder such as "I.N.D" or a bare type label is no name),
+// or, both unnamed, the same non-generic address, or every place field identical.
+// Its id retires with a forward to the record that stays.
+//
+// The matcher runs only while committed records lack `refs.mjs`, which after the
+// 2026-10-27 refresh is never; its decisions are written to
+// research/sports/id-transition.json by the run that made them.
+const TRANSITION_RADIUS_M = 300;
+const REPEAT_POST_RADIUS_M = 40;
+const AGREEMENT_FIELDS = ["capacity", "year", "surface_built_m2", "surface_land_m2", "operational", "pmr", "daira"];
+const RELABEL_MIN_AGREEMENT = 4;
+const RENAME_MIN_AGREEMENT = 5;
+const TIERS = ["strict", "relabel", "rename"];
+const EVIDENCE = ["same-point", "rounded-4dp", "moved-same-address"];
+
+const looseOf = (s) => (s == null ? "" : looseKey(String(s)) ?? "");
+const INCLUS = /^\s*inclus\s+dans?\s+(le|la|les|l'|l’)?\s*/i;
+const addressKey = (a) => looseOf(a == null ? null : String(a).replace(INCLUS, ""));
+const round4 = (x) => Math.round(x * 1e4) / 1e4;
+const samePoint = (p, l) => p.lat === l.lat && p.lng === l.lng;
+const roundedPoint = (p, l) => round4(p.lat) === l.lat && round4(p.lng) === l.lng;
+const agreement = (a, b) => AGREEMENT_FIELDS.filter((f) => (a[f] ?? null) === (b[f] ?? null)).length;
+const metres = (a, b) => haversine(a.lat, a.lng, b.lat, b.lng);
+const tupleKey = (r) => [looseOf(r.commune), r.type, looseOf(r.name), addressKey(r.address)].join("|");
+const PLACEHOLDER_NAMES = new Set(["I.N.D", "IND", "Non concerné", "Pas encore établie"].map(looseOf));
+const realName = (r) => {
+  const key = looseOf(r.name);
+  return PLACEHOLDER_NAMES.has(key) || !/\p{L}/u.test(key) ? "" : key;
+};
+const countBy = (records, keyOf) => {
+  const counts = new Map();
+  for (const r of records) counts.set(keyOf(r), (counts.get(keyOf(r)) ?? 0) + 1);
+  return counts;
+};
+
+/**
+ * Pair the published records the place key left unclaimed with the live rows it
+ * left unclaimed. Pure and deterministic: the same inputs in any order give the
+ * same pairs.
+ *
+ * @param {object[]} published  unclaimed published records (ledger undone)
+ * @param {object[]} rows       unclaimed live rows
+ * @param {object} context
+ * @param {object[]} context.allPublished  every published record, for tuple uniqueness
+ * @param {object[]} context.allRows       every live row, for tuple uniqueness
+ * @returns {{pairs: object[], ties: object[], refused: object[]}}
+ */
+export function matchTransition(published, rows, { allPublished, allRows }) {
+  const publishedTuples = countBy(allPublished, tupleKey);
+  const liveTuples = countBy(allRows, tupleKey);
+  const spatial = (p, l) => {
+    if (samePoint(p, l)) return 0;
+    if (roundedPoint(p, l)) return 1;
+    if (
+      metres(p, l) <= TRANSITION_RADIUS_M &&
+      addressKey(p.address) !== "" &&
+      addressKey(p.address) === addressKey(l.address) &&
+      publishedTuples.get(tupleKey(p)) === 1 &&
+      liveTuples.get(tupleKey(l)) === 1
+    ) return 2;
+    return null;
+  };
+  const edges = [];
+  const refusals = [];
+  for (const p of published) {
+    for (const l of rows) {
+      if (p.type !== l.type) continue;
+      const sameName = looseOf(p.name) === looseOf(l.name);
+      const sameCommune = looseOf(p.commune) === looseOf(l.commune);
+      const s = spatial(p, l);
+      if (s == null) {
+        // Recorded, so the report shows the pairings the distinctiveness rule
+        // turned down rather than only the ones it accepted.
+        if (
+          sameName && sameCommune && metres(p, l) <= TRANSITION_RADIUS_M &&
+          addressKey(p.address) !== "" && addressKey(p.address) === addressKey(l.address)
+        ) refusals.push({ p, l, reason: "address-not-distinctive" });
+        continue;
+      }
+      const a = agreement(p, l);
+      let tier = null;
+      if (sameName && sameCommune) tier = 0;
+      else if (s <= 1 && sameName && a >= RELABEL_MIN_AGREEMENT) tier = 1;
+      else if (s <= 1 && sameCommune && a >= RENAME_MIN_AGREEMENT) tier = 2;
+      if (tier == null) continue;
+      edges.push({ p, l, tier, s, d: metres(p, l), a, sameAddress: (p.address ?? null) === (l.address ?? null) });
+    }
+  }
+  const rank = (x, y) =>
+    x.tier - y.tier || x.s - y.s || Number(y.sameAddress) - Number(x.sameAddress) || x.d - y.d || y.a - x.a;
+  const uuidOf = (l) => mjsRefOf(l) ?? "";
+  edges.sort((x, y) => rank(x, y) || x.p.id.localeCompare(y.p.id) || uuidOf(x.l).localeCompare(uuidOf(y.l)));
+
+  const usedP = new Set();
+  const usedL = new Set();
+  const pairs = [];
+  const ties = [];
+  const open = (e) => !usedP.has(e.p) && !usedL.has(e.l);
+  for (const e of edges) {
+    if (!open(e)) continue;
+    const rivals = edges.filter((o) => o !== e && open(o) && (o.p === e.p || o.l === e.l) && rank(o, e) === 0);
+    if (rivals.length) {
+      ties.push({ edge: e, rivals });
+      for (const o of [e, ...rivals]) { usedP.add(o.p); usedL.add(o.l); }
+      continue;
+    }
+    usedP.add(e.p);
+    usedL.add(e.l);
+    pairs.push(e);
+  }
+  // A pairing some other candidate also reached was decided by the ranking, not
+  // forced: the report names those candidates, so every such call can be read.
+  for (const e of pairs) e.alternatives = edges.filter((o) => o !== e && (o.p === e.p || o.l === e.l));
+  const paired = new Set(pairs.map((e) => e.p));
+  const refused = refusals.filter((r) => !paired.has(r.p));
+  return { pairs, ties, refused };
+}
+
+/**
+ * The Repeat posts among the published records left unpaired: the ones the source
+ * now holds once, as a record this run carries.
+ *
+ * @param {object[]} unpaired  published records no tier claimed (ledger undone)
+ * @param {object[]} free      live rows no tier claimed
+ * @param {object[]} carried   live rows a tier claimed, already carrying the
+ *                             published id they keep
+ * @returns {Array<{p: object, to: object, d: number, reason: string}>}
+ */
+export function findRepeatPosts(unpaired, free, carried) {
+  const posts = [];
+  for (const p of unpaired) {
+    // A live row at the very point is a stronger reading than a neighbour.
+    if (free.some((l) => samePoint(p, l) || roundedPoint(p, l))) continue;
+    const twins = carried.filter((r) => placeKeyOf(r) === placeKeyOf(p));
+    const near = carried.filter((r) =>
+      r.type === p.type &&
+      looseOf(r.commune) === looseOf(p.commune) &&
+      metres(p, r) <= REPEAT_POST_RADIUS_M &&
+      ((realName(p) !== "" && realName(r) === realName(p)) ||
+        (realName(p) === "" && p.address != null &&
+          looseOf(r.address) === looseOf(p.address) && looseOf(p.address) !== looseOf(p.commune))),
+    );
+    const byNearest = (x, y) => metres(p, x) - metres(p, y) || x.id.localeCompare(y.id);
+    const to = [...twins].sort((x, y) => x.id.localeCompare(y.id))[0] ?? near.sort(byNearest)[0];
+    if (!to) continue;
+    posts.push({
+      p,
+      to,
+      d: metres(p, to),
+      reason: twins.length ? "place-identical" : realName(p) ? "same-name" : "same-address-unnamed",
+    });
+  }
+  return posts;
 }
 
 /**
@@ -276,34 +491,167 @@ export function asGenerated(committed, ledger, file) {
  * @param {object|null} [options.ledger]  the review ledger to undo on the
  *                                 committed side; defaults to the package's own
  * @param {string} [options.file]  the data file the decisions apply to
+ * @param {Record<string, object>|null} [options.migrations]  the ledger's forwards,
+ *                                 mutated with a forward per Repeat post
+ * @param {string} [options.retrieved]  the capture date a forward's note cites
+ * @param {object|null} [options.log]  filled with what each tier decided
  * @returns {{carried: number, minted: number, retired: number}}
  */
 export function assignStableIds(
   rows,
   committed,
   retiredIds,
-  { ledger = loadReviewLedger("sports"), file = "facilities.json" } = {},
+  {
+    ledger = loadReviewLedger("sports"),
+    file = "facilities.json",
+    migrations = null,
+    retrieved = null,
+    log = null,
+  } = {},
 ) {
   const published = asGenerated(committed, ledger, file);
-  const keyOf = sportsCarryKey(published, rows);
-  const shipped = new Set(published.map(keyOf));
   let highest = 0;
   for (const id of [...published.map((r) => r.id), ...retiredIds]) {
     const n = Number(id);
     if (Number.isFinite(n) && n > highest) highest = n;
   }
+
+  // 0. The SIG UUID, on both sides. A repeated UUID would pin two records to one
+  //    id, so it fails the build on either side.
+  const byUuid = new Map();
+  for (const p of published) {
+    const uuid = mjsRefOf(p);
+    if (uuid == null) continue;
+    if (byUuid.has(uuid)) throw new Error(`sports: committed refs.mjs ${uuid} is carried by two records`);
+    byUuid.set(uuid, p);
+  }
+  const liveUuids = new Set();
+  for (const r of rows) {
+    const uuid = mjsRefOf(r);
+    if (uuid == null) continue;
+    if (liveUuids.has(uuid)) throw new Error(`sports: the source repeats properties.id ${uuid}`);
+    liveUuids.add(uuid);
+  }
+  const claim = new Map(); // live row -> the published record whose id it keeps
+  for (const r of rows) {
+    const p = byUuid.get(mjsRefOf(r));
+    if (p) claim.set(r, p);
+  }
+  const byTier = { uuid: claim.size, place: 0, strict: 0, relabel: 0, rename: 0 };
+
+  // 1 and 2 only see the committed records published before the UUID was.
+  const legacy = published.filter((p) => mjsRefOf(p) == null);
+  let transition = null;
+  if (legacy.length) {
+    const open = rows.filter((r) => !claim.has(r));
+    const keyOf = sportsCarryKey(legacy, open);
+    const byKey = new Map();
+    for (const p of legacy) {
+      const key = keyOf(p);
+      if (byKey.has(key)) throw new Error(`sports: committed data has duplicate carry key ${JSON.stringify(key)}`);
+      byKey.set(key, p);
+    }
+    for (const r of open) {
+      const p = byKey.get(keyOf(r));
+      if (p) { claim.set(r, p); byTier.place++; }
+    }
+    const claimed = new Set(claim.values());
+    const legacyLeft = legacy.filter((p) => !claimed.has(p));
+    const openLeft = rows.filter((r) => !claim.has(r));
+    const matched = matchTransition(legacyLeft, openLeft, { allPublished: published, allRows: rows });
+    for (const e of matched.pairs) { claim.set(e.l, e.p); byTier[TIERS[e.tier]]++; }
+    const nowClaimed = new Set(claim.values());
+    const unpaired = legacyLeft.filter((p) => !nowClaimed.has(p));
+    const free = rows.filter((r) => !claim.has(r));
+    const carriedRows = [...claim].map(([r, p]) => ({ ...r, id: p.id }));
+    const repeatPosts = findRepeatPosts(unpaired, free, carriedRows);
+    transition = { ...matched, repeatPosts, unpaired };
+  }
+
   let minted = 0;
   for (const r of rows) {
-    if (shipped.has(keyOf(r))) continue;
-    r.id = String(++highest).padStart(5, "0");
-    minted++;
+    const p = claim.get(r);
+    if (p) r.id = p.id;
+    else { r.id = String(++highest).padStart(5, "0"); minted++; }
   }
+
+  // carryOverIds owns retirement, reservation and the final uniqueness check, so
+  // the ids are handed to it as already settled: each side keyed by its own id.
   const retiredBefore = retiredIds.size;
-  carryOverIds(rows, published, keyOf, "sports", retiredIds);
+  carryOverIds(rows, published, (r) => `id:${r.id}`, "sports", retiredIds);
+
+  for (const post of transition?.repeatPosts ?? []) {
+    forwardRetiredId(
+      migrations,
+      post.p.id,
+      post.to.id,
+      `Repeat post: the Ministry of Youth and Sports SIG entered this facility twice; ` +
+        `the ${retrieved ?? "latest"} capture holds it once, and its data is on ${post.to.id}.`,
+    );
+  }
+  if (log) Object.assign(log, { byTier, minted, transition, liveCount: rows.length });
   return {
     carried: rows.length - minted,
     minted,
     retired: retiredIds.size - retiredBefore,
+  };
+}
+
+/**
+ * What the transition decided, as the committed report: deterministic, so a
+ * replay of the same capture over the same committed data writes the same bytes.
+ */
+export function transitionReport(log, { capture, retrieved, sha256, published, retired }) {
+  const t = log.transition;
+  const pairOf = (e) => ({
+    id: e.p.id,
+    mjs: mjsRefOf(e.l),
+    tier: TIERS[e.tier],
+    evidence: EVIDENCE[e.s],
+    distance_m: Math.round(e.d * 10) / 10,
+    same_address: e.sameAddress,
+    attributes_agreeing: e.a,
+  });
+  const byId = (x, y) => x.id.localeCompare(y.id);
+  return {
+    note:
+      "The one-time transition of @geoalgeria/sports from place-keyed ids to the SIG's own UUID (refs.mjs), " +
+      "written by packages/sports/scripts/fetch.mjs the run it decided. Rule: the comment above matchTransition. " +
+      "Measurement: research/sports/transition-2026-10-28.md.",
+    capture: { file: `sources/sports/${capture}.json`, retrieved, sha256 },
+    counts: {
+      published,
+      live: log.liveCount,
+      carried: { ...log.byTier },
+      minted: log.minted,
+      retired: retired.length,
+      forwarded: t.repeatPosts.length,
+    },
+    rule: {
+      radius_m: TRANSITION_RADIUS_M,
+      repeat_post_radius_m: REPEAT_POST_RADIUS_M,
+      relabel_min_agreement: RELABEL_MIN_AGREEMENT,
+      rename_min_agreement: RENAME_MIN_AGREEMENT,
+      agreement_fields: AGREEMENT_FIELDS,
+    },
+    paired: t.pairs
+      .map((e) => ({
+        ...pairOf(e),
+        ...(e.alternatives.length
+          ? { decided_over: e.alternatives.map(pairOf).sort((x, y) => byId(x, y) || x.mjs.localeCompare(y.mjs)) }
+          : {}),
+      }))
+      .sort(byId),
+    ties: t.ties
+      .map(({ edge, rivals }) => ({ ...pairOf(edge), rivals: rivals.map(pairOf).sort(byId) }))
+      .sort(byId),
+    refused: [...new Map(t.refused.map((r) => [`${r.p.id}|${mjsRefOf(r.l)}`, r])).values()]
+      .map((r) => ({ id: r.p.id, mjs: mjsRefOf(r.l), reason: r.reason, distance_m: Math.round(metres(r.p, r.l) * 10) / 10 }))
+      .sort((x, y) => byId(x, y) || x.mjs.localeCompare(y.mjs)),
+    repeat_posts: t.repeatPosts
+      .map((post) => ({ id: post.p.id, merged_into: post.to.id, reason: post.reason, distance_m: Math.round(post.d * 10) / 10 }))
+      .sort(byId),
+    retired: [...retired].sort(),
   };
 }
 
@@ -373,6 +721,7 @@ async function main() {
 
     facilities.push({
       id: p.id,
+      uuid: p.id,
       name: clean(p.nomination_de_linfrastructure),
       type_code: typeEntry?.code ?? null,
       type_fr: typeEntry?.fr ?? typeRaw ?? null,
@@ -400,11 +749,15 @@ async function main() {
     throw new Error(`unmapped wilaya(s): ${[...unmappedWilayas].join(", ")}; extend WILAYA_ALIASES`);
   }
 
-  // Sort by wilaya then type then name
+  // Sort by wilaya then type then name, then the SIG UUID, in plain codepoint
+  // order: the order is what numbers a new facility, and localeCompare() without
+  // a locale reads the ambient ICU, which can differ between Node versions.
+  const cmp = (x, y) => (x < y ? -1 : x > y ? 1 : 0);
   facilities.sort((a, b) =>
-    (a.wilaya_code || "99").localeCompare(b.wilaya_code || "99") ||
-    (a.type_code || "").localeCompare(b.type_code || "") ||
-    (a.name || "").localeCompare(b.name || ""),
+    cmp(a.wilaya_code || "99", b.wilaya_code || "99") ||
+    cmp(a.type_code || "", b.type_code || "") ||
+    cmp(a.name || "", b.name || "") ||
+    cmp(a.uuid, b.uuid),
   );
 
   const overflow = facilities.filter(r => {
@@ -421,18 +774,29 @@ async function main() {
 
   // --- emit v2 via the shared writer ---
   const cfg = MIGRATIONS.sports;
-  // A live pull stamps today; a --cache replay reuses the committed dates so an
-  // offline rebuild reproduces the committed metadata instead of redating it.
-  const { updated, retrieved } = resolveDates(DATA, OFFLINE);
+  // The capture is the retrieval, so its own date is what the package states,
+  // live or --cache alike: a replay of the same capture reproduces the metadata.
+  const capture = captureMeta("sports", CAPTURE);
+  const updated = capture.retrieved;
+  const retrieved = capture.retrieved;
   const v2 = facilities.map(cfg.map);
   const committed = readCommitted(DATA, "facilities.json");
   const retiredIds = readRetiredIds(DATA);
-  const ids = assignStableIds(v2, committed, retiredIds);
-  if (committed.length)
+  // The ledger's forwards are append-only: read what is there and carry it back
+  // out through the writer, adding one per Repeat post this run retires.
+  const retiredMigrations = readRetiredMigrations(DATA);
+  const before = new Set(retiredIds);
+  const log = {};
+  const ids = assignStableIds(v2, committed, retiredIds, { migrations: retiredMigrations, retrieved, log });
+  if (committed.length) {
+    const t = log.byTier;
     console.log(
-      `  id carry-over: ${ids.carried}/${v2.length} facilities kept their published id, ` +
-        `${ids.minted} new, ${ids.retired} retired`,
+      `  id carry-over: ${ids.carried}/${v2.length} facilities kept their published id ` +
+        `(${t.uuid} by refs.mjs, ${t.place} by place, ${t.strict + t.relabel + t.rename} by the transition: ` +
+        `${t.strict} strict, ${t.relabel} relabel, ${t.rename} rename), ${ids.minted} new, ${ids.retired} retired` +
+        (log.transition ? `, ${log.transition.repeatPosts.length} of them Repeat posts forwarded` : ""),
     );
+  }
   const { records: out, metadata } = writePackageV2({
     pkg: "sports",
     dir: DATA,
@@ -441,7 +805,23 @@ async function main() {
     updated,
     retrieved,
     retiredIds,
+    retiredMigrations,
   });
+  // The transition's decisions, written by the run that made them. Once every
+  // committed record carries refs.mjs the matcher has nothing to decide and the
+  // report is left as the run that did decide wrote it.
+  if (log.transition) {
+    const report = transitionReport(log, {
+      capture: CAPTURE,
+      retrieved,
+      sha256: capture.sha256,
+      published: committed.length,
+      retired: [...retiredIds].filter((id) => !before.has(id)),
+    });
+    mkdirSync(dirname(TRANSITION_REPORT), { recursive: true });
+    writeFileSync(TRANSITION_REPORT, `${JSON.stringify(report, null, 2)}\n`);
+    console.log(`  transition decisions written to ${TRANSITION_REPORT}`);
+  }
 
   console.log(`\nType breakdown:`);
   for (const [k, v] of Object.entries(metadata.by_type).sort((a, b) => b[1] - a[1])) {
