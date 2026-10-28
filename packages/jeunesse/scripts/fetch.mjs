@@ -33,7 +33,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { fetchMjsLayer, readMjsCapture, MJS_SOURCE } from "../../../scripts/lib/mjs-sig.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -218,6 +218,27 @@ function buildNameArFinder(seed) {
   };
 }
 
+/**
+ * The key a published id is carried on. The ids are a flat 5-digit space assigned
+ * from sort position (wilaya, type, name), so nothing in a record's own id says
+ * which id it shipped under, and two things move a position without the record
+ * changing at all: records that tie on the sort (unnamed or same-named) keep their
+ * input order, which the committed capture sorts by the SIG's per-record UUID
+ * rather than by the live response's arrival order; and a record whose derived
+ * wilaya changes moves to another wilaya's group. The 2026-10-27 capture did both,
+ * and a positional rebuild repointed 213 published ids for a source that had not
+ * changed (#308).
+ *
+ * The key is what the establishment is and where: its type, its point, its
+ * French and Arabic name and its address. None of them is a field the jeunesse
+ * review ledger patches (it patches wilaya_code and commune_code only), so the
+ * committed side can be read as shipped. It is unique over both the published
+ * records and the 2026-10-27 rebuild, and pairs all 2,334; carryOverIds refuses a
+ * duplicated key rather than pinning arbitrarily.
+ */
+export const jeunesseCarryKey = (r) =>
+  JSON.stringify([r.type, r.lat, r.lng, r.name ?? null, r.name_ar ?? null, r.address ?? null]);
+
 // --- main ------------------------------------------------------------------
 async function main() {
   const OFFLINE = process.argv.includes("--cache");
@@ -338,13 +359,30 @@ async function main() {
   // A live pull stamps today; a --cache replay reuses the committed dates so an
   // offline rebuild reproduces the committed metadata instead of redating it.
   const { updated, retrieved } = resolveDates(DATA, OFFLINE);
+  // Pin every record to the id it shipped under (see jeunesseCarryKey), reserve the
+  // id of one that is gone, and mint a new record's id above every id ever used.
+  const rows = institutions.map(cfg.map);
+  const committed = readCommitted(DATA, "institutions.json") ?? [];
+  const retiredIds = readRetiredIds(DATA);
+  const shipped = new Set(committed.map(jeunesseCarryKey));
+  let highest = Math.max(0, ...[...committed.map((r) => r.id), ...retiredIds].map(Number).filter(Number.isFinite));
+  let minted = 0;
+  for (const r of rows) {
+    if (shipped.has(jeunesseCarryKey(r))) continue;
+    r.id = String(++highest).padStart(5, "0");
+    minted++;
+  }
+  const retiredBefore = retiredIds.size;
+  carryOverIds(rows, committed, jeunesseCarryKey, "jeunesse", retiredIds);
+  console.log(`Ids: ${rows.length - minted} carried, ${minted} minted, ${retiredIds.size - retiredBefore} retired`);
   const { records: out, metadata } = writePackageV2({
     pkg: "jeunesse",
     dir: DATA,
-    files: [{ file: "institutions.json", rows: institutions.map(cfg.map) }],
+    files: [{ file: "institutions.json", rows }],
     meta: cfg.meta,
     updated,
     retrieved,
+    retiredIds,
   });
 
   console.log(`\nType breakdown:`);
