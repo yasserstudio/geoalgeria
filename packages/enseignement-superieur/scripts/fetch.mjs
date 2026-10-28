@@ -526,8 +526,12 @@ async function main() {
     const { superseded, rule, where } = r.succession;
     for (const pred of superseded) {
       const was = idByKey.get(carryKey({ name: pred.name, name_ar: null, website: pred.website }));
-      if (was == null)
+      if (was == null) {
+        // A replay: an earlier run already retired and forwarded this id, so the
+        // committed data holds the heir and no longer the predecessor.
+        if (committed.some((c) => String(c.id) === heir)) continue;
         throw new Error(`${where}: ${instKey(pred)} holds no published id, so there is nothing to forward`);
+      }
       if (!retiredIds.has(was))
         throw new Error(`${where}: ${was} was not retired by carry-over; its carry key is still live`);
       const others = superseded.filter((p) => p !== pred).map((p) => p.name);
