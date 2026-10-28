@@ -72,7 +72,7 @@ const BAC = { P08: "00184", P09: "00183", P10: "00182", P23: "00185" };
 const INPUT = readJson("research", PKG, "second-source-input-2026-10-28.json");
 const QUEUE = INPUT.queue;
 const RECORDS = new Map(INPUT.records.map((r) => [r.id, r]));
-const SEED = readJson("packages", PKG, "scripts", "seeds", "bac-2026.json").additions;
+const SEED = INPUT.bac_additions;
 
 function hostOf(u) {
   if (!u) return null;

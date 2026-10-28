@@ -107,7 +107,19 @@
         "osm": "way/1318064031",
         "osm_version": 3,
         "osm_timestamp": "2024-09-30T08:09:33Z",
-        "why": "Its own building=university object at the Sidi Abdellah pole, name:ar المدرسة الوطنية العليا للرياضيات, name:en National Higher School of Mathematics. Not the pole point. Maalma, wilaya 16. No Wikidata P625."
+        "why": "Its own building=university object at the Sidi Abdellah pole, name:ar المدرسة الوطنية العليا للرياضيات, name:en National Higher School of Mathematics. Not the pole point. Maalma, wilaya 16. No Wikidata P625 (the 2026-10-28 second-source pass found the school's item, Q132803485, with no coordinate). docs/adr/0001 asks for two independent sources before a point is exact; the second is the Owner's reading under rule 6, recorded below as owner_confirmation, 28 m from this object and over 100 m from every other campus object near it. The coordinate that ships is OpenStreetMap's, ODbL.",
+        "owner_confirmation": {
+          "confirms": "way/1318064031",
+          "point": [
+            2.86807,
+            36.6888872
+          ],
+          "metres_from_published_value": 28,
+          "read_at": "2026-10-28",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"National Higher School of Mathematics\" and supplied 36.6888872, 2.86807, 28 m from this OSM object. Under docs/adr/0001 rule 6 the reading confirms the open coordinate, which is the one that ships."
+        }
       }
     },
     "P09": {
@@ -118,13 +130,30 @@
       "sector": "public",
       "supervisory_ministry": null,
       "place": {
-        "precision": "campus",
-        "lat": 36.6890996,
-        "lng": 2.8694649,
-        "osm": "way/1318066776",
-        "osm_version": 3,
-        "osm_timestamp": "2024-09-30T08:09:33Z",
-        "why": "Its own building=university object at the Sidi Abdellah pole, name:en National Higher School of Autonomous Systems. Not the pole point. Maalma, wilaya 16. No Wikidata P625."
+        "precision": "commune",
+        "commune": "Maalma",
+        "wilaya_code": 16,
+        "why": "docs/adr/0001: one source is not enough to call a point exact. This school's OSM building (way/1318066776, below under queued_claim) is its only open reading: the 2026-10-28 second-source pass found no Wikidata item for it, and the Owner's Google Maps reading does not confirm the object, because it lands nearer another Sidi Abdellah school's building than this one's (P10's reading is 28 m from the building OSM names for the autonomous-systems school; P09's lies about 260 m west of all three). Either OSM has the two buildings' names swapped or the map entries are misplaced; until one is settled the school sits on its commune's flagship centre, as P11 at the same pole does, and the conflict waits in the review queue.",
+        "queued_claim": {
+          "lat": 36.6890996,
+          "lng": 2.8694649,
+          "osm": "way/1318066776",
+          "osm_version": 3,
+          "osm_timestamp": "2024-09-30T08:09:33Z",
+          "why": "Its own building=university object at the Sidi Abdellah pole, name:en National Higher School of Autonomous Systems. Not the pole point. Maalma, wilaya 16. No Wikidata P625.",
+          "owner_reading": {
+            "point": [
+              2.8648454,
+              36.6890253
+            ],
+            "read_at": "2026-10-28",
+            "read_by": "project owner",
+            "source": "Google Maps, a proprietary map",
+            "entry": "École Nationale Supérieure de Technologie des Systèmes Autonome(w)",
+            "distances": "P08 way/1318064031: 261 m, P09 way/1318066776: 412 m, P10 way/1318066777: 371 m",
+            "note": "NOT a confirmation. The reading is 412 m from this school's own OSM object but nearer another school's at the same pole, so it does not single this object out and casts no Vote for it (docs/adr/0001 rule 4: no Votes for another Candidate)."
+          }
+        }
       },
       "note": "www.enstsa.edu.dz, the domain the ministry's own pages still use, 301-redirects to nhsast.edu.dz, so the current domain is published here."
     },
@@ -136,13 +165,30 @@
       "sector": "public",
       "supervisory_ministry": null,
       "place": {
-        "precision": "campus",
-        "lat": 36.6898241,
-        "lng": 2.8688831,
-        "osm": "way/1318066777",
-        "osm_version": 2,
-        "osm_timestamp": "2024-09-25T17:42:37Z",
-        "why": "Its own building=university object at the Sidi Abdellah pole, name:en National Higher School of Nanoscience and Nanotechnology. Not the pole point. Maalma, wilaya 16. No Wikidata P625."
+        "precision": "commune",
+        "commune": "Maalma",
+        "wilaya_code": 16,
+        "why": "docs/adr/0001: one source is not enough to call a point exact. This school's OSM building (way/1318066777, below under queued_claim) is its only open reading: the 2026-10-28 second-source pass found its Wikidata item, Q130537752, with no coordinate, and the Owner's Google Maps reading does not confirm the object, because it lands nearer another Sidi Abdellah school's building than this one's (P10's reading is 28 m from the building OSM names for the autonomous-systems school; P09's lies about 260 m west of all three). Either OSM has the two buildings' names swapped or the map entries are misplaced; until one is settled the school sits on its commune's flagship centre, as P11 at the same pole does, and the conflict waits in the review queue.",
+        "queued_claim": {
+          "lat": 36.6898241,
+          "lng": 2.8688831,
+          "osm": "way/1318066777",
+          "osm_version": 2,
+          "osm_timestamp": "2024-09-25T17:42:37Z",
+          "why": "Its own building=university object at the Sidi Abdellah pole, name:en National Higher School of Nanoscience and Nanotechnology. Not the pole point. Maalma, wilaya 16. No Wikidata P625.",
+          "owner_reading": {
+            "point": [
+              2.869164,
+              36.6890452
+            ],
+            "read_at": "2026-10-28",
+            "read_by": "project owner",
+            "source": "Google Maps, a proprietary map",
+            "entry": "National Higher School of Nanosciences and Nanotechnology",
+            "distances": "P08 way/1318064031: 127 m, P09 way/1318066776: 28 m, P10 way/1318066777: 90 m",
+            "note": "NOT a confirmation. The reading is 90 m from this school's own OSM object but nearer another school's at the same pole, so it does not single this object out and casts no Vote for it (docs/adr/0001 rule 4: no Votes for another Candidate)."
+          }
+        }
       },
       "note": "The ministry's row misspells it \"NANOTECHENOLOGIES\"; the published name carries the correct French spelling under the declared source_spelling exception in scripts/bac-2026.mjs, which quotes the ministry's row verbatim and is checked against the committed capture character for character.",
       "source_spelling": "ECOLE NATIONALE SUPERIEURE DES NANOSCIENCES ET NANOTECHENOLOGIES"
@@ -176,7 +222,19 @@
         "osm": "node/7866678785",
         "osm_version": 3,
         "osm_timestamp": "2020-11-15T12:05:57Z",
-        "why": "Its own OSM node, name:fr Ecole Supérieure des Sciences de Gestion, addr:street Rue Zighout Youcef, Annaba, wilaya 23. No Wikidata P625."
+        "why": "Its own OSM node, name:fr Ecole Supérieure des Sciences de Gestion, addr:street Rue Zighout Youcef, Annaba, wilaya 23. No Wikidata P625 (the 2026-10-28 second-source pass found no item for the school). docs/adr/0001 asks for two independent sources before a point is exact; the second is the Owner's reading under rule 6, recorded below as owner_confirmation, 29 m from this object and over 100 m from every other campus object near it. The coordinate that ships is OpenStreetMap's, ODbL.",
+        "owner_confirmation": {
+          "confirms": "node/7866678785",
+          "point": [
+            7.7602668,
+            36.9025003
+          ],
+          "metres_from_published_value": 29,
+          "read_at": "2026-10-28",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Higher School of Management Sciences (ESSG Annaba)\" and supplied 36.9025003, 7.7602668, 29 m from this OSM object. Under docs/adr/0001 rule 6 the reading confirms the open coordinate, which is the one that ships."
+        }
       },
       "note": "essg-annaba.dz did not answer from the build machine, so its Arabic name could not be read first-hand and name_ar stays null; the OSM object's name:ar is crowdsourced and is not an institution-published name."
     },

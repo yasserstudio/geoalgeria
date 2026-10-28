@@ -80,7 +80,7 @@ const INPUT = readJson("research", PKG, `second-source-input-${RUN}.json`);
 const RECORDS = INPUT.records;
 const BY_ID = new Map(RECORDS.map((r) => [r.id, r]));
 const QUEUE = INPUT.queue;
-const SEED = readJson("packages", PKG, "scripts", "seeds", "bac-2026.json").additions;
+const SEED = INPUT.bac_additions;
 const WILAYAS = readJson("packages", "dataset", "data", "wilayas.json").wilayas;
 const FLAGSHIP_COMMUNES = readJson("packages", "dataset", "data", "geojson", "communes.geojson").features.map((f) => f.properties);
 const CENTRES = readJson("packages", "dataset", "data", "geojson", "communes.geojson").features.map((f) => ({

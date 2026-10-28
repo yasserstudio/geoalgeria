@@ -308,6 +308,18 @@ const ELEMENTS = CAPTURE.elements
   .sort((a, b) => (a.ref < b.ref ? -1 : a.ref > b.ref ? 1 : 0));
 const BY_REF = new Map(ELEMENTS.map((e) => [e.ref, e]));
 
+/** The queued Claims the BAC 2026 seed keeps for records it demoted, by record id
+ *  (joined on the website host the record and the seed entry share). */
+const SEEDED_CLAIMS = new Map();
+for (const [block, entries] of [["additions", SEED.additions ?? {}], ["successions", SEED.successions ?? {}]])
+  for (const [code, e] of Object.entries(entries)) {
+    const claim = e.place?.queued_claim;
+    if (!claim) continue;
+    const rec = RECORDS.find((r) => r.source === "bac-2026" && hostOf(r.website) && hostOf(r.website) === hostOf(e.website));
+    if (!rec) throw new Error(`${block}.${code}: a queued_claim no record carries`);
+    SEEDED_CLAIMS.set(rec.id, { claim, where: `${block}.${code}` });
+  }
+
 // Ownership: an element that is another record's website-tied campus, or sits
 // within the copy radius of another record's exact point, is that record's.
 const recordHost = (r) => {
@@ -423,6 +435,25 @@ function review(rec) {
     }
   }
 
+  // A BAC 2026 record the seed demoted keeps its OSM reading as a queued Claim
+  // (place.queued_claim): queue it on that, with whatever the seed recorded
+  // against it, rather than on what the 2026-08-03 capture's names can reach.
+  const q = SEEDED_CLAIMS.get(rec.id);
+  if (q && !claims.has(q.claim.osm)) {
+    const at = locate(q.claim.lat, q.claim.lng);
+    claims.set(q.claim.osm, {
+      source: "osm",
+      element: q.claim.osm,
+      tie: "seed",
+      point: { lat: q.claim.lat, lng: q.claim.lng },
+      point_from: `scripts/seeds/bac-2026.json ${q.where}.place.queued_claim (version ${q.claim.osm_version}, ${q.claim.osm_timestamp})`,
+      commune: at.commune,
+      wilaya_code: at.wilaya == null ? null : String(at.wilaya).padStart(2, "0"),
+      in_declared_wilaya: at.wilaya === wilaya,
+      distance_m: metres(q.claim, rec),
+      ...(q.claim.owner_reading ? { owner_reading: q.claim.owner_reading } : {}),
+    });
+  }
   for (const [key, role] of Object.entries(ROLES)) {
     const [id, ref] = key.split("|");
     if (id !== rec.id) continue;
@@ -433,6 +464,7 @@ function review(rec) {
 }
 
 function reasonFor(rec, claims) {
+  if (claims.some((c) => c.owner_reading)) return "conflict: the Owner's reading lands nearer another school's object";
   const inW = claims.filter((c) => c.in_declared_wilaya);
   if (!inW.length) return "candidate outside declared wilaya";
   if (inW.length < claims.length) return "ambiguous: several candidates";

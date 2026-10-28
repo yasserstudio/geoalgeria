@@ -487,7 +487,11 @@ async function main() {
     const p = add.place ?? {};
     let lat = null, lng = null, wilaya_code = null, commune = null, precision = null;
     if (p.precision === "campus") {
-      ({ lat, lng, wilaya_code, commune, precision } = campusPlace(where, p));
+      let votes;
+      ({ lat, lng, wilaya_code, commune, precision, votes } = campusPlace(where, p));
+      // Every campus point this file supplies is held to docs/adr/0001 in full:
+      // its OSM object and a second independent Vote, or it is not exact.
+      if (votes < 2) throw new Error(`${where}: a campus point needs a second Vote (owner_confirmation or wikidata_confirmation)`);
     } else if (p.precision === "commune") {
       const c = communeByName(p.commune, p.wilaya_code);
       if (!c) throw new Error(`${where}: commune "${p.commune}" does not resolve inside wilaya ${p.wilaya_code}`);

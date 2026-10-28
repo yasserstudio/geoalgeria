@@ -187,13 +187,14 @@ other within 2 km. Identity rests on a name match, not a website, for `00068`
 tag for `00095` and `00111`, whose Wikidata website is the defence ministry's.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 105
-approximate records (91 `wilaya`, 14 `commune`) are in it exactly once:
+written offline and byte for byte by `precision-review.mjs` next to it. All 107
+approximate records (91 `wilaya`, 16 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
 | Queued, one candidate for the campus (single source) | 22 |
 | Queued, several candidates for the campus (ambiguous) | 2 |
+| Queued, the Owner's reading lands nearer another school's object (`P09`, `P10`) | 2 |
 | No open candidate in the capture | 81 |
 
 Each queued entry carries the OSM element, the tags that make the tie (the
@@ -205,7 +206,7 @@ website, a parent university's host, a former name, another record's campus)
 sit in tables in the script, each with its reason.
 
 **Owner confirmations (`docs/adr/0001` rule 6 and "Rule 6 in detail").** The
-Owner read three campus points off Google Maps on 2026-10-28. A reading off a
+Owner read seven campus points off Google Maps on 2026-10-28. A reading off a
 proprietary map is a Claim that may only confirm an open Candidate within
 500 m, and the open coordinate is the one that ships; an Owner reading is never
 a Copied claim, so the 50 m copy radius does not apply to it (decided the same
@@ -221,6 +222,20 @@ the measured one.
 | `00189` | ENSTA | OSM `way/245174987`, the Dergana seat | 60 m | `exact`, the OSM point ships |
 | `00178` | Université des sciences médicales d'Alger | OSM `way/29190325`, the Ziania campus | 96 m | stays `exact`, now on two Votes |
 | `00165` | ENS de Bouzaréah | OSM `way/249379127` (`website=ensb.dz`), read live: v6, 2023-10-24 | 46 m | `exact` from `commune`, the OSM point ships |
+| `00184` | ENS en mathématiques (`P08`, Sidi Abdellah) | OSM `way/1318064031` | 28 m (over 100 m from the pole's other buildings) | stays `exact`, now on two Votes |
+| `00185` | ES des sciences de gestion de Annaba (`P23`) | OSM `node/7866678785` | 29 m | stays `exact`, now on two Votes |
+| `00183` | ENS des systèmes autonomes (`P09`, Sidi Abdellah) | OSM `way/1318066776` | 412 m, but 261 m from `P08`'s building | **demoted** to the Maalma centre: no confirmation |
+| `00182` | ENS des nanosciences et nanotechnologies (`P10`, Sidi Abdellah) | OSM `way/1318066777` | 90 m, but 28 m from `P09`'s building | **demoted** to the Maalma centre: no confirmation |
+
+A reading that lands nearer another school's open object than its own does not
+single its own out, so it is no Vote for it (rule 4, none for another
+Candidate). For `P09` and `P10` the two maps disagree on which Sidi Abdellah
+building is which: either OSM has the two names swapped or the map entries are
+misplaced. Both schools sit on their commune's centre, as `P11` at the same
+pole already did, with the OSM reading and the Owner's reading kept under
+`place.queued_claim` in `scripts/seeds/bac-2026.json` and listed in the queue
+as a conflict. Since this pass `scripts/fetch.mjs` refuses a BAC 2026 campus
+point that carries no second Vote.
 
 **ENSTA (`00189`)**'s commune was decided by containment, not by the nearest
 centre: its point lies inside Bordj El Kiffan's committed OSM outline, 194 m from
@@ -233,14 +248,10 @@ school publishes as Bab El Oued (its OSM point falls on the Casbah side of that
 boundary, 96 m from it): a site the record does not publish, recorded in the
 seed's `osm_search` note.
 
-**Two Votes and one.** 13 of the 82 `exact` records now stand on two
-independent Votes: the 10 above, and ENSTA, `00178` and `00165` on the Owner's
-readings. 69 rest on one: 65 on a Nominatim geocode, reviewed in a separate
-follow-up pass (private tracker #336), and the 4 BAC 2026 additions (`P08`,
-`P09`, `P10`, `P23`), which have no Wikidata coordinate (two have an item with
-no `P625`, two no item at all). Owner decision of 2026-10-28: they wait for the
-Owner's readings, and any still unconfirmed at the batch cut-off drops to its
-commune centre, as ENSTA's did before its reading.
+**Two Votes and one.** 15 of the 80 `exact` records now stand on two
+independent Votes: the 10 above, and ENSTA, `00178`, `00165`, `P08` and `P23`
+on the Owner's readings. The other 65 rest on a single Nominatim geocode and
+are reviewed in a separate follow-up pass (private tracker #336).
 
 **Re-run.** `NODE_USE_ENV_PROXY=1 node research/enseignement-superieur/fetch-second-sources.mjs`
 refreshes the two captures (behind the build proxy Node needs that variable),
@@ -264,7 +275,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  82 campus, 14 commune, 91 wilaya; the 105 approximate records are in the
+  80 campus, 16 commune, 91 wilaya; the 107 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and
