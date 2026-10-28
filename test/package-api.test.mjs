@@ -485,8 +485,10 @@ test("aviation: the winter 2026 programme is planned until it has flown", async 
   // Tripoli is MITIGA. Every report of the resumption that names an airport names
   // Mitiga, so TIP must never appear beside MJI: that is the Batna mistake, and the
   // guard against it is in the generator rather than in anyone's memory.
+  // The outbound flew on 28 Oct 2026 as AH 4006 (verification-2026-10-28.md); the
+  // return is its own fact and stays planned until a report covers it.
   assert.deepEqual(shape("alg-mji"), {
-    flight: null, status: "unclear", days: ["wed", "fri"], evidence: "listed", planned: true,
+    flight: "AH 4006", status: "active", days: ["wed", "fri"], evidence: "verified", planned: false,
   });
   assert.deepEqual(shape("mji-alg"), {
     flight: null, status: "unclear", days: ["wed", "fri"], evidence: "listed", planned: true,

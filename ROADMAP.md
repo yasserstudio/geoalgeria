@@ -75,7 +75,16 @@ reads as further along than it is.
   days, off the AeroRoutes NW26 filing of 29 Jun 2026 that this file already cites
   for the Douala and Libreville returns. `AS_OF` stays 2026-10-09: the pass re-read
   the six announced lines, not the winter schedule.
-  _(logged 2026-10-02, part-resolved 2026-10-26)_
+
+  Re-check of 2026-10-28 (`verification-2026-10-28.md`): `alg-mji` flipped on the
+  inaugural `AH 4006` of 28 Oct, departure and Mitiga arrival both reported. The
+  other fifteen stay planned with nothing found, all to re-check on 30 Oct, when
+  `AS_OF` moves together with the Douala/Libreville NW26 numbers (Owner,
+  2026-10-28). `alg-svo` / `svo-alg` stay planned with the Russian ambassador's
+  26 Oct "early next year" interview cited; Berlin keeps Monday until a report
+  dated on or after a Sunday flight (BER's own page says Sunday from 1 Nov, the
+  filing from 25 Oct).
+  _(logged 2026-10-02, part-resolved 2026-10-26 and 2026-10-28)_
 
 - [ ] **`alg-doh` / `doh-alg` go daily on 25 Oct 2026.** The resumed service runs
   three weekly, Sun/Tue/Fri, and the same reports announce a daily programme from

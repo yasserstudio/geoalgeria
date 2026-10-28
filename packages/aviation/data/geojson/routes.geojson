@@ -8916,6 +8916,234 @@
             36.69951
           ],
           [
+            3.4303,
+            36.62899
+          ],
+          [
+            3.64936,
+            36.55806
+          ],
+          [
+            3.86801,
+            36.48673
+          ],
+          [
+            4.08626,
+            36.415
+          ],
+          [
+            4.3041,
+            36.34288
+          ],
+          [
+            4.52154,
+            36.27037
+          ],
+          [
+            4.73857,
+            36.19746
+          ],
+          [
+            4.9552,
+            36.12416
+          ],
+          [
+            5.17143,
+            36.05047
+          ],
+          [
+            5.38725,
+            35.97639
+          ],
+          [
+            5.60266,
+            35.90192
+          ],
+          [
+            5.81767,
+            35.82708
+          ],
+          [
+            6.03227,
+            35.75185
+          ],
+          [
+            6.24647,
+            35.67624
+          ],
+          [
+            6.46025,
+            35.60025
+          ],
+          [
+            6.67364,
+            35.52388
+          ],
+          [
+            6.88661,
+            35.44714
+          ],
+          [
+            7.09918,
+            35.37003
+          ],
+          [
+            7.31134,
+            35.29254
+          ],
+          [
+            7.5231,
+            35.21469
+          ],
+          [
+            7.73445,
+            35.13647
+          ],
+          [
+            7.94539,
+            35.05788
+          ],
+          [
+            8.15592,
+            34.97892
+          ],
+          [
+            8.36605,
+            34.89961
+          ],
+          [
+            8.57577,
+            34.81993
+          ],
+          [
+            8.78509,
+            34.73989
+          ],
+          [
+            8.994,
+            34.6595
+          ],
+          [
+            9.2025,
+            34.57875
+          ],
+          [
+            9.4106,
+            34.49765
+          ],
+          [
+            9.61829,
+            34.41619
+          ],
+          [
+            9.82558,
+            34.33438
+          ],
+          [
+            10.03246,
+            34.25223
+          ],
+          [
+            10.23894,
+            34.16973
+          ],
+          [
+            10.44502,
+            34.08688
+          ],
+          [
+            10.65069,
+            34.00369
+          ],
+          [
+            10.85595,
+            33.92016
+          ],
+          [
+            11.06082,
+            33.83629
+          ],
+          [
+            11.26528,
+            33.75208
+          ],
+          [
+            11.46934,
+            33.66753
+          ],
+          [
+            11.673,
+            33.58265
+          ],
+          [
+            11.87626,
+            33.49744
+          ],
+          [
+            12.07911,
+            33.4119
+          ],
+          [
+            12.28157,
+            33.32602
+          ],
+          [
+            12.48363,
+            33.23982
+          ],
+          [
+            12.68529,
+            33.15329
+          ],
+          [
+            12.88655,
+            33.06644
+          ],
+          [
+            13.08741,
+            32.97927
+          ],
+          [
+            13.28788,
+            32.89177
+          ]
+        ]
+      },
+      "properties": {
+        "id": "alg-mji",
+        "from": "ALG",
+        "to": "MJI",
+        "carrier": "AH",
+        "flight": "AH 4006",
+        "status": "active",
+        "days": [
+          "wed",
+          "fri"
+        ],
+        "evidence": "verified",
+        "planned": false,
+        "source": "https://www.visa-algerie.com/air-algerie-de-retour-en-libye-dans-un-contexte-favorable/",
+        "sources": [
+          "https://www.visa-algerie.com/air-algerie-de-retour-en-libye-dans-un-contexte-favorable/",
+          "https://sarabic.ae/20261028/%D8%A7%D9%84%D8%AE%D8%B7%D9%88%D8%B7-%D8%A7%D9%84%D8%AC%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A%D8%A9-%D8%AA%D8%B3%D8%AA%D8%A3%D9%86%D9%81-%D8%B1%D8%AD%D9%84%D8%A7%D8%AA%D9%87%D8%A7-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1%D8%A9-%D8%A5%D9%84%D9%89-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7-%D8%A8%D8%B9%D8%AF-%D8%A7%D9%86%D9%82%D8%B7%D8%A7%D8%B9-%D9%84%D9%80-12%D8%B9%D8%A7%D9%85%D8%A7-1118210958.html",
+          "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
+          "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+        ],
+        "great_circle_km": 1012,
+        "from_name": "Aéroport d’Alger - Houari Boumediene",
+        "to_name": "Aéroport de Mitiga"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            3.21085,
+            36.69951
+          ],
+          [
             3.22507,
             36.84282
           ],
@@ -36494,232 +36722,6 @@
             36.69951
           ],
           [
-            3.4303,
-            36.62899
-          ],
-          [
-            3.64936,
-            36.55806
-          ],
-          [
-            3.86801,
-            36.48673
-          ],
-          [
-            4.08626,
-            36.415
-          ],
-          [
-            4.3041,
-            36.34288
-          ],
-          [
-            4.52154,
-            36.27037
-          ],
-          [
-            4.73857,
-            36.19746
-          ],
-          [
-            4.9552,
-            36.12416
-          ],
-          [
-            5.17143,
-            36.05047
-          ],
-          [
-            5.38725,
-            35.97639
-          ],
-          [
-            5.60266,
-            35.90192
-          ],
-          [
-            5.81767,
-            35.82708
-          ],
-          [
-            6.03227,
-            35.75185
-          ],
-          [
-            6.24647,
-            35.67624
-          ],
-          [
-            6.46025,
-            35.60025
-          ],
-          [
-            6.67364,
-            35.52388
-          ],
-          [
-            6.88661,
-            35.44714
-          ],
-          [
-            7.09918,
-            35.37003
-          ],
-          [
-            7.31134,
-            35.29254
-          ],
-          [
-            7.5231,
-            35.21469
-          ],
-          [
-            7.73445,
-            35.13647
-          ],
-          [
-            7.94539,
-            35.05788
-          ],
-          [
-            8.15592,
-            34.97892
-          ],
-          [
-            8.36605,
-            34.89961
-          ],
-          [
-            8.57577,
-            34.81993
-          ],
-          [
-            8.78509,
-            34.73989
-          ],
-          [
-            8.994,
-            34.6595
-          ],
-          [
-            9.2025,
-            34.57875
-          ],
-          [
-            9.4106,
-            34.49765
-          ],
-          [
-            9.61829,
-            34.41619
-          ],
-          [
-            9.82558,
-            34.33438
-          ],
-          [
-            10.03246,
-            34.25223
-          ],
-          [
-            10.23894,
-            34.16973
-          ],
-          [
-            10.44502,
-            34.08688
-          ],
-          [
-            10.65069,
-            34.00369
-          ],
-          [
-            10.85595,
-            33.92016
-          ],
-          [
-            11.06082,
-            33.83629
-          ],
-          [
-            11.26528,
-            33.75208
-          ],
-          [
-            11.46934,
-            33.66753
-          ],
-          [
-            11.673,
-            33.58265
-          ],
-          [
-            11.87626,
-            33.49744
-          ],
-          [
-            12.07911,
-            33.4119
-          ],
-          [
-            12.28157,
-            33.32602
-          ],
-          [
-            12.48363,
-            33.23982
-          ],
-          [
-            12.68529,
-            33.15329
-          ],
-          [
-            12.88655,
-            33.06644
-          ],
-          [
-            13.08741,
-            32.97927
-          ],
-          [
-            13.28788,
-            32.89177
-          ]
-        ]
-      },
-      "properties": {
-        "id": "alg-mji",
-        "from": "ALG",
-        "to": "MJI",
-        "carrier": "AH",
-        "flight": null,
-        "status": "unclear",
-        "days": [
-          "wed",
-          "fri"
-        ],
-        "evidence": "listed",
-        "planned": true,
-        "source": "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
-        "sources": [
-          "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
-          "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-        ],
-        "great_circle_km": 1012,
-        "from_name": "Aéroport d’Alger - Houari Boumediene",
-        "to_name": "Aéroport de Mitiga"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            3.21085,
-            36.69951
-          ],
-          [
             3.51821,
             36.19969
           ],
@@ -37151,7 +37153,8 @@
         "planned": true,
         "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
         "sources": [
-          "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/"
+          "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+          "https://ratanews.ru/turindustriya/reisy-iz-rossii-v-alzir-mogut-vozobnovitsia-v-nacale-2027-goda"
         ],
         "great_circle_km": 3332,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
@@ -39393,7 +39396,8 @@
         "planned": true,
         "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
         "sources": [
-          "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/"
+          "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+          "https://ratanews.ru/turindustriya/reisy-iz-rossii-v-alzir-mogut-vozobnovitsia-v-nacale-2027-goda"
         ],
         "great_circle_km": 3332,
         "from_name": "Aéroport de Moscou-Chérémétiévo",

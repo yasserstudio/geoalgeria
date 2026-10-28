@@ -21,23 +21,32 @@ carries the urls space-separated in one column next to `source`, the same
 encoding the `days` column uses. The decision is recorded in
 `docs/adr/0002-per-row-citation-list-for-aviation-routes.md`.
 
-Two of those legs now have that report, and they are the only rows this release
-moves. **Algiers to Conakry** is operating: two Guinean outlets of 26 October 2026
+Three of those legs now have that report, and they are the only rows this
+release moves. Two had it on 26 October. **Algiers to Conakry** is operating: two Guinean outlets of 26 October 2026
 have the inaugural aircraft on the tarmac at Ahmed Sékou Touré in the night of
 Sunday 25 to Monday 26 October. **Algiers to Shanghai** is operating: APS, Algeria's
 press agency, and a second report of 26 October carry the inaugural rotation's
 departure from Houari Boumediene that day. Each promoted row cites the report of
 the operation first and keeps the announcements behind it. The announced returns
 from Conakry and Shanghai, Brazzaville, the Nigeria sectors, Tripoli and the
-Kuwait-Amman rotation are all still `planned`, each because no dated report of its
-first flight exists yet, never because anything says a line was cancelled.
+Kuwait-Amman rotation were all still `planned` on 26 October, each because no
+dated report of its first flight existed yet, never because anything said a line
+was cancelled.
+
+A third leg has that report since. **Algiers to Tripoli** is operating: the
+inaugural `AH 4006` left Houari Boumediene at 09:00 on Wednesday 28 October 2026
+for Mitiga, where its arrival was reported the same day, and the row gains the
+flight number, the first any source has given for it. Its return is still
+planned, due on Friday 30 October. The planned Moscow legs keep their row and
+gain one citation: on 26 October the Russian ambassador to Algeria said he hopes
+direct flights resume early in 2027, a postponement rather than a withdrawal.
 
 The Kuwait rotation also gains the flight number and the two departure days the
 AeroRoutes NW26 filing of 29 June 2026 states for it, `AH 4064` on all three legs
 of one weekly Algiers-Kuwait-Amman-Algiers rotation. It stays `planned`: a filed
 schedule is not an operation.
 
-So the counts move by two: 159 nonstop legs and 18 planned ones, 177 rows as
+So the counts move by three: 160 nonstop legs and 17 planned ones, 177 rows as
 before, no row added or removed. `metadata.routes_as_of` stays at 2026-10-09,
-because this release re-read the six announced lines and not the winter schedule
+because this release re-read the announced lines and not the winter schedule
 the network turns over to on 25 October.

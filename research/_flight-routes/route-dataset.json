@@ -651,6 +651,27 @@
       "great_circle_km": 1900
     },
     {
+      "id": "alg-mji",
+      "from": "ALG",
+      "to": "MJI",
+      "carrier": "AH",
+      "flight": "AH 4006",
+      "status": "active",
+      "days": [
+        "wed",
+        "fri"
+      ],
+      "evidence": "verified",
+      "source": "https://www.visa-algerie.com/air-algerie-de-retour-en-libye-dans-un-contexte-favorable/",
+      "sources": [
+        "https://www.visa-algerie.com/air-algerie-de-retour-en-libye-dans-un-contexte-favorable/",
+        "https://sarabic.ae/20261028/%D8%A7%D9%84%D8%AE%D8%B7%D9%88%D8%B7-%D8%A7%D9%84%D8%AC%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A%D8%A9-%D8%AA%D8%B3%D8%AA%D8%A3%D9%86%D9%81-%D8%B1%D8%AD%D9%84%D8%A7%D8%AA%D9%87%D8%A7-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1%D8%A9-%D8%A5%D9%84%D9%89-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7-%D8%A8%D8%B9%D8%AF-%D8%A7%D9%86%D9%82%D8%B7%D8%A7%D8%B9-%D9%84%D9%80-12%D8%B9%D8%A7%D9%85%D8%A7-1118210958.html",
+        "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 1012
+    },
+    {
       "id": "alg-mpl",
       "from": "ALG",
       "to": "MPL",
@@ -2633,25 +2654,6 @@
       "great_circle_km": 3349
     },
     {
-      "id": "alg-mji",
-      "from": "ALG",
-      "to": "MJI",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": [
-        "wed",
-        "fri"
-      ],
-      "evidence": "listed",
-      "source": "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
-      "sources": [
-        "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
-        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-      ],
-      "great_circle_km": 1012
-    },
-    {
       "id": "alg-ndj",
       "from": "ALG",
       "to": "NDJ",
@@ -2681,7 +2683,8 @@
       "evidence": "listed",
       "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
       "sources": [
-        "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/"
+        "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+        "https://ratanews.ru/turindustriya/reisy-iz-rossii-v-alzir-mogut-vozobnovitsia-v-nacale-2027-goda"
       ],
       "great_circle_km": 3332
     },
@@ -2853,7 +2856,8 @@
       "evidence": "listed",
       "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
       "sources": [
-        "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/"
+        "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+        "https://ratanews.ru/turindustriya/reisy-iz-rossii-v-alzir-mogut-vozobnovitsia-v-nacale-2027-goda"
       ],
       "great_circle_km": 3332
     }

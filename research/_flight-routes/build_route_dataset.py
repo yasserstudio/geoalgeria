@@ -118,6 +118,34 @@ PVG_APS_2026_10_26 = (
     "https://www.aps.dz/fr/economie/commerce-et-service/mvp5bhj8-air-algerie-ouvre-une-nouvelle-liaison-vers-shanghai"
 )
 
+# The re-check of 2026-10-28 (verification-2026-10-28.md). Of the sixteen legs the
+# 26 Oct pass left planned, one has a dated report that the aircraft flew.
+#
+#   MJI_FLEW_2026_10_28    Visa-algerie, 28 Oct 2026 08:45 UTC: "Le vol AH 4006 a
+#                          decolle de l'aeroport d'Alger a 9 h ce mercredi et devait
+#                          atterrir a l'aeroport international de Mitiga vers midi",
+#                          and "La ligne sera assuree a raison de deux vols par
+#                          semaine". Operator, direction, flight number and both
+#                          ends' times, so it is the `source` of a `verified` row.
+#   MJI_LANDED_SPUTNIK     Sputnik Arabic, 28 Oct 2026 14:53 GMT, the arrival end:
+#                          Mitiga "received today, Wednesday, the first Air Algerie
+#                          flights to Tripoli", two weekly "on Wednesdays and
+#                          Fridays". It is what `days` rests on.
+#   SVO_POSTPONED_2026_10_26  Ratanews, 26 Oct 2026 10:34 UTC, quoting the Russian
+#                          ambassador to Algeria's interview with RIA: "We hope to
+#                          resume direct flights between Algeria and Russia at the
+#                          beginning of next year." An extra entry on the planned
+#                          Moscow rows, never their `source`: it moves no field.
+MJI_FLEW_2026_10_28 = (
+    "https://www.visa-algerie.com/air-algerie-de-retour-en-libye-dans-un-contexte-favorable/"
+)
+MJI_LANDED_SPUTNIK = (
+    "https://sarabic.ae/20261028/%D8%A7%D9%84%D8%AE%D8%B7%D9%88%D8%B7-%D8%A7%D9%84%D8%AC%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A%D8%A9-%D8%AA%D8%B3%D8%AA%D8%A3%D9%86%D9%81-%D8%B1%D8%AD%D9%84%D8%A7%D8%AA%D9%87%D8%A7-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1%D8%A9-%D8%A5%D9%84%D9%89-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7-%D8%A8%D8%B9%D8%AF-%D8%A7%D9%86%D9%82%D8%B7%D8%A7%D8%B9-%D9%84%D9%80-12%D8%B9%D8%A7%D9%85%D8%A7-1118210958.html"
+)
+SVO_POSTPONED_2026_10_26 = (
+    "https://ratanews.ru/turindustriya/reisy-iz-rossii-v-alzir-mogut-vozobnovitsia-v-nacale-2027-goda"
+)
+
 # The reports the two flipped legs arrived on. A promotion moves the `source` to
 # the report of the operation, and these stay in the list behind it rather than
 # being dropped, because they are what `flight` and `days` rest on (ADR 0002).
@@ -555,6 +583,23 @@ VERIFIED = [
      "days": ["mon", "wed", "sat"],
      "source": PVG_FLEW_2026_10_26,
      "extra_sources": [PVG_APS_2026_10_26, AH_CHINA_2026_08_15, AH_STATEMENT_2026_10_24]},
+    # Tripoli outbound, OPERATING since the inaugural left Algiers at 09:00 on
+    # Wednesday 28 October 2026 and was received at Mitiga the same day. The
+    # departure report is the `source`: it names AH 4006, the direction and both
+    # ends' times. The Mitiga arrival report carries the Wednesday and Friday days,
+    # and the 1 Oct report that first named MITIGA, and the carrier's 24 Oct
+    # statement, stay behind them in `sources`.
+    #
+    # MJI-ALG stays planned on its own evidence: the first return is scheduled for
+    # Friday 30 October and nothing reports it yet.
+    {"from": "ALG", "to": "MJI", "flight": "AH 4006", "status": "active",
+     "days": ["wed", "fri"],
+     "source": MJI_FLEW_2026_10_28,
+     "extra_sources": [
+         MJI_LANDED_SPUTNIK,
+         "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
+         AH_STATEMENT_2026_10_24,
+     ]},
 ]
 
 # Operating legs whose citation is Official or Reported tier but does NOT confirm
@@ -778,18 +823,17 @@ PLANNED = [
     # entry: it groups Tripoli with the African destinations and gives the same
     # 28 Oct first flight. It writes the city only, Tripoli, and names no airport,
     # so MITIGA keeps the 1 Oct report that does name it as its `source`; the TIP
-    # guard below is unchanged. The pair stays PLANNED, the statement being an
-    # announcement.
-    {"from": "ALG", "to": "MJI", "status": "unclear", "days": ["wed", "fri"],
-     "evidence": "listed",
-     "source": "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
-     "extra_sources": [AH_STATEMENT_2026_10_24]},
+    # guard below is unchanged.
+    #
+    # ALG-MJI left this collection on 2026-10-28, when the inaugural flew: see the
+    # operating row above. Only the return is still here.
     # The Tripoli return ships on its own evidence, as direction always does: the
     # 1 Oct 2026 economic daily states it in as many words, "les vols au depart de
     # Tripoli vers Alger seront egalement programmes les memes jours", and quotes
     # that direction's own fare. `days` and the return direction rest on that, the
     # 24 Oct statement naming the line rather than each direction, so the statement
     # is the second entry here and not the first.
+    # RE-CHECK AFTER 2026-10-30, the first scheduled return.
     {"from": "MJI", "to": "ALG", "status": "unclear", "days": ["wed", "fri"],
      "evidence": "listed",
      "source": "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/",
@@ -862,9 +906,17 @@ PLANNED = [
     # announced 2 Oct resumption reports a first flight. An announced date passing is
     # not evidence the aircraft flew: the Berlin and Doha promotions each waited for
     # a dated report of the operation, and this one has none.
+    #
+    # 2026-10-28: still no first flight, and the Russian ambassador to Algeria told
+    # RIA on 26 Oct that he hopes direct flights resume "at the beginning of next
+    # year". By the Owner's decision of 2026-10-28 both legs stay PLANNED with that
+    # interview as an extra entry: a postponement is not a withdrawal, and only a
+    # stated withdrawal removes a planned row (see WITHDRAWN below). `source` and
+    # `days` keep the 6 Sep report they rest on.
     {"from": "ALG", "to": "SVO", "status": "unclear", "days": ["mon", "wed", "fri"],
      "evidence": "listed",
-     "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/"},
+     "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+     "extra_sources": [SVO_POSTPONED_2026_10_26]},
     # The Moscow return, missing until now. The same report describes a resumption of
     # "vols directs entre Alger et Moscou" at three weekly flights, which is a
     # point-to-point rotation rather than a triangle, so the inbound leg is part of
@@ -872,7 +924,8 @@ PLANNED = [
     # the three days given are the Algiers departures and nothing published says when
     # the aircraft leaves Sheremetyevo.
     {"from": "SVO", "to": "ALG", "status": "unclear", "evidence": "listed",
-     "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/"},
+     "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+     "extra_sources": [SVO_POSTPONED_2026_10_26]},
     # The Brazzaville, Conakry and Lagos returns, and the Shanghai return below.
     # All four also cite the 24 Oct 2026 statement, which announces each line as a
     # line rather than per direction, so it is an extra entry and not the `source`.
