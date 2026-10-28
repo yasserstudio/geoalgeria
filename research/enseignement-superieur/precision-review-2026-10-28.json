@@ -4,9 +4,9 @@
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
   "network": "Candidates come from the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf), one source. The second-source pass of the same run (research/enseignement-superieur/second-source-votes-2026-10-28.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on 2026-10-28.",
   "counts": {
-    "approximate_reviewed": 108,
-    "queued_single_source": 27,
-    "no_open_candidate": 81,
+    "approximate_reviewed": 107,
+    "queued_single_source": 25,
+    "no_open_candidate": 82,
     "promoted": 0
   },
   "queue": [
@@ -1082,96 +1082,6 @@
       ],
       "reason": "single source",
       "needs": "a campus address or map on the institution's own site (cuillizi.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00182",
-      "name": "Ecole nationale supérieure des nanosciences et nanotechnologies",
-      "name_ar": "المدرسة الوطنية العليا في علم النانو وتكنولوجيا النانو",
-      "wilaya_code": "16",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.682153,
-        "lng": 2.877873,
-        "commune": "Maalma"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/1318066777",
-          "tie": "seed",
-          "point": {
-            "lat": 36.6898241,
-            "lng": 2.8688831
-          },
-          "point_from": "scripts/seeds/bac-2026.json additions.P10.place.queued_claim (version 2, 2024-09-25T17:42:37Z)",
-          "commune": {
-            "code": "1647",
-            "name": "Maalma"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 1171,
-          "owner_reading": {
-            "point": [
-              2.869164,
-              36.6890452
-            ],
-            "read_at": "2026-10-28",
-            "read_by": "project owner",
-            "source": "Google Maps, a proprietary map",
-            "entry": "National Higher School of Nanosciences and Nanotechnology",
-            "distances": "P08 way/1318064031: 127 m, P09 way/1318066776: 28 m, P10 way/1318066777: 90 m",
-            "note": "NOT a confirmation. The reading is 90 m from this school's own OSM object but nearer another school's at the same pole, so it does not single this object out and casts no Vote for it (docs/adr/0001 rule 4: no Votes for another Candidate)."
-          }
-        }
-      ],
-      "reason": "conflict: the Owner's reading lands nearer another school's object",
-      "needs": "a campus address or map on the institution's own site (nsnn.edu.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00183",
-      "name": "Ecole nationale supérieure des systèmes autonomes",
-      "name_ar": "المدرسة الوطنية العليا لتكنولوجيا الأنظمة المستقلة",
-      "wilaya_code": "16",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.682153,
-        "lng": 2.877873,
-        "commune": "Maalma"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/1318066776",
-          "tie": "seed",
-          "point": {
-            "lat": 36.6890996,
-            "lng": 2.8694649
-          },
-          "point_from": "scripts/seeds/bac-2026.json additions.P09.place.queued_claim (version 3, 2024-09-30T08:09:33Z)",
-          "commune": {
-            "code": "1647",
-            "name": "Maalma"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 1076,
-          "owner_reading": {
-            "point": [
-              2.8648454,
-              36.6890253
-            ],
-            "read_at": "2026-10-28",
-            "read_by": "project owner",
-            "source": "Google Maps, a proprietary map",
-            "entry": "École Nationale Supérieure de Technologie des Systèmes Autonome(w)",
-            "distances": "P08 way/1318064031: 261 m, P09 way/1318066776: 412 m, P10 way/1318066777: 371 m",
-            "note": "NOT a confirmation. The reading is 412 m from this school's own OSM object but nearer another school's at the same pole, so it does not single this object out and casts no Vote for it (docs/adr/0001 rule 4: no Votes for another Candidate)."
-          }
-        }
-      ],
-      "reason": "conflict: the Owner's reading lands nearer another school's object",
-      "needs": "a campus address or map on the institution's own site (nhsast.edu.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     }
   ],
   "no_candidate": [
@@ -1641,6 +1551,12 @@
       "id": "00181",
       "name": "Ecole nationale supérieure des forêts (Khenchela)",
       "wilaya_code": "40",
+      "geo_method": "commune"
+    },
+    {
+      "id": "00183",
+      "name": "Ecole nationale supérieure des systèmes autonomes",
+      "wilaya_code": "16",
       "geo_method": "commune"
     },
     {
