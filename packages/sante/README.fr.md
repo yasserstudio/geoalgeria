@@ -24,12 +24,12 @@ Livré en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 > **Le volet communautaire vit dans [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques), et les deux ne doivent jamais être additionnés.**
 > Ce paquet est le volet *registre* : les établissements publics que gère le
 > ministère de la Santé, officiel et clos. `cliniques` est le volet
-> *communautaire* : 1 917 polycliniques, salles de soins, centres de santé,
+> *communautaire* : 1 916 polycliniques, salles de soins, centres de santé,
 > maternités et cliniques cartographiés par les contributeurs OpenStreetMap,
 > partiel par nature. Tout élément OSM référencé par un enregistrement d'ici en
 > est exclu par construction, donc aucun lieu n'est publié deux fois sous le
 > même élément, mais les deux décrivent des volets différents d'un système de
-> santé : additionner 661 et 1 917 ne compte rien de réel.
+> santé : additionner 661 et 1 916 ne compte rien de réel.
 
 ```bash
 npm install @geoalgeria/sante

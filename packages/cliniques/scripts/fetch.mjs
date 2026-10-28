@@ -72,7 +72,7 @@ import { dirname, join } from "node:path";
 import https from "node:https";
 import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
-import { stripLeadingMarks } from "../../../scripts/lib/name-script.mjs";
+import { stripLeadingMarks, looseNameKeys } from "../../../scripts/lib/name-script.mjs";
 import { withoutEmDash } from "../../../scripts/lib/no-em-dash.mjs";
 import { attachCommuneWithRules, describeLinkage, haversine } from "../../../scripts/lib/build-utils.mjs";
 
@@ -468,6 +468,56 @@ export function santeHospitalParts(elements, santeOsmIds) {
   return parts;
 }
 
+/**
+ * Elements that are a Double mapping (CONTEXT.md) of a hospital @geoalgeria/sante
+ * already ships: a second OpenStreetMap element for the same place, within
+ * DOUBLE_MAPPING_RADIUS_M of the sante element and sharing a Loose name key with
+ * it. sante publishes the place, so this package must not publish it again.
+ *
+ * Not when the element is a proximity facility (polyclinique, salle de soins,
+ * centre de santé). sante's anchors are hospital-tier records (CHU, EPH, EHS),
+ * which a proximity facility never is, so a same-name element there means sante
+ * pinned its hospital onto the facility, not that the facility is mapped twice;
+ * excluding it would delete a real facility. Those are returned as `conflicts`
+ * for the report and kept. Over the 2026-10-25 capture:
+ *   - way/223396517 "Maternité Benatou Mira", 17 m from sante's way/219028752
+ *     (22-ehs-03, the EHS gynécologie-obstétrique of Sidi Bel Abbes): a double
+ *     mapping, excluded;
+ *   - way/783010148 "Polyclinique Douera", 5 m from sante's node/4218102291, the
+ *     point sante gives 16-chu-03 (CHU Douera), while OpenStreetMap maps the
+ *     hospital itself as way/40072354 "Hopital Douira" about 120 m away: a sante
+ *     geocoding conflict, kept here and owed a sante fix.
+ */
+const PROXIMITY_TYPES = new Set(["polyclinique", "salle_de_soins", "centre_sante"]);
+const DOUBLE_MAPPING_RADIUS_M = 40;
+const nameValues = (t) => [t.name, t["name:fr"], t["name:ar"], t["name:en"], t.official_name].filter(Boolean);
+export function santeDoubleMappings(elements, santeOsmIds) {
+  const point = (el) => [el.lat ?? el.center?.lat, el.lon ?? el.center?.lon];
+  const anchors = elements
+    .filter((el) => santeOsmIds.has(`${el.type}/${el.id}`))
+    .map((el) => ({ point: point(el), keys: looseNameKeys(nameValues(el.tags || {})) }))
+    .filter((a) => a.keys.size);
+  const doubles = new Set();
+  const conflicts = new Set();
+  for (const el of elements) {
+    const key = `${el.type}/${el.id}`;
+    if (santeOsmIds.has(key)) continue;
+    const keys = looseNameKeys(nameValues(el.tags || {}));
+    if (!keys.size) continue;
+    const [lat, lng] = point(el);
+    for (const a of anchors) {
+      if (haversine(lat, lng, ...a.point) > DOUBLE_MAPPING_RADIUS_M) continue;
+      if (![...keys].some((k) => a.keys.has(k))) continue;
+      const verdict = classify(el.tags || {}, key, santeOsmIds);
+      if (PROXIMITY_TYPES.has(verdict.type)) conflicts.add(key);
+      else doubles.add(key);
+      break;
+    }
+  }
+  doubles.conflicts = conflicts;
+  return doubles;
+}
+
 // A single-line address from OSM addr:* tags, or null when none are present.
 function parseAddress(t) {
   const line1 = [str(t["addr:housenumber"]), str(t["addr:street"]) || str(t["addr:place"])]
@@ -478,7 +528,7 @@ function parseAddress(t) {
   return parts.length ? parts.join(", ") : null;
 }
 
-function normOSM(elements, santeOsmIds, santeParts = new Set()) {
+function normOSM(elements, santeOsmIds, santeParts = new Set(), santeDoubles = new Set()) {
   // Five selectors over one area: an element matching more than one of them comes
   // back once per match, so collapse by osm type/id before anything else.
   const seen = new Set();
@@ -492,7 +542,9 @@ function normOSM(elements, santeOsmIds, santeParts = new Set()) {
     const lng = el.lon ?? el.center?.lon;
     if (!inAlgeria(lat, lng)) continue;
     const t = el.tags || {};
-    const verdict = santeParts.has(key) ? { excluded: "sante_part" } : classify(t, key, santeOsmIds);
+    const verdict = santeParts.has(key) ? { excluded: "sante_part" }
+      : santeDoubles.has(key) ? { excluded: "sante_double_mapping" }
+      : classify(t, key, santeOsmIds);
     if (verdict.excluded) {
       excluded[verdict.excluded] = (excluded[verdict.excluded] || 0) + 1;
       continue;
@@ -598,7 +650,10 @@ async function main() {
   const santeOsmIds = loadSanteOsmIds();
   console.log(`  ${santeOsmIds.size} OSM element(s) already shipped by @geoalgeria/sante`);
   const santeParts = santeHospitalParts(osmRaw, santeOsmIds);
-  let { rows, excluded } = normOSM(osmRaw, santeOsmIds, santeParts);
+  const santeDoubles = santeDoubleMappings(osmRaw, santeOsmIds);
+  if (santeDoubles.conflicts.size)
+    console.warn(`  ⚠️  sante geocode conflict (kept here, owed a sante fix): ${[...santeDoubles.conflicts].join(", ")}`);
+  let { rows, excluded } = normOSM(osmRaw, santeOsmIds, santeParts, santeDoubles);
   const excludedTotal = Object.values(excluded).reduce((a, b) => a + b, 0);
   console.log(`  excluded ${excludedTotal}: ` + Object.entries(excluded).sort().map(([k, v]) => `${k}=${v}`).join(", "));
   console.log(`  OSM: ${rows.length} care facilities kept`);

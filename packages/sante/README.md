@@ -21,12 +21,12 @@ TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 > **The community tier lives in [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques), and the two must not be summed.**
 > This package is the *registry* tier: the public establishments the Ministry of
-> Health runs, official and closed. `cliniques` is the *community* tier: 1,917
+> Health runs, official and closed. `cliniques` is the *community* tier: 1,916
 > polycliniques, salles de soins, centres de santé, maternités and clinics
 > mapped by OpenStreetMap volunteers, partial by nature. Every OSM element a
 > record here references is excluded there by construction, so no place is
 > published twice under the same element, but the two describe different tiers
-> of a health system and adding 661 to 1,917 counts nothing real.
+> of a health system and adding 661 to 1,916 counts nothing real.
 
 ```bash
 npm install @geoalgeria/sante

@@ -12,7 +12,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readCapture } from "../scripts/lib/source-store.mjs";
-import { santeHospitalParts, loadSanteOsmIds } from "../packages/cliniques/scripts/fetch.mjs";
+import { santeHospitalParts, santeDoubleMappings, loadSanteOsmIds } from "../packages/cliniques/scripts/fetch.mjs";
 
 const hospital = (type, id, lat, lon, tags) => ({ type, id, lat, lon, tags: { amenity: "hospital", ...tags } });
 const ADDR = { "addr:street": "نهج أول نوفمبر 1954", "addr:city": "Oum El Bouaghi" };
@@ -38,4 +38,11 @@ test("the same address too far away is not", () => {
 test("the committed capture: Ibn Sina's building is a part of the hospital sante ships", () => {
   const parts = santeHospitalParts(readCapture("cliniques", "osm").elements, loadSanteOsmIds());
   assert.ok(parts.has("way/624185601"), "way/624185601 is no longer recognised as part of 04-eph-06");
+});
+
+test("the committed capture: Benatou Mira is a double mapping of sante's EHS, Douera polyclinic is not", () => {
+  const doubles = santeDoubleMappings(readCapture("cliniques", "osm").elements, loadSanteOsmIds());
+  assert.ok(doubles.has("way/223396517"), "Maternité Benatou Mira is no longer recognised as sante's EHS mapped twice");
+  assert.ok(!doubles.has("way/783010148"), "a polyclinique must never be excluded as a hospital's double mapping");
+  assert.ok(doubles.conflicts.has("way/783010148"), "Polyclinique Douera is no longer reported as a sante geocode conflict");
 });

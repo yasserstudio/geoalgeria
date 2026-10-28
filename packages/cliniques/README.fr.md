@@ -12,7 +12,7 @@
 
 </div>
 
-**1 917 structures de soins géolocalisées** sur **66 wilayas**, toutes avec
+**1 916 structures de soins géolocalisées** sur **66 wilayas**, toutes avec
 coordonnées, classées par **type** (polyclinique · salle de soins · centre de
 santé · maternité · clinique), la plupart avec des noms arabes et/ou français, et
 un rattachement commune/wilaya. Extraites d'**OpenStreetMap**. C'est le **volet
@@ -29,7 +29,7 @@ npm install @geoalgeria/cliniques
 ```js
 import cliniques from "@geoalgeria/cliniques";
 
-const all = cliniques.cliniques();   // 1 917 structures géolocalisées
+const all = cliniques.cliniques();   // 1 916 structures géolocalisées
 
 // Le volet public de proximité d'une wilaya
 const proximite = cliniques.cliniquesByWilaya("16")
@@ -41,7 +41,7 @@ const urgences = all.filter((c) => c.emergency);
 
 ## Ce que vous pouvez construire
 
-- **Des localisateurs « soins près de chez moi »**, coordonnées sur les 1 917
+- **Des localisateurs « soins près de chez moi »**, coordonnées sur les 1 916
   enregistrements, prêts pour une carte ou un tri par distance.
 - **Des cartes de couverture de proximité**, comptez polycliniques et salles de
   soins par commune ou wilaya, les structures que les Algériens poussent en premier.
@@ -52,7 +52,7 @@ const urgences = all.filter((c) => c.emergency);
 
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
-| Structures de soins | **1 917** | ✅ toutes | 1 610 nommées, 66 wilayas |
+| Structures de soins | **1 916** | ✅ toutes | 1 609 nommées, 66 wilayas |
 
 **Par type**
 
@@ -85,7 +85,7 @@ const urgences = all.filter((c) => c.emergency);
 > référence OSM, donc un même établissement physique peut malgré tout figurer
 > dans les deux paquets, sous des coordonnées et des identifiants différents,
 > sans qu'aucun mécanisme ne puisse le détecter. Les deux décrivent des volets
-> différents : additionner 661 et 1 917 ne compte rien de réel.
+> différents : additionner 661 et 1 916 ne compte rien de réel.
 
 **Le type est déduit du nom.** Une polyclinique se nomme
 polyclinique/عيادة متعددة الخدمات, une salle de soins قاعة علاج/مستوصف/dispensaire,
@@ -161,7 +161,7 @@ const all: Clinique[] = cliniques.cliniques();
 
 ```
 data/
-  cliniques.json              # 1 917 structures (tableau)
+  cliniques.json              # 1 916 structures (tableau)
   metadata.json               # sources, comptes, couverture, mise à jour
   csv/cliniques.csv           # dépôt + bundle Release (pas dans le tarball npm)
   geojson/cliniques.geojson   # entités Point

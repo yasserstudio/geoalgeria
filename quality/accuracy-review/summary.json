@@ -56,15 +56,15 @@
     },
     {
       "path": "packages/cliniques/data/cliniques.json",
-      "sha256": "042802de69d30ed6ba273b22828fcdf7db0cb1749e92ee5c46dd64aef4c43a7e"
+      "sha256": "d0e04d508ef2744fde12e0006996e4845f35a0ded24c17214c709b610bd2a10b"
     },
     {
       "path": "packages/cliniques/data/metadata.json",
-      "sha256": "62a1d2ac47268037aaeb95a7734b9226b75b3b25ea8607c020f1c3d53897b370"
+      "sha256": "637b1c177701695832a695a781b40a6589d739e4b81d2f42de2c7bea56bc6b1e"
     },
     {
       "path": "packages/cliniques/data/retired-ids.json",
-      "sha256": "925c3324c05b74f0f59cb7518e9c27f21c21fd7c11cee8c1f161550ff7b57d12"
+      "sha256": "afe4b75edd0d83968205297c95806d5414e870d0d1781d6c3bd70b96df570ca9"
     },
     {
       "path": "packages/culture/data/culture.json",
@@ -313,10 +313,10 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70755,
-  "candidates": 17751,
+  "total_records": 70754,
+  "candidates": 17750,
   "reasons": {
-    "approximate_coordinate": 16903,
+    "approximate_coordinate": 16902,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 501,
     "outside_all_wilaya_boundaries": 199,
@@ -760,10 +760,10 @@
     },
     {
       "dataset": "cliniques",
-      "total_records": 1917,
-      "candidates": 837,
+      "total_records": 1916,
+      "candidates": 836,
       "reasons": {
-        "approximate_coordinate": 833,
+        "approximate_coordinate": 832,
         "inside_adjacent_wilaya": 1,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 7
@@ -775,12 +775,12 @@
         "title_fr": "Cliniques et structures de soins d'Algérie",
         "title_ar": "عيادات ومرافق الرعاية الصحية في الجزائر",
         "title_en": "Algeria clinics & care facilities",
-        "record_count": 1917,
-        "geocoded_count": 1917,
+        "record_count": 1916,
+        "geocoded_count": 1916,
         "geocoded_pct": 100,
         "precision": {
           "exact": 1084,
-          "approximate": 833
+          "approximate": 832
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -804,12 +804,12 @@
         ],
         "license": "ODbL-1.0",
         "updated": "2026-08-31",
-        "named": 1610,
+        "named": 1609,
         "by_type": {
           "polyclinique": 406,
           "clinique": 1144,
           "salle_de_soins": 199,
-          "maternite": 26,
+          "maternite": 25,
           "centre_sante": 142
         },
         "by_sector": {
@@ -817,7 +817,7 @@
           "private": 67
         },
         "with_phone": 116,
-        "with_address": 654,
+        "with_address": 653,
         "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 wilaya boundaries; commune is the nearest centroid WITHIN that wilaya, so the join never crosses a wilaya boundary. Wilaya is effectively exact, commune is best-effort."
       }
     },
@@ -2379,10 +2379,10 @@
     {
       "dataset": "cliniques",
       "entity": "cliniques.json",
-      "total_records": 1917,
-      "candidates": 837,
+      "total_records": 1916,
+      "candidates": 836,
       "reasons": {
-        "approximate_coordinate": 833,
+        "approximate_coordinate": 832,
         "inside_adjacent_wilaya": 1,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 7
