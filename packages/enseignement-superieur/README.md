@@ -75,7 +75,7 @@ here** and labelled honestly on every record via `geo_method` (detail) and `geo_
 | `geo_method` | Count | `geo_precision` | What the coordinate is |
 | --- | --- | --- | --- |
 | `campus` | 70 | `exact` | A per-campus OpenStreetMap point for that institution, cross-checked: a geocode that lands in a different wilaya than the institution's name is rejected. |
-| `commune` | 21 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship, used where no open source places the campus itself. |
+| `commune` | 21 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship, used where no open source places the campus itself, or only one does: a point needs two independent open sources to be `exact` (`docs/adr/0001`). |
 | `wilaya` | 96 | `approximate` | The centroid of the institution's wilaya, the fallback when only the wilaya is known. Nearly every private/other-ministry institution lands here, as the source publishes no address for them. |
 
 `wilaya_code` and `commune` are always reconciled to the `geoalgeria` flagship dataset, so they

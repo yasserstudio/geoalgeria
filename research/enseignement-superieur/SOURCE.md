@@ -124,6 +124,66 @@ consistent either (an older cut says 106), so the **enumerable listings we ship
 are the source of truth**, and the aggregate is used only as an
 order-of-magnitude cross-check.
 
+## Coordinate precision pass (2026-10-28)
+
+The rule is `docs/adr/0001`: a record moves to `exact` only where two
+independent open sources agree within 2 km and are not a Copied claim within
+50 m of each other. Nominatim, api.openstreetmap.org and Overpass all read the
+same OpenStreetMap database, so they are one source between them; the second
+has to be a Wikidata `P625` or the institution's own site.
+
+**What could be read.** On 2026-10-28 none of OpenStreetMap, Nominatim,
+Overpass, Wikidata or the institutions' sites was reachable from the build
+machine. The only open evidence read is the committed Overpass capture
+`sources/enseignement-superieur/osm-campuses.json` (1,265
+`amenity=university|college` elements, retrieved 2026-08-03), which is one
+source. So **no record was promoted**: every match is a single-source Claim and
+waits in the Review queue.
+
+**The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
+written offline and byte for byte by `precision-review.mjs` next to it. All 117
+approximate records (96 `wilaya`, 21 `commune`) are in it exactly once:
+
+| Outcome | Records |
+| --- | --- |
+| Queued, one candidate (single source) | 32 |
+| Queued, several candidates (ambiguous) | 4 |
+| No open candidate in the capture | 81 |
+| Promoted to `exact` | 0 |
+
+Each queued entry carries the OSM element, the tags that make the tie (the
+element's own website host where it has one, else a strict name match), the
+commune whose OSM outline contains it, its distance to the published point, and
+what second source would settle it. None is over the 25 km move limit; the
+largest is 21.4 km. Hand decisions (ties rejected because the element's name
+contradicts its website, a parent university's host, a former name, another
+record's campus) sit in tables in the script, each with its reason.
+
+**ENSTA (`00189`)** was `exact` on one OpenStreetMap object, `way/245174987` at
+its Dergana seat, still named for the dissolved ENST. It is now `approximate` on
+the Bordj El Kiffan centre, the commune its own address names, and that object
+is its queued Claim (`successions.P05.place.queued_claim` in
+`scripts/seeds/bac-2026.json`). The commune was checked by containment, not by
+the nearest centre: the point lies inside Bordj El Kiffan's committed OSM
+outline, 194 m from the Bordj El Bahri border (outline margin 166 m), and Bordj
+El Bahri's centre is only the nearer one (1,761 m against 6,601 m). The capture
+also holds `way/1267564230`, named with ENSTA's Arabic name in the singular, at
+Bab El Oued: the ex-ESSA second site, queued as a Claim for that site and not
+for the seat.
+
+**Not in this pass.** The 70 `exact` records were not re-reviewed. 65 rest on a
+Nominatim geocode and 5 of the 11 BAC 2026 additions on one OSM object each, so
+under the same rule each has one source; demoting them is an Owner decision, not
+part of this pass.
+
+**Re-run once the hosts answer.** Read Wikidata `P625` (and the `wikidata` tag
+where an element carries one) and the institutions' sites for the 36 queued
+records; a record whose second source lands within 2 km of its Claim, and not
+within 50 m of it, moves to `exact`: a listed record through
+`scripts/seeds/coordinates.json` (and out of `scripts/seeds/overrides.json`,
+which takes precedence), a BAC 2026 record through its `place` in
+`scripts/seeds/bac-2026.json`.
+
 ## Known gaps (tracked, deliberate)
 
 - **67 records have no French name** (the AR-listing extras are published in
@@ -137,7 +197,8 @@ order-of-magnitude cross-check.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  70 campus, 21 commune, 96 wilaya.
+  70 campus, 21 commune, 96 wilaya; the 117 approximate records are in the
+  2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and
   still lists the two schools that décret exécutif 22-398 dissolved in 2022

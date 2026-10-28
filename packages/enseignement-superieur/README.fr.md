@@ -76,7 +76,7 @@ fournie ici** et étiquetée honnêtement sur chaque enregistrement via `geo_met
 | `geo_method` | Nombre | `geo_precision` | Ce que représente la coordonnée |
 | --- | --- | --- | --- |
 | `campus` | 70 | `exact` | Un point OpenStreetMap propre au campus de cet établissement, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
-| `commune` | 21 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria`, utilisé quand aucune source ouverte ne situe le campus lui-même. |
+| `commune` | 21 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria`, utilisé quand aucune source ouverte ne situe le campus lui-même, ou une seule : un point n'est `exact` qu'avec deux sources ouvertes indépendantes (`docs/adr/0001`). |
 | `wilaya` | 96 | `approximate` | Le centroïde de la wilaya de l'établissement, solution de repli quand seule la wilaya est connue. Presque chaque établissement privé/relevant d'autres ministères s'y trouve, car la source ne publie pas d'adresse pour eux. |
 
 `wilaya_code` et `commune` sont toujours réconciliés avec le jeu de données principal
