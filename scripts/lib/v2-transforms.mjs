@@ -552,6 +552,9 @@ export const MIGRATIONS = {
       ...reconcileCurrentWilayaByCommune(r), commune: r.commune,
       ...geoExact(r, "sig_mjs"),
       source: "mjs",
+      // The SIG's own per-record UUID (properties.id), the Upstream link the
+      // carry-over keys on (packages/sports/scripts/fetch.mjs, "stable ids").
+      refs: refs({ mjs: r.uuid }),
       type: r.type_code, type_label_fr: r.type_fr,
       daira: r.daira, address: r.address, capacity: r.capacity, year: r.year,
       operational: r.operational, pmr: r.pmr, surface_built_m2: r.surface_built_m2, surface_land_m2: r.surface_land_m2,

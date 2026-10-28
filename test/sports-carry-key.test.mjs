@@ -246,7 +246,9 @@ test("a reviewed coordinate correction does not retire the id it corrected", () 
       },
     ],
   };
-  const committed = [facility("01663", "Ksar Chellala", "14", 35.2515, 2.4818)];
+  // The writer stamps review_status on the record it patched, which is how the
+  // undo knows the published record carries the patch.
+  const committed = [facility("01663", "Ksar Chellala", "14", 35.2515, 2.4818, { review_status: "corrected" })];
   const rows = [facility("00001", "Ksar Chellala", "14", 35.5507, 1.9675)];
   const retiredIds = new Set();
   const stats = assignStableIds(rows, committed, retiredIds, { ledger });
