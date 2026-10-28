@@ -19,9 +19,12 @@ const digest = (rows) =>
 const expected = {
   sports: {
     file: "facilities.json",
-    count: 267,
-    digest: "5cdebacc7e79db0a9870fa989e51bf4232850bad98398451e888511997b379bd",
-    byWilaya: { 59: 70, 60: 40, 61: 13, 62: 12, 63: 16, 64: 15, 65: 30, 66: 16, 67: 37, 68: 17, 69: 1 },
+    // 267 until the 2026-10-27 refresh: 01663 and 01666 (Serguine) now reconcile
+    // by name rather than through the review ledger, 24 new facilities reconcile
+    // and 23 retired ones leave. No carried record changed its reconciliation.
+    count: 270,
+    digest: "b8ecbb9f565c421c84738889f6aab47f5c8ee3fadea61cab1b1b359d86c98e65",
+    byWilaya: { 59: 70, 60: 40, 61: 13, 62: 12, 63: 16, 64: 17, 65: 29, 66: 17, 67: 38, 68: 17, 69: 1 },
   },
   jeunesse: {
     file: "institutions.json",

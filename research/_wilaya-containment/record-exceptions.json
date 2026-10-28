@@ -4,8 +4,8 @@
   "ref": "origin/main",
   "note": "Published records their own geometry contradicts. `kind: commune_outline` is a coordinate outside the OpenStreetMap outline of the commune the record names; `kind: wilaya_polygon` is a record with no commune outline to check whose coordinate is inside a different wilaya's shipped polygon. Every row is a defect, not a tolerance: `rule` names the clause of scripts/lib/commune-resolver.mjs that decides it today, and the group's reason says which two claims disagree and who can settle it. `pre_existing` is recomputed by running the same rule over the same file at origin/main, so a row this batch created cannot hide among the rows it inherited (those are yasserstudio/geoalgeria.com#209). Records with no commune outline whose coordinate is inside NO wilaya polygon are not listed and not failed, because the 69 shipped outlines are display-grade (mapshaper `dp 2% keep-shapes`, a 3.4 km median vertex gap) and cut inside the shoreline. Regenerate with `node scripts/build-wilaya-containment-exceptions.mjs --write`.",
   "files_checked": 46,
-  "count": 302,
-  "pre_existing": 302,
+  "count": 301,
+  "pre_existing": 301,
   "created_by_this_batch": 0,
   "groups": [
     {
@@ -2205,16 +2205,16 @@
     {
       "file": "packages/sports/data/facilities.json",
       "package": "sports",
-      "count": 19,
-      "pre_existing": 19,
+      "count": 18,
+      "pre_existing": 18,
       "created_by_this_batch": 0,
       "kinds": {
-        "outside_own_commune_outline": 8,
+        "outside_own_commune_outline": 7,
         "outside_declared_wilaya_polygon": 11
       },
       "rules": {
         "kept_low_precision": 2,
-        "commune_outline": 17
+        "commune_outline": 16
       },
       "reason": "the facility's wilaya is the ministry register's own column, its coordinate geocoded from the same row, so a disagreement is a register row to re-check",
       "records": [
@@ -2312,18 +2312,6 @@
           "kind": "outside_own_commune_outline",
           "containing_commune": 1430,
           "containing_wilaya": "64",
-          "pre_existing": true
-        },
-        {
-          "id": "01835",
-          "declared_wilaya": "66",
-          "declared_commune": "1717",
-          "lng": 3.3143,
-          "lat": 34.082,
-          "rule": "commune_outline",
-          "kind": "outside_own_commune_outline",
-          "containing_commune": 1729,
-          "containing_wilaya": "66",
           "pre_existing": true
         },
         {

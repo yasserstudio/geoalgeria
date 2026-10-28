@@ -563,7 +563,7 @@ export const MIGRATIONS = {
       sources: [{ key: "mjs", name: "Ministry of Youth and Sports: SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
-      coverageNote: "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 267 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+      coverageNote: "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 270 records are reconciled to the current wilaya only where an exact current, former (JORA) or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
       titles: { en: "Algeria sports facilities", fr: "Infrastructures sportives d'Algérie", ar: "المنشآت الرياضية الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), named: named(rows) }),
     },

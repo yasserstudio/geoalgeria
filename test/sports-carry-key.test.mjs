@@ -176,14 +176,22 @@ test("a dash separator in the name does not retire the id", () => {
   }
 });
 
-test("a no-change rebuild of the published data keeps all 5,141 ids", () => {
+// Run twice: on the UUID, which is what every rebuild since the 2026-10-27 refresh
+// keys on, and with refs.mjs stripped from both sides, so the place key (still the
+// fallback for a record published without one) is held to the same no-churn bar.
+for (const keyedOn of ["refs.mjs", "the place key"]) test(`a no-change rebuild of the published data keeps every id, keyed on ${keyedOn}`, () => {
   // Generator-side values, not committed ones. Two things stand between the two:
   // the review ledger, whose every patched field is undone generically here by
   // restoring the decision's whole `expect` block (so a reviewed coordinate or
   // name counts, not just the wilaya), and reconcileCurrentWilayaByCommune, whose
   // input is the ministry's own wilaya, handed back through source_wilaya_code.
   // MIGRATIONS.sports.map then re-decides, exactly as a live rebuild does.
-  const committed = read("packages/sports/data/facilities.json");
+  const byPlace = keyedOn === "the place key";
+  const committed = read("packages/sports/data/facilities.json").map((r) => {
+    if (!byPlace) return r;
+    const { refs: _refs, ...rest } = r;
+    return rest;
+  });
   const ledger = read("quality/overrides/sports.json");
   const decisionById = new Map(
     ledger.decisions
@@ -199,6 +207,7 @@ test("a no-change rebuild of the published data keeps all 5,141 ids", () => {
         ...generated,
         type_code: generated.type,
         type_fr: generated.type_label_fr,
+        uuid: byPlace ? undefined : r.refs?.mjs,
         wilaya_code: r.source_wilaya_code ?? generated.wilaya_code,
         source_wilaya_code: undefined,
         commune_code: generated.commune_code ?? null,
@@ -268,7 +277,7 @@ test("undoing the ledger is the exact inverse of what the writer applies", () =>
   const reviewedIds = ledger.decisions
     .filter((d) => d.file === file && d.publish_action === "patch")
     .map((d) => d.record_id);
-  assert.ok(reviewedIds.length >= 15, "the sports ledger still carries its decisions");
+  assert.ok(reviewedIds.length >= 14, "the sports ledger still carries its decisions");
   const changed = generated.filter((r, i) => placeKeyOf(r) !== placeKeyOf(committed[i]) || r.wilaya_code !== committed[i].wilaya_code);
   assert.deepEqual(changed.map((r) => r.id), reviewedIds.slice().sort(), "only the reviewed records are undone");
 

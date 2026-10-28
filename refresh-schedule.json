@@ -335,9 +335,9 @@
         "url": "https://sig.mjs.gov.dz"
       },
       "cadence": "quarterly",
-      "last_retrieved": "2026-06-23",
-      "next_due": "2026-11-08",
-      "note": "Pulled live on 2026-10-27 over the Algerian connection the Owner supplied: 5,234 features. The raw capture is now committed (sources/sports/sig-infrastructures.json) and the fetcher replays it with --cache, so this refresh is reviewable offline and the next one needs no VPN window. The data is still held, for two reasons the 2026-10-25 simulation could not see because the October capture was lost. First, against the real capture the place-keyed carry-over retires 447 published ids and mints 540, not the simulated 0 and 90: the ministry edited key fields on records that still exist (38 address only, 63 coordinates only, 73 both, many of them an 'Inclus dans le' prefix added to the address) and 197 published records match no source row on name plus commune. Second, the build aborts on a stale-by-absorption review decision, facilities.json/01663, whose expect is wilaya 14 where the build now derives 64 with commune 1439. Both are reviewed-corrections work, not freshness, so they stay parked for 2026-16 with the El Aricha reconciliation; next_due is that batch rather than last_retrieved + cadence. last_retrieved stays 2026-06-23 because the data was not promoted. The committed capture carries the SIG's own stable per-record UUID (unique across all 5,234 rows, unchanged between two pulls), which is what a refs.mjs join should key on instead of the facility's place; that is the fix behind the 447."
+      "last_retrieved": "2026-10-27",
+      "next_due": "2027-01-27",
+      "note": "Refreshed from the live pull of 2026-10-27 (5,234 features), captured in sources/sports/sig-infrastructures.json, so a rebuild needs no VPN window: the GeoServer answers only from an Algerian vantage point, so the next live pull still needs one. From this refresh every record carries the SIG's own per-record UUID as refs.mjs and the ids are carried on it, so a ministry edit to a name, an address or a coordinate no longer retires an id. The move from place-keyed ids was a one-time transition (decisions in research/sports/id-transition.json): 187 published ids retired, 5 of them Repeat posts forwarded in retired-ids.json, and 280 new facilities minted."
     },
     {
       "package": "@geoalgeria/telecom",
