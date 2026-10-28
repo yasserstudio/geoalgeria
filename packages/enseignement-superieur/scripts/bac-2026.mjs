@@ -56,6 +56,34 @@ export function readBacInstitutions() {
 /** The capture's manifest entry (url, retrieved, sha256, note), for the metadata. */
 export const bacMeta = () => captureMeta("enseignement-superieur", SOURCE);
 
+// The placement file's own bytes, as the capture recorded them. The PDF is not
+// committed (rights), so these three numbers are the only thing that ties a
+// published record back to the exact document it was read off, and bacSnapshot()
+// refuses to publish them unless the committed manifest still quotes them.
+export const PDF = {
+  sha256: "ca4b24e656296aa6c6ea360d7f53578077e8ea06cbc74c3c8390f1f197e7207e",
+  bytes: 2382999,
+  pages: 350,
+};
+
+/**
+ * `metadata.sources["bac-2026"].snapshot`: the exact PDF this package's names
+ * were read off, by url, digest and size, following the aviation package's
+ * precedent. `retrieved` says when we asked; a published file can be replaced in
+ * place under the same URL, so the date alone cannot say what was read.
+ */
+export function bacSnapshot() {
+  const quoted = `sha256 ${PDF.sha256}, ${PDF.bytes} bytes, ${PDF.pages} pages`;
+  const note = String(bacMeta()?.note ?? "");
+  if (!note.includes(quoted))
+    throw new Error(
+      `sources/enseignement-superieur/${SOURCE}.json: the manifest note no longer quotes ` +
+        `the attestation "${quoted}". Re-capture the projection, or correct PDF in ` +
+        "scripts/bac-2026.mjs; the published snapshot is never a hand-typed digest.",
+    );
+  return { url: PAGE_BAC, sha256: PDF.sha256, bytes: PDF.bytes };
+}
+
 // Fold a name to what it says rather than how it is typed: the PDF publishes
 // names in accentless upper case, with apostrophes flattened to spaces and the
 // institution's acronym sometimes trailing ("… DE SAIDA (E.N.S)"), while a

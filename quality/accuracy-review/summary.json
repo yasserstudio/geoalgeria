@@ -116,11 +116,11 @@
     },
     {
       "path": "packages/enseignement-superieur/data/institutions.json",
-      "sha256": "a3ca7c225931bf2e1a664d1a7456e6f4ce7c67726b7ffa102f9ae461b11a8c8c"
+      "sha256": "fb4a05ee8d265970bf2a4a4fa773bf69b7b83d7ff8950befcacc7d2dad239e3d"
     },
     {
       "path": "packages/enseignement-superieur/data/metadata.json",
-      "sha256": "4fe0b2dfa6af039e4e38a295a2ded13a32f04f8e719537113039d21dffc60d4d"
+      "sha256": "6dab3e473f723f2ab5f6cbf976cb1084d0dcc437ab8449576b7197765d972c6e"
     },
     {
       "path": "packages/ferroviaire/data/metadata.json",
@@ -1114,10 +1114,23 @@
             "license": "Factual public listing (MESRS)",
             "retrieved": "2026-08-03",
             "evidence_type": "official"
+          },
+          {
+            "key": "bac-2026",
+            "name": "MESRS: Moyennes minimales BAC 2026 (suite à la première phase), the ministry's own placement file",
+            "url": "https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf",
+            "license": "Factual public listing (MESRS)",
+            "evidence_type": "official",
+            "retrieved": "2026-10-28",
+            "snapshot": {
+              "url": "https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf",
+              "sha256": "ca4b24e656296aa6c6ea360d7f53578077e8ea06cbc74c3c8390f1f197e7207e",
+              "bytes": 2382999
+            }
           }
         ],
         "license": "Factual public listing (MESRS)",
-        "updated": "2026-08-03",
+        "updated": "2026-10-28",
         "by_type": {
           "universite": 59,
           "grande_ecole": 111,

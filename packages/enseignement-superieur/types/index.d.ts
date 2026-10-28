@@ -55,8 +55,12 @@ export interface Institution {
   geo_precision: GeoPrecision;
   /** How `lat`/`lng` were placed: see {@link GeoMethod}. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]`: always "mesrs". */
-  source: "mesrs";
+  /** Provenance key into `metadata.sources[]`: which of the ministry's two
+   *  publications the record's identity came from. "mesrs" is the
+   *  university-network listing, "bac-2026" the BAC 2026 placement file, and the
+   *  composite "mesrs+bac-2026" a record the listing supplies and the placement
+   *  file renames. */
+  source: "mesrs" | "bac-2026" | "mesrs+bac-2026";
   /** Institution category. */
   type: InstitutionType;
   /** Canonical French label for the type (e.g. "Université", "École normale supérieure"). */

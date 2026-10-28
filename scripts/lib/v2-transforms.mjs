@@ -573,12 +573,25 @@ export const MIGRATIONS = {
       name: r.name, name_ar: r.name_ar,
       wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
       ...geoAt(r, r.geo_precision === "campus" ? "exact" : "approximate", r.geo_precision),
-      source: "mesrs",
+      // Which of the ministry's two publications the record's identity came from.
+      // The generator sets `source_key` only where it is not the network listing:
+      // "bac-2026" for a record the placement file supplied outright, the
+      // composite "mesrs+bac-2026" where the listing supplies the record and the
+      // placement file its current name. A v1 row carries neither field and is
+      // network-listing data, so the default stands.
+      source: r.source_key ?? "mesrs",
       type: r.type, type_label_fr: r.type_fr, sector: r.sector,
       supervisory_ministry: r.supervisory_ministry, website: r.website,
     }),
     meta: {
-      sources: [{ key: "mesrs", name: "Ministry of Higher Education and Scientific Research (MESRS)", url: "https://www.mesrs.dz", license: "Factual public listing (MESRS)" }],
+      // `retrieved` is not typed here: scripts/fetch.mjs fills each key from the
+      // committed capture's own manifest entry (the EN+AR listings for `mesrs`,
+      // the placement-file projection for `bac-2026`), so a date is stated once,
+      // where the capture records it, and a live pull cannot leave it stale.
+      sources: [
+        { key: "mesrs", name: "Ministry of Higher Education and Scientific Research (MESRS)", url: "https://www.mesrs.dz", license: "Factual public listing (MESRS)" },
+        { key: "bac-2026", name: "MESRS: Moyennes minimales BAC 2026 (suite à la première phase), the ministry's own placement file", url: "https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf", license: "Factual public listing (MESRS)", evidence_type: "official" },
+      ],
       license: "Factual public listing (MESRS)",
       estimatedUniverse: null,
       coverageNote: "Higher-education institutions (universities, schools, research centres) from the MESRS, built from two of the ministry's own publications: its university-network listing, and its BAC 2026 placement file (\"Moyennes minimales BAC 2026, suite a la premiere phase\"), which names every establishment it places new bacheliers into by the ministry's own establishment code. The placement file supplies 11 institutions the network listing omits and the current name of 2 it still lists under an older one. 72 records carry an open per-campus coordinate (exact); the other 116 are commune or wilaya centroids (approximate), because neither publication carries an address or a coordinate.",

@@ -29,10 +29,12 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import {
   MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds,
+  readRetiredMigrations, forwardRetiredId,
 } from "../../../scripts/lib/v2-transforms.mjs";
+import { captureMeta } from "../../../scripts/lib/source-store.mjs";
 import { PAGE, getHtml, parseInstitutions, instKey, classifyType, MIN_EXPECTED } from "./mesrs.mjs";
 import { getHtmlAr, anchoredNamesAr, parseExtras, buildResolver, classifyTypeAr, PAGE_AR } from "./mesrs-ar.mjs";
-import { PAGE_BAC, readBacInstitutions, assertBacName } from "./bac-2026.mjs";
+import { PAGE_BAC, readBacInstitutions, assertBacName, bacSnapshot } from "./bac-2026.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -58,6 +60,27 @@ function readSeed(path) {
   } catch (e) {
     throw new Error(`${path}: corrupt seed JSON: ${e.message}`);
   }
+}
+
+// The captures behind each declared metadata source, so a source's `retrieved` is
+// read off the capture manifest rather than typed into the config twice. `mesrs`
+// covers the two listing captures and is only as fresh as the older of them. A
+// missing capture or a capture with no date fails the build, because the
+// alternative is publishing the run's date as a receipt for bytes nobody read.
+const SOURCE_CAPTURES = { mesrs: ["mesrs-en", "mesrs-ar"], "bac-2026": ["bac-2026"] };
+function datedSources(sources) {
+  return sources.map((s) => {
+    const captures = SOURCE_CAPTURES[s.key];
+    if (!captures)
+      throw new Error(`metadata source "${s.key}" has no capture behind it; add one to SOURCE_CAPTURES`);
+    const dates = captures.map((name) => {
+      const { retrieved } = captureMeta("enseignement-superieur", name) ?? {};
+      if (!retrieved)
+        throw new Error(`sources/enseignement-superieur/${name}.json: the capture manifest states no retrieved date`);
+      return retrieved;
+    });
+    return { ...s, retrieved: dates.sort()[0] };
+  });
 }
 
 // Algeria's bounding box (matches the repo's other geocoded validators). An exact
@@ -180,6 +203,10 @@ async function main() {
       throw new Error(`${where}: expected the listing to still say\n  ${rule.expect}\nbut it says\n  ${inst.name}`);
     inst.name = rule.name;
     Object.assign(inst, classifyType(rule.name));
+    // The listing supplies the record, the placement file its current name, so
+    // the record cites both: the composite form writePackageV2 checks against
+    // metadata.sources[].
+    inst.source_key = "mesrs+bac-2026";
     nRenamed++;
   }
 
@@ -283,6 +310,7 @@ async function main() {
       lng,
       geo_precision: precision,
       source: PAGE,
+      source_key: inst.source_key ?? null,
     });
   }
 
@@ -369,6 +397,7 @@ async function main() {
       lng,
       geo_precision: precision,
       source: PAGE_BAC,
+      source_key: "bac-2026",
     });
   }
   console.log(`  added ${records.length - bacCount} institutions from the BAC 2026 file, renamed ${nRenamed}`);
@@ -442,7 +471,10 @@ async function main() {
     pkg: "enseignement-superieur",
     dir: DATA,
     files: [{ file: "institutions.json", rows }],
-    meta: cfg.meta,
+    meta: { ...cfg.meta, sources: datedSources(cfg.meta.sources) },
+    // The placement file's own bytes, so a published name can be checked against
+    // the exact document it was read off without the PDF being redistributed.
+    snapshots: { "bac-2026": bacSnapshot() },
     updated,
     retrieved,
     retiredIds,
