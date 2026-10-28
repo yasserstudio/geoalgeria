@@ -105,7 +105,7 @@ const NOT_OWN_SITE = {
  *  whose Claim the rule no longer finds is an error, so the note cannot go stale. */
 const ROLES = {
   "00189|way/1267564230":
-    "second site: the element carries ENSTA's Arabic name (singular التكنولوجيا) at the ex-ESSA building at Bab El Oued, which the seed keeps out of the record (one establishment, one record, seat at Dergana); a Claim that ENSTA is here, not one for its seat",
+    "second site: the element carries ENSTA's Arabic name (singular التكنولوجيا) at the ex-ESSA building the school publishes as Bab El Oued (the point falls on the Casbah side of that boundary, 96 m from it), which the seed keeps out of the record (one establishment, one record, seat at Dergana); a Claim that ENSTA is here, not one for its seat",
 };
 
 /** Qualifiers that make two otherwise equal names two institutions: each must be

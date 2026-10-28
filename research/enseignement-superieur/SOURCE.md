@@ -142,12 +142,14 @@ waits in the Review queue.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
 written offline and byte for byte by `precision-review.mjs` next to it. All 117
-approximate records (96 `wilaya`, 21 `commune`) are in it exactly once:
+approximate records (96 `wilaya`, 21 `commune`) are in it exactly once. ENSTA
+counts as one candidate: its entry also lists the second-site Claim below, which
+is not a candidate for the seat.
 
 | Outcome | Records |
 | --- | --- |
-| Queued, one candidate (single source) | 32 |
-| Queued, several candidates (ambiguous) | 4 |
+| Queued, one candidate for the campus (single source) | 32 |
+| Queued, several candidates for the campus (ambiguous) | 4 |
 | No open candidate in the capture | 81 |
 | Promoted to `exact` | 0 |
 
@@ -165,11 +167,13 @@ the Bordj El Kiffan centre, the commune its own address names, and that object
 is its queued Claim (`successions.P05.place.queued_claim` in
 `scripts/seeds/bac-2026.json`). The commune was checked by containment, not by
 the nearest centre: the point lies inside Bordj El Kiffan's committed OSM
-outline, 194 m from the Bordj El Bahri border (outline margin 166 m), and Bordj
+outline, 194 m from the Bordj El Bahri border (about four times the outline's ~50 m
+simplification tolerance), and Bordj
 El Bahri's centre is only the nearer one (1,761 m against 6,601 m). The capture
 also holds `way/1267564230`, named with ENSTA's Arabic name in the singular, at
-Bab El Oued: the ex-ESSA second site, queued as a Claim for that site and not
-for the seat.
+the ex-ESSA second site the school publishes as Bab El Oued (its OSM point falls
+on the Casbah side of that boundary, 96 m from it). It is queued as a Claim for
+that site and not for the seat.
 
 **Not in this pass.** The 70 `exact` records were not re-reviewed. 65 rest on a
 Nominatim geocode and 5 of the 11 BAC 2026 additions on one OSM object each, so

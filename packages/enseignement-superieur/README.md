@@ -75,7 +75,7 @@ here** and labelled honestly on every record via `geo_method` (detail) and `geo_
 | `geo_method` | Count | `geo_precision` | What the coordinate is |
 | --- | --- | --- | --- |
 | `campus` | 70 | `exact` | A per-campus OpenStreetMap point for that institution, cross-checked: a geocode that lands in a different wilaya than the institution's name is rejected. |
-| `commune` | 21 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship, used where no open source places the campus itself, or only one does: a point needs two independent open sources to be `exact` (`docs/adr/0001`). |
+| `commune` | 21 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship, used where no open source places the campus itself, or, from the 2026-10-28 review on, where a new campus point has only one open source (`docs/adr/0001` asks for two). The 70 `campus` points predate that review and rest on one OpenStreetMap reading each; the review queue is in `research/enseignement-superieur/`. |
 | `wilaya` | 96 | `approximate` | The centroid of the institution's wilaya, the fallback when only the wilaya is known. Nearly every private/other-ministry institution lands here, as the source publishes no address for them. |
 
 `wilaya_code` and `commune` are always reconciled to the `geoalgeria` flagship dataset, so they
@@ -143,7 +143,7 @@ wilaya and commune names, join `wilaya_code` against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset. `wilaya_code` is zero-padded
 to two digits; `commune_code` is currently `null` on every record. `geo_precision` is `"exact"`
 for a real campus point or `"approximate"` for a commune/wilaya centroid, `geo_method` records
-which. `source` is a provenance key into `metadata.sources[]`, not a URL: `"mesrs"` for a
+which. `source` is a key into `metadata.sources[]`, not a URL: `"mesrs"` for a
 record from the university-network listing, `"bac-2026"` for one the BAC 2026 placement file
 supplied, and `"mesrs+bac-2026"` where the listing supplies the record and the placement file
 its current name. See **Source** below for the actual publications.

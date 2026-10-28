@@ -76,7 +76,7 @@ fournie ici** et étiquetée honnêtement sur chaque enregistrement via `geo_met
 | `geo_method` | Nombre | `geo_precision` | Ce que représente la coordonnée |
 | --- | --- | --- | --- |
 | `campus` | 70 | `exact` | Un point OpenStreetMap propre au campus de cet établissement, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
-| `commune` | 21 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria`, utilisé quand aucune source ouverte ne situe le campus lui-même, ou une seule : un point n'est `exact` qu'avec deux sources ouvertes indépendantes (`docs/adr/0001`). |
+| `commune` | 21 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria`, utilisé quand aucune source ouverte ne situe le campus lui-même, ou, depuis la revue du 2026-10-28, quand un nouveau point de campus n'a qu'une seule source ouverte (`docs/adr/0001` en demande deux). Les 70 points `campus` sont antérieurs à cette revue et reposent chacun sur une seule lecture OpenStreetMap ; la file de revue est dans `research/enseignement-superieur/`. |
 | `wilaya` | 96 | `approximate` | Le centroïde de la wilaya de l'établissement, solution de repli quand seule la wilaya est connue. Presque chaque établissement privé/relevant d'autres ministères s'y trouve, car la source ne publie pas d'adresse pour eux. |
 
 `wilaya_code` et `commune` sont toujours réconciliés avec le jeu de données principal
@@ -146,7 +146,7 @@ arabe, joignez `wilaya_code` au jeu de données
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). `wilaya_code` est complété à deux
 chiffres avec un zéro ; `commune_code` vaut actuellement `null` sur tous les enregistrements.
 `geo_precision` vaut `"exact"` pour un vrai point de campus ou `"approximate"` pour un centroïde
-de commune/wilaya – `geo_method` précise lequel. `source` est une clé de provenance dans
+de commune/wilaya – `geo_method` précise lequel. `source` est une clé de source dans
 `metadata.sources[]`, pas une URL : `"mesrs"` pour un enregistrement issu de la liste du réseau
 universitaire, `"bac-2026"` pour un enregistrement fourni par le fichier des affectations BAC 2026,
 et `"mesrs+bac-2026"` lorsque la liste fournit l'enregistrement et le fichier des affectations son
