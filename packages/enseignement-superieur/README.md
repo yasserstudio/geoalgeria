@@ -12,7 +12,7 @@
 
 </div>
 
-188 higher-education institutions across Algeria, **universities**, grandes écoles, écoles
+187 higher-education institutions across Algeria, **universities**, grandes écoles, écoles
 normales supérieures, centres universitaires, the **licensed private institutions**, and the
 establishments **under other ministries** (Défense, Santé, Culture…) that MESRS supervises,
 each with its name (French and/or Arabic), institution **type**, **sector**, supervising
@@ -27,7 +27,7 @@ npm install @geoalgeria/enseignement-superieur
 ```js
 import es from "@geoalgeria/enseignement-superieur";
 
-const all = es.institutions();                  // 188
+const all = es.institutions();                  // 187
 const inAlgiers = es.institutionsByWilaya(16);   // institutions in wilaya 16
 const universities = es.institutionsByType("universite"); // every university
 const privates = es.institutionsBySector("private");      // the 19 private institutions
@@ -47,12 +47,12 @@ const privates = es.institutionsBySector("private");      // the 19 private inst
 | Type | Code | Count |
 | --- | --- | --- |
 | Université | `universite` | 59 |
-| Grande école | `grande_ecole` | 111 |
+| Grande école | `grande_ecole` | 110 |
 | École normale supérieure | `ens` | 13 |
 | Centre universitaire | `centre_universitaire` | 5 |
-| **Total** | | **188** |
+| **Total** | | **187** |
 
-By **sector**: 169 public · 19 licensed private. Of the public institutions, 50 are
+By **sector**: 168 public · 19 licensed private. Of the public institutions, 50 are
 establishments **under other ministries** that MESRS supervises pedagogically, read
 `supervisory_ministry` (e.g. `"Ministère de la Santé"` for the 25 paramedical institutes,
 `"Ministère de la Défense nationale"` for the 16 military schools), which is `null` for the
@@ -74,7 +74,7 @@ here** and labelled honestly on every record via `geo_method` (detail) and `geo_
 
 | `geo_method` | Count | `geo_precision` | What the coordinate is |
 | --- | --- | --- | --- |
-| `campus` | 72 | `exact` | A per-campus OpenStreetMap point for that institution, cross-checked: a geocode that lands in a different wilaya than the institution's name is rejected. |
+| `campus` | 71 | `exact` | A per-campus OpenStreetMap point for that institution, cross-checked: a geocode that lands in a different wilaya than the institution's name is rejected. |
 | `commune` | 20 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship, used where no open source places the campus itself. |
 | `wilaya` | 96 | `approximate` | The centroid of the institution's wilaya, the fallback when only the wilaya is known. Nearly every private/other-ministry institution lands here, as the source publishes no address for them. |
 
@@ -106,10 +106,11 @@ const all: Institution[] = es.institutions();
 
 ```
 data/
-  institutions.json            # 188 institutions (array)
+  institutions.json            # 187 institutions (array)
   metadata.json                # sources, counts, by_type, by_sector, by_geo_method, updated
+  retired-ids.json             # ids no record may hold again, each forwarded to the id that carries the establishment now
   csv/institutions.csv         # repo + Release bundle (not in npm tarball)
-  geojson/institutions.geojson # Point features (all 188 placed; 72 campus-geocoded, see geo_method)
+  geojson/institutions.geojson # Point features (all 187 placed; 71 campus-geocoded, see geo_method)
 ```
 
 ## Record shape
@@ -164,9 +165,11 @@ private + other-ministry institutions the English page omits.
 **The BAC 2026 placement file**: *Moyennes minimales BAC 2026 (suite à la première phase)*,
 [published as a 350-page PDF](https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf),
 which names every establishment the ministry places new bacheliers into, by the ministry's own
-establishment code. It states the network as it stands today, so it supplies **11 institutions
-the network page omits** and the **current name of 2** the network page still lists under an
-older one. What is committed from it is a rights-safe projection of its institution rows,
+establishment code. It states the network as it stands today, so it supplies **12 institutions
+the network page omits**, the **current name of 2** the network page still lists under an older
+one, and **one succession**: ENSTA (`P05`), which décret exécutif 22-398 made the successor of
+the two Algiers schools it dissolved and which the network page still lists separately, so those
+two records leave and their ids are forwarded to ENSTA in `data/retired-ids.json`. What is committed from it is a rights-safe projection of its institution rows,
 `sources/enseignement-superieur/bac-2026.json`: the establishment code and official French name
 only, never the per-filière minimum averages and never the PDF, with the PDF's own URL, SHA-256,
 byte count and page count recorded in the capture manifest. That projection is the **authority**

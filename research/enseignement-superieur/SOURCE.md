@@ -1,4 +1,4 @@
-# @geoalgeria/enseignement-superieur — sources & reconciliation
+# @geoalgeria/enseignement-superieur: sources & reconciliation
 
 > **Canonical package:** `@geoalgeria/enseignement-superieur`.
 > **Sources:** two MESRS publications, both captured to
@@ -70,8 +70,17 @@ average columns. 248 institution rows remain.
 - **1 is not an establishment at all**: `C99 RECRUTEMENT NATIONAL`, an
   administrative row for nationally-recruited places. Deliberately no record.
 - **1 is a succession the listing has not caught up with**:
-  `P05 ECOLE NATIONALE SUPERIEURE DES TECHNOLOGIES AVANCEES ALGER`. Left open at
-  this point, resolved below.
+  `P05 ECOLE NATIONALE SUPERIEURE DES TECHNOLOGIES AVANCEES ALGER`. ENSTA was
+  created by décret exécutif 22-314 (12 September 2022) and décret exécutif
+  22-398 (21 November 2022) dissolved both ENST and ESSA Alger into it,
+  transferring their property, rights, obligations, personnel and resources. The
+  placement file lists only `P05`, so the two listed records were this one
+  establishment's predecessors rather than its peers: they leave, ENSTA is added
+  as `00189`, and `00069` and `00085` are retired and forwarded to it in
+  `packages/enseignement-superieur/data/retired-ids.json`. The rule is the
+  `successions` block in `scripts/seeds/bac-2026.json`, and it asserts both old
+  names, so a listing that has caught up fails the build rather than silently
+  dropping records it still publishes.
 - **the other 125 resolve to a record the package already ships.** More than one
   row per establishment is normal, because the ministry splits an establishment's
   offers: the veterinary institutes inside Batna 1 (`E39`), Constantine 1
@@ -93,23 +102,23 @@ package already ships is left alone unless a seed rule names it, because the
 listing is the enumerable source for websites and the placement file publishes
 none.
 
-## What the 188 is (vs the ministry's "117 établissements")
+## What the 187 is (vs the ministry's "117 établissements")
 
 mesrs.dz/fr/agregats-2/ (2024-2025 figures) says **117 établissements**:
 55 universités + 13 centres universitaires + 40 ENS + 9 écoles nationales
-supérieures. Our package ships **188**. The two numbers count different things:
+supérieures. Our package ships **187**. The two numbers count different things:
 
 | Slice of the package | Count | In the ministry's 117? |
 | --- | --- | --- |
-| Public MESRS network (EN listing) | 110 | yes — this is its universe |
-| Institutions the BAC 2026 placement file supplied | 11 | partly — MESRS network establishments the listing omits, plus 2 under other ministries |
+| Public MESRS network (EN listing, less the 2 records ENSTA succeeded) | 108 | yes, this is its universe |
+| Institutions the BAC 2026 placement file supplied | 12 | partly: MESRS network establishments the listing omits, plus 2 under other ministries. One of the 12 is ENSTA, which succeeded 2 of the listed records above |
 | Private licensed institutions (AR listing) | 19 | no |
 | Other-ministry establishments (AR listing + BAC 2026): Santé 25, Défense 16, Culture 5, Poste/Télécoms 2, Travail 1, Jeunesse 1 | 50 | no |
 
 Within the public network vs their 117 the residual gap is **category
 accounting, not missing records**: the agregats page's 40 "ENS" bucket folds in
 the écoles normales that the network listing presents inside regional groupings
-we classify by name (our split: 59 universités, 111 grandes écoles, 13 ENS, 5
+we classify by name (our split: 59 universités, 110 grandes écoles, 13 ENS, 5
 centres universitaires). The ministry's own aggregates are not internally
 consistent either (an older cut says 106), so the **enumerable listings we ship
 are the source of truth**, and the aggregate is used only as an
@@ -122,18 +131,19 @@ order-of-magnitude cross-check.
   source FR names per institution (their own sites / JORA licensing decrees).
   The BAC 2026 file names six of them in French (`D02` to `D07`), so a later
   pass can close part of this gap from the committed projection.
-- **3 of the 11 institutions the BAC 2026 file supplied ship `name_ar: null`**
+- **3 of the 12 institutions the BAC 2026 file supplied ship `name_ar: null`**
   (their sites did not answer and they have no Wikidata item). A translation is
   never published in their place.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  72 campus, 20 commune, 96 wilaya.
+  71 campus, 20 commune, 96 wilaya.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
-  2026-08-03, so it omits the 11 establishments the placement file names and
-  still lists two schools that décret exécutif 22-398 dissolved in 2022
+  2026-08-03, so it omits the 12 establishments the placement file names and
+  still lists the two schools that décret exécutif 22-398 dissolved in 2022
   (`P05` above). Re-run `fetch` without `--cache` once it answers, and re-triage
-  the placement file against it.
-- **Résidences universitaires (ONOU)**: scouted 2026-08-03, NO-GO — ONOU
+  the placement file against it; the `successions` rule will fail loudly if the
+  listing has dropped the two predecessors by then.
+- **Résidences universitaires (ONOU)**: scouted 2026-08-03, NO-GO: ONOU
   publishes aggregates only (467 résidences, no directory). If mapped, it will
   be OSM-sourced with the 467 as the honest denominator, as a separate layer.

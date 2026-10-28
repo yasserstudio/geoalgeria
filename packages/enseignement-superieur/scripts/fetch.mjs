@@ -185,22 +185,27 @@ async function main() {
   const bac = readBacInstitutions();
   const bacSeed = readSeed(BAC_SEED_FILE);
 
+  // A listed name as this package would publish it: the listing writes an en dash
+  // where a published name takes " - ", and no tracked file here may carry one
+  // (AGENTS.md, "Don't"). Used to assert the name a seed rule expects to find,
+  // rather than assume it, so a rule the ministry has overtaken fails the build
+  // instead of silently overwriting a newer name or dropping a live record.
+  const asPublished = (s) => String(s).replace(/\s*[\u2013\u2014]\s*/g, " - ");
+  const assertListed = (where, key, expect) => {
+    const i = insts.findIndex((inst) => instKey(inst) === key);
+    if (i < 0) throw new Error(`${where}: no listed institution has key ${key}`);
+    if (asPublished(insts[i].name) !== asPublished(expect))
+      throw new Error(`${where}: expected the listing to still say\n  ${expect}\nbut it says\n  ${insts[i].name}`);
+    return i;
+  };
+
   // 1. Renames. Keyed by instKey (website host), so the record keeps its website
   //    and therefore its carried id: a rename moves a name, never a join key.
   let nRenamed = 0;
   for (const [code, rule] of Object.entries(bacSeed.renames ?? {})) {
     const where = `seeds/bac-2026.json renames.${code}`;
     assertBacName(code, rule.name, bac, where);
-    const inst = insts.find((i) => instKey(i) === rule.key);
-    if (!inst) throw new Error(`${where}: no listed institution has key ${rule.key}`);
-    // The old name is asserted, not assumed: if MESRS has since renamed it
-    // upstream, this rule is stale and the build says so instead of silently
-    // overwriting a newer name. Compared on the separator the package publishes,
-    // because the listing writes an en dash there and no tracked file here is
-    // allowed to carry one (AGENTS.md, "Don't").
-    const asPublished = (s) => String(s).replace(/\s*[\u2013\u2014]\s*/g, " - ");
-    if (asPublished(inst.name) !== asPublished(rule.expect))
-      throw new Error(`${where}: expected the listing to still say\n  ${rule.expect}\nbut it says\n  ${inst.name}`);
+    const inst = insts[assertListed(where, rule.key, rule.expect)];
     inst.name = rule.name;
     Object.assign(inst, classifyType(rule.name));
     // The listing supplies the record, the placement file its current name, so
@@ -208,6 +213,30 @@ async function main() {
     // metadata.sources[].
     inst.source_key = "mesrs+bac-2026";
     nRenamed++;
+  }
+
+  // 1b. Successions. An establishment the placement file names and the listing
+  //     still carries as the predecessors a decree dissolved into it. Unlike a
+  //     rename, this is not one record's name moving: the predecessors leave the
+  //     listing here, the successor is built from the placement file below, and
+  //     each predecessor's published id is retired and forwarded to it after the
+  //     ids settle, so a consumer holding an old join key arrives at the record
+  //     that carries the establishment now. Three records for one school, which
+  //     is what the stale listing would otherwise produce, is the thing this
+  //     prevents.
+  const successions = [];
+  for (const [code, rule] of Object.entries(bacSeed.successions ?? {})) {
+    const where = `seeds/bac-2026.json successions.${code}`;
+    assertBacName(code, rule.name, bac, where, rule.source_spelling ?? null);
+    if (!rule.supersedes?.length)
+      throw new Error(`${where}: a succession must name at least one superseded listed institution`);
+    const superseded = [];
+    for (const pred of rule.supersedes) {
+      const i = assertListed(where, pred.key, pred.expect);
+      superseded.push(insts[i]);
+      insts.splice(i, 1);
+    }
+    successions.push({ code, rule, where, superseded });
   }
 
   const seed = readSeed(SEED);
@@ -353,9 +382,19 @@ async function main() {
   //    version and timestamp it was read at, and nothing else is accepted as
   //    exact; otherwise the record lands on its commune's or wilaya's flagship
   //    centroid with the reason recorded in the seed.
+  //
+  //    A succession's successor is built here too: it is a placement-file record
+  //    like any other, with the same name, Arabic-name and placement rules. What
+  //    is particular to it is only what step 1b did (its predecessors left the
+  //    listing) and what the ledger does below (their ids forward to it).
   const bacCount = records.length;
-  for (const [code, add] of Object.entries(bacSeed.additions ?? {})) {
-    const where = `seeds/bac-2026.json additions.${code}`;
+  const bacEntries = [
+    ...Object.entries(bacSeed.additions ?? {}).map(([code, add]) => ({
+      code, add, where: `seeds/bac-2026.json additions.${code}`,
+    })),
+    ...successions.map((s) => ({ code: s.code, add: s.rule, where: s.where })),
+  ];
+  for (const { code, add, where } of bacEntries) {
     assertBacName(code, add.name, bac, where, add.source_spelling ?? null);
     const p = add.place ?? {};
     let lat = null, lng = null, wilaya_code = null, commune = null, precision = null;
@@ -398,9 +437,15 @@ async function main() {
       geo_precision: precision,
       source: PAGE_BAC,
       source_key: "bac-2026",
+      // Only a succession's successor carries this, so the ledger below can find
+      // the record each retired predecessor forwards to without matching on name.
+      succession: successions.find((s) => s.code === code) ?? null,
     });
   }
-  console.log(`  added ${records.length - bacCount} institutions from the BAC 2026 file, renamed ${nRenamed}`);
+  console.log(
+    `  added ${records.length - bacCount} institutions from the BAC 2026 file, renamed ${nRenamed}` +
+      `, superseded ${successions.reduce((n, s) => n + s.superseded.length, 0)} listed record(s) by ${successions.length} successor(s)`,
+  );
 
   // Sort by type then name, so the listing reads the way it always has.
   const TYPE_ORDER = { universite: 0, grande_ecole: 1, ens: 2, centre_universitaire: 3 };
@@ -415,6 +460,7 @@ async function main() {
   // new record can never land on a reserved slot.
   const committed = readCommitted(DATA, "institutions.json");
   const retiredIds = readRetiredIds(DATA);
+  const retiredMigrations = readRetiredMigrations(DATA);
   const idByKey = new Map(committed.map((r) => [carryKey(r), String(r.id)]));
   const reserved = new Set([...retiredIds, ...committed.map((r) => String(r.id))].map(String));
   // Every id this package has ever issued is a zero-padded integer, and the mint
@@ -467,6 +513,35 @@ async function main() {
   // already the carried ones, so this is the check that proves it rather than a
   // second assignment.
   carryOverIds(rows, committed, carryKey, "enseignement-superieur", retiredIds);
+
+  // The decree's successions, in the ledger. carryOverIds has already reserved
+  // each superseded record's id, because its carry key is no longer in the data;
+  // what it cannot know is that the record did not disappear but was folded into
+  // another one, so each is forwarded here. `rows` is `records` mapped one for
+  // one and in the same order, which is what links a successor's row back to the
+  // listed institutions it replaced.
+  for (const [i, r] of records.entries()) {
+    if (!r.succession) continue;
+    const heir = String(rows[i].id);
+    const { superseded, rule, where } = r.succession;
+    for (const pred of superseded) {
+      const was = idByKey.get(carryKey({ name: pred.name, name_ar: null, website: pred.website }));
+      if (was == null)
+        throw new Error(`${where}: ${instKey(pred)} holds no published id, so there is nothing to forward`);
+      if (!retiredIds.has(was))
+        throw new Error(`${where}: ${was} was not retired by carry-over; its carry key is still live`);
+      const others = superseded.filter((p) => p !== pred).map((p) => p.name);
+      forwardRetiredId(
+        retiredMigrations,
+        was,
+        heir,
+        `Merged into ${heir}, ${rule.name}, which carries this establishment now` +
+          (others.length ? `, as it does ${others.join(" and ")}` : "") +
+          `. ${rule.why}`,
+      );
+    }
+  }
+
   const { records: out, metadata } = writePackageV2({
     pkg: "enseignement-superieur",
     dir: DATA,
@@ -478,6 +553,7 @@ async function main() {
     updated,
     retrieved,
     retiredIds,
+    retiredMigrations,
   });
 
   console.log(`\nType breakdown:`);

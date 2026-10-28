@@ -1,5 +1,5 @@
 {
-  "_comment": "Records the MESRS BAC 2026 placement file holds that the ministry's university-network listing does not, plus the two it renamed. IDENTITY IS NOT TYPED HERE: every `name` below is checked by scripts/bac-2026.mjs against the committed projection in sources/enseignement-superieur/bac-2026.json (assertBacName), which refuses any name that does not fold to the row MESRS published under that establishment code, so this file only restores French accents and capitalisation that the all-caps source drops. `name_ar` comes from the institution's own site or from Wikidata, cited per record in `name_ar_source`, and is null where neither could be read: it is never machine-translated. `place` follows docs/adr/0001: `campus` only where an open source places that institution's own campus (its own OpenStreetMap object, cited with id, version and timestamp), otherwise `commune` or `wilaya` with the reason in `why`. The four Sidi Abdellah schools were checked one by one: three carry their own OSM building and the fourth does not, so it is placed on its commune and NOT on the shared tech-pole point (OSM way/387256106), which would be a borrowed coordinate.",
+  "_comment": "Records the MESRS BAC 2026 placement file holds that the ministry's university-network listing does not, plus the two it renamed and the one it shows to have succeeded two listed establishments. IDENTITY IS NOT TYPED HERE: every `name` below is checked by scripts/bac-2026.mjs against the committed projection in sources/enseignement-superieur/bac-2026.json (assertBacName), which refuses any name that does not fold to the row MESRS published under that establishment code, so this file only restores French accents and capitalisation that the all-caps source drops. `name_ar` comes from the institution's own site or from Wikidata, cited per record in `name_ar_source`, and is null where neither could be read: it is never machine-translated. `place` follows docs/adr/0001: `campus` only where an open source places that institution's own campus (its own OpenStreetMap object, cited with id, version and timestamp), otherwise `commune` or `wilaya` with the reason in `why`. The four Sidi Abdellah schools were checked one by one: three carry their own OSM building and the fourth does not, so it is placed on its commune and NOT on the shared tech-pole point (OSM way/387256106), which would be a borrowed coordinate.",
   "renames": {
     "P12": {
       "key": "esti-annaba.dz",
@@ -12,6 +12,40 @@
       "name": "Ecole nationale supérieure d'agriculture saharienne d'El Oued",
       "expect": "L’Ecole supérieure de l’agriculture saharienne - El Oued",
       "why": "MESRS BAC 2026 lists establishment P74 under its current name; the record keeps its id and its website, so its public join key is unchanged."
+    }
+  },
+  "successions": {
+    "P05": {
+      "name": "Ecole nationale supérieure des technologies avancées (Alger)",
+      "name_ar": "المدرسة الوطنية العليا للتكنولوجيات المتقدمة",
+      "name_ar_source": "https://ensta.edu.dz/ (the institution's own site, read 2026-10-28: the school names itself this way in its own Arabic announcements). Wikidata Q135398220 is the ENSTA item but carries no Arabic label, only an English one.",
+      "website": "https://ensta.edu.dz/",
+      "sector": "public",
+      "supervisory_ministry": null,
+      "supersedes": [
+        {
+          "key": "enst.dz",
+          "expect": "Ecole Nationale Supérieure de Technologie"
+        },
+        {
+          "key": "essa-alger.dz",
+          "expect": "Ecole Supérieure des Sciences appliquées d’Alger ex EP ST Alger"
+        }
+      ],
+      "why": "Succeeded by décret exécutif 22-398 of 21 November 2022, which dissolved the Ecole nationale supérieure de technologie and the Ecole supérieure en sciences appliquées d'Alger and transferred their property, rights, obligations, personnel and resources to the Ecole nationale supérieure des technologies avancées, created by décret exécutif 22-314 of 12 September 2022 (both in Journal officiel n° 78, 2022). The MESRS BAC 2026 placement file lists only establishment P05, so the ministry places bacheliers into the successor alone, while the 2026-08-03 network listing still carries both predecessors. They are therefore not peers of P05 but the same establishment before the decree: their records leave and their ids are forwarded to this one in data/retired-ids.json, rather than three records co-existing for one school.",
+      "place": {
+        "precision": "campus",
+        "lat": 36.7761552,
+        "lng": 3.2581993,
+        "osm": "way/245174987",
+        "osm_version": 8,
+        "osm_timestamp": "2023-05-13T09:24:11Z",
+        "wilaya_code": 16,
+        "osm_name": "Ecole Nationale Supérieure de Technologie ENST",
+        "why": "ENSTA publishes its seat as \"Cité Diplomatique, ex Centre biomédical, Dergana - Bordj El Kiffan, Alger\" (its own plan-de-lecole page and the letterhead of its scientific-council minutes). This OSM object is amenity=college with addr:street=Cité Diplomatique, addr:city=Dergana and operator=Ministère de l'Enseignement Supérieur et de la Recherche Scientifique, so the tie is the school's own published seat address and not a name match. Nominatim returns exactly one such object, so it is unambiguous. Its name tag still reads the dissolved ENST (see osm_name above): the decree transferred the campus to ENSTA, which is why this point is accepted as the successor's own campus, and the stale tag is an OSM edit owed upstream. No Wikidata P625 exists for ENSTA. The school's second site, the ex-ESSA building at Bab El Oued, is NOT published as a second record: one establishment is one record, and the decree's seat is Dergana.",
+        "osm_search": "Nominatim search for \"Technologies Avancees Alger ecole\", \"ENSTA Alger\", \"ENSTA Dergana\", \"ENSTA Bordj El Bahri\" and the Arabic name all return nothing, so no OSM object carries ENSTA's name; the object above was reached from the seat address and read back from api.openstreetmap.org for its version and timestamp."
+      },
+      "note": "The commune label is the flagship nearest-centre join's answer for this point, as it is for every record here; the school's own address names Dergana, in Bordj El Kiffan."
     }
   },
   "additions": {

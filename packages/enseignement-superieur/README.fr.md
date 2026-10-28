@@ -12,7 +12,7 @@
 
 </div>
 
-188 établissements d'enseignement supérieur à travers l'Algérie – **universités**, grandes
+187 établissements d'enseignement supérieur à travers l'Algérie – **universités**, grandes
 écoles, écoles normales supérieures, centres universitaires, les **institutions privées
 agréées**, et les établissements **relevant d'autres ministères** (Défense, Santé, Culture…)
 que le MESRS supervise – chacun avec son nom (français et/ou arabe), son **type**
@@ -28,7 +28,7 @@ npm install @geoalgeria/enseignement-superieur
 ```js
 import es from "@geoalgeria/enseignement-superieur";
 
-const all = es.institutions();                  // 188
+const all = es.institutions();                  // 187
 const inAlgiers = es.institutionsByWilaya(16);   // établissements de la wilaya 16
 const universities = es.institutionsByType("universite"); // toutes les universités
 const privates = es.institutionsBySector("private");      // les 19 établissements privés
@@ -48,12 +48,12 @@ const privates = es.institutionsBySector("private");      // les 19 établisseme
 | Type | Code | Nombre |
 | --- | --- | --- |
 | Université | `universite` | 59 |
-| Grande école | `grande_ecole` | 111 |
+| Grande école | `grande_ecole` | 110 |
 | École normale supérieure | `ens` | 13 |
 | Centre universitaire | `centre_universitaire` | 5 |
-| **Total** | | **188** |
+| **Total** | | **187** |
 
-Par **secteur** : 169 publiques · 19 privées agréées. Parmi les établissements publics, 50 relèvent
+Par **secteur** : 168 publiques · 19 privées agréées. Parmi les établissements publics, 50 relèvent
 **d'autres ministères** que le MESRS qu'il supervise pédagogiquement – lisez `supervisory_ministry`
 (ex. `"Ministère de la Santé"` pour les 25 instituts paramédicaux, `"Ministère de la Défense nationale"`
 pour les 16 écoles militaires), qui est `null` pour le réseau MESRS lui-même.
@@ -75,7 +75,7 @@ fournie ici** et étiquetée honnêtement sur chaque enregistrement via `geo_met
 
 | `geo_method` | Nombre | `geo_precision` | Ce que représente la coordonnée |
 | --- | --- | --- | --- |
-| `campus` | 72 | `exact` | Un point OpenStreetMap propre au campus de cet établissement, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
+| `campus` | 71 | `exact` | Un point OpenStreetMap propre au campus de cet établissement, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
 | `commune` | 20 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria`, utilisé quand aucune source ouverte ne situe le campus lui-même. |
 | `wilaya` | 96 | `approximate` | Le centroïde de la wilaya de l'établissement, solution de repli quand seule la wilaya est connue. Presque chaque établissement privé/relevant d'autres ministères s'y trouve, car la source ne publie pas d'adresse pour eux. |
 
@@ -108,10 +108,11 @@ Les fichiers **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inc
 
 ```
 data/
-  institutions.json            # 188 établissements (tableau)
+  institutions.json            # 187 établissements (tableau)
   metadata.json                # sources, comptages, by_type, by_sector, by_geo_method, updated
+  retired-ids.json             # ids qu’aucun enregistrement ne peut reprendre, chacun renvoyé vers l’id qui porte désormais l’établissement
   csv/institutions.csv         # dépôt + bundle Release (pas dans le tarball npm)
-  geojson/institutions.geojson # Entités point (les 188 placées ; 72 géocodées au campus, voir geo_method)
+  geojson/institutions.geojson # Entités point (les 187 placées ; 71 géocodées au campus, voir geo_method)
 ```
 
 ## Structure d'un enregistrement
@@ -174,8 +175,11 @@ coordonnées sont dérivées d'OpenStreetMap – voir **Noms et coordonnées** c
 phase)*, [publié en PDF de 350 pages](https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf),
 qui nomme chaque établissement où le ministère affecte les nouveaux bacheliers, par le code
 d'établissement du ministère lui-même. Il décrit le réseau tel qu'il est aujourd'hui : il apporte
-donc **11 établissements** que la page du réseau omet et le **nom actuel de 2** qu'elle liste
-encore sous un nom plus ancien. Ce qui en est versionné est une projection respectueuse des
+donc **12 établissements** que la page du réseau omet, le **nom actuel de 2** qu'elle liste
+encore sous un nom plus ancien, et **une succession** : l'ENSTA (`P05`), que le décret exécutif
+22-398 a faite l'héritière des deux écoles d'Alger qu'il a dissoutes et que la page du réseau
+liste toujours séparément. Ces deux enregistrements disparaissent donc et leurs ids sont
+renvoyés vers l'ENSTA dans `data/retired-ids.json`. Ce qui en est versionné est une projection respectueuse des
 droits de ses lignes d'établissements, `sources/enseignement-superieur/bac-2026.json` : le code
 d'établissement et le nom officiel français seulement, jamais les moyennes minimales par filière
 et jamais le PDF, l'URL du PDF, son SHA-256, sa taille et son nombre de pages étant consignés

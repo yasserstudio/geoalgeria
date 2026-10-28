@@ -1910,34 +1910,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.2581993,
-          36.7761552
-        ]
-      },
-      "properties": {
-        "id": "00069",
-        "name": "Ecole Nationale Supérieure de Technologie",
-        "name_ar": null,
-        "wilaya_code": "16",
-        "commune_code": null,
-        "commune": "Bordj El Bahri",
-        "lat": 36.7761552,
-        "lng": 3.2581993,
-        "geo_precision": "exact",
-        "geo_method": "campus",
-        "source": "mesrs",
-        "type": "grande_ecole",
-        "type_label_fr": "Grande école",
-        "sector": "public",
-        "supervisory_ministry": null,
-        "website": "http://www.enst.dz/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           7.7667,
           36.9
         ]
@@ -2351,34 +2323,6 @@
         "sector": "public",
         "supervisory_ministry": null,
         "website": "http://www.epsecg-tlemcen.dz/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.0613066,
-          36.7885836
-        ]
-      },
-      "properties": {
-        "id": "00085",
-        "name": "Ecole Supérieure des Sciences appliquées d’Alger ex EP ST Alger",
-        "name_ar": null,
-        "wilaya_code": "16",
-        "commune_code": null,
-        "commune": "Casbah",
-        "lat": 36.7885836,
-        "lng": 3.0613066,
-        "geo_precision": "exact",
-        "geo_method": "campus",
-        "source": "mesrs",
-        "type": "grande_ecole",
-        "type_label_fr": "Grande école",
-        "sector": "public",
-        "supervisory_ministry": null,
-        "website": "http://www.essa-alger.dz/"
       }
     },
     {
@@ -5263,6 +5207,34 @@
         "sector": "public",
         "supervisory_ministry": null,
         "website": "https://www.ens-saida.dz/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2581993,
+          36.7761552
+        ]
+      },
+      "properties": {
+        "id": "00189",
+        "name": "Ecole nationale supérieure des technologies avancées (Alger)",
+        "name_ar": "المدرسة الوطنية العليا للتكنولوجيات المتقدمة",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": "Bordj El Bahri",
+        "lat": 36.7761552,
+        "lng": 3.2581993,
+        "geo_precision": "exact",
+        "geo_method": "campus",
+        "source": "bac-2026",
+        "type": "grande_ecole",
+        "type_label_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
+        "website": "https://ensta.edu.dz/"
       }
     }
   ]
