@@ -90,15 +90,37 @@ re-fetch. The trade-off of projecting at parse time is that a parser fix is not
 exercised by a `--cache` rebuild; re-run live once after changing one.
 
 The two MJS GeoServer captures (`sports/sig-infrastructures.json`,
-`jeunesse/sig-etablissements.json`) keep the geometry and every source property
-as received, and drop one field: the per-request feature id GeoServer mints
-(`<layer>.fid-5ffd9fe9_1a17f142549_80d`). Two pulls 90 seconds apart changed all
-2,337 of them, so keeping it would make every no-change refresh a whole-file
-diff; without it those two pulls capture byte-identically. Features are sorted by
-`properties.id`, the stable per-record UUID, so a server-side reorder stays a
-no-op. Both layers answer only from an Algerian vantage point, which is the
-reason the capture matters more here than elsewhere: with it, the refresh is
-reviewed and rebuilt offline long after the window closes.
+`jeunesse/sig-etablissements.json`) are a key whitelist, not a single drop.
+`canonicalizeMjsLayer()` keeps exactly the top-level `type`, `totalFeatures` and
+`features`, and per feature its `type`, `geometry`, `geometry_name` and the whole
+`properties` object as received. Every other key is dropped: today that is the
+per-request feature id GeoServer mints
+(`<layer>.fid-5ffd9fe9_1a17f142549_80d`), and tomorrow it is any top-level key
+the endpoint starts sending, a GeoServer `crs` or `bbox` included. An unknown key
+is dropped rather than refused on purpose, so the next live pull cannot be lost
+to a schema surprise during the vantage-point window; review catches it as the
+capture losing something it had.
+
+Dropping the feature id is what makes a no-change refresh a no-change diff: two
+pulls 90 seconds apart changed all 2,337 of them, and without it those two pulls
+capture byte-identically. Features are sorted by `properties.id`, the stable
+per-record UUID, so a server-side reorder stays a no-op; a row with no
+`properties.id` sorts last, after its own canonical body breaks the tie, so even
+an unidentified row cannot carry server arrival order into the file. Both layers
+answer only from an Algerian vantage point, which is why the capture matters more
+here than elsewhere: it replays offline with `--cache` long after the window
+closes.
+
+Replaying is not rebuilding. Both `--cache` runs currently abort in
+`applyReviewedOverrides` on a review decision gone stale by absorption (sports
+`facilities.json/01663`, jeunesse `institutions.json/00728`, each expecting
+wilaya 14 where the build now derives 64 with commune 1439), before either
+package writes anything, so neither dataset has been promoted from these
+captures. Retiring those decisions edits the #209 audit gate, so both are parked
+for batch 2026-16; `refresh-schedule.json` carries the reason per package. Owed
+in 2026-16, once the rebuild runs again: a gate that proves a live pull replays
+byte-identically to the committed capture end to end, rather than only at the
+projection, which is all `test/mjs-sig-capture.test.mjs` pins today.
 
 Remaining packages convert as they are
 next touched — their raw pulls still land in gitignored `research/<pkg>/`

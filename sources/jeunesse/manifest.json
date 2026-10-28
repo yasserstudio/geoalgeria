@@ -1,7 +1,7 @@
 {
   "sig-etablissements": {
     "bytes": 6001342,
-    "note": "Trimmed projection: GeoServer's per-request feature id is dropped (it changes on every pull) and features are sorted by the stable properties.id. Geometry and all source properties are kept as received.",
+    "note": "Trimmed projection, a key whitelist rather than a single drop. Kept: the top-level type, totalFeatures and features; per feature its type, geometry, geometry_name and the whole properties object as received. Dropped: GeoServer's per-request feature id (it changes on every pull) and any other top-level key the endpoint may add, crs included. Features are sorted by the stable properties.id, with their own canonical body as the tie-break.",
     "records": 2337,
     "retrieved": "2026-10-27",
     "sha256": "62f0d255694fa5b34325e742c459cba724619f2754b81b1ae11f5caff952bb5b",

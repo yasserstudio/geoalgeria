@@ -8,6 +8,7 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 
 import {
   canonicalizeMjsLayer,
@@ -15,7 +16,7 @@ import {
   readMjsCapture,
   MJS_SOURCE,
 } from "../scripts/lib/mjs-sig.mjs";
-import { stableStringify, captureMeta } from "../scripts/lib/source-store.mjs";
+import { stableStringify, captureMeta, captureSha256 } from "../scripts/lib/source-store.mjs";
 
 // A layer answer in the shape GeoServer returns it: a volatile per-request
 // feature id, a stable properties.id, and whatever order the server felt like.
@@ -80,6 +81,38 @@ test("a feature with no properties.id sorts last instead of throwing", () => {
   assert.equal(canonical.features[0].properties.id, "aaa");
 });
 
+test("id-less features order by their own body, not by arrival", () => {
+  const orphan = (nom) => ({
+    type: "Feature",
+    id: "infrastructures_sportives.fid-5ffd9fe9_1a17f142549_80d",
+    geometry: { type: "Point", coordinates: [3.05, 36.75] },
+    geometry_name: "geom",
+    properties: { nomination_de_linfrastructure: nom },
+  });
+  const forward = canonicalizeMjsLayer(answer([orphan("Piscine"), orphan("Stade")]));
+  const reversed = canonicalizeMjsLayer(answer([orphan("Stade"), orphan("Piscine")]));
+  assert.deepEqual(
+    forward.features.map((f) => f.properties.nomination_de_linfrastructure),
+    ["Piscine", "Stade"],
+  );
+  assert.equal(stableStringify(forward), stableStringify(reversed));
+});
+
+test("a top-level key outside the whitelist is dropped, not refused", () => {
+  const canonical = canonicalizeMjsLayer({
+    ...answer([feature("aaa", "80d")]),
+    crs: { type: "name", properties: { name: "urn:ogc:def:crs:EPSG::4326" } },
+    bbox: [-9, 18, 12, 38],
+  });
+  assert.deepEqual(Object.keys(canonical).sort(), ["features", "totalFeatures", "type"]);
+  assert.deepEqual(Object.keys(canonical.features[0]).sort(), [
+    "geometry",
+    "geometry_name",
+    "properties",
+    "type",
+  ]);
+});
+
 test("the layer URL requests the whole country as GeoJSON", () => {
   const url = mjsLayerUrl("etablissements_de_jeunes");
   assert.match(url, /^https:\/\/sig\.mjs\.gov\.dz\/api\/v1\.0\/geoserver\/public\/wms\?/);
@@ -105,6 +138,16 @@ for (const [pkg, capture, minExpected] of [
     assert.equal(new Set(features.map((f) => f.properties.id)).size, features.length);
     // The volatile GeoServer id is not committed.
     assert.equal(features.some((f) => "id" in f), false);
+  });
+
+  // The body tie-break must be a no-op on what is already committed: both
+  // captures carry a properties.id on every row, so re-projecting the committed
+  // file has to reproduce its recorded sha256 exactly.
+  test(`${pkg} re-canonicalizes to its committed sha256`, () => {
+    const stored = JSON.parse(
+      readFileSync(new URL(`../sources/${pkg}/${capture}.json`, import.meta.url), "utf-8"),
+    );
+    assert.equal(captureSha256(canonicalizeMjsLayer(stored)), captureMeta(pkg, capture).sha256);
   });
 
   test(`${pkg} replay refuses a capture below the floor`, () => {

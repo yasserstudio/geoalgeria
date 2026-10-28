@@ -7,8 +7,17 @@
 //
 // The server answers only from an Algerian vantage point, so a refresh depends
 // on a narrow window. Each pull is therefore captured under sources/<pkg>/ the
-// moment it arrives, before any validation that could abort the run, and both
-// packages rebuild from that capture with --cache. Convention:
+// moment it arrives, before any validation that could abort the run, so the
+// capture replays offline with --cache long after the window closes. The
+// rebuild itself is held: both --cache runs abort in applyReviewedOverrides on
+// a review decision gone stale by absorption (sports facilities.json/01663,
+// jeunesse institutions.json/00728, each expecting wilaya 14 where the build
+// now derives 64 with commune 1439), before either package writes anything.
+// Retiring those decisions edits the #209 audit gate, so both are parked for
+// batch 2026-16; refresh-schedule.json carries the full reason per package.
+// Owed in 2026-16, once the rebuild runs again: a gate that proves a live pull
+// replays byte-identically to the committed capture end to end. The tests pin
+// the projection only (test/mjs-sig-capture.test.mjs). Convention:
 // sources/README.md.
 //
 // The capture is a reviewed projection, not the bytes as received: GeoServer
@@ -20,7 +29,7 @@
 // UUID, which is also what the features are sorted by so a server-side reorder
 // stays a no-op.
 
-import { writeCapture, readCapture } from "./source-store.mjs";
+import { writeCapture, readCapture, stableStringify } from "./source-store.mjs";
 
 const WMS_BASE = "https://sig.mjs.gov.dz/api/v1.0/geoserver/public/wms";
 
@@ -32,9 +41,12 @@ const UA =
   "(KHTML, like Gecko) Chrome/120.0 Safari/537.36";
 
 const CAPTURE_NOTE =
-  "Trimmed projection: GeoServer's per-request feature id is dropped (it changes " +
-  "on every pull) and features are sorted by the stable properties.id. Geometry " +
-  "and all source properties are kept as received.";
+  "Trimmed projection, a key whitelist rather than a single drop. Kept: the " +
+  "top-level type, totalFeatures and features; per feature its type, geometry, " +
+  "geometry_name and the whole properties object as received. Dropped: " +
+  "GeoServer's per-request feature id (it changes on every pull) and any other " +
+  "top-level key the endpoint may add, crs included. Features are sorted by the " +
+  "stable properties.id, with their own canonical body as the tie-break.";
 
 /** GetMap URL for a layer, the whole country in one request. */
 export function mjsLayerUrl(layer) {
@@ -47,11 +59,21 @@ export function mjsLayerUrl(layer) {
 }
 
 /**
- * Order features by the stable record UUID and drop the volatile fid. A feature
- * carrying no properties.id is kept and sorted after the identified ones rather
- * than throwing: the capture must survive whatever the ministry's GIS emits, and
- * the fetchers' own validation is what rejects an unusable row. Keeping it last
- * also means such a row cannot shift the identified ones in the diff.
+ * Project a layer answer onto the keys the build reads, then order it.
+ *
+ * This is a whitelist, not a single drop. Kept: the top-level `type`,
+ * `totalFeatures` and `features`; per feature its `type`, `geometry`,
+ * `geometry_name` and the whole `properties` object as received. Everything
+ * else goes, which is GeoServer's volatile per-request feature `id` today and
+ * any other top-level key the endpoint may start sending (`crs`, `bbox`,
+ * `links`) tomorrow. It does not throw on an unknown key on purpose: the next
+ * live pull has to survive whatever the ministry's GIS emits, and a new key
+ * would show up in review as the capture losing nothing it had.
+ *
+ * A feature carrying no properties.id is kept and sorted after the identified
+ * ones rather than throwing, for the same reason; the fetchers' own validation
+ * is what rejects an unusable row. Keeping it last also means such a row cannot
+ * shift the identified ones in the diff.
  *
  * Exported for test/mjs-sig-capture.test.mjs, which pins the projection.
  */
@@ -60,21 +82,33 @@ export function canonicalizeMjsLayer(raw) {
     const id = f?.properties?.id;
     return id == null || id === "" ? null : String(id);
   };
+  // Project before sorting, so the tie-break below reads the body that is
+  // committed and never the volatile per-request fid.
+  const features = raw.features.map((f) => ({
+    type: f.type,
+    geometry: f.geometry,
+    geometry_name: f.geometry_name,
+    properties: f.properties,
+  }));
+  // Rows with no properties.id (or, were the GIS ever to repeat one) used to
+  // compare equal and so kept server arrival order, which is not a property of
+  // the data: two pulls could then capture differently with nothing changed
+  // upstream. Their own canonical body breaks the tie instead.
+  const bodies = new Map(features.map((f) => [f, stableStringify(f, 0)]));
   return {
     type: raw.type,
     totalFeatures: raw.totalFeatures,
-    features: [...raw.features]
-      .sort((a, b) => {
-        const [x, y] = [idOf(a), idOf(b)];
-        if (x === null || y === null) return x === y ? 0 : x === null ? 1 : -1;
-        return x.localeCompare(y);
-      })
-      .map((f) => ({
-        type: f.type,
-        geometry: f.geometry,
-        geometry_name: f.geometry_name,
-        properties: f.properties,
-      })),
+    features: features.sort((a, b) => {
+      const [x, y] = [idOf(a), idOf(b)];
+      if (x !== null && y !== null) {
+        const byId = x.localeCompare(y);
+        if (byId !== 0) return byId;
+      } else if (x !== y) {
+        return x === null ? 1 : -1;
+      }
+      const [ba, bb] = [bodies.get(a), bodies.get(b)];
+      return ba < bb ? -1 : ba > bb ? 1 : 0;
+    }),
   };
 }
 
