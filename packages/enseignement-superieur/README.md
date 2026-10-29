@@ -109,7 +109,7 @@ data/
   metadata.json                # sources, counts, by_type, by_sector, by_geo_method, updated
   retired-ids.json             # ids no record may hold again, each forwarded to the id that carries the establishment now
   csv/institutions.csv         # repo + Release bundle (not in npm tarball)
-  geojson/institutions.geojson # Point features (all 171 placed; 98 campus-geocoded, see geo_method)
+  geojson/institutions.geojson # Point features (all 171 placed; 99 campus-geocoded, see geo_method)
 ```
 
 ## Record shape

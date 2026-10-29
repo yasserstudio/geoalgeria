@@ -3198,8 +3198,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.0567333,
-          36.7508896
+          5.0767555,
+          36.7590953
         ]
       },
       "properties": {
@@ -3208,11 +3208,11 @@
         "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي ببجاية",
         "wilaya_code": "06",
         "commune_code": null,
-        "commune": null,
-        "lat": 36.7508896,
-        "lng": 5.0567333,
-        "geo_precision": "approximate",
-        "geo_method": "wilaya",
+        "commune": "Bejaia",
+        "lat": 36.7590953,
+        "lng": 5.0767555,
+        "geo_precision": "exact",
+        "geo_method": "campus",
         "source": "mesrs",
         "type": "grande_ecole",
         "type_label_fr": "Grande école",

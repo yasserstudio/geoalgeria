@@ -199,12 +199,12 @@ leaves out every institution the Ministry of National Defence supervises and
 their ids stay reserved in `data/retired-ids.json`.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 73
-approximate records (64 `wilaya`, 9 `commune`) are in it exactly once:
+written offline and byte for byte by `precision-review.mjs` next to it. All 72
+approximate records (63 `wilaya`, 9 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
-| Queued, one candidate for the campus (single source) | 2 |
+| Queued, one candidate for the campus (single source) | 1 |
 | Queued, several candidates for the campus (ambiguous) | 0 |
 | No open candidate in the capture | 71 |
 
@@ -217,7 +217,7 @@ website, a parent university's host, a former name, another record's campus)
 sit in tables in the script, each with its reason.
 
 **Owner confirmations (`docs/adr/0001` rule 6 and "Rule 6 in detail").** The
-Owner read eleven campus points off Google Maps on 2026-10-28, and seventeen more on
+Owner read eleven campus points off Google Maps on 2026-10-28, and eighteen more on
 2026-10-29. A reading off a
 proprietary map is a Claim that may only confirm an open Candidate within
 500 m, and the open coordinate is the one that ships; an Owner reading is never
@@ -257,7 +257,7 @@ the measured one.
 | `00167` | ENS Kouba, École normale supérieure (Mohamed Bachir El Ibrahimi) | OSM `way/29671795` (`website` tie) | 39 m | `exact` from `commune`, the OSM point ships |
 | `00174` | Centre universitaire d'El Bayadh (Nour Bachir) | OSM `way/272119118` (`website` tie) | 64 m | `exact` from `wilaya`, the OSM point ships |
 | `00175` | Centre universitaire d'Illizi (Cheikh Amoud ben Mokhtar) | OSM `way/313528891` (`website` tie) | 201 m | `exact` from `wilaya`, the OSM point ships |
-| `00133` | INFSPM Béjaïa, Institut national de formation supérieure paramédicale | OSM `way/696128480`, Aokas | (not used) | stays queued: the pin supplied was the Google entry "Insfp De Béjaia", a vocational training institute (INSFP), not this school |
+| `00133` | INFSPM Béjaïa, Institut national de formation supérieure paramédicale | OSM `way/696128480`, Aokas | 20.5 km (a first pin was a vocational institute, INSFP, and was not used) | the Owner's pin of the Google entry "Paramedical School" in Béjaïa city ships (rule 6 amended); no OSM object for it within 500 m |
 
 For `P09` and `P10` the two maps first disagreed on which Sidi Abdellah
 building is which: the nanosciences reading landed 40 m from the building OSM
@@ -274,9 +274,9 @@ Vote.
 
 **Owner pins that ship (`docs/adr/0001`, "Rule 6 amended", 2026-10-29).** The
 Owner decided that a pin read off Google Maps ships as the coordinate when no open
-object lies within 500 m of it. Two records use it: `00082` ESCF Constantine (seed
+object lies within 500 m of it. Three records use it: `00082` ESCF Constantine and `00133` INFSPM Béjaïa (seed
 `scripts/seeds/second-source.json`) and `00183` (`P09`, seed
-`scripts/seeds/bac-2026.json`), each recorded as `owner_pin`. These two points are
+`scripts/seeds/bac-2026.json`), each recorded as `owner_pin`. These three points are
 proprietary-map readings, not open data, and an open object that later confirms the
 place replaces them.
 
@@ -320,7 +320,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  98 campus, 9 commune, 64 wilaya; the 73 approximate records are in the
+  99 campus, 9 commune, 63 wilaya; the 72 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and

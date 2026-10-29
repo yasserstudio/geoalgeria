@@ -48,6 +48,20 @@
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"National Training Institute Top Paramedic De Msila\" and supplied 35.7032143, 4.5335894, 99 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي ببجاية": {
+    "record": "00133, المعهد الوطني للتكوين العالي شبه الطبي ببجاية, INFSPM Béjaïa (Institut national de formation supérieure paramédicale)",
+    "lat": 36.7590953,
+    "lng": 5.0767555,
+    "wilaya_code": 6,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object confirms the Owner's pin, so the pin ships as the coordinate. The pin is the Google Maps entry \"Paramedical School\" in Béjaïa city; OpenStreetMap has no paramedical object within 500 m of it (Overpass, 2026-10-29: only two primary schools). The only OSM candidate, way/696128480 \"Institut national supérieure paramédicale\" in Aokas, is 20.5 km away and the pin does not support it; the Owner's reading is taken over it. Mapping the building in OpenStreetMap would let an open point replace this one.",
+    "owner_pin": {
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "Paramedical School",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
   "ar:المعهد الوطني للتكوين العالي شبه الطبي بتيارت": {
     "record": "00136, المعهد الوطني للتكوين العالي شبه الطبي بتيارت, INFSPM Tiaret (Institut national de formation supérieure paramédicale)",
     "lat": 35.3850268,
