@@ -195,13 +195,13 @@ border) and `00064` to Guerrouaou (from Soumaa). Identity rests on a name match,
 tag for `00095` and `00111`, whose Wikidata website is the defence ministry's.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 99
-approximate records (88 `wilaya`, 11 `commune`) are in it exactly once:
+written offline and byte for byte by `precision-review.mjs` next to it. All 98
+approximate records (87 `wilaya`, 11 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
 | Queued, one candidate for the campus (single source) | 16 |
-| Queued, several candidates for the campus (ambiguous) | 1 |
+| Queued, several candidates for the campus (ambiguous) | 0 |
 | No open candidate in the capture | 82 |
 
 Each queued entry carries the OSM element, the tags that make the tie (the
@@ -243,7 +243,7 @@ the measured one.
 | `00077` | EPAU, École polytechnique d'architecture et d'urbanisme | OSM `way/426908488` | 50 m | `exact` from `commune`, commune Oued Smar by outline (was El Harrach) |
 | `00108` | ESBA, École supérieure des beaux-arts (Alger) | OSM `way/475383562` (`website` tie) | 89 m | `exact` from `wilaya`, the OSM point ships |
 | `00082` | ESCF Constantine, École supérieure de comptabilité et de finance | OSM `way/1145579833`, El Khroub | 10.1 km (the reading is in Constantine city) | stays queued: the reading supports no open object |
-| `00042` | Université Sétif 1 (Ferhat Abbas) | OSM `way/185615558`, the El Bez campus | 584 m | stays queued, over the 500 m ceiling |
+| `00042` | Université Sétif 1 (Ferhat Abbas) | OSM `way/1263457366` "Rectorat" at El Bez, by the Owner's decision that it is Sétif 1's rectorate (an earlier reading was 584 m from the El Bez campus object `way/185615558`, over the ceiling) | 10 m | `exact` from `wilaya`, commune Setif by outline |
 
 For `P09` and `P10` the two maps first disagreed on which Sidi Abdellah
 building is which: the nanosciences reading landed 40 m from the building OSM
@@ -269,10 +269,10 @@ school publishes as Bab El Oued (its OSM point falls on the Casbah side of that
 boundary, 96 m from it): a site the record does not publish, recorded in the
 seed's `osm_search` note.
 
-**Two Votes and one.** 23 of the 88 `exact` records now stand on two
+**Two Votes and one.** 24 of the 89 `exact` records now stand on two
 independent Votes: the 9 above, and ENSTA, `00178`, `00165`, `P08`, `P10`, `P23`, `00073` (ENSTP),
 `00166` (ENS Constantine), `00057` (USTO), `00004` (Alger 1), `00060` (ENP), `00062` (ENP Constantine),
-`00077` (EPAU) and `00108` (ESBA) on the Owner's readings. The other 65 rest on a single Nominatim geocode and
+`00077` (EPAU), `00108` (ESBA) and `00042` (Sétif 1) on the Owner's readings. The other 65 rest on a single Nominatim geocode and
 are reviewed in a separate follow-up pass (private tracker #336).
 
 **Re-run.** `NODE_USE_ENV_PROXY=1 node research/enseignement-superieur/fetch-second-sources.mjs`
@@ -297,7 +297,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  88 campus, 11 commune, 88 wilaya; the 99 approximate records are in the
+  89 campus, 11 commune, 87 wilaya; the 98 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and
