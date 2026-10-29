@@ -90,12 +90,12 @@
       "package": "@geoalgeria/cliniques",
       "schema_version": "2.0.0",
       "title": "Algeria clinics & care facilities",
-      "record_count": 1916,
-      "geocoded_count": 1916,
+      "record_count": 1915,
+      "geocoded_count": 1915,
       "geocoded_pct": 100,
       "precision": {
         "exact": 1084,
-        "approximate": 832
+        "approximate": 831
       },
       "wilayas_covered": 66,
       "bbox": [
@@ -415,17 +415,17 @@
       "package": "@geoalgeria/pharmacies",
       "schema_version": "2.0.0",
       "title": "Algeria pharmacies (officines)",
-      "record_count": 3812,
-      "geocoded_count": 3812,
+      "record_count": 3811,
+      "geocoded_count": 3811,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 3509,
+        "exact": 3508,
         "approximate": 303
       },
       "coverage": {
-        "pct": 34.7,
+        "pct": 34.6,
         "of": 11000,
-        "note": "3812 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north."
+        "note": "3811 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north."
       },
       "wilayas_covered": 67,
       "bbox": [

@@ -14,11 +14,12 @@
  * (CHU/EPH/EHS/EPSP from the Ministry of Health), so every record that classifies
  * as one is dropped here with a logged count. The two packages must not be summed.
  *
- * The first guard is not a name test at all: @geoalgeria/sante references 121 OSM
- * elements by id, and any element in that set IS a registry record already
- * shipped there, whatever it calls itself. Those are excluded by construction
- * (sante_overlap), which is the only exclusion in this file that cannot be
- * defeated by an unusual name.
+ * The first two guards are not name tests at all, so neither can be defeated by
+ * an unusual name. A military facility is excluded by element id (military), under
+ * the Owner decision of 2026-10-29 that no military location appears anywhere in
+ * the project. Then @geoalgeria/sante references 121 OSM elements by id, and any
+ * element in that set IS a registry record already shipped there, whatever it
+ * calls itself, so those are excluded by construction (sante_overlap).
  *
  * Classification then runs over the normalized FR+AR name (Latin accents folded,
  * Arabic hamza/alef variants folded). Order is deliberate:
@@ -322,6 +323,18 @@ const ownershipHay = (hay) => hay.replace(SPECIAL_NEEDS, " ");
 const NO_IDS = new Set();
 
 /**
+ * Military facilities, by OpenStreetMap element id. Owner decision of 2026-10-29:
+ * no military location anywhere in the project, so these never enter the package,
+ * whatever a later refresh renames them to. Keyed on the element id rather than a
+ * name pattern because the id is the stable source key and a name test would also
+ * catch civilian records that merely mention the army (a pharmacy honouring the
+ * military insurance convention, for instance). The id each one published under is
+ * retired in data/retired-ids.json and never reused.
+ *   - way/186937625 "Clinique militaire les Oliviers", Kouba (published as 16-00234)
+ */
+const MILITARY_OSM_IDS = new Set(["way/186937625"]);
+
+/**
  * Decide what a record is: `{ type }` to keep it, `{ excluded }` to drop it with
  * a logged reason. See the header for why the order is what it is.
  *
@@ -330,6 +343,7 @@ const NO_IDS = new Set();
  * excluded by construction rather than by reading its name.
  */
 export function classify(t, osmId = null, santeOsmIds = NO_IDS) {
+  if (osmId && MILITARY_OSM_IDS.has(osmId)) return { excluded: "military" };
   if (osmId && santeOsmIds.has(osmId)) return { excluded: "sante_overlap" };
   const hay = nameHay(t);
   const hospitalTagged = t.amenity === "hospital" || t.healthcare === "hospital";
