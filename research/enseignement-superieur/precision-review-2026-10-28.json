@@ -4,56 +4,12 @@
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
   "network": "Candidates come from the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf), one source. The second-source pass of the same run (research/enseignement-superieur/second-source-votes-2026-10-28.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on 2026-10-28.",
   "counts": {
-    "approximate_reviewed": 104,
-    "queued_single_source": 22,
+    "approximate_reviewed": 99,
+    "queued_single_source": 17,
     "no_open_candidate": 82,
     "promoted": 0
   },
   "queue": [
-    {
-      "id": "00004",
-      "name": "Université d’Alger 1 - Benyoucef Benkhedda",
-      "name_ar": "جامعة الجزائر1 - بن يوسف بن خدة",
-      "wilaya_code": "16",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.776335,
-        "lng": 3.058211,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/29082561",
-          "tie": "website",
-          "matched": "website host = record website host univ-alger.dz",
-          "tags": {
-            "addr:city": "Alger-Centre",
-            "addr:street": "Rue Didouche Mourad",
-            "name": "La Faculté centrale",
-            "name:ar": "الجامعة المركزية",
-            "name:fr": "La Faculté centrale",
-            "operator": "Université d'Alger",
-            "website": "http://www.univ-alger.dz/",
-            "wikidata": "Q1190852"
-          },
-          "point": {
-            "lat": 36.7710859,
-            "lng": 3.0554439
-          },
-          "commune": {
-            "code": "1601",
-            "name": "Alger Centre"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 634,
-          "wikidata_tag": "Q1190852"
-        }
-      ],
-      "reason": "single source",
-      "needs": "read P625 on Wikidata Q1190852 (an OSM wikidata tag is a lead, not a coordinate); or a campus address or map on the institution's own site (univ-alger.dz), independent of OpenStreetMap and within 2 km of the Claim"
-    },
     {
       "id": "00042",
       "name": "Université de Sétif 1 - Ferhat Abbas",
@@ -177,120 +133,6 @@
       ],
       "reason": "single source",
       "needs": "a campus address or map on the institution's own site (cuniv-tissemsilt.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00060",
-      "name": "Ecole Nationale Polytechnique",
-      "name_ar": "المدرسة الوطنية المتعددة التقنيات",
-      "wilaya_code": "16",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.720797,
-        "lng": 3.137389,
-        "commune": "El Harrach"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/97658302",
-          "tie": "name",
-          "matched": "name ~ name (core, one word, inside the declared commune)",
-          "tags": {
-            "addr:city": "El Harrach",
-            "addr:street": "Avenue des Frères Ouddak",
-            "name": "Ecole Polytechnique",
-            "name:ar": "مدرسة متعددة التقنيات",
-            "name:fr": "Ecole Polytechnique"
-          },
-          "point": {
-            "lat": 36.7237381,
-            "lng": 3.1505925
-          },
-          "commune": {
-            "code": "1613",
-            "name": "El Harrach"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 1221
-        }
-      ],
-      "reason": "single source",
-      "needs": "a campus address or map on the institution's own site (enp.edu.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00062",
-      "name": "Ecole Nationale Polytechnique de Constantine- Malek Bennabi",
-      "name_ar": "المدرسة الوطنية المتعددة التقنيات بقسنطينة-المفكر مالك بن نبي",
-      "wilaya_code": "25",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.364164,
-        "lng": 6.608428,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "node/5440413392",
-          "tie": "name",
-          "matched": "name ~ name (core)",
-          "tags": {
-            "name": "École Nationale Polytechnique"
-          },
-          "point": {
-            "lat": 36.2766886,
-            "lng": 6.5867365
-          },
-          "commune": {
-            "code": "2506",
-            "name": "El Khroub"
-          },
-          "wilaya_code": "25",
-          "in_declared_wilaya": true,
-          "distance_m": 9919
-        }
-      ],
-      "reason": "single source",
-      "needs": "a campus address or map on the institution's own site (enp-constantine.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00077",
-      "name": "Ecole Polytechnique d’architecture et d’Urbanisme-Hocine Aït Ahmed",
-      "name_ar": "المدرسة المتعددة العلوم للهندسة المعمارية والعمران-المجاهد حسين آيت أحمد",
-      "wilaya_code": "16",
-      "geo_method": "commune",
-      "published": {
-        "lat": 36.720797,
-        "lng": 3.137389,
-        "commune": "El Harrach"
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/426908488",
-          "tie": "name",
-          "matched": "name ~ name (core)",
-          "tags": {
-            "name": "Ecole Polytechnique d'Architecture et d'Urbanisme",
-            "name:fr": "(EPAU)",
-            "short_name": "EPAU"
-          },
-          "point": {
-            "lat": 36.7195482,
-            "lng": 3.1539529
-          },
-          "commune": {
-            "code": "1615",
-            "name": "Oued Smar"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 1483
-        }
-      ],
-      "reason": "single source",
-      "needs": "a campus address or map on the institution's own site (epau-alger.edu.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
       "id": "00080",
@@ -599,52 +441,6 @@
       ],
       "reason": "single source",
       "needs": "a Wikidata item for the institution with P625 (none is tagged on the OSM element); or an official address, since the record carries no own website, independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00108",
-      "name": null,
-      "name_ar": "المدرسة العليا للفنون الجميلة (الجزائر)",
-      "wilaya_code": "16",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.776335,
-        "lng": 3.058211,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/475383562",
-          "tie": "website",
-          "matched": "website host = record website host esba.dz",
-          "tags": {
-            "addr:city": "الجزائر الوسطى",
-            "addr:street": "جادة كريم بلقاسم",
-            "alt_name": "المدرسة العليا للفنون الجميلة بالجزائر",
-            "alt_name:ar": "المدرسة العليا للفنون الجميلة بالجزائر",
-            "alt_name:fr": "ESBA",
-            "name": "المدرسة العليا للفنون الجميلة",
-            "name:ar": "المدرسة العليا للفنون الجميلة",
-            "name:fr": "École Supérieure des Beaux-Arts",
-            "website": "https://www.esba.dz/",
-            "wikidata": "Q23846121"
-          },
-          "point": {
-            "lat": 36.7616947,
-            "lng": 3.0439637
-          },
-          "commune": {
-            "code": "1601",
-            "name": "Alger Centre"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 2064,
-          "wikidata_tag": "Q23846121"
-        }
-      ],
-      "reason": "single source",
-      "needs": "read P625 on Wikidata Q23846121 (an OSM wikidata tag is a lead, not a coordinate); or a campus address or map on the institution's own site (esba.dz), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
       "id": "00116",

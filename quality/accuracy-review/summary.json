@@ -116,11 +116,11 @@
     },
     {
       "path": "packages/enseignement-superieur/data/institutions.json",
-      "sha256": "d1b27ccb5d7ccfcbb7bc200fe1cd28db9a7b347f20f13e81cca2c2562f3262a2"
+      "sha256": "d548dff2de82d8432fed14ce9de5b9a066508bc95757858da0ce33039c917629"
     },
     {
       "path": "packages/enseignement-superieur/data/metadata.json",
-      "sha256": "cf87027c85f19f257753da7823109c962376ebbe00892540536a4cf9251f5886"
+      "sha256": "7455c86a04dd26a9e97abc5c35435aade88a0ca54c2ea6b1ece62e598d100667"
     },
     {
       "path": "packages/enseignement-superieur/data/retired-ids.json",
@@ -322,14 +322,14 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70795,
-  "candidates": 17474,
+  "candidates": 17469,
   "reasons": {
-    "approximate_coordinate": 16634,
+    "approximate_coordinate": 16629,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1135
+    "shared_coordinate": 1130
   },
   "datasets": [
     {
@@ -1081,10 +1081,10 @@
     {
       "dataset": "enseignement-superieur",
       "total_records": 187,
-      "candidates": 104,
+      "candidates": 99,
       "reasons": {
-        "approximate_coordinate": 104,
-        "shared_coordinate": 82
+        "approximate_coordinate": 99,
+        "shared_coordinate": 77
       },
       "metadata_path": "packages/enseignement-superieur/data/metadata.json",
       "metadata": {
@@ -1097,8 +1097,8 @@
         "geocoded_count": 187,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 83,
-          "approximate": 104
+          "exact": 88,
+          "approximate": 99
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1146,9 +1146,9 @@
           "private": 19
         },
         "by_geo_method": {
-          "campus": 83,
-          "wilaya": 91,
-          "commune": 13
+          "campus": 88,
+          "wilaya": 88,
+          "commune": 11
         }
       }
     },
@@ -2473,10 +2473,10 @@
       "dataset": "enseignement-superieur",
       "entity": "institutions.json",
       "total_records": 187,
-      "candidates": 104,
+      "candidates": 99,
       "reasons": {
-        "approximate_coordinate": 104,
-        "shared_coordinate": 82
+        "approximate_coordinate": 99,
+        "shared_coordinate": 77
       },
       "path": "packages/enseignement-superieur/data/institutions.json"
     },
