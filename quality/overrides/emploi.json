@@ -544,6 +544,33 @@
       "notes": "Three agreeing sources (ADR 0001): OSM node 3771080748 (\"ANEM (agence nationale de l emploi)\"); ANEM's own point for AWEM Tizi Ouzou (36.7107, 4.05185), which publishes the same address, 01 boulevard Haddadou Med Arezki, 15 m away; and the Owner's reading of 2026-10-29, 10 m away, which confirms the open point (rule 6). The ALEM's own ANEM point (36.71, 4.05) is two-decimal. The OSM node ships.",
       "reviewer": "geoalgeria-maintainers",
       "reviewed_at": "2026-10-29"
+    },
+    {
+      "file": "alem.json",
+      "record_id": "09-01",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.48,
+        "lng": 2.84,
+        "geo_precision": "approximate",
+        "geo_method": "anem"
+      },
+      "patch": {
+        "lat": 36.4817627,
+        "lng": 2.8403253,
+        "geo_precision": "exact",
+        "geo_method": "osm_way"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/way/1174133619",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "notes": "Two Votes (ADR 0001): OSM way 1174133619 (version 1, office=employment_agency, \"ANEM\", addr:street Rue Yousfi Abdelkader, the record's own street; centre of a single building) and the Owner's reading of 2026-10-29, 4 m away, which confirms the open point (rule 6). The ALEM's own ANEM point (36.48, 2.84) is two-decimal. AWEM Blida, at Cite des 402 logts, is a different office.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-29"
     }
   ]
 }

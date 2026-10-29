@@ -829,10 +829,10 @@
     "wilaya_code": "09",
     "commune_code": null,
     "commune": null,
-    "lat": 36.48,
-    "lng": 2.84,
-    "geo_precision": "approximate",
-    "geo_method": "anem",
+    "lat": 36.4817627,
+    "lng": 2.8403253,
+    "geo_precision": "exact",
+    "geo_method": "osm_way",
     "source": "anem",
     "type": "ALEM",
     "code": "0901",
@@ -841,7 +841,13 @@
     "fax": "(025) 225 - 776",
     "email": "alem.blida@anem.dz",
     "manager": "BOUMEDANE HICHEM",
-    "communes": "BENI TAMOU,BLIDA,BOUARFA,OUED EL ALLEUG"
+    "communes": "BENI TAMOU,BLIDA,BOUARFA,OUED EL ALLEUG",
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-29",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://www.openstreetmap.org/way/1174133619"
+    ]
   },
   {
     "id": "09-02",

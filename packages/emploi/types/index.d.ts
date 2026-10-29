@@ -8,9 +8,9 @@
 export type GeoPrecision = "exact" | "approximate" | null;
 
 /** How the coordinate was obtained. `null` on an ungeocoded record: no method
- *  produced a point, so none can be named. "osm_node" is a reviewed correction
+ *  produced a point, so none can be named. "osm_node" / "osm_way" is a reviewed correction
  *  (quality/overrides/emploi.json) where ANEM's own point is two-decimal. */
-export type GeoMethod = "anem" | "osm_node" | null;
+export type GeoMethod = "anem" | "osm_node" | "osm_way" | null;
 
 /** A wilaya-level employment agency (AWEM). */
 export interface Awem {
