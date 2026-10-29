@@ -104,7 +104,7 @@
     },
     {
       "path": "packages/emploi/data/alem.json",
-      "sha256": "9f8a1ec557c7952c40397c6a1a71e0e5a120224c5e9d98a751bcab0ef01b6b39"
+      "sha256": "cc6312a73230522196c065c815dfc23f2fa2ca43ac84acac851b407970144002"
     },
     {
       "path": "packages/emploi/data/awem.json",
@@ -112,7 +112,7 @@
     },
     {
       "path": "packages/emploi/data/metadata.json",
-      "sha256": "a305548e793c293beebd9b0d0c16d05d6696a5de8cbdd3e3d9c4b5be1ec70c5d"
+      "sha256": "ea8e03cfda83d8a53fc32dc55157f73c66c091c28418cc006c2c5841169abe09"
     },
     {
       "path": "packages/enseignement-superieur/data/institutions.json",
@@ -322,9 +322,9 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70784,
-  "candidates": 17467,
+  "candidates": 17466,
   "reasons": {
-    "approximate_coordinate": 16627,
+    "approximate_coordinate": 16626,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
@@ -1018,9 +1018,9 @@
     {
       "dataset": "emploi",
       "total_records": 331,
-      "candidates": 25,
+      "candidates": 24,
       "reasons": {
-        "approximate_coordinate": 19,
+        "approximate_coordinate": 18,
         "inside_adjacent_wilaya": 2,
         "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
@@ -1037,8 +1037,8 @@
         "geocoded_count": 329,
         "geocoded_pct": 99.4,
         "precision": {
-          "exact": 310,
-          "approximate": 19
+          "exact": 311,
+          "approximate": 18
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -2434,9 +2434,9 @@
       "dataset": "emploi",
       "entity": "alem.json",
       "total_records": 273,
-      "candidates": 22,
+      "candidates": 21,
       "reasons": {
-        "approximate_coordinate": 16,
+        "approximate_coordinate": 15,
         "inside_adjacent_wilaya": 2,
         "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
