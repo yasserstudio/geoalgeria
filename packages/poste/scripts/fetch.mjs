@@ -34,6 +34,20 @@ const HEADERS = {
   Accept: "application/json",
 };
 
+// Military locations. Owner decision of 2026-10-29: the project publishes no
+// military location anywhere, so these upstream records never become published
+// ones, however BaridiMap keeps listing them. Keyed on the operator's own id,
+// which is the published id too, so the exclusion holds across every refresh.
+// An office whose ADDRESS merely names the ANP or the gendarmerie is not one of
+// these, nor is one whose name happens to be a person's ("404 AHCENE ASKRI");
+// only a service point sited inside a military facility is listed here.
+const MILITARY_IDS = {
+  // Inside the Ain Naadja central military hospital.
+  "postoffices.json": new Set(["2532"]),
+  // Inside the naval school, Mostaganem.
+  "atms.json": new Set(["13519"]),
+};
+
 const num = (v) => {
   if (v === null || v === undefined || v === "") return null;
   const n = Number(v);
@@ -110,12 +124,25 @@ export function normAtm(a) {
 
 // --- main ------------------------------------------------------------------
 async function main() {
+  // Military locations leave the package before anything else sees them.
+  const withoutMilitary = (rows, file) => {
+    const drop = MILITARY_IDS[file];
+    const kept = rows.filter((r) => !drop.has(String(r.id)));
+    if (kept.length !== rows.length) {
+      console.log(`  military: ${rows.length - kept.length} ${file} record(s) excluded`);
+    }
+    return kept;
+  };
+
   console.log("Fetching post offices…");
-  const offices = (await getJSON("/postoffices")).map(normPostOffice);
+  const offices = withoutMilitary(
+    (await getJSON("/postoffices")).map(normPostOffice),
+    "postoffices.json",
+  );
   console.log(`  ${offices.length} post offices`);
 
   console.log("Fetching ATMs…");
-  const atms = (await getJSON("/atms")).map(normAtm);
+  const atms = withoutMilitary((await getJSON("/atms")).map(normAtm), "atms.json");
   console.log(`  ${atms.length} ATMs`);
 
   // Emit v2 via the shared writer (live-only source, so stamp the run's date) to
