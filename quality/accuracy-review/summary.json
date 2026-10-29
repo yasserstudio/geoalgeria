@@ -288,7 +288,7 @@
     },
     {
       "path": "packages/telecom/data/metadata.json",
-      "sha256": "4715a8da31db5fdba5a66fe00a9951f86e3a381882bf4857e5572936ceb93030"
+      "sha256": "85d30678978a7670bf994b54aa17429d174fb621bc51413acfb84327e8945033"
     },
     {
       "path": "packages/tourisme/data/attractions.json",
@@ -2147,7 +2147,7 @@
             "url": "https://www.djezzy5g.dz/map.html",
             "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
             "evidence_type": "official",
-            "retrieved": "2026-10-27"
+            "retrieved": "2026-10-29"
           },
           {
             "key": "mobilis",
@@ -2155,7 +2155,7 @@
             "url": "https://mobilis.dz/map/5g",
             "license": "Data © ATM Mobilis; redistributed for reference",
             "evidence_type": "official",
-            "retrieved": "2026-10-27"
+            "retrieved": "2026-10-29"
           },
           {
             "key": "ooredoo",
@@ -2163,11 +2163,11 @@
             "url": "https://www.ooredoo.dz/fr/particuliers/internet/5g",
             "license": "Data © Ooredoo Algérie; redistributed for reference",
             "evidence_type": "official",
-            "retrieved": "2026-10-27"
+            "retrieved": "2026-10-29"
           }
         ],
         "license": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
-        "updated": "2026-10-27",
+        "updated": "2026-10-29",
         "technologies": [
           "5G"
         ],
