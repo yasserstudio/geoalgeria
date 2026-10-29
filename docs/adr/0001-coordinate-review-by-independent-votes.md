@@ -186,4 +186,24 @@ Consequences the Owner accepted when deciding: Google's terms do not allow its m
 to be copied into another dataset, so these points are not covered by the open licence the
 rest of the data ships under, and a version published to npm cannot be withdrawn after 72
 hours. The first records placed this way are enseignement-superieur `00082` (ESCF
-Constantine) and `00183` (`P09`, ENS des systèmes autonomes).
+Constantine), `00183` (`P09`, ENS des systèmes autonomes) and `00133` (INFSPM Béjaïa).
+
+## Two more placements that ship on one source (2026-10-29, PR #310)
+
+Both decided by the Owner, and both recorded in the seed with their origin so a reader can
+tell them from a two-Vote point:
+
+1. **The location an institution publishes itself** (Owner decision of 2026-10-25: an
+   operator-published location is verified). A map embedded on the institution's own
+   website, a map link or a Plus Code there, ships as `operator_location` with the page it
+   was read from. A street address alone is not used.
+2. **A single open lead** (Owner decision of 2026-10-29). Where neither a second source,
+   the institution's own site nor an Owner pin confirms it, one open campus object with a
+   clear identity (a website or exact-name tie) ships as `single_open_source`, the
+   standing the single Nominatim geocodes have always had. It is one Vote, never presented
+   as two. Its source must be open and declared: an Overture Maps Places row is committed
+   as a capture and its source carries a Source rights record (CDLA-Permissive-2.0,
+   attribution Overture Maps Foundation).
+
+A later independent second source turns either into a two-Vote point. Military locations
+never ship under any rule here (Owner decision of 2026-10-29).
