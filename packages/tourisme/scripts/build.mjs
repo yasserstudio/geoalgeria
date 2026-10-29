@@ -34,18 +34,23 @@ const read = (file) => JSON.parse(readFileSync(join(DATA, file), "utf-8"));
  * each record was read from, per layer file.
  *
  * Owner decision of 2026-10-29: no military location anywhere in the project. Current
- * military facilities (hotels, messes, clubs, housing, bases, barracks in use) leave
- * the data and their ids retire; a record that only MENTIONS a military place stays,
- * and colonial-era military heritage stays as heritage (`historic-4`, the former French
- * army camp at Ténès, and `historic-707`, Bastion 18, are both kept for that reason).
+ * military and gendarmerie facilities (hotels, messes, clubs, housing, commands, bases,
+ * barracks and brigades in use) leave the data and their ids retire; a record that only
+ * MENTIONS a military place stays, and colonial-era military heritage stays as heritage.
+ * Kept for that reason: `historic-4` (the former French army camp at Ténès),
+ * `historic-707` (Bastion 18), `historic-252` (Caserne Bab Lakouas), `historic-818`
+ * (الثكنة القديمة, the old barracks), `historic-1015` and `historic-1016` (two French
+ * colonial watchtowers, ruins) and `attraction-906` (the Army Museum, a museum).
+ * `lodging-1528` (قاعدة الحياة) stays too: a "base de vie" is a worker camp, not a
+ * military base.
  *
  * Keyed on the upstream element rather than the published id on purpose: the id is this
  * package's own join key and a refreshed pull would mint a new one, so only the element
  * key keeps the place out of a rebuild.
  */
 const EXCLUDED_OSM = {
-  // 13 military hotels, one military housing block and one military residential
-  // quarter, all still in service.
+  // 11 military hotels, an army rest centre, the national army club, one military
+  // housing block and one military residential quarter, all still in service.
   "lodging.json": new Set([
     "5548912955", // lodging-1028  السكن العسكري (Mascara)
     "5053631921", // lodging-1097  hotel militaire (Ouargla)
@@ -60,10 +65,23 @@ const EXCLUDED_OSM = {
     "3235962", // lodging-605   Hotel Militaire (Alger)
     "254894521", // lodging-721   Hotel militaire (Djelfa)
     "3183735023", // lodging-973   Hotel militaire (Constantine)
+    "353023053", // lodging-1236  Centre de repos de l'armee nationale (Boumerdes)
+    "354061670", // lodging-532   Cercle National de l'Armee (Alger)
   ]),
-  // Current military housing, tagged as a historic castle upstream.
+  // A naval command, a gendarmerie brigade and a named army base, none of them
+  // historic, that the historic layer had picked up from upstream tagging.
   "historic.json": new Set([
-    "4571831389", // historic-396  cite militaire chelghoum (Mila)
+    "4571831389", // historic-396  cite militaire chelghoum (Mila), military housing
+    "155362197", // historic-251  Commandement des Forces Navales (Alger)
+    "1329600495", // historic-267  Gendarmerie de Oued Athmania (Mila)
+    "10136173319", // historic-385  قاعدة الشهيد هداد (Tindouf)
+  ]),
+  // Three gendarmerie nationale units upstream had tagged as an artwork and two
+  // viewpoints.
+  "attractions.json": new Set([
+    "5321704521", // attraction-136   groupement gendarmerie nationale (Annaba)
+    "4695836089", // attraction-1193  brigade de gendarmerie (El Oued)
+    "4574486989", // attraction-1212  gendarmerie nationale (Touggourt)
   ]),
 };
 

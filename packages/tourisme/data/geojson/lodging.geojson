@@ -7042,33 +7042,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.4814814,
-          36.766182
-        ]
-      },
-      "properties": {
-        "id": "lodging-1236",
-        "name": "Centre de repos de l'armée nationale",
-        "name_ar": "مركز الراحة لجيش وطني",
-        "wilaya_code": "35",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.766182,
-        "lng": 3.4814814,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "353023053"
-        },
-        "type": "apartment"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.4833426,
           36.7657214
         ]
@@ -29157,32 +29130,6 @@
         "type": "hotel",
         "address": "Rue Abane Ramdane",
         "phone": "044171918"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.9960804,
-          36.7724596
-        ]
-      },
-      "properties": {
-        "id": "lodging-532",
-        "name": "Cercle National de l'Armée",
-        "wilaya_code": "16",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.7724596,
-        "lng": 2.9960804,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "354061670"
-        },
-        "type": "hotel"
       }
     },
     {

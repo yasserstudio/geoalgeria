@@ -12,7 +12,7 @@
 
 </div>
 
-4,334 geocoded tourism sites across Algeria's 69 wilayas, **hotels**, attractions, historic
+4,326 geocoded tourism sites across Algeria's 69 wilayas, **hotels**, attractions, historic
 sites, thermal springs and protected areas, each with coordinates, wilaya linkage and source
 attribution. Sourced from **ASAL Geoportail** (thermal springs), **OpenStreetMap** (hotels,
 attractions, historic sites, parks) and **Wikidata** (heritage sites, museums, parks). Shipped
@@ -25,11 +25,11 @@ npm install @geoalgeria/tourisme
 ```js
 import tourisme from "@geoalgeria/tourisme";
 
-const everything = tourisme.all();               // 4,334
-const hotels = tourisme.lodging();               // 1,589
+const everything = tourisme.all();               // 4,326
+const hotels = tourisme.lodging();               // 1,587
 const springs = tourisme.thermalSprings();        // 282
 const inTipaza = tourisme.byWilaya(42);           // all tourism sites in wilaya 42
-const ruins = tourisme.byLayer("historic");       // 1,183 historic sites
+const ruins = tourisme.byLayer("historic");       // 1,180 historic sites
 
 // Everything has lat/lng – distance-sort, map, or nearest-site in a few lines.
 ```
@@ -46,19 +46,21 @@ const ruins = tourisme.byLayer("historic");       // 1,183 historic sites
 
 | Layer | Function | Count | Notes |
 | --- | --- | --- | --- |
-| Lodging | `lodging()` | **1,589** | hotels, hostels, guest houses, chalets, alpine huts |
-| Attractions | `attractions()` | **1,248** | museums, viewpoints, caves, waterfalls, zoos |
-| Historic | `historic()` | **1,183** | archaeological sites, ruins, monuments, forts, castles |
+| Lodging | `lodging()` | **1,587** | hotels, hostels, guest houses, chalets, alpine huts |
+| Attractions | `attractions()` | **1,245** | museums, viewpoints, caves, waterfalls, zoos |
+| Historic | `historic()` | **1,180** | archaeological sites, ruins, monuments, forts, castles |
 | Thermal springs | `thermalSprings()` | **282** | temperature, flow rate, altitude, minerality |
 | Parks | `parks()` | **32** | national parks, nature reserves, protected areas |
-| **Total** | `all()` | **4,334** | |
+| **Total** | `all()` | **4,326** | |
 
 Spanning **69 wilayas**. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model (69-wilaya scheme).
 
-**Military places are out of scope.** 14 facilities in service (13 military hotels and
-residences on the lodging layer, plus one military housing quarter upstream had tagged as
-a historic castle) were removed on 2026-10-29, and their ids are reserved for good in
+**Military places are out of scope.** 22 military and gendarmerie facilities in service
+were removed on 2026-10-29: 15 on the lodging layer (military hotels, an army rest centre,
+the national army club, military housing), four on the historic layer (military housing, a
+naval command, a gendarmerie brigade, a named army base) and three gendarmerie units the
+attractions layer had picked up. Their ids are reserved for good in
 [`data/retired-ids.json`](data/retired-ids.json). Colonial-era military heritage stays:
 old forts, city walls, barracks and former French army camps are published as heritage.
 
@@ -85,9 +87,9 @@ const springs: ThermalSpring[] = tourisme.thermalSprings();
 
 ```
 data/
-  lodging.json            # 1,589 lodging entries
-  attractions.json        # 1,248 attractions
-  historic.json           # 1,183 historic sites
+  lodging.json            # 1,587 lodging entries
+  attractions.json        # 1,245 attractions
+  historic.json           # 1,180 historic sites
   thermal-springs.json    # 282 thermal springs
   parks.json              # 32 parks
   metadata.json           # sources, counts, coverage

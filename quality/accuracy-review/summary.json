@@ -292,19 +292,19 @@
     },
     {
       "path": "packages/tourisme/data/attractions.json",
-      "sha256": "1f0060025a183d5d9f510395d9a0754f4354f889d096e81d54d23e2bde7a2c8c"
+      "sha256": "931bd62cc6cf06b14786864338c36108a2a2e8aa0b342b10940de442f46012a0"
     },
     {
       "path": "packages/tourisme/data/historic.json",
-      "sha256": "2d4a2346dd0964f52debfe448d4d8d0ae208bb0261e7a0ce4a1e153430e793f7"
+      "sha256": "2cc128f0350478b0d3514185724d6f3c696a3263afb2510be4a14e901c84d508"
     },
     {
       "path": "packages/tourisme/data/lodging.json",
-      "sha256": "0940cfb773c37157bc7f5df4f0937801a821dcc8e6272164c20f1323b29c15b9"
+      "sha256": "b1beed2f342cb9ec9cafe2ee819f6bda5e04cba24d05d1efeb06cde587690cc2"
     },
     {
       "path": "packages/tourisme/data/metadata.json",
-      "sha256": "aa21a724a3b5732578bd464d023573341448ca84639fba181ed95f54004e6eb9"
+      "sha256": "4f43e91224efecc852b649237f1660f7fae8db7826ed8a4a92e35131c849a1fb"
     },
     {
       "path": "packages/tourisme/data/parks.json",
@@ -317,7 +317,7 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70771,
+  "total_records": 70763,
   "candidates": 17480,
   "reasons": {
     "approximate_coordinate": 16640,
@@ -2183,7 +2183,7 @@
     },
     {
       "dataset": "tourisme",
-      "total_records": 4334,
+      "total_records": 4326,
       "candidates": 238,
       "reasons": {
         "approximate_coordinate": 43,
@@ -2199,11 +2199,11 @@
         "title_fr": "Tourisme en Algérie",
         "title_ar": "السياحة في الجزائر",
         "title_en": "Algeria tourism",
-        "record_count": 4334,
-        "geocoded_count": 4334,
+        "record_count": 4326,
+        "geocoded_count": 4326,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 4291,
+          "exact": 4283,
           "approximate": 43
         },
         "estimated_universe": null,
@@ -2219,15 +2219,15 @@
         "entities": [
           {
             "file": "attractions.json",
-            "count": 1248
+            "count": 1245
           },
           {
             "file": "historic.json",
-            "count": 1183
+            "count": 1180
           },
           {
             "file": "lodging.json",
-            "count": 1589
+            "count": 1587
           },
           {
             "file": "parks.json",
@@ -2267,11 +2267,11 @@
         "license": "Attractions, historic sites, lodging and parks from OpenStreetMap (ODbL 1.0, © OpenStreetMap contributors) and Wikidata (CC0); thermal springs are a factual public listing (ASAL). Per-source terms in citation.",
         "updated": "2026-06-21",
         "by_type": {
-          "artwork": 244,
+          "artwork": 243,
           "museum": 174,
           "theme_park": 78,
           "tourist_attraction": 3,
-          "viewpoint": 115,
+          "viewpoint": 113,
           "waterfall": 3,
           "zoo": 24,
           "attraction": 591,
@@ -2288,15 +2288,14 @@
           "water_tap": 3,
           "wayside_shrine": 1,
           "wreck": 3,
-          "area": 1,
           "barracks": 1,
           "bath": 1,
           "battle_site": 1,
           "battlefield": 4,
           "boundary_stone": 2,
           "bridge": 2,
-          "building": 6,
-          "castle": 137,
+          "building": 5,
+          "castle": 136,
           "church": 1,
           "church_building": 5,
           "château": 1,
@@ -2320,10 +2319,10 @@
           "powder_magazine": 1,
           "alpine_hut": 32,
           "hostel": 216,
-          "hotel": 984,
+          "hotel": 983,
           "guest_house": 137,
           "motel": 66,
-          "apartment": 77,
+          "apartment": 76,
           "chalet": 77,
           "forage": 6,
           "source": 117,
@@ -2687,7 +2686,7 @@
     {
       "dataset": "tourisme",
       "entity": "attractions.json",
-      "total_records": 1248,
+      "total_records": 1245,
       "candidates": 83,
       "reasons": {
         "approximate_coordinate": 5,
@@ -2700,7 +2699,7 @@
     {
       "dataset": "tourisme",
       "entity": "historic.json",
-      "total_records": 1183,
+      "total_records": 1180,
       "candidates": 78,
       "reasons": {
         "approximate_coordinate": 13,
@@ -2713,7 +2712,7 @@
     {
       "dataset": "tourisme",
       "entity": "lodging.json",
-      "total_records": 1589,
+      "total_records": 1587,
       "candidates": 26,
       "reasons": {
         "inside_adjacent_wilaya": 13,
