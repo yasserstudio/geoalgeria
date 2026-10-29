@@ -92,15 +92,15 @@
     },
     {
       "path": "packages/ecoles/data/ecoles.json",
-      "sha256": "812a57fff05a86eb137d7bbef255e6795b531bf654a4751fe2cdc11558d45926"
+      "sha256": "974742f409db90293c15a162ba338ab391bb2646a4d39912c849fe19ae8388c2"
     },
     {
       "path": "packages/ecoles/data/metadata.json",
-      "sha256": "a66f865eca91a24e909e8dcd1a50396edbc3df6dc610adb426a7378fb651de3b"
+      "sha256": "fe041c62c87c39ac5a795177701c1f782d3b85111c0d58587f2e416f5ec296c8"
     },
     {
       "path": "packages/ecoles/data/retired-ids.json",
-      "sha256": "80c2976cd8118b701d85cd5dc96bd9da687036d1705935dce002a679ac2061e6"
+      "sha256": "3dedad7822322339b1286b30f7c44dea3fb714a82ccb37ed22992c0b05f3edf5"
     },
     {
       "path": "packages/emploi/data/alem.json",
@@ -317,10 +317,10 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70785,
-  "candidates": 17480,
+  "total_records": 70776,
+  "candidates": 17473,
   "reasons": {
-    "approximate_coordinate": 16640,
+    "approximate_coordinate": 16633,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
@@ -942,10 +942,10 @@
     },
     {
       "dataset": "ecoles",
-      "total_records": 11858,
-      "candidates": 9026,
+      "total_records": 11849,
+      "candidates": 9019,
       "reasons": {
-        "approximate_coordinate": 9018,
+        "approximate_coordinate": 9011,
         "inside_adjacent_wilaya": 4,
         "outside_all_wilaya_boundaries": 14,
         "outside_declared_wilaya": 18
@@ -957,12 +957,12 @@
         "title_fr": "Écoles d'Algérie",
         "title_ar": "مدارس الجزائر",
         "title_en": "Algeria schools",
-        "record_count": 11858,
-        "geocoded_count": 11858,
+        "record_count": 11849,
+        "geocoded_count": 11849,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 2840,
-          "approximate": 9018
+          "exact": 2838,
+          "approximate": 9011
         },
         "estimated_universe": 29702,
         "coverage_pct": 39.9,
@@ -986,16 +986,16 @@
         ],
         "license": "ODbL-1.0",
         "updated": "2026-08-31",
-        "named": 8213,
+        "named": 8204,
         "by_cycle": {
-          "primaire": 3784,
+          "primaire": 3776,
           "moyen": 2359,
           "secondaire": 1496,
           "autre": 3951,
-          "prescolaire": 268
+          "prescolaire": 267
         },
         "by_kind": {
-          "regular": 11680,
+          "regular": 11671,
           "formation": 88,
           "coranique": 36,
           "special": 30,
@@ -1006,7 +1006,7 @@
           "private": 44,
           "public": 316
         },
-        "with_address": 2626,
+        "with_address": 2620,
         "cycle_note": "Cycle is inferred from isced:level and the French/Arabic name (CEM→moyen, lycée→secondaire, maternelle/روضة→préscolaire); a bare \"école\"/\"مدرسة\" with no cycle word is classified primaire per Algerian convention, and anything unresolved is \"autre\".",
         "kind_note": "Kind is the establishment type, orthogonal to cycle: most are \"regular\"; \"langues\"/\"coranique\"/\"conduite\"/\"formation\" are special-purpose places OSM files under amenity=school but that sit outside the K-12 ladder (they carry cycle \"autre\"); \"special\" are adapted/special-needs schools (which keep a cycle)."
       }
@@ -2418,10 +2418,10 @@
     {
       "dataset": "ecoles",
       "entity": "ecoles.json",
-      "total_records": 11858,
-      "candidates": 9026,
+      "total_records": 11849,
+      "candidates": 9019,
       "reasons": {
-        "approximate_coordinate": 9018,
+        "approximate_coordinate": 9011,
         "inside_adjacent_wilaya": 4,
         "outside_all_wilaya_boundaries": 14,
         "outside_declared_wilaya": 18

@@ -36438,42 +36438,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.187828,
-          35.553824
-        ]
-      },
-      "properties": {
-        "id": "05-00282",
-        "name": "École des Cadets - Aberkane Mohammed",
-        "name_fr": "École des Cadets - Aberkane Mohammed",
-        "name_ar": "مدرسة أشبال الأمة - أبركان محمد",
-        "wilaya_code": "05",
-        "commune_code": "0501",
-        "commune": "Batna",
-        "lat": 35.553824,
-        "lng": 6.187828,
-        "geo_precision": "approximate",
-        "geo_method": "osm_centroid",
-        "source": "osm",
-        "refs": {
-          "osm": "way/534625413"
-        },
-        "cycle": "primaire",
-        "cycle_label_fr": "École primaire",
-        "cycle_label_ar": "مدرسة ابتدائية",
-        "kind": "regular",
-        "kind_label_fr": "École ordinaire",
-        "kind_label_ar": "مدرسة عادية",
-        "isced_levels": null,
-        "sector": null,
-        "address": "Batna 05000"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           6.183504,
           35.552222
         ]
@@ -46151,42 +46115,6 @@
         "isced_levels": null,
         "sector": null,
         "address": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.063057,
-          36.746753
-        ]
-      },
-      "properties": {
-        "id": "06-00248",
-        "name": "École des cadets de la nation",
-        "name_fr": "École des cadets de la nation",
-        "name_ar": "مدرسة أشبال الأمة",
-        "wilaya_code": "06",
-        "commune_code": "0601",
-        "commune": "Bejaia",
-        "lat": 36.746753,
-        "lng": 5.063057,
-        "geo_precision": "approximate",
-        "geo_method": "osm_centroid",
-        "source": "osm",
-        "refs": {
-          "osm": "way/475311580"
-        },
-        "cycle": "primaire",
-        "cycle_label_fr": "École primaire",
-        "cycle_label_ar": "مدرسة ابتدائية",
-        "kind": "regular",
-        "kind_label_fr": "École ordinaire",
-        "kind_label_ar": "مدرسة عادية",
-        "isced_levels": null,
-        "sector": null,
-        "address": "Béjaïa 06000"
       }
     },
     {
@@ -56022,42 +55950,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.23191,
-          31.639278
-        ]
-      },
-      "properties": {
-        "id": "08-00046",
-        "name": "مدرسة النحية العسكرية الثالثة",
-        "name_fr": "Ecole des Cadets 3°RM",
-        "name_ar": "مدرسة النحية العسكرية الثالثة",
-        "wilaya_code": "08",
-        "commune_code": "0801",
-        "commune": "Bechar",
-        "lat": 31.639278,
-        "lng": -2.23191,
-        "geo_precision": "approximate",
-        "geo_method": "osm_centroid",
-        "source": "osm",
-        "refs": {
-          "osm": "way/274025641"
-        },
-        "cycle": "primaire",
-        "cycle_label_fr": "École primaire",
-        "cycle_label_ar": "مدرسة ابتدائية",
-        "kind": "regular",
-        "kind_label_fr": "École ordinaire",
-        "kind_label_ar": "مدرسة عادية",
-        "isced_levels": null,
-        "sector": null,
-        "address": "بشار"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -1.249851,
           32.043395
         ]
@@ -62567,42 +62459,6 @@
         "isced_levels": null,
         "sector": null,
         "address": "Chiffa"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.784316,
-          36.464492
-        ]
-      },
-      "properties": {
-        "id": "09-00144",
-        "name": "École des Cadets de la nation",
-        "name_fr": "École des Cadets de la nation",
-        "name_ar": "مدرسة أشبال الأمة",
-        "wilaya_code": "09",
-        "commune_code": "0901",
-        "commune": "Blida",
-        "lat": 36.464492,
-        "lng": 2.784316,
-        "geo_precision": "approximate",
-        "geo_method": "osm_centroid",
-        "source": "osm",
-        "refs": {
-          "osm": "way/307562168"
-        },
-        "cycle": "primaire",
-        "cycle_label_fr": "École primaire",
-        "cycle_label_ar": "مدرسة ابتدائية",
-        "kind": "regular",
-        "kind_label_fr": "École ordinaire",
-        "kind_label_ar": "مدرسة عادية",
-        "isced_levels": null,
-        "sector": null,
-        "address": "Route de Chiffa, Blida"
       }
     },
     {
@@ -78018,42 +77874,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.485481,
-          22.819668
-        ]
-      },
-      "properties": {
-        "id": "11-00007",
-        "name": "École des cadets;مدرسة التلاميذ العسكرية",
-        "name_fr": "École des cadets",
-        "name_ar": "مدرسة التلاميذ العسكرية",
-        "wilaya_code": "11",
-        "commune_code": "1101",
-        "commune": "Tamanrasset",
-        "lat": 22.819668,
-        "lng": 5.485481,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "refs": {
-          "osm": "node/5428846525"
-        },
-        "cycle": "primaire",
-        "cycle_label_fr": "École primaire",
-        "cycle_label_ar": "مدرسة ابتدائية",
-        "kind": "regular",
-        "kind_label_fr": "École ordinaire",
-        "kind_label_ar": "مدرسة عادية",
-        "isced_levels": null,
-        "sector": null,
-        "address": "تمنراست"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           4.898766,
           22.902687
         ]
@@ -78119,42 +77939,6 @@
         "isced_levels": null,
         "sector": null,
         "address": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.484735,
-          22.816964
-        ]
-      },
-      "properties": {
-        "id": "11-00010",
-        "name": "École des Cadets de la Nation,مدرسة أشبال الأمة",
-        "name_fr": "École des Cadets de la Nation de Tamanrasset",
-        "name_ar": "مدرسة أشبال الأمة بتمنراست",
-        "wilaya_code": "11",
-        "commune_code": "1101",
-        "commune": "Tamanrasset",
-        "lat": 22.816964,
-        "lng": 5.484735,
-        "geo_precision": "approximate",
-        "geo_method": "osm_centroid",
-        "source": "osm",
-        "refs": {
-          "osm": "way/1442191635"
-        },
-        "cycle": "primaire",
-        "cycle_label_fr": "École primaire",
-        "cycle_label_ar": "مدرسة ابتدائية",
-        "kind": "regular",
-        "kind_label_fr": "École ordinaire",
-        "kind_label_ar": "مدرسة عادية",
-        "isced_levels": null,
-        "sector": null,
-        "address": "Tamanrasset 11000"
       }
     },
     {
@@ -101418,42 +101202,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.342408,
-          35.379089
-        ]
-      },
-      "properties": {
-        "id": "14-00230",
-        "name": "École des cadets de la Nation du Chahid Ammar Mohamed",
-        "name_fr": "École des cadets de la Nation du Chahid Ammar Mohamed",
-        "name_ar": "مدرسة اشبال الامة",
-        "wilaya_code": "14",
-        "commune_code": "1401",
-        "commune": "Tiaret",
-        "lat": 35.379089,
-        "lng": 1.342408,
-        "geo_precision": "approximate",
-        "geo_method": "osm_centroid",
-        "source": "osm",
-        "refs": {
-          "osm": "way/579968141"
-        },
-        "cycle": "primaire",
-        "cycle_label_fr": "École primaire",
-        "cycle_label_ar": "مدرسة ابتدائية",
-        "kind": "regular",
-        "kind_label_fr": "École ordinaire",
-        "kind_label_ar": "مدرسة عادية",
-        "isced_levels": null,
-        "sector": null,
-        "address": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           1.344685,
           35.361
         ]
@@ -116381,42 +116129,6 @@
         "cycle": "autre",
         "cycle_label_fr": "École (cycle non précisé)",
         "cycle_label_ar": "مدرسة (المستوى غير محدّد)",
-        "kind": "regular",
-        "kind_label_fr": "École ordinaire",
-        "kind_label_ar": "مدرسة عادية",
-        "isced_levels": null,
-        "sector": null,
-        "address": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.921729,
-          36.768562
-        ]
-      },
-      "properties": {
-        "id": "16-00043",
-        "name": "Crèche militaire",
-        "name_fr": "Crèche militaire",
-        "name_ar": null,
-        "wilaya_code": "16",
-        "commune_code": "1650",
-        "commune": "Cheraga",
-        "lat": 36.768562,
-        "lng": 2.921729,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "refs": {
-          "osm": "node/1696620548"
-        },
-        "cycle": "prescolaire",
-        "cycle_label_fr": "Préscolaire / maternelle",
-        "cycle_label_ar": "روضة / تعليم تحضيري",
         "kind": "regular",
         "kind_label_fr": "École ordinaire",
         "kind_label_ar": "مدرسة عادية",
@@ -198641,42 +198353,6 @@
         "cycle": "autre",
         "cycle_label_fr": "École (cycle non précisé)",
         "cycle_label_ar": "مدرسة (المستوى غير محدّد)",
-        "kind": "regular",
-        "kind_label_fr": "École ordinaire",
-        "kind_label_ar": "مدرسة عادية",
-        "isced_levels": null,
-        "sector": null,
-        "address": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.347105,
-          36.191654
-        ]
-      },
-      "properties": {
-        "id": "19-00426",
-        "name": "École des cadets de la nation",
-        "name_fr": "École des cadets de la nation",
-        "name_ar": "مدرسة أشبال الأمة",
-        "wilaya_code": "19",
-        "commune_code": "1901",
-        "commune": "Setif",
-        "lat": 36.191654,
-        "lng": 5.347105,
-        "geo_precision": "approximate",
-        "geo_method": "osm_centroid",
-        "source": "osm",
-        "refs": {
-          "osm": "way/375393547"
-        },
-        "cycle": "primaire",
-        "cycle_label_fr": "École primaire",
-        "cycle_label_ar": "مدرسة ابتدائية",
         "kind": "regular",
         "kind_label_fr": "École ordinaire",
         "kind_label_ar": "مدرسة عادية",
