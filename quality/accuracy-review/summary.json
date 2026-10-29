@@ -232,15 +232,15 @@
     },
     {
       "path": "packages/poste/data/atms.json",
-      "sha256": "c594f78e46916eb133b9112810e91bb3c3acab54e81269a2b0c95b8b82e24035"
+      "sha256": "756abaac0abde1abad1bc42ea8c1a2b7ec32cd48ed47fd587e5fd844b0013ba3"
     },
     {
       "path": "packages/poste/data/metadata.json",
-      "sha256": "7fc4df2e57b83aa545386d5bffbc6f283f31719902ca604dc23e77f1f14053a3"
+      "sha256": "cd39fa17d88761e7a49e51a16b3c269daeb812b722b9f4896409a06e14bd5126"
     },
     {
       "path": "packages/poste/data/postoffices.json",
-      "sha256": "1e8ba4bb0279351460fbc61d44763737a63695a95057cca369b03194ed4e65fa"
+      "sha256": "cf7191c97df7ea56c71d37df822b69e6adc3979a033ff75b3b90e2cc065a1a3e"
     },
     {
       "path": "packages/protection-civile/data/metadata.json",
@@ -317,7 +317,7 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70776,
+  "total_records": 70774,
   "candidates": 17473,
   "reasons": {
     "approximate_coordinate": 16633,
@@ -1798,7 +1798,7 @@
     },
     {
       "dataset": "poste",
-      "total_records": 5933,
+      "total_records": 5931,
       "candidates": 35,
       "reasons": {
         "inside_adjacent_wilaya": 7,
@@ -1813,11 +1813,11 @@
         "title_fr": "Bureaux de poste et GAB d'Algérie",
         "title_ar": "مكاتب البريد والصرافات الآلية الجزائرية",
         "title_en": "Algeria post offices & ATMs",
-        "record_count": 5933,
-        "geocoded_count": 5912,
+        "record_count": 5931,
+        "geocoded_count": 5910,
         "geocoded_pct": 99.6,
         "precision": {
-          "exact": 5912,
+          "exact": 5910,
           "approximate": 0
         },
         "estimated_universe": null,
@@ -1833,11 +1833,11 @@
         "entities": [
           {
             "file": "postoffices.json",
-            "count": 3908
+            "count": 3907
           },
           {
             "file": "atms.json",
-            "count": 2025
+            "count": 2024
           }
         ],
         "sources": [
@@ -1852,7 +1852,7 @@
         ],
         "license": "Data © Algérie Poste; redistributed for reference",
         "updated": "2026-10-25",
-        "distinct_postal_codes": 4000
+        "distinct_postal_codes": 3999
       }
     },
     {
@@ -2585,7 +2585,7 @@
     {
       "dataset": "poste",
       "entity": "atms.json",
-      "total_records": 2025,
+      "total_records": 2024,
       "candidates": 8,
       "reasons": {
         "inside_adjacent_wilaya": 1,
@@ -2598,7 +2598,7 @@
     {
       "dataset": "poste",
       "entity": "postoffices.json",
-      "total_records": 3908,
+      "total_records": 3907,
       "candidates": 27,
       "reasons": {
         "inside_adjacent_wilaya": 6,

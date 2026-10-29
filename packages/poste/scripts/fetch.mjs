@@ -7,12 +7,30 @@
  *   https://baridimap-api.poste.dz/api/postoffices
  *   https://baridimap-api.poste.dz/api/atms
  *
- * Usage: node scripts/fetch.mjs
+ * Usage: node scripts/fetch.mjs            # live pull
+ *        node scripts/fetch.mjs --cache    # offline replay, see REPLAY below
+ *
+ * REPLAY. Every other `--cache` in this repo replays a raw capture under
+ * sources/<pkg>/, and this package has none: BaridiMap is geo-blocked from
+ * outside Algeria, so the only pulls that ever ran produced no committed
+ * capture. The rows this package already ships are therefore the replay's own
+ * input, exactly as scripts/apply-overrides.mjs treats them. They are already
+ * v2 records, so the MIGRATIONS map is NOT applied a second time (it reads the
+ * raw provider field names), and the dates come from the committed metadata
+ * (resolveDates with offline=true) so a replay never stamps a `retrieved` no
+ * request was made on. A replay with nothing excluded is byte-identical to what
+ * it read, which is what makes it safe to use to apply a removal.
  */
 
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
+import {
+  MIGRATIONS,
+  writePackageV2,
+  resolveDates,
+  readCommitted,
+  readRetiredIds,
+} from "../../../scripts/lib/v2-transforms.mjs";
 import {
   canonicalCommuneForCode,
   normalizeProviderCommune,
@@ -41,6 +59,10 @@ const HEADERS = {
 // An office whose ADDRESS merely names the ANP or the gendarmerie is not one of
 // these, nor is one whose name happens to be a person's ("404 AHCENE ASKRI");
 // only a service point sited inside a military facility is listed here.
+//
+// A published id is a join key: the ids dropped here are reserved forever in
+// data/retired-ids.json, so no later record can be handed one. They forward
+// nowhere, because the records are removed and not merged into anything.
 const MILITARY_IDS = {
   // Inside the Ain Naadja central military hospital.
   "postoffices.json": new Set(["2532"]),
@@ -124,44 +146,67 @@ export function normAtm(a) {
 
 // --- main ------------------------------------------------------------------
 async function main() {
-  // Military locations leave the package before anything else sees them.
+  const OFFLINE = process.argv.includes("--cache");
+  const cfg = MIGRATIONS.poste;
+  const mapOf = (f) => cfg.files.find((s) => s.file === f).map;
+
+  // Military locations leave the package before anything else sees them, and each
+  // id they leave behind joins the reserved set, on a live run and on a replay
+  // alike, so the ledger states the same thing whichever one applied the removal.
+  const retiredIds = readRetiredIds(OUT_DIR);
   const withoutMilitary = (rows, file) => {
     const drop = MILITARY_IDS[file];
-    const kept = rows.filter((r) => !drop.has(String(r.id)));
+    const kept = [];
+    for (const r of rows) {
+      if (drop.has(String(r.id))) retiredIds.add(String(r.id));
+      else kept.push(r);
+    }
     if (kept.length !== rows.length) {
       console.log(`  military: ${rows.length - kept.length} ${file} record(s) excluded`);
     }
     return kept;
   };
 
-  console.log("Fetching post offices…");
-  const offices = withoutMilitary(
-    (await getJSON("/postoffices")).map(normPostOffice),
-    "postoffices.json",
-  );
+  // v2 rows for each file. A live run maps the raw provider payload; a replay
+  // reads the committed records, which are v2 already.
+  let offices;
+  let atms;
+  if (OFFLINE) {
+    console.log("Replaying the committed records (no network)…");
+    offices = withoutMilitary(readCommitted(OUT_DIR, "postoffices.json"), "postoffices.json");
+    atms = withoutMilitary(readCommitted(OUT_DIR, "atms.json"), "atms.json");
+  } else {
+    console.log("Fetching post offices…");
+    offices = withoutMilitary(
+      (await getJSON("/postoffices")).map(normPostOffice).map(mapOf("postoffices.json")),
+      "postoffices.json",
+    );
+    console.log("Fetching ATMs…");
+    atms = withoutMilitary(
+      (await getJSON("/atms")).map(normAtm).map(mapOf("atms.json")),
+      "atms.json",
+    );
+  }
   console.log(`  ${offices.length} post offices`);
-
-  console.log("Fetching ATMs…");
-  const atms = withoutMilitary((await getJSON("/atms")).map(normAtm), "atms.json");
   console.log(`  ${atms.length} ATMs`);
 
-  // Emit v2 via the shared writer (live-only source, so stamp the run's date) to
-  // BOTH the package tree and the dataset mirror, so the two stay byte-identical.
+  // Emit v2 via the shared writer to BOTH the package tree and the dataset
+  // mirror, so the two stay byte-identical. A live run stamps its own date; a
+  // replay reuses the committed one, because it asked the upstream nothing.
   // Fresh rows per destination: writePackageV2 sorts/demotes in place.
-  const cfg = MIGRATIONS.poste;
-  const mapOf = (f) => cfg.files.find((s) => s.file === f).map;
-  const today = new Date().toISOString().slice(0, 10);
+  const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   for (const dir of [OUT_DIR, MIRROR_DIR]) {
     writePackageV2({
       pkg: "poste",
       dir,
       files: [
-        { file: "postoffices.json", rows: offices.map(mapOf("postoffices.json")) },
-        { file: "atms.json", rows: atms.map(mapOf("atms.json")) },
+        { file: "postoffices.json", rows: structuredClone(offices) },
+        { file: "atms.json", rows: structuredClone(atms) },
       ],
       meta: cfg.meta,
-      updated: today,
-      retrieved: today,
+      updated,
+      retrieved,
+      retiredIds,
     });
   }
   console.log(`Wrote ${offices.length} post offices + ${atms.length} ATMs → v2 (package + dataset mirror).`);

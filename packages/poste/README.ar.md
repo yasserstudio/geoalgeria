@@ -12,7 +12,7 @@
 
 </div>
 
-3,908 مكتب بريد و2,025 جهاز صراف آلي عبر الجزائر – مع **أكواد بريدية حقيقية**، وأسماء ثنائية اللغة (فرنسية / عربية)، وإحداثيات GPS، وربط بالبلدية/الولاية. مصدرها بريد الجزائر، متوفرة بصيغ JSON وCSV وGeoJSON. جزء من [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
+3,907 مكتب بريد و2,024 جهاز صراف آلي عبر الجزائر – مع **أكواد بريدية حقيقية**، وأسماء ثنائية اللغة (فرنسية / عربية)، وإحداثيات GPS، وربط بالبلدية/الولاية. مصدرها بريد الجزائر، متوفرة بصيغ JSON وCSV وGeoJSON. جزء من [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
 npm install @geoalgeria/poste
@@ -21,8 +21,8 @@ npm install @geoalgeria/poste
 ```js
 import poste from "@geoalgeria/poste";
 
-const offices = poste.postOffices();   // 3,908
-const atms = poste.atms();             // 2,025
+const offices = poste.postOffices();   // 3,907
+const atms = poste.atms();             // 2,024
 
 // مكاتب البريد في بلدية (ربط عبر code_commune الخاص بـ GeoAlgeria)
 const inAdrar = offices.filter((o) => o.commune_code === "0101");
@@ -41,8 +41,8 @@ const inAdrar = offices.filter((o) => o.commune_code === "0101");
 
 | مجموعة البيانات | العدد | ملاحظات |
 | --- | --- | --- |
-| مكاتب البريد | **3,908** | كل مكتب بكوده البريدي الخاص (`postal_code`) |
-| أجهزة الصراف الآلي | **2,025** | شبكة GAB لبريد الجزائر |
+| مكاتب البريد | **3,907** | كل مكتب بكوده البريدي الخاص (`postal_code`) |
+| أجهزة الصراف الآلي | **2,024** | شبكة GAB لبريد الجزائر |
 
 ## الصيغ
 
@@ -66,8 +66,8 @@ const offices: PostOffice[] = poste.postOffices();
 
 ```
 data/
-  postoffices.json            # 3,908 مكتب (مصفوفة)
-  atms.json                   # 2,025 صراف آلي (مصفوفة)
+  postoffices.json            # 3,907 مكتب (مصفوفة)
+  atms.json                   # 2,024 صراف آلي (مصفوفة)
   metadata.json               # الأعداد، المصادر، الترخيص، updated
   csv/postoffices.csv         # المستودع + حزمة الإصدار (غير مضمن في حزمة npm)
   csv/atms.csv

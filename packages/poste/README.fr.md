@@ -12,7 +12,7 @@
 
 </div>
 
-3 908 bureaux de poste et 2 025 distributeurs automatiques (DAB) à travers l'Algérie – avec de **vrais codes postaux**, des noms bilingues (français / arabe), des coordonnées GPS et un rattachement commune/wilaya. Données issues d'Algérie Poste, distribuées en JSON, CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
+3 907 bureaux de poste et 2 024 distributeurs automatiques (DAB) à travers l'Algérie – avec de **vrais codes postaux**, des noms bilingues (français / arabe), des coordonnées GPS et un rattachement commune/wilaya. Données issues d'Algérie Poste, distribuées en JSON, CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
 npm install @geoalgeria/poste
@@ -21,8 +21,8 @@ npm install @geoalgeria/poste
 ```js
 import poste from "@geoalgeria/poste";
 
-const offices = poste.postOffices();   // 3 908
-const atms = poste.atms();             // 2 025
+const offices = poste.postOffices();   // 3 907
+const atms = poste.atms();             // 2 024
 
 // Bureaux de poste dans une commune (jointure sur code_commune de GeoAlgeria)
 const inAdrar = offices.filter((o) => o.commune_code === "0101");
@@ -41,8 +41,8 @@ const inAdrar = offices.filter((o) => o.commune_code === "0101");
 
 | Jeu de données | Nombre | Notes |
 | --- | --- | --- |
-| Bureaux de poste | **3 908** | chacun avec son propre code postal (`postal_code`) |
-| DAB | **2 025** | Réseau GAB d'Algérie Poste |
+| Bureaux de poste | **3 907** | chacun avec son propre code postal (`postal_code`) |
+| DAB | **2 024** | Réseau GAB d'Algérie Poste |
 
 ## Formats
 
@@ -66,8 +66,8 @@ Les fichiers **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inc
 
 ```
 data/
-  postoffices.json            # 3 908 bureaux (tableau)
-  atms.json                   # 2 025 DAB (tableau)
+  postoffices.json            # 3 907 bureaux (tableau)
+  atms.json                   # 2 024 DAB (tableau)
   metadata.json               # comptages, sources, licence, updated
   csv/postoffices.csv         # dépôt + bundle Release (pas dans le tarball npm)
   csv/atms.csv
