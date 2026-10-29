@@ -66,8 +66,33 @@ const HEADERS = {
 const MILITARY_IDS = {
   // Inside the Ain Naadja central military hospital.
   "postoffices.json": new Set(["2532"]),
-  // Inside the naval school, Mostaganem.
-  "atms.json": new Set(["13519"]),
+  // Inside the naval school, Mostaganem (13519), and inside the army's family rest
+  // centre (Centre de Repos Familial, CRF) at Sidi Fredj, Staoueli (13104).
+  "atms.json": new Set(["13519", "13104"]),
+};
+
+// ATMs BaridiMap lists with no coordinate, placed at their host post office's own
+// BaridiMap point (the operator's published location, Owner rule of 2026-10-25).
+// The ATM is the office's: same postal code, and the same name or the office's
+// second machine ("BARAKI 2" beside ATM 1512 "BARAKI", which BaridiMap puts 20 m
+// from office 748). The point is the office building's, not a survey of the
+// machine, so `geo_method` says so. An ATM that gains its own coordinate upstream
+// keeps it; a key whose ATM or office is gone stops the build.
+const ATM_HOST_OFFICE = {
+  1513: 748, // BARAKI 2 -> BARAKI, 16027
+  1772: 234, // AHMER EL AIN, 42005
+  2335: 206, // AIN TAYA, 16019
+};
+const placeAtHostOffice = (atms, offices) => {
+  const officeById = new Map(offices.map((o) => [String(o.id), o]));
+  const atmById = new Map(atms.map((a) => [String(a.id), a]));
+  for (const [atmId, officeId] of Object.entries(ATM_HOST_OFFICE)) {
+    const atm = atmById.get(atmId), office = officeById.get(String(officeId));
+    if (!atm || !office || office.lat == null) throw new Error(`poste: ATM_HOST_OFFICE ${atmId} -> ${officeId}: ATM or office missing`);
+    if (atm.postal_code !== office.postal_code) throw new Error(`poste: ATM_HOST_OFFICE ${atmId}: postal code ${atm.postal_code} is not office ${officeId}'s ${office.postal_code}`);
+    if (atm.lat != null) continue;
+    Object.assign(atm, { lat: office.lat, lng: office.lng, geo_precision: office.geo_precision, geo_method: "baridimap_host_office" });
+  }
 };
 
 const num = (v) => {
@@ -187,6 +212,7 @@ async function main() {
       "atms.json",
     );
   }
+  placeAtHostOffice(atms, offices);
   console.log(`  ${offices.length} post offices`);
   console.log(`  ${atms.length} ATMs`);
 

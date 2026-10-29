@@ -64,7 +64,7 @@ A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office 
 | **Dairas** | 551 | districts, as first-class entities |
 | **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates, OpenStreetMap + Wikidata links |
 | **Post offices** | 3,907 | real Algérie Poste codes, coordinates |
-| **ATMs** | 2,024 | Algérie Poste GAB network |
+| **ATMs** | 2,023 | Algérie Poste GAB network |
 | **Employment agencies** | 331 | ANEM: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
 | **Mobilis network** | 12,344 | 164 agencies + 12,180 points of sale. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **5G coverage** | 3,598 | Djezzy + Mobilis + Ooredoo 5G sites. [`@geoalgeria/telecom`](packages/telecom) |

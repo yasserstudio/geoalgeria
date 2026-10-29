@@ -95,6 +95,14 @@ for (const [pkg, entry] of Object.entries(FIXTURE.packages)) {
 // its own output before comparing, so the guard keeps watching every OTHER
 // field of the same record instead of being silenced record-wide.
 const CORRECTIONS = {
+  poste: {
+    // ATMs BaridiMap lists with no point, placed at their host post office's
+    // BaridiMap point since 2026-10-29 (fetch.mjs ATM_HOST_OFFICE). Keyed by
+    // file, because post office ids repeat these ATM ids.
+    "atms.json/1513": { lat: 36.6668571, lng: 3.0975315, geo_precision: "exact", geo_method: "baridimap_host_office" },
+    "atms.json/1772": { lat: 36.4775567, lng: 2.5646019, geo_precision: "exact", geo_method: "baridimap_host_office" },
+    "atms.json/2335": { lat: 36.7927607, lng: 3.2909607, geo_precision: "exact", geo_method: "baridimap_host_office" },
+  },
   banques: {
     // BEA's locator publishes address-only rows. The reviewed seed enriches
     // them with the locator's embedded map coordinates after the v2 cutover;
@@ -433,7 +441,8 @@ for (const [pkg, file, map] of SPECS) {
       const produced = foldNameDashes(map(v1));
       if (produced.geo_precision === "exact" && shared.has(`${produced.lat},${produced.lng}`))
         produced.geo_precision = "approximate";
-      const fix = CORRECTIONS[pkg]?.[produced.id];
+      // A key may name the file ("atms.json/1513") where ids repeat across files.
+      const fix = CORRECTIONS[pkg]?.[`${file}/${produced.id}`] ?? CORRECTIONS[pkg]?.[produced.id];
       if (fix) Object.assign(produced, fix);
       const shipped = committed.get(produced.id);
       // A refreshed source may remove a row sampled at the v2 cutover. Its

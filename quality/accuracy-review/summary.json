@@ -232,11 +232,11 @@
     },
     {
       "path": "packages/poste/data/atms.json",
-      "sha256": "756abaac0abde1abad1bc42ea8c1a2b7ec32cd48ed47fd587e5fd844b0013ba3"
+      "sha256": "329d499865cb14d9381d5f3cb6129ebc7991436d5f4f9ac1a49c85bf97132fd1"
     },
     {
       "path": "packages/poste/data/metadata.json",
-      "sha256": "cd39fa17d88761e7a49e51a16b3c269daeb812b722b9f4896409a06e14bd5126"
+      "sha256": "02e527c567e13e797c72c7a9bc42d5b6a7e0cda1c76a1f49f63df97e1938279d"
     },
     {
       "path": "packages/poste/data/postoffices.json",
@@ -317,12 +317,12 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70774,
-  "candidates": 17473,
+  "total_records": 70773,
+  "candidates": 17469,
   "reasons": {
     "approximate_coordinate": 16633,
     "inside_adjacent_wilaya": 192,
-    "missing_coordinate": 492,
+    "missing_coordinate": 488,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
     "shared_coordinate": 1136
@@ -1798,11 +1798,11 @@
     },
     {
       "dataset": "poste",
-      "total_records": 5931,
-      "candidates": 35,
+      "total_records": 5930,
+      "candidates": 31,
       "reasons": {
         "inside_adjacent_wilaya": 7,
-        "missing_coordinate": 21,
+        "missing_coordinate": 17,
         "outside_all_wilaya_boundaries": 7,
         "outside_declared_wilaya": 14
       },
@@ -1813,11 +1813,11 @@
         "title_fr": "Bureaux de poste et GAB d'Algérie",
         "title_ar": "مكاتب البريد والصرافات الآلية الجزائرية",
         "title_en": "Algeria post offices & ATMs",
-        "record_count": 5931,
-        "geocoded_count": 5910,
-        "geocoded_pct": 99.6,
+        "record_count": 5930,
+        "geocoded_count": 5913,
+        "geocoded_pct": 99.7,
         "precision": {
-          "exact": 5910,
+          "exact": 5913,
           "approximate": 0
         },
         "estimated_universe": null,
@@ -1837,7 +1837,7 @@
           },
           {
             "file": "atms.json",
-            "count": 2024
+            "count": 2023
           }
         ],
         "sources": [
@@ -2585,11 +2585,11 @@
     {
       "dataset": "poste",
       "entity": "atms.json",
-      "total_records": 2024,
-      "candidates": 8,
+      "total_records": 2023,
+      "candidates": 4,
       "reasons": {
         "inside_adjacent_wilaya": 1,
-        "missing_coordinate": 5,
+        "missing_coordinate": 1,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 3
       },

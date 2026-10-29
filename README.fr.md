@@ -64,7 +64,7 @@ Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les 
 | **Daïras** | 551 | districts, comme entités de premier niveau |
 | **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées, liens OpenStreetMap + Wikidata |
 | **Bureaux de poste** | 3 907 | vrais codes Algérie Poste, coordonnées |
-| **DAB** | 2 024 | réseau GAB d'Algérie Poste |
+| **DAB** | 2 023 | réseau GAB d'Algérie Poste |
 | **Agences d'emploi** | 331 | ANEM : 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
 | **Réseau Mobilis** | 12 344 | 164 agences + 12 180 points de vente. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **Couverture 5G** | 3 598 | sites 5G Djezzy + Mobilis + Ooredoo. [`@geoalgeria/telecom`](packages/telecom) |

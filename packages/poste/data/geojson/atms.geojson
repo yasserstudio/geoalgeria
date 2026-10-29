@@ -29833,6 +29833,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.0975315,
+          36.6668571
+        ]
+      },
+      "properties": {
+        "id": "1513",
+        "name": "BARAKI 2",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": "BARAKI",
+        "commune_ar": "براقي",
+        "lat": 36.6668571,
+        "lng": 3.0975315,
+        "geo_precision": "exact",
+        "geo_method": "baridimap_host_office",
+        "source": "baridimap",
+        "status": "OPEN",
+        "postal_code": "16027",
+        "postal_code_old": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           4.7949727,
           36.1509643
         ]
@@ -39746,6 +39773,33 @@
         "source": "baridimap",
         "status": "1",
         "postal_code": "12016",
+        "postal_code_old": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.5646019,
+          36.4775567
+        ]
+      },
+      "properties": {
+        "id": "1772",
+        "name": "AHMER EL AIN",
+        "wilaya_code": "42",
+        "commune_code": null,
+        "commune": "AHMER EL AIN",
+        "commune_ar": "أحمر العين",
+        "lat": 36.4775567,
+        "lng": 2.5646019,
+        "geo_precision": "exact",
+        "geo_method": "baridimap_host_office",
+        "source": "baridimap",
+        "status": "OPEN",
+        "postal_code": "42005",
         "postal_code_old": null,
         "address": null
       }
@@ -51972,6 +52026,33 @@
         "source": "baridimap",
         "status": "1",
         "postal_code": "16064",
+        "postal_code_old": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2909607,
+          36.7927607
+        ]
+      },
+      "properties": {
+        "id": "2335",
+        "name": "AIN TAYA",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": "AIN TAYA",
+        "commune_ar": "عين طاية",
+        "lat": 36.7927607,
+        "lng": 3.2909607,
+        "geo_precision": "exact",
+        "geo_method": "baridimap_host_office",
+        "source": "baridimap",
+        "status": "OPEN",
+        "postal_code": "16019",
         "postal_code_old": null,
         "address": null
       }

@@ -9,8 +9,10 @@
 export type GeoPrecision = "exact" | "approximate" | null;
 
 /** How the coordinate was obtained. `null` on an ungeocoded record: no method
- *  produced a point, so none can be named. */
-export type GeoMethod = "baridimap" | null;
+ *  produced a point, so none can be named. "baridimap_host_office" is an ATM
+ *  BaridiMap lists with no point, placed at its host post office's BaridiMap
+ *  point. */
+export type GeoMethod = "baridimap" | "baridimap_host_office" | null;
 
 /** Office class/category as published by Algérie Poste. */
 export type OfficeClass = "CE" | "GA" | "HC" | "R1" | "R2" | "R3" | "R4";
