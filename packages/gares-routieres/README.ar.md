@@ -77,7 +77,9 @@ const setif = gares.stationsByWilaya(19);
 ## الرخصة والإسناد
 
 الشيفرة تحت رخصة [MIT](LICENSE). البيانات ملك © **سوقرال**، يُعاد نشرها للاستئناس ولدعم
-[GeoAlgeria](https://geoalgeria.com). تحقّق من سوقرال للمعلومات الرسمية والمحدّثة.
+[GeoAlgeria](https://geoalgeria.com). تحقّق من سوقرال للمعلومات الرسمية والمحدّثة. ثماني إحداثيات لمحطات
+تنشرها سوقرال ناقصة أو خاطئة مأخوذة من OpenStreetMap (`COORD_FIX` في `scripts/fetch.mjs`):
+© مساهمو OpenStreetMap، بموجب رخصة [ODbL 1.0](https://opendatacommons.org/licenses/odbl/).
 
 [تصفّح كل الحزم →](https://geoalgeria.com/data)
 

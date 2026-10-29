@@ -124,11 +124,15 @@
     },
     {
       "path": "packages/ferroviaire/data/metadata.json",
-      "sha256": "dfe27c28c40c35568be7be410b490b2170a1eb5318aeb91fe758a10d6b098b25"
+      "sha256": "182c36e66becc21871a23f8ebfe9dfc0d9cc63f964197681095a9e860b34b840"
+    },
+    {
+      "path": "packages/ferroviaire/data/retired-ids.json",
+      "sha256": "119df5e69544639a9aaf62d11f98c8f411763f032ef23c6268a916793afa7773"
     },
     {
       "path": "packages/ferroviaire/data/stations.json",
-      "sha256": "b88e7a11ca45d8800d8bdd7fd37f6e38506f21c23134992f234f7b291bd4081f"
+      "sha256": "66073fca60e902057701328f7f0887001e9e030aa4bf4b73860f06cd03cfcee9"
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
@@ -317,7 +321,7 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70785,
+  "total_records": 70784,
   "candidates": 17467,
   "reasons": {
     "approximate_coordinate": 16627,
@@ -1137,7 +1141,7 @@
     },
     {
       "dataset": "ferroviaire",
-      "total_records": 692,
+      "total_records": 691,
       "candidates": 4,
       "reasons": {
         "approximate_coordinate": 2,
@@ -1151,11 +1155,11 @@
         "title_fr": "Gares ferroviaires et de transit d'Algérie",
         "title_ar": "محطات السكك الحديدية والنقل الجزائرية",
         "title_en": "Algeria railway & transit stations",
-        "record_count": 692,
-        "geocoded_count": 692,
+        "record_count": 691,
+        "geocoded_count": 691,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 690,
+          "exact": 689,
           "approximate": 2
         },
         "estimated_universe": null,
@@ -1193,12 +1197,12 @@
           "tram": 190,
           "aerial_tram": 24,
           "gondola": 10,
-          "metro": 41
+          "metro": 40
         },
         "by_operator": {
           "SNTF": 427,
           "SETRAM": 190,
-          "SEMA": 41
+          "SEMA": 40
         },
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
@@ -2464,7 +2468,7 @@
     {
       "dataset": "ferroviaire",
       "entity": "stations.json",
-      "total_records": 692,
+      "total_records": 691,
       "candidates": 4,
       "reasons": {
         "approximate_coordinate": 2,
@@ -2777,6 +2781,10 @@
     },
     {
       "path": "packages/ecoles/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/ferroviaire/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {

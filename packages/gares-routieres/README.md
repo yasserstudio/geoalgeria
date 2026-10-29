@@ -105,8 +105,8 @@ data/
 
 `id` is an opaque string, `{wilaya_code}-{seq}`-shaped but unique within `stations.json`,
 don't parse it. `wilaya_code`/`commune` come from a nearest-centroid join against
-`geoalgeria` (which also reconciles SOGRAL's legacy 48-wilaya codes). 71 of 74 stations
-are `geo_precision: "exact"`; 3 are `"approximate"` (Guelma, Illizi, Aïn Oussara). The
+`geoalgeria` (which also reconciles SOGRAL's legacy 48-wilaya codes). 73 of 74 stations
+are `geo_precision: "exact"`; 1 is `"approximate"` (Illizi). The
 SOGRAL location code lives under `refs.sogral`; it is a **town-level** id shared by
 twin stations of one town (Annaba and Sidi Brahim, the three Constantine gares), so
 never treat it as a station key. `refs.mahatati_agency` is the per-station MAHATATI
@@ -149,7 +149,9 @@ commune centroid from the `geoalgeria` dataset.
 
 Code is [MIT](LICENSE). The underlying data is © **SOGRAL**, redistributed for reference
 and to power [GeoAlgeria](https://geoalgeria.com). Verify against SOGRAL for authoritative,
-real-time information.
+real-time information. Eight station coordinates that SOGRAL ships missing or broken
+come from OpenStreetMap instead (`COORD_FIX` in `scripts/fetch.mjs`): © OpenStreetMap
+contributors, available under the [ODbL 1.0](https://opendatacommons.org/licenses/odbl/).
 
 [Browse all packages →](https://geoalgeria.com/data)
 

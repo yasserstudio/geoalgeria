@@ -14,6 +14,7 @@ import {
   committedDates,
   readCommitted,
   readRetiredIds,
+  readRetiredMigrations,
   writePackageV2,
 } from "../../../scripts/lib/v2-transforms.mjs";
 
@@ -41,7 +42,7 @@ const REVIEWED_POINT = {
   Q120282282: { osm: "way/305835618", version: 3, lat: 34.9207319, lng: -1.9398857, read_at: "2026-10-29" }, // Gare de Souani
   Q109312809: { osm: "node/12942126786", version: 2, lat: 36.6737614, lng: 3.0865845, read_at: "2026-10-29" }, // Mohamed Belarbi
   // Jardin's Wikidata P625 is Mohamed Belarbi's to the metre; OSM maps it as its own
-  // future metro station "Berraki - Le Jardin", 1.3 km along line 1.
+  // future metro station "Berraki - Le Jardin", 1.3 km along line 1 (see OSM_MATCH_FIX).
   Q138494132: { osm: "node/12942126787", version: 2, lat: 36.6683089, lng: 3.0951274, read_at: "2026-10-29" }, // Jardin
   Q119072200: { osm: "node/3884932091", version: 6, lat: 35.6501075, lng: -0.6074682, read_at: "2026-10-29" }, // Es Senia
   Q119144784: { osm: "node/5416215334", version: 5, lat: 35.8472592, lng: -0.3200193, read_at: "2026-10-29" }, // Arzew
@@ -49,11 +50,13 @@ const REVIEWED_POINT = {
   // Two Votes: the OSM node and Wikidata's own P625 for Q123498571, 59 m apart.
   Q123498571: { osm: "node/9358330035", version: 2, lat: 32.6143877, lng: -0.405841, read_at: "2026-10-29", votes: ["osm", "wikidata"] }, // Aïn El Hadjadi
 };
-// OSM nodes the 150 m merge would hand to the wrong item. node/9358330035 is tagged
-// "Aïn El Hadjadi" with no wikidata tag, and Wikidata gives Rouïba (Q123498570) the
-// same coordinate as Aïn El Hadjadi (Q123498571), so the nearest-item test picked
-// Rouïba by order alone.
-const OSM_MATCH_FIX = { "node/9358330035": "Q123498571" };
+// OSM nodes the 150 m merge would hand to the wrong item, or to none. Neither node
+// carries a wikidata tag. node/9358330035 is tagged "Aïn El Hadjadi", and Wikidata
+// gives Rouïba (Q123498570) the same coordinate as Aïn El Hadjadi (Q123498571), so the
+// nearest-item test picked Rouïba by order alone. node/12942126787 is Jardin, 1.3 km
+// from the copied Wikidata point, so it shipped as a second record of the same
+// station (16-029) until 2026-10-29; it now merges and 16-029 forwards to 16-044.
+const OSM_MATCH_FIX = { "node/9358330035": "Q123498571", "node/12942126787": "Q138494132" };
 // Stations whose only coordinate is a copy of a neighbour's (Wikidata P625 equal to
 // the other station's to the metre). The place is real and near, the point is not
 // its own, so it ships approximate. Rouïba (the Moghrar line halt, not the Algiers
@@ -190,9 +193,17 @@ for (const r of records) {
   const p = REVIEWED_POINT[r.wikidata];
   if (!p) continue;
   if (r.osm_id && r.osm_id !== p.osm) throw new Error(`ferroviaire: ${r.wikidata} is linked to ${r.osm_id}, REVIEWED_POINT names ${p.osm}`);
-  r.lat = p.lat; r.lng = p.lng; r.osm_id = p.osm;
+  // Six decimals, as every ingested point, so demoteSharedPoints still sees a
+  // reviewed point that lands on another record's.
+  r.lat = round6(p.lat); r.lng = round6(p.lng); r.osm_id = p.osm;
   if (r.source === "wikidata") r.source = "wikidata+osm";
   reviewedHit.add(r.wikidata);
+}
+const osmSeen = new Map();
+for (const r of records) {
+  if (!r.osm_id) continue;
+  if (osmSeen.has(r.osm_id)) throw new Error(`ferroviaire: ${r.osm_id} is carried by two records (${osmSeen.get(r.osm_id)}, ${r.wikidata ?? r.name})`);
+  osmSeen.set(r.osm_id, r.wikidata ?? r.name);
 }
 const reviewedMissed = Object.keys(REVIEWED_POINT).filter((k) => !reviewedHit.has(k));
 if (reviewedMissed.length) throw new Error(`ferroviaire: REVIEWED_POINT key(s) [${reviewedMissed.join(", ")}] matched no record`);
@@ -277,6 +288,20 @@ carryOverIds(
   "ferroviaire",
   retiredIds,
 );
+// A committed OSM-only record whose node OSM_MATCH_FIX now merges into a Wikidata
+// station retired above; forward its id to that station so the old key still lands.
+const retiredMigrations = readRetiredMigrations(DATA);
+const liveByQid = new Map(v2.filter((r) => r.refs?.wikidata).map((r) => [r.refs.wikidata, r]));
+for (const old of readCommitted(DATA, "stations.json") ?? []) {
+  const qid = !old.refs?.wikidata && OSM_MATCH_FIX[old.refs?.osm];
+  const into = qid && liveByQid.get(qid);
+  if (!into || !retiredIds.has(String(old.id)) || retiredMigrations[old.id]) continue;
+  retiredMigrations[old.id] = {
+    merged_into: into.id,
+    osm: [old.refs.osm],
+    note: `Merged into ${into.id}. OpenStreetMap ${old.refs.osm} and Wikidata ${qid} are the same station; the record now carries both.`,
+  };
+}
 v2.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 
 const { records: final } = writePackageV2({
@@ -287,6 +312,7 @@ const { records: final } = writePackageV2({
   updated,
   retrieved,
   retiredIds,
+  retiredMigrations,
 });
 
 console.log(`ferroviaire: ${final.length} nodes → v2 · merged OSM↔WD ${merged} · OSM-only added ${kept.length}`);
