@@ -288,7 +288,7 @@
     },
     {
       "path": "packages/telecom/data/metadata.json",
-      "sha256": "8decbc2a814de540f14f0bb2335f1046b47b820a18711e91653ff33a54b9d781"
+      "sha256": "4715a8da31db5fdba5a66fe00a9951f86e3a381882bf4857e5572936ceb93030"
     },
     {
       "path": "packages/tourisme/data/attractions.json",
@@ -2118,7 +2118,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records and 6 Mobilis records have their coordinates withheld because the operator's own wilaya and commune labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 40 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value, and 8 more carry a reviewed wilaya correction with the evidence that settled it. `commune_ar` is the official Arabic name from the national commune registry wherever a record resolves to a canonical commune, 3,013 of 4,094; the operator's own Arabic label publishes only where nothing resolves, because the operators rewrite that column between pulls and the 2026-10 Mobilis capture moved 46 records off the registry name. Other commune names remain unlinked free text.",
+        "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records and 6 Mobilis records have their coordinates withheld because the operator's own wilaya and commune labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 40 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value, and 8 more carry a reviewed wilaya correction with the evidence that settled it. `commune_ar` is the official Arabic name from the national commune registry wherever a record resolves to a canonical commune, 3,013 of 4,093; the operator's own Arabic label publishes only where nothing resolves, because the operators rewrite that column between pulls and the 2026-10 Mobilis capture moved 46 records off the registry name. Other commune names remain unlinked free text.",
         "wilayas_covered": 67,
         "bbox": [
           -8.16521,
