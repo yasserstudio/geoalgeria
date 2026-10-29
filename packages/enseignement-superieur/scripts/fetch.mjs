@@ -207,6 +207,24 @@ function secondVotes(where, p) {
 // and never across a wilaya boundary).
 function campusPlace(where, p) {
   if (!inAlgeria(p.lat, p.lng)) throw new Error(`${where}: campus coordinate is not a reading inside Algeria`);
+  // docs/adr/0001 rule 6 as amended 2026-10-29: where no open object confirms
+  // it, the Owner's own pin ships as the coordinate, its provenance stated.
+  if (p.owner_pin) {
+    for (const k of ["read_at", "read_by", "source", "entry"])
+      if (p.owner_pin[k] == null) throw new Error(`${where}: owner_pin needs ${k}`);
+    if (p.osm != null) throw new Error(`${where}: an owner_pin placement has no OSM object; one that confirms it ships instead`);
+    const nc = nearestCommune(p.lat, p.lng);
+    if (!nc) throw new Error(`${where}: owner pin joins no flagship commune`);
+    if (p.wilaya_code != null && Number(p.wilaya_code) !== nc.code)
+      throw new Error(`${where}: owner pin joins wilaya ${nc.code}, seed says ${p.wilaya_code}`);
+    let commune = nc.name;
+    if (p.commune != null) {
+      const c = communeByName(p.commune, nc.code);
+      if (!c) throw new Error(`${where}: commune "${p.commune}" does not resolve inside wilaya ${nc.code}`);
+      commune = c.name;
+    }
+    return { lat: p.lat, lng: p.lng, wilaya_code: nc.code, commune, precision: "campus", votes: 1, ownerPin: true };
+  }
   if (!/^(node|way|relation)\/\d+$/.test(String(p.osm)) || !Number.isInteger(p.osm_version) || !p.osm_timestamp)
     throw new Error(`${where}: a campus coordinate needs its OSM object as osm/osm_version/osm_timestamp`);
   const nc = nearestCommune(p.lat, p.lng);
@@ -339,7 +357,7 @@ async function main() {
     // record fails here instead of relabelling it.
     if (p.wilaya_code == null) throw new Error(`${where}: a second-source placement needs its wilaya_code`);
     const pl = campusPlace(where, p);
-    if (pl.votes < 2) throw new Error(`${where}: a second-source placement needs its second Vote`);
+    if (pl.votes < 2 && !pl.ownerPin) throw new Error(`${where}: a second-source placement needs its second Vote`);
     if (expectWilaya != null && pl.wilaya_code !== expectWilaya)
       throw new Error(`${where}: the point joins wilaya ${pl.wilaya_code}, the record says ${expectWilaya}`);
     return pl;
@@ -495,11 +513,11 @@ async function main() {
     const p = add.place ?? {};
     let lat = null, lng = null, wilaya_code = null, commune = null, precision = null;
     if (p.precision === "campus") {
-      let votes;
-      ({ lat, lng, wilaya_code, commune, precision, votes } = campusPlace(where, p));
+      let votes, ownerPin;
+      ({ lat, lng, wilaya_code, commune, precision, votes, ownerPin } = campusPlace(where, p));
       // Every campus point this file supplies is held to docs/adr/0001 in full:
       // its OSM object and a second independent Vote, or it is not exact.
-      if (votes < 2) throw new Error(`${where}: a campus point needs a second Vote (owner_confirmation or wikidata_confirmation)`);
+      if (votes < 2 && !ownerPin) throw new Error(`${where}: a campus point needs a second Vote (owner_confirmation or wikidata_confirmation) or an owner_pin`);
     } else if (p.precision === "commune") {
       const c = communeByName(p.commune, p.wilaya_code);
       if (!c) throw new Error(`${where}: commune "${p.commune}" does not resolve inside wilaya ${p.wilaya_code}`);

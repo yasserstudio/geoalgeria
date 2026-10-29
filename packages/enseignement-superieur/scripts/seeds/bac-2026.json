@@ -130,20 +130,18 @@
       "sector": "public",
       "supervisory_ministry": null,
       "place": {
-        "precision": "commune",
+        "precision": "campus",
+        "lat": 36.6890253,
+        "lng": 2.8648454,
         "commune": "Maalma",
         "wilaya_code": 16,
-        "why": "docs/adr/0001: no open object places this school. The building OSM names for it (way/1318066776) is, by the Owner's verdict of 2026-10-28, the nanosciences school's (P10), and the Owner's reading of this school's Google Maps entry (below) lands where OpenStreetMap maps no building: the nearest object is the Sidi Abdellah tech-pole outline (way/387256106), 169 m away, which is the pole and not the school. A proprietary reading can only confirm an open object, never ship, so the school sits on its commune's flagship centre, as P11 at the same pole does. Owner decision of 2026-10-28: it stays here this release. Mapping the building in OpenStreetMap at the reading would give it an open object to confirm.",
-        "owner_reading": {
-          "point": [
-            2.8648454,
-            36.6890253
-          ],
+        "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this school, so the Owner's pin ships as its coordinate. The building OSM names for it (way/1318066776) is, by the Owner's verdict of 2026-10-28, the nanosciences school's (P10), and the pin lands where OpenStreetMap maps no building: the nearest object is the Sidi Abdellah tech-pole outline (way/387256106), 169 m away. Mapping the building in OpenStreetMap would let an open point replace this one.",
+        "owner_pin": {
           "read_at": "2026-10-28",
           "read_by": "project owner",
           "source": "Google Maps, a proprietary map",
           "entry": "École Nationale Supérieure de Technologie des Systèmes Autonome(w)",
-          "note": "NOT a confirmation: no OpenStreetMap object lies at it."
+          "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
         }
       },
       "note": "www.enstsa.edu.dz, the domain the ministry's own pages still use, 301-redirects to nhsast.edu.dz, so the current domain is published here."

@@ -50,6 +50,8 @@ audited and repeated on every release.
    Wikidata, the record median) or from the Owner reading open imagery. An Owner reading
    made on Google Maps may only confirm an open Candidate within 500 m, and the open
    coordinate is the one that ships (Beni-Abbes 5201 is the first case).
+   **Amended 2026-10-29 by the Owner** (see "Rule 6 amended" below): where no open
+   Candidate confirms it, the Owner's pin ships.
 7. **Ledger.** v1 writes `research/_commune-centres/corrections-<run date>.json` in the
    existing shape, so the licence count, the dependents cascade and the existing tests keep
    working. Sector records (v2) go through the same voting module into
@@ -165,3 +167,23 @@ So, for an Owner reading only:
    date, reader, the map it was read from), and a reading past 500 m is no confirmation.
 3. **The copy radius still applies to every other Claim**, Wikidata's P625 included,
    because those can be copied from each other.
+
+## Rule 6 amended: the Owner's pin ships where no open object confirms it (2026-10-29, PR #310)
+
+Decided by the Owner on 2026-10-29, for this release: "we use everything we have in
+hand, for the people." A coordinate the Owner reads off a proprietary map (Google Maps)
+is no longer limited to confirming an open Candidate:
+
+1. Where an open Candidate lies within 500 m of the Owner's pin, nothing changes: the pin
+   is that Candidate's second Vote and the open coordinate ships.
+2. Where no open Candidate lies within 500 m, the Owner's pin itself ships as the
+   record's coordinate, recorded with the record as `owner_pin` (read date, reader,
+   source, the map entry it was read from). It is never presented as open data: the
+   seed's `why` and the package's SOURCE.md say the point is a proprietary-map reading.
+3. An open point that later confirms the place replaces the pin (rule 1 then applies).
+
+Consequences the Owner accepted when deciding: Google's terms do not allow its map content
+to be copied into another dataset, so these points are not covered by the open licence the
+rest of the data ships under, and a version published to npm cannot be withdrawn after 72
+hours. The first records placed this way are enseignement-superieur `00082` (ESCF
+Constantine) and `00183` (`P09`, ENS des systèmes autonomes).

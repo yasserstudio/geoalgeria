@@ -195,14 +195,14 @@ border) and `00064` to Guerrouaou (from Soumaa). Identity rests on a name match,
 tag for `00095` and `00111`, whose Wikidata website is the defence ministry's.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 98
-approximate records (87 `wilaya`, 11 `commune`) are in it exactly once:
+written offline and byte for byte by `precision-review.mjs` next to it. All 96
+approximate records (86 `wilaya`, 10 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
-| Queued, one candidate for the campus (single source) | 16 |
+| Queued, one candidate for the campus (single source) | 15 |
 | Queued, several candidates for the campus (ambiguous) | 0 |
-| No open candidate in the capture | 82 |
+| No open candidate in the capture | 81 |
 
 Each queued entry carries the OSM element, the tags that make the tie (the
 element's own website host where it has one, else a strict name match), the
@@ -236,13 +236,13 @@ the measured one.
 | `00073` | ENSTP, Ecole nationale supérieure des travaux publics (Kouba) | OSM `way/43331770` (not the Zeralda object, 19.6 km away) | 107 m | `exact` from `commune`, the OSM point ships |
 | `00166` | ENS de Constantine (Assia Djebar) | OSM `node/5322170362` (`website` tie; the other object is 11 km away) | 95 m | `exact` from `wilaya`, commune El Khroub by outline |
 | `00057` | USTO, Université des sciences et de la technologie d'Oran | OSM `way/71138773` | 23 m | `exact` from `commune`; Wikidata's town-level point 3.9 km away votes for no candidate |
-| `00183` | ENS des systèmes autonomes (`P09`, Sidi Abdellah) | none: no OSM object at the reading (the pole outline is 169 m away) | (no object) | **demoted** to the Maalma centre |
+| `00183` | ENS des systèmes autonomes (`P09`, Sidi Abdellah) | none: no OSM object at the reading (the pole outline is 169 m away) | (no object) | first **demoted** to the Maalma centre; since 2026-10-29 the Owner's pin ships (rule 6 amended) |
 | `00004` | Université d'Alger 1 (Benyoucef Benkhedda) | OSM `way/29082561`, the Faculté centrale (`website` tie) | 19 m | `exact` from `wilaya`, the OSM point ships |
 | `00060` | ENP, École nationale polytechnique (El Harrach) | OSM `way/97658302` | 64 m | `exact` from `commune`, the OSM point ships |
 | `00062` | ENP Constantine (Malek Bennabi) | OSM `node/5440413392` | 20 m | `exact` from `wilaya`, commune El Khroub by outline |
 | `00077` | EPAU, École polytechnique d'architecture et d'urbanisme | OSM `way/426908488` | 50 m | `exact` from `commune`, commune Oued Smar by outline (was El Harrach) |
 | `00108` | ESBA, École supérieure des beaux-arts (Alger) | OSM `way/475383562` (`website` tie) | 89 m | `exact` from `wilaya`, the OSM point ships |
-| `00082` | ESCF Constantine, École supérieure de comptabilité et de finance | OSM `way/1145579833`, El Khroub | 10.1 km (the reading is in Constantine city) | stays queued: the reading supports no open object |
+| `00082` | ESCF Constantine, École supérieure de comptabilité et de finance | OSM `way/1145579833`, El Khroub | 10.1 km (the reading is in Constantine city, no OSM object near it) | the Owner's pin ships (rule 6 amended 2026-10-29) |
 | `00042` | Université Sétif 1 (Ferhat Abbas) | OSM `way/1263457366` "Rectorat" at El Bez, by the Owner's decision that it is Sétif 1's rectorate (an earlier reading was 584 m from the El Bez campus object `way/185615558`, over the ceiling) | 10 m | `exact` from `wilaya`, commune Setif by outline |
 
 For `P09` and `P10` the two maps first disagreed on which Sidi Abdellah
@@ -253,10 +253,18 @@ nearer another school's object than its own singles none out (rule 4), so both
 were first demoted. The Owner then decided, the same day, that the readings are
 right and the OSM name tags are wrong: `P10` ships on `way/1318066776` (the OSM
 point, its stale names an edit owed upstream), and `P09`, with no open object at
-its reading, stays on the Maalma centre this release, as `P11` at the same pole
-does. Both readings are kept in `scripts/seeds/bac-2026.json`. Since this pass
+its reading, stayed on the Maalma centre, as `P11` at the same pole
+does, until the Owner amended rule 6 on 2026-10-29 (below). Both readings are kept in `scripts/seeds/bac-2026.json`. Since this pass
 `scripts/fetch.mjs` refuses a BAC 2026 campus point that carries no second
 Vote.
+
+**Owner pins that ship (`docs/adr/0001`, "Rule 6 amended", 2026-10-29).** The
+Owner decided that a pin read off Google Maps ships as the coordinate when no open
+object lies within 500 m of it. Two records use it: `00082` ESCF Constantine (seed
+`scripts/seeds/second-source.json`) and `00183` (`P09`, seed
+`scripts/seeds/bac-2026.json`), each recorded as `owner_pin`. These two points are
+proprietary-map readings, not open data, and an open object that later confirms the
+place replaces them.
 
 **ENSTA (`00189`)**'s commune was decided by containment, not by the nearest
 centre: its point lies inside Bordj El Kiffan's committed OSM outline, 194 m from
@@ -269,7 +277,7 @@ school publishes as Bab El Oued (its OSM point falls on the Casbah side of that
 boundary, 96 m from it): a site the record does not publish, recorded in the
 seed's `osm_search` note.
 
-**Two Votes and one.** 24 of the 89 `exact` records now stand on two
+**Two Votes and one.** 24 of the 91 `exact` records now stand on two
 independent Votes: the 9 above, and ENSTA, `00178`, `00165`, `P08`, `P10`, `P23`, `00073` (ENSTP),
 `00166` (ENS Constantine), `00057` (USTO), `00004` (Alger 1), `00060` (ENP), `00062` (ENP Constantine),
 `00077` (EPAU), `00108` (ESBA) and `00042` (Sétif 1) on the Owner's readings. The other 65 rest on a single Nominatim geocode and
@@ -297,7 +305,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  89 campus, 11 commune, 87 wilaya; the 98 approximate records are in the
+  91 campus, 10 commune, 86 wilaya; the 96 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and

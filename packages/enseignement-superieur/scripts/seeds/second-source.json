@@ -363,6 +363,20 @@
       ]
     }
   },
+  "host:escf-constantine.dz": {
+    "record": "00082, Ecole Supérieure de Comptabilité et de Finance de Constantine ex EPSECG Constantine (ESCF)",
+    "lat": 36.3582459,
+    "lng": 6.6244321,
+    "wilaya_code": 25,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object confirms this school, so the Owner's pin ships as its coordinate. The only OSM candidate, way/1145579833 \"École Supérieure de Comptabilité et de Finances\" in El Khroub, is 10.1 km from the pin, which lands in Constantine city; no OSM object for the school lies near the pin (Overpass, 2026-10-29). Mapping the building in OpenStreetMap would let an open point replace this one.",
+    "owner_pin": {
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "École supérieure de comptabilité et de finance - Constantine",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
   "host:ufc.dz": {
     "record": "00031, Université de la Formation Continue",
     "lat": 36.7576724,

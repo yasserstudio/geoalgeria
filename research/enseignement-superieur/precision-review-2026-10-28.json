@@ -4,9 +4,9 @@
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
   "network": "Candidates come from the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf), one source. The second-source pass of the same run (research/enseignement-superieur/second-source-votes-2026-10-28.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on 2026-10-28.",
   "counts": {
-    "approximate_reviewed": 98,
-    "queued_single_source": 16,
-    "no_open_candidate": 82,
+    "approximate_reviewed": 96,
+    "queued_single_source": 15,
+    "no_open_candidate": 81,
     "promoted": 0
   },
   "queue": [
@@ -86,42 +86,6 @@
       ],
       "reason": "single source",
       "needs": "a campus address or map on the institution's own site (esi-sba.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00082",
-      "name": "Ecole Supérieure de Comptabilité et de Finance de Constantine ex EPSECG Constantine",
-      "name_ar": "المدرسة العليا المحاسبة والمالية بقسنطينة سابقا- ق. ت.ع.ا.ت.ع.ت - قسنطينة",
-      "wilaya_code": "25",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.364164,
-        "lng": 6.608428,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/1145579833",
-          "tie": "name",
-          "matched": "name ~ name (core)",
-          "tags": {
-            "name": "École Supérieure de Comptabilité et de Finances"
-          },
-          "point": {
-            "lat": 36.2717042,
-            "lng": 6.5900963
-          },
-          "commune": {
-            "code": "2506",
-            "name": "El Khroub"
-          },
-          "wilaya_code": "25",
-          "in_declared_wilaya": true,
-          "distance_m": 10411
-        }
-      ],
-      "reason": "single source",
-      "needs": "a campus address or map on the institution's own site (escf-constantine.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
       "id": "00084",
@@ -1101,12 +1065,6 @@
       "id": "00181",
       "name": "Ecole nationale supérieure des forêts (Khenchela)",
       "wilaya_code": "40",
-      "geo_method": "commune"
-    },
-    {
-      "id": "00183",
-      "name": "Ecole nationale supérieure des systèmes autonomes",
-      "wilaya_code": "16",
       "geo_method": "commune"
     },
     {
