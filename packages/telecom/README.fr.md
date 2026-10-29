@@ -13,8 +13,8 @@
 </div>
 
 **4 093 enregistrements de couverture 5G** à travers l'Algérie, publiés à partir des
-cartes de couverture des opérateurs – **Djezzy (1 000)**, **Mobilis (2 917)** et
-**Ooredoo (176)** – avec 4 069 coordonnées publiables et leur rattachement
+cartes de couverture des opérateurs, **Djezzy (1 000)**, **Mobilis (2 917)** et
+**Ooredoo (176)**, avec 4 069 coordonnées publiables et leur rattachement
 wilaya/commune. Distribué en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
