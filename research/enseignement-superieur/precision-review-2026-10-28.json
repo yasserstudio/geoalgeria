@@ -4,55 +4,12 @@
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
   "network": "Candidates come from the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf), one source. The second-source pass of the same run (research/enseignement-superieur/second-source-votes-2026-10-28.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on 2026-10-28.",
   "counts": {
-    "approximate_reviewed": 72,
-    "queued_single_source": 1,
+    "approximate_reviewed": 71,
+    "queued_single_source": 0,
     "no_open_candidate": 71,
     "promoted": 0
   },
-  "queue": [
-    {
-      "id": "00084",
-      "name": "Ecole Supérieure de Management de Tlemcen ex EPSECG Tlemcen",
-      "name_ar": null,
-      "wilaya_code": "13",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 34.882777,
-        "lng": -1.316667,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/976266740",
-          "tie": "website",
-          "matched": "website host = record website host epsecg-tlemcen.dz",
-          "tags": {
-            "addr:city": "Tlemcen",
-            "addr:street": "Rue Barka Ahmed",
-            "name": "Ecole supérieur de management المدرسة العليا لادارة الاعمال",
-            "name:ar": "المدرسة العليا لادارة الاعمال",
-            "name:en": "Higher School of Management",
-            "name:fr": "Ecole supérieur de management",
-            "website": "http://www.epsecg-tlemcen.dz/"
-          },
-          "point": {
-            "lat": 34.8775142,
-            "lng": -1.3615781
-          },
-          "commune": {
-            "code": "1351",
-            "name": "Mansourah"
-          },
-          "wilaya_code": "13",
-          "in_declared_wilaya": true,
-          "distance_m": 4138
-        }
-      ],
-      "reason": "single source",
-      "needs": "a campus address or map on the institution's own site (epsecg-tlemcen.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
-    }
-  ],
+  "queue": [],
   "no_candidate": [
     {
       "id": "00048",

@@ -116,11 +116,11 @@
     },
     {
       "path": "packages/enseignement-superieur/data/institutions.json",
-      "sha256": "0aacdf6a85ca62124086a900a63f49bc65454f98a87f0de59f82f0a5c6290db2"
+      "sha256": "0f0c17074efe0a122edfd5786d4f922c8d96cd9c2d77d475f12f5e950e02ce1f"
     },
     {
       "path": "packages/enseignement-superieur/data/metadata.json",
-      "sha256": "b662388c9d1f6f0b532f08d2a2551bc82c7f92108517ac73387409922874b6f4"
+      "sha256": "c10de62aaf66744eb1a7535465c2973d14e4f1720d3da4d1b1a22120373a6222"
     },
     {
       "path": "packages/enseignement-superieur/data/retired-ids.json",
@@ -322,9 +322,9 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70779,
-  "candidates": 17442,
+  "candidates": 17441,
   "reasons": {
-    "approximate_coordinate": 16602,
+    "approximate_coordinate": 16601,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
@@ -1081,9 +1081,9 @@
     {
       "dataset": "enseignement-superieur",
       "total_records": 171,
-      "candidates": 72,
+      "candidates": 71,
       "reasons": {
-        "approximate_coordinate": 72,
+        "approximate_coordinate": 71,
         "shared_coordinate": 52
       },
       "metadata_path": "packages/enseignement-superieur/data/metadata.json",
@@ -1097,8 +1097,8 @@
         "geocoded_count": 171,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 99,
-          "approximate": 72
+          "exact": 100,
+          "approximate": 71
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1146,8 +1146,8 @@
           "private": 19
         },
         "by_geo_method": {
-          "campus": 99,
-          "wilaya": 63,
+          "campus": 100,
+          "wilaya": 62,
           "commune": 9
         }
       }
@@ -2473,9 +2473,9 @@
       "dataset": "enseignement-superieur",
       "entity": "institutions.json",
       "total_records": 171,
-      "candidates": 72,
+      "candidates": 71,
       "reasons": {
-        "approximate_coordinate": 72,
+        "approximate_coordinate": 71,
         "shared_coordinate": 52
       },
       "path": "packages/enseignement-superieur/data/institutions.json"
