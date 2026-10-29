@@ -116,15 +116,15 @@
     },
     {
       "path": "packages/enseignement-superieur/data/institutions.json",
-      "sha256": "67af7758e54a5237c88d7e9f68367d162d94398b1eaaee5bbc2a6e5ad34bcfe6"
+      "sha256": "91100e45a1d7797b2de5f80d94370d35e25cdd1411252db73ad81a0910be33d9"
     },
     {
       "path": "packages/enseignement-superieur/data/metadata.json",
-      "sha256": "bde4d00c95897cca8f7e685e2fa6ca1857afd8a9b66cd1c568bb385ee6cf5380"
+      "sha256": "87d17925625d9d1b64f46c37d8778c697b12231d37895f183d998f593be2f9e3"
     },
     {
       "path": "packages/enseignement-superieur/data/retired-ids.json",
-      "sha256": "f99344d64ba1b0a2e99b3ec821e7612a5d623a8a9b920cad423116ad92af7607"
+      "sha256": "5d99e54148a12fe689769857efd48a4f28fc847946d32648a3dd6b8894ba4ca1"
     },
     {
       "path": "packages/ferroviaire/data/metadata.json",
@@ -321,15 +321,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70795,
-  "candidates": 17466,
+  "total_records": 70779,
+  "candidates": 17452,
   "reasons": {
-    "approximate_coordinate": 16626,
+    "approximate_coordinate": 16612,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1125
+    "shared_coordinate": 1110
   },
   "datasets": [
     {
@@ -1080,11 +1080,11 @@
     },
     {
       "dataset": "enseignement-superieur",
-      "total_records": 187,
-      "candidates": 96,
+      "total_records": 171,
+      "candidates": 82,
       "reasons": {
-        "approximate_coordinate": 96,
-        "shared_coordinate": 72
+        "approximate_coordinate": 82,
+        "shared_coordinate": 57
       },
       "metadata_path": "packages/enseignement-superieur/data/metadata.json",
       "metadata": {
@@ -1093,12 +1093,12 @@
         "title_fr": "Établissements d'enseignement supérieur d'Algérie",
         "title_ar": "مؤسسات التعليم العالي الجزائرية",
         "title_en": "Algeria higher-education institutions",
-        "record_count": 187,
-        "geocoded_count": 187,
+        "record_count": 171,
+        "geocoded_count": 171,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 91,
-          "approximate": 96
+          "exact": 89,
+          "approximate": 82
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1137,17 +1137,17 @@
         "updated": "2026-10-28",
         "by_type": {
           "universite": 59,
-          "grande_ecole": 110,
+          "grande_ecole": 94,
           "ens": 13,
           "centre_universitaire": 5
         },
         "by_sector": {
-          "public": 168,
+          "public": 152,
           "private": 19
         },
         "by_geo_method": {
-          "campus": 91,
-          "wilaya": 86,
+          "campus": 89,
+          "wilaya": 72,
           "commune": 10
         }
       }
@@ -2472,11 +2472,11 @@
     {
       "dataset": "enseignement-superieur",
       "entity": "institutions.json",
-      "total_records": 187,
-      "candidates": 96,
+      "total_records": 171,
+      "candidates": 82,
       "reasons": {
-        "approximate_coordinate": 96,
-        "shared_coordinate": 72
+        "approximate_coordinate": 82,
+        "shared_coordinate": 57
       },
       "path": "packages/enseignement-superieur/data/institutions.json"
     },

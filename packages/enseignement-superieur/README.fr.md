@@ -12,9 +12,9 @@
 
 </div>
 
-187 établissements d'enseignement supérieur à travers l'Algérie – **universités**, grandes
+171 établissements d'enseignement supérieur à travers l'Algérie, **universités**, grandes
 écoles, écoles normales supérieures, centres universitaires, les **institutions privées
-agréées**, et les établissements **relevant d'autres ministères** (Défense, Santé, Culture…)
+agréées**, et les établissements **relevant d'autres ministères** (Santé, Culture…)
 que le MESRS supervise – chacun avec son nom (français et/ou arabe), son **type**
 d'établissement, son **secteur**, le ministère de tutelle, **son propre site web**, son
 rattachement wilaya / commune et ses coordonnées. Source : le **Ministère de l'Enseignement
@@ -28,7 +28,7 @@ npm install @geoalgeria/enseignement-superieur
 ```js
 import es from "@geoalgeria/enseignement-superieur";
 
-const all = es.institutions();                  // 187
+const all = es.institutions();                  // 171
 const inAlgiers = es.institutionsByWilaya(16);   // établissements de la wilaya 16
 const universities = es.institutionsByType("universite"); // toutes les universités
 const privates = es.institutionsBySector("private");      // les 19 établissements privés
@@ -48,15 +48,15 @@ const privates = es.institutionsBySector("private");      // les 19 établisseme
 | Type | Code | Nombre |
 | --- | --- | --- |
 | Université | `universite` | 59 |
-| Grande école | `grande_ecole` | 110 |
+| Grande école | `grande_ecole` | 94 |
 | École normale supérieure | `ens` | 13 |
 | Centre universitaire | `centre_universitaire` | 5 |
-| **Total** | | **187** |
+| **Total** | | **171** |
 
-Par **secteur** : 168 publiques · 19 privées agréées. Parmi les établissements publics, 50 relèvent
+Par **secteur** : 152 publiques · 19 privées agréées. Parmi les établissements publics, 34 relèvent
 **d'autres ministères** que le MESRS qu'il supervise pédagogiquement – lisez `supervisory_ministry`
-(ex. `"Ministère de la Santé"` pour les 25 instituts paramédicaux, `"Ministère de la Défense nationale"`
-pour les 16 écoles militaires), qui est `null` pour le réseau MESRS lui-même.
+(ex. `"Ministère de la Santé"` pour les 25 instituts paramédicaux), qui est `null` pour le réseau MESRS lui-même.
+Les écoles militaires ne sont pas publiées (décision du propriétaire, 2026-10-29).
 
 Couvrant **51 wilayas**. `wilaya_code` est relié au modèle de wilayas de
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) (schéma à 69 wilayas).
@@ -108,11 +108,11 @@ Les fichiers **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inc
 
 ```
 data/
-  institutions.json            # 187 établissements (tableau)
+  institutions.json            # 171 établissements (tableau)
   metadata.json                # sources, comptages, by_type, by_sector, by_geo_method, updated
   retired-ids.json             # ids qu’aucun enregistrement ne peut reprendre, chacun renvoyé vers l’id qui porte désormais l’établissement
   csv/institutions.csv         # dépôt + bundle Release (pas dans le tarball npm)
-  geojson/institutions.geojson # Entités point (les 187 placées ; 91 géocodées au campus, voir geo_method)
+  geojson/institutions.geojson # Entités point (les 171 placées ; 89 géocodées au campus, voir geo_method)
 ```
 
 ## Structure d'un enregistrement

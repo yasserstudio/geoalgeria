@@ -102,23 +102,23 @@ package already ships is left alone unless a seed rule names it, because the
 listing is the enumerable source for websites and the placement file publishes
 none.
 
-## What the 187 is (vs the ministry's "117 établissements")
+## What the 171 is (vs the ministry's "117 établissements")
 
 mesrs.dz/fr/agregats-2/ (2024-2025 figures) says **117 établissements**:
 55 universités + 13 centres universitaires + 40 ENS + 9 écoles nationales
-supérieures. Our package ships **187**. The two numbers count different things:
+supérieures. Our package ships **171**. The two numbers count different things:
 
 | Slice of the package | Count | In the ministry's 117? |
 | --- | --- | --- |
 | Public MESRS network (EN listing, less the 2 records ENSTA succeeded) | 108 | yes, this is its universe |
 | Institutions the BAC 2026 placement file supplied | 12 | partly: MESRS network establishments the listing omits, plus 2 under other ministries. One of the 12 is ENSTA, which succeeded 2 of the listed records above |
 | Private licensed institutions (AR listing) | 19 | no |
-| Other-ministry establishments (AR listing + BAC 2026): Santé 25, Défense 16, Culture 5, Poste/Télécoms 2, Travail 1, Jeunesse 1 | 50 | no |
+| Other-ministry establishments (AR listing + BAC 2026): Santé 25, Culture 5, Poste/Télécoms 2, Travail 1, Jeunesse 1 (the 16 Défense schools are not published, Owner decision 2026-10-29) | 34 | no |
 
 Within the public network vs their 117 the residual gap is **category
 accounting, not missing records**: the agregats page's 40 "ENS" bucket folds in
 the écoles normales that the network listing presents inside regional groupings
-we classify by name (our split: 59 universités, 110 grandes écoles, 13 ENS, 5
+we classify by name (our split: 59 universités, 94 grandes écoles, 13 ENS, 5
 centres universitaires). The ministry's own aggregates are not internally
 consistent either (an older cut says 106), so the **enumerable listings we ship
 are the source of truth**, and the aggregate is used only as an
@@ -193,16 +193,20 @@ border) and `00064` to Guerrouaou (from Soumaa). Identity rests on a name match,
 (Wikidata's `P856` is `ensmanagement.dz`, the record's `ensm.dz`) and `00103`
 (the record's own website is a page on ASAL's site), and on the OSM `wikidata`
 tag for `00095` and `00111`, whose Wikidata website is the defence ministry's.
+Both left the package on 2026-10-29 with the other 14 military schools: by
+the Owner's decision the project publishes no military location, so the build
+leaves out every institution the Ministry of National Defence supervises and
+their ids stay reserved in `data/retired-ids.json`.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 96
-approximate records (86 `wilaya`, 10 `commune`) are in it exactly once:
+written offline and byte for byte by `precision-review.mjs` next to it. All 82
+approximate records (72 `wilaya`, 10 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
-| Queued, one candidate for the campus (single source) | 15 |
+| Queued, one candidate for the campus (single source) | 11 |
 | Queued, several candidates for the campus (ambiguous) | 0 |
-| No open candidate in the capture | 81 |
+| No open candidate in the capture | 71 |
 
 Each queued entry carries the OSM element, the tags that make the tie (the
 element's own website host where it has one, else a strict name match), the
@@ -277,8 +281,8 @@ school publishes as Bab El Oued (its OSM point falls on the Casbah side of that
 boundary, 96 m from it): a site the record does not publish, recorded in the
 seed's `osm_search` note.
 
-**Two Votes and one.** 24 of the 91 `exact` records now stand on two
-independent Votes: the 9 above, and ENSTA, `00178`, `00165`, `P08`, `P10`, `P23`, `00073` (ENSTP),
+**Two Votes and one.** 22 of the 89 `exact` records now stand on two
+independent Votes: the 9 above less the two military schools, and ENSTA, `00178`, `00165`, `P08`, `P10`, `P23`, `00073` (ENSTP),
 `00166` (ENS Constantine), `00057` (USTO), `00004` (Alger 1), `00060` (ENP), `00062` (ENP Constantine),
 `00077` (EPAU), `00108` (ESBA) and `00042` (Sétif 1) on the Owner's readings. The other 65 rest on a single Nominatim geocode and
 are reviewed in a separate follow-up pass (private tracker #336).
@@ -294,7 +298,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 
 ## Known gaps (tracked, deliberate)
 
-- **67 records have no French name** (the AR-listing extras are published in
+- **51 records have no French name** (the AR-listing extras are published in
   Arabic only). `name` is null, `name_ar` carries the official name. Follow-up:
   source FR names per institution (their own sites / JORA licensing decrees).
   The BAC 2026 file names six of them in French (`D02` to `D07`), so a later
@@ -305,7 +309,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  91 campus, 10 commune, 86 wilaya; the 96 approximate records are in the
+  89 campus, 10 commune, 72 wilaya; the 82 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and

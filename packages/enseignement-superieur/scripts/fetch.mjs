@@ -157,6 +157,7 @@ const COMMUNE_BY_NW = new Map();
 for (const c of COMMUNES) COMMUNE_BY_NW.set(`${normTok(c.name)}|${c.code}`, c);
 const communeByName = (name, code) => COMMUNE_BY_NW.get(`${normTok(name)}|${Number(code)}`) || null;
 
+const MILITARY_MINISTRY = "Ministère de la Défense nationale";
 const toRad = (d) => (d * Math.PI) / 180;
 function nearestCommune(lat, lng) {
   let best = null, bd = Infinity;
@@ -457,7 +458,12 @@ async function main() {
   // source, so each is placed at its resolved wilaya's centroid (geo_precision
   // "wilaya"). name stays null: there is no official French name to ship.
   const networkCount = records.length;
+  // Owner decision 2026-10-29: no military location anywhere in the project. The
+  // schools the Ministry of National Defence supervises leave the package and
+  // their ids stay reserved (carryOverIds), never reused.
+  const military = [];
   for (const e of extras) {
+    if (e.supervisory_ministry === MILITARY_MINISTRY) { military.push(e.name_ar); continue; }
     const code = Number(e.wilaya_code);
     const w = WILAYA.get(code);
     if (!w || !inAlgeria(w.lat, w.lng)) { dropped.push(`${e.name_ar} [no wilaya centroid]`); continue; }
@@ -674,6 +680,7 @@ async function main() {
   console.log(`Precision: ${Object.entries(metadata.by_geo_method).map(([k, v]) => `${k} ${v}`).join(", ")}`);
   if (nReject) console.log(`Rejected ${nReject} geocode(s) that landed in the wrong wilaya (placed at the named wilaya's centroid).`);
   if (dropped.length) console.log(`Dropped ${dropped.length} unplaceable record(s): ${dropped.join("; ")}`);
+  if (military.length) console.log(`Left out ${military.length} military institution(s) (Owner decision 2026-10-29).`);
   console.log(`\nWrote ${out.length} institutions across ${metadata.wilayas_covered} wilayas (all placed; ${campus} campus-geocoded) to ${DATA} (v2).`);
 }
 

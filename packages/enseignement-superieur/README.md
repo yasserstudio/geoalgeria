@@ -12,9 +12,9 @@
 
 </div>
 
-187 higher-education institutions across Algeria, **universities**, grandes écoles, écoles
+171 higher-education institutions across Algeria, **universities**, grandes écoles, écoles
 normales supérieures, centres universitaires, the **licensed private institutions**, and the
-establishments **under other ministries** (Défense, Santé, Culture…) that MESRS supervises,
+establishments **under other ministries** (Santé, Culture…) that MESRS supervises,
 each with its name (French and/or Arabic), institution **type**, **sector**, supervising
 ministry, its own **website**, wilaya / commune linkage and coordinates. Sourced from the
 **Ministry of Higher Education and Scientific Research (MESRS)**, shipped as
@@ -27,7 +27,7 @@ npm install @geoalgeria/enseignement-superieur
 ```js
 import es from "@geoalgeria/enseignement-superieur";
 
-const all = es.institutions();                  // 187
+const all = es.institutions();                  // 171
 const inAlgiers = es.institutionsByWilaya(16);   // institutions in wilaya 16
 const universities = es.institutionsByType("universite"); // every university
 const privates = es.institutionsBySector("private");      // the 19 private institutions
@@ -47,16 +47,15 @@ const privates = es.institutionsBySector("private");      // the 19 private inst
 | Type | Code | Count |
 | --- | --- | --- |
 | Université | `universite` | 59 |
-| Grande école | `grande_ecole` | 110 |
+| Grande école | `grande_ecole` | 94 |
 | École normale supérieure | `ens` | 13 |
 | Centre universitaire | `centre_universitaire` | 5 |
-| **Total** | | **187** |
+| **Total** | | **171** |
 
-By **sector**: 168 public · 19 licensed private. Of the public institutions, 50 are
+By **sector**: 152 public · 19 licensed private. Of the public institutions, 34 are
 establishments **under other ministries** that MESRS supervises pedagogically, read
-`supervisory_ministry` (e.g. `"Ministère de la Santé"` for the 25 paramedical institutes,
-`"Ministère de la Défense nationale"` for the 16 military schools), which is `null` for the
-MESRS network itself.
+`supervisory_ministry` (e.g. `"Ministère de la Santé"` for the 25 paramedical institutes), which is `null` for the
+MESRS network itself. Military schools are not published (Owner decision, 2026-10-29).
 
 Spanning **51 wilayas**. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model (69-wilaya scheme).
@@ -106,11 +105,11 @@ const all: Institution[] = es.institutions();
 
 ```
 data/
-  institutions.json            # 187 institutions (array)
+  institutions.json            # 171 institutions (array)
   metadata.json                # sources, counts, by_type, by_sector, by_geo_method, updated
   retired-ids.json             # ids no record may hold again, each forwarded to the id that carries the establishment now
   csv/institutions.csv         # repo + Release bundle (not in npm tarball)
-  geojson/institutions.geojson # Point features (all 187 placed; 91 campus-geocoded, see geo_method)
+  geojson/institutions.geojson # Point features (all 171 placed; 89 campus-geocoded, see geo_method)
 ```
 
 ## Record shape

@@ -4,9 +4,9 @@
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
   "network": "Candidates come from the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf), one source. The second-source pass of the same run (research/enseignement-superieur/second-source-votes-2026-10-28.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on 2026-10-28.",
   "counts": {
-    "approximate_reviewed": 96,
-    "queued_single_source": 15,
-    "no_open_candidate": 81,
+    "approximate_reviewed": 82,
+    "queued_single_source": 11,
+    "no_open_candidate": 71,
     "promoted": 0
   },
   "queue": [
@@ -167,121 +167,6 @@
       "needs": "a campus address or map on the institution's own site (hns-re2sd.dz); or a Wikidata item for the institution with P625 (none is tagged on the OSM element), independent of OpenStreetMap and within 2 km of the Claim"
     },
     {
-      "id": "00098",
-      "name": null,
-      "name_ar": "المدرسة العليا لتقنيات الطيران (الدار البيضاء، ولاية الجزائر)",
-      "wilaya_code": "16",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.776335,
-        "lng": 3.058211,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/226911511",
-          "tie": "name",
-          "matched": "name:ar ~ name_ar (core)",
-          "tags": {
-            "name": "École Supérieure des Techniciens Aéronautiques",
-            "name:ar": "المدرسة العليا لتقنيات الطيران",
-            "name:fr": "École Supérieure des Techniciens Aéronautiques"
-          },
-          "point": {
-            "lat": 36.7108857,
-            "lng": 3.2254087
-          },
-          "commune": {
-            "code": "1620",
-            "name": "Dar El Beida"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 16580
-        }
-      ],
-      "reason": "single source",
-      "needs": "a Wikidata item for the institution with P625 (none is tagged on the OSM element); or an official address, since the record carries no own website, independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00099",
-      "name": null,
-      "name_ar": "المدرسة العليا للإدارة العسكرية (وهران)",
-      "wilaya_code": "31",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 35.70833333,
-        "lng": -0.6331,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/154251973",
-          "tie": "name",
-          "matched": "name:ar ~ name_ar (core)",
-          "tags": {
-            "addr:city": "Oran",
-            "addr:street": "Boulevard de l'Indépendance",
-            "name": "École Supérieure de l'Administration Militaire",
-            "name:ar": "المدرسة العليا للإدارة العسكرية"
-          },
-          "point": {
-            "lat": 35.6959188,
-            "lng": -0.6499955
-          },
-          "commune": {
-            "code": "3101",
-            "name": "Oran"
-          },
-          "wilaya_code": "31",
-          "in_declared_wilaya": true,
-          "distance_m": 2057
-        }
-      ],
-      "reason": "single source",
-      "needs": "a Wikidata item for the institution with P625 (none is tagged on the OSM element); or an official address, since the record carries no own website, independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00105",
-      "name": null,
-      "name_ar": "المدرسة العليا للعتاد (الحراش، ولاية الجزائر)",
-      "wilaya_code": "16",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.776335,
-        "lng": 3.058211,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "way/42454329",
-          "tie": "name",
-          "matched": "name:ar ~ name_ar (core)",
-          "tags": {
-            "name": "Ecole Supérieure de Materiel",
-            "name:ar": "المدرسة العليا للعتاد",
-            "name:fr": "Ecole Supérieure de Materiel"
-          },
-          "point": {
-            "lat": 36.7111759,
-            "lng": 3.1487367
-          },
-          "commune": {
-            "code": "1613",
-            "name": "El Harrach"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 10842
-        }
-      ],
-      "reason": "single source",
-      "needs": "a Wikidata item for the institution with P625 (none is tagged on the OSM element); or an official address, since the record carries no own website, independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
       "id": "00107",
       "name": null,
       "name_ar": "المدرسة العليا للفندقة والإطعام عين البنيان بالجزائر",
@@ -315,44 +200,6 @@
           "wilaya_code": "16",
           "in_declared_wilaya": true,
           "distance_m": 14102
-        }
-      ],
-      "reason": "single source",
-      "needs": "a Wikidata item for the institution with P625 (none is tagged on the OSM element); or an official address, since the record carries no own website, independent of OpenStreetMap and within 2 km of the Claim"
-    },
-    {
-      "id": "00116",
-      "name": null,
-      "name_ar": "المدرسة الوطنية للصحة العسكرية (عين النعجة، ولاية الجزائر)",
-      "wilaya_code": "16",
-      "geo_method": "wilaya",
-      "published": {
-        "lat": 36.776335,
-        "lng": 3.058211,
-        "commune": null
-      },
-      "claims": [
-        {
-          "source": "osm",
-          "element": "node/5462652004",
-          "tie": "name",
-          "matched": "name:ar ~ name_ar (core)",
-          "tags": {
-            "name": "École Nationale de Santé Militaire",
-            "name:ar": "المدرسة الوطنية للصحة العسكرية",
-            "name:fr": "École Nationale de Santé Militaire"
-          },
-          "point": {
-            "lat": 36.7184351,
-            "lng": 3.0621098
-          },
-          "commune": {
-            "code": "1618",
-            "name": "Kouba"
-          },
-          "wilaya_code": "16",
-          "in_declared_wilaya": true,
-          "distance_m": 6448
         }
       ],
       "reason": "single source",
@@ -678,48 +525,6 @@
       "geo_method": "wilaya"
     },
     {
-      "id": "00094",
-      "name_ar": "الأكاديمية العسكرية بشرشال (شرشال، ولاية تيبازة)",
-      "wilaya_code": "42",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00096",
-      "name_ar": "المدرسة العليا البحرية بتامنتفوست (تامنتفوست، ولاية الجزائر)",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00097",
-      "name_ar": "المدرسة العليا العسكرية للإعلام والاتصال (سيدي فرج، ولاية الجزائر)",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00100",
-      "name_ar": "المدرسة العليا للإشارة ( القليعة، ولاية تيبازة)",
-      "wilaya_code": "42",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00101",
-      "name_ar": "المدرسة العليا للدرك الوطني (زرالدة، ولاية الجزائر)",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00102",
-      "name_ar": "المدرسة العليا للدفاع الجوي عن الإقليم (الرغاية، ولاية الجزائر)",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00104",
-      "name_ar": "المدرسة العليا للطيران( تافراوي، ولاية وهران)",
-      "wilaya_code": "31",
-      "geo_method": "wilaya"
-    },
-    {
       "id": "00106",
       "name_ar": "المدرسة العليا للعلوم والتكنولوجيا واد الرمان العاشور.الجزائر",
       "wilaya_code": "16",
@@ -729,12 +534,6 @@
       "id": "00109",
       "name_ar": "المدرسة العليا لمهن البناء بلوزداد.الجزائر",
       "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00110",
-      "name_ar": "المدرسة المتخصصة في الحوامات (عين أرنات، ولاية سطيف)",
-      "wilaya_code": "19",
       "geo_method": "wilaya"
     },
     {
@@ -756,21 +555,9 @@
       "geo_method": "wilaya"
     },
     {
-      "id": "00115",
-      "name_ar": "المدرسة الوطنية لشبه الطبي للصحة العسكرية (عين النعجة،",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
       "id": "00117",
       "name_ar": "المعهد العالي لألداب واللغات “الغفران” غرداية",
       "wilaya_code": "47",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00118",
-      "name_ar": "المعهد العالي لدراسات الأمن الوطني (الأبيار، ولاية الجزائر)",
-      "wilaya_code": "16",
       "geo_method": "wilaya"
     },
     {

@@ -4,12 +4,12 @@
   "title_fr": "Établissements d'enseignement supérieur d'Algérie",
   "title_ar": "مؤسسات التعليم العالي الجزائرية",
   "title_en": "Algeria higher-education institutions",
-  "record_count": 187,
-  "geocoded_count": 187,
+  "record_count": 171,
+  "geocoded_count": 171,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 91,
-    "approximate": 96
+    "exact": 89,
+    "approximate": 82
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -48,17 +48,17 @@
   "updated": "2026-10-28",
   "by_type": {
     "universite": 59,
-    "grande_ecole": 110,
+    "grande_ecole": 94,
     "ens": 13,
     "centre_universitaire": 5
   },
   "by_sector": {
-    "public": 168,
+    "public": 152,
     "private": 19
   },
   "by_geo_method": {
-    "campus": 91,
-    "wilaya": 86,
+    "campus": 89,
+    "wilaya": 72,
     "commune": 10
   }
 }
