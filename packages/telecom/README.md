@@ -12,9 +12,9 @@
 
 </div>
 
-**4,094 5G coverage records** across Algeria, published by the operators' own
-coverage maps, **Djezzy (1,001)**, **Mobilis (2,917)**, and **Ooredoo (176)**,
-with 4,070 publishable coordinates and wilaya/commune linkage. Shipped as JSON, CSV, GeoJSON,
+**4,093 5G coverage records** across Algeria, published by the operators' own
+coverage maps, **Djezzy (1,000)**, **Mobilis (2,917)**, and **Ooredoo (176)**,
+with 4,069 publishable coordinates and wilaya/commune linkage. Shipped as JSON, CSV, GeoJSON,
 and TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -24,8 +24,8 @@ npm install @geoalgeria/telecom
 ```js
 import telecom from "@geoalgeria/telecom";
 
-const sites = telecom.coverage();                       // all 4,094 points
-const djezzy = telecom.coverageByOperator("djezzy");    // 1,001
+const sites = telecom.coverage();                       // all 4,093 points
+const djezzy = telecom.coverageByOperator("djezzy");    // 1,000
 const mobilis = telecom.coverageByOperator("mobilis");  // 2,917
 const ooredoo = telecom.coverageByOperator("ooredoo");  // 176
 
@@ -50,7 +50,7 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 
 | Operator | Points | Granularity | Source map |
 | --- | --- | --- | --- |
-| Djezzy | **1,001** | cell site | djezzy5g.dz |
+| Djezzy | **1,000** | cell site | djezzy5g.dz |
 | Mobilis | **2,917** | cell site | mobilis.dz/map/5g |
 | Ooredoo | **176** | covered commune | ooredoo.dz |
 
@@ -119,7 +119,7 @@ re-fetches. `wilaya_code` joins to GeoAlgeria's current `wilaya_code`. For 40
 Mobilis records, `source_wilaya_code` preserves the operator's mother wilaya and
 `commune_code` records the corroborating canonical commune. `commune_ar` is the
 commune's **official Arabic name from the national commune registry** wherever a
-record resolves to a canonical commune, 3,013 of 4,094; where nothing resolves,
+record resolves to a canonical commune, 3,013 of 4,093; where nothing resolves,
 the operator's own Arabic label is published unchanged. The operators treat that
 column as free text and rewrite it between pulls, so their spelling of it is not
 what ships. Fields a given operator doesn't provide are `null` (Djezzy publishes

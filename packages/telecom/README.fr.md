@@ -12,9 +12,9 @@
 
 </div>
 
-**4 094 enregistrements de couverture 5G** à travers l'Algérie, publiés à partir des
-cartes de couverture des opérateurs – **Djezzy (1 001)**, **Mobilis (2 917)** et
-**Ooredoo (176)** – avec 4 070 coordonnées publiables et leur rattachement
+**4 093 enregistrements de couverture 5G** à travers l'Algérie, publiés à partir des
+cartes de couverture des opérateurs – **Djezzy (1 000)**, **Mobilis (2 917)** et
+**Ooredoo (176)** – avec 4 069 coordonnées publiables et leur rattachement
 wilaya/commune. Distribué en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -25,8 +25,8 @@ npm install @geoalgeria/telecom
 ```js
 import telecom from "@geoalgeria/telecom";
 
-const sites = telecom.coverage();                       // les 4 094 points
-const djezzy = telecom.coverageByOperator("djezzy");    // 1 001
+const sites = telecom.coverage();                       // les 4 093 points
+const djezzy = telecom.coverageByOperator("djezzy");    // 1 000
 const mobilis = telecom.coverageByOperator("mobilis");  // 2 917
 const ooredoo = telecom.coverageByOperator("ooredoo");  // 176
 
@@ -51,7 +51,7 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 
 | Opérateur | Points | Granularité | Carte source |
 | --- | --- | --- | --- |
-| Djezzy | **1 001** | site cellulaire | djezzy5g.dz |
+| Djezzy | **1 000** | site cellulaire | djezzy5g.dz |
 | Mobilis | **2 917** | site cellulaire | mobilis.dz/map/5g |
 | Ooredoo | **176** | commune couverte | ooredoo.dz |
 
@@ -123,7 +123,7 @@ actuel de GeoAlgeria. Pour 40 enregistrements Mobilis, `source_wilaya_code`
 conserve la wilaya mère publiée et `commune_code` identifie la commune canonique
 qui confirme la correction. `commune_ar` est le **nom arabe officiel du registre
 national des communes** dès qu'un enregistrement se rattache à une commune
-canonique, 3 013 sur 4 094 ; là où rien ne se rattache, l'étiquette arabe de
+canonique, 3 013 sur 4 093 ; là où rien ne se rattache, l'étiquette arabe de
 l'opérateur est publiée telle quelle. Les opérateurs traitent cette colonne comme
 du texte libre et la réécrivent d'une extraction à l'autre, leur orthographe
 n'est donc pas celle qui est publiée. Les champs qu'un opérateur donné ne fournit

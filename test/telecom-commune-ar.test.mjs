@@ -54,7 +54,7 @@ test("a resolved record carries the registry's Arabic commune name", () => {
     operatorLabel: records.filter((row) => !resolved(row) && row.commune_ar).length,
     noLabel: records.filter((row) => !resolved(row) && !row.commune_ar).length,
   };
-  assert.deepEqual(counts, { registry: 3013, operatorLabel: 56, noLabel: 1025 });
+  assert.deepEqual(counts, { registry: 3013, operatorLabel: 56, noLabel: 1024 });
   assert.equal(counts.registry + counts.operatorLabel + counts.noLabel, records.length);
 });
 
