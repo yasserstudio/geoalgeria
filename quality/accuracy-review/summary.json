@@ -296,15 +296,15 @@
     },
     {
       "path": "packages/tourisme/data/historic.json",
-      "sha256": "dc6bf9f45a6c125c1a749d2516c0a5201a5ee9fddf6e9824ff35183cddf2ac35"
+      "sha256": "2d4a2346dd0964f52debfe448d4d8d0ae208bb0261e7a0ce4a1e153430e793f7"
     },
     {
       "path": "packages/tourisme/data/lodging.json",
-      "sha256": "470c86e29547dcd434455010c1f10ad1114b263c58e62e610bf3dd4bb14682bc"
+      "sha256": "0940cfb773c37157bc7f5df4f0937801a821dcc8e6272164c20f1323b29c15b9"
     },
     {
       "path": "packages/tourisme/data/metadata.json",
-      "sha256": "f170699669c676bf47b65aee2b8573e638924c7b8d13d4f0eab9e65adbe18530"
+      "sha256": "aa21a724a3b5732578bd464d023573341448ca84639fba181ed95f54004e6eb9"
     },
     {
       "path": "packages/tourisme/data/parks.json",
@@ -317,7 +317,7 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70785,
+  "total_records": 70771,
   "candidates": 17480,
   "reasons": {
     "approximate_coordinate": 16640,
@@ -2183,7 +2183,7 @@
     },
     {
       "dataset": "tourisme",
-      "total_records": 4348,
+      "total_records": 4334,
       "candidates": 238,
       "reasons": {
         "approximate_coordinate": 43,
@@ -2199,11 +2199,11 @@
         "title_fr": "Tourisme en Algérie",
         "title_ar": "السياحة في الجزائر",
         "title_en": "Algeria tourism",
-        "record_count": 4348,
-        "geocoded_count": 4348,
+        "record_count": 4334,
+        "geocoded_count": 4334,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 4305,
+          "exact": 4291,
           "approximate": 43
         },
         "estimated_universe": null,
@@ -2223,11 +2223,11 @@
           },
           {
             "file": "historic.json",
-            "count": 1184
+            "count": 1183
           },
           {
             "file": "lodging.json",
-            "count": 1602
+            "count": 1589
           },
           {
             "file": "parks.json",
@@ -2296,7 +2296,7 @@
           "boundary_stone": 2,
           "bridge": 2,
           "building": 6,
-          "castle": 138,
+          "castle": 137,
           "church": 1,
           "church_building": 5,
           "château": 1,
@@ -2320,11 +2320,11 @@
           "powder_magazine": 1,
           "alpine_hut": 32,
           "hostel": 216,
-          "hotel": 995,
+          "hotel": 984,
           "guest_house": 137,
           "motel": 66,
-          "apartment": 78,
-          "chalet": 78,
+          "apartment": 77,
+          "chalet": 77,
           "forage": 6,
           "source": 117,
           "hammam": 111,
@@ -2700,7 +2700,7 @@
     {
       "dataset": "tourisme",
       "entity": "historic.json",
-      "total_records": 1184,
+      "total_records": 1183,
       "candidates": 78,
       "reasons": {
         "approximate_coordinate": 13,
@@ -2713,7 +2713,7 @@
     {
       "dataset": "tourisme",
       "entity": "lodging.json",
-      "total_records": 1602,
+      "total_records": 1589,
       "candidates": 26,
       "reasons": {
         "inside_adjacent_wilaya": 13,

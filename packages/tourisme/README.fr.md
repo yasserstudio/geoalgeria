@@ -12,7 +12,7 @@
 
 </div>
 
-4 348 sites touristiques géocodés à travers les 69 wilayas d'Algérie – **hôtels**, attractions,
+4 334 sites touristiques géocodés à travers les 69 wilayas d'Algérie – **hôtels**, attractions,
 sites historiques, sources thermales et espaces protégés – chacun avec coordonnées, rattachement
 à la wilaya et attribution de la source. Sources : **ASAL Geoportail** (sources thermales),
 **OpenStreetMap** (hôtels, attractions, sites historiques, parcs) et **Wikidata** (sites
@@ -26,11 +26,11 @@ npm install @geoalgeria/tourisme
 ```js
 import tourisme from "@geoalgeria/tourisme";
 
-const everything = tourisme.all();               // 4 348
-const hotels = tourisme.lodging();               // 1 602
+const everything = tourisme.all();               // 4 334
+const hotels = tourisme.lodging();               // 1 589
 const springs = tourisme.thermalSprings();        // 282
 const inTipaza = tourisme.byWilaya(42);           // tous les sites touristiques de la wilaya 42
-const ruins = tourisme.byLayer("historic");       // 1 184 sites historiques
+const ruins = tourisme.byLayer("historic");       // 1 183 sites historiques
 
 // Chaque enregistrement a lat/lng – tri par distance, carte ou site le plus proche en quelques lignes.
 ```
@@ -47,15 +47,23 @@ const ruins = tourisme.byLayer("historic");       // 1 184 sites historiques
 
 | Couche | Fonction | Nombre | Notes |
 | --- | --- | --- | --- |
-| Hébergement | `lodging()` | **1 602** | hôtels, auberges, maisons d'hôtes, chalets, refuges |
+| Hébergement | `lodging()` | **1 589** | hôtels, auberges, maisons d'hôtes, chalets, refuges |
 | Attractions | `attractions()` | **1 248** | musées, points de vue, grottes, cascades, zoos |
-| Historique | `historic()` | **1 184** | sites archéologiques, ruines, monuments, forts, châteaux |
+| Historique | `historic()` | **1 183** | sites archéologiques, ruines, monuments, forts, châteaux |
 | Sources thermales | `thermalSprings()` | **282** | température, débit, altitude, minéralité |
 | Parcs | `parks()` | **32** | parcs nationaux, réserves naturelles, espaces protégés |
-| **Total** | `all()` | **4 348** | |
+| **Total** | `all()` | **4 334** | |
 
 Couvrant **69 wilayas**. `wilaya_code` est lié au modèle 69 wilayas de
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
+
+**Les sites militaires sont hors périmètre.** 14 installations en service (13 hôtels et
+résidences militaires sur la couche hébergement, plus une cité militaire que la source
+avait étiquetée comme château historique) ont été retirées le 2026-10-29, et leurs
+identifiants sont réservés définitivement dans
+[`data/retired-ids.json`](data/retired-ids.json). Le patrimoine militaire de l'époque
+coloniale reste publié : vieux forts, remparts, casernes et anciens camps de l'armée
+française figurent au titre du patrimoine.
 
 ## Formats
 
@@ -80,12 +88,13 @@ Les formats **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et incl
 
 ```
 data/
-  lodging.json            # 1 602 hébergements
+  lodging.json            # 1 589 hébergements
   attractions.json        # 1 248 attractions
-  historic.json           # 1 184 sites historiques
+  historic.json           # 1 183 sites historiques
   thermal-springs.json    # 282 sources thermales
   parks.json              # 32 parcs
   metadata.json           # sources, comptages, couverture
+  retired-ids.json        # identifiants qu'aucun enregistrement ne reprendra
   csv/                    # Exports CSV (dépôt + bundle Release, pas dans le tarball npm)
   geojson/                # Entités GeoJSON
 ```
@@ -123,7 +132,7 @@ donnée à leur commune (quality/overrides/tourisme.json), qui portent le `commu
 la correction est tirée.
 
 Les champs de contact et de classification optionnels sont présents lorsque la source les
-publie, et absents sinon – jamais nuls. Sur l'hébergement : `address` (209 enregistrements),
+publie, et absents sinon – jamais nuls. Sur l'hébergement : `address` (208 enregistrements),
 `phone` (204, plusieurs numéros séparés par `;` comme OSM les balise), `website` (84), `stars`
 (60) et `rooms` (24). Sur les attractions : `description` (26). Sur les sites historiques :
 `heritage_status` (17, par exemple `"part of UNESCO World Heritage Site"`) et `heritage`

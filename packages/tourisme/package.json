@@ -21,6 +21,7 @@
     "index.js"
   ],
   "scripts": {
+    "build": "node scripts/build.mjs",
     "test": "node ../../scripts/validate-packages.mjs tourisme"
   },
   "keywords": [

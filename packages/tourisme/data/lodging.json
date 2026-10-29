@@ -561,23 +561,6 @@
     "type": "alpine_hut"
   },
   {
-    "id": "lodging-1028",
-    "name": "السكن العسكري",
-    "name_ar": "السكن العسكري",
-    "wilaya_code": "29",
-    "commune_code": null,
-    "commune": null,
-    "lat": 35.2519876,
-    "lng": 0.1552541,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "5548912955"
-    },
-    "type": "apartment"
-  },
-  {
     "id": "lodging-1029",
     "name": "EL lahak",
     "wilaya_code": "29",
@@ -1844,23 +1827,6 @@
     "type": "hotel"
   },
   {
-    "id": "lodging-1097",
-    "name": "hôtel militaire",
-    "name_fr": "hôtel militaire",
-    "wilaya_code": "30",
-    "commune_code": null,
-    "commune": null,
-    "lat": 31.9557316,
-    "lng": 5.3336305,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "5053631921"
-    },
-    "type": "hotel"
-  },
-  {
     "id": "lodging-1098",
     "name": "فندق الأروي الذهبي",
     "name_fr": "hôtel mouflon d’or",
@@ -2166,23 +2132,6 @@
     "source": "osm",
     "refs": {
       "osm": "4902265622"
-    },
-    "type": "chalet"
-  },
-  {
-    "id": "lodging-1113",
-    "name": "حي عسكري",
-    "name_ar": "حي عسكري",
-    "wilaya_code": "31",
-    "commune_code": null,
-    "commune": null,
-    "lat": 35.650834,
-    "lng": -0.6465624,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "5287149225"
     },
     "type": "chalet"
   },
@@ -2939,38 +2888,6 @@
     "website": "http://www.lemeridienoran.com",
     "stars": 5,
     "rooms": 296
-  },
-  {
-    "id": "lodging-1154",
-    "name": "Hôtel Militaire",
-    "wilaya_code": "31",
-    "commune_code": null,
-    "commune": null,
-    "lat": 35.6717728,
-    "lng": -0.6707643,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "385262966"
-    },
-    "type": "hotel"
-  },
-  {
-    "id": "lodging-1155",
-    "name": "Hôtel Militaire d'Oran",
-    "wilaya_code": "31",
-    "commune_code": null,
-    "commune": null,
-    "lat": 35.7065206,
-    "lng": -0.6470242,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "297172601"
-    },
-    "type": "hotel"
   },
   {
     "id": "lodging-1156",
@@ -10382,24 +10299,6 @@
     "type": "hotel"
   },
   {
-    "id": "lodging-1544",
-    "name": "فندق عسكري",
-    "name_fr": "Hôtel Militaire",
-    "name_ar": "فندق عسكري",
-    "wilaya_code": "56",
-    "commune_code": null,
-    "commune": null,
-    "lat": 24.4893961,
-    "lng": 9.4995807,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "5275908521"
-    },
-    "type": "hotel"
-  },
-  {
     "id": "lodging-1545",
     "name": "قرية الصحراء",
     "name_ar": "قرية الصحراء",
@@ -10705,23 +10604,6 @@
     },
     "type": "hotel",
     "phone": "+213 33 89 34 96"
-  },
-  {
-    "id": "lodging-1561",
-    "name": "Hôtel militaire",
-    "wilaya_code": "60",
-    "commune_code": null,
-    "commune": null,
-    "lat": 35.393778,
-    "lng": 5.3809975,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "358446102"
-    },
-    "type": "hotel",
-    "address": "Rue 1er Novembre"
   },
   {
     "id": "lodging-1562",
@@ -13251,22 +13133,6 @@
     "type": "hotel"
   },
   {
-    "id": "lodging-251",
-    "name": "Hôtel Militaire 3°RM",
-    "wilaya_code": "08",
-    "commune_code": null,
-    "commune": null,
-    "lat": 31.6225156,
-    "lng": -2.2155574,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "273531613"
-    },
-    "type": "hotel"
-  },
-  {
     "id": "lodging-252",
     "name": "Loubana Taghit Residence",
     "wilaya_code": "08",
@@ -13898,22 +13764,6 @@
     },
     "type": "hotel",
     "address": "Passerelle"
-  },
-  {
-    "id": "lodging-286",
-    "name": "Hôtel Militaire Blida",
-    "wilaya_code": "09",
-    "commune_code": null,
-    "commune": null,
-    "lat": 36.4675492,
-    "lng": 2.7981812,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "6178091787"
-    },
-    "type": "hotel"
   },
   {
     "id": "lodging-287",
@@ -17606,22 +17456,6 @@
     "type": "apartment"
   },
   {
-    "id": "lodging-48",
-    "name": "Hôtel Militaire",
-    "wilaya_code": "03",
-    "commune_code": null,
-    "commune": null,
-    "lat": 33.7982844,
-    "lng": 2.8739273,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "43582543"
-    },
-    "type": "hotel"
-  },
-  {
     "id": "lodging-480",
     "name": "قاعة الحفلات تاج الياسمين",
     "wilaya_code": "16",
@@ -19998,22 +19832,6 @@
     "rooms": 307
   },
   {
-    "id": "lodging-605",
-    "name": "Hôtel Militaire",
-    "wilaya_code": "16",
-    "commune_code": null,
-    "commune": null,
-    "lat": 36.7186539,
-    "lng": 3.0582706,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "3235962"
-    },
-    "type": "hotel"
-  },
-  {
     "id": "lodging-606",
     "name": "Hôtel Moncada",
     "name_ar": "فندق منقدة",
@@ -22227,22 +22045,6 @@
     "source": "osm",
     "refs": {
       "osm": "433050717"
-    },
-    "type": "hotel"
-  },
-  {
-    "id": "lodging-721",
-    "name": "Hôtel militaire",
-    "wilaya_code": "17",
-    "commune_code": null,
-    "commune": null,
-    "lat": 34.6720495,
-    "lng": 3.2544453,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "254894521"
     },
     "type": "hotel"
   },
@@ -26975,22 +26777,6 @@
     "address": "Square Hadj Ali",
     "phone": "+213 31 99 20 00",
     "website": "https://www.accorhotels.com/fr/hotel-6492-novotel-constantine/index.shtml"
-  },
-  {
-    "id": "lodging-973",
-    "name": "Hôtel militaire",
-    "wilaya_code": "25",
-    "commune_code": null,
-    "commune": null,
-    "lat": 36.3527944,
-    "lng": 6.6110986,
-    "geo_precision": "exact",
-    "geo_method": "osm",
-    "source": "osm",
-    "refs": {
-      "osm": "3183735023"
-    },
-    "type": "hotel"
   },
   {
     "id": "lodging-974",

@@ -12,7 +12,7 @@
 
 </div>
 
-4,348 geocoded tourism sites across Algeria's 69 wilayas, **hotels**, attractions, historic
+4,334 geocoded tourism sites across Algeria's 69 wilayas, **hotels**, attractions, historic
 sites, thermal springs and protected areas, each with coordinates, wilaya linkage and source
 attribution. Sourced from **ASAL Geoportail** (thermal springs), **OpenStreetMap** (hotels,
 attractions, historic sites, parks) and **Wikidata** (heritage sites, museums, parks). Shipped
@@ -25,11 +25,11 @@ npm install @geoalgeria/tourisme
 ```js
 import tourisme from "@geoalgeria/tourisme";
 
-const everything = tourisme.all();               // 4,348
-const hotels = tourisme.lodging();               // 1,602
+const everything = tourisme.all();               // 4,334
+const hotels = tourisme.lodging();               // 1,589
 const springs = tourisme.thermalSprings();        // 282
 const inTipaza = tourisme.byWilaya(42);           // all tourism sites in wilaya 42
-const ruins = tourisme.byLayer("historic");       // 1,184 historic sites
+const ruins = tourisme.byLayer("historic");       // 1,183 historic sites
 
 // Everything has lat/lng – distance-sort, map, or nearest-site in a few lines.
 ```
@@ -46,15 +46,21 @@ const ruins = tourisme.byLayer("historic");       // 1,184 historic sites
 
 | Layer | Function | Count | Notes |
 | --- | --- | --- | --- |
-| Lodging | `lodging()` | **1,602** | hotels, hostels, guest houses, chalets, alpine huts |
+| Lodging | `lodging()` | **1,589** | hotels, hostels, guest houses, chalets, alpine huts |
 | Attractions | `attractions()` | **1,248** | museums, viewpoints, caves, waterfalls, zoos |
-| Historic | `historic()` | **1,184** | archaeological sites, ruins, monuments, forts, castles |
+| Historic | `historic()` | **1,183** | archaeological sites, ruins, monuments, forts, castles |
 | Thermal springs | `thermalSprings()` | **282** | temperature, flow rate, altitude, minerality |
 | Parks | `parks()` | **32** | national parks, nature reserves, protected areas |
-| **Total** | `all()` | **4,348** | |
+| **Total** | `all()` | **4,334** | |
 
 Spanning **69 wilayas**. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model (69-wilaya scheme).
+
+**Military places are out of scope.** 14 facilities in service (13 military hotels and
+residences on the lodging layer, plus one military housing quarter upstream had tagged as
+a historic castle) were removed on 2026-10-29, and their ids are reserved for good in
+[`data/retired-ids.json`](data/retired-ids.json). Colonial-era military heritage stays:
+old forts, city walls, barracks and former French army camps are published as heritage.
 
 ## Formats
 
@@ -79,12 +85,13 @@ const springs: ThermalSpring[] = tourisme.thermalSprings();
 
 ```
 data/
-  lodging.json            # 1,602 lodging entries
+  lodging.json            # 1,589 lodging entries
   attractions.json        # 1,248 attractions
-  historic.json           # 1,184 historic sites
+  historic.json           # 1,183 historic sites
   thermal-springs.json    # 282 thermal springs
   parks.json              # 32 parks
   metadata.json           # sources, counts, coverage
+  retired-ids.json        # ids no record may hold again
   csv/                    # CSV exports (repo + Release bundle, not in npm tarball)
   geojson/                # GeoJSON features
 ```
@@ -121,7 +128,7 @@ correction moved into the wilaya a reform gave their commune (quality/overrides/
 which carry the `commune_code` the correction was derived from.
 
 Optional contact and classification fields are present where the source publishes them, and
-absent otherwise, never null. On lodging: `address` (209 records), `phone` (204, several
+absent otherwise, never null. On lodging: `address` (208 records), `phone` (204, several
 numbers `;`-separated as OSM tags them), `website` (84), `stars` (60) and `rooms` (24). On
 attractions: `description` (26). On historic sites: `heritage_status` (17, e.g.
 `"part of UNESCO World Heritage Site"`) and `heritage` (12, the OSM protection level).

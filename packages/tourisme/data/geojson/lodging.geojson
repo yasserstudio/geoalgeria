@@ -897,33 +897,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.1552541,
-          35.2519876
-        ]
-      },
-      "properties": {
-        "id": "lodging-1028",
-        "name": "السكن العسكري",
-        "name_ar": "السكن العسكري",
-        "wilaya_code": "29",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.2519876,
-        "lng": 0.1552541,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "5548912955"
-        },
-        "type": "apartment"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           0.0772386,
           35.5922593
         ]
@@ -2940,33 +2913,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.3336305,
-          31.9557316
-        ]
-      },
-      "properties": {
-        "id": "lodging-1097",
-        "name": "hôtel militaire",
-        "name_fr": "hôtel militaire",
-        "wilaya_code": "30",
-        "commune_code": null,
-        "commune": null,
-        "lat": 31.9557316,
-        "lng": 5.3336305,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "5053631921"
-        },
-        "type": "hotel"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           5.333331,
           31.9520953
         ]
@@ -3447,33 +3393,6 @@
         "source": "osm",
         "refs": {
           "osm": "4902265622"
-        },
-        "type": "chalet"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.6465624,
-          35.650834
-        ]
-      },
-      "properties": {
-        "id": "lodging-1113",
-        "name": "حي عسكري",
-        "name_ar": "حي عسكري",
-        "wilaya_code": "31",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.650834,
-        "lng": -0.6465624,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "5287149225"
         },
         "type": "chalet"
       }
@@ -4670,58 +4589,6 @@
         "website": "http://www.lemeridienoran.com",
         "stars": 5,
         "rooms": 296
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.6707643,
-          35.6717728
-        ]
-      },
-      "properties": {
-        "id": "lodging-1154",
-        "name": "Hôtel Militaire",
-        "wilaya_code": "31",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.6717728,
-        "lng": -0.6707643,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "385262966"
-        },
-        "type": "hotel"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.6470242,
-          35.7065206
-        ]
-      },
-      "properties": {
-        "id": "lodging-1155",
-        "name": "Hôtel Militaire d'Oran",
-        "wilaya_code": "31",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.7065206,
-        "lng": -0.6470242,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "297172601"
-        },
-        "type": "hotel"
       }
     },
     {
@@ -16448,34 +16315,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.4995807,
-          24.4893961
-        ]
-      },
-      "properties": {
-        "id": "lodging-1544",
-        "name": "فندق عسكري",
-        "name_fr": "Hôtel Militaire",
-        "name_ar": "فندق عسكري",
-        "wilaya_code": "56",
-        "commune_code": null,
-        "commune": null,
-        "lat": 24.4893961,
-        "lng": 9.4995807,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "5275908521"
-        },
-        "type": "hotel"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           9.4778997,
           24.5630913
         ]
@@ -16956,33 +16795,6 @@
         },
         "type": "hotel",
         "phone": "+213 33 89 34 96"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.3809975,
-          35.393778
-        ]
-      },
-      "properties": {
-        "id": "lodging-1561",
-        "name": "Hôtel militaire",
-        "wilaya_code": "60",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.393778,
-        "lng": 5.3809975,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "358446102"
-        },
-        "type": "hotel",
-        "address": "Rue 1er Novembre"
       }
     },
     {
@@ -20977,32 +20789,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.2155574,
-          31.6225156
-        ]
-      },
-      "properties": {
-        "id": "lodging-251",
-        "name": "Hôtel Militaire 3°RM",
-        "wilaya_code": "08",
-        "commune_code": null,
-        "commune": null,
-        "lat": 31.6225156,
-        "lng": -2.2155574,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "273531613"
-        },
-        "type": "hotel"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -2.0316361,
           30.9226537
         ]
@@ -21999,32 +21785,6 @@
         },
         "type": "hotel",
         "address": "Passerelle"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.7981812,
-          36.4675492
-        ]
-      },
-      "properties": {
-        "id": "lodging-286",
-        "name": "Hôtel Militaire Blida",
-        "wilaya_code": "09",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.4675492,
-        "lng": 2.7981812,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "6178091787"
-        },
-        "type": "hotel"
       }
     },
     {
@@ -27862,32 +27622,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.8739273,
-          33.7982844
-        ]
-      },
-      "properties": {
-        "id": "lodging-48",
-        "name": "Hôtel Militaire",
-        "wilaya_code": "03",
-        "commune_code": null,
-        "commune": null,
-        "lat": 33.7982844,
-        "lng": 2.8739273,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "43582543"
-        },
-        "type": "hotel"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.1441432,
           36.6670319
         ]
@@ -31654,32 +31388,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.0582706,
-          36.7186539
-        ]
-      },
-      "properties": {
-        "id": "lodging-605",
-        "name": "Hôtel Militaire",
-        "wilaya_code": "16",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.7186539,
-        "lng": 3.0582706,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "3235962"
-        },
-        "type": "hotel"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.0146076,
           36.7406595
         ]
@@ -35168,32 +34876,6 @@
         "source": "osm",
         "refs": {
           "osm": "433050717"
-        },
-        "type": "hotel"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.2544453,
-          34.6720495
-        ]
-      },
-      "properties": {
-        "id": "lodging-721",
-        "name": "Hôtel militaire",
-        "wilaya_code": "17",
-        "commune_code": null,
-        "commune": null,
-        "lat": 34.6720495,
-        "lng": 3.2544453,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "254894521"
         },
         "type": "hotel"
       }
@@ -42706,32 +42388,6 @@
         "address": "Square Hadj Ali",
         "phone": "+213 31 99 20 00",
         "website": "https://www.accorhotels.com/fr/hotel-6492-novotel-constantine/index.shtml"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6110986,
-          36.3527944
-        ]
-      },
-      "properties": {
-        "id": "lodging-973",
-        "name": "Hôtel militaire",
-        "wilaya_code": "25",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.3527944,
-        "lng": 6.6110986,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "3183735023"
-        },
-        "type": "hotel"
       }
     },
     {
