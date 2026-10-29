@@ -63034,6 +63034,41 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.8848159,
+          36.7687292
+        ]
+      },
+      "properties": {
+        "id": "3062",
+        "name": "CLUB DES PINS",
+        "name_ar": "سطاوالي ن الصنوبر",
+        "wilaya_code": "16",
+        "commune_code": "1650",
+        "commune": "CHERAGA",
+        "commune_ar": "الشراقة",
+        "lat": 36.7687292,
+        "lng": 2.8848159,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "baridimap",
+        "class": "R3",
+        "postal_code": "16098",
+        "postal_code_old": null,
+        "address": "RESIDENCE D'ETAT CLUB DES PINS",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-29",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/4147407047",
+          "https://www.openstreetmap.org/node/3405300437"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           4.5863123,
           36.5122097
         ]

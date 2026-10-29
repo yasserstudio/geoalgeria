@@ -236,11 +236,11 @@
     },
     {
       "path": "packages/poste/data/metadata.json",
-      "sha256": "701a9acb1792538759b95970e2866b63459f7a5176f82d806a88edc7d92d3ca1"
+      "sha256": "095c77414631356d94894125a816f454b1a5885ccad8715aa641b3dd5292781c"
     },
     {
       "path": "packages/poste/data/postoffices.json",
-      "sha256": "5c78a801c9ceae8c792c5215dbe559394dea6b65948da0e00ac079cb56a90c03"
+      "sha256": "3ecd9e59dd85902988b6d2f765523f68fcf8f6591777fa983cdce47068151f01"
     },
     {
       "path": "packages/protection-civile/data/metadata.json",
@@ -318,11 +318,11 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70773,
-  "candidates": 17467,
+  "candidates": 17466,
   "reasons": {
     "approximate_coordinate": 16633,
     "inside_adjacent_wilaya": 192,
-    "missing_coordinate": 486,
+    "missing_coordinate": 485,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
     "shared_coordinate": 1136
@@ -1799,10 +1799,10 @@
     {
       "dataset": "poste",
       "total_records": 5930,
-      "candidates": 29,
+      "candidates": 28,
       "reasons": {
         "inside_adjacent_wilaya": 7,
-        "missing_coordinate": 15,
+        "missing_coordinate": 14,
         "outside_all_wilaya_boundaries": 7,
         "outside_declared_wilaya": 14
       },
@@ -1814,10 +1814,10 @@
         "title_ar": "مكاتب البريد والصرافات الآلية الجزائرية",
         "title_en": "Algeria post offices & ATMs",
         "record_count": 5930,
-        "geocoded_count": 5915,
-        "geocoded_pct": 99.7,
+        "geocoded_count": 5916,
+        "geocoded_pct": 99.8,
         "precision": {
-          "exact": 5915,
+          "exact": 5916,
           "approximate": 0
         },
         "estimated_universe": null,
@@ -2599,10 +2599,10 @@
       "dataset": "poste",
       "entity": "postoffices.json",
       "total_records": 3907,
-      "candidates": 25,
+      "candidates": 24,
       "reasons": {
         "inside_adjacent_wilaya": 6,
-        "missing_coordinate": 14,
+        "missing_coordinate": 13,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 11
       },

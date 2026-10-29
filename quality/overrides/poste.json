@@ -173,6 +173,35 @@
           "checked_at": "2026-10-25"
         }
       ]
+    },
+    {
+      "file": "postoffices.json",
+      "record_id": "3062",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "commune": "STAOUELI",
+        "commune_ar": "سطاوالي",
+        "commune_code": "1645"
+      },
+      "patch": {
+        "commune": "CHERAGA",
+        "commune_ar": "الشراقة",
+        "commune_code": "1650"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/4147407047",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "url": "https://www.openstreetmap.org/node/3405300437",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "notes": "Club des Pins is a suburb of Cheraga: OSM node 3405300437 (place=suburb, Q17176380) and the Owner's reading of 2026-10-29. The office's own OSM node (4147407047), where packages/poste/scripts/fetch.mjs OFFICE_OSM_POINT places it, lies inside Cheraga's outline (1650), not Staoueli's (1645), which BaridiMap names.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-29"
     }
   ]
 }

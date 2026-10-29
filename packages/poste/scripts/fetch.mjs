@@ -103,6 +103,11 @@ const OFFICE_OSM_POINT = {
   // node "El Biar": the record's own address (118 BD ALI KHODJA), postal code 16138
   // and class R2. Office 3112 "EL BIAR" is the Place Kennedy office (16003).
   2905: { osm: "node/2754485098", version: 20, lat: 36.7692213, lng: 3.0267566 },
+  // node "Bureau de poste de Club des Pins". Club des Pins is a suburb of Chéraga
+  // (OSM node 3405300437, place=suburb; the Owner's reading of 2026-10-29), and
+  // the node lies inside Chéraga's outline: the commune BaridiMap names (STAOUELI)
+  // is corrected in quality/overrides/poste.json.
+  3062: { osm: "node/4147407047", version: 19, lat: 36.7687292, lng: 2.8848159 },
   // Two Votes: an untitled post office node, 17 m from BaridiMap's own point for
   // ATM 2139 "TIZI OUZOU KRIM BELKACEM" (postal code 15161, the office's).
   2458: { osm: "node/3739168414", version: 18, lat: 36.700328, lng: 4.0564974 },

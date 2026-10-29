@@ -105,6 +105,7 @@ const CORRECTIONS = {
     // Offices BaridiMap lists with no point, on their own OSM node (fetch.mjs
     // OFFICE_OSM_POINT, 2026-10-29).
     "postoffices.json/2905": { lat: 36.7692213, lng: 3.0267566, geo_precision: "exact", geo_method: "osm_node" },
+    "postoffices.json/3062": { lat: 36.7687292, lng: 2.8848159, geo_precision: "exact", geo_method: "osm_node", commune: "CHERAGA", commune_code: "1650", commune_ar: "الشراقة" },
     "postoffices.json/2458": { lat: 36.700328, lng: 4.0564974, geo_precision: "exact", geo_method: "osm_node" },
   },
   banques: {
