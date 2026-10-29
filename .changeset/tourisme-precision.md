@@ -8,4 +8,6 @@
 
 **One cave now exact.** `attraction-842` (grotte du Macchabée, Tizi Ouzou) moves 199 m, from the degree-minute Wikidata point (36.5, 4.3333333) to the cave entrance OpenStreetMap maps as node 3832451091 (36.4990808, 4.3314177), and ships `exact` / `osm`. Two independent sources place it there (ADR 0001): that node and the Wikidata item Q23805261. The correction is recorded in `quality/overrides/tourisme.json` with both sources as its evidence, and the record carries `review_status: "corrected"`.
 
-Counts: 4,321 records, down from 4,326; parks 27 from 32. Precision: 4,284 exact, 37 approximate.
+**Two thermal springs now exact.** `thermal-spring-61` (Hammam Beni Salah) and `thermal-spring-64` (Hammam Zatout), both El Tarf, leave ASAL's two-decimal points for the OpenStreetMap node named after each spring (nodes 1291639449 and 5579190621), 118 m and 468 m away; one open source each, recorded in `quality/overrides/tourisme.json`.
+
+Counts: 4,321 records, down from 4,326; parks 27 from 32. Precision: 4,286 exact, 35 approximate.

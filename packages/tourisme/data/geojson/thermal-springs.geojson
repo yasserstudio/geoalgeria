@@ -6490,8 +6490,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.0369444,
-          36.52
+          8.035929,
+          36.5193221
         ]
       },
       "properties": {
@@ -6500,16 +6500,22 @@
         "wilaya_code": "36",
         "commune_code": null,
         "commune": "BENI SALEH",
-        "lat": 36.52,
-        "lng": 8.0369444,
-        "geo_precision": "approximate",
-        "geo_method": "asal",
+        "lat": 36.5193221,
+        "lng": 8.035929,
+        "geo_precision": "exact",
+        "geo_method": "osm",
         "source": "asal",
         "type": "hammam",
         "temperature_c": 49.3,
         "debit_l_s": 3,
         "altitude_m": 306,
-        "minerality": "BICARBONATEE SODIQUE, CHLORUREE (SULFATEE) CALCIQUE"
+        "minerality": "BICARBONATEE SODIQUE, CHLORUREE (SULFATEE) CALCIQUE",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-29",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/1291639449"
+        ]
       }
     },
     {
@@ -6571,8 +6577,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.14,
-          36.47
+          8.1415723,
+          36.4740121
         ]
       },
       "properties": {
@@ -6581,16 +6587,22 @@
         "wilaya_code": "36",
         "commune_code": null,
         "commune": "BOUHADJAR",
-        "lat": 36.47,
-        "lng": 8.14,
-        "geo_precision": "approximate",
-        "geo_method": "asal",
+        "lat": 36.4740121,
+        "lng": 8.1415723,
+        "geo_precision": "exact",
+        "geo_method": "osm",
         "source": "asal",
         "type": "hammam",
         "temperature_c": 48.2,
         "debit_l_s": 1.5,
         "altitude_m": 309,
-        "minerality": "BICARBONATEE SODIQUE, CHLORUREE CALCIQUE"
+        "minerality": "BICARBONATEE SODIQUE, CHLORUREE CALCIQUE",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-29",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/5579190621"
+        ]
       }
     },
     {
