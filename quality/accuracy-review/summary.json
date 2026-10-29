@@ -48,11 +48,11 @@
     },
     {
       "path": "packages/buses/data/metadata.json",
-      "sha256": "9681f839342e109afff1fafb4fc70fa8f8de66be123c287149ec1c94648ffd4d"
+      "sha256": "c72d7ed3922bc969a8307c051814a4718446122cff1cad6b47587355585c5f53"
     },
     {
       "path": "packages/buses/data/stations.json",
-      "sha256": "08c54a41e0d5d808f77e6d5c56724d073f58bfbc34f606d3b92bd368f05dfb0f"
+      "sha256": "e093d86534a63b1c2519bcf8569598ef699bb58091384b82f3738925a166aa36"
     },
     {
       "path": "packages/cliniques/data/cliniques.json",
@@ -124,11 +124,11 @@
     },
     {
       "path": "packages/ferroviaire/data/metadata.json",
-      "sha256": "6f532bd2029d53bc6b27facfe213905518da5a9cb1f0dc9d2b49940e366dc723"
+      "sha256": "dfe27c28c40c35568be7be410b490b2170a1eb5318aeb91fe758a10d6b098b25"
     },
     {
       "path": "packages/ferroviaire/data/stations.json",
-      "sha256": "93278389c123f38f326d42908b50221461257db082fb56dcd45129319da03a78"
+      "sha256": "b88e7a11ca45d8800d8bdd7fd37f6e38506f21c23134992f234f7b291bd4081f"
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
@@ -144,7 +144,7 @@
     },
     {
       "path": "packages/gares-routieres/data/metadata.json",
-      "sha256": "b192e1810c8900a50b27290f480f69d0d61cc083f31497e1ed891c2d1d907e97"
+      "sha256": "77b033f8cbd2dd8915dbb996e28861ef3d28540aeea8b3906af4ebbf3969ef8a"
     },
     {
       "path": "packages/gares-routieres/data/retired-ids.json",
@@ -152,7 +152,7 @@
     },
     {
       "path": "packages/gares-routieres/data/stations.json",
-      "sha256": "dacbf89c59c14d8b298cf2b9e05cee2fb37b8423308457e25cf248ad5cf1879c"
+      "sha256": "6d119d9af7a7a769a92214fef285b1d413d804fce85d5f63b73df2b3b42b8e21"
     },
     {
       "path": "packages/industrie-pharmaceutique/data/industrie-pharmaceutique.json",
@@ -318,14 +318,14 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70785,
-  "candidates": 17480,
+  "candidates": 17467,
   "reasons": {
-    "approximate_coordinate": 16640,
+    "approximate_coordinate": 16627,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1136
+    "shared_coordinate": 1132
   },
   "datasets": [
     {
@@ -548,9 +548,9 @@
     {
       "dataset": "buses",
       "total_records": 1603,
-      "candidates": 19,
+      "candidates": 15,
       "reasons": {
-        "approximate_coordinate": 7,
+        "approximate_coordinate": 3,
         "outside_all_wilaya_boundaries": 12,
         "outside_declared_wilaya": 12
       },
@@ -565,8 +565,8 @@
         "geocoded_count": 1603,
         "geocoded_pct": 89.7,
         "precision": {
-          "exact": 1596,
-          "approximate": 7
+          "exact": 1600,
+          "approximate": 3
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1138,12 +1138,11 @@
     {
       "dataset": "ferroviaire",
       "total_records": 692,
-      "candidates": 11,
+      "candidates": 4,
       "reasons": {
-        "approximate_coordinate": 9,
+        "approximate_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 2,
-        "shared_coordinate": 4
+        "outside_declared_wilaya": 2
       },
       "metadata_path": "packages/ferroviaire/data/metadata.json",
       "metadata": {
@@ -1156,8 +1155,8 @@
         "geocoded_count": 692,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 683,
-          "approximate": 9
+          "exact": 690,
+          "approximate": 2
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1272,9 +1271,9 @@
     {
       "dataset": "gares-routieres",
       "total_records": 74,
-      "candidates": 3,
+      "candidates": 1,
       "reasons": {
-        "approximate_coordinate": 3
+        "approximate_coordinate": 1
       },
       "metadata_path": "packages/gares-routieres/data/metadata.json",
       "metadata": {
@@ -1287,8 +1286,8 @@
         "geocoded_count": 74,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 71,
-          "approximate": 3
+          "exact": 73,
+          "approximate": 1
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1313,8 +1312,7 @@
         "license": "Data © SOGRAL; redistributed for reference",
         "updated": "2026-07-01",
         "by_geo_method": {
-          "exact": 73,
-          "approx": 1
+          "exact": 74
         },
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
@@ -2372,9 +2370,9 @@
       "dataset": "buses",
       "entity": "stations.json",
       "total_records": 1603,
-      "candidates": 19,
+      "candidates": 15,
       "reasons": {
-        "approximate_coordinate": 7,
+        "approximate_coordinate": 3,
         "outside_all_wilaya_boundaries": 12,
         "outside_declared_wilaya": 12
       },
@@ -2467,12 +2465,11 @@
       "dataset": "ferroviaire",
       "entity": "stations.json",
       "total_records": 692,
-      "candidates": 11,
+      "candidates": 4,
       "reasons": {
-        "approximate_coordinate": 9,
+        "approximate_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 2,
-        "shared_coordinate": 4
+        "outside_declared_wilaya": 2
       },
       "path": "packages/ferroviaire/data/stations.json"
     },
@@ -2494,9 +2491,9 @@
       "dataset": "gares-routieres",
       "entity": "stations.json",
       "total_records": 74,
-      "candidates": 3,
+      "candidates": 1,
       "reasons": {
-        "approximate_coordinate": 3
+        "approximate_coordinate": 1
       },
       "path": "packages/gares-routieres/data/stations.json"
     },
