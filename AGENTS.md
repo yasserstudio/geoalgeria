@@ -124,6 +124,10 @@ Full details and one-time setup: [`RELEASING.md`](RELEASING.md).
 
 ## Don't
 
+- Publish a military location (Owner decision, 2026-10-29): a military school, hospital,
+  clinic, pharmacy, base, command, barracks in use, military hotel or housing, cadet school
+  or gendarmerie unit. Exclude it in the package's build and retire its id. Heritage
+  (colonial forts and barracks), public museums and addresses that only name one stay.
 - Hand-edit generated mirrors (`packages/dataset/data/poste/`).
 - Land a refresh without updating that package's `refresh-schedule.json` row, or
   run a fetcher whose row reads `blocked`.
