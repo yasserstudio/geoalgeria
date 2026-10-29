@@ -112,7 +112,7 @@ data/
   metadata.json                # sources, comptages, by_type, by_sector, by_geo_method, updated
   retired-ids.json             # ids qu’aucun enregistrement ne peut reprendre, chacun renvoyé vers l’id qui porte désormais l’établissement
   csv/institutions.csv         # dépôt + bundle Release (pas dans le tarball npm)
-  geojson/institutions.geojson # Entités point (les 171 placées ; 100 géocodées au campus, voir geo_method)
+  geojson/institutions.geojson # Entités point (les 171 placées ; 112 géocodées au campus, voir geo_method)
 ```
 
 ## Structure d'un enregistrement

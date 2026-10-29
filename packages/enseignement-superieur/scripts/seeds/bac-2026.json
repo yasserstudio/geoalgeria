@@ -240,10 +240,18 @@
       "sector": "public",
       "supervisory_ministry": null,
       "place": {
-        "precision": "commune",
-        "commune": "Adrar",
+        "precision": "campus",
+        "lat": 27.8786875,
+        "lng": -0.2639844,
         "wilaya_code": 1,
-        "why": "No OSM object and no Wikidata P625 for the school: a bounded search of named education objects over Adrar returned the two Ahmed Draya university campuses and the paramedical institute, none of them this school. Placed on its commune, Adrar, wilaya 01."
+        "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (https://esas-adrar.edu.dz/), read on 2026-10-29: Home page has an Elementor Google Maps widget with src=https://maps.google.com/maps?q=VPHP+FCC, Adrar (a Google Plus Code). Decoded locally with the openlocationcode library using an Adrar-town reference point, giving the coordinates above. No existing open-data lead coordinate was provided to compare against. No open object places it.",
+        "operator_location": {
+          "read_at": "2026-10-29",
+          "source_url": "https://esas-adrar.edu.dz/",
+          "kind": "map_coords",
+          "note": "The institution's own published location. Not an open coordinate."
+        },
+        "commune": "Adrar"
       },
       "note": "Distinct from P74 at El Oued, which the package already ships: separate establishment codes, separate sites (esas-adrar.edu.dz and esas-eloued.dz)."
     },

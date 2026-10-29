@@ -210,14 +210,19 @@ function campusPlace(where, p) {
   if (!inAlgeria(p.lat, p.lng)) throw new Error(`${where}: campus coordinate is not a reading inside Algeria`);
   // docs/adr/0001 rule 6 as amended 2026-10-29: where no open object confirms
   // it, the Owner's own pin ships as the coordinate, its provenance stated.
-  if (p.owner_pin) {
-    for (const k of ["read_at", "read_by", "source", "entry"])
-      if (p.owner_pin[k] == null) throw new Error(`${where}: owner_pin needs ${k}`);
-    if (p.osm != null) throw new Error(`${where}: an owner_pin placement has no OSM object; one that confirms it ships instead`);
+  // Owner decision 2026-10-25: a location the institution publishes itself (a
+  // map on its own website) is verified and ships, its page recorded.
+  if (p.owner_pin || p.operator_location) {
+    const [field, keys] = p.owner_pin
+      ? ["owner_pin", ["read_at", "read_by", "source", "entry"]]
+      : ["operator_location", ["read_at", "source_url", "kind"]];
+    for (const k of keys)
+      if (p[field][k] == null) throw new Error(`${where}: ${field} needs ${k}`);
+    if (p.osm != null) throw new Error(`${where}: an ${field} placement has no OSM object; one that confirms it ships instead`);
     const nc = nearestCommune(p.lat, p.lng);
-    if (!nc) throw new Error(`${where}: owner pin joins no flagship commune`);
+    if (!nc) throw new Error(`${where}: ${field} joins no flagship commune`);
     if (p.wilaya_code != null && Number(p.wilaya_code) !== nc.code)
-      throw new Error(`${where}: owner pin joins wilaya ${nc.code}, seed says ${p.wilaya_code}`);
+      throw new Error(`${where}: ${field} joins wilaya ${nc.code}, seed says ${p.wilaya_code}`);
     let commune = nc.name;
     if (p.commune != null) {
       const c = communeByName(p.commune, nc.code);

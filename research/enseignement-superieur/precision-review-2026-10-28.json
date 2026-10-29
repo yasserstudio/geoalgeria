@@ -4,9 +4,9 @@
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
   "network": "Candidates come from the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf), one source. The second-source pass of the same run (research/enseignement-superieur/second-source-votes-2026-10-28.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on 2026-10-28.",
   "counts": {
-    "approximate_reviewed": 71,
+    "approximate_reviewed": 59,
     "queued_single_source": 0,
-    "no_open_candidate": 71,
+    "no_open_candidate": 59,
     "promoted": 0
   },
   "queue": [],
@@ -16,12 +16,6 @@
       "name": "Université de Tindouf-Ali Kafi",
       "wilaya_code": "37",
       "geo_method": "wilaya"
-    },
-    {
-      "id": "00067",
-      "name": "Ecole nationale supérieure de journalisme et des sciences de l’information",
-      "wilaya_code": "16",
-      "geo_method": "commune"
     },
     {
       "id": "00070",
@@ -54,21 +48,9 @@
       "geo_method": "wilaya"
     },
     {
-      "id": "00083",
-      "name": "Ecole Supérieure de Gestion et d’Economie Numérique",
-      "wilaya_code": "42",
-      "geo_method": "commune"
-    },
-    {
       "id": "00087",
       "name": "Ecole Supérieure des sciences Biologiques d’ Oran ex EP SNV Oran",
       "wilaya_code": "31",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00088",
-      "name": "Ecole Supérieure des Sciences de l’Aliment et des Industries Agroalimentaires d’Alger ex EP SNV Alger",
-      "wilaya_code": "16",
       "geo_method": "wilaya"
     },
     {
@@ -102,21 +84,9 @@
       "geo_method": "wilaya"
     },
     {
-      "id": "00112",
-      "name_ar": "المدرسة الوطنية العليا للاتصالات السلكية واللّاسلكية وتكنولوجيات الإعلام والاتصال (وهران).",
-      "wilaya_code": "31",
-      "geo_method": "wilaya"
-    },
-    {
       "id": "00113",
       "name_ar": "المدرسة الوطنية العليا للبريد وتكنولوجيات الإعلام والاتصال (الكاليتوس، ولاية الجزائر).",
       "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00114",
-      "name_ar": "المدرسة الوطنية لحفظ الممتلكات الثقافية (تيبازة)",
-      "wilaya_code": "42",
       "geo_method": "wilaya"
     },
     {
@@ -132,21 +102,9 @@
       "geo_method": "wilaya"
     },
     {
-      "id": "00120",
-      "name_ar": "المعهد العالي للتسيير دالي براهيم",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
       "id": "00121",
       "name_ar": "المعهد العالي للعلوم الانسانية والتطبيقية غرداية",
       "wilaya_code": "47",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00122",
-      "name_ar": "المعهد العالي للعلوم برج الكيفان الجزائر",
-      "wilaya_code": "16",
       "geo_method": "wilaya"
     },
     {
@@ -294,12 +252,6 @@
       "geo_method": "wilaya"
     },
     {
-      "id": "00150",
-      "name_ar": "المعهد الوطني لمهن فنون العرض والسمعي البصري",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
       "id": "00151",
       "name_ar": "مدرسة ادارة الأعمال المدينة الجديدة تيزي وزو",
       "wilaya_code": "15",
@@ -308,12 +260,6 @@
     {
       "id": "00152",
       "name_ar": "مدرسة ادارة الأعمال بالجزائر(بيزناس سكول) حيدرة الجزائر",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00153",
-      "name_ar": "مدرسة التكوين في تقنيات التسيير دالي ابراهيم الجزائر",
       "wilaya_code": "16",
       "geo_method": "wilaya"
     },
@@ -354,12 +300,6 @@
       "geo_method": "wilaya"
     },
     {
-      "id": "00160",
-      "name_ar": "معهد المناجمنت والتطوير الشراقة.الجزائر",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
       "id": "00161",
       "name": "Ecole normale supérieure d’enseignement technologique de Skikda",
       "wilaya_code": "21",
@@ -384,12 +324,6 @@
       "geo_method": "wilaya"
     },
     {
-      "id": "00170",
-      "name": "Ecole normale supérieure de Ouargla",
-      "wilaya_code": "30",
-      "geo_method": "wilaya"
-    },
-    {
       "id": "00172",
       "name": "Ecole normale supérieure de sourds muets",
       "wilaya_code": "16",
@@ -400,12 +334,6 @@
       "name": "Centre universitaire d’Aflou",
       "wilaya_code": "59",
       "geo_method": "wilaya"
-    },
-    {
-      "id": "00179",
-      "name": "Ecole nationale supérieure d'agriculture saharienne d'Adrar",
-      "wilaya_code": "01",
-      "geo_method": "commune"
     },
     {
       "id": "00180",

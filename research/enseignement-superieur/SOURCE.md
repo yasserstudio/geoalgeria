@@ -199,14 +199,14 @@ leaves out every institution the Ministry of National Defence supervises and
 their ids stay reserved in `data/retired-ids.json`.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 71
-approximate records (62 `wilaya`, 9 `commune`) are in it exactly once:
+written offline and byte for byte by `precision-review.mjs` next to it. All 59
+approximate records (53 `wilaya`, 6 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
 | Queued, one candidate for the campus (single source) | 0 |
 | Queued, several candidates for the campus (ambiguous) | 0 |
-| No open candidate in the capture | 71 |
+| No open candidate in the capture | 59 |
 
 Each queued entry carries the OSM element, the tags that make the tie (the
 element's own website host where it has one, else a strict name match), the
@@ -281,6 +281,18 @@ object lies within 500 m of it. Three records use it: `00082` ESCF Constantine a
 proprietary-map readings, not open data, and an open object that later confirms the
 place replaces them.
 
+**Locations the institutions publish (Owner decision of 2026-10-25: an
+operator-published location is verified).** On 2026-10-29 the websites of the 71
+then-approximate records were read for a location the institution publishes
+itself: an embedded map with coordinates, a map link or a Plus Code, or a street
+address. Twelve publish a map location and now ship on it, recorded as
+`operator_location` with the page it was read from: `00067`, `00083`, `00088`,
+`00112`, `00114`, `00120`, `00122`, `00150`, `00153`, `00160`, `00170` and `00179`
+(`P73`). Five of them agree within 500 m with an independent open object (an OSM
+or Overture place): `00083` 311 m, `00088` 228 m, `00120`, `00122` 42 m and
+`00150` 185 m. Address-only findings were not used. 42 of the 71 sites did not
+answer. The evidence table is kept with the Owner's local spike files.
+
 **ENSTA (`00189`)**'s commune was decided by containment, not by the nearest
 centre: its point lies inside Bordj El Kiffan's committed OSM outline, 194 m from
 the Bordj El Bahri border (about four times the outline's ~50 m simplification
@@ -321,7 +333,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  100 campus, 9 commune, 62 wilaya; the 71 approximate records are in the
+  112 campus, 6 commune, 53 wilaya; the 59 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and

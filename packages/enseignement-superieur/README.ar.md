@@ -107,7 +107,7 @@ data/
   metadata.json                # المصادر، الإحصائيات، by_type، by_sector، by_geo_method، updated
   retired-ids.json             # معرفات لا يجوز لأي سجل أن يحملها مجددًا، وكل واحد منها يُحوّل إلى المعرف الذي يحمل المؤسسة الآن
   csv/institutions.csv         # المستودع + حزمة الإصدار (غير مضمن في tarball npm)
-  geojson/institutions.geojson # كيانات نقطية (171 موضوعة؛ 100 مرمزة جغرافيا على مستوى الحرم، انظر geo_method)
+  geojson/institutions.geojson # كيانات نقطية (171 موضوعة؛ 112 مرمزة جغرافيا على مستوى الحرم، انظر geo_method)
 ```
 
 ## بنية السجل
