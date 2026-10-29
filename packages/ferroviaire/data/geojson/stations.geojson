@@ -2921,8 +2921,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.94,
-          34.920833
+          -1.9398857,
+          34.9207319
         ]
       },
       "properties": {
@@ -2933,13 +2933,14 @@
         "wilaya_code": "13",
         "commune_code": "1308",
         "commune": "Souani",
-        "lat": 34.920833,
-        "lng": -1.94,
-        "geo_precision": "approximate",
-        "geo_method": "wikidata",
-        "source": "wikidata",
+        "lat": 34.9207319,
+        "lng": -1.9398857,
+        "geo_precision": "exact",
+        "geo_method": "osm_way",
+        "source": "wikidata+osm",
         "refs": {
-          "wikidata": "Q120282282"
+          "wikidata": "Q120282282",
+          "osm": "way/305835618"
         },
         "type": "rail",
         "line": "Ligne d'Akid Abbes à Ghazaouet",
@@ -5266,8 +5267,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.0866,
-          36.67377
+          3.0865845,
+          36.6737614
         ]
       },
       "properties": {
@@ -5278,9 +5279,9 @@
         "wilaya_code": "16",
         "commune_code": "1614",
         "commune": "Baraki",
-        "lat": 36.67377,
-        "lng": 3.0866,
-        "geo_precision": "approximate",
+        "lat": 36.6737614,
+        "lng": 3.0865845,
+        "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "wikidata+osm",
         "refs": {
@@ -5394,8 +5395,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.0866,
-          36.67377
+          3.0951274,
+          36.6683089
         ]
       },
       "properties": {
@@ -5406,13 +5407,14 @@
         "wilaya_code": "16",
         "commune_code": "1614",
         "commune": "Baraki",
-        "lat": 36.67377,
-        "lng": 3.0866,
-        "geo_precision": "approximate",
-        "geo_method": "wikidata",
-        "source": "wikidata",
+        "lat": 36.6683089,
+        "lng": 3.0951274,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "wikidata+osm",
         "refs": {
-          "wikidata": "Q138494132"
+          "wikidata": "Q138494132",
+          "osm": "node/12942126787"
         },
         "type": "metro",
         "line": "ligne 1",
@@ -16068,8 +16070,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.6075,
-          35.65
+          -0.6074682,
+          35.6501075
         ]
       },
       "properties": {
@@ -16080,9 +16082,9 @@
         "wilaya_code": "31",
         "commune_code": "3105",
         "commune": "Es Senia",
-        "lat": 35.65,
-        "lng": -0.6075,
-        "geo_precision": "approximate",
+        "lat": 35.6501075,
+        "lng": -0.6074682,
+        "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "wikidata+osm",
         "refs": {
@@ -16100,8 +16102,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.32,
-          35.8473
+          -0.3200193,
+          35.8472592
         ]
       },
       "properties": {
@@ -16112,9 +16114,9 @@
         "wilaya_code": "31",
         "commune_code": "3106",
         "commune": "Arzew",
-        "lat": 35.8473,
-        "lng": -0.32,
-        "geo_precision": "approximate",
+        "lat": 35.8472592,
+        "lng": -0.3200193,
+        "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "wikidata+osm",
         "refs": {
@@ -20531,11 +20533,10 @@
         "lat": 32.614138,
         "lng": -0.40639,
         "geo_precision": "approximate",
-        "geo_method": "osm_node",
-        "source": "wikidata+osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
         "refs": {
-          "wikidata": "Q123498570",
-          "osm": "node/9358330035"
+          "wikidata": "Q123498570"
         },
         "type": "rail",
         "line": null,
@@ -20548,8 +20549,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.40639,
-          32.614138
+          -0.405841,
+          32.6143877
         ]
       },
       "properties": {
@@ -20560,13 +20561,14 @@
         "wilaya_code": "45",
         "commune_code": "4506",
         "commune": "Moghrar",
-        "lat": 32.614138,
-        "lng": -0.40639,
-        "geo_precision": "approximate",
-        "geo_method": "wikidata",
-        "source": "wikidata",
+        "lat": 32.6143877,
+        "lng": -0.405841,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "wikidata+osm",
         "refs": {
-          "wikidata": "Q123498571"
+          "wikidata": "Q123498571",
+          "osm": "node/9358330035"
         },
         "type": "rail",
         "line": null,
@@ -21017,8 +21019,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.14,
-          35.2983
+          -1.1400885,
+          35.2983379
         ]
       },
       "properties": {
@@ -21029,9 +21031,9 @@
         "wilaya_code": "46",
         "commune_code": "4601",
         "commune": "Ain Temouchent",
-        "lat": 35.2983,
-        "lng": -1.14,
-        "geo_precision": "approximate",
+        "lat": 35.2983379,
+        "lng": -1.1400885,
+        "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "wikidata+osm",
         "refs": {
