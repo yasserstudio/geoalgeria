@@ -12,7 +12,7 @@
 
 </div>
 
-4,326 موقعا سياحيا محدد الإحداثيات عبر 69 ولاية في الجزائر، **فنادق**، معالم سياحية،
+4,321 موقعا سياحيا محدد الإحداثيات عبر 69 ولاية في الجزائر، **فنادق**، معالم سياحية،
 مواقع تاريخية، ينابيع حرارية ومساحات محمية – كل منها بإحداثياته، وربطه بالولاية،
 وإسناد المصدر. المصادر: **ASAL Geoportail** (الينابيع الحرارية)، **OpenStreetMap** (الفنادق،
 المعالم السياحية، المواقع التاريخية، الحدائق) و**Wikidata** (المواقع التراثية، المتاحف،
@@ -26,7 +26,7 @@ npm install @geoalgeria/tourisme
 ```js
 import tourisme from "@geoalgeria/tourisme";
 
-const everything = tourisme.all();               // 4,326
+const everything = tourisme.all();               // 4,321
 const hotels = tourisme.lodging();               // 1,587
 const springs = tourisme.thermalSprings();        // 282
 const inTipaza = tourisme.byWilaya(42);           // كل المواقع السياحية في الولاية 42
@@ -51,8 +51,8 @@ const ruins = tourisme.byLayer("historic");       // 1,180 موقع تاريخي
 | المعالم السياحية | `attractions()` | **1,245** | متاحف، مطلات، كهوف، شلالات، حدائق حيوان |
 | التاريخي | `historic()` | **1,180** | مواقع أثرية، أطلال، نصب تذكارية، حصون، قلاع |
 | الينابيع الحرارية | `thermalSprings()` | **282** | درجة الحرارة، التدفق، الارتفاع، المعدنية |
-| الحدائق | `parks()` | **32** | حدائق وطنية، محميات طبيعية، مساحات محمية |
-| **المجموع** | `all()` | **4,326** | |
+| الحدائق | `parks()` | **27** | حدائق وطنية، محميات طبيعية، مساحات محمية |
+| **المجموع** | `all()` | **4,321** | |
 
 تغطي **69 ولاية**. `wilaya_code` مرتبط بنموذج الـ 69 ولاية في
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
@@ -92,7 +92,7 @@ data/
   attractions.json        # 1,245 معلم سياحي
   historic.json           # 1,180 موقع تاريخي
   thermal-springs.json    # 282 ينبوع حراري
-  parks.json              # 32 حديقة
+  parks.json              # 27 حديقة
   metadata.json           # المصادر، الأعداد، التغطية
   retired-ids.json        # معرفات لن يحملها أي سجل مرة أخرى
   csv/                    # ملفات CSV (المستودع + حزمة الإصدار، غير مضمّنة في tarball npm)

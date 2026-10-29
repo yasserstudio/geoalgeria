@@ -304,11 +304,11 @@
     },
     {
       "path": "packages/tourisme/data/metadata.json",
-      "sha256": "89d87e40b1fd6771274f3235b6d1e1cf54af67fa380983f2f9cc3b957450ed91"
+      "sha256": "f36e1d10227aa0cfa9f08c5f1b0b2ead8748043c5c6960e361cccd79094a571e"
     },
     {
       "path": "packages/tourisme/data/parks.json",
-      "sha256": "241148e19d19c04b2502643dd42a0ef94c352fae47768dc2c8076e79fa6bbcfc"
+      "sha256": "01bec6accdf1c450ec4f271f2a31a3c5c147ec8571733255c41e50c110bf8aff"
     },
     {
       "path": "packages/tourisme/data/thermal-springs.json",
@@ -317,14 +317,14 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70763,
-  "candidates": 17479,
+  "total_records": 70758,
+  "candidates": 17474,
   "reasons": {
-    "approximate_coordinate": 16639,
-    "inside_adjacent_wilaya": 192,
+    "approximate_coordinate": 16634,
+    "inside_adjacent_wilaya": 191,
     "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
-    "outside_declared_wilaya": 391,
+    "outside_declared_wilaya": 390,
     "shared_coordinate": 1136
   },
   "datasets": [
@@ -2183,13 +2183,13 @@
     },
     {
       "dataset": "tourisme",
-      "total_records": 4326,
-      "candidates": 237,
+      "total_records": 4321,
+      "candidates": 232,
       "reasons": {
-        "approximate_coordinate": 42,
-        "inside_adjacent_wilaya": 106,
+        "approximate_coordinate": 37,
+        "inside_adjacent_wilaya": 105,
         "outside_all_wilaya_boundaries": 95,
-        "outside_declared_wilaya": 201,
+        "outside_declared_wilaya": 200,
         "shared_coordinate": 7
       },
       "metadata_path": "packages/tourisme/data/metadata.json",
@@ -2199,12 +2199,12 @@
         "title_fr": "Tourisme en Algérie",
         "title_ar": "السياحة في الجزائر",
         "title_en": "Algeria tourism",
-        "record_count": 4326,
-        "geocoded_count": 4326,
+        "record_count": 4321,
+        "geocoded_count": 4321,
         "geocoded_pct": 100,
         "precision": {
           "exact": 4284,
-          "approximate": 42
+          "approximate": 37
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -2231,7 +2231,7 @@
           },
           {
             "file": "parks.json",
-            "count": 32
+            "count": 27
           },
           {
             "file": "thermal-springs.json",
@@ -2724,13 +2724,12 @@
     {
       "dataset": "tourisme",
       "entity": "parks.json",
-      "total_records": 32,
-      "candidates": 10,
+      "total_records": 27,
+      "candidates": 5,
       "reasons": {
-        "approximate_coordinate": 5,
-        "inside_adjacent_wilaya": 4,
+        "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 6
+        "outside_declared_wilaya": 5
       },
       "path": "packages/tourisme/data/parks.json"
     },

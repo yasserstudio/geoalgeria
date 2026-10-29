@@ -12,7 +12,7 @@
 
 </div>
 
-4,326 geocoded tourism sites across Algeria's 69 wilayas, **hotels**, attractions, historic
+4,321 geocoded tourism sites across Algeria's 69 wilayas, **hotels**, attractions, historic
 sites, thermal springs and protected areas, each with coordinates, wilaya linkage and source
 attribution. Sourced from **ASAL Geoportail** (thermal springs), **OpenStreetMap** (hotels,
 attractions, historic sites, parks) and **Wikidata** (heritage sites, museums, parks). Shipped
@@ -25,7 +25,7 @@ npm install @geoalgeria/tourisme
 ```js
 import tourisme from "@geoalgeria/tourisme";
 
-const everything = tourisme.all();               // 4,326
+const everything = tourisme.all();               // 4,321
 const hotels = tourisme.lodging();               // 1,587
 const springs = tourisme.thermalSprings();        // 282
 const inTipaza = tourisme.byWilaya(42);           // all tourism sites in wilaya 42
@@ -50,8 +50,8 @@ const ruins = tourisme.byLayer("historic");       // 1,180 historic sites
 | Attractions | `attractions()` | **1,245** | museums, viewpoints, caves, waterfalls, zoos |
 | Historic | `historic()` | **1,180** | archaeological sites, ruins, monuments, forts, castles |
 | Thermal springs | `thermalSprings()` | **282** | temperature, flow rate, altitude, minerality |
-| Parks | `parks()` | **32** | national parks, nature reserves, protected areas |
-| **Total** | `all()` | **4,326** | |
+| Parks | `parks()` | **27** | national parks, nature reserves, protected areas |
+| **Total** | `all()` | **4,321** | |
 
 Spanning **69 wilayas**. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model (69-wilaya scheme).
@@ -91,7 +91,7 @@ data/
   attractions.json        # 1,245 attractions
   historic.json           # 1,180 historic sites
   thermal-springs.json    # 282 thermal springs
-  parks.json              # 32 parks
+  parks.json              # 27 parks
   metadata.json           # sources, counts, coverage
   retired-ids.json        # ids no record may hold again
   csv/                    # CSV exports (repo + Release bundle, not in npm tarball)

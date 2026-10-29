@@ -85,6 +85,25 @@ const EXCLUDED_OSM = {
   ]),
 };
 
+/**
+ * Wikidata records that duplicate a place this package already ships from
+ * OpenStreetMap, keyed by the Wikidata item, per layer file, with the record that
+ * carries the place. Owner decision of 2026-10-29: the duplicate leaves and its id
+ * retires with a forward to the OSM record, so an old key still finds the place.
+ * The five national parks each came in twice, once as an OSM boundary (with a
+ * measured point) and once as a Wikidata item (with a rounded point 0.7 to 7.7 km
+ * from the boundary's centre).
+ */
+const MERGED_WIKIDATA = {
+  "parks.json": {
+    Q2664184: "park-2", // Belezma National Park -> Parc National de Belezma
+    Q2664193: "park-7", // Gouraya National Park -> Parc national de Gouraya
+    Q2671600: "park-3", // Chrea National Park -> Parc National de Chréa
+    Q2580089: "park-6", // Djurdjura National Park -> Parc National du Djurdjura
+    Q650992: "park-1", // El Kala National Park -> Parc National d'El Kala
+  },
+};
+
 const cfg = MIGRATIONS.tourisme;
 const oldMeta = read("metadata.json");
 const retiredIds = readRetiredIds(DATA);
@@ -93,7 +112,28 @@ const retiredMigrations = readRetiredMigrations(DATA);
 let dropped = 0;
 const files = cfg.files.map(({ file }) => {
   const excluded = EXCLUDED_OSM[file];
-  const rows = read(file).filter((row) => {
+  const merged = MERGED_WIKIDATA[file] ?? {};
+  const all = read(file);
+  const byId = new Map(all.map((row) => [row.id, row]));
+  const rows = all.filter((row) => {
+    const into = merged[row.refs?.wikidata ?? ""];
+    // The twin gains the same Wikidata item below, so it must not merge into itself.
+    if (into && into !== row.id) {
+      const twin = byId.get(into);
+      if (!twin?.refs?.osm) throw new Error(`tourisme: ${row.id} merges into ${into}, which is not an OSM record of ${file}`);
+      // The twin carries what the duplicate brought and it lacked: its Wikidata
+      // item and its French and Arabic names. Nothing the twin has is replaced.
+      twin.refs = { ...twin.refs, wikidata: twin.refs.wikidata ?? row.refs.wikidata };
+      for (const key of ["name_fr", "name_ar"]) twin[key] = twin[key] ?? row[key] ?? null;
+      retiredIds.add(String(row.id));
+      retiredMigrations[row.id] = {
+        merged_into: into,
+        osm: [String(twin.refs.osm)],
+        note: `Merged into ${into}. Wikidata ${row.refs.wikidata} and OpenStreetMap element ${twin.refs.osm} are the same national park; the OpenStreetMap record carries the measured point.`,
+      };
+      dropped += 1;
+      return false;
+    }
     if (!excluded?.has(String(row.refs?.osm ?? ""))) return true;
     // A published id is a join key: it is reserved for good and never reused, and
     // carries no forward because the place was removed, not merged (RELEASING.md,
