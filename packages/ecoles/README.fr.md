@@ -12,7 +12,7 @@
 
 </div>
 
-**11 849 écoles géolocalisées** dans les **69 wilayas** d'Algérie – chacune avec
+**11 849 écoles géolocalisées** dans les **69 wilayas** d'Algérie, chacune avec
 ses coordonnées, classée par **cycle** (primaire · moyen/CEM · secondaire/lycée ·
 préscolaire), la plupart avec un nom en arabe et/ou en français, et un
 rattachement commune/wilaya. Extraites d'**OpenStreetMap** et présentées
@@ -39,7 +39,7 @@ const named = all.filter((e) => e.name_fr);
 
 ## Ce que vous pouvez construire
 
-- **Cartes & annuaires d'écoles** – coordonnées sur les 11 849 enregistrements,
+- **Cartes & annuaires d'écoles**, coordonnées sur les 11 849 enregistrements,
   prêtes pour une carte ou un tri par école la plus proche.
 - **Répartitions par cycle** – filtrez primaire / moyen / secondaire /
   préscolaire, ou classez la densité scolaire par commune/wilaya.
@@ -62,7 +62,7 @@ const named = all.filter((e) => e.name_fr);
 | `autre` | 3 951 | école de cycle indéterminé (non nommée, ou nom sans mot de cycle) |
 
 > **Il s'agit d'un extrait OpenStreetMap, pas d'un registre officiel.** La
-> couverture est partielle et inégale selon les wilayas – 11 849 écoles
+> couverture est partielle et inégale selon les wilayas, 11 849 écoles
 > cartographiées face aux 29 702 établissements d'enseignement que le Ministère
 > de l'Éducation Nationale publie sur
 > [education.gov.dz](https://www.education.gov.dz) pour l'année scolaire
@@ -95,7 +95,7 @@ le cycle `autre` – ce ne sont pas des écoles primaires même si leur nom cont
 
 **Aussi sur chaque enregistrement :** `isced_levels` (les niveaux `isced:level`
 d'OSM, normalisés en liste triée comme `"1;2"` – sur 2 048 enregistrements),
-`address` (depuis les tags OSM `addr:*` – sur 2 620) et `sector`
+`address` (depuis les tags OSM `addr:*`, sur 2 620) et `sector`
 (`public`/`private` là où la carte le signale).
 
 ## Formats

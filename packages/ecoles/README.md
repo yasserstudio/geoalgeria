@@ -38,7 +38,7 @@ const named = all.filter((e) => e.name_fr);
 
 ## What you can build
 
-- **School maps & locators** – coordinates on all 11,849 records, ready for a map
+- **School maps & locators**, coordinates on all 11,849 records, ready for a map
   or nearest-school distance sorting.
 - **Cycle breakdowns** – filter primaire / moyen / secondaire / préscolaire, or
   rank school density per commune/wilaya across the country.
