@@ -137,6 +137,37 @@
           "checked_at": "2026-10-01"
         }
       ]
+    },
+    {
+      "file": "attractions.json",
+      "record_id": "attraction-842",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.5,
+        "lng": 4.3333333,
+        "geo_precision": "approximate",
+        "geo_method": "wikidata"
+      },
+      "patch": {
+        "lat": 36.4990808,
+        "lng": 4.3314177,
+        "geo_precision": "exact",
+        "geo_method": "osm"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/3832451091",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q23805261",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "notes": "Two Votes (ADR 0001): OSM node 3832451091 (version 4, natural=cave_entrance, \"Grotte de Macchabée\") and the Wikidata P625 of Q23805261, 199 m apart and not copied from each other. The Wikidata point is a degree-minute value (36°30′N 4°20′E), so the OSM node ships.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-29"
     }
   ]
 }

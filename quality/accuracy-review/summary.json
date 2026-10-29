@@ -292,7 +292,7 @@
     },
     {
       "path": "packages/tourisme/data/attractions.json",
-      "sha256": "931bd62cc6cf06b14786864338c36108a2a2e8aa0b342b10940de442f46012a0"
+      "sha256": "f87d81093acd8398377160f7f2a489012b820c1b50da8de96d8222c0ba8466ea"
     },
     {
       "path": "packages/tourisme/data/historic.json",
@@ -304,7 +304,7 @@
     },
     {
       "path": "packages/tourisme/data/metadata.json",
-      "sha256": "4f43e91224efecc852b649237f1660f7fae8db7826ed8a4a92e35131c849a1fb"
+      "sha256": "89d87e40b1fd6771274f3235b6d1e1cf54af67fa380983f2f9cc3b957450ed91"
     },
     {
       "path": "packages/tourisme/data/parks.json",
@@ -318,9 +318,9 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70763,
-  "candidates": 17480,
+  "candidates": 17479,
   "reasons": {
-    "approximate_coordinate": 16640,
+    "approximate_coordinate": 16639,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
@@ -2184,9 +2184,9 @@
     {
       "dataset": "tourisme",
       "total_records": 4326,
-      "candidates": 238,
+      "candidates": 237,
       "reasons": {
-        "approximate_coordinate": 43,
+        "approximate_coordinate": 42,
         "inside_adjacent_wilaya": 106,
         "outside_all_wilaya_boundaries": 95,
         "outside_declared_wilaya": 201,
@@ -2203,8 +2203,8 @@
         "geocoded_count": 4326,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 4283,
-          "approximate": 43
+          "exact": 4284,
+          "approximate": 42
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -2687,9 +2687,9 @@
       "dataset": "tourisme",
       "entity": "attractions.json",
       "total_records": 1245,
-      "candidates": 83,
+      "candidates": 82,
       "reasons": {
-        "approximate_coordinate": 5,
+        "approximate_coordinate": 4,
         "inside_adjacent_wilaya": 21,
         "outside_all_wilaya_boundaries": 57,
         "outside_declared_wilaya": 78

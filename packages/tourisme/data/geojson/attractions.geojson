@@ -29031,8 +29031,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.3333333,
-          36.5
+          4.3314177,
+          36.4990808
         ]
       },
       "properties": {
@@ -29042,15 +29042,22 @@
         "wilaya_code": "15",
         "commune_code": null,
         "commune": null,
-        "lat": 36.5,
-        "lng": 4.3333333,
-        "geo_precision": "approximate",
-        "geo_method": "wikidata",
+        "lat": 36.4990808,
+        "lng": 4.3314177,
+        "geo_precision": "exact",
+        "geo_method": "osm",
         "source": "wikidata",
         "refs": {
           "wikidata": "Q23805261"
         },
-        "type": "cave"
+        "type": "cave",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-29",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/3832451091",
+          "https://www.wikidata.org/wiki/Q23805261"
+        ]
       }
     },
     {
