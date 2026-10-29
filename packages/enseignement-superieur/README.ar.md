@@ -107,7 +107,7 @@ data/
   metadata.json                # المصادر، الإحصائيات، by_type، by_sector، by_geo_method، updated
   retired-ids.json             # معرفات لا يجوز لأي سجل أن يحملها مجددًا، وكل واحد منها يُحوّل إلى المعرف الذي يحمل المؤسسة الآن
   csv/institutions.csv         # المستودع + حزمة الإصدار (غير مضمن في tarball npm)
-  geojson/institutions.geojson # كيانات نقطية (171 موضوعة؛ 112 مرمزة جغرافيا على مستوى الحرم، انظر geo_method)
+  geojson/institutions.geojson # كيانات نقطية (171 موضوعة؛ 136 مرمزة جغرافيا على مستوى الحرم، انظر geo_method)
 ```
 
 ## بنية السجل
@@ -182,7 +182,10 @@ phase)*، [المنشور في ملف PDF من 350 صفحة](https://www.esi.dz/
 
 الكود مرخص بـ [MIT](LICENSE). بيانات المؤسسات محفوظة الحقوق للوزارة (**MESRS**)، معاد
 توزيعها كمرجع ولتشغيل [GeoAlgeria](https://geoalgeria.com). الإحداثيات محفوظة الحقوق
-لمساهمي OpenStreetMap (رخصة ODbL)، مشتقة عبر Nominatim. تحقق من الوزارة ومن كل مؤسسة
+لمساهمي OpenStreetMap (رخصة ODbL)، مشتقة عبر Nominatim، إلا حيث تذكر `scripts/seeds/` مصدرًا
+آخر: Overture Maps Places (رخصة CDLA-Permissive-2.0، الإسناد: Overture Maps Foundation)، أو
+الموقع الذي تنشره المؤسسة على موقعها، أو قراءة لمالك المشروع من خرائط Google، وهي ليست بيانات
+مفتوحة. تحقق من الوزارة ومن كل مؤسسة
 للحصول على معلومات رسمية.
 
 [توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs/enseignement-superieur) · [تصفح جميع الحزم →](https://geoalgeria.com/data)

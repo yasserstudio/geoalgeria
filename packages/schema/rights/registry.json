@@ -1421,6 +1421,39 @@
       "refusal": null
     },
     {
+      "key": "overture",
+      "name": "Overture Maps Places",
+      "publisher": "Overture Maps Foundation",
+      "metadata_keys": [
+        "overture"
+      ],
+      "access_class": "public-access",
+      "rights_class": "open-licensed",
+      "rights_basis": "licence",
+      "license_expression": "CDLA-Permissive-2.0",
+      "license_url": "https://cdla.dev/permissive-2-0/",
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Overture Maps Foundation",
+        "url": "https://overturemaps.org"
+      },
+      "notice": "Contains Overture Maps Places data, made available under CDLA-Permissive-2.0. Attribution: Overture Maps Foundation.",
+      "evidence": {
+        "source_url": "https://docs.overturemaps.org/attribution/",
+        "repo_path": "sources/enseignement-superieur/manifest.json",
+        "retrieved_at": "2026-10-29",
+        "note": "Overture's attribution page states the Places theme is CDLA-Permissive-2.0 with attribution to the Overture Maps Foundation; rows whose sources list Foursquare also carry Foursquare's Apache-2.0 notice. The committed rows are all Meta-sourced."
+      },
+      "review_after": "2027-04-29",
+      "notes": "Used as a single open campus lead for 23 enseignement-superieur records (Owner decision of 2026-10-29). CDLA-Permissive-2.0 has no share-alike clause.",
+      "refusal": null
+    },
+    {
       "key": "patrimoine",
       "name": "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)",
       "publisher": "Ministry of Culture",

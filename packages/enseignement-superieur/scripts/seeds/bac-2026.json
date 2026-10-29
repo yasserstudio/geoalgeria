@@ -308,9 +308,17 @@
       "sector": "public",
       "supervisory_ministry": "Ministère de la Jeunesse",
       "place": {
-        "precision": "wilaya",
+        "precision": "campus",
+        "lat": 36.7272935,
+        "lng": 3.0265617,
         "wilaya_code": 16,
-        "why": "No OSM object and no Wikidata P625. The ministry announcement places it at Tixeraïne, which straddles the Birkhadem and Bir Mourad Raïs communes and which no open source resolves to one of them for this school, so the honest level is the wilaya, 16."
+        "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 43fa6738-d780-4469-836b-a00561338a48 \"Esstej\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Tixeraine, Birmourad Raïs, Alger. An OSM/Overture operator tie to generic 'Université d'Alger 2' is not used. One Vote only: an independent second source would make it two.",
+        "single_open_source": {
+          "source": "overture",
+          "ref": "43fa6738-d780-4469-836b-a00561338a48",
+          "read_at": "2026-10-29",
+          "tie": "website"
+        }
       },
       "note": "First establishment under the Ministry of Youth in this package; its own domain is a subdomain of the ministry's."
     }

@@ -209,15 +209,19 @@ const CORRECTIONS = {
     // Alger Centre's centre moved from the sea east of the port to the Grande
     // Poste, as it did for the agriculture rows below.
     "00097": { lat: 36.776335, lng: 3.058211 },
-    "00113": { lat: 36.776335, lng: 3.058211 },
     "00129": { lat: 35.405556, lng: 8.12417 }, // Tébessa
-    "00145": { lng: 0.133333 }, // Saïda
-    "00161": { lat: 36.87617 }, // Skikda
     // Promoted, a third class: the record left its commune centre for its own
     // campus on two independent Votes (docs/adr/0001), OSM way/390654567 agreeing
     // with Wikidata Q16507829's P625 to 58 m; scripts/seeds/second-source.json,
     // PR #310. The frozen v1 row keeps the Koléa centre it borrowed.
     "00081": { lat: 36.6400745, lng: 2.7875844, geo_precision: "exact", geo_method: "campus" },
+    // Placed, a fourth class (Owner decision of 2026-10-29): a single open campus
+    // lead ships where nothing confirms it, scripts/seeds/second-source.json
+    // `single_open_source`, PR #310 (Overture Places for 00113 and 00161, OSM
+    // way/375082795 for 00145). The frozen v1 row keeps the centre it borrowed.
+    "00113": { lat: 36.655334, lng: 3.1468977, commune: "Les Eucalyptus", geo_precision: "exact", geo_method: "campus" },
+    "00145": { lat: 35.3794338, lng: 0.1221791, commune: "Mascara", geo_precision: "exact", geo_method: "campus" },
+    "00161": { lat: 36.86473, lng: 6.92202, commune: "Skikda", geo_precision: "exact", geo_method: "campus" },
   },
   // Two classes below, both of them the flagship moving under a derived field,
   // and both caught by gates of their own rather than by this replay:

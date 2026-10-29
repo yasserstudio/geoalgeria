@@ -24,6 +24,32 @@
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"School of Hotel & Restaurant Management\" and supplied 36.7862437, 2.9014689, 109 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي الجزائر": {
+    "record": "00125, المعهد الوطني للتكوين العالي شبه الطبي الجزائر",
+    "lat": 36.7361113,
+    "lng": 3.1037244,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 025e0237-be19-4fdf-bc1a-11c0742a920a \"Institut National de Formation Supérieure Paramédicale d'Alger\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Two Meta-sourced listings 62 m apart, same provider so not an independent second source, but the exact official name match is strong. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "025e0237-be19-4fdf-bc1a-11c0742a920a",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بالمدية": {
+    "record": "00130, المعهد الوطني للتكوين العالي شبه الطبي بالمدية",
+    "lat": 36.2607855,
+    "lng": 2.757912,
+    "wilaya_code": 26,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 0abd5b56-b0c4-41ba-8b40-719334ba4f9f \"Institut National de Formation Supérieure Paramédicale de Médéa\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Exact official name match, single Meta-sourced listing. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "0abd5b56-b0c4-41ba-8b40-719334ba4f9f",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
   "ar:المعهد الوطني للتكوين العالي شبه الطبي بالمسيلة": {
     "record": "00131, المعهد الوطني للتكوين العالي شبه الطبي بالمسيلة, INFSPM M'Sila (Institut national de formation supérieure paramédicale)",
     "lat": 35.7028121,
@@ -46,6 +72,19 @@
       "read_by": "project owner",
       "source": "Google Maps, a proprietary map",
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"National Training Institute Top Paramedic De Msila\" and supplied 35.7032143, 4.5335894, 99 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بباتنة": {
+    "record": "00132, المعهد الوطني للتكوين العالي شبه الطبي بباتنة",
+    "lat": 35.5331342,
+    "lng": 6.1881351,
+    "wilaya_code": 5,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places cedd3a4e-46bc-4778-a25b-ad8deeafc41d \"Institut National de Formation Supérieure Paramédicale de Batna Algérie\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Two Meta-sourced listings of the same institute, same provider so single-source for ADR purposes. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "cedd3a4e-46bc-4778-a25b-ad8deeafc41d",
+      "read_at": "2026-10-29",
+      "tie": "name"
     }
   },
   "ar:المعهد الوطني للتكوين العالي شبه الطبي ببجاية": {
@@ -86,6 +125,58 @@
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Infspm Tiaret\" and supplied 35.3856964, 1.3142261, 89 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بسيدي بلعباس": {
+    "record": "00141, المعهد الوطني للتكوين العالي شبه الطبي بسيدي بلعباس",
+    "lat": 35.1939,
+    "lng": -0.641389,
+    "wilaya_code": 22,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 1954a22c-3e3c-46f9-a202-f80fa6d16d61 \"Institut National De Formation Supérieur Paramédicale - Sid Bel Abbes\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Village Tiar, Sidi Bel Abbès; exact official name match. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "1954a22c-3e3c-46f9-a202-f80fa6d16d61",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بعين الدفلة": {
+    "record": "00142, المعهد الوطني للتكوين العالي شبه الطبي بعين الدفلة",
+    "lat": 36.2599441,
+    "lng": 2.2330821,
+    "wilaya_code": 44,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places d3f0a017-3983-44f3-8b50-d93c1ce10c51 \"Institut National de Formation Supérieure Paramédicale de Khemis Miliana\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Khemis Miliana is the daira seat in wilaya 44 Ain Defla; exact official name match. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "d3f0a017-3983-44f3-8b50-d93c1ce10c51",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بمستغانم": {
+    "record": "00144, المعهد الوطني للتكوين العالي شبه الطبي بمستغانم",
+    "lat": 35.9130508,
+    "lng": 0.086131,
+    "wilaya_code": 27,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 42234602-c8a6-437a-95a3-ae3d3faf2729 \"Institut national de formation paramedical mostaganem\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Lala Kheira, Mostaganem; exact official name match. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "42234602-c8a6-437a-95a3-ae3d3faf2729",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بمعسكر": {
+    "record": "00145, المعهد الوطني للتكوين العالي شبه الطبي بمعسكر",
+    "lat": 35.3794338,
+    "lng": 0.1221791,
+    "wilaya_code": 29,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. OSM way/375082795 \"Institut de formation paramédicale\" (v4, 2020-11-19T00:17:18Z, read live 2026-10-29; its point is the centre of its bounding box), the paramedical institute of Mascara; a licensed private paramedical school 2.6 km away is a different institution. One Vote only. ODbL.",
+    "single_open_source": {
+      "source": "osm",
+      "ref": "way/375082795",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
   "host:asal.dz": {
     "record": "00103, المدرسة العليا للضمان الاجتماعي (بن عكنون، ولاية الجزائر).",
     "lat": 36.7550283,
@@ -109,6 +200,19 @@
       "source": "Wikidata P625, CC0",
       "confirms": "way/561830853",
       "references": []
+    }
+  },
+  "host:cu-aflou.dz": {
+    "record": "00173, Centre universitaire d’Aflou",
+    "lat": 34.1073663,
+    "lng": 2.070234,
+    "wilaya_code": 59,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places d5dffc89-60bb-4605-9814-c4ba7869d93c \"معهد العلوم الإنسانية والاجتماعية - المركز الجامعي الشريف بوشوشة آفلو\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Two more Meta listings (student residence) within 300 m, same provider. No OSM match for this host. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "d5dffc89-60bb-4605-9814-c4ba7869d93c",
+      "read_at": "2026-10-29",
+      "tie": "website"
     }
   },
   "host:cu-elbayadh.dz": {
@@ -196,6 +300,19 @@
       "note": "The institution's own published location. Not an open coordinate."
     }
   },
+  "host:em-alger.com": {
+    "record": "00152, مدرسة ادارة الأعمال بالجزائر(بيزناس سكول) حيدرة الجزائر",
+    "lat": 36.7545014,
+    "lng": 3.06058,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 847d807f-3e68-4164-9fb0-222a172a3842 \"EM Alger business school\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Chemin Abdelkader Gadouche, Hydra; matches record's own location text exactly. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "847d807f-3e68-4164-9fb0-222a172a3842",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
   "host:encrbc.dz": {
     "record": "00114, المدرسة الوطنية لحفظ الممتلكات الثقافية (تيبازة)",
     "lat": 36.5914375,
@@ -279,6 +396,19 @@
       "read_by": "project owner",
       "source": "Google Maps, a proprietary map",
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"École Normale Supérieure de Kouba\" and supplied 36.7313962, 3.0737082, 39 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:ens-oran.dz": {
+    "record": "00162, Ecole Normale Supérieure d’Oran",
+    "lat": 35.6757461,
+    "lng": -0.6329262,
+    "wilaya_code": 31,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 06f18687-3cf6-4e5d-a557-edf8cb059e7e \"Higher Teachers School of Oran, المدرسة العليا للأساتذة بوهران عمور أحمد\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. 02 avenue des Martyrs, Oran. An OSM 'École normale d'instituteurs d'Oran' object 3.6 km away is a separate, older primary-teacher-training school, not used. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "06f18687-3cf6-4e5d-a557-edf8cb059e7e",
+      "read_at": "2026-10-29",
+      "tie": "website"
     }
   },
   "host:ens-ouargla.dz": {
@@ -367,6 +497,19 @@
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Ecole Normale Supérieure El Katiba Assia Djebar Constantine\" and supplied 36.2756591, 6.5898154, 95 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
+  "host:enset-skikda.dz": {
+    "record": "00161, Ecole normale supérieure d’enseignement technologique de Skikda",
+    "lat": 36.86473,
+    "lng": 6.92202,
+    "wilaya_code": 21,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 845bc5d6-359f-4804-b6d3-291c86545793 \"Enset Skikda\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Cité des Frères Boucetta, Azzaba, wilaya Skikda. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "845bc5d6-359f-4804-b6d3-291c86545793",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
   "host:ensh.dz": {
     "record": "00064, Ecole nationale supérieure d’hydraulique - Arbaoui Abdellah",
     "lat": 36.5107654,
@@ -395,6 +538,19 @@
           "value": "Q30141628"
         }
       ]
+    }
+  },
+  "host:ensia.edu.dz": {
+    "record": "00074, École Nationale Supérieure en Intelligence Artificielle",
+    "lat": 36.68007,
+    "lng": 2.87526,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places a9bd916d-0fa4-4849-b401-5a214f6c145c \"المدرسة الوطنية العليا للذكاء الاصطناعي\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Route de Mahelma, Sidi Abdellah pole; a second Meta listing for the same host sits 900 m away (c3b460c3), same provider so not an independent second source. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "a9bd916d-0fa4-4849-b401-5a214f6c145c",
+      "read_at": "2026-10-29",
+      "tie": "website"
     }
   },
   "host:ensjsi.dz": {
@@ -433,6 +589,32 @@
       "source": "Wikidata P625, CC0",
       "confirms": "way/390654568",
       "references": []
+    }
+  },
+  "host:ensmm-annaba.dz": {
+    "record": "00070, Ecole nationale supérieure des mines et de la métallurgie - Amar Laskri",
+    "lat": 36.8204669,
+    "lng": 7.7271906,
+    "wilaya_code": 23,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places b5cafbc9-c07a-4fac-9cfd-34f0df6bdc9b \"Ecole Nationale Superieure des Mines et Metallurgie\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Sidi Amar, Annaba; locality matches Annaba wilaya. No OSM object. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "b5cafbc9-c07a-4fac-9cfd-34f0df6bdc9b",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:enssm.dz": {
+    "record": "00172, Ecole normale supérieure de sourds muets",
+    "lat": 36.7806474,
+    "lng": 2.9898369,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 2f7c1000-ddec-4d7c-95a7-da469751d63d \"المدرسة العليا لأساتذة الصم والبكم\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Boulevard Brahim Hadjeres, Alger. No OSM match for this host. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "2f7c1000-ddec-4d7c-95a7-da469751d63d",
+      "read_at": "2026-10-29",
+      "tie": "website"
     }
   },
   "host:ensttic.dz": {
@@ -520,6 +702,19 @@
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Ecole Superieure De Management\" and supplied 34.8782877, -1.3619949, 94 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
+  "host:esa-mosta.dz": {
+    "record": "00078, Ecole Supérieure Agronomique de Mostaganem ex EP SNV Mostaganem",
+    "lat": 35.9514341,
+    "lng": 0.0991344,
+    "wilaya_code": 27,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places e8caed75-ae1f-4e2a-9060-21334c350502 \"ESA MOSTA\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Mostaganem; category mistagged middle_school but website host ties exactly. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "e8caed75-ae1f-4e2a-9060-21334c350502",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
   "host:esba.dz": {
     "record": "00108, المدرسة العليا للفنون الجميلة (الجزائر), École supérieure des beaux-arts (ESBA)",
     "lat": 36.7616947,
@@ -588,6 +783,19 @@
       "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
     }
   },
+  "host:ese-oran.dz": {
+    "record": "00079, Ecole Supérieure d’Economie d’Oran ex EPSECG Oran",
+    "lat": 35.7024375,
+    "lng": -0.5848829,
+    "wilaya_code": 31,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 22732716-22eb-40aa-9d7e-2640d5f54bf1 \"ESE Oran : Ecole Supérieure d'Economie d'Oran\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Technopole USTO, Bir El Djir, Oran. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "22732716-22eb-40aa-9d7e-2640d5f54bf1",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
   "host:esgen.edu.dz": {
     "record": "00083, Ecole Supérieure de Gestion et d’Economie Numérique",
     "lat": 36.6401099,
@@ -637,6 +845,32 @@
       "note": "The institution's own published location. Not an open coordinate."
     }
   },
+  "host:essb-oran.edu.dz": {
+    "record": "00087, Ecole Supérieure des sciences Biologiques d’ Oran ex EP SNV Oran",
+    "lat": 35.6434867,
+    "lng": -0.6228733,
+    "wilaya_code": 31,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 3e61c17f-f4b7-41f8-ad67-bf8e20559ae0 \"Ecole Supérieure en Sciences Biologiques d’Oran\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Cité Emir Abdelkader (ex-INESSMO), Oran; a second Meta listing (ESSBO Genomics) 1.3 km away, same provider. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "3e61c17f-f4b7-41f8-ad67-bf8e20559ae0",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:esst-sup.com": {
+    "record": "00106, المدرسة العليا للعلوم والتكنولوجيا واد الرمان العاشور.الجزائر",
+    "lat": 36.7099643,
+    "lng": 2.9965412,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 0bd8f648-d85a-4098-93db-72d1624bf7ad \"École Supérieure des Sciences et Technologies\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Résidence Sahraoui, El Achour, Alger; matches record's own location text (Oued Erremane El Achour). One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "0bd8f648-d85a-4098-93db-72d1624bf7ad",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
   "host:his.edu.dz": {
     "record": "00122, المعهد العالي للعلوم برج الكيفان الجزائر",
     "lat": 36.7557532,
@@ -672,6 +906,71 @@
       "read_by": "project owner",
       "source": "Google Maps, a proprietary map",
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Ecole Nationale Supérieure En Energies Renouvelables, Environnement Et Développement Durable\" and supplied 35.631268, 6.2749599, 29 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:imaa-univ.com": {
+    "record": "00159, معهد المناجمنت سعيد حمدين بالجزائر",
+    "lat": 36.7363667,
+    "lng": 3.0326999,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places f85f9e20-03fc-4f84-8f57-054a5f88a3fa \"IMAA Institut de Management Algéro-Américain\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Coopérative El Amel, Saïd Hamdine; matches record's own location text exactly. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "f85f9e20-03fc-4f84-8f57-054a5f88a3fa",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:incgdz.com": {
+    "record": "00119, المعهد العالي للتجارة والاقتصاد سطيف",
+    "lat": 36.1873268,
+    "lng": 5.443087,
+    "wilaya_code": 19,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places c9263e9d-a0d3-4e9e-9651-89ffc2813667 \"INCG Sétif Business School\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Sétif city, matches record's wilaya. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "c9263e9d-a0d3-4e9e-9651-89ffc2813667",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:inptic.edu.dz": {
+    "record": "00113, المدرسة الوطنية العليا للبريد وتكنولوجيات الإعلام والاتصال (الكاليتوس، ولاية الجزائر).",
+    "lat": 36.655334,
+    "lng": 3.1468977,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 6b226a47-ee66-429c-8611-7aa412e91100 \"INPTIC (Information Technology Institute)\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Route de l'Arbaa, Eucalyptus, Alger; matches record's own location text (Les Eucalyptus). One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "6b226a47-ee66-429c-8611-7aa412e91100",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:insimsup.dz": {
+    "record": "00154, معهد إدارة الأعمال ( أنسيم سوب) حيدرة الجزائر",
+    "lat": 36.7610012,
+    "lng": 3.0235834,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 8c3399d5-2bd9-4ce1-99c1-7c3d48c797a2 \"Insim.sup\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Route du Val d'Hydra, El Biar, adjacent to the record's own Hydra location text. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "8c3399d5-2bd9-4ce1-99c1-7c3d48c797a2",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:io-bba.com": {
+    "record": "00156, معهد البصريات برج بوعريريج",
+    "lat": 36.0801004,
+    "lng": 4.7423944,
+    "wilaya_code": 34,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places d88591cc-946d-4552-93f2-31ce796152c4 \"Optometry Institute معهد البصريات\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Rue B, Bordj Bou Arreridj; matches record's wilaya and the record's own name (optics institute). One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "d88591cc-946d-4552-93f2-31ce796152c4",
+      "read_at": "2026-10-29",
+      "tie": "website"
     }
   },
   "host:isg.dz": {

@@ -199,14 +199,14 @@ leaves out every institution the Ministry of National Defence supervises and
 their ids stay reserved in `data/retired-ids.json`.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 59
-approximate records (53 `wilaya`, 6 `commune`) are in it exactly once:
+written offline and byte for byte by `precision-review.mjs` next to it. All 35
+approximate records (30 `wilaya`, 5 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
 | Queued, one candidate for the campus (single source) | 0 |
 | Queued, several candidates for the campus (ambiguous) | 0 |
-| No open candidate in the capture | 59 |
+| No open candidate in the capture | 35 |
 
 Each queued entry carries the OSM element, the tags that make the tie (the
 element's own website host where it has one, else a strict name match), the
@@ -293,6 +293,18 @@ or Overture place): `00083` 311 m, `00088` 228 m, `00120`, `00122` 42 m and
 `00150` 185 m. Address-only findings were not used. 42 of the 71 sites did not
 answer. The evidence table is kept with the Owner's local spike files.
 
+**Single open leads (Owner decision of 2026-10-29).** Where neither a second
+source nor the institution's own site confirms it, a single open campus lead with a
+clear identity ships, as the Nominatim geocodes always have. The 2026-10-29 search
+of Overture Maps Places (release 2026-10-21.0) by website host and name gave 23,
+all Meta-sourced (none OSM-derived), committed as `sources/enseignement-superieur/overture-places.json`
+and declared as the metadata source `overture`; one more is OpenStreetMap
+`way/375082795` (`00145`). Each is `single_open_source` in its seed. Not used: ENS
+Mostaganem (`00169`, the parent university's campus), the ambiguous `00147`,
+`00170` and `00188`, and the three weak two-source pairs `00072` (the OSM object
+is another institution's building), `00139` (2.1 km apart) and `00163` (the
+parent campus).
+
 **ENSTA (`00189`)**'s commune was decided by containment, not by the nearest
 centre: its point lies inside Bordj El Kiffan's committed OSM outline, 194 m from
 the Bordj El Bahri border (about four times the outline's ~50 m simplification
@@ -333,7 +345,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  112 campus, 6 commune, 53 wilaya; the 59 approximate records are in the
+  136 campus, 5 commune, 30 wilaya; the 35 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and

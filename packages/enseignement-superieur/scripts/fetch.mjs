@@ -70,7 +70,7 @@ function readSeed(path) {
 // covers the two listing captures and is only as fresh as the older of them. A
 // missing capture or a capture with no date fails the build, because the
 // alternative is publishing the run's date as a receipt for bytes nobody read.
-const SOURCE_CAPTURES = { mesrs: ["mesrs-en", "mesrs-ar"], "bac-2026": ["bac-2026"] };
+const SOURCE_CAPTURES = { mesrs: ["mesrs-en", "mesrs-ar"], "bac-2026": ["bac-2026"], overture: ["overture-places"] };
 function datedSources(sources) {
   return sources.map((s) => {
     const captures = SOURCE_CAPTURES[s.key];
@@ -212,10 +212,15 @@ function campusPlace(where, p) {
   // it, the Owner's own pin ships as the coordinate, its provenance stated.
   // Owner decision 2026-10-25: a location the institution publishes itself (a
   // map on its own website) is verified and ships, its page recorded.
-  if (p.owner_pin || p.operator_location) {
+  // Owner decision 2026-10-29: where nothing confirms it, a single open campus
+  // lead with a clear identity ships (`single_open_source`), as the Nominatim
+  // geocodes always have; it is one Vote, never presented as two.
+  if (p.owner_pin || p.operator_location || p.single_open_source) {
     const [field, keys] = p.owner_pin
       ? ["owner_pin", ["read_at", "read_by", "source", "entry"]]
-      : ["operator_location", ["read_at", "source_url", "kind"]];
+      : p.operator_location
+        ? ["operator_location", ["read_at", "source_url", "kind"]]
+        : ["single_open_source", ["source", "ref", "read_at", "tie"]];
     for (const k of keys)
       if (p[field][k] == null) throw new Error(`${where}: ${field} needs ${k}`);
     if (p.osm != null) throw new Error(`${where}: an ${field} placement has no OSM object; one that confirms it ships instead`);

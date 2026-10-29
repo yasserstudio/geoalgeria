@@ -109,7 +109,7 @@ data/
   metadata.json                # sources, counts, by_type, by_sector, by_geo_method, updated
   retired-ids.json             # ids no record may hold again, each forwarded to the id that carries the establishment now
   csv/institutions.csv         # repo + Release bundle (not in npm tarball)
-  geojson/institutions.geojson # Point features (all 171 placed; 112 campus-geocoded, see geo_method)
+  geojson/institutions.geojson # Point features (all 171 placed; 136 campus-geocoded, see geo_method)
 ```
 
 ## Record shape
@@ -191,8 +191,11 @@ OpenStreetMap-derived, see **Names and coordinates** above.
 ## Licence & attribution
 
 Code is [MIT](LICENSE). Institution data is © **MESRS**, redistributed for reference and to
-power [GeoAlgeria](https://geoalgeria.com). Coordinates are © OpenStreetMap contributors (ODbL),
-derived via Nominatim. Verify against the ministry and each institution for authoritative
+power [GeoAlgeria](https://geoalgeria.com). Coordinates are © OpenStreetMap contributors (ODbL), derived via
+Nominatim, except where `scripts/seeds/` records another origin: Overture Maps Places
+(CDLA-Permissive-2.0, attribution: Overture Maps Foundation), the location an institution
+publishes on its own website, or a reading by the project's owner off Google Maps, which is not
+open data. Verify against the ministry and each institution for authoritative
 information.
 
 [API docs & field reference →](https://geoalgeria.com/data/docs/enseignement-superieur) · [Browse all packages →](https://geoalgeria.com/data)

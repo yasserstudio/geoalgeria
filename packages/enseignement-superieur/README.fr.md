@@ -112,7 +112,7 @@ data/
   metadata.json                # sources, comptages, by_type, by_sector, by_geo_method, updated
   retired-ids.json             # ids qu’aucun enregistrement ne peut reprendre, chacun renvoyé vers l’id qui porte désormais l’établissement
   csv/institutions.csv         # dépôt + bundle Release (pas dans le tarball npm)
-  geojson/institutions.geojson # Entités point (les 171 placées ; 112 géocodées au campus, voir geo_method)
+  geojson/institutions.geojson # Entités point (les 171 placées ; 136 géocodées au campus, voir geo_method)
 ```
 
 ## Structure d'un enregistrement
@@ -195,7 +195,11 @@ un nom qui lui soit propre.
 
 Le code est sous [MIT](LICENSE). Les données des établissements sont © **MESRS**, redistribuées
 à titre de référence et pour alimenter [GeoAlgeria](https://geoalgeria.com). Les coordonnées
-sont © contributeurs OpenStreetMap (ODbL), dérivées via Nominatim. Vérifiez auprès du ministère
+sont © contributeurs OpenStreetMap (ODbL), dérivées via Nominatim, sauf quand
+`scripts/seeds/` indique une autre origine : Overture Maps Places (CDLA-Permissive-2.0,
+attribution : Overture Maps Foundation), la localisation qu'un établissement publie sur son
+propre site, ou une lecture du propriétaire du projet sur Google Maps, qui n'est pas une donnée
+ouverte. Vérifiez auprès du ministère
 et de chaque établissement pour des informations faisant autorité.
 
 [Documentation API et référence des champs →](https://geoalgeria.com/data/docs/enseignement-superieur) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
