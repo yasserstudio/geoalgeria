@@ -15,7 +15,7 @@ export type GeoPrecision = "exact" | "approximate" | null;
  *  `"commune_centroid"` where the API's own coordinate is known to be wrong and
  *  the record is pinned to its commune's centroid instead (COORD_FIX in
  *  scripts/fetch.mjs). */
-export type GeoMethod = "operator_api" | "commune_centroid";
+export type GeoMethod = "operator_api" | "commune_centroid" | "osm_node";
 
 /** External identifiers keyed by source system. */
 export interface Refs {
@@ -46,7 +46,7 @@ export interface OoredooStore {
    *  too coarse, or is shared with another store, to be a per-store point, or
    *  where a known-bad API point was replaced by the commune centroid. */
   geo_precision: "exact" | "approximate";
-  /** `"operator_api"`, or `"commune_centroid"` on a corrected record. */
+  /** `"operator_api"`, or `"commune_centroid"` / `"osm_node"` on a corrected record. */
   geo_method: GeoMethod;
   /** Provenance key into `metadata.sources[]`: always "ooredoo". */
   source: "ooredoo";
@@ -64,6 +64,14 @@ export interface OoredooStore {
    *  carry inaccurate source coordinates, so their derived `wilaya_code`/
    *  `commune` (nearest-centroid) may not match this. */
   operator_wilaya: string;
+  /** Present only when a reviewed correction was applied (quality/overrides/ooredoo.json). */
+  review_status?: "corrected";
+  /** ISO date of the reviewed correction. */
+  reviewed_at?: string;
+  /** Reviewer recorded by the correction ledger. */
+  reviewed_by?: string;
+  /** Public evidence URLs supporting the correction. */
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */

@@ -216,11 +216,11 @@
     },
     {
       "path": "packages/ooredoo/data/metadata.json",
-      "sha256": "4a95cc095b6d5836e5d24bcef05b5586c7c8fb66c1d7eb5b7eb4b73596a6513c"
+      "sha256": "377e041da4d4c80ffe1b51cefeb1cc30c5831fc8dbb9a550a37b9db9396de089"
     },
     {
       "path": "packages/ooredoo/data/stores.json",
-      "sha256": "121c82cbebd83a40b9a6757f01e63766e68a7538453fce92b5e3f802422dbfa0"
+      "sha256": "18c088169d32e353ebfee5b7047cbd1290564b6dcbf89afdb00958a0a3966079"
     },
     {
       "path": "packages/pharmacies/data/metadata.json",
@@ -248,11 +248,11 @@
     },
     {
       "path": "packages/protection-civile/data/metadata.json",
-      "sha256": "bbf57322fd71d519348b7d22c59150a92585a815cf90d4d3b1798de5787998e2"
+      "sha256": "46eabd9bc111001bfe0984e4b559db5a24cbacaa2641153367a791beccbd62aa"
     },
     {
       "path": "packages/protection-civile/data/protection-civile.json",
-      "sha256": "05347374e536628e541662da0727e9e42c47dd9f129cbe84b510c8436e8ea1ef"
+      "sha256": "404a1fa98ab1f1dac56b5c1afc04cc1c5ab1378f5ac81f41a4339dfddd2671f3"
     },
     {
       "path": "packages/protection-civile/data/retired-ids.json",
@@ -322,14 +322,14 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70784,
-  "candidates": 17465,
+  "candidates": 17462,
   "reasons": {
-    "approximate_coordinate": 16625,
+    "approximate_coordinate": 16622,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1132
+    "shared_coordinate": 1128
   },
   "datasets": [
     {
@@ -1696,9 +1696,9 @@
     {
       "dataset": "ooredoo",
       "total_records": 572,
-      "candidates": 26,
+      "candidates": 25,
       "reasons": {
-        "approximate_coordinate": 26,
+        "approximate_coordinate": 25,
         "shared_coordinate": 4
       },
       "metadata_path": "packages/ooredoo/data/metadata.json",
@@ -1712,8 +1712,8 @@
         "geocoded_count": 572,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 546,
-          "approximate": 26
+          "exact": 547,
+          "approximate": 25
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1860,12 +1860,12 @@
     {
       "dataset": "protection-civile",
       "total_records": 880,
-      "candidates": 29,
+      "candidates": 27,
       "reasons": {
-        "approximate_coordinate": 23,
+        "approximate_coordinate": 21,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
-        "shared_coordinate": 18
+        "shared_coordinate": 14
       },
       "metadata_path": "packages/protection-civile/data/metadata.json",
       "metadata": {
@@ -1878,8 +1878,8 @@
         "geocoded_count": 880,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 857,
-          "approximate": 23
+          "exact": 859,
+          "approximate": 21
         },
         "estimated_universe": 880,
         "coverage_pct": 100,
@@ -2563,9 +2563,9 @@
       "dataset": "ooredoo",
       "entity": "stores.json",
       "total_records": 572,
-      "candidates": 26,
+      "candidates": 25,
       "reasons": {
-        "approximate_coordinate": 26,
+        "approximate_coordinate": 25,
         "shared_coordinate": 4
       },
       "path": "packages/ooredoo/data/stores.json"
@@ -2613,12 +2613,12 @@
       "dataset": "protection-civile",
       "entity": "protection-civile.json",
       "total_records": 880,
-      "candidates": 29,
+      "candidates": 27,
       "reasons": {
-        "approximate_coordinate": 23,
+        "approximate_coordinate": 21,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
-        "shared_coordinate": 18
+        "shared_coordinate": 14
       },
       "path": "packages/protection-civile/data/protection-civile.json"
     },

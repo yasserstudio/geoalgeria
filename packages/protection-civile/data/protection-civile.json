@@ -16743,10 +16743,10 @@
     "wilaya_code": "50",
     "commune_code": "5001",
     "commune": "Bordj Badji Mokhtar",
-    "lat": 21.3335,
-    "lng": 0.958699,
-    "geo_precision": "approximate",
-    "geo_method": "dgpc_map",
+    "lat": 21.3332893,
+    "lng": 0.9584882,
+    "geo_precision": "exact",
+    "geo_method": "osm_node_review",
     "source": "dgpc",
     "refs": {
       "dgpc": "352",
@@ -16755,7 +16755,13 @@
     "statut": "UNITE PRINCIPALE",
     "address": "RN06, BORDJ BADI MOKHTAR",
     "tel": "049329818",
-    "fax": "049329819"
+    "fax": "049329819",
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-29",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://www.openstreetmap.org/node/5647008622"
+    ]
   },
   {
     "id": "50-002",
@@ -16797,7 +16803,13 @@
     "statut": "SIEGE DE DIRECTION WILAYA",
     "address": "NOUVELLE CITE ADMINISTRATIVE, BORDJ BADI MOKHTAR",
     "tel": "044009922",
-    "fax": "044009922"
+    "fax": "044009922",
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-29",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://www.openstreetmap.org/node/5647008622"
+    ]
   },
   {
     "id": "51-001",
@@ -16806,10 +16818,10 @@
     "wilaya_code": "51",
     "commune_code": "5101",
     "commune": "Ouled Djellal",
-    "lat": 34.436001,
-    "lng": 5.06884,
-    "geo_precision": "approximate",
-    "geo_method": "dgpc_map",
+    "lat": 34.4360897,
+    "lng": 5.0682667,
+    "geo_precision": "exact",
+    "geo_method": "osm_centroid_review",
     "source": "dgpc",
     "refs": {
       "dgpc": "476",
@@ -16818,7 +16830,13 @@
     "statut": "UNITE PRINCIPALE",
     "address": "RUE DE L'INDEPENDANCE OULED DJELLAL, OULED DJELLAL",
     "tel": "033661214",
-    "fax": "033661214"
+    "fax": "033661214",
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-29",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://www.openstreetmap.org/way/307049829"
+    ]
   },
   {
     "id": "51-002",
@@ -16860,7 +16878,13 @@
     "statut": "SIEGE DE DIRECTION WILAYA",
     "address": "CITE ADMINISTRATIVE NOUVELLE VILLE, OULED DJELLAL",
     "tel": "044245456",
-    "fax": "044245409"
+    "fax": "044245409",
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-29",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://www.openstreetmap.org/way/307049829"
+    ]
   },
   {
     "id": "52-001",

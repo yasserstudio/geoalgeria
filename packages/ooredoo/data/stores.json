@@ -10525,10 +10525,10 @@
     "wilaya_code": "46",
     "commune_code": "4601",
     "commune": "Ain Temouchent",
-    "lat": 35.294,
-    "lng": -1.14,
-    "geo_precision": "approximate",
-    "geo_method": "operator_api",
+    "lat": 35.2941814,
+    "lng": -1.1399855,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
     "source": "ooredoo",
     "refs": {
       "ooredoo": "1467347"
@@ -10537,7 +10537,13 @@
     "type_label_fr": "Espace Ooredoo",
     "type_label_ar": "فضاء أوريدو",
     "address": "76 Bd 1er  Nov. - AIN-TEMOUCHENT",
-    "operator_wilaya": "Ain Temouchent"
+    "operator_wilaya": "Ain Temouchent",
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-29",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://www.openstreetmap.org/node/5347870919"
+    ]
   },
   {
     "id": "46-007",
