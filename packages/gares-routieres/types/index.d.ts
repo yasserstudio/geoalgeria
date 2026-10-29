@@ -6,8 +6,10 @@
  *  `null` when the record has no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How the coordinate was obtained: a real SOGRAL point ("exact") or a
- *  fallback estimate ("approx") for the one station without one. */
+/** How the coordinate was obtained: a real point ("exact"), SOGRAL's own or,
+ *  where SOGRAL's is missing or broken, the station's OpenStreetMap object.
+ *  "approx" (a commune-centroid fallback) is no longer emitted since 2026-10-29
+ *  and stays in the type for older data. */
 export type GeoMethod = "exact" | "approx";
 
 /** External identifiers keyed by source system. */

@@ -191,6 +191,11 @@ const CORRECTIONS = {
     // Mascara's 29-01, whose cité label names a locality the point is not in.
     "07-01": { commune: "El Hadjeb" },
     "29-01": { commune: "Tizi" },
+    // Reviewed points of 2026-10-29 (fetch.mjs COORD_FIX): GUELMA leaves the
+    // commune-centroid fallback for OSM way 460372288 on RN 21, and AIN OUSSARA's
+    // two-decimal SOGRAL point gives way to OSM way 494669722, 65 m from it.
+    "24-01": { lat: 36.4715395, lng: 7.4337368, geo_precision: "exact", geo_method: "exact" },
+    "65-01": { lat: 35.4635735, lng: 2.9001721, geo_precision: "exact" },
   },
   "enseignement-superieur": {
     // ESI's campus sits in Oued Smar (its own address: BP 68M, 16270); the
