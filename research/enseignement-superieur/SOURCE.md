@@ -199,12 +199,12 @@ leaves out every institution the Ministry of National Defence supervises and
 their ids stay reserved in `data/retired-ids.json`.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 82
-approximate records (72 `wilaya`, 10 `commune`) are in it exactly once:
+written offline and byte for byte by `precision-review.mjs` next to it. All 73
+approximate records (64 `wilaya`, 9 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
-| Queued, one candidate for the campus (single source) | 11 |
+| Queued, one candidate for the campus (single source) | 2 |
 | Queued, several candidates for the campus (ambiguous) | 0 |
 | No open candidate in the capture | 71 |
 
@@ -217,7 +217,7 @@ website, a parent university's host, a former name, another record's campus)
 sit in tables in the script, each with its reason.
 
 **Owner confirmations (`docs/adr/0001` rule 6 and "Rule 6 in detail").** The
-Owner read eleven campus points off Google Maps on 2026-10-28, and seven more on
+Owner read eleven campus points off Google Maps on 2026-10-28, and seventeen more on
 2026-10-29. A reading off a
 proprietary map is a Claim that may only confirm an open Candidate within
 500 m, and the open coordinate is the one that ships; an Owner reading is never
@@ -248,6 +248,16 @@ the measured one.
 | `00108` | ESBA, École supérieure des beaux-arts (Alger) | OSM `way/475383562` (`website` tie) | 89 m | `exact` from `wilaya`, the OSM point ships |
 | `00082` | ESCF Constantine, École supérieure de comptabilité et de finance | OSM `way/1145579833`, El Khroub | 10.1 km (the reading is in Constantine city, no OSM object near it) | the Owner's pin ships (rule 6 amended 2026-10-29) |
 | `00042` | Université Sétif 1 (Ferhat Abbas) | OSM `way/1263457366` "Rectorat" at El Bez, by the Owner's decision that it is Sétif 1's rectorate (an earlier reading was 584 m from the El Bez campus object `way/185615558`, over the ceiling) | 10 m | `exact` from `wilaya`, commune Setif by outline |
+| `00050` | Université de Tissemsilt | OSM `way/308557373` (`website` tie) | 126 m | `exact` from `wilaya`, the OSM point ships |
+| `00080` | ESI Sidi Bel Abbès, École supérieure d'informatique | OSM `node/4442313789` (`website` tie) | 2 m | `exact` from `wilaya`, the OSM point ships |
+| `00092` | ENSERDD Batna, École nationale supérieure des énergies renouvelables, environnement et développement durable | OSM `way/1350088590` (`website` tie) | 29 m | `exact` from `wilaya`, commune Fesdis by outline |
+| `00107` | École supérieure d'hôtellerie et de restauration, Aïn Benian | OSM `way/244638284` | 109 m | `exact` from `wilaya`, the OSM point ships |
+| `00131` | INFSPM M'Sila, Institut national de formation supérieure paramédicale | OSM `way/448304163` | 99 m | `exact` from `wilaya`, the OSM point ships |
+| `00136` | INFSPM Tiaret, Institut national de formation supérieure paramédicale | OSM `way/311841887` | 89 m | `exact` from `wilaya`, the OSM point ships |
+| `00167` | ENS Kouba, École normale supérieure (Mohamed Bachir El Ibrahimi) | OSM `way/29671795` (`website` tie) | 39 m | `exact` from `commune`, the OSM point ships |
+| `00174` | Centre universitaire d'El Bayadh (Nour Bachir) | OSM `way/272119118` (`website` tie) | 64 m | `exact` from `wilaya`, the OSM point ships |
+| `00175` | Centre universitaire d'Illizi (Cheikh Amoud ben Mokhtar) | OSM `way/313528891` (`website` tie) | 201 m | `exact` from `wilaya`, the OSM point ships |
+| `00133` | INFSPM Béjaïa, Institut national de formation supérieure paramédicale | OSM `way/696128480`, Aokas | (not used) | stays queued: the pin supplied was the Google entry "Insfp De Béjaia", a vocational training institute (INSFP), not this school |
 
 For `P09` and `P10` the two maps first disagreed on which Sidi Abdellah
 building is which: the nanosciences reading landed 40 m from the building OSM
@@ -281,10 +291,11 @@ school publishes as Bab El Oued (its OSM point falls on the Casbah side of that
 boundary, 96 m from it): a site the record does not publish, recorded in the
 seed's `osm_search` note.
 
-**Two Votes and one.** 22 of the 89 `exact` records now stand on two
+**Two Votes and one.** 31 of the 98 `exact` records now stand on two
 independent Votes: the 9 above less the two military schools, and ENSTA, `00178`, `00165`, `P08`, `P10`, `P23`, `00073` (ENSTP),
 `00166` (ENS Constantine), `00057` (USTO), `00004` (Alger 1), `00060` (ENP), `00062` (ENP Constantine),
-`00077` (EPAU), `00108` (ESBA) and `00042` (Sétif 1) on the Owner's readings. The other 65 rest on a single Nominatim geocode and
+`00077` (EPAU), `00108` (ESBA), `00042` (Sétif 1), `00050`, `00080`, `00092`, `00107`, `00131`,
+`00136`, `00167`, `00174` and `00175` on the Owner's readings. The other 65 rest on a single Nominatim geocode and
 are reviewed in a separate follow-up pass (private tracker #336).
 
 **Re-run.** `NODE_USE_ENV_PROXY=1 node research/enseignement-superieur/fetch-second-sources.mjs`
@@ -309,7 +320,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  89 campus, 10 commune, 72 wilaya; the 82 approximate records are in the
+  98 campus, 9 commune, 64 wilaya; the 73 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and

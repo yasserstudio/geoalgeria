@@ -1,5 +1,77 @@
 {
   "_comment": "Campus points on two independent Votes (docs/adr/0001) for records the Nominatim seed (coordinates.json) and the curated overrides do not hold that way. Each entry is keyed by the record's carryKey (scripts/fetch.mjs), so it also reaches the Arabic-only extras, and it takes precedence over every other placement. lat/lng are the open OpenStreetMap object's point as read live from api.openstreetmap.org (osm, osm_version, osm_timestamp), and that is the coordinate that ships. The second Vote is a wikidata_confirmation (a Wikidata P625 within 2 km and outside the 50 m copy radius) or an owner_confirmation (an Owner reading within 500 m, ADR 0001 \"Rule 6 in detail\"), and the build re-measures both. commune, where present, is the commune whose OSM outline (research/_commune-centres/commune-boundaries.json) contains the point.",
+  "ar:المدرسة العليا للفندقة والإطعام عين البنيان بالجزائر": {
+    "record": "00107, المدرسة العليا للفندقة والإطعام عين البنيان بالجزائر, École supérieure d'hôtellerie et de restauration d'Alger",
+    "lat": 36.7866998,
+    "lng": 2.9003914,
+    "osm": "way/244638284",
+    "osm_version": 8,
+    "osm_timestamp": "2025-02-21T18:58:40Z",
+    "osm_name": "Ecole Supérieure d'Hôtellerie et de Restauration d'Alger",
+    "wilaya_code": 16,
+    "commune": "Ain Benian",
+    "why": "OSM way/244638284 (name tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 109 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Ain Benian, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/244638284",
+      "point": [
+        2.9014689,
+        36.7862437
+      ],
+      "metres_from_published_value": 109,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"School of Hotel & Restaurant Management\" and supplied 36.7862437, 2.9014689, 109 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بالمسيلة": {
+    "record": "00131, المعهد الوطني للتكوين العالي شبه الطبي بالمسيلة, INFSPM M'Sila (Institut national de formation supérieure paramédicale)",
+    "lat": 35.7028121,
+    "lng": 4.5345708,
+    "osm": "way/448304163",
+    "osm_version": 3,
+    "osm_timestamp": "2020-11-15T22:49:08Z",
+    "osm_name": "المعهد الوطني للتكوين العالي شبه الطبي",
+    "wilaya_code": 28,
+    "commune": "M'Sila",
+    "why": "OSM way/448304163 (name tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 99 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: M'Sila, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/448304163",
+      "point": [
+        4.5335894,
+        35.7032143
+      ],
+      "metres_from_published_value": 99,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"National Training Institute Top Paramedic De Msila\" and supplied 35.7032143, 4.5335894, 99 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بتيارت": {
+    "record": "00136, المعهد الوطني للتكوين العالي شبه الطبي بتيارت, INFSPM Tiaret (Institut national de formation supérieure paramédicale)",
+    "lat": 35.3850268,
+    "lng": 1.3136792,
+    "osm": "way/311841887",
+    "osm_version": 5,
+    "osm_timestamp": "2016-12-13T10:18:35Z",
+    "osm_name": "Institut National de Formation supérieure paramédical",
+    "wilaya_code": 14,
+    "commune": "Tiaret",
+    "why": "OSM way/311841887 (name tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 89 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Tiaret, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/311841887",
+      "point": [
+        1.3142261,
+        35.3856964
+      ],
+      "metres_from_published_value": 89,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Infspm Tiaret\" and supplied 35.3856964, 1.3142261, 89 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
   "host:asal.dz": {
     "record": "00103, المدرسة العليا للضمان الاجتماعي (بن عكنون، ولاية الجزائر).",
     "lat": 36.7550283,
@@ -23,6 +95,78 @@
       "source": "Wikidata P625, CC0",
       "confirms": "way/561830853",
       "references": []
+    }
+  },
+  "host:cu-elbayadh.dz": {
+    "record": "00174, Centre universitaire d’El Bayadh - Nour Bachir",
+    "lat": 33.6599809,
+    "lng": 1.0698445,
+    "osm": "way/272119118",
+    "osm_version": 7,
+    "osm_timestamp": "2022-05-27T18:28:30Z",
+    "osm_name": "Université d'El Bayadh",
+    "wilaya_code": 32,
+    "commune": "El Bayadh",
+    "why": "OSM way/272119118 (website (cu-elbayadh.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 64 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: El Bayadh, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/272119118",
+      "point": [
+        1.0698257,
+        33.6605574
+      ],
+      "metres_from_published_value": 64,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"University Center of El Bayadh Nour El Bachir\" and supplied 33.6605574, 1.0698257, 64 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:cuillizi.dz": {
+    "record": "00175, Centre Universitaire d’Illizi-Cheikh Amoud ben Mokhtar",
+    "lat": 26.5222906,
+    "lng": 8.4837811,
+    "osm": "way/313528891",
+    "osm_version": 6,
+    "osm_timestamp": "2026-06-09T21:20:50Z",
+    "osm_name": "Université d'Illizi;جامعة إليزي",
+    "wilaya_code": 33,
+    "commune": "Illizi",
+    "why": "OSM way/313528891 (website (cuillizi.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 201 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Illizi, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/313528891",
+      "point": [
+        8.4819479,
+        26.5215305
+      ],
+      "metres_from_published_value": 201,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"University of illizi\" and supplied 26.5215305, 8.4819479, 201 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:cuniv-tissemsilt.dz": {
+    "record": "00050, Université de Tissemsilt",
+    "lat": 35.5997812,
+    "lng": 1.8243967,
+    "osm": "way/308557373",
+    "osm_version": 3,
+    "osm_timestamp": "2026-10-28T23:20:50Z",
+    "osm_name": "Centre universitaire Tissemsilt",
+    "wilaya_code": 38,
+    "commune": "Tissemsilt",
+    "why": "OSM way/308557373 (website (cuniv-tissemsilt.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 126 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Tissemsilt, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/308557373",
+      "point": [
+        1.8239434,
+        35.5987059
+      ],
+      "metres_from_published_value": 126,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Tissemsilt University\" and supplied 35.5987059, 1.8239434, 126 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
   "host:enp-constantine.dz": {
@@ -71,6 +215,30 @@
       "read_by": "project owner",
       "source": "Google Maps, a proprietary map",
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"National Polytechnic School of Algiers\" and supplied 36.7231786, 3.1507671, 64 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:ens-kouba.dz": {
+    "record": "00167, Ecole normale supérieure de Kouba - Mohamed Bachir El Ibrahimi",
+    "lat": 36.7311136,
+    "lng": 3.0734495,
+    "osm": "way/29671795",
+    "osm_version": 14,
+    "osm_timestamp": "2025-06-29T03:09:55Z",
+    "osm_name": "Ecole Supérieure des enseignants ⴰⵖⵔⴱⴰⵣ ⴰⵍⵎⵎⴰⵙ ⵏ ⵢⵉⵙⵍⵎⴰⴷⵏ المدرسة العليا للأساتذة",
+    "wilaya_code": 16,
+    "commune": "Kouba",
+    "why": "OSM way/29671795 (website (ens-kouba.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 39 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Kouba, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/29671795",
+      "point": [
+        3.0737082,
+        36.7313962
+      ],
+      "metres_from_published_value": 39,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"École Normale Supérieure de Kouba\" and supplied 36.7313962, 3.0737082, 39 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
   "host:ensa.dz": {
@@ -315,6 +483,53 @@
       "source": "Google Maps, a proprietary map",
       "entry": "École supérieure de comptabilité et de finance - Constantine",
       "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
+  "host:esi-sba.dz": {
+    "record": "00080, Ecole Supérieure d’Informatique (Sidi Bel Abbes)- 08 Mai 1945 (ESI SBA)",
+    "lat": 35.2097895,
+    "lng": -0.6331638,
+    "osm": "node/4442313789",
+    "osm_version": 3,
+    "osm_timestamp": "2023-10-15T04:18:47Z",
+    "wilaya_code": 22,
+    "commune": "Sidi Bel-Abbes",
+    "why": "OSM node/4442313789 (website (esi-sba.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 2 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Sidi Bel-Abbes, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "node/4442313789",
+      "point": [
+        -0.6331753,
+        35.2097704
+      ],
+      "metres_from_published_value": 2,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"École supérieure en informatique de Sidi Bel Abbès\" and supplied 35.2097704, -0.6331753, 2 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:hns-re2sd.dz": {
+    "record": "00092, L’Ecole nationale supérieure des énergies renouvelables, environnement et développement durable - Batna",
+    "lat": 35.6311157,
+    "lng": 6.2752156,
+    "osm": "way/1350088590",
+    "osm_version": 1,
+    "osm_timestamp": "2025-01-10T21:19:42Z",
+    "osm_name": "Higher National School of Renewable Energies, Environment and Sustainable Development",
+    "wilaya_code": 5,
+    "commune": "Fesdis",
+    "why": "OSM way/1350088590 (website (hns-re2sd.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 29 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Fesdis, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/1350088590",
+      "point": [
+        6.2749599,
+        35.631268
+      ],
+      "metres_from_published_value": 29,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Ecole Nationale Supérieure En Energies Renouvelables, Environnement Et Développement Durable\" and supplied 35.631268, 6.2749599, 29 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
   "host:ufc.dz": {
