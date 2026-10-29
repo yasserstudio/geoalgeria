@@ -397,7 +397,32 @@ for (const shape of osm.line_shapes) {
   }
 }
 
-const stations = osm.stations.map((station) => {
+// OSM nodes whose own position the capture's six-decimal rounding turned into a
+// short number (36.7599996 -> 36.76), which the decimals test below reads as a
+// rounded placeholder. Each value is the node's stored position, read from the
+// OpenStreetMap API (api.openstreetmap.org/api/0.6/node/<id>) at the version
+// named, so the record keeps its own node and gains no other source. A key whose
+// capture point no longer rounds from it means the node moved: re-read it.
+const NODE_FULL_POSITION = {
+  5380774823: { lat: 36.7599996, lng: 3.0569475, version: 5, read_at: "2026-10-29" }, // 1er Mai
+  5387204314: { lat: 36.7329998, lng: 3.1047857, version: 2, read_at: "2026-10-29" }, // PARNET
+  5400974163: { lat: 36.789114, lng: 3.0559999, version: 5, read_at: "2026-10-29" }, // Oukba
+  9031893754: { lat: 35.3613829, lng: 1.3119995, version: 7, read_at: "2026-10-29" }, // Tiaret, unnamed stop
+};
+const fullPositionHit = new Set();
+const fullPosition = (station) => {
+  const fix = station.osm_type === "node" ? NODE_FULL_POSITION[station.osm_id] : undefined;
+  if (!fix) return station;
+  const round6 = (value) => Math.round(value * 1e6) / 1e6;
+  if (round6(fix.lat) !== station.lat || round6(fix.lng) !== station.lng) {
+    throw new Error(`buses: NODE_FULL_POSITION ${station.osm_id} no longer matches the capture; re-read the node`);
+  }
+  fullPositionHit.add(String(station.osm_id));
+  return { ...station, lat: fix.lat, lng: fix.lng };
+};
+
+const stations = osm.stations.map((source) => {
+  const station = fullPosition(source);
   const id = `osm-${station.osm_type}-${station.osm_id}`;
   const derivedWilaya = station.wilaya_code == null;
   const operatorIds = [...(operatorsByStation.get(id) ?? [])].sort();
@@ -423,6 +448,8 @@ const stations = osm.stations.map((station) => {
     roles: station.roles, highway: station.highway, public_transport: station.public_transport,
   };
 });
+const fullPositionMissed = Object.keys(NODE_FULL_POSITION).filter((key) => !fullPositionHit.has(key));
+if (fullPositionMissed.length) throw new Error(`buses: NODE_FULL_POSITION ${fullPositionMissed.join(", ")} matched no captured node`);
 
 const shapes = osm.line_shapes.map((shape) => {
   const labels = operatorLabels[shape.operator_id];
