@@ -75,13 +75,14 @@ data/
   geojson/atms.geojson
 ```
 
-> Le GeoJSON n'inclut que les enregistrements ayant des coordonnées : 16
+> Le GeoJSON n'inclut que les enregistrements ayant des coordonnées : 14
 > bureaux et 1 DAB ne rapportent pas de `lat`/`lng` et en sont absents (mais
 > restent dans JSON/CSV, avec `geo_precision`/`geo_method` à `null`). Pour 90
 > DAB, GeoAlgeria renseigne `commune_code` uniquement lorsque le nom de commune,
 > la wilaya mère et le point concordent. Trois DAB que BaridiMap publie sans
 > point portent celui de leur bureau de poste, avec
-> `geo_method: "baridimap_host_office"`.
+> `geo_method: "baridimap_host_office"`, et deux bureaux sans point sont placés
+> sur leur propre nœud OpenStreetMap (`geo_method: "osm_node"`).
 
 ## Structure des enregistrements
 

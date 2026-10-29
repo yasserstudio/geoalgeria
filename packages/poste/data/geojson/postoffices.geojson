@@ -44786,6 +44786,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          4.0564974,
+          36.700328
+        ]
+      },
+      "properties": {
+        "id": "2458",
+        "name": "KRIM BELKACEM",
+        "name_ar": "ت وزو كريم بلقاسم",
+        "wilaya_code": "15",
+        "commune_code": "1501",
+        "commune": "TIZI OUZOU",
+        "commune_ar": "تيزي وزو",
+        "lat": 36.700328,
+        "lng": 4.0564974,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "baridimap",
+        "class": "R1",
+        "postal_code": "15161",
+        "postal_code_old": "",
+        "address": "TIZI OUZOU  KRIM BELKACM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.7425235,
           35.3189789
         ]
@@ -58251,6 +58279,34 @@
         "postal_code": "15129",
         "postal_code_old": null,
         "address": "HOTEL DE LA POSTE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0267566,
+          36.7692213
+        ]
+      },
+      "properties": {
+        "id": "2905",
+        "name": "EL BIAR ALI KHODJA",
+        "name_ar": "الأبيار علي خوجة",
+        "wilaya_code": "16",
+        "commune_code": "1610",
+        "commune": "EL BIAR",
+        "commune_ar": "الأبيار",
+        "lat": 36.7692213,
+        "lng": 3.0267566,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "baridimap",
+        "class": "R2",
+        "postal_code": "16138",
+        "postal_code_old": null,
+        "address": "118 BD ALI KHODJA"
       }
     },
     {

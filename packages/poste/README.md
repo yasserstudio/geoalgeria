@@ -75,12 +75,13 @@ data/
   geojson/atms.geojson
 ```
 
-> GeoJSON includes only records that have coordinates, 16 offices and 1 ATM
+> GeoJSON includes only records that have coordinates, 14 offices and 1 ATM
 > report no `lat`/`lng` and are omitted there (but remain in JSON/CSV, with
 > `geo_precision`/`geo_method` both `null`). For 90 ATMs, GeoAlgeria supplies a
 > `commune_code` only where the commune name, mother wilaya, and point agree.
 > Three ATMs that BaridiMap lists with no point carry their host post office's
-> own BaridiMap point, with `geo_method: "baridimap_host_office"`.
+> own BaridiMap point, with `geo_method: "baridimap_host_office"`, and two
+> offices with no point sit on their own OpenStreetMap node (`geo_method: "osm_node"`).
 
 ## Record shapes
 

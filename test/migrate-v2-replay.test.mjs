@@ -102,6 +102,10 @@ const CORRECTIONS = {
     "atms.json/1513": { lat: 36.6668571, lng: 3.0975315, geo_precision: "exact", geo_method: "baridimap_host_office" },
     "atms.json/1772": { lat: 36.4775567, lng: 2.5646019, geo_precision: "exact", geo_method: "baridimap_host_office" },
     "atms.json/2335": { lat: 36.7927607, lng: 3.2909607, geo_precision: "exact", geo_method: "baridimap_host_office" },
+    // Offices BaridiMap lists with no point, on their own OSM node (fetch.mjs
+    // OFFICE_OSM_POINT, 2026-10-29).
+    "postoffices.json/2905": { lat: 36.7692213, lng: 3.0267566, geo_precision: "exact", geo_method: "osm_node" },
+    "postoffices.json/2458": { lat: 36.700328, lng: 4.0564974, geo_precision: "exact", geo_method: "osm_node" },
   },
   banques: {
     // BEA's locator publishes address-only rows. The reviewed seed enriches

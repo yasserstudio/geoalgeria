@@ -34,6 +34,8 @@ that one office and by nothing else.
 
 **Three ATMs placed at their post office.** BaridiMap lists `1513` ("BARAKI 2"), `1772` ("AHMER EL AIN") and `2335` ("AIN TAYA") with no coordinate. Each one now carries its host post office's own BaridiMap point (offices `748`, `234` and `206`: same postal code, and the same name or, for "BARAKI 2", the office's second machine beside ATM `1512`). They ship `exact` with `geo_method: "baridimap_host_office"`, which says the point is the office building's and not a survey of the machine. An ATM that later gains its own coordinate upstream keeps it. The mapping is `ATM_HOST_OFFICE` in `packages/poste/scripts/fetch.mjs`. ATMs with no coordinate go from 5 to 1 (`15792`, closed, with no office on file for its postal code).
 
+**Two post offices placed on OpenStreetMap.** BaridiMap lists `2905` (EL BIAR ALI KHODJA) and `2458` (KRIM BELKACEM, Tizi Ouzou) with no coordinate. Each now carries its own OpenStreetMap post office node, read at a recorded version (`OFFICE_OSM_POINT` in `packages/poste/scripts/fetch.mjs`), `exact` / `osm_node`: El Biar on its address, house number, postal code and class; Krim Belkacem on two Votes, the node and BaridiMap's own point for ATM `2139`, 17 m away. Offices with no coordinate go from 16 to 14; the rest are mobile post units, two port offices and Club des Pins, whose OpenStreetMap node lies outside the commune the record names.
+
 **Offline replay.** `node scripts/fetch.mjs --cache` now re-emits the package from
 the records it already ships, with no network, which is how the removal above was
 applied: BaridiMap is geo-blocked from outside Algeria and this package has no

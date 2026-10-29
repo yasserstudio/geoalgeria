@@ -95,6 +95,28 @@ const placeAtHostOffice = (atms, offices) => {
   }
 };
 
+// Post offices BaridiMap lists with no coordinate, placed on the office's own
+// OpenStreetMap node (amenity=post_office, operator Algérie Poste), read from the
+// OpenStreetMap API at the version named on 2026-10-29. Each tie is stated; an
+// office that gains its own coordinate upstream keeps it.
+const OFFICE_OSM_POINT = {
+  // node "El Biar": the record's own address (118 BD ALI KHODJA), postal code 16138
+  // and class R2. Office 3112 "EL BIAR" is the Place Kennedy office (16003).
+  2905: { osm: "node/2754485098", version: 20, lat: 36.7692213, lng: 3.0267566 },
+  // Two Votes: an untitled post office node, 17 m from BaridiMap's own point for
+  // ATM 2139 "TIZI OUZOU KRIM BELKACEM" (postal code 15161, the office's).
+  2458: { osm: "node/3739168414", version: 18, lat: 36.700328, lng: 4.0564974 },
+};
+const placeOfficesOnOsm = (offices) => {
+  const byId = new Map(offices.map((o) => [String(o.id), o]));
+  for (const [id, p] of Object.entries(OFFICE_OSM_POINT)) {
+    const office = byId.get(id);
+    if (!office) throw new Error(`poste: OFFICE_OSM_POINT ${id}: office missing`);
+    if (office.lat != null) continue;
+    Object.assign(office, { lat: p.lat, lng: p.lng, geo_precision: "exact", geo_method: "osm_node" });
+  }
+};
+
 const num = (v) => {
   if (v === null || v === undefined || v === "") return null;
   const n = Number(v);
@@ -212,6 +234,7 @@ async function main() {
       "atms.json",
     );
   }
+  placeOfficesOnOsm(offices);
   placeAtHostOffice(atms, offices);
   console.log(`  ${offices.length} post offices`);
   console.log(`  ${atms.length} ATMs`);

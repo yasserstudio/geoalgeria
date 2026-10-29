@@ -236,11 +236,11 @@
     },
     {
       "path": "packages/poste/data/metadata.json",
-      "sha256": "02e527c567e13e797c72c7a9bc42d5b6a7e0cda1c76a1f49f63df97e1938279d"
+      "sha256": "701a9acb1792538759b95970e2866b63459f7a5176f82d806a88edc7d92d3ca1"
     },
     {
       "path": "packages/poste/data/postoffices.json",
-      "sha256": "cf7191c97df7ea56c71d37df822b69e6adc3979a033ff75b3b90e2cc065a1a3e"
+      "sha256": "5c78a801c9ceae8c792c5215dbe559394dea6b65948da0e00ac079cb56a90c03"
     },
     {
       "path": "packages/protection-civile/data/metadata.json",
@@ -318,11 +318,11 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70773,
-  "candidates": 17469,
+  "candidates": 17467,
   "reasons": {
     "approximate_coordinate": 16633,
     "inside_adjacent_wilaya": 192,
-    "missing_coordinate": 488,
+    "missing_coordinate": 486,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
     "shared_coordinate": 1136
@@ -1799,10 +1799,10 @@
     {
       "dataset": "poste",
       "total_records": 5930,
-      "candidates": 31,
+      "candidates": 29,
       "reasons": {
         "inside_adjacent_wilaya": 7,
-        "missing_coordinate": 17,
+        "missing_coordinate": 15,
         "outside_all_wilaya_boundaries": 7,
         "outside_declared_wilaya": 14
       },
@@ -1814,10 +1814,10 @@
         "title_ar": "مكاتب البريد والصرافات الآلية الجزائرية",
         "title_en": "Algeria post offices & ATMs",
         "record_count": 5930,
-        "geocoded_count": 5913,
+        "geocoded_count": 5915,
         "geocoded_pct": 99.7,
         "precision": {
-          "exact": 5913,
+          "exact": 5915,
           "approximate": 0
         },
         "estimated_universe": null,
@@ -2599,10 +2599,10 @@
       "dataset": "poste",
       "entity": "postoffices.json",
       "total_records": 3907,
-      "candidates": 27,
+      "candidates": 25,
       "reasons": {
         "inside_adjacent_wilaya": 6,
-        "missing_coordinate": 16,
+        "missing_coordinate": 14,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 11
       },
