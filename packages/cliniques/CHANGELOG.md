@@ -1,5 +1,37 @@
 # @geoalgeria/cliniques
 
+## 1.3.0
+
+### Minor Changes
+
+- 92872ed: **Migration.** `22-00028` (Maternité Benatou Mira, Sidi Bel Abbes) is retired and reserved in `data/retired-ids.json`. It was the second OpenStreetMap element of a place `@geoalgeria/sante` already publishes: `22-ehs-03`, the EHS gynécologie-obstétrique of Sidi Bel Abbes, carries it now (sante's `way/219028752`, 17 m from this package's `way/223396517`, both named Maternité Benatou Mira). The place moved to another package, so there is no `migrations` entry; follow it to `22-ehs-03` in `@geoalgeria/sante`. 1,917 care facilities become 1,916. `16-00234` (Clinique militaire les Oliviers, Kouba) retires with it: a project decision of 2026-10-29 keeps every military location out of GeoAlgeria, so the record leaves the package and its OpenStreetMap element `way/186937625` is excluded by id in the generator. It gets no `migrations` entry either, because nothing in the project carries it now. 1,916 care facilities become 1,915, of which 1,608 are named.
+
+  **Double mappings of a sante hospital are excluded.** An element within 40 m of an element sante ships for a hospital-tier record, whose name shares a Loose name key with it, is the same place mapped twice and is no longer published here (`sante_double_mapping`). A proximity facility (polyclinique, salle de soins, centre de santé) is never treated so, because a hospital-tier record is never one: a same-name match there means sante pinned its hospital onto the facility. That is the case of `16-00319` Polyclinique Douera, which stays published: sante's `16-chu-03` (CHU Douera) points at OpenStreetMap `node/4218102291`, a node named Polyclinique Douera 5 m from this record, while OpenStreetMap maps the hospital itself as `way/40072354` "Hopital Douira" about 120 m away. The build reports it as a sante geocode conflict, owed a sante fix.
+
+  **No military location is published.** The generator's first guard is a set of OpenStreetMap element ids, checked before any name test, so a military facility stays out of every rebuild whatever a later edit renames it to (`military`). Over the committed capture it matches one element. The guard is keyed on the id and not on a name pattern on purpose: a record that only mentions the army in an address or an operator is a civilian facility and keeps its place.
+
+  Source: OpenStreetMap (ODbL 1.0), the committed 2026-10-25 capture `sources/cliniques/osm.json`; no element was re-pulled.
+
+### Patch Changes
+
+- 2d1279d: **The cross-reference to `@geoalgeria/sante` states this release's counts.** The README's disjointness note (the one that says these 1,917 care facilities must never be summed with the registry tier) quoted the sante figures, and sante merged four FR/AR half-record pairs in this release. The note now reads 657 registry establishments, 121 of them referencing an OpenStreetMap element, 85 of those on a hospital and excluded here by construction, 36 on an EPSP and kept here, and 536 carrying no OSM reference at all. Nothing about this package changed: no record, no field, no coordinate.
+
+  Three of those numbers were also wrong before this release, written when sante still held 668 records: the OSM-referencing count read 121 where the data said 122, the EPSP count read 35 where it said 36, and the no-reference count read 547 where it said 539. They are read off the shipped data now, and they add up in the open: 85 and 36 make 121, and 121 and 536 make 657.
+
+  The hospital tier the exclusion actually covers is named in full, too. It is CHU, EPH, EHS and the registry's plain `hopital` type, which is what `loadSanteOsmIds` has always matched on; the note listed only the first three, so its count never reconciled with the types beside it.
+
+  Same fix in all three locales (`README.md`, `README.fr.md`, `README.ar.md`).
+
+- f1a05b8: These packages now work in a bundled app: esbuild and Vite can follow the data path.
+
+  Before this release, `import { stations } from "@geoalgeria/ferroviaire"` (and the same for every package here) built fine and then threw `ENOENT ... /data/stations.json` on the first call. The JSON was read at run time from a path joined off `import.meta.url`; esbuild and Vite inline the module without relocating that read, so it went looking for the data next to the generated bundle. Node and Next.js with Turbopack were never affected, which is why this took until now to surface.
+
+  Each package now reaches its data through a generated `loaders.cjs`: one `require` of a literal path per data file, inside a function. A bundler can trace a literal path, and the `require` stays lazy, so importing the package still parses nothing until you call a loader. Every call still answers with a fresh copy, as it always did, so a caller that sorts what it gets cannot reorder another caller's records.
+
+  Nothing is different for you: same exports, same arguments, same return values, same TypeScript types, and not one record of data changed. Verified by packing each real tarball and running it three ways, under plain Node, an esbuild bundle and a Vite 8 SSR bundle (rolldown), with the three required to agree. Those are the three that are checked, and the only ones claimed.
+
+  Turbopack is the one bundler that cannot be checked that way, because it needs a `next build`. It already served these packages before the fix, and the fix gives it a graph it has not seen before (an ESM index importing a CommonJS loader whose JSON arrives by literal `require`), so the proof for it is the geoalgeria.com preview build released in the same batch, which loads `@geoalgeria/gares-routieres` through its index on a live page.
+
 ## 1.2.1
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # @geoalgeria/ferroviaire
 
+## 2.1.0
+
+### Minor Changes
+
+- 0f6dbd4: **Migration.** `16-029` ("Berraki - Le Jardin", OpenStreetMap node 12942126787) leaves the package because it was a second record of the future metro station `16-044` (Jardin, Wikidata Q138494132). Its id is retired for good and forwards to `16-044` in the `migrations` map of `packages/ferroviaire/data/retired-ids.json`, which this package did not have before. `16-044` now carries both ids (`refs.wikidata` and `refs.osm`). If you hold `16-029`, follow `merged_into`.
+
+  **Seven stations now exact.** A station merged from Wikidata and OpenStreetMap kept the Wikidata coordinate, and for these it was rounded or shared with a neighbour. Each now ships its own OpenStreetMap object, read from the OpenStreetMap API at a recorded version (`REVIEWED_POINT` in `scripts/fetch.mjs`): `13-010` Souani (way 305835618, which also joins `refs.osm`), `16-040` Mohamed Belarbi, `16-044` Jardin, `31-013` Es Senia, `31-014` Arzew, `45-016` Aïn El Hadjadi and `46-005` Aïn Témouchent. Most move a few metres; Jardin moves 1.3 km, because its Wikidata point was Mohamed Belarbi's to the metre.
+
+  **Two OSM links corrected** (`OSM_MATCH_FIX`). Node 9358330035 is Aïn El Hadjadi, but the 150 m merge had linked it to `45-015` Rouïba, whose Wikidata point is a copy of Aïn El Hadjadi's; it now links to `45-016`, and `45-015` loses its `refs.osm`. Rouïba (the Moghrar line halt, not the Algiers station) keeps the copied point and ships `approximate` on purpose. Node 12942126787 now merges into Jardin, as above. The build now stops if one OpenStreetMap object is carried by two records.
+
+  Counts: 691 stations from 692, metro 40 from 41. Precision: 689 exact, 2 approximate.
+
+### Patch Changes
+
+- f1a05b8: These packages now work in a bundled app: esbuild and Vite can follow the data path.
+
+  Before this release, `import { stations } from "@geoalgeria/ferroviaire"` (and the same for every package here) built fine and then threw `ENOENT ... /data/stations.json` on the first call. The JSON was read at run time from a path joined off `import.meta.url`; esbuild and Vite inline the module without relocating that read, so it went looking for the data next to the generated bundle. Node and Next.js with Turbopack were never affected, which is why this took until now to surface.
+
+  Each package now reaches its data through a generated `loaders.cjs`: one `require` of a literal path per data file, inside a function. A bundler can trace a literal path, and the `require` stays lazy, so importing the package still parses nothing until you call a loader. Every call still answers with a fresh copy, as it always did, so a caller that sorts what it gets cannot reorder another caller's records.
+
+  Nothing is different for you: same exports, same arguments, same return values, same TypeScript types, and not one record of data changed. Verified by packing each real tarball and running it three ways, under plain Node, an esbuild bundle and a Vite 8 SSR bundle (rolldown), with the three required to agree. Those are the three that are checked, and the only ones claimed.
+
+  Turbopack is the one bundler that cannot be checked that way, because it needs a `next build`. It already served these packages before the fix, and the fix gives it a graph it has not seen before (an ESM index importing a CommonJS loader whose JSON arrives by literal `require`), so the proof for it is the geoalgeria.com preview build released in the same batch, which loads `@geoalgeria/gares-routieres` through its index on a live page.
+
 ## 2.0.6
 
 ### Patch Changes

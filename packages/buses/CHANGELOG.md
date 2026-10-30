@@ -1,5 +1,20 @@
 # @geoalgeria/buses
 
+## 2.2.3
+
+### Patch Changes
+
+- b440da1: **Four stops now exact.** `osm-node-5380774823` (1er Mai), `osm-node-5387204314` (PARNET), `osm-node-5400974163` (Oukba) and `osm-node-9031893754` (an unnamed stop in Tiaret) are real OpenStreetMap nodes whose position the capture's six-decimal rounding cut short (36.7599996 became 36.76), so the decimals test read them as rounded placeholders. Each now ships the node's stored position, read from the OpenStreetMap API at a recorded version (`NODE_FULL_POSITION` in `scripts/fetch.mjs`), and moves less than 1 m. The three stops mapped as ways stay `approximate`. Precision: 1,600 exact, 3 approximate.
+- f1a05b8: These packages now work in a bundled app: esbuild and Vite can follow the data path.
+
+  Before this release, `import { stations } from "@geoalgeria/ferroviaire"` (and the same for every package here) built fine and then threw `ENOENT ... /data/stations.json` on the first call. The JSON was read at run time from a path joined off `import.meta.url`; esbuild and Vite inline the module without relocating that read, so it went looking for the data next to the generated bundle. Node and Next.js with Turbopack were never affected, which is why this took until now to surface.
+
+  Each package now reaches its data through a generated `loaders.cjs`: one `require` of a literal path per data file, inside a function. A bundler can trace a literal path, and the `require` stays lazy, so importing the package still parses nothing until you call a loader. Every call still answers with a fresh copy, as it always did, so a caller that sorts what it gets cannot reorder another caller's records.
+
+  Nothing is different for you: same exports, same arguments, same return values, same TypeScript types, and not one record of data changed. Verified by packing each real tarball and running it three ways, under plain Node, an esbuild bundle and a Vite 8 SSR bundle (rolldown), with the three required to agree. Those are the three that are checked, and the only ones claimed.
+
+  Turbopack is the one bundler that cannot be checked that way, because it needs a `next build`. It already served these packages before the fix, and the fix gives it a graph it has not seen before (an ESM index importing a CommonJS loader whose JSON arrives by literal `require`), so the proof for it is the geoalgeria.com preview build released in the same batch, which loads `@geoalgeria/gares-routieres` through its index on a live page.
+
 ## 2.2.2
 
 ### Patch Changes
