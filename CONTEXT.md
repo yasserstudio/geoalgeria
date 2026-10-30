@@ -147,6 +147,10 @@ _Translations_: FR **liaison** (not "ligne", which is the ground-transport term 
 How strongly one Route is established: `verified` (the operator was confirmed as *operating* the leg, with direction and a great-circle duration check) or `listed` (a published source lists the carrier serving the pair, which claims *service* rather than operation). A per-record field, distinct from **Evidence type**, which describes the authority of a Source.
 _Avoid_: confidence, quality, certainty, evidence level
 
+**Citation**:
+One published document a Route's claims rest on, as a url a reader can open. A Citation names a document; a **Source** names an upstream GeoAlgeria takes records from and keys into the rights registry. Every Route ships `sources`, an ordered, non-empty, duplicate-free list of Citations whose first entry is that Route's own `source` (ADR 0002).
+_Avoid_: reference, provenance entry, source (unqualified, for one document)
+
 ### Telecom
 
 **Coverage point**:

@@ -187,8 +187,15 @@ export interface Route {
    *  and `plannedRoutes()` returns only them. */
   planned: boolean;
   /** A URL a reader can open to check the claim. Never a booking API: those are
-   *  used to establish facts, not to cite them. */
+   *  used to establish facts, not to cite them. The primary citation, and always
+   *  `sources[0]`. */
   source: string;
+  /** Every url behind the row, ordered, never empty, no url twice, and
+   *  `sources[0]` is `source` itself. One row can rest on several: a launch
+   *  announcement for the route and its dates, an earlier sale-inventory report
+   *  for the flight number, a programme report for the days. Added in 2.9.0;
+   *  `source` keeps its meaning and its value. */
+  sources: string[];
   /** Great-circle distance between the endpoints, kilometres. */
   great_circle_km: number;
 }

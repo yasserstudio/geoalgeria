@@ -96,11 +96,22 @@ function main() {
     evidence: r.evidence,
     planned: r.planned,
     source: r.source,
+    sources: r.sources,
     great_circle_km: r.great_circle_km,
   }));
 
   for (const r of rows) {
     if (!ep[r.from] || !ep[r.to]) throw new Error(`${r.id}: endpoint missing, cannot emit`);
+    // `source` keeps its meaning and its value; `sources` holds the rest of the
+    // provenance, and its first entry is that same citation. A row with an empty
+    // list, or one leading with a different url, would make the two fields
+    // disagree, so it fails here rather than shipping (ADR 0002).
+    if (!Array.isArray(r.sources) || r.sources.length === 0)
+      throw new Error(`${r.id}: no sources; rebuild route-dataset.json`);
+    if (r.sources[0] !== r.source)
+      throw new Error(`${r.id}: sources[0] is not the row's source`);
+    if (new Set(r.sources).size !== r.sources.length)
+      throw new Error(`${r.id}: a url is cited twice`);
   }
   const ids = new Set(rows.map((r) => r.id));
   if (ids.size !== rows.length) throw new Error("duplicate route id");
@@ -110,10 +121,21 @@ function main() {
 
   writeFileSync(join(DATA, "routes.json"), JSON.stringify(rows, null, 2) + "\n");
 
-  const cols = ["id", "from", "to", "carrier", "flight", "status", "days", "evidence", "planned", "source", "great_circle_km"];
+  // CSV is a flat table, so `sources` is space-separated, the same encoding the
+  // `days` column uses: a url carries no space, so the cell splits cleanly on
+  // one. A reader who only wants one citation already has `source`, which is the
+  // first url in the cell.
+  const cols = ["id", "from", "to", "carrier", "flight", "status", "days", "evidence", "planned", "source", "sources", "great_circle_km"];
   writeFileSync(
     join(DATA, "csv", "routes.csv"),
-    toCSV(rows.map((r) => ({ ...r, days: r.days ? r.days.join(" ") : null })), cols),
+    toCSV(
+      rows.map((r) => ({
+        ...r,
+        days: r.days ? r.days.join(" ") : null,
+        sources: r.sources.join(" "),
+      })),
+      cols,
+    ),
   );
 
   const fc = {

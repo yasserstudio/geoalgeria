@@ -69,7 +69,7 @@ A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office 
 | **Mobilis network** | 12,344 | 164 agencies + 12,180 points of sale. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **5G coverage** | 3,598 | Djezzy + Mobilis + Ooredoo 5G sites. [`@geoalgeria/telecom`](packages/telecom) |
 | **Civil airports** | 36 | ANAC + OurAirports: names, ICAO + IATA codes, contacts, coordinates. [`@geoalgeria/aviation`](packages/aviation) |
-| **Nonstop routes** | 157 | Air Algérie's international network as directional legs, each with an operator, an evidence tier and a source. [`@geoalgeria/aviation`](packages/aviation) |
+| **Nonstop routes** | 169 | Air Algérie's international network as directional legs, each with an operator, an evidence tier and a citation list. [`@geoalgeria/aviation`](packages/aviation) |
 | **Banks & branches** | 1,704 | all 21 licensed banks + 8 institutions; branches with RIB/SWIFT codes, ownership, coordinates. [`@geoalgeria/banques`](packages/banques) |
 | **Delivery carriers** | 650 | 18-carrier registry + 650 geocoded stop-desks across 64 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro, ZR Express, Swift Express, HHD Express). [`@geoalgeria/livraison`](packages/livraison) |
 | **Youth establishments** | 2,334 | maisons de jeunes, complexes sportifs de proximité, salles polyvalentes, auberges, cultural & science centers & more across 69 wilayas (Ministry of Youth and Sports). [`@geoalgeria/jeunesse`](packages/jeunesse) |
