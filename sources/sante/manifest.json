@@ -1,0 +1,18 @@
+{
+  "msp-healthinstitution": {
+    "bytes": 410608,
+    "note": "Ministry of Health health-establishment posts (FR and AR are separate parallel posts), de-duplicated by post id exactly as fetchMSP() does, paged 100 at a time until a short page. Captured from an Algerian vantage point: sante.gov.dz drops TCP from outside Algeria, so this is the first committed capture of the registry and the only way the package can be rebuilt offline. The fetcher's --cache mode still reads research/sante/msp-healthinstitution-raw.json, which is gitignored; wiring it to this capture is a follow-up.",
+    "records": 1258,
+    "retrieved": "2026-10-27",
+    "sha256": "7147619a8807248dfeaf8aec267d12bcb4706290315e59b648422ef8caadd12e",
+    "url": "https://sante.gov.dz/wp-json/wp/v2/healthinstitution?per_page=100&page=N&_fields=id,title,slug,categorie-healthinstitution"
+  },
+  "msp-wilaya-taxonomy": {
+    "bytes": 5752,
+    "note": "The categorie-healthinstitution taxonomy terms that carry each establishment post's wilaya. Same Algeria-only vantage point as msp-healthinstitution.",
+    "records": 116,
+    "retrieved": "2026-10-27",
+    "sha256": "483e514da4ed7be42d46a3776bda1a376dd10911fb76ce783ea898aa6884cb3a",
+    "url": "https://sante.gov.dz/wp-json/wp/v2/categorie-healthinstitution?per_page=100&page=N&_fields=id,name"
+  }
+}
