@@ -84,7 +84,38 @@ reads as further along than it is.
   26 Oct "early next year" interview cited; Berlin keeps Monday until a report
   dated on or after a Sunday flight (BER's own page says Sunday from 1 Nov, the
   filing from 25 Oct).
-  _(logged 2026-10-02, part-resolved 2026-10-26 and 2026-10-28)_
+
+  Return pass of 2026-10-30 (`verification-2026-10-30.md`): three legs flipped,
+  `pvg-alg`, `cky-alg` and `mji-alg`, each on its own flight's observed
+  Flightradar24 history, under the Owner's rule of 30 Oct that a tracker's history
+  is first-flight evidence (`collection-rules.md` section 36). `cky-alg` gained the
+  mon/wed/fri the published record never carried and `mji-alg` its first flight
+  number, `AH 4007`. The rest stay planned with nothing found: `alg-bzv` /
+  `bzv-alg` to re-check after 2 Nov, the four Nigeria sectors and the Kuwait
+  rotation after 3 Nov, Seoul undated. `AS_OF` does NOT move, which corrects the
+  28 Oct plan: this pass read first-flight questions only, so Berlin's day, Doha
+  and the Douala/Libreville numbers are still unread and go with the pass that
+  re-reads the network.
+  _(logged 2026-10-02, part-resolved 2026-10-26, 2026-10-28 and 2026-10-30)_
+
+- [ ] **`alg-svo` / `svo-alg`: a filed schedule appeared, re-check after 3 Nov
+  2026.** Flightradar24's Sheremetyevo page lists AH 3000, Algiers to SVO, as
+  scheduled, arriving 2 Nov 03:10, 4 Nov 03:10 and 6 Nov 15:05. Nothing has flown,
+  so both rows are unchanged, but it contradicts the Russian ambassador's 26 Oct
+  "early next year" interview and reads the departures as sun/tue/thu where the
+  rows carry mon/wed/fri off the 6 Sep report. Read AH 3000's history after
+  3 November; if it flew, set `days` off the observations, never off the schedule.
+  _(logged 2026-10-30)_
+
+- [ ] **`alg-ndj` may be stale in the other direction.** Algiers to N'Djamena first
+  flew on 21 Oct 2025 (APS), so the 22 Jun 2026 filing the planned row rests on may
+  be an extension of a line already operating rather than a launch, in which case
+  the leg should be operating and not planned. Pulling the other way, the winter
+  2026-27 reports drop the N'Djamena stop from the Douala routing (observalgerie,
+  22 Oct 2026, matching the Cameroonian regulator's 14 Oct approval). Both need the
+  pass that re-reads the network, which is the same pass that moves `as_of`. Batch
+  2026-16.
+  _(logged 2026-10-30)_
 
 - [ ] **`alg-doh` / `doh-alg` go daily on 25 Oct 2026.** The resumed service runs
   three weekly, Sun/Tue/Fri, and the same reports announce a daily programme from

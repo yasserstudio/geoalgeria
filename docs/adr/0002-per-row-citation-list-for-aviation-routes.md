@@ -50,7 +50,11 @@ amending this ADR first. Until then a citation is a string, and
 ## Consequences
 
 - Shipped in `@geoalgeria/aviation` 2.9.0, a minor: a new field, no row added, removed or
-  changed otherwise, and 157 nonstop legs and 20 planned ones as before.
+  changed otherwise. The citation list itself moved no count: it was written against 157
+  nonstop legs and 20 planned ones, the figures 2.8.0 shipped. 2.9.0 goes out carrying
+  163 nonstop and 14 planned, because six legs were separately promoted out of
+  `plannedRoutes()` on 26, 28 and 30 October 2026 on dated reports that they flew. The
+  row total is 177 throughout.
 - JSON and the GeoJSON `properties` carry the list as it is. The CSV is a flat table, so
   the `sources` column holds the urls space-separated, the same encoding the `days` column
   uses: a url carries no space, so the cell splits cleanly on one.
