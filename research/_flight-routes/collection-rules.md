@@ -972,7 +972,24 @@ records the url and not the observations is not reviewable and is not allowed.
 tails are much harder to mistake for a scheduled row the tracker greyed out, and the
 registration is the one field that proves a real airframe was on it.
 
-**Rows promoted under this rule on 2026-10-30:** `PVG-ALG`, `CKY-ALG`, `MJI-ALG`. One
-of them, `CKY-ALG`, gained a `days` value the published record never had, read off
-three observed nights and NOT mirrored from the outbound, which it contradicts. See
-`verification-2026-10-30.md` section 1.
+**What the other row shapes mean.** A history page carries more than Landed rows, and
+each of the rest is read as nothing: a **scheduled** row is an announcement, a
+**CANCELED** row is not a statement that the leg does not operate, and a row whose
+status is **Unknown** with no times and no airframe is not an operation. An **empty
+page**, a flight number with no history and no schedule at all, is a silence under
+section 7 and never evidence that a filed rotation is not flying.
+
+**A sector's `days` is its own local departure day.** Section 1 already says the
+directional leg is the unit, but a tracker history is the first source that regularly
+contradicts a filing on this, so it is worth stating here: where a filing gives one
+day for a whole rotation, a sector that departs after midnight departs on the NEXT
+day, and the observation governs.
+
+**Rows promoted under this rule on 2026-10-30:** `PVG-ALG`, `CKY-ALG`, `MJI-ALG`,
+`ALG-BZV`, `BZV-ALG`, `ABV-LOS`, `LOS-ALG`, `ALG-LOS`, `LOS-ABV`. Four of them gained
+a `days` value or correction no publisher supplied: `CKY-ALG` and `BZV-ALG` had null
+`days`, read off observed nights and NOT mirrored from their outbounds, which they
+each contradict by a day; `ABV-LOS` moved from mon to tue and `LOS-ABV` from thu to
+fri, off the rotation day a filing gave them onto their own departure day. Those two
+also gained the rotation's flight number, `AH 5354`, which no filing states per
+sector. See `verification-2026-10-30.md` sections 1 to 3.

@@ -94,11 +94,15 @@ test("the statement alone never takes a leg out of plannedRoutes()", () => {
   // two Guinean reports of the inaugural landing, ALG-PVG on the inaugural
   // rotation's departure from Algiers. The 2026-10-28 re-check moved a third,
   // ALG-MJI, on the report of AH 4006 leaving Algiers for Mitiga. The 2026-10-30
-  // return pass moved three more, the Shanghai, Conakry and Tripoli legs home,
-  // each on its own flight's observed history (collection-rules section 36).
-  // Every other leg the statement names is still planned, because an
-  // announcement is not an operation and a launch date passing is not a report
-  // that the aircraft flew.
+  // pass moved the remaining six, each on its own flight's observed history
+  // (collection-rules section 36). So all ten have now flown, and the invariant
+  // the test guards is the one that outlives them: not one of them got here on
+  // the statement. Each `source` below is a dated report or observation of the
+  // leg actually operating, and the statement is behind it in every list.
+  //
+  // The map is exhaustive on purpose. A leg that cites the statement and is not
+  // named here fails, so a future row cannot quietly arrive with the
+  // announcement as its evidence.
   const flown = {
     "alg-cky":
       "https://www.africaguinee.com/transport-aerien-air-algerie-signe-son-grand-retour-en-guinee-apres-45-ans-dabsence/",
@@ -108,15 +112,16 @@ test("the statement alone never takes a leg out of plannedRoutes()", () => {
     "pvg-alg": "https://www.flightradar24.com/data/flights/ah3083",
     "cky-alg": "https://www.flightradar24.com/data/flights/ah5359",
     "mji-alg": "https://www.flightradar24.com/data/flights/ah4007",
+    "alg-bzv": "https://www.flightradar24.com/data/flights/ah5390",
+    "bzv-alg": "https://www.flightradar24.com/data/flights/ah5391",
+    "alg-los": "https://www.flightradar24.com/data/flights/ah5354",
+    "los-alg": "https://www.flightradar24.com/data/flights/ah5354",
   };
   const url =
     "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/";
   for (const r of routes.filter((x) => x.sources.includes(url))) {
-    if (r.id in flown) {
-      assert.equal(r.planned, false, `${r.id}: it flew, so it is not planned`);
-      assert.equal(r.source, flown[r.id], `${r.id}: cite the report of the operation first`);
-    } else {
-      assert.ok(r.planned, `${r.id}: no first-flight report, so it stays planned`);
-    }
+    assert.ok(r.id in flown, `${r.id}: cites the statement but no report of an operation`);
+    assert.equal(r.planned, false, `${r.id}: it flew, so it is not planned`);
+    assert.equal(r.source, flown[r.id], `${r.id}: cite the report of the operation first`);
   }
 });

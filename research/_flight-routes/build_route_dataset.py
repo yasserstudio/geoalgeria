@@ -185,6 +185,32 @@ PVG_ALG_FR24 = "https://www.flightradar24.com/data/flights/ah3083"
 CKY_ALG_FR24 = "https://www.flightradar24.com/data/flights/ah5359"
 MJI_ALG_FR24 = "https://www.flightradar24.com/data/flights/ah4007"
 
+# The second half of the same 2026-10-30 pass, six more legs read off the same kind
+# of page under the same section 36 rule.
+#
+#   ALG_BZV_FR24  AH 5390's history: ALG 19:49 -> BZV 01:45 next day on Mon 26 Oct
+#                 and 19:18 -> 01:19 on Wed 28 Oct, both Landed, both 737-800
+#                 7T-VKJ, with 31 Oct and 2, 4, 7, 9 Nov scheduled. mon/wed/sat
+#                 confirmed on two of its three days.
+#   BZV_ALG_FR24  AH 5391's history: BZV 03:45 -> ALG 09:31 on Tue 27 Oct and
+#                 02:16 -> 08:08 on Thu 29 Oct, Landed, 7T-VKJ, with 1, 3, 5 and
+#                 8 Nov scheduled. The 25 Oct row reads CANCELED, which is the one
+#                 shape on these pages that is neither an operation nor a schedule,
+#                 and it is recorded rather than read as a negative (section 7).
+#                 `days` was null here and the observations give tue/thu/sun.
+#   NGA_FR24      AH 5354's history, the number BOTH Nigeria rotations fly, so one
+#                 page carries all four sectors: ABV 01:21 -> LOS 02:11 on Tue
+#                 27 Oct and LOS 03:04 -> ALG 07:24 the same Tuesday, both 7T-VKS;
+#                 ALG 19:56 -> LOS 23:59 on Thu 29 Oct and LOS 01:13 -> ABV 02:02
+#                 on Fri 30 Oct, both 7T-VKT. All Landed. A duplicate 29 Oct row
+#                 reading Unknown is ignored: no status, no times, no airframe.
+#                 It also covers ALG-ABV on Mon 26 Oct and ABV-ALG on Fri 30 Oct,
+#                 which agree with the mon and fri those two operating rows already
+#                 ship, so neither is touched.
+ALG_BZV_FR24 = "https://www.flightradar24.com/data/flights/ah5390"
+BZV_ALG_FR24 = "https://www.flightradar24.com/data/flights/ah5391"
+NGA_FR24 = "https://www.flightradar24.com/data/flights/ah5354"
+
 # The reports the two flipped legs arrived on. A promotion moves the `source` to
 # the report of the operation, and these stay in the list behind it rather than
 # being dropped, because they are what `flight` and `days` rest on (ADR 0002).
@@ -677,6 +703,71 @@ VERIFIED = [
          "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/",
          AH_STATEMENT_2026_10_24,
      ]},
+    # Brazzaville, both ways, OPERATING on the same 2026-10-30 pass. The outbound's
+    # own history confirms the mon/wed/sat the 26 Sep programme report gives it, two
+    # of the three days observed on one airframe, 7T-VKJ.
+    {"from": "ALG", "to": "BZV", "flight": "AH 5390", "status": "active",
+     "days": ["mon", "wed", "sat"],
+     "source": ALG_BZV_FR24,
+     "extra_sources": [
+         AH_PROGRAMME_2026_09_26,
+         AH_SALES_2026_08_21,
+         AH_STATEMENT_2026_10_24,
+     ]},
+    # The Brazzaville return, and Conakry's lesson repeated: `days` was null because
+    # nothing published dates the Maya-Maya departure, and the observations give
+    # TUE/THU/SUN, a day later than the outbound's mon/wed/sat. The aircraft reaches
+    # Brazzaville after midnight and comes home in the small hours of the next day,
+    # so mirroring the outbound would have been wrong on every one of the three.
+    #
+    # The Sunday is the published pattern's third day and is scheduled for 1 Nov; it
+    # is not claimed as flown. The 25 Oct row on the page reads CANCELED, which is
+    # recorded in the note and changes nothing: a cancelled rotation is not a leg
+    # that does not operate (section 7), and the two that flew settle the question.
+    {"from": "BZV", "to": "ALG", "flight": "AH 5391", "status": "active",
+     "days": ["tue", "thu", "sun"],
+     "source": BZV_ALG_FR24,
+     "extra_sources": [AH_SALES_2026_08_21, AH_STATEMENT_2026_10_24]},
+    # The two Nigeria triangles, now complete: all four sectors that were still
+    # planned flew in the 27-30 Oct window, and one history carries all of them
+    # because both rotations fly as AH 5354. ALG-ABV and ABV-ALG were already
+    # operating and the same page agrees with their mon and fri, so they are
+    # untouched.
+    #
+    # The Monday rotation, ALG-ABV-LOS-ALG: the middle sector and the leg home both
+    # fly on TUESDAY local time, 27 October, because the aircraft reaches Abuja at
+    # 00:06 that morning. ABV-LOS carried `days` ["mon"] off the filing's rotation
+    # day and the observation corrects it to tue; LOS-ALG already shipped tue.
+    #
+    # ABV-LOS also gains `flight` AH 5354, the first this leg has carried: the
+    # 20 Aug filing states the routing and no number per sector, and the history
+    # shows the sector flying under the rotation's own number.
+    {"from": "ABV", "to": "LOS", "flight": "AH 5354", "status": "active",
+     "days": ["tue"],
+     "source": NGA_FR24,
+     "extra_sources": ["https://www.aeroroutes.com/eng/260820-ahnw26af"]},
+    {"from": "LOS", "to": "ALG", "flight": "AH 5354", "status": "active",
+     "days": ["tue"],
+     "source": NGA_FR24,
+     "extra_sources": [AH_SALES_2026_08_21, AH_STATEMENT_2026_10_24]},
+    # The Thursday rotation, ALG-LOS-ABV-ALG, and the leg the 26 Oct pass warned
+    # about: the NONSTOP Algiers to Lagos leg is this rotation's first sector, not
+    # the Monday one that routes via Abuja. It flew on Thursday 29 October, which is
+    # the `days` the row already carried, so the trap is closed by an observation
+    # rather than by an argument.
+    {"from": "ALG", "to": "LOS", "flight": "AH 5354", "status": "active",
+     "days": ["thu"],
+     "source": NGA_FR24,
+     "extra_sources": [AH_SALES_2026_08_21, AH_STATEMENT_2026_10_24]},
+    # The Thursday rotation's middle sector, and the mirror of ABV-LOS: it carried
+    # `days` ["thu"] off the rotation day and leaves Lagos at 01:13 on FRIDAY local
+    # time, so the observation corrects it to fri. It gains `flight` AH 5354 for the
+    # same reason ABV-LOS does. ABV-ALG completing the rotation on Friday at 02:48
+    # is the day this one hands over to, which is why both read fri.
+    {"from": "LOS", "to": "ABV", "flight": "AH 5354", "status": "active",
+     "days": ["fri"],
+     "source": NGA_FR24,
+     "extra_sources": ["https://www.aeroroutes.com/eng/260820-ahnw26af"]},
 ]
 
 # Operating legs whose citation is Official or Reported tier but does NOT confirm
@@ -805,29 +896,11 @@ LISTED = [
 # booking result can establish carrier, direction, flight number and duration;
 # a reported announcement stays `listed` until those details are confirmed.
 PLANNED = [
-    # Brazzaville, the Algiers departure. The operating days arrive with the 26 Sep
-    # 2026 programme report, "premier vol le lundi 26 octobre 2026, puis trois vols
-    # par semaine, les lundis, mercredis et samedis". `days` rests on that report,
-    # which is the `source` and the first entry of `sources`; the AH5390 flight
-    # number rests on the 21 Aug 2026 sale-inventory report, which the list carries
-    # as its own entry. AeroRoutes' NW26 filings of 29 Jun and 20 Aug independently
-    # carry the same effective date and the three weekly frequency. The carrier's
-    # own 24 Oct 2026 statement is the third entry.
-    #
-    # STILL PLANNED on 2026-10-26, and this is the first-flight pass that looked:
-    # the announced first rotation leaves Algiers at 19:00 on Monday 26 October and
-    # lands at Maya-Maya at 01:10 on the 27th, so at the time of this pass it has
-    # not flown and nothing dated reports it. Searched in French and Arabic across
-    # the Algerian outlets, APS and the Congolese press; everything found is the
-    # announcement, in the future tense. RE-CHECK AFTER 2026-10-27.
-    #
-    # `days` is set on the Algiers departure only. The reports state the day the
-    # aircraft leaves Algiers; when the return leg flies is a separate fact nothing
-    # published pins down, and section 1's directional record is the unit.
-    {"from": "ALG", "to": "BZV", "flight": "AH 5390", "status": "unclear",
-     "days": ["mon", "wed", "sat"], "evidence": "verified",
-     "source": AH_PROGRAMME_2026_09_26,
-     "extra_sources": [AH_SALES_2026_08_21, AH_STATEMENT_2026_10_24]},
+    # Neither Brazzaville leg is here any more. Both left on 2026-10-30, when AH 5390
+    # and AH 5391's histories each showed two Landed legs: see the operating rows
+    # above. The 26 Sep programme report that `days` rested on, and the 21 Aug sale
+    # inventory that `flight` rested on, stay in each row's `sources` behind the
+    # history.
     {"from": "ALG", "to": "ICN", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
     # The announced Algiers-Kuwait-Amman-Algiers triangle, one weekly Monday
@@ -859,6 +932,14 @@ PLANNED = [
     # report of any leg operating was found in French, Arabic or English, including
     # the Kuwaiti and Jordanian press and the two airport operators. A filed
     # schedule is not an operation. RE-CHECK AFTER 2026-10-27.
+    #
+    # STILL PLANNED on 2026-10-30, and the rule that promoted nine other legs that
+    # day is what makes this one informative rather than merely unanswered: AH 4064
+    # and AH 4065 were looked up on Flightradar24 and NEITHER NUMBER HAS ANY DATA,
+    # no operation and no schedule. All three legs stay as they are. Still not a
+    # negative (section 7): an empty tracker page is a silence, and this rotation's
+    # one weekly Monday departure may simply not be flying under the filed number.
+    # RE-CHECK AFTER 2026-11-03.
     {"from": "ALG", "to": "KWI", "flight": "AH 4064", "status": "unclear",
      "days": ["mon"], "evidence": "verified",
      "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
@@ -917,48 +998,20 @@ PLANNED = [
      "extra_sources": [
          "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
      ]},
-    # Lagos, the Algiers departure, and the trap in the 2026-10-26 pass. Every
-    # report of 25 and 26 October has Air Algerie "opening Lagos" on Monday 26
-    # October, and none of them is evidence for THIS leg: the Monday rotation is
-    # Algiers - Abuja - Lagos - Algiers, so its nonstop legs are ALG-ABV, ABV-LOS
-    # and LOS-ALG. The NONSTOP Algiers to Lagos leg is the OTHER rotation's first
-    # leg, Algiers - Lagos - Abuja - Algiers, filed eff 29OCT26, which is the
-    # Thursday `days` carries. A city pair being served from Monday is not this
-    # directional leg operating, which is section 11's booking-list trap in a new
-    # costume.
+    # No Nigeria sector is here any more. The 2026-10-26 pass left four of them
+    # planned, and all four flew in the 27-30 Oct window on AH 5354's history: see
+    # the operating rows above, where the triangles are set out sector by sector.
     #
-    # STILL PLANNED. It cannot be otherwise today: the leg's first operation is
-    # three days away. RE-CHECK AFTER 2026-10-29.
+    # The trap that comment used to carry is worth keeping, because it is why this
+    # collection ever held ALG-LOS: every report of 25 and 26 October has Air
+    # Algerie "opening Lagos" on Monday 26 October, and none of it was evidence for
+    # the NONSTOP Algiers to Lagos leg, which belongs to the OTHER rotation,
+    # Algiers - Lagos - Abuja - Algiers, filed eff 29OCT26. The observation of
+    # Thursday 29 October is what finally answered it, and a city pair being served
+    # from Monday was never the answer (section 11).
     #
-    # `flight` and `days` keep the provenance the row shipped on, the 21 Aug 2026
-    # sale-inventory report, with the carrier's 24 Oct statement behind it.
-    {"from": "ALG", "to": "LOS", "flight": "AH 5354", "status": "unclear",
-     "days": ["thu"], "evidence": "verified",
-     "source": AH_SALES_2026_08_21,
-     "extra_sources": [AH_STATEMENT_2026_10_24]},
-    # The two Nigeria triangles' middle legs, added 2026-10-02 under the amended
-    # scope rule (collection-rules.md section 33), on AeroRoutes' NW26 filing:
-    # "Algiers - Abuja - Lagos - Algiers eff 26OCT26 1 weekly 737-700" and
-    # "Algiers - Lagos - Abuja - Algiers eff 29OCT26 1 weekly 737-700". 26 Oct 2026
-    # is a Monday and 29 Oct a Thursday, which is what `days` records, and the
-    # 26 Sep programme report states the same two first-flight days in words. These
-    # are the legs between the two Nigerian airports, and they are the reason the
-    # Algeria-touching legs already here have the days they do: ALG-ABV on Monday
-    # continues to Lagos, LOS-ALG comes home Tuesday, and the Thursday rotation runs
-    # the other way round.
-    #
-    # Both STILL PLANNED after the 2026-10-26 pass. ABV-LOS is the Monday rotation's
-    # middle sector and is flying today or tonight; nothing dated reports it, and
-    # neither the Algerian nor the Nigerian press covers a sector between two
-    # foreign airports. LOS-ABV belongs to the Thursday rotation and has not flown.
-    # A filing stating an effective date is not a report of an operation.
-    # RE-CHECK ABV-LOS AFTER 2026-10-27, LOS-ABV AFTER 2026-10-29.
-    {"from": "ABV", "to": "LOS", "status": "unclear", "days": ["mon"],
-     "evidence": "listed",
-     "source": "https://www.aeroroutes.com/eng/260820-ahnw26af"},
-    {"from": "LOS", "to": "ABV", "status": "unclear", "days": ["thu"],
-     "evidence": "listed",
-     "source": "https://www.aeroroutes.com/eng/260820-ahnw26af"},
+    # The 20 Aug filing the two middle sectors rested on, and the 21 Aug sale
+    # inventory the Algeria-touching legs rested on, stay in their `sources`.
     # Moscow. The pair entered as a single `listed` row from the Wikipedia pass on a
     # 2026 resumption report; this curated entry carries the reported schedule and
     # supersedes it. The 6 Sep 2026 report, reading Rosaviatsia and Sheremetyevo,
@@ -1004,35 +1057,12 @@ PLANNED = [
     {"from": "SVO", "to": "ALG", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
      "extra_sources": [SVO_POSTPONED_2026_10_26]},
-    # The Brazzaville and Lagos returns, what is left of the four that sat here. Both
-    # cite the 24 Oct 2026 statement, which announces each line as a line rather than
-    # per direction, so it is an extra entry and not the `source`. Their AH5391 and
-    # AH5354 numbers, and LOS-ALG's Tuesday, keep the sale-inventory report they
-    # shipped on as their provenance. `days` stays null on the Brazzaville return:
-    # nothing published says which day the aircraft leaves Maya-Maya, and the Conakry
-    # return is the reminder that reading it off the outbound would have been wrong.
-    #
-    # Both STILL PLANNED on 2026-10-30, each for its own dated reason, and neither for
-    # doubt that the aircraft will come back:
-    #
-    #   BZV-ALG  Its outbound has not flown either, and the 30 Oct press-side check
-    #            found no dated landing report for Brazzaville. RE-CHECK AFTER
-    #            2026-11-02.
-    #   LOS-ALG  The Monday rotation's leg home, and the same check found nothing
-    #            dated for Lagos or Abuja. RE-CHECK AFTER 2026-11-03.
-    #
-    # CKY-ALG and PVG-ALG left this collection on 2026-10-30, on their flights' own
-    # observed histories: see the operating rows above.
-    {"from": "BZV", "to": "ALG", "flight": "AH 5391", "status": "unclear",
-     "evidence": "verified",
-     "source": AH_SALES_2026_08_21,
-     "extra_sources": [AH_STATEMENT_2026_10_24]},
+    # Seoul is the only announced return left in this collection. The four that sat
+    # beside it, CKY-ALG, PVG-ALG, BZV-ALG and LOS-ALG, all left on 2026-10-30 on
+    # their flights' own observed histories: see the operating rows above. Every
+    # citation each of them rested on went with it, behind the history.
     {"from": "ICN", "to": "ALG", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
-    {"from": "LOS", "to": "ALG", "flight": "AH 5354", "status": "unclear",
-     "days": ["tue"], "evidence": "verified",
-     "source": AH_SALES_2026_08_21,
-     "extra_sources": [AH_STATEMENT_2026_10_24]},
     # N'Djamena, planned. The 22 Jun 2026 737 MAX 8 network post files "Algiers -
     # N'djamena - Addis Ababa" effective 28 Oct 2026 at 2 weekly, which is 19 days
     # after this AS_OF, so it is an announcement and not an operation: the

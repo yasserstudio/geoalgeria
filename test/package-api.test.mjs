@@ -334,14 +334,25 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
     "DEL is still an endpoint with no route referencing it",
   );
 
-  // The new Africa bookings. Brazzaville has not flown in either direction, so both
-  // legs stay planned on their sale-inventory evidence.
-  for (const id of ["alg-bzv", "bzv-alg"])
-    assert.deepEqual(
-      { evidence: pick(id).evidence, planned: pick(id).planned },
-      { evidence: "verified", planned: true },
-      `${id}: new Africa booking is not a verified planned leg`,
-    );
+  // The new Africa bookings. Brazzaville flew both ways in the 26 to 29 Oct window,
+  // observed on AH 5390's and AH 5391's own histories, so neither leg is planned any
+  // more. The pair's days differ by a day, which is the whole point of the
+  // directional record: the aircraft reaches Maya-Maya after midnight and leaves
+  // again before dawn, so the return's day is never the outbound's.
+  assert.deepEqual(pick("alg-bzv"), {
+    flight: "AH 5390",
+    status: "active",
+    days: ["mon", "wed", "sat"],
+    evidence: "verified",
+    planned: false,
+  });
+  assert.deepEqual(pick("bzv-alg"), {
+    flight: "AH 5391",
+    status: "active",
+    days: ["tue", "thu", "sun"],
+    evidence: "verified",
+    planned: false,
+  });
   // Conakry flew both ways: the outbound landed at Ahmed Sékou Touré in the night of
   // 25 to 26 Oct 2026, and AH 5359's history put three returns on the ground at
   // Algiers on 26, 28 and 30 Oct, which is also where the return's days come from.
@@ -360,14 +371,17 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
     planned: false,
   });
 
+  // Both Lagos legs flew too, on AH 5354's history: the nonstop out of Algiers on
+  // Thursday 29 Oct and the Monday rotation's leg home out of Lagos on Tuesday
+  // 27 Oct. The days are the ones each row already carried.
   assert.deepEqual(
     ["alg-los", "los-alg"].map((id) => ({
       id,
       ...pick(id),
     })),
     [
-      { id: "alg-los", flight: "AH 5354", status: "unclear", days: ["thu"], evidence: "verified", planned: true },
-      { id: "los-alg", flight: "AH 5354", status: "unclear", days: ["tue"], evidence: "verified", planned: true },
+      { id: "alg-los", flight: "AH 5354", status: "active", days: ["thu"], evidence: "verified", planned: false },
+      { id: "los-alg", flight: "AH 5354", status: "active", days: ["tue"], evidence: "verified", planned: false },
     ],
   );
 
@@ -541,7 +555,17 @@ test("aviation: the winter 2026 programme is planned until it has flown", async 
   });
 
   // The two Nigeria triangles, one per direction of travel, each with its middle
-  // leg. The days are what makes them triangles rather than six loose arcs.
+  // leg. The days are what makes them triangles rather than six loose arcs, and
+  // every sector is operating since the 30 Oct pass read them off AH 5354's
+  // history, the one number both rotations fly.
+  //
+  // Two days CHANGED there, and they are the correction worth keeping a guard on.
+  // The middle sectors used to carry the day the filing gives the ROTATION,
+  // abv-los mon and los-abv thu. A sector's day is its own local departure day:
+  // the Monday rotation reaches Abuja at 00:06 and leaves for Lagos at 01:21, so
+  // abv-los departs on TUESDAY, and the Thursday rotation leaves Lagos at 01:13 on
+  // FRIDAY. Read each row's day down the list and the two triangles close:
+  // mon-tue-tue out via Abuja, thu-fri-fri out via Lagos.
   assert.deepEqual(
     ["alg-abv", "abv-los", "los-alg", "alg-los", "los-abv", "abv-alg"].map((id) => [
       id,
@@ -550,23 +574,25 @@ test("aviation: the winter 2026 programme is planned until it has flown", async 
     ]),
     [
       ["alg-abv", ["mon"], false],
-      ["abv-los", ["mon"], true],
-      ["los-alg", ["tue"], true],
-      ["alg-los", ["thu"], true],
-      ["los-abv", ["thu"], true],
+      ["abv-los", ["tue"], false],
+      ["los-alg", ["tue"], false],
+      ["alg-los", ["thu"], false],
+      ["los-abv", ["fri"], false],
       ["abv-alg", ["fri"], false],
     ],
   );
 
   // Conakry and Brazzaville gained the days their programme report publishes, on
-  // the Algiers departures only: no report gives either return leg's own day.
-  // Conakry's came from three observed returns instead (30 Oct), and it is NOT the
-  // outbound's days, which is why mirroring them was never allowed. Brazzaville's
-  // is still null.
+  // the Algiers departures only: no report gives either return leg's own day. Both
+  // returns got theirs from observations instead (30 Oct), and NEITHER is its
+  // outbound's days, which is why mirroring an outbound was never allowed. Each
+  // return runs a day after its outbound, because both aircraft land after midnight
+  // and leave again before dawn. A day later is still a different day, and only the
+  // observations say so: nothing published dates either departure.
   assert.deepEqual(shape("alg-cky").days, ["tue", "thu", "sun"]);
   assert.deepEqual(shape("cky-alg").days, ["mon", "wed", "fri"]);
   assert.deepEqual(shape("alg-bzv").days, ["mon", "wed", "sat"]);
-  assert.equal(shape("bzv-alg").days, null);
+  assert.deepEqual(shape("bzv-alg").days, ["tue", "thu", "sun"]);
 
   // Every day name is lowercase and a real day, in every row, not only the new ones.
   const DAYS = new Set(["mon", "tue", "wed", "thu", "fri", "sat", "sun"]);

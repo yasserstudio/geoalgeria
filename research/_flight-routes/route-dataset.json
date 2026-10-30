@@ -102,6 +102,24 @@
       "great_circle_km": 3106
     },
     {
+      "id": "abv-los",
+      "from": "ABV",
+      "to": "LOS",
+      "carrier": "AH",
+      "flight": "AH 5354",
+      "status": "active",
+      "days": [
+        "tue"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5354",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5354",
+        "https://www.aeroroutes.com/eng/260820-ahnw26af"
+      ],
+      "great_circle_km": 511
+    },
+    {
       "id": "alc-alg",
       "from": "ALC",
       "to": "ALG",
@@ -312,6 +330,28 @@
         "https://www.aeroroutes.com/eng/260102-ahapr26bud"
       ],
       "great_circle_km": 1777
+    },
+    {
+      "id": "alg-bzv",
+      "from": "ALG",
+      "to": "BZV",
+      "carrier": "AH",
+      "flight": "AH 5390",
+      "status": "active",
+      "days": [
+        "mon",
+        "wed",
+        "sat"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5390",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5390",
+        "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
+        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 4722
     },
     {
       "id": "alg-cai",
@@ -616,6 +656,25 @@
         "https://www.tsa-algerie.com/air-algerie-renonce-a-quitter-laeroport-de-londres-heathrow-voici-les-raisons/"
       ],
       "great_circle_km": 1542
+    },
+    {
+      "id": "alg-los",
+      "from": "ALG",
+      "to": "LOS",
+      "carrier": "AH",
+      "flight": "AH 5354",
+      "status": "active",
+      "days": [
+        "thu"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5354",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5354",
+        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 3349
     },
     {
       "id": "alg-lys",
@@ -1221,6 +1280,27 @@
         "https://www.aeroroutes.com/eng/260102-ahapr26bud"
       ],
       "great_circle_km": 1777
+    },
+    {
+      "id": "bzv-alg",
+      "from": "BZV",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 5391",
+      "status": "active",
+      "days": [
+        "tue",
+        "thu",
+        "sun"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5391",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5391",
+        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 4722
     },
     {
       "id": "cai-alg",
@@ -1832,6 +1912,43 @@
         "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes"
       ],
       "great_circle_km": 1668
+    },
+    {
+      "id": "los-abv",
+      "from": "LOS",
+      "to": "ABV",
+      "carrier": "AH",
+      "flight": "AH 5354",
+      "status": "active",
+      "days": [
+        "fri"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5354",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5354",
+        "https://www.aeroroutes.com/eng/260820-ahnw26af"
+      ],
+      "great_circle_km": 511
+    },
+    {
+      "id": "los-alg",
+      "from": "LOS",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 5354",
+      "status": "active",
+      "days": [
+        "tue"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5354",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5354",
+        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 3349
     },
     {
       "id": "lys-aae",
@@ -2627,44 +2744,6 @@
   ],
   "planned": [
     {
-      "id": "abv-los",
-      "from": "ABV",
-      "to": "LOS",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": [
-        "mon"
-      ],
-      "evidence": "listed",
-      "source": "https://www.aeroroutes.com/eng/260820-ahnw26af",
-      "sources": [
-        "https://www.aeroroutes.com/eng/260820-ahnw26af"
-      ],
-      "great_circle_km": 511
-    },
-    {
-      "id": "alg-bzv",
-      "from": "ALG",
-      "to": "BZV",
-      "carrier": "AH",
-      "flight": "AH 5390",
-      "status": "unclear",
-      "days": [
-        "mon",
-        "wed",
-        "sat"
-      ],
-      "evidence": "verified",
-      "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
-      "sources": [
-        "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
-        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-      ],
-      "great_circle_km": 4722
-    },
-    {
       "id": "alg-icn",
       "from": "ALG",
       "to": "ICN",
@@ -2696,24 +2775,6 @@
         "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
       ],
       "great_circle_km": 4219
-    },
-    {
-      "id": "alg-los",
-      "from": "ALG",
-      "to": "LOS",
-      "carrier": "AH",
-      "flight": "AH 5354",
-      "status": "unclear",
-      "days": [
-        "thu"
-      ],
-      "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-      "sources": [
-        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-      ],
-      "great_circle_km": 3349
     },
     {
       "id": "alg-ndj",
@@ -2769,22 +2830,6 @@
       "great_circle_km": 3050
     },
     {
-      "id": "bzv-alg",
-      "from": "BZV",
-      "to": "ALG",
-      "carrier": "AH",
-      "flight": "AH 5391",
-      "status": "unclear",
-      "days": null,
-      "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-      "sources": [
-        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-      ],
-      "great_circle_km": 4722
-    },
-    {
       "id": "icn-alg",
       "from": "ICN",
       "to": "ALG",
@@ -2816,41 +2861,6 @@
         "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
       ],
       "great_circle_km": 1180
-    },
-    {
-      "id": "los-abv",
-      "from": "LOS",
-      "to": "ABV",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": [
-        "thu"
-      ],
-      "evidence": "listed",
-      "source": "https://www.aeroroutes.com/eng/260820-ahnw26af",
-      "sources": [
-        "https://www.aeroroutes.com/eng/260820-ahnw26af"
-      ],
-      "great_circle_km": 511
-    },
-    {
-      "id": "los-alg",
-      "from": "LOS",
-      "to": "ALG",
-      "carrier": "AH",
-      "flight": "AH 5354",
-      "status": "unclear",
-      "days": [
-        "tue"
-      ],
-      "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-      "sources": [
-        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-      ],
-      "great_circle_km": 3349
     },
     {
       "id": "svo-alg",
