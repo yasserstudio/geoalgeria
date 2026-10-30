@@ -85,18 +85,33 @@ reads as further along than it is.
   dated on or after a Sunday flight (BER's own page says Sunday from 1 Nov, the
   filing from 25 Oct).
 
-  Return pass of 2026-10-30 (`verification-2026-10-30.md`): three legs flipped,
-  `pvg-alg`, `cky-alg` and `mji-alg`, each on its own flight's observed
-  Flightradar24 history, under the Owner's rule of 30 Oct that a tracker's history
-  is first-flight evidence (`collection-rules.md` section 36). `cky-alg` gained the
-  mon/wed/fri the published record never carried and `mji-alg` its first flight
-  number, `AH 4007`. The rest stay planned with nothing found: `alg-bzv` /
-  `bzv-alg` to re-check after 2 Nov, the four Nigeria sectors and the Kuwait
-  rotation after 3 Nov, Seoul undated. `AS_OF` does NOT move, which corrects the
-  28 Oct plan: this pass read first-flight questions only, so Berlin's day, Doha
-  and the Douala/Libreville numbers are still unread and go with the pass that
-  re-reads the network.
-  _(logged 2026-10-02, part-resolved 2026-10-26, 2026-10-28 and 2026-10-30)_
+  Winter-launch pass of 2026-10-30 (`verification-2026-10-30.md`): **nine legs
+  flipped**, each on its own flight's observed Flightradar24 history, under the
+  Owner's rule of 30 Oct that a tracker's history is first-flight evidence
+  (`collection-rules.md` section 36). The four returns `pvg-alg`, `cky-alg`,
+  `mji-alg` and `bzv-alg`, the `alg-bzv` outbound, and all four remaining Nigeria
+  sectors, `alg-los`, `los-alg`, `abv-los` and `los-abv`, which closes both
+  triangles. Five rows gained or corrected a field no publisher gave: `cky-alg`
+  mon/wed/fri and `bzv-alg` tue/thu/sun where `days` was null, each a day after
+  its outbound; `abv-los` mon to tue and `los-abv` thu to fri, off the rotation
+  day onto their own departure day, both also gaining `AH 5354`; `mji-alg` its
+  first flight number, `AH 4007`. This item is now RESOLVED: every row it listed
+  is operating.
+
+  `AS_OF` does NOT move, which corrects the 28 Oct plan: this pass read
+  first-flight questions only, so Berlin's day, Doha and the Douala/Libreville
+  numbers are still unread and go with the pass that re-reads the network.
+  _(logged 2026-10-02, part-resolved 2026-10-26 and 2026-10-28, resolved 2026-10-30)_
+
+- [ ] **The Kuwait-Amman rotation has no tracker data at all, re-check after 3 Nov
+  2026.** `AH 4064` and `AH 4065` were both looked up on Flightradar24 on 30 Oct
+  and neither number carries any history or any schedule. `alg-kwi`, `kwi-amm` and
+  `amm-alg` stay planned on the AeroRoutes NW26 filing of 29 Jun 2026, unchanged.
+  An empty tracker page is a silence and not a negative: it is equally compatible
+  with a one-weekly Monday rotation that has not started and with one flying under
+  a number the filing does not give. The carrier's 24 Oct communique naming five
+  new lines also omits Kuwait, and no page says it is cancelled.
+  _(logged 2026-10-30)_
 
 - [ ] **`alg-svo` / `svo-alg`: a filed schedule appeared, re-check after 3 Nov
   2026.** Flightradar24's Sheremetyevo page lists AH 3000, Algiers to SVO, as

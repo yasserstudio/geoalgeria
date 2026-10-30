@@ -21,8 +21,12 @@ carries the urls space-separated in one column next to `source`, the same
 encoding the `days` column uses. The decision is recorded in
 `docs/adr/0002-per-row-citation-list-for-aviation-routes.md`.
 
-Six of those legs now have that report, and they are the only rows this
-release moves. Two had it on 26 October. **Algiers to Conakry** is operating: two Guinean outlets of 26 October 2026
+**All ten of those legs now have that report**, and with the two Nigeria middle
+sectors that never cited the statement, twelve rows left `plannedRoutes()` over
+three passes. They are the only rows this release moves.
+
+Two had it on 26 October. **Algiers to Conakry** is operating: two Guinean
+outlets of 26 October 2026
 have the inaugural aircraft on the tarmac at Ahmed Sékou Touré in the night of
 Sunday 25 to Monday 26 October. **Algiers to Shanghai** is operating: APS, Algeria's
 press agency, and a second report of 26 October carry the inaugural rotation's
@@ -38,34 +42,50 @@ inaugural `AH 4006` left Houari Boumediene at 09:00 on Wednesday 28 October 2026
 for Mitiga, where its arrival was reported the same day, and the row gains the
 flight number, the first any source has given for it.
 
-**Three returns followed on 30 October**, and they arrive on a kind of evidence
+**Six more legs followed on 30 October**, and they arrive on a kind of evidence
 this dataset had never accepted: a flight's own history on a flight tracker,
 showing a dated leg landed. The owner's rule of 30 October 2026 accepts that as a
 report that the leg flew, and nothing more, so a tracker's schedules, route maps
-and booking inventory still count for nothing. **Shanghai to Algiers** (`AH 3083`),
-**Conakry to Algiers** (`AH 5359`) and **Mitiga to Algiers** (`AH 4007`) are all
-operating, each citing its own history first and keeping the reports behind it.
-Two of them gain a field no publisher ever gave: the Conakry return's operating
-days, Mondays, Wednesdays and Fridays, read off three observed nights and
-pointedly not mirrored from the outbound's Tuesdays, Thursdays and Sundays, which
-they contradict; and the Tripoli return's flight number. Because a tracker's free
-history covers only seven days, every observation behind these three rows, its
-date, its landing time and the aircraft's registration, is written out in
-`research/_flight-routes/verification-2026-10-30.md` and not left to a link.
+and booking inventory still count for nothing, and nor does a cancelled rotation
+or a row with no status.
 
-Brazzaville, the four Nigeria sectors, the Kuwait-Amman rotation and Seoul are
-still `planned`, each because no dated report of its first flight exists yet,
-never because anything said a line was cancelled. The planned Moscow legs keep
-their rows and gain one citation: on 26 October the Russian ambassador to Algeria
-said he hopes direct flights resume early in 2027, a postponement rather than a
-withdrawal.
+It closes the gap no publisher was ever going to close. **Four returns** are now
+operating, Shanghai to Algiers (`AH 3083`), Conakry to Algiers (`AH 5359`),
+Mitiga to Algiers (`AH 4007`) and Brazzaville to Algiers (`AH 5391`), and so is
+the Algiers to Brazzaville outbound (`AH 5390`). **Both Nigeria triangles are
+complete**: all four remaining sectors flew in the 27 to 30 October window under
+`AH 5354`, the number both rotations use, so `alg-los`, `los-alg`, `abv-los` and
+`los-abv` join the two Abuja legs that were already operating. Each row cites its
+own history first and keeps every report it already rested on behind it.
+
+Five rows gain or correct a field no publisher supplied. The **Conakry and
+Brazzaville returns** get operating days, Mondays, Wednesdays and Fridays and
+Tuesdays, Thursdays and Sundays respectively, each read off observed nights and
+each a day later than its outbound, which is why reading a return's day off its
+outbound was never allowed. The **two Nigeria middle sectors** move from the day
+their filing gives the whole rotation to their own local departure day, Abuja to
+Lagos from Monday to Tuesday and Lagos to Abuja from Thursday to Friday, and both
+gain the rotation's flight number. The **Tripoli return** gets the first flight
+number any source has given it.
+
+Because a tracker's free history covers only seven days, every observation behind
+these rows, its date, its landing time and the aircraft's registration, is
+written out in `research/_flight-routes/verification-2026-10-30.md` rather than
+left to a link that will stop showing it.
+
+What is still `planned` is eight rows: Seoul, Moscow, N'Djamena and the
+Kuwait-Amman rotation. None of them has an observed operation, and none of them
+is cancelled. The Moscow legs keep their rows and gain one citation: on 26
+October the Russian ambassador to Algeria said he hopes direct flights resume
+early in 2027, a postponement rather than a withdrawal.
 
 The Kuwait rotation also gains the flight number and the two departure days the
 AeroRoutes NW26 filing of 29 June 2026 states for it, `AH 4064` on all three legs
 of one weekly Algiers-Kuwait-Amman-Algiers rotation. It stays `planned`: a filed
-schedule is not an operation.
+schedule is not an operation, and the tracker has no data at all for either of
+the rotation's numbers, which is a silence and not a contradiction.
 
-So the counts move by six: 163 nonstop legs and 14 planned ones, 177 rows as
+So the counts move by nine: 169 nonstop legs and 8 planned ones, 177 rows as
 before, no row added or removed. `metadata.routes_as_of` stays at 2026-10-09,
 because this release re-read the announced lines and not the winter schedule
 the network turns over to on 25 October.
