@@ -324,6 +324,19 @@ const ENRICHMENTS = {
     produced.shape_id = shipped.shape_id;
     produced.osm_relation_ids = shipped.osm_relation_ids;
   },
+  sports: (produced, shipped) => {
+    // refs.mjs is the SIG's own per-record UUID, published since the 2026-10-27
+    // refresh; the frozen v1 row predates it (the generator then overwrote the
+    // UUID with the sequence number). test/sports-transition and
+    // test/sports-carry-key guard the carry-over that keys on it.
+    if (shipped?.refs?.mjs) produced.refs = { ...produced.refs, mjs: shipped.refs.mjs };
+  },
+  jeunesse: (produced, shipped) => {
+    // refs.mjs is the SIG's own per-record UUID, published since the 2026-10-27
+    // refresh; the frozen v1 row predates it. test/jeunesse-carry-key guards the
+    // carry-over that keys on it.
+    if (shipped?.refs?.mjs) produced.refs = { ...produced.refs, mjs: shipped.refs.mjs };
+  },
   "gares-routieres": (produced, shipped) => {
     // refs.mahatati_agency joins from research/gares-routieres/
     // mahatati-agency-ids.json (staged 2026-08-13 from the public MAHATATI

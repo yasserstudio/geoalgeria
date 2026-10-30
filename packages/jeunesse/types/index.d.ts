@@ -15,6 +15,14 @@ export type GeoPrecision = "exact" | "approximate" | null;
 export type GeoMethod = "sig_mjs";
 
 /** A youth Establishment, as published by the Ministry of Youth and Sports GIS. */
+/** Upstream links: the ids that join an establishment to the source it came from. */
+export interface InstitutionRefs {
+  /** The Ministry of Youth and Sports SIG's own per-record UUID
+   *  (`properties.id` of the `etablissements_de_jeunes` layer). Stable across
+   *  pulls and across the ministry's edits, and the key `id` is carried on. */
+  mjs: string;
+}
+
 export interface Institution {
   /** Stable id, unique within this dataset. Opaque: do not parse. */
   id: string;
@@ -29,8 +37,9 @@ export interface Institution {
   /** Commune (ONS) code where a unique canonical match supports a reconciled
    *  current wilaya; otherwise null because the SIG supplies only a name. */
   commune_code: string | null;
-  /** Commune name (French, uppercase as published). */
-  commune: string;
+  /** Commune name (French, uppercase as published), or `null` where the SIG leaves
+   *  its commune referential unset (21 records as of 2026-10-27). */
+  commune: string | null;
   /** Latitude (WGS84). */
   lat: number;
   /** Longitude (WGS84). */
@@ -42,14 +51,17 @@ export interface Institution {
   geo_method: GeoMethod;
   /** Provenance key into `metadata.sources[]`: always "mjs". */
   source: "mjs";
+  /** Upstream links; see {@link InstitutionRefs}. */
+  refs: InstitutionRefs;
   /** Establishment type code. */
   type: TypeCode;
   /** Canonical French label for the type (e.g. "Maison de jeunes"). */
   type_label_fr: string;
   /** Canonical Arabic label for the type. */
   type_label_ar: string;
-  /** Daïra name (French, uppercase as published). */
-  daira: string;
+  /** Daïra name (French, uppercase as published), or `null` where the SIG leaves
+   *  its daïra referential unset (3 records as of 2026-10-27). */
+  daira: string | null;
   /** Street address as published, or `null`. */
   address: string | null;
   /** Reception/intake capacity, or `null` if not published. */

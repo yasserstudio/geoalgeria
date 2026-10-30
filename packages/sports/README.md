@@ -12,7 +12,7 @@
 
 </div>
 
-5,141 sports facilities across Algeria, **proximity fields**, stadiums, swimming pools,
+5,234 sports facilities across Algeria, **proximity fields**, stadiums, swimming pools,
 specialized halls, athletics tracks, tennis courts, equestrian centers, nautical bases and
 more, each with its name, facility **type**, address, commune / daïra / wilaya, capacity,
 operational status, PMR accessibility, built and land area, year of reception, and geographic
@@ -27,7 +27,7 @@ npm install @geoalgeria/sports
 ```js
 import sports from "@geoalgeria/sports";
 
-const all = sports.facilities();                    // 5,141
+const all = sports.facilities();                    // 5,234
 const inOran = sports.facilitiesByWilaya(31);       // facilities in wilaya 31
 const pools = sports.facilitiesByType("P25");       // every 25 m pool
 
@@ -45,37 +45,38 @@ const pools = sports.facilitiesByType("P25");       // every 25 m pool
 
 | Type | Code | Count |
 | --- | --- | --- |
-| Terrain sportif de proximité | `TSP` | 3,292 |
-| Aire de jeux football | `AJF` | 437 |
+| Terrain sportif de proximité | `TSP` | 3,295 |
+| Aire de jeux football | `AJF` | 436 |
 | Salle OMS | `SOMS` | 340 |
-| Salle spécialisée | `SS` | 191 |
-| Bassin de natation | `BN` | 159 |
-| Piscine 25 m | `P25` | 158 |
-| Piscine de proximité | `PP` | 103 |
-| Terrain de football | `TF` | 83 |
-| Stade de football | `SF` | 79 |
-| Stade OMS | `STOMS` | 76 |
-| Piste d'athlétisme | `PA` | 45 |
-| Boulodrome | `BL` | 39 |
-| Court de tennis | `CT` | 31 |
-| Unité d'hébergement et de récupération | `UHR` | 23 |
-| Piscine 50 m | `P50` | 20 |
-| Stade d'athlétisme | `SA` | 16 |
-| Centre équestre | `CE` | 11 |
+| Salle spécialisée | `SS` | 203 |
+| Piscine 25 m | `P25` | 160 |
+| Bassin de natation | `BN` | 157 |
+| Piscine de proximité | `PP` | 117 |
+| Terrain de football | `TF` | 87 |
+| Stade de football | `SF` | 81 |
+| Stade OMS | `STOMS` | 77 |
+| Piste d'athlétisme | `PA` | 56 |
+| Boulodrome | `BL` | 42 |
+| Aire de jeux de loisirs | `AJL` | 34 |
+| Court de tennis | `CT` | 33 |
+| Unité d'hébergement et de récupération | `UHR` | 27 |
+| Piscine 50 m | `P50` | 23 |
+| Stade d'athlétisme | `SA` | 15 |
+| Centre équestre | `CE` | 12 |
 | Base nautique | `BNA` | 8 |
-| Complexe sportif | `CXS` | 7 |
-| Aire de jeux de loisirs | `AJL` | 5 |
+| Complexe sportif | `CXS` | 8 |
+| Terrain de réplique | `TR` | 7 |
 | Champ de tir | `CDT` | 5 |
 | Centre de regroupement et de préparation | `CRP` | 4 |
-| École de jeunes talents | `EJT` | 3 |
-| Terrain de réplique | `TR` | 3 |
+| École de jeunes talents | `EJT` | 2 |
+| Grand stade | `GS` | 2 |
 | Centre de formation régional | `CFR` | 1 |
 | Établissement d'éducation physique et sportive | `EPS` | 1 |
-| Grand stade | `GS` | 1 |
-| **Total** | | **5,141** |
+| Parcours d'athlétisme | `PCA` | 1 |
+| **Total** | | **5,234** |
 
-Spanning **69 wilayas**, every facility geocoded, 5,008 to an `exact` point, the
-remaining 133 `approximate`. `wilaya_code` is linked against the
+Spanning **69 wilayas**, every facility geocoded, 5,106 to an `exact` point, the
+remaining 128 `approximate`. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model.
 
 ## Formats
@@ -100,10 +101,10 @@ const all: Facility[] = sports.facilities();
 
 ```
 data/
-  facilities.json            # 5,141 facilities (array)
+  facilities.json            # 5,234 facilities (array)
   metadata.json              # sources, counts, by_type, updated
   csv/facilities.csv         # repo + Release bundle (not in npm tarball)
-  geojson/facilities.geojson # Point features (all 5,141 are geocoded)
+  geojson/facilities.geojson # Point features (all 5,234 are geocoded)
 ```
 
 ## Record shape
@@ -120,6 +121,7 @@ data/
   "geo_precision": "exact",
   "geo_method": "sig_mjs",
   "source": "mjs",
+  "refs": { "mjs": "379177ee-6904-423b-95c8-6e8e388adbce" },
   "type": "BN",
   "type_label_fr": "Bassin de natation",
   "daira": "TSABIT",
@@ -134,16 +136,26 @@ data/
 ```
 
 Names, communes and daïras are French (as published by the ministry's GIS). `name`
-is `null` for 1,752 facilities the ministry lists with no name (their `type_label_fr`
+is `null` for 1,659 facilities the ministry lists with no name (their `type_label_fr`
 still identifies them). `wilaya_code` is zero-padded to two digits; `commune_code`
-is populated for 267 records whose exact current or official 2021 ONS commune label and point
-agree; otherwise it is `null`. Reconciled records use the current Wilaya and preserve a
+is populated for 284 records: 270 whose exact current, former (JORA) or official 2021 ONS
+commune label and point agree, and 14 reviewed corrections; otherwise it is `null`. Reconciled records use the current Wilaya and preserve a
 differing ministry value in `source_wilaya_code`.
 `geo_precision` is `"exact"` or `"approximate"` (every facility is geocoded, so
 neither is ever `null` here); `geo_method` is always `"sig_mjs"`. `source` is
 `"mjs"`, a key into `metadata.sources[]` (see *Source*, below, for the live GIS
 URL). For Arabic wilaya and commune names, join `wilaya_code` against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset.
+
+## Ids and the SIG UUID
+
+`refs.mjs` is the ministry GIS's own per-record UUID (`properties.id` of the
+`infrastructures_sportives` layer), on every facility since the 2026-10-27 refresh.
+`id` is carried from release to release on it, so a facility the ministry renames,
+re-addresses or re-places keeps its id. An id is never reused: one that left the package
+is listed in [`data/retired-ids.json`](data/retired-ids.json), and where its record was a
+second entry of a facility the GIS now holds once, `migrations` there names the id that
+carries its data now. The CSV carries `refs` as a JSON column after `source`.
 
 ## Need the administrative divisions too?
 

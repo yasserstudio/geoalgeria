@@ -197,9 +197,9 @@
         "url": "https://sig.mjs.gov.dz"
       },
       "cadence": "quarterly",
-      "last_retrieved": "2026-06-23",
-      "next_due": "2026-11-08",
-      "note": "Pulled live on 2026-10-25: the SIG has not touched the 2,334 published records since June and the 3 rows it added are unfinished entries the fetcher now drops. The rebuild is held because the shared current-wilaya reconciliation has drifted and would return 6 records to their pre-reform wilaya; .scratch/306/jeunesse-diff-2026-10-25.md names them. Parked for 2026-16 with the El Aricha reconciliation, so next_due is that batch rather than last_retrieved + cadence."
+      "last_retrieved": "2026-10-27",
+      "next_due": "2027-01-27",
+      "note": "Pulled live on 2026-10-27 over the Algerian connection the Owner supplied: 2,337 features, which confirms that the SIG has not touched the 2,334 published records since June and that the 3 rows it added are unfinished entries the fetcher drops. The raw capture is committed (sources/jeunesse/sig-etablissements.json) and the fetcher replays it with --cache, so the next refresh needs no VPN window. Promoted in batch 2026-15: ids carry on the establishment rather than its sort position, the absorbed review row institutions.json/00728 is retired (Owner decision 2026-10-28), and the shared reconciler reads the former JORA commune spellings, so the rebuild changes only 21 placeholder communes to null and 00728's review receipt."
     },
     {
       "package": "@geoalgeria/livraison",
@@ -335,9 +335,9 @@
         "url": "https://sig.mjs.gov.dz"
       },
       "cadence": "quarterly",
-      "last_retrieved": "2026-06-23",
-      "next_due": "2026-11-08",
-      "note": "Pulled live on 2026-10-25: 90 facilities added, none removed, plus one new ministry type. The ids no longer move: the fetcher carries them over (carryOverIds, keyed on the facility's place) as of 2026-10-25, measured at 5,141 kept and 90 minted with 0 published id changing place. The data is still held: the fetcher is network-only and the October capture was never committed, so the refresh needs a fresh pull from an Algerian vantage point, which should also commit its raw capture and grow a --cache replay. .scratch/306/sports-diff-2026-10-25.md has the measurement. Parked for 2026-16 with the El Aricha reconciliation, so next_due is that batch rather than last_retrieved + cadence."
+      "last_retrieved": "2026-10-27",
+      "next_due": "2027-01-27",
+      "note": "Refreshed from the live pull of 2026-10-27 (5,234 features), captured in sources/sports/sig-infrastructures.json, so a rebuild needs no VPN window: the GeoServer answers only from an Algerian vantage point, so the next live pull still needs one. From this refresh every record carries the SIG's own per-record UUID as refs.mjs and the ids are carried on it, so a ministry edit to a name, an address or a coordinate no longer retires an id. The move from place-keyed ids was a one-time transition (decisions in research/sports/id-transition.json): 187 published ids retired, 5 of them Repeat posts forwarded in retired-ids.json, and 280 new facilities minted."
     },
     {
       "package": "@geoalgeria/telecom",

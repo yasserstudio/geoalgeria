@@ -4,10 +4,13 @@ import { fileURLToPath } from "node:url";
 
 import { loadBoundaries, pointInGeometry } from "../../packages/schema/index.js";
 import {
+  arabicNameKey,
   canonicalCommunes,
+  canonicalCommuneForCode,
   canonicalCommuneForOfficialArabicLabel,
   canonicalCommuneForOfficialFrenchLabel,
   latinNameKey,
+  nameHistory,
   padCommuneCode,
 } from "./commune-index.mjs";
 
@@ -35,6 +38,40 @@ for (const commune of canonicalCommunes) {
   matches.push(commune);
   communesByName.set(key, matches);
 }
+
+// The spellings a commune carried before a JORA correction renamed it
+// (packages/dataset/data/name-history.json), keyed by its CURRENT wilaya. A
+// source that has not caught up with the 2026-09-24 renames still writes
+// "BOUIHI" for El Bouihi or "AZIL ABEDELKADER" for Abdelkader Azil; without this
+// index those labels match no current name, and a record the reform moved to a
+// new wilaya fell back to its mother wilaya on the next rebuild (14 sports
+// facilities, #306). A former spelling two communes of one wilaya share is
+// ambiguous and is not indexed for either.
+function formerLabelIndex(field, keyOf) {
+  const index = new Map();
+  for (const entry of nameHistory.communes) {
+    for (const name of entry[field] ?? []) {
+      const key = `${String(entry.wilaya_code).padStart(2, "0")}|${keyOf(name)}`;
+      if (!keyOf(name)) continue;
+      const codes = index.get(key) ?? new Set();
+      codes.add(padCommuneCode(entry.code_commune));
+      index.set(key, codes);
+    }
+  }
+  return index;
+}
+const formerFrench = formerLabelIndex("former_names_fr", latinNameKey);
+const formerArabic = formerLabelIndex("former_names_ar", arabicNameKey);
+const formerCommune = (wilayaCode, communeFr, communeAr) => {
+  for (const [index, key] of [
+    [formerFrench, communeFr ? latinNameKey(communeFr) : null],
+    [formerArabic, communeAr ? arabicNameKey(communeAr) : null],
+  ]) {
+    const codes = key ? index.get(`${wilayaCode}|${key}`) : null;
+    if (codes?.size === 1) return canonicalCommuneForCode([...codes][0]);
+  }
+  return null;
+};
 
 const code = (value) =>
   value == null || value === "" ? null : String(value).padStart(2, "0");
@@ -81,11 +118,18 @@ export function reconcileCurrentWilayaByCommune(record) {
     sourceWilaya,
     record.commune ?? record.commune_fr,
   ) ?? canonicalCommuneForOfficialArabicLabel(sourceWilaya, record.commune_ar);
+  // Last, and only where no current name matched at all: a former JORA spelling
+  // of a commune of the current wilaya. Two current matches stay ambiguous.
+  const former = matches.length === 0
+    ? formerCommune(currentWilaya, record.commune ?? record.commune_fr, record.commune_ar)
+    : null;
   const commune = matches.length === 1
     ? matches[0]
     : historical && code(historical.wilaya_code) === currentWilaya
       ? historical
-      : null;
+      : former && code(former.wilaya_code) === currentWilaya
+        ? former
+        : null;
   if (!commune) {
     return unchanged();
   }

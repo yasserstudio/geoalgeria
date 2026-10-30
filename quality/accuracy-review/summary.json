@@ -164,11 +164,11 @@
     },
     {
       "path": "packages/jeunesse/data/institutions.json",
-      "sha256": "4f8a2491df563e89041c37b44a0bc650f3feb6f32e2cbec7dd75038306d3882d"
+      "sha256": "720e5d9484e82ce0a9e7d6dfb490f86004ff6199af905c7ded48f77d86e16f84"
     },
     {
       "path": "packages/jeunesse/data/metadata.json",
-      "sha256": "fb1392992aed1594e604cfafe3f968e64b11c193929f195f33223a96236cd305"
+      "sha256": "1339b69aaeeb577e3e84e1653dc00cade49b73311de9eb789723047dbd2393f4"
     },
     {
       "path": "packages/livraison/data/carriers.json",
@@ -268,11 +268,15 @@
     },
     {
       "path": "packages/sports/data/facilities.json",
-      "sha256": "8c70c4afc871273df847166abc9b4d620fd4b05fab81b9229e030d0adbcb0d0d"
+      "sha256": "e07837374c75ca6a9c02355e5cf05d0102e755f53a271469fd85655faa11f0d7"
     },
     {
       "path": "packages/sports/data/metadata.json",
-      "sha256": "e207439f02fcd973e58f6108e9ad9b69aef031368d879294eb126dd32efec3b7"
+      "sha256": "0e76cceb8257560884f5547afc1a80a1fc816f8b981ec5ed601df3b61a82ef08"
+    },
+    {
+      "path": "packages/sports/data/retired-ids.json",
+      "sha256": "bf9ba0096467d0a7c6be9238b3b0ec60b7e0f50dd4942454680c9ac39aa4caff"
     },
     {
       "path": "packages/telecom/data/5g-djezzy.json",
@@ -317,15 +321,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70778,
-  "candidates": 17474,
+  "total_records": 70871,
+  "candidates": 17469,
   "reasons": {
-    "approximate_coordinate": 16634,
+    "approximate_coordinate": 16629,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1131
+    "shared_coordinate": 1124
   },
   "datasets": [
     {
@@ -1404,7 +1408,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 128 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+        "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 129 records are reconciled to the current wilaya only where an exact current, former (JORA) or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
         "wilayas_covered": 69,
         "bbox": [
           -8.1489,
@@ -1418,12 +1422,12 @@
             "name": "Ministry of Youth and Sports: SIG",
             "url": "https://sig.mjs.gov.dz",
             "license": "Factual public listing (Ministry of Youth and Sports)",
-            "retrieved": "2026-06-23",
+            "retrieved": "2026-10-27",
             "evidence_type": "official"
           }
         ],
         "license": "Factual public listing (Ministry of Youth and Sports)",
-        "updated": "2026-06-23",
+        "updated": "2026-10-27",
         "by_type": {
           "AJ": 241,
           "CLS": 46,
@@ -2013,14 +2017,14 @@
     },
     {
       "dataset": "sports",
-      "total_records": 5141,
-      "candidates": 142,
+      "total_records": 5234,
+      "candidates": 137,
       "reasons": {
-        "approximate_coordinate": 133,
+        "approximate_coordinate": 128,
         "inside_adjacent_wilaya": 11,
         "outside_all_wilaya_boundaries": 1,
         "outside_declared_wilaya": 12,
-        "shared_coordinate": 46
+        "shared_coordinate": 39
       },
       "metadata_path": "packages/sports/data/metadata.json",
       "metadata": {
@@ -2029,20 +2033,20 @@
         "title_fr": "Infrastructures sportives d'Algérie",
         "title_ar": "المنشآت الرياضية الجزائرية",
         "title_en": "Algeria sports facilities",
-        "record_count": 5141,
-        "geocoded_count": 5141,
+        "record_count": 5234,
+        "geocoded_count": 5234,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 5008,
-          "approximate": 133
+          "exact": 5106,
+          "approximate": 128
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 267 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+        "coverage_note": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 270 records are reconciled to the current wilaya only where an exact current, former (JORA) or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
         "wilayas_covered": 69,
         "bbox": [
           -8.4324,
-          19.5567,
+          19.5666,
           10.1953,
           37.035878
         ],
@@ -2052,42 +2056,43 @@
             "name": "Ministry of Youth and Sports: SIG",
             "url": "https://sig.mjs.gov.dz",
             "license": "Factual public listing (Ministry of Youth and Sports)",
-            "retrieved": "2026-06-23",
+            "retrieved": "2026-10-27",
             "evidence_type": "official"
           }
         ],
         "license": "Factual public listing (Ministry of Youth and Sports)",
-        "updated": "2026-06-23",
+        "updated": "2026-10-27",
         "by_type": {
-          "AJF": 437,
-          "BN": 159,
-          "P25": 158,
-          "PA": 45,
-          "PP": 103,
-          "SF": 79,
+          "AJF": 436,
+          "BN": 157,
+          "P25": 160,
+          "PA": 56,
+          "PP": 117,
+          "SF": 81,
           "SOMS": 340,
-          "STOMS": 76,
-          "TSP": 3292,
+          "STOMS": 77,
+          "TSP": 3295,
           "BNA": 8,
           "CRP": 4,
-          "CT": 31,
-          "P50": 20,
-          "SA": 16,
-          "SS": 191,
-          "TF": 83,
-          "UHR": 23,
+          "CT": 33,
+          "P50": 23,
+          "SS": 203,
+          "TF": 87,
+          "UHR": 27,
           "CDT": 5,
-          "CE": 11,
-          "BL": 39,
-          "EJT": 3,
-          "CXS": 7,
-          "TR": 3,
+          "CE": 12,
+          "SA": 15,
+          "BL": 42,
+          "CXS": 8,
+          "EJT": 2,
+          "TR": 7,
           "CFR": 1,
           "EPS": 1,
-          "GS": 1,
-          "AJL": 5
+          "GS": 2,
+          "AJL": 34,
+          "PCA": 1
         },
-        "named": 3389
+        "named": 3575
       }
     },
     {
@@ -2638,14 +2643,14 @@
     {
       "dataset": "sports",
       "entity": "facilities.json",
-      "total_records": 5141,
-      "candidates": 142,
+      "total_records": 5234,
+      "candidates": 137,
       "reasons": {
-        "approximate_coordinate": 133,
+        "approximate_coordinate": 128,
         "inside_adjacent_wilaya": 11,
         "outside_all_wilaya_boundaries": 1,
         "outside_declared_wilaya": 12,
-        "shared_coordinate": 46
+        "shared_coordinate": 39
       },
       "path": "packages/sports/data/facilities.json"
     },
@@ -2829,6 +2834,10 @@
     {
       "path": "packages/schema",
       "reason": "Package has no data directory"
+    },
+    {
+      "path": "packages/sports/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
     },
     {
       "path": "packages/transport",

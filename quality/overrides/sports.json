@@ -6,61 +6,35 @@
   "decisions": [
     {
       "file": "facilities.json",
-      "record_id": "01663",
+      "record_id": "01115",
       "status": "corrected",
       "publish_action": "patch",
+      "reviewed_at": "2026-10-28",
       "expect": {
-        "wilaya_code": "14",
+        "wilaya_code": "51",
         "commune_code": null,
-        "lat": 35.2515,
-        "lng": 2.4818
+        "commune": "OULED DJELLAL",
+        "daira": "OULED DJELLAL",
+        "lat": 36.5558,
+        "lng": 2.7869
       },
       "patch": {
-        "wilaya_code": "64",
-        "commune_code": "1439"
+        "wilaya_code": "09",
+        "commune_code": "0904",
+        "commune": "OUED EL ALLEUG",
+        "daira": "OUED EL ALLEUG"
       },
+      "notes": "The SIG row (properties.id c6b9e656-970a-4b35-8222-4fde92081641, edited 2026-10-25 by the account 09.sig) relabels this proximity field OULED DJELLAL, commune, daira and wilaya 51, at an unmoved point in Blida. The point is inside exactly one commune outline, Oued El Alleug (0904, wilaya 09); the row's own commune population, 50 038, is the one the SIG's two OUED EL ALLEUG rows carry (Ouled Djellal's rows carry 86 287 and 87 281); and the same record was published as OUED EL ALLEUG from the June capture. The address, stade communal, names no commune and neither confirms nor contradicts it.",
       "evidence": [
         {
           "url": "https://sig.mjs.gov.dz",
-          "checked_at": "2026-10-01"
+          "checked_at": "2026-10-27",
+          "note": "infrastructures_sportives, captured in sources/sports/sig-infrastructures.json"
         },
         {
-          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
-          "checked_at": "2026-10-01"
-        },
-        {
-          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
-          "checked_at": "2026-10-01"
-        }
-      ]
-    },
-    {
-      "file": "facilities.json",
-      "record_id": "01666",
-      "status": "corrected",
-      "publish_action": "patch",
-      "expect": {
-        "wilaya_code": "14",
-        "commune_code": null,
-        "lat": 35.2967,
-        "lng": 2.4996
-      },
-      "patch": {
-        "wilaya_code": "64",
-        "commune_code": "1439"
-      },
-      "evidence": [
-        {
-          "url": "https://sig.mjs.gov.dz",
-          "checked_at": "2026-10-01"
-        },
-        {
-          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
-          "checked_at": "2026-10-01"
-        },
-        {
-          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
-          "checked_at": "2026-10-01"
+          "url": "https://www.openstreetmap.org/relation/3825025",
+          "checked_at": "2026-10-28",
+          "note": "Oued El Alleug commune outline, the only one containing 36.5558, 2.7869"
         }
       ]
     },

@@ -5,7 +5,7 @@
 // records their own geometry contradicts, so it fails the day a new one appears. It
 // cannot tell a shrinking list from a list someone edited: deleting a group's rows and
 // deleting the records both make it pass. This file pins the two numbers that cannot be
-// edited into agreement, the 55 corrections and the 284 residual.
+// edited into agreement, the corrections and the 283 residual.
 //
 // WHY IT RE-DERIVES RATHER THAN RESTATES. test/reviewed-overrides-applied.test.mjs
 // already checks that every ledger decision was applied field by field. What it cannot
@@ -17,17 +17,21 @@
 // is actually in. A decision that stops holding fails here even though the ledger still
 // describes it accurately.
 //
-// WHY 284 REMAIN. They are not a tolerance. 55 of the 358 found on 2026-09-29 were a
+// WHY 283 REMAIN. They are not a tolerance. 55 of the 358 found on 2026-09-29 were a
 // stale label a reform explains, and those are corrected. The rest are a coordinate and
 // an attribution that disagree with no reform to explain them, a coordinate too rounded
 // to join on, or a commune OpenStreetMap ships no relation for;
 // research/_wilaya-containment/triage-209.md classifies all 358 and says, per record,
 // what would settle it. It was 303 until #285 re-placed @geoalgeria/banques'
 // `agb-tebessa`, which was in the list under `kept_low_precision`: the branch sat on
-// (35, 8), inside wilaya 62 rather than the 12 it declares. It was 302 until #306 made
+// (35, 8), inside wilaya 62 rather than the 12 it declares. It was 302 until two
+// changes in this batch took 19 rows out of it. #306 made
 // @geoalgeria/protection-civile's commune join ask the containing outline before the
-// nearest centre, which re-placed 18 of its 33 rows. The residual only ever goes down,
-// and only with the record that left it named here.
+// nearest centre, which re-placed 18 of its 33 rows. The 2026-10-27 sports refresh
+// retired @geoalgeria/sports `01835` (Messaad, listed under `commune_outline`): the
+// Ministry of Youth and Sports SIG no longer holds that facility, so the record left
+// the package rather than being corrected. The residual only ever goes down, and only
+// with the record that left it named here.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -43,17 +47,25 @@ const read = (...parts) => JSON.parse(readFileSync(join(ROOT, ...parts), "utf8")
 
 // The packages whose ledgers carry a #209 decision, and how many each carries. Stated
 // rather than counted, so dropping a package's ledger fails instead of passing quietly.
-const CORRECTED = { emploi: 17, jeunesse: 15, poste: 3, sports: 15, telecom: 1, tourisme: 5 };
-const TOTAL = 56;
+// sports was 15 (56 in total) until the 2026-10-27 refresh retired 01663 and 01666,
+// both in Serguine: they were absorbed by the dataset's 2026-09-24 rename of commune
+// 1439 from Serghine to Serguine (JORA n° 25 of 2026, loi 26-06, art. 52 bis 15), after
+// which the SIG's own label matches and the build derives wilaya 64 / commune 1439
+// itself, so the patch had nothing left to correct.
+// jeunesse was 15 until the same rebuild retired institutions.json/00728, a Serguine
+// youth centre absorbed by the same rename in the same way (Owner decision 2026-10-28).
+const CORRECTED = { emploi: 17, jeunesse: 14, poste: 3, sports: 13, telecom: 1, tourisme: 5 };
+const TOTAL = 53;
 // 303 on 2026-09-29, minus banques' agb-tebessa, re-placed from OpenStreetMap by #285,
 // minus the 18 protection-civile units the outline-first commune join re-placed (#306,
-// 2026-10-27). protection-civile keeps 15 rows: one `kept_low_precision` and 14 where
-// the DGPC's own commune_1 names one commune and the containing outline another. Those
-// 14 are one class, not two, even though the join reads 12 of the names exactly and
-// reaches the other two (16-048, 33-007) across a one-character spelling difference:
-// in every one of them the source names the commune and the reduced outline disputes
-// it, and only the DGPC can settle that. They stay under #209.
-const RESIDUAL = 284;
+// 2026-10-27), minus sports' 01835, gone from the SIG in the 2026-10-27 refresh.
+// protection-civile keeps 15 rows: one `kept_low_precision` and 14 where the DGPC's own
+// commune_1 names one commune and the containing outline another. Those 14 are one
+// class, not two, even though the join reads 12 of the names exactly and reaches the
+// other two (16-048, 33-007) across a one-character spelling difference: in every one
+// of them the source names the commune and the reduced outline disputes it, and only
+// the DGPC can settle that. They stay under #209.
+const RESIDUAL = 283;
 // The Journal officiel each reform appears in, which its decisions have to cite.
 const REFORM_EVIDENCE = {
   2026: [
@@ -141,7 +153,7 @@ test("every correction still holds against the registry and the commune outlines
   }
 });
 
-test("the residual is the documented 284, and shrank by exactly the 55 corrected", () => {
+test("the residual is the documented 283, and no corrected record is in it", () => {
   assert.equal(exceptions.count, RESIDUAL);
   assert.equal(exceptions.pre_existing, RESIDUAL, "a residual row this batch created is not a residual");
   assert.equal(exceptions.created_by_this_batch, 0);

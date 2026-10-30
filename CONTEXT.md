@@ -268,7 +268,7 @@ key" says neither which fold nor which tier.
 _Avoid_: name key, dedup key, match key, normalized name
 
 **Upstream link**:
-An identifier a record carries so a consumer can join it to an outside database without matching on a name. The administrative records carry two: an **OSM relation id** (`osm_relation_id`) and a **Wikidata item** (`wikidata`). A link is harvested from a reviewed linkage, in two documented tiers, and is null where no tier has one or where a second source proved the upstream value names a different place; it is never resolved from a name, and no id is carried by two records, because one upstream relation is one place.
+An identifier a record carries so a consumer can join it to an outside database without matching on a name. The administrative records carry two: an **OSM relation id** (`osm_relation_id`) and a **Wikidata item** (`wikidata`). A sector record carries its source's own record id under `refs` (`refs.mjs` is the Ministry of Youth and Sports SIG's per-record UUID), and where a package carries its ids on one, a source edit to the record's name, address or point no longer retires its id. A link is harvested from a reviewed linkage, in two documented tiers, and is null where no tier has one or where a second source proved the upstream value names a different place; it is never resolved from a name, and no id is carried by two records, because one upstream relation is one place.
 _Avoid_: external id, cross-reference, mapping, concordance
 
 **OSM relation id**:

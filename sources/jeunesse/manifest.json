@@ -1,0 +1,10 @@
+{
+  "sig-etablissements": {
+    "bytes": 6001342,
+    "note": "Trimmed projection, a key whitelist rather than a single drop. Kept: the top-level type, totalFeatures and features; per feature its type, geometry, geometry_name and the whole properties object as received. Dropped: GeoServer's per-request feature id (it changes on every pull) and any other top-level key the endpoint may add, crs included. Features are sorted by the stable properties.id, with their own canonical body as the tie-break.",
+    "records": 2337,
+    "retrieved": "2026-10-27",
+    "sha256": "62f0d255694fa5b34325e742c459cba724619f2754b81b1ae11f5caff952bb5b",
+    "url": "https://sig.mjs.gov.dz/api/v1.0/geoserver/public/wms?service=WMS&version=1.1.1&request=GetMap&layers=etablissements_de_jeunes&bbox=-9,18,12,38&width=1&height=1&srs=EPSG:4326&format=application/json;type=geojson"
+  }
+}

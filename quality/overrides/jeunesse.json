@@ -6,36 +6,6 @@
   "decisions": [
     {
       "file": "institutions.json",
-      "record_id": "00728",
-      "status": "corrected",
-      "publish_action": "patch",
-      "expect": {
-        "wilaya_code": "14",
-        "commune_code": null,
-        "lat": 35.255,
-        "lng": 2.4868
-      },
-      "patch": {
-        "wilaya_code": "64",
-        "commune_code": "1439"
-      },
-      "evidence": [
-        {
-          "url": "https://sig.mjs.gov.dz",
-          "checked_at": "2026-10-01"
-        },
-        {
-          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
-          "checked_at": "2026-10-01"
-        },
-        {
-          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
-          "checked_at": "2026-10-01"
-        }
-      ]
-    },
-    {
-      "file": "institutions.json",
       "record_id": "01268",
       "status": "corrected",
       "publish_action": "patch",
