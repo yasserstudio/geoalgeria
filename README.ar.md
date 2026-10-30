@@ -24,19 +24,30 @@
 
 ## الأطلس
 
-[![أطلس جيو الجزائر على geoalgeria.com](assets/screenshots/atlas-home.png)](https://geoalgeria.com)
+<a href="https://geoalgeria.com"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/atlas-home-dark.jpg">
+  <img src="assets/screenshots/atlas-home-light.jpg" alt="أطلس جيو الجزائر على geoalgeria.com">
+</picture></a>
 
 **[geoalgeria.com](https://geoalgeria.com)** يضع أكثر من 28 قاعدة بيانات وأكثر من 80,000 سجل على خريطة تفاعلية واحدة، أُعيد رسمها لتشمل الولايات الـ69.
 
 - **[أطلس متعدّد القطاعات](https://geoalgeria.com):** كل القطاعات على خريطة واحدة، من مكاتب البريد إلى المساجد والمستشفيات، مع عرض للكثافة حسب الولاية.
 - **[خريطة الحرائق المباشرة](https://geoalgeria.com/fires):** نقاط الحرارة من أقمار NASA FIRMS إلى جانب النشرات الرسمية للحماية المدنية، محدّثة طوال موسم الحرائق (أُطلقت في 23 جويلية 2026).
+- **[خريطة الرحلات الجوية](https://geoalgeria.com/flights):** كل الخطوط المباشرة للجوية الجزائرية على كرة أرضية، مع تمييز المؤكّدة والمدرجة والمعلنة.
 - **[3,951 صفحة لكل ولاية](https://geoalgeria.com/wilaya):** صفحة لكل ولاية وكل قطاع، مصمّمة لتظهر في البحث.
 - **[تركيب الطبقات](https://geoalgeria.com/explore):** فعّل القطاعات وأوقفها واقرأها معًا على الخريطة نفسها.
 - **بحث Command-K:** انتقل إلى أي ولاية أو بلدية مباشرة من لوحة المفاتيح.
 - **العربية والفرنسية والإنجليزية:** الواجهة بالكامل، بدعم كامل للكتابة من اليمين إلى اليسار في العربية.
 - **[مصدر لكل سجل](https://geoalgeria.com/sources):** كل نقطة تُظهر مصدرها وتاريخ آخر تغيير فيها. اطّلع على [المصادر](https://geoalgeria.com/sources) و[سجل التغييرات](https://geoalgeria.com/changelog).
 
-[![خريطة الحرائق المباشرة على geoalgeria.com/fires](assets/screenshots/fires-map.png)](https://geoalgeria.com/fires)
+<p align="center">
+  <a href="https://geoalgeria.com/flights"><img src="assets/screenshots/phone-flights-light.jpg" alt="خريطة الرحلات الجوية على الهاتف" width="32%"></a>
+  <a href="https://geoalgeria.com/pharmacies"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/phone-pharmacies-dark.jpg">
+    <img src="assets/screenshots/phone-pharmacies-light.jpg" alt="خريطة الصيدليات على الهاتف" width="32%">
+  </picture></a>
+  <a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/phone-commune-casbah.jpg" alt="صفحة بلدية القصبة بالعربية على الهاتف" width="32%"></a>
+</p>
 
 ## البيانات
 

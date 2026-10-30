@@ -22,19 +22,30 @@ GeoAlgeria est un projet ouvert, développé en solo, avec un seul objectif : d
 
 ## L'atlas
 
-[![L'atlas GeoAlgeria sur geoalgeria.com](assets/screenshots/atlas-home.png)](https://geoalgeria.com)
+<a href="https://geoalgeria.com"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/atlas-home-dark.jpg">
+  <img src="assets/screenshots/atlas-home-light.jpg" alt="L'atlas GeoAlgeria sur geoalgeria.com">
+</picture></a>
 
 **[geoalgeria.com](https://geoalgeria.com)** réunit 28+ jeux de données et 80 000+ enregistrements sur une seule carte interactive, redessinée pour les 69 wilayas.
 
 - **[Atlas multisectoriel](https://geoalgeria.com) :** tous les secteurs sur une même carte, des bureaux de poste aux mosquées et aux hôpitaux, avec une vue de densité par wilaya.
 - **[Carte des feux en direct](https://geoalgeria.com/fires) :** les points chauds satellite NASA FIRMS aux côtés des bulletins officiels de la Protection Civile, mis à jour tout au long de la saison des feux (lancée le 23 juillet 2026).
+- **[Globe des lignes aériennes](https://geoalgeria.com/flights) :** toutes les lignes sans escale d'Air Algérie sur un globe, marquées vérifiées, répertoriées ou annoncées.
 - **[3 951 pages par wilaya](https://geoalgeria.com/wilaya) :** une page pour chaque wilaya et chaque secteur, pensée pour la recherche.
 - **[Superposition de couches](https://geoalgeria.com/explore) :** activez et désactivez les secteurs et lisez-les ensemble sur la même carte.
 - **Recherche Command-K :** accédez à n'importe quelle wilaya ou commune directement au clavier.
 - **Arabe, français et anglais :** toute l'interface, entièrement en écriture de droite à gauche en arabe.
 - **[Provenance sur chaque enregistrement](https://geoalgeria.com/sources) :** chaque point indique d'où il provient et quand il a changé pour la dernière fois. Voir les [sources](https://geoalgeria.com/sources) et le [journal des modifications](https://geoalgeria.com/changelog).
 
-[![La carte des feux en direct sur geoalgeria.com/fires](assets/screenshots/fires-map.png)](https://geoalgeria.com/fires)
+<p align="center">
+  <a href="https://geoalgeria.com/flights"><img src="assets/screenshots/phone-flights-light.jpg" alt="Le globe des lignes aériennes sur mobile" width="32%"></a>
+  <a href="https://geoalgeria.com/pharmacies"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/phone-pharmacies-dark.jpg">
+    <img src="assets/screenshots/phone-pharmacies-light.jpg" alt="La carte des pharmacies sur mobile" width="32%">
+  </picture></a>
+  <a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/phone-commune-casbah.jpg" alt="La page de la commune de la Casbah en arabe sur mobile" width="32%"></a>
+</p>
 
 ## Les données
 

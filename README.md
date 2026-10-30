@@ -22,19 +22,30 @@ GeoAlgeria is a solo-built, open project with one goal: to become the first and 
 
 ## The atlas
 
-[![The GeoAlgeria atlas at geoalgeria.com](assets/screenshots/atlas-home.png)](https://geoalgeria.com)
+<a href="https://geoalgeria.com"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/atlas-home-dark.jpg">
+  <img src="assets/screenshots/atlas-home-light.jpg" alt="The GeoAlgeria atlas at geoalgeria.com">
+</picture></a>
 
 **[geoalgeria.com](https://geoalgeria.com)** puts 28+ datasets and 80,000+ records on one interactive map, redrawn for the 69 wilayas.
 
 - **[Cross-sector atlas](https://geoalgeria.com):** every sector on a single map, from post offices to mosques to hospitals, with a per-wilaya density view.
 - **[Live wildfire map](https://geoalgeria.com/fires):** NASA FIRMS satellite hotspots alongside official Civil Protection bulletins, updated through the fire season (launched 23 July 2026).
+- **[Flight routes globe](https://geoalgeria.com/flights):** every nonstop Air Algérie route on a globe, marked verified, listed, or announced.
 - **[3,951 per-wilaya pages](https://geoalgeria.com/wilaya):** one page for every wilaya and sector, built to be searchable.
 - **[Layer stacking](https://geoalgeria.com/explore):** switch sectors on and off and read them together on the same map.
 - **Command-K search:** jump to any wilaya or commune straight from the keyboard.
 - **Arabic, French, and English:** the entire interface, fully right-to-left in Arabic.
 - **[Provenance on every record](https://geoalgeria.com/sources):** each point shows where it came from and when it last changed. See the [sources](https://geoalgeria.com/sources) and [changelog](https://geoalgeria.com/changelog).
 
-[![The live wildfire map at geoalgeria.com/fires](assets/screenshots/fires-map.png)](https://geoalgeria.com/fires)
+<p align="center">
+  <a href="https://geoalgeria.com/flights"><img src="assets/screenshots/phone-flights-light.jpg" alt="The flight routes globe on a phone" width="32%"></a>
+  <a href="https://geoalgeria.com/pharmacies"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/phone-pharmacies-dark.jpg">
+    <img src="assets/screenshots/phone-pharmacies-light.jpg" alt="The pharmacy map on a phone" width="32%">
+  </picture></a>
+  <a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/phone-commune-casbah.jpg" alt="The Casbah commune page in Arabic on a phone" width="32%"></a>
+</p>
 
 ## The data
 
