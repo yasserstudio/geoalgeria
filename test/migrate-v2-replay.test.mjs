@@ -108,6 +108,15 @@ const CORRECTIONS = {
     "postoffices.json/3062": { lat: 36.7687292, lng: 2.8848159, geo_precision: "exact", geo_method: "osm_node", commune: "CHERAGA", commune_code: "1650", commune_ar: "الشراقة" },
     "postoffices.json/2458": { lat: 36.700328, lng: 4.0564974, geo_precision: "exact", geo_method: "osm_node" },
   },
+  tourisme: {
+    // The five OSM national parks gained the Wikidata item of the duplicate that
+    // merged into each on 2026-10-29 (build.mjs MERGED_WIKIDATA).
+    "park-1": { refs: { osm: "5424406", wikidata: "Q650992" } },
+    "park-2": { refs: { osm: "324041581", wikidata: "Q2664184" } },
+    "park-3": { refs: { osm: "313971146", wikidata: "Q2671600" } },
+    "park-6": { refs: { osm: "522229283", wikidata: "Q2580089" } },
+    "park-7": { refs: { osm: "4589441", wikidata: "Q2664193" } },
+  },
   banques: {
     // BEA's locator publishes address-only rows. The reviewed seed enriches
     // them with the locator's embedded map coordinates after the v2 cutover;

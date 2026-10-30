@@ -5,7 +5,7 @@
 // records their own geometry contradicts, so it fails the day a new one appears. It
 // cannot tell a shrinking list from a list someone edited: deleting a group's rows and
 // deleting the records both make it pass. This file pins the two numbers that cannot be
-// edited into agreement, the corrections and the 282 residual.
+// edited into agreement, the corrections and the 281 residual.
 //
 // WHY IT RE-DERIVES RATHER THAN RESTATES. test/reviewed-overrides-applied.test.mjs
 // already checks that every ledger decision was applied field by field. What it cannot
@@ -17,7 +17,7 @@
 // is actually in. A decision that stops holding fails here even though the ledger still
 // describes it accurately.
 //
-// WHY 282 REMAIN. They are not a tolerance. 55 of the 358 found on 2026-09-29 were a
+// WHY 281 REMAIN. They are not a tolerance. 55 of the 358 found on 2026-09-29 were a
 // stale label a reform explains, and those are corrected. The rest are a coordinate and
 // an attribution that disagree with no reform to explain them, a coordinate too rounded
 // to join on, or a commune OpenStreetMap ships no relation for;
@@ -68,14 +68,15 @@ const TOTAL = 57;
 // poste's `2532`, which the Owner decision of 2026-10-29 removed because no military
 // location is published and that office sat inside the Ain Naadja military hospital. A
 // row the residual loses because its record is gone is a row it only ever loses once, so
-// it is named here like the other.
+// it is named here like the other, and so is tourisme's park-29, a duplicate of park-6
+// merged into it on 2026-10-29.
 // protection-civile keeps 15 rows: one `kept_low_precision` and 14 where the DGPC's own
 // commune_1 names one commune and the containing outline another. Those 14 are one
 // class, not two, even though the join reads 12 of the names exactly and reaches the
 // other two (16-048, 33-007) across a one-character spelling difference: in every one
 // of them the source names the commune and the reduced outline disputes it, and only
 // the DGPC can settle that. They stay under #209.
-const RESIDUAL = 282;
+const RESIDUAL = 281;
 // The Journal officiel each reform appears in, which its decisions have to cite.
 const REFORM_EVIDENCE = {
   2026: [
@@ -163,7 +164,7 @@ test("every correction still holds against the registry and the commune outlines
   }
 });
 
-test("the residual is the documented 282, and no corrected record is in it", () => {
+test("the residual is the documented 281, and no corrected record is in it", () => {
   assert.equal(exceptions.count, RESIDUAL);
   assert.equal(exceptions.pre_existing, RESIDUAL, "a residual row this batch created is not a residual");
   assert.equal(exceptions.created_by_this_batch, 0);

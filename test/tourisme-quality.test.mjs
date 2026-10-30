@@ -23,10 +23,13 @@ const present = (row, key) => row[key] != null && String(row[key]).trim() !== ""
 describe("tourisme data quality floor", () => {
   it("does not regress bilingual naming coverage", () => {
     const bilingual = rows.filter((row) => present(row, "name_fr") && present(row, "name_ar"));
-    // The current snapshot is 28.8%. A larger refresh may add records, so pin
+    // The current snapshot is 28.77%. A larger refresh may add records, so pin
     // the rate rather than the raw count; enrichment can only move it upward.
+    // It was 28.85% until 2026-10-29, when five bilingual Wikidata parks that
+    // duplicated five bilingual OSM parks merged into them: the same places, each
+    // counted once.
     assert.ok(
-      bilingual.length / rows.length >= 0.288,
+      bilingual.length / rows.length >= 0.2876,
       `bilingual coverage fell to ${((bilingual.length / rows.length) * 100).toFixed(1)}%`,
     );
   });
@@ -41,7 +44,10 @@ describe("tourisme data quality floor", () => {
 
   it("does not lose the practical lodging details already sourced", () => {
     const lodging = rows.filter((row) => row.layer === "lodging");
-    const floors = { address: 209, phone: 204, website: 84, stars: 60, rooms: 24 };
+    // `address` was 209 until the military exclusion of 2026-10-29 removed the one
+    // military hotel that carried a street (lodging-1561, Barika). A floor only ever
+    // moves down with the records that left it named.
+    const floors = { address: 208, phone: 204, website: 84, stars: 60, rooms: 24 };
     for (const [field, minimum] of Object.entries(floors)) {
       const count = lodging.filter((row) => present(row, field)).length;
       assert.ok(count >= minimum, `${field}: ${count} fell below ${minimum}`);

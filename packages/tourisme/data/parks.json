@@ -13,7 +13,8 @@
     "geo_method": "osm",
     "source": "osm",
     "refs": {
-      "osm": "5424406"
+      "osm": "5424406",
+      "wikidata": "Q650992"
     },
     "category": "national_park"
   },
@@ -200,7 +201,8 @@
     "geo_method": "osm",
     "source": "osm",
     "refs": {
-      "osm": "324041581"
+      "osm": "324041581",
+      "wikidata": "Q2664184"
     },
     "category": "national_park"
   },
@@ -290,60 +292,6 @@
     "category": "protected_area"
   },
   {
-    "id": "park-25",
-    "name": "Belezma National Park",
-    "name_fr": "parc national de Belezma",
-    "name_ar": "الحظيرة الوطنية بلزمة",
-    "wilaya_code": "05",
-    "commune_code": null,
-    "commune": null,
-    "lat": 35.5833333,
-    "lng": 6.0333333,
-    "geo_precision": "approximate",
-    "geo_method": "wikidata",
-    "source": "wikidata",
-    "refs": {
-      "wikidata": "Q2664184"
-    },
-    "category": "national_park"
-  },
-  {
-    "id": "park-26",
-    "name": "Gouraya National Park",
-    "name_fr": "parc national de Gouraya",
-    "name_ar": "الحديقة الوطنية قورايا",
-    "wilaya_code": "06",
-    "commune_code": null,
-    "commune": null,
-    "lat": 36.7667,
-    "lng": 5.1,
-    "geo_precision": "approximate",
-    "geo_method": "wikidata",
-    "source": "wikidata",
-    "refs": {
-      "wikidata": "Q2664193"
-    },
-    "category": "national_park"
-  },
-  {
-    "id": "park-27",
-    "name": "Chrea National Park",
-    "name_fr": "parc national de Chréa",
-    "name_ar": "الحديقة الوطنية الشريعة",
-    "wilaya_code": "09",
-    "commune_code": null,
-    "commune": null,
-    "lat": 36.4,
-    "lng": 2.8666667,
-    "geo_precision": "approximate",
-    "geo_method": "wikidata",
-    "source": "wikidata",
-    "refs": {
-      "wikidata": "Q2671600"
-    },
-    "category": "national_park"
-  },
-  {
     "id": "park-28",
     "name": "Tlemcen National Park",
     "name_fr": "parc national de Tlemcen",
@@ -362,24 +310,6 @@
     "category": "national_park"
   },
   {
-    "id": "park-29",
-    "name": "Djurdjura National Park",
-    "name_fr": "parc national du Djurdjura",
-    "name_ar": "الحديقة الوطنية جرجرة",
-    "wilaya_code": "15",
-    "commune_code": null,
-    "commune": null,
-    "lat": 36.4667,
-    "lng": 4.1333,
-    "geo_precision": "approximate",
-    "geo_method": "wikidata",
-    "source": "wikidata",
-    "refs": {
-      "wikidata": "Q2580089"
-    },
-    "category": "national_park"
-  },
-  {
     "id": "park-3",
     "name": "Parc National de Chréa",
     "name_fr": "Parc National de Chréa",
@@ -393,7 +323,8 @@
     "geo_method": "osm",
     "source": "osm",
     "refs": {
-      "osm": "313971146"
+      "osm": "313971146",
+      "wikidata": "Q2671600"
     },
     "category": "national_park"
   },
@@ -412,24 +343,6 @@
     "source": "wikidata",
     "refs": {
       "wikidata": "Q2671615"
-    },
-    "category": "national_park"
-  },
-  {
-    "id": "park-31",
-    "name": "El Kala National Park",
-    "name_fr": "parc national d'El-Kala",
-    "name_ar": "محمية القالة الوطنية",
-    "wilaya_code": "36",
-    "commune_code": null,
-    "commune": null,
-    "lat": 36.8166667,
-    "lng": 8.4166667,
-    "geo_precision": "approximate",
-    "geo_method": "wikidata",
-    "source": "wikidata",
-    "refs": {
-      "wikidata": "Q650992"
     },
     "category": "national_park"
   },
@@ -500,7 +413,8 @@
     "geo_method": "osm",
     "source": "osm",
     "refs": {
-      "osm": "522229283"
+      "osm": "522229283",
+      "wikidata": "Q2580089"
     },
     "category": "national_park"
   },
@@ -518,7 +432,8 @@
     "geo_method": "osm",
     "source": "osm",
     "refs": {
-      "osm": "4589441"
+      "osm": "4589441",
+      "wikidata": "Q2664193"
     },
     "category": "national_park"
   },

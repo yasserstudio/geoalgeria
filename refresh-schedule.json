@@ -364,7 +364,7 @@
       "cadence": "manual",
       "last_retrieved": "2026-06-21",
       "next_due": null,
-      "note": "Generator path unconfirmed: no fetch script is wired, so the next refresh has to re-establish it first."
+      "note": "Generator path unconfirmed: no fetch script is wired, so the next refresh has to re-establish it first. packages/tourisme/scripts/build.mjs re-emits the package offline from its committed records and holds the military exclusion keyed on OpenStreetMap elements (Owner decision 2026-10-29); a future fetcher has to carry that list over."
     },
     {
       "package": "@geoalgeria/transport",

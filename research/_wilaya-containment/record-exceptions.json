@@ -4,8 +4,8 @@
   "ref": "origin/main",
   "note": "Published records their own geometry contradicts. `kind: commune_outline` is a coordinate outside the OpenStreetMap outline of the commune the record names; `kind: wilaya_polygon` is a record with no commune outline to check whose coordinate is inside a different wilaya's shipped polygon. Every row is a defect, not a tolerance: `rule` names the clause of scripts/lib/commune-resolver.mjs that decides it today, and the group's reason says which two claims disagree and who can settle it. `pre_existing` is recomputed by running the same rule over the same file at origin/main, so a row this batch created cannot hide among the rows it inherited (those are yasserstudio/geoalgeria.com#209). Records with no commune outline whose coordinate is inside NO wilaya polygon are not listed and not failed, because the 69 shipped outlines are display-grade (mapshaper `dp 2% keep-shapes`, a 3.4 km median vertex gap) and cut inside the shoreline. Regenerate with `node scripts/build-wilaya-containment-exceptions.mjs --write`.",
   "files_checked": 46,
-  "count": 282,
-  "pre_existing": 282,
+  "count": 281,
+  "pre_existing": 281,
   "created_by_this_batch": 0,
   "groups": [
     {
@@ -3331,14 +3331,14 @@
     {
       "file": "packages/tourisme/data/parks.json",
       "package": "tourisme",
-      "count": 4,
-      "pre_existing": 4,
+      "count": 3,
+      "pre_existing": 3,
       "created_by_this_batch": 0,
       "kinds": {
-        "outside_declared_wilaya_polygon": 4
+        "outside_declared_wilaya_polygon": 3
       },
       "rules": {
-        "commune_outline": 4
+        "commune_outline": 3
       },
       "reason": "the attraction's wilaya comes from the source listing's own wilaya field while the coordinate is OpenStreetMap's, and for a natural feature that straddles a border the listing is often right and the polygon crude",
       "records": [
@@ -3364,18 +3364,6 @@
           "kind": "outside_declared_wilaya_polygon",
           "containing_commune": null,
           "containing_wilaya": "39",
-          "pre_existing": true
-        },
-        {
-          "id": "park-29",
-          "declared_wilaya": "15",
-          "declared_commune": null,
-          "lng": 4.1333,
-          "lat": 36.4667,
-          "rule": "commune_outline",
-          "kind": "outside_declared_wilaya_polygon",
-          "containing_commune": null,
-          "containing_wilaya": "10",
           "pre_existing": true
         },
         {
