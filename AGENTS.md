@@ -47,7 +47,7 @@ Conservative key, Loose key, Rule, Golden corpus.
 | `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella – re-exports industrie-pharmaceutique + pharmacies in one install |
 | `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,849 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
 | `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations – 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
-| `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit – 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
+| `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit – 691 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
 | `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks – 184 Lines, 76 shapes, 128 Directions and 1,603 Stations across 16 Operators |
 | `packages/transport/` | `@geoalgeria/transport` | transport umbrella – re-exports aviation + ferroviaire + gares-routieres + buses |
 
