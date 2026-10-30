@@ -20,8 +20,10 @@
  * authoritative code wins and commune is re-matched there. The DGPC's published
  * code is kept verbatim in refs.dgpc_wilaya as a receipt. Commune is best-effort:
  * the Arabic commune_1 name is matched against the flagship geoalgeria commune set
- * within the derived wilaya (nearest-centroid fallback). The source carries no
- * French name, so name_fr is left unset; nothing is machine-translated.
+ * within the derived wilaya, then the commune whose OpenStreetMap outline contains
+ * the point (the shared resolver), then the nearest centroid in that wilaya. The
+ * source carries no French name, so name_fr is left unset; nothing is
+ * machine-translated.
  *
  * Usage: node scripts/fetch.mjs            # live pull from dgpc.dz
  *        node scripts/fetch.mjs --if-changed # live pull, rebuild only on a new source hash
@@ -42,6 +44,12 @@ import {
   readRetiredIds,
   dialableContact,
 } from "../../../scripts/lib/v2-transforms.mjs";
+import { communeResolver } from "../../../scripts/lib/build-utils.mjs";
+import {
+  COMMUNE_JOIN_CLAUSES,
+  createCommuneJoin,
+  normAr,
+} from "../../../scripts/lib/protection-civile-commune.mjs";
 import {
   assertSafeProtectionCivileRefresh,
   protectionCivileCarryKey,
@@ -172,19 +180,6 @@ const cleanTel = (v) => {
   if (!s) return null;
   return dialableContact(s.replace(/\s+/g, ""));
 };
-// Arabic name folding for commune matching (strip diacritics/tatweel, fold
-// alef/ya/ta-marbuta variants), same recipe as the sante generator.
-function normAr(s) {
-  if (!s) return "";
-  s = s.replace(/[ً-ْٰـ]/g, "");
-  s = s
-    .replace(/[أإآ]/g, "ا")
-    .replace(/ى/g, "ي")
-    .replace(/ة/g, "ه")
-    .replace(/ؤ/g, "و")
-    .replace(/ئ/g, "ي");
-  return s.replace(/[^؀-ۿ ]/g, " ").replace(/\s+/g, " ").trim();
-}
 const inBox = (lng, lat) =>
   Number.isFinite(lat) && Number.isFinite(lng) && lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
 
@@ -267,29 +262,25 @@ function reconcileWilaya(geomCode, codWilaya, objectid, stats) {
   return geomCode;
 }
 
-// Commune within the derived wilaya: first an exact folded-Arabic name match on
-// commune_1, else the nearest commune centroid in that wilaya (best-effort).
-function assignCommune(commune1, wcode, lng, lat, communes, stats) {
-  const list = communes.byWilaya.get(wcode);
-  if (!list || !list.length) return null;
-  const key = normAr(commune1);
-  if (key) {
-    const hit = list.find((c) => c.name_ar_norm === key);
-    if (hit) { stats.commune_name++; return hit; }
-  }
-  let best = null, bestD = Infinity;
-  const cosLat = Math.cos(lat * DEG);
-  for (const c of list) {
-    const dx = (c.lng - lng) * cosLat;
-    const dy = c.lat - lat;
-    const d = dx * dx + dy * dy;
-    if (d < bestD) { bestD = d; best = c; }
-  }
-  stats.commune_centroid++;
-  return best;
-}
+// Commune within the derived wilaya. The rule, its clause order and the reasons for it
+// are scripts/lib/protection-civile-commune.mjs, so they can be tested on fixtures
+// (test/protection-civile-commune-join.test.mjs); this is the binding to the geometry
+// this repository ships. The containment query is the shared resolver's own, and it is
+// GLOBAL: a commune outline is a finer claim than any wilaya polygon, so the search
+// asks the whole country and the derived wilaya filters the answer. Bound lazily
+// because the outline file is 3.7 MB and a `--help` run must not pay for it.
+let COMMUNE_JOIN = null;
+const assignCommune = (...args) => {
+  COMMUNE_JOIN ??= createCommuneJoin({
+    containingCommunes: (lat, lng) => communeResolver().containingCommunes(lat, lng),
+  });
+  return COMMUNE_JOIN(...args);
+};
 
 // --- normalize DGPC features into internal rows ----------------------------
+// Reads the capture, the commune registry and the committed outline cache, and nothing
+// the package itself has published: the rows this returns are a function of the sources
+// alone, so a first build and a rebuild agree byte for byte.
 function normalize(features, boundaries, communes, stats) {
   const rows = [];
   for (const f of features) {
@@ -353,14 +344,19 @@ async function main() {
   const communes = loadCommunes();
   const stats = {
     swapped: 0, dropped_oob: 0, wilaya_polygon: 0, wilaya_fallback: 0,
-    commune_name: 0, commune_centroid: 0, reconciled: [], reform: [],
+    ...Object.fromEntries(COMMUNE_JOIN_CLAUSES.map((clause) => [clause, 0])),
+    reconciled: [], reform: [],
   };
   const rows = normalize(features, boundaries, communes, stats);
   console.log(
     `  normalized ${rows.length} units (${stats.wilaya_polygon} wilaya by polygon, ` +
       `${stats.wilaya_fallback} by nearest, ${stats.swapped} coord swap fixed, ${stats.dropped_oob} dropped OOB)`,
   );
-  console.log(`  commune: ${stats.commune_name} by name, ${stats.commune_centroid} by nearest centroid`);
+  console.log(
+    `  commune: ${stats.commune_name} by the DGPC's name, ${stats.commune_name_near} by that name ` +
+      `within two edits, ${stats.commune_outline} by containing outline, ` +
+      `${stats.commune_centroid} by nearest centroid`,
+  );
   // Every geometry-vs-DGPC disagreement, so neither category is ever silent.
   console.log(
     `  wilaya reconciliation: ${stats.reconciled.length} pre-reform conflict(s) resolved to the DGPC code, ` +

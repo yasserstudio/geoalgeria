@@ -95,6 +95,38 @@
     },
     {
       "file": "protection-civile.json",
+      "record_id": "23-017",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "commune_code": "2306",
+        "commune": "Oued El Aneb"
+      },
+      "patch": {
+        "commune_code": "2305",
+        "commune": "El Bouni"
+      },
+      "reviewed_at": "2026-10-27",
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/relation/1616108",
+          "checked_at": "2026-10-27",
+          "note": "El Bouni (2305) admin_level=8 relation; its outline contains the unit point (7.60981, 36.8269), 86 m inside the boundary."
+        },
+        {
+          "url": "https://www.openstreetmap.org/relation/1616122",
+          "checked_at": "2026-10-27",
+          "note": "Oued El Aneb (2306) admin_level=8 relation; the unit point is 65 m outside it, so the DGPC's commune_1 cannot be confirmed on the ground."
+        },
+        {
+          "url": "https://dgpc.dz/dgpc2/unite.geojson",
+          "checked_at": "2026-10-27",
+          "note": "Official DGPC objectid 562 publishes commune_1 as Oued El Aneb, one edit from the registry spelling, which is why the name clause answers 2306."
+        }
+      ]
+    },
+    {
+      "file": "protection-civile.json",
       "record_id": "27-002",
       "status": "corrected",
       "publish_action": "patch",
