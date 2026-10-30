@@ -28,12 +28,22 @@ Two findings worth keeping:
   this ticket's: `wilaya_code` 48 with a commune, السانية / Es Senia, that belongs to
   wilaya 31, an address in Bir El Djir (Oran) that agrees with neither, and a
   longitude whose sign would have to flip for Oran. No source was found to place it,
-  so only the precision claim was corrected here.
+  so only the precision claim was corrected here. **Settled in #301**: all three are
+  one defect, and it is 33 records wide, not one. The portal names the publishing
+  directorate on every row, and 01392's is Oran's (`IDDFEP` 31, `IDCommunn` 3105,
+  `CodeEtsWilaya` 31641); 32 further Oran rows ship the same unsigned longitude, and
+  the builder stamped each one's `wilaya_code` from that coordinate, so the
+  attribution agreed with the defect and no containment check could see it. The
+  builder now restores the sign when mirroring the axis carries the point into the
+  wilaya that published the row, and 01392, whose pair is a whole-arcminute
+  placeholder whose mirror falls in the bay of Oran, takes its commune's centroid
+  like every other row the portal left unplaced.
 
-## The four candidates this run did NOT act on
+## The four candidates this run did NOT act on, and where they now stand
 
-OpenStreetMap does hold an object for four of the records. None of the four moved,
-and each is a Review-queue candidate rather than a correction, under ADR 0001:
+OpenStreetMap does hold an object for four of the records. None of the four moved:
+each was a Review-queue candidate rather than a correction under ADR 0001, and the
+Owner has since rejected all four (below):
 
 | record | OSM object | distance | why it was not applied |
 | --- | --- | --- | --- |
@@ -41,6 +51,40 @@ and each is a Review-queue candidate rather than a correction, under ADR 0001:
 | `park-25` Belezma | way 324041581 | 3.369 km | A national park is an area: both the published point and the centroid are `approximate`, so the move buys no precision and only churns a published coordinate. |
 | `park-29` Djurdjura | way 522229283 | 2.858 km | As above. |
 | `park-31` El Kala | relation 5424406 (Wikidata P402 confirms the same object) | 8.151 km | As above. |
+
+**Measured again in #301, then rejected by the Owner on 2026-10-28: all four keep
+their published point.** Each object was re-read from `api.openstreetmap.org` on
+2026-10-27 and is still the same place under the same tags (the node is version 1
+of 2011 and has never been edited; each park area still carries the record's own
+`wikidata` QID), and each was run through `scripts/review/votes.mjs` rather than
+judged by hand. The engine settled none of them, so under ADR 0001 rule 5 each
+went to the Review queue with its published point intact, and the Owner ruled on
+all four on 2026-10-28: the re-place is rejected and the published point kept. For
+`historic-91` the published point is Wikidata's to the metre, so there is no
+independent Vote behind the node; for the three parks a park is an area, and a
+centroid move buys no precision.
+
+The ruling is recorded where a ruling from the Review queue belongs, in the
+reviewed-correction ledger: four rows in
+[`quality/overrides/tourisme.json`](../../quality/overrides/tourisme.json) with
+`status: "verified"`, `publish_action: "keep"`, `reviewer: "owner"` and
+`reviewed_at: "2026-10-28"`, each carrying the OSM object, the distance and the
+reason (ADR 0001 rule 10: the ledger, not the page, is the record). A `keep`
+decision changes no published field, so no coordinate, record or file moved; what
+it does is close the candidate, so it stops coming back to the queue.
+`review-2026-10-27.json` stays as the frozen run it is, the Candidates, the
+Claims, the engine's own answer and the measurement per record, evidence for the
+queue rather than a verdict on it, and `test/arcminute-288-review.test.mjs`
+re-derives every outcome from that file and checks each record's row in the
+ledger.
+
+The reading the sweep's table did not make: for `historic-91` the node is 1.055 km
+from the published point, which is inside the 2 km agreement radius, so the two are
+one Answer and the published point is the Candidate that Answer ships. The node
+confirms the published value instead of replacing it, which is why there is nothing
+to move even before the Vote count is reached. For the three parks the centroid is
+2.9 to 8.2 km out, so no Claim reaches any Candidate at all and no Candidate takes a
+single Vote.
 
 ## Method note, and its limit
 

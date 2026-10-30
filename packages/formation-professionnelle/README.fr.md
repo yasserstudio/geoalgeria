@@ -60,13 +60,17 @@ const one = fp.establishmentById("00001");          // un seul enregistrement pa
 | **Total** | | **1 963** |
 
 Couvrant **les 69 wilayas actuelles**. La source est indexée selon l'ancien schéma à 58
-wilayas ; le générateur rattache donc les coordonnées et communes au découpage actuel et affecte 137
-établissements à leur nouvelle wilaya issue de la réforme de 2026. 1 961 des 1 963 établissements sont géocodés
+wilayas ; le générateur rattache donc les coordonnées et communes au découpage actuel. Cela
+recode 67 établissements dans une wilaya issue de la réforme de 2026 détachée de celle qui les a
+déclarés, soit le même territoire sous le découpage actuel ; 37 autres se trouvent dans une wilaya
+que leur propre direction de la formation ne couvre pas, ce qui traduit un désaccord entre la
+coordonnée et la déclaration plutôt que la réforme, et c'est la coordonnée qui tranche pour
+ceux-là. 1 961 des 1 963 établissements sont géocodés
 (99,9 %) – `lat`/`lng` est `null` pour les 2 restants. Parmi les enregistrements géocodés,
-1 666 portent le point publié par takwin.dz en `geo_precision` `"exact"`, et 15 portent un
+1 666 portent le point publié par takwin.dz en `geo_precision` `"exact"`, et 14 portent un
 point publié que le nombre lui-même dément, moins de trois décimales ou des degrés et des
 minutes entières sans les secondes ; ceux-là gardent `geo_method` `"takwin"` mais passent en
-`"approximate"`. Le portail laisse la coordonnée vide pour les autres, donc 249 sont placés
+`"approximate"`. Le portail laisse la coordonnée vide pour les autres, donc 250 sont placés
 sur le centroïde de leur commune et 31 sur celui de leur wilaya, tous deux `"approximate"` et
 signalés dans `geo_method`.
 

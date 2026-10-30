@@ -19,6 +19,14 @@ ships. It makes no decision of its own, and a second run is a no-op.
 - `status` records what the reviewer found. `publish_action` separately chooses
   `keep`, `patch`, or `exclude`; marking something missing or duplicate does not
   delete it automatically.
+- A ruling that a candidate is **not** a correction is a decision too, and it
+  belongs here rather than in the research file that raised it: `status`
+  `verified` with `publish_action` `keep`, the `reviewer` and `reviewed_at` of the
+  ruling, its reason in `notes`, and its sources in `evidence`. It changes no
+  published field; what it does is close the candidate so it stops returning to
+  the review queue. ADR 0001 rule 10 says the same for the coordinate review: the
+  ledger, not the page, is the record. The four OpenStreetMap re-place candidates
+  the Owner rejected on 2026-10-28 are the worked example, in `tourisme.json`.
 - Every patched field includes its old value in `expect`; exclusions snapshot the
   complete old record. A build stops if any affected upstream value changed.
 - To add a missing shared optional field, list it in `expect_absent`; publication

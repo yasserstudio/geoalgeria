@@ -71,3 +71,29 @@ test("quality/overrides: every patched value is the value the package ships", ()
   }
   assert.ok(checked > 0, "no patch decision was checked");
 });
+
+// A `keep` decision patches nothing, so the loop above never looks at it, and a ruling
+// that a candidate is NOT a correction would go stale unnoticed against data that moved
+// under it: the row would still read as a closed candidate while the package ships a
+// different coordinate. The build does check it (applyReviewedOverrides refuses a stale
+// `expect` whatever the action), but only a generator run reaches that, and nothing in
+// `pnpm validate` runs one.
+test("quality/overrides: every kept record still reads what the reviewer saw", () => {
+  for (const { file, ledger } of ledgers) {
+    const dataDir = join(ROOT, "packages", ledger.dataset, "data");
+    for (const decision of ledger.decisions) {
+      if (decision.publish_action !== "keep") continue;
+      const path = join(dataDir, decision.file);
+      assert.ok(existsSync(path), `${file}/${decision.record_id}: ${decision.file} is missing`);
+      const record = read(path).find((r) => String(r.id) === decision.record_id);
+      assert.ok(record, `${file}: ${decision.record_id} is not in ${decision.file}`);
+      const where = `${file}/${decision.record_id}`;
+      for (const [field, value] of Object.entries(decision.expect)) {
+        assert.deepEqual(record[field], value, `${where}: ${field} no longer matches expect`);
+      }
+      // `keep` is the no-op action: it must not have stamped review provenance onto the
+      // record, because nothing about the published value was reviewed into it.
+      assert.equal(record.review_status, undefined, `${where}: keep must not stamp review_status`);
+    }
+  }
+});

@@ -32,8 +32,13 @@
  * (31 Algiers records reading "الجزائر"), the wilaya centroid is used instead
  * (geo_method "wilaya"). Records whose commune cannot be resolved confidently
  * keep their null coordinates: an unresolved name is left unplaced, never
- * guessed. Every coordinate the portal did supply is passed through untouched
- * as geo_precision "exact" / geo_method "takwin".
+ * guessed. A coordinate the portal did supply is passed through as geo_precision
+ * "exact" / geo_method "takwin" unless one of three named exceptions applies: two
+ * rows arrive with the axes transposed (SWAPPED_IDS), two carry a pair that locates
+ * nothing and are treated as unplaced (NONSENSE_IDS), and a block of Oran's rows arrive
+ * with the longitude's minus sign dropped, which recoverLongitudeSign restores on the
+ * evidence of the directorate and commune the row names. Nothing else is altered, and
+ * no coordinate is invented.
  *
  * Usage: node scripts/fetch.mjs
  */
@@ -73,12 +78,107 @@ const TYPE_LABELS = {
   12: "مؤسسة خاصة معتمدة",
   13: "معهد وطني للتكوين والتعليم المهنيين",
 };
-// Two records ship their coordinates transposed, and one carries a nonsense pair.
+// Two records ship their coordinates transposed, and two carry a nonsense pair.
+// 1997 is a pair that locates nothing. 1624 is the Oran row the unsigned-longitude
+// recovery below cannot explain (private tracker #301): its own IDDFEP is 31, its
+// IDCommunn 3105, its commune string "السانية_وهران" and its address "BIR EL DJIR
+// ORAN", but its pair is 35.7167 / 0.6333, whole arcminutes on both axes, so it is a
+// rounded placeholder rather than a reading, and mirroring the axis puts it in the bay
+// of Oran, inside no wilaya at all. There is nothing here to sign-correct, so the row
+// takes the same path as every other establishment the portal left unplaced and lands
+// on its own commune's centroid.
 const SWAPPED_IDS = new Set([1323, 1330]);
-const NONSENSE_IDS = new Set([1997]);
+const NONSENSE_IDS = new Set([1997, 1624]);
 const LAT_MIN = 18, LAT_MAX = 38, LNG_MIN = -9, LNG_MAX = 12;
 
 const round6 = (n) => Math.round(n * 1e6) / 1e6;
+
+/**
+ * How near the commune a row names its mirrored point has to land before the mirror
+ * reads as a dropped minus sign.
+ *
+ * WHY THE WILAYA IS NOT THE TEST. Reflecting a longitude moves a point by 2 * lng, and
+ * the wilaya alone puts no limit on where that lands. A grid scan of the 0.1 to 9 E
+ * half-plane finds 13 directorates for which some mirror lands back inside their own
+ * wilaya, the worst travelling 1,698 km (27.3 N, 8.6 E is in wilaya 33 and mirrors into
+ * wilaya 37): a Bechar row at 29.6 N, +5.3 E would have mirrored 1,024 km into Beni
+ * Abbes country and shipped as `exact`. The commune a row names is a second attribution
+ * the coordinate had no part in, and testing against it bounds the DESTINATION to within
+ * MIRROR_COMMUNE_KM of that commune.
+ *
+ * IT DOES NOT BOUND THE TRAVEL, and is not meant to: Algeria's southern wilayas are
+ * wide enough that a long reflection can still land next to the commune the row names.
+ * A Tindouf row at 27.6 N, +8.3 E naming Tindouf travels 1,635 km and lands 18.7 km from
+ * Tindouf's centre, and a Bechar row at 29.4 N, +3.5 E naming Tabelbala travels 678 km
+ * and lands 24.0 km from Tabelbala's centre; both are recovered, because in both the
+ * reflected point is where the row's own two attributions say the establishment is. The
+ * distance the point moves is not evidence either way. Where it arrives is.
+ *
+ * MEASURED over the rows the rule fires on in the committed capture: 23 of their mirrors
+ * land inside the outline of the very commune the row names, and 9 in a NEIGHBOURING
+ * commune of the same wilaya, which is what an address on a commune edge looks like, and
+ * what a portal that files a campus under its city looks like. The furthest from its own
+ * commune's centre is PN7HO at 9.35 km, filed under Sidi Chami, sitting in Es Senia,
+ * address "CITE BAHI AMER ... ES SENIA ORAN"; then PWGFU at 7.15 km (filed under Oran,
+ * in Bir El Djir, address "HAI KHEMISTI 14 N 232 BIR EL DJIR ORAN") and PPSNN at 6.81 km
+ * (filed under Bethioua, in Arzew, address "RUE DES JARDINS ARZEW ORAN"). So containment
+ * in the named commune would refuse nine honest rows, while 25 km accepts all of them
+ * with the furthest at a third of the bound. It is also the figure MOVE_CAP_KM already
+ * names as the distance past which a moved point stops being about the same place
+ * (scripts/review/thresholds.mjs), rather than a number chosen to make this set fit.
+ */
+export const MIRROR_COMMUNE_KM = 25;
+
+const EARTH_RADIUS_KM = 6371.0088;
+
+/** Great-circle kilometres between two points. */
+function kmBetween(aLng, aLat, bLng, bLat) {
+  const rad = (x) => (x * Math.PI) / 180;
+  const h =
+    Math.sin(rad(bLat - aLat) / 2) ** 2 +
+    Math.cos(rad(aLat)) * Math.cos(rad(bLat)) * Math.sin(rad(bLng - aLng) / 2) ** 2;
+  return 2 * EARTH_RADIUS_KM * Math.asin(Math.sqrt(h));
+}
+
+/**
+ * A longitude that lost its minus sign, restored.
+ *
+ * The capture ships a block of Oran's rows with a POSITIVE longitude. The portal names
+ * the publishing directorate on every row (IDDFEP 31), the commune string is "<an Oran
+ * commune>_وهران" and the address names Oran, but +0.63 lands in Relizane (48) and
+ * +0.31 in Mostaganem (27), and those are the codes `containingWilayaCode` then stamps,
+ * so the defect hides behind a join that agrees with itself: record 01392's wilaya_code
+ * 48 against commune Es Senia is this same block read from the published side (private
+ * tracker #301).
+ *
+ * Mirroring the axis is the only move made, and it is made only when BOTH of the row's
+ * own attributions agree about the mirrored point while neither agrees about the
+ * published one: the mirror must land in the wilaya that published the row AND within
+ * MIRROR_COMMUNE_KM of the centre of the commune the row names. A row whose commune
+ * resolves to nothing is never mirrored, because no commune to test against is not
+ * evidence of a dropped sign. Anything this cannot explain is left exactly as the portal
+ * shipped it: over the committed capture every row it fires on is IDDFEP 31's, and the
+ * 16 Oran rows whose point sits in Mascara are a different defect the mirror leaves
+ * alone. test/formation-longitude-sign.test.mjs pins how many rows that is, so the count
+ * lives in one place and cannot drift out of a comment.
+ *
+ * @param {number|null} lat
+ * @param {number|null} lng
+ * @param {Set<number>} scope  the source wilaya and its post-2026 daughters
+ * @param {{lat: number, lng: number}|null} communeCentre  the centre of the commune the
+ *   row's own `CommunnNom` resolves to, or null when it resolves to none
+ */
+export function recoverLongitudeSign(lat, lng, scope, communeCentre) {
+  if (lat == null || lng == null || lng <= 0) return lng;
+  const asIs = containingWilayaCode(lat, lng);
+  if (asIs && scope.has(Number(asIs))) return lng;
+  const mirrored = containingWilayaCode(lat, -lng);
+  if (!mirrored || !scope.has(Number(mirrored))) return lng;
+  if (!communeCentre) return lng;
+  return kmBetween(-lng, lat, communeCentre.lng, communeCentre.lat) <= MIRROR_COMMUNE_KM
+    ? round6(-lng)
+    : lng;
+}
 
 // A 0 on either axis is the portal's "no reading" sentinel, never a real value.
 // This holds even in Adrar and Ouargla, where a genuine longitude near zero is
@@ -459,16 +559,25 @@ function main() {
     unplaced: 0,
     viaVariant: 0,
     reassignedWilaya: 0,
+    reassignedDaughter: 0,
+    reassignedElsewhere: 0,
     coordinateCommuneConflicts: 0,
+    signRecovered: 0,
   };
   const unresolved = new Map();
 
   const records = filtered.map((r) => {
-    const { lat, lng } = cleanCoords(r);
+    const { lat, lng: rawLng } = cleanCoords(r);
     const commune = parseCommune(r.CommunnNom);
     const sourceWilayaCode = wilayaCode(r.IDDFEP);
     const sourceWilaya = Number(sourceWilayaCode);
+    const scope = new Set([sourceWilaya, ...(ref.daughters.get(sourceWilaya) || [])]);
+    // The commune join reads the row's text only, so it is settled before the
+    // coordinate is: the sign recovery needs it as its second attribution, and the
+    // conflict counter and the fallback placement below both read the same hit.
     const communeHit = resolveCommune(commune, sourceWilaya, ref);
+    const lng = recoverLongitudeSign(lat, rawLng, scope, communeHit);
+    if (lng !== rawLng) stats.signRecovered++;
     // A source coordinate is stronger evidence than a contradictory commune
     // string. Use containment for exact points, and commune resolution for the
     // records whose source coordinate is missing.
@@ -478,7 +587,16 @@ function main() {
     }
     const wilaya_code = coordinateWilaya
       || (communeHit ? String(communeHit.wilaya).padStart(2, "0") : sourceWilayaCode);
-    if (wilaya_code !== sourceWilayaCode) stats.reassignedWilaya++;
+    // Two different things used to be counted as one, and the READMEs then described
+    // the total as if it were all reform: a move INTO one of the source wilaya's
+    // post-2026 daughters is the same territory re-coded, while a move anywhere else
+    // is the row's coordinate disagreeing with the directorate that filed it, which is
+    // a defect in one of the two and not a re-coding.
+    if (wilaya_code !== sourceWilayaCode) {
+      stats.reassignedWilaya++;
+      if (scope.has(Number(wilaya_code))) stats.reassignedDaughter++;
+      else stats.reassignedElsewhere++;
+    }
 
     let geo = { lat, lng, geo_precision: null, geo_method: null };
     if (lat != null) {
@@ -563,9 +681,15 @@ function main() {
     `Placement: ${stats.takwin} takwin (exact), ${stats.commune} commune centroid` +
       ` (${stats.viaVariant} via a spelling variant), ${stats.wilaya} wilaya centroid, ${stats.unplaced} unplaced`,
   );
-  console.log(`  ${stats.reassignedWilaya} establishment(s) reassigned from a source wilaya to its post-2026 daughter`);
+  console.log(
+    `  ${stats.reassignedDaughter} establishment(s) re-coded into a post-2026 daughter of the wilaya that filed them, ` +
+      `${stats.reassignedElsewhere} placed in a wilaya their directorate does not cover`,
+  );
   if (stats.coordinateCommuneConflicts) {
     console.log(`  ${stats.coordinateCommuneConflicts} exact coordinate(s) overrode a contradictory commune-derived wilaya`);
+  }
+  if (stats.signRecovered) {
+    console.log(`  ${stats.signRecovered} longitude(s) had their minus sign restored from the publishing directorate`);
   }
   if (residuals.length)
     console.log(`  single-axis cross-check on ${residuals.length} placed records: median ${pct(0.5)} km, p90 ${pct(0.9)} km, max ${residuals[residuals.length - 1].toFixed(1)} km`);
