@@ -1363,6 +1363,28 @@
     "great_circle_km": 869
   },
   {
+    "id": "cky-alg",
+    "from": "CKY",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 5359",
+    "status": "active",
+    "days": [
+      "mon",
+      "wed",
+      "fri"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.flightradar24.com/data/flights/ah5359",
+    "sources": [
+      "https://www.flightradar24.com/data/flights/ah5359",
+      "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+      "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+    ],
+    "great_circle_km": 3459
+  },
+  {
     "id": "czl-cdg",
     "from": "CZL",
     "to": "CDG",
@@ -2012,6 +2034,27 @@
     "great_circle_km": 1900
   },
   {
+    "id": "mji-alg",
+    "from": "MJI",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 4007",
+    "status": "active",
+    "days": [
+      "wed",
+      "fri"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.flightradar24.com/data/flights/ah4007",
+    "sources": [
+      "https://www.flightradar24.com/data/flights/ah4007",
+      "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/",
+      "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+    ],
+    "great_circle_km": 1012
+  },
+  {
     "id": "mpl-alg",
     "from": "MPL",
     "to": "ALG",
@@ -2378,6 +2421,28 @@
       "https://www.aeroroutes.com/eng/260416-ahmay26pek"
     ],
     "great_circle_km": 9105
+  },
+  {
+    "id": "pvg-alg",
+    "from": "PVG",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 3083",
+    "status": "active",
+    "days": [
+      "tue",
+      "thu",
+      "sun"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.flightradar24.com/data/flights/ah3083",
+    "sources": [
+      "https://www.flightradar24.com/data/flights/ah3083",
+      "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
+      "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+    ],
+    "great_circle_km": 10131
   },
   {
     "id": "qsf-lil",
@@ -2794,23 +2859,6 @@
     "great_circle_km": 4722
   },
   {
-    "id": "cky-alg",
-    "from": "CKY",
-    "to": "ALG",
-    "carrier": "AH",
-    "flight": "AH 5359",
-    "status": "unclear",
-    "days": null,
-    "evidence": "verified",
-    "planned": true,
-    "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-    "sources": [
-      "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-      "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-    ],
-    "great_circle_km": 3459
-  },
-  {
     "id": "icn-alg",
     "from": "ICN",
     "to": "ALG",
@@ -2881,47 +2929,6 @@
       "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
     ],
     "great_circle_km": 3349
-  },
-  {
-    "id": "mji-alg",
-    "from": "MJI",
-    "to": "ALG",
-    "carrier": "AH",
-    "flight": null,
-    "status": "unclear",
-    "days": [
-      "wed",
-      "fri"
-    ],
-    "evidence": "listed",
-    "planned": true,
-    "source": "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/",
-    "sources": [
-      "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/",
-      "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-    ],
-    "great_circle_km": 1012
-  },
-  {
-    "id": "pvg-alg",
-    "from": "PVG",
-    "to": "ALG",
-    "carrier": "AH",
-    "flight": "AH 3083",
-    "status": "unclear",
-    "days": [
-      "tue",
-      "thu",
-      "sun"
-    ],
-    "evidence": "verified",
-    "planned": true,
-    "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
-    "sources": [
-      "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
-      "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
-    ],
-    "great_circle_km": 10131
   },
   {
     "id": "svo-alg",

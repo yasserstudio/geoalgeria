@@ -93,16 +93,21 @@ test("the statement alone never takes a leg out of plannedRoutes()", () => {
   // The 2026-10-26 first-flight pass moved exactly two of the ten: ALG-CKY on
   // two Guinean reports of the inaugural landing, ALG-PVG on the inaugural
   // rotation's departure from Algiers. The 2026-10-28 re-check moved a third,
-  // ALG-MJI, on the report of AH 4006 leaving Algiers for Mitiga. Every other
-  // leg the statement names is
-  // still planned, because an announcement is not an operation and a launch date
-  // passing is not a report that the aircraft flew.
+  // ALG-MJI, on the report of AH 4006 leaving Algiers for Mitiga. The 2026-10-30
+  // return pass moved three more, the Shanghai, Conakry and Tripoli legs home,
+  // each on its own flight's observed history (collection-rules section 36).
+  // Every other leg the statement names is still planned, because an
+  // announcement is not an operation and a launch date passing is not a report
+  // that the aircraft flew.
   const flown = {
     "alg-cky":
       "https://www.africaguinee.com/transport-aerien-air-algerie-signe-son-grand-retour-en-guinee-apres-45-ans-dabsence/",
     "alg-pvg":
       "https://observalgerie.com/2026/10/26/voyage/air-algerie-inaugure-une-nouvelle-liaison-long-courrier",
     "alg-mji": "https://www.visa-algerie.com/air-algerie-de-retour-en-libye-dans-un-contexte-favorable/",
+    "pvg-alg": "https://www.flightradar24.com/data/flights/ah3083",
+    "cky-alg": "https://www.flightradar24.com/data/flights/ah5359",
+    "mji-alg": "https://www.flightradar24.com/data/flights/ah4007",
   };
   const url =
     "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/";

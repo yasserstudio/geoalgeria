@@ -306,9 +306,11 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
     };
   };
 
-  // Shanghai outbound FLEW: the inaugural rotation left Algiers on Monday 26 Oct
-  // 2026 and APS and a second report of that date carry it, so the leg is
-  // operating. Its return is not, and that asymmetry is the point of the pair.
+  // Shanghai, both ways now. The outbound FLEW on Monday 26 Oct 2026, carried by
+  // APS and a second report of that date. The return caught up on 30 Oct, when
+  // AH 3083's own flight history showed two legs out of Pudong landed at Algiers,
+  // 27 and 29 Oct. The pair's days stay different, which is the directional
+  // record's whole point: the aircraft does not come home on the day it leaves.
   assert.deepEqual(pick("alg-pvg"), {
     flight: "AH 3082",
     status: "active",
@@ -318,10 +320,10 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
   });
   assert.deepEqual(pick("pvg-alg"), {
     flight: "AH 3083",
-    status: "unclear",
+    status: "active",
     days: ["tue", "thu", "sun"],
     evidence: "verified",
-    planned: true,
+    planned: false,
   });
   // Delhi was withdrawn before it ever operated (12 Sep 2026), so both legs are
   // gone rather than restyled, and the endpoint goes with them.
@@ -332,19 +334,28 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
     "DEL is still an endpoint with no route referencing it",
   );
 
-  // The new Africa bookings. Brazzaville and the Conakry return have not flown, so
-  // they stay planned on their sale-inventory evidence; Conakry's outbound landed at
-  // Ahmed Sékou Touré in the night of 25 to 26 Oct 2026 and is operating.
-  for (const id of ["alg-bzv", "bzv-alg", "cky-alg"])
+  // The new Africa bookings. Brazzaville has not flown in either direction, so both
+  // legs stay planned on their sale-inventory evidence.
+  for (const id of ["alg-bzv", "bzv-alg"])
     assert.deepEqual(
       { evidence: pick(id).evidence, planned: pick(id).planned },
       { evidence: "verified", planned: true },
       `${id}: new Africa booking is not a verified planned leg`,
     );
+  // Conakry flew both ways: the outbound landed at Ahmed Sékou Touré in the night of
+  // 25 to 26 Oct 2026, and AH 5359's history put three returns on the ground at
+  // Algiers on 26, 28 and 30 Oct, which is also where the return's days come from.
   assert.deepEqual(pick("alg-cky"), {
     flight: "AH 5358",
     status: "active",
     days: ["tue", "thu", "sun"],
+    evidence: "verified",
+    planned: false,
+  });
+  assert.deepEqual(pick("cky-alg"), {
+    flight: "AH 5359",
+    status: "active",
+    days: ["mon", "wed", "fri"],
     evidence: "verified",
     planned: false,
   });
@@ -485,13 +496,15 @@ test("aviation: the winter 2026 programme is planned until it has flown", async 
   // Tripoli is MITIGA. Every report of the resumption that names an airport names
   // Mitiga, so TIP must never appear beside MJI: that is the Batna mistake, and the
   // guard against it is in the generator rather than in anyone's memory.
-  // The outbound flew on 28 Oct 2026 as AH 4006 (verification-2026-10-28.md); the
-  // return is its own fact and stays planned until a report covers it.
+  // The outbound flew on 28 Oct 2026 as AH 4006 (verification-2026-10-28.md). The
+  // return is its own fact and got its own evidence on 30 Oct: AH 4007's history
+  // has it landing at Algiers at 15:06 that same Wednesday, which is also the first
+  // source to give this direction a flight number (verification-2026-10-30.md).
   assert.deepEqual(shape("alg-mji"), {
     flight: "AH 4006", status: "active", days: ["wed", "fri"], evidence: "verified", planned: false,
   });
   assert.deepEqual(shape("mji-alg"), {
-    flight: null, status: "unclear", days: ["wed", "fri"], evidence: "listed", planned: true,
+    flight: "AH 4007", status: "active", days: ["wed", "fri"], evidence: "verified", planned: false,
   });
   for (const id of ["alg-tip", "tip-alg"])
     assert.ok(!byId.has(id), `${id}: Tripoli's service is at Mitiga, not Tripoli International`);
@@ -546,9 +559,12 @@ test("aviation: the winter 2026 programme is planned until it has flown", async 
   );
 
   // Conakry and Brazzaville gained the days their programme report publishes, on
-  // the Algiers departures only: the return legs' own day is not published.
+  // the Algiers departures only: no report gives either return leg's own day.
+  // Conakry's came from three observed returns instead (30 Oct), and it is NOT the
+  // outbound's days, which is why mirroring them was never allowed. Brazzaville's
+  // is still null.
   assert.deepEqual(shape("alg-cky").days, ["tue", "thu", "sun"]);
-  assert.equal(shape("cky-alg").days, null);
+  assert.deepEqual(shape("cky-alg").days, ["mon", "wed", "fri"]);
   assert.deepEqual(shape("alg-bzv").days, ["mon", "wed", "sat"]);
   assert.equal(shape("bzv-alg").days, null);
 
