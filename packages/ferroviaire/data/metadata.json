@@ -4,12 +4,12 @@
   "title_fr": "Gares ferroviaires et de transit d'Algérie",
   "title_ar": "محطات السكك الحديدية والنقل الجزائرية",
   "title_en": "Algeria railway & transit stations",
-  "record_count": 692,
-  "geocoded_count": 692,
+  "record_count": 691,
+  "geocoded_count": 691,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 683,
-    "approximate": 9
+    "exact": 689,
+    "approximate": 2
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -46,12 +46,12 @@
     "tram": 190,
     "aerial_tram": 24,
     "gondola": 10,
-    "metro": 41
+    "metro": 40
   },
   "by_operator": {
     "SNTF": 427,
     "SETRAM": 190,
-    "SEMA": 41
+    "SEMA": 40
   },
   "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

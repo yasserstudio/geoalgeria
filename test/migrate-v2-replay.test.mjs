@@ -117,6 +117,14 @@ const CORRECTIONS = {
     "park-6": { refs: { osm: "522229283", wikidata: "Q2580089" } },
     "park-7": { refs: { osm: "4589441", wikidata: "Q2664193" } },
   },
+  "protection-civile": {
+    // Main units placed on their OSM fire station on 2026-10-29; each directorate
+    // keeps the unit's old DGPC point as approximate (quality/overrides).
+    "50-001": { lat: 21.3332893, lng: 0.9584882, geo_precision: "exact", geo_method: "osm_node_review", review_status: "corrected", reviewed_at: "2026-10-29", reviewed_by: "geoalgeria-maintainers", review_evidence: ["https://www.openstreetmap.org/node/5647008622"] },
+    "50-003": { geo_precision: "approximate", review_status: "corrected", reviewed_at: "2026-10-29", reviewed_by: "geoalgeria-maintainers", review_evidence: ["https://www.openstreetmap.org/node/5647008622"] },
+    "51-001": { lat: 34.4360897, lng: 5.0682667, geo_precision: "exact", geo_method: "osm_centroid_review", review_status: "corrected", reviewed_at: "2026-10-29", reviewed_by: "geoalgeria-maintainers", review_evidence: ["https://www.openstreetmap.org/way/307049829"] },
+    "51-003": { geo_precision: "approximate", review_status: "corrected", reviewed_at: "2026-10-29", reviewed_by: "geoalgeria-maintainers", review_evidence: ["https://www.openstreetmap.org/way/307049829"] },
+  },
   banques: {
     // BEA's locator publishes address-only rows. The reviewed seed enriches
     // them with the locator's embedded map coordinates after the v2 cutover;
@@ -213,6 +221,11 @@ const CORRECTIONS = {
     // Mascara's 29-01, whose cité label names a locality the point is not in.
     "07-01": { commune: "El Hadjeb" },
     "29-01": { commune: "Tizi" },
+    // Reviewed points of 2026-10-29 (fetch.mjs COORD_FIX): GUELMA leaves the
+    // commune-centroid fallback for OSM way 460372288 on RN 21, and AIN OUSSARA's
+    // two-decimal SOGRAL point gives way to OSM way 494669722, 65 m from it.
+    "24-01": { lat: 36.4715395, lng: 7.4337368, geo_precision: "exact", geo_method: "exact" },
+    "65-01": { lat: 35.4635735, lng: 2.9001721, geo_precision: "exact" },
   },
   "enseignement-superieur": {
     // ESI's campus sits in Oued Smar (its own address: BP 68M, 16270); the
@@ -283,6 +296,7 @@ const CORRECTIONS = {
   },
   ooredoo: {
     "69-002": { commune: "El Abiodh Sidi Cheikh" }, // label
+    "46-006": { lat: 35.2941814, lng: -1.1399855, geo_precision: "exact", geo_method: "osm_node", review_status: "corrected", reviewed_at: "2026-10-29", reviewed_by: "geoalgeria-maintainers", review_evidence: ["https://www.openstreetmap.org/node/5347870919"] }, // OSM shop, 2026-10-29
   },
   cliniques: {
     "28-00005": { commune: "M'Sila" }, // label

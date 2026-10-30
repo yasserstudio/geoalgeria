@@ -1,0 +1,15 @@
+{
+  "note": "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.",
+  "migrations": {
+    "16-029": {
+      "merged_into": "16-044",
+      "osm": [
+        "node/12942126787"
+      ],
+      "note": "Merged into 16-044. OpenStreetMap node/12942126787 and Wikidata Q138494132 are the same station; the record now carries both."
+    }
+  },
+  "ids": [
+    "16-029"
+  ]
+}

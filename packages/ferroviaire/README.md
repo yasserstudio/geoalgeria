@@ -12,7 +12,7 @@
 
 </div>
 
-692 rail and urban-transit nodes across Algeria, **train stations, tram stops, metro
+691 rail and urban-transit nodes across Algeria, **train stations, tram stops, metro
 stations, aerial tramways and gondolas**, with bilingual FR/AR names, operator
 (SNTF / SETRAM / SEMA), line membership, GPS coordinates, and wilaya/commune linkage.
 A Wikidata + OpenStreetMap composite, shipped as JSON, CSV, and GeoJSON. Part of
@@ -28,7 +28,7 @@ npm install @geoalgeria/ferroviaire
 ```js
 import ferroviaire from "@geoalgeria/ferroviaire";
 
-const all = ferroviaire.stations();               // 692
+const all = ferroviaire.stations();               // 691
 const trams = ferroviaire.stationsByType("tram");  // 190 tram stops
 const inAlger = ferroviaire.stationsByWilaya(16);  // rail + metro + tram in Algiers
 ```
@@ -46,7 +46,7 @@ const inAlger = ferroviaire.stationsByWilaya(16);  // rail + metro + tram in Alg
 | --- | --- | --- |
 | Rail (train) | **427** | SNTF |
 | Tram | **190** | SETRAM (7 city networks) |
-| Metro | **41** | SEMA – Métro d'Alger |
+| Metro | **40** | SEMA, Métro d'Alger |
 | Aerial tramway | **24** | – |
 | Gondola | **10** | – |
 
@@ -75,7 +75,7 @@ const stations: Station[] = ferroviaire.stations();
 
 ```
 data/
-  stations.json            # 692 nodes (array)
+  stations.json            # 691 nodes (array)
   metadata.json            # sources, counts, license, updated
   csv/stations.csv
   geojson/stations.geojson # Point features (all geocoded)
@@ -112,7 +112,7 @@ data/
 is `wikidata`, `osm`, or `wikidata+osm` (matched within ~150 m). `name` may be `null`
 for a few OSM-only stops (23 records). `wilaya_code`/`commune` come from a
 nearest-centroid join against `geoalgeria`. `id` is an opaque string, unique within
-`stations.json`, don't parse it. `geo_precision` is `exact` or `approximate` (all 692
+`stations.json`, don't parse it. `geo_precision` is `exact` or `approximate` (all 691
 records are geocoded, so `null` doesn't occur here); `geo_method` records how the
 coordinate was sourced (e.g. `osm_node`, `wikidata`). External ids live under `refs`.
 

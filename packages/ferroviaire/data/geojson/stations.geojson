@@ -2921,8 +2921,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.94,
-          34.920833
+          -1.939886,
+          34.920732
         ]
       },
       "properties": {
@@ -2933,13 +2933,14 @@
         "wilaya_code": "13",
         "commune_code": "1308",
         "commune": "Souani",
-        "lat": 34.920833,
-        "lng": -1.94,
-        "geo_precision": "approximate",
-        "geo_method": "wikidata",
-        "source": "wikidata",
+        "lat": 34.920732,
+        "lng": -1.939886,
+        "geo_precision": "exact",
+        "geo_method": "osm_way",
+        "source": "wikidata+osm",
         "refs": {
-          "wikidata": "Q120282282"
+          "wikidata": "Q120282282",
+          "osm": "way/305835618"
         },
         "type": "rail",
         "line": "Ligne d'Akid Abbes à Ghazaouet",
@@ -4916,37 +4917,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.095127,
-          36.668309
-        ]
-      },
-      "properties": {
-        "id": "16-029",
-        "name": "Berraki - Le Jardin",
-        "name_fr": "Berraki - Le Jardin",
-        "name_ar": "محطة الحديقة",
-        "wilaya_code": "16",
-        "commune_code": "1614",
-        "commune": "Baraki",
-        "lat": 36.668309,
-        "lng": 3.095127,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "refs": {
-          "osm": "node/12942126787"
-        },
-        "type": "metro",
-        "line": null,
-        "operator": "SEMA",
-        "network": "Métro d'Alger"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.090223,
           36.709584
         ]
@@ -5266,8 +5236,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.0866,
-          36.67377
+          3.086585,
+          36.673761
         ]
       },
       "properties": {
@@ -5278,9 +5248,9 @@
         "wilaya_code": "16",
         "commune_code": "1614",
         "commune": "Baraki",
-        "lat": 36.67377,
-        "lng": 3.0866,
-        "geo_precision": "approximate",
+        "lat": 36.673761,
+        "lng": 3.086585,
+        "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "wikidata+osm",
         "refs": {
@@ -5394,25 +5364,26 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.0866,
-          36.67377
+          3.095127,
+          36.668309
         ]
       },
       "properties": {
         "id": "16-044",
         "name": "Jardin",
         "name_fr": "Jardin",
-        "name_ar": null,
+        "name_ar": "محطة الحديقة",
         "wilaya_code": "16",
         "commune_code": "1614",
         "commune": "Baraki",
-        "lat": 36.67377,
-        "lng": 3.0866,
-        "geo_precision": "approximate",
-        "geo_method": "wikidata",
-        "source": "wikidata",
+        "lat": 36.668309,
+        "lng": 3.095127,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "wikidata+osm",
         "refs": {
-          "wikidata": "Q138494132"
+          "wikidata": "Q138494132",
+          "osm": "node/12942126787"
         },
         "type": "metro",
         "line": "ligne 1",
@@ -16068,8 +16039,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.6075,
-          35.65
+          -0.607468,
+          35.650108
         ]
       },
       "properties": {
@@ -16080,9 +16051,9 @@
         "wilaya_code": "31",
         "commune_code": "3105",
         "commune": "Es Senia",
-        "lat": 35.65,
-        "lng": -0.6075,
-        "geo_precision": "approximate",
+        "lat": 35.650108,
+        "lng": -0.607468,
+        "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "wikidata+osm",
         "refs": {
@@ -16100,8 +16071,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.32,
-          35.8473
+          -0.320019,
+          35.847259
         ]
       },
       "properties": {
@@ -16112,9 +16083,9 @@
         "wilaya_code": "31",
         "commune_code": "3106",
         "commune": "Arzew",
-        "lat": 35.8473,
-        "lng": -0.32,
-        "geo_precision": "approximate",
+        "lat": 35.847259,
+        "lng": -0.320019,
+        "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "wikidata+osm",
         "refs": {
@@ -20531,11 +20502,10 @@
         "lat": 32.614138,
         "lng": -0.40639,
         "geo_precision": "approximate",
-        "geo_method": "osm_node",
-        "source": "wikidata+osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
         "refs": {
-          "wikidata": "Q123498570",
-          "osm": "node/9358330035"
+          "wikidata": "Q123498570"
         },
         "type": "rail",
         "line": null,
@@ -20548,8 +20518,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.40639,
-          32.614138
+          -0.405841,
+          32.614388
         ]
       },
       "properties": {
@@ -20560,13 +20530,14 @@
         "wilaya_code": "45",
         "commune_code": "4506",
         "commune": "Moghrar",
-        "lat": 32.614138,
-        "lng": -0.40639,
-        "geo_precision": "approximate",
-        "geo_method": "wikidata",
-        "source": "wikidata",
+        "lat": 32.614388,
+        "lng": -0.405841,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "wikidata+osm",
         "refs": {
-          "wikidata": "Q123498571"
+          "wikidata": "Q123498571",
+          "osm": "node/9358330035"
         },
         "type": "rail",
         "line": null,
@@ -21017,8 +20988,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.14,
-          35.2983
+          -1.140088,
+          35.298338
         ]
       },
       "properties": {
@@ -21029,9 +21000,9 @@
         "wilaya_code": "46",
         "commune_code": "4601",
         "commune": "Ain Temouchent",
-        "lat": 35.2983,
-        "lng": -1.14,
-        "geo_precision": "approximate",
+        "lat": 35.298338,
+        "lng": -1.140088,
+        "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "wikidata+osm",
         "refs": {

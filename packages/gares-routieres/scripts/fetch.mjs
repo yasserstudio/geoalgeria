@@ -7,7 +7,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { loadCommunes, attachCommuneWithRules, describeLinkage, round6, wcode } from "../../../scripts/lib/build-utils.mjs";
+import { loadCommunes, attachCommuneWithRules, describeLinkage, wcode } from "../../../scripts/lib/build-utils.mjs";
 import {
   MIGRATIONS,
   writePackageV2,
@@ -44,7 +44,16 @@ const AGENCIES = JSON.parse(
 const COORD_FIX = {
   86: { lat: 33.1064, lng: 6.0721, geo_precision: "exact" }, // TOUGGOURT
   87: { lat: 24.5532, lng: 9.4841, geo_precision: "exact" }, // DJANET
-  // 85 GUELMA has no usable coord → filled from the Guelma commune centroid below.
+  // GUELMA ships no coordinate at all; until 2026-10-29 it took the Guelma commune
+  // centroid. OSM way 460372288 (version 4) "محطة نقل المسافرين بين الولايات", the
+  // intercity bus station on RN 21, which is this record's address ("Route
+  // stratégique n 21"); bounding-box centre, 1.35 km from the centroid. One open
+  // source with an address tie, so one Vote (ADR 0001, single open lead).
+  85: { lat: 36.4715395, lng: 7.4337368, geo_precision: "exact" },
+  // AIN OUSSARA: SOGRAL's own point (35.463, 2.9) is too coarse to be exact. OSM way
+  // 494669722 (version 4) "المحطة البرية بعين وسارة" lies 65 m from it, on the Cité
+  // Ahmed Zabana side the address names: two Votes, the OSM centre ships.
+  25: { lat: 35.4635735, lng: 2.9001721, geo_precision: "exact" },
   // TINDOUF ships with the longitude's sign flipped (+8.125 for a station at
   // 8.13°W), which also mis-derived wilaya 33/Illizi from the wrong point.
   // OSM node 4593158192 (سوقرال محطة تندوف).
@@ -82,13 +91,11 @@ const COORD_FIX = {
 
 const raw = JSON.parse(readFileSync(SRC, "utf-8"));
 const communes = loadCommunes();
-const guelma = communes.find((c) => c.name_fr === "Guelma");
 
 const records = raw.map((r) => {
   let lat = r.lat, lng = r.lng, geo_precision = r.geo_precision;
   const fix = COORD_FIX[r.id];
   if (fix) { lat = fix.lat; lng = fix.lng; geo_precision = fix.geo_precision; }
-  if (r.id === 85 && guelma) { lat = round6(guelma.latitude); lng = round6(guelma.longitude); geo_precision = "approx"; }
   return {
     id: null, // {wilaya}-{seq} assigned after commune join
     sogral_id: r.id,
