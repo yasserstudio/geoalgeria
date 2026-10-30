@@ -199,14 +199,14 @@ leaves out every institution the Ministry of National Defence supervises and
 their ids stay reserved in `data/retired-ids.json`.
 
 **The queue** is `research/enseignement-superieur/precision-review-2026-10-28.json`,
-written offline and byte for byte by `precision-review.mjs` next to it. All 35
-approximate records (30 `wilaya`, 5 `commune`) are in it exactly once:
+written offline and byte for byte by `precision-review.mjs` next to it. All 6
+approximate records (5 `wilaya`, 1 `commune`) are in it exactly once:
 
 | Outcome | Records |
 | --- | --- |
 | Queued, one candidate for the campus (single source) | 0 |
 | Queued, several candidates for the campus (ambiguous) | 0 |
-| No open candidate in the capture | 35 |
+| No open candidate in the capture | 6 |
 
 Each queued entry carries the OSM element, the tags that make the tie (the
 element's own website host where it has one, else a strict name match), the
@@ -275,9 +275,10 @@ Vote.
 
 **Owner pins that ship (`docs/adr/0001`, "Rule 6 amended", 2026-10-29).** The
 Owner decided that a pin read off Google Maps ships as the coordinate when no open
-object lies within 500 m of it. Three records use it: `00082` ESCF Constantine and `00133` INFSPM Béjaïa (seed
+object lies within 500 m of it. Three records used it on 2026-10-29: `00082` ESCF Constantine and `00133` INFSPM Béjaïa (seed
 `scripts/seeds/second-source.json`) and `00183` (`P09`, seed
-`scripts/seeds/bac-2026.json`), each recorded as `owner_pin`. These three points are
+`scripts/seeds/bac-2026.json`), each recorded as `owner_pin`. The Owner's pin pass of
+2026-10-30 (below) adds 19 more, for 22 in all. These points are
 proprietary-map readings, not open data, and an open object that later confirms the
 place replaces them.
 
@@ -316,12 +317,40 @@ school publishes as Bab El Oued (its OSM point falls on the Casbah side of that
 boundary, 96 m from it): a site the record does not publish, recorded in the
 seed's `osm_search` note.
 
-**Two Votes and one.** 32 of the 100 `exact` records now stand on two
+**Two Votes and one.** 42 of the 165 `exact` records now stand on two
 independent Votes: the 9 above less the two military schools, and ENSTA, `00178`, `00165`, `P08`, `P10`, `P23`, `00073` (ENSTP),
 `00166` (ENS Constantine), `00057` (USTO), `00004` (Alger 1), `00060` (ENP), `00062` (ENP Constantine),
 `00077` (EPAU), `00108` (ESBA), `00042` (Sétif 1), `00050`, `00080`, `00092`, `00107`, `00131`,
-`00136`, `00167`, `00174`, `00175` and `00084` on the Owner's readings. The other 65 rest on a single Nominatim geocode and
+`00136`, `00167`, `00174`, `00175` and `00084` on the Owner's readings, plus the 10 the
+2026-10-30 pin pass settled (below). The other 65 rest on a single Nominatim geocode and
 are reviewed in a separate follow-up pass (private tracker #336).
+
+**The Owner's pin pass of 2026-10-30.** The Owner read a Google Maps entry for
+each record still approximate after the passes above and pinned it on the review
+page; a verification pass then checked every pin against the record's own name,
+its wilaya and commune by reverse geocode, and against OpenStreetMap within 500 m,
+and returned a verdict per pin. All 35 records then approximate were pinned and 29
+verified, and they are the records the queue above no longer holds:
+
+| Placement | Records |
+| --- | --- |
+| On an open OpenStreetMap object the pin confirms (rule 6, the open point ships) | `00093` `00126` `00135` `00139` `00143` `00146` `00147` `00149` `00163` `00188` (`U50`) |
+| On the Owner's pin itself, no open object within 500 m (rule 6 amended) | `00048` `00072` `00089` `00090` `00117` `00121` `00123` `00124` `00127` `00129` `00134` `00137` `00138` `00151` `00155` `00157` `00169` `00180` (`P11`) `00181` (`W91`) |
+
+Each OpenStreetMap object was re-read live from api.openstreetmap.org on
+2026-10-30 for its version, timestamp and point (the centre of its bounding box),
+and the seed records the measured distance to the pin, which the build
+re-measures. Five records change their commune label by containment in the
+committed OpenStreetMap outline rather than by the nearest centre: `00072` to
+Hydra, `00090` to Oran, `00093` to El-Oued, `00126` to Adrar and `00169` to
+Mostaganem. Three readings were rejected as the record's own identity although an
+OpenStreetMap object lay within 500 m, because the object names something else:
+the Sidi Abdellah tech-pole outline for `00180`, as for `P09` before it; the
+Faculté de médecine d'Oran for `00090`; and, for `00151` (EMTO), node
+`3673420544` "Institut International de Management", which is INSIM, the group
+whose Tizi-Ouzou campus hosts EMTO and not EMTO itself. The 6 pins the pass did
+not verify (1 wrong, 1 in doubt, 4 the Owner skipped) changed nothing: those
+records keep their published point and are the 6 still in the queue.
 
 **Re-run.** `NODE_USE_ENV_PROXY=1 node research/enseignement-superieur/fetch-second-sources.mjs`
 refreshes the two captures (behind the build proxy Node needs that variable),
@@ -345,7 +374,7 @@ seed takes precedence over `coordinates.json` and `overrides.json`.
 - **Coordinate precision** is split (`geo_precision`): campus-geocoded vs
   commune/wilaya-centroid fallback; the AR-listing extras resolve from
   embedded location text and are centroid-precision by construction.
-  136 campus, 5 commune, 30 wilaya; the 35 approximate records are in the
+  165 campus, 1 commune, 5 wilaya; the 6 approximate records are in the
   2026-10-28 Review queue above.
 - **The network listing itself is stale.** www.mesrs.dz has not answered since
   2026-08-03, so it omits the 12 establishments the placement file names and

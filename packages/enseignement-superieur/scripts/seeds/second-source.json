@@ -24,6 +24,48 @@
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"School of Hotel & Restaurant Management\" and supplied 36.7862437, 2.9014689, 109 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
+  "ar:المعهد العالي لألداب واللغات “الغفران” غرداية": {
+    "record": "00117, المعهد العالي لألداب واللغات “الغفران” غرداية",
+    "lat": 32.496619,
+    "lng": 3.642107,
+    "wilaya_code": 47,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The map entry shares the distinctive Ghofrane (الغفران) name the record carries, and the pin is in Ghardaia city. No OpenStreetMap object names the institute. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "مجمع الغفران للتعليم العالي",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
+  "ar:المعهد العالي للعلوم الانسانية والتطبيقية غرداية": {
+    "record": "00121, المعهد العالي للعلوم الانسانية والتطبيقية غرداية",
+    "lat": 32.784195,
+    "lng": 4.482516,
+    "wilaya_code": 47,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The map entry carries the institute's own name word for word, and the pin is at El Guerrara, Ghardaia wilaya, 83 km from the wilaya centre the record stood on. The Owner reaffirmed the same point on the second pass of 2026-10-30, which settled the one-word reading the first pass had queried. No OpenStreetMap object names the institute. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "المعهد العالي للعلوم الإنسانية والتطبيقية",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
+  "ar:المعهد الوطني العالي للموسيقى (الجزائر)": {
+    "record": "00124, المعهد الوطني العالي للموسيقى (الجزائر)",
+    "lat": 36.787567,
+    "lng": 3.063724,
+    "wilaya_code": 16,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The map entry carries the institute's own name and its Casbah location, 1.3 km from the wilaya centre the record stood on. No OpenStreetMap object names it. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "Institut National Supérieur du musique, Casbah, Algeria",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
   "ar:المعهد الوطني للتكوين العالي شبه الطبي الجزائر": {
     "record": "00125, المعهد الوطني للتكوين العالي شبه الطبي الجزائر",
     "lat": 36.7361113,
@@ -35,6 +77,58 @@
       "ref": "025e0237-be19-4fdf-bc1a-11c0742a920a",
       "read_at": "2026-10-29",
       "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بأدرار": {
+    "record": "00126, المعهد الوطني للتكوين العالي شبه الطبي بأدرار",
+    "lat": 27.8693132,
+    "lng": -0.2767111,
+    "osm": "way/376603051",
+    "osm_version": 4,
+    "osm_timestamp": "2026-09-23T11:48:36Z",
+    "osm_name": "Institut de Formation Paramédicale;معهد التكوين الشبه طبي",
+    "wilaya_code": 1,
+    "commune": "Adrar",
+    "why": "OSM way/376603051, amenity=college, name:fr \"Institut de Formation Paramedicale\" in Adrar city (name tie), read live from api.openstreetmap.org on 2026-10-30; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading of 2026-10-30 under docs/adr/0001 rule 6, recorded below: 35 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Adrar, whose committed OpenStreetMap outline contains the point. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/376603051",
+      "point": [
+        -0.276504,
+        27.869571
+      ],
+      "metres_from_published_value": 35,
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"(INPFP) Institut National Pédagogique de Formation Paramédicale.\" and supplied 27.869571, -0.276504, 35 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بالبليدة": {
+    "record": "00127, المعهد الوطني للتكوين العالي شبه الطبي بالبليدة",
+    "lat": 36.523057,
+    "lng": 2.857343,
+    "wilaya_code": 9,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The map entry carries the institute's own name; the pin is 6.3 km from the wilaya centre the record stood on, at Beni Mered inside Blida wilaya. No OpenStreetMap object names it. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "Institut National De Formation Supérieure Paramédicale Blida",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بالتبسة": {
+    "record": "00129, المعهد الوطني للتكوين العالي شبه الطبي بالتبسة",
+    "lat": 35.426065,
+    "lng": 8.064047,
+    "wilaya_code": 12,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The map entry carries the generic institute name; the pin is on the route de Constantine in Tebessa city, the record's own wilaya seat. No OpenStreetMap object names it. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "المعهد الوطني للتكوين العالي شبه طبي",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
     }
   },
   "ar:المعهد الوطني للتكوين العالي شبه الطبي بالمدية": {
@@ -101,6 +195,43 @@
       "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
     }
   },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي ببسكرة": {
+    "record": "00134, المعهد الوطني للتكوين العالي شبه الطبي ببسكرة",
+    "lat": 34.83844,
+    "lng": 5.730125,
+    "wilaya_code": 7,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The map entry carries the institute's name; the pin is 1.4 km from the wilaya centre the record stood on, inside Biskra commune. No OpenStreetMap object names it. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "Institut National de Formation paramédical",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي ببشار": {
+    "record": "00135, المعهد الوطني للتكوين العالي شبه الطبي ببشار",
+    "lat": 31.6063385,
+    "lng": -2.2262112,
+    "osm": "node/2677340588",
+    "osm_version": 2,
+    "osm_timestamp": "2020-11-18T23:10:10Z",
+    "osm_name": "Ecole Paramedicale",
+    "wilaya_code": 8,
+    "why": "OSM node/2677340588 \"Ecole Paramedicale\" in Bechar (name tie), read live from api.openstreetmap.org on 2026-10-30; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading of 2026-10-30 under docs/adr/0001 rule 6, recorded below: 51 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "node/2677340588",
+      "point": [
+        -2.225668,
+        31.606339
+      ],
+      "metres_from_published_value": 51,
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Institute Superieur De La Formation Paramédical\" and supplied 31.606339, -2.225668, 51 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
   "ar:المعهد الوطني للتكوين العالي شبه الطبي بتيارت": {
     "record": "00136, المعهد الوطني للتكوين العالي شبه الطبي بتيارت, INFSPM Tiaret (Institut national de formation supérieure paramédicale)",
     "lat": 35.3850268,
@@ -123,6 +254,57 @@
       "read_by": "project owner",
       "source": "Google Maps, a proprietary map",
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Infspm Tiaret\" and supplied 35.3856964, 1.3142261, 89 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بجيجل": {
+    "record": "00137, المعهد الوطني للتكوين العالي شبه الطبي بجيجل",
+    "lat": 36.815027,
+    "lng": 5.765282,
+    "wilaya_code": 18,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The map entry carries the institute's own name; the nearest named OpenStreetMap object is a psychiatric hospital 71 m away (node/5417590700), which is the hospital whose grounds the institute shares and no Candidate for the institute itself. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "Institut National De Formation Supérieure Paramédical INFSPM Jijel",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بسطيف": {
+    "record": "00138, المعهد الوطني للتكوين العالي شبه الطبي بسطيف",
+    "lat": 36.197818,
+    "lng": 5.403271,
+    "wilaya_code": 19,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The map entry carries the institute's own name; the pin is 1.3 km from the wilaya centre the record stood on, inside Setif commune. No OpenStreetMap object names it. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "INSTITUT NATIONAL DE FORMATION SUPERIEURE PARAMEDICALE SETIF",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بسعيدة": {
+    "record": "00139, المعهد الوطني للتكوين العالي شبه الطبي بسعيدة",
+    "lat": 34.8299763,
+    "lng": 0.1632544,
+    "osm": "way/332895230",
+    "osm_version": 2,
+    "osm_timestamp": "2015-03-15T15:41:08Z",
+    "osm_name": "Ecole de Formation Paramédicale de Saida",
+    "wilaya_code": 20,
+    "why": "OSM way/332895230 \"Ecole de Formation Paramedicale de Saida\", amenity=college, route de Tiaret (name tie), read live from api.openstreetmap.org on 2026-10-30; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading of 2026-10-30 under docs/adr/0001 rule 6, recorded below: 70 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/332895230",
+      "point": [
+        0.163222,
+        34.830604
+      ],
+      "metres_from_published_value": 70,
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Medical similarities Training Institute\" and supplied 34.830604, 0.163222, 70 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
   "ar:المعهد الوطني للتكوين العالي شبه الطبي بسيدي بلعباس": {
@@ -151,6 +333,29 @@
       "tie": "name"
     }
   },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بقسنطينة": {
+    "record": "00143, المعهد الوطني للتكوين العالي شبه الطبي بقسنطينة",
+    "lat": 36.3320743,
+    "lng": 6.6182945,
+    "osm": "way/175174408",
+    "osm_version": 4,
+    "osm_timestamp": "2025-03-10T14:25:57Z",
+    "osm_name": "Institut paramédical",
+    "wilaya_code": 25,
+    "why": "OSM way/175174408 \"Institut paramedical\", amenity=college, in Constantine (name tie), read live from api.openstreetmap.org on 2026-10-30; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading of 2026-10-30 under docs/adr/0001 rule 6, recorded below: 43 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/175174408",
+      "point": [
+        6.617907,
+        36.331839
+      ],
+      "metres_from_published_value": 43,
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Institute Nationel De Formation Superieure Paramédical Constantine\" and supplied 36.331839, 6.617907, 43 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
   "ar:المعهد الوطني للتكوين العالي شبه الطبي بمستغانم": {
     "record": "00144, المعهد الوطني للتكوين العالي شبه الطبي بمستغانم",
     "lat": 35.9130508,
@@ -175,6 +380,89 @@
       "ref": "way/375082795",
       "read_at": "2026-10-29",
       "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بورقلة": {
+    "record": "00146, المعهد الوطني للتكوين العالي شبه الطبي بورقلة",
+    "lat": 31.9638159,
+    "lng": 5.3295772,
+    "osm": "way/405070120",
+    "osm_version": 5,
+    "osm_timestamp": "2020-11-29T02:08:23Z",
+    "osm_name": "المعهد الوطني للشبه طبي",
+    "wilaya_code": 30,
+    "why": "OSM way/405070120, amenity=college, name:fr \"Institut National de formation medicale et Paramedicale\", short_name:fr INFSPM, in Ouargla (name tie), read live from api.openstreetmap.org on 2026-10-30; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading of 2026-10-30 under docs/adr/0001 rule 6, recorded below: 57 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/405070120",
+      "point": [
+        5.329214,
+        31.963409
+      ],
+      "metres_from_published_value": 57,
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Ecole Paramedicale\" and supplied 31.963409, 5.329214, 57 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بوهران 1": {
+    "record": "00147, المعهد الوطني للتكوين العالي شبه الطبي بوهران 1",
+    "lat": 35.6804321,
+    "lng": -0.6379617,
+    "osm": "way/233189504",
+    "osm_version": 2,
+    "osm_timestamp": "2016-12-05T17:52:50Z",
+    "osm_name": "Centre de Formation de Pratique Médicale",
+    "wilaya_code": 31,
+    "why": "OSM way/233189504 \"Centre de Formation de Pratique Medicale\", amenity=college, in Oran (name tie), read live from api.openstreetmap.org on 2026-10-30; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading of 2026-10-30 under docs/adr/0001 rule 6, recorded below: 63 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/233189504",
+      "point": [
+        -0.637652,
+        35.680937
+      ],
+      "metres_from_published_value": 63,
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Infspmoran\" and supplied 35.680937, -0.637652, 63 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي للقابلات بعنابة": {
+    "record": "00149, المعهد الوطني للتكوين العالي شبه الطبي للقابلات بعنابة",
+    "lat": 36.9085943,
+    "lng": 7.7326952,
+    "osm": "way/342290332",
+    "osm_version": 3,
+    "osm_timestamp": "2016-12-29T19:51:04Z",
+    "osm_name": "Ecole Paramédicale",
+    "wilaya_code": 23,
+    "why": "OSM way/342290332 \"Ecole Paramedicale\", amenity=college, route Bicha Youcef, Annaba (name tie), read live from api.openstreetmap.org on 2026-10-30; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading of 2026-10-30 under docs/adr/0001 rule 6, recorded below: 62 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/342290332",
+      "point": [
+        7.732968,
+        36.908082
+      ],
+      "metres_from_published_value": 62,
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Institut National De Formation Superieure Des Sages Femmes\" and supplied 36.908082, 7.732968, 62 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "ar:معهد التكنولوجيا ( نوميديا) سيدي عبد الله .الجزائر": {
+    "record": "00157, معهد التكنولوجيا ( نوميديا) سيدي عبد الله .الجزائر",
+    "lat": 36.680775,
+    "lng": 2.899932,
+    "wilaya_code": 16,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The map entry carries the institute's own name; the pin is at Sidi Abdellah, the locality the record's own Arabic name names, inside Rahmania. No OpenStreetMap object names it. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "Numidia Institute of Technology",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
     }
   },
   "host:asal.dz": {
@@ -263,6 +551,20 @@
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"University of illizi\" and supplied 26.5215305, 8.4819479, 201 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
+  "host:cuniv-tindouf.dz": {
+    "record": "00048, Université de Tindouf-Ali Kafi",
+    "lat": 27.676054,
+    "lng": -8.127745,
+    "wilaya_code": 37,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The pin is 0.6 km from the wilaya centre the record stood on, inside Tindouf commune, and the map entry carries the university's own name. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "University of Tindouf Ali kafi",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
   "host:cuniv-tissemsilt.dz": {
     "record": "00050, Université de Tissemsilt",
     "lat": 35.5997812,
@@ -311,6 +613,20 @@
       "ref": "847d807f-3e68-4164-9fb0-222a172a3842",
       "read_at": "2026-10-29",
       "tie": "website"
+    }
+  },
+  "host:emto-univ.com": {
+    "record": "00151, مدرسة ادارة الأعمال المدينة الجديدة تيزي وزو",
+    "lat": 36.702312,
+    "lng": 4.047313,
+    "wilaya_code": 15,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The map entry carries the school's own name. The nearest OpenStreetMap object, node/3673420544 \"Institut International de Management\" 8 m away, is INSIM, the group whose Tizi-Ouzou campus hosts EMTO and not EMTO itself, so it states nothing about this record's own identity and is no Candidate for it. The pin is at Nouvelle Ville, Tizi-Ouzou, the locality the record's own name gives. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "École De Management De Tizi-Ouzou Emto",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
     }
   },
   "host:encrbc.dz": {
@@ -424,6 +740,21 @@
       "note": "The institution's own published location. Not an open coordinate."
     }
   },
+  "host:ens.univ-mosta.dz": {
+    "record": "00169, Ecole Normale Supérieure de Mostaganem",
+    "lat": 35.938811,
+    "lng": 0.113867,
+    "wilaya_code": 27,
+    "commune": "Mostaganem",
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The map entry carries the school's own name; the pin is 2.7 km from the wilaya centre the record stood on and lands on the ENS architecture department at Mostaganem. No OpenStreetMap object names the ENS. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "Ens École Supérieure Nationale Mostaganem",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
   "host:ensa.dz": {
     "record": "00063, Ecole nationale supérieure agronomique- Khalef Abdellah alias Kasdi Merbah",
     "lat": 36.7201391,
@@ -471,6 +802,29 @@
       "read_by": "project owner",
       "source": "Google Maps, a proprietary map",
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry for the Higher Normal School of Bouzaréah and supplied 36.7816117, 3.0124453, 46 m from the OSM object. Under docs/adr/0001 \"Rule 6 in detail\" an Owner reading is never a Copied claim, so it is an independent Vote inside the 500 m ceiling, and the coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:ensb.univ-bechar.dz": {
+    "record": "00163, Ecole normale supérieure de Béchar",
+    "lat": 31.6035835,
+    "lng": -2.2327063,
+    "osm": "way/557149170",
+    "osm_version": 2,
+    "osm_timestamp": "2019-10-08T20:07:31Z",
+    "osm_name": "ENS Béchar",
+    "wilaya_code": 8,
+    "why": "OSM way/557149170 \"ENS Bechar\", building=university, avenue Independence, Bechar (name tie), read live from api.openstreetmap.org on 2026-10-30; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading of 2026-10-30 under docs/adr/0001 rule 6, recorded below: 20 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/557149170",
+      "point": [
+        -2.232918,
+        31.603578
+      ],
+      "metres_from_published_value": 20,
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"المدرسة العليا للأساتذة بشار\" and supplied 31.603578, -2.232918, 20 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
   "host:ensc.dz": {
@@ -617,6 +971,21 @@
       "tie": "website"
     }
   },
+  "host:enssp.dz": {
+    "record": "00072, Ecole Nationale Supérieure des sciences politiques",
+    "lat": 36.750234,
+    "lng": 3.015344,
+    "wilaya_code": 16,
+    "commune": "Hydra",
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The pin is 1.1 km from the Ben Aknoun centre the record stood on, at Hydra, and the map entry carries the school's own name. Nothing in OpenStreetMap names this school. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "Higher National School Of Political Sciences",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
   "host:ensttic.dz": {
     "record": "00112, المدرسة الوطنية العليا للاتصالات السلكية واللّاسلكية وتكنولوجيات الإعلام والاتصال (وهران).",
     "lat": 35.6649136,
@@ -715,6 +1084,30 @@
       "tie": "website"
     }
   },
+  "host:esas-eloued.dz": {
+    "record": "00093, Ecole nationale supérieure d'agriculture saharienne d'El Oued",
+    "lat": 33.336528,
+    "lng": 6.8680616,
+    "osm": "way/459046773",
+    "osm_version": 4,
+    "osm_timestamp": "2023-07-21T15:37:58Z",
+    "osm_name": "Université d'El Oued - Faculté d'économie",
+    "wilaya_code": 39,
+    "commune": "El-Oued",
+    "why": "OSM way/459046773 \"Universite d'El Oued - Faculte d'economie\", amenity=university, the El Oued university campus the saharan-agriculture school sits on, read live from api.openstreetmap.org on 2026-10-30; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading of 2026-10-30 under docs/adr/0001 rule 6, recorded below: 54 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: El-Oued, whose committed OpenStreetMap outline contains the point. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/459046773",
+      "point": [
+        6.867512,
+        33.336379
+      ],
+      "metres_from_published_value": 54,
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"المدرسة العليا للفلاحة الصحراوية بالوادي ESAS 39\" and supplied 33.336379, 6.867512, 54 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
   "host:esba.dz": {
     "record": "00108, المدرسة العليا للفنون الجميلة (الجزائر), École supérieure des beaux-arts (ESBA)",
     "lat": 36.7616947,
@@ -796,6 +1189,21 @@
       "tie": "website"
     }
   },
+  "host:esgee-oran.dz": {
+    "record": "00090, Ecole Supérieure en Génie Electrique et Energétique d’Oran ex EP ST Oran",
+    "lat": 35.670755,
+    "lng": -0.635709,
+    "wilaya_code": 31,
+    "commune": "Oran",
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The pin lands in the Oran medical and engineering campus cluster; the nearest OpenStreetMap object is the Faculte de medecine d'Oran (way/71134940), 50 m away, which is a different establishment and so no Candidate for this school. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "ESGEE - Higher School of Electrical and Energy Engineering",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
   "host:esgen.edu.dz": {
     "record": "00083, Ecole Supérieure de Gestion et d’Economie Numérique",
     "lat": 36.6401099,
@@ -871,6 +1279,20 @@
       "tie": "website"
     }
   },
+  "host:esti-annaba.dz": {
+    "record": "00089, Ecole nationale supérieure des technologies et d'ingénierie (Annaba)",
+    "lat": 36.808501,
+    "lng": 7.718206,
+    "wilaya_code": 23,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The pin lands in the Sidi Amar university pole of Annaba, the campus area the school publishes, and the map entry carries its own name. No OpenStreetMap object names it. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "National Higher School of Technology and Engineering (NHSTE)",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
   "host:his.edu.dz": {
     "record": "00122, المعهد العالي للعلوم برج الكيفان الجزائر",
     "lat": 36.7557532,
@@ -908,6 +1330,21 @@
       "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Ecole Nationale Supérieure En Energies Renouvelables, Environnement Et Développement Durable\" and supplied 35.631268, 6.2749599, 29 m from this OSM object. The coordinate that ships is OpenStreetMap's."
     }
   },
+  "host:ibnrochd.com": {
+    "record": "00123, المعهد العالي للعلوم والتكنولوجيا - علوم تجريبية ابن رشد",
+    "lat": 36.750455,
+    "lng": 3.020993,
+    "wilaya_code": 16,
+    "commune": "Hydra",
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The pin sits on Chemin de la Madeleine at Djenane El Malik, Hydra, which is the address the institute publishes on its own site (ibnrochd.com, \"42 Chemin de la madeleine, Hydra - Alger\"); the only OpenStreetMap object there is the street itself (way/781327038), which is no Candidate for the institute. The reading is recorded in the Owner's pin pass of 2026-10-30, which superseded an earlier link that named a different school. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "a Google Maps place link that carries no place name, only its coordinates and its place id",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
   "host:imaa-univ.com": {
     "record": "00159, معهد المناجمنت سعيد حمدين بالجزائر",
     "lat": 36.7363667,
@@ -932,6 +1369,20 @@
       "ref": "c9263e9d-a0d3-4e9e-9651-89ffc2813667",
       "read_at": "2026-10-29",
       "tie": "website"
+    }
+  },
+  "host:inoof-dz.com": {
+    "record": "00155, معهد البصريات اولاد فايت. الجزائر",
+    "lat": 36.731062,
+    "lng": 2.952322,
+    "wilaya_code": 16,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this institution, so the Owner's pin ships as its coordinate. The pin is in Ouled Fayet, the commune the record's own Arabic name names; the nearest named OpenStreetMap object is the INSFP Ahmed Mahdi 73 m away, a different vocational centre and no Candidate for this institute. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+    "owner_pin": {
+      "read_at": "2026-10-30",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "Institut National de l'Audiovisuel",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
     }
   },
   "host:inptic.edu.dz": {

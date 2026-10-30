@@ -46,7 +46,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00045,Université de Tamenghasset,جامعة تامنغست,11,,Tamanrasset,22.8057761,5.5060445,exact,campus,mesrs,universite,Université,public,,https://univ-tam.dz/fr/
 00046,Université de Tébessa - Larbi Tébessi,جامعة تبسة - العربي التبسي,12,,Tébessa,35.4243876,8.0760054,exact,campus,mesrs,universite,Université,public,,http://www.univ-tebessa.dz/
 00047,Université de Tiaret - Ibn Khaldoun,جامعة بن خلدون تيارت,14,,Tiaret,35.3542264,1.3147695,exact,campus,mesrs,universite,Université,public,,http://www.univ-tiaret.dz/
-00048,Université de Tindouf-Ali Kafi,جامعة بتندوف - المجاهد علي كافي,37,,,27.670556,-8.12724,approximate,wilaya,mesrs,universite,Université,public,,http://www.cuniv-tindouf.dz/
+00048,Université de Tindouf-Ali Kafi,جامعة بتندوف - المجاهد علي كافي,37,,Tindouf,27.676054,-8.127745,exact,campus,mesrs,universite,Université,public,,http://www.cuniv-tindouf.dz/
 00049,université de Tipaza - Abdallah Morsli,جامعة تيبازة - عبد الله مرسلي,42,,Tipaza,36.5900041,2.4492364,exact,campus,mesrs,universite,Université,public,,https://ar.cu-tipaza.dz/
 00050,Université de Tissemsilt,,38,,Tissemsilt,35.5997812,1.8243967,exact,campus,mesrs,universite,Université,public,,http://www.cuniv-tissemsilt.dz/
 00051,Université de Tizi Ouzou - Mouloud Maameri,جامعة تيزي وزو - مولود معمري,15,,Tizi-Ouzou,36.6978991,4.0577472,exact,campus,mesrs,universite,Université,public,,http://www.ummto.dz/
@@ -69,7 +69,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00068,Ecole nationale supérieure de management,المدرسة الوطنية العليا للمناجمنت,42,,Kolea,36.6420957,2.7902762,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.ensm.dz/
 00070,Ecole nationale supérieure des mines et de la métallurgie - Amar Laskri,,23,,Sidi Amar,36.8204669,7.7271906,exact,campus,mesrs,grande_ecole,Grande école,public,,http://ensmm-annaba.dz/
 00071,Ecole nationale supérieure des sciences de la mer et de l’aménagement du littoral,,16,,Dely Ibrahim,36.7553186,2.9817799,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.enssmal.dz/
-00072,Ecole Nationale Supérieure des sciences politiques,المدرسة الوطنية العليا للعلوم السياسية,16,,Ben Aknoun,36.758895,3.0100658,approximate,commune,mesrs,grande_ecole,Grande école,public,,http://www.enssp.dz/
+00072,Ecole Nationale Supérieure des sciences politiques,المدرسة الوطنية العليا للعلوم السياسية,16,,Hydra,36.750234,3.015344,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.enssp.dz/
 00073,Ecole nationale supérieure des travaux publics - Francis Jeanson,,16,,Kouba,36.726099,3.0685878,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.entp.edu.dz/
 00074,École Nationale Supérieure en Intelligence Artificielle,المدرسة الوطنية العليا للذكاء الاصطناعي,16,,Maalma,36.68007,2.87526,exact,campus,mesrs,grande_ecole,Grande école,public,,https://ensia.edu.dz/
 00075,Ecole nationale supérieure en statistique et en économie appliquée,,42,,Kolea,36.6405353,2.7913487,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.enssea.net/
@@ -85,11 +85,11 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00086,Ecole Supérieure des Sciences Appliquées de Tlemcen ex EP ST Tlemcen,المدرسة العليا في علوم التطبيقية بتلمسان سابقا- ق. ت. ع. ت.- تلمسان,13,,Tlemcen,34.8775602,-1.3267135,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.essa-tlemcen.dz/
 00087,Ecole Supérieure des sciences Biologiques d’ Oran ex EP SNV Oran,المدرسة العليا للعلوم البيولوجية بوهران سابقا-ق. ت. ع.ط.ح. - وھران,31,,Es Senia,35.6434867,-0.6228733,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.essb-oran.edu.dz/index.php/fr/
 00088,Ecole Supérieure des Sciences de l’Aliment et des Industries Agroalimentaires d’Alger ex EP SNV Alger,المدرسة العليا في علوم الغذاء والصناعات الغذائية الفلاحية بالجزائر سابقا- ق. ت. ع.ط.ح -الجزائر,16,,El Harrach,36.7148754,3.1537306,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.essaia.dz/
-00089,Ecole nationale supérieure des technologies et d'ingénierie (Annaba),,23,,,36.9,7.7667,approximate,wilaya,mesrs+bac-2026,grande_ecole,Grande école,public,,https://esti-annaba.dz/
-00090,Ecole Supérieure en Génie Electrique et Energétique d’Oran ex EP ST Oran,المدرسة العليا في الهندسة الكهروبائية والطاقوية بوهران سابقا-ق. ت. ع. ت.- وھران,31,,,35.70833333,-0.6331,approximate,wilaya,mesrs,grande_ecole,Grande école,public,,http://www.esgee-oran.dz/
+00089,Ecole nationale supérieure des technologies et d'ingénierie (Annaba),,23,,Sidi Amar,36.808501,7.718206,exact,campus,mesrs+bac-2026,grande_ecole,Grande école,public,,https://esti-annaba.dz/
+00090,Ecole Supérieure en Génie Electrique et Energétique d’Oran ex EP ST Oran,المدرسة العليا في الهندسة الكهروبائية والطاقوية بوهران سابقا-ق. ت. ع. ت.- وھران,31,,Oran,35.670755,-0.635709,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.esgee-oran.dz/
 00091,École Supérieure en Sciences et Technologies de l’Informatique et du Numérique de Bejaia,المدرسة العليا في علوم وتكنولوجيات الإعلام الآلي ببجاية,06,,Amizour,36.6635093,4.9132188,exact,campus,mesrs,grande_ecole,Grande école,public,,https://estin.dz/
 00092,"L’Ecole nationale supérieure des énergies renouvelables, environnement et développement durable - Batna",المدرسة الوطنية العليا للطاقات المتجددة والبيئة والتنمية المستدامة,05,,Fesdis,35.6311157,6.2752156,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.hns-re2sd.dz/
-00093,Ecole nationale supérieure d'agriculture saharienne d'El Oued,المدرسة الوطنية العليا للزراعات الصحراوية - الوادي,39,,,33.36111111,6.8605556,approximate,wilaya,mesrs+bac-2026,grande_ecole,Grande école,public,,http://esas-eloued.dz/
+00093,Ecole nationale supérieure d'agriculture saharienne d'El Oued,المدرسة الوطنية العليا للزراعات الصحراوية - الوادي,39,,El-Oued,33.336528,6.8680616,exact,campus,mesrs+bac-2026,grande_ecole,Grande école,public,,http://esas-eloued.dz/
 00103,,المدرسة العليا للضمان الاجتماعي (بن عكنون، ولاية الجزائر).,16,,Ben Aknoun,36.7550283,2.9984674,exact,campus,mesrs,grande_ecole,Grande école,public,"Ministère du Travail, de l'Emploi et de la Sécurité sociale",https://asal.dz/?p=8583&amp;lang=ar
 00106,,المدرسة العليا للعلوم والتكنولوجيا واد الرمان العاشور.الجزائر,16,,Draria,36.7099643,2.9965412,exact,campus,mesrs,grande_ecole,Grande école,private,,http://www.esst-sup.com/
 00107,,المدرسة العليا للفندقة والإطعام عين البنيان بالجزائر,16,,Ain Benian,36.7866998,2.9003914,exact,campus,mesrs,grande_ecole,Grande école,private,,
@@ -98,58 +98,58 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00112,,المدرسة الوطنية العليا للاتصالات السلكية واللّاسلكية وتكنولوجيات الإعلام والاتصال (وهران).,31,,Es Senia,35.6649136,-0.6383488,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Poste et des Télécommunications,http://www.ensttic.dz/
 00113,,المدرسة الوطنية العليا للبريد وتكنولوجيات الإعلام والاتصال (الكاليتوس، ولاية الجزائر).,16,,Les Eucalyptus,36.655334,3.1468977,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Poste et des Télécommunications,https://inptic.edu.dz/
 00114,,المدرسة الوطنية لحفظ الممتلكات الثقافية (تيبازة),42,,Tipaza,36.5914375,2.4590156,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Culture et des Arts,https://encrbc.dz/ar/
-00117,,المعهد العالي لألداب واللغات “الغفران” غرداية,47,,,32.4833,3.6667,approximate,wilaya,mesrs,grande_ecole,Grande école,private,,
+00117,,المعهد العالي لألداب واللغات “الغفران” غرداية,47,,Ghardaia,32.496619,3.642107,exact,campus,mesrs,grande_ecole,Grande école,private,,
 00119,,المعهد العالي للتجارة والاقتصاد سطيف,19,,Setif,36.1873268,5.443087,exact,campus,mesrs,grande_ecole,Grande école,private,,https://www.incgdz.com/
 00120,,المعهد العالي للتسيير دالي براهيم,16,,Ouled Fayet,36.749881,2.9482848,exact,campus,mesrs,grande_ecole,Grande école,private,,https://isg.dz/
-00121,,المعهد العالي للعلوم الانسانية والتطبيقية غرداية,47,,,32.4833,3.6667,approximate,wilaya,mesrs,grande_ecole,Grande école,private,,
+00121,,المعهد العالي للعلوم الانسانية والتطبيقية غرداية,47,,El Guerrara,32.784195,4.482516,exact,campus,mesrs,grande_ecole,Grande école,private,,
 00122,,المعهد العالي للعلوم برج الكيفان الجزائر,16,,Bordj El Kiffan,36.7557532,3.2234393,exact,campus,mesrs,grande_ecole,Grande école,private,,https://his.edu.dz/
-00123,,المعهد العالي للعلوم والتكنولوجيا - علوم تجريبية ابن رشد,16,,,36.776335,3.058211,approximate,wilaya,mesrs,grande_ecole,Grande école,private,,https://www.ibnrochd.com/sup/
-00124,,المعهد الوطني العالي للموسيقى (الجزائر),16,,,36.776335,3.058211,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Culture et des Arts,
+00123,,المعهد العالي للعلوم والتكنولوجيا - علوم تجريبية ابن رشد,16,,Hydra,36.750455,3.020993,exact,campus,mesrs,grande_ecole,Grande école,private,,https://www.ibnrochd.com/sup/
+00124,,المعهد الوطني العالي للموسيقى (الجزائر),16,,Casbah,36.787567,3.063724,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Culture et des Arts,
 00125,,المعهد الوطني للتكوين العالي شبه الطبي الجزائر,16,,El Magharia,36.7361113,3.1037244,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00126,,المعهد الوطني للتكوين العالي شبه الطبي بأدرار,01,,,27.87429,-0.297222,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00127,,المعهد الوطني للتكوين العالي شبه الطبي بالبليدة,09,,,36.47004,2.8319,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00126,,المعهد الوطني للتكوين العالي شبه الطبي بأدرار,01,,Adrar,27.8693132,-0.2767111,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00127,,المعهد الوطني للتكوين العالي شبه الطبي بالبليدة,09,,Beni Mered,36.523057,2.857343,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00128,,المعهد الوطني للتكوين العالي شبه الطبي بالبويرة,10,,,36.37763,3.8962348,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00129,,المعهد الوطني للتكوين العالي شبه الطبي بالتبسة,12,,,35.405556,8.12417,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00129,,المعهد الوطني للتكوين العالي شبه الطبي بالتبسة,12,,Tébessa,35.426065,8.064047,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00130,,المعهد الوطني للتكوين العالي شبه الطبي بالمدية,26,,Médéa,36.2607855,2.757912,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00131,,المعهد الوطني للتكوين العالي شبه الطبي بالمسيلة,28,,M'Sila,35.7028121,4.5345708,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00132,,المعهد الوطني للتكوين العالي شبه الطبي بباتنة,05,,Batna,35.5331342,6.1881351,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00133,,المعهد الوطني للتكوين العالي شبه الطبي ببجاية,06,,Bejaia,36.7590953,5.0767555,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00134,,المعهد الوطني للتكوين العالي شبه الطبي ببسكرة,07,,,34.850882,5.729074,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00135,,المعهد الوطني للتكوين العالي شبه الطبي ببشار,08,,,31.61667,-2.21667,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00134,,المعهد الوطني للتكوين العالي شبه الطبي ببسكرة,07,,Biskra,34.83844,5.730125,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00135,,المعهد الوطني للتكوين العالي شبه الطبي ببشار,08,,Bechar,31.6063385,-2.2262112,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00136,,المعهد الوطني للتكوين العالي شبه الطبي بتيارت,14,,Tiaret,35.3850268,1.3136792,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00137,,المعهد الوطني للتكوين العالي شبه الطبي بجيجل,18,,,36.82055,5.7667,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00138,,المعهد الوطني للتكوين العالي شبه الطبي بسطيف,19,,,36.19112,5.4150871,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00139,,المعهد الوطني للتكوين العالي شبه الطبي بسعيدة,20,,,34.833333,0.15,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00137,,المعهد الوطني للتكوين العالي شبه الطبي بجيجل,18,,Jijel,36.815027,5.765282,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00138,,المعهد الوطني للتكوين العالي شبه الطبي بسطيف,19,,Setif,36.197818,5.403271,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00139,,المعهد الوطني للتكوين العالي شبه الطبي بسعيدة,20,,Saida,34.8299763,0.1632544,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00140,,المعهد الوطني للتكوين العالي شبه الطبي بسكيكدة,21,,,36.87617,6.9,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00141,,المعهد الوطني للتكوين العالي شبه الطبي بسيدي بلعباس,22,,Sidi Bel-Abbes,35.1939,-0.641389,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00142,,المعهد الوطني للتكوين العالي شبه الطبي بعين الدفلة,44,,Khemis-Miliana,36.2599441,2.2330821,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00143,,المعهد الوطني للتكوين العالي شبه الطبي بقسنطينة,25,,,36.364164,6.608428,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00143,,المعهد الوطني للتكوين العالي شبه الطبي بقسنطينة,25,,Constantine,36.3320743,6.6182945,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00144,,المعهد الوطني للتكوين العالي شبه الطبي بمستغانم,27,,Mostaganem,35.9130508,0.086131,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00145,,المعهد الوطني للتكوين العالي شبه الطبي بمعسكر,29,,Mascara,35.3794338,0.1221791,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00146,,المعهد الوطني للتكوين العالي شبه الطبي بورقلة,30,,,31.95,5.3167,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00147,,المعهد الوطني للتكوين العالي شبه الطبي بوهران 1,31,,,35.70833333,-0.6331,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00146,,المعهد الوطني للتكوين العالي شبه الطبي بورقلة,30,,Ouargla,31.9638159,5.3295772,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00147,,المعهد الوطني للتكوين العالي شبه الطبي بوهران 1,31,,Oran,35.6804321,-0.6379617,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00148,,المعهد الوطني للتكوين العالي شبه الطبي للقابلات بالجزائر,16,,,36.776335,3.058211,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
-00149,,المعهد الوطني للتكوين العالي شبه الطبي للقابلات بعنابة,23,,,36.9,7.7667,approximate,wilaya,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
+00149,,المعهد الوطني للتكوين العالي شبه الطبي للقابلات بعنابة,23,,Annaba,36.9085943,7.7326952,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Santé,
 00150,,المعهد الوطني لمهن فنون العرض والسمعي البصري,16,,Bordj El Kiffan,36.747447,3.1832939,exact,campus,mesrs,grande_ecole,Grande école,public,Ministère de la Culture et des Arts,https://ismas.dz/
-00151,,مدرسة ادارة الأعمال المدينة الجديدة تيزي وزو,15,,,36.733333,4.05,approximate,wilaya,mesrs,grande_ecole,Grande école,private,,http://emto-univ.com/
+00151,,مدرسة ادارة الأعمال المدينة الجديدة تيزي وزو,15,,Tizi-Ouzou,36.702312,4.047313,exact,campus,mesrs,grande_ecole,Grande école,private,,http://emto-univ.com/
 00152,,مدرسة ادارة الأعمال بالجزائر(بيزناس سكول) حيدرة الجزائر,16,,Mohamed Belouzdad,36.7545014,3.06058,exact,campus,mesrs,grande_ecole,Grande école,private,,https://em-alger.com/
 00153,,مدرسة التكوين في تقنيات التسيير دالي ابراهيم الجزائر,16,,Dely Ibrahim,36.753514,2.993315,exact,campus,mesrs,grande_ecole,Grande école,private,,https://eftg-sup.com/
 00154,,معهد إدارة الأعمال ( أنسيم سوب) حيدرة الجزائر,16,,El Biar,36.7610012,3.0235834,exact,campus,mesrs,grande_ecole,Grande école,private,,https://www.insimsup.dz/
-00155,,معهد البصريات اولاد فايت. الجزائر,16,,,36.776335,3.058211,approximate,wilaya,mesrs,grande_ecole,Grande école,private,,http://www.inoof-dz.com/
+00155,,معهد البصريات اولاد فايت. الجزائر,16,,Ouled Fayet,36.731062,2.952322,exact,campus,mesrs,grande_ecole,Grande école,private,,http://www.inoof-dz.com/
 00156,,معهد البصريات برج بوعريريج,34,,Bordj Bou Arreridj,36.0801004,4.7423944,exact,campus,mesrs,grande_ecole,Grande école,private,,https://www.io-bba.com/
-00157,,معهد التكنولوجيا ( نوميديا) سيدي عبد الله .الجزائر,16,,,36.776335,3.058211,approximate,wilaya,mesrs,grande_ecole,Grande école,private,,
+00157,,معهد التكنولوجيا ( نوميديا) سيدي عبد الله .الجزائر,16,,Rahmania,36.680775,2.899932,exact,campus,mesrs,grande_ecole,Grande école,private,,
 00158,,معهد التكوين في التأمينات والتسيير بن عكنون.الجزائر,16,,,36.776335,3.058211,approximate,wilaya,mesrs,grande_ecole,Grande école,private,,
 00159,,معهد المناجمنت سعيد حمدين بالجزائر,16,,Hydra,36.7363667,3.0326999,exact,campus,mesrs,grande_ecole,Grande école,private,,https://imaa-univ.com/
 00160,,معهد المناجمنت والتطوير الشراقة.الجزائر,16,,Ouled Fayet,36.7527224,2.9504122,exact,campus,mesrs,grande_ecole,Grande école,private,,https://mdi-alger.com/
 00161,Ecole normale supérieure d’enseignement technologique de Skikda,المدرسة العليا لأساتذة التعليم التكنولوجي بسكيكدة,21,,Skikda,36.86473,6.92202,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.enset-skikda.dz/
 00162,Ecole Normale Supérieure d’Oran,المدرسة العليا للأساتذة بوهران,31,,Es Senia,35.6757461,-0.6329262,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.ens-oran.dz/index.php/fr/
-00163,Ecole normale supérieure de Béchar,,08,,,31.61667,-2.21667,approximate,wilaya,mesrs,ens,École normale supérieure,public,,http://ensb.univ-bechar.dz/ensb/?page_id=971
+00163,Ecole normale supérieure de Béchar,,08,,Bechar,31.6035835,-2.2327063,exact,campus,mesrs,ens,École normale supérieure,public,,http://ensb.univ-bechar.dz/ensb/?page_id=971
 00164,Ecole normale supérieure de Bou Saâda,المدرسة العليا للأساتذة بوسعادة المجاهد الفريق احمد قايد صالح,68,,Bou Saada,35.2577086,4.1811706,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.ens-bousaada.dz/ar/
 00165,Ecole normale supérieure de Bouzaréah - Cheikh Mubarak Ben Mohamed Brahimi El Mili,المدرسة العليا للأساتذة بوزريعة الشيخ مبارك بن محمد إبراهيمي الميلي الجزائري,16,,Bouzareah,36.781995,3.0126523,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.ensb.dz/
 00166,Ecole normale supérieure de Constantine -Assia Djebar,المدرسة العليا للأساتذة الآداب والعلوم الانسانية قسنطينة الكاتبة آسيا جبار,25,,El Khroub,36.2758594,6.5887878,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.ensc.dz/
 00167,Ecole normale supérieure de Kouba - Mohamed Bachir El Ibrahimi,المدرسة العليا للأساتذة القبة الشيخ محمد البشير الإبراهيمي,16,,Kouba,36.7311136,3.0734495,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.ens-kouba.dz/
 00168,Ecole normale supérieure de Laghouat - Taleb Abderrahmane,المدرسة العليا للأساتذة بالأغواط - طالب عبد الرحمان,03,,Laghouat,33.8108153,2.8641055,exact,campus,mesrs,ens,École normale supérieure,public,,https://www.ens-lagh.dz/en/
-00169,Ecole Normale Supérieure de Mostaganem,المدرسة العليا للأساتذة بمستغانم,27,,,35.9246589,0.09,approximate,wilaya,mesrs,ens,École normale supérieure,public,,http://ens.univ-mosta.dz/
+00169,Ecole Normale Supérieure de Mostaganem,المدرسة العليا للأساتذة بمستغانم,27,,Mostaganem,35.938811,0.113867,exact,campus,mesrs,ens,École normale supérieure,public,,http://ens.univ-mosta.dz/
 00170,Ecole normale supérieure de Ouargla,المدرسة العليا للأساتذة ورقلة,30,,Ouargla,31.952373,5.2570984,exact,campus,mesrs,ens,École normale supérieure,public,,http://ens-ouargla.dz/
 00171,Ecole normale supérieure de setif - Messaoud Zeghar,المدرسة العليا للأساتذة سطيف المجاهد مسعود زغار,19,,El Eulma,36.1579698,5.6643673,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.ens-setif.dz/
 00172,Ecole normale supérieure de sourds muets,المدرسة العليا للأساتذة الصم والبكم,16,,Beni Messous,36.7806474,2.9898369,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.enssm.dz/
@@ -160,13 +160,13 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00177,Centre universitaire de Maghnia,المركز الجامعي لمغنية,13,,Maghnia,34.8361199,-1.7295867,exact,campus,mesrs,centre_universitaire,Centre universitaire,public,,http://www.cu-maghnia.edu.dz/
 00178,Université des sciences médicales d'Alger,جامعة علوم الصحة يوسف الخطيب الجزائر,16,,Ben Aknoun,36.7668663,3.0164095,exact,campus,bac-2026,universite,Université,public,,https://www.univ-health.dz/
 00179,Ecole nationale supérieure d'agriculture saharienne d'Adrar,المدرسة العليا للفلاحة الصحراوية بادرار,01,,Adrar,27.8786875,-0.2639844,exact,campus,bac-2026,grande_ecole,Grande école,public,,https://esas-adrar.edu.dz/
-00180,Ecole nationale supérieure de cyber sécurité (Alger),,16,,Maalma,36.682153,2.877873,approximate,commune,bac-2026,grande_ecole,Grande école,public,,https://www.enscs.edu.dz/
-00181,Ecole nationale supérieure des forêts (Khenchela),,40,,Khenchela,35.4358,7.1433,approximate,commune,bac-2026,grande_ecole,Grande école,public,,https://www.ensf.dz/
+00180,Ecole nationale supérieure de cyber sécurité (Alger),,16,,Maalma,36.68943,2.863267,exact,campus,bac-2026,grande_ecole,Grande école,public,,https://www.enscs.edu.dz/
+00181,Ecole nationale supérieure des forêts (Khenchela),,40,,Khenchela,35.448303,7.118217,exact,campus,bac-2026,grande_ecole,Grande école,public,,https://www.ensf.dz/
 00182,Ecole nationale supérieure des nanosciences et nanotechnologies,المدرسة الوطنية العليا في علم النانو وتكنولوجيا النانو,16,,Maalma,36.6891616,2.8695867,exact,campus,bac-2026,grande_ecole,Grande école,public,,https://nsnn.edu.dz/
 00183,Ecole nationale supérieure des systèmes autonomes,المدرسة الوطنية العليا لتكنولوجيا الأنظمة المستقلة,16,,Maalma,36.6890253,2.8648454,exact,campus,bac-2026,grande_ecole,Grande école,public,,https://nhsast.edu.dz/
 00184,Ecole nationale supérieure en mathématiques,المدرسة الوطنية العليا للرياضيات,16,,Maalma,36.6888314,2.867765,exact,campus,bac-2026,grande_ecole,Grande école,public,,https://nhsm.edu.dz/
 00185,Ecole supérieure des sciences de gestion de Annaba,,23,,Annaba,36.902243,7.7602908,exact,campus,bac-2026,grande_ecole,Grande école,public,,https://essg-annaba.dz/
 00186,Ecole supérieure des sciences et des technologies d'encadrement de la jeunesse d'Alger,المدرسة العليا لعلوم وتقنيات تأطير الشباب,16,,Hydra,36.7272935,3.0265617,exact,campus,bac-2026,grande_ecole,Grande école,public,Ministère de la Jeunesse,https://esstej.mjeunesse.gov.dz/
 00187,"Institut national supérieur du cinéma Mohamed Lakhdar Hamina (Koléa, Tipaza)",المعهد الوطني العالي للسينما,42,,Kolea,36.6389,2.768,approximate,commune,bac-2026,grande_ecole,Grande école,public,Ministère de la Culture et des Arts,
-00188,Ecole normale supérieure de Saïda,المدرسة العليا للأساتدة بسعيدة,20,,Saida,34.833333,0.15,approximate,commune,bac-2026,ens,École normale supérieure,public,,https://www.ens-saida.dz/
+00188,Ecole normale supérieure de Saïda,المدرسة العليا للأساتدة بسعيدة,20,,Saida,34.8521125,0.1466275,exact,campus,bac-2026,ens,École normale supérieure,public,,https://www.ens-saida.dz/
 00189,Ecole nationale supérieure des technologies avancées (Alger),المدرسة الوطنية العليا للتكنولوجيات المتقدمة,16,,Bordj El Kiffan,36.7761552,3.2581993,exact,campus,bac-2026,grande_ecole,Grande école,public,,https://ensta.edu.dz/

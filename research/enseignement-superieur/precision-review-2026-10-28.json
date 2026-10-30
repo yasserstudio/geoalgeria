@@ -4,83 +4,17 @@
   "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
   "network": "Candidates come from the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf), one source. The second-source pass of the same run (research/enseignement-superieur/second-source-votes-2026-10-28.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on 2026-10-28.",
   "counts": {
-    "approximate_reviewed": 35,
+    "approximate_reviewed": 6,
     "queued_single_source": 0,
-    "no_open_candidate": 35,
+    "no_open_candidate": 6,
     "promoted": 0
   },
   "queue": [],
   "no_candidate": [
     {
-      "id": "00048",
-      "name": "Université de Tindouf-Ali Kafi",
-      "wilaya_code": "37",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00072",
-      "name": "Ecole Nationale Supérieure des sciences politiques",
-      "wilaya_code": "16",
-      "geo_method": "commune"
-    },
-    {
-      "id": "00089",
-      "name": "Ecole nationale supérieure des technologies et d'ingénierie (Annaba)",
-      "wilaya_code": "23",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00090",
-      "name": "Ecole Supérieure en Génie Electrique et Energétique d’Oran ex EP ST Oran",
-      "wilaya_code": "31",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00093",
-      "name": "Ecole nationale supérieure d'agriculture saharienne d'El Oued",
-      "wilaya_code": "39",
-      "geo_method": "wilaya"
-    },
-    {
       "id": "00109",
       "name_ar": "المدرسة العليا لمهن البناء بلوزداد.الجزائر",
       "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00117",
-      "name_ar": "المعهد العالي لألداب واللغات “الغفران” غرداية",
-      "wilaya_code": "47",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00121",
-      "name_ar": "المعهد العالي للعلوم الانسانية والتطبيقية غرداية",
-      "wilaya_code": "47",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00123",
-      "name_ar": "المعهد العالي للعلوم والتكنولوجيا - علوم تجريبية ابن رشد",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00124",
-      "name_ar": "المعهد الوطني العالي للموسيقى (الجزائر)",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00126",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بأدرار",
-      "wilaya_code": "01",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00127",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بالبليدة",
-      "wilaya_code": "09",
       "geo_method": "wilaya"
     },
     {
@@ -90,92 +24,14 @@
       "geo_method": "wilaya"
     },
     {
-      "id": "00129",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بالتبسة",
-      "wilaya_code": "12",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00134",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي ببسكرة",
-      "wilaya_code": "07",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00135",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي ببشار",
-      "wilaya_code": "08",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00137",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بجيجل",
-      "wilaya_code": "18",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00138",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بسطيف",
-      "wilaya_code": "19",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00139",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بسعيدة",
-      "wilaya_code": "20",
-      "geo_method": "wilaya"
-    },
-    {
       "id": "00140",
       "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بسكيكدة",
       "wilaya_code": "21",
       "geo_method": "wilaya"
     },
     {
-      "id": "00143",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بقسنطينة",
-      "wilaya_code": "25",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00146",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بورقلة",
-      "wilaya_code": "30",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00147",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بوهران 1",
-      "wilaya_code": "31",
-      "geo_method": "wilaya"
-    },
-    {
       "id": "00148",
       "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي للقابلات بالجزائر",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00149",
-      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي للقابلات بعنابة",
-      "wilaya_code": "23",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00151",
-      "name_ar": "مدرسة ادارة الأعمال المدينة الجديدة تيزي وزو",
-      "wilaya_code": "15",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00155",
-      "name_ar": "معهد البصريات اولاد فايت. الجزائر",
-      "wilaya_code": "16",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00157",
-      "name_ar": "معهد التكنولوجيا ( نوميديا) سيدي عبد الله .الجزائر",
       "wilaya_code": "16",
       "geo_method": "wilaya"
     },
@@ -186,39 +42,9 @@
       "geo_method": "wilaya"
     },
     {
-      "id": "00163",
-      "name": "Ecole normale supérieure de Béchar",
-      "wilaya_code": "08",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00169",
-      "name": "Ecole Normale Supérieure de Mostaganem",
-      "wilaya_code": "27",
-      "geo_method": "wilaya"
-    },
-    {
-      "id": "00180",
-      "name": "Ecole nationale supérieure de cyber sécurité (Alger)",
-      "wilaya_code": "16",
-      "geo_method": "commune"
-    },
-    {
-      "id": "00181",
-      "name": "Ecole nationale supérieure des forêts (Khenchela)",
-      "wilaya_code": "40",
-      "geo_method": "commune"
-    },
-    {
       "id": "00187",
       "name": "Institut national supérieur du cinéma Mohamed Lakhdar Hamina (Koléa, Tipaza)",
       "wilaya_code": "42",
-      "geo_method": "commune"
-    },
-    {
-      "id": "00188",
-      "name": "Ecole normale supérieure de Saïda",
-      "wilaya_code": "20",
       "geo_method": "commune"
     }
   ]

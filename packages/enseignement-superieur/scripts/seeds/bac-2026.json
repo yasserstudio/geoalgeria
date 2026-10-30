@@ -195,10 +195,19 @@
       "sector": "public",
       "supervisory_ministry": null,
       "place": {
-        "precision": "commune",
-        "commune": "Maalma",
+        "precision": "campus",
+        "lat": 36.68943,
+        "lng": 2.863267,
         "wilaya_code": 16,
-        "why": "The three other Sidi Abdellah schools each carry their own OSM building; this one has none, and the only object there that would fit is the shared tech-pole (OSM way/387256106), which is the pole and not this school. Placed on its commune instead: the school's own site gives its address as the Pôle Scientifique et Technologique Chahid Abdelhafid Ihaddadene, Sidi Abdallah, which is in Maalma (المعالمة), wilaya 16."
+        "commune": "Maalma",
+        "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this school, so the Owner's pin of 2026-10-30 ships as its coordinate. The three other Sidi Abdellah schools each carry their own OSM building and this one has none; the only object there that would fit is the shared tech-pole outline (OSM way/387256106), 300 m from the pin, which is the pole and not this school, so no Candidate lies within the 500 m ceiling, exactly as for the autonomous-systems school (P09). The pin is at Sidi Abdellah in Maalma, the commune the school's own address gives (Pole Scientifique et Technologique Chahid Abdelhafid Ihaddadene, Sidi Abdallah). The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+        "owner_pin": {
+          "read_at": "2026-10-30",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "entry": "National Higher School of Cybersecurity",
+          "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+        }
       },
       "note": "No Arabic name published on enscs.edu.dz and no Wikidata item, so name_ar stays null rather than being translated."
     },
@@ -263,10 +272,27 @@
       "sector": "public",
       "supervisory_ministry": null,
       "place": {
-        "precision": "commune",
-        "commune": "Saida",
+        "precision": "campus",
+        "lat": 34.8521125,
+        "lng": 0.1466275,
+        "osm": "way/315299860",
+        "osm_version": 11,
+        "osm_timestamp": "2020-03-17T15:46:40Z",
+        "osm_name": "جامعة سعيدة",
         "wilaya_code": 20,
-        "why": "No OSM object and no Wikidata P625 for the ENS: a bounded search over Saïda returned the Université de Saïda campuses (already a separate record here) and school-level objects, none of them this ENS. Placed on its commune, Saida, wilaya 20."
+        "why": "OSM way/315299860, amenity=university, name:fr \"Universite de Saida (ENS)\", read live from api.openstreetmap.org on 2026-10-30; its point is the centre of its bounding box. This supersedes the 2026-10-28 finding that no open object placed this ENS: the object was read then as the Universite de Saida campus alone, and its name:fr names the ENS on that campus, which is the tie. The second Vote is the Owner's reading of 2026-10-30 under docs/adr/0001 rule 6, recorded below: 69 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). The coordinate that ships is OpenStreetMap's, ODbL.",
+        "owner_confirmation": {
+          "confirms": "way/315299860",
+          "point": [
+            0.146318,
+            34.85155
+          ],
+          "metres_from_published_value": 69,
+          "read_at": "2026-10-30",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"المدرسة العليا للاساتذة سعيدة\" and supplied 34.85155, 0.146318, 69 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+        }
       },
       "note": "The thirteenth ENS in the BAC 2026 file and the only one the package did not already carry. Its own site spells الأساتدة with a dal; published as the institution publishes it."
     },
@@ -278,10 +304,19 @@
       "sector": "public",
       "supervisory_ministry": null,
       "place": {
-        "precision": "commune",
-        "commune": "Khenchela",
+        "precision": "campus",
+        "lat": 35.448303,
+        "lng": 7.118217,
         "wilaya_code": 40,
-        "why": "No OSM object and no Wikidata P625 for the school: a bounded search over Khenchela returned the Abbas Laghrour university campuses and the INSFP, none of them this school. Placed on its commune, Khenchela, wilaya 40; the school's published address is route de Hammam Essalihine, Khenchela."
+        "commune": "Khenchela",
+        "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this school, so the Owner's pin of 2026-10-30 ships as its coordinate. The 2026-10-28 bounded search over Khenchela returned only the Abbas Laghrour university campuses and the INSFP, none of them this school, so no Candidate lies within the 500 m ceiling. The pin is 2.7 km from the Khenchela centre the record stood on, inside Khenchela commune, on the route de Hammam Essalihine the school publishes as its address. The point is a proprietary-map reading and not open data; an open object that later confirms the place replaces it (rule 6 item 3).",
+        "owner_pin": {
+          "read_at": "2026-10-30",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "entry": "National School Supérieure Des Forêts",
+          "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+        }
       },
       "note": "ensf.dz did not answer from the build machine, so its Arabic name could not be read first-hand and name_ar stays null."
     },

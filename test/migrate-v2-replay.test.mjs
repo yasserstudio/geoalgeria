@@ -244,7 +244,6 @@ const CORRECTIONS = {
     // Alger Centre's centre moved from the sea east of the port to the Grande
     // Poste, as it did for the agriculture rows below.
     "00097": { lat: 36.776335, lng: 3.058211 },
-    "00129": { lat: 35.405556, lng: 8.12417 }, // Tébessa
     // Promoted, a third class: the record left its commune centre for its own
     // campus on two independent Votes (docs/adr/0001), OSM way/390654567 agreeing
     // with Wikidata Q16507829's P625 to 58 m; scripts/seeds/second-source.json,
@@ -257,6 +256,12 @@ const CORRECTIONS = {
     "00113": { lat: 36.655334, lng: 3.1468977, commune: "Les Eucalyptus", geo_precision: "exact", geo_method: "campus" },
     "00145": { lat: 35.3794338, lng: 0.1221791, commune: "Mascara", geo_precision: "exact", geo_method: "campus" },
     "00161": { lat: 36.86473, lng: 6.92202, commune: "Skikda", geo_precision: "exact", geo_method: "campus" },
+    // Placed, a fifth class (docs/adr/0001 rule 6 as amended 2026-10-29): the
+    // Owner's pin of 2026-10-30 ships where no open object lies within 500 m of
+    // it, scripts/seeds/second-source.json `owner_pin`. The frozen v1 row keeps
+    // the Tébessa wilaya centre this record borrowed, which has itself moved
+    // since the cutover.
+    "00129": { lat: 35.426065, lng: 8.064047, commune: "Tébessa", geo_precision: "exact", geo_method: "campus" },
   },
   // Two classes below, both of them the flagship moving under a derived field,
   // and both caught by gates of their own rather than by this replay:
