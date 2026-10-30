@@ -41,8 +41,8 @@ const read = (...parts) => JSON.parse(readFileSync(join(ROOT, ...parts), "utf8")
 
 // The packages whose ledgers carry a #209 decision, and how many each carries. Stated
 // rather than counted, so dropping a package's ledger fails instead of passing quietly.
-const CORRECTED = { emploi: 17, jeunesse: 15, poste: 2, sports: 15, telecom: 1, tourisme: 5 };
-const TOTAL = 55;
+const CORRECTED = { emploi: 17, jeunesse: 15, poste: 3, sports: 15, telecom: 1, tourisme: 5 };
+const TOTAL = 56;
 // 303 on 2026-09-29, minus banques' agb-tebessa, re-placed from OpenStreetMap by #285.
 const RESIDUAL = 302;
 // The Journal officiel each reform appears in, which its decisions have to cite.

@@ -394,6 +394,7 @@
     "id": "1055",
     "name": "BOUSSAADA INDOOR",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2820",
     "commune": "BOU SAADA",
     "commune_ar": "بوسعادة",
@@ -405,13 +406,13 @@
     "status": "1",
     "postal_code": "28001",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "1056",
     "name": "BOUSSAADA",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2820",
     "commune": "BOU SAADA",
     "commune_ar": "بوسعادة",
@@ -423,8 +424,7 @@
     "status": "1",
     "postal_code": "28001",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "10563",
@@ -464,6 +464,7 @@
     "id": "10565",
     "name": "NEGRINE",
     "wilaya_code": "62",
+    "source_wilaya_code": "12",
     "commune_code": "1209",
     "commune": "NEGRINE",
     "commune_ar": "نقرين",
@@ -475,13 +476,13 @@
     "status": "1",
     "postal_code": "12024",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "12"
+    "address": null
   },
   {
     "id": "10566",
     "name": "AFLOU MED BOUDIAF",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0319",
     "commune": "AFLOU",
     "commune_ar": "أفلو",
@@ -493,13 +494,13 @@
     "status": "1",
     "postal_code": "03021",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "10567",
     "name": "AFLOU 1ER MAI",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0319",
     "commune": "AFLOU",
     "commune_ar": "أفلو",
@@ -511,13 +512,13 @@
     "status": "1",
     "postal_code": "03053",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "10568",
     "name": "AFLOU ZAOUI SAID",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0319",
     "commune": "AFLOU",
     "commune_ar": "أفلو",
@@ -529,13 +530,13 @@
     "status": "1",
     "postal_code": "03047",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "10569",
     "name": "AIN SIDI ALI",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0311",
     "commune": "AIN SIDI ALI",
     "commune_ar": "عين سيدي على",
@@ -547,13 +548,13 @@
     "status": "1",
     "postal_code": "03028",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "10570",
     "name": "BRIDA",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0313",
     "commune": "BRIDA",
     "commune_ar": "بريدة",
@@ -565,13 +566,13 @@
     "status": "1",
     "postal_code": "03005",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "10571",
     "name": "BEIDA",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0312",
     "commune": "BEIDHA",
     "commune_ar": "بيضاء",
@@ -583,8 +584,7 @@
     "status": "1",
     "postal_code": "03013",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "10572",
@@ -1100,6 +1100,7 @@
     "id": "10612",
     "name": "SIDI BOUZID",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0324",
     "commune": "SIDI BOUZID",
     "commune_ar": "سيدي بوزيد",
@@ -1111,8 +1112,7 @@
     "status": "1",
     "postal_code": "03024",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "10615",
@@ -1288,6 +1288,7 @@
     "id": "10624",
     "name": "MDOUKAL",
     "wilaya_code": "60",
+    "source_wilaya_code": "05",
     "commune_code": "0555",
     "commune": "M'DOUKAL",
     "commune_ar": "أمدوكال",
@@ -1299,8 +1300,7 @@
     "status": "1",
     "postal_code": "05037",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "05"
+    "address": null
   },
   {
     "id": "10625",
@@ -2088,6 +2088,7 @@
     "id": "10845",
     "name": "HAMADIA HIDHAB",
     "wilaya_code": "64",
+    "source_wilaya_code": "14",
     "commune_code": "1435",
     "commune": "HAMADIA",
     "commune_ar": "الحمادية",
@@ -2099,8 +2100,7 @@
     "status": "1",
     "postal_code": "14074",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "14"
+    "address": null
   },
   {
     "id": "10846",
@@ -2135,7 +2135,14 @@
     "postal_code": "14038",
     "postal_code_old": null,
     "address": null,
-    "source_wilaya_code": "14"
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-25",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://baridimap.poste.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "10849",
@@ -2328,6 +2335,7 @@
     "id": "10863",
     "name": "SLIMANI SLIMANE",
     "wilaya_code": "65",
+    "source_wilaya_code": "17",
     "commune_code": "1731",
     "commune": "AIN OUSSERA",
     "commune_ar": "عين وسارة",
@@ -2339,8 +2347,7 @@
     "status": "1",
     "postal_code": "17004",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "17"
+    "address": null
   },
   {
     "id": "10866",
@@ -2652,6 +2659,7 @@
     "id": "1095",
     "name": "SEBT AZIZ",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2632",
     "commune": "AZIZ",
     "commune_ar": "عزيز",
@@ -2663,8 +2671,7 @@
     "status": "1",
     "postal_code": "26040",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "1096",
@@ -3044,6 +3051,7 @@
     "id": "11079",
     "name": "MESSAAD MOUSSAOUI ",
     "wilaya_code": "66",
+    "source_wilaya_code": "17",
     "commune_code": "1717",
     "commune": "MESSAAD",
     "commune_ar": "مسعد",
@@ -3055,8 +3063,7 @@
     "status": "1",
     "postal_code": "17083",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "17"
+    "address": null
   },
   {
     "id": "1108",
@@ -3283,6 +3290,7 @@
     "id": "1116",
     "name": "BOUGHZOUL",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2651",
     "commune": "BOUGHEZOUL",
     "commune_ar": "بوغزول",
@@ -3294,8 +3302,7 @@
     "status": "1",
     "postal_code": "26023",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "1117",
@@ -4304,6 +4311,7 @@
     "id": "11600",
     "name": "BIR GUELLALIA",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2808",
     "commune": "M'CIF",
     "commune_ar": "مصيف",
@@ -4315,8 +4323,7 @@
     "status": "1",
     "postal_code": "28029",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "11601",
@@ -4390,6 +4397,7 @@
     "id": "11606",
     "name": "BOUSAADA EL BATN",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2820",
     "commune": "BOU SAADA",
     "commune_ar": "بوسعادة",
@@ -4401,13 +4409,13 @@
     "status": "1",
     "postal_code": "28086",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "11608",
     "name": "AIN OGHRAB",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2847",
     "commune": "DJEBEL MESSAAD",
     "commune_ar": "جبل مسعد",
@@ -4419,8 +4427,7 @@
     "status": "1",
     "postal_code": "28024",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "11609",
@@ -4995,6 +5002,7 @@
     "id": "1183",
     "name": "BOGHAR",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2625",
     "commune": "BOGHAR",
     "commune_ar": "بوغار",
@@ -5006,8 +5014,7 @@
     "status": "1",
     "postal_code": "26013",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "1184",
@@ -5948,19 +5955,19 @@
     "id": "1230",
     "name": "GUTTARA",
     "wilaya_code": "66",
+    "source_wilaya_code": "17",
     "commune_code": "1718",
     "commune": "GUETTARA",
     "commune_ar": "قطارة",
-    "lat": 33.1632933,
-    "lng": 4.6853753,
+    "lat": 33.1618011,
+    "lng": 4.6927056,
     "geo_precision": "exact",
     "geo_method": "baridimap",
     "source": "baridimap",
     "status": "1",
     "postal_code": "17055",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "17"
+    "address": null
   },
   {
     "id": "1231",
@@ -6340,6 +6347,7 @@
     "id": "1262",
     "name": "CHELLALA DAHRANIA",
     "wilaya_code": "69",
+    "source_wilaya_code": "32",
     "commune_code": "3214",
     "commune": "CHELLALA",
     "commune_ar": "شلالة",
@@ -6351,8 +6359,7 @@
     "status": "1",
     "postal_code": "32015",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "32"
+    "address": null
   },
   {
     "id": "1264",
@@ -7242,6 +7249,7 @@
     "id": "1307",
     "name": "OUED MORRA",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0321",
     "commune": "OUED MORRA",
     "commune_ar": "واد مورة",
@@ -7253,8 +7261,7 @@
     "status": "1",
     "postal_code": "03027",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "13071",
@@ -11779,23 +11786,6 @@
     "address": null
   },
   {
-    "id": "13950",
-    "name": "LA DG",
-    "wilaya_code": "16",
-    "commune_code": null,
-    "commune": "DAR EL BEIDA",
-    "commune_ar": "الدار البيضاء",
-    "lat": 36.715274,
-    "lng": 3.203541,
-    "geo_precision": "exact",
-    "geo_method": "baridimap",
-    "source": "baridimap",
-    "status": "1",
-    "postal_code": "16033",
-    "postal_code_old": null,
-    "address": null
-  },
-  {
     "id": "1398",
     "name": "CHENOUA PLAGE",
     "wilaya_code": "42",
@@ -11884,6 +11874,7 @@
     "id": "1403",
     "name": "SEGGANA",
     "wilaya_code": "60",
+    "source_wilaya_code": "05",
     "commune_code": "0529",
     "commune": "SEGGANA",
     "commune_ar": "سقانة",
@@ -11895,8 +11886,7 @@
     "status": "1",
     "postal_code": "05027",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "05"
+    "address": null
   },
   {
     "id": "1404",
@@ -12990,6 +12980,7 @@
     "id": "14623",
     "name": "RECHAIGA",
     "wilaya_code": "64",
+    "source_wilaya_code": "14",
     "commune_code": "1430",
     "commune": "RECHAIGA",
     "commune_ar": "الرشايقة",
@@ -13001,8 +12992,7 @@
     "status": "1",
     "postal_code": "14026",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "14"
+    "address": null
   },
   {
     "id": "14624",
@@ -13739,6 +13729,7 @@
     "id": "14673",
     "name": "ROUMANA",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2826",
     "commune": "EL HOUAMED",
     "commune_ar": "الحوامد",
@@ -13750,8 +13741,7 @@
     "status": "1",
     "postal_code": "28063",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "14674",
@@ -13876,6 +13866,7 @@
     "id": "14681",
     "name": "DJOUB",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2825",
     "commune": "OULED SLIMANE",
     "commune_ar": "أولاد سليمان",
@@ -13887,8 +13878,7 @@
     "status": "1",
     "postal_code": "28031",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "14683",
@@ -14098,6 +14088,7 @@
     "id": "14700",
     "name": "GUEDILA",
     "wilaya_code": "61",
+    "source_wilaya_code": "07",
     "commune_code": "0720",
     "commune": "DJEMORAH",
     "commune_ar": "جمورة",
@@ -14109,8 +14100,7 @@
     "status": "1",
     "postal_code": "07059",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "07"
+    "address": null
   },
   {
     "id": "14702",
@@ -14558,6 +14548,7 @@
     "id": "14735",
     "name": "OULTEM",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2846",
     "commune": "OULTENE",
     "commune_ar": "ولتام",
@@ -14569,13 +14560,13 @@
     "status": "1",
     "postal_code": "28061",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "14736",
     "name": "THAMEUR SIDI MHAMED",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2838",
     "commune": "SIDI M'HAMED",
     "commune_ar": "سيدي محمد",
@@ -14587,8 +14578,7 @@
     "status": "1",
     "postal_code": "28066",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "14738",
@@ -14866,6 +14856,7 @@
     "id": "14756",
     "name": "EL KANTARA 1ER NOV",
     "wilaya_code": "61",
+    "source_wilaya_code": "07",
     "commune_code": "0717",
     "commune": "EL KANTARA",
     "commune_ar": "القنطرة",
@@ -14877,13 +14868,13 @@
     "status": "1",
     "postal_code": "07053",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "07"
+    "address": null
   },
   {
     "id": "14757",
     "name": "DRISS AMOR",
     "wilaya_code": "61",
+    "source_wilaya_code": "07",
     "commune_code": "0719",
     "commune": "EL OUTAYA",
     "commune_ar": "الوطاية",
@@ -14895,8 +14886,7 @@
     "status": "1",
     "postal_code": "07049",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "07"
+    "address": null
   },
   {
     "id": "14758",
@@ -14919,6 +14909,7 @@
     "id": "14759",
     "name": "SERGUINE",
     "wilaya_code": "64",
+    "source_wilaya_code": "14",
     "commune_code": "1439",
     "commune": "SERGHINE",
     "commune_ar": "سرغين",
@@ -14930,8 +14921,7 @@
     "status": "1",
     "postal_code": "14063",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "14"
+    "address": null
   },
   {
     "id": "14760",
@@ -16314,6 +16304,7 @@
     "id": "14882",
     "name": "AMOURAH",
     "wilaya_code": "66",
+    "source_wilaya_code": "17",
     "commune_code": "1734",
     "commune": "AMOURAH",
     "commune_ar": "عمورة",
@@ -16325,8 +16316,7 @@
     "status": "1",
     "postal_code": "17042",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "17"
+    "address": null
   },
   {
     "id": "14885",
@@ -16349,6 +16339,7 @@
     "id": "14886",
     "name": "SELMANA",
     "wilaya_code": "66",
+    "source_wilaya_code": "17",
     "commune_code": "1722",
     "commune": "SELMANA",
     "commune_ar": "سلمانة",
@@ -16360,8 +16351,7 @@
     "status": "1",
     "postal_code": "17063",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "17"
+    "address": null
   },
   {
     "id": "14887",
@@ -16588,6 +16578,7 @@
     "id": "14907",
     "name": "BOUGHEZOUL TAOUTI SAID",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2651",
     "commune": "BOUGHEZOUL",
     "commune_ar": "بوغزول",
@@ -16599,8 +16590,7 @@
     "status": "1",
     "postal_code": "26097",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "14908",
@@ -16631,6 +16621,7 @@
     "id": "14909",
     "name": "CHENIGUEL",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2640",
     "commune": "CHENIGUEL",
     "commune_ar": "شنيقل",
@@ -16642,8 +16633,7 @@
     "status": "1",
     "postal_code": "26057",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "14910",
@@ -16666,6 +16656,7 @@
     "id": "14911",
     "name": "OULED MAAREUF",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2603",
     "commune": "OULED MAAREF",
     "commune_ar": "أولاد معرف",
@@ -16677,8 +16668,7 @@
     "status": "1",
     "postal_code": "26038",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "14912",
@@ -17075,6 +17065,7 @@
     "id": "14940",
     "name": "KSAR CHELLALA 19 MARS 1962",
     "wilaya_code": "64",
+    "source_wilaya_code": "14",
     "commune_code": "1429",
     "commune": "KSAR CHELLALA",
     "commune_ar": "قصر الشلالة",
@@ -17086,8 +17077,7 @@
     "status": "1",
     "postal_code": "14091",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "14"
+    "address": null
   },
   {
     "id": "14941",
@@ -17535,6 +17525,7 @@
     "id": "14999",
     "name": "EL GOR",
     "wilaya_code": "63",
+    "source_wilaya_code": "13",
     "commune_code": "1310",
     "commune": "EL GOR",
     "commune_ar": "القور",
@@ -17546,8 +17537,7 @@
     "status": "1",
     "postal_code": "13034",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "13"
+    "address": null
   },
   {
     "id": "1500",
@@ -17621,6 +17611,7 @@
     "id": "15004",
     "name": "HADJ MECHERI",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0315",
     "commune": "HADJ MECHERI",
     "commune_ar": "حاج مشري",
@@ -17632,8 +17623,7 @@
     "status": "1",
     "postal_code": "03038",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "15006",
@@ -17758,6 +17748,7 @@
     "id": "15014",
     "name": "SEBGAG",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0316",
     "commune": "SEBGAG",
     "commune_ar": "سبقاق",
@@ -17769,8 +17760,7 @@
     "status": "1",
     "postal_code": "03034",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "15015",
@@ -17963,6 +17953,7 @@
     "id": "15029",
     "name": "TAOUIALA",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0317",
     "commune": "TAOUIALA",
     "commune_ar": "تاويالة",
@@ -17974,8 +17965,7 @@
     "status": "1",
     "postal_code": "03026",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "1503",
@@ -18083,6 +18073,7 @@
     "id": "15035",
     "name": "SED RAHAL",
     "wilaya_code": "66",
+    "source_wilaya_code": "17",
     "commune_code": "1706",
     "commune": "SED RAHAL",
     "commune_ar": "سد رحال",
@@ -18094,8 +18085,7 @@
     "status": "1",
     "postal_code": "17062",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "17"
+    "address": null
   },
   {
     "id": "15037",
@@ -18135,6 +18125,7 @@
     "id": "15040",
     "name": "GUELTAT SIDI SAAD EST",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0310",
     "commune": "GUELTAT SIDI SAAD",
     "commune_ar": "قتلة سيدي سعيد",
@@ -18146,8 +18137,7 @@
     "status": "1",
     "postal_code": "03059",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "15041",
@@ -18425,6 +18415,7 @@
     "id": "15105",
     "name": "AIN KHERMANE",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2835",
     "commune": "BENZOUH",
     "commune_ar": "بن زوح",
@@ -18436,8 +18427,7 @@
     "status": "1",
     "postal_code": "28040",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "15106",
@@ -18511,6 +18501,7 @@
     "id": "15110",
     "name": "BARIKA CITE 300 LOGTS",
     "wilaya_code": "60",
+    "source_wilaya_code": "05",
     "commune_code": "0542",
     "commune": "BARIKA",
     "commune_ar": "بريكة",
@@ -18522,8 +18513,7 @@
     "status": "1",
     "postal_code": "05150",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "05"
+    "address": null
   },
   {
     "id": "15111",
@@ -18563,6 +18553,7 @@
     "id": "15113",
     "name": "BITAM",
     "wilaya_code": "60",
+    "source_wilaya_code": "05",
     "commune_code": "0514",
     "commune": "BITAM",
     "commune_ar": "بيطام",
@@ -18574,8 +18565,7 @@
     "status": "1",
     "postal_code": "05045",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "05"
+    "address": null
   },
   {
     "id": "15114",
@@ -18632,6 +18622,7 @@
     "id": "15118",
     "name": "M'TKAOUAK",
     "wilaya_code": "60",
+    "source_wilaya_code": "05",
     "commune_code": "0515",
     "commune": "AZIL ABDELKADER (METKOUAK)",
     "commune_ar": "عزيل عبد القادر",
@@ -18643,8 +18634,7 @@
     "status": "1",
     "postal_code": "05130",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "05"
+    "address": null
   },
   {
     "id": "15119",
@@ -19109,6 +19099,7 @@
     "id": "15148",
     "name": "ARBAOUAT",
     "wilaya_code": "69",
+    "source_wilaya_code": "32",
     "commune_code": "3209",
     "commune": "ARBAOUAT",
     "commune_ar": "عرباوة",
@@ -19120,13 +19111,13 @@
     "status": "1",
     "postal_code": "32005",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "32"
+    "address": null
   },
   {
     "id": "15149",
     "name": "AIN EL ORAK",
     "wilaya_code": "69",
+    "source_wilaya_code": "32",
     "commune_code": "3208",
     "commune": "AIN EL ORAK",
     "commune_ar": "عين العراك",
@@ -19138,8 +19129,7 @@
     "status": "1",
     "postal_code": "32019",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "32"
+    "address": null
   },
   {
     "id": "15151",
@@ -20029,6 +20019,7 @@
     "id": "15208",
     "name": "FERKANE",
     "wilaya_code": "62",
+    "source_wilaya_code": "12",
     "commune_code": "1228",
     "commune": "FERKANE",
     "commune_ar": "فركان",
@@ -20040,13 +20031,13 @@
     "status": "1",
     "postal_code": "12044",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "12"
+    "address": null
   },
   {
     "id": "15209",
     "name": "FOUM EL MATLEG",
     "wilaya_code": "62",
+    "source_wilaya_code": "12",
     "commune_code": "1215",
     "commune": "EL OGLA EL MALHA",
     "commune_ar": "العقلة المالحة",
@@ -20058,8 +20049,7 @@
     "status": "1",
     "postal_code": "12045",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "12"
+    "address": null
   },
   {
     "id": "1521",
@@ -20490,6 +20480,7 @@
     "id": "15243",
     "name": "EL BNOUD",
     "wilaya_code": "69",
+    "source_wilaya_code": "32",
     "commune_code": "3216",
     "commune": "EL BNOUD",
     "commune_ar": "البنود",
@@ -20501,8 +20492,7 @@
     "status": "1",
     "postal_code": "32025",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "32"
+    "address": null
   },
   {
     "id": "15245",
@@ -21545,6 +21535,7 @@
     "id": "15457",
     "name": "OUED M'ZI",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0322",
     "commune": "OUED M'ZI",
     "commune_ar": "واد مزي",
@@ -21556,8 +21547,7 @@
     "status": "1",
     "postal_code": "03041",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "15458",
@@ -22073,6 +22063,7 @@
     "id": "1554",
     "name": "BIR EL ATER",
     "wilaya_code": "62",
+    "source_wilaya_code": "12",
     "commune_code": "1202",
     "commune": "BIR EL ATER",
     "commune_ar": "بئر العاتر",
@@ -22084,13 +22075,13 @@
     "status": "1",
     "postal_code": "12001",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "12"
+    "address": null
   },
   {
     "id": "1555",
     "name": "BIR EL ATER HORIA",
     "wilaya_code": "62",
+    "source_wilaya_code": "12",
     "commune_code": "1202",
     "commune": "BIR EL ATER",
     "commune_ar": "بئر العاتر",
@@ -22102,8 +22093,7 @@
     "status": "1",
     "postal_code": "12010",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "12"
+    "address": null
   },
   {
     "id": "1556",
@@ -23520,6 +23510,7 @@
     "id": "1656",
     "name": "EL ARICHA",
     "wilaya_code": "63",
+    "source_wilaya_code": "13",
     "commune_code": "1332",
     "commune": "EL ARICHA",
     "commune_ar": "العريشة",
@@ -23531,8 +23522,7 @@
     "status": "1",
     "postal_code": "13031",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "13"
+    "address": null
   },
   {
     "id": "1657",
@@ -23640,6 +23630,7 @@
     "id": "1664",
     "name": "BARIKA",
     "wilaya_code": "60",
+    "source_wilaya_code": "05",
     "commune_code": "0542",
     "commune": "BARIKA",
     "commune_ar": "بريكة",
@@ -23651,8 +23642,7 @@
     "status": "1",
     "postal_code": "05001",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "05"
+    "address": null
   },
   {
     "id": "1665",
@@ -23675,6 +23665,7 @@
     "id": "1666",
     "name": "MERABTINE",
     "wilaya_code": "60",
+    "source_wilaya_code": "05",
     "commune_code": "0543",
     "commune": "DJEZZAR",
     "commune_ar": "الجزار",
@@ -23686,8 +23677,7 @@
     "status": "1",
     "postal_code": "05046",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "05"
+    "address": null
   },
   {
     "id": "1667",
@@ -24815,6 +24805,7 @@
     "id": "1752",
     "name": "ELABIODH S/C",
     "wilaya_code": "69",
+    "source_wilaya_code": "32",
     "commune_code": "3207",
     "commune": "EL ABIODH SIDI CHEIKH",
     "commune_ar": "الأبيض سيدي الشيخ",
@@ -24826,8 +24817,7 @@
     "status": "1",
     "postal_code": "32003",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "32"
+    "address": null
   },
   {
     "id": "1753",
@@ -25054,6 +25044,7 @@
     "id": "1767",
     "name": "BIR EL ATER 19 JUIN",
     "wilaya_code": "62",
+    "source_wilaya_code": "12",
     "commune_code": "1202",
     "commune": "BIR EL ATER",
     "commune_ar": "بئر العاتر",
@@ -25065,8 +25056,7 @@
     "status": "1",
     "postal_code": "12009",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "12"
+    "address": null
   },
   {
     "id": "1768",
@@ -26126,6 +26116,7 @@
     "id": "1838",
     "name": "DJEMORAH",
     "wilaya_code": "61",
+    "source_wilaya_code": "07",
     "commune_code": "0720",
     "commune": "DJEMORAH",
     "commune_ar": "جمورة",
@@ -26137,8 +26128,7 @@
     "status": "1",
     "postal_code": "07025",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "07"
+    "address": null
   },
   {
     "id": "1839",
@@ -26552,6 +26542,7 @@
     "id": "1864",
     "name": "MESSAAD",
     "wilaya_code": "66",
+    "source_wilaya_code": "17",
     "commune_code": "1717",
     "commune": "MESSAAD",
     "commune_ar": "مسعد",
@@ -26563,8 +26554,7 @@
     "status": "1",
     "postal_code": "17003",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "17"
+    "address": null
   },
   {
     "id": "1868",
@@ -26587,6 +26577,7 @@
     "id": "1870",
     "name": "MESSAAD DEMED",
     "wilaya_code": "66",
+    "source_wilaya_code": "17",
     "commune_code": "1717",
     "commune": "MESSAAD",
     "commune_ar": "مسعد",
@@ -26598,8 +26589,7 @@
     "status": "1",
     "postal_code": "17034",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "17"
+    "address": null
   },
   {
     "id": "1871",
@@ -27370,6 +27360,7 @@
     "id": "1924",
     "name": "GUELTAT SIDI SAAD",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0310",
     "commune": "GUELTAT SIDI SAAD",
     "commune_ar": "قتلة سيدي سعيد",
@@ -27381,8 +27372,7 @@
     "status": "1",
     "postal_code": "03025",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "1925",
@@ -27422,6 +27412,7 @@
     "id": "1927",
     "name": "AFLOU",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0319",
     "commune": "AFLOU",
     "commune_ar": "أفلو",
@@ -27433,13 +27424,13 @@
     "status": "1",
     "postal_code": "03001",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "1928",
     "name": "AFLOU HAI EL GAADA",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0319",
     "commune": "AFLOU",
     "commune_ar": "أفلو",
@@ -27451,8 +27442,7 @@
     "status": "1",
     "postal_code": "03020",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "1929",
@@ -27611,6 +27601,7 @@
     "id": "1944",
     "name": "AIN BOUCIF",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2604",
     "commune": "AIN BOUCIF",
     "commune_ar": "عين بوسيف",
@@ -27622,13 +27613,13 @@
     "status": "1",
     "postal_code": "26005",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "1945",
     "name": "KSAR EL BOUKHARI",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2635",
     "commune": "KSAR EL BOUKHARI",
     "commune_ar": "قصر البخاري",
@@ -27640,8 +27631,7 @@
     "status": "1",
     "postal_code": "26003",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "1946",
@@ -27766,6 +27756,7 @@
     "id": "1953",
     "name": "CHAHBOUNIA",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2638",
     "commune": "CHAHBOUNIA",
     "commune_ar": "الشهبونية",
@@ -27777,13 +27768,13 @@
     "status": "1",
     "postal_code": "26026",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "1954",
     "name": "AIN BOUCIF 5 JUILLET",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2604",
     "commune": "AIN BOUCIF",
     "commune_ar": "عين بوسيف",
@@ -27795,8 +27786,7 @@
     "status": "1",
     "postal_code": "26010",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "1955",
@@ -27819,6 +27809,7 @@
     "id": "1956",
     "name": "BELKHEIR KSAR EL BOUK",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2635",
     "commune": "KSAR EL BOUKHARI",
     "commune_ar": "قصر البخاري",
@@ -27830,13 +27821,13 @@
     "status": "1",
     "postal_code": "26028",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "1957",
     "name": "MEKAOUI OTMENE",
     "wilaya_code": "67",
+    "source_wilaya_code": "26",
     "commune_code": "2635",
     "commune": "KSAR EL BOUKHARI",
     "commune_ar": "قصر البخاري",
@@ -27848,8 +27839,7 @@
     "status": "1",
     "postal_code": "26077",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "26"
+    "address": null
   },
   {
     "id": "1959",
@@ -28076,6 +28066,7 @@
     "id": "1977",
     "name": "AIN EL MELH",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2841",
     "commune": "AIN EL MELH",
     "commune_ar": "عين الملح",
@@ -28087,13 +28078,13 @@
     "status": "1",
     "postal_code": "28004",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "1978",
     "name": "BEN S ROUR",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2824",
     "commune": "BEN SROUR",
     "commune_ar": "بن سرور",
@@ -28105,13 +28096,13 @@
     "status": "1",
     "postal_code": "28009",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "1979",
     "name": "MEDJEDEL",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2842",
     "commune": "MEDJEDEL",
     "commune_ar": "مجدل",
@@ -28123,8 +28114,7 @@
     "status": "1",
     "postal_code": "28016",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "1980",
@@ -28164,6 +28154,7 @@
     "id": "1982",
     "name": "SIDI AMEUR",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2822",
     "commune": "SIDI AMEUR",
     "commune_ar": "سيدي عامر",
@@ -28175,8 +28166,7 @@
     "status": "1",
     "postal_code": "28035",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "1984",
@@ -29797,6 +29787,7 @@
     "id": "2107",
     "name": "SIDI DJILLALI",
     "wilaya_code": "63",
+    "source_wilaya_code": "13",
     "commune_code": "1341",
     "commune": "SIDI DJILLALI",
     "commune_ar": "سيدي الجيلالي",
@@ -29808,8 +29799,7 @@
     "status": "1",
     "postal_code": "13043",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "13"
+    "address": null
   },
   {
     "id": "2108",
@@ -29832,6 +29822,7 @@
     "id": "2109",
     "name": "HAMADIA",
     "wilaya_code": "64",
+    "source_wilaya_code": "14",
     "commune_code": "1435",
     "commune": "HAMADIA",
     "commune_ar": "الحمادية",
@@ -29843,8 +29834,7 @@
     "status": "1",
     "postal_code": "14020",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "14"
+    "address": null
   },
   {
     "id": "2110",
@@ -29969,6 +29959,7 @@
     "id": "2119",
     "name": "KSAR CHELALA ELWIAM",
     "wilaya_code": "64",
+    "source_wilaya_code": "14",
     "commune_code": "1429",
     "commune": "KSAR CHELLALA",
     "commune_ar": "قصر الشلالة",
@@ -29980,8 +29971,7 @@
     "status": "1",
     "postal_code": "14011",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "14"
+    "address": null
   },
   {
     "id": "2120",
@@ -30854,6 +30844,7 @@
     "id": "2186",
     "name": "EL OUTAYA",
     "wilaya_code": "61",
+    "source_wilaya_code": "07",
     "commune_code": "0719",
     "commune": "EL OUTAYA",
     "commune_ar": "الوطاية",
@@ -30865,8 +30856,7 @@
     "status": "1",
     "postal_code": "07030",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "07"
+    "address": null
   },
   {
     "id": "2187",
@@ -32300,6 +32290,7 @@
     "id": "2294",
     "name": "EL GHICHA",
     "wilaya_code": "59",
+    "source_wilaya_code": "03",
     "commune_code": "0314",
     "commune": "EL GHICHA",
     "commune_ar": "الغيشة",
@@ -32311,8 +32302,7 @@
     "status": "1",
     "postal_code": "03023",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "03"
+    "address": null
   },
   {
     "id": "2295",
@@ -32692,6 +32682,7 @@
     "id": "2324",
     "name": "KSAR CHELLALA",
     "wilaya_code": "64",
+    "source_wilaya_code": "14",
     "commune_code": "1429",
     "commune": "KSAR CHELLALA",
     "commune_ar": "قصر الشلالة",
@@ -32703,8 +32694,7 @@
     "status": "1",
     "postal_code": "14002",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "14"
+    "address": null
   },
   {
     "id": "2325",
@@ -33220,6 +33210,7 @@
     "id": "2364",
     "name": "BARIKA BENBAATOUCHE",
     "wilaya_code": "60",
+    "source_wilaya_code": "05",
     "commune_code": "0542",
     "commune": "BARIKA",
     "commune_ar": "بريكة",
@@ -33231,8 +33222,7 @@
     "status": "1",
     "postal_code": "05028",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "05"
+    "address": null
   },
   {
     "id": "2365",
@@ -33272,6 +33262,7 @@
     "id": "2368",
     "name": "FEIDH ELBOTMA",
     "wilaya_code": "66",
+    "source_wilaya_code": "17",
     "commune_code": "1707",
     "commune": "FEIDH EL BOTMA",
     "commune_ar": "فيض البطمة",
@@ -33283,8 +33274,7 @@
     "status": "1",
     "postal_code": "17021",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "17"
+    "address": null
   },
   {
     "id": "2372",
@@ -33324,6 +33314,7 @@
     "id": "2374",
     "name": "EDDIS",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2821",
     "commune": "OULED SIDI BRAHIM",
     "commune_ar": "أولاد سيدي ابراهيم",
@@ -33335,8 +33326,7 @@
     "status": "1",
     "postal_code": "28032",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "2376",
@@ -33359,6 +33349,7 @@
     "id": "2377",
     "name": "SLIM",
     "wilaya_code": "68",
+    "source_wilaya_code": "28",
     "commune_code": "2843",
     "commune": "SLIM",
     "commune_ar": "سليم",
@@ -33370,8 +33361,7 @@
     "status": "1",
     "postal_code": "28037",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "28"
+    "address": null
   },
   {
     "id": "2378",
@@ -33887,6 +33877,7 @@
     "id": "2430",
     "name": "EL KANTARA",
     "wilaya_code": "61",
+    "source_wilaya_code": "07",
     "commune_code": "0717",
     "commune": "EL KANTARA",
     "commune_ar": "القنطرة",
@@ -33898,8 +33889,7 @@
     "status": "1",
     "postal_code": "07008",
     "postal_code_old": null,
-    "address": null,
-    "source_wilaya_code": "07"
+    "address": null
   },
   {
     "id": "2433",

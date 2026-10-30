@@ -12,7 +12,7 @@
 
 </div>
 
-3,908 post offices and 2,026 ATMs across Algeria, with **real postal codes**, bilingual (French / Arabic) names, GPS coordinates, and commune/wilaya linkage. Sourced from Algérie Poste, shipped as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
+3,908 post offices and 2,025 ATMs across Algeria, with **real postal codes**, bilingual (French / Arabic) names, GPS coordinates, and commune/wilaya linkage. Sourced from Algérie Poste, shipped as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
 npm install @geoalgeria/poste
@@ -22,7 +22,7 @@ npm install @geoalgeria/poste
 import poste from "@geoalgeria/poste";
 
 const offices = poste.postOffices();   // 3,908
-const atms = poste.atms();             // 2,026
+const atms = poste.atms();             // 2,025
 
 // Post offices in a commune (joins GeoAlgeria's code_commune)
 const inAdrar = offices.filter((o) => o.commune_code === "0101");
@@ -42,7 +42,7 @@ const inAdrar = offices.filter((o) => o.commune_code === "0101");
 | Dataset | Count | Notes |
 | --- | --- | --- |
 | Post offices | **3,908** | each with its own postal code (`postal_code`) |
-| ATMs | **2,026** | Algérie Poste GAB network |
+| ATMs | **2,025** | Algérie Poste GAB network |
 
 ## Formats
 
@@ -67,7 +67,7 @@ const offices: PostOffice[] = poste.postOffices();
 ```
 data/
   postoffices.json            # 3,908 offices (array)
-  atms.json                   # 2,026 ATMs (array)
+  atms.json                   # 2,025 ATMs (array)
   metadata.json               # counts, sources, license, updated
   csv/postoffices.csv         # repo + Release bundle (not in npm tarball)
   csv/atms.csv

@@ -132,11 +132,15 @@
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
-      "sha256": "a54725e67acba94a9c756bc15be612a49e28e1a0129f58a815c588fff867e741"
+      "sha256": "80e09c501f9217b604f14db07ad46bfde2e9049a29fb0071b1b662ea5f0ebf16"
     },
     {
       "path": "packages/formation-professionnelle/data/metadata.json",
-      "sha256": "225cf3cac72bd037b22ec29ec52c05cd7c96024b40ccc3e3644870f1f35d07d6"
+      "sha256": "d750208e1620c102f27d5a2357c4887edf0f9b320070fadeda96bcaa166c9aeb"
+    },
+    {
+      "path": "packages/formation-professionnelle/data/retired-ids.json",
+      "sha256": "699d26e2ea774b547400d0318af9d35ce47db5dd209e4ebec44a411c20f17331"
     },
     {
       "path": "packages/gares-routieres/data/metadata.json",
@@ -228,15 +232,15 @@
     },
     {
       "path": "packages/poste/data/atms.json",
-      "sha256": "0ed6b2996b11d255378bc573b918557d2f12e842a7720260d2369a588c3892c4"
+      "sha256": "c594f78e46916eb133b9112810e91bb3c3acab54e81269a2b0c95b8b82e24035"
     },
     {
       "path": "packages/poste/data/metadata.json",
-      "sha256": "086b7df5169607814a1786f5d85612428ca49be1412ace9be1cb35b1ab6598f2"
+      "sha256": "7fc4df2e57b83aa545386d5bffbc6f283f31719902ca604dc23e77f1f14053a3"
     },
     {
       "path": "packages/poste/data/postoffices.json",
-      "sha256": "80910e5a3ae6d94d274813caf82e3fd59fc9b7f8c4ad35382c92453554b3b73a"
+      "sha256": "1e8ba4bb0279351460fbc61d44763737a63695a95057cca369b03194ed4e65fa"
     },
     {
       "path": "packages/protection-civile/data/metadata.json",
@@ -313,15 +317,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70748,
-  "candidates": 17746,
+  "total_records": 70778,
+  "candidates": 17474,
   "reasons": {
-    "approximate_coordinate": 16898,
+    "approximate_coordinate": 16634,
     "inside_adjacent_wilaya": 192,
-    "missing_coordinate": 501,
+    "missing_coordinate": 492,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1287
+    "shared_coordinate": 1131
   },
   "datasets": [
     {
@@ -1202,14 +1206,14 @@
     },
     {
       "dataset": "formation-professionnelle",
-      "total_records": 1932,
-      "candidates": 571,
+      "total_records": 1963,
+      "candidates": 299,
       "reasons": {
-        "approximate_coordinate": 559,
-        "missing_coordinate": 11,
+        "approximate_coordinate": 295,
+        "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
-        "shared_coordinate": 396
+        "shared_coordinate": 240
       },
       "metadata_path": "packages/formation-professionnelle/data/metadata.json",
       "metadata": {
@@ -1218,16 +1222,16 @@
         "title_fr": "Établissements de formation professionnelle d'Algérie",
         "title_ar": "مؤسسات التكوين المهني الجزائرية",
         "title_en": "Algeria vocational-training establishments",
-        "record_count": 1932,
-        "geocoded_count": 1921,
-        "geocoded_pct": 99.4,
+        "record_count": 1963,
+        "geocoded_count": 1961,
+        "geocoded_pct": 99.9,
         "precision": {
-          "exact": 1362,
-          "approximate": 559
+          "exact": 1666,
+          "approximate": 295
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1920 of 1932 are geocoded: 1375 on the portal's own point, 510 on their commune's centroid and 35 on their wilaya's, the portal having left those coordinates empty.",
+        "coverage_note": "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1961 of 1963 are geocoded: 1681 on the portal's own point, 249 on their commune's centroid and 31 on their wilaya's, the portal having left those coordinates empty.",
         "wilayas_covered": 69,
         "bbox": [
           -8.136773,
@@ -1241,27 +1245,27 @@
             "name": "Ministry of Vocational Training and Education (MFEP): takwin.dz",
             "url": "https://takwin.dz",
             "license": "Factual public listing (MFEP)",
-            "retrieved": "2026-06-22",
+            "retrieved": "2026-10-25",
             "evidence_type": "official"
           }
         ],
         "license": "Factual public listing (MFEP)",
-        "updated": "2026-06-22",
+        "updated": "2026-10-25",
         "by_type": {
           "dfep": 58,
           "insfp": 182,
-          "cfpa": 856,
-          "prive": 723,
+          "cfpa": 857,
+          "prive": 754,
           "iep": 18,
           "annexe_cnfepd": 9,
-          "annexe_cfpa": 70,
+          "annexe_cfpa": 69,
           "ifep": 6,
           "annexe_insfp": 9,
           "infep": 1
         },
         "by_secteur": {
           "public": 1209,
-          "prive": 723
+          "prive": 754
         }
       }
     },
@@ -1794,7 +1798,7 @@
     },
     {
       "dataset": "poste",
-      "total_records": 5934,
+      "total_records": 5933,
       "candidates": 35,
       "reasons": {
         "inside_adjacent_wilaya": 7,
@@ -1809,11 +1813,11 @@
         "title_fr": "Bureaux de poste et GAB d'Algérie",
         "title_ar": "مكاتب البريد والصرافات الآلية الجزائرية",
         "title_en": "Algeria post offices & ATMs",
-        "record_count": 5934,
-        "geocoded_count": 5913,
+        "record_count": 5933,
+        "geocoded_count": 5912,
         "geocoded_pct": 99.6,
         "precision": {
-          "exact": 5913,
+          "exact": 5912,
           "approximate": 0
         },
         "estimated_universe": null,
@@ -1833,7 +1837,7 @@
           },
           {
             "file": "atms.json",
-            "count": 2026
+            "count": 2025
           }
         ],
         "sources": [
@@ -1842,12 +1846,12 @@
             "name": "Algérie Poste: baridimap.poste.dz",
             "url": "https://baridimap.poste.dz",
             "license": "Data © Algérie Poste; redistributed for reference",
-            "retrieved": "2026-06-08",
+            "retrieved": "2026-10-25",
             "evidence_type": "official"
           }
         ],
         "license": "Data © Algérie Poste; redistributed for reference",
-        "updated": "2026-06-08",
+        "updated": "2026-10-25",
         "distinct_postal_codes": 4000
       }
     },
@@ -2475,14 +2479,14 @@
     {
       "dataset": "formation-professionnelle",
       "entity": "establishments.json",
-      "total_records": 1932,
-      "candidates": 571,
+      "total_records": 1963,
+      "candidates": 299,
       "reasons": {
-        "approximate_coordinate": 559,
-        "missing_coordinate": 11,
+        "approximate_coordinate": 295,
+        "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
-        "shared_coordinate": 396
+        "shared_coordinate": 240
       },
       "path": "packages/formation-professionnelle/data/establishments.json"
     },
@@ -2581,7 +2585,7 @@
     {
       "dataset": "poste",
       "entity": "atms.json",
-      "total_records": 2026,
+      "total_records": 2025,
       "candidates": 8,
       "reasons": {
         "inside_adjacent_wilaya": 1,
@@ -2776,6 +2780,10 @@
     },
     {
       "path": "packages/ecoles/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/formation-professionnelle/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {

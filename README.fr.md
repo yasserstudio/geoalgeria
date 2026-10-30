@@ -64,7 +64,7 @@ Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les 
 | **Daïras** | 551 | districts, comme entités de premier niveau |
 | **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées, liens OpenStreetMap + Wikidata |
 | **Bureaux de poste** | 3 908 | vrais codes Algérie Poste, coordonnées |
-| **DAB** | 2 026 | réseau GAB d'Algérie Poste |
+| **DAB** | 2 025 | réseau GAB d'Algérie Poste |
 | **Agences d'emploi** | 331 | ANEM : 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
 | **Réseau Mobilis** | 12 344 | 164 agences + 12 180 points de vente. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **Couverture 5G** | 3 598 | sites 5G Djezzy + Mobilis + Ooredoo. [`@geoalgeria/telecom`](packages/telecom) |
@@ -76,7 +76,7 @@ Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les 
 | **Installations sportives** | 5 141 | stades, piscines, terrains de proximité, pistes d'athlétisme, terrains de sport et plus (27 types) dans 69 wilayas (Ministère de la Jeunesse et des Sports). [`@geoalgeria/sports`](packages/sports) |
 | **Enseignement supérieur** | 177 | universités, grandes écoles, ENS, centres + 19 établissements privés et 48 relevant d'autres ministères dans 51 wilayas, avec sites web officiels (MESRS). [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
 | **Tourisme** | 4 348 | 1 602 hôtels, 1 248 attractions, 1 184 sites historiques, 282 sources thermales (ASAL), 32 parcs nationaux. [`@geoalgeria/tourisme`](packages/tourisme) |
-| **Formation professionnelle** | 1 932 | 856 CFPA + 182 INSFP + 723 établissements privés agréés + 58 DFEP + plus dans les 69 wilayas actuelles (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
+| **Formation professionnelle** | 1 963 | 857 CFPA + 182 INSFP + 754 établissements privés agréés + 58 DFEP + plus dans les 69 wilayas actuelles (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **Mosquées** | 20 759 | composite Wikidata + OpenStreetMap, noms arabes & français, dénomination, les 69 wilayas. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **Boutiques Djezzy** | 128 | points de vente géolocalisés avec catégorie, horaires et rattachement commune/wilaya (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
 | **Établissements de santé** | 657 | EPH · EPSP · EHS · CHU du Ministère de la Santé, bilingues, 587 géolocalisés via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
@@ -136,7 +136,7 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contie
 | [`packages/sports`](packages/sports) | [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports) | Installations sportives du Ministère de la Jeunesse et des Sports, 5 141 dans 69 wilayas, 27 types, avec capacité, accessibilité PMR et coordonnées |
 | [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Réseau de l'enseignement supérieur du MESRS, universités, grandes écoles, ENS et centres + 19 établissements privés et 48 relevant d'autres ministères (177), avec sites web officiels et coordonnées |
 | [`packages/tourisme`](packages/tourisme) | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Infrastructure touristique, 4 348 hôtels, attractions, sites historiques, sources thermales et parcs géocodés (ASAL, OSM, Wikidata) |
-| [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Formation professionnelle, 1 932 CFPA, INSFP, IFEP, IEP, DFEP et centres privés du MFEP (takwin.dz), avec capacité, internat et coordonnées |
+| [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Formation professionnelle, 1 963 CFPA, INSFP, IFEP, IEP, DFEP et centres privés du MFEP (takwin.dz), avec capacité, internat et coordonnées |
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Boutiques Djezzy, 128 points de vente géolocalisés de djezzy.dz, avec catégorie, horaires et rattachement commune/wilaya |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosquées d'Algérie, 20 759 géolocalisées, un composite Wikidata + OpenStreetMap avec noms arabes & français, dénomination et rattachement commune/wilaya |
 | [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Établissements de santé publics, 657 du Ministère de la Santé (EPH, EPSP, EHS, CHU), bilingues, géolocalisés via OSM + Wikidata avec rattachement commune/wilaya |

@@ -141,6 +141,38 @@
           "note": "The BaridiMap record this office is published from, whose own Latin name and commune fields name the place the Arabic name is corrected to."
         }
       ]
+    },
+    {
+      "file": "atms.json",
+      "record_id": "10848",
+      "status": "corrected",
+      "publish_action": "patch",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-25",
+      "expect": {
+        "wilaya_code": "14",
+        "commune_code": null,
+        "lat": 34.8966983,
+        "lng": 2.3088133
+      },
+      "patch": {
+        "wilaya_code": "64",
+        "commune_code": "1409"
+      },
+      "evidence": [
+        {
+          "url": "https://baridimap.poste.dz",
+          "checked_at": "2026-10-25"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-25"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-25"
+        }
+      ]
     }
   ]
 }

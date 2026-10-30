@@ -10,13 +10,13 @@
  *   committed capture in sources/formation-professionnelle/ is the concatenation
  *   of all 59 calls.
  *
- * OFFLINE ONLY. takwin.dz sits behind a WAF that answers a non-browser client
- * with a block page (the same is true of the ibtikar.takwin.dz mirror), so this
- * build always replays the committed capture rather than pulling. That is also
- * why dates are resolved with offline semantics: the committed `updated` /
- * `retrieved` are preserved rather than restamped with today, because no
- * retrieval happened. Re-establishing a live pull needs a real browser session;
- * until then the capture is the source of truth and git history is its archive.
+ * OFFLINE ONLY. takwin.dz answers an ordinary request from inside Algeria, and
+ * a WAF block page from anywhere else, so this build always replays the
+ * committed capture rather than pulling: a refresh is a capture run from an
+ * Algerian connection, and the build itself needs no network. The dates it
+ * stamps are the capture's own retrieval date from the source manifest, not
+ * today's, so every replay of a given capture reproduces the same metadata and
+ * the package never claims a retrieval it did not make.
  *
  * Geocoding. The portal stores a coordinate pair per establishment, but for 557
  * of 1,932 records one or both axes are the sentinel 0.000000000000000000000000:
@@ -39,18 +39,18 @@
  */
 
 import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import {
   MIGRATIONS,
   writePackageV2,
-  resolveDates,
   carryOverIds,
   readCommitted,
   readRetiredIds,
+  readRetiredMigrations,
 } from "../../../scripts/lib/v2-transforms.mjs";
 import { containingWilayaCode } from "../../../scripts/lib/build-utils.mjs";
-import { readCapture } from "../../../scripts/lib/source-store.mjs";
+import { captureMeta, readCapture } from "../../../scripts/lib/source-store.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -227,6 +227,221 @@ function resolveCommune(commune, wilaya, ref) {
   return null;
 }
 
+// --- id carry-over ----------------------------------------------------------
+// The ids are a flat 5-digit space assigned from sort position, so nothing in a
+// record's own id says which id it shipped under: the carry key is the only
+// thing holding a public join key to its establishment.
+//
+// It is the MFEP's own accreditation code plus the establishment type. The name
+// used to be in it, and that is what blocked the 2026-10-25 rebuild (#306): the
+// portal rewrote 1,788 Arabic names, and it revises their spacing, their
+// separators, their typos and their branding freely, so a key that reads one
+// takes every revision for a different place. Nine establishments were relisted
+// under a brand or a corrected spelling at the same coordinate and phone, which
+// no name-based key could have followed. Type is in the key because `code` alone
+// repeats on 5 records; neither depends on wilaya_code, so an id survives a
+// commune moving to its post-2026 daughter wilaya.
+/** The establishment a record stands for, as a carry key. */
+export const accreditationKeyOf = (r) =>
+  [r.code, r.type].map((f) => JSON.stringify(f ?? null)).join("|");
+
+// Two pairs share one code and type (0303|cfpa, 10611|prive), and a carry key
+// that cannot pin an id uniquely fails the build, so they are told apart by
+// position within their own group. Same mechanism as sportsCarryKey, but not the
+// same licence: sports' twins are field-identical, so which keeps which id
+// carries no meaning, while these are different establishments tens of
+// kilometres apart. A source that reordered a group would hand each the other's
+// id, so the pairing is checked below rather than trusted.
+const TIE_BREAK_MAX_KM = 5;
+
+/**
+ * Reviewed carry-key exceptions: a published id the review cut loose from its
+ * accreditation code, because the code changed hands rather than the
+ * establishment changing its name. Carrying such an id would point a public join
+ * key at a different business, so the id retires and the new holder is minted a
+ * fresh one. The MFEP publishes no successor field, so this cannot be derived;
+ * each entry is a reviewed decision with the evidence beside it, the same way
+ * packages/ecoles/scripts/fetch.mjs tracks its OSM primitive migrations.
+ *
+ * Keyed on the id it severs, not on the carry key, so the rule stops matching
+ * once the successor is published under its own id: a rebuild from the new
+ * committed data carries that id like any other instead of churning it.
+ */
+export const SEVERED_IDS = new Map([
+  [
+    "00591",
+    {
+      code: "15634",
+      type: "prive",
+      reviewer: "geoalgeria-maintainers",
+      reviewed_at: "2026-10-25",
+      // What the two captures say under this one accreditation code. Every
+      // descriptive field changed, in both languages, and nothing the portal
+      // publishes ties the two together.
+      was: {
+        capture: "2026-06-22",
+        name_fr: "LHIRFA USIREM",
+        name: "\u0627\u0644\u0645\u0624\u0633\u0633\u0629 \u0627\u0644\u062E\u0627\u0635\u0629\u0644\u0644\u062A\u0643\u0648\u064A\u0646 \u0627\u0644\u0645\u0647\u0646\u064A\u0644\u062D\u0631\u0641\u0627 \u0627\u0648\u0633\u064A\u0631\u0627\u0645",
+        telephone: "0540824419",
+        email: "centredeformationasirem@gmail.com",
+        facebook: "https://www.facebook.com/p/Asirem-School100086582826402/",
+        adresse_fr: "Rue frere ouamrane lot thala n 03 Tiziouzou",
+        capacite: 144,
+        surface_m2: 200,
+        vocations: 4,
+        point: "exact, 36.697271 / 4.049615",
+      },
+      now: {
+        capture: "2026-10-25",
+        name_fr: "HIGH FLY SCHOOL",
+        name: "\u0627\u0644\u0645\u0624\u0633\u0633\u0629 \u0627\u0644\u062E\u0627\u0635\u0629 \u0644\u0644\u062A\u0643\u0648\u064A\u0646 \u0627\u0644\u0645\u0647\u0646\u064A \u0647\u0627\u064A \u0641\u0644\u0627\u064A \u0633\u0643\u0648\u0644",
+        telephone: null,
+        email: "highflyschoolto@gmail.com",
+        facebook: null,
+        adresse_fr: null,
+        capacite: null,
+        surface_m2: null,
+        vocations: 0,
+        point: "none; placed on the Tizi Ouzou commune centroid",
+      },
+      note:
+        "Accreditation 15634 passed from Asirem School to High Fly School. The name " +
+        "changed in both languages, and so did the phone, the email, the Facebook page, " +
+        "the address, the capacity, the surface and the whole curriculum: June listed " +
+        "sewing, women's and men's hairdressing and childcare assistance, October lists " +
+        "none. The 4 km between the two published points is not evidence of a move, " +
+        "because October carries no portal point at all and sits on its commune's " +
+        "centroid. Nothing but the code and the wilaya connects the two records, so the " +
+        "id stays with neither: 00591 is reserved and High Fly School is a new record.",
+    },
+  ],
+]);
+
+/**
+ * A keyOf for carryOverIds over both sides of a rebuild. A severed id is keyed so
+ * that nothing can match it, which retires it; it is also left out of its group's
+ * numbering, so the records that remain still pair with each other.
+ *
+ * @param {object[]} committed  the committed v2 records
+ * @param {object[]} rows       the records being emitted
+ * @returns {(r: object) => string}
+ */
+export function formationCarryKey(committed, rows) {
+  const keyed = new Map();
+  for (const set of [committed, rows]) {
+    const seen = new Map();
+    for (const r of set) {
+      const place = accreditationKeyOf(r);
+      if (set === committed && SEVERED_IDS.has(String(r.id))) {
+        keyed.set(r, `${place}!severed:${r.id}`);
+        continue;
+      }
+      const nth = (seen.get(place) ?? 0) + 1;
+      seen.set(place, nth);
+      keyed.set(r, `${place}#${nth}`);
+    }
+  }
+  return (r) => keyed.get(r) ?? accreditationKeyOf(r);
+}
+
+const KM_PER_DEGREE = 111;
+const kmApart = (a, b) =>
+  KM_PER_DEGREE *
+  Math.hypot(a.lat - b.lat, (a.lng - b.lng) * Math.cos((a.lat * Math.PI) / 180));
+
+/**
+ * How many records share a code and type, counted over BOTH sides. Sizing the
+ * group from the committed side alone left a singleton that gains a second member
+ * unguarded, which is the case that actually swaps an id: a new record sorting
+ * first takes the published id and the real holder is minted a new one.
+ *
+ * @param {object[]} committed
+ * @param {object[]} rows
+ * @returns {Map<string, number>}
+ */
+function groupSizes(committed, rows) {
+  const sizes = new Map();
+  for (const set of [committed, rows]) {
+    const counts = new Map();
+    for (const r of set) {
+      const place = accreditationKeyOf(r);
+      counts.set(place, (counts.get(place) ?? 0) + 1);
+    }
+    for (const [place, n] of counts) sizes.set(place, Math.max(sizes.get(place) ?? 0, n));
+  }
+  return sizes;
+}
+
+/**
+ * Refuse a positional tie-break that paired two records standing apart. A group
+ * the portal reordered, or that gained a member, would otherwise swap two
+ * published ids silently.
+ *
+ * The coordinate decides where both sides carry one, even a commune centroid:
+ * it still says which locality the record is in, which is all this asks. Where
+ * either side has none, the commune label is the only locality left, folded with
+ * normAr because the portal respaces those too. With neither, the check fails
+ * closed: nothing locates the record, so the pairing cannot be checked, and a
+ * silent id swap is worse than a build that stops.
+ *
+ * @param {object[]} committed
+ * @param {object[]} rows
+ * @param {(r: object) => string} keyOf
+ * @param {Map<string, number>} sizes
+ */
+function checkTieBreaks(committed, rows, keyOf, sizes) {
+  const live = new Map(rows.map((r) => [keyOf(r), r]));
+  for (const was of committed) {
+    const place = accreditationKeyOf(was);
+    if ((sizes.get(place) ?? 0) < 2) continue;
+    const now = live.get(keyOf(was));
+    if (!now) continue;
+    const refuse = (why) => {
+      throw new Error(
+        `formation-professionnelle: the tie-break paired id ${was.id} with ${why} ` +
+          `(${JSON.stringify(was.name)} -> ${JSON.stringify(now.name)}); code|type ${place} ` +
+          `has been reordered or gained a member, so position no longer identifies ` +
+          `its establishments`,
+      );
+    };
+    if (was.lat != null && now.lat != null) {
+      const km = kmApart(was, now);
+      if (km > TIE_BREAK_MAX_KM) refuse(`a record ${km.toFixed(1)} km away`);
+      continue;
+    }
+    if (was.commune == null || now.commune == null) {
+      refuse("a record nothing locates: neither carries a coordinate or a commune");
+    }
+    if (normAr(was.commune) !== normAr(now.commune)) {
+      refuse(`a record in another commune (${was.commune} / ${now.commune}), with no coordinate to appeal to`);
+    }
+  }
+}
+
+export function assignStableIds(rows, committed, retiredIds) {
+  const keyOf = formationCarryKey(committed, rows);
+  checkTieBreaks(committed, rows, keyOf, groupSizes(committed, rows));
+  const shipped = new Set(committed.map(keyOf));
+  let highest = 0;
+  for (const id of [...committed.map((r) => r.id), ...retiredIds]) {
+    const n = Number(id);
+    if (Number.isFinite(n) && n > highest) highest = n;
+  }
+  let minted = 0;
+  for (const r of rows) {
+    if (shipped.has(keyOf(r))) continue;
+    r.id = String(++highest).padStart(5, "0");
+    minted++;
+  }
+  const retiredBefore = retiredIds.size;
+  carryOverIds(rows, committed, keyOf, "formation-professionnelle", retiredIds);
+  return {
+    carried: rows.length - minted,
+    minted,
+    retired: retiredIds.size - retiredBefore,
+  };
+}
+
 // --- main -------------------------------------------------------------------
 function main() {
   const raw = readCapture("formation-professionnelle", "takwin-etab").data;
@@ -361,17 +576,27 @@ function main() {
   }
 
   // --- emit v2 ---------------------------------------------------------------
-  // Offline: no retrieval happened, so the committed dates are reproduced rather
-  // than restamped.
+  // The capture is the retrieval, so its own date is what the package states,
+  // rather than today's (the build pulled nothing) or the previous metadata's
+  // (which would misdate a fresh capture as the last one). A replay of the same
+  // capture therefore reproduces the same metadata.
   const cfg = MIGRATIONS["formation-professionnelle"];
-  const { updated, retrieved } = resolveDates(OUT_DIR, true);
+  const captured = captureMeta("formation-professionnelle", "takwin-etab").retrieved;
+  const { updated, retrieved } = { updated: captured, retrieved: captured };
   const v2 = records.map(cfg.map);
-  // `code` alone repeats on 5 records, so type and name make the carry key unique
-  // without depending on wilaya_code. That preserves ids when a commune moves
-  // from its source's pre-reform wilaya to the current daughter wilaya.
-  const carryKey = (r) => [r.code, r.type, r.name].join("|");
+  const committed = readCommitted(OUT_DIR, "establishments.json");
   const retiredIds = readRetiredIds(OUT_DIR);
-  carryOverIds(v2, readCommitted(OUT_DIR, "establishments.json"), carryKey, "formation-professionnelle", retiredIds);
+  // The ledger's forwards are append-only: read what is there, carry it back out
+  // through the writer, and add a forward for any retirement whose data went to
+  // another record. A retirement here is the portal dropping an accreditation
+  // code outright, which is a disappearance and not a merge, so it reserves the
+  // id without forwarding it; the key is unique, so no two records ever fold
+  // into one, and the ids carry no prefix for carryOverIds to re-issue against.
+  const retiredMigrations = readRetiredMigrations(OUT_DIR);
+  const ids = assignStableIds(v2, committed, retiredIds);
+  console.log(
+    `Ids: ${ids.carried} carried, ${ids.minted} minted above the high-water mark, ${ids.retired} retired`,
+  );
 
   let oldMeta = {};
   try { oldMeta = JSON.parse(readFileSync(join(OUT_DIR, "metadata.json"), "utf-8")); } catch {}
@@ -384,8 +609,13 @@ function main() {
     retrieved,
     oldMeta,
     retiredIds,
+    retiredMigrations,
   });
   console.log(`Wrote ${out.length} establishments → v2 (${metadata.geocoded_count} geocoded, ${metadata.wilayas_covered} wilayas).`);
 }
 
-main();
+// Guarded so the test suite can import the carry key and the id assignment
+// without running the build, the shape packages/ecoles/scripts/fetch.mjs uses.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}
