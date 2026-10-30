@@ -14,11 +14,12 @@
  * (CHU/EPH/EHS/EPSP from the Ministry of Health), so every record that classifies
  * as one is dropped here with a logged count. The two packages must not be summed.
  *
- * The first guard is not a name test at all: @geoalgeria/sante references 121 OSM
- * elements by id, and any element in that set IS a registry record already
- * shipped there, whatever it calls itself. Those are excluded by construction
- * (sante_overlap), which is the only exclusion in this file that cannot be
- * defeated by an unusual name.
+ * The first two guards are not name tests at all, so neither can be defeated by
+ * an unusual name. A military facility is excluded by element id (military), under
+ * the Owner decision of 2026-10-29 that no military location appears anywhere in
+ * the project. Then @geoalgeria/sante references 121 OSM elements by id, and any
+ * element in that set IS a registry record already shipped there, whatever it
+ * calls itself, so those are excluded by construction (sante_overlap).
  *
  * Classification then runs over the normalized FR+AR name (Latin accents folded,
  * Arabic hamza/alef variants folded). Order is deliberate:
@@ -72,9 +73,9 @@ import { dirname, join } from "node:path";
 import https from "node:https";
 import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
-import { stripLeadingMarks } from "../../../scripts/lib/name-script.mjs";
+import { stripLeadingMarks, looseNameKeys } from "../../../scripts/lib/name-script.mjs";
 import { withoutEmDash } from "../../../scripts/lib/no-em-dash.mjs";
-import { attachCommuneWithRules, describeLinkage } from "../../../scripts/lib/build-utils.mjs";
+import { attachCommuneWithRules, describeLinkage, haversine } from "../../../scripts/lib/build-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -322,6 +323,18 @@ const ownershipHay = (hay) => hay.replace(SPECIAL_NEEDS, " ");
 const NO_IDS = new Set();
 
 /**
+ * Military facilities, by OpenStreetMap element id. Owner decision of 2026-10-29:
+ * no military location anywhere in the project, so these never enter the package,
+ * whatever a later refresh renames them to. Keyed on the element id rather than a
+ * name pattern because the id is the stable source key and a name test would also
+ * catch civilian records that merely mention the army (a pharmacy honouring the
+ * military insurance convention, for instance). The id each one published under is
+ * retired in data/retired-ids.json and never reused.
+ *   - way/186937625 "Clinique militaire les Oliviers", Kouba (published as 16-00234)
+ */
+const MILITARY_OSM_IDS = new Set(["way/186937625"]);
+
+/**
  * Decide what a record is: `{ type }` to keep it, `{ excluded }` to drop it with
  * a logged reason. See the header for why the order is what it is.
  *
@@ -330,6 +343,7 @@ const NO_IDS = new Set();
  * excluded by construction rather than by reading its name.
  */
 export function classify(t, osmId = null, santeOsmIds = NO_IDS) {
+  if (osmId && MILITARY_OSM_IDS.has(osmId)) return { excluded: "military" };
   if (osmId && santeOsmIds.has(osmId)) return { excluded: "sante_overlap" };
   const hay = nameHay(t);
   const hospitalTagged = t.amenity === "hospital" || t.healthcare === "hospital";
@@ -430,6 +444,94 @@ export function loadSanteOsmIds() {
   );
 }
 
+/**
+ * Elements that are part of a hospital @geoalgeria/sante already ships, though
+ * sante references another element of it. OpenStreetMap often maps one hospital
+ * as its grounds and, separately, as a building inside them; sante's geocoder
+ * picks one, and the other would come back here as a "clinic" with the hospital's
+ * own name. The 2026-10-25 sante re-pull showed it: 04-eph-06 (EPH Ibn Sina, Oum
+ * El Bouaghi) moved from the building way/624185601 to the grounds
+ * relation/12305812, and the building, named just "Ibn Sina", reappeared here.
+ *
+ * An element counts as such a part when it is itself tagged as a hospital, stands
+ * within SANTE_PART_RADIUS_M of a sante hospital element, and carries that
+ * element's own street and city: three facts about the same mapped premises, none
+ * of them a name match, so a separate clinic next door with its own address is
+ * never caught. Over the 2026-10-25 capture it matches seven elements and changes
+ * the outcome for that one building alone: the other six are unnamed hospital
+ * elements the unnamed_hospital rule already drops.
+ */
+const SANTE_PART_RADIUS_M = 40;
+export function santeHospitalParts(elements, santeOsmIds) {
+  const point = (el) => [el.lat ?? el.center?.lat, el.lon ?? el.center?.lon];
+  const anchors = elements.filter((el) => santeOsmIds.has(`${el.type}/${el.id}`));
+  const parts = new Set();
+  for (const el of elements) {
+    const key = `${el.type}/${el.id}`;
+    const t = el.tags || {};
+    if (santeOsmIds.has(key) || !(t.amenity === "hospital" || t.healthcare === "hospital")) continue;
+    if (!t["addr:street"] || !t["addr:city"]) continue;
+    const [lat, lng] = point(el);
+    for (const a of anchors) {
+      const at = a.tags || {};
+      if (at["addr:street"] !== t["addr:street"] || at["addr:city"] !== t["addr:city"]) continue;
+      const [alat, alng] = point(a);
+      if (haversine(lat, lng, alat, alng) <= SANTE_PART_RADIUS_M) { parts.add(key); break; }
+    }
+  }
+  return parts;
+}
+
+/**
+ * Elements that are a Double mapping (CONTEXT.md) of a hospital @geoalgeria/sante
+ * already ships: a second OpenStreetMap element for the same place, within
+ * DOUBLE_MAPPING_RADIUS_M of the sante element and sharing a Loose name key with
+ * it. sante publishes the place, so this package must not publish it again.
+ *
+ * Not when the element is a proximity facility (polyclinique, salle de soins,
+ * centre de santé). sante's anchors are hospital-tier records (CHU, EPH, EHS),
+ * which a proximity facility never is, so a same-name element there means sante
+ * pinned its hospital onto the facility, not that the facility is mapped twice;
+ * excluding it would delete a real facility. Those are returned as `conflicts`
+ * for the report and kept. Over the 2026-10-25 capture:
+ *   - way/223396517 "Maternité Benatou Mira", 17 m from sante's way/219028752
+ *     (22-ehs-03, the EHS gynécologie-obstétrique of Sidi Bel Abbes): a double
+ *     mapping, excluded;
+ *   - way/783010148 "Polyclinique Douera", 5 m from sante's node/4218102291, the
+ *     point sante gives 16-chu-03 (CHU Douera), while OpenStreetMap maps the
+ *     hospital itself as way/40072354 "Hopital Douira" about 120 m away: a sante
+ *     geocoding conflict, kept here and owed a sante fix.
+ */
+const PROXIMITY_TYPES = new Set(["polyclinique", "salle_de_soins", "centre_sante"]);
+const DOUBLE_MAPPING_RADIUS_M = 40;
+const nameValues = (t) => [t.name, t["name:fr"], t["name:ar"], t["name:en"], t.official_name].filter(Boolean);
+export function santeDoubleMappings(elements, santeOsmIds) {
+  const point = (el) => [el.lat ?? el.center?.lat, el.lon ?? el.center?.lon];
+  const anchors = elements
+    .filter((el) => santeOsmIds.has(`${el.type}/${el.id}`))
+    .map((el) => ({ point: point(el), keys: looseNameKeys(nameValues(el.tags || {})) }))
+    .filter((a) => a.keys.size);
+  const doubles = new Set();
+  const conflicts = new Set();
+  for (const el of elements) {
+    const key = `${el.type}/${el.id}`;
+    if (santeOsmIds.has(key)) continue;
+    const keys = looseNameKeys(nameValues(el.tags || {}));
+    if (!keys.size) continue;
+    const [lat, lng] = point(el);
+    for (const a of anchors) {
+      if (haversine(lat, lng, ...a.point) > DOUBLE_MAPPING_RADIUS_M) continue;
+      if (![...keys].some((k) => a.keys.has(k))) continue;
+      const verdict = classify(el.tags || {}, key, santeOsmIds);
+      if (PROXIMITY_TYPES.has(verdict.type)) conflicts.add(key);
+      else doubles.add(key);
+      break;
+    }
+  }
+  doubles.conflicts = conflicts;
+  return doubles;
+}
+
 // A single-line address from OSM addr:* tags, or null when none are present.
 function parseAddress(t) {
   const line1 = [str(t["addr:housenumber"]), str(t["addr:street"]) || str(t["addr:place"])]
@@ -440,7 +542,7 @@ function parseAddress(t) {
   return parts.length ? parts.join(", ") : null;
 }
 
-function normOSM(elements, santeOsmIds) {
+function normOSM(elements, santeOsmIds, santeParts = new Set(), santeDoubles = new Set()) {
   // Five selectors over one area: an element matching more than one of them comes
   // back once per match, so collapse by osm type/id before anything else.
   const seen = new Set();
@@ -454,7 +556,9 @@ function normOSM(elements, santeOsmIds) {
     const lng = el.lon ?? el.center?.lon;
     if (!inAlgeria(lat, lng)) continue;
     const t = el.tags || {};
-    const verdict = classify(t, key, santeOsmIds);
+    const verdict = santeParts.has(key) ? { excluded: "sante_part" }
+      : santeDoubles.has(key) ? { excluded: "sante_double_mapping" }
+      : classify(t, key, santeOsmIds);
     if (verdict.excluded) {
       excluded[verdict.excluded] = (excluded[verdict.excluded] || 0) + 1;
       continue;
@@ -559,7 +663,11 @@ async function main() {
   console.log(`  OSM: ${osmRaw.length} elements pulled`);
   const santeOsmIds = loadSanteOsmIds();
   console.log(`  ${santeOsmIds.size} OSM element(s) already shipped by @geoalgeria/sante`);
-  let { rows, excluded } = normOSM(osmRaw, santeOsmIds);
+  const santeParts = santeHospitalParts(osmRaw, santeOsmIds);
+  const santeDoubles = santeDoubleMappings(osmRaw, santeOsmIds);
+  if (santeDoubles.conflicts.size)
+    console.warn(`  ⚠️  sante geocode conflict (kept here, owed a sante fix): ${[...santeDoubles.conflicts].join(", ")}`);
+  let { rows, excluded } = normOSM(osmRaw, santeOsmIds, santeParts, santeDoubles);
   const excludedTotal = Object.values(excluded).reduce((a, b) => a + b, 0);
   console.log(`  excluded ${excludedTotal}: ` + Object.entries(excluded).sort().map(([k, v]) => `${k}=${v}`).join(", "));
   console.log(`  OSM: ${rows.length} care facilities kept`);

@@ -16,20 +16,20 @@
 direction de la santé – établissements publics hospitaliers (EPH), de santé de
 proximité (EPSP), hospitaliers spécialisés (EHS) et centres hospitalo-universitaires
 (CHU) du **Ministère de la Santé (MSP)**, bilingues français/arabe, **587
-géolocalisés** (121 sur un point précis OpenStreetMap/Wikidata, 11 vérifiés à la
-main, 455 sur un centroïde de commune) avec rattachement commune/wilaya.
+géolocalisés** (122 sur un point précis OpenStreetMap/Wikidata, 11 vérifiés à la
+main, 454 sur un centroïde de commune) avec rattachement commune/wilaya.
 Livré en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 > **Le volet communautaire vit dans [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques), et les deux ne doivent jamais être additionnés.**
 > Ce paquet est le volet *registre* : les établissements publics que gère le
 > ministère de la Santé, officiel et clos. `cliniques` est le volet
-> *communautaire* : 1 917 polycliniques, salles de soins, centres de santé,
+> *communautaire* : 1 915 polycliniques, salles de soins, centres de santé,
 > maternités et cliniques cartographiés par les contributeurs OpenStreetMap,
 > partiel par nature. Tout élément OSM référencé par un enregistrement d'ici en
 > est exclu par construction, donc aucun lieu n'est publié deux fois sous le
 > même élément, mais les deux décrivent des volets différents d'un système de
-> santé : additionner 657 et 1 917 ne compte rien de réel.
+> santé : additionner 657 et 1 915 ne compte rien de réel.
 
 ```bash
 npm install @geoalgeria/sante
@@ -76,17 +76,17 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
-| `exact` | 132 | point précis : un établissement OSM ou Wikidata dans la commune, ou une position vérifiée à la main |
-| `approximate` | 455 | centroïde de la commune de l'établissement |
+| `exact` | 133 | point précis : un établissement OSM ou Wikidata dans la commune, ou une position vérifiée à la main |
+| `approximate` | 454 | centroïde de la commune de l'établissement |
 | `null` | 70 | localité non rattachée à une commune – pas de coordonnées (`lat`/`lng` aussi `null`) |
 
 **Par méthode d'obtention** (`geo_method`)
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
-| `osm_point` | 118 | point précis d'un établissement OpenStreetMap dans la commune |
+| `osm_point` | 119 | point précis d'un établissement OpenStreetMap dans la commune |
 | `wikidata_point` | 3 | point précis d'un établissement Wikidata dans la commune |
-| `commune_centroid` | 455 | centroïde de la commune de l'établissement (approximatif) |
+| `commune_centroid` | 454 | centroïde de la commune de l'établissement (approximatif) |
 | `owner_verified` | 11 | position relevée sur la carte par le propriétaire du projet, via le registre de corrections révisées |
 | `null` | 70 | aucune méthode – l'enregistrement n'a pas de coordonnées |
 

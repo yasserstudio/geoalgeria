@@ -14,19 +14,19 @@
 
 **657 public health establishments** across all **58 wilayas** with health
 directorates, public hospitals (EPH), proximity-health establishments (EPSP),
-specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **587 geocoded** (121 to a precise
-OpenStreetMap/Wikidata point, 11 verified by hand, 455 to a commune centroid) with commune/wilaya
+specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **587 geocoded** (122 to a precise
+OpenStreetMap/Wikidata point, 11 verified by hand, 454 to a commune centroid) with commune/wilaya
 linkage. Shipped as JSON, CSV, GeoJSON, and
 TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 > **The community tier lives in [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques), and the two must not be summed.**
 > This package is the *registry* tier: the public establishments the Ministry of
-> Health runs, official and closed. `cliniques` is the *community* tier: 1,917
+> Health runs, official and closed. `cliniques` is the *community* tier: 1,915
 > polycliniques, salles de soins, centres de santé, maternités and clinics
 > mapped by OpenStreetMap volunteers, partial by nature. Every OSM element a
 > record here references is excluded there by construction, so no place is
 > published twice under the same element, but the two describe different tiers
-> of a health system and adding 657 to 1,917 counts nothing real.
+> of a health system and adding 657 to 1,915 counts nothing real.
 
 ```bash
 npm install @geoalgeria/sante
@@ -73,17 +73,17 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Value | Count | Meaning |
 | --- | --- | --- |
-| `exact` | 132 | precise point: an OSM or Wikidata facility in the commune, or a location verified by hand |
-| `approximate` | 455 | the establishment's commune centroid |
+| `exact` | 133 | precise point: an OSM or Wikidata facility in the commune, or a location verified by hand |
+| `approximate` | 454 | the establishment's commune centroid |
 | `null` | 70 | locality not resolved to a commune – no coordinates (`lat`/`lng` also `null`) |
 
 **By coordinate method** (`geo_method`)
 
 | Value | Count | Meaning |
 | --- | --- | --- |
-| `osm_point` | 118 | precise point from an OpenStreetMap facility in the commune |
+| `osm_point` | 119 | precise point from an OpenStreetMap facility in the commune |
 | `wikidata_point` | 3 | precise point from a Wikidata facility in the commune |
-| `commune_centroid` | 455 | the establishment's commune centroid (approximate) |
+| `commune_centroid` | 454 | the establishment's commune centroid (approximate) |
 | `owner_verified` | 11 | location read off the map by the project owner, through the reviewed-correction ledger |
 | `null` | 70 | no method – record has no coordinate |
 

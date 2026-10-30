@@ -2,6 +2,10 @@
 "@geoalgeria/pharmacies": minor
 ---
 
+**Migration.** `22-00057` (Pharmacie militaire, Sidi Bel-Abbes) is retired and reserved in `data/retired-ids.json`, which grows to 34 reserved ids. A project decision of 2026-10-29 keeps every military location out of GeoAlgeria, so the record leaves the package and its OpenStreetMap element `node/6954436786` is excluded by id in the generator, which keeps it out of every later rebuild. It gets no `migrations` entry, because nothing in the project carries it now. A civilian officine is never caught by that guard, which is keyed on the element id and not on a name: `02-00095` (MERBOUH Elhadi, Boukadir), whose `operator` only names the military insurance convention, still ships.
+
+This release therefore publishes **3,811** pharmacies, 3,508 `exact`, 2,474 named, 1,162 with an address, 34.6% of the ~11,000 estimate. The figures in the refresh note below are the refresh's own, measured before this retirement.
+
 Refresh pharmacies from OpenStreetMap, retrieved 2026-10-22: 3,795 records to 3,812.
 
 Source: OpenStreetMap (ODbL 1.0), `amenity=pharmacy` in Algeria, Overpass snapshot `2026-10-22T19:37:51Z`. Previous pull 2026-08-31.

@@ -80,9 +80,9 @@
         "name": "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)",
         "url": "https://cartes.patrimoineculturelalgerien.org"
       },
-      "cadence": "quarterly",
+      "cadence": "manual",
       "last_retrieved": "2026-06-28",
-      "next_due": "2026-09-28",
+      "next_due": null,
       "note": "No live path yet: scripts/fetch.mjs is a deterministic transform of the curated research/patrimoine capture, not a live portal pull: re-running it is byte-identical (verified 2026-10-25) and cannot move the retrieval date. The portal answers from abroad, so a real refresh is the live FR+AR re-pull the script header defers, which has to preserve the hand-built FR-AR translations."
     },
     {
@@ -222,9 +222,9 @@
         "url": "https://www.mobilis.dz"
       },
       "cadence": "quarterly",
-      "last_retrieved": "2026-08-31",
-      "next_due": "2026-11-30",
-      "note": "Agencies only. The ~12k approved points of sale carry no coordinates at source, so density is the ceiling (locator is WAF-protected)."
+      "last_retrieved": "2026-10-25",
+      "next_due": "2027-01-25",
+      "note": "Agencies only. The ~12k approved points of sale carry no coordinates at source, so density is the ceiling (locator is WAF-protected, though it served JSON to an ordinary primed session on 2026-10-25). Refreshed 2026-10-25 over an Algerian connection the Owner supplied; mobilis.dz is geo-blocked from outside Algeria (TCP dropped on every A record, port 443). The pull came back byte-identical to 2026-08-31 on both files, so the locator looks like a static export republished unchanged and a later identical pull is not independent confirmation."
     },
     {
       "package": "@geoalgeria/mosquees",
@@ -314,9 +314,9 @@
       },
       "sources_count": 3,
       "cadence": "quarterly",
-      "last_retrieved": "2026-06-27",
-      "next_due": "2026-09-27",
-      "note": "458 approximate coordinates are a #244 P3 debt."
+      "last_retrieved": "2026-10-25",
+      "next_due": "2027-01-25",
+      "note": "Refreshed 2026-10-25 over an Algerian connection the Owner supplied; sante.gov.dz is geo-blocked from outside Algeria (TCP dropped on every A record, port 443), so a pass from abroad will fail and no raw capture is committed under research/sante/, leaving --cache nothing to replay. The 2026-10-25 pull returned the registry unchanged record for record. 457 approximate coordinates are a #244 P3 debt. Still open: pairPosts runs step 2b before the twin-post step, and re-running it afterwards pairs 01-eph-01 with 01-eph-06 and 24-epsp-02 with 24-epsp-06, 661 records to 659; 14-eph-04/14-eph-07 and 19-epsp-08/19-epsp-10 are the same place but resolve to different communes, so 2b refuses them and the commune resolution is what needs fixing."
     },
     {
       "package": "@geoalgeria/schema",
@@ -350,7 +350,7 @@
       "cadence": "monthly",
       "last_retrieved": "2026-09-08",
       "next_due": "2026-10-08",
-      "note": "5G coverage is the fastest-churning source in the repo: operators add sites continuously. Djezzy and Ooredoo need the agent-browser path. Geo-blocked from outside Algeria: mobilis.dz drops TCP (verified 2026-10-25, every A record, port 443), and the fetcher is all-or-nothing, so one unreachable operator blocks the whole refresh. Needs an Algerian vantage point."
+      "note": "5G coverage is the fastest-churning source in the repo: operators add sites continuously. Djezzy and Ooredoo need the agent-browser path. Geo-blocked from outside Algeria: mobilis.dz drops TCP on every A record, port 443, so a pass from abroad cannot run and the fetcher is all-or-nothing. A full live pull on 2026-10-25, over an Algerian connection the Owner supplied, is HELD and not published: it is 3,598 to 4,094 (Mobilis 2,421 to 2,917, 496 added, nothing removed or moved; Djezzy and Ooredoo byte-identical to the 2026-09-08 capture), but 11 of the new Mobilis sites carry a wilaya label their own coordinate contradicts, which test/record-in-declared-wilaya.test.mjs refuses as rows this batch created. Six GOLEA and CHELLALAT EL ADHAOURA and RAS EL MA rows fall in the post-reform wilayas 58, 67 and 63 while Mobilis still labels them 47, 26 and 22, and one BOUDOUAOU row is labelled Alger for a point in Boumerdes. Landing the refresh means triaging those 11 the way #209 triaged its 358, not growing the residual. Details in .scratch/306/telecom-diff-2026-10-25.md."
     },
     {
       "package": "@geoalgeria/tourisme",

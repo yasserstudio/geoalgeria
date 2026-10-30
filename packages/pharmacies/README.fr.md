@@ -13,7 +13,7 @@
 
 # Aperçu
 
-3 812 pharmacies (officines) réparties sur **67 wilayas**, issues d'**OpenStreetMap** – chaque enregistrement géocodé, bilingue (FR/AR) lorsque nommé, avec téléphone, horaires et un indicateur `dispensing` là où OSM les renseigne, plus le rattachement wilaya/commune.
+3 811 pharmacies (officines) réparties sur **67 wilayas**, issues d'**OpenStreetMap**, chaque enregistrement géocodé, bilingue (FR/AR) lorsque nommé, avec téléphone, horaires et un indicateur `dispensing` là où OSM les renseigne, plus le rattachement wilaya/commune.
 
 ## Installation
 
@@ -31,7 +31,7 @@ import {
   metadata,
 } from "@geoalgeria/pharmacies";
 
-pharmacies().length; // 3812
+pharmacies().length; // 3811
 pharmaciesByWilaya(16).length; // Alger
 pharmacyById("16-00001")?.commune;
 metadata().wilayas_covered; // 67
@@ -41,9 +41,9 @@ metadata().wilayas_covered; // 67
 
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
-| `pharmacies` | 3 812 | les 3 812 | OpenStreetMap, géocodé, rattaché wilaya/commune |
+| `pharmacies` | 3 811 | les 3 811 | OpenStreetMap, géocodé, rattaché wilaya/commune |
 
-- **Nommées :** 2 475 · **avec téléphone :** 146 · **avec horaires :** 259 · **avec adresse :** 1 163 · **avec `dispensing` :** 536
+- **Nommées :** 2 474 · **avec téléphone :** 146 · **avec horaires :** 259 · **avec adresse :** 1 162 · **avec `dispensing` :** 536
 
 ## Formats
 
@@ -57,11 +57,11 @@ metadata().wilayas_covered; // 67
 
 Chaque nom est gardé tel que l'étiquette l'écrit, à trois exceptions près : plusieurs espaces de suite deviennent un seul, les espaces au début et à la fin sont retirés, et les signes combinants placés tout au début sont supprimés. Aucune lettre n'est ajoutée, supprimée, déplacée ni translittérée. Les noms sont ensuite répartis strictement par écriture : `name_ar` ne contient que de l'arabe et `name_fr` que du latin, même quand OSM les étiquette mal. Une étiquette qui porte plusieurs langues à la fois (« Pharmacie bouchekouf صيدلية بوشقوف ») est coupée à chaque frontière d'écriture, donc chaque champ garde sa propre moitié et aucun ne gagne un mot absent de la source. Le tifinagh est la troisième écriture et n'appartient à aucun des deux champs : un nom en tamazight reste sur `name` plutôt que d'être supprimé ou classé comme arabe.
 
-Là où OpenStreetMap tient une même pharmacie pour deux éléments (un nœud et le contour d'un bâtiment, ou deux orthographes), les éléments sont fusionnés en un seul enregistrement. Deux éléments sont une même pharmacie lorsqu'ils se trouvent à moins de 40 m et que leurs noms partagent une **clé de nom souple** : chaque moitié issue de la coupure par écriture, repliée par [`@geoalgeria/normalize`](../normalize) et comparée comme clé et non comme texte affiché, les mots qui ne disent que « pharmacie » étant écartés. C'est ainsi que « Pharmacie bouchekouf صيدلية بوشقوف » et le simple « بوشقوف » à six mètres sont lus comme un seul enregistrement. L'élément conservé reprend tout champ qui lui manque de celui qu'il remplace, donc une fusion ne perd ni téléphone, ni adresse, ni horaires, ni indicateur `dispensing` ; sa propre valeur prime partout où les deux en donnent une, et deux valeurs ne sont jamais collées en une seule.
+Là où OpenStreetMap tient une même pharmacie pour deux éléments (un nœud et le contour d'un bâtiment, ou deux orthographes), les éléments sont fusionnés en un seul enregistrement. Deux éléments sont une même pharmacie lorsqu'ils se trouvent à moins de 40 m et que leurs noms partagent une **clé de nom souple** : chaque moitié issue de la coupure par écriture, repliée par [`@geoalgeria/normalize`](../normalize) et comparée comme clé et non comme texte affiché, les mots qui ne disent que « pharmacie » étant écartés. C'est ainsi que « Pharmacie bouchekouf صيدلية بوشقوف » et le simple « بوشقوف » à six mètres sont lus comme un seul enregistrement. L'élément conservé reprend tout champ qui lui manque de celui qu'il remplace, donc une fusion ne perd ni téléphone, ni adresse, ni horaires, ni indicateur `dispensing` ; sa propre valeur prime partout où les deux en donnent une, et deux valeurs ne sont jamais collées en une seule. Une pharmacie militaire est par ailleurs exclue par son identifiant OSM : aucun emplacement militaire ne figure dans le projet (décision du projet, 2026-10-29).
 
 ## Précision & couverture
 
-> **Couverture partielle.** 3 812 pharmacies sont cartographiées dans OpenStreetMap face à un estimé de **~11 000 officines** à l'échelle nationale (ordre de grandeur – aucun registre officiel ouvert ; le portail de l'Ordre National des Pharmaciens est hors service). La couverture est inégale selon la wilaya et plus dense au nord – c'est un extrait communautaire, **pas un registre officiel**.
+> **Couverture partielle.** 3 811 pharmacies sont cartographiées dans OpenStreetMap face à un estimé de **~11 000 officines** à l'échelle nationale (ordre de grandeur, aucun registre officiel ouvert ; le portail de l'Ordre National des Pharmaciens est hors service). La couverture est inégale selon la wilaya et plus dense au nord, c'est un extrait communautaire, **pas un registre officiel**.
 >
 > Les coordonnées sont des points OSM (relevés) ou des centroïdes de bâtiment (`geo_method`). La commune est un rapprochement au centroïde le plus proche (au mieux) ; la wilaya est quasi exacte. Noms, téléphones et horaires ne figurent que là où un contributeur OSM les a renseignés.
 

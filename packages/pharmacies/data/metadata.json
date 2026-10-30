@@ -4,16 +4,16 @@
   "title_fr": "Pharmacies d'Algérie",
   "title_ar": "صيدليات الجزائر",
   "title_en": "Algeria pharmacies (officines)",
-  "record_count": 3812,
-  "geocoded_count": 3812,
+  "record_count": 3811,
+  "geocoded_count": 3811,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 3509,
+    "exact": 3508,
     "approximate": 303
   },
   "estimated_universe": 11000,
-  "coverage_pct": 34.7,
-  "coverage_note": "3812 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north.",
+  "coverage_pct": 34.6,
+  "coverage_note": "3811 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north.",
   "wilayas_covered": 67,
   "bbox": [
     -8.139568,
@@ -33,10 +33,10 @@
   ],
   "license": "ODbL-1.0",
   "updated": "2026-10-22",
-  "named": 2475,
+  "named": 2474,
   "with_phone": 146,
   "with_hours": 259,
-  "with_address": 1163,
+  "with_address": 1162,
   "with_dispensing": 536,
   "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

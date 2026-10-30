@@ -1244,8 +1244,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.108733,
-          35.878983
+          7.10908,
+          35.879159
         ]
       },
       "properties": {
@@ -1256,13 +1256,13 @@
         "wilaya_code": "04",
         "commune_code": "0401",
         "commune": "Oum El Bouaghi",
-        "lat": 35.878983,
-        "lng": 7.108733,
+        "lat": 35.879159,
+        "lng": 7.10908,
         "geo_precision": "exact",
         "geo_method": "osm_point",
         "source": "msp",
         "refs": {
-          "osm": "way/624185601",
+          "osm": "relation/12305812",
           "msp": "3626",
           "msp_twin": "3627"
         },
@@ -19365,8 +19365,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.9242,
-          33.953
+          5.909804,
+          33.953828
         ]
       },
       "properties": {
@@ -19377,12 +19377,13 @@
         "wilaya_code": "57",
         "commune_code": "5701",
         "commune": "El-M'ghaier",
-        "lat": 33.953,
-        "lng": 5.9242,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 33.953828,
+        "lng": 5.909804,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "way/393013773",
           "msp": "5529",
           "msp_twin": "5524"
         },
