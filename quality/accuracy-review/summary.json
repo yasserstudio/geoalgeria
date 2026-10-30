@@ -280,19 +280,19 @@
     },
     {
       "path": "packages/telecom/data/5g-djezzy.json",
-      "sha256": "7cabb10d5c2588ad7c499a530f30a4e13b7aed3fdb53265516bd1dab93f2037f"
+      "sha256": "1bc23204b9dc884c41217e5b3aa9322291ab90253998275a8379a9ffdedc8666"
     },
     {
       "path": "packages/telecom/data/5g-mobilis.json",
-      "sha256": "f3dd4dfaed65f8f5aa5c6bce1991df61dd0d9272571ef14dbae945e15325da66"
+      "sha256": "4fa297dcc1b371d0e7bbccbd7a4aa3e03ba4ca1d942caf64f564708b605e5b26"
     },
     {
       "path": "packages/telecom/data/5g-ooredoo.json",
-      "sha256": "26456d92885cdd8979122d2d80bd31256926ff3dbf1c65c0394bd47c191993b3"
+      "sha256": "1faab080ca7d55b5521e290579961b9e56e4a2f129e58d520d3cc4a3eb7f0cf7"
     },
     {
       "path": "packages/telecom/data/metadata.json",
-      "sha256": "b4759e7596b28de71f9b8ce6d7c4ebfc7d4ec7ecd0da4907dc9f90eef846596b"
+      "sha256": "85d30678978a7670bf994b54aa17429d174fb621bc51413acfb84327e8945033"
     },
     {
       "path": "packages/tourisme/data/attractions.json",
@@ -321,12 +321,12 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70871,
-  "candidates": 17469,
+  "total_records": 71366,
+  "candidates": 17475,
   "reasons": {
     "approximate_coordinate": 16629,
     "inside_adjacent_wilaya": 192,
-    "missing_coordinate": 492,
+    "missing_coordinate": 498,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
     "shared_coordinate": 1124
@@ -2097,12 +2097,12 @@
     },
     {
       "dataset": "telecom",
-      "total_records": 3598,
-      "candidates": 218,
+      "total_records": 4093,
+      "candidates": 224,
       "reasons": {
         "approximate_coordinate": 185,
         "inside_adjacent_wilaya": 12,
-        "missing_coordinate": 18,
+        "missing_coordinate": 24,
         "outside_all_wilaya_boundaries": 3,
         "outside_declared_wilaya": 15,
         "shared_coordinate": 2
@@ -2114,17 +2114,17 @@
         "title_fr": "Points de couverture 5G en Algérie",
         "title_ar": "نقاط تغطية الجيل الخامس في الجزائر",
         "title_en": "Algeria 5G coverage points",
-        "record_count": 3598,
-        "geocoded_count": 3580,
-        "geocoded_pct": 99.5,
+        "record_count": 4093,
+        "geocoded_count": 4069,
+        "geocoded_pct": 99.4,
         "precision": {
-          "exact": 3395,
+          "exact": 3884,
           "approximate": 185
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 31 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
-        "wilayas_covered": 66,
+        "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records and 6 Mobilis records have their coordinates withheld because the operator's own wilaya and commune labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 40 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value, and 8 more carry a reviewed wilaya correction with the evidence that settled it. `commune_ar` is the official Arabic name from the national commune registry wherever a record resolves to a canonical commune, 3,013 of 4,093; the operator's own Arabic label publishes only where nothing resolves, because the operators rewrite that column between pulls and the 2026-10 Mobilis capture moved 46 records off the registry name. Other commune names remain unlinked free text.",
+        "wilayas_covered": 67,
         "bbox": [
           -8.16521,
           19.562361,
@@ -2134,11 +2134,11 @@
         "entities": [
           {
             "file": "5g-djezzy.json",
-            "count": 1001
+            "count": 1000
           },
           {
             "file": "5g-mobilis.json",
-            "count": 2421
+            "count": 2917
           },
           {
             "file": "5g-ooredoo.json",
@@ -2152,7 +2152,7 @@
             "url": "https://www.djezzy5g.dz/map.html",
             "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
             "evidence_type": "official",
-            "retrieved": "2026-09-08"
+            "retrieved": "2026-10-29"
           },
           {
             "key": "mobilis",
@@ -2160,7 +2160,7 @@
             "url": "https://mobilis.dz/map/5g",
             "license": "Data © ATM Mobilis; redistributed for reference",
             "evidence_type": "official",
-            "retrieved": "2026-09-08"
+            "retrieved": "2026-10-29"
           },
           {
             "key": "ooredoo",
@@ -2168,20 +2168,20 @@
             "url": "https://www.ooredoo.dz/fr/particuliers/internet/5g",
             "license": "Data © Ooredoo Algérie; redistributed for reference",
             "evidence_type": "official",
-            "retrieved": "2026-09-08"
+            "retrieved": "2026-10-29"
           }
         ],
         "license": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
-        "updated": "2026-09-10",
+        "updated": "2026-10-29",
         "technologies": [
           "5G"
         ],
         "by_technology": {
-          "5G": 3598
+          "5G": 4093
         },
         "by_operator": {
-          "djezzy": 1001,
-          "mobilis": 2421,
+          "djezzy": 1000,
+          "mobilis": 2917,
           "ooredoo": 176
         }
       }
@@ -2657,7 +2657,7 @@
     {
       "dataset": "telecom",
       "entity": "5g-djezzy.json",
-      "total_records": 1001,
+      "total_records": 1000,
       "candidates": 39,
       "reasons": {
         "approximate_coordinate": 9,
@@ -2671,9 +2671,10 @@
     {
       "dataset": "telecom",
       "entity": "5g-mobilis.json",
-      "total_records": 2421,
-      "candidates": 3,
+      "total_records": 2917,
+      "candidates": 9,
       "reasons": {
+        "missing_coordinate": 6,
         "outside_all_wilaya_boundaries": 3,
         "outside_declared_wilaya": 3
       },

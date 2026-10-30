@@ -4,17 +4,17 @@
   "title_fr": "Points de couverture 5G en Algérie",
   "title_ar": "نقاط تغطية الجيل الخامس في الجزائر",
   "title_en": "Algeria 5G coverage points",
-  "record_count": 3598,
-  "geocoded_count": 3580,
-  "geocoded_pct": 99.5,
+  "record_count": 4093,
+  "geocoded_count": 4069,
+  "geocoded_pct": 99.4,
   "precision": {
-    "exact": 3395,
+    "exact": 3884,
     "approximate": 185
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 31 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
-  "wilayas_covered": 66,
+  "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records and 6 Mobilis records have their coordinates withheld because the operator's own wilaya and commune labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 40 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value, and 8 more carry a reviewed wilaya correction with the evidence that settled it. `commune_ar` is the official Arabic name from the national commune registry wherever a record resolves to a canonical commune, 3,013 of 4,093; the operator's own Arabic label publishes only where nothing resolves, because the operators rewrite that column between pulls and the 2026-10 Mobilis capture moved 46 records off the registry name. Other commune names remain unlinked free text.",
+  "wilayas_covered": 67,
   "bbox": [
     -8.16521,
     19.562361,
@@ -24,11 +24,11 @@
   "entities": [
     {
       "file": "5g-djezzy.json",
-      "count": 1001
+      "count": 1000
     },
     {
       "file": "5g-mobilis.json",
-      "count": 2421
+      "count": 2917
     },
     {
       "file": "5g-ooredoo.json",
@@ -42,7 +42,7 @@
       "url": "https://www.djezzy5g.dz/map.html",
       "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
       "evidence_type": "official",
-      "retrieved": "2026-09-08"
+      "retrieved": "2026-10-29"
     },
     {
       "key": "mobilis",
@@ -50,7 +50,7 @@
       "url": "https://mobilis.dz/map/5g",
       "license": "Data © ATM Mobilis; redistributed for reference",
       "evidence_type": "official",
-      "retrieved": "2026-09-08"
+      "retrieved": "2026-10-29"
     },
     {
       "key": "ooredoo",
@@ -58,20 +58,20 @@
       "url": "https://www.ooredoo.dz/fr/particuliers/internet/5g",
       "license": "Data © Ooredoo Algérie; redistributed for reference",
       "evidence_type": "official",
-      "retrieved": "2026-09-08"
+      "retrieved": "2026-10-29"
     }
   ],
   "license": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
-  "updated": "2026-09-10",
+  "updated": "2026-10-29",
   "technologies": [
     "5G"
   ],
   "by_technology": {
-    "5G": 3598
+    "5G": 4093
   },
   "by_operator": {
-    "djezzy": 1001,
-    "mobilis": 2421,
+    "djezzy": 1000,
+    "mobilis": 2917,
     "ooredoo": 176
   }
 }

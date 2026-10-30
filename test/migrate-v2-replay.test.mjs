@@ -455,6 +455,13 @@ for (const [pkg, file, map] of SPECS) {
         produced.geo_precision = "approximate";
       const fix = CORRECTIONS[pkg]?.[produced.id];
       if (fix) Object.assign(produced, fix);
+      // The runner also resolves telecom's Arabic commune labels from the commune
+      // registry on its way through writePackageV2, after the review ledger
+      // (scripts/lib/telecom-commune-ar.mjs), so replay that here as the dash fold is
+      // replayed above. It runs after CORRECTIONS because a reviewed wilaya is what the
+      // commune is resolved against.
+      const afterReview = MIGRATIONS[pkg]?.files?.find((spec) => spec.file === file)?.afterReview;
+      if (afterReview) Object.assign(produced, afterReview(produced));
       const shipped = committed.get(produced.id);
       // A refreshed source may remove a row sampled at the v2 cutover. Its
       // transformed id must remain permanently reserved; that still guards the

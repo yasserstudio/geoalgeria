@@ -474,6 +474,35 @@
     },
     {
       "file": "5g-mobilis.json",
+      "record_id": "mobilis-0f2a0a8b40",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "47",
+        "name": "GOLEA",
+        "commune": "GOLEA",
+        "lat": 30.585821,
+        "lng": 2.87492
+      },
+      "patch": {
+        "wilaya_code": "58"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "notes": "The operator still files the commune under its pre-2019 name GOLEA and its pre-2019 mother wilaya 47 Ghardaia. Its own Arabic label for the row is المنيعة, canonical commune 5801 El Meniaa in wilaya 58, and the operator is not consistent with itself: the same capture files nine EL MENIA rows and one HASSI GARA row under wilaya 58 for the same oasis, the nearest of them 598 to 758 m from these three pins. The published point falls inside the wilaya 58 polygon and inside El Meniaa's own OpenStreetMap commune outline. Coordinates are kept; only the wilaya is corrected.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "file": "5g-mobilis.json",
       "record_id": "mobilis-27904a9e47",
       "status": "corrected",
       "publish_action": "patch",
@@ -502,6 +531,36 @@
     },
     {
       "file": "5g-mobilis.json",
+      "record_id": "mobilis-710750bfef",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "22",
+        "name": "RAS EL MA",
+        "commune": "RAS EL MA",
+        "lat": 34.502271,
+        "lng": -1.289,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "notes": "The operator's wilaya 22 and commune RAS EL MA agree with each other and with canonical commune 2223 Ras El Ma, but the point does not: these six rows (upstream ids 34092 to 34097, one consecutive block) all carry longitude exactly -1.289 while their latitudes vary, and the same capture's four other RAS EL MA rows carry six-figure longitudes between -0.838 and -0.777. -1.289 is a frozen column in the feed, about 41 km west of the commune, which is why the points land in 63 El Aricha. The coverage record is kept and the false coordinates are withheld, as for the 18 reviewed Djezzy rows.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "file": "5g-mobilis.json",
       "record_id": "mobilis-713f5213c0",
       "status": "corrected",
       "publish_action": "patch",
@@ -525,6 +584,276 @@
           "checked_at": "2026-09-09"
         }
       ]
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-8904ef2ed7",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "16",
+        "name": "BOUDOUAOU",
+        "commune": "BOUDOUAOU",
+        "lat": 36.726211,
+        "lng": 3.38222
+      },
+      "patch": {
+        "wilaya_code": "35"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/1984/F1984014.pdf",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "notes": "A plain operator label error, not a reform: commune 3502 Boudouaou has been in 35 Boumerdes since 1984. The point falls inside commune 3502's own OpenStreetMap outline and inside the wilaya 35 polygon, and outside the wilaya 16 polygon it declares. The operator is not consistent with itself either: the same capture files eight other BOUDOUAOU rows, all under wilaya 35, the nearest 999 m away (upstream id 32182). Coordinates are kept; only the wilaya is corrected.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-9811d084f4",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "22",
+        "name": "RAS EL MA",
+        "commune": "RAS EL MA",
+        "lat": 34.493071,
+        "lng": -1.289,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "notes": "The operator's wilaya 22 and commune RAS EL MA agree with each other and with canonical commune 2223 Ras El Ma, but the point does not: these six rows (upstream ids 34092 to 34097, one consecutive block) all carry longitude exactly -1.289 while their latitudes vary, and the same capture's four other RAS EL MA rows carry six-figure longitudes between -0.838 and -0.777. -1.289 is a frozen column in the feed, about 41 km west of the commune, which is why the points land in 63 El Aricha. The coverage record is kept and the false coordinates are withheld, as for the 18 reviewed Djezzy rows.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-a273ee57c5",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "22",
+        "name": "RAS EL MA",
+        "commune": "RAS EL MA",
+        "lat": 34.498311,
+        "lng": -1.289,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "notes": "The operator's wilaya 22 and commune RAS EL MA agree with each other and with canonical commune 2223 Ras El Ma, but the point does not: these six rows (upstream ids 34092 to 34097, one consecutive block) all carry longitude exactly -1.289 while their latitudes vary, and the same capture's four other RAS EL MA rows carry six-figure longitudes between -0.838 and -0.777. -1.289 is a frozen column in the feed, about 41 km west of the commune, which is why the points land in 63 El Aricha. The coverage record is kept and the false coordinates are withheld, as for the 18 reviewed Djezzy rows.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-a2f025fe47",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "22",
+        "name": "RAS EL MA",
+        "commune": "RAS EL MA",
+        "lat": 34.497261,
+        "lng": -1.289,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "notes": "The operator's wilaya 22 and commune RAS EL MA agree with each other and with canonical commune 2223 Ras El Ma, but the point does not: these six rows (upstream ids 34092 to 34097, one consecutive block) all carry longitude exactly -1.289 while their latitudes vary, and the same capture's four other RAS EL MA rows carry six-figure longitudes between -0.838 and -0.777. -1.289 is a frozen column in the feed, about 41 km west of the commune, which is why the points land in 63 El Aricha. The coverage record is kept and the false coordinates are withheld, as for the 18 reviewed Djezzy rows.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-a9ed5a44aa",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "47",
+        "name": "GOLEA",
+        "commune": "GOLEA",
+        "lat": 30.588071,
+        "lng": 2.887585
+      },
+      "patch": {
+        "wilaya_code": "58"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "notes": "The operator still files the commune under its pre-2019 name GOLEA and its pre-2019 mother wilaya 47 Ghardaia. Its own Arabic label for the row is المنيعة, canonical commune 5801 El Meniaa in wilaya 58, and the operator is not consistent with itself: the same capture files nine EL MENIA rows and one HASSI GARA row under wilaya 58 for the same oasis, the nearest of them 598 to 758 m from these three pins. The published point falls inside the wilaya 58 polygon and inside El Meniaa's own OpenStreetMap commune outline. Coordinates are kept; only the wilaya is corrected.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-ac4005c18e",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "22",
+        "name": "RAS EL MA",
+        "commune": "RAS EL MA",
+        "lat": 34.495091,
+        "lng": -1.289,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "notes": "The operator's wilaya 22 and commune RAS EL MA agree with each other and with canonical commune 2223 Ras El Ma, but the point does not: these six rows (upstream ids 34092 to 34097, one consecutive block) all carry longitude exactly -1.289 while their latitudes vary, and the same capture's four other RAS EL MA rows carry six-figure longitudes between -0.838 and -0.777. -1.289 is a frozen column in the feed, about 41 km west of the commune, which is why the points land in 63 El Aricha. The coverage record is kept and the false coordinates are withheld, as for the 18 reviewed Djezzy rows.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-c0b76ae865",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "name": "CHELLALAT EL ADHAOURA",
+        "commune": "CHELLALAT EL ADHAOURA",
+        "lat": 35.938281,
+        "lng": 3.41347
+      },
+      "patch": {
+        "wilaya_code": "67"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "notes": "Canonical commune 2618 Chelalet El Adhaoura moved from 26 Medea to 67 Ksar El Boukhari in the 2026 reform; the operator still files it under 26. The repo reconciler misses it on spelling alone (operator chellalat el adhaoura, canonical chelalet el adhaoura), which is why three other 26 to 67 rows in this capture reconciled and this one did not. The published point falls inside the wilaya 67 polygon. Coordinates are kept; only the wilaya is corrected.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-df671fb428",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "47",
+        "name": "GOLEA",
+        "commune": "GOLEA",
+        "lat": 30.597041,
+        "lng": 2.875356
+      },
+      "patch": {
+        "wilaya_code": "58"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "notes": "The operator still files the commune under its pre-2019 name GOLEA and its pre-2019 mother wilaya 47 Ghardaia. Its own Arabic label for the row is المنيعة, canonical commune 5801 El Meniaa in wilaya 58, and the operator is not consistent with itself: the same capture files nine EL MENIA rows and one HASSI GARA row under wilaya 58 for the same oasis, the nearest of them 598 to 758 m from these three pins. The published point falls inside the wilaya 58 polygon and inside El Meniaa's own OpenStreetMap commune outline. Coordinates are kept; only the wilaya is corrected.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-e92b54653a",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "22",
+        "name": "RAS EL MA",
+        "commune": "RAS EL MA",
+        "lat": 34.500091,
+        "lng": -1.289,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "notes": "The operator's wilaya 22 and commune RAS EL MA agree with each other and with canonical commune 2223 Ras El Ma, but the point does not: these six rows (upstream ids 34092 to 34097, one consecutive block) all carry longitude exactly -1.289 while their latitudes vary, and the same capture's four other RAS EL MA rows carry six-figure longitudes between -0.838 and -0.777. -1.289 is a frozen column in the feed, about 41 km west of the commune, which is why the points land in 63 El Aricha. The coverage record is kept and the false coordinates are withheld, as for the 18 reviewed Djezzy rows.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-27"
     },
     {
       "file": "5g-mobilis.json",

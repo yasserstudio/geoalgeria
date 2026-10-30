@@ -54,11 +54,17 @@ const read = (...parts) => JSON.parse(readFileSync(join(ROOT, ...parts), "utf8")
 // itself, so the patch had nothing left to correct.
 // jeunesse was 15 until the same rebuild retired institutions.json/00728, a Serguine
 // youth centre absorbed by the same rename in the same way (Owner decision 2026-10-28).
-const CORRECTED = { emploi: 17, jeunesse: 14, poste: 3, sports: 13, telecom: 1, tourisme: 5 };
-const TOTAL = 53;
+// telecom was 1 until the 2026-10-27 Mobilis 5G refresh added four: three GOLEA sites the
+// operator still files under 47 Ghardaia for a commune loi 19-12 moved to 58 El Meniaa, and
+// one Chelalet El Adhaoura site still filed under 26 Medea for a commune loi 26-06 moved to
+// 67 Ksar El Boukhari.
+const CORRECTED = { emploi: 17, jeunesse: 14, poste: 3, sports: 13, telecom: 5, tourisme: 5 };
+const TOTAL = 57;
 // 303 on 2026-09-29, minus banques' agb-tebessa, re-placed from OpenStreetMap by #285,
 // minus the 18 protection-civile units the outline-first commune join re-placed (#306,
-// 2026-10-27), minus sports' 01835, gone from the SIG in the 2026-10-27 refresh.
+// 2026-10-27), minus sports' 01835, gone from the SIG in the 2026-10-27 refresh. The
+// Mobilis 5G refresh leaves it where it is: its 11 contradicted rows are triaged in
+// quality/overrides/telecom.json rather than added here.
 // protection-civile keeps 15 rows: one `kept_low_precision` and 14 where the DGPC's own
 // commune_1 names one commune and the containing outline another. Those 14 are one
 // class, not two, even though the join reads 12 of the names exactly and reaches the

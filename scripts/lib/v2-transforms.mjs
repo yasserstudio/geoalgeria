@@ -31,6 +31,7 @@ import {
   applyReviewedOverrides,
 } from "../../packages/schema/index.js";
 import { reconcileCurrentWilayaByCommune } from "./current-wilaya-by-commune.mjs";
+import { relabelCommuneAr } from "./telecom-commune-ar.mjs";
 import { foldNameDashes } from "./no-em-dash.mjs";
 
 /** Write via a temp sibling + rename so a reader never sees a torn file. Not a
@@ -934,11 +935,26 @@ export const MIGRATIONS = {
     // entities[] must sum to record_count. `technology` rides in the file name
     // (5g-*) AND on every record, so a future 4G is purely additive.
     files: [
-      { file: "5g-djezzy.json", from: "coverage/5g/djezzy.json", map: telecom5g((r) => geoExact(r, "operator_map")) },
-      { file: "5g-mobilis.json", from: "coverage/5g/mobilis.json", map: telecom5g((r) => geoExact(r, "operator_map"), true) },
+      {
+        file: "5g-djezzy.json",
+        from: "coverage/5g/djezzy.json",
+        map: telecom5g((r) => geoExact(r, "operator_map")),
+        afterReview: relabelCommuneAr,
+      },
+      {
+        file: "5g-mobilis.json",
+        from: "coverage/5g/mobilis.json",
+        map: telecom5g((r) => geoExact(r, "operator_map"), true),
+        afterReview: relabelCommuneAr,
+      },
       // Ooredoo publishes covered communes, not cell sites; points are placed
       // within the commune, so they are approximate by construction.
-      { file: "5g-ooredoo.json", from: "coverage/5g/ooredoo.json", map: telecom5g((r) => geoAt(r, "approximate", "operator_commune_point")) },
+      {
+        file: "5g-ooredoo.json",
+        from: "coverage/5g/ooredoo.json",
+        map: telecom5g((r) => geoAt(r, "approximate", "operator_commune_point")),
+        afterReview: relabelCommuneAr,
+      },
     ],
     // Cutover replayed the 2026-06-13 operator-map capture; fetch.mjs refreshes
     // pass their own capture date, so this pin only covers the (now dormant)
@@ -956,7 +972,7 @@ export const MIGRATIONS = {
       license: "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
       estimatedUniverse: null,
       coverageNote:
-        "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 31 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
+        "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records and 6 Mobilis records have their coordinates withheld because the operator's own wilaya and commune labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 40 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value, and 8 more carry a reviewed wilaya correction with the evidence that settled it. `commune_ar` is the official Arabic name from the national commune registry wherever a record resolves to a canonical commune, 3,013 of 4,093; the operator's own Arabic label publishes only where nothing resolves, because the operators rewrite that column between pulls and the 2026-10 Mobilis capture moved 46 records off the registry name. Other commune names remain unlinked free text.",
       titles: { en: "Algeria 5G coverage points", fr: "Points de couverture 5G en Algérie", ar: "نقاط تغطية الجيل الخامس في الجزائر" },
       stats: (rows) => ({
         technologies: [...new Set(rows.map((r) => r.technology))].sort(),
@@ -1074,7 +1090,18 @@ export function writePackageV2({
     // before the mirrors are built is what keeps them in agreement. It runs
     // after the review ledger so a reviewed correction is folded too, and
     // before validateRecords so what is checked is what is written.
-    const rows = foldNameDashes(reviewed.records);
+    // A per-file relabelling that has to see the reviewed values, for the same reason
+    // the dash fold does: telecom resolves its Arabic commune labels from the commune
+    // registry against the wilaya a reviewed correction settled, not the one the
+    // operator declared. It is read from this file's own migration config rather than
+    // from the caller's `files` entry, because three callers build that entry by hand
+    // (the package fetchers, scripts/migrate-to-v2.mjs and scripts/apply-overrides.mjs)
+    // and a re-emit that quietly dropped the pass would revert the labels.
+    const afterReview =
+      f.afterReview ?? MIGRATIONS[pkg]?.files?.find((s) => s.file === f.file)?.afterReview;
+    const rows = foldNameDashes(
+      afterReview ? reviewed.records.map((row) => afterReview(row)) : reviewed.records,
+    );
     demoteSharedPoints(rows);
     demoteRoundedPlaceholders(rows);
     // Plain codepoint order: localeCompare() without a locale reads the ambient

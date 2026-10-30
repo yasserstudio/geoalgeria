@@ -12,9 +12,9 @@
 
 </div>
 
-**3,598 5G coverage records** across Algeria, published by the operators' own
-coverage maps, **Djezzy (1,001)**, **Mobilis (2,421)**, and **Ooredoo (176)**,
-with 3,580 publishable coordinates and wilaya/commune linkage. Shipped as JSON, CSV, GeoJSON,
+**4,093 5G coverage records** across Algeria, published by the operators' own
+coverage maps, **Djezzy (1,000)**, **Mobilis (2,917)**, and **Ooredoo (176)**,
+with 4,069 publishable coordinates and wilaya/commune linkage. Shipped as JSON, CSV, GeoJSON,
 and TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -24,9 +24,9 @@ npm install @geoalgeria/telecom
 ```js
 import telecom from "@geoalgeria/telecom";
 
-const sites = telecom.coverage();                       // all 3,598 points
-const djezzy = telecom.coverageByOperator("djezzy");    // 1,001
-const mobilis = telecom.coverageByOperator("mobilis");  // 2,421
+const sites = telecom.coverage();                       // all 4,093 points
+const djezzy = telecom.coverageByOperator("djezzy");    // 1,000
+const mobilis = telecom.coverageByOperator("mobilis");  // 2,917
 const ooredoo = telecom.coverageByOperator("ooredoo");  // 176
 
 // 5G coverage in a wilaya (joins GeoAlgeria's wilaya_code)
@@ -50,12 +50,13 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 
 | Operator | Points | Granularity | Source map |
 | --- | --- | --- | --- |
-| Djezzy | **1,001** | cell site | djezzy5g.dz |
-| Mobilis | **2,421** | cell site | mobilis.dz/map/5g |
+| Djezzy | **1,000** | cell site | djezzy5g.dz |
+| Mobilis | **2,917** | cell site | mobilis.dz/map/5g |
 | Ooredoo | **176** | covered commune | ooredoo.dz |
 
-Covering **66 current wilayas**. The operator maps still use the 58-wilaya
-scheme; 31 Mobilis points are safely reassigned to eight daughter wilayas.
+Covering **67 current wilayas**. The operator maps still use the 58-wilaya
+scheme; 40 Mobilis points are safely reassigned to nine daughter wilayas, and
+eight carry a reviewed wilaya correction with the evidence that settled it.
 
 > **What a point is:** each record is a point published on the operator's own 5G
 > coverage map. Djezzy and Mobilis publish **cell-site** locations; Ooredoo
@@ -64,8 +65,9 @@ scheme; 31 Mobilis points are safely reassigned to eight daughter wilayas.
 > measured RF coverage**, treat these as 5G *presence* points, not coverage
 > polygons.
 
-Eighteen Djezzy records remain in the dataset without coordinates because the
-operator's wilaya and site labels contradict its published points. Their review
+Eighteen Djezzy records and six Mobilis records remain in the dataset without
+coordinates because the operator's own wilaya and commune labels contradict its
+published points. Their review
 receipts are included, while the false points are withheld from JSON map fields
 and GeoJSON until replacement coordinates can be verified.
 
@@ -113,11 +115,16 @@ coverage-specific fields:
 ```
 
 `id` is a deterministic `{operator}-{coordinate-hash}` key, stable across
-re-fetches. `wilaya_code` joins to GeoAlgeria's current `wilaya_code`. For 31
+re-fetches. `wilaya_code` joins to GeoAlgeria's current `wilaya_code`. For 40
 Mobilis records, `source_wilaya_code` preserves the operator's mother wilaya and
-`commune_code` records the corroborating canonical commune. Fields a given
-operator doesn't provide are `null` (Djezzy has no commune; Mobilis has commune
-FR/AR but no street address; Ooredoo has the commune name only). For Ooredoo,
+`commune_code` records the corroborating canonical commune. `commune_ar` is the
+commune's **official Arabic name from the national commune registry** wherever a
+record resolves to a canonical commune, 3,013 of 4,093; where nothing resolves,
+the operator's own Arabic label is published unchanged. The operators treat that
+column as free text and rewrite it between pulls, so their spelling of it is not
+what ships. Fields a given operator doesn't provide are `null` (Djezzy publishes
+no commune at all; Mobilis and Ooredoo publish a commune name but no street
+address). For Ooredoo,
 `name` is the covered commune and points are `approximate`
 (`operator_commune_point`), one point per covered commune, not a cell site.
 

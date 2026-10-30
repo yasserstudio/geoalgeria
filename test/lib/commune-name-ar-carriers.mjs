@@ -5,6 +5,12 @@
 // carriers and the name carriers are not the same list - the two ecommerce
 // flattenings hold a name but no coordinate, and the three split commune files
 // hold both - so the two readers are separate rather than one list used for both.
+//
+// It is still a hand list, and a hand list is how data/wilaya-capitals.metadata.json
+// came to sit here unlisted while it published an unrepaired name.
+// test/commune-name-ar-discovery.test.mjs is the net under it: it walks the data
+// directory and joins whatever carries a commune Arabic name to the registry, so the
+// next carrier nobody adds here fails by discovery rather than by review.
 
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -28,10 +34,15 @@ const csvRows = (text, width) =>
 
 /**
  * Every carrier of a commune `name_ar`.
- * [label, () => { code: number|null, wilaya_code: number, name_fr: string, name_ar: string }[]]
+ * [label, () => { code: number|null, wilaya_code: number, name_fr: string, name_ar: string }[], scope?]
  *
  * `code` is null for the carriers that publish no commune code; those rows are
  * addressed by (wilaya_code, name_fr), which is unique across all 1,541.
+ *
+ * `scope` is absent for a carrier that copies the whole registry, and
+ * `{ rows, repairs }` for one that quotes a subset of it: the capitals sidecar
+ * names the 69 Capital communes and so holds 2 of the 25 repaired names. It is
+ * stated rather than derived, so a subset that quietly shrinks still fails.
  */
 export const NAME_AR_CARRIERS = [
   [
@@ -141,5 +152,19 @@ export const NAME_AR_CARRIERS = [
       }
       return rows;
     },
+  ],
+  [
+    // The capitals sidecar quotes its Capital commune's names next to the decree that
+    // fixed it, so it carries 69 commune `name_ar` values and not the registry's 1,541.
+    // `code` is the wilaya's; the commune's is `capital_commune_code`.
+    "data/wilaya-capitals.metadata.json",
+    () =>
+      readJson("wilaya-capitals.metadata.json").capitals.map((row) => ({
+        code: row.capital_commune_code,
+        wilaya_code: row.code,
+        name_fr: row.commune_name_fr,
+        name_ar: row.commune_name_ar,
+      })),
+    { rows: 69, repairs: 2 },
   ],
 ];
