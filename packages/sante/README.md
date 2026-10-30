@@ -12,10 +12,10 @@
 
 </div>
 
-**661 public health establishments** across all **58 wilayas** with health
+**657 public health establishments** across all **58 wilayas** with health
 directorates, public hospitals (EPH), proximity-health establishments (EPSP),
-specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **591 geocoded** (122 to a precise
-OpenStreetMap/Wikidata point, 11 verified by hand, 458 to a commune centroid) with commune/wilaya
+specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **587 geocoded** (121 to a precise
+OpenStreetMap/Wikidata point, 11 verified by hand, 455 to a commune centroid) with commune/wilaya
 linkage. Shipped as JSON, CSV, GeoJSON, and
 TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -26,7 +26,7 @@ TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 > mapped by OpenStreetMap volunteers, partial by nature. Every OSM element a
 > record here references is excluded there by construction, so no place is
 > published twice under the same element, but the two describe different tiers
-> of a health system and adding 661 to 1,917 counts nothing real.
+> of a health system and adding 657 to 1,917 counts nothing real.
 
 ```bash
 npm install @geoalgeria/sante
@@ -35,7 +35,7 @@ npm install @geoalgeria/sante
 ```js
 import sante from "@geoalgeria/sante";
 
-const all = sante.sante();              // 661 establishments
+const all = sante.sante();              // 657 establishments
 
 // Public hospitals in a wilaya (joins GeoAlgeria's wilaya_code)
 const ephAlger = all.filter((e) => e.wilaya_code === "16" && e.type === "eph");
@@ -46,7 +46,7 @@ const mappable = all.filter((e) => e.lat != null);
 
 ## What you can build
 
-- **Hospital & clinic locators** – coordinates on 591 of 661 records, ready for a
+- **Hospital & clinic locators** – coordinates on 587 of 657 records, ready for a
   map or nearest-facility search.
 - **Bilingual health directories** – French and Arabic names, official type and
   wilaya for every establishment.
@@ -57,33 +57,33 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Dataset | Count | Coordinates | Notes |
 | --- | --- | --- | --- |
-| Health establishments | **661** | 591 geocoded | 58 wilayas, 590 bilingual |
+| Health establishments | **657** | 587 geocoded | 58 wilayas, 594 bilingual |
 
 **By type**
 
 | Type | Count | Meaning |
 | --- | --- | --- |
-| `eph` | 254 | Établissement Public Hospitalier – public hospital |
+| `eph` | 252 | Établissement Public Hospitalier – public hospital |
 | `epsp` | 280 | Établissement Public de Santé de Proximité – proximity health |
 | `ehs` | 103 | Établissement Hospitalier Spécialisé – specialized hospital |
-| `chu` | 19 | Centre Hospitalo-Universitaire – university hospital |
+| `chu` | 17 | Centre Hospitalo-Universitaire – university hospital |
 | `hopital` | 5 | other public hospital |
 
 **By coordinate precision** (`geo_precision`)
 
 | Value | Count | Meaning |
 | --- | --- | --- |
-| `exact` | 133 | precise point: an OSM or Wikidata facility in the commune, or a location verified by hand |
-| `approximate` | 458 | the establishment's commune centroid |
+| `exact` | 132 | precise point: an OSM or Wikidata facility in the commune, or a location verified by hand |
+| `approximate` | 455 | the establishment's commune centroid |
 | `null` | 70 | locality not resolved to a commune – no coordinates (`lat`/`lng` also `null`) |
 
 **By coordinate method** (`geo_method`)
 
 | Value | Count | Meaning |
 | --- | --- | --- |
-| `osm_point` | 119 | precise point from an OpenStreetMap facility in the commune |
+| `osm_point` | 118 | precise point from an OpenStreetMap facility in the commune |
 | `wikidata_point` | 3 | precise point from a Wikidata facility in the commune |
-| `commune_centroid` | 458 | the establishment's commune centroid (approximate) |
+| `commune_centroid` | 455 | the establishment's commune centroid (approximate) |
 | `owner_verified` | 11 | location read off the map by the project owner, through the reviewed-correction ledger |
 | `null` | 70 | no method – record has no coordinate |
 
@@ -115,7 +115,7 @@ const all: HealthEstablishment[] = sante.sante();
 
 ```
 data/
-  sante.json              # 661 establishments (array)
+  sante.json              # 657 establishments (array)
   metadata.json           # sources, counts, coverage, updated
   retired-ids.json        # ids no record may hold again, and where each one's data went
   csv/sante.csv           # repo + Release bundle (not in npm tarball)
@@ -197,7 +197,18 @@ Run `npm run fetch` to regenerate every output. It:
    adjacency, since only 42.9% of French posts have an Arabic post at id+1: the
    two names must also agree on a consonant skeleton, which is what French and
    Arabic spellings of one name actually share, and an ambiguous candidate is
-   left as two records rather than guessed at. Every decision, including each
+   left as two records rather than guessed at. Adjacency only reaches two post
+   ids, so four pairs across three cities, whose halves the registry entered 4,
+   10, 14 and 1284 ids apart, are paired by hand instead, in an explicit table.
+   Each row records what its evidence covers, and the two levels are not the
+   same claim: for two of them a source that is **not** the registry (an
+   OpenStreetMap element, a Wikidata item) names the establishment in **both**
+   scripts, so it states the pair itself; for the other two that source confirms
+   the **French half only**, and the Arabic half rests on the two titles being
+   exact translations of each other together with the pair being the one
+   candidate left in its wilaya and type group. Four further cases the table was
+   asked about stay two records, because no source names them at all, and they
+   are listed beside the pairs with what is missing. Every decision, including each
    refusal and its reason, is written to
    [`quality/sante-twin-recovery.json`](https://github.com/yasserstudio/geoalgeria/blob/main/quality/sante-twin-recovery.json).
    A record cites both posts: `refs.msp` is its primary (French) post and

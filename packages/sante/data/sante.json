@@ -50,7 +50,7 @@
     "id": "01-eph-01",
     "name": "Etablissement Public Hospitalier Adrar",
     "name_fr": "Etablissement Public Hospitalier Adrar",
-    "name_ar": null,
+    "name_ar": "المؤسسة العمومية الإستشفائية بادرار",
     "wilaya_code": "01",
     "commune_code": "0101",
     "commune": "Adrar",
@@ -61,7 +61,8 @@
     "source": "msp",
     "refs": {
       "wikidata": "Q18785599",
-      "msp": "2359"
+      "msp": "2359",
+      "msp_twin": "3643"
     },
     "type": "eph",
     "type_label_fr": "Établissement Public Hospitalier",
@@ -137,29 +138,6 @@
     "type_label_ar": "المؤسسة العمومية الاستشفائية",
     "sector": "public",
     "slug": "etablissement-public-hospitalier-reggane-2"
-  },
-  {
-    "id": "01-eph-06",
-    "name": "المؤسسة العمومية الإستشفائية بادرار",
-    "name_fr": null,
-    "name_ar": "المؤسسة العمومية الإستشفائية بادرار",
-    "wilaya_code": "01",
-    "commune_code": "0101",
-    "commune": "Adrar",
-    "lat": 27.871421,
-    "lng": -0.282352,
-    "geo_precision": "exact",
-    "geo_method": "osm_point",
-    "source": "msp",
-    "refs": {
-      "osm": "way/433204559",
-      "msp": "3643"
-    },
-    "type": "eph",
-    "type_label_fr": "Établissement Public Hospitalier",
-    "type_label_ar": "المؤسسة العمومية الاستشفائية",
-    "sector": "public",
-    "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%b9%d9%85%d9%88%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a8%d8%a7%d8%af%d8%b1%d8%a7%d8%b1-2"
   },
   {
     "id": "01-epsp-01",
@@ -4200,7 +4178,7 @@
     "id": "14-eph-04",
     "name": "Etablissement Public Hospitalier Sougueur Tiaret",
     "name_fr": "Etablissement Public Hospitalier Sougueur Tiaret",
-    "name_ar": null,
+    "name_ar": "المؤسسة العمومية الإستشفائية سوقر تيارت",
     "wilaya_code": "14",
     "commune_code": "1416",
     "commune": "Sougueur",
@@ -4210,7 +4188,8 @@
     "geo_method": "commune_centroid",
     "source": "msp",
     "refs": {
-      "msp": "4582"
+      "msp": "4582",
+      "msp_twin": "4586"
     },
     "type": "eph",
     "type_label_fr": "Établissement Public Hospitalier",
@@ -4240,28 +4219,6 @@
     "type_label_ar": "المؤسسة العمومية الاستشفائية",
     "sector": "public",
     "slug": "etablissement-public-hospitalier-tiaret"
-  },
-  {
-    "id": "14-eph-07",
-    "name": "المؤسسة العمومية الإستشفائية سوقر تيارت",
-    "name_fr": null,
-    "name_ar": "المؤسسة العمومية الإستشفائية سوقر تيارت",
-    "wilaya_code": "14",
-    "commune_code": "1401",
-    "commune": "Tiaret",
-    "lat": 35.3667,
-    "lng": 1.3167,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
-    "source": "msp",
-    "refs": {
-      "msp": "4586"
-    },
-    "type": "eph",
-    "type_label_fr": "Établissement Public Hospitalier",
-    "type_label_ar": "المؤسسة العمومية الاستشفائية",
-    "sector": "public",
-    "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%b9%d9%85%d9%88%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%b3%d9%88%d9%82%d8%b1-%d8%aa%d9%8a"
   },
   {
     "id": "14-epsp-01",
@@ -10158,7 +10115,7 @@
     "id": "31-chu-01",
     "name": "Centre Hospitalo Universitaire Oran",
     "name_fr": "Centre Hospitalo Universitaire Oran",
-    "name_ar": null,
+    "name_ar": "المركز الإستشفائي الجامعي لوهران",
     "wilaya_code": "31",
     "commune_code": "3101",
     "commune": "Oran",
@@ -10169,7 +10126,8 @@
     "source": "msp",
     "refs": {
       "wikidata": "Q7894776",
-      "msp": "5139"
+      "msp": "5139",
+      "msp_twin": "5129"
     },
     "type": "chu",
     "type_label_fr": "Centre Hospitalo-Universitaire",
@@ -10181,28 +10139,6 @@
     "id": "31-chu-02",
     "name": "Etablissement Hospitalier Universitaire Oran",
     "name_fr": "Etablissement Hospitalier Universitaire Oran",
-    "name_ar": null,
-    "wilaya_code": "31",
-    "commune_code": "3101",
-    "commune": "Oran",
-    "lat": 35.708333,
-    "lng": -0.6331,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
-    "source": "msp",
-    "refs": {
-      "msp": "5158"
-    },
-    "type": "chu",
-    "type_label_fr": "Centre Hospitalo-Universitaire",
-    "type_label_ar": "المركز الاستشفائي الجامعي",
-    "sector": "public",
-    "slug": "etablissement-hospitalier-universitaire-oran"
-  },
-  {
-    "id": "31-chu-03",
-    "name": "المؤسسة الاستشفائية الجامعية وهران",
-    "name_fr": null,
     "name_ar": "المؤسسة الاستشفائية الجامعية وهران",
     "wilaya_code": "31",
     "commune_code": "3101",
@@ -10213,35 +10149,14 @@
     "geo_method": "commune_centroid",
     "source": "msp",
     "refs": {
-      "msp": "5144"
+      "msp": "5158",
+      "msp_twin": "5144"
     },
     "type": "chu",
     "type_label_fr": "Centre Hospitalo-Universitaire",
     "type_label_ar": "المركز الاستشفائي الجامعي",
     "sector": "public",
-    "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%a7%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a7%d9%84%d8%ac%d8%a7%d9%85%d8%b9%d9%8a%d8%a9-%d9%88%d9%87%d8%b1%d8%a7%d9%86"
-  },
-  {
-    "id": "31-chu-04",
-    "name": "المركز الإستشفائي الجامعي لوهران",
-    "name_fr": null,
-    "name_ar": "المركز الإستشفائي الجامعي لوهران",
-    "wilaya_code": "31",
-    "commune_code": "3101",
-    "commune": "Oran",
-    "lat": 35.708333,
-    "lng": -0.6331,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
-    "source": "msp",
-    "refs": {
-      "msp": "5129"
-    },
-    "type": "chu",
-    "type_label_fr": "Centre Hospitalo-Universitaire",
-    "type_label_ar": "المركز الاستشفائي الجامعي",
-    "sector": "public",
-    "slug": "%d8%a7%d9%84%d9%85%d8%b1%d9%83%d8%b2-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a-%d8%a7%d9%84%d8%ac%d8%a7%d9%85%d8%b9%d9%8a-%d9%84%d9%88%d9%87%d8%b1%d8%a7%d9%86"
+    "slug": "etablissement-hospitalier-universitaire-oran"
   },
   {
     "id": "31-ehs-01",
