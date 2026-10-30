@@ -7,12 +7,30 @@
  *   https://baridimap-api.poste.dz/api/postoffices
  *   https://baridimap-api.poste.dz/api/atms
  *
- * Usage: node scripts/fetch.mjs
+ * Usage: node scripts/fetch.mjs            # live pull
+ *        node scripts/fetch.mjs --cache    # offline replay, see REPLAY below
+ *
+ * REPLAY. Every other `--cache` in this repo replays a raw capture under
+ * sources/<pkg>/, and this package has none: BaridiMap is geo-blocked from
+ * outside Algeria, so the only pulls that ever ran produced no committed
+ * capture. The rows this package already ships are therefore the replay's own
+ * input, exactly as scripts/apply-overrides.mjs treats them. They are already
+ * v2 records, so the MIGRATIONS map is NOT applied a second time (it reads the
+ * raw provider field names), and the dates come from the committed metadata
+ * (resolveDates with offline=true) so a replay never stamps a `retrieved` no
+ * request was made on. A replay with nothing excluded is byte-identical to what
+ * it read, which is what makes it safe to use to apply a removal.
  */
 
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
+import {
+  MIGRATIONS,
+  writePackageV2,
+  resolveDates,
+  readCommitted,
+  readRetiredIds,
+} from "../../../scripts/lib/v2-transforms.mjs";
 import {
   canonicalCommuneForCode,
   normalizeProviderCommune,
@@ -32,6 +50,76 @@ const HEADERS = {
   Origin: "https://baridimap.poste.dz",
   Referer: "https://baridimap.poste.dz/",
   Accept: "application/json",
+};
+
+// Military locations. Owner decision of 2026-10-29: the project publishes no
+// military location anywhere, so these upstream records never become published
+// ones, however BaridiMap keeps listing them. Keyed on the operator's own id,
+// which is the published id too, so the exclusion holds across every refresh.
+// An office whose ADDRESS merely names the ANP or the gendarmerie is not one of
+// these, nor is one whose name happens to be a person's ("404 AHCENE ASKRI");
+// only a service point sited inside a military facility is listed here.
+//
+// A published id is a join key: the ids dropped here are reserved forever in
+// data/retired-ids.json, so no later record can be handed one. They forward
+// nowhere, because the records are removed and not merged into anything.
+const MILITARY_IDS = {
+  // Inside the Ain Naadja central military hospital.
+  "postoffices.json": new Set(["2532"]),
+  // Inside the naval school, Mostaganem (13519), and inside the army's family rest
+  // centre (Centre de Repos Familial, CRF) at Sidi Fredj, Staoueli (13104).
+  "atms.json": new Set(["13519", "13104"]),
+};
+
+// ATMs BaridiMap lists with no coordinate, placed at their host post office's own
+// BaridiMap point (the operator's published location, Owner rule of 2026-10-25).
+// The ATM is the office's: same postal code, and the same name or the office's
+// second machine ("BARAKI 2" beside ATM 1512 "BARAKI", which BaridiMap puts 20 m
+// from office 748). The point is the office building's, not a survey of the
+// machine, so `geo_method` says so. An ATM that gains its own coordinate upstream
+// keeps it; a key whose ATM or office is gone stops the build.
+const ATM_HOST_OFFICE = {
+  1513: 748, // BARAKI 2 -> BARAKI, 16027
+  1772: 234, // AHMER EL AIN, 42005
+  2335: 206, // AIN TAYA, 16019
+};
+const placeAtHostOffice = (atms, offices) => {
+  const officeById = new Map(offices.map((o) => [String(o.id), o]));
+  const atmById = new Map(atms.map((a) => [String(a.id), a]));
+  for (const [atmId, officeId] of Object.entries(ATM_HOST_OFFICE)) {
+    const atm = atmById.get(atmId), office = officeById.get(String(officeId));
+    if (!atm || !office || office.lat == null) throw new Error(`poste: ATM_HOST_OFFICE ${atmId} -> ${officeId}: ATM or office missing`);
+    if (atm.postal_code !== office.postal_code) throw new Error(`poste: ATM_HOST_OFFICE ${atmId}: postal code ${atm.postal_code} is not office ${officeId}'s ${office.postal_code}`);
+    if (atm.lat != null) continue;
+    Object.assign(atm, { lat: office.lat, lng: office.lng, geo_precision: office.geo_precision, geo_method: "baridimap_host_office" });
+  }
+};
+
+// Post offices BaridiMap lists with no coordinate, placed on the office's own
+// OpenStreetMap node (amenity=post_office, operator Algérie Poste), read from the
+// OpenStreetMap API at the version named on 2026-10-29. Each tie is stated; an
+// office that gains its own coordinate upstream keeps it.
+const OFFICE_OSM_POINT = {
+  // node "El Biar": the record's own address (118 BD ALI KHODJA), postal code 16138
+  // and class R2. Office 3112 "EL BIAR" is the Place Kennedy office (16003).
+  2905: { osm: "node/2754485098", version: 20, lat: 36.7692213, lng: 3.0267566 },
+  // node "Bureau de poste de Club des Pins". Club des Pins is a suburb of Chéraga
+  // (OSM node 3405300437, place=suburb; the Owner's reading of 2026-10-29), and
+  // the node lies inside Chéraga's outline: the commune BaridiMap names (STAOUELI)
+  // is corrected in quality/overrides/poste.json.
+  3062: { osm: "node/4147407047", version: 19, lat: 36.7687292, lng: 2.8848159 },
+  // Two Votes: an untitled post office node, 17 m from BaridiMap's own point for
+  // ATM 2139 "TIZI OUZOU KRIM BELKACEM" (postal code 15161, the office's).
+  2458: { osm: "node/3739168414", version: 18, lat: 36.700328, lng: 4.0564974 },
+};
+const placeOfficesOnOsm = (offices) => {
+  const byId = new Map(offices.map((o) => [String(o.id), o]));
+  for (const [id, p] of Object.entries(OFFICE_OSM_POINT)) {
+    const office = byId.get(id);
+    if (!office) throw new Error(`poste: OFFICE_OSM_POINT ${id}: office missing`);
+    if (office.lat != null) continue;
+    Object.assign(office, { lat: p.lat, lng: p.lng, geo_precision: "exact", geo_method: "osm_node" });
+  }
 };
 
 const num = (v) => {
@@ -110,31 +198,69 @@ export function normAtm(a) {
 
 // --- main ------------------------------------------------------------------
 async function main() {
-  console.log("Fetching post offices…");
-  const offices = (await getJSON("/postoffices")).map(normPostOffice);
-  console.log(`  ${offices.length} post offices`);
-
-  console.log("Fetching ATMs…");
-  const atms = (await getJSON("/atms")).map(normAtm);
-  console.log(`  ${atms.length} ATMs`);
-
-  // Emit v2 via the shared writer (live-only source, so stamp the run's date) to
-  // BOTH the package tree and the dataset mirror, so the two stay byte-identical.
-  // Fresh rows per destination: writePackageV2 sorts/demotes in place.
+  const OFFLINE = process.argv.includes("--cache");
   const cfg = MIGRATIONS.poste;
   const mapOf = (f) => cfg.files.find((s) => s.file === f).map;
-  const today = new Date().toISOString().slice(0, 10);
+
+  // Military locations leave the package before anything else sees them, and each
+  // id they leave behind joins the reserved set, on a live run and on a replay
+  // alike, so the ledger states the same thing whichever one applied the removal.
+  const retiredIds = readRetiredIds(OUT_DIR);
+  const withoutMilitary = (rows, file) => {
+    const drop = MILITARY_IDS[file];
+    const kept = [];
+    for (const r of rows) {
+      if (drop.has(String(r.id))) retiredIds.add(String(r.id));
+      else kept.push(r);
+    }
+    if (kept.length !== rows.length) {
+      console.log(`  military: ${rows.length - kept.length} ${file} record(s) excluded`);
+    }
+    return kept;
+  };
+
+  // v2 rows for each file. A live run maps the raw provider payload; a replay
+  // reads the committed records, which are v2 already.
+  let offices;
+  let atms;
+  if (OFFLINE) {
+    console.log("Replaying the committed records (no network)…");
+    offices = withoutMilitary(readCommitted(OUT_DIR, "postoffices.json"), "postoffices.json");
+    atms = withoutMilitary(readCommitted(OUT_DIR, "atms.json"), "atms.json");
+  } else {
+    console.log("Fetching post offices…");
+    offices = withoutMilitary(
+      (await getJSON("/postoffices")).map(normPostOffice).map(mapOf("postoffices.json")),
+      "postoffices.json",
+    );
+    console.log("Fetching ATMs…");
+    atms = withoutMilitary(
+      (await getJSON("/atms")).map(normAtm).map(mapOf("atms.json")),
+      "atms.json",
+    );
+  }
+  placeOfficesOnOsm(offices);
+  placeAtHostOffice(atms, offices);
+  console.log(`  ${offices.length} post offices`);
+  console.log(`  ${atms.length} ATMs`);
+
+  // Emit v2 via the shared writer to BOTH the package tree and the dataset
+  // mirror, so the two stay byte-identical. A live run stamps its own date; a
+  // replay reuses the committed one, because it asked the upstream nothing.
+  // Fresh rows per destination: writePackageV2 sorts/demotes in place.
+  const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   for (const dir of [OUT_DIR, MIRROR_DIR]) {
     writePackageV2({
       pkg: "poste",
       dir,
       files: [
-        { file: "postoffices.json", rows: offices.map(mapOf("postoffices.json")) },
-        { file: "atms.json", rows: atms.map(mapOf("atms.json")) },
+        { file: "postoffices.json", rows: structuredClone(offices) },
+        { file: "atms.json", rows: structuredClone(atms) },
       ],
       meta: cfg.meta,
-      updated: today,
-      retrieved: today,
+      updated,
+      retrieved,
+      retiredIds,
     });
   }
   console.log(`Wrote ${offices.length} post offices + ${atms.length} ATMs → v2 (package + dataset mirror).`);

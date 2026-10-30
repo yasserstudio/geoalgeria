@@ -4,12 +4,12 @@
   "title_fr": "Écoles d'Algérie",
   "title_ar": "مدارس الجزائر",
   "title_en": "Algeria schools",
-  "record_count": 11858,
-  "geocoded_count": 11858,
+  "record_count": 11849,
+  "geocoded_count": 11849,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 2840,
-    "approximate": 9018
+    "exact": 2838,
+    "approximate": 9011
   },
   "estimated_universe": 29702,
   "coverage_pct": 39.9,
@@ -33,16 +33,16 @@
   ],
   "license": "ODbL-1.0",
   "updated": "2026-08-31",
-  "named": 8213,
+  "named": 8204,
   "by_cycle": {
-    "primaire": 3784,
+    "primaire": 3776,
     "moyen": 2359,
     "secondaire": 1496,
     "autre": 3951,
-    "prescolaire": 268
+    "prescolaire": 267
   },
   "by_kind": {
-    "regular": 11680,
+    "regular": 11671,
     "formation": 88,
     "coranique": 36,
     "special": 30,
@@ -53,7 +53,7 @@
     "private": 44,
     "public": 316
   },
-  "with_address": 2626,
+  "with_address": 2620,
   "cycle_note": "Cycle is inferred from isced:level and the French/Arabic name (CEM→moyen, lycée→secondaire, maternelle/روضة→préscolaire); a bare \"école\"/\"مدرسة\" with no cycle word is classified primaire per Algerian convention, and anything unresolved is \"autre\".",
   "kind_note": "Kind is the establishment type, orthogonal to cycle: most are \"regular\"; \"langues\"/\"coranique\"/\"conduite\"/\"formation\" are special-purpose places OSM files under amenity=school but that sit outside the K-12 ladder (they carry cycle \"autre\"); \"special\" are adapted/special-needs schools (which keep a cycle)."
 }

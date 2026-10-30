@@ -92,15 +92,15 @@
     },
     {
       "path": "packages/ecoles/data/ecoles.json",
-      "sha256": "812a57fff05a86eb137d7bbef255e6795b531bf654a4751fe2cdc11558d45926"
+      "sha256": "974742f409db90293c15a162ba338ab391bb2646a4d39912c849fe19ae8388c2"
     },
     {
       "path": "packages/ecoles/data/metadata.json",
-      "sha256": "a66f865eca91a24e909e8dcd1a50396edbc3df6dc610adb426a7378fb651de3b"
+      "sha256": "fe041c62c87c39ac5a795177701c1f782d3b85111c0d58587f2e416f5ec296c8"
     },
     {
       "path": "packages/ecoles/data/retired-ids.json",
-      "sha256": "80c2976cd8118b701d85cd5dc96bd9da687036d1705935dce002a679ac2061e6"
+      "sha256": "3dedad7822322339b1286b30f7c44dea3fb714a82ccb37ed22992c0b05f3edf5"
     },
     {
       "path": "packages/emploi/data/alem.json",
@@ -236,15 +236,15 @@
     },
     {
       "path": "packages/poste/data/atms.json",
-      "sha256": "c594f78e46916eb133b9112810e91bb3c3acab54e81269a2b0c95b8b82e24035"
+      "sha256": "329d499865cb14d9381d5f3cb6129ebc7991436d5f4f9ac1a49c85bf97132fd1"
     },
     {
       "path": "packages/poste/data/metadata.json",
-      "sha256": "7fc4df2e57b83aa545386d5bffbc6f283f31719902ca604dc23e77f1f14053a3"
+      "sha256": "095c77414631356d94894125a816f454b1a5885ccad8715aa641b3dd5292781c"
     },
     {
       "path": "packages/poste/data/postoffices.json",
-      "sha256": "1e8ba4bb0279351460fbc61d44763737a63695a95057cca369b03194ed4e65fa"
+      "sha256": "3ecd9e59dd85902988b6d2f765523f68fcf8f6591777fa983cdce47068151f01"
     },
     {
       "path": "packages/protection-civile/data/metadata.json",
@@ -325,12 +325,12 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 71360,
-  "candidates": 17401,
+  "total_records": 71348,
+  "candidates": 17387,
   "reasons": {
-    "approximate_coordinate": 16554,
+    "approximate_coordinate": 16547,
     "inside_adjacent_wilaya": 192,
-    "missing_coordinate": 498,
+    "missing_coordinate": 491,
     "outside_all_wilaya_boundaries": 200,
     "outside_declared_wilaya": 392,
     "shared_coordinate": 1058
@@ -950,10 +950,10 @@
     },
     {
       "dataset": "ecoles",
-      "total_records": 11858,
-      "candidates": 9026,
+      "total_records": 11849,
+      "candidates": 9019,
       "reasons": {
-        "approximate_coordinate": 9018,
+        "approximate_coordinate": 9011,
         "inside_adjacent_wilaya": 4,
         "outside_all_wilaya_boundaries": 14,
         "outside_declared_wilaya": 18
@@ -965,12 +965,12 @@
         "title_fr": "Écoles d'Algérie",
         "title_ar": "مدارس الجزائر",
         "title_en": "Algeria schools",
-        "record_count": 11858,
-        "geocoded_count": 11858,
+        "record_count": 11849,
+        "geocoded_count": 11849,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 2840,
-          "approximate": 9018
+          "exact": 2838,
+          "approximate": 9011
         },
         "estimated_universe": 29702,
         "coverage_pct": 39.9,
@@ -994,16 +994,16 @@
         ],
         "license": "ODbL-1.0",
         "updated": "2026-08-31",
-        "named": 8213,
+        "named": 8204,
         "by_cycle": {
-          "primaire": 3784,
+          "primaire": 3776,
           "moyen": 2359,
           "secondaire": 1496,
           "autre": 3951,
-          "prescolaire": 268
+          "prescolaire": 267
         },
         "by_kind": {
-          "regular": 11680,
+          "regular": 11671,
           "formation": 88,
           "coranique": 36,
           "special": 30,
@@ -1014,7 +1014,7 @@
           "private": 44,
           "public": 316
         },
-        "with_address": 2626,
+        "with_address": 2620,
         "cycle_note": "Cycle is inferred from isced:level and the French/Arabic name (CEM→moyen, lycée→secondaire, maternelle/روضة→préscolaire); a bare \"école\"/\"مدرسة\" with no cycle word is classified primaire per Algerian convention, and anything unresolved is \"autre\".",
         "kind_note": "Kind is the establishment type, orthogonal to cycle: most are \"regular\"; \"langues\"/\"coranique\"/\"conduite\"/\"formation\" are special-purpose places OSM files under amenity=school but that sit outside the K-12 ladder (they carry cycle \"autre\"); \"special\" are adapted/special-needs schools (which keep a cycle)."
       }
@@ -1829,11 +1829,11 @@
     },
     {
       "dataset": "poste",
-      "total_records": 5933,
-      "candidates": 35,
+      "total_records": 5930,
+      "candidates": 28,
       "reasons": {
         "inside_adjacent_wilaya": 7,
-        "missing_coordinate": 21,
+        "missing_coordinate": 14,
         "outside_all_wilaya_boundaries": 7,
         "outside_declared_wilaya": 14
       },
@@ -1844,11 +1844,11 @@
         "title_fr": "Bureaux de poste et GAB d'Algérie",
         "title_ar": "مكاتب البريد والصرافات الآلية الجزائرية",
         "title_en": "Algeria post offices & ATMs",
-        "record_count": 5933,
-        "geocoded_count": 5912,
-        "geocoded_pct": 99.6,
+        "record_count": 5930,
+        "geocoded_count": 5916,
+        "geocoded_pct": 99.8,
         "precision": {
-          "exact": 5912,
+          "exact": 5916,
           "approximate": 0
         },
         "estimated_universe": null,
@@ -1864,11 +1864,11 @@
         "entities": [
           {
             "file": "postoffices.json",
-            "count": 3908
+            "count": 3907
           },
           {
             "file": "atms.json",
-            "count": 2025
+            "count": 2023
           }
         ],
         "sources": [
@@ -1883,7 +1883,7 @@
         ],
         "license": "Data © Algérie Poste; redistributed for reference",
         "updated": "2026-10-25",
-        "distinct_postal_codes": 4000
+        "distinct_postal_codes": 3999
       }
     },
     {
@@ -2450,10 +2450,10 @@
     {
       "dataset": "ecoles",
       "entity": "ecoles.json",
-      "total_records": 11858,
-      "candidates": 9026,
+      "total_records": 11849,
+      "candidates": 9019,
       "reasons": {
-        "approximate_coordinate": 9018,
+        "approximate_coordinate": 9011,
         "inside_adjacent_wilaya": 4,
         "outside_all_wilaya_boundaries": 14,
         "outside_declared_wilaya": 18
@@ -2619,11 +2619,11 @@
     {
       "dataset": "poste",
       "entity": "atms.json",
-      "total_records": 2025,
-      "candidates": 8,
+      "total_records": 2023,
+      "candidates": 4,
       "reasons": {
         "inside_adjacent_wilaya": 1,
-        "missing_coordinate": 5,
+        "missing_coordinate": 1,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 3
       },
@@ -2632,11 +2632,11 @@
     {
       "dataset": "poste",
       "entity": "postoffices.json",
-      "total_records": 3908,
-      "candidates": 27,
+      "total_records": 3907,
+      "candidates": 24,
       "reasons": {
         "inside_adjacent_wilaya": 6,
-        "missing_coordinate": 16,
+        "missing_coordinate": 13,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 11
       },

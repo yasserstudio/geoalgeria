@@ -45,7 +45,7 @@ Conservative key, Loose key, Rule, Golden corpus.
 | `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | approved pharmaceutical manufacturers – 171 medicine (PP) & medical-device (DM) makers from the Ministry of Pharmaceutical Industry (MIP) fabrication register, bilingual, typed by nature, geocoded to commune/wilaya centroid |
 | `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines), 3,811 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
 | `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella – re-exports industrie-pharmaceutique + pharmacies in one install |
-| `packages/ecoles/` | `@geoalgeria/ecoles` | schools – 11,858 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
+| `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,849 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
 | `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations – 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
 | `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit – 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
 | `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks – 184 Lines, 76 shapes, 128 Directions and 1,603 Stations across 16 Operators |
@@ -125,6 +125,10 @@ Full details and one-time setup: [`RELEASING.md`](RELEASING.md).
 
 ## Don't
 
+- Publish a military location (Owner decision, 2026-10-29): a military school, hospital,
+  clinic, pharmacy, base, command, barracks in use, military hotel or housing, cadet school
+  or gendarmerie unit. Exclude it in the package's build and retire its id. Heritage
+  (colonial forts and barracks), public museums and addresses that only name one stay.
 - Hand-edit generated mirrors (`packages/dataset/data/poste/`).
 - Hand-edit a package's `loaders.cjs`, or make an `index.js` read a data file by
   a path built at run time. Each package reaches its JSON through one loader per

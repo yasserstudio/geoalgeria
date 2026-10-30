@@ -12,7 +12,7 @@
 
 </div>
 
-3,908 مكتب بريد و2,025 جهاز صراف آلي عبر الجزائر – مع **أكواد بريدية حقيقية**، وأسماء ثنائية اللغة (فرنسية / عربية)، وإحداثيات GPS، وربط بالبلدية/الولاية. مصدرها بريد الجزائر، متوفرة بصيغ JSON وCSV وGeoJSON. جزء من [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
+3,907 مكتب بريد و2,023 جهاز صراف آلي عبر الجزائر، مع **أكواد بريدية حقيقية**، وأسماء ثنائية اللغة (فرنسية / عربية)، وإحداثيات GPS، وربط بالبلدية/الولاية. مصدرها بريد الجزائر، متوفرة بصيغ JSON وCSV وGeoJSON. جزء من [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
 npm install @geoalgeria/poste
@@ -21,8 +21,8 @@ npm install @geoalgeria/poste
 ```js
 import poste from "@geoalgeria/poste";
 
-const offices = poste.postOffices();   // 3,908
-const atms = poste.atms();             // 2,025
+const offices = poste.postOffices();   // 3,907
+const atms = poste.atms();             // 2,023
 
 // مكاتب البريد في بلدية (ربط عبر code_commune الخاص بـ GeoAlgeria)
 const inAdrar = offices.filter((o) => o.commune_code === "0101");
@@ -41,8 +41,8 @@ const inAdrar = offices.filter((o) => o.commune_code === "0101");
 
 | مجموعة البيانات | العدد | ملاحظات |
 | --- | --- | --- |
-| مكاتب البريد | **3,908** | كل مكتب بكوده البريدي الخاص (`postal_code`) |
-| أجهزة الصراف الآلي | **2,025** | شبكة GAB لبريد الجزائر |
+| مكاتب البريد | **3,907** | كل مكتب بكوده البريدي الخاص (`postal_code`) |
+| أجهزة الصراف الآلي | **2,023** | شبكة GAB لبريد الجزائر |
 
 ## الصيغ
 
@@ -66,8 +66,8 @@ const offices: PostOffice[] = poste.postOffices();
 
 ```
 data/
-  postoffices.json            # 3,908 مكتب (مصفوفة)
-  atms.json                   # 2,025 صراف آلي (مصفوفة)
+  postoffices.json            # 3,907 مكتب (مصفوفة)
+  atms.json                   # 2,023 صراف آلي (مصفوفة)
   metadata.json               # الأعداد، المصادر، الترخيص، updated
   csv/postoffices.csv         # المستودع + حزمة الإصدار (غير مضمن في حزمة npm)
   csv/atms.csv
@@ -75,10 +75,13 @@ data/
   geojson/atms.geojson
 ```
 
-> GeoJSON يتضمن فقط السجلات التي تحتوي على إحداثيات – 16 مكتبًا و5 أجهزة صراف
-> آلي لا تُبلّغ عن `lat`/`lng` وتُحذف منه (لكنها تبقى في JSON/CSV، مع
+> GeoJSON يتضمن فقط السجلات التي تحتوي على إحداثيات: 13 مكتبًا وجهاز صراف
+> آلي واحد لا تُبلّغ عن `lat`/`lng` وتُحذف منه (لكنها تبقى في JSON/CSV، مع
 > `geo_precision`/`geo_method` بقيمة `null`). يملأ GeoAlgeria حقل
 > `commune_code` لـ90 جهازًا فقط عند تطابق اسم البلدية والولاية الأم وموقع النقطة.
+> ثلاثة أجهزة صراف آلي ينشرها بريدي ماب دون نقطة تحمل نقطة مكتب البريد الذي
+> يحتضنها، مع `geo_method: "baridimap_host_office"`، وثلاثة مكاتب دون نقطة
+> موضوعة على عقدتها في OpenStreetMap (`geo_method: "osm_node"`).
 
 ## أشكال السجلات
 

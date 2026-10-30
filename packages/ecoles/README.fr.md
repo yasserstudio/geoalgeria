@@ -12,7 +12,7 @@
 
 </div>
 
-**11 858 écoles géolocalisées** dans les **69 wilayas** d'Algérie – chacune avec
+**11 849 écoles géolocalisées** dans les **69 wilayas** d'Algérie, chacune avec
 ses coordonnées, classée par **cycle** (primaire · moyen/CEM · secondaire/lycée ·
 préscolaire), la plupart avec un nom en arabe et/ou en français, et un
 rattachement commune/wilaya. Extraites d'**OpenStreetMap** et présentées
@@ -28,7 +28,7 @@ npm install @geoalgeria/ecoles
 ```js
 import ecoles from "@geoalgeria/ecoles";
 
-const all = ecoles.ecoles();   // 11 858 écoles géolocalisées
+const all = ecoles.ecoles();   // 11 849 écoles géolocalisées
 
 // Lycées d'une wilaya (jointure sur wilaya_code de GeoAlgeria)
 const lyceesSetif = all.filter((e) => e.wilaya_code === "19" && e.cycle === "secondaire");
@@ -39,7 +39,7 @@ const named = all.filter((e) => e.name_fr);
 
 ## Ce que vous pouvez construire
 
-- **Cartes & annuaires d'écoles** – coordonnées sur les 11 858 enregistrements,
+- **Cartes & annuaires d'écoles**, coordonnées sur les 11 849 enregistrements,
   prêtes pour une carte ou un tri par école la plus proche.
 - **Répartitions par cycle** – filtrez primaire / moyen / secondaire /
   préscolaire, ou classez la densité scolaire par commune/wilaya.
@@ -49,20 +49,20 @@ const named = all.filter((e) => e.name_fr);
 
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
-| Écoles | **11 858** | ✅ toutes | 8 213 nommées, 69 wilayas |
+| Écoles | **11 849** | ✅ toutes | 8 204 nommées, 69 wilayas |
 
 **Par cycle**
 
 | Cycle | Nombre | Signification |
 | --- | --- | --- |
-| `primaire` | 4 019 | école primaire (CITE 1) |
-| `moyen` | 2 378 | collège d'enseignement moyen / CEM (CITE 2) |
-| `secondaire` | 1 576 | lycée (CITE 3) |
-| `prescolaire` | 268 | préscolaire / maternelle / روضة (CITE 0) |
-| `autre` | 3 614 | école de cycle indéterminé (non nommée, ou nom sans mot de cycle) |
+| `primaire` | 3 776 | école primaire (CITE 1) |
+| `moyen` | 2 359 | collège d'enseignement moyen / CEM (CITE 2) |
+| `secondaire` | 1 496 | lycée (CITE 3) |
+| `prescolaire` | 267 | préscolaire / maternelle / روضة (CITE 0) |
+| `autre` | 3 951 | école de cycle indéterminé (non nommée, ou nom sans mot de cycle) |
 
 > **Il s'agit d'un extrait OpenStreetMap, pas d'un registre officiel.** La
-> couverture est partielle et inégale selon les wilayas – 11 858 écoles
+> couverture est partielle et inégale selon les wilayas, 11 849 écoles
 > cartographiées face aux 29 702 établissements d'enseignement que le Ministère
 > de l'Éducation Nationale publie sur
 > [education.gov.dz](https://www.education.gov.dz) pour l'année scolaire
@@ -82,12 +82,12 @@ cycle, pour filtrer (ou isoler) les lieux particuliers qu'OSM classe sous
 
 | Type | Nombre | Signification | Cycle |
 | --- | --- | --- | --- |
-| `regular` | 11 664 | école / CEM / lycée / maternelle ordinaire | son cycle réel |
-| `formation` | 92 | centre de formation professionnelle | `autre` |
-| `coranique` | 40 | école coranique | `autre` |
-| `langues` | 24 | école / institut de langues | `autre` |
+| `regular` | 11 671 | école / CEM / lycée / maternelle ordinaire | son cycle réel |
+| `formation` | 88 | centre de formation professionnelle | `autre` |
+| `coranique` | 36 | école coranique | `autre` |
+| `langues` | 20 | école / institut de langues | `autre` |
 | `special` | 30 | école spécialisée (sourds, aveugles…) | garde son cycle |
-| `conduite` | 5 | auto-école | `autre` |
+| `conduite` | 4 | auto-école | `autre` |
 
 Les quatre types hors K-12 (`formation`/`coranique`/`langues`/`conduite`) portent
 le cycle `autre` – ce ne sont pas des écoles primaires même si leur nom contient
@@ -95,7 +95,7 @@ le cycle `autre` – ce ne sont pas des écoles primaires même si leur nom cont
 
 **Aussi sur chaque enregistrement :** `isced_levels` (les niveaux `isced:level`
 d'OSM, normalisés en liste triée comme `"1;2"` – sur 2 048 enregistrements),
-`address` (depuis les tags OSM `addr:*` – sur 2 626) et `sector`
+`address` (depuis les tags OSM `addr:*`, sur 2 620) et `sector`
 (`public`/`private` là où la carte le signale).
 
 ## Formats
@@ -122,7 +122,7 @@ inclus dans chaque
 
 ```
 data/
-  ecoles.json              # 11 858 écoles (tableau)
+  ecoles.json              # 11 849 écoles (tableau)
   metadata.json            # sources, décomptes, couverture, updated
   csv/ecoles.csv           # dépôt + bundle Release (pas dans le tarball npm)
   geojson/ecoles.geojson   # entités Point

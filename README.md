@@ -63,8 +63,8 @@ A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office 
 | **Wilayas** | 69 | provinces (2019 + 2026 reforms), each with its capital commune (chef-lieu) |
 | **Dairas** | 551 | districts, as first-class entities |
 | **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates, OpenStreetMap + Wikidata links |
-| **Post offices** | 3,908 | real Algérie Poste codes, coordinates |
-| **ATMs** | 2,025 | Algérie Poste GAB network |
+| **Post offices** | 3,907 | real Algérie Poste codes, coordinates |
+| **ATMs** | 2,023 | Algérie Poste GAB network |
 | **Employment agencies** | 331 | ANEM: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
 | **Mobilis network** | 12,344 | 164 agencies + 12,180 points of sale. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **5G coverage** | 4,093 | Djezzy + Mobilis + Ooredoo 5G sites. [`@geoalgeria/telecom`](packages/telecom) |
@@ -84,7 +84,7 @@ A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office 
 | **Civil protection units** | 880 | DGPC fire & rescue units nationwide, Arabic-named, address/phone/fax, status tier, all geocoded, official-primary (dgpc.dz), post-2026-reform wilaya linkage. [`@geoalgeria/protection-civile`](packages/protection-civile) |
 | **Cultural places** | 1,083 | Protected sites, museums, theatres, libraries + cultural establishments from the Ministry of Culture, bilingual, all geocoded, 66 wilayas. [`@geoalgeria/culture`](packages/culture) |
 | **Agriculture institutions** | 196 | Services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups from the Ministry of Agriculture, bilingual, geocoded, 58 wilayas. [`@geoalgeria/agriculture`](packages/agriculture) |
-| **Schools** | 11,858 | Primaires, CEM, lycées & préscolaires classified by cycle from OpenStreetMap, bilingual, all 69 wilayas. [`@geoalgeria/ecoles`](packages/ecoles) |
+| **Schools** | 11,849 | Primaires, CEM, lycées & préscolaires classified by cycle from OpenStreetMap, bilingual, all 69 wilayas. [`@geoalgeria/ecoles`](packages/ecoles) |
 | **Intercity bus stations** | 74 | SOGRAL gares routières across 52 wilayas, names, addresses, surface areas, coordinates. [`@geoalgeria/gares-routieres`](packages/gares-routieres) |
 | **Rail & urban transit** | 692 | train, tram, metro, aerial-tramway & gondola nodes (SNTF / SETRAM / SEMA), Wikidata + OSM composite, bilingual, 50 wilayas. [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
 | **Urban/suburban bus Lines** | 184 | 16 Operators, 76 shapes, 128 Directions, 1,603 Stations. [`@geoalgeria/buses`](packages/buses) |
@@ -143,7 +143,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Clinics & proximity-care facilities, 1,915 geocoded from OpenStreetMap across 66 wilayas, classified by type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingual, with sector, speciality, phone & hours where tagged; the OSM community tier of the health sector, and every OSM element `sante` references is excluded from it |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Cultural atlas, 1,083 places from the Ministry of Culture (protected sites, museums, theatres, libraries, cultural establishments), bilingual, fully geocoded with commune/wilaya linkage |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Agriculture-sector institutions, 196 from the Ministry of Agriculture across 7 networks (DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups), bilingual, geocoded with commune/wilaya linkage |
-| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Schools, 11,858 schools & kindergartens from OpenStreetMap, classified by cycle (primaire/moyen/secondaire/préscolaire), bilingual, all 69 wilayas, with commune/wilaya linkage |
+| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Schools, 11,849 schools & kindergartens from OpenStreetMap, classified by cycle (primaire/moyen/secondaire/préscolaire), bilingual, all 69 wilayas, with commune/wilaya linkage |
 | [`packages/gares-routieres`](packages/gares-routieres) | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | Intercity bus stations, 74 SOGRAL gares routières across 52 wilayas, geocoded with surfaces & commune/wilaya linkage |
 | [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | Rail & urban transit, 692 train/tram/metro/aerial/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual FR/AR |
 | [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | 184 reviewed urban/suburban Lines, 76 shapes and 1,603 Stations across 16 Operators |

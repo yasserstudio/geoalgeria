@@ -65,8 +65,8 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **الولايات** | 69 | (إصلاحات 2019 + 2026)، ولكل ولاية بلدية مقرها (chef-lieu) |
 | **الدوائر** | 551 | كيانات من المستوى الأول |
 | **البلديات** | 1,541 | ثنائية اللغة فر/عر، رموز بريدية، إحداثيات، روابط OpenStreetMap وWikidata |
-| **مكاتب البريد** | 3,908 | رموز بريد الجزائر الحقيقية، إحداثيات |
-| **الصرّافات الآلية** | 2,025 | شبكة GAB لبريد الجزائر |
+| **مكاتب البريد** | 3,907 | رموز بريد الجزائر الحقيقية، إحداثيات |
+| **الصرّافات الآلية** | 2,023 | شبكة GAB لبريد الجزائر |
 | **وكالات التشغيل** | 331 | الوكالة الوطنية للتشغيل: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
 | **شبكة موبيليس** | 12,344 | 164 وكالة + 12,180 نقطة بيع. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **تغطية 5G** | 4,093 | مواقع 5G لجيزي + موبيليس + أوريدو. [`@geoalgeria/telecom`](packages/telecom) |
@@ -86,7 +86,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **وحدات الحماية المدنية** | 880 | وحدات الإطفاء والإنقاذ التابعة للمديرية العامة للحماية المدنية على كامل التراب، مُسمّاة بالعربية، بعنوان/هاتف/فاكس، وبمستوى الصفة، كلها بإحداثيات، مصدر رسمي أوّلي (dgpc.dz)، مع ربط الولاية وفق إصلاح 2026. [`@geoalgeria/protection-civile`](packages/protection-civile) |
 | **المواقع الثقافية** | 1083 | مواقع محمية، متاحف، مسارح، مكتبات + مؤسسات ثقافية من وزارة الثقافة، ثنائية اللغة، كلها بإحداثيات، 66 ولاية. [`@geoalgeria/culture`](packages/culture) |
 | **المؤسسات الفلاحية** | 196 | مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية من وزارة الفلاحة، ثنائية اللغة، بإحداثيات، 58 ولاية. [`@geoalgeria/agriculture`](packages/agriculture) |
-| **المدارس** | 11,858 | مدارس ابتدائية ومتوسطات وثانويات ورياض أطفال مُصنَّفة حسب الطور من OpenStreetMap، ثنائية اللغة، كل الـ69 ولاية. [`@geoalgeria/ecoles`](packages/ecoles) |
+| **المدارس** | 11,849 | مدارس ابتدائية ومتوسطات وثانويات ورياض أطفال مُصنَّفة حسب الطور من OpenStreetMap، ثنائية اللغة، كل الـ69 ولاية. [`@geoalgeria/ecoles`](packages/ecoles) |
 | **المحطات البرية** | 74 | محطات سوقرال البرية عبر 52 ولاية، الأسماء، العناوين، المساحات، الإحداثيات. [`@geoalgeria/gares-routieres`](packages/gares-routieres) |
 | **السكك والنقل الحضري** | 692 | عُقَد القطار والترامواي والمترو والتلفريك (SNTF / SETRAM / SEMA)، تجميعة Wikidata + OSM، ثنائية اللغة، 50 ولاية. [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
 | **خطوط الحافلات الحضرية وشبه الحضرية** | 184 | 16 مشغلًا، 76 مسارًا، 128 اتجاهًا، و1,603 محطة. [`@geoalgeria/buses`](packages/buses) |
@@ -145,7 +145,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | العيادات ومرافق الرعاية الجوارية، 1,915 مرفقًا بإحداثيات من OpenStreetMap عبر 66 ولاية، مُصنَّفة حسب النوع (عيادة متعددة الخدمات/قاعة علاج/مركز صحي/مصحة توليد/عيادة)، ثنائية اللغة، مع القطاع والتخصّص والهاتف والأوقات عند توفّرها؛ الطبقة المجتمعية لقطاع الصحة، ويُستبعَد منها كل عنصر OSM يُشير إليه `sante` |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | الأطلس الثقافي، 1083 موقعًا من وزارة الثقافة (مواقع محمية، متاحف، مسارح، مكتبات، مؤسسات ثقافية)، ثنائية اللغة، كاملة الإحداثيات مع ربط بالبلدية/الولاية |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | المؤسسات الفلاحية، 196 من وزارة الفلاحة موزعة على 7 شبكات (مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية)، ثنائية اللغة، بإحداثيات مع ربط بالبلدية/الولاية |
-| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس، 11,858 مدرسة وروضة من OpenStreetMap، مُصنَّفة حسب الطور (ابتدائي/متوسط/ثانوي/تحضيري)، ثنائية اللغة، كل الـ69 ولاية، مع ربط بالبلدية/الولاية |
+| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس، 11,849 مدرسة وروضة من OpenStreetMap، مُصنَّفة حسب الطور (ابتدائي/متوسط/ثانوي/تحضيري)، ثنائية اللغة، كل الـ69 ولاية، مع ربط بالبلدية/الولاية |
 | [`packages/gares-routieres`](packages/gares-routieres) | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | المحطات البرية، 74 محطة سوقرال عبر 52 ولاية، بإحداثيات ومساحات وربط بالبلدية/الولاية |
 | [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري، 692 عقدة قطار/ترامواي/مترو/تلفريك (SNTF/SETRAM/SEMA)، تجميعة Wikidata + OSM، ثنائية اللغة |
 | [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | 184 خطًا حضريًا وشبه حضري، و76 مسارًا و1,603 محطة لدى 16 مشغلًا |
