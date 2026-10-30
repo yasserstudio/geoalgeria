@@ -4,21 +4,21 @@
   "title_fr": "Points relais de livraison d'Algérie",
   "title_ar": "نقاط استلام التوصيل في الجزائر",
   "title_en": "Algeria delivery stop-desks",
-  "record_count": 411,
-  "geocoded_count": 411,
+  "record_count": 650,
+  "geocoded_count": 650,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 411,
-    "approximate": 0
+    "exact": 648,
+    "approximate": 2
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
-  "wilayas_covered": 61,
+  "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 650 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+  "wilayas_covered": 64,
   "bbox": [
     -8.143583,
-    22.784955,
-    9.585192,
+    19.576488,
+    9.578836,
     37.009471
   ],
   "sources": [
@@ -27,56 +27,95 @@
       "name": "Yalidine Express: nos-agences",
       "url": "https://yalidine-express.com.dz/nos-agences/",
       "license": "Data © Yalidine Express; redistributed for reference",
-      "retrieved": "2026-06-18",
-      "evidence_type": "official"
+      "evidence_type": "official",
+      "retrieved": "2026-10-25"
     },
     {
       "key": "guepex",
       "name": "Guepex: public agences feed",
       "url": "https://www.guepex.dz/public/data/agences.json",
       "license": "Data © Guepex; redistributed for reference",
-      "retrieved": "2026-06-18",
-      "evidence_type": "official"
+      "evidence_type": "official",
+      "retrieved": "2026-10-25"
     },
     {
       "key": "anderson",
       "name": "Anderson Logistics: agency directory",
       "url": "https://anderson-ecommerce.com/",
       "license": "Data © Anderson Logistics; redistributed for reference",
-      "retrieved": "2026-06-18",
-      "evidence_type": "official"
+      "evidence_type": "official",
+      "retrieved": "2026-10-25"
     },
     {
       "key": "noest",
       "name": "Noest Express: bureaux directory",
       "url": "https://noest-dz.com/",
       "license": "Data © Noest Express; redistributed for reference",
-      "retrieved": "2026-06-18",
-      "evidence_type": "official"
+      "evidence_type": "official",
+      "retrieved": "2026-10-25"
     },
     {
       "key": "maystro",
       "name": "Maystro Delivery: coverage page",
       "url": "https://maystro-delivery.com/Coverage.html",
       "license": "Data © Maystro Delivery; redistributed for reference",
-      "retrieved": "2026-06-18",
-      "evidence_type": "official"
+      "evidence_type": "official",
+      "retrieved": "2026-10-25"
+    },
+    {
+      "key": "zr-express",
+      "name": "ZR Express: offices list",
+      "url": "https://www.zrexpress.net/en/offices",
+      "license": "Data © ZR Express; redistributed for reference",
+      "evidence_type": "official",
+      "retrieved": "2026-10-25"
+    },
+    {
+      "key": "swift-express",
+      "name": "Swift Express: agency network",
+      "url": "https://www.swiftexpress.org/fr/offices",
+      "license": "Data © Swift Express; redistributed for reference",
+      "evidence_type": "official",
+      "retrieved": "2026-10-25"
+    },
+    {
+      "key": "hhd-express",
+      "name": "HHD Express: agency network",
+      "url": "https://hhd.dz/",
+      "license": "Data © HHD Express; redistributed for reference",
+      "evidence_type": "official",
+      "retrieved": "2026-10-25"
     }
   ],
   "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
-  "updated": "2026-06-18",
-  "carriers": 16,
-  "stopdesks": 411,
-  "coverage": 9,
+  "updated": "2026-10-25",
+  "carriers": 18,
+  "stopdesks": 650,
+  "coverage": 12,
   "by_operator": {
-    "guepex": 70,
-    "yalidine": 93,
-    "easyandspeed": 14,
+    "guepex": 71,
+    "yalidine": 105,
+    "easyandspeed": 15,
     "wecanservices": 3,
-    "zimou-express": 8,
-    "speedmail": 2,
-    "anderson": 89,
+    "zimou-express": 10,
+    "speedmail": 1,
+    "anderson": 104,
+    "hhd-express": 69,
     "maystro": 38,
-    "noest": 94
-  }
+    "noest": 102,
+    "swift-express": 55,
+    "zr-express": 77
+  },
+  "carried_pins": [
+    {
+      "id": "anderson-25-ali-mendjeli",
+      "name": "Anderson Constantine (Ali Mendjeli)",
+      "retrieved": "2026-06-18"
+    },
+    {
+      "id": "noest-19b",
+      "name": "Noest Sétif «El Eulma»",
+      "retrieved": "2026-06-18"
+    }
+  ]
 }

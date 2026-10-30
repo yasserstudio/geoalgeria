@@ -43,7 +43,7 @@ Conservative key, Loose key, Rule, Golden corpus.
 | `packages/culture/` | `@geoalgeria/culture` | cultural atlas – protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions – services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
 | `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | approved pharmaceutical manufacturers – 171 medicine (PP) & medical-device (DM) makers from the Ministry of Pharmaceutical Industry (MIP) fabrication register, bilingual, typed by nature, geocoded to commune/wilaya centroid |
-| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) – 3,795 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
+| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) – 3,812 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
 | `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella – re-exports industrie-pharmaceutique + pharmacies in one install |
 | `packages/ecoles/` | `@geoalgeria/ecoles` | schools – 11,858 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
 | `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations – 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
@@ -60,6 +60,15 @@ canonical latest capture per (package, source), written only via
 converted package rebuilds offline (`--cache`). Rules in
 [`sources/README.md`](sources/README.md). Unconverted packages still cache raw
 pulls in gitignored `research/<pkg>/` until they are next touched.
+
+[`refresh-schedule.json`](refresh-schedule.json) is the **freshness schedule**:
+one row per published package with its source, the command that refreshes it, a
+cadence, the date its data was last retrieved and when it is next due. It is
+hand-maintained, and `test/refresh-schedule.test.mjs` keeps `last_retrieved` in
+step with each package's own `data/metadata.json`, so a refresh that forgets the
+schedule fails the build rather than going stale quietly. Read the row before
+refreshing a package: `blocked` means do not run the fetcher at all, and the
+`note` says why a source needs a manual pass or a particular vantage point.
 
 ## The loop
 
@@ -128,6 +137,8 @@ Full details and one-time setup: [`RELEASING.md`](RELEASING.md).
   `generate-loaders --check`, which also refuses a `readFileSync`,
   `import.meta.url` or `__dirname` anywhere in it. `pnpm validate` runs that
   check, so a stale loader and a drifted index both fail it.
+- Land a refresh without updating that package's `refresh-schedule.json` row, or
+  run a fetcher whose row reads `blocked`.
 - Type a daira or commune count into a carrier. They are derived from the records
   by `node scripts/sync-division-counts.mjs --write`; run it instead.
 - Push a bump without a changeset, or a changeset without a source for the data.

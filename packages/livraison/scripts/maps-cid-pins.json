@@ -1,0 +1,13 @@
+{
+  "_README": "Pins for carrier Maps links that carry no coordinate. A card can link a Google Maps place by cid alone (https://maps.google.com/?cid=<decimal>), which names a place without stating where it is, and following it from a script yields no coordinate at any of resolveMapsLink()'s tiers, so the desk was simply dropped. Each entry here is that place read once from the operator's own linked place and committed with its provenance, so a refresh reproduces it instead of losing the desk. Consulted only as a fallback: if the link ever resolves live, the live pin wins. One entry per cid, keyed by the cid in the card's href.",
+  "6725298475309267754": {
+    "lat": 31.5952344,
+    "lng": -2.2280389,
+    "place_name": "البريد السريع أندرسن لوجستيك",
+    "place_url": "https://maps.google.com/?cid=6725298475309267754",
+    "feature_id": "0x5d550f54c548fb2a",
+    "desk": "Anderson Béchar, card wilaya 08, address حي البدر 600 مسكن",
+    "retrieved": "2026-10-25",
+    "note": "The feature id equals the cid in decimal, so this is the same place Anderson links. Read from that place, which makes it the operator's own pin."
+  }
+}

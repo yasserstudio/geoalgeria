@@ -1380,6 +1380,29 @@ function validateRetiredIds(pkgs) {
       );
     }
 
+    // `pending` holds the ids a refresh stopped carrying that are not retired yet:
+    // reserved for one more refresh so a record that comes back under a new mint can
+    // still claim its own id. It is a reservation, so it must say what the ids list
+    // says: an entry may not name a record the package still ships, nor one the
+    // ledger has already retired, and it has to carry the refresh it started in.
+    const waiting = document.pending;
+    if (waiting != null) {
+      if (typeof waiting !== "object" || Array.isArray(waiting)) {
+        fail(`${pkg}/retired-ids.json: pending must be an object`);
+      } else {
+        const reserved = new Set(ids);
+        for (const [id, entry] of Object.entries(waiting)) {
+          const where = `pending[${JSON.stringify(id)}]`;
+          if (entry == null || typeof entry !== "object" || Array.isArray(entry))
+            fail(`${pkg}/retired-ids.json: ${where} must be an object`);
+          else if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.first_missing ?? ""))
+            fail(`${pkg}/retired-ids.json: ${where}.first_missing must be an ISO date`);
+          if (reserved.has(id)) fail(`${pkg}/retired-ids.json: ${where} is already retired`);
+          if (live.has(id)) fail(`${pkg}/retired-ids.json: ${where} is a record this package ships`);
+        }
+      }
+    }
+
     // `migrations` says where a retired id's data went, for an id whose record
     // was folded into another one rather than removed. It is a public forwarding
     // table, so a consumer must be able to follow it: a key has to be an id this

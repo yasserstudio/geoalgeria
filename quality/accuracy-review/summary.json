@@ -168,19 +168,23 @@
     },
     {
       "path": "packages/livraison/data/carriers.json",
-      "sha256": "ebfa5344d21354b652868d2912b6b68605f68f03fd4340933bca8cde36eb630e"
+      "sha256": "f9672976229c2385e4919c9345223c9a5d079fd5db21974ab83711b0f8661a84"
     },
     {
       "path": "packages/livraison/data/coverage.json",
-      "sha256": "f91d5ee83559e111529bdd108eca7a31f415245d89cf7840d0f27045e0828632"
+      "sha256": "e57e20f38b33d8b46a5741b1dc6fd16df3277f4ed8b9bc7523dfdc8812394809"
     },
     {
       "path": "packages/livraison/data/metadata.json",
-      "sha256": "e2b087312a8e695e5a1e06896b5eb5b80fee74010b3fbcafa64313952583157f"
+      "sha256": "08c8aef25538631653e477c6b1b105b9c65d3866afb922734035818abb80b427"
+    },
+    {
+      "path": "packages/livraison/data/retired-ids.json",
+      "sha256": "bfdbac1827592e57220d0d82493f225edc0f1f6ef4bd6ccd5dabc60c89bcae08"
     },
     {
       "path": "packages/livraison/data/stopdesks.json",
-      "sha256": "81908e40080dd71d85d77cc380ee2d5dab29d37ba88d0859f5401488f465da28"
+      "sha256": "c12cd49bb529d328cf40c2d3ce66eeec263bfcd4f67d532ba7b0ac3fd3cbd78c"
     },
     {
       "path": "packages/mobilis/data/agences.json",
@@ -212,15 +216,15 @@
     },
     {
       "path": "packages/pharmacies/data/metadata.json",
-      "sha256": "84c5721722da68aa76ddc9065d23d2aa746cb42fd76c19e973b1c7243c04c5ec"
+      "sha256": "351698817ebee7764a2a45478fb0afca93dc67fb1b6042b6edff4f94420189ea"
     },
     {
       "path": "packages/pharmacies/data/pharmacies.json",
-      "sha256": "c7f2649cbea712ae144c3eec8f000f16971282df04837ccb0cf5b068bb17dfde"
+      "sha256": "fc783df6cba97bc30c0b389490495144dc5bb102ce0f17dba744a878b26e8358"
     },
     {
       "path": "packages/pharmacies/data/retired-ids.json",
-      "sha256": "771590bc36f2e7d52a7779e34ce942c47beb81821ff137465b9d43b3ddff22f0"
+      "sha256": "bfce956c941402db963e8ef1fe9c74880cb4c1b4c85938afda6864f2c4f0c8ec"
     },
     {
       "path": "packages/poste/data/atms.json",
@@ -309,15 +313,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70495,
-  "candidates": 17740,
+  "total_records": 70751,
+  "candidates": 17749,
   "reasons": {
-    "approximate_coordinate": 16892,
+    "approximate_coordinate": 16901,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 501,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1287
+    "shared_coordinate": 1289
   },
   "datasets": [
     {
@@ -1432,9 +1436,12 @@
     },
     {
       "dataset": "livraison",
-      "total_records": 411,
-      "candidates": 0,
-      "reasons": {},
+      "total_records": 650,
+      "candidates": 2,
+      "reasons": {
+        "approximate_coordinate": 2,
+        "shared_coordinate": 2
+      },
       "metadata_path": "packages/livraison/data/metadata.json",
       "metadata": {
         "package": "@geoalgeria/livraison",
@@ -1442,21 +1449,21 @@
         "title_fr": "Points relais de livraison d'Algérie",
         "title_ar": "نقاط استلام التوصيل في الجزائر",
         "title_en": "Algeria delivery stop-desks",
-        "record_count": 411,
-        "geocoded_count": 411,
+        "record_count": 650,
+        "geocoded_count": 650,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 411,
-          "approximate": 0
+          "exact": 648,
+          "approximate": 2
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
-        "wilayas_covered": 61,
+        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 650 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+        "wilayas_covered": 64,
         "bbox": [
           -8.143583,
-          22.784955,
-          9.585192,
+          19.576488,
+          9.578836,
           37.009471
         ],
         "sources": [
@@ -1465,58 +1472,97 @@
             "name": "Yalidine Express: nos-agences",
             "url": "https://yalidine-express.com.dz/nos-agences/",
             "license": "Data © Yalidine Express; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "guepex",
             "name": "Guepex: public agences feed",
             "url": "https://www.guepex.dz/public/data/agences.json",
             "license": "Data © Guepex; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "anderson",
             "name": "Anderson Logistics: agency directory",
             "url": "https://anderson-ecommerce.com/",
             "license": "Data © Anderson Logistics; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "noest",
             "name": "Noest Express: bureaux directory",
             "url": "https://noest-dz.com/",
             "license": "Data © Noest Express; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "maystro",
             "name": "Maystro Delivery: coverage page",
             "url": "https://maystro-delivery.com/Coverage.html",
             "license": "Data © Maystro Delivery; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
+          },
+          {
+            "key": "zr-express",
+            "name": "ZR Express: offices list",
+            "url": "https://www.zrexpress.net/en/offices",
+            "license": "Data © ZR Express; redistributed for reference",
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
+          },
+          {
+            "key": "swift-express",
+            "name": "Swift Express: agency network",
+            "url": "https://www.swiftexpress.org/fr/offices",
+            "license": "Data © Swift Express; redistributed for reference",
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
+          },
+          {
+            "key": "hhd-express",
+            "name": "HHD Express: agency network",
+            "url": "https://hhd.dz/",
+            "license": "Data © HHD Express; redistributed for reference",
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           }
         ],
         "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
-        "updated": "2026-06-18",
-        "carriers": 16,
-        "stopdesks": 411,
-        "coverage": 9,
+        "updated": "2026-10-25",
+        "carriers": 18,
+        "stopdesks": 650,
+        "coverage": 12,
         "by_operator": {
-          "guepex": 70,
-          "yalidine": 93,
-          "easyandspeed": 14,
+          "guepex": 71,
+          "yalidine": 105,
+          "easyandspeed": 15,
           "wecanservices": 3,
-          "zimou-express": 8,
-          "speedmail": 2,
-          "anderson": 89,
+          "zimou-express": 10,
+          "speedmail": 1,
+          "anderson": 104,
+          "hhd-express": 69,
           "maystro": 38,
-          "noest": 94
-        }
+          "noest": 102,
+          "swift-express": 55,
+          "zr-express": 77
+        },
+        "carried_pins": [
+          {
+            "id": "anderson-25-ali-mendjeli",
+            "name": "Anderson Constantine (Ali Mendjeli)",
+            "retrieved": "2026-06-18"
+          },
+          {
+            "id": "noest-19b",
+            "name": "Noest Sétif «El Eulma»",
+            "retrieved": "2026-06-18"
+          }
+        ]
       }
     },
     {
@@ -1694,10 +1740,10 @@
     },
     {
       "dataset": "pharmacies",
-      "total_records": 3795,
-      "candidates": 304,
+      "total_records": 3812,
+      "candidates": 311,
       "reasons": {
-        "approximate_coordinate": 296,
+        "approximate_coordinate": 303,
         "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 8
@@ -1709,16 +1755,16 @@
         "title_fr": "Pharmacies d'Algérie",
         "title_ar": "صيدليات الجزائر",
         "title_en": "Algeria pharmacies (officines)",
-        "record_count": 3795,
-        "geocoded_count": 3795,
+        "record_count": 3812,
+        "geocoded_count": 3812,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 3499,
-          "approximate": 296
+          "exact": 3509,
+          "approximate": 303
         },
         "estimated_universe": 11000,
-        "coverage_pct": 34.5,
-        "coverage_note": "3795 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north.",
+        "coverage_pct": 34.7,
+        "coverage_note": "3812 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north.",
         "wilayas_covered": 67,
         "bbox": [
           -8.139568,
@@ -1732,17 +1778,17 @@
             "name": "OpenStreetMap: pharmacies (amenity=pharmacy) in Algeria",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-            "retrieved": "2026-08-31",
+            "retrieved": "2026-10-22",
             "evidence_type": "crowdsourced"
           }
         ],
         "license": "ODbL-1.0",
-        "updated": "2026-08-31",
-        "named": 2461,
-        "with_phone": 145,
-        "with_hours": 256,
-        "with_address": 1161,
-        "with_dispensing": 530,
+        "updated": "2026-10-22",
+        "named": 2475,
+        "with_phone": 146,
+        "with_hours": 259,
+        "with_address": 1163,
+        "with_dispensing": 536,
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
     },
@@ -2477,9 +2523,12 @@
     {
       "dataset": "livraison",
       "entity": "stopdesks.json",
-      "total_records": 411,
-      "candidates": 0,
-      "reasons": {},
+      "total_records": 650,
+      "candidates": 2,
+      "reasons": {
+        "approximate_coordinate": 2,
+        "shared_coordinate": 2
+      },
       "path": "packages/livraison/data/stopdesks.json"
     },
     {
@@ -2519,10 +2568,10 @@
     {
       "dataset": "pharmacies",
       "entity": "pharmacies.json",
-      "total_records": 3795,
-      "candidates": 304,
+      "total_records": 3812,
+      "candidates": 311,
       "reasons": {
-        "approximate_coordinate": 296,
+        "approximate_coordinate": 303,
         "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 8
@@ -2739,6 +2788,10 @@
     },
     {
       "path": "packages/livraison/data/coverage.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/livraison/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {

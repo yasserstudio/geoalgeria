@@ -850,7 +850,7 @@ export const MIGRATIONS = {
   livraison: {
     file: "stopdesks.json",
     map: (r) => clean({
-      id: r.id, name: r.name,
+      id: r.id, name: r.name, name_ar: r.name_ar ?? null,
       wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: r.commune,
       ...geoExact(r, "carrier_relay"),
       source: (r.sources && r.sources[0]) || "carrier_relay",
@@ -863,10 +863,13 @@ export const MIGRATIONS = {
         { key: "anderson", name: "Anderson Logistics: agency directory", url: "https://anderson-ecommerce.com/", license: "Data © Anderson Logistics; redistributed for reference", evidence_type: "official" },
         { key: "noest", name: "Noest Express: bureaux directory", url: "https://noest-dz.com/", license: "Data © Noest Express; redistributed for reference", evidence_type: "official" },
         { key: "maystro", name: "Maystro Delivery: coverage page", url: "https://maystro-delivery.com/Coverage.html", license: "Data © Maystro Delivery; redistributed for reference", evidence_type: "official" },
+        { key: "zr-express", name: "ZR Express: offices list", url: "https://www.zrexpress.net/en/offices", license: "Data © ZR Express; redistributed for reference", evidence_type: "official" },
+        { key: "swift-express", name: "Swift Express: agency network", url: "https://www.swiftexpress.org/fr/offices", license: "Data © Swift Express; redistributed for reference", evidence_type: "official" },
+        { key: "hhd-express", name: "HHD Express: agency network", url: "https://hhd.dz/", license: "Data © HHD Express; redistributed for reference", evidence_type: "official" },
       ],
       license: "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
       estimatedUniverse: null,
-      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 650 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
       titles: { en: "Algeria delivery stop-desks", fr: "Points relais de livraison d'Algérie", ar: "نقاط استلام التوصيل في الجزائر" },
       stats: (rows) => {
         const dataDir = join(REPO_ROOT, "packages", "livraison", "data");
@@ -987,9 +990,11 @@ export function writePackageV2({
   snapshots = {},
   stats = {},
   oldMeta = {},
+  runMeta = null,
   reviewLedger = undefined,
   retiredIds = null,
   retiredMigrations = null,
+  retiredPending = null,
 }) {
   const effectiveReviewLedger =
     reviewLedger === undefined ? loadReviewLedger(pkg) : reviewLedger;
@@ -1142,6 +1147,12 @@ export function writePackageV2({
     // `stats` carries values the caller computed that this writer cannot: a
     // relation file's count, for instance, which it never sees rows for.
     ...(meta.stats ? meta.stats(all, stats) : {}),
+    // `runMeta` carries what only THIS run knows and no set of records can
+    // reproduce: livraison's carried pins, the desks whose coordinate the run did
+    // not read. It is deliberately separate from `stats`, which validate-packages
+    // re-runs over the shipped records and compares, so a value that is not
+    // derivable from them must not be published through it.
+    ...(runMeta ?? {}),
     ...preserved,
   };
   pending.push({ path: join(dir, "metadata.json"), content: JSON.stringify(metadata, null, 2) + "\n" });
@@ -1153,13 +1164,27 @@ export function writePackageV2({
         `writePackageV2 [${pkg}]: retired id(s) are still live: ${overlap.slice(0, 5).join(", ")}`,
       );
     }
+    // A pending id is one this run did NOT carry, so a live one means the grace
+    // period was not cleared when the record came back: the ledger would reserve
+    // an id the package ships, which is the one thing it must never say.
+    const stillLive = [...(retiredPending?.keys() ?? [])].filter((id) => liveIds.has(String(id)));
+    if (stillLive.length) {
+      throw new Error(
+        `writePackageV2 [${pkg}]: pending id(s) are live again and were not cleared: ${stillLive.slice(0, 5).join(", ")}`,
+      );
+    }
     // An empty ledger says nothing, so it is not a file: a package that has never
     // retired an id must not ship a `retired-ids.json` in its npm tarball. Any
     // empty one already on disk is removed (readRetiredIds seeds the set from it,
-    // so an empty set here can only come from an empty or absent file).
+    // so an empty set here can only come from an empty or absent file). A ledger
+    // that reserves nothing yet but holds an id in its grace period is still a
+    // ledger, so it is written.
     pending.push({
       path: join(dir, "retired-ids.json"),
-      content: retiredIds.size ? retiredIdsContent(retiredIds, retiredMigrations) : null,
+      content:
+        retiredIds.size || retiredPending?.size
+          ? retiredIdsContent(retiredIds, retiredMigrations, retiredPending)
+          : null,
     });
   }
 
@@ -1387,19 +1412,29 @@ export function carryOverIds(
 const RETIRED_IDS_NOTE =
   "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.";
 
+const PENDING_IDS_NOTE =
+  "Ids missing from the latest refresh but not retired yet: an id retires only after it is missing from two consecutive refreshes. Until then it is reserved (no other record may take it) and its own record may still claim it back. `first_missing` is the refresh that first did not carry it; the other fields are what the package needs to recognise the record when it returns.";
+
 /** `migrations` says where a retired id's data went, for the ids whose record
  *  did not disappear but was folded into another one. A consumer holding the old
  *  id can then follow it instead of only learning that it is gone. Emitted only
  *  for ids the ledger actually reserves, and omitted entirely when there are
  *  none, so a package that has never merged a record ships the file it always
- *  shipped. */
-function retiredIdsContent(ids, migrations = null) {
+ *  shipped.
+ *
+ *  `pending` is the same idea one refresh earlier: ids this run stopped carrying,
+ *  held in a grace period instead of retired. Same rule, emitted only when a
+ *  package keeps one and omitted entirely otherwise. */
+function retiredIdsContent(ids, migrations = null, pending = null) {
   const reserved = [...ids].map(String).sort();
   const moved = {};
   for (const id of reserved) if (migrations?.[id]) moved[id] = migrations[id];
+  const waiting = {};
+  for (const id of [...(pending?.keys() ?? [])].map(String).sort()) waiting[id] = pending.get(id);
   return `${JSON.stringify({
     note: RETIRED_IDS_NOTE,
     ...(Object.keys(moved).length ? { migrations: moved } : {}),
+    ...(Object.keys(waiting).length ? { pending_note: PENDING_IDS_NOTE, pending: waiting } : {}),
     ids: reserved,
   }, null, 2)}\n`;
 }
@@ -1481,6 +1516,41 @@ export function readRetiredIds(dir) {
     throw new Error(`${path}: duplicate retired id`);
   }
   return new Set(document.ids);
+}
+
+/**
+ * The ledger's grace-period map: id → the entry that keeps it reserved while it
+ * waits out one refresh. Absent file or absent `pending` → an empty map.
+ *
+ * Only `first_missing` (an ISO date) is a shared contract: what else an entry
+ * carries is the package's own business, because recognising a record that comes
+ * back is package-specific (livraison keeps the desk's last published position,
+ * so a retitled card can be matched to it by distance).
+ */
+export function readPendingIds(dir) {
+  const path = join(dir, "retired-ids.json");
+  if (!existsSync(path)) return new Map();
+  const document = JSON.parse(readFileSync(path, "utf-8"));
+  const pending = document.pending;
+  if (pending == null) return new Map();
+  if (typeof pending !== "object" || Array.isArray(pending)) {
+    throw new Error(`${path}: expected an object at pending`);
+  }
+  const reserved = new Set((document.ids ?? []).map(String));
+  const out = new Map();
+  for (const [id, entry] of Object.entries(pending)) {
+    if (entry == null || typeof entry !== "object" || Array.isArray(entry)) {
+      throw new Error(`${path}: pending[${JSON.stringify(id)}] must be an object`);
+    }
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.first_missing ?? "")) {
+      throw new Error(`${path}: pending[${JSON.stringify(id)}].first_missing must be an ISO date`);
+    }
+    if (reserved.has(id)) {
+      throw new Error(`${path}: ${JSON.stringify(id)} is both pending and retired`);
+    }
+    out.set(id, entry);
+  }
+  return out;
 }
 
 /** Persist a ledger for a generator that has not moved to writePackageV2 yet.
