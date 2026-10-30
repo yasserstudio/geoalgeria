@@ -1,0 +1,914 @@
+[
+  {
+    "address": "Centre-ville, à côté de l’ancien magasin Hadj Grifa, en face du centre commercial, quartier El Hattaba – Adrar",
+    "cardWilaya": 1,
+    "commune": "Adrar",
+    "id": "noest-01a",
+    "link": "https://maps.app.goo.gl/2Nrh9EFjphQwNJxXA",
+    "name": "Noest Adrar"
+  },
+  {
+    "address": "Rue Lac des Forêts (À côté du CNRC)",
+    "cardWilaya": 2,
+    "commune": "Chlef",
+    "id": "noest-02a",
+    "link": "https://maps.app.goo.gl/ej8xXgs4uzC227ke6",
+    "name": "Noest Chlef"
+  },
+  {
+    "address": "Rue de Cherchell en face l’école primaire les frères Menad Ténès",
+    "cardWilaya": 2,
+    "commune": "Tenes",
+    "id": "noest-02b",
+    "link": "https://maps.app.goo.gl/LAM2QA4ikvbwoKur5",
+    "name": "Noest Chlef «Tenes»"
+  },
+  {
+    "address": "Quartier El-Wiam – en face de l’Enfance assistée (à 100 m de l’ancien bureau)",
+    "cardWilaya": 3,
+    "commune": "Laghouat",
+    "id": "noest-03a",
+    "link": "https://maps.app.goo.gl/br2o27a21bSM8DGEA",
+    "name": "Noest Laghouat"
+  },
+  {
+    "address": "Rue Al-Gaada, à côté de la boulangerie Belkhair",
+    "cardWilaya": 3,
+    "commune": "Aflou",
+    "id": "noest-03b",
+    "link": null,
+    "name": "Noest Laghouat «Aflou»"
+  },
+  {
+    "address": "Cité El Hanaa, route du Lycée Messas",
+    "cardWilaya": 4,
+    "commune": "Ain Mlila",
+    "id": "noest-04a",
+    "link": "https://maps.app.goo.gl/8RwhB9oBaPbKUgvp7",
+    "name": "Noest Oum El Bouaghi «Ain Mlila»"
+  },
+  {
+    "address": "Cité 176 logements LSP Batiment 13 – Oum El Bouaghi",
+    "cardWilaya": 4,
+    "commune": "Oum El Bouaghi",
+    "id": "noest-04b",
+    "link": "https://maps.app.goo.gl/uNV57wKUxH1g5ZwK8",
+    "name": "Noest Oum El Bouaghi"
+  },
+  {
+    "address": "Aïn Béïda en face C.N.A.S a coté de Pharmacie Belambri",
+    "cardWilaya": 4,
+    "commune": "Aïn El Béïda",
+    "id": "noest-04c",
+    "link": "https://maps.app.goo.gl/ejzrBevboShW3FEK8",
+    "name": "Noest Oum El Bouaghi «Aïn El Béïda»"
+  },
+  {
+    "address": "Cité meddour kchida en face les batiments 500",
+    "cardWilaya": 5,
+    "commune": "Batna",
+    "id": "noest-05a",
+    "link": "https://maps.app.goo.gl/vRQhq8fjarcC56N67",
+    "name": "Noest Batna"
+  },
+  {
+    "address": "Quartier CHAABANI , en face notaire Bachir Farhani, a coté Algerie Telecom",
+    "cardWilaya": 5,
+    "commune": "Barika",
+    "id": "noest-05b",
+    "link": "https://maps.app.goo.gl/dKCKkRS6XXreRWki8",
+    "name": "Noest Batna «Barika»"
+  },
+  {
+    "address": "Cité 1200 logements oulmi en face la nouvelle poste et station pétro baraka",
+    "cardWilaya": 5,
+    "commune": "Batna",
+    "id": "noest-05c",
+    "link": "https://maps.app.goo.gl/xdXTyw2ayFftVFbE7",
+    "name": "Noest Batna"
+  },
+  {
+    "address": "rue des frères Tabet ,a 20 mètres de l'hôtel Golden H en face la nouvelle promotion nid d'abeille.",
+    "cardWilaya": 6,
+    "commune": "Bejaïa",
+    "id": "noest-06a",
+    "link": "https://maps.app.goo.gl/boSD1KK4JWGrN1qM6",
+    "name": "Noest Bejaïa"
+  },
+  {
+    "address": "Rue hibouche – arafou En face de djurdjura cars et alliance assurance",
+    "cardWilaya": 6,
+    "commune": "Akbou",
+    "id": "noest-06b",
+    "link": "https://maps.app.goo.gl/viKPQgksLQ26xPVd8",
+    "name": "Noest Bejaïa «Akbou»"
+  },
+  {
+    "address": "Rue hamaoui hamid commune El-Kseur, bejaia | Repère: local en face la sempac el-kseur",
+    "cardWilaya": 6,
+    "commune": "El-Kseur",
+    "id": "noest-06c",
+    "link": "https://maps.app.goo.gl/2zADgaMghSCzZhKD6",
+    "name": "Noest Bejaïa «El-Kseur»"
+  },
+  {
+    "address": "N° 05, cité elboustène,(Hai ELmodjahidine) en face du Centre de formation et de d'intervention rapide de la police",
+    "cardWilaya": 7,
+    "commune": "Biskra",
+    "id": "noest-07a",
+    "link": "https://maps.app.goo.gl/nouoHiui3pgfgNZH6",
+    "name": "Noest Biskra"
+  },
+  {
+    "address": "Cité 622 Logement Al Badr N°02 - Bloc 52 (derière la radio EL SAOURA / En face la protection civile)",
+    "cardWilaya": 8,
+    "commune": "Béchar",
+    "id": "noest-08a",
+    "link": "https://maps.app.goo.gl/W6zQbC9oQnMk6Kcm9",
+    "name": "Noest Béchar"
+  },
+  {
+    "address": "El ramoule à côté de la nouvelle gare routière",
+    "cardWilaya": 9,
+    "commune": "Blida",
+    "id": "noest-09a",
+    "link": "https://maps.app.goo.gl/cNpbAjGRrumo5EDi6",
+    "name": "Noest Blida"
+  },
+  {
+    "address": "La résidence Belkbir en face la salle des fetes Layalina",
+    "cardWilaya": 9,
+    "commune": "Boufarik",
+    "id": "noest-09b",
+    "link": "https://maps.app.goo.gl/JBcTodEusZDZiGRB9",
+    "name": "Noest Blida « Boufarik »"
+  },
+  {
+    "address": "54 logements LPP, en face lycée Kacem Nait Kacem, Mouzaia",
+    "cardWilaya": 9,
+    "commune": "Mouzaia",
+    "id": "noest-09c",
+    "link": "https://maps.app.goo.gl/pnnJnpoFayqntLfb9",
+    "name": "Noest Blida « Mouzaia »"
+  },
+  {
+    "address": "Villa hamzaoui, ammar khodja , bouira",
+    "cardWilaya": 10,
+    "commune": "Bouira",
+    "id": "noest-10a",
+    "link": "https://maps.app.goo.gl/bJQYAUTLNyEnhpUA8",
+    "name": "Noest Bouira"
+  },
+  {
+    "address": "Route national n°05 projet 55 logts social participatif BT A -lakhdaria – bouira (monté tizi elbir à coté de dépôt de vente Semoule MAMA).",
+    "cardWilaya": 10,
+    "commune": "Lakhdaria",
+    "id": "noest-10b",
+    "link": "https://maps.app.goo.gl/ZrDFweGcU63DVjD49",
+    "name": "Noest Bouira « Lakhdaria »"
+  },
+  {
+    "address": "Quartier Moulay Omar, derrière le siège de la Daïra, à côté du parking de la Direction des Travaux Publics.",
+    "cardWilaya": 11,
+    "commune": "Tamanrasset",
+    "id": "noest-11a",
+    "link": "https://maps.app.goo.gl/ywtejZFLQwgQZCCUA",
+    "name": "Noest Tamanrasset"
+  },
+  {
+    "address": "a cote du 2eme commissariat de police et du magasin de meubles REDEL, Tébessa",
+    "cardWilaya": 12,
+    "commune": "Tébessa",
+    "id": "noest-12a",
+    "link": "https://maps.app.goo.gl/UidJ6oXqYPmC8JbT9",
+    "name": "Noest Tébessa"
+  },
+  {
+    "address": "cité EPLF a coté service des eaux",
+    "cardWilaya": 12,
+    "commune": "El Ouenza",
+    "id": "noest-12b",
+    "link": "https://maps.app.goo.gl/BtzvMx28UeegfNkRA",
+    "name": "Noest Tebessa « El Ouenza »"
+  },
+  {
+    "address": "Route nationale numéro 16 en face la station essence Naftal Bir el Ater",
+    "cardWilaya": 12,
+    "commune": "Bir El Ater",
+    "id": "noest-12c",
+    "link": "https://maps.app.goo.gl/TgxxiZZDrGDwgmbj7?g_st=aw",
+    "name": "Noest Tébessa « Bir El Ater »"
+  },
+  {
+    "address": "Les Dhalias 426 El kiffane, tlemcen",
+    "cardWilaya": 13,
+    "commune": "Tlemcen",
+    "id": "noest-13a",
+    "link": "https://maps.app.goo.gl/VdCwkoHHZGabbjfx9",
+    "name": "Noest Tlemcen"
+  },
+  {
+    "address": "Ouled ben saber, À côté restaurant Rais",
+    "cardWilaya": 13,
+    "commune": "Maghnia",
+    "id": "noest-13b",
+    "link": "https://maps.app.goo.gl/bJsoBcyp6G5ydp747",
+    "name": "Noest Tlemcen «Maghnia»"
+  },
+  {
+    "address": "Résidence El Qods Mansourah",
+    "cardWilaya": 13,
+    "commune": "Mansourah",
+    "id": "noest-13c",
+    "link": "https://maps.app.goo.gl/Zr2M2CyvcHsPZ3xs9?g_st=ac",
+    "name": "Noest Tlemcen «Mansourah»"
+  },
+  {
+    "address": "Cité 180 logements CNT local 01 N° 63 – Tiaret",
+    "cardWilaya": 14,
+    "commune": "Tiaret",
+    "id": "noest-14a",
+    "link": "https://maps.app.goo.gl/1LrM2edmMH8mSMnV8",
+    "name": "Noest Tiaret"
+  },
+  {
+    "address": "Cité 60 logements D121 GP 82 - Frenda",
+    "cardWilaya": 14,
+    "commune": "Frenda",
+    "id": "noest-14b",
+    "link": "https://maps.app.goo.gl/9pvEUxbXywsyPuzV7",
+    "name": "Noest Tiaret « Frenda »"
+  },
+  {
+    "address": "Cité Houcine Aït Ahmed, n° 17, Commune de Ksar Chellala, Wilaya de Tiaret, à côté de la mosquée Imam Ali Ibnou Abi Taleb",
+    "cardWilaya": 14,
+    "commune": "Ksar Chellala",
+    "id": "noest-14c",
+    "link": "https://www.google.com/maps?q=35.2121,2.3166",
+    "name": "Noest Tiaret «Ksar Chellala»"
+  },
+  {
+    "address": "Cité 450 Logements, Nouvelle Ville enface la salle des fetes lilya",
+    "cardWilaya": 15,
+    "commune": "Tizi Ouzou",
+    "id": "noest-15a",
+    "link": "https://maps.app.goo.gl/rUxomC9VwyAd4MS16",
+    "name": "Noest Tizi Ouzou"
+  },
+  {
+    "address": "Route nationale N= 12 taddart",
+    "cardWilaya": 15,
+    "commune": "Azazga",
+    "id": "noest-15b",
+    "link": "https://maps.app.goo.gl/PD37mvfqqr1NXkDy8",
+    "name": "Noest Tizi Ouzou «Azazga»"
+  },
+  {
+    "address": "cooperative -EL WOOROUD, EN FACE A.D.E et ANEM de draa-ben khedda",
+    "cardWilaya": 15,
+    "commune": "Draa Ben Khedda",
+    "id": "noest-15c",
+    "link": "https://maps.app.goo.gl/GXGzTN7o7jZHCoa58",
+    "name": "Noest Tizi Ouzou «Draa Ben Khedda»"
+  },
+  {
+    "address": "02, Lotissement Beau Séjour, Bir Mourad Raïs",
+    "cardWilaya": 16,
+    "commune": "Bir Mourad Rais",
+    "id": "noest-16a",
+    "link": "https://maps.app.goo.gl/B1hsjSttffH5GSQK9",
+    "name": "Noest Alger « Bir Mourad Rais »"
+  },
+  {
+    "address": "Devant clinique médicale, En face Ecole Hilal School",
+    "cardWilaya": 16,
+    "commune": "Bab Ezzouar",
+    "id": "noest-16b",
+    "link": "https://maps.app.goo.gl/qG22tYtJ4WuWX6W6A",
+    "name": "Noest Alger « Bab Ezzouar »"
+  },
+  {
+    "address": "Place Iben Badis N° 03 - RDC , Chéraga",
+    "cardWilaya": 16,
+    "commune": "Chéraga",
+    "id": "noest-16c",
+    "link": "https://maps.app.goo.gl/qLBhYaVRskR6K7XN9",
+    "name": "Noest Alger « Chéraga »"
+  },
+  {
+    "address": "822 Logmts LPP Amirouche Batiment A7 N°04 rez-de-chaussée ,Reghaia",
+    "cardWilaya": 16,
+    "commune": "Reghaia",
+    "id": "noest-16d",
+    "link": "https://maps.app.goo.gl/HC8KvHRuviDoZj6h8",
+    "name": "Noest Alger « Reghaia »"
+  },
+  {
+    "address": "22 Rue Hocine BELADJEL, Sacré-Cœur, Alger Centre, (En face la banque BADR)",
+    "cardWilaya": 16,
+    "commune": "Centre - Sacré-Cœur",
+    "id": "noest-16e",
+    "link": "https://maps.app.goo.gl/TXhvnMmKxGW4qMxs7",
+    "name": "Noest Alger « Centre - Sacré-Cœur »"
+  },
+  {
+    "address": "Cité Cherchali Boualam, À côté de croissant rouge, Baba Hassen",
+    "cardWilaya": 16,
+    "commune": "Baba Hassen",
+    "id": "noest-16f",
+    "link": "https://maps.app.goo.gl/EdXbRxRZW2EuGMrN6",
+    "name": "Noest Alger « Baba Hassen »"
+  },
+  {
+    "address": "Baraki, route de Larbaâ, entre la mosquée El Bachir El Ibrahimi et le commissariat de la circonscription administrative.",
+    "cardWilaya": 16,
+    "commune": "Baraki",
+    "id": "noest-16g",
+    "link": "https://maps.app.goo.gl/iyNkN9K46bvPAHAa8",
+    "name": "Noest Alger « Baraki »"
+  },
+  {
+    "address": "Cité Galoul, lotissement coopératif immobilier, n° 428 (A coté de la crèche IBN BAZ - طريق المرشي كوسيدار الجديدة )",
+    "cardWilaya": 16,
+    "commune": "Bordj El Bahri",
+    "id": "noest-16h",
+    "link": "https://goo.gl/maps/wunCi94v4i1feEnv8",
+    "name": "Noest Alger « Bordj El Bahri »"
+  },
+  {
+    "address": "Local N, Cité 62 local LPP BTN 5C, 02 03 RDC, Zéralda",
+    "cardWilaya": 16,
+    "commune": "Zeralda",
+    "id": "noest-16i",
+    "link": "https://maps.app.goo.gl/AikVJeQ1HCGym1NR6",
+    "name": "Noest Alger « Zeralda »"
+  },
+  {
+    "address": "Birkhadem El Malha",
+    "cardWilaya": 16,
+    "commune": "Birkhadem",
+    "id": "noest-16j",
+    "link": "https://maps.app.goo.gl/dv32FZwsAvbsDhdm7",
+    "name": "Noest Alger « Birkhadem »"
+  },
+  {
+    "address": "Rue Layache Yahia N06, Hussein Dey en face Mosquee De Brossette",
+    "cardWilaya": 16,
+    "commune": "Hussein Dey",
+    "id": "noest-16k",
+    "link": "https://maps.app.goo.gl/GnN4xkjkRsdn4tfQA",
+    "name": "Noest Alger « Hussein Dey »"
+  },
+  {
+    "address": "Draria Boudjemaa Temime Al Ansar",
+    "cardWilaya": 16,
+    "commune": "Draria",
+    "id": "noest-16l",
+    "link": "https://maps.app.goo.gl/sQ5x9hBvux5BWSzd6",
+    "name": "Noest Alger « Draria »"
+  },
+  {
+    "address": "Centre-ville, en face de la Caisse Nationale des Retraites (C.N.R), Quartier Ben Djerma",
+    "cardWilaya": 17,
+    "commune": "Djelfa",
+    "id": "noest-17a",
+    "link": "https://maps.app.goo.gl/XzTJCLFSvtiA4PWV6",
+    "name": "Noest Djelfa"
+  },
+  {
+    "address": "Quartier Mohamed Boudiaf, Section 23, Local n° 30 Bisi, Commune de Ain Oussera.",
+    "cardWilaya": 17,
+    "commune": "Ain Ouassara",
+    "id": "noest-17b",
+    "link": "https://maps.app.goo.gl/vT6iVZfJrZv8ZgRXA",
+    "name": "Noest Djelfa «Ain Ouassara»"
+  },
+  {
+    "address": "rue26, Avenue Kaoula Mokhtar, cita sans intérdit , Hay IDARI",
+    "cardWilaya": 18,
+    "commune": "Jijel",
+    "id": "noest-18a",
+    "link": "https://maps.app.goo.gl/Xd69qa4VBgX63ZXMA",
+    "name": "Noest Jijel"
+  },
+  {
+    "address": "5 juillet rue du stade EL-MILIA, à côté de la protection civile",
+    "cardWilaya": 18,
+    "commune": "El Milia",
+    "id": "noest-18b",
+    "link": "https://maps.app.goo.gl/hcxb24pAKoLGFJAW7",
+    "name": "Noest Jijel « El Milia »"
+  },
+  {
+    "address": "Cité Mesoudi Edhouadi 1014-614 Logement (En face la gare Didouche Mourad)",
+    "cardWilaya": 19,
+    "commune": "Sétif",
+    "id": "noest-19a",
+    "link": "https://maps.app.goo.gl/6hq9NN4VUM5BAj7D8",
+    "name": "Noest Sétif"
+  },
+  {
+    "address": "Tassahoumi, a coté de transport hamouda et hôtel Rato rue Touaher el khayer et à côté de transport el ikhlas, el eulma, Sétif",
+    "cardWilaya": 19,
+    "commune": "El Eulma",
+    "id": "noest-19b",
+    "link": "https://maps.app.goo.gl/d7r2PVGBic74EGsS9",
+    "name": "Noest Sétif «El Eulma»"
+  },
+  {
+    "address": "En face CEM Douhil Abdul Hamid,",
+    "cardWilaya": 19,
+    "commune": "Ain Oulmene",
+    "id": "noest-19c",
+    "link": "https://maps.app.goo.gl/QDG27DsQddAXCgUG6",
+    "name": "Noest Sétif «Ain Oulmene»"
+  },
+  {
+    "address": "La zone industrielle, en face du groupe SADI et à côté de la moussala d'El Takwa",
+    "cardWilaya": 19,
+    "commune": "Guidjel",
+    "id": "noest-19re",
+    "link": "https://maps.app.goo.gl/cpCLJ2TQe36sg7SK6",
+    "name": "Noest Sétif «Guidjel»"
+  },
+  {
+    "address": "Cité Riad en face Maison de l'Environnement",
+    "cardWilaya": 20,
+    "commune": "Saïda",
+    "id": "noest-20a",
+    "link": "https://maps.app.goo.gl/VviCNGfZ5paDP6Yg8",
+    "name": "Noest Saïda"
+  },
+  {
+    "address": "Rue du Chahid Meziane Salah (Route Bouyali, Immeuble Guerza) شارع الشهيد مزيان صالح (طريق بويعلى,عمارة ڨرزة)",
+    "cardWilaya": 21,
+    "commune": "Skikda",
+    "id": "noest-21a",
+    "link": "https://maps.app.goo.gl/vgXbhSdJ3d4i32Cb6",
+    "name": "Noest Skikda"
+  },
+  {
+    "address": "Cite mefrouche dahmane",
+    "cardWilaya": 21,
+    "commune": "Azzaba",
+    "id": "noest-21b",
+    "link": null,
+    "name": "Noest Skikda « Azzaba »"
+  },
+  {
+    "address": "Rue Zighoud Youssef (en face l'école primaire Mesikh Ammar / à côté du tribunal de Collo)",
+    "cardWilaya": 21,
+    "commune": "Collo",
+    "id": "noest-21c",
+    "link": "https://maps.app.goo.gl/rCFaZiYpJ1T6xfXZ6",
+    "name": "Noest Skikda «Collo»"
+  },
+  {
+    "address": "Rue CPR , En face Masjid El Ansar - حي بني عامر ، مقابل مسجد الانصار",
+    "cardWilaya": 22,
+    "commune": "Sidi Bel Abbès",
+    "id": "noest-22a",
+    "link": "https://maps.app.goo.gl/etRK49tRiqgm2jM89",
+    "name": "Noest Sidi Bel Abbès"
+  },
+  {
+    "address": "Rue Djemila, Saint Claud (À côté de la mosqué Badr)",
+    "cardWilaya": 23,
+    "commune": "Annaba",
+    "id": "noest-23a",
+    "link": "https://maps.app.goo.gl/6yKATA45oXvHHihk9",
+    "name": "Noest Annaba"
+  },
+  {
+    "address": "Fractionnement de la Bouni 2, zone urbaine n° 43, rez-de-chaussée, section 40, groupe de propriété 02, Bouni",
+    "cardWilaya": 23,
+    "commune": "El Bouni",
+    "id": "noest-23b",
+    "link": "https://maps.app.goo.gl/z5TMRRUV6awNv3dRA",
+    "name": "Noest Annaba «El Bouni»"
+  },
+  {
+    "address": "Cité 19 Juin - Numéro 02, en face marché Elbaraka",
+    "cardWilaya": 24,
+    "commune": "Guelma",
+    "id": "noest-24a",
+    "link": "https://maps.app.goo.gl/8gi3VUh2aasGbGQT7",
+    "name": "Noest Guelma"
+  },
+  {
+    "address": "Cité Tlemcen Zouaghi (En face de la gendarmerie)",
+    "cardWilaya": 25,
+    "commune": "Zouaghi",
+    "id": "noest-25a",
+    "link": "https://maps.app.goo.gl/hCfjk81JdYZe1kLt8",
+    "name": "Noest Constantine «Zouaghi»"
+  },
+  {
+    "address": "En face de Sarl Natura pro Algérie/entre deux salles des fêtés el baraka et méga",
+    "cardWilaya": 25,
+    "commune": "Ali Mendjeli",
+    "id": "noest-25b",
+    "link": "https://maps.app.goo.gl/qk8oJNE96vvU2kzM7",
+    "name": "Noest Constantine «Ali Mendjeli»"
+  },
+  {
+    "address": "Avenue Kaddour Boumedous (Ciloc) a coté de la direction régionale d’Air Algérie.",
+    "cardWilaya": 25,
+    "commune": "Constantine",
+    "id": "noest-25c",
+    "link": "https://maps.app.goo.gl/N9uLL4Ji2AagvhWZ9",
+    "name": "Noest Constantine"
+  },
+  {
+    "address": "Cité Ennasr (Près du pôle universitaire et Sonelgaz)",
+    "cardWilaya": 26,
+    "commune": "Médéa",
+    "id": "noest-26a",
+    "link": "https://maps.app.goo.gl/u1nnLgz6wQABnUt19",
+    "name": "Noest Médéa"
+  },
+  {
+    "address": "ZONE URBAINE NOUVELLE 246/03 LOCAL 01 KEB",
+    "cardWilaya": 26,
+    "commune": "Ksar El Boukhari",
+    "id": "noest-26b",
+    "link": "https://maps.app.goo.gl/fwh79KsVYVnkKkNu8",
+    "name": "Noest Médéa «Ksar El Boukhari»"
+  },
+  {
+    "address": "La pépinière en face la glacière juste à côté de la libraire BENALIOUA ( cité AKID AMIROUCHE boulevard NAFOUSSI OTHMAN)",
+    "cardWilaya": 27,
+    "commune": "Mostaganem",
+    "id": "noest-27a",
+    "link": "https://maps.app.goo.gl/1a83AMSY4JicE49U8",
+    "name": "Noest Mostaganem"
+  },
+  {
+    "address": "rue si abdelah 01 novembre devant la poste sidi lakhder",
+    "cardWilaya": 27,
+    "commune": "Sidi Lakhder",
+    "id": "noest-27b",
+    "link": "https://maps.app.goo.gl/QKZ5yCySSb2Eo7XP7",
+    "name": "Noest Mostaganem «Sidi Lakhder»"
+  },
+  {
+    "address": "Rue Ichbilia (En face l'université de M'Sila)",
+    "cardWilaya": 28,
+    "commune": "M'Sila",
+    "id": "noest-28a",
+    "link": "https://maps.app.goo.gl/GPxraSKTwr6gqPdF6",
+    "name": "Noest M'Sila"
+  },
+  {
+    "address": "Cité El Bader (ESTTIH) a coté de L'annexe de L'APC ,Bousaada",
+    "cardWilaya": 28,
+    "commune": "Bousaada",
+    "id": "noest-28b",
+    "link": "https://maps.app.goo.gl/Fq9e9wroyanPQ7CA9",
+    "name": "Noest M'Sila «Bousaada»"
+  },
+  {
+    "address": "Rue Larbi Ben M'hidi, a coté de l'agence de Barigou,",
+    "cardWilaya": 29,
+    "commune": "Mohammadia",
+    "id": "noest-29a",
+    "link": "https://maps.app.goo.gl/8qccid2Pesg8FtpR8",
+    "name": "Noest Mascara «Mohammadia»"
+  },
+  {
+    "address": "04 Rue Bouakkaz Ali, La zone 08, Mascara (à côté de salle des fêtes Bent El Solana, et Cafeteria Ali ; En face CNR Mascara)",
+    "cardWilaya": 29,
+    "commune": "Ville",
+    "id": "noest-29b",
+    "link": "https://maps.app.goo.gl/X4hBFDuW1pJ6eTUd7",
+    "name": "Noest Mascara «Ville»"
+  },
+  {
+    "address": "Sidi Abdelkader, derrière la maison de jeune",
+    "cardWilaya": 30,
+    "commune": "Ouargla",
+    "id": "noest-30a",
+    "link": "https://maps.app.goo.gl/Eeq8SWYKwXZVu2XV6",
+    "name": "Noest Ouargla"
+  },
+  {
+    "address": "Quartier 1850, rue principale du marché hebdomadaire, en face de l’ancienne agence KIA, Hassi Messaoud",
+    "cardWilaya": 30,
+    "commune": "Hassi Messaoud",
+    "id": "noest-30b",
+    "link": "https://maps.app.goo.gl/QKZ5yCySSb2Eo7XP7",
+    "name": "Noest Ouargla «Hassi Messaoud»"
+  },
+  {
+    "address": "Maraval en face fulla moda a côté de supérette El kandi",
+    "cardWilaya": 31,
+    "commune": "Maraval",
+    "id": "noest-31a",
+    "link": "https://maps.app.goo.gl/t7SNHxxqhJXKBBae8",
+    "name": "Noest Oran «Maraval»"
+  },
+  {
+    "address": "Coopérative Immobilière Dar El Amel - N°14 - Local1 RC",
+    "cardWilaya": 31,
+    "commune": "Bir El Djir",
+    "id": "noest-31b",
+    "link": "https://maps.app.goo.gl/YyNEn3FWzMchRyLK9",
+    "name": "Noest Oran «Bir El Djir»"
+  },
+  {
+    "address": "Gambetta En face arrêt de bus 51 et 11 de (dispensaire cave-gay)",
+    "cardWilaya": 31,
+    "commune": "Gambita",
+    "id": "noest-31c",
+    "link": "https://maps.app.goo.gl/832PTz4ngWYMxzkf6",
+    "name": "Noest Oran «Gambita»"
+  },
+  {
+    "address": "EN FACE ANCIEN DAIRA D’ARZEW , Rue KADIR ELHABIB N° 04, Oran",
+    "cardWilaya": 31,
+    "commune": "Arzew",
+    "id": "noest-31d",
+    "link": null,
+    "name": "Noest Oran «Arzew»"
+  },
+  {
+    "address": "Coopérative Immobilière El Salam, N° D3, Lotissement 02, Îlot 51 (Partie 02), Îlot 292, Sidi Chami, Cité Essabah, à côté du terminus du tramway.",
+    "cardWilaya": 31,
+    "commune": "Essabah",
+    "id": "noest-31e",
+    "link": "https://maps.app.goo.gl/h8RLmKarHtHDMZQp9",
+    "name": "Noest Oran «Essabah»"
+  },
+  {
+    "address": "Cité jolie vue (Al-Mandhar Al-Jamil), à côté de la Direction de la distribution d'électricité et de gaz",
+    "cardWilaya": 32,
+    "commune": "El Bayadh",
+    "id": "noest-32a",
+    "link": "https://maps.app.goo.gl/qbL18AuxDX4iTosx9",
+    "name": "Noest El Bayadh"
+  },
+  {
+    "address": "Centre-ville, quartier Bouchache, rue de la Poissonnerie.",
+    "cardWilaya": 33,
+    "commune": "Illizi",
+    "id": "noest-33a",
+    "link": "https://maps.app.goo.gl/UpDYBCAjy5doLAsy8",
+    "name": "Noest Illizi"
+  },
+  {
+    "address": "Rue Tabet Salah Bordj Bou Arreridj (Devant la maison de finance)",
+    "cardWilaya": 34,
+    "commune": "Bordj Bou Arreridj",
+    "id": "noest-34a",
+    "link": "https://maps.app.goo.gl/tndtMs9TUTZ4XPgk7",
+    "name": "Noest Bordj Bou Arreridj"
+  },
+  {
+    "address": "À l’intersection de la rue Salah Bey et de la rue Moussa N’mar , en face de la Brigade Régionale de la Gendarmerie Nationale de Ras El Oued",
+    "cardWilaya": 34,
+    "commune": "Ras El Oued",
+    "id": "noest-34b",
+    "link": "https://maps.app.goo.gl/PvGGchTzqK2huG7n8",
+    "name": "Noest Ras El Oued"
+  },
+  {
+    "address": "Cité mimouza en face la piscine olympique Boumerdes",
+    "cardWilaya": 35,
+    "commune": "Boumerdès",
+    "id": "noest-35a",
+    "link": "https://maps.app.goo.gl/TemVvkYXig6VyEpz5",
+    "name": "Noest Boumerdès"
+  },
+  {
+    "address": "La zone industrielle d'Ouled Moussa",
+    "cardWilaya": 35,
+    "commune": "Ouled Moussa",
+    "id": "noest-35b",
+    "link": "https://maps.app.goo.gl/mZAQoLAj3uJnvEPr8",
+    "name": "Noest Boumerdès «Ouled Moussa»"
+  },
+  {
+    "address": "Rue Madaoui Ali, LOCAL BOUMZER EN FACE OPHTALMOLOGISTE DOCTEUR BENMOUSSA HOCINE, BORDJ MENAIEL, BOUMERDES",
+    "cardWilaya": 35,
+    "commune": "Bordj Menaiel",
+    "id": "noest-35c",
+    "link": "https://maps.app.goo.gl/fefE7RWUe7anKPwA9",
+    "name": "Noest Boumerdès «Bordj Menaiel»"
+  },
+  {
+    "address": "La banlieue Est de Dellys, route nationale n° 24, Rez de chaussée bâtiment (B), Local N° B05, DELLYS | Repère : AGENCE IMMOBILLIERE NADJI",
+    "cardWilaya": 35,
+    "commune": "Dellys",
+    "id": "noest-35d",
+    "link": "https://maps.app.goo.gl/C4VdGeKvsZBVWPWc9",
+    "name": "Noest Boumerdès «Dellys»"
+  },
+  {
+    "address": "حي ريتين خميس , بجانب الأمن الحضري الأول",
+    "cardWilaya": 36,
+    "commune": "El Taref",
+    "id": "noest-36a",
+    "link": "https://maps.app.goo.gl/GJF8NyCrQDXd5w73A",
+    "name": "Noest El Taref"
+  },
+  {
+    "address": "Magasin N°03 cité Al-Qasabi, Section 14, Groupement Immobilier N° 165, Commune de Tindouf",
+    "cardWilaya": 37,
+    "commune": "Tindouf",
+    "id": "noest-37a",
+    "link": "https://maps.app.goo.gl/gpqJxUdLaebL7NGt7",
+    "name": "Noest Tindouf"
+  },
+  {
+    "address": "Résidence kaidi (promotion) ancien arrêt des taxis",
+    "cardWilaya": 38,
+    "commune": "Tissemsilt",
+    "id": "noest-38a",
+    "link": "https://maps.app.goo.gl/qBX7DVgH2dBAZfKu6",
+    "name": "Noest Tissemsilt"
+  },
+  {
+    "address": "Cité Al-Rimal, Commune El Oued wilaya El Ouadi (la route menant au tribunal)",
+    "cardWilaya": 39,
+    "commune": "El Oued",
+    "id": "noest-39a",
+    "link": "https://maps.app.goo.gl/2GeaAQvQotEyjsg28",
+    "name": "Noest El Oued"
+  },
+  {
+    "address": "Rue du poid lourd à coté de la clinique du dialyse Messai -Khenchela-",
+    "cardWilaya": 40,
+    "commune": "Khenchela",
+    "id": "noest-40a",
+    "link": "https://maps.app.goo.gl/2MmLNCuoL7szc1YA8",
+    "name": "Noest Khenchela"
+  },
+  {
+    "address": "En face radio souk ahras et l laboratoire des analyses Taghest",
+    "cardWilaya": 41,
+    "commune": "Souk Ahres",
+    "id": "noest-41a",
+    "link": "https://maps.app.goo.gl/8sKTN9kvbPMbhF3G8",
+    "name": "Noest Souk Ahres"
+  },
+  {
+    "address": "Cité Mohammed Bougara, a coté de ecole privé DAYA Shcool",
+    "cardWilaya": 42,
+    "commune": "Tipaza",
+    "id": "noest-42a",
+    "link": "https://maps.app.goo.gl/S8u9UU2HsXyT19Ms6",
+    "name": "Noest Tipaza"
+  },
+  {
+    "address": "Route d’Alger - Kolea, commune de Kolea, wilaya de Tipaza.",
+    "cardWilaya": 42,
+    "commune": "Koléa",
+    "id": "noest-42b",
+    "link": "https://maps.app.goo.gl/6pQ9EdJsh39qbhpW8",
+    "name": "Noest Tipaza «Koléa»"
+  },
+  {
+    "address": "chateau d'eau en face protection civile",
+    "cardWilaya": 43,
+    "commune": "Mila",
+    "id": "noest-43a",
+    "link": "https://maps.app.goo.gl/UVcD63ANz8Zxi1hc8",
+    "name": "Noest Mila"
+  },
+  {
+    "address": "Rue 1er Nouvembre 1954 Chelghoum El aid (hotel Rhumel)",
+    "cardWilaya": 43,
+    "commune": "Chelghoum El Aid",
+    "id": "noest-43b",
+    "link": null,
+    "name": "Noest Mila «Chelghoum El Aid»"
+  },
+  {
+    "address": "Rue 1 novembre en face cem mohamed abdo",
+    "cardWilaya": 43,
+    "commune": "Tadjenanet",
+    "id": "noest-43c",
+    "link": "https://maps.app.goo.gl/wS1oHNfrsWN2uTgz6",
+    "name": "Noest Mila «Tadjenanet»"
+  },
+  {
+    "address": "Rue 1 novembre en face la gam assurance",
+    "cardWilaya": 43,
+    "commune": "Ferdjioua",
+    "id": "noest-43d",
+    "link": "https://maps.app.goo.gl/acR4uw1y68JDEvjC7",
+    "name": "Noest Mila «Ferdjioua»"
+  },
+  {
+    "address": "City Najem, en face de l'entrée du groupement régional de la Gendarmerie Nationale, L’escadron",
+    "cardWilaya": 44,
+    "commune": "Ain Defla",
+    "id": "noest-44a",
+    "link": "https://maps.app.goo.gl/X6h2X7J9dgH9idGt7",
+    "name": "Noest Ain Defla"
+  },
+  {
+    "address": "Cité Ahmed ben Abd Allah commune khemismiliana wilaya de Ain defla",
+    "cardWilaya": 44,
+    "commune": "Khemis Miliana",
+    "id": "noest-44b",
+    "link": "https://maps.app.goo.gl/yEUeJychPyp9VZoJ9",
+    "name": "Noest Ain Defla «Khemis Miliana»"
+  },
+  {
+    "address": "Route Nationale n°06, à côté de l’hôtel Amine et du centre d’Algérie Télécom",
+    "cardWilaya": 45,
+    "commune": "Mécheria",
+    "id": "noest-45a",
+    "link": "https://maps.app.goo.gl/3CkDdyRMLKmnbbZg9",
+    "name": "Noest Naâma «Mécheria»"
+  },
+  {
+    "address": "22A cité des oliviers ain témouchnet 46000(en face du parking de la wilaya)",
+    "cardWilaya": 46,
+    "commune": "Aïn Témouchent",
+    "id": "noest-46a",
+    "link": "https://maps.app.goo.gl/V6HZrwBBZgsW5sjx8",
+    "name": "Noest Aïn Témouchent"
+  },
+  {
+    "address": "Rue principale Hadj Messaoud en face la branche municipale, Haj Masoud",
+    "cardWilaya": 47,
+    "commune": "Ghardaïa",
+    "id": "noest-47a",
+    "link": "https://maps.app.goo.gl/o8LUFLQj796inkPe8",
+    "name": "Noest Ghardaïa"
+  },
+  {
+    "address": "Cité 31 logmt en face la justice, a coté de la banque societé général algerie",
+    "cardWilaya": 48,
+    "commune": "Relizane",
+    "id": "noest-48a",
+    "link": "https://maps.app.goo.gl/TVkvkzx9DSXGLyc26",
+    "name": "Noest Relizane"
+  },
+  {
+    "address": "cité MAHDJOUB N° de la porte 16 , Timimoun en face le stade et SAA",
+    "cardWilaya": 49,
+    "commune": "Timimoun",
+    "id": "noest-49a",
+    "link": "https://maps.app.goo.gl/mTodfGAHc7dfozJy8",
+    "name": "Noest Timimoun"
+  },
+  {
+    "address": "تحت فندق ترنزيت نجانبة الحماية المدنية ولاد جلال / Rez-de-chaussée de l'hôtel Transit, à côté de la protection civile d'Ouled Djellal.",
+    "cardWilaya": 51,
+    "commune": "Ouled Djellal",
+    "id": "noest-51a",
+    "link": "https://maps.app.goo.gl/NhyzzqPmKrJRgs1b9",
+    "name": "Noest Ouled Djellal"
+  },
+  {
+    "address": "A coté la wilaya BENI ABBES , en face LAPIWI ( المجلس الشعبي الولائي (",
+    "cardWilaya": 52,
+    "commune": "Beni Abbes",
+    "id": "noest-52a",
+    "link": "https://maps.app.goo.gl/27WiRCQt9ZAZ2Xbj9",
+    "name": "Noest Beni Abbes"
+  },
+  {
+    "address": "Près de la Direction des travaux publics, en face de l'entrée du radar d'Algérie Télécom",
+    "cardWilaya": 53,
+    "commune": "In Salah",
+    "id": "noest-53a",
+    "link": "https://maps.app.goo.gl/kcTKWXveoDBDjXRi6",
+    "name": "Noest In Salah"
+  },
+  {
+    "address": "Cité Sidi Abdeslam (Prés de la banque BEA), Touggourt",
+    "cardWilaya": 55,
+    "commune": "Touggourt",
+    "id": "noest-55a",
+    "link": "https://maps.app.goo.gl/K87WhPBkdSoTX5eS9",
+    "name": "Noest Touggourt"
+  },
+  {
+    "address": "Centre-ville Tine Khatema, à côté du dentiste, Djanet",
+    "cardWilaya": 56,
+    "commune": "Djanet",
+    "id": "noest-56a",
+    "link": "https://maps.app.goo.gl/JYAs2vcDcr1YYbr87",
+    "name": "Noest Djanet"
+  },
+  {
+    "address": "Centre-ville, à côté du café Jneidi – El M'Ghair.",
+    "cardWilaya": 57,
+    "commune": "El M'Ghair",
+    "id": "noest-57a",
+    "link": "https://maps.app.goo.gl/uv55fsXkvTXTgLLC7",
+    "name": "Noest El M'Ghair"
+  },
+  {
+    "address": "Rue de l'unite African (À côté de la boulangerie Boussaid) Il se trouve à 20 mètres de la mosquée saad beno abi elouas",
+    "cardWilaya": 58,
+    "commune": "El Meniaa",
+    "id": "noest-58a",
+    "link": "https://maps.app.goo.gl/q2u9ijWUoQymwa7dA",
+    "name": "Noest El Meniaa"
+  }
+]

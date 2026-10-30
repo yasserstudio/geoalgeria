@@ -26,7 +26,7 @@ Conservative key, Loose key, Rule, Golden corpus.
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |
 | `packages/mobilis/` | `@geoalgeria/mobilis` | Mobilis agencies & approved points of sale (mobilis.dz) |
 | `packages/telecom/` | `@geoalgeria/telecom` | cross-operator 5G coverage (Djezzy, Mobilis, Ooredoo) |
-| `packages/aviation/` | `@geoalgeria/aviation` | civil airports with ICAO codes (ANAC), plus Air Algérie's international network as 157 directional nonstop legs and 20 planned ones, each with an evidence tier and a source |
+| `packages/aviation/` | `@geoalgeria/aviation` | civil airports with ICAO codes (ANAC), plus Air Algérie's international network as 169 directional nonstop legs and 8 planned ones, each with an evidence tier and a citation list |
 | `packages/banques/` | `@geoalgeria/banques` | licensed banks, institutions & branches (RIB/SWIFT) |
 | `packages/livraison/` | `@geoalgeria/livraison` | delivery carriers & geocoded stop-desks |
 | `packages/jeunesse/` | `@geoalgeria/jeunesse` | youth establishments (Ministry of Youth and Sports) |
@@ -38,16 +38,16 @@ Conservative key, Loose key, Rule, Golden corpus.
 | `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores – 572 EO/CSO/ESO with real coordinates & wilaya/commune linkage (ooredoo.dz locator API); completes the telecom retail trio |
 | `packages/mosquees/` | `@geoalgeria/mosquees` | mosques – Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
 | `packages/sante/` | `@geoalgeria/sante` | public health establishments – EPH, EPSP, EHS, CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
-| `packages/cliniques/` | `@geoalgeria/cliniques` | clinics & proximity-care facilities – 1,917 polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas; the community tier of the health sector, disjoint from `sante` (registry tier) |
+| `packages/cliniques/` | `@geoalgeria/cliniques` | clinics & proximity-care facilities, 1,915 polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas; the community tier of the health sector, disjoint from `sante` (registry tier) |
 | `packages/protection-civile/` | `@geoalgeria/protection-civile` | civil protection (fire & rescue) units – 880 DGPC units nationwide, Arabic-named, address/phone/fax, status tier, geocoded, official-primary (dgpc.dz), post-2026-reform wilaya linkage |
 | `packages/culture/` | `@geoalgeria/culture` | cultural atlas – protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions – services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
 | `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | approved pharmaceutical manufacturers – 171 medicine (PP) & medical-device (DM) makers from the Ministry of Pharmaceutical Industry (MIP) fabrication register, bilingual, typed by nature, geocoded to commune/wilaya centroid |
-| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) – 3,795 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
+| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines), 3,811 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
 | `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella – re-exports industrie-pharmaceutique + pharmacies in one install |
-| `packages/ecoles/` | `@geoalgeria/ecoles` | schools – 11,858 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
+| `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,849 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
 | `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations – 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
-| `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit – 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
+| `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit – 691 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
 | `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks – 184 Lines, 76 shapes, 128 Directions and 1,603 Stations across 16 Operators |
 | `packages/transport/` | `@geoalgeria/transport` | transport umbrella – re-exports aviation + ferroviaire + gares-routieres + buses |
 
@@ -61,6 +61,15 @@ converted package rebuilds offline (`--cache`). Rules in
 [`sources/README.md`](sources/README.md). Unconverted packages still cache raw
 pulls in gitignored `research/<pkg>/` until they are next touched.
 
+[`refresh-schedule.json`](refresh-schedule.json) is the **freshness schedule**:
+one row per published package with its source, the command that refreshes it, a
+cadence, the date its data was last retrieved and when it is next due. It is
+hand-maintained, and `test/refresh-schedule.test.mjs` keeps `last_retrieved` in
+step with each package's own `data/metadata.json`, so a refresh that forgets the
+schedule fails the build rather than going stale quietly. Read the row before
+refreshing a package: `blocked` means do not run the fetcher at all, and the
+`note` says why a source needs a manual pass or a particular vantage point.
+
 ## The loop
 
 1. **Branch** off `main`: `fix/commune-name`, `feat/emploi-coords`, `chore/ci`.
@@ -68,9 +77,10 @@ pulls in gitignored `research/<pkg>/` until they are next touched.
    sorted, UTF-8, sourced (JORA / Algérie Poste / ONS), bilingual FR/AR.
 3. **`pnpm validate`**: schema + integrity checks, then a bundler check
    ([`scripts/check-bundlers.mjs`](scripts/check-bundlers.mjs), on its own as
-   `pnpm check-bundlers`) that packs the real tarball, bundles it with esbuild
-   and runs the output, because a package can load in Node and still fail in a
-   bundled app (issue #276). Must pass.
+   `pnpm check-bundlers`) that packs every real tarball, bundles it with esbuild
+   and with Vite and runs the output, because a package can load in Node and
+   still fail in a bundled app (issues #276 and #290). Must pass. A dataset that
+   gained or lost a data file needs `pnpm generate-loaders` first (see Don't).
 4. **Add a changeset** if a published package changed: `pnpm changeset`
    (data semver: **major** = breaking schema · **minor** = new data/format ·
    **patch** = corrections).
@@ -115,7 +125,24 @@ Full details and one-time setup: [`RELEASING.md`](RELEASING.md).
 
 ## Don't
 
+- Publish a military location (Owner decision, 2026-10-29): a military school, hospital,
+  clinic, pharmacy, base, command, barracks in use, military hotel or housing, cadet school
+  or gendarmerie unit. Exclude it in the package's build and retire its id. Heritage
+  (colonial forts and barracks), public museums and addresses that only name one stay.
 - Hand-edit generated mirrors (`packages/dataset/data/poste/`).
+- Hand-edit a package's `loaders.cjs`, or make an `index.js` read a data file by
+  a path built at run time. Each package reaches its JSON through one loader per
+  data file, with a literal path a bundler can follow, because a computed path
+  builds fine and then throws ENOENT in a bundled app (#290). Which part is
+  which: `loaders.cjs` is **generated** by `node scripts/generate-loaders.mjs`,
+  so a dataset that gains or loses a data file needs a re-run. `index.js` stays
+  **hand-written**, and its one required line, `import load from
+  "./loaders.cjs";`, is **guarded** rather than generated by
+  `generate-loaders --check`, which also refuses a `readFileSync`,
+  `import.meta.url` or `__dirname` anywhere in it. `pnpm validate` runs that
+  check, so a stale loader and a drifted index both fail it.
+- Land a refresh without updating that package's `refresh-schedule.json` row, or
+  run a fetcher whose row reads `blocked`.
 - Type a daira or commune count into a carrier. They are derived from the records
   by `node scripts/sync-division-counts.mjs --write`; run it instead.
 - Push a bump without a changeset, or a changeset without a source for the data.

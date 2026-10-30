@@ -12,9 +12,9 @@
 
 </div>
 
-177 higher-education institutions across Algeria, **universities**, grandes écoles, écoles
+171 higher-education institutions across Algeria, **universities**, grandes écoles, écoles
 normales supérieures, centres universitaires, the **licensed private institutions**, and the
-establishments **under other ministries** (Défense, Santé, Culture…) that MESRS supervises,
+establishments **under other ministries** (Santé, Culture…) that MESRS supervises,
 each with its name (French and/or Arabic), institution **type**, **sector**, supervising
 ministry, its own **website**, wilaya / commune linkage and coordinates. Sourced from the
 **Ministry of Higher Education and Scientific Research (MESRS)**, shipped as
@@ -27,7 +27,7 @@ npm install @geoalgeria/enseignement-superieur
 ```js
 import es from "@geoalgeria/enseignement-superieur";
 
-const all = es.institutions();                  // 177
+const all = es.institutions();                  // 171
 const inAlgiers = es.institutionsByWilaya(16);   // institutions in wilaya 16
 const universities = es.institutionsByType("universite"); // every university
 const privates = es.institutionsBySector("private");      // the 19 private institutions
@@ -46,17 +46,16 @@ const privates = es.institutionsBySector("private");      // the 19 private inst
 
 | Type | Code | Count |
 | --- | --- | --- |
-| Université | `universite` | 58 |
-| Grande école | `grande_ecole` | 102 |
-| École normale supérieure | `ens` | 12 |
+| Université | `universite` | 59 |
+| Grande école | `grande_ecole` | 94 |
+| École normale supérieure | `ens` | 13 |
 | Centre universitaire | `centre_universitaire` | 5 |
-| **Total** | | **177** |
+| **Total** | | **171** |
 
-By **sector**: 158 public · 19 licensed private. Of the public institutions, 48 are
+By **sector**: 152 public · 19 licensed private. Of the public institutions, 34 are
 establishments **under other ministries** that MESRS supervises pedagogically, read
-`supervisory_ministry` (e.g. `"Ministère de la Santé"` for the 25 paramedical institutes,
-`"Ministère de la Défense nationale"` for the 16 military schools), which is `null` for the
-MESRS network itself.
+`supervisory_ministry` (e.g. `"Ministère de la Santé"` for the 25 paramedical institutes), which is `null` for the
+MESRS network itself. Military schools are not published (Owner decision, 2026-10-29).
 
 Spanning **51 wilayas**. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model (69-wilaya scheme).
@@ -74,9 +73,9 @@ here** and labelled honestly on every record via `geo_method` (detail) and `geo_
 
 | `geo_method` | Count | `geo_precision` | What the coordinate is |
 | --- | --- | --- | --- |
-| `campus` | 67 | `exact` | An OpenStreetMap geocode of the named campus, cross-checked: a geocode that lands in a different wilaya than the institution's name is rejected. |
-| `commune` | 15 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship – used where OSM can't find the campus by name. |
-| `wilaya` | 95 | `approximate` | The centroid of the institution's wilaya – the fallback when only the wilaya is known. Every private/other-ministry institution lands here, as the source publishes no address for them. |
+| `campus` | 165 | `exact` | A per-campus OpenStreetMap point for that institution, cross-checked: a geocode that lands in a different wilaya than the institution's name is rejected. |
+| `commune` | 1 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship, used where no open source places the campus itself, or, from the 2026-10-28 review on, where a new campus point has only one open source (`docs/adr/0001` asks for two). Most `campus` points rest on one OpenStreetMap reading each; the per-record review state is in `research/enseignement-superieur/`. |
+| `wilaya` | 5 | `approximate` | The centroid of the institution's wilaya, the fallback when only the wilaya is known. Nearly every private/other-ministry institution lands here, as the source publishes no address for them. |
 
 `wilaya_code` and `commune` are always reconciled to the `geoalgeria` flagship dataset, so they
 are authoritative and in the 69-wilaya scheme (`commune_code` is currently `null` on every
@@ -106,10 +105,11 @@ const all: Institution[] = es.institutions();
 
 ```
 data/
-  institutions.json            # 177 institutions (array)
+  institutions.json            # 171 institutions (array)
   metadata.json                # sources, counts, by_type, by_sector, by_geo_method, updated
+  retired-ids.json             # ids no record may hold again, each forwarded to the id that carries the establishment now
   csv/institutions.csv         # repo + Release bundle (not in npm tarball)
-  geojson/institutions.geojson # Point features (all 177 placed; 67 campus-geocoded, see geo_method)
+  geojson/institutions.geojson # Point features (all 171 placed; 165 campus-geocoded, see geo_method)
 ```
 
 ## Record shape
@@ -142,8 +142,10 @@ wilaya and commune names, join `wilaya_code` against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset. `wilaya_code` is zero-padded
 to two digits; `commune_code` is currently `null` on every record. `geo_precision` is `"exact"`
 for a real campus point or `"approximate"` for a commune/wilaya centroid, `geo_method` records
-which. `source` is a fixed provenance key (`"mesrs"`) into `metadata.sources[]`, not a URL, see
-**Source** below for the actual listing pages.
+which. `source` is a key into `metadata.sources[]`, not a URL: `"mesrs"` for a
+record from the university-network listing, `"bac-2026"` for one the BAC 2026 placement file
+supplied, and `"mesrs+bac-2026"` where the listing supplies the record and the placement file
+its current name. See **Source** below for the actual publications.
 
 ## Need the administrative divisions too?
 
@@ -154,20 +156,46 @@ you *only* need higher-education institution data.
 
 ## Source
 
-Institution identity comes from the **MESRS**, via the public university-network page, the
+Institution identity comes from the **MESRS**, via two of the ministry's own publications.
+
+**The university-network page**: the
 [English listing](https://www.mesrs.dz/en/university-network/) for the network's French names
 and the [Arabic listing](https://www.mesrs.dz/reseau-universitaire-ar/) for Arabic names and the
-private + other-ministry institutions the English page omits. Run `npm run fetch` to regenerate
-every output from the live listings; it reconciles each record's wilaya/commune to the flagship
-dataset and attaches the coordinate seed (`scripts/seeds/coordinates.json`, refreshed with `npm
-run geocode`). It fails loudly if the institution count collapses. Coordinates are
+private + other-ministry institutions the English page omits.
+
+**The BAC 2026 placement file**: *Moyennes minimales BAC 2026 (suite à la première phase)*,
+[published as a 350-page PDF](https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf),
+which names every establishment the ministry places new bacheliers into, by the ministry's own
+establishment code. It states the network as it stands today, so it supplies **12 institutions
+the network page omits**, the **current name of 2** the network page still lists under an older
+one, and **one succession**: ENSTA (`P05`), which décret exécutif 22-398 made the successor of
+the two Algiers schools it dissolved and which the network page still lists separately, so those
+two records leave and their ids are forwarded to ENSTA in `data/retired-ids.json`. What is committed from it is a rights-safe projection of its institution rows,
+`sources/enseignement-superieur/bac-2026.json`: the establishment code and official French name
+only, never the per-filière minimum averages and never the PDF, with the PDF's own URL, SHA-256,
+byte count and page count recorded in the capture manifest. That projection is the **authority**
+for those records' French names: `scripts/bac-2026.mjs` refuses any name in
+`scripts/seeds/bac-2026.json` that does not fold to the row the ministry published under that
+code, so the seed can restore the French accents and capitalisation the all-caps file drops but
+can never introduce a name of its own. Rebuild the projection with `node scripts/bac-2026.mjs
+--capture <rows.json>`, where `<rows.json>` is `{ rows: [{ code, name }] }` read off the PDF.
+
+Run `npm run fetch` to regenerate every output; it reconciles each record's wilaya/commune to
+the flagship dataset and attaches the coordinate seed (`scripts/seeds/coordinates.json`,
+refreshed with `npm run geocode`). It fails loudly if the institution count collapses, if a
+seeded name is not the ministry's own row, or if a seeded campus coordinate lands in a wilaya
+the seed does not claim. `node scripts/fetch.mjs --cache` rebuilds offline from the committed
+captures, which is how this package is built while www.mesrs.dz is unreachable. Coordinates are
 OpenStreetMap-derived, see **Names and coordinates** above.
 
 ## Licence & attribution
 
 Code is [MIT](LICENSE). Institution data is © **MESRS**, redistributed for reference and to
-power [GeoAlgeria](https://geoalgeria.com). Coordinates are © OpenStreetMap contributors (ODbL),
-derived via Nominatim. Verify against the ministry and each institution for authoritative
+power [GeoAlgeria](https://geoalgeria.com). Coordinates are © OpenStreetMap contributors (ODbL), derived via
+Nominatim, except where `scripts/seeds/` records another origin: Overture Maps Places
+(CDLA-Permissive-2.0, attribution: Overture Maps Foundation), the location an institution
+publishes on its own website, or a reading by the project's owner off Google Maps, which is not
+open data. Verify against the ministry and each institution for authoritative
 information.
 
 [API docs & field reference →](https://geoalgeria.com/data/docs/enseignement-superieur) · [Browse all packages →](https://geoalgeria.com/data)

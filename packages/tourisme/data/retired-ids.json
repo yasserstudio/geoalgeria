@@ -1,0 +1,69 @@
+{
+  "note": "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.",
+  "migrations": {
+    "park-25": {
+      "merged_into": "park-2",
+      "osm": [
+        "324041581"
+      ],
+      "note": "Merged into park-2. Wikidata Q2664184 and OpenStreetMap element 324041581 are the same national park; the OpenStreetMap record carries the measured point."
+    },
+    "park-26": {
+      "merged_into": "park-7",
+      "osm": [
+        "4589441"
+      ],
+      "note": "Merged into park-7. Wikidata Q2664193 and OpenStreetMap element 4589441 are the same national park; the OpenStreetMap record carries the measured point."
+    },
+    "park-27": {
+      "merged_into": "park-3",
+      "osm": [
+        "313971146"
+      ],
+      "note": "Merged into park-3. Wikidata Q2671600 and OpenStreetMap element 313971146 are the same national park; the OpenStreetMap record carries the measured point."
+    },
+    "park-29": {
+      "merged_into": "park-6",
+      "osm": [
+        "522229283"
+      ],
+      "note": "Merged into park-6. Wikidata Q2580089 and OpenStreetMap element 522229283 are the same national park; the OpenStreetMap record carries the measured point."
+    },
+    "park-31": {
+      "merged_into": "park-1",
+      "osm": [
+        "5424406"
+      ],
+      "note": "Merged into park-1. Wikidata Q650992 and OpenStreetMap element 5424406 are the same national park; the OpenStreetMap record carries the measured point."
+    }
+  },
+  "ids": [
+    "attraction-1193",
+    "attraction-1212",
+    "attraction-136",
+    "historic-251",
+    "historic-267",
+    "historic-385",
+    "historic-396",
+    "lodging-1028",
+    "lodging-1097",
+    "lodging-1113",
+    "lodging-1154",
+    "lodging-1155",
+    "lodging-1236",
+    "lodging-1544",
+    "lodging-1561",
+    "lodging-251",
+    "lodging-286",
+    "lodging-48",
+    "lodging-532",
+    "lodging-605",
+    "lodging-721",
+    "lodging-973",
+    "park-25",
+    "park-26",
+    "park-27",
+    "park-29",
+    "park-31"
+  ]
+}

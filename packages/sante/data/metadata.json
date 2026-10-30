@@ -4,12 +4,12 @@
   "title_fr": "Établissements de santé publique d'Algérie",
   "title_ar": "المؤسسات الصحية العمومية الجزائرية",
   "title_en": "Algeria public health establishments",
-  "record_count": 661,
-  "geocoded_count": 591,
-  "geocoded_pct": 89.4,
+  "record_count": 657,
+  "geocoded_count": 587,
+  "geocoded_pct": 89.3,
   "precision": {
     "exact": 133,
-    "approximate": 458
+    "approximate": 454
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -27,7 +27,7 @@
       "name": "Ministry of Health (sante.gov.dz): health-establishment registry",
       "url": "https://sante.gov.dz",
       "license": "Official public registry (Ministry of Health)",
-      "retrieved": "2026-06-27",
+      "retrieved": "2026-10-25",
       "evidence_type": "official"
     },
     {
@@ -35,7 +35,7 @@
       "name": "OpenStreetMap: geocoding",
       "url": "https://www.openstreetmap.org",
       "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-      "retrieved": "2026-06-27",
+      "retrieved": "2026-10-25",
       "evidence_type": "crowdsourced"
     },
     {
@@ -43,28 +43,28 @@
       "name": "Wikidata: geocoding",
       "url": "https://www.wikidata.org",
       "license": "CC0-1.0",
-      "retrieved": "2026-06-27",
+      "retrieved": "2026-10-25",
       "evidence_type": "crowdsourced"
     }
   ],
   "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
-  "updated": "2026-06-27",
+  "updated": "2026-10-25",
   "by_type": {
     "ehs": 103,
-    "eph": 254,
+    "eph": 252,
     "epsp": 280,
     "hopital": 5,
-    "chu": 19
+    "chu": 17
   },
   "by_sector": {
-    "public": 661
+    "public": 657
   },
   "by_geo_method": {
-    "commune_centroid": 458,
+    "commune_centroid": 454,
     "osm_point": 119,
     "wikidata_point": 3,
     "owner_verified": 11
   },
-  "bilingual": 590,
+  "bilingual": 594,
   "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

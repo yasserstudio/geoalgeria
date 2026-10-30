@@ -1256,6 +1256,46 @@ function validateRouteEndpoints() {
   console.log(`  OK: ${label}, ${eps.length} endpoints, fully named (fr/en/ar), all route terminals resolve`);
 }
 
+// Every route ships `sources`, its citation list: the urls behind the row, and
+// `source` stays the primary citation, the same url as the first entry (ADR
+// 0002). The gate is here rather than in the relation spec because the contract
+// is about the list's shape, not a field's presence: a non-empty array of plain
+// http(s) strings, no url twice, and entry 0 agreeing with `source`.
+function validateRouteSources() {
+  const label = "aviation/routes.json [sources]";
+  let routes;
+  try {
+    routes = readJson(join(ROOT, "packages", "aviation", "data", "routes.json"));
+  } catch (e) {
+    return fail(`${label}: cannot read: ${e.message}`);
+  }
+  const problems = [];
+  for (const r of routes) {
+    const list = r.sources;
+    if (!Array.isArray(list) || list.length === 0) {
+      problems.push(`${r.id}: no sources`);
+      continue;
+    }
+    if (list[0] !== r.source) problems.push(`${r.id}: sources[0] is not source`);
+    if (new Set(list).size !== list.length) problems.push(`${r.id}: a url is cited twice`);
+    for (const [i, url] of list.entries()) {
+      const at = `${r.id} sources[${i}]`;
+      // A plain string, deliberately: the richer entry object went out before
+      // the 2.9.0 release (ADR 0002), so an object here is a regression.
+      if (typeof url !== "string") problems.push(`${at}: ${typeof url}, not a url string`);
+      else if (!/^https?:\/\/\S+$/.test(url)) problems.push(`${at}: url is not http(s)`);
+    }
+  }
+  if (problems.length) {
+    return fail(`${label}: ${problems.length} problem(s): ${problems.slice(0, 5).join("; ")}`);
+  }
+  const entries = routes.reduce((n, r) => n + r.sources.length, 0);
+  console.log(
+    `  OK: ${label}, ${entries} citation(s) across ${routes.length} routes, ` +
+      `every list led by its own source`,
+  );
+}
+
 function validateMirror() {
   const sourceDir = join(ROOT, "packages", "poste", "data");
   const mirrorDir = join(ROOT, "packages", "dataset", "data", "poste");
@@ -1378,6 +1418,29 @@ function validateRetiredIds(pkgs) {
       fail(
         `${pkg}/retired-ids.json: retired id(s) are live again: ${reused.slice(0, 5).join(", ")}`,
       );
+    }
+
+    // `pending` holds the ids a refresh stopped carrying that are not retired yet:
+    // reserved for one more refresh so a record that comes back under a new mint can
+    // still claim its own id. It is a reservation, so it must say what the ids list
+    // says: an entry may not name a record the package still ships, nor one the
+    // ledger has already retired, and it has to carry the refresh it started in.
+    const waiting = document.pending;
+    if (waiting != null) {
+      if (typeof waiting !== "object" || Array.isArray(waiting)) {
+        fail(`${pkg}/retired-ids.json: pending must be an object`);
+      } else {
+        const reserved = new Set(ids);
+        for (const [id, entry] of Object.entries(waiting)) {
+          const where = `pending[${JSON.stringify(id)}]`;
+          if (entry == null || typeof entry !== "object" || Array.isArray(entry))
+            fail(`${pkg}/retired-ids.json: ${where} must be an object`);
+          else if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.first_missing ?? ""))
+            fail(`${pkg}/retired-ids.json: ${where}.first_missing must be an ISO date`);
+          if (reserved.has(id)) fail(`${pkg}/retired-ids.json: ${where} is already retired`);
+          if (live.has(id)) fail(`${pkg}/retired-ids.json: ${where} is a record this package ships`);
+        }
+      }
     }
 
     // `migrations` says where a retired id's data went, for an id whose record
@@ -2003,6 +2066,7 @@ if (!only || only === "poste") {
 if (!only || only === "aviation") {
   console.log(`\n[aviation route endpoints]`);
   validateRouteEndpoints();
+  validateRouteSources();
 }
 
 console.log("\n" + "=".repeat(40));

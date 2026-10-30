@@ -46,8 +46,8 @@ const inOran = aviation.airportsByWilaya(31);     // airports in wilaya 31
 | Dataset | Count | Notes |
 | --- | --- | --- |
 | Civil airports | **36** | official name, ICAO + IATA codes, address, phone, website, coordinates |
-| Nonstop routes | **157** | directional legs with operator, status, evidence tier and a source |
-| Planned routes | **20** | announced, not yet flying; a separate collection, never a status |
+| Nonstop routes | **169** | directional legs with operator, status, evidence tier and a citation list |
+| Planned routes | **8** | announced, not yet flying; a separate collection, never a status |
 
 Spanning **33 wilayas**, every airport geocoded and every one carrying an IATA code.
 `wilaya_code` is linked against the
@@ -60,6 +60,21 @@ airports, the ANAC house style for the Algerian ones), plus `name_en` and
 shipped coordinate. Routes
 churn seasonally, so `metadata.routes_as_of` stamps the date the network was last
 checked against schedules: treat it as a dated snapshot, not an evergreen fact.
+
+Every route ships its citations as plain urls. `source` is the primary one, and `sources`
+is every link behind the row, because one row can rest on several documents: a launch
+statement for the route and its dates, an earlier sale-inventory report for the flight
+number, a programme report for the days.
+
+| Field | Type | Notes |
+| --- | --- | --- |
+| `source` | `string` | the primary citation, and always `sources[0]` |
+| `sources` | `string[]` | every url behind the row, ordered, never empty, no url twice, `sources[0]` being `source` itself |
+
+In the CSV, `sources` is space-separated in one column next to `source`, the same encoding
+the `days` column uses: a url carries no space, so the cell splits cleanly on one. In the
+GeoJSON it is a real array in `properties`. Added in 2.9.0; `source` keeps its meaning and
+its value.
 
 33 of the 36 come from ANAC's own map. The other three, Hassi R'Mel (`HRM`), Mécheria
 (`MZW`) and Laghouat (`LOO`), are absent from it and come from OurAirports, so they carry

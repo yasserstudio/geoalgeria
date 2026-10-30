@@ -95,6 +95,36 @@ for (const [pkg, entry] of Object.entries(FIXTURE.packages)) {
 // its own output before comparing, so the guard keeps watching every OTHER
 // field of the same record instead of being silenced record-wide.
 const CORRECTIONS = {
+  poste: {
+    // ATMs BaridiMap lists with no point, placed at their host post office's
+    // BaridiMap point since 2026-10-29 (fetch.mjs ATM_HOST_OFFICE). Keyed by
+    // file, because post office ids repeat these ATM ids.
+    "atms.json/1513": { lat: 36.6668571, lng: 3.0975315, geo_precision: "exact", geo_method: "baridimap_host_office" },
+    "atms.json/1772": { lat: 36.4775567, lng: 2.5646019, geo_precision: "exact", geo_method: "baridimap_host_office" },
+    "atms.json/2335": { lat: 36.7927607, lng: 3.2909607, geo_precision: "exact", geo_method: "baridimap_host_office" },
+    // Offices BaridiMap lists with no point, on their own OSM node (fetch.mjs
+    // OFFICE_OSM_POINT, 2026-10-29).
+    "postoffices.json/2905": { lat: 36.7692213, lng: 3.0267566, geo_precision: "exact", geo_method: "osm_node" },
+    "postoffices.json/3062": { lat: 36.7687292, lng: 2.8848159, geo_precision: "exact", geo_method: "osm_node", commune: "CHERAGA", commune_code: "1650", commune_ar: "الشراقة" },
+    "postoffices.json/2458": { lat: 36.700328, lng: 4.0564974, geo_precision: "exact", geo_method: "osm_node" },
+  },
+  tourisme: {
+    // The five OSM national parks gained the Wikidata item of the duplicate that
+    // merged into each on 2026-10-29 (build.mjs MERGED_WIKIDATA).
+    "park-1": { refs: { osm: "5424406", wikidata: "Q650992" } },
+    "park-2": { refs: { osm: "324041581", wikidata: "Q2664184" } },
+    "park-3": { refs: { osm: "313971146", wikidata: "Q2671600" } },
+    "park-6": { refs: { osm: "522229283", wikidata: "Q2580089" } },
+    "park-7": { refs: { osm: "4589441", wikidata: "Q2664193" } },
+  },
+  "protection-civile": {
+    // Main units placed on their OSM fire station on 2026-10-29; each directorate
+    // keeps the unit's old DGPC point as approximate (quality/overrides).
+    "50-001": { lat: 21.3332893, lng: 0.9584882, geo_precision: "exact", geo_method: "osm_node_review", review_status: "corrected", reviewed_at: "2026-10-29", reviewed_by: "geoalgeria-maintainers", review_evidence: ["https://www.openstreetmap.org/node/5647008622"] },
+    "50-003": { geo_precision: "approximate", review_status: "corrected", reviewed_at: "2026-10-29", reviewed_by: "geoalgeria-maintainers", review_evidence: ["https://www.openstreetmap.org/node/5647008622"] },
+    "51-001": { lat: 34.4360897, lng: 5.0682667, geo_precision: "exact", geo_method: "osm_centroid_review", review_status: "corrected", reviewed_at: "2026-10-29", reviewed_by: "geoalgeria-maintainers", review_evidence: ["https://www.openstreetmap.org/way/307049829"] },
+    "51-003": { geo_precision: "approximate", review_status: "corrected", reviewed_at: "2026-10-29", reviewed_by: "geoalgeria-maintainers", review_evidence: ["https://www.openstreetmap.org/way/307049829"] },
+  },
   banques: {
     // BEA's locator publishes address-only rows. The reviewed seed enriches
     // them with the locator's embedded map coordinates after the v2 cutover;
@@ -191,6 +221,11 @@ const CORRECTIONS = {
     // Mascara's 29-01, whose cité label names a locality the point is not in.
     "07-01": { commune: "El Hadjeb" },
     "29-01": { commune: "Tizi" },
+    // Reviewed points of 2026-10-29 (fetch.mjs COORD_FIX): GUELMA leaves the
+    // commune-centroid fallback for OSM way 460372288 on RN 21, and AIN OUSSARA's
+    // two-decimal SOGRAL point gives way to OSM way 494669722, 65 m from it.
+    "24-01": { lat: 36.4715395, lng: 7.4337368, geo_precision: "exact", geo_method: "exact" },
+    "65-01": { lat: 35.4635735, lng: 2.9001721, geo_precision: "exact" },
   },
   "enseignement-superieur": {
     // ESI's campus sits in Oued Smar (its own address: BP 68M, 16270); the
@@ -199,7 +234,34 @@ const CORRECTIONS = {
     "00065": { commune: "Oued Smar" },
     // Flagship commune label, corrected against JORA n° 25 / n° 40.
     "00033": { commune: "M'Sila" },
-    "00017": { commune: "Chetma" }, // re-join: Biskra's centre moved
+    // 00017 needed a re-join entry while Biskra's moved centre put its campus
+    // nearer Chetma's. Biskra's own centre has since moved again, so the join
+    // answers Biskra, which is what the frozen v1 row already says: no entry.
+    //
+    // Borrowed centres, the other class above: these records carry no coordinate
+    // of their own (geo_method `wilaya`, or a commune centre), so they move with
+    // the flagship centre they borrow, and the frozen v1 row keeps the old one.
+    // Alger Centre's centre moved from the sea east of the port to the Grande
+    // Poste, as it did for the agriculture rows below.
+    "00097": { lat: 36.776335, lng: 3.058211 },
+    // Promoted, a third class: the record left its commune centre for its own
+    // campus on two independent Votes (docs/adr/0001), OSM way/390654567 agreeing
+    // with Wikidata Q16507829's P625 to 58 m; scripts/seeds/second-source.json,
+    // PR #310. The frozen v1 row keeps the Koléa centre it borrowed.
+    "00081": { lat: 36.6400745, lng: 2.7875844, geo_precision: "exact", geo_method: "campus" },
+    // Placed, a fourth class (Owner decision of 2026-10-29): a single open campus
+    // lead ships where nothing confirms it, scripts/seeds/second-source.json
+    // `single_open_source`, PR #310 (Overture Places for 00113 and 00161, OSM
+    // way/375082795 for 00145). The frozen v1 row keeps the centre it borrowed.
+    "00113": { lat: 36.655334, lng: 3.1468977, commune: "Les Eucalyptus", geo_precision: "exact", geo_method: "campus" },
+    "00145": { lat: 35.3794338, lng: 0.1221791, commune: "Mascara", geo_precision: "exact", geo_method: "campus" },
+    "00161": { lat: 36.86473, lng: 6.92202, commune: "Skikda", geo_precision: "exact", geo_method: "campus" },
+    // Placed, a fifth class (docs/adr/0001 rule 6 as amended 2026-10-29): the
+    // Owner's pin of 2026-10-30 ships where no open object lies within 500 m of
+    // it, scripts/seeds/second-source.json `owner_pin`. The frozen v1 row keeps
+    // the Tébessa wilaya centre this record borrowed, which has itself moved
+    // since the cutover.
+    "00129": { lat: 35.426065, lng: 8.064047, commune: "Tébessa", geo_precision: "exact", geo_method: "campus" },
   },
   // Two classes below, both of them the flagship moving under a derived field,
   // and both caught by gates of their own rather than by this replay:
@@ -239,6 +301,7 @@ const CORRECTIONS = {
   },
   ooredoo: {
     "69-002": { commune: "El Abiodh Sidi Cheikh" }, // label
+    "46-006": { lat: 35.2941814, lng: -1.1399855, geo_precision: "exact", geo_method: "osm_node", review_status: "corrected", reviewed_at: "2026-10-29", reviewed_by: "geoalgeria-maintainers", review_evidence: ["https://www.openstreetmap.org/node/5347870919"] }, // OSM shop, 2026-10-29
   },
   cliniques: {
     "28-00005": { commune: "M'Sila" }, // label
@@ -285,6 +348,13 @@ const CORRECTIONS = {
   "formation-professionnelle": {
     // Borrows its commune's centre (geo_method `commune`), and Beni Messous moved.
     "00703": { lat: 36.780096, lng: 2.974557 },
+    // One of the 32 Oran rows the takwin capture ships with an unsigned longitude.
+    // fetch.mjs restores the sign when mirroring the axis carries the point both into
+    // the wilaya that published the row and beside the commune it names (private
+    // tracker #301), so the frozen v1 input keeps +0.625359 while the record ships the
+    // corrected value. This is a coordinate correction, not id-rule drift: the id and
+    // every other field hold.
+    "01405": { lng: -0.625359 },
   },
   "industrie-pharmaceutique": {
     // Same class: a commune-centroid placement in Algiers whose commune moved.
@@ -317,6 +387,19 @@ const ENRICHMENTS = {
     produced.shape_id = shipped.shape_id;
     produced.osm_relation_ids = shipped.osm_relation_ids;
   },
+  sports: (produced, shipped) => {
+    // refs.mjs is the SIG's own per-record UUID, published since the 2026-10-27
+    // refresh; the frozen v1 row predates it (the generator then overwrote the
+    // UUID with the sequence number). test/sports-transition and
+    // test/sports-carry-key guard the carry-over that keys on it.
+    if (shipped?.refs?.mjs) produced.refs = { ...produced.refs, mjs: shipped.refs.mjs };
+  },
+  jeunesse: (produced, shipped) => {
+    // refs.mjs is the SIG's own per-record UUID, published since the 2026-10-27
+    // refresh; the frozen v1 row predates it. test/jeunesse-carry-key guards the
+    // carry-over that keys on it.
+    if (shipped?.refs?.mjs) produced.refs = { ...produced.refs, mjs: shipped.refs.mjs };
+  },
   "gares-routieres": (produced, shipped) => {
     // refs.mahatati_agency joins from research/gares-routieres/
     // mahatati-agency-ids.json (staged 2026-08-13 from the public MAHATATI
@@ -330,7 +413,32 @@ const ENRICHMENTS = {
     // containment or its resolved commune, a file-level spatial operation the
     // per-record v2 map cannot reproduce. Dedicated formation-current-wilayas
     // tests guard that join; replay continues to guard every other field here.
-    if (shipped) produced.wilaya_code = shipped.wilaya_code;
+    if (!shipped) return;
+    produced.wilaya_code = shipped.wilaya_code;
+    // The frozen v1 row also predates the 2026-10-25 re-source: takwin.dz was
+    // captured live for the first time since the v2 cutover, and it rewrote the
+    // attributes below on the records it still lists. They are the source's own
+    // text and the source's own coordinate, so a frozen input cannot produce
+    // them and the per-record map has nothing to drift from; replaying them here
+    // keeps the id rule and every transform-produced field (id, code, type,
+    // type_label, source, secteur, commune_code, capacite, surface_m2, internat,
+    // capacite_internat, site_web) compared. What guards the refreshed fields
+    // instead: formation-carry-key (an id survives a respelt name),
+    // formation-current-wilayas (the wilaya join and the placement rule) and
+    // validate-packages (schema, coordinate honesty, name script, licence).
+    for (const key of [
+      // names and the address the portal publishes, respaced across the board
+      "name", "name_fr", "abreviation", "adresse", "adresse_fr",
+      // contacts it corrected on individual records
+      "telephone", "fax", "email", "facebook",
+      // the commune label, the capacity it restated, and the vocations list
+      "commune", "capacite_reelle", "vocations",
+      // placement: the portal now supplies a point where it had left the
+      // sentinel zero, and a record it still leaves empty is placed on a
+      // flagship centroid, which is a file-level join
+      "lat", "lng", "geo_precision", "geo_method",
+    ])
+      produced[key] = shipped[key];
   },
   sante: (produced, shipped) => {
     // refs.msp_twin is the registry's other-language post for the same
@@ -408,8 +516,16 @@ for (const [pkg, file, map] of SPECS) {
       const produced = foldNameDashes(map(v1));
       if (produced.geo_precision === "exact" && shared.has(`${produced.lat},${produced.lng}`))
         produced.geo_precision = "approximate";
-      const fix = CORRECTIONS[pkg]?.[produced.id];
+      // A key may name the file ("atms.json/1513") where ids repeat across files.
+      const fix = CORRECTIONS[pkg]?.[`${file}/${produced.id}`] ?? CORRECTIONS[pkg]?.[produced.id];
       if (fix) Object.assign(produced, fix);
+      // The runner also resolves telecom's Arabic commune labels from the commune
+      // registry on its way through writePackageV2, after the review ledger
+      // (scripts/lib/telecom-commune-ar.mjs), so replay that here as the dash fold is
+      // replayed above. It runs after CORRECTIONS because a reviewed wilaya is what the
+      // commune is resolved against.
+      const afterReview = MIGRATIONS[pkg]?.files?.find((spec) => spec.file === file)?.afterReview;
+      if (afterReview) Object.assign(produced, afterReview(produced));
       const shipped = committed.get(produced.id);
       // A refreshed source may remove a row sampled at the v2 cutover. Its
       // transformed id must remain permanently reserved; that still guards the

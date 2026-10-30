@@ -13,7 +13,7 @@
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 128 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+  "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 129 records are reconciled to the current wilaya only where an exact current, former (JORA) or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
   "wilayas_covered": 69,
   "bbox": [
     -8.1489,
@@ -27,12 +27,12 @@
       "name": "Ministry of Youth and Sports: SIG",
       "url": "https://sig.mjs.gov.dz",
       "license": "Factual public listing (Ministry of Youth and Sports)",
-      "retrieved": "2026-06-23",
+      "retrieved": "2026-10-27",
       "evidence_type": "official"
     }
   ],
   "license": "Factual public listing (Ministry of Youth and Sports)",
-  "updated": "2026-06-23",
+  "updated": "2026-10-27",
   "by_type": {
     "AJ": 241,
     "CLS": 46,

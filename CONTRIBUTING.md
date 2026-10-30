@@ -29,12 +29,12 @@ This is a small monorepo:
 | `packages/sante/` | `@geoalgeria/sante` | public health establishments, EPH/EPSP/EHS/CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
 | `packages/culture/` | `@geoalgeria/culture` | cultural atlas, protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions, DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
-| `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,858 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
+| `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,849 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
 | `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations, 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
 | `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit, 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
 | `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks, 59 Lines, 42 OSM shapes, 75 Directions and 1,046 Stations across 3 Operators |
 | `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | pharmaceutical manufacturers, 171 medicine & medical-device makers (Ministry of Pharmaceutical Industry), bilingual, geocoded |
-| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines), 3,795 geocoded, 67 wilayas (OpenStreetMap) |
+| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines), 3,811 geocoded, 67 wilayas (OpenStreetMap) |
 | `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores, 572 EO/CSO/ESO with real coordinates (ooredoo.dz); completes the telecom retail trio |
 | `packages/transport/` | `@geoalgeria/transport` | transport umbrella, re-exports aviation + ferroviaire + gares-routieres + buses |
 | `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella, re-exports industrie-pharmaceutique + pharmacies |
@@ -48,6 +48,9 @@ git clone https://github.com/YOUR_FORK/geoalgeria.git
 cd geoalgeria
 pnpm install
 ```
+
+Node **20.19+ or 22.12+** for the toolchain: `pnpm validate` bundles with Vite,
+which requires it. The published packages themselves still run on Node 18.
 
 ### 2. Make your change
 
@@ -74,9 +77,18 @@ pnpm validate    # schema + integrity checks on the dataset
 ```
 
 It ends with a bundler check ([`scripts/check-bundlers.mjs`](scripts/check-bundlers.mjs),
-also `pnpm check-bundlers`): it packs the real tarballs, bundles them with esbuild
-and runs the output, because a package can load perfectly in Node and still fail in
-a bundled app (issue #276).
+also `pnpm check-bundlers`): it packs the real tarballs and runs each one three
+ways, under plain Node, an esbuild bundle and a Vite 8 SSR bundle (rolldown),
+because a package can load perfectly in Node and still fail in a bundled app
+(issues #276 and #290). Turbopack is not run here, it needs a `next build`; the
+app's preview build in the batch lockstep is what proves that one.
+
+That is also why every package reaches its JSON through a generated
+`loaders.cjs`, one `require` of a literal path per data file, instead of joining
+a path at run time, which a bundler rewrites. Don't hand-edit a `loaders.cjs`:
+when a dataset gains or loses a data file, run `pnpm generate-loaders` and commit
+what it writes. `pnpm validate` fails on a stale one, and on an `index.js` that
+no longer loads through it.
 
 ### 4. Open a pull request
 

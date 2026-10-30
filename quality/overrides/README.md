@@ -19,6 +19,24 @@ ships. It makes no decision of its own, and a second run is a no-op.
 - `status` records what the reviewer found. `publish_action` separately chooses
   `keep`, `patch`, or `exclude`; marking something missing or duplicate does not
   delete it automatically.
+- A ruling that a candidate is **not** a correction is a decision too, and it
+  belongs here rather than in the research file that raised it: `status`
+  `verified` with `publish_action` `keep`, the `reviewer` and `reviewed_at` of the
+  ruling, its reason in `notes`, and its sources in `evidence`. It changes no
+  published field; what it does is close the candidate so it stops returning to
+  the review queue. ADR 0001 rule 10 says the same for the coordinate review: the
+  ledger, not the page, is the record. `historic-91` in `tourisme.json` is the
+  worked example, one of the four OpenStreetMap re-place candidates the Owner
+  rejected on 2026-10-28.
+- A decision whose record is **retired into a survivor** is removed, not re-keyed
+  onto the survivor: the survivor is a different record and the ruling was never
+  made on it, and `applyReviewedOverrides` refuses a decision whose `record_id`
+  is no longer published, so carrying one would stop every later rebuild. The
+  ledger's own `note` says which decisions went and why, the package's
+  `retired-ids.json` holds the forward, and the test that replays the run follows
+  that forward rather than the id. The other three of those four candidates,
+  `parks.json` park-25, park-29 and park-31, are the worked example: superseded
+  on 2026-10-30 when the parks they named merged into their OpenStreetMap twins.
 - Every patched field includes its old value in `expect`; exclusions snapshot the
   complete old record. A build stops if any affected upstream value changed.
 - To add a missing shared optional field, list it in `expect_absent`; publication

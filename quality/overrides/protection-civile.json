@@ -95,6 +95,38 @@
     },
     {
       "file": "protection-civile.json",
+      "record_id": "23-017",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "commune_code": "2306",
+        "commune": "Oued El Aneb"
+      },
+      "patch": {
+        "commune_code": "2305",
+        "commune": "El Bouni"
+      },
+      "reviewed_at": "2026-10-27",
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/relation/1616108",
+          "checked_at": "2026-10-27",
+          "note": "El Bouni (2305) admin_level=8 relation; its outline contains the unit point (7.60981, 36.8269), 86 m inside the boundary."
+        },
+        {
+          "url": "https://www.openstreetmap.org/relation/1616122",
+          "checked_at": "2026-10-27",
+          "note": "Oued El Aneb (2306) admin_level=8 relation; the unit point is 65 m outside it, so the DGPC's commune_1 cannot be confirmed on the ground."
+        },
+        {
+          "url": "https://dgpc.dz/dgpc2/unite.geojson",
+          "checked_at": "2026-10-27",
+          "note": "Official DGPC objectid 562 publishes commune_1 as Oued El Aneb, one edit from the registry spelling, which is why the name clause answers 2306."
+        }
+      ]
+    },
+    {
+      "file": "protection-civile.json",
       "record_id": "27-002",
       "status": "corrected",
       "publish_action": "patch",
@@ -181,6 +213,108 @@
           "note": "Official DGPC objectid 397 confirms the Attatba unit identity and coarse source point."
         }
       ]
+    },
+    {
+      "file": "protection-civile.json",
+      "record_id": "50-001",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 21.3335,
+        "lng": 0.958699,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map"
+      },
+      "patch": {
+        "lat": 21.3332893,
+        "lng": 0.9584882,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/5647008622",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "notes": "One open source (ADR 0001, single open lead): OSM node 5647008622 (version 6), amenity=fire_station, brand Protection civile algerienne, the only fire station in Bordj Badji Mokhtar, 32 m from the DGPC point the unit shared with its directorate 50-003.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-29"
+    },
+    {
+      "file": "protection-civile.json",
+      "record_id": "50-003",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 21.3335,
+        "lng": 0.958699,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map"
+      },
+      "patch": {
+        "geo_precision": "approximate"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/5647008622",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "notes": "The directorate (Nouvelle cite administrative) shared the main unit's DGPC point; that point is the unit's, so the directorate's stays approximate until its own building is found.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-29"
+    },
+    {
+      "file": "protection-civile.json",
+      "record_id": "51-001",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 34.436001,
+        "lng": 5.06884,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map"
+      },
+      "patch": {
+        "lat": 34.4360897,
+        "lng": 5.0682667,
+        "geo_precision": "exact",
+        "geo_method": "osm_centroid_review"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/way/307049829",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "notes": "One open source with an address tie (ADR 0001): OSM way 307049829 (version 16), amenity=fire_station, addr:street Rue de l'Independance (the unit's own address), centre of a six-node station footprint, 52 m from the DGPC point the unit shared with its directorate 51-003.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-29"
+    },
+    {
+      "file": "protection-civile.json",
+      "record_id": "51-003",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 34.436001,
+        "lng": 5.06884,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map"
+      },
+      "patch": {
+        "geo_precision": "approximate"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/way/307049829",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "notes": "The directorate (Cite administrative, Nouvelle ville) shared the main unit's DGPC point; that point is the unit's, so the directorate's stays approximate until its own building is found.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-29"
     }
   ]
 }

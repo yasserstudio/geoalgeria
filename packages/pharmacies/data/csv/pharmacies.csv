@@ -3,8 +3,8 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 01-00002,Pharmacie Echefaa,Pharmacie Echefaa,صيدلية الشفاء,01,0112,Aoulef,26.971472,1.081066,exact,osm_node,osm,"{""osm"":""node/3067035983""}",,,,true,"Rue Larbi Ben Mhidi, Aoulef 01003"
 01-00003,Pharmacie Hamdi,Pharmacie Hamdi,صيدلية حامدي,01,0112,Aoulef,26.969404,1.080783,exact,osm_node,osm,"{""osm"":""node/3067035984""}",,,,true,
 01-00004,,,,01,0101,Adrar,27.873497,-0.298361,exact,osm_node,osm,"{""osm"":""node/3199092870""}",,,,,
-01-00005,صيدلية بلحسان,Pharmacie Belhaçane,صيدلية بلحسان,01,0101,Adrar,27.878007,-0.300394,exact,osm_node,osm,"{""osm"":""node/3199130755""}",,,,,أدرار
-01-00006,صيدلية رزوق,Pharmacie Rezzoug,صيدلية رزوق,01,0101,Adrar,27.871926,-0.282897,exact,osm_node,osm,"{""osm"":""node/3900622147""}",,,,,
+01-00005,Pharmacie Belhaçane;صيدلية بلحسان,Pharmacie Belhaçane,صيدلية بلحسان,01,0101,Adrar,27.878007,-0.300394,exact,osm_node,osm,"{""osm"":""node/3199130755""}",,,,,أدرار
+01-00006,Pharmacie Rezzoug;صيدلية رزوق,Pharmacie Rezzoug,صيدلية رزوق,01,0101,Adrar,27.871926,-0.282897,exact,osm_node,osm,"{""osm"":""node/3900622147""}",,,,,
 01-00007,Pharmacie EPH Sud,Pharmacie EPH Sud,الجنوب,01,0112,Aoulef,26.973962,1.086394,exact,osm_node,osm,"{""osm"":""node/4194340892""}",,,24/7,,
 02-00001,BENSOUNA H,BENSOUNA H,,02,0201,Chlef,36.165154,1.335549,exact,osm_node,osm,"{""osm"":""node/10103454118""}",,,,,
 02-00002,BETTAHAR Kh,BETTAHAR Kh,,02,0221,Oued Sly,36.085751,1.210036,exact,osm_node,osm,"{""osm"":""node/10127802317""}",,,,,
@@ -267,7 +267,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 03-00042,,,,03,0301,Laghouat,33.816347,2.862203,exact,osm_node,osm,"{""osm"":""node/6590253747""}",,,,true,
 03-00043,,,,03,0301,Laghouat,33.818385,2.867777,exact,osm_node,osm,"{""osm"":""node/6590275204""}",,,,true,
 03-00044,Pharmacie Ibn Sina,Pharmacie Ibn Sina,,03,0301,Laghouat,33.812778,2.847881,exact,osm_node,osm,"{""osm"":""node/6705173261""}",Ben Alia,,,true,
-03-00045,Pharmacie BOUDALAA,Pharmacie BOUDALAA,,03,0301,Laghouat,33.813907,2.853548,exact,osm_node,osm,"{""osm"":""node/6705233949""}",,,Mo-Sa 08:00-18:00,true,"11 11 Décembre 1960, Laghouat 03000"
+03-00045,Pharmacie BOUDALAA,Pharmacie Boudalaa,,03,0301,Laghouat,33.813907,2.853548,exact,osm_node,osm,"{""osm"":""node/6705233949""}",,,Mo-Sa 08:00-18:00,true,"11 11 Décembre 1960, Laghouat 03000"
 03-00046,Pharmacie N. Chatta,Pharmacie N. Chatta,,03,0301,Laghouat,33.812081,2.874884,exact,osm_node,osm,"{""osm"":""node/6705262055""}",Chatta,,,true,
 03-00047,Pharmacie,Pharmacie,,03,0323,El Haouita,33.646374,2.448903,exact,osm_node,osm,"{""osm"":""node/8432104918""}",,,,,Houita
 03-00048,Pharmacie Bouzidi Bachir,Pharmacie Bouzidi Bachir,,03,0301,Laghouat,33.806325,2.879601,exact,osm_node,osm,"{""osm"":""node/9955090450""}",,,,true,Avenue de l'Indépendance
@@ -280,7 +280,6 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 04-00004,Mellah Ali,Mellah Ali,,04,0411,Dhalaa,35.458819,7.549019,exact,osm_node,osm,"{""osm"":""node/3292262455""}",,,,,
 04-00005,Pharmacie Barkat khalil,Pharmacie Barkat khalil,,04,0423,Oued Nini,35.574242,7.348496,exact,osm_node,osm,"{""osm"":""node/3514322456""}",barkat khalil,,,,
 04-00006,صيدلية مصباح مسعود,Pharmacie Mesbah Messaoud,صيدلية مصباح مسعود,04,0402,Ain Beida,35.790569,7.394423,exact,osm_node,osm,"{""osm"":""node/4250083491""}",,,,true,
-04-00007,,,,04,0402,Ain Beida,35.794814,7.390612,exact,osm_node,osm,"{""osm"":""node/4261857892""}",,,,,
 04-00008,صيدلية زعيمي,Pharmacie Zaimi,صيدلية زعيمي,04,0402,Ain Beida,35.793985,7.390702,exact,osm_node,osm,"{""osm"":""node/4264548291""}",,,,true,
 04-00009,صيدلية سليم هجريس,Pharmacie Salim Hadjris,صيدلية سليم هجريس,04,0402,Ain Beida,35.792028,7.39655,exact,osm_node,osm,"{""osm"":""node/4293398892""}",,,,,
 04-00010,Pharmacie 8938,Pharmacie 8938,,04,0402,Ain Beida,35.796379,7.392327,exact,osm_node,osm,"{""osm"":""node/4293444692""}",,,,true,
@@ -322,6 +321,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 04-00046,pharmacie chouchan sara,pharmacie chouchan sara,,04,0401,Oum El Bouaghi,35.86587,7.109437,approximate,osm_centroid,osm,"{""osm"":""way/660674488""}",شوشان سارة,,,true,"طريق خنشلة, Oum El Bouaghi 04000"
 04-00047,,,,04,0401,Oum El Bouaghi,35.864088,7.11494,approximate,osm_centroid,osm,"{""osm"":""way/798166162""}",allaoua علاوة,,,true,Oum El Bouaghi 04000
 04-00048,pharmacie mezbache wafa,pharmacie mezbache wafa,,04,0401,Oum El Bouaghi,35.877307,7.079105,approximate,osm_centroid,osm,"{""osm"":""way/908001009""}",مزباش وفاء,,,true,"3 حي لكمين, oum el bouaghi 04000"
+04-00049,,,,04,0402,Ain Beida,35.792361,7.392763,exact,osm_node,osm,"{""osm"":""node/11860836308""}",,,,,
 05-00001,Merzelkad Pharmacy,Merzelkad Pharmacy,صيدلية مرزلقاد,05,0501,Batna,35.546049,6.198675,exact,osm_node,osm,"{""osm"":""node/12198655103""}",,,Sa-Th 08:00-20:00,true,
 05-00002,BOURAIA RABIE OUNIS,BOURAIA RABIE OUNIS,,05,0520,Ouled Sellem,35.824532,5.882603,exact,osm_node,osm,"{""osm"":""node/12199987290""}",BOURAIA RABIE OUNIS,,,,"Rue La liberté (RN77), OULED SELLEM 05040"
 05-00003,Ameziane Saida pharmacy,Ameziane Saida pharmacy,,05,0522,Ain Yagout,35.775145,6.415246,exact,osm_node,osm,"{""osm"":""node/13622756801""}",,,,,
@@ -500,19 +500,19 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 06-00104,,,,06,0625,Akbou,36.411109,4.472397,approximate,osm_centroid,osm,"{""osm"":""way/1205625529""}",,,,,Akbou
 06-00105,Pharmacie Benmansour Hicham,Pharmacie Benmansour Hicham,صيدلية بنمنصور هشام,06,0629,Chemini,36.59324,4.613531,approximate,osm_centroid,osm,"{""osm"":""way/320230977""}",,,,true,"Djenane, Chemini"
 07-00001,Pharmacie Khadraoui,Pharmacie Khadraoui,,07,0701,Biskra,34.852502,5.720505,exact,osm_node,osm,"{""osm"":""node/13523653129""}",,,,,
-07-00002,ZOBIRI,ZOBIRI,,07,0701,Biskra,34.856974,5.712292,exact,osm_node,osm,"{""osm"":""node/3449612819""}",,,,true,
+07-00002,ZOBIRI,Zobiri,,07,0701,Biskra,34.856974,5.712292,exact,osm_node,osm,"{""osm"":""node/3449612819""}",,,,true,
 07-00003,,,,07,0701,Biskra,34.852325,5.720957,exact,osm_node,osm,"{""osm"":""node/3449613515""}",,,,,
 07-00004,,,,07,0701,Biskra,34.852182,5.723172,exact,osm_node,osm,"{""osm"":""node/3449613516""}",,,,,
 07-00005,,,,07,0701,Biskra,34.854779,5.726426,exact,osm_node,osm,"{""osm"":""node/3449613517""}",,,,,
-07-00006,صيدلية ومان,Pharmacie Ouamane,صيدلية ومان,07,0701,Biskra,34.845472,5.714726,exact,osm_node,osm,"{""osm"":""node/3449613518""}",,,,true,
+07-00006,Pharmacie Ouamane;صيدلية ومان,Pharmacie Ouamane,صيدلية ومان,07,0701,Biskra,34.845472,5.714726,exact,osm_node,osm,"{""osm"":""node/3449613518""}",,,,true,
 07-00007,,,,07,0701,Biskra,34.844442,5.721389,exact,osm_node,osm,"{""osm"":""node/3449613519""}",,,,,
 07-00008,,,,07,0701,Biskra,34.844825,5.723289,exact,osm_node,osm,"{""osm"":""node/3449613520""}",,,,,
 07-00009,OUAMEN MED ADEL,OUAMEN MED ADEL,,07,0701,Biskra,34.846657,5.730533,exact,osm_node,osm,"{""osm"":""node/3450474858""}",,,,true,
 07-00010,,,,07,0701,Biskra,34.854498,5.730919,exact,osm_node,osm,"{""osm"":""node/3450481101""}",,,,,
 07-00011,,,,07,0701,Biskra,34.845509,5.699308,exact,osm_node,osm,"{""osm"":""node/3451227904""}",,,,,
-07-00012,صيدلية عاشوري,Pharmacie Achouri,صيدلية عاشوري,07,0701,Biskra,34.84432,5.731258,exact,osm_node,osm,"{""osm"":""node/3451313345""}",Achouri Salim,,,,
+07-00012,Pharmacie Achouri;صيدلية عاشوري,Pharmacie Achouri,صيدلية عاشوري,07,0701,Biskra,34.84432,5.731258,exact,osm_node,osm,"{""osm"":""node/3451313345""}",Achouri Salim,,,,
 07-00013,,,,07,0701,Biskra,34.852025,5.741254,exact,osm_node,osm,"{""osm"":""node/3454176466""}",,,,,
-07-00014,صيدلية حجوط,Pharmacie Hadjoutte,صيدلية حجوط,07,0701,Biskra,34.860329,5.715812,exact,osm_node,osm,"{""osm"":""node/3454349979""}",إيناس حجوط,,,,بسكرة
+07-00014,Pharmacie Hadjoutte;صيدلية حجوط,Pharmacie Hadjoutte,صيدلية حجوط,07,0701,Biskra,34.860329,5.715812,exact,osm_node,osm,"{""osm"":""node/3454349979""}",إيناس حجوط,,,,بسكرة
 07-00015,ENDIMED,ENDIMED,,07,0701,Biskra,34.860922,5.71905,exact,osm_node,osm,"{""osm"":""node/3456639775""}",,,,,
 07-00016,,,,07,0701,Biskra,34.857907,5.747425,exact,osm_node,osm,"{""osm"":""node/3458066196""}",,,,,
 07-00017,Pharmacie CHITOUR,Pharmacie Chitour,صيدلية شيتور,07,0727,Bordj Ben Azzouz,34.699348,5.36021,exact,osm_node,osm,"{""osm"":""node/3508714328""}",CHITOUR,,,,
@@ -522,13 +522,13 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 07-00022,صيدلية بن ساهل,PHARMACIE BEN SAHAL,صيدلية بن ساهل,07,0721,Tolga,34.727128,5.384457,exact,osm_node,osm,"{""osm"":""node/4129193494""}",,,,,
 07-00023,صيدلية لعلى,Pharmacie Lâala,صيدلية لعلى,07,0721,Tolga,34.725436,5.397205,exact,osm_node,osm,"{""osm"":""node/4131777221""}",,,,true,
 07-00024,صيدلية بولقرون,Phatmacie Boulgroun,صيدلية بولقرون,07,0721,Tolga,34.729826,5.388245,exact,osm_node,osm,"{""osm"":""node/4132561939""}",صيدلية بولقرون,,8:00-20:00,,tolga 07300
-07-00025,صديلية دبابش,Pharmacie Debabech,صديلية دبابش,07,0701,Biskra,34.848763,5.728001,exact,osm_node,osm,"{""osm"":""node/4173527191""}",,033547230,Mo-Su 08:00-22:00,,Rue Kherachi Ibrahim
+07-00025,Pharmacie Debabech;صديلية دبابش,Pharmacie Debabech,صديلية دبابش,07,0701,Biskra,34.848763,5.728001,exact,osm_node,osm,"{""osm"":""node/4173527191""}",,033547230,Mo-Su 08:00-22:00,,Rue Kherachi Ibrahim
 07-00026,صيدلية كعواني نور الدين,Pharmacie Kaouani noureddine,صيدلية كعواني نور الدين,07,0731,El Ghrous,34.706154,5.283703,exact,osm_node,osm,"{""osm"":""node/4225544056""}",كعواني نور الدين,'+213 560 004 734,24/7,,"033583291 شارع عيسى زيان, الغروس 07027"
 07-00027,Pharmacie Daas,Pharmacie Daas,صيدلية دعاس,07,0721,Tolga,34.734092,5.384414,exact,osm_node,osm,"{""osm"":""node/4251333631""}",,,,true,
 07-00028,,,,07,0721,Tolga,34.730288,5.380844,exact,osm_node,osm,"{""osm"":""node/4251334055""}",,,,,طولقة
 07-00029,,,,07,0711,Sidi Okba,34.755151,5.90559,exact,osm_node,osm,"{""osm"":""node/4425385891""}",,,,,
 07-00030,علوشي,Pharmacie allouchi,علوشي,07,0711,Sidi Okba,34.750476,5.899887,exact,osm_node,osm,"{""osm"":""node/4425607789""}",,,,,
-07-00031,صيدلية الشيخ,Pharmacie CHIKH,صيدلية الشيخ,07,0701,Biskra,34.854811,5.726514,exact,osm_node,osm,"{""osm"":""node/4520851992""}",houssem bougherra,,,,Boulevard Zaatcha
+07-00031,Pharmacie CHIKH;صيدلية الشيخ,Pharmacie CHIKH,صيدلية الشيخ,07,0701,Biskra,34.854811,5.726514,exact,osm_node,osm,"{""osm"":""node/4520851992""}",houssem bougherra,,,,Boulevard Zaatcha
 07-00032,,,,07,0701,Biskra,34.852659,5.743081,exact,osm_node,osm,"{""osm"":""node/4655649689""}",,,,,
 07-00033,صيدلية حواجلي,Pharmacie Houadjli,صيدلية حواجلي,07,0731,El Ghrous,34.705047,5.285383,exact,osm_node,osm,"{""osm"":""node/4679414792""}",,,,true,الغروس
 07-00034,,,,07,0701,Biskra,34.861649,5.749756,exact,osm_node,osm,"{""osm"":""node/4708926289""}",,,,,
@@ -539,7 +539,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 07-00039,,,,07,0711,Sidi Okba,34.830095,5.913287,exact,osm_node,osm,"{""osm"":""node/5188125065""}",,,,,
 07-00040,Pharmacie Ghamri Zakaria,Pharmacie Ghamri Zakaria,,07,0731,El Ghrous,34.721486,5.283203,exact,osm_node,osm,"{""osm"":""node/5234827948""}",,,,,
 07-00041,صيدلية بخوش,Pharmacie Bekhouche,صيدلية بخوش,07,0701,Biskra,34.852327,5.746901,exact,osm_node,osm,"{""osm"":""node/5381029422""}",Warda Bekhouche,,"Sa-Th 08:00-12:00, 14:00-18:00",,
-07-00042,صيدلية عياش مسعود,Pharmacie AYACHE MESSAOUD,صيدلية عياش مسعود,07,0701,Biskra,34.827442,5.719656,exact,osm_node,osm,"{""osm"":""node/5586612324""}",messaoud,00213662461469,,,gueddacha
+07-00042,Pharmacie Ayache Messaoud;صيدلية عياش مسعود,Pharmacie Ayache Messaoud,صيدلية عياش مسعود,07,0701,Biskra,34.827442,5.719656,exact,osm_node,osm,"{""osm"":""node/5586612324""}",messaoud,00213662461469,,,gueddacha
 07-00043,Pharmaxie Meziou,Pharmaxie Meziou,,07,0701,Biskra,34.852268,5.757544,exact,osm_node,osm,"{""osm"":""node/6343563564""}",,,,,
 07-00044,,,,07,0701,Biskra,34.857105,5.716777,exact,osm_node,osm,"{""osm"":""node/6699774785""}",,,,true,
 07-00045,صيدلية رفرافي,Pharmacie Refrafi,صيدلية رفرافي,07,0728,Meziraa,34.718862,6.291492,exact,osm_node,osm,"{""osm"":""node/7006951357""}",,'+213 554 67 30 07,08:00-22:00,true,المزيرعة
@@ -753,13 +753,13 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 12-00004,,,,12,1212,Morsott,35.672855,8.010232,exact,osm_node,osm,"{""osm"":""node/12951305726""}",,,,,
 12-00005,Pharmacie Fares Amir,Pharmacie Fares Amir,,12,1212,Morsott,35.670879,8.005568,exact,osm_node,osm,"{""osm"":""node/12951334989""}",,,,,
 12-00006,Pharmacie Mouici Fawzi,Pharmacie Mouici Fawzi,,12,1212,Morsott,35.668815,8.013234,exact,osm_node,osm,"{""osm"":""node/12951388969""}",,,,,
-12-00007,جفالي,Djeffaly,جفالي,12,1201,Tébessa,35.40409,8.12445,exact,osm_node,osm,"{""osm"":""node/2918664677""}",,,,,تبسة
+12-00007,Djeffaly;جفالي,Djeffaly,جفالي,12,1201,Tébessa,35.40409,8.12445,exact,osm_node,osm,"{""osm"":""node/2918664677""}",,,,,تبسة
 12-00008,,,,12,1201,Tébessa,35.404382,8.1228,exact,osm_node,osm,"{""osm"":""node/2918664702""}",,,,,تبسة
 12-00009,,,,12,1201,Tébessa,35.405012,8.123264,exact,osm_node,osm,"{""osm"":""node/2918664713""}",,,,,تبسة
 12-00010,,,,12,1201,Tébessa,35.409819,8.118887,exact,osm_node,osm,"{""osm"":""node/3263004704""}",,,,,تبسة 12000
 12-00011,,,,12,1217,Bekkaria,35.375597,8.239788,exact,osm_node,osm,"{""osm"":""node/4127861428""}",,,,,بكارية
 12-00012,صيدلية إبراهم فتحي,Pharmacie Braham Fathi,صيدلية إبراهم فتحي,12,1201,Tébessa,35.394843,8.12019,exact,osm_node,osm,"{""osm"":""node/4274581589""}",إبراهم فتحي,,,true,تبسة 12000
-12-00013,Pharmacie 3806 صيدلية,Pharmacie 3806,صيدلية 3806,12,1210,Bir Mokkadem,35.373009,7.805309,exact,osm_node,osm,"{""osm"":""node/4308834989""}",,,,true,بئر مقدم
+12-00013,Pharmacie 3806 صيدلية,Pharmacie 3806,صيدلية 3806,12,1210,Bir Mokkadem,35.373285,7.805165,exact,osm_node,osm,"{""osm"":""node/4308834989""}",,,,true,بئر مقدم
 12-00014,,,,12,1205,El Aouinet,35.866252,7.887513,exact,osm_node,osm,"{""osm"":""node/4449434489""}",,,,,12300
 12-00015,زماش وهاب,Zennach waheb,زماش وهاب,12,1201,Tébessa,35.419415,8.118972,exact,osm_node,osm,"{""osm"":""node/4755872521""}",زماش وهاب,,,true,تبسة
 12-00016,براهميا,Pharmacie Brahmia,براهميا,12,1224,El Meridj,35.794277,8.22736,exact,osm_node,osm,"{""osm"":""node/4816360521""}",,,,,
@@ -767,7 +767,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 12-00018,,,,12,1205,El Aouinet,35.864298,7.886716,exact,osm_node,osm,"{""osm"":""node/5197807726""}",,,,,
 12-00019,صيدلية وسط المدينة,Pharmacie du centre-ville,صيدلية وسط المدينة,12,1205,El Aouinet,35.866891,7.886957,exact,osm_node,osm,"{""osm"":""node/5197807727""}",,,,true,
 12-00020,,,,12,1201,Tébessa,35.402041,8.11093,exact,osm_node,osm,"{""osm"":""node/5308435324""}",,,,,تبسة
-12-00021,صيدلية خذيري مليك,Pharmacie Khediri malik,صيدلية خذيري مليك,12,1201,Tébessa,35.407696,8.112312,exact,osm_node,osm,"{""osm"":""node/5347477942""}",خذيري مليك,,24/7,,"شارع الأمير عبد القادر, تبسة"
+12-00021,صيدلية خذيري مليك,Pharmacie Khediri malik,صيدلية خذيري مليك,12,1201,Tébessa,35.407696,8.112312,exact,osm_node,osm,"{""osm"":""node/5347477942""}",خذيري مليك,,24/7,true,"شارع الأمير عبد القادر, تبسة"
 12-00022,صيدلية مسار عبده,Pharmacie Messar Abdo,صيدلية مسار عبده,12,1210,Bir Mokkadem,35.372449,7.809962,exact,osm_node,osm,"{""osm"":""node/6180582651""}",,,,true,بئر مقدم
 12-00023,صيدلية أحمد شاويش,Pharmacie Ahmed Chaouch,صيدلية أحمد شاويش,12,1201,Tébessa,35.38948,8.105887,exact,osm_node,osm,"{""osm"":""node/6182410957""}",,,,true,"طريق الميزاب, تبسة 12000"
 12-00024,جباري عمار,Djabarri Ammar,جباري عمار,12,1203,Cheria,35.261204,7.751954,exact,osm_node,osm,"{""osm"":""node/6223423786""}",,,,,
@@ -787,7 +787,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 13-00002,,,,13,1301,Tlemcen,34.884239,-1.32819,exact,osm_node,osm,"{""osm"":""node/10024820550""}",,,,,
 13-00003,Pharmacie Hamza Cherif,Pharmacie Hamza Cherif,,13,1301,Tlemcen,34.882909,-1.326348,exact,osm_node,osm,"{""osm"":""node/10067642566""}",,,,,
 13-00004,,,,13,1301,Tlemcen,34.88249,-1.303693,exact,osm_node,osm,"{""osm"":""node/10067669128""}",,,,,
-13-00005,صيدلية رحال,Pharmacie Rahhal,صيدلية رحال,13,1313,Ouled Mimoun,34.90495,-1.027343,exact,osm_node,osm,"{""osm"":""node/11406139870""}",,,,,
+13-00005,Pharmacie Rahhal;صيدلية رحال,Pharmacie Rahhal,صيدلية رحال,13,1313,Ouled Mimoun,34.90495,-1.027343,exact,osm_node,osm,"{""osm"":""node/11406139870""}",,,,,
 13-00006,,,,13,1301,Tlemcen,34.888131,-1.326352,exact,osm_node,osm,"{""osm"":""node/1156421093""}",,,,,تلمسان
 13-00007,LOKBANI,LOKBANI,,13,1301,Tlemcen,34.884324,-1.325733,exact,osm_node,osm,"{""osm"":""node/1156426964""}",,,,,
 13-00008,,,,13,1301,Tlemcen,34.878591,-1.325559,exact,osm_node,osm,"{""osm"":""node/1161105687""}",,,,,تلمسان
@@ -806,11 +806,11 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 13-00023,,,,13,1351,Mansourah,34.869463,-1.334881,exact,osm_node,osm,"{""osm"":""node/3098530623""}",,,,,
 13-00024,,,,13,1351,Mansourah,34.887558,-1.339828,exact,osm_node,osm,"{""osm"":""node/3098589755""}",,,,,المنصورة
 13-00025,,,,13,1301,Tlemcen,34.878514,-1.318653,exact,osm_node,osm,"{""osm"":""node/3202298644""}",,,,,تلمسان
-13-00026,MOUS,MOUS,,13,1327,Maghnia,34.8482,-1.749573,exact,osm_node,osm,"{""osm"":""node/3641774419""}",,,,,
-13-00027,صيدلية موساوي,Pharmacie Moussaoui,صيدلية موساوي,13,1327,Maghnia,34.847592,-1.75203,exact,osm_node,osm,"{""osm"":""node/3641774420""}",,,Mo-Su 08:00-01:00,,13300
+13-00026,MOUS,Mous,,13,1327,Maghnia,34.8482,-1.749573,exact,osm_node,osm,"{""osm"":""node/3641774419""}",,,,,
+13-00027,Pharmacie Moussaoui;صيدلية موساوي,Pharmacie Moussaoui,صيدلية موساوي,13,1327,Maghnia,34.847592,-1.75203,exact,osm_node,osm,"{""osm"":""node/3641774420""}",,,Mo-Su 08:00-01:00,,13300
 13-00028,Almeditech Boughoumd,Almeditech Boughoumd,,13,1327,Maghnia,34.848745,-1.746247,exact,osm_node,osm,"{""osm"":""node/3641774421""}",,,,,
 13-00029,,,,13,1327,Maghnia,34.84823,-1.74128,exact,osm_node,osm,"{""osm"":""node/3641774422""}",,,,,مغنية
-13-00030,صيدلية نير,Pharmacie Nair,صيدلية نير,13,1327,Maghnia,34.847655,-1.727125,exact,osm_node,osm,"{""osm"":""node/3675703257""}",,,,,مغنية
+13-00030,Pharmacie Nair;صيدلية نير,Pharmacie Nair,صيدلية نير,13,1327,Maghnia,34.847655,-1.727125,exact,osm_node,osm,"{""osm"":""node/3675703257""}",,,,,مغنية
 13-00031,Pharmacie Chenini,Pharmacie Chenini,,13,1301,Tlemcen,34.923216,-1.330207,exact,osm_node,osm,"{""osm"":""node/4080344245""}",,,,,
 13-00032,Pharmacie Beb El Khemis,Pharmacie Beb El Khemis,,13,1301,Tlemcen,34.874327,-1.324068,exact,osm_node,osm,"{""osm"":""node/4154471904""}",,,,,
 13-00033,MEKHFI Abdennour,MEKHFI Abdennour,,13,1327,Maghnia,34.849421,-1.752457,exact,osm_node,osm,"{""osm"":""node/4154618437""}",Mekhfi,,08:00-23:00,,Maghnia 13300
@@ -830,11 +830,11 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 13-00047,Pharmacie Hamdani,Pharmacie Hamdani,,13,1306,Sabra,34.829524,-1.52524,exact,osm_node,osm,"{""osm"":""node/4385376642""}",Hamdani Sihem,,,,
 13-00048,Pharmacie Bouhafena,Pharmacie Bouhafena,,13,1306,Sabra,34.829978,-1.522917,exact,osm_node,osm,"{""osm"":""node/4385376643""}",,,,,
 13-00049,Pharmacie Ferradj,Pharmacie Ferradj,,13,1306,Sabra,34.828416,-1.527854,exact,osm_node,osm,"{""osm"":""node/4385386222""}",Ferradj A.GHANI,,,,
-13-00050,صيدلية حقيقي,pharmacie HAKIKI,صيدلية حقيقي,13,1327,Maghnia,34.85193,-1.738006,exact,osm_node,osm,"{""osm"":""node/4405253091""}",,,,,مغنية
-13-00051,صيدلية مداني,Pharmacie MADANI,صيدلية مداني,13,1327,Maghnia,34.848289,-1.739624,exact,osm_node,osm,"{""osm"":""node/4405970689""}",,,,,مغنية
+13-00050,pharmacie HAKIKI;صيدلية حقيقي,pharmacie HAKIKI,صيدلية حقيقي,13,1327,Maghnia,34.85193,-1.738006,exact,osm_node,osm,"{""osm"":""node/4405253091""}",,,,,مغنية
+13-00051,Pharmacie MADANI;صيدلية مداني,Pharmacie MADANI,صيدلية مداني,13,1327,Maghnia,34.848289,-1.739624,exact,osm_node,osm,"{""osm"":""node/4405970689""}",,,,,مغنية
 13-00052,Boukais Rachid,Boukais Rachid,,13,1327,Maghnia,34.849405,-1.743054,exact,osm_node,osm,"{""osm"":""node/4420546104""}",,,,,
 13-00053,Boussekkine,Boussekkine,بوسكين,13,1327,Maghnia,34.851264,-1.729513,exact,osm_node,osm,"{""osm"":""node/4420546105""}",,,,,
-13-00054,حسين بنعمارة,Hocine Benamara,حسين بنعمارة,13,1327,Maghnia,34.84585,-1.726033,exact,osm_node,osm,"{""osm"":""node/4420546106""}",حسين بنعمارة,,,,مغنية
+13-00054,Hocine Benamara;حسين بنعمارة,Hocine Benamara,حسين بنعمارة,13,1327,Maghnia,34.84585,-1.726033,exact,osm_node,osm,"{""osm"":""node/4420546106""}",حسين بنعمارة,,,,مغنية
 13-00055,Miraoui,Miraoui,,13,1327,Maghnia,34.845257,-1.747505,exact,osm_node,osm,"{""osm"":""node/4420546107""}",,,,,
 13-00056,Tighezza,Tighezza,,13,1327,Maghnia,34.8479,-1.744074,exact,osm_node,osm,"{""osm"":""node/4420546108""}",,,,,
 13-00057,Pharmacie madouri,Pharmacie madouri,,13,1327,Maghnia,34.850583,-1.735747,exact,osm_node,osm,"{""osm"":""node/4444610692""}",,,,,
@@ -856,8 +856,8 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 13-00073,,,,13,1301,Tlemcen,34.88546,-1.305505,exact,osm_node,osm,"{""osm"":""node/5614188023""}",,,,,
 13-00074,Pharmacie Boukli Hassen,Pharmacie Boukli Hassen,صيدلية بوكلي حسان,13,1312,Ain Fezza,34.878313,-1.23846,exact,osm_node,osm,"{""osm"":""node/5644778221""}",,043591261,,,13022
 13-00075,djaafar,djaafar,,13,1334,Sidi Abdelli,35.064579,-1.129976,exact,osm_node,osm,"{""osm"":""node/5927841466""}",,,,,bd martyr tadjouri abderrahmane
-13-00076,صيدلية العربي,Pharmacie Larabi,صيدلية العربي,13,1339,Marsa Ben M'Hidi,35.079214,-2.204909,exact,osm_node,osm,"{""osm"":""node/6313081585""}",,,,,مرسى بن مهيدي
-13-00077,صيدلية أوكبدان,Pharmacie Oukebdane,صيدلية أوكبدان,13,1339,Marsa Ben M'Hidi,35.082832,-2.200171,exact,osm_node,osm,"{""osm"":""node/6313081586""}",,,,,مرسى بن مهيدي
+13-00076,Pharmacie Larabi;صيدلية العربي,Pharmacie Larabi,صيدلية العربي,13,1339,Marsa Ben M'Hidi,35.079214,-2.204909,exact,osm_node,osm,"{""osm"":""node/6313081585""}",,,,,مرسى بن مهيدي
+13-00077,Pharmacie Oukebdane;صيدلية أوكبدان,Pharmacie Oukebdane,صيدلية أوكبدان,13,1339,Marsa Ben M'Hidi,35.082832,-2.200171,exact,osm_node,osm,"{""osm"":""node/6313081586""}",,,,,مرسى بن مهيدي
 13-00078,,,,13,1301,Tlemcen,34.877524,-1.323422,exact,osm_node,osm,"{""osm"":""node/6358120886""}",,,,,تلمسان
 13-00079,Pharmacie,Pharmacie,,13,1351,Mansourah,34.872995,-1.367137,exact,osm_node,osm,"{""osm"":""node/6358126985""}",,,,,"Evitement Ouest de Tlemcen, 13000"
 13-00080,Pharmacie 2206,Pharmacie 2206,,13,1351,Mansourah,34.874733,-1.36769,exact,osm_node,osm,"{""osm"":""node/6358126986""}",,,,true,
@@ -1078,6 +1078,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 15-00103,,,,15,1512,Bounouh,36.49916,3.937337,approximate,osm_centroid,osm,"{""osm"":""way/307015658""}",,,,,
 15-00104,,,,15,1564,Tadmait,36.748282,3.899406,approximate,osm_centroid,osm,"{""osm"":""way/944178107""}",Smail O.,,,true,
 15-00105,Pharmacy: AMGOUD,Pharmacie AMGOUD,,15,1564,Tadmait,36.746784,3.900052,approximate,osm_centroid,osm,"{""osm"":""way/944178109""}",AMGOUD M.,,,true,
+15-00106,,,,15,1556,Ait Yahia Moussa,36.638066,3.887215,exact,osm_node,osm,"{""osm"":""node/14232448201""}",,,24/7,,Ait yahia moussa
 16-00001,,,,16,1618,Kouba,36.726937,3.095639,exact,osm_node,osm,"{""osm"":""node/1050160749""}",,,,,
 16-00002,,,,16,1643,Reghaia,36.739297,3.344649,exact,osm_node,osm,"{""osm"":""node/10542756285""}",,,,,
 16-00003,,,,16,1644,Ain Benian,36.803885,2.919713,exact,osm_node,osm,"{""osm"":""node/10741092328""}",,,,,
@@ -1135,7 +1136,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00055,Pharmacie Chetih,Pharmacie Chetih,,16,1650,Cheraga,36.760624,2.9173,exact,osm_node,osm,"{""osm"":""node/13074443081""}",,,,,
 16-00056,,,,16,1622,Ben Aknoun,36.755012,3.01147,exact,osm_node,osm,"{""osm"":""node/1314917786""}",,,,,
 16-00057,Paramédicale,Paramédicale,,16,1602,Sidi M'hamed,36.76222,3.051137,exact,osm_node,osm,"{""osm"":""node/13161641984""}",,,,,
-16-00058,صيدلية سالمي,,صيدلية سالمي,16,1630,Bordj El Kiffan,36.744639,3.198341,exact,osm_node,osm,"{""osm"":""node/13192282529""}",,,,,
+16-00058,صيدلية سالمي,Pharmacie Salmi,صيدلية سالمي,16,1630,Bordj El Kiffan,36.744639,3.198341,exact,osm_node,osm,"{""osm"":""node/13192282529""}",,,,,
 16-00059,,,,16,1644,Ain Benian,36.799935,2.915475,exact,osm_node,osm,"{""osm"":""node/13204727741""}",,,,,
 16-00060,صيدلية,,صيدلية,16,1633,Les Eucalyptus,36.661381,3.146254,exact,osm_node,osm,"{""osm"":""node/13237786003""}",,,,,
 16-00061,,,,16,1646,Zeralda,36.671828,2.853306,exact,osm_node,osm,"{""osm"":""node/13304491208""}",,,,,
@@ -1152,7 +1153,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00072,,,,16,1651,Ouled Fayet,36.73865,2.950692,exact,osm_node,osm,"{""osm"":""node/1347965128""}",,,,,
 16-00073,Pharmacie Misraou,Pharmacie Misraou,,16,1651,Ouled Fayet,36.735845,2.950551,exact,osm_node,osm,"{""osm"":""node/1347966716""}",Misraou,,,,
 16-00074,Parapharmaceutique,Parapharmaceutique,,16,1630,Bordj El Kiffan,36.771955,3.25622,exact,osm_node,osm,"{""osm"":""node/13694576922""}",,,,,
-16-00075,صيدلية جلّالي,,صيدلية جلّالي,16,1630,Bordj El Kiffan,36.749683,3.207577,exact,osm_node,osm,"{""osm"":""node/13798433869""}",,,,,
+16-00075,صيدلية جلّالي,Pharmacie Djellali,صيدلية جلّالي,16,1630,Bordj El Kiffan,36.749683,3.207577,exact,osm_node,osm,"{""osm"":""node/13798433869""}",,,,,
 16-00076,Bordj El Bahri,Bordj El Bahri,,16,1639,Bordj El Bahri,36.78451,3.236635,exact,osm_node,osm,"{""osm"":""node/1427534111""}",,,,,
 16-00077,Cafe Chergi,Cafe Chergi,,16,1639,Bordj El Bahri,36.778866,3.245585,exact,osm_node,osm,"{""osm"":""node/1427534176""}",,,,,
 16-00078,Cafe Chergi Centre,Cafe Chergi Centre,,16,1639,Bordj El Bahri,36.778441,3.248261,exact,osm_node,osm,"{""osm"":""node/1427534177""}",,,,,
@@ -1217,7 +1218,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00137,,,,16,1601,Alger Centre,36.775299,3.057466,exact,osm_node,osm,"{""osm"":""node/2710700975""}",,,,,Alger Centre
 16-00138,,,,16,1649,Souidania,36.707206,2.91058,exact,osm_node,osm,"{""osm"":""node/2712277537""}",,,,,
 16-00139,,,,16,1608,Oued Koriche,36.787523,3.045166,exact,osm_node,osm,"{""osm"":""node/2715699493""}",,,,,وادي قريش
-16-00140,طارق بن زياد,Tariq ibn Ziyad,طارق بن زياد,16,1608,Oued Koriche,36.778338,3.045723,exact,osm_node,osm,"{""osm"":""node/2717525307""}",,,,,وادي قريش
+16-00140,Tariq ibn Ziyad;طارق بن زياد,Tariq ibn Ziyad,طارق بن زياد,16,1608,Oued Koriche,36.778338,3.045723,exact,osm_node,osm,"{""osm"":""node/2717525307""}",,,,,وادي قريش
 16-00141,,,,16,1605,Bab El Oued,36.78837,3.05409,exact,osm_node,osm,"{""osm"":""node/2720706581""}",,,,,
 16-00142,ABADA Yasmine,ABADA Yasmine,,16,1612,Birkhadem,36.717717,3.04553,exact,osm_node,osm,"{""osm"":""node/2744529518""}",,,,,
 16-00143,Pharmacie Belkorichi,Pharmacie Belkorichi,صيدلية بلقريشي,16,1607,Casbah,36.781468,3.061256,exact,osm_node,osm,"{""osm"":""node/2744533826""}",,,,true,القصبة
@@ -1291,7 +1292,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00211,,,,16,1646,Zeralda,36.712983,2.837942,exact,osm_node,osm,"{""osm"":""node/2994067601""}",,,,,
 16-00212,,,,16,1611,Bouzareah,36.777704,3.009368,exact,osm_node,osm,"{""osm"":""node/2999560175""}",,,,,
 16-00213,,,,16,1629,Mohammadia,36.733072,3.174344,exact,osm_node,osm,"{""osm"":""node/3009231816""}",,,8:00-22:00,,
-16-00214,صيدلية بلقاسمي,,صيدلية بلقاسمي,16,1630,Bordj El Kiffan,36.746343,3.199558,exact,osm_node,osm,"{""osm"":""node/3009232399""}",,,,,
+16-00214,صيدلية بلقاسمي,Pharmacie Belkacemi,صيدلية بلقاسمي,16,1630,Bordj El Kiffan,36.746343,3.199558,exact,osm_node,osm,"{""osm"":""node/3009232399""}",,,,,
 16-00215,,,,16,1646,Zeralda,36.712799,2.840723,exact,osm_node,osm,"{""osm"":""node/3020958371""}",,,,,
 16-00216,,,,16,1617,Hussein Dey,36.737721,3.102312,exact,osm_node,osm,"{""osm"":""node/3023209629""}",,,,,"شارع بوجمعة المغني, حسين داي"
 16-00217,,,,16,1617,Hussein Dey,36.738994,3.100255,exact,osm_node,osm,"{""osm"":""node/3023226309""}",,,,,حسين داي
@@ -1356,7 +1357,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00276,cafe chargi,cafe chargi,,16,1639,Bordj El Bahri,36.77858,3.247891,exact,osm_node,osm,"{""osm"":""node/3320491156""}",,,,,
 16-00277,,,,16,1621,Bab Ezzouar,36.724041,3.18405,exact,osm_node,osm,"{""osm"":""node/3323275608""}",,,,,
 16-00278,Pharmacie Benabdesseleme,Pharmacie Benabdesseleme,,16,1620,Dar El Beida,36.715904,3.211583,exact,osm_node,osm,"{""osm"":""node/3323722332""}",,,,,"Rue Frères Abbas, Dar El Beïda"
-16-00280,بن موفق,Benmouafek,بن موفق,16,1602,Sidi M'hamed,36.76612,3.052048,exact,osm_node,osm,"{""osm"":""node/3362202458""}",بن موفق,,,,"شارع ديدوش مراد, سيدي امحمد"
+16-00280,Benmouafek بن موفق,Benmouafek,بن موفق,16,1602,Sidi M'hamed,36.76612,3.052048,exact,osm_node,osm,"{""osm"":""node/3362202458""}",بن موفق,,,,"شارع ديدوش مراد, سيدي امحمد"
 16-00281,Sabiane,Sabiane,سبيان,16,1629,Mohammadia,36.737946,3.143266,exact,osm_node,osm,"{""osm"":""node/3362203361""}",,,,,
 16-00282,Tagara,Tagara,,16,1610,El Biar,36.76066,3.042406,exact,osm_node,osm,"{""osm"":""node/3398375765""}",,,,,
 16-00283,,,,16,1609,Bir Mourad Rais,36.73408,3.046136,exact,osm_node,osm,"{""osm"":""node/3402021841""}",,,,,
@@ -1448,7 +1449,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00369,,,,16,1629,Mohammadia,36.731214,3.173785,exact,osm_node,osm,"{""osm"":""node/4341811651""}",,,,,المحمدية
 16-00370,Younes,Younes,,16,1644,Ain Benian,36.804159,2.923352,exact,osm_node,osm,"{""osm"":""node/4343266842""}",,,,,
 16-00371,Djaballah med chakib,Djaballah med chakib,,16,1639,Bordj El Bahri,36.789545,3.249967,exact,osm_node,osm,"{""osm"":""node/4344231393""}",,,,,
-16-00372,Pharmarcie Kaci,Pharmarcie Kaci,,16,1621,Bab Ezzouar,36.731701,3.184988,exact,osm_node,osm,"{""osm"":""node/4344773997""}",,,,,
+16-00372,سوريكال,Sorecal,سوريكال,16,1621,Bab Ezzouar,36.731701,3.184988,exact,osm_node,osm,"{""osm"":""node/4344773997""}",,'+213472999849,,true,
 16-00373,,,,16,1621,Bab Ezzouar,36.739203,3.192881,exact,osm_node,osm,"{""osm"":""node/4344866291""}",,,,,
 16-00374,,,,16,1621,Bab Ezzouar,36.730443,3.183395,exact,osm_node,osm,"{""osm"":""node/4344866292""}",,,,,
 16-00375,,,,16,1639,Bordj El Bahri,36.789559,3.249974,exact,osm_node,osm,"{""osm"":""node/4356391893""}",,,,,
@@ -1723,7 +1724,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00645,Mohamdi,Mohamdi,,16,1631,El Magharia,36.731266,3.108658,exact,osm_node,osm,"{""osm"":""node/6396302085""}",,,,,
 16-00646,,,,16,1633,Les Eucalyptus,36.660251,3.155745,exact,osm_node,osm,"{""osm"":""node/6414807786""}",,,,,
 16-00647,,,,16,1621,Bab Ezzouar,36.733464,3.183363,exact,osm_node,osm,"{""osm"":""node/6481394124""}",,,,,
-16-00648,Parapharmacie,Parapharmacie,,16,1621,Bab Ezzouar,36.733244,3.183822,exact,osm_node,osm,"{""osm"":""node/6481394125""}",,,,,
+16-00648,Parapharmacie,Parapharmacie,,16,1621,Bab Ezzouar,36.733158,3.183802,exact,osm_node,osm,"{""osm"":""node/6481394125""}",,,,,
 16-00649,Mechernane,Mechernane,,16,1650,Cheraga,36.742926,2.911654,exact,osm_node,osm,"{""osm"":""node/6547151803""}",,,,,
 16-00650,,,,16,1620,Dar El Beida,36.722691,3.212995,exact,osm_node,osm,"{""osm"":""node/6547153270""}",,,,,
 16-00651,New pharmacien,New pharmacien,,16,1620,Dar El Beida,36.724984,3.222245,exact,osm_node,osm,"{""osm"":""node/6547154542""}",,,,,
@@ -1826,6 +1827,9 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00748,Pharmacy de draria,Pharmacy de draria,,16,1653,Draria,36.730915,2.998129,exact,osm_node,osm,"{""osm"":""node/14064594002""}",,,,,Chemin Benamara Abdelkader
 16-00749,Pharmacy de zghara,Pharmacy de zghara,,16,1606,Bologhine Ibnou Ziri,36.806388,3.027293,exact,osm_node,osm,"{""osm"":""node/14064594101""}",,,Mo-Su 06:30-21:00,,Rue Mohamed Mehenni شارع محمد مهني
 16-00750,Benmesbah Pharmacie,Benmesbah Pharmacie,,16,1650,Cheraga,36.762299,2.92583,exact,osm_node,osm,"{""osm"":""node/14077467958""}",,,,,
+16-00751,pharmacie,pharmacie,,16,1601,Alger Centre,36.778507,3.055444,exact,osm_node,osm,"{""osm"":""node/14138326302""}",,,,,
+16-00752,Pharmacie Ali,Pharmacie Ali,,16,1601,Alger Centre,36.778433,3.056591,exact,osm_node,osm,"{""osm"":""node/14138336601""}",,,,,
+16-00753,Pharmacie Akrour,Pharmacie Akrour,,16,1623,Dely Ibrahim,36.7674,3.007633,exact,osm_node,osm,"{""osm"":""node/14145467609""}",Akrour,,,true,
 17-00001,صيدلية شويحة,pharmacie Chouiha,صيدلية شويحة,17,1701,Djelfa,34.675748,3.275648,exact,osm_node,osm,"{""osm"":""node/11314422169""}",,,24/7,,
 17-00002,صيدلية اليمين سعدية,,صيدلية اليمين سعدية,17,1704,Hassi Bahbah,35.075227,3.02526,exact,osm_node,osm,"{""osm"":""node/11377416370""}",,,,true,
 17-00003,,,,17,1736,Tadmit,34.286977,2.988265,exact,osm_node,osm,"{""osm"":""node/12872768444""}",,,,,
@@ -1891,7 +1895,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 18-00005,صيدلية برغيدة,Pharmacie Berguida,صيدلية برغيدة,18,1805,Taher,36.771644,5.899038,exact,osm_node,osm,"{""osm"":""node/12573463573""}",برغيدة,,,true,18002
 18-00006,صيدلية كبيش,Pharmacie Kebiche,صيدلية كبيش,18,1805,Taher,36.772438,5.897629,exact,osm_node,osm,"{""osm"":""node/12573463578""}",,,,true,
 18-00007,صيدلية مهيبل,Pharmacie Mehibel,صيدلية مهيبل,18,1805,Taher,36.77516,5.898903,exact,osm_node,osm,"{""osm"":""node/12573463617""}",,,,,
-18-00008,صيدلبة المحطة,,صيدلبة المحطة,18,1801,Jijel,36.810184,5.772976,exact,osm_node,osm,"{""osm"":""node/12716037521""}",,,,true,
+18-00008,صيدلبة المحطة,Pharmacie de la Gare,صيدلبة المحطة,18,1801,Jijel,36.810184,5.772976,exact,osm_node,osm,"{""osm"":""node/12716037521""}",,,,true,
 18-00009,,,,18,1825,Djemaa Beni Habibi,36.810033,6.125626,exact,osm_node,osm,"{""osm"":""node/12925532265""}",,,,,
 18-00010,صيدلية بوغرة,Pharmacie Bougherra,صيدلية بوغرة,18,1828,Oudjana,36.715837,5.897086,exact,osm_node,osm,"{""osm"":""node/12982090946""}",,,,true,
 18-00011,,,,18,1805,Taher,36.812447,5.911466,exact,osm_node,osm,"{""osm"":""node/12985646531""}",,,,,
@@ -1922,8 +1926,8 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 18-00036,صيدلية بلاح,Pharmacie Bellah,صيدلية بلاح,18,1809,El Milia,36.750782,6.281297,exact,osm_node,osm,"{""osm"":""node/13144005608""}",,,,,
 18-00037,صيدلية بوفناية,Pharmacie Boufnaïa,صيدلية بوفناية,18,1807,Chekfa,36.798887,5.949013,exact,osm_node,osm,"{""osm"":""node/13145116640""}",,,,true,
 18-00038,,,,18,1801,Jijel,36.821779,5.764941,exact,osm_node,osm,"{""osm"":""node/13156054143""}",,,,true,
-18-00039,صيدلية كيموش,,صيدلية كيموش,18,1801,Jijel,36.817835,5.752069,exact,osm_node,osm,"{""osm"":""node/13971971781""}",,,,true,
-18-00040,صيدلية شابو,,صيدلية شابو,18,1801,Jijel,36.799889,5.745354,exact,osm_node,osm,"{""osm"":""node/13971993322""}",,,,,
+18-00039,صيدلية كيموش,Pharmacie Kimouche,صيدلية كيموش,18,1801,Jijel,36.817835,5.752069,exact,osm_node,osm,"{""osm"":""node/13971971781""}",,,,true,
+18-00040,صيدلية شابو,Pharmacie Chabou,صيدلية شابو,18,1801,Jijel,36.799889,5.745354,exact,osm_node,osm,"{""osm"":""node/13971993322""}",,,,,
 18-00041,,,,18,1801,Jijel,36.813107,5.73535,exact,osm_node,osm,"{""osm"":""node/13974112811""}",,,,true,
 18-00042,صيدلية حاجي,Pharmacie Hadji,صيدلية حاجي,18,1805,Taher,36.770243,5.896774,exact,osm_node,osm,"{""osm"":""node/2579665336""}",,,,true,
 18-00043,صيدلية بن السوهالي,Pharmacie Bensouhali,صيدلية بن السوهالي,18,1805,Taher,36.769025,5.897887,exact,osm_node,osm,"{""osm"":""node/2579665338""}",,,,true,
@@ -1950,7 +1954,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 19-00002,pharmacie harbadji houda,pharmacie harbadji houda,,19,1930,Bouandas,36.494178,5.102162,exact,osm_node,osm,"{""osm"":""node/11697238369""}",,,,,
 19-00003,Pharmacie Tebtoub,Pharmacie Tebtoub,,19,1926,Ain Arnat,36.184343,5.307876,exact,osm_node,osm,"{""osm"":""node/12813770256""}",,,,,
 19-00004,Pharmacie Makhlouf Rafika,Pharmacie Makhlouf Rafika,,19,1926,Ain Arnat,36.192518,5.328904,exact,osm_node,osm,"{""osm"":""node/12813770257""}",,,,,
-19-00005,صيدلية تغيوارت,,صيدلية تغيوارت,19,1926,Ain Arnat,36.19354,5.329917,exact,osm_node,osm,"{""osm"":""node/12813770258""}",,,,,
+19-00005,صيدلية تغيوارت,Pharmacie Taghiouart,صيدلية تغيوارت,19,1926,Ain Arnat,36.19354,5.329917,exact,osm_node,osm,"{""osm"":""node/12813770258""}",,,,,
 19-00006,pharmacie CHOUGUI,pharmacie CHOUGUI,,19,1926,Ain Arnat,36.195114,5.324016,exact,osm_node,osm,"{""osm"":""node/12813770259""}",,,,,
 19-00007,Pharmacie Bouima A.,Pharmacie Bouima A.,,19,1926,Ain Arnat,36.191586,5.317025,exact,osm_node,osm,"{""osm"":""node/12816702869""}",,,,,
 19-00008,,,,19,1926,Ain Arnat,36.191328,5.312994,exact,osm_node,osm,"{""osm"":""node/12816702870""}",,,,,
@@ -1964,7 +1968,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 19-00016,,,,19,1901,Setif,36.202181,5.422919,exact,osm_node,osm,"{""osm"":""node/1958839533""}",KHARCHI FAKIA EP LAAMECHE,,,,
 19-00017,,,,19,1901,Setif,36.18892,5.40813,exact,osm_node,osm,"{""osm"":""node/1962627494""}",Touati AEK,,,,
 19-00018,Pharmacie Nafti,Pharmacie Nafti,,19,1901,Setif,36.200875,5.412806,exact,osm_node,osm,"{""osm"":""node/1965123632""}",,,,,
-19-00019,وعيسى عز الدين,Ouaissa Azzedine,وعيسى عز الدين,19,1901,Setif,36.189318,5.405752,exact,osm_node,osm,"{""osm"":""node/1965123665""}",وعيسى عز الدين,,,,"20 شارع 8 مايو 1945, سطيف"
+19-00019,Ouaissa Azzedine;وعيسى عز الدين,Ouaissa Azzedine,وعيسى عز الدين,19,1901,Setif,36.189318,5.405752,exact,osm_node,osm,"{""osm"":""node/1965123665""}",وعيسى عز الدين,,,,"20 شارع 8 مايو 1945, سطيف"
 19-00020,Ibn Sina,Ibn Sina,,19,1901,Setif,36.190374,5.424859,exact,osm_node,osm,"{""osm"":""node/1969967471""}",,,,,
 19-00021,,,,19,1928,Ain Oulmene,35.925973,5.293128,exact,osm_node,osm,"{""osm"":""node/2504392705""}",,,,,Ain Oulmane
 19-00022,Slimani Naima,Slimani Naima,,19,1901,Setif,36.195294,5.401194,exact,osm_node,osm,"{""osm"":""node/2872408273""}",,,,,
@@ -2002,12 +2006,12 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 19-00054,Charef,Charef,,19,1901,Setif,36.190676,5.41456,exact,osm_node,osm,"{""osm"":""node/4470226192""}",,,,,
 19-00055,Pharmacie,Pharmacie,,19,1911,Hamma,35.682713,5.378801,exact,osm_node,osm,"{""osm"":""node/4510699799""}",,,,,
 19-00056,صيدلية ابن القيم,Pharmacie Ibn kayem,صيدلية ابن القيم,19,1911,Hamma,35.683421,5.37604,exact,osm_node,osm,"{""osm"":""node/4510759389""}",,,,true,
-19-00057,,,,19,1955,Maouaklane,36.3974,5.077615,exact,osm_node,osm,"{""osm"":""node/4518597391""}",,,,,
+19-00057,,,,19,1955,Maouaklane,36.397402,5.077758,exact,osm_node,osm,"{""osm"":""node/4518597391""}",,,,,
 19-00058,صيدلية بن ودفل,Pharmacie ben wadfall,صيدلية بن ودفل,19,1955,Maouaklane,36.396749,5.074599,exact,osm_node,osm,"{""osm"":""node/4518628390""}",,,,,
 19-00059,صيدلية بن عبيد,Pharmacie ben abid,صيدلية بن عبيد,19,1955,Maouaklane,36.396204,5.07844,exact,osm_node,osm,"{""osm"":""node/4518629089""}",,,,,
 19-00060,Pharmaçie BEKAKCHI. F,Pharmaçie BEKAKCHI. F,,19,1937,El Ouricia,36.264594,5.345835,exact,osm_node,osm,"{""osm"":""node/4562072690""}",,036745135,Sa-Th 08:00-08:00,,"RN 75, 19111"
 19-00061,Ouaza,Ouaza,,19,1906,Ain-Roua,36.335163,5.179808,exact,osm_node,osm,"{""osm"":""node/4572201833""}",,,,,
-19-00062,صيدلية خرة,Pharmacie Kherra,صيدلية خرة,19,1901,Setif,36.20043,5.409633,exact,osm_node,osm,"{""osm"":""node/4607766190""}",,036616224,,,"شارع حراق محمد سنوسي, سطيف"
+19-00062,Pharmacie Kherra;صيدلية خرة,Pharmacie Kherra,صيدلية خرة,19,1901,Setif,36.20043,5.409633,exact,osm_node,osm,"{""osm"":""node/4607766190""}",,036616224,,,"شارع حراق محمد سنوسي, سطيف"
 19-00063,بلعكري عبد الرحيم,Pharmacie Belakri Abdel Rahim,بلعكري عبد الرحيم,19,1939,Salah Bey,35.853635,5.290494,exact,osm_node,osm,"{""osm"":""node/4623282092""}",عبد الرحيم بلعكري,,,,صالح باي 19300
 19-00064,Bachir Cherif,Bachir Cherif,,19,1903,Beni-Aziz,36.463525,5.645837,exact,osm_node,osm,"{""osm"":""node/4624285700""}",,,,,
 19-00065,Pharmacie Endimed,Pharmacie Endimed,اندماد,19,1906,Ain-Roua,36.337538,5.177003,exact,osm_node,osm,"{""osm"":""node/4742789025""}",,,,true,
@@ -2061,7 +2065,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 20-00003,Benouis Mohamed Amine,Benouis Mohamed Amine,بن ويس محمد أمين,20,2001,Saida,34.841761,0.160965,exact,osm_node,osm,"{""osm"":""node/4096992056""}",,,,,
 20-00004,PHARMACIE Bouchikhi yacine,PHARMACIE Bouchikhi yacine,,20,2001,Saida,34.852212,0.137156,exact,osm_node,osm,"{""osm"":""node/5482509927""}",,,,,
 20-00005,Addadi moulat,Addadi moulat,,20,2001,Saida,34.832338,0.15023,exact,osm_node,osm,"{""osm"":""node/8689077019""}",,,,,
-21-00001,Pharmacie du DR KHELLAF Samy,Pharmacie du DR KHELLAF Samy,,21,2101,Skikda,36.879492,6.906625,exact,osm_node,osm,"{""osm"":""node/10984649642""}",,,,,"43 Kadour Belizidia, SKIKDA 21000"
+21-00001,Pharmacie du DR KHELLAF Samy,Pharmacie du DR KHELLAF Samy,,21,2101,Skikda,36.879487,6.906618,exact,osm_node,osm,"{""osm"":""node/10984649642""}",,,,,"43 Kadour Belizidia, SKIKDA 21000"
 21-00002,صيدلية بوالذهب,,صيدلية بوالذهب,21,2110,Collo,37.00769,6.565357,exact,osm_node,osm,"{""osm"":""node/13718508801""}",,,,,
 21-00003,صيدلية شلغوم,,صيدلية شلغوم,21,2110,Collo,37.006802,6.567835,exact,osm_node,osm,"{""osm"":""node/13718552702""}",,,,,
 21-00004,صيدلية حكومية,,صيدلية حكومية,21,2110,Collo,37.00467,6.559617,exact,osm_node,osm,"{""osm"":""node/13718613804""}",,,,,
@@ -2135,6 +2139,9 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 21-00075,,,,21,2126,Tamalous,36.862014,6.614744,approximate,osm_centroid,osm,"{""osm"":""way/1198789935""}",,,,,
 21-00076,Pharmacie Kaddouri El Oulmi,Pharmacie Kaddouri El Oulmi,,21,2128,Oum Toub,36.690835,6.578803,approximate,osm_centroid,osm,"{""osm"":""way/1497868242""}",,,,,Oum Toub ⵓⵎ ⵟⵟⵓⴱ أم الطوب
 21-00077,Pharmacie Bouafia Abdelhak,Pharmacie Bouafia Abdelhak,,21,2128,Oum Toub,36.672091,6.55439,approximate,osm_centroid,osm,"{""osm"":""way/1545097711""}",,,,true,Souk Elhad Oum toub
+21-00078,Pharmacie ayache salah,Pharmacie ayache salah,,21,2101,Skikda,36.865473,6.913685,exact,osm_node,osm,"{""osm"":""node/14297452733""}",,,,,
+21-00079,,,,21,2101,Skikda,36.864663,6.913634,exact,osm_node,osm,"{""osm"":""node/14297452735""}",,,,,
+21-00080,,,,21,2101,Skikda,36.864797,6.911004,exact,osm_node,osm,"{""osm"":""node/14297452736""}",,,,,
 22-00001,,,,22,2206,Mezaourou,34.814834,-0.623172,exact,osm_node,osm,"{""osm"":""node/10007555082""}",,,,,
 22-00002,,,,22,2220,Hassi Zahana,35.026598,-0.886858,exact,osm_node,osm,"{""osm"":""node/11903970369""}",,,,,
 22-00003,Pharmacie Hakam,Pharmacie Hakam,,22,2201,Sidi Bel-Abbes,35.196703,-0.620196,exact,osm_node,osm,"{""osm"":""node/2282250720""}",,,,,
@@ -2190,7 +2197,6 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 22-00054,Pharmacie sanour,Pharmacie sanour,,22,2201,Sidi Bel-Abbes,35.222647,-0.628362,exact,osm_node,osm,"{""osm"":""node/6248766785""}",,,,,
 22-00055,بن سجاد,Pharmacie Bensedjad Sara,بن سجاد,22,2229,Sfisef,35.235181,-0.242727,exact,osm_node,osm,"{""osm"":""node/6887280785""}",بن سجاد,,,,سفيزف
 22-00056,Pharmacie,Pharmacie,,22,2201,Sidi Bel-Abbes,35.213185,-0.615479,exact,osm_node,osm,"{""osm"":""node/6950569090""}",,,,,"Evitement Est de Sidi Bel Abbès, 22000"
-22-00057,Pharmacie militaire,Pharmacie militaire,,22,2201,Sidi Bel-Abbes,35.214497,-0.612675,exact,osm_node,osm,"{""osm"":""node/6954436786""}",,,,,"Evitement Est de Sidi Bel Abbès, 22000"
 22-00058,صيدلية سويح,pharmacie SOUIYEH,صيدلية سويح,22,2205,Telagh,34.782135,-0.571001,exact,osm_node,osm,"{""osm"":""node/6983179807""}",,,,true,
 22-00059,صيدلية صحبي,pharmacie SOHBI,صيدلية صحبي,22,2205,Telagh,34.782136,-0.572874,exact,osm_node,osm,"{""osm"":""node/6983179808""}",,,,true,
 22-00060,صيدلية جبلي,pharmacie DJEBLI,صيدلية جبلي,22,2205,Telagh,34.780835,-0.573217,exact,osm_node,osm,"{""osm"":""node/6983179809""}",,,,true,
@@ -2241,7 +2247,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 23-00026,بوري مريم,Pharmacie Myriam Bouri,بوري مريم,23,2301,Annaba,36.908392,7.734758,exact,osm_node,osm,"{""osm"":""node/4895890921""}",,,,,
 23-00027,بوشدق شريف,Pharmacie Bouchdeq Cherif,بوشدق شريف,23,2301,Annaba,36.884148,7.726032,exact,osm_node,osm,"{""osm"":""node/4941715925""}",,,,,
 23-00028,علاوة,Allaoua,علاوة,23,2301,Annaba,36.896182,7.726036,exact,osm_node,osm,"{""osm"":""node/4941718227""}",,,,,
-23-00029,Pharmacie Hazem abdelkader,Pharmacie Hazem abdelkader,صيدلية حازم عبد القادر,23,2301,Annaba,36.89947,7.753005,exact,osm_node,osm,"{""osm"":""node/5155106021""}",,,,,Annaba 23000
+23-00029,Pharmacie Hazem abdelkader,Pharmacie Hazem Abdelkader,صيدلية حازم عبد القادر,23,2301,Annaba,36.89947,7.753005,exact,osm_node,osm,"{""osm"":""node/5155106021""}",,,,,Annaba 23000
 23-00030,Pharmacie Amara Sara,Pharmacie Amara Sara,,23,2301,Annaba,36.902265,7.751555,exact,osm_node,osm,"{""osm"":""node/5248325139""}",,,,true,
 23-00031,Pharmacie Belhouchet,Pharmacie Belhouchet,,23,2301,Annaba,36.897693,7.739545,exact,osm_node,osm,"{""osm"":""node/5285727321""}",,,,,"Boulevard de l'Afrique, 23000"
 23-00032,Pharmacie Halisse,Pharmacie Halisse,,23,2301,Annaba,36.89551,7.721815,exact,osm_node,osm,"{""osm"":""node/5405648522""}",,,,true,
@@ -2258,7 +2264,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 23-00044,صيدلية بوزيتون حسين,Pharmacie bouzitoune hocine,صيدلية بوزيتون حسين,23,2301,Annaba,36.893387,7.731476,exact,osm_node,osm,"{""osm"":""node/6468796085""}",,,,,
 23-00045,,,,23,2303,El Hadjar,36.805047,7.736629,exact,osm_node,osm,"{""osm"":""node/6786278277""}",,,,true,
 23-00046,,,,23,2303,El Hadjar,36.808506,7.739408,exact,osm_node,osm,"{""osm"":""node/6786278278""}",,,,true,
-23-00047,Pharmacie Moussa,Pharmacie Moussa,,23,2302,Berrahal,36.846994,7.425053,exact,osm_node,osm,"{""osm"":""node/6971849885""}",,,,true,2 حي طاشة
+23-00047,Pharmacie Moussa,Pharmacie Moussa,,23,2302,Berrahal,36.846994,7.425053,exact,osm_node,osm,"{""osm"":""node/6971849885""}",,,'-18:00,true,2 حي طاشة
 23-00048,,,,23,2301,Annaba,36.913062,7.765162,exact,osm_node,osm,"{""osm"":""node/7330381694""}",,,,true,"نهج التحرير, عنابة 23000"
 23-00049,,,,23,2301,Annaba,36.908942,7.76245,exact,osm_node,osm,"{""osm"":""node/7330381724""}",,,,true,عنابة 23000
 23-00050,,,,23,2302,Berrahal,36.82872,7.599177,exact,osm_node,osm,"{""osm"":""node/7705131241""}",,,,true,
@@ -2327,6 +2333,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 24-00050,صيدلية بن مشيش فيروز,Pharmacie Touati,صيدلية بن مشيش فيروز,24,2405,Tamlouka,36.159506,7.138326,approximate,osm_centroid,osm,"{""osm"":""way/1181376521""}",,,,true,"Rue Saad Dahane, Tamlouka 24010"
 24-00051,صيدلية خليفة مولود,Pharmacie Khelifa Mouloud,صيدلية خليفة مولود,24,2405,Tamlouka,36.159254,7.140426,approximate,osm_centroid,osm,"{""osm"":""way/1181376563""}",,,,true,"Rue de Republique, Tamlouka 24010"
 24-00052,Pharmacie Medjez Amar,Pharmacie Medjez Amar,,24,2424,Medjez Amar,36.445831,7.312033,approximate,osm_centroid,osm,"{""osm"":""way/345138034""}",,,,true,
+24-00053,Pharmacy bedouh,Pharmacy bedouh,,24,2426,Heliopolis,36.501359,7.439376,exact,osm_node,osm,"{""osm"":""node/14300374975""}",,,,,
 25-00001,,,,25,2505,Didouche Mourad,36.447978,6.635211,exact,osm_node,osm,"{""osm"":""node/2586408794""}",,,,,
 25-00002,,,,25,2505,Didouche Mourad,36.449555,6.634436,exact,osm_node,osm,"{""osm"":""node/2586408795""}",,,,,
 25-00003,,,,25,2505,Didouche Mourad,36.453239,6.636053,exact,osm_node,osm,"{""osm"":""node/2586408796""}",,,,,
@@ -2358,7 +2365,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 25-00029,pharmacie,pharmacie,,25,2506,El Khroub,36.244522,6.577614,exact,osm_node,osm,"{""osm"":""node/4405554489""}",,,,,
 25-00030,,,,25,2506,El Khroub,36.255162,6.699685,exact,osm_node,osm,"{""osm"":""node/4542065995""}",,,,,الخروب
 25-00031,,,,25,2506,El Khroub,36.257633,6.694444,exact,osm_node,osm,"{""osm"":""node/4542065997""}",,,,,الخروب
-25-00032,Messaci,Messaci,,25,2506,El Khroub,36.263415,6.691505,exact,osm_node,osm,"{""osm"":""node/4542065998""}",,,,,
+25-00032,Pharmacie Messaci,Pharmacie Messaci,,25,2506,El Khroub,36.263436,6.691621,exact,osm_node,osm,"{""osm"":""node/4542065998""}",,,,,
 25-00033,,,,25,2506,El Khroub,36.254891,6.693553,exact,osm_node,osm,"{""osm"":""node/4542067994""}",,,,,الخروب
 25-00034,بن دراجي,Benderradji,بن دراجي,25,2506,El Khroub,36.258188,6.689974,exact,osm_node,osm,"{""osm"":""node/4542081390""}",بن دراجي,,,,الخروب
 25-00035,,,,25,2506,El Khroub,36.260867,6.704265,exact,osm_node,osm,"{""osm"":""node/4542081392""}",,,,,الخروب
@@ -2482,7 +2489,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 28-00009,pharmacie belouadah,pharmacie belouadah,,28,2829,Maarif,35.375895,4.269767,exact,osm_node,osm,"{""osm"":""node/11669151770""}",,,,,
 28-00010,صيدلية طيبة,Pharmacie TIBA,صيدلية طيبة,28,2811,Magra,35.627979,5.092946,exact,osm_node,osm,"{""osm"":""node/3235052033""}",,'+213661 47 05 27,,,مقرة
 28-00011,,,,28,2801,M'Sila,35.707025,4.540157,exact,osm_node,osm,"{""osm"":""node/4235356395""}",,,,,المسيلة
-28-00012,صيدلية خوجة,Pharmacie Khoudja Smail,صيدلية خوجة,28,2801,M'Sila,35.718581,4.522712,exact,osm_node,osm,"{""osm"":""node/4235356898""}",,,,true,
+28-00012,صيدلية خوجة,Pharmacie Khoudja Smail,صيدلية خوجة,28,2801,M'Sila,35.71855,4.522739,exact,osm_node,osm,"{""osm"":""node/4235356898""}",,,,true,
 28-00013,صيدلية بوراس,Pharmacie Bouras,صيدلية بوراس,28,2803,Hammam Dhalaa,35.924773,4.376264,exact,osm_node,osm,"{""osm"":""node/4358984493""}",,,,true,حمام الضلعة
 28-00014,صيدلية أوعيل,Pharmacie Ouail,صيدلية أوعيل,28,2803,Hammam Dhalaa,35.927745,4.378292,exact,osm_node,osm,"{""osm"":""node/4358988289""}",,,,true,حمام الضلعة
 28-00015,PHARMACIE LOUIFI,PHARMACIE LOUIFI,صيدلية لويفي,28,2801,M'Sila,35.708167,4.525992,exact,osm_node,osm,"{""osm"":""node/4475736294""}",,,,,
@@ -2563,7 +2570,6 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 30-00012,,,,30,3004,Hassi Messaoud,31.693943,6.062407,exact,osm_node,osm,"{""osm"":""node/4331309897""}",,,,,حاسي مسعود
 30-00013,Pharmacie Pasteur,Pharmacie Pasteur,صيدلية باستور,30,3001,Ouargla,31.95081,5.33256,exact,osm_node,osm,"{""osm"":""node/4351098269""}",,,,,
 30-00014,صيدلية مولاى,Pharmacie Moulay,صيدلية مولاى,30,3001,Ouargla,31.94663,5.323415,exact,osm_node,osm,"{""osm"":""node/4361771790""}",,,,,
-30-00015,Asl hmd,Pharmacie Asl hmd,,30,3004,Hassi Messaoud,31.649735,6.141966,exact,osm_node,osm,"{""osm"":""node/4423703990""}",,,,,Oued Irrara
 30-00016,,,,30,3004,Hassi Messaoud,31.702081,6.063804,exact,osm_node,osm,"{""osm"":""node/4459135992""}",,,,,حاسي مسعود
 30-00017,,,,30,3004,Hassi Messaoud,31.703988,6.071058,exact,osm_node,osm,"{""osm"":""node/4459333396""}",,,,,
 30-00018,,,,30,3004,Hassi Messaoud,31.700546,6.061098,exact,osm_node,osm,"{""osm"":""node/4459341791""}",,,,,حاسي مسعود
@@ -2704,7 +2710,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 31-00106,صيدلية الغريبي,Pharmacie Gheribi,صيدلية الغريبي,31,3113,Sidi Chami,35.65826,-0.51913,exact,osm_node,osm,"{""osm"":""node/6016524637""}",,,,true,سيدي الشحمي
 31-00107,EURL KHIATI FOUZI,EURL KHIATI FOUZI,,31,3101,Oran,35.710889,-0.619204,exact,osm_node,osm,"{""osm"":""node/6165688885""}",,,,,"1 Avenue Djoundi Kartali, 31000"
 31-00108,صيدليه بينابادجي,EURL BENABADJI,صيدليه بينابادجي,31,3101,Oran,35.705357,-0.607364,exact,osm_node,osm,"{""osm"":""node/6165688887""}",,,,,Avenue Bougerri Khelifa
-31-00109,صيدليه برزوق,EURL BENREZOUGE,صيدليه برزوق,31,3101,Oran,35.707576,-0.611114,exact,osm_node,osm,"{""osm"":""node/6165693187""}",,,,,2eme Boulevard Périphérique
+31-00109,EURL Berrezoug صيدليه برزوق,EURL Berrezoug,صيدليه برزوق,31,3101,Oran,35.707576,-0.611114,exact,osm_node,osm,"{""osm"":""node/6165693187""}",,,,,2eme Boulevard Périphérique
 31-00110,Nadia parapharmacie,Nadia parapharmacie,,31,3101,Oran,35.672579,-0.659664,exact,osm_node,osm,"{""osm"":""node/6175814185""}",,,,,Rue Ibn Redouane
 31-00111,,,,31,3101,Oran,35.693165,-0.610472,exact,osm_node,osm,"{""osm"":""node/6314253999""}",,,,true,Cité grande terre
 31-00112,Mehor,Mehor,,31,3101,Oran,35.696541,-0.595935,exact,osm_node,osm,"{""osm"":""node/6329648577""}",,,,true,Oran
@@ -2737,7 +2743,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 32-00002,,,,32,3201,El Bayadh,33.677521,1.018103,exact,osm_node,osm,"{""osm"":""node/10720256002""}",,,,,
 32-00003,,,,32,3201,El Bayadh,33.685525,1.011307,exact,osm_node,osm,"{""osm"":""node/10720265860""}",,,,,
 32-00004,,,,32,3201,El Bayadh,33.676067,1.023685,exact,osm_node,osm,"{""osm"":""node/10720281117""}",,,,,
-32-00005,Pharmacie guenda,Pharmacie guenda,,32,3201,El Bayadh,33.675036,1.026956,exact,osm_node,osm,"{""osm"":""node/12176265964""}",,,,,
+32-00005,Pharmacie Guenda,Pharmacie Guenda,,32,3201,El Bayadh,33.675036,1.026956,exact,osm_node,osm,"{""osm"":""node/12176265964""}",,,,,
 32-00006,بوبوط,BOBOT,بوبوط,32,3201,El Bayadh,33.678295,1.011445,exact,osm_node,osm,"{""osm"":""node/4967908622""}",,,,,البيض
 32-00007,Guettatfi Pharmacie,Guettatfi Pharmacie,,32,3201,El Bayadh,33.68483,1.030622,exact,osm_node,osm,"{""osm"":""node/6227910544""}",,,,false,"18 Rue Houacine Tifour, Cité 20 Août 1955, El Bayadh 32000"
 32-00008,صيدلية ناجي الشيخ,pharmacie chikh nadji,صيدلية ناجي الشيخ,32,3201,El Bayadh,33.666198,1.025269,exact,osm_node,osm,"{""osm"":""node/6363907685""}",,,,,"Rue Bâtiments 450, 32000"
@@ -2845,6 +2851,9 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 34-00098,يحياوي,,يحياوي,34,3404,Mansoura,36.086163,4.452732,approximate,osm_centroid,osm,"{""osm"":""way/1553620909""}",,,,,
 34-00099,بوزرورة,,بوزرورة,34,3404,Mansoura,36.085481,4.458652,approximate,osm_centroid,osm,"{""osm"":""way/1553620912""}",,,,,
 34-00100,صيدلية بن جدو ريمة,,صيدلية بن جدو ريمة,34,3431,Bir Kasdali,36.142024,5.03031,approximate,osm_centroid,osm,"{""osm"":""way/1553652286""}",,,,,
+34-00101,Pharmacie Bouchibi.S,Pharmacie Bouchibi.S,,34,3428,El Annasseur,36.041287,4.811672,approximate,osm_centroid,osm,"{""osm"":""way/1553957431""}",,,,,
+34-00102,Pharmacie ghiri naima,Pharmacie ghiri naima,,34,3428,El Annasseur,36.040917,4.819944,approximate,osm_centroid,osm,"{""osm"":""way/1553957440""}",,,,,
+34-00103,Pharmacie Zouaoui,Pharmacie Zouaoui,,34,3428,El Annasseur,36.044097,4.818701,approximate,osm_centroid,osm,"{""osm"":""way/1553957441""}",,,,,
 35-00001,,,,35,3502,Boudouaou,36.710035,3.395783,exact,osm_node,osm,"{""osm"":""node/10137457217""}",,,,,
 35-00002,,,,35,3502,Boudouaou,36.714929,3.396824,exact,osm_node,osm,"{""osm"":""node/10137458717""}",,,,,
 35-00003,,,,35,3502,Boudouaou,36.707778,3.389794,exact,osm_node,osm,"{""osm"":""node/10137466217""}",,,,,
@@ -2960,12 +2969,14 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 36-00022,,,,36,3616,Besbes,36.705476,7.838123,exact,osm_node,osm,"{""osm"":""node/7044729186""}",,,,,
 36-00023,,,,36,3616,Besbes,36.705537,7.83854,exact,osm_node,osm,"{""osm"":""node/7048730385""}",,,,,
 36-00024,صيدلية الشافية,Pharmacie Chafia,صيدلية الشافية,36,3612,Chefia,36.662475,8.104801,exact,osm_node,osm,"{""osm"":""node/7383325374""}",,,08:30-18:00; Fr 08:30-12:00,true,الشافية
-36-00025,,,,36,3605,El Kala,36.896328,8.441183,approximate,osm_centroid,osm,"{""osm"":""way/1124132591""}",,,,,القالة
+36-00025,,,,36,3605,El Kala,36.896326,8.441096,approximate,osm_centroid,osm,"{""osm"":""way/1124132591""}",,,,,القالة
 36-00026,,,,36,3619,Zerizer,36.728685,7.894018,approximate,osm_centroid,osm,"{""osm"":""way/1176459819""}",,,,,
 36-00027,Pharmacie,Pharmacie,,36,3619,Zerizer,36.7279,7.896412,approximate,osm_centroid,osm,"{""osm"":""way/1176459860""}",,,,,
 36-00028,,,,36,3601,El Tarf,36.764989,8.32615,approximate,osm_centroid,osm,"{""osm"":""way/1176712424""}",,,,,الطارف
 36-00029,,,,36,3615,Chebaita Mokhtar,36.721687,7.72675,approximate,osm_centroid,osm,"{""osm"":""way/294856051""}",,,,,"Zourami Ali, Zourali Ali 36049"
 36-00030,Pharmacie El Kala;صيدلية القالة,Pharmacie El Kala,صيدلية القالة,36,3605,El Kala,36.894766,8.43807,approximate,osm_centroid,osm,"{""osm"":""way/426779017""}",,,,,"مقدمة البحر, القالة"
+36-00031,Pharmacie Kebbas salim,Pharmacie Kebbas salim,,36,3605,El Kala,36.885426,8.439737,approximate,osm_centroid,osm,"{""osm"":""way/1176656275""}",,,,,
+36-00032,صيدلي,,صيدلي,36,3605,El Kala,36.887315,8.412888,approximate,osm_centroid,osm,"{""osm"":""way/1554470871""}",,,,,
 37-00001,صيدلية طارق,Pharmacie Tarik,صيدلية طارق,37,3701,Tindouf,27.673308,-8.13822,exact,osm_node,osm,"{""osm"":""node/4328034690""}",,,,,تندوف
 37-00002,صيدلية الجرافة,Pharmacie Djarafa,صيدلية الجرافة,37,3701,Tindouf,27.676821,-8.130187,exact,osm_node,osm,"{""osm"":""node/6700753678""}",,,24/7,true,تندوف
 37-00003,صيدلية المريخ,Pharmacie Marikh,صيدلية المريخ,37,3701,Tindouf,27.674338,-8.130263,exact,osm_node,osm,"{""osm"":""node/6700773389""}",,,,true,تندوف
@@ -2989,7 +3000,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 38-00016,,,,38,3801,Tissemsilt,35.606384,1.800065,exact,osm_node,osm,"{""osm"":""node/9163624417""}",,,,,
 38-00017,Abdelhamid Abdelkader,Abdelhamid Abdelkader,,38,3803,Theniet El Had,35.869908,2.028813,approximate,osm_centroid,osm,"{""osm"":""way/1176067465""}",,,,,
 38-00018,,,,38,3809,Bordj El Emir Abdelkader,35.865509,2.270646,approximate,osm_centroid,osm,"{""osm"":""way/1205863921""}",,,,,
-39-00001,صيدلية خلف,Pharmacie Khalef,صيدلية خلف,39,3906,Guemar,33.484431,6.798225,exact,osm_node,osm,"{""osm"":""node/2415307700""}",,,,false,قمار
+39-00001,Pharmacie Khalef;صيدلية خلف,Pharmacie Khalef,صيدلية خلف,39,3906,Guemar,33.484431,6.798225,exact,osm_node,osm,"{""osm"":""node/2415307700""}",,,,false,قمار
 39-00002,صيدلية جديد,Pharmacie Djedid,صيدلية جديد,39,3904,Bayadha,33.3264,6.889838,exact,osm_node,osm,"{""osm"":""node/3749093248""}",,,,,"حي السلام, البياضة 39150"
 39-00003,صيدلية خطرة أم الخير,Pharmacie Khatra,صيدلية خطرة أم الخير,39,3906,Guemar,33.493487,6.793576,exact,osm_node,osm,"{""osm"":""node/4420614389""}",,032202738,Mo-Su 07:30-23:00,,
 39-00005,صيدلية بلول بشير,Pharmacie Baloul Bachir,صيدلية بلول بشير,39,3901,El-Oued,33.347293,6.874501,exact,osm_node,osm,"{""osm"":""node/4479452390""}",,032132506,,,
@@ -2998,7 +3009,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 39-00008,,,,39,3913,Hassi Khalifa,33.56536,6.993033,exact,osm_node,osm,"{""osm"":""node/4642621342""}",,,,,حاسي خليفة
 39-00009,,,,39,3913,Hassi Khalifa,33.566347,6.994954,exact,osm_node,osm,"{""osm"":""node/4642621343""}",,,,,حاسي خليفة
 39-00010,,,,39,3913,Hassi Khalifa,33.575973,7.010221,exact,osm_node,osm,"{""osm"":""node/4642621344""}",,,,,
-39-00011,صيدلية الأمل,Pharmacie ALAMAL,صيدلية الأمل,39,3901,El-Oued,33.356373,6.860088,exact,osm_node,osm,"{""osm"":""node/4730584222""}",,,,,"شارع 5 يوليو, الوادي 39000"
+39-00011,Pharmacie ALAMAL;صيدلية الأمل,Pharmacie ALAMAL,صيدلية الأمل,39,3901,El-Oued,33.356373,6.860088,exact,osm_node,osm,"{""osm"":""node/4730584222""}",,,,,"شارع 5 يوليو, الوادي 39000"
 39-00012,صيدلية الهادي سعيد,Pharmacie El Hadi Saied,صيدلية الهادي سعيد,39,3914,Taleb Larbi,33.730147,7.516856,exact,osm_node,osm,"{""osm"":""node/4756076523""}",الهادي سعيد,'+21332107143,Mo-Su 08:00-21:00,,الطالب العربي 39019
 39-00013,صيدلية حلواجي,Pharmacie halwaji,صيدلية حلواجي,39,3904,Bayadha,33.31205,6.90069,exact,osm_node,osm,"{""osm"":""node/4804308258""}",,,,,البياضة
 39-00014,صيدلية موان,Pharmacie Mouane,صيدلية موان,39,3906,Guemar,33.488097,6.796944,exact,osm_node,osm,"{""osm"":""node/4827845321""}",,,,,قمار
@@ -3006,10 +3017,10 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 39-00016,صيدلية العايب نورالدين,Pharmacie Ayeb Noureddine,صيدلية العايب نورالدين,39,3915,Douar El Maa,33.376882,7.687147,exact,osm_node,osm,"{""osm"":""node/5031090587""}",,,,true,دوار الماء
 39-00017,صيدلية زين الدين قيدوم - ابن الهيثم - كرمادي نبيل,Pharmacie Ibn Alhythem,صيدلية زين الدين قيدوم - ابن الهيثم - كرمادي نبيل,39,3901,El-Oued,33.365463,6.849858,exact,osm_node,osm,"{""osm"":""node/5040332321""}",,,,,الوادي
 39-00018,صيدلية بن علي,Pharmacie Ben Ali,صيدلية بن علي,39,3901,El-Oued,33.362864,6.850464,exact,osm_node,osm,"{""osm"":""node/5040391321""}",,,,,"شارع الأمير عبد القادر, الوادي"
-39-00019,صيدلية عبد ربي,Pharmacie Abed Rabi,صيدلية عبد ربي,39,3906,Guemar,33.492985,6.804887,exact,osm_node,osm,"{""osm"":""node/5200787529""}",,,,,
+39-00019,صيدلية عبد ربي,Pharmacie Abed Rabi,صيدلية عبد ربي,39,3906,Guemar,33.492959,6.804875,exact,osm_node,osm,"{""osm"":""node/5200787529""}",,,,true,
 39-00020,,,,39,3912,Hassani Abdelkrim,33.478267,6.907622,exact,osm_node,osm,"{""osm"":""node/6213164686""}",,,,,الزقم
 39-00021,الزاوش,Pharmacie Zaouch,الزاوش,39,3912,Hassani Abdelkrim,33.476344,6.908007,exact,osm_node,osm,"{""osm"":""node/6213177790""}",,,,,حساني عبد الكريم
-39-00022,صيدلية دو,Pharmacie Dou,صيدلية دو,39,3901,El-Oued,33.363324,6.844932,exact,osm_node,osm,"{""osm"":""node/6783924028""}",,'+213 32 10 62 62,24/7,true,الوادي
+39-00022,Pharmacie Dou;صيدلية دو,Pharmacie Dou,صيدلية دو,39,3901,El-Oued,33.363324,6.844932,exact,osm_node,osm,"{""osm"":""node/6783924028""}",,'+213 32 10 62 62,24/7,true,الوادي
 39-00023,صيدلية سعيد,Pharmacie Said,صيدلية سعيد,39,3914,Taleb Larbi,33.731183,7.517559,exact,osm_node,osm,"{""osm"":""node/6913700267""}",,'+213 32 10 72 43,,true,الطالب العربي
 39-00024,صيدلية السعيد,Pharmacie Said,صيدلية السعيد,39,3914,Taleb Larbi,33.730176,7.512619,exact,osm_node,osm,"{""osm"":""node/6913700284""}",,'+213 663 51 49 91,04:00-01:00,true,الطالب العربي
 39-00025,صيدلية دبيلي,Pharmacie Dbili,صيدلية دبيلي,39,3916,Sidi Aoun,33.529928,6.9009,exact,osm_node,osm,"{""osm"":""node/9945601417""}",,,,,
@@ -3021,7 +3032,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 40-00002,,,,40,4001,Khenchela,35.420907,7.148763,exact,osm_node,osm,"{""osm"":""node/13623874583""}",,,,,
 40-00004,,,,40,4012,Djellal,34.915052,6.894265,exact,osm_node,osm,"{""osm"":""node/3449724610""}",,,,,
 40-00005,باديس,Badis,باديس,40,4011,Chechar,35.040025,7.001216,exact,osm_node,osm,"{""osm"":""node/4217576596""}",,,,,ششار
-40-00006,صيدلية شرفي,Pharmacie Chorfi,صيدلية شرفي,40,4016,Ouled Rechache,35.298004,7.349842,exact,osm_node,osm,"{""osm"":""node/4326830890""}",,,,true,
+40-00006,صيدلية شرفي,Pharmacie Chorfi,صيدلية شرفي,40,4016,Ouled Rechache,35.298088,7.349839,exact,osm_node,osm,"{""osm"":""node/4326830890""}",,,,true,
 40-00007,,,,40,4016,Ouled Rechache,35.301057,7.350591,exact,osm_node,osm,"{""osm"":""node/4328122377""}",,,,,
 40-00008,Pharmacie 8267,Pharmacie 8267,,40,4016,Ouled Rechache,35.294653,7.354358,exact,osm_node,osm,"{""osm"":""node/4328344200""}",,,,true,
 40-00009,Pharmacie 4482,Pharmacie 4482,,40,4016,Ouled Rechache,35.296799,7.351356,exact,osm_node,osm,"{""osm"":""node/4329101994""}",,,,true,
@@ -3055,14 +3066,16 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 41-00005,Pharmacie 0108,Pharmacie 0108,,41,4102,Sedrata,36.135002,7.526803,exact,osm_node,osm,"{""osm"":""node/4362065190""}",,,,true,
 41-00006,عمامرة,Amamra,عمامرة,41,4101,Souk Ahras,36.265994,7.940707,exact,osm_node,osm,"{""osm"":""node/4548244903""}",,,,,
 41-00007,,,,41,4101,Souk Ahras,36.288646,7.970793,exact,osm_node,osm,"{""osm"":""node/4752348024""}",,,,,سوق أهراس
-41-00008,صيدلية الروينية,pharmacie rouainia,صيدلية الروينية,41,4101,Souk Ahras,36.281889,7.962471,exact,osm_node,osm,"{""osm"":""node/4752348025""}",,,,,"شارع باجي مختار, سوق أهراس"
-41-00009,pharmacie haliamia,pharmacie haliamia,,41,4101,Souk Ahras,36.289236,7.9762,exact,osm_node,osm,"{""osm"":""node/4752360221""}",,,,,
+41-00008,Pharmacie rouainia صيدلية الروينية,Pharmacie rouainia,صيدلية الروينية,41,4101,Souk Ahras,36.281889,7.962471,exact,osm_node,osm,"{""osm"":""node/4752348025""}",,,,,"شارع باجي مختار, سوق أهراس"
+41-00009,pharmacie haliamia,Pharmacie Halimia,,41,4101,Souk Ahras,36.289236,7.9762,exact,osm_node,osm,"{""osm"":""node/4752360221""}",,,,,
 41-00010,نزار عبد القادر,Pharmacie Nezar Abdelkader,نزار عبد القادر,41,4116,Oum El Adhaim,36.026416,7.603128,exact,osm_node,osm,"{""osm"":""node/4813183722""}",,,,,
-41-00011,بوبلاطة إبراهيم,Pharmacie Boublata Brahim,بوبلاطة إبراهيم,41,4101,Souk Ahras,36.280159,7.943443,exact,osm_node,osm,"{""osm"":""node/5081459221""}",,,,,سوق أهراس
-41-00012,pharmacie ben zayed,pharmacie ben zayed,,41,4101,Souk Ahras,36.28732,7.970758,exact,osm_node,osm,"{""osm"":""node/5301337404""}",,,,,
+41-00011,Pharmacie Boublata Brahim بوبلاطة إبراهيم,Pharmacie Boublata Brahim,بوبلاطة إبراهيم,41,4101,Souk Ahras,36.280159,7.943443,exact,osm_node,osm,"{""osm"":""node/5081459221""}",,,,,سوق أهراس
+41-00012,pharmacie ben zayed,Pharmacie Ben Zayed,,41,4101,Souk Ahras,36.28732,7.970758,exact,osm_node,osm,"{""osm"":""node/5301337404""}",,,,,
 41-00013,,,,41,4101,Souk Ahras,36.287153,7.986049,exact,osm_node,osm,"{""osm"":""node/6448633786""}",,,,,
 41-00014,بل بهلول جمال,Pharmacie Bahlouli,بل بهلول جمال,41,4102,Sedrata,36.127167,7.530792,approximate,osm_centroid,osm,"{""osm"":""way/1181380440""}",,,,,
-41-00015,صيدلية عزلي,pharmacie azli,صيدلية عزلي,41,4101,Souk Ahras,36.275765,7.937429,approximate,osm_centroid,osm,"{""osm"":""way/1206266656""}",,,,,سوق أهراس
+41-00015,صيدلية عزلي,pharmacie azli,صيدلية عزلي,41,4101,Souk Ahras,36.275765,7.937425,approximate,osm_centroid,osm,"{""osm"":""way/1206266656""}",,,,,سوق أهراس
+41-00016,pharmacie bouadjila karima,Pharmacie Bouadjila Karima,,41,4101,Souk Ahras,36.288524,7.97059,approximate,osm_centroid,osm,"{""osm"":""way/1206264925""}",,,,,
+41-00017,Pharmacie guidoum Sabri,Pharmacie Guidoum Sabri,,41,4101,Souk Ahras,36.300327,7.929364,approximate,osm_centroid,osm,"{""osm"":""way/548775092""}",,,,,
 42-00001,Belmiloud Hamza,Belmiloud Hamza,,42,4232,Sidi Ghiles,36.581793,2.126223,exact,osm_node,osm,"{""osm"":""node/11063794904""}",,,,,
 42-00002,Pharmacie Bennamane,Pharmacie Bennamane,,42,4203,Larhat,36.557638,1.803962,exact,osm_node,osm,"{""osm"":""node/11074581025""}",,,,,
 42-00003,,,,42,4217,Ain Tagourait,36.602673,2.608479,exact,osm_node,osm,"{""osm"":""node/11118237544""}",,,,,
@@ -3199,6 +3212,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 42-00134,Chebli Charef,Chebli Charef,,42,4212,Hadjout,36.514352,2.413862,approximate,osm_centroid,osm,"{""osm"":""way/1202403828""}",,,,,
 42-00135,Pharmacie Al Houssin,Pharmacie Al Houssin,,42,4205,Bourkika,36.494048,2.4752,approximate,osm_centroid,osm,"{""osm"":""way/1206140513""}",,,,true,
 42-00136,,,,42,4227,Ahmer El Ain,36.478087,2.567347,approximate,osm_centroid,osm,"{""osm"":""way/1206150545""}",,,,,ikhoia mabani
+42-00137,Pharmacie Ouhlima,Pharmacie Ouhlima,,42,4226,Bou Ismail,36.646668,2.724208,exact,osm_node,osm,"{""osm"":""node/14145461158""}",,,,true,
 43-00001,Benavides,Benavides,,43,4306,Teleghma,36.115562,6.35504,exact,osm_node,osm,"{""osm"":""node/11627361659""}",,,,,
 43-00002,,,,43,4318,Sidi Merouane,36.518408,6.258589,exact,osm_node,osm,"{""osm"":""node/11904275008""}",,,,,
 43-00003,,,,43,4303,Chelghoum Laid,36.162282,6.169646,exact,osm_node,osm,"{""osm"":""node/12313210211""}",,,,,
@@ -3258,17 +3272,17 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 43-00058,صيدلية زيتون,Pharmacie Zitoune,صيدلية زيتون,43,4303,Chelghoum Laid,36.160268,6.170243,exact,osm_node,osm,"{""osm"":""node/4688515999""}",,'+213664922929,,,"Rue Bounaas Ahmed, 43200"
 43-00059,,,,43,4329,El Ayadi Barbes,36.436558,5.820747,exact,osm_node,osm,"{""osm"":""node/4739758322""}",,,,,
 43-00060,كنزي حنيفة,Pharmacie Kenzi Hanifa,كنزي حنيفة,43,4322,Amira Arres,36.500097,6.07145,exact,osm_node,osm,"{""osm"":""node/4851635823""}",,,,,
-43-00061,بوشطوط اسيا,Pharmacie Bouchetout Assia,بوشطوط اسيا,43,4301,Mila,36.429973,6.261282,exact,osm_node,osm,"{""osm"":""node/4941717927""}",,,,,
-43-00062,منصوري نور الدين,Pharmacie Mansouri Noureddine,منصوري نور الدين,43,4317,Grarem Gouga,36.51696,6.326627,exact,osm_node,osm,"{""osm"":""node/4941718225""}",منصوري نور الدين,,,,القرارم قوقة
+43-00061,بوشطوط اسيا,Pharmacie Bouchetout Assia,بوشطوط اسيا,43,4301,Mila,36.429917,6.261261,exact,osm_node,osm,"{""osm"":""node/4941717927""}",,,,,
+43-00062,منصوري نور الدين,Pharmacie Mansouri Noureddine,منصوري نور الدين,43,4317,Grarem Gouga,36.51693,6.326595,exact,osm_node,osm,"{""osm"":""node/4941718225""}",منصوري نور الدين,,,,القرارم قوقة
 43-00063,Pharmacie bousmina,Pharmacie bousmina,,43,4324,Hamala,36.571187,6.338116,exact,osm_node,osm,"{""osm"":""node/4964891921""}",,,,,
 43-00064,Pharmacie Fenniche,Pharmacie Fenniche,صيدلية قنيش,43,4306,Teleghma,36.114035,6.353685,exact,osm_node,osm,"{""osm"":""node/4977150430""}",,,,,43250
 43-00065,,,,43,4315,Rouached,36.458728,6.035967,exact,osm_node,osm,"{""osm"":""node/5002035140""}",,,,,
 43-00066,,,,43,4317,Grarem Gouga,36.514243,6.32766,exact,osm_node,osm,"{""osm"":""node/5106990030""}",,,,,القرارم قوقة
 43-00067,صيدلية كشود,Pharmacie Kachoud,صيدلية كشود,43,4317,Grarem Gouga,36.518578,6.323425,exact,osm_node,osm,"{""osm"":""node/5107030522""}",,,,,
-43-00068,Pharmacie,Pharmacie,,43,4304,Oued Athmenia,36.248755,6.288199,exact,osm_node,osm,"{""osm"":""node/5113900223""}",,,,,
-43-00069,صيدلية سجال,Pharmacie Sedjal,صيدلية سجال,43,4304,Oued Athmenia,36.247936,6.28728,exact,osm_node,osm,"{""osm"":""node/5113921822""}",,,,,
+43-00068,Pharmacie,Pharmacie,,43,4304,Oued Athmenia,36.248761,6.288268,exact,osm_node,osm,"{""osm"":""node/5113900223""}",,,,,
+43-00069,صيدلية سجال,Pharmacie Sedjal,صيدلية سجال,43,4304,Oued Athmenia,36.247971,6.28729,exact,osm_node,osm,"{""osm"":""node/5113921822""}",,,,,
 43-00070,صيدلية أفريد,Pharmacie Afrid,صيدلية أفريد,43,4304,Oued Athmenia,36.246318,6.285445,exact,osm_node,osm,"{""osm"":""node/5113921825""}",,,,,
-43-00071,صيدلية مقراني,Pharmacie Mokrani,صيدلية مقراني,43,4304,Oued Athmenia,36.24747,6.287846,exact,osm_node,osm,"{""osm"":""node/5114360831""}",,,,,
+43-00071,صيدلية مقراني,Pharmacie Mokrani,صيدلية مقراني,43,4304,Oued Athmenia,36.247528,6.287807,exact,osm_node,osm,"{""osm"":""node/5114360831""}",,,,,
 43-00072,Pharmacie,Pharmacie,,43,4304,Oued Athmenia,36.250385,6.292171,exact,osm_node,osm,"{""osm"":""node/5364263024""}",,,,,
 43-00073,Pharmacie Loucif Ouafia,Pharmacie Loucif Ouafia,,43,4303,Chelghoum Laid,36.160767,6.158662,exact,osm_node,osm,"{""osm"":""node/5405648523""}",,,,true,
 43-00074,Pharmacie Kacha,Pharmacie Kacha,,43,4303,Chelghoum Laid,36.160601,6.159,exact,osm_node,osm,"{""osm"":""node/5405667521""}",,,,true,
@@ -3356,6 +3370,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 44-00047,ZITOUNI B,ZITOUNI B,,44,4409,Bourached,36.168225,1.929637,exact,osm_node,osm,"{""osm"":""node/9660932517""}",,,,,
 44-00048,Pharmacie 5799,Pharmacie 5799,,44,4403,Boumedfaa,36.367541,2.480497,approximate,osm_centroid,osm,"{""osm"":""way/1202096957""}",,,24/7,true,بومدفع
 44-00049,Pharmacie de Ben Allal,Pharmacie de Ben Allal,,44,4425,Ben Allal,36.310849,2.16237,approximate,osm_centroid,osm,"{""osm"":""way/293193034""}",,,,,Ben ALLEL 44210
+44-00050,Pharmacie,Pharmacie,,44,4416,Rouina,36.243586,1.805646,exact,osm_node,osm,"{""osm"":""node/14225406801""}",,,,,شارع 20 أوت 1955
 45-00001,Pharmacie Brinkene صيدلية برينكان,Pharmacie Brinkene,صيدلية برينكان,45,4502,Mecheria,33.532706,-0.276453,exact,osm_node,osm,"{""osm"":""node/10119098926""}",,,"Mo-Th,Sa-Su 09:00-21:45; Sa 09:00-17:00; PH closed",,
 45-00002,,,,45,4501,Naama,33.269456,-0.316234,exact,osm_node,osm,"{""osm"":""node/4634744511""}",,,,,النعامة
 46-00001,Pharmacie Bendjebara,Pharmacie Bendjebara,,46,4623,Beni Saf,35.305636,-1.368886,exact,osm_node,osm,"{""osm"":""node/12026308749""}",,,,,
@@ -3426,7 +3441,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 47-00005,,,,47,4704,Berriane,32.829203,3.762912,exact,osm_node,osm,"{""osm"":""node/4323076402""}",,,,,بريان
 47-00006,Pharmacie DAHEUR,Pharmacie DAHEUR,,47,4703,Dhayet Bendhahoua,32.548584,3.601569,exact,osm_node,osm,"{""osm"":""node/4724806992""}",,,,,
 47-00007,صيدلية عيد أمينة,Pharmacie aid amina,صيدلية عيد أمينة,47,4703,Dhayet Bendhahoua,32.537519,3.605462,exact,osm_node,osm,"{""osm"":""node/4724820990""}",,,,,ضاية بن ضحوة
-47-00008,صيدلية بونورة,Pharmacie Bounoura,صيدلية بونورة,47,4710,Bounoura,32.483776,3.701414,exact,osm_node,osm,"{""osm"":""node/4724820991""}",,,,,بونورة
+47-00008,Pharmacie Bounoura;صيدلية بونورة,Pharmacie Bounoura,صيدلية بونورة,47,4710,Bounoura,32.483776,3.701414,exact,osm_node,osm,"{""osm"":""node/4724820991""}",,,,,بونورة
 47-00009,صيدلية بن هنية,Pharmacie ben hnia,صيدلية بن هنية,47,4703,Dhayet Bendhahoua,32.536351,3.611528,exact,osm_node,osm,"{""osm"":""node/4724860190""}",,,,,ضاية بن ضحوة
 47-00010,صيدلية بريهمات,Pharmacie Brihmat,صيدلية بريهمات,47,4705,Metlili,32.26873,3.630466,exact,osm_node,osm,"{""osm"":""node/4725675191""}",,,,,متليلي الشعانبة
 47-00011,Pharmacie khernegue,Pharmacie khernegue,,47,4705,Metlili,32.289627,3.605629,exact,osm_node,osm,"{""osm"":""node/4725684890""}",,,,,
@@ -3449,6 +3464,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 47-00028,Pharmacie aden,Pharmacie aden,,47,4703,Dhayet Bendhahoua,32.512548,3.633726,approximate,osm_centroid,osm,"{""osm"":""way/1174343094""}",,,,,
 47-00029,PHARMACIE ZAHOUANI,PHARMACIE ZAHOUANI,,47,4701,Ghardaia,32.496097,3.675235,approximate,osm_centroid,osm,"{""osm"":""way/1174360117""}",ZAHOUANI,,,,"MERMED, GHARDAIA"
 47-00030,Pharmacie Derdar,Pharmacie Derdar,,47,4701,Ghardaia,32.516854,3.671161,approximate,osm_centroid,osm,"{""osm"":""way/249613519""}",,213 (0) 29 88 70 09,,,
+47-00031,Pharmacie SAID,Pharmacie SAID,,47,4710,Bounoura,32.484345,3.703007,exact,osm_node,osm,"{""osm"":""node/14166308304""}",,,,,"Ksar Bounoura, بونورة ⴱⵓⵏⵓⵔⴰ 47010"
 48-00001,TAIBI A,TAIBI A,,48,4808,Sidi M'hamed Benali,36.144699,0.840082,exact,osm_node,osm,"{""osm"":""node/10103454117""}",,,,,
 48-00002,Labed Med,Labed Med,,48,4801,Relizane,35.705459,0.572064,exact,osm_node,osm,"{""osm"":""node/10103454318""}",,,,,
 48-00003,BENAHMED H,BENAHMED H,,48,4802,Oued-Rhiou,35.955977,0.899513,exact,osm_node,osm,"{""osm"":""node/10172024417""}",,,,,
@@ -3605,36 +3621,36 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 51-00006,صيدلية نطور,Pharmacie Nator,صيدلية نطور,51,5101,Ouled Djellal,34.430388,5.070534,exact,osm_node,osm,"{""osm"":""node/3117284313""}",,,,,
 51-00007,صيدلية طالب,Pharmacie Boutaled,صيدلية طالب,51,5101,Ouled Djellal,34.432177,5.069615,exact,osm_node,osm,"{""osm"":""node/3117284314""}",,,,,
 51-00008,Pharmacie 5913,Pharmacie 5913,,51,5101,Ouled Djellal,34.431597,5.067317,exact,osm_node,osm,"{""osm"":""node/3117284315""}",,,Mo-Su 08:00-20:00,true,
-51-00009,صيدلية نفير امين,Pharmacie Nafir Amine,صيدلية نفير امين,51,5101,Ouled Djellal,34.42973,5.059721,exact,osm_node,osm,"{""osm"":""node/3117284316""}",,'+21333666083,,,"شارع العربي بن مهيدي, اولاد جلال 07400"
+51-00009,Pharmacie Nafir Amine;صيدلية نفير امين,Pharmacie Nafir Amine,صيدلية نفير امين,51,5101,Ouled Djellal,34.42973,5.059721,exact,osm_node,osm,"{""osm"":""node/3117284316""}",,'+21333666083,,,"شارع العربي بن مهيدي, اولاد جلال 07400"
 51-00010,صيدلية بو الطيب,pharmacie Bou Eltayeb,صيدلية بو الطيب,51,5101,Ouled Djellal,34.428089,5.067432,exact,osm_node,osm,"{""osm"":""node/3117284317""}",,,,,
-51-00011,صيدلية غشة,Pharmacie Ghacha,صيدلية غشة,51,5101,Ouled Djellal,34.423984,5.061056,exact,osm_node,osm,"{""osm"":""node/3117284318""}",,,,,
-51-00012,صيدلية فريحات,pharmacie Fraihat,صيدلية فريحات,51,5101,Ouled Djellal,34.42752,5.057422,exact,osm_node,osm,"{""osm"":""node/3117284319""}",,,,,
-51-00013,صيدلية 7040,Pharmacie 7040,صيدلية 7040,51,5101,Ouled Djellal,34.424368,5.064941,exact,osm_node,osm,"{""osm"":""node/3117284320""}",,,,true,أولاد جلال
-51-00014,صيدلية لعمش,pharmacie Lameche,صيدلية لعمش,51,5101,Ouled Djellal,34.422555,5.054952,exact,osm_node,osm,"{""osm"":""node/3117356139""}",,,,,
+51-00011,Pharmacie Ghacha;صيدلية غشة,Pharmacie Ghacha,صيدلية غشة,51,5101,Ouled Djellal,34.423984,5.061056,exact,osm_node,osm,"{""osm"":""node/3117284318""}",,,,,
+51-00012,pharmacie Fraihat;صيدلية فريحات,Pharmacie Fraihat,صيدلية فريحات,51,5101,Ouled Djellal,34.42752,5.057422,exact,osm_node,osm,"{""osm"":""node/3117284319""}",,,,,
+51-00013,Pharmacie 7040;صيدلية 7040,Pharmacie 7040,صيدلية 7040,51,5101,Ouled Djellal,34.424368,5.064941,exact,osm_node,osm,"{""osm"":""node/3117284320""}",,,,true,أولاد جلال
+51-00014,pharmacie Lameche;صيدلية لعمش,Pharmacie Lameche,صيدلية لعمش,51,5101,Ouled Djellal,34.422555,5.054952,exact,osm_node,osm,"{""osm"":""node/3117356139""}",,,,,
 51-00015,صيدلية خلف الله,pharmacie Khalfallah,صيدلية خلف الله,51,5101,Ouled Djellal,34.422764,5.067659,exact,osm_node,osm,"{""osm"":""node/3125484481""}",,'+21333763084,,,
-51-00016,صيدلية برباص,Pharmacie Mabrouk Berbas,صيدلية برباص,51,5104,Sidi Khaled,34.395541,4.998922,exact,osm_node,osm,"{""osm"":""node/3215399328""}",,,,true,سيدي خالد
-51-00017,صيدلية غربي,Pharmacie Gharbi,صيدلية غربي,51,5104,Sidi Khaled,34.395305,4.997241,exact,osm_node,osm,"{""osm"":""node/3222063651""}",,,,,سيدي خالد
-51-00018,صيدلية خليفة,PHARMACIE KHELIFA,صيدلية خليفة,51,5104,Sidi Khaled,34.395725,4.99728,exact,osm_node,osm,"{""osm"":""node/3222063652""}",,,,,سيدي خالد
+51-00016,Pharmacie Mabrouk Berbas;صيدلية برباص,Pharmacie Mabrouk Berbas,صيدلية برباص,51,5104,Sidi Khaled,34.395541,4.998922,exact,osm_node,osm,"{""osm"":""node/3215399328""}",,,,true,سيدي خالد
+51-00017,Pharmacie Gharbi;صيدلية غربي,Pharmacie Gharbi,صيدلية غربي,51,5104,Sidi Khaled,34.395305,4.997241,exact,osm_node,osm,"{""osm"":""node/3222063651""}",,,,,سيدي خالد
+51-00018,PHARMACIE KHELIFA;صيدلية خليفة,PHARMACIE KHELIFA,صيدلية خليفة,51,5104,Sidi Khaled,34.395725,4.99728,exact,osm_node,osm,"{""osm"":""node/3222063652""}",,,,,سيدي خالد
 51-00019,PHARMACIE SLIMANI,PHARMACIE SLIMANI,صيدلية سليماني,51,5104,Sidi Khaled,34.398426,4.992908,exact,osm_node,osm,"{""osm"":""node/3504532393""}",SLIMANI,,,,سيدي خالد
 51-00020,,,,51,5101,Ouled Djellal,34.431483,5.060051,exact,osm_node,osm,"{""osm"":""node/3909362366""}",,,,,
 51-00021,PHARMACIE AMRI,PHARMACIE AMRI,صيدلية عمري,51,5104,Sidi Khaled,34.402513,4.997266,exact,osm_node,osm,"{""osm"":""node/4086861211""}",AMRI,,,,
-51-00022,صيدلية سليماني,pharmacie Slimani,صيدلية سليماني,51,5105,Doucen,34.605359,5.105601,exact,osm_node,osm,"{""osm"":""node/4249197021""}",,,,,الدوسن
-51-00023,صيدلية زيدي,pharmacie Zaidi,صيدلية زيدي,51,5105,Doucen,34.604401,5.104037,exact,osm_node,osm,"{""osm"":""node/4249197022""}",,,,,الدوسن
-51-00024,صيدلية دلول,Pharmacie Delloul,صيدلية دلول,51,5104,Sidi Khaled,34.394666,4.99273,exact,osm_node,osm,"{""osm"":""node/4282914522""}",,,,true,سيدي خالد
+51-00022,pharmacie Slimani;صيدلية سليماني,Pharmacie Slimani,صيدلية سليماني,51,5105,Doucen,34.605359,5.105601,exact,osm_node,osm,"{""osm"":""node/4249197021""}",,,,,الدوسن
+51-00023,pharmacie Zaidi;صيدلية زيدي,Pharmacie Zaidi,صيدلية زيدي,51,5105,Doucen,34.604401,5.104037,exact,osm_node,osm,"{""osm"":""node/4249197022""}",,,,,الدوسن
+51-00024,Pharmacie Delloul;صيدلية دلول,Pharmacie Delloul,صيدلية دلول,51,5104,Sidi Khaled,34.394666,4.99273,exact,osm_node,osm,"{""osm"":""node/4282914522""}",,,,true,سيدي خالد
 51-00025,,,,51,5104,Sidi Khaled,34.397739,5.00498,exact,osm_node,osm,"{""osm"":""node/4397681154""}",,,,,سيدي خالد
 51-00026,,,,51,5101,Ouled Djellal,34.430198,5.068183,exact,osm_node,osm,"{""osm"":""node/4820768691""}",,,,,
-51-00027,صيدلية بوطي,Pharmacie Bouti,صيدلية بوطي,51,5104,Sidi Khaled,34.395567,4.98624,exact,osm_node,osm,"{""osm"":""node/5188092256""}",,'+21333565517,"Mo-Th, Sa, Su 08:00-20:00",,سيدي خالد
-51-00028,صيدلية زوراز,Pharmacie Zouraz,صيدلية زوراز,51,5101,Ouled Djellal,34.425443,5.056681,exact,osm_node,osm,"{""osm"":""node/5627786901""}",,,,,
+51-00027,Pharmacie Bouti;صيدلية بوطي,Pharmacie Bouti,صيدلية بوطي,51,5104,Sidi Khaled,34.395567,4.98624,exact,osm_node,osm,"{""osm"":""node/5188092256""}",,'+21333565517,"Mo-Th, Sa, Su 08:00-20:00",,سيدي خالد
+51-00028,Pharmacie Zouraz;صيدلية زوراز,Pharmacie Zouraz,صيدلية زوراز,51,5101,Ouled Djellal,34.425443,5.056681,exact,osm_node,osm,"{""osm"":""node/5627786901""}",,,,,
 51-00029,Pharmacie 4F5M,Pharmacie 4F5M,,51,5102,Ras El Miad,34.184818,4.454931,exact,osm_node,osm,"{""osm"":""node/6223611469""}",,,,true,رأس الميعاد
 51-00030,Pharmacie Qp6,Pharmacie Qp6,,51,5102,Ras El Miad,34.185383,4.451592,exact,osm_node,osm,"{""osm"":""node/6223611474""}",,,,true,
-51-00031,صيدلية دلسة,Pharmacie Delsa,صيدلية دلسة,51,5101,Ouled Djellal,34.434233,5.062447,exact,osm_node,osm,"{""osm"":""node/6282802597""}",,,,,
-51-00032,صيدلية ڨيطون,Pharmacie Guitoune,صيدلية ڨيطون,51,5101,Ouled Djellal,34.42897,5.062012,exact,osm_node,osm,"{""osm"":""node/6393279737""}",,,,true,
-51-00033,صيدلية خنيفر,Pharmacie Khenifar,صيدلية خنيفر,51,5105,Doucen,34.607554,5.105581,exact,osm_node,osm,"{""osm"":""node/6640900637""}",,,,true,الدوسن
+51-00031,Pharmacie Delsa;صيدلية دلسة,Pharmacie Delsa,صيدلية دلسة,51,5101,Ouled Djellal,34.434233,5.062447,exact,osm_node,osm,"{""osm"":""node/6282802597""}",,,,,
+51-00032,Pharmacie Guitoune;صيدلية ڨيطون,Pharmacie Guitoune,صيدلية ڨيطون,51,5101,Ouled Djellal,34.42897,5.062012,exact,osm_node,osm,"{""osm"":""node/6393279737""}",,,,true,
+51-00033,Pharmacie Khenifar;صيدلية خنيفر,Pharmacie Khenifar,صيدلية خنيفر,51,5105,Doucen,34.607554,5.105581,exact,osm_node,osm,"{""osm"":""node/6640900637""}",,,,true,الدوسن
 51-00034,صيدلية جيلح,Pharmacie Djailah,صيدلية جيلح,51,5101,Ouled Djellal,34.431625,5.073004,exact,osm_node,osm,"{""osm"":""node/6945664152""}",,,,,
-51-00035,المؤسسة الوطنية لتوزيع الأدوية,Entreprise Nationale de Distribution Détail des Médicaments,المؤسسة الوطنية لتوزيع الأدوية,51,5101,Ouled Djellal,34.431809,5.055497,exact,osm_node,osm,"{""osm"":""node/7291326965""}",,,,,
-51-00036,صيدلية جغادر رضا,Pharmacie DJEGHADER REDA,صيدلية جغادر رضا,51,5105,Doucen,34.604171,5.107223,exact,osm_node,osm,"{""osm"":""node/8406143532""}",جغادر رضا,0553271244,24/7,true,"06 BIS شارع سعودي عبد القادر, الدوسن 07007"
-51-00037,صيدلية إدريسي,Pharmacie drissi,صيدلية إدريسي,51,5105,Doucen,34.596172,5.101545,approximate,osm_centroid,osm,"{""osm"":""way/1197772666""}",,,,,الدوسن
-51-00038,صيدلية سالم,Pharmacie salem,صيدلية سالم,51,5105,Doucen,34.597468,5.103594,approximate,osm_centroid,osm,"{""osm"":""way/1197773613""}",,,,,الدوسن
+51-00035,Entreprise Nationale de Distribution Détail des Médicaments;المؤسسة الوطنية لتوزيع الأدوية,Entreprise Nationale de Distribution Détail Des Médicaments,المؤسسة الوطنية لتوزيع الأدوية,51,5101,Ouled Djellal,34.431809,5.055497,exact,osm_node,osm,"{""osm"":""node/7291326965""}",,,,,
+51-00036,Pharmacie DJEGHADER REDA;صيدلية جغادر رضا,Pharmacie Djeghader Reda,صيدلية جغادر رضا,51,5105,Doucen,34.604171,5.107223,exact,osm_node,osm,"{""osm"":""node/8406143532""}",جغادر رضا,0553271244,24/7,true,"06 BIS شارع سعودي عبد القادر, الدوسن 07007"
+51-00037,Pharmacie drissi;صيدلية إدريسي,Pharmacie Drissi,صيدلية إدريسي,51,5105,Doucen,34.596172,5.101545,approximate,osm_centroid,osm,"{""osm"":""way/1197772666""}",,,,,الدوسن
+51-00038,Pharmacie salem;صيدلية سالم,Pharmacie Salem,صيدلية سالم,51,5105,Doucen,34.597468,5.103594,approximate,osm_centroid,osm,"{""osm"":""way/1197773613""}",,,,,الدوسن
 51-00040,Haider,Haïder,حيدر,51,5106,Chaiba,34.754626,5.108495,exact,osm_node,osm,"{""osm"":""node/4029777106""}",,,,,Larbi retima. bir nâam
 52-00001,صيدلية خاصة,Pharmacie 2709,صيدلية خاصة,52,5208,Kerzaz,29.45544,-1.439653,exact,osm_node,osm,"{""osm"":""node/4526987092""}",,049 29 88 57,Mo-Su 08:00-22:00,true,"طريق الساورة, 08220"
 53-00001,صيدلية نويشي,Pharmacie Nouichy,صيدلية نويشي,53,5302,Inghar,27.107033,1.908799,exact,osm_node,osm,"{""osm"":""node/4384949589""}",,0672742160,"Mo-Su 08:00-11:15, 17:45-21:00",,وسط المدينة ان غار
@@ -3657,7 +3673,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 55-00014,,,,55,5504,Nezla,33.094107,6.06846,exact,osm_node,osm,"{""osm"":""node/5213020126""}",,,,,النزلة
 55-00015,صيدلية قنوعي,Pharmacie Guenouai,صيدلية قنوعي,55,5508,Taibet,33.082676,6.398442,exact,osm_node,osm,"{""osm"":""node/5228320021""}",,029611273,,,
 55-00016,صيدلية فيصل,Pharmacie Faiçal,صيدلية فيصل,55,5503,Tebesbest,33.112876,6.080657,exact,osm_node,osm,"{""osm"":""node/5862350685""}",,,Mo-Su 07:00-22:00,,تقرت
-55-00018,صيدلية مهنية - عزي شمس الدين,Pharmacie Mehania - Azzi Chams Eddine,صيدلية مهنية - عزي شمس الدين,55,5501,Touggourt,33.11093,6.071071,exact,osm_node,osm,"{""osm"":""node/6175270286""}",,,Sa-Th 07:00-23:00; Fr 17:00-23:00,,تقرت
+55-00018,صيدلية مهنية - عزي شمس الدين,Pharmacie Mehania - Azzi Chams Eddine,صيدلية مهنية - عزي شمس الدين,55,5501,Touggourt,33.110585,6.071029,exact,osm_node,osm,"{""osm"":""node/6175270286""}",,,Sa-Th 07:00-23:00; Fr 17:00-23:00,true,تقرت
 55-00019,صيدلية نصيب,,صيدلية نصيب,55,5504,Nezla,33.086672,6.047262,approximate,osm_centroid,osm,"{""osm"":""way/1175959747""}",,0659518397,Mo-Su 08:00-00:00,,01
 55-00020,فلسطين,Pharmacie Palestine,فلسطين,55,5501,Touggourt,33.120954,6.049983,approximate,osm_centroid,osm,"{""osm"":""way/1176012969""}",,,,,"حي المستقبل, تقرت"
 55-00021,صيدلية جديعي,Pharmacie Djedai,صيدلية جديعي,55,5513,El Alia,32.696663,5.425544,approximate,osm_centroid,osm,"{""osm"":""way/369710598""}",,,,,
@@ -3672,10 +3688,10 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 57-00006,صيدلية العموري,Pharmacie Amouri,صيدلية العموري,57,5701,El-M'ghaier,33.948589,5.923892,approximate,osm_centroid,osm,"{""osm"":""way/1176055329""}",العموري,,,,المغير
 57-00007,صيدلية النفطي,Pharmacie Nafti,صيدلية النفطي,57,5701,El-M'ghaier,33.950592,5.923179,approximate,osm_centroid,osm,"{""osm"":""way/1176059165""}",,,,,المغير
 58-00001,Pharmacie 5535,Pharmacie 5535,,58,5803,Hassi Gara,30.55708,2.899253,exact,osm_node,osm,"{""osm"":""node/3706098741""}",,,,true,
-58-00002,صيدلية خيراني,Pharmacie Khayrani,صيدلية خيراني,58,5801,El Meniaa,30.583759,2.88119,exact,osm_node,osm,"{""osm"":""node/4130647493""}",,,,,المنيعة
+58-00002,Pharmacie Khayrani;صيدلية خيراني,Pharmacie Khayrani,صيدلية خيراني,58,5801,El Meniaa,30.583759,2.88119,exact,osm_node,osm,"{""osm"":""node/4130647493""}",,,,,المنيعة
 58-00003,Pharmacie Ghiya,Pharmacie Ghiya,,58,5801,El Meniaa,30.584322,2.882509,exact,osm_node,osm,"{""osm"":""node/4130651294""}",,,,,
-58-00004,صيدلية القصر القديم,Pharmacie vieux ksar,صيدلية القصر القديم,58,5801,El Meniaa,30.582118,2.880089,exact,osm_node,osm,"{""osm"":""node/4130651295""}",,,,,المنيعة
-58-00005,صيدلية حسيني,Pharmacie Hassini,صيدلية حسيني,58,5801,El Meniaa,30.584606,2.881299,exact,osm_node,osm,"{""osm"":""node/4130651297""}",,,,,المنيعة
+58-00004,Pharmacie vieux ksar;صيدلية القصر القديم,Pharmacie vieux ksar,صيدلية القصر القديم,58,5801,El Meniaa,30.582118,2.880089,exact,osm_node,osm,"{""osm"":""node/4130651295""}",,,24/7,,المنيعة
+58-00005,Pharmacie Hassini;صيدلية حسيني,Pharmacie Hassini,صيدلية حسيني,58,5801,El Meniaa,30.584606,2.881299,exact,osm_node,osm,"{""osm"":""node/4130651297""}",,,,,المنيعة
 58-00006,,,,58,5801,El Meniaa,30.581465,2.88295,exact,osm_node,osm,"{""osm"":""node/4130651492""}",,,,,المنيعة
 58-00007,,,,58,5801,El Meniaa,30.58318,2.88224,exact,osm_node,osm,"{""osm"":""node/4130651991""}",,,,,المنيعة
 58-00008,Pharmacie Sediki,Pharmacie SEDIKI,صيدلية صديقي,58,5801,El Meniaa,30.602453,2.876577,exact,osm_node,osm,"{""osm"":""node/4139471093""}",,,,,

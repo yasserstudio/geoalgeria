@@ -12,7 +12,7 @@
 
 </div>
 
-692 nœuds ferroviaires et de transport urbain en Algérie – **gares, arrêts de tramway,
+691 nœuds ferroviaires et de transport urbain en Algérie : **gares, arrêts de tramway,
 stations de métro, téléphériques et télécabines** – avec noms bilingues FR/AR, exploitant
 (SNTF / SETRAM / SEMA), ligne, coordonnées GPS et rattachement wilaya/commune. Composite
 Wikidata + OpenStreetMap, en JSON, CSV et GeoJSON. Fait partie de
@@ -28,7 +28,7 @@ npm install @geoalgeria/ferroviaire
 ```js
 import ferroviaire from "@geoalgeria/ferroviaire";
 
-const tout = ferroviaire.stations();               // 692
+const tout = ferroviaire.stations();               // 691
 const trams = ferroviaire.stationsByType("tram");  // 190 arrêts de tram
 const alger = ferroviaire.stationsByWilaya(16);    // rail + métro + tram à Alger
 ```
@@ -39,7 +39,7 @@ const alger = ferroviaire.stationsByWilaya(16);    // rail + métro + tram à Al
 | --- | --- | --- |
 | Rail (train) | **427** | SNTF |
 | Tramway | **190** | SETRAM (7 réseaux) |
-| Métro | **41** | SEMA – Métro d'Alger |
+| Métro | **40** | SEMA, Métro d'Alger |
 | Téléphérique | **24** | – |
 | Télécabine | **10** | – |
 

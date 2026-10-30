@@ -996,8 +996,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.4206,
-          36.466
+          7.4337368,
+          36.4715395
         ]
       },
       "properties": {
@@ -1006,10 +1006,10 @@
         "wilaya_code": "24",
         "commune_code": "2401",
         "commune": "Guelma",
-        "lat": 36.466,
-        "lng": 7.4206,
-        "geo_precision": "approximate",
-        "geo_method": "approx",
+        "lat": 36.4715395,
+        "lng": 7.4337368,
+        "geo_precision": "exact",
+        "geo_method": "exact",
         "source": "sogral",
         "refs": {
           "sogral": "213-000024001",
@@ -2165,8 +2165,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.9,
-          35.463
+          2.9001721,
+          35.4635735
         ]
       },
       "properties": {
@@ -2175,9 +2175,9 @@
         "wilaya_code": "65",
         "commune_code": "1731",
         "commune": "Aïn Ouessara",
-        "lat": 35.463,
-        "lng": 2.9,
-        "geo_precision": "approximate",
+        "lat": 35.4635735,
+        "lng": 2.9001721,
+        "geo_precision": "exact",
         "geo_method": "exact",
         "source": "sogral",
         "refs": {

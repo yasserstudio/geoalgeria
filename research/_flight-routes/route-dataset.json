@@ -13,6 +13,9 @@
       "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
       "source_is_the_table": true,
       "listed_at": "Rabah Bitat Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport"
+      ],
       "great_circle_km": 1420
     },
     {
@@ -27,6 +30,9 @@
       "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
       "source_is_the_table": true,
       "listed_at": "Rabah Bitat Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport"
+      ],
       "great_circle_km": 1867
     },
     {
@@ -39,6 +45,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1016
     },
     {
@@ -53,6 +62,9 @@
       "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
       "source_is_the_table": true,
       "listed_at": "Rabah Bitat Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport"
+      ],
       "great_circle_km": 768
     },
     {
@@ -67,6 +79,9 @@
       "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
       "source_is_the_table": true,
       "listed_at": "Rabah Bitat Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport"
+      ],
       "great_circle_km": 1396
     },
     {
@@ -81,7 +96,28 @@
       ],
       "evidence": "verified",
       "source": "https://www.algerie360.com/air-algerie-accelere-son-envol-en-afrique-avec-40-vols-hebdomadaires-a-lhorizon-2026/",
+      "sources": [
+        "https://www.algerie360.com/air-algerie-accelere-son-envol-en-afrique-avec-40-vols-hebdomadaires-a-lhorizon-2026/"
+      ],
       "great_circle_km": 3106
+    },
+    {
+      "id": "abv-los",
+      "from": "ABV",
+      "to": "LOS",
+      "carrier": "AH",
+      "flight": "AH 5354",
+      "status": "active",
+      "days": [
+        "tue"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5354",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5354",
+        "https://www.aeroroutes.com/eng/260820-ahnw26af"
+      ],
+      "great_circle_km": 511
     },
     {
       "id": "alc-alg",
@@ -93,6 +129,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 376
     },
     {
@@ -105,6 +144,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 296
     },
     {
@@ -119,6 +161,9 @@
       "source": "https://www.air-journal.fr/2018-08-19-air-algerie-senvole-vers-le-cameroun-et-le-gabon-5203190.html",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://www.air-journal.fr/2018-08-19-air-algerie-senvole-vers-le-cameroun-et-le-gabon-5203190.html"
+      ],
       "great_circle_km": 3571
     },
     {
@@ -133,6 +178,9 @@
       ],
       "evidence": "verified",
       "source": "https://www.agenceecofin.com/actualites-services/0704-127328-air-algerie-a-lance-sa-ligne-alger-abuja",
+      "sources": [
+        "https://www.agenceecofin.com/actualites-services/0704-127328-air-algerie-a-lance-sa-ligne-alger-abuja"
+      ],
       "great_circle_km": 3106
     },
     {
@@ -147,6 +195,9 @@
       "source": "https://al24news.dz/fr/transport-aerien-lancement-du-premier-vol-de-la-ligne-directe-alger-addis-abeba/",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://al24news.dz/fr/transport-aerien-lancement-du-premier-vol-de-la-ligne-directe-alger-addis-abeba/"
+      ],
       "great_circle_km": 4726
     },
     {
@@ -159,6 +210,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 376
     },
     {
@@ -173,6 +227,9 @@
       "source": "https://www.visa-algerie.com/air-algerie-lance-une-promo-vers-une-magnifique-destination-populaire-3-raisons-de-reserver/",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://www.visa-algerie.com/air-algerie-lance-une-promo-vers-une-magnifique-destination-populaire-3-raisons-de-reserver/"
+      ],
       "great_circle_km": 2448
     },
     {
@@ -185,6 +242,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 520
     },
     {
@@ -199,6 +259,9 @@
       ],
       "evidence": "verified",
       "source": "https://www.algerie360.com/air-algerie-nouvelle-ligne-directe-berlin/",
+      "sources": [
+        "https://www.algerie360.com/air-algerie-nouvelle-ligne-directe-berlin/"
+      ],
       "great_circle_km": 1919
     },
     {
@@ -213,6 +276,10 @@
       "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+        "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/"
+      ],
       "great_circle_km": 2934
     },
     {
@@ -227,6 +294,9 @@
       "source": "https://www.visa-algerie.com/air-algerie-apres-pekin-et-guangzhou-une-autre-grande-ville-en-chine-dans-le-viseur/",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://www.visa-algerie.com/air-algerie-apres-pekin-et-guangzhou-une-autre-grande-ville-en-chine-dans-le-viseur/"
+      ],
       "great_circle_km": 2909
     },
     {
@@ -239,6 +309,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1582
     },
     {
@@ -253,7 +326,32 @@
       ],
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260102-ahapr26bud",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260102-ahapr26bud"
+      ],
       "great_circle_km": 1777
+    },
+    {
+      "id": "alg-bzv",
+      "from": "ALG",
+      "to": "BZV",
+      "carrier": "AH",
+      "flight": "AH 5390",
+      "status": "active",
+      "days": [
+        "mon",
+        "wed",
+        "sat"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5390",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5390",
+        "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
+        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 4722
     },
     {
       "id": "alg-cai",
@@ -265,6 +363,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 2706
     },
     {
@@ -277,6 +378,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html",
+      "sources": [
+        "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html"
+      ],
       "great_circle_km": 10106
     },
     {
@@ -289,7 +393,33 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.parisaeroport.fr/",
+      "sources": [
+        "https://www.parisaeroport.fr/"
+      ],
       "great_circle_km": 1370
+    },
+    {
+      "id": "alg-cky",
+      "from": "ALG",
+      "to": "CKY",
+      "carrier": "AH",
+      "flight": "AH 5358",
+      "status": "active",
+      "days": [
+        "tue",
+        "thu",
+        "sun"
+      ],
+      "evidence": "verified",
+      "source": "https://www.africaguinee.com/transport-aerien-air-algerie-signe-son-grand-retour-en-guinee-apres-45-ans-dabsence/",
+      "sources": [
+        "https://www.africaguinee.com/transport-aerien-air-algerie-signe-son-grand-retour-en-guinee-apres-45-ans-dabsence/",
+        "https://www.guinee114.com/2026/10/26/45-ans-apres-un-avion-dair-algerie-atterrit-en-guinee-reouverture-de-la-ligne-alger-conakry-fruit-dune-victoire-diplomatique/",
+        "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
+        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 3459
     },
     {
       "id": "alg-dje",
@@ -301,6 +431,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.visa-algerie.com/air-algerie-relance-ses-vols-saisonniers-vers-la-destination-la-plus-prisee-de-tunisie/",
+      "sources": [
+        "https://www.visa-algerie.com/air-algerie-relance-ses-vols-saisonniers-vers-la-destination-la-plus-prisee-de-tunisie/"
+      ],
       "great_circle_km": 755
     },
     {
@@ -313,6 +446,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260609-ahjun26lbv",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260609-ahjun26lbv"
+      ],
       "great_circle_km": 3696
     },
     {
@@ -329,6 +465,9 @@
       ],
       "evidence": "verified",
       "source": "https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches",
+      "sources": [
+        "https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches"
+      ],
       "great_circle_km": 4733
     },
     {
@@ -341,6 +480,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 3168
     },
     {
@@ -355,6 +497,10 @@
       "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
+        "https://www.air-journal.fr/2026-02-18-emirates-prepare-la-fin-de-sa-ligne-dubai-alger-en-2027-sur-fond-de-crise-diplomatique-avec-lalgerie-5273218.html"
+      ],
       "great_circle_km": 5069
     },
     {
@@ -367,6 +513,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://lorraineaeroport.com/vols-destinations/",
+      "sources": [
+        "https://lorraineaeroport.com/vols-destinations/"
+      ],
       "great_circle_km": 1388
     },
     {
@@ -379,6 +528,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.aeroroutes.com/eng/260706-ahns26320",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260706-ahns26320"
+      ],
       "great_circle_km": 963
     },
     {
@@ -393,6 +545,9 @@
       "source": "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html"
+      ],
       "great_circle_km": 1543
     },
     {
@@ -405,6 +560,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.observalgerie.com/",
+      "sources": [
+        "https://www.observalgerie.com/"
+      ],
       "great_circle_km": 3058
     },
     {
@@ -417,6 +575,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 2255
     },
     {
@@ -429,6 +590,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 7463
     },
     {
@@ -441,6 +605,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 10580
     },
     {
@@ -453,6 +620,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260609-ahjun26lbv",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260609-ahjun26lbv"
+      ],
       "great_circle_km": 4080
     },
     {
@@ -465,6 +635,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.aeroroutes.com/eng/260720-ahjul267m8",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260720-ahjul267m8"
+      ],
       "great_circle_km": 1668
     },
     {
@@ -479,7 +652,29 @@
       "source": "https://www.tsa-algerie.com/air-algerie-renonce-a-quitter-laeroport-de-londres-heathrow-voici-les-raisons/",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://www.tsa-algerie.com/air-algerie-renonce-a-quitter-laeroport-de-londres-heathrow-voici-les-raisons/"
+      ],
       "great_circle_km": 1542
+    },
+    {
+      "id": "alg-los",
+      "from": "ALG",
+      "to": "LOS",
+      "carrier": "AH",
+      "flight": "AH 5354",
+      "status": "active",
+      "days": [
+        "thu"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5354",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5354",
+        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 3349
     },
     {
       "id": "alg-lys",
@@ -491,6 +686,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1016
     },
     {
@@ -506,7 +704,31 @@
       ],
       "evidence": "verified",
       "source": "https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/",
+      "sources": [
+        "https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/"
+      ],
       "great_circle_km": 1900
+    },
+    {
+      "id": "alg-mji",
+      "from": "ALG",
+      "to": "MJI",
+      "carrier": "AH",
+      "flight": "AH 4006",
+      "status": "active",
+      "days": [
+        "wed",
+        "fri"
+      ],
+      "evidence": "verified",
+      "source": "https://www.visa-algerie.com/air-algerie-de-retour-en-libye-dans-un-contexte-favorable/",
+      "sources": [
+        "https://www.visa-algerie.com/air-algerie-de-retour-en-libye-dans-un-contexte-favorable/",
+        "https://sarabic.ae/20261028/%D8%A7%D9%84%D8%AE%D8%B7%D9%88%D8%B7-%D8%A7%D9%84%D8%AC%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A%D8%A9-%D8%AA%D8%B3%D8%AA%D8%A3%D9%86%D9%81-%D8%B1%D8%AD%D9%84%D8%A7%D8%AA%D9%87%D8%A7-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1%D8%A9-%D8%A5%D9%84%D9%89-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7-%D8%A8%D8%B9%D8%AF-%D8%A7%D9%86%D9%82%D8%B7%D8%A7%D8%B9-%D9%84%D9%80-12%D8%B9%D8%A7%D9%85%D8%A7-1118210958.html",
+        "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 1012
     },
     {
       "id": "alg-mpl",
@@ -518,6 +740,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+      "sources": [
+        "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines"
+      ],
       "great_circle_km": 767
     },
     {
@@ -530,6 +755,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.marseille.aeroport.fr/",
+      "sources": [
+        "https://www.marseille.aeroport.fr/"
+      ],
       "great_circle_km": 768
     },
     {
@@ -542,6 +770,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260608-ahjul26nbj",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260608-ahjul26nbj"
+      ],
       "great_circle_km": 5199
     },
     {
@@ -556,6 +787,9 @@
       "source": "https://news.radioalgerie.dz/fr/node/72797",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://news.radioalgerie.dz/fr/node/72797"
+      ],
       "great_circle_km": 2584
     },
     {
@@ -568,6 +802,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 2774
     },
     {
@@ -580,6 +817,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.nantes.aeroport.fr/fr/air-algerie",
+      "sources": [
+        "https://www.nantes.aeroport.fr/fr/air-algerie"
+      ],
       "great_circle_km": 1228
     },
     {
@@ -594,6 +834,9 @@
       "source": "https://www.dzairdaily.com/une-nouvelle-ville-deurope-bientot-desservie-par-air-algerie/",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://www.dzairdaily.com/une-nouvelle-ville-deurope-bientot-desservie-par-air-algerie/"
+      ],
       "great_circle_km": 1144
     },
     {
@@ -608,6 +851,9 @@
       "source": "https://www.parisaeroport.fr/en/passengers/flights/airlines/airline?airline=AH&",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://www.parisaeroport.fr/en/passengers/flights/airlines/airline?airline=AH&"
+      ],
       "great_circle_km": 1339
     },
     {
@@ -620,6 +866,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 2748
     },
     {
@@ -632,7 +881,32 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260416-ahmay26pek",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260416-ahmay26pek"
+      ],
       "great_circle_km": 9105
+    },
+    {
+      "id": "alg-pvg",
+      "from": "ALG",
+      "to": "PVG",
+      "carrier": "AH",
+      "flight": "AH 3082",
+      "status": "active",
+      "days": [
+        "mon",
+        "wed",
+        "sat"
+      ],
+      "evidence": "verified",
+      "source": "https://observalgerie.com/2026/10/26/voyage/air-algerie-inaugure-une-nouvelle-liaison-long-courrier",
+      "sources": [
+        "https://observalgerie.com/2026/10/26/voyage/air-algerie-inaugure-une-nouvelle-liaison-long-courrier",
+        "https://www.aps.dz/fr/economie/commerce-et-service/mvp5bhj8-air-algerie-ouvre-une-nouvelle-liaison-vers-shanghai",
+        "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 10131
     },
     {
       "id": "alg-rtm",
@@ -647,6 +921,9 @@
       ],
       "evidence": "listed",
       "source": "https://www.aeroroutes.com/eng/250901-ahnw25rtm",
+      "sources": [
+        "https://www.aeroroutes.com/eng/250901-ahnw25rtm"
+      ],
       "great_circle_km": 1699
     },
     {
@@ -661,6 +938,9 @@
       "source": "https://en.wikipedia.org/wiki/Houari_Boumediene_Airport",
       "source_is_the_table": true,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Houari_Boumediene_Airport"
+      ],
       "great_circle_km": 3070
     },
     {
@@ -678,6 +958,9 @@
       ],
       "evidence": "verified",
       "source": "https://mediacentre.stanstedairport.com/new-airline-air-algerie-launches-direct-flights-to-algiers/",
+      "sources": [
+        "https://mediacentre.stanstedairport.com/new-airline-air-algerie-launches-direct-flights-to-algiers/"
+      ],
       "great_circle_km": 1705
     },
     {
@@ -693,6 +976,9 @@
       ],
       "evidence": "verified",
       "source": "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/",
+      "sources": [
+        "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"
+      ],
       "great_circle_km": 1365
     },
     {
@@ -705,6 +991,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 625
     },
     {
@@ -717,6 +1006,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud",
+      "sources": [
+        "https://www.aeroroutes.com/eng/250728-ahnw25bud"
+      ],
       "great_circle_km": 1672
     },
     {
@@ -731,6 +1023,9 @@
       "source": "https://algerie-eco.com/2026/04/01/air-algerie-reouverture-de-la-ligne-alger-budapest-via-vienne/",
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
+      "sources": [
+        "https://algerie-eco.com/2026/04/01/air-algerie-reouverture-de-la-ligne-alger-budapest-via-vienne/"
+      ],
       "great_circle_km": 448
     },
     {
@@ -743,6 +1038,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260430-ahns26yul",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260430-ahns26yul"
+      ],
       "great_circle_km": 6275
     },
     {
@@ -755,6 +1053,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 520
     },
     {
@@ -769,6 +1070,9 @@
       ],
       "evidence": "verified",
       "source": "https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/",
+      "sources": [
+        "https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/"
+      ],
       "great_circle_km": 1919
     },
     {
@@ -782,6 +1086,9 @@
       "evidence": "listed",
       "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
       "source_is_the_table": false,
+      "sources": [
+        "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai"
+      ],
       "great_circle_km": 2934
     },
     {
@@ -796,6 +1103,9 @@
       "source": "https://www.parisaeroport.fr/en/passengers/flights/airlines/ah",
       "source_is_the_table": false,
       "listed_at": "Abane Ramdane Airport",
+      "sources": [
+        "https://www.parisaeroport.fr/en/passengers/flights/airlines/ah"
+      ],
       "great_circle_km": 1382
     },
     {
@@ -808,6 +1118,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1002
     },
     {
@@ -822,6 +1135,9 @@
       "source": "https://en.wikipedia.org/wiki/Abane_Ramdane_Airport",
       "source_is_the_table": true,
       "listed_at": "Abane Ramdane Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Abane_Ramdane_Airport"
+      ],
       "great_circle_km": 748
     },
     {
@@ -836,6 +1152,9 @@
       "source": "https://en.wikipedia.org/wiki/Abane_Ramdane_Airport",
       "source_is_the_table": true,
       "listed_at": "Abane Ramdane Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Abane_Ramdane_Airport"
+      ],
       "great_circle_km": 1354
     },
     {
@@ -848,6 +1167,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1113
     },
     {
@@ -862,6 +1184,9 @@
       "source": "https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport",
       "source_is_the_table": true,
       "listed_at": "Mostépha Ben Boulaid Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport"
+      ],
       "great_circle_km": 859
     },
     {
@@ -874,6 +1199,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.flightsfrom.com/BLJ-ORY",
+      "sources": [
+        "https://www.flightsfrom.com/BLJ-ORY"
+      ],
       "great_circle_km": 1478
     },
     {
@@ -886,6 +1214,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 962
     },
     {
@@ -898,6 +1229,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1582
     },
     {
@@ -910,6 +1244,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1217
     },
     {
@@ -924,6 +1261,9 @@
       "source": "https://web.archive.org/web/20110221154249/http://www.airalgerie.dz/",
       "source_is_the_table": false,
       "listed_at": "Biskra Airport",
+      "sources": [
+        "https://web.archive.org/web/20110221154249/http://www.airalgerie.dz/"
+      ],
       "great_circle_km": 1574
     },
     {
@@ -936,7 +1276,31 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260102-ahapr26bud",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260102-ahapr26bud"
+      ],
       "great_circle_km": 1777
+    },
+    {
+      "id": "bzv-alg",
+      "from": "BZV",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 5391",
+      "status": "active",
+      "days": [
+        "tue",
+        "thu",
+        "sun"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5391",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5391",
+        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 4722
     },
     {
       "id": "cai-alg",
@@ -948,6 +1312,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 2706
     },
     {
@@ -960,6 +1327,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260620-ahnw26cankul",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260620-ahnw26cankul"
+      ],
       "great_circle_km": 10106
     },
     {
@@ -972,6 +1342,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.parisaeroport.fr/",
+      "sources": [
+        "https://www.parisaeroport.fr/"
+      ],
       "great_circle_km": 1370
     },
     {
@@ -984,6 +1357,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1453
     },
     {
@@ -996,6 +1372,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1511
     },
     {
@@ -1010,6 +1389,9 @@
       "source": "https://en.wikipedia.org/wiki/Chlef_International_Airport",
       "source_is_the_table": true,
       "listed_at": "Chlef International Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chlef_International_Airport"
+      ],
       "great_circle_km": 1426
     },
     {
@@ -1024,7 +1406,31 @@
       "source": "https://en.wikipedia.org/wiki/Chlef_International_Airport",
       "source_is_the_table": true,
       "listed_at": "Chlef International Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chlef_International_Airport"
+      ],
       "great_circle_km": 869
+    },
+    {
+      "id": "cky-alg",
+      "from": "CKY",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 5359",
+      "status": "active",
+      "days": [
+        "mon",
+        "wed",
+        "fri"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5359",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5359",
+        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 3459
     },
     {
       "id": "czl-cdg",
@@ -1038,6 +1444,9 @@
       "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
       "source_is_the_table": true,
       "listed_at": "Mohamed Boudiaf International Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
+      ],
       "great_circle_km": 1453
     },
     {
@@ -1050,6 +1459,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://lorraineaeroport.com/vols-destinations/",
+      "sources": [
+        "https://lorraineaeroport.com/vols-destinations/"
+      ],
       "great_circle_km": 1412
     },
     {
@@ -1064,6 +1476,9 @@
       "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
       "source_is_the_table": true,
       "listed_at": "Mohamed Boudiaf International Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
+      ],
       "great_circle_km": 1989
     },
     {
@@ -1078,6 +1493,9 @@
       "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
       "source_is_the_table": true,
       "listed_at": "Mohamed Boudiaf International Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
+      ],
       "great_circle_km": 3533
     },
     {
@@ -1092,6 +1510,9 @@
       "source": "https://www.routesonline.com/news/38/airlineroute/285075/air-algerie-adds-constantine-lille-from-late-oct-2019/",
       "source_is_the_table": false,
       "listed_at": "Mohamed Boudiaf International Airport",
+      "sources": [
+        "https://www.routesonline.com/news/38/airlineroute/285075/air-algerie-adds-constantine-lille-from-late-oct-2019/"
+      ],
       "great_circle_km": 1613
     },
     {
@@ -1104,6 +1525,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1058
     },
     {
@@ -1118,6 +1542,9 @@
       "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
       "source_is_the_table": true,
       "listed_at": "Mohamed Boudiaf International Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
+      ],
       "great_circle_km": 3409
     },
     {
@@ -1132,6 +1559,9 @@
       "source": "https://www.aaco.org/media-center/news/aaco-members/air-algerie-commences-constantine-monastir-and-algiers-luanda-services-in-june-2026",
       "source_is_the_table": false,
       "listed_at": "Mohamed Boudiaf International Airport",
+      "sources": [
+        "https://www.aaco.org/media-center/news/aaco-members/air-algerie-commences-constantine-monastir-and-algiers-luanda-services-in-june-2026"
+      ],
       "great_circle_km": 376
     },
     {
@@ -1146,6 +1576,9 @@
       "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
       "source_is_the_table": true,
       "listed_at": "Mohamed Boudiaf International Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
+      ],
       "great_circle_km": 805
     },
     {
@@ -1160,6 +1593,9 @@
       "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
       "source_is_the_table": true,
       "listed_at": "Mohamed Boudiaf International Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
+      ],
       "great_circle_km": 822
     },
     {
@@ -1174,6 +1610,9 @@
       "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
       "source_is_the_table": true,
       "listed_at": "Mohamed Boudiaf International Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
+      ],
       "great_circle_km": 1427
     },
     {
@@ -1186,6 +1625,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.visa-algerie.com/apres-djerba-en-tunisie-air-algerie-se-pose-a-charm-el-cheikh-en-egypte/",
+      "sources": [
+        "https://www.visa-algerie.com/apres-djerba-en-tunisie-air-algerie-se-pose-a-charm-el-cheikh-en-egypte/"
+      ],
       "great_circle_km": 2762
     },
     {
@@ -1200,6 +1642,9 @@
       ],
       "evidence": "verified",
       "source": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine",
+      "sources": [
+        "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine"
+      ],
       "great_circle_km": 931
     },
     {
@@ -1214,6 +1659,9 @@
       "source": "https://en.wikipedia.org/wiki/Djanet_Inedbirene_Airport",
       "source_is_the_table": true,
       "listed_at": "Djanet Inedbirene Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Djanet_Inedbirene_Airport"
+      ],
       "great_circle_km": 2814
     },
     {
@@ -1226,6 +1674,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260629-ahnw26"
+      ],
       "great_circle_km": 3696
     },
     {
@@ -1242,6 +1693,9 @@
       ],
       "evidence": "verified",
       "source": "https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches",
+      "sources": [
+        "https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches"
+      ],
       "great_circle_km": 4733
     },
     {
@@ -1255,6 +1709,9 @@
       "evidence": "listed",
       "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
       "source_is_the_table": false,
+      "sources": [
+        "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai"
+      ],
       "great_circle_km": 5069
     },
     {
@@ -1269,6 +1726,9 @@
       "source": "https://en.wikipedia.org/wiki/Guemar_Airport",
       "source_is_the_table": true,
       "listed_at": "Guemar Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Guemar_Airport"
+      ],
       "great_circle_km": 1759
     },
     {
@@ -1281,6 +1741,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://lorraineaeroport.com/vols-destinations/",
+      "sources": [
+        "https://lorraineaeroport.com/vols-destinations/"
+      ],
       "great_circle_km": 1388
     },
     {
@@ -1293,6 +1756,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://lorraineaeroport.com/vols-destinations/",
+      "sources": [
+        "https://lorraineaeroport.com/vols-destinations/"
+      ],
       "great_circle_km": 1412
     },
     {
@@ -1305,6 +1771,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.lorraineaeroport.com/vols-destinations/oran/",
+      "sources": [
+        "https://www.lorraineaeroport.com/vols-destinations/oran/"
+      ],
       "great_circle_km": 1588
     },
     {
@@ -1317,6 +1786,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.aeroroutes.com/eng/260706-ahns26320",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260706-ahns26320"
+      ],
       "great_circle_km": 963
     },
     {
@@ -1329,6 +1801,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1543
     },
     {
@@ -1343,6 +1818,9 @@
       "source": "https://en.wikipedia.org/wiki/Jijel_Ferhat_Abbas_Airport",
       "source_is_the_table": true,
       "listed_at": "Jijel Ferhat Abbas Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jijel_Ferhat_Abbas_Airport"
+      ],
       "great_circle_km": 741
     },
     {
@@ -1355,6 +1833,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 2255
     },
     {
@@ -1367,6 +1848,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1989
     },
     {
@@ -1379,6 +1863,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 7463
     },
     {
@@ -1391,6 +1878,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260620-ahnw26cankul",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260620-ahnw26cankul"
+      ],
       "great_circle_km": 10580
     },
     {
@@ -1403,6 +1893,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260629-ahnw26"
+      ],
       "great_circle_km": 4080
     },
     {
@@ -1415,7 +1908,47 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes",
+      "sources": [
+        "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes"
+      ],
       "great_circle_km": 1668
+    },
+    {
+      "id": "los-abv",
+      "from": "LOS",
+      "to": "ABV",
+      "carrier": "AH",
+      "flight": "AH 5354",
+      "status": "active",
+      "days": [
+        "fri"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5354",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5354",
+        "https://www.aeroroutes.com/eng/260820-ahnw26af"
+      ],
+      "great_circle_km": 511
+    },
+    {
+      "id": "los-alg",
+      "from": "LOS",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 5354",
+      "status": "active",
+      "days": [
+        "tue"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5354",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5354",
+        "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 3349
     },
     {
       "id": "lys-aae",
@@ -1427,6 +1960,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1016
     },
     {
@@ -1439,6 +1975,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1016
     },
     {
@@ -1451,6 +1990,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1002
     },
     {
@@ -1463,6 +2005,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1113
     },
     {
@@ -1475,6 +2020,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1217
     },
     {
@@ -1487,6 +2035,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1058
     },
     {
@@ -1499,6 +2050,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1222
     },
     {
@@ -1511,6 +2065,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1062
     },
     {
@@ -1523,6 +2080,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1313
     },
     {
@@ -1538,7 +2098,30 @@
       ],
       "evidence": "verified",
       "source": "https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/",
+      "sources": [
+        "https://mediacentre.manchesterairport.co.uk/air-algerie-to-launch-first-flights-from-manchester-airport-to-north-african-hub/"
+      ],
       "great_circle_km": 1900
+    },
+    {
+      "id": "mji-alg",
+      "from": "MJI",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 4007",
+      "status": "active",
+      "days": [
+        "wed",
+        "fri"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah4007",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah4007",
+        "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 1012
     },
     {
       "id": "mpl-alg",
@@ -1550,6 +2133,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+      "sources": [
+        "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines"
+      ],
       "great_circle_km": 767
     },
     {
@@ -1562,6 +2148,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+      "sources": [
+        "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines"
+      ],
       "great_circle_km": 967
     },
     {
@@ -1574,6 +2163,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 768
     },
     {
@@ -1586,6 +2178,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 805
     },
     {
@@ -1598,6 +2193,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1002
     },
     {
@@ -1610,6 +2208,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260608-ahjul26nbj",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260608-ahjul26nbj"
+      ],
       "great_circle_km": 5199
     },
     {
@@ -1622,6 +2223,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 845
     },
     {
@@ -1634,6 +2238,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 2774
     },
     {
@@ -1646,6 +2253,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1228
     },
     {
@@ -1658,6 +2268,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 296
     },
     {
@@ -1672,6 +2285,9 @@
       "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
       "source_is_the_table": true,
       "listed_at": "Ahmed Ben Bella Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport"
+      ],
       "great_circle_km": 673
     },
     {
@@ -1686,6 +2302,9 @@
       "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
       "source_is_the_table": true,
       "listed_at": "Ahmed Ben Bella Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport"
+      ],
       "great_circle_km": 1024
     },
     {
@@ -1698,6 +2317,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.lorraineaeroport.com/vols-destinations/oran/",
+      "sources": [
+        "https://www.lorraineaeroport.com/vols-destinations/oran/"
+      ],
       "great_circle_km": 1588
     },
     {
@@ -1710,6 +2332,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/",
+      "sources": [
+        "https://www.aeroroutes.com/"
+      ],
       "great_circle_km": 2618
     },
     {
@@ -1724,6 +2349,9 @@
       "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
       "source_is_the_table": true,
       "listed_at": "Ahmed Ben Bella Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport"
+      ],
       "great_circle_km": 1689
     },
     {
@@ -1736,6 +2364,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1222
     },
     {
@@ -1748,6 +2379,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines",
+      "sources": [
+        "https://www.montpellier.aeroport.fr/en/passengers/flight-destinations/airlines"
+      ],
       "great_circle_km": 967
     },
     {
@@ -1762,6 +2396,9 @@
       "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
       "source_is_the_table": true,
       "listed_at": "Ahmed Ben Bella Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport"
+      ],
       "great_circle_km": 1002
     },
     {
@@ -1776,6 +2413,9 @@
       "source": "https://www.aeroroutes.com/eng/250722-ah3q25eg",
       "source_is_the_table": false,
       "listed_at": "Ahmed Ben Bella Airport",
+      "sources": [
+        "https://www.aeroroutes.com/eng/250722-ah3q25eg"
+      ],
       "great_circle_km": 3396
     },
     {
@@ -1788,6 +2428,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1339
     },
     {
@@ -1800,6 +2443,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.flightsfrom.com/ORY-BLJ",
+      "sources": [
+        "https://www.flightsfrom.com/ORY-BLJ"
+      ],
       "great_circle_km": 1478
     },
     {
@@ -1812,6 +2458,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 1478
     },
     {
@@ -1824,7 +2473,31 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/260416-ahmay26pek",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260416-ahmay26pek"
+      ],
       "great_circle_km": 9105
+    },
+    {
+      "id": "pvg-alg",
+      "from": "PVG",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 3083",
+      "status": "active",
+      "days": [
+        "tue",
+        "thu",
+        "sun"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah3083",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah3083",
+        "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
+        "https://www.algerie360.com/air-algerie-nouvelles-destinations-conakry-shanghai-tripoli/"
+      ],
+      "great_circle_km": 10131
     },
     {
       "id": "qsf-lil",
@@ -1838,6 +2511,9 @@
       "source": "https://www.air-journal.fr/2025-01-06-asl-airlines-france-lance-une-ligne-entre-lille-et-toulon-5260220.html",
       "source_is_the_table": false,
       "listed_at": "Ain Arnat Airport",
+      "sources": [
+        "https://www.air-journal.fr/2025-01-06-asl-airlines-france-lance-une-ligne-entre-lille-et-toulon-5260220.html"
+      ],
       "great_circle_km": 1610
     },
     {
@@ -1850,6 +2526,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1062
     },
     {
@@ -1864,6 +2543,9 @@
       "source": "https://en.wikipedia.org/wiki/Ain_Arnat_Airport",
       "source_is_the_table": true,
       "listed_at": "Ain Arnat Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ain_Arnat_Airport"
+      ],
       "great_circle_km": 1417
     },
     {
@@ -1879,6 +2561,9 @@
       ],
       "evidence": "listed",
       "source": "https://www.aeroroutes.com/eng/250901-ahnw25rtm",
+      "sources": [
+        "https://www.aeroroutes.com/eng/250901-ahnw25rtm"
+      ],
       "great_circle_km": 1699
     },
     {
@@ -1891,6 +2576,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes",
+      "sources": [
+        "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes"
+      ],
       "great_circle_km": 1705
     },
     {
@@ -1903,6 +2591,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.observalgerie.com/",
+      "sources": [
+        "https://www.observalgerie.com/"
+      ],
       "great_circle_km": 1365
     },
     {
@@ -1917,6 +2608,9 @@
       "source": "https://en.wikipedia.org/wiki/Zenata_–_Messali_El_Hadj_Airport",
       "source_is_the_table": true,
       "listed_at": "Zenata – Messali El Hadj Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Zenata_–_Messali_El_Hadj_Airport"
+      ],
       "great_circle_km": 1590
     },
     {
@@ -1931,6 +2625,9 @@
       "source": "https://www.air-journal.fr/2025-01-06-asl-airlines-france-lance-une-ligne-entre-lille-et-toulon-5260220.html",
       "source_is_the_table": false,
       "listed_at": "Zenata – Messali El Hadj Airport",
+      "sources": [
+        "https://www.air-journal.fr/2025-01-06-asl-airlines-france-lance-une-ligne-entre-lille-et-toulon-5260220.html"
+      ],
       "great_circle_km": 1768
     },
     {
@@ -1945,6 +2642,9 @@
       ],
       "evidence": "verified",
       "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "sources": [
+        "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"
+      ],
       "great_circle_km": 1313
     },
     {
@@ -1957,6 +2657,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.marseille.aeroport.fr/vols-et-destinations/destinations/toutes-les-destinations/afrique/algerie/tlemcen",
+      "sources": [
+        "https://www.marseille.aeroport.fr/vols-et-destinations/destinations/toutes-les-destinations/afrique/algerie/tlemcen"
+      ],
       "great_circle_km": 1098
     },
     {
@@ -1971,6 +2674,9 @@
       "source": "https://en.wikipedia.org/wiki/Zenata_–_Messali_El_Hadj_Airport",
       "source_is_the_table": true,
       "listed_at": "Zenata – Messali El Hadj Airport",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Zenata_–_Messali_El_Hadj_Airport"
+      ],
       "great_circle_km": 1557
     },
     {
@@ -1985,6 +2691,9 @@
       ],
       "evidence": "verified",
       "source": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine",
+      "sources": [
+        "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine"
+      ],
       "great_circle_km": 931
     },
     {
@@ -1997,6 +2706,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 907
     },
     {
@@ -2009,6 +2721,9 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "sources": [
+        "https://www.airalgerie.dz/decouvrir/nos-destinations/"
+      ],
       "great_circle_km": 625
     },
     {
@@ -2021,56 +2736,13 @@
       "days": null,
       "evidence": "verified",
       "source": "https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/",
+      "sources": [
+        "https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/"
+      ],
       "great_circle_km": 6275
     }
   ],
   "planned": [
-    {
-      "id": "abv-los",
-      "from": "ABV",
-      "to": "LOS",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": [
-        "mon"
-      ],
-      "evidence": "listed",
-      "source": "https://www.aeroroutes.com/eng/260820-ahnw26af",
-      "great_circle_km": 511
-    },
-    {
-      "id": "alg-bzv",
-      "from": "ALG",
-      "to": "BZV",
-      "carrier": "AH",
-      "flight": "AH 5390",
-      "status": "unclear",
-      "days": [
-        "mon",
-        "wed",
-        "sat"
-      ],
-      "evidence": "verified",
-      "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
-      "great_circle_km": 4722
-    },
-    {
-      "id": "alg-cky",
-      "from": "ALG",
-      "to": "CKY",
-      "carrier": "AH",
-      "flight": "AH 5358",
-      "status": "unclear",
-      "days": [
-        "tue",
-        "thu",
-        "sun"
-      ],
-      "evidence": "verified",
-      "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
-      "great_circle_km": 3459
-    },
     {
       "id": "alg-icn",
       "from": "ALG",
@@ -2081,6 +2753,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+      "sources": [
+        "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"
+      ],
       "great_circle_km": 9914
     },
     {
@@ -2088,43 +2763,18 @@
       "from": "ALG",
       "to": "KWI",
       "carrier": "AH",
-      "flight": null,
+      "flight": "AH 4064",
       "status": "unclear",
       "days": [
         "mon"
       ],
-      "evidence": "listed",
-      "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
-      "great_circle_km": 4219
-    },
-    {
-      "id": "alg-los",
-      "from": "ALG",
-      "to": "LOS",
-      "carrier": "AH",
-      "flight": "AH 5354",
-      "status": "unclear",
-      "days": [
-        "thu"
-      ],
       "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-      "great_circle_km": 3349
-    },
-    {
-      "id": "alg-mji",
-      "from": "ALG",
-      "to": "MJI",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": [
-        "wed",
-        "fri"
+      "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260629-ahnw26",
+        "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
       ],
-      "evidence": "listed",
-      "source": "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
-      "great_circle_km": 1012
+      "great_circle_km": 4219
     },
     {
       "id": "alg-ndj",
@@ -2136,23 +2786,10 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.aeroroutes.com/eng/260622-ahnw267m8",
-      "great_circle_km": 2976
-    },
-    {
-      "id": "alg-pvg",
-      "from": "ALG",
-      "to": "PVG",
-      "carrier": "AH",
-      "flight": "AH 3082",
-      "status": "unclear",
-      "days": [
-        "mon",
-        "wed",
-        "sat"
+      "sources": [
+        "https://www.aeroroutes.com/eng/260622-ahnw267m8"
       ],
-      "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
-      "great_circle_km": 10131
+      "great_circle_km": 2976
     },
     {
       "id": "alg-svo",
@@ -2168,6 +2805,10 @@
       ],
       "evidence": "listed",
       "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+      "sources": [
+        "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+        "https://ratanews.ru/turindustriya/reisy-iz-rossii-v-alzir-mogut-vozobnovitsia-v-nacale-2027-goda"
+      ],
       "great_circle_km": 3332
     },
     {
@@ -2175,36 +2816,18 @@
       "from": "AMM",
       "to": "ALG",
       "carrier": "AH",
-      "flight": null,
+      "flight": "AH 4064",
       "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+      "days": [
+        "tue"
+      ],
+      "evidence": "verified",
+      "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260629-ahnw26",
+        "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
+      ],
       "great_circle_km": 3050
-    },
-    {
-      "id": "bzv-alg",
-      "from": "BZV",
-      "to": "ALG",
-      "carrier": "AH",
-      "flight": "AH 5391",
-      "status": "unclear",
-      "days": null,
-      "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-      "great_circle_km": 4722
-    },
-    {
-      "id": "cky-alg",
-      "from": "CKY",
-      "to": "ALG",
-      "carrier": "AH",
-      "flight": "AH 5359",
-      "status": "unclear",
-      "days": null,
-      "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-      "great_circle_km": 3459
     },
     {
       "id": "icn-alg",
@@ -2216,6 +2839,9 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+      "sources": [
+        "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"
+      ],
       "great_circle_km": 9914
     },
     {
@@ -2223,71 +2849,18 @@
       "from": "KWI",
       "to": "AMM",
       "carrier": "AH",
-      "flight": null,
+      "flight": "AH 4064",
       "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+      "days": [
+        "mon"
+      ],
+      "evidence": "verified",
+      "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
+      "sources": [
+        "https://www.aeroroutes.com/eng/260629-ahnw26",
+        "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
+      ],
       "great_circle_km": 1180
-    },
-    {
-      "id": "los-abv",
-      "from": "LOS",
-      "to": "ABV",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": [
-        "thu"
-      ],
-      "evidence": "listed",
-      "source": "https://www.aeroroutes.com/eng/260820-ahnw26af",
-      "great_circle_km": 511
-    },
-    {
-      "id": "los-alg",
-      "from": "LOS",
-      "to": "ALG",
-      "carrier": "AH",
-      "flight": "AH 5354",
-      "status": "unclear",
-      "days": [
-        "tue"
-      ],
-      "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-      "great_circle_km": 3349
-    },
-    {
-      "id": "mji-alg",
-      "from": "MJI",
-      "to": "ALG",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": [
-        "wed",
-        "fri"
-      ],
-      "evidence": "listed",
-      "source": "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/",
-      "great_circle_km": 1012
-    },
-    {
-      "id": "pvg-alg",
-      "from": "PVG",
-      "to": "ALG",
-      "carrier": "AH",
-      "flight": "AH 3083",
-      "status": "unclear",
-      "days": [
-        "tue",
-        "thu",
-        "sun"
-      ],
-      "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
-      "great_circle_km": 10131
     },
     {
       "id": "svo-alg",
@@ -2299,13 +2872,17 @@
       "days": null,
       "evidence": "listed",
       "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+      "sources": [
+        "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+        "https://ratanews.ru/turindustriya/reisy-iz-rossii-v-alzir-mogut-vozobnovitsia-v-nacale-2027-goda"
+      ],
       "great_circle_km": 3332
     }
   ],
   "endpoints": [
     {
       "iata": "AAE",
-      "name": "Aéroport Annaba – Rabah Bitat",
+      "name": "Aéroport Annaba - Rabah Bitat",
       "name_en": "Annaba Rabah Bitat Airport",
       "name_ar": "مطار عنابة - رابح بيطاط",
       "lat": 36.82441556514175,
@@ -2350,7 +2927,7 @@
     },
     {
       "iata": "ALG",
-      "name": "Aéroport d’Alger – Houari Boumediene",
+      "name": "Aéroport d’Alger - Houari Boumediene",
       "name_en": "Algiers Houari Boumediene Airport",
       "name_ar": "مطار هواري بومدين الدولي",
       "lat": 36.69951171485545,
@@ -2521,7 +3098,7 @@
     },
     {
       "iata": "CZL",
-      "name": "Aéroport de Constantine – Mohamed Boudiaf",
+      "name": "Aéroport de Constantine - Mohamed Boudiaf",
       "name_en": "Mohamed Boudiaf International Airport",
       "name_ar": "مطار قسنطينة - محمد بوضياف",
       "lat": 36.28378418745162,
@@ -2854,7 +3431,7 @@
     },
     {
       "iata": "ORN",
-      "name": "Aéroport d’Oran – Ahmed Benbella",
+      "name": "Aéroport d’Oran - Ahmed Benbella",
       "name_en": "Oran Ahmed Ben Bella Airport",
       "name_ar": "مطار وهران - أحمد بن بلة",
       "lat": 35.61833150995104,
@@ -2953,7 +3530,7 @@
     },
     {
       "iata": "TLM",
-      "name": "Aéroport de Tlemcen – Zenata – Messali El Hadj",
+      "name": "Aéroport de Tlemcen - Zenata - Messali El Hadj",
       "name_en": "Zenata – Messali El Hadj Airport",
       "name_ar": "مطار تلمسان - زناتة - مصالي الحاج",
       "lat": 35.012480117143284,

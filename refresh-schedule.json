@@ -1,0 +1,379 @@
+{
+  "schema_version": "1.0.0",
+  "note": "Freshness schedule for every published package. Hand-maintained: cadence, next_due and note are judgement, not derived. last_retrieved is copied from the package's own data/metadata.json, taking the OLDEST sources[].retrieved, because a package is only as fresh as its stalest source; source mirrors sources[0] there and sources_count says how many it has. test/refresh-schedule.test.mjs holds the two in step, so a refresh that forgets this file fails the build instead of going stale quietly. cadence n/a means the package ships no data of its own (umbrella or code), manual means the source has no scripted path, and blocked means the fetcher must not be run until the reason in note is resolved. next_due is last_retrieved + cadence unless a note says otherwise; packages with cadence manual, blocked or n/a have none.",
+  "cadences": {
+    "monthly": "refresh every month",
+    "quarterly": "refresh every three months; the default",
+    "semiannual": "refresh every six months; high-volume sources whose review pass is the real cost",
+    "manual": "no scripted path; refresh is a hand pass, scheduled per batch",
+    "blocked": "do not run the fetcher until the reason in note is resolved",
+    "n/a": "ships no data of its own"
+  },
+  "packages": [
+    {
+      "package": "@geoalgeria/agriculture",
+      "path": null,
+      "source": {
+        "name": "Ministry of Agriculture, Rural Development and Fisheries (MADR)",
+        "url": "https://madr.gov.dz"
+      },
+      "cadence": "manual",
+      "last_retrieved": "2026-06-30",
+      "next_due": null,
+      "note": "MADR directory has no coordinates (0/196 points placed); refreshing means a manual geocoding pass."
+    },
+    {
+      "package": "@geoalgeria/aviation",
+      "path": "pnpm --filter @geoalgeria/aviation run fetch",
+      "source": {
+        "name": "ANAC: Autorité Nationale de l'Aviation Civile",
+        "url": "https://www.anac.dz"
+      },
+      "sources_count": 2,
+      "cadence": "quarterly",
+      "last_retrieved": "2026-09-09",
+      "next_due": "2026-12-09",
+      "note": "Airports refresh on this cadence; the Air Algérie route citations are a manual per-route evidence pass tracked separately."
+    },
+    {
+      "package": "@geoalgeria/banques",
+      "path": "pnpm --filter @geoalgeria/banques run build",
+      "source": {
+        "name": "Banque d'Algérie: liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)",
+        "url": "https://www.bank-of-algeria.dz/banques-commerciales/"
+      },
+      "sources_count": 3,
+      "cadence": "manual",
+      "last_retrieved": "2026-06-16",
+      "next_due": null,
+      "note": "AGB's locator sits behind a WAF and needs a manual headless capture; the bank list itself is address-only."
+    },
+    {
+      "package": "@geoalgeria/buses",
+      "path": "pnpm --filter @geoalgeria/buses run fetch",
+      "source": {
+        "name": "French Wikipedia: Lignes de bus ETUSA de 1 à 99",
+        "url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+      },
+      "sources_count": 16,
+      "cadence": "semiannual",
+      "last_retrieved": "2026-07-01",
+      "next_due": "2027-01-01",
+      "note": "Sixteen hand-curated operator sources, several of them Facebook artwork or owner-supplied official pages; a resync is a per-operator pass, not one fetch."
+    },
+    {
+      "package": "@geoalgeria/cliniques",
+      "path": "pnpm --filter @geoalgeria/cliniques run fetch",
+      "source": {
+        "name": "OpenStreetMap: clinics & proximity-care facilities in Algeria",
+        "url": "https://www.openstreetmap.org"
+      },
+      "cadence": "semiannual",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2027-02-28",
+      "note": "OSM pull with a classification pass; 833 approximate coordinates are a #244 P3 debt."
+    },
+    {
+      "package": "@geoalgeria/culture",
+      "path": "pnpm --filter @geoalgeria/culture run fetch",
+      "source": {
+        "name": "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)",
+        "url": "https://cartes.patrimoineculturelalgerien.org"
+      },
+      "cadence": "manual",
+      "last_retrieved": "2026-06-28",
+      "next_due": null,
+      "note": "No live path yet: scripts/fetch.mjs is a deterministic transform of the curated research/patrimoine capture, not a live portal pull: re-running it is byte-identical (verified 2026-10-25) and cannot move the retrieval date. The portal answers from abroad, so a real refresh is the live FR+AR re-pull the script header defers, which has to preserve the hand-built FR-AR translations."
+    },
+    {
+      "package": "geoalgeria",
+      "path": null,
+      "source": null,
+      "cadence": "manual",
+      "last_retrieved": null,
+      "next_due": null,
+      "note": "Administrative divisions change only by JORA decree, not on a polling cadence, and are validated by packages/dataset/scripts/validate.py. Its data/poste/ tree is a generated mirror refreshed by the @geoalgeria/poste row."
+    },
+    {
+      "package": "@geoalgeria/djezzy",
+      "path": "pnpm --filter @geoalgeria/djezzy run fetch",
+      "source": {
+        "name": "Djezzy: Optimum Telecom Algérie (nos-boutiques)",
+        "url": "https://www.djezzy.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2026-11-30"
+    },
+    {
+      "package": "@geoalgeria/ecoles",
+      "path": "pnpm --filter @geoalgeria/ecoles run fetch",
+      "source": {
+        "name": "OpenStreetMap: schools & kindergartens in Algeria",
+        "url": "https://www.openstreetmap.org"
+      },
+      "cadence": "semiannual",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2027-02-28",
+      "note": "Large OSM pull (11,849 records); 9,011 approximate coordinates are an OSM sparsity debt for #244 P3, not a refresh debt."
+    },
+    {
+      "package": "@geoalgeria/emploi",
+      "path": "pnpm --filter @geoalgeria/emploi run fetch",
+      "source": {
+        "name": "ANEM: National Employment Agency (anem.dz)",
+        "url": "https://www.anem.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2026-11-30"
+    },
+    {
+      "package": "@geoalgeria/enseignement-superieur",
+      "path": "pnpm --filter @geoalgeria/enseignement-superieur run fetch && pnpm --filter @geoalgeria/enseignement-superieur run geocode",
+      "source": {
+        "name": "Ministry of Higher Education and Scientific Research (MESRS)",
+        "url": "https://www.mesrs.dz"
+      },
+      "sources_count": 3,
+      "cadence": "quarterly",
+      "last_retrieved": "2026-08-03",
+      "next_due": "2026-11-03",
+      "note": "Two steps: fetch, then geocode. www.mesrs.dz was UNREACHABLE from the build machine on 2026-10-27/28, so last_retrieved stays 2026-08-03: it is the date of the committed MESRS listing captures and claiming a newer one would be a false receipt. The 2026-10-28 refresh read a different MESRS publication instead, the BAC 2026 placement file (captured as sources/enseignement-superieur/bac-2026.json, retrieved 2026-10-28), which supplied 11 institutions the listing omits and the current name of 2 it lists under an older one. The listing itself still needs a live pull: re-run `fetch` without --cache once mesrs.dz answers."
+    },
+    {
+      "package": "@geoalgeria/ferroviaire",
+      "path": "pnpm --filter @geoalgeria/ferroviaire run fetch",
+      "source": {
+        "name": "Wikidata: rail & urban transit stations in Algeria",
+        "url": "https://www.wikidata.org"
+      },
+      "sources_count": 2,
+      "cadence": "blocked",
+      "last_retrieved": "2026-07-01",
+      "next_due": null,
+      "note": "Regeneration frozen since 2026-08-03: a replay produces 233 coordinate and 232 name diffs whose root cause is undiagnosed. Never run the fetcher until that is explained."
+    },
+    {
+      "package": "@geoalgeria/formation-professionnelle",
+      "path": "pnpm --filter @geoalgeria/formation-professionnelle run fetch",
+      "source": {
+        "name": "Ministry of Vocational Training and Education (MFEP): takwin.dz",
+        "url": "https://takwin.dz"
+      },
+      "cadence": "manual",
+      "last_retrieved": "2026-10-25",
+      "note": "takwin.dz answers an ordinary request from inside Algeria and a WAF block page from anywhere else, so a refresh is a capture run over an Algerian connection; the build itself replays the committed capture in sources/formation-professionnelle/ and needs no network. The 2026-10-25 capture (1,964 records, one call to the puball endpoint) is the current one. Its id carry key folds the name's spacing, because the portal rewrote the spacing of 1,788 Arabic names between captures without any establishment moving.",
+      "next_due": null
+    },
+    {
+      "package": "@geoalgeria/gares-routieres",
+      "path": "pnpm --filter @geoalgeria/gares-routieres run fetch",
+      "source": {
+        "name": "SOGRAL: Société de Gestion des Gares Routières d'Algérie",
+        "url": "https://live.sogral.com"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-07-01",
+      "next_due": "2026-10-01",
+      "note": "The SOGRAL registry is archived, so churn comes from MAHATATI agency ids."
+    },
+    {
+      "package": "@geoalgeria/industrie-pharmaceutique",
+      "path": null,
+      "source": {
+        "name": "Ministère de l'Industrie Pharmaceutique (MIP): approved manufacturers register",
+        "url": "https://www.miph.gov.dz"
+      },
+      "cadence": "manual",
+      "last_retrieved": "2026-07-05",
+      "next_due": null,
+      "note": "The MIP fabrication register carries no coordinates; records are placed at commune or wilaya centroid by hand."
+    },
+    {
+      "package": "@geoalgeria/jeunesse",
+      "path": "pnpm --filter @geoalgeria/jeunesse run fetch",
+      "source": {
+        "name": "Ministry of Youth and Sports: SIG",
+        "url": "https://sig.mjs.gov.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-10-27",
+      "next_due": "2027-01-27",
+      "note": "Pulled live on 2026-10-27 over the Algerian connection the Owner supplied: 2,337 features, which confirms that the SIG has not touched the 2,334 published records since June and that the 3 rows it added are unfinished entries the fetcher drops. The raw capture is committed (sources/jeunesse/sig-etablissements.json) and the fetcher replays it with --cache, so the next refresh needs no VPN window. Promoted in batch 2026-15: ids carry on the establishment rather than its sort position, the absorbed review row institutions.json/00728 is retired (Owner decision 2026-10-28), and the shared reconciler reads the former JORA commune spellings, so the rebuild changes only 21 placeholder communes to null and 00728's review receipt."
+    },
+    {
+      "package": "@geoalgeria/livraison",
+      "path": "pnpm --filter @geoalgeria/livraison run fetch",
+      "source": {
+        "name": "Yalidine Express: nos-agences",
+        "url": "https://yalidine-express.com.dz/nos-agences/"
+      },
+      "sources_count": 8,
+      "cadence": "quarterly",
+      "last_retrieved": "2026-10-25",
+      "next_due": "2027-01-25",
+      "note": "Carded carriers (Anderson, Noest, Maystro, ZR Express, Swift Express, HHD Express) are re-geocoded on every run by resolving each agency's Google Maps link, so the fetcher holds what it already published whenever a run cannot better it: a card whose link does not resolve or carries no coordinate keeps its committed point and precision (pinFor), a card whose pin lands in a wilaya other than the one it declares is dropped, unless that wilaya was carved out of the declared one by the 2021 or 2026 reform (the parent comes from the flagship registry's mother_wilaya_code, never from a code range), with the card id, the declared wilaya and the resolved coordinate in the run log, rather than shipping last quarter's point as this run's, and a renamed card takes back the id it published if the new one lands within 100 m of it (carryRenamedIds), because a carded id is minted from the card title. An operator pin counts as verified however far it moves a desk. A Maps place linked by cid alone carries no coordinate, so those pins are committed with provenance in scripts/maps-cid-pins.json and used only as a fallback. Noest ids come from its stable card codes, so renames never move them. Every pull is committed under sources/livraison/ as a rights-safe projection of the rows the build consumes, plus a resolution cache for the carriers' Google Maps links, so `node scripts/fetch.mjs --cache` rebuilds the package from the store with no network at all and reproduces it byte for byte."
+    },
+    {
+      "package": "@geoalgeria/mobilis",
+      "path": "pnpm --filter @geoalgeria/mobilis run fetch",
+      "source": {
+        "name": "Mobilis: ATM Mobilis (mobilis.dz)",
+        "url": "https://www.mobilis.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-10-25",
+      "next_due": "2027-01-25",
+      "note": "Agencies only. The ~12k approved points of sale carry no coordinates at source, so density is the ceiling (locator is WAF-protected, though it served JSON to an ordinary primed session on 2026-10-25). Refreshed 2026-10-25 over an Algerian connection the Owner supplied; mobilis.dz is geo-blocked from outside Algeria (TCP dropped on every A record, port 443). The pull came back byte-identical to 2026-08-31 on both files, so the locator looks like a static export republished unchanged and a later identical pull is not independent confirmation."
+    },
+    {
+      "package": "@geoalgeria/mosquees",
+      "path": "pnpm --filter @geoalgeria/mosquees run fetch",
+      "source": {
+        "name": "Wikidata: mosques in Algeria",
+        "url": "https://www.wikidata.org"
+      },
+      "sources_count": 2,
+      "cadence": "semiannual",
+      "last_retrieved": "2026-06-25",
+      "next_due": "2026-12-25",
+      "note": "Wikidata + OSM composite, high volume; 4,534 approximate coordinates are a #244 P3 debt."
+    },
+    {
+      "package": "@geoalgeria/normalize",
+      "path": null,
+      "source": null,
+      "cadence": "n/a",
+      "last_retrieved": null,
+      "next_due": null,
+      "note": "Code only: Search key generation and its Golden corpus, not a dataset."
+    },
+    {
+      "package": "@geoalgeria/ooredoo",
+      "path": "pnpm --filter @geoalgeria/ooredoo run fetch",
+      "source": {
+        "name": "Ooredoo Algérie: retail network (trouvez-nous JSON API)",
+        "url": "https://www.ooredoo.dz/fr/particuliers/trouvez-nous"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-08-31",
+      "next_due": "2026-11-30"
+    },
+    {
+      "package": "@geoalgeria/pharma",
+      "path": null,
+      "source": null,
+      "cadence": "n/a",
+      "last_retrieved": null,
+      "next_due": null,
+      "note": "Umbrella: re-exports industrie-pharmaceutique + pharmacies, holds no data of its own."
+    },
+    {
+      "package": "@geoalgeria/pharmacies",
+      "path": "pnpm --filter @geoalgeria/pharmacies run fetch",
+      "source": {
+        "name": "OpenStreetMap: pharmacies (amenity=pharmacy) in Algeria",
+        "url": "https://www.openstreetmap.org"
+      },
+      "cadence": "semiannual",
+      "last_retrieved": "2026-10-22",
+      "next_due": "2027-04-22",
+      "note": "Large OSM pull with a heavy review pass; its accuracy debt is coordinate precision, which #244 P3 fixes rather than a refresh."
+    },
+    {
+      "package": "@geoalgeria/poste",
+      "path": "pnpm --filter @geoalgeria/poste run fetch",
+      "source": {
+        "name": "Algérie Poste: baridimap.poste.dz",
+        "url": "https://baridimap.poste.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-10-25",
+      "next_due": "2027-01-25",
+      "note": "Refreshed live on 2026-10-25 over an Algerian connection the Owner supplied: baridimap-api.poste.dz answered an ordinary request. Geo-blocked again from outside Algeria as soon as that connection closed, so the next pass needs an Algerian vantage point again."
+    },
+    {
+      "package": "@geoalgeria/protection-civile",
+      "path": "pnpm --filter @geoalgeria/protection-civile run fetch",
+      "source": {
+        "name": "Direction Générale de la Protection Civile",
+        "url": "https://dgpc.dz/dgpc2/"
+      },
+      "sources_count": 2,
+      "cadence": "monthly",
+      "last_retrieved": "2026-09-08",
+      "next_due": "2026-10-08",
+      "note": "Already automated: the guarded scheduled promotion workflow (sources/README.md) refreshes the DGPC capture monthly and only promotes it when every gate passes. dgpc.dz drops TCP from outside Algeria (verified 2026-10-25, every A record, port 443), so a live pull needs an Algerian vantage point. The commune join is fixed: the DGPC's own commune_1 decides, across a spelling difference of up to two edits when exactly one commune of the wilaya is that close, and otherwise the commune whose OpenStreetMap outline contains the point decides before the nearest commune centre. Every clause reads the sources only. The 2026-10-25 replay of the stored capture landed with 18 units re-placed, and 23-017, whose DGPC name and containing outline disagree and which the sources cannot settle, is pinned to El Bouni by a reviewed row in quality/overrides/protection-civile.json. Only the live pull from an Algerian vantage point is still owed; last_retrieved stays 2026-09-08 because the replay read no new bytes."
+    },
+    {
+      "package": "@geoalgeria/sante",
+      "path": "pnpm --filter @geoalgeria/sante run fetch",
+      "source": {
+        "name": "Ministry of Health (sante.gov.dz): health-establishment registry",
+        "url": "https://sante.gov.dz"
+      },
+      "sources_count": 3,
+      "cadence": "quarterly",
+      "last_retrieved": "2026-10-25",
+      "next_due": "2027-01-25",
+      "note": "Refreshed 2026-10-25 over an Algerian connection the Owner supplied; sante.gov.dz is geo-blocked from outside Algeria (TCP dropped on every A record, port 443), so a pass from abroad will fail and no raw capture is committed under research/sante/, leaving --cache nothing to replay. The 2026-10-25 pull returned the registry unchanged record for record. 457 approximate coordinates are a #244 P3 debt. Still open: pairPosts runs step 2b before the twin-post step, and re-running it afterwards pairs 01-eph-01 with 01-eph-06 and 24-epsp-02 with 24-epsp-06, 661 records to 659; 14-eph-04/14-eph-07 and 19-epsp-08/19-epsp-10 are the same place but resolve to different communes, so 2b refuses them and the commune resolution is what needs fixing."
+    },
+    {
+      "package": "@geoalgeria/schema",
+      "path": null,
+      "source": null,
+      "cadence": "n/a",
+      "last_retrieved": null,
+      "next_due": null,
+      "note": "Code only: the shared v2 contract, not a dataset."
+    },
+    {
+      "package": "@geoalgeria/sports",
+      "path": "pnpm --filter @geoalgeria/sports run fetch",
+      "source": {
+        "name": "Ministry of Youth and Sports: SIG",
+        "url": "https://sig.mjs.gov.dz"
+      },
+      "cadence": "quarterly",
+      "last_retrieved": "2026-10-27",
+      "next_due": "2027-01-27",
+      "note": "Refreshed from the live pull of 2026-10-27 (5,234 features), captured in sources/sports/sig-infrastructures.json, so a rebuild needs no VPN window: the GeoServer answers only from an Algerian vantage point, so the next live pull still needs one. From this refresh every record carries the SIG's own per-record UUID as refs.mjs and the ids are carried on it, so a ministry edit to a name, an address or a coordinate no longer retires an id. The move from place-keyed ids was a one-time transition (decisions in research/sports/id-transition.json): 187 published ids retired, 5 of them Repeat posts forwarded in retired-ids.json, and 280 new facilities minted."
+    },
+    {
+      "package": "@geoalgeria/telecom",
+      "path": "pnpm --filter @geoalgeria/telecom run fetch",
+      "source": {
+        "name": "Djezzy: published 5G coverage map (Optimum Telecom Algérie)",
+        "url": "https://www.djezzy5g.dz/map.html"
+      },
+      "sources_count": 3,
+      "cadence": "monthly",
+      "last_retrieved": "2026-10-29",
+      "next_due": "2026-11-29",
+      "note": "5G coverage is the fastest-churning source in the repo: operators add sites continuously. Djezzy and Ooredoo need the agent-browser path. mobilis.dz drops TCP on every A record, port 443, from outside Algeria and the fetcher is all-or-nothing, so a pass from abroad cannot run: this one went through over an Algerian connection the Owner supplied. Live pull 2026-10-27, all three operators, 3,598 to 4,094 records: Mobilis 2,421 to 2,917 with 496 sites added and none removed, moved or renamed, Djezzy and Ooredoo byte-identical to the 2026-09-08 capture (same sha256, only the retrieval date moves). The 11 new Mobilis rows whose declared wilaya their own coordinate contradicted are triaged in quality/overrides/telecom.json and this refresh adds nothing to the residual in research/_wilaya-containment/record-exceptions.json, which stands at 281 for the batch: 3 GOLEA rows corrected 47 to 58, 1 Chelalet El Adhaoura 26 to 67, 1 Boudouaou 16 to 35, and 6 Ras El Ma rows whose feed shares one frozen longitude keep the coverage record with the coordinates withheld. Live re-pull 2026-10-29 over the same connection: all three operators byte-identical to the 2026-10-27 capture, 4,093 records after the military retirement, and the six Ras El Ma rows still carry the frozen longitude, so they stay withheld."
+    },
+    {
+      "package": "@geoalgeria/tourisme",
+      "path": null,
+      "source": {
+        "name": "OpenStreetMap: attractions, historic sites, lodging & parks in Algeria",
+        "url": "https://www.openstreetmap.org"
+      },
+      "sources_count": 3,
+      "cadence": "manual",
+      "last_retrieved": "2026-06-21",
+      "next_due": null,
+      "note": "Generator path unconfirmed: no fetch script is wired, so the next refresh has to re-establish it first. packages/tourisme/scripts/build.mjs re-emits the package offline from its committed records and holds the military exclusion keyed on OpenStreetMap elements (Owner decision 2026-10-29); a future fetcher has to carry that list over."
+    },
+    {
+      "package": "@geoalgeria/transport",
+      "path": null,
+      "source": null,
+      "cadence": "n/a",
+      "last_retrieved": null,
+      "next_due": null,
+      "note": "Umbrella: re-exports aviation + ferroviaire + gares-routieres + buses, holds no data of its own."
+    }
+  ]
+}

@@ -22,19 +22,30 @@ GeoAlgeria is a solo-built, open project with one goal: to become the first and 
 
 ## The atlas
 
-[![The GeoAlgeria atlas at geoalgeria.com](assets/screenshots/atlas-home.png)](https://geoalgeria.com)
+<a href="https://geoalgeria.com"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/atlas-home-dark.jpg">
+  <img src="assets/screenshots/atlas-home-light.jpg" alt="The GeoAlgeria atlas at geoalgeria.com">
+</picture></a>
 
 **[geoalgeria.com](https://geoalgeria.com)** puts 28+ datasets and 80,000+ records on one interactive map, redrawn for the 69 wilayas.
 
 - **[Cross-sector atlas](https://geoalgeria.com):** every sector on a single map, from post offices to mosques to hospitals, with a per-wilaya density view.
 - **[Live wildfire map](https://geoalgeria.com/fires):** NASA FIRMS satellite hotspots alongside official Civil Protection bulletins, updated through the fire season (launched 23 July 2026).
+- **[Flight routes globe](https://geoalgeria.com/flights):** every nonstop Air Algérie route on a globe, marked verified, listed, or announced.
 - **[3,951 per-wilaya pages](https://geoalgeria.com/wilaya):** one page for every wilaya and sector, built to be searchable.
 - **[Layer stacking](https://geoalgeria.com/explore):** switch sectors on and off and read them together on the same map.
 - **Command-K search:** jump to any wilaya or commune straight from the keyboard.
 - **Arabic, French, and English:** the entire interface, fully right-to-left in Arabic.
 - **[Provenance on every record](https://geoalgeria.com/sources):** each point shows where it came from and when it last changed. See the [sources](https://geoalgeria.com/sources) and [changelog](https://geoalgeria.com/changelog).
 
-[![The live wildfire map at geoalgeria.com/fires](assets/screenshots/fires-map.png)](https://geoalgeria.com/fires)
+<p align="center">
+  <a href="https://geoalgeria.com/flights"><img src="assets/screenshots/phone-flights-light.jpg" alt="The flight routes globe on a phone" width="32%"></a>
+  <a href="https://geoalgeria.com/pharmacies"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/phone-pharmacies-dark.jpg">
+    <img src="assets/screenshots/phone-pharmacies-light.jpg" alt="The pharmacy map on a phone" width="32%">
+  </picture></a>
+  <a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/phone-commune-casbah.jpg" alt="The Casbah commune page in Arabic on a phone" width="32%"></a>
+</p>
 
 ## The data
 
@@ -63,32 +74,32 @@ A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office 
 | **Wilayas** | 69 | provinces (2019 + 2026 reforms), each with its capital commune (chef-lieu) |
 | **Dairas** | 551 | districts, as first-class entities |
 | **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates, OpenStreetMap + Wikidata links |
-| **Post offices** | 3,908 | real Algérie Poste codes, coordinates |
-| **ATMs** | 2,026 | Algérie Poste GAB network |
+| **Post offices** | 3,907 | real Algérie Poste codes, coordinates |
+| **ATMs** | 2,023 | Algérie Poste GAB network |
 | **Employment agencies** | 331 | ANEM: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
 | **Mobilis network** | 12,344 | 164 agencies + 12,180 points of sale. [`@geoalgeria/mobilis`](packages/mobilis) |
-| **5G coverage** | 3,598 | Djezzy + Mobilis + Ooredoo 5G sites. [`@geoalgeria/telecom`](packages/telecom) |
+| **5G coverage** | 4,093 | Djezzy + Mobilis + Ooredoo 5G sites. [`@geoalgeria/telecom`](packages/telecom) |
 | **Civil airports** | 36 | ANAC + OurAirports: names, ICAO + IATA codes, contacts, coordinates. [`@geoalgeria/aviation`](packages/aviation) |
-| **Nonstop routes** | 157 | Air Algérie's international network as directional legs, each with an operator, an evidence tier and a source. [`@geoalgeria/aviation`](packages/aviation) |
+| **Nonstop routes** | 169 | Air Algérie's international network as directional legs, each with an operator, an evidence tier and a citation list. [`@geoalgeria/aviation`](packages/aviation) |
 | **Banks & branches** | 1,704 | all 21 licensed banks + 8 institutions; branches with RIB/SWIFT codes, ownership, coordinates. [`@geoalgeria/banques`](packages/banques) |
-| **Delivery carriers** | 411 | 16-carrier registry + 411 geocoded stop-desks across 61 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro). [`@geoalgeria/livraison`](packages/livraison) |
+| **Delivery carriers** | 650 | 18-carrier registry + 650 geocoded stop-desks across 64 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro, ZR Express, Swift Express, HHD Express). [`@geoalgeria/livraison`](packages/livraison) |
 | **Youth establishments** | 2,334 | maisons de jeunes, complexes sportifs de proximité, salles polyvalentes, auberges, cultural & science centers & more across 69 wilayas (Ministry of Youth and Sports). [`@geoalgeria/jeunesse`](packages/jeunesse) |
-| **Sports facilities** | 5,141 | stadiums, pools, proximity fields, athletics tracks, courts & more (27 types) across 69 wilayas (Ministry of Youth and Sports). [`@geoalgeria/sports`](packages/sports) |
-| **Higher education** | 177 | universities, grandes écoles, ENS, centres + 19 private & 48 other-ministry institutions across 51 wilayas, with official websites (MESRS). [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
-| **Tourism** | 4,348 | 1,602 hotels, 1,248 attractions, 1,184 historic sites, 282 thermal springs (ASAL), 32 national parks. [`@geoalgeria/tourisme`](packages/tourisme) |
-| **Vocational training** | 1,932 | 856 CFPA + 182 INSFP + 723 private accredited + 58 DFEPs + more across all 69 current wilayas (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
+| **Sports facilities** | 5,234 | stadiums, pools, proximity fields, athletics tracks, courts & more (28 types) across 69 wilayas (Ministry of Youth and Sports). [`@geoalgeria/sports`](packages/sports) |
+| **Higher education** | 171 | universities, grandes écoles, ENS, centres + 19 private & 34 other-ministry institutions across 51 wilayas, with official websites (MESRS). [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
+| **Tourism** | 4,321 | 1,587 hotels, 1,245 attractions, 1,180 historic sites, 282 thermal springs (ASAL), 27 national parks. [`@geoalgeria/tourisme`](packages/tourisme) |
+| **Vocational training** | 1,963 | 857 CFPA + 182 INSFP + 754 private accredited + 58 DFEPs + more across all 69 current wilayas (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **Mosques** | 20,759 | Wikidata + OpenStreetMap composite, Arabic & French names, denomination, all 69 wilayas. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **Djezzy boutiques** | 128 | geocoded retail stores with category, hours & commune/wilaya linkage (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
-| **Health establishments** | 661 | EPH · EPSP · EHS · CHU from the Ministry of Health, bilingual, 591 geocoded via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
-| **Clinics & care facilities** | 1,917 | Polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas. The community tier beside the `sante` registry, never summed with it. [`@geoalgeria/cliniques`](packages/cliniques) |
+| **Health establishments** | 657 | EPH · EPSP · EHS · CHU from the Ministry of Health, bilingual, 587 geocoded via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
+| **Clinics & care facilities** | 1,915 | Polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas. The community tier beside the `sante` registry, never summed with it. [`@geoalgeria/cliniques`](packages/cliniques) |
 | **Civil protection units** | 880 | DGPC fire & rescue units nationwide, Arabic-named, address/phone/fax, status tier, all geocoded, official-primary (dgpc.dz), post-2026-reform wilaya linkage. [`@geoalgeria/protection-civile`](packages/protection-civile) |
 | **Cultural places** | 1,083 | Protected sites, museums, theatres, libraries + cultural establishments from the Ministry of Culture, bilingual, all geocoded, 66 wilayas. [`@geoalgeria/culture`](packages/culture) |
 | **Agriculture institutions** | 196 | Services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups from the Ministry of Agriculture, bilingual, geocoded, 58 wilayas. [`@geoalgeria/agriculture`](packages/agriculture) |
-| **Schools** | 11,858 | Primaires, CEM, lycées & préscolaires classified by cycle from OpenStreetMap, bilingual, all 69 wilayas. [`@geoalgeria/ecoles`](packages/ecoles) |
+| **Schools** | 11,849 | Primaires, CEM, lycées & préscolaires classified by cycle from OpenStreetMap, bilingual, all 69 wilayas. [`@geoalgeria/ecoles`](packages/ecoles) |
 | **Intercity bus stations** | 74 | SOGRAL gares routières across 52 wilayas, names, addresses, surface areas, coordinates. [`@geoalgeria/gares-routieres`](packages/gares-routieres) |
-| **Rail & urban transit** | 692 | train, tram, metro, aerial-tramway & gondola nodes (SNTF / SETRAM / SEMA), Wikidata + OSM composite, bilingual, 50 wilayas. [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
+| **Rail & urban transit** | 691 | train, tram, metro, aerial-tramway & gondola nodes (SNTF / SETRAM / SEMA), Wikidata + OSM composite, bilingual, 50 wilayas. [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
 | **Urban/suburban bus Lines** | 184 | 16 Operators, 76 shapes, 128 Directions, 1,603 Stations. [`@geoalgeria/buses`](packages/buses) |
-| **Pharmacies** | 3,795 | officines geocoded from OpenStreetMap, bilingual where named, wilaya/commune-linked. [`@geoalgeria/pharmacies`](packages/pharmacies) |
+| **Pharmacies** | 3,811 | officines geocoded from OpenStreetMap, bilingual where named, wilaya/commune-linked. [`@geoalgeria/pharmacies`](packages/pharmacies) |
 | **Pharma manufacturers** | 171 | approved medicine & medical-device makers from the Ministry of Pharmaceutical Industry register, geocoded. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **Ooredoo stores** | 572 | Espaces Ooredoo, City Shops & Espaces Services with real coordinates, wilaya/commune-linked (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
@@ -131,24 +142,24 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | [`packages/telecom`](packages/telecom) | [`@geoalgeria/telecom`](https://www.npmjs.com/package/@geoalgeria/telecom) | Cross-operator 5G coverage (Djezzy + Mobilis + Ooredoo) |
 | [`packages/aviation`](packages/aviation) | [`@geoalgeria/aviation`](https://www.npmjs.com/package/@geoalgeria/aviation) | Civil airports from ANAC + OurAirports, names, ICAO + IATA codes, coordinates, plus the nonstop international route network |
 | [`packages/banques`](packages/banques) | [`@geoalgeria/banques`](https://www.npmjs.com/package/@geoalgeria/banques) | All 21 licensed banks + financial institutions & 1,704 branches (RIB, SWIFT, ownership, coordinates) |
-| [`packages/livraison`](packages/livraison) | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | Delivery carrier registry + 411 geocoded stop-desks & per-carrier coverage (Yalidine, Guepex, Anderson, Noest, Maystro) |
+| [`packages/livraison`](packages/livraison) | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | Delivery carrier registry + 650 geocoded stop-desks & per-carrier coverage (Yalidine, Guepex, Anderson, Noest, Maystro, ZR Express, Swift Express, HHD Express) |
 | [`packages/jeunesse`](packages/jeunesse) | [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | Youth establishments from the Ministry of Youth and Sports (2,334 across 69 wilayas) |
-| [`packages/sports`](packages/sports) | [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports) | Sports facilities from the Ministry of Youth and Sports, 5,141 across 69 wilayas, 27 types, with capacity, PMR access & coordinates |
-| [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Higher-education network from MESRS, universities, grandes écoles, ENS, centres + private & other-ministry institutions (177), with official websites & coordinates |
-| [`packages/tourisme`](packages/tourisme) | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Tourism infrastructure, 4,348 geocoded hotels, attractions, historic sites, thermal springs & parks from ASAL, OSM & Wikidata |
-| [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Vocational training, 1,932 CFPA, INSFP, IFEP, IEP, DFEPs & private centers from MFEP (takwin.dz), with capacity, boarding & coordinates |
+| [`packages/sports`](packages/sports) | [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports) | Sports facilities from the Ministry of Youth and Sports, 5,234 across 69 wilayas, 28 types, with capacity, PMR access & coordinates |
+| [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Higher-education network from MESRS, universities, grandes écoles, ENS, centres + private & other-ministry institutions (171), with official websites & coordinates |
+| [`packages/tourisme`](packages/tourisme) | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Tourism infrastructure, 4,321 geocoded hotels, attractions, historic sites, thermal springs & parks from ASAL, OSM & Wikidata |
+| [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Vocational training, 1,963 CFPA, INSFP, IFEP, IEP, DFEPs & private centers from MFEP (takwin.dz), with capacity, boarding & coordinates |
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Djezzy boutiques, 128 geocoded retail stores from djezzy.dz, with category, hours & commune/wilaya linkage |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosques of Algeria, 20,759 geocoded, a Wikidata + OpenStreetMap composite with Arabic & French names, denomination & commune/wilaya linkage |
-| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments, 661 from the Ministry of Health (EPH, EPSP, EHS, CHU), bilingual, geocoded via OSM + Wikidata with commune/wilaya linkage |
-| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Clinics & proximity-care facilities, 1,917 geocoded from OpenStreetMap across 66 wilayas, classified by type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingual, with sector, speciality, phone & hours where tagged; the OSM community tier of the health sector, and every OSM element `sante` references is excluded from it |
+| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments, 657 from the Ministry of Health (EPH, EPSP, EHS, CHU), bilingual, geocoded via OSM + Wikidata with commune/wilaya linkage |
+| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Clinics & proximity-care facilities, 1,915 geocoded from OpenStreetMap across 66 wilayas, classified by type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingual, with sector, speciality, phone & hours where tagged; the OSM community tier of the health sector, and every OSM element `sante` references is excluded from it |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Cultural atlas, 1,083 places from the Ministry of Culture (protected sites, museums, theatres, libraries, cultural establishments), bilingual, fully geocoded with commune/wilaya linkage |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Agriculture-sector institutions, 196 from the Ministry of Agriculture across 7 networks (DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups), bilingual, geocoded with commune/wilaya linkage |
-| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Schools, 11,858 schools & kindergartens from OpenStreetMap, classified by cycle (primaire/moyen/secondaire/préscolaire), bilingual, all 69 wilayas, with commune/wilaya linkage |
+| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Schools, 11,849 schools & kindergartens from OpenStreetMap, classified by cycle (primaire/moyen/secondaire/préscolaire), bilingual, all 69 wilayas, with commune/wilaya linkage |
 | [`packages/gares-routieres`](packages/gares-routieres) | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | Intercity bus stations, 74 SOGRAL gares routières across 52 wilayas, geocoded with surfaces & commune/wilaya linkage |
-| [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | Rail & urban transit, 692 train/tram/metro/aerial/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual FR/AR |
+| [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | Rail & urban transit, 691 train/tram/metro/aerial/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual FR/AR |
 | [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | 184 reviewed urban/suburban Lines, 76 shapes and 1,603 Stations across 16 Operators |
 | [`packages/industrie-pharmaceutique`](packages/industrie-pharmaceutique) | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | Pharmaceutical manufacturers, 171 approved medicine (PP) & medical-device (DM) makers from the Ministry of Pharmaceutical Industry register, bilingual, geocoded to commune/wilaya centroid |
-| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines), 3,795 geocoded across 67 wilayas from OpenStreetMap, bilingual where named, with phone/hours/dispensing where tagged & commune/wilaya linkage |
+| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines), 3,811 geocoded across 67 wilayas from OpenStreetMap, bilingual where named, with phone/hours/dispensing where tagged & commune/wilaya linkage |
 | [`packages/protection-civile`](packages/protection-civile) | [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | Civil protection (fire & rescue) units, 880 DGPC units nationwide, Arabic-named, with address/phone/fax & a status tier, all geocoded, official-primary (dgpc.dz); wilaya re-derived against the 69 post-2026-reform boundaries |
 | [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Ooredoo stores, 572 EO / City Shop / Espace Services with real coordinates & commune/wilaya linkage (ooredoo.dz); completes the telecom retail trio |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | Umbrella, installs aviation + ferroviaire + gares-routieres + buses in one step |

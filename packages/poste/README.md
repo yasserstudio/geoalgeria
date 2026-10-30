@@ -12,7 +12,7 @@
 
 </div>
 
-3,908 post offices and 2,026 ATMs across Algeria, with **real postal codes**, bilingual (French / Arabic) names, GPS coordinates, and commune/wilaya linkage. Sourced from Algérie Poste, shipped as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
+3,907 post offices and 2,023 ATMs across Algeria, with **real postal codes**, bilingual (French / Arabic) names, GPS coordinates, and commune/wilaya linkage. Sourced from Algérie Poste, shipped as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
 npm install @geoalgeria/poste
@@ -21,8 +21,8 @@ npm install @geoalgeria/poste
 ```js
 import poste from "@geoalgeria/poste";
 
-const offices = poste.postOffices();   // 3,908
-const atms = poste.atms();             // 2,026
+const offices = poste.postOffices();   // 3,907
+const atms = poste.atms();             // 2,023
 
 // Post offices in a commune (joins GeoAlgeria's code_commune)
 const inAdrar = offices.filter((o) => o.commune_code === "0101");
@@ -41,8 +41,8 @@ const inAdrar = offices.filter((o) => o.commune_code === "0101");
 
 | Dataset | Count | Notes |
 | --- | --- | --- |
-| Post offices | **3,908** | each with its own postal code (`postal_code`) |
-| ATMs | **2,026** | Algérie Poste GAB network |
+| Post offices | **3,907** | each with its own postal code (`postal_code`) |
+| ATMs | **2,023** | Algérie Poste GAB network |
 
 ## Formats
 
@@ -66,8 +66,8 @@ const offices: PostOffice[] = poste.postOffices();
 
 ```
 data/
-  postoffices.json            # 3,908 offices (array)
-  atms.json                   # 2,026 ATMs (array)
+  postoffices.json            # 3,907 offices (array)
+  atms.json                   # 2,023 ATMs (array)
   metadata.json               # counts, sources, license, updated
   csv/postoffices.csv         # repo + Release bundle (not in npm tarball)
   csv/atms.csv
@@ -75,10 +75,13 @@ data/
   geojson/atms.geojson
 ```
 
-> GeoJSON includes only records that have coordinates, 16 offices and 5 ATMs
+> GeoJSON includes only records that have coordinates, 13 offices and 1 ATM
 > report no `lat`/`lng` and are omitted there (but remain in JSON/CSV, with
 > `geo_precision`/`geo_method` both `null`). For 90 ATMs, GeoAlgeria supplies a
 > `commune_code` only where the commune name, mother wilaya, and point agree.
+> Three ATMs that BaridiMap lists with no point carry their host post office's
+> own BaridiMap point, with `geo_method: "baridimap_host_office"`, and three
+> offices with no point sit on their own OpenStreetMap node (`geo_method: "osm_node"`).
 
 ## Record shapes
 

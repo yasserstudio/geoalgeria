@@ -1,5 +1,6 @@
-// The 23 reviewed Arabic commune-name repairs, upstreamed from the Web app's own
-// copy of the flagship table (private tracker #239).
+// The 25 reviewed Arabic commune-name repairs: 23 upstreamed from the Web app's own
+// copy of the flagship table (private tracker #239), plus the two wilaya seat names
+// below.
 //
 // WHY THEY WERE NOT HERE. The app kept a fork of this table and repaired the
 // names in it, because a search snippet renders what the data says. The 2026-08-13
@@ -24,6 +25,19 @@
 //            always spelled it سوق الاثنين. 608's سوق لإثنين drops the alef of
 //            the article and moves the hamza onto the lam, which is neither the
 //            Arabic for "Monday" nor what this repository says anywhere else.
+//   seat:    a wilaya seat commune whose name_ar disagreed with the name its own
+//            wilaya carries in data/wilayas.json, which is the decree-sourced table
+//            every package joins wilaya names on. 3401 Bordj Bou Arreridj dropped the
+//            second ي of بوعريريج and 3301 Illizi carried an extra ي before the ل.
+//            NOTE, because it cuts the other way: the ONS Code Geographique National
+//            2021 capture carries the UNREPAIRED spelling for both (برج بوعريرج, and
+//            ايليزى for Illizi), so these two are a deliberate correction of that
+//            table's orthography on the authority of wilayas.json, not a transcription
+//            fix. Reversing them means repairing wilayas.json instead; the two sides of
+//            the repository must not name the same place differently, which is the
+//            defect this closes. Found by @geoalgeria/telecom, whose 5G records publish
+//            the registry's Arabic commune name: 22 records carried برج بوعريرج and 3
+//            carried إيليزي.
 //
 // Shared so the fix script and test/commune-name-ar.test.mjs cannot disagree
 // about which repairs are applied.
@@ -52,6 +66,8 @@ export const NAME_AR_REPAIRS = [
   { code_commune: 1562, wilaya_code: 15, name_fr: "Mizrana", from: "ميزرانـــة", to: "ميزرانة", repair: "tatweel" },
   { code_commune: 1563, wilaya_code: 15, name_fr: "Imsouhal", from: "إمســوحال", to: "إمسوحال", repair: "tatweel" },
   { code_commune: 1565, wilaya_code: 15, name_fr: "Ait Bouaddou", from: "أيت بــوادو", to: "أيت بوادو", repair: "tatweel" },
+  { code_commune: 3301, wilaya_code: 33, name_fr: "Illizi", from: "إيليزي", to: "إليزي", repair: "seat" },
+  { code_commune: 3401, wilaya_code: 34, name_fr: "Bordj Bou Arreridj", from: "برج بوعريرج", to: "برج بوعريريج", repair: "seat" },
   { code_commune: 3613, wilaya_code: 36, name_fr: "Drean", from: "الذرعـان", to: "الذرعان", repair: "tatweel" },
 ];
 

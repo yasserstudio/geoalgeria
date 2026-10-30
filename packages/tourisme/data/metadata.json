@@ -4,12 +4,12 @@
   "title_fr": "Tourisme en Algérie",
   "title_ar": "السياحة في الجزائر",
   "title_en": "Algeria tourism",
-  "record_count": 4348,
-  "geocoded_count": 4348,
+  "record_count": 4321,
+  "geocoded_count": 4321,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 4305,
-    "approximate": 43
+    "exact": 4286,
+    "approximate": 35
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -24,19 +24,19 @@
   "entities": [
     {
       "file": "attractions.json",
-      "count": 1248
+      "count": 1245
     },
     {
       "file": "historic.json",
-      "count": 1184
+      "count": 1180
     },
     {
       "file": "lodging.json",
-      "count": 1602
+      "count": 1587
     },
     {
       "file": "parks.json",
-      "count": 32
+      "count": 27
     },
     {
       "file": "thermal-springs.json",
@@ -72,11 +72,11 @@
   "license": "Attractions, historic sites, lodging and parks from OpenStreetMap (ODbL 1.0, © OpenStreetMap contributors) and Wikidata (CC0); thermal springs are a factual public listing (ASAL). Per-source terms in citation.",
   "updated": "2026-06-21",
   "by_type": {
-    "artwork": 244,
+    "artwork": 243,
     "museum": 174,
     "theme_park": 78,
     "tourist_attraction": 3,
-    "viewpoint": 115,
+    "viewpoint": 113,
     "waterfall": 3,
     "zoo": 24,
     "attraction": 591,
@@ -93,15 +93,14 @@
     "water_tap": 3,
     "wayside_shrine": 1,
     "wreck": 3,
-    "area": 1,
     "barracks": 1,
     "bath": 1,
     "battle_site": 1,
     "battlefield": 4,
     "boundary_stone": 2,
     "bridge": 2,
-    "building": 6,
-    "castle": 138,
+    "building": 5,
+    "castle": 136,
     "church": 1,
     "church_building": 5,
     "château": 1,
@@ -125,11 +124,11 @@
     "powder_magazine": 1,
     "alpine_hut": 32,
     "hostel": 216,
-    "hotel": 995,
+    "hotel": 983,
     "guest_house": 137,
     "motel": 66,
-    "apartment": 78,
-    "chalet": 78,
+    "apartment": 76,
+    "chalet": 77,
     "forage": 6,
     "source": 117,
     "hammam": 111,

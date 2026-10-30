@@ -1,19 +1,5 @@
 [
   {
-    "id": "noest",
-    "name": "Noest Express",
-    "website": "https://noest-dz.com",
-    "type": "both",
-    "cod": true,
-    "scope": "domestic",
-    "open_agency_data": "geocoded",
-    "api": "private",
-    "notes": "Popular COD carrier; publishes its bureaux on its public site, each with a Google Maps link resolved to coordinates. Merchant tracking API is private.",
-    "in_stopdesks": true,
-    "stopdesk_count": 94,
-    "stopdesk_wilaya_count": 55
-  },
-  {
     "id": "yalidine",
     "name": "Yalidine Express",
     "website": "https://yalidine-express.com.dz",
@@ -24,8 +10,8 @@
     "api": "documented",
     "notes": "Largest COD network; publishes an open geocoded stop-desk table that also lists partner operators (federated relay). Documented developer API (centers/communes/wilayas) is merchant-key gated.",
     "in_stopdesks": true,
-    "stopdesk_count": 93,
-    "stopdesk_wilaya_count": 54
+    "stopdesk_count": 105,
+    "stopdesk_wilaya_count": 55
   },
   {
     "id": "anderson",
@@ -38,8 +24,36 @@
     "api": "none",
     "notes": "Publishes an agency directory; each agency carries its own Google Maps link, resolved to coordinates.",
     "in_stopdesks": true,
-    "stopdesk_count": 89,
-    "stopdesk_wilaya_count": 50
+    "stopdesk_count": 104,
+    "stopdesk_wilaya_count": 54
+  },
+  {
+    "id": "noest",
+    "name": "Noest Express",
+    "website": "https://noest-dz.com",
+    "type": "both",
+    "cod": true,
+    "scope": "domestic",
+    "open_agency_data": "geocoded",
+    "api": "private",
+    "notes": "Popular COD carrier; publishes its bureaux on its public site, each with a Google Maps link resolved to coordinates. Merchant tracking API is private.",
+    "in_stopdesks": true,
+    "stopdesk_count": 102,
+    "stopdesk_wilaya_count": 58
+  },
+  {
+    "id": "zr-express",
+    "name": "ZR Express",
+    "website": "https://www.zrexpress.net",
+    "type": "both",
+    "cod": true,
+    "scope": "domestic",
+    "open_agency_data": "geocoded",
+    "api": "private",
+    "notes": "Publishes its offices at zrexpress.net/en/offices, each row linking its own Google Maps pin with the coordinate inline. The note here used to point at zrexpress.com, a different domain that is Cloudflare-blocked; the .net site answers an ordinary request. Merchant operations run through the Procolis portal, which stays auth-gated.",
+    "in_stopdesks": true,
+    "stopdesk_count": 77,
+    "stopdesk_wilaya_count": 53
   },
   {
     "id": "guepex",
@@ -52,8 +66,36 @@
     "api": "none",
     "notes": "Publishes an open geocoded agencies JSON; shares the same stop-desk network/center ids as Yalidine (federated relay).",
     "in_stopdesks": true,
-    "stopdesk_count": 70,
+    "stopdesk_count": 71,
     "stopdesk_wilaya_count": 35
+  },
+  {
+    "id": "hhd-express",
+    "name": "HHD Express",
+    "website": "https://hhd.dz",
+    "type": "both",
+    "cod": true,
+    "scope": "domestic",
+    "open_agency_data": "geocoded",
+    "api": "private",
+    "notes": "Publishes its whole agency network on hhd.dz, every agency with its commune, phones, address and its own Google Maps link. Distinct from DHD (dhd-dz.com). Merchant integration API is private.",
+    "in_stopdesks": true,
+    "stopdesk_count": 69,
+    "stopdesk_wilaya_count": 45
+  },
+  {
+    "id": "swift-express",
+    "name": "Swift Express",
+    "website": "https://www.swiftexpress.org",
+    "type": "both",
+    "cod": true,
+    "scope": "domestic",
+    "open_agency_data": "geocoded",
+    "api": "private",
+    "notes": "Publishes its agency network at swiftexpress.org/fr/offices, every office with its address, phones and its own Google Maps link. Merchant operations run on the Ecotrack platform, whose API is private.",
+    "in_stopdesks": true,
+    "stopdesk_count": 55,
+    "stopdesk_wilaya_count": 45
   },
   {
     "id": "maystro",
@@ -80,8 +122,8 @@
     "api": "none",
     "notes": "Stop-desk operator present in the Yalidine/Guepex relay network.",
     "in_stopdesks": true,
-    "stopdesk_count": 14,
-    "stopdesk_wilaya_count": 11
+    "stopdesk_count": 15,
+    "stopdesk_wilaya_count": 12
   },
   {
     "id": "zimou-express",
@@ -94,7 +136,7 @@
     "api": "none",
     "notes": "Stop-desk operator present in the Guepex relay data.",
     "in_stopdesks": true,
-    "stopdesk_count": 8,
+    "stopdesk_count": 10,
     "stopdesk_wilaya_count": 6
   },
   {
@@ -122,8 +164,8 @@
     "api": "none",
     "notes": "Appears in the relay network; own site is a WooCommerce shop with no public agency directory.",
     "in_stopdesks": true,
-    "stopdesk_count": 2,
-    "stopdesk_wilaya_count": 2
+    "stopdesk_count": 1,
+    "stopdesk_wilaya_count": 1
   },
   {
     "id": "aramex",
@@ -205,20 +247,6 @@
     "open_agency_data": "none",
     "api": "none",
     "notes": "Primarily home delivery / trucking; site has no populated agency directory.",
-    "in_stopdesks": false,
-    "stopdesk_count": 0,
-    "stopdesk_wilaya_count": 0
-  },
-  {
-    "id": "zr-express",
-    "name": "ZR Express",
-    "website": "https://zrexpress.com",
-    "type": "both",
-    "cod": true,
-    "scope": "domestic",
-    "open_agency_data": "none",
-    "api": "private",
-    "notes": "Operations via the Procolis portal (auth-gated); public site is Cloudflare-blocked. No open agency list.",
     "in_stopdesks": false,
     "stopdesk_count": 0,
     "stopdesk_wilaya_count": 0

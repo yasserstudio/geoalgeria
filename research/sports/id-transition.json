@@ -1,0 +1,2633 @@
+{
+  "note": "The one-time transition of @geoalgeria/sports from place-keyed ids to the SIG's own UUID (refs.mjs), written by packages/sports/scripts/fetch.mjs the run it decided. Rule: the comment above matchTransition. Measurement: research/sports/transition-2026-10-28.md.",
+  "capture": {
+    "file": "sources/sports/sig-infrastructures.json",
+    "retrieved": "2026-10-27",
+    "sha256": "549996d0261856cb5a2b8e4ea04e9d4a089c53cd3206d47b57c337642d830d57"
+  },
+  "counts": {
+    "published": 5141,
+    "live": 5234,
+    "carried": {
+      "uuid": 0,
+      "place": 4694,
+      "strict": 119,
+      "relabel": 20,
+      "rename": 121
+    },
+    "minted": 280,
+    "retired": 187,
+    "forwarded": 5
+  },
+  "rule": {
+    "radius_m": 300,
+    "repeat_post_radius_m": 40,
+    "relabel_min_agreement": 4,
+    "rename_min_agreement": 5,
+    "agreement_fields": [
+      "capacity",
+      "year",
+      "surface_built_m2",
+      "surface_land_m2",
+      "operational",
+      "pmr",
+      "daira"
+    ]
+  },
+  "paired": [
+    {
+      "id": "00086",
+      "mjs": "ddaf55c1-feae-4d50-a42e-ab920b498e6b",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.4,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00087",
+      "mjs": "3f7dae2b-7553-432a-bd5b-e5fe13f1daf8",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.2,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00088",
+      "mjs": "92fd00f5-de8a-4608-983b-6be170bcd0bb",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.2,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00098",
+      "mjs": "0e384ff6-7a3b-4368-b944-5a4639564d03",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00099",
+      "mjs": "841f7760-8f2b-4075-8f40-f67b045ce6a0",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00100",
+      "mjs": "438db62f-cd60-4151-8ae7-fc7633f31b23",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "00101",
+      "mjs": "510bdb5c-1449-40d4-bea8-9a62fc9287db",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00102",
+      "mjs": "745c8c7a-26b6-4e79-9484-ebb0a023d309",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00103",
+      "mjs": "cadabb64-9345-47e7-b4be-6a9bd76bb25c",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00104",
+      "mjs": "fb53ffe8-56f0-4b12-84a2-90ff9009f7af",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00105",
+      "mjs": "46de8d74-e788-415b-a383-5927b86178e2",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00106",
+      "mjs": "dc888796-0187-463d-a2e6-381679dfcdb0",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00107",
+      "mjs": "8e7bf23d-8038-48c5-8dc6-4c86d582dea7",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00108",
+      "mjs": "dd7f6f12-e46c-445d-82aa-676c7f9d9b87",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00109",
+      "mjs": "d17a0a24-417e-46b7-8c5d-37a1e816d420",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00110",
+      "mjs": "07310cdb-a19e-4e44-be63-5c2f7b0998f2",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00113",
+      "mjs": "7f01a19d-a5c2-467b-b241-f7081daca64c",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00114",
+      "mjs": "c34a8b2d-1ba2-4617-8bb3-0bc13c35f8e1",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00115",
+      "mjs": "103f1f97-0607-41f5-b438-17c97d41ae40",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00116",
+      "mjs": "10147552-e801-4fdb-afd2-58867b2082dc",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00118",
+      "mjs": "b10e7b30-a33e-4299-aeb0-95dee648c7fe",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00120",
+      "mjs": "c765bc54-27c0-482b-b8b7-af4ae0d6a832",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 0.5,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00121",
+      "mjs": "4c4053e2-a276-4c28-a10f-bbb2078285fa",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "00123",
+      "mjs": "148e5053-1120-4c32-a2b5-bb0a59be42f4",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00124",
+      "mjs": "d38a7bae-0eac-43ec-9388-824f2b7ff6df",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00125",
+      "mjs": "60b54b89-305c-4f0d-9f1b-56fe0fe2c6ab",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00136",
+      "mjs": "34a7c814-01c7-467a-be24-297805304de1",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00140",
+      "mjs": "2c24548b-0bcf-4721-97f6-4ecb0e1aeea5",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "00141",
+      "mjs": "4fc6f18b-b246-481b-8768-78b5c28efbdf",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00143",
+      "mjs": "de7a76ba-20f1-4a37-a178-73a0fe2eb786",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "00145",
+      "mjs": "7ed8acc8-dbb3-43b1-8e15-675ec7fe2bad",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "00147",
+      "mjs": "0a3115f4-fc63-4344-98a8-22ec446a6841",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00148",
+      "mjs": "4fba24a7-f14d-4988-8bb7-b768c6cce32b",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.5,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00162",
+      "mjs": "9f70e191-0e68-46c9-b45d-81c6430021b2",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00164",
+      "mjs": "bb32967e-39c6-43a2-b4b2-4cd7f92fdea9",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "00182",
+      "mjs": "3e9cbd18-d2c5-4830-8232-15c7a1515c87",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00187",
+      "mjs": "c437d148-0ac2-4045-a53f-448b1fd1c087",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00241",
+      "mjs": "3a086efb-8fa6-4ca5-8c9e-ff8a03137735",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.1,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00249",
+      "mjs": "45066d2c-3ba6-4c1a-9d95-873d6c6df10d",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.3,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "00253",
+      "mjs": "3e96d2bf-f482-4255-a8de-f893324118a5",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "00733",
+      "mjs": "d846cc43-dd9d-4e53-9733-522eb261da9b",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01072",
+      "mjs": "380c2699-bdb6-4436-a17c-63de07949842",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.6,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01073",
+      "mjs": "c19e32da-9a2c-46d2-981b-849ec0ed2a9a",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 6,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01075",
+      "mjs": "2b1affa1-24da-477c-af55-332333922a5a",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 5,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01078",
+      "mjs": "1d9dc6e0-ef1f-454f-8a91-1c70f96e7097",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 6.1,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01081",
+      "mjs": "1ec11803-25b1-47d2-8459-230cf0a37354",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01095",
+      "mjs": "91abb342-cd7f-417d-9d6e-e0bb0fbf237b",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01102",
+      "mjs": "7ba4f581-59a1-41a0-880a-7baf1a045b9d",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01108",
+      "mjs": "7a740fca-2231-4b68-8ed8-20f31632de07",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 6,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01113",
+      "mjs": "34f774be-08c5-4f4d-8485-f6b14d54d3da",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.7,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01115",
+      "mjs": "c6b9e656-970a-4b35-8222-4fde92081641",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "01118",
+      "mjs": "6d7ee001-6560-48ba-a7da-49a663c3263b",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.3,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01122",
+      "mjs": "117b4624-f668-4d16-bf48-f00e14447ae5",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "01123",
+      "mjs": "6f924106-bc4a-4fcf-9548-13996dd275ac",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.8,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "01127",
+      "mjs": "c4e1b65a-c630-44ec-afad-98d3394de410",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01128",
+      "mjs": "f5f8c005-c09c-4adb-a756-87db6dd080bd",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01129",
+      "mjs": "0cd723cc-7eed-49b3-b37a-3401bf2dc11a",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01139",
+      "mjs": "dc8b0a4f-f06d-44e8-ae7b-71a567180f91",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 4
+    },
+    {
+      "id": "01141",
+      "mjs": "9c061c1f-1c0f-4797-b5a8-c8601507caf9",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 0.5,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "01142",
+      "mjs": "43183b90-bad6-4b41-908b-192eb4ff698d",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01146",
+      "mjs": "e15f615d-fa19-4329-946d-c74c607f2627",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.4,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01149",
+      "mjs": "91db2e59-0253-436c-b570-86419a63eec0",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.3,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01156",
+      "mjs": "f43cc27b-787d-4e27-895d-2790da709f72",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01157",
+      "mjs": "8480f7c1-686f-4a93-944f-c862b46e3ed2",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01158",
+      "mjs": "78ac3219-7527-4f63-a898-47f276e22019",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01162",
+      "mjs": "f8a059c7-4112-4ae4-86a7-3c3e49611dfc",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01163",
+      "mjs": "ca197398-f2d5-415d-b4e5-f714ddf317b2",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01270",
+      "mjs": "7d71f52e-1303-4a5b-b030-a696f1af9cc1",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 1.2,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01706",
+      "mjs": "e3dce66a-9a3c-4c83-ab23-b766884ae030",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.7,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01707",
+      "mjs": "da51acae-c008-4a9a-9a99-27ca11223ba9",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 0.9,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01832",
+      "mjs": "de4b7805-6f25-4c1c-bd4f-8e1b6b0d7e4f",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01834",
+      "mjs": "7411513a-f197-474b-84ea-125087827d8d",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01836",
+      "mjs": "78df5166-86cf-4951-8721-4e344b3b8e6d",
+      "tier": "strict",
+      "evidence": "moved-same-address",
+      "distance_m": 18.4,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01838",
+      "mjs": "b6bc29d8-6fbc-4909-bfd2-5e497ad66dd5",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.6,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "01840",
+      "mjs": "4e36b6b0-e597-40e1-b1a3-2dcef025dda8",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "01842",
+      "mjs": "60e6934b-969e-4c17-9b5a-af4fcb5ce413",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01843",
+      "mjs": "9d7d59ec-4f41-40a9-b734-6d73077ae01c",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01847",
+      "mjs": "93f1c898-9578-4d43-b95b-88950127b0c2",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.7,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "01851",
+      "mjs": "631263af-ad42-4020-b421-e80715635e87",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01853",
+      "mjs": "d3584522-030c-4ecf-a62c-d502aaff3726",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01856",
+      "mjs": "7bf73f8e-2d79-4b0d-b227-f05773f197a1",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01857",
+      "mjs": "9758f71d-73f5-4401-86c0-f82bd7a264ea",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.4,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "01858",
+      "mjs": "a775acc4-66e5-4905-ad2f-d63088bd5a5c",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01860",
+      "mjs": "e926522e-6d18-47c0-ab9d-c82651213eed",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 4,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01866",
+      "mjs": "abc823a9-8ecd-40f8-858f-2aeaf7bf2f07",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01869",
+      "mjs": "934f71c1-7355-45d1-b35c-0171affc65cb",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01871",
+      "mjs": "0205d399-8598-4ac9-bfa0-5df83f20c955",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01872",
+      "mjs": "0b383732-1865-4c26-af21-42917d5bf0ed",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01873",
+      "mjs": "0b507e06-3d8b-42d0-9dc8-2216de252f64",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01874",
+      "mjs": "12c276bd-26de-4829-ab6f-ef7d41e6692e",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01877",
+      "mjs": "4be1f133-aa02-4a35-af6c-177bc534de42",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01878",
+      "mjs": "5284916e-98b0-4635-885b-2cd61540f94d",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01879",
+      "mjs": "7466d6cc-732e-42df-8b33-fd344a793092",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01880",
+      "mjs": "830fc912-9ffc-40c8-8f90-0fcce8542c5b",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01881",
+      "mjs": "ee877798-404a-4ef3-8746-299c848703dd",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 2,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01885",
+      "mjs": "1560f58a-5c62-46ad-a46c-2422f1dd54a8",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01886",
+      "mjs": "fa6cc9d2-c463-4f81-a6f7-21b57de23884",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01890",
+      "mjs": "ee3f2a3d-f51d-47b9-adb3-a0c50ecf8597",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.7,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01891",
+      "mjs": "224d81bb-bf7b-476c-aeb5-0f7cd4e16468",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01896",
+      "mjs": "c89d690b-61c2-4591-864e-cc0f00e03090",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01898",
+      "mjs": "7ed7e53c-e839-4494-8948-cd7aa9237392",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01899",
+      "mjs": "1d24aa8e-42e6-4070-b99c-65239eee6cb4",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01900",
+      "mjs": "8c4a3871-110b-4243-8236-dd53adaf138e",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01902",
+      "mjs": "7a1bad74-6744-4279-b86e-910a9e1215ea",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01903",
+      "mjs": "ceb5b4f5-c2a5-419a-b8a5-3fc348dc7ee3",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.7,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01907",
+      "mjs": "0ba0f963-6570-4934-b58e-de99be4d2bc3",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01910",
+      "mjs": "02532427-4b47-4d50-8723-c4f2b275b6eb",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01911",
+      "mjs": "23e4d4af-7b1d-48f3-91f4-330d81d7badd",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01912",
+      "mjs": "38eb7c98-4108-4064-8549-07d97a642cab",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01913",
+      "mjs": "d8ba11aa-f14f-4bad-80e7-9c76d83e3f00",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01915",
+      "mjs": "fcc501f7-cd0a-49d3-b1ee-92e0831d713d",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.1,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01917",
+      "mjs": "715e110c-77b0-4de1-9ea7-2ac93a87ccfd",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01918",
+      "mjs": "87beca82-9cce-426e-a370-e9ba120dd5ed",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01919",
+      "mjs": "f574fd7a-754a-4f3d-8635-54fe2b200362",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01920",
+      "mjs": "d8a06f3f-cdba-437e-b54e-d67fcacdf105",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01922",
+      "mjs": "d109ab85-e4d6-43ac-893d-dabfc03b435c",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01929",
+      "mjs": "04b99d39-3227-4f65-b9f8-fd6167992e8f",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "01930",
+      "mjs": "953d9f12-e530-45a7-be9b-f23684f499d2",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.7,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01931",
+      "mjs": "c11013bc-3d25-4e85-9dfa-10b8b488e953",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.8,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01933",
+      "mjs": "343af91c-e78d-4fd9-a354-4aacd3ce74b0",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01936",
+      "mjs": "ccd4bfa6-a462-421e-bdb5-6ab26c92de92",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01938",
+      "mjs": "573d8ebb-fa35-4b34-8aeb-f7fa6456b584",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.1,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01939",
+      "mjs": "caa6168b-a52d-4c9a-b9c5-0b8f97c0dcf3",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 2,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "01940",
+      "mjs": "3cebfdb4-fc0b-4df8-ba65-9d53ee607dd6",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02103",
+      "mjs": "9bdd28cc-3286-4c5e-a17d-41b8a6298b8d",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 3
+    },
+    {
+      "id": "02104",
+      "mjs": "1b87ca4a-7b82-495a-ac10-8da50f88c4e3",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 4
+    },
+    {
+      "id": "02105",
+      "mjs": "dbff2c1f-ced1-45ec-96a3-8f00acfcda34",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 3
+    },
+    {
+      "id": "02106",
+      "mjs": "cc98ffc0-2f2b-4f6c-9b80-39a64039a735",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 2
+    },
+    {
+      "id": "02111",
+      "mjs": "d8ffea58-6e07-4a39-938e-eac0eed9eea4",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02115",
+      "mjs": "09e04e98-3a5f-4781-82bc-37a84857667f",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02120",
+      "mjs": "3bfa07e2-0486-44c1-bfcc-bb941ccf45a8",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02123",
+      "mjs": "1b52aef8-76df-4844-9db8-d467bdde5db4",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02125",
+      "mjs": "71feb93c-9f92-497a-a74b-577f4fa1c2be",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02126",
+      "mjs": "73fd5ee0-3e68-4144-be14-5059a21341aa",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02127",
+      "mjs": "8725d4d0-0776-46c4-9305-21cee3a7b234",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02134",
+      "mjs": "04801183-5b19-4db1-bc13-3b4c1483aced",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02159",
+      "mjs": "87f5c0d0-494c-42c6-972c-6d02804030f6",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.8,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02185",
+      "mjs": "071cb6f2-c70c-49b8-90c3-a9f514b2b0d7",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.9,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02256",
+      "mjs": "03829ef9-20e2-43b5-8ad9-4501b73ed25b",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02627",
+      "mjs": "d3d03dae-c8d5-4324-866e-9fe17a48602b",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02628",
+      "mjs": "fc4be8a5-50fb-45df-a9ad-872bf9fdc6f7",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02638",
+      "mjs": "bdcaf903-0e1f-47d7-b376-48e1b0bd52c9",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02643",
+      "mjs": "343a0c0d-8d62-4c7b-a618-11303fcaae8e",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.7,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02644",
+      "mjs": "a819e89b-3b38-4923-8e29-b8268bbe3dd3",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02833",
+      "mjs": "34f83536-df8d-4b95-ae98-a43cf734756b",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02835",
+      "mjs": "5757a6c5-f58a-4a16-b47e-0cd5c9f6d778",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02854",
+      "mjs": "e3c94546-5688-4538-ae3f-43c9cc24efc4",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "02856",
+      "mjs": "4f1f0f30-cfb2-4917-9631-4b92f1c792c2",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "02858",
+      "mjs": "babebe5c-8539-40b4-85ba-cd18732dee47",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02863",
+      "mjs": "78564d29-ccba-4194-9c0b-ca12fc51fb65",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "02864",
+      "mjs": "17505005-15d3-40a9-80a4-546bce77f3e9",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02865",
+      "mjs": "93f988a5-45a6-434f-9ec4-439c92c4ad61",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "02866",
+      "mjs": "f52d486e-e444-4c98-b9e3-768f8b65ea2b",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02867",
+      "mjs": "f90a62e5-88f2-4afa-843c-7b0983047b59",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02868",
+      "mjs": "611f65cb-a380-476b-845d-6ef77ed1c2b5",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02869",
+      "mjs": "fa458408-c527-4b0d-beca-62317c07195a",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02870",
+      "mjs": "6af35c08-3a07-443b-aeda-8129b854b06c",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02872",
+      "mjs": "9ee700f5-f1cf-4cbc-8393-5c3a6271c850",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02873",
+      "mjs": "a4496b67-95c2-4e55-bdfd-1430b1a68166",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02874",
+      "mjs": "31fcab03-f990-404a-aaa5-d838d0a3f942",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02875",
+      "mjs": "d3b61633-c88a-435c-9a4d-8a46ef91f86d",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02877",
+      "mjs": "1e56f46a-d696-4ebe-b373-fee5f16da615",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02879",
+      "mjs": "68c957a8-ba81-4c7c-9297-a62e6d16e193",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "02880",
+      "mjs": "0ae4eb51-f9b6-4cab-9a5f-9577d506d2f9",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "02889",
+      "mjs": "0aaf8aa2-e658-4875-9652-e0f581468332",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "02902",
+      "mjs": "ffe525ad-9ca5-4c1b-a805-564f0a7a2e10",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "03150",
+      "mjs": "9703b707-8bf4-498a-92a0-81a87a178d45",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.4,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "03152",
+      "mjs": "cc141a49-e367-470a-9ec3-77acc747492e",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.1,
+      "same_address": false,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "03208",
+      "mjs": "f567d7f0-41b2-42bd-85da-7087a4d058bc",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "03250",
+      "mjs": "7878cbff-7c9e-4e97-a128-d1d4c220de11",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "03287",
+      "mjs": "ae611549-21d3-49ab-beb4-80ea3091c38f",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "03307",
+      "mjs": "4e0e67c7-7791-412e-ab83-bd902d5136ff",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 1.4,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "03393",
+      "mjs": "7008c219-a90f-4159-b500-9f90736a3886",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.7,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "03411",
+      "mjs": "cd9046df-4fa4-4515-85c4-1f645e2858ec",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.7,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "03745",
+      "mjs": "8236d63a-4638-4a85-928a-473a3e394b52",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "03965",
+      "mjs": "0a39478d-97a8-44c0-b0b4-28c8125bac89",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.7,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "03988",
+      "mjs": "0f360548-1035-485e-b4a9-b4d9c057c656",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 1.4,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04001",
+      "mjs": "21b57939-abe8-46f6-9c5c-7ffea28a27ed",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.9,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04004",
+      "mjs": "2059e93e-db34-4a56-b4c8-d88f70b7f400",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.5,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04039",
+      "mjs": "077bc2e9-cbd6-4b65-8f40-38ace6655a60",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04040",
+      "mjs": "0bf6f219-b19e-4609-a687-7b9012f5ea78",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04067",
+      "mjs": "15f5164b-6417-466c-bd6f-12dd363e7576",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.9,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04082",
+      "mjs": "5235b668-5b57-45d0-9435-a5e309804b3b",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.7,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04086",
+      "mjs": "fa8a15d0-a081-4173-a9ef-f528f5598c9e",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.2,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04091",
+      "mjs": "927ee9ed-d1dd-4180-aafa-168c5f3076ba",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04093",
+      "mjs": "252f39cb-0a10-48fd-a4fe-8ca57332765e",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.3,
+      "same_address": true,
+      "attributes_agreeing": 4
+    },
+    {
+      "id": "04098",
+      "mjs": "64c799da-ef7d-498e-8933-a2d27ee43680",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 4
+    },
+    {
+      "id": "04104",
+      "mjs": "893db455-0294-494f-953f-4f4ebe02b1c3",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.6,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04106",
+      "mjs": "0d29326d-dd74-455a-90d0-430850a6b5a5",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 1.4,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04123",
+      "mjs": "18349b83-8220-4ce7-ac1a-34d9dc500a2b",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.9,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04124",
+      "mjs": "57ee56d8-a553-462e-8016-9d8962bf1baf",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 6.1,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04129",
+      "mjs": "c5bd3db3-5f18-4367-b09b-7c108e95668f",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04131",
+      "mjs": "c1cdef8d-d784-4ef2-9524-dd93db59e9f3",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.3,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04138",
+      "mjs": "bf8769d7-ac65-4a57-b0c2-6c5cc3011e59",
+      "tier": "strict",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04285",
+      "mjs": "e0815e0d-b0e6-4d46-af9c-6068cf0cbc16",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04289",
+      "mjs": "d632aa83-4239-4aed-b261-6293034994d5",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04296",
+      "mjs": "4a64f9ac-34de-48a5-a8b2-0d2e90debf5e",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04307",
+      "mjs": "3ce40376-20ef-493e-89b4-853ff7a3ba5d",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04315",
+      "mjs": "3dfec615-f989-43c3-a9fe-29d3b6bc183c",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.4,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04317",
+      "mjs": "d8a04460-30c3-4142-80da-ba76c32e1816",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.2,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04318",
+      "mjs": "4a1dff15-c598-4dde-8cca-83a901f4c2a7",
+      "tier": "relabel",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.1,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04321",
+      "mjs": "96705369-d023-406e-b2ce-fc75f0c598e3",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04322",
+      "mjs": "add9390c-12cf-4b51-86a8-4cc4f05b667f",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04323",
+      "mjs": "f372f9b0-4fbf-4929-968e-50bb77e0ffac",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.1,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04324",
+      "mjs": "cf8a25b9-5065-4a9b-b2ee-80879b28d568",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.4,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04330",
+      "mjs": "badefded-f5e4-4f56-b489-5f030f555805",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04332",
+      "mjs": "ffe4fbfb-c364-4acf-a115-699815a1caed",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.9,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04334",
+      "mjs": "96a54f91-3b45-4fa6-9a45-99af8fdda770",
+      "tier": "relabel",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04343",
+      "mjs": "d331b7b7-3a0b-4fa0-87da-a5a8579496c7",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 6,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04345",
+      "mjs": "229a5ecd-8a03-47d1-8799-8578af0b9e20",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.2,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04354",
+      "mjs": "a87f3a86-f100-42c0-b205-44a0be78d982",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04365",
+      "mjs": "9c24c3a9-afec-415c-8155-7993eeeffe5b",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04374",
+      "mjs": "48c2fba9-4028-4178-871f-8b1e2668fd09",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 2,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04380",
+      "mjs": "fa945bff-4fdb-4f62-bda4-8d51af9a4805",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.2,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04381",
+      "mjs": "ab142dec-ac14-4a65-9f20-99cefd8b0178",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.6,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04384",
+      "mjs": "cd1f9a92-1567-452f-886d-cc96fec24950",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04386",
+      "mjs": "7ea61d10-463e-4cbd-a023-86b20ee8ecb2",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 1.8,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04392",
+      "mjs": "586078a9-b4e1-4cf6-9aca-0af6468fd9ab",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04393",
+      "mjs": "97af4f8f-f5b1-480d-b769-2832192f4676",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.7,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04394",
+      "mjs": "c826cf7b-71aa-4cf5-91e1-820a7d2d6737",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.7,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04395",
+      "mjs": "74f6b912-3a9d-49e9-a689-68abd887fec5",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.4,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04400",
+      "mjs": "59734035-8e5e-4d43-9610-92886f11c16f",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.4,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04406",
+      "mjs": "b8118b8e-efd9-4cb5-856a-34064a9d9b8f",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04420",
+      "mjs": "c0ec2ca1-c770-4d04-a88f-e476e64ece0c",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04602",
+      "mjs": "bc279a39-a5fe-4f06-83f8-45c169d524c7",
+      "tier": "strict",
+      "evidence": "moved-same-address",
+      "distance_m": 101.7,
+      "same_address": true,
+      "attributes_agreeing": 4
+    },
+    {
+      "id": "04603",
+      "mjs": "527b08bc-edc7-4500-9f23-00ae779ccdc4",
+      "tier": "relabel",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04610",
+      "mjs": "95a2b266-8e70-4b0e-9ee3-312b8f29bedb",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04648",
+      "mjs": "c13891e8-2a22-4cf8-a45d-6dc7b323fff6",
+      "tier": "strict",
+      "evidence": "moved-same-address",
+      "distance_m": 85.1,
+      "same_address": true,
+      "attributes_agreeing": 4
+    },
+    {
+      "id": "04651",
+      "mjs": "d88cb681-1068-4d5d-9690-e249e105fad7",
+      "tier": "strict",
+      "evidence": "moved-same-address",
+      "distance_m": 71.8,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04676",
+      "mjs": "363148b1-93c4-44cd-ba7c-2f727d09db78",
+      "tier": "strict",
+      "evidence": "moved-same-address",
+      "distance_m": 11.1,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04696",
+      "mjs": "cfece12e-2c64-4460-90ce-9bc7da4c988d",
+      "tier": "strict",
+      "evidence": "moved-same-address",
+      "distance_m": 210.2,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04808",
+      "mjs": "093d2b8c-04d5-403c-a69b-40633c6b05e1",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04809",
+      "mjs": "20ad2e03-7349-4d2d-851d-b2ae26da0245",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04814",
+      "mjs": "356404d7-df5d-44f2-a2ed-d0e310036e70",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.2,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04815",
+      "mjs": "14e90c22-bfaa-4919-8fcf-d6c58cffd5ff",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04816",
+      "mjs": "5927781c-554c-40e4-a280-c2c646135c23",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.8,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04817",
+      "mjs": "f07d9314-d677-4fb6-ac96-32cba8295953",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04818",
+      "mjs": "d4a007b3-81de-4e04-a5fa-8c09bb39e774",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.3,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04819",
+      "mjs": "2760f302-afbc-4f5f-8d29-a2b409d8ccf4",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04820",
+      "mjs": "f25221fc-7aeb-4bca-b4f3-57c0dbcc4cbf",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 1.5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "04822",
+      "mjs": "293d3781-225d-4473-a3c0-c06ca97d75c6",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04824",
+      "mjs": "b63ec65c-52ae-4443-9475-935d48495273",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04825",
+      "mjs": "c1a306de-3e2c-4b14-9d1b-5267d07347a6",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "04826",
+      "mjs": "3c468780-4864-48aa-b5de-5f3fdf5d59b1",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.6,
+      "same_address": true,
+      "attributes_agreeing": 4
+    },
+    {
+      "id": "04828",
+      "mjs": "0696f4ed-fe01-402c-8761-760c8a2451fd",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04836",
+      "mjs": "1c9ebb9b-e5d1-46ff-83b7-99e0a9693136",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.3,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04848",
+      "mjs": "0688c0f5-2248-4ac8-b45d-603f3bf8c6c4",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.4,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04858",
+      "mjs": "34fa6009-8744-44e6-990d-ad67642e96ab",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 6,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04862",
+      "mjs": "142481f5-bcd0-4715-adc7-6aa47afee6db",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 3.5,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04869",
+      "mjs": "0f945b78-bc1b-42c6-bd10-373250036528",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 6.3,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04870",
+      "mjs": "1c9940a8-a0a6-4d1d-a59f-c940fd256789",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 2.5,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04872",
+      "mjs": "1a0d3e8a-15e7-49ae-b78d-e8cc523b3913",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 1.9,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04898",
+      "mjs": "316ee5ab-7153-44eb-a6ce-3abfac01e812",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.8,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04900",
+      "mjs": "31393956-0115-48ae-bd68-12d4f1f5b711",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.6,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04969",
+      "mjs": "316aadcf-3aed-4fe8-80af-4fbd7d97873d",
+      "tier": "rename",
+      "evidence": "rounded-4dp",
+      "distance_m": 5.8,
+      "same_address": true,
+      "attributes_agreeing": 7
+    },
+    {
+      "id": "04972",
+      "mjs": "f535adf4-c756-42bc-b2c0-d73ba3be6bac",
+      "tier": "strict",
+      "evidence": "rounded-4dp",
+      "distance_m": 4.2,
+      "same_address": true,
+      "attributes_agreeing": 4
+    },
+    {
+      "id": "04973",
+      "mjs": "bb696d9e-8afc-4fad-af2d-0c69894ea66a",
+      "tier": "strict",
+      "evidence": "moved-same-address",
+      "distance_m": 49.5,
+      "same_address": true,
+      "attributes_agreeing": 6
+    },
+    {
+      "id": "05024",
+      "mjs": "57432497-d1cf-41f6-93c4-30840b98d957",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "05025",
+      "mjs": "ea788d00-0457-4976-b446-823e298a9126",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 5
+    },
+    {
+      "id": "05026",
+      "mjs": "7e314b81-77da-4e11-b9e7-90badbc812b7",
+      "tier": "rename",
+      "evidence": "same-point",
+      "distance_m": 0,
+      "same_address": false,
+      "attributes_agreeing": 5
+    }
+  ],
+  "ties": [],
+  "refused": [
+    {
+      "id": "00570",
+      "mjs": "800f3a25-f0ac-4b0e-9701-956d1c78f48d",
+      "reason": "address-not-distinctive",
+      "distance_m": 33.5
+    },
+    {
+      "id": "04646",
+      "mjs": "184f7dee-6b11-42fa-92d2-0939eaad380d",
+      "reason": "address-not-distinctive",
+      "distance_m": 194.4
+    },
+    {
+      "id": "04646",
+      "mjs": "66c842ed-e5e4-4b7e-b91b-d5be74b2b18b",
+      "reason": "address-not-distinctive",
+      "distance_m": 162.6
+    },
+    {
+      "id": "04649",
+      "mjs": "184f7dee-6b11-42fa-92d2-0939eaad380d",
+      "reason": "address-not-distinctive",
+      "distance_m": 182.3
+    },
+    {
+      "id": "04649",
+      "mjs": "66c842ed-e5e4-4b7e-b91b-d5be74b2b18b",
+      "reason": "address-not-distinctive",
+      "distance_m": 279.1
+    }
+  ],
+  "repeat_posts": [
+    {
+      "id": "04035",
+      "merged_into": "04052",
+      "reason": "same-address-unnamed",
+      "distance_m": 3.5
+    },
+    {
+      "id": "04036",
+      "merged_into": "04052",
+      "reason": "same-address-unnamed",
+      "distance_m": 3.5
+    },
+    {
+      "id": "04065",
+      "merged_into": "04052",
+      "reason": "same-address-unnamed",
+      "distance_m": 3.5
+    },
+    {
+      "id": "04663",
+      "merged_into": "04676",
+      "reason": "same-name",
+      "distance_m": 11.1
+    },
+    {
+      "id": "04915",
+      "merged_into": "04916",
+      "reason": "same-address-unnamed",
+      "distance_m": 25.7
+    }
+  ],
+  "retired": [
+    "00111",
+    "00127",
+    "00144",
+    "00405",
+    "00420",
+    "00452",
+    "00463",
+    "00472",
+    "00476",
+    "00477",
+    "00534",
+    "00536",
+    "00570",
+    "00579",
+    "00586",
+    "00587",
+    "00611",
+    "00616",
+    "00882",
+    "00898",
+    "01097",
+    "01107",
+    "01287",
+    "01835",
+    "01841",
+    "01844",
+    "01845",
+    "01846",
+    "01848",
+    "01849",
+    "01850",
+    "01852",
+    "01854",
+    "01855",
+    "01859",
+    "01861",
+    "01862",
+    "01863",
+    "01864",
+    "01865",
+    "01867",
+    "01868",
+    "01870",
+    "01875",
+    "01876",
+    "01882",
+    "01883",
+    "01884",
+    "01887",
+    "01888",
+    "01889",
+    "01892",
+    "01893",
+    "01894",
+    "01895",
+    "01897",
+    "01901",
+    "01904",
+    "01905",
+    "01906",
+    "01908",
+    "01909",
+    "01914",
+    "01916",
+    "01921",
+    "01923",
+    "01926",
+    "01932",
+    "01934",
+    "01935",
+    "02101",
+    "02102",
+    "02118",
+    "02163",
+    "02623",
+    "02630",
+    "02631",
+    "02635",
+    "02637",
+    "02677",
+    "02871",
+    "02941",
+    "03240",
+    "03321",
+    "03351",
+    "03728",
+    "03739",
+    "03753",
+    "03790",
+    "03926",
+    "03941",
+    "03977",
+    "03978",
+    "03979",
+    "03980",
+    "03981",
+    "03989",
+    "03990",
+    "03995",
+    "03996",
+    "03997",
+    "03999",
+    "04000",
+    "04005",
+    "04008",
+    "04015",
+    "04017",
+    "04018",
+    "04030",
+    "04033",
+    "04034",
+    "04035",
+    "04036",
+    "04041",
+    "04042",
+    "04049",
+    "04053",
+    "04059",
+    "04065",
+    "04068",
+    "04069",
+    "04072",
+    "04075",
+    "04076",
+    "04077",
+    "04080",
+    "04084",
+    "04089",
+    "04096",
+    "04097",
+    "04101",
+    "04102",
+    "04105",
+    "04110",
+    "04122",
+    "04125",
+    "04127",
+    "04128",
+    "04130",
+    "04132",
+    "04133",
+    "04134",
+    "04135",
+    "04137",
+    "04589",
+    "04590",
+    "04593",
+    "04597",
+    "04598",
+    "04600",
+    "04601",
+    "04615",
+    "04620",
+    "04626",
+    "04629",
+    "04632",
+    "04633",
+    "04636",
+    "04640",
+    "04641",
+    "04644",
+    "04645",
+    "04646",
+    "04649",
+    "04652",
+    "04655",
+    "04661",
+    "04663",
+    "04666",
+    "04669",
+    "04677",
+    "04682",
+    "04687",
+    "04688",
+    "04689",
+    "04691",
+    "04694",
+    "04698",
+    "04812",
+    "04813",
+    "04821",
+    "04827",
+    "04915",
+    "05015",
+    "05017",
+    "05022",
+    "05023"
+  ]
+}

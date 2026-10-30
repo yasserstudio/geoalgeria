@@ -941,3 +941,55 @@ and two rows with one id fail in the emitter rather than at the cause.
 carrier page is a present-tense statement that the service runs, and `unclear`
 would be under-claiming it. `days` and `flight` stay null, because that is what
 the page does not support.
+
+## 36. A flight tracker's own history counts as first-flight evidence (new 2026-10-30)
+
+**Owner decision, 30 October 2026.** A flight tracker's **flight history**, a dated
+leg the tracker records as "Landed", is accepted as evidence that the leg flew, and
+is therefore enough to move a row out of `plannedRoutes()`. This is a narrowing of
+the background-only line section 2's "published schedules first" and
+`confirmation-2026-07-29.md` both drew around trackers, and the narrowing is exactly
+one claim wide: the history says the aircraft went from A to B on a date, which is
+the single question a promotion asks.
+
+**What still does not count.** Everything on a tracker that is not an observed
+operation. A scheduled-only row, a route map, an airline page's destination list and
+booking inventory are all announcements, and section 11's rule stands: a launch date
+arriving is not an operation, and a schedule for next Tuesday is not a flight. A
+tracker's non-history pages also remain non-citable for a route's schedule, days,
+times or flight number, unless the leg is observed flown and those fields are read
+off the observations themselves.
+
+**The seven-day problem, and what it obliges.** The free history window on
+Flightradar24 covers roughly seven days, so the cited url stops showing what was read
+off it, which no other citation in this dataset does. **Every promotion made on a
+tracker history therefore writes the observations out in the dated verification note:
+the dates, the landing times and the aircraft registrations.** The note is what a
+reviewer reads a year from now; the url is only where it was read. A promotion that
+records the url and not the observations is not reviewable and is not allowed.
+
+**Why the registration.** Two independent observations of the same leg on different
+tails are much harder to mistake for a scheduled row the tracker greyed out, and the
+registration is the one field that proves a real airframe was on it.
+
+**What the other row shapes mean.** A history page carries more than Landed rows, and
+each of the rest is read as nothing: a **scheduled** row is an announcement, a
+**CANCELED** row is not a statement that the leg does not operate, and a row whose
+status is **Unknown** with no times and no airframe is not an operation. An **empty
+page**, a flight number with no history and no schedule at all, is a silence under
+section 7 and never evidence that a filed rotation is not flying.
+
+**A sector's `days` is its own local departure day.** Section 1 already says the
+directional leg is the unit, but a tracker history is the first source that regularly
+contradicts a filing on this, so it is worth stating here: where a filing gives one
+day for a whole rotation, a sector that departs after midnight departs on the NEXT
+day, and the observation governs.
+
+**Rows promoted under this rule on 2026-10-30:** `PVG-ALG`, `CKY-ALG`, `MJI-ALG`,
+`ALG-BZV`, `BZV-ALG`, `ABV-LOS`, `LOS-ALG`, `ALG-LOS`, `LOS-ABV`. Four of them gained
+a `days` value or correction no publisher supplied: `CKY-ALG` and `BZV-ALG` had null
+`days`, read off observed nights and NOT mirrored from their outbounds, which they
+each contradict by a day; `ABV-LOS` moved from mon to tue and `LOS-ABV` from thu to
+fri, off the rotation day a filing gave them onto their own departure day. Those two
+also gained the rotation's flight number, `AH 5354`, which no filing states per
+sector. See `verification-2026-10-30.md` sections 1 to 3.

@@ -1230,8 +1230,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.84,
-          36.48
+          2.8403253,
+          36.4817627
         ]
       },
       "properties": {
@@ -1240,10 +1240,10 @@
         "wilaya_code": "09",
         "commune_code": null,
         "commune": null,
-        "lat": 36.48,
-        "lng": 2.84,
-        "geo_precision": "approximate",
-        "geo_method": "anem",
+        "lat": 36.4817627,
+        "lng": 2.8403253,
+        "geo_precision": "exact",
+        "geo_method": "osm_way",
         "source": "anem",
         "type": "ALEM",
         "code": "0901",
@@ -1252,7 +1252,13 @@
         "fax": "(025) 225 - 776",
         "email": "alem.blida@anem.dz",
         "manager": "BOUMEDANE HICHEM",
-        "communes": "BENI TAMOU,BLIDA,BOUARFA,OUED EL ALLEUG"
+        "communes": "BENI TAMOU,BLIDA,BOUARFA,OUED EL ALLEUG",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-29",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org/way/1174133619"
+        ]
       }
     },
     {
@@ -2206,8 +2212,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.05,
-          36.71
+          4.0519318,
+          36.7106398
         ]
       },
       "properties": {
@@ -2216,10 +2222,10 @@
         "wilaya_code": "15",
         "commune_code": null,
         "commune": null,
-        "lat": 36.71,
-        "lng": 4.05,
-        "geo_precision": "approximate",
-        "geo_method": "anem",
+        "lat": 36.7106398,
+        "lng": 4.0519318,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
         "source": "anem",
         "type": "ALEM",
         "code": "1501",
@@ -2228,7 +2234,14 @@
         "fax": "(026) 122 - 017",
         "email": "alem.tiziouzou@anem.dz",
         "manager": "SI HADJ MOHAND AHMED",
-        "communes": "AIT AISSA MIMOUN,AIT MAHMOUD,BENI AISSI,BENI DOUALA,BENI-ZEMANZER,OUAGUENOUN,TIMIZART,TIZI OUZOU"
+        "communes": "AIT AISSA MIMOUN,AIT MAHMOUD,BENI AISSI,BENI DOUALA,BENI-ZEMANZER,OUAGUENOUN,TIMIZART,TIZI OUZOU",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-29",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/3771080748",
+          "https://www.anem.dz/#/portail-carto"
+        ]
       }
     },
     {

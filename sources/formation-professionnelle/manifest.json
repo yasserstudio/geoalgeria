@@ -1,10 +1,10 @@
 {
   "takwin-etab": {
-    "bytes": 3035002,
-    "note": "Retroactively committed historical capture: the original 2026-06-22-era pull the shipped 1,932 records were built from, moved out of gitignored research/ into the source store. No re-fetch occurred - takwin.dz and ibtikar.takwin.dz both answer the API with a WAF block page. Concatenation of the per-IDDFEP endpoint over codes 1-58 plus 99.",
-    "records": 1933,
-    "retrieved": "2026-06-22",
-    "sha256": "3c4b2d74139321056495e3abbc70165d9383acea00bc0827be2f96504238a1c2",
+    "bytes": 3119347,
+    "note": "Live pull on 2026-10-25 over an Algerian connection the Owner supplied: takwin.dz answered an ordinary request, where it had previously served a WAF block page to every non-browser client. One call to the puball endpoint, which returns all 59 IDDFEP codes (1-58 plus 99) at once rather than the per-code concatenation the earlier capture needed.",
+    "records": 1964,
+    "retrieved": "2026-10-25",
+    "sha256": "97317d2307f8c29edc80471a613a46341553c28300d5f944ae83349ed37cb496",
     "url": "https://takwin.dz/tachbik/api/getlistofalletab_byiddfep_puball/"
   }
 }

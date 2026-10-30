@@ -1,0 +1,15 @@
+---
+"@geoalgeria/tourisme": minor
+---
+
+**Migration.** Twenty-two records leave the package and their ids are retired for good, never reused and with no forward, because the places were removed rather than merged: `attraction-136`, `attraction-1193`, `attraction-1212`, `historic-251`, `historic-267`, `historic-385`, `historic-396`, `lodging-48`, `lodging-251`, `lodging-286`, `lodging-532`, `lodging-605`, `lodging-721`, `lodging-973`, `lodging-1028`, `lodging-1097`, `lodging-1113`, `lodging-1154`, `lodging-1155`, `lodging-1236`, `lodging-1544` and `lodging-1561`. The reserved set ships as `data/retired-ids.json`, which this package did not have before. If you hold one of these ids, it is gone and resolves to nothing by design.
+
+**Military places are out of scope for GeoAlgeria.** Owner decision of 2026-10-29: the project publishes no military location, so the military and gendarmerie facilities OpenStreetMap had mapped as tourism points are no longer published.
+
+Fifteen were on the lodging layer: eleven military hotels (Laghouat, Bechar, Blida, Alger, Djelfa, Constantine, Ouargla, Oran twice, Djanet and Barika), the national army rest centre in Boumerdes, the Cercle National de l'Armée in Alger, the military housing block in Mascara and the military residential quarter in Oran. Four were on the historic layer, none of them historic: military housing in Chelghoum Laid tagged as a castle, the Naval Forces Command in Alger tagged as an area, the Oued Athmania gendarmerie brigade tagged as a building, and a named army base in Tindouf tagged as a castle. Three more were gendarmerie nationale units the attractions layer had picked up, one as an artwork (Annaba) and two as viewpoints (El Oued, Touggourt).
+
+Records that only mention a military place are kept, and colonial-era military heritage is kept as heritage: `historic-4` (the former French army camp), `historic-707` (Bastion 18), `historic-252` (Caserne Bab Lakouas), `historic-818` (the old barracks) and `historic-1015` with `historic-1016` (two French colonial watchtowers) all stay, as do the other forts and city walls. `attraction-906` stays as well, because the Army Museum is a museum. So does `lodging-1528`, since a "base de vie" is a worker camp and not a military base.
+
+Counts: 4,326 records, down from 4,348. Lodging 1,587 from 1,602, attractions 1,245 from 1,248, historic sites 1,180 from 1,184. Wilaya coverage is unchanged at 69 and every record is still geocoded.
+
+**The exclusion lives in a build, so a refresh cannot undo it.** This package never had a fetcher, which is why hand-edited data files would have been the only way to remove a record. `packages/tourisme/scripts/build.mjs` is new: it re-emits the whole package offline from its committed records through the shared writer, applies `quality/overrides/tourisme.json` as every other package's build does, and holds the exclusion keyed on the OpenStreetMap element rather than on the published id, so a future pull that re-mints ids still keeps these places out.

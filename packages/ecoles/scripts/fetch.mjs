@@ -103,6 +103,25 @@ const OSM_REF_MIGRATIONS = new Map([
 ]);
 
 const canonicalOsmRef = (ref) => OSM_REF_MIGRATIONS.get(ref)?.previousRef || ref;
+
+// Military establishments. Owner decision of 2026-10-29: the project publishes no
+// military location anywhere, so these OSM elements never become records, however
+// they are tagged upstream. Keyed on the OSM element, as the id carry-over is, so a
+// later refresh drops them again instead of re-issuing them a public id; their ids
+// are reserved in data/retired-ids.json, which carryOverIds fills from the committed
+// records these keys no longer match. A school that merely MENTIONS a military place
+// in its address or carries a person's name is not one of these and stays published.
+const MILITARY_OSM_REFS = new Set([
+  "node/5428846525",  // 11-00007 Ecole des cadets, Tamanrasset
+  "way/534625413",    // 05-00282 Ecole des Cadets - Aberkane Mohammed, Batna
+  "way/475311580",    // 06-00248 Ecole des cadets de la nation, Bejaia
+  "way/307562168",    // 09-00144 Ecole des Cadets de la nation, Blida
+  "way/1442191635",   // 11-00010 Ecole des Cadets de la Nation, Tamanrasset
+  "way/579968141",    // 14-00230 Ecole des cadets de la Nation du Chahid Ammar Mohamed
+  "way/375393547",    // 19-00426 Ecole des cadets de la nation, Setif
+  "way/274025641",    // 08-00046 مدرسة النحية العسكرية الثالثة, Bechar
+  "node/1696620548",  // 16-00043 Creche militaire, Alger
+]);
 const PRESERVED_OSM_FIELDS = [
   "name", "name_fr", "name_ar",
   "cycle", "cycle_label_fr", "cycle_label_ar",
@@ -519,6 +538,12 @@ async function main() {
   const OFFLINE = process.argv.includes("--cache");
   const osmRaw = OFFLINE ? readCapture("ecoles", "osm").elements : await fetchOSM();
   let rows = normOSM(osmRaw);
+  // Military establishments leave the package before anything else sees them.
+  const before = rows.length;
+  rows = rows.filter(
+    (r) => !MILITARY_OSM_REFS.has(r.osm_id) && !MILITARY_OSM_REFS.has(canonicalOsmRef(r.osm_id)),
+  );
+  if (before !== rows.length) console.log(`  military: ${before - rows.length} record(s) excluded`);
   console.log(`  OSM: ${rows.length} geocoded schools`);
 
   const communes = loadCommunes();

@@ -96,7 +96,9 @@ centroïde de commune le plus proche à partir du jeu `geoalgeria`.
 
 Le code est sous [MIT](LICENSE). Les données sont © **SOGRAL**, redistribuées à titre de
 référence pour [GeoAlgeria](https://geoalgeria.com). Vérifiez auprès de SOGRAL pour toute
-information officielle et à jour.
+information officielle et à jour. Huit coordonnées de gares que SOGRAL publie absentes
+ou erronées viennent d'OpenStreetMap (`COORD_FIX` dans `scripts/fetch.mjs`) :
+© contributeurs OpenStreetMap, sous licence [ODbL 1.0](https://opendatacommons.org/licenses/odbl/).
 
 [Voir tous les paquets →](https://geoalgeria.com/data)
 

@@ -251,6 +251,7 @@ const RECORD_KEYS = [
   "etus-tlemcen",
   "etusto",
   "guepex",
+  "hhd-express",
   "jora",
   "madr",
   "maystro",
@@ -265,13 +266,16 @@ const RECORD_KEYS = [
   "ooredoo",
   "osm",
   "ourairports",
+  "overture",
   "patrimoine",
   "sogral",
   "sogral-mahatati-graph",
   "sogral-timetable",
+  "swift-express",
   "wikidata",
   "wikipedia-fr",
   "yalidine",
+  "zr-express",
 ];
 
 test("the shipped record keys are the pinned ones, in order", () => {

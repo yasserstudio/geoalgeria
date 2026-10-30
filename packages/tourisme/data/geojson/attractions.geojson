@@ -5854,34 +5854,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.8007321,
-          33.5030481
-        ]
-      },
-      "properties": {
-        "id": "attraction-1193",
-        "name": "الفرقة الاقليمية للدرك الوطني بقمار",
-        "name_fr": "Gendarmerie",
-        "name_ar": "الفرقة الاقليمية للدرك الوطني بقمار",
-        "wilaya_code": "39",
-        "commune_code": null,
-        "commune": null,
-        "lat": 33.5030481,
-        "lng": 6.8007321,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "4695836089"
-        },
-        "type": "viewpoint"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           6.774042,
           33.3012581
         ]
@@ -6442,34 +6414,6 @@
         "source": "osm",
         "refs": {
           "osm": "8196306817"
-        },
-        "type": "viewpoint"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.5173573,
-          32.6125356
-        ]
-      },
-      "properties": {
-        "id": "attraction-1212",
-        "name": "الدرك الوطني",
-        "name_fr": "Gendarmerie",
-        "name_ar": "الدرك الوطني",
-        "wilaya_code": "55",
-        "commune_code": null,
-        "commune": null,
-        "lat": 32.6125356,
-        "lng": 5.5173573,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "4574486989"
         },
         "type": "viewpoint"
       }
@@ -7855,34 +7799,6 @@
         "source": "osm",
         "refs": {
           "osm": "4744540029"
-        },
-        "type": "artwork"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          7.7433872,
-          36.86177
-        ]
-      },
-      "properties": {
-        "id": "attraction-136",
-        "name": "المجموعة الاقليمية للدرك الوطني الجديدة",
-        "name_fr": "La nouvelle groupement gendarmerie nationale Annaba",
-        "name_ar": "المجموعة الاقليمية للدرك الوطني الجديدة",
-        "wilaya_code": "23",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.86177,
-        "lng": 7.7433872,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "5321704521"
         },
         "type": "artwork"
       }
@@ -29115,8 +29031,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.3333333,
-          36.5
+          4.3314177,
+          36.4990808
         ]
       },
       "properties": {
@@ -29126,15 +29042,22 @@
         "wilaya_code": "15",
         "commune_code": null,
         "commune": null,
-        "lat": 36.5,
-        "lng": 4.3333333,
-        "geo_precision": "approximate",
-        "geo_method": "wikidata",
+        "lat": 36.4990808,
+        "lng": 4.3314177,
+        "geo_precision": "exact",
+        "geo_method": "osm",
         "source": "wikidata",
         "refs": {
           "wikidata": "Q23805261"
         },
-        "type": "cave"
+        "type": "cave",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-29",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/3832451091",
+          "https://www.wikidata.org/wiki/Q23805261"
+        ]
       }
     },
     {

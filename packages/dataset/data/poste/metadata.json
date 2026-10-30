@@ -4,11 +4,11 @@
   "title_fr": "Bureaux de poste et GAB d'Algérie",
   "title_ar": "مكاتب البريد والصرافات الآلية الجزائرية",
   "title_en": "Algeria post offices & ATMs",
-  "record_count": 5934,
-  "geocoded_count": 5913,
-  "geocoded_pct": 99.6,
+  "record_count": 5930,
+  "geocoded_count": 5916,
+  "geocoded_pct": 99.8,
   "precision": {
-    "exact": 5913,
+    "exact": 5916,
     "approximate": 0
   },
   "estimated_universe": null,
@@ -24,11 +24,11 @@
   "entities": [
     {
       "file": "postoffices.json",
-      "count": 3908
+      "count": 3907
     },
     {
       "file": "atms.json",
-      "count": 2026
+      "count": 2023
     }
   ],
   "sources": [
@@ -37,11 +37,11 @@
       "name": "Algérie Poste: baridimap.poste.dz",
       "url": "https://baridimap.poste.dz",
       "license": "Data © Algérie Poste; redistributed for reference",
-      "retrieved": "2026-06-08",
+      "retrieved": "2026-10-25",
       "evidence_type": "official"
     }
   ],
   "license": "Data © Algérie Poste; redistributed for reference",
-  "updated": "2026-06-08",
-  "distinct_postal_codes": 4000
+  "updated": "2026-10-25",
+  "distinct_postal_codes": 3999
 }

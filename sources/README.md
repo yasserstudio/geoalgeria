@@ -63,7 +63,8 @@ human review.
 ## Status
 
 Converted so far: `telecom`, `ecoles` (reference implementations,
-2026-08-03), `protection-civile`, and `buses`. The buses capture is a reviewed,
+2026-08-03), `protection-civile`, `buses`, `livraison`, `sports`, and
+`jeunesse`. The buses capture is a reviewed,
 trimmed OSM projection with its non-atomic Overpass receipts preserved. Bus
 Operator captures are rights-safe projections: they retain only factual fields
 used by the package plus upstream URLs, retrieval timestamps, byte counts and
@@ -71,6 +72,78 @@ SHA-256 hashes for the ignored raw HTML, API and map responses. This keeps the
 evidence auditable without committing or relicensing full all-rights-reserved
 pages and KML files. The Sidi Bel Abbès projection is explicitly marked as
 owner-supplied official HTML because its PHP pages returned 404 during the live
-recheck; it does not claim a live-response hash. Remaining packages convert as they are
+recheck; it does not claim a live-response hash.
+
+The eight `livraison` carrier captures follow the same rights-safe rule: each is
+the parsed row projection the build consumes (id, name, commune, the wilaya the
+card declares, address and the operator's own Google Maps link), not the
+carrier's page, which is all rights reserved and runs to 2.7 MB for one of them.
+Alongside them, `maps-resolutions.json` is the resolution cache for those Maps
+links, keyed by the link itself: the final URL, the coordinate extracted from it
+and the tier that produced it. A stop-desk's pin comes from resolving a
+shortlink that carries no coordinate of its own, so without that cache an
+offline rebuild could not place the same desks; with it, `--cache` reproduces
+the package byte for byte and asks Google nothing. Google's per-request
+parameters (`g_ep`, `skid`, `entry`, `coh`, `lucs`, `utm_source`) are stripped
+from the stored URL, which would otherwise churn the whole capture on every
+re-fetch. The trade-off of projecting at parse time is that a parser fix is not
+exercised by a `--cache` rebuild; re-run live once after changing one.
+
+The two MJS GeoServer captures (`sports/sig-infrastructures.json`,
+`jeunesse/sig-etablissements.json`) are a key whitelist, not a single drop.
+`canonicalizeMjsLayer()` keeps exactly the top-level `type`, `totalFeatures` and
+`features`, and per feature its `type`, `geometry`, `geometry_name` and the whole
+`properties` object as received. Every other key is dropped: today that is the
+per-request feature id GeoServer mints
+(`<layer>.fid-5ffd9fe9_1a17f142549_80d`), and tomorrow it is any top-level key
+the endpoint starts sending, a GeoServer `crs` or `bbox` included. An unknown key
+is dropped rather than refused on purpose, so the next live pull cannot be lost
+to a schema surprise during the vantage-point window; review catches it as the
+capture losing something it had.
+
+Dropping the feature id is what makes a no-change refresh a no-change diff: two
+pulls 90 seconds apart changed all 2,337 of them, and without it those two pulls
+capture byte-identically. Features are sorted by `properties.id`, the stable
+per-record UUID, so a server-side reorder stays a no-op; a row with no
+`properties.id` sorts last, after its own canonical body breaks the tie, so even
+an unidentified row cannot carry server arrival order into the file. Both layers
+answer only from an Algerian vantage point, which is why the capture matters more
+here than elsewhere: it replays offline with `--cache` long after the window
+closes.
+
+Replaying is not rebuilding. `@geoalgeria/sports` was rebuilt from its capture
+for batch 2026-15, once its two review decisions gone stale by absorption
+(`facilities.json/01663` and `01666`) were retired; its ids now carry on the
+`properties.id` UUID, published as `refs.mjs`. `@geoalgeria/jeunesse` was rebuilt
+from its capture the same way once `institutions.json/00728`, stale the same way
+(expect wilaya 14 where the build now derives 64 with commune 1439), was retired;
+its ids carry on `refs.mjs` too. Owed: a gate that proves a live pull replays byte-identically to the
+committed capture end to end, rather than only at the projection, which is all
+`test/mjs-sig-capture.test.mjs` pins today.
+
+`sante` and `mobilis` hold captures ahead of their fetchers, taken during an
+Algerian VPN window on 2026-10-27. Both hosts drop TCP from outside Algeria, so
+until that window neither package could be rebuilt offline at all: `sante` had
+no raw capture anywhere in the repository. `sante` holds the two sante.gov.dz
+WordPress REST pulls `fetchMSP()` makes, de-duplicated by post id and paged the
+same way it pages them. `mobilis` holds the three locator endpoints its own
+`main()` requests, with the per-wilaya agency responses flattened and sorted by
+id because the rows carry their own `wilaya_id` and the grouping is request
+shape rather than data. Both fetchers still write and read the gitignored
+`research/<pkg>/` pulls, so pointing them at `readCapture` is the conversion
+step that remains; the captures are already the exact payloads they request, so
+that switch is a code change and not another window.
+
+In the same window `https://dgpc.dz/dgpc2/unite.geojson` answered HTTP 500, then
+200 on a retry with a browser User-Agent, and returned the same 880 units as the
+committed `protection-civile/dgpc-units.json`: compared by `objectid` the two
+payloads are identical, and only the hash moved
+(`ac66bc1e9c...` against the stored `fc916d0559...`) because the publisher
+varies the feature order between responses. Nothing was promoted and no second
+capture was committed, since it would have been 653 KB of reordering noise. The
+DGPC fetcher sorting its features by `objectid` before capturing would make that
+order invisible, as the sorting rule above intends.
+
+Remaining packages convert as they are
 next touched — their raw pulls still land in gitignored `research/<pkg>/`
 until then.

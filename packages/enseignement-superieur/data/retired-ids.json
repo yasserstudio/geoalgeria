@@ -1,0 +1,33 @@
+{
+  "note": "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.",
+  "migrations": {
+    "00069": {
+      "merged_into": "00189",
+      "note": "Merged into 00189, Ecole nationale supérieure des technologies avancées (Alger), which carries this establishment now, as it does Ecole Supérieure des Sciences appliquées d’Alger ex EP ST Alger. Succeeded by décret exécutif 22-398 of 21 November 2022, which dissolved the Ecole nationale supérieure de technologie and the Ecole supérieure en sciences appliquées d'Alger and transferred their property, rights, obligations, personnel and resources to the Ecole nationale supérieure des technologies avancées, created by décret exécutif 22-314 of 12 September 2022 (both in Journal officiel n° 78, 2022). The MESRS BAC 2026 placement file lists only establishment P05, so the ministry places bacheliers into the successor alone, while the 2026-08-03 network listing still carries both predecessors. They are therefore not peers of P05 but the same establishment before the decree: their records leave and their ids are forwarded to this one in data/retired-ids.json, rather than three records co-existing for one school."
+    },
+    "00085": {
+      "merged_into": "00189",
+      "note": "Merged into 00189, Ecole nationale supérieure des technologies avancées (Alger), which carries this establishment now, as it does Ecole Nationale Supérieure de Technologie. Succeeded by décret exécutif 22-398 of 21 November 2022, which dissolved the Ecole nationale supérieure de technologie and the Ecole supérieure en sciences appliquées d'Alger and transferred their property, rights, obligations, personnel and resources to the Ecole nationale supérieure des technologies avancées, created by décret exécutif 22-314 of 12 September 2022 (both in Journal officiel n° 78, 2022). The MESRS BAC 2026 placement file lists only establishment P05, so the ministry places bacheliers into the successor alone, while the 2026-08-03 network listing still carries both predecessors. They are therefore not peers of P05 but the same establishment before the decree: their records leave and their ids are forwarded to this one in data/retired-ids.json, rather than three records co-existing for one school."
+    }
+  },
+  "ids": [
+    "00069",
+    "00085",
+    "00094",
+    "00095",
+    "00096",
+    "00097",
+    "00098",
+    "00099",
+    "00100",
+    "00101",
+    "00102",
+    "00104",
+    "00105",
+    "00110",
+    "00111",
+    "00115",
+    "00116",
+    "00118"
+  ]
+}

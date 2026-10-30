@@ -22,7 +22,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { writeCapture, readCapture, stableStringify } from "../../../scripts/lib/source-store.mjs";
 import { reconcileCurrentWilayaByCommune } from "../../../scripts/lib/current-wilaya-by-commune.mjs";
 
@@ -99,6 +99,17 @@ const OOREDOO_ID_LABEL = new Map([
   ["LARBAA NATH IRATHEN", "LARBAE NATH IRATHENE"],
   ["OUM EL BOUAGHI", "OUM BOUAGHI"],
 ]);
+
+// Military locations, by site id. Owner decision of 2026-10-29: no military
+// location anywhere in the project, so these never enter the package, whatever a
+// later pull renames them to. The id is this package's stable source key (a hash
+// of operator + coordinates + the operator's own label), so a site keeps its id
+// across pulls and a different site can never take it. Every id here is retired
+// in data/retired-ids.json and never reused. A record whose label only mentions a
+// military place without pinpointing it is not listed: the test is whether the
+// point locates the facility.
+//   - djezzy-e5a11f8ee5 "HOPITAL MILITAIRE DE AIN NAADJA", Kouba (Alger)
+const MILITARY_SITE_IDS = new Set(["djezzy-e5a11f8ee5"]);
 
 // Algeria bounding box: reject coordinates outside it (catches comma-decimal or
 // swapped lat/lng introduced by a source format change).
@@ -342,10 +353,15 @@ async function main() {
   const extractors = { djezzy: fetchDjezzy, mobilis: fetchMobilis, ooredoo: fetchOoredoo };
   const perOperator = {};
   const failures = [];
+  let military = 0;
   for (const [op, fn] of Object.entries(extractors)) {
     try {
-      perOperator[op] = await fn();
-      console.log(`  ${op}: ${perOperator[op].length} sites`);
+      const sites = await fn();
+      // Applied to every operator, on the id, before anything is published.
+      const kept = sites.filter((site) => !MILITARY_SITE_IDS.has(site.id));
+      military += sites.length - kept.length;
+      perOperator[op] = kept;
+      console.log(`  ${op}: ${kept.length} sites`);
     } catch (e) {
       failures.push(op);
       console.error(`  ${op}: FAILED: ${e.message}`);
@@ -365,7 +381,9 @@ async function main() {
     const op = s.file.replace(/^5g-/, "").replace(/\.json$/, "");
     return { file: s.file, rows: perOperator[op].map(s.map) };
   });
-  const today = new Date().toISOString().slice(0, 10);
+  // A live pull stamps today; a --cache replay reuses the committed dates, so an
+  // offline rebuild reproduces the committed files whatever day it runs on.
+  const { updated, retrieved } = resolveDates(DATA, OFFLINE);
   // Read after all live extractors finish: writeCapture updates this file, so a
   // module-start snapshot would stamp fresh data with the previous run's date.
   const sourceManifest = JSON.parse(readFileSync(SOURCE_MANIFEST_PATH, "utf8"));
@@ -375,16 +393,23 @@ async function main() {
       throw new Error(`source manifest has no retrieval date for ${source.key}-5g`);
     return { ...source, retrieved: capture.retrieved };
   });
+  // A military location that was published once keeps its id reserved forever, so
+  // no later pull can hand that public join key to another site.
+  const retiredIds = readRetiredIds(DATA);
+  for (const siteId of MILITARY_SITE_IDS) retiredIds.add(siteId);
   const { records, metadata } = writePackageV2({
     pkg: "telecom",
     dir: DATA,
     files,
     meta: { ...cfg.meta, sources },
-    updated: today,
-    retrieved: today,
+    updated,
+    retrieved,
+    retiredIds,
   });
 
   console.log(`  combined: ${records.length} sites across ${metadata.wilayas_covered} wilayas`);
+  if (military)
+    console.log(`  military exclusion: ${military} site(s) left out (Owner decision 2026-10-29)`);
   if (unmatched.size) console.warn(`  ⚠ unmatched wilaya names: ${[...unmatched].join(", ")}`);
   const totalDropped = dropped.djezzy + dropped.mobilis + dropped.ooredoo;
   if (totalDropped)

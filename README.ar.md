@@ -24,19 +24,30 @@
 
 ## الأطلس
 
-[![أطلس جيو الجزائر على geoalgeria.com](assets/screenshots/atlas-home.png)](https://geoalgeria.com)
+<a href="https://geoalgeria.com"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/atlas-home-dark.jpg">
+  <img src="assets/screenshots/atlas-home-light.jpg" alt="أطلس جيو الجزائر على geoalgeria.com">
+</picture></a>
 
 **[geoalgeria.com](https://geoalgeria.com)** يضع أكثر من 28 قاعدة بيانات وأكثر من 80,000 سجل على خريطة تفاعلية واحدة، أُعيد رسمها لتشمل الولايات الـ69.
 
 - **[أطلس متعدّد القطاعات](https://geoalgeria.com):** كل القطاعات على خريطة واحدة، من مكاتب البريد إلى المساجد والمستشفيات، مع عرض للكثافة حسب الولاية.
 - **[خريطة الحرائق المباشرة](https://geoalgeria.com/fires):** نقاط الحرارة من أقمار NASA FIRMS إلى جانب النشرات الرسمية للحماية المدنية، محدّثة طوال موسم الحرائق (أُطلقت في 23 جويلية 2026).
+- **[خريطة الرحلات الجوية](https://geoalgeria.com/flights):** كل الخطوط المباشرة للجوية الجزائرية على كرة أرضية، مع تمييز المؤكّدة والمدرجة والمعلنة.
 - **[3,951 صفحة لكل ولاية](https://geoalgeria.com/wilaya):** صفحة لكل ولاية وكل قطاع، مصمّمة لتظهر في البحث.
 - **[تركيب الطبقات](https://geoalgeria.com/explore):** فعّل القطاعات وأوقفها واقرأها معًا على الخريطة نفسها.
 - **بحث Command-K:** انتقل إلى أي ولاية أو بلدية مباشرة من لوحة المفاتيح.
 - **العربية والفرنسية والإنجليزية:** الواجهة بالكامل، بدعم كامل للكتابة من اليمين إلى اليسار في العربية.
 - **[مصدر لكل سجل](https://geoalgeria.com/sources):** كل نقطة تُظهر مصدرها وتاريخ آخر تغيير فيها. اطّلع على [المصادر](https://geoalgeria.com/sources) و[سجل التغييرات](https://geoalgeria.com/changelog).
 
-[![خريطة الحرائق المباشرة على geoalgeria.com/fires](assets/screenshots/fires-map.png)](https://geoalgeria.com/fires)
+<p align="center">
+  <a href="https://geoalgeria.com/flights"><img src="assets/screenshots/phone-flights-light.jpg" alt="خريطة الرحلات الجوية على الهاتف" width="32%"></a>
+  <a href="https://geoalgeria.com/pharmacies"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/phone-pharmacies-dark.jpg">
+    <img src="assets/screenshots/phone-pharmacies-light.jpg" alt="خريطة الصيدليات على الهاتف" width="32%">
+  </picture></a>
+  <a href="https://geoalgeria.com/ar/commune/16-casbah"><img src="assets/screenshots/phone-commune-casbah.jpg" alt="صفحة بلدية القصبة بالعربية على الهاتف" width="32%"></a>
+</p>
 
 ## البيانات
 
@@ -65,32 +76,32 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **الولايات** | 69 | (إصلاحات 2019 + 2026)، ولكل ولاية بلدية مقرها (chef-lieu) |
 | **الدوائر** | 551 | كيانات من المستوى الأول |
 | **البلديات** | 1,541 | ثنائية اللغة فر/عر، رموز بريدية، إحداثيات، روابط OpenStreetMap وWikidata |
-| **مكاتب البريد** | 3,908 | رموز بريد الجزائر الحقيقية، إحداثيات |
-| **الصرّافات الآلية** | 2,026 | شبكة GAB لبريد الجزائر |
+| **مكاتب البريد** | 3,907 | رموز بريد الجزائر الحقيقية، إحداثيات |
+| **الصرّافات الآلية** | 2,023 | شبكة GAB لبريد الجزائر |
 | **وكالات التشغيل** | 331 | الوكالة الوطنية للتشغيل: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
 | **شبكة موبيليس** | 12,344 | 164 وكالة + 12,180 نقطة بيع. [`@geoalgeria/mobilis`](packages/mobilis) |
-| **تغطية 5G** | 3,598 | مواقع 5G لجيزي + موبيليس + أوريدو. [`@geoalgeria/telecom`](packages/telecom) |
+| **تغطية 5G** | 4,093 | مواقع 5G لجيزي + موبيليس + أوريدو. [`@geoalgeria/telecom`](packages/telecom) |
 | **المطارات المدنية** | 36 | ANAC + OurAirports: أسماء، رموز ICAO + IATA، معلومات اتصال، إحداثيات. [`@geoalgeria/aviation`](packages/aviation) |
-| **الخطوط الجوية المباشرة** | 157 | شبكة الجوية الجزائرية الدولية كخطوط اتجاهية، لكل منها مشغّل ودرجة إثبات ومصدر. [`@geoalgeria/aviation`](packages/aviation) |
+| **الخطوط الجوية المباشرة** | 169 | شبكة الجوية الجزائرية الدولية كخطوط اتجاهية، لكل منها مشغّل ودرجة إثبات وقائمة مراجع. [`@geoalgeria/aviation`](packages/aviation) |
 | **البنوك والفروع** | 1,704 | كل البنوك الـ 21 المعتمدة + 8 مؤسسات مالية؛ فروع مع أكواد RIB/SWIFT، الملكية، الإحداثيات. [`@geoalgeria/banques`](packages/banques) |
-| **شركات التوصيل** | 411 | 16 ناقلًا + 411 نقطة استلام في 61 ولاية (Yalidine، Guepex، Anderson، Noest، Maystro). [`@geoalgeria/livraison`](packages/livraison) |
+| **شركات التوصيل** | 650 | 18 ناقلًا + 650 نقطة استلام في 64 ولاية (Yalidine، Guepex، Anderson، Noest، Maystro، ZR Express، Swift Express، HHD Express). [`@geoalgeria/livraison`](packages/livraison) |
 | **مؤسسات الشباب** | 2,334 | دور الشباب، مركّبات رياضية من الدرجة الأولى، قاعات متعددة الاستخدامات، دور إيواء، مراكز ثقافية وعلمية وأكثر في 69 ولاية (وزارة الشباب والرياضة). [`@geoalgeria/jeunesse`](packages/jeunesse) |
-| **منشآت رياضية** | 5,141 | ملاعب، حمامات سباحة، مجالات من الدرجة الأولى، مضمارات العاب القوى، ملاعب وأكثر (27 نوع) في 69 ولاية (وزارة الشباب والرياضة). [`@geoalgeria/sports`](packages/sports) |
-| **التعليم العالي** | 177 | جامعات، مدارس عليا، مدارس عليا للأساتذة، مراكز + 19 مؤسسة خاصة و48 تابعة لوزارات أخرى في 51 ولاية، مع المواقع الرسمية (وزارة التعليم العالي). [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
-| **السياحة** | 4,348 | 1,602 فندق، 1,248 معلم سياحي، 1,184 موقع تاريخي، 282 منبع حراري (ASAL)، 32 حديقة وطنية. [`@geoalgeria/tourisme`](packages/tourisme) |
-| **التكوين المهني** | 1,932 | 856 CFPA + 182 INSFP + 723 مؤسسة خاصة معتمدة + 58 DFEP + أكثر في الولايات الحالية الـ69 (وزارة التكوين المهني / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
+| **منشآت رياضية** | 5,234 | ملاعب، حمامات سباحة، مجالات من الدرجة الأولى، مضمارات العاب القوى، ملاعب وأكثر (28 نوع) في 69 ولاية (وزارة الشباب والرياضة). [`@geoalgeria/sports`](packages/sports) |
+| **التعليم العالي** | 171 | جامعات، مدارس عليا، مدارس عليا للأساتذة، مراكز + 19 مؤسسة خاصة و34 تابعة لوزارات أخرى في 51 ولاية، مع المواقع الرسمية (وزارة التعليم العالي). [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
+| **السياحة** | 4,321 | 1,587 فندق، 1,245 معلم سياحي، 1,180 موقع تاريخي، 282 منبع حراري (ASAL)، 27 حديقة وطنية. [`@geoalgeria/tourisme`](packages/tourisme) |
+| **التكوين المهني** | 1,963 | 857 CFPA + 182 INSFP + 754 مؤسسة خاصة معتمدة + 58 DFEP + أكثر في الولايات الحالية الـ69 (وزارة التكوين المهني / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **المساجد** | 20,759 | تجميع Wikidata + OpenStreetMap، أسماء عربية وفرنسية، المذهب، كل الـ69 ولاية. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **محلات جيزي** | 128 | محلات بيع مُحدّدة جغرافيًا مع الفئة وأوقات العمل والربط بالبلدية/الولاية (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
-| **المؤسسات الصحية** | 661 | EPH · EPSP · EHS · CHU من وزارة الصحة، ثنائية اللغة، 591 بإحداثيات عبر OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
-| **العيادات ومرافق الرعاية** | 1,917 | عيادات متعددة الخدمات وقاعات علاج ومراكز صحية ومصحات توليد وعيادات خاصة من OpenStreetMap، مُصنَّفة حسب النوع، ثنائية اللغة، 66 ولاية. الطبقة المجتمعية إلى جانب سجلّ `sante`، ولا تُجمع معه أبدًا. [`@geoalgeria/cliniques`](packages/cliniques) |
+| **المؤسسات الصحية** | 657 | EPH · EPSP · EHS · CHU من وزارة الصحة، ثنائية اللغة، 587 بإحداثيات عبر OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
+| **العيادات ومرافق الرعاية** | 1,915 | عيادات متعددة الخدمات وقاعات علاج ومراكز صحية ومصحات توليد وعيادات خاصة من OpenStreetMap، مُصنَّفة حسب النوع، ثنائية اللغة، 66 ولاية. الطبقة المجتمعية إلى جانب سجلّ `sante`، ولا تُجمع معه أبدًا. [`@geoalgeria/cliniques`](packages/cliniques) |
 | **وحدات الحماية المدنية** | 880 | وحدات الإطفاء والإنقاذ التابعة للمديرية العامة للحماية المدنية على كامل التراب، مُسمّاة بالعربية، بعنوان/هاتف/فاكس، وبمستوى الصفة، كلها بإحداثيات، مصدر رسمي أوّلي (dgpc.dz)، مع ربط الولاية وفق إصلاح 2026. [`@geoalgeria/protection-civile`](packages/protection-civile) |
-| **المواقع الثقافية** | 1083 | مواقع محمية، متاحف، مسارح، مكتبات + مؤسسات ثقافية من وزارة الثقافة، ثنائية اللغة، كلها بإحداثيات، 66 ولاية. [`@geoalgeria/culture`](packages/culture) |
+| **المواقع الثقافية** | 1,083 | مواقع محمية، متاحف، مسارح، مكتبات + مؤسسات ثقافية من وزارة الثقافة، ثنائية اللغة، كلها بإحداثيات، 66 ولاية. [`@geoalgeria/culture`](packages/culture) |
 | **المؤسسات الفلاحية** | 196 | مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية من وزارة الفلاحة، ثنائية اللغة، بإحداثيات، 58 ولاية. [`@geoalgeria/agriculture`](packages/agriculture) |
-| **المدارس** | 11,858 | مدارس ابتدائية ومتوسطات وثانويات ورياض أطفال مُصنَّفة حسب الطور من OpenStreetMap، ثنائية اللغة، كل الـ69 ولاية. [`@geoalgeria/ecoles`](packages/ecoles) |
+| **المدارس** | 11,849 | مدارس ابتدائية ومتوسطات وثانويات ورياض أطفال مُصنَّفة حسب الطور من OpenStreetMap، ثنائية اللغة، كل الـ69 ولاية. [`@geoalgeria/ecoles`](packages/ecoles) |
 | **المحطات البرية** | 74 | محطات سوقرال البرية عبر 52 ولاية، الأسماء، العناوين، المساحات، الإحداثيات. [`@geoalgeria/gares-routieres`](packages/gares-routieres) |
-| **السكك والنقل الحضري** | 692 | عُقَد القطار والترامواي والمترو والتلفريك (SNTF / SETRAM / SEMA)، تجميعة Wikidata + OSM، ثنائية اللغة، 50 ولاية. [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
+| **السكك والنقل الحضري** | 691 | عُقَد القطار والترامواي والمترو والتلفريك (SNTF / SETRAM / SEMA)، تجميعة Wikidata + OSM، ثنائية اللغة، 50 ولاية. [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
 | **خطوط الحافلات الحضرية وشبه الحضرية** | 184 | 16 مشغلًا، 76 مسارًا، 128 اتجاهًا، و1,603 محطة. [`@geoalgeria/buses`](packages/buses) |
-| **الصيدليات** | 3,795 | صيدليات (officines) مُحدَّدة جغرافيًا من OpenStreetMap، ثنائية اللغة عند التسمية، مربوطة بالبلدية/الولاية. [`@geoalgeria/pharmacies`](packages/pharmacies) |
+| **الصيدليات** | 3,811 | صيدليات (officines) مُحدَّدة جغرافيًا من OpenStreetMap، ثنائية اللغة عند التسمية، مربوطة بالبلدية/الولاية. [`@geoalgeria/pharmacies`](packages/pharmacies) |
 | **مصنّعو الأدوية** | 171 | مصنّعون معتمدون للأدوية والأجهزة الطبية من سجل وزارة الصناعة الصيدلانية، مُحدَّدون جغرافيًا. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **نقاط بيع أوريدو** | 572 | فضاءات أوريدو ومتاجر المدينة وفضاءات الخدمات بإحداثيات حقيقية، مربوطة بالبلدية/الولاية (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
@@ -133,24 +144,24 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/telecom`](packages/telecom) | [`@geoalgeria/telecom`](https://www.npmjs.com/package/@geoalgeria/telecom) | تغطية 5G متعددة المشغلين (جيزي، موبيليس، أوريدو) |
 | [`packages/aviation`](packages/aviation) | [`@geoalgeria/aviation`](https://www.npmjs.com/package/@geoalgeria/aviation) | المطارات المدنية من ANAC + OurAirports، أسماء، رموز ICAO + IATA، إحداثيات، إضافة إلى شبكة الخطوط المباشرة الدولية |
 | [`packages/banques`](packages/banques) | [`@geoalgeria/banques`](https://www.npmjs.com/package/@geoalgeria/banques) | كل البنوك الـ 21 المعتمدة + المؤسسات المالية و1,704 فروع (RIB، SWIFT، الملكية، الإحداثيات) |
-| [`packages/livraison`](packages/livraison) | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | سجل شركات التوصيل + 411 نقطة استلام وتغطية لكل ناقل (Yalidine، Guepex، Anderson، Noest، Maystro) |
+| [`packages/livraison`](packages/livraison) | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | سجل شركات التوصيل + 650 نقطة استلام وتغطية لكل ناقل (Yalidine، Guepex، Anderson، Noest، Maystro، ZR Express، Swift Express، HHD Express) |
 | [`packages/jeunesse`](packages/jeunesse) | [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | مؤسسات الشباب لوزارة الشباب والرياضة (2,334 في 69 ولاية) |
-| [`packages/sports`](packages/sports) | [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports) | منشآت رياضية لوزارة الشباب والرياضة، 5,141 في 69 ولاية، 27 نوع، مع السعة والوصول بسهولة والإحداثيات |
-| [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | شبكة التعليم العالي لوزارة التعليم العالي، جامعات، مدارس عليا، مدارس عليا للأساتذة ومراكز + 19 مؤسسة خاصة و48 تابعة لوزارات أخرى (177)، مع المواقع الرسمية والإحداثيات |
-| [`packages/tourisme`](packages/tourisme) | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | البنية التحتية السياحية، 4,348 فندق ومعلم سياحي وموقع تاريخي ومنبع حراري وحديقة وطنية (ASAL، OSM، Wikidata) |
-| [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | التكوين المهني، 1,932 CFPA، INSFP، IFEP، IEP، DFEP ومراكز خاصة من وزارة التكوين المهني (takwin.dz)، مع السعة والإقامة والإحداثيات |
+| [`packages/sports`](packages/sports) | [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports) | منشآت رياضية لوزارة الشباب والرياضة، 5,234 في 69 ولاية، 28 نوع، مع السعة والوصول بسهولة والإحداثيات |
+| [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | شبكة التعليم العالي لوزارة التعليم العالي، جامعات، مدارس عليا، مدارس عليا للأساتذة ومراكز + 19 مؤسسة خاصة و34 تابعة لوزارات أخرى (171)، مع المواقع الرسمية والإحداثيات |
+| [`packages/tourisme`](packages/tourisme) | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | البنية التحتية السياحية، 4,321 فندق ومعلم سياحي وموقع تاريخي ومنبع حراري وحديقة وطنية (ASAL، OSM، Wikidata) |
+| [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | التكوين المهني، 1,963 CFPA، INSFP، IFEP، IEP، DFEP ومراكز خاصة من وزارة التكوين المهني (takwin.dz)، مع السعة والإقامة والإحداثيات |
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | محلات جيزي، 128 محل بيع مُحدّد جغرافيًا من djezzy.dz، مع الفئة وأوقات العمل والربط بالبلدية/الولاية |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | مساجد الجزائر، 20,759 مُحدّدة جغرافيًا، تجميع Wikidata + OpenStreetMap بأسماء عربية وفرنسية ومذهب وربط بالبلدية/الولاية |
-| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | المؤسسات الصحية العمومية، 661 من وزارة الصحة (EPH، EPSP، EHS، CHU)، ثنائية اللغة، بإحداثيات عبر OSM + Wikidata مع ربط بالبلدية/الولاية |
-| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | العيادات ومرافق الرعاية الجوارية، 1,917 مرفقًا بإحداثيات من OpenStreetMap عبر 66 ولاية، مُصنَّفة حسب النوع (عيادة متعددة الخدمات/قاعة علاج/مركز صحي/مصحة توليد/عيادة)، ثنائية اللغة، مع القطاع والتخصّص والهاتف والأوقات عند توفّرها؛ الطبقة المجتمعية لقطاع الصحة، ويُستبعَد منها كل عنصر OSM يُشير إليه `sante` |
+| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | المؤسسات الصحية العمومية، 657 من وزارة الصحة (EPH، EPSP، EHS، CHU)، ثنائية اللغة، بإحداثيات عبر OSM + Wikidata مع ربط بالبلدية/الولاية |
+| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | العيادات ومرافق الرعاية الجوارية، 1,915 مرفقًا بإحداثيات من OpenStreetMap عبر 66 ولاية، مُصنَّفة حسب النوع (عيادة متعددة الخدمات/قاعة علاج/مركز صحي/مصحة توليد/عيادة)، ثنائية اللغة، مع القطاع والتخصّص والهاتف والأوقات عند توفّرها؛ الطبقة المجتمعية لقطاع الصحة، ويُستبعَد منها كل عنصر OSM يُشير إليه `sante` |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | الأطلس الثقافي، 1083 موقعًا من وزارة الثقافة (مواقع محمية، متاحف، مسارح، مكتبات، مؤسسات ثقافية)، ثنائية اللغة، كاملة الإحداثيات مع ربط بالبلدية/الولاية |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | المؤسسات الفلاحية، 196 من وزارة الفلاحة موزعة على 7 شبكات (مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية)، ثنائية اللغة، بإحداثيات مع ربط بالبلدية/الولاية |
-| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس، 11,858 مدرسة وروضة من OpenStreetMap، مُصنَّفة حسب الطور (ابتدائي/متوسط/ثانوي/تحضيري)، ثنائية اللغة، كل الـ69 ولاية، مع ربط بالبلدية/الولاية |
+| [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس، 11,849 مدرسة وروضة من OpenStreetMap، مُصنَّفة حسب الطور (ابتدائي/متوسط/ثانوي/تحضيري)، ثنائية اللغة، كل الـ69 ولاية، مع ربط بالبلدية/الولاية |
 | [`packages/gares-routieres`](packages/gares-routieres) | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | المحطات البرية، 74 محطة سوقرال عبر 52 ولاية، بإحداثيات ومساحات وربط بالبلدية/الولاية |
-| [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري، 692 عقدة قطار/ترامواي/مترو/تلفريك (SNTF/SETRAM/SEMA)، تجميعة Wikidata + OSM، ثنائية اللغة |
+| [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري، 691 عقدة قطار/ترامواي/مترو/تلفريك (SNTF/SETRAM/SEMA)، تجميعة Wikidata + OSM، ثنائية اللغة |
 | [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | 184 خطًا حضريًا وشبه حضري، و76 مسارًا و1,603 محطة لدى 16 مشغلًا |
 | [`packages/industrie-pharmaceutique`](packages/industrie-pharmaceutique) | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | مصنّعو الأدوية، 171 مصنّعًا معتمدًا للأدوية (PP) والأجهزة الطبية (DM) من سجل وزارة الصناعة الصيدلانية، ثنائيو اللغة، مُحدَّدون إلى مركز البلدية/الولاية |
-| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines)، 3,795 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية، مع الهاتف/الساعات/dispensing عند توفّرها والربط بالبلدية/الولاية |
+| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines)، 3,811 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية، مع الهاتف/الساعات/dispensing عند توفّرها والربط بالبلدية/الولاية |
 | [`packages/protection-civile`](packages/protection-civile) | [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | وحدات الحماية المدنية (الإطفاء والإنقاذ)، 880 وحدة تابعة للمديرية العامة للحماية المدنية على كامل التراب، مُسمّاة بالعربية، بعنوان/هاتف/فاكس ومستوى صفة، كلها بإحداثيات، مصدر رسمي أوّلي (dgpc.dz)؛ الولاية مُعاد اشتقاقها على حدود ما بعد إصلاح 2026 الـ69 |
 | [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | نقاط بيع أوريدو، 572 فضاء أوريدو / متجر مدينة / فضاء خدمات بإحداثيات حقيقية والربط بالبلدية/الولاية (ooredoo.dz)؛ يُكمل ثلاثي الاتصالات |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | مظلة، تثبّت aviation + ferroviaire + gares-routieres + buses دفعة واحدة |

@@ -63,7 +63,74 @@ reads as further along than it is.
   (29 Oct). `alg-svo` / `svo-alg` carried an announced 2 Oct resumption with no
   report of a first flight, so they are the first to re-check. Detail in
   `research/_flight-routes/verification-2026-10-02.md`.
-  _(logged 2026-10-02)_
+
+  First-flight pass of 2026-10-26 (`verification-2026-10-26.md`): two legs flipped,
+  `alg-cky` on two Guinean reports of the inaugural landing at Ahmed Sekou Toure and
+  `alg-pvg` on the inaugural rotation's departure from Algiers, reported by APS and
+  observalgerie. The other fourteen stay planned, each with its own re-check date:
+  `cky-alg`, `alg-bzv` / `bzv-alg` and `abv-los` after 27 Oct, `los-alg` and
+  `pvg-alg` after 28 Oct, `alg-kwi` / `kwi-amm` / `amm-alg` after 27 Oct, `alg-mji` /
+  `mji-alg` after 29 Oct, `alg-los` / `los-abv` after 30 Oct. The Kuwait triangle
+  also gained its filed flight number, `AH 4064`, and the Kuwait and Amman departure
+  days, off the AeroRoutes NW26 filing of 29 Jun 2026 that this file already cites
+  for the Douala and Libreville returns. `AS_OF` stays 2026-10-09: the pass re-read
+  the six announced lines, not the winter schedule.
+
+  Re-check of 2026-10-28 (`verification-2026-10-28.md`): `alg-mji` flipped on the
+  inaugural `AH 4006` of 28 Oct, departure and Mitiga arrival both reported. The
+  other fifteen stay planned with nothing found, all to re-check on 30 Oct, when
+  `AS_OF` moves together with the Douala/Libreville NW26 numbers (Owner,
+  2026-10-28). `alg-svo` / `svo-alg` stay planned with the Russian ambassador's
+  26 Oct "early next year" interview cited; Berlin keeps Monday until a report
+  dated on or after a Sunday flight (BER's own page says Sunday from 1 Nov, the
+  filing from 25 Oct).
+
+  Winter-launch pass of 2026-10-30 (`verification-2026-10-30.md`): **nine legs
+  flipped**, each on its own flight's observed Flightradar24 history, under the
+  Owner's rule of 30 Oct that a tracker's history is first-flight evidence
+  (`collection-rules.md` section 36). The four returns `pvg-alg`, `cky-alg`,
+  `mji-alg` and `bzv-alg`, the `alg-bzv` outbound, and all four remaining Nigeria
+  sectors, `alg-los`, `los-alg`, `abv-los` and `los-abv`, which closes both
+  triangles. Five rows gained or corrected a field no publisher gave: `cky-alg`
+  mon/wed/fri and `bzv-alg` tue/thu/sun where `days` was null, each a day after
+  its outbound; `abv-los` mon to tue and `los-abv` thu to fri, off the rotation
+  day onto their own departure day, both also gaining `AH 5354`; `mji-alg` its
+  first flight number, `AH 4007`. This item is now RESOLVED: every row it listed
+  is operating.
+
+  `AS_OF` does NOT move, which corrects the 28 Oct plan: this pass read
+  first-flight questions only, so Berlin's day, Doha and the Douala/Libreville
+  numbers are still unread and go with the pass that re-reads the network.
+  _(logged 2026-10-02, part-resolved 2026-10-26 and 2026-10-28, resolved 2026-10-30)_
+
+- [ ] **The Kuwait-Amman rotation has no tracker data at all, re-check after 3 Nov
+  2026.** `AH 4064` and `AH 4065` were both looked up on Flightradar24 on 30 Oct
+  and neither number carries any history or any schedule. `alg-kwi`, `kwi-amm` and
+  `amm-alg` stay planned on the AeroRoutes NW26 filing of 29 Jun 2026, unchanged.
+  An empty tracker page is a silence and not a negative: it is equally compatible
+  with a one-weekly Monday rotation that has not started and with one flying under
+  a number the filing does not give. The carrier's 24 Oct communique naming five
+  new lines also omits Kuwait, and no page says it is cancelled.
+  _(logged 2026-10-30)_
+
+- [ ] **`alg-svo` / `svo-alg`: a filed schedule appeared, re-check after 3 Nov
+  2026.** Flightradar24's Sheremetyevo page lists AH 3000, Algiers to SVO, as
+  scheduled, arriving 2 Nov 03:10, 4 Nov 03:10 and 6 Nov 15:05. Nothing has flown,
+  so both rows are unchanged, but it contradicts the Russian ambassador's 26 Oct
+  "early next year" interview and reads the departures as sun/tue/thu where the
+  rows carry mon/wed/fri off the 6 Sep report. Read AH 3000's history after
+  3 November; if it flew, set `days` off the observations, never off the schedule.
+  _(logged 2026-10-30)_
+
+- [ ] **`alg-ndj` may be stale in the other direction.** Algiers to N'Djamena first
+  flew on 21 Oct 2025 (APS), so the 22 Jun 2026 filing the planned row rests on may
+  be an extension of a line already operating rather than a launch, in which case
+  the leg should be operating and not planned. Pulling the other way, the winter
+  2026-27 reports drop the N'Djamena stop from the Douala routing (observalgerie,
+  22 Oct 2026, matching the Cameroonian regulator's 14 Oct approval). Both need the
+  pass that re-reads the network, which is the same pass that moves `as_of`. Batch
+  2026-16.
+  _(logged 2026-10-30)_
 
 - [ ] **`alg-doh` / `doh-alg` go daily on 25 Oct 2026.** The resumed service runs
   three weekly, Sun/Tue/Fri, and the same reports announce a daily programme from
@@ -72,7 +139,11 @@ reads as further along than it is.
   `days: ["sun", "tue", "fri"]` is right for the 2026-10-02 snapshot, so this is a
   one-line edit plus an `as_of` bump at the next pass, the same shape as the
   Berlin item above.
-  _(logged 2026-10-02)_
+
+  Checked 2026-10-26: still open. Everything readable on the seven-weekly schedule
+  predates the date it starts, and nothing dated on or after 25 October reports the
+  daily programme in effect, so `days` is unchanged. Re-check after 1 Nov 2026.
+  _(logged 2026-10-02, re-checked 2026-10-26)_
 
 - [ ] **Screened positive, awaiting a citable source: IST -> ORN** (AH3025
   en-route during the 2026-07-29 screen; istairport.com timed out, aeroroutes
@@ -116,7 +187,7 @@ reads as further along than it is.
   (`أيت عقـواشة`, `بنــــي زمنزار`, ...) that render as broken typography in
   search snippets, 21 in wilaya 15 and Drean in wilaya 36, and the app had
   stripped them in its own committed copy. They are now stripped at source in
-  all eight carriers by `scripts/fix-commune-name-ar.mjs`, with Souk El
+  all eleven carriers by `scripts/fix-commune-name-ar.mjs`, with Souk El
   Tenine's definite article repaired alongside them, and
   `test/commune-name-ar.test.mjs` holds the floor at zero so a regeneration
   cannot resurrect them. Still open: dairas have NO Arabic name field at all,
@@ -200,6 +271,20 @@ reads as further along than it is.
   are unsourced. Not a correction to make blind: the values are probably right in
   practice, and changing one without a source would be the same mistake twice.
   _(logged 2026-10-01, from the #235 source hunt)_
+
+- [ ] **Follow-ups from the #288 postal review (batch 2026-13).** The wilaya
+  half **shipped 2026-10-21** (geoalgeria 2.4.0, tracker #293): wilayas 49 to
+  69 now publish their chef-lieu commune's postal code on every carrier, with a
+  carrier-agreement test, so wilaya 59 no longer reads 59000 against Aflou's
+  03001. Still open: 13
+  communes keep (rule 2) a code belonging to one of their own offices other
+  than the eponymous one (Tamantit, Bouzeghaia, Gosbat, Taourit Ighil,
+  Taghzout, Ouled Rached, Sidi M'hamed w16, Casbah, Oued Ferragha, Hassiane,
+  Machroha, Nezla, Zaouia El Abidia), listed as `RULE_2_KEEPS` in
+  `test/commune-postal-eponymous.test.mjs`; each needs a source check. Also
+  verify Mohamed Belouzdad 1604 -> 16244 (rule-3 branch, over 16009 HC)
+  against an external directory. _(logged 2026-10-13, tracker #293; wilaya half
+  shipped 2026-10-21)_
 
 ## Generators
 
@@ -298,6 +383,22 @@ reads as further along than it is.
   Deferred out of the cliniques branch on purpose. A repo-wide 3-line sweep,
   worth doing at the next coordinated bump rather than alone.
   _(logged 2026-08-09)_
+
+- [x] **Decided and shipped 2026-10-21: the en dash (U+2013) in published
+  names folds to " - "** (batch 2026-14, tracker #294). The name gate in
+  `scripts/lib/no-em-dash.mjs` covers U+2013, every generator folds it, cnep-156
+  reads Aïn Azel, cliniques and pharmacies `cleanName` use `withoutEmDash`, and
+  livraison is inside the gate. The original note follows. #287 bans the em dash in published names, but
+  486 name-keyed values across 10 packages use an en dash in the same
+  separator role (culture 315, enseignement-superieur 106, aviation 29, sante
+  23, and others), for example aviation's "Aéroport d'Alger - Houari
+  Boumediene". Decide: allow it, or fold it to " - " like the em dash; if
+  folded, extend the name gate in `scripts/lib/no-em-dash.mjs` and each
+  generator, then regenerate. A related defect needs fixing either way:
+  banques branch cnep-156 reads "AIN –AZEL" (en dash, U+2013) (should be Aïn Azel). Also owed
+  from the same review: `withoutEmDash` in the cliniques and pharmacies
+  `cleanName` (once #283 and #286 land), and `livraison` sits outside the
+  name gate entirely. _(logged 2026-10-13, tracker #294)_
 
 ## Transport
 
@@ -515,6 +616,12 @@ reads as further along than it is.
 ---
 
 ## Recently closed
+
+- **Release batch 2026-14, with 2026-13 folded in** (2026-10-21, data main
+  `e07e029`): PRs #282 to #288 and #290 to #293 merged, Version PR #289.
+  Sixteen packages published, among them `geoalgeria` 2.4.0, pharmacies 2.3.0,
+  sante 2.2.0, banques 2.1.0 and poste 2.2.0. App release PR #302 merged to
+  production as `ff8d72d` the same day (tracker #296).
 
 - **Release batch 2026-12** (2026-10-09, data main `1b91ae9`): PRs #266,
   #268, #269, #270, #271, #272, #273, #274, #275 and #279 merged.

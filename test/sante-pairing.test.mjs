@@ -144,6 +144,37 @@ test("facility matching: the class vocabulary is dropped in both languages", () 
   assert.deepEqual(facilityTokens("Maternite", com, wil), ["spec_gyneco"]);
 });
 
+// The commune and wilaya names are dropped because every establishment in them
+// carries them, so they cannot tell two apart. An ARABIC title reaches that same
+// name through a locative particle, ب or ل attached to the following word, and
+// translitAr writes بأدرار and بادرار ("at Adrar") as "badrar", which the drop
+// set does not hold. The bare city name then survived as if it discriminated,
+// and it stamped the OpenStreetMap EPSP of Adrar, way/433204559
+// المؤسسة العمومية للصحة الجوارية بأدرار, onto the EPH of Adrar the moment that
+// record gained its Arabic half.
+//
+// The rule is Arabic-only on purpose: in a Latin name a leading b or l is a
+// letter of the name, not a particle, so stripping it there would swallow any
+// place whose name happens to be its commune's with a b or an l in front.
+test("facility matching: an Arabic locative particle does not make the city name discriminate", () => {
+  const com = { name_fr: "Adrar", name_ar: "أدرار", wilaya_code: "01", code_commune: 101 };
+  const wil = { byCode: new Map([["01", { name_fr: "Adrar", name_ar: "أدرار" }]]) };
+  // both Arabic spellings of "at Adrar" leave nothing behind
+  for (const title of ["المؤسسة العمومية للصحة الجوارية بأدرار", "المؤسسة العمومية الإستشفائية بادرار"])
+    assert.deepEqual(facilityTokens(title, com, wil), [], `${title} should leave no token`);
+  // so the EPSP element and the EPH record share no specific token any more
+  const eph = estTokens(
+    { name_fr: "Etablissement Public Hospitalier Adrar", name_ar: "المؤسسة العمومية الإستشفائية بادرار" },
+    com,
+    wil,
+  );
+  assert.equal(overlapCount(eph, facilityTokens("المؤسسة العمومية للصحة الجوارية بأدرار", com, wil)), 0);
+  // a LATIN token is left alone, even one that reads as b or l plus the commune
+  // name: there the leading letter belongs to the name
+  assert.deepEqual(facilityTokens("Clinique Badrar", com, wil), ["badrar"]);
+  assert.deepEqual(facilityTokens("Clinique Ladrar", com, wil), ["ladrar"]);
+});
+
 // The lone-establishment/lone-facility fallback stamps a facility with no shared
 // name token at all, because in a commune with exactly one of each the commune is
 // the evidence. That holds only while the two names say nothing against each

@@ -3,6 +3,7 @@
   "dataset": "tourisme",
   "reviewer": "geoalgeria-maintainers",
   "reviewed_at": "2026-10-01",
+  "note": "The Owner closed four review-queue candidates on 2026-10-28 by keeping their published point (private tracker #301). Three of them, parks.json park-25, park-29 and park-31, no longer have a decision here: the 2026-10-29 park merge retired those ids into park-2, park-6 and park-1, whose OpenStreetMap twins carry a measured point, and the Owner ruled on 2026-10-30 that the parks ship as accurate locations. A decision cannot be re-keyed onto a survivor it did not rule on, and a decision on a retired id stops any rebuild (applyReviewedOverrides refuses an unknown record), so the three were removed rather than carried. packages/tourisme/data/retired-ids.json holds the forward for each, and test/arcminute-288-review.test.mjs asserts it. historic.json historic-91, the fourth, is untouched.",
   "decisions": [
     {
       "file": "attractions.json",
@@ -137,6 +138,119 @@
           "checked_at": "2026-10-01"
         }
       ]
+    },
+    {
+      "file": "historic.json",
+      "record_id": "historic-91",
+      "status": "verified",
+      "publish_action": "keep",
+      "reviewer": "owner",
+      "reviewed_at": "2026-10-28",
+      "notes": "Review-queue candidate rejected; the published point is kept. OpenStreetMap node 1212738075 (historic=ruins, name=Rapidium) is 1.055 km from the published point. The published point is copied from Wikidata Q109626723 to the metre, so it states nothing of its own and the node has no independent Vote behind it. Queued by research/_arcminute-288/review-2026-10-27.json under ADR 0001 rule 5, ruled on by the Owner on 2026-10-28 (private tracker #301): the candidate is closed, not queued, and does not return to the Review queue.",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 36.1333306,
+        "lng": 3.4333306,
+        "geo_precision": "approximate"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/1212738075",
+          "checked_at": "2026-10-27",
+          "note": "version 1, last edited 2011-03-22T02:08:34Z; 1.055 km from the published point"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Special:EntityData/Q109626723.json",
+          "checked_at": "2026-10-27",
+          "note": "the P625 statement the published point was copied from, with no reference attached"
+        }
+      ]
+    },
+    {
+      "file": "attractions.json",
+      "record_id": "attraction-842",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.5,
+        "lng": 4.3333333,
+        "geo_precision": "approximate",
+        "geo_method": "wikidata"
+      },
+      "patch": {
+        "lat": 36.4990808,
+        "lng": 4.3314177,
+        "geo_precision": "exact",
+        "geo_method": "osm"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/3832451091",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q23805261",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "notes": "Two Votes (ADR 0001): OSM node 3832451091 (version 4, natural=cave_entrance, \"Grotte de Macchabée\") and the Wikidata P625 of Q23805261, 199 m apart and not copied from each other. The Wikidata point is a degree-minute value (36°30′N 4°20′E), so the OSM node ships.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-29"
+    },
+    {
+      "file": "thermal-springs.json",
+      "record_id": "thermal-spring-61",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.52,
+        "lng": 8.0369444,
+        "geo_precision": "approximate",
+        "geo_method": "asal"
+      },
+      "patch": {
+        "lat": 36.5193221,
+        "lng": 8.035929,
+        "geo_precision": "exact",
+        "geo_method": "osm"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/1291639449",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "notes": "One open source with a name tie (ADR 0001): OSM node 1291639449 (version 14), \"Hammam Beni Salah\" / حمام بني صالح, 118 m from the two-decimal ASAL point.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-29"
+    },
+    {
+      "file": "thermal-springs.json",
+      "record_id": "thermal-spring-64",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.47,
+        "lng": 8.14,
+        "geo_precision": "approximate",
+        "geo_method": "asal"
+      },
+      "patch": {
+        "lat": 36.4740121,
+        "lng": 8.1415723,
+        "geo_precision": "exact",
+        "geo_method": "osm"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/5579190621",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "notes": "One open source with a name tie (ADR 0001): OSM node 5579190621 (version 2), \"Hammam zatout\" / حمام زطوط, 468 m from the two-decimal ASAL point.",
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-29"
     }
   ]
 }

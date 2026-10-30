@@ -24,7 +24,7 @@
     },
     {
       "path": "packages/aviation/data/routes.json",
-      "sha256": "cab3fecd3c9f2e0036944961baa37550947ce5488e396e2d6f444f47d1743f90"
+      "sha256": "9005888897eb52bc6427eb5d37c503d9a861e97b9483c7609914c8384617eb86"
     },
     {
       "path": "packages/banques/data/banks.json",
@@ -48,23 +48,23 @@
     },
     {
       "path": "packages/buses/data/metadata.json",
-      "sha256": "9681f839342e109afff1fafb4fc70fa8f8de66be123c287149ec1c94648ffd4d"
+      "sha256": "c72d7ed3922bc969a8307c051814a4718446122cff1cad6b47587355585c5f53"
     },
     {
       "path": "packages/buses/data/stations.json",
-      "sha256": "08c54a41e0d5d808f77e6d5c56724d073f58bfbc34f606d3b92bd368f05dfb0f"
+      "sha256": "e093d86534a63b1c2519bcf8569598ef699bb58091384b82f3738925a166aa36"
     },
     {
       "path": "packages/cliniques/data/cliniques.json",
-      "sha256": "042802de69d30ed6ba273b22828fcdf7db0cb1749e92ee5c46dd64aef4c43a7e"
+      "sha256": "832728a3a50a8895cc308af6a1be3f34bfd13c54b34f38b5e18144e4dad06ab5"
     },
     {
       "path": "packages/cliniques/data/metadata.json",
-      "sha256": "62a1d2ac47268037aaeb95a7734b9226b75b3b25ea8607c020f1c3d53897b370"
+      "sha256": "abe70e8d451f1d9453be35445424b70b5b07ce7bd2574711e5cc6695bb5abb28"
     },
     {
       "path": "packages/cliniques/data/retired-ids.json",
-      "sha256": "925c3324c05b74f0f59cb7518e9c27f21c21fd7c11cee8c1f161550ff7b57d12"
+      "sha256": "6347cab969f5079bedfcaf7ea32b20d1b88b5bed2fa01b79db356219840608c3"
     },
     {
       "path": "packages/culture/data/culture.json",
@@ -92,19 +92,19 @@
     },
     {
       "path": "packages/ecoles/data/ecoles.json",
-      "sha256": "812a57fff05a86eb137d7bbef255e6795b531bf654a4751fe2cdc11558d45926"
+      "sha256": "974742f409db90293c15a162ba338ab391bb2646a4d39912c849fe19ae8388c2"
     },
     {
       "path": "packages/ecoles/data/metadata.json",
-      "sha256": "a66f865eca91a24e909e8dcd1a50396edbc3df6dc610adb426a7378fb651de3b"
+      "sha256": "fe041c62c87c39ac5a795177701c1f782d3b85111c0d58587f2e416f5ec296c8"
     },
     {
       "path": "packages/ecoles/data/retired-ids.json",
-      "sha256": "80c2976cd8118b701d85cd5dc96bd9da687036d1705935dce002a679ac2061e6"
+      "sha256": "3dedad7822322339b1286b30f7c44dea3fb714a82ccb37ed22992c0b05f3edf5"
     },
     {
       "path": "packages/emploi/data/alem.json",
-      "sha256": "9f8a1ec557c7952c40397c6a1a71e0e5a120224c5e9d98a751bcab0ef01b6b39"
+      "sha256": "f83a9945ddaae01e6bdf3f969e7093bc707a5d6802b49deb08f6010fba59dbc6"
     },
     {
       "path": "packages/emploi/data/awem.json",
@@ -112,35 +112,47 @@
     },
     {
       "path": "packages/emploi/data/metadata.json",
-      "sha256": "a305548e793c293beebd9b0d0c16d05d6696a5de8cbdd3e3d9c4b5be1ec70c5d"
+      "sha256": "e206b97e37cfe39e34a735618fda8a46fb77a84c4015d00b507856f9ac3a6f6f"
     },
     {
       "path": "packages/enseignement-superieur/data/institutions.json",
-      "sha256": "9b4df87577ee5fb6b85a988991f99b47c4e0474070ad3aca5c510425d781d70e"
+      "sha256": "0f2ad5862e7708cd20269e6b482e9a7ec89e0629a26e78be26b2c72b564deb5d"
     },
     {
       "path": "packages/enseignement-superieur/data/metadata.json",
-      "sha256": "614a04dd009f30a05592451795d2206f22edbc76ffa0a7f1a5d36b278dd01713"
+      "sha256": "9d3836f2d8c89090933467790b023d184a41278fd4437e824cf7c715997d79ff"
+    },
+    {
+      "path": "packages/enseignement-superieur/data/retired-ids.json",
+      "sha256": "5d99e54148a12fe689769857efd48a4f28fc847946d32648a3dd6b8894ba4ca1"
     },
     {
       "path": "packages/ferroviaire/data/metadata.json",
-      "sha256": "6f532bd2029d53bc6b27facfe213905518da5a9cb1f0dc9d2b49940e366dc723"
+      "sha256": "182c36e66becc21871a23f8ebfe9dfc0d9cc63f964197681095a9e860b34b840"
+    },
+    {
+      "path": "packages/ferroviaire/data/retired-ids.json",
+      "sha256": "119df5e69544639a9aaf62d11f98c8f411763f032ef23c6268a916793afa7773"
     },
     {
       "path": "packages/ferroviaire/data/stations.json",
-      "sha256": "93278389c123f38f326d42908b50221461257db082fb56dcd45129319da03a78"
+      "sha256": "66073fca60e902057701328f7f0887001e9e030aa4bf4b73860f06cd03cfcee9"
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
-      "sha256": "a54725e67acba94a9c756bc15be612a49e28e1a0129f58a815c588fff867e741"
+      "sha256": "e7b320bc42fae3fe7312cec63b624deec017ac79378e601eab6d52f1f1e13900"
     },
     {
       "path": "packages/formation-professionnelle/data/metadata.json",
-      "sha256": "225cf3cac72bd037b22ec29ec52c05cd7c96024b40ccc3e3644870f1f35d07d6"
+      "sha256": "d3b26a45a7b2c3863a78f7b158495d88e39a87a8111f110620147b4c3db2ea65"
+    },
+    {
+      "path": "packages/formation-professionnelle/data/retired-ids.json",
+      "sha256": "699d26e2ea774b547400d0318af9d35ce47db5dd209e4ebec44a411c20f17331"
     },
     {
       "path": "packages/gares-routieres/data/metadata.json",
-      "sha256": "b192e1810c8900a50b27290f480f69d0d61cc083f31497e1ed891c2d1d907e97"
+      "sha256": "77b033f8cbd2dd8915dbb996e28861ef3d28540aeea8b3906af4ebbf3969ef8a"
     },
     {
       "path": "packages/gares-routieres/data/retired-ids.json",
@@ -148,7 +160,7 @@
     },
     {
       "path": "packages/gares-routieres/data/stations.json",
-      "sha256": "dacbf89c59c14d8b298cf2b9e05cee2fb37b8423308457e25cf248ad5cf1879c"
+      "sha256": "6d119d9af7a7a769a92214fef285b1d413d804fce85d5f63b73df2b3b42b8e21"
     },
     {
       "path": "packages/industrie-pharmaceutique/data/industrie-pharmaceutique.json",
@@ -160,27 +172,31 @@
     },
     {
       "path": "packages/jeunesse/data/institutions.json",
-      "sha256": "4f8a2491df563e89041c37b44a0bc650f3feb6f32e2cbec7dd75038306d3882d"
+      "sha256": "720e5d9484e82ce0a9e7d6dfb490f86004ff6199af905c7ded48f77d86e16f84"
     },
     {
       "path": "packages/jeunesse/data/metadata.json",
-      "sha256": "fb1392992aed1594e604cfafe3f968e64b11c193929f195f33223a96236cd305"
+      "sha256": "1339b69aaeeb577e3e84e1653dc00cade49b73311de9eb789723047dbd2393f4"
     },
     {
       "path": "packages/livraison/data/carriers.json",
-      "sha256": "ebfa5344d21354b652868d2912b6b68605f68f03fd4340933bca8cde36eb630e"
+      "sha256": "f9672976229c2385e4919c9345223c9a5d079fd5db21974ab83711b0f8661a84"
     },
     {
       "path": "packages/livraison/data/coverage.json",
-      "sha256": "f91d5ee83559e111529bdd108eca7a31f415245d89cf7840d0f27045e0828632"
+      "sha256": "e57e20f38b33d8b46a5741b1dc6fd16df3277f4ed8b9bc7523dfdc8812394809"
     },
     {
       "path": "packages/livraison/data/metadata.json",
-      "sha256": "e2b087312a8e695e5a1e06896b5eb5b80fee74010b3fbcafa64313952583157f"
+      "sha256": "08c8aef25538631653e477c6b1b105b9c65d3866afb922734035818abb80b427"
+    },
+    {
+      "path": "packages/livraison/data/retired-ids.json",
+      "sha256": "bfdbac1827592e57220d0d82493f225edc0f1f6ef4bd6ccd5dabc60c89bcae08"
     },
     {
       "path": "packages/livraison/data/stopdesks.json",
-      "sha256": "81908e40080dd71d85d77cc380ee2d5dab29d37ba88d0859f5401488f465da28"
+      "sha256": "c12cd49bb529d328cf40c2d3ce66eeec263bfcd4f67d532ba7b0ac3fd3cbd78c"
     },
     {
       "path": "packages/mobilis/data/agences.json",
@@ -188,7 +204,7 @@
     },
     {
       "path": "packages/mobilis/data/metadata.json",
-      "sha256": "62840375e067042b69851fc98b0c97d7a056e25f89383c703fe34bc867a8dabe"
+      "sha256": "2ec83c79999860996e90fc733cddf661b9dead1724fcda57bda3dc8116060eed"
     },
     {
       "path": "packages/mobilis/data/pdv.json",
@@ -204,43 +220,43 @@
     },
     {
       "path": "packages/ooredoo/data/metadata.json",
-      "sha256": "4a95cc095b6d5836e5d24bcef05b5586c7c8fb66c1d7eb5b7eb4b73596a6513c"
+      "sha256": "377e041da4d4c80ffe1b51cefeb1cc30c5831fc8dbb9a550a37b9db9396de089"
     },
     {
       "path": "packages/ooredoo/data/stores.json",
-      "sha256": "121c82cbebd83a40b9a6757f01e63766e68a7538453fce92b5e3f802422dbfa0"
+      "sha256": "18c088169d32e353ebfee5b7047cbd1290564b6dcbf89afdb00958a0a3966079"
     },
     {
       "path": "packages/pharmacies/data/metadata.json",
-      "sha256": "84c5721722da68aa76ddc9065d23d2aa746cb42fd76c19e973b1c7243c04c5ec"
+      "sha256": "e57027717f9b6f74868f4d53345da2b2a8de7ed145ed62a9e1820552d33c0fd2"
     },
     {
       "path": "packages/pharmacies/data/pharmacies.json",
-      "sha256": "c7f2649cbea712ae144c3eec8f000f16971282df04837ccb0cf5b068bb17dfde"
+      "sha256": "02149e9ccc4776c7220b38caa287238ed7c9dea1c2feeff0df4d3dab926e8b54"
     },
     {
       "path": "packages/pharmacies/data/retired-ids.json",
-      "sha256": "771590bc36f2e7d52a7779e34ce942c47beb81821ff137465b9d43b3ddff22f0"
+      "sha256": "20d7de246798d1e614e440f0990ef2db954a85af0d30328a9e99f7e9aca7bf06"
     },
     {
       "path": "packages/poste/data/atms.json",
-      "sha256": "0ed6b2996b11d255378bc573b918557d2f12e842a7720260d2369a588c3892c4"
+      "sha256": "329d499865cb14d9381d5f3cb6129ebc7991436d5f4f9ac1a49c85bf97132fd1"
     },
     {
       "path": "packages/poste/data/metadata.json",
-      "sha256": "086b7df5169607814a1786f5d85612428ca49be1412ace9be1cb35b1ab6598f2"
+      "sha256": "095c77414631356d94894125a816f454b1a5885ccad8715aa641b3dd5292781c"
     },
     {
       "path": "packages/poste/data/postoffices.json",
-      "sha256": "80910e5a3ae6d94d274813caf82e3fd59fc9b7f8c4ad35382c92453554b3b73a"
+      "sha256": "3ecd9e59dd85902988b6d2f765523f68fcf8f6591777fa983cdce47068151f01"
     },
     {
       "path": "packages/protection-civile/data/metadata.json",
-      "sha256": "bbf57322fd71d519348b7d22c59150a92585a815cf90d4d3b1798de5787998e2"
+      "sha256": "cfc7ffdadf1e85ea26af64c54a993160300cd1cd5767344d276a742836b0e6c9"
     },
     {
       "path": "packages/protection-civile/data/protection-civile.json",
-      "sha256": "05347374e536628e541662da0727e9e42c47dd9f129cbe84b510c8436e8ea1ef"
+      "sha256": "86d3d541c85851fe03a98b0cfe199165b014ff118556cc1a4df074ff5e6826a9"
     },
     {
       "path": "packages/protection-civile/data/retired-ids.json",
@@ -248,76 +264,80 @@
     },
     {
       "path": "packages/sante/data/metadata.json",
-      "sha256": "9af23917ac5c69def93ea0fc9bf3a756d45fe21d18102c3ceaab86e8a6ce6fc0"
+      "sha256": "28cad16d9ec846f39095a909617f656b0277ea040e56cb088a90fe315724db40"
     },
     {
       "path": "packages/sante/data/retired-ids.json",
-      "sha256": "c1d6474d83ba8de9e97e9b8f64b987759e104b0a04dd846218da2727e9f3d845"
+      "sha256": "c9e65972e34d8ee92ca8a9700180f136c999484678abfb8757e3bb577ae3412f"
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "6cfe1b361c25f52ccf080ecb4b59c7a6a183a7032afcd0f6b9bd0b5dc340d6cf"
+      "sha256": "5b0f8e23579a3bdd431bf98ddd75279567887a8102920fd84bb17d676e0c5bc4"
     },
     {
       "path": "packages/sports/data/facilities.json",
-      "sha256": "8c70c4afc871273df847166abc9b4d620fd4b05fab81b9229e030d0adbcb0d0d"
+      "sha256": "e07837374c75ca6a9c02355e5cf05d0102e755f53a271469fd85655faa11f0d7"
     },
     {
       "path": "packages/sports/data/metadata.json",
-      "sha256": "e207439f02fcd973e58f6108e9ad9b69aef031368d879294eb126dd32efec3b7"
+      "sha256": "0e76cceb8257560884f5547afc1a80a1fc816f8b981ec5ed601df3b61a82ef08"
+    },
+    {
+      "path": "packages/sports/data/retired-ids.json",
+      "sha256": "bf9ba0096467d0a7c6be9238b3b0ec60b7e0f50dd4942454680c9ac39aa4caff"
     },
     {
       "path": "packages/telecom/data/5g-djezzy.json",
-      "sha256": "7cabb10d5c2588ad7c499a530f30a4e13b7aed3fdb53265516bd1dab93f2037f"
+      "sha256": "1bc23204b9dc884c41217e5b3aa9322291ab90253998275a8379a9ffdedc8666"
     },
     {
       "path": "packages/telecom/data/5g-mobilis.json",
-      "sha256": "f3dd4dfaed65f8f5aa5c6bce1991df61dd0d9272571ef14dbae945e15325da66"
+      "sha256": "4fa297dcc1b371d0e7bbccbd7a4aa3e03ba4ca1d942caf64f564708b605e5b26"
     },
     {
       "path": "packages/telecom/data/5g-ooredoo.json",
-      "sha256": "26456d92885cdd8979122d2d80bd31256926ff3dbf1c65c0394bd47c191993b3"
+      "sha256": "1faab080ca7d55b5521e290579961b9e56e4a2f129e58d520d3cc4a3eb7f0cf7"
     },
     {
       "path": "packages/telecom/data/metadata.json",
-      "sha256": "b4759e7596b28de71f9b8ce6d7c4ebfc7d4ec7ecd0da4907dc9f90eef846596b"
+      "sha256": "85d30678978a7670bf994b54aa17429d174fb621bc51413acfb84327e8945033"
     },
     {
       "path": "packages/tourisme/data/attractions.json",
-      "sha256": "1f0060025a183d5d9f510395d9a0754f4354f889d096e81d54d23e2bde7a2c8c"
+      "sha256": "f87d81093acd8398377160f7f2a489012b820c1b50da8de96d8222c0ba8466ea"
     },
     {
       "path": "packages/tourisme/data/historic.json",
-      "sha256": "dc6bf9f45a6c125c1a749d2516c0a5201a5ee9fddf6e9824ff35183cddf2ac35"
+      "sha256": "2cc128f0350478b0d3514185724d6f3c696a3263afb2510be4a14e901c84d508"
     },
     {
       "path": "packages/tourisme/data/lodging.json",
-      "sha256": "470c86e29547dcd434455010c1f10ad1114b263c58e62e610bf3dd4bb14682bc"
+      "sha256": "b1beed2f342cb9ec9cafe2ee819f6bda5e04cba24d05d1efeb06cde587690cc2"
     },
     {
       "path": "packages/tourisme/data/metadata.json",
-      "sha256": "f170699669c676bf47b65aee2b8573e638924c7b8d13d4f0eab9e65adbe18530"
+      "sha256": "24c877cedd1c40a1c45b944214afba5f71efebc4c6c500677472067d2198bf25"
     },
     {
       "path": "packages/tourisme/data/parks.json",
-      "sha256": "241148e19d19c04b2502643dd42a0ef94c352fae47768dc2c8076e79fa6bbcfc"
+      "sha256": "01bec6accdf1c450ec4f271f2a31a3c5c147ec8571733255c41e50c110bf8aff"
     },
     {
       "path": "packages/tourisme/data/thermal-springs.json",
-      "sha256": "efe9fc9bfd58c1b92592960f6eab836278eedd58c2222702b303b6ba46c26565"
+      "sha256": "c50986f47186ac95d35bec7249cd0af97ede3a8a7ef02ff1e38f52b60c7007aa"
     }
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70499,
-  "candidates": 17743,
+  "total_records": 71320,
+  "candidates": 17332,
   "reasons": {
-    "approximate_coordinate": 16895,
-    "inside_adjacent_wilaya": 192,
-    "missing_coordinate": 501,
-    "outside_all_wilaya_boundaries": 199,
+    "approximate_coordinate": 16492,
+    "inside_adjacent_wilaya": 191,
+    "missing_coordinate": 491,
+    "outside_all_wilaya_boundaries": 200,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1290
+    "shared_coordinate": 1036
   },
   "datasets": [
     {
@@ -540,9 +560,9 @@
     {
       "dataset": "buses",
       "total_records": 1603,
-      "candidates": 19,
+      "candidates": 15,
       "reasons": {
-        "approximate_coordinate": 7,
+        "approximate_coordinate": 3,
         "outside_all_wilaya_boundaries": 12,
         "outside_declared_wilaya": 12
       },
@@ -557,8 +577,8 @@
         "geocoded_count": 1603,
         "geocoded_pct": 89.7,
         "precision": {
-          "exact": 1596,
-          "approximate": 7
+          "exact": 1600,
+          "approximate": 3
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -756,10 +776,10 @@
     },
     {
       "dataset": "cliniques",
-      "total_records": 1917,
-      "candidates": 837,
+      "total_records": 1915,
+      "candidates": 835,
       "reasons": {
-        "approximate_coordinate": 833,
+        "approximate_coordinate": 831,
         "inside_adjacent_wilaya": 1,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 7
@@ -771,12 +791,12 @@
         "title_fr": "Cliniques et structures de soins d'Algérie",
         "title_ar": "عيادات ومرافق الرعاية الصحية في الجزائر",
         "title_en": "Algeria clinics & care facilities",
-        "record_count": 1917,
-        "geocoded_count": 1917,
+        "record_count": 1915,
+        "geocoded_count": 1915,
         "geocoded_pct": 100,
         "precision": {
           "exact": 1084,
-          "approximate": 833
+          "approximate": 831
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -800,12 +820,12 @@
         ],
         "license": "ODbL-1.0",
         "updated": "2026-08-31",
-        "named": 1610,
+        "named": 1608,
         "by_type": {
           "polyclinique": 406,
-          "clinique": 1144,
+          "clinique": 1143,
           "salle_de_soins": 199,
-          "maternite": 26,
+          "maternite": 25,
           "centre_sante": 142
         },
         "by_sector": {
@@ -813,7 +833,7 @@
           "private": 67
         },
         "with_phone": 116,
-        "with_address": 654,
+        "with_address": 653,
         "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 wilaya boundaries; commune is the nearest centroid WITHIN that wilaya, so the join never crosses a wilaya boundary. Wilaya is effectively exact, commune is best-effort."
       }
     },
@@ -934,10 +954,10 @@
     },
     {
       "dataset": "ecoles",
-      "total_records": 11858,
-      "candidates": 9026,
+      "total_records": 11849,
+      "candidates": 9019,
       "reasons": {
-        "approximate_coordinate": 9018,
+        "approximate_coordinate": 9011,
         "inside_adjacent_wilaya": 4,
         "outside_all_wilaya_boundaries": 14,
         "outside_declared_wilaya": 18
@@ -949,12 +969,12 @@
         "title_fr": "Écoles d'Algérie",
         "title_ar": "مدارس الجزائر",
         "title_en": "Algeria schools",
-        "record_count": 11858,
-        "geocoded_count": 11858,
+        "record_count": 11849,
+        "geocoded_count": 11849,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 2840,
-          "approximate": 9018
+          "exact": 2838,
+          "approximate": 9011
         },
         "estimated_universe": 29702,
         "coverage_pct": 39.9,
@@ -978,16 +998,16 @@
         ],
         "license": "ODbL-1.0",
         "updated": "2026-08-31",
-        "named": 8213,
+        "named": 8204,
         "by_cycle": {
-          "primaire": 3784,
+          "primaire": 3776,
           "moyen": 2359,
           "secondaire": 1496,
           "autre": 3951,
-          "prescolaire": 268
+          "prescolaire": 267
         },
         "by_kind": {
-          "regular": 11680,
+          "regular": 11671,
           "formation": 88,
           "coranique": 36,
           "special": 30,
@@ -998,7 +1018,7 @@
           "private": 44,
           "public": 316
         },
-        "with_address": 2626,
+        "with_address": 2620,
         "cycle_note": "Cycle is inferred from isced:level and the French/Arabic name (CEM→moyen, lycée→secondaire, maternelle/روضة→préscolaire); a bare \"école\"/\"مدرسة\" with no cycle word is classified primaire per Algerian convention, and anything unresolved is \"autre\".",
         "kind_note": "Kind is the establishment type, orthogonal to cycle: most are \"regular\"; \"langues\"/\"coranique\"/\"conduite\"/\"formation\" are special-purpose places OSM files under amenity=school but that sit outside the K-12 ladder (they carry cycle \"autre\"); \"special\" are adapted/special-needs schools (which keep a cycle)."
       }
@@ -1006,9 +1026,9 @@
     {
       "dataset": "emploi",
       "total_records": 331,
-      "candidates": 25,
+      "candidates": 23,
       "reasons": {
-        "approximate_coordinate": 19,
+        "approximate_coordinate": 17,
         "inside_adjacent_wilaya": 2,
         "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
@@ -1025,8 +1045,8 @@
         "geocoded_count": 329,
         "geocoded_pct": 99.4,
         "precision": {
-          "exact": 310,
-          "approximate": 19
+          "exact": 312,
+          "approximate": 17
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1068,11 +1088,13 @@
     },
     {
       "dataset": "enseignement-superieur",
-      "total_records": 177,
-      "candidates": 110,
+      "total_records": 171,
+      "candidates": 7,
       "reasons": {
-        "approximate_coordinate": 110,
-        "shared_coordinate": 83
+        "approximate_coordinate": 6,
+        "outside_all_wilaya_boundaries": 1,
+        "outside_declared_wilaya": 1,
+        "shared_coordinate": 3
       },
       "metadata_path": "packages/enseignement-superieur/data/metadata.json",
       "metadata": {
@@ -1081,21 +1103,21 @@
         "title_fr": "Établissements d'enseignement supérieur d'Algérie",
         "title_ar": "مؤسسات التعليم العالي الجزائرية",
         "title_en": "Algeria higher-education institutions",
-        "record_count": 177,
-        "geocoded_count": 177,
+        "record_count": 171,
+        "geocoded_count": 171,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 67,
-          "approximate": 110
+          "exact": 165,
+          "approximate": 6
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Higher-education institutions (universities, schools, research centres) from the MESRS. 61 are campus-precise; the rest are wilaya/commune centroids (approximate).",
+        "coverage_note": "Higher-education institutions (universities, schools, research centres) from the MESRS, built from two of the ministry's own publications: its university-network listing, and its BAC 2026 placement file (\"Moyennes minimales BAC 2026, suite a la premiere phase\"), which names every establishment it places new bacheliers into by the ministry's own establishment code. The placement file supplies 12 institutions the network listing omits, the current name of 2 it still lists under an older one, and one succession: ENSTA, which decret executif 22-398 made the successor of the two Algiers schools it dissolved, so those two ids are retired and forwarded to it in retired-ids.json. 136 records carry a per-campus coordinate (exact): an OpenStreetMap campus, the location the institution publishes itself, an Owner reading, or a single open lead (an OSM or Overture place); the other 35 are commune or wilaya centroids (approximate), because neither ministry publication carries an address or a coordinate. Military institutions are not published.",
         "wilayas_covered": 51,
         "bbox": [
-          -8.12861,
+          -8.127745,
           22.805776,
-          8.482,
+          8.483781,
           36.912274
         ],
         "sources": [
@@ -1106,36 +1128,56 @@
             "license": "Factual public listing (MESRS)",
             "retrieved": "2026-08-03",
             "evidence_type": "official"
+          },
+          {
+            "key": "bac-2026",
+            "name": "MESRS: Moyennes minimales BAC 2026 (suite à la première phase), the ministry's own placement file",
+            "url": "https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf",
+            "license": "Factual public listing (MESRS)",
+            "evidence_type": "official",
+            "retrieved": "2026-10-28",
+            "snapshot": {
+              "url": "https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf",
+              "sha256": "ca4b24e656296aa6c6ea360d7f53578077e8ea06cbc74c3c8390f1f197e7207e",
+              "bytes": 2382999
+            }
+          },
+          {
+            "key": "overture",
+            "name": "Overture Maps Foundation, Places (release 2026-10-21.0): the single open campus lead of 23 records",
+            "url": "https://overturemaps.org",
+            "license": "CDLA-Permissive-2.0 (attribution: Overture Maps Foundation)",
+            "retrieved": "2026-10-29",
+            "evidence_type": "official"
           }
         ],
         "license": "Factual public listing (MESRS)",
-        "updated": "2026-08-03",
+        "updated": "2026-10-28",
         "by_type": {
-          "universite": 58,
-          "grande_ecole": 102,
-          "ens": 12,
+          "universite": 59,
+          "grande_ecole": 94,
+          "ens": 13,
           "centre_universitaire": 5
         },
         "by_sector": {
-          "public": 158,
+          "public": 152,
           "private": 19
         },
         "by_geo_method": {
-          "campus": 67,
-          "wilaya": 95,
-          "commune": 15
+          "campus": 165,
+          "wilaya": 5,
+          "commune": 1
         }
       }
     },
     {
       "dataset": "ferroviaire",
-      "total_records": 692,
-      "candidates": 11,
+      "total_records": 691,
+      "candidates": 4,
       "reasons": {
-        "approximate_coordinate": 9,
+        "approximate_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 2,
-        "shared_coordinate": 4
+        "outside_declared_wilaya": 2
       },
       "metadata_path": "packages/ferroviaire/data/metadata.json",
       "metadata": {
@@ -1144,12 +1186,12 @@
         "title_fr": "Gares ferroviaires et de transit d'Algérie",
         "title_ar": "محطات السكك الحديدية والنقل الجزائرية",
         "title_en": "Algeria railway & transit stations",
-        "record_count": 692,
-        "geocoded_count": 692,
+        "record_count": 691,
+        "geocoded_count": 691,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 683,
-          "approximate": 9
+          "exact": 689,
+          "approximate": 2
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1186,26 +1228,26 @@
           "tram": 190,
           "aerial_tram": 24,
           "gondola": 10,
-          "metro": 41
+          "metro": 40
         },
         "by_operator": {
           "SNTF": 427,
           "SETRAM": 190,
-          "SEMA": 41
+          "SEMA": 40
         },
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
     },
     {
       "dataset": "formation-professionnelle",
-      "total_records": 1932,
-      "candidates": 571,
+      "total_records": 1963,
+      "candidates": 299,
       "reasons": {
-        "approximate_coordinate": 559,
-        "missing_coordinate": 11,
+        "approximate_coordinate": 295,
+        "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
-        "shared_coordinate": 396
+        "shared_coordinate": 240
       },
       "metadata_path": "packages/formation-professionnelle/data/metadata.json",
       "metadata": {
@@ -1214,16 +1256,16 @@
         "title_fr": "Établissements de formation professionnelle d'Algérie",
         "title_ar": "مؤسسات التكوين المهني الجزائرية",
         "title_en": "Algeria vocational-training establishments",
-        "record_count": 1932,
-        "geocoded_count": 1921,
-        "geocoded_pct": 99.4,
+        "record_count": 1963,
+        "geocoded_count": 1961,
+        "geocoded_pct": 99.9,
         "precision": {
-          "exact": 1362,
-          "approximate": 559
+          "exact": 1666,
+          "approximate": 295
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1920 of 1932 are geocoded: 1375 on the portal's own point, 510 on their commune's centroid and 35 on their wilaya's, the portal having left those coordinates empty.",
+        "coverage_note": "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1961 of 1963 are geocoded: 1680 on the portal's own point, 250 on their commune's centroid and 31 on their wilaya's, the portal having left those coordinates empty.",
         "wilayas_covered": 69,
         "bbox": [
           -8.136773,
@@ -1237,36 +1279,36 @@
             "name": "Ministry of Vocational Training and Education (MFEP): takwin.dz",
             "url": "https://takwin.dz",
             "license": "Factual public listing (MFEP)",
-            "retrieved": "2026-06-22",
+            "retrieved": "2026-10-25",
             "evidence_type": "official"
           }
         ],
         "license": "Factual public listing (MFEP)",
-        "updated": "2026-06-22",
+        "updated": "2026-10-25",
         "by_type": {
           "dfep": 58,
           "insfp": 182,
-          "cfpa": 856,
-          "prive": 723,
+          "cfpa": 857,
+          "prive": 754,
           "iep": 18,
           "annexe_cnfepd": 9,
-          "annexe_cfpa": 70,
+          "annexe_cfpa": 69,
           "ifep": 6,
           "annexe_insfp": 9,
           "infep": 1
         },
         "by_secteur": {
           "public": 1209,
-          "prive": 723
+          "prive": 754
         }
       }
     },
     {
       "dataset": "gares-routieres",
       "total_records": 74,
-      "candidates": 3,
+      "candidates": 1,
       "reasons": {
-        "approximate_coordinate": 3
+        "approximate_coordinate": 1
       },
       "metadata_path": "packages/gares-routieres/data/metadata.json",
       "metadata": {
@@ -1279,8 +1321,8 @@
         "geocoded_count": 74,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 71,
-          "approximate": 3
+          "exact": 73,
+          "approximate": 1
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1305,8 +1347,7 @@
         "license": "Data © SOGRAL; redistributed for reference",
         "updated": "2026-07-01",
         "by_geo_method": {
-          "exact": 73,
-          "approx": 1
+          "exact": 74
         },
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
@@ -1396,7 +1437,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 128 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+        "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 129 records are reconciled to the current wilaya only where an exact current, former (JORA) or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
         "wilayas_covered": 69,
         "bbox": [
           -8.1489,
@@ -1410,12 +1451,12 @@
             "name": "Ministry of Youth and Sports: SIG",
             "url": "https://sig.mjs.gov.dz",
             "license": "Factual public listing (Ministry of Youth and Sports)",
-            "retrieved": "2026-06-23",
+            "retrieved": "2026-10-27",
             "evidence_type": "official"
           }
         ],
         "license": "Factual public listing (Ministry of Youth and Sports)",
-        "updated": "2026-06-23",
+        "updated": "2026-10-27",
         "by_type": {
           "AJ": 241,
           "CLS": 46,
@@ -1432,9 +1473,12 @@
     },
     {
       "dataset": "livraison",
-      "total_records": 411,
-      "candidates": 0,
-      "reasons": {},
+      "total_records": 650,
+      "candidates": 2,
+      "reasons": {
+        "approximate_coordinate": 2,
+        "shared_coordinate": 2
+      },
       "metadata_path": "packages/livraison/data/metadata.json",
       "metadata": {
         "package": "@geoalgeria/livraison",
@@ -1442,21 +1486,21 @@
         "title_fr": "Points relais de livraison d'Algérie",
         "title_ar": "نقاط استلام التوصيل في الجزائر",
         "title_en": "Algeria delivery stop-desks",
-        "record_count": 411,
-        "geocoded_count": 411,
+        "record_count": 650,
+        "geocoded_count": 650,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 411,
-          "approximate": 0
+          "exact": 648,
+          "approximate": 2
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
-        "wilayas_covered": 61,
+        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 650 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+        "wilayas_covered": 64,
         "bbox": [
           -8.143583,
-          22.784955,
-          9.585192,
+          19.576488,
+          9.578836,
           37.009471
         ],
         "sources": [
@@ -1465,58 +1509,97 @@
             "name": "Yalidine Express: nos-agences",
             "url": "https://yalidine-express.com.dz/nos-agences/",
             "license": "Data © Yalidine Express; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "guepex",
             "name": "Guepex: public agences feed",
             "url": "https://www.guepex.dz/public/data/agences.json",
             "license": "Data © Guepex; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "anderson",
             "name": "Anderson Logistics: agency directory",
             "url": "https://anderson-ecommerce.com/",
             "license": "Data © Anderson Logistics; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "noest",
             "name": "Noest Express: bureaux directory",
             "url": "https://noest-dz.com/",
             "license": "Data © Noest Express; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           },
           {
             "key": "maystro",
             "name": "Maystro Delivery: coverage page",
             "url": "https://maystro-delivery.com/Coverage.html",
             "license": "Data © Maystro Delivery; redistributed for reference",
-            "retrieved": "2026-06-18",
-            "evidence_type": "official"
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
+          },
+          {
+            "key": "zr-express",
+            "name": "ZR Express: offices list",
+            "url": "https://www.zrexpress.net/en/offices",
+            "license": "Data © ZR Express; redistributed for reference",
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
+          },
+          {
+            "key": "swift-express",
+            "name": "Swift Express: agency network",
+            "url": "https://www.swiftexpress.org/fr/offices",
+            "license": "Data © Swift Express; redistributed for reference",
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
+          },
+          {
+            "key": "hhd-express",
+            "name": "HHD Express: agency network",
+            "url": "https://hhd.dz/",
+            "license": "Data © HHD Express; redistributed for reference",
+            "evidence_type": "official",
+            "retrieved": "2026-10-25"
           }
         ],
         "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
-        "updated": "2026-06-18",
-        "carriers": 16,
-        "stopdesks": 411,
-        "coverage": 9,
+        "updated": "2026-10-25",
+        "carriers": 18,
+        "stopdesks": 650,
+        "coverage": 12,
         "by_operator": {
-          "guepex": 70,
-          "yalidine": 93,
-          "easyandspeed": 14,
+          "guepex": 71,
+          "yalidine": 105,
+          "easyandspeed": 15,
           "wecanservices": 3,
-          "zimou-express": 8,
-          "speedmail": 2,
-          "anderson": 89,
+          "zimou-express": 10,
+          "speedmail": 1,
+          "anderson": 104,
+          "hhd-express": 69,
           "maystro": 38,
-          "noest": 94
-        }
+          "noest": 102,
+          "swift-express": 55,
+          "zr-express": 77
+        },
+        "carried_pins": [
+          {
+            "id": "anderson-25-ali-mendjeli",
+            "name": "Anderson Constantine (Ali Mendjeli)",
+            "retrieved": "2026-06-18"
+          },
+          {
+            "id": "noest-19b",
+            "name": "Noest Sétif «El Eulma»",
+            "retrieved": "2026-06-18"
+          }
+        ]
       }
     },
     {
@@ -1566,12 +1649,12 @@
             "name": "Mobilis: ATM Mobilis (mobilis.dz)",
             "url": "https://www.mobilis.dz",
             "license": "Data © ATM Mobilis; redistributed for reference",
-            "retrieved": "2026-08-31",
+            "retrieved": "2026-10-25",
             "evidence_type": "official"
           }
         ],
         "license": "Data © ATM Mobilis; redistributed for reference",
-        "updated": "2026-08-31",
+        "updated": "2026-10-25",
         "by_type": {
           "agence": 164,
           "pdv": 12180
@@ -1644,9 +1727,9 @@
     {
       "dataset": "ooredoo",
       "total_records": 572,
-      "candidates": 26,
+      "candidates": 25,
       "reasons": {
-        "approximate_coordinate": 26,
+        "approximate_coordinate": 25,
         "shared_coordinate": 4
       },
       "metadata_path": "packages/ooredoo/data/metadata.json",
@@ -1660,8 +1743,8 @@
         "geocoded_count": 572,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 546,
-          "approximate": 26
+          "exact": 547,
+          "approximate": 25
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1694,10 +1777,10 @@
     },
     {
       "dataset": "pharmacies",
-      "total_records": 3795,
-      "candidates": 304,
+      "total_records": 3811,
+      "candidates": 311,
       "reasons": {
-        "approximate_coordinate": 296,
+        "approximate_coordinate": 303,
         "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 8
@@ -1709,16 +1792,16 @@
         "title_fr": "Pharmacies d'Algérie",
         "title_ar": "صيدليات الجزائر",
         "title_en": "Algeria pharmacies (officines)",
-        "record_count": 3795,
-        "geocoded_count": 3795,
+        "record_count": 3811,
+        "geocoded_count": 3811,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 3499,
-          "approximate": 296
+          "exact": 3508,
+          "approximate": 303
         },
         "estimated_universe": 11000,
-        "coverage_pct": 34.5,
-        "coverage_note": "3795 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north.",
+        "coverage_pct": 34.6,
+        "coverage_note": "3811 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north.",
         "wilayas_covered": 67,
         "bbox": [
           -8.139568,
@@ -1732,27 +1815,27 @@
             "name": "OpenStreetMap: pharmacies (amenity=pharmacy) in Algeria",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-            "retrieved": "2026-08-31",
+            "retrieved": "2026-10-22",
             "evidence_type": "crowdsourced"
           }
         ],
         "license": "ODbL-1.0",
-        "updated": "2026-08-31",
-        "named": 2461,
-        "with_phone": 145,
-        "with_hours": 256,
-        "with_address": 1161,
-        "with_dispensing": 530,
+        "updated": "2026-10-22",
+        "named": 2474,
+        "with_phone": 146,
+        "with_hours": 259,
+        "with_address": 1162,
+        "with_dispensing": 536,
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
     },
     {
       "dataset": "poste",
-      "total_records": 5934,
-      "candidates": 35,
+      "total_records": 5930,
+      "candidates": 28,
       "reasons": {
         "inside_adjacent_wilaya": 7,
-        "missing_coordinate": 21,
+        "missing_coordinate": 14,
         "outside_all_wilaya_boundaries": 7,
         "outside_declared_wilaya": 14
       },
@@ -1763,11 +1846,11 @@
         "title_fr": "Bureaux de poste et GAB d'Algérie",
         "title_ar": "مكاتب البريد والصرافات الآلية الجزائرية",
         "title_en": "Algeria post offices & ATMs",
-        "record_count": 5934,
-        "geocoded_count": 5913,
-        "geocoded_pct": 99.6,
+        "record_count": 5930,
+        "geocoded_count": 5916,
+        "geocoded_pct": 99.8,
         "precision": {
-          "exact": 5913,
+          "exact": 5916,
           "approximate": 0
         },
         "estimated_universe": null,
@@ -1783,11 +1866,11 @@
         "entities": [
           {
             "file": "postoffices.json",
-            "count": 3908
+            "count": 3907
           },
           {
             "file": "atms.json",
-            "count": 2026
+            "count": 2023
           }
         ],
         "sources": [
@@ -1796,24 +1879,24 @@
             "name": "Algérie Poste: baridimap.poste.dz",
             "url": "https://baridimap.poste.dz",
             "license": "Data © Algérie Poste; redistributed for reference",
-            "retrieved": "2026-06-08",
+            "retrieved": "2026-10-25",
             "evidence_type": "official"
           }
         ],
         "license": "Data © Algérie Poste; redistributed for reference",
-        "updated": "2026-06-08",
-        "distinct_postal_codes": 4000
+        "updated": "2026-10-25",
+        "distinct_postal_codes": 3999
       }
     },
     {
       "dataset": "protection-civile",
       "total_records": 880,
-      "candidates": 29,
+      "candidates": 27,
       "reasons": {
-        "approximate_coordinate": 23,
+        "approximate_coordinate": 21,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
-        "shared_coordinate": 18
+        "shared_coordinate": 14
       },
       "metadata_path": "packages/protection-civile/data/metadata.json",
       "metadata": {
@@ -1826,12 +1909,12 @@
         "geocoded_count": 880,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 857,
-          "approximate": 23
+          "exact": 859,
+          "approximate": 21
         },
         "estimated_universe": 880,
         "coverage_pct": 100,
-        "coverage_note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz): 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
+        "coverage_note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz): 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort and read from the sources only: the DGPC's own Arabic commune name decides, exactly or across a spelling difference of up to two edits when exactly one commune of the wilaya is that close, then the commune whose OpenStreetMap outline contains the point, then the nearest commune centre. One unit (23-017), whose DGPC name and containing outline disagree, is re-placed by a reviewed decision in the package's correction ledger.",
         "wilayas_covered": 69,
         "bbox": [
           -8.15059,
@@ -1875,19 +1958,19 @@
         "with_fax": 773,
         "with_address": 880,
         "with_commune": 880,
-        "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 post-reform wilaya boundaries and reconciled with the DGPC's own code: reform remaps into the new 59..69 wilayas keep the geometry code, but where geometry and DGPC disagree among pre-reform codes (a border unit misfiled by a simplified outline) the DGPC's official cod_wilaya wins. The DGPC code is kept in refs.dgpc_wilaya; commune is best-effort (Arabic commune-name match against the geoalgeria commune set, nearest-centroid fallback)."
+        "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 post-reform wilaya boundaries and reconciled with the DGPC's own code: reform remaps into the new 59..69 wilayas keep the geometry code, but where geometry and DGPC disagree among pre-reform codes (a border unit misfiled by a simplified outline) the DGPC's official cod_wilaya wins. The DGPC code is kept in refs.dgpc_wilaya; commune is best-effort: an Arabic commune-name match against the geoalgeria commune set, exact or within two edits of exactly one commune of the wilaya, then the commune whose OpenStreetMap outline contains the point, then the nearest commune centre."
       }
     },
     {
       "dataset": "sante",
-      "total_records": 661,
-      "candidates": 528,
+      "total_records": 657,
+      "candidates": 524,
       "reasons": {
-        "approximate_coordinate": 458,
+        "approximate_coordinate": 454,
         "missing_coordinate": 70,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 303
+        "shared_coordinate": 298
       },
       "metadata_path": "packages/sante/data/metadata.json",
       "metadata": {
@@ -1896,12 +1979,12 @@
         "title_fr": "Établissements de santé publique d'Algérie",
         "title_ar": "المؤسسات الصحية العمومية الجزائرية",
         "title_en": "Algeria public health establishments",
-        "record_count": 661,
-        "geocoded_count": 591,
-        "geocoded_pct": 89.4,
+        "record_count": 657,
+        "geocoded_count": 587,
+        "geocoded_pct": 89.3,
         "precision": {
           "exact": 133,
-          "approximate": 458
+          "approximate": 454
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1919,7 +2002,7 @@
             "name": "Ministry of Health (sante.gov.dz): health-establishment registry",
             "url": "https://sante.gov.dz",
             "license": "Official public registry (Ministry of Health)",
-            "retrieved": "2026-06-27",
+            "retrieved": "2026-10-25",
             "evidence_type": "official"
           },
           {
@@ -1927,7 +2010,7 @@
             "name": "OpenStreetMap: geocoding",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-            "retrieved": "2026-06-27",
+            "retrieved": "2026-10-25",
             "evidence_type": "crowdsourced"
           },
           {
@@ -1935,42 +2018,42 @@
             "name": "Wikidata: geocoding",
             "url": "https://www.wikidata.org",
             "license": "CC0-1.0",
-            "retrieved": "2026-06-27",
+            "retrieved": "2026-10-25",
             "evidence_type": "crowdsourced"
           }
         ],
         "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
-        "updated": "2026-06-27",
+        "updated": "2026-10-25",
         "by_type": {
           "ehs": 103,
-          "eph": 254,
+          "eph": 252,
           "epsp": 280,
           "hopital": 5,
-          "chu": 19
+          "chu": 17
         },
         "by_sector": {
-          "public": 661
+          "public": 657
         },
         "by_geo_method": {
-          "commune_centroid": 458,
+          "commune_centroid": 454,
           "osm_point": 119,
           "wikidata_point": 3,
           "owner_verified": 11
         },
-        "bilingual": 590,
+        "bilingual": 594,
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
     },
     {
       "dataset": "sports",
-      "total_records": 5141,
-      "candidates": 142,
+      "total_records": 5234,
+      "candidates": 137,
       "reasons": {
-        "approximate_coordinate": 133,
+        "approximate_coordinate": 128,
         "inside_adjacent_wilaya": 11,
         "outside_all_wilaya_boundaries": 1,
         "outside_declared_wilaya": 12,
-        "shared_coordinate": 46
+        "shared_coordinate": 39
       },
       "metadata_path": "packages/sports/data/metadata.json",
       "metadata": {
@@ -1979,20 +2062,20 @@
         "title_fr": "Infrastructures sportives d'Algérie",
         "title_ar": "المنشآت الرياضية الجزائرية",
         "title_en": "Algeria sports facilities",
-        "record_count": 5141,
-        "geocoded_count": 5141,
+        "record_count": 5234,
+        "geocoded_count": 5234,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 5008,
-          "approximate": 133
+          "exact": 5106,
+          "approximate": 128
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 267 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+        "coverage_note": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 270 records are reconciled to the current wilaya only where an exact current, former (JORA) or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
         "wilayas_covered": 69,
         "bbox": [
           -8.4324,
-          19.5567,
+          19.5666,
           10.1953,
           37.035878
         ],
@@ -2002,52 +2085,53 @@
             "name": "Ministry of Youth and Sports: SIG",
             "url": "https://sig.mjs.gov.dz",
             "license": "Factual public listing (Ministry of Youth and Sports)",
-            "retrieved": "2026-06-23",
+            "retrieved": "2026-10-27",
             "evidence_type": "official"
           }
         ],
         "license": "Factual public listing (Ministry of Youth and Sports)",
-        "updated": "2026-06-23",
+        "updated": "2026-10-27",
         "by_type": {
-          "AJF": 437,
-          "BN": 159,
-          "P25": 158,
-          "PA": 45,
-          "PP": 103,
-          "SF": 79,
+          "AJF": 436,
+          "BN": 157,
+          "P25": 160,
+          "PA": 56,
+          "PP": 117,
+          "SF": 81,
           "SOMS": 340,
-          "STOMS": 76,
-          "TSP": 3292,
+          "STOMS": 77,
+          "TSP": 3295,
           "BNA": 8,
           "CRP": 4,
-          "CT": 31,
-          "P50": 20,
-          "SA": 16,
-          "SS": 191,
-          "TF": 83,
-          "UHR": 23,
+          "CT": 33,
+          "P50": 23,
+          "SS": 203,
+          "TF": 87,
+          "UHR": 27,
           "CDT": 5,
-          "CE": 11,
-          "BL": 39,
-          "EJT": 3,
-          "CXS": 7,
-          "TR": 3,
+          "CE": 12,
+          "SA": 15,
+          "BL": 42,
+          "CXS": 8,
+          "EJT": 2,
+          "TR": 7,
           "CFR": 1,
           "EPS": 1,
-          "GS": 1,
-          "AJL": 5
+          "GS": 2,
+          "AJL": 34,
+          "PCA": 1
         },
-        "named": 3389
+        "named": 3575
       }
     },
     {
       "dataset": "telecom",
-      "total_records": 3598,
-      "candidates": 218,
+      "total_records": 4093,
+      "candidates": 224,
       "reasons": {
         "approximate_coordinate": 185,
         "inside_adjacent_wilaya": 12,
-        "missing_coordinate": 18,
+        "missing_coordinate": 24,
         "outside_all_wilaya_boundaries": 3,
         "outside_declared_wilaya": 15,
         "shared_coordinate": 2
@@ -2059,17 +2143,17 @@
         "title_fr": "Points de couverture 5G en Algérie",
         "title_ar": "نقاط تغطية الجيل الخامس في الجزائر",
         "title_en": "Algeria 5G coverage points",
-        "record_count": 3598,
-        "geocoded_count": 3580,
-        "geocoded_pct": 99.5,
+        "record_count": 4093,
+        "geocoded_count": 4069,
+        "geocoded_pct": 99.4,
         "precision": {
-          "exact": 3395,
+          "exact": 3884,
           "approximate": 185
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 31 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
-        "wilayas_covered": 66,
+        "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records and 6 Mobilis records have their coordinates withheld because the operator's own wilaya and commune labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 40 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value, and 8 more carry a reviewed wilaya correction with the evidence that settled it. `commune_ar` is the official Arabic name from the national commune registry wherever a record resolves to a canonical commune, 3,013 of 4,093; the operator's own Arabic label publishes only where nothing resolves, because the operators rewrite that column between pulls and the 2026-10 Mobilis capture moved 46 records off the registry name. Other commune names remain unlinked free text.",
+        "wilayas_covered": 67,
         "bbox": [
           -8.16521,
           19.562361,
@@ -2079,11 +2163,11 @@
         "entities": [
           {
             "file": "5g-djezzy.json",
-            "count": 1001
+            "count": 1000
           },
           {
             "file": "5g-mobilis.json",
-            "count": 2421
+            "count": 2917
           },
           {
             "file": "5g-ooredoo.json",
@@ -2097,7 +2181,7 @@
             "url": "https://www.djezzy5g.dz/map.html",
             "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
             "evidence_type": "official",
-            "retrieved": "2026-09-08"
+            "retrieved": "2026-10-29"
           },
           {
             "key": "mobilis",
@@ -2105,7 +2189,7 @@
             "url": "https://mobilis.dz/map/5g",
             "license": "Data © ATM Mobilis; redistributed for reference",
             "evidence_type": "official",
-            "retrieved": "2026-09-08"
+            "retrieved": "2026-10-29"
           },
           {
             "key": "ooredoo",
@@ -2113,33 +2197,33 @@
             "url": "https://www.ooredoo.dz/fr/particuliers/internet/5g",
             "license": "Data © Ooredoo Algérie; redistributed for reference",
             "evidence_type": "official",
-            "retrieved": "2026-09-08"
+            "retrieved": "2026-10-29"
           }
         ],
         "license": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
-        "updated": "2026-09-10",
+        "updated": "2026-10-29",
         "technologies": [
           "5G"
         ],
         "by_technology": {
-          "5G": 3598
+          "5G": 4093
         },
         "by_operator": {
-          "djezzy": 1001,
-          "mobilis": 2421,
+          "djezzy": 1000,
+          "mobilis": 2917,
           "ooredoo": 176
         }
       }
     },
     {
       "dataset": "tourisme",
-      "total_records": 4348,
-      "candidates": 238,
+      "total_records": 4321,
+      "candidates": 230,
       "reasons": {
-        "approximate_coordinate": 43,
-        "inside_adjacent_wilaya": 106,
+        "approximate_coordinate": 35,
+        "inside_adjacent_wilaya": 105,
         "outside_all_wilaya_boundaries": 95,
-        "outside_declared_wilaya": 201,
+        "outside_declared_wilaya": 200,
         "shared_coordinate": 7
       },
       "metadata_path": "packages/tourisme/data/metadata.json",
@@ -2149,12 +2233,12 @@
         "title_fr": "Tourisme en Algérie",
         "title_ar": "السياحة في الجزائر",
         "title_en": "Algeria tourism",
-        "record_count": 4348,
-        "geocoded_count": 4348,
+        "record_count": 4321,
+        "geocoded_count": 4321,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 4305,
-          "approximate": 43
+          "exact": 4286,
+          "approximate": 35
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -2169,19 +2253,19 @@
         "entities": [
           {
             "file": "attractions.json",
-            "count": 1248
+            "count": 1245
           },
           {
             "file": "historic.json",
-            "count": 1184
+            "count": 1180
           },
           {
             "file": "lodging.json",
-            "count": 1602
+            "count": 1587
           },
           {
             "file": "parks.json",
-            "count": 32
+            "count": 27
           },
           {
             "file": "thermal-springs.json",
@@ -2217,11 +2301,11 @@
         "license": "Attractions, historic sites, lodging and parks from OpenStreetMap (ODbL 1.0, © OpenStreetMap contributors) and Wikidata (CC0); thermal springs are a factual public listing (ASAL). Per-source terms in citation.",
         "updated": "2026-06-21",
         "by_type": {
-          "artwork": 244,
+          "artwork": 243,
           "museum": 174,
           "theme_park": 78,
           "tourist_attraction": 3,
-          "viewpoint": 115,
+          "viewpoint": 113,
           "waterfall": 3,
           "zoo": 24,
           "attraction": 591,
@@ -2238,15 +2322,14 @@
           "water_tap": 3,
           "wayside_shrine": 1,
           "wreck": 3,
-          "area": 1,
           "barracks": 1,
           "bath": 1,
           "battle_site": 1,
           "battlefield": 4,
           "boundary_stone": 2,
           "bridge": 2,
-          "building": 6,
-          "castle": 138,
+          "building": 5,
+          "castle": 136,
           "church": 1,
           "church_building": 5,
           "château": 1,
@@ -2270,11 +2353,11 @@
           "powder_magazine": 1,
           "alpine_hut": 32,
           "hostel": 216,
-          "hotel": 995,
+          "hotel": 983,
           "guest_house": 137,
           "motel": 66,
-          "apartment": 78,
-          "chalet": 78,
+          "apartment": 76,
+          "chalet": 77,
           "forage": 6,
           "source": 117,
           "hammam": 111,
@@ -2322,9 +2405,9 @@
       "dataset": "buses",
       "entity": "stations.json",
       "total_records": 1603,
-      "candidates": 19,
+      "candidates": 15,
       "reasons": {
-        "approximate_coordinate": 7,
+        "approximate_coordinate": 3,
         "outside_all_wilaya_boundaries": 12,
         "outside_declared_wilaya": 12
       },
@@ -2333,10 +2416,10 @@
     {
       "dataset": "cliniques",
       "entity": "cliniques.json",
-      "total_records": 1917,
-      "candidates": 837,
+      "total_records": 1915,
+      "candidates": 835,
       "reasons": {
-        "approximate_coordinate": 833,
+        "approximate_coordinate": 831,
         "inside_adjacent_wilaya": 1,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 7
@@ -2368,10 +2451,10 @@
     {
       "dataset": "ecoles",
       "entity": "ecoles.json",
-      "total_records": 11858,
-      "candidates": 9026,
+      "total_records": 11849,
+      "candidates": 9019,
       "reasons": {
-        "approximate_coordinate": 9018,
+        "approximate_coordinate": 9011,
         "inside_adjacent_wilaya": 4,
         "outside_all_wilaya_boundaries": 14,
         "outside_declared_wilaya": 18
@@ -2382,9 +2465,9 @@
       "dataset": "emploi",
       "entity": "alem.json",
       "total_records": 273,
-      "candidates": 22,
+      "candidates": 20,
       "reasons": {
-        "approximate_coordinate": 16,
+        "approximate_coordinate": 14,
         "inside_adjacent_wilaya": 2,
         "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
@@ -2405,38 +2488,39 @@
     {
       "dataset": "enseignement-superieur",
       "entity": "institutions.json",
-      "total_records": 177,
-      "candidates": 110,
+      "total_records": 171,
+      "candidates": 7,
       "reasons": {
-        "approximate_coordinate": 110,
-        "shared_coordinate": 83
+        "approximate_coordinate": 6,
+        "outside_all_wilaya_boundaries": 1,
+        "outside_declared_wilaya": 1,
+        "shared_coordinate": 3
       },
       "path": "packages/enseignement-superieur/data/institutions.json"
     },
     {
       "dataset": "ferroviaire",
       "entity": "stations.json",
-      "total_records": 692,
-      "candidates": 11,
+      "total_records": 691,
+      "candidates": 4,
       "reasons": {
-        "approximate_coordinate": 9,
+        "approximate_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 2,
-        "shared_coordinate": 4
+        "outside_declared_wilaya": 2
       },
       "path": "packages/ferroviaire/data/stations.json"
     },
     {
       "dataset": "formation-professionnelle",
       "entity": "establishments.json",
-      "total_records": 1932,
-      "candidates": 571,
+      "total_records": 1963,
+      "candidates": 299,
       "reasons": {
-        "approximate_coordinate": 559,
-        "missing_coordinate": 11,
+        "approximate_coordinate": 295,
+        "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
-        "shared_coordinate": 396
+        "shared_coordinate": 240
       },
       "path": "packages/formation-professionnelle/data/establishments.json"
     },
@@ -2444,9 +2528,9 @@
       "dataset": "gares-routieres",
       "entity": "stations.json",
       "total_records": 74,
-      "candidates": 3,
+      "candidates": 1,
       "reasons": {
-        "approximate_coordinate": 3
+        "approximate_coordinate": 1
       },
       "path": "packages/gares-routieres/data/stations.json"
     },
@@ -2477,9 +2561,12 @@
     {
       "dataset": "livraison",
       "entity": "stopdesks.json",
-      "total_records": 411,
-      "candidates": 0,
-      "reasons": {},
+      "total_records": 650,
+      "candidates": 2,
+      "reasons": {
+        "approximate_coordinate": 2,
+        "shared_coordinate": 2
+      },
       "path": "packages/livraison/data/stopdesks.json"
     },
     {
@@ -2509,9 +2596,9 @@
       "dataset": "ooredoo",
       "entity": "stores.json",
       "total_records": 572,
-      "candidates": 26,
+      "candidates": 25,
       "reasons": {
-        "approximate_coordinate": 26,
+        "approximate_coordinate": 25,
         "shared_coordinate": 4
       },
       "path": "packages/ooredoo/data/stores.json"
@@ -2519,10 +2606,10 @@
     {
       "dataset": "pharmacies",
       "entity": "pharmacies.json",
-      "total_records": 3795,
-      "candidates": 304,
+      "total_records": 3811,
+      "candidates": 311,
       "reasons": {
-        "approximate_coordinate": 296,
+        "approximate_coordinate": 303,
         "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 8
@@ -2532,11 +2619,11 @@
     {
       "dataset": "poste",
       "entity": "atms.json",
-      "total_records": 2026,
-      "candidates": 8,
+      "total_records": 2023,
+      "candidates": 4,
       "reasons": {
         "inside_adjacent_wilaya": 1,
-        "missing_coordinate": 5,
+        "missing_coordinate": 1,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 3
       },
@@ -2545,11 +2632,11 @@
     {
       "dataset": "poste",
       "entity": "postoffices.json",
-      "total_records": 3908,
-      "candidates": 27,
+      "total_records": 3907,
+      "candidates": 24,
       "reasons": {
         "inside_adjacent_wilaya": 6,
-        "missing_coordinate": 16,
+        "missing_coordinate": 13,
         "outside_all_wilaya_boundaries": 5,
         "outside_declared_wilaya": 11
       },
@@ -2559,47 +2646,47 @@
       "dataset": "protection-civile",
       "entity": "protection-civile.json",
       "total_records": 880,
-      "candidates": 29,
+      "candidates": 27,
       "reasons": {
-        "approximate_coordinate": 23,
+        "approximate_coordinate": 21,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 6,
-        "shared_coordinate": 18
+        "shared_coordinate": 14
       },
       "path": "packages/protection-civile/data/protection-civile.json"
     },
     {
       "dataset": "sante",
       "entity": "sante.json",
-      "total_records": 661,
-      "candidates": 528,
+      "total_records": 657,
+      "candidates": 524,
       "reasons": {
-        "approximate_coordinate": 458,
+        "approximate_coordinate": 454,
         "missing_coordinate": 70,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 303
+        "shared_coordinate": 298
       },
       "path": "packages/sante/data/sante.json"
     },
     {
       "dataset": "sports",
       "entity": "facilities.json",
-      "total_records": 5141,
-      "candidates": 142,
+      "total_records": 5234,
+      "candidates": 137,
       "reasons": {
-        "approximate_coordinate": 133,
+        "approximate_coordinate": 128,
         "inside_adjacent_wilaya": 11,
         "outside_all_wilaya_boundaries": 1,
         "outside_declared_wilaya": 12,
-        "shared_coordinate": 46
+        "shared_coordinate": 39
       },
       "path": "packages/sports/data/facilities.json"
     },
     {
       "dataset": "telecom",
       "entity": "5g-djezzy.json",
-      "total_records": 1001,
+      "total_records": 1000,
       "candidates": 39,
       "reasons": {
         "approximate_coordinate": 9,
@@ -2613,9 +2700,10 @@
     {
       "dataset": "telecom",
       "entity": "5g-mobilis.json",
-      "total_records": 2421,
-      "candidates": 3,
+      "total_records": 2917,
+      "candidates": 9,
       "reasons": {
+        "missing_coordinate": 6,
         "outside_all_wilaya_boundaries": 3,
         "outside_declared_wilaya": 3
       },
@@ -2634,10 +2722,10 @@
     {
       "dataset": "tourisme",
       "entity": "attractions.json",
-      "total_records": 1248,
-      "candidates": 83,
+      "total_records": 1245,
+      "candidates": 82,
       "reasons": {
-        "approximate_coordinate": 5,
+        "approximate_coordinate": 4,
         "inside_adjacent_wilaya": 21,
         "outside_all_wilaya_boundaries": 57,
         "outside_declared_wilaya": 78
@@ -2647,7 +2735,7 @@
     {
       "dataset": "tourisme",
       "entity": "historic.json",
-      "total_records": 1184,
+      "total_records": 1180,
       "candidates": 78,
       "reasons": {
         "approximate_coordinate": 13,
@@ -2660,7 +2748,7 @@
     {
       "dataset": "tourisme",
       "entity": "lodging.json",
-      "total_records": 1602,
+      "total_records": 1587,
       "candidates": 26,
       "reasons": {
         "inside_adjacent_wilaya": 13,
@@ -2672,13 +2760,12 @@
     {
       "dataset": "tourisme",
       "entity": "parks.json",
-      "total_records": 32,
-      "candidates": 10,
+      "total_records": 27,
+      "candidates": 5,
       "reasons": {
-        "approximate_coordinate": 5,
-        "inside_adjacent_wilaya": 4,
+        "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 6
+        "outside_declared_wilaya": 5
       },
       "path": "packages/tourisme/data/parks.json"
     },
@@ -2686,9 +2773,9 @@
       "dataset": "tourisme",
       "entity": "thermal-springs.json",
       "total_records": 282,
-      "candidates": 41,
+      "candidates": 39,
       "reasons": {
-        "approximate_coordinate": 20,
+        "approximate_coordinate": 18,
         "inside_adjacent_wilaya": 26,
         "outside_declared_wilaya": 26,
         "shared_coordinate": 7
@@ -2730,6 +2817,18 @@
       "reason": "Not a geospatial record array"
     },
     {
+      "path": "packages/enseignement-superieur/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/ferroviaire/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/formation-professionnelle/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
       "path": "packages/gares-routieres/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
@@ -2739,6 +2838,10 @@
     },
     {
       "path": "packages/livraison/data/coverage.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/livraison/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {
@@ -2768,6 +2871,10 @@
     {
       "path": "packages/schema",
       "reason": "Package has no data directory"
+    },
+    {
+      "path": "packages/sports/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
     },
     {
       "path": "packages/transport",

@@ -105,6 +105,10 @@ export function sourceRefsInDocument(document, where) {
       for (const source of value.sources) {
         if (typeof source === "string") add(source);
         else if (source && typeof source === "object")
+          // A SourceRef that has lost its `key` is reported rather than skipped:
+          // that is a Source nobody can look up. A route citation needs no carve-out
+          // here, being a bare url, which `looksLikeSourceKey` already rejects on its
+          // slash and colon (ADR 0002).
           keys.add(typeof source.key === "string" && source.key ? source.key : NO_KEY);
       }
     // The whole value decides citation or keys, then every part is a key: a

@@ -10,13 +10,13 @@
  *   committed capture in sources/formation-professionnelle/ is the concatenation
  *   of all 59 calls.
  *
- * OFFLINE ONLY. takwin.dz sits behind a WAF that answers a non-browser client
- * with a block page (the same is true of the ibtikar.takwin.dz mirror), so this
- * build always replays the committed capture rather than pulling. That is also
- * why dates are resolved with offline semantics: the committed `updated` /
- * `retrieved` are preserved rather than restamped with today, because no
- * retrieval happened. Re-establishing a live pull needs a real browser session;
- * until then the capture is the source of truth and git history is its archive.
+ * OFFLINE ONLY. takwin.dz answers an ordinary request from inside Algeria, and
+ * a WAF block page from anywhere else, so this build always replays the
+ * committed capture rather than pulling: a refresh is a capture run from an
+ * Algerian connection, and the build itself needs no network. The dates it
+ * stamps are the capture's own retrieval date from the source manifest, not
+ * today's, so every replay of a given capture reproduces the same metadata and
+ * the package never claims a retrieval it did not make.
  *
  * Geocoding. The portal stores a coordinate pair per establishment, but for 557
  * of 1,932 records one or both axes are the sentinel 0.000000000000000000000000:
@@ -32,25 +32,31 @@
  * (31 Algiers records reading "الجزائر"), the wilaya centroid is used instead
  * (geo_method "wilaya"). Records whose commune cannot be resolved confidently
  * keep their null coordinates: an unresolved name is left unplaced, never
- * guessed. Every coordinate the portal did supply is passed through untouched
- * as geo_precision "exact" / geo_method "takwin".
+ * guessed. A coordinate the portal did supply is passed through as geo_precision
+ * "exact" / geo_method "takwin" unless one of three named exceptions applies: two
+ * rows arrive with the axes transposed (SWAPPED_IDS), two carry a pair that locates
+ * nothing and are treated as unplaced (NONSENSE_IDS), and a block of Oran's rows arrive
+ * with the longitude's minus sign dropped, which recoverLongitudeSign restores on the
+ * evidence of the directorate and commune the row names. Nothing else is altered, and
+ * no coordinate is invented.
  *
  * Usage: node scripts/fetch.mjs
  */
 
 import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import {
   MIGRATIONS,
   writePackageV2,
-  resolveDates,
   carryOverIds,
   readCommitted,
   readRetiredIds,
+  readRetiredMigrations,
 } from "../../../scripts/lib/v2-transforms.mjs";
 import { containingWilayaCode } from "../../../scripts/lib/build-utils.mjs";
-import { readCapture } from "../../../scripts/lib/source-store.mjs";
+import { captureMeta, readCapture } from "../../../scripts/lib/source-store.mjs";
+import { NAME_AR_REPAIRS } from "../../../scripts/lib/commune-name-ar-repairs.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -73,12 +79,107 @@ const TYPE_LABELS = {
   12: "مؤسسة خاصة معتمدة",
   13: "معهد وطني للتكوين والتعليم المهنيين",
 };
-// Two records ship their coordinates transposed, and one carries a nonsense pair.
+// Two records ship their coordinates transposed, and two carry a nonsense pair.
+// 1997 is a pair that locates nothing. 1624 is the Oran row the unsigned-longitude
+// recovery below cannot explain (private tracker #301): its own IDDFEP is 31, its
+// IDCommunn 3105, its commune string "السانية_وهران" and its address "BIR EL DJIR
+// ORAN", but its pair is 35.7167 / 0.6333, whole arcminutes on both axes, so it is a
+// rounded placeholder rather than a reading, and mirroring the axis puts it in the bay
+// of Oran, inside no wilaya at all. There is nothing here to sign-correct, so the row
+// takes the same path as every other establishment the portal left unplaced and lands
+// on its own commune's centroid.
 const SWAPPED_IDS = new Set([1323, 1330]);
-const NONSENSE_IDS = new Set([1997]);
+const NONSENSE_IDS = new Set([1997, 1624]);
 const LAT_MIN = 18, LAT_MAX = 38, LNG_MIN = -9, LNG_MAX = 12;
 
 const round6 = (n) => Math.round(n * 1e6) / 1e6;
+
+/**
+ * How near the commune a row names its mirrored point has to land before the mirror
+ * reads as a dropped minus sign.
+ *
+ * WHY THE WILAYA IS NOT THE TEST. Reflecting a longitude moves a point by 2 * lng, and
+ * the wilaya alone puts no limit on where that lands. A grid scan of the 0.1 to 9 E
+ * half-plane finds 13 directorates for which some mirror lands back inside their own
+ * wilaya, the worst travelling 1,698 km (27.3 N, 8.6 E is in wilaya 33 and mirrors into
+ * wilaya 37): a Bechar row at 29.6 N, +5.3 E would have mirrored 1,024 km into Beni
+ * Abbes country and shipped as `exact`. The commune a row names is a second attribution
+ * the coordinate had no part in, and testing against it bounds the DESTINATION to within
+ * MIRROR_COMMUNE_KM of that commune.
+ *
+ * IT DOES NOT BOUND THE TRAVEL, and is not meant to: Algeria's southern wilayas are
+ * wide enough that a long reflection can still land next to the commune the row names.
+ * A Tindouf row at 27.6 N, +8.3 E naming Tindouf travels 1,635 km and lands 18.7 km from
+ * Tindouf's centre, and a Bechar row at 29.4 N, +3.5 E naming Tabelbala travels 678 km
+ * and lands 24.0 km from Tabelbala's centre; both are recovered, because in both the
+ * reflected point is where the row's own two attributions say the establishment is. The
+ * distance the point moves is not evidence either way. Where it arrives is.
+ *
+ * MEASURED over the rows the rule fires on in the committed capture: 23 of their mirrors
+ * land inside the outline of the very commune the row names, and 9 in a NEIGHBOURING
+ * commune of the same wilaya, which is what an address on a commune edge looks like, and
+ * what a portal that files a campus under its city looks like. The furthest from its own
+ * commune's centre is PN7HO at 9.35 km, filed under Sidi Chami, sitting in Es Senia,
+ * address "CITE BAHI AMER ... ES SENIA ORAN"; then PWGFU at 7.15 km (filed under Oran,
+ * in Bir El Djir, address "HAI KHEMISTI 14 N 232 BIR EL DJIR ORAN") and PPSNN at 6.81 km
+ * (filed under Bethioua, in Arzew, address "RUE DES JARDINS ARZEW ORAN"). So containment
+ * in the named commune would refuse nine honest rows, while 25 km accepts all of them
+ * with the furthest at a third of the bound. It is also the figure MOVE_CAP_KM already
+ * names as the distance past which a moved point stops being about the same place
+ * (scripts/review/thresholds.mjs), rather than a number chosen to make this set fit.
+ */
+export const MIRROR_COMMUNE_KM = 25;
+
+const EARTH_RADIUS_KM = 6371.0088;
+
+/** Great-circle kilometres between two points. */
+function kmBetween(aLng, aLat, bLng, bLat) {
+  const rad = (x) => (x * Math.PI) / 180;
+  const h =
+    Math.sin(rad(bLat - aLat) / 2) ** 2 +
+    Math.cos(rad(aLat)) * Math.cos(rad(bLat)) * Math.sin(rad(bLng - aLng) / 2) ** 2;
+  return 2 * EARTH_RADIUS_KM * Math.asin(Math.sqrt(h));
+}
+
+/**
+ * A longitude that lost its minus sign, restored.
+ *
+ * The capture ships a block of Oran's rows with a POSITIVE longitude. The portal names
+ * the publishing directorate on every row (IDDFEP 31), the commune string is "<an Oran
+ * commune>_وهران" and the address names Oran, but +0.63 lands in Relizane (48) and
+ * +0.31 in Mostaganem (27), and those are the codes `containingWilayaCode` then stamps,
+ * so the defect hides behind a join that agrees with itself: record 01392's wilaya_code
+ * 48 against commune Es Senia is this same block read from the published side (private
+ * tracker #301).
+ *
+ * Mirroring the axis is the only move made, and it is made only when BOTH of the row's
+ * own attributions agree about the mirrored point while neither agrees about the
+ * published one: the mirror must land in the wilaya that published the row AND within
+ * MIRROR_COMMUNE_KM of the centre of the commune the row names. A row whose commune
+ * resolves to nothing is never mirrored, because no commune to test against is not
+ * evidence of a dropped sign. Anything this cannot explain is left exactly as the portal
+ * shipped it: over the committed capture every row it fires on is IDDFEP 31's, and the
+ * 16 Oran rows whose point sits in Mascara are a different defect the mirror leaves
+ * alone. test/formation-longitude-sign.test.mjs pins how many rows that is, so the count
+ * lives in one place and cannot drift out of a comment.
+ *
+ * @param {number|null} lat
+ * @param {number|null} lng
+ * @param {Set<number>} scope  the source wilaya and its post-2026 daughters
+ * @param {{lat: number, lng: number}|null} communeCentre  the centre of the commune the
+ *   row's own `CommunnNom` resolves to, or null when it resolves to none
+ */
+export function recoverLongitudeSign(lat, lng, scope, communeCentre) {
+  if (lat == null || lng == null || lng <= 0) return lng;
+  const asIs = containingWilayaCode(lat, lng);
+  if (asIs && scope.has(Number(asIs))) return lng;
+  const mirrored = containingWilayaCode(lat, -lng);
+  if (!mirrored || !scope.has(Number(mirrored))) return lng;
+  if (!communeCentre) return lng;
+  return kmBetween(-lng, lat, communeCentre.lng, communeCentre.lat) <= MIRROR_COMMUNE_KM
+    ? round6(-lng)
+    : lng;
+}
 
 // A 0 on either axis is the portal's "no reading" sentinel, never a real value.
 // This holds even in Adrar and Ouargla, where a genuine longitude near zero is
@@ -136,7 +237,15 @@ const COMMUNE_NAME_ALIASES = new Map([
   [normAr("أمسيف"), normAr("مسيف")],
 ]);
 
-function loadGeoReference() {
+// The flagship's reviewed Arabic commune-name repairs, read from the shared
+// table: a source still writing the spelling the flagship shipped before a
+// repair (the portal writes Illizi إيليزي, the flagship now إليزي) resolves to
+// the repaired commune, and only inside the repair's own wilaya.
+const REPAIRED_SPELLINGS = new Map(
+  NAME_AR_REPAIRS.map((r) => [`${r.wilaya_code}|${normAr(r.from)}`, normAr(r.to)]),
+);
+
+export function loadGeoReference() {
   const communeFC = JSON.parse(readFileSync(join(REF, "geojson", "communes.geojson"), "utf-8"));
   const wilayas = JSON.parse(readFileSync(join(REF, "wilayas.json"), "utf-8")).wilayas;
   const wilayaFC = JSON.parse(readFileSync(join(REF, "geojson", "wilayas.geojson"), "utf-8"));
@@ -189,7 +298,7 @@ function loadGeoReference() {
  *     form of the usual "<commune>_<wilaya>" (الطيبات توقرت, عين البيضاء أم البواقي);
  *   - the two combined.
  */
-function resolveCommune(commune, wilaya, ref) {
+export function resolveCommune(commune, wilaya, ref) {
   const scope = [wilaya, ...(ref.daughters.get(wilaya) || [])];
   const key = normAr(commune);
   if (!key) return null;
@@ -211,6 +320,12 @@ function resolveCommune(commune, wilaya, ref) {
     if (hit) return { ...hit, how: "variant" };
   }
 
+  for (const code of scope) {
+    const repaired = REPAIRED_SPELLINGS.get(`${code}|${key}`);
+    const hit = repaired && ref.byWilaya.get(code)?.get(repaired);
+    if (hit) return { ...hit, wilaya: code, how: "variant" };
+  }
+
   const variants = [];
   if (key.startsWith("ال")) variants.push(key.slice(2));
   else variants.push("ال" + key);
@@ -225,6 +340,221 @@ function resolveCommune(commune, wilaya, ref) {
     if (hit) return { ...hit, how: "variant" };
   }
   return null;
+}
+
+// --- id carry-over ----------------------------------------------------------
+// The ids are a flat 5-digit space assigned from sort position, so nothing in a
+// record's own id says which id it shipped under: the carry key is the only
+// thing holding a public join key to its establishment.
+//
+// It is the MFEP's own accreditation code plus the establishment type. The name
+// used to be in it, and that is what blocked the 2026-10-25 rebuild (#306): the
+// portal rewrote 1,788 Arabic names, and it revises their spacing, their
+// separators, their typos and their branding freely, so a key that reads one
+// takes every revision for a different place. Nine establishments were relisted
+// under a brand or a corrected spelling at the same coordinate and phone, which
+// no name-based key could have followed. Type is in the key because `code` alone
+// repeats on 5 records; neither depends on wilaya_code, so an id survives a
+// commune moving to its post-2026 daughter wilaya.
+/** The establishment a record stands for, as a carry key. */
+export const accreditationKeyOf = (r) =>
+  [r.code, r.type].map((f) => JSON.stringify(f ?? null)).join("|");
+
+// Two pairs share one code and type (0303|cfpa, 10611|prive), and a carry key
+// that cannot pin an id uniquely fails the build, so they are told apart by
+// position within their own group. Same mechanism as sportsCarryKey, but not the
+// same licence: sports' twins are field-identical, so which keeps which id
+// carries no meaning, while these are different establishments tens of
+// kilometres apart. A source that reordered a group would hand each the other's
+// id, so the pairing is checked below rather than trusted.
+const TIE_BREAK_MAX_KM = 5;
+
+/**
+ * Reviewed carry-key exceptions: a published id the review cut loose from its
+ * accreditation code, because the code changed hands rather than the
+ * establishment changing its name. Carrying such an id would point a public join
+ * key at a different business, so the id retires and the new holder is minted a
+ * fresh one. The MFEP publishes no successor field, so this cannot be derived;
+ * each entry is a reviewed decision with the evidence beside it, the same way
+ * packages/ecoles/scripts/fetch.mjs tracks its OSM primitive migrations.
+ *
+ * Keyed on the id it severs, not on the carry key, so the rule stops matching
+ * once the successor is published under its own id: a rebuild from the new
+ * committed data carries that id like any other instead of churning it.
+ */
+export const SEVERED_IDS = new Map([
+  [
+    "00591",
+    {
+      code: "15634",
+      type: "prive",
+      reviewer: "geoalgeria-maintainers",
+      reviewed_at: "2026-10-25",
+      // What the two captures say under this one accreditation code. Every
+      // descriptive field changed, in both languages, and nothing the portal
+      // publishes ties the two together.
+      was: {
+        capture: "2026-06-22",
+        name_fr: "LHIRFA USIREM",
+        name: "\u0627\u0644\u0645\u0624\u0633\u0633\u0629 \u0627\u0644\u062E\u0627\u0635\u0629\u0644\u0644\u062A\u0643\u0648\u064A\u0646 \u0627\u0644\u0645\u0647\u0646\u064A\u0644\u062D\u0631\u0641\u0627 \u0627\u0648\u0633\u064A\u0631\u0627\u0645",
+        telephone: "0540824419",
+        email: "centredeformationasirem@gmail.com",
+        facebook: "https://www.facebook.com/p/Asirem-School100086582826402/",
+        adresse_fr: "Rue frere ouamrane lot thala n 03 Tiziouzou",
+        capacite: 144,
+        surface_m2: 200,
+        vocations: 4,
+        point: "exact, 36.697271 / 4.049615",
+      },
+      now: {
+        capture: "2026-10-25",
+        name_fr: "HIGH FLY SCHOOL",
+        name: "\u0627\u0644\u0645\u0624\u0633\u0633\u0629 \u0627\u0644\u062E\u0627\u0635\u0629 \u0644\u0644\u062A\u0643\u0648\u064A\u0646 \u0627\u0644\u0645\u0647\u0646\u064A \u0647\u0627\u064A \u0641\u0644\u0627\u064A \u0633\u0643\u0648\u0644",
+        telephone: null,
+        email: "highflyschoolto@gmail.com",
+        facebook: null,
+        adresse_fr: null,
+        capacite: null,
+        surface_m2: null,
+        vocations: 0,
+        point: "none; placed on the Tizi Ouzou commune centroid",
+      },
+      note:
+        "Accreditation 15634 passed from Asirem School to High Fly School. The name " +
+        "changed in both languages, and so did the phone, the email, the Facebook page, " +
+        "the address, the capacity, the surface and the whole curriculum: June listed " +
+        "sewing, women's and men's hairdressing and childcare assistance, October lists " +
+        "none. The 4 km between the two published points is not evidence of a move, " +
+        "because October carries no portal point at all and sits on its commune's " +
+        "centroid. Nothing but the code and the wilaya connects the two records, so the " +
+        "id stays with neither: 00591 is reserved and High Fly School is a new record.",
+    },
+  ],
+]);
+
+/**
+ * A keyOf for carryOverIds over both sides of a rebuild. A severed id is keyed so
+ * that nothing can match it, which retires it; it is also left out of its group's
+ * numbering, so the records that remain still pair with each other.
+ *
+ * @param {object[]} committed  the committed v2 records
+ * @param {object[]} rows       the records being emitted
+ * @returns {(r: object) => string}
+ */
+export function formationCarryKey(committed, rows) {
+  const keyed = new Map();
+  for (const set of [committed, rows]) {
+    const seen = new Map();
+    for (const r of set) {
+      const place = accreditationKeyOf(r);
+      if (set === committed && SEVERED_IDS.has(String(r.id))) {
+        keyed.set(r, `${place}!severed:${r.id}`);
+        continue;
+      }
+      const nth = (seen.get(place) ?? 0) + 1;
+      seen.set(place, nth);
+      keyed.set(r, `${place}#${nth}`);
+    }
+  }
+  return (r) => keyed.get(r) ?? accreditationKeyOf(r);
+}
+
+const KM_PER_DEGREE = 111;
+const kmApart = (a, b) =>
+  KM_PER_DEGREE *
+  Math.hypot(a.lat - b.lat, (a.lng - b.lng) * Math.cos((a.lat * Math.PI) / 180));
+
+/**
+ * How many records share a code and type, counted over BOTH sides. Sizing the
+ * group from the committed side alone left a singleton that gains a second member
+ * unguarded, which is the case that actually swaps an id: a new record sorting
+ * first takes the published id and the real holder is minted a new one.
+ *
+ * @param {object[]} committed
+ * @param {object[]} rows
+ * @returns {Map<string, number>}
+ */
+function groupSizes(committed, rows) {
+  const sizes = new Map();
+  for (const set of [committed, rows]) {
+    const counts = new Map();
+    for (const r of set) {
+      const place = accreditationKeyOf(r);
+      counts.set(place, (counts.get(place) ?? 0) + 1);
+    }
+    for (const [place, n] of counts) sizes.set(place, Math.max(sizes.get(place) ?? 0, n));
+  }
+  return sizes;
+}
+
+/**
+ * Refuse a positional tie-break that paired two records standing apart. A group
+ * the portal reordered, or that gained a member, would otherwise swap two
+ * published ids silently.
+ *
+ * The coordinate decides where both sides carry one, even a commune centroid:
+ * it still says which locality the record is in, which is all this asks. Where
+ * either side has none, the commune label is the only locality left, folded with
+ * normAr because the portal respaces those too. With neither, the check fails
+ * closed: nothing locates the record, so the pairing cannot be checked, and a
+ * silent id swap is worse than a build that stops.
+ *
+ * @param {object[]} committed
+ * @param {object[]} rows
+ * @param {(r: object) => string} keyOf
+ * @param {Map<string, number>} sizes
+ */
+function checkTieBreaks(committed, rows, keyOf, sizes) {
+  const live = new Map(rows.map((r) => [keyOf(r), r]));
+  for (const was of committed) {
+    const place = accreditationKeyOf(was);
+    if ((sizes.get(place) ?? 0) < 2) continue;
+    const now = live.get(keyOf(was));
+    if (!now) continue;
+    const refuse = (why) => {
+      throw new Error(
+        `formation-professionnelle: the tie-break paired id ${was.id} with ${why} ` +
+          `(${JSON.stringify(was.name)} -> ${JSON.stringify(now.name)}); code|type ${place} ` +
+          `has been reordered or gained a member, so position no longer identifies ` +
+          `its establishments`,
+      );
+    };
+    if (was.lat != null && now.lat != null) {
+      const km = kmApart(was, now);
+      if (km > TIE_BREAK_MAX_KM) refuse(`a record ${km.toFixed(1)} km away`);
+      continue;
+    }
+    if (was.commune == null || now.commune == null) {
+      refuse("a record nothing locates: neither carries a coordinate or a commune");
+    }
+    if (normAr(was.commune) !== normAr(now.commune)) {
+      refuse(`a record in another commune (${was.commune} / ${now.commune}), with no coordinate to appeal to`);
+    }
+  }
+}
+
+export function assignStableIds(rows, committed, retiredIds) {
+  const keyOf = formationCarryKey(committed, rows);
+  checkTieBreaks(committed, rows, keyOf, groupSizes(committed, rows));
+  const shipped = new Set(committed.map(keyOf));
+  let highest = 0;
+  for (const id of [...committed.map((r) => r.id), ...retiredIds]) {
+    const n = Number(id);
+    if (Number.isFinite(n) && n > highest) highest = n;
+  }
+  let minted = 0;
+  for (const r of rows) {
+    if (shipped.has(keyOf(r))) continue;
+    r.id = String(++highest).padStart(5, "0");
+    minted++;
+  }
+  const retiredBefore = retiredIds.size;
+  carryOverIds(rows, committed, keyOf, "formation-professionnelle", retiredIds);
+  return {
+    carried: rows.length - minted,
+    minted,
+    retired: retiredIds.size - retiredBefore,
+  };
 }
 
 // --- main -------------------------------------------------------------------
@@ -244,16 +574,25 @@ function main() {
     unplaced: 0,
     viaVariant: 0,
     reassignedWilaya: 0,
+    reassignedDaughter: 0,
+    reassignedElsewhere: 0,
     coordinateCommuneConflicts: 0,
+    signRecovered: 0,
   };
   const unresolved = new Map();
 
   const records = filtered.map((r) => {
-    const { lat, lng } = cleanCoords(r);
+    const { lat, lng: rawLng } = cleanCoords(r);
     const commune = parseCommune(r.CommunnNom);
     const sourceWilayaCode = wilayaCode(r.IDDFEP);
     const sourceWilaya = Number(sourceWilayaCode);
+    const scope = new Set([sourceWilaya, ...(ref.daughters.get(sourceWilaya) || [])]);
+    // The commune join reads the row's text only, so it is settled before the
+    // coordinate is: the sign recovery needs it as its second attribution, and the
+    // conflict counter and the fallback placement below both read the same hit.
     const communeHit = resolveCommune(commune, sourceWilaya, ref);
+    const lng = recoverLongitudeSign(lat, rawLng, scope, communeHit);
+    if (lng !== rawLng) stats.signRecovered++;
     // A source coordinate is stronger evidence than a contradictory commune
     // string. Use containment for exact points, and commune resolution for the
     // records whose source coordinate is missing.
@@ -263,7 +602,16 @@ function main() {
     }
     const wilaya_code = coordinateWilaya
       || (communeHit ? String(communeHit.wilaya).padStart(2, "0") : sourceWilayaCode);
-    if (wilaya_code !== sourceWilayaCode) stats.reassignedWilaya++;
+    // Two different things used to be counted as one, and the READMEs then described
+    // the total as if it were all reform: a move INTO one of the source wilaya's
+    // post-2026 daughters is the same territory re-coded, while a move anywhere else
+    // is the row's coordinate disagreeing with the directorate that filed it, which is
+    // a defect in one of the two and not a re-coding.
+    if (wilaya_code !== sourceWilayaCode) {
+      stats.reassignedWilaya++;
+      if (scope.has(Number(wilaya_code))) stats.reassignedDaughter++;
+      else stats.reassignedElsewhere++;
+    }
 
     let geo = { lat, lng, geo_precision: null, geo_method: null };
     if (lat != null) {
@@ -348,9 +696,15 @@ function main() {
     `Placement: ${stats.takwin} takwin (exact), ${stats.commune} commune centroid` +
       ` (${stats.viaVariant} via a spelling variant), ${stats.wilaya} wilaya centroid, ${stats.unplaced} unplaced`,
   );
-  console.log(`  ${stats.reassignedWilaya} establishment(s) reassigned from a source wilaya to its post-2026 daughter`);
+  console.log(
+    `  ${stats.reassignedDaughter} establishment(s) re-coded into a post-2026 daughter of the wilaya that filed them, ` +
+      `${stats.reassignedElsewhere} placed in a wilaya their directorate does not cover`,
+  );
   if (stats.coordinateCommuneConflicts) {
     console.log(`  ${stats.coordinateCommuneConflicts} exact coordinate(s) overrode a contradictory commune-derived wilaya`);
+  }
+  if (stats.signRecovered) {
+    console.log(`  ${stats.signRecovered} longitude(s) had their minus sign restored from the publishing directorate`);
   }
   if (residuals.length)
     console.log(`  single-axis cross-check on ${residuals.length} placed records: median ${pct(0.5)} km, p90 ${pct(0.9)} km, max ${residuals[residuals.length - 1].toFixed(1)} km`);
@@ -361,17 +715,27 @@ function main() {
   }
 
   // --- emit v2 ---------------------------------------------------------------
-  // Offline: no retrieval happened, so the committed dates are reproduced rather
-  // than restamped.
+  // The capture is the retrieval, so its own date is what the package states,
+  // rather than today's (the build pulled nothing) or the previous metadata's
+  // (which would misdate a fresh capture as the last one). A replay of the same
+  // capture therefore reproduces the same metadata.
   const cfg = MIGRATIONS["formation-professionnelle"];
-  const { updated, retrieved } = resolveDates(OUT_DIR, true);
+  const captured = captureMeta("formation-professionnelle", "takwin-etab").retrieved;
+  const { updated, retrieved } = { updated: captured, retrieved: captured };
   const v2 = records.map(cfg.map);
-  // `code` alone repeats on 5 records, so type and name make the carry key unique
-  // without depending on wilaya_code. That preserves ids when a commune moves
-  // from its source's pre-reform wilaya to the current daughter wilaya.
-  const carryKey = (r) => [r.code, r.type, r.name].join("|");
+  const committed = readCommitted(OUT_DIR, "establishments.json");
   const retiredIds = readRetiredIds(OUT_DIR);
-  carryOverIds(v2, readCommitted(OUT_DIR, "establishments.json"), carryKey, "formation-professionnelle", retiredIds);
+  // The ledger's forwards are append-only: read what is there, carry it back out
+  // through the writer, and add a forward for any retirement whose data went to
+  // another record. A retirement here is the portal dropping an accreditation
+  // code outright, which is a disappearance and not a merge, so it reserves the
+  // id without forwarding it; the key is unique, so no two records ever fold
+  // into one, and the ids carry no prefix for carryOverIds to re-issue against.
+  const retiredMigrations = readRetiredMigrations(OUT_DIR);
+  const ids = assignStableIds(v2, committed, retiredIds);
+  console.log(
+    `Ids: ${ids.carried} carried, ${ids.minted} minted above the high-water mark, ${ids.retired} retired`,
+  );
 
   let oldMeta = {};
   try { oldMeta = JSON.parse(readFileSync(join(OUT_DIR, "metadata.json"), "utf-8")); } catch {}
@@ -384,8 +748,13 @@ function main() {
     retrieved,
     oldMeta,
     retiredIds,
+    retiredMigrations,
   });
   console.log(`Wrote ${out.length} establishments → v2 (${metadata.geocoded_count} geocoded, ${metadata.wilayas_covered} wilayas).`);
 }
 
-main();
+// Guarded so the test suite can import the carry key and the id assignment
+// without running the build, the shape packages/ecoles/scripts/fetch.mjs uses.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}

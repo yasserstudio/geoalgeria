@@ -22,30 +22,31 @@
  * them to numeric wilaya_code using a normalisation map built from the flagship
  * dataset's 69 wilayas.
  *
+ * The GeoServer answers only from an Algerian vantage point, so every pull is
+ * captured under sources/jeunesse/ and the package rebuilds from that capture
+ * offline. The capture's exact shape: scripts/lib/mjs-sig.mjs.
+ *
  * Usage: node scripts/fetch.mjs
+ *        node scripts/fetch.mjs --cache    # rebuild from sources/jeunesse/sig-etablissements.json
  */
 
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
+import { fetchMjsLayer, readMjsCapture, MJS_SOURCE } from "../../../scripts/lib/mjs-sig.mjs";
+import { captureMeta } from "../../../scripts/lib/source-store.mjs";
+import { foldNameDashes, withoutEmDash } from "../../../scripts/lib/no-em-dash.mjs";
+import { pathToFileURL } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
 const DATASET = join(__dirname, "..", "..", "dataset", "data");
 const NAMES_AR_SEED = join(__dirname, "seeds", "names_ar.json");
 
-const WMS_URL =
-  "https://sig.mjs.gov.dz/api/v1.0/geoserver/public/wms?" +
-  "service=WMS&version=1.1.1&request=GetMap" +
-  "&layers=etablissements_de_jeunes" +
-  "&bbox=-9,18,12,38&width=1&height=1&srs=EPSG:4326" +
-  "&format=application/json;type=geojson";
-
-const SOURCE = "https://sig.mjs.gov.dz/dashboard/viewer";
-const UA =
-  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
-  "(KHTML, like Gecko) Chrome/120.0 Safari/537.36";
+const LAYER = "etablissements_de_jeunes";
+const CAPTURE = "sig-etablissements";
+const SOURCE = MJS_SOURCE;
 
 const MIN_EXPECTED = 1800;
 
@@ -136,6 +137,9 @@ const cleanName = (s) => {
 const stripUUID = (s) => {
   if (s == null) return null;
   const v = String(s);
+  // A referential the GIS never had set comes back as a bare ":" (empty uuid,
+  // empty label). That is absence, not a value.
+  if (v === ":") return null;
   const idx = v.indexOf(":");
   if (idx > 0 && idx < 40 && /^[0-9a-f-]+$/.test(v.slice(0, idx))) {
     return clean(v.slice(idx + 1));
@@ -217,23 +221,50 @@ function buildNameArFinder(seed) {
   };
 }
 
+/**
+ * The key a published id is carried on. The ids are a flat 5-digit space assigned
+ * from sort position (wilaya, type, name), so nothing in a record's own id says
+ * which id it shipped under. From the 2026-10-27 refresh every record publishes
+ * the SIG's own per-record UUID as refs.mjs, which survives the ministry renaming,
+ * re-addressing or re-placing an establishment, and ids are carried on it, as
+ * sports carries its facilities.
+ *
+ * The one release before that, the published records carry no UUID, so that
+ * transition is keyed on what the establishment is and where: its type, its
+ * point, its names (folded exactly as the writer folds them) and its address
+ * (dash-folded the same way, as the fetcher now publishes it).
+ * That key cannot be the permanent one: any edit to those fields would retire an
+ * id. It is unique over the published records and the 2026-10-27 rebuild and
+ * pairs all 2,334, so the transition retires none; and the jeunesse review ledger
+ * patches only wilaya_code and commune_code, so the committed side can be read as
+ * shipped. carryOverIds refuses a duplicated key rather than pinning arbitrarily.
+ *
+ * Why a key was needed at all: a positional rebuild of the 2026-10-27 capture
+ * repointed 213 published ids for a source that had not changed, because records
+ * that tie on the sort keep their input order (the capture sorts by UUID, the
+ * live response did not) and a record whose derived wilaya changed moved group.
+ */
+export const jeunesseContentKey = (r) => {
+  const folded = foldNameDashes({ name: r.name ?? null, name_ar: r.name_ar ?? null });
+  return JSON.stringify([r.type, r.lat, r.lng, folded.name, folded.name_ar, withoutEmDash(r.address ?? null)]);
+};
+export const mjsRefOf = (r) => r?.refs?.mjs ?? null;
+/** The carry key for a rebuild against `committed`: the UUID once the published
+ *  records carry one, the content key for the one transition before that. */
+export const carryKeyFor = (committed) =>
+  committed.length && committed.every((r) => mjsRefOf(r)) ? mjsRefOf : jeunesseContentKey;
+
 // --- main ------------------------------------------------------------------
 async function main() {
-  console.log("Fetching MJS youth establishments from GeoServer…");
-  const res = await fetch(WMS_URL, {
-    headers: { "User-Agent": UA },
-    signal: AbortSignal.timeout(60_000),
-  });
-  if (!res.ok) throw new Error(`WMS request failed: HTTP ${res.status}`);
-  const raw = await res.json();
-
-  if (!raw.features || !Array.isArray(raw.features)) {
-    throw new Error("unexpected response: no features array");
-  }
-  if (raw.features.length < MIN_EXPECTED) {
-    throw new Error(`only ${raw.features.length} features; expected >= ${MIN_EXPECTED}`);
-  }
-  console.log(`  fetched ${raw.features.length} raw features`);
+  const OFFLINE = process.argv.includes("--cache");
+  const features = OFFLINE
+    ? readMjsCapture({ pkg: "jeunesse", capture: CAPTURE, minExpected: MIN_EXPECTED })
+    : await fetchMjsLayer({
+        pkg: "jeunesse",
+        capture: CAPTURE,
+        layer: LAYER,
+        minExpected: MIN_EXPECTED,
+      });
 
   const wilayaMap = buildWilayaMap();
   const findNameAr = buildNameArFinder(loadNamesArSeed());
@@ -243,7 +274,7 @@ async function main() {
   const unmappedWilayas = new Set();
   let arMatched = 0;
 
-  for (const feat of raw.features) {
+  for (const feat of features) {
     const p = feat.properties;
     if (p.deleted === true || p.deleted === "true") continue;
 
@@ -258,6 +289,10 @@ async function main() {
     const typeRaw = stripUUID(p.type_de_letablissement);
     const typeEntry = typeRaw ? TYPE_MAP[typeRaw] : null;
     if (typeRaw && !typeEntry) unknownTypes.add(typeRaw);
+    // type_code is a non-null contract, so a row the ministry has not typed yet
+    // is an unfinished entry: drop it rather than guess. A row carrying a type
+    // we do not know still throws below.
+    if (!typeRaw) { dropped.push({ id: p.id, reason: "no type" }); continue; }
 
     const wilayaName = stripUUID(p.wilaya);
     if (!wilayaName) { dropped.push({ id: p.id, reason: "no wilaya" }); continue; }
@@ -282,12 +317,16 @@ async function main() {
 
     institutions.push({
       id: p.id,
+      // The SIG's own per-record UUID, published as refs.mjs and the key ids are
+      // carried on from now on (see carryKeyFor).
+      uuid: p.id,
       name: cleanName(p.denomination_de_letablissement),
       name_ar,
       type_code: typeEntry?.code ?? null,
       type_fr: typeEntry?.fr ?? typeRaw ?? null,
       type_ar: typeEntry?.ar ?? null,
-      address: clean(p.adresse_de_letablissement),
+      // An address with a dash used as a separator is folded like a name, as sports does.
+      address: withoutEmDash(clean(p.adresse_de_letablissement)),
       commune: stripUUID(p.commune),
       daira: stripUUID(p.daira),
       wilaya_code: wilayaCode,
@@ -336,14 +375,36 @@ async function main() {
 
   // --- emit v2 via the shared writer ---
   const cfg = MIGRATIONS.jeunesse;
-  const today = new Date().toISOString().slice(0, 10);
+  // The capture is the retrieval, so its own date is what the package states, live
+  // or --cache alike: a replay of the same capture reproduces the metadata, and a
+  // rebuild from a newer capture no longer keeps the previous pull's date.
+  const { retrieved: updated } = captureMeta("jeunesse", CAPTURE);
+  const retrieved = updated;
+  // Pin every record to the id it shipped under (see carryKeyFor), reserve the
+  // id of one that is gone, and mint a new record's id above every id ever used.
+  const rows = institutions.map(cfg.map);
+  const committed = readCommitted(DATA, "institutions.json") ?? [];
+  const retiredIds = readRetiredIds(DATA);
+  const keyOf = carryKeyFor(committed);
+  const shipped = new Set(committed.map(keyOf));
+  let highest = Math.max(0, ...[...committed.map((r) => r.id), ...retiredIds].map(Number).filter(Number.isFinite));
+  let minted = 0;
+  for (const r of rows) {
+    if (shipped.has(keyOf(r))) continue;
+    r.id = String(++highest).padStart(5, "0");
+    minted++;
+  }
+  const retiredBefore = retiredIds.size;
+  carryOverIds(rows, committed, keyOf, "jeunesse", retiredIds);
+  console.log(`Ids: ${rows.length - minted} carried, ${minted} minted, ${retiredIds.size - retiredBefore} retired`);
   const { records: out, metadata } = writePackageV2({
     pkg: "jeunesse",
     dir: DATA,
-    files: [{ file: "institutions.json", rows: institutions.map(cfg.map) }],
+    files: [{ file: "institutions.json", rows }],
     meta: cfg.meta,
-    updated: today,
-    retrieved: today,
+    updated,
+    retrieved,
+    retiredIds,
   });
 
   console.log(`\nType breakdown:`);
@@ -356,4 +417,6 @@ async function main() {
   console.log(`\nWrote ${out.length} youth establishments across ${metadata.wilayas_covered} wilayas to ${DATA} (v2).`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => { console.error(e); process.exit(1); });
+}

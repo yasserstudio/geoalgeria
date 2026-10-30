@@ -31,6 +31,7 @@ import {
   applyReviewedOverrides,
 } from "../../packages/schema/index.js";
 import { reconcileCurrentWilayaByCommune } from "./current-wilaya-by-commune.mjs";
+import { relabelCommuneAr } from "./telecom-commune-ar.mjs";
 import { foldNameDashes } from "./no-em-dash.mjs";
 
 /** Write via a temp sibling + rename so a reader never sees a torn file. Not a
@@ -530,6 +531,9 @@ export const MIGRATIONS = {
       ...reconcileCurrentWilayaByCommune(r), commune: r.commune,
       ...geoExact(r, "sig_mjs"),
       source: "mjs",
+      // The SIG's own per-record UUID (properties.id), the Upstream link the ids
+      // are carried on from the 2026-10-27 refresh.
+      refs: refs({ mjs: r.uuid }),
       type: r.type_code, type_label_fr: r.type_fr, type_label_ar: r.type_ar,
       daira: r.daira, address: r.address, capacity: r.capacity, year: r.year,
       operational: r.operational, pmr: r.pmr, surface_built_m2: r.surface_built_m2, surface_land_m2: r.surface_land_m2,
@@ -538,7 +542,7 @@ export const MIGRATIONS = {
       sources: [{ key: "mjs", name: "Ministry of Youth and Sports: SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
-      coverageNote: "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 128 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+      coverageNote: "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 129 records are reconciled to the current wilaya only where an exact current, former (JORA) or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
       titles: { en: "Algeria youth institutions", fr: "Établissements de jeunesse d'Algérie", ar: "مؤسسات الشباب الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), named_ar: rows.filter((r) => r.name_ar).length }),
     },
@@ -552,6 +556,9 @@ export const MIGRATIONS = {
       ...reconcileCurrentWilayaByCommune(r), commune: r.commune,
       ...geoExact(r, "sig_mjs"),
       source: "mjs",
+      // The SIG's own per-record UUID (properties.id), the Upstream link the
+      // carry-over keys on (packages/sports/scripts/fetch.mjs, "stable ids").
+      refs: refs({ mjs: r.uuid }),
       type: r.type_code, type_label_fr: r.type_fr,
       daira: r.daira, address: r.address, capacity: r.capacity, year: r.year,
       operational: r.operational, pmr: r.pmr, surface_built_m2: r.surface_built_m2, surface_land_m2: r.surface_land_m2,
@@ -560,7 +567,7 @@ export const MIGRATIONS = {
       sources: [{ key: "mjs", name: "Ministry of Youth and Sports: SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
-      coverageNote: "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 267 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+      coverageNote: "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 270 records are reconciled to the current wilaya only where an exact current, former (JORA) or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
       titles: { en: "Algeria sports facilities", fr: "Infrastructures sportives d'Algérie", ar: "المنشآت الرياضية الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), named: named(rows) }),
     },
@@ -573,15 +580,29 @@ export const MIGRATIONS = {
       name: r.name, name_ar: r.name_ar,
       wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
       ...geoAt(r, r.geo_precision === "campus" ? "exact" : "approximate", r.geo_precision),
-      source: "mesrs",
+      // Which of the ministry's two publications the record's identity came from.
+      // The generator sets `source_key` only where it is not the network listing:
+      // "bac-2026" for a record the placement file supplied outright, the
+      // composite "mesrs+bac-2026" where the listing supplies the record and the
+      // placement file its current name. A v1 row carries neither field and is
+      // network-listing data, so the default stands.
+      source: r.source_key ?? "mesrs",
       type: r.type, type_label_fr: r.type_fr, sector: r.sector,
       supervisory_ministry: r.supervisory_ministry, website: r.website,
     }),
     meta: {
-      sources: [{ key: "mesrs", name: "Ministry of Higher Education and Scientific Research (MESRS)", url: "https://www.mesrs.dz", license: "Factual public listing (MESRS)" }],
+      // `retrieved` is not typed here: scripts/fetch.mjs fills each key from the
+      // committed capture's own manifest entry (the EN+AR listings for `mesrs`,
+      // the placement-file projection for `bac-2026`), so a date is stated once,
+      // where the capture records it, and a live pull cannot leave it stale.
+      sources: [
+        { key: "mesrs", name: "Ministry of Higher Education and Scientific Research (MESRS)", url: "https://www.mesrs.dz", license: "Factual public listing (MESRS)" },
+        { key: "bac-2026", name: "MESRS: Moyennes minimales BAC 2026 (suite à la première phase), the ministry's own placement file", url: "https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf", license: "Factual public listing (MESRS)", evidence_type: "official" },
+        { key: "overture", name: "Overture Maps Foundation, Places (release 2026-10-21.0): the single open campus lead of 23 records", url: "https://overturemaps.org", license: "CDLA-Permissive-2.0 (attribution: Overture Maps Foundation)" },
+      ],
       license: "Factual public listing (MESRS)",
       estimatedUniverse: null,
-      coverageNote: "Higher-education institutions (universities, schools, research centres) from the MESRS. 61 are campus-precise; the rest are wilaya/commune centroids (approximate).",
+      coverageNote: "Higher-education institutions (universities, schools, research centres) from the MESRS, built from two of the ministry's own publications: its university-network listing, and its BAC 2026 placement file (\"Moyennes minimales BAC 2026, suite a la premiere phase\"), which names every establishment it places new bacheliers into by the ministry's own establishment code. The placement file supplies 12 institutions the network listing omits, the current name of 2 it still lists under an older one, and one succession: ENSTA, which decret executif 22-398 made the successor of the two Algiers schools it dissolved, so those two ids are retired and forwarded to it in retired-ids.json. 136 records carry a per-campus coordinate (exact): an OpenStreetMap campus, the location the institution publishes itself, an Owner reading, or a single open lead (an OSM or Overture place); the other 35 are commune or wilaya centroids (approximate), because neither ministry publication carries an address or a coordinate. Military institutions are not published.",
       titles: { en: "Algeria higher-education institutions", fr: "Établissements d'enseignement supérieur d'Algérie", ar: "مؤسسات التعليم العالي الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method") }),
     },
@@ -605,10 +626,10 @@ export const MIGRATIONS = {
       surface_m2: r.surface_m2, internat: r.internat, capacite_internat: r.capacite_internat, vocations: r.vocations,
     }),
     meta: {
-      sources: [{ key: "mfep", name: "Ministry of Vocational Training and Education (MFEP): takwin.dz", url: "https://takwin.dz", license: "Factual public listing (MFEP)", retrieved: "2026-06-22" }],
+      sources: [{ key: "mfep", name: "Ministry of Vocational Training and Education (MFEP): takwin.dz", url: "https://takwin.dz", license: "Factual public listing (MFEP)", retrieved: "2026-10-25" }],
       license: "Factual public listing (MFEP)",
       estimatedUniverse: null,
-      coverageNote: "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1920 of 1932 are geocoded: 1375 on the portal's own point, 510 on their commune's centroid and 35 on their wilaya's, the portal having left those coordinates empty.",
+      coverageNote: "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1961 of 1963 are geocoded: 1680 on the portal's own point, 250 on their commune's centroid and 31 on their wilaya's, the portal having left those coordinates empty.",
       titles: { en: "Algeria vocational-training establishments", fr: "Établissements de formation professionnelle d'Algérie", ar: "مؤسسات التكوين المهني الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_secteur: count(rows, "secteur") }),
     },
@@ -850,7 +871,7 @@ export const MIGRATIONS = {
   livraison: {
     file: "stopdesks.json",
     map: (r) => clean({
-      id: r.id, name: r.name,
+      id: r.id, name: r.name, name_ar: r.name_ar ?? null,
       wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: r.commune,
       ...geoExact(r, "carrier_relay"),
       source: (r.sources && r.sources[0]) || "carrier_relay",
@@ -863,10 +884,13 @@ export const MIGRATIONS = {
         { key: "anderson", name: "Anderson Logistics: agency directory", url: "https://anderson-ecommerce.com/", license: "Data © Anderson Logistics; redistributed for reference", evidence_type: "official" },
         { key: "noest", name: "Noest Express: bureaux directory", url: "https://noest-dz.com/", license: "Data © Noest Express; redistributed for reference", evidence_type: "official" },
         { key: "maystro", name: "Maystro Delivery: coverage page", url: "https://maystro-delivery.com/Coverage.html", license: "Data © Maystro Delivery; redistributed for reference", evidence_type: "official" },
+        { key: "zr-express", name: "ZR Express: offices list", url: "https://www.zrexpress.net/en/offices", license: "Data © ZR Express; redistributed for reference", evidence_type: "official" },
+        { key: "swift-express", name: "Swift Express: agency network", url: "https://www.swiftexpress.org/fr/offices", license: "Data © Swift Express; redistributed for reference", evidence_type: "official" },
+        { key: "hhd-express", name: "HHD Express: agency network", url: "https://hhd.dz/", license: "Data © HHD Express; redistributed for reference", evidence_type: "official" },
       ],
       license: "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
       estimatedUniverse: null,
-      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest, Maystro, ZR Express, Swift Express and HHD Express's own agency lists: 650 points across 12 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
       titles: { en: "Algeria delivery stop-desks", fr: "Points relais de livraison d'Algérie", ar: "نقاط استلام التوصيل في الجزائر" },
       stats: (rows) => {
         const dataDir = join(REPO_ROOT, "packages", "livraison", "data");
@@ -904,7 +928,7 @@ export const MIGRATIONS = {
       license: "DGPC records © Direction Générale de la Protection Civile; redistributed for reference with no stated open licence. Reviewed OpenStreetMap coordinate evidence © OpenStreetMap contributors, ODbL 1.0.",
       estimatedUniverse: 880,
       coverageNote:
-        "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz): 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
+        "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz): 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort and read from the sources only: the DGPC's own Arabic commune name decides, exactly or across a spelling difference of up to two edits when exactly one commune of the wilaya is that close, then the commune whose OpenStreetMap outline contains the point, then the nearest commune centre. One unit (23-017), whose DGPC name and containing outline disagree, is re-placed by a reviewed decision in the package's correction ledger.",
       titles: { en: "Civil protection units of Algeria", fr: "Unités de la Protection Civile d'Algérie", ar: "وحدات الحماية المدنية الجزائرية" },
       stats: (rows) => ({
         by_statut: count(rows, "statut"),
@@ -913,7 +937,7 @@ export const MIGRATIONS = {
         with_address: rows.filter((r) => r.address).length,
         with_commune: rows.filter((r) => r.commune).length,
         linkage_note:
-          "wilaya_code is derived by point-in-polygon against the 69 post-reform wilaya boundaries and reconciled with the DGPC's own code: reform remaps into the new 59..69 wilayas keep the geometry code, but where geometry and DGPC disagree among pre-reform codes (a border unit misfiled by a simplified outline) the DGPC's official cod_wilaya wins. The DGPC code is kept in refs.dgpc_wilaya; commune is best-effort (Arabic commune-name match against the geoalgeria commune set, nearest-centroid fallback).",
+          "wilaya_code is derived by point-in-polygon against the 69 post-reform wilaya boundaries and reconciled with the DGPC's own code: reform remaps into the new 59..69 wilayas keep the geometry code, but where geometry and DGPC disagree among pre-reform codes (a border unit misfiled by a simplified outline) the DGPC's official cod_wilaya wins. The DGPC code is kept in refs.dgpc_wilaya; commune is best-effort: an Arabic commune-name match against the geoalgeria commune set, exact or within two edits of exactly one commune of the wilaya, then the commune whose OpenStreetMap outline contains the point, then the nearest commune centre.",
       }),
     },
   },
@@ -925,11 +949,26 @@ export const MIGRATIONS = {
     // entities[] must sum to record_count. `technology` rides in the file name
     // (5g-*) AND on every record, so a future 4G is purely additive.
     files: [
-      { file: "5g-djezzy.json", from: "coverage/5g/djezzy.json", map: telecom5g((r) => geoExact(r, "operator_map")) },
-      { file: "5g-mobilis.json", from: "coverage/5g/mobilis.json", map: telecom5g((r) => geoExact(r, "operator_map"), true) },
+      {
+        file: "5g-djezzy.json",
+        from: "coverage/5g/djezzy.json",
+        map: telecom5g((r) => geoExact(r, "operator_map")),
+        afterReview: relabelCommuneAr,
+      },
+      {
+        file: "5g-mobilis.json",
+        from: "coverage/5g/mobilis.json",
+        map: telecom5g((r) => geoExact(r, "operator_map"), true),
+        afterReview: relabelCommuneAr,
+      },
       // Ooredoo publishes covered communes, not cell sites; points are placed
       // within the commune, so they are approximate by construction.
-      { file: "5g-ooredoo.json", from: "coverage/5g/ooredoo.json", map: telecom5g((r) => geoAt(r, "approximate", "operator_commune_point")) },
+      {
+        file: "5g-ooredoo.json",
+        from: "coverage/5g/ooredoo.json",
+        map: telecom5g((r) => geoAt(r, "approximate", "operator_commune_point")),
+        afterReview: relabelCommuneAr,
+      },
     ],
     // Cutover replayed the 2026-06-13 operator-map capture; fetch.mjs refreshes
     // pass their own capture date, so this pin only covers the (now dormant)
@@ -947,7 +986,7 @@ export const MIGRATIONS = {
       license: "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
       estimatedUniverse: null,
       coverageNote:
-        "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 31 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
+        "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records and 6 Mobilis records have their coordinates withheld because the operator's own wilaya and commune labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 40 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value, and 8 more carry a reviewed wilaya correction with the evidence that settled it. `commune_ar` is the official Arabic name from the national commune registry wherever a record resolves to a canonical commune, 3,013 of 4,093; the operator's own Arabic label publishes only where nothing resolves, because the operators rewrite that column between pulls and the 2026-10 Mobilis capture moved 46 records off the registry name. Other commune names remain unlinked free text.",
       titles: { en: "Algeria 5G coverage points", fr: "Points de couverture 5G en Algérie", ar: "نقاط تغطية الجيل الخامس في الجزائر" },
       stats: (rows) => ({
         technologies: [...new Set(rows.map((r) => r.technology))].sort(),
@@ -987,9 +1026,11 @@ export function writePackageV2({
   snapshots = {},
   stats = {},
   oldMeta = {},
+  runMeta = null,
   reviewLedger = undefined,
   retiredIds = null,
   retiredMigrations = null,
+  retiredPending = null,
 }) {
   const effectiveReviewLedger =
     reviewLedger === undefined ? loadReviewLedger(pkg) : reviewLedger;
@@ -1063,7 +1104,18 @@ export function writePackageV2({
     // before the mirrors are built is what keeps them in agreement. It runs
     // after the review ledger so a reviewed correction is folded too, and
     // before validateRecords so what is checked is what is written.
-    const rows = foldNameDashes(reviewed.records);
+    // A per-file relabelling that has to see the reviewed values, for the same reason
+    // the dash fold does: telecom resolves its Arabic commune labels from the commune
+    // registry against the wilaya a reviewed correction settled, not the one the
+    // operator declared. It is read from this file's own migration config rather than
+    // from the caller's `files` entry, because three callers build that entry by hand
+    // (the package fetchers, scripts/migrate-to-v2.mjs and scripts/apply-overrides.mjs)
+    // and a re-emit that quietly dropped the pass would revert the labels.
+    const afterReview =
+      f.afterReview ?? MIGRATIONS[pkg]?.files?.find((s) => s.file === f.file)?.afterReview;
+    const rows = foldNameDashes(
+      afterReview ? reviewed.records.map((row) => afterReview(row)) : reviewed.records,
+    );
     demoteSharedPoints(rows);
     demoteRoundedPlaceholders(rows);
     // Plain codepoint order: localeCompare() without a locale reads the ambient
@@ -1142,6 +1194,12 @@ export function writePackageV2({
     // `stats` carries values the caller computed that this writer cannot: a
     // relation file's count, for instance, which it never sees rows for.
     ...(meta.stats ? meta.stats(all, stats) : {}),
+    // `runMeta` carries what only THIS run knows and no set of records can
+    // reproduce: livraison's carried pins, the desks whose coordinate the run did
+    // not read. It is deliberately separate from `stats`, which validate-packages
+    // re-runs over the shipped records and compares, so a value that is not
+    // derivable from them must not be published through it.
+    ...(runMeta ?? {}),
     ...preserved,
   };
   pending.push({ path: join(dir, "metadata.json"), content: JSON.stringify(metadata, null, 2) + "\n" });
@@ -1153,13 +1211,27 @@ export function writePackageV2({
         `writePackageV2 [${pkg}]: retired id(s) are still live: ${overlap.slice(0, 5).join(", ")}`,
       );
     }
+    // A pending id is one this run did NOT carry, so a live one means the grace
+    // period was not cleared when the record came back: the ledger would reserve
+    // an id the package ships, which is the one thing it must never say.
+    const stillLive = [...(retiredPending?.keys() ?? [])].filter((id) => liveIds.has(String(id)));
+    if (stillLive.length) {
+      throw new Error(
+        `writePackageV2 [${pkg}]: pending id(s) are live again and were not cleared: ${stillLive.slice(0, 5).join(", ")}`,
+      );
+    }
     // An empty ledger says nothing, so it is not a file: a package that has never
     // retired an id must not ship a `retired-ids.json` in its npm tarball. Any
     // empty one already on disk is removed (readRetiredIds seeds the set from it,
-    // so an empty set here can only come from an empty or absent file).
+    // so an empty set here can only come from an empty or absent file). A ledger
+    // that reserves nothing yet but holds an id in its grace period is still a
+    // ledger, so it is written.
     pending.push({
       path: join(dir, "retired-ids.json"),
-      content: retiredIds.size ? retiredIdsContent(retiredIds, retiredMigrations) : null,
+      content:
+        retiredIds.size || retiredPending?.size
+          ? retiredIdsContent(retiredIds, retiredMigrations, retiredPending)
+          : null,
     });
   }
 
@@ -1387,19 +1459,29 @@ export function carryOverIds(
 const RETIRED_IDS_NOTE =
   "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.";
 
+const PENDING_IDS_NOTE =
+  "Ids missing from the latest refresh but not retired yet: an id retires only after it is missing from two consecutive refreshes. Until then it is reserved (no other record may take it) and its own record may still claim it back. `first_missing` is the refresh that first did not carry it; the other fields are what the package needs to recognise the record when it returns.";
+
 /** `migrations` says where a retired id's data went, for the ids whose record
  *  did not disappear but was folded into another one. A consumer holding the old
  *  id can then follow it instead of only learning that it is gone. Emitted only
  *  for ids the ledger actually reserves, and omitted entirely when there are
  *  none, so a package that has never merged a record ships the file it always
- *  shipped. */
-function retiredIdsContent(ids, migrations = null) {
+ *  shipped.
+ *
+ *  `pending` is the same idea one refresh earlier: ids this run stopped carrying,
+ *  held in a grace period instead of retired. Same rule, emitted only when a
+ *  package keeps one and omitted entirely otherwise. */
+function retiredIdsContent(ids, migrations = null, pending = null) {
   const reserved = [...ids].map(String).sort();
   const moved = {};
   for (const id of reserved) if (migrations?.[id]) moved[id] = migrations[id];
+  const waiting = {};
+  for (const id of [...(pending?.keys() ?? [])].map(String).sort()) waiting[id] = pending.get(id);
   return `${JSON.stringify({
     note: RETIRED_IDS_NOTE,
     ...(Object.keys(moved).length ? { migrations: moved } : {}),
+    ...(Object.keys(waiting).length ? { pending_note: PENDING_IDS_NOTE, pending: waiting } : {}),
     ids: reserved,
   }, null, 2)}\n`;
 }
@@ -1481,6 +1563,41 @@ export function readRetiredIds(dir) {
     throw new Error(`${path}: duplicate retired id`);
   }
   return new Set(document.ids);
+}
+
+/**
+ * The ledger's grace-period map: id → the entry that keeps it reserved while it
+ * waits out one refresh. Absent file or absent `pending` → an empty map.
+ *
+ * Only `first_missing` (an ISO date) is a shared contract: what else an entry
+ * carries is the package's own business, because recognising a record that comes
+ * back is package-specific (livraison keeps the desk's last published position,
+ * so a retitled card can be matched to it by distance).
+ */
+export function readPendingIds(dir) {
+  const path = join(dir, "retired-ids.json");
+  if (!existsSync(path)) return new Map();
+  const document = JSON.parse(readFileSync(path, "utf-8"));
+  const pending = document.pending;
+  if (pending == null) return new Map();
+  if (typeof pending !== "object" || Array.isArray(pending)) {
+    throw new Error(`${path}: expected an object at pending`);
+  }
+  const reserved = new Set((document.ids ?? []).map(String));
+  const out = new Map();
+  for (const [id, entry] of Object.entries(pending)) {
+    if (entry == null || typeof entry !== "object" || Array.isArray(entry)) {
+      throw new Error(`${path}: pending[${JSON.stringify(id)}] must be an object`);
+    }
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.first_missing ?? "")) {
+      throw new Error(`${path}: pending[${JSON.stringify(id)}].first_missing must be an ISO date`);
+    }
+    if (reserved.has(id)) {
+      throw new Error(`${path}: ${JSON.stringify(id)} is both pending and retired`);
+    }
+    out.set(id, entry);
+  }
+  return out;
 }
 
 /** Persist a ledger for a generator that has not moved to writePackageV2 yet.

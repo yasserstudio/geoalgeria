@@ -3060,8 +3060,8 @@
         "name": "المركز المتقدم افلاين الماثن",
         "name_ar": "المركز المتقدم افلاين الماثن",
         "wilaya_code": "06",
-        "commune_code": "0612",
-        "commune": "Smaoun",
+        "commune_code": "0618",
+        "commune": "Fenaia Il Maten",
         "lat": 36.646999,
         "lng": 4.77297,
         "geo_precision": "exact",
@@ -4579,8 +4579,8 @@
         "name": "وحدة القطاع عمر",
         "name_ar": "وحدة القطاع عمر",
         "wilaya_code": "10",
-        "commune_code": "1026",
-        "commune": "Djebahia",
+        "commune_code": "1016",
+        "commune": "Aomar",
         "lat": 36.4884,
         "lng": 3.76673,
         "geo_precision": "exact",
@@ -4858,8 +4858,8 @@
         "name": "الوحدة الثانوية بئر أغبالو",
         "name_ar": "الوحدة الثانوية بئر أغبالو",
         "wilaya_code": "10",
-        "commune_code": "1021",
-        "commune": "El Khabouzia",
+        "commune_code": "1036",
+        "commune": "Bir Ghbalou",
         "lat": 36.265099,
         "lng": 3.57948,
         "geo_precision": "exact",
@@ -5230,8 +5230,8 @@
         "name": "وحدة القطاع أحنيف",
         "name_ar": "وحدة القطاع أحنيف",
         "wilaya_code": "10",
-        "commune_code": "1043",
-        "commune": "Ath Mansour",
+        "commune_code": "1006",
+        "commune": "Hanif",
         "lat": 36.314301,
         "lng": 4.25838,
         "geo_precision": "exact",
@@ -6756,8 +6756,8 @@
         "name": "الوحدة الثانوية رحوية",
         "name_ar": "الوحدة الثانوية رحوية",
         "wilaya_code": "14",
-        "commune_code": "1434",
-        "commune": "Mechraa Sfa",
+        "commune_code": "1414",
+        "commune": "Rahouia",
         "lat": 35.536598,
         "lng": 1.02563,
         "geo_precision": "exact",
@@ -7283,8 +7283,8 @@
         "name": "الوحدة الثانوية الاربعاء نايث اراثن",
         "name_ar": "الوحدة الثانوية الاربعاء نايث اراثن",
         "wilaya_code": "15",
-        "commune_code": "1535",
-        "commune": "Ait Aggouacha",
+        "commune_code": "1521",
+        "commune": "Larbaa Nath Irathen",
         "lat": 36.6241,
         "lng": 4.21842,
         "geo_precision": "exact",
@@ -10514,8 +10514,8 @@
         "name": "الوحدة الثانوية بني ورثيلان",
         "name_ar": "الوحدة الثانوية بني ورثيلان",
         "wilaya_code": "19",
-        "commune_code": "1909",
-        "commune": "Beni Chebana",
+        "commune_code": "1922",
+        "commune": "Beni Ourtilane",
         "lat": 36.4417,
         "lng": 4.86324,
         "geo_precision": "exact",
@@ -13008,7 +13008,15 @@
         "statut": "POSTE AVANCE",
         "address": "RN44 CITE EL SATHA OUED ZIAD, OUED ANEB",
         "tel": "0470002318",
-        "fax": null
+        "fax": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-27",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/relation/1616108",
+          "https://www.openstreetmap.org/relation/1616122",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
       }
     },
     {
@@ -16721,8 +16729,8 @@
         "name": "وحدة القطاع بوفتيس",
         "name_ar": "وحدة القطاع بوفتيس",
         "wilaya_code": "31",
-        "commune_code": "3120",
-        "commune": "Ben Freha",
+        "commune_code": "3114",
+        "commune": "Boufatis",
         "lat": 35.678501,
         "lng": -0.408167,
         "geo_precision": "exact",
@@ -17651,8 +17659,8 @@
         "name": "المركز المتقدم الكاف لحمر",
         "name_ar": "المركز المتقدم الكاف لحمر",
         "wilaya_code": "32",
-        "commune_code": "3221",
-        "commune": "Sidi Slimane",
+        "commune_code": "3212",
+        "commune": "Kef El Ahmar",
         "lat": 33.852901,
         "lng": 0.648314,
         "geo_precision": "exact",
@@ -18030,8 +18038,8 @@
         "name": "مركز إسعاف الطرقات بومرقد_برج بوعريريج",
         "name_ar": "مركز إسعاف الطرقات بومرقد_برج بوعريريج",
         "wilaya_code": "34",
-        "commune_code": "3428",
-        "commune": "El Annasseur",
+        "commune_code": "3401",
+        "commune": "Bordj Bou Arreridj",
         "lat": 36.073898,
         "lng": 4.81737,
         "geo_precision": "exact",
@@ -20014,8 +20022,8 @@
         "name": "الوحدة الثانوية اميه ونسه",
         "name_ar": "الوحدة الثانوية اميه ونسه",
         "wilaya_code": "39",
-        "commune_code": "3903",
-        "commune": "Oued El Alenda",
+        "commune_code": "3926",
+        "commune": "Mih Ouansa",
         "lat": 33.209499,
         "lng": 6.71409,
         "geo_precision": "exact",
@@ -21223,8 +21231,8 @@
         "name": "وحدة القطاع عين تاقوريت",
         "name_ar": "وحدة القطاع عين تاقوريت",
         "wilaya_code": "42",
-        "commune_code": "4230",
-        "commune": "Bou Haroun",
+        "commune_code": "4217",
+        "commune": "Ain Tagourait",
         "lat": 36.607399,
         "lng": 2.62087,
         "geo_precision": "exact",
@@ -24578,8 +24586,8 @@
         "name": "الوحدة الثانوية تنيركوك",
         "name_ar": "الوحدة الثانوية تنيركوك",
         "wilaya_code": "49",
-        "commune_code": "4903",
-        "commune": "Ksar Kaddour",
+        "commune_code": "4905",
+        "commune": "Tinerkouk",
         "lat": 29.6961,
         "lng": 0.698181,
         "geo_precision": "exact",
@@ -24693,8 +24701,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.958699,
-          21.3335
+          0.9584882,
+          21.3332893
         ]
       },
       "properties": {
@@ -24704,10 +24712,10 @@
         "wilaya_code": "50",
         "commune_code": "5001",
         "commune": "Bordj Badji Mokhtar",
-        "lat": 21.3335,
-        "lng": 0.958699,
-        "geo_precision": "approximate",
-        "geo_method": "dgpc_map",
+        "lat": 21.3332893,
+        "lng": 0.9584882,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review",
         "source": "dgpc",
         "refs": {
           "dgpc": "352",
@@ -24716,7 +24724,13 @@
         "statut": "UNITE PRINCIPALE",
         "address": "RN06, BORDJ BADI MOKHTAR",
         "tel": "049329818",
-        "fax": "049329819"
+        "fax": "049329819",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-29",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/5647008622"
+        ]
       }
     },
     {
@@ -24778,7 +24792,13 @@
         "statut": "SIEGE DE DIRECTION WILAYA",
         "address": "NOUVELLE CITE ADMINISTRATIVE, BORDJ BADI MOKHTAR",
         "tel": "044009922",
-        "fax": "044009922"
+        "fax": "044009922",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-29",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/5647008622"
+        ]
       }
     },
     {
@@ -24786,8 +24806,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.06884,
-          34.436001
+          5.0682667,
+          34.4360897
         ]
       },
       "properties": {
@@ -24797,10 +24817,10 @@
         "wilaya_code": "51",
         "commune_code": "5101",
         "commune": "Ouled Djellal",
-        "lat": 34.436001,
-        "lng": 5.06884,
-        "geo_precision": "approximate",
-        "geo_method": "dgpc_map",
+        "lat": 34.4360897,
+        "lng": 5.0682667,
+        "geo_precision": "exact",
+        "geo_method": "osm_centroid_review",
         "source": "dgpc",
         "refs": {
           "dgpc": "476",
@@ -24809,7 +24829,13 @@
         "statut": "UNITE PRINCIPALE",
         "address": "RUE DE L'INDEPENDANCE OULED DJELLAL, OULED DJELLAL",
         "tel": "033661214",
-        "fax": "033661214"
+        "fax": "033661214",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-29",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org/way/307049829"
+        ]
       }
     },
     {
@@ -24871,7 +24897,13 @@
         "statut": "SIEGE DE DIRECTION WILAYA",
         "address": "CITE ADMINISTRATIVE NOUVELLE VILLE, OULED DJELLAL",
         "tel": "044245456",
-        "fax": "044245409"
+        "fax": "044245409",
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-29",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://www.openstreetmap.org/way/307049829"
+        ]
       }
     },
     {
@@ -25136,8 +25168,8 @@
         "name": "المركز المتقدم تيقنتور_إن صالح",
         "name_ar": "المركز المتقدم تيقنتور_إن صالح",
         "wilaya_code": "53",
-        "commune_code": "5303",
-        "commune": "Foggaret Ezzoua",
+        "commune_code": "5301",
+        "commune": "Ain Salah",
         "lat": 28.469801,
         "lng": 2.54076,
         "geo_precision": "exact",
@@ -25198,8 +25230,8 @@
         "name": "الوحدة الثانوية إن غار",
         "name_ar": "الوحدة الثانوية إن غار",
         "wilaya_code": "53",
-        "commune_code": "5301",
-        "commune": "Ain Salah",
+        "commune_code": "5302",
+        "commune": "Inghar",
         "lat": 27.1106,
         "lng": 1.90681,
         "geo_precision": "exact",
@@ -25477,8 +25509,8 @@
         "name": "مديرية الحماية المدنية توقرت",
         "name_ar": "مديرية الحماية المدنية توقرت",
         "wilaya_code": "55",
-        "commune_code": "5504",
-        "commune": "Nezla",
+        "commune_code": "5501",
+        "commune": "Touggourt",
         "lat": 33.110298,
         "lng": 6.04069,
         "geo_precision": "exact",
@@ -25508,8 +25540,8 @@
         "name": "الوحدة الرئيسية توقرت",
         "name_ar": "الوحدة الرئيسية توقرت",
         "wilaya_code": "55",
-        "commune_code": "5504",
-        "commune": "Nezla",
+        "commune_code": "5501",
+        "commune": "Touggourt",
         "lat": 33.122398,
         "lng": 6.04435,
         "geo_precision": "exact",
@@ -26965,8 +26997,8 @@
         "name": "الوحدة الثانوية مجدل",
         "name_ar": "الوحدة الثانوية مجدل",
         "wilaya_code": "68",
-        "commune_code": "2839",
-        "commune": "Menaâ",
+        "commune_code": "2842",
+        "commune": "Medjedel",
         "lat": 35.143398,
         "lng": 3.68326,
         "geo_precision": "exact",

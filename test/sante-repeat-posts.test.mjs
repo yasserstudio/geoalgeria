@@ -31,7 +31,7 @@ test("sante repeats: the report describes the merge it claims", () => {
   assert.equal(report.kept, report.kept_candidates.length);
 });
 
-// `msp_kept` is the post in the DUPLICATED language, not whichever post the
+// `msp_kept` is the post in the REPEATED language, not whichever post the
 // record is published under. For a bilingual record those are two different
 // posts: `refs.msp` is its French post and `refs.msp_twin` its Arabic one, so an
 // Arabic repeat pair that merges into a bilingual record has to name the twin.
@@ -221,7 +221,7 @@ test("sante repeats: a cross-wilaya merge never moves a record into the unplaced
   assert.equal(ok.slots[0].ar.wilayaCode, 18, "the surviving record stays in the placed wilaya");
   const merged = ok.verdicts.find((v) => v.merged);
   assert.equal(merged.reason, "same_title_one_placement");
-  assert.equal(merged.msp_kept, "4729", "the kept post is the one in the duplicated language");
+  assert.equal(merged.msp_kept, "4729", "the kept post is the one in the repeated language");
   assert.equal(merged.msp_repeat, "4727");
 });
 

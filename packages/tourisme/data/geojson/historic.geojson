@@ -9550,34 +9550,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.069175,
-          36.7842127
-        ]
-      },
-      "properties": {
-        "id": "historic-251",
-        "name": "قيادة القوات البحرية",
-        "name_fr": "Commandement des Forces Navales",
-        "name_ar": "قيادة القوات البحرية",
-        "wilaya_code": "16",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.7842127,
-        "lng": 3.069175,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "155362197"
-        },
-        "type": "area"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           2.748355,
           36.2616984
         ]
@@ -10018,34 +9990,6 @@
         "source": "osm",
         "refs": {
           "osm": "369151778"
-        },
-        "type": "building"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.2887441,
-          36.2480698
-        ]
-      },
-      "properties": {
-        "id": "historic-267",
-        "name": "Gendarmerie de Oued Athmania درك وادي العثمانية",
-        "name_fr": "Gendarmerie de Oued Athmania",
-        "name_ar": "درك وادي العثمانية",
-        "wilaya_code": "43",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.2480698,
-        "lng": 6.2887441,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "1329600495"
         },
         "type": "building"
       }
@@ -13594,32 +13538,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.0251845,
-          27.1752791
-        ]
-      },
-      "properties": {
-        "id": "historic-385",
-        "name": "قاعدة الشهيد هداد",
-        "wilaya_code": "37",
-        "commune_code": null,
-        "commune": null,
-        "lat": 27.1752791,
-        "lng": -8.0251845,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "10136173319"
-        },
-        "type": "castle"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           6.9080181,
           33.4801359
         ]
@@ -13912,33 +13830,6 @@
         "source": "osm",
         "refs": {
           "osm": "1810055742"
-        },
-        "type": "castle"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.1779717,
-          36.1712267
-        ]
-      },
-      "properties": {
-        "id": "historic-396",
-        "name": "cite militaire chelghoum fat",
-        "name_ar": "cite militaire chelghoum fat",
-        "wilaya_code": "43",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.1712267,
-        "lng": 6.1779717,
-        "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "refs": {
-          "osm": "4571831389"
         },
         "type": "castle"
       }

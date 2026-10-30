@@ -915,6 +915,39 @@
       "refusal": null
     },
     {
+      "key": "hhd-express",
+      "name": "HHD Express: agency network",
+      "publisher": "SARL HHD Express",
+      "metadata_keys": [
+        "hhd-express"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "HHD Express",
+        "url": "https://hhd.dz/"
+      },
+      "notice": "HHD Express: agency network: data © HHD Express, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://hhd.dz/",
+        "repo_path": null,
+        "retrieved_at": "2026-10-25",
+        "note": "No open reuse licence is recorded; the footer carries a copyright line for SARL HHD Express and nothing else. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-04-25",
+      "notes": null,
+      "refusal": null
+    },
+    {
       "key": "jora",
       "name": "Journal Officiel de la République Algérienne: laws and decrees",
       "publisher": "Secrétariat Général du Gouvernement",
@@ -1024,7 +1057,8 @@
       "name": "Ministry of Higher Education and Scientific Research (MESRS)",
       "publisher": "MESRS",
       "metadata_keys": [
-        "mesrs"
+        "mesrs",
+        "bac-2026"
       ],
       "access_class": "public-access",
       "rights_class": "rights-unconfirmed",
@@ -1049,7 +1083,7 @@
         "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
-      "notes": null,
+      "notes": "Two of the ministry's publications travel under this one record, because both are the same publisher's factual listings on the same basis: the university-network pages on mesrs.dz (`mesrs`), and the BAC 2026 placement file (`bac-2026`), which the ministry publishes as a PDF hosted on esi.dz. Only a projection of the placement file's institution rows is committed, code and official French name, never the PDF and never its per-filiere averages. `mesrs+bac-2026` is the composite a record carries when the listing supplies the record and the placement file its current name.",
       "refusal": null
     },
     {
@@ -1387,6 +1421,39 @@
       "refusal": null
     },
     {
+      "key": "overture",
+      "name": "Overture Maps Places",
+      "publisher": "Overture Maps Foundation",
+      "metadata_keys": [
+        "overture"
+      ],
+      "access_class": "public-access",
+      "rights_class": "open-licensed",
+      "rights_basis": "licence",
+      "license_expression": "CDLA-Permissive-2.0",
+      "license_url": "https://cdla.dev/permissive-2-0/",
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Overture Maps Foundation",
+        "url": "https://overturemaps.org"
+      },
+      "notice": "Contains Overture Maps Places data, made available under CDLA-Permissive-2.0. Attribution: Overture Maps Foundation.",
+      "evidence": {
+        "source_url": "https://docs.overturemaps.org/attribution/",
+        "repo_path": "sources/enseignement-superieur/manifest.json",
+        "retrieved_at": "2026-10-29",
+        "note": "Overture's attribution page states the Places theme is CDLA-Permissive-2.0 with attribution to the Overture Maps Foundation; rows whose sources list Foursquare also carry Foursquare's Apache-2.0 notice. The committed rows are all Meta-sourced."
+      },
+      "review_after": "2027-04-29",
+      "notes": "Used as a single open campus lead for 23 enseignement-superieur records (Owner decision of 2026-10-29). CDLA-Permissive-2.0 has no share-alike clause.",
+      "refusal": null
+    },
+    {
       "key": "patrimoine",
       "name": "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)",
       "publisher": "Ministry of Culture",
@@ -1507,6 +1574,39 @@
       "refusal": null
     },
     {
+      "key": "swift-express",
+      "name": "Swift Express: agency network",
+      "publisher": "Swift Express",
+      "metadata_keys": [
+        "swift-express"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "Swift Express",
+        "url": "https://www.swiftexpress.org/fr/offices"
+      },
+      "notice": "Swift Express: agency network: data © Swift Express, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.swiftexpress.org/fr/offices",
+        "repo_path": null,
+        "retrieved_at": "2026-10-25",
+        "note": "No open reuse licence is recorded; the footer states copyright and links the terms and privacy pages only. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-04-25",
+      "notes": null,
+      "refusal": null
+    },
+    {
       "key": "wikidata",
       "name": "Wikidata structured data",
       "publisher": "Wikimedia Foundation",
@@ -1602,6 +1702,39 @@
         "note": "No open reuse licence is recorded. Cleared for cdn and mobile-pack because Web and npm already publish it."
       },
       "review_after": "2027-03-02",
+      "notes": null,
+      "refusal": null
+    },
+    {
+      "key": "zr-express",
+      "name": "ZR Express: offices list",
+      "publisher": "ZR Express",
+      "metadata_keys": [
+        "zr-express"
+      ],
+      "access_class": "public-access",
+      "rights_class": "rights-unconfirmed",
+      "rights_basis": "none-recorded",
+      "license_expression": null,
+      "license_url": null,
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "ZR Express",
+        "url": "https://www.zrexpress.net/en/offices"
+      },
+      "notice": "ZR Express: offices list: data © ZR Express, redistributed for reference; no open reuse licence is recorded.",
+      "evidence": {
+        "source_url": "https://www.zrexpress.net/en/offices",
+        "repo_path": null,
+        "retrieved_at": "2026-10-25",
+        "note": "No open reuse licence is recorded; the footer states copyright and links a privacy policy only. Cleared for cdn and mobile-pack because Web and npm already publish it."
+      },
+      "review_after": "2027-04-25",
       "notes": null,
       "refusal": null
     }

@@ -1,0 +1,51 @@
+{
+  "run": "2026-10-28",
+  "package": "enseignement-superieur",
+  "rule": "docs/adr/0001: a record becomes exact only when two independent open sources agree within 2 km and are not a Copied claim within 50 m of each other; Nominatim, api.openstreetmap.org and Overpass are all OpenStreetMap, one source, so every Claim below is single-source and nothing is promoted.",
+  "network": "Candidates come from the committed capture sources/enseignement-superieur/osm-campuses.json (1265 amenity=university|college elements, retrieved 2026-08-03, sha256 bce56f35b888adfaeefd3613bb69e5e60f62764ac2e1ed9315d1da33b6e999cf), one source. The second-source pass of the same run (research/enseignement-superieur/second-source-votes-2026-10-28.json) re-read each candidate live from api.openstreetmap.org and looked for its Wikidata P625; the records it promoted are exact and so are no longer here, and the verdict for every record still queued (copied, disagree or no second source) is in that file. Overpass and the institutions' own sites did not answer on 2026-10-28.",
+  "counts": {
+    "approximate_reviewed": 6,
+    "queued_single_source": 0,
+    "no_open_candidate": 6,
+    "promoted": 0
+  },
+  "queue": [],
+  "no_candidate": [
+    {
+      "id": "00109",
+      "name_ar": "المدرسة العليا لمهن البناء بلوزداد.الجزائر",
+      "wilaya_code": "16",
+      "geo_method": "wilaya"
+    },
+    {
+      "id": "00128",
+      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بالبويرة",
+      "wilaya_code": "10",
+      "geo_method": "wilaya"
+    },
+    {
+      "id": "00140",
+      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بسكيكدة",
+      "wilaya_code": "21",
+      "geo_method": "wilaya"
+    },
+    {
+      "id": "00148",
+      "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي للقابلات بالجزائر",
+      "wilaya_code": "16",
+      "geo_method": "wilaya"
+    },
+    {
+      "id": "00158",
+      "name_ar": "معهد التكوين في التأمينات والتسيير بن عكنون.الجزائر",
+      "wilaya_code": "16",
+      "geo_method": "wilaya"
+    },
+    {
+      "id": "00187",
+      "name": "Institut national supérieur du cinéma Mohamed Lakhdar Hamina (Koléa, Tipaza)",
+      "wilaya_code": "42",
+      "geo_method": "commune"
+    }
+  ]
+}

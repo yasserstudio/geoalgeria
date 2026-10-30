@@ -7,9 +7,10 @@
 // WHY THIS EXISTS. `writePackageV2` loads a package's override ledger on every emit
 // (quality/overrides/README.md), so landing a ledger entry means re-running the
 // package's writer. Not every package has one to run offline. `banques` does:
-// `npm run build` re-emits from committed records. `tourisme` has no generator at all
-// (its package.json scripts are `test` alone), so this runner is the ONLY way to apply
-// a ledger there. `emploi`, `jeunesse`, `sports` and `poste` have only `npm run fetch`,
+// `npm run build` re-emits from committed records, and so does `tourisme` since the
+// military exclusion of 2026-10-29 needed a build to live in (it never had a fetcher,
+// so its committed records are its source). `emploi`, `jeunesse`, `sports` and `poste`
+// have only `npm run fetch`,
 // which needs the live upstream (the ANEM portal's JavaScript bundle, the MJS SIG,
 // BaridiMap), so applying a ledger entry would otherwise mean a network pull nobody can
 // reproduce. Hand-editing the emitted JSON instead is what CONTRIBUTING.md forbids.

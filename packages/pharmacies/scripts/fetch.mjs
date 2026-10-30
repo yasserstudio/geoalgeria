@@ -196,9 +196,23 @@ function parseAddress(t) {
   return parts.length ? parts.join(", ") : null;
 }
 
+// Military facilities, by OpenStreetMap element id. Owner decision of 2026-10-29:
+// no military location anywhere in the project, so these never enter the package,
+// whatever a later refresh renames them to. Keyed on the element id rather than a
+// name pattern because the id is the stable source key and a name test would also
+// drop civilian officines that merely mention the army: node/5556240132 (published
+// as 02-00095) is a Boukadir pharmacy whose `operator` only names the military
+// insurance convention, and it stays. The id each excluded element published under
+// is retired in data/retired-ids.json and never reused.
+//   - node/6954436786 "Pharmacie militaire", Sidi Bel-Abbes (published as 22-00057)
+const MILITARY_OSM_IDS = new Set(["node/6954436786"]);
+
 function normOSM(elements, publishedOsmIds = new Set()) {
   const rows = [];
+  let military = 0;
   for (const el of elements) {
+    // Before anything else, so a military element is never even a merge target.
+    if (MILITARY_OSM_IDS.has(`${el.type}/${el.id}`)) { military++; continue; }
     const lat = el.lat ?? el.center?.lat;
     const lng = el.lon ?? el.center?.lon;
     if (!inAlgeria(lat, lng)) continue;
@@ -246,6 +260,7 @@ function normOSM(elements, publishedOsmIds = new Set()) {
   // value wins wherever both state one, and the disagreement is reported rather
   // than resolved. Each merge becomes a forward in retired-ids.json, so a consumer
   // holding the retired id still reaches the pharmacy in one hop.
+  if (military) console.log(`  military exclusion: ${military} element(s) left out (Owner decision 2026-10-29)`);
   const { rows: mergedRows, merged, conflicts } = mergeDoubleMappings(rows, {
     radiusM: 40,
     ignoredWords: PHARMACY_WORDS,

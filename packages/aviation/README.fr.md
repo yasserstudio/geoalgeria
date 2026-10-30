@@ -45,8 +45,8 @@ const inOran = aviation.airportsByWilaya(31);     // aéroports de la wilaya 31
 | Jeu de données | Nombre | Notes |
 | --- | --- | --- |
 | Aéroports civils | **36** | nom officiel, codes OACI et IATA, adresse, téléphone, site web, coordonnées |
-| Liaisons sans escale | **157** | liaisons directionnelles avec exploitant, statut, niveau de preuve et source |
-| Liaisons planifiées | **20** | annoncées, pas encore exploitées ; une collection distincte, jamais un statut |
+| Liaisons sans escale | **169** | liaisons directionnelles avec exploitant, statut, niveau de preuve et liste de citations |
+| Liaisons planifiées | **8** | annoncées, pas encore exploitées ; une collection distincte, jamais un statut |
 
 Couvrant **33 wilayas**, chaque aéroport est géocodé et porte un code IATA. `wilaya_code`
 est lié au modèle 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
@@ -57,6 +57,22 @@ les aéroports étrangers, le style ANAC pour les algériens), plus `name_en` et
 appariés sur Wikidata par code IATA et vérifiés contre la coordonnée livrée. Les routes changent au fil
 des saisons, donc `metadata.routes_as_of` date la dernière vérification du réseau contre
 les horaires : un instantané daté, pas un fait permanent.
+
+Chaque liaison livre ses citations sous forme de simples liens. `source` est la citation
+principale et `sources` réunit tous les liens derrière la ligne, car une même ligne peut
+reposer sur plusieurs documents : un communiqué de lancement pour la liaison et ses
+dates, un rapport d'ouverture des ventes plus ancien pour le numéro de vol, un rapport de
+programme pour les jours.
+
+| Champ | Type | Notes |
+| --- | --- | --- |
+| `source` | `string` | la citation principale, toujours égale à `sources[0]` |
+| `sources` | `string[]` | tous les liens derrière la ligne, dans une liste ordonnée, jamais vide, sans doublon, `sources[0]` étant `source` lui-même |
+
+Dans le CSV, `sources` tient dans une colonne à côté de `source`, les liens séparés par une
+espace, comme la colonne `days` : une URL ne contient pas d'espace, la cellule se
+découpe donc proprement. Dans le GeoJSON, c'est un vrai tableau dans `properties`. Ajouté
+en 2.9.0 ; `source` garde son sens et sa valeur.
 
 33 des 36 viennent de la carte de l'ANAC. Les trois autres, Hassi R'Mel (`HRM`), Mécheria
 (`MZW`) et Laghouat (`LOO`), en sont absents et viennent d'OurAirports : ils portent

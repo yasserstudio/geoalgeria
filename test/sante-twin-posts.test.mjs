@@ -128,14 +128,19 @@ test("sante twins: merging the Algiers EHS pair restores exact precision", () =>
 // The registry publishes the two posts at consecutive ids, but not always: a
 // wilaya entered out of order leaves a third post between them. A gap of two is
 // allowed on stronger name evidence, and this pins which pairs that reached.
+// Only the automatic rule is bound by the gap: a pair in the evidence-backed
+// table is asserted by hand on a second source and reaches as far as that source
+// does, which is the whole reason the table exists (test/sante-pair-table.test.mjs).
 test("sante twins: a gap of two is the exception and each case is named", () => {
-  const far = report.pairs.filter((pair) => pair.msp_gap > 1);
+  const byRule = report.pairs.filter((pair) => pair.decided_by === "rule");
+  assert.equal(byRule.length, report.recovered_by_rule);
+  const far = byRule.filter((pair) => pair.msp_gap > 1);
   assert.deepEqual(
     far.map((pair) => `${pair.msp_fr}/${pair.msp_ar}`).sort(),
     ["3667/3669", "4399/4401", "4527/4529"],
     "the gap-two pairs are the Bechar mother-and-child EHS and the Barika and Abalessa EPSPs",
   );
-  for (const pair of far) assert.equal(pair.msp_gap, 2, "nothing further apart than two ever pairs");
+  for (const pair of far) assert.equal(pair.msp_gap, 2, "the rule never pairs anything further apart than two");
   // the Oran gynaecology EHS is two posts from a different maternity it shares a
   // specialty with, and the gate is what keeps them apart
   const oran = report.refused_candidates.find((c) => c.msp_fr === "5130" && c.msp_ar === "5128");
