@@ -71,7 +71,8 @@ reviewed-correction ledger: four rows in
 `reviewed_at: "2026-10-28"`, each carrying the OSM object, the distance and the
 reason (ADR 0001 rule 10: the ledger, not the page, is the record). A `keep`
 decision changes no published field, so no coordinate, record or file moved; what
-it does is close the candidate, so it stops coming back to the queue.
+it does is close the candidate, so it stops coming back to the queue. **Three of
+those four rows are gone again as of 2026-10-30; see the section below.**
 `review-2026-10-27.json` stays as the frozen run it is, the Candidates, the
 Claims, the engine's own answer and the measurement per record, evidence for the
 queue rather than a verdict on it, and `test/arcminute-288-review.test.mjs`
@@ -98,3 +99,25 @@ recorded per record and runs from about 1.1 km around Bouira and Khraissia to ab
 22 km in the Sahara. A "nothing found" verdict is therefore weaker in a city than in
 the desert, which does not weaken any of the 15 demotions and is why no absence is
 claimed as a fact anywhere in the file.
+
+## Superseded for the three parks on 2026-10-30
+
+Everything above records the 2026-10-28 ruling as it was made, and the run file
+stays frozen. Two days later the ground under three of the four moved: the
+2026-10-29 park merge retired `park-25`, `park-29` and `park-31` into `park-2`,
+`park-6` and `park-1`, the OpenStreetMap twins of the same national parks, and the
+Owner ruled on 2026-10-30 that the parks ship as accurate locations. The survivors
+carry the measured OpenStreetMap point as `exact`/`osm`, which is the move the
+28 Oct ruling had declined, so that ruling no longer describes what ships.
+
+The ledger therefore holds one of those four rows now, `historic-91`, not four.
+The three park decisions were removed rather than re-keyed onto the survivors: a
+ruling made on `park-25` was not made on `park-2`, and a decision whose
+`record_id` is no longer published stops every later rebuild
+(`applyReviewedOverrides` refuses an unknown record). The reason is in the `note`
+of [`quality/overrides/tourisme.json`](../../quality/overrides/tourisme.json), the
+forward for each id is in `packages/tourisme/data/retired-ids.json`, and
+`test/arcminute-288-review.test.mjs` follows that forward instead of the id: for a
+superseded record it asserts the id is gone and that its survivor ships the OSM
+object the run read, as `exact`/`osm`. The supersession is a checked fact rather
+than an absence, and `historic-91` keeps every assertion it had.

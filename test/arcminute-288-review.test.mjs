@@ -22,6 +22,17 @@
 // each record of the run to its row in quality/overrides/tourisme.json and the two
 // cannot drift apart. A `keep` row changes no published field, which is why the points
 // asserted above are still the points the run queued.
+//
+// THEN THREE OF THE FOUR WERE SUPERSEDED ON 2026-10-30. The 2026-10-29 park merge
+// retired park-25, park-29 and park-31 into park-2, park-6 and park-1, the
+// OpenStreetMap twins of the same national parks, and the Owner ruled that the parks
+// ship as accurate locations: the measured OpenStreetMap point, not the arcminute
+// placeholder the 28 Oct ruling kept. So those three ids have no ledger row any more
+// (quality/overrides/tourisme.json says why), and this file follows the forward instead
+// of the id: packages/tourisme/data/retired-ids.json names the survivor, and the two
+// tests below assert that the survivor exists and ships `exact`/`osm`. A retired id is
+// therefore still checked, in the one direction that is now true of it, rather than
+// skipped. historic-91, the fourth, is live and keeps every original assertion.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -35,6 +46,12 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (...p) => JSON.parse(readFileSync(join(ROOT, ...p), "utf-8"));
 
 const review = read("research", "_arcminute-288", "review-2026-10-27.json");
+
+// The ids the 2026-10-29 park merge retired into a survivor, read from the package's own
+// retirement ledger rather than listed here, so a later merge cannot leave this file
+// asserting a forward the data no longer states.
+const MIGRATIONS = read("packages", "tourisme", "data", "retired-ids.json").migrations ?? {};
+const supersededBy = (recordId) => MIGRATIONS[recordId]?.merged_into ?? null;
 
 // The engine's source names are the commune-centre layers' (`osm_seat` is a chef-lieu
 // admin_centre node). A sector record's reading is an object for the facility itself,
@@ -86,25 +103,58 @@ test("the engine still reaches every recorded outcome", () => {
   }
 });
 
-test("all four still ship the point and the precision they were queued with", () => {
+test("each queued record still ships what it was queued with, or its survivor ships a measured point", () => {
   const files = new Map();
+  let live = 0;
+  let superseded = 0;
   for (const r of review.records) {
     if (!files.has(r.file)) files.set(r.file, read(...r.file.split("/")));
-    const record = files.get(r.file).find((row) => row.id === r.record_id);
-    assert.ok(record, `${r.record_id}: no longer in ${r.file}`);
+    const rows = files.get(r.file);
+    const into = supersededBy(r.record_id);
+    if (into) {
+      // The 2026-10-30 ruling: the id is gone and the survivor carries the measured
+      // point, which is the opposite of the arcminute placeholder the run queued. Assert
+      // that, so the supersession is a checked fact and not an absence.
+      assert.equal(rows.find((row) => row.id === r.record_id), undefined, `${r.record_id}: retired into ${into} but still published`);
+      const survivor = rows.find((row) => row.id === into);
+      assert.ok(survivor, `${r.record_id}: retired into ${into}, which is not in ${r.file}`);
+      assert.equal(survivor.geo_precision, "exact", `${into}: the survivor of ${r.record_id} ships an exact point`);
+      assert.equal(survivor.geo_method, "osm", `${into}: the survivor of ${r.record_id} ships the OpenStreetMap point`);
+      assert.equal(survivor.refs?.osm, r.osm.id, `${into}: the survivor must be the OSM object the run read`);
+      superseded++;
+      continue;
+    }
+    const record = rows.find((row) => row.id === r.record_id);
+    assert.ok(record, `${r.record_id}: no longer in ${r.file} and not retired into a survivor`);
     assert.deepEqual([record.lng, record.lat], r.published_point, `${r.record_id}: the published point moved`);
     assert.equal(record.geo_precision, "approximate", `${r.record_id}: precision`);
     assert.equal(record.wilaya_code, r.wilaya_code, `${r.record_id}: wilaya_code`);
+    live++;
   }
+  assert.equal(live + superseded, review.records.length);
+  assert.equal(superseded, 3, "the 2026-10-29 park merge superseded exactly three of the four");
 });
 
-test("the Owner's 2026-10-28 rejection closes all four in the tourisme ledger", () => {
+test("the Owner's 2026-10-28 rejection closes every candidate the park merge did not supersede", () => {
   const ledger = read("quality", "overrides", "tourisme.json");
+  let closed = 0;
   for (const r of review.records) {
     const row = ledger.decisions.find(
       (d) => d.record_id === r.record_id && d.file === r.file.split("/").pop(),
     );
+    if (supersededBy(r.record_id)) {
+      // A decision on a retired id stops any rebuild (applyReviewedOverrides refuses an
+      // unknown record), so the supersession has to have taken the row with it.
+      assert.equal(row, undefined, `${r.record_id}: superseded on 2026-10-30, so its ledger row must be gone`);
+      assert.match(
+        ledger.note ?? "",
+        new RegExp(`\\b${r.record_id}\\b`),
+        `${r.record_id}: the ledger must say why its decision was removed`,
+      );
+      continue;
+    }
     assert.ok(row, `${r.record_id}: no ledger row closes this candidate`);
+    closed++;
     assert.equal(row.publish_action, "keep", `${r.record_id}: the published point is kept`);
     assert.equal(row.status, "verified", `${r.record_id}: status`);
     assert.equal(row.reviewer, "owner", `${r.record_id}: the Owner is the reviewer`);
@@ -125,4 +175,5 @@ test("the Owner's 2026-10-28 rejection closes all four in the tourisme ledger", 
       `${r.record_id}: the row must cite the OSM object the run read`,
     );
   }
+  assert.equal(closed, 1, "historic-91 is the one candidate the 28 Oct ruling still closes");
 });
