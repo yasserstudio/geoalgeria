@@ -71,7 +71,7 @@ Téléchargé depuis le GeoJSON de la DGPC (`dgpc.dz/dgpc2/unite.geojson`). Les 
 
 ## Précision & couverture
 
-> **C'est le réseau complet publié par la DGPC, 880 unités.** Six points DGPC grossiers disposent désormais de coordonnées d'unité étayées ; 23 points coïncidents, issus d'un centroïde de polygone ou encore grossiers restent honnêtement `approximate`, et 857 sont `exact`. Il n'y a pas de nom français dans la source, donc `name_fr` n'est pas dérivé, rien n'est traduit automatiquement. La commune est un rapprochement par nom (exact, puis à deux éditions près) puis par contour (au mieux) ; **la wilaya est dérivée de la géométrie puis recoupée avec le code propre à la DGPC**: les conflits entre codes pré-réforme (une unité frontalière mal classée par un contour simplifié) se résolvent au code officiel de la DGPC.
+> **C'est le réseau complet publié par la DGPC, 880 unités.** Six points DGPC grossiers disposent désormais de coordonnées d'unité étayées ; 21 points coïncidents, issus d'un centroïde de polygone ou encore grossiers restent honnêtement `approximate`, et 859 sont `exact`. Il n'y a pas de nom français dans la source, donc `name_fr` n'est pas dérivé, rien n'est traduit automatiquement. La commune est un rapprochement par nom (exact, puis à deux éditions près) puis par contour (au mieux) ; **la wilaya est dérivée de la géométrie puis recoupée avec le code propre à la DGPC**: les conflits entre codes pré-réforme (une unité frontalière mal classée par un contour simplifié) se résolvent au code officiel de la DGPC.
 >
 > Le `cod_wilaya` d'origine de la DGPC est pré-réforme 2026 et n'est conservé que dans `refs.dgpc_wilaya`. Utilisez `wilaya_code` (le code post-réforme dérivé de la géométrie) pour tout rattachement wilaya.
 

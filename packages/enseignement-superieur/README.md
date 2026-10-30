@@ -55,7 +55,7 @@ const privates = es.institutionsBySector("private");      // the 19 private inst
 By **sector**: 152 public · 19 licensed private. Of the public institutions, 34 are
 establishments **under other ministries** that MESRS supervises pedagogically, read
 `supervisory_ministry` (e.g. `"Ministère de la Santé"` for the 25 paramedical institutes), which is `null` for the
-MESRS network itself. Military schools are not published (Owner decision, 2026-10-29).
+MESRS network itself. Armed-forces schools are not published (Owner decision, 2026-10-29).
 
 Spanning **51 wilayas**. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model (69-wilaya scheme).

@@ -56,12 +56,12 @@ const ruins = tourisme.byLayer("historic");       // 1,180 historic sites
 Spanning **69 wilayas**. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model (69-wilaya scheme).
 
-**Military places are out of scope.** 22 military and gendarmerie facilities in service
-were removed on 2026-10-29: 15 on the lodging layer (military hotels, an army rest centre,
-the national army club, military housing), four on the historic layer (military housing, a
-naval command, a gendarmerie brigade, a named army base) and three gendarmerie units the
-attractions layer had picked up. Their ids are reserved for good in
-[`data/retired-ids.json`](data/retired-ids.json). Colonial-era military heritage stays:
+**Armed-forces places are out of scope.** 22 armed-forces and gendarmerie facilities in
+service were removed on 2026-10-29: 15 on the lodging layer (armed-forces hotels, an army
+rest centre, the national army club, armed-forces housing), four on the historic layer
+(armed-forces housing, a naval command, a gendarmerie brigade, a named army base) and three
+gendarmerie units the attractions layer had picked up. Their ids are reserved for good in
+[`data/retired-ids.json`](data/retired-ids.json). Colonial-era armed-forces heritage stays:
 old forts, city walls, barracks and former French army camps are published as heritage.
 
 ## Formats

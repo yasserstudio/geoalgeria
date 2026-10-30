@@ -109,7 +109,7 @@ identifier comme structures de soins.
 | `sante_overlap` | 86 | l'élément OSM est déjà publié par un enregistrement **hospitalier** (CHU/EPH/EHS) de `@geoalgeria/sante`, quel que soit son nom ici. Les éléments référencés par un enregistrement *EPSP* de sante ne sont pas exclus : la référence y sert d'ancrage de géocodage sur le siège de l'entité, et l'élément visé est en général une structure que ce paquet doit porter |
 | `sante_part` | 7 | un autre élément OSM d'un hôpital déjà publié par `@geoalgeria/sante` : tagué hôpital, à moins de 40 m de l'élément de sante, et portant la rue et la ville de cet élément |
 | `sante_double_mapping` | 1 | un second élément OSM pour un lieu publié par `@geoalgeria/sante`, à moins de 40 m de l'élément de sante et partageant avec lui une clé de nom Loose |
-| `military` | 1 | une structure militaire. Aucun emplacement militaire ne figure dans le projet (décision du projet, 2026-10-29) : l'élément est exclu par son identifiant OSM, quel que soit le nom qu'une modification ultérieure lui donne |
+| `military` | 1 | une structure des forces armées. Aucun emplacement des forces armées ne figure dans le projet (décision du projet, 2026-10-29) : l'élément est exclu par son identifiant OSM, quel que soit le nom qu'une modification ultérieure lui donne |
 | `cabinet` | 96 | cabinet individuel : le mot cabinet, ou un nom qui n'est qu'un praticien (Dr X, الطبيب …) |
 | `epsp_entity` | 105 | l'entité administrative EPSP elle-même (ses structures restent) |
 | `hospital_subfeature` | 54 | partie d'un hôpital cartographiée à part : une entrée, un service, « Service de radiologie », un simple « urgences » |

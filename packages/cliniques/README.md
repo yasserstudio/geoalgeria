@@ -107,7 +107,7 @@ dropped before anything is emitted:
 | `sante_overlap` | 86 | the OSM element is one a `@geoalgeria/sante` **hospital-tier** record (CHU/EPH/EHS) already ships, whatever it is named here. Elements referenced by a sante *EPSP* record are not excluded: there the reference is a geocoding anchor on the entity's seat and the element is usually a facility this package should carry |
 | `sante_part` | 7 | another OSM element of a hospital `@geoalgeria/sante` already ships: tagged as a hospital, within 40 m of sante's own element, and carrying that element's street and city |
 | `sante_double_mapping` | 1 | a second OSM element for a place `@geoalgeria/sante` publishes, within 40 m of sante's element and sharing a Loose name key with it |
-| `military` | 1 | a military facility. No military location appears anywhere in the project (project decision, 2026-10-29), so the element is excluded by its OSM id, whatever a later edit renames it to |
+| `military` | 1 | an armed-forces facility. No armed-forces location appears anywhere in the project (project decision, 2026-10-29), so the element is excluded by its OSM id, whatever a later edit renames it to |
 | `cabinet` | 96 | single-practitioner practice: the word cabinet, or a name that is just a practitioner (Dr X, الطبيب …) |
 | `epsp_entity` | 105 | the EPSP administrative entity itself (its facilities stay) |
 | `hospital_subfeature` | 54 | part of a hospital mapped as its own point: an entrance, a ward, "Service de radiologie", a bare "urgences". When the name also says hospital the record is reported as `hopital` instead |

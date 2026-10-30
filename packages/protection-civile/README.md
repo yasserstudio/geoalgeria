@@ -84,7 +84,7 @@ Downloaded from the DGPC's own GeoJSON (`dgpc.dz/dgpc2/unite.geojson`). Coordina
 
 ## On accuracy & coverage
 
-> **This is the DGPC's complete published unit network, 880 units.** Six coarse DGPC points have evidence-backed unit coordinates; 23 unresolved coincident, polygon-centroid, or coarse points remain honestly marked `approximate`, and 857 are `exact`. There is no French name in the source, so `name_fr` is not derived, nothing is machine-translated. Commune is name-matched (exactly, then within two edits), then outline-matched, best-effort; **wilaya is boundary-derived, then cross-checked against the DGPC's own code**: conflicts among pre-reform codes (a border unit misfiled by a simplified outline) resolve to the DGPC's official code.
+> **This is the DGPC's complete published unit network, 880 units.** Six coarse DGPC points have evidence-backed unit coordinates; 21 unresolved coincident, polygon-centroid, or coarse points remain honestly marked `approximate`, and 859 are `exact`. There is no French name in the source, so `name_fr` is not derived, nothing is machine-translated. Commune is name-matched (exactly, then within two edits), then outline-matched, best-effort; **wilaya is boundary-derived, then cross-checked against the DGPC's own code**: conflicts among pre-reform codes (a border unit misfiled by a simplified outline) resolve to the DGPC's official code.
 >
 > The DGPC's original `cod_wilaya` is pre-2026-reform and is kept only as `refs.dgpc_wilaya`. Use `wilaya_code` (the geometry-derived, post-reform code) for any wilaya join.
 
