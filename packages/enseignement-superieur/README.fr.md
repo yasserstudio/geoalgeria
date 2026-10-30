@@ -56,7 +56,7 @@ const privates = es.institutionsBySector("private");      // les 19 établisseme
 Par **secteur** : 152 publiques · 19 privées agréées. Parmi les établissements publics, 34 relèvent
 **d'autres ministères** que le MESRS qu'il supervise pédagogiquement – lisez `supervisory_ministry`
 (ex. `"Ministère de la Santé"` pour les 25 instituts paramédicaux), qui est `null` pour le réseau MESRS lui-même.
-Les écoles des forces armées ne sont pas publiées (décision du propriétaire, 2026-10-29).
+Les écoles militaires ne sont pas publiées (décision du propriétaire, 2026-10-29).
 
 Couvrant **51 wilayas**. `wilaya_code` est relié au modèle de wilayas de
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) (schéma à 69 wilayas).

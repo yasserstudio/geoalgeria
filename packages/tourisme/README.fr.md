@@ -57,14 +57,14 @@ const ruins = tourisme.byLayer("historic");       // 1 180 sites historiques
 Couvrant **69 wilayas**. `wilaya_code` est lié au modèle 69 wilayas de
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
-**Les sites des forces armées sont hors périmètre.** 22 installations des forces armées et
-de gendarmerie en service ont été retirées le 2026-10-29 : 15 sur la couche hébergement
-(hôtels des forces armées, un centre de repos de l'armée, le cercle national de l'armée, des
-logements des forces armées), quatre sur la couche historique (une cité des forces armées, un
+**Les sites militaires sont hors périmètre.** 22 installations militaires et de
+gendarmerie en service ont été retirées le 2026-10-29 : 15 sur la couche hébergement
+(hôtels militaires, un centre de repos de l'armée, le cercle national de l'armée, des
+logements militaires), quatre sur la couche historique (une cité militaire, un
 commandement naval, une brigade de gendarmerie, une base de l'armée nommée) et trois
 unités de gendarmerie que la couche attractions avait reprises. Leurs identifiants sont
 réservés définitivement dans [`data/retired-ids.json`](data/retired-ids.json). Le
-patrimoine des forces armées de l'époque coloniale reste publié : vieux forts, remparts, casernes
+patrimoine militaire de l'époque coloniale reste publié : vieux forts, remparts, casernes
 et anciens camps de l'armée française figurent au titre du patrimoine.
 
 ## Formats
