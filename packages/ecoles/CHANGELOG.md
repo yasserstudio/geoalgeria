@@ -1,5 +1,54 @@
 # @geoalgeria/ecoles
 
+## 2.3.0
+
+### Minor Changes
+
+- 769cb4f: Remove military establishments: 9 records leave the package, their ids retired.
+
+  **Migration.** Nine ids are retired and reserved forever in
+  `packages/ecoles/data/retired-ids.json`. They forward nowhere: the records are
+  removed, not merged, so a consumer holding one of these keys finds it gone by
+  design.
+
+  | Retired id | Record                                                         |
+  | ---------- | -------------------------------------------------------------- |
+  | `05-00282` | École des Cadets - Aberkane Mohammed (Batna)                   |
+  | `06-00248` | École des cadets de la nation (Béjaïa)                         |
+  | `08-00046` | مدرسة النحية العسكرية الثالثة (Béchar)                         |
+  | `09-00144` | École des Cadets de la nation (Blida)                          |
+  | `11-00007` | École des cadets (Tamanrasset)                                 |
+  | `11-00010` | École des Cadets de la Nation (Tamanrasset)                    |
+  | `14-00230` | École des cadets de la Nation du Chahid Ammar Mohamed (Tiaret) |
+  | `16-00043` | Crèche militaire (Alger)                                       |
+  | `19-00426` | École des cadets de la nation (Sétif)                          |
+
+  The project publishes no military location. The exclusion lives in the build
+  (`packages/ecoles/scripts/fetch.mjs`, `MILITARY_OSM_REFS`), keyed on the OSM
+  element exactly as the id carry-over is, so a later refresh drops these elements
+  again instead of handing them a fresh public id.
+
+  A school that only **mentions** a military place in its address, or carries a
+  person's name that reads like one, is not affected and stays published:
+  `04-00141` (address "مشتى العسكرية", Oum El Bouaghi) and `16-00667`
+  (École Askri Ahcène, Alger) are both kept.
+
+  Counts: 11,849 records (from 11,858), 8,204 named (from 8,213), 3,776 primaire,
+  267 préscolaire, 11,671 regular, 2,620 with an address. Coverage still reads
+  39.9% of the ministry's 29,702, and all 69 wilayas remain covered.
+
+### Patch Changes
+
+- f1a05b8: These packages now work in a bundled app: esbuild and Vite can follow the data path.
+
+  Before this release, `import { stations } from "@geoalgeria/ferroviaire"` (and the same for every package here) built fine and then threw `ENOENT ... /data/stations.json` on the first call. The JSON was read at run time from a path joined off `import.meta.url`; esbuild and Vite inline the module without relocating that read, so it went looking for the data next to the generated bundle. Node and Next.js with Turbopack were never affected, which is why this took until now to surface.
+
+  Each package now reaches its data through a generated `loaders.cjs`: one `require` of a literal path per data file, inside a function. A bundler can trace a literal path, and the `require` stays lazy, so importing the package still parses nothing until you call a loader. Every call still answers with a fresh copy, as it always did, so a caller that sorts what it gets cannot reorder another caller's records.
+
+  Nothing is different for you: same exports, same arguments, same return values, same TypeScript types, and not one record of data changed. Verified by packing each real tarball and running it three ways, under plain Node, an esbuild bundle and a Vite 8 SSR bundle (rolldown), with the three required to agree. Those are the three that are checked, and the only ones claimed.
+
+  Turbopack is the one bundler that cannot be checked that way, because it needs a `next build`. It already served these packages before the fix, and the fix gives it a graph it has not seen before (an ESM index importing a CommonJS loader whose JSON arrives by literal `require`), so the proof for it is the geoalgeria.com preview build released in the same batch, which loads `@geoalgeria/gares-routieres` through its index on a live page.
+
 ## 2.2.4
 
 ### Patch Changes

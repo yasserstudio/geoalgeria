@@ -1,5 +1,49 @@
 # @geoalgeria/formation-professionnelle
 
+## 2.2.0
+
+### Minor Changes
+
+- 0bf1c9e: Refresh formation-professionnelle from takwin.dz, retrieved 2026-10-25: 1,963 establishments from 1,932, and 1,961 geocoded from 1,921.
+
+  The June capture needed 59 calls, one per training directorate, and the portal had answered every non-browser client with a WAF block page since. This one ran over an Algerian connection, where a single call to the bare `puball` endpoint returns the whole network. 33 establishments are new and 2 the portal no longer lists under the accreditation they held.
+
+  **Far more real coordinates.** The portal had left one or both axes at its sentinel zero for 557 records in June; it now publishes a point for most of them. 1,681 establishments sit on takwin.dz's own point (1,362 before), so the commune-centroid placements drop to 249 from 511 and the wilaya-centroid ones to 31 from 35. Only 2 records are left unplaced, down from 11. The new points are the portal's own, shipped `exact` / `takwin` exactly as the old ones were, except for 15 the number itself disproves (too few decimals, or whole arcminutes with the seconds dropped), which read `approximate`.
+
+  **Ids follow the ministry's own accreditation code.** The portal rewrote 1,788 Arabic names, correcting the spacing it had run together, adding `-` separators, fixing typos, and relisting eight establishments under a brand instead of an owner's name. None of them moved. The id carry key is the MFEP accreditation code plus the establishment type, so none of that touches an id: 1,930 of the 1,932 published records keep the id they shipped under, including all 1,769 whose name changed only in spacing and the 17 whose name was rewritten further.
+
+  **Two retirements, both reserved for good in `data/retired-ids.json`.** Code 3907A1, an annexe CFPA in Nakhla, is absent from the capture, so `01624` is retired. Accreditation 15634 in Tizi Ouzou changed hands: June listed Asirem School, with its own phone, email, Facebook page, address, capacity, surface and a curriculum of sewing, hairdressing and childcare assistance; October lists High Fly School with a different name in both languages, a different email, and none of the rest. Nothing the portal publishes connects the two, so `00591` is retired rather than carried onto a different business, and High Fly School ships as a new record. The decision and its evidence are recorded in the fetcher's reviewed carry-key exceptions.
+
+  33 new ids, `01933` to `01965`, minted above every id the package has ever used so that no new establishment lands in a published or retired slot. Every id stays the flat 5-digit string the types and the README document.
+
+  **Type mix.** CFPA 857 (856), private accredited centers 754 (723), annexe CFPA 69 (70); INSFP, DFEP, IEP, IFEP, INFEP and the other annexes unchanged.
+
+### Patch Changes
+
+- 0b41d2f: Thirty-three Oran establishments are in Oran again: the takwin.dz capture ships their longitude with no minus sign.
+
+  `01392` (معهد بيئة الصحة والسلامة) was the one that was reported: `wilaya_code` 48 against commune السانية / Es Senia, which belongs to wilaya 31, an address reading `BIR EL DJIR ORAN` that agrees with neither, and a longitude whose sign would have to flip for any of it to be consistent. Those are one defect, and it is 33 records wide.
+
+  The portal names the publishing directorate on every row, and that is an attribution the coordinate had no part in: all 33 come from `IDDFEP` 31, Oran's. Their longitude arrives positive, so +0.63 falls in Relizane and +0.31 in Mostaganem, and the generator stamps `wilaya_code` from the coordinate, which made the wrong wilaya agree with the wrong point. No containment check could see it, which is why the package has never had a row in `research/_wilaya-containment/record-exceptions.json` and why its `outside_declared_wilaya` count is the same before and after.
+
+  The generator now restores the sign, and only when mirroring the axis carries the point into the wilaya that published the row, so a reading it cannot explain is left exactly as the portal shipped it. Over the 2026-10-25 capture that is 32 rows: each keeps `geo_precision: "exact"` and `geo_method: "takwin"` on the portal's own reading with its sign back, and `wilaya_code` follows the corrected point to 31 (29 of them from 48, 3 from 27).
+
+  `01392` is the thirty-third and the one exception. Its pair, 35.7167 / 0.6333, is whole arcminutes on both axes, so it is a rounded placeholder rather than a reading, and mirroring it lands in the bay of Oran, inside no wilaya at all. There is nothing there to sign-correct, so it takes the same path as every other establishment the portal left unplaced and sits on its own commune's centroid: `wilaya_code` 31, Es Senia's point, `geo_precision: "approximate"` on `geo_method: "commune"`.
+
+  Record, id and geocoded counts are unchanged (1,963 records, 1,961 geocoded), and so is the `geo_precision` split at 1,666 `exact` / 295 `approximate`. The method split moves by one, 1,680 `takwin` and 250 on a commune centroid, which the READMEs in all three locales and the generated coverage note now read.
+
+  `test/formation-longitude-sign.test.mjs` is the guard, with no allow-list: no establishment may keep a longitude whose mirror lands in the wilaya of the directorate that published it.
+
+- f1a05b8: These packages now work in a bundled app: esbuild and Vite can follow the data path.
+
+  Before this release, `import { stations } from "@geoalgeria/ferroviaire"` (and the same for every package here) built fine and then threw `ENOENT ... /data/stations.json` on the first call. The JSON was read at run time from a path joined off `import.meta.url`; esbuild and Vite inline the module without relocating that read, so it went looking for the data next to the generated bundle. Node and Next.js with Turbopack were never affected, which is why this took until now to surface.
+
+  Each package now reaches its data through a generated `loaders.cjs`: one `require` of a literal path per data file, inside a function. A bundler can trace a literal path, and the `require` stays lazy, so importing the package still parses nothing until you call a loader. Every call still answers with a fresh copy, as it always did, so a caller that sorts what it gets cannot reorder another caller's records.
+
+  Nothing is different for you: same exports, same arguments, same return values, same TypeScript types, and not one record of data changed. Verified by packing each real tarball and running it three ways, under plain Node, an esbuild bundle and a Vite 8 SSR bundle (rolldown), with the three required to agree. Those are the three that are checked, and the only ones claimed.
+
+  Turbopack is the one bundler that cannot be checked that way, because it needs a `next build`. It already served these packages before the fix, and the fix gives it a graph it has not seen before (an ESM index importing a CommonJS loader whose JSON arrives by literal `require`), so the proof for it is the geoalgeria.com preview build released in the same batch, which loads `@geoalgeria/gares-routieres` through its index on a live page.
+
 ## 2.1.6
 
 ### Patch Changes

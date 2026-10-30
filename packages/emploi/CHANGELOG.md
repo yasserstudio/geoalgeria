@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.0.5
+
+### Patch Changes
+
+- 69e01da: **Two ALEM offices now exact.** `alem.json` record `15-01` moves from ANEM's two-decimal point (36.71, 4.05) to OpenStreetMap node 3771080748, "ANEM (agence nationale de l'emploi)", and ships `exact` / `osm_node`. Three sources agree within 15 m: that node, ANEM's own point for AWEM Tizi Ouzou, which publishes the same address (01 boulevard Haddadou Med Arezki), and the Owner's reading of 29 October, which confirms the open point (ADR 0001, rule 6). The correction is recorded in `quality/overrides/emploi.json`.
+
+  `09-01` ALEM Blida moves from ANEM's two-decimal point (36.48, 2.84) to the building OpenStreetMap tags as "ANEM" (office=employment_agency) on Rue Yousfi Abdelkader, the record's own street (way 1174133619), and ships `exact` / `osm_way`. Two Votes: that building and the Owner's reading of 29 October, 4 m away. AWEM Blida, at Cité des 402 logts, is a different office and stays approximate.
+
+- f1a05b8: These packages now work in a bundled app: esbuild and Vite can follow the data path.
+
+  Before this release, `import { stations } from "@geoalgeria/ferroviaire"` (and the same for every package here) built fine and then threw `ENOENT ... /data/stations.json` on the first call. The JSON was read at run time from a path joined off `import.meta.url`; esbuild and Vite inline the module without relocating that read, so it went looking for the data next to the generated bundle. Node and Next.js with Turbopack were never affected, which is why this took until now to surface.
+
+  Each package now reaches its data through a generated `loaders.cjs`: one `require` of a literal path per data file, inside a function. A bundler can trace a literal path, and the `require` stays lazy, so importing the package still parses nothing until you call a loader. Every call still answers with a fresh copy, as it always did, so a caller that sorts what it gets cannot reorder another caller's records.
+
+  Nothing is different for you: same exports, same arguments, same return values, same TypeScript types, and not one record of data changed. Verified by packing each real tarball and running it three ways, under plain Node, an esbuild bundle and a Vite 8 SSR bundle (rolldown), with the three required to agree. Those are the three that are checked, and the only ones claimed.
+
+  Turbopack is the one bundler that cannot be checked that way, because it needs a `next build`. It already served these packages before the fix, and the fix gives it a graph it has not seen before (an ESM index importing a CommonJS loader whose JSON arrives by literal `require`), so the proof for it is the geoalgeria.com preview build released in the same batch, which loads `@geoalgeria/gares-routieres` through its index on a live page.
+
 ## 2.0.4
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # Changelog
 
+## 2.1.3
+
+### Patch Changes
+
+- 05a1ffb: Re-pull the Mobilis store locator, retrieved 2026-10-25: 164 agencies + 12,180 points of sale, identical.
+
+  Source: Mobilis (mobilis.dz) store locator, all 69 wilayas walked for both categories. Previous pull 2026-08-31; the locator had been unreachable from outside Algeria since, and this one ran over an Algerian connection.
+
+  **The directory came back byte-identical.** `data/agences.json` and `data/pdv.json`, and their CSV and GeoJSON mirrors, are the same bytes that shipped on 2026-08-31: 164 agencies and 12,180 approved points of sale, nothing added, nothing removed, no name changed in either script, no coordinate moved, no `geo_precision`, `geo_method`, wilaya or commune changed, and no id changed hands.
+
+  The only field that moves is `retrieved` in `data/metadata.json`, and that is what the pull is worth: the directory is confirmed current as of 2026-10-25 rather than merely unrefuted since August.
+
+  Worth reading as a property of the source rather than of the network: two months of a commercial retail estate with not one opening, closure, move or rename says the locator is a static export republished unchanged, so a later pull that is also identical is not independent confirmation. The 12,180 points of sale still carry no coordinates at source, so commune-level density remains the ceiling for them and nothing was geocoded from an address to pretend otherwise.
+
+- f1a05b8: These packages now work in a bundled app: esbuild and Vite can follow the data path.
+
+  Before this release, `import { stations } from "@geoalgeria/ferroviaire"` (and the same for every package here) built fine and then threw `ENOENT ... /data/stations.json` on the first call. The JSON was read at run time from a path joined off `import.meta.url`; esbuild and Vite inline the module without relocating that read, so it went looking for the data next to the generated bundle. Node and Next.js with Turbopack were never affected, which is why this took until now to surface.
+
+  Each package now reaches its data through a generated `loaders.cjs`: one `require` of a literal path per data file, inside a function. A bundler can trace a literal path, and the `require` stays lazy, so importing the package still parses nothing until you call a loader. Every call still answers with a fresh copy, as it always did, so a caller that sorts what it gets cannot reorder another caller's records.
+
+  Nothing is different for you: same exports, same arguments, same return values, same TypeScript types, and not one record of data changed. Verified by packing each real tarball and running it three ways, under plain Node, an esbuild bundle and a Vite 8 SSR bundle (rolldown), with the three required to agree. Those are the three that are checked, and the only ones claimed.
+
+  Turbopack is the one bundler that cannot be checked that way, because it needs a `next build`. It already served these packages before the fix, and the fix gives it a graph it has not seen before (an ESM index importing a CommonJS loader whose JSON arrives by literal `require`), so the proof for it is the geoalgeria.com preview build released in the same batch, which loads `@geoalgeria/gares-routieres` through its index on a live page.
+
 ## 2.1.2
 
 ### Patch Changes
