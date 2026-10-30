@@ -1,0 +1,326 @@
+{
+  "_comment": "Records the MESRS BAC 2026 placement file holds that the ministry's university-network listing does not, plus the two it renamed and the one it shows to have succeeded two listed establishments. IDENTITY IS NOT TYPED HERE: every `name` below is checked by scripts/bac-2026.mjs against the committed projection in sources/enseignement-superieur/bac-2026.json (assertBacName), which refuses any name that does not fold to the row MESRS published under that establishment code, so this file only restores French accents and capitalisation that the all-caps source drops. `name_ar` comes from the institution's own site or from Wikidata, cited per record in `name_ar_source`, and is null where neither could be read: it is never machine-translated. `place` follows docs/adr/0001: `campus` only where an open source places that institution's own campus (its own OpenStreetMap object, cited with id, version and timestamp), otherwise `commune` or `wilaya` with the reason in `why`. The four Sidi Abdellah schools were checked one by one: three carry their own OSM building and the fourth does not, so it is placed on its commune and NOT on the shared tech-pole point (OSM way/387256106), which would be a borrowed coordinate.",
+  "renames": {
+    "P12": {
+      "key": "esti-annaba.dz",
+      "name": "Ecole nationale supérieure des technologies et d'ingénierie (Annaba)",
+      "expect": "Ecole Supérieure des Technologies Industrielles de Annaba ex EP ST Annaba",
+      "why": "MESRS BAC 2026 lists establishment P12 under its current name; the record keeps its id and its website, so its public join key is unchanged."
+    },
+    "P74": {
+      "key": "esas-eloued.dz",
+      "name": "Ecole nationale supérieure d'agriculture saharienne d'El Oued",
+      "expect": "L’Ecole supérieure de l’agriculture saharienne - El Oued",
+      "why": "MESRS BAC 2026 lists establishment P74 under its current name; the record keeps its id and its website, so its public join key is unchanged."
+    }
+  },
+  "successions": {
+    "P05": {
+      "name": "Ecole nationale supérieure des technologies avancées (Alger)",
+      "name_ar": "المدرسة الوطنية العليا للتكنولوجيات المتقدمة",
+      "name_ar_source": "https://ensta.edu.dz/ (the institution's own site, read 2026-10-28: the school names itself this way in its own Arabic announcements). Wikidata Q135398220 is the ENSTA item but carries no Arabic label, only an English one.",
+      "website": "https://ensta.edu.dz/",
+      "sector": "public",
+      "supervisory_ministry": null,
+      "supersedes": [
+        {
+          "key": "enst.dz",
+          "expect": "Ecole Nationale Supérieure de Technologie"
+        },
+        {
+          "key": "essa-alger.dz",
+          "expect": "Ecole Supérieure des Sciences appliquées d’Alger ex EP ST Alger"
+        }
+      ],
+      "why": "Succeeded by décret exécutif 22-398 of 21 November 2022, which dissolved the Ecole nationale supérieure de technologie and the Ecole supérieure en sciences appliquées d'Alger and transferred their property, rights, obligations, personnel and resources to the Ecole nationale supérieure des technologies avancées, created by décret exécutif 22-314 of 12 September 2022 (both in Journal officiel n° 78, 2022). The MESRS BAC 2026 placement file lists only establishment P05, so the ministry places bacheliers into the successor alone, while the 2026-08-03 network listing still carries both predecessors. They are therefore not peers of P05 but the same establishment before the decree: their records leave and their ids are forwarded to this one in data/retired-ids.json, rather than three records co-existing for one school.",
+      "place": {
+        "precision": "campus",
+        "lat": 36.7761552,
+        "lng": 3.2581993,
+        "osm": "way/245174987",
+        "osm_version": 8,
+        "osm_timestamp": "2023-05-13T09:24:11Z",
+        "wilaya_code": 16,
+        "commune": "Bordj El Kiffan",
+        "osm_name": "Ecole Nationale Supérieure de Technologie ENST",
+        "why": "ENSTA publishes its seat as \"Cité Diplomatique, ex Centre biomédical, Dergana - Bordj El Kiffan, Alger\" (its own plan-de-lecole page and the letterhead of its scientific-council minutes). This OSM object is amenity=college with addr:street=Cité Diplomatique, addr:city=Dergana and operator=Ministère de l'Enseignement Supérieur et de la Recherche Scientifique, so the tie is the school's own published seat address and not a name match. Nominatim returns exactly one such object, so it is unambiguous. Its name tag still reads the dissolved ENST (see osm_name above): the decree transferred the campus to ENSTA, which is why this point is the successor's own seat, and the stale tag is an OSM edit owed upstream. No Wikidata P625 exists for ENSTA. The school's second site, the ex-ESSA building at Bab El Oued, is NOT published as a second record: one establishment is one record, and the decree's seat is Dergana. docs/adr/0001 asks for two independent sources before a point is exact, and this object is one: Nominatim, api.openstreetmap.org and Overpass all read the same OpenStreetMap database, and Wikidata's ENSTA item (Q135398220) had no P625 when the record was added. The second is the Owner's reading under rule 6, recorded below as owner_confirmation: it agrees with this object's point to 60 m, inside the 500 m ceiling and outside the 50 m copy radius, so it is an independent Vote. As with Beni-Abbes (research/_commune-centres/corrections-2026-10-01.json), the reading confirms the open point and never replaces it: the coordinate that ships is OpenStreetMap's, ODbL.",
+        "commune_why": "Bordj El Kiffan, the commune the school's own address names (Dergana - Bordj El Kiffan), and not the Bordj El Bahri the nearest-centre join answers. The point lies inside Bordj El Kiffan's committed OSM outline (code_commune 1630 in research/_commune-centres/commune-boundaries.json), 194 m from the Bordj El Bahri border, about four times the outline's simplification tolerance (tolerance_deg 0.0005, some 50 m); Bordj El Bahri's centre is only the nearer of the two centres (1,761 m, against 6,601 m for Bordj El Kiffan's).",
+        "owner_confirmation": {
+          "confirms": "way/245174987",
+          "point": [
+            3.2588635,
+            36.776256
+          ],
+          "metres_from_published_value": 60,
+          "read_at": "2026-10-28",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the pin of ENSTA's place entry off Google Maps and supplied 36.776256, 3.2588635, which agrees with OpenStreetMap way/245174987 to 60 m and lies inside the same Bordj El Kiffan outline. Under docs/adr/0001 rule 6 a reading taken from a proprietary map may only confirm an open source within 500 m, and it is the open coordinate that ships, so lat/lng above are the OpenStreetMap object's and this row is ODbL."
+        },
+        "osm_search": "Nominatim search for \"Technologies Avancees Alger ecole\", \"ENSTA Alger\", \"ENSTA Dergana\", \"ENSTA Bordj El Bahri\" and the Arabic name all return nothing, so no object Nominatim indexes carries ENSTA's name; the object above was reached from the seat address and read back from api.openstreetmap.org for its version and timestamp. The committed Overpass capture (sources/enseignement-superieur/osm-campuses.json, 2026-08-03) does hold one: way/1267564230, amenity=college, name=المدرسة الوطنية العليا للتكنولوجيا المتقدمة, ENSTA's Arabic name with the singular التكنولوجيا, at the ex-ESSA second site, which the school publishes as Bab El Oued and whose OSM point falls on the Casbah side of the Bab El Oued boundary, 96 m from it. It is a Claim for that site, not for the Dergana seat, so it does not vote for this point; both are listed in research/enseignement-superieur/precision-review-2026-10-28.json."
+      },
+      "note": "The commune is the one the school's own address names (Dergana, in Bordj El Kiffan), which the point's containment in the commune outline confirms; the nearest-centre join alone would have said Bordj El Bahri."
+    }
+  },
+  "additions": {
+    "C02": {
+      "name": "Université des sciences médicales d'Alger",
+      "name_ar": "جامعة علوم الصحة يوسف الخطيب الجزائر",
+      "name_ar_source": "https://www.univ-health.dz/ar/ (the institution's own Arabic home page, read 2026-10-28)",
+      "website": "https://www.univ-health.dz/",
+      "sector": "public",
+      "supervisory_ministry": null,
+      "place": {
+        "precision": "campus",
+        "lat": 36.7668663,
+        "lng": 3.0164095,
+        "osm": "way/29190325",
+        "osm_version": 24,
+        "osm_timestamp": "2026-05-30T18:59:41Z",
+        "why": "The OSM object is amenity=university named جامعة علوم الصحة - الزيانية and carries website=https://www.univ-health.dz/ plus email=rectorate@univ-health.dz, which ties the object to this institution rather than to a name match. Ben Aknoun, wilaya 16. No Wikidata P625 existed for it when the record was added, so the OSM object is the only open reading. docs/adr/0001 asks for two independent sources before a point is exact; the second is the Owner's reading under rule 6, recorded below as owner_confirmation, which agrees with this object to 96 m, inside the 500 m ceiling and outside the 50 m copy radius. The coordinate that ships is OpenStreetMap's, ODbL.",
+        "owner_confirmation": {
+          "confirms": "way/29190325",
+          "point": [
+            3.0173625,
+            36.7672611
+          ],
+          "metres_from_published_value": 96,
+          "read_at": "2026-10-28",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry for the Algiers Faculty of Medicine at Ziania, one of this university's three faculties on the same Ziania campus, and supplied 36.7672611, 3.0173625. It agrees with OpenStreetMap way/29190325, the university's own campus object, to 96 m, and both lie inside Ben Aknoun's committed OSM outline. Under docs/adr/0001 rule 6 the reading confirms the open coordinate, which is the one that ships."
+        }
+      },
+      "note": "MESRS's placement file labels establishment C02 \"UNIVERSITE DES SCIENCES MEDICALES ALGER\"; the institution itself publishes \"Université des sciences de la santé Youcef El Khatib\". The published French name follows the ministry's own file, per the package's identity rule, and the Arabic name follows the institution. The three faculties the file places into C02 (médecine, pharmacie, médecine dentaire) are this university's three faculties."
+    },
+    "P08": {
+      "name": "Ecole nationale supérieure en mathématiques",
+      "name_ar": "المدرسة الوطنية العليا للرياضيات",
+      "name_ar_source": "Wikidata Q132803485 (ar label); identical to the OSM object's name:ar",
+      "website": "https://nhsm.edu.dz/",
+      "sector": "public",
+      "supervisory_ministry": null,
+      "place": {
+        "precision": "campus",
+        "lat": 36.6888314,
+        "lng": 2.867765,
+        "osm": "way/1318064031",
+        "osm_version": 3,
+        "osm_timestamp": "2024-09-30T08:09:33Z",
+        "why": "Its own building=university object at the Sidi Abdellah pole, name:ar المدرسة الوطنية العليا للرياضيات, name:en National Higher School of Mathematics. Not the pole point. Maalma, wilaya 16. No Wikidata P625 (the 2026-10-28 second-source pass found the school's item, Q132803485, with no coordinate). docs/adr/0001 asks for two independent sources before a point is exact; the second is the Owner's reading under rule 6, recorded below as owner_confirmation, 28 m from this object and over 100 m from every other campus object near it. The coordinate that ships is OpenStreetMap's, ODbL.",
+        "owner_confirmation": {
+          "confirms": "way/1318064031",
+          "point": [
+            2.86807,
+            36.6888872
+          ],
+          "metres_from_published_value": 28,
+          "read_at": "2026-10-28",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"National Higher School of Mathematics\" and supplied 36.6888872, 2.86807, 28 m from this OSM object. Under docs/adr/0001 rule 6 the reading confirms the open coordinate, which is the one that ships."
+        }
+      }
+    },
+    "P09": {
+      "name": "Ecole nationale supérieure des systèmes autonomes",
+      "name_ar": "المدرسة الوطنية العليا لتكنولوجيا الأنظمة المستقلة",
+      "name_ar_source": "https://nhsast.edu.dz/ar/ (the institution's own Arabic site, read 2026-10-28); identical to the OSM object's name:ar",
+      "website": "https://nhsast.edu.dz/",
+      "sector": "public",
+      "supervisory_ministry": null,
+      "place": {
+        "precision": "campus",
+        "lat": 36.6890253,
+        "lng": 2.8648454,
+        "commune": "Maalma",
+        "wilaya_code": 16,
+        "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object places this school, so the Owner's pin ships as its coordinate. The building OSM names for it (way/1318066776) is, by the Owner's verdict of 2026-10-28, the nanosciences school's (P10), and the pin lands where OpenStreetMap maps no building: the nearest object is the Sidi Abdellah tech-pole outline (way/387256106), 169 m away. Mapping the building in OpenStreetMap would let an open point replace this one.",
+        "owner_pin": {
+          "read_at": "2026-10-28",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "entry": "École Nationale Supérieure de Technologie des Systèmes Autonome(w)",
+          "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+        }
+      },
+      "note": "www.enstsa.edu.dz, the domain the ministry's own pages still use, 301-redirects to nhsast.edu.dz, so the current domain is published here."
+    },
+    "P10": {
+      "name": "Ecole nationale supérieure des nanosciences et nanotechnologies",
+      "name_ar": "المدرسة الوطنية العليا في علم النانو وتكنولوجيا النانو",
+      "name_ar_source": "Wikidata Q130537752 (ar alias); identical to the institution's own site title at https://www.nsnn.edu.dz/",
+      "website": "https://nsnn.edu.dz/",
+      "sector": "public",
+      "supervisory_ministry": null,
+      "place": {
+        "precision": "campus",
+        "lat": 36.6891616,
+        "lng": 2.8695867,
+        "osm": "way/1318066776",
+        "osm_version": 3,
+        "osm_timestamp": "2024-09-30T08:09:33Z",
+        "wilaya_code": 16,
+        "commune": "Maalma",
+        "osm_name": "National Higher School of Autonomous Systems",
+        "why": "Owner verdict, 2026-10-28: this building is the nanosciences and nanotechnologies school. Its OSM tags say otherwise (name:en National Higher School of Autonomous Systems, name:ar المدرسة الوطنية العليا لتكنولوجيا الأنظمة المستقلة, website sites.google.com/view/nsast), and the Owner's reading of the school's own Google Maps entry lands 40 m from it, against 90 m from the building OSM names for this school (way/1318066777). The Owner decided that the reading is right and the OSM names are wrong, so the record ships on this object, read live from api.openstreetmap.org (point: the centre of its bounding box), and the stale name tags are an OSM edit owed upstream. docs/adr/0001 rule 6: the reading confirms the open object, and the coordinate that ships is OpenStreetMap's, ODbL.",
+        "owner_confirmation": {
+          "confirms": "way/1318066776",
+          "point": [
+            2.869164,
+            36.6890452
+          ],
+          "metres_from_published_value": 40,
+          "read_at": "2026-10-28",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"National Higher School of Nanosciences and Nanotechnology\" and supplied 36.6890452, 2.869164, 40 m from this OSM object, and decided the object is this school's although OSM names it for the autonomous-systems school."
+        },
+        "superseded_claim": {
+          "osm": "way/1318066777",
+          "osm_version": 2,
+          "lat": 36.6898241,
+          "lng": 2.8688831,
+          "note": "The building OSM names for this school, 90 m from the Owner's reading; not shipped, by the Owner's verdict above."
+        }
+      },
+      "note": "The ministry's row misspells it \"NANOTECHENOLOGIES\"; the published name carries the correct French spelling under the declared source_spelling exception in scripts/bac-2026.mjs, which quotes the ministry's row verbatim and is checked against the committed capture character for character.",
+      "source_spelling": "ECOLE NATIONALE SUPERIEURE DES NANOSCIENCES ET NANOTECHENOLOGIES"
+    },
+    "P11": {
+      "name": "Ecole nationale supérieure de cyber sécurité (Alger)",
+      "name_ar": null,
+      "name_ar_source": null,
+      "website": "https://www.enscs.edu.dz/",
+      "sector": "public",
+      "supervisory_ministry": null,
+      "place": {
+        "precision": "commune",
+        "commune": "Maalma",
+        "wilaya_code": 16,
+        "why": "The three other Sidi Abdellah schools each carry their own OSM building; this one has none, and the only object there that would fit is the shared tech-pole (OSM way/387256106), which is the pole and not this school. Placed on its commune instead: the school's own site gives its address as the Pôle Scientifique et Technologique Chahid Abdelhafid Ihaddadene, Sidi Abdallah, which is in Maalma (المعالمة), wilaya 16."
+      },
+      "note": "No Arabic name published on enscs.edu.dz and no Wikidata item, so name_ar stays null rather than being translated."
+    },
+    "P23": {
+      "name": "Ecole supérieure des sciences de gestion de Annaba",
+      "name_ar": null,
+      "name_ar_source": null,
+      "website": "https://essg-annaba.dz/",
+      "sector": "public",
+      "supervisory_ministry": null,
+      "place": {
+        "precision": "campus",
+        "lat": 36.902243,
+        "lng": 7.7602908,
+        "osm": "node/7866678785",
+        "osm_version": 3,
+        "osm_timestamp": "2020-11-15T12:05:57Z",
+        "why": "Its own OSM node, name:fr Ecole Supérieure des Sciences de Gestion, addr:street Rue Zighout Youcef, Annaba, wilaya 23. No Wikidata P625 (the 2026-10-28 second-source pass found no item for the school). docs/adr/0001 asks for two independent sources before a point is exact; the second is the Owner's reading under rule 6, recorded below as owner_confirmation, 29 m from this object and over 100 m from every other campus object near it. The coordinate that ships is OpenStreetMap's, ODbL.",
+        "owner_confirmation": {
+          "confirms": "node/7866678785",
+          "point": [
+            7.7602668,
+            36.9025003
+          ],
+          "metres_from_published_value": 29,
+          "read_at": "2026-10-28",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Higher School of Management Sciences (ESSG Annaba)\" and supplied 36.9025003, 7.7602668, 29 m from this OSM object. Under docs/adr/0001 rule 6 the reading confirms the open coordinate, which is the one that ships."
+        }
+      },
+      "note": "essg-annaba.dz did not answer from the build machine, so its Arabic name could not be read first-hand and name_ar stays null; the OSM object's name:ar is crowdsourced and is not an institution-published name."
+    },
+    "P73": {
+      "name": "Ecole nationale supérieure d'agriculture saharienne d'Adrar",
+      "name_ar": "المدرسة العليا للفلاحة الصحراوية بادرار",
+      "name_ar_source": "Wikidata Q140351852 (ar label)",
+      "website": "https://esas-adrar.edu.dz/",
+      "sector": "public",
+      "supervisory_ministry": null,
+      "place": {
+        "precision": "campus",
+        "lat": 27.8786875,
+        "lng": -0.2639844,
+        "wilaya_code": 1,
+        "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (https://esas-adrar.edu.dz/), read on 2026-10-29: Home page has an Elementor Google Maps widget with src=https://maps.google.com/maps?q=VPHP+FCC, Adrar (a Google Plus Code). Decoded locally with the openlocationcode library using an Adrar-town reference point, giving the coordinates above. No existing open-data lead coordinate was provided to compare against. No open object places it.",
+        "operator_location": {
+          "read_at": "2026-10-29",
+          "source_url": "https://esas-adrar.edu.dz/",
+          "kind": "map_coords",
+          "note": "The institution's own published location. Not an open coordinate."
+        },
+        "commune": "Adrar"
+      },
+      "note": "Distinct from P74 at El Oued, which the package already ships: separate establishment codes, separate sites (esas-adrar.edu.dz and esas-eloued.dz)."
+    },
+    "U50": {
+      "name": "Ecole normale supérieure de Saïda",
+      "name_ar": "المدرسة العليا للأساتدة بسعيدة",
+      "name_ar_source": "https://www.ens-saida.dz/ (the institution's own site title, read 2026-10-28); identical to Wikidata Q139771324's ar label, including its spelling of الأساتدة",
+      "website": "https://www.ens-saida.dz/",
+      "sector": "public",
+      "supervisory_ministry": null,
+      "place": {
+        "precision": "commune",
+        "commune": "Saida",
+        "wilaya_code": 20,
+        "why": "No OSM object and no Wikidata P625 for the ENS: a bounded search over Saïda returned the Université de Saïda campuses (already a separate record here) and school-level objects, none of them this ENS. Placed on its commune, Saida, wilaya 20."
+      },
+      "note": "The thirteenth ENS in the BAC 2026 file and the only one the package did not already carry. Its own site spells الأساتدة with a dal; published as the institution publishes it."
+    },
+    "W91": {
+      "name": "Ecole nationale supérieure des forêts (Khenchela)",
+      "name_ar": null,
+      "name_ar_source": null,
+      "website": "https://www.ensf.dz/",
+      "sector": "public",
+      "supervisory_ministry": null,
+      "place": {
+        "precision": "commune",
+        "commune": "Khenchela",
+        "wilaya_code": 40,
+        "why": "No OSM object and no Wikidata P625 for the school: a bounded search over Khenchela returned the Abbas Laghrour university campuses and the INSFP, none of them this school. Placed on its commune, Khenchela, wilaya 40; the school's published address is route de Hammam Essalihine, Khenchela."
+      },
+      "note": "ensf.dz did not answer from the build machine, so its Arabic name could not be read first-hand and name_ar stays null."
+    },
+    "D08": {
+      "name": "Institut national supérieur du cinéma Mohamed Lakhdar Hamina (Koléa, Tipaza)",
+      "name_ar": "المعهد الوطني العالي للسينما",
+      "name_ar_source": "Wikidata Q131318416 (ar label), with its trailing \"(الجزائر)\" dropped: that is the label's country disambiguator, exactly as \"(Algérie)\" is in its fr label, and not part of the institute's name. Read as a place it would also be wrong, the institute being at Koléa in Tipaza. The eponym the ministry adds (Mohamed Lakhdar Hamina) is deliberately NOT appended in Arabic: no first-hand official Arabic page could be read for it and the press spells it two ways, so only what the label and the ministry's own French row agree on is published.",
+      "website": null,
+      "sector": "public",
+      "supervisory_ministry": "Ministère de la Culture et des Arts",
+      "place": {
+        "precision": "commune",
+        "commune": "Kolea",
+        "wilaya_code": 42,
+        "why": "No OSM object and no Wikidata P625: a bounded search over Koléa returned the four Koléa grandes écoles the package already carries, the magistrature and penitentiary schools and the IEDF, none of them this institute. Placed on its commune, Kolea, wilaya 42, which the BAC 2026 row itself names (\"KOLEA TIPAZA\")."
+      },
+      "note": "Under the Ministry of Culture, like the four Culture establishments the package already ships (national school for the conservation of cultural property, fine arts, music, ISMAS)."
+    },
+    "D09": {
+      "name": "Ecole supérieure des sciences et des technologies d'encadrement de la jeunesse d'Alger",
+      "name_ar": "المدرسة العليا لعلوم وتقنيات تأطير الشباب",
+      "name_ar_source": "https://esstej.mjeunesse.gov.dz/ (the institution's own site title and og:site_name, read 2026-10-28)",
+      "website": "https://esstej.mjeunesse.gov.dz/",
+      "sector": "public",
+      "supervisory_ministry": "Ministère de la Jeunesse",
+      "place": {
+        "precision": "campus",
+        "lat": 36.7272935,
+        "lng": 3.0265617,
+        "wilaya_code": 16,
+        "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 43fa6738-d780-4469-836b-a00561338a48 \"Esstej\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Tixeraine, Birmourad Raïs, Alger. An OSM/Overture operator tie to generic 'Université d'Alger 2' is not used. One Vote only: an independent second source would make it two.",
+        "single_open_source": {
+          "source": "overture",
+          "ref": "43fa6738-d780-4469-836b-a00561338a48",
+          "read_at": "2026-10-29",
+          "tie": "website"
+        }
+      },
+      "note": "First establishment under the Ministry of Youth in this package; its own domain is a subdomain of the ministry's."
+    }
+  }
+}

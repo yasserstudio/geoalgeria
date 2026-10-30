@@ -1,0 +1,1142 @@
+{
+  "_comment": "Campus points on two independent Votes (docs/adr/0001) for records the Nominatim seed (coordinates.json) and the curated overrides do not hold that way. Each entry is keyed by the record's carryKey (scripts/fetch.mjs), so it also reaches the Arabic-only extras, and it takes precedence over every other placement. lat/lng are the open OpenStreetMap object's point as read live from api.openstreetmap.org (osm, osm_version, osm_timestamp), and that is the coordinate that ships. The second Vote is a wikidata_confirmation (a Wikidata P625 within 2 km and outside the 50 m copy radius) or an owner_confirmation (an Owner reading within 500 m, ADR 0001 \"Rule 6 in detail\"), and the build re-measures both. commune, where present, is the commune whose OSM outline (research/_commune-centres/commune-boundaries.json) contains the point.",
+  "ar:المدرسة العليا للفندقة والإطعام عين البنيان بالجزائر": {
+    "record": "00107, المدرسة العليا للفندقة والإطعام عين البنيان بالجزائر, École supérieure d'hôtellerie et de restauration d'Alger",
+    "lat": 36.7866998,
+    "lng": 2.9003914,
+    "osm": "way/244638284",
+    "osm_version": 8,
+    "osm_timestamp": "2025-02-21T18:58:40Z",
+    "osm_name": "Ecole Supérieure d'Hôtellerie et de Restauration d'Alger",
+    "wilaya_code": 16,
+    "commune": "Ain Benian",
+    "why": "OSM way/244638284 (name tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 109 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Ain Benian, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/244638284",
+      "point": [
+        2.9014689,
+        36.7862437
+      ],
+      "metres_from_published_value": 109,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"School of Hotel & Restaurant Management\" and supplied 36.7862437, 2.9014689, 109 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي الجزائر": {
+    "record": "00125, المعهد الوطني للتكوين العالي شبه الطبي الجزائر",
+    "lat": 36.7361113,
+    "lng": 3.1037244,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 025e0237-be19-4fdf-bc1a-11c0742a920a \"Institut National de Formation Supérieure Paramédicale d'Alger\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Two Meta-sourced listings 62 m apart, same provider so not an independent second source, but the exact official name match is strong. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "025e0237-be19-4fdf-bc1a-11c0742a920a",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بالمدية": {
+    "record": "00130, المعهد الوطني للتكوين العالي شبه الطبي بالمدية",
+    "lat": 36.2607855,
+    "lng": 2.757912,
+    "wilaya_code": 26,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 0abd5b56-b0c4-41ba-8b40-719334ba4f9f \"Institut National de Formation Supérieure Paramédicale de Médéa\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Exact official name match, single Meta-sourced listing. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "0abd5b56-b0c4-41ba-8b40-719334ba4f9f",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بالمسيلة": {
+    "record": "00131, المعهد الوطني للتكوين العالي شبه الطبي بالمسيلة, INFSPM M'Sila (Institut national de formation supérieure paramédicale)",
+    "lat": 35.7028121,
+    "lng": 4.5345708,
+    "osm": "way/448304163",
+    "osm_version": 3,
+    "osm_timestamp": "2020-11-15T22:49:08Z",
+    "osm_name": "المعهد الوطني للتكوين العالي شبه الطبي",
+    "wilaya_code": 28,
+    "commune": "M'Sila",
+    "why": "OSM way/448304163 (name tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 99 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: M'Sila, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/448304163",
+      "point": [
+        4.5335894,
+        35.7032143
+      ],
+      "metres_from_published_value": 99,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"National Training Institute Top Paramedic De Msila\" and supplied 35.7032143, 4.5335894, 99 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بباتنة": {
+    "record": "00132, المعهد الوطني للتكوين العالي شبه الطبي بباتنة",
+    "lat": 35.5331342,
+    "lng": 6.1881351,
+    "wilaya_code": 5,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places cedd3a4e-46bc-4778-a25b-ad8deeafc41d \"Institut National de Formation Supérieure Paramédicale de Batna Algérie\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Two Meta-sourced listings of the same institute, same provider so single-source for ADR purposes. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "cedd3a4e-46bc-4778-a25b-ad8deeafc41d",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي ببجاية": {
+    "record": "00133, المعهد الوطني للتكوين العالي شبه الطبي ببجاية, INFSPM Béjaïa (Institut national de formation supérieure paramédicale)",
+    "lat": 36.7590953,
+    "lng": 5.0767555,
+    "wilaya_code": 6,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object confirms the Owner's pin, so the pin ships as the coordinate. The pin is the Google Maps entry \"Paramedical School\" in Béjaïa city; OpenStreetMap has no paramedical object within 500 m of it (Overpass, 2026-10-29: only two primary schools). The only OSM candidate, way/696128480 \"Institut national supérieure paramédicale\" in Aokas, is 20.5 km away and the pin does not support it; the Owner's reading is taken over it. Mapping the building in OpenStreetMap would let an open point replace this one.",
+    "owner_pin": {
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "Paramedical School",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بتيارت": {
+    "record": "00136, المعهد الوطني للتكوين العالي شبه الطبي بتيارت, INFSPM Tiaret (Institut national de formation supérieure paramédicale)",
+    "lat": 35.3850268,
+    "lng": 1.3136792,
+    "osm": "way/311841887",
+    "osm_version": 5,
+    "osm_timestamp": "2016-12-13T10:18:35Z",
+    "osm_name": "Institut National de Formation supérieure paramédical",
+    "wilaya_code": 14,
+    "commune": "Tiaret",
+    "why": "OSM way/311841887 (name tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 89 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Tiaret, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/311841887",
+      "point": [
+        1.3142261,
+        35.3856964
+      ],
+      "metres_from_published_value": 89,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Infspm Tiaret\" and supplied 35.3856964, 1.3142261, 89 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بسيدي بلعباس": {
+    "record": "00141, المعهد الوطني للتكوين العالي شبه الطبي بسيدي بلعباس",
+    "lat": 35.1939,
+    "lng": -0.641389,
+    "wilaya_code": 22,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 1954a22c-3e3c-46f9-a202-f80fa6d16d61 \"Institut National De Formation Supérieur Paramédicale - Sid Bel Abbes\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Village Tiar, Sidi Bel Abbès; exact official name match. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "1954a22c-3e3c-46f9-a202-f80fa6d16d61",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بعين الدفلة": {
+    "record": "00142, المعهد الوطني للتكوين العالي شبه الطبي بعين الدفلة",
+    "lat": 36.2599441,
+    "lng": 2.2330821,
+    "wilaya_code": 44,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places d3f0a017-3983-44f3-8b50-d93c1ce10c51 \"Institut National de Formation Supérieure Paramédicale de Khemis Miliana\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Khemis Miliana is the daira seat in wilaya 44 Ain Defla; exact official name match. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "d3f0a017-3983-44f3-8b50-d93c1ce10c51",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بمستغانم": {
+    "record": "00144, المعهد الوطني للتكوين العالي شبه الطبي بمستغانم",
+    "lat": 35.9130508,
+    "lng": 0.086131,
+    "wilaya_code": 27,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 42234602-c8a6-437a-95a3-ae3d3faf2729 \"Institut national de formation paramedical mostaganem\" (name tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Lala Kheira, Mostaganem; exact official name match. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "42234602-c8a6-437a-95a3-ae3d3faf2729",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
+  "ar:المعهد الوطني للتكوين العالي شبه الطبي بمعسكر": {
+    "record": "00145, المعهد الوطني للتكوين العالي شبه الطبي بمعسكر",
+    "lat": 35.3794338,
+    "lng": 0.1221791,
+    "wilaya_code": 29,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. OSM way/375082795 \"Institut de formation paramédicale\" (v4, 2020-11-19T00:17:18Z, read live 2026-10-29; its point is the centre of its bounding box), the paramedical institute of Mascara; a licensed private paramedical school 2.6 km away is a different institution. One Vote only. ODbL.",
+    "single_open_source": {
+      "source": "osm",
+      "ref": "way/375082795",
+      "read_at": "2026-10-29",
+      "tie": "name"
+    }
+  },
+  "host:asal.dz": {
+    "record": "00103, المدرسة العليا للضمان الاجتماعي (بن عكنون، ولاية الجزائر).",
+    "lat": 36.7550283,
+    "lng": 2.9984674,
+    "osm": "way/561830853",
+    "osm_version": 6,
+    "osm_timestamp": "2025-10-07T13:32:28Z",
+    "osm_name": "École Supérieure de la Sécurité Sociale",
+    "wilaya_code": 16,
+    "commune": "Ben Aknoun",
+    "why": "OSM way/561830853 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q135975682 is this institution by name (label:ar ~ name_ar (core)) and its P625 agrees with the OSM point to 86 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q135975682",
+      "tie": "name",
+      "point": [
+        2.9975111598094,
+        36.755108393068
+      ],
+      "metres_from_published_value": 86,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "confirms": "way/561830853",
+      "references": []
+    }
+  },
+  "host:cu-aflou.dz": {
+    "record": "00173, Centre universitaire d’Aflou",
+    "lat": 34.1073663,
+    "lng": 2.070234,
+    "wilaya_code": 59,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places d5dffc89-60bb-4605-9814-c4ba7869d93c \"معهد العلوم الإنسانية والاجتماعية - المركز الجامعي الشريف بوشوشة آفلو\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Two more Meta listings (student residence) within 300 m, same provider. No OSM match for this host. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "d5dffc89-60bb-4605-9814-c4ba7869d93c",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:cu-elbayadh.dz": {
+    "record": "00174, Centre universitaire d’El Bayadh - Nour Bachir",
+    "lat": 33.6599809,
+    "lng": 1.0698445,
+    "osm": "way/272119118",
+    "osm_version": 7,
+    "osm_timestamp": "2022-05-27T18:28:30Z",
+    "osm_name": "Université d'El Bayadh",
+    "wilaya_code": 32,
+    "commune": "El Bayadh",
+    "why": "OSM way/272119118 (website (cu-elbayadh.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 64 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: El Bayadh, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/272119118",
+      "point": [
+        1.0698257,
+        33.6605574
+      ],
+      "metres_from_published_value": 64,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"University Center of El Bayadh Nour El Bachir\" and supplied 33.6605574, 1.0698257, 64 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:cuillizi.dz": {
+    "record": "00175, Centre Universitaire d’Illizi-Cheikh Amoud ben Mokhtar",
+    "lat": 26.5222906,
+    "lng": 8.4837811,
+    "osm": "way/313528891",
+    "osm_version": 6,
+    "osm_timestamp": "2026-06-09T21:20:50Z",
+    "osm_name": "Université d'Illizi;جامعة إليزي",
+    "wilaya_code": 33,
+    "commune": "Illizi",
+    "why": "OSM way/313528891 (website (cuillizi.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 201 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Illizi, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/313528891",
+      "point": [
+        8.4819479,
+        26.5215305
+      ],
+      "metres_from_published_value": 201,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"University of illizi\" and supplied 26.5215305, 8.4819479, 201 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:cuniv-tissemsilt.dz": {
+    "record": "00050, Université de Tissemsilt",
+    "lat": 35.5997812,
+    "lng": 1.8243967,
+    "osm": "way/308557373",
+    "osm_version": 3,
+    "osm_timestamp": "2026-10-28T23:20:50Z",
+    "osm_name": "Centre universitaire Tissemsilt",
+    "wilaya_code": 38,
+    "commune": "Tissemsilt",
+    "why": "OSM way/308557373 (website (cuniv-tissemsilt.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 126 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Tissemsilt, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/308557373",
+      "point": [
+        1.8239434,
+        35.5987059
+      ],
+      "metres_from_published_value": 126,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Tissemsilt University\" and supplied 35.5987059, 1.8239434, 126 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:eftg-sup.com": {
+    "record": "00153, مدرسة التكوين في تقنيات التسيير دالي ابراهيم الجزائر",
+    "lat": 36.753514,
+    "lng": 2.993315,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (https://eftg-sup.com/contact/), read on 2026-10-29: Coordinates read from a Google Maps embed/link on the site's own contact page carrying a place cid (google.com/maps?ll=36.753514,2.993315&cid=9814335720526747495), treated as the actual EFTG place pin. The open lead from the 2026-10-29 search (an OSM or Overture object) lies 741 m away, so the institution's own map is taken over it.",
+    "operator_location": {
+      "read_at": "2026-10-29",
+      "source_url": "https://eftg-sup.com/contact/",
+      "kind": "map_coords",
+      "note": "The institution's own published location. Not an open coordinate."
+    }
+  },
+  "host:em-alger.com": {
+    "record": "00152, مدرسة ادارة الأعمال بالجزائر(بيزناس سكول) حيدرة الجزائر",
+    "lat": 36.7545014,
+    "lng": 3.06058,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 847d807f-3e68-4164-9fb0-222a172a3842 \"EM Alger business school\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Chemin Abdelkader Gadouche, Hydra; matches record's own location text exactly. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "847d807f-3e68-4164-9fb0-222a172a3842",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:encrbc.dz": {
+    "record": "00114, المدرسة الوطنية لحفظ الممتلكات الثقافية (تيبازة)",
+    "lat": 36.5914375,
+    "lng": 2.4590156,
+    "wilaya_code": 42,
+    "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (https://enscrbc.dz/contact/), read on 2026-10-29: encrbc.dz/ar/ meta-refresh redirects to enscrbc.dz (note extra ns). Contact page has a Google Maps iframe whose q= parameter is a Google Plus Code, 'Centre d'archeologie, HFR5+HJC, Tipaza'. Decoded the plus code locally with the openlocationcode library using Tipaza town centre as the reference point (no Google API call); this is the institution's own published location marker, not a fetch of a Google Maps page. The open lead from the 2026-10-29 search (an OSM or Overture object) lies 878 m away, so the institution's own map is taken over it.",
+    "operator_location": {
+      "read_at": "2026-10-29",
+      "source_url": "https://enscrbc.dz/contact/",
+      "kind": "map_coords",
+      "note": "The institution's own published location. Not an open coordinate."
+    }
+  },
+  "host:enp-constantine.dz": {
+    "record": "00062, Ecole Nationale Polytechnique de Constantine- Malek Bennabi",
+    "lat": 36.2766886,
+    "lng": 6.5867365,
+    "osm": "node/5440413392",
+    "osm_version": 1,
+    "osm_timestamp": "2018-02-27T15:31:31Z",
+    "osm_name": "École Nationale Polytechnique",
+    "wilaya_code": 25,
+    "commune": "El Khroub",
+    "why": "OSM node/5440413392 (name tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 20 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Wikidata Q17651592's P625 is 31 m from this object, a Copied claim, so it casts no Vote. Commune: El Khroub (the Ali Mendjeli new town), whose committed OSM outline contains the point. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "node/5440413392",
+      "point": [
+        6.5865162,
+        36.2767018
+      ],
+      "metres_from_published_value": 20,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"National school polytechnic of Constantine\" and supplied 36.2767018, 6.5865162, 20 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:enp.edu.dz": {
+    "record": "00060, Ecole Nationale Polytechnique",
+    "lat": 36.7237382,
+    "lng": 3.1505925,
+    "osm": "way/97658302",
+    "osm_version": 3,
+    "osm_timestamp": "2016-12-01T17:16:07Z",
+    "osm_name": "Ecole Polytechnique",
+    "wilaya_code": 16,
+    "commune": "El Harrach",
+    "why": "OSM way/97658302 (name tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 64 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Wikidata Q3578167's P625 is 50 m from this object, a Copied claim, so it casts no Vote. Commune: El Harrach, whose committed OSM outline contains the point. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/97658302",
+      "point": [
+        3.1507671,
+        36.7231786
+      ],
+      "metres_from_published_value": 64,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"National Polytechnic School of Algiers\" and supplied 36.7231786, 3.1507671, 64 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:ens-kouba.dz": {
+    "record": "00167, Ecole normale supérieure de Kouba - Mohamed Bachir El Ibrahimi",
+    "lat": 36.7311136,
+    "lng": 3.0734495,
+    "osm": "way/29671795",
+    "osm_version": 14,
+    "osm_timestamp": "2025-06-29T03:09:55Z",
+    "osm_name": "Ecole Supérieure des enseignants ⴰⵖⵔⴱⴰⵣ ⴰⵍⵎⵎⴰⵙ ⵏ ⵢⵉⵙⵍⵎⴰⴷⵏ المدرسة العليا للأساتذة",
+    "wilaya_code": 16,
+    "commune": "Kouba",
+    "why": "OSM way/29671795 (website (ens-kouba.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 39 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Kouba, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/29671795",
+      "point": [
+        3.0737082,
+        36.7313962
+      ],
+      "metres_from_published_value": 39,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"École Normale Supérieure de Kouba\" and supplied 36.7313962, 3.0737082, 39 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:ens-oran.dz": {
+    "record": "00162, Ecole Normale Supérieure d’Oran",
+    "lat": 35.6757461,
+    "lng": -0.6329262,
+    "wilaya_code": 31,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 06f18687-3cf6-4e5d-a557-edf8cb059e7e \"Higher Teachers School of Oran, المدرسة العليا للأساتذة بوهران عمور أحمد\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. 02 avenue des Martyrs, Oran. An OSM 'École normale d'instituteurs d'Oran' object 3.6 km away is a separate, older primary-teacher-training school, not used. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "06f18687-3cf6-4e5d-a557-edf8cb059e7e",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:ens-ouargla.dz": {
+    "record": "00170, Ecole normale supérieure de Ouargla",
+    "lat": 31.952373,
+    "lng": 5.2570984,
+    "wilaya_code": 30,
+    "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (http://ens-ouargla.dz/), read on 2026-10-29: Google Maps embed on the home page, pb parameter contains !3d31.952373025673328!4d5.257098374592809, labeled Ecole normale superieure de ouargla. About 4.9 km from the existing open-data lead coordinate. The open lead from the 2026-10-29 search (an OSM or Overture object) lies 4897 m away, so the institution's own map is taken over it.",
+    "operator_location": {
+      "read_at": "2026-10-29",
+      "source_url": "http://ens-ouargla.dz/",
+      "kind": "map_coords",
+      "note": "The institution's own published location. Not an open coordinate."
+    }
+  },
+  "host:ensa.dz": {
+    "record": "00063, Ecole nationale supérieure agronomique- Khalef Abdellah alias Kasdi Merbah",
+    "lat": 36.7201391,
+    "lng": 3.1503041,
+    "osm": "way/97658307",
+    "osm_version": 19,
+    "osm_timestamp": "2026-06-01T00:35:25Z",
+    "osm_name": "École Nationale Supérieure Agronomique d'Alger",
+    "wilaya_code": 16,
+    "commune": "Oued Smar",
+    "why": "OSM way/97658307 (website tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q21512516 is this institution by website (P856 host = record website host ensa.dz) and its P625 agrees with the OSM point to 98 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline (the nearest-centre join would have said El Harrach). Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q21512516",
+      "tie": "website",
+      "point": [
+        3.1497230555556,
+        36.720883888889
+      ],
+      "metres_from_published_value": 98,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "confirms": "way/97658307",
+      "references": []
+    }
+  },
+  "host:ensb.dz": {
+    "record": "00165, Ecole normale supérieure de Bouzaréah - Cheikh Mubarak Ben Mohamed Brahimi El Mili",
+    "lat": 36.781995,
+    "lng": 3.0126523,
+    "osm": "way/249379127",
+    "osm_version": 6,
+    "osm_timestamp": "2023-10-24T11:32:30Z",
+    "osm_name": "École normale de Bouzaréah",
+    "wilaya_code": 16,
+    "commune": "Bouzareah",
+    "why": "The OSM object is amenity=university, name:ar المدرسة العليا للأساتذة بوزريعة, addr:city Bouzaréah, and carries website=https://www.ensb.dz/, the institution's own site, so the tie is the website and not a name match. Its point is the centre of the way's bounding box as read live on 2026-10-28, unchanged from the 2026-08-03 Overpass capture. It lies inside Bouzaréah's committed OSM outline, the commune the record was already placed on (at its centre, 997 m away).",
+    "owner_confirmation": {
+      "confirms": "way/249379127",
+      "point": [
+        3.0124453,
+        36.7816117
+      ],
+      "metres_from_published_value": 46,
+      "read_at": "2026-10-28",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry for the Higher Normal School of Bouzaréah and supplied 36.7816117, 3.0124453, 46 m from the OSM object. Under docs/adr/0001 \"Rule 6 in detail\" an Owner reading is never a Copied claim, so it is an independent Vote inside the 500 m ceiling, and the coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:ensc.dz": {
+    "record": "00166, Ecole normale supérieure de Constantine - Assia Djebar",
+    "lat": 36.2758594,
+    "lng": 6.5887878,
+    "osm": "node/5322170362",
+    "osm_version": 1,
+    "osm_timestamp": "2018-01-05T15:15:20Z",
+    "osm_name": "École normale supérieure de Constantine",
+    "wilaya_code": 25,
+    "commune": "El Khroub",
+    "why": "OSM node/5322170362 (website (ensc.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 95 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). OpenStreetMap also has way/375694847 \"Ecole Normale Supérieure de Constantine\" 11 km from the reading, which the reading does not support. Wikidata Q30294221's P625 is within 50 m of this node, a Copied claim, so it casts no Vote. Commune: El Khroub (the Ali Mendjeli new town), whose committed OSM outline contains the point; the nearest flagship centre is Ain Smara's. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "node/5322170362",
+      "point": [
+        6.5898154,
+        36.2756591
+      ],
+      "metres_from_published_value": 95,
+      "read_at": "2026-10-28",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Ecole Normale Supérieure El Katiba Assia Djebar Constantine\" and supplied 36.2756591, 6.5898154, 95 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:enset-skikda.dz": {
+    "record": "00161, Ecole normale supérieure d’enseignement technologique de Skikda",
+    "lat": 36.86473,
+    "lng": 6.92202,
+    "wilaya_code": 21,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 845bc5d6-359f-4804-b6d3-291c86545793 \"Enset Skikda\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Cité des Frères Boucetta, Azzaba, wilaya Skikda. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "845bc5d6-359f-4804-b6d3-291c86545793",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:ensh.dz": {
+    "record": "00064, Ecole nationale supérieure d’hydraulique - Arbaoui Abdellah",
+    "lat": 36.5107654,
+    "lng": 2.8911938,
+    "osm": "way/191229595",
+    "osm_version": 14,
+    "osm_timestamp": "2025-12-07T14:25:35Z",
+    "osm_name": "Ecole Nationale Supérieure de l'Hydraulique",
+    "wilaya_code": 9,
+    "commune": "Guerrouaou",
+    "why": "OSM way/191229595 (website tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q30261759 is this institution by website (P856 host = record website host ensh.dz) and its P625 agrees with the OSM point to 67 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q30261759",
+      "tie": "website",
+      "point": [
+        2.890453,
+        36.510704
+      ],
+      "metres_from_published_value": 67,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "confirms": "way/191229595",
+      "references": [
+        {
+          "property": "P248",
+          "value": "Q30141628"
+        }
+      ]
+    }
+  },
+  "host:ensia.edu.dz": {
+    "record": "00074, École Nationale Supérieure en Intelligence Artificielle",
+    "lat": 36.68007,
+    "lng": 2.87526,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places a9bd916d-0fa4-4849-b401-5a214f6c145c \"المدرسة الوطنية العليا للذكاء الاصطناعي\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Route de Mahelma, Sidi Abdellah pole; a second Meta listing for the same host sits 900 m away (c3b460c3), same provider so not an independent second source. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "a9bd916d-0fa4-4849-b401-5a214f6c145c",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:ensjsi.dz": {
+    "record": "00067, Ecole nationale supérieure de journalisme et des sciences de l’information",
+    "lat": 36.7508474,
+    "lng": 3.0148426,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (https://ensjsi.dz/), read on 2026-10-29: Homepage has a Google Maps embed iframe with real pb coordinates (!2d3.0148426!3d36.7508474). No lat/lng existed in input to compare against. No open object places it.",
+    "operator_location": {
+      "read_at": "2026-10-29",
+      "source_url": "https://ensjsi.dz/",
+      "kind": "map_coords",
+      "note": "The institution's own published location. Not an open coordinate."
+    }
+  },
+  "host:ensm.dz": {
+    "record": "00068, Ecole nationale supérieure de management",
+    "lat": 36.6420957,
+    "lng": 2.7902762,
+    "osm": "way/390654568",
+    "osm_version": 3,
+    "osm_timestamp": "2016-12-13T20:18:36Z",
+    "osm_name": "Ecole supérieure de management",
+    "wilaya_code": 42,
+    "commune": "Kolea",
+    "why": "OSM way/390654568 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q104713296 is this institution by name (label:fr ~ name (core, one word, inside the declared commune)) and its P625 agrees with the OSM point to 57 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q104713296",
+      "tie": "name",
+      "point": [
+        2.7899072043657,
+        36.642516860583
+      ],
+      "metres_from_published_value": 57,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "confirms": "way/390654568",
+      "references": []
+    }
+  },
+  "host:ensmm-annaba.dz": {
+    "record": "00070, Ecole nationale supérieure des mines et de la métallurgie - Amar Laskri",
+    "lat": 36.8204669,
+    "lng": 7.7271906,
+    "wilaya_code": 23,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places b5cafbc9-c07a-4fac-9cfd-34f0df6bdc9b \"Ecole Nationale Superieure des Mines et Metallurgie\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Sidi Amar, Annaba; locality matches Annaba wilaya. No OSM object. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "b5cafbc9-c07a-4fac-9cfd-34f0df6bdc9b",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:enssm.dz": {
+    "record": "00172, Ecole normale supérieure de sourds muets",
+    "lat": 36.7806474,
+    "lng": 2.9898369,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 2f7c1000-ddec-4d7c-95a7-da469751d63d \"المدرسة العليا لأساتذة الصم والبكم\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Boulevard Brahim Hadjeres, Alger. No OSM match for this host. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "2f7c1000-ddec-4d7c-95a7-da469751d63d",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:ensttic.dz": {
+    "record": "00112, المدرسة الوطنية العليا للاتصالات السلكية واللّاسلكية وتكنولوجيات الإعلام والاتصال (وهران).",
+    "lat": 35.6649136,
+    "lng": -0.6383488,
+    "wilaya_code": 31,
+    "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (http://www.ensttic.dz/), read on 2026-10-29: Home page has a Google Maps iframe embed (pb= format) named Ecole Nationale Superieure des Telecommunications ENSTTIC with !3d/!2d coordinates read directly from the embed src. The open lead from the 2026-10-29 search (an OSM or Overture object) lies 3509 m away, so the institution's own map is taken over it.",
+    "operator_location": {
+      "read_at": "2026-10-29",
+      "source_url": "http://www.ensttic.dz/",
+      "kind": "map_coords",
+      "note": "The institution's own published location. Not an open coordinate."
+    }
+  },
+  "host:entp.edu.dz": {
+    "record": "00073, Ecole nationale supérieure des travaux publics - Francis Jeanson (ENSTP)",
+    "lat": 36.726099,
+    "lng": 3.0685878,
+    "osm": "way/43331770",
+    "osm_version": 9,
+    "osm_timestamp": "2026-05-11T10:35:36Z",
+    "osm_name": "المدرسة الوطنية العليا للأشغال العمومية",
+    "wilaya_code": 16,
+    "commune": "Kouba",
+    "why": "OSM way/43331770 (name tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 107 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). OpenStreetMap also has way/666205567 \"Ecole Supérieure des Travaux Publics\" at Zeralda, 19.6 km from the reading, which the reading does not support. Commune: Kouba, whose committed OSM outline contains the point (465 m from its border margin); the nearest flagship centre is El Madania's. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/43331770",
+      "point": [
+        3.0695956,
+        36.7255818
+      ],
+      "metres_from_published_value": 107,
+      "read_at": "2026-10-28",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"High National School of Public Works\" and supplied 36.7255818, 3.0695956, 107 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:epau-alger.edu.dz": {
+    "record": "00077, Ecole Polytechnique d’architecture et d’Urbanisme-Hocine Aït Ahmed (EPAU)",
+    "lat": 36.7195481,
+    "lng": 3.1539529,
+    "osm": "way/426908488",
+    "osm_version": 4,
+    "osm_timestamp": "2020-08-17T09:25:59Z",
+    "osm_name": "Ecole Polytechnique d'Architecture et d'Urbanisme",
+    "wilaya_code": 16,
+    "commune": "Oued Smar",
+    "why": "OSM way/426908488 (name tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 50 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Wikidata Q27962871's P625 is 40 m from this object, a Copied claim, so it casts no Vote. Commune: Oued Smar (the record said El Harrach), whose committed OSM outline contains the point. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/426908488",
+      "point": [
+        3.1544373,
+        36.7197667
+      ],
+      "metres_from_published_value": 50,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Ecole Polytechnique D'architecture Et D'urbanisme\" and supplied 36.7197667, 3.1544373, 50 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:epsecg-tlemcen.dz": {
+    "record": "00084, Ecole Supérieure de Management de Tlemcen ex EPSECG Tlemcen",
+    "lat": 34.8775141,
+    "lng": -1.3615781,
+    "osm": "way/976266740",
+    "osm_version": 2,
+    "osm_timestamp": "2022-08-23T21:21:27Z",
+    "osm_name": "Ecole supérieur de management المدرسة العليا لادارة الاعمال",
+    "wilaya_code": 13,
+    "commune": "Mansourah",
+    "why": "OSM way/976266740 (website (epsecg-tlemcen.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box. The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 94 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Mansourah, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/976266740",
+      "point": [
+        -1.3619949,
+        34.8782877
+      ],
+      "metres_from_published_value": 94,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Ecole Superieure De Management\" and supplied 34.8782877, -1.3619949, 94 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:esa-mosta.dz": {
+    "record": "00078, Ecole Supérieure Agronomique de Mostaganem ex EP SNV Mostaganem",
+    "lat": 35.9514341,
+    "lng": 0.0991344,
+    "wilaya_code": 27,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places e8caed75-ae1f-4e2a-9060-21334c350502 \"ESA MOSTA\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Mostaganem; category mistagged middle_school but website host ties exactly. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "e8caed75-ae1f-4e2a-9060-21334c350502",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:esba.dz": {
+    "record": "00108, المدرسة العليا للفنون الجميلة (الجزائر), École supérieure des beaux-arts (ESBA)",
+    "lat": 36.7616947,
+    "lng": 3.0439637,
+    "osm": "way/475383562",
+    "osm_version": 6,
+    "osm_timestamp": "2025-09-14T13:11:35Z",
+    "osm_name": "المدرسة العليا للفنون الجميلة",
+    "wilaya_code": 16,
+    "commune": "Alger Centre",
+    "why": "OSM way/475383562 (website (esba.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 89 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Wikidata Q23846121's P625 is 21 m from this object, a Copied claim, so it casts no Vote. Commune: Alger Centre, whose committed OSM outline contains the point. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/475383562",
+      "point": [
+        3.0447931,
+        36.7621454
+      ],
+      "metres_from_published_value": 89,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Graduate School of Fine Arts\" and supplied 36.7621454, 3.0447931, 89 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:esc-alger.dz": {
+    "record": "00081, Ecole Supérieure de Commerce-Mouloud Kacem Naït Belkacem",
+    "lat": 36.6400745,
+    "lng": 2.7875844,
+    "osm": "way/390654567",
+    "osm_version": 3,
+    "osm_timestamp": "2016-12-13T20:18:36Z",
+    "osm_name": "Ecole supérieure de commerce",
+    "wilaya_code": 42,
+    "commune": "Kolea",
+    "why": "OSM way/390654567 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q16507829 is this institution by website (P856 host = record website host esc-alger.dz) and its P625 agrees with the OSM point to 58 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q16507829",
+      "tie": "website",
+      "point": [
+        2.7869444444444,
+        36.64
+      ],
+      "metres_from_published_value": 58,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "confirms": "way/390654567",
+      "references": [
+        {
+          "property": "P143",
+          "value": "Q328"
+        }
+      ]
+    }
+  },
+  "host:escf-constantine.dz": {
+    "record": "00082, Ecole Supérieure de Comptabilité et de Finance de Constantine ex EPSECG Constantine (ESCF)",
+    "lat": 36.3582459,
+    "lng": 6.6244321,
+    "wilaya_code": 25,
+    "why": "docs/adr/0001 rule 6 as amended 2026-10-29: no open object confirms this school, so the Owner's pin ships as its coordinate. The only OSM candidate, way/1145579833 \"École Supérieure de Comptabilité et de Finances\" in El Khroub, is 10.1 km from the pin, which lands in Constantine city; no OSM object for the school lies near the pin (Overpass, 2026-10-29). Mapping the building in OpenStreetMap would let an open point replace this one.",
+    "owner_pin": {
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "entry": "École supérieure de comptabilité et de finance - Constantine",
+      "note": "THE PUBLISHED VALUE, by the Owner's decision of 2026-10-29. Not an open coordinate."
+    }
+  },
+  "host:ese-oran.dz": {
+    "record": "00079, Ecole Supérieure d’Economie d’Oran ex EPSECG Oran",
+    "lat": 35.7024375,
+    "lng": -0.5848829,
+    "wilaya_code": 31,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 22732716-22eb-40aa-9d7e-2640d5f54bf1 \"ESE Oran : Ecole Supérieure d'Economie d'Oran\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Technopole USTO, Bir El Djir, Oran. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "22732716-22eb-40aa-9d7e-2640d5f54bf1",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:esgen.edu.dz": {
+    "record": "00083, Ecole Supérieure de Gestion et d’Economie Numérique",
+    "lat": 36.6401099,
+    "lng": 2.7869743,
+    "wilaya_code": 42,
+    "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (https://www.esgen.edu.dz/), read on 2026-10-29: Homepage has a Google Maps embed iframe with real pb coordinates (!2d2.7869743397061653!3d36.640109876386184), place name matches the school. 311 m from the existing open-data lead. The open lead from the 2026-10-29 search (an OSM or Overture object) lies 311 m away, which agrees.",
+    "operator_location": {
+      "read_at": "2026-10-29",
+      "source_url": "https://www.esgen.edu.dz/",
+      "kind": "map_coords",
+      "note": "The institution's own published location. Not an open coordinate."
+    }
+  },
+  "host:esi-sba.dz": {
+    "record": "00080, Ecole Supérieure d’Informatique (Sidi Bel Abbes)- 08 Mai 1945 (ESI SBA)",
+    "lat": 35.2097895,
+    "lng": -0.6331638,
+    "osm": "node/4442313789",
+    "osm_version": 3,
+    "osm_timestamp": "2023-10-15T04:18:47Z",
+    "wilaya_code": 22,
+    "commune": "Sidi Bel-Abbes",
+    "why": "OSM node/4442313789 (website (esi-sba.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 2 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Sidi Bel-Abbes, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "node/4442313789",
+      "point": [
+        -0.6331753,
+        35.2097704
+      ],
+      "metres_from_published_value": 2,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"École supérieure en informatique de Sidi Bel Abbès\" and supplied 35.2097704, -0.6331753, 2 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:essaia.dz": {
+    "record": "00088, Ecole Supérieure des Sciences de l’Aliment et des Industries Agroalimentaires d’Alger ex EP SNV Alger",
+    "lat": 36.7148754,
+    "lng": 3.1537306,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (https://essaia.dz/), read on 2026-10-29: Homepage has a Google Maps embed iframe with real pb coordinates (!2d3.1537306242343996!3d36.714875372271486), place label is ESSAIA. 228 m from the existing open-data lead. The open lead from the 2026-10-29 search (an OSM or Overture object) lies 228 m away, which agrees.",
+    "operator_location": {
+      "read_at": "2026-10-29",
+      "source_url": "https://essaia.dz/",
+      "kind": "map_coords",
+      "note": "The institution's own published location. Not an open coordinate."
+    }
+  },
+  "host:essb-oran.edu.dz": {
+    "record": "00087, Ecole Supérieure des sciences Biologiques d’ Oran ex EP SNV Oran",
+    "lat": 35.6434867,
+    "lng": -0.6228733,
+    "wilaya_code": 31,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 3e61c17f-f4b7-41f8-ad67-bf8e20559ae0 \"Ecole Supérieure en Sciences Biologiques d’Oran\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Cité Emir Abdelkader (ex-INESSMO), Oran; a second Meta listing (ESSBO Genomics) 1.3 km away, same provider. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "3e61c17f-f4b7-41f8-ad67-bf8e20559ae0",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:esst-sup.com": {
+    "record": "00106, المدرسة العليا للعلوم والتكنولوجيا واد الرمان العاشور.الجزائر",
+    "lat": 36.7099643,
+    "lng": 2.9965412,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 0bd8f648-d85a-4098-93db-72d1624bf7ad \"École Supérieure des Sciences et Technologies\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Résidence Sahraoui, El Achour, Alger; matches record's own location text (Oued Erremane El Achour). One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "0bd8f648-d85a-4098-93db-72d1624bf7ad",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:his.edu.dz": {
+    "record": "00122, المعهد العالي للعلوم برج الكيفان الجزائر",
+    "lat": 36.7557532,
+    "lng": 3.2234393,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (https://his.edu.dz/contact-us/), read on 2026-10-29: Contact page has a lazy-loaded Google Maps iframe with q=36.7557532,3.2234393 titled 'Localisation du Higher Institute of Sciences', read directly from the data-src attribute of the embed. The open lead from the 2026-10-29 search (an OSM or Overture object) lies 42 m away, which agrees.",
+    "operator_location": {
+      "read_at": "2026-10-29",
+      "source_url": "https://his.edu.dz/contact-us/",
+      "kind": "map_coords",
+      "note": "The institution's own published location. Not an open coordinate."
+    }
+  },
+  "host:hns-re2sd.dz": {
+    "record": "00092, L’Ecole nationale supérieure des énergies renouvelables, environnement et développement durable - Batna",
+    "lat": 35.6311157,
+    "lng": 6.2752156,
+    "osm": "way/1350088590",
+    "osm_version": 1,
+    "osm_timestamp": "2025-01-10T21:19:42Z",
+    "osm_name": "Higher National School of Renewable Energies, Environment and Sustainable Development",
+    "wilaya_code": 5,
+    "commune": "Fesdis",
+    "why": "OSM way/1350088590 (website (hns-re2sd.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 29 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Commune: Fesdis, as the Review queue's committed OSM outline gives it. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/1350088590",
+      "point": [
+        6.2749599,
+        35.631268
+      ],
+      "metres_from_published_value": 29,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"Ecole Nationale Supérieure En Energies Renouvelables, Environnement Et Développement Durable\" and supplied 35.631268, 6.2749599, 29 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:imaa-univ.com": {
+    "record": "00159, معهد المناجمنت سعيد حمدين بالجزائر",
+    "lat": 36.7363667,
+    "lng": 3.0326999,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places f85f9e20-03fc-4f84-8f57-054a5f88a3fa \"IMAA Institut de Management Algéro-Américain\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Coopérative El Amel, Saïd Hamdine; matches record's own location text exactly. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "f85f9e20-03fc-4f84-8f57-054a5f88a3fa",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:incgdz.com": {
+    "record": "00119, المعهد العالي للتجارة والاقتصاد سطيف",
+    "lat": 36.1873268,
+    "lng": 5.443087,
+    "wilaya_code": 19,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places c9263e9d-a0d3-4e9e-9651-89ffc2813667 \"INCG Sétif Business School\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Sétif city, matches record's wilaya. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "c9263e9d-a0d3-4e9e-9651-89ffc2813667",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:inptic.edu.dz": {
+    "record": "00113, المدرسة الوطنية العليا للبريد وتكنولوجيات الإعلام والاتصال (الكاليتوس، ولاية الجزائر).",
+    "lat": 36.655334,
+    "lng": 3.1468977,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 6b226a47-ee66-429c-8611-7aa412e91100 \"INPTIC (Information Technology Institute)\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Route de l'Arbaa, Eucalyptus, Alger; matches record's own location text (Les Eucalyptus). One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "6b226a47-ee66-429c-8611-7aa412e91100",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:insimsup.dz": {
+    "record": "00154, معهد إدارة الأعمال ( أنسيم سوب) حيدرة الجزائر",
+    "lat": 36.7610012,
+    "lng": 3.0235834,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places 8c3399d5-2bd9-4ce1-99c1-7c3d48c797a2 \"Insim.sup\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Route du Val d'Hydra, El Biar, adjacent to the record's own Hydra location text. One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "8c3399d5-2bd9-4ce1-99c1-7c3d48c797a2",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:io-bba.com": {
+    "record": "00156, معهد البصريات برج بوعريريج",
+    "lat": 36.0801004,
+    "lng": 4.7423944,
+    "wilaya_code": 34,
+    "why": "Owner decision of 2026-10-29: a single open campus lead with a clear identity ships where nothing confirms it. Overture Maps Places d88591cc-946d-4552-93f2-31ce796152c4 \"Optometry Institute معهد البصريات\" (website tie; Meta-sourced, CDLA-Permissive-2.0, attribution Overture Maps Foundation), committed in sources/enseignement-superieur/overture-places.json. Rue B, Bordj Bou Arreridj; matches record's wilaya and the record's own name (optics institute). One Vote only: an independent second source would make it two.",
+    "single_open_source": {
+      "source": "overture",
+      "ref": "d88591cc-946d-4552-93f2-31ce796152c4",
+      "read_at": "2026-10-29",
+      "tie": "website"
+    }
+  },
+  "host:isg.dz": {
+    "record": "00120, المعهد العالي للتسيير دالي براهيم",
+    "lat": 36.749881,
+    "lng": 2.9482848,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (https://isg.dz/contact/), read on 2026-10-29: Contact page has a Divi map module with explicit data-lat and data-lng attributes (36.749881, 2.9482848), matching the existing open-data lead almost exactly. The open lead from the 2026-10-29 search (an OSM or Overture object) lies 0 m away, which agrees.",
+    "operator_location": {
+      "read_at": "2026-10-29",
+      "source_url": "https://isg.dz/contact/",
+      "kind": "map_coords",
+      "note": "The institution's own published location. Not an open coordinate."
+    }
+  },
+  "host:ismas.dz": {
+    "record": "00150, المعهد الوطني لمهن فنون العرض والسمعي البصري",
+    "lat": 36.747447,
+    "lng": 3.1832939,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (https://www.ismas.dz/?page_id=644), read on 2026-10-29: ISMAS, Institut Superieur des Metiers des Arts du Spectacle, Bordj El Kiffan area Algiers, found a Google Maps embed iframe on the site's own Contact page (page_id=644), coordinates read from the pb parameter (2d=lng, 3d=lat), 185 m from the existing open-data lead point. The open lead from the 2026-10-29 search (an OSM or Overture object) lies 185 m away, which agrees.",
+    "operator_location": {
+      "read_at": "2026-10-29",
+      "source_url": "https://www.ismas.dz/?page_id=644",
+      "kind": "map_coords",
+      "note": "The institution's own published location. Not an open coordinate."
+    }
+  },
+  "host:mdi-alger.com": {
+    "record": "00160, معهد المناجمنت والتطوير الشراقة.الجزائر",
+    "lat": 36.7527224,
+    "lng": 2.9504122,
+    "wilaya_code": 16,
+    "why": "Owner decision of 2026-10-25: a location an operator publishes itself is verified. This institution shows its own location on its website (https://mdi-alger.com/contact/), read on 2026-10-29: Coordinates read from a Google Maps place link on the site's own contact page for MDI Alger Business School (place cid 0x128fb03aa93e4959:0x4f54db9eaf51cb60), treated as the actual place pin. The open lead from the 2026-10-29 search (an OSM or Overture object) lies 2052 m away, so the institution's own map is taken over it.",
+    "operator_location": {
+      "read_at": "2026-10-29",
+      "source_url": "https://mdi-alger.com/contact/",
+      "kind": "map_coords",
+      "note": "The institution's own published location. Not an open coordinate."
+    }
+  },
+  "host:ufc.dz": {
+    "record": "00031, Université de la Formation Continue",
+    "lat": 36.7576724,
+    "lng": 2.9831795,
+    "osm": "node/5658830621",
+    "osm_version": 1,
+    "osm_timestamp": "2018-06-02T14:47:38Z",
+    "osm_name": null,
+    "wilaya_code": 16,
+    "commune": "Dely Ibrahim",
+    "why": "OSM node/5658830621 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q135914996 is this institution by website (P856 host = record website host ufc.dz) and its P625 agrees with the OSM point to 55 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q135914996",
+      "tie": "website",
+      "point": [
+        2.9837342038394,
+        36.757895980833
+      ],
+      "metres_from_published_value": 55,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "confirms": "node/5658830621",
+      "references": []
+    }
+  },
+  "host:univ-alger.dz": {
+    "record": "00004, Université d’Alger 1 - Benyoucef Benkhedda",
+    "lat": 36.7710859,
+    "lng": 3.0554439,
+    "osm": "way/29082561",
+    "osm_version": 14,
+    "osm_timestamp": "2025-10-22T09:11:06Z",
+    "osm_name": "La Faculté centrale",
+    "wilaya_code": 16,
+    "commune": "Alger Centre",
+    "why": "OSM way/29082561 (website (univ-alger.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 19 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Wikidata Q1190852's P625 is 32 m from this object, a Copied claim, so it casts no Vote. Commune: Alger Centre, whose committed OSM outline contains the point. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/29082561",
+      "point": [
+        3.0555578,
+        36.7709377
+      ],
+      "metres_from_published_value": 19,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"University of Algiers 1\" and supplied 36.7709377, 3.0555578, 19 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:univ-emir.dz": {
+    "record": "00054, Université des sciences islamiques Emir Abdelkader de Constantine",
+    "lat": 36.3461042,
+    "lng": 6.602899,
+    "osm": "node/8539621407",
+    "osm_version": 2,
+    "osm_timestamp": "2021-06-16T22:40:46Z",
+    "osm_name": "Université Amir Abdelkader des Sciences Islamiques",
+    "wilaya_code": 25,
+    "commune": "Constantine",
+    "why": "OSM node/8539621407 (name tie) read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point), 0 m from the 2026-08-03 Overpass capture. Wikidata Q5372520 is this institution by website (P856 host = record website host univ-emir.dz) and its P625 agrees with the OSM point to 344 m, inside the 2 km agreement radius and outside the 50 m copy radius, so docs/adr/0001 counts two independent Votes and the OSM point ships. Commune by containment in the committed OSM outline. Evidence: research/enseignement-superieur/second-source-votes-2026-10-28.json.",
+    "wikidata_confirmation": {
+      "item": "Q5372520",
+      "tie": "website",
+      "point": [
+        6.60425,
+        36.349
+      ],
+      "metres_from_published_value": 344,
+      "read_at": "2026-10-28",
+      "source": "Wikidata P625, CC0",
+      "confirms": "node/8539621407",
+      "references": [
+        {
+          "property": "P143",
+          "value": "Q328"
+        }
+      ]
+    }
+  },
+  "host:univ-setif.dz": {
+    "record": "00042, Université de Sétif 1 - Ferhat Abbas",
+    "lat": 36.1961467,
+    "lng": 5.3596081,
+    "osm": "way/1263457366",
+    "osm_version": 4,
+    "osm_timestamp": "2026-10-16T19:29:36Z",
+    "osm_name": "Rectorat مديرية الجامعة",
+    "wilaya_code": 19,
+    "commune": "Setif",
+    "why": "OSM way/1263457366 (building=university, named \"Rectorat\" in French and Arabic), read live from api.openstreetmap.org on 2026-10-29; its point is the centre of its bounding box. Its name does not say which university it serves, so identity rests on the Owner's decision of 2026-10-29 that this is the rectorate of Sétif 1, at the El Bez campus. The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 10 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). The Owner's earlier reading was 584 m from the El Bez campus object (way/185615558), over the ceiling. Wikidata Q3551403's only P625 is stated in Google Maps, so it casts no Vote and is not stored. Commune: Setif, whose committed OSM outline contains the point. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/1263457366",
+      "point": [
+        5.3597161,
+        36.1961376
+      ],
+      "metres_from_published_value": 10,
+      "read_at": "2026-10-29",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"University of Setif 1\" and supplied 36.1961376, 5.3597161, 10 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  },
+  "host:univ-usto.dz": {
+    "record": "00057, Université Mohamed Boudiaf des sciences et de la technologie d'Oran (USTO)",
+    "lat": 35.7077465,
+    "lng": -0.5791491,
+    "osm": "way/71138773",
+    "osm_version": 12,
+    "osm_timestamp": "2024-04-19T09:20:24Z",
+    "osm_name": "Université des Sciences et de la Technologie d'Oran",
+    "wilaya_code": 31,
+    "commune": "Bir El Djir",
+    "why": "OSM way/71138773 (website (univ-usto.dz) tie in the 2026-10-28 Review queue), read live from api.openstreetmap.org on 2026-10-28; its point is the centre of its bounding box (a node's own point). The second Vote is the Owner's reading under docs/adr/0001 rule 6, recorded below: 23 m from the object, inside the 500 m ceiling, and an Owner reading is never a Copied claim (\"Rule 6 in detail\"). Wikidata Q3551735's P625 is 3,942 m from this object, at the latitude of the Bir El Djir commune point, a town-level coordinate rather than the campus: it votes for no OSM candidate, and neither the reading nor the OSM object votes for it, so it does not block the consensus. Commune: Bir El Djir, whose committed OSM outline contains the point. The coordinate that ships is OpenStreetMap's, ODbL.",
+    "owner_confirmation": {
+      "confirms": "way/71138773",
+      "point": [
+        -0.5789849,
+        35.7079001
+      ],
+      "metres_from_published_value": 23,
+      "read_at": "2026-10-28",
+      "read_by": "project owner",
+      "source": "Google Maps, a proprietary map",
+      "note": "A CONFIRMATION, never the published value. The Owner read the pin of the Google Maps entry \"University of Science and Technology Mohamed Boudiaf\" and supplied 35.7079001, -0.5789849, 23 m from this OSM object. The coordinate that ships is OpenStreetMap's."
+    }
+  }
+}

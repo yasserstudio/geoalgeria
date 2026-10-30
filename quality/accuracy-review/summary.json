@@ -116,11 +116,15 @@
     },
     {
       "path": "packages/enseignement-superieur/data/institutions.json",
-      "sha256": "9b4df87577ee5fb6b85a988991f99b47c4e0474070ad3aca5c510425d781d70e"
+      "sha256": "1ba7c25ac7e51fc825e7bf7670cc81588291c165a1ad1b16418055eddf5bbf3b"
     },
     {
       "path": "packages/enseignement-superieur/data/metadata.json",
-      "sha256": "614a04dd009f30a05592451795d2206f22edbc76ffa0a7f1a5d36b278dd01713"
+      "sha256": "d21067eebeb1d98a2bfff34db035e31d2f1472f946fce3f70df1676652fd3bac"
+    },
+    {
+      "path": "packages/enseignement-superieur/data/retired-ids.json",
+      "sha256": "5d99e54148a12fe689769857efd48a4f28fc847946d32648a3dd6b8894ba4ca1"
     },
     {
       "path": "packages/ferroviaire/data/metadata.json",
@@ -321,15 +325,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 71366,
-  "candidates": 17475,
+  "total_records": 71360,
+  "candidates": 17401,
   "reasons": {
-    "approximate_coordinate": 16629,
+    "approximate_coordinate": 16554,
     "inside_adjacent_wilaya": 192,
     "missing_coordinate": 498,
-    "outside_all_wilaya_boundaries": 199,
-    "outside_declared_wilaya": 391,
-    "shared_coordinate": 1124
+    "outside_all_wilaya_boundaries": 200,
+    "outside_declared_wilaya": 392,
+    "shared_coordinate": 1058
   },
   "datasets": [
     {
@@ -1080,11 +1084,13 @@
     },
     {
       "dataset": "enseignement-superieur",
-      "total_records": 177,
-      "candidates": 110,
+      "total_records": 171,
+      "candidates": 36,
       "reasons": {
-        "approximate_coordinate": 110,
-        "shared_coordinate": 83
+        "approximate_coordinate": 35,
+        "outside_all_wilaya_boundaries": 1,
+        "outside_declared_wilaya": 1,
+        "shared_coordinate": 17
       },
       "metadata_path": "packages/enseignement-superieur/data/metadata.json",
       "metadata": {
@@ -1093,21 +1099,21 @@
         "title_fr": "Établissements d'enseignement supérieur d'Algérie",
         "title_ar": "مؤسسات التعليم العالي الجزائرية",
         "title_en": "Algeria higher-education institutions",
-        "record_count": 177,
-        "geocoded_count": 177,
+        "record_count": 171,
+        "geocoded_count": 171,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 67,
-          "approximate": 110
+          "exact": 136,
+          "approximate": 35
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Higher-education institutions (universities, schools, research centres) from the MESRS. 61 are campus-precise; the rest are wilaya/commune centroids (approximate).",
+        "coverage_note": "Higher-education institutions (universities, schools, research centres) from the MESRS, built from two of the ministry's own publications: its university-network listing, and its BAC 2026 placement file (\"Moyennes minimales BAC 2026, suite a la premiere phase\"), which names every establishment it places new bacheliers into by the ministry's own establishment code. The placement file supplies 12 institutions the network listing omits, the current name of 2 it still lists under an older one, and one succession: ENSTA, which decret executif 22-398 made the successor of the two Algiers schools it dissolved, so those two ids are retired and forwarded to it in retired-ids.json. 136 records carry a per-campus coordinate (exact): an OpenStreetMap campus, the location the institution publishes itself, an Owner reading, or a single open lead (an OSM or Overture place); the other 35 are commune or wilaya centroids (approximate), because neither ministry publication carries an address or a coordinate. Military institutions are not published.",
         "wilayas_covered": 51,
         "bbox": [
-          -8.12861,
+          -8.12724,
           22.805776,
-          8.482,
+          8.483781,
           36.912274
         ],
         "sources": [
@@ -1118,24 +1124,45 @@
             "license": "Factual public listing (MESRS)",
             "retrieved": "2026-08-03",
             "evidence_type": "official"
+          },
+          {
+            "key": "bac-2026",
+            "name": "MESRS: Moyennes minimales BAC 2026 (suite à la première phase), the ministry's own placement file",
+            "url": "https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf",
+            "license": "Factual public listing (MESRS)",
+            "evidence_type": "official",
+            "retrieved": "2026-10-28",
+            "snapshot": {
+              "url": "https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf",
+              "sha256": "ca4b24e656296aa6c6ea360d7f53578077e8ea06cbc74c3c8390f1f197e7207e",
+              "bytes": 2382999
+            }
+          },
+          {
+            "key": "overture",
+            "name": "Overture Maps Foundation, Places (release 2026-10-21.0): the single open campus lead of 23 records",
+            "url": "https://overturemaps.org",
+            "license": "CDLA-Permissive-2.0 (attribution: Overture Maps Foundation)",
+            "retrieved": "2026-10-29",
+            "evidence_type": "official"
           }
         ],
         "license": "Factual public listing (MESRS)",
-        "updated": "2026-08-03",
+        "updated": "2026-10-28",
         "by_type": {
-          "universite": 58,
-          "grande_ecole": 102,
-          "ens": 12,
+          "universite": 59,
+          "grande_ecole": 94,
+          "ens": 13,
           "centre_universitaire": 5
         },
         "by_sector": {
-          "public": 158,
+          "public": 152,
           "private": 19
         },
         "by_geo_method": {
-          "campus": 67,
-          "wilaya": 95,
-          "commune": 15
+          "campus": 136,
+          "wilaya": 30,
+          "commune": 5
         }
       }
     },
@@ -2460,11 +2487,13 @@
     {
       "dataset": "enseignement-superieur",
       "entity": "institutions.json",
-      "total_records": 177,
-      "candidates": 110,
+      "total_records": 171,
+      "candidates": 36,
       "reasons": {
-        "approximate_coordinate": 110,
-        "shared_coordinate": 83
+        "approximate_coordinate": 35,
+        "outside_all_wilaya_boundaries": 1,
+        "outside_declared_wilaya": 1,
+        "shared_coordinate": 17
       },
       "path": "packages/enseignement-superieur/data/institutions.json"
     },
@@ -2786,6 +2815,10 @@
     },
     {
       "path": "packages/ecoles/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/enseignement-superieur/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {

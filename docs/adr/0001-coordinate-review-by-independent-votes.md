@@ -50,6 +50,8 @@ audited and repeated on every release.
    Wikidata, the record median) or from the Owner reading open imagery. An Owner reading
    made on Google Maps may only confirm an open Candidate within 500 m, and the open
    coordinate is the one that ships (Beni-Abbes 5201 is the first case).
+   **Amended 2026-10-29 by the Owner** (see "Rule 6 amended" below): where no open
+   Candidate confirms it, the Owner's pin ships.
 7. **Ledger.** v1 writes `research/_commune-centres/corrections-<run date>.json` in the
    existing shape, so the licence count, the dependents cascade and the existing tests keep
    working. Sector records (v2) go through the same voting module into
@@ -141,3 +143,67 @@ The frozen set of run 2026-10-01b was written from the packages as they stood on
 2026-10-09, which still reproduced both of that run's documents byte for byte, so it is the
 evidence the run decided on and not a new reading. Its `read` field stays the run's own
 date, 2026-10-01, because that is the date both landed documents give the Claim it holds.
+
+## Rule 6 in detail: an Owner reading is never a Copied claim (added 2026-10-28, PR #310)
+
+Confirmed by the Owner, 2026-10-28, on the first sector record it decided. Rule 3's copy
+radius exists because a published point is often a value copied from the source that
+would vote for it (seven commune centres were Wikidata's coordinate to the metre). An
+Owner reading cannot be that: it is a pin the Owner reads off a map at review time, and
+the map it is read from is proprietary and is never the provenance of a published value.
+Two such readings closer than 50 m to the open object they confirm are two sources that
+agree well, not one source stated twice. Read literally, rule 3 counted the closer
+agreement for nothing: ENS Bouzareah's pin, 46 m from its OpenStreetMap campus, cast no
+Vote where ENSTA's, 60 m from its own, did.
+
+So, for an Owner reading only:
+
+1. **The copy radius does not apply.** An Owner reading within the 500 m confirmation
+   ceiling of rule 6 is an independent Vote for the open Candidate it confirms, however
+   close it lands.
+2. **Everything else in rule 6 stands.** The reading only confirms: the coordinate that
+   ships is the open one (OpenStreetMap, Wikidata or the record median), never the
+   reading. It is recorded with the record as `owner_confirmation` (point, distance,
+   date, reader, the map it was read from), and a reading past 500 m is no confirmation.
+3. **The copy radius still applies to every other Claim**, Wikidata's P625 included,
+   because those can be copied from each other.
+
+## Rule 6 amended: the Owner's pin ships where no open object confirms it (2026-10-29, PR #310)
+
+Decided by the Owner on 2026-10-29, for this release: "we use everything we have in
+hand, for the people." A coordinate the Owner reads off a proprietary map (Google Maps)
+is no longer limited to confirming an open Candidate:
+
+1. Where an open Candidate lies within 500 m of the Owner's pin, nothing changes: the pin
+   is that Candidate's second Vote and the open coordinate ships.
+2. Where no open Candidate lies within 500 m, the Owner's pin itself ships as the
+   record's coordinate, recorded with the record as `owner_pin` (read date, reader,
+   source, the map entry it was read from). It is never presented as open data: the
+   seed's `why` and the package's SOURCE.md say the point is a proprietary-map reading.
+3. An open point that later confirms the place replaces the pin (rule 1 then applies).
+
+Consequences the Owner accepted when deciding: Google's terms do not allow its map content
+to be copied into another dataset, so these points are not covered by the open licence the
+rest of the data ships under, and a version published to npm cannot be withdrawn after 72
+hours. The first records placed this way are enseignement-superieur `00082` (ESCF
+Constantine), `00183` (`P09`, ENS des systèmes autonomes) and `00133` (INFSPM Béjaïa).
+
+## Two more placements that ship on one source (2026-10-29, PR #310)
+
+Both decided by the Owner, and both recorded in the seed with their origin so a reader can
+tell them from a two-Vote point:
+
+1. **The location an institution publishes itself** (Owner decision of 2026-10-25: an
+   operator-published location is verified). A map embedded on the institution's own
+   website, a map link or a Plus Code there, ships as `operator_location` with the page it
+   was read from. A street address alone is not used.
+2. **A single open lead** (Owner decision of 2026-10-29). Where neither a second source,
+   the institution's own site nor an Owner pin confirms it, one open campus object with a
+   clear identity (a website or exact-name tie) ships as `single_open_source`, the
+   standing the single Nominatim geocodes have always had. It is one Vote, never presented
+   as two. Its source must be open and declared: an Overture Maps Places row is committed
+   as a capture and its source carries a Source rights record (CDLA-Permissive-2.0,
+   attribution Overture Maps Foundation).
+
+A later independent second source turns either into a two-Vote point. Military locations
+never ship under any rule here (Owner decision of 2026-10-29).

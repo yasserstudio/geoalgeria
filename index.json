@@ -200,22 +200,22 @@
       "package": "@geoalgeria/enseignement-superieur",
       "schema_version": "2.0.0",
       "title": "Algeria higher-education institutions",
-      "record_count": 177,
-      "geocoded_count": 177,
+      "record_count": 171,
+      "geocoded_count": 171,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 67,
-        "approximate": 110
+        "exact": 136,
+        "approximate": 35
       },
       "wilayas_covered": 51,
       "bbox": [
-        -8.12861,
+        -8.12724,
         22.805776,
-        8.482,
+        8.483781,
         36.912274
       ],
       "license": "Factual public listing (MESRS)",
-      "updated": "2026-08-03"
+      "updated": "2026-10-28"
     },
     {
       "package": "@geoalgeria/ferroviaire",
