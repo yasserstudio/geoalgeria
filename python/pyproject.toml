@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "geoalgeria"
+version = "0.1.0"
+description = "Algeria's 69 wilayas and 1,541 communes with postal codes, coordinates and Arabic/French search, from the GeoAlgeria open dataset."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT AND ODbL-1.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Yasser's studio", email = "support@yasser.studio" }]
+keywords = ["algeria", "algerie", "wilayas", "communes", "dairas", "postal-codes", "geojson", "open-data", "dz"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Natural Language :: Arabic",
+  "Natural Language :: French",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://geoalgeria.com"
+Source = "https://github.com/yasserstudio/geoalgeria"
+Issues = "https://github.com/yasserstudio/geoalgeria/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/geoalgeria"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "README.md", "LICENSE", "NOTICE", "build_data.py"]

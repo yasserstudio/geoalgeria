@@ -1,0 +1,145 @@
+geoalgeria data notices
+
+Package code is licensed under the MIT License in LICENSE, and so is the
+compilation of wilayas, dairas, communes, their bilingual names, postal codes and
+administrative codes. Five parts of the data are not: four derived from
+OpenStreetMap, and the mirrored postal data under data/poste/.
+
+The four parts derived from OpenStreetMap are made available under the Open
+Database License (ODbL) 1.0 instead. Attribution:
+(c) OpenStreetMap contributors
+https://opendatacommons.org/licenses/odbl/1-0/
+https://www.openstreetmap.org/copyright
+
+1. Wilaya boundary polygons
+
+   data/geojson/wilaya-boundaries.geojson, 69 features, derived from
+   OpenStreetMap `admin_level=4` relations, retrieved 2026-06-21, simplified with
+   mapshaper. Provenance, including the one deliberate departure from upstream
+   OpenStreetMap, is in data/geojson/wilaya-boundaries.metadata.json.
+
+2. Commune centre coordinates
+
+   323 of the 1,541 commune `latitude` / `longitude` values, each taken from that
+   commune's own OpenStreetMap `admin_level=8` relation:
+
+   - 56 corrected on 2026-09-27 from the relation's `admin_centre` node, Overpass
+     `timestamp_osm_base` 2026-09-27T11:03:52Z. Every row, with its OSM relation
+     id, `admin_centre` node id and `ref:ONS`, is listed in
+     research/_commune-centres/corrections-2026-09-27.json in the repository, and
+     summarised in data/geojson/communes.metadata.json.
+   - 189 corrected on 2026-09-29 from the same node, Overpass
+     `timestamp_osm_base` 2026-09-29T12:54:47Z, after every one of the 1,541
+     centres was compared with its relation's `admin_centre` and tested against
+     the relation's own unsimplified boundary. Every row, with the same ids and
+     the four containment verdicts that decided it, is listed in
+     research/_commune-centres/corrections-2026-09-29.json.
+   - 5 corrected on 2026-10-01 from the same node, same Overpass
+     `timestamp_osm_base` 2026-09-29T12:54:47Z, each node re-read from the
+     OpenStreetMap node API on 2026-10-01: the wilaya capital communes Biskra
+     (701), El Kantara (717), Constantine (2501), El Bayadh (3201) and
+     Beni-Abbes (5201), each 3 to 6 km from the seat of the town it is the
+     chef-lieu of. Every row, with the same ids and the independent claims that
+     decided it, is listed in
+     research/_commune-centres/corrections-2026-10-01.json. One of the five,
+     Beni-Abbes, additionally carries a reading the project owner took from a
+     proprietary map; it is recorded there as a confirmation of this node, which
+     it agrees with to 268 m, and never as the published value, so the ODbL
+     covers this coordinate exactly as it covers the other four.
+   - 68 corrected on 2026-10-01 from the same node, same Overpass
+     `timestamp_osm_base` 2026-09-29T12:54:47Z, by the coordinate review engine:
+     each of the 136 centres more than 3 km from its seat, or with no seat, was
+     weighed against the open sources that state where its town is, and a value
+     was written only where at least three of them agree, or two including the
+     median of the exact records inside the commune's own outline, with nothing
+     voting for a different answer and the value inside that outline. Every row,
+     with its Candidates and the Votes that decided it, is listed in
+     research/_commune-centres/corrections-2026-10-01b.json; the 67 the engine
+     did not settle are in research/_commune-centres/review-queue-2026-10-01.json
+     and keep the coordinates they already had. The rules are
+     docs/adr/0001-coordinate-review-by-independent-votes.md. No reading from a
+     proprietary map decided any of the 68.
+   - 5 corrected in version 2.1.0 from the relation centroid, matched on the
+     relation's `ref` tag: Belarbi (2242), El Hamdania (2616), Ouled Bouachra
+     (2627), Deux Bassins (2653) and Makhda (2915). See CHANGELOG.md, 2.1.0.
+     El Euch (3427) was a sixth until 2026-10-01, when the coordinate review moved
+     it 9.7 km off that centroid onto its own `admin_centre` node, so it is counted
+     with the node corrections above and not here. Si Mahdjoub (2644) and El Achir (3407) are NOT in this
+     set: each kept the placeholder point it shared with its neighbour, still
+     byte-identical to its pre-2.1.0 value, so no OpenStreetMap value was ever
+     written to either and no ODbL claim is made over them.
+
+   A commune centre is one value repeated across representations, so the ODbL
+   covers these 323 coordinates wherever they appear: data/algeria.json,
+   data/communes_w1_w23.json, data/communes_w24_w48.json,
+   data/communes_w49_w69.json, data/csv/communes.csv,
+   data/geojson/communes.geojson and data/sql/full.sql.
+
+   The other 1,218 commune coordinates are not OpenStreetMap-derived and no ODbL
+   claim is made over them.
+
+3. Wilaya capital points
+
+   A wilaya's latitude / longitude is the centre of its capital commune
+   (capital_commune_code), the same value and not a second reading of it, so it
+   carries whatever terms that commune centre carries. 6 of the 69 wilaya capital
+   points are therefore among the OpenStreetMap-derived coordinates above and are
+   ODbL 1.0, (c) OpenStreetMap contributors: wilayas 7 (Biskra, commune 701),
+   16 (Alger Centre, 1601), 25 (Constantine, 2501), 32 (El Bayadh, 3201),
+   52 (Beni-Abbes, 5201) and 61 (El Kantara, 717). They appear in
+   data/algeria.json, data/csv/wilayas.csv, data/sql/full.sql,
+   data/geojson/wilayas.geojson and algeria.geojson.
+
+   The other 63 wilaya capital points are the centres of communes with no
+   recorded source, are not OpenStreetMap-derived and no ODbL claim is made over
+   them.
+
+4. OpenStreetMap relation ids and Wikidata items
+
+   The osm_relation_id and wikidata values on the commune and wilaya records, read
+   off the Overpass capture of the Algerian administrative relations whose
+   timestamp_osm_base is 2026-09-29T12:54:47Z
+   (research/_commune-centres/osm-2026-09-29/admin-relations.json in the
+   repository):
+
+   - 1,537 of the 1,541 communes carry the id of their own admin_level=8 relation,
+     and 1,536 of them carry the wikidata item that relation is tagged with. Souk
+     Oufella (630), Bir Touta (1634), Collo (2110) and Dhayet Bendhahoua (4703)
+     carry null in both fields, because the capture holds no relation for them, and
+     Ain-Defla (4401) carries its relation with a null item, because the relation has
+     no wikidata tag.
+   - All 69 wilayas carry the id of their own admin_level=4 relation and that
+     relation's wikidata item.
+
+   The linkage is the one scripts/audit-commune-centres.mjs decided and
+   research/_commune-centres/osm-seat-reference.json records: a commune relation is
+   joined on its ref:ONS tag, then on a pre-2019-reform ONS code resolved inside the
+   mother wilaya's carved-out communes, then on six reviewed per-relation pins; a
+   wilaya relation is joined on its ref tag. No record is linked by a name alone.
+   Coverage and the five records above are in data/osm-links.metadata.json.
+
+   These values are carried by data/algeria.json, data/communes_w1_w23.json,
+   data/communes_w24_w48.json, data/communes_w49_w69.json and data/wilayas.json. The
+   CSV, GeoJSON and SQL representations do not carry them. The Wikidata items are
+   OpenStreetMap tag values, not the result of a query against Wikidata, so the ODbL
+   covers them here as it covers the relation ids.
+
+5. Mirrored postal data
+
+   data/poste/ (postoffices.json, atms.json, their CSV and GeoJSON
+   representations and their metadata.json) is a generated mirror of
+   @geoalgeria/poste, whose source is Algérie Poste's BaridiMap portal
+   (https://baridimap.poste.dz), retrieved 2026-06-08. Terms, exactly as
+   @geoalgeria/poste states them:
+
+   Data © Algérie Poste; redistributed for reference
+
+   The underlying data is © Algérie Poste, redistributed for reference and to
+   power GeoAlgeria (https://geoalgeria.com). It is not offered under the MIT
+   License, and no open licence is claimed over it. The post office and ATM
+   postal codes, commune codes and wilaya codes carried alongside it are part of
+   the MIT compilation above.
+
+Database rights and share-alike obligations may apply to redistributed derived
+databases. This notice does not replace any applicable licence text or source
+terms.
