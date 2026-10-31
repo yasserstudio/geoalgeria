@@ -67,6 +67,20 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 
 A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office and ATM mirrors among them. If you need one part only, import its file on its own: `import communes from "geoalgeria/data/ecommerce/communes.json"` in a bundler, or with `with { type: "json" }` in plain Node. In TypeScript the default import needs `esModuleInterop`; `import dz = require("geoalgeria")` does not.
 
+Python has the same wilayas, dairas and communes, with no dependencies:
+
+```bash
+pip install geoalgeria
+```
+
+```python
+import geoalgeria
+
+geoalgeria.search("ورقلة")[0]["name_fr"]   # 'Ouargla', harakat optional
+geoalgeria.communes(16)                   # communes of Algiers
+geoalgeria.commune(101)["postal_code"]    # '01000'
+```
+
 ## What's inside
 
 | | Count | |

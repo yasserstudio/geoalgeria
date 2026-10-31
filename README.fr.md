@@ -67,6 +67,20 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 
 Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les miroirs des bureaux de poste et des DAB compris. Si vous n'avez besoin que d'une partie, importez son fichier seul : `import communes from "geoalgeria/data/ecommerce/communes.json"` dans un bundler, ou avec `with { type: "json" }` sous Node sans bundler. En TypeScript, l'import par défaut demande `esModuleInterop` ; `import dz = require("geoalgeria")` non.
 
+En Python, les mêmes wilayas, daïras et communes, sans dépendance :
+
+```bash
+pip install geoalgeria
+```
+
+```python
+import geoalgeria
+
+geoalgeria.search("ورقلة")[0]["name_fr"]   # 'Ouargla', harakat optional
+geoalgeria.communes(16)                   # communes of Algiers
+geoalgeria.commune(101)["postal_code"]    # '01000'
+```
+
 ## Contenu
 
 | | Nombre | |

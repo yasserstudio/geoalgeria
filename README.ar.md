@@ -69,6 +69,20 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 
 مع أي bundler (Next.js أو Vite أو webpack) تُضمّ ملفات JSON العشرة كلها، بما فيها مرايا مكاتب البريد والصرافات الآلية. إذا كنت تحتاج جزءًا واحدًا، استورد ملفه وحده: `import communes from "geoalgeria/data/ecommerce/communes.json"` مع bundler، أو مع `with { type: "json" }` في Node وحده. في TypeScript يحتاج الاستيراد الافتراضي إلى `esModuleInterop`، بخلاف `import dz = require("geoalgeria")`.
 
+في Python، نفس الولايات والدوائر والبلديات، بدون أي تبعية:
+
+```bash
+pip install geoalgeria
+```
+
+```python
+import geoalgeria
+
+geoalgeria.search("ورقلة")[0]["name_fr"]   # 'Ouargla', harakat optional
+geoalgeria.communes(16)                   # communes of Algiers
+geoalgeria.commune(101)["postal_code"]    # '01000'
+```
+
 ## المحتوى
 
 | | العدد | |
