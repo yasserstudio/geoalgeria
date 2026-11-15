@@ -38,6 +38,7 @@ import { MIGRATIONS, TWIN_POSTS_NOTE, REPEAT_POSTS_NOTE, writePackageV2, resolve
 // second source each (private tracker #287). Kept in its own module because the
 // table IS the evidence, and is read by the standing test as well as this build.
 import { TWIN_PAIR_TABLE, UNPAIRED_CANDIDATES, assertPairTable, pairTableFor } from "./twin-pair-table.mjs";
+import { applySites, readSitesSeed } from "./sites.mjs";
 // The project's one fold, used for the repeat-post check, which compares two
 // names written in the SAME script (see the repeat-post section). The
 // conservative key decides; the loose key is reported beside it.
@@ -1648,6 +1649,11 @@ export function mspCarryKey(committed, rows = []) {
 
 // --- main ------------------------------------------------------------------
 async function main() {
+  // `--committed`: re-emit the committed records with the reviewed site seed
+  // applied, offline and with nothing else re-derived. The `--cache` replay
+  // rebuilds from the July research pulls, which predate the 2026-10-25 OSM
+  // re-pull the committed records came from, so it moves unrelated records.
+  if (process.argv.includes("--committed")) return reemitCommitted();
   // Offline replay: rebuild from the committed MSP registry + OSM/Wikidata pulls with
   // no network (the MoH portal is behind broken TLS, see fetchMSP's custom-CA path,
   // so a live run is fragile; the cache keeps re-emission deterministic and offline).
@@ -1701,6 +1707,8 @@ async function main() {
   const v2 = rows.map(cfg.map);
   const retiredIds = readRetiredIds(OUT_DIR);
   const committed = readCommitted(OUT_DIR, "sante.json");
+  // Before carry-over, so a site record keeps its id on its OSM key.
+  applySites(v2, readSitesSeed());
   carryOverIds(v2, committed, mspCarryKey(committed, v2), "sante", retiredIds);
   // Both merges append to the one ledger, twins first, so a run that sees both
   // writes one `migrations` map and not two competing ones.
@@ -1726,6 +1734,30 @@ async function main() {
   console.log(
     `Wrote ${out.length} establishments → v2 (${metadata.wilayas_covered} wilayas, ${metadata.geocoded_count} geocoded).`,
   );
+}
+
+/**
+ * Re-emit the committed records through the shared writer with the site seed
+ * applied, as scripts/apply-overrides.mjs does for a ledger: the committed dates
+ * and source snapshots carry over, and a second run is a no-op.
+ */
+function reemitCommitted() {
+  const oldMeta = JSON.parse(readFileSync(join(OUT_DIR, "metadata.json"), "utf8"));
+  const rows = applySites(readCommitted(OUT_DIR, "sante.json"), readSitesSeed());
+  const snapshots = Object.fromEntries(
+    (oldMeta.sources ?? []).filter((s) => s.snapshot).map((s) => [s.key, s.snapshot]),
+  );
+  const { records: out } = writePackageV2({
+    pkg: "sante",
+    dir: OUT_DIR,
+    files: [{ file: "sante.json", rows }],
+    meta: MIGRATIONS.sante.meta,
+    updated: oldMeta.updated,
+    retrieved: oldMeta.sources?.[0]?.retrieved,
+    snapshots,
+    oldMeta,
+  });
+  console.log(`Re-emitted ${out.length} records from the committed data with the site seed applied.`);
 }
 
 /**

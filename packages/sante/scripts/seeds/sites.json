@@ -1,0 +1,65 @@
+{
+  "_comment": "Physical sites of establishments the Ministry of Health registry lists once (Owner decision 2026-11-15). Keyed by the establishment's record id. The first site places the establishment's own record; every further site becomes a record of its own, id {parent}-s{n}, carrying `site_of` and the parent's wilaya, commune, type and sector. The first site is not a claim that it is the headquarters, only that it is one of the establishment's real sites. lat/lng are the open OpenStreetMap object's point as read live from api.openstreetmap.org (osm, osm_version, osm_timestamp; a way's point is the centre of its bounding box), and that is the coordinate that ships, ODbL. Each point carries an owner_confirmation under docs/adr/0001 rule 6: an Owner reading off a proprietary map within 500 m confirms the open object and never ships. The build (scripts/sites.mjs) re-measures every distance and refuses a mismatch.",
+  "06-chu-01": {
+    "record": "06-chu-01, Centre Hospitalo Universitaire Bejaia (msp 3649, msp_twin 3650)",
+    "sites": [
+      {
+        "osm": "way/156237500",
+        "osm_version": 12,
+        "osm_timestamp": "2020-06-09T22:02:35Z",
+        "osm_name": "Hôpital Khelil Amrane",
+        "osm_name_ar": "مستشفى خليل عمران",
+        "lat": 36.7544322,
+        "lng": 5.0498111,
+        "why": "The CHU's Khelil Amrane hospital, read live from api.openstreetmap.org on 2026-11-15. The record stood on the Bejaia commune centroid, 732 m away. The Owner's reading below is 216 m from the object, inside the 500 m ceiling.",
+        "owner_confirmation": {
+          "confirms": "way/156237500",
+          "point": [5.0473873, 36.7543693],
+          "metres_from_published_value": 216,
+          "read_at": "2026-11-15",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the Google Maps pin of the CHU Bejaia site Khelil Amrane. The coordinate that ships is OpenStreetMap's."
+        }
+      },
+      {
+        "osm": "way/156238581",
+        "osm_version": 21,
+        "osm_timestamp": "2023-06-17T16:31:10Z",
+        "osm_name": "Hôpital Frantz Fanon",
+        "osm_name_ar": "مستشفى فرانز فانون",
+        "lat": 36.7564211,
+        "lng": 5.0835519,
+        "why": "The CHU's Frantz Fanon hospital, read live from api.openstreetmap.org on 2026-11-15. The Owner's reading below is 443 m from the object, inside the 500 m ceiling.",
+        "owner_confirmation": {
+          "confirms": "way/156238581",
+          "point": [5.0785871, 36.7562315],
+          "metres_from_published_value": 443,
+          "read_at": "2026-11-15",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the Google Maps pin of the CHU Bejaia site Frantz Fanon. The coordinate that ships is OpenStreetMap's."
+        }
+      },
+      {
+        "osm": "node/2466300649",
+        "osm_version": 8,
+        "osm_timestamp": "2023-07-19T14:25:29Z",
+        "osm_name": "Polyclinique d'Accouchement Targa Ouzemmour",
+        "osm_name_ar": "عيادة الولادة",
+        "lat": 36.7525261,
+        "lng": 5.0462174,
+        "why": "The CHU's maternity unit at Targa Ouzemmour, read live from api.openstreetmap.org on 2026-11-15. The Owner's reading below is 50 m from the object, inside the 500 m ceiling.",
+        "owner_confirmation": {
+          "confirms": "node/2466300649",
+          "point": [5.0456602, 36.7524552],
+          "metres_from_published_value": 50,
+          "read_at": "2026-11-15",
+          "read_by": "project owner",
+          "source": "Google Maps, a proprietary map",
+          "note": "A CONFIRMATION, never the published value. The Owner read the Google Maps pin of the CHU Bejaia maternity site at Targa Ouzemmour. The coordinate that ships is OpenStreetMap's."
+        }
+      }
+    ]
+  }
+}

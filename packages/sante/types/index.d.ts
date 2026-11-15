@@ -33,8 +33,9 @@ export type ReviewStatus = "corrected";
 /** External identifiers keyed by source system. */
 export interface Refs {
   /** MoH post id on sante.gov.dz: this record's primary post, the French one
-   *  where the registry publishes both. */
-  msp: string;
+   *  where the registry publishes both. Absent on a site record (`site_of`),
+   *  which the registry does not list on its own. */
+  msp?: string;
   /** The MoH's other-language post for the SAME establishment, when it
    *  publishes one. The registry lists each establishment twice, once in French
    *  and once in Arabic, under two post ids; a bilingual record stands for both,
@@ -75,10 +76,12 @@ export interface HealthEstablishment {
   geo_precision: GeoPrecision;
   /** How `lat`/`lng` were obtained; null when there are none. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]`: always "msp" (the MoH registry).
-   *  The geocoding sources are named per record in {@link HealthEstablishment.refs}. */
-  source: "msp";
-  /** External identifiers: always the MoH post id, plus OSM/Wikidata where matched. */
+  /** Provenance key into `metadata.sources[]`: "msp" (the MoH registry) for an
+   *  establishment, "osm" for a site record (`site_of`), which OpenStreetMap
+   *  places and names. The geocoding sources are named per record in
+   *  {@link HealthEstablishment.refs}. */
+  source: "msp" | "osm";
+  /** External identifiers: the MoH post id on every establishment, plus OSM/Wikidata where matched. */
   refs: Refs;
   /** Establishment category. */
   type: HealthType;
@@ -88,8 +91,13 @@ export interface HealthEstablishment {
   type_label_ar: string;
   /** Ownership sector ("public" for the MoH registry). */
   sector: HealthSector;
-  /** URL slug of the source post (French post preferred). */
-  slug: string;
+  /** URL slug of the source post (French post preferred). Absent on a site record. */
+  slug?: string;
+  /** Present only on a site record: the id of the establishment this record is
+   *  one physical site of (e.g. "06-chu-01"). The establishment's own record
+   *  places one of its sites; each further site is a record with this field.
+   *  To count establishments, skip records that carry it. */
+  site_of?: string;
   /** Present only when a reviewed correction was applied to this record. */
   review_status?: ReviewStatus;
   /** ISO date of the reviewed correction. */
@@ -140,6 +148,8 @@ export interface Metadata {
   /** Count by `geo_method`; ungeocoded records are absent (they have no method). */
   by_geo_method: Partial<Record<Exclude<GeoMethod, null>, number>>;
   bilingual: number;
+  /** Site records (`site_of`): `record_count` minus this is the establishment count. */
+  sites: number;
   linkage_note: string;
 }
 

@@ -16,20 +16,22 @@
 direction de la santé – établissements publics hospitaliers (EPH), de santé de
 proximité (EPSP), hospitaliers spécialisés (EHS) et centres hospitalo-universitaires
 (CHU) du **Ministère de la Santé (MSP)**, bilingues français/arabe, **587
-géolocalisés** (122 sur un point précis OpenStreetMap/Wikidata, 11 vérifiés à la
-main, 454 sur un centroïde de commune) avec rattachement commune/wilaya.
+géolocalisés** (123 sur un point précis OpenStreetMap/Wikidata, 11 vérifiés à la
+main, 453 sur un centroïde de commune) avec rattachement commune/wilaya. Un
+établissement, le CHU de Béjaïa, fonctionne sur trois sites : il livre donc **2
+enregistrements de site** (`site_of`) en plus du sien, soit 659 enregistrements.
 Livré en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 > **Le volet communautaire vit dans [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques), et les deux ne doivent jamais être additionnés.**
 > Ce paquet est le volet *registre* : les établissements publics que gère le
 > ministère de la Santé, officiel et clos. `cliniques` est le volet
-> *communautaire* : 1 915 polycliniques, salles de soins, centres de santé,
+> *communautaire* : 1 914 polycliniques, salles de soins, centres de santé,
 > maternités et cliniques cartographiés par les contributeurs OpenStreetMap,
 > partiel par nature. Tout élément OSM référencé par un enregistrement d'ici en
 > est exclu par construction, donc aucun lieu n'est publié deux fois sous le
 > même élément, mais les deux décrivent des volets différents d'un système de
-> santé : additionner 657 et 1 915 ne compte rien de réel.
+> santé : additionner 657 et 1 914 ne compte rien de réel.
 
 ```bash
 npm install @geoalgeria/sante
@@ -38,7 +40,10 @@ npm install @geoalgeria/sante
 ```js
 import sante from "@geoalgeria/sante";
 
-const all = sante.sante();              // 657 établissements
+const all = sante.sante();              // 659 enregistrements : 657 établissements + 2 sites
+
+// Un enregistrement par établissement (sans les enregistrements de site)
+const etablissements = all.filter((e) => !e.site_of);
 
 // Hôpitaux publics d'une wilaya (jointure sur le wilaya_code de GeoAlgeria)
 const ephAlger = all.filter((e) => e.wilaya_code === "16" && e.type === "eph");
@@ -49,7 +54,7 @@ const mappable = all.filter((e) => e.lat != null);
 
 ## Ce que vous pouvez construire
 
-- **Localisateurs d'hôpitaux et de cliniques** – des coordonnées sur 587 des 657
+- **Localisateurs d'hôpitaux et de cliniques** : des coordonnées sur 589 des 659
   enregistrements, prêtes pour une carte ou une recherche de proximité.
 - **Annuaires de santé bilingues** – noms français et arabe, type officiel et
   wilaya pour chaque établissement.
@@ -61,6 +66,7 @@ const mappable = all.filter((e) => e.lat != null);
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
 | Établissements de santé | **657** | 587 géolocalisés | 58 wilayas, 594 bilingues |
+| Enregistrements de site (`site_of`) | **2** | 2 géolocalisés | autres sites du CHU de Béjaïa, bilingues |
 
 **Par type**
 
@@ -69,24 +75,24 @@ const mappable = all.filter((e) => e.lat != null);
 | `eph` | 252 | Établissement Public Hospitalier |
 | `epsp` | 280 | Établissement Public de Santé de Proximité |
 | `ehs` | 103 | Établissement Hospitalier Spécialisé |
-| `chu` | 17 | Centre Hospitalo-Universitaire |
+| `chu` | 19 | Centre Hospitalo-Universitaire (17 établissements + 2 enregistrements de site) |
 | `hopital` | 5 | autre hôpital public |
 
 **Par précision des coordonnées** (`geo_precision`)
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
-| `exact` | 133 | point précis : un établissement OSM ou Wikidata dans la commune, ou une position vérifiée à la main |
-| `approximate` | 454 | centroïde de la commune de l'établissement |
+| `exact` | 136 | point précis : un établissement OSM ou Wikidata dans la commune, ou une position vérifiée à la main |
+| `approximate` | 453 | centroïde de la commune de l'établissement |
 | `null` | 70 | localité non rattachée à une commune – pas de coordonnées (`lat`/`lng` aussi `null`) |
 
 **Par méthode d'obtention** (`geo_method`)
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
-| `osm_point` | 119 | point précis d'un établissement OpenStreetMap dans la commune |
+| `osm_point` | 122 | point précis d'un établissement OpenStreetMap dans la commune |
 | `wikidata_point` | 3 | point précis d'un établissement Wikidata dans la commune |
-| `commune_centroid` | 454 | centroïde de la commune de l'établissement (approximatif) |
+| `commune_centroid` | 453 | centroïde de la commune de l'établissement (approximatif) |
 | `owner_verified` | 11 | position relevée sur la carte par le propriétaire du projet, via le registre de corrections révisées |
 | `null` | 70 | aucune méthode – l'enregistrement n'a pas de coordonnées |
 
@@ -117,7 +123,7 @@ chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
 
 ```
 data/
-  sante.json              # 657 établissements (tableau)
+  sante.json              # 659 enregistrements : 657 établissements + 2 sites (tableau)
   metadata.json           # sources, totaux, couverture, updated
   retired-ids.json        # identifiants à jamais réservés, et où sont passées leurs données
   csv/sante.csv           # dépôt + Release (pas dans le tarball npm)
@@ -159,9 +165,9 @@ titre ; `wilaya_code` de l'étiquette du MSP. `sector` vaut `"public"` pour tou
 le registre MSP, qui ne liste aucun établissement privé ; les structures privées
 que cartographie OpenStreetMap vivent dans
 [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques).
-`source` vaut toujours `"msp"` (le registre du Ministère de la
-Santé) ; `refs` porte les identifiants de provenance ayant contribué –
-toujours `msp`, plus `msp_twin` quand le registre a publié le même
+`source` vaut `"msp"` (le registre du Ministère de la
+Santé) sur chaque établissement ; `refs` porte les identifiants de provenance ayant contribué :
+`msp` sur chaque établissement, plus `msp_twin` quand le registre a publié le même
 établissement une seconde fois dans l'autre langue et `msp_repeat` quand le
 registre l'a saisi une seconde fois dans la même langue, plus `osm` ou `wikidata`
 quand la coordonnée a été remplacée par un point précis. `geo_precision` vaut `"exact"`, `"approximate"` ou
@@ -170,6 +176,43 @@ quand la coordonnée a été remplacée par un point précis. `geo_precision` va
 `lat`/`lng`/`geo_precision`/
 `geo_method` valent tous `null` ensemble pour les 70 enregistrements dont la
 localité n'a pu être rattachée à une commune.
+
+**Sites.** Le registre liste un établissement une seule fois, mais certains
+fonctionnent sur plusieurs emplacements. Quand une liste révisée (le seed des
+sites) les nomme, l'enregistrement de l'établissement se place sur l'un de ses
+sites, et chaque autre site devient un enregistrement à part dont `site_of`
+porte l'`id` de l'établissement. Un enregistrement de site a `source: "osm"`,
+`refs.osm` et ni `refs.msp` ni `slug` ; il reprend la wilaya, la commune, le
+type et le secteur de l'établissement, et prend son nom d'OpenStreetMap. Le
+point de chaque site est un objet OpenStreetMap que le propriétaire du projet a
+confirmé sur la carte à moins de 500 m. Aujourd'hui un seul établissement a des
+sites : le CHU de Béjaïa (`06-chu-01`, Khelil Amrane), avec `06-chu-01-s2`
+(Frantz Fanon) et `06-chu-01-s3` (la maternité de Targa Ouzemmour). Pour compter
+les établissements, ignorez les enregistrements qui ont `site_of` ;
+`metadata.sites` en donne le nombre.
+
+```json
+{
+  "id": "06-chu-01-s2",
+  "name": "Hôpital Frantz Fanon",
+  "name_fr": "Hôpital Frantz Fanon",
+  "name_ar": "مستشفى فرانز فانون",
+  "wilaya_code": "06",
+  "commune_code": "0601",
+  "commune": "Bejaia",
+  "lat": 36.756421,
+  "lng": 5.083552,
+  "geo_precision": "exact",
+  "geo_method": "osm_point",
+  "source": "osm",
+  "refs": { "osm": "way/156238581" },
+  "type": "chu",
+  "type_label_fr": "Centre Hospitalo-Universitaire",
+  "type_label_ar": "المركز الاستشفائي الجامعي",
+  "sector": "public",
+  "site_of": "06-chu-01"
+}
+```
 
 > **Les coordonnées et la commune sont dérivées, pas issues du MSP.** Le
 > Ministère de la Santé ne liste que noms, type et wilaya. GeoAlgeria rattache la
@@ -236,7 +279,14 @@ Lancez `npm run fetch` pour régénérer les sorties. Le script :
    (`commune`, `commune_code` et un centroïde) ;
 5. interroge **Wikidata** (SPARQL, hôpitaux) et **OpenStreetMap** (Overpass,
    `amenity=hospital`/`clinic`, `healthcare=*`) et **remplace** la coordonnée par
-   un point précis lorsqu'il s'en trouve un dans la commune.
+   un point précis lorsqu'il s'en trouve un dans la commune ;
+6. applique le **seed des sites** révisé
+   ([`scripts/seeds/sites.json`](scripts/seeds/sites.json)) : un établissement
+   qui fonctionne sur plusieurs emplacements se place sur l'un de ses sites, et
+   chaque autre site devient un enregistrement `site_of`. Le build re-mesure
+   chaque confirmation du propriétaire et refuse celle qui dépasse 500 m.
+   `npm run fetch -- --committed` ré-applique le seed aux enregistrements
+   commités, hors ligne.
 
 Les extractions brutes sont mises en cache sous
 [`research/sante/`](https://github.com/yasserstudio/geoalgeria/tree/main/research/sante).

@@ -356,7 +356,7 @@ export const MIGRATIONS = {
       estimatedUniverse: null,
       coverageNote: `Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. ${TWIN_POSTS_NOTE} ${REPEAT_POSTS_NOTE} Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 70 remain ungeocoded.`,
       titles: { en: "Algeria public health establishments", fr: "Établissements de santé publique d'Algérie", ar: "المؤسسات الصحية العمومية الجزائرية" },
-      stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), bilingual: rows.filter((r) => r.name_ar && r.name_fr).length, linkage_note: LINKAGE }),
+      stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), bilingual: rows.filter((r) => r.name_ar && r.name_fr).length, sites: rows.filter((r) => r.site_of).length, linkage_note: LINKAGE }),
     },
   },
 
