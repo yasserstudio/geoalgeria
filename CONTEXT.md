@@ -58,6 +58,10 @@ _Avoid_: domain, category, vertical
 A single physical premises operated by an institution or ministry, a hospital, youth center, university campus, post office, training center. Maps to établissement / مؤسسة.
 _Avoid_: facility, center, site
 
+**Campus**:
+A further location of a higher-education establishment, beyond the main point its record carries, listed in that record's `campuses` array on its own OpenStreetMap object. Not a record: it has no id of its own. Maps to campus / قطب جامعي.
+_Avoid_: site, annex, branch
+
 ### Sector operators
 
 No single umbrella term, the operator of a sector is named per its nature:

@@ -47,6 +47,7 @@ const SECOND_SOURCE_FILE = join(__dirname, "seeds", "second-source.json");
 const OVERRIDES_FILE = join(__dirname, "seeds", "overrides.json");
 const COMMUNE_LABELS_FILE = join(__dirname, "seeds", "commune-labels.json");
 const BAC_SEED_FILE = join(__dirname, "seeds", "bac-2026.json");
+const CAMPUSES_FILE = join(__dirname, "seeds", "campuses.json");
 
 // At least this share of records must carry a real campus geocode, else the build
 // is assumed degraded (a missing/empty coordinate seed, or a geocode regression)
@@ -251,6 +252,41 @@ function campusPlace(where, p) {
     commune = c.name;
   }
   return { lat: p.lat, lng: p.lng, wilaya_code: nc.code, commune, precision: "campus", votes: 1 + secondVotes(where, p) };
+}
+
+// An institution's further campus (seeds/campuses.json), beside the main point its
+// record keeps. Held to the second-source rule: its own OSM object plus a second
+// Vote, in the record's wilaya. A confirmation ships as its kind, date and
+// distance only; the point it was read at stays in the seed.
+const MIN_CAMPUS_SEPARATION_M = 100;
+function campusPoint(where, c, record) {
+  if (!c.name && !c.name_ar) throw new Error(`${where}: a campus needs a name or name_ar`);
+  if (c.osm == null) throw new Error(`${where}: a campus needs its OSM object`);
+  const pl = campusPlace(where, c);
+  if (pl.votes < 2) throw new Error(`${where}: a campus needs a second Vote (owner_confirmation or wikidata_confirmation)`);
+  if (pl.wilaya_code !== Number(record.wilaya_code))
+    throw new Error(`${where}: the campus joins wilaya ${pl.wilaya_code}, the record is in ${record.wilaya_code}`);
+  const apart = metresBetween(record.lng, record.lat, pl.lng, pl.lat);
+  if (!(apart >= MIN_CAMPUS_SEPARATION_M))
+    throw new Error(`${where}: the campus is ${Math.round(apart)} m from the record's main point; a campus is a separate location`);
+  return {
+    name: c.name ?? null,
+    name_ar: c.name_ar ?? null,
+    lat: pl.lat,
+    lng: pl.lng,
+    geo_precision: "exact",
+    geo_method: "campus",
+    commune: pl.commune,
+    refs: { osm: c.osm },
+    confirmations: Object.keys(SECOND_VOTES)
+      .filter((kind) => c[kind])
+      .map((kind) => ({
+        kind,
+        ...(c[kind].item ? { item: c[kind].item } : {}),
+        read_at: c[kind].read_at,
+        metres: c[kind].metres_from_published_value,
+      })),
+  };
 }
 
 // --- main -------------------------------------------------------------------
@@ -631,6 +667,25 @@ async function main() {
     DATA,
     process.argv.includes("--cache"),
   );
+  // Further campuses (seeds/campuses.json), after every record is placed so each
+  // is checked against its record's final wilaya and main point. An entry no
+  // record reads is refused, as for the second-source seed.
+  const campusSeed = readSeed(CAMPUSES_FILE);
+  const usedCampus = new Set();
+  for (const r of records) {
+    const key = carryKey(r);
+    const entry = campusSeed[key];
+    if (!entry) continue;
+    usedCampus.add(key);
+    if (!Array.isArray(entry.campuses) || !entry.campuses.length)
+      throw new Error(`seeds/campuses.json ${key}: campuses must be a non-empty array`);
+    r.campuses = entry.campuses.map((c, i) => campusPoint(`seeds/campuses.json ${key} campuses[${i}]`, c, r));
+    const osm = r.campuses.map((c) => c.refs.osm);
+    if (new Set(osm).size !== osm.length) throw new Error(`seeds/campuses.json ${key}: a campus is listed twice`);
+  }
+  const unusedCampus = Object.keys(campusSeed).filter((k) => !k.startsWith("_") && !usedCampus.has(k));
+  if (unusedCampus.length) throw new Error(`seeds/campuses.json: no record reads ${unusedCampus.join(", ")}`);
+
   const rows = records.map(cfg.map);
   // The shared id-stability contract (v2 decision 10/11): pin every still-present
   // record back to the id it shipped under, reserve the id of one that is gone,

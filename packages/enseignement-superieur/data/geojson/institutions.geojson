@@ -446,7 +446,28 @@
         "type_label_fr": "Université",
         "sector": "public",
         "supervisory_ministry": null,
-        "website": "http://www.univ-bejaia.dz/"
+        "website": "http://www.univ-bejaia.dz/",
+        "campuses": [
+          {
+            "name": "Campus Targa Ouzemour",
+            "name_ar": "القطب الجامعي ثارقى أوزمور",
+            "lat": 36.7514528,
+            "lng": 5.0377466,
+            "geo_precision": "exact",
+            "geo_method": "campus",
+            "commune": "Bejaia",
+            "refs": {
+              "osm": "way/156235549"
+            },
+            "confirmations": [
+              {
+                "kind": "owner_confirmation",
+                "read_at": "2026-11-15",
+                "metres": 137
+              }
+            ]
+          }
+        ]
       }
     },
     {

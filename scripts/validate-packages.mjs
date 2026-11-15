@@ -967,6 +967,39 @@ function csvRowCount(path) {
   return rows - 1; // minus header
 }
 
+// An institution's further sites (`campuses`, enseignement-superieur). Each is a
+// point of its own, so it is held to the GeoRecord coordinate contract like a
+// record (inside Algeria, exact on enough decimals, a name), and, unlike a
+// record, to its institution's wilaya outline as a hard rule: a campus is only
+// listed on its own OSM object plus a second Vote, so a point outside the wilaya
+// is an error in the seed, not a border case of a simplified outline.
+function validateCampuses(label, arr) {
+  const points = [];
+  for (const r of arr) {
+    if (r?.campuses === undefined) continue;
+    if (!Array.isArray(r.campuses) || !r.campuses.length) {
+      fail(`${label}: ${r.id}: campuses must be a non-empty array when present`);
+      continue;
+    }
+    r.campuses.forEach((c, i) => {
+      const at = `${label}: ${r.id} campuses[${i}]`;
+      if (!c || typeof c !== "object") return fail(`${at}: not an object`);
+      if (c.geo_precision !== "exact" || c.geo_method !== "campus")
+        fail(`${at}: a campus is geo_precision "exact", geo_method "campus"`);
+      if (!/^(node|way|relation)\/\d+$/.test(String(c.refs?.osm)))
+        fail(`${at}: refs.osm must name its OpenStreetMap object`);
+      if (typeof c.commune !== "string" || !c.commune) fail(`${at}: a campus names its commune`);
+      if (!Array.isArray(c.confirmations) || !c.confirmations.length)
+        fail(`${at}: a campus needs at least one confirmation (its second Vote)`);
+      if (Number.isFinite(c.lat) && Number.isFinite(c.lng) && !pointInWilaya(c.lng, c.lat, r.wilaya_code, BOUNDARIES))
+        fail(`${at}: (${c.lat}, ${c.lng}) is outside wilaya ${r.wilaya_code}, the institution's own`);
+      points.push({ ...c, id: `${r.id}/${c.refs?.osm}`, wilaya_code: r.wilaya_code, commune_code: null });
+    });
+  }
+  if (!points.length) return;
+  for (const m of validateV2Records(points, { requireName: true }).errors) fail(`${label} [campuses]: ${m}`);
+}
+
 function validateDataset(pkg, spec) {
   const dataDir = join(ROOT, "packages", pkg, "data");
   const jsonPath = join(dataDir, spec.json);
@@ -1088,6 +1121,7 @@ function validateDataset(pkg, spec) {
     for (const m of metaRes.errors) fail(`${pkg}/metadata.json [v2]: ${m}`);
     const warnCount = v2warn.length + metaRes.warnings.length;
     if (warnCount) console.log(`  ⚠ ${label} [v2]: ${warnCount} warning(s)`);
+    validateCampuses(label, arr);
   }
 
   // csv mirror

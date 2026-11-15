@@ -589,6 +589,9 @@ export const MIGRATIONS = {
       source: r.source_key ?? "mesrs",
       type: r.type, type_label_fr: r.type_fr, sector: r.sector,
       supervisory_ministry: r.supervisory_ministry, website: r.website,
+      // The institution's further campuses, each its own exact point (scripts/fetch.mjs,
+      // seeds/campuses.json). Absent on a record with one campus.
+      campuses: r.campuses,
     }),
     meta: {
       // `retrieved` is not typed here: scripts/fetch.mjs fills each key from the

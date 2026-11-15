@@ -4,7 +4,8 @@
 // would let a hand-edited point pass as long as it agreed with itself (PR #310
 // review), so this ties every Wikidata confirmation in seeds/second-source.json to
 // the committed decision that justified it, and that decision to the captures it was
-// read from.
+// read from. A further campus (seeds/campuses.json) is held to the last check too:
+// no confirmation point it records ever ships.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -59,6 +60,15 @@ test("no published coordinate is an Owner reading or a confirming P625", () => {
   const bac = read("packages/enseignement-superieur/scripts/seeds/bac-2026.json");
   for (const block of [bac.additions ?? {}, bac.successions ?? {}])
     for (const e of Object.values(block)) if (e.place?.owner_confirmation) second.push(e.place.owner_confirmation.point);
-  const published = new Set(DATA.map((r) => `${r.lng},${r.lat}`));
+  const campuses = read("packages/enseignement-superieur/scripts/seeds/campuses.json");
+  for (const [k, e] of Object.entries(campuses))
+    if (!k.startsWith("_"))
+      for (const c of e.campuses) {
+        if (c.owner_confirmation) second.push(c.owner_confirmation.point);
+        if (c.wikidata_confirmation) second.push(c.wikidata_confirmation.point);
+      }
+  const published = new Set(
+    DATA.flatMap((r) => [r, ...(r.campuses ?? [])]).map((p) => `${p.lng},${p.lat}`),
+  );
   for (const [lng, lat] of second) assert.ok(!published.has(`${lng},${lat}`), `${lat}, ${lng} is a confirmation and must never ship`);
 });
