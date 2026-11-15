@@ -617,6 +617,18 @@ reads as further along than it is.
 
 ## Recently closed
 
+- **Release batch 2026-16** (2026-11-15, data main `ab4f73d7`): PR #343
+  merged, with CHU Béjaïa's three sites in `@geoalgeria/sante` 2.4.0 (the new
+  `site_of` field), the Targa Ouzemour campus in
+  `@geoalgeria/enseignement-superieur` 2.2.0 (the new `campuses` array) and
+  `@geoalgeria/cliniques` 1.3.1, Version PR #344. The app ships with it
+  (tracker geoalgeria.com#311, a Web UI/UX release).
+
+- **Release batch 2026-15** (2026-10-31, data main `44031059`): release PR
+  #326 with a merge commit, Version PR #327, 27 packages published. Aviation
+  169 nonstop and 8 planned; universities 165 of 171 on campus. App
+  production `bf2fdb7` the same day (tracker geoalgeria.com#303).
+
 - **Release batch 2026-14, with 2026-13 folded in** (2026-10-21, data main
   `e07e029`): PRs #282 to #288 and #290 to #293 merged, Version PR #289.
   Sixteen packages published, among them `geoalgeria` 2.4.0, pharmacies 2.3.0,
