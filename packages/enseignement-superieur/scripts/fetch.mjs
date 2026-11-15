@@ -71,7 +71,12 @@ function readSeed(path) {
 // covers the two listing captures and is only as fresh as the older of them. A
 // missing capture or a capture with no date fails the build, because the
 // alternative is publishing the run's date as a receipt for bytes nobody read.
-const SOURCE_CAPTURES = { mesrs: ["mesrs-en", "mesrs-ar"], "bac-2026": ["bac-2026"], overture: ["overture-places"] };
+const SOURCE_CAPTURES = {
+  mesrs: ["mesrs-en", "mesrs-ar"],
+  "bac-2026": ["bac-2026"],
+  osm: ["osm-campuses", "osm-campus-objects"],
+  overture: ["overture-places"],
+};
 function datedSources(sources) {
   return sources.map((s) => {
     const captures = SOURCE_CAPTURES[s.key];

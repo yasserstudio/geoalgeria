@@ -44,12 +44,20 @@
       }
     },
     {
+      "key": "osm",
+      "name": "OpenStreetMap: campus locations (Nominatim geocodes and reviewed campus objects)",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "evidence_type": "crowdsourced",
+      "retrieved": "2026-08-03"
+    },
+    {
       "key": "overture",
       "name": "Overture Maps Foundation, Places (release 2026-10-21.0): the single open campus lead of 23 records",
       "url": "https://overturemaps.org",
       "license": "CDLA-Permissive-2.0 (attribution: Overture Maps Foundation)",
-      "retrieved": "2026-10-29",
-      "evidence_type": "official"
+      "evidence_type": "crowdsourced",
+      "retrieved": "2026-10-29"
     }
   ],
   "license": "Factual public listing (MESRS)",

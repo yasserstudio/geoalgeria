@@ -601,7 +601,14 @@ export const MIGRATIONS = {
       sources: [
         { key: "mesrs", name: "Ministry of Higher Education and Scientific Research (MESRS)", url: "https://www.mesrs.dz", license: "Factual public listing (MESRS)" },
         { key: "bac-2026", name: "MESRS: Moyennes minimales BAC 2026 (suite à la première phase), the ministry's own placement file", url: "https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf", license: "Factual public listing (MESRS)", evidence_type: "official" },
-        { key: "overture", name: "Overture Maps Foundation, Places (release 2026-10-21.0): the single open campus lead of 23 records", url: "https://overturemaps.org", license: "CDLA-Permissive-2.0 (attribution: Overture Maps Foundation)" },
+        // The campus points: Nominatim geocodes (scripts/seeds/coordinates.json), the
+        // Overpass campus capture and the live-read OSM objects behind the two-Vote
+        // and single-open-lead points (seeds/second-source.json, seeds/campuses.json).
+        { key: "osm", name: "OpenStreetMap: campus locations (Nominatim geocodes and reviewed campus objects)", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", evidence_type: "crowdsourced" },
+        // crowdsourced, pinned: Overture Places is a third-party map aggregate (these
+        // rows are Meta-sourced), not a ministry or the institution itself, so the
+        // fail-open key default (`official`) would overstate it.
+        { key: "overture", name: "Overture Maps Foundation, Places (release 2026-10-21.0): the single open campus lead of 23 records", url: "https://overturemaps.org", license: "CDLA-Permissive-2.0 (attribution: Overture Maps Foundation)", evidence_type: "crowdsourced" },
       ],
       license: "Factual public listing (MESRS)",
       estimatedUniverse: null,

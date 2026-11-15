@@ -120,7 +120,7 @@
     },
     {
       "path": "packages/enseignement-superieur/data/metadata.json",
-      "sha256": "9d3836f2d8c89090933467790b023d184a41278fd4437e824cf7c715997d79ff"
+      "sha256": "3f238660237d458b7933033a63d0d1760e48e13c8105847f224bc65e432a4fcc"
     },
     {
       "path": "packages/enseignement-superieur/data/retired-ids.json",
@@ -1143,12 +1143,20 @@
             }
           },
           {
+            "key": "osm",
+            "name": "OpenStreetMap: campus locations (Nominatim geocodes and reviewed campus objects)",
+            "url": "https://www.openstreetmap.org",
+            "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+            "evidence_type": "crowdsourced",
+            "retrieved": "2026-08-03"
+          },
+          {
             "key": "overture",
             "name": "Overture Maps Foundation, Places (release 2026-10-21.0): the single open campus lead of 23 records",
             "url": "https://overturemaps.org",
             "license": "CDLA-Permissive-2.0 (attribution: Overture Maps Foundation)",
-            "retrieved": "2026-10-29",
-            "evidence_type": "official"
+            "evidence_type": "crowdsourced",
+            "retrieved": "2026-10-29"
           }
         ],
         "license": "Factual public listing (MESRS)",
