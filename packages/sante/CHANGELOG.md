@@ -1,5 +1,11 @@
 # @geoalgeria/sante
 
+## 2.4.0
+
+### Minor Changes
+
+- 03973d9: **sante: establishment sites, a new `site_of` field.** The Ministry of Health registry lists an establishment once, but CHU Béjaïa runs on three premises. `06-chu-01` leaves the Béjaïa commune centroid for its Khelil Amrane hospital (way 156237500), `exact` / `osm_point`; this is one of its real sites, not a claim that it is the headquarters. Two new records carry `site_of: "06-chu-01"`: `06-chu-01-s2` (Hôpital Frantz Fanon, way 156238581) and `06-chu-01-s3` (the Targa Ouzemmour maternity unit, node 2466300649). A site record has `source: "osm"`, `refs.osm`, and no `refs.msp` or `slug`; it copies its establishment's wilaya, commune, type and sector. Each point is the open OpenStreetMap object, confirmed by an Owner reading within 500 m (216, 443 and 50 m), recorded in the reviewed seed `scripts/seeds/sites.json` and re-measured by the build. The package now ships 659 records: 657 establishments and 2 sites. To count establishments, skip records with `site_of`; `metadata.sites` gives their number. Precision: 136 exact, 453 approximate.
+
 ## 2.3.0
 
 ### Minor Changes
