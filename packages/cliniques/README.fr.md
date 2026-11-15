@@ -12,7 +12,7 @@
 
 </div>
 
-**1 915 structures de soins géolocalisées** sur **66 wilayas**, toutes avec
+**1 914 structures de soins géolocalisées** sur **66 wilayas**, toutes avec
 coordonnées, classées par **type** (polyclinique · salle de soins · centre de
 santé · maternité · clinique), la plupart avec des noms arabes et/ou français, et
 un rattachement commune/wilaya. Extraites d'**OpenStreetMap**. C'est le **volet
@@ -29,7 +29,7 @@ npm install @geoalgeria/cliniques
 ```js
 import cliniques from "@geoalgeria/cliniques";
 
-const all = cliniques.cliniques();   // 1 915 structures géolocalisées
+const all = cliniques.cliniques();   // 1 914 structures géolocalisées
 
 // Le volet public de proximité d'une wilaya
 const proximite = cliniques.cliniquesByWilaya("16")
@@ -41,7 +41,7 @@ const urgences = all.filter((c) => c.emergency);
 
 ## Ce que vous pouvez construire
 
-- **Des localisateurs « soins près de chez moi »**, coordonnées sur les 1 915
+- **Des localisateurs « soins près de chez moi »**, coordonnées sur les 1 914
   enregistrements, prêts pour une carte ou un tri par distance.
 - **Des cartes de couverture de proximité**, comptez polycliniques et salles de
   soins par commune ou wilaya, les structures que les Algériens poussent en premier.
@@ -52,14 +52,14 @@ const urgences = all.filter((c) => c.emergency);
 
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
-| Structures de soins | **1 915** | ✅ toutes | 1 608 nommées, 66 wilayas |
+| Structures de soins | **1 914** | ✅ toutes | 1 607 nommées, 66 wilayas |
 
 **Par type**
 
 | Type | Nombre | Signification |
 | --- | --- | --- |
 | `clinique` | 1 143 | clinique (عيادة / مصحة), majoritairement privée |
-| `polyclinique` | 406 | polyclinique (عيادة متعددة الخدمات), volet public de proximité |
+| `polyclinique` | 405 | polyclinique (عيادة متعددة الخدمات), volet public de proximité |
 | `salle_de_soins` | 199 | salle de soins / dispensaire (قاعة علاج / مستوصف) |
 | `centre_sante` | 142 | centre de santé / centre de soins (مركز صحي) |
 | `maternite` | 25 | maternité / clinique d'accouchement (مصحة توليد) |
@@ -86,7 +86,7 @@ const urgences = all.filter((c) => c.emergency);
 > référence OSM, donc un même établissement physique peut malgré tout figurer
 > dans les deux paquets, sous des coordonnées et des identifiants différents,
 > sans qu'aucun mécanisme ne puisse le détecter. Les deux décrivent des volets
-> différents : additionner 657 et 1 915 ne compte rien de réel.
+> différents : additionner 657 et 1 914 ne compte rien de réel.
 
 **Le type est déduit du nom.** Une polyclinique se nomme
 polyclinique/عيادة متعددة الخدمات, une salle de soins قاعة علاج/مستوصف/dispensaire,
@@ -133,12 +133,12 @@ doit jamais être lu comme EPH (public).
 d'enseignement), ou structurellement pour `polyclinique` et `salle_de_soins`
 (deux structures publiques par définition dans le système algérien) ; `private`
 sur `operator:type=private` ou un nom en privé/خاصة lu sur toutes les balises de
-nom, un enregistrement pouvant ne porter son signal que dans `name:en`. 616
+nom, un enregistrement pouvant ne porter son signal que dans `name:en`. 615
 enregistrements sont publics, 67 privés, et les 1 232 restants demeurent `null`.
 La plupart des cliniques sont privées en pratique, mais la carte ne le dit pas.
 
 **Aussi sur chaque enregistrement :** `speciality` (depuis
-`healthcare:speciality`, sur 165), `address` (depuis les tags `addr:*`, sur 653),
+`healthcare:speciality`, sur 165), `address` (depuis les tags `addr:*`, sur 652),
 `phone` (sur 116), `opening_hours` (sur 168) et `emergency` (`true` sur les 69
 enregistrements tagués `emergency=yes`, jamais `false` : un silence de la carte
 n'est pas une affirmation d'absence d'urgences).
@@ -165,7 +165,7 @@ const all: Clinique[] = cliniques.cliniques();
 
 ```
 data/
-  cliniques.json              # 1 915 structures (tableau)
+  cliniques.json              # 1 914 structures (tableau)
   metadata.json               # sources, comptes, couverture, mise à jour
   csv/cliniques.csv           # dépôt + bundle Release (pas dans le tarball npm)
   geojson/cliniques.geojson   # entités Point

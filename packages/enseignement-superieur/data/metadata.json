@@ -13,7 +13,7 @@
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Higher-education institutions (universities, schools, research centres) from the MESRS, built from two of the ministry's own publications: its university-network listing, and its BAC 2026 placement file (\"Moyennes minimales BAC 2026, suite a la premiere phase\"), which names every establishment it places new bacheliers into by the ministry's own establishment code. The placement file supplies 12 institutions the network listing omits, the current name of 2 it still lists under an older one, and one succession: ENSTA, which decret executif 22-398 made the successor of the two Algiers schools it dissolved, so those two ids are retired and forwarded to it in retired-ids.json. 136 records carry a per-campus coordinate (exact): an OpenStreetMap campus, the location the institution publishes itself, an Owner reading, or a single open lead (an OSM or Overture place); the other 35 are commune or wilaya centroids (approximate), because neither ministry publication carries an address or a coordinate. Military institutions are not published.",
+  "coverage_note": "Higher-education institutions (universities, schools, research centres) from the MESRS, built from two of the ministry's own publications: its university-network listing, and its BAC 2026 placement file (\"Moyennes minimales BAC 2026, suite a la premiere phase\"), which names every establishment it places new bacheliers into by the ministry's own establishment code. The placement file supplies 12 institutions the network listing omits, the current name of 2 it still lists under an older one, and one succession: ENSTA, which decret executif 22-398 made the successor of the two Algiers schools it dissolved, so those two ids are retired and forwarded to it in retired-ids.json. 165 records carry a per-campus coordinate (exact): an OpenStreetMap campus, the location the institution publishes itself, an Owner reading, or a single open lead (an OSM or Overture place); the other 6 are commune or wilaya centroids (approximate), because neither ministry publication carries an address or a coordinate. Military institutions are not published.",
   "wilayas_covered": 51,
   "bbox": [
     -8.127745,
@@ -44,12 +44,20 @@
       }
     },
     {
+      "key": "osm",
+      "name": "OpenStreetMap: campus locations (Nominatim geocodes and reviewed campus objects)",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "evidence_type": "crowdsourced",
+      "retrieved": "2026-08-03"
+    },
+    {
       "key": "overture",
       "name": "Overture Maps Foundation, Places (release 2026-10-21.0): the single open campus lead of 23 records",
       "url": "https://overturemaps.org",
       "license": "CDLA-Permissive-2.0 (attribution: Overture Maps Foundation)",
-      "retrieved": "2026-10-29",
-      "evidence_type": "official"
+      "evidence_type": "crowdsourced",
+      "retrieved": "2026-10-29"
     }
   ],
   "license": "Factual public listing (MESRS)",

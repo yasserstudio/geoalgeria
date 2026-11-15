@@ -90,11 +90,11 @@
       "package": "@geoalgeria/cliniques",
       "schema_version": "2.0.0",
       "title": "Algeria clinics & care facilities",
-      "record_count": 1915,
-      "geocoded_count": 1915,
+      "record_count": 1914,
+      "geocoded_count": 1914,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 1084,
+        "exact": 1083,
         "approximate": 831
       },
       "wilayas_covered": 66,
@@ -488,12 +488,12 @@
       "package": "@geoalgeria/sante",
       "schema_version": "2.0.0",
       "title": "Algeria public health establishments",
-      "record_count": 657,
-      "geocoded_count": 587,
-      "geocoded_pct": 89.3,
+      "record_count": 659,
+      "geocoded_count": 589,
+      "geocoded_pct": 89.4,
       "precision": {
-        "exact": 133,
-        "approximate": 454
+        "exact": 136,
+        "approximate": 453
       },
       "wilayas_covered": 58,
       "bbox": [

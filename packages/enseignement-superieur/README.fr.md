@@ -152,6 +152,40 @@ universitaire, `"bac-2026"` pour un enregistrement fourni par le fichier des aff
 et `"mesrs+bac-2026"` lorsque la liste fournit l'enregistrement et le fichier des affectations son
 nom actuel. Voir **Source** ci-dessous pour les publications réelles.
 
+## Campus
+
+Un établissement réparti sur plusieurs campus garde **un seul enregistrement** : `lat`/`lng`
+restent son point principal, et ses autres campus sont listés dans un tableau facultatif
+`campuses`. Le champ est absent pour un établissement à un seul campus. Aujourd'hui un seul
+enregistrement le porte : l'Université de Béjaïa (`00016`), dont l'enregistrement reste sur son
+campus d'Aboudaou et liste le campus de Targa Ouzemour, dans la ville de Béjaïa.
+
+```json
+"campuses": [
+  {
+    "name": "Campus Targa Ouzemour",
+    "name_ar": "القطب الجامعي ثارقى أوزمور",
+    "lat": 36.7514528,
+    "lng": 5.0377466,
+    "geo_precision": "exact",
+    "geo_method": "campus",
+    "commune": "Bejaia",
+    "refs": { "osm": "way/156235549" },
+    "confirmations": [{ "kind": "owner_confirmation", "read_at": "2026-11-15", "metres": 137 }]
+  }
+]
+```
+
+Un campus n'est listé que sur son propre objet OpenStreetMap (`refs.osm`, la coordonnée publiée)
+avec une seconde vérification, notée dans `confirmations` par type, date et distance en mètres
+(le point lu n'est jamais publié). Il se trouve toujours dans la wilaya de l'établissement. Un
+campus n'a pas d'`id` : `refs.osm` l'identifie. Dans le **GeoJSON**, chaque établissement reste
+une seule entité Point, avec le tableau dans `properties.campuses` ; pour afficher tous les
+campus, ajoutez un point par entrée. Dans le **CSV**, le tableau est une colonne `campuses` encodée
+en JSON, vide pour la plupart des lignes. Les points de campus viennent de
+`scripts/seeds/campuses.json`, et le build refuse un campus hors de la wilaya de l'établissement,
+à moins de 100 m de son point principal, ou sans seconde vérification.
+
 ## Besoin des divisions administratives aussi ?
 
 Si vous avez aussi besoin des wilayas, daïras et communes pour effectuer des jointures, utilisez

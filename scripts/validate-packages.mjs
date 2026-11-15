@@ -906,6 +906,42 @@ function validateRefUniqueness(pkgs) {
   }
 }
 
+// A site record (`site_of`) is one more premises of an establishment that ships
+// its own record (sante, Owner decision 2026-11-15). The pointer must resolve to
+// a record in the same file, never to itself or to another site (one level), and
+// the site must sit in its establishment's wilaya and carry its type, since both
+// are copied from it. A dangling pointer would surface as a site with no parent.
+function validateSiteOf(pkgs) {
+  for (const pkg of pkgs) {
+    const dataDir = join(ROOT, "packages", pkg, "data");
+    if (!existsSync(dataDir)) continue;
+    for (const file of readdirSync(dataDir)) {
+      if (!file.endsWith(".json") || file === "metadata.json" || file === "retired-ids.json") continue;
+      let arr;
+      try {
+        arr = readJson(join(dataDir, file));
+      } catch {
+        continue; // the dataset validator reports malformed JSON with context
+      }
+      if (!Array.isArray(arr)) continue;
+      const sites = arr.filter((r) => r?.site_of != null);
+      if (!sites.length) continue;
+      const byId = new Map(arr.map((r) => [r.id, r]));
+      const bad = [];
+      for (const s of sites) {
+        const parent = byId.get(s.site_of);
+        if (typeof s.site_of !== "string" || !parent) bad.push(`${s.id}: site_of ${JSON.stringify(s.site_of)} is not a record`);
+        else if (parent === s) bad.push(`${s.id}: site_of points at itself`);
+        else if (parent.site_of != null) bad.push(`${s.id}: site_of ${parent.id}, which is itself a site`);
+        else if (parent.wilaya_code !== s.wilaya_code || parent.type !== s.type)
+          bad.push(`${s.id}: wilaya/type ${s.wilaya_code}/${s.type} differ from ${parent.id} ${parent.wilaya_code}/${parent.type}`);
+      }
+      if (bad.length) fail(`${pkg}/${file}: ${bad.length} bad site_of: ${bad.slice(0, 5).join("; ")}`);
+      else console.log(`  OK: ${pkg}/${file}: ${sites.length} site record(s), each site_of resolves`);
+    }
+  }
+}
+
 // Count CSV data records (excluding the header), honouring RFC-4180 quoted
 // fields: newlines inside double-quoted values do not start a new record, and
 // blank lines (including trailing ones) are ignored. A naive split("\n") would
@@ -929,6 +965,39 @@ function csvRowCount(path) {
   }
   if (lineHasContent) rows++;
   return rows - 1; // minus header
+}
+
+// An institution's further sites (`campuses`, enseignement-superieur). Each is a
+// point of its own, so it is held to the GeoRecord coordinate contract like a
+// record (inside Algeria, exact on enough decimals, a name), and, unlike a
+// record, to its institution's wilaya outline as a hard rule: a campus is only
+// listed on its own OSM object plus a second Vote, so a point outside the wilaya
+// is an error in the seed, not a border case of a simplified outline.
+function validateCampuses(label, arr) {
+  const points = [];
+  for (const r of arr) {
+    if (r?.campuses === undefined) continue;
+    if (!Array.isArray(r.campuses) || !r.campuses.length) {
+      fail(`${label}: ${r.id}: campuses must be a non-empty array when present`);
+      continue;
+    }
+    r.campuses.forEach((c, i) => {
+      const at = `${label}: ${r.id} campuses[${i}]`;
+      if (!c || typeof c !== "object") return fail(`${at}: not an object`);
+      if (c.geo_precision !== "exact" || c.geo_method !== "campus")
+        fail(`${at}: a campus is geo_precision "exact", geo_method "campus"`);
+      if (!/^(node|way|relation)\/\d+$/.test(String(c.refs?.osm)))
+        fail(`${at}: refs.osm must name its OpenStreetMap object`);
+      if (typeof c.commune !== "string" || !c.commune) fail(`${at}: a campus names its commune`);
+      if (!Array.isArray(c.confirmations) || !c.confirmations.length)
+        fail(`${at}: a campus needs at least one confirmation (its second Vote)`);
+      if (Number.isFinite(c.lat) && Number.isFinite(c.lng) && !pointInWilaya(c.lng, c.lat, r.wilaya_code, BOUNDARIES))
+        fail(`${at}: (${c.lat}, ${c.lng}) is outside wilaya ${r.wilaya_code}, the institution's own`);
+      points.push({ ...c, id: `${r.id}/${c.refs?.osm}`, wilaya_code: r.wilaya_code, commune_code: null });
+    });
+  }
+  if (!points.length) return;
+  for (const m of validateV2Records(points, { requireName: true }).errors) fail(`${label} [campuses]: ${m}`);
 }
 
 function validateDataset(pkg, spec) {
@@ -1052,6 +1121,7 @@ function validateDataset(pkg, spec) {
     for (const m of metaRes.errors) fail(`${pkg}/metadata.json [v2]: ${m}`);
     const warnCount = v2warn.length + metaRes.warnings.length;
     if (warnCount) console.log(`  ⚠ ${label} [v2]: ${warnCount} warning(s)`);
+    validateCampuses(label, arr);
   }
 
   // csv mirror
@@ -2031,6 +2101,9 @@ validateMergedIds(only ? [only] : Object.keys(MERGED_ID_NAMESPACES));
 
 console.log(`\n[one external identifier, one record]`);
 validateRefUniqueness(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
+
+console.log(`\n[every site_of names its establishment]`);
+validateSiteOf(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 console.log(`\n[retired ids never become live again]`);
 validateRetiredIds(only ? [only] : readdirSync(join(ROOT, "packages")).sort());

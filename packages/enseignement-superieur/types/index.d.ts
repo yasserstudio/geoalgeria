@@ -72,6 +72,46 @@ export interface Institution {
   supervisory_ministry: SupervisoryMinistry | null;
   /** The institution's official website, as listed by the ministry, or null. */
   website: string | null;
+  /** The institution's further campuses, beside the main point in `lat`/`lng`.
+   *  Absent (not empty) on an institution with one campus. The record stays one
+   *  record: a campus has no `id` of its own and is identified by `refs.osm`. */
+  campuses?: Campus[];
+}
+
+/** How a campus point was confirmed: a second Vote on the OpenStreetMap object
+ *  (docs/adr/0001). Only its kind, date and distance ship, never the point read. */
+export interface CampusConfirmation {
+  /** `owner_confirmation`: the project owner's reading off a map;
+   *  `wikidata_confirmation`: the Wikidata item's coordinate (P625). */
+  kind: "owner_confirmation" | "wikidata_confirmation";
+  /** The Wikidata item (e.g. "Q123"), on a `wikidata_confirmation` only. */
+  item?: string;
+  /** ISO date (YYYY-MM-DD) the confirmation was read. */
+  read_at: string;
+  /** Distance in metres between the confirming reading and the campus point. */
+  metres: number;
+}
+
+/** A further campus of an institution, on its own OpenStreetMap object. */
+export interface Campus {
+  /** French name of the campus, or null. */
+  name: string | null;
+  /** Arabic name of the campus, or null. At least one of the two names is set. */
+  name_ar: string | null;
+  /** Latitude (WGS84), the OpenStreetMap object's point. */
+  lat: number;
+  /** Longitude (WGS84). */
+  lng: number;
+  /** Always "exact": a campus is listed only on its own OSM object plus a second Vote. */
+  geo_precision: "exact";
+  /** Always "campus". */
+  geo_method: "campus";
+  /** Commune name (French) the point lies in. Always in the institution's own wilaya. */
+  commune: string;
+  /** External identifiers. `osm` is the OpenStreetMap object, e.g. "way/156235549". */
+  refs: { osm: string };
+  /** The second Votes behind the point; at least one. */
+  confirmations: CampusConfirmation[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */

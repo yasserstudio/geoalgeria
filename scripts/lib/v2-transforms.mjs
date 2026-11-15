@@ -356,7 +356,7 @@ export const MIGRATIONS = {
       estimatedUniverse: null,
       coverageNote: `Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. ${TWIN_POSTS_NOTE} ${REPEAT_POSTS_NOTE} Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 70 remain ungeocoded.`,
       titles: { en: "Algeria public health establishments", fr: "Établissements de santé publique d'Algérie", ar: "المؤسسات الصحية العمومية الجزائرية" },
-      stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), bilingual: rows.filter((r) => r.name_ar && r.name_fr).length, linkage_note: LINKAGE }),
+      stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), bilingual: rows.filter((r) => r.name_ar && r.name_fr).length, sites: rows.filter((r) => r.site_of).length, linkage_note: LINKAGE }),
     },
   },
 
@@ -589,6 +589,9 @@ export const MIGRATIONS = {
       source: r.source_key ?? "mesrs",
       type: r.type, type_label_fr: r.type_fr, sector: r.sector,
       supervisory_ministry: r.supervisory_ministry, website: r.website,
+      // The institution's further campuses, each its own exact point (scripts/fetch.mjs,
+      // seeds/campuses.json). Absent on a record with one campus.
+      campuses: r.campuses,
     }),
     meta: {
       // `retrieved` is not typed here: scripts/fetch.mjs fills each key from the
@@ -598,11 +601,18 @@ export const MIGRATIONS = {
       sources: [
         { key: "mesrs", name: "Ministry of Higher Education and Scientific Research (MESRS)", url: "https://www.mesrs.dz", license: "Factual public listing (MESRS)" },
         { key: "bac-2026", name: "MESRS: Moyennes minimales BAC 2026 (suite à la première phase), the ministry's own placement file", url: "https://www.esi.dz/wp-content/uploads/2026/07/BAC-2026-Fichier-des-moyennes-minimales-apres-phase-1.pdf", license: "Factual public listing (MESRS)", evidence_type: "official" },
-        { key: "overture", name: "Overture Maps Foundation, Places (release 2026-10-21.0): the single open campus lead of 23 records", url: "https://overturemaps.org", license: "CDLA-Permissive-2.0 (attribution: Overture Maps Foundation)" },
+        // The campus points: Nominatim geocodes (scripts/seeds/coordinates.json), the
+        // Overpass campus capture and the live-read OSM objects behind the two-Vote
+        // and single-open-lead points (seeds/second-source.json, seeds/campuses.json).
+        { key: "osm", name: "OpenStreetMap: campus locations (Nominatim geocodes and reviewed campus objects)", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", evidence_type: "crowdsourced" },
+        // crowdsourced, pinned: Overture Places is a third-party map aggregate (these
+        // rows are Meta-sourced), not a ministry or the institution itself, so the
+        // fail-open key default (`official`) would overstate it.
+        { key: "overture", name: "Overture Maps Foundation, Places (release 2026-10-21.0): the single open campus lead of 23 records", url: "https://overturemaps.org", license: "CDLA-Permissive-2.0 (attribution: Overture Maps Foundation)", evidence_type: "crowdsourced" },
       ],
       license: "Factual public listing (MESRS)",
       estimatedUniverse: null,
-      coverageNote: "Higher-education institutions (universities, schools, research centres) from the MESRS, built from two of the ministry's own publications: its university-network listing, and its BAC 2026 placement file (\"Moyennes minimales BAC 2026, suite a la premiere phase\"), which names every establishment it places new bacheliers into by the ministry's own establishment code. The placement file supplies 12 institutions the network listing omits, the current name of 2 it still lists under an older one, and one succession: ENSTA, which decret executif 22-398 made the successor of the two Algiers schools it dissolved, so those two ids are retired and forwarded to it in retired-ids.json. 136 records carry a per-campus coordinate (exact): an OpenStreetMap campus, the location the institution publishes itself, an Owner reading, or a single open lead (an OSM or Overture place); the other 35 are commune or wilaya centroids (approximate), because neither ministry publication carries an address or a coordinate. Military institutions are not published.",
+      coverageNote: "Higher-education institutions (universities, schools, research centres) from the MESRS, built from two of the ministry's own publications: its university-network listing, and its BAC 2026 placement file (\"Moyennes minimales BAC 2026, suite a la premiere phase\"), which names every establishment it places new bacheliers into by the ministry's own establishment code. The placement file supplies 12 institutions the network listing omits, the current name of 2 it still lists under an older one, and one succession: ENSTA, which decret executif 22-398 made the successor of the two Algiers schools it dissolved, so those two ids are retired and forwarded to it in retired-ids.json. 165 records carry a per-campus coordinate (exact): an OpenStreetMap campus, the location the institution publishes itself, an Owner reading, or a single open lead (an OSM or Overture place); the other 6 are commune or wilaya centroids (approximate), because neither ministry publication carries an address or a coordinate. Military institutions are not published.",
       titles: { en: "Algeria higher-education institutions", fr: "Établissements d'enseignement supérieur d'Algérie", ar: "مؤسسات التعليم العالي الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method") }),
     },

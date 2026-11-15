@@ -56,15 +56,15 @@
     },
     {
       "path": "packages/cliniques/data/cliniques.json",
-      "sha256": "832728a3a50a8895cc308af6a1be3f34bfd13c54b34f38b5e18144e4dad06ab5"
+      "sha256": "572d9e8b9dc6cfd7fa6ca1390b4c04ccf37d4bed8a15e4be8a8d26fdf8efc41e"
     },
     {
       "path": "packages/cliniques/data/metadata.json",
-      "sha256": "abe70e8d451f1d9453be35445424b70b5b07ce7bd2574711e5cc6695bb5abb28"
+      "sha256": "c60704e6fe403283264af94bfa18bb748660f5064de7582b9255b29d31516ad3"
     },
     {
       "path": "packages/cliniques/data/retired-ids.json",
-      "sha256": "6347cab969f5079bedfcaf7ea32b20d1b88b5bed2fa01b79db356219840608c3"
+      "sha256": "632f08a251d8cff25dea159207fd7014c127737506bb4c498ccdc0cea554d3e4"
     },
     {
       "path": "packages/culture/data/culture.json",
@@ -116,11 +116,11 @@
     },
     {
       "path": "packages/enseignement-superieur/data/institutions.json",
-      "sha256": "0f2ad5862e7708cd20269e6b482e9a7ec89e0629a26e78be26b2c72b564deb5d"
+      "sha256": "d49f5e35e7fa55f7d3c11b4d3d6d33bba3ef252c7cba987f3e8ee536d6dd7a4d"
     },
     {
       "path": "packages/enseignement-superieur/data/metadata.json",
-      "sha256": "9d3836f2d8c89090933467790b023d184a41278fd4437e824cf7c715997d79ff"
+      "sha256": "4ae77fa765ef34964ae3b4fdeca9e8a2d6315567928a7ec8d0e2ee8696110c42"
     },
     {
       "path": "packages/enseignement-superieur/data/retired-ids.json",
@@ -264,7 +264,7 @@
     },
     {
       "path": "packages/sante/data/metadata.json",
-      "sha256": "28cad16d9ec846f39095a909617f656b0277ea040e56cb088a90fe315724db40"
+      "sha256": "7c34471470ca8ad44dabbed75b69c62a83e44df6c7d6a1262c04ec2b061b73a5"
     },
     {
       "path": "packages/sante/data/retired-ids.json",
@@ -272,7 +272,7 @@
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "5b0f8e23579a3bdd431bf98ddd75279567887a8102920fd84bb17d676e0c5bc4"
+      "sha256": "4f09366c51a0a8df41337a9d2d380cff17d289ffcc0b0259f0cb170824656f89"
     },
     {
       "path": "packages/sports/data/facilities.json",
@@ -329,15 +329,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 71320,
-  "candidates": 17332,
+  "total_records": 71321,
+  "candidates": 17331,
   "reasons": {
-    "approximate_coordinate": 16492,
+    "approximate_coordinate": 16491,
     "inside_adjacent_wilaya": 191,
     "missing_coordinate": 491,
     "outside_all_wilaya_boundaries": 200,
     "outside_declared_wilaya": 391,
-    "shared_coordinate": 1036
+    "shared_coordinate": 1034
   },
   "datasets": [
     {
@@ -776,7 +776,7 @@
     },
     {
       "dataset": "cliniques",
-      "total_records": 1915,
+      "total_records": 1914,
       "candidates": 835,
       "reasons": {
         "approximate_coordinate": 831,
@@ -791,11 +791,11 @@
         "title_fr": "Cliniques et structures de soins d'Algérie",
         "title_ar": "عيادات ومرافق الرعاية الصحية في الجزائر",
         "title_en": "Algeria clinics & care facilities",
-        "record_count": 1915,
-        "geocoded_count": 1915,
+        "record_count": 1914,
+        "geocoded_count": 1914,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 1084,
+          "exact": 1083,
           "approximate": 831
         },
         "estimated_universe": null,
@@ -820,20 +820,20 @@
         ],
         "license": "ODbL-1.0",
         "updated": "2026-08-31",
-        "named": 1608,
+        "named": 1607,
         "by_type": {
-          "polyclinique": 406,
+          "polyclinique": 405,
           "clinique": 1143,
           "salle_de_soins": 199,
           "maternite": 25,
           "centre_sante": 142
         },
         "by_sector": {
-          "public": 616,
+          "public": 615,
           "private": 67
         },
         "with_phone": 116,
-        "with_address": 653,
+        "with_address": 652,
         "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 wilaya boundaries; commune is the nearest centroid WITHIN that wilaya, so the join never crosses a wilaya boundary. Wilaya is effectively exact, commune is best-effort."
       }
     },
@@ -1112,7 +1112,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Higher-education institutions (universities, schools, research centres) from the MESRS, built from two of the ministry's own publications: its university-network listing, and its BAC 2026 placement file (\"Moyennes minimales BAC 2026, suite a la premiere phase\"), which names every establishment it places new bacheliers into by the ministry's own establishment code. The placement file supplies 12 institutions the network listing omits, the current name of 2 it still lists under an older one, and one succession: ENSTA, which decret executif 22-398 made the successor of the two Algiers schools it dissolved, so those two ids are retired and forwarded to it in retired-ids.json. 136 records carry a per-campus coordinate (exact): an OpenStreetMap campus, the location the institution publishes itself, an Owner reading, or a single open lead (an OSM or Overture place); the other 35 are commune or wilaya centroids (approximate), because neither ministry publication carries an address or a coordinate. Military institutions are not published.",
+        "coverage_note": "Higher-education institutions (universities, schools, research centres) from the MESRS, built from two of the ministry's own publications: its university-network listing, and its BAC 2026 placement file (\"Moyennes minimales BAC 2026, suite a la premiere phase\"), which names every establishment it places new bacheliers into by the ministry's own establishment code. The placement file supplies 12 institutions the network listing omits, the current name of 2 it still lists under an older one, and one succession: ENSTA, which decret executif 22-398 made the successor of the two Algiers schools it dissolved, so those two ids are retired and forwarded to it in retired-ids.json. 165 records carry a per-campus coordinate (exact): an OpenStreetMap campus, the location the institution publishes itself, an Owner reading, or a single open lead (an OSM or Overture place); the other 6 are commune or wilaya centroids (approximate), because neither ministry publication carries an address or a coordinate. Military institutions are not published.",
         "wilayas_covered": 51,
         "bbox": [
           -8.127745,
@@ -1143,12 +1143,20 @@
             }
           },
           {
+            "key": "osm",
+            "name": "OpenStreetMap: campus locations (Nominatim geocodes and reviewed campus objects)",
+            "url": "https://www.openstreetmap.org",
+            "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+            "evidence_type": "crowdsourced",
+            "retrieved": "2026-08-03"
+          },
+          {
             "key": "overture",
             "name": "Overture Maps Foundation, Places (release 2026-10-21.0): the single open campus lead of 23 records",
             "url": "https://overturemaps.org",
             "license": "CDLA-Permissive-2.0 (attribution: Overture Maps Foundation)",
-            "retrieved": "2026-10-29",
-            "evidence_type": "official"
+            "evidence_type": "crowdsourced",
+            "retrieved": "2026-10-29"
           }
         ],
         "license": "Factual public listing (MESRS)",
@@ -1963,14 +1971,14 @@
     },
     {
       "dataset": "sante",
-      "total_records": 657,
-      "candidates": 524,
+      "total_records": 659,
+      "candidates": 523,
       "reasons": {
-        "approximate_coordinate": 454,
+        "approximate_coordinate": 453,
         "missing_coordinate": 70,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 298
+        "shared_coordinate": 296
       },
       "metadata_path": "packages/sante/data/metadata.json",
       "metadata": {
@@ -1979,12 +1987,12 @@
         "title_fr": "Établissements de santé publique d'Algérie",
         "title_ar": "المؤسسات الصحية العمومية الجزائرية",
         "title_en": "Algeria public health establishments",
-        "record_count": 657,
-        "geocoded_count": 587,
-        "geocoded_pct": 89.3,
+        "record_count": 659,
+        "geocoded_count": 589,
+        "geocoded_pct": 89.4,
         "precision": {
-          "exact": 133,
-          "approximate": 454
+          "exact": 136,
+          "approximate": 453
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -2029,18 +2037,19 @@
           "eph": 252,
           "epsp": 280,
           "hopital": 5,
-          "chu": 17
+          "chu": 19
         },
         "by_sector": {
-          "public": 657
+          "public": 659
         },
         "by_geo_method": {
-          "commune_centroid": 454,
-          "osm_point": 119,
+          "commune_centroid": 453,
+          "osm_point": 122,
           "wikidata_point": 3,
           "owner_verified": 11
         },
-        "bilingual": 594,
+        "bilingual": 596,
+        "sites": 2,
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
     },
@@ -2416,7 +2425,7 @@
     {
       "dataset": "cliniques",
       "entity": "cliniques.json",
-      "total_records": 1915,
+      "total_records": 1914,
       "candidates": 835,
       "reasons": {
         "approximate_coordinate": 831,
@@ -2658,14 +2667,14 @@
     {
       "dataset": "sante",
       "entity": "sante.json",
-      "total_records": 657,
-      "candidates": 524,
+      "total_records": 659,
+      "candidates": 523,
       "reasons": {
-        "approximate_coordinate": 454,
+        "approximate_coordinate": 453,
         "missing_coordinate": 70,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 298
+        "shared_coordinate": 296
       },
       "path": "packages/sante/data/sante.json"
     },

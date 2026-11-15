@@ -147,6 +147,38 @@ record from the university-network listing, `"bac-2026"` for one the BAC 2026 pl
 supplied, and `"mesrs+bac-2026"` where the listing supplies the record and the placement file
 its current name. See **Source** below for the actual publications.
 
+## Campuses
+
+An institution with more than one campus keeps **one record**: `lat`/`lng` stay its main
+point, and its other campuses are listed in an optional `campuses` array. The field is absent on an
+institution with one campus. Today one record carries it: the Université de Béjaïa (`00016`), whose
+record stays on its Aboudaou campus and lists the Targa Ouzemour campus in Béjaïa city.
+
+```json
+"campuses": [
+  {
+    "name": "Campus Targa Ouzemour",
+    "name_ar": "القطب الجامعي ثارقى أوزمور",
+    "lat": 36.7514528,
+    "lng": 5.0377466,
+    "geo_precision": "exact",
+    "geo_method": "campus",
+    "commune": "Bejaia",
+    "refs": { "osm": "way/156235549" },
+    "confirmations": [{ "kind": "owner_confirmation", "read_at": "2026-11-15", "metres": 137 }]
+  }
+]
+```
+
+A campus is listed only on its own OpenStreetMap object (`refs.osm`, the coordinate that ships)
+plus a second check, recorded in `confirmations` by kind, date and distance in metres (the point
+that was read is never published). It always lies in the institution's own wilaya. A campus has
+no `id`: `refs.osm` identifies it. In the **GeoJSON** each institution is still exactly one Point
+feature, with the array in `properties.campuses`; to draw every campus, add one point per entry. In
+the **CSV** the array is one JSON-encoded `campuses` column, empty for most rows. The campus
+points come from `scripts/seeds/campuses.json`, and the build refuses one outside the
+institution's wilaya, closer than 100 m to its main point, or without a second check.
+
 ## Need the administrative divisions too?
 
 If you also need wilayas, dairas, and communes to join against, use the main

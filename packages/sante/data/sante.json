@@ -1689,12 +1689,13 @@
     "wilaya_code": "06",
     "commune_code": "0601",
     "commune": "Bejaia",
-    "lat": 36.75089,
-    "lng": 5.056733,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
+    "lat": 36.754432,
+    "lng": 5.049811,
+    "geo_precision": "exact",
+    "geo_method": "osm_point",
     "source": "msp",
     "refs": {
+      "osm": "way/156237500",
       "msp": "3649",
       "msp_twin": "3650"
     },
@@ -1703,6 +1704,50 @@
     "type_label_ar": "المركز الاستشفائي الجامعي",
     "sector": "public",
     "slug": "centre-hospitalo-universitaire-bejaia"
+  },
+  {
+    "id": "06-chu-01-s2",
+    "name": "Hôpital Frantz Fanon",
+    "name_fr": "Hôpital Frantz Fanon",
+    "name_ar": "مستشفى فرانز فانون",
+    "wilaya_code": "06",
+    "commune_code": "0601",
+    "commune": "Bejaia",
+    "lat": 36.756421,
+    "lng": 5.083552,
+    "geo_precision": "exact",
+    "geo_method": "osm_point",
+    "source": "osm",
+    "refs": {
+      "osm": "way/156238581"
+    },
+    "type": "chu",
+    "type_label_fr": "Centre Hospitalo-Universitaire",
+    "type_label_ar": "المركز الاستشفائي الجامعي",
+    "sector": "public",
+    "site_of": "06-chu-01"
+  },
+  {
+    "id": "06-chu-01-s3",
+    "name": "Polyclinique d'Accouchement Targa Ouzemmour",
+    "name_fr": "Polyclinique d'Accouchement Targa Ouzemmour",
+    "name_ar": "عيادة الولادة",
+    "wilaya_code": "06",
+    "commune_code": "0601",
+    "commune": "Bejaia",
+    "lat": 36.752526,
+    "lng": 5.046217,
+    "geo_precision": "exact",
+    "geo_method": "osm_point",
+    "source": "osm",
+    "refs": {
+      "osm": "node/2466300649"
+    },
+    "type": "chu",
+    "type_label_fr": "Centre Hospitalo-Universitaire",
+    "type_label_ar": "المركز الاستشفائي الجامعي",
+    "sector": "public",
+    "site_of": "06-chu-01"
   },
   {
     "id": "06-ehs-01",

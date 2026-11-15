@@ -5838,42 +5838,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.046217,
-          36.752526
-        ]
-      },
-      "properties": {
-        "id": "06-00001",
-        "name": "Polyclinique d'Accouchement Targa Ouzemmour",
-        "name_fr": "Polyclinique d'Accouchement Targa Ouzemmour",
-        "name_ar": "عيادة الولادة",
-        "wilaya_code": "06",
-        "commune_code": "0601",
-        "commune": "Bejaia",
-        "lat": 36.752526,
-        "lng": 5.046217,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "refs": {
-          "osm": "node/2466300649"
-        },
-        "type": "polyclinique",
-        "type_label_fr": "Polyclinique",
-        "type_label_ar": "عيادة متعددة الخدمات",
-        "sector": "public",
-        "speciality": null,
-        "address": "Route Tala Markha 2, Béjaïa 06000",
-        "phone": null,
-        "opening_hours": null,
-        "emergency": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           4.464799,
           36.384999
         ]
