@@ -13,7 +13,7 @@
     "url": "https://yasser.studio"
   },
   "datePublished": "2025-05-05",
-  "dateModified": "2026-11-01",
+  "dateModified": "2026-11-18",
   "inLanguage": ["fr", "ar"],
   "distribution": [
     {
@@ -39,6 +39,18 @@
       "name": "Wilaya boundary polygons (GeoJSON, ODbL, OpenStreetMap)",
       "encodingFormat": "application/geo+json",
       "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/geojson/wilaya-boundaries.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Commune boundary polygons (GeoJSON, OpenStreetMap)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/geojson/commune-boundaries.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Detailed wilaya boundary polygons (GeoJSON, ODbL, OpenStreetMap)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/geojson/wilaya-boundaries-detailed.geojson"
     },
     {
       "@type": "DataDownload",

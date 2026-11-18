@@ -1,0 +1,51 @@
+{
+  "file": "wilaya-boundaries-detailed.geojson",
+  "title_en": "Algeria: detailed wilaya boundary polygons (69)",
+  "title_fr": "Algérie: polygones détaillés des limites de wilaya (69)",
+  "title_ar": "الجزائر: حدود الولايات المفصلة (69)",
+  "feature_count": 69,
+  "geometry_types": {
+    "Polygon": 62,
+    "MultiPolygon": 7
+  },
+  "properties": {
+    "code": "wilaya code as an integer 1-69 (join key to wilayas.json)"
+  },
+  "bbox": [
+    -8.669,
+    18.968,
+    11.997,
+    37.09
+  ],
+  "license": "ODbL-1.0",
+  "sources": [
+    {
+      "key": "osm-communes",
+      "name": "OpenStreetMap: commune boundaries (relation, boundary=administrative, admin_level=8) in Algeria, full geometry",
+      "url": "https://www.openstreetmap.org",
+      "retrieved": "2026-09-29",
+      "timestamp_osm_base": "2026-09-29T13:04:54Z",
+      "evidence_type": "crowdsourced",
+      "note": "Reached through data/geojson/commune-boundaries.geojson, which this file is dissolved from."
+    }
+  ],
+  "simplification": {
+    "method": "None of its own. Each wilaya is the polygon-clipping union of its communes' outlines in commune-boundaries.geojson (4 decimals), holes under 5 km2 dropped, exterior rings counter-clockwise.",
+    "coordinate_precision_dp": 4,
+    "vertices": 49461,
+    "rings": 82
+  },
+  "repaired_rings": [
+    {
+      "code": 40,
+      "vertices_removed": 1,
+      "area_change_percent": 0
+    }
+  ],
+  "provenance_notes": [
+    "Derived, not drawn: a wilaya's outline is the union of the outlines of the communes the records place in it (wilaya_code), so the line follows commune membership, including the 2019 and 2026 reforms and the three communes moved to Touggourt and Ghardaia.",
+    "wilaya-boundaries.geojson is unchanged and remains the simplified, hand-corrected display outline. The two agree on every wilaya's area to within 2%; this one follows commune borders and the coast at commune detail.",
+    "Licence: ODbL-1.0 is recorded, while the package itself declares SEE LICENSE IN LICENSE for its mixed terms, because the outlines are OpenStreetMap-derived and the validator needs a stated term; it is provisional and the final licence decision is deferred. The three communes drawn from geoBoundaries ADM3 and the one derived gap (see commune-boundaries.metadata.json) are included in the unions.",
+    "Gaps between communes of one wilaya are closed by dropping holes under 5 km2; they are simplification slivers, not territory."
+  ]
+}

@@ -160,6 +160,8 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/csv/communes.csv` | CSV | 1,541 | Spreadsheets, imports |
 | `data/geojson/wilayas.geojson` | GeoJSON | 69 | Maps, GIS |
 | `data/geojson/communes.geojson` | GeoJSON | 1,541 | Maps, GIS |
+| `data/geojson/commune-boundaries.geojson` | GeoJSON | 1,541 | Commune polygons, join on `code_commune` |
+| `data/geojson/wilaya-boundaries-detailed.geojson` | GeoJSON | 69 | Wilaya outlines at commune detail, dissolved from the commune boundaries |
 | `data/sql/full.sql` | SQL | 69 + 1,541 | Normalized database |
 | `data/ecommerce/communes.json` | JSON | 1,541 | Address forms, dropdowns |
 | `data/ecommerce/communes.csv` | CSV | 1,541 | Flat import |
