@@ -466,7 +466,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 184, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 184, shapes: 76, directions: 128, stations: 1599, memberships: 2682 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -482,7 +482,7 @@ const { metadata } = writePackageV2({
         || String(a.name_fr ?? a.id).localeCompare(String(b.name_fr ?? b.id), "fr", { numeric: true }) },
     { file: "stations.json", rows: stations },
   ],
-  meta: cfg.meta, updated: "2026-09-27", retrieved: "2026-09-27",
+  meta: cfg.meta, updated: "2026-11-19", retrieved: "2026-11-19",
   stats: { shapes: shapes.length, directions: directions.length, stations: stations.length, station_memberships: memberships.length },
 });
 write(join(DATA, "metadata.json"), {

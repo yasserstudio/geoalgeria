@@ -858,7 +858,7 @@ export const MIGRATIONS = {
         { key: "etus-c-constantine", name: "ETUS-C Constantine: numbered route graphics supplied by project owner", license: "Proprietary factual reference data; no open reuse licence", retrieved: "2026-09-16", evidence_type: "official" },
         { key: "etus-skikda", name: "ETUS Skikda: Operator website Line pages and service section supplied by project owner", url: "https://etus-skikda.dz/", license: "Proprietary factual reference data; no open reuse licence", retrieved: "2026-09-27", evidence_type: "official" },
         { key: "etul-laghouat", name: "ETUL Laghouat: dated operating programs supplied by project owner", license: "Proprietary factual reference data; no open reuse licence", retrieved: "2026-09-04", evidence_type: "official" },
-        { key: "osm", name: "OpenStreetMap: reviewed urban bus relations", url: "https://www.openstreetmap.org/copyright", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-01", evidence_type: "crowdsourced" },
+        { key: "osm", name: "OpenStreetMap: reviewed urban bus relations", url: "https://www.openstreetmap.org/copyright", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-11-19", evidence_type: "crowdsourced" },
       ],
       license: "Line data © the respective Operators; redistributed for reference. The ETUSA Line attributes derived from French Wikipedia are CC BY-SA 4.0, and the shapes, Directions, Stations and memberships derived from OpenStreetMap are ODbL 1.0, © OpenStreetMap contributors. Per-part attribution is in LICENSE and NOTICE.",
       estimatedUniverse: null,

@@ -121,10 +121,12 @@ one busy Algiers corridor carries many relations). Of the 128 shipped
 Directions, 74 changed in OSM (54 geometry only, 20 with member changes).
 
 - **P1 on the new pull:** no Direction verdict moves (36 / 69 / 23); path
-  order 20 → 21 is Tiaret 26, already inconsistent. The committed
-  `qa/report.json` stays on the 2026-09-01 snapshot, because it judges what
-  the package ships. The 74 changed Directions are re-promoted from the new
-  pull with the next release (batch B), each gated on P1 again.
+  order 20 → 21 is Tiaret 26, already inconsistent.
+- **Re-promoted (batch B):** the shipped subset now comes from the
+  2026-11-19 pull: same 76 shapes and 128 Directions (49 shapes redrawn),
+  Stations 1,603 → 1,599 (Sétif 101/104: three stops deleted upstream, one untagged),
+  Memberships 2,685 → 2,682, 382 Stations gained `name_fr`. `qa/report.json`
+  was regenerated on it with the same 36 / 69 / 23 tally.
 - **New relations:** none matches a package Line. ETUS Tiaret 33 Reverse
   (Tiaret ships 26–32; two older 33 relations were already in the September
   pull) and two ETUSTO shuttles Aéroport d'Alger ↔ Tizi Ouzou (no `ref`, no

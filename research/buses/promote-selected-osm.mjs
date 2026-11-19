@@ -163,6 +163,11 @@ const relevantResponses = Object.fromEntries(
     })
     .map(([key, response]) => [key, response]),
 );
+// The capture is dated by the OSM data it holds: the latest replication
+// timestamp among the responses it keeps, not the day the script ran.
+const osmTimestamps = Object.values(relevantResponses).map((response) => response.osm_timestamp).filter(Boolean).sort();
+if (!osmTimestamps.length) throw new Error("No osm_timestamp in the pull manifest");
+const retrieved = osmTimestamps.at(-1).slice(0, 10);
 
 const source = {
   schema_version: "1.0.0",
@@ -191,7 +196,7 @@ const source = {
 
 writeCapture("buses", "osm-urban-selected", source, {
   url: "https://overpass-api.de/api/interpreter",
-  retrieved: "2026-09-01",
+  retrieved,
   records: lineShapes.length,
   note: "Reviewed trimmed OSM projection. Non-atomic retrieval and snapshot intervals, queries, endpoint URLs, and upstream response hashes are embedded in the capture receipt.",
 });

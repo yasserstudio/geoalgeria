@@ -13,7 +13,7 @@
 </div>
 
 Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **184 lignes**,
-**76 tracés**, **128 directions** et **1 603 stations** pour 16 exploitants. En JSON,
+**76 tracés**, **128 directions** et **1 599 stations** pour 16 exploitants. En JSON,
 CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -39,9 +39,9 @@ const trace = buses.shapeForLine("etusa-1");
 | Lignes | **184** | 16 exploitants ; lignes officielles sans tracé conservées dans l'annuaire |
 | Tracés OSM | **76** | 61 ETUSA + 15 lignes des autres exploitants |
 | Directions | **128** | Relations OSM sources |
-| Stations | **1 603** | Nœuds OSM, noms nuls conservés |
+| Stations | **1 599** | Nœuds OSM, noms nuls conservés |
 
-L'ordre des 2 685 appartenances est l'ordre brut des membres OSM, marqué
+L'ordre des 2 682 appartenances est l'ordre brut des membres OSM, marqué
 `osm_member_order_unvalidated` : il ne constitue pas un ordre voyageurs validé et aucun
 terminus n'est déduit automatiquement.
 

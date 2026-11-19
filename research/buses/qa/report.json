@@ -1,8 +1,8 @@
 {
   "generated_by": "research/buses/qa/run-qa.mjs",
   "osm_snapshot": {
-    "from": "2026-09-01T13:41:31Z",
-    "to": "2026-09-01T13:52:52Z"
+    "from": "2026-11-19T16:14:35Z",
+    "to": "2026-11-19T17:32:20Z"
   },
   "thresholds_m": {
     "near_path": 50,
@@ -21,7 +21,7 @@
       "fewer_than_two_stations": 23
     },
     "rule_failures": {
-      "path_order": 20,
+      "path_order": 21,
       "termini": 43,
       "continuity": 68,
       "near_path": 12
@@ -1365,7 +1365,7 @@
         {
           "rule": "continuity",
           "pass": false,
-          "gaps": 13
+          "gaps": 14
         }
       ],
       "stop_count": {
@@ -1400,7 +1400,7 @@
         {
           "rule": "continuity",
           "pass": false,
-          "gaps": 14
+          "gaps": 15
         }
       ],
       "stop_count": {
@@ -1800,7 +1800,7 @@
         {
           "rule": "continuity",
           "pass": false,
-          "gaps": 14
+          "gaps": 15
         }
       ]
     },
@@ -1828,7 +1828,7 @@
         {
           "rule": "continuity",
           "pass": false,
-          "gaps": 11
+          "gaps": 12
         }
       ]
     },
@@ -2915,20 +2915,24 @@
         },
         {
           "rule": "path_order",
-          "pass": true,
-          "failing": []
+          "pass": false,
+          "failing": [
+            "osm-node-10811355561",
+            "osm-node-9032301077"
+          ]
         },
         {
           "rule": "termini",
           "pass": false,
           "failing": [
-            "osm-node-9049337681"
+            "osm-node-9049337681",
+            "osm-node-10822149754"
           ]
         },
         {
           "rule": "continuity",
           "pass": false,
-          "gaps": 4
+          "gaps": 3
         }
       ]
     },
@@ -2947,20 +2951,23 @@
           "rule": "path_order",
           "pass": false,
           "failing": [
-            "osm-node-10817085904"
+            "osm-node-10817085904",
+            "osm-node-10811355561",
+            "osm-node-9032301077"
           ]
         },
         {
           "rule": "termini",
           "pass": false,
           "failing": [
-            "osm-node-9049258735"
+            "osm-node-9049258735",
+            "osm-node-9031893761"
           ]
         },
         {
           "rule": "continuity",
           "pass": false,
-          "gaps": 5
+          "gaps": 4
         }
       ]
     },
@@ -2990,7 +2997,7 @@
         {
           "rule": "continuity",
           "pass": false,
-          "gaps": 2
+          "gaps": 3
         }
       ]
     },
@@ -3052,7 +3059,7 @@
         {
           "rule": "continuity",
           "pass": false,
-          "gaps": 3
+          "gaps": 10
         }
       ]
     },
@@ -3190,7 +3197,6 @@
           "rule": "path_order",
           "pass": false,
           "failing": [
-            "osm-node-10044422191",
             "osm-node-10044422214",
             "osm-node-10043547706"
           ]
@@ -3199,7 +3205,7 @@
           "rule": "termini",
           "pass": false,
           "failing": [
-            "osm-node-10035219305"
+            "osm-node-10044422191"
           ]
         },
         {
@@ -3379,8 +3385,6 @@
             "osm-node-9052051110",
             "osm-node-9035106965",
             "osm-node-9032301076",
-            "osm-node-10811355559",
-            "osm-node-10811355561",
             "osm-node-10811355565",
             "osm-node-9032301077"
           ]
@@ -3396,7 +3400,7 @@
         {
           "rule": "continuity",
           "pass": false,
-          "gaps": 2
+          "gaps": 3
         }
       ]
     },
@@ -3563,7 +3567,7 @@
         {
           "rule": "continuity",
           "pass": false,
-          "gaps": 2
+          "gaps": 7
         }
       ]
     },

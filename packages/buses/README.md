@@ -3,7 +3,7 @@
 # @geoalgeria/buses
 
 Reviewed urban and suburban bus data for Algeria. This release contains **184 Lines**
-from 16 Operators, **76 drawable shapes**, **128 Directions**, and **1,603 Stations**.
+from 16 Operators, **76 drawable shapes**, **128 Directions**, and **1,599 Stations**.
 
 ```bash
 npm install @geoalgeria/buses
@@ -51,8 +51,8 @@ validation-only official geometry are not published as shapes.
 - `data/lines.json` and `data/csv/lines.csv`: 184 Lines
 - `data/shapes.json` and `data/geojson/shapes.geojson`: 76 MultiLineString shapes
 - `data/directions.json`: 128 source OSM Direction relations
-- `data/stations.json`, CSV and GeoJSON: 1,603 Station nodes
-- `data/station-memberships.json`: 2,685 ordered relation memberships
+- `data/stations.json`, CSV and GeoJSON: 1,599 Station nodes
+- `data/station-memberships.json`: 2,682 ordered relation memberships
 - `data/operators.json`: 16 Operators
 
 Membership order is the raw OSM relation member order and carries

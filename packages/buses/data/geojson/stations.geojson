@@ -1072,47 +1072,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.392108,
-          36.185405
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10035219305",
-        "name": "GR ETUS",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "19",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.185405,
-        "lng": 5.392108,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10035219305,
-        "refs": {
-          "osm": "node/10035219305"
-        },
-        "operator_ids": [
-          "etus-setif"
-        ],
-        "line_ids": [
-          "etus-setif-101"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform_entry_only"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           5.398524,
           36.181595
         ]
@@ -1442,8 +1401,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.39172,
-          36.185469
+          5.391828,
+          36.185386
         ]
       },
       "properties": {
@@ -1454,8 +1413,8 @@
         "wilaya_code": "19",
         "commune_code": null,
         "commune": null,
-        "lat": 36.185469,
-        "lng": 5.39172,
+        "lat": 36.185386,
+        "lng": 5.391828,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -1468,11 +1427,13 @@
           "etus-setif"
         ],
         "line_ids": [
+          "etus-setif-101",
           "etus-setif-104"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
-          "platform"
+          "platform",
+          "platform_exit_only"
         ],
         "highway": "bus_stop",
         "public_transport": "platform"
@@ -1924,47 +1885,6 @@
         "wilaya_method": "point_in_wilaya",
         "roles": [
           "platform"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.39169,
-          36.185405
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10035232567",
-        "name": "GR ETUS",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "19",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.185405,
-        "lng": 5.39169,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10035232567,
-        "refs": {
-          "osm": "node/10035232567"
-        },
-        "operator_ids": [
-          "etus-setif"
-        ],
-        "line_ids": [
-          "etus-setif-101"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform_exit_only"
         ],
         "highway": "bus_stop",
         "public_transport": "platform"
@@ -3239,47 +3159,6 @@
         ],
         "highway": null,
         "public_transport": "stop_position"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.392059,
-          36.185313
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10035252951",
-        "name": "GR ETUS",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "19",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.185313,
-        "lng": 5.392059,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10035252951,
-        "refs": {
-          "osm": "node/10035252951"
-        },
-        "operator_ids": [
-          "etus-setif"
-        ],
-        "line_ids": [
-          "etus-setif-104"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
       }
     },
     {
@@ -7715,8 +7594,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.420205,
-          36.185256
+          5.420176,
+          36.185245
         ]
       },
       "properties": {
@@ -7727,8 +7606,8 @@
         "wilaya_code": "19",
         "commune_code": null,
         "commune": null,
-        "lat": 36.185256,
-        "lng": 5.420205,
+        "lat": 36.185245,
+        "lng": 5.420176,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -7756,8 +7635,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.420346,
-          36.185181
+          5.420301,
+          36.185055
         ]
       },
       "properties": {
@@ -7768,8 +7647,8 @@
         "wilaya_code": "19",
         "commune_code": null,
         "commune": null,
-        "lat": 36.185181,
-        "lng": 5.420346,
+        "lat": 36.185055,
+        "lng": 5.420301,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -7839,7 +7718,7 @@
         "type": "Point",
         "coordinates": [
           5.420318,
-          36.185202
+          36.185211
         ]
       },
       "properties": {
@@ -7850,7 +7729,7 @@
         "wilaya_code": "19",
         "commune_code": null,
         "commune": null,
-        "lat": 36.185202,
+        "lat": 36.185211,
         "lng": 5.420318,
         "geo_precision": "exact",
         "geo_method": "osm_node",
@@ -9027,61 +8906,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.391781,
-          36.185467
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10751048813",
-        "name": "GR bus stop",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "19",
-        "commune_code": null,
-        "commune": null,
-        "lat": 36.185467,
-        "lng": 5.391781,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10751048813,
-        "refs": {
-          "osm": "node/10751048813"
-        },
-        "operator_ids": [
-          "etus-setif"
-        ],
-        "line_ids": [
-          "etus-setif-101"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "stop_exit_only"
-        ],
-        "highway": null,
-        "public_transport": "stop_position"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.392051,
-          36.185422
+          5.392042,
+          36.185406
         ]
       },
       "properties": {
         "id": "osm-node-10751672551",
-        "name": "GR bus stop",
+        "name": null,
         "name_fr": null,
         "name_ar": null,
         "wilaya_code": "19",
         "commune_code": null,
         "commune": null,
-        "lat": 36.185422,
-        "lng": 5.392051,
+        "lat": 36.185406,
+        "lng": 5.392042,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -9101,7 +8939,7 @@
           "stop_entry_only"
         ],
         "highway": null,
-        "public_transport": "stop_position"
+        "public_transport": null
       }
     },
     {
@@ -9116,7 +8954,7 @@
       "properties": {
         "id": "osm-node-10811355554",
         "name": "القرية",
-        "name_fr": null,
+        "name_fr": "El-Karia",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9152,18 +8990,18 @@
         "type": "Point",
         "coordinates": [
           1.360506,
-          35.3864
+          35.386424
         ]
       },
       "properties": {
         "id": "osm-node-10811355556",
         "name": "القرية",
-        "name_fr": null,
+        "name_fr": "El-Karia",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
         "commune": null,
-        "lat": 35.3864,
+        "lat": 35.386424,
         "lng": 1.360506,
         "geo_precision": "exact",
         "geo_method": "osm_node",
@@ -9200,7 +9038,7 @@
       "properties": {
         "id": "osm-node-10811355557",
         "name": "الحاسي",
-        "name_fr": null,
+        "name_fr": "El Hassi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9235,20 +9073,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.362727,
-          35.386658
+          1.36401,
+          35.386618
         ]
       },
       "properties": {
         "id": "osm-node-10811355559",
         "name": "الحاسي",
-        "name_fr": null,
+        "name_fr": "El Hassi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
         "commune": null,
-        "lat": 35.386658,
-        "lng": 1.362727,
+        "lat": 35.386618,
+        "lng": 1.36401,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -9284,7 +9122,7 @@
       "properties": {
         "id": "osm-node-10811355560",
         "name": "الحرس البلدي",
-        "name_fr": null,
+        "name_fr": "Garde communale",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9326,7 +9164,7 @@
       "properties": {
         "id": "osm-node-10811355561",
         "name": "الحرس البلدي",
-        "name_fr": null,
+        "name_fr": "Garde communale",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9368,7 +9206,7 @@
       "properties": {
         "id": "osm-node-10811355562",
         "name": "الحرس البلدي",
-        "name_fr": null,
+        "name_fr": "Garde communale",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9410,7 +9248,7 @@
       "properties": {
         "id": "osm-node-10811355563",
         "name": "المطحنة",
-        "name_fr": null,
+        "name_fr": "Le Moulin",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9452,7 +9290,7 @@
       "properties": {
         "id": "osm-node-10811355564",
         "name": "المطحنة",
-        "name_fr": null,
+        "name_fr": "Le Moulin",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9494,7 +9332,7 @@
       "properties": {
         "id": "osm-node-10811355565",
         "name": "المطحنة",
-        "name_fr": null,
+        "name_fr": "Le Moulin",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9536,7 +9374,7 @@
       "properties": {
         "id": "osm-node-10811430183",
         "name": "المركز القديم للحرف التقليدية",
-        "name_fr": null,
+        "name_fr": "Ancien centre de l'artisanat traditionnel",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9577,7 +9415,7 @@
       "properties": {
         "id": "osm-node-10811430184",
         "name": "المركز القديم للحرف التقليدية",
-        "name_fr": null,
+        "name_fr": "Ancien centre de l'artisanat traditionnel",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9618,7 +9456,7 @@
       "properties": {
         "id": "osm-node-10811430185",
         "name": "المركز القديم للحرف التقليدية",
-        "name_fr": null,
+        "name_fr": "Ancien centre de l'artisanat traditionnel",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9659,7 +9497,7 @@
       "properties": {
         "id": "osm-node-10811430186",
         "name": "محل الخراطة \"حماني\"",
-        "name_fr": null,
+        "name_fr": "Tournage Hammani",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9700,7 +9538,7 @@
       "properties": {
         "id": "osm-node-10811430187",
         "name": "محل الخراطة \"حماني\"",
-        "name_fr": null,
+        "name_fr": "Tournage Hammani",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9741,7 +9579,7 @@
       "properties": {
         "id": "osm-node-10811430188",
         "name": "محل الخراطة \"حماني\"",
-        "name_fr": null,
+        "name_fr": "Tournage Hammani",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9782,7 +9620,7 @@
       "properties": {
         "id": "osm-node-10811430189",
         "name": "مديرية النشاط الاجتماعي",
-        "name_fr": null,
+        "name_fr": "Direction de l'Action Sociale",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9824,7 +9662,7 @@
       "properties": {
         "id": "osm-node-10811430190",
         "name": "ملتقى الطرق (المقبرة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Cimetière)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9866,7 +9704,7 @@
       "properties": {
         "id": "osm-node-10811430191",
         "name": "صيدلية عمارات عدل",
-        "name_fr": null,
+        "name_fr": "Pharmacie Cité AADL",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9909,7 +9747,7 @@
       "properties": {
         "id": "osm-node-10811430192",
         "name": "صيدلية عمارات عدل",
-        "name_fr": null,
+        "name_fr": "Pharmacie Cité AADL",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -9952,7 +9790,7 @@
       "properties": {
         "id": "osm-node-10811430193",
         "name": "صيدلية عمارات عدل",
-        "name_fr": null,
+        "name_fr": "Pharmacie Cité AADL",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10036,7 +9874,7 @@
       "properties": {
         "id": "osm-node-10811468488",
         "name": "محطة الغسيل \"لكادات\"",
-        "name_fr": null,
+        "name_fr": "Station de lavage Lekadate",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10077,7 +9915,7 @@
       "properties": {
         "id": "osm-node-10811468489",
         "name": "محطة الغسيل \"لكادات\"",
-        "name_fr": null,
+        "name_fr": "Station de lavage Lekadate",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10118,7 +9956,7 @@
       "properties": {
         "id": "osm-node-10811468490",
         "name": "محطة الغسيل \"لكادات\"",
-        "name_fr": null,
+        "name_fr": "Station de lavage Lekadate",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10159,7 +9997,7 @@
       "properties": {
         "id": "osm-node-10811468492",
         "name": "المركز التجاري \"اليسر\"",
-        "name_fr": null,
+        "name_fr": "Centre commercial El-Yousr",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10200,7 +10038,7 @@
       "properties": {
         "id": "osm-node-10811468493",
         "name": "المركز التجاري \"اليسر\"",
-        "name_fr": null,
+        "name_fr": "Centre commercial El-Yousr",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10241,7 +10079,7 @@
       "properties": {
         "id": "osm-node-10811468494",
         "name": "المركز التجاري \"اليسر\"",
-        "name_fr": null,
+        "name_fr": "Centre commercial El-Yousr",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10282,7 +10120,7 @@
       "properties": {
         "id": "osm-node-10811468495",
         "name": "الاقامة الجامعية (2000 سرير)",
-        "name_fr": null,
+        "name_fr": "Résidence universitaire des 2 000 Lits",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10323,7 +10161,7 @@
       "properties": {
         "id": "osm-node-10811468496",
         "name": "الاقامة الجامعية (2000 سرير)",
-        "name_fr": null,
+        "name_fr": "Résidence universitaire des 2000 Lits",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10364,7 +10202,7 @@
       "properties": {
         "id": "osm-node-10811468497",
         "name": "الاقامة الجامعية (2000 سرير)",
-        "name_fr": null,
+        "name_fr": "Résidence universitaire des 2000 Lits",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10405,7 +10243,7 @@
       "properties": {
         "id": "osm-node-10811468498",
         "name": "ملتقى الطرق (زعرورة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Zaaroura)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10447,7 +10285,7 @@
       "properties": {
         "id": "osm-node-10811468499",
         "name": "ملتقى الطرق (زعرورة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Zaaroura)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10489,7 +10327,7 @@
       "properties": {
         "id": "osm-node-10811468500",
         "name": "محطة",
-        "name_fr": null,
+        "name_fr": "Station",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10530,7 +10368,7 @@
       "properties": {
         "id": "osm-node-10814254969",
         "name": "جامعة كارمان",
-        "name_fr": null,
+        "name_fr": "Université Karman",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10571,7 +10409,7 @@
       "properties": {
         "id": "osm-node-10814254992",
         "name": "مكتبة \"بوقانون\"",
-        "name_fr": null,
+        "name_fr": "Librairie Boukanoun",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10613,7 +10451,7 @@
       "properties": {
         "id": "osm-node-10814254993",
         "name": "مكتبة \"بوقانون\"",
-        "name_fr": null,
+        "name_fr": "Librairie Boukanoun",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10655,7 +10493,7 @@
       "properties": {
         "id": "osm-node-10814254994",
         "name": "مكتبة \"بوقانون\"",
-        "name_fr": null,
+        "name_fr": "Librairie Boukanoun",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10823,7 +10661,7 @@
       "properties": {
         "id": "osm-node-10816744918",
         "name": "عمارات الفيدا",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10864,7 +10702,7 @@
       "properties": {
         "id": "osm-node-10816744919",
         "name": "عمارات الفيدا",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10905,7 +10743,7 @@
       "properties": {
         "id": "osm-node-10816744920",
         "name": "عمارات الفيدا",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10946,7 +10784,7 @@
       "properties": {
         "id": "osm-node-10816744926",
         "name": "حي 282 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 282 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -10988,7 +10826,7 @@
       "properties": {
         "id": "osm-node-10816744927",
         "name": "حي 282 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 282 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11030,7 +10868,7 @@
       "properties": {
         "id": "osm-node-10816744928",
         "name": "حي 282 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 282 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11072,7 +10910,7 @@
       "properties": {
         "id": "osm-node-10816744929",
         "name": "المسجد (حي 282 مسكن)",
-        "name_fr": null,
+        "name_fr": "Mosquée de la Cité 282 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11113,7 +10951,7 @@
       "properties": {
         "id": "osm-node-10816744930",
         "name": "المسجد (حي 282 مسكن)",
-        "name_fr": null,
+        "name_fr": "Mosquée de la Cité 282 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11154,7 +10992,7 @@
       "properties": {
         "id": "osm-node-10816744931",
         "name": "المسجد (حي 282 مسكن)",
-        "name_fr": null,
+        "name_fr": "Mosquée de la Cité 282 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11195,7 +11033,7 @@
       "properties": {
         "id": "osm-node-10816744935",
         "name": "إبتدائية القاعدة رقم 5",
-        "name_fr": null,
+        "name_fr": "École primaire Base n° 5",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11236,7 +11074,7 @@
       "properties": {
         "id": "osm-node-10816744936",
         "name": "إبتدائية القاعدة رقم 5",
-        "name_fr": null,
+        "name_fr": "École primaire Base n° 5",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11277,7 +11115,7 @@
       "properties": {
         "id": "osm-node-10816744937",
         "name": "إبتدائية القاعدة رقم 5",
-        "name_fr": null,
+        "name_fr": "École primaire Base n° 5",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11318,7 +11156,7 @@
       "properties": {
         "id": "osm-node-10816744938",
         "name": "محلات حي 405 مسكن",
-        "name_fr": null,
+        "name_fr": "Commerces Cité 405 logts",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11359,7 +11197,7 @@
       "properties": {
         "id": "osm-node-10816744939",
         "name": "محلات حي 405 مسكن",
-        "name_fr": null,
+        "name_fr": "Commerces Cité 405 logts",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11400,7 +11238,7 @@
       "properties": {
         "id": "osm-node-10816744940",
         "name": "ملتقى الطرق (الامن العاشر)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Sûreté de Wilaya)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11441,7 +11279,7 @@
       "properties": {
         "id": "osm-node-10816744942",
         "name": "جامعة كارمان",
-        "name_fr": null,
+        "name_fr": "Université Karman",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11475,20 +11313,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.349955,
-          35.378482
+          1.349933,
+          35.378467
         ]
       },
       "properties": {
         "id": "osm-node-10816744943",
         "name": "جامعة كارمان",
-        "name_fr": null,
+        "name_fr": "Université Karman",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
         "commune": null,
-        "lat": 35.378482,
-        "lng": 1.349955,
+        "lat": 35.378467,
+        "lng": 1.349933,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -11523,7 +11361,7 @@
       "properties": {
         "id": "osm-node-10817085889",
         "name": "ملتقى الطرق (زعرورة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Zaaroura)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11565,7 +11403,7 @@
       "properties": {
         "id": "osm-node-10817085890",
         "name": "ملتقى الطرق (زعرورة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Zaaroura)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11607,7 +11445,7 @@
       "properties": {
         "id": "osm-node-10817085893",
         "name": "حي المنار 2",
-        "name_fr": null,
+        "name_fr": "Cité El Manar 2",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11649,7 +11487,7 @@
       "properties": {
         "id": "osm-node-10817085894",
         "name": "حي المنار 2",
-        "name_fr": null,
+        "name_fr": "Cité El Manar 2",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11691,7 +11529,7 @@
       "properties": {
         "id": "osm-node-10817085895",
         "name": "حي المنار 2",
-        "name_fr": null,
+        "name_fr": "Cité El Manar 2",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11733,7 +11571,7 @@
       "properties": {
         "id": "osm-node-10817085896",
         "name": "حي المنار 2",
-        "name_fr": null,
+        "name_fr": "Cité El Manar 2",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11775,7 +11613,7 @@
       "properties": {
         "id": "osm-node-10817085898",
         "name": "محطة نقل المسافرين (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Gare routière (Aïn Kasma)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11816,7 +11654,7 @@
       "properties": {
         "id": "osm-node-10817085900",
         "name": "محطة نقل المسافرين (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Gare routière (Aïn Kasma)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11947,7 +11785,7 @@
       "properties": {
         "id": "osm-node-10817085903",
         "name": "المطعم (جامعة التكوين المتواصل)",
-        "name_fr": null,
+        "name_fr": "Restaurant UFC",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -11992,7 +11830,7 @@
       "properties": {
         "id": "osm-node-10817085904",
         "name": "المطعم (جامعة التكوين المتواصل)",
-        "name_fr": null,
+        "name_fr": "Restaurant UFC",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12037,7 +11875,7 @@
       "properties": {
         "id": "osm-node-10817088107",
         "name": "السوق (المنظر الجميل)",
-        "name_fr": null,
+        "name_fr": "Marché du Belvédère",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12082,7 +11920,7 @@
       "properties": {
         "id": "osm-node-10817088108",
         "name": "السوق (المنظر الجميل)",
-        "name_fr": null,
+        "name_fr": "Marché du Belvédère",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12127,7 +11965,7 @@
       "properties": {
         "id": "osm-node-10819762149",
         "name": "حي 40 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 40 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12168,7 +12006,7 @@
       "properties": {
         "id": "osm-node-10819762150",
         "name": "حي 40 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 40 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12209,7 +12047,7 @@
       "properties": {
         "id": "osm-node-10819762151",
         "name": "حي 40 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 40 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12250,7 +12088,7 @@
       "properties": {
         "id": "osm-node-10819762152",
         "name": "معهد التربية",
-        "name_fr": null,
+        "name_fr": "Institut d'éducation",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12292,7 +12130,7 @@
       "properties": {
         "id": "osm-node-10819762153",
         "name": "معهد التربية",
-        "name_fr": null,
+        "name_fr": "Institut d'éducation",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12333,7 +12171,7 @@
       "properties": {
         "id": "osm-node-10819762154",
         "name": "معهد التربية",
-        "name_fr": null,
+        "name_fr": "Institut d'éducation",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12375,7 +12213,7 @@
       "properties": {
         "id": "osm-node-10819762156",
         "name": "معهد التربية",
-        "name_fr": null,
+        "name_fr": "Institut d'éducation",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12416,7 +12254,7 @@
       "properties": {
         "id": "osm-node-10819762157",
         "name": "مديرية الحماية المدنية",
-        "name_fr": null,
+        "name_fr": "Direction de la Protection Civile",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12458,7 +12296,7 @@
       "properties": {
         "id": "osm-node-10819762158",
         "name": "مديرية الحماية المدنية",
-        "name_fr": null,
+        "name_fr": "Direction de la Protection Civile",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12500,7 +12338,7 @@
       "properties": {
         "id": "osm-node-10819762159",
         "name": "مديرية الحماية المدنية",
-        "name_fr": null,
+        "name_fr": "Direction de la Protection Civile",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12542,7 +12380,7 @@
       "properties": {
         "id": "osm-node-10819762160",
         "name": "ملعب \"قايد احمد\"",
-        "name_fr": null,
+        "name_fr": "Stade Kaïd Ahmed",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12584,7 +12422,7 @@
       "properties": {
         "id": "osm-node-10819762161",
         "name": "ملعب \"قايد احمد\"",
-        "name_fr": null,
+        "name_fr": "Stade Kaïd Ahmed",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12626,7 +12464,7 @@
       "properties": {
         "id": "osm-node-10819762162",
         "name": "ملعب \"قايد احمد\"",
-        "name_fr": null,
+        "name_fr": "Stade Kaïd Ahmed",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12668,7 +12506,7 @@
       "properties": {
         "id": "osm-node-10819762163",
         "name": "ملعب \"قايد احمد\"",
-        "name_fr": null,
+        "name_fr": "Stade Kaïd Ahmed",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12710,7 +12548,7 @@
       "properties": {
         "id": "osm-node-10819762164",
         "name": "المركز الجديد لبنك الفلاحة والتنمية الريفية",
-        "name_fr": null,
+        "name_fr": "Nouveau siège de la BADR",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12752,7 +12590,7 @@
       "properties": {
         "id": "osm-node-10819762165",
         "name": "المركز الجديد لبنك الفلاحة والتنمية الريفية",
-        "name_fr": null,
+        "name_fr": "Nouveau siège de la BADR",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12794,7 +12632,7 @@
       "properties": {
         "id": "osm-node-10819762166",
         "name": "المركز الجديد لبنك الفلاحة والتنمية الريفية",
-        "name_fr": null,
+        "name_fr": "Nouveau siège de la BADR",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12836,7 +12674,7 @@
       "properties": {
         "id": "osm-node-10819762167",
         "name": "المركز الجديد لبنك الفلاحة والتنمية الريفية",
-        "name_fr": null,
+        "name_fr": "Nouveau siège de la BADR",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12878,7 +12716,7 @@
       "properties": {
         "id": "osm-node-10819762169",
         "name": "مديرية مسح الاراضي",
-        "name_fr": null,
+        "name_fr": "Direction du Cadastre et de la Conservation Foncière",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12920,7 +12758,7 @@
       "properties": {
         "id": "osm-node-10819762171",
         "name": "مديرية مسح الاراضي",
-        "name_fr": null,
+        "name_fr": "Direction du Cadastre et de la Conservation Foncière",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -12962,7 +12800,7 @@
       "properties": {
         "id": "osm-node-10819762172",
         "name": "ملتقى الطرق (الامن الولائي)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Sûreté de Wilaya)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13003,7 +12841,7 @@
       "properties": {
         "id": "osm-node-10819762173",
         "name": "ملتقى الطرق (الامن الولائي)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Sûreté de Wilaya)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13044,7 +12882,7 @@
       "properties": {
         "id": "osm-node-10819762174",
         "name": "ملتقى الطرق (الامن الولائي)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Sûreté de Wilaya)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13085,7 +12923,7 @@
       "properties": {
         "id": "osm-node-10819762175",
         "name": "ملتقى الطرق (الامن الولائي)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Sûreté de Wilaya)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13126,7 +12964,7 @@
       "properties": {
         "id": "osm-node-10819762176",
         "name": "مسجد السلام",
-        "name_fr": null,
+        "name_fr": "Mosquée As-Salam",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13167,7 +13005,7 @@
       "properties": {
         "id": "osm-node-10819762177",
         "name": "مسجد السلام",
-        "name_fr": null,
+        "name_fr": "Mosquée As-Salam",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13208,7 +13046,7 @@
       "properties": {
         "id": "osm-node-10819762178",
         "name": "مسجد السلام",
-        "name_fr": null,
+        "name_fr": "Mosquée As-Salam",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13249,7 +13087,7 @@
       "properties": {
         "id": "osm-node-10819762179",
         "name": "مسجد السلام",
-        "name_fr": null,
+        "name_fr": "Mosquée As-Salam",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13290,7 +13128,7 @@
       "properties": {
         "id": "osm-node-10819762180",
         "name": "ملتقى الطرق (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Carrefour Aïn Gassem",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13331,7 +13169,7 @@
       "properties": {
         "id": "osm-node-10819762181",
         "name": "ملتقى الطرق (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Carrefour Aïn Gassem",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13372,7 +13210,7 @@
       "properties": {
         "id": "osm-node-10819762182",
         "name": "ملتقى الطرق (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Carrefour Aïn Gassem",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13413,7 +13251,7 @@
       "properties": {
         "id": "osm-node-10819762183",
         "name": "ملتقى الطرق (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Carrefour Aïn Gassem",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13454,7 +13292,7 @@
       "properties": {
         "id": "osm-node-10819762184",
         "name": "حي السانية- محطة سونلغاز",
-        "name_fr": null,
+        "name_fr": "Cité Es-Sania - Poste Sonelgaz",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13495,7 +13333,7 @@
       "properties": {
         "id": "osm-node-10819762185",
         "name": "حي السانية- محطة سونلغاز",
-        "name_fr": null,
+        "name_fr": "Cité Es-Sania - Poste Sonelgaz",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13536,7 +13374,7 @@
       "properties": {
         "id": "osm-node-10819762188",
         "name": "الحاسي",
-        "name_fr": null,
+        "name_fr": "El Hassi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13577,7 +13415,7 @@
       "properties": {
         "id": "osm-node-10819762189",
         "name": "الحاسي",
-        "name_fr": null,
+        "name_fr": "El Hassi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13618,7 +13456,7 @@
       "properties": {
         "id": "osm-node-10819762190",
         "name": "الحاسي",
-        "name_fr": null,
+        "name_fr": "El Hassi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13659,7 +13497,7 @@
       "properties": {
         "id": "osm-node-10819762191",
         "name": "الحاسي",
-        "name_fr": null,
+        "name_fr": "El Hassi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13700,7 +13538,7 @@
       "properties": {
         "id": "osm-node-10819762192",
         "name": "الوحدة الجمهورية للشرطة",
-        "name_fr": null,
+        "name_fr": "Unité républicaine de sécurité",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13741,7 +13579,7 @@
       "properties": {
         "id": "osm-node-10819762193",
         "name": "الوحدة الجمهورية للشرطة",
-        "name_fr": null,
+        "name_fr": "Unité républicaine de sécurité",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13782,7 +13620,7 @@
       "properties": {
         "id": "osm-node-10819762194",
         "name": "الوحدة الجمهورية للشرطة",
-        "name_fr": null,
+        "name_fr": "Unité républicaine de sécurité",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13823,7 +13661,7 @@
       "properties": {
         "id": "osm-node-10819762195",
         "name": "حي عين مصباح",
-        "name_fr": null,
+        "name_fr": "Cité Aïn Mesbah",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13864,7 +13702,7 @@
       "properties": {
         "id": "osm-node-10819762196",
         "name": "حي عين مصباح",
-        "name_fr": null,
+        "name_fr": "Cité Aïn Mesbah",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13905,7 +13743,7 @@
       "properties": {
         "id": "osm-node-10819762197",
         "name": "مدخل القرية",
-        "name_fr": null,
+        "name_fr": "Entrée du village",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13946,7 +13784,7 @@
       "properties": {
         "id": "osm-node-10819762198",
         "name": "مدخل القرية",
-        "name_fr": null,
+        "name_fr": "Entrée du village",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -13987,7 +13825,7 @@
       "properties": {
         "id": "osm-node-10819762199",
         "name": "مدخل القرية",
-        "name_fr": null,
+        "name_fr": "Entrée du village",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14028,7 +13866,7 @@
       "properties": {
         "id": "osm-node-10819762200",
         "name": "ببان مصباح",
-        "name_fr": null,
+        "name_fr": "Bebbane Mesbah",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14069,7 +13907,7 @@
       "properties": {
         "id": "osm-node-10819762201",
         "name": "ببان مصباح",
-        "name_fr": null,
+        "name_fr": "Bebbane Mesbah",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14110,7 +13948,7 @@
       "properties": {
         "id": "osm-node-10819762202",
         "name": "ببان مصباح",
-        "name_fr": null,
+        "name_fr": "Bebbane Mesbah",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14233,7 +14071,7 @@
       "properties": {
         "id": "osm-node-10819782905",
         "name": "عمارات ابن باديس",
-        "name_fr": null,
+        "name_fr": "Cité Ibn Badis",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14275,7 +14113,7 @@
       "properties": {
         "id": "osm-node-10819782906",
         "name": "عمارات ابن باديس",
-        "name_fr": null,
+        "name_fr": "Cité Ibn Badis",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14316,7 +14154,7 @@
       "properties": {
         "id": "osm-node-10819837147",
         "name": "حي السانية- محطة سونلغاز",
-        "name_fr": null,
+        "name_fr": "Cité Es-Sania - Poste Sonelgaz",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14357,7 +14195,7 @@
       "properties": {
         "id": "osm-node-10819837148",
         "name": "حي السانية- محطة سونلغاز",
-        "name_fr": null,
+        "name_fr": "Cité Es-Sania - Poste Sonelgaz",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14439,7 +14277,7 @@
       "properties": {
         "id": "osm-node-10822149748",
         "name": "الجامعة (الحديقة)",
-        "name_fr": null,
+        "name_fr": "Université (Le Jardin)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14480,7 +14318,7 @@
       "properties": {
         "id": "osm-node-10822149749",
         "name": "نفطال",
-        "name_fr": null,
+        "name_fr": "Naftal",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14521,7 +14359,7 @@
       "properties": {
         "id": "osm-node-10822149750",
         "name": "المكتب القديم لمفتشية العمل",
-        "name_fr": null,
+        "name_fr": "Ancien bureau de l'inspection du travail",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14562,7 +14400,7 @@
       "properties": {
         "id": "osm-node-10822149751",
         "name": "المكتب القديم لمفتشية العمل",
-        "name_fr": null,
+        "name_fr": "Ancien bureau de l'inspection du travail",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14603,7 +14441,7 @@
       "properties": {
         "id": "osm-node-10822149752",
         "name": "المكتب القديم لمفتشية العمل",
-        "name_fr": null,
+        "name_fr": "Ancien bureau de l'inspection du travail",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14644,7 +14482,7 @@
       "properties": {
         "id": "osm-node-10822149753",
         "name": "المركب الجواري المدرسة",
-        "name_fr": null,
+        "name_fr": "Complexe de proximité El-Madrassa",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14685,7 +14523,7 @@
       "properties": {
         "id": "osm-node-10822149754",
         "name": "الثانوية الجديدة",
-        "name_fr": null,
+        "name_fr": "Nouveau lycée",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14726,7 +14564,7 @@
       "properties": {
         "id": "osm-node-10822354057",
         "name": "عمارات الفيدا 2",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida 2",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14768,7 +14606,7 @@
       "properties": {
         "id": "osm-node-10822354058",
         "name": "عمارات الفيدا 2",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida 2",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14810,7 +14648,7 @@
       "properties": {
         "id": "osm-node-10822354059",
         "name": "عمارات الفيدا 2",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida 2",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14852,7 +14690,7 @@
       "properties": {
         "id": "osm-node-10822354060",
         "name": "عمارات الفيدا 2",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida 2",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14894,7 +14732,7 @@
       "properties": {
         "id": "osm-node-10822354061",
         "name": "حظيرة البلدية",
-        "name_fr": null,
+        "name_fr": "Parc communal",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14936,7 +14774,7 @@
       "properties": {
         "id": "osm-node-10822354062",
         "name": "حظيرة البلدية",
-        "name_fr": null,
+        "name_fr": "Parc communal",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -14978,7 +14816,7 @@
       "properties": {
         "id": "osm-node-10822354063",
         "name": "حظيرة البلدية",
-        "name_fr": null,
+        "name_fr": "Parc communal",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15020,7 +14858,7 @@
       "properties": {
         "id": "osm-node-10822354071",
         "name": "الاذاعة المحلية",
-        "name_fr": null,
+        "name_fr": "Radio locale",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15061,7 +14899,7 @@
       "properties": {
         "id": "osm-node-10822354072",
         "name": "الاذاعة المحلية",
-        "name_fr": null,
+        "name_fr": "Radio locale",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15102,7 +14940,7 @@
       "properties": {
         "id": "osm-node-10822354073",
         "name": "الاذاعة المحلية",
-        "name_fr": null,
+        "name_fr": "Radio locale",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15143,7 +14981,7 @@
       "properties": {
         "id": "osm-node-10822354074",
         "name": "حي 40 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 40 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15184,7 +15022,7 @@
       "properties": {
         "id": "osm-node-10822354075",
         "name": "حي 40 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 40 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15225,7 +15063,7 @@
       "properties": {
         "id": "osm-node-10822354076",
         "name": "حي 40 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 40 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15266,7 +15104,7 @@
       "properties": {
         "id": "osm-node-10822354077",
         "name": "الريجينة",
-        "name_fr": null,
+        "name_fr": "La Régina",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15307,7 +15145,7 @@
       "properties": {
         "id": "osm-node-10822354078",
         "name": "الريجينة",
-        "name_fr": null,
+        "name_fr": "La Régina",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15348,7 +15186,7 @@
       "properties": {
         "id": "osm-node-10822354079",
         "name": "الريجينة",
-        "name_fr": null,
+        "name_fr": "La Régina",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15389,7 +15227,7 @@
       "properties": {
         "id": "osm-node-10822354080",
         "name": "الحي الاداري (100مكتب)",
-        "name_fr": null,
+        "name_fr": "Cité administrative des 100 Bureaux",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15430,7 +15268,7 @@
       "properties": {
         "id": "osm-node-10822354081",
         "name": "الحي الاداري (100مكتب)",
-        "name_fr": null,
+        "name_fr": "Cité administrative des 100 Bureaux",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15471,7 +15309,7 @@
       "properties": {
         "id": "osm-node-10822354082",
         "name": "الحي الاداري (100مكتب)",
-        "name_fr": null,
+        "name_fr": "Cité administrative des 100 Bureaux",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15553,7 +15391,7 @@
       "properties": {
         "id": "osm-node-10822354096",
         "name": "مستشفى المتيجي",
-        "name_fr": null,
+        "name_fr": "Hôpital El-Mitidji",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15594,7 +15432,7 @@
       "properties": {
         "id": "osm-node-10822354097",
         "name": "مستشفى المتيجي",
-        "name_fr": null,
+        "name_fr": "Hôpital El-Mitidji",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15635,7 +15473,7 @@
       "properties": {
         "id": "osm-node-10822354098",
         "name": "مستشفى المتيجي",
-        "name_fr": null,
+        "name_fr": "Hôpital El-Mitidji",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15676,7 +15514,7 @@
       "properties": {
         "id": "osm-node-10822354099",
         "name": "مستشفى المتيجي",
-        "name_fr": null,
+        "name_fr": "Hôpital El-Mitidji",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15717,7 +15555,7 @@
       "properties": {
         "id": "osm-node-10822354100",
         "name": "محطة الخدمات بوفاتح",
-        "name_fr": null,
+        "name_fr": "Station-service Boufateh",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15758,7 +15596,7 @@
       "properties": {
         "id": "osm-node-10822354101",
         "name": "محطة الخدمات بوفاتح",
-        "name_fr": null,
+        "name_fr": "Station-service Boufateh",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15799,7 +15637,7 @@
       "properties": {
         "id": "osm-node-10822354102",
         "name": "محطة الخدمات بوفاتح",
-        "name_fr": null,
+        "name_fr": "Station-service Boufateh",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15840,7 +15678,7 @@
       "properties": {
         "id": "osm-node-10822354103",
         "name": "محطة الخدمات بوفاتح",
-        "name_fr": null,
+        "name_fr": "Station-service Boufateh",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15881,7 +15719,7 @@
       "properties": {
         "id": "osm-node-10822354104",
         "name": "ثانوية ابن رستم",
-        "name_fr": null,
+        "name_fr": "Lycée Ibn Rostom",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15922,7 +15760,7 @@
       "properties": {
         "id": "osm-node-10822357705",
         "name": "ثانوية ابن رستم",
-        "name_fr": null,
+        "name_fr": "Lycée Ibn Rostom",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -15963,7 +15801,7 @@
       "properties": {
         "id": "osm-node-10822357706",
         "name": "ثانوية ابن رستم",
-        "name_fr": null,
+        "name_fr": "Lycée Ibn Rostom",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16004,7 +15842,7 @@
       "properties": {
         "id": "osm-node-10822357707",
         "name": "ثانوية ابن رستم",
-        "name_fr": null,
+        "name_fr": "Lycée Ibn Rostom",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16045,7 +15883,7 @@
       "properties": {
         "id": "osm-node-10822357708",
         "name": "حي الهاشمي العربي",
-        "name_fr": null,
+        "name_fr": "Cité El-Hachemi Larbi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16086,7 +15924,7 @@
       "properties": {
         "id": "osm-node-10822357710",
         "name": "حي الهاشمي العربي",
-        "name_fr": null,
+        "name_fr": "Cité El-Hachemi Larbi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16127,7 +15965,7 @@
       "properties": {
         "id": "osm-node-10822415386",
         "name": "حي 220 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 220 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16168,7 +16006,7 @@
       "properties": {
         "id": "osm-node-10822415387",
         "name": "حي 220 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 220 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16209,7 +16047,7 @@
       "properties": {
         "id": "osm-node-10824920396",
         "name": "حي 220 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 220 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16250,7 +16088,7 @@
       "properties": {
         "id": "osm-node-10824920397",
         "name": "حي 220 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 220 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16291,7 +16129,7 @@
       "properties": {
         "id": "osm-node-10824920398",
         "name": "حي 220 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 220 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16332,7 +16170,7 @@
       "properties": {
         "id": "osm-node-10824920399",
         "name": "حي 220 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 220 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16373,7 +16211,7 @@
       "properties": {
         "id": "osm-node-10824979312",
         "name": "حي البناء الذاتي 405 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 105 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16414,7 +16252,7 @@
       "properties": {
         "id": "osm-node-10824979313",
         "name": "حي البناء الذاتي 405 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 105 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16455,7 +16293,7 @@
       "properties": {
         "id": "osm-node-10824979314",
         "name": "حي البناء الذاتي 405 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 105 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16496,7 +16334,7 @@
       "properties": {
         "id": "osm-node-10824979315",
         "name": "حي البناء الذاتي 405 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 105 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16537,7 +16375,7 @@
       "properties": {
         "id": "osm-node-10824979316",
         "name": "المحطة الاخيرة لحي التفاح",
-        "name_fr": null,
+        "name_fr": "Terminus Cité des Pommes",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16578,7 +16416,7 @@
       "properties": {
         "id": "osm-node-10824979317",
         "name": "المحطة الاخيرة لحي التفاح",
-        "name_fr": null,
+        "name_fr": "Terminus Cité des Pommes",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16619,7 +16457,7 @@
       "properties": {
         "id": "osm-node-10824979318",
         "name": "المحطة الاخيرة لحي التفاح",
-        "name_fr": null,
+        "name_fr": "Terminus Cité des Pommes",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16660,7 +16498,7 @@
       "properties": {
         "id": "osm-node-10824979319",
         "name": "المحطة الاخيرة لحي التفاح",
-        "name_fr": null,
+        "name_fr": "Terminus Cité des Pommes",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16701,7 +16539,7 @@
       "properties": {
         "id": "osm-node-10824979320",
         "name": "مسجد حي التفاح",
-        "name_fr": null,
+        "name_fr": "Mosquée Cité Et-Toffah",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16742,7 +16580,7 @@
       "properties": {
         "id": "osm-node-10824979321",
         "name": "مسجد حي التفاح",
-        "name_fr": null,
+        "name_fr": "Mosquée Cité Et-Toffah",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16783,7 +16621,7 @@
       "properties": {
         "id": "osm-node-10824979322",
         "name": "مسجد حي التفاح",
-        "name_fr": null,
+        "name_fr": "Mosquée Cité Et-Toffah",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16824,7 +16662,7 @@
       "properties": {
         "id": "osm-node-10824979323",
         "name": "مسجد حي التفاح",
-        "name_fr": null,
+        "name_fr": "Mosquée Cité Et-Toffah",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16865,7 +16703,7 @@
       "properties": {
         "id": "osm-node-10824979326",
         "name": "معهد العلوم الفلاحية",
-        "name_fr": null,
+        "name_fr": "Institut des sciences agricoles",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16906,7 +16744,7 @@
       "properties": {
         "id": "osm-node-10824979327",
         "name": "معهد العلوم الفلاحية",
-        "name_fr": null,
+        "name_fr": "Institut des sciences agricoles",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16947,7 +16785,7 @@
       "properties": {
         "id": "osm-node-10824979328",
         "name": "معهد العلوم الفلاحية",
-        "name_fr": null,
+        "name_fr": "Institut des sciences agricoles",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -16988,7 +16826,7 @@
       "properties": {
         "id": "osm-node-10824979329",
         "name": "معهد العلوم الفلاحية",
-        "name_fr": null,
+        "name_fr": "Institut des sciences agricoles",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17029,7 +16867,7 @@
       "properties": {
         "id": "osm-node-10827543820",
         "name": "محلات حي 405 مسكن",
-        "name_fr": null,
+        "name_fr": "Commerces Cité 405 logts",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17070,7 +16908,7 @@
       "properties": {
         "id": "osm-node-10827543821",
         "name": "حي الشارة",
-        "name_fr": null,
+        "name_fr": "Cité Chara",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17112,7 +16950,7 @@
       "properties": {
         "id": "osm-node-10827543822",
         "name": "حي الشارة",
-        "name_fr": null,
+        "name_fr": "Cité Chara",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17154,7 +16992,7 @@
       "properties": {
         "id": "osm-node-10871330724",
         "name": "ملتقى الطرق (الامن العاشر)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Sûreté de Wilaya)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17195,7 +17033,7 @@
       "properties": {
         "id": "osm-node-10871330725",
         "name": "ملتقى الطرق (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Carrefour Aïn Gassem",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17238,7 +17076,7 @@
       "properties": {
         "id": "osm-node-10871330726",
         "name": "ملتقى الطرق (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Carrefour Aïn Gassem",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17281,7 +17119,7 @@
       "properties": {
         "id": "osm-node-10871330727",
         "name": "ملتقى الطرق (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Carrefour Aïn Gassem",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17323,7 +17161,7 @@
       "properties": {
         "id": "osm-node-10871330728",
         "name": "ملتقى الطرق (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Carrefour Aïn Gassem",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17365,7 +17203,7 @@
       "properties": {
         "id": "osm-node-10871330729",
         "name": "السوق (المنظر الجميل)",
-        "name_fr": null,
+        "name_fr": "Marché du Belvédère",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17409,7 +17247,7 @@
       "properties": {
         "id": "osm-node-10871330730",
         "name": "السوق (المنظر الجميل)",
-        "name_fr": null,
+        "name_fr": "Marché du Belvédère",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17453,7 +17291,7 @@
       "properties": {
         "id": "osm-node-10872218206",
         "name": "ملتقى الطرق (المقبرة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Cimetière)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17494,7 +17332,7 @@
       "properties": {
         "id": "osm-node-10872218207",
         "name": "ملتقى الطرق (المقبرة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Cimetière)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17535,7 +17373,7 @@
       "properties": {
         "id": "osm-node-10872218208",
         "name": "ملتقى الطرق (المقبرة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Cimetière)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17570,18 +17408,18 @@
         "type": "Point",
         "coordinates": [
           1.360487,
-          35.386467
+          35.386469
         ]
       },
       "properties": {
         "id": "osm-node-10872218209",
         "name": "القرية",
-        "name_fr": null,
+        "name_fr": "El-Karia",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
         "commune": null,
-        "lat": 35.386467,
+        "lat": 35.386469,
         "lng": 1.360487,
         "geo_precision": "exact",
         "geo_method": "osm_node",
@@ -17617,7 +17455,7 @@
       "properties": {
         "id": "osm-node-10872218210",
         "name": "الحاسي",
-        "name_fr": null,
+        "name_fr": "El Hassi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17740,7 +17578,7 @@
       "properties": {
         "id": "osm-node-10873127881",
         "name": "سرسو",
-        "name_fr": null,
+        "name_fr": "Sersou",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17781,7 +17619,7 @@
       "properties": {
         "id": "osm-node-10873127882",
         "name": "سرسو",
-        "name_fr": null,
+        "name_fr": "Sersou",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17822,7 +17660,7 @@
       "properties": {
         "id": "osm-node-10873127883",
         "name": "سرسو",
-        "name_fr": null,
+        "name_fr": "Sersou",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17863,7 +17701,7 @@
       "properties": {
         "id": "osm-node-10873127884",
         "name": "مركز البريد",
-        "name_fr": null,
+        "name_fr": "Bureau de poste",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17904,7 +17742,7 @@
       "properties": {
         "id": "osm-node-10873127885",
         "name": "مركز البريد",
-        "name_fr": null,
+        "name_fr": "Bureau de poste",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17945,7 +17783,7 @@
       "properties": {
         "id": "osm-node-10873127886",
         "name": "نقطة التوقف (الابتدائية)",
-        "name_fr": null,
+        "name_fr": "École Primaire",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -17986,7 +17824,7 @@
       "properties": {
         "id": "osm-node-10873127887",
         "name": "نقطة التوقف (الابتدائية)",
-        "name_fr": null,
+        "name_fr": "École Primaire",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18027,7 +17865,7 @@
       "properties": {
         "id": "osm-node-10873127888",
         "name": "نقطة التوقف (الابتدائية)",
-        "name_fr": null,
+        "name_fr": "École Primaire",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18068,7 +17906,7 @@
       "properties": {
         "id": "osm-node-10873127889",
         "name": "حي المثلجات",
-        "name_fr": null,
+        "name_fr": "Cité la Glacière",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18109,7 +17947,7 @@
       "properties": {
         "id": "osm-node-10873127890",
         "name": "حي المثلجات",
-        "name_fr": null,
+        "name_fr": "Cité la Glacière",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18150,7 +17988,7 @@
       "properties": {
         "id": "osm-node-10873127891",
         "name": "حي المثلجات",
-        "name_fr": null,
+        "name_fr": "Cité la Glacière",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18191,7 +18029,7 @@
       "properties": {
         "id": "osm-node-10879589689",
         "name": "المجمعات السكنية زعرورة",
-        "name_fr": null,
+        "name_fr": "Ensembles résidentiels Zaaroura",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18232,7 +18070,7 @@
       "properties": {
         "id": "osm-node-10879589690",
         "name": "سكنات LPA (زعرورة)",
-        "name_fr": null,
+        "name_fr": "Logements LPA Zaaroura",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18273,7 +18111,7 @@
       "properties": {
         "id": "osm-node-10879589691",
         "name": "سكنات LPA (زعرورة)",
-        "name_fr": null,
+        "name_fr": "Logements LPA Zaaroura",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18314,7 +18152,7 @@
       "properties": {
         "id": "osm-node-10879589692",
         "name": "سكنات LPA (زعرورة)",
-        "name_fr": null,
+        "name_fr": "Logements LPA Zaaroura",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18355,7 +18193,7 @@
       "properties": {
         "id": "osm-node-10879589693",
         "name": "سكنات LPA (زعرورة)",
-        "name_fr": null,
+        "name_fr": "Logements LPA Zaaroura",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18519,7 +18357,7 @@
       "properties": {
         "id": "osm-node-10879589697",
         "name": "محلات تاج السلطان",
-        "name_fr": null,
+        "name_fr": "Boutiques Taj Es-Sultan",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18560,7 +18398,7 @@
       "properties": {
         "id": "osm-node-10879589698",
         "name": "محلات تاج السلطان",
-        "name_fr": null,
+        "name_fr": "Boutiques Taj Es-Sultan",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18601,7 +18439,7 @@
       "properties": {
         "id": "osm-node-10879589699",
         "name": "محلات تاج السلطان",
-        "name_fr": null,
+        "name_fr": "Boutiques Taj Es-Sultan",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18642,7 +18480,7 @@
       "properties": {
         "id": "osm-node-10879589700",
         "name": "محطة الشؤون الدينية",
-        "name_fr": null,
+        "name_fr": "Station Affaires Religieuses",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18683,7 +18521,7 @@
       "properties": {
         "id": "osm-node-10879589701",
         "name": "محطة الشؤون الدينية",
-        "name_fr": null,
+        "name_fr": "Station Affaires Religieuses",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18724,7 +18562,7 @@
       "properties": {
         "id": "osm-node-10879589702",
         "name": "محطة الشؤون الدينية",
-        "name_fr": null,
+        "name_fr": "Station Affaires Religieuses",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18847,7 +18685,7 @@
       "properties": {
         "id": "osm-node-10879608317",
         "name": "عمارات الفيدا 1",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida 1",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18888,7 +18726,7 @@
       "properties": {
         "id": "osm-node-10879608318",
         "name": "عمارات الفيدا 1",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida 1",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -18922,20 +18760,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.332164,
-          35.369313
+          1.332129,
+          35.369311
         ]
       },
       "properties": {
         "id": "osm-node-10879608319",
         "name": "عمارات الفيدا 1",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida 1",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
         "commune": null,
-        "lat": 35.369313,
-        "lng": 1.332164,
+        "lat": 35.369311,
+        "lng": 1.332129,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -18970,7 +18808,7 @@
       "properties": {
         "id": "osm-node-10879608320",
         "name": "بنك الخارجي",
-        "name_fr": null,
+        "name_fr": "Banque Extérieure d'Algérie",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -19462,7 +19300,7 @@
       "properties": {
         "id": "osm-node-10880395736",
         "name": "محطة كارجوا",
-        "name_fr": null,
+        "name_fr": "Station Karjoua",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -19503,7 +19341,7 @@
       "properties": {
         "id": "osm-node-10880395737",
         "name": "محطة كارجوا",
-        "name_fr": null,
+        "name_fr": "Station Karjoua",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -19544,7 +19382,7 @@
       "properties": {
         "id": "osm-node-10880395738",
         "name": "محطة كارجوا",
-        "name_fr": null,
+        "name_fr": "Station Karjoua",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -19585,7 +19423,7 @@
       "properties": {
         "id": "osm-node-10880395739",
         "name": "محطة كارجوا",
-        "name_fr": null,
+        "name_fr": "Station Karjoua",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -19742,8 +19580,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.968793,
-          36.260431
+          1.968789,
+          36.260435
         ]
       },
       "properties": {
@@ -19754,8 +19592,8 @@
         "wilaya_code": "44",
         "commune_code": null,
         "commune": null,
-        "lat": 36.260431,
-        "lng": 1.968793,
+        "lat": 36.260435,
+        "lng": 1.968789,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -20200,7 +20038,7 @@
       "properties": {
         "id": "osm-node-11281591048",
         "name": "قسمة السي بوعلام",
-        "name_fr": null,
+        "name_fr": "Kasma Si Boualem",
         "name_ar": "حي 700 مسكن",
         "wilaya_code": "16",
         "commune_code": null,
@@ -20697,7 +20535,7 @@
       },
       "properties": {
         "id": "osm-node-1166466032",
-        "name": "نفق الكليات",
+        "name": "Tunnel des Facultés;نفق الكليات",
         "name_fr": "Tunnel des Facultés",
         "name_ar": "نفق الكليات",
         "wilaya_code": "16",
@@ -20784,7 +20622,7 @@
       "properties": {
         "id": "osm-node-1240253721",
         "name": "الوحدة الجمهورية للشرطة",
-        "name_fr": null,
+        "name_fr": "Unité républicaine de sécurité",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -20825,7 +20663,7 @@
       "properties": {
         "id": "osm-node-1240254024",
         "name": "حي عين مصباح",
-        "name_fr": null,
+        "name_fr": "Cité Aïn Mesbah",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -20866,7 +20704,7 @@
       "properties": {
         "id": "osm-node-1240255949",
         "name": "حي عين مصباح",
-        "name_fr": null,
+        "name_fr": "Cité Aïn Mesbah",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -21011,6 +20849,7 @@
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
+          "stop",
           "stop_exit_only"
         ],
         "highway": null,
@@ -21264,6 +21103,7 @@
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
+          "platform",
           "platform_exit_only"
         ],
         "highway": "bus_stop",
@@ -21305,6 +21145,7 @@
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
+          "stop",
           "stop_entry_only",
           "stop_exit_only"
         ],
@@ -21512,6 +21353,7 @@
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
+          "platform",
           "platform_entry_only",
           "platform_exit_only"
         ],
@@ -22565,7 +22407,7 @@
       "properties": {
         "id": "osm-node-1834136535",
         "name": "محلات تاج السلطان",
-        "name_fr": null,
+        "name_fr": "Boutiques Taj Es-Sultan",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -22606,7 +22448,7 @@
       "properties": {
         "id": "osm-node-1834136552",
         "name": "محطة الغسيل \"لكادات\"",
-        "name_fr": null,
+        "name_fr": "Station de lavage Lekadate",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -22647,7 +22489,7 @@
       "properties": {
         "id": "osm-node-1834136875",
         "name": "ملتقى الطرق (الامن العاشر)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Sûreté de Wilaya)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -22771,7 +22613,7 @@
       "properties": {
         "id": "osm-node-1896427326",
         "name": "حي الشارة",
-        "name_fr": null,
+        "name_fr": "Cité Chara",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -22895,7 +22737,7 @@
       "properties": {
         "id": "osm-node-2151419645",
         "name": "محطة",
-        "name_fr": null,
+        "name_fr": "Station",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -22977,7 +22819,7 @@
       "properties": {
         "id": "osm-node-2178218226",
         "name": "ملتقى الطرق التيتانيك",
-        "name_fr": null,
+        "name_fr": "Rond-point Titanic",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -23568,8 +23410,8 @@
       },
       "properties": {
         "id": "osm-node-2398223848",
-        "name": "CAROUBIER - CENTRE EQUESTRE -",
-        "name_fr": null,
+        "name": "Caroubier - Centre Équestre",
+        "name_fr": "Caroubier - Centre Équestre",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -23943,7 +23785,7 @@
       "properties": {
         "id": "osm-node-2618307947",
         "name": "جامعة كارمان",
-        "name_fr": null,
+        "name_fr": "Université Karman",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -24853,7 +24695,7 @@
       "properties": {
         "id": "osm-node-2677666565",
         "name": "ملتقى الطرق التيتانيك",
-        "name_fr": null,
+        "name_fr": "Rond-point Titanic",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -24894,7 +24736,7 @@
       "properties": {
         "id": "osm-node-2677708120",
         "name": "حي الهاشمي العربي",
-        "name_fr": null,
+        "name_fr": "Cité El-Hachemi Larbi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -24935,7 +24777,7 @@
       "properties": {
         "id": "osm-node-2677708181",
         "name": "حي الهاشمي العربي",
-        "name_fr": null,
+        "name_fr": "Cité El-Hachemi Larbi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -25931,8 +25773,8 @@
       },
       "properties": {
         "id": "osm-node-284037835",
-        "name": "Lycée Zeineb Oum El Massakine",
-        "name_fr": null,
+        "name": "Lycée Zineb Oum El Massakine",
+        "name_fr": "Lycée Zineb Oum El Massakine",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -27222,8 +27064,8 @@
       },
       "properties": {
         "id": "osm-node-3004199997",
-        "name": "CITE MAYA",
-        "name_fr": null,
+        "name": "Cité Maya",
+        "name_fr": "Cité Maya",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -27354,8 +27196,8 @@
       },
       "properties": {
         "id": "osm-node-3009232531",
-        "name": "CAROBIER GARE ROUTIERE",
-        "name_fr": null,
+        "name": "Gare Routière du Caroubier",
+        "name_fr": "Sogral Caroubier",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -29701,7 +29543,7 @@
       "properties": {
         "id": "osm-node-3135851207",
         "name": "محطة الشؤون الدينية",
-        "name_fr": null,
+        "name_fr": "Station Affaires Religieuses",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -29911,7 +29753,7 @@
       },
       "properties": {
         "id": "osm-node-3156575567",
-        "name": "COLONNE VOIROLE",
+        "name": "Colonne Voirol",
         "name_fr": null,
         "name_ar": null,
         "wilaya_code": "16",
@@ -31094,7 +30936,7 @@
       "properties": {
         "id": "osm-node-3452502395",
         "name": "Port Saïd",
-        "name_fr": null,
+        "name_fr": "Port Saïd",
         "name_ar": "بور سعيد",
         "wilaya_code": "16",
         "commune_code": null,
@@ -31807,7 +31649,7 @@
       },
       "properties": {
         "id": "osm-node-3670326216",
-        "name": "طارق بن زياد",
+        "name": "Tariq ibn Ziyad;طارق بن زياد",
         "name_fr": "Tariq ibn Ziyad",
         "name_ar": "طارق بن زياد",
         "wilaya_code": "16",
@@ -32184,7 +32026,7 @@
       "properties": {
         "id": "osm-node-3765232757",
         "name": "Arrêt l'escadron",
-        "name_fr": null,
+        "name_fr": "Arrêt l'Escadron",
         "name_ar": null,
         "wilaya_code": "44",
         "commune_code": null,
@@ -32821,8 +32663,8 @@
       },
       "properties": {
         "id": "osm-node-3791449217",
-        "name": "PALAIS DU PEUPLE",
-        "name_fr": null,
+        "name": "Palais du Peuple",
+        "name_fr": "Palais du Peuple",
         "name_ar": "قصر الشعب",
         "wilaya_code": "16",
         "commune_code": null,
@@ -32946,8 +32788,8 @@
       },
       "properties": {
         "id": "osm-node-3791449222",
-        "name": "Lycée Zeineb Oum El Massakine",
-        "name_fr": null,
+        "name": "Lycée Zineb Oum El Massakine",
+        "name_fr": "Lycée Zineb Oum El Massakine",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -32988,7 +32830,7 @@
       "properties": {
         "id": "osm-node-3791449225",
         "name": "SONALGAZ",
-        "name_fr": null,
+        "name_fr": "Sonalgaz",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -33962,7 +33804,7 @@
       "properties": {
         "id": "osm-node-3977661908",
         "name": "ملتقى الطرق (المقبرة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Cimetière)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -35035,7 +34877,7 @@
       "properties": {
         "id": "osm-node-4527029581",
         "name": "Birtouta",
-        "name_fr": null,
+        "name_fr": "Birtouta",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -35490,7 +35332,7 @@
       "properties": {
         "id": "osm-node-462695064",
         "name": "معهد التربية",
-        "name_fr": null,
+        "name_fr": "Institut d'éducation",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -35825,7 +35667,7 @@
       "properties": {
         "id": "osm-node-5107702682",
         "name": "عمارات ابن باديس",
-        "name_fr": null,
+        "name_fr": "Cité Ibn Badis",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -35950,7 +35792,7 @@
       "properties": {
         "id": "osm-node-519403164",
         "name": "صيدلية عمارات عدل",
-        "name_fr": null,
+        "name_fr": "Pharmacie Cité AADL",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -37783,8 +37625,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.931322,
-          36.755194
+          2.931364,
+          36.755173
         ]
       },
       "properties": {
@@ -37795,8 +37637,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": null,
-        "lat": 36.755194,
-        "lng": 2.931322,
+        "lat": 36.755173,
+        "lng": 2.931364,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -37831,7 +37673,7 @@
       },
       "properties": {
         "id": "osm-node-5367697859",
-        "name": "CARREFOUR SOUIDANI",
+        "name": "Carrefour Souidani",
         "name_fr": null,
         "name_ar": null,
         "wilaya_code": "16",
@@ -37873,7 +37715,7 @@
       },
       "properties": {
         "id": "osm-node-5367765906",
-        "name": "COLONNE VOIROLE",
+        "name": "Colonne Voirol",
         "name_fr": null,
         "name_ar": null,
         "wilaya_code": "16",
@@ -40209,7 +40051,7 @@
       "properties": {
         "id": "osm-node-5386836322",
         "name": "قهوة شرڤي",
-        "name_fr": null,
+        "name_fr": "Café Chergui",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -40382,8 +40224,8 @@
       },
       "properties": {
         "id": "osm-node-5387202971",
-        "name": "BOUROUBA (CIMETIERE)",
-        "name_fr": null,
+        "name": "Bourouba (Cimetière)",
+        "name_fr": "Bourouba (Cimetière)",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -41886,7 +41728,7 @@
       },
       "properties": {
         "id": "osm-node-5387397604",
-        "name": "Station 2 mai",
+        "name": "Station 2 Mai محطة 2 ماي",
         "name_fr": "2 mai",
         "name_ar": "محطة 2 مايو",
         "wilaya_code": "16",
@@ -41976,7 +41818,7 @@
       "properties": {
         "id": "osm-node-5387397607",
         "name": "Hôtel Es-Safir",
-        "name_fr": null,
+        "name_fr": "Hôtel Es-Safir",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -42021,7 +41863,7 @@
       "properties": {
         "id": "osm-node-5387397608",
         "name": "Hôtel Es-Safir",
-        "name_fr": null,
+        "name_fr": "Hôtel Es-Safir",
         "name_ar": "فندق السفير",
         "wilaya_code": "16",
         "commune_code": null,
@@ -42297,8 +42139,8 @@
       },
       "properties": {
         "id": "osm-node-5387463210",
-        "name": "STATION 2 MAI",
-        "name_fr": null,
+        "name": "2 Mai",
+        "name_fr": "2 Mai",
         "name_ar": "محطة 2 مايو",
         "wilaya_code": "16",
         "commune_code": null,
@@ -42514,8 +42356,8 @@
       },
       "properties": {
         "id": "osm-node-5387463216",
-        "name": "CAROUBIER - CENTRE EQUESTRE -",
-        "name_fr": null,
+        "name": "Caroubier - Centre Équestre",
+        "name_fr": "Caroubier - Centre Équestre",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -44867,8 +44709,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.934415,
-          36.758428
+          2.934128,
+          36.758047
         ]
       },
       "properties": {
@@ -44879,8 +44721,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": null,
-        "lat": 36.758428,
-        "lng": 2.934415,
+        "lat": 36.758047,
+        "lng": 2.934128,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -44951,8 +44793,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.931129,
-          36.75527
+          2.93117,
+          36.755248
         ]
       },
       "properties": {
@@ -44963,8 +44805,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": null,
-        "lat": 36.75527,
-        "lng": 2.931129,
+        "lat": 36.755248,
+        "lng": 2.93117,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -45740,8 +45582,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.931451,
-          36.755137
+          2.931492,
+          36.755115
         ]
       },
       "properties": {
@@ -45752,8 +45594,8 @@
         "wilaya_code": "16",
         "commune_code": null,
         "commune": null,
-        "lat": 36.755137,
-        "lng": 2.931451,
+        "lat": 36.755115,
+        "lng": 2.931492,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -45994,7 +45836,7 @@
       "properties": {
         "id": "osm-node-5393691264",
         "name": "Krim Belkacem",
-        "name_fr": null,
+        "name_fr": "Krim Belkacem",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -46035,7 +45877,7 @@
       "properties": {
         "id": "osm-node-5393691265",
         "name": "SONALGAZ",
-        "name_fr": null,
+        "name_fr": "Sonalgaz",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -46076,7 +45918,7 @@
       "properties": {
         "id": "osm-node-5393691266",
         "name": "SONALGAZ",
-        "name_fr": null,
+        "name_fr": "Sonalgaz",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -46116,7 +45958,7 @@
       },
       "properties": {
         "id": "osm-node-5393691267",
-        "name": "نفق الكليات",
+        "name": "Tunnel des Facultés;نفق الكليات",
         "name_fr": "Tunnel des Facultés",
         "name_ar": "نفق الكليات",
         "wilaya_code": "16",
@@ -46157,8 +45999,8 @@
       },
       "properties": {
         "id": "osm-node-5393691270",
-        "name": "LYCEE ZAINEB OUM EL MASSAKINE",
-        "name_fr": null,
+        "name": "Lycée Zineb Oum El Massakine",
+        "name_fr": "Lycée Zineb Oum El Massakine",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -46528,8 +46370,8 @@
       },
       "properties": {
         "id": "osm-node-5393691279",
-        "name": "PALAIS DU PEUPLE",
-        "name_fr": null,
+        "name": "Palais du Peuple",
+        "name_fr": "Palais du Peuple",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -46699,7 +46541,7 @@
       "properties": {
         "id": "osm-node-5393728123",
         "name": "Lycée Zeineb Oum El Massakine",
-        "name_fr": null,
+        "name_fr": "Lycée Zineb Oum El Massakine",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -46949,8 +46791,8 @@
       },
       "properties": {
         "id": "osm-node-5393884867",
-        "name": "PALAIS DU PEUPLE",
-        "name_fr": null,
+        "name": "Palais du Peuple",
+        "name_fr": "Palais du Peuple",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -47033,8 +46875,8 @@
       },
       "properties": {
         "id": "osm-node-5393884869",
-        "name": "PLACE EL QUODS",
-        "name_fr": null,
+        "name": "Place El Qods",
+        "name_fr": "Place El Qods",
         "name_ar": "ساحة القدس",
         "wilaya_code": "16",
         "commune_code": null,
@@ -47116,8 +46958,8 @@
       },
       "properties": {
         "id": "osm-node-5393884871",
-        "name": "PLACE EL QUODS",
-        "name_fr": null,
+        "name": "Place El Qods",
+        "name_fr": "Place El Qods",
         "name_ar": "ساحة القدس",
         "wilaya_code": "16",
         "commune_code": null,
@@ -50424,7 +50266,7 @@
       },
       "properties": {
         "id": "osm-node-5397813382",
-        "name": "CITE UNIVERSITAIRE",
+        "name": "Cité Universitaire",
         "name_fr": null,
         "name_ar": null,
         "wilaya_code": "16",
@@ -50759,7 +50601,7 @@
       },
       "properties": {
         "id": "osm-node-5397813390",
-        "name": "CITE AADL SIDI ABD ALLAH",
+        "name": "Cité AADL Sidi Abdallah",
         "name_fr": null,
         "name_ar": null,
         "wilaya_code": "16",
@@ -50844,7 +50686,7 @@
       },
       "properties": {
         "id": "osm-node-5397854228",
-        "name": "CITE AADL SIDI ABD ALLAH",
+        "name": "Cité AADL Sidi Abdallah",
         "name_fr": null,
         "name_ar": null,
         "wilaya_code": "16",
@@ -51012,7 +50854,7 @@
       },
       "properties": {
         "id": "osm-node-5397854232",
-        "name": "CITE UNIVERSITAIRE",
+        "name": "Cité Universitaire",
         "name_fr": null,
         "name_ar": null,
         "wilaya_code": "16",
@@ -54917,7 +54759,7 @@
       },
       "properties": {
         "id": "osm-node-5442397050",
-        "name": "CITE RABIA TAHAR",
+        "name": "Cité Rabia Tahar",
         "name_fr": null,
         "name_ar": null,
         "wilaya_code": "16",
@@ -55582,7 +55424,7 @@
       "properties": {
         "id": "osm-node-5448308178",
         "name": "معمرية",
-        "name_fr": null,
+        "name_fr": "Maâmria",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -56777,8 +56619,8 @@
       },
       "properties": {
         "id": "osm-node-5460285374",
-        "name": "DIDOUCHE MOURAD ( MESSONIER )",
-        "name_fr": null,
+        "name": "Didouche Mourad (Messonier)",
+        "name_fr": "Didouche Mourad (Messonier)",
         "name_ar": null,
         "wilaya_code": "16",
         "commune_code": null,
@@ -56818,8 +56660,8 @@
       },
       "properties": {
         "id": "osm-node-5460285375",
-        "name": "القلب المقدس",
-        "name_fr": "SACRE CŒUR",
+        "name": "Sacré-Cœur القلب المقدس",
+        "name_fr": "Sacré-Cœur",
         "name_ar": "القلب المقدس",
         "wilaya_code": "16",
         "commune_code": null,
@@ -60492,7 +60334,7 @@
       "properties": {
         "id": "osm-node-7107826009",
         "name": "عمارات الفيدا",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -60526,8 +60368,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.334855,
-          35.362224
+          1.334838,
+          35.362255
         ]
       },
       "properties": {
@@ -60538,8 +60380,8 @@
         "wilaya_code": "14",
         "commune_code": null,
         "commune": null,
-        "lat": 35.362224,
-        "lng": 1.334855,
+        "lat": 35.362255,
+        "lng": 1.334838,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -60822,7 +60664,7 @@
       "properties": {
         "id": "osm-node-9031893751",
         "name": "الجامعة (الحديقة)",
-        "name_fr": null,
+        "name_fr": "Université Le Jardin",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -60863,7 +60705,7 @@
       "properties": {
         "id": "osm-node-9031893753",
         "name": "نفطال",
-        "name_fr": null,
+        "name_fr": "Naftal",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -60945,7 +60787,7 @@
       "properties": {
         "id": "osm-node-9031893755",
         "name": "مديرية النشاط الاجتماعي",
-        "name_fr": null,
+        "name_fr": "Direction de l'Action Sociale",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -60987,7 +60829,7 @@
       "properties": {
         "id": "osm-node-9031893756",
         "name": "المركب الجواري المدرسة",
-        "name_fr": null,
+        "name_fr": "Complexe de proximité El-Madrassa",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61028,7 +60870,7 @@
       "properties": {
         "id": "osm-node-9031893757",
         "name": "ملتقى الطرق (المقبرة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Cimetière)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61070,7 +60912,7 @@
       "properties": {
         "id": "osm-node-9031893760",
         "name": "الجامعة كارمان",
-        "name_fr": null,
+        "name_fr": "Université Karman",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61112,7 +60954,7 @@
       "properties": {
         "id": "osm-node-9031893761",
         "name": "الثانوية الجديدة",
-        "name_fr": null,
+        "name_fr": "Nouveau lycée",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61154,7 +60996,7 @@
       "properties": {
         "id": "osm-node-9032301068",
         "name": "الجامعة (الحديقة)",
-        "name_fr": null,
+        "name_fr": "Université Le Jardin",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61236,7 +61078,7 @@
       "properties": {
         "id": "osm-node-9032301070",
         "name": "نفطال",
-        "name_fr": null,
+        "name_fr": "Naftal",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61277,7 +61119,7 @@
       "properties": {
         "id": "osm-node-9032301072",
         "name": "المركب الجواري المدرسة",
-        "name_fr": null,
+        "name_fr": "Complexe de proximité El-Madrassa",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61318,7 +61160,7 @@
       "properties": {
         "id": "osm-node-9032301073",
         "name": "مديرية النشاط الاجتماعي",
-        "name_fr": null,
+        "name_fr": "Direction de l'Action Sociale",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61360,7 +61202,7 @@
       "properties": {
         "id": "osm-node-9032301074",
         "name": "ملتقى الطرق (المقبرة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Cimetière)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61395,20 +61237,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.351897,
-          35.381731
+          1.351908,
+          35.381721
         ]
       },
       "properties": {
         "id": "osm-node-9032301076",
         "name": "الجامعة كارمان",
-        "name_fr": null,
+        "name_fr": "Université Karman",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
         "commune": null,
-        "lat": 35.381731,
-        "lng": 1.351897,
+        "lat": 35.381721,
+        "lng": 1.351908,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -61444,7 +61286,7 @@
       "properties": {
         "id": "osm-node-9032301077",
         "name": "الثانوية الجديدة",
-        "name_fr": null,
+        "name_fr": "Nouveau lycée",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61479,20 +61321,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.351936,
-          35.38165
+          1.351944,
+          35.38164
         ]
       },
       "properties": {
         "id": "osm-node-9032650138",
         "name": "الجامعة كارمان",
-        "name_fr": null,
+        "name_fr": "Université Karman",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
         "commune": null,
-        "lat": 35.38165,
-        "lng": 1.351936,
+        "lat": 35.38164,
+        "lng": 1.351944,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -61528,7 +61370,7 @@
       "properties": {
         "id": "osm-node-9033418896",
         "name": "سوق الخضر لحي السوناتيبا",
-        "name_fr": null,
+        "name_fr": "Marché de légumes Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61571,7 +61413,7 @@
       "properties": {
         "id": "osm-node-9033418897",
         "name": "سوق الخضر لحي السوناتيبا",
-        "name_fr": null,
+        "name_fr": "Marché de légumes Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61614,7 +61456,7 @@
       "properties": {
         "id": "osm-node-9033418898",
         "name": "سوق الخضر لحي السوناتيبا",
-        "name_fr": null,
+        "name_fr": "Marché de légumes Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61657,7 +61499,7 @@
       "properties": {
         "id": "osm-node-9033418899",
         "name": "سوق الخضر لحي السوناتيبا",
-        "name_fr": null,
+        "name_fr": "Marché de légumes Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61700,7 +61542,7 @@
       "properties": {
         "id": "osm-node-9033418900",
         "name": "ملتقى الطرق(التيتانيك)",
-        "name_fr": null,
+        "name_fr": "Rond-point Titanic",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61742,7 +61584,7 @@
       "properties": {
         "id": "osm-node-9033418901",
         "name": "ملتقى الطرق(التيتانيك)",
-        "name_fr": null,
+        "name_fr": "Rond-point Titanic",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61784,7 +61626,7 @@
       "properties": {
         "id": "osm-node-9033418902",
         "name": "ملتقى الطرق(التيتانيك)",
-        "name_fr": null,
+        "name_fr": "Rond-point Titanic",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61826,7 +61668,7 @@
       "properties": {
         "id": "osm-node-9033418903",
         "name": "ملتقى الطرق(التيتانيك)",
-        "name_fr": null,
+        "name_fr": "Rond-point Titanic",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61868,7 +61710,7 @@
       "properties": {
         "id": "osm-node-9033418904",
         "name": "دار العجزة",
-        "name_fr": null,
+        "name_fr": "Maison de retraite",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61910,7 +61752,7 @@
       "properties": {
         "id": "osm-node-9033418905",
         "name": "دار العجزة",
-        "name_fr": null,
+        "name_fr": "Maison de retraite",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61952,7 +61794,7 @@
       "properties": {
         "id": "osm-node-9033418906",
         "name": "دار العجزة",
-        "name_fr": null,
+        "name_fr": "Maison de retraite",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -61994,7 +61836,7 @@
       "properties": {
         "id": "osm-node-9033418907",
         "name": "دار العجزة",
-        "name_fr": null,
+        "name_fr": "Maison de retraite",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62036,7 +61878,7 @@
       "properties": {
         "id": "osm-node-9033418908",
         "name": "عمارات الفيدا",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62078,7 +61920,7 @@
       "properties": {
         "id": "osm-node-9033418909",
         "name": "عمارات الفيدا",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62119,7 +61961,7 @@
       "properties": {
         "id": "osm-node-9033418910",
         "name": "عمارات الفيدا",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62161,7 +62003,7 @@
       "properties": {
         "id": "osm-node-9033418911",
         "name": "محطة نقل المسافرين(الشرق)",
-        "name_fr": null,
+        "name_fr": "Gare routière (Est)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62204,7 +62046,7 @@
       "properties": {
         "id": "osm-node-9033418912",
         "name": "محطة نقل المسافرين(الشرق)",
-        "name_fr": null,
+        "name_fr": "Gare routière (Est)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62247,7 +62089,7 @@
       "properties": {
         "id": "osm-node-9033418913",
         "name": "محطة نقل المسافرين(الشرق)",
-        "name_fr": null,
+        "name_fr": "Gare routière (Est)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62290,7 +62132,7 @@
       "properties": {
         "id": "osm-node-9033418914",
         "name": "محطة نقل المسافرين(الشرق)",
-        "name_fr": null,
+        "name_fr": "Gare routière (Est)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62505,7 +62347,7 @@
       "properties": {
         "id": "osm-node-9035106962",
         "name": "ملتقى الطرق (الجامعة)",
-        "name_fr": null,
+        "name_fr": "Rond-point Titanic",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62547,7 +62389,7 @@
       "properties": {
         "id": "osm-node-9035106963",
         "name": "ملتقى الطرق (الجامعة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Université)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62589,7 +62431,7 @@
       "properties": {
         "id": "osm-node-9035106964",
         "name": "ملتقى الطرق (الجامعة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Université)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62631,7 +62473,7 @@
       "properties": {
         "id": "osm-node-9035106965",
         "name": "ملتقى الطرق (الجامعة)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Université)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62673,7 +62515,7 @@
       "properties": {
         "id": "osm-node-9036336103",
         "name": "حي خروبي الميلود 1900 سكن",
-        "name_fr": null,
+        "name_fr": "Cité Kharroubi Miloud (1900 logts)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62714,7 +62556,7 @@
       "properties": {
         "id": "osm-node-9036336104",
         "name": "حي خروبي الميلود 1900 سكن",
-        "name_fr": null,
+        "name_fr": "Cité Kharroubi Miloud (1900 logts)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62755,7 +62597,7 @@
       "properties": {
         "id": "osm-node-9036336109",
         "name": "الخزينة العمومية",
-        "name_fr": null,
+        "name_fr": "Trésor public",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62797,7 +62639,7 @@
       "properties": {
         "id": "osm-node-9036336110",
         "name": "الخزينة العمومية",
-        "name_fr": null,
+        "name_fr": "Trésor public",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62839,7 +62681,7 @@
       "properties": {
         "id": "osm-node-9036336111",
         "name": "الخزينة العمومية",
-        "name_fr": null,
+        "name_fr": "Trésor public",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62881,7 +62723,7 @@
       "properties": {
         "id": "osm-node-9036336114",
         "name": "الوكالة المحلية للتشغيل",
-        "name_fr": null,
+        "name_fr": "Agence locale de l'emploi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62922,7 +62764,7 @@
       "properties": {
         "id": "osm-node-9036336115",
         "name": "الوكالة المحلية للتشغيل",
-        "name_fr": null,
+        "name_fr": "Agence locale de l'emploi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -62956,20 +62798,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.333337,
-          35.366039
+          1.333302,
+          35.366023
         ]
       },
       "properties": {
         "id": "osm-node-9036336116",
         "name": "الوكالة المحلية للتشغيل",
-        "name_fr": null,
+        "name_fr": "Agence locale de l'emploi",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
         "commune": null,
-        "lat": 35.366039,
-        "lng": 1.333337,
+        "lat": 35.366023,
+        "lng": 1.333302,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -63004,7 +62846,7 @@
       "properties": {
         "id": "osm-node-9036377718",
         "name": "الملحق البلدي لحي السوناتيبا",
-        "name_fr": null,
+        "name_fr": "Annexe communale Cité Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63047,7 +62889,7 @@
       "properties": {
         "id": "osm-node-9036377720",
         "name": "الملحق البلدي لحي السوناتيبا",
-        "name_fr": null,
+        "name_fr": "Annexe communale Cité Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63090,7 +62932,7 @@
       "properties": {
         "id": "osm-node-9037700234",
         "name": "المجمعات السكنية زعرورة",
-        "name_fr": null,
+        "name_fr": "Ensembles résidentiels Zaaroura",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63213,7 +63055,7 @@
       "properties": {
         "id": "osm-node-9037700237",
         "name": "المجمعات السكنية زعرورة",
-        "name_fr": null,
+        "name_fr": "Ensembles résidentiels Zaaroura",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63254,7 +63096,7 @@
       "properties": {
         "id": "osm-node-9037700238",
         "name": "المجمعات السكنية زعرورة",
-        "name_fr": null,
+        "name_fr": "Ensembles résidentiels Zaaroura",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63295,7 +63137,7 @@
       "properties": {
         "id": "osm-node-9038460661",
         "name": "مستشفى يوسف دمرجي",
-        "name_fr": null,
+        "name_fr": "Hôpital Youcef Damerdji",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63337,7 +63179,7 @@
       "properties": {
         "id": "osm-node-9038460662",
         "name": "مستشفى يوسف دمرجي",
-        "name_fr": null,
+        "name_fr": "Hôpital Youcef Damerdji",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63379,7 +63221,7 @@
       "properties": {
         "id": "osm-node-9038460663",
         "name": "مستشفى يوسف دمرجي",
-        "name_fr": null,
+        "name_fr": "Hôpital Youcef Damerdji",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63421,7 +63263,7 @@
       "properties": {
         "id": "osm-node-9038460664",
         "name": "مستشفى يوسف دمرجي",
-        "name_fr": null,
+        "name_fr": "Hôpital Youcef Damerdji",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63463,7 +63305,7 @@
       "properties": {
         "id": "osm-node-9038460669",
         "name": "مستشفى ميرفو",
-        "name_fr": null,
+        "name_fr": "Hôpital Mirveau",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63504,7 +63346,7 @@
       "properties": {
         "id": "osm-node-9038460671",
         "name": "مستشفى ميرفو",
-        "name_fr": null,
+        "name_fr": "Hôpital Mirveau",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63545,7 +63387,7 @@
       "properties": {
         "id": "osm-node-9038460672",
         "name": "عين الجنان",
-        "name_fr": null,
+        "name_fr": "Aïn El-Djenane",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63587,7 +63429,7 @@
       "properties": {
         "id": "osm-node-9038460673",
         "name": "عين الجنان",
-        "name_fr": null,
+        "name_fr": "Aïn El-Djenane",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63629,7 +63471,7 @@
       "properties": {
         "id": "osm-node-9038460674",
         "name": "عين الجنان",
-        "name_fr": null,
+        "name_fr": "Aïn El-Djenane",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63671,7 +63513,7 @@
       "properties": {
         "id": "osm-node-9038460678",
         "name": "مديرية مسح الأراضي",
-        "name_fr": null,
+        "name_fr": "Direction du Cadastre et de la Conservation Foncière",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63713,7 +63555,7 @@
       "properties": {
         "id": "osm-node-9038460680",
         "name": "مديرية مسح الأراضي",
-        "name_fr": null,
+        "name_fr": "Direction du Cadastre et de la Conservation Foncière",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63923,7 +63765,7 @@
       "properties": {
         "id": "osm-node-9039152549",
         "name": "ملتقى الطرق التيتانيك",
-        "name_fr": null,
+        "name_fr": "Rond-point Titanic",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -63964,7 +63806,7 @@
       "properties": {
         "id": "osm-node-9039152550",
         "name": "ملتقى الطرق التيتانيك",
-        "name_fr": null,
+        "name_fr": "Rond-point Titanic",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64005,7 +63847,7 @@
       "properties": {
         "id": "osm-node-9039152563",
         "name": "عمارات حي قيطون",
-        "name_fr": null,
+        "name_fr": "Cité Guitoun",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64047,7 +63889,7 @@
       "properties": {
         "id": "osm-node-9039152565",
         "name": "عمارات حي قيطون",
-        "name_fr": null,
+        "name_fr": "Cité Guitoun",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64089,7 +63931,7 @@
       "properties": {
         "id": "osm-node-9039152566",
         "name": "عمارات حي قيطون",
-        "name_fr": null,
+        "name_fr": "Cité Guitoun",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64131,7 +63973,7 @@
       "properties": {
         "id": "osm-node-9039152570",
         "name": "الثانوية المتعددة الشعب",
-        "name_fr": null,
+        "name_fr": "Lycée polyvalent",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64173,7 +64015,7 @@
       "properties": {
         "id": "osm-node-9039152571",
         "name": "الثانوية المتعددة الشعب",
-        "name_fr": null,
+        "name_fr": "Lycée polyvalent",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64215,7 +64057,7 @@
       "properties": {
         "id": "osm-node-9039152572",
         "name": "الثانوية المتعددة الشعب",
-        "name_fr": null,
+        "name_fr": "Lycée polyvalent",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64257,7 +64099,7 @@
       "properties": {
         "id": "osm-node-9048307094",
         "name": "محطة نقل المسافرين (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Gare routière (Aïn Kasma)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64302,7 +64144,7 @@
       "properties": {
         "id": "osm-node-9048307095",
         "name": "محطة نقل المسافرين (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Gare routière (Aïn Kasma)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64347,7 +64189,7 @@
       "properties": {
         "id": "osm-node-9049258726",
         "name": "العيادة المتعددة الخدمات",
-        "name_fr": null,
+        "name_fr": "Polyclinique",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64392,7 +64234,7 @@
       "properties": {
         "id": "osm-node-9049258727",
         "name": "العيادة المتعددة الخدمات",
-        "name_fr": null,
+        "name_fr": "Polyclinique",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64437,7 +64279,7 @@
       "properties": {
         "id": "osm-node-9049258728",
         "name": "العيادة المتعددة الخدمات",
-        "name_fr": null,
+        "name_fr": "Polyclinique",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64482,7 +64324,7 @@
       "properties": {
         "id": "osm-node-9049258729",
         "name": "العيادة المتعددة الخدمات",
-        "name_fr": null,
+        "name_fr": "Polyclinique",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64527,7 +64369,7 @@
       "properties": {
         "id": "osm-node-9049258730",
         "name": "سوق الفلاح (المنظر الجميل)",
-        "name_fr": null,
+        "name_fr": "Souk El-Fellah (Bellevue)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64572,7 +64414,7 @@
       "properties": {
         "id": "osm-node-9049258731",
         "name": "سوق الفلاح (المنظر الجميل)",
-        "name_fr": null,
+        "name_fr": "Souk El-Fellah (Bellevue)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64617,7 +64459,7 @@
       "properties": {
         "id": "osm-node-9049258732",
         "name": "سوق الفلاح (المنظر الجميل)",
-        "name_fr": null,
+        "name_fr": "Souk El-Fellah (Bellevue)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64662,7 +64504,7 @@
       "properties": {
         "id": "osm-node-9049258733",
         "name": "سوق الفلاح (المنظر الجميل)",
-        "name_fr": null,
+        "name_fr": "Souk El-Fellah (Bellevue)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64707,7 +64549,7 @@
       "properties": {
         "id": "osm-node-9049258734",
         "name": "محطة نقل المسافرين (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Gare routière (Aïn Kasma)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64752,7 +64594,7 @@
       "properties": {
         "id": "osm-node-9049258735",
         "name": "محطة نقل المسافرين (عين قاسمة)",
-        "name_fr": null,
+        "name_fr": "Gare routière (Aïn Kasma)",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64797,7 +64639,7 @@
       "properties": {
         "id": "osm-node-9049337680",
         "name": "حي 504 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 204 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64840,7 +64682,7 @@
       "properties": {
         "id": "osm-node-9049337681",
         "name": "حي 504 سكن",
-        "name_fr": null,
+        "name_fr": "Cité 204 Logements",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -64883,7 +64725,7 @@
       "properties": {
         "id": "osm-node-9049352575",
         "name": "ملتقى الطرق (الأمن الولائي)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Sûreté de Wilaya)",
         "name_ar": "ملتقى الطرق (الأمن الولائي)",
         "wilaya_code": "14",
         "commune_code": null,
@@ -64928,7 +64770,7 @@
       "properties": {
         "id": "osm-node-9049352577",
         "name": "ملتقى الطرق (الأمن الولائي)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Sûreté de Wilaya)",
         "name_ar": "ملتقى الطرق (الأمن الولائي)",
         "wilaya_code": "14",
         "commune_code": null,
@@ -64973,7 +64815,7 @@
       "properties": {
         "id": "osm-node-9049352578",
         "name": "ملتقى الطرق (الأمن الولائي)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Sûreté de Wilaya)",
         "name_ar": "ملتقى الطرق (الأمن الولائي)",
         "wilaya_code": "14",
         "commune_code": null,
@@ -65018,7 +64860,7 @@
       "properties": {
         "id": "osm-node-9049352580",
         "name": "ملتقى الطرق (الأمن الولائي)",
-        "name_fr": null,
+        "name_fr": "Carrefour (Sûreté de Wilaya)",
         "name_ar": "ملتقى الطرق (الأمن الولائي)",
         "wilaya_code": "14",
         "commune_code": null,
@@ -65243,7 +65085,7 @@
       "properties": {
         "id": "osm-node-9049390618",
         "name": "حي المنار 1",
-        "name_fr": null,
+        "name_fr": "Cité El Manar 1",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65285,7 +65127,7 @@
       "properties": {
         "id": "osm-node-9049390619",
         "name": "حي المنار 1",
-        "name_fr": null,
+        "name_fr": "Cité El Manar 1",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65327,7 +65169,7 @@
       "properties": {
         "id": "osm-node-9049390620",
         "name": "حي المنار 1",
-        "name_fr": null,
+        "name_fr": "Cité El Manar 1",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65369,7 +65211,7 @@
       "properties": {
         "id": "osm-node-9049390621",
         "name": "حي المنار 1",
-        "name_fr": null,
+        "name_fr": "Cité El Manar 1",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65411,7 +65253,7 @@
       "properties": {
         "id": "osm-node-9050533403",
         "name": "حي الرحمة",
-        "name_fr": null,
+        "name_fr": "Cité Errahma",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65454,7 +65296,7 @@
       "properties": {
         "id": "osm-node-9050533404",
         "name": "حي الرحمة",
-        "name_fr": null,
+        "name_fr": "Cité Errahma",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65497,7 +65339,7 @@
       "properties": {
         "id": "osm-node-9050533405",
         "name": "حي الرحمة",
-        "name_fr": null,
+        "name_fr": "Cité Errahma",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65540,7 +65382,7 @@
       "properties": {
         "id": "osm-node-9050533406",
         "name": "حي الرحمة",
-        "name_fr": null,
+        "name_fr": "Cité Errahma",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65583,7 +65425,7 @@
       "properties": {
         "id": "osm-node-9050570130",
         "name": "المحطة الآخيرة لحي سوناتيبا",
-        "name_fr": null,
+        "name_fr": "Terminus Cité Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65625,7 +65467,7 @@
       "properties": {
         "id": "osm-node-9050570131",
         "name": "المحطة الآخيرة لحي سوناتيبا",
-        "name_fr": null,
+        "name_fr": "Terminus Cité Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65667,7 +65509,7 @@
       "properties": {
         "id": "osm-node-9050570132",
         "name": "المحطة الآخيرة لحي سوناتيبا",
-        "name_fr": null,
+        "name_fr": "Terminus Cité Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65708,7 +65550,7 @@
       "properties": {
         "id": "osm-node-9050570133",
         "name": "المحطة الآخيرة لحي سوناتيبا",
-        "name_fr": null,
+        "name_fr": "Terminus Cité Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65749,7 +65591,7 @@
       "properties": {
         "id": "osm-node-9050570136",
         "name": "الملحق البلدي لحي السوناتيبا",
-        "name_fr": null,
+        "name_fr": "Annexe communale Cité Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65793,7 +65635,7 @@
       "properties": {
         "id": "osm-node-9050570137",
         "name": "الملحق البلدي لحي السوناتيبا",
-        "name_fr": null,
+        "name_fr": "Annexe communale Cité Sonatiba",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65837,7 +65679,7 @@
       "properties": {
         "id": "osm-node-9052051109",
         "name": "ملتقى الطرق (مركز الفروسية)",
-        "name_fr": null,
+        "name_fr": "Carrefour du Centre Équestre",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65879,7 +65721,7 @@
       "properties": {
         "id": "osm-node-9052051110",
         "name": "ملتقى الطرق (مركز الفروسية)",
-        "name_fr": null,
+        "name_fr": "Carrefour du Centre Équestre",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65921,7 +65763,7 @@
       "properties": {
         "id": "osm-node-9052051111",
         "name": "ملتقى الطرق (مركز الفروسية)",
-        "name_fr": null,
+        "name_fr": "Carrefour du Centre Équestre",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -65963,7 +65805,7 @@
       "properties": {
         "id": "osm-node-9052051112",
         "name": "ملتقى الطرق (مركز الفروسية)",
-        "name_fr": null,
+        "name_fr": "Carrefour du Centre Équestre",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -66046,7 +65888,7 @@
       "properties": {
         "id": "osm-node-9058597983",
         "name": "مركز البريد",
-        "name_fr": null,
+        "name_fr": "Bureau de poste",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -66087,7 +65929,7 @@
       "properties": {
         "id": "osm-node-9059419703",
         "name": "الجامعة كارمان",
-        "name_fr": null,
+        "name_fr": "Université Karman",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
@@ -66129,7 +65971,7 @@
       "properties": {
         "id": "osm-node-929484195",
         "name": "عمارات الفيدا",
-        "name_fr": null,
+        "name_fr": "Immeubles El-Fida",
         "name_ar": null,
         "wilaya_code": "14",
         "commune_code": null,
