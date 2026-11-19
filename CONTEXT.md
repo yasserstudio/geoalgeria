@@ -174,7 +174,7 @@ The link placing one Station member in one Direction at its raw source relation-
 _Avoid_: stop sequence, call, terminus
 
 **Sequence status**:
-How strongly a Direction's Membership order is established, carried by the Direction and inherited by its Memberships: `osm_member_order_unvalidated` (OSM order kept, not checked), `osm_member_order_consistent` (OSM order agrees with the Direction's drawn path), `osm_member_order_inconsistent` (it does not; still published, flagged), or `operator_sequence` (order taken from the Operator's own published list). Consistent is not validated: only `operator_sequence` claims passenger stop order. A Line has no stored status of its own; it is read from its Directions.
+How strongly a Direction's Membership order is established, carried by the Direction and inherited by its Memberships: `osm_member_order_unvalidated` (OSM order kept, not checked), `osm_member_order_consistent` (OSM order agrees with the Direction's drawn path), `osm_member_order_inconsistent` (it does not; still published, flagged), or `operator_sequence` (order taken from the Operator's own published list; reserved, no Direction carries it yet). Consistent is not validated: only `operator_sequence` claims passenger stop order. A Line has no stored status of its own; it is read from its Directions.
 _Avoid_: order status, validated, QA status
 
 **Listed stop**:
@@ -182,7 +182,7 @@ One name in an Operator's published ordered list of stops for a Line, kept in th
 _Avoid_: stop, station (until resolved), halt
 
 **Last confirmed**:
-The date of the newest official Operator source (site, official post, published timetable, Owner-supplied material) that states a Line is in service. OpenStreetMap edits never move it. When the original source is the only evidence, it is that source's date. Distinct from **Retrieved**, which says when we last pulled a source, not when the Operator last stated the Line.
+The date of the newest official Operator source (site, official post, published timetable, Owner-supplied material) that states a Line is in service: the document's own full date when it carries one, otherwise the day it was read or supplied (a month or season alone, like "Eid 2026", counts as undated). OpenStreetMap edits never move it. A Line with no official source (Wikipedia or OSM only) has none, which says nothing about whether it still runs. Distinct from **Retrieved**, which says when we last pulled a source, not when the Operator last stated the Line.
 _Avoid_: last verified, updated, freshness
 
 **Route**:

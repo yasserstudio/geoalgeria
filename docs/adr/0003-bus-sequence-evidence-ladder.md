@@ -2,6 +2,9 @@
 
 - Status: Accepted (Owner, 2026-11-19)
 - Context: buses accuracy plan, `research/buses/ACCURACY-PLAN.md`
+- Note (2026-11-19): 2.3.0 ships rungs 1–3 only. P4 is parked, so
+  `operator_sequence` stays reserved and is not in the published type until
+  an Operator list is matched.
 
 ## Context
 

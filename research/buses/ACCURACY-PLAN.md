@@ -4,6 +4,33 @@ Branch `feat/buses-accuracy`. Planning document: the durable backlog is the
 private tracker (`yasserstudio/geoalgeria.com`); each phase below becomes one
 ticket via `/to-spec` → `/to-tickets`.
 
+## Status (handoff 2026-11-19)
+
+| Phase | State |
+| --- | --- |
+| P1 QA checks | Done (80548b1d) |
+| P3 OSM refresh | Done (b1d81f91), shipped subset re-promoted (6fd1f109) |
+| P4 Listed stops | Parked (d281eaa5, 09aebc26): 3 of 213 matched |
+| P2 publish fields | Done (233e6fa5), changeset `buses-sequence-status` (minor) |
+| Release 2.3.0 | Waiting: push branch + PR to `main` on the Owner's go; merge runs changesets |
+| P5–P7 | Not started |
+
+All commits are local on `feat/buses-accuracy`; nothing pushed. `pnpm validate`
+passes (1,636 tests).
+
+Follow-ups (small, not blocking 2.3.0):
+
+- The OSM retrieved date is written in two places (`promote-selected-osm.mjs`,
+  `scripts/lib/v2-transforms.mjs`); derive one from the other or check they
+  match.
+- The collector's stale-mirror guard has no test.
+- `loadPull` is duplicated across `qa/run-diff.mjs` and `qa/run-qa.mjs`; share
+  one module.
+- 90 pulled OSM relations are not shipped (review leads, `qa/OSM-DIFF.md`).
+- Owner checks: Sétif's `last_confirmed` (2026-05-26) comes from a govserv.org
+  mirror and may be the Eid service date; Sidi Bel Abbès's supply date
+  (2026-09-02) is the day its live page returned 404.
+
 ## Constraints
 
 - **Desk-only.** The Owner is outside Algeria: no field GPS traces, no rides,
@@ -86,10 +113,13 @@ Settled in `/grill-with-docs` (2026-11-19, terms in `CONTEXT.md`):
 - **Sequence status** widens the existing Direction / Membership
   `sequence_status`: `osm_member_order_unvalidated` (today),
   `osm_member_order_consistent` (passes P1), `osm_member_order_inconsistent`
-  (fails P1, still shipped, flagged), `operator_sequence` (P4). No Line-level
-  status field; it is derived from Directions.
+  (fails P1, still shipped, flagged), `operator_sequence` (P4, reserved while
+  P4 is parked). No Line-level status field; it is derived from Directions.
 - **Last confirmed**: per-Line `last_confirmed`, official Operator sources
-  only (OSM edits never move it); defaults to the original source's date.
+  only (OSM edits never move it): the document's own date, else the day it
+  was read or supplied; `null` when no official source exists.
+- **Every Line accounted for** (release bar): the QA report lists each Line
+  without geometry with a derived reason.
 - Detailed QA numbers stay in `research/buses/qa/report.json`, not the
   package.
 - Shipped statuses equal the report verdicts: `buses-qa-shipped` drops its
@@ -101,6 +131,15 @@ Changeset: `@geoalgeria/buses` minor (2.3.0).
 
 **Done when** fields are typed, documented in three languages, validated by
 `scripts/validate-packages.mjs`, and no existing field changes meaning.
+
+**Built (2026-11-19):** Directions 36 consistent / 69 inconsistent /
+23 unvalidated (Memberships 633 / 2,047 / 2). `last_confirmed`: 107 Lines
+dated (2026-05-26 to 2026-09-27), 77 null (76 ETUSA, Mostaganem 1). Lines
+without geometry: 108 (`no_osm_relation` 94, `osm_relation_not_approved` 4,
+`operator_list_only` 10), plus 7 OSM relations of a known Operator that match
+no Line. The validator rejects a QA report older than the OSM data, and a
+Direction promoted without a verdict ships `unvalidated` and fails the test
+until QA is re-run.
 
 ### P3. OSM refresh (data repo)
 
@@ -242,7 +281,7 @@ has time.
 
 ## Hill-climb eligibility
 
-Only P4 qualifies under the global rule (an automatic pass/fail check exists
+None while P4 is parked. Only P4 qualifies under the global rule (an automatic pass/fail check exists
 once P1 lands, and it is a tedious record-matching job). Run on Sonnet with a
 stop goal (match rate, zero P1 failures) and a cost cap, after Owner approval.
 
