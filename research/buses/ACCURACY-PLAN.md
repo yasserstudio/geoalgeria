@@ -62,19 +62,20 @@ and the test fails on a deliberately broken fixture.
 
 ### P2. Publish accuracy in the package (schema, minor release)
 
-Additive per-Line fields in `lines.json` (+ CSV, GeoJSON properties, types,
-README en/fr/ar):
+Settled in `/grill-with-docs` (2026-11-19, terms in `CONTEXT.md`):
 
-- `order_status`: `validated` | `failed` | `unvalidated` (from P1; replaces
-  the blanket membership flag at Line level, membership flag kept for
-  compatibility).
-- `qa`: `{ checked_at, checks_passed, checks_total }`.
-- `last_confirmed`: ISO date of the newest official Source that re-states the
-  Line (Operator page/post, OSM edit touching its relation). `null` when only
-  the original source exists.
+- **Sequence status** widens the existing Direction / Membership
+  `sequence_status`: `osm_member_order_unvalidated` (today),
+  `osm_member_order_consistent` (passes P1), `osm_member_order_inconsistent`
+  (fails P1, still shipped, flagged), `operator_sequence` (P4). No Line-level
+  status field; it is derived from Directions.
+- **Last confirmed**: per-Line `last_confirmed`, official Operator sources
+  only (OSM edits never move it); defaults to the original source's date.
+- Detailed QA numbers stay in `research/buses/qa/report.json`, not the
+  package.
 
-Glossary: add **Order status** and **Last confirmed** to `CONTEXT.md`
-(`/grill-with-docs` first). Changeset: `@geoalgeria/buses` minor (2.3.0).
+Docs: CSV, GeoJSON properties, types, README en/fr/ar.
+Changeset: `@geoalgeria/buses` minor (2.3.0).
 
 **Done when** fields are typed, documented in three languages, validated by
 `scripts/validate-packages.mjs`, and no existing field changes meaning.
@@ -101,9 +102,25 @@ Match each name to an existing Station or an OSM `highway=bus_stop` /
 normalisation, distance to the previous matched stop as a tie-break). Unmatched
 names stay as names; nothing is placed by guess.
 
-No shape is drawn from these points (that would be inferred geometry). The
-Line gains ordered stops with `order_status: validated` from the Operator
-source, which is stronger evidence than OSM member order.
+No shape is drawn from these points (that would be inferred geometry). Each
+name is a **Listed stop**; resolved ones become Memberships with Sequence
+status `operator_sequence`, which is stronger evidence than OSM member order.
+Unresolved Listed stops are published by name, in order.
+
+Settled (2026-11-19):
+
+- A Line with no OSM relation gets an **operator-list Direction** (no
+  `osm_relation_id`, `from`/`to` = first/last Listed stop).
+- Listed stops ship as a new `listed-stops` collection (Line, Direction,
+  position, name AR/FR, `station_id` or null); the Line `stops` text is
+  untouched.
+- Where an OSM Direction already exists, the Operator list is compared with
+  it: agreement upgrades it to `operator_sequence`, disagreement leaves it and
+  logs the mismatch in the QA report for Owner review. Never two Directions
+  for one direction of travel.
+- Release is minor (2.3.0); CHANGELOG tells exhaustive-switch users to add a
+  default branch for the new `sequence_status` values.
+- See ADR 0003.
 
 **Done when** match rate is reported per Line, ambiguous matches are listed
 for Owner review, and only exact or reviewed matches are promoted.
@@ -126,9 +143,11 @@ On geoalgeria.com `/bus` (private app repo, its own branch):
   runs, wrong termini, wrong hours. Prefilled with Line id and Operator.
 - **Suggest a new Line**: Operator / city, Line number, termini, ordered stops
   if known, evidence link or photo (Operator post, timetable photo).
-- Delivery: a prefilled public GitHub issue form on the data repo (zero cost,
-  no backend, no PII stored by us), labelled `needs-triage` + `buses`, handled
-  with `/triage`.
+- Delivery: a form on geoalgeria.com, no account needed. A server route
+  files it as an issue on the private tracker (`needs-triage` + `buses`),
+  protected by Cloudflare Turnstile and a rate limit; nothing stored beyond
+  the text the reporter sends. Anonymous: no contact field. Optional "follow
+  on GitHub" link for reporters who want a reply.
 - A suggestion becomes data only through the normal Source rules: it is a
   lead until an official source or a reviewed OSM relation confirms it. This
   is the contribution path #87 asks for (Oran pilot).

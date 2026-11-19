@@ -162,12 +162,24 @@ _Avoid_: route, service
 _Note_: "route" is reserved for aviation, below. A Line is a service with many stops; a Route is one nonstop leg between two airports. The `_Avoid_` above is scoped to ground transport and does not apply to `@geoalgeria/aviation`.
 
 **Direction**:
-One directional realization of a ground-transport Line. In `@geoalgeria/buses`, each Direction preserves one source OSM relation and its `from`/`to`/`via` labels; those labels do not by themselves establish passenger termini.
+One directional realization of a ground-transport Line. In `@geoalgeria/buses`, each Direction preserves one source: either an OSM relation with its `from`/`to`/`via` labels (which do not by themselves establish passenger termini), or an Operator's ordered list of Listed stops, whose first and last names are its `from`/`to`. A Line never has two Directions for the same direction of travel; when both sources exist, the OSM Direction is kept and the Operator list is checked against it.
 _Avoid_: route, trip, branch
 
 **Membership**:
-The link placing one Station member in one Direction at its raw source relation-member index. A Membership may repeat the same Station and preserves the source role. `osm_member_order_unvalidated` means source order is retained but has not been validated as passenger stop order.
+The link placing one Station member in one Direction at its raw source relation-member index. A Membership may repeat the same Station and preserves the source role. How far its order can be trusted is the Direction's **Sequence status**.
 _Avoid_: stop sequence, call, terminus
+
+**Sequence status**:
+How strongly a Direction's Membership order is established, carried by the Direction and inherited by its Memberships: `osm_member_order_unvalidated` (OSM order kept, not checked), `osm_member_order_consistent` (OSM order agrees with the Direction's drawn path), `osm_member_order_inconsistent` (it does not; still published, flagged), or `operator_sequence` (order taken from the Operator's own published list). Consistent is not validated: only `operator_sequence` claims passenger stop order. A Line has no stored status of its own; it is read from its Directions.
+_Avoid_: order status, validated, QA status
+
+**Listed stop**:
+One name in an Operator's published ordered list of stops for a Line, kept in the Operator's order. It may be resolved to a Station, or remain a name only; it is never placed by guess.
+_Avoid_: stop, station (until resolved), halt
+
+**Last confirmed**:
+The date of the newest official Operator source (site, official post, published timetable, Owner-supplied material) that states a Line is in service. OpenStreetMap edits never move it. When the original source is the only evidence, it is that source's date. Distinct from **Retrieved**, which says when we last pulled a source, not when the Operator last stated the Line.
+_Avoid_: last verified, updated, freshness
 
 **Route**:
 One **directional** nonstop leg between two airports, as shipped by `@geoalgeria/aviation`'s `routes()`. Direction is data, not presentation: `ALG->BUD` flies nonstop on Saturdays and `BUD->ALG` on Wednesdays, and there is never a same-day nonstop round trip, so they are two records and neither implies the other. A Route that is announced but not yet operating is a **Planned route**, in a separate collection reached by `plannedRoutes()`, never a `status` value.
