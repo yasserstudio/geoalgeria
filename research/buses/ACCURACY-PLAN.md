@@ -40,8 +40,11 @@ Laghouat 4/0/0/0, M'Sila 4/0/0/0, Mostaganem 1/1/1/0, ETO 1/0/0/0.
 
 ### P1. Line quality checks (data repo, foundation)
 
-A deterministic checker, `research/buses/qa/check-lines.mjs`, run in
-`pnpm test` through `test/buses-qa.test.mjs`.
+Built 2026-11-19 in three seams: `qa/check-direction.mjs` (pure rules),
+`qa/build-report.mjs` (Direction → OSM relation → path + Stations) and
+`qa/run-qa.mjs` (reads the gitignored OSM pull, writes the report). Tests:
+`test/buses-qa*.test.mjs`; `buses-qa-shipped` guards the package against the
+committed report in CI, where no OSM pull exists.
 
 Per Direction, against its shape:
 
@@ -51,7 +54,7 @@ Per Direction, against its shape:
 | Monotone order | projected distance along the shape never decreases by > 100 m between consecutive members |
 | Termini | first / last member ≤ 300 m from the shape ends |
 | Shape continuity | no gap > 200 m between consecutive shape segments |
-| Stop count | matches the Operator's own figure where one exists (Béjaïa, M'Sila, Skikda site, Wikipedia `nb_arrets` for ETUSA) within ± 10 % |
+| Stop count | advisory, not in the status (ADR 0003 status is geometric): stopping points (larger of platform / stop roles) vs the Operator's figure within ± 10 %. Only ETUSA's Wikipedia `nb_arrets` overlaps Lines with shapes; Béjaïa, M'Sila and Skikda figures wait for P4 |
 
 Output: `research/buses/qa/report.json` + `REPORT.md` (per Line pass / fail
 with reasons) and a summary score. Pure functions, no network; fixtures for
@@ -59,6 +62,22 @@ each rule written test-first.
 
 **Done when** every Line with a shape has a verdict, the report is committed,
 and the test fails on a deliberately broken fixture.
+
+**First run (OSM pull 2026-09-01), 128 Directions:** 36 consistent,
+69 inconsistent, 23 unvalidated (fewer than two Stations; their path is still
+judged for continuity, and 17 of them fail it). Failures: continuity 68
+(51 checked Directions + 17 unvalidated), termini 43, path order 20, near
+path 12. Stop count within 10 %: 18 of 47. Verdicts barely move with the
+thresholds (consistent 32–44 across ±50 % variants), so the failures are in
+the OSM relations, not the cutoffs. When continuity fails, path order is read
+along a broken path and is unreliable. Fixing these is OSM mapping work (P5)
+or waits for mappers (P3).
+
+How the order is read: each Station is placed at its first position within
+50 m of the path that does not go back past the previous on-path Station, so
+an out-and-back or terminal loop puts each Station on its own leg. A Station
+far from the path fails near path only; it neither fails nor anchors the
+order. A relation of one way is turned to start nearer the first Station.
 
 ### P2. Publish accuracy in the package (schema, minor release)
 
@@ -73,6 +92,9 @@ Settled in `/grill-with-docs` (2026-11-19, terms in `CONTEXT.md`):
   only (OSM edits never move it); defaults to the original source's date.
 - Detailed QA numbers stay in `research/buses/qa/report.json`, not the
   package.
+- Shipped statuses equal the report verdicts: `buses-qa-shipped` drops its
+  P1 allowance for `unvalidated`, so an inconsistent Direction cannot ship
+  unflagged.
 
 Docs: CSV, GeoJSON properties, types, README en/fr/ar.
 Changeset: `@geoalgeria/buses` minor (2.3.0).
