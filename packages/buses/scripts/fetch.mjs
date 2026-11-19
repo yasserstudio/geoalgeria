@@ -26,6 +26,10 @@ const officialEtusc = readCapture("buses", "etus-c-constantine-lines");
 const officialSkikda = readCapture("buses", "etus-skikda-lines");
 const officialLaghouat = readCapture("buses", "etul-laghouat-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
+// ADR 0003: each OSM Direction ships the geometric verdict of the committed QA
+// report (research/buses/qa/report.json), so the build stays offline.
+const qaVerdict = new Map(read(join(ROOT, "research", "buses", "qa", "report.json")).directions
+  .map((direction) => [direction.direction_id, direction.status]));
 const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operator_id}|${shape.ref}`, shape]));
 const officialLineByKey = new Map([
   ...officialTiaret.map((line) => [`etus-tiaret|${line.ref}`, { ...line, source: "etus-tiaret", source_url: "https://www.etus-tiaret.dz/ar/lines" }]),
@@ -355,6 +359,51 @@ for (const shape of osm.line_shapes.filter((item) => !["etusa", "etusto", "etus-
   });
 }
 
+// Last confirmed (CONTEXT.md, Owner 2026-11-19): the date of the Line's official
+// Operator source, which is the document's own full date when it carries one
+// (Setif's announcement, Laghouat's newest program) and otherwise the day it was
+// read or supplied. A month- or season-only date ("Eid 2026") does not count.
+// Wikipedia and OpenStreetMap are not official, so their Lines ship null and an
+// OSM refresh never sets or moves the date.
+const documentDate = (capture) => capture.evidence.announcement_date
+  ?? capture.evidence.programs?.map((program) => program.document_date).sort().at(-1)
+  ?? capture.evidence.supplied_at.slice(0, 10);
+// One shape per Source: Line ref -> date. A per-Line receipt gives each ref its
+// own read date; a dated document gives every ref the same date.
+const readDateByRef = (records, receipt) => {
+  const byRef = new Map(records.map((record) => [record.ref, record[receipt].retrieved_at.slice(0, 10)]));
+  return (ref) => byRef.get(ref) ?? null;
+};
+const sameDate = (capture) => {
+  const date = documentDate(capture);
+  return () => date;
+};
+const officialDate = {
+  "etus-tiaret": readDateByRef(officialTiaret, "source_receipt"),
+  etusto: readDateByRef(officialEtusto, "source_receipt"),
+  "etus-bejaia": readDateByRef(officialBejaia, "page_receipt"),
+  "etus-msila": readDateByRef(officialMsila, "page_receipt"),
+  "etus-sidi-bel-abbes": sameDate(officialSidiBelAbbes),
+  "etus-setif": sameDate(officialSetif),
+  "etus-ain-defla": sameDate(officialAinDefla),
+  "etus-annaba": sameDate(officialAnnaba),
+  "etus-tlemcen": sameDate(officialTlemcen),
+  "eto-oran": sameDate(officialOran),
+  "etus-oeb": sameDate(officialOeb),
+  "etus-c-constantine": sameDate(officialEtusc),
+  "etus-skikda": sameDate(officialSkikda),
+  "etul-laghouat": sameDate(officialLaghouat),
+};
+// The metadata's evidence_type is the one list of official Sources.
+const officialSources = new Set(MIGRATIONS.buses.meta.sources
+  .filter((source) => source.evidence_type === "official").map((source) => source.key));
+for (const line of lines) {
+  line.last_confirmed = officialDate[line.source]?.(line.line) ?? null;
+  if ((line.last_confirmed === null) === officialSources.has(line.source)) {
+    throw new Error(`buses: ${line.id} (source ${line.source}) has no official date rule`);
+  }
+}
+
 const stationSourceById = new Map(osm.stations.map((station) => [station.id, station]));
 const directions = [];
 const memberships = [];
@@ -366,6 +415,10 @@ for (const shape of osm.line_shapes) {
   const currentLine = lines.find((line) => line.id === currentLineId);
   for (const relation of shape.relations) {
     const directionId = `osm-relation-${relation.id}`;
+    // A relation new to this build has no verdict yet: it ships unvalidated, and
+    // the validator and buses-qa-shipped test fail until run-qa.mjs is re-run.
+    const sequenceStatus = qaVerdict.get(directionId) ?? "osm_member_order_unvalidated";
+    if (!qaVerdict.has(directionId)) console.warn(`buses: no QA verdict for ${directionId}; re-run research/buses/qa/run-qa.mjs`);
     directions.push({
       id: directionId, line_id: currentLineId, shape_id: shapeId(shape.operator_id, shape.ref),
       osm_relation_id: relation.id,
@@ -373,7 +426,7 @@ for (const shape of osm.line_shapes) {
       to: relation.tags?.to ?? null,
       via: relation.tags?.via ?? null,
       public_transport_version: relation.tags?.["public_transport:version"] === "2" ? 2 : null,
-      sequence_status: "osm_member_order_unvalidated",
+      sequence_status: sequenceStatus,
       source: shape.operator_id === "etus-setif" ? "etus-setif+osm" : shape.operator_id === "etuad" ? "etus-ain-defla+osm" : "osm",
       source_refs: shape.operator_id === "etus-setif" ? ["etus-setif", "osm"] : shape.operator_id === "etuad" ? ["etus-ain-defla", "osm"] : ["osm"],
     });
@@ -387,7 +440,7 @@ for (const shape of osm.line_shapes) {
         id: `${directionId}-member-${osmMemberIndex}`, direction_id: directionId,
         line_id: currentLineId, station_id: stationId, osm_relation_id: relation.id,
         osm_member_index: osmMemberIndex, source_sequence: sourceSequence,
-        role: member.role || null, sequence_status: "osm_member_order_unvalidated", source: "osm",
+        role: member.role || null, sequence_status: sequenceStatus, source: "osm",
       });
       if (!linesByStation.has(stationId)) linesByStation.set(stationId, new Set());
       if (!operatorsByStation.has(stationId)) operatorsByStation.set(stationId, new Set());
@@ -460,7 +513,7 @@ const shapes = osm.line_shapes.map((shape) => {
     line: shape.ref, name: line.name ?? shape.name ?? null, wilaya_code: shape.wilaya_code,
     terminus1: line.terminus1, terminus1_fr: line.terminus1_fr, terminus1_ar: line.terminus1_ar,
     terminus2: line.terminus2, terminus2_fr: line.terminus2_fr, terminus2_ar: line.terminus2_ar,
-    source: "osm",
+    last_confirmed: line.last_confirmed, source: "osm",
     osm_relation_ids: shape.relation_ids, geometry: shape.geometry,
   };
 });

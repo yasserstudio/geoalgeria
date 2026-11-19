@@ -840,6 +840,8 @@ export const MIGRATIONS = {
       // An explicit null means the factual Source was supplied without a
       // durable public page. Do not turn its internal source key into a URL.
       source_url: Object.hasOwn(r, "source_url") ? r.source_url : r.source,
+      // Null when no official Operator source dates the Line (v1 rows were Wikipedia only).
+      last_confirmed: r.last_confirmed ?? null,
     }),
     meta: {
       sources: [

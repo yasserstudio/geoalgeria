@@ -55,3 +55,38 @@ export function promotableLines({ lines, candidates, shippedRelations }) {
     .filter((c) => c.line && !c.line.shape_id && c.relation_ids.every((id) => !shippedRelations.has(id)))
     .map((c) => ({ candidate: c.candidate, line_id: c.line.id, relation_ids: c.relation_ids }));
 }
+
+// Every package Line without a Direction has no geometry yet (Owner 2026-11-19:
+// the release bar is every Line accounted for). Its reason comes from data only:
+// `osm_relation_not_approved`, an unshipped OSM relation matches it by identity
+// but was never approved for promotion; otherwise `operator_list_only`, its
+// Operator publishes an ordered stop list but no geometry exists (P4 is parked);
+// otherwise `no_osm_relation`. `added` is osm-diff.json's newly mapped
+// relations, already matched. Relations of a known Operator that match no Line
+// are listed apart, since naming their Line would be a guess.
+export function geometryGaps({ lines, directions, candidates, added = [], listedStopLineIds = new Set() }) {
+  const shipped = new Set(directions.map((d) => d.osm_relation_id).filter((id) => id != null));
+  const drawn = new Set(directions.map((d) => d.line_id));
+  const known = new Set(candidates.flatMap((c) => c.relation_ids));
+  const matches = [
+    ...matchRelations([...known].filter((id) => !shipped.has(id)), { lines, candidates }),
+    ...added.filter((a) => !shipped.has(a.osm_relation_id) && !known.has(a.osm_relation_id)),
+  ];
+  const relationsOf = (lineId) => matches.filter((m) => m.line_id === lineId).map((m) => m.osm_relation_id);
+  return {
+    lines: lines
+      .filter((l) => !drawn.has(l.id))
+      .map((l) => {
+        const osmRelationIds = relationsOf(l.id);
+        const reason = osmRelationIds.length
+          ? "osm_relation_not_approved"
+          : listedStopLineIds.has(l.id)
+            ? "operator_list_only"
+            : "no_osm_relation";
+        return { line_id: l.id, reason, osm_relation_ids: osmRelationIds };
+      }),
+    unmatched_relations: matches
+      .filter((m) => m.match === "unmatched_line")
+      .map((m) => ({ osm_relation_id: m.osm_relation_id, operator_id: m.operator_id })),
+  };
+}

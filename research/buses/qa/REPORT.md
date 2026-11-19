@@ -141,3 +141,126 @@ Stop count vs ETUSA figure (advisory): 18 of 47 within 10 %.
 | ETUSTO 9 | osm-relation-19119196 | consistent | all rules pass |  |
 | ETUSTO 6 | osm-relation-20629703 | consistent | all rules pass |  |
 | ETUSTO 6 | osm-relation-20629704 | consistent | all rules pass |  |
+
+## Lines without geometry
+
+108 Lines have no Direction, so no geometry yet. Reasons come from the OSM candidates, `osm-diff.json` and the Operator stop lists in `listed-stops/matches.json`.
+
+| Reason | Lines |
+| --- | --- |
+| `no_osm_relation` | 94 |
+| `osm_relation_not_approved` | 4 |
+| `operator_list_only` | 10 |
+
+| Line | Reason | OSM relations |
+| --- | --- | --- |
+| ETUL Laghouat 02 | no_osm_relation |  |
+| ETUL Laghouat 04 | no_osm_relation |  |
+| ETUL Laghouat 05 | no_osm_relation |  |
+| ETUL Laghouat 07 | no_osm_relation |  |
+| ETUS Oum El Bouaghi 01 | no_osm_relation |  |
+| ETUS Oum El Bouaghi 02 | no_osm_relation |  |
+| ETUS Oum El Bouaghi 03 | no_osm_relation |  |
+| ETUS Oum El Bouaghi 04 | no_osm_relation |  |
+| ETUS Oum El Bouaghi 05 | no_osm_relation |  |
+| ETUS Béjaïa 1 | no_osm_relation |  |
+| ETUS Béjaïa 2 | no_osm_relation |  |
+| ETUS Béjaïa 3 | no_osm_relation |  |
+| ETUS Béjaïa 4 | no_osm_relation |  |
+| ETUS Béjaïa 5 | no_osm_relation |  |
+| ETUS Tlemcen 2A | no_osm_relation |  |
+| ETUS Tlemcen 2B | no_osm_relation |  |
+| ETUS Tlemcen 2C | no_osm_relation |  |
+| ETUS Tlemcen 03 | no_osm_relation |  |
+| ETUS Tlemcen 4B | no_osm_relation |  |
+| ETUS Tlemcen 4C | no_osm_relation |  |
+| ETUS Tlemcen 4E | no_osm_relation |  |
+| ETUS Tlemcen 11 | no_osm_relation |  |
+| ETUS Tlemcen 44 | no_osm_relation |  |
+| ETUS Tlemcen H | no_osm_relation |  |
+| ETUSTO 1A | no_osm_relation |  |
+| ETUSTO 7 | no_osm_relation |  |
+| ETUSA 5 | no_osm_relation |  |
+| ETUSA 8 | no_osm_relation |  |
+| ETUSA 33 | osm_relation_not_approved | 2865634, 11267139 |
+| ETUSA 35 | osm_relation_not_approved | 2847007, 11267138 |
+| ETUSA 36 | no_osm_relation |  |
+| ETUSA 39 | no_osm_relation |  |
+| ETUSA 40 | no_osm_relation |  |
+| ETUSA 43 | osm_relation_not_approved | 2865611 |
+| ETUSA 44 | no_osm_relation |  |
+| ETUSA 51 | no_osm_relation |  |
+| ETUSA 57 | no_osm_relation |  |
+| ETUSA 73 | no_osm_relation |  |
+| ETUSA 80 | no_osm_relation |  |
+| ETUSA 81 | no_osm_relation |  |
+| ETUSA 89 | osm_relation_not_approved | 2881810 |
+| ETUS Setif 105 | no_osm_relation |  |
+| ETUS Setif 106A | no_osm_relation |  |
+| ETUS Skikda 01 | operator_list_only |  |
+| ETUS Skikda 02 | operator_list_only |  |
+| ETUS Skikda 03 | operator_list_only |  |
+| ETUS Skikda 04 | operator_list_only |  |
+| ETUS Skikda 05 | operator_list_only |  |
+| ETUS Skikda 06 | operator_list_only |  |
+| ETUS Sidi Bel Abbès 3B | no_osm_relation |  |
+| ETUS Sidi Bel Abbès 09 | no_osm_relation |  |
+| ETUS Sidi Bel Abbès 11 | no_osm_relation |  |
+| ETUS Sidi Bel Abbès 16 | no_osm_relation |  |
+| ETUS Sidi Bel Abbès 25 | no_osm_relation |  |
+| ETUS Sidi Bel Abbès 26 | no_osm_relation |  |
+| ETUS Sidi Bel Abbès 27 | no_osm_relation |  |
+| ETUS Sidi Bel Abbès 28 | no_osm_relation |  |
+| ETUS Annaba 05 | no_osm_relation |  |
+| ETUS Annaba 25 | no_osm_relation |  |
+| ETUS Annaba 26 | no_osm_relation |  |
+| ETUS Annaba 30 | no_osm_relation |  |
+| ETUS Annaba 33 | no_osm_relation |  |
+| ETUS Annaba 41 | no_osm_relation |  |
+| ETUS-C Constantine L02 | no_osm_relation |  |
+| ETUS-C Constantine L04 | no_osm_relation |  |
+| ETUS-C Constantine L05 | no_osm_relation |  |
+| ETUS-C Constantine L08 | no_osm_relation |  |
+| ETUS-C Constantine L14 | no_osm_relation |  |
+| ETUS-C Constantine L15 | no_osm_relation |  |
+| ETUS-C Constantine L16 | no_osm_relation |  |
+| ETUS-C Constantine L19 | no_osm_relation |  |
+| ETUS-C Constantine L21 | no_osm_relation |  |
+| ETUS-C Constantine L22 | no_osm_relation |  |
+| ETUS-C Constantine L23 | no_osm_relation |  |
+| ETUS-C Constantine L24 | no_osm_relation |  |
+| ETUS-C Constantine L25 | no_osm_relation |  |
+| ETUS-C Constantine L26 | no_osm_relation |  |
+| ETUS-C Constantine L27 | no_osm_relation |  |
+| ETUS-C Constantine L28 | no_osm_relation |  |
+| ETUS-C Constantine L29 | no_osm_relation |  |
+| ETUS-C Constantine L31 | no_osm_relation |  |
+| ETUS-C Constantine L32 | no_osm_relation |  |
+| ETUS-C Constantine L33 | no_osm_relation |  |
+| ETUS-C Constantine L34 | no_osm_relation |  |
+| ETUS-C Constantine L35 | no_osm_relation |  |
+| ETUS-C Constantine L36 | no_osm_relation |  |
+| ETUS-C Constantine L37 | no_osm_relation |  |
+| ETUS-C Constantine L38 | no_osm_relation |  |
+| ETUS M'Sila 11 | operator_list_only |  |
+| ETUS M'Sila 12 | operator_list_only |  |
+| ETUS M'Sila 16 | operator_list_only |  |
+| ETUS M'Sila 17 | operator_list_only |  |
+| ETO 83 | no_osm_relation |  |
+| ETUS Aïn Defla AD-1 | no_osm_relation |  |
+| ETUS Aïn Defla AD-3 | no_osm_relation |  |
+| ETUS Aïn Defla AD-4 | no_osm_relation |  |
+| ETUS Aïn Defla AD-5 | no_osm_relation |  |
+| ETUS Aïn Defla AD-6 | no_osm_relation |  |
+| ETUS Aïn Defla AD-7 | no_osm_relation |  |
+| ETUS Aïn Defla AD-8 | no_osm_relation |  |
+| ETUS Aïn Defla AD-9 | no_osm_relation |  |
+| ETUS Aïn Defla AT-1 | no_osm_relation |  |
+| ETUS Aïn Defla AT-3 | no_osm_relation |  |
+| ETUS Aïn Defla KM-1 | no_osm_relation |  |
+| ETUS Aïn Defla KM-2 | no_osm_relation |  |
+| ETUS Aïn Defla KM-3 | no_osm_relation |  |
+| ETUS Aïn Defla KM-4 | no_osm_relation |  |
+| ETUS Aïn Defla KM-5 | no_osm_relation |  |
+
+OSM relations of a known Operator that match no Line: 21358030 (etusto), 7107372 (etuad), 21358031 (etusto), 13122754 (etus-tiaret), 15831983 (etus-tiaret), 21433147 (etus-tiaret), 2865632 (etusa).

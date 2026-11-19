@@ -1,7 +1,8 @@
 export type GeoPrecision = "exact" | "approximate" | null;
 export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif" | "etus-setif+osm" | "etus-ain-defla" | "etus-ain-defla+osm" | "etus-annaba" | "etus-tlemcen" | "eto-oran" | "etus-oeb" | "etus-c-constantine" | "etus-skikda" | "etul-laghouat";
 export type RouteColor = "blue" | "green" | "orange" | "purple";
-export type SequenceStatus = "osm_member_order_unvalidated";
+/** ADR 0003 ladder. A minor release may add values, such as `operator_sequence` for order from an Operator's published stop list. */
+export type SequenceStatus = "osm_member_order_unvalidated" | "osm_member_order_consistent" | "osm_member_order_inconsistent";
 export type ServicePeriod = "regular" | "friday" | "saturday";
 export type ServiceDay = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday";
 
@@ -65,6 +66,12 @@ export interface BusLine {
   osm_relation_ids: number[];
   source_refs: SourceKey[];
   source_url?: string | null;
+  /**
+   * Date (YYYY-MM-DD) of the official Operator source that states the Line: the
+   * document's own date when it carries one, else the day it was read or supplied.
+   * Null when only Wikipedia or OpenStreetMap name the Line. OSM edits never move it.
+   */
+  last_confirmed: string | null;
 }
 
 export interface BusStation {
@@ -125,6 +132,8 @@ export interface BusShape {
   terminus2: string | null;
   terminus2_fr?: string;
   terminus2_ar?: string;
+  /** The Line's `last_confirmed`, copied so a map feature carries it. */
+  last_confirmed: string | null;
   source: "osm";
   osm_relation_ids: number[];
   geometry: MultiLineStringGeometry;

@@ -13,13 +13,9 @@ test("the committed QA report has a verdict for every shipped OSM Direction", ()
   assert.deepEqual(missing, []);
 });
 
-// Until P2 publishes the verdicts every Direction ships unvalidated, so the
-// package may lag the report but never claim a different check result.
-// P2 removes the unvalidated allowance (ACCURACY-PLAN.md, P2).
-test("a shipped OSM sequence status is unvalidated or the report's verdict", () => {
+// P2 publishes the verdicts: every shipped OSM status equals the report's.
+test("a shipped OSM sequence status is the report's verdict", () => {
   const claims = [...directions.map((d) => [d.id, d.sequence_status]), ...memberships.map((m) => [m.direction_id, m.sequence_status])];
-  const wrong = claims.filter(
-    ([id, status]) => status.startsWith("osm_member_order_") && status !== "osm_member_order_unvalidated" && status !== verdict.get(id),
-  );
+  const wrong = claims.filter(([id, status]) => status.startsWith("osm_member_order_") && status !== verdict.get(id));
   assert.deepEqual(wrong, []);
 });

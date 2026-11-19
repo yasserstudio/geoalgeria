@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { lineIdentity, matchRelations, promotableLines } from "../research/buses/qa/line-identity.mjs";
+import { geometryGaps, lineIdentity, matchRelations, promotableLines } from "../research/buses/qa/line-identity.mjs";
 
 test("a Line identity ignores case, spacing and leading zeros of the number", () => {
   assert.equal(lineIdentity("etusa", " 02 "), lineIdentity("etusa", "2"));
@@ -54,4 +54,37 @@ test("a relation a Line already lists wins; a lettered Line matches its bare num
     matchRelations([20, 21, 22], { lines, candidates }).map((m) => [m.osm_relation_id, m.line_id]),
     [[20, "etuad-AD-2"], [21, "etus-x-7"], [22, null]],
   );
+});
+
+// Owner 2026-11-19: the release bar is every Line accounted for. A Line with no
+// Direction has no geometry yet, and the QA report says why, from data only.
+test("every Line without a Direction gets a reason derived from the OSM and Operator data", () => {
+  const lines = [
+    { id: "etusa-1", operator_id: "etusa", line: "1", osm_relation_ids: [1] },
+    { id: "etusa-33", operator_id: "etusa", line: "33", osm_relation_ids: [] },
+    { id: "etusa-5", operator_id: "etusa", line: "5", osm_relation_ids: [] },
+    { id: "etus-skikda-01", operator_id: "etus-skikda", line: "01", osm_relation_ids: [] },
+  ];
+  const directions = [{ id: "osm-relation-1", line_id: "etusa-1", osm_relation_id: 1 }];
+  const candidates = [
+    { id: "c1", operator_id: "etusa", ref: "1", relation_ids: [1], map_readiness: "geometry_candidate" },
+    { id: "c33", operator_id: "etusa", ref: "033", relation_ids: [33, 34], map_readiness: "needs_identity" },
+    { id: "c63", operator_id: "etusa", ref: "63", relation_ids: [63], map_readiness: "needs_identity" },
+    { id: "cx", operator_id: null, ref: "9", relation_ids: [90], map_readiness: "review_only" },
+  ];
+  const added = [
+    { osm_relation_id: 70, operator_id: "etus-skikda", line_id: null, match: "unmatched_line", name: "Ligne 7" },
+    { osm_relation_id: 63, operator_id: "etusa", line_id: null, match: "unmatched_line", name: "63" }, // also a candidate
+  ];
+  assert.deepEqual(geometryGaps({ lines, directions, candidates, added, listedStopLineIds: new Set(["etus-skikda-01"]) }), {
+    lines: [
+      { line_id: "etusa-33", reason: "osm_relation_not_approved", osm_relation_ids: [33, 34] },
+      { line_id: "etusa-5", reason: "no_osm_relation", osm_relation_ids: [] },
+      { line_id: "etus-skikda-01", reason: "operator_list_only", osm_relation_ids: [] },
+    ],
+    unmatched_relations: [
+      { osm_relation_id: 63, operator_id: "etusa" },
+      { osm_relation_id: 70, operator_id: "etus-skikda" },
+    ],
+  });
 });

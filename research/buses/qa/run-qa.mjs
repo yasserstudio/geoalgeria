@@ -12,6 +12,7 @@ import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildReport } from "./build-report.mjs";
 import { DEFAULTS } from "./check-direction.mjs";
+import { geometryGaps } from "./line-identity.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "../../..");
@@ -62,6 +63,18 @@ const summary = {
   stop_count: { checked: stopRows.length, within_10pct: stopRows.filter((d) => d.stop_count.pass).length },
 };
 
+// Every Line accounted for (Owner 2026-11-19): a Line with no Direction has no
+// geometry yet, and its reason is derived from the OSM candidates, the refresh
+// diff and the Operator stop lists P4 parked.
+const listedStops = readJson(join(root, "research/buses/listed-stops/matches.json"));
+const gaps = geometryGaps({
+  lines,
+  directions: data("directions"),
+  candidates: readJson(join(root, "research/buses/osm/candidate-lines.json")),
+  added: readJson(join(here, "osm-diff.json")).added,
+  listedStopLineIds: new Set(listedStops.networks.flatMap((n) => n.lines.map((l) => l.line_id))),
+});
+
 const out = {
   generated_by: "research/buses/qa/run-qa.mjs",
   osm_snapshot: { from: osmTimestamps[0], to: osmTimestamps.at(-1) },
@@ -73,6 +86,12 @@ const out = {
   },
   summary,
   directions: report.directions,
+  lines_without_geometry: {
+    lines: gaps.lines.length,
+    by_reason: tally(gaps.lines, "reason"),
+    detail: gaps.lines,
+    unmatched_relations: gaps.unmatched_relations,
+  },
 };
 writeFileSync(join(here, "report.json"), `${JSON.stringify(out, null, 2)}\n`);
 
@@ -101,6 +120,22 @@ const md = [
         d.stop_count ? `${d.stop_count.osm} / ${d.stop_count.operator}${d.stop_count.pass ? "" : " ⚠"}` : ""
       } |`,
   ),
+  "",
+  "## Lines without geometry",
+  "",
+  `${gaps.lines.length} Lines have no Direction, so no geometry yet. Reasons come from the OSM candidates, \`osm-diff.json\` and the Operator stop lists in \`listed-stops/matches.json\`.`,
+  "",
+  "| Reason | Lines |",
+  "| --- | --- |",
+  ...Object.entries(out.lines_without_geometry.by_reason).map(([k, v]) => `| \`${k}\` | ${v} |`),
+  "",
+  "| Line | Reason | OSM relations |",
+  "| --- | --- | --- |",
+  ...gaps.lines.map((g) => `| ${lineName.get(g.line_id)} | ${g.reason} | ${g.osm_relation_ids.join(", ")} |`),
+  "",
+  `OSM relations of a known Operator that match no Line: ${
+    gaps.unmatched_relations.map((r) => `${r.osm_relation_id} (${r.operator_id})`).join(", ") || "none"
+  }.`,
   "",
 ].join("\n");
 writeFileSync(join(here, "REPORT.md"), md);

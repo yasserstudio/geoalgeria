@@ -3812,5 +3812,595 @@
         }
       ]
     }
-  ]
+  ],
+  "lines_without_geometry": {
+    "lines": 108,
+    "by_reason": {
+      "no_osm_relation": 94,
+      "osm_relation_not_approved": 4,
+      "operator_list_only": 10
+    },
+    "detail": [
+      {
+        "line_id": "etusl-laghouat-02",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusl-laghouat-04",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusl-laghouat-05",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusl-laghouat-07",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oeb-01",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oeb-02",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oeb-03",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oeb-04",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oeb-05",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-bejaia-1",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-bejaia-2",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-bejaia-3",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-bejaia-4",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-bejaia-5",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-2A",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-2B",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-2C",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-03",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-4B",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-4C",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-4E",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-11",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-44",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-H",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusto-1A",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusto-7",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-5",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-8",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-33",
+        "reason": "osm_relation_not_approved",
+        "osm_relation_ids": [
+          2865634,
+          11267139
+        ]
+      },
+      {
+        "line_id": "etusa-35",
+        "reason": "osm_relation_not_approved",
+        "osm_relation_ids": [
+          2847007,
+          11267138
+        ]
+      },
+      {
+        "line_id": "etusa-36",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-39",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-40",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-43",
+        "reason": "osm_relation_not_approved",
+        "osm_relation_ids": [
+          2865611
+        ]
+      },
+      {
+        "line_id": "etusa-44",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-51",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-57",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-73",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-80",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-81",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-89",
+        "reason": "osm_relation_not_approved",
+        "osm_relation_ids": [
+          2881810
+        ]
+      },
+      {
+        "line_id": "etus-setif-105",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-setif-106A",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-01",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-02",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-03",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-04",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-05",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-06",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-3B",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-09",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-11",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-16",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-25",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-26",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-27",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-28",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-05",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-25",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-26",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-30",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-33",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-41",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L02",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L04",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L05",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L08",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L14",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L15",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L16",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L19",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L21",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L22",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L23",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L24",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L25",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L26",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L27",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L28",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L29",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L31",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L32",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L33",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L34",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L35",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L36",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L37",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L38",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-msila-11",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-msila-12",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-msila-16",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-msila-17",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oran-83",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-1",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-3",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-4",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-5",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-6",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-7",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-8",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-9",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AT-1",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AT-3",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-KM-1",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-KM-2",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-KM-3",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-KM-4",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-KM-5",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      }
+    ],
+    "unmatched_relations": [
+      {
+        "osm_relation_id": 21358030,
+        "operator_id": "etusto"
+      },
+      {
+        "osm_relation_id": 7107372,
+        "operator_id": "etuad"
+      },
+      {
+        "osm_relation_id": 21358031,
+        "operator_id": "etusto"
+      },
+      {
+        "osm_relation_id": 13122754,
+        "operator_id": "etus-tiaret"
+      },
+      {
+        "osm_relation_id": 15831983,
+        "operator_id": "etus-tiaret"
+      },
+      {
+        "osm_relation_id": 21433147,
+        "operator_id": "etus-tiaret"
+      },
+      {
+        "osm_relation_id": 2865632,
+        "operator_id": "etusa"
+      }
+    ]
+  }
 }
