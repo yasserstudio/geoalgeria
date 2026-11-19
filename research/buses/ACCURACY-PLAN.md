@@ -181,6 +181,13 @@ Settled (2026-11-19):
 **Done when** match rate is reported per Line, ambiguous matches are listed
 for Owner review, and only exact or reviewed matches are promoted.
 
+**Parked (2026-11-19, Owner):** the desk match (`listed-stops/REVIEW.md`)
+placed 3 of 213 Listed stops exactly, 6 ambiguous, 204 without a candidate.
+No package Station exists in wilayas 21 or 28, and Skikda's 11 named OSM stops
+carry French names only, against Arabic lists. 2.3.0 ships no Listed stops and
+no `operator_sequence`; the matcher stays as research until OSM coverage
+(P5) or field data exists.
+
 ### P5. Owner OSM mapping, desk mode (optional, Owner time)
 
 Without field traces, a route relation can still be drawn in OSM when **all**
