@@ -1,0 +1,1029 @@
+{
+  "generated_by": "research/buses/qa/run-diff.mjs",
+  "previous": {
+    "from": "2026-09-01T13:41:31Z",
+    "to": "2026-09-01T13:52:52Z"
+  },
+  "current": {
+    "from": "2026-11-19T16:14:35Z",
+    "to": "2026-11-19T17:32:20Z"
+  },
+  "summary": {
+    "relations": {
+      "previous": 215,
+      "current": 218
+    },
+    "added": 3,
+    "removed": 0,
+    "changed": 100,
+    "unchanged": 115,
+    "shipped_directions": {
+      "unchanged": 54,
+      "changed": 74
+    },
+    "added_matched_to_line": 0,
+    "promotable_lines": 0
+  },
+  "added": [
+    {
+      "osm_relation_id": 21358030,
+      "operator_id": "etusto",
+      "line_id": null,
+      "match": "unmatched_line",
+      "ref": null,
+      "name": "Ligne Aéroport d'Alger <- Tizi Ouzou"
+    },
+    {
+      "osm_relation_id": 21358031,
+      "operator_id": "etusto",
+      "line_id": null,
+      "match": "unmatched_line",
+      "ref": null,
+      "name": "Ligne Aéroport d'Alger -> Tizi Ouzou"
+    },
+    {
+      "osm_relation_id": 21433147,
+      "operator_id": "etus-tiaret",
+      "line_id": null,
+      "match": "unmatched_line",
+      "ref": "33 Reverse",
+      "name": "ETUS 33 Reverse"
+    }
+  ],
+  "removed": [],
+  "changed": [
+    {
+      "id": 2847007,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 2849252,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 2865611,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 2865717,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 2881556,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 2881745,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 2881810,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 3101476,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 3105891,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 3105899,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 3105911,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 3106213,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 3106214,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 3112924,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 3114066,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 3122700,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 4222915,
+      "members": true,
+      "geometry": false,
+      "tags": false
+    },
+    {
+      "id": 5966506,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7107372,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7608188,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7935973,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7936377,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7936576,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7937708,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7937923,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7953670,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7953809,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7966499,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7968313,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7980541,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7980872,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7980943,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7982428,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7986853,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7986887,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7996214,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7996275,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7996451,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 7996457,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8001650,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8001677,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8003185,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8003366,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8006787,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8061132,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8066402,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8086416,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8086495,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8086568,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8093276,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8408345,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8409730,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 8745749,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 9415328,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 9415410,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 9434542,
+      "members": true,
+      "geometry": false,
+      "tags": false
+    },
+    {
+      "id": 11267138,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 11267140,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 11273121,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 11273122,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 11273123,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 11273930,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 13122754,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 13123782,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 13125127,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 13125128,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 13126846,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 13129621,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 13130866,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 13131828,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 13145031,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 14591225,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 14596722,
+      "members": true,
+      "geometry": false,
+      "tags": false
+    },
+    {
+      "id": 14608521,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 14616622,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 14618940,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 15705783,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 15740436,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 15748010,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 15814690,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 15817800,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 15828581,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 15831983,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 16022861,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 16541421,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 18468277,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 18468278,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 18468572,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 18468573,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 18472594,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 18472778,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 18472822,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 18559186,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 18559187,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 18591051,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 19107859,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 19108800,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 19119123,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 19119124,
+      "members": true,
+      "geometry": true,
+      "tags": false
+    },
+    {
+      "id": 19119196,
+      "members": false,
+      "geometry": true,
+      "tags": false
+    }
+  ],
+  "shipped": [
+    {
+      "direction_id": "osm-relation-2849252",
+      "osm_relation_id": 2849252,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-2865717",
+      "osm_relation_id": 2865717,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-2881556",
+      "osm_relation_id": 2881556,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-2881745",
+      "osm_relation_id": 2881745,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-3101476",
+      "osm_relation_id": 3101476,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-3105891",
+      "osm_relation_id": 3105891,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-3105899",
+      "osm_relation_id": 3105899,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-3105911",
+      "osm_relation_id": 3105911,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-3106213",
+      "osm_relation_id": 3106213,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-3106214",
+      "osm_relation_id": 3106214,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-3112924",
+      "osm_relation_id": 3112924,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-3114066",
+      "osm_relation_id": 3114066,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-3122700",
+      "osm_relation_id": 3122700,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7608188",
+      "osm_relation_id": 7608188,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7935973",
+      "osm_relation_id": 7935973,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7936377",
+      "osm_relation_id": 7936377,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7936576",
+      "osm_relation_id": 7936576,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7937708",
+      "osm_relation_id": 7937708,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7937923",
+      "osm_relation_id": 7937923,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7953670",
+      "osm_relation_id": 7953670,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7953809",
+      "osm_relation_id": 7953809,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7966499",
+      "osm_relation_id": 7966499,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7968313",
+      "osm_relation_id": 7968313,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7980541",
+      "osm_relation_id": 7980541,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7980872",
+      "osm_relation_id": 7980872,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7980943",
+      "osm_relation_id": 7980943,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7982428",
+      "osm_relation_id": 7982428,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7986853",
+      "osm_relation_id": 7986853,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7986887",
+      "osm_relation_id": 7986887,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7996214",
+      "osm_relation_id": 7996214,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7996275",
+      "osm_relation_id": 7996275,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7996451",
+      "osm_relation_id": 7996451,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-7996457",
+      "osm_relation_id": 7996457,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8001650",
+      "osm_relation_id": 8001650,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8001677",
+      "osm_relation_id": 8001677,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8003185",
+      "osm_relation_id": 8003185,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8003366",
+      "osm_relation_id": 8003366,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8006787",
+      "osm_relation_id": 8006787,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8061132",
+      "osm_relation_id": 8061132,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8066402",
+      "osm_relation_id": 8066402,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8086416",
+      "osm_relation_id": 8086416,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8086495",
+      "osm_relation_id": 8086495,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8086568",
+      "osm_relation_id": 8086568,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8093276",
+      "osm_relation_id": 8093276,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8408345",
+      "osm_relation_id": 8408345,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8409730",
+      "osm_relation_id": 8409730,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-8745749",
+      "osm_relation_id": 8745749,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-11267140",
+      "osm_relation_id": 11267140,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-11273121",
+      "osm_relation_id": 11273121,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-11273122",
+      "osm_relation_id": 11273122,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-11273123",
+      "osm_relation_id": 11273123,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-11273930",
+      "osm_relation_id": 11273930,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-13123782",
+      "osm_relation_id": 13123782,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-13125127",
+      "osm_relation_id": 13125127,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-13125128",
+      "osm_relation_id": 13125128,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-13126846",
+      "osm_relation_id": 13126846,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-13129621",
+      "osm_relation_id": 13129621,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-13130866",
+      "osm_relation_id": 13130866,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-13131828",
+      "osm_relation_id": 13131828,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-14596722",
+      "osm_relation_id": 14596722,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-14608521",
+      "osm_relation_id": 14608521,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-14616622",
+      "osm_relation_id": 14616622,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-14618940",
+      "osm_relation_id": 14618940,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-15740436",
+      "osm_relation_id": 15740436,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-15748010",
+      "osm_relation_id": 15748010,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-15814690",
+      "osm_relation_id": 15814690,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-15817800",
+      "osm_relation_id": 15817800,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-15828581",
+      "osm_relation_id": 15828581,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-16022861",
+      "osm_relation_id": 16022861,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-16541421",
+      "osm_relation_id": 16541421,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-19108800",
+      "osm_relation_id": 19108800,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-19119123",
+      "osm_relation_id": 19119123,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-19119124",
+      "osm_relation_id": 19119124,
+      "change": "changed"
+    },
+    {
+      "direction_id": "osm-relation-19119196",
+      "osm_relation_id": 19119196,
+      "change": "changed"
+    }
+  ],
+  "promotable": []
+}

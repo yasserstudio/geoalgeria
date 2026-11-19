@@ -161,6 +161,10 @@ A named service on a **ground** transport network (bus, rail, tram), running ove
 _Avoid_: route, service
 _Note_: "route" is reserved for aviation, below. A Line is a service with many stops; a Route is one nonstop leg between two airports. The `_Avoid_` above is scoped to ground transport and does not apply to `@geoalgeria/aviation`.
 
+**Line identity**:
+What makes two sources describe the same Line: its Operator plus its line number, compared without leading zeros ("02" is "2"). A lettered variant ("106B") is a different Line from its bare number.
+_Avoid_: ref match
+
 **Direction**:
 One directional realization of a ground-transport Line. In `@geoalgeria/buses`, each Direction preserves one source: either an OSM relation with its `from`/`to`/`via` labels (which do not by themselves establish passenger termini), or an Operator's ordered list of Listed stops, whose first and last names are its `from`/`to`. A Line never has two Directions for the same direction of travel; when both sources exist, the OSM Direction is kept and the Operator list is checked against it.
 _Avoid_: route, trip, branch

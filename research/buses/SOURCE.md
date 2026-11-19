@@ -69,6 +69,11 @@ collection interval rather than one OSM revision.
 - **12 relations are explicitly taxi-labelled despite `route=bus`**, and seven
   cross a wilaya boundary. Both are review flags, not publishable scope labels.
 
+**Refresh 2026-11-19** (P3, `qa/OSM-DIFF.md`): 218 relations, 156 candidate
+Lines, 205 drawable (94%), 1,996 unique station members on 169 relations,
+108 ETUSA-identifiable relations, 12 taxi-labelled. Pull from
+`overpass-api.de` only, OSM timestamps 2026-11-19T16:14Z → 17:32Z.
+
 The full candidate snapshot remains research evidence only. Reviewed subsets
 have since been promoted into the package and app: the current release contains
 85 operator-backed Lines, 47 matched OSM shapes, 83 Directions, and 1,290

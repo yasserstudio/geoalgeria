@@ -28,6 +28,9 @@ const RECEIPTS_MANIFEST_FILE = join(RECEIPTS_DIR, "manifest.json");
 const UA = "geoalgeria-data/1.0 (+https://geoalgeria.com)";
 const MIN_RELATIONS = 150;
 const BATCH_SIZE = 10;
+// Public mirrors can lag by months (overpass.kumi.systems served 2026-05-31
+// data on 2026-11-19), which would roll the pull back and mismatch batches.
+const MAX_MIRROR_LAG_DAYS = 7;
 
 const ENDPOINTS = [
   "https://overpass-api.de/api/interpreter",
@@ -94,6 +97,10 @@ async function fetchQuery(query, preferredEndpoints = ENDPOINTS) {
         const payload = await response.json();
         if (!Array.isArray(payload.elements)) throw new Error("Overpass response has no elements array");
         if (clean(payload.remark)) throw new Error(`Overpass remark: ${payload.remark}`);
+        const base = Date.parse(payload.osm3s?.timestamp_osm_base ?? "");
+        if (!(Date.now() - base <= MAX_MIRROR_LAG_DAYS * 86_400_000)) {
+          throw new Error(`stale mirror: OSM data as of ${payload.osm3s?.timestamp_osm_base ?? "unknown"}`);
+        }
         return { endpoint, payload, retrieved_at: new Date().toISOString() };
       } catch (error) {
         lastError = error;

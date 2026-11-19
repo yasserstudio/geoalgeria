@@ -28,7 +28,7 @@ ticket via `/to-spec` → `/to-tickets`.
 | Lines with stops | 62 (122 without) |
 | Memberships | 2,685, all `osm_member_order_unvalidated` |
 | Per-Line freshness | none (only source retrieval dates) |
-| OSM snapshot | 2026-09-01 |
+| OSM snapshot | 2026-09-01 (refreshed 2026-11-19, P3) |
 
 Gaps by Operator (Lines / shape / stops / schedules): ETUSA 76/61/49/0,
 ETUS-C Constantine 25/0/0/0, Aïn Defla 16/1/1/0, Tlemcen 10/0/0/0,
@@ -113,6 +113,38 @@ This also closes **#308** for any Operator where a relation now exists.
 
 **Done when** the diff report is committed, every new relation is matched to
 one Line identity or listed as unmatched, and coverage tables are updated.
+
+**First refresh (2026-11-19), `qa/OSM-DIFF.md`:** pull 2026-11-19 vs
+2026-09-01, 218 vs 215 relations: 3 added, 0 removed, 100 changed, 115
+unchanged. The changes are real way edits (220 of 4,339 shared ways redrawn;
+one busy Algiers corridor carries many relations). Of the 128 shipped
+Directions, 74 changed in OSM (54 geometry only, 20 with member changes).
+
+- **P1 on the new pull:** no Direction verdict moves (36 / 69 / 23); path
+  order 20 → 21 is Tiaret 26, already inconsistent. The committed
+  `qa/report.json` stays on the 2026-09-01 snapshot, because it judges what
+  the package ships. The 74 changed Directions are re-promoted from the new
+  pull with the next release (batch B), each gated on P1 again.
+- **New relations:** none matches a package Line. ETUS Tiaret 33 Reverse
+  (Tiaret ships 26–32; two older 33 relations were already in the September
+  pull) and two ETUSTO shuttles Aéroport d'Alger ↔ Tizi Ouzou (no `ref`, no
+  ETUSTO Line with those termini). They are Line leads until an official
+  source confirms them.
+- **#308 stays open:** no Line without a shape gained an OSM geometry
+  candidate. Unattributed relations exist in Annaba, Tlemcen, Béjaïa and on
+  El Harrouch–Constantine, but none matches a listed Line's identity.
+- **Matching rule** (`qa/line-identity.mjs`, tested): a relation a Line
+  already lists is that Line's; otherwise Operator + line number (`02` = `2`,
+  `L02` = `L2`), falling back to the bare number (`2` → `AD-2`) only when one
+  Line of the Operator has it. Lettered variants (`106` vs `106B`) never match
+  automatically; they go through the reviewed approval lists.
+
+Collector hardening: a mirror whose `timestamp_osm_base` is more than 7 days
+old is rejected (`overpass.kumi.systems` served 2026-05-31 data on
+2026-11-19, which mixed with a current mirror's members and failed on deleted
+ways). Run: `collect-osm.mjs` → `analyze-candidates.mjs` →
+`qa/run-diff.mjs --previous <old osm/raw>`, plus `qa/run-qa.mjs --osm-dir`
+on the new pull to compare verdicts before re-promoting.
 
 ### P4. Geocode published stop lists (data repo, desk)
 
