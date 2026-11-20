@@ -172,7 +172,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/poste/atms.json` | JSON | 2,026 | ATM locations |
 | `data/poste/csv/*`, `data/poste/geojson/*` | CSV/GeoJSON | – | Postal data for spreadsheets / maps |
 
-> To map one wilaya, load only its file, for example Algiers: `https://cdn.jsdelivr.net/npm/geoalgeria@2.5.0/data/geojson/commune-boundaries/16.geojson`. Each file holds the national file's features for that wilaya, unchanged.
+> To map one wilaya, load only its file, for example Algiers: `https://cdn.jsdelivr.net/npm/geoalgeria/data/geojson/commune-boundaries/16.geojson`. Each file holds the national file's features for that wilaya, unchanged.
 
 > `data/poste/` is sourced from [Algérie Poste](https://baridimap.poste.dz). `commune_code` is normalized to join each commune's `code_commune`; `source_commune_code` preserves a differing provider-native value.
 
@@ -262,7 +262,7 @@ Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/iss
 
 ## Sponsor
 
-GeoAlgeria is free: MIT code and an MIT compilation, with five ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
+GeoAlgeria is free: MIT code and an MIT compilation, with six ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
 
 ---
 
@@ -300,7 +300,7 @@ Package **code** is [MIT](LICENSE), and so is the **compilation**: wilayas, dair
 their bilingual names, postal codes and administrative codes. Free for personal and commercial
 use.
 
-Five parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and
+Six parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and
 are licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
 
 - the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
@@ -315,6 +315,8 @@ are licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-
 - 6 of the 69 wilaya capital points, which are the same values again: a wilaya's coordinates
   are the centre of its capital commune, so wilayas 7, 16, 25, 32, 52 and 61 carry one of the
   coordinates above. The other 63 wilaya capital points are not OpenStreetMap-derived.
+- the `osm_relation_id` and `wikidata` values on the commune and wilaya records in
+  `data/algeria.json`, `data/communes_w*.json` and `data/wilayas.json`.
 
 If you use or redistribute any of those parts you must **attribute OpenStreetMap contributors**
 and keep derived databases under a compatible licence.

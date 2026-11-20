@@ -3,7 +3,7 @@
 // next large file is a decision, not a drift. 2.4.1 was 10.6 MB unpacked; 2.5.0
 // with the national and per-wilaya Commune outlines is about 19 MB.
 
-import { test } from "node:test";
+import { before, test } from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { dirname, join } from "node:path";
@@ -12,10 +12,15 @@ import { fileURLToPath } from "node:url";
 const DATASET = join(dirname(fileURLToPath(import.meta.url)), "..", "packages", "dataset");
 const MAX_UNPACKED_BYTES = 25 * 1000 * 1000;
 
-const [pack] = JSON.parse(
-  execFileSync("npm", ["pack", "--dry-run", "--json", "--ignore-scripts"], { cwd: DATASET, encoding: "utf-8", stdio: ["ignore", "pipe", "ignore"] }),
-);
-const paths = new Set(pack.files.map((f) => f.path));
+let pack;
+let paths;
+before(() => {
+  // stderr is kept so a failing pack names its reason.
+  [pack] = JSON.parse(
+    execFileSync("npm", ["pack", "--dry-run", "--json", "--ignore-scripts"], { cwd: DATASET, encoding: "utf-8", stdio: ["ignore", "pipe", "inherit"] }),
+  );
+  paths = new Set(pack.files.map((f) => f.path));
+});
 
 test("the geoalgeria package ships the per-wilaya Commune outlines", () => {
   for (let code = 1; code <= 69; code++) {

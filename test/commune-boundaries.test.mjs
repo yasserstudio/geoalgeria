@@ -30,6 +30,8 @@ import {
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
+/** The national file cut by wilaya_code (ADR 0004). */
+const PER_WILAYA = join(DATA, "geojson", "commune-boundaries");
 const read = (p) => JSON.parse(readFileSync(p, "utf-8"));
 
 const published = read(join(DATA, "geojson", "commune-boundaries.geojson"));
@@ -190,7 +192,7 @@ test("the committed file and sidecar are exactly what the builder produces", () 
   assert.equal(readFileSync(join(DATA, "geojson", "commune-boundaries.geojson"), "utf-8"), out.geo);
   assert.equal(readFileSync(join(DATA, "geojson", "commune-boundaries.metadata.json"), "utf-8"), out.meta);
   for (const [name, body] of out.perWilaya) {
-    assert.equal(readFileSync(join(DATA, "geojson", "commune-boundaries", name), "utf-8"), body, `commune-boundaries/${name}`);
+    assert.equal(readFileSync(join(PER_WILAYA, name), "utf-8"), body, `commune-boundaries/${name}`);
   }
 });
 
@@ -305,11 +307,9 @@ test("the bbox in the sidecar is the file's bbox", () => {
 // Per-wilaya files (ADR 0004): the national file cut by wilaya_code.
 // ---------------------------------------------------------------------------
 
-const PER_WILAYA = join(DATA, "geojson", "commune-boundaries");
-
 test("the per-wilaya folder holds exactly 1.geojson to 69.geojson", () => {
   const expected = Array.from({ length: 69 }, (_, i) => `${i + 1}.geojson`).sort();
-  assert.deepEqual(readdirSync(PER_WILAYA).sort(), expected);
+  assert.deepEqual(readdirSync(PER_WILAYA).filter((name) => !name.startsWith(".")).sort(), expected);
 });
 
 test("the per-wilaya files hold every national feature exactly once, unchanged, in national order, each in its own wilaya", () => {

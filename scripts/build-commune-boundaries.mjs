@@ -447,7 +447,7 @@ export const serialise = (b) => ({
 function perWilayaIsCurrent(perWilaya) {
   let names;
   try {
-    names = readdirSync(OUT_DIR);
+    names = readdirSync(OUT_DIR).filter((name) => !name.startsWith(".")); // Finder's .DS_Store is not a stale file
   } catch {
     return false;
   }
