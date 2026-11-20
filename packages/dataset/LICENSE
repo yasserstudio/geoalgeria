@@ -24,20 +24,28 @@ SOFTWARE.
 
 ## Data
 
-Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The 69 wilaya boundary polygons, 323 OpenStreetMap-derived commune centre coordinates and the OpenStreetMap relation ids and Wikidata items on the commune and wilaya records are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.
+Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The wilaya boundary polygons (simplified and detailed), the 1,541 commune boundary polygons, 323 OpenStreetMap-derived commune centre coordinates and the OpenStreetMap relation ids and Wikidata items on the commune and wilaya records are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.
 
 In detail, the data is compiled from public official sources. The compilation of
 wilayas, dairas, communes, their bilingual names, postal codes and administrative
 codes is offered under the MIT License above,
-https://opensource.org/licenses/MIT. Five parts are not:
+https://opensource.org/licenses/MIT. Seven parts are not:
 
-The four OpenStreetMap-derived parts are made available under the Open Database
+The six OpenStreetMap-derived parts are made available under the Open Database
 License (ODbL) 1.0, (c) OpenStreetMap contributors:
 
 https://opendatacommons.org/licenses/odbl/1-0/
 
 - The 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`,
   derived from OpenStreetMap `admin_level=4` relations.
+- The 1,541 commune boundary polygons in
+  `data/geojson/commune-boundaries.geojson`, from OpenStreetMap `admin_level=8`
+  relations. Three of them (communes 630, 2110 and 4703) come from the
+  geoBoundaries ADM3 release for Algeria, itself an OpenStreetMap extract
+  (https://www.geoboundaries.org), and one (1634) is the gap its neighbours leave.
+- The 69 detailed wilaya boundary polygons in
+  `data/geojson/wilaya-boundaries-detailed.geojson`, the union of those commune
+  polygons per wilaya.
 - 323 commune centre coordinates (`latitude` and `longitude`), each taken from
   that commune's own OpenStreetMap `admin_level=8` relation: 318 from its
   `admin_centre` node, 56 corrected on 2026-09-27, 189 on 2026-09-29, 5 on

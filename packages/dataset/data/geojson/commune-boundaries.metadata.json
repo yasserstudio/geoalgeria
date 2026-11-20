@@ -1,0 +1,154 @@
+{
+  "file": "commune-boundaries.geojson",
+  "title_en": "Algeria: commune boundary polygons (1,541)",
+  "title_fr": "Algérie: polygones des limites de commune (1,541)",
+  "title_ar": "الجزائر: حدود البلديات (1,541)",
+  "feature_count": 1541,
+  "geometry_types": {
+    "Polygon": 1533,
+    "MultiPolygon": 8
+  },
+  "properties": {
+    "name_fr": "commune name in French, copied from the commune record",
+    "name_ar": "commune name in Arabic, copied from the commune record",
+    "wilaya_code": "parent wilaya code as an integer 1-69 (join key to wilayas.json)",
+    "postal_code": "commune postal code, null for the 1 commune with no citable code",
+    "daira": "parent daira name in French",
+    "code_commune": "commune code as an integer (join key to the commune records, unique)"
+  },
+  "license": "ODbL-1.0",
+  "bbox": [
+    -8.669,
+    18.968,
+    11.997,
+    37.09
+  ],
+  "missing_codes": [],
+  "repaired_rings": [
+    {
+      "code_commune": 212,
+      "vertices_removed": 1,
+      "area_change_percent": 0
+    },
+    {
+      "code_commune": 230,
+      "vertices_removed": 1,
+      "area_change_percent": 0
+    },
+    {
+      "code_commune": 225,
+      "vertices_removed": 1,
+      "area_change_percent": 0.0001
+    },
+    {
+      "code_commune": 1319,
+      "vertices_removed": 4,
+      "area_change_percent": 0.0061
+    },
+    {
+      "code_commune": 1601,
+      "vertices_removed": 1,
+      "area_change_percent": 0.0079
+    },
+    {
+      "code_commune": 1622,
+      "vertices_removed": 1,
+      "area_change_percent": 0
+    },
+    {
+      "code_commune": 1629,
+      "vertices_removed": 2,
+      "area_change_percent": 0.0115
+    },
+    {
+      "code_commune": 1645,
+      "vertices_removed": 1,
+      "area_change_percent": 0.0135
+    },
+    {
+      "code_commune": 2110,
+      "vertices_removed": 2,
+      "area_change_percent": 0
+    },
+    {
+      "code_commune": 2301,
+      "vertices_removed": 3,
+      "area_change_percent": 0.024
+    },
+    {
+      "code_commune": 2310,
+      "vertices_removed": 1,
+      "area_change_percent": 0.0006
+    },
+    {
+      "code_commune": 3102,
+      "vertices_removed": 2,
+      "area_change_percent": 0.0017
+    },
+    {
+      "code_commune": 3115,
+      "vertices_removed": 1,
+      "area_change_percent": 0.0273
+    },
+    {
+      "code_commune": 3509,
+      "vertices_removed": 2,
+      "area_change_percent": 0.0008
+    },
+    {
+      "code_commune": 3511,
+      "vertices_removed": 2,
+      "area_change_percent": 0.0115
+    },
+    {
+      "code_commune": 4807,
+      "vertices_removed": 1,
+      "area_change_percent": 0.0001
+    }
+  ],
+  "derived_outlines": [
+    {
+      "code_commune": 1634,
+      "name_fr": "Bir Touta",
+      "wilaya_code": 16,
+      "area_km2": 27.6,
+      "shape_iou_with_geoboundaries": 0.996,
+      "point_inside_outline": false
+    }
+  ],
+  "origin": {
+    "A": "OpenStreetMap admin_level=8 outline from research/_commune-centres/commune-boundaries.json, matched by osm_relation_id",
+    "B": "geoBoundaries ADM3 polygon, attached only when all five Rule B clauses held (research/_commune-centres/commune-boundary-fills.json)",
+    "C": "as A, for a commune whose point lies outside its own outline; shipped only because an independent geoBoundaries polygon corroborates it. The point is unchanged.",
+    "E": "derived: the gap the neighbours and the wilaya outline leave, for a commune that is the only one in its wilaya without an outline, shipped only because an independent geoBoundaries polygon of the same commune overlaps it at shape IoU >= 0.9 (research/_commune-centres/commune-boundary-fills.json). The commune point is not moved even where it falls outside; see derived_outlines.",
+    "counts": {
+      "A": 1521,
+      "C": 16,
+      "B": 3,
+      "E": 1
+    }
+  },
+  "sources": [
+    {
+      "key": "osm-communes",
+      "name": "OpenStreetMap: commune boundaries (relation, boundary=administrative, admin_level=8) in Algeria, full geometry",
+      "url": "https://www.openstreetmap.org",
+      "retrieved": "2026-09-29",
+      "timestamp_osm_base": "2026-09-29T13:04:54Z",
+      "evidence_type": "crowdsourced"
+    }
+  ],
+  "simplification": {
+    "method": "Outlines taken from the committed cache (Douglas-Peucker 0.0005 degrees) and rounded to 4 decimals; Rule B polygons reduced from full resolution with Douglas-Peucker at 0.0005 degrees and rounded to 4 decimals. Exterior rings counter-clockwise.",
+    "coordinate_precision_dp": 4,
+    "vertices": 188258
+  },
+  "provenance_notes": [
+    "Identity comes from the commune records, never from a name: each feature is attached to its code_commune through the OSM relation id the record carries, or through the five-clause Rule B. Properties are copied from the records, not from any source file.",
+    "No commune point was read to be changed. The 16 communes in research/_commune-centres/containment-exceptions.json keep the point they have; their outlines ship under Rule C.",
+    "Licence: ODbL-1.0 is recorded, while the package itself declares SEE LICENSE IN LICENSE for its mixed terms, because the outlines are OpenStreetMap-derived; the package LICENSE and NOTICE list this file as an ODbL 1.0 part, (c) OpenStreetMap contributors. The geoBoundaries ADM3 file (OSM extract of 2023-01-19, geoBoundaries build of 2023-12-12, boundaryID DZA-ADM3-69997007) supplies the Rule B outlines and the Rule C corroboration; its stated source is OpenStreetMap via osm-boundaries.com, so its outlines carry the same ODbL terms, and NOTICE credits geoBoundaries for them.",
+    "repaired_rings lists every ring that touched itself after the cache's simplification or the 4-decimal rounding and was made simple by deleting 1 to 4 vertices; none changed its area by more than 0.03%.",
+    "No commune point was moved for a derived outline either: where the point falls outside it, derived_outlines says so.",
+    "Absent communes are listed in missing_codes with the reason. No outline was drawn to fill them."
+  ]
+}

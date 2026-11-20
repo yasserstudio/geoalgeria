@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commune boundaries test</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+  html, body, #map { margin: 0; height: 100%; font-family: system-ui, sans-serif; }
+  #panel { position: absolute; top: 12px; left: 12px; width: 280px; max-height: calc(100% - 24px);
+    display: flex; flex-direction: column; background: #fff; border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.25); font-size: 13px; overflow: hidden; }
+  #panel header { padding: 10px 12px; border-bottom: 1px solid #eee; }
+  #panel h1 { font-size: 15px; margin: 0 0 2px; }
+  #panel small { color: #666; }
+  #controls { padding: 8px 12px; border-bottom: 1px solid #eee; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  button { cursor: pointer; border: 1px solid #ccc; background: #f7f7f7; border-radius: 6px; padding: 4px 10px; font: inherit; }
+  button:hover { background: #eee; }
+  #list { overflow-y: auto; margin: 0; padding: 0; list-style: none; }
+  #list li { padding: 5px 12px; cursor: pointer; display: flex; justify-content: space-between; gap: 8px; }
+  #list li:hover, #list li.hot { background: #fff1e0; }
+  #list .ar { color: #666; direction: rtl; }
+  #status { padding: 6px 12px; color: #666; border-top: 1px solid #eee; }
+  .maplibregl-popup-content { font-size: 13px; line-height: 1.4; }
+  .maplibregl-popup-content .ar { direction: rtl; color: #555; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="panel">
+  <header>
+    <h1 id="title">Algeria: wilayas</h1>
+    <small id="sub">Click a wilaya to zoom in and see its communes.</small>
+  </header>
+  <div id="controls">
+    <button id="back" hidden>&larr; All wilayas</button>
+    <label><input type="checkbox" id="pts"> commune points</label>
+  </div>
+  <ul id="list"></ul>
+  <div id="status">Loading data...</div>
+</div>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script>
+// Serve the repo root first:  python3 -m http.server 8000   then open /research/_commune-centres/map-preview.html
+// Tried in order: relative to this page (works however the repo root is mounted), then absolute.
+const BASES = ["../../packages/dataset/data/", "/packages/dataset/data/", "packages/dataset/data/"];
+let G = BASES[0];
+async function findData() {
+  for (const b of BASES) {
+    try {
+      const r = await fetch(b + "wilayas.json");
+      if (r.ok) return b;
+    } catch (e) { /* try the next one */ }
+  }
+  throw new Error("cannot find packages/dataset/data. Serve the repo ROOT (python3 -m http.server 8000) and open /research/_commune-centres/map-preview.html; file:// does not work");
+}
+const fail = (e) => { $("status").textContent = "ERROR: " + e.message; $("status").style.color = "#b91c1c"; console.error(e); };
+const $ = (id) => document.getElementById(id);
+// MapLibre does not shape Arabic on its own: without this plugin the basemap's
+// Arabic labels render as disconnected, left-to-right letters.
+maplibregl.setRTLTextPlugin("https://unpkg.com/@mapbox/mapbox-gl-rtl-text@0.3.0/dist/mapbox-gl-rtl-text.js", false);
+const map = new maplibregl.Map({
+  container: "map",
+  style: "https://tiles.openfreemap.org/styles/bright",
+  bounds: [[-8.7, 18.9], [12.1, 37.2]],
+  fitBoundsOptions: { padding: 40 },
+});
+map.addControl(new maplibregl.NavigationControl(), "top-right");
+map.addControl(new maplibregl.ScaleControl());
+
+const bboxOf = (g) => {
+  const b = [Infinity, Infinity, -Infinity, -Infinity];
+  const walk = (c) => typeof c[0] === "number"
+    ? (b[0] = Math.min(b[0], c[0]), b[1] = Math.min(b[1], c[1]), b[2] = Math.max(b[2], c[0]), b[3] = Math.max(b[3], c[1]))
+    : c.forEach(walk);
+  walk(g.coordinates);
+  return b;
+};
+const fit = (g, opts = {}) => {
+  const b = bboxOf(g);
+  map.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding: 60, duration: 900, ...opts });
+};
+
+let wilayas = new Map();      // code -> {name_fr, name_ar}
+let wilayaGeom = new Map();   // code -> geometry
+let communes = [];            // features
+let selected = null;
+let hoverWilaya = null, hoverCommune = null;
+const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 8 });
+
+const setHover = (source, id, prev, on) => {
+  if (prev != null) map.setFeatureState({ source, id: prev }, { hover: false });
+  if (on != null) map.setFeatureState({ source, id: on }, { hover: true });
+  return on;
+};
+
+const getJSON = (path) => fetch(G + path).then((r) => {
+  if (!r.ok) throw new Error(`${r.status} for ${G + path}`);
+  return r.json();
+});
+
+map.on("load", () => start().catch(fail));
+
+async function start() {
+  G = await findData();
+  const [wil, wb, cb, cp] = await Promise.all([
+    getJSON("wilayas.json"),
+    getJSON("geojson/wilaya-boundaries-detailed.geojson"),
+    getJSON("geojson/commune-boundaries.geojson"),
+    getJSON("geojson/communes.geojson"),
+  ]);
+  wil.wilayas.forEach((w) => wilayas.set(w.code, w));
+  wb.features.forEach((f) => wilayaGeom.set(f.properties.code, f.geometry));
+  communes = cb.features;
+
+  map.addSource("wilayas", { type: "geojson", data: wb, promoteId: "code" });
+  map.addSource("communes", { type: "geojson", data: cb, promoteId: "code_commune" });
+  map.addSource("points", { type: "geojson", data: cp });
+
+  const hoverOr = (a, b) => ["case", ["boolean", ["feature-state", "hover"], false], a, b];
+
+  map.addLayer({ id: "wilaya-fill", type: "fill", source: "wilayas", paint: {
+    "fill-color": "#e8590c", "fill-opacity": hoverOr(0.45, 0.12) } });
+  map.addLayer({ id: "wilaya-line", type: "line", source: "wilayas", paint: {
+    "line-color": "#c2410c", "line-width": ["interpolate", ["linear"], ["zoom"], 4, 0.8, 9, 2] } });
+
+  const none = ["==", ["get", "wilaya_code"], -1];
+  map.addLayer({ id: "commune-fill", type: "fill", source: "communes", filter: none, paint: {
+    "fill-color": "#2563eb", "fill-opacity": hoverOr(0.5, 0.15) } });
+  map.addLayer({ id: "commune-line", type: "line", source: "communes", filter: none, paint: {
+    "line-color": "#1d4ed8", "line-width": hoverOr(2.5, 1) } });
+  map.addLayer({ id: "commune-label", type: "symbol", source: "communes", filter: none, minzoom: 8,
+    layout: { "text-field": ["get", "name_fr"], "text-size": 11, "text-font": ["Noto Sans Regular"] },
+    paint: { "text-color": "#1e3a8a", "text-halo-color": "#fff", "text-halo-width": 1.5 } });
+  map.addLayer({ id: "points", type: "circle", source: "points", filter: none,
+    layout: { visibility: "none" },
+    paint: { "circle-radius": 3.5, "circle-color": "#dc2626", "circle-stroke-color": "#fff", "circle-stroke-width": 1 } });
+
+  renderList();
+  $("status").textContent = `${wilayas.size} wilayas, ${communes.length} commune polygons loaded.`;
+
+  // wilaya hover and click (only while no wilaya is selected)
+  map.on("mousemove", "wilaya-fill", (e) => {
+    if (selected != null) return;
+    map.getCanvas().style.cursor = "pointer";
+    const f = e.features[0];
+    hoverWilaya = setHover("wilayas", null, hoverWilaya, f.properties.code);
+    const w = wilayas.get(f.properties.code);
+    popup.setLngLat(e.lngLat).setHTML(`<b>${f.properties.code} ${w?.name_fr ?? ""}</b><br><span class="ar">${w?.name_ar ?? ""}</span>`).addTo(map);
+  });
+  map.on("mouseleave", "wilaya-fill", () => {
+    map.getCanvas().style.cursor = "";
+    if (hoverWilaya != null) map.setFeatureState({ source: "wilayas", id: hoverWilaya }, { hover: false });
+    hoverWilaya = null;
+    if (selected == null) popup.remove();
+  });
+  map.on("click", "wilaya-fill", (e) => {
+    if (selected != null) return;
+    select(e.features[0].properties.code);
+  });
+
+  // commune hover and click
+  map.on("mousemove", "commune-fill", (e) => {
+    const f = e.features[0];
+    map.getCanvas().style.cursor = "pointer";
+    if (hoverCommune != null) map.setFeatureState({ source: "communes", id: hoverCommune }, { hover: false });
+    hoverCommune = f.properties.code_commune;
+    map.setFeatureState({ source: "communes", id: hoverCommune }, { hover: true });
+    const p = f.properties;
+    popup.setLngLat(e.lngLat).setHTML(
+      `<b>${p.name_fr}</b><br><span class="ar">${p.name_ar}</span><br>` +
+      `code ${p.code_commune} &middot; wilaya ${p.wilaya_code}<br>daira ${p.daira ?? "-"} &middot; postal ${p.postal_code ?? "-"}`).addTo(map);
+    document.querySelectorAll("#list li").forEach((li) => li.classList.toggle("hot", +li.dataset.code === hoverCommune));
+  });
+  map.on("mouseleave", "commune-fill", () => {
+    map.getCanvas().style.cursor = "";
+    if (hoverCommune != null) map.setFeatureState({ source: "communes", id: hoverCommune }, { hover: false });
+    hoverCommune = null;
+    popup.remove();
+    document.querySelectorAll("#list li.hot").forEach((li) => li.classList.remove("hot"));
+  });
+  map.on("click", "commune-fill", (e) => zoomCommune(e.features[0].properties.code_commune));
+}
+
+function select(code) {
+  selected = code;
+  popup.remove();
+  const f = ["==", ["get", "wilaya_code"], code];
+  ["commune-fill", "commune-line", "commune-label", "points"].forEach((l) => map.setFilter(l, f));
+  // the selected wilaya's own fill would sit over its communes: hide it, keep its outline
+  map.setFilter("wilaya-fill", ["!=", ["get", "code"], code]);
+  map.setPaintProperty("wilaya-line", "line-width", ["case", ["==", ["get", "code"], code], 3.5, 1]);
+  fit(wilayaGeom.get(code));
+  const w = wilayas.get(code);
+  const n = communes.filter((c) => c.properties.wilaya_code === code).length;
+  $("title").textContent = `${code} ${w.name_fr}`;
+  $("sub").textContent = `${n} commune outlines. Hover for details, click one to zoom.`;
+  $("back").hidden = false;
+  renderList();
+}
+
+function reset() {
+  selected = null;
+  popup.remove();
+  const none = ["==", ["get", "wilaya_code"], -1];
+  ["commune-fill", "commune-line", "commune-label", "points"].forEach((l) => map.setFilter(l, none));
+  map.setFilter("wilaya-fill", null);
+  map.setPaintProperty("wilaya-line", "line-width", ["interpolate", ["linear"], ["zoom"], 4, 0.8, 9, 2]);
+  map.fitBounds([[-8.7, 18.9], [12.1, 37.2]], { padding: 40, duration: 900 });
+  $("title").textContent = "Algeria: wilayas";
+  $("sub").textContent = "Click a wilaya to zoom in and see its communes.";
+  $("back").hidden = true;
+  renderList();
+}
+
+function zoomCommune(code) {
+  const f = communes.find((c) => c.properties.code_commune === code);
+  if (f) fit(f.geometry, { maxZoom: 12 });
+}
+
+function renderList() {
+  const ul = $("list");
+  ul.innerHTML = "";
+  const rows = selected == null
+    ? [...wilayas.values()].map((w) => ({ code: w.code, fr: w.name_fr, ar: w.name_ar, click: () => select(w.code) }))
+    : communes.filter((c) => c.properties.wilaya_code === selected)
+        .map((c) => ({ code: c.properties.code_commune, fr: c.properties.name_fr, ar: c.properties.name_ar, click: () => zoomCommune(c.properties.code_commune) }));
+  for (const r of rows) {
+    const li = document.createElement("li");
+    li.dataset.code = r.code;
+    li.innerHTML = `<span>${r.code} ${r.fr}</span><span class="ar">${r.ar}</span>`;
+    li.onclick = r.click;
+    li.onmouseenter = () => selected != null && map.setFeatureState({ source: "communes", id: r.code }, { hover: true });
+    li.onmouseleave = () => selected != null && map.setFeatureState({ source: "communes", id: r.code }, { hover: false });
+    ul.appendChild(li);
+  }
+}
+
+$("back").onclick = reset;
+document.addEventListener("keydown", (e) => e.key === "Escape" && selected != null && reset());
+$("pts").onchange = (e) => map.setLayoutProperty("points", "visibility", e.target.checked ? "visible" : "none");
+</script>
+</body>
+</html>

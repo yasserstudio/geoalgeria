@@ -92,7 +92,7 @@
       "cadence": "manual",
       "last_retrieved": null,
       "next_due": null,
-      "note": "Administrative divisions change only by JORA decree, not on a polling cadence, and are validated by packages/dataset/scripts/validate.py. Its data/poste/ tree is a generated mirror refreshed by the @geoalgeria/poste row."
+      "note": "Administrative divisions change only by JORA decree, not on a polling cadence, and are validated by packages/dataset/scripts/validate.py. Its data/poste/ tree is a generated mirror refreshed by the @geoalgeria/poste row. data/geojson/commune-boundaries.geojson is rebuilt offline from research/_commune-centres/commune-boundaries.json and commune-boundary-fills.json with `node scripts/build-commune-boundaries.mjs --write`, so it moves only when that OSM cache is refreshed, and data/geojson/wilaya-boundaries-detailed.geojson is dissolved from it with `node scripts/build-wilaya-boundaries-detailed.mjs --write`."
     },
     {
       "package": "@geoalgeria/djezzy",

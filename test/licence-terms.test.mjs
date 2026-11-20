@@ -584,7 +584,9 @@ test("a part whose own data is wholly under one licence may state it, once the n
 test("publishedMetadataPaths finds every data descriptor and not dataset-metadata.json", () => {
   const root = join(dirname(fileURLToPath(import.meta.url)), "..");
   assert.deepEqual(publishedMetadataPaths(join(root, "packages", "dataset")), [
+    "data/geojson/commune-boundaries.metadata.json",
     "data/geojson/communes.metadata.json",
+    "data/geojson/wilaya-boundaries-detailed.metadata.json",
     "data/geojson/wilaya-boundaries.metadata.json",
     "data/osm-links.metadata.json",
     "data/poste/metadata.json",

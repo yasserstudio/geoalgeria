@@ -160,6 +160,8 @@ sqlite3 mydb.sqlite < full.sql
 | `data/csv/communes.csv` | CSV | 1,541 | جداول البيانات، الاستيراد |
 | `data/geojson/wilayas.geojson` | GeoJSON | 69 | الخرائط، نظم المعلومات الجغرافية |
 | `data/geojson/communes.geojson` | GeoJSON | 1,541 | الخرائط، نظم المعلومات الجغرافية |
+| `data/geojson/commune-boundaries.geojson` | GeoJSON | 1,541 | مضلعات البلديات، الربط عبر `code_commune` |
+| `data/geojson/wilaya-boundaries-detailed.geojson` | GeoJSON | 69 | حدود الولايات بدقة البلديات، ناتجة عن دمج حدود البلديات |
 | `data/sql/full.sql` | SQL | 69 + 1,541 | قاعدة بيانات مُطبّعة |
 | `data/ecommerce/communes.json` | JSON | 1,541 | نماذج العناوين، القوائم المنسدلة |
 | `data/ecommerce/communes.csv` | CSV | 1,541 | استيراد مسطّح |

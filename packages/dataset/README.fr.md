@@ -160,6 +160,8 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 | `data/csv/communes.csv` | CSV | 1 541 | Tableurs, imports |
 | `data/geojson/wilayas.geojson` | GeoJSON | 69 | Cartes, SIG |
 | `data/geojson/communes.geojson` | GeoJSON | 1 541 | Cartes, SIG |
+| `data/geojson/commune-boundaries.geojson` | GeoJSON | 1 541 | Polygones des communes, jointure sur `code_commune` |
+| `data/geojson/wilaya-boundaries-detailed.geojson` | GeoJSON | 69 | Limites de wilaya au niveau de détail des communes, issues de la fusion des communes |
 | `data/sql/full.sql` | SQL | 69 + 1 541 | Base de données normalisée |
 | `data/ecommerce/communes.json` | JSON | 1 541 | Formulaires d'adresse, menus déroulants |
 | `data/ecommerce/communes.csv` | CSV | 1 541 | Import plat |
