@@ -45,7 +45,7 @@
   "provenance_notes": [
     "Derived, not drawn: a wilaya's outline is the union of the outlines of the communes the records place in it (wilaya_code), so the line follows commune membership, including the 2019 and 2026 reforms and the three communes moved to Touggourt and Ghardaia.",
     "wilaya-boundaries.geojson is unchanged and remains the simplified, hand-corrected display outline. The two agree on every wilaya's area to within 2%; this one follows commune borders and the coast at commune detail.",
-    "Licence: ODbL-1.0 is recorded, while the package itself declares SEE LICENSE IN LICENSE for its mixed terms, because the outlines are OpenStreetMap-derived and the validator needs a stated term; it is provisional and the final licence decision is deferred. The three communes drawn from geoBoundaries ADM3 and the one derived gap (see commune-boundaries.metadata.json) are included in the unions.",
+    "Licence: ODbL-1.0 is recorded, while the package itself declares SEE LICENSE IN LICENSE for its mixed terms, because the outlines are OpenStreetMap-derived; the package LICENSE and NOTICE list this file as an ODbL 1.0 part, (c) OpenStreetMap contributors. The three communes drawn from geoBoundaries ADM3 and the one derived gap (see commune-boundaries.metadata.json) are included in the unions.",
     "Gaps between communes of one wilaya are closed by dropping holes under 5 km2; they are simplification slivers, not territory."
   ]
 }

@@ -42,7 +42,7 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script>
-// Serve the repo root first:  python3 -m http.server 8000   then open /test/ui/map-test.html
+// Serve the repo root first:  python3 -m http.server 8000   then open /research/_commune-centres/map-preview.html
 // Tried in order: relative to this page (works however the repo root is mounted), then absolute.
 const BASES = ["../../packages/dataset/data/", "/packages/dataset/data/", "packages/dataset/data/"];
 let G = BASES[0];
@@ -53,7 +53,7 @@ async function findData() {
       if (r.ok) return b;
     } catch (e) { /* try the next one */ }
   }
-  throw new Error("cannot find packages/dataset/data. Serve the repo ROOT (python3 -m http.server 8000) and open /test/ui/map-test.html; file:// does not work");
+  throw new Error("cannot find packages/dataset/data. Serve the repo ROOT (python3 -m http.server 8000) and open /research/_commune-centres/map-preview.html; file:// does not work");
 }
 const fail = (e) => { $("status").textContent = "ERROR: " + e.message; $("status").style.color = "#b91c1c"; console.error(e); };
 const $ = (id) => document.getElementById(id);
