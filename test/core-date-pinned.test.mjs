@@ -91,7 +91,9 @@ const EXPECTED_CARRIERS = [
   "wilaya-capitals.metadata.json",
   "wilayas.csv",
   "wilayas.json",
-];
+  // The national Commune outlines cut by wilaya (ADR 0004), generated from the file above.
+  ...Array.from({ length: 69 }, (_, i) => `geojson/commune-boundaries/${i + 1}.geojson`),
+].sort();
 
 test("the core's carriers are every published data file but the postal mirror", () => {
   assert.deepEqual(coreCarriers(PKG), EXPECTED_CARRIERS);

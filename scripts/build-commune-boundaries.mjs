@@ -33,7 +33,7 @@
 //   node scripts/build-commune-boundaries.mjs --write      build the dataset and sidecar
 //   node scripts/build-commune-boundaries.mjs --check      fail if either differs from disk
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import polygonClipping from "polygon-clipping";
@@ -58,6 +58,9 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATASET = join(ROOT, "packages", "dataset", "data");
 const OUT = join(DATASET, "geojson", "commune-boundaries.geojson");
 const OUT_META = join(DATASET, "geojson", "commune-boundaries.metadata.json");
+/** The national file cut by wilaya_code, one file per wilaya (ADR 0004). */
+const OUT_DIR = join(DATASET, "geojson", "commune-boundaries");
+const WILAYA_CODES = Array.from({ length: 69 }, (_, i) => i + 1);
 const CENTRES = join(ROOT, "research", "_commune-centres");
 const CACHE = join(CENTRES, "commune-boundaries.json");
 const EXCEPTIONS = join(CENTRES, "containment-exceptions.json");
@@ -371,6 +374,13 @@ function metadata(b) {
   const fmt = (v) => v.toLocaleString("en-US");
   return {
     file: "commune-boundaries.geojson",
+    per_wilaya_files: {
+      folder: "commune-boundaries/",
+      names: "<wilaya_code>.geojson, 1.geojson to 69.geojson, code unpadded",
+      rule: "each file holds this file's features whose wilaya_code is that code, in this file's order, with the same properties and coordinates",
+      generated:
+        "written from this file by scripts/build-commune-boundaries.mjs in the same run and checked byte for byte; never edited on its own",
+    },
     title_en: `Algeria: commune boundary polygons (${fmt(n)})`,
     title_fr: `Algérie: polygones des limites de commune (${fmt(n)})`,
     title_ar: `الجزائر: حدود البلديات (${fmt(n)})`,
@@ -423,10 +433,27 @@ function metadata(b) {
   };
 }
 
+const collection = (features) => `${JSON.stringify({ type: "FeatureCollection", features })}\n`;
+
 export const serialise = (b) => ({
-  geo: `${JSON.stringify({ type: "FeatureCollection", features: b.features })}\n`,
+  geo: collection(b.features),
   meta: `${JSON.stringify(metadata(b), null, 2)}\n`,
+  /** File name -> contents for the per-wilaya folder: the national features of that wilaya, in national order. */
+  perWilaya: new Map(
+    WILAYA_CODES.map((code) => [`${code}.geojson`, collection(b.features.filter((f) => f.properties.wilaya_code === code))]),
+  ),
 });
+
+function perWilayaIsCurrent(perWilaya) {
+  let names;
+  try {
+    names = readdirSync(OUT_DIR).filter((name) => !name.startsWith(".")); // Finder's .DS_Store is not a stale file
+  } catch {
+    return false;
+  }
+  if (names.length !== perWilaya.size) return false;
+  return [...perWilaya].every(([name, body]) => names.includes(name) && readFileSync(join(OUT_DIR, name), "utf-8") === body);
+}
 
 function main() {
   const argv = process.argv.slice(2);
@@ -438,11 +465,17 @@ function main() {
   if (argv.includes("--write")) {
     writeFileSync(OUT, out.geo);
     writeFileSync(OUT_META, out.meta);
-    console.log(`wrote ${OUT} (${out.geo.length} bytes) and ${OUT_META}`);
+    rmSync(OUT_DIR, { recursive: true, force: true });
+    mkdirSync(OUT_DIR);
+    for (const [name, body] of out.perWilaya) writeFileSync(join(OUT_DIR, name), body);
+    console.log(`wrote ${OUT} (${out.geo.length} bytes), ${OUT_META} and ${out.perWilaya.size} files in ${OUT_DIR}`);
   } else if (argv.includes("--check")) {
-    const same = readFileSync(OUT, "utf-8") === out.geo && readFileSync(OUT_META, "utf-8") === out.meta;
+    const same =
+      readFileSync(OUT, "utf-8") === out.geo &&
+      readFileSync(OUT_META, "utf-8") === out.meta &&
+      perWilayaIsCurrent(out.perWilaya);
     if (!same) {
-      console.error("commune-boundaries.geojson or its metadata is stale; run with --write");
+      console.error("commune-boundaries.geojson, its metadata or the per-wilaya files are stale; run with --write");
       process.exit(1);
     }
     console.log("commune boundaries are current");

@@ -31,7 +31,13 @@ const pkgPaths = readdirSync(PKGS)
   .filter((p) => p.name && !p.private)
   .map((p) => `npm/${p.name}`)
   .sort();
-const EXTRA_PATHS = ["npm/geoalgeria/data/ecommerce/communes.json"]; // advertised in the README
+// Advertised in the README.
+const EXTRA_PATHS = [
+  "npm/geoalgeria/data/ecommerce/communes.json",
+  "npm/geoalgeria/data/geojson/commune-boundaries.geojson",
+  "npm/geoalgeria/data/geojson/wilaya-boundaries-detailed.geojson",
+  "npm/geoalgeria/data/geojson/commune-boundaries/16.geojson",
+];
 
 const paths = [...pkgPaths, ...EXTRA_PATHS, ...process.argv.slice(2)];
 

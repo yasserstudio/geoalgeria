@@ -43,6 +43,8 @@ https://opendatacommons.org/licenses/odbl/1-0/
   relations. Three of them (communes 630, 2110 and 4703) come from the
   geoBoundaries ADM3 release for Algeria, itself an OpenStreetMap extract
   (https://www.geoboundaries.org), and one (1634) is the gap its neighbours leave.
+  The same polygons cut by wilaya, in `data/geojson/commune-boundaries/`, belong
+  to this part.
 - The 69 detailed wilaya boundary polygons in
   `data/geojson/wilaya-boundaries-detailed.geojson`, the union of those commune
   polygons per wilaya.

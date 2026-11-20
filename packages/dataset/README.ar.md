@@ -160,8 +160,9 @@ sqlite3 mydb.sqlite < full.sql
 | `data/csv/communes.csv` | CSV | 1,541 | جداول البيانات، الاستيراد |
 | `data/geojson/wilayas.geojson` | GeoJSON | 69 | الخرائط، نظم المعلومات الجغرافية |
 | `data/geojson/communes.geojson` | GeoJSON | 1,541 | الخرائط، نظم المعلومات الجغرافية |
-| `data/geojson/commune-boundaries.geojson` | GeoJSON | 1,541 | مضلعات البلديات، الربط عبر `code_commune` |
-| `data/geojson/wilaya-boundaries-detailed.geojson` | GeoJSON | 69 | حدود الولايات بدقة البلديات، ناتجة عن دمج حدود البلديات |
+| `data/geojson/commune-boundaries.geojson` | GeoJSON | 1,541 | حدود البلديات، الربط عبر `code_commune` (ODbL) |
+| `data/geojson/wilaya-boundaries-detailed.geojson` | GeoJSON | 69 | حدود الولايات بدقة البلديات، ناتجة عن دمج حدود البلديات (ODbL) |
+| `data/geojson/commune-boundaries/<code>.geojson` | GeoJSON | 69 ملفا | حدود بلديات ولاية واحدة، حسب رمز الولاية من 1 إلى 69 (ODbL) |
 | `data/sql/full.sql` | SQL | 69 + 1,541 | قاعدة بيانات مُطبّعة |
 | `data/ecommerce/communes.json` | JSON | 1,541 | نماذج العناوين، القوائم المنسدلة |
 | `data/ecommerce/communes.csv` | CSV | 1,541 | استيراد مسطّح |
@@ -170,6 +171,8 @@ sqlite3 mydb.sqlite < full.sql
 | `data/poste/postoffices.json` | JSON | 3,908 | مكاتب البريد (رموز حقيقية، إحداثيات) |
 | `data/poste/atms.json` | JSON | 2,026 | مواقع الصرافات الآلية |
 | `data/poste/csv/*`، `data/poste/geojson/*` | CSV/GeoJSON | – | بيانات بريدية لجداول البيانات / الخرائط |
+
+> لرسم خريطة ولاية واحدة، حمّل ملفها فقط، مثلا الجزائر العاصمة: `https://cdn.jsdelivr.net/npm/geoalgeria/data/geojson/commune-boundaries/16.geojson`. يحتوي كل ملف على عناصر الملف الوطني الخاصة بتلك الولاية دون أي تغيير.
 
 > `data/poste/` مصدره [بريد الجزائر](https://baridimap.poste.dz). يُوحَّد `commune_code` ليرتبط بـ `code_commune` لكل بلدية، ويحتفظ `source_commune_code` بقيمة المزوّد الأصلية عندما تختلف.
 
@@ -259,7 +262,7 @@ sqlite3 mydb.sqlite < full.sql
 
 ## الرعاية
 
-GeoAlgeria مجاني، شيفرته وتجميعه بترخيص MIT مع ثلاثة أجزاء بترخيص ODbL وبيانات بريد الجزائر المنسوخة، جميعها مذكورة أدناه. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
+GeoAlgeria مجاني، شيفرته وتجميعه بترخيص MIT مع ستة أجزاء بترخيص ODbL وبيانات بريد الجزائر المنسوخة، جميعها مذكورة أدناه. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
 
 ---
 
@@ -296,10 +299,13 @@ GeoAlgeria هي الخيار الأكثر اكتمالاً في 2026 – هي ح
 **شيفرة** الحزمة بترخيص [MIT](LICENSE)، وكذلك **التجميع**: الولايات والدوائر والبلديات
 وأسماؤها ثنائية اللغة والرموز البريدية والرموز الإدارية. مجاني للاستخدام الشخصي والتجاري.
 
-ثلاثة أجزاء من البيانات مصدرها **OpenStreetMap**، وهي **© مساهمو OpenStreetMap** وبترخيص
+ستة أجزاء من البيانات مصدرها **OpenStreetMap**، وهي **© مساهمو OpenStreetMap** وبترخيص
 **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** بدلًا من ذلك:
 
 - الـ69 مضلّع حدود ولاية في `data/geojson/wilaya-boundaries.geojson`؛
+- حدود البلديات الـ1,541 في `data/geojson/commune-boundaries.geojson`، والحدود نفسها مقسّمة حسب
+  الولاية في `data/geojson/commune-boundaries/`؛
+- حدود الولايات الـ69 المفصّلة في `data/geojson/wilaya-boundaries-detailed.geojson`؛
 - 323 من أصل 1,541 إحداثية مركز بلدية، كل واحدة مأخوذة من علاقة `admin_level=8` الخاصة بالبلدية
   نفسها (318 من عقدة `admin_centre`: 56 بتاريخ 2026-09-27 و189 بتاريخ 2026-09-29 و5 بتاريخ
   2026-10-01 و68 بتاريخ 2026-10-01 عبر مراجعة الإحداثيات، التي لا تكتب قيمة إلا حين تصوّت لها
@@ -307,6 +313,8 @@ GeoAlgeria هي الخيار الأكثر اكتمالاً في 2026 – هي ح
 - 6 من أصل 69 نقطة مقر ولاية، وهي نفس القيم: إحداثيات الولاية هي مركز بلدية مقرها، لذلك
   تحمل الولايات 7 و 16 و 25 و 32 و 52 و 61 إحدى الإحداثيات أعلاه، أما نقاط مقرات
   الولايات الـ 63 الأخرى فليس مصدرها OpenStreetMap.
+- قيم `osm_relation_id` و`wikidata` في سجلات البلديات والولايات ضمن
+  `data/algeria.json` و`data/communes_w*.json` و`data/wilayas.json`.
 
 عند استخدامك أو إعادة نشرك لأيٍّ من هذه الأجزاء يجب **إسناد الفضل لمساهمي OpenStreetMap**
 وإبقاء القواعد المُشتقّة تحت ترخيصٍ متوافق.
