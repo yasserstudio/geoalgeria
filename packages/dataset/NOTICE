@@ -32,6 +32,10 @@ https://www.openstreetmap.org/copyright
    neighbours and the wilaya outline leave. Provenance, every repaired ring and
    every exception is in data/geojson/commune-boundaries.metadata.json.
 
+   The same outlines are published cut by wilaya, one file per wilaya code, in
+   data/geojson/commune-boundaries/ (for example 16.geojson). They are generated
+   from the national file and carry the same terms and credits.
+
 3. Detailed wilaya boundary polygons
 
    data/geojson/wilaya-boundaries-detailed.geojson, 69 features, the union of

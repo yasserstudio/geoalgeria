@@ -11,7 +11,7 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import polygonClipping from "polygon-clipping";
@@ -189,6 +189,9 @@ test("the committed file and sidecar are exactly what the builder produces", () 
   const out = serialise(build());
   assert.equal(readFileSync(join(DATA, "geojson", "commune-boundaries.geojson"), "utf-8"), out.geo);
   assert.equal(readFileSync(join(DATA, "geojson", "commune-boundaries.metadata.json"), "utf-8"), out.meta);
+  for (const [name, body] of out.perWilaya) {
+    assert.equal(readFileSync(join(DATA, "geojson", "commune-boundaries", name), "utf-8"), body, `commune-boundaries/${name}`);
+  }
 });
 
 // ---------------------------------------------------------------------------
@@ -296,4 +299,27 @@ test("each wilaya's communes tile it: the union is within 1% of the wilaya (2% f
 test("the bbox in the sidecar is the file's bbox", () => {
   const b = bboxOf(features.flatMap((f) => polygonsOf(f.geometry)));
   assert.deepEqual(meta.bbox, b.map((v) => Number(v.toFixed(3))));
+});
+
+// ---------------------------------------------------------------------------
+// Per-wilaya files (ADR 0004): the national file cut by wilaya_code.
+// ---------------------------------------------------------------------------
+
+const PER_WILAYA = join(DATA, "geojson", "commune-boundaries");
+
+test("the per-wilaya folder holds exactly 1.geojson to 69.geojson", () => {
+  const expected = Array.from({ length: 69 }, (_, i) => `${i + 1}.geojson`).sort();
+  assert.deepEqual(readdirSync(PER_WILAYA).sort(), expected);
+});
+
+test("the per-wilaya files hold every national feature exactly once, unchanged, in national order, each in its own wilaya", () => {
+  const joined = [];
+  for (let code = 1; code <= 69; code++) {
+    const doc = read(join(PER_WILAYA, `${code}.geojson`));
+    assert.equal(doc.type, "FeatureCollection");
+    assert.ok(doc.features.length > 0, `wilaya ${code} has no commune outline`);
+    for (const f of doc.features) assert.equal(f.properties.wilaya_code, code, `commune ${f.properties.code_commune} in ${code}.geojson`);
+    joined.push(...doc.features);
+  }
+  assert.deepEqual(joined.map((f) => JSON.stringify(f)), features.map((f) => JSON.stringify(f)));
 });

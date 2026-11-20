@@ -1,5 +1,11 @@
 {
   "file": "commune-boundaries.geojson",
+  "per_wilaya_files": {
+    "folder": "commune-boundaries/",
+    "names": "<wilaya_code>.geojson, 1.geojson to 69.geojson, code unpadded",
+    "rule": "each file holds this file's features whose wilaya_code is that code, in this file's order, with the same properties and coordinates",
+    "generated": "written from this file by scripts/build-commune-boundaries.mjs in the same run and checked byte for byte; never edited on its own"
+  },
   "title_en": "Algeria: commune boundary polygons (1,541)",
   "title_fr": "Algérie: polygones des limites de commune (1,541)",
   "title_ar": "الجزائر: حدود البلديات (1,541)",

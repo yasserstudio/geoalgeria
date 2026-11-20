@@ -160,8 +160,9 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/csv/communes.csv` | CSV | 1,541 | Spreadsheets, imports |
 | `data/geojson/wilayas.geojson` | GeoJSON | 69 | Maps, GIS |
 | `data/geojson/communes.geojson` | GeoJSON | 1,541 | Maps, GIS |
-| `data/geojson/commune-boundaries.geojson` | GeoJSON | 1,541 | Commune polygons, join on `code_commune` |
-| `data/geojson/wilaya-boundaries-detailed.geojson` | GeoJSON | 69 | Wilaya outlines at commune detail, dissolved from the commune boundaries |
+| `data/geojson/commune-boundaries.geojson` | GeoJSON | 1,541 | Commune outlines, join on `code_commune` (ODbL) |
+| `data/geojson/wilaya-boundaries-detailed.geojson` | GeoJSON | 69 | Wilaya outlines at commune detail, the union of the commune outlines (ODbL) |
+| `data/geojson/commune-boundaries/<code>.geojson` | GeoJSON | 69 files | One wilaya's commune outlines, by wilaya code 1 to 69 (ODbL) |
 | `data/sql/full.sql` | SQL | 69 + 1,541 | Normalized database |
 | `data/ecommerce/communes.json` | JSON | 1,541 | Address forms, dropdowns |
 | `data/ecommerce/communes.csv` | CSV | 1,541 | Flat import |
@@ -170,6 +171,8 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/poste/postoffices.json` | JSON | 3,908 | Post offices (real codes, coords) |
 | `data/poste/atms.json` | JSON | 2,026 | ATM locations |
 | `data/poste/csv/*`, `data/poste/geojson/*` | CSV/GeoJSON | – | Postal data for spreadsheets / maps |
+
+> To map one wilaya, load only its file, for example Algiers: `https://cdn.jsdelivr.net/npm/geoalgeria@2.5.0/data/geojson/commune-boundaries/16.geojson`. Each file holds the national file's features for that wilaya, unchanged.
 
 > `data/poste/` is sourced from [Algérie Poste](https://baridimap.poste.dz). `commune_code` is normalized to join each commune's `code_commune`; `source_commune_code` preserves a differing provider-native value.
 
@@ -259,7 +262,7 @@ Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/iss
 
 ## Sponsor
 
-GeoAlgeria is free: MIT code and an MIT compilation, with three ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
+GeoAlgeria is free: MIT code and an MIT compilation, with five ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
 
 ---
 
@@ -297,10 +300,13 @@ Package **code** is [MIT](LICENSE), and so is the **compilation**: wilayas, dair
 their bilingual names, postal codes and administrative codes. Free for personal and commercial
 use.
 
-Three parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and
+Five parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and
 are licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
 
 - the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
+- the 1,541 commune outlines in `data/geojson/commune-boundaries.geojson` and the same outlines
+  cut by wilaya in `data/geojson/commune-boundaries/`;
+- the 69 detailed wilaya outlines in `data/geojson/wilaya-boundaries-detailed.geojson`;
 - 323 of the 1,541 commune centre coordinates, each taken from that commune's own
   `admin_level=8` relation (318 from its `admin_centre` node, 56 on 2026-09-27, 189 on
   2026-09-29, 5 on 2026-10-01 and 68 on 2026-10-01 by the coordinate review, which writes a

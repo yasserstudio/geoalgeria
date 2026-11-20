@@ -160,8 +160,9 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 | `data/csv/communes.csv` | CSV | 1 541 | Tableurs, imports |
 | `data/geojson/wilayas.geojson` | GeoJSON | 69 | Cartes, SIG |
 | `data/geojson/communes.geojson` | GeoJSON | 1 541 | Cartes, SIG |
-| `data/geojson/commune-boundaries.geojson` | GeoJSON | 1 541 | Polygones des communes, jointure sur `code_commune` |
-| `data/geojson/wilaya-boundaries-detailed.geojson` | GeoJSON | 69 | Limites de wilaya au niveau de détail des communes, issues de la fusion des communes |
+| `data/geojson/commune-boundaries.geojson` | GeoJSON | 1 541 | Contours des communes, jointure sur `code_commune` (ODbL) |
+| `data/geojson/wilaya-boundaries-detailed.geojson` | GeoJSON | 69 | Contours des wilayas au niveau de détail des communes, union des contours des communes (ODbL) |
+| `data/geojson/commune-boundaries/<code>.geojson` | GeoJSON | 69 fichiers | Les contours des communes d'une seule wilaya, par code de wilaya de 1 à 69 (ODbL) |
 | `data/sql/full.sql` | SQL | 69 + 1 541 | Base de données normalisée |
 | `data/ecommerce/communes.json` | JSON | 1 541 | Formulaires d'adresse, menus déroulants |
 | `data/ecommerce/communes.csv` | CSV | 1 541 | Import plat |
@@ -170,6 +171,8 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 | `data/poste/postoffices.json` | JSON | 3 908 | Bureaux de poste (codes réels, coordonnées) |
 | `data/poste/atms.json` | JSON | 2 026 | Emplacements des distributeurs |
 | `data/poste/csv/*`, `data/poste/geojson/*` | CSV/GeoJSON | – | Données postales pour tableurs / cartes |
+
+> Pour cartographier une seule wilaya, chargez uniquement son fichier, par exemple Alger : `https://cdn.jsdelivr.net/npm/geoalgeria@2.5.0/data/geojson/commune-boundaries/16.geojson`. Chaque fichier contient les entités du fichier national pour cette wilaya, sans modification.
 
 > `data/poste/` provient d'[Algérie Poste](https://baridimap.poste.dz). `commune_code` est normalisé pour se joindre au `code_commune` de chaque commune ; `source_commune_code` conserve une valeur native différente du fournisseur.
 
@@ -259,7 +262,7 @@ Des données incorrectes ? [Ouvrez une issue](https://github.com/yasserstudio/g
 
 ## Sponsoriser
 
-GeoAlgeria est gratuit : code MIT et compilation MIT, avec trois parties sous ODbL et les données Algérie Poste miroir indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
+GeoAlgeria est gratuit : code MIT et compilation MIT, avec cinq parties sous ODbL et les données Algérie Poste miroir indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
 
 ---
 
@@ -297,10 +300,13 @@ Le **code** du paquet est sous [MIT](LICENSE), ainsi que la **compilation** : w
 communes, leurs noms bilingues, codes postaux et codes administratifs. Libre pour usage
 personnel et commercial.
 
-Trois parties des données proviennent d'**OpenStreetMap**, sont **© les contributeurs
+Cinq parties des données proviennent d'**OpenStreetMap**, sont **© les contributeurs
 d'OpenStreetMap** et sont sous licence **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** :
 
 - les 69 polygones de limites de wilaya dans `data/geojson/wilaya-boundaries.geojson` ;
+- les 1 541 contours de communes dans `data/geojson/commune-boundaries.geojson` et les mêmes
+  contours découpés par wilaya dans `data/geojson/commune-boundaries/` ;
+- les 69 contours détaillés de wilayas dans `data/geojson/wilaya-boundaries-detailed.geojson` ;
 - 323 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
   `admin_level=8` de la commune elle-même (318 de son nœud `admin_centre`, 56 le 2026-09-27,
   189 le 2026-09-29, 5 le 2026-10-01 et 68 le 2026-10-01 par la revue des coordonnées, qui
