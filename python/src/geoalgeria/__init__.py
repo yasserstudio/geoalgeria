@@ -22,7 +22,7 @@ __all__ = [
     "wilayas", "wilaya", "communes", "commune", "dairas", "lineage", "search", "normalize",
     "conservative_key", "loose_key", "tokenize", "DATA_VERSION",
 ]
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 Record = Dict[str, Any]
 

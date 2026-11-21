@@ -22,7 +22,7 @@ Conservative key, Loose key, Rule, Golden corpus.
 | `packages/schema/` | `@geoalgeria/schema` | shared v2 contract – types, validator, canonical metadata/manifest builders, emit helpers; a dev dependency of every generator, not itself a dataset |
 | `packages/normalize/` | `@geoalgeria/normalize` | Search key generation, the Conservative key, the Loose key, the tokenizer and their Golden corpus; code only, zero dependencies, published so every consumer folds a name the same way |
 | `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ mirrored postal data) |
-| `python/` | `geoalgeria` (PyPI) | Python package over the `packages/dataset` wilayas and communes; `build_data.py` copies the data, LICENSE and NOTICE; not a pnpm workspace member |
+| `python/` | `geoalgeria` (PyPI) | Python package over the `packages/dataset` wilayas, dairas, communes, Wilaya lineage and name history, with `search()` ported from the npm one; `build_data.py` copies the data, LICENSE and NOTICE; its pytest suite reads the Golden corpus and search expectations from `packages/` with Node (CI job `python`); not a pnpm workspace member |
 | `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |
 | `packages/mobilis/` | `@geoalgeria/mobilis` | Mobilis agencies & approved points of sale (mobilis.dz) |

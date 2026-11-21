@@ -339,7 +339,7 @@ in `release.yml`, release it by hand after a `geoalgeria` data release:
 ```bash
 cd python
 python build_data.py                     # copies data, LICENSE, NOTICE from packages/dataset
-uv run --with pytest --with-editable . pytest -q
+uv run --with pytest --with-editable . pytest -q   # needs Node and a root pnpm install
 # bump version in pyproject.toml and __version__ in src/geoalgeria/__init__.py
 rm -rf dist && uv build
 read -rs "UV_PUBLISH_TOKEN?Token: " && export UV_PUBLISH_TOKEN && uv publish

@@ -67,3 +67,12 @@ def test_limit_and_types_arguments():
 def test_results_are_fresh_objects():
     g.search("oran")[0]["name_fr"] = "x"
     assert g.search("oran")[0]["name_fr"] != "x"
+
+
+def test_the_readme_example_runs():
+    import doctest
+    from pathlib import Path
+
+    readme = Path(__file__).resolve().parents[1] / "README.md"
+    result = doctest.testfile(str(readme), module_relative=False, globs={"geoalgeria": g})
+    assert result.attempted and not result.failed
