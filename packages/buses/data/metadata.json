@@ -4,11 +4,11 @@
   "title_fr": "Lignes de bus urbaines et suburbaines d'Algérie",
   "title_ar": "خطوط الحافلات الحضرية وشبه الحضرية في الجزائر",
   "title_en": "Algeria urban and suburban bus lines",
-  "record_count": 1787,
-  "geocoded_count": 1603,
+  "record_count": 1783,
+  "geocoded_count": 1599,
   "geocoded_pct": 89.7,
   "precision": {
-    "exact": 1600,
+    "exact": 1596,
     "approximate": 3
   },
   "estimated_universe": null,
@@ -28,7 +28,7 @@
     },
     {
       "file": "stations.json",
-      "count": 1603
+      "count": 1599
     }
   ],
   "sources": [
@@ -153,12 +153,12 @@
       "name": "OpenStreetMap: reviewed urban bus relations",
       "url": "https://www.openstreetmap.org/copyright",
       "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-      "retrieved": "2026-09-01",
+      "retrieved": "2026-11-19",
       "evidence_type": "crowdsourced"
     }
   ],
   "license": "Line data © the respective Operators; redistributed for reference. The ETUSA Line attributes derived from French Wikipedia are CC BY-SA 4.0, and the shapes, Directions, Stations and memberships derived from OpenStreetMap are ODbL 1.0, © OpenStreetMap contributors. Per-part attribution is in LICENSE and NOTICE.",
-  "updated": "2026-09-27",
+  "updated": "2026-11-19",
   "operators": [
     "ETUL Laghouat",
     "ETUS Oum El Bouaghi",
@@ -201,6 +201,6 @@
   "with_departure_schedules": 8,
   "shapes": 76,
   "directions": 128,
-  "stations": 1603,
-  "station_memberships": 2685
+  "stations": 1599,
+  "station_memberships": 2682
 }

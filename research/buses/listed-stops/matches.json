@@ -1,0 +1,2347 @@
+{
+  "note": "Research output for accuracy plan P4 (ADR 0005). Each Listed stop is exact (one candidate in the Line's communes with the same stop key), ambiguous (several equal candidates, or fuzzy ones only; Owner review) or unmatched. Distance to the previous exact match only orders candidates. Neither source splits its list by direction, so direction is null. Nothing here is promoted.",
+  "osm": {
+    "endpoint": "https://overpass-api.de/api/interpreter",
+    "retrieved_at": "2026-11-19T18:21:14.199Z",
+    "timestamp_osm_base": "2026-11-19T18:20:06Z",
+    "node_count": 97,
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors"
+  },
+  "networks": [
+    {
+      "operator_id": "etus-skikda",
+      "source": "sources/buses/etus-skikda-lines.json",
+      "wilaya_code": "21",
+      "network": "Skikda",
+      "commune_codes": [
+        2101,
+        2103,
+        2130,
+        2137
+      ],
+      "candidate_count": {
+        "in_wilaya": 21,
+        "in_communes": 11
+      },
+      "lines": [
+        {
+          "line_id": "etus-skikda-01",
+          "ref": "01",
+          "direction": null,
+          "stops": [
+            {
+              "position": 1,
+              "name_ar": "ساحة الشهداء",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 2,
+              "name_ar": "حي الممرات",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 3,
+              "name_ar": "اكمالية 20اوث 1955",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 4,
+              "name_ar": "20 اوث 1955",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 5,
+              "name_ar": "المركز التجاري",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 6,
+              "name_ar": "السوق",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 7,
+              "name_ar": "مقبرة الزفزاف",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 8,
+              "name_ar": "كسار",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 9,
+              "name_ar": "الحواس",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 10,
+              "name_ar": "مدخل الجامعة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            }
+          ]
+        },
+        {
+          "line_id": "etus-skikda-02",
+          "ref": "02",
+          "direction": null,
+          "stops": [
+            {
+              "position": 1,
+              "name_ar": "ساحة الشهداء",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 2,
+              "name_ar": "حي الممرات",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 3,
+              "name_ar": "ملعب 20 اوث",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 4,
+              "name_ar": "مركز التكوين المهني",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 5,
+              "name_ar": "جامعة مرج الديب",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 6,
+              "name_ar": "المحول",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 7,
+              "name_ar": "الموقف 1 اول نوفمبر",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 8,
+              "name_ar": "الموقف 2 اول نوفمبر",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 9,
+              "name_ar": "الحانوت",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            }
+          ]
+        },
+        {
+          "line_id": "etus-skikda-03",
+          "ref": "03",
+          "direction": null,
+          "stops": [
+            {
+              "position": 1,
+              "name_ar": "ساحة الشهداء",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 2,
+              "name_ar": "نابوليثا",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 3,
+              "name_ar": "حي عمار شطايبي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 4,
+              "name_ar": "المخبزة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 5,
+              "name_ar": "حي الاخوة ساكر",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 6,
+              "name_ar": "تكوين شبه طبي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 7,
+              "name_ar": "مدخل عيسى بوكرمة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 8,
+              "name_ar": "الاقامة الجامعية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 9,
+              "name_ar": "الجامعة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 10,
+              "name_ar": "مدخل الحدائق",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 11,
+              "name_ar": "عمارات سوناطراك",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 12,
+              "name_ar": "المشتى",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            }
+          ]
+        },
+        {
+          "line_id": "etus-skikda-04",
+          "ref": "04",
+          "direction": null,
+          "stops": [
+            {
+              "position": 1,
+              "name_ar": "ساحة الشهداء",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 2,
+              "name_ar": "حي الممرات",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 3,
+              "name_ar": "ملعب 20 اوث",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 4,
+              "name_ar": "مركز التكوين المهني",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 5,
+              "name_ar": "جامعة مرج الديب",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 6,
+              "name_ar": "المحول",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 7,
+              "name_ar": "عمارات سطورة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 8,
+              "name_ar": "عمارات PLF",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 9,
+              "name_ar": "البناء الداتي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 10,
+              "name_ar": "المدبحة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 11,
+              "name_ar": "صندوق الضمان الاجتماعي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 12,
+              "name_ar": "SLMB",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 13,
+              "name_ar": "مركز البريد",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 14,
+              "name_ar": "العمارات",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 15,
+              "name_ar": "تكوين حمادي كرومة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 16,
+              "name_ar": "الشركة الوطنية للحبوب OAIC",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            }
+          ]
+        },
+        {
+          "line_id": "etus-skikda-05",
+          "ref": "05",
+          "direction": null,
+          "stops": [
+            {
+              "position": 1,
+              "name_ar": "ساحة الشهداء",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 2,
+              "name_ar": "المركز 03",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 3,
+              "name_ar": "المركز 05",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 4,
+              "name_ar": "حمروش حمودي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 5,
+              "name_ar": "ملعب بوثلجة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 6,
+              "name_ar": "محطة الوقود",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 7,
+              "name_ar": "المالحة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 8,
+              "name_ar": "33 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 9,
+              "name_ar": "القلتة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 10,
+              "name_ar": "الرخامة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 11,
+              "name_ar": "بارو",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 12,
+              "name_ar": "المدرسة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 13,
+              "name_ar": "الكاسية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 14,
+              "name_ar": "مفترق الطرق",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 15,
+              "name_ar": "الكاليتوس",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 16,
+              "name_ar": "سوناتيبا",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 17,
+              "name_ar": "كارافاني ladécente",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 18,
+              "name_ar": "لابيسين",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 19,
+              "name_ar": "Gaz de France",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 20,
+              "name_ar": "العمارات",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 21,
+              "name_ar": "مركز العربي بن مهيدي 04",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 22,
+              "name_ar": "مركز العربي بن مهيدي 05",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 23,
+              "name_ar": "مركز العربي بن مهيدي 06",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 24,
+              "name_ar": "مركز العربي بن مهيدي07",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 25,
+              "name_ar": "مركز العربي بن مهيدي 08",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 26,
+              "name_ar": "معهد سوناطراك",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 27,
+              "name_ar": "القرية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 28,
+              "name_ar": "الاخوة لكحل (شعباني)",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 29,
+              "name_ar": "مركز البريد",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 30,
+              "name_ar": "الاخوة عياشي (الفتوي)",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            }
+          ]
+        },
+        {
+          "line_id": "etus-skikda-06",
+          "ref": "06",
+          "direction": null,
+          "stops": [
+            {
+              "position": 1,
+              "name_ar": "ساحة الشهداء",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 2,
+              "name_ar": "المركز 03",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 3,
+              "name_ar": "المركز 05",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 4,
+              "name_ar": "حمروش حمودي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 5,
+              "name_ar": "ملعب بوثلجة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 6,
+              "name_ar": "محطة الوقود",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 7,
+              "name_ar": "المالحة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 8,
+              "name_ar": "33 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 9,
+              "name_ar": "القلتة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 10,
+              "name_ar": "الرخامة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 11,
+              "name_ar": "بارو",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 12,
+              "name_ar": "المدرسة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 13,
+              "name_ar": "الكاسية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 14,
+              "name_ar": "مفترق الطرق",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 15,
+              "name_ar": "الكاليتوس",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 16,
+              "name_ar": "سوناتيبا",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 17,
+              "name_ar": "كارافاني ladécente",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 18,
+              "name_ar": "لابيسين",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 19,
+              "name_ar": "Gaz de France",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 20,
+              "name_ar": "العمارات",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 21,
+              "name_ar": "مركز العربي بن مهيدي 04",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 22,
+              "name_ar": "مركز العربي بن مهيدي 05",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 23,
+              "name_ar": "مركز العربي بن مهيدي 06",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 24,
+              "name_ar": "مركز العربي بن مهيدي07",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 25,
+              "name_ar": "السياحة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 26,
+              "name_ar": "المكتبة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 27,
+              "name_ar": "ADL 1",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 28,
+              "name_ar": "ADL 2",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 29,
+              "name_ar": "LPP",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 30,
+              "name_ar": "السكن الاجتماعي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 31,
+              "name_ar": "المتوسطة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operator_id": "etus-msila",
+      "source": "sources/buses/etus-msila-lines.json",
+      "wilaya_code": "28",
+      "network": "M'Sila",
+      "commune_codes": [
+        2801
+      ],
+      "candidate_count": {
+        "in_wilaya": 27,
+        "in_communes": 22
+      },
+      "lines": [
+        {
+          "line_id": "etus-msila-17",
+          "ref": "17",
+          "direction": null,
+          "stops": [
+            {
+              "position": 1,
+              "name_ar": "محطة القطب الجامعي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 2,
+              "name_ar": "مطاحن الرياض",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 3,
+              "name_ar": "حي 270 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 4,
+              "name_ar": "دار الرحمة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 5,
+              "name_ar": "حي 108 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 6,
+              "name_ar": "السجل التجاري",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 7,
+              "name_ar": "الضمان الاجتماعي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 8,
+              "name_ar": "مستشفى الزهراوي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 9,
+              "name_ar": "إكمالية أبي علي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 10,
+              "name_ar": "حي الكوش",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 11,
+              "name_ar": "مقر البلدية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 12,
+              "name_ar": "السوق المغطاة",
+              "name_fr": null,
+              "outcome": "exact",
+              "station_id": null,
+              "osm_node_id": 4829009453,
+              "reason": null,
+              "candidates": []
+            },
+            {
+              "position": 13,
+              "name_ar": "المركز التجاري بن طبي",
+              "name_fr": null,
+              "outcome": "ambiguous",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "fuzzy_only",
+              "candidates": [
+                {
+                  "kind": "osm_node",
+                  "id": 4829009445,
+                  "name": "بن طبي",
+                  "commune_code": 2801,
+                  "match": "fuzzy",
+                  "distance_m": 438
+                },
+                {
+                  "kind": "osm_node",
+                  "id": 4841941168,
+                  "name": "بن طبي",
+                  "commune_code": 2801,
+                  "match": "fuzzy",
+                  "distance_m": 530
+                }
+              ]
+            },
+            {
+              "position": 14,
+              "name_ar": "مديرية البناء و التعمير",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 15,
+              "name_ar": "حي 500 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 16,
+              "name_ar": "المدخل الشمالي للجامعة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 17,
+              "name_ar": "مخرج اشبيليا",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 18,
+              "name_ar": "حي 504 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 19,
+              "name_ar": "حي 295 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 20,
+              "name_ar": "حي 570 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 21,
+              "name_ar": "مقهى القطب",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 22,
+              "name_ar": "البلدية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 23,
+              "name_ar": "ثانوية الرائد الصحراوي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 24,
+              "name_ar": "حي 1500/400 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 25,
+              "name_ar": "مقابل العمارات البنية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 26,
+              "name_ar": "حي 700/450 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 27,
+              "name_ar": "مفترق الطرق الدائري",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 28,
+              "name_ar": "حي عمارات الباتي جاك",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 29,
+              "name_ar": "محطة حي 800 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            }
+          ]
+        },
+        {
+          "line_id": "etus-msila-11",
+          "ref": "11",
+          "direction": null,
+          "stops": [
+            {
+              "position": 1,
+              "name_ar": "محطة القطب الجامعي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 2,
+              "name_ar": "مطاحن الرياض",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 3,
+              "name_ar": "حي 270 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 4,
+              "name_ar": "دار الرحمة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 5,
+              "name_ar": "حي 108 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 6,
+              "name_ar": "السجل التجاري",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 7,
+              "name_ar": "الضمان الاجتماعي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 8,
+              "name_ar": "مستشفى الزهراوي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 9,
+              "name_ar": "إكمالية أبي علي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 10,
+              "name_ar": "حي الكوش",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 11,
+              "name_ar": "مقر البلدية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 12,
+              "name_ar": "السوق المغطاة",
+              "name_fr": null,
+              "outcome": "exact",
+              "station_id": null,
+              "osm_node_id": 4829009453,
+              "reason": null,
+              "candidates": []
+            },
+            {
+              "position": 13,
+              "name_ar": "المركز التجاري بن طبي",
+              "name_fr": null,
+              "outcome": "ambiguous",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "fuzzy_only",
+              "candidates": [
+                {
+                  "kind": "osm_node",
+                  "id": 4829009445,
+                  "name": "بن طبي",
+                  "commune_code": 2801,
+                  "match": "fuzzy",
+                  "distance_m": 438
+                },
+                {
+                  "kind": "osm_node",
+                  "id": 4841941168,
+                  "name": "بن طبي",
+                  "commune_code": 2801,
+                  "match": "fuzzy",
+                  "distance_m": 530
+                }
+              ]
+            },
+            {
+              "position": 14,
+              "name_ar": "مديرية البناء و التعمير",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 15,
+              "name_ar": "حي 500 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 16,
+              "name_ar": "المدخل الشمالي للجامعة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 17,
+              "name_ar": "حي اشبيليا",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 18,
+              "name_ar": "مسجد اشبيليا",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 19,
+              "name_ar": "حي 138 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 20,
+              "name_ar": "حمام القدس",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 21,
+              "name_ar": "المحلات التجارية 138 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 22,
+              "name_ar": "حي 608 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 23,
+              "name_ar": "حي الشارقة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 24,
+              "name_ar": "مخبزة سحنون",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 25,
+              "name_ar": "صيدلية بورزق",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 26,
+              "name_ar": "مخرج المحطة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 27,
+              "name_ar": "محطة المسافرين الجديدة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            }
+          ]
+        },
+        {
+          "line_id": "etus-msila-12",
+          "ref": "12",
+          "direction": null,
+          "stops": [
+            {
+              "position": 1,
+              "name_ar": "محطة القطب الجامعي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 2,
+              "name_ar": "مطاحن الرياض",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 3,
+              "name_ar": "حي 270 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 4,
+              "name_ar": "تعاونية البهجة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 5,
+              "name_ar": "حي 700 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 6,
+              "name_ar": "الأمن الحضري الخامس",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 7,
+              "name_ar": "مقهى الجزيرة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 8,
+              "name_ar": "حي 924 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 9,
+              "name_ar": "مدخل شارع دبي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 10,
+              "name_ar": "وسط شارع دبي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 11,
+              "name_ar": "مخرج شارع دبي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 12,
+              "name_ar": "حي السونلغاز",
+              "name_fr": null,
+              "outcome": "ambiguous",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "fuzzy_only",
+              "candidates": [
+                {
+                  "kind": "osm_node",
+                  "id": 4876031158,
+                  "name": "حي سونلغاز",
+                  "commune_code": 2801,
+                  "match": "fuzzy",
+                  "distance_m": null
+                },
+                {
+                  "kind": "osm_node",
+                  "id": 4879045328,
+                  "name": "حي سونلغاز",
+                  "commune_code": 2801,
+                  "match": "fuzzy",
+                  "distance_m": null
+                }
+              ]
+            },
+            {
+              "position": 13,
+              "name_ar": "الفرع البلدي 1000 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 14,
+              "name_ar": "متقنة جابر بن حيان",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 15,
+              "name_ar": "حي 500 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 16,
+              "name_ar": "المدخل الشمالي للجامعة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 17,
+              "name_ar": "حي اشبيليا",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 18,
+              "name_ar": "حي 144 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 19,
+              "name_ar": "ملعب الفروسية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 20,
+              "name_ar": "حي 300 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 21,
+              "name_ar": "مفترق الطرق 05 جويلية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 22,
+              "name_ar": "السكن التطوري",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 23,
+              "name_ar": "مجمع كيا",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 24,
+              "name_ar": "موقف المويلحة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 25,
+              "name_ar": "موقف محطة البنزين",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 26,
+              "name_ar": "موقف أولاد أحمد",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            }
+          ]
+        },
+        {
+          "line_id": "etus-msila-16",
+          "ref": "16",
+          "direction": null,
+          "stops": [
+            {
+              "position": 1,
+              "name_ar": "محطة لاروكاد",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 2,
+              "name_ar": "الأمن الحضري الرابع",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 3,
+              "name_ar": "حي الجعافرة",
+              "name_fr": null,
+              "outcome": "ambiguous",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "fuzzy_only",
+              "candidates": [
+                {
+                  "kind": "osm_node",
+                  "id": 4823880975,
+                  "name": "جعافرة",
+                  "commune_code": 2801,
+                  "match": "fuzzy",
+                  "distance_m": null
+                },
+                {
+                  "kind": "osm_node",
+                  "id": 4829009487,
+                  "name": "جعافرة",
+                  "commune_code": 2801,
+                  "match": "fuzzy",
+                  "distance_m": null
+                }
+              ]
+            },
+            {
+              "position": 4,
+              "name_ar": "الكدية",
+              "name_fr": null,
+              "outcome": "ambiguous",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "several_candidates",
+              "candidates": [
+                {
+                  "kind": "osm_node",
+                  "id": 5683511157,
+                  "name": "El Koudia",
+                  "commune_code": 2801,
+                  "match": "equal",
+                  "distance_m": null
+                },
+                {
+                  "kind": "osm_node",
+                  "id": 5972002802,
+                  "name": "El Koudia",
+                  "commune_code": 2801,
+                  "match": "equal",
+                  "distance_m": null
+                }
+              ]
+            },
+            {
+              "position": 5,
+              "name_ar": "ساحة الشهداء",
+              "name_fr": null,
+              "outcome": "ambiguous",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "several_candidates",
+              "candidates": [
+                {
+                  "kind": "osm_node",
+                  "id": 439855731,
+                  "name": "ساحة الشهداء",
+                  "commune_code": 2801,
+                  "match": "equal",
+                  "distance_m": null
+                },
+                {
+                  "kind": "osm_node",
+                  "id": 4829009457,
+                  "name": "ساحة الشهداء",
+                  "commune_code": 2801,
+                  "match": "equal",
+                  "distance_m": null
+                }
+              ]
+            },
+            {
+              "position": 6,
+              "name_ar": "السوق المغطاة",
+              "name_fr": null,
+              "outcome": "exact",
+              "station_id": null,
+              "osm_node_id": 4829009453,
+              "reason": null,
+              "candidates": []
+            },
+            {
+              "position": 7,
+              "name_ar": "مقر الولاية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 8,
+              "name_ar": "مقابل وكالة جيزي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 9,
+              "name_ar": "مقابل إدارة السجون",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 10,
+              "name_ar": "مقابل النشاط الاجتماعي",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 11,
+              "name_ar": "مسجد الحسن البصري",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 12,
+              "name_ar": "محطة المسافرين الجديدة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 13,
+              "name_ar": "مديرية الري",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 14,
+              "name_ar": "المدخل الغربي للجامعة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 15,
+              "name_ar": "المدخل الشمالي للجامعة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 16,
+              "name_ar": "حي اشبيليا",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 17,
+              "name_ar": "حي 144 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 18,
+              "name_ar": "ملعب الفروسية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 19,
+              "name_ar": "حي 300 مسكن",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 20,
+              "name_ar": "مفترق الطرق 05 جويلية",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 21,
+              "name_ar": "السكن التطوري",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 22,
+              "name_ar": "مجمع كيا",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            },
+            {
+              "position": 23,
+              "name_ar": "موقف المويلحة",
+              "name_fr": null,
+              "outcome": "unmatched",
+              "station_id": null,
+              "osm_node_id": null,
+              "reason": "no_candidate",
+              "candidates": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

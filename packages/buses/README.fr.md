@@ -13,7 +13,7 @@
 </div>
 
 Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **184 lignes**,
-**76 tracés**, **128 directions** et **1 603 stations** pour 16 exploitants. En JSON,
+**76 tracés**, **128 directions** et **1 599 stations** pour 16 exploitants. En JSON,
 CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -39,11 +39,35 @@ const trace = buses.shapeForLine("etusa-1");
 | Lignes | **184** | 16 exploitants ; lignes officielles sans tracé conservées dans l'annuaire |
 | Tracés OSM | **76** | 61 ETUSA + 15 lignes des autres exploitants |
 | Directions | **128** | Relations OSM sources |
-| Stations | **1 603** | Nœuds OSM, noms nuls conservés |
+| Stations | **1 599** | Nœuds OSM, noms nuls conservés |
 
-L'ordre des 2 685 appartenances est l'ordre brut des membres OSM, marqué
-`osm_member_order_unvalidated` : il ne constitue pas un ordre voyageurs validé et aucun
-terminus n'est déduit automatiquement.
+L'ordre des 2 682 appartenances est l'ordre brut des membres OSM : il ne constitue pas
+un ordre voyageurs validé et aucun terminus n'est déduit automatiquement. Chaque direction,
+et chacune de ses appartenances, porte un `sequence_status` issu de contrôles géométriques
+de cet ordre par rapport au tracé :
+
+| `sequence_status` | Directions | Signification |
+| --- | ---: | --- |
+| `osm_member_order_consistent` | 36 | Les stations sont proches du tracé et se suivent dans son sens, la première et la dernière près de ses extrémités, et le tracé est continu |
+| `osm_member_order_inconsistent` | 69 | Au moins un de ces contrôles échoue ; la direction est publiée avec ce signalement |
+| `osm_member_order_unvalidated` | 23 | Moins de deux stations : l'ordre ne peut pas être contrôlé |
+
+Cohérent signifie que l'ordre OSM concorde avec le tracé OSM, pas qu'un exploitant l'a
+confirmé. D'autres valeurs peuvent s'ajouter dans une version mineure : prévoyez une branche
+`default` dans tout `switch` sur `sequence_status`.
+
+Une ligne n'a pas de statut propre : il se lit dans ses directions. Une ligne sans
+direction n'a pas encore de tracé (108 sur 184 : aucune relation OSM trouvée, une relation
+OSM qui correspond à la ligne mais n'est pas encore approuvée, ou seulement une liste
+d'arrêts de l'exploitant, sans tracé). Une ligne qui a des directions vaut ce que valent
+leurs statuts.
+
+`last_confirmed`, sur chaque ligne et recopié sur son tracé, est la date de la source
+officielle de l'exploitant qui cite la ligne : la date du document quand il en porte une,
+sinon le jour où il a été lu ou fourni. Il vaut `null` pour les 77 lignes que seuls
+Wikipédia ou OpenStreetMap nomment (celles d'ETUSA et de Mostaganem). Un `null` ne
+signifie pas que la ligne a cessé de circuler, et une mise à jour OSM ne modifie jamais
+la date.
 
 ## Source & licence
 

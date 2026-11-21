@@ -8,7 +8,7 @@
     "to": "زغارة",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -23,7 +23,7 @@
     "to": "وادي قريش",
     "via": null,
     "public_transport_version": null,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -53,7 +53,7 @@
     "to": "Ben Aknoun",
     "via": "Addis Abeba",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -83,7 +83,7 @@
     "to": "Grande Poste",
     "via": "Telemely",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -143,7 +143,7 @@
     "to": "سطاوالي",
     "via": "الرئيس حميدو",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -173,7 +173,7 @@
     "to": "Bir Mourad Rais",
     "via": "El Annassers",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -218,7 +218,7 @@
     "to": "Sidi Youcef",
     "via": "Bouskour",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -278,7 +278,7 @@
     "to": "Tarek Ibn Ziad",
     "via": "Louni Arezki",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -293,7 +293,7 @@
     "to": "Place Audin",
     "via": "Didouche Mourad",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -368,7 +368,7 @@
     "to": "المطار",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -383,7 +383,7 @@
     "to": "El Mouradia",
     "via": "Krim Belkacem",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -398,7 +398,7 @@
     "to": "Place des Martyrs",
     "via": "Louni Arezki",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -413,7 +413,7 @@
     "to": "ساحة الشهداء",
     "via": "الرئيس حميدو",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -428,7 +428,7 @@
     "to": "1er Mai",
     "via": "El Annassers",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -443,7 +443,7 @@
     "to": "1er Mai",
     "via": "Telemely",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -458,7 +458,7 @@
     "to": "Bouzareah",
     "via": "Bouskour",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -473,7 +473,7 @@
     "to": "Aéroport D'Alger H.B",
     "via": "Cite 05 Juillet - Bab ezzouar",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -488,7 +488,7 @@
     "to": "Bab Ezzouar",
     "via": "EL Mohamadia",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -503,7 +503,7 @@
     "to": "ساحة الشهداء",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -518,7 +518,7 @@
     "to": "ساحة الشهداء",
     "via": "كارنو",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -533,7 +533,7 @@
     "to": "شوفالي",
     "via": "باب الوادي",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -548,7 +548,7 @@
     "to": "ساحة الشهداء",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -563,7 +563,7 @@
     "to": "Ben Aknoun",
     "via": "El Biar",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -578,7 +578,7 @@
     "to": "Place des Martyrs",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -593,7 +593,7 @@
     "to": "Palais de la Culture (Diar El Afia)",
     "via": "Drid Hocine",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -608,7 +608,7 @@
     "to": "1e Mai",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -623,7 +623,7 @@
     "to": "Aissat Idir",
     "via": "Cité Amirouche",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -638,7 +638,7 @@
     "to": "Bachdjerrah",
     "via": "Cité Amirouche",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -653,7 +653,7 @@
     "to": "Bach Djarah",
     "via": "CAROBIER GARE ROUTIERE",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -668,7 +668,7 @@
     "to": "Place des Martyrs",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -683,7 +683,7 @@
     "to": "Station Ain Naâdja",
     "via": "Cite 720",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -698,7 +698,7 @@
     "to": "Bach Djarah",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -713,7 +713,7 @@
     "to": "Gare Routiere De Baraki",
     "via": "Cité El Hayet",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -728,7 +728,7 @@
     "to": "Souidania",
     "via": "Cheraga",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -743,7 +743,7 @@
     "to": "Chevalley",
     "via": "Cheraga",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -758,7 +758,7 @@
     "to": "1er Mai",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -773,7 +773,7 @@
     "to": "Hydra",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -788,7 +788,7 @@
     "to": "Birkhadem",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -803,7 +803,7 @@
     "to": "1e Mai",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -818,7 +818,7 @@
     "to": "Place des Martyrs",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -833,7 +833,7 @@
     "to": "Vieux Kouba",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -848,7 +848,7 @@
     "to": "عين البنيان",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -863,7 +863,7 @@
     "to": "Bouzareah",
     "via": "Chevalley",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -878,7 +878,7 @@
     "to": "1er Mai => Bouzareah",
     "via": "Chevalley",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -893,7 +893,7 @@
     "to": "Chevalley",
     "via": "DELY BRAHIM",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -908,7 +908,7 @@
     "to": "Sidi Abd Allah",
     "via": "DELY BRAHIM",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -923,7 +923,7 @@
     "to": "Chevalley",
     "via": "BOUCHAOUI",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -938,7 +938,7 @@
     "to": "Zéralda G.R",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -953,7 +953,7 @@
     "to": "Ain Tagourait",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -968,7 +968,7 @@
     "to": "Station 2 Mai",
     "via": "EL HAMIZ",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -983,7 +983,7 @@
     "to": "Aïn Taya",
     "via": "BORDJ EL BAHRI",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -998,7 +998,7 @@
     "to": "بوزريعة",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1013,7 +1013,7 @@
     "to": "1er Mai",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1028,7 +1028,7 @@
     "to": "El Madania",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1043,7 +1043,7 @@
     "to": "Gare Routiere De Baraki",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1058,7 +1058,7 @@
     "to": "Place Aissat Idir",
     "via": "CITE 5 JUIELLET",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1073,7 +1073,7 @@
     "to": "Dergana",
     "via": "Souachette",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1088,7 +1088,7 @@
     "to": "El Kerrouche Reghaia",
     "via": "Reghaia",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1103,7 +1103,7 @@
     "to": "Ain Benian",
     "via": "Plateau",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1118,7 +1118,7 @@
     "to": "Bab El Oued (Ali Basta)",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1133,7 +1133,7 @@
     "to": "1e Mai",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1148,7 +1148,7 @@
     "to": "Rouiba",
     "via": "BAB EZZOUAR",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1163,7 +1163,7 @@
     "to": "Place des Martyrs",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1178,7 +1178,7 @@
     "to": "Place Ferhani",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1193,7 +1193,7 @@
     "to": "Cite 5 Juillet",
     "via": "bab-ezzouar",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1208,7 +1208,7 @@
     "to": "Place Des Martyrs",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1223,7 +1223,7 @@
     "to": "Gare Routiere",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1238,7 +1238,7 @@
     "to": "Hopital Militaire",
     "via": "Vieux Kouba",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1253,7 +1253,7 @@
     "to": "Place Audin",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1268,7 +1268,7 @@
     "to": "Hydra",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1283,7 +1283,7 @@
     "to": "Birtouta",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1298,7 +1298,7 @@
     "to": "El Harrach",
     "via": "Hopital Zmirli",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1313,7 +1313,7 @@
     "to": null,
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1328,7 +1328,7 @@
     "to": "Station 2 Mai",
     "via": "Said Hamdie",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1343,7 +1343,7 @@
     "to": "Sidi Abd Allah",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1358,7 +1358,7 @@
     "to": "Staouéli",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1373,7 +1373,7 @@
     "to": "El Harrach",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1388,7 +1388,7 @@
     "to": "Cheikh Ibn Eddine",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1508,7 +1508,7 @@
     "to": "ساحة الشهداء",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1538,7 +1538,7 @@
     "to": "الثانوية الجديدة",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1553,7 +1553,7 @@
     "to": "الثانوية الجديدة (كارمان)",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1568,7 +1568,7 @@
     "to": "محطة نقل المسافرين (عين قاسمة)",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1583,7 +1583,7 @@
     "to": "حي 504 سكن",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1598,7 +1598,7 @@
     "to": "المجمعات السكنية (زعرورة)",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1613,7 +1613,7 @@
     "to": "علي معاشي / حي 504",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1628,7 +1628,7 @@
     "to": "حي 220 سكن",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1643,7 +1643,7 @@
     "to": "University of Setif",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "etus-setif+osm",
     "source_refs": [
       "etus-setif",
@@ -1659,7 +1659,7 @@
     "to": "University of Setif",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "etus-setif+osm",
     "source_refs": [
       "etus-setif",
@@ -1675,7 +1675,7 @@
     "to": "AADL 2",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "etus-setif+osm",
     "source_refs": [
       "etus-setif",
@@ -1691,7 +1691,7 @@
     "to": "arret 5",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "etus-setif+osm",
     "source_refs": [
       "etus-setif",
@@ -1707,7 +1707,7 @@
     "to": "ببان مصباح",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1722,7 +1722,7 @@
     "to": "حي 40 سكن",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1737,7 +1737,7 @@
     "to": "حي 504 سكن",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1752,7 +1752,7 @@
     "to": "حي الشارة",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1767,7 +1767,7 @@
     "to": "حي 504 سكن",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1782,7 +1782,7 @@
     "to": "حي1500 سكن AADL",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1797,7 +1797,7 @@
     "to": "حي خروبي الميلود 1900 سكن",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1812,7 +1812,7 @@
     "to": null,
     "via": null,
     "public_transport_version": null,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "etus-ain-defla+osm",
     "source_refs": [
       "etus-ain-defla",
@@ -1828,7 +1828,7 @@
     "to": "Diar El Gharb 2",
     "via": "El Karia",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1843,7 +1843,7 @@
     "to": "Boukhalfa",
     "via": "Mairie",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_inconsistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1858,7 +1858,7 @@
     "to": "Gare de Boukhalfa",
     "via": "Mairie",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1873,7 +1873,7 @@
     "to": "Timizart",
     "via": "Mairie",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1888,7 +1888,7 @@
     "to": "Kef Naâdja",
     "via": "Mairie",
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1903,7 +1903,7 @@
     "to": "Station Beni Douala",
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"
@@ -1918,7 +1918,7 @@
     "to": null,
     "via": null,
     "public_transport_version": 2,
-    "sequence_status": "osm_member_order_unvalidated",
+    "sequence_status": "osm_member_order_consistent",
     "source": "osm",
     "source_refs": [
       "osm"

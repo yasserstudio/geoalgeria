@@ -1,0 +1,4406 @@
+{
+  "generated_by": "research/buses/qa/run-qa.mjs",
+  "osm_snapshot": {
+    "from": "2026-11-19T16:14:35Z",
+    "to": "2026-11-19T17:32:20Z"
+  },
+  "thresholds_m": {
+    "near_path": 50,
+    "backtrack": 100,
+    "terminus": 300,
+    "gap": 200
+  },
+  "summary": {
+    "directions": 128,
+    "by_status": {
+      "osm_member_order_consistent": 36,
+      "osm_member_order_inconsistent": 69,
+      "osm_member_order_unvalidated": 23
+    },
+    "unvalidated_reasons": {
+      "fewer_than_two_stations": 23
+    },
+    "rule_failures": {
+      "path_order": 21,
+      "termini": 43,
+      "continuity": 68,
+      "near_path": 12
+    },
+    "stop_count": {
+      "checked": 47,
+      "within_10pct": 18
+    }
+  },
+  "directions": [
+    {
+      "direction_id": "osm-relation-2840538",
+      "line_id": "etusa-38",
+      "osm_relation_id": 2840538,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-2847141",
+      "line_id": "etusa-37",
+      "osm_relation_id": 2847141,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-3375302518"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-3670342832"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 6
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-2849252",
+      "line_id": "etusa-4",
+      "osm_relation_id": 2849252,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 5
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-2865617",
+      "line_id": "etusa-48",
+      "osm_relation_id": 2865617,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-node-5358485987",
+            "osm-node-12766966903"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5358485987",
+            "osm-node-12766966903"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ],
+      "stop_count": {
+        "osm": 1,
+        "operator": 14,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-2865633",
+      "line_id": "etusa-32",
+      "osm_relation_id": 2865633,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-2865635",
+      "line_id": "etusa-15",
+      "osm_relation_id": 2865635,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 12,
+        "operator": 13,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-2865717",
+      "line_id": "etusa-79",
+      "osm_relation_id": 2865717,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 15
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-2865798",
+      "line_id": "etusa-67",
+      "osm_relation_id": 2865798,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-2881556",
+      "line_id": "etusa-101",
+      "osm_relation_id": 2881556,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 6
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-2881745",
+      "line_id": "etusa-12",
+      "osm_relation_id": 2881745,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ],
+      "stop_count": {
+        "osm": 23,
+        "operator": 33,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-3101360",
+      "line_id": "etusa-7",
+      "osm_relation_id": 3101360,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-3101476",
+      "line_id": "etusa-14",
+      "osm_relation_id": 3101476,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 13,
+        "operator": 13,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-3105891",
+      "line_id": "etusa-96",
+      "osm_relation_id": 3105891,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-3105899",
+      "line_id": "etusa-59",
+      "osm_relation_id": 3105899,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 6
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-3105911",
+      "line_id": "etusa-21",
+      "osm_relation_id": 3105911,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 9,
+        "operator": 10,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-3106213",
+      "line_id": "etusa-1",
+      "osm_relation_id": 3106213,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-3106214",
+      "line_id": "etusa-28",
+      "osm_relation_id": 3106214,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 6
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-3109487",
+      "line_id": "etusa-56",
+      "osm_relation_id": 3109487,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-3112820",
+      "line_id": "etusa-46",
+      "osm_relation_id": 3112820,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-3112924",
+      "line_id": "etusa-54",
+      "osm_relation_id": 3112924,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 5,
+        "operator": 7,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-3114066",
+      "line_id": "etusa-102",
+      "osm_relation_id": 3114066,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 6
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-3122700",
+      "line_id": "etusa-94",
+      "osm_relation_id": 3122700,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 11
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-5596708",
+      "line_id": "etusa-2",
+      "osm_relation_id": 5596708,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-5597409",
+      "line_id": "etusa-92",
+      "osm_relation_id": 5597409,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-7608188",
+      "line_id": "etusa-100",
+      "osm_relation_id": 7608188,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-way-527848021",
+            "osm-node-3429799436"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5130875391"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-7935973",
+      "line_id": "etusa-54",
+      "osm_relation_id": 7935973,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 8,
+        "operator": 7,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7936294",
+      "line_id": "etusa-46",
+      "osm_relation_id": 7936294,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-7936377",
+      "line_id": "etusa-12",
+      "osm_relation_id": 7936377,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 27,
+        "operator": 33,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7936576",
+      "line_id": "etusa-14",
+      "osm_relation_id": 7936576,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 11,
+        "operator": 13,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7937507",
+      "line_id": "etusa-15",
+      "osm_relation_id": 7937507,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-3791449225"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 9,
+        "operator": 13,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7937708",
+      "line_id": "etusa-21",
+      "osm_relation_id": 7937708,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 11,
+        "operator": 10,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-7937889",
+      "line_id": "etusa-178",
+      "osm_relation_id": 7937889,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-7937923",
+      "line_id": "etusa-19",
+      "osm_relation_id": 7937923,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5387202985"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ],
+      "stop_count": {
+        "osm": 13,
+        "operator": 16,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7939837",
+      "line_id": "etusa-38",
+      "osm_relation_id": 7939837,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-7941445",
+      "line_id": "etusa-45",
+      "osm_relation_id": 7941445,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 20,
+        "operator": 19,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-7953670",
+      "line_id": "etusa-58",
+      "osm_relation_id": 7953670,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 13,
+        "operator": 11,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7953809",
+      "line_id": "etusa-58",
+      "osm_relation_id": 7953809,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 12,
+        "operator": 11,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-7966489",
+      "line_id": "etusa-50",
+      "osm_relation_id": 7966489,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-node-5358485987"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-12766966903"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 3
+        }
+      ],
+      "stop_count": {
+        "osm": 11,
+        "operator": 17,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7966499",
+      "line_id": "etusa-50",
+      "osm_relation_id": 7966499,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-node-5358485987"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-3791500961"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 3
+        }
+      ],
+      "stop_count": {
+        "osm": 13,
+        "operator": 17,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7968277",
+      "line_id": "etusa-27",
+      "osm_relation_id": 7968277,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-node-5380774414",
+            "osm-node-961009284"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 10,
+        "operator": 13,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7968313",
+      "line_id": "etusa-27",
+      "osm_relation_id": 7968313,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-node-5380774414",
+            "osm-node-961009284"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 7,
+        "operator": 13,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7980541",
+      "line_id": "etusa-66",
+      "osm_relation_id": 7980541,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 13,
+        "operator": 12,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-7980628",
+      "line_id": "etusa-66",
+      "osm_relation_id": 7980628,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-4880009222"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-4880009222"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 11,
+        "operator": 12,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-7980785",
+      "line_id": "etusa-74",
+      "osm_relation_id": 7980785,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 4
+        }
+      ],
+      "stop_count": {
+        "osm": 13,
+        "operator": 14,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-7980872",
+      "line_id": "etusa-74",
+      "osm_relation_id": 7980872,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5387463206"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 13,
+        "operator": 14,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-7980943",
+      "line_id": "etusa-82",
+      "osm_relation_id": 7980943,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-5387523804"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5387202973"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 4
+        }
+      ],
+      "stop_count": {
+        "osm": 9,
+        "operator": 16,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7982428",
+      "line_id": "etusa-82",
+      "osm_relation_id": 7982428,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 3
+        }
+      ],
+      "stop_count": {
+        "osm": 10,
+        "operator": 16,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7982528",
+      "line_id": "etusa-105",
+      "osm_relation_id": 7982528,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5387202973"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-7986853",
+      "line_id": "etusa-3",
+      "osm_relation_id": 7986853,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-5390507851"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5390507837",
+            "osm-node-5390507851"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 14
+        }
+      ],
+      "stop_count": {
+        "osm": 14,
+        "operator": 22,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7986887",
+      "line_id": "etusa-3",
+      "osm_relation_id": 7986887,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5390507859"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 15
+        }
+      ],
+      "stop_count": {
+        "osm": 14,
+        "operator": 22,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7996003",
+      "line_id": "etusa-88",
+      "osm_relation_id": 7996003,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 6,
+        "operator": 8,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7996006",
+      "line_id": "etusa-88",
+      "osm_relation_id": 7996006,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5380774823"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ],
+      "stop_count": {
+        "osm": 11,
+        "operator": 8,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7996214",
+      "line_id": "etusa-34",
+      "osm_relation_id": 7996214,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-node-3784295293"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5380774823"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 3
+        }
+      ],
+      "stop_count": {
+        "osm": 17,
+        "operator": 19,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7996275",
+      "line_id": "etusa-34",
+      "osm_relation_id": 7996275,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ],
+      "stop_count": {
+        "osm": 16,
+        "operator": 19,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7996451",
+      "line_id": "etusa-6",
+      "osm_relation_id": 7996451,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5387463206"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 18,
+        "operator": 21,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-7996457",
+      "line_id": "etusa-6",
+      "osm_relation_id": 7996457,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ],
+      "stop_count": {
+        "osm": 20,
+        "operator": 21,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-7996705",
+      "line_id": "etusa-99",
+      "osm_relation_id": 7996705,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 30,
+        "operator": 32,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-7998869",
+      "line_id": "etusa-10",
+      "osm_relation_id": 7998869,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 17,
+        "operator": 17,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-7999026",
+      "line_id": "etusa-10",
+      "osm_relation_id": 7999026,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 16,
+        "operator": 17,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-8000586",
+      "line_id": "etusa-731",
+      "osm_relation_id": 8000586,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-node-5397813391"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 3
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8000607",
+      "line_id": "etusa-731",
+      "osm_relation_id": 8000607,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-node-5397813391"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-1468889925"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8001650",
+      "line_id": "etusa-701",
+      "osm_relation_id": 8001650,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 15
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8001677",
+      "line_id": "etusa-701",
+      "osm_relation_id": 8001677,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 12
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8003185",
+      "line_id": "etusa-747",
+      "osm_relation_id": 8003185,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8003366",
+      "line_id": "etusa-601",
+      "osm_relation_id": 8003366,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5399926690"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8003403",
+      "line_id": "etusa-606",
+      "osm_relation_id": 8003403,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8005583",
+      "line_id": "etusa-45",
+      "osm_relation_id": 8005583,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 19,
+        "operator": 19,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-8006784",
+      "line_id": "etusa-16",
+      "osm_relation_id": 8006784,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 5,
+        "operator": 11,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-8006787",
+      "line_id": "etusa-16",
+      "osm_relation_id": 8006787,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5380774823"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ],
+      "stop_count": {
+        "osm": 14,
+        "operator": 11,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-8034447",
+      "line_id": "etusa-D105",
+      "osm_relation_id": 8034447,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5387202973"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 6
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8061132",
+      "line_id": "etusa-19",
+      "osm_relation_id": 8061132,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 18,
+        "operator": 16,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-8066120",
+      "line_id": "etusa-601",
+      "osm_relation_id": 8066120,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8066402",
+      "line_id": "etusa-604",
+      "osm_relation_id": 8066402,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-node-5465205155",
+            "osm-node-5448314647"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8066555",
+      "line_id": "etusa-707",
+      "osm_relation_id": 8066555,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8082020",
+      "line_id": "etusa-90",
+      "osm_relation_id": 8082020,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 7,
+        "operator": 9,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-8082021",
+      "line_id": "etusa-90",
+      "osm_relation_id": 8082021,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ],
+      "stop_count": {
+        "osm": 9,
+        "operator": 9,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-8086283",
+      "line_id": "etusa-72",
+      "osm_relation_id": 8086283,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-5459904222"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5459784852"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 5
+        }
+      ],
+      "stop_count": {
+        "osm": 25,
+        "operator": 26,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-8086416",
+      "line_id": "etusa-72",
+      "osm_relation_id": 8086416,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5387463206"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ],
+      "stop_count": {
+        "osm": 24,
+        "operator": 26,
+        "pass": true
+      }
+    },
+    {
+      "direction_id": "osm-relation-8086495",
+      "line_id": "etusa-98",
+      "osm_relation_id": 8086495,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8086496",
+      "line_id": "etusa-98",
+      "osm_relation_id": 8086496,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8086568",
+      "line_id": "etusa-113",
+      "osm_relation_id": 8086568,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5387463206"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8086569",
+      "line_id": "etusa-113",
+      "osm_relation_id": 8086569,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8086697",
+      "line_id": "etusa-18",
+      "osm_relation_id": 8086697,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 8,
+        "operator": 11,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-8086826",
+      "line_id": "etusa-31",
+      "osm_relation_id": 8086826,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 10,
+        "operator": 13,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-8086827",
+      "line_id": "etusa-31",
+      "osm_relation_id": 8086827,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ],
+      "stop_count": {
+        "osm": 8,
+        "operator": 13,
+        "pass": false
+      }
+    },
+    {
+      "direction_id": "osm-relation-8093276",
+      "line_id": "etusa-101",
+      "osm_relation_id": 8093276,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 5
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8186188",
+      "line_id": "etusa-643",
+      "osm_relation_id": 8186188,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 4
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8186196",
+      "line_id": "etusa-643",
+      "osm_relation_id": 8186196,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-5465191124"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 5
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8408345",
+      "line_id": "etusa-732",
+      "osm_relation_id": 8408345,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-node-5397813391"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8409605",
+      "line_id": "etusa-732",
+      "osm_relation_id": 8409605,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": false,
+          "failing": [
+            "osm-node-5397813391"
+          ]
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8409730",
+      "line_id": "etusa-744",
+      "osm_relation_id": 8409730,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 7
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8731260",
+      "line_id": "etusa-630",
+      "osm_relation_id": 8731260,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-8745749",
+      "line_id": "etus-mostaganem-1",
+      "osm_relation_id": 8745749,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-10028500906",
+            "osm-node-10028502217",
+            "osm-node-10029708051",
+            "osm-node-4912435269",
+            "osm-node-10029752162",
+            "osm-node-10029708052"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-10028487216",
+            "osm-node-10029741265"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-11267136",
+      "line_id": "etusa-56",
+      "osm_relation_id": 11267136,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 3
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-11267137",
+      "line_id": "etusa-59",
+      "osm_relation_id": 11267137,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 3
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-11267140",
+      "line_id": "etusa-48",
+      "osm_relation_id": 11267140,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 5
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-11273121",
+      "line_id": "etusa-1",
+      "osm_relation_id": 11273121,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-11273122",
+      "line_id": "etusa-101",
+      "osm_relation_id": 11273122,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-11273123",
+      "line_id": "etusa-92",
+      "osm_relation_id": 11273123,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-11273124",
+      "line_id": "etusa-7",
+      "osm_relation_id": 11273124,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-11273930",
+      "line_id": "etusa-100",
+      "osm_relation_id": 11273930,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-3429799436"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-11275870",
+      "line_id": "etusa-96",
+      "osm_relation_id": 11275870,
+      "status": "osm_member_order_unvalidated",
+      "reason": "fewer_than_two_stations",
+      "checks": [
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-13123782",
+      "line_id": "etus-tiaret-26",
+      "osm_relation_id": 13123782,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-10811355561",
+            "osm-node-9032301077"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-9049337681",
+            "osm-node-10822149754"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 3
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-13125127",
+      "line_id": "etus-tiaret-29",
+      "osm_relation_id": 13125127,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-10817085904",
+            "osm-node-10811355561",
+            "osm-node-9032301077"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-9049258735",
+            "osm-node-9031893761"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 4
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-13125128",
+      "line_id": "etus-tiaret-29",
+      "osm_relation_id": 13125128,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-9032301077"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 3
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-13126846",
+      "line_id": "etus-tiaret-28",
+      "osm_relation_id": 13126846,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-9049352575",
+            "osm-node-10816744936",
+            "osm-node-10814254969"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-13129621",
+      "line_id": "etus-tiaret-31",
+      "osm_relation_id": 13129621,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-9036336104"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 10
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-13130866",
+      "line_id": "etus-tiaret-30",
+      "osm_relation_id": 13130866,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-1896427326",
+            "osm-node-10873127888",
+            "osm-node-10873127891",
+            "osm-node-10873127879"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-10819762154",
+            "osm-node-10873127878"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-13131828",
+      "line_id": "etus-tiaret-27",
+      "osm_relation_id": 13131828,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-10822415386"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-14596722",
+      "line_id": "etus-setif-104",
+      "osm_relation_id": 14596722,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-10035252939",
+            "osm-node-10035232541",
+            "osm-node-10035252922",
+            "osm-node-662368945",
+            "osm-node-10035252945",
+            "osm-node-10035232522",
+            "osm-node-10035232571",
+            "osm-node-10035232572",
+            "osm-node-10035232573",
+            "osm-node-10035252920",
+            "osm-node-10035252923",
+            "osm-node-10035252926",
+            "osm-node-10035232545",
+            "osm-node-10035232546",
+            "osm-node-10035252963",
+            "osm-node-10035252964",
+            "osm-node-10035252965",
+            "osm-node-10035232556",
+            "osm-node-10035252968",
+            "osm-node-10035252969",
+            "osm-node-10035252970"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-10035252948",
+            "osm-node-10036316614"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-14608521",
+      "line_id": "etus-setif-101",
+      "osm_relation_id": 14608521,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-10044422214",
+            "osm-node-10043547706"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-10044422191"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 4
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-14616622",
+      "line_id": "etus-setif-106B",
+      "osm_relation_id": 14616622,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-10049953045"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-14618940",
+      "line_id": "etus-setif-106B",
+      "osm_relation_id": 14618940,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-10048295489"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-15737071",
+      "line_id": "etus-tiaret-32",
+      "osm_relation_id": 15737071,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-10819762183",
+            "osm-node-10819762197"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-15737082",
+      "line_id": "etus-tiaret-32",
+      "osm_relation_id": 15737082,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-462695064",
+            "osm-node-10819762171",
+            "osm-node-10880395737",
+            "osm-node-10819837148",
+            "osm-node-10819762202",
+            "osm-node-10819762204",
+            "osm-node-10819762151",
+            "osm-node-10819762158",
+            "osm-node-10819762163",
+            "osm-node-10819762167",
+            "osm-node-10819762179",
+            "osm-node-10819762181",
+            "osm-node-10819762191",
+            "osm-node-10819762193",
+            "osm-node-1240255949"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-10880395740",
+            "osm-node-10819762196"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-15740436",
+      "line_id": "etus-tiaret-26",
+      "osm_relation_id": 15740436,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-9032301068",
+            "osm-node-10811468497",
+            "osm-node-10811468494",
+            "osm-node-10811468489",
+            "osm-node-9032301069",
+            "osm-node-9032301070",
+            "osm-node-10811430185",
+            "osm-node-10811430188",
+            "osm-node-9032301072",
+            "osm-node-10822149752",
+            "osm-node-9032301073",
+            "osm-node-9032301074",
+            "osm-node-10811430192",
+            "osm-node-9033545205",
+            "osm-node-9052051110",
+            "osm-node-9035106965",
+            "osm-node-9032301076",
+            "osm-node-10811355565",
+            "osm-node-9032301077"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-9049337681",
+            "osm-node-9031893761"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 3
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-15748010",
+      "line_id": "etus-tiaret-27",
+      "osm_relation_id": 15748010,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-10822415387"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-15814690",
+      "line_id": "etus-tiaret-28",
+      "osm_relation_id": 15814690,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-10816744939",
+            "osm-node-10816744926",
+            "osm-node-10816744930",
+            "osm-node-9033418908",
+            "osm-node-9033418898",
+            "osm-node-9033418903",
+            "osm-node-9049390619",
+            "osm-node-10817085893",
+            "osm-node-9038460702",
+            "osm-node-10871330726",
+            "osm-node-10817085900",
+            "osm-node-9049258735",
+            "osm-node-10817085902",
+            "osm-node-9049258732",
+            "osm-node-10871330729",
+            "osm-node-9049258728",
+            "osm-node-9049352585",
+            "osm-node-9049352578",
+            "osm-node-9050533405"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-15817800",
+      "line_id": "etus-tiaret-30",
+      "osm_relation_id": 15817800,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-10873127883",
+            "osm-node-10819762158",
+            "osm-node-10819762163",
+            "osm-node-10819762167",
+            "osm-node-10819762171",
+            "osm-node-9049352580",
+            "osm-node-9049352586",
+            "osm-node-9049258728",
+            "osm-node-10817088107",
+            "osm-node-9049258732",
+            "osm-node-10817085902",
+            "osm-node-9049258734",
+            "osm-node-10871330725",
+            "osm-node-9038460702",
+            "osm-node-10817085895",
+            "osm-node-9049390619",
+            "osm-node-10811468498",
+            "osm-node-9049337681",
+            "osm-node-9038460664",
+            "osm-node-10814254997",
+            "osm-node-9038460674",
+            "osm-node-10814254994",
+            "osm-node-9039152566",
+            "osm-node-9058597983"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-10819762154"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-15828581",
+      "line_id": "etus-tiaret-31",
+      "osm_relation_id": 15828581,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-10871330725",
+            "osm-node-10879589692"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-9049258735",
+            "osm-node-9037700237"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 7
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-16022861",
+      "line_id": "etuad-AD-2",
+      "osm_relation_id": 16022861,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-11011320019"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-11006722206",
+            "osm-node-12532183259"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 2
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-16541421",
+      "line_id": "etusa-L615",
+      "osm_relation_id": 16541421,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": false,
+          "failing": [
+            "osm-node-5206802522",
+            "osm-node-5399987379",
+            "osm-node-5399987380",
+            "osm-node-5399987384",
+            "osm-node-11281591040",
+            "osm-node-11281591042"
+          ]
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-11281591041",
+            "osm-node-11281591042"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": false,
+          "gaps": 1
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-19108800",
+      "line_id": "etusto-9",
+      "osm_relation_id": 19108800,
+      "status": "osm_member_order_inconsistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": false,
+          "failing": [
+            "osm-node-4532823389"
+          ]
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-19119123",
+      "line_id": "etusto-1",
+      "osm_relation_id": 19119123,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-19119124",
+      "line_id": "etusto-1",
+      "osm_relation_id": 19119124,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-19119196",
+      "line_id": "etusto-9",
+      "osm_relation_id": 19119196,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-20629703",
+      "line_id": "etusto-6",
+      "osm_relation_id": 20629703,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    },
+    {
+      "direction_id": "osm-relation-20629704",
+      "line_id": "etusto-6",
+      "osm_relation_id": 20629704,
+      "status": "osm_member_order_consistent",
+      "checks": [
+        {
+          "rule": "near_path",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "path_order",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "termini",
+          "pass": true,
+          "failing": []
+        },
+        {
+          "rule": "continuity",
+          "pass": true,
+          "gaps": 0
+        }
+      ]
+    }
+  ],
+  "lines_without_geometry": {
+    "lines": 108,
+    "by_reason": {
+      "no_osm_relation": 94,
+      "osm_relation_not_approved": 4,
+      "operator_list_only": 10
+    },
+    "detail": [
+      {
+        "line_id": "etusl-laghouat-02",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusl-laghouat-04",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusl-laghouat-05",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusl-laghouat-07",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oeb-01",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oeb-02",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oeb-03",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oeb-04",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oeb-05",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-bejaia-1",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-bejaia-2",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-bejaia-3",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-bejaia-4",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-bejaia-5",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-2A",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-2B",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-2C",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-03",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-4B",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-4C",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-4E",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-11",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-44",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-tlemcen-H",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusto-1A",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusto-7",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-5",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-8",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-33",
+        "reason": "osm_relation_not_approved",
+        "osm_relation_ids": [
+          2865634,
+          11267139
+        ]
+      },
+      {
+        "line_id": "etusa-35",
+        "reason": "osm_relation_not_approved",
+        "osm_relation_ids": [
+          2847007,
+          11267138
+        ]
+      },
+      {
+        "line_id": "etusa-36",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-39",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-40",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-43",
+        "reason": "osm_relation_not_approved",
+        "osm_relation_ids": [
+          2865611
+        ]
+      },
+      {
+        "line_id": "etusa-44",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-51",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-57",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-73",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-80",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-81",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etusa-89",
+        "reason": "osm_relation_not_approved",
+        "osm_relation_ids": [
+          2881810
+        ]
+      },
+      {
+        "line_id": "etus-setif-105",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-setif-106A",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-01",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-02",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-03",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-04",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-05",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-skikda-06",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-3B",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-09",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-11",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-16",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-25",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-26",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-27",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-sidi-bel-abbes-28",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-05",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-25",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-26",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-30",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-33",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-annaba-41",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L02",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L04",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L05",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L08",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L14",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L15",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L16",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L19",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L21",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L22",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L23",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L24",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L25",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L26",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L27",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L28",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L29",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L31",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L32",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L33",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L34",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L35",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L36",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L37",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-c-constantine-L38",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-msila-11",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-msila-12",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-msila-16",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-msila-17",
+        "reason": "operator_list_only",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etus-oran-83",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-1",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-3",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-4",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-5",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-6",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-7",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-8",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AD-9",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AT-1",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-AT-3",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-KM-1",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-KM-2",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-KM-3",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-KM-4",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      },
+      {
+        "line_id": "etuad-KM-5",
+        "reason": "no_osm_relation",
+        "osm_relation_ids": []
+      }
+    ],
+    "unmatched_relations": [
+      {
+        "osm_relation_id": 21358030,
+        "operator_id": "etusto"
+      },
+      {
+        "osm_relation_id": 7107372,
+        "operator_id": "etuad"
+      },
+      {
+        "osm_relation_id": 21358031,
+        "operator_id": "etusto"
+      },
+      {
+        "osm_relation_id": 13122754,
+        "operator_id": "etus-tiaret"
+      },
+      {
+        "osm_relation_id": 15831983,
+        "operator_id": "etus-tiaret"
+      },
+      {
+        "osm_relation_id": 21433147,
+        "operator_id": "etus-tiaret"
+      },
+      {
+        "osm_relation_id": 2865632,
+        "operator_id": "etusa"
+      }
+    ]
+  }
+}

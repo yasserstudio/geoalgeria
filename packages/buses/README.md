@@ -3,7 +3,7 @@
 # @geoalgeria/buses
 
 Reviewed urban and suburban bus data for Algeria. This release contains **184 Lines**
-from 16 Operators, **76 drawable shapes**, **128 Directions**, and **1,603 Stations**.
+from 16 Operators, **76 drawable shapes**, **128 Directions**, and **1,599 Stations**.
 
 ```bash
 npm install @geoalgeria/buses
@@ -51,14 +51,38 @@ validation-only official geometry are not published as shapes.
 - `data/lines.json` and `data/csv/lines.csv`: 184 Lines
 - `data/shapes.json` and `data/geojson/shapes.geojson`: 76 MultiLineString shapes
 - `data/directions.json`: 128 source OSM Direction relations
-- `data/stations.json`, CSV and GeoJSON: 1,603 Station nodes
-- `data/station-memberships.json`: 2,685 ordered relation memberships
+- `data/stations.json`, CSV and GeoJSON: 1,599 Station nodes
+- `data/station-memberships.json`: 2,682 ordered relation memberships
 - `data/operators.json`: 16 Operators
 
-Membership order is the raw OSM relation member order and carries
-`sequence_status: "osm_member_order_unvalidated"`. It is **not** a validated passenger
-stop sequence. Repeated members are retained, Direction order is never reversed, and
-terminus roles are not inferred. OSM `from`, `to`, and `via` remain source labels only.
+Membership order is the raw OSM relation member order. It is **not** a validated
+passenger stop sequence. Repeated members are retained, Direction order is never
+reversed, and terminus roles are not inferred. OSM `from`, `to`, and `via` remain source
+labels only.
+
+Each Direction, and each of its Memberships, carries a `sequence_status` from geometric
+checks of that order against the drawn path:
+
+| `sequence_status` | Directions | Meaning |
+| --- | ---: | --- |
+| `osm_member_order_consistent` | 36 | Stations lie near the path, in order along it, with the first and last near its ends, and the path has no gap |
+| `osm_member_order_inconsistent` | 69 | At least one of those checks fails; the Direction is published, flagged |
+| `osm_member_order_unvalidated` | 23 | Fewer than two Stations, so the order cannot be checked |
+
+Consistent means the OSM order agrees with the OSM path, not that an Operator confirms
+it. More values may be added in a minor release, so a `switch` over `sequence_status`
+needs a `default` branch.
+
+A Line has no status of its own: read it from its Directions. A Line with no Direction
+has no geometry yet (108 of 184: no OSM relation found, an OSM relation that matches the
+Line but is not yet approved, or only an Operator stop list with no geometry). A Line
+with Directions is as strong as the statuses they carry.
+
+`last_confirmed` on each Line, copied onto its shape, is the date of the official
+Operator source that states the Line: the document's own date when it carries one,
+otherwise the day it was read or supplied. It is `null` for the 77 Lines that only
+Wikipedia or OpenStreetMap name (ETUSA's and Mostaganem's). A null does not mean the Line
+stopped running, and an OSM refresh never moves the date.
 
 Unnamed OSM Stations keep `name`, `name_fr`, and `name_ar` as `null`. Twelve ETUSA
 Station nodes without a spatial Wilaya assignment are explicitly derived to Wilaya 16

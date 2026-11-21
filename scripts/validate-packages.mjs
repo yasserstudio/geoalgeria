@@ -1326,6 +1326,75 @@ function validateRouteEndpoints() {
   console.log(`  OK: ${label}, ${eps.length} endpoints, fully named (fr/en/ar), all route terminals resolve`);
 }
 
+// ADR 0005: an OSM Direction ships the geometric verdict the committed QA report
+// gives it, and each Membership carries its Direction's status. The report is
+// research/buses/qa/report.json, so the check stays offline. The report must come
+// from the same OSM pull the package was built from: a refresh that skips
+// run-qa.mjs would otherwise ship the previous pull's verdicts.
+function validateBusSequenceStatus() {
+  const label = "buses sequence_status [QA report]";
+  let directions, memberships, report, metadata;
+  try {
+    directions = readJson(join(ROOT, "packages", "buses", "data", "directions.json"));
+    memberships = readJson(join(ROOT, "packages", "buses", "data", "station-memberships.json"));
+    report = readJson(join(ROOT, "research", "buses", "qa", "report.json"));
+    metadata = readJson(join(ROOT, "packages", "buses", "data", "metadata.json"));
+  } catch (e) {
+    return fail(`${label}: cannot read: ${e.message}`);
+  }
+  const pulled = metadata.sources.find((source) => source.key === "osm")?.retrieved;
+  const { from, to } = report.osm_snapshot ?? {};
+  if (!pulled || !from || !to || pulled < from.slice(0, 10) || pulled > to.slice(0, 10)) {
+    return fail(`${label}: report.json covers the OSM pull ${from} to ${to}, the package was built from ${pulled}; re-run research/buses/qa/run-qa.mjs`);
+  }
+  const verdict = new Map(report.directions.map((d) => [d.direction_id, d.status]));
+  const status = new Map(directions.map((d) => [d.id, d.sequence_status]));
+  const problems = [];
+  for (const d of directions) {
+    if (!d.sequence_status.startsWith("osm_member_order_")) continue;
+    if (!verdict.has(d.id)) problems.push(`${d.id}: no verdict in the QA report`);
+    else if (d.sequence_status !== verdict.get(d.id))
+      problems.push(`${d.id}: ships ${d.sequence_status}, report says ${verdict.get(d.id)}`);
+  }
+  for (const m of memberships) {
+    if (m.sequence_status !== status.get(m.direction_id))
+      problems.push(`${m.id}: ${m.sequence_status} differs from its Direction`);
+  }
+  if (problems.length) {
+    return fail(`${label}: ${problems.length} problem(s): ${problems.slice(0, 5).join("; ")}`);
+  }
+  const tally = {};
+  for (const d of directions) tally[d.sequence_status] = (tally[d.sequence_status] ?? 0) + 1;
+  console.log(`  OK: ${label}, ${directions.length} Directions match the report (${
+    Object.entries(tally).map(([k, n]) => `${n} ${k}`).join(", ")})`);
+}
+
+// A Line's `last_confirmed` is an ISO date no later than the package's
+// `updated`, or null when no official Operator source names the Line.
+function validateBusLastConfirmed() {
+  const label = "buses last_confirmed";
+  let lines, metadata;
+  try {
+    lines = readJson(join(ROOT, "packages", "buses", "data", "lines.json"));
+    metadata = readJson(join(ROOT, "packages", "buses", "data", "metadata.json"));
+  } catch (e) {
+    return fail(`${label}: cannot read: ${e.message}`);
+  }
+  const problems = [];
+  for (const line of lines) {
+    const date = line.last_confirmed;
+    if (date === null) continue;
+    if (typeof date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(date)))
+      problems.push(`${line.id}: ${JSON.stringify(date)} is not an ISO date or null`);
+    else if (date > metadata.updated) problems.push(`${line.id}: ${date} is later than updated ${metadata.updated}`);
+  }
+  if (problems.length) {
+    return fail(`${label}: ${problems.length} problem(s): ${problems.slice(0, 5).join("; ")}`);
+  }
+  const dated = lines.filter((line) => line.last_confirmed !== null).length;
+  console.log(`  OK: ${label}, ${dated} Lines dated, ${lines.length - dated} null, none after ${metadata.updated}`);
+}
+
 // Every route ships `sources`, its citation list: the urls behind the row, and
 // `source` stays the primary citation, the same url as the first entry (ADR
 // 0002). The gate is here rather than in the relation spec because the contract
@@ -1570,7 +1639,10 @@ const TYPED = {
   agriculture: { "agriculture.json": "AgricultureInstitution" },
   aviation: { "airports.json": "Airport", "routes.json": "Route" },
   banques: { "banks.json": "Institution", "institutions.json": "Institution", "branches.json": "Branch" },
-  buses: { "lines.json": "BusLine", "stations.json": "BusStation" },
+  buses: {
+    "lines.json": "BusLine", "stations.json": "BusStation",
+    "shapes.json": "BusShape", "directions.json": "BusDirection", "station-memberships.json": "StationMembership",
+  },
   cliniques: { "cliniques.json": "Clinique" },
   culture: { "culture.json": "CulturalSite" },
   djezzy: { "boutiques.json": "Boutique" },
@@ -2134,6 +2206,12 @@ validateNormalizeRules();
 if (!only || only === "poste") {
   console.log(`\n[mirror: dataset ↔ poste]`);
   validateMirror();
+}
+
+if (!only || only === "buses") {
+  console.log(`\n[buses accuracy]`);
+  validateBusSequenceStatus();
+  validateBusLastConfirmed();
 }
 
 if (!only || only === "aviation") {

@@ -56,8 +56,8 @@ test("buses v3 ships only the reviewed release boundary", () => {
   assert.equal(lines.length, 184);
   assert.equal(shapes.length, 76);
   assert.equal(directions.length, 128);
-  assert.equal(stations.length, 1603);
-  assert.equal(memberships.length, 2685);
+  assert.equal(stations.length, 1599);
+  assert.equal(memberships.length, 2682);
   assert.equal(operators.length, 16);
   assert.equal(directions.filter((direction) => direction.public_transport_version === 2).length, 125);
   assert.equal(directions.filter((direction) => direction.public_transport_version === null).length, 3);
@@ -185,7 +185,7 @@ test("ordered memberships reproduce raw OSM member positions without collapsing 
       });
     }
   }
-  assert.equal(expected.length, 2685);
+  assert.equal(expected.length, 2682);
   const actual = memberships.map((membership) => ({
     relation: membership.osm_relation_id,
     osmMemberIndex: membership.osm_member_index,
@@ -193,7 +193,9 @@ test("ordered memberships reproduce raw OSM member positions without collapsing 
     role: membership.role,
   }));
   assert.deepEqual(actual, expected.sort((a, b) => a.relation - b.relation || a.osmMemberIndex - b.osmMemberIndex));
-  assert.ok(memberships.every((membership) => membership.sequence_status === "osm_member_order_unvalidated"));
+  // A Membership inherits its Direction's sequence status (ADR 0005).
+  const directionStatus = new Map(directions.map((direction) => [direction.id, direction.sequence_status]));
+  assert.ok(memberships.every((membership) => membership.sequence_status === directionStatus.get(membership.direction_id)));
   assert.ok(new Set(memberships.map((membership) => membership.station_id)).size < memberships.length);
 });
 
@@ -325,8 +327,8 @@ test("bus v3 public API reaches new entities", async () => {
   assert.ok(api.lines().every((line) => line.source_url == null || /^https?:\/\//.test(line.source_url)));
   assert.equal(api.shapes().length, 76);
   assert.equal(api.directions().length, 128);
-  assert.equal(api.stations().length, 1603);
-  assert.equal(api.stationMemberships().length, 2685);
+  assert.equal(api.stations().length, 1599);
+  assert.equal(api.stationMemberships().length, 2682);
   assert.equal(api.shapeForLine("etus-tiaret-32")?.line_id, "etus-tiaret-32");
   assert.equal(api.shapeForLine("etusto-9")?.line_id, "etusto-9");
   assert.equal(api.shapeForLine("etus-setif-101")?.line_id, "etus-setif-101");
