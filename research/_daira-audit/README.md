@@ -98,10 +98,10 @@ a daira on a different commune.
 
 ## Follow-ups
 
-Deferred by the Owner from geoalgeria.com#360:
+Deferred by the Owner from geoalgeria.com#360 (`kind`, `seat_commune_code` and
+`communes` shipped in `dairas.json` on 21 Nov 2026):
 
-- Done 21 Nov 2026: `kind`, `seat_commune_code` and `communes` in
-  `dairas.json`, and the test that each graded daira's communes equal the list
-  the decree prints (test/daira-fields.test.mjs).
+- A test that each graded daira's communes equal the list the decree prints
+  (only decree 26-253 has a machine-readable table, `research/_dairas/`).
 - Respelling the 16 seat communes in `name_ar_decree_spelling`, at commune
   level.

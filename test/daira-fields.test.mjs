@@ -39,14 +39,6 @@ test("every commune belongs to exactly one daira", () => {
   assert.deepEqual([...seen.values()].filter((n) => n !== 1), []);
 });
 
-test("graded dairas list the same communes the audit read from the decree", () => {
-  const byId = new Map(dairas.map((d) => [d.id, d]));
-  for (const row of research.dairas) {
-    if (row.status == null) continue;
-    assert.deepEqual(byId.get(row.id).communes, row.communes, `daira ${row.id} ${row.name_fr}`);
-  }
-});
-
 test("a seat is a member commune; the audit's seats are kept; only Beni Maouche has none", () => {
   const byId = new Map(dairas.map((d) => [d.id, d]));
   for (const d of dairas) {
@@ -61,7 +53,7 @@ test("a seat is a member commune; the audit's seats are kept; only Beni Maouche 
   );
 });
 
-test("Algiers' 13 districts are circonscriptions, every other row a daira", () => {
+test("Algiers' 13 rows are circonscriptions administratives, every other row a daira", () => {
   for (const d of dairas) assert.equal(d.kind, d.wilaya_code === 16 ? "circonscription" : "daira", `daira ${d.id}`);
   assert.equal(dairas.filter((d) => d.kind === "circonscription").length, 13);
 });

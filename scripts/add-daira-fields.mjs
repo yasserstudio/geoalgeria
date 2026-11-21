@@ -11,7 +11,7 @@
 //   five rows, the member listed in SPELLING_SEATS, the same name spelled
 //   another way (the audit's `spelling_only` case). Null otherwise: Beni
 //   Maouche (60), whose only member is Beni-Mallikeche. Nothing is guessed.
-// - `kind`: "circonscription" for the 13 administrative districts of Algiers
+// - `kind`: "circonscription" for the 13 circonscriptions administratives of Algiers
 //   (wilaya 16), "daira" everywhere else (CONTEXT.md, Circonscription
 //   administrative).
 //
@@ -54,14 +54,14 @@ const dairas = readJson(DAIRAS);
 const auditSeat = new Map(readJson(AUDIT).dairas.map((row) => [row.id, row.seat_commune_code]));
 
 /** The member Communes of a Daira, ascending by code. */
-export function membersOf(daira, communes = canonicalCommunes) {
+function membersOf(daira, communes = canonicalCommunes) {
   return communes
     .filter((c) => c.wilaya_code === daira.wilaya_code && c.daira === daira.name_fr)
     .sort((a, b) => a.code_commune - b.code_commune);
 }
 
 /** The one member named like the Daira, by Loose key, or null. */
-export function namedSeat(daira, members) {
+function namedSeat(daira, members) {
   const key = looseKey(daira.name_fr);
   const hits = members.filter((c) => looseKey(c.name_fr) === key);
   return hits.length === 1 ? hits[0].code_commune : null;

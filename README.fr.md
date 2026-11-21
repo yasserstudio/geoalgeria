@@ -89,8 +89,9 @@ const daira = dz.dairas.find((d) => d.id === 515);
 daira.name_ar;         // "تقرت"
 daira.audit.status;    // "decree_table", "agrees_1991", ou null si pas encore classée
 daira.audit.citation;  // décret 21-198 de 2021 : article, page et PDF du Journal officiel
-dz.communes.filter((c) => c.wilaya_code === daira.wilaya_code && c.daira === daira.name_fr);
-// Nezla, Tebesbest, Touggourt, Zaouia El Abidia
+daira.communes;        // [5501, 5503, 5504, 5505] : Touggourt, Nezla, Tebesbest, Zaouia El Abidia
+daira.seat_commune_code; // 5501, la commune de Touggourt
+daira.kind;            // "daira" ("circonscription" à Alger)
 ```
 
 Les accents, la casse et les formes de la hamza n'empêchent jamais une correspondance. Le champ `match` de chaque résultat vaut `exact`, `prefix` (le début d'un nom) ou `loose` (ى lu comme ي, ة comme ه), et un ancien nom trouve aussi la fiche, avec `matched: "former"`. Les listes des daïras viennent des décrets du *Journal officiel* ([ADR 0006](docs/adr/0006-dairas-from-the-decrees.md)).
