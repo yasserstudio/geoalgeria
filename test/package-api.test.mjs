@@ -474,17 +474,18 @@ test("aviation: Batna serves Orly, the Gulf triangle is planned, Dubai is suspen
   // nonstop still must not appear.
   //
   // All three carry AH 4064, the one number the 29 Jun 2026 NW26 filing gives the
-  // whole rotation, and the days it times each departure to: Algiers and Kuwait on
-  // the Monday, Amman on the Tuesday after the date rolls over. They stay PLANNED,
-  // because a filed schedule is not a report that the aircraft flew.
+  // whole rotation. Its 26 Oct 2026 start did not happen, so since 2026-11-21
+  // (collection-rules.md section 38) the legs are `listed` with no days: the
+  // filed Monday and Tuesday belonged to that passed start. They stay PLANNED,
+  // because the route is still announced and nothing says it was withdrawn.
   assert.deepEqual(shape("alg-kwi"), {
-    flight: "AH 4064", status: "unclear", days: ["mon"], evidence: "verified", planned: true,
+    flight: "AH 4064", status: "unclear", days: null, evidence: "listed", planned: true,
   });
   assert.deepEqual(shape("kwi-amm"), {
-    flight: "AH 4064", status: "unclear", days: ["mon"], evidence: "verified", planned: true,
+    flight: "AH 4064", status: "unclear", days: null, evidence: "listed", planned: true,
   });
   assert.deepEqual(shape("amm-alg"), {
-    flight: "AH 4064", status: "unclear", days: ["tue"], evidence: "verified", planned: true,
+    flight: "AH 4064", status: "unclear", days: null, evidence: "listed", planned: true,
   });
   for (const id of ["kwi-alg", "alg-amm", "amm-kwi"])
     assert.ok(!byId.has(id), `${id}: not a nonstop leg of the announced triangle`);
