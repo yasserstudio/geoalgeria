@@ -292,3 +292,12 @@ with the outbound's. Geneva is a new endpoint; its names were already in
 
 - **AH 486, Algiers to Jeddah**: Sat 21 Nov was still Scheduled (21:15) when read.
   Recheck after 22 Nov; a Landed row would add `alg-jed` as Air Algérie's own leg.
+
+## 5. Kuwait-Amman: planned, the filing's detail withdrawn
+
+The three AH 4064 legs (`alg-kwi`, `kwi-amm`, `amm-alg`) were filed for 26 Oct
+2026 and did not start. Observ'Algérie (5 Nov 2026) quotes Algeria's ambassador
+in Kuwait: preparations in their final phase, no date. Algérie360 (11 Nov 2026):
+Air Algérie resumes Algiers-Amman from 1 Jan 2027. The legs stay planned;
+`evidence` moves `verified` to `listed` and `days` to null, per the Owner's
+decision recorded in `collection-rules.md` section 38.
