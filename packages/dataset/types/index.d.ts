@@ -391,12 +391,19 @@ declare namespace algeriaGeodata {
     seat_commune_code: number | null;
     /** `"circonscription"` for the 13 circonscriptions administratives of Algiers (wilaya 16). */
     kind: "daira" | "circonscription";
-    /** `null` where no source was read (57 rows, all of Algiers among them). */
+    /** `null` where no decree read names the daira (3 rows: 91, 274, 279). */
     name_ar: string | null;
-    /** Where `name_ar` comes from: the Arabic table of decree 26-253 or 21-198, or
-     *  the `name_ar` of the seat commune the daira is named after. `null` exactly
-     *  when `name_ar` is. */
-    name_ar_source: "decree_26_253_ar" | "decree_21_198_ar" | "seat_commune" | null;
+    /** Where `name_ar` comes from: the Arabic table of decree 26-253 or 21-198,
+     *  decree 26-112 (the circonscriptions administratives of Algiers), the seats
+     *  column of decree 91-306, or the `name_ar` of the seat commune the daira is
+     *  named after. `null` exactly when `name_ar` is. */
+    name_ar_source:
+      | "decree_26_253_ar"
+      | "decree_21_198_ar"
+      | "decree_26_112_ar"
+      | "decree_91_306_ar"
+      | "seat_commune"
+      | null;
     audit: DairaAudit;
   }
 

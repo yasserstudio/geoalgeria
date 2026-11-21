@@ -213,9 +213,9 @@ reads as further along than it is.
   `test/commune-name-ar.test.mjs` holds the floor at zero so a regeneration
   cannot resurrect them. The daira half is resolved too: the Daira audit
   (#360, PR #353) gave `dairas.json` a `name_ar` with its `name_ar_source` for
-  494 of 551 Dairas, read from decrees 21-198 and 26-253 or the seat Commune;
-  the other 57 stay null rather than guessed, so the Arabic daira clause can
-  return wherever a name exists.
+  548 of 551 Dairas, read from decrees 21-198, 26-253, 26-112 and 91-306 or
+  the seat Commune; the other 3 stay null rather than guessed, so the Arabic
+  daira clause can return wherever a name exists.
   _(logged 2026-08-13; tatweel half shipped 2026-10-01; daira half 2026-11-21)_
 
 - [x] **4 communes disagreed with the app file by tens of km** (Souama w15,

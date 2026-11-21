@@ -203,7 +203,9 @@ def validate_dairas(data, wilaya_codes):
 
 # The daira audit (geoalgeria.com#360): scripts/apply-daira-audit.mjs writes it.
 DAIRA_AUDIT_STATUSES = {"decree_table": {"decret-26-253", "decret-21-198"}, "agrees_1991": {"decret-91-306"}}
-DAIRA_NAME_AR_SOURCES = {"decree_26_253_ar", "decree_21_198_ar", "seat_commune"}
+DAIRA_NAME_AR_SOURCES = {"decree_26_253_ar", "decree_21_198_ar", "decree_26_112_ar", "decree_91_306_ar", "seat_commune"}
+# Read from a table that also grades the daira; the others need no grade.
+DAIRA_GRADED_NAME_AR_SOURCES = {"decree_26_253_ar", "decree_21_198_ar"}
 JORADP_URL = re.compile(r"^https://www\.joradp\.dz/FTP/(jo-francais|JO-ARABE)/\d{4}/[AF]\d{7}\.pdf$")
 
 
@@ -231,7 +233,7 @@ def validate_daira_audit(i, d):
     if status is None:
         if citation is not None:
             error(f"{label}: a daira with no grade carries no citation")
-        if source not in (None, "seat_commune"):
+        if source in DAIRA_GRADED_NAME_AR_SOURCES:
             error(f"{label}: name_ar_source {source!r} needs a decree_table grade")
         return
     if status not in DAIRA_AUDIT_STATUSES:
@@ -243,7 +245,7 @@ def validate_daira_audit(i, d):
     validate_daira_citation(label, citation)
     if citation.get("source") not in DAIRA_AUDIT_STATUSES[status]:
         error(f"{label}: {status} cannot cite {citation.get('source')}")
-    if source in ("decree_26_253_ar", "decree_21_198_ar") and status != "decree_table":
+    if source in DAIRA_GRADED_NAME_AR_SOURCES and status != "decree_table":
         error(f"{label}: name_ar_source {source} needs a decree_table grade")
     if "amended_by" in citation:
         if status != "agrees_1991" or citation["amended_by"].get("source") != "decret-92-66":

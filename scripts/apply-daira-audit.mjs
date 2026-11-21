@@ -55,6 +55,11 @@ function citationFor(cited) {
 }
 
 const STATUSES = new Set(["decree_table", "agrees_1991", null]);
+// name_ar read from a decree's Arabic table: 26-253 and 21-198 only on the
+// rows their tables grade; 26-112 (Algiers) and 91-306 cite a page of their own
+// (research.name_ar_sources) and need no grade.
+const TABLE_NAME_AR = new Set(["decree_26_253_ar", "decree_21_198_ar"]);
+const PAGED_NAME_AR = new Set(Object.keys(research.name_ar_sources));
 const dairasPath = join(DATA, "dairas.json");
 const dairas = readJson(dairasPath);
 if (dairas.length !== auditById.size) {
@@ -74,6 +79,16 @@ const next = dairas.map((row) => {
   if (!STATUSES.has(audited.status)) throw new Error(`daira ${row.id}: unknown status ${audited.status}`);
   if ((audited.name_ar === null) !== (audited.name_ar_source === null)) {
     throw new Error(`daira ${row.id}: name_ar and name_ar_source must be set together`);
+  }
+  const named = audited.name_ar_source;
+  if (named !== null && named !== "seat_commune" && !TABLE_NAME_AR.has(named) && !PAGED_NAME_AR.has(named)) {
+    throw new Error(`daira ${row.id}: unknown name_ar_source ${named}`);
+  }
+  if (TABLE_NAME_AR.has(named) && audited.status !== "decree_table") {
+    throw new Error(`daira ${row.id}: name_ar_source ${named} needs a decree_table grade`);
+  }
+  if (PAGED_NAME_AR.has(named) !== Boolean(audited.name_ar_page)) {
+    throw new Error(`daira ${row.id}: name_ar_page goes with ${[...PAGED_NAME_AR].join(" or ")}`);
   }
   return {
     id: row.id,
