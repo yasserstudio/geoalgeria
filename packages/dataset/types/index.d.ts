@@ -267,11 +267,46 @@ declare namespace algeriaGeodata {
     wilayas: PhoneCodeProvenanceEntry[];
   }
 
+  /** The Journal officiel text a daira's commune list was checked against. */
+  export interface DairaAuditCitation {
+    /** `decret-26-253` or `decret-21-198` for `decree_table`; `decret-91-306` for
+     *  `agrees_1991`; `decret-92-66` only under `amended_by`. */
+    source: "decret-26-253" | "decret-21-198" | "decret-91-306" | "decret-92-66";
+    decree: string;
+    journal_officiel: string;
+    /** The article and the wilaya table, e.g. "Annexe, tableau de la wilaya 02". */
+    article: string;
+    /** The Journal officiel page, or a range such as "1293-1294". */
+    page: string;
+    /** The PDF on joradp.dz; for 26-253 the Arabic edition the page refers to. */
+    url: string;
+    url_ar?: string;
+    /** Décret exécutif 92-66, on the 1991 rows it re-tabled. */
+    amended_by?: DairaAuditCitation;
+  }
+
+  /** How far a daira's commune list has been checked against the Journal officiel. */
+  export interface DairaAudit {
+    /** `decree_table`: read from a whole-wilaya table of 26-253 (2026) or 21-198 (2021).
+     *  `agrees_1991`: agrees with 91-306 (1991), as amended by 92-66 where it applies;
+     *  amendments of 1993 to 2020 were not exhaustively searched.
+     *  `null`: not yet audited; the communes are unchanged and carry no grade. */
+    status: "decree_table" | "agrees_1991" | null;
+    citation: DairaAuditCitation | null;
+  }
+
   export interface Daira {
     id: number;
     wilaya_code: number;
     name_fr: string;
     commune_count: number;
+    /** `null` where no source was read (57 rows, all of Algiers among them). */
+    name_ar: string | null;
+    /** Where `name_ar` comes from: the Arabic table of decree 26-253 or 21-198, or
+     *  the `name_ar` of the seat commune the daira is named after. `null` exactly
+     *  when `name_ar` is. */
+    name_ar_source: "decree_26_253_ar" | "decree_21_198_ar" | "seat_commune" | null;
+    audit: DairaAudit;
   }
 
   export interface CommuneEcommerce {
