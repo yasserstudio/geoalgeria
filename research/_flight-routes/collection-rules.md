@@ -1030,3 +1030,31 @@ has opened no bookings for the new dates.
 **What would undo it.** A second withdrawal of the filing removes the rows again
 under section 32, with `WITHDRAWN` re-armed. A first operated flight promotes them
 under section 36. Nothing here lowers the bar for any other planned row.
+
+## 38. Kuwait-Amman stays planned on an unmet filing (Owner decision, 2026-11-21)
+
+**What happened.** The 29 Jun 2026 AeroRoutes filing put `AH 4064` on one weekly
+rotation, Algiers - Kuwait - Amman - Algiers, from 26 Oct 2026, and section 33
+brought its middle leg in. The start did not happen: AH 4064 and AH 4065 had no
+data on Flightradar24 on 30 Oct, and on 5 Nov Observ'Algérie quoted Algeria's
+ambassador in Kuwait saying preparations are in their "final phase", with no
+launch date and no schedule. On 11 Nov Algérie360 reported that Air Algérie
+suspended Amman in March 2026 and resumes Algiers-Amman only from 1 Jan 2027,
+which the filing's Amman legs did not foresee.
+
+**The decision.** All three legs stay in `plannedRoutes()`. The route is still
+announced by an official voice and no source says it was withdrawn, so section 32
+does not remove it, and section 7 keeps the tracker's silence from counting as a
+negative. What no longer stands is the filing's detail:
+
+- `evidence` is `listed`, not `verified`: the dated plan behind `verified` is
+  demonstrably unmet.
+- `days` is null on all three legs: the filed Monday and Tuesday belonged to a
+  start date that passed.
+- `flight` keeps `AH 4064`, the only number any source gives.
+- `alg-kwi` adds the 5 Nov Observ'Algérie report; `kwi-amm` and `amm-alg` add the
+  11 Nov Algérie360 report on the Amman suspension.
+
+**What would undo it.** A withdrawal removes the rows under section 32. A new
+dated schedule with bookings open restores `days`, and `verified` if it is a
+filing. A first operated flight promotes them under section 36.

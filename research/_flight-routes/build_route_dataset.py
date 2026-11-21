@@ -1104,11 +1104,16 @@ PLANNED = [
     # negative (section 7): an empty tracker page is a silence, and this rotation's
     # one weekly Monday departure may simply not be flying under the filed number.
     # RE-CHECK AFTER 2026-11-03.
+    # 2026-11-21, Owner decision (collection-rules.md section 38): the 26 Oct start
+    # did not happen and no schedule is on sale, so the filing's day no longer
+    # stands. `evidence` drops to `listed` and `days` to null; the row stays planned
+    # because the route is still announced and nothing says it was withdrawn.
     {"from": "ALG", "to": "KWI", "flight": "AH 4064", "status": "unclear",
-     "days": ["mon"], "evidence": "verified",
+     "days": None, "evidence": "listed",
      "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
      "extra_sources": [
          "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+         "https://observalgerie.com/2026/11/05/voyage/air-algerie-bientot-des-vols-directs-entre-alger-koweit-city/",
      ]},
     # The triangle's middle leg, added 2026-10-02 on the Owner's decision, and it
     # widens a scope line this file used to draw: the 27 Sep pass recorded "nothing
@@ -1122,11 +1127,16 @@ PLANNED = [
     # rotation leaves Algiers, "2105KWI2205", before the date rolls over at Amman.
     # The note this replaces said nothing published says which day the aircraft
     # leaves Kuwait; the filing does.
+    # 2026-11-21, Owner decision (collection-rules.md section 38): the 26 Oct start
+    # did not happen and no schedule is on sale, so the filing's day no longer
+    # stands. `evidence` drops to `listed` and `days` to null; the row stays planned
+    # because the route is still announced and nothing says it was withdrawn.
     {"from": "KWI", "to": "AMM", "flight": "AH 4064", "status": "unclear",
-     "days": ["mon"], "evidence": "verified",
+     "days": None, "evidence": "listed",
      "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
      "extra_sources": [
          "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+         "https://www.algerie360.com/air-algerie-reprise-vols-alger-amman-2027/",
      ]},
     # Tripoli, the first Libyan service since the 2016 suspension, announced 1 Oct
     # 2026 with reservations already open and a first flight on Wednesday 28 Oct
@@ -1156,11 +1166,16 @@ PLANNED = [
     # leaves Algiers. The note this replaces assumed nothing pinned it down and
     # cited the Nigeria triangle as the reminder not to mirror the outbound day;
     # that caution was right and the filing simply answers it.
+    # 2026-11-21, Owner decision (collection-rules.md section 38): the 26 Oct start
+    # did not happen and no schedule is on sale, so the filing's day no longer
+    # stands. `evidence` drops to `listed` and `days` to null; the row stays planned
+    # because the route is still announced and nothing says it was withdrawn.
     {"from": "AMM", "to": "ALG", "flight": "AH 4064", "status": "unclear",
-     "days": ["tue"], "evidence": "verified",
+     "days": None, "evidence": "listed",
      "source": "https://www.aeroroutes.com/eng/260629-ahnw26",
      "extra_sources": [
          "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+         "https://www.algerie360.com/air-algerie-reprise-vols-alger-amman-2027/",
      ]},
     # No Nigeria sector is here any more. The 2026-10-26 pass left four of them
     # planned, and all four flew in the 27-30 Oct window on AH 5354's history: see
