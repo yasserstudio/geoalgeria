@@ -95,6 +95,20 @@ dz.communes.filter((c) => c.wilaya_code === daira.wilaya_code && c.daira === dai
 
 Les accents, la casse et les formes de la hamza n'empêchent jamais une correspondance. Le champ `match` de chaque résultat vaut `exact`, `prefix` (le début d'un nom) ou `loose` (ى lu comme ي, ة comme ه), et un ancien nom trouve aussi la fiche, avec `matched: "former"`. Les listes des daïras viennent des décrets du *Journal officiel* ([ADR 0006](docs/adr/0006-dairas-from-the-decrees.md)).
 
+En Python, les mêmes wilayas, daïras et communes, sans dépendance :
+
+```bash
+pip install geoalgeria
+```
+
+```python
+import geoalgeria
+
+geoalgeria.search("ورقلة")[0]["name_fr"]   # 'Ouargla', harakat optional
+geoalgeria.communes(16)                   # communes of Algiers
+geoalgeria.commune(101)["postal_code"]    # '01000'
+```
+
 ## Contenu
 
 | | Nombre | |

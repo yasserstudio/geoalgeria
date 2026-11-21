@@ -95,6 +95,20 @@ dz.communes.filter((c) => c.wilaya_code === daira.wilaya_code && c.daira === dai
 
 Accents, case and hamza forms never stop a match. Each result's `match` is `exact`, `prefix` (the start of a name) or `loose` (ى read as ي, ة as ه), and a former name finds the record too, with `matched: "former"`. Daira lists come from the decrees in the *Journal officiel* ([ADR 0006](docs/adr/0006-dairas-from-the-decrees.md)).
 
+Python has the same wilayas, dairas and communes, with no dependencies:
+
+```bash
+pip install geoalgeria
+```
+
+```python
+import geoalgeria
+
+geoalgeria.search("ورقلة")[0]["name_fr"]   # 'Ouargla', harakat optional
+geoalgeria.communes(16)                   # communes of Algiers
+geoalgeria.commune(101)["postal_code"]    # '01000'
+```
+
 ## What's inside
 
 | | Count | |

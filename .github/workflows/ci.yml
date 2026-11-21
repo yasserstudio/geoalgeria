@@ -129,3 +129,39 @@ jobs:
       - name: Smoke test - @geoalgeria/normalize (ESM)
         working-directory: packages/normalize
         run: node --input-type=module -e "import('./index.js').then(m=>{const k=m.searchKeys('B\u00e9ja\u00efa-Ville'); if(k.conservative!=='bejaia ville'||k.loose!==k.conservative||k.tokens.join('|')!=='bejaia|ville'||k.looseDiffers){console.error('searchKeys gave',JSON.stringify(k));process.exit(1)} const l=m.looseKey('\u0642\u0633\u0646\u0637\u064a\u0646\u0629'); if(l!=='\u0642\u0633\u0646\u0637\u064a\u0646\u0647'){console.error('looseKey gave',JSON.stringify(l));process.exit(1)} console.log('normalize:','v'+m.NORMALIZE_VERSION+',','B\u00e9ja\u00efa-Ville ->',k.conservative)})"
+
+  # The PyPI package (python/) mirrors the npm contracts: its tests read the Golden
+  # corpus and the search expectations from packages/, and compare keys and search
+  # results with the npm code itself, so Node and the workspace install come first.
+  python:
+    name: python (${{ matrix.python-version }})
+    # ubuntu-latest is 26.04, where setup-python has no 3.9 build; 24.04 still
+    # carries the floor that pyproject.toml promises (requires-python >= 3.9).
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.14"]
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - run: python -m pip install "pytest>=8,<10"
+
+      - name: pytest
+        working-directory: python
+        run: python -m pytest -q

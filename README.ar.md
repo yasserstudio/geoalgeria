@@ -97,6 +97,20 @@ dz.communes.filter((c) => c.wilaya_code === daira.wilaya_code && c.daira === dai
 
 الحركات وحالة الأحرف وصور الهمزة لا تمنع التطابق أبدًا. قيمة `match` في كل نتيجة هي `exact` أو `prefix` (بداية الاسم) أو `loose` (ى تُقرأ ي، وة تُقرأ ه)، والاسم السابق يجد السجل أيضًا مع `matched: "former"`. قوائم الدوائر مأخوذة من مراسيم *الجريدة الرسمية* ([ADR 0006](docs/adr/0006-dairas-from-the-decrees.md)).
 
+في Python، نفس الولايات والدوائر والبلديات، بدون أي تبعية:
+
+```bash
+pip install geoalgeria
+```
+
+```python
+import geoalgeria
+
+geoalgeria.search("ورقلة")[0]["name_fr"]   # 'Ouargla', harakat optional
+geoalgeria.communes(16)                   # communes of Algiers
+geoalgeria.commune(101)["postal_code"]    # '01000'
+```
+
 ## المحتوى
 
 | | العدد | |
