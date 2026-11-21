@@ -962,7 +962,11 @@
         "jora-25-2026",
         "jora-25-2026-ar",
         "jora-40-2026",
-        "jora-52-2026"
+        "jora-52-2026",
+        "law-19-12",
+        "law-26-06",
+        "law-84-09",
+        "ordonnance-97-14"
       ],
       "access_class": "public-access",
       "rights_class": "rights-unconfirmed",
@@ -1292,7 +1296,9 @@
       "key": "ons",
       "name": "ONS Code Géographique National 2021",
       "publisher": "Office National des Statistiques",
-      "metadata_keys": [],
+      "metadata_keys": [
+        "ons-code-geo-2021"
+      ],
       "access_class": "public-access",
       "rights_class": "rights-unconfirmed",
       "rights_basis": "none-recorded",

@@ -89,10 +89,10 @@ export const POSTAL_CARRIERS = [
       })),
   ],
   [
-    // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
+    // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune,wilaya_code_58,wilaya_code_48
     "data/csv/communes.csv",
     () =>
-      csvRows(readText("csv", "communes.csv"), 8).map((f) => ({
+      csvRows(readText("csv", "communes.csv"), 10).map((f) => ({
         code: Number(f[7]),
         wilaya_code: Number(f[2]),
         name_fr: f[0],
@@ -100,15 +100,15 @@ export const POSTAL_CARRIERS = [
       })),
   ],
   [
-    // (id, 'name_fr', 'name_ar', wilaya_code, 'daira', 'postal'|NULL, lat, lng, code_commune)
-    // Anchored at the end of the row and keyed on the trailing commune code, so the
+    // (id, 'name_fr', 'name_ar', wilaya_code, 'daira', 'postal'|NULL, lat, lng, code_commune, w58, w48)
+    // Anchored at the end of the row and keyed on the commune code before the two lineage codes, so the
     // SQL-escaped apostrophes (M''fatha) are read rather than dropped. The wilaya
-    // rows print nine fields too, and their point is never NULL, so the commune
+    // rows print nine fields, and their point is never NULL, so the commune
     // rows are the ones whose sixth field is a postal code and not a daira name.
     "data/sql/full.sql",
     () => {
       const re =
-        /^ {2}\(\d+, '((?:[^']|'')*)', '(?:[^']|'')*', (\d+), '(?:[^']|'')*', ('\d+'|NULL), (?:-?[\d.]+|NULL), (?:-?[\d.]+|NULL), (\d+)\)[,;]$/;
+        /^ {2}\(\d+, '((?:[^']|'')*)', '(?:[^']|'')*', (\d+), '(?:[^']|'')*', ('\d+'|NULL), (?:-?[\d.]+|NULL), (?:-?[\d.]+|NULL), (\d+), \d+, \d+\)[,;]$/;
       const rows = [];
       for (const line of readText("sql", "full.sql").split("\n")) {
         const m = line.match(re);

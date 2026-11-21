@@ -51,7 +51,7 @@ export const COPIES = [
       })),
   ],
   [
-    // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
+    // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune,wilaya_code_58,wilaya_code_48
     "data/csv/communes.csv",
     () =>
       readText("csv", "communes.csv")
@@ -59,11 +59,11 @@ export const COPIES = [
         .split(/\r?\n/)
         .slice(1)
         .map((line) => line.split(","))
-        .filter((c) => c.length === 8)
+        .filter((c) => c.length === 10)
         .map((c) => ({ name: c[0], w: Number(c[2]), lat: Number(c[5]), lng: Number(c[6]) })),
   ],
   [
-    // …, wilaya_code, 'daira', 'postal', latitude, longitude, code_commune)
+    // …, wilaya_code, 'daira', 'postal', latitude, longitude, code_commune, w58, w48)
     // Anchored at the end of the row: commune names carry SQL-escaped apostrophes
     // (M''fatha), so a left-anchored quoted-field pattern drops them silently.
     // postal_code matches NULL as well as a quoted value: Larbaa (561) has no
@@ -72,7 +72,7 @@ export const COPIES = [
     "data/sql/full.sql",
     () => {
       const re =
-        /^ {2}\(\d+, '((?:[^']|'')*)', '(?:[^']|'')*', (\d+), '(?:[^']|'')*', (?:'\d+'|NULL), (-?[\d.]+|NULL), (-?[\d.]+|NULL), (?:\d+|NULL)\)[,;]$/;
+        /^ {2}\(\d+, '((?:[^']|'')*)', '(?:[^']|'')*', (\d+), '(?:[^']|'')*', (?:'\d+'|NULL), (-?[\d.]+|NULL), (-?[\d.]+|NULL), (?:\d+|NULL), \d+, \d+\)[,;]$/;
       const num = (s) => (s === "NULL" ? NaN : Number(s));
       const out = [];
       for (const line of readText("sql", "full.sql").split("\n")) {

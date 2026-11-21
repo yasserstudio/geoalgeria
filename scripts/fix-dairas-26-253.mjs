@@ -31,7 +31,7 @@ import {
   membershipFromExtract,
   readExtract,
 } from "./lib/decree-26-253.mjs";
-import { isWilayaSqlRow } from "./lib/full-sql-rows.mjs";
+import { isCommuneSqlRow } from "./lib/full-sql-rows.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
@@ -300,8 +300,8 @@ function patchCsv(path, width, patch) {
   queueText(path, `${[lines[0], ...rows.map((row) => row.join(","))].join(newline)}${newline}`);
 }
 
-// name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
-patchCsv(join(DATA, "csv", "communes.csv"), 8, (f) => {
+// name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune,wilaya_code_58,wilaya_code_48
+patchCsv(join(DATA, "csv", "communes.csv"), 10, (f) => {
   f[3] = dairaFor(Number(f[7]), f[3]);
 });
 
@@ -361,15 +361,15 @@ function patchSql(path, patch, header) {
   queueText(path, out.join("\n"));
 }
 
-// A wilaya row prints 9 fields too since `capital_commune_code` was added, so field
-// count alone no longer tells the two tables apart: read as a commune, wilaya 3's row
+// A wilaya row printed 9 fields like a commune row once `capital_commune_code` was
+// added, so field count alone could not tell the two tables apart: read as a commune, wilaya 3's row
 // had its postal code '03000' overwritten with the daira name 'Laghouat'. The tuples
 // and the discriminator live in scripts/lib/full-sql-rows.mjs.
-// communes: (id, 'name_fr', 'name_ar', wilaya, 'daira', 'postal', lat, lng, code_commune)
+// communes: (id, 'name_fr', 'name_ar', wilaya, 'daira', 'postal', lat, lng, code_commune, w58, w48)
 patchSql(
   join(DATA, "sql", "full.sql"),
   (f) => {
-    if (f.length !== 9 || isWilayaSqlRow(f)) return false;
+    if (!isCommuneSqlRow(f)) return false;
     const daira = sqlQuote(dairaFor(Number(f[8]), sqlUnquote(f[4])));
     if (daira === f[4]) return false;
     f[4] = daira;

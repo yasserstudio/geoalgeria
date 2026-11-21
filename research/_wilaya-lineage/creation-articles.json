@@ -1,0 +1,859 @@
+{
+  "description": "The communes each creating article lists, as printed (French edition), matched to code_commune. Article numbers are those of Law 84-09 as completed (art. 52 bis N). The El Borma item of art. 52 bis 6 is kept as printed; the dataset keeps that commune in Ouargla (see packages/dataset/data/wilaya-lineage.json, exceptions).",
+  "sources": {
+    "law-19-12": {
+      "name": "Loi n° 19-12 du 11 décembre 2019 modifiant et complétant la loi n° 84-09 du 4 février 1984 relative à l'organisation territoriale du pays",
+      "journal_officiel": "JORA n° 78 du 18 décembre 2019, pp. 12-15",
+      "url": "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf",
+      "sha256": "5a31159713aa60e49a56e2fb1a22cd33c00432ddc0f3082200f84218cb22669d"
+    },
+    "law-26-06": {
+      "name": "Loi n° 26-06 du 4 avril 2026 modifiant et complétant la loi n° 84-09 du 4 février 1984 relative à l'organisation territoriale du pays",
+      "journal_officiel": "JORA n° 25 du 5 avril 2026, pp. 4-9",
+      "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "sha256": "f6d7f5261e997e490d54a1a061648a5635d3263e1f19aed50e5cd1e5ad01e46f"
+    }
+  },
+  "wilayas": [
+    {
+      "wilaya_code": 49,
+      "source": "law-19-12",
+      "article": "52 bis",
+      "count_in_text": 10,
+      "communes": [
+        {
+          "name_in_text": "Timimoun",
+          "code_commune": 4901
+        },
+        {
+          "name_in_text": "Ouled Saïd",
+          "code_commune": 4904
+        },
+        {
+          "name_in_text": "Aougrout",
+          "code_commune": 4908
+        },
+        {
+          "name_in_text": "Deldoul",
+          "code_commune": 4906
+        },
+        {
+          "name_in_text": "Metarfa",
+          "code_commune": 4907
+        },
+        {
+          "name_in_text": "Tinerkouk",
+          "code_commune": 4905
+        },
+        {
+          "name_in_text": "Ksar Kaddour",
+          "code_commune": 4903
+        },
+        {
+          "name_in_text": "Charouine",
+          "code_commune": 4902
+        },
+        {
+          "name_in_text": "Talmine",
+          "code_commune": 4909
+        },
+        {
+          "name_in_text": "Ouled Aïssa",
+          "code_commune": 4910
+        }
+      ]
+    },
+    {
+      "wilaya_code": 50,
+      "source": "law-19-12",
+      "article": "52 bis 1",
+      "count_in_text": 2,
+      "communes": [
+        {
+          "name_in_text": "Bordj Badji Mokhtar",
+          "code_commune": 5001
+        },
+        {
+          "name_in_text": "Timiaouine",
+          "code_commune": 5002
+        }
+      ]
+    },
+    {
+      "wilaya_code": 51,
+      "source": "law-19-12",
+      "article": "52 bis 2",
+      "count_in_text": 6,
+      "communes": [
+        {
+          "name_in_text": "Ouled Djellal",
+          "code_commune": 5101
+        },
+        {
+          "name_in_text": "Sidi Khaled",
+          "code_commune": 5104
+        },
+        {
+          "name_in_text": "Ras El Miaâd",
+          "code_commune": 5102
+        },
+        {
+          "name_in_text": "Besbes",
+          "code_commune": 5103
+        },
+        {
+          "name_in_text": "Chaïba",
+          "code_commune": 5106
+        },
+        {
+          "name_in_text": "Doucen",
+          "code_commune": 5105
+        }
+      ]
+    },
+    {
+      "wilaya_code": 52,
+      "source": "law-19-12",
+      "article": "52 bis 3",
+      "count_in_text": 10,
+      "communes": [
+        {
+          "name_in_text": "Béni Abbès",
+          "code_commune": 5201
+        },
+        {
+          "name_in_text": "Tamtert",
+          "code_commune": 5210
+        },
+        {
+          "name_in_text": "Kerzaz",
+          "code_commune": 5208
+        },
+        {
+          "name_in_text": "Timoudi",
+          "code_commune": 5203
+        },
+        {
+          "name_in_text": "Béni Ikhlef",
+          "code_commune": 5204
+        },
+        {
+          "name_in_text": "El Ouata",
+          "code_commune": 5207
+        },
+        {
+          "name_in_text": "Tabelbala",
+          "code_commune": 5206
+        },
+        {
+          "name_in_text": "Ouled Khodeir",
+          "code_commune": 5202
+        },
+        {
+          "name_in_text": "Ksabi",
+          "code_commune": 5209
+        },
+        {
+          "name_in_text": "Igli",
+          "code_commune": 5205
+        }
+      ]
+    },
+    {
+      "wilaya_code": 53,
+      "source": "law-19-12",
+      "article": "52 bis 4",
+      "count_in_text": 3,
+      "communes": [
+        {
+          "name_in_text": "In Salah",
+          "code_commune": 5301
+        },
+        {
+          "name_in_text": "Foggaret Ezzaouia",
+          "code_commune": 5303
+        },
+        {
+          "name_in_text": "In Ghar",
+          "code_commune": 5302
+        }
+      ]
+    },
+    {
+      "wilaya_code": 54,
+      "source": "law-19-12",
+      "article": "52 bis 5",
+      "count_in_text": 2,
+      "communes": [
+        {
+          "name_in_text": "In Guezzam",
+          "code_commune": 5401
+        },
+        {
+          "name_in_text": "Tin Zaouatine",
+          "code_commune": 5402
+        }
+      ]
+    },
+    {
+      "wilaya_code": 55,
+      "source": "law-19-12",
+      "article": "52 bis 6",
+      "count_in_text": 14,
+      "communes": [
+        {
+          "name_in_text": "Touggourt",
+          "code_commune": 5501
+        },
+        {
+          "name_in_text": "Nezla",
+          "code_commune": 5504
+        },
+        {
+          "name_in_text": "Tebesbest",
+          "code_commune": 5503
+        },
+        {
+          "name_in_text": "Zaouia El Abidia",
+          "code_commune": 5505
+        },
+        {
+          "name_in_text": "Tamacine",
+          "code_commune": 5509
+        },
+        {
+          "name_in_text": "Blidat Ameur",
+          "code_commune": 5502
+        },
+        {
+          "name_in_text": "Megarine",
+          "code_commune": 5512
+        },
+        {
+          "name_in_text": "M'Naguar",
+          "code_commune": 5511
+        },
+        {
+          "name_in_text": "Taibet",
+          "code_commune": 5508
+        },
+        {
+          "name_in_text": "Benaceur",
+          "code_commune": 5510
+        },
+        {
+          "name_in_text": "Sidi Slimane",
+          "code_commune": 5506
+        },
+        {
+          "name_in_text": "El Hadjira",
+          "code_commune": 5507
+        },
+        {
+          "name_in_text": "El Allia",
+          "code_commune": 5513
+        },
+        {
+          "name_in_text": "El Borma",
+          "code_commune": 3021
+        }
+      ]
+    },
+    {
+      "wilaya_code": 56,
+      "source": "law-19-12",
+      "article": "52 bis 7",
+      "count_in_text": 2,
+      "communes": [
+        {
+          "name_in_text": "Djanet",
+          "code_commune": 5601
+        },
+        {
+          "name_in_text": "Bordj El Haouasse",
+          "code_commune": 5602
+        }
+      ]
+    },
+    {
+      "wilaya_code": 57,
+      "source": "law-19-12",
+      "article": "52 bis 8",
+      "count_in_text": 8,
+      "communes": [
+        {
+          "name_in_text": "El Megaier",
+          "code_commune": 5701
+        },
+        {
+          "name_in_text": "Oum Touyour",
+          "code_commune": 5707
+        },
+        {
+          "name_in_text": "Still",
+          "code_commune": 5702
+        },
+        {
+          "name_in_text": "Sidi Khelil",
+          "code_commune": 5704
+        },
+        {
+          "name_in_text": "Djamaâ",
+          "code_commune": 5706
+        },
+        {
+          "name_in_text": "Sidi Amrane",
+          "code_commune": 5708
+        },
+        {
+          "name_in_text": "Tendla",
+          "code_commune": 5705
+        },
+        {
+          "name_in_text": "M'Rara",
+          "code_commune": 5703
+        }
+      ]
+    },
+    {
+      "wilaya_code": 58,
+      "source": "law-19-12",
+      "article": "52 bis 9",
+      "count_in_text": 3,
+      "communes": [
+        {
+          "name_in_text": "El Meniaâ",
+          "code_commune": 5801
+        },
+        {
+          "name_in_text": "Hassi Gara",
+          "code_commune": 5803
+        },
+        {
+          "name_in_text": "Hassi Fehal",
+          "code_commune": 5802
+        }
+      ]
+    },
+    {
+      "wilaya_code": 59,
+      "source": "law-26-06",
+      "article": "52 bis 10",
+      "count_in_text": 12,
+      "communes": [
+        {
+          "name_in_text": "Aflou",
+          "code_commune": 319
+        },
+        {
+          "name_in_text": "Gueltat Sidi Saad",
+          "code_commune": 310
+        },
+        {
+          "name_in_text": "Aïn Sidi Ali",
+          "code_commune": 311
+        },
+        {
+          "name_in_text": "El Beïdha",
+          "code_commune": 312
+        },
+        {
+          "name_in_text": "Brida",
+          "code_commune": 313
+        },
+        {
+          "name_in_text": "El Ghicha",
+          "code_commune": 314
+        },
+        {
+          "name_in_text": "Hadj Mechri",
+          "code_commune": 315
+        },
+        {
+          "name_in_text": "Sebgag",
+          "code_commune": 316
+        },
+        {
+          "name_in_text": "Taouiala",
+          "code_commune": 317
+        },
+        {
+          "name_in_text": "Oued Morra",
+          "code_commune": 321
+        },
+        {
+          "name_in_text": "Oued M’Zi",
+          "code_commune": 322
+        },
+        {
+          "name_in_text": "Sidi Bouzid",
+          "code_commune": 324
+        }
+      ]
+    },
+    {
+      "wilaya_code": 60,
+      "source": "law-26-06",
+      "article": "52 bis 11",
+      "count_in_text": 8,
+      "communes": [
+        {
+          "name_in_text": "Barika",
+          "code_commune": 542
+        },
+        {
+          "name_in_text": "Bitam",
+          "code_commune": 514
+        },
+        {
+          "name_in_text": "Abdelkader Azil",
+          "code_commune": 515
+        },
+        {
+          "name_in_text": "Tilatou",
+          "code_commune": 518
+        },
+        {
+          "name_in_text": "Seggana",
+          "code_commune": 529
+        },
+        {
+          "name_in_text": "Djezzar",
+          "code_commune": 543
+        },
+        {
+          "name_in_text": "M’Doukal",
+          "code_commune": 555
+        },
+        {
+          "name_in_text": "Ouled Ammar",
+          "code_commune": 556
+        }
+      ]
+    },
+    {
+      "wilaya_code": 61,
+      "source": "law-26-06",
+      "article": "52 bis 12",
+      "count_in_text": 5,
+      "communes": [
+        {
+          "name_in_text": "El Kantara",
+          "code_commune": 717
+        },
+        {
+          "name_in_text": "Aïn Zaatout",
+          "code_commune": 718
+        },
+        {
+          "name_in_text": "Branis",
+          "code_commune": 703
+        },
+        {
+          "name_in_text": "El Outaya",
+          "code_commune": 719
+        },
+        {
+          "name_in_text": "Djemourah",
+          "code_commune": 720
+        }
+      ]
+    },
+    {
+      "wilaya_code": 62,
+      "source": "law-26-06",
+      "article": "52 bis 13",
+      "count_in_text": 4,
+      "communes": [
+        {
+          "name_in_text": "Bir El Ater",
+          "code_commune": 1202
+        },
+        {
+          "name_in_text": "Negrine",
+          "code_commune": 1209
+        },
+        {
+          "name_in_text": "El Ogla El Melha",
+          "code_commune": 1215
+        },
+        {
+          "name_in_text": "Ferkane",
+          "code_commune": 1228
+        }
+      ]
+    },
+    {
+      "wilaya_code": 63,
+      "source": "law-26-06",
+      "article": "52 bis 14",
+      "count_in_text": 4,
+      "communes": [
+        {
+          "name_in_text": "El Aricha",
+          "code_commune": 1332
+        },
+        {
+          "name_in_text": "El Gor",
+          "code_commune": 1310
+        },
+        {
+          "name_in_text": "Sidi Djillali",
+          "code_commune": 1341
+        },
+        {
+          "name_in_text": "El Bouihi",
+          "code_commune": 1343
+        }
+      ]
+    },
+    {
+      "wilaya_code": 64,
+      "source": "law-26-06",
+      "article": "52 bis 15",
+      "count_in_text": 6,
+      "communes": [
+        {
+          "name_in_text": "Ksar Chellala",
+          "code_commune": 1429
+        },
+        {
+          "name_in_text": "Zmalet El Emir Abdelkader",
+          "code_commune": 1409
+        },
+        {
+          "name_in_text": "Rechaiga",
+          "code_commune": 1430
+        },
+        {
+          "name_in_text": "Hamadia",
+          "code_commune": 1435
+        },
+        {
+          "name_in_text": "Serguine",
+          "code_commune": 1439
+        },
+        {
+          "name_in_text": "Bougara",
+          "code_commune": 1440
+        }
+      ]
+    },
+    {
+      "wilaya_code": 65,
+      "source": "law-26-06",
+      "article": "52 bis 16",
+      "count_in_text": 10,
+      "communes": [
+        {
+          "name_in_text": "Aïn Ouessara",
+          "code_commune": 1731
+        },
+        {
+          "name_in_text": "Birine",
+          "code_commune": 1708
+        },
+        {
+          "name_in_text": "Bouira Lahdab",
+          "code_commune": 1709
+        },
+        {
+          "name_in_text": "El Khemis",
+          "code_commune": 1711
+        },
+        {
+          "name_in_text": "Sidi Ladjel",
+          "code_commune": 1719
+        },
+        {
+          "name_in_text": "Had Sahary",
+          "code_commune": 1720
+        },
+        {
+          "name_in_text": "Guernini",
+          "code_commune": 1721
+        },
+        {
+          "name_in_text": "Benhar",
+          "code_commune": 1732
+        },
+        {
+          "name_in_text": "Hassi Fedoul",
+          "code_commune": 1733
+        },
+        {
+          "name_in_text": "Aïn Fekka",
+          "code_commune": 1735
+        }
+      ]
+    },
+    {
+      "wilaya_code": 66,
+      "source": "law-26-06",
+      "article": "52 bis 17",
+      "count_in_text": 8,
+      "communes": [
+        {
+          "name_in_text": "Messaad",
+          "code_commune": 1717
+        },
+        {
+          "name_in_text": "Sed Rahal",
+          "code_commune": 1706
+        },
+        {
+          "name_in_text": "Faïdh El Botma",
+          "code_commune": 1707
+        },
+        {
+          "name_in_text": "Guettara",
+          "code_commune": 1718
+        },
+        {
+          "name_in_text": "Selmana",
+          "code_commune": 1722
+        },
+        {
+          "name_in_text": "Oum Laadham",
+          "code_commune": 1724
+        },
+        {
+          "name_in_text": "Deldoul",
+          "code_commune": 1729
+        },
+        {
+          "name_in_text": "Amourah",
+          "code_commune": 1734
+        }
+      ]
+    },
+    {
+      "wilaya_code": 67,
+      "source": "law-26-06",
+      "article": "52 bis 18",
+      "count_in_text": 21,
+      "communes": [
+        {
+          "name_in_text": "Ksar El Boukhari",
+          "code_commune": 2635
+        },
+        {
+          "name_in_text": "Ouled Maaref",
+          "code_commune": 2603
+        },
+        {
+          "name_in_text": "Aïn Boucif",
+          "code_commune": 2604
+        },
+        {
+          "name_in_text": "Derrag",
+          "code_commune": 2608
+        },
+        {
+          "name_in_text": "Bouaiche",
+          "code_commune": 2610
+        },
+        {
+          "name_in_text": "Kef Lakhdar",
+          "code_commune": 2617
+        },
+        {
+          "name_in_text": "Chelalet El Adhaoura",
+          "code_commune": 2618
+        },
+        {
+          "name_in_text": "Ouled Hellal",
+          "code_commune": 2622
+        },
+        {
+          "name_in_text": "Tafraout",
+          "code_commune": 2623
+        },
+        {
+          "name_in_text": "Boghar",
+          "code_commune": 2625
+        },
+        {
+          "name_in_text": "Sidi Damed",
+          "code_commune": 2631
+        },
+        {
+          "name_in_text": "Aziz",
+          "code_commune": 2632
+        },
+        {
+          "name_in_text": "Chahbounia",
+          "code_commune": 2638
+        },
+        {
+          "name_in_text": "Cheniguel",
+          "code_commune": 2640
+        },
+        {
+          "name_in_text": "Aïn Ouksir",
+          "code_commune": 2641
+        },
+        {
+          "name_in_text": "Oum El Djallil",
+          "code_commune": 2642
+        },
+        {
+          "name_in_text": "M’Fatha",
+          "code_commune": 2649
+        },
+        {
+          "name_in_text": "Boughezoul",
+          "code_commune": 2651
+        },
+        {
+          "name_in_text": "El Ouinet",
+          "code_commune": 2657
+        },
+        {
+          "name_in_text": "Ouled Antar",
+          "code_commune": 2658
+        },
+        {
+          "name_in_text": "Saneg",
+          "code_commune": 2664
+        }
+      ]
+    },
+    {
+      "wilaya_code": 68,
+      "source": "law-26-06",
+      "article": "52 bis 19",
+      "count_in_text": 23,
+      "communes": [
+        {
+          "name_in_text": "Bou Saada",
+          "code_commune": 2820
+        },
+        {
+          "name_in_text": "Khoubana",
+          "code_commune": 2807
+        },
+        {
+          "name_in_text": "M’Cif",
+          "code_commune": 2808
+        },
+        {
+          "name_in_text": "Ouled Sidi Brahim",
+          "code_commune": 2821
+        },
+        {
+          "name_in_text": "Sidi Ameur",
+          "code_commune": 2822
+        },
+        {
+          "name_in_text": "Tamsa",
+          "code_commune": 2823
+        },
+        {
+          "name_in_text": "Ben Srour",
+          "code_commune": 2824
+        },
+        {
+          "name_in_text": "Ouled Slimane",
+          "code_commune": 2825
+        },
+        {
+          "name_in_text": "El Houamed",
+          "code_commune": 2826
+        },
+        {
+          "name_in_text": "El Hamel",
+          "code_commune": 2827
+        },
+        {
+          "name_in_text": "Zarzour",
+          "code_commune": 2833
+        },
+        {
+          "name_in_text": "Mouhamed Boudiaf",
+          "code_commune": 2834
+        },
+        {
+          "name_in_text": "Benzouh",
+          "code_commune": 2835
+        },
+        {
+          "name_in_text": "Bir Foda",
+          "code_commune": 2836
+        },
+        {
+          "name_in_text": "Aïn Farès",
+          "code_commune": 2837
+        },
+        {
+          "name_in_text": "Sidi M’Hamed",
+          "code_commune": 2838
+        },
+        {
+          "name_in_text": "Menaâ",
+          "code_commune": 2839
+        },
+        {
+          "name_in_text": "Aïn El Meleh",
+          "code_commune": 2841
+        },
+        {
+          "name_in_text": "Medjedel",
+          "code_commune": 2842
+        },
+        {
+          "name_in_text": "Slim",
+          "code_commune": 2843
+        },
+        {
+          "name_in_text": "Aïn Errich",
+          "code_commune": 2844
+        },
+        {
+          "name_in_text": "Oultem",
+          "code_commune": 2846
+        },
+        {
+          "name_in_text": "Djebel Messaad",
+          "code_commune": 2847
+        }
+      ]
+    },
+    {
+      "wilaya_code": 69,
+      "source": "law-26-06",
+      "article": "52 bis 20",
+      "count_in_text": 7,
+      "communes": [
+        {
+          "name_in_text": "El Abiodh Sidi Cheikh",
+          "code_commune": 3207
+        },
+        {
+          "name_in_text": "Aïn El Orak",
+          "code_commune": 3208
+        },
+        {
+          "name_in_text": "Arbaouat",
+          "code_commune": 3209
+        },
+        {
+          "name_in_text": "Boussemghoun",
+          "code_commune": 3213
+        },
+        {
+          "name_in_text": "Chellala",
+          "code_commune": 3214
+        },
+        {
+          "name_in_text": "El Bnoud",
+          "code_commune": 3216
+        },
+        {
+          "name_in_text": "El Meharra",
+          "code_commune": 3219
+        }
+      ]
+    }
+  ]
+}

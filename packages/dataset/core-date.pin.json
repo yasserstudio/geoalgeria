@@ -4,7 +4,7 @@
   "dateModified": "2026-11-21",
   "algorithm": "sha256",
   "canonical_form": "sha256 over one line per carrier, `<path> <sha256 of the file with CRLF normalised to LF>`, the carriers in ascending path order, so the digest states the published content of the core and not the order the files were read in or the line endings a checkout produced",
-  "carrier_count": 100,
+  "carrier_count": 101,
   "carriers": [
     "algeria.json",
     "communes_new_wilayas.csv",
@@ -104,9 +104,10 @@
     "retired-ids.json",
     "sql/full.sql",
     "wilaya-capitals.metadata.json",
+    "wilaya-lineage.json",
     "wilayas.csv",
     "wilayas.json"
   ],
-  "sha256": "e4b5f3a7e6a49788c828d37c3482cc886ed6cd56a89ebc95c0ec2ebf7757e1f8",
+  "sha256": "bc60c3f2b3b5e18562d98e51a81841569a13452e7a47b1dd459a80b0a2fc8c4b",
   "note": "The digest of the administrative core's published carriers, next to the `dateModified` they were last dated at. `pnpm validate` and test/core-date-pinned.test.mjs recompute it and fail when the core has moved and this file has not, which is the releaser's prompt to date the release: set `dateModified`, run `node scripts/build-catalog.mjs`, then `pnpm pin-core-date --write`, which refuses while `dateModified` is older than the day it runs on. `data/poste/` is excluded: it is a mirror of @geoalgeria/poste and carries that package's date."
 }

@@ -11,6 +11,8 @@
     "name_fr": "commune name in French",
     "name_ar": "commune name in Arabic",
     "wilaya_code": "parent wilaya code as an integer 1-69 (join key to wilayas.json)",
+    "wilaya_code_58": "the wilaya (1-58) on the 58-wilaya map of Law 19-12 (see wilaya-lineage.json)",
+    "wilaya_code_48": "the wilaya (1-48) on the 48-wilaya map of Law 84-09 as it stood just before Law 19-12 (see wilaya-lineage.json)",
     "postal_code": "commune postal code, null for the 1 commune with no citable code",
     "daira": "parent daira name in French"
   },

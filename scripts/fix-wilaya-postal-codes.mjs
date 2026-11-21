@@ -314,8 +314,8 @@ if (targets.length) {
   queueText(csvPath, `${[csvLines[0], ...csvRows.map((row) => row.join(","))].join(newline)}${newline}`);
 
   // wilayas: (code, 'name_fr', 'name_ar', 'phone'|NULL, 'postal'|NULL, lat, lng, 'created', capital)
-  // The commune rows of the same file print nine fields too, so the wilaya rows are
-  // recognised by their `created` literal rather than by their field count
+  // The commune rows of the same file once printed nine fields too, so the wilaya rows
+  // are recognised by their `created` literal rather than by their field count
   // (scripts/lib/full-sql-rows.mjs, which exists because that confusion once wrote a
   // daira name into wilaya 3's postal code).
   const sqlPath = join(DATASET, "sql", "full.sql");

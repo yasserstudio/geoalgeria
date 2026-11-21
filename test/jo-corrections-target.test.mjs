@@ -268,16 +268,16 @@ function driftRepoCopy(repo) {
   editCsv(join("ecommerce", "communes.csv"), (line) => line.split(",")[4] === "28", 5, "M'sila");
   editSql(join("ecommerce", "communes.sql"), (line) => line.includes(", 28, 'M''Sila', "), "'M''Sila'", "'M''sila'");
 
-  // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
-  editCsv(join("csv", "communes.csv"), (line) => /,527\r?$/.test(line), 0, "Lemcene");
+  // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune,wilaya_code_58,wilaya_code_48
+  editCsv(join("csv", "communes.csv"), (line) => /,527,\d+,\d+\r?$/.test(line), 0, "Lemcene");
   // code,name_fr,name_ar,phone_code,postal_code,latitude,longitude,created,capital
   editCsv(join("csv", "wilayas.csv"), (line) => line.startsWith("28,"), 1, "M'sila");
   // code,name_ar,name_fr,name_en,created,… ,capital_commune_code
   editCsv("wilayas.csv", (line) => line.startsWith("28,"), 2, "M'sila");
   // wilaya_code,wilaya_name_fr,commune_name_ar,commune_name_fr, rebuilt every run
   editCsv("communes_new_wilayas.csv", (line) => line.startsWith("59,"), 1, "not a wilaya name");
-  // (id, 'name_fr', …, code_commune): keyed on the trailing code
-  editSql(join("sql", "full.sql"), (line) => line.endsWith(", 527),"), "'Lemsane'", "'Lemcene'");
+  // (id, 'name_fr', …, code_commune, w58, w48): keyed on the code before the lineage codes
+  editSql(join("sql", "full.sql"), (line) => /, 527, \d+, \d+\),$/.test(line), "'Lemsane'", "'Lemcene'");
 
   // The three delivery tables, whose wilaya label is rebuilt from algeria.json.
   for (const provider of ["yalidine", "zr_express", "maystro"]) {

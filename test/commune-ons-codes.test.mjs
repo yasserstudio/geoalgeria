@@ -89,7 +89,7 @@ test("every code-carrying export agrees with the canonical commune files", () =>
   assert.equal(csvLines.length, 1542);
   for (const [index, line] of csvLines.slice(1).entries()) {
     const fields = line.split(",");
-    assert.equal(fields.length, 8, `communes.csv:${index + 2}`);
+    assert.equal(fields.length, 10, `communes.csv:${index + 2}`);
     assert.equal(
       Number(fields[7]),
       canonicalCodes.get(key(fields[2], fields[0])),
@@ -100,7 +100,7 @@ test("every code-carrying export agrees with the canonical commune files", () =>
   const sqlRows = readFileSync(join(dataRoot, "sql/full.sql"), "utf8")
     .split(/\r?\n/)
     .map((line) =>
-      line.match(/^\s*\((\d+), '((?:''|[^'])*)', '(?:''|[^'])*', (\d+), .*, (\d+)\)(?:,|;)$/),
+      line.match(/^\s*\((\d+), '((?:''|[^'])*)', '(?:''|[^'])*', (\d+), .*, (\d+), \d+, \d+\)(?:,|;)$/),
     )
     .filter(Boolean);
   assert.equal(sqlRows.length, 1541);

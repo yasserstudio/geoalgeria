@@ -376,14 +376,14 @@ function patchCsv(path) {
   const original = readFileSync(path, "utf8");
   const newline = original.includes("\r\n") ? "\r\n" : "\n";
   const lines = original.trimEnd().split(/\r?\n/);
-  if (lines[0] !== "name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune") {
+  if (lines[0] !== "name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune,wilaya_code_58,wilaya_code_48") {
     throw new Error(`Unexpected communes CSV header in ${path}`);
   }
   if (lines.length !== 1542) throw new Error(`Expected 1541 CSV rows in ${path}`);
   let changed = 0;
   for (let i = 1; i < lines.length; i++) {
     const fields = lines[i].split(",");
-    if (fields.length !== 8) throw new Error(`Unexpected CSV shape at ${path}:${i + 1}`);
+    if (fields.length !== 10) throw new Error(`Unexpected CSV shape at ${path}:${i + 1}`);
     const next = codeFor({ name_fr: fields[0] }, Number(fields[2]));
     if (fields[7] !== String(next)) {
       fields[7] = String(next);
@@ -405,7 +405,7 @@ function patchSql(path) {
   const seen = new Set();
   for (let i = start + 1; i < lines.length; i++) {
     const match = lines[i].match(
-      /^(\s*\((\d+), '((?:''|[^'])*)', '(?:''|[^'])*', (\d+), .*, )(?:NULL|\d+)(\)(?:,|;))$/,
+      /^(\s*\((\d+), '((?:''|[^'])*)', '(?:''|[^'])*', (\d+), .*, )(?:NULL|\d+)(, \d+, \d+\)(?:,|;))$/,
     );
     if (!match) continue;
     const sqlName = match[3].replace(/''/g, "'");

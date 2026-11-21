@@ -24,6 +24,7 @@ data/
 ├── communes_w49_w69.json        ← communes for wilayas 49–69
 ├── name-history.json            ← former names, so an older spelling still finds the record
 ├── phone-code-provenance.json   ← why wilayas 59–69 carry the `phone_code` they carry
+├── wilaya-lineage.json          ← each wilaya's code on the 58- and 48-wilaya maps, with its texts
 ├── retired-ids.json             ← daira ids that no longer exist and are never reused
 ├── wilaya-capitals.metadata.json          ← the chef-lieu of each wilaya, with its decree
 ├── osm-links.metadata.json                ← coverage, tiers + Overpass snapshots behind osm_relation_id / wikidata
@@ -131,6 +132,8 @@ all eleven wilayas of the 2026 cohort (59–69). See
   "name_fr": "Adrar",
   "name_ar": "أدرار",
   "wilaya_code": 1,
+  "wilaya_code_58": 1,
+  "wilaya_code_48": 1,
   "daira": "Adrar",
   "postal_code": "01000",
   "latitude": 27.87429,
@@ -146,6 +149,8 @@ all eleven wilayas of the 2026 cohort (59–69). See
 | `name_fr` | string | French name |
 | `name_ar` | string | Arabic name |
 | `wilaya_code` | integer | Parent wilaya code (1–69) |
+| `wilaya_code_58` | integer | The wilaya (1–58) this commune was in on the 58-wilaya map, Law 19-12 to Law 26-06: `wilaya_code` for wilayas 1–58, the mother wilaya for 59–69. See [Earlier wilaya codes](#earlier-wilaya-codes) |
+| `wilaya_code_48` | integer | The wilaya (1–48) this commune was in on the 48-wilaya map, Law 84-09 as it stood just before Law 19-12: `wilaya_code` for wilayas 1–48, the mother wilaya for 49–69 |
 | `daira` | string | Parent daira name (French) |
 | `postal_code` | string \| null | Commune postal code, the code of the commune's principal Algérie Poste office; its two-digit prefix is that office's wilaya when the code was issued, so it does not necessarily equal `wilaya_code` (108 of 1,540, all in wilayas 59–69, e.g. Aflou `03001` in wilaya 59); null for 1 commune with no citable code |
 | `latitude` | number | Latitude (100% geocoded — no nulls) |
@@ -179,6 +184,9 @@ all eleven wilayas of the 2026 cohort (59–69). See
 | `wilaya_name_fr` | string | Wilaya French name (denormalized) |
 | `wilaya_name_ar` | string | Wilaya Arabic name (denormalized) |
 | `postal_code` | string \| null | Postal code (null for the same 1 commune) |
+
+The e-commerce view carries the current `wilaya_code` only. For `wilaya_code_58` and
+`wilaya_code_48`, join on `wilaya_code` to [`wilaya-lineage.json`](wilaya-lineage.json).
 
 ### Daira
 
@@ -328,6 +336,47 @@ address stored before a correction still resolves.
   "sources": ["JORA n° 25 (2026), law 26-06 art. 9, item 24, p. 4"]
 }
 ```
+
+## Earlier wilaya codes
+
+Statistics published before April 2026 count 58 wilayas, and those before December
+2019 count 48. Every commune record carries the wilaya it was in on each of those maps,
+`wilaya_code_58` and `wilaya_code_48`, so an older table joins the current records
+without rebuilding the reforms by hand. A commune in wilaya 1 to 48 that no reform
+touched keeps its code on all three maps.
+
+`wilaya-lineage.json` holds one row per current wilaya: its two earlier codes and the
+articles that set them. `require("geoalgeria").wilayaLineage` reads it.
+
+```json
+{
+  "code": 61,
+  "created": 2026,
+  "wilaya_code_58": 7,
+  "wilaya_code_48": 7,
+  "citations": [
+    { "source": "law-26-06", "article": "art. 3 (law 84-09 art. 52 bis 12)", "communes_in_text": 5 },
+    { "source": "decret-26-206", "article": "art. 1er", "note": "name and capital" }
+  ]
+}
+```
+
+- **The 48-wilaya map** is Law 84-09 as it stood just before Law 19-12. Ordonnance
+  97-14 moved 24 communes into Algiers in 1997, from Boumerdès, Tipaza and Blida; they
+  read `wilaya_code_48: 16`. The file lists them under `transfers`.
+- **The 58-wilaya map** is Law 19-12 (wilayas 49 to 58, named by décret 21-117) up to
+  Law 26-06 (wilayas 59 to 69, named by décret 26-206).
+- **One exception.** Law 19-12 lists El Borma (3021) under Touggourt (55), while the ONS
+  code and current practice keep it in Ouargla (30). The dataset keeps it in 30 on every
+  map and records why under `exceptions`.
+
+No text that created a wilaya splits a commune, so each commune takes its wilaya's two codes. The
+carriers are `communes_w*.json`, `algeria.json`, `csv/communes.csv`,
+`geojson/communes.geojson`, the commune outlines and the `communes` table of
+`sql/full.sql` (two trailing columns in the CSV and SQL, so no existing column moves).
+`ecommerce/` and `communes_new_wilayas.csv` do not carry them. `node scripts/add-wilaya-lineage.mjs --write`
+regenerates them and `--check` fails on a stale one; `test/wilaya-lineage.test.mjs`
+holds the data to the commune lists of each text.
 
 ## Telephone area codes
 
@@ -553,6 +602,7 @@ a Wikidata query. Per-part terms: the package `LICENSE` and `NOTICE`.
 - Journal Officiel No. 14, April 3, 1984 (Decree 84-79) for the names and chef-lieux of wilayas 1–48
 - Journal Officiel No. 52, July 21, 2026 (Executive decree 26-253) for the daira lists of wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 and 59–69
 - Journal Officiel No. 78, December 18, 2019 (Law 19-12) for wilayas 49–58
+- Journal Officiel No. 6, February 7, 1984 (Law 84-09) and No. 38, June 4, 1997 (Ordonnance 97-14) for `wilaya_code_48`
 - Ministry of Interior (interieur.gov.dz)
 - APS (Algérie Presse Service)
 - Echorouk Online, Awras, Djelfa Info, Aures News, El Moudjahid, France 24 Arabic

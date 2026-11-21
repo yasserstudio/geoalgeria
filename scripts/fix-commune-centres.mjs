@@ -164,10 +164,10 @@ function patchJson(path) {
 }
 
 // --- data/csv/communes.csv -----------------------------------------------------
-// name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
+// name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune,wilaya_code_58,wilaya_code_48
 // The dataset's CSVs are plain comma-joined (no quoting): commune names carry
-// apostrophes but never commas, so a fixed 8-field split is exact here and a
-// row that does not split into 8 is left alone and counted, never guessed at.
+// apostrophes but never commas, so a fixed 10-field split is exact here and a
+// row that does not split into 10 is left alone and counted, never guessed at.
 function patchCsv(path) {
   const text = readFileSync(path, "utf-8");
   const newline = text.includes("\r\n") ? "\r\n" : "\n";
@@ -177,7 +177,7 @@ function patchCsv(path) {
   const seen = new Set();
   for (let i = 1; i < lines.length; i++) {
     const cells = lines[i].split(",");
-    if (cells.length !== 8) continue;
+    if (cells.length !== 10) continue;
     const f = byCode.get(Number(cells[7]));
     if (!f) continue;
     if (seen.has(f.code_commune)) throw new Error(`${label}: code_commune ${f.code_commune} appears more than once`);
@@ -194,15 +194,15 @@ function patchCsv(path) {
 }
 
 // --- data/sql/full.sql --------------------------------------------------------
-//   (id, 'name_fr', 'name_ar', wilaya_code, 'daira', 'postal'|NULL, lat, lng, code)
-// Anchored at the end of the row and keyed on the trailing code_commune, so
+//   (id, 'name_fr', 'name_ar', wilaya_code, 'daira', 'postal'|NULL, lat, lng, code, w58, w48)
+// Anchored at the end of the row and keyed on the code_commune before the two lineage codes, so
 // SQL-escaped apostrophes (M''fatha) and the five NULL postal codes are all read
 // rather than dropped. Only the two numeric fields are rewritten.
 function patchSql(path) {
   const text = readFileSync(path, "utf-8");
   const label = basename(path);
   const re =
-    /^( {2}\(\d+, '(?:[^']|'')*', '(?:[^']|'')*', \d+, '(?:[^']|'')*', (?:'\d+'|NULL), )(-?[\d.]+|NULL)(, )(-?[\d.]+|NULL)(, (\d+)\)[,;])$/;
+    /^( {2}\(\d+, '(?:[^']|'')*', '(?:[^']|'')*', \d+, '(?:[^']|'')*', (?:'\d+'|NULL), )(-?[\d.]+|NULL)(, )(-?[\d.]+|NULL)(, (\d+), \d+, \d+\)[,;])$/;
   const lines = text.split("\n");
   let changed = 0;
   const seen = new Set();

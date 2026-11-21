@@ -8,7 +8,10 @@
 // discriminator and the two tuples live here instead.
 //
 // wilayas:  (code, 'name_fr', 'name_ar', 'phone'|NULL, 'postal'|NULL, lat, lng, 'created', capital)
-// communes: (id,   'name_fr', 'name_ar', wilaya,       'daira',       'postal'|NULL, lat, lng, code)
+// communes: (id,   'name_fr', 'name_ar', wilaya,       'daira',       'postal'|NULL, lat, lng, code, w58, w48)
+//
+// Commune rows print 11 fields since `wilaya_code_58` and `wilaya_code_48` (#359),
+// so the field count tells them apart again; isWilayaSqlRow stays the wilaya test.
 //
 // Tests deliberately do not import this: each one reads the shipped file with its own
 // expression, so a reader's mistake and a writer's mistake cannot cancel out.
@@ -21,6 +24,9 @@ const CREATED = `'(?:${CREATED_LITERALS.join("|")})'`;
 /** True for a wilaya row, given its fields as splitSqlRow leaves them (quotes kept). */
 export const isWilayaSqlRow = (fields) =>
   fields.length === 9 && new RegExp(`^${CREATED}$`).test(fields[7]);
+
+/** True for a commune row: 11 fields, which no other table in the file prints. */
+export const isCommuneSqlRow = (fields) => fields.length === 11;
 
 /**
  * One wilaya row, with its point captured: `[, code, head, lat, sep, lng, tail]`.

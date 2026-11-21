@@ -89,6 +89,7 @@ const EXPECTED_CARRIERS = [
   "retired-ids.json",
   "sql/full.sql",
   "wilaya-capitals.metadata.json",
+  "wilaya-lineage.json",
   "wilayas.csv",
   "wilayas.json",
   // The national Commune outlines cut by wilaya (ADR 0004), generated from the file above.

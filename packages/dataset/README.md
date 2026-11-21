@@ -75,6 +75,7 @@ dz.dairas;                     // all 551 dairas
 dz.ecommerce;                  // flat dataset for address forms
 dz.postOffices;                // 3,908 Algérie Poste offices
 dz.atms;                       // 2,026 ATMs
+dz.wilayaLineage;              // each wilaya's code on the 58- and 48-wilaya maps
 
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
 dz.getCommunesByWilaya(16);    // 57 communes in Algiers
@@ -87,7 +88,7 @@ dz.getPostOfficesByCommune(1731); // post offices in a commune (by code_commune)
 
 TypeScript types included out of the box. The default import needs `esModuleInterop`, because the package is CommonJS; `import dz = require('geoalgeria')` works without it.
 
-A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office and ATM mirrors among them. If you need one part only, import its file on its own: `import communes from 'geoalgeria/data/ecommerce/communes.json'` in a bundler, or with `with { type: 'json' }` in plain Node.
+A bundler (Next.js, Vite, webpack) includes all eleven JSON files, the post office and ATM mirrors among them. If you need one part only, import its file on its own: `import communes from 'geoalgeria/data/ecommerce/communes.json'` in a bundler, or with `with { type: 'json' }` in plain Node.
 
 **Using this in production?** [Tell us about it](https://github.com/yasserstudio/geoalgeria/discussions), we feature community projects in the README.
 
@@ -156,6 +157,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/dairas.json` | JSON | 551 | Daira list with commune counts, Arabic names and audit grades |
 | `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
 | `data/phone-code-provenance.json` | JSON | 11 | Why wilayas 59–69 carry the `phone_code` they carry: the official texts searched and the reason for each `null` |
+| `data/wilaya-lineage.json` | JSON | 69 | Each wilaya's code on the 58-wilaya and 48-wilaya maps, with the article of each law that sets it; communes carry it as `wilaya_code_58` / `wilaya_code_48` |
 | `data/wilaya-capitals.metadata.json` | JSON | 69 | The chef-lieu of each wilaya, with the decree, article, item and page that fixes it |
 | `data/osm-links.metadata.json` | JSON | 1 | Coverage, tiers, join rule and Overpass snapshots behind `osm_relation_id` / `wikidata` |
 | `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
@@ -180,6 +182,8 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 > `data/poste/` is sourced from [Algérie Poste](https://baridimap.poste.dz). `commune_code` is normalized to join each commune's `code_commune`; `source_commune_code` preserves a differing provider-native value.
 
 `code_commune` is the unique `WWCC` identifier from the [ONS 2021 Code Géographique National](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). Communes promoted into wilayas 59–69 retain their 2021 mother-wilaya prefix.
+
+Every commune also carries `wilaya_code_58` and `wilaya_code_48`, the wilaya it was in on the 58-wilaya map (Law 19-12 to Law 26-06) and on the 48-wilaya map (Law 84-09 as it stood just before Law 19-12, with the 1997 transfers to Algiers), so statistics published on an older map join the current records. A commune of wilayas 1–48 that no reform moved keeps its code on all three maps. `data/wilaya-lineage.json` gives each wilaya's two codes with the articles behind them, and records the one exception, El Borma (3021). `data/ecommerce/` does not carry the two fields.
 
 Each wilaya carries `capital_commune_code`, the `code_commune` of its capital (chef-lieu), so the capital's names are read from the commune record, and its postal code and coordinates are mirrored on the wilaya: a wilaya's `postal_code` is its chef-lieu's own code, which is why wilaya 59 reads `03001` and not a code of its own. It comes from the decrees that fix the chefs-lieux (n° 84-79 of 1984, n° 21-117 of 2021, n° 26-206 of 2026), never from the wilaya's name, which gets 4 of 69 wrong. Per-wilaya sources: [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
 Every commune and wilaya also carries `osm_relation_id` and `wikidata`: the OpenStreetMap administrative relation this record is linked to (`admin_level=8` for a commune, `admin_level=4` for a wilaya) and that relation's own Wikidata item, so a consumer joins to OpenStreetMap or Wikidata without matching on a name. 1,540 of the 1,541 communes and all 69 wilayas carry a relation; 1,538 communes and all 69 wilayas carry a Wikidata item. Nothing is guessed: the linkage is the one the commune-centre audit decided on the relation's `ref:ONS` / `ref` tag, Overpass `timestamp_osm_base` 2026-09-29T12:54:47Z, plus a second tier of three communes whose relation carries the right `ref:ONS` code under non-standard tags and was therefore invisible to that audit's query; a relation with no `wikidata` tag leaves that field null, and the one commune with no commune relation at all (4703) keeps both fields null. The item is the relation's own tag in every case bar one: commune 3424's relation is tagged with a village inside the commune, so that field is null and the exclusion is recorded in the sidecar rather than the wrong item published. The two ids are on the JSON records (`data/algeria.json`, `data/communes_w*.json`, `data/wilayas.json`); the CSV, GeoJSON and SQL mirrors do not carry them. Coverage, the join rule and the records with no link: [`data/osm-links.metadata.json`](data/osm-links.metadata.json). Both values are OpenStreetMap-derived, so **ODbL 1.0, © OpenStreetMap contributors** (see `NOTICE`).

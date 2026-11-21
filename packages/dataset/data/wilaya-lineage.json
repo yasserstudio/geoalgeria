@@ -1,0 +1,1398 @@
+{
+  "metadata": {
+    "title_en": "Algeria: wilaya lineage, the 69 wilayas on the 58-wilaya and 48-wilaya maps",
+    "title_fr": "Algérie: filiation des wilayas, les 69 wilayas sur les cartes à 58 et à 48 wilayas",
+    "title_ar": "الجزائر: أصل الولايات، الولايات الـ69 على خريطتي 58 و48 ولاية",
+    "description": "For each of the 69 wilayas, the wilaya it belonged to on the 58-wilaya map (Law 19-12 to Law 26-06) and on the 48-wilaya map (Law 84-09 as it stood just before Law 19-12, so with Ordonnance 97-14 applied), and the texts that say so. Every commune record repeats its wilaya's two codes as wilaya_code_58 and wilaya_code_48.",
+    "fields": {
+      "wilaya_code_58": "The wilaya (1 to 58) on the map in force from Law 19-12 (JORA of 18 December 2019) to Law 26-06 (JORA of 5 April 2026). Equals code for wilayas 1 to 58; the mother wilaya for 59 to 69.",
+      "wilaya_code_48": "The wilaya (1 to 48) on the map of Law 84-09 as it stood just before Law 19-12, with the Ordonnance 97-14 transfers to Algiers applied. Equals code for wilayas 1 to 48; the mother wilaya for 49 to 69."
+    },
+    "carriers": [
+      "data/communes_w1_w23.json",
+      "data/communes_w24_w48.json",
+      "data/communes_w49_w69.json",
+      "data/algeria.json",
+      "data/csv/communes.csv",
+      "data/geojson/communes.geojson",
+      "data/geojson/commune-boundaries.geojson",
+      "data/geojson/commune-boundaries/<wilaya code>.geojson",
+      "data/sql/full.sql"
+    ],
+    "not_carried_by": [
+      "data/ecommerce/*: a flat delivery view keyed on the current wilaya; join on wilaya_code",
+      "data/communes_new_wilayas.csv: the names of the communes of wilayas 59 to 69, with no code_commune; join on wilaya_code"
+    ],
+    "license": "MIT",
+    "sources": [
+      {
+        "key": "law-84-09",
+        "name": "Loi n° 84-09 du 4 février 1984 relative à l'organisation territoriale du pays",
+        "journal_officiel": "JORA n° 6 du 7 février 1984, pp. 101-112",
+        "url": "https://www.joradp.dz/FTP/jo-francais/1984/F1984006.pdf",
+        "evidence_type": "official",
+        "covers": "the 48 wilayas (art. 3) and the communes of each (arts. 5 to 52: wilaya N in art. N + 4)"
+      },
+      {
+        "key": "ordonnance-97-14",
+        "name": "Ordonnance n° 97-14 du 31 mai 1997 relative à l'organisation territoriale de la wilaya d'Alger",
+        "journal_officiel": "JORA n° 38 du 4 juin 1997, pp. 4-5",
+        "url": "https://www.joradp.dz/FTP/jo-francais/1997/F1997038.pdf",
+        "evidence_type": "official",
+        "covers": "24 communes detached from Boumerdès (art. 2), Tipaza (art. 3) and Blida (art. 4) and attached to Algiers from 31 July 1997 (art. 5)"
+      },
+      {
+        "key": "law-19-12",
+        "name": "Loi n° 19-12 du 11 décembre 2019 modifiant et complétant la loi n° 84-09 du 4 février 1984 relative à l'organisation territoriale du pays",
+        "journal_officiel": "JORA n° 78 du 18 décembre 2019, pp. 12-15 (Arabic edition A2019078, p. 16)",
+        "url": "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf",
+        "url_ar": "https://www.joradp.dz/FTP/jo-arabe/2019/A2019078.pdf",
+        "evidence_type": "official",
+        "covers": "wilayas 49 to 58: their communes (art. 3, inserting arts. 52 bis to 52 bis 9) and the restated lists of the eight mother wilayas (art. 2)"
+      },
+      {
+        "key": "decret-21-117",
+        "name": "Décret présidentiel n° 21-117 du 22 mars 2021 complétant le décret n° 84-79 du 3 avril 1984 fixant les noms et les chefs-lieux des wilayas",
+        "journal_officiel": "JORA n° 22 du 25 mars 2021, pp. 7-8",
+        "url": "https://www.joradp.dz/FTP/jo-francais/2021/F2021022.pdf",
+        "evidence_type": "official",
+        "covers": "names and seats of wilayas 49 to 58"
+      },
+      {
+        "key": "law-26-06",
+        "name": "Loi n° 26-06 du 4 avril 2026 modifiant et complétant la loi n° 84-09 du 4 février 1984 relative à l'organisation territoriale du pays",
+        "journal_officiel": "JORA n° 25 du 5 avril 2026, pp. 4-9",
+        "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+        "evidence_type": "official",
+        "covers": "wilayas 59 to 69: their communes (art. 3, inserting arts. 52 bis 10 to 52 bis 20) and the restated lists of the ten mother wilayas (art. 2)"
+      },
+      {
+        "key": "decret-26-206",
+        "name": "Décret présidentiel n° 26-206 du 25 mai 2026 complétant le décret n° 84-79 du 3 avril 1984 fixant les noms et les chefs-lieux des wilayas",
+        "journal_officiel": "JORA n° 40 du 3 juin 2026, p. 5",
+        "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+        "evidence_type": "official",
+        "covers": "names and seats of wilayas 59 to 69"
+      },
+      {
+        "key": "ons-code-geo-2021",
+        "name": "ONS, Code Géographique National 2021",
+        "url": "https://www.ons.dz/IMG/pdf/code_geo_2021.pdf",
+        "capture": "sources/dataset/ons-code-geo-2021.json",
+        "evidence_type": "official",
+        "covers": "the commune codes (WWCC) on the 58-wilaya map; the one source for the El Borma exception"
+      }
+    ]
+  },
+  "wilayas": [
+    {
+      "code": 1,
+      "created": 1984,
+      "wilaya_code_58": 1,
+      "wilaya_code_48": 1,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 5"
+        },
+        {
+          "source": "law-19-12",
+          "article": "art. 2 (restates law 84-09 art. 5)",
+          "note": "cedes communes to the wilayas created in 2019"
+        }
+      ]
+    },
+    {
+      "code": 2,
+      "created": 1984,
+      "wilaya_code_58": 2,
+      "wilaya_code_48": 2,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 6"
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "created": 1984,
+      "wilaya_code_58": 3,
+      "wilaya_code_48": 3,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 7"
+        },
+        {
+          "source": "law-26-06",
+          "article": "art. 2 (restates law 84-09 art. 7)",
+          "note": "cedes communes to the wilayas created in 2026"
+        }
+      ]
+    },
+    {
+      "code": 4,
+      "created": 1984,
+      "wilaya_code_58": 4,
+      "wilaya_code_48": 4,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 8"
+        }
+      ]
+    },
+    {
+      "code": 5,
+      "created": 1984,
+      "wilaya_code_58": 5,
+      "wilaya_code_48": 5,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 9"
+        },
+        {
+          "source": "law-26-06",
+          "article": "art. 2 (restates law 84-09 art. 9)",
+          "note": "cedes communes to the wilayas created in 2026"
+        }
+      ]
+    },
+    {
+      "code": 6,
+      "created": 1984,
+      "wilaya_code_58": 6,
+      "wilaya_code_48": 6,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 10"
+        }
+      ]
+    },
+    {
+      "code": 7,
+      "created": 1984,
+      "wilaya_code_58": 7,
+      "wilaya_code_48": 7,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 11"
+        },
+        {
+          "source": "law-19-12",
+          "article": "art. 2 (restates law 84-09 art. 11)",
+          "note": "cedes communes to the wilayas created in 2019"
+        },
+        {
+          "source": "law-26-06",
+          "article": "art. 2 (restates law 84-09 art. 11)",
+          "note": "cedes communes to the wilayas created in 2026"
+        }
+      ]
+    },
+    {
+      "code": 8,
+      "created": 1984,
+      "wilaya_code_58": 8,
+      "wilaya_code_48": 8,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 12"
+        },
+        {
+          "source": "law-19-12",
+          "article": "art. 2 (restates law 84-09 art. 12)",
+          "note": "cedes communes to the wilayas created in 2019"
+        }
+      ]
+    },
+    {
+      "code": 9,
+      "created": 1984,
+      "wilaya_code_58": 9,
+      "wilaya_code_48": 9,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 13"
+        },
+        {
+          "source": "ordonnance-97-14",
+          "article": "art. 4",
+          "note": "cedes communes to Algiers (16)"
+        }
+      ]
+    },
+    {
+      "code": 10,
+      "created": 1984,
+      "wilaya_code_58": 10,
+      "wilaya_code_48": 10,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 14"
+        }
+      ]
+    },
+    {
+      "code": 11,
+      "created": 1984,
+      "wilaya_code_58": 11,
+      "wilaya_code_48": 11,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 15"
+        },
+        {
+          "source": "law-19-12",
+          "article": "art. 2 (restates law 84-09 art. 15)",
+          "note": "cedes communes to the wilayas created in 2019"
+        }
+      ]
+    },
+    {
+      "code": 12,
+      "created": 1984,
+      "wilaya_code_58": 12,
+      "wilaya_code_48": 12,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 16"
+        },
+        {
+          "source": "law-26-06",
+          "article": "art. 2 (restates law 84-09 art. 16)",
+          "note": "cedes communes to the wilayas created in 2026"
+        }
+      ]
+    },
+    {
+      "code": 13,
+      "created": 1984,
+      "wilaya_code_58": 13,
+      "wilaya_code_48": 13,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 17"
+        },
+        {
+          "source": "law-26-06",
+          "article": "art. 2 (restates law 84-09 art. 17)",
+          "note": "cedes communes to the wilayas created in 2026"
+        }
+      ]
+    },
+    {
+      "code": 14,
+      "created": 1984,
+      "wilaya_code_58": 14,
+      "wilaya_code_48": 14,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 18"
+        },
+        {
+          "source": "law-26-06",
+          "article": "art. 2 (restates law 84-09 art. 18)",
+          "note": "cedes communes to the wilayas created in 2026"
+        }
+      ]
+    },
+    {
+      "code": 15,
+      "created": 1984,
+      "wilaya_code_58": 15,
+      "wilaya_code_48": 15,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 19"
+        }
+      ]
+    },
+    {
+      "code": 16,
+      "created": 1984,
+      "wilaya_code_58": 16,
+      "wilaya_code_48": 16,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 20"
+        },
+        {
+          "source": "ordonnance-97-14",
+          "article": "arts. 2 to 5",
+          "note": "gains 24 communes from Boumerdès, Tipaza and Blida"
+        }
+      ]
+    },
+    {
+      "code": 17,
+      "created": 1984,
+      "wilaya_code_58": 17,
+      "wilaya_code_48": 17,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 21"
+        },
+        {
+          "source": "law-26-06",
+          "article": "art. 2 (restates law 84-09 art. 21)",
+          "note": "cedes communes to the wilayas created in 2026"
+        }
+      ]
+    },
+    {
+      "code": 18,
+      "created": 1984,
+      "wilaya_code_58": 18,
+      "wilaya_code_48": 18,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 22"
+        }
+      ]
+    },
+    {
+      "code": 19,
+      "created": 1984,
+      "wilaya_code_58": 19,
+      "wilaya_code_48": 19,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 23"
+        }
+      ]
+    },
+    {
+      "code": 20,
+      "created": 1984,
+      "wilaya_code_58": 20,
+      "wilaya_code_48": 20,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 24"
+        }
+      ]
+    },
+    {
+      "code": 21,
+      "created": 1984,
+      "wilaya_code_58": 21,
+      "wilaya_code_48": 21,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 25"
+        }
+      ]
+    },
+    {
+      "code": 22,
+      "created": 1984,
+      "wilaya_code_58": 22,
+      "wilaya_code_48": 22,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 26"
+        }
+      ]
+    },
+    {
+      "code": 23,
+      "created": 1984,
+      "wilaya_code_58": 23,
+      "wilaya_code_48": 23,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 27"
+        }
+      ]
+    },
+    {
+      "code": 24,
+      "created": 1984,
+      "wilaya_code_58": 24,
+      "wilaya_code_48": 24,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 28"
+        }
+      ]
+    },
+    {
+      "code": 25,
+      "created": 1984,
+      "wilaya_code_58": 25,
+      "wilaya_code_48": 25,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 29"
+        }
+      ]
+    },
+    {
+      "code": 26,
+      "created": 1984,
+      "wilaya_code_58": 26,
+      "wilaya_code_48": 26,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 30"
+        },
+        {
+          "source": "law-26-06",
+          "article": "art. 2 (restates law 84-09 art. 30)",
+          "note": "cedes communes to the wilayas created in 2026"
+        }
+      ]
+    },
+    {
+      "code": 27,
+      "created": 1984,
+      "wilaya_code_58": 27,
+      "wilaya_code_48": 27,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 31"
+        }
+      ]
+    },
+    {
+      "code": 28,
+      "created": 1984,
+      "wilaya_code_58": 28,
+      "wilaya_code_48": 28,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 32"
+        },
+        {
+          "source": "law-26-06",
+          "article": "art. 2 (restates law 84-09 art. 32)",
+          "note": "cedes communes to the wilayas created in 2026"
+        }
+      ]
+    },
+    {
+      "code": 29,
+      "created": 1984,
+      "wilaya_code_58": 29,
+      "wilaya_code_48": 29,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 33"
+        }
+      ]
+    },
+    {
+      "code": 30,
+      "created": 1984,
+      "wilaya_code_58": 30,
+      "wilaya_code_48": 30,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 34"
+        },
+        {
+          "source": "law-19-12",
+          "article": "art. 2 (restates law 84-09 art. 34)",
+          "note": "cedes communes to the wilayas created in 2019"
+        }
+      ]
+    },
+    {
+      "code": 31,
+      "created": 1984,
+      "wilaya_code_58": 31,
+      "wilaya_code_48": 31,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 35"
+        }
+      ]
+    },
+    {
+      "code": 32,
+      "created": 1984,
+      "wilaya_code_58": 32,
+      "wilaya_code_48": 32,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 36"
+        },
+        {
+          "source": "law-26-06",
+          "article": "art. 2 (restates law 84-09 art. 36)",
+          "note": "cedes communes to the wilayas created in 2026"
+        }
+      ]
+    },
+    {
+      "code": 33,
+      "created": 1984,
+      "wilaya_code_58": 33,
+      "wilaya_code_48": 33,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 37"
+        },
+        {
+          "source": "law-19-12",
+          "article": "art. 2 (restates law 84-09 art. 37)",
+          "note": "cedes communes to the wilayas created in 2019"
+        }
+      ]
+    },
+    {
+      "code": 34,
+      "created": 1984,
+      "wilaya_code_58": 34,
+      "wilaya_code_48": 34,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 38"
+        }
+      ]
+    },
+    {
+      "code": 35,
+      "created": 1984,
+      "wilaya_code_58": 35,
+      "wilaya_code_48": 35,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 39"
+        },
+        {
+          "source": "ordonnance-97-14",
+          "article": "art. 2",
+          "note": "cedes communes to Algiers (16)"
+        }
+      ]
+    },
+    {
+      "code": 36,
+      "created": 1984,
+      "wilaya_code_58": 36,
+      "wilaya_code_48": 36,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 40"
+        }
+      ]
+    },
+    {
+      "code": 37,
+      "created": 1984,
+      "wilaya_code_58": 37,
+      "wilaya_code_48": 37,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 41"
+        }
+      ]
+    },
+    {
+      "code": 38,
+      "created": 1984,
+      "wilaya_code_58": 38,
+      "wilaya_code_48": 38,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 42"
+        }
+      ]
+    },
+    {
+      "code": 39,
+      "created": 1984,
+      "wilaya_code_58": 39,
+      "wilaya_code_48": 39,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 43"
+        },
+        {
+          "source": "law-19-12",
+          "article": "art. 2 (restates law 84-09 art. 43)",
+          "note": "cedes communes to the wilayas created in 2019"
+        }
+      ]
+    },
+    {
+      "code": 40,
+      "created": 1984,
+      "wilaya_code_58": 40,
+      "wilaya_code_48": 40,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 44"
+        }
+      ]
+    },
+    {
+      "code": 41,
+      "created": 1984,
+      "wilaya_code_58": 41,
+      "wilaya_code_48": 41,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 45"
+        }
+      ]
+    },
+    {
+      "code": 42,
+      "created": 1984,
+      "wilaya_code_58": 42,
+      "wilaya_code_48": 42,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 46"
+        },
+        {
+          "source": "ordonnance-97-14",
+          "article": "art. 3",
+          "note": "cedes communes to Algiers (16)"
+        }
+      ]
+    },
+    {
+      "code": 43,
+      "created": 1984,
+      "wilaya_code_58": 43,
+      "wilaya_code_48": 43,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 47"
+        }
+      ]
+    },
+    {
+      "code": 44,
+      "created": 1984,
+      "wilaya_code_58": 44,
+      "wilaya_code_48": 44,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 48"
+        }
+      ]
+    },
+    {
+      "code": 45,
+      "created": 1984,
+      "wilaya_code_58": 45,
+      "wilaya_code_48": 45,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 49"
+        }
+      ]
+    },
+    {
+      "code": 46,
+      "created": 1984,
+      "wilaya_code_58": 46,
+      "wilaya_code_48": 46,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 50"
+        }
+      ]
+    },
+    {
+      "code": 47,
+      "created": 1984,
+      "wilaya_code_58": 47,
+      "wilaya_code_48": 47,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 51"
+        },
+        {
+          "source": "law-19-12",
+          "article": "art. 2 (restates law 84-09 art. 51)",
+          "note": "cedes communes to the wilayas created in 2019"
+        }
+      ]
+    },
+    {
+      "code": 48,
+      "created": 1984,
+      "wilaya_code_58": 48,
+      "wilaya_code_48": 48,
+      "citations": [
+        {
+          "source": "law-84-09",
+          "article": "art. 52"
+        }
+      ]
+    },
+    {
+      "code": 49,
+      "created": 2019,
+      "wilaya_code_58": 49,
+      "wilaya_code_48": 1,
+      "citations": [
+        {
+          "source": "law-19-12",
+          "article": "art. 3 (law 84-09 art. 52 bis)",
+          "communes_in_text": 10
+        },
+        {
+          "source": "decret-21-117",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 50,
+      "created": 2019,
+      "wilaya_code_58": 50,
+      "wilaya_code_48": 1,
+      "citations": [
+        {
+          "source": "law-19-12",
+          "article": "art. 3 (law 84-09 art. 52 bis 1)",
+          "communes_in_text": 2
+        },
+        {
+          "source": "decret-21-117",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 51,
+      "created": 2019,
+      "wilaya_code_58": 51,
+      "wilaya_code_48": 7,
+      "citations": [
+        {
+          "source": "law-19-12",
+          "article": "art. 3 (law 84-09 art. 52 bis 2)",
+          "communes_in_text": 6
+        },
+        {
+          "source": "decret-21-117",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 52,
+      "created": 2019,
+      "wilaya_code_58": 52,
+      "wilaya_code_48": 8,
+      "citations": [
+        {
+          "source": "law-19-12",
+          "article": "art. 3 (law 84-09 art. 52 bis 3)",
+          "communes_in_text": 10
+        },
+        {
+          "source": "decret-21-117",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 53,
+      "created": 2019,
+      "wilaya_code_58": 53,
+      "wilaya_code_48": 11,
+      "citations": [
+        {
+          "source": "law-19-12",
+          "article": "art. 3 (law 84-09 art. 52 bis 4)",
+          "communes_in_text": 3
+        },
+        {
+          "source": "decret-21-117",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 54,
+      "created": 2019,
+      "wilaya_code_58": 54,
+      "wilaya_code_48": 11,
+      "citations": [
+        {
+          "source": "law-19-12",
+          "article": "art. 3 (law 84-09 art. 52 bis 5)",
+          "communes_in_text": 2
+        },
+        {
+          "source": "decret-21-117",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 55,
+      "created": 2019,
+      "wilaya_code_58": 55,
+      "wilaya_code_48": 30,
+      "citations": [
+        {
+          "source": "law-19-12",
+          "article": "art. 3 (law 84-09 art. 52 bis 6)",
+          "communes_in_text": 14
+        },
+        {
+          "source": "decret-21-117",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 56,
+      "created": 2019,
+      "wilaya_code_58": 56,
+      "wilaya_code_48": 33,
+      "citations": [
+        {
+          "source": "law-19-12",
+          "article": "art. 3 (law 84-09 art. 52 bis 7)",
+          "communes_in_text": 2
+        },
+        {
+          "source": "decret-21-117",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 57,
+      "created": 2019,
+      "wilaya_code_58": 57,
+      "wilaya_code_48": 39,
+      "citations": [
+        {
+          "source": "law-19-12",
+          "article": "art. 3 (law 84-09 art. 52 bis 8)",
+          "communes_in_text": 8
+        },
+        {
+          "source": "decret-21-117",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 58,
+      "created": 2019,
+      "wilaya_code_58": 58,
+      "wilaya_code_48": 47,
+      "citations": [
+        {
+          "source": "law-19-12",
+          "article": "art. 3 (law 84-09 art. 52 bis 9)",
+          "communes_in_text": 3
+        },
+        {
+          "source": "decret-21-117",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 59,
+      "created": 2026,
+      "wilaya_code_58": 3,
+      "wilaya_code_48": 3,
+      "citations": [
+        {
+          "source": "law-26-06",
+          "article": "art. 3 (law 84-09 art. 52 bis 10)",
+          "communes_in_text": 12
+        },
+        {
+          "source": "decret-26-206",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 60,
+      "created": 2026,
+      "wilaya_code_58": 5,
+      "wilaya_code_48": 5,
+      "citations": [
+        {
+          "source": "law-26-06",
+          "article": "art. 3 (law 84-09 art. 52 bis 11)",
+          "communes_in_text": 8
+        },
+        {
+          "source": "decret-26-206",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 61,
+      "created": 2026,
+      "wilaya_code_58": 7,
+      "wilaya_code_48": 7,
+      "citations": [
+        {
+          "source": "law-26-06",
+          "article": "art. 3 (law 84-09 art. 52 bis 12)",
+          "communes_in_text": 5
+        },
+        {
+          "source": "decret-26-206",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 62,
+      "created": 2026,
+      "wilaya_code_58": 12,
+      "wilaya_code_48": 12,
+      "citations": [
+        {
+          "source": "law-26-06",
+          "article": "art. 3 (law 84-09 art. 52 bis 13)",
+          "communes_in_text": 4
+        },
+        {
+          "source": "decret-26-206",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 63,
+      "created": 2026,
+      "wilaya_code_58": 13,
+      "wilaya_code_48": 13,
+      "citations": [
+        {
+          "source": "law-26-06",
+          "article": "art. 3 (law 84-09 art. 52 bis 14)",
+          "communes_in_text": 4
+        },
+        {
+          "source": "decret-26-206",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 64,
+      "created": 2026,
+      "wilaya_code_58": 14,
+      "wilaya_code_48": 14,
+      "citations": [
+        {
+          "source": "law-26-06",
+          "article": "art. 3 (law 84-09 art. 52 bis 15)",
+          "communes_in_text": 6
+        },
+        {
+          "source": "decret-26-206",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 65,
+      "created": 2026,
+      "wilaya_code_58": 17,
+      "wilaya_code_48": 17,
+      "citations": [
+        {
+          "source": "law-26-06",
+          "article": "art. 3 (law 84-09 art. 52 bis 16)",
+          "communes_in_text": 10
+        },
+        {
+          "source": "decret-26-206",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 66,
+      "created": 2026,
+      "wilaya_code_58": 17,
+      "wilaya_code_48": 17,
+      "citations": [
+        {
+          "source": "law-26-06",
+          "article": "art. 3 (law 84-09 art. 52 bis 17)",
+          "communes_in_text": 8
+        },
+        {
+          "source": "decret-26-206",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 67,
+      "created": 2026,
+      "wilaya_code_58": 26,
+      "wilaya_code_48": 26,
+      "citations": [
+        {
+          "source": "law-26-06",
+          "article": "art. 3 (law 84-09 art. 52 bis 18)",
+          "communes_in_text": 21
+        },
+        {
+          "source": "decret-26-206",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 68,
+      "created": 2026,
+      "wilaya_code_58": 28,
+      "wilaya_code_48": 28,
+      "citations": [
+        {
+          "source": "law-26-06",
+          "article": "art. 3 (law 84-09 art. 52 bis 19)",
+          "communes_in_text": 23
+        },
+        {
+          "source": "decret-26-206",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    },
+    {
+      "code": 69,
+      "created": 2026,
+      "wilaya_code_58": 32,
+      "wilaya_code_48": 32,
+      "citations": [
+        {
+          "source": "law-26-06",
+          "article": "art. 3 (law 84-09 art. 52 bis 20)",
+          "communes_in_text": 7
+        },
+        {
+          "source": "decret-26-206",
+          "article": "art. 1er",
+          "note": "name and capital"
+        }
+      ]
+    }
+  ],
+  "transfers": [
+    {
+      "code_commune": 1634,
+      "name_in_text": "Birtouta",
+      "from_wilaya_code": 9,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 4"
+    },
+    {
+      "code_commune": 1635,
+      "name_in_text": "Tessala-El-Merdja",
+      "from_wilaya_code": 9,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 4"
+    },
+    {
+      "code_commune": 1636,
+      "name_in_text": "Ouled Chebel",
+      "from_wilaya_code": 9,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 4"
+    },
+    {
+      "code_commune": 1637,
+      "name_in_text": "Sidi Moussa",
+      "from_wilaya_code": 9,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 4"
+    },
+    {
+      "code_commune": 1638,
+      "name_in_text": "Aïn Taya",
+      "from_wilaya_code": 35,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 2"
+    },
+    {
+      "code_commune": 1639,
+      "name_in_text": "Bordj-El-Bahri",
+      "from_wilaya_code": 35,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 2"
+    },
+    {
+      "code_commune": 1640,
+      "name_in_text": "El Marsa",
+      "from_wilaya_code": 35,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 2"
+    },
+    {
+      "code_commune": 1641,
+      "name_in_text": "Heraoua",
+      "from_wilaya_code": 35,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 2"
+    },
+    {
+      "code_commune": 1642,
+      "name_in_text": "Rouiba",
+      "from_wilaya_code": 35,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 2"
+    },
+    {
+      "code_commune": 1643,
+      "name_in_text": "Réghaïa",
+      "from_wilaya_code": 35,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 2"
+    },
+    {
+      "code_commune": 1644,
+      "name_in_text": "Aïn Bénian",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1645,
+      "name_in_text": "Staouéli",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1646,
+      "name_in_text": "Zéralda",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1647,
+      "name_in_text": "Mâalma",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1648,
+      "name_in_text": "Rahmania",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1649,
+      "name_in_text": "Souidania",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1650,
+      "name_in_text": "Chéraga",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1651,
+      "name_in_text": "Ouled Fayet",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1652,
+      "name_in_text": "El Achour",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1653,
+      "name_in_text": "Draria",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1654,
+      "name_in_text": "Douéra",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1655,
+      "name_in_text": "Baba Hassen",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1656,
+      "name_in_text": "Khraïcia",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    },
+    {
+      "code_commune": 1657,
+      "name_in_text": "Saoula",
+      "from_wilaya_code": 42,
+      "to_wilaya_code": 16,
+      "effective": "1997-07-31",
+      "source": "ordonnance-97-14",
+      "article": "art. 3"
+    }
+  ],
+  "exceptions": [
+    {
+      "code_commune": 3021,
+      "name_in_text": "El Borma",
+      "wilaya_code": 30,
+      "wilaya_code_58": 30,
+      "wilaya_code_48": 30,
+      "listed_under_wilaya_code": 55,
+      "reason": "Law 19-12 lists El Borma as the 14th commune of Touggourt (55) and leaves it out of the seven it restates for Ouargla (30). The ONS commune code 3021 and current administrative practice keep it in Ouargla, and so does this dataset until a follow-up issue settles it. Its wilaya_code, wilaya_code_58 and wilaya_code_48 all read 30.",
+      "citations": [
+        {
+          "source": "law-19-12",
+          "article": "art. 3 (law 84-09 art. 52 bis 6, item 14)",
+          "page": "p. 15 (Arabic edition p. 16)"
+        },
+        {
+          "source": "law-19-12",
+          "article": "art. 2 (restates law 84-09 art. 34: seven communes, El Borma not among them)",
+          "page": "p. 13 (Arabic edition p. 14)"
+        },
+        {
+          "source": "ons-code-geo-2021",
+          "article": "code 3021, EL BORMA, wilaya 30"
+        }
+      ]
+    }
+  ]
+}

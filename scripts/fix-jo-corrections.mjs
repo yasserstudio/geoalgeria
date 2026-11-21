@@ -24,7 +24,7 @@ import {
   coordinateCorrections,
   wilayaNameCorrections,
 } from "./lib/jo-2026-corrections.mjs";
-import { isWilayaSqlRow } from "./lib/full-sql-rows.mjs";
+import { isCommuneSqlRow, isWilayaSqlRow } from "./lib/full-sql-rows.mjs";
 import { supersededCommunePoints } from "./lib/commune-corrections.mjs";
 
 const WRITE = process.argv.includes("--write");
@@ -395,8 +395,8 @@ function patchCsv(path, width, patch) {
   queueText(path, `${[lines[0], ...rows.map((row) => row.join(","))].join(newline)}${newline}`);
 }
 
-// name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
-patchCsv(join(DATA, "csv", "communes.csv"), 8, (f) => {
+// name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune,wilaya_code_58,wilaya_code_48
+patchCsv(join(DATA, "csv", "communes.csv"), 10, (f) => {
   const code = Number(f[7]);
   const names = communeNames.get(code);
   if (names?.name_fr) {
@@ -486,7 +486,7 @@ patchSql(join(DATA, "sql", "full.sql"), (f) => {
     f[1] = sqlQuote(rename.to);
     return true;
   }
-  if (f.length !== 9) return false;
+  if (!isCommuneSqlRow(f)) return false;
   const code = Number(f[8]);
   const names = communeNames.get(code);
   const coords = communeCoords.get(code);
