@@ -69,7 +69,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 
 مع أي bundler (Next.js أو Vite أو webpack) تُضمّ ملفات JSON الأحد عشر كلها، بما فيها مرايا مكاتب البريد والصرافات الآلية. إذا كنت تحتاج جزءًا واحدًا، استورد ملفه وحده: `import communes from "geoalgeria/data/ecommerce/communes.json"` مع bundler، أو مع `with { type: "json" }` في Node وحده. في TypeScript يحتاج الاستيراد الافتراضي إلى `esModuleInterop`، بخلاف `import dz = require("geoalgeria")`.
 
-### البحث، رموز الولايات القديمة، والدوائر
+### البحث، أصل الولايات، والدوائر
 
 ```js
 // البحث: الولايات ثم الدوائر ثم البلديات، بالفرنسية أو بالعربية (Node 20.19+ أو bundler)
@@ -79,7 +79,7 @@ dz.search("ورقلة");
 dz.search("bejaia", { types: ["commune"], limit: 5 });
 // [{ type: "commune", code: 601, name_fr: "Bejaia", name_ar: "بجاية", wilaya_code: 6, match: "exact" }]
 
-// الرموز القديمة: ولاية كل بلدية على خريطة 58 ولاية وخريطة 48 ولاية
+// أصل الولايات: ولاية كل بلدية على خريطة 58 ولاية وخريطة 48 ولاية
 const touggourt = dz.communes.find((c) => c.code_commune === 5501);
 touggourt.wilaya_code;     // 55
 touggourt.wilaya_code_58;  // 55
@@ -117,8 +117,9 @@ geoalgeria.commune(101)["postal_code"]    # '01000'
 | | العدد | |
 |---|---|---|
 | **الولايات** | 69 | (إصلاحات 2019 + 2026)، ولكل ولاية بلدية مقرها (chef-lieu) |
-| **الدوائر** | 551 | كيانات من المستوى الأول |
+| **الدوائر** | 551 | لكل دائرة اسمها العربي وبلدياتها وبلدية المقر؛ والـ13 في الجزائر العاصمة مقاطعات إدارية |
 | **البلديات** | 1,541 | ثنائية اللغة فر/عر، رموز بريدية، إحداثيات، روابط OpenStreetMap وWikidata |
+| **حدود البلديات** | 1,541 | مضلّع لكل بلدية، ونسخة في ملف لكل ولاية (OpenStreetMap، ODbL) |
 | **مكاتب البريد** | 3,907 | رموز بريد الجزائر الحقيقية، إحداثيات |
 | **الصرّافات الآلية** | 2,023 | شبكة GAB لبريد الجزائر |
 | **وكالات التشغيل** | 331 | الوكالة الوطنية للتشغيل: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
@@ -172,7 +173,7 @@ geoalgeria.commune(101)["postal_code"]    # '01000'
 ## لمن هذا المشروع
 
 - **التجارة الإلكترونية / الدفع عند الاستلام**: تسلسل عناوين ولاية ← دائرة ← بلدية، التحقق من الرموز البريدية، وتهيئة مناطق الشحن المطابقة لما يستخدمه الناقلون فعليًا.
-- **الخرائط ونظم المعلومات الجغرافية**: GeoJSON جاهز مع 1,541 بلدية، مصمم بشكل صحيح عبر الإصلاحين.
+- **الخرائط ونظم المعلومات الجغرافية**: GeoJSON جاهز بنقطة وحدود لكل بلدية من البلديات الـ1,541، مصمم بشكل صحيح عبر الإصلاحين.
 - **المجتمع المدني، البحث العلمي، ومشاريع البيانات**: بيانات مرجعية نظيفة، منظمة، موثقة المصدر ومُصدَّرة بدلًا من ملفات PDF.
 - **أي شيء يتعلق بالجزائر**: تثبيت واحد، الأنواع مضمّنة.
 
@@ -223,7 +224,7 @@ geoalgeria.commune(101)["postal_code"]    # '01000'
 - المعرّفات الخارجية مجمّعة تحت `refs` (`osm`، `wikidata`، …).
 - `geo_precision` يأخذ حصرًا القيم `exact | approximate | null`، و`null` فقط عند غياب الإحداثيات، مع طريقة الترميز الجغرافي في `geo_method`.
 
-تُرافقها أدوات قابلة للقراءة آليًا: فهرس جذري [`index.json`](index.json)، وواصف `schema.org/Dataset` (`dataset-metadata.json`) في كل حزمة تحمل بيانات (الحزمة `@geoalgeria/normalize`، شيفرة فقط، لا تحمل واصفًا من هذا النوع)، و69 مضلّع حدود للولايات في الحزمة الأساسية ضمن [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (بجودة العرض).
+تُرافقها أدوات قابلة للقراءة آليًا: فهرس جذري [`index.json`](index.json)، وواصف `schema.org/Dataset` (`dataset-metadata.json`) في كل حزمة تحمل بيانات (الحزمة `@geoalgeria/normalize`، شيفرة فقط، لا تحمل واصفًا من هذا النوع)، و69 مضلّع حدود للولايات في الحزمة الأساسية ضمن [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (بجودة العرض)، وحدود البلديات الـ1,541 ضمن [`data/geojson/commune-boundaries.geojson`](packages/dataset/data/geojson/commune-boundaries.geojson)، مع ملف لكل ولاية في `commune-boundaries/<wilaya_code>.geojson` (OpenStreetMap، ODbL).
 
 المعرّف المنشور مفتاح ربط، فلا يُعاد استخدامه أبدًا. والسجل الذي يخرج من حزمة يترك
 معرّفه في `data/retired-ids.json` الخاص بها، محجوزًا إلى الأبد؛ وحين يُدمج سجلّان في

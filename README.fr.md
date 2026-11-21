@@ -67,7 +67,7 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 
 Dans un bundle (Next.js, Vite, webpack), les onze fichiers JSON sont inclus, les miroirs des bureaux de poste et des DAB compris. Si vous n'avez besoin que d'une partie, importez son fichier seul : `import communes from "geoalgeria/data/ecommerce/communes.json"` dans un bundler, ou avec `with { type: "json" }` sous Node sans bundler. En TypeScript, l'import par défaut demande `esModuleInterop` ; `import dz = require("geoalgeria")` non.
 
-### Recherche, anciens codes de wilaya et daïras
+### Recherche, filiation des wilayas et daïras
 
 ```js
 // Recherche : wilayas, puis daïras, puis communes, en français ou en arabe (Node 20.19+ ou un bundler)
@@ -77,7 +77,7 @@ dz.search("ورقلة");
 dz.search("bejaia", { types: ["commune"], limit: 5 });
 // [{ type: "commune", code: 601, name_fr: "Bejaia", name_ar: "بجاية", wilaya_code: 6, match: "exact" }]
 
-// Anciens codes : la wilaya de chaque commune sur les cartes à 58 et à 48 wilayas
+// Filiation des wilayas : la wilaya de chaque commune sur les cartes à 58 et à 48 wilayas
 const touggourt = dz.communes.find((c) => c.code_commune === 5501);
 touggourt.wilaya_code;     // 55
 touggourt.wilaya_code_58;  // 55
@@ -115,8 +115,9 @@ geoalgeria.commune(101)["postal_code"]    # '01000'
 | | Nombre | |
 |---|---|---|
 | **Wilayas** | 69 | provinces (réformes 2019 + 2026), chacune avec la commune chef-lieu |
-| **Daïras** | 551 | districts, comme entités de premier niveau |
+| **Daïras** | 551 | chacune avec son nom arabe, ses communes et sa commune siège ; les 13 d'Alger sont des circonscriptions administratives |
 | **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées, liens OpenStreetMap + Wikidata |
+| **Limites des communes** | 1 541 | un polygone par commune, aussi en un fichier par wilaya (OpenStreetMap, ODbL) |
 | **Bureaux de poste** | 3 907 | vrais codes Algérie Poste, coordonnées |
 | **DAB** | 2 023 | réseau GAB d'Algérie Poste |
 | **Agences d'emploi** | 331 | ANEM : 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
@@ -170,7 +171,7 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contie
 ## À qui ça s'adresse
 
 - **E-commerce / COD**: cascades d'adresses wilaya → daïra → commune, validation des codes postaux et configuration des zones de livraison correspondant à ce que les transporteurs utilisent réellement.
-- **Cartes et SIG**: GeoJSON prêt à l'emploi avec 1 541 features communes, modélisé correctement à travers les deux réformes.
+- **Cartes et SIG**: GeoJSON prêt à l'emploi avec un point et un contour pour chacune des 1 541 communes, modélisé correctement à travers les deux réformes.
 - **Recherche, données publiques et projets civiques**: données de référence propres, structurées, sourcées et versionnées au lieu de PDF.
 - **Tout projet utilisant des données algériennes**: un seul install, types inclus.
 
@@ -221,7 +222,7 @@ Chaque enregistrement suit la même forme :
 - Les identifiants externes sont regroupés sous `refs` (`osm`, `wikidata`, …).
 - `geo_precision` vaut strictement `exact | approximate | null`, `null` exactement lorsqu'il n'y a pas de coordonnée, avec la méthode de géocodage dans `geo_method`.
 
-Des artefacts lisibles par machine les accompagnent : un catalogue racine [`index.json`](index.json), un descripteur `schema.org/Dataset` (`dataset-metadata.json`) dans chaque paquet porteur de données (le paquet `@geoalgeria/normalize`, code seul, n'en porte pas), et les 69 polygones de limites des wilayas dans le paquet principal, sous [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (qualité d'affichage).
+Des artefacts lisibles par machine les accompagnent : un catalogue racine [`index.json`](index.json), un descripteur `schema.org/Dataset` (`dataset-metadata.json`) dans chaque paquet porteur de données (le paquet `@geoalgeria/normalize`, code seul, n'en porte pas), et les 69 polygones de limites des wilayas dans le paquet principal, sous [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (qualité d'affichage), ainsi que les limites des 1 541 communes sous [`data/geojson/commune-boundaries.geojson`](packages/dataset/data/geojson/commune-boundaries.geojson), avec un fichier par wilaya dans `commune-boundaries/<wilaya_code>.geojson` (OpenStreetMap, ODbL).
 
 Un identifiant publié est une clé de jointure : il n'est jamais réutilisé. Un
 enregistrement qui quitte un paquet laisse son identifiant dans le
