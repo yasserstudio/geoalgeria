@@ -20,11 +20,10 @@ Membership for wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 and 59 to 69 comes
 from executive decree 26-253 (JORA n 52, 21 July 2026); the other 48 wilayas
 keep their decree 91-306 lists, so the national total is the dataset's count,
 never stated as official. Lists come from the decrees and a secondary dataset
-only confirms them (ADR 0006). The member list is read from the Commune
-records (`daira` and `wilaya_code`); a `communes` field on the Daira is not
-published yet. The seat is the member Commune the Daira is named after, kept as
-`seat_commune_code` in `research/_daira-audit/daira-audit.json` only, and a
-`kind` field (`daira` or `circonscription`) is deferred.
+only confirms them (ADR 0006). The member list is the Commune
+records' `daira` and `wilaya_code`, repeated on the Daira as `communes`. The
+seat is the member Commune the Daira is named after, `seat_commune_code`, and
+`kind` is `daira` or `circonscription`.
 _Avoid_: district, sub-prefecture, arrondissement
 
 **Daira audit**:
@@ -42,8 +41,8 @@ _Avoid_: verified (for `agrees_1991`), confidence, quality score
 An administrative district of Algiers (Wilaya 16), from the texts of 1997
 to 2000 that reorganized the capital, grouping Communes the way a Daira does
 elsewhere. Wilaya 16's 13 rows in `dairas.json` are these districts; they stay
-there, ungraded, so every Commune keeps one parent, until the deferred `kind`
-field marks them `circonscription`. Not the circonscriptions administratives
+there, ungraded, so every Commune keeps one parent, with `kind`
+`circonscription`. Not the circonscriptions administratives
 of the walis délégués (décret présidentiel 15-140), which group Dairas.
 _Avoid_: Daira (for the districts of Algiers), district, arrondissement
 

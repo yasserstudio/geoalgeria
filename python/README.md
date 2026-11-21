@@ -32,8 +32,9 @@ Wilaya codes follow the 2026 reform (69 wilayas). Each commune also carries
 2026) and on the 48-wilaya map (1984 to 2019), so older data joins on the code
 it was written with.
 
-Each daira has `id`, `name_fr`, `name_ar`, `wilaya_code`, `commune_count` and an
-`audit` with its `status` and `citation`: `decree_table` when a whole-wilaya
+Each daira has `id`, `name_fr`, `name_ar`, `wilaya_code`, `commune_count`,
+`communes` (member codes), `seat_commune_code`, `kind` (`daira`, or
+`circonscription` in Algiers) and an `audit` with its `status` and `citation`: `decree_table` when a whole-wilaya
 decree table names it, `agrees_1991` when it matches the 1991 table, and no
 grade yet otherwise. These are the dataset's 551 checked dairas, not dairas
 regrouped from the communes.
@@ -70,8 +71,8 @@ words, if you build your own index. They give the same keys as the npm
 - `search()` results are `{type, code, name_fr, name_ar, wilaya_code, match}`
   instead of whole records, and include dairas. Use `commune(code)` or
   `wilaya(code)` for the full record.
-- `dairas()` returns the audited daira records, which have `commune_count` but
-  no list of commune codes; `communes()` and each commune's `daira` give the list.
+- `dairas()` returns the audited daira records, each with its `communes` list of
+  member codes, `seat_commune_code` and `kind`.
 - `normalize()` is deprecated and now returns `conservative_key()`, which keeps
   ة and ى as they are. Use `loose_key()` for the 0.1.0 reading of those two
   letters. Keys saved with 0.1.0 should be rebuilt.

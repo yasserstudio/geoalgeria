@@ -19,7 +19,7 @@ Algeria has **69 wilayas** (provinces) and **1,541 communes** (municipalities), 
 
 **142 of the 551 are settled by decree.** Executive decree n° 26-253 of 15 July 2026, published in the *Journal Officiel* n° 52 of 21 July 2026, fixes the communes each daira chief administers in wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 and 59–69, and names 142 dairas there. It leaves the other 48 wilayas under decree n° 91-306 of 24 August 1991, whose lists this dataset holds and which come to 409. The reading of the annex is in [`research/_dairas/`](../../research/_dairas/).
 
-**Each daira says how far its commune list is checked** (`audit.status` in `dairas.json`). 210 are read from a whole-wilaya decree table (the 142 of 26-253 and 68 of decree 21-198 of 2021), each citing decree, article, page and the *Journal Officiel* PDF. 275 agree with the 1991 table of 91-306, as amended by 92-66 where it applies; later amendments were not exhaustively searched. 66 carry no grade yet: the 13 dairas of Algiers, which texts of 1997 to 2000 reorganized and this audit has not read; 43 more that disagree with the 1991 table with no amending text found; and 10 that agree with it only through a weak match. Every daira also has a `name_ar` with its source, except the 56 that disagree and one more. The audit changed no daira or commune; it is in [`research/_daira-audit/`](../../research/_daira-audit/).
+**Each daira says how far its commune list is checked** (`audit.status` in `dairas.json`). 210 are read from a whole-wilaya decree table (the 142 of 26-253 and 68 of decree 21-198 of 2021), each citing decree, article, page and the *Journal Officiel* PDF. 275 agree with the 1991 table of 91-306, as amended by 92-66 where it applies; later amendments were not exhaustively searched. 66 carry no grade yet: the 13 circonscriptions administratives of Algiers (`kind` `circonscription`), which texts of 1997 to 2000 reorganized and this audit has not read; 43 more that disagree with the 1991 table with no amending text found; and 10 that agree with it only through a weak match. Every daira also has a `name_ar` with its source, except the 56 that disagree and one more. The audit changed no daira or commune; it is in [`research/_daira-audit/`](../../research/_daira-audit/).
 
 ---
 
@@ -155,7 +155,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 |------|--------|---------|----------|
 | `data/algeria.json` | JSON | 69 wilayas + communes | Single-file usage |
 | `data/wilayas.json` | JSON | 69 | Wilaya list only |
-| `data/dairas.json` | JSON | 551 | Daira list with commune counts, Arabic names and audit grades |
+| `data/dairas.json` | JSON | 551 | Daira list with member communes, seat commune, kind, Arabic names and audit grades |
 | `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
 | `data/phone-code-provenance.json` | JSON | 11 | Why wilayas 59–69 carry the `phone_code` they carry: the official texts searched and the reason for each `null` |
 | `data/wilaya-lineage.json` | JSON | 69 | Each wilaya's code on the 58-wilaya and 48-wilaya maps, with the article of each law that sets it; communes carry it as `wilaya_code_58` / `wilaya_code_48` |

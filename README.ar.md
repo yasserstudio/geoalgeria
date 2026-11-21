@@ -91,8 +91,9 @@ const daira = dz.dairas.find((d) => d.id === 515);
 daira.name_ar;         // "تقرت"
 daira.audit.status;    // "decree_table" أو "agrees_1991"، أو null إن لم تُصنّف بعد
 daira.audit.citation;  // المرسوم 21-198 لسنة 2021: المادة والصفحة وملف PDF من الجريدة الرسمية
-dz.communes.filter((c) => c.wilaya_code === daira.wilaya_code && c.daira === daira.name_fr);
-// Nezla, Tebesbest, Touggourt, Zaouia El Abidia
+daira.communes;        // [5501, 5503, 5504, 5505]: Touggourt, Nezla, Tebesbest, Zaouia El Abidia
+daira.seat_commune_code; // 5501، بلدية تقرت
+daira.kind;            // "daira" ("circonscription" في الجزائر العاصمة)
 ```
 
 الحركات وحالة الأحرف وصور الهمزة لا تمنع التطابق أبدًا. قيمة `match` في كل نتيجة هي `exact` أو `prefix` (بداية الاسم) أو `loose` (ى تُقرأ ي، وة تُقرأ ه)، والاسم السابق يجد السجل أيضًا مع `matched: "former"`. قوائم الدوائر مأخوذة من مراسيم *الجريدة الرسمية* ([ADR 0006](docs/adr/0006-dairas-from-the-decrees.md)).

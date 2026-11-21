@@ -89,8 +89,9 @@ const daira = dz.dairas.find((d) => d.id === 515);
 daira.name_ar;         // "تقرت"
 daira.audit.status;    // "decree_table", "agrees_1991", or null when not graded yet
 daira.audit.citation;  // decree 21-198 of 2021: article, page and the Journal officiel PDF
-dz.communes.filter((c) => c.wilaya_code === daira.wilaya_code && c.daira === daira.name_fr);
-// Nezla, Tebesbest, Touggourt, Zaouia El Abidia
+daira.communes;        // [5501, 5503, 5504, 5505]: Touggourt, Nezla, Tebesbest, Zaouia El Abidia
+daira.seat_commune_code; // 5501, the commune Touggourt
+daira.kind;            // "daira" ("circonscription" in Algiers)
 ```
 
 Accents, case and hamza forms never stop a match. Each result's `match` is `exact`, `prefix` (the start of a name) or `loose` (ى read as ي, ة as ه), and a former name finds the record too, with `matched: "former"`. Daira lists come from the decrees in the *Journal officiel* ([ADR 0006](docs/adr/0006-dairas-from-the-decrees.md)).

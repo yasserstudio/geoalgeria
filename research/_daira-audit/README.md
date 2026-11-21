@@ -86,8 +86,11 @@ records (`name_ar_mismatches`): Sidi Abdelli (1334) and Sidi Abderrahmane
 
 ## Seats
 
-The dataset carries no daira seat, and the audit sets none. Each row records
-`seat_commune_code`, the member commune the daira is named after. Where a
+Each row records `seat_commune_code`, the member commune the daira is named
+after; `dairas.json` publishes it (scripts/add-daira-fields.mjs), filling the
+rows the audit left null by the same name rule and, for five, the same name
+under another spelling. Beni Maouche (60) has no seat: its one member is
+Beni-Mallikeche. Where a
 decree prints the seat apart from that member, `seat_report` lists it: all 35
 entries are `spelling_only` (the printed seat is that same commune under
 another spelling, such as Abou El Hassane for Abou El Hassan). No decree seats
@@ -95,11 +98,10 @@ a daira on a different commune.
 
 ## Follow-ups
 
-Deferred by the Owner from geoalgeria.com#360:
+Deferred by the Owner from geoalgeria.com#360 (`kind`, `seat_commune_code` and
+`communes` shipped in `dairas.json` on 21 Nov 2026):
 
-- A `kind` field on each daira.
-- A seat-commune field in `dairas.json` (the audit records `seat_commune_code`
-  in `daira-audit.json` only).
-- A test that each graded daira's communes equal the list the decree prints.
+- A test that each graded daira's communes equal the list the decree prints
+  (only decree 26-253 has a machine-readable table, `research/_dairas/`).
 - Respelling the 16 seat communes in `name_ar_decree_spelling`, at commune
   level.

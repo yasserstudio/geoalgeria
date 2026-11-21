@@ -90,7 +90,7 @@ def commune(code: int | str) -> Optional[Record]:
 
 
 def dairas(wilaya_code: int | str | None = None) -> List[Record]:
-    """All 551 audited Dairas, or those of one wilaya, each with its Daira audit status and citation."""
+    """All 551 audited Dairas, or those of one wilaya, each with its member communes, seat commune, kind, and Daira audit status and citation."""
     rows = _dairas()
     if wilaya_code is not None:
         rows = [d for d in rows if d["wilaya_code"] == int(wilaya_code)]
