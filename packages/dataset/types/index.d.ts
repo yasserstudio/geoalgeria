@@ -309,6 +309,41 @@ declare namespace algeriaGeodata {
     audit: DairaAudit;
   }
 
+  /** The kinds of record `search` returns. */
+  export type SearchType = "wilaya" | "daira" | "commune";
+
+  /** What a query and a name amount to, decided from their Search keys by
+   *  `@geoalgeria/normalize`: equal Conservative keys, a prefix of the name at a
+   *  word boundary, or either of those by the Loose keys only. */
+  export type SearchMatch = "exact" | "prefix" | "loose";
+
+  export interface SearchOptions {
+    /** At most this many results. Default 10. */
+    limit?: number;
+    /** Only these kinds of record. Default all three. An unknown type throws a
+     *  `TypeError`. */
+    types?: SearchType[];
+  }
+
+  /** One `search` result. Results come ranked: `exact`, then `prefix`, then
+   *  `loose`; a Wilaya before a Daira before a Commune of the same Match class;
+   *  then in name order. */
+  export interface SearchResult {
+    type: SearchType;
+    /** The Wilaya's `code`, the Daira's `id` or the Commune's `code_commune`. */
+    code: number;
+    /** The current name, even when a Former name made the match. */
+    name_fr: string;
+    /** `null` on a Daira, whose rows carry no Arabic name yet. */
+    name_ar: string | null;
+    /** The Wilaya the record is in; a Wilaya's own code for a Wilaya. */
+    wilaya_code: number;
+    match: SearchMatch;
+    /** `"former"` when only a Former name from `nameHistory` made the match;
+     *  absent when a current name did. */
+    matched?: "former";
+  }
+
   export interface CommuneEcommerce {
     id: number;
     commune_name_fr: string;
@@ -446,6 +481,11 @@ declare const algeriaGeodata: {
   getCommunesByWilaya(wilayaCode: number): algeriaGeodata.Commune[];
   getDairasByWilaya(wilayaCode: number): algeriaGeodata.Daira[];
   findCommune(name: string): algeriaGeodata.Commune[];
+  /** Ranked Wilayas, Dairas and Communes for a query, with Arabic harakat, alef
+   *  and hamza variants and Latin accents folded. An empty query returns `[]`.
+   *  Needs Node 20.19+ or 22.12+ (it loads the `@geoalgeria/normalize` ES module)
+   *  or a bundler. */
+  search(query: string, options?: algeriaGeodata.SearchOptions): algeriaGeodata.SearchResult[];
   findByPostalCode(postalCode: string): algeriaGeodata.Commune[];
   getPostOfficesByCommune(codeCommune: number | string): algeriaGeodata.PostOffice[];
 };

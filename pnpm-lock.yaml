@@ -33,7 +33,11 @@ importers:
 
   packages/culture: {}
 
-  packages/dataset: {}
+  packages/dataset:
+    dependencies:
+      '@geoalgeria/normalize':
+        specifier: workspace:^
+        version: link:../normalize
 
   packages/djezzy: {}
 
