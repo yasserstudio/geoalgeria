@@ -225,8 +225,8 @@ The e-commerce view carries the current `wilaya_code` only. For `wilaya_code_58`
 | `communes` | integer[] | Member commune codes (`code_commune`), ascending; the same membership as each commune's `daira` |
 | `seat_commune_code` | integer \| null | The member commune the daira is named after; null only on Beni Maouche (60), whose one member is Beni-Mallikeche |
 | `kind` | string | `daira`, or `circonscription` for the 13 circonscriptions administratives of Algiers (wilaya 16), which group communes the way a daira does elsewhere |
-| `name_ar` | string \| null | Arabic name; null on 57 rows (see the audit below) |
-| `name_ar_source` | string \| null | `decree_26_253_ar` or `decree_21_198_ar` (read from that decree's Arabic table), `seat_commune` (the `name_ar` of the commune the daira is named after); null exactly when `name_ar` is |
+| `name_ar` | string \| null | Arabic name; null on 3 rows (see the audit below) |
+| `name_ar_source` | string \| null | `decree_26_253_ar` or `decree_21_198_ar` (read from that decree's Arabic table), `decree_26_112_ar` (the 13 circonscriptions administratives of Algiers, read from décret présidentiel 26-112), `decree_91_306_ar` (read from the seats column of the Arabic table of décret exécutif 91-306), `seat_commune` (the `name_ar` of the commune the daira is named after); null exactly when `name_ar` is |
 | `audit.status` | string \| null | `decree_table`, `agrees_1991`, or null for not graded |
 | `audit.citation` | object \| null | `source`, `decree`, `journal_officiel`, `article` (with the wilaya table), `page`, `url` on joradp.dz, optional `url_ar`, and on 1991 rows that décret exécutif 92-66 re-tabled, `amended_by` in the same shape; null when `status` is null |
 
@@ -270,12 +270,16 @@ membership and no name: it only says how far each list has been checked.
   amending text found; 10 agree with it only through a weak name match.
 
 `name_ar` is read from the Arabic table of 26-253 or 21-198 where it prints
-the seat as our commune record spells it (193 rows), and is otherwise the
-Arabic name of the commune the daira is named after (301 rows). 16 of those 301
-are 21-198 rows whose Arabic table spells the seat another way, such as
-تامنغست for تمنراست; the audit lists them and changes no name. `name_ar` stays
-null on the 56 disagreeing dairas and on Daia Ben Dahoua (474), whose French
-name is spelled differently from its only commune, Dhayet Bendhahoua. The audit,
+the seat as our commune record spells it (193 rows). The 13 circonscriptions
+administratives of Algiers read theirs from décret présidentiel 26-112 of 2026
+(JO n° 19, p. 3), and 31 more dairas from the seats column of the Arabic table
+of 91-306 (JO n° 41 of 1991, pp. 1575-1602), Beni Maouche (60) among them.
+Every other row carries the Arabic name of the commune the daira is named after
+(311 rows). 26 of those 311 are rows whose decree spells the seat another way,
+such as تامنغست for تمنراست (21-198) or عين الفكرون for عين فكرون (91-306);
+the audit lists them and changes no name. `name_ar` stays null on Bouinan (91),
+Houari Boumédiène (274) and Aïn Smara (279), which no decree read names as they
+stand today. The audit,
 its sources and their PDF SHA-256 sums are in
 [`research/_daira-audit/`](../../../research/_daira-audit/).
 

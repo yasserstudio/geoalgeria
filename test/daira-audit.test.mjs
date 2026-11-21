@@ -102,19 +102,34 @@ test("no membership or seat changed against 79c7206d", () => {
 });
 
 test("name_ar_source is set exactly when name_ar is", () => {
-  const sources = new Set(["decree_26_253_ar", "decree_21_198_ar", "seat_commune"]);
+  const sources = new Set([
+    "decree_26_253_ar",
+    "decree_21_198_ar",
+    "decree_26_112_ar",
+    "decree_91_306_ar",
+    "seat_commune",
+  ]);
   for (const row of dairas) {
     if (row.name_ar === null) {
       assert.equal(row.name_ar_source, null, `daira ${row.id}`);
       continue;
     }
     assert.ok(sources.has(row.name_ar_source), `daira ${row.id}: ${row.name_ar_source}`);
-    const seat = audited.get(row.id).seat_commune_code;
-    assert.equal(row.name_ar, communeByCode.get(seat).name_ar, `daira ${row.id}`);
-    if (row.name_ar_source !== "seat_commune") assert.equal(row.audit.status, "decree_table", `daira ${row.id}`);
+    // Beni Maouche (60) has no seat; its name is read from 91-306 alone.
+    if (row.seat_commune_code !== null) {
+      assert.equal(row.name_ar, communeByCode.get(row.seat_commune_code).name_ar, `daira ${row.id}`);
+    }
+    if (row.name_ar_source === "decree_26_253_ar" || row.name_ar_source === "decree_21_198_ar") {
+      assert.equal(row.audit.status, "decree_table", `daira ${row.id}`);
+    }
+    if (row.name_ar_source === "decree_26_112_ar") assert.equal(row.wilaya_code, 16, `daira ${row.id}`);
   }
-  assert.equal(dairas.filter((row) => row.name_ar !== null).length, 494);
-  assert.equal(dairas.find((row) => row.id === 474).name_ar, null);
+  assert.equal(dairas.filter((row) => row.name_ar !== null).length, 548);
+  assert.deepEqual(
+    dairas.filter((row) => row.name_ar === null).map((row) => row.id),
+    [91, 274, 279],
+  );
+  assert.equal(dairas.find((row) => row.id === 60).name_ar, "بني معوش");
 });
 
 test("Algiers and the weak 1991 matches carry no grade", () => {

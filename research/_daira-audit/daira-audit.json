@@ -61,6 +61,28 @@
       "read": "image scan, read by OCR with a visual check of p. 277"
     }
   ],
+  "name_ar_sources": {
+    "decree_26_112_ar": {
+      "decree": "Décret présidentiel n° 26-112 du 8 mars 2026 (18 Ramadhan 1447), يتضمن التنظيم الإداري لولاية الجزائر",
+      "journal_officiel": "JORA n° 19 du 12 mars 2026, édition arabe",
+      "url": "https://www.joradp.dz/FTP/JO-ARABE/2026/A2026019.pdf",
+      "pages": "p. 3 (annexe, column الدائرة الإدارية)",
+      "pdf_sha256": {
+        "ar A2026019.pdf": "c3869fc9d8c37754907fb5a0cd616a3154c01b06394188785053cbd9bfd5d081"
+      },
+      "read": "page image at 2x; each of the 13 names equals the seat commune's name_ar"
+    },
+    "decree_91_306_ar": {
+      "decree": "Décret exécutif n° 91-306 du 24 août 1991 fixant la liste des communes animées par chaque chef de daïra",
+      "journal_officiel": "JORA n° 41 du 4 septembre 1991 (25 Safar 1412), édition arabe",
+      "url": "https://www.joradp.dz/FTP/JO-ARABE/1991/A1991041.pdf",
+      "pages": "pp. 1575-1602 (column المقار, the seats)",
+      "pdf_sha256": {
+        "ar A1991041.pdf": "a0b640a0eeedcc8961db7aece4639c5fea675cd92dbf0bf568cd707101e92c20"
+      },
+      "read": "image scan read visually; rows 27, 58, 60, 61, 67, 250, 270, 273, 276, 277, 282, 441, 443, 445, 449, 450, 451, 452 and 453 re-read at 3x zoom on 2026-11-21, all as first read"
+    }
+  },
   "not_read": [
     "Amendments of 91-306 between 1993 and 2020: none was found, but the Journal officiel issues of 1993 to 1999 are image scans and were not searched.",
     "The Algiers texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01).",
@@ -336,12 +358,23 @@
   ],
   "name_ar_decree_spelling": [
     {
+      "id": 27,
+      "wilaya_code": 4,
+      "name_fr": "Aïn Fakroun",
+      "name_ar": "عين فكرون",
+      "seat_commune_code": 425,
+      "decree_text_ar": "عين الفكرون",
+      "decree": "91-306",
+      "page": "1575"
+    },
+    {
       "id": 84,
       "wilaya_code": 8,
       "name_fr": "Kenadsa",
       "name_ar": "القنادسة",
       "seat_commune_code": 810,
-      "decree_text_ar": null
+      "decree_text_ar": null,
+      "decree": "21-198"
     },
     {
       "id": 85,
@@ -349,7 +382,8 @@
       "name_fr": "Lahmar",
       "name_ar": "لحمر",
       "seat_commune_code": 806,
-      "decree_text_ar": null
+      "decree_text_ar": null,
+      "decree": "21-198"
     },
     {
       "id": 111,
@@ -357,7 +391,8 @@
       "name_fr": "Abalessa",
       "name_ar": "ابلسة",
       "seat_commune_code": 1102,
-      "decree_text_ar": null
+      "decree_text_ar": null,
+      "decree": "21-198"
     },
     {
       "id": 112,
@@ -365,7 +400,48 @@
       "name_fr": "Tamanrasset",
       "name_ar": "تمنراست",
       "seat_commune_code": 1101,
-      "decree_text_ar": "تامنغست"
+      "decree_text_ar": "تامنغست",
+      "decree": "21-198"
+    },
+    {
+      "id": 250,
+      "wilaya_code": 22,
+      "name_fr": "Mostefa Ben Brahim",
+      "name_ar": "مصطفى بن ابراهيم",
+      "seat_commune_code": 2204,
+      "decree_text_ar": "مصطفى بن إبراهيم",
+      "decree": "91-306",
+      "page": "1588"
+    },
+    {
+      "id": 270,
+      "wilaya_code": 24,
+      "name_fr": "Guelaât Bou Sbaâ",
+      "name_ar": "قلعة بوصبع",
+      "seat_commune_code": 2418,
+      "decree_text_ar": "قلعة بوسبع",
+      "decree": "91-306",
+      "page": "1589"
+    },
+    {
+      "id": 276,
+      "wilaya_code": 24,
+      "name_fr": "Khezarra",
+      "name_ar": "لخزارة",
+      "seat_commune_code": 2415,
+      "decree_text_ar": "خزارة",
+      "decree": "91-306",
+      "page": "1589"
+    },
+    {
+      "id": 277,
+      "wilaya_code": 24,
+      "name_fr": "Oued Zenati",
+      "name_ar": "وادي الزناتي",
+      "seat_commune_code": 2404,
+      "decree_text_ar": "وادي زناتي",
+      "decree": "91-306",
+      "page": "1589"
     },
     {
       "id": 334,
@@ -373,7 +449,8 @@
       "name_fr": "N'Goussa",
       "name_ar": "انقوسة",
       "seat_commune_code": 3003,
-      "decree_text_ar": null
+      "decree_text_ar": null,
+      "decree": "21-198"
     },
     {
       "id": 354,
@@ -381,7 +458,8 @@
       "name_fr": "Illizi",
       "name_ar": "إليزي",
       "seat_commune_code": 3301,
-      "decree_text_ar": null
+      "decree_text_ar": null,
+      "decree": "21-198"
     },
     {
       "id": 355,
@@ -389,7 +467,8 @@
       "name_fr": "In Amenas",
       "name_ar": "إن أمناس",
       "seat_commune_code": 3306,
-      "decree_text_ar": null
+      "decree_text_ar": null,
+      "decree": "21-198"
     },
     {
       "id": 397,
@@ -397,7 +476,8 @@
       "name_fr": "Mih Ouansa",
       "name_ar": "اميه وانسة",
       "seat_commune_code": 3926,
-      "decree_text_ar": null
+      "decree_text_ar": null,
+      "decree": "21-198"
     },
     {
       "id": 399,
@@ -405,7 +485,8 @@
       "name_fr": "Robbah",
       "name_ar": "الرباح",
       "seat_commune_code": 3902,
-      "decree_text_ar": null
+      "decree_text_ar": null,
+      "decree": "21-198"
     },
     {
       "id": 400,
@@ -413,7 +494,58 @@
       "name_fr": "Taleb Larbi",
       "name_ar": "الطالب العربي",
       "seat_commune_code": 3914,
-      "decree_text_ar": null
+      "decree_text_ar": null,
+      "decree": "21-198"
+    },
+    {
+      "id": 441,
+      "wilaya_code": 43,
+      "name_fr": "Terrai Bainen",
+      "name_ar": "ترعي باينان",
+      "seat_commune_code": 4323,
+      "decree_text_ar": "ترعي بينان",
+      "decree": "91-306",
+      "page": "1600"
+    },
+    {
+      "id": 443,
+      "wilaya_code": 44,
+      "name_fr": "Aïn Lechiakh",
+      "name_ar": "عين الاشياخ",
+      "seat_commune_code": 4414,
+      "decree_text_ar": "عين الأشياخ",
+      "decree": "91-306",
+      "page": "1600"
+    },
+    {
+      "id": 445,
+      "wilaya_code": 44,
+      "name_fr": "Bordj Emir Khaled",
+      "name_ar": "برج الأمير خالد",
+      "seat_commune_code": 4422,
+      "decree_text_ar": "برج الامير خالد",
+      "decree": "91-306",
+      "page": "1600"
+    },
+    {
+      "id": 453,
+      "wilaya_code": 44,
+      "name_fr": "Khemis Miliana",
+      "name_ar": "خميس مليانة",
+      "seat_commune_code": 4404,
+      "decree_text_ar": "الخميس",
+      "decree": "91-306",
+      "page": "1600"
+    },
+    {
+      "id": 455,
+      "wilaya_code": 44,
+      "name_fr": "Rouina",
+      "name_ar": "الروينة",
+      "seat_commune_code": 4416,
+      "decree_text_ar": "روينة",
+      "decree": "91-306",
+      "page": "1600"
     },
     {
       "id": 496,
@@ -421,7 +553,8 @@
       "name_fr": "Tinerkouk",
       "name_ar": "تنركوك",
       "seat_commune_code": 4905,
-      "decree_text_ar": "تينركوك"
+      "decree_text_ar": "تينركوك",
+      "decree": "21-198"
     },
     {
       "id": 502,
@@ -429,7 +562,8 @@
       "name_fr": "El Ouata",
       "name_ar": "الواتة",
       "seat_commune_code": 5207,
-      "decree_text_ar": "الوطاء"
+      "decree_text_ar": "الوطاء",
+      "decree": "21-198"
     },
     {
       "id": 506,
@@ -437,7 +571,8 @@
       "name_fr": "In Ghar",
       "name_ar": "إينغر",
       "seat_commune_code": 5302,
-      "decree_text_ar": "إن غار"
+      "decree_text_ar": "إن غار",
+      "decree": "21-198"
     },
     {
       "id": 507,
@@ -445,7 +580,8 @@
       "name_fr": "In Salah",
       "name_ar": "عين صالح",
       "seat_commune_code": 5301,
-      "decree_text_ar": "إن صالح"
+      "decree_text_ar": "إن صالح",
+      "decree": "21-198"
     },
     {
       "id": 508,
@@ -453,7 +589,8 @@
       "name_fr": "In Guezzam",
       "name_ar": "عين قزام",
       "seat_commune_code": 5401,
-      "decree_text_ar": "إن قزام"
+      "decree_text_ar": "إن قزام",
+      "decree": "21-198"
     },
     {
       "id": 515,
@@ -461,10 +598,11 @@
       "name_fr": "Touggourt",
       "name_ar": "تقرت",
       "seat_commune_code": 5501,
-      "decree_text_ar": null
+      "decree_text_ar": null,
+      "decree": "21-198"
     }
   ],
-  "name_ar_decree_spelling_note": "decree_table rows of 21-198 where the Arabic edition prints the seat differently from the commune record, so name_ar is the commune's own (name_ar_source seat_commune). decree_text_ar is the text layer of A2021038.pdf, pp. 10-11, where the seat was found in it as printed; null where the text layer did not yield it. By the Owner's decision these keep the seat commune's spelling so daira and commune records stay consistent; any respelling is made at commune level in a follow-up.",
+  "name_ar_decree_spelling_note": "Rows whose seat a decree's Arabic table prints differently from the commune record, so name_ar is the commune's own (name_ar_source seat_commune). decree 21-198: decree_table rows, decree_text_ar from the text layer of A2021038.pdf pp. 10-11, null where the text layer did not yield the printed form. decree 91-306: the printed seat read from the page image of A1991041.pdf at the page given, rows 250, 441, 443 and 445 re-read at 3x zoom. By the Owner's decision these keep the seat commune's spelling so daira and commune records stay consistent; any respelling is made at commune level in a follow-up.",
   "dairas": [
     {
       "id": 1,
@@ -970,8 +1108,8 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "عين فكرون",
+      "name_ar_source": "seat_commune",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -1561,8 +1699,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "أوقاس",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1578",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -1593,8 +1732,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "بني معوش",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1578",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -1608,8 +1748,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "بجاية",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1578",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -1716,8 +1857,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "أوزلاقن",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1578",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -1791,8 +1933,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "تازمالت",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1578",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -1825,8 +1968,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "تيمزريت",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1577",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -2136,8 +2280,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "بوقرة",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1579",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -3778,8 +3923,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "باب الوادي",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3794,8 +3940,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "براقي",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3812,8 +3959,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "بئر مراد رايس",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3828,8 +3976,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "بئر توتة",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3845,8 +3994,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "بوزريعة",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3863,8 +4013,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "الشراقة",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3883,8 +4034,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "الدار البيضاء",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3901,8 +4053,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "الدرارية",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3918,8 +4071,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "الحراش",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3935,8 +4089,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "حسين داي",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3951,8 +4106,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "الرويبة",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3968,8 +4124,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "سيدي امحمد",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -3986,8 +4143,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "زرالدة",
+      "name_ar_source": "decree_26_112_ar",
+      "name_ar_page": "3",
       "seat_commune_code": null,
       "open_reason": "Algiers (wilaya 16) was reorganized by texts of 1997 to 2000 (ordonnance n° 97-14, décrets présidentiels n° 97-292 and 2000-45, ordonnance n° 2000-01) that this audit did not read, and its dairas disagree with the 1991 table."
     },
@@ -5143,8 +5301,8 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "مصطفى بن ابراهيم",
+      "name_ar_source": "seat_commune",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -5461,8 +5619,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "عين مخلوف",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1589",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -5477,8 +5636,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "بوشقوف",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1589",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -5493,8 +5653,8 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "قلعة بوصبع",
+      "name_ar_source": "seat_commune",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -5510,8 +5670,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "قالمة",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1589",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -5528,8 +5689,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "حمام دباغ",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1589",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -5543,8 +5705,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "حمام النبايل",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1589",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -5594,8 +5757,8 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "لخزارة",
+      "name_ar_source": "seat_commune",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -5611,8 +5774,8 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "وادي الزناتي",
+      "name_ar_source": "seat_commune",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -5675,8 +5838,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "الخروب",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1589",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -7282,8 +7446,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "برج منايل",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1595",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -7300,8 +7465,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "بودواو",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1595",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -7360,8 +7526,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "يسر",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1596",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -7395,8 +7562,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "الناصرية",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1596",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8605,8 +8773,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "تاجنانت",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1600",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8658,8 +8827,8 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "ترعي باينان",
+      "name_ar_source": "seat_commune",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8676,8 +8845,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "عين الدفلى",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1600",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8692,8 +8862,8 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "عين الاشياخ",
+      "name_ar_source": "seat_commune",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8706,8 +8876,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "بطحية",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1600",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8720,8 +8891,8 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "برج الأمير خالد",
+      "name_ar_source": "seat_commune",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8735,8 +8906,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "بومدفع",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1600",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8749,8 +8921,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "جليدة",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1600",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8765,8 +8938,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "جندل",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1600",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8779,8 +8953,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "العبادية",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1600",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8795,8 +8970,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "العامرة",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1600",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8811,8 +8987,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "العطاف",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1600",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8827,8 +9004,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "حمام ريغة",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1600",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8843,8 +9021,8 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "خميس مليانة",
+      "name_ar_source": "seat_commune",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8859,8 +9037,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "مليانة",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1600",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -8876,8 +9055,8 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "الروينة",
+      "name_ar_source": "seat_commune",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -9209,10 +9388,11 @@
         "article": "Article 1, liste jointe, tableau de la wilaya 47",
         "page": "10"
       },
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "ضاية بن ضحوة",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1602",
       "seat_commune_code": 4703,
-      "name_ar_note": "Kept null by the Owner's decision: the daira's French name (Daia Ben Dahoua) is spelled differently from its only commune, Dhayet Bendhahoua (4703), so no Arabic name is taken from it."
+      "name_ar_note": "Filled from the Arabic table of décret exécutif 91-306 (p. 1602), which prints the seat as ضاية بن ضحوة, as commune 4703 spells it. The French name (Daia Ben Dahoua) is still spelled differently from the commune's (Dhayet Bendhahoua)."
     },
     {
       "id": 475,
@@ -9405,8 +9585,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "مازونة",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1602",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
@@ -9421,8 +9602,9 @@
       ],
       "status": null,
       "citation": null,
-      "name_ar": null,
-      "name_ar_source": null,
+      "name_ar": "منداس",
+      "name_ar_source": "decree_91_306_ar",
+      "name_ar_page": "1602",
       "seat_commune_code": null,
       "open_reason": "The 1991 table, read again from the Journal officiel scan, disagrees with the dataset's communes for this daira, and no amending text was found: the difference may be a later change, a commune renamed since 1991 or a reading error. Not settled."
     },
