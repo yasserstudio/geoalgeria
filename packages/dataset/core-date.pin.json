@@ -108,6 +108,6 @@
     "wilayas.csv",
     "wilayas.json"
   ],
-  "sha256": "bc60c3f2b3b5e18562d98e51a81841569a13452e7a47b1dd459a80b0a2fc8c4b",
+  "sha256": "ca2ef82f37f6964ab98444518a7b6c1cf552f6d25e3cf378ce4cf26ff18d57a9",
   "note": "The digest of the administrative core's published carriers, next to the `dateModified` they were last dated at. `pnpm validate` and test/core-date-pinned.test.mjs recompute it and fail when the core has moved and this file has not, which is the releaser's prompt to date the release: set `dateModified`, run `node scripts/build-catalog.mjs`, then `pnpm pin-core-date --write`, which refuses while `dateModified` is older than the day it runs on. `data/poste/` is excluded: it is a mirror of @geoalgeria/poste and carries that package's date."
 }

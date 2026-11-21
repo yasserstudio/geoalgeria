@@ -196,6 +196,9 @@ The e-commerce view carries the current `wilaya_code` only. For `wilaya_code_58`
   "wilaya_code": 1,
   "name_fr": "Adrar",
   "commune_count": 3,
+  "communes": [101, 121, 122],
+  "seat_commune_code": 101,
+  "kind": "daira",
   "name_ar": "أدرار",
   "name_ar_source": "decree_21_198_ar",
   "audit": {
@@ -219,6 +222,9 @@ The e-commerce view carries the current `wilaya_code` only. For `wilaya_code_58`
 | `wilaya_code` | integer | Parent wilaya code |
 | `name_fr` | string | French name, the name of the daira's seat commune |
 | `commune_count` | integer | Number of communes in this daira |
+| `communes` | integer[] | Member commune codes (`code_commune`), ascending; the same membership as each commune's `daira` |
+| `seat_commune_code` | integer \| null | The member commune the daira is named after; null only on Beni Maouche (60), whose one member is Beni-Mallikeche |
+| `kind` | string | `daira`, or `circonscription` for the 13 administrative districts of Algiers (wilaya 16), which group communes the way a daira does elsewhere |
 | `name_ar` | string \| null | Arabic name; null on 57 rows (see the audit below) |
 | `name_ar_source` | string \| null | `decree_26_253_ar` or `decree_21_198_ar` (read from that decree's Arabic table), `seat_commune` (the `name_ar` of the commune the daira is named after); null exactly when `name_ar` is |
 | `audit.status` | string \| null | `decree_table`, `agrees_1991`, or null for not graded |

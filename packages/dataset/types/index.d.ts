@@ -385,6 +385,12 @@ declare namespace algeriaGeodata {
     wilaya_code: number;
     name_fr: string;
     commune_count: number;
+    /** Member commune codes (`code_commune`), ascending; as many as `commune_count`. */
+    communes: number[];
+    /** The member commune the daira is named after. `null` only on Beni Maouche (60). */
+    seat_commune_code: number | null;
+    /** `"circonscription"` for the 13 administrative districts of Algiers (wilaya 16). */
+    kind: "daira" | "circonscription";
     /** `null` where no source was read (57 rows, all of Algiers among them). */
     name_ar: string | null;
     /** Where `name_ar` comes from: the Arabic table of decree 26-253 or 21-198, or

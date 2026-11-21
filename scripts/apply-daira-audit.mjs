@@ -4,7 +4,8 @@
 // The audit is read from research/_daira-audit/daira-audit.json, which pins
 // every daira's communes as they stood at the commit it read. The audit adds
 // fields only: a row whose communes no longer match the pinned list aborts the
-// run instead of being graded, and no membership or seat is ever written here.
+// run instead of being graded, and no membership or seat is ever written here:
+// `communes`, `seat_commune_code` and `kind` belong to scripts/add-daira-fields.mjs.
 //
 // Usage:
 //   node scripts/apply-daira-audit.mjs            # dry-run report
@@ -79,6 +80,8 @@ const next = dairas.map((row) => {
     wilaya_code: row.wilaya_code,
     name_fr: row.name_fr,
     commune_count: row.commune_count,
+    // Derived by scripts/add-daira-fields.mjs; carried through untouched.
+    ...("communes" in row ? { communes: row.communes, seat_commune_code: row.seat_commune_code, kind: row.kind } : {}),
     name_ar: audited.name_ar,
     name_ar_source: audited.name_ar_source,
     audit: {

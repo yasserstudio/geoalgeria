@@ -24,8 +24,8 @@ Commune's own record, never from a secondary dataset.
 - A refresh that finds a new disagreement opens it in the audit; it does not edit
   `dairas.json` until a decree settles it, and the change then cites that decree.
 - The 13 Algiers rows stay ungraded until the texts of 1997 to 2000 that reorganized
-  Algiers are read. Those districts are a Circonscription administrative, not a Daira;
-  the `kind` field that will say so is deferred.
+  Algiers are read. Those districts are a Circonscription administrative, not a Daira,
+  and their `kind` says so.
 - Daira totals stay the dataset's own count, never stated as an official total, since
   no post-2026 national total has been published.
 

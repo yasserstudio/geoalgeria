@@ -71,8 +71,19 @@ test("no membership or seat changed against 79c7206d", () => {
     const pinned = audited.get(row.id);
     assert.deepEqual(
       Object.keys(row),
-      ["id", "wilaya_code", "name_fr", "commune_count", "name_ar", "name_ar_source", "audit"],
-      `daira ${row.id} gained a field beyond the audit`,
+      [
+        "id",
+        "wilaya_code",
+        "name_fr",
+        "commune_count",
+        "communes",
+        "seat_commune_code",
+        "kind",
+        "name_ar",
+        "name_ar_source",
+        "audit",
+      ],
+      `daira ${row.id} gained a field beyond the audit and test/daira-fields.test.mjs`,
     );
     assert.equal(row.wilaya_code, pinned.wilaya_code, `daira ${row.id}`);
     assert.equal(row.name_fr, pinned.name_fr, `daira ${row.id}`);
@@ -82,8 +93,8 @@ test("no membership or seat changed against 79c7206d", () => {
       assert.ok(pinned.communes.includes(pinned.seat_commune_code), `daira ${row.id} seat is not a member`);
     }
   }
-  // The dataset carries no seat; a seat the decree prints apart from the
-  // member named like the daira is reported, never applied.
+  // A seat the decree prints apart from the member named like the daira is
+  // reported, never applied (the dataset's seat is test/daira-fields.test.mjs).
   assert.deepEqual(
     research.seat_report.filter((entry) => entry.kind !== "spelling_only"),
     [],

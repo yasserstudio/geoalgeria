@@ -176,7 +176,7 @@ def validate_osm_links(records):
 
 
 def validate_dairas(data, wilaya_codes):
-    required = {"id", "wilaya_code", "name_fr", "commune_count"}
+    required = {"id", "wilaya_code", "name_fr", "commune_count", "communes", "seat_commune_code", "kind"}
     ids = set()
     for i, d in enumerate(data):
         missing = required - set(d.keys())
@@ -189,6 +189,15 @@ def validate_dairas(data, wilaya_codes):
         ids.add(d.get("id"))
         if d.get("wilaya_code") not in wilaya_codes:
             error(f"dairas[{i}]: unknown wilaya_code {d.get('wilaya_code')}")
+        members = d.get("communes") or []
+        if len(members) != d.get("commune_count") or members != sorted(set(members)):
+            error(f"dairas[{i}]: communes must be {d.get('commune_count')} ascending distinct codes")
+        seat = d.get("seat_commune_code")
+        if seat is not None and seat not in members:
+            error(f"dairas[{i}]: seat_commune_code {seat} is not a member")
+        expected_kind = "circonscription" if d.get("wilaya_code") == 16 else "daira"
+        if d.get("kind") != expected_kind:
+            error(f"dairas[{i}]: kind must be {expected_kind}")
         validate_daira_audit(i, d)
 
 
