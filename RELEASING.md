@@ -418,6 +418,24 @@ The canonical structure + a worked example is in
 [`.github/RELEASE_TEMPLATE.md`](.github/RELEASE_TEMPLATE.md); the Discussion/social
 copy built from it lives in `.agents/release-notes-templates.md` (local, gitignored).
 
+### Credit outside contributors
+
+A change from an outside contributor names them in its changeset, as the last
+sentence of the entry: `Contributed by [@handle](https://github.com/handle) in
+[#N](https://github.com/yasserstudio/geoalgeria/pull/N).` The changeset is where
+the credit lives, so it reaches the `CHANGELOG.md`, the GitHub Release and the
+announcement on its own. Before merging the version PR, list the PRs merged
+since the last release and check each author who is not the maintainer or a bot:
+
+```bash
+gh pr list --state merged --search "merged:>=YYYY-MM-DD" --json number,author \
+  --jq '.[] | select(.author.login != "yasserstudio" and (.author.is_bot | not))'
+```
+
+Every one of them is credited in the version PR's changelog text, and every
+promise made in a comment on their PR is kept. geoalgeria 2.5.0 shipped #349
+without it and the credit was added afterwards.
+
 Changesets own a package's `CHANGELOG.md`; never hand-write an "## Unreleased"
 section into one. It goes stale under the next generated section instead of
 being replaced by it.
