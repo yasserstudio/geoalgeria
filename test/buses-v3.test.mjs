@@ -193,7 +193,7 @@ test("ordered memberships reproduce raw OSM member positions without collapsing 
     role: membership.role,
   }));
   assert.deepEqual(actual, expected.sort((a, b) => a.relation - b.relation || a.osmMemberIndex - b.osmMemberIndex));
-  // A Membership inherits its Direction's sequence status (ADR 0003).
+  // A Membership inherits its Direction's sequence status (ADR 0005).
   const directionStatus = new Map(directions.map((direction) => [direction.id, direction.sequence_status]));
   assert.ok(memberships.every((membership) => membership.sequence_status === directionStatus.get(membership.direction_id)));
   assert.ok(new Set(memberships.map((membership) => membership.station_id)).size < memberships.length);

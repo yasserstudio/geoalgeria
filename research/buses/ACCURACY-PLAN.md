@@ -81,7 +81,7 @@ Per Direction, against its shape:
 | Monotone order | projected distance along the shape never decreases by > 100 m between consecutive members |
 | Termini | first / last member ≤ 300 m from the shape ends |
 | Shape continuity | no gap > 200 m between consecutive shape segments |
-| Stop count | advisory, not in the status (ADR 0003 status is geometric): stopping points (larger of platform / stop roles) vs the Operator's figure within ± 10 %. Only ETUSA's Wikipedia `nb_arrets` overlaps Lines with shapes; Béjaïa, M'Sila and Skikda figures wait for P4 |
+| Stop count | advisory, not in the status (ADR 0005 status is geometric): stopping points (larger of platform / stop roles) vs the Operator's figure within ± 10 %. Only ETUSA's Wikipedia `nb_arrets` overlaps Lines with shapes; Béjaïa, M'Sila and Skikda figures wait for P4 |
 
 Output: `research/buses/qa/report.json` + `REPORT.md` (per Line pass / fail
 with reasons) and a summary score. Pure functions, no network; fixtures for
@@ -215,7 +215,7 @@ Settled (2026-11-19):
   for one direction of travel.
 - Release is minor (2.3.0); CHANGELOG tells exhaustive-switch users to add a
   default branch for the new `sequence_status` values.
-- See ADR 0003.
+- See ADR 0005.
 
 **Done when** match rate is reported per Line, ambiguous matches are listed
 for Owner review, and only exact or reviewed matches are promoted.

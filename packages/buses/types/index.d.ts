@@ -1,7 +1,7 @@
 export type GeoPrecision = "exact" | "approximate" | null;
 export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif" | "etus-setif+osm" | "etus-ain-defla" | "etus-ain-defla+osm" | "etus-annaba" | "etus-tlemcen" | "eto-oran" | "etus-oeb" | "etus-c-constantine" | "etus-skikda" | "etul-laghouat";
 export type RouteColor = "blue" | "green" | "orange" | "purple";
-/** ADR 0003 ladder. A minor release may add values, such as `operator_sequence` for order from an Operator's published stop list. */
+/** ADR 0005 ladder. A minor release may add values, such as `operator_sequence` for order from an Operator's published stop list. */
 export type SequenceStatus = "osm_member_order_unvalidated" | "osm_member_order_consistent" | "osm_member_order_inconsistent";
 export type ServicePeriod = "regular" | "friday" | "saturday";
 export type ServiceDay = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday";

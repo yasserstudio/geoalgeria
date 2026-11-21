@@ -1,5 +1,5 @@
 // Match an Operator's ordered Listed stops to package Stations or OSM bus-stop
-// nodes (accuracy plan P4, ADR 0003). Pure: the caller loads the data and decides
+// nodes (accuracy plan P4, ADR 0005). Pure: the caller loads the data and decides
 // which communes a Line may use; this file only compares names and ranks.
 //
 // Nothing is placed by guess. A Listed stop is `exact` only when one candidate

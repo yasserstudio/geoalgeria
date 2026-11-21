@@ -1,4 +1,4 @@
-// Pure geometric checks for one bus Direction (ADR 0003).
+// Pure geometric checks for one bus Direction (ADR 0005).
 // `path`: the Direction's drawn path as ordered parts, each an array of [lng, lat].
 // `stations`: the Direction's member Stations in Membership order, { id, lat, lng }.
 // No I/O; distances in metres on a local equirectangular projection (city scale).

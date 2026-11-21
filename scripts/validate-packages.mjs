@@ -1326,7 +1326,7 @@ function validateRouteEndpoints() {
   console.log(`  OK: ${label}, ${eps.length} endpoints, fully named (fr/en/ar), all route terminals resolve`);
 }
 
-// ADR 0003: an OSM Direction ships the geometric verdict the committed QA report
+// ADR 0005: an OSM Direction ships the geometric verdict the committed QA report
 // gives it, and each Membership carries its Direction's status. The report is
 // research/buses/qa/report.json, so the check stays offline. The report must come
 // from the same OSM pull the package was built from: a refresh that skips

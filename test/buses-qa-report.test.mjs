@@ -75,7 +75,7 @@ test("stop count is compared with the Operator's figure within 10 %, as advice t
   assert.deepEqual(close.stop_count, { osm: 3, operator: 3, pass: true });
   const far = stopCount(5);
   assert.deepEqual(far.stop_count, { osm: 3, operator: 5, pass: false });
-  assert.equal(far.status, "osm_member_order_consistent"); // ADR 0003: status is geometric only
+  assert.equal(far.status, "osm_member_order_consistent"); // ADR 0005: status is geometric only
   assert.equal(buildReport(sources).directions[0].stop_count, undefined); // no figure, no check
 });
 

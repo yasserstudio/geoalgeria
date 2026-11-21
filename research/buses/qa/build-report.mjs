@@ -1,4 +1,4 @@
-// Builds the bus QA report (ADR 0003) from a local OSM pull plus the package
+// Builds the bus QA report (ADR 0005) from a local OSM pull plus the package
 // data. Pure: callers read the files and pass plain objects in.
 //
 // sources = {
@@ -61,7 +61,7 @@ function stoppingPoints(members) {
   return Math.max(count("platform"), count("stop")) || members.length;
 }
 
-// Advisory only (ADR 0003: status is geometric): the Operator's figure may be stale.
+// Advisory only (ADR 0005: status is geometric): the Operator's figure may be stale.
 function stopCountCheck(members, figure, tolerance = 0.1) {
   if (figure == null) return undefined;
   const osm = stoppingPoints(members);

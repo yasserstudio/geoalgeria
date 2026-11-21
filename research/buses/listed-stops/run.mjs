@@ -148,7 +148,7 @@ const networks = NETWORKS.map((net) => {
 
 const out = {
   note:
-    "Research output for accuracy plan P4 (ADR 0003). Each Listed stop is exact (one candidate in the Line's communes with the same stop key), ambiguous (several equal candidates, or fuzzy ones only; Owner review) or unmatched. Distance to the previous exact match only orders candidates. Neither source splits its list by direction, so direction is null. Nothing here is promoted.",
+    "Research output for accuracy plan P4 (ADR 0005). Each Listed stop is exact (one candidate in the Line's communes with the same stop key), ambiguous (several equal candidates, or fuzzy ones only; Owner review) or unmatched. Distance to the previous exact match only orders candidates. Neither source splits its list by direction, so direction is null. Nothing here is promoted.",
   osm: {
     endpoint: osm.endpoint,
     retrieved_at: osm.retrieved_at,

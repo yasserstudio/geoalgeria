@@ -26,7 +26,7 @@ const officialEtusc = readCapture("buses", "etus-c-constantine-lines");
 const officialSkikda = readCapture("buses", "etus-skikda-lines");
 const officialLaghouat = readCapture("buses", "etul-laghouat-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
-// ADR 0003: each OSM Direction ships the geometric verdict of the committed QA
+// ADR 0005: each OSM Direction ships the geometric verdict of the committed QA
 // report (research/buses/qa/report.json), so the build stays offline.
 const qaVerdict = new Map(read(join(ROOT, "research", "buses", "qa", "report.json")).directions
   .map((direction) => [direction.direction_id, direction.status]));

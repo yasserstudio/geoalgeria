@@ -1,4 +1,4 @@
-# 0003. Evidence ladder for bus stop order
+# 0005. Evidence ladder for bus stop order
 
 - Status: Accepted (Owner, 2026-11-19)
 - Context: buses accuracy plan, `research/buses/ACCURACY-PLAN.md`

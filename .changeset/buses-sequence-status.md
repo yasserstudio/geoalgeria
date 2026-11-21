@@ -2,7 +2,7 @@
 "@geoalgeria/buses": minor
 ---
 
-**Stop order now says how far it can be trusted.** `sequence_status` on each Direction and each Station Membership used to be `osm_member_order_unvalidated` everywhere. It now carries the verdict of geometric checks that compare the OpenStreetMap member order with the Direction's drawn path (Stations near the path, in order along it, the first and last near its ends, and no gap in the path), under `docs/adr/0003`:
+**Stop order now says how far it can be trusted.** `sequence_status` on each Direction and each Station Membership used to be `osm_member_order_unvalidated` everywhere. It now carries the verdict of geometric checks that compare the OpenStreetMap member order with the Direction's drawn path (Stations near the path, in order along it, the first and last near its ends, and no gap in the path), under `docs/adr/0005`:
 
 - `osm_member_order_consistent` – 36 Directions (633 Memberships) pass every check.
 - `osm_member_order_inconsistent` – 69 Directions (2,047 Memberships) fail at least one. They are still published, flagged rather than withheld.
