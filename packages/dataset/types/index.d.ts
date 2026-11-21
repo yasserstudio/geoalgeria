@@ -280,7 +280,7 @@ declare namespace algeriaGeodata {
   /** What a query and a name amount to, decided from their Search keys by
    *  `@geoalgeria/normalize`: equal Conservative keys, a prefix of the name at a
    *  word boundary, or either of those by the Loose keys only. */
-  export type MatchClass = "exact" | "prefix" | "loose";
+  export type SearchMatch = "exact" | "prefix" | "loose";
 
   export interface SearchOptions {
     /** At most this many results. Default 10. */
@@ -303,7 +303,7 @@ declare namespace algeriaGeodata {
     name_ar: string | null;
     /** The Wilaya the record is in; a Wilaya's own code for a Wilaya. */
     wilaya_code: number;
-    match: MatchClass;
+    match: SearchMatch;
     /** `"former"` when only a Former name from `nameHistory` made the match;
      *  absent when a current name did. */
     matched?: "former";
