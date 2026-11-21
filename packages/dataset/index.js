@@ -118,7 +118,7 @@ module.exports = {
   // with its Match class; a hit on a Former name is flagged `matched: "former"`.
   // Reads `module.exports` rather than `this`, so a destructured `search` works.
   search(query, options) {
-    if (!_search) _search = require("./search.js").createSearch(module.exports);
+    if (!_search) _search = loadSearch();
     return _search(query, options);
   },
 
@@ -133,3 +133,23 @@ module.exports = {
     return this.postOffices.filter((o) => o.commune_code === code);
   },
 };
+
+// search.js requires @geoalgeria/normalize, an ES module, which plain Node can
+// require() only from 20.19 and 22.12 on. Where it cannot, Node's own error
+// tells the reader to edit this package; say what the package needs instead.
+function loadSearch() {
+  try {
+    return require("./search.js").createSearch(module.exports);
+  } catch (err) {
+    if (!err || err.code !== "ERR_REQUIRE_ESM") throw err;
+    const error = new Error(
+      "geoalgeria: search() needs Node 20.19+ or 22.12+ (without " +
+        "--no-experimental-require-module) or a bundler, because it loads the " +
+        "@geoalgeria/normalize ES module with require(); this is Node " +
+        process.version +
+        ". The rest of geoalgeria works as before."
+    );
+    error.cause = err;
+    throw error;
+  }
+}

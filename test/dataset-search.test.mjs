@@ -8,6 +8,7 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -184,4 +185,32 @@ test("findCommune output is unchanged", () => {
 test("search works from ESM as well as CommonJS", async () => {
   const esm = (await import(pathToFileURL(join(DATASET, "index.js")).href)).default;
   assert.deepEqual(esm.search("Oran"), search("Oran"));
+});
+
+test("where Node cannot require an ES module, search() says what it needs and the rest still loads", () => {
+  // Node 18, 20.0 to 20.18 and 22.0 to 22.11 cannot require() an ES module;
+  // later versions turn that off with --no-experimental-require-module.
+  const script = `
+    const geo = require(${JSON.stringify(join(DATASET, "index.js"))});
+    const seen = [];
+    for (let i = 0; i < 2; i++) {
+      try { geo.search("Oran"); seen.push(null); }
+      catch (e) { seen.push({ message: e.message, cause: e.cause && e.cause.code }); }
+    }
+    console.log(JSON.stringify({ wilayas: geo.wilayas.length, communes: geo.findCommune("Oran").length, seen }));
+  `;
+  const out = execFileSync(process.execPath, ["--no-experimental-require-module", "-e", script], {
+    encoding: "utf-8",
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  const { wilayas, communes, seen } = JSON.parse(out);
+  assert.equal(wilayas, 69, "the package must still load");
+  assert.ok(communes > 0, "findCommune must still work");
+  for (const error of seen) {
+    assert.ok(error, "search() must throw where the ES module cannot load");
+    assert.match(error.message, /^geoalgeria: search\(\) needs Node 20\.19\+ or 22\.12\+/);
+    assert.ok(error.message.includes(process.version), "the message names the running Node");
+    assert.doesNotMatch(error.message, /dynamic import/, "not Node's advice to edit the package");
+    assert.equal(error.cause, "ERR_REQUIRE_ESM");
+  }
 });

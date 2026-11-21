@@ -78,6 +78,7 @@ dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر",
 dz.getCommunesByWilaya(16);    // 57 communes in Algiers
 dz.getDairasByWilaya(16);      // dairas in Algiers
 dz.findCommune('Oran');        // search by name (FR or AR, Former names too)
+dz.search('ورقلة');            // ranked Wilayas, Dairas, Communes (Node 20.19+ or a bundler)
 dz.findByPostalCode('16000');  // lookup by postal code
 dz.getPostOfficesByCommune(1731); // post offices in a commune (by code_commune)
 ```
