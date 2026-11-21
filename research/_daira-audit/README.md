@@ -75,8 +75,10 @@ commune, Dhayet Bendhahoua (4703).
 16 of the `seat_commune` rows are 21-198 rows whose Arabic table spells the
 seat another way (`name_ar_decree_spelling`): for six the text layer gives the
 printed form, such as تامنغست (112) for تمنراست and إن صالح (507) for عين صالح;
-for the other ten it did not yield one. Which spelling the dataset carries is
-an open question; no name was changed.
+for the other ten it did not yield one. By the Owner's decision these 16 keep
+the seat commune's spelling, so the daira and commune records stay
+consistent; the decree spellings differ for them. Any respelling is made on
+the commune records in a follow-up, and the daira's `name_ar` follows it.
 
 Two member communes print differently in the Arabic tables than in our commune
 records (`name_ar_mismatches`): Sidi Abdelli (1334) and Sidi Abderrahmane
@@ -90,3 +92,14 @@ decree prints the seat apart from that member, `seat_report` lists it: all 35
 entries are `spelling_only` (the printed seat is that same commune under
 another spelling, such as Abou El Hassane for Abou El Hassan). No decree seats
 a daira on a different commune.
+
+## Follow-ups
+
+Deferred by the Owner from geoalgeria.com#360:
+
+- A `kind` field on each daira.
+- A seat-commune field in `dairas.json` (the audit records `seat_commune_code`
+  in `daira-audit.json` only).
+- A test that each graded daira's communes equal the list the decree prints.
+- Respelling the 16 seat communes in `name_ar_decree_spelling`, at commune
+  level.

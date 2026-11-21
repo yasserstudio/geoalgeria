@@ -19,7 +19,7 @@ L'Algérie compte **69 wilayas** (provinces) et **1 541 communes** (municipalit�
 
 **142 des 551 sont fixées par décret.** Le décret exécutif n° 26-253 du 15 juillet 2026, publié au *Journal Officiel* n° 52 du 21 juillet 2026, fixe les communes animées par chaque chef de daïra dans les wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 et 59 à 69, et y nomme 142 daïras. Il laisse les 48 autres wilayas sous le décret n° 91-306 du 24 août 1991, dont ce jeu de données porte les listes, qui totalisent 409. La lecture de l'annexe est dans [`research/_dairas/`](../../research/_dairas/).
 
-**Chaque daïra indique jusqu'où sa liste de communes est vérifiée** (`audit.status` dans `dairas.json`). 210 sont lues dans un tableau de wilaya complet d'un décret (les 142 du 26-253 et 68 du décret 21-198 de 2021), chacune avec le décret, l'article, la page et le PDF du *Journal Officiel*. 275 concordent avec le tableau de 1991 du 91-306, modifié par le 92-66 quand il s'applique ; les modifications ultérieures n'ont pas été recherchées de façon exhaustive. 66 n'ont pas encore de note : les 13 daïras d'Alger, réorganisées par des textes de 1997 à 2000 que cette vérification n'a pas lus ; 43 autres qui diffèrent du tableau de 1991 sans texte modificatif trouvé ; et 10 qui ne concordent que par un rapprochement faible. Chaque daïra a aussi un `name_ar` avec sa source, sauf les 56 qui diffèrent et une autre. La vérification n'a modifié aucune daïra ni commune ; elle est dans [`research/_daira-audit/`](../../research/_daira-audit/).
+**Chaque daïra indique jusqu'où sa liste de communes a été comparée au *Journal officiel*** (`audit.status` dans `dairas.json`). 210 sont lues dans un tableau de wilaya complet d'un décret (les 142 du 26-253 et 68 du décret 21-198 de 2021), chacune avec le décret, l'article, la page et le PDF du *Journal Officiel*. 275 concordent avec le tableau de 1991 du 91-306, modifié par le 92-66 quand il s'applique ; les modifications ultérieures n'ont pas été recherchées de façon exhaustive. 66 n'ont pas encore de note : les 13 daïras d'Alger, réorganisées par des textes de 1997 à 2000 que cette vérification n'a pas lus ; 43 autres qui diffèrent du tableau de 1991 sans texte modificatif trouvé ; et 10 qui ne concordent que par un rapprochement faible. Chaque daïra a aussi un `name_ar` avec sa source, sauf les 56 qui diffèrent et une autre. La vérification n'a modifié aucune daïra ni commune ; elle est dans [`research/_daira-audit/`](../../research/_daira-audit/).
 
 ---
 
@@ -152,7 +152,7 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 |---------|--------|-----------------|------------|
 | `data/algeria.json` | JSON | 69 wilayas + communes | Utilisation en fichier unique |
 | `data/wilayas.json` | JSON | 69 | Liste des wilayas uniquement |
-| `data/dairas.json` | JSON | 551 | Liste des daïras avec nombre de communes, noms arabes et notes de vérification |
+| `data/dairas.json` | JSON | 551 | Liste des daïras avec nombre de communes, noms arabes et niveau d'audit |
 | `data/name-history.json` | JSON | 210 | Anciennes graphies des noms de wilayas et de communes, avec le texte qui a remplacé chacune |
 | `data/phone-code-provenance.json` | JSON | 11 | Pourquoi les wilayas 59–69 portent le `phone_code` qu'elles portent : les textes officiels consultés et la raison de chaque `null` |
 | `data/wilaya-capitals.metadata.json` | JSON | 69 | Le chef-lieu de chaque wilaya, avec le décret, l'article, l'item et la page qui le fixent |
