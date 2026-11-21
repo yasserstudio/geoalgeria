@@ -86,6 +86,8 @@ test("every feature is a commune record, with that record's properties and nothi
         name_fr: r.name_fr,
         name_ar: r.name_ar,
         wilaya_code: r.wilaya_code,
+        wilaya_code_58: r.wilaya_code_58,
+        wilaya_code_48: r.wilaya_code_48,
         postal_code: r.postal_code,
         daira: r.daira,
         code_commune: code,

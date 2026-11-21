@@ -67,7 +67,7 @@ import { fileURLToPath } from "node:url";
 import { basename, dirname, join, resolve } from "node:path";
 
 import { filledFromNull, supersededByCode } from "./lib/commune-postal-drift.mjs";
-import { isWilayaSqlRow } from "./lib/full-sql-rows.mjs";
+import { isCommuneSqlRow } from "./lib/full-sql-rows.mjs";
 import { splitSqlRow, sqlQuote, sqlUnquote } from "./lib/sql-rows.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -481,7 +481,7 @@ if (targets.length) {
   patchEcommerceJson(join(DATASET, "ecommerce", "communes.json"));
 
   // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
-  patchCsv(join(DATASET, "csv", "communes.csv"), 8, (f) => {
+  patchCsv(join(DATASET, "csv", "communes.csv"), 10, (f) => {
     const box = resolved("csv/communes.csv", {
       code: Number(f[7]),
       wilaya_code: Number(f[2]),
@@ -506,7 +506,7 @@ if (targets.length) {
   // The wilaya rows of the same file print nine fields too and carry a postal code
   // of their own (their chef-lieu's), so they are recognised and left alone.
   patchSql(join(DATASET, "sql", "full.sql"), (f) => {
-    if (f.length !== 9 || isWilayaSqlRow(f)) return false;
+    if (!isCommuneSqlRow(f)) return false;
     const box = resolved("sql/full.sql", {
       code: Number(f[8]),
       wilaya_code: Number(f[3]),

@@ -12,7 +12,8 @@ let _wilayas,
   _postOffices,
   _atms,
   _nameHistory,
-  _phoneCodeProvenance;
+  _phoneCodeProvenance,
+  _wilayaLineage;
 
 module.exports = {
   get wilayas() {
@@ -76,6 +77,15 @@ module.exports = {
   get phoneCodeProvenance() {
     if (!_phoneCodeProvenance) _phoneCodeProvenance = require("./data/phone-code-provenance.json");
     return _phoneCodeProvenance;
+  },
+
+  // For each of the 69 wilayas, the wilaya it belonged to on the 58-wilaya map
+  // (Law 19-12 to Law 26-06) and on the 48-wilaya map (Law 84-09 on the eve of
+  // Law 19-12), with the texts that say so. Every commune repeats its wilaya's
+  // two codes as `wilaya_code_58` and `wilaya_code_48`.
+  get wilayaLineage() {
+    if (!_wilayaLineage) _wilayaLineage = require("./data/wilaya-lineage.json");
+    return _wilayaLineage;
   },
 
   getWilaya(code) {

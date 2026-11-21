@@ -48,21 +48,21 @@ const CARRIERS = {
         f.geometry.coordinates,
       ]),
     ),
-  // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
+  // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune,wilaya_code_58,wilaya_code_48
   "csv/communes.csv": () => {
     const rows = read("csv", "communes.csv").split(/\r?\n/).slice(1);
     const out = new Map();
     for (const line of rows) {
       const cells = line.split(",");
-      if (cells.length !== 8) continue;
+      if (cells.length !== 10) continue;
       out.set(Number(cells[7]), [Number(cells[6]), Number(cells[5])]);
     }
     return out;
   },
-  // (id, 'name_fr', 'name_ar', wilaya, 'daira', 'postal'|NULL, lat, lng, code)
+  // (id, 'name_fr', 'name_ar', wilaya, 'daira', 'postal'|NULL, lat, lng, code, w58, w48)
   "sql/full.sql": () => {
     const re =
-      /^ {2}\(\d+, '(?:[^']|'')*', '(?:[^']|'')*', \d+, '(?:[^']|'')*', (?:'\d+'|NULL), (-?[\d.]+|NULL), (-?[\d.]+|NULL), (\d+)\)[,;]$/;
+      /^ {2}\(\d+, '(?:[^']|'')*', '(?:[^']|'')*', \d+, '(?:[^']|'')*', (?:'\d+'|NULL), (-?[\d.]+|NULL), (-?[\d.]+|NULL), (\d+), \d+, \d+\)[,;]$/;
     const out = new Map();
     for (const line of read("sql", "full.sql").split("\n")) {
       const m = line.match(re);

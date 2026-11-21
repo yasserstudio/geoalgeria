@@ -138,6 +138,17 @@ declare namespace algeriaGeodata {
     name_fr: string;
     name_ar: string;
     wilaya_code: number;
+    /** The wilaya (1 to 58) this commune belonged to on the 58-wilaya map, in force
+     *  from Law 19-12 (JORA of 18 December 2019) to Law n° 26-06 (JORA of 5 April
+     *  2026): `wilaya_code` itself for wilayas 1 to 58, the mother wilaya for 59 to
+     *  69. Read from `wilayaLineage`, which cites the text for each wilaya. */
+    wilaya_code_58: number;
+    /** The wilaya (1 to 48) this commune belonged to on the 48-wilaya map of Law
+     *  84-09 on the eve of Law 19-12, so the 24 communes Ordonnance 97-14 moved
+     *  into Alger read 16: `wilaya_code` itself for wilayas 1 to 48, the mother
+     *  wilaya for 49 to 69. El Borma (3021) reads 30 in all three fields although
+     *  Law 19-12 lists it under Touggourt; `wilayaLineage.exceptions` says why. */
+    wilaya_code_48: number;
     daira: string | null;
     /** The postal code of the commune's principal Algérie Poste office. Its first
      *  two digits are that office's wilaya at the time the code was issued, so like
@@ -265,6 +276,80 @@ declare namespace algeriaGeodata {
       note?: string;
     };
     wilayas: PhoneCodeProvenanceEntry[];
+  }
+
+  /** One citation in the Wilaya lineage: a key of `metadata.sources` and the
+   *  article it points at. */
+  export interface WilayaLineageCitation {
+    source: string;
+    article: string;
+    note?: string;
+    page?: string;
+    /** On the creating article of a wilaya 49 to 69: how many communes it lists. */
+    communes_in_text?: number;
+  }
+
+  export interface WilayaLineageSource {
+    key: string;
+    name: string;
+    journal_officiel?: string;
+    url: string;
+    url_ar?: string;
+    capture?: string;
+    evidence_type: "official";
+    covers: string;
+  }
+
+  /** One current wilaya and the wilaya it belonged to on each earlier map. */
+  export interface WilayaLineageEntry {
+    code: number;
+    created: number;
+    wilaya_code_58: number;
+    wilaya_code_48: number;
+    citations: WilayaLineageCitation[];
+  }
+
+  /** A commune Ordonnance 97-14 moved into Alger (16) before Law 19-12, so its
+   *  `wilaya_code_48` is 16. */
+  export interface WilayaLineageTransfer {
+    code_commune: number;
+    name_in_text: string;
+    from_wilaya_code: number;
+    to_wilaya_code: number;
+    effective: string;
+    source: string;
+    article: string;
+  }
+
+  /** A commune whose fields depart from a creating text, with the reason. */
+  export interface WilayaLineageException {
+    code_commune: number;
+    name_in_text: string;
+    wilaya_code: number;
+    wilaya_code_58: number;
+    wilaya_code_48: number;
+    /** The wilaya the creating text lists it under. */
+    listed_under_wilaya_code: number;
+    reason: string;
+    citations: WilayaLineageCitation[];
+  }
+
+  /** The Wilaya lineage: the 69 wilayas on the 58-wilaya and 48-wilaya maps. */
+  export interface WilayaLineage {
+    metadata: {
+      title_en: string;
+      title_fr: string;
+      title_ar: string;
+      description: string;
+      fields: Record<"wilaya_code_58" | "wilaya_code_48", string>;
+      carriers: string[];
+      not_carried_by: string[];
+      license: string;
+      sources: WilayaLineageSource[];
+    };
+    wilayas: WilayaLineageEntry[];
+    transfers: WilayaLineageTransfer[];
+    exceptions: WilayaLineageException[];
   }
 
   export interface Daira {
@@ -405,6 +490,7 @@ declare const algeriaGeodata: {
   readonly all: algeriaGeodata.WilayaWithCommunes[];
   readonly nameHistory: algeriaGeodata.NameHistory;
   readonly phoneCodeProvenance: algeriaGeodata.PhoneCodeProvenance;
+  readonly wilayaLineage: algeriaGeodata.WilayaLineage;
   readonly postOffices: algeriaGeodata.PostOffice[];
   readonly atms: algeriaGeodata.Atm[];
   getWilaya(code: number): algeriaGeodata.Wilaya | undefined;

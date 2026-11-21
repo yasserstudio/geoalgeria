@@ -73,6 +73,7 @@ dz.dairas;                     // les 551 daïras
 dz.ecommerce;                  // jeu de données plat pour formulaires d'adresse
 dz.postOffices;                // 3 908 bureaux Algérie Poste
 dz.atms;                       // 2 026 distributeurs automatiques
+dz.wilayaLineage;              // le code de chaque wilaya sur les cartes à 58 et à 48 wilayas
 
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
 dz.getCommunesByWilaya(16);    // 57 communes à Alger
@@ -84,7 +85,7 @@ dz.getPostOfficesByCommune(1731); // bureaux de poste d'une commune (par code_co
 
 Types TypeScript inclus nativement. L'import par défaut demande `esModuleInterop`, car le paquet est en CommonJS ; `import dz = require('geoalgeria')` s'en passe.
 
-Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les miroirs des bureaux de poste et des DAB compris. Si vous n'avez besoin que d'une partie, importez son fichier seul : `import communes from 'geoalgeria/data/ecommerce/communes.json'` dans un bundler, ou avec `with { type: 'json' }` sous Node sans bundler.
+Dans un bundle (Next.js, Vite, webpack), les onze fichiers JSON sont inclus, les miroirs des bureaux de poste et des DAB compris. Si vous n'avez besoin que d'une partie, importez son fichier seul : `import communes from 'geoalgeria/data/ecommerce/communes.json'` dans un bundler, ou avec `with { type: 'json' }` sous Node sans bundler.
 
 **Vous utilisez ces données en production ?** [Dites-le nous](https://github.com/yasserstudio/geoalgeria/discussions) – nous mettons en avant les projets de la communauté dans le README.
 
@@ -153,6 +154,7 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 | `data/dairas.json` | JSON | 551 | Liste des daïras avec nombre de communes |
 | `data/name-history.json` | JSON | 210 | Anciennes graphies des noms de wilayas et de communes, avec le texte qui a remplacé chacune |
 | `data/phone-code-provenance.json` | JSON | 11 | Pourquoi les wilayas 59–69 portent le `phone_code` qu'elles portent : les textes officiels consultés et la raison de chaque `null` |
+| `data/wilaya-lineage.json` | JSON | 69 | Le code de chaque wilaya sur les cartes à 58 et à 48 wilayas, avec l'article de loi qui le fixe ; les communes le portent en `wilaya_code_58` / `wilaya_code_48` |
 | `data/wilaya-capitals.metadata.json` | JSON | 69 | Le chef-lieu de chaque wilaya, avec le décret, l'article, l'item et la page qui le fixent |
 | `data/osm-links.metadata.json` | JSON | 1 | Couverture, paliers, règle de jointure et instantanés Overpass derrière `osm_relation_id` / `wikidata` |
 | `data/communes_w*.json` | JSON | 1 541 | Données détaillées des communes |
@@ -177,6 +179,8 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 > `data/poste/` provient d'[Algérie Poste](https://baridimap.poste.dz). `commune_code` est normalisé pour se joindre au `code_commune` de chaque commune ; `source_commune_code` conserve une valeur native différente du fournisseur.
 
 `code_commune` est l'identifiant unique `WWCC` du [Code géographique national 2021 de l'ONS](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). Les communes promues dans les wilayas 59 à 69 conservent le préfixe de leur wilaya mère de 2021.
+
+Chaque commune porte aussi `wilaya_code_58` et `wilaya_code_48`, la wilaya dont elle relevait sur la carte à 58 wilayas (loi 19-12 à loi 26-06) et sur la carte à 48 wilayas (loi 84-09 à la veille de la loi 19-12, avec les rattachements de 1997 à Alger), de sorte que les statistiques publiées sur une ancienne carte se joignent aux enregistrements actuels. Une commune des wilayas 1 à 48 qu'aucune réforme n'a déplacée garde son code sur les trois cartes. `data/wilaya-lineage.json` donne les deux codes de chaque wilaya avec les articles qui les fixent, et consigne la seule exception, El Borma (3021). `data/ecommerce/` ne porte pas ces deux champs.
 
 Chaque wilaya porte `capital_commune_code`, le `code_commune` de son chef-lieu ; les noms du chef-lieu se lisent sur l'enregistrement de la commune, et son code postal comme ses coordonnées sont repris sur la wilaya : le `postal_code` d'une wilaya est celui de son chef-lieu, c'est pourquoi la wilaya 59 porte `03001` et non un code qui lui serait propre. Il provient des décrets qui fixent les chefs-lieux (n° 84-79 de 1984, n° 21-117 de 2021, n° 26-206 de 2026), jamais du nom de la wilaya, qui se trompe sur 4 des 69. Sources par wilaya : [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
 Chaque commune et chaque wilaya portent aussi `osm_relation_id` et `wikidata` : la relation administrative OpenStreetMap à laquelle l'enregistrement est lié (`admin_level=8` pour une commune, `admin_level=4` pour une wilaya) et l'élément Wikidata porté par cette relation, de sorte qu'un consommateur fait la jointure vers OpenStreetMap ou Wikidata sans passer par les noms. 1 540 des 1 541 communes et les 69 wilayas portent une relation ; 1 538 communes et les 69 wilayas portent un élément Wikidata. Rien n'est deviné : la liaison est celle que l'audit des chefs-lieux a établie sur le tag `ref:ONS` / `ref` de la relation, `timestamp_osm_base` Overpass 2026-09-29T12:54:47Z, plus un second palier de trois communes dont la relation porte le bon code `ref:ONS` sous des tags non standard et échappait donc à la requête de cet audit ; une relation sans tag `wikidata` laisse ce champ à null, et la seule commune sans aucune relation de commune (4703) garde les deux champs à null. L'élément est le tag de la relation dans tous les cas sauf un : la relation de la commune 3424 est taguée avec un village situé dans la commune, donc ce champ est à null et l'exclusion est consignée dans le fichier de métadonnées plutôt que de publier le mauvais élément. Les deux identifiants sont portés par les enregistrements JSON (`data/algeria.json`, `data/communes_w*.json`, `data/wilayas.json`) ; les miroirs CSV, GeoJSON et SQL ne les portent pas. Couverture, règle de jointure et enregistrements sans liaison : [`data/osm-links.metadata.json`](data/osm-links.metadata.json). Les deux valeurs sont dérivées d'OpenStreetMap, donc sous **ODbL 1.0, © les contributeurs d'OpenStreetMap** (voir `NOTICE`).

@@ -72,7 +72,10 @@ def validate_capitals(wilayas, commune_codes):
 
 
 def validate_communes(data, filename, commune_codes):
-    required = {"name_fr", "name_ar", "wilaya_code", "daira", "postal_code", "code_commune"}
+    required = {
+        "name_fr", "name_ar", "wilaya_code", "wilaya_code_58", "wilaya_code_48",
+        "daira", "postal_code", "code_commune",
+    }
     seen = set()
     for i, c in enumerate(data):
         missing = required - set(c.keys())
@@ -95,6 +98,40 @@ def validate_communes(data, filename, commune_codes):
         else:
             commune_codes[code] = f"{c.get('wilaya_code')}|{c.get('name_fr')}"
     return len(data)
+
+
+def validate_wilaya_lineage(lineage, wilayas, records):
+    """`wilaya_code_58` and `wilaya_code_48` on every commune, against wilaya-lineage.json.
+
+    The lineage file holds one row per current wilaya: its own code on each earlier map
+    for the wilayas that map already had, its mother wilaya's code for the ones created
+    after it. A commune repeats its wilaya's two codes, so a commune that disagrees with
+    the table, or a table row that disagrees with wilayas.json, is the defect.
+    """
+    rows = {w.get("code"): w for w in lineage.get("wilayas", [])}
+    current = {w.get("code"): w for w in wilayas}
+    if set(rows) != set(current):
+        error(f"wilaya-lineage.json: codes {sorted(set(rows) ^ set(current))} differ from wilayas.json")
+    for code, w in current.items():
+        row = rows.get(code)
+        if row is None:
+            continue
+        mother = w.get("mother_wilaya_code")
+        for field, limit in (("wilaya_code_58", 58), ("wilaya_code_48", 48)):
+            expected = code if code <= limit else mother
+            if row.get(field) != expected:
+                error(f"wilaya-lineage.json wilaya {code}: {field} {row.get(field)!r}, expected {expected!r}")
+    for label, c in records:
+        row = rows.get(c.get("wilaya_code"))
+        if row is None:
+            error(f"{label}: wilaya {c.get('wilaya_code')!r} has no lineage row")
+            continue
+        for field, limit in (("wilaya_code_58", 58), ("wilaya_code_48", 48)):
+            value = c.get(field)
+            if not isinstance(value, int) or isinstance(value, bool) or not 1 <= value <= limit:
+                error(f"{label}: {field} must be an integer 1-{limit}, got {value!r}")
+            elif value != row.get(field):
+                error(f"{label}: {field} {value} disagrees with wilaya-lineage.json ({row.get(field)})")
 
 
 def validate_osm_links(records):
@@ -236,6 +273,14 @@ def main():
     with_relation = sum(1 for _, row in linked if row.get("osm_relation_id") is not None)
     with_item = sum(1 for _, row in linked if row.get("wikidata") is not None)
     print(f"  OK: {with_relation} records link an OSM relation, {with_item} a Wikidata item")
+
+    if wilayas:
+        print("[wilaya-lineage.json]")
+        lineage = validate_json(ROOT / "wilaya-lineage.json")
+        if lineage:
+            communes = [(label, row) for label, row in linked if "code_commune" in row]
+            validate_wilaya_lineage(lineage, wilayas, communes)
+            print(f"  OK: {len(communes)} communes agree with the lineage of {len(lineage.get('wilayas', []))} wilayas")
 
     if len(commune_codes) != total_communes:
         error(

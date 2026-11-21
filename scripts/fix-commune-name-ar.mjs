@@ -165,8 +165,8 @@ function patchCsv(path, width, patch) {
   queueText(path, `${[lines[0], ...rows.map((row) => row.join(","))].join(newline)}${newline}`);
 }
 
-// name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
-patchCsv(join(DATA, "csv", "communes.csv"), 8, (f) => {
+// name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune,wilaya_code_58,wilaya_code_48
+patchCsv(join(DATA, "csv", "communes.csv"), 10, (f) => {
   const next = repaired("csv/communes.csv", {
     code: Number(f[7]),
     wilaya_code: Number(f[2]),
@@ -199,9 +199,9 @@ function patchSql(path, patch) {
   queueText(path, out.join("\n"));
 }
 
-// communes: (id, 'name_fr', 'name_ar', wilaya_code, 'daira', 'postal', lat, lng, code_commune)
+// communes: (id, 'name_fr', 'name_ar', wilaya_code, 'daira', 'postal', lat, lng, code_commune, w58, w48)
 patchSql(join(DATA, "sql", "full.sql"), (f) => {
-  if (f.length !== 9) return false;
+  if (f.length !== 11) return false;
   const next = repaired("sql/full.sql", {
     code: Number(f[8]),
     wilaya_code: Number(f[3]),

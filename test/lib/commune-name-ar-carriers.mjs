@@ -80,10 +80,10 @@ export const NAME_AR_CARRIERS = [
       })),
   ],
   [
-    // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
+    // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune,wilaya_code_58,wilaya_code_48
     "data/csv/communes.csv",
     () =>
-      csvRows(readText("csv", "communes.csv"), 8).map((f) => ({
+      csvRows(readText("csv", "communes.csv"), 10).map((f) => ({
         code: Number(f[7]),
         wilaya_code: Number(f[2]),
         name_fr: f[0],
@@ -91,7 +91,7 @@ export const NAME_AR_CARRIERS = [
       })),
   ],
   [
-    // (id, 'name_fr', 'name_ar', wilaya_code, 'daira', 'postal', lat, lng, code_commune)
+    // (id, 'name_fr', 'name_ar', wilaya_code, 'daira', 'postal', lat, lng, code_commune, w58, w48)
     "data/sql/full.sql",
     () => {
       const rows = [];
@@ -99,9 +99,9 @@ export const NAME_AR_CARRIERS = [
         const match = /^ {2}\((.*)\)[,;]$/.exec(line);
         if (!match) continue;
         const fields = splitSqlRow(match[1]);
-        // Wilaya rows print 9 fields too since `capital_commune_code`; their
-        // `created` literal is what tells them apart.
-        if (fields.length !== 9 || /^'(?:original|2019|2026)'$/.test(fields[7])) continue;
+        // Commune rows print 11 fields since `wilaya_code_58` and `wilaya_code_48`;
+        // wilaya rows print 9.
+        if (fields.length !== 11) continue;
         rows.push({
           code: Number(fields[8]),
           wilaya_code: Number(fields[3]),
