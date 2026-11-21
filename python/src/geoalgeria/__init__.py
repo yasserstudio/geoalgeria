@@ -15,7 +15,12 @@ from functools import lru_cache
 from importlib import resources
 from typing import Any, Dict, List, Optional
 
-__all__ = ["wilayas", "wilaya", "communes", "commune", "dairas", "search", "normalize", "DATA_VERSION"]
+from ._normalize import conservative_key, loose_key, tokenize
+
+__all__ = [
+    "wilayas", "wilaya", "communes", "commune", "dairas", "search", "normalize",
+    "conservative_key", "loose_key", "tokenize", "DATA_VERSION",
+]
 __version__ = "0.1.0"
 
 Record = Dict[str, Any]
