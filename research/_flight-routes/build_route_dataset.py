@@ -895,6 +895,18 @@ LISTED = [
 # VERIFIED because `plannedRoutes()` is the package's lifecycle boundary. A
 # booking result can establish carrier, direction, flight number and duration;
 # a reported announcement stays `listed` until those details are confirmed.
+# Behind the Delhi rows' 19 Nov 2026 filing, in this order: India's ambassador
+# Swati Vijay Kulkarni announcing the route at a press conference on 7 Jul 2026,
+# then the three reports of the September withdrawal, AeroRoutes' of 11 Sep ("Air
+# Algerie during this week's schedule update removed the filing for planned
+# service to India"), Observ Algerie's of 12 Sep and Algerie360's of 13 Sep.
+DEL_EXTRA_SOURCES = [
+    "https://algerie-eco.com/2026/07/09/air-algerie-un-vol-direct-alger-new-delhi-a-partir-de-fin-octobre-2026/",
+    "https://www.aeroroutes.com/eng/260911-ahnw26del",
+    "https://observalgerie.com/2026/09/12/voyage/air-algerie-retire-une-nouvelle-ligne-long-courrier-de-son-programme/",
+    "https://www.algerie360.com/air-algerie-repousse-lancement-vol-direct-alger-delhi/",
+]
+
 PLANNED = [
     # Neither Brazzaville leg is here any more. Both left on 2026-10-30, when AH 5390
     # and AH 5391's histories each showed two Landed legs: see the operating rows
@@ -1075,6 +1087,28 @@ PLANNED = [
     # schedule, no day names and no flight number.
     {"from": "ALG", "to": "NDJ", "status": "unclear", "evidence": "listed",
      "source": "https://www.aeroroutes.com/eng/260622-ahnw267m8"},
+    # Delhi, back in this collection on the Owner's decision of 2026-11-21, and it
+    # knowingly bends section 10: see collection-rules.md section 37. The 2026 plan
+    # was withdrawn in September (the reports are in `sources`), and AeroRoutes'
+    # 19 Nov 2026 post reports a TENTATIVE relaunch "on 28MAR27 at the earliest,
+    # currently listed until 08JUN27. Reservations for this remain unavailable."
+    # That post is `source` because it is the current plan and the one page that
+    # states what these rows ship: "AH3104 ALG1000 - 0015+1DEL 339 247" and
+    # "AH3105 DEL0145 - 0735ALG 339 135", 3 weekly on the A330-900neo. The day
+    # digits are AeroRoutes' Monday-is-1 notation, so the outbound leaves Algiers on
+    # tue/thu/sun and the return leaves Delhi at 01:45 on mon/wed/fri, the night
+    # the outbound lands, read off the filing rather than mirrored.
+    # `evidence` stays `listed`: a tentative filing with no bookings open is the
+    # lower boundary section 31 drew for Delhi in August, and nothing since has
+    # raised it. India's ambassador's 7 Jul 2026 announcement follows the filing.
+    {"from": "ALG", "to": "DEL", "flight": "AH 3104", "status": "unclear",
+     "days": ["tue", "thu", "sun"], "evidence": "listed",
+     "source": "https://www.aeroroutes.com/eng/261119-ahns27del",
+     "extra_sources": DEL_EXTRA_SOURCES},
+    {"from": "DEL", "to": "ALG", "flight": "AH 3105", "status": "unclear",
+     "days": ["mon", "wed", "fri"], "evidence": "listed",
+     "source": "https://www.aeroroutes.com/eng/261119-ahns27del",
+     "extra_sources": DEL_EXTRA_SOURCES},
 ]
 
 # Planned legs withdrawn before they ever operated. Kept as a record, not as
@@ -1093,7 +1127,25 @@ PLANNED = [
 #                      carried (AH3104/AH3105) are gone from the forward
 #                      programme with the 11 Sep update.
 #                      https://www.visa-algerie.com/air-algerie-reporte-le-lancement-dune-nouvelle-ligne-internationale/
-WITHDRAWN = {("ALG", "DEL"), ("DEL", "ALG")}
+#                      LEFT THIS SET on 2026-11-21: the Owner put both legs back
+#                      in PLANNED on the 19 Nov 2026 tentative refiling for
+#                      March 2027 (collection-rules.md section 37). The record
+#                      above stays, because the withdrawal still happened.
+WITHDRAWN = set()
+
+# Wikipedia-table citations that say nothing about the row they are pinned to.
+# The pass would otherwise carry them into `sources`, where they read as evidence
+# for that leg. Each entry names the url to drop from that pair's table row; a url
+# the row no longer carries fails the build, so a stale entry cannot sit here
+# looking effective.
+#
+#   ALG-BEY  The table cites the 20 Jun 2026 algerie-eco report "Air Algerie prevoit
+#            d'ouvrir des vols vers Delhi et Shanghai des l'hiver prochain" on its
+#            Beirut row. It is about Delhi and Shanghai, not Beirut. Removed
+#            2026-11-21; the row's `source` stays the APS suspension notice.
+MISCITED = {
+    ("ALG", "BEY"): "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/",
+}
 
 # Pairs whose Wikipedia row names the WRONG airport of a multi-airport city, so a
 # curated record above carries the same service under the right code. Without
@@ -1316,6 +1368,12 @@ def main():
         if frm not in ep or to not in ep:
             skipped["no_endpoint"].append(key); continue
         seen.add(key)
+        source_urls = list(r["source_urls"])
+        if key in MISCITED:
+            if MISCITED[key] not in source_urls:
+                raise SystemExit(f"{frm}-{to}: MISCITED names a url the table row "
+                                 f"does not cite; drop the entry")
+            source_urls.remove(MISCITED[key])
         # "begins"/"resumes" means announced but not yet flying, which the locked
         # scope says is a SEPARATE collection rather than a status: a planned
         # route must never be drawn like an operating one, and must never count
@@ -1330,9 +1388,9 @@ def main():
             "from": frm, "to": to, "carrier": "AH",
             "flight": None, "status": status, "days": None,
             "evidence": "listed",
-            "source": r["source_urls"][0] if r["source_urls"] else
+            "source": source_urls[0] if source_urls else
                       "https://en.wikipedia.org/wiki/" + r["from_article"].replace(" ", "_"),
-            "source_is_the_table": not r["source_urls"],
+            "source_is_the_table": not source_urls,
             "listed_at": r["from_article"],
         })
 

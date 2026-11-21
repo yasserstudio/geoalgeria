@@ -814,7 +814,8 @@ Three durable rules from the Delhi, Batna and Dubai changes. Detail in
 **A withdrawal removes planned rows; a suspension never removes anything.** Both
 are negatives and they are not interchangeable. `plannedRoutes()` is a claim that a
 route is coming, so "Air Algérie a retiré la demande d'autorisation" for Delhi
-deletes `alg-del` and `del-alg` outright. A suspension is a route that exists and
+deletes `alg-del` and `del-alg` outright (reversed for Delhi on 2026-11-21 by an
+Owner decision, section 37; the rule itself stands). A suspension is a route that exists and
 is not running, so Dubai keeps its row, keeps its evidence tier, and only changes
 `status`. The asymmetry follows from section 2: the map is structural, but a plan
 that was called off was never structure.
@@ -993,3 +994,39 @@ each contradict by a day; `ABV-LOS` moved from mon to tue and `LOS-ABV` from thu
 fri, off the rotation day a filing gave them onto their own departure day. Those two
 also gained the rotation's flight number, `AH 5354`, which no filing states per
 sector. See `verification-2026-10-30.md` sections 1 to 3.
+
+## 37. Delhi is planned on a tentative filing with no bookings open (Owner decision, 2026-11-21)
+
+An Owner exception, dated and written here so the next pass does not delete the
+rows again under section 32. It knowingly bends section 10, and it covers Delhi
+only.
+
+**What happened.** Air Algérie filed three weekly Algiers-Delhi rotations for 25 Oct
+2026 (AeroRoutes, 19 Jun), and India's ambassador announced the route at a press
+conference on 7 Jul. In the week of 11 Sep the filing was withdrawn, tickets having
+never gone on sale, and section 32 removed `alg-del` and `del-alg`. On 19 Nov 2026
+AeroRoutes reported a tentative relaunch: no earlier than 28 Mar 2027, listed until
+8 Jun 2027, three weekly on the A330-900neo as `AH 3104` (ALG 10:00, DEL 00:15 next
+day; tue, thu, sun) and `AH 3105` (DEL 01:45, ALG 07:35; mon, wed, fri), with
+reservations still unavailable.
+
+**The decision.** Both legs ship in `plannedRoutes()` again, on that filing. A
+schedule filing is the Reported tier of section 9, so this is not a rumour; what
+bends section 10 is that the airline has already called off this route once and
+has opened no bookings for the new dates.
+
+**How the rows are graded and cited.**
+
+- `evidence` is `listed`, never `verified`, under section 31's lower boundary for
+  Delhi. A diplomatic statement does not raise a tentative filing.
+- `status` is `unclear`, the value for every planned row.
+- `source` is the 19 Nov 2026 AeroRoutes post, because it is the current plan and
+  the only page stating the flight numbers and days. Then come the ambassador's
+  7 Jul statement and the three withdrawal reports (AeroRoutes 11 Sep, Observ
+  Algérie 12 Sep, Algérie360 13 Sep). The withdrawal stays in `sources` so a
+  reader sees it; the schema has no note field to carry it.
+- The start window is not a field. It goes in the changeset and here.
+
+**What would undo it.** A second withdrawal of the filing removes the rows again
+under section 32, with `WITHDRAWN` re-armed. A first operated flight promotes them
+under section 36. Nothing here lowers the bar for any other planned row.

@@ -125,3 +125,46 @@ test("the statement alone never takes a leg out of plannedRoutes()", () => {
     assert.equal(r.source, flown[r.id], `${r.id}: cite the report of the operation first`);
   }
 });
+
+test("Delhi is planned both ways on the 19 Nov 2026 filing, against section 10", () => {
+  // Owner decision of 2026-11-21 (collection-rules section 37). The 2026 filing
+  // was withdrawn in September, and AeroRoutes' 19 Nov post reports a tentative
+  // relaunch no earlier than 28 Mar 2027 with reservations still closed. That is
+  // below section 10's bar, and the rows ship anyway, as `listed`: the post is
+  // `source` because it is the current plan and the only page stating the flight
+  // numbers and days, the ambassador's 7 Jul announcement follows it, and the
+  // September withdrawal reports stay in the list so a reader sees them.
+  const filing = "https://www.aeroroutes.com/eng/261119-ahns27del";
+  const rest = [
+    "https://algerie-eco.com/2026/07/09/air-algerie-un-vol-direct-alger-new-delhi-a-partir-de-fin-octobre-2026/",
+    "https://www.aeroroutes.com/eng/260911-ahnw26del",
+    "https://observalgerie.com/2026/09/12/voyage/air-algerie-retire-une-nouvelle-ligne-long-courrier-de-son-programme/",
+    "https://www.algerie360.com/air-algerie-repousse-lancement-vol-direct-alger-delhi/",
+  ];
+  const want = {
+    "alg-del": { flight: "AH 3104", days: ["tue", "thu", "sun"] },
+    "del-alg": { flight: "AH 3105", days: ["mon", "wed", "fri"] },
+  };
+  for (const [id, { flight, days }] of Object.entries(want)) {
+    const r = routes.find((x) => x.id === id);
+    assert.ok(r, `${id} is missing`);
+    assert.equal(r.planned, true, `${id}: nothing has flown, so it is planned`);
+    assert.equal(r.carrier, "AH");
+    assert.equal(r.status, "unclear");
+    assert.equal(r.evidence, "listed", `${id}: a tentative filing with no bookings is not verified`);
+    assert.equal(r.flight, flight);
+    assert.deepEqual(r.days, days);
+    assert.deepEqual(r.sources, [filing, ...rest]);
+  }
+});
+
+test("Beirut does not cite the 20 Jun 2026 Delhi and Shanghai report", () => {
+  // The Wikipedia table pins that report to its Beirut row, and it says nothing
+  // about Beirut. The builder drops it there (MISCITED), so the suspension
+  // notice is the row's only claim.
+  const url =
+    "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/";
+  const bey = routes.find((r) => r.id === "alg-bey");
+  assert.ok(bey.sources.length > 0);
+  assert.ok(!bey.sources.includes(url), "alg-bey still cites the Delhi report");
+});

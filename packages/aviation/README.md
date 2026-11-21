@@ -47,7 +47,7 @@ const inOran = aviation.airportsByWilaya(31);     // airports in wilaya 31
 | --- | --- | --- |
 | Civil airports | **36** | official name, ICAO + IATA codes, address, phone, website, coordinates |
 | Nonstop routes | **169** | directional legs with operator, status, evidence tier and a citation list |
-| Planned routes | **8** | announced, not yet flying; a separate collection, never a status |
+| Planned routes | **10** | announced, not yet flying; a separate collection, never a status |
 
 Spanning **33 wilayas**, every airport geocoded and every one carrying an IATA code.
 `wilaya_code` is linked against the
