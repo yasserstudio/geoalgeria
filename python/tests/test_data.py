@@ -11,12 +11,16 @@ DATASET = HERE.parent / "packages" / "dataset" / "data"
 def test_bundled_data_is_what_build_data_derives():
     # The package ships a copy of packages/dataset; a dataset change that was not
     # copied over with build_data.py fails here, before it can reach PyPI.
+    # VERSION is left out: the Version PR bumps packages/dataset without touching
+    # python/, and build_data.py sets VERSION when the Python package is released.
     sys.path.insert(0, str(HERE))
     try:
         import build_data
     finally:
         sys.path.remove(str(HERE))
     for path, text in build_data.derive().items():
+        if Path(path).name == "VERSION":
+            continue
         assert (HERE / path).read_text(encoding="utf-8") == text, f"{path} is stale: run build_data.py"
 
 

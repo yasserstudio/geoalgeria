@@ -1,4 +1,4 @@
-"""Algeria's 69 wilayas, 551 Dairas and 1,541 communes, from the GeoAlgeria open dataset.
+"""Algeria's 69 Wilayas, 551 Dairas and 1,541 Communes, from the GeoAlgeria open dataset.
 
     >>> import geoalgeria
     >>> geoalgeria.wilaya(31)["name_fr"]
@@ -114,8 +114,8 @@ def search(query: str, limit: Optional[float] = 10, types: Optional[Iterable[str
     {"type", "code", "name_fr", "name_ar", "wilaya_code", "match"}, where "match"
     is the Match class: "exact", then "prefix" (the name starts with the query,
     the last word may be part typed), then "loose" (equal or prefix once alef
-    maqsura reads as yaa and taa marbuta as haa). Within a class, wilayas come
-    before Dairas before communes, then by French name and code. A result found
+    maqsura reads as yaa and taa marbuta as haa). Within a class, Wilayas come
+    before Dairas before Communes, then by French name and code. A result found
     by a Former name only also carries "matched": "former".
 
     limit caps the results (None for all); types keeps only some of

@@ -345,6 +345,11 @@ rm -rf dist && uv build
 read -rs "UV_PUBLISH_TOKEN?Token: " && export UV_PUBLISH_TOKEN && uv publish
 ```
 
+Between releases, CI's `python` job compares the bundled records and the
+Python `search()` with `packages/`, so a PR that changes wilayas, communes,
+dairas, the Wilaya lineage or name history also runs `python python/build_data.py`
+and commits `python/src/geoalgeria/data`.
+
 PyPI rejects account passwords: the token is a project-scoped API token
 (username `__token__`). 0.1.0 (data 2.4.1) was published on 2026-10-31.
 

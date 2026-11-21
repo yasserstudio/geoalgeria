@@ -72,7 +72,9 @@ words, if you build your own index. They give the same keys as the npm
   `wilaya(code)` for the full record.
 - `dairas()` returns the audited daira records, which have `commune_count` but
   no list of commune codes; `communes()` and each commune's `daira` give the list.
-- `normalize()` is deprecated: use `conservative_key()`.
+- `normalize()` is deprecated and now returns `conservative_key()`, which keeps
+  ة and ى as they are. Use `loose_key()` for the 0.1.0 reading of those two
+  letters. Keys saved with 0.1.0 should be rebuilt.
 
 ## Licence
 

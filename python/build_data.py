@@ -10,7 +10,7 @@ HERE = Path(__file__).parent
 SRC = HERE.parent / "packages" / "dataset"
 OUT = Path("src") / "geoalgeria" / "data"
 
-# Copied whole, as the npm package ships them.
+# The npm package's records unchanged, written compactly.
 VERBATIM = ("dairas", "wilaya-lineage", "name-history")
 
 
