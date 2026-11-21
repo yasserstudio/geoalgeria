@@ -8,9 +8,10 @@
       "complete": false,
       "results": [
         { "type": "wilaya", "code": 30, "match": "exact" },
+        { "type": "daira", "code": 335, "match": "exact" },
         { "type": "commune", "code": 3001, "match": "exact" }
       ],
-      "note": "an Arabic query finds the Wilaya first, then the Commune of the same name"
+      "note": "an Arabic query finds the Wilaya first, then the Daira and the Commune of the same name"
     },
     {
       "id": "ar.harakat",
@@ -19,6 +20,7 @@
       "complete": false,
       "results": [
         { "type": "wilaya", "code": 30, "match": "exact" },
+        { "type": "daira", "code": 335, "match": "exact" },
         { "type": "commune", "code": 3001, "match": "exact" }
       ],
       "note": "harakat on the query fold away, so the vocalised spelling is still an exact match"
@@ -30,6 +32,7 @@
       "complete": false,
       "results": [
         { "type": "wilaya", "code": 1, "match": "exact" },
+        { "type": "daira", "code": 1, "match": "exact" },
         { "type": "commune", "code": 101, "match": "exact" }
       ],
       "note": "a bare alef matches the hamza-on-alef the name is written with"
@@ -41,6 +44,7 @@
       "complete": false,
       "results": [
         { "type": "wilaya", "code": 30, "match": "loose" },
+        { "type": "daira", "code": 335, "match": "loose" },
         { "type": "commune", "code": 3001, "match": "loose" }
       ],
       "note": "haa typed for taa marbuta is a loose match, never an exact one"
@@ -138,6 +142,7 @@
       "complete": false,
       "results": [
         { "type": "wilaya", "code": 1, "match": "exact" },
+        { "type": "daira", "code": 1, "match": "exact" },
         { "type": "commune", "code": 101, "match": "exact" }
       ],
       "note": "hamza below the alef folds away like hamza above, so the Wilaya is still an exact match"
