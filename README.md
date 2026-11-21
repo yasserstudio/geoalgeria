@@ -67,7 +67,7 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 
 A bundler (Next.js, Vite, webpack) includes all eleven JSON files, the post office and ATM mirrors among them. If you need one part only, import its file on its own: `import communes from "geoalgeria/data/ecommerce/communes.json"` in a bundler, or with `with { type: "json" }` in plain Node. In TypeScript the default import needs `esModuleInterop`; `import dz = require("geoalgeria")` does not.
 
-### Search, old wilaya codes and dairas
+### Search, wilaya lineage and dairas
 
 ```js
 // Search: Wilayas, then Dairas, then Communes, in French or Arabic (Node 20.19+ or a bundler)
@@ -77,7 +77,7 @@ dz.search("ورقلة");
 dz.search("bejaia", { types: ["commune"], limit: 5 });
 // [{ type: "commune", code: 601, name_fr: "Bejaia", name_ar: "بجاية", wilaya_code: 6, match: "exact" }]
 
-// Old codes: the wilaya each commune was in on the 58- and 48-wilaya maps
+// Wilaya lineage: the wilaya each commune was in on the 58- and 48-wilaya maps
 const touggourt = dz.communes.find((c) => c.code_commune === 5501);
 touggourt.wilaya_code;     // 55
 touggourt.wilaya_code_58;  // 55
@@ -115,8 +115,9 @@ geoalgeria.commune(101)["postal_code"]    # '01000'
 | | Count | |
 |---|---|---|
 | **Wilayas** | 69 | provinces (2019 + 2026 reforms), each with its capital commune (chef-lieu) |
-| **Dairas** | 551 | districts, as first-class entities |
+| **Dairas** | 551 | each with its Arabic name, member communes and seat commune; the 13 of Algiers are circonscriptions administratives |
 | **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates, OpenStreetMap + Wikidata links |
+| **Commune outlines** | 1,541 | one polygon per commune, also cut into one file per wilaya (OpenStreetMap, ODbL) |
 | **Post offices** | 3,907 | real Algérie Poste codes, coordinates |
 | **ATMs** | 2,023 | Algérie Poste GAB network |
 | **Employment agencies** | 331 | ANEM: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
@@ -170,7 +171,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 ## Who it's for
 
 - **E-commerce / COD**: wilaya → daira → commune address cascades, postal-code validation, and shipping-zone config that matches what carriers actually use.
-- **Maps & GIS**: drop-in GeoJSON with 1,541 commune features, modeled correctly through both reforms.
+- **Maps & GIS**: drop-in GeoJSON with a point and an outline for each of the 1,541 communes, modeled correctly through both reforms.
 - **Research, open data & civic projects**: clean, structured, sourced, and versioned reference data instead of PDFs.
 - **Any project using Algerian data**: one install, types included.
 
@@ -221,7 +222,7 @@ Every record follows the same shape:
 - External ids live under `refs` (`osm`, `wikidata`, …).
 - `geo_precision` is strictly `exact | approximate | null`, `null` exactly when there is no coordinate, with the geocoding method in `geo_method`.
 
-Machine-readable artifacts ride alongside: a root [`index.json`](index.json) catalog, a `schema.org/Dataset` descriptor (`dataset-metadata.json`) in each data-bearing package (the code-only `@geoalgeria/normalize` carries no dataset descriptor), and the 69 wilaya boundary polygons in the core package at [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (display-grade).
+Machine-readable artifacts ride alongside: a root [`index.json`](index.json) catalog, a `schema.org/Dataset` descriptor (`dataset-metadata.json`) in each data-bearing package (the code-only `@geoalgeria/normalize` carries no dataset descriptor), and the 69 wilaya boundary polygons in the core package at [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (display-grade), plus the same 69 wilayas dissolved from the communes at [`wilaya-boundaries-detailed.geojson`](packages/dataset/data/geojson/wilaya-boundaries-detailed.geojson) and the 1,541 commune outlines at [`data/geojson/commune-boundaries.geojson`](packages/dataset/data/geojson/commune-boundaries.geojson), with one file per wilaya in `commune-boundaries/<wilaya_code>.geojson` (OpenStreetMap, ODbL).
 
 Human-reviewed corrections use the same contract across packages. A package can
 add `quality/overrides/<package>.json`; the canonical writer checks the expected
