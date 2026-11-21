@@ -1,3 +1,5 @@
+import pytest
+
 import geoalgeria as g
 
 
@@ -31,3 +33,8 @@ def test_keys_of_real_names_agree_with_npm(npm_keys):
     names = [r[k] for r in g.wilayas() + g.communes() for k in ("name_fr", "name_ar") if r.get(k)]
     names += ["  Sidi--Bel   Abbès  ", "﻿آدرار‏", "قُسَنْطِينَة", "ﻻﻏﻮﺍﻁ", "١٢٣ ۴۵۶"]
     assert [(g.conservative_key(n), g.loose_key(n)) for n in names] == npm_keys(names)
+
+
+def test_normalize_is_a_deprecated_alias_of_the_conservative_key():
+    with pytest.warns(DeprecationWarning, match="conservative_key"):
+        assert g.normalize("Béjaïa") == g.conservative_key("Béjaïa") == "bejaia"

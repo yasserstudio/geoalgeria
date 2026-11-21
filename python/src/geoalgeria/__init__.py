@@ -10,12 +10,12 @@ from __future__ import annotations
 
 import copy
 import json
-import re
-import unicodedata
+import warnings
 from functools import lru_cache
 from importlib import resources
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Iterable, List, Optional
 
+from . import _search
 from ._normalize import conservative_key, loose_key, tokenize
 
 __all__ = [
@@ -52,6 +52,16 @@ def _dairas() -> List[Record]:
 @lru_cache(maxsize=None)
 def _lineage() -> Record:
     return json.loads(_read("wilaya-lineage.json"))
+
+
+@lru_cache(maxsize=None)
+def _name_history() -> Record:
+    return json.loads(_read("name-history.json"))
+
+
+@lru_cache(maxsize=None)
+def _index() -> List[Record]:
+    return _search.build_index(_wilayas(), _dairas(), _communes(), _name_history())
 
 
 def wilayas() -> List[Record]:
@@ -96,38 +106,25 @@ def lineage() -> Record:
     return copy.deepcopy(_lineage())
 
 
-_ARABIC_MARKS = re.compile("[ؐ-ًؚ-ٰٟۖ-ۭـ]")
-_ARABIC_LETTERS = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ى": "ي", "ة": "ه", "ؤ": "و", "ئ": "ي"})
+def search(query: str, limit: Optional[float] = 10, types: Optional[Iterable[str]] = None) -> List[Record]:
+    """Ranked Wilayas, Dairas and Communes for what a person typed, in French or Arabic.
+
+    Names are folded to their Conservative and Loose keys, so accents, harakat,
+    hamza forms and case do not matter. Each result is
+    {"type", "code", "name_fr", "name_ar", "wilaya_code", "match"}, where "match"
+    is the Match class: "exact", then "prefix" (the name starts with the query,
+    the last word may be part typed), then "loose" (equal or prefix once alef
+    maqsura reads as yaa and taa marbuta as haa). Within a class, wilayas come
+    before Dairas before communes, then by French name and code. A result found
+    by a Former name only also carries "matched": "former".
+
+    limit caps the results (None for all); types keeps only some of
+    "wilaya", "daira" and "commune".
+    """
+    return _search.search(_index(), query, limit=limit, types=types)
 
 
 def normalize(text: str) -> str:
-    """Fold case, Latin accents, Arabic diacritics and letter variants for matching."""
-    text = _ARABIC_MARKS.sub("", text).translate(_ARABIC_LETTERS)
-    text = "".join(ch for ch in unicodedata.normalize("NFKD", text) if not unicodedata.combining(ch))
-    return re.sub(r"[^\w]+", " ", text.casefold()).strip()
-
-
-def search(query: str, limit: int = 10) -> List[Record]:
-    """Find wilayas and communes by French or Arabic name, accents and harakat optional.
-
-    Each result has a "type" of "wilaya" or "commune". Exact names rank first,
-    then names that start with the query, then names that contain it.
-    """
-    q = normalize(query)
-    if not q:
-        return []
-    scored = []
-    for kind, rows in (("wilaya", _wilayas()), ("commune", _communes())):
-        for r in rows:
-            names = [normalize(r.get(k) or "") for k in ("name_fr", "name_ar", "name_en")]
-            if q in names:
-                rank = 0
-            elif any(n.startswith(q) for n in names):
-                rank = 1
-            elif any(q in n for n in names):
-                rank = 2
-            else:
-                continue
-            scored.append((rank, 0 if kind == "wilaya" else 1, {"type": kind, **r}))
-    scored.sort(key=lambda s: (s[0], s[1]))
-    return [s[2] for s in scored[:limit]]
+    """Deprecated since 0.2.0: use conservative_key(), the fold every GeoAlgeria index shares."""
+    warnings.warn("geoalgeria.normalize() is deprecated, use conservative_key()", DeprecationWarning, stacklevel=2)
+    return conservative_key(text)

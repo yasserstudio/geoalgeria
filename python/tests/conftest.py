@@ -45,3 +45,24 @@ def npm_keys():
         "JSON.parse(data).map((t) => [conservativeKey(t), looseKey(t)]))));"
     )
     return lambda texts: [tuple(pair) for pair in json.loads(node(script, json.dumps(texts)))]
+
+
+@pytest.fixture(scope="session")
+def expectations():
+    """The shared search expectations, written by the npm side (#358)."""
+    return json.loads((DATASET / "fixtures" / "search-expectations.json").read_text(encoding="utf-8"))
+
+
+@pytest.fixture(scope="session")
+def npm_search():
+    """The npm package's own `search(query, options)` over a list of calls."""
+    url = json.dumps((DATASET / "index.js").as_uri())
+    script = (
+        "import { createRequire } from 'node:module';"
+        f"const {{ search }} = createRequire(import.meta.url)(new URL({url}).pathname);"
+        "let data = ''; process.stdin.setEncoding('utf8');"
+        "process.stdin.on('data', (chunk) => (data += chunk));"
+        "process.stdin.on('end', () => process.stdout.write(JSON.stringify("
+        "JSON.parse(data).map(([q, o]) => search(q, o)))));"
+    )
+    return lambda calls: json.loads(node(script, json.dumps(calls)))
