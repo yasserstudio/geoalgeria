@@ -180,7 +180,8 @@ test("the 2026-11-21 Flightradar24 pass ships each leg operating on its own hist
       sources: [fr24("ah5370"), "https://www.aeroroutes.com/eng/260622-ahnw267m8"] },
     "ndj-alg": { flight: "AH 5371", days: ["thu", "sun"], sources: [fr24("ah5371")] },
     "aae-jed": { flight: "AH 486", days: ["mon", "wed"], sources: [fr24("ah486")] },
-    "alg-bod": { flight: "AH 1190", days: null, sources: [fr24("ah1190")] },
+    // Days null on the first read; the second read's schedule repeats sat/sun.
+    "alg-bod": { flight: "AH 1190", days: ["sat", "sun"], sources: [fr24("ah1190")] },
     // Both Strasbourg legs: the airport's announcement follows each history.
     // Its mon/thu was the launch schedule; the histories show tue/sat now.
     "alg-sxb": { flight: "AH 1452", days: ["tue", "sat"],
@@ -200,6 +201,15 @@ test("the 2026-11-21 Flightradar24 pass ships each leg operating on its own hist
       sources: [fr24("ah1078"), wiki("Ahmed_Ben_Bella_Airport")] },
     "czl-nce": { flight: "AH 1198", days: ["mon", "thu", "sat"],
       sources: [fr24("ah1198"), wiki("Mohamed_Boudiaf_International_Airport")] },
+    // The second read: Orly and Lille leave `listed` with the table's citation
+    // kept behind the history; Lille home and Geneva both ways are new.
+    "alg-ory": { flight: "AH 1008", days: ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      sources: [fr24("ah1008"), "https://www.parisaeroport.fr/en/passengers/flights/airlines/airline?airline=AH&"] },
+    "alg-lil": { flight: "AH 1074", days: ["mon", "tue", "wed", "sat"],
+      sources: [fr24("ah1074"), "https://www.tsa-algerie.com/air-algerie-renonce-a-quitter-laeroport-de-londres-heathrow-voici-les-raisons/"] },
+    "lil-alg": { flight: "AH 1075", days: ["mon", "tue", "wed", "sat"], sources: [fr24("ah1075")] },
+    "alg-gva": { flight: "AH 2046", days: ["mon", "thu", "fri", "sat"], sources: [fr24("ah2046")] },
+    "gva-alg": { flight: "AH 2047", days: ["mon", "thu", "fri", "sat"], sources: [fr24("ah2047")] },
   };
   for (const [id, { flight, days, sources }] of Object.entries(want)) {
     const r = routes.find((x) => x.id === id);
