@@ -105,7 +105,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **مصنّعو الأدوية** | 171 | مصنّعون معتمدون للأدوية والأجهزة الطبية من سجل وزارة الصناعة الصيدلانية، مُحدَّدون جغرافيًا. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **نقاط بيع أوريدو** | 572 | فضاءات أوريدو ومتاجر المدينة وفضاءات الخدمات بإحداثيات حقيقية، مربوطة بالبلدية/الولاية (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
-الصيغ: **JSON · CSV · GeoJSON · SQL · TypeScript**. حزمة npm تتضمن JSON فقط للحفاظ على الحجم الخفيف؛ CSV/GeoJSON/SQL متوفرة في كل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+الصيغ: **JSON · CSV · GeoJSON · SQL · TypeScript**. حزمة npm تتضمن كل الصيغ (JSON وCSV وGeoJSON وSQL)، وكل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases) يتضمنها أيضًا.
 
 > محدّثة وفق **القانون رقم 26-06** (التنظيم الإقليمي الجديد)، [*الجريدة الرسمية* رقم 25 بتاريخ 5 أبريل 2026](https://www.joradp.dz/FTP/jo-arabe/2026/A2026025.pdf)، بالإضافة إلى إصلاح 2019 (القانون 19-12).
 

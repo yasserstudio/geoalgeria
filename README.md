@@ -103,7 +103,7 @@ A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office 
 | **Pharma manufacturers** | 171 | approved medicine & medical-device makers from the Ministry of Pharmaceutical Industry register, geocoded. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **Ooredoo stores** | 572 | Espaces Ooredoo, City Shops & Espaces Services with real coordinates, wilaya/commune-linked (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
-Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships JSON to stay light; CSV/GeoJSON/SQL ride in every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
+Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships every format (JSON, CSV, GeoJSON, SQL), and each [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) carries them too.
 
 > Current to **Law n° 26-06** (new territorial organization), [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf), plus the 2019 reform (Law 19-12).
 

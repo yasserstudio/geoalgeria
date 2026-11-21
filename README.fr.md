@@ -103,7 +103,7 @@ Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les 
 | **Fabricants pharmaceutiques** | 171 | fabricants agréés de médicaments & dispositifs médicaux du registre du Ministère de l'Industrie Pharmaceutique, géolocalisés. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **Points de vente Ooredoo** | 572 | Espaces Ooredoo, City Shops & Espaces Services avec coordonnées réelles, rattachés commune/wilaya (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
-Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contient le JSON pour rester léger ; les CSV/GeoJSON/SQL sont dans chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contient tous les formats (JSON, CSV, GeoJSON, SQL), et chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases) les contient aussi.
 
 > À jour avec la **Loi n° 26-06** (nouvelle organisation territoriale), [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf), ainsi que la réforme de 2019 (Loi 19-12).
 
