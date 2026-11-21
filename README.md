@@ -80,7 +80,7 @@ A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office 
 | **Mobilis network** | 12,344 | 164 agencies + 12,180 points of sale. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **5G coverage** | 4,093 | Djezzy + Mobilis + Ooredoo 5G sites. [`@geoalgeria/telecom`](packages/telecom) |
 | **Civil airports** | 36 | ANAC + OurAirports: names, ICAO + IATA codes, contacts, coordinates. [`@geoalgeria/aviation`](packages/aviation) |
-| **Nonstop routes** | 175 | Air Algérie's international network as directional legs, each with an operator, an evidence tier and a citation list. [`@geoalgeria/aviation`](packages/aviation) |
+| **Nonstop routes** | 178 | Air Algérie's international network as directional legs, each with an operator, an evidence tier and a citation list. [`@geoalgeria/aviation`](packages/aviation) |
 | **Banks & branches** | 1,704 | all 21 licensed banks + 8 institutions; branches with RIB/SWIFT codes, ownership, coordinates. [`@geoalgeria/banques`](packages/banques) |
 | **Delivery carriers** | 650 | 18-carrier registry + 650 geocoded stop-desks across 64 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro, ZR Express, Swift Express, HHD Express). [`@geoalgeria/livraison`](packages/livraison) |
 | **Youth establishments** | 2,334 | maisons de jeunes, complexes sportifs de proximité, salles polyvalentes, auberges, cultural & science centers & more across 69 wilayas (Ministry of Youth and Sports). [`@geoalgeria/jeunesse`](packages/jeunesse) |
@@ -103,7 +103,7 @@ A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office 
 | **Pharma manufacturers** | 171 | approved medicine & medical-device makers from the Ministry of Pharmaceutical Industry register, geocoded. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **Ooredoo stores** | 572 | Espaces Ooredoo, City Shops & Espaces Services with real coordinates, wilaya/commune-linked (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
-Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships JSON to stay light; CSV/GeoJSON/SQL ride in every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
+Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships every format (JSON, CSV, GeoJSON, SQL), and each [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) carries them too.
 
 > Current to **Law n° 26-06** (new territorial organization), [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf), plus the 2019 reform (Law 19-12).
 

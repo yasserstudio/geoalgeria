@@ -323,7 +323,10 @@
     "carrier": "AH",
     "flight": "AH 1190",
     "status": "active",
-    "days": null,
+    "days": [
+      "sat",
+      "sun"
+    ],
     "evidence": "verified",
     "planned": false,
     "source": "https://www.flightradar24.com/data/flights/ah1190",
@@ -595,6 +598,27 @@
     "great_circle_km": 1543
   },
   {
+    "id": "alg-gva",
+    "from": "ALG",
+    "to": "GVA",
+    "carrier": "AH",
+    "flight": "AH 2046",
+    "status": "active",
+    "days": [
+      "mon",
+      "thu",
+      "fri",
+      "sat"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.flightradar24.com/data/flights/ah2046",
+    "sources": [
+      "https://www.flightradar24.com/data/flights/ah2046"
+    ],
+    "great_circle_km": 1088
+  },
+  {
     "id": "alg-hrg",
     "from": "ALG",
     "to": "HRG",
@@ -695,13 +719,19 @@
     "from": "ALG",
     "to": "LIL",
     "carrier": "AH",
-    "flight": null,
-    "status": "unclear",
-    "days": null,
-    "evidence": "listed",
+    "flight": "AH 1074",
+    "status": "active",
+    "days": [
+      "mon",
+      "tue",
+      "wed",
+      "sat"
+    ],
+    "evidence": "verified",
     "planned": false,
-    "source": "https://www.tsa-algerie.com/air-algerie-renonce-a-quitter-laeroport-de-londres-heathrow-voici-les-raisons/",
+    "source": "https://www.flightradar24.com/data/flights/ah1074",
     "sources": [
+      "https://www.flightradar24.com/data/flights/ah1074",
       "https://www.tsa-algerie.com/air-algerie-renonce-a-quitter-laeroport-de-londres-heathrow-voici-les-raisons/"
     ],
     "great_circle_km": 1542
@@ -920,13 +950,22 @@
     "from": "ALG",
     "to": "ORY",
     "carrier": "AH",
-    "flight": null,
-    "status": "unclear",
-    "days": null,
-    "evidence": "listed",
+    "flight": "AH 1008",
+    "status": "active",
+    "days": [
+      "mon",
+      "tue",
+      "wed",
+      "thu",
+      "fri",
+      "sat",
+      "sun"
+    ],
+    "evidence": "verified",
     "planned": false,
-    "source": "https://www.parisaeroport.fr/en/passengers/flights/airlines/airline?airline=AH&",
+    "source": "https://www.flightradar24.com/data/flights/ah1008",
     "sources": [
+      "https://www.flightradar24.com/data/flights/ah1008",
       "https://www.parisaeroport.fr/en/passengers/flights/airlines/airline?airline=AH&"
     ],
     "great_circle_km": 1339
@@ -1931,6 +1970,27 @@
     "great_circle_km": 741
   },
   {
+    "id": "gva-alg",
+    "from": "GVA",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 2047",
+    "status": "active",
+    "days": [
+      "mon",
+      "thu",
+      "fri",
+      "sat"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.flightradar24.com/data/flights/ah2047",
+    "sources": [
+      "https://www.flightradar24.com/data/flights/ah2047"
+    ],
+    "great_circle_km": 1088
+  },
+  {
     "id": "ist-alg",
     "from": "IST",
     "to": "ALG",
@@ -2025,6 +2085,27 @@
       "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes"
     ],
     "great_circle_km": 1668
+  },
+  {
+    "id": "lil-alg",
+    "from": "LIL",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 1075",
+    "status": "active",
+    "days": [
+      "mon",
+      "tue",
+      "wed",
+      "sat"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.flightradar24.com/data/flights/ah1075",
+    "sources": [
+      "https://www.flightradar24.com/data/flights/ah1075"
+    ],
+    "great_circle_km": 1542
   },
   {
     "id": "los-abv",

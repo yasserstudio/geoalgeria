@@ -82,7 +82,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **شبكة موبيليس** | 12,344 | 164 وكالة + 12,180 نقطة بيع. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **تغطية 5G** | 4,093 | مواقع 5G لجيزي + موبيليس + أوريدو. [`@geoalgeria/telecom`](packages/telecom) |
 | **المطارات المدنية** | 36 | ANAC + OurAirports: أسماء، رموز ICAO + IATA، معلومات اتصال، إحداثيات. [`@geoalgeria/aviation`](packages/aviation) |
-| **الخطوط الجوية المباشرة** | 175 | شبكة الجوية الجزائرية الدولية كخطوط اتجاهية، لكل منها مشغّل ودرجة إثبات وقائمة مراجع. [`@geoalgeria/aviation`](packages/aviation) |
+| **الخطوط الجوية المباشرة** | 178 | شبكة الجوية الجزائرية الدولية كخطوط اتجاهية، لكل منها مشغّل ودرجة إثبات وقائمة مراجع. [`@geoalgeria/aviation`](packages/aviation) |
 | **البنوك والفروع** | 1,704 | كل البنوك الـ 21 المعتمدة + 8 مؤسسات مالية؛ فروع مع أكواد RIB/SWIFT، الملكية، الإحداثيات. [`@geoalgeria/banques`](packages/banques) |
 | **شركات التوصيل** | 650 | 18 ناقلًا + 650 نقطة استلام في 64 ولاية (Yalidine، Guepex، Anderson، Noest، Maystro، ZR Express، Swift Express، HHD Express). [`@geoalgeria/livraison`](packages/livraison) |
 | **مؤسسات الشباب** | 2,334 | دور الشباب، مركّبات رياضية من الدرجة الأولى، قاعات متعددة الاستخدامات، دور إيواء، مراكز ثقافية وعلمية وأكثر في 69 ولاية (وزارة الشباب والرياضة). [`@geoalgeria/jeunesse`](packages/jeunesse) |
@@ -105,7 +105,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **مصنّعو الأدوية** | 171 | مصنّعون معتمدون للأدوية والأجهزة الطبية من سجل وزارة الصناعة الصيدلانية، مُحدَّدون جغرافيًا. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **نقاط بيع أوريدو** | 572 | فضاءات أوريدو ومتاجر المدينة وفضاءات الخدمات بإحداثيات حقيقية، مربوطة بالبلدية/الولاية (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
-الصيغ: **JSON · CSV · GeoJSON · SQL · TypeScript**. حزمة npm تتضمن JSON فقط للحفاظ على الحجم الخفيف؛ CSV/GeoJSON/SQL متوفرة في كل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+الصيغ: **JSON · CSV · GeoJSON · SQL · TypeScript**. حزمة npm تتضمن كل الصيغ (JSON وCSV وGeoJSON وSQL)، وكل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases) يتضمنها أيضًا.
 
 > محدّثة وفق **القانون رقم 26-06** (التنظيم الإقليمي الجديد)، [*الجريدة الرسمية* رقم 25 بتاريخ 5 أبريل 2026](https://www.joradp.dz/FTP/jo-arabe/2026/A2026025.pdf)، بالإضافة إلى إصلاح 2019 (القانون 19-12).
 

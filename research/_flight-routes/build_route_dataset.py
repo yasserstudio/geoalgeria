@@ -213,8 +213,9 @@ NGA_FR24 = "https://www.flightradar24.com/data/flights/ah5354"
 
 # The 2026-11-21 pass (verification-2026-11-21.md), the same section 36 rule: the
 # Owner read each flight's own Flightradar24 history and reported the Landed dates
-# below. Dates are local departure dates; 21 Nov 2026 is a Saturday. Landing times
-# and registrations were not captured on this pass, which the note records as owed.
+# below. Dates are local departure dates; 21 Nov 2026 is a Saturday. The second
+# read of the same day added landing times and registrations to the note, and the
+# five legs at the end of this list.
 #
 #   ALG_NDJ_FR24  AH 5370: Landed Sat 14 and Wed 18 Nov. wed/sat.
 #   NDJ_ALG_FR24  AH 5371: Landed Sun 15 and Thu 19 Nov, Sun 22 and Thu 26 Nov
@@ -223,7 +224,9 @@ NGA_FR24 = "https://www.flightradar24.com/data/flights/ah5354"
 #                 scheduled. mon/wed. The same number's ALG to JED sector of Sat
 #                 21 Nov is only Scheduled, so it is no Landed row and `alg-jed`
 #                 is not added.
-#   ALG_BOD_FR24  AH 1190: Landed Sat 14 and Sun 15 Nov. `days` null, as above.
+#   ALG_BOD_FR24  AH 1190: Landed Sat 14 and Sun 15 Nov (Sun 15 on LZ-FSA, a
+#                 wet-leased A320 flying the AH number), Sun 22 and Sat 28 Nov
+#                 scheduled. sat/sun.
 #   ALG_SXB_FR24  AH 1452: Landed Sat 14, Tue 17 and Sat 21 Nov, Tue 24 and Sat
 #                 28 Nov scheduled. tue/sat, replacing the mon/thu the airport's
 #                 announcement gave: that was the launch schedule.
@@ -245,6 +248,17 @@ NGA_FR24 = "https://www.flightradar24.com/data/flights/ah5354"
 #                 and 28 Nov scheduled. mon/wed/sat.
 #   CZL_NCE_FR24  AH 1198: Landed Sat 14, Mon 16 and Thu 19 Nov; 21, 23, 26
 #                 and 28 Nov scheduled. mon/thu/sat.
+#   ALG_ORY_FR24  AH 1008: Landed every day Sat 14 to Fri 20 Nov, 22 to 28 Nov
+#                 scheduled. Every day.
+#   ALG_LIL_FR24  AH 1074: Landed Sat 14, Mon 16, Tue 17 and Wed 18 Nov (16 and
+#                 17 on TS-INK, a wet-leased A320 flying the AH number), Sat 21
+#                 live; 23, 24, 25 and 28 Nov scheduled. mon/tue/wed/sat.
+#   LIL_ALG_FR24  AH 1075: Landed on the same four days. mon/tue/wed/sat.
+#   ALG_GVA_FR24  AH 2046: Landed Sat 14, Mon 16, Thu 19, Fri 20 and Sat 21 Nov;
+#                 23, 26, 27 and 28 Nov scheduled. mon/thu/fri/sat.
+#   GVA_ALG_FR24  AH 2047: Landed Sat 14, Mon 16 and Thu 19 Nov; Fri 20 departed
+#                 with no Landed status, so it is not counted; 23, 26, 27 and 28
+#                 Nov scheduled on the outbound's days. mon/thu/fri/sat.
 ALG_NDJ_FR24 = "https://www.flightradar24.com/data/flights/ah5370"
 NDJ_ALG_FR24 = "https://www.flightradar24.com/data/flights/ah5371"
 AAE_JED_FR24 = "https://www.flightradar24.com/data/flights/ah486"
@@ -257,6 +271,11 @@ QSF_PARIS_FR24 = "https://www.flightradar24.com/data/flights/ah1108"
 ORN_CDG_FR24 = "https://www.flightradar24.com/data/flights/ah1084"
 ORN_LIL_FR24 = "https://www.flightradar24.com/data/flights/ah1078"
 CZL_NCE_FR24 = "https://www.flightradar24.com/data/flights/ah1198"
+ALG_ORY_FR24 = "https://www.flightradar24.com/data/flights/ah1008"
+ALG_LIL_FR24 = "https://www.flightradar24.com/data/flights/ah1074"
+LIL_ALG_FR24 = "https://www.flightradar24.com/data/flights/ah1075"
+ALG_GVA_FR24 = "https://www.flightradar24.com/data/flights/ah2046"
+GVA_ALG_FR24 = "https://www.flightradar24.com/data/flights/ah2047"
 SXB_ANNOUNCEMENT = "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"
 
 # The reports the two flipped legs arrived on. A promotion moves the `source` to
@@ -837,6 +856,7 @@ VERIFIED = [
      "source": AAE_JED_FR24},
     # Algiers to Bordeaux, the outbound BOD-ALG has long had.
     {"from": "ALG", "to": "BOD", "flight": "AH 1190", "status": "active",
+     "days": ["sat", "sun"],
      "source": ALG_BOD_FR24},
     # Strasbourg home, `seasonal` until now on a bare observalgerie.com homepage
     # that named no route; that citation is dropped, and the airport's own
@@ -879,6 +899,27 @@ VERIFIED = [
      "days": ["mon", "thu", "sat"],
      "source": CZL_NCE_FR24,
      "extra_sources": ["https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"]},
+    # The second read of 21 Nov. Algiers to Orly and Algiers to Lille were `listed`
+    # off the Wikipedia table; each history is now the `source` and the citation
+    # the table gave stays behind it.
+    {"from": "ALG", "to": "ORY", "flight": "AH 1008", "status": "active",
+     "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+     "source": ALG_ORY_FR24,
+     "extra_sources": ["https://www.parisaeroport.fr/en/passengers/flights/airlines/airline?airline=AH&"]},
+    {"from": "ALG", "to": "LIL", "flight": "AH 1074", "status": "active",
+     "days": ["mon", "tue", "wed", "sat"],
+     "source": ALG_LIL_FR24,
+     "extra_sources": ["https://www.tsa-algerie.com/air-algerie-renonce-a-quitter-laeroport-de-londres-heathrow-voici-les-raisons/"]},
+    # Lille home and Geneva both ways, new legs.
+    {"from": "LIL", "to": "ALG", "flight": "AH 1075", "status": "active",
+     "days": ["mon", "tue", "wed", "sat"],
+     "source": LIL_ALG_FR24},
+    {"from": "ALG", "to": "GVA", "flight": "AH 2046", "status": "active",
+     "days": ["mon", "thu", "fri", "sat"],
+     "source": ALG_GVA_FR24},
+    {"from": "GVA", "to": "ALG", "flight": "AH 2047", "status": "active",
+     "days": ["mon", "thu", "fri", "sat"],
+     "source": GVA_ALG_FR24},
 ]
 
 # Operating legs whose citation is Official or Reported tier but does NOT confirm

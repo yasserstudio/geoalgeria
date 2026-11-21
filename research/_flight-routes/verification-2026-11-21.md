@@ -5,26 +5,31 @@ read on its own flight's history page under `collection-rules.md` section 36: a
 dated row marked "Landed" is a report that the leg flew. Scheduled rows confirm a
 weekly pattern; on their own they never count.
 
-Counts after this pass: **184 rows, 175 operating and 9 planned, 79 endpoints**
+Counts after this pass: **187 rows, 178 operating and 9 planned, 80 endpoints**
 (was 179 rows, 169 operating and 10 planned, after the Delhi change of the same
-day, section 37). Five rows are new, one leaves `planned`, five move from `listed`
-to `verified`, and two Strasbourg rows change their days or status.
+day, section 37). The first read made five rows new, took one out of `planned`,
+moved five from `listed` to `verified` and changed the two Strasbourg rows; it
+left 184 rows, 175 operating, 79 endpoints. The second read, section 4, adds
+three rows and one endpoint (Geneva) and moves two more rows to `verified`.
 
-`as_of` stays **2026-10-09**. This pass read thirteen flights, not the network, so
+`as_of` stays **2026-10-09**. This pass read eighteen flights, not the network, so
 the stamp does not move (the same reasoning as the 2026-10-30 note).
 
-## Owed: landing times and registrations
+## Landing times and registrations
 
 Section 36 asks the note to keep each Landed row's landing time and registration,
 because the free history window is about seven days and the pages will stop
 showing what is written here. The pages refuse automated reads (HTTP 403), so
-these come from the Owner's screenshots of 21 November. They are recorded for
-AH 1078, AH 1198, AH 1452 and AH 486. **For AH 5370, AH 5371, AH 1190, AH 1453,
-AH 3022, AH 1136, AH 1108 and AH 1084 the times and registrations are still owed
-by the Owner**; those sections carry dates and status only.
+these come from the Owner's screenshots of 21 November, taken in two reads. Every
+flight carried below now has them; nothing is owed.
 
 Dates are local departure dates. Landed times are FR24's, local at the
-destination.
+destination; a landing after midnight names its own date.
+
+Two Landed rows flew on a foreign-registered aircraft under the AH number: TS-INK
+(Tunisia) on AH 1074 and AH 1075, LZ-FSA (Bulgaria) on AH 1190, both A320s. That
+is a wet lease, the same case section 34 records for Rome, and the leg is still
+Air Algérie's.
 
 ## 1. Promotions and new rows
 
@@ -32,12 +37,12 @@ destination.
 
 <https://www.flightradar24.com/data/flights/ah5370>
 
-| Date | Status |
-| --- | --- |
-| Sat 14 Nov 2026 | Landed |
-| Wed 18 Nov 2026 | Landed |
+| Date | Reg | Landed (NDJ) |
+| --- | --- | --- |
+| Sat 14 Nov 2026 | 7T-VKS | 02:40 Sun 15 Nov |
+| Wed 18 Nov 2026 | 7T-VKT | 03:01 Thu 19 Nov |
 
-`days` wed/sat. The 22 Jun 2026 AeroRoutes filing that kept the row planned stays
+Scheduled Sat 21, Wed 25 and Sat 28 Nov. `days` wed/sat. The 22 Jun 2026 AeroRoutes filing that kept the row planned stays
 in `sources` after the history. AH 5370 continues from N'Djamena to Addis Ababa,
 which is not a nonstop Algiers to Addis Ababa sector, so **`alg-add` is unchanged**.
 
@@ -45,12 +50,12 @@ which is not a nonstop Algiers to Addis Ababa sector, so **`alg-add` is unchange
 
 <https://www.flightradar24.com/data/flights/ah5371>
 
-| Date | Status |
-| --- | --- |
-| Sun 15 Nov 2026 | Landed |
-| Thu 19 Nov 2026 | Landed |
-| Sun 22 Nov 2026 | Scheduled |
-| Thu 26 Nov 2026 | Scheduled |
+| Date | Reg | Landed (ALG) |
+| --- | --- | --- |
+| Sun 15 Nov 2026 | 7T-VKS | 16:53 |
+| Thu 19 Nov 2026 | 7T-VKT | 17:35 |
+
+Scheduled Sun 22 and Thu 26 Nov.
 
 `days` thu/sun, read off the return's own nights. AH 5371 starts in Addis Ababa;
 its **Addis Ababa to N'Djamena leg does not touch Algeria** and is not carried.
@@ -82,12 +87,14 @@ pair.
 
 <https://www.flightradar24.com/data/flights/ah1190>
 
-| Date | Status |
-| --- | --- |
-| Sat 14 Nov 2026 | Landed |
-| Sun 15 Nov 2026 | Landed |
+| Date | Reg | Landed (BOD) |
+| --- | --- | --- |
+| Sat 14 Nov 2026 | 7T-VKK | 15:15 |
+| Sun 15 Nov 2026 | LZ-FSA | 17:17 |
 
-`days` null: two nights with nothing scheduled reported are not a weekly pattern.
+Sat 21 Nov was due out on 7T-VJU when read; Sun 22 and Sat 28 Nov are scheduled.
+`days` sat/sun. The first read left `days` null because no schedule was reported;
+the second read's scheduled rows repeat both weekdays, which makes it a pattern.
 
 ### `qsf-ory` and `qsf-cdg`, Setif to Paris, AH 1108
 
@@ -97,16 +104,15 @@ One flight number into both Paris airports. The page's "About" box says that in
 the last seven days the flight flew Setif to Orly and Setif to Charles de Gaulle,
 so the two airports are two rows with their own days.
 
-| Date | Arrives | Status |
-| --- | --- | --- |
-| Sat 14 Nov 2026 | ORY | Landed |
-| Sun 15 Nov 2026 | ORY | Landed |
-| Mon 16 Nov 2026 | CDG | Landed |
-| Tue 17 Nov 2026 | ORY | Landed |
-| Sun 22 Nov 2026 | ORY | Scheduled |
-| Mon 23 Nov 2026 | CDG | Scheduled |
-| Tue 24 Nov 2026 | ORY | Scheduled |
-| Sat 28 Nov 2026 | ORY | Scheduled |
+| Date | Arrives | Reg | Landed |
+| --- | --- | --- | --- |
+| Sat 14 Nov 2026 | ORY | 7T-VKP | 15:42 |
+| Sun 15 Nov 2026 | ORY | 7T-VKI | 16:35 |
+| Mon 16 Nov 2026 | CDG | 7T-VKB | 17:26 |
+| Tue 17 Nov 2026 | ORY | 7T-VJO | 16:23 |
+
+Sat 21 Nov was airborne for Orly on 7T-VKD when read. Scheduled: Sun 22 ORY,
+Mon 23 CDG, Tue 24 ORY, Sat 28 ORY.
 
 `qsf-ory` moves from `listed` to `verified` with `days` sat/sun/tue, the Ain Arnat
 Wikipedia article kept behind the history. `qsf-cdg` is new with `days` mon.
@@ -115,7 +121,16 @@ Wikipedia article kept behind the history. `qsf-cdg` is new with `days` mon.
 
 <https://www.flightradar24.com/data/flights/ah1084>
 
-Landed every day from Sat 14 to Thu 19 Nov; no flight on Fri 20 Nov. Scheduled 21
+| Date | Reg | Landed (CDG) |
+| --- | --- | --- |
+| Sat 14 Nov 2026 | 7T-VKA | 17:08 |
+| Sun 15 Nov 2026 | 7T-VKG | 17:10 |
+| Mon 16 Nov 2026 | 7T-VKM | 17:31 |
+| Tue 17 Nov 2026 | 7T-VKJ | 17:44 |
+| Wed 18 Nov 2026 | 7T-VKL | 17:41 |
+| Thu 19 Nov 2026 | 7T-VKG | 18:00 |
+
+No flight on Fri 20 Nov. Scheduled 21
 to 26 Nov and 28 Nov, none on Fri 27 Nov. `days` every day but Friday. It adds the
 direction `cdg-orn` already had.
 
@@ -123,7 +138,15 @@ direction `cdg-orn` already had.
 
 <https://www.flightradar24.com/data/flights/ah3022>
 
-Landed Sat 14, Mon 16, Tue 17, Thu 19 and Fri 20 Nov. Scheduled 21, 23, 24, 26, 27
+| Date | Reg | Landed (IST) |
+| --- | --- | --- |
+| Sat 14 Nov 2026 | 7T-VKC | 00:56 Sun 15 Nov |
+| Mon 16 Nov 2026 | 7T-VKC | 01:06 Tue 17 Nov |
+| Tue 17 Nov 2026 | 7T-VKD | 01:20 Wed 18 Nov |
+| Thu 19 Nov 2026 | 7T-VKE | 00:54 Fri 20 Nov |
+| Fri 20 Nov 2026 | 7T-VKE | 00:48 Sat 21 Nov |
+
+Scheduled 21, 23, 24, 26, 27
 and 28 Nov. `days` mon/tue/thu/fri/sat. Moves from `listed` to `verified`; the
 Constantine Wikipedia article stays behind the history.
 
@@ -144,7 +167,12 @@ Scheduled 21, 23, 26 and 28 Nov. `days` mon/thu/sat. Moves from `listed` to
 
 <https://www.flightradar24.com/data/flights/ah1136>
 
-Landed Sat 14 and Wed 18 Nov. Scheduled 21, 25 and 28 Nov. `days` wed/sat. Moves
+| Date | Reg | Landed (MRS) |
+| --- | --- | --- |
+| Sat 14 Nov 2026 | 7T-VKQ | 19:18 |
+| Wed 18 Nov 2026 | 7T-VKD | 20:00 |
+
+Scheduled 21, 25 and 28 Nov. `days` wed/sat. Moves
 from `listed` to `verified`, Chlef Wikipedia article kept.
 
 ### `orn-lil`, Oran to Lille, AH 1078
@@ -166,8 +194,14 @@ Scheduled 21, 23, 25 and 28 Nov. `days` mon/wed/sat. Moves from `listed` to
 
 <https://www.flightradar24.com/data/flights/ah1453>
 
-Landed Sat 14 Nov, flew Tue 17 and Sat 21 Nov, scheduled Tue 24 and Sat 28 Nov.
-`days` tue/sat. The row's old citation was the bare observalgerie.com homepage,
+| Date | Reg | Status |
+| --- | --- | --- |
+| Sat 14 Nov 2026 | 7T-VJM | Landed 14:14 |
+| Tue 17 Nov 2026 | 7T-VKG | departed 13:05, no Landed status |
+| Sat 21 Nov 2026 | 7T-VCE | airborne when read, departed 12:04 |
+
+Scheduled Tue 24 and Sat 28 Nov. One Landed row and two departures on the
+outbound's days; `days` tue/sat. The row's old citation was the bare observalgerie.com homepage,
 which named no route; it is dropped. The airport's announcement follows the
 history.
 
@@ -197,3 +231,64 @@ evidence are unchanged. This closes the SXB-ALG seasonal mismatch flagged in
 - **`alg-add`**: unchanged. AH 5370 reaches Addis Ababa through N'Djamena, so it
   is no evidence for a nonstop sector.
 - **`alg-jed` on AH 486**: Scheduled only on 21 Nov; see `aae-jed`.
+- **AH 2047 on Fri 20 Nov**: departed Geneva, but the page shows only an estimated
+  arrival, so it is not a Landed row.
+
+## 4. Second read: Orly, Lille and Geneva
+
+### `alg-ory`, Algiers to Orly, AH 1008: `listed` to `verified`
+
+<https://www.flightradar24.com/data/flights/ah1008>
+
+| Date | Reg | Landed (ORY) |
+| --- | --- | --- |
+| Sat 14 Nov 2026 | 7T-VJP | 20:21 |
+| Sun 15 Nov 2026 | 7T-VKR | 21:32 |
+| Mon 16 Nov 2026 | 7T-VKR | 20:43 |
+| Tue 17 Nov 2026 | 7T-VKN | 20:46 |
+| Wed 18 Nov 2026 | 7T-VKO | 20:48 |
+| Thu 19 Nov 2026 | 7T-VJO | 20:51 |
+| Fri 20 Nov 2026 | 7T-VJM | 20:48 |
+
+Scheduled every day 22 to 28 Nov. `days` every day. The Paris airports page the
+Wikipedia table cited stays behind the history.
+
+### `alg-lil` and `lil-alg`, Algiers and Lille, AH 1074 and AH 1075
+
+<https://www.flightradar24.com/data/flights/ah1074>
+<https://www.flightradar24.com/data/flights/ah1075>
+
+| Date | Reg | Landed (LIL), AH 1074 | Landed (ALG), AH 1075 |
+| --- | --- | --- | --- |
+| Sat 14 Nov 2026 | 7T-VCE | 14:32 | 18:05 |
+| Mon 16 Nov 2026 | TS-INK | 12:27 | 15:52 |
+| Tue 17 Nov 2026 | TS-INK | 14:59 | 18:29 |
+| Wed 18 Nov 2026 | 7T-VJK | 12:01 | 23:35 |
+
+Sat 21 Nov was airborne to Lille on 7T-VLS when read. Both directions scheduled
+Mon 23, Tue 24, Wed 25 and Sat 28 Nov. `days` mon/tue/wed/sat both ways.
+`alg-lil` moves from `listed` to `verified`, its TSA citation kept; `lil-alg` is
+new.
+
+### `alg-gva` and `gva-alg`, Algiers and Geneva, AH 2046 and AH 2047 (new)
+
+<https://www.flightradar24.com/data/flights/ah2046>
+<https://www.flightradar24.com/data/flights/ah2047>
+
+| Date | Reg | Landed (GVA), AH 2046 | Landed (ALG), AH 2047 |
+| --- | --- | --- | --- |
+| Sat 14 Nov 2026 | 7T-VKD | 13:42 | 17:07 |
+| Mon 16 Nov 2026 | 7T-VKT | 14:29 | 17:20 |
+| Thu 19 Nov 2026 | 7T-VKD | 14:21 | 17:21 |
+| Fri 20 Nov 2026 | 7T-VJO | 13:32 | no Landed status |
+| Sat 21 Nov 2026 | 7T-VJM | 13:51 | not yet flown |
+
+Both directions scheduled Mon 23, Thu 26, Fri 27 and Sat 28 Nov. `days`
+mon/thu/fri/sat both ways: the return's three Landed days and its schedule agree
+with the outbound's. Geneva is a new endpoint; its names were already in
+`endpoint-names.json`.
+
+### Still to recheck
+
+- **AH 486, Algiers to Jeddah**: Sat 21 Nov was still Scheduled (21:15) when read.
+  Recheck after 22 Nov; a Landed row would add `alg-jed` as Air Algérie's own leg.

@@ -80,7 +80,7 @@ Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les 
 | **Réseau Mobilis** | 12 344 | 164 agences + 12 180 points de vente. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **Couverture 5G** | 4 093 | sites 5G Djezzy + Mobilis + Ooredoo. [`@geoalgeria/telecom`](packages/telecom) |
 | **Aéroports civils** | 36 | ANAC + OurAirports : noms, codes OACI + IATA, contacts, coordonnées. [`@geoalgeria/aviation`](packages/aviation) |
-| **Liaisons directes** | 175 | Le réseau international d'Air Algérie en trajets directionnels, chacun avec un exploitant, un niveau de preuve et une liste de citations. [`@geoalgeria/aviation`](packages/aviation) |
+| **Liaisons directes** | 178 | Le réseau international d'Air Algérie en trajets directionnels, chacun avec un exploitant, un niveau de preuve et une liste de citations. [`@geoalgeria/aviation`](packages/aviation) |
 | **Banques et agences** | 1 704 | les 21 banques agréées + 8 institutions ; agences avec codes RIB/SWIFT, propriété, coordonnées. [`@geoalgeria/banques`](packages/banques) |
 | **Transporteurs de livraison** | 650 | 18 transporteurs + 650 bureaux de retrait géocodés dans 64 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro, ZR Express, Swift Express, HHD Express). [`@geoalgeria/livraison`](packages/livraison) |
 | **Établissements de jeunesse** | 2 334 | maisons de jeunes, complexes sportifs de proximité, salles polyvalentes, auberges, centres culturels et plus dans 69 wilayas (Ministère de la Jeunesse et des Sports). [`@geoalgeria/jeunesse`](packages/jeunesse) |
@@ -103,7 +103,7 @@ Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les 
 | **Fabricants pharmaceutiques** | 171 | fabricants agréés de médicaments & dispositifs médicaux du registre du Ministère de l'Industrie Pharmaceutique, géolocalisés. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **Points de vente Ooredoo** | 572 | Espaces Ooredoo, City Shops & Espaces Services avec coordonnées réelles, rattachés commune/wilaya (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
-Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contient le JSON pour rester léger ; les CSV/GeoJSON/SQL sont dans chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contient tous les formats (JSON, CSV, GeoJSON, SQL), et chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases) les contient aussi.
 
 > À jour avec la **Loi n° 26-06** (nouvelle organisation territoriale), [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf), ainsi que la réforme de 2019 (Loi 19-12).
 

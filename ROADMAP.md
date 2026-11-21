@@ -103,6 +103,23 @@ reads as further along than it is.
   numbers are still unread and go with the pass that re-reads the network.
   _(logged 2026-10-02, part-resolved 2026-10-26 and 2026-10-28, resolved 2026-10-30)_
 
+- [x] **Flightradar24 pass of 2026-11-21, two reads** (`verification-2026-11-21.md`,
+  section 36). Eighteen flights read on their own histories, with each Landed
+  row's landing time and registration kept in the note. `alg-ndj` leaves planned
+  (AH 5370). New legs: `ndj-alg`, `aae-jed`, `alg-bod`, `qsf-cdg`, `orn-cdg`,
+  `lil-alg` and Geneva both ways (`alg-gva`, `gva-alg`, a new endpoint). Seven
+  move from `listed` to `verified`: `czl-ist`, `czl-nce`, `cfk-mrs`, `qsf-ory`,
+  `orn-lil`, `alg-ory` and `alg-lil`. Strasbourg: `sxb-alg` operates and both legs
+  carry tue/sat. Routes are 178 nonstop and 9 planned, 80 endpoints; `as_of`
+  stays 2026-10-09 because the pass read flights, not the network.
+  _(logged and resolved 2026-11-21)_
+
+- [ ] **`alg-jed` on AH 486, re-check after 22 Nov 2026.** The 21 Nov history
+  shows AH 486 Algiers to Jeddah on Sat 21 Nov as Scheduled only. A Landed row
+  makes it Air Algérie's own leg; until then `ALG-JED` stays in
+  `OPERATED_BY_OTHERS` (Saudia) and `aae-jed` is a different pair.
+  _(logged 2026-11-21)_
+
 - [ ] **The Kuwait-Amman rotation has no tracker data at all, re-check after 3 Nov
   2026.** `AH 4064` and `AH 4065` were both looked up on Flightradar24 on 30 Oct
   and neither number carries any history or any schedule. `alg-kwi`, `kwi-amm` and
@@ -122,7 +139,7 @@ reads as further along than it is.
   3 November; if it flew, set `days` off the observations, never off the schedule.
   _(logged 2026-10-30)_
 
-- [ ] **`alg-ndj` may be stale in the other direction.** Algiers to N'Djamena first
+- [x] **`alg-ndj` may be stale in the other direction.** Algiers to N'Djamena first
   flew on 21 Oct 2025 (APS), so the 22 Jun 2026 filing the planned row rests on may
   be an extension of a line already operating rather than a launch, in which case
   the leg should be operating and not planned. Pulling the other way, the winter
@@ -130,7 +147,9 @@ reads as further along than it is.
   22 Oct 2026, matching the Cameroonian regulator's 14 Oct approval). Both need the
   pass that re-reads the network, which is the same pass that moves `as_of`. Batch
   2026-16.
-  _(logged 2026-10-30)_
+  Resolved 21 Nov 2026: AH 5370 Landed on Sat 14 and Wed 18 Nov, so the row
+  operates (wed/sat) and `ndj-alg` (AH 5371) joins it.
+  _(logged 2026-10-30, resolved 2026-11-21)_
 
 - [ ] **`alg-doh` / `doh-alg` go daily on 25 Oct 2026.** The resumed service runs
   three weekly, Sun/Tue/Fri, and the same reports announce a daily programme from
@@ -159,7 +178,9 @@ reads as further along than it is.
   Tripoli MJI) plus Douala/Libreville's NW26 flight numbers and the
   N'Djamena route, none of which flip on the date alone, only on a dated
   report that they flew.
-  _(logged 2026-10-09)_
+  Since: Tripoli flipped 30 Oct, N'Djamena and both Lille legs out of Algiers
+  are `verified` on their Flightradar24 histories (21 Nov).
+  _(logged 2026-10-09, updated 2026-11-21)_
 
 - [ ] **Carriers beyond Air Algérie.** v1 is deliberately one operator, which the
   app's title and copy now have to caveat, since other carriers do fly nonstop
