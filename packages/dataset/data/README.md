@@ -195,7 +195,21 @@ The e-commerce view carries the current `wilaya_code` only. For `wilaya_code_58`
   "id": 1,
   "wilaya_code": 1,
   "name_fr": "Adrar",
-  "commune_count": 3
+  "commune_count": 3,
+  "name_ar": "أدرار",
+  "name_ar_source": "decree_21_198_ar",
+  "audit": {
+    "status": "decree_table",
+    "citation": {
+      "source": "decret-21-198",
+      "decree": "Décret exécutif n° 21-198 du 11 mai 2021 modifiant et complétant le décret exécutif n° 91-306 du 24 août 1991",
+      "journal_officiel": "JORA n° 38 du 20 mai 2021",
+      "article": "Article 1, liste jointe, tableau de la wilaya 01",
+      "page": "8",
+      "url": "https://www.joradp.dz/FTP/jo-francais/2021/F2021038.pdf",
+      "url_ar": "https://www.joradp.dz/FTP/JO-ARABE/2021/A2021038.pdf"
+    }
+  }
 }
 ```
 
@@ -205,6 +219,10 @@ The e-commerce view carries the current `wilaya_code` only. For `wilaya_code_58`
 | `wilaya_code` | integer | Parent wilaya code |
 | `name_fr` | string | French name, the name of the daira's seat commune |
 | `commune_count` | integer | Number of communes in this daira |
+| `name_ar` | string \| null | Arabic name; null on 57 rows (see the audit below) |
+| `name_ar_source` | string \| null | `decree_26_253_ar` or `decree_21_198_ar` (read from that decree's Arabic table), `seat_commune` (the `name_ar` of the commune the daira is named after); null exactly when `name_ar` is |
+| `audit.status` | string \| null | `decree_table`, `agrees_1991`, or null for not graded |
+| `audit.citation` | object \| null | `source`, `decree`, `journal_officiel`, `article` (with the wilaya table), `page`, `url` on joradp.dz, optional `url_ar`, and on 1991 rows that décret exécutif 92-66 re-tabled, `amended_by` in the same shape; null when `status` is null |
 
 A commune names its daira by this `name_fr`, in every carrier that repeats the
 linkage, so the two always join. A daira that stops existing leaves its id in
@@ -224,6 +242,36 @@ of 24 August 1991, and those lists as this dataset holds them come to **409**.
 **551 is therefore this dataset's count, not a published national total**: no
 post-reform text states one. The reading of the annex, and what it does and does
 not settle, is in [`research/_dairas/`](../../../research/_dairas/).
+
+### How far each daira list is checked
+
+Every daira carries an `audit` grade for its commune list. The audit changed no
+membership and no name: it only says how far each list has been checked.
+
+- **210 `decree_table`**: read from a whole-wilaya table of the latest decree
+  that tabulates the wilaya: the 142 of décret exécutif 26-253 (2026) and 68
+  of décret exécutif 21-198 (2021) in wilayas 1, 8, 11, 30, 33, 39, 47 and
+  49–58. The citation gives the decree, the *Journal Officiel* issue, the
+  wilaya table, the page and the joradp.dz PDF.
+- **275 `agrees_1991`**: the communes agree with the table of décret exécutif
+  91-306 of 24 August 1991, as amended by décret exécutif 92-66 of 12 February
+  1992 where it applies. Amendments of 1993 to 2020 were not exhaustively
+  searched: the Journal officiel issues of 1993 to 1999 are image scans, so a
+  later change these lists miss is possible.
+- **66 not graded** (`status` null): the data is unchanged and carries no
+  grade. 13 are the dairas of Algiers, which texts of 1997 to 2000 reorganized
+  and this audit did not read; 43 more disagree with the 1991 table with no
+  amending text found; 10 agree with it only through a weak name match.
+
+`name_ar` is read from the Arabic table of 26-253 or 21-198 where it prints
+the seat as our commune record spells it (193 rows), and is otherwise the
+Arabic name of the commune the daira is named after (301 rows). 16 of those 301
+are 21-198 rows whose Arabic table spells the seat another way, such as
+تامنغست for تمنراست; the audit lists them and changes no name. `name_ar` stays
+null on the 56 disagreeing dairas and on Daia Ben Dahoua (474), whose French
+name is spelled differently from its only commune, Dhayet Bendhahoua. The audit,
+its sources and their PDF SHA-256 sums are in
+[`research/_daira-audit/`](../../../research/_daira-audit/).
 
 ### Counts are derived, never typed
 

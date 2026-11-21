@@ -50,7 +50,9 @@ pnpm install
 ```
 
 Node **20.19+ or 22.12+** for the toolchain: `pnpm validate` bundles with Vite,
-which requires it. The published packages themselves still run on Node 18.
+which requires it. The published packages themselves still run on Node 18,
+except `search()` in `geoalgeria`, which loads the `@geoalgeria/normalize` ES
+module with `require()` and so needs Node 20.19+ or 22.12+ (or a bundler).
 
 ### 2. Make your change
 

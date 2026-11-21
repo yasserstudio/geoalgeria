@@ -278,6 +278,34 @@ declare namespace algeriaGeodata {
     wilayas: PhoneCodeProvenanceEntry[];
   }
 
+  /** The Journal officiel text a daira's commune list was checked against. */
+  export interface DairaAuditCitation {
+    /** `decret-26-253` or `decret-21-198` for `decree_table`; `decret-91-306` for
+     *  `agrees_1991`; `decret-92-66` only under `amended_by`. */
+    source: "decret-26-253" | "decret-21-198" | "decret-91-306" | "decret-92-66";
+    decree: string;
+    journal_officiel: string;
+    /** The article and the wilaya table, e.g. "Annexe, tableau de la wilaya 02". */
+    article: string;
+    /** The Journal officiel page, or a range such as "1293-1294". */
+    page: string;
+    /** The PDF on joradp.dz; for 26-253 the Arabic edition the page refers to. */
+    url: string;
+    url_ar?: string;
+    /** Décret exécutif 92-66, on the 1991 rows it re-tabled. */
+    amended_by?: DairaAuditCitation;
+  }
+
+  /** How far a daira's commune list has been checked against the Journal officiel. */
+  export interface DairaAudit {
+    /** `decree_table`: read from a whole-wilaya table of 26-253 (2026) or 21-198 (2021).
+     *  `agrees_1991`: agrees with 91-306 (1991), as amended by 92-66 where it applies;
+     *  amendments of 1993 to 2020 were not exhaustively searched.
+     *  `null`: not graded; the communes are unchanged. */
+    status: "decree_table" | "agrees_1991" | null;
+    citation: DairaAuditCitation | null;
+  }
+
   /** One citation in the Wilaya lineage: a key of `metadata.sources` and the
    *  article it points at. */
   export interface WilayaLineageCitation {
@@ -357,6 +385,48 @@ declare namespace algeriaGeodata {
     wilaya_code: number;
     name_fr: string;
     commune_count: number;
+    /** `null` where no source was read (57 rows, all of Algiers among them). */
+    name_ar: string | null;
+    /** Where `name_ar` comes from: the Arabic table of decree 26-253 or 21-198, or
+     *  the `name_ar` of the seat commune the daira is named after. `null` exactly
+     *  when `name_ar` is. */
+    name_ar_source: "decree_26_253_ar" | "decree_21_198_ar" | "seat_commune" | null;
+    audit: DairaAudit;
+  }
+
+  /** The kinds of record `search` returns. */
+  export type SearchType = "wilaya" | "daira" | "commune";
+
+  /** What a query and a name amount to, decided from their Search keys by
+   *  `@geoalgeria/normalize`: equal Conservative keys, a prefix of the name at a
+   *  word boundary, or either of those by the Loose keys only. */
+  export type SearchMatch = "exact" | "prefix" | "loose";
+
+  export interface SearchOptions {
+    /** At most this many results. Default 10. */
+    limit?: number;
+    /** Only these kinds of record. Default all three. An unknown type throws a
+     *  `TypeError`. */
+    types?: SearchType[];
+  }
+
+  /** One `search` result. Results come ranked: `exact`, then `prefix`, then
+   *  `loose`; a Wilaya before a Daira before a Commune of the same Match class;
+   *  then in name order. */
+  export interface SearchResult {
+    type: SearchType;
+    /** The Wilaya's `code`, the Daira's `id` or the Commune's `code_commune`. */
+    code: number;
+    /** The current name, even when a Former name made the match. */
+    name_fr: string;
+    /** `null` on a Daira, whose rows carry no Arabic name yet. */
+    name_ar: string | null;
+    /** The Wilaya the record is in; a Wilaya's own code for a Wilaya. */
+    wilaya_code: number;
+    match: SearchMatch;
+    /** `"former"` when only a Former name from `nameHistory` made the match;
+     *  absent when a current name did. */
+    matched?: "former";
   }
 
   export interface CommuneEcommerce {
@@ -497,6 +567,11 @@ declare const algeriaGeodata: {
   getCommunesByWilaya(wilayaCode: number): algeriaGeodata.Commune[];
   getDairasByWilaya(wilayaCode: number): algeriaGeodata.Daira[];
   findCommune(name: string): algeriaGeodata.Commune[];
+  /** Ranked Wilayas, Dairas and Communes for a query, with Arabic harakat, alef
+   *  and hamza variants and Latin accents folded. An empty query returns `[]`.
+   *  Needs Node 20.19+ or 22.12+ (it loads the `@geoalgeria/normalize` ES module)
+   *  or a bundler. */
+  search(query: string, options?: algeriaGeodata.SearchOptions): algeriaGeodata.SearchResult[];
   findByPostalCode(postalCode: string): algeriaGeodata.Commune[];
   getPostOfficesByCommune(codeCommune: number | string): algeriaGeodata.PostOffice[];
 };
