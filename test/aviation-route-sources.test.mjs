@@ -168,3 +168,56 @@ test("Beirut does not cite the 20 Jun 2026 Delhi and Shanghai report", () => {
   assert.ok(bey.sources.length > 0);
   assert.ok(!bey.sources.includes(url), "alg-bey still cites the Delhi report");
 });
+
+test("the 2026-11-21 Flightradar24 pass ships each leg operating on its own history", () => {
+  // Section 36: a dated Landed row in the flight's own history is first-flight
+  // evidence. The history is `source`; whatever the row stood on before stays
+  // behind it. Days are each leg's own observed nights, never mirrored.
+  const fr24 = (n) => `https://www.flightradar24.com/data/flights/${n}`;
+  const wiki = (a) => `https://en.wikipedia.org/wiki/${a}`;
+  const want = {
+    "alg-ndj": { flight: "AH 5370", days: ["wed", "sat"],
+      sources: [fr24("ah5370"), "https://www.aeroroutes.com/eng/260622-ahnw267m8"] },
+    "ndj-alg": { flight: "AH 5371", days: ["thu", "sun"], sources: [fr24("ah5371")] },
+    "aae-jed": { flight: "AH 486", days: ["mon", "wed"], sources: [fr24("ah486")] },
+    "alg-bod": { flight: "AH 1190", days: null, sources: [fr24("ah1190")] },
+    // Both Strasbourg legs: the airport's announcement follows each history.
+    // Its mon/thu was the launch schedule; the histories show tue/sat now.
+    "alg-sxb": { flight: "AH 1452", days: ["tue", "sat"],
+      sources: [fr24("ah1452"), "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"] },
+    "sxb-alg": { flight: "AH 1453", days: ["tue", "sat"],
+      sources: [fr24("ah1453"), "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"] },
+    "czl-ist": { flight: "AH 3022", days: ["mon", "tue", "thu", "fri", "sat"],
+      sources: [fr24("ah3022"), wiki("Mohamed_Boudiaf_International_Airport")] },
+    "cfk-mrs": { flight: "AH 1136", days: ["wed", "sat"],
+      sources: [fr24("ah1136"), wiki("Chlef_International_Airport")] },
+    "qsf-ory": { flight: "AH 1108", days: ["tue", "sat", "sun"],
+      sources: [fr24("ah1108"), wiki("Ain_Arnat_Airport")] },
+    "qsf-cdg": { flight: "AH 1108", days: ["mon"], sources: [fr24("ah1108")] },
+    "orn-cdg": { flight: "AH 1084", days: ["mon", "tue", "wed", "thu", "sat", "sun"],
+      sources: [fr24("ah1084")] },
+    "orn-lil": { flight: "AH 1078", days: ["mon", "wed", "sat"],
+      sources: [fr24("ah1078"), wiki("Ahmed_Ben_Bella_Airport")] },
+    "czl-nce": { flight: "AH 1198", days: ["mon", "thu", "sat"],
+      sources: [fr24("ah1198"), wiki("Mohamed_Boudiaf_International_Airport")] },
+  };
+  for (const [id, { flight, days, sources }] of Object.entries(want)) {
+    const r = routes.find((x) => x.id === id);
+    assert.ok(r, `${id} is missing`);
+    assert.equal(r.carrier, "AH");
+    assert.equal(r.status, "active", id);
+    assert.equal(r.evidence, "verified", id);
+    assert.equal(r.planned, false, `${id}: it has flown, so it is not planned`);
+    assert.equal(r.flight, flight, id);
+    assert.deepEqual(r.days, days, id);
+    assert.deepEqual(r.sources, sources, id);
+  }
+  // AH 486's Algiers to Jeddah sector of 21 Nov was only Scheduled, which is
+  // not a Landed row, so it adds no `alg-jed`.
+  assert.ok(!routes.some((r) => r.id === "alg-jed" && r.carrier === "AH"));
+  // AH 5370 continues via N'Djamena, so it is no evidence for a nonstop
+  // Addis Ababa leg, and alg-add keeps the listing it had.
+  const add = routes.find((r) => r.id === "alg-add");
+  assert.equal(add.evidence, "listed");
+  assert.ok(!add.sources.some((u) => u.startsWith("https://www.flightradar24.com/")));
+});
