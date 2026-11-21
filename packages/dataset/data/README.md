@@ -213,7 +213,7 @@ all eleven wilayas of the 2026 cohort (59–69). See
 | `commune_count` | integer | Number of communes in this daira |
 | `name_ar` | string \| null | Arabic name; null on 57 rows (see the audit below) |
 | `name_ar_source` | string \| null | `decree_26_253_ar` or `decree_21_198_ar` (read from that decree's Arabic table), `seat_commune` (the `name_ar` of the commune the daira is named after); null exactly when `name_ar` is |
-| `audit.status` | string \| null | `decree_table`, `agrees_1991`, or null for not yet audited |
+| `audit.status` | string \| null | `decree_table`, `agrees_1991`, or null for not graded |
 | `audit.citation` | object \| null | `source`, `decree`, `journal_officiel`, `article` (with the wilaya table), `page`, `url` on joradp.dz, optional `url_ar`, and on 1991 rows that décret exécutif 92-66 re-tabled, `amended_by` in the same shape; null when `status` is null |
 
 A commune names its daira by this `name_fr`, in every carrier that repeats the
@@ -250,15 +250,18 @@ membership and no name: it only says how far each list has been checked.
   1992 where it applies. Amendments of 1993 to 2020 were not exhaustively
   searched: the Journal officiel issues of 1993 to 1999 are image scans, so a
   later change these lists miss is possible.
-- **66 not yet audited** (`status` null): the data is unchanged and carries no
-  grade. 56 disagree with the 1991 table with no amending text found, among
-  them all 13 dairas of Algiers, which texts of 1997 to 2000 reorganized and
-  this audit did not read; 10 agree with it only through a weak name match.
+- **66 not graded** (`status` null): the data is unchanged and carries no
+  grade. 13 are the dairas of Algiers, which texts of 1997 to 2000 reorganized
+  and this audit did not read; 43 more disagree with the 1991 table with no
+  amending text found; 10 agree with it only through a weak name match.
 
-`name_ar` is read from the Arabic table of 26-253 or 21-198 where that table
-was read (193 rows), and is otherwise the Arabic name of the commune the daira
-is named after (301 rows). It stays null on the 56 disagreeing dairas and on
-Daia Ben Dahoua (474), which is not named after a member commune. The audit,
+`name_ar` is read from the Arabic table of 26-253 or 21-198 where it prints
+the seat as our commune record spells it (193 rows), and is otherwise the
+Arabic name of the commune the daira is named after (301 rows). 16 of those 301
+are 21-198 rows whose Arabic table spells the seat another way, such as
+تامنغست for تمنراست; the audit lists them and changes no name. `name_ar` stays
+null on the 56 disagreeing dairas and on Daia Ben Dahoua (474), whose French
+name is spelled differently from its only commune, Dhayet Bendhahoua. The audit,
 its sources and their PDF SHA-256 sums are in
 [`research/_daira-audit/`](../../../research/_daira-audit/).
 

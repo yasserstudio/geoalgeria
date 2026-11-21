@@ -33,7 +33,7 @@ test("each status holds the count the Owner signed off", () => {
   assert.equal(count("decree_table"), 210);
   assert.equal(count("agrees_1991"), 275);
   assert.equal(count(null), 66);
-  assert.deepEqual(research.counts, { decree_table: 210, agrees_1991: 275, open: 66 });
+  assert.deepEqual(research.counts, { decree_table: 210, agrees_1991: 275, not_graded: 66 });
 });
 
 test("every graded daira cites a decree, article, page and joradp.dz URL", () => {
@@ -110,11 +110,32 @@ test("Algiers and the weak 1991 matches carry no grade", () => {
   const algiers = dairas.filter((row) => row.wilaya_code === 16);
   assert.equal(algiers.length, 13);
   for (const row of algiers) assert.equal(row.audit.status, null, `daira ${row.id}`);
-  for (const id of [158, 161, 170, 306]) {
+  // A 1991 agreement that rests on a weak name match or a cell spill ships
+  // ungraded, each with the reading that made it weak.
+  const weak = research.dairas.filter((row) => row.open_detail).map((row) => row.id);
+  assert.deepEqual(weak, [108, 158, 161, 164, 170, 171, 206, 306, 322, 359]);
+  for (const id of weak) {
     assert.equal(dairas.find((row) => row.id === id).audit.status, null, `daira ${id}`);
   }
   for (const row of research.dairas) {
     if (row.status === null) assert.ok(row.open_reason, `daira ${row.id} is open with no reason`);
+  }
+});
+
+test("the docs state the counts the data holds", () => {
+  const count = (status) => String(dairas.filter((row) => row.audit.status === status).length);
+  const [graded, agrees, open] = [count("decree_table"), count("agrees_1991"), count(null)];
+  const docs = [
+    "packages/dataset/README.md",
+    "packages/dataset/README.fr.md",
+    "packages/dataset/README.ar.md",
+    "packages/dataset/data/README.md",
+    "packages/dataset/llms.txt",
+    "research/_daira-audit/README.md",
+  ];
+  for (const doc of docs) {
+    const text = readFileSync(join(ROOT, doc), "utf8");
+    for (const n of [graded, agrees, open]) assert.match(text, new RegExp(`(^|\\D)${n}(\\D|$)`), `${doc} lacks ${n}`);
   }
 });
 

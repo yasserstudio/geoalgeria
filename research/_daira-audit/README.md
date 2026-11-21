@@ -16,7 +16,7 @@ commit it read, and the script refuses to grade a row whose communes moved.
 |---|---:|---|
 | `decree_table` | 210 | Read from a whole-wilaya table of the latest decree that tabulates the wilaya: 142 from 26-253 (2026), 68 from 21-198 (2021) |
 | `agrees_1991` | 275 | Agrees with the 91-306 table (1991), as amended by 92-66 (1992) where it applies; 8 of them cite 92-66 under `amended_by` |
-| `null` | 66 | Not yet audited; the data is unchanged and carries no grade |
+| `null` | 66 | Not graded; the data is unchanged |
 
 The 66 open rows each carry an `open_reason` in `daira-audit.json`:
 
@@ -30,8 +30,9 @@ The 66 open rows each carry an `open_reason` in `daira-audit.json`:
   reading error.
 - **10 weak matches** (ids 108, 158, 161, 164, 170, 171, 206, 306, 322, 359):
   the 1991 table agrees only through a weak name match or a reading that ran
-  into the next daira's cell, so the agreement is not graded. Each keeps the
-  citation it would have had in `replay_citation`.
+  into the next daira's cell, so the agreement is not graded. `open_detail`
+  names that reading for each, and `replay_citation` keeps the citation it
+  would have had.
 
 ## Sources
 
@@ -63,12 +64,19 @@ which re-tabled three of its dairas in 2025 and which 26-253 supersedes.
 
 ## name_ar
 
-`name_ar` comes from the decree's Arabic table where it was read
-(`decree_26_253_ar`, 142 rows; `decree_21_198_ar`, 51 rows), otherwise from the
-`name_ar` of the seat commune the daira is named after (`seat_commune`, 301
-rows). In every case it equals that commune's own `name_ar`. It is null on the
-56 disagreeing dairas and on Daia Ben Dahoua (474), which is not named after a
-member commune.
+`name_ar` comes from the decree's Arabic table where it prints the seat as our
+commune record spells it (`decree_26_253_ar`, 142 rows; `decree_21_198_ar`, 51
+rows), otherwise from the `name_ar` of the seat commune the daira is named
+after (`seat_commune`, 301 rows). In every case it equals that commune's own
+`name_ar`. It is null on the 56 disagreeing dairas and on Daia Ben Dahoua
+(474), kept null because its French name is spelled differently from its only
+commune, Dhayet Bendhahoua (4703).
+
+16 of the `seat_commune` rows are 21-198 rows whose Arabic table spells the
+seat another way (`name_ar_decree_spelling`): for six the text layer gives the
+printed form, such as تامنغست (112) for تمنراست and إن صالح (507) for عين صالح;
+for the other ten it did not yield one. Which spelling the dataset carries is
+an open question; no name was changed.
 
 Two member communes print differently in the Arabic tables than in our commune
 records (`name_ar_mismatches`): Sidi Abdelli (1334) and Sidi Abderrahmane

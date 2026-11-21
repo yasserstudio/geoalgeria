@@ -5,12 +5,12 @@
   "statuses": {
     "decree_table": "The daira and its communes are read from a whole-wilaya table of décret exécutif 26-253 (2026) or 21-198 (2021), the latest text that tabulates its wilaya.",
     "agrees_1991": "The communes agree with the table of décret exécutif 91-306 (1991), as amended by 92-66 (1992) where it applies. Amendments between 1993 and 2020 were not exhaustively searched.",
-    "null": "Not yet audited: the data is unchanged and carries no grade. open_reason says why."
+    "null": "Not graded: the data is unchanged and carries no grade. open_reason says why."
   },
   "counts": {
     "decree_table": 210,
     "agrees_1991": 275,
-    "open": 66
+    "not_graded": 66
   },
   "sources": [
     {
@@ -334,6 +334,137 @@
       "decree_seat_name_fr": "El-M'ghaier"
     }
   ],
+  "name_ar_decree_spelling": [
+    {
+      "id": 84,
+      "wilaya_code": 8,
+      "name_fr": "Kenadsa",
+      "name_ar": "القنادسة",
+      "seat_commune_code": 810,
+      "decree_text_ar": null
+    },
+    {
+      "id": 85,
+      "wilaya_code": 8,
+      "name_fr": "Lahmar",
+      "name_ar": "لحمر",
+      "seat_commune_code": 806,
+      "decree_text_ar": null
+    },
+    {
+      "id": 111,
+      "wilaya_code": 11,
+      "name_fr": "Abalessa",
+      "name_ar": "ابلسة",
+      "seat_commune_code": 1102,
+      "decree_text_ar": null
+    },
+    {
+      "id": 112,
+      "wilaya_code": 11,
+      "name_fr": "Tamanrasset",
+      "name_ar": "تمنراست",
+      "seat_commune_code": 1101,
+      "decree_text_ar": "تامنغست"
+    },
+    {
+      "id": 334,
+      "wilaya_code": 30,
+      "name_fr": "N'Goussa",
+      "name_ar": "انقوسة",
+      "seat_commune_code": 3003,
+      "decree_text_ar": null
+    },
+    {
+      "id": 354,
+      "wilaya_code": 33,
+      "name_fr": "Illizi",
+      "name_ar": "إليزي",
+      "seat_commune_code": 3301,
+      "decree_text_ar": null
+    },
+    {
+      "id": 355,
+      "wilaya_code": 33,
+      "name_fr": "In Amenas",
+      "name_ar": "إن أمناس",
+      "seat_commune_code": 3306,
+      "decree_text_ar": null
+    },
+    {
+      "id": 397,
+      "wilaya_code": 39,
+      "name_fr": "Mih Ouansa",
+      "name_ar": "اميه وانسة",
+      "seat_commune_code": 3926,
+      "decree_text_ar": null
+    },
+    {
+      "id": 399,
+      "wilaya_code": 39,
+      "name_fr": "Robbah",
+      "name_ar": "الرباح",
+      "seat_commune_code": 3902,
+      "decree_text_ar": null
+    },
+    {
+      "id": 400,
+      "wilaya_code": 39,
+      "name_fr": "Taleb Larbi",
+      "name_ar": "الطالب العربي",
+      "seat_commune_code": 3914,
+      "decree_text_ar": null
+    },
+    {
+      "id": 496,
+      "wilaya_code": 49,
+      "name_fr": "Tinerkouk",
+      "name_ar": "تنركوك",
+      "seat_commune_code": 4905,
+      "decree_text_ar": "تينركوك"
+    },
+    {
+      "id": 502,
+      "wilaya_code": 52,
+      "name_fr": "El Ouata",
+      "name_ar": "الواتة",
+      "seat_commune_code": 5207,
+      "decree_text_ar": "الوطاء"
+    },
+    {
+      "id": 506,
+      "wilaya_code": 53,
+      "name_fr": "In Ghar",
+      "name_ar": "إينغر",
+      "seat_commune_code": 5302,
+      "decree_text_ar": "إن غار"
+    },
+    {
+      "id": 507,
+      "wilaya_code": 53,
+      "name_fr": "In Salah",
+      "name_ar": "عين صالح",
+      "seat_commune_code": 5301,
+      "decree_text_ar": "إن صالح"
+    },
+    {
+      "id": 508,
+      "wilaya_code": 54,
+      "name_fr": "In Guezzam",
+      "name_ar": "عين قزام",
+      "seat_commune_code": 5401,
+      "decree_text_ar": "إن قزام"
+    },
+    {
+      "id": 515,
+      "wilaya_code": 55,
+      "name_fr": "Touggourt",
+      "name_ar": "تقرت",
+      "seat_commune_code": 5501,
+      "decree_text_ar": null
+    }
+  ],
+  "name_ar_decree_spelling_note": "decree_table rows of 21-198 where the Arabic edition prints the seat differently from the commune record, so name_ar is the commune's own (name_ar_source seat_commune). decree_text_ar is the text layer of A2021038.pdf, pp. 10-11, where the seat was found in it as printed; null where the text layer did not yield it. Which spelling the dataset should carry is an open question; no name was changed.",
   "dairas": [
     {
       "id": 1,
@@ -2333,7 +2464,10 @@
         "source": "decret-91-306",
         "article": "Annexe, tableau de la wilaya 10",
         "page": "1298-1299"
-      }
+      },
+      "open_detail": [
+        "weak name match (score 0.5 to 0.8): \"Taourirt\" read as commune 1043"
+      ]
     },
     {
       "id": 109,
@@ -3274,7 +3408,10 @@
         "source": "decret-91-306",
         "article": "Annexe, tableau de la wilaya 15",
         "page": "1301-1302"
-      }
+      },
+      "open_detail": [
+        "the reading ran into the next daira's cell"
+      ]
     },
     {
       "id": 159,
@@ -3335,7 +3472,10 @@
         "source": "decret-91-306",
         "article": "Annexe, tableau de la wilaya 15",
         "page": "1301-1302"
-      }
+      },
+      "open_detail": [
+        "the reading ran into the next daira's cell"
+      ]
     },
     {
       "id": 162,
@@ -3396,7 +3536,10 @@
         "source": "decret-91-306",
         "article": "Annexe, tableau de la wilaya 15",
         "page": "1301-1302"
-      }
+      },
+      "open_detail": [
+        "weak name match (score 0.5 to 0.8): \"Milten\" read as commune 1533"
+      ]
     },
     {
       "id": 165,
@@ -3516,7 +3659,10 @@
         "source": "decret-91-306",
         "article": "Annexe, tableau de la wilaya 15",
         "page": "1301-1302"
-      }
+      },
+      "open_detail": [
+        "the reading ran into the next daira's cell"
+      ]
     },
     {
       "id": 171,
@@ -3537,7 +3683,10 @@
         "source": "decret-91-306",
         "article": "Annexe, tableau de la wilaya 15",
         "page": "1301-1302"
-      }
+      },
+      "open_detail": [
+        "weak name match (score 0.5 to 0.8): \"Djebel Aïssa Mimoun\" read as commune 1539"
+      ]
     },
     {
       "id": 173,
@@ -4160,7 +4309,10 @@
         "source": "decret-91-306",
         "article": "Annexe, tableau de la wilaya 18",
         "page": "1303"
-      }
+      },
+      "open_detail": [
+        "weak name match (score 0.5 to 0.8): \"Erraguène\" read as commune 1802"
+      ]
     },
     {
       "id": 207,
@@ -5987,7 +6139,10 @@
         "source": "decret-91-306",
         "article": "Annexe, tableau de la wilaya 27",
         "page": "1308-1309"
-      }
+      },
+      "open_detail": [
+        "the reading ran into the next daira's cell"
+      ]
     },
     {
       "id": 307,
@@ -6296,7 +6451,10 @@
         "source": "decret-91-306",
         "article": "Annexe, tableau de la wilaya 29",
         "page": "1310"
-      }
+      },
+      "open_detail": [
+        "weak name match (score 0.5 to 0.8): \"Rachem\" read as commune 2907"
+      ]
     },
     {
       "id": 323,
@@ -6964,7 +7122,10 @@
         "source": "decret-91-306",
         "article": "Annexe, tableau de la wilaya 34",
         "page": "1312"
-      }
+      },
+      "open_detail": [
+        "weak name match (score 0.5 to 0.8): \"El Anceur\" read as commune 3428"
+      ]
     },
     {
       "id": 360,
@@ -9051,7 +9212,7 @@
       "name_ar": null,
       "name_ar_source": null,
       "seat_commune_code": 4703,
-      "name_ar_note": "Not named after a member commune (its seat is Dhayet Bendhahoua), so no Arabic name is taken from a commune."
+      "name_ar_note": "Kept null by the Owner's decision: the daira's French name (Daia Ben Dahoua) is spelled differently from its only commune, Dhayet Bendhahoua (4703), so no Arabic name is taken from it."
     },
     {
       "id": 475,

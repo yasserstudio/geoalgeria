@@ -184,7 +184,7 @@ def validate_daira_audit(i, d):
     status, citation = audit.get("status"), audit.get("citation")
     if status is None:
         if citation is not None:
-            error(f"{label}: a daira not yet audited carries no citation")
+            error(f"{label}: a daira with no grade carries no citation")
         if source not in (None, "seat_commune"):
             error(f"{label}: name_ar_source {source!r} needs a decree_table grade")
         return

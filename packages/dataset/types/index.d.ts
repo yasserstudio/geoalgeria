@@ -290,7 +290,7 @@ declare namespace algeriaGeodata {
     /** `decree_table`: read from a whole-wilaya table of 26-253 (2026) or 21-198 (2021).
      *  `agrees_1991`: agrees with 91-306 (1991), as amended by 92-66 where it applies;
      *  amendments of 1993 to 2020 were not exhaustively searched.
-     *  `null`: not yet audited; the communes are unchanged and carry no grade. */
+     *  `null`: not graded; the communes are unchanged. */
     status: "decree_table" | "agrees_1991" | null;
     citation: DairaAuditCitation | null;
   }

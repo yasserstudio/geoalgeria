@@ -15,6 +15,8 @@ import { readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { canonicalCommunes } from "./lib/commune-index.mjs";
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
 const RESEARCH = join(ROOT, "research", "_daira-audit", "daira-audit.json");
@@ -28,11 +30,8 @@ const research = readJson(RESEARCH);
 const sourceByKey = new Map(research.sources.map((source) => [source.key, source]));
 const auditById = new Map(research.dairas.map((row) => [row.id, row]));
 
-const communes = ["communes_w1_w23.json", "communes_w24_w48.json", "communes_w49_w69.json"].flatMap((file) =>
-  readJson(join(DATA, file)),
-);
 const membersOf = (row) =>
-  communes
+  canonicalCommunes
     .filter((commune) => commune.wilaya_code === row.wilaya_code && commune.daira === row.name_fr)
     .map((commune) => commune.code_commune)
     .sort((a, b) => a - b);
@@ -94,7 +93,7 @@ const drifts = readFileSync(dairasPath, "utf8") !== content;
 const tally = (status) => next.filter((row) => row.audit.status === status).length;
 console.log(
   `${next.length} dairas: ${tally("decree_table")} decree_table, ${tally("agrees_1991")} agrees_1991, ` +
-    `${tally(null)} not yet audited; dairas.json ${drifts ? (WRITE ? "updated" : "needs an update") : "up to date"}`,
+    `${tally(null)} not graded; dairas.json ${drifts ? (WRITE ? "updated" : "needs an update") : "up to date"}`,
 );
 if (WRITE && drifts) {
   const tmp = `${dairasPath}.${process.pid}.tmp`;
