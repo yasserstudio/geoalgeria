@@ -165,7 +165,7 @@ async function umbrellaLeg(work) {
       format,
       cwd: tmpdir(),
     });
-    expect(label, report, { wilayas: 69, communes: 1541, alger: "Alger", search: "wilaya:30:exact,commune:3001:exact" }, [
+    expect(label, report, { wilayas: 69, communes: 1541, alger: "Alger", search: "wilaya:30:exact,daira:335:exact" }, [
       "dairas",
       "postOffices",
       "atms",

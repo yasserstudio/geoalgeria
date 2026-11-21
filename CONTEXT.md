@@ -22,6 +22,17 @@ keep their decree 91-306 lists, so the national total is the dataset's count,
 never stated as official.
 _Avoid_: district, sub-prefecture, arrondissement
 
+**Daira audit**:
+How far a Daira's commune list has been checked against the Journal officiel,
+stored as `audit.status` in `dairas.json`: `decree_table` (read from a
+whole-wilaya table of decree 26-253 or 21-198), `agrees_1991` (agrees with
+decree 91-306 as amended by 92-66; later amendments not exhaustively searched),
+or null, not graded. A graded Daira's citation names one Journal officiel text
+with its article, page and joradp.dz PDF (a different shape from a Route's
+**Citation**, which is a url only). The audit grades a list and never changes it: a disagreement is
+left open, not fixed.
+_Avoid_: verified (for `agrees_1991`), confidence, quality score
+
 **Commune**:
 The smallest administrative unit (municipality); the level a postal code resolves to.
 _Avoid_: municipality, baladiya, town

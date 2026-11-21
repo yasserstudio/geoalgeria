@@ -152,6 +152,57 @@ def validate_dairas(data, wilaya_codes):
         ids.add(d.get("id"))
         if d.get("wilaya_code") not in wilaya_codes:
             error(f"dairas[{i}]: unknown wilaya_code {d.get('wilaya_code')}")
+        validate_daira_audit(i, d)
+
+
+# The daira audit (geoalgeria.com#360): scripts/apply-daira-audit.mjs writes it.
+DAIRA_AUDIT_STATUSES = {"decree_table": {"decret-26-253", "decret-21-198"}, "agrees_1991": {"decret-91-306"}}
+DAIRA_NAME_AR_SOURCES = {"decree_26_253_ar", "decree_21_198_ar", "seat_commune"}
+JORADP_URL = re.compile(r"^https://www\.joradp\.dz/FTP/(jo-francais|JO-ARABE)/\d{4}/[AF]\d{7}\.pdf$")
+
+
+def validate_daira_citation(label, citation):
+    for field in ("source", "decree", "journal_officiel", "article", "page", "url"):
+        if not citation.get(field):
+            error(f"{label}: citation has no {field}")
+    for field in ("url", "url_ar"):
+        if field in citation and not JORADP_URL.match(str(citation[field])):
+            error(f"{label}: citation {field} is not a joradp.dz Journal officiel PDF")
+
+
+def validate_daira_audit(i, d):
+    label = f"dairas[{i}] (id {d.get('id')})"
+    name_ar, source = d.get("name_ar"), d.get("name_ar_source")
+    if (name_ar is None) != (source is None):
+        error(f"{label}: name_ar and name_ar_source must be set together")
+    if source is not None and source not in DAIRA_NAME_AR_SOURCES:
+        error(f"{label}: unknown name_ar_source {source!r}")
+    audit = d.get("audit")
+    if not isinstance(audit, dict):
+        error(f"{label}: missing audit object")
+        return
+    status, citation = audit.get("status"), audit.get("citation")
+    if status is None:
+        if citation is not None:
+            error(f"{label}: a daira with no grade carries no citation")
+        if source not in (None, "seat_commune"):
+            error(f"{label}: name_ar_source {source!r} needs a decree_table grade")
+        return
+    if status not in DAIRA_AUDIT_STATUSES:
+        error(f"{label}: unknown audit status {status!r}")
+        return
+    if not isinstance(citation, dict):
+        error(f"{label}: audit status {status} needs a citation")
+        return
+    validate_daira_citation(label, citation)
+    if citation.get("source") not in DAIRA_AUDIT_STATUSES[status]:
+        error(f"{label}: {status} cannot cite {citation.get('source')}")
+    if source in ("decree_26_253_ar", "decree_21_198_ar") and status != "decree_table":
+        error(f"{label}: name_ar_source {source} needs a decree_table grade")
+    if "amended_by" in citation:
+        if status != "agrees_1991" or citation["amended_by"].get("source") != "decret-92-66":
+            error(f"{label}: only a 1991 grade is amended, by decret-92-66")
+        validate_daira_citation(f"{label} amended_by", citation["amended_by"])
 
 
 def validate_ecommerce(data, total_communes):
