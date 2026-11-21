@@ -73,8 +73,8 @@ dz.wilayas;                    // all 69 wilayas
 dz.communes;                   // all 1,541 communes
 dz.dairas;                     // all 551 dairas
 dz.ecommerce;                  // flat dataset for address forms
-dz.postOffices;                // 3,908 Algérie Poste offices
-dz.atms;                       // 2,026 ATMs
+dz.postOffices;                // 3,907 Algérie Poste offices
+dz.atms;                       // 2,023 ATMs
 dz.wilayaLineage;              // each wilaya's code on the 58- and 48-wilaya maps
 
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
@@ -82,6 +82,7 @@ dz.getCommunesByWilaya(16);    // 57 communes in Algiers
 dz.getDairasByWilaya(16);      // dairas in Algiers
 dz.findCommune('Oran');        // search by name (FR or AR, Former names too)
 dz.search('ورقلة');            // ranked Wilayas, Dairas, Communes (Node 20.19+ or a bundler)
+dz.dairas.find(d => d.id === 515).audit.status; // "decree_table": Touggourt's communes read from a decree
 dz.findByPostalCode('16000');  // lookup by postal code
 dz.getPostOfficesByCommune(1731); // post offices in a commune (by code_commune)
 ```
@@ -173,8 +174,8 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/ecommerce/communes.csv` | CSV | 1,541 | Flat import |
 | `data/ecommerce/communes.sql` | SQL | 1,541 | Single-table database |
 | `data/delivery/*.json` | JSON | 69 per provider | Shipping zone calculation |
-| `data/poste/postoffices.json` | JSON | 3,908 | Post offices (real codes, coords) |
-| `data/poste/atms.json` | JSON | 2,026 | ATM locations |
+| `data/poste/postoffices.json` | JSON | 3,907 | Post offices (real codes, coords) |
+| `data/poste/atms.json` | JSON | 2,023 | ATM locations |
 | `data/poste/csv/*`, `data/poste/geojson/*` | CSV/GeoJSON | – | Postal data for spreadsheets / maps |
 
 > To map one wilaya, load only its file, for example Algiers: `https://cdn.jsdelivr.net/npm/geoalgeria/data/geojson/commune-boundaries/16.geojson`. Each file holds the national file's features for that wilaya, unchanged.

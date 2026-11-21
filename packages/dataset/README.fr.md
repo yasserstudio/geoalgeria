@@ -73,14 +73,16 @@ dz.wilayas;                    // les 69 wilayas
 dz.communes;                   // les 1 541 communes
 dz.dairas;                     // les 551 daïras
 dz.ecommerce;                  // jeu de données plat pour formulaires d'adresse
-dz.postOffices;                // 3 908 bureaux Algérie Poste
-dz.atms;                       // 2 026 distributeurs automatiques
+dz.postOffices;                // 3 907 bureaux Algérie Poste
+dz.atms;                       // 2 023 distributeurs automatiques
 dz.wilayaLineage;              // le code de chaque wilaya sur les cartes à 58 et à 48 wilayas
 
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
 dz.getCommunesByWilaya(16);    // 57 communes à Alger
 dz.getDairasByWilaya(16);      // daïras d'Alger
-dz.findCommune('Oran');        // recherche par nom (FR ou AR)
+dz.findCommune('Oran');        // recherche par nom (FR ou AR, anciens noms compris)
+dz.search('ورقلة');            // wilayas, daïras, communes classées (Node 20.19+ ou un bundler)
+dz.dairas.find(d => d.id === 515).audit.status; // "decree_table" : communes de Touggourt lues dans un décret
 dz.findByPostalCode('16000');  // recherche par code postal
 dz.getPostOfficesByCommune(1731); // bureaux de poste d'une commune (par code_commune)
 ```
@@ -172,8 +174,8 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 | `data/ecommerce/communes.csv` | CSV | 1 541 | Import plat |
 | `data/ecommerce/communes.sql` | SQL | 1 541 | Base de données mono-table |
 | `data/delivery/*.json` | JSON | 69 par transporteur | Calcul de zones de livraison |
-| `data/poste/postoffices.json` | JSON | 3 908 | Bureaux de poste (codes réels, coordonnées) |
-| `data/poste/atms.json` | JSON | 2 026 | Emplacements des distributeurs |
+| `data/poste/postoffices.json` | JSON | 3 907 | Bureaux de poste (codes réels, coordonnées) |
+| `data/poste/atms.json` | JSON | 2 023 | Emplacements des distributeurs |
 | `data/poste/csv/*`, `data/poste/geojson/*` | CSV/GeoJSON | – | Données postales pour tableurs / cartes |
 
 > Pour cartographier une seule wilaya, chargez uniquement son fichier, par exemple Alger : `https://cdn.jsdelivr.net/npm/geoalgeria/data/geojson/commune-boundaries/16.geojson`. Chaque fichier contient les entités du fichier national pour cette wilaya, sans modification.

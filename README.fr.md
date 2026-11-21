@@ -65,7 +65,35 @@ dz.findByPostalCode("16000");     // → commune, daïra, wilaya
 dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 ```
 
-Dans un bundle (Next.js, Vite, webpack), les dix fichiers JSON sont inclus, les miroirs des bureaux de poste et des DAB compris. Si vous n'avez besoin que d'une partie, importez son fichier seul : `import communes from "geoalgeria/data/ecommerce/communes.json"` dans un bundler, ou avec `with { type: "json" }` sous Node sans bundler. En TypeScript, l'import par défaut demande `esModuleInterop` ; `import dz = require("geoalgeria")` non.
+Dans un bundle (Next.js, Vite, webpack), les onze fichiers JSON sont inclus, les miroirs des bureaux de poste et des DAB compris. Si vous n'avez besoin que d'une partie, importez son fichier seul : `import communes from "geoalgeria/data/ecommerce/communes.json"` dans un bundler, ou avec `with { type: "json" }` sous Node sans bundler. En TypeScript, l'import par défaut demande `esModuleInterop` ; `import dz = require("geoalgeria")` non.
+
+### Recherche, anciens codes de wilaya et daïras
+
+```js
+// Recherche : wilayas, puis daïras, puis communes, en français ou en arabe (Node 20.19+ ou un bundler)
+dz.search("ورقلة");
+// [{ type: "wilaya", code: 30, name_fr: "Ouargla", name_ar: "ورقلة", wilaya_code: 30, match: "exact" },
+//  { type: "daira", code: 335, ... }, { type: "commune", code: 3001, ... }]
+dz.search("bejaia", { types: ["commune"], limit: 5 });
+// [{ type: "commune", code: 601, name_fr: "Bejaia", name_ar: "بجاية", wilaya_code: 6, match: "exact" }]
+
+// Anciens codes : la wilaya de chaque commune sur les cartes à 58 et à 48 wilayas
+const touggourt = dz.communes.find((c) => c.code_commune === 5501);
+touggourt.wilaya_code;     // 55
+touggourt.wilaya_code_58;  // 55
+touggourt.wilaya_code_48;  // 30, Ouargla avant 2019
+dz.wilayaLineage.wilayas;  // les deux anciens codes de chaque wilaya, avec l'article de loi qui les fixe
+
+// Daïras : nom arabe, niveau de vérification de la liste des communes, et ses communes
+const daira = dz.dairas.find((d) => d.id === 515);
+daira.name_ar;         // "تقرت"
+daira.audit.status;    // "decree_table", "agrees_1991", ou null si pas encore classée
+daira.audit.citation;  // décret 21-198 de 2021 : article, page et PDF du Journal officiel
+dz.communes.filter((c) => c.wilaya_code === daira.wilaya_code && c.daira === daira.name_fr);
+// Nezla, Tebesbest, Touggourt, Zaouia El Abidia
+```
+
+Les accents, la casse et les formes de la hamza n'empêchent jamais une correspondance. Le champ `match` de chaque résultat vaut `exact`, `prefix` (le début d'un nom) ou `loose` (ى lu comme ي, ة comme ه), et un ancien nom trouve aussi la fiche, avec `matched: "former"`. Les listes des daïras viennent des décrets du *Journal officiel* ([ADR 0006](docs/adr/0006-dairas-from-the-decrees.md)).
 
 ## Contenu
 
