@@ -8,6 +8,7 @@
   "scripts": {
     "validate": "pnpm --filter ./packages/dataset validate && node scripts/validate-packages.mjs && node scripts/build-catalog.mjs --check && node scripts/pin-core-date.mjs --check && node scripts/build-accuracy-review.mjs --check && node scripts/generate-loaders.mjs --check && node scripts/check-bundlers.mjs && pnpm test",
     "check-bundlers": "node scripts/check-bundlers.mjs",
+    "check:credit": "node scripts/check-contributor-credit.mjs",
     "generate-loaders": "node scripts/generate-loaders.mjs",
     "build-catalog": "node scripts/build-catalog.mjs",
     "pin-core-date": "node scripts/pin-core-date.mjs",

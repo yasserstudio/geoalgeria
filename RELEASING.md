@@ -342,8 +342,14 @@ python build_data.py                     # copies data, LICENSE, NOTICE from pac
 uv run --with pytest --with-editable . pytest -q   # needs Node and a root pnpm install
 # bump version in pyproject.toml and __version__ in src/geoalgeria/__init__.py
 rm -rf dist && uv build
-read -rs "UV_PUBLISH_TOKEN?Token: " && export UV_PUBLISH_TOKEN && uv publish
+UV_PUBLISH_TOKEN=$(tr -d '[:space:]' < ~/.credentials/pypi-geoalgeria-token) uv publish
 ```
+
+The token lives in `~/.credentials/pypi-geoalgeria-token` (project-scoped,
+`chmod 600`); the line above reads it without a prompt, so it also runs from an
+agent shell, which has no tty. PyPI's JSON API lags the upload by minutes:
+verify with an isolated install instead
+(`uv run --isolated --no-cache --with geoalgeria==X.Y.Z python -c "import geoalgeria; print(geoalgeria.__version__)"`).
 
 Between releases, CI's `python` job compares the bundled records and the
 Python `search()` with `packages/`, so a PR that changes wilayas, communes,
@@ -425,17 +431,12 @@ A change from an outside contributor names them in its changeset, as the last
 sentence of the entry: `Contributed by [@handle](https://github.com/handle) in
 [#N](https://github.com/yasserstudio/geoalgeria/pull/N).` The changeset is where
 the credit lives, so it reaches the `CHANGELOG.md`, the GitHub Release and the
-announcement on its own. Before merging the version PR, list the PRs merged
-since the last release and check each author who is not the maintainer or a bot:
-
-```bash
-gh pr list --state merged --search "merged:>=YYYY-MM-DD" --json number,author \
-  --jq '.[] | select(.author.login != "yasserstudio" and (.author.is_bot | not))'
-```
-
-Every one of them is credited in the version PR's changelog text, and every
-promise made in a comment on their PR is kept. geoalgeria 2.5.0 shipped #349
-without it and the credit was added afterwards.
+announcement on its own. The `credit` CI job on the version PR
+(`pnpm check:credit` locally) fails while any merged PR by an author who is not
+the maintainer or a bot has no `#N` in a pending changeset or a package
+`CHANGELOG.md`. What it cannot check: every promise made in a comment on their
+PR is kept, and the GitHub Release carries a thanks line. geoalgeria 2.5.0
+shipped #349 without it and the credit was added afterwards.
 
 Changesets own a package's `CHANGELOG.md`; never hand-write an "## Unreleased"
 section into one. It goes stale under the next generated section instead of
