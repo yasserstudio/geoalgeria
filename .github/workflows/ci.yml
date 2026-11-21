@@ -135,8 +135,11 @@ jobs:
   # results with the npm code itself, so Node and the workspace install come first.
   python:
     name: python (${{ matrix.python-version }})
-    runs-on: ubuntu-latest
+    # ubuntu-latest is 26.04, where setup-python has no 3.9 build; 24.04 still
+    # carries the floor that pyproject.toml promises (requires-python >= 3.9).
+    runs-on: ubuntu-24.04
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.9", "3.14"]
     permissions:
