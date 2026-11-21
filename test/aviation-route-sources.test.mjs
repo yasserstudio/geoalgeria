@@ -125,3 +125,99 @@ test("the statement alone never takes a leg out of plannedRoutes()", () => {
     assert.equal(r.source, flown[r.id], `${r.id}: cite the report of the operation first`);
   }
 });
+
+test("Delhi is planned both ways on the 19 Nov 2026 filing, against section 10", () => {
+  // Owner decision of 2026-11-21 (collection-rules section 37). The 2026 filing
+  // was withdrawn in September, and AeroRoutes' 19 Nov post reports a tentative
+  // relaunch no earlier than 28 Mar 2027 with reservations still closed. That is
+  // below section 10's bar, and the rows ship anyway, as `listed`: the post is
+  // `source` because it is the current plan and the only page stating the flight
+  // numbers and days, the ambassador's 7 Jul announcement follows it, and the
+  // September withdrawal reports stay in the list so a reader sees them.
+  const filing = "https://www.aeroroutes.com/eng/261119-ahns27del";
+  const rest = [
+    "https://algerie-eco.com/2026/07/09/air-algerie-un-vol-direct-alger-new-delhi-a-partir-de-fin-octobre-2026/",
+    "https://www.aeroroutes.com/eng/260911-ahnw26del",
+    "https://observalgerie.com/2026/09/12/voyage/air-algerie-retire-une-nouvelle-ligne-long-courrier-de-son-programme/",
+    "https://www.algerie360.com/air-algerie-repousse-lancement-vol-direct-alger-delhi/",
+  ];
+  const want = {
+    "alg-del": { flight: "AH 3104", days: ["tue", "thu", "sun"] },
+    "del-alg": { flight: "AH 3105", days: ["mon", "wed", "fri"] },
+  };
+  for (const [id, { flight, days }] of Object.entries(want)) {
+    const r = routes.find((x) => x.id === id);
+    assert.ok(r, `${id} is missing`);
+    assert.equal(r.planned, true, `${id}: nothing has flown, so it is planned`);
+    assert.equal(r.carrier, "AH");
+    assert.equal(r.status, "unclear");
+    assert.equal(r.evidence, "listed", `${id}: a tentative filing with no bookings is not verified`);
+    assert.equal(r.flight, flight);
+    assert.deepEqual(r.days, days);
+    assert.deepEqual(r.sources, [filing, ...rest]);
+  }
+});
+
+test("Beirut does not cite the 20 Jun 2026 Delhi and Shanghai report", () => {
+  // The Wikipedia table pins that report to its Beirut row, and it says nothing
+  // about Beirut. The builder drops it there (MISCITED), so the suspension
+  // notice is the row's only claim.
+  const url =
+    "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/";
+  const bey = routes.find((r) => r.id === "alg-bey");
+  assert.ok(bey.sources.length > 0);
+  assert.ok(!bey.sources.includes(url), "alg-bey still cites the Delhi report");
+});
+
+test("the 2026-11-21 Flightradar24 pass ships each leg operating on its own history", () => {
+  // Section 36: a dated Landed row in the flight's own history is first-flight
+  // evidence. The history is `source`; whatever the row stood on before stays
+  // behind it. Days are each leg's own observed nights, never mirrored.
+  const fr24 = (n) => `https://www.flightradar24.com/data/flights/${n}`;
+  const wiki = (a) => `https://en.wikipedia.org/wiki/${a}`;
+  const want = {
+    "alg-ndj": { flight: "AH 5370", days: ["wed", "sat"],
+      sources: [fr24("ah5370"), "https://www.aeroroutes.com/eng/260622-ahnw267m8"] },
+    "ndj-alg": { flight: "AH 5371", days: ["thu", "sun"], sources: [fr24("ah5371")] },
+    "aae-jed": { flight: "AH 486", days: ["mon", "wed"], sources: [fr24("ah486")] },
+    "alg-bod": { flight: "AH 1190", days: null, sources: [fr24("ah1190")] },
+    // Both Strasbourg legs: the airport's announcement follows each history.
+    // Its mon/thu was the launch schedule; the histories show tue/sat now.
+    "alg-sxb": { flight: "AH 1452", days: ["tue", "sat"],
+      sources: [fr24("ah1452"), "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"] },
+    "sxb-alg": { flight: "AH 1453", days: ["tue", "sat"],
+      sources: [fr24("ah1453"), "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"] },
+    "czl-ist": { flight: "AH 3022", days: ["mon", "tue", "thu", "fri", "sat"],
+      sources: [fr24("ah3022"), wiki("Mohamed_Boudiaf_International_Airport")] },
+    "cfk-mrs": { flight: "AH 1136", days: ["wed", "sat"],
+      sources: [fr24("ah1136"), wiki("Chlef_International_Airport")] },
+    "qsf-ory": { flight: "AH 1108", days: ["tue", "sat", "sun"],
+      sources: [fr24("ah1108"), wiki("Ain_Arnat_Airport")] },
+    "qsf-cdg": { flight: "AH 1108", days: ["mon"], sources: [fr24("ah1108")] },
+    "orn-cdg": { flight: "AH 1084", days: ["mon", "tue", "wed", "thu", "sat", "sun"],
+      sources: [fr24("ah1084")] },
+    "orn-lil": { flight: "AH 1078", days: ["mon", "wed", "sat"],
+      sources: [fr24("ah1078"), wiki("Ahmed_Ben_Bella_Airport")] },
+    "czl-nce": { flight: "AH 1198", days: ["mon", "thu", "sat"],
+      sources: [fr24("ah1198"), wiki("Mohamed_Boudiaf_International_Airport")] },
+  };
+  for (const [id, { flight, days, sources }] of Object.entries(want)) {
+    const r = routes.find((x) => x.id === id);
+    assert.ok(r, `${id} is missing`);
+    assert.equal(r.carrier, "AH");
+    assert.equal(r.status, "active", id);
+    assert.equal(r.evidence, "verified", id);
+    assert.equal(r.planned, false, `${id}: it has flown, so it is not planned`);
+    assert.equal(r.flight, flight, id);
+    assert.deepEqual(r.days, days, id);
+    assert.deepEqual(r.sources, sources, id);
+  }
+  // AH 486's Algiers to Jeddah sector of 21 Nov was only Scheduled, which is
+  // not a Landed row, so it adds no `alg-jed`.
+  assert.ok(!routes.some((r) => r.id === "alg-jed" && r.carrier === "AH"));
+  // AH 5370 continues via N'Djamena, so it is no evidence for a nonstop
+  // Addis Ababa leg, and alg-add keeps the listing it had.
+  const add = routes.find((r) => r.id === "alg-add");
+  assert.equal(add.evidence, "listed");
+  assert.ok(!add.sources.some((u) => u.startsWith("https://www.flightradar24.com/")));
+});

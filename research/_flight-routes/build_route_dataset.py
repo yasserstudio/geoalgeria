@@ -211,6 +211,54 @@ ALG_BZV_FR24 = "https://www.flightradar24.com/data/flights/ah5390"
 BZV_ALG_FR24 = "https://www.flightradar24.com/data/flights/ah5391"
 NGA_FR24 = "https://www.flightradar24.com/data/flights/ah5354"
 
+# The 2026-11-21 pass (verification-2026-11-21.md), the same section 36 rule: the
+# Owner read each flight's own Flightradar24 history and reported the Landed dates
+# below. Dates are local departure dates; 21 Nov 2026 is a Saturday. Landing times
+# and registrations were not captured on this pass, which the note records as owed.
+#
+#   ALG_NDJ_FR24  AH 5370: Landed Sat 14 and Wed 18 Nov. wed/sat.
+#   NDJ_ALG_FR24  AH 5371: Landed Sun 15 and Thu 19 Nov, Sun 22 and Thu 26 Nov
+#                 scheduled. thu/sun.
+#   AAE_JED_FR24  AH 486: Landed Mon 16 and Wed 18 Nov, Mon 23 and Wed 25 Nov
+#                 scheduled. mon/wed. The same number's ALG to JED sector of Sat
+#                 21 Nov is only Scheduled, so it is no Landed row and `alg-jed`
+#                 is not added.
+#   ALG_BOD_FR24  AH 1190: Landed Sat 14 and Sun 15 Nov. `days` null, as above.
+#   ALG_SXB_FR24  AH 1452: Landed Sat 14, Tue 17 and Sat 21 Nov, Tue 24 and Sat
+#                 28 Nov scheduled. tue/sat, replacing the mon/thu the airport's
+#                 announcement gave: that was the launch schedule.
+#   SXB_ALG_FR24  AH 1453: Landed Sat 14 Nov, flew Tue 17 and Sat 21 Nov, Tue 24
+#                 and Sat 28 Nov scheduled. tue/sat.
+#   CZL_IST_FR24  AH 3022: Landed Sat 14, Mon 16, Tue 17, Thu 19 and Fri 20 Nov,
+#                 21 to 28 Nov scheduled on the same weekdays. mon/tue/thu/fri/sat.
+#   CFK_MRS_FR24  AH 1136: Landed Sat 14 and Wed 18 Nov, 21, 25 and 28 Nov
+#                 scheduled. wed/sat.
+#   QSF_PARIS_FR24  AH 1108, one number into BOTH Paris airports, which the
+#                 page's own "About" box states for the last seven days (QSF to ORY
+#                 and QSF to CDG). Orly: Landed Sat 14, Sun 15 and Tue 17 Nov, with
+#                 22, 24 and 28 Nov scheduled into Orly, so sat/sun/tue. CDG: Landed
+#                 Mon 16 Nov, with Mon 23 Nov scheduled into CDG, so mon.
+#   ORN_CDG_FR24  AH 1084: Landed every day Sat 14 to Thu 19 Nov, no flight on
+#                 Fri 20 Nov; 21 to 26 and 28 Nov scheduled, none on Fri 27 Nov. Every
+#                 day but Friday.
+#   ORN_LIL_FR24  AH 1078: Landed Sat 14, Mon 16 and Wed 18 Nov; 21, 23, 25
+#                 and 28 Nov scheduled. mon/wed/sat.
+#   CZL_NCE_FR24  AH 1198: Landed Sat 14, Mon 16 and Thu 19 Nov; 21, 23, 26
+#                 and 28 Nov scheduled. mon/thu/sat.
+ALG_NDJ_FR24 = "https://www.flightradar24.com/data/flights/ah5370"
+NDJ_ALG_FR24 = "https://www.flightradar24.com/data/flights/ah5371"
+AAE_JED_FR24 = "https://www.flightradar24.com/data/flights/ah486"
+ALG_BOD_FR24 = "https://www.flightradar24.com/data/flights/ah1190"
+ALG_SXB_FR24 = "https://www.flightradar24.com/data/flights/ah1452"
+SXB_ALG_FR24 = "https://www.flightradar24.com/data/flights/ah1453"
+CZL_IST_FR24 = "https://www.flightradar24.com/data/flights/ah3022"
+CFK_MRS_FR24 = "https://www.flightradar24.com/data/flights/ah1136"
+QSF_PARIS_FR24 = "https://www.flightradar24.com/data/flights/ah1108"
+ORN_CDG_FR24 = "https://www.flightradar24.com/data/flights/ah1084"
+ORN_LIL_FR24 = "https://www.flightradar24.com/data/flights/ah1078"
+CZL_NCE_FR24 = "https://www.flightradar24.com/data/flights/ah1198"
+SXB_ANNOUNCEMENT = "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"
+
 # The reports the two flipped legs arrived on. A promotion moves the `source` to
 # the report of the operation, and these stay in the list behind it rather than
 # being dropped, because they are what `flight` and `days` rest on (ADR 0002).
@@ -267,8 +315,6 @@ VERIFIED = [
      "source": "https://www.flightsfrom.com/ORY-BLJ"},
     {"from": "TLM", "to": "MRS", "flight": "AH 1092", "status": "active",
      "source": "https://www.marseille.aeroport.fr/vols-et-destinations/destinations/toutes-les-destinations/afrique/algerie/tlemcen"},
-    {"from": "SXB", "to": "ALG", "flight": "AH 1453", "status": "seasonal",
-     "source": "https://www.observalgerie.com/"},
     # Budapest, re-dated. The Saturday and Wednesday the rows carried came from the
     # NW25 filing of 28 Jul 2025, and a newer filing of 2 Jan 2026 supersedes it:
     # the resumption slipped from Oct 2025 to Apr 2026 and the triangle now runs a
@@ -520,14 +566,15 @@ VERIFIED = [
     # Strasbourg outbound, promoted from the Wikipedia pass on the airport's own
     # page for the service: it names Air Algerie, the direction (a new service at
     # Strasbourg) and the days, twice weekly Monday and Thursday, for the winter
-    # 2025-2026 and summer 2026 seasons both. `status` is `active` rather than the
-    # `seasonal` the return leg carries, because this page publishes a schedule for
-    # each half of the year; SXB-ALG keeps its own status on its own source, which
-    # is what section 10 asks for, and the mismatch is flagged in
-    # verification-2026-10-09.md rather than resolved by mirroring. No flight
-    # number: the page does not carry one.
-    {"from": "ALG", "to": "SXB", "status": "active", "days": ["mon", "thu"],
-     "source": "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"},
+    # 2025-2026 and summer 2026 seasons both. Its mon/thu was the launch
+    # schedule: on 2026-11-21 AH 1452's own history showed the leg landing on
+    # Saturdays and Tuesdays (section 36), so the history is `source`, the days
+    # are tue/sat, and the announcement follows it. The page carries no flight
+    # number; the history does.
+    {"from": "ALG", "to": "SXB", "flight": "AH 1452", "status": "active",
+     "days": ["tue", "sat"],
+     "source": ALG_SXB_FR24,
+     "extra_sources": [SXB_ANNOUNCEMENT]},
     # Manchester, both directions on one Official-tier source. The airport
     # operator's own press release names the carrier, both directions, the
     # inaugural (Sunday 14 Jun 2026) and the twice-weekly Tuesday/Sunday pattern.
@@ -768,6 +815,70 @@ VERIFIED = [
      "days": ["fri"],
      "source": NGA_FR24,
      "extra_sources": ["https://www.aeroroutes.com/eng/260820-ahnw26af"]},
+    # The 2026-11-21 pass: twelve legs OPERATING on their flights' own observed
+    # histories (section 36, verification-2026-11-21.md). Each history is the
+    # row's `source` and whatever the row rested on before stays behind it.
+    #
+    # N'Djamena, both ways. The outbound left PLANNED: AH 5370 landed on Saturday
+    # 14 and Wednesday 18 November, so the 28 Oct launch the 22 Jun filing gave
+    # happened, and the filing stays in `sources`. AH 5370 continues from
+    # N'Djamena to Addis Ababa, which is why it says nothing for `alg-add`.
+    {"from": "ALG", "to": "NDJ", "flight": "AH 5370", "status": "active",
+     "days": ["wed", "sat"],
+     "source": ALG_NDJ_FR24,
+     "extra_sources": ["https://www.aeroroutes.com/eng/260622-ahnw267m8"]},
+    # The return comes from Addis Ababa through N'Djamena; only its N'Djamena to
+    # Algiers leg is carried. thu/sun off the observed nights, not mirrored.
+    {"from": "NDJ", "to": "ALG", "flight": "AH 5371", "status": "active",
+     "source": NDJ_ALG_FR24, "days": ["thu", "sun"]},
+    # Annaba to Jeddah. Not the excluded ALG-JED (Saudia metal): a different pair.
+    {"from": "AAE", "to": "JED", "flight": "AH 486", "status": "active",
+     "days": ["mon", "wed"],
+     "source": AAE_JED_FR24},
+    # Algiers to Bordeaux, the outbound BOD-ALG has long had.
+    {"from": "ALG", "to": "BOD", "flight": "AH 1190", "status": "active",
+     "source": ALG_BOD_FR24},
+    # Strasbourg home, `seasonal` until now on a bare observalgerie.com homepage
+    # that named no route; that citation is dropped, and the airport's own
+    # announcement of the service follows the history.
+    {"from": "SXB", "to": "ALG", "flight": "AH 1453", "status": "active",
+     "days": ["tue", "sat"],
+     "source": SXB_ALG_FR24,
+     "extra_sources": [SXB_ANNOUNCEMENT]},
+    # Constantine to Istanbul and Chlef to Marseille, both promoted from the
+    # Wikipedia pass; the airport article each arrived on stays behind the history.
+    {"from": "CZL", "to": "IST", "flight": "AH 3022", "status": "active",
+     "days": ["mon", "tue", "thu", "fri", "sat"],
+     "source": CZL_IST_FR24,
+     "extra_sources": ["https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"]},
+    {"from": "CFK", "to": "MRS", "flight": "AH 1136", "status": "active",
+     "days": ["wed", "sat"],
+     "source": CFK_MRS_FR24,
+     "extra_sources": ["https://en.wikipedia.org/wiki/Chlef_International_Airport"]},
+    # Setif to Paris on AH 1108, which lands at Orly on some days and at Charles de
+    # Gaulle on others, so the two airports are two rows with their own days. Orly
+    # was a Wikipedia-pass row and keeps that article behind the history; CDG is new.
+    {"from": "QSF", "to": "ORY", "flight": "AH 1108", "status": "active",
+     "days": ["tue", "sat", "sun"],
+     "source": QSF_PARIS_FR24,
+     "extra_sources": ["https://en.wikipedia.org/wiki/Ain_Arnat_Airport"]},
+    {"from": "QSF", "to": "CDG", "flight": "AH 1108", "status": "active",
+     "days": ["mon"],
+     "source": QSF_PARIS_FR24},
+    # Oran to Paris CDG, the direction `cdg-orn` was missing.
+    {"from": "ORN", "to": "CDG", "flight": "AH 1084", "status": "active",
+     "days": ["mon", "tue", "wed", "thu", "sat", "sun"],
+     "source": ORN_CDG_FR24},
+    # Oran to Lille and Constantine to Nice, both promoted from the Wikipedia pass
+    # with the airport article behind the history.
+    {"from": "ORN", "to": "LIL", "flight": "AH 1078", "status": "active",
+     "days": ["mon", "wed", "sat"],
+     "source": ORN_LIL_FR24,
+     "extra_sources": ["https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport"]},
+    {"from": "CZL", "to": "NCE", "flight": "AH 1198", "status": "active",
+     "days": ["mon", "thu", "sat"],
+     "source": CZL_NCE_FR24,
+     "extra_sources": ["https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"]},
 ]
 
 # Operating legs whose citation is Official or Reported tier but does NOT confirm
@@ -895,6 +1006,18 @@ LISTED = [
 # VERIFIED because `plannedRoutes()` is the package's lifecycle boundary. A
 # booking result can establish carrier, direction, flight number and duration;
 # a reported announcement stays `listed` until those details are confirmed.
+# Behind the Delhi rows' 19 Nov 2026 filing, in this order: India's ambassador
+# Swati Vijay Kulkarni announcing the route at a press conference on 7 Jul 2026,
+# then the three reports of the September withdrawal, AeroRoutes' of 11 Sep ("Air
+# Algerie during this week's schedule update removed the filing for planned
+# service to India"), Observ Algerie's of 12 Sep and Algerie360's of 13 Sep.
+DEL_EXTRA_SOURCES = [
+    "https://algerie-eco.com/2026/07/09/air-algerie-un-vol-direct-alger-new-delhi-a-partir-de-fin-octobre-2026/",
+    "https://www.aeroroutes.com/eng/260911-ahnw26del",
+    "https://observalgerie.com/2026/09/12/voyage/air-algerie-retire-une-nouvelle-ligne-long-courrier-de-son-programme/",
+    "https://www.algerie360.com/air-algerie-repousse-lancement-vol-direct-alger-delhi/",
+]
+
 PLANNED = [
     # Neither Brazzaville leg is here any more. Both left on 2026-10-30, when AH 5390
     # and AH 5391's histories each showed two Landed legs: see the operating rows
@@ -1063,18 +1186,30 @@ PLANNED = [
     # citation each of them rested on went with it, behind the history.
     {"from": "ICN", "to": "ALG", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
-    # N'Djamena, planned. The 22 Jun 2026 737 MAX 8 network post files "Algiers -
-    # N'djamena - Addis Ababa" effective 28 Oct 2026 at 2 weekly, which is 19 days
-    # after this AS_OF, so it is an announcement and not an operation: the
-    # lifecycle rule is that a launch date still ahead keeps a route planned
-    # however firm the filing. ALG-NDJ is the rotation's first leg and the only one
-    # in scope; the onward N'Djamena to Addis Ababa leg does not belong to a
-    # rotation out of Algeria in a way any read source states, so section 33 does
-    # not reach it and it is not carried. `evidence` is `listed` and `days` and
-    # `flight` are null because the post is a network list with no per-route
-    # schedule, no day names and no flight number.
-    {"from": "ALG", "to": "NDJ", "status": "unclear", "evidence": "listed",
-     "source": "https://www.aeroroutes.com/eng/260622-ahnw267m8"},
+    # N'Djamena left this collection on 2026-11-21: AH 5370 was observed flying.
+    # See the operating rows above.
+    # Delhi, back in this collection on the Owner's decision of 2026-11-21, and it
+    # knowingly bends section 10: see collection-rules.md section 37. The 2026 plan
+    # was withdrawn in September (the reports are in `sources`), and AeroRoutes'
+    # 19 Nov 2026 post reports a TENTATIVE relaunch "on 28MAR27 at the earliest,
+    # currently listed until 08JUN27. Reservations for this remain unavailable."
+    # That post is `source` because it is the current plan and the one page that
+    # states what these rows ship: "AH3104 ALG1000 - 0015+1DEL 339 247" and
+    # "AH3105 DEL0145 - 0735ALG 339 135", 3 weekly on the A330-900neo. The day
+    # digits are AeroRoutes' Monday-is-1 notation, so the outbound leaves Algiers on
+    # tue/thu/sun and the return leaves Delhi at 01:45 on mon/wed/fri, the night
+    # the outbound lands, read off the filing rather than mirrored.
+    # `evidence` stays `listed`: a tentative filing with no bookings open is the
+    # lower boundary section 31 drew for Delhi in August, and nothing since has
+    # raised it. India's ambassador's 7 Jul 2026 announcement follows the filing.
+    {"from": "ALG", "to": "DEL", "flight": "AH 3104", "status": "unclear",
+     "days": ["tue", "thu", "sun"], "evidence": "listed",
+     "source": "https://www.aeroroutes.com/eng/261119-ahns27del",
+     "extra_sources": DEL_EXTRA_SOURCES},
+    {"from": "DEL", "to": "ALG", "flight": "AH 3105", "status": "unclear",
+     "days": ["mon", "wed", "fri"], "evidence": "listed",
+     "source": "https://www.aeroroutes.com/eng/261119-ahns27del",
+     "extra_sources": DEL_EXTRA_SOURCES},
 ]
 
 # Planned legs withdrawn before they ever operated. Kept as a record, not as
@@ -1093,7 +1228,25 @@ PLANNED = [
 #                      carried (AH3104/AH3105) are gone from the forward
 #                      programme with the 11 Sep update.
 #                      https://www.visa-algerie.com/air-algerie-reporte-le-lancement-dune-nouvelle-ligne-internationale/
-WITHDRAWN = {("ALG", "DEL"), ("DEL", "ALG")}
+#                      LEFT THIS SET on 2026-11-21: the Owner put both legs back
+#                      in PLANNED on the 19 Nov 2026 tentative refiling for
+#                      March 2027 (collection-rules.md section 37). The record
+#                      above stays, because the withdrawal still happened.
+WITHDRAWN = set()
+
+# Wikipedia-table citations that say nothing about the row they are pinned to.
+# The pass would otherwise carry them into `sources`, where they read as evidence
+# for that leg. Each entry names the url to drop from that pair's table row; a url
+# the row no longer carries fails the build, so a stale entry cannot sit here
+# looking effective.
+#
+#   ALG-BEY  The table cites the 20 Jun 2026 algerie-eco report "Air Algerie prevoit
+#            d'ouvrir des vols vers Delhi et Shanghai des l'hiver prochain" on its
+#            Beirut row. It is about Delhi and Shanghai, not Beirut. Removed
+#            2026-11-21; the row's `source` stays the APS suspension notice.
+MISCITED = {
+    ("ALG", "BEY"): "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/",
+}
 
 # Pairs whose Wikipedia row names the WRONG airport of a multi-airport city, so a
 # curated record above carries the same service under the right code. Without
@@ -1316,6 +1469,12 @@ def main():
         if frm not in ep or to not in ep:
             skipped["no_endpoint"].append(key); continue
         seen.add(key)
+        source_urls = list(r["source_urls"])
+        if key in MISCITED:
+            if MISCITED[key] not in source_urls:
+                raise SystemExit(f"{frm}-{to}: MISCITED names a url the table row "
+                                 f"does not cite; drop the entry")
+            source_urls.remove(MISCITED[key])
         # "begins"/"resumes" means announced but not yet flying, which the locked
         # scope says is a SEPARATE collection rather than a status: a planned
         # route must never be drawn like an operating one, and must never count
@@ -1330,9 +1489,9 @@ def main():
             "from": frm, "to": to, "carrier": "AH",
             "flight": None, "status": status, "days": None,
             "evidence": "listed",
-            "source": r["source_urls"][0] if r["source_urls"] else
+            "source": source_urls[0] if source_urls else
                       "https://en.wikipedia.org/wiki/" + r["from_article"].replace(" ", "_"),
-            "source_is_the_table": not r["source_urls"],
+            "source_is_the_table": not source_urls,
             "listed_at": r["from_article"],
         })
 

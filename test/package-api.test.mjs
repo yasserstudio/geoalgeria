@@ -325,13 +325,27 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
     evidence: "verified",
     planned: false,
   });
-  // Delhi was withdrawn before it ever operated (12 Sep 2026), so both legs are
-  // gone rather than restyled, and the endpoint goes with them.
-  for (const id of ["alg-del", "del-alg"])
-    assert.ok(!byId.has(id), `${id}: a withdrawn planned route is still shipping`);
+  // Delhi was withdrawn before it ever operated (12 Sep 2026) and both legs left.
+  // The Owner put them back on 21 Nov 2026 on a tentative refiling for March 2027
+  // (collection-rules section 37), so they are planned, never flying, and their
+  // endpoint ships again. Their sources are pinned in aviation-route-sources.
+  assert.deepEqual(pick("alg-del"), {
+    flight: "AH 3104",
+    status: "unclear",
+    days: ["tue", "thu", "sun"],
+    evidence: "listed",
+    planned: true,
+  });
+  assert.deepEqual(pick("del-alg"), {
+    flight: "AH 3105",
+    status: "unclear",
+    days: ["mon", "wed", "fri"],
+    evidence: "listed",
+    planned: true,
+  });
   assert.ok(
-    !m.routeEndpoints().some((e) => e.iata === "DEL"),
-    "DEL is still an endpoint with no route referencing it",
+    m.routeEndpoints().some((e) => e.iata === "DEL"),
+    "DEL is missing although planned routes reference it",
   );
 
   // The new Africa bookings. Brazzaville flew both ways in the 26 to 29 Oct window,

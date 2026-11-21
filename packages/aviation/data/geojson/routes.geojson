@@ -455,6 +455,231 @@
             36.82442
           ],
           [
+            8.57624,
+            36.59628
+          ],
+          [
+            9.32666,
+            36.36341
+          ],
+          [
+            10.07255,
+            36.12587
+          ],
+          [
+            10.8139,
+            35.88374
+          ],
+          [
+            11.55069,
+            35.63708
+          ],
+          [
+            12.2829,
+            35.38596
+          ],
+          [
+            13.01054,
+            35.13045
+          ],
+          [
+            13.73358,
+            34.87062
+          ],
+          [
+            14.45202,
+            34.60654
+          ],
+          [
+            15.16588,
+            34.33827
+          ],
+          [
+            15.87515,
+            34.06589
+          ],
+          [
+            16.57984,
+            33.78946
+          ],
+          [
+            17.27996,
+            33.50905
+          ],
+          [
+            17.97553,
+            33.22473
+          ],
+          [
+            18.66656,
+            32.93656
+          ],
+          [
+            19.35308,
+            32.64461
+          ],
+          [
+            20.0351,
+            32.34896
+          ],
+          [
+            20.71264,
+            32.04965
+          ],
+          [
+            21.38575,
+            31.74677
+          ],
+          [
+            22.05444,
+            31.44037
+          ],
+          [
+            22.71874,
+            31.13052
+          ],
+          [
+            23.3787,
+            30.81728
+          ],
+          [
+            24.03435,
+            30.50072
+          ],
+          [
+            24.68571,
+            30.18091
+          ],
+          [
+            25.33285,
+            29.85789
+          ],
+          [
+            25.97578,
+            29.53174
+          ],
+          [
+            26.61457,
+            29.20251
+          ],
+          [
+            27.24925,
+            28.87028
+          ],
+          [
+            27.87986,
+            28.53508
+          ],
+          [
+            28.50646,
+            28.197
+          ],
+          [
+            29.12908,
+            27.85608
+          ],
+          [
+            29.74779,
+            27.51238
+          ],
+          [
+            30.36263,
+            27.16596
+          ],
+          [
+            30.97365,
+            26.81687
+          ],
+          [
+            31.58091,
+            26.46518
+          ],
+          [
+            32.18445,
+            26.11094
+          ],
+          [
+            32.78433,
+            25.7542
+          ],
+          [
+            33.38061,
+            25.39502
+          ],
+          [
+            33.97333,
+            25.03345
+          ],
+          [
+            34.56257,
+            24.66954
+          ],
+          [
+            35.14836,
+            24.30334
+          ],
+          [
+            35.73077,
+            23.93491
+          ],
+          [
+            36.30986,
+            23.5643
+          ],
+          [
+            36.88568,
+            23.19156
+          ],
+          [
+            37.45829,
+            22.81673
+          ],
+          [
+            38.02774,
+            22.43987
+          ],
+          [
+            38.59411,
+            22.06103
+          ],
+          [
+            39.15744,
+            21.68024
+          ]
+        ]
+      },
+      "properties": {
+        "id": "aae-jed",
+        "from": "AAE",
+        "to": "JED",
+        "carrier": "AH",
+        "flight": "AH 486",
+        "status": "active",
+        "days": [
+          "mon",
+          "wed"
+        ],
+        "evidence": "verified",
+        "planned": false,
+        "source": "https://www.flightradar24.com/data/flights/ah486",
+        "sources": [
+          "https://www.flightradar24.com/data/flights/ah486"
+        ],
+        "great_circle_km": 3452,
+        "from_name": "Aéroport Annaba - Rabah Bitat",
+        "to_name": "Aéroport international Roi-Abdelaziz"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.82132,
+            36.82442
+          ],
+          [
             7.77139,
             37.01046
           ],
@@ -3778,7 +4003,7 @@
         "source": "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
         "sources": [
           "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
-          "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/"
+          "https://en.wikipedia.org/wiki/Houari_Boumediene_Airport"
         ],
         "great_circle_km": 2934,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
@@ -4005,6 +4230,228 @@
         "great_circle_km": 2909,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Bamako-Sénou"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            3.21085,
+            36.69951
+          ],
+          [
+            3.13811,
+            36.87011
+          ],
+          [
+            3.06505,
+            37.04067
+          ],
+          [
+            2.99167,
+            37.21119
+          ],
+          [
+            2.91795,
+            37.38165
+          ],
+          [
+            2.84389,
+            37.55207
+          ],
+          [
+            2.76949,
+            37.72245
+          ],
+          [
+            2.69476,
+            37.89278
+          ],
+          [
+            2.61967,
+            38.06306
+          ],
+          [
+            2.54423,
+            38.23329
+          ],
+          [
+            2.46845,
+            38.40348
+          ],
+          [
+            2.3923,
+            38.57361
+          ],
+          [
+            2.31579,
+            38.7437
+          ],
+          [
+            2.23892,
+            38.91373
+          ],
+          [
+            2.16167,
+            39.08372
+          ],
+          [
+            2.08406,
+            39.25365
+          ],
+          [
+            2.00606,
+            39.42353
+          ],
+          [
+            1.92769,
+            39.59336
+          ],
+          [
+            1.84893,
+            39.76314
+          ],
+          [
+            1.76978,
+            39.93286
+          ],
+          [
+            1.69024,
+            40.10253
+          ],
+          [
+            1.6103,
+            40.27215
+          ],
+          [
+            1.52996,
+            40.4417
+          ],
+          [
+            1.44921,
+            40.61121
+          ],
+          [
+            1.36805,
+            40.78065
+          ],
+          [
+            1.28648,
+            40.95004
+          ],
+          [
+            1.20448,
+            41.11938
+          ],
+          [
+            1.12207,
+            41.28865
+          ],
+          [
+            1.03922,
+            41.45786
+          ],
+          [
+            0.95594,
+            41.62702
+          ],
+          [
+            0.87222,
+            41.79611
+          ],
+          [
+            0.78806,
+            41.96514
+          ],
+          [
+            0.70345,
+            42.13412
+          ],
+          [
+            0.61839,
+            42.30302
+          ],
+          [
+            0.53288,
+            42.47187
+          ],
+          [
+            0.44689,
+            42.64065
+          ],
+          [
+            0.36045,
+            42.80937
+          ],
+          [
+            0.27353,
+            42.97802
+          ],
+          [
+            0.18613,
+            43.14661
+          ],
+          [
+            0.09824,
+            43.31512
+          ],
+          [
+            0.00987,
+            43.48357
+          ],
+          [
+            -0.07899,
+            43.65196
+          ],
+          [
+            -0.16836,
+            43.82027
+          ],
+          [
+            -0.25823,
+            43.98851
+          ],
+          [
+            -0.34861,
+            44.15669
+          ],
+          [
+            -0.43951,
+            44.32479
+          ],
+          [
+            -0.53093,
+            44.49281
+          ],
+          [
+            -0.62287,
+            44.66077
+          ],
+          [
+            -0.71536,
+            44.82865
+          ]
+        ]
+      },
+      "properties": {
+        "id": "alg-bod",
+        "from": "ALG",
+        "to": "BOD",
+        "carrier": "AH",
+        "flight": "AH 1190",
+        "status": "active",
+        "days": null,
+        "evidence": "verified",
+        "planned": false,
+        "source": "https://www.flightradar24.com/data/flights/ah1190",
+        "sources": [
+          "https://www.flightradar24.com/data/flights/ah1190"
+        ],
+        "great_circle_km": 962,
+        "from_name": "Aéroport d’Alger - Houari Boumediene",
+        "to_name": "Aéroport de Bordeaux-Mérignac"
       }
     },
     {
@@ -10490,6 +10937,232 @@
             36.69951
           ],
           [
+            3.51821,
+            36.19969
+          ],
+          [
+            3.82166,
+            35.6991
+          ],
+          [
+            4.12133,
+            35.19775
+          ],
+          [
+            4.41732,
+            34.69568
+          ],
+          [
+            4.70974,
+            34.19289
+          ],
+          [
+            4.99868,
+            33.68942
+          ],
+          [
+            5.28426,
+            33.18529
+          ],
+          [
+            5.56657,
+            32.68051
+          ],
+          [
+            5.84571,
+            32.17511
+          ],
+          [
+            6.12176,
+            31.6691
+          ],
+          [
+            6.39482,
+            31.16251
+          ],
+          [
+            6.66497,
+            30.65534
+          ],
+          [
+            6.9323,
+            30.14762
+          ],
+          [
+            7.19689,
+            29.63936
+          ],
+          [
+            7.45883,
+            29.13059
+          ],
+          [
+            7.71818,
+            28.62131
+          ],
+          [
+            7.97502,
+            28.11154
+          ],
+          [
+            8.22944,
+            27.6013
+          ],
+          [
+            8.4815,
+            27.09059
+          ],
+          [
+            8.73126,
+            26.57945
+          ],
+          [
+            8.97881,
+            26.06787
+          ],
+          [
+            9.2242,
+            25.55587
+          ],
+          [
+            9.4675,
+            25.04346
+          ],
+          [
+            9.70878,
+            24.53067
+          ],
+          [
+            9.9481,
+            24.01749
+          ],
+          [
+            10.18551,
+            23.50394
+          ],
+          [
+            10.42107,
+            22.99004
+          ],
+          [
+            10.65485,
+            22.47579
+          ],
+          [
+            10.8869,
+            21.96121
+          ],
+          [
+            11.11728,
+            21.4463
+          ],
+          [
+            11.34603,
+            20.93108
+          ],
+          [
+            11.57321,
+            20.41556
+          ],
+          [
+            11.79888,
+            19.89975
+          ],
+          [
+            12.02308,
+            19.38365
+          ],
+          [
+            12.24586,
+            18.86728
+          ],
+          [
+            12.46728,
+            18.35065
+          ],
+          [
+            12.68737,
+            17.83376
+          ],
+          [
+            12.90619,
+            17.31663
+          ],
+          [
+            13.12378,
+            16.79926
+          ],
+          [
+            13.34019,
+            16.28166
+          ],
+          [
+            13.55546,
+            15.76384
+          ],
+          [
+            13.76963,
+            15.24582
+          ],
+          [
+            13.98275,
+            14.72759
+          ],
+          [
+            14.19486,
+            14.20917
+          ],
+          [
+            14.406,
+            13.69056
+          ],
+          [
+            14.61621,
+            13.17178
+          ],
+          [
+            14.82553,
+            12.65282
+          ],
+          [
+            15.034,
+            12.1337
+          ]
+        ]
+      },
+      "properties": {
+        "id": "alg-ndj",
+        "from": "ALG",
+        "to": "NDJ",
+        "carrier": "AH",
+        "flight": "AH 5370",
+        "status": "active",
+        "days": [
+          "wed",
+          "sat"
+        ],
+        "evidence": "verified",
+        "planned": false,
+        "source": "https://www.flightradar24.com/data/flights/ah5370",
+        "sources": [
+          "https://www.flightradar24.com/data/flights/ah5370",
+          "https://www.aeroroutes.com/eng/260622-ahnw267m8"
+        ],
+        "great_circle_km": 2976,
+        "from_name": "Aéroport d’Alger - Houari Boumediene",
+        "to_name": "Aéroport international de N'Djaména"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            3.21085,
+            36.69951
+          ],
+          [
             3.18433,
             36.21589
           ],
@@ -13145,16 +13818,17 @@
         "from": "ALG",
         "to": "SXB",
         "carrier": "AH",
-        "flight": null,
+        "flight": "AH 1452",
         "status": "active",
         "days": [
-          "mon",
-          "thu"
+          "tue",
+          "sat"
         ],
         "evidence": "verified",
         "planned": false,
-        "source": "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/",
+        "source": "https://www.flightradar24.com/data/flights/ah1452",
         "sources": [
+          "https://www.flightradar24.com/data/flights/ah1452",
           "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"
         ],
         "great_circle_km": 1365,
@@ -19150,13 +19824,17 @@
         "from": "CFK",
         "to": "MRS",
         "carrier": "AH",
-        "flight": null,
-        "status": "unclear",
-        "days": null,
-        "evidence": "listed",
+        "flight": "AH 1136",
+        "status": "active",
+        "days": [
+          "wed",
+          "sat"
+        ],
+        "evidence": "verified",
         "planned": false,
-        "source": "https://en.wikipedia.org/wiki/Chlef_International_Airport",
+        "source": "https://www.flightradar24.com/data/flights/ah1136",
         "sources": [
+          "https://www.flightradar24.com/data/flights/ah1136",
           "https://en.wikipedia.org/wiki/Chlef_International_Airport"
         ],
         "great_circle_km": 869,
@@ -20044,13 +20722,20 @@
         "from": "CZL",
         "to": "IST",
         "carrier": "AH",
-        "flight": null,
-        "status": "unclear",
-        "days": null,
-        "evidence": "listed",
+        "flight": "AH 3022",
+        "status": "active",
+        "days": [
+          "mon",
+          "tue",
+          "thu",
+          "fri",
+          "sat"
+        ],
+        "evidence": "verified",
         "planned": false,
-        "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+        "source": "https://www.flightradar24.com/data/flights/ah3022",
         "sources": [
+          "https://www.flightradar24.com/data/flights/ah3022",
           "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
         ],
         "great_circle_km": 1989,
@@ -21598,13 +22283,18 @@
         "from": "CZL",
         "to": "NCE",
         "carrier": "AH",
-        "flight": null,
-        "status": "unclear",
-        "days": null,
-        "evidence": "listed",
+        "flight": "AH 1198",
+        "status": "active",
+        "days": [
+          "mon",
+          "thu",
+          "sat"
+        ],
+        "evidence": "verified",
         "planned": false,
-        "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+        "source": "https://www.flightradar24.com/data/flights/ah1198",
         "sources": [
+          "https://www.flightradar24.com/data/flights/ah1198",
           "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
         ],
         "great_circle_km": 822,
@@ -30519,6 +31209,231 @@
         "type": "LineString",
         "coordinates": [
           [
+            15.034,
+            12.1337
+          ],
+          [
+            14.82553,
+            12.65282
+          ],
+          [
+            14.61621,
+            13.17178
+          ],
+          [
+            14.406,
+            13.69056
+          ],
+          [
+            14.19486,
+            14.20917
+          ],
+          [
+            13.98275,
+            14.72759
+          ],
+          [
+            13.76963,
+            15.24582
+          ],
+          [
+            13.55546,
+            15.76384
+          ],
+          [
+            13.34019,
+            16.28166
+          ],
+          [
+            13.12378,
+            16.79926
+          ],
+          [
+            12.90619,
+            17.31663
+          ],
+          [
+            12.68737,
+            17.83376
+          ],
+          [
+            12.46728,
+            18.35065
+          ],
+          [
+            12.24586,
+            18.86728
+          ],
+          [
+            12.02308,
+            19.38365
+          ],
+          [
+            11.79888,
+            19.89975
+          ],
+          [
+            11.57321,
+            20.41556
+          ],
+          [
+            11.34603,
+            20.93108
+          ],
+          [
+            11.11728,
+            21.4463
+          ],
+          [
+            10.8869,
+            21.96121
+          ],
+          [
+            10.65485,
+            22.47579
+          ],
+          [
+            10.42107,
+            22.99004
+          ],
+          [
+            10.18551,
+            23.50394
+          ],
+          [
+            9.9481,
+            24.01749
+          ],
+          [
+            9.70878,
+            24.53067
+          ],
+          [
+            9.4675,
+            25.04346
+          ],
+          [
+            9.2242,
+            25.55587
+          ],
+          [
+            8.97881,
+            26.06787
+          ],
+          [
+            8.73126,
+            26.57945
+          ],
+          [
+            8.4815,
+            27.09059
+          ],
+          [
+            8.22944,
+            27.6013
+          ],
+          [
+            7.97502,
+            28.11154
+          ],
+          [
+            7.71818,
+            28.62131
+          ],
+          [
+            7.45883,
+            29.13059
+          ],
+          [
+            7.19689,
+            29.63936
+          ],
+          [
+            6.9323,
+            30.14762
+          ],
+          [
+            6.66497,
+            30.65534
+          ],
+          [
+            6.39482,
+            31.16251
+          ],
+          [
+            6.12176,
+            31.6691
+          ],
+          [
+            5.84571,
+            32.17511
+          ],
+          [
+            5.56657,
+            32.68051
+          ],
+          [
+            5.28426,
+            33.18529
+          ],
+          [
+            4.99868,
+            33.68942
+          ],
+          [
+            4.70974,
+            34.19289
+          ],
+          [
+            4.41732,
+            34.69568
+          ],
+          [
+            4.12133,
+            35.19775
+          ],
+          [
+            3.82166,
+            35.6991
+          ],
+          [
+            3.51821,
+            36.19969
+          ],
+          [
+            3.21085,
+            36.69951
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ndj-alg",
+        "from": "NDJ",
+        "to": "ALG",
+        "carrier": "AH",
+        "flight": "AH 5371",
+        "status": "active",
+        "days": [
+          "thu",
+          "sun"
+        ],
+        "evidence": "verified",
+        "planned": false,
+        "source": "https://www.flightradar24.com/data/flights/ah5371",
+        "sources": [
+          "https://www.flightradar24.com/data/flights/ah5371"
+        ],
+        "great_circle_km": 2976,
+        "from_name": "Aéroport international de N'Djaména",
+        "to_name": "Aéroport d’Alger - Houari Boumediene"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
             -15.96972,
             18.31
           ],
@@ -31633,6 +32548,235 @@
             35.61833
           ],
           [
+            -0.55704,
+            35.89807
+          ],
+          [
+            -0.50279,
+            36.17778
+          ],
+          [
+            -0.44815,
+            36.45747
+          ],
+          [
+            -0.39311,
+            36.73714
+          ],
+          [
+            -0.33767,
+            37.01678
+          ],
+          [
+            -0.28183,
+            37.29639
+          ],
+          [
+            -0.22556,
+            37.57597
+          ],
+          [
+            -0.16887,
+            37.85553
+          ],
+          [
+            -0.11175,
+            38.13507
+          ],
+          [
+            -0.0542,
+            38.41457
+          ],
+          [
+            0.00381,
+            38.69405
+          ],
+          [
+            0.06227,
+            38.97349
+          ],
+          [
+            0.1212,
+            39.25291
+          ],
+          [
+            0.18059,
+            39.5323
+          ],
+          [
+            0.24047,
+            39.81166
+          ],
+          [
+            0.30083,
+            40.09098
+          ],
+          [
+            0.36169,
+            40.37028
+          ],
+          [
+            0.42306,
+            40.64954
+          ],
+          [
+            0.48495,
+            40.92877
+          ],
+          [
+            0.54736,
+            41.20796
+          ],
+          [
+            0.6103,
+            41.48713
+          ],
+          [
+            0.67379,
+            41.76625
+          ],
+          [
+            0.73783,
+            42.04535
+          ],
+          [
+            0.80244,
+            42.3244
+          ],
+          [
+            0.86763,
+            42.60342
+          ],
+          [
+            0.9334,
+            42.8824
+          ],
+          [
+            0.99977,
+            43.16135
+          ],
+          [
+            1.06674,
+            43.44026
+          ],
+          [
+            1.13434,
+            43.71912
+          ],
+          [
+            1.20257,
+            43.99795
+          ],
+          [
+            1.27144,
+            44.27673
+          ],
+          [
+            1.34098,
+            44.55548
+          ],
+          [
+            1.41118,
+            44.83418
+          ],
+          [
+            1.48206,
+            45.11283
+          ],
+          [
+            1.55364,
+            45.39145
+          ],
+          [
+            1.62592,
+            45.67002
+          ],
+          [
+            1.69893,
+            45.94854
+          ],
+          [
+            1.77268,
+            46.22701
+          ],
+          [
+            1.84718,
+            46.50544
+          ],
+          [
+            1.92244,
+            46.78382
+          ],
+          [
+            1.99849,
+            47.06215
+          ],
+          [
+            2.07534,
+            47.34042
+          ],
+          [
+            2.153,
+            47.61865
+          ],
+          [
+            2.23149,
+            47.89682
+          ],
+          [
+            2.31083,
+            48.17494
+          ],
+          [
+            2.39104,
+            48.453
+          ],
+          [
+            2.47213,
+            48.73101
+          ],
+          [
+            2.55412,
+            49.00896
+          ]
+        ]
+      },
+      "properties": {
+        "id": "orn-cdg",
+        "from": "ORN",
+        "to": "CDG",
+        "carrier": "AH",
+        "flight": "AH 1084",
+        "status": "active",
+        "days": [
+          "mon",
+          "tue",
+          "wed",
+          "thu",
+          "sat",
+          "sun"
+        ],
+        "evidence": "verified",
+        "planned": false,
+        "source": "https://www.flightradar24.com/data/flights/ah1084",
+        "sources": [
+          "https://www.flightradar24.com/data/flights/ah1084"
+        ],
+        "great_circle_km": 1511,
+        "from_name": "Aéroport d’Oran - Ahmed Benbella",
+        "to_name": "Aéroport Paris-Charles-de-Gaulle"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.61091,
+            35.61833
+          ],
+          [
             -0.49415,
             35.90035
           ],
@@ -32275,13 +33419,18 @@
         "from": "ORN",
         "to": "LIL",
         "carrier": "AH",
-        "flight": null,
-        "status": "unclear",
-        "days": null,
-        "evidence": "listed",
+        "flight": "AH 1078",
+        "status": "active",
+        "days": [
+          "mon",
+          "wed",
+          "sat"
+        ],
+        "evidence": "verified",
         "planned": false,
-        "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+        "source": "https://www.flightradar24.com/data/flights/ah1078",
         "sources": [
+          "https://www.flightradar24.com/data/flights/ah1078",
           "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport"
         ],
         "great_circle_km": 1689,
@@ -34303,6 +35452,230 @@
             36.17553
           ],
           [
+            5.28276,
+            36.44349
+          ],
+          [
+            5.23488,
+            36.71143
+          ],
+          [
+            5.18667,
+            36.97935
+          ],
+          [
+            5.13811,
+            37.24725
+          ],
+          [
+            5.08921,
+            37.51513
+          ],
+          [
+            5.03996,
+            37.78298
+          ],
+          [
+            4.99035,
+            38.05082
+          ],
+          [
+            4.94038,
+            38.31864
+          ],
+          [
+            4.89003,
+            38.58643
+          ],
+          [
+            4.83931,
+            38.85421
+          ],
+          [
+            4.7882,
+            39.12196
+          ],
+          [
+            4.73671,
+            39.38969
+          ],
+          [
+            4.68481,
+            39.6574
+          ],
+          [
+            4.63252,
+            39.92508
+          ],
+          [
+            4.57981,
+            40.19274
+          ],
+          [
+            4.52669,
+            40.46037
+          ],
+          [
+            4.47314,
+            40.72798
+          ],
+          [
+            4.41916,
+            40.99557
+          ],
+          [
+            4.36474,
+            41.26313
+          ],
+          [
+            4.30987,
+            41.53067
+          ],
+          [
+            4.25454,
+            41.79817
+          ],
+          [
+            4.19875,
+            42.06566
+          ],
+          [
+            4.14249,
+            42.33311
+          ],
+          [
+            4.08575,
+            42.60054
+          ],
+          [
+            4.02852,
+            42.86793
+          ],
+          [
+            3.97079,
+            43.1353
+          ],
+          [
+            3.91256,
+            43.40264
+          ],
+          [
+            3.8538,
+            43.66996
+          ],
+          [
+            3.79453,
+            43.93724
+          ],
+          [
+            3.73472,
+            44.20448
+          ],
+          [
+            3.67436,
+            44.4717
+          ],
+          [
+            3.61344,
+            44.73889
+          ],
+          [
+            3.55197,
+            45.00604
+          ],
+          [
+            3.48991,
+            45.27316
+          ],
+          [
+            3.42727,
+            45.54025
+          ],
+          [
+            3.36403,
+            45.8073
+          ],
+          [
+            3.30018,
+            46.07431
+          ],
+          [
+            3.23571,
+            46.34129
+          ],
+          [
+            3.17061,
+            46.60824
+          ],
+          [
+            3.10486,
+            46.87514
+          ],
+          [
+            3.03846,
+            47.14201
+          ],
+          [
+            2.97138,
+            47.40884
+          ],
+          [
+            2.90363,
+            47.67563
+          ],
+          [
+            2.83517,
+            47.94238
+          ],
+          [
+            2.76601,
+            48.20909
+          ],
+          [
+            2.69612,
+            48.47576
+          ],
+          [
+            2.6255,
+            48.74238
+          ],
+          [
+            2.55412,
+            49.00896
+          ]
+        ]
+      },
+      "properties": {
+        "id": "qsf-cdg",
+        "from": "QSF",
+        "to": "CDG",
+        "carrier": "AH",
+        "flight": "AH 1108",
+        "status": "active",
+        "days": [
+          "mon"
+        ],
+        "evidence": "verified",
+        "planned": false,
+        "source": "https://www.flightradar24.com/data/flights/ah1108",
+        "sources": [
+          "https://www.flightradar24.com/data/flights/ah1108"
+        ],
+        "great_circle_km": 1445,
+        "from_name": "Aéroport de SETIF /8 Mai 45",
+        "to_name": "Aéroport Paris-Charles-de-Gaulle"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            5.33031,
+            36.17553
+          ],
+          [
             5.29326,
             36.47572
           ],
@@ -34945,13 +36318,18 @@
         "from": "QSF",
         "to": "ORY",
         "carrier": "AH",
-        "flight": null,
-        "status": "unclear",
-        "days": null,
-        "evidence": "listed",
+        "flight": "AH 1108",
+        "status": "active",
+        "days": [
+          "tue",
+          "sat",
+          "sun"
+        ],
+        "evidence": "verified",
         "planned": false,
-        "source": "https://en.wikipedia.org/wiki/Ain_Arnat_Airport",
+        "source": "https://www.flightradar24.com/data/flights/ah1108",
         "sources": [
+          "https://www.flightradar24.com/data/flights/ah1108",
           "https://en.wikipedia.org/wiki/Ain_Arnat_Airport"
         ],
         "great_circle_km": 1417,
@@ -35615,13 +36993,17 @@
         "to": "ALG",
         "carrier": "AH",
         "flight": "AH 1453",
-        "status": "seasonal",
-        "days": null,
+        "status": "active",
+        "days": [
+          "tue",
+          "sat"
+        ],
         "evidence": "verified",
         "planned": false,
-        "source": "https://www.observalgerie.com/",
+        "source": "https://www.flightradar24.com/data/flights/ah1453",
         "sources": [
-          "https://www.observalgerie.com/"
+          "https://www.flightradar24.com/data/flights/ah1453",
+          "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"
         ],
         "great_circle_km": 1365,
         "from_name": "Aéroport de Strasbourg-Entzheim",
@@ -37640,6 +39022,236 @@
             36.69951
           ],
           [
+            4.74935,
+            37.03536
+          ],
+          [
+            6.30111,
+            37.35117
+          ],
+          [
+            7.86555,
+            37.64655
+          ],
+          [
+            9.44204,
+            37.9211
+          ],
+          [
+            11.02989,
+            38.17448
+          ],
+          [
+            12.62834,
+            38.40632
+          ],
+          [
+            14.2366,
+            38.61633
+          ],
+          [
+            15.8538,
+            38.80419
+          ],
+          [
+            17.47904,
+            38.96966
+          ],
+          [
+            19.11136,
+            39.11248
+          ],
+          [
+            20.74979,
+            39.23245
+          ],
+          [
+            22.39328,
+            39.32939
+          ],
+          [
+            24.04079,
+            39.40316
+          ],
+          [
+            25.69124,
+            39.45366
+          ],
+          [
+            27.34354,
+            39.4808
+          ],
+          [
+            28.99656,
+            39.48454
+          ],
+          [
+            30.64921,
+            39.46488
+          ],
+          [
+            32.30037,
+            39.42185
+          ],
+          [
+            33.94894,
+            39.35551
+          ],
+          [
+            35.59383,
+            39.26596
+          ],
+          [
+            37.23399,
+            39.15334
+          ],
+          [
+            38.86838,
+            39.0178
+          ],
+          [
+            40.49599,
+            38.85956
+          ],
+          [
+            42.11586,
+            38.67883
+          ],
+          [
+            43.72707,
+            38.47587
+          ],
+          [
+            45.32875,
+            38.25098
+          ],
+          [
+            46.92007,
+            38.00445
+          ],
+          [
+            48.50027,
+            37.73663
+          ],
+          [
+            50.06864,
+            37.44787
+          ],
+          [
+            51.62452,
+            37.13855
+          ],
+          [
+            53.16732,
+            36.80907
+          ],
+          [
+            54.69651,
+            36.45983
+          ],
+          [
+            56.2116,
+            36.09127
+          ],
+          [
+            57.7122,
+            35.70381
+          ],
+          [
+            59.19794,
+            35.29791
+          ],
+          [
+            60.66852,
+            34.87403
+          ],
+          [
+            62.1237,
+            34.43263
+          ],
+          [
+            63.56331,
+            33.97417
+          ],
+          [
+            64.98719,
+            33.49914
+          ],
+          [
+            66.39528,
+            33.00799
+          ],
+          [
+            67.78752,
+            32.50122
+          ],
+          [
+            69.16393,
+            31.97929
+          ],
+          [
+            70.52456,
+            31.44268
+          ],
+          [
+            71.86948,
+            30.89185
+          ],
+          [
+            73.19884,
+            30.32727
+          ],
+          [
+            74.51277,
+            29.7494
+          ],
+          [
+            75.81149,
+            29.15871
+          ],
+          [
+            77.09519,
+            28.55563
+          ]
+        ]
+      },
+      "properties": {
+        "id": "alg-del",
+        "from": "ALG",
+        "to": "DEL",
+        "carrier": "AH",
+        "flight": "AH 3104",
+        "status": "unclear",
+        "days": [
+          "tue",
+          "thu",
+          "sun"
+        ],
+        "evidence": "listed",
+        "planned": true,
+        "source": "https://www.aeroroutes.com/eng/261119-ahns27del",
+        "sources": [
+          "https://www.aeroroutes.com/eng/261119-ahns27del",
+          "https://algerie-eco.com/2026/07/09/air-algerie-un-vol-direct-alger-new-delhi-a-partir-de-fin-octobre-2026/",
+          "https://www.aeroroutes.com/eng/260911-ahnw26del",
+          "https://observalgerie.com/2026/09/12/voyage/air-algerie-retire-une-nouvelle-ligne-long-courrier-de-son-programme/",
+          "https://www.algerie360.com/air-algerie-repousse-lancement-vol-direct-alger-delhi/"
+        ],
+        "great_circle_km": 6810,
+        "from_name": "Aéroport d’Alger - Houari Boumediene",
+        "to_name": "Aéroport international Indira-Gandhi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            3.21085,
+            36.69951
+          ],
+          [
             4.7773,
             38.07836
           ],
@@ -38075,228 +39687,6 @@
         "great_circle_km": 4219,
         "from_name": "Aéroport d’Alger - Houari Boumediene",
         "to_name": "Aéroport international de Koweït"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            3.21085,
-            36.69951
-          ],
-          [
-            3.51821,
-            36.19969
-          ],
-          [
-            3.82166,
-            35.6991
-          ],
-          [
-            4.12133,
-            35.19775
-          ],
-          [
-            4.41732,
-            34.69568
-          ],
-          [
-            4.70974,
-            34.19289
-          ],
-          [
-            4.99868,
-            33.68942
-          ],
-          [
-            5.28426,
-            33.18529
-          ],
-          [
-            5.56657,
-            32.68051
-          ],
-          [
-            5.84571,
-            32.17511
-          ],
-          [
-            6.12176,
-            31.6691
-          ],
-          [
-            6.39482,
-            31.16251
-          ],
-          [
-            6.66497,
-            30.65534
-          ],
-          [
-            6.9323,
-            30.14762
-          ],
-          [
-            7.19689,
-            29.63936
-          ],
-          [
-            7.45883,
-            29.13059
-          ],
-          [
-            7.71818,
-            28.62131
-          ],
-          [
-            7.97502,
-            28.11154
-          ],
-          [
-            8.22944,
-            27.6013
-          ],
-          [
-            8.4815,
-            27.09059
-          ],
-          [
-            8.73126,
-            26.57945
-          ],
-          [
-            8.97881,
-            26.06787
-          ],
-          [
-            9.2242,
-            25.55587
-          ],
-          [
-            9.4675,
-            25.04346
-          ],
-          [
-            9.70878,
-            24.53067
-          ],
-          [
-            9.9481,
-            24.01749
-          ],
-          [
-            10.18551,
-            23.50394
-          ],
-          [
-            10.42107,
-            22.99004
-          ],
-          [
-            10.65485,
-            22.47579
-          ],
-          [
-            10.8869,
-            21.96121
-          ],
-          [
-            11.11728,
-            21.4463
-          ],
-          [
-            11.34603,
-            20.93108
-          ],
-          [
-            11.57321,
-            20.41556
-          ],
-          [
-            11.79888,
-            19.89975
-          ],
-          [
-            12.02308,
-            19.38365
-          ],
-          [
-            12.24586,
-            18.86728
-          ],
-          [
-            12.46728,
-            18.35065
-          ],
-          [
-            12.68737,
-            17.83376
-          ],
-          [
-            12.90619,
-            17.31663
-          ],
-          [
-            13.12378,
-            16.79926
-          ],
-          [
-            13.34019,
-            16.28166
-          ],
-          [
-            13.55546,
-            15.76384
-          ],
-          [
-            13.76963,
-            15.24582
-          ],
-          [
-            13.98275,
-            14.72759
-          ],
-          [
-            14.19486,
-            14.20917
-          ],
-          [
-            14.406,
-            13.69056
-          ],
-          [
-            14.61621,
-            13.17178
-          ],
-          [
-            14.82553,
-            12.65282
-          ],
-          [
-            15.034,
-            12.1337
-          ]
-        ]
-      },
-      "properties": {
-        "id": "alg-ndj",
-        "from": "ALG",
-        "to": "NDJ",
-        "carrier": "AH",
-        "flight": null,
-        "status": "unclear",
-        "days": null,
-        "evidence": "listed",
-        "planned": true,
-        "source": "https://www.aeroroutes.com/eng/260622-ahnw267m8",
-        "sources": [
-          "https://www.aeroroutes.com/eng/260622-ahnw267m8"
-        ],
-        "great_circle_km": 2976,
-        "from_name": "Aéroport d’Alger - Houari Boumediene",
-        "to_name": "Aéroport international de N'Djaména"
       }
     },
     {
@@ -38748,6 +40138,236 @@
         ],
         "great_circle_km": 3050,
         "from_name": "Aéroport international Reine Alia",
+        "to_name": "Aéroport d’Alger - Houari Boumediene"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.09519,
+            28.55563
+          ],
+          [
+            75.81149,
+            29.15871
+          ],
+          [
+            74.51277,
+            29.7494
+          ],
+          [
+            73.19884,
+            30.32727
+          ],
+          [
+            71.86948,
+            30.89185
+          ],
+          [
+            70.52456,
+            31.44268
+          ],
+          [
+            69.16393,
+            31.97929
+          ],
+          [
+            67.78752,
+            32.50122
+          ],
+          [
+            66.39528,
+            33.00799
+          ],
+          [
+            64.98719,
+            33.49914
+          ],
+          [
+            63.56331,
+            33.97417
+          ],
+          [
+            62.1237,
+            34.43263
+          ],
+          [
+            60.66852,
+            34.87403
+          ],
+          [
+            59.19794,
+            35.29791
+          ],
+          [
+            57.7122,
+            35.70381
+          ],
+          [
+            56.2116,
+            36.09127
+          ],
+          [
+            54.69651,
+            36.45983
+          ],
+          [
+            53.16732,
+            36.80907
+          ],
+          [
+            51.62452,
+            37.13855
+          ],
+          [
+            50.06864,
+            37.44787
+          ],
+          [
+            48.50027,
+            37.73663
+          ],
+          [
+            46.92007,
+            38.00445
+          ],
+          [
+            45.32875,
+            38.25098
+          ],
+          [
+            43.72707,
+            38.47587
+          ],
+          [
+            42.11586,
+            38.67883
+          ],
+          [
+            40.49599,
+            38.85956
+          ],
+          [
+            38.86838,
+            39.0178
+          ],
+          [
+            37.23399,
+            39.15334
+          ],
+          [
+            35.59383,
+            39.26596
+          ],
+          [
+            33.94894,
+            39.35551
+          ],
+          [
+            32.30037,
+            39.42185
+          ],
+          [
+            30.64921,
+            39.46488
+          ],
+          [
+            28.99656,
+            39.48454
+          ],
+          [
+            27.34354,
+            39.4808
+          ],
+          [
+            25.69124,
+            39.45366
+          ],
+          [
+            24.04079,
+            39.40316
+          ],
+          [
+            22.39328,
+            39.32939
+          ],
+          [
+            20.74979,
+            39.23245
+          ],
+          [
+            19.11136,
+            39.11248
+          ],
+          [
+            17.47904,
+            38.96966
+          ],
+          [
+            15.8538,
+            38.80419
+          ],
+          [
+            14.2366,
+            38.61633
+          ],
+          [
+            12.62834,
+            38.40632
+          ],
+          [
+            11.02989,
+            38.17448
+          ],
+          [
+            9.44204,
+            37.9211
+          ],
+          [
+            7.86555,
+            37.64655
+          ],
+          [
+            6.30111,
+            37.35117
+          ],
+          [
+            4.74935,
+            37.03536
+          ],
+          [
+            3.21085,
+            36.69951
+          ]
+        ]
+      },
+      "properties": {
+        "id": "del-alg",
+        "from": "DEL",
+        "to": "ALG",
+        "carrier": "AH",
+        "flight": "AH 3105",
+        "status": "unclear",
+        "days": [
+          "mon",
+          "wed",
+          "fri"
+        ],
+        "evidence": "listed",
+        "planned": true,
+        "source": "https://www.aeroroutes.com/eng/261119-ahns27del",
+        "sources": [
+          "https://www.aeroroutes.com/eng/261119-ahns27del",
+          "https://algerie-eco.com/2026/07/09/air-algerie-un-vol-direct-alger-new-delhi-a-partir-de-fin-octobre-2026/",
+          "https://www.aeroroutes.com/eng/260911-ahnw26del",
+          "https://observalgerie.com/2026/09/12/voyage/air-algerie-retire-une-nouvelle-ligne-long-courrier-de-son-programme/",
+          "https://www.algerie360.com/air-algerie-repousse-lancement-vol-direct-alger-delhi/"
+        ],
+        "great_circle_km": 6810,
+        "from_name": "Aéroport international Indira-Gandhi",
         "to_name": "Aéroport d’Alger - Houari Boumediene"
       }
     },

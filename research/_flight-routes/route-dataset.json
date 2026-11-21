@@ -36,6 +36,24 @@
       "great_circle_km": 1867
     },
     {
+      "id": "aae-jed",
+      "from": "AAE",
+      "to": "JED",
+      "carrier": "AH",
+      "flight": "AH 486",
+      "status": "active",
+      "days": [
+        "mon",
+        "wed"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah486",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah486"
+      ],
+      "great_circle_km": 3452
+    },
+    {
       "id": "aae-lys",
       "from": "AAE",
       "to": "LYS",
@@ -278,7 +296,7 @@
       "listed_at": "Houari Boumediene Airport",
       "sources": [
         "https://www.aps.dz/fr/economie/commerce-et-service/mmexsi27-maintien-de-la-suspension-des-vols-au-depart-et-a-destination-de-doha-beyrouth-amman-et-dubai",
-        "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/"
+        "https://en.wikipedia.org/wiki/Houari_Boumediene_Airport"
       ],
       "great_circle_km": 2934
     },
@@ -298,6 +316,21 @@
         "https://www.visa-algerie.com/air-algerie-apres-pekin-et-guangzhou-une-autre-grande-ville-en-chine-dans-le-viseur/"
       ],
       "great_circle_km": 2909
+    },
+    {
+      "id": "alg-bod",
+      "from": "ALG",
+      "to": "BOD",
+      "carrier": "AH",
+      "flight": "AH 1190",
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah1190",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah1190"
+      ],
+      "great_circle_km": 962
     },
     {
       "id": "alg-bru",
@@ -776,6 +809,25 @@
       "great_circle_km": 5199
     },
     {
+      "id": "alg-ndj",
+      "from": "ALG",
+      "to": "NDJ",
+      "carrier": "AH",
+      "flight": "AH 5370",
+      "status": "active",
+      "days": [
+        "wed",
+        "sat"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5370",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5370",
+        "https://www.aeroroutes.com/eng/260622-ahnw267m8"
+      ],
+      "great_circle_km": 2976
+    },
+    {
       "id": "alg-nim",
       "from": "ALG",
       "to": "NIM",
@@ -968,15 +1020,16 @@
       "from": "ALG",
       "to": "SXB",
       "carrier": "AH",
-      "flight": null,
+      "flight": "AH 1452",
       "status": "active",
       "days": [
-        "mon",
-        "thu"
+        "tue",
+        "sat"
       ],
       "evidence": "verified",
-      "source": "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/",
+      "source": "https://www.flightradar24.com/data/flights/ah1452",
       "sources": [
+        "https://www.flightradar24.com/data/flights/ah1452",
         "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"
       ],
       "great_circle_km": 1365
@@ -1399,14 +1452,16 @@
       "from": "CFK",
       "to": "MRS",
       "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://en.wikipedia.org/wiki/Chlef_International_Airport",
-      "source_is_the_table": true,
-      "listed_at": "Chlef International Airport",
+      "flight": "AH 1136",
+      "status": "active",
+      "days": [
+        "wed",
+        "sat"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah1136",
       "sources": [
+        "https://www.flightradar24.com/data/flights/ah1136",
         "https://en.wikipedia.org/wiki/Chlef_International_Airport"
       ],
       "great_circle_km": 869
@@ -1469,14 +1524,19 @@
       "from": "CZL",
       "to": "IST",
       "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
-      "source_is_the_table": true,
-      "listed_at": "Mohamed Boudiaf International Airport",
+      "flight": "AH 3022",
+      "status": "active",
+      "days": [
+        "mon",
+        "tue",
+        "thu",
+        "fri",
+        "sat"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah3022",
       "sources": [
+        "https://www.flightradar24.com/data/flights/ah3022",
         "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
       ],
       "great_circle_km": 1989
@@ -1586,14 +1646,17 @@
       "from": "CZL",
       "to": "NCE",
       "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
-      "source_is_the_table": true,
-      "listed_at": "Mohamed Boudiaf International Airport",
+      "flight": "AH 1198",
+      "status": "active",
+      "days": [
+        "mon",
+        "thu",
+        "sat"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah1198",
       "sources": [
+        "https://www.flightradar24.com/data/flights/ah1198",
         "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
       ],
       "great_circle_km": 822
@@ -2229,6 +2292,24 @@
       "great_circle_km": 845
     },
     {
+      "id": "ndj-alg",
+      "from": "NDJ",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 5371",
+      "status": "active",
+      "days": [
+        "thu",
+        "sun"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah5371",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah5371"
+      ],
+      "great_circle_km": 2976
+    },
+    {
       "id": "nkc-alg",
       "from": "NKC",
       "to": "ALG",
@@ -2308,6 +2389,28 @@
       "great_circle_km": 1024
     },
     {
+      "id": "orn-cdg",
+      "from": "ORN",
+      "to": "CDG",
+      "carrier": "AH",
+      "flight": "AH 1084",
+      "status": "active",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "sat",
+        "sun"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah1084",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah1084"
+      ],
+      "great_circle_km": 1511
+    },
+    {
       "id": "orn-etz",
       "from": "ORN",
       "to": "ETZ",
@@ -2342,14 +2445,17 @@
       "from": "ORN",
       "to": "LIL",
       "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
-      "source_is_the_table": true,
-      "listed_at": "Ahmed Ben Bella Airport",
+      "flight": "AH 1078",
+      "status": "active",
+      "days": [
+        "mon",
+        "wed",
+        "sat"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah1078",
       "sources": [
+        "https://www.flightradar24.com/data/flights/ah1078",
         "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport"
       ],
       "great_circle_km": 1689
@@ -2500,6 +2606,23 @@
       "great_circle_km": 10131
     },
     {
+      "id": "qsf-cdg",
+      "from": "QSF",
+      "to": "CDG",
+      "carrier": "AH",
+      "flight": "AH 1108",
+      "status": "active",
+      "days": [
+        "mon"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah1108",
+      "sources": [
+        "https://www.flightradar24.com/data/flights/ah1108"
+      ],
+      "great_circle_km": 1445
+    },
+    {
       "id": "qsf-lil",
       "from": "QSF",
       "to": "LIL",
@@ -2536,14 +2659,17 @@
       "from": "QSF",
       "to": "ORY",
       "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://en.wikipedia.org/wiki/Ain_Arnat_Airport",
-      "source_is_the_table": true,
-      "listed_at": "Ain Arnat Airport",
+      "flight": "AH 1108",
+      "status": "active",
+      "days": [
+        "tue",
+        "sat",
+        "sun"
+      ],
+      "evidence": "verified",
+      "source": "https://www.flightradar24.com/data/flights/ah1108",
       "sources": [
+        "https://www.flightradar24.com/data/flights/ah1108",
         "https://en.wikipedia.org/wiki/Ain_Arnat_Airport"
       ],
       "great_circle_km": 1417
@@ -2587,12 +2713,16 @@
       "to": "ALG",
       "carrier": "AH",
       "flight": "AH 1453",
-      "status": "seasonal",
-      "days": null,
+      "status": "active",
+      "days": [
+        "tue",
+        "sat"
+      ],
       "evidence": "verified",
-      "source": "https://www.observalgerie.com/",
+      "source": "https://www.flightradar24.com/data/flights/ah1453",
       "sources": [
-        "https://www.observalgerie.com/"
+        "https://www.flightradar24.com/data/flights/ah1453",
+        "https://www.strasbourg.aeroport.fr/passagers/nouveau-alger-avec-air-algerie-2/"
       ],
       "great_circle_km": 1365
     },
@@ -2744,6 +2874,29 @@
   ],
   "planned": [
     {
+      "id": "alg-del",
+      "from": "ALG",
+      "to": "DEL",
+      "carrier": "AH",
+      "flight": "AH 3104",
+      "status": "unclear",
+      "days": [
+        "tue",
+        "thu",
+        "sun"
+      ],
+      "evidence": "listed",
+      "source": "https://www.aeroroutes.com/eng/261119-ahns27del",
+      "sources": [
+        "https://www.aeroroutes.com/eng/261119-ahns27del",
+        "https://algerie-eco.com/2026/07/09/air-algerie-un-vol-direct-alger-new-delhi-a-partir-de-fin-octobre-2026/",
+        "https://www.aeroroutes.com/eng/260911-ahnw26del",
+        "https://observalgerie.com/2026/09/12/voyage/air-algerie-retire-une-nouvelle-ligne-long-courrier-de-son-programme/",
+        "https://www.algerie360.com/air-algerie-repousse-lancement-vol-direct-alger-delhi/"
+      ],
+      "great_circle_km": 6810
+    },
+    {
       "id": "alg-icn",
       "from": "ALG",
       "to": "ICN",
@@ -2775,21 +2928,6 @@
         "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
       ],
       "great_circle_km": 4219
-    },
-    {
-      "id": "alg-ndj",
-      "from": "ALG",
-      "to": "NDJ",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://www.aeroroutes.com/eng/260622-ahnw267m8",
-      "sources": [
-        "https://www.aeroroutes.com/eng/260622-ahnw267m8"
-      ],
-      "great_circle_km": 2976
     },
     {
       "id": "alg-svo",
@@ -2828,6 +2966,29 @@
         "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"
       ],
       "great_circle_km": 3050
+    },
+    {
+      "id": "del-alg",
+      "from": "DEL",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 3105",
+      "status": "unclear",
+      "days": [
+        "mon",
+        "wed",
+        "fri"
+      ],
+      "evidence": "listed",
+      "source": "https://www.aeroroutes.com/eng/261119-ahns27del",
+      "sources": [
+        "https://www.aeroroutes.com/eng/261119-ahns27del",
+        "https://algerie-eco.com/2026/07/09/air-algerie-un-vol-direct-alger-new-delhi-a-partir-de-fin-octobre-2026/",
+        "https://www.aeroroutes.com/eng/260911-ahnw26del",
+        "https://observalgerie.com/2026/09/12/voyage/air-algerie-retire-une-nouvelle-ligne-long-courrier-de-son-programme/",
+        "https://www.algerie360.com/air-algerie-repousse-lancement-vol-direct-alger-delhi/"
+      ],
+      "great_circle_km": 6810
     },
     {
       "id": "icn-alg",
@@ -3104,6 +3265,15 @@
       "lat": 36.28378418745162,
       "lng": 6.621478825849163,
       "country": "DZ"
+    },
+    {
+      "iata": "DEL",
+      "name": "Aéroport international Indira-Gandhi",
+      "name_en": "Indira Gandhi International Airport",
+      "name_ar": "مطار أنديرا غاندي الدولي",
+      "lat": 28.55563,
+      "lng": 77.09519,
+      "country": "IN"
     },
     {
       "iata": "DJE",
