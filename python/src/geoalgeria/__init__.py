@@ -1,4 +1,4 @@
-"""Algeria's 69 wilayas and 1,541 communes, from the GeoAlgeria open dataset.
+"""Algeria's 69 wilayas, 551 Dairas and 1,541 communes, from the GeoAlgeria open dataset.
 
     >>> import geoalgeria
     >>> geoalgeria.wilaya(31)["name_fr"]
@@ -8,6 +8,7 @@
 """
 from __future__ import annotations
 
+import copy
 import json
 import re
 import unicodedata
@@ -18,7 +19,7 @@ from typing import Any, Dict, List, Optional
 from ._normalize import conservative_key, loose_key, tokenize
 
 __all__ = [
-    "wilayas", "wilaya", "communes", "commune", "dairas", "search", "normalize",
+    "wilayas", "wilaya", "communes", "commune", "dairas", "lineage", "search", "normalize",
     "conservative_key", "loose_key", "tokenize", "DATA_VERSION",
 ]
 __version__ = "0.1.0"
@@ -41,6 +42,16 @@ def _wilayas() -> List[Record]:
 @lru_cache(maxsize=None)
 def _communes() -> List[Record]:
     return json.loads(_read("communes.json"))
+
+
+@lru_cache(maxsize=None)
+def _dairas() -> List[Record]:
+    return json.loads(_read("dairas.json"))
+
+
+@lru_cache(maxsize=None)
+def _lineage() -> Record:
+    return json.loads(_read("wilaya-lineage.json"))
 
 
 def wilayas() -> List[Record]:
@@ -69,13 +80,20 @@ def commune(code: int | str) -> Optional[Record]:
 
 
 def dairas(wilaya_code: int | str | None = None) -> List[Record]:
-    """Dairas grouped from the communes: name, wilaya code and commune codes."""
-    groups: Dict[tuple, Record] = {}
-    for c in communes(wilaya_code):
-        key = (c["wilaya_code"], c["daira"])
-        d = groups.setdefault(key, {"name_fr": c["daira"], "wilaya_code": c["wilaya_code"], "communes": []})
-        d["communes"].append(c["code_commune"])
-    return list(groups.values())
+    """All 551 audited Dairas, or those of one wilaya, each with its Daira audit status and citation."""
+    rows = _dairas()
+    if wilaya_code is not None:
+        rows = [d for d in rows if d["wilaya_code"] == int(wilaya_code)]
+    return copy.deepcopy(rows)
+
+
+def lineage() -> Record:
+    """The Wilaya lineage: for each of the 69 wilayas, the wilaya it belonged to on the
+    58-wilaya and 48-wilaya maps, plus the commune transfers and exceptions, with citations.
+
+    Each commune repeats its wilaya's two codes as wilaya_code_58 and wilaya_code_48.
+    """
+    return copy.deepcopy(_lineage())
 
 
 _ARABIC_MARKS = re.compile("[ؐ-ًؚ-ٰٟۖ-ۭـ]")

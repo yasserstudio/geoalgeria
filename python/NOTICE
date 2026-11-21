@@ -2,10 +2,10 @@ geoalgeria data notices
 
 Package code is licensed under the MIT License in LICENSE, and so is the
 compilation of wilayas, dairas, communes, their bilingual names, postal codes and
-administrative codes. Five parts of the data are not: four derived from
+administrative codes. Seven parts of the data are not: six derived from
 OpenStreetMap, and the mirrored postal data under data/poste/.
 
-The four parts derived from OpenStreetMap are made available under the Open
+The six parts derived from OpenStreetMap are made available under the Open
 Database License (ODbL) 1.0 instead. Attribution:
 (c) OpenStreetMap contributors
 https://opendatacommons.org/licenses/odbl/1-0/
@@ -18,7 +18,31 @@ https://www.openstreetmap.org/copyright
    mapshaper. Provenance, including the one deliberate departure from upstream
    OpenStreetMap, is in data/geojson/wilaya-boundaries.metadata.json.
 
-2. Commune centre coordinates
+2. Commune boundary polygons
+
+   data/geojson/commune-boundaries.geojson, 1,541 features, from OpenStreetMap
+   `admin_level=8` relations in the Overpass capture of 2026-09-29, each joined
+   to its commune record by `osm_relation_id`. Contributed by GitHub user dasezo
+   in pull request #349.
+
+   Three outlines, Souk Oufella (630), Collo (2110) and Dhayet Bendhahoua (4703),
+   come from geoBoundaries (https://www.geoboundaries.org), ADM3 release for
+   Algeria, boundaryID DZA-ADM3-69997007, whose stated source is OpenStreetMap
+   via osm-boundaries.com. One outline, Bir Touta (1634), is the gap its
+   neighbours and the wilaya outline leave. Provenance, every repaired ring and
+   every exception is in data/geojson/commune-boundaries.metadata.json.
+
+   The same outlines are published cut by wilaya, one file per wilaya code, in
+   data/geojson/commune-boundaries/ (for example 16.geojson). They are generated
+   from the national file and carry the same terms and credits.
+
+3. Detailed wilaya boundary polygons
+
+   data/geojson/wilaya-boundaries-detailed.geojson, 69 features, the union of
+   the commune boundary polygons above per wilaya. Provenance is in
+   data/geojson/wilaya-boundaries-detailed.metadata.json.
+
+4. Commune centre coordinates
 
    323 of the 1,541 commune `latitude` / `longitude` values, each taken from that
    commune's own OpenStreetMap `admin_level=8` relation:
@@ -78,7 +102,7 @@ https://www.openstreetmap.org/copyright
    The other 1,218 commune coordinates are not OpenStreetMap-derived and no ODbL
    claim is made over them.
 
-3. Wilaya capital points
+5. Wilaya capital points
 
    A wilaya's latitude / longitude is the centre of its capital commune
    (capital_commune_code), the same value and not a second reading of it, so it
@@ -94,7 +118,7 @@ https://www.openstreetmap.org/copyright
    recorded source, are not OpenStreetMap-derived and no ODbL claim is made over
    them.
 
-4. OpenStreetMap relation ids and Wikidata items
+6. OpenStreetMap relation ids and Wikidata items
 
    The osm_relation_id and wikidata values on the commune and wilaya records, read
    off the Overpass capture of the Algerian administrative relations whose
@@ -124,7 +148,7 @@ https://www.openstreetmap.org/copyright
    OpenStreetMap tag values, not the result of a query against Wikidata, so the ODbL
    covers them here as it covers the relation ids.
 
-5. Mirrored postal data
+7. Mirrored postal data
 
    data/poste/ (postoffices.json, atms.json, their CSV and GeoJSON
    representations and their metadata.json) is a generated mirror of

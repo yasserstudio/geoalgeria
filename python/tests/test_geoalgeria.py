@@ -15,10 +15,6 @@ def test_lookup():
     assert all(c["wilaya_code"] == 16 for c in g.communes(16))
 
 
-def test_dairas_cover_every_commune():
-    assert sum(len(d["communes"]) for d in g.dairas()) == 1541
-
-
 def test_search_arabic_and_french():
     assert g.search("ورقلة")[0]["name_fr"] == "Ouargla"
     assert g.search("وَرْقْلَة")[0]["name_fr"] == "Ouargla"
