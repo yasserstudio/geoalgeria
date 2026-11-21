@@ -351,7 +351,8 @@ dairas, the Wilaya lineage or name history also runs `python python/build_data.p
 and commits `python/src/geoalgeria/data`.
 
 PyPI rejects account passwords: the token is a project-scoped API token
-(username `__token__`). 0.1.0 (data 2.4.1) was published on 2026-10-31.
+(username `__token__`). 0.1.0 (data 2.4.1) was published on 2026-10-31, 0.2.0 (data 2.5.0) and
+0.2.1 (data 2.6.0) on 2026-11-21.
 
 ### 5. Approve the staged packages
 

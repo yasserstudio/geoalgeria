@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "geoalgeria"
-version = "0.2.0"
+version = "0.2.1"
 description = "Algeria's 69 wilayas, 551 dairas and 1,541 communes with postal codes, coordinates and Arabic/French search, from the GeoAlgeria open dataset."
 readme = "README.md"
 requires-python = ">=3.9"
