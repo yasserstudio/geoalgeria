@@ -1,7 +1,0 @@
----
-"geoalgeria": minor
----
-
-Add `search(query, { limit, types })`: ranked Wilayas, Dairas and Communes for what a person typed. Names fold through `@geoalgeria/normalize`, now a dependency, so Arabic harakat, alef and hamza variants, taa marbuta and Latin accents or case no longer stop a match. Each result is `{ type, code, name_fr, name_ar, wilaya_code, match }`, where `match` is the Match class: `exact`, `prefix` (the query is a prefix of the name, at a word boundary) or `loose` (a match only once the Loose key folds the pairs a speaker may spell either way, taa marbuta with haa and alef maqsura with yaa). Results come exact first, then prefix, then loose; a Wilaya before a Daira before a Commune of the same class; then in name order. A Former name from `nameHistory` still finds its record, flagged `matched: "former"` when no current name matched as well. `limit` defaults to 10, `types` takes any of `"wilaya"`, `"daira"` and `"commune"`, and an empty query returns `[]`. A Daira's `name_ar` is `null` until Daira rows carry Arabic names.
-
-`search` loads the `@geoalgeria/normalize` ES module the first time it runs, so in plain Node it needs Node 20.19+ or 22.12+; bundlers handle it on any version. The new dependency declares Node 18+, so yarn v1 on Node 16 or older refuses to install this release; npm only warns. Nothing else in the package changed, and `findCommune` returns what it returned before.

@@ -1,5 +1,29 @@
 # Changelog
 
+## 2.5.0
+
+### Minor Changes
+
+- 726e0ba: Add `data/geojson/commune-boundaries.geojson`: a Polygon or MultiPolygon for all 1,541 communes, each carrying the same properties as `communes.geojson` plus `code_commune`, the commune's own code and the join key. Outlines come from the OpenStreetMap `admin_level=8` relations the repo already caches (pulled 2026-09-29, matched by `osm_relation_id`). Three communes with no cached outline (Souk Oufella 630, Collo 2110, Dhayet Bendhahoua 4703) take a geoBoundaries ADM3 polygon that passed five matching clauses, and Bir Touta (1634) takes the 27.6 km2 gap its neighbours leave in Algiers, which an independent geoBoundaries polygon matches at 0.996 shape overlap. No commune record or point changed.
+
+  Also add `data/geojson/wilaya-boundaries-detailed.geojson`: the 69 wilaya outlines dissolved from those commune outlines, so a wilaya border follows the communes at the same detail. The simplified `wilaya-boundaries.geojson` is unchanged.
+
+  Also publish the same commune outlines cut by wilaya in `data/geojson/commune-boundaries/`, one file per wilaya code from `1.geojson` to `69.geojson`, so a map of one wilaya loads only that wilaya (Algiers: `commune-boundaries/16.geojson`). Each file holds the national file's features for that wilaya, unchanged, and is generated from it in the same build.
+
+- fa42ee7: Add three fields to every row of `data/dairas.json`: `audit`, how far the daira's commune list is checked against the Journal officiel, and `name_ar` with `name_ar_source`. 210 dairas are `decree_table`, read from a whole-wilaya table of decree 26-253 (2026) or 21-198 (2021); 275 are `agrees_1991`, agreeing with decree 91-306 (1991) as amended by 92-66 where it applies, with later amendments not exhaustively searched; 66 are not graded (`status` null): the 13 Algiers dairas, reorganized by texts of 1997 to 2000 that this audit has not read, 43 that disagree with the 1991 table with no amending text found, and 10 that match it only weakly. Each graded daira cites the decree, article, page and the joradp.dz PDF. `name_ar` is set on 494 dairas, from the decree's Arabic table or the seat commune's Arabic name, and null on the other 57. No daira, commune or membership changed. The `Daira` type gains the same fields.
+- 8ce345c: Add three fields to every row of `data/dairas.json`: `communes`, the member commune codes in ascending order (the same membership as each commune's `daira`); `seat_commune_code`, the member commune the daira is named after, set on 550 of 551 (null on Beni Maouche, whose one member is Beni-Mallikeche); and `kind`, `circonscription` for the 13 circonscriptions administratives of Algiers and `daira` for the other 538. No daira, commune or membership changed. The `Daira` type gains the same fields.
+- 0d5b87c: Add `search(query, { limit, types })`: ranked Wilayas, Dairas and Communes for what a person typed. Names fold through `@geoalgeria/normalize`, now a dependency, so Arabic harakat, alef and hamza variants, taa marbuta and Latin accents or case no longer stop a match. Each result is `{ type, code, name_fr, name_ar, wilaya_code, match }`, where `match` is the Match class: `exact`, `prefix` (the query is a prefix of the name, at a word boundary) or `loose` (a match only once the Loose key folds the pairs a speaker may spell either way, taa marbuta with haa and alef maqsura with yaa). Results come exact first, then prefix, then loose; a Wilaya before a Daira before a Commune of the same class; then in name order. A Former name from `nameHistory` still finds its record, flagged `matched: "former"` when no current name matched as well. `limit` defaults to 10, `types` takes any of `"wilaya"`, `"daira"` and `"commune"`, and an empty query returns `[]`. A Daira's `name_ar` is `null` until Daira rows carry Arabic names.
+
+  `search` loads the `@geoalgeria/normalize` ES module the first time it runs, so in plain Node it needs Node 20.19+ or 22.12+; bundlers handle it on any version. The new dependency declares Node 18+, so yarn v1 on Node 16 or older refuses to install this release; npm only warns. Nothing else in the package changed, and `findCommune` returns what it returned before.
+
+- cd0f978: Add `wilaya_code_58` and `wilaya_code_48` to all 1,541 communes. They give the wilaya each commune was in on the 58-wilaya map (Law 19-12 to Law 26-06) and on the 48-wilaya map (Law 84-09 as it stood just before Law 19-12, with the 24 communes Ordonnance 97-14 moved into Algiers in 1997). Statistics published on an older map now join the current records directly. A commune of wilayas 1 to 48 that no reform moved keeps its code on all three maps. The fields appear in `communes_w*.json`, `algeria.json`, `geojson/communes.geojson`, the commune outlines, `csv/communes.csv` and the `communes` table of `sql/full.sql`. In the CSV and SQL they are two trailing columns, so every existing column keeps its position. `ecommerce/` does not carry them.
+
+  Also add `data/wilaya-lineage.json`, read by `require("geoalgeria").wilayaLineage`. It has one row per current wilaya, giving its two earlier codes and the article of each text that sets them: Law 84-09, Ordonnance 97-14, Law 19-12, décret 21-117, Law 26-06 and décret 26-206. It also lists the 1997 transfers to Algiers and one recorded exception. Law 19-12 lists El Borma (3021) under Touggourt (55), but the ONS code keeps it in Ouargla (30), and the dataset keeps it in 30 on every map. The TypeScript types cover the new fields and the `WilayaLineage` shape.
+
+### Patch Changes
+
+- 16da915: The READMEs in English, French and Arabic show `search()`, the old wilaya codes and a daira's `audit` in the usage block. The post office and ATM counts in the READMEs and the package description now read 3,907 and 2,023, the counts the package ships, instead of 3,908 and 2,026. The Arabic README writes April as أفريل. No data changed.
+
 ## 2.4.1
 
 ### Patch Changes

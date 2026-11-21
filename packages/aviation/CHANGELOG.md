@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.10.0
+
+### Minor Changes
+
+- ecac9f8: Add Algiers to New Delhi to `plannedRoutes()` in both directions (`alg-del`, `del-alg`), with Indira Gandhi International (DEL) back in `route-endpoints.json`. Air Algérie's latest schedule filing (AeroRoutes, 19 Nov 2026) tentatively plans the route from 28 March 2027 at the earliest, listed until 8 June 2027, three times a week on the A330-900neo: `AH 3104` leaves Algiers on Tuesday, Thursday and Sunday, and `AH 3105` leaves Delhi on Monday, Wednesday and Friday. Bookings are not open, so both rows are `listed`. The same route was announced for late October 2026, confirmed by India's ambassador on 7 July, and withdrawn in September; those reports stay in each row's `sources` after the new filing. Also drop a 20 June 2026 report about Delhi and Shanghai from `alg-bey`'s `sources`, which cited it for Beirut by mistake.
+- 540390b: Five more legs checked against their flights' own Flightradar24 histories on 21 Nov 2026, each on dated "Landed" rows. Three are new: Lille to Algiers (`lil-alg`, `AH 1075`), and Geneva both ways (`alg-gva`, `AH 2046`, and `gva-alg`, `AH 2047`, Monday, Thursday, Friday and Saturday). Two move from `listed` to `verified` with a flight number and days: Algiers to Orly (`alg-ory`, `AH 1008`, every day) and Algiers to Lille (`alg-lil`, `AH 1074`, Monday, Tuesday, Wednesday and Saturday). Algiers to Bordeaux (`alg-bod`) gains its days, Saturday and Sunday. Geneva is a new endpoint. Routes are now 178 nonstop and 9 planned.
+- 2821d93: Thirteen legs checked against their flights' own Flightradar24 histories on 21 Nov 2026, each on dated "Landed" rows. Algiers to N'Djamena (`alg-ndj`, `AH 5370`, Wednesday and Saturday) leaves `plannedRoutes()` and operates. Five legs are new: `ndj-alg` (`AH 5371`), `aae-jed` (`AH 486`), `alg-bod` (`AH 1190`), `qsf-cdg` (`AH 1108`) and `orn-cdg` (`AH 1084`). Five move from `listed` to `verified` with a flight number and days: `czl-ist` (`AH 3022`), `czl-nce` (`AH 1198`), `cfk-mrs` (`AH 1136`), `qsf-ory` (`AH 1108`) and `orn-lil` (`AH 1078`). Strasbourg: `sxb-alg` goes from `seasonal` to `active` and `alg-sxb` gets `AH 1452`, both on Tuesday and Saturday, the current days, where the airport's announcement gave the launch schedule. The history page is each row's `source`; earlier citations stay after it. Routes are now 175 nonstop and 9 planned.
+
 ## 2.9.0
 
 ### Minor Changes
