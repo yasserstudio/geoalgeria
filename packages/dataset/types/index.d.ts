@@ -144,8 +144,8 @@ declare namespace algeriaGeodata {
      *  69. Read from `wilayaLineage`, which cites the text for each wilaya. */
     wilaya_code_58: number;
     /** The wilaya (1 to 48) this commune belonged to on the 48-wilaya map of Law
-     *  84-09 on the eve of Law 19-12, so the 24 communes Ordonnance 97-14 moved
-     *  into Alger read 16: `wilaya_code` itself for wilayas 1 to 48, the mother
+     *  84-09 as it stood just before Law 19-12, so the 24 communes Ordonnance 97-14
+     *  moved into Algiers read 16: `wilaya_code` itself for wilayas 1 to 48, the mother
      *  wilaya for 49 to 69. El Borma (3021) reads 30 in all three fields although
      *  Law 19-12 lists it under Touggourt; `wilayaLineage.exceptions` says why. */
     wilaya_code_48: number;
@@ -309,7 +309,7 @@ declare namespace algeriaGeodata {
     citations: WilayaLineageCitation[];
   }
 
-  /** A commune Ordonnance 97-14 moved into Alger (16) before Law 19-12, so its
+  /** A commune Ordonnance 97-14 moved into Algiers (16) before Law 19-12, so its
    *  `wilaya_code_48` is 16. */
   export interface WilayaLineageTransfer {
     code_commune: number;
@@ -321,14 +321,14 @@ declare namespace algeriaGeodata {
     article: string;
   }
 
-  /** A commune whose fields depart from a creating text, with the reason. */
+  /** A commune whose fields depart from the text that created its wilaya, with the reason. */
   export interface WilayaLineageException {
     code_commune: number;
     name_in_text: string;
     wilaya_code: number;
     wilaya_code_58: number;
     wilaya_code_48: number;
-    /** The wilaya the creating text lists it under. */
+    /** The wilaya that text lists it under. */
     listed_under_wilaya_code: number;
     reason: string;
     citations: WilayaLineageCitation[];

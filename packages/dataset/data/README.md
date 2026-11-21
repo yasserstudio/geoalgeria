@@ -150,7 +150,7 @@ all eleven wilayas of the 2026 cohort (59–69). See
 | `name_ar` | string | Arabic name |
 | `wilaya_code` | integer | Parent wilaya code (1–69) |
 | `wilaya_code_58` | integer | The wilaya (1–58) this commune was in on the 58-wilaya map, Law 19-12 to Law 26-06: `wilaya_code` for wilayas 1–58, the mother wilaya for 59–69. See [Earlier wilaya codes](#earlier-wilaya-codes) |
-| `wilaya_code_48` | integer | The wilaya (1–48) this commune was in on the 48-wilaya map, Law 84-09 on the eve of Law 19-12: `wilaya_code` for wilayas 1–48, the mother wilaya for 49–69 |
+| `wilaya_code_48` | integer | The wilaya (1–48) this commune was in on the 48-wilaya map, Law 84-09 as it stood just before Law 19-12: `wilaya_code` for wilayas 1–48, the mother wilaya for 49–69 |
 | `daira` | string | Parent daira name (French) |
 | `postal_code` | string \| null | Commune postal code, the code of the commune's principal Algérie Poste office; its two-digit prefix is that office's wilaya when the code was issued, so it does not necessarily equal `wilaya_code` (108 of 1,540, all in wilayas 59–69, e.g. Aflou `03001` in wilaya 59); null for 1 commune with no citable code |
 | `latitude` | number | Latitude (100% geocoded — no nulls) |
@@ -308,13 +308,13 @@ articles that set them. `require("geoalgeria").wilayaLineage` reads it.
   "wilaya_code_48": 7,
   "citations": [
     { "source": "law-26-06", "article": "art. 3 (law 84-09 art. 52 bis 12)", "communes_in_text": 5 },
-    { "source": "decret-26-206", "article": "art. 1er", "note": "name and seat" }
+    { "source": "decret-26-206", "article": "art. 1er", "note": "name and capital" }
   ]
 }
 ```
 
-- **The 48-wilaya map** is Law 84-09 as it stood on the eve of Law 19-12. Ordonnance
-  97-14 moved 24 communes into Alger in 1997, from Boumerdès, Tipaza and Blida; they
+- **The 48-wilaya map** is Law 84-09 as it stood just before Law 19-12. Ordonnance
+  97-14 moved 24 communes into Algiers in 1997, from Boumerdès, Tipaza and Blida; they
   read `wilaya_code_48: 16`. The file lists them under `transfers`.
 - **The 58-wilaya map** is Law 19-12 (wilayas 49 to 58, named by décret 21-117) up to
   Law 26-06 (wilayas 59 to 69, named by décret 26-206).
@@ -322,11 +322,11 @@ articles that set them. `require("geoalgeria").wilayaLineage` reads it.
   code and current practice keep it in Ouargla (30). The dataset keeps it in 30 on every
   map and records why under `exceptions`.
 
-No creating text splits a commune, so a commune takes its wilaya's two codes. The
+No text that created a wilaya splits a commune, so each commune takes its wilaya's two codes. The
 carriers are `communes_w*.json`, `algeria.json`, `csv/communes.csv`,
 `geojson/communes.geojson`, the commune outlines and the `communes` table of
 `sql/full.sql` (two trailing columns in the CSV and SQL, so no existing column moves).
-`ecommerce/` does not carry them. `node scripts/add-wilaya-lineage.mjs --write`
+`ecommerce/` and `communes_new_wilayas.csv` do not carry them. `node scripts/add-wilaya-lineage.mjs --write`
 regenerates them and `--check` fails on a stale one; `test/wilaya-lineage.test.mjs`
 holds the data to the commune lists of each text.
 

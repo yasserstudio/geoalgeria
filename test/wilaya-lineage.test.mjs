@@ -6,9 +6,9 @@
 // carried on every commune record, so they can drift from the lineage table
 // the same way any repeated field drifts; every carrier is held to it here.
 //
-// The 48-wilaya map is Law 84-09 on the eve of Law 19-12, so the 24 communes
-// Ordonnance 97-14 moved into Alger count as Alger (16). El Borma (3021) is the
-// one place the dataset departs from a creating text, and it is pinned below so
+// The 48-wilaya map is Law 84-09 as it stood just before Law 19-12, so the 24
+// communes Ordonnance 97-14 moved into Algiers count as Algiers (16). El Borma
+// (3021) is the one place the dataset departs from the text that created a wilaya, and it is pinned below so
 // the departure cannot change silently.
 //
 // Each carrier is read with its own expression on purpose, as in the other
@@ -16,7 +16,7 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -132,6 +132,11 @@ test("El Borma stays in Ouargla, as a pinned and sourced exception", () => {
     ["law-19-12", "law-19-12", "ons-code-geo-2021"],
   );
   assert.match(e.citations[0].article, /52 bis 6, item 14/);
+  // Each reading of Law 19-12 at the page it is printed on, French edition first
+  // (JORA n° 78 of 18 December 2019; the Arabic edition runs one page later).
+  assert.equal(e.citations[0].page, "p. 15 (Arabic edition p. 16)");
+  assert.match(e.citations[1].article, /law 84-09 art\. 34\b/);
+  assert.equal(e.citations[1].page, "p. 13 (Arabic edition p. 14)");
 
   // The text does list it under Touggourt; the dataset does not, on purpose.
   const touggourt = articles.wilayas.find((a) => a.wilaya_code === 55);
@@ -143,6 +148,40 @@ test("El Borma stays in Ouargla, as a pinned and sourced exception", () => {
   assert.equal(record.wilaya_code, 30);
   assert.equal(record.wilaya_code_58, 30);
   assert.equal(record.wilaya_code_48, 30);
+});
+
+// A second reading of the 58-map codes of wilayas 59-69, from a source the rows above
+// are not checked against: their communes still carry the ONS code they had on the
+// 58-wilaya map, whose leading digits are that map's wilaya. wilayas.json's
+// mother_wilaya_code, which the lineage rows are held to, is a separate field.
+test("wilayas 59-69 take the ONS prefix of their communes as their 58-map code", () => {
+  for (const w of lineage.wilayas.filter((w) => w.code >= 59)) {
+    const prefixes = new Set(
+      communes.filter((c) => c.wilaya_code === w.code).map((c) => Math.floor(c.code_commune / 100)),
+    );
+    assert.deepEqual([...prefixes], [w.wilaya_code_58], `wilaya ${w.code}`);
+  }
+});
+
+// The lineage file says which published commune lists lack the two codes, so a
+// consumer can tell a missing field from a missing file. Every list under data/
+// whose name says commune either carries wilaya_code_58 or is named there.
+test("every commune list without the two codes is named in not_carried_by", () => {
+  const named = lineage.metadata.not_carried_by.map((entry) => entry.split(":")[0]);
+  const covers = (path) =>
+    named.some((glob) => (glob.endsWith("/*") ? path.startsWith(glob.slice(0, -1)) : path === glob));
+  const walk = (dir) =>
+    readdirSync(join(DATASET, dir), { withFileTypes: true }).flatMap((d) =>
+      d.isDirectory() ? walk(`${dir}/${d.name}`) : [`${dir}/${d.name}`],
+    );
+  const lists = walk("data").filter(
+    (p) => /commune/.test(p.split("/").at(-1)) && !/\.(metadata\.json|md)$/.test(p),
+  );
+  assert.ok(lists.length >= 10, `only ${lists.length} commune lists found`);
+  for (const p of lists) {
+    if (readFileSync(join(DATASET, p), "utf-8").includes("wilaya_code_58")) continue;
+    assert.ok(covers(p), `${p} lacks wilaya_code_58 and is not in metadata.not_carried_by`);
+  }
 });
 
 test("the 24 communes of Ordonnance 97-14 are Alger on the 48 map", () => {

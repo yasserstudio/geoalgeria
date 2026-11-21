@@ -199,7 +199,7 @@ function patchCsv(path) {
 
 // --- data/sql/full.sql, the wilayas table only ---------------------------------
 // Keyed on the `created` literal in field index 7, which is what tells a wilaya row
-// from a commune row: both print 9 fields. The tuple and the pattern are
+// from a commune row, not the field count (9 against 11). The tuple and the pattern are
 // scripts/lib/full-sql-rows.mjs, shared with the two other scripts that patch this file.
 function patchSql(path) {
   const text = readFileSync(path, "utf-8");

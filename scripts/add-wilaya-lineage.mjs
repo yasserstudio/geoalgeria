@@ -8,7 +8,7 @@
 // SOURCE OF TRUTH. packages/dataset/data/wilaya-lineage.json, one row per current
 // wilaya with its two codes and the texts behind them (Law 84-09, Ordonnance 97-14,
 // Law 19-12, Law 26-06, and the decrees naming the new wilayas). A commune takes the
-// codes of its current wilaya: no creating text splits a commune, so the wilaya is
+// codes of its current wilaya: no text that created a wilaya splits a commune, so the wilaya is
 // the whole answer. The one place the dataset departs from a text, El Borma (3021),
 // is recorded in the same file under `exceptions` and pinned by
 // test/wilaya-lineage.test.mjs. The communes each text lists are in

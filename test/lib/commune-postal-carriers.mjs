@@ -103,7 +103,7 @@ export const POSTAL_CARRIERS = [
     // (id, 'name_fr', 'name_ar', wilaya_code, 'daira', 'postal'|NULL, lat, lng, code_commune, w58, w48)
     // Anchored at the end of the row and keyed on the commune code before the two lineage codes, so the
     // SQL-escaped apostrophes (M''fatha) are read rather than dropped. The wilaya
-    // rows print nine fields too, and their point is never NULL, so the commune
+    // rows print nine fields, and their point is never NULL, so the commune
     // rows are the ones whose sixth field is a postal code and not a daira name.
     "data/sql/full.sql",
     () => {

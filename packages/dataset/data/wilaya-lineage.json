@@ -3,10 +3,10 @@
     "title_en": "Algeria: wilaya lineage, the 69 wilayas on the 58-wilaya and 48-wilaya maps",
     "title_fr": "Algérie: filiation des wilayas, les 69 wilayas sur les cartes à 58 et à 48 wilayas",
     "title_ar": "الجزائر: أصل الولايات، الولايات الـ69 على خريطتي 58 و48 ولاية",
-    "description": "For each of the 69 wilayas, the wilaya it belonged to on the 58-wilaya map (Law 19-12 to Law 26-06) and on the 48-wilaya map (Law 84-09 as it stood on the eve of Law 19-12, so with Ordonnance 97-14 applied), and the texts that say so. Every commune record repeats its wilaya's two codes as wilaya_code_58 and wilaya_code_48.",
+    "description": "For each of the 69 wilayas, the wilaya it belonged to on the 58-wilaya map (Law 19-12 to Law 26-06) and on the 48-wilaya map (Law 84-09 as it stood just before Law 19-12, so with Ordonnance 97-14 applied), and the texts that say so. Every commune record repeats its wilaya's two codes as wilaya_code_58 and wilaya_code_48.",
     "fields": {
       "wilaya_code_58": "The wilaya (1 to 58) on the map in force from Law 19-12 (JORA of 18 December 2019) to Law 26-06 (JORA of 5 April 2026). Equals code for wilayas 1 to 58; the mother wilaya for 59 to 69.",
-      "wilaya_code_48": "The wilaya (1 to 48) on the map of Law 84-09 on the eve of Law 19-12, with the Ordonnance 97-14 transfers to Alger applied. Equals code for wilayas 1 to 48; the mother wilaya for 49 to 69."
+      "wilaya_code_48": "The wilaya (1 to 48) on the map of Law 84-09 as it stood just before Law 19-12, with the Ordonnance 97-14 transfers to Algiers applied. Equals code for wilayas 1 to 48; the mother wilaya for 49 to 69."
     },
     "carriers": [
       "data/communes_w1_w23.json",
@@ -15,12 +15,13 @@
       "data/algeria.json",
       "data/csv/communes.csv",
       "data/geojson/communes.geojson",
-    "data/geojson/commune-boundaries.geojson",
-    "data/geojson/commune-boundaries/<wilaya code>.geojson",
+      "data/geojson/commune-boundaries.geojson",
+      "data/geojson/commune-boundaries/<wilaya code>.geojson",
       "data/sql/full.sql"
     ],
     "not_carried_by": [
-      "data/ecommerce/*: a flat delivery view keyed on the current wilaya; join on wilaya_code"
+      "data/ecommerce/*: a flat delivery view keyed on the current wilaya; join on wilaya_code",
+      "data/communes_new_wilayas.csv: the names of the communes of wilayas 59 to 69, with no code_commune; join on wilaya_code"
     ],
     "license": "MIT",
     "sources": [
@@ -38,7 +39,7 @@
         "journal_officiel": "JORA n° 38 du 4 juin 1997, pp. 4-5",
         "url": "https://www.joradp.dz/FTP/jo-francais/1997/F1997038.pdf",
         "evidence_type": "official",
-        "covers": "24 communes detached from Boumerdès (art. 2), Tipaza (art. 3) and Blida (art. 4) and attached to Alger from 31 July 1997 (art. 5)"
+        "covers": "24 communes detached from Boumerdès (art. 2), Tipaza (art. 3) and Blida (art. 4) and attached to Algiers from 31 July 1997 (art. 5)"
       },
       {
         "key": "law-19-12",
@@ -223,7 +224,7 @@
         {
           "source": "ordonnance-97-14",
           "article": "art. 4",
-          "note": "cedes communes to Alger (16)"
+          "note": "cedes communes to Algiers (16)"
         }
       ]
     },
@@ -595,7 +596,7 @@
         {
           "source": "ordonnance-97-14",
           "article": "art. 2",
-          "note": "cedes communes to Alger (16)"
+          "note": "cedes communes to Algiers (16)"
         }
       ]
     },
@@ -689,7 +690,7 @@
         {
           "source": "ordonnance-97-14",
           "article": "art. 3",
-          "note": "cedes communes to Alger (16)"
+          "note": "cedes communes to Algiers (16)"
         }
       ]
     },
@@ -784,7 +785,7 @@
         {
           "source": "decret-21-117",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -802,7 +803,7 @@
         {
           "source": "decret-21-117",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -820,7 +821,7 @@
         {
           "source": "decret-21-117",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -838,7 +839,7 @@
         {
           "source": "decret-21-117",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -856,7 +857,7 @@
         {
           "source": "decret-21-117",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -874,7 +875,7 @@
         {
           "source": "decret-21-117",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -892,7 +893,7 @@
         {
           "source": "decret-21-117",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -910,7 +911,7 @@
         {
           "source": "decret-21-117",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -928,7 +929,7 @@
         {
           "source": "decret-21-117",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -946,7 +947,7 @@
         {
           "source": "decret-21-117",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -964,7 +965,7 @@
         {
           "source": "decret-26-206",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -982,7 +983,7 @@
         {
           "source": "decret-26-206",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -1000,7 +1001,7 @@
         {
           "source": "decret-26-206",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -1018,7 +1019,7 @@
         {
           "source": "decret-26-206",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -1036,7 +1037,7 @@
         {
           "source": "decret-26-206",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -1054,7 +1055,7 @@
         {
           "source": "decret-26-206",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -1072,7 +1073,7 @@
         {
           "source": "decret-26-206",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -1090,7 +1091,7 @@
         {
           "source": "decret-26-206",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -1108,7 +1109,7 @@
         {
           "source": "decret-26-206",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -1126,7 +1127,7 @@
         {
           "source": "decret-26-206",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     },
@@ -1144,7 +1145,7 @@
         {
           "source": "decret-26-206",
           "article": "art. 1er",
-          "note": "name and seat"
+          "note": "name and capital"
         }
       ]
     }
@@ -1385,7 +1386,7 @@
         {
           "source": "law-19-12",
           "article": "art. 2 (restates law 84-09 art. 34: seven communes, El Borma not among them)",
-          "page": "p. 15"
+          "page": "p. 13 (Arabic edition p. 14)"
         },
         {
           "source": "ons-code-geo-2021",

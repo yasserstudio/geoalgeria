@@ -361,8 +361,8 @@ function patchSql(path, patch, header) {
   queueText(path, out.join("\n"));
 }
 
-// A wilaya row prints 9 fields too since `capital_commune_code` was added, so field
-// count alone no longer tells the two tables apart: read as a commune, wilaya 3's row
+// A wilaya row printed 9 fields like a commune row once `capital_commune_code` was
+// added, so field count alone could not tell the two tables apart: read as a commune, wilaya 3's row
 // had its postal code '03000' overwritten with the daira name 'Laghouat'. The tuples
 // and the discriminator live in scripts/lib/full-sql-rows.mjs.
 // communes: (id, 'name_fr', 'name_ar', wilaya, 'daira', 'postal', lat, lng, code_commune, w58, w48)

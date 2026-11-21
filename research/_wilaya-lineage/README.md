@@ -25,8 +25,8 @@ Ouargla (30) on the ONS 2021 code 3021. `wilaya-lineage.json` records it under
 
 The 24 communes **Ordonnance 97-14** (JORA n° 38 of 4 June 1997, pp. 4-5)
 detached from Boumerdès (art. 2, 6 communes), Tipaza (art. 3, 14) and Blida
-(art. 4, 4) and attached to Alger, codes 1634 to 1657. They are why the
-48-wilaya map is Law 84-09 **on the eve of Law 19-12** and not as printed in 1984:
+(art. 4, 4) and attached to Algiers, codes 1634 to 1657. They are why the
+48-wilaya map is Law 84-09 **as it stood just before Law 19-12** and not as printed in 1984:
 on that map these communes read `wilaya_code_48: 16`.
 
 ## Law 84-09
@@ -34,7 +34,7 @@ on that map these communes read `wilaya_code_48: 16`.
 Law 84-09 (JORA n° 6 of 7 February 1984, pp. 101-112) lists wilaya N's communes
 in art. N + 4. It fixes the 48 codes; a commune of wilayas 1 to 48 keeps its
 wilaya's code on all three maps, the 1997 transfers above included, since they
-were in force on the eve of Law 19-12. The scan's
+were in force just before Law 19-12. The scan's
 OCR merges some commune items (Guelma and Mascara counts read off by one or two),
 so the 1984 lists are not extracted item by item. The test checks instead that no
 creating article lists a commune of wilayas 1 to 48, that each of them keeps its

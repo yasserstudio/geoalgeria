@@ -89,7 +89,7 @@ export const WILAYA_POSTAL_CARRIERS = [
   ],
   [
     // (code, 'name_fr', 'name_ar', 'phone'|NULL, 'postal'|NULL, lat, lng, 'created', capital)
-    // The commune rows print nine fields too, so the discriminator is the `created`
+    // The commune rows once printed nine fields too, so the discriminator is the `created`
     // literal in the eighth field, which no commune row carries. Read here with this
     // file's own expression: scripts/lib/full-sql-rows.mjs holds the same rule for the
     // writers, and a test that imported it would stop being a second opinion.
