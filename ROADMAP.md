@@ -211,11 +211,12 @@ reads as further along than it is.
   all eleven carriers by `scripts/fix-commune-name-ar.mjs`, with Souk El
   Tenine's definite article repaired alongside them, and
   `test/commune-name-ar.test.mjs` holds the floor at zero so a regeneration
-  cannot resurrect them. Still open: dairas have NO Arabic name field at all,
-  so Arabic commune pages either showed the French daira name in Latin script
-  (fixed app-side by omitting the daira clause in Arabic) or nothing; an
-  `name_ar` for dairas would let the clause return.
-  _(logged 2026-08-13; tatweel half shipped 2026-10-01)_
+  cannot resurrect them. The daira half is resolved too: the Daira audit
+  (#360, PR #353) gave `dairas.json` a `name_ar` with its `name_ar_source` for
+  494 of 551 Dairas, read from decrees 21-198 and 26-253 or the seat Commune;
+  the other 57 stay null rather than guessed, so the Arabic daira clause can
+  return wherever a name exists.
+  _(logged 2026-08-13; tatweel half shipped 2026-10-01; daira half 2026-11-21)_
 
 - [x] **4 communes disagreed with the app file by tens of km** (Souama w15,
   Sidi Demed w67, M'fatha w67, Ouled Sidi Brahim w68): same name and wilaya,
@@ -484,6 +485,14 @@ reads as further along than it is.
   Source evidence and only need coordinates. The remaining directory levers are
   unchanged: an ETO Oran numbered Line list, and the validation-only ETUSA
   network API.
+
+  **Update 2026-11-21:** every Direction and Membership now carries a
+  `sequence_status` from a geometric check of stop order against the Line
+  shape (OSM member order consistent for 36 Directions, inconsistent and
+  flagged for 69, unvalidated for 23), with the evidence ladder in
+  `docs/adr/0005-bus-sequence-evidence-ladder.md` (PR #357). Counts are
+  unchanged at 184 Lines, 1,599 Stations and 2,682 memberships; ships as a
+  `@geoalgeria/buses` minor in the batch 2026-17 data release.
 
 - [ ] **Intercity bus schedules are a licence problem, not a scraping
   problem.** ETUSA is Algiers **urban** transport only, so the OSM re-extraction

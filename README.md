@@ -65,7 +65,35 @@ dz.findByPostalCode("16000");     // → commune, daira, wilaya
 dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 ```
 
-A bundler (Next.js, Vite, webpack) includes all ten JSON files, the post office and ATM mirrors among them. If you need one part only, import its file on its own: `import communes from "geoalgeria/data/ecommerce/communes.json"` in a bundler, or with `with { type: "json" }` in plain Node. In TypeScript the default import needs `esModuleInterop`; `import dz = require("geoalgeria")` does not.
+A bundler (Next.js, Vite, webpack) includes all eleven JSON files, the post office and ATM mirrors among them. If you need one part only, import its file on its own: `import communes from "geoalgeria/data/ecommerce/communes.json"` in a bundler, or with `with { type: "json" }` in plain Node. In TypeScript the default import needs `esModuleInterop`; `import dz = require("geoalgeria")` does not.
+
+### Search, old wilaya codes and dairas
+
+```js
+// Search: Wilayas, then Dairas, then Communes, in French or Arabic (Node 20.19+ or a bundler)
+dz.search("ورقلة");
+// [{ type: "wilaya", code: 30, name_fr: "Ouargla", name_ar: "ورقلة", wilaya_code: 30, match: "exact" },
+//  { type: "daira", code: 335, ... }, { type: "commune", code: 3001, ... }]
+dz.search("bejaia", { types: ["commune"], limit: 5 });
+// [{ type: "commune", code: 601, name_fr: "Bejaia", name_ar: "بجاية", wilaya_code: 6, match: "exact" }]
+
+// Old codes: the wilaya each commune was in on the 58- and 48-wilaya maps
+const touggourt = dz.communes.find((c) => c.code_commune === 5501);
+touggourt.wilaya_code;     // 55
+touggourt.wilaya_code_58;  // 55
+touggourt.wilaya_code_48;  // 30, Ouargla before 2019
+dz.wilayaLineage.wilayas;  // each wilaya's two old codes, with the article of law behind them
+
+// Dairas: Arabic name, how far the commune list is checked, and the communes in it
+const daira = dz.dairas.find((d) => d.id === 515);
+daira.name_ar;         // "تقرت"
+daira.audit.status;    // "decree_table", "agrees_1991", or null when not graded yet
+daira.audit.citation;  // decree 21-198 of 2021: article, page and the Journal officiel PDF
+dz.communes.filter((c) => c.wilaya_code === daira.wilaya_code && c.daira === daira.name_fr);
+// Nezla, Tebesbest, Touggourt, Zaouia El Abidia
+```
+
+Accents, case and hamza forms never stop a match. Each result's `match` is `exact`, `prefix` (the start of a name) or `loose` (ى read as ي, ة as ه), and a former name finds the record too, with `matched: "former"`. Daira lists come from the decrees in the *Journal officiel* ([ADR 0006](docs/adr/0006-dairas-from-the-decrees.md)).
 
 ## What's inside
 

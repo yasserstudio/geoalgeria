@@ -51,7 +51,7 @@
 
 ## البيانات
 
-كل قواعد البيانات المتاحة عن الجزائر على الإنترنت لا تزال تذكر **48 ولاية**. الجزائر لديها **69 ولاية منذ أبريل 2026**. جيو الجزائر قاعدة البيانات المفتوحة الأكثر اكتمالًا للتقسيمات الإدارية الجزائرية بعد إصلاح 2026، مع الرموز البريدية الحقيقية لبريد الجزائر، الإحداثيات الجغرافية الدقيقة، الأسماء ثنائية اللغة، مكاتب البريد والصرّافات الآلية، متوفرة بصيغ JSON، CSV، GeoJSON، SQL و TypeScript. أمر `npm install` واحد، كود برخصة MIT وشروط بيانات خاصة بكل حزمة، يتم التحقق منها آليًا عبر CI عند كل تغيير.
+كل قواعد البيانات المتاحة عن الجزائر على الإنترنت لا تزال تذكر **48 ولاية**. الجزائر لديها **69 ولاية منذ أفريل 2026**. جيو الجزائر قاعدة البيانات المفتوحة الأكثر اكتمالًا للتقسيمات الإدارية الجزائرية بعد إصلاح 2026، مع الرموز البريدية الحقيقية لبريد الجزائر، الإحداثيات الجغرافية الدقيقة، الأسماء ثنائية اللغة، مكاتب البريد والصرّافات الآلية، متوفرة بصيغ JSON، CSV، GeoJSON، SQL و TypeScript. أمر `npm install` واحد، كود برخصة MIT وشروط بيانات خاصة بكل حزمة، يتم التحقق منها آليًا عبر CI عند كل تغيير.
 
 ```bash
 npm install geoalgeria
@@ -67,7 +67,35 @@ dz.findByPostalCode("16000");     // → بلدية، دائرة، ولاية
 dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحقيقية
 ```
 
-مع أي bundler (Next.js أو Vite أو webpack) تُضمّ ملفات JSON العشرة كلها، بما فيها مرايا مكاتب البريد والصرافات الآلية. إذا كنت تحتاج جزءًا واحدًا، استورد ملفه وحده: `import communes from "geoalgeria/data/ecommerce/communes.json"` مع bundler، أو مع `with { type: "json" }` في Node وحده. في TypeScript يحتاج الاستيراد الافتراضي إلى `esModuleInterop`، بخلاف `import dz = require("geoalgeria")`.
+مع أي bundler (Next.js أو Vite أو webpack) تُضمّ ملفات JSON الأحد عشر كلها، بما فيها مرايا مكاتب البريد والصرافات الآلية. إذا كنت تحتاج جزءًا واحدًا، استورد ملفه وحده: `import communes from "geoalgeria/data/ecommerce/communes.json"` مع bundler، أو مع `with { type: "json" }` في Node وحده. في TypeScript يحتاج الاستيراد الافتراضي إلى `esModuleInterop`، بخلاف `import dz = require("geoalgeria")`.
+
+### البحث، رموز الولايات القديمة، والدوائر
+
+```js
+// البحث: الولايات ثم الدوائر ثم البلديات، بالفرنسية أو بالعربية (Node 20.19+ أو bundler)
+dz.search("ورقلة");
+// [{ type: "wilaya", code: 30, name_fr: "Ouargla", name_ar: "ورقلة", wilaya_code: 30, match: "exact" },
+//  { type: "daira", code: 335, ... }, { type: "commune", code: 3001, ... }]
+dz.search("bejaia", { types: ["commune"], limit: 5 });
+// [{ type: "commune", code: 601, name_fr: "Bejaia", name_ar: "بجاية", wilaya_code: 6, match: "exact" }]
+
+// الرموز القديمة: ولاية كل بلدية على خريطة 58 ولاية وخريطة 48 ولاية
+const touggourt = dz.communes.find((c) => c.code_commune === 5501);
+touggourt.wilaya_code;     // 55
+touggourt.wilaya_code_58;  // 55
+touggourt.wilaya_code_48;  // 30، ورقلة قبل 2019
+dz.wilayaLineage.wilayas;  // الرمزان القديمان لكل ولاية، مع مادة القانون التي تحددهما
+
+// الدوائر: الاسم العربي، مدى التحقق من قائمة بلدياتها، وبلدياتها
+const daira = dz.dairas.find((d) => d.id === 515);
+daira.name_ar;         // "تقرت"
+daira.audit.status;    // "decree_table" أو "agrees_1991"، أو null إن لم تُصنّف بعد
+daira.audit.citation;  // المرسوم 21-198 لسنة 2021: المادة والصفحة وملف PDF من الجريدة الرسمية
+dz.communes.filter((c) => c.wilaya_code === daira.wilaya_code && c.daira === daira.name_fr);
+// Nezla, Tebesbest, Touggourt, Zaouia El Abidia
+```
+
+الحركات وحالة الأحرف وصور الهمزة لا تمنع التطابق أبدًا. قيمة `match` في كل نتيجة هي `exact` أو `prefix` (بداية الاسم) أو `loose` (ى تُقرأ ي، وة تُقرأ ه)، والاسم السابق يجد السجل أيضًا مع `matched: "former"`. قوائم الدوائر مأخوذة من مراسيم *الجريدة الرسمية* ([ADR 0006](docs/adr/0006-dairas-from-the-decrees.md)).
 
 ## المحتوى
 
@@ -107,7 +135,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 
 الصيغ: **JSON · CSV · GeoJSON · SQL · TypeScript**. حزمة npm تتضمن كل الصيغ (JSON وCSV وGeoJSON وSQL)، وكل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases) يتضمنها أيضًا.
 
-> محدّثة وفق **القانون رقم 26-06** (التنظيم الإقليمي الجديد)، [*الجريدة الرسمية* رقم 25 بتاريخ 5 أبريل 2026](https://www.joradp.dz/FTP/jo-arabe/2026/A2026025.pdf)، بالإضافة إلى إصلاح 2019 (القانون 19-12).
+> محدّثة وفق **القانون رقم 26-06** (التنظيم الإقليمي الجديد)، [*الجريدة الرسمية* رقم 25 بتاريخ 5 أفريل 2026](https://www.joradp.dz/FTP/jo-arabe/2026/A2026025.pdf)، بالإضافة إلى إصلاح 2019 (القانون 19-12).
 
 ## لماذا جيو الجزائر؟
 
