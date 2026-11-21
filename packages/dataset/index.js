@@ -12,7 +12,8 @@ let _wilayas,
   _postOffices,
   _atms,
   _nameHistory,
-  _phoneCodeProvenance;
+  _phoneCodeProvenance,
+  _search;
 
 module.exports = {
   get wilayas() {
@@ -111,6 +112,14 @@ module.exports = {
         c.name_ar.includes(trimmed) ||
         former.has(c.code_commune)
     );
+  },
+
+  // Ranked Wilayas, Dairas and Communes, folded by @geoalgeria/normalize, each
+  // with its Match class; a hit on a Former name is flagged `matched: "former"`.
+  // Reads `module.exports` rather than `this`, so a destructured `search` works.
+  search(query, options) {
+    if (!_search) _search = require("./search.js").createSearch(module.exports);
+    return _search(query, options);
   },
 
   findByPostalCode(postalCode) {

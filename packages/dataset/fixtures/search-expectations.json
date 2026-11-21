@@ -1,0 +1,151 @@
+{
+  "description": "Queries and the results search() must lead with, shared by the npm package and the Python package so the two cannot drift. Each case calls search(query, options) and compares the leading results on type, code, match and matched (absent unless a Former name made the match). When complete is true the whole result list must equal results, not only its start. Written by the npm side (#358) and asserted by test/dataset-search.test.mjs; the Python side asserts the same file.",
+  "cases": [
+    {
+      "id": "ar.exact",
+      "query": "ورقلة",
+      "options": {},
+      "complete": false,
+      "results": [
+        { "type": "wilaya", "code": 30, "match": "exact" },
+        { "type": "commune", "code": 3001, "match": "exact" }
+      ],
+      "note": "an Arabic query finds the Wilaya first, then the Commune of the same name"
+    },
+    {
+      "id": "ar.harakat",
+      "query": "وَرْقْلَة",
+      "options": {},
+      "complete": false,
+      "results": [
+        { "type": "wilaya", "code": 30, "match": "exact" },
+        { "type": "commune", "code": 3001, "match": "exact" }
+      ],
+      "note": "harakat on the query fold away, so the vocalised spelling is still an exact match"
+    },
+    {
+      "id": "ar.alef",
+      "query": "ادرار",
+      "options": {},
+      "complete": false,
+      "results": [
+        { "type": "wilaya", "code": 1, "match": "exact" },
+        { "type": "commune", "code": 101, "match": "exact" }
+      ],
+      "note": "a bare alef matches the hamza-on-alef the name is written with"
+    },
+    {
+      "id": "ar.loose",
+      "query": "ورقله",
+      "options": {},
+      "complete": false,
+      "results": [
+        { "type": "wilaya", "code": 30, "match": "loose" },
+        { "type": "commune", "code": 3001, "match": "loose" }
+      ],
+      "note": "haa typed for taa marbuta is a loose match, never an exact one"
+    },
+    {
+      "id": "latn.accents",
+      "query": "bejaia",
+      "options": {},
+      "complete": false,
+      "results": [
+        { "type": "wilaya", "code": 6, "match": "exact" },
+        { "type": "daira", "code": 61, "match": "exact" },
+        { "type": "commune", "code": 601, "match": "exact" }
+      ],
+      "note": "an unaccented query is an exact match for Béjaïa"
+    },
+    {
+      "id": "tie.kind-order",
+      "query": "Oran",
+      "options": {},
+      "complete": false,
+      "results": [
+        { "type": "wilaya", "code": 31, "match": "exact" },
+        { "type": "daira", "code": 345, "match": "exact" },
+        { "type": "commune", "code": 3101, "match": "exact" }
+      ],
+      "note": "on the same Match class a Wilaya comes before a Daira, and a Daira before a Commune"
+    },
+    {
+      "id": "prefix.partial-word",
+      "query": "tlem",
+      "options": {},
+      "complete": false,
+      "results": [
+        { "type": "wilaya", "code": 13, "match": "prefix" }
+      ],
+      "note": "a half-typed name completes, as a prefix match"
+    },
+    {
+      "id": "types.commune-only",
+      "query": "oran",
+      "options": { "types": ["commune"] },
+      "complete": false,
+      "results": [
+        { "type": "commune", "code": 3101, "match": "exact" }
+      ],
+      "note": "a Commune picker never offers the Wilaya or the Daira"
+    },
+    {
+      "id": "limit.name-order",
+      "query": "ain",
+      "options": { "limit": 3, "types": ["wilaya"] },
+      "complete": true,
+      "results": [
+        { "type": "wilaya", "code": 44, "match": "prefix" },
+        { "type": "wilaya", "code": 65, "match": "prefix" },
+        { "type": "wilaya", "code": 46, "match": "prefix" }
+      ],
+      "note": "the limit cuts the list, and inside one Match class and one type the names come in Conservative key order: ain defla, ain ouessara, ain temouchent"
+    },
+    {
+      "id": "former.wilaya",
+      "query": "Ain Oussera",
+      "options": { "types": ["wilaya"] },
+      "complete": true,
+      "results": [
+        { "type": "wilaya", "code": 65, "match": "exact", "matched": "former" }
+      ],
+      "note": "a Wilaya's Former name still finds it, flagged as a Former-name match"
+    },
+    {
+      "id": "former.commune.fr",
+      "query": "Lemcene",
+      "options": {},
+      "complete": false,
+      "results": [
+        { "type": "commune", "code": 527, "match": "exact", "matched": "former" }
+      ],
+      "note": "a Commune's French Former name still finds it"
+    },
+    {
+      "id": "former.current-wins",
+      "query": "M'Sila",
+      "options": { "types": ["wilaya"] },
+      "complete": true,
+      "results": [
+        { "type": "wilaya", "code": 28, "match": "exact" }
+      ],
+      "note": "a Former name that folds to the current name's key is not flagged: the current name already made the match"
+    },
+    {
+      "id": "empty",
+      "query": "",
+      "options": {},
+      "complete": true,
+      "results": [],
+      "note": "an empty query returns nothing"
+    },
+    {
+      "id": "empty.after-folding",
+      "query": "  ",
+      "options": {},
+      "complete": true,
+      "results": [],
+      "note": "a query that folds to an empty Conservative key returns nothing"
+    }
+  ]
+}

@@ -84,6 +84,7 @@ console.log(JSON.stringify({
   ecommerce: geo.ecommerce.length,
   alger: geo.getWilaya(16).name_fr,
   communesOfAlger: geo.getCommunesByWilaya(16).length,
+  search: geo.search("وَرْقْلَة").map((r) => r.type + ":" + r.code + ":" + r.match).slice(0, 2).join(","),
 }));
 `;
 
@@ -150,7 +151,10 @@ async function mapLimit(items, limit, fn) {
 
 async function umbrellaLeg(work) {
   const tarball = await packInto(work, join("packages", "dataset"), "geoalgeria");
-  console.log(`packed geoalgeria (${tarball})`);
+  // `search` requires its one runtime dependency, so the bundle has to find it
+  // where an install would put it.
+  const normalize = await packInto(work, join("packages", "normalize"), "@geoalgeria/normalize");
+  console.log(`packed geoalgeria (${tarball}) and ${normalize}`);
 
   for (const format of ["esm", "cjs"]) {
     const label = `geoalgeria ${format} bundle`;
@@ -161,7 +165,7 @@ async function umbrellaLeg(work) {
       format,
       cwd: tmpdir(),
     });
-    expect(label, report, { wilayas: 69, communes: 1541, alger: "Alger" }, [
+    expect(label, report, { wilayas: 69, communes: 1541, alger: "Alger", search: "wilaya:30:exact,commune:3001:exact" }, [
       "dairas",
       "postOffices",
       "atms",

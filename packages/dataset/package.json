@@ -20,11 +20,15 @@
     "data/**/*.geojson",
     "data/**/*.sql",
     "types/",
-    "index.js"
+    "index.js",
+    "search.js"
   ],
   "scripts": {
     "validate": "python3 scripts/validate.py",
     "test": "python3 scripts/validate.py"
+  },
+  "dependencies": {
+    "@geoalgeria/normalize": "workspace:^"
   },
   "keywords": [
     "algeria",
