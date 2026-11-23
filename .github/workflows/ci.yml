@@ -38,6 +38,20 @@ jobs:
   # (Socket Security checks run on every PR). GitHub's dependency-review action
   # is intentionally omitted: it requires the repo's Dependency Graph feature
   # and would duplicate Socket's coverage.
+  credit:
+    # The Version PR merges only when every outside contributor's merged PR is
+    # credited by number in a CHANGELOG (RELEASING.md, contributor credit).
+    if: github.event_name == 'pull_request' && github.head_ref == 'changeset-release/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - run: node scripts/check-contributor-credit.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
+
   check:
     name: check (node ${{ matrix.node-version }})
     runs-on: ubuntu-latest
