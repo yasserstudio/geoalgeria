@@ -43,6 +43,8 @@ data/
 │   ├── communes.json            ← flat, denormalized, one-table design
 │   ├── communes.csv
 │   └── communes.sql             ← single CREATE + INSERT, plug-and-play
+├── fires/
+│   └── burned-area.json         ← hectares burned per wilaya and month since 2001 (ODbL)
 └── delivery/
     ├── yalidine.json            ← delivery zones (community-maintained)
     ├── zr_express.json
@@ -387,6 +389,30 @@ carriers are `communes_w*.json`, `algeria.json`, `csv/communes.csv`,
 `ecommerce/` and `communes_new_wilayas.csv` do not carry them. `node scripts/add-wilaya-lineage.mjs --write`
 regenerates them and `--check` fails on a stale one; `test/wilaya-lineage.test.mjs`
 holds the data to the commune lists of each text.
+
+## Burned area
+
+`fires/burned-area.json` gives the hectares burned in each of the 69 wilayas, month by
+month from January 2001 to `latest_month`. `require("geoalgeria").burnedArea` reads it.
+
+```json
+{ "code": 6, "months": { "2012-07": 1245.02, "2012-08": 16442.85 } }
+```
+
+- **Source.** NASA MODIS MCD64A1 v061, DOI 10.5067/MODIS/MCD64A1.061. A cell of
+  21.47 ha counts for the wilaya whose detailed outline holds its centre.
+- **Left out.** Cells whose NASA MCD12Q1 v061 land cover that year is snow, barren or water,
+  many of them on salt lakes that dry out each year. `excluded` counts them.
+- **Zero or unknown.** A month not listed is zero, unless it is in `incomplete_months`,
+  where NASA did not publish every grid.
+- **What it is not.** It is every kind of burned land, forest, scrub and farmland alike,
+  and it misses fires smaller than a cell.
+- **Check.** National totals from 2002 to 2024 must be within 10% of the GWIS country
+  totals (EU JRC GWIS, CC BY 4.0, used as a check). The build fails otherwise.
+- **End of the series.** If NASA stops producing it, it stays at its last published month.
+
+To refresh it: `scripts/fetch-burned-area.py`, then `scripts/capture-burned-area.mjs`, then
+`scripts/build-burned-area.mjs --write`. The last one needs no NASA login.
 
 ## Telephone area codes
 

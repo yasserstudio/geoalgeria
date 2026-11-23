@@ -96,7 +96,7 @@ const EXPECTED_CARRIERS = [
   ...Array.from({ length: 69 }, (_, i) => `geojson/commune-boundaries/${i + 1}.geojson`),
 ].sort();
 
-test("the core's carriers are every published data file but the postal mirror", () => {
+test("the core's carriers are every published data file but the postal mirror and the burned area", () => {
   assert.deepEqual(coreCarriers(PKG), EXPECTED_CARRIERS);
 
   // The extensions are the package's own `files[]` globs under `data/`, so a
@@ -107,7 +107,7 @@ test("the core's carriers are every published data file but the postal mirror", 
     globs.sort(),
     CARRIER_EXTENSIONS.map((extension) => `data/**/*${extension}`).sort(),
   );
-  assert.deepEqual(EXCLUDED_DIRS, ["poste"]);
+  assert.deepEqual(EXCLUDED_DIRS, ["fires", "poste"]);
 });
 
 test(`${PIN_FILE} records the digest of the core it names`, () => {

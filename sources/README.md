@@ -63,8 +63,8 @@ human review.
 ## Status
 
 Converted so far: `telecom`, `ecoles` (reference implementations,
-2026-08-03), `protection-civile`, `buses`, `livraison`, `sports`, and
-`jeunesse`. The buses capture is a reviewed,
+2026-08-03), `protection-civile`, `buses`, `livraison`, `sports`,
+`jeunesse`, and `geoalgeria` (the burned area only). The buses capture is a reviewed,
 trimmed OSM projection with its non-atomic Overpass receipts preserved. Bus
 Operator captures are rights-safe projections: they retain only factual fields
 used by the package plus upstream URLs, retrieval timestamps, byte counts and

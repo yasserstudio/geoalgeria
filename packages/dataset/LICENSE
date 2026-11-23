@@ -24,14 +24,14 @@ SOFTWARE.
 
 ## Data
 
-Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The wilaya boundary polygons (simplified and detailed), the 1,541 commune boundary polygons, 323 OpenStreetMap-derived commune centre coordinates and the OpenStreetMap relation ids and Wikidata items on the commune and wilaya records are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.
+Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The wilaya boundary polygons (simplified and detailed), the 1,541 commune boundary polygons, 323 OpenStreetMap-derived commune centre coordinates and the OpenStreetMap relation ids and Wikidata items on the commune and wilaya records are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference. The burned area under data/fires, counted inside the detailed wilaya outlines, is ODbL 1.0, © OpenStreetMap contributors.
 
 In detail, the data is compiled from public official sources. The compilation of
 wilayas, dairas, communes, their bilingual names, postal codes and administrative
 codes is offered under the MIT License above,
-https://opensource.org/licenses/MIT. Seven parts are not:
+https://opensource.org/licenses/MIT. Eight parts are not:
 
-The six OpenStreetMap-derived parts are made available under the Open Database
+The seven OpenStreetMap-derived parts are made available under the Open Database
 License (ODbL) 1.0, (c) OpenStreetMap contributors:
 
 https://opendatacommons.org/licenses/odbl/1-0/
@@ -76,11 +76,13 @@ https://opendatacommons.org/licenses/odbl/1-0/
   read off the Overpass capture whose `timestamp_osm_base` is 2026-09-29T12:54:47Z. A
   record OpenStreetMap has no relation for, or a relation with no `wikidata` tag,
   carries null and no claim.
+- The burned area in `data/fires/burned-area.json`: NASA MODIS MCD64A1 v061
+  (DOI 10.5067/MODIS/MCD64A1.061, CC0) counted inside the detailed wilaya outlines.
 
 If you use or redistribute any of those parts you must attribute OpenStreetMap
 contributors and keep derived databases under a compatible licence.
 
-The fifth part carries Algérie Poste's own terms, not the MIT License:
+The eighth part carries Algérie Poste's own terms, not the MIT License:
 
 - The mirrored postal data under `data/poste/` (post offices and ATMs, generated
   from `@geoalgeria/poste`, which states the same terms): Data © Algérie Poste;

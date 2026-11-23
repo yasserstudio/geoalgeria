@@ -76,6 +76,7 @@ dz.ecommerce;                  // jeu de données plat pour formulaires d'adress
 dz.postOffices;                // 3 907 bureaux Algérie Poste
 dz.atms;                       // 2 023 distributeurs automatiques
 dz.wilayaLineage;              // le code de chaque wilaya sur les cartes à 58 et à 48 wilayas
+dz.burnedArea;                 // hectares brûlés par wilaya et par mois depuis 2001
 
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
 dz.getCommunesByWilaya(16);    // 57 communes à Alger
@@ -159,6 +160,7 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 | `data/name-history.json` | JSON | 210 | Anciennes graphies des noms de wilayas et de communes, avec le texte qui a remplacé chacune |
 | `data/phone-code-provenance.json` | JSON | 11 | Pourquoi les wilayas 59–69 portent le `phone_code` qu'elles portent : les textes officiels consultés et la raison de chaque `null` |
 | `data/wilaya-lineage.json` | JSON | 69 | Le code de chaque wilaya sur les cartes à 58 et à 48 wilayas, avec l'article de loi qui le fixe ; les communes le portent en `wilaya_code_58` / `wilaya_code_48` |
+| `data/fires/burned-area.json` | JSON | 69 | Superficie brûlée : hectares par wilaya et par mois depuis 2001, d'après NASA MODIS MCD64A1 (ODbL) |
 | `data/wilaya-capitals.metadata.json` | JSON | 69 | Le chef-lieu de chaque wilaya, avec le décret, l'article, l'item et la page qui le fixent |
 | `data/osm-links.metadata.json` | JSON | 1 | Couverture, paliers, règle de jointure et instantanés Overpass derrière `osm_relation_id` / `wikidata` |
 | `data/communes_w*.json` | JSON | 1 541 | Données détaillées des communes |
@@ -270,7 +272,7 @@ Des données incorrectes ? [Ouvrez une issue](https://github.com/yasserstudio/g
 
 ## Sponsoriser
 
-GeoAlgeria est gratuit : code MIT et compilation MIT, avec six parties sous ODbL et les données Algérie Poste miroir indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
+GeoAlgeria est gratuit : code MIT et compilation MIT, avec sept parties sous ODbL et les données Algérie Poste miroir indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
 
 ---
 
@@ -308,7 +310,7 @@ Le **code** du paquet est sous [MIT](LICENSE), ainsi que la **compilation** : w
 communes, leurs noms bilingues, codes postaux et codes administratifs. Libre pour usage
 personnel et commercial.
 
-Six parties des données proviennent d'**OpenStreetMap**, sont **© les contributeurs
+Sept parties des données proviennent d'**OpenStreetMap**, sont **© les contributeurs
 d'OpenStreetMap** et sont sous licence **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** :
 
 - les 69 polygones de limites de wilaya dans `data/geojson/wilaya-boundaries.geojson` ;
@@ -325,7 +327,10 @@ d'OpenStreetMap** et sont sous licence **[ODbL 1.0](https://opendatacommons.org/
   portent l'une des coordonnées ci-dessus. Les 63 autres points de chefs-lieux de wilayas ne
   proviennent pas d'OpenStreetMap.
 - les valeurs `osm_relation_id` et `wikidata` des enregistrements de communes et de wilayas dans
-  `data/algeria.json`, `data/communes_w*.json` et `data/wilayas.json`.
+  `data/algeria.json`, `data/communes_w*.json` et `data/wilayas.json` ;
+- la superficie brûlée dans `data/fires/burned-area.json` : NASA MODIS MCD64A1 v061,
+  DOI 10.5067/MODIS/MCD64A1.061, comptée à l'intérieur de ces contours de wilayas, et comparée
+  chaque année à EU JRC GWIS, CC BY 4.0, utilisé comme contrôle.
 
 Si vous utilisez ou redistribuez l'une de ces parties, vous devez **attribuer aux
 contributeurs d'OpenStreetMap** et conserver les bases dérivées sous une licence compatible.

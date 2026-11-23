@@ -193,6 +193,7 @@ test("the public API keeps its values and its lazy getters", () => {
     "nameHistory",
     "phoneCodeProvenance",
     "wilayaLineage",
+    "burnedArea",
   ];
   for (const key of lazy) {
     const descriptor = Object.getOwnPropertyDescriptor(geo, key);
@@ -209,6 +210,7 @@ test("the public API keeps its values and its lazy getters", () => {
   assert.ok(geo.nameHistory.communes.length > 0);
   assert.ok(geo.phoneCodeProvenance.wilayas.length > 0);
   assert.equal(geo.wilayaLineage.wilayas.length, 69);
+  assert.equal(geo.burnedArea.wilayas.length, 69);
 
   // A wilaya record carries no commune list; `all` is the nested view.
   assert.equal(geo.wilayas[0].communes, undefined);

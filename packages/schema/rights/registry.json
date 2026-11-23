@@ -1260,6 +1260,72 @@
       "refusal": null
     },
     {
+      "key": "nasa-mcd12q1",
+      "name": "NASA MODIS MCD12Q1 v061 land cover",
+      "publisher": "NASA LP DAAC",
+      "metadata_keys": [
+        "nasa-mcd12q1"
+      ],
+      "access_class": "public-access",
+      "rights_class": "public-domain-or-cc0",
+      "rights_basis": "public-domain-statement",
+      "license_expression": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "NASA MODIS MCD12Q1 v061, DOI 10.5067/MODIS/MCD12Q1.061",
+        "url": "https://doi.org/10.5067/MODIS/MCD12Q1.061"
+      },
+      "notice": "Land cover from NASA MODIS MCD12Q1 v061, DOI 10.5067/MODIS/MCD12Q1.061. NASA does not endorse this dataset.",
+      "evidence": {
+        "source_url": "https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-use-guidance",
+        "repo_path": null,
+        "retrieved_at": "2026-11-23",
+        "note": "NASA states that data from a NASA-led mission are licensed CC0 unless marked otherwise, and strongly urges citation."
+      },
+      "review_after": "2027-11-23",
+      "notes": "Cite the DOI. Never imply NASA endorsement.",
+      "refusal": null
+    },
+    {
+      "key": "nasa-mcd64a1",
+      "name": "NASA MODIS MCD64A1 v061 burned area",
+      "publisher": "NASA LP DAAC",
+      "metadata_keys": [
+        "nasa-mcd64a1"
+      ],
+      "access_class": "public-access",
+      "rights_class": "public-domain-or-cc0",
+      "rights_basis": "public-domain-statement",
+      "license_expression": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "allowed_targets": [
+        "web",
+        "npm",
+        "cdn",
+        "mobile-pack"
+      ],
+      "attribution": {
+        "text": "NASA MODIS MCD64A1 v061, DOI 10.5067/MODIS/MCD64A1.061",
+        "url": "https://doi.org/10.5067/MODIS/MCD64A1.061"
+      },
+      "notice": "Burned area from NASA MODIS MCD64A1 v061, DOI 10.5067/MODIS/MCD64A1.061. NASA does not endorse this dataset.",
+      "evidence": {
+        "source_url": "https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-use-guidance",
+        "repo_path": null,
+        "retrieved_at": "2026-11-23",
+        "note": "NASA states that data from a NASA-led mission are licensed CC0 unless marked otherwise, and strongly urges citation."
+      },
+      "review_after": "2027-11-23",
+      "notes": "Cite the DOI. Never imply NASA endorsement.",
+      "refusal": null
+    },
+    {
       "key": "noest",
       "name": "Noest Express: bureaux directory",
       "publisher": "Noest Express",
