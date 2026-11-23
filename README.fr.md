@@ -83,6 +83,7 @@ touggourt.wilaya_code;     // 55
 touggourt.wilaya_code_58;  // 55
 touggourt.wilaya_code_48;  // 30, Ouargla avant 2019
 dz.wilayaLineage.wilayas;  // les deux anciens codes de chaque wilaya, avec l'article de loi qui les fixe
+dz.burnedArea.wilayas;     // hectares brûlés par wilaya et par mois depuis 2001
 
 // Daïras : nom arabe, niveau de vérification de la liste des communes, et ses communes
 const daira = dz.dairas.find((d) => d.id === 515);

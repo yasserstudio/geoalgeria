@@ -76,6 +76,7 @@ dz.ecommerce;                  // flat dataset for address forms
 dz.postOffices;                // 3,907 Algérie Poste offices
 dz.atms;                       // 2,023 ATMs
 dz.wilayaLineage;              // each wilaya's code on the 58- and 48-wilaya maps
+dz.burnedArea;                 // hectares burned per wilaya and month since 2001
 
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
 dz.getCommunesByWilaya(16);    // 57 communes in Algiers
@@ -159,6 +160,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
 | `data/phone-code-provenance.json` | JSON | 11 | Why wilayas 59–69 carry the `phone_code` they carry: the official texts searched and the reason for each `null` |
 | `data/wilaya-lineage.json` | JSON | 69 | Each wilaya's code on the 58-wilaya and 48-wilaya maps, with the article of each law that sets it; communes carry it as `wilaya_code_58` / `wilaya_code_48` |
+| `data/fires/burned-area.json` | JSON | 69 | Burned area: hectares per wilaya and month since 2001, from NASA MODIS MCD64A1 (ODbL) |
 | `data/wilaya-capitals.metadata.json` | JSON | 69 | The chef-lieu of each wilaya, with the decree, article, item and page that fixes it |
 | `data/osm-links.metadata.json` | JSON | 1 | Coverage, tiers, join rule and Overpass snapshots behind `osm_relation_id` / `wikidata` |
 | `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
@@ -270,7 +272,7 @@ Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/iss
 
 ## Sponsor
 
-GeoAlgeria is free: MIT code and an MIT compilation, with six ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
+GeoAlgeria is free: MIT code and an MIT compilation, with seven ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
 
 ---
 
@@ -308,7 +310,7 @@ Package **code** is [MIT](LICENSE), and so is the **compilation**: wilayas, dair
 their bilingual names, postal codes and administrative codes. Free for personal and commercial
 use.
 
-Six parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and
+Seven parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and
 are licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
 
 - the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
@@ -324,7 +326,10 @@ are licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-
   are the centre of its capital commune, so wilayas 7, 16, 25, 32, 52 and 61 carry one of the
   coordinates above. The other 63 wilaya capital points are not OpenStreetMap-derived.
 - the `osm_relation_id` and `wikidata` values on the commune and wilaya records in
-  `data/algeria.json`, `data/communes_w*.json` and `data/wilayas.json`.
+  `data/algeria.json`, `data/communes_w*.json` and `data/wilayas.json`;
+- the burned area in `data/fires/burned-area.json`: NASA MODIS MCD64A1 v061,
+  DOI 10.5067/MODIS/MCD64A1.061, counted inside those wilaya outlines, and compared each year
+  with EU JRC GWIS, CC BY 4.0, used as a check.
 
 If you use or redistribute any of those parts you must **attribute OpenStreetMap contributors**
 and keep derived databases under a compatible licence.

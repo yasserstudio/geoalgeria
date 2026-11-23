@@ -85,6 +85,7 @@ touggourt.wilaya_code;     // 55
 touggourt.wilaya_code_58;  // 55
 touggourt.wilaya_code_48;  // 30، ورقلة قبل 2019
 dz.wilayaLineage.wilayas;  // الرمزان القديمان لكل ولاية، مع مادة القانون التي تحددهما
+dz.burnedArea.wilayas;     // الهكتارات المحروقة حسب الولاية والشهر منذ 2001
 
 // الدوائر: الاسم العربي، مدى التحقق من قائمة بلدياتها، وبلدياتها
 const daira = dz.dairas.find((d) => d.id === 515);

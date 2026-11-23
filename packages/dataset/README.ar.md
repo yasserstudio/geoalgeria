@@ -76,6 +76,7 @@ dz.ecommerce;                  // مجموعة بيانات مسطّحة لنم�
 dz.postOffices;                // 3,907 مكاتب بريد الجزائر
 dz.atms;                       // 2,023 صراف آلي
 dz.wilayaLineage;              // رمز كل ولاية في خريطتي 58 و48 ولاية
+dz.burnedArea;                 // الهكتارات المحروقة حسب الولاية والشهر منذ 2001
 
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
 dz.getCommunesByWilaya(16);    // 57 بلدية في الجزائر العاصمة
@@ -159,6 +160,7 @@ sqlite3 mydb.sqlite < full.sql
 | `data/name-history.json` | JSON | 210 | الكتابات السابقة لأسماء الولايات والبلديات، مع النص الذي عوّض كل واحدة منها |
 | `data/phone-code-provenance.json` | JSON | 11 | سبب حمل الولايات 59–69 لقيمة `phone_code` الحالية: النصوص الرسمية التي بُحث فيها وسبب كل `null` |
 | `data/wilaya-lineage.json` | JSON | 69 | رمز كل ولاية في خريطتي 58 و48 ولاية، مع مادة القانون التي تحدّده؛ وتحمله البلديات في `wilaya_code_58` و`wilaya_code_48` |
+| `data/fires/burned-area.json` | JSON | 69 | المساحة المحروقة: الهكتارات حسب الولاية والشهر منذ 2001، من NASA MODIS MCD64A1 (ODbL) |
 | `data/wilaya-capitals.metadata.json` | JSON | 69 | مقر كل ولاية، مع المرسوم والمادة والبند والصفحة التي تحدّده |
 | `data/osm-links.metadata.json` | JSON | 1 | التغطية والمستويان وقاعدة الربط ولقطتا Overpass وراء `osm_relation_id` / `wikidata` |
 | `data/communes_w*.json` | JSON | 1,541 | بيانات البلديات المفصّلة |
@@ -270,7 +272,7 @@ sqlite3 mydb.sqlite < full.sql
 
 ## الرعاية
 
-GeoAlgeria مجاني، شيفرته وتجميعه بترخيص MIT مع ستة أجزاء بترخيص ODbL وبيانات بريد الجزائر المنسوخة، جميعها مذكورة أدناه. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
+GeoAlgeria مجاني، شيفرته وتجميعه بترخيص MIT مع سبعة أجزاء بترخيص ODbL وبيانات بريد الجزائر المنسوخة، جميعها مذكورة أدناه. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
 
 ---
 
@@ -307,7 +309,7 @@ GeoAlgeria هي الخيار الأكثر اكتمالاً في 2026 – هي ح
 **شيفرة** الحزمة بترخيص [MIT](LICENSE)، وكذلك **التجميع**: الولايات والدوائر والبلديات
 وأسماؤها ثنائية اللغة والرموز البريدية والرموز الإدارية. مجاني للاستخدام الشخصي والتجاري.
 
-ستة أجزاء من البيانات مصدرها **OpenStreetMap**، وهي **© مساهمو OpenStreetMap** وبترخيص
+سبعة أجزاء من البيانات مصدرها **OpenStreetMap**، وهي **© مساهمو OpenStreetMap** وبترخيص
 **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** بدلًا من ذلك:
 
 - الـ69 مضلّع حدود ولاية في `data/geojson/wilaya-boundaries.geojson`؛
@@ -322,7 +324,10 @@ GeoAlgeria هي الخيار الأكثر اكتمالاً في 2026 – هي ح
   تحمل الولايات 7 و 16 و 25 و 32 و 52 و 61 إحدى الإحداثيات أعلاه، أما نقاط مقرات
   الولايات الـ 63 الأخرى فليس مصدرها OpenStreetMap.
 - قيم `osm_relation_id` و`wikidata` في سجلات البلديات والولايات ضمن
-  `data/algeria.json` و`data/communes_w*.json` و`data/wilayas.json`.
+  `data/algeria.json` و`data/communes_w*.json` و`data/wilayas.json`؛
+- المساحة المحروقة في `data/fires/burned-area.json`: بيانات NASA MODIS MCD64A1 v061،
+  DOI 10.5067/MODIS/MCD64A1.061، محسوبة داخل حدود الولايات هذه، وتقارَن كل سنة ببيانات
+  EU JRC GWIS، CC BY 4.0، المستعملة للتحقق فقط.
 
 عند استخدامك أو إعادة نشرك لأيٍّ من هذه الأجزاء يجب **إسناد الفضل لمساهمي OpenStreetMap**
 وإبقاء القواعد المُشتقّة تحت ترخيصٍ متوافق.

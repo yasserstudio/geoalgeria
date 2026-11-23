@@ -14,7 +14,8 @@ let _wilayas,
   _nameHistory,
   _phoneCodeProvenance,
   _search,
-  _wilayaLineage;
+  _wilayaLineage,
+  _burnedArea;
 
 module.exports = {
   get wilayas() {
@@ -87,6 +88,13 @@ module.exports = {
   get wilayaLineage() {
     if (!_wilayaLineage) _wilayaLineage = require("./data/wilaya-lineage.json");
     return _wilayaLineage;
+  },
+
+  // Hectares burned per wilaya and month since 2001, from NASA's MODIS grids.
+  // Terms: ODbL, see NOTICE part 7.
+  get burnedArea() {
+    if (!_burnedArea) _burnedArea = require("./data/fires/burned-area.json");
+    return _burnedArea;
   },
 
   getWilaya(code) {

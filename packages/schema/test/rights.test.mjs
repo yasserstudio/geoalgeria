@@ -261,6 +261,8 @@ const RECORD_KEYS = [
   "mjs",
   "mobilis",
   "msp",
+  "nasa-mcd12q1",
+  "nasa-mcd64a1",
   "noest",
   "ons",
   "ooredoo",

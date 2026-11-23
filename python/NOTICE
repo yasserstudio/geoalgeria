@@ -2,10 +2,10 @@ geoalgeria data notices
 
 Package code is licensed under the MIT License in LICENSE, and so is the
 compilation of wilayas, dairas, communes, their bilingual names, postal codes and
-administrative codes. Seven parts of the data are not: six derived from
+administrative codes. Eight parts of the data are not: seven derived from
 OpenStreetMap, and the mirrored postal data under data/poste/.
 
-The six parts derived from OpenStreetMap are made available under the Open
+The seven parts derived from OpenStreetMap are made available under the Open
 Database License (ODbL) 1.0 instead. Attribution:
 (c) OpenStreetMap contributors
 https://opendatacommons.org/licenses/odbl/1-0/
@@ -148,7 +148,18 @@ https://www.openstreetmap.org/copyright
    OpenStreetMap tag values, not the result of a query against Wikidata, so the ODbL
    covers them here as it covers the relation ids.
 
-7. Mirrored postal data
+7. Burned area
+
+   data/fires/burned-area.json, hectares burned per wilaya and month since 2001. The
+   burned cells are NASA MODIS MCD64A1 v061, DOI 10.5067/MODIS/MCD64A1.061, which
+   NASA places under CC0 and asks users to cite. They are counted inside the detailed
+   wilaya outlines of part 3, so the result is derived from OpenStreetMap. Cells that
+   NASA MODIS MCD12Q1 v061 land cover, DOI 10.5067/MODIS/MCD12Q1.061, also CC0, calls
+   snow, barren or water are left out. Each yearly total from 2002 to 2024 is compared
+   with the country total of EU JRC GWIS, CC BY 4.0, used as a check; no GWIS value is
+   published here.
+
+8. Mirrored postal data
 
    data/poste/ (postoffices.json, atms.json, their CSV and GeoJSON
    representations and their metadata.json) is a generated mirror of

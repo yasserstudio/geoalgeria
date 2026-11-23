@@ -344,6 +344,19 @@ def main():
             validate_wilaya_lineage(lineage, wilayas, communes)
             print(f"  OK: {len(communes)} communes agree with the lineage of {len(lineage.get('wilayas', []))} wilayas")
 
+    print("[fires/burned-area.json]")
+    burned = validate_json(ROOT / "fires" / "burned-area.json")
+    if burned:
+        codes = [row["code"] for row in burned["wilayas"]]
+        if codes != list(range(1, 70)):
+            error("burned-area.json: expected wilayas 1 to 69 in order")
+        first, latest = burned["first_month"], burned["latest_month"]
+        for row in burned["wilayas"]:
+            for month, hectares in row["months"].items():
+                if not (first <= month <= latest and hectares > 0):
+                    error(f"burned-area.json wilaya {row['code']}: bad month {month}: {hectares}")
+        print(f"  OK: {len(codes)} wilayas, {first} to {latest}")
+
     if len(commune_codes) != total_communes:
         error(
             f"commune codes: expected {total_communes} unique non-null values, "

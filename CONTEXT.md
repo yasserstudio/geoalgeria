@@ -74,6 +74,10 @@ _Avoid_: founded, established, announced year, reform year
 A spelling a Wilaya or Commune carried before a sourced correction; it still resolves to that record but is never shown as its current name.
 _Avoid_: alias, old name, legacy name
 
+**Burned area**:
+The hectares NASA's MODIS grids map as burned in a month, per Wilaya, published in `fires/burned-area.json` as `burnedArea`. It covers forest, scrub and farmland alike, without the cells NASA land cover calls snow, barren or water, and it is never added to a count of fires. Renders FR **superficie brûlée**, AR **المساحة المحروقة**.
+_Avoid_: fire history, burnt area, area burned
+
 **Wilaya lineage**:
 The code a current Wilaya had on each earlier map, published in `wilaya-lineage.json` with the article of each text that sets it, and repeated on every Commune as `wilaya_code_58` and `wilaya_code_48`. A Wilaya keeps its own code on a map where it already existed, and takes the code its mother wilaya (`mother_wilaya_code`) had there where it did not. The **58-wilaya map** runs from Law 19-12 to Law 26-06; the **48-wilaya map** is Law 84-09 as it stood just before Law 19-12, so the 24 communes Ordonnance 97-14 moved into Algiers in 1997 read 16 on it. Read from the commune lists of the texts, never from a secondary dataset. The one recorded exception is El Borma (3021): Law 19-12 lists it under Touggourt (55), and it stays in Ouargla (30) on every map. Renders FR **filiation des wilayas**, AR **أصل الولايات**.
 _Avoid_: old wilaya codes, legacy codes, ancestry

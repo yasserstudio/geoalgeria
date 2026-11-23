@@ -306,6 +306,42 @@ declare namespace algeriaGeodata {
     citation: DairaAuditCitation | null;
   }
 
+  /** Hectares burned per wilaya and month, from NASA MODIS MCD64A1 v061. */
+  export interface BurnedArea {
+    title_en: string;
+    title_fr: string;
+    title_ar: string;
+    unit: "ha";
+    /** First and latest month NASA published in full, YYYY-MM. */
+    first_month: string;
+    latest_month: string;
+    /** Months in between NASA did not publish in full. */
+    incomplete_months: string[];
+    license: string;
+    sources: {
+      key: string;
+      name: string;
+      url: string;
+      doi?: string;
+      retrieved: string;
+      evidence_type: string;
+      note?: string;
+    }[];
+    /** Burned cells left out because MCD12Q1 land cover calls them snow, barren or water. */
+    excluded: { land_classes: number[]; cells: number; hectares: number };
+    /** How far the yearly totals are from the reference they were checked against. */
+    check: {
+      credit: string;
+      years: [number, number];
+      limit_percent: number;
+      worst_percent: number;
+    };
+    notes: string[];
+    /** Hectares by YYYY-MM. A month not listed is zero, unless it is in
+     *  `incomplete_months`. */
+    wilayas: { code: number; months: Record<string, number> }[];
+  }
+
   /** One citation in the Wilaya lineage: a key of `metadata.sources` and the
    *  article it points at. */
   export interface WilayaLineageCitation {
@@ -574,6 +610,7 @@ declare const algeriaGeodata: {
   readonly nameHistory: algeriaGeodata.NameHistory;
   readonly phoneCodeProvenance: algeriaGeodata.PhoneCodeProvenance;
   readonly wilayaLineage: algeriaGeodata.WilayaLineage;
+  readonly burnedArea: algeriaGeodata.BurnedArea;
   readonly postOffices: algeriaGeodata.PostOffice[];
   readonly atms: algeriaGeodata.Atm[];
   getWilaya(code: number): algeriaGeodata.Wilaya | undefined;

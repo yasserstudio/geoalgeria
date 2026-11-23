@@ -1,0 +1,18 @@
+{
+  "burned-area-cells": {
+    "bytes": 9795051,
+    "note": "NASA MODIS MCD64A1 v061: burned cells ([row, col, MCD12Q1 v061 land class, DOI 10.5067/MODIS/MCD12Q1.061]) per month and tile, cut to a box around Algeria.",
+    "records": 150907,
+    "retrieved": "2026-11-23",
+    "sha256": "761ecb0092c170a3a75aa4cb6a3868d43e30d0f60afb8f9cd344ffbd5f81cde2",
+    "url": "https://doi.org/10.5067/MODIS/MCD64A1.061"
+  },
+  "gwis-burned-area": {
+    "bytes": 4064100,
+    "note": "EU JRC GWIS, CC BY 4.0, used as a check: Algeria's rows (region, month, land class), as published.",
+    "records": 13824,
+    "retrieved": "2026-11-23",
+    "sha256": "df0d654e15e732e8f814b256ca86fd1263198784e654047396be5dced7ce08b0",
+    "url": "https://gwis.jrc.ec.europa.eu/downloads/country.profile/MCD64A1_burned_area_full_dataset_2002_2025.zip"
+  }
+}

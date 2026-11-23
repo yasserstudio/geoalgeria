@@ -38,8 +38,9 @@ export const CARRIER_EXTENSIONS = [".json", ".csv", ".geojson", ".sql"];
  *  own `updated` and its own date in the catalog, and which this repository
  *  forbids hand-editing. A postal refresh is that package's release, not a change
  *  to the wilayas, dairas and communes, so it must not be able to date the core
- *  and must not be able to hold it hostage either. */
-export const EXCLUDED_DIRS = ["poste"];
+ *  and must not be able to hold it hostage either. `data/fires/` is the burned area,
+ *  which gains a month whenever NASA publishes one and moves no boundary. */
+export const EXCLUDED_DIRS = ["fires", "poste"];
 
 export const CANONICAL_FORM =
   "sha256 over one line per carrier, `<path> <sha256 of the file with CRLF normalised to LF>`, the " +
